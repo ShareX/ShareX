@@ -19,7 +19,7 @@
     <value>파일 이름 및 태그 검색</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>고급</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>즐겨찾기</value>
@@ -31,7 +31,7 @@
     <value>가져오기</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>설정</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>날짜</value>
@@ -178,7 +178,7 @@
     <value>폴더 경로</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>찾아보기...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>이미지 파일만 가져오기</value>
@@ -187,7 +187,7 @@
     <value>중복 파일 건너뛰기</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>취소</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>기록 설정</value>
@@ -211,7 +211,7 @@
     <value>줄마다 하나의 키=값 쌍</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>저장</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>확인</value>

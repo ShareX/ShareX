@@ -476,169 +476,169 @@
     <value>Deschide</value>
   </data>
   <data name="ApplicationSettingsWindow_WindowTitle" xml:space="preserve">
-    <value>ShareX - Application settings</value>
+    <value>ShareX - Setări ale aplicației</value>
   </data>
   <data name="ApplicationSettingsWindow_RestartShareXToApplyThisChange" xml:space="preserve">
-    <value>Restart ShareX to apply this change.</value>
+    <value>Repornește ShareX pentru a aplica această modificare.</value>
   </data>
   <data name="ApplicationSettingsWindow_RestartNow" xml:space="preserve">
-    <value>Restart now</value>
+    <value>Repornește acum</value>
   </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
     <value>General</value>
   </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
-    <value>Application</value>
+    <value>Aplicație</value>
   </data>
   <data name="ApplicationSettingsWindow_LanguageLabel" xml:space="preserve">
-    <value>Language:</value>
+    <value>Limba:</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
-    <value>Show tray icon</value>
+    <value>Afișare pictogramă în bară</value>
   </data>
   <data name="ApplicationSettingsWindow_MinimizeToTrayOnStart" xml:space="preserve">
-    <value>Minimize to tray on start</value>
+    <value>Minimizarea în bară la pornire</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowProgressInTrayIcon" xml:space="preserve">
-    <value>Show progress in tray icon</value>
+    <value>Afișați progresul în pictograma din tavă</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowProgressInTaskbarButton" xml:space="preserve">
-    <value>Show progress in taskbar button</value>
+    <value>Afișați progresul în butonul din bara de activități</value>
   </data>
   <data name="ApplicationSettingsWindow_UseWhiteShareXIcon" xml:space="preserve">
-    <value>Use white ShareX icon</value>
+    <value>Utilizați pictograma albă ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_RememberMainWindowPosition" xml:space="preserve">
-    <value>Remember main window position</value>
+    <value>Rețineți poziția ferestrei principale</value>
   </data>
   <data name="ApplicationSettingsWindow_RememberMainWindowSize" xml:space="preserve">
-    <value>Remember main window size</value>
+    <value>Rețineți dimensiunea ferestrei principale</value>
   </data>
   <data name="ApplicationSettingsWindow_TrayActions" xml:space="preserve">
-    <value>Tray actions</value>
+    <value>Acțiuni în zona de notificare</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconDoubleLeftClickLabel" xml:space="preserve">
-    <value>On tray icon double left click:</value>
+    <value>Pe pictograma din bară faceți dublu clic stânga:</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconLeftClickLabel" xml:space="preserve">
-    <value>On tray icon left click:</value>
+    <value>Pe pictograma din bară faceți clic stânga:</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconMiddleClickLabel" xml:space="preserve">
-    <value>On tray icon middle click:</value>
+    <value>Faceți clic în mijloc pe pictograma din bară:</value>
   </data>
   <data name="ApplicationSettingsWindow_EditQuickTaskMenu" xml:space="preserve">
-    <value>Edit quick task menu...</value>
+    <value>Editați meniul de sarcini rapide...</value>
   </data>
   <data name="ApplicationSettingsWindow_Updates" xml:space="preserve">
-    <value>Updates</value>
+    <value>Actualizări</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCheckForUpdates" xml:space="preserve">
-    <value>Automatically check for updates</value>
+    <value>Verifică automat actualizările</value>
   </data>
   <data name="ApplicationSettingsWindow_UpdateChannelLabel" xml:space="preserve">
-    <value>Update channel:</value>
+    <value>Canal de actualizare:</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
-    <value>Install dev build...</value>
+    <value>Instalați versiune de dezvoltare...</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
-    <value>Theme</value>
+    <value>Tema</value>
   </data>
   <data name="ApplicationSettingsWindow_ApplicationTheme" xml:space="preserve">
-    <value>Application theme</value>
+    <value>Temă aplicație</value>
   </data>
   <data name="ApplicationSettingsWindow_FollowSystemTheme" xml:space="preserve">
-    <value>Follow system theme</value>
+    <value>Folosește tema sistemului</value>
   </data>
   <data name="ApplicationSettingsWindow_ThemeLabel" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Temă:</value>
   </data>
   <data name="ApplicationSettingsWindow_AccentColor" xml:space="preserve">
-    <value>Accent color</value>
+    <value>Culoare de accent</value>
   </data>
   <data name="ApplicationSettingsWindow_FollowSystemAccentColor" xml:space="preserve">
-    <value>Follow system accent color</value>
+    <value>Folosește culoarea de accent a sistemului</value>
   </data>
   <data name="ApplicationSettingsWindow_AccentColorLabel" xml:space="preserve">
-    <value>Accent color:</value>
+    <value>Culoare de accent:</value>
   </data>
   <data name="ApplicationSettingsWindow_Integration" xml:space="preserve">
-    <value>Integration</value>
+    <value>Integrare</value>
   </data>
   <data name="ApplicationSettingsWindow_Windows" xml:space="preserve">
     <value>Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Show "Upload with ShareX" button in Windows Explorer context menu</value>
+    <value>Afișați butonul &quot;Încărcare cu ShareX&quot; în meniul contextual din Windows Explorer</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Show "Edit with ShareX" button in Windows Explorer context menu</value>
+    <value>Afișați butonul &quot;Editați cu ShareX&quot; în meniul contextual al Windows Explorer</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowShareXInSendToMenu" xml:space="preserve">
-    <value>Show ShareX in "Send to" menu</value>
+    <value>Afișați ShareX în meniul &quot;Trimitere la&quot;</value>
   </data>
   <data name="ApplicationSettingsWindow_ChromeExtension" xml:space="preserve">
-    <value>Chrome extension</value>
+    <value>Extensie Chrome</value>
   </data>
   <data name="ApplicationSettingsWindow_EnableChromeExtensionSupport" xml:space="preserve">
-    <value>Enable Chrome extension support</value>
+    <value>Activați suportul pentru extensia Chrome</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallShareXChromeExtension" xml:space="preserve">
-    <value>Install ShareX Chrome extension...</value>
+    <value>Instalați extensia ShareX Chrome...</value>
   </data>
   <data name="ApplicationSettingsWindow_FirefoxAddon" xml:space="preserve">
-    <value>Firefox addon</value>
+    <value>Supliment Firefox</value>
   </data>
   <data name="ApplicationSettingsWindow_EnableFirefoxAddonSupport" xml:space="preserve">
-    <value>Enable Firefox addon support</value>
+    <value>Activați suportul pentru suplimentul Firefox</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallShareXFirefoxAddon" xml:space="preserve">
-    <value>Install ShareX Firefox addon...</value>
+    <value>Instalați suplimentul ShareX Firefox...</value>
   </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
   <data name="ApplicationSettingsWindow_WhileShareXIsOpenShowInAppInSteam" xml:space="preserve">
-    <value>While ShareX is open, show "In-App" in Steam</value>
+    <value>În timp ce ShareX este deschis, arată &quot;În aplicație&quot; pe Steam</value>
   </data>
   <data name="ApplicationSettingsWindow_Paths" xml:space="preserve">
-    <value>Paths</value>
+    <value>Căi</value>
   </data>
   <data name="ApplicationSettingsWindow_ShareXPersonalFolder" xml:space="preserve">
-    <value>ShareX personal folder</value>
+    <value>Folder personal ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>Răsfoiți...</value>
   </data>
   <data name="ApplicationSettingsWindow_Open" xml:space="preserve">
-    <value>Open...</value>
+    <value>Deschideți...</value>
   </data>
   <data name="ApplicationSettingsWindow_ChangesToThePersonalFolderAreStoredImmediatelyAndTakeEffectAfterRestart" xml:space="preserve">
-    <value>Changes to the personal folder are stored immediately and take effect after restart.</value>
+    <value>Modificările folderului personal sunt salvate imediat și intră în vigoare după repornire.</value>
   </data>
   <data name="ApplicationSettingsWindow_ScreenshotsFolder" xml:space="preserve">
-    <value>Screenshots folder</value>
+    <value>Folder pentru capturi de ecran</value>
   </data>
   <data name="ApplicationSettingsWindow_UseCustomScreenshotsFolder" xml:space="preserve">
-    <value>Use custom screenshots folder</value>
+    <value>Folosește un folder personalizat pentru capturi de ecran</value>
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
-    <value>Sub folder pattern:</value>
+    <value>Model de subdosar:</value>
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternForWindowLabel" xml:space="preserve">
-    <value>Sub folder pattern for window:</value>
+    <value>Model de dosar secundar pentru fereastră:</value>
   </data>
   <data name="ApplicationSettingsWindow_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Setări</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportAndImport" xml:space="preserve">
-    <value>Export and import</value>
+    <value>Export și import</value>
   </data>
   <data name="ApplicationSettingsWindow_DoNotShareAnExportedBackupItCanContainPrivateInformationSuchAsAccountDetailsAndUploadHistory" xml:space="preserve">
-    <value>Do not share an exported backup. It can contain private information such as account details and upload history.</value>
+    <value>Nu partaja o copie de rezervă exportată. Aceasta poate conține informații private, precum detaliile contului și istoricul încărcărilor.</value>
   </data>
   <data name="ApplicationSettingsWindow_History" xml:space="preserve">
-    <value>History</value>
+    <value>Istoric</value>
   </data>
   <data name="ApplicationSettingsWindow_Export" xml:space="preserve">
     <value>Export...</value>
@@ -647,202 +647,202 @@
     <value>Import...</value>
   </data>
   <data name="ApplicationSettingsWindow_ResetSettings" xml:space="preserve">
-    <value>Reset settings...</value>
+    <value>Resetați setările...</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticCleanup" xml:space="preserve">
-    <value>Automatic cleanup</value>
+    <value>Curățare automată</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldBackupFiles" xml:space="preserve">
-    <value>Automatically cleanup old backup files</value>
+    <value>Curățarea automată a fișierelor de backup vechi</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldLogFiles" xml:space="preserve">
-    <value>Automatically cleanup old log files</value>
+    <value>Curățarea automată a fișierelor de jurnal vechi</value>
   </data>
   <data name="ApplicationSettingsWindow_NumberOfFilesToKeepLabel" xml:space="preserve">
-    <value>Number of files to keep:</value>
+    <value>Numărul de fișiere care trebuie păstrate:</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
-    <value>Main window</value>
+    <value>Fereastra principală</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailView" xml:space="preserve">
-    <value>Thumbnail view</value>
+    <value>Vizualizare în miniatură</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowTitle" xml:space="preserve">
-    <value>Show title</value>
+    <value>Arată titlul</value>
   </data>
   <data name="ApplicationSettingsWindow_TitleLocationLabel" xml:space="preserve">
-    <value>Title location:</value>
+    <value>Titlul locației:</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailSizeLabel" xml:space="preserve">
-    <value>Thumbnail size:</value>
+    <value>Dimensiunea miniaturii:</value>
   </data>
   <data name="ApplicationSettingsWindow_Reset" xml:space="preserve">
-    <value>Reset</value>
+    <value>Resetare</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailClickActionLabel" xml:space="preserve">
-    <value>Thumbnail click action:</value>
+    <value>Acțiune de clic pe miniatură:</value>
   </data>
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
-    <value>Clipboard formats</value>
+    <value>Formate de clipboard</value>
   </data>
   <data name="ApplicationSettingsWindow_TheseFormatsAppearUnderTheCopySubmenuInTheMainWindowContextMenu" xml:space="preserve">
-    <value>These formats appear under the Copy submenu in the main window context menu.</value>
+    <value>Aceste formate apar în submeniul Copiere din meniul contextual al ferestrei principale.</value>
   </data>
   <data name="ApplicationSettingsWindow_Add" xml:space="preserve">
-    <value>Add...</value>
+    <value>Adăugați...</value>
   </data>
   <data name="ApplicationSettingsWindow_Edit" xml:space="preserve">
-    <value>Edit...</value>
+    <value>Editați...</value>
   </data>
   <data name="ApplicationSettingsWindow_Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>Eliminați</value>
   </data>
   <data name="ApplicationSettingsWindow_Upload" xml:space="preserve">
-    <value>Upload</value>
+    <value>Încărcare</value>
   </data>
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
-    <value>Simultaneous upload limit:</value>
+    <value>Limita de încărcare simultană:</value>
   </data>
   <data name="ApplicationSettingsWindow_ZeroDisablesTheLimit" xml:space="preserve">
-    <value>0 disables the limit</value>
+    <value>0 dezactivează limita</value>
   </data>
   <data name="ApplicationSettingsWindow_BufferSizeLabel" xml:space="preserve">
-    <value>Buffer size:</value>
+    <value>Dimensiunea bufferului:</value>
   </data>
   <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
-    <value>Number of times to retry if upload fails:</value>
+    <value>Numărul de încercări în cazul în care încărcarea eșuează:</value>
   </data>
   <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
-    <value>Save tasks to history</value>
+    <value>Salvați sarcinile în istoric</value>
   </data>
   <data name="ApplicationSettingsWindow_OnlySaveIfUrlIsNotEmpty" xml:space="preserve">
-    <value>Only save if URL is not empty</value>
+    <value>Salvați numai dacă URL-ul nu este gol</value>
   </data>
   <data name="ApplicationSettingsWindow_RecentTasks" xml:space="preserve">
-    <value>Recent tasks</value>
+    <value>Sarcini recente</value>
   </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
-    <value>Save recent tasks</value>
+    <value>Salvați sarcinile recente</value>
   </data>
   <data name="ApplicationSettingsWindow_MaximumNumberOfTasksToSaveLabel" xml:space="preserve">
-    <value>Maximum number of tasks to save:</value>
+    <value>Numărul maxim de sarcini de salvat:</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowRecentTasksInMainWindowOnStartup" xml:space="preserve">
-    <value>Show recent tasks in main window on startup</value>
+    <value>Afisați sarcinile recente în fereastra principală la pornire</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowRecentTasksInTrayMenu" xml:space="preserve">
-    <value>Show recent tasks in tray menu</value>
+    <value>Afișarea sarcinilor recente în bară</value>
   </data>
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
-    <value>In tray menu show most recent tasks first</value>
+    <value>În bară, afișați mai întâi cele mai recente sarcini</value>
   </data>
   <data name="ApplicationSettingsWindow_Print" xml:space="preserve">
-    <value>Print</value>
+    <value>Imprimare</value>
   </data>
   <data name="ApplicationSettingsWindow_DontShowImagePrintSettingsDialog" xml:space="preserve">
-    <value>Don't show image print settings dialog</value>
+    <value>Nu afișați caseta de dialog cu setările de imprimare a imaginii</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
-    <value>Image print settings...</value>
+    <value>Setări de imprimare a imaginii...</value>
   </data>
   <data name="ApplicationSettingsWindow_DontShowWindowsPrintDialog" xml:space="preserve">
-    <value>Don't show Windows print dialog</value>
+    <value>Nu afișați dialogul de imprimare Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_DefaultPrinterOverrideLabel" xml:space="preserve">
-    <value>Default printer override:</value>
+    <value>Suprascriere imprimantă implicită:</value>
   </data>
   <data name="ApplicationSettingsWindow_Proxy" xml:space="preserve">
     <value>Proxy</value>
   </data>
   <data name="ApplicationSettingsWindow_ProxyConfigurationLabel" xml:space="preserve">
-    <value>Proxy configuration:</value>
+    <value>Configurația proxy:</value>
   </data>
   <data name="ApplicationSettingsWindow_UsernameLabel" xml:space="preserve">
-    <value>Username:</value>
+    <value>Nume de utilizator:</value>
   </data>
   <data name="ApplicationSettingsWindow_PasswordLabel" xml:space="preserve">
-    <value>Password:</value>
+    <value>Parola:</value>
   </data>
   <data name="ApplicationSettingsWindow_HostLabel" xml:space="preserve">
-    <value>Host:</value>
+    <value>Gazdă:</value>
   </data>
   <data name="ApplicationSettingsWindow_PortLabel" xml:space="preserve">
     <value>Port:</value>
   </data>
   <data name="ApplicationSettingsWindow_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Avansat</value>
   </data>
   <data name="ApplicationSettingsWindow_AddClipboardFormat" xml:space="preserve">
-    <value>Add clipboard format</value>
+    <value>Adaugă format pentru clipboard</value>
   </data>
   <data name="ApplicationSettingsWindow_CustomizeTheTextCopiedFromCompletedUploads" xml:space="preserve">
-    <value>Customize the text copied from completed uploads.</value>
+    <value>Personalizează textul copiat din încărcările finalizate.</value>
   </data>
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
-    <value>Description</value>
+    <value>Descriere</value>
   </data>
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
     <value>Format</value>
   </data>
   <data name="ApplicationSettingsWindow_RightClickToInsertAVariable" xml:space="preserve">
-    <value>Right-click to insert a variable.</value>
+    <value>Clic dreapta pentru a insera o variabilă.</value>
   </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Salvare</value>
   </data>
   <data name="ApplicationSettingsWindow_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Anulare</value>
   </data>
   <data name="ApplicationSettingsWindow_ChooseShareXPersonalFolderPath" xml:space="preserve">
-    <value>Choose ShareX personal folder path</value>
+    <value>Alege calea folderului personal ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_ChooseScreenshotsFolderPath" xml:space="preserve">
-    <value>Choose screenshots folder path</value>
+    <value>Alege calea folderului pentru capturi de ecran</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportShareXBackup" xml:space="preserve">
-    <value>Export ShareX backup</value>
+    <value>Exportă copia de rezervă ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_ShareXBackup" xml:space="preserve">
-    <value>ShareX backup</value>
+    <value>Copie de rezervă ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_ImportShareXBackup" xml:space="preserve">
-    <value>Import ShareX backup</value>
+    <value>Importă copia de rezervă ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_EditClipboardFormat" xml:space="preserve">
-    <value>Edit clipboard format</value>
+    <value>Editează formatul pentru clipboard</value>
   </data>
   <data name="ApplicationSettingsWindow_UploadResult" xml:space="preserve">
-    <value>Upload result</value>
+    <value>Rezultatul încărcării</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportingBackup" xml:space="preserve">
-    <value>Exporting backup...</value>
+    <value>Se exportă copia de rezervă...</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupExportedTo" xml:space="preserve">
-    <value>Backup exported to {0}</value>
+    <value>Copia de rezervă a fost exportată în {0}</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupExportFailed" xml:space="preserve">
-    <value>Backup export failed.</value>
+    <value>Exportul copiei de rezervă a eșuat.</value>
   </data>
   <data name="ApplicationSettingsWindow_ImportingBackup" xml:space="preserve">
-    <value>Importing backup...</value>
+    <value>Se importă copia de rezervă...</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupImportedFrom" xml:space="preserve">
-    <value>Backup imported from {0}</value>
+    <value>Copia de rezervă a fost importată din {0}</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupImportFailed" xml:space="preserve">
-    <value>Backup import failed.</value>
+    <value>Importul copiei de rezervă a eșuat.</value>
   </data>
   <data name="ApplicationSettingsWindow_SettingsReset" xml:space="preserve">
-    <value>Settings reset.</value>
+    <value>Setările au fost resetate.</value>
   </data>
   <data name="ApplicationSettingsWindow_ErrorPrefix" xml:space="preserve">
-    <value>Error:</value>
+    <value>Eroare:</value>
   </data>
   <data name="ApplicationSettingsWindow_Dark" xml:space="preserve">
-    <value>Dark</value>
+    <value>Întunecat</value>
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
-    <value>Light</value>
+    <value>Luminos</value>
   </data>
   <data name="ApplicationSettingsWindow_AdvancedApplication" xml:space="preserve">
     <value>Aplicație</value>

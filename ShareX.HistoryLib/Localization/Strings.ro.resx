@@ -19,7 +19,7 @@
     <value>Caută în numele fișierelor și etichete</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Avansat</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>Favorite</value>
@@ -31,7 +31,7 @@
     <value>Importă</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Setări</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>Dată</value>
@@ -178,7 +178,7 @@
     <value>Calea folderului</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>Răsfoire...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>Importă numai fișiere imagine</value>
@@ -187,7 +187,7 @@
     <value>Omite fișierele duplicate</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Anulare</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>Setări istoric</value>
@@ -211,7 +211,7 @@
     <value>O pereche cheie=valoare pe linie</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Salvare</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>OK</value>
@@ -256,7 +256,7 @@
     <value>Nici unul</value>
   </data>
   <data name="HistoryWindows_Top" xml:space="preserve">
-    <value>Top</value>
+    <value>Sus</value>
   </data>
   <data name="HistoryWindows_Bottom" xml:space="preserve">
     <value>Partea de jos</value>

@@ -527,7 +527,7 @@
     <value>یک‌بار مصرف</value>
   </data>
   <data name="DestinationSettings_Field_Password" xml:space="preserve">
-    <value>Password:</value>
+    <value>گذرواژه</value>
   </data>
   <data name="DestinationSettings_Field_Paste_Password" xml:space="preserve">
     <value>گذرواژهٔ متن</value>
@@ -716,7 +716,7 @@
     <value>کلید کاربر</value>
   </data>
   <data name="DestinationSettings_Field_Username" xml:space="preserve">
-    <value>Username:</value>
+    <value>نام کاربری</value>
   </data>
   <data name="DestinationSettings_Field_Web_API_Key" xml:space="preserve">
     <value>کلید Web API</value>
@@ -1219,7 +1219,7 @@
     <value>name@example.com</value>
   </data>
   <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>Password:</value>
+    <value>گذرواژه</value>
   </data>
   <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
     <value>ShareX - ورود به puush</value>

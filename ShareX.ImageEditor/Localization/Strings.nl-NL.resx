@@ -180,7 +180,7 @@ Wilt u de wijzigingen opslaan voordat u de afbeeldingseditor sluit?</value>
     <value>OK</value>
   </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
-    <value>Blur</value>
+    <value>Vervagen</value>
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Kleur</value>
@@ -216,7 +216,7 @@ Wilt u de wijzigingen opslaan voordat u de afbeeldingseditor sluit?</value>
     <value>Naar achteren sturen</value>
   </data>
   <data name="EditorView_Sendtoback" xml:space="preserve">
-    <value>Send to back</value>
+    <value>Naar achteren</value>
   </data>
   <data name="EditorView_Undo" xml:space="preserve">
     <value>Ongedaan maken</value>

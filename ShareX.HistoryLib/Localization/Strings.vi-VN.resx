@@ -19,7 +19,7 @@
     <value>Tìm kiếm tên tệp và thẻ</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Nâng cao</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>Yêu thích</value>
@@ -31,7 +31,7 @@
     <value>Nhập</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Cài đặt</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>Ngày</value>
@@ -178,7 +178,7 @@
     <value>Đường dẫn thư mục</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>Duyệt...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>Chỉ nhập tệp ảnh</value>
@@ -187,7 +187,7 @@
     <value>Bỏ qua tệp trùng lặp</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Hủy</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>Cài đặt lịch sử</value>
@@ -211,7 +211,7 @@
     <value>Mỗi dòng một cặp khóa=giá trị</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Lưu</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>OK</value>

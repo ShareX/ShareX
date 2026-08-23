@@ -19,7 +19,7 @@
     <value>جستجو در نام فایل‌ها و برچسب‌ها</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>پیشرفته</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>موارد دلخواه</value>
@@ -31,7 +31,7 @@
     <value>درون‌ریزی</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>تنظیمات</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>تاریخ</value>
@@ -178,7 +178,7 @@
     <value>مسیر پوشه</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>مرور...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>فقط فایل‌های تصویری وارد شوند</value>
@@ -187,7 +187,7 @@
     <value>نادیده گرفتن فایل‌های تکراری</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>لغو</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>تنظیمات تاریخچه</value>
@@ -211,7 +211,7 @@
     <value>در هر خط یک جفت کلید=مقدار</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>ذخیره</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>تأیید</value>

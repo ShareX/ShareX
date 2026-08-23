@@ -147,7 +147,7 @@ Czy zapisać zmiany przed zamknięciem edytora obrazów?</value>
     <value>Zakończ</value>
   </data>
   <data name="AnnotationToolbar_OpenEllipsis" xml:space="preserve">
-    <value>Open...</value>
+    <value>Otwórz...</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Zapisz</value>

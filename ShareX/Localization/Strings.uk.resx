@@ -476,373 +476,373 @@
     <value>Відкрити</value>
   </data>
   <data name="ApplicationSettingsWindow_WindowTitle" xml:space="preserve">
-    <value>ShareX - Application settings</value>
+    <value>ShareX — Налаштування програми</value>
   </data>
   <data name="ApplicationSettingsWindow_RestartShareXToApplyThisChange" xml:space="preserve">
-    <value>Restart ShareX to apply this change.</value>
+    <value>Перезапустіть ShareX, щоб застосувати цю зміну.</value>
   </data>
   <data name="ApplicationSettingsWindow_RestartNow" xml:space="preserve">
-    <value>Restart now</value>
+    <value>Перезапустити зараз</value>
   </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
-    <value>General</value>
+    <value>Загальні</value>
   </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
-    <value>Application</value>
+    <value>Застосунок</value>
   </data>
   <data name="ApplicationSettingsWindow_LanguageLabel" xml:space="preserve">
-    <value>Language:</value>
+    <value>Мова:</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
-    <value>Show tray icon</value>
+    <value>Показувати піктограму в області сповіщень</value>
   </data>
   <data name="ApplicationSettingsWindow_MinimizeToTrayOnStart" xml:space="preserve">
-    <value>Minimize to tray on start</value>
+    <value>Згортати програму в лоток при запуску</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowProgressInTrayIcon" xml:space="preserve">
-    <value>Show progress in tray icon</value>
+    <value>Показувати перебіг в області сповіщень</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowProgressInTaskbarButton" xml:space="preserve">
-    <value>Show progress in taskbar button</value>
+    <value>Показувати перебіг на кнопці в панелі завдань</value>
   </data>
   <data name="ApplicationSettingsWindow_UseWhiteShareXIcon" xml:space="preserve">
-    <value>Use white ShareX icon</value>
+    <value>Використовувати білу піктограму ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_RememberMainWindowPosition" xml:space="preserve">
-    <value>Remember main window position</value>
+    <value>Запам’ятати позицію головного вікна</value>
   </data>
   <data name="ApplicationSettingsWindow_RememberMainWindowSize" xml:space="preserve">
-    <value>Remember main window size</value>
+    <value>Запам’ятати розмір головного вікна</value>
   </data>
   <data name="ApplicationSettingsWindow_TrayActions" xml:space="preserve">
-    <value>Tray actions</value>
+    <value>Дії в системному лотку</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconDoubleLeftClickLabel" xml:space="preserve">
-    <value>On tray icon double left click:</value>
+    <value>Подвійний лівий притиск по піктограмі у лотку:</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconLeftClickLabel" xml:space="preserve">
-    <value>On tray icon left click:</value>
+    <value>Лівий притиск по піктограмі у лотку:</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconMiddleClickLabel" xml:space="preserve">
-    <value>On tray icon middle click:</value>
+    <value>Середній притиск по піктограмі у лотку:</value>
   </data>
   <data name="ApplicationSettingsWindow_EditQuickTaskMenu" xml:space="preserve">
-    <value>Edit quick task menu...</value>
+    <value>Змінити меню швидких завдань...</value>
   </data>
   <data name="ApplicationSettingsWindow_Updates" xml:space="preserve">
-    <value>Updates</value>
+    <value>Оновлення</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCheckForUpdates" xml:space="preserve">
-    <value>Automatically check for updates</value>
+    <value>Автоматично перевіряти наявність оновлень</value>
   </data>
   <data name="ApplicationSettingsWindow_UpdateChannelLabel" xml:space="preserve">
-    <value>Update channel:</value>
+    <value>Канал оновлень:</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
-    <value>Install dev build...</value>
+    <value>Встановити збірку для розробників...</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
-    <value>Theme</value>
+    <value>Тема</value>
   </data>
   <data name="ApplicationSettingsWindow_ApplicationTheme" xml:space="preserve">
-    <value>Application theme</value>
+    <value>Тема застосунку</value>
   </data>
   <data name="ApplicationSettingsWindow_FollowSystemTheme" xml:space="preserve">
-    <value>Follow system theme</value>
+    <value>Використовувати системну тему</value>
   </data>
   <data name="ApplicationSettingsWindow_ThemeLabel" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Тема:</value>
   </data>
   <data name="ApplicationSettingsWindow_AccentColor" xml:space="preserve">
-    <value>Accent color</value>
+    <value>Колір акценту</value>
   </data>
   <data name="ApplicationSettingsWindow_FollowSystemAccentColor" xml:space="preserve">
-    <value>Follow system accent color</value>
+    <value>Використовувати системний колір акценту</value>
   </data>
   <data name="ApplicationSettingsWindow_AccentColorLabel" xml:space="preserve">
-    <value>Accent color:</value>
+    <value>Колір акценту:</value>
   </data>
   <data name="ApplicationSettingsWindow_Integration" xml:space="preserve">
-    <value>Integration</value>
+    <value>Інтеграція</value>
   </data>
   <data name="ApplicationSettingsWindow_Windows" xml:space="preserve">
     <value>Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Show "Upload with ShareX" button in Windows Explorer context menu</value>
+    <value>Показувати кнопку „Вивантажити із ShareX“ у контекстному меню Провідника Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Show "Edit with ShareX" button in Windows Explorer context menu</value>
+    <value>Показувати кнопку „Змінити із ShareX“ у контекстному меню Провідника Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowShareXInSendToMenu" xml:space="preserve">
-    <value>Show ShareX in "Send to" menu</value>
+    <value>Показати ShareX в меню „Надіслати“</value>
   </data>
   <data name="ApplicationSettingsWindow_ChromeExtension" xml:space="preserve">
-    <value>Chrome extension</value>
+    <value>Розширення Chrome</value>
   </data>
   <data name="ApplicationSettingsWindow_EnableChromeExtensionSupport" xml:space="preserve">
-    <value>Enable Chrome extension support</value>
+    <value>Увімкнути підтримку розширення для Chrome</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallShareXChromeExtension" xml:space="preserve">
-    <value>Install ShareX Chrome extension...</value>
+    <value>Встановити розширення ShareX для Chrome...</value>
   </data>
   <data name="ApplicationSettingsWindow_FirefoxAddon" xml:space="preserve">
-    <value>Firefox addon</value>
+    <value>Додаток для Firefox</value>
   </data>
   <data name="ApplicationSettingsWindow_EnableFirefoxAddonSupport" xml:space="preserve">
-    <value>Enable Firefox addon support</value>
+    <value>Увімкнути підтримку додатку для Firefox</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallShareXFirefoxAddon" xml:space="preserve">
-    <value>Install ShareX Firefox addon...</value>
+    <value>Встановити додаток ShareX для Firefox...</value>
   </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
   <data name="ApplicationSettingsWindow_WhileShareXIsOpenShowInAppInSteam" xml:space="preserve">
-    <value>While ShareX is open, show "In-App" in Steam</value>
+    <value>При відкритому ShareX, показувати „У програмі“ у Steam</value>
   </data>
   <data name="ApplicationSettingsWindow_Paths" xml:space="preserve">
-    <value>Paths</value>
+    <value>Шляхи</value>
   </data>
   <data name="ApplicationSettingsWindow_ShareXPersonalFolder" xml:space="preserve">
-    <value>ShareX personal folder</value>
+    <value>Особиста папка ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>Огляд...</value>
   </data>
   <data name="ApplicationSettingsWindow_Open" xml:space="preserve">
-    <value>Open...</value>
+    <value>Відкрити...</value>
   </data>
   <data name="ApplicationSettingsWindow_ChangesToThePersonalFolderAreStoredImmediatelyAndTakeEffectAfterRestart" xml:space="preserve">
-    <value>Changes to the personal folder are stored immediately and take effect after restart.</value>
+    <value>Зміни в особистій папці зберігаються негайно та набувають чинності після перезапуску.</value>
   </data>
   <data name="ApplicationSettingsWindow_ScreenshotsFolder" xml:space="preserve">
-    <value>Screenshots folder</value>
+    <value>Папка знімків екрана</value>
   </data>
   <data name="ApplicationSettingsWindow_UseCustomScreenshotsFolder" xml:space="preserve">
-    <value>Use custom screenshots folder</value>
+    <value>Використовувати власну папку знімків екрана</value>
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
-    <value>Sub folder pattern:</value>
+    <value>Шаблон назви підтек:</value>
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternForWindowLabel" xml:space="preserve">
-    <value>Sub folder pattern for window:</value>
+    <value>Шаблон назви підтек для вікна:</value>
   </data>
   <data name="ApplicationSettingsWindow_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Налаштування</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportAndImport" xml:space="preserve">
-    <value>Export and import</value>
+    <value>Експорт та імпорт</value>
   </data>
   <data name="ApplicationSettingsWindow_DoNotShareAnExportedBackupItCanContainPrivateInformationSuchAsAccountDetailsAndUploadHistory" xml:space="preserve">
-    <value>Do not share an exported backup. It can contain private information such as account details and upload history.</value>
+    <value>Не поширюйте експортовану резервну копію. Вона може містити приватну інформацію, як-от дані облікового запису та історію вивантажень.</value>
   </data>
   <data name="ApplicationSettingsWindow_History" xml:space="preserve">
-    <value>History</value>
+    <value>Історія</value>
   </data>
   <data name="ApplicationSettingsWindow_Export" xml:space="preserve">
-    <value>Export...</value>
+    <value>Експорт...</value>
   </data>
   <data name="ApplicationSettingsWindow_Import" xml:space="preserve">
-    <value>Import...</value>
+    <value>Імпорт...</value>
   </data>
   <data name="ApplicationSettingsWindow_ResetSettings" xml:space="preserve">
-    <value>Reset settings...</value>
+    <value>Скинути налаштування...</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticCleanup" xml:space="preserve">
-    <value>Automatic cleanup</value>
+    <value>Автоматичне очищення</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldBackupFiles" xml:space="preserve">
-    <value>Automatically cleanup old backup files</value>
+    <value>Автоматично очищати старі файли резервних копій</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldLogFiles" xml:space="preserve">
-    <value>Automatically cleanup old log files</value>
+    <value>Автоматично очищати старі файли журналів</value>
   </data>
   <data name="ApplicationSettingsWindow_NumberOfFilesToKeepLabel" xml:space="preserve">
-    <value>Number of files to keep:</value>
+    <value>Кількість файлів для зберігання:</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
-    <value>Main window</value>
+    <value>Головне вікно</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailView" xml:space="preserve">
-    <value>Thumbnail view</value>
+    <value>Режим мініатюр</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowTitle" xml:space="preserve">
-    <value>Show title</value>
+    <value>Показувати заголовок</value>
   </data>
   <data name="ApplicationSettingsWindow_TitleLocationLabel" xml:space="preserve">
-    <value>Title location:</value>
+    <value>Розташування заголовка:</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailSizeLabel" xml:space="preserve">
-    <value>Thumbnail size:</value>
+    <value>Розмір мініатюри:</value>
   </data>
   <data name="ApplicationSettingsWindow_Reset" xml:space="preserve">
-    <value>Reset</value>
+    <value>Скинути</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailClickActionLabel" xml:space="preserve">
-    <value>Thumbnail click action:</value>
+    <value>Дія при натисканні:</value>
   </data>
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
-    <value>Clipboard formats</value>
+    <value>Формати буферу обміну</value>
   </data>
   <data name="ApplicationSettingsWindow_TheseFormatsAppearUnderTheCopySubmenuInTheMainWindowContextMenu" xml:space="preserve">
-    <value>These formats appear under the Copy submenu in the main window context menu.</value>
+    <value>Ці формати відображаються в підменю «Копіювати» контекстного меню головного вікна.</value>
   </data>
   <data name="ApplicationSettingsWindow_Add" xml:space="preserve">
-    <value>Add...</value>
+    <value>Додати...</value>
   </data>
   <data name="ApplicationSettingsWindow_Edit" xml:space="preserve">
-    <value>Edit...</value>
+    <value>Змінити...</value>
   </data>
   <data name="ApplicationSettingsWindow_Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>Вилучити</value>
   </data>
   <data name="ApplicationSettingsWindow_Upload" xml:space="preserve">
-    <value>Upload</value>
+    <value>Вивантажити</value>
   </data>
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
-    <value>Simultaneous upload limit:</value>
+    <value>Межа одночасних відвантажень:</value>
   </data>
   <data name="ApplicationSettingsWindow_ZeroDisablesTheLimit" xml:space="preserve">
-    <value>0 disables the limit</value>
+    <value>0 вимикає обмеження</value>
   </data>
   <data name="ApplicationSettingsWindow_BufferSizeLabel" xml:space="preserve">
-    <value>Buffer size:</value>
+    <value>Розмір буфера:</value>
   </data>
   <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
-    <value>Number of times to retry if upload fails:</value>
+    <value>Кількість спроб вивантаження при збої:</value>
   </data>
   <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
-    <value>Save tasks to history</value>
+    <value>Зберігати завдання до історії</value>
   </data>
   <data name="ApplicationSettingsWindow_OnlySaveIfUrlIsNotEmpty" xml:space="preserve">
-    <value>Only save if URL is not empty</value>
+    <value>Зберігати лише коли посилання не порожнє</value>
   </data>
   <data name="ApplicationSettingsWindow_RecentTasks" xml:space="preserve">
-    <value>Recent tasks</value>
+    <value>Останні завдання</value>
   </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
-    <value>Save recent tasks</value>
+    <value>Зберегти останні завдання</value>
   </data>
   <data name="ApplicationSettingsWindow_MaximumNumberOfTasksToSaveLabel" xml:space="preserve">
-    <value>Maximum number of tasks to save:</value>
+    <value>Максимальна кількість завдань для збереження:</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowRecentTasksInMainWindowOnStartup" xml:space="preserve">
-    <value>Show recent tasks in main window on startup</value>
+    <value>Показувати останні завдання в головному вікні під час запуску</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowRecentTasksInTrayMenu" xml:space="preserve">
-    <value>Show recent tasks in tray menu</value>
+    <value>Показувати останні завдання в меню області сповіщень</value>
   </data>
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
-    <value>In tray menu show most recent tasks first</value>
+    <value>У меню області сповіщень показувати першими останні завдання</value>
   </data>
   <data name="ApplicationSettingsWindow_Print" xml:space="preserve">
-    <value>Print</value>
+    <value>Друк</value>
   </data>
   <data name="ApplicationSettingsWindow_DontShowImagePrintSettingsDialog" xml:space="preserve">
-    <value>Don't show image print settings dialog</value>
+    <value>Не показувати діалогове вікно параметрів друку зображень</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
-    <value>Image print settings...</value>
+    <value>Параметри друку зображень...</value>
   </data>
   <data name="ApplicationSettingsWindow_DontShowWindowsPrintDialog" xml:space="preserve">
-    <value>Don't show Windows print dialog</value>
+    <value>Не показувати діалогове вікно друку Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_DefaultPrinterOverrideLabel" xml:space="preserve">
-    <value>Default printer override:</value>
+    <value>Перевизначити принтер за замовчуванням:</value>
   </data>
   <data name="ApplicationSettingsWindow_Proxy" xml:space="preserve">
-    <value>Proxy</value>
+    <value>Проксі</value>
   </data>
   <data name="ApplicationSettingsWindow_ProxyConfigurationLabel" xml:space="preserve">
-    <value>Proxy configuration:</value>
+    <value>Параметри проксі:</value>
   </data>
   <data name="ApplicationSettingsWindow_UsernameLabel" xml:space="preserve">
-    <value>Username:</value>
+    <value>Ім’я користувача:</value>
   </data>
   <data name="ApplicationSettingsWindow_PasswordLabel" xml:space="preserve">
-    <value>Password:</value>
+    <value>Пароль:</value>
   </data>
   <data name="ApplicationSettingsWindow_HostLabel" xml:space="preserve">
-    <value>Host:</value>
+    <value>Хост:</value>
   </data>
   <data name="ApplicationSettingsWindow_PortLabel" xml:space="preserve">
-    <value>Port:</value>
+    <value>Порт:</value>
   </data>
   <data name="ApplicationSettingsWindow_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Розширені</value>
   </data>
   <data name="ApplicationSettingsWindow_AddClipboardFormat" xml:space="preserve">
-    <value>Add clipboard format</value>
+    <value>Додати формат буфера обміну</value>
   </data>
   <data name="ApplicationSettingsWindow_CustomizeTheTextCopiedFromCompletedUploads" xml:space="preserve">
-    <value>Customize the text copied from completed uploads.</value>
+    <value>Налаштуйте текст, що копіюється після завершених вивантажень.</value>
   </data>
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
-    <value>Description</value>
+    <value>Опис</value>
   </data>
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
-    <value>Format</value>
+    <value>Формат</value>
   </data>
   <data name="ApplicationSettingsWindow_RightClickToInsertAVariable" xml:space="preserve">
-    <value>Right-click to insert a variable.</value>
+    <value>Клацніть правою кнопкою миші, щоб вставити змінну.</value>
   </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Зберегти</value>
   </data>
   <data name="ApplicationSettingsWindow_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Скасувати</value>
   </data>
   <data name="ApplicationSettingsWindow_ChooseShareXPersonalFolderPath" xml:space="preserve">
-    <value>Choose ShareX personal folder path</value>
+    <value>Виберіть шлях до особистої папки ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_ChooseScreenshotsFolderPath" xml:space="preserve">
-    <value>Choose screenshots folder path</value>
+    <value>Виберіть шлях до папки знімків екрана</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportShareXBackup" xml:space="preserve">
-    <value>Export ShareX backup</value>
+    <value>Експортувати резервну копію ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_ShareXBackup" xml:space="preserve">
-    <value>ShareX backup</value>
+    <value>Резервна копія ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_ImportShareXBackup" xml:space="preserve">
-    <value>Import ShareX backup</value>
+    <value>Імпортувати резервну копію ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_EditClipboardFormat" xml:space="preserve">
-    <value>Edit clipboard format</value>
+    <value>Редагувати формат буфера обміну</value>
   </data>
   <data name="ApplicationSettingsWindow_UploadResult" xml:space="preserve">
-    <value>Upload result</value>
+    <value>Результат вивантаження</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportingBackup" xml:space="preserve">
-    <value>Exporting backup...</value>
+    <value>Експорт резервної копії...</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupExportedTo" xml:space="preserve">
-    <value>Backup exported to {0}</value>
+    <value>Резервну копію експортовано до {0}</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupExportFailed" xml:space="preserve">
-    <value>Backup export failed.</value>
+    <value>Не вдалося експортувати резервну копію.</value>
   </data>
   <data name="ApplicationSettingsWindow_ImportingBackup" xml:space="preserve">
-    <value>Importing backup...</value>
+    <value>Імпорт резервної копії...</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupImportedFrom" xml:space="preserve">
-    <value>Backup imported from {0}</value>
+    <value>Резервну копію імпортовано з {0}</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupImportFailed" xml:space="preserve">
-    <value>Backup import failed.</value>
+    <value>Не вдалося імпортувати резервну копію.</value>
   </data>
   <data name="ApplicationSettingsWindow_SettingsReset" xml:space="preserve">
-    <value>Settings reset.</value>
+    <value>Налаштування скинуто.</value>
   </data>
   <data name="ApplicationSettingsWindow_ErrorPrefix" xml:space="preserve">
-    <value>Error:</value>
+    <value>Помилка:</value>
   </data>
   <data name="ApplicationSettingsWindow_Dark" xml:space="preserve">
-    <value>Dark</value>
+    <value>Темна</value>
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
-    <value>Light</value>
+    <value>Світла</value>
   </data>
   <data name="ApplicationSettingsWindow_AdvancedApplication" xml:space="preserve">
     <value>Застосунок</value>

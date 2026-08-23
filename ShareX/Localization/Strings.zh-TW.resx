@@ -476,373 +476,373 @@
     <value>開啟</value>
   </data>
   <data name="ApplicationSettingsWindow_WindowTitle" xml:space="preserve">
-    <value>ShareX - Application settings</value>
+    <value>ShareX - 應用程式設定</value>
   </data>
   <data name="ApplicationSettingsWindow_RestartShareXToApplyThisChange" xml:space="preserve">
-    <value>Restart ShareX to apply this change.</value>
+    <value>重新啟動 ShareX 以套用此變更。</value>
   </data>
   <data name="ApplicationSettingsWindow_RestartNow" xml:space="preserve">
-    <value>Restart now</value>
+    <value>立即重新啟動</value>
   </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
-    <value>General</value>
+    <value>一般</value>
   </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
-    <value>Application</value>
+    <value>應用程式</value>
   </data>
   <data name="ApplicationSettingsWindow_LanguageLabel" xml:space="preserve">
-    <value>Language:</value>
+    <value>語言：</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
-    <value>Show tray icon</value>
+    <value>顯示系統匣圖示</value>
   </data>
   <data name="ApplicationSettingsWindow_MinimizeToTrayOnStart" xml:space="preserve">
-    <value>Minimize to tray on start</value>
+    <value>啟動時最小化到系統匣</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowProgressInTrayIcon" xml:space="preserve">
-    <value>Show progress in tray icon</value>
+    <value>在系統匣圖示顯示進度</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowProgressInTaskbarButton" xml:space="preserve">
-    <value>Show progress in taskbar button</value>
+    <value>在工作列顯示進度</value>
   </data>
   <data name="ApplicationSettingsWindow_UseWhiteShareXIcon" xml:space="preserve">
-    <value>Use white ShareX icon</value>
+    <value>使用白色 ShareX 圖示</value>
   </data>
   <data name="ApplicationSettingsWindow_RememberMainWindowPosition" xml:space="preserve">
-    <value>Remember main window position</value>
+    <value>記住主視窗位置</value>
   </data>
   <data name="ApplicationSettingsWindow_RememberMainWindowSize" xml:space="preserve">
-    <value>Remember main window size</value>
+    <value>記住主視窗尺寸</value>
   </data>
   <data name="ApplicationSettingsWindow_TrayActions" xml:space="preserve">
-    <value>Tray actions</value>
+    <value>系統匣操作</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconDoubleLeftClickLabel" xml:space="preserve">
-    <value>On tray icon double left click:</value>
+    <value>滑鼠左鍵雙擊系統匣圖示：</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconLeftClickLabel" xml:space="preserve">
-    <value>On tray icon left click:</value>
+    <value>滑鼠左鍵單擊系統匣圖示：</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconMiddleClickLabel" xml:space="preserve">
-    <value>On tray icon middle click:</value>
+    <value>滑鼠中鍵單擊系統匣圖示：</value>
   </data>
   <data name="ApplicationSettingsWindow_EditQuickTaskMenu" xml:space="preserve">
-    <value>Edit quick task menu...</value>
+    <value>編輯快速排程選單...</value>
   </data>
   <data name="ApplicationSettingsWindow_Updates" xml:space="preserve">
-    <value>Updates</value>
+    <value>更新</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCheckForUpdates" xml:space="preserve">
-    <value>Automatically check for updates</value>
+    <value>自動檢查更新</value>
   </data>
   <data name="ApplicationSettingsWindow_UpdateChannelLabel" xml:space="preserve">
-    <value>Update channel:</value>
+    <value>更新通道：</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
-    <value>Install dev build...</value>
+    <value>安裝開發版...</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
-    <value>Theme</value>
+    <value>佈景主題</value>
   </data>
   <data name="ApplicationSettingsWindow_ApplicationTheme" xml:space="preserve">
-    <value>Application theme</value>
+    <value>應用程式佈景主題</value>
   </data>
   <data name="ApplicationSettingsWindow_FollowSystemTheme" xml:space="preserve">
-    <value>Follow system theme</value>
+    <value>跟隨系統佈景主題</value>
   </data>
   <data name="ApplicationSettingsWindow_ThemeLabel" xml:space="preserve">
-    <value>Theme:</value>
+    <value>佈景主題：</value>
   </data>
   <data name="ApplicationSettingsWindow_AccentColor" xml:space="preserve">
-    <value>Accent color</value>
+    <value>強調色</value>
   </data>
   <data name="ApplicationSettingsWindow_FollowSystemAccentColor" xml:space="preserve">
-    <value>Follow system accent color</value>
+    <value>跟隨系統強調色</value>
   </data>
   <data name="ApplicationSettingsWindow_AccentColorLabel" xml:space="preserve">
-    <value>Accent color:</value>
+    <value>強調色：</value>
   </data>
   <data name="ApplicationSettingsWindow_Integration" xml:space="preserve">
-    <value>Integration</value>
+    <value>整合</value>
   </data>
   <data name="ApplicationSettingsWindow_Windows" xml:space="preserve">
     <value>Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Show "Upload with ShareX" button in Windows Explorer context menu</value>
+    <value>在檔案總管的右鍵選單中顯示「使用 ShareX 上傳」按鈕</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Show "Edit with ShareX" button in Windows Explorer context menu</value>
+    <value>在檔案總管的右鍵選單中顯示「使用 ShareX 編輯」按鈕</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowShareXInSendToMenu" xml:space="preserve">
-    <value>Show ShareX in "Send to" menu</value>
+    <value>在「傳送到」選單中顯示 ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_ChromeExtension" xml:space="preserve">
-    <value>Chrome extension</value>
+    <value>Chrome 擴充功能</value>
   </data>
   <data name="ApplicationSettingsWindow_EnableChromeExtensionSupport" xml:space="preserve">
-    <value>Enable Chrome extension support</value>
+    <value>啟用 Chrome 擴充功能支援</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallShareXChromeExtension" xml:space="preserve">
-    <value>Install ShareX Chrome extension...</value>
+    <value>安裝 ShareX Chrome 擴充功能...</value>
   </data>
   <data name="ApplicationSettingsWindow_FirefoxAddon" xml:space="preserve">
-    <value>Firefox addon</value>
+    <value>Firefox 附加元件</value>
   </data>
   <data name="ApplicationSettingsWindow_EnableFirefoxAddonSupport" xml:space="preserve">
-    <value>Enable Firefox addon support</value>
+    <value>啟用 Firefox 附加元件支援</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallShareXFirefoxAddon" xml:space="preserve">
-    <value>Install ShareX Firefox addon...</value>
+    <value>安裝 ShareX Firefox 附加元件...</value>
   </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
   <data name="ApplicationSettingsWindow_WhileShareXIsOpenShowInAppInSteam" xml:space="preserve">
-    <value>While ShareX is open, show "In-App" in Steam</value>
+    <value>當 ShareX 開啟時，在 Steam 狀態顯示 ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_Paths" xml:space="preserve">
-    <value>Paths</value>
+    <value>路徑</value>
   </data>
   <data name="ApplicationSettingsWindow_ShareXPersonalFolder" xml:space="preserve">
-    <value>ShareX personal folder</value>
+    <value>ShareX 個人資料夾</value>
   </data>
   <data name="ApplicationSettingsWindow_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>瀏覽...</value>
   </data>
   <data name="ApplicationSettingsWindow_Open" xml:space="preserve">
-    <value>Open...</value>
+    <value>開啟...</value>
   </data>
   <data name="ApplicationSettingsWindow_ChangesToThePersonalFolderAreStoredImmediatelyAndTakeEffectAfterRestart" xml:space="preserve">
-    <value>Changes to the personal folder are stored immediately and take effect after restart.</value>
+    <value>個人資料夾的變更會立即儲存，並於重新啟動後生效。</value>
   </data>
   <data name="ApplicationSettingsWindow_ScreenshotsFolder" xml:space="preserve">
-    <value>Screenshots folder</value>
+    <value>螢幕擷取畫面資料夾</value>
   </data>
   <data name="ApplicationSettingsWindow_UseCustomScreenshotsFolder" xml:space="preserve">
-    <value>Use custom screenshots folder</value>
+    <value>使用自訂螢幕擷取畫面資料夾</value>
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
-    <value>Sub folder pattern:</value>
+    <value>子資料夾格式：</value>
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternForWindowLabel" xml:space="preserve">
-    <value>Sub folder pattern for window:</value>
+    <value>視窗的子資料夾格式：</value>
   </data>
   <data name="ApplicationSettingsWindow_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>設定</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportAndImport" xml:space="preserve">
-    <value>Export and import</value>
+    <value>匯出與匯入</value>
   </data>
   <data name="ApplicationSettingsWindow_DoNotShareAnExportedBackupItCanContainPrivateInformationSuchAsAccountDetailsAndUploadHistory" xml:space="preserve">
-    <value>Do not share an exported backup. It can contain private information such as account details and upload history.</value>
+    <value>請勿分享匯出的備份。備份可能包含帳戶詳細資料和上傳歷史記錄等私人資訊。</value>
   </data>
   <data name="ApplicationSettingsWindow_History" xml:space="preserve">
-    <value>History</value>
+    <value>歷史記錄</value>
   </data>
   <data name="ApplicationSettingsWindow_Export" xml:space="preserve">
-    <value>Export...</value>
+    <value>匯出...</value>
   </data>
   <data name="ApplicationSettingsWindow_Import" xml:space="preserve">
-    <value>Import...</value>
+    <value>匯入...</value>
   </data>
   <data name="ApplicationSettingsWindow_ResetSettings" xml:space="preserve">
-    <value>Reset settings...</value>
+    <value>重設設定...</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticCleanup" xml:space="preserve">
-    <value>Automatic cleanup</value>
+    <value>自動清理</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldBackupFiles" xml:space="preserve">
-    <value>Automatically cleanup old backup files</value>
+    <value>自動清理舊備份檔案</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldLogFiles" xml:space="preserve">
-    <value>Automatically cleanup old log files</value>
+    <value>自動清理舊日誌檔案</value>
   </data>
   <data name="ApplicationSettingsWindow_NumberOfFilesToKeepLabel" xml:space="preserve">
-    <value>Number of files to keep:</value>
+    <value>保留檔案數量：</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
-    <value>Main window</value>
+    <value>主視窗</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailView" xml:space="preserve">
-    <value>Thumbnail view</value>
+    <value>縮圖模式</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowTitle" xml:space="preserve">
-    <value>Show title</value>
+    <value>顯示標題</value>
   </data>
   <data name="ApplicationSettingsWindow_TitleLocationLabel" xml:space="preserve">
-    <value>Title location:</value>
+    <value>標題位置：</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailSizeLabel" xml:space="preserve">
-    <value>Thumbnail size:</value>
+    <value>縮圖大小：</value>
   </data>
   <data name="ApplicationSettingsWindow_Reset" xml:space="preserve">
-    <value>Reset</value>
+    <value>重設</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailClickActionLabel" xml:space="preserve">
-    <value>Thumbnail click action:</value>
+    <value>點擊縮圖的操作：</value>
   </data>
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
-    <value>Clipboard formats</value>
+    <value>剪貼簿格式</value>
   </data>
   <data name="ApplicationSettingsWindow_TheseFormatsAppearUnderTheCopySubmenuInTheMainWindowContextMenu" xml:space="preserve">
-    <value>These formats appear under the Copy submenu in the main window context menu.</value>
+    <value>這些格式會顯示在主視窗內容功能表的「複製」子功能表中。</value>
   </data>
   <data name="ApplicationSettingsWindow_Add" xml:space="preserve">
-    <value>Add...</value>
+    <value>新增...</value>
   </data>
   <data name="ApplicationSettingsWindow_Edit" xml:space="preserve">
-    <value>Edit...</value>
+    <value>編輯...</value>
   </data>
   <data name="ApplicationSettingsWindow_Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>移除</value>
   </data>
   <data name="ApplicationSettingsWindow_Upload" xml:space="preserve">
-    <value>Upload</value>
+    <value>上傳</value>
   </data>
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
-    <value>Simultaneous upload limit:</value>
+    <value>同時上傳限制：</value>
   </data>
   <data name="ApplicationSettingsWindow_ZeroDisablesTheLimit" xml:space="preserve">
-    <value>0 disables the limit</value>
+    <value>0 表示停用限制</value>
   </data>
   <data name="ApplicationSettingsWindow_BufferSizeLabel" xml:space="preserve">
-    <value>Buffer size:</value>
+    <value>緩衝區大小：</value>
   </data>
   <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
-    <value>Number of times to retry if upload fails:</value>
+    <value>上傳失敗重試次數：</value>
   </data>
   <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
-    <value>Save tasks to history</value>
+    <value>儲存排程至歷史記錄</value>
   </data>
   <data name="ApplicationSettingsWindow_OnlySaveIfUrlIsNotEmpty" xml:space="preserve">
-    <value>Only save if URL is not empty</value>
+    <value>僅在有網址時儲存</value>
   </data>
   <data name="ApplicationSettingsWindow_RecentTasks" xml:space="preserve">
-    <value>Recent tasks</value>
+    <value>最近的排程</value>
   </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
-    <value>Save recent tasks</value>
+    <value>儲存最近的排程</value>
   </data>
   <data name="ApplicationSettingsWindow_MaximumNumberOfTasksToSaveLabel" xml:space="preserve">
-    <value>Maximum number of tasks to save:</value>
+    <value>儲存的最大排程數量：</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowRecentTasksInMainWindowOnStartup" xml:space="preserve">
-    <value>Show recent tasks in main window on startup</value>
+    <value>啟動時在主視窗中顯示最近的排程</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowRecentTasksInTrayMenu" xml:space="preserve">
-    <value>Show recent tasks in tray menu</value>
+    <value>在系統匣選單顯示最近的排程</value>
   </data>
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
-    <value>In tray menu show most recent tasks first</value>
+    <value>在系統匣選單優先顯示最近的排程</value>
   </data>
   <data name="ApplicationSettingsWindow_Print" xml:space="preserve">
-    <value>Print</value>
+    <value>列印</value>
   </data>
   <data name="ApplicationSettingsWindow_DontShowImagePrintSettingsDialog" xml:space="preserve">
-    <value>Don't show image print settings dialog</value>
+    <value>不顯示圖片列印設定對話框</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
-    <value>Image print settings...</value>
+    <value>圖片列印設定...</value>
   </data>
   <data name="ApplicationSettingsWindow_DontShowWindowsPrintDialog" xml:space="preserve">
-    <value>Don't show Windows print dialog</value>
+    <value>不顯示 Windows 列印對話框</value>
   </data>
   <data name="ApplicationSettingsWindow_DefaultPrinterOverrideLabel" xml:space="preserve">
-    <value>Default printer override:</value>
+    <value>預設印表機覆寫：</value>
   </data>
   <data name="ApplicationSettingsWindow_Proxy" xml:space="preserve">
-    <value>Proxy</value>
+    <value>代理伺服器</value>
   </data>
   <data name="ApplicationSettingsWindow_ProxyConfigurationLabel" xml:space="preserve">
-    <value>Proxy configuration:</value>
+    <value>代理伺服器設定：</value>
   </data>
   <data name="ApplicationSettingsWindow_UsernameLabel" xml:space="preserve">
-    <value>Username:</value>
+    <value>使用者名稱：</value>
   </data>
   <data name="ApplicationSettingsWindow_PasswordLabel" xml:space="preserve">
-    <value>Password:</value>
+    <value>密碼：</value>
   </data>
   <data name="ApplicationSettingsWindow_HostLabel" xml:space="preserve">
-    <value>Host:</value>
+    <value>主機：</value>
   </data>
   <data name="ApplicationSettingsWindow_PortLabel" xml:space="preserve">
-    <value>Port:</value>
+    <value>連接埠：</value>
   </data>
   <data name="ApplicationSettingsWindow_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>進階</value>
   </data>
   <data name="ApplicationSettingsWindow_AddClipboardFormat" xml:space="preserve">
-    <value>Add clipboard format</value>
+    <value>新增剪貼簿格式</value>
   </data>
   <data name="ApplicationSettingsWindow_CustomizeTheTextCopiedFromCompletedUploads" xml:space="preserve">
-    <value>Customize the text copied from completed uploads.</value>
+    <value>自訂上傳完成後複製的文字。</value>
   </data>
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
-    <value>Description</value>
+    <value>描述</value>
   </data>
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
-    <value>Format</value>
+    <value>格式</value>
   </data>
   <data name="ApplicationSettingsWindow_RightClickToInsertAVariable" xml:space="preserve">
-    <value>Right-click to insert a variable.</value>
+    <value>按一下滑鼠右鍵以插入變數。</value>
   </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>儲存</value>
   </data>
   <data name="ApplicationSettingsWindow_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="ApplicationSettingsWindow_ChooseShareXPersonalFolderPath" xml:space="preserve">
-    <value>Choose ShareX personal folder path</value>
+    <value>選擇 ShareX 個人資料夾路徑</value>
   </data>
   <data name="ApplicationSettingsWindow_ChooseScreenshotsFolderPath" xml:space="preserve">
-    <value>Choose screenshots folder path</value>
+    <value>選擇螢幕擷取畫面資料夾路徑</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportShareXBackup" xml:space="preserve">
-    <value>Export ShareX backup</value>
+    <value>匯出 ShareX 備份</value>
   </data>
   <data name="ApplicationSettingsWindow_ShareXBackup" xml:space="preserve">
-    <value>ShareX backup</value>
+    <value>ShareX 備份</value>
   </data>
   <data name="ApplicationSettingsWindow_ImportShareXBackup" xml:space="preserve">
-    <value>Import ShareX backup</value>
+    <value>匯入 ShareX 備份</value>
   </data>
   <data name="ApplicationSettingsWindow_EditClipboardFormat" xml:space="preserve">
-    <value>Edit clipboard format</value>
+    <value>編輯剪貼簿格式</value>
   </data>
   <data name="ApplicationSettingsWindow_UploadResult" xml:space="preserve">
-    <value>Upload result</value>
+    <value>上傳結果</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportingBackup" xml:space="preserve">
-    <value>Exporting backup...</value>
+    <value>正在匯出備份...</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupExportedTo" xml:space="preserve">
-    <value>Backup exported to {0}</value>
+    <value>備份已匯出至 {0}</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupExportFailed" xml:space="preserve">
-    <value>Backup export failed.</value>
+    <value>備份匯出失敗。</value>
   </data>
   <data name="ApplicationSettingsWindow_ImportingBackup" xml:space="preserve">
-    <value>Importing backup...</value>
+    <value>正在匯入備份...</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupImportedFrom" xml:space="preserve">
-    <value>Backup imported from {0}</value>
+    <value>備份已從 {0} 匯入</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupImportFailed" xml:space="preserve">
-    <value>Backup import failed.</value>
+    <value>備份匯入失敗。</value>
   </data>
   <data name="ApplicationSettingsWindow_SettingsReset" xml:space="preserve">
-    <value>Settings reset.</value>
+    <value>設定已重設。</value>
   </data>
   <data name="ApplicationSettingsWindow_ErrorPrefix" xml:space="preserve">
-    <value>Error:</value>
+    <value>錯誤：</value>
   </data>
   <data name="ApplicationSettingsWindow_Dark" xml:space="preserve">
-    <value>Dark</value>
+    <value>深色</value>
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
-    <value>Light</value>
+    <value>淺色</value>
   </data>
   <data name="ApplicationSettingsWindow_AdvancedApplication" xml:space="preserve">
     <value>應用程式</value>

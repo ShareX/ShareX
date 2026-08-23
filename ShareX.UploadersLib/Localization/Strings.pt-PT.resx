@@ -527,7 +527,7 @@
     <value>Utilização única</value>
   </data>
   <data name="DestinationSettings_Field_Password" xml:space="preserve">
-    <value>Password:</value>
+    <value>Palavra-passe</value>
   </data>
   <data name="DestinationSettings_Field_Paste_Password" xml:space="preserve">
     <value>Palavra-passe do texto colado</value>
@@ -716,7 +716,7 @@
     <value>Chave do utilizador</value>
   </data>
   <data name="DestinationSettings_Field_Username" xml:space="preserve">
-    <value>Username:</value>
+    <value>Nome de utilizador</value>
   </data>
   <data name="DestinationSettings_Field_Web_API_Key" xml:space="preserve">
     <value>Chave da API Web</value>
@@ -1219,7 +1219,7 @@ Mensagem: {2}</value>
     <value>name@example.com</value>
   </data>
   <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>Password:</value>
+    <value>Palavra-passe</value>
   </data>
   <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
     <value>ShareX - Início de sessão no puush</value>

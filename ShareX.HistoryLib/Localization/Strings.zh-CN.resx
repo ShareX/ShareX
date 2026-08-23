@@ -19,7 +19,7 @@
     <value>搜索文件名和标签</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>高级</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>收藏夹</value>
@@ -31,7 +31,7 @@
     <value>导入</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>设置</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>日期</value>
@@ -178,7 +178,7 @@
     <value>文件夹路径</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>浏览...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>仅导入图像文件</value>
@@ -187,7 +187,7 @@
     <value>跳过重复文件</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>历史记录设置</value>
@@ -211,7 +211,7 @@
     <value>每行一个“键=值”对</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>保存</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>确定</value>

@@ -527,7 +527,7 @@
     <value>一度のみ</value>
   </data>
   <data name="DestinationSettings_Field_Password" xml:space="preserve">
-    <value>Password:</value>
+    <value>パスワード</value>
   </data>
   <data name="DestinationSettings_Field_Paste_Password" xml:space="preserve">
     <value>貼り付けのパスワード</value>
@@ -716,7 +716,7 @@
     <value>ユーザー キー</value>
   </data>
   <data name="DestinationSettings_Field_Username" xml:space="preserve">
-    <value>Username:</value>
+    <value>ユーザー名</value>
   </data>
   <data name="DestinationSettings_Field_Web_API_Key" xml:space="preserve">
     <value>Web API キー</value>
@@ -1219,7 +1219,7 @@
     <value>name@example.com</value>
   </data>
   <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>Password:</value>
+    <value>パスワード</value>
   </data>
   <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
     <value>ShareX — puush ログイン</value>

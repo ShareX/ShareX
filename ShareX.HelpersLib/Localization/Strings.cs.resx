@@ -1018,18 +1018,6 @@
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Ano</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Kopírovat název</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Kopírovat hodnotu</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Název</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Hodnota</value>
-  </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 den</value>
   </data>
@@ -1271,7 +1259,7 @@
     <value>Kolečko myši</value>
   </data>
   <data name="ScrollMethod_PageDown" xml:space="preserve">
-    <value>Page Down</value>
+    <value>O stránku dolů</value>
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>Zpráva posunutí</value>

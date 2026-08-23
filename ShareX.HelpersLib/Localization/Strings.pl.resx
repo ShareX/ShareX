@@ -1018,18 +1018,6 @@
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Tak</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Skopiuj nazwe</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Skopiuj wartość</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Nazwa</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Wartość</value>
-  </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 dzień</value>
   </data>
@@ -1271,7 +1259,7 @@
     <value>Kółko myszy</value>
   </data>
   <data name="ScrollMethod_PageDown" xml:space="preserve">
-    <value>Page Down</value>
+    <value>Strona w dół</value>
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>Komunikat przewijania</value>

@@ -37,6 +37,8 @@ The repository-level `ValidateTranslations.ps1` verifies that:
 - every supported language has a catalog in every localized project;
 - every localized catalog has the same entry count and keys as `Strings.resx`;
 - values are non-empty and format placeholders match the default value;
+- localized values do not match the English source after case, spacing, and punctuation normalization unless the resource/culture pair is explicitly reviewed in `TranslationEnglishAllowlist.txt`;
+- non-Latin catalogs do not contain unreviewed English-only phrases in place of their expected script;
 - catalogs use valid UTF-8 and CRLF formatting without mojibake;
 - generated designers and source references agree with the catalogs;
 - Avalonia views contain no remaining user-visible literal text.

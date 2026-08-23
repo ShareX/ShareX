@@ -353,10 +353,10 @@
     <value>Pauză</value>
   </data>
   <data name="ScreenRecordForm_Start" xml:space="preserve">
-    <value>Start</value>
+    <value>Pornește</value>
   </data>
   <data name="ScreenRecordForm_Stop" xml:space="preserve">
-    <value>Stop</value>
+    <value>Oprește</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
     <value>Click pentru a începe înregistrarea.</value>

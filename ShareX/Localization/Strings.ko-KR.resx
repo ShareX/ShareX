@@ -476,373 +476,373 @@
     <value>열기</value>
   </data>
   <data name="ApplicationSettingsWindow_WindowTitle" xml:space="preserve">
-    <value>ShareX - Application settings</value>
+    <value>ShareX - 프로그램 설정</value>
   </data>
   <data name="ApplicationSettingsWindow_RestartShareXToApplyThisChange" xml:space="preserve">
-    <value>Restart ShareX to apply this change.</value>
+    <value>이 변경 사항을 적용하려면 ShareX를 다시 시작하세요.</value>
   </data>
   <data name="ApplicationSettingsWindow_RestartNow" xml:space="preserve">
-    <value>Restart now</value>
+    <value>지금 다시 시작</value>
   </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
-    <value>General</value>
+    <value>일반</value>
   </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
-    <value>Application</value>
+    <value>애플리케이션</value>
   </data>
   <data name="ApplicationSettingsWindow_LanguageLabel" xml:space="preserve">
-    <value>Language:</value>
+    <value>언어:</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
-    <value>Show tray icon</value>
+    <value>트레이 아이콘 표시하기</value>
   </data>
   <data name="ApplicationSettingsWindow_MinimizeToTrayOnStart" xml:space="preserve">
-    <value>Minimize to tray on start</value>
+    <value>시작 시 트레이로 최소화하기</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowProgressInTrayIcon" xml:space="preserve">
-    <value>Show progress in tray icon</value>
+    <value>트레이 아이콘에 진행 상황 표시하기</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowProgressInTaskbarButton" xml:space="preserve">
-    <value>Show progress in taskbar button</value>
+    <value>작업 표시줄 단추에 진행 상황 표시하기</value>
   </data>
   <data name="ApplicationSettingsWindow_UseWhiteShareXIcon" xml:space="preserve">
-    <value>Use white ShareX icon</value>
+    <value>하얀색 ShareX 아이콘 사용</value>
   </data>
   <data name="ApplicationSettingsWindow_RememberMainWindowPosition" xml:space="preserve">
-    <value>Remember main window position</value>
+    <value>메인 창 위치 기억하기</value>
   </data>
   <data name="ApplicationSettingsWindow_RememberMainWindowSize" xml:space="preserve">
-    <value>Remember main window size</value>
+    <value>메인 창 윈도우 크기 기억하기</value>
   </data>
   <data name="ApplicationSettingsWindow_TrayActions" xml:space="preserve">
-    <value>Tray actions</value>
+    <value>트레이 동작</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconDoubleLeftClickLabel" xml:space="preserve">
-    <value>On tray icon double left click:</value>
+    <value>트레이 아이콘 더블 클릭시:</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconLeftClickLabel" xml:space="preserve">
-    <value>On tray icon left click:</value>
+    <value>트레이 아이콘 일반 클릭시:</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconMiddleClickLabel" xml:space="preserve">
-    <value>On tray icon middle click:</value>
+    <value>트레이 아이콘 가운데 클릭시:</value>
   </data>
   <data name="ApplicationSettingsWindow_EditQuickTaskMenu" xml:space="preserve">
-    <value>Edit quick task menu...</value>
+    <value>간편 작업 메뉴 편집...</value>
   </data>
   <data name="ApplicationSettingsWindow_Updates" xml:space="preserve">
-    <value>Updates</value>
+    <value>업데이트</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCheckForUpdates" xml:space="preserve">
-    <value>Automatically check for updates</value>
+    <value>업데이트 자동 확인</value>
   </data>
   <data name="ApplicationSettingsWindow_UpdateChannelLabel" xml:space="preserve">
-    <value>Update channel:</value>
+    <value>업데이트 채널:</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
-    <value>Install dev build...</value>
+    <value>dev build 설치...</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
-    <value>Theme</value>
+    <value>테마</value>
   </data>
   <data name="ApplicationSettingsWindow_ApplicationTheme" xml:space="preserve">
-    <value>Application theme</value>
+    <value>애플리케이션 테마</value>
   </data>
   <data name="ApplicationSettingsWindow_FollowSystemTheme" xml:space="preserve">
-    <value>Follow system theme</value>
+    <value>시스템 테마 따르기</value>
   </data>
   <data name="ApplicationSettingsWindow_ThemeLabel" xml:space="preserve">
-    <value>Theme:</value>
+    <value>테마:</value>
   </data>
   <data name="ApplicationSettingsWindow_AccentColor" xml:space="preserve">
-    <value>Accent color</value>
+    <value>강조 색</value>
   </data>
   <data name="ApplicationSettingsWindow_FollowSystemAccentColor" xml:space="preserve">
-    <value>Follow system accent color</value>
+    <value>시스템 강조 색 따르기</value>
   </data>
   <data name="ApplicationSettingsWindow_AccentColorLabel" xml:space="preserve">
-    <value>Accent color:</value>
+    <value>강조 색:</value>
   </data>
   <data name="ApplicationSettingsWindow_Integration" xml:space="preserve">
-    <value>Integration</value>
+    <value>연계 기능</value>
   </data>
   <data name="ApplicationSettingsWindow_Windows" xml:space="preserve">
     <value>Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Show "Upload with ShareX" button in Windows Explorer context menu</value>
+    <value>Windows 탐색기의 컨텍스트 메뉴에 &quot;ShareX로 업로드하기&quot; 표시하기</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Show "Edit with ShareX" button in Windows Explorer context menu</value>
+    <value>Windows 탐색기의 컨택스트 메뉴에 &quot;ShareX로 편집&quot;버튼 표시</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowShareXInSendToMenu" xml:space="preserve">
-    <value>Show ShareX in "Send to" menu</value>
+    <value>Windows 탐색기의 &quot;보내기&quot; 컨텍스트 메뉴에 ShareX 표시하기</value>
   </data>
   <data name="ApplicationSettingsWindow_ChromeExtension" xml:space="preserve">
-    <value>Chrome extension</value>
+    <value>크롬 확장 기능</value>
   </data>
   <data name="ApplicationSettingsWindow_EnableChromeExtensionSupport" xml:space="preserve">
-    <value>Enable Chrome extension support</value>
+    <value>크롬 확장 기능 지원 활성화</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallShareXChromeExtension" xml:space="preserve">
-    <value>Install ShareX Chrome extension...</value>
+    <value>ShareX 크롬 확장 기능 설치하기...</value>
   </data>
   <data name="ApplicationSettingsWindow_FirefoxAddon" xml:space="preserve">
-    <value>Firefox addon</value>
+    <value>파이어폭스 애드온</value>
   </data>
   <data name="ApplicationSettingsWindow_EnableFirefoxAddonSupport" xml:space="preserve">
-    <value>Enable Firefox addon support</value>
+    <value>파이어폭스 애드온 지원 활성화</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallShareXFirefoxAddon" xml:space="preserve">
-    <value>Install ShareX Firefox addon...</value>
+    <value>ShareX 파이어폭스 애드온 설치하기...</value>
   </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
   <data name="ApplicationSettingsWindow_WhileShareXIsOpenShowInAppInSteam" xml:space="preserve">
-    <value>While ShareX is open, show "In-App" in Steam</value>
+    <value>ShareX가 열려 있을 때 스팀에서 실행 중이라고 띄우기</value>
   </data>
   <data name="ApplicationSettingsWindow_Paths" xml:space="preserve">
-    <value>Paths</value>
+    <value>경로</value>
   </data>
   <data name="ApplicationSettingsWindow_ShareXPersonalFolder" xml:space="preserve">
-    <value>ShareX personal folder</value>
+    <value>ShareX 개인 폴더</value>
   </data>
   <data name="ApplicationSettingsWindow_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>탐색...</value>
   </data>
   <data name="ApplicationSettingsWindow_Open" xml:space="preserve">
-    <value>Open...</value>
+    <value>열기...</value>
   </data>
   <data name="ApplicationSettingsWindow_ChangesToThePersonalFolderAreStoredImmediatelyAndTakeEffectAfterRestart" xml:space="preserve">
-    <value>Changes to the personal folder are stored immediately and take effect after restart.</value>
+    <value>개인 폴더 변경 사항은 즉시 저장되며 다시 시작한 후 적용됩니다.</value>
   </data>
   <data name="ApplicationSettingsWindow_ScreenshotsFolder" xml:space="preserve">
-    <value>Screenshots folder</value>
+    <value>스크린샷 폴더</value>
   </data>
   <data name="ApplicationSettingsWindow_UseCustomScreenshotsFolder" xml:space="preserve">
-    <value>Use custom screenshots folder</value>
+    <value>사용자 지정 스크린샷 폴더 사용</value>
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
-    <value>Sub folder pattern:</value>
+    <value>하위 폴더명 패턴:</value>
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternForWindowLabel" xml:space="preserve">
-    <value>Sub folder pattern for window:</value>
+    <value>창용 하위 폴더 패턴:</value>
   </data>
   <data name="ApplicationSettingsWindow_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>설정</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportAndImport" xml:space="preserve">
-    <value>Export and import</value>
+    <value>내보내기 및 가져오기</value>
   </data>
   <data name="ApplicationSettingsWindow_DoNotShareAnExportedBackupItCanContainPrivateInformationSuchAsAccountDetailsAndUploadHistory" xml:space="preserve">
-    <value>Do not share an exported backup. It can contain private information such as account details and upload history.</value>
+    <value>내보낸 백업을 공유하지 마세요. 계정 세부 정보 및 업로드 기록과 같은 개인 정보가 포함될 수 있습니다.</value>
   </data>
   <data name="ApplicationSettingsWindow_History" xml:space="preserve">
-    <value>History</value>
+    <value>기록</value>
   </data>
   <data name="ApplicationSettingsWindow_Export" xml:space="preserve">
-    <value>Export...</value>
+    <value>내보내기...</value>
   </data>
   <data name="ApplicationSettingsWindow_Import" xml:space="preserve">
-    <value>Import...</value>
+    <value>불러오기...</value>
   </data>
   <data name="ApplicationSettingsWindow_ResetSettings" xml:space="preserve">
-    <value>Reset settings...</value>
+    <value>설정 초기화...</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticCleanup" xml:space="preserve">
-    <value>Automatic cleanup</value>
+    <value>자동 정리</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldBackupFiles" xml:space="preserve">
-    <value>Automatically cleanup old backup files</value>
+    <value>오래된 백업 파일 자동 정리</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldLogFiles" xml:space="preserve">
-    <value>Automatically cleanup old log files</value>
+    <value>오래된 로그 파일 자동 정리</value>
   </data>
   <data name="ApplicationSettingsWindow_NumberOfFilesToKeepLabel" xml:space="preserve">
-    <value>Number of files to keep:</value>
+    <value>보관할 파일 수:</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
-    <value>Main window</value>
+    <value>메인 창</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailView" xml:space="preserve">
-    <value>Thumbnail view</value>
+    <value>썸네일 보기</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowTitle" xml:space="preserve">
-    <value>Show title</value>
+    <value>제목 표시</value>
   </data>
   <data name="ApplicationSettingsWindow_TitleLocationLabel" xml:space="preserve">
-    <value>Title location:</value>
+    <value>제목 위치:</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailSizeLabel" xml:space="preserve">
-    <value>Thumbnail size:</value>
+    <value>썸네일 크기:</value>
   </data>
   <data name="ApplicationSettingsWindow_Reset" xml:space="preserve">
-    <value>Reset</value>
+    <value>재설정</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailClickActionLabel" xml:space="preserve">
-    <value>Thumbnail click action:</value>
+    <value>썸네일 클릭 동작:</value>
   </data>
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
-    <value>Clipboard formats</value>
+    <value>클립보드 형식</value>
   </data>
   <data name="ApplicationSettingsWindow_TheseFormatsAppearUnderTheCopySubmenuInTheMainWindowContextMenu" xml:space="preserve">
-    <value>These formats appear under the Copy submenu in the main window context menu.</value>
+    <value>이 형식은 기본 창 상황에 맞는 메뉴의 복사 하위 메뉴에 표시됩니다.</value>
   </data>
   <data name="ApplicationSettingsWindow_Add" xml:space="preserve">
-    <value>Add...</value>
+    <value>추가...</value>
   </data>
   <data name="ApplicationSettingsWindow_Edit" xml:space="preserve">
-    <value>Edit...</value>
+    <value>편집...</value>
   </data>
   <data name="ApplicationSettingsWindow_Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>제거</value>
   </data>
   <data name="ApplicationSettingsWindow_Upload" xml:space="preserve">
-    <value>Upload</value>
+    <value>업로드</value>
   </data>
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
-    <value>Simultaneous upload limit:</value>
+    <value>동시 업로드 수:</value>
   </data>
   <data name="ApplicationSettingsWindow_ZeroDisablesTheLimit" xml:space="preserve">
-    <value>0 disables the limit</value>
+    <value>0은 제한을 비활성화합니다</value>
   </data>
   <data name="ApplicationSettingsWindow_BufferSizeLabel" xml:space="preserve">
-    <value>Buffer size:</value>
+    <value>버퍼 크기:</value>
   </data>
   <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
-    <value>Number of times to retry if upload fails:</value>
+    <value>업로드 실패 시 다시 시도할 횟수:</value>
   </data>
   <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
-    <value>Save tasks to history</value>
+    <value>작업을 히스토리에 저장하기</value>
   </data>
   <data name="ApplicationSettingsWindow_OnlySaveIfUrlIsNotEmpty" xml:space="preserve">
-    <value>Only save if URL is not empty</value>
+    <value>URL이 비어있지 않을 때만 저장하기</value>
   </data>
   <data name="ApplicationSettingsWindow_RecentTasks" xml:space="preserve">
-    <value>Recent tasks</value>
+    <value>최근 작업</value>
   </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
-    <value>Save recent tasks</value>
+    <value>최근 작업 저장하기</value>
   </data>
   <data name="ApplicationSettingsWindow_MaximumNumberOfTasksToSaveLabel" xml:space="preserve">
-    <value>Maximum number of tasks to save:</value>
+    <value>저장할 최대 작업 수:</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowRecentTasksInMainWindowOnStartup" xml:space="preserve">
-    <value>Show recent tasks in main window on startup</value>
+    <value>최근 작업을 프로그램을 시작할 때 메인 창에 보여주기</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowRecentTasksInTrayMenu" xml:space="preserve">
-    <value>Show recent tasks in tray menu</value>
+    <value>최근 작업을 트레이 메뉴에 보여주기</value>
   </data>
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
-    <value>In tray menu show most recent tasks first</value>
+    <value>트레이 메뉴에서 최근 작업을 먼저 보여주기</value>
   </data>
   <data name="ApplicationSettingsWindow_Print" xml:space="preserve">
-    <value>Print</value>
+    <value>인쇄</value>
   </data>
   <data name="ApplicationSettingsWindow_DontShowImagePrintSettingsDialog" xml:space="preserve">
-    <value>Don't show image print settings dialog</value>
+    <value>이미지 인쇄 설정 창 표시하지 않기</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
-    <value>Image print settings...</value>
+    <value>이미지 인쇄 설정...</value>
   </data>
   <data name="ApplicationSettingsWindow_DontShowWindowsPrintDialog" xml:space="preserve">
-    <value>Don't show Windows print dialog</value>
+    <value>Windows 인쇄 설정 창 표시하지 않기</value>
   </data>
   <data name="ApplicationSettingsWindow_DefaultPrinterOverrideLabel" xml:space="preserve">
-    <value>Default printer override:</value>
+    <value>기본 프린터 재정의:</value>
   </data>
   <data name="ApplicationSettingsWindow_Proxy" xml:space="preserve">
-    <value>Proxy</value>
+    <value>프록시</value>
   </data>
   <data name="ApplicationSettingsWindow_ProxyConfigurationLabel" xml:space="preserve">
-    <value>Proxy configuration:</value>
+    <value>프록시 설정:</value>
   </data>
   <data name="ApplicationSettingsWindow_UsernameLabel" xml:space="preserve">
-    <value>Username:</value>
+    <value>사용자 ID:</value>
   </data>
   <data name="ApplicationSettingsWindow_PasswordLabel" xml:space="preserve">
-    <value>Password:</value>
+    <value>비밀번호:</value>
   </data>
   <data name="ApplicationSettingsWindow_HostLabel" xml:space="preserve">
-    <value>Host:</value>
+    <value>호스트:</value>
   </data>
   <data name="ApplicationSettingsWindow_PortLabel" xml:space="preserve">
-    <value>Port:</value>
+    <value>포트:</value>
   </data>
   <data name="ApplicationSettingsWindow_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>고급설정</value>
   </data>
   <data name="ApplicationSettingsWindow_AddClipboardFormat" xml:space="preserve">
-    <value>Add clipboard format</value>
+    <value>클립보드 형식 추가</value>
   </data>
   <data name="ApplicationSettingsWindow_CustomizeTheTextCopiedFromCompletedUploads" xml:space="preserve">
-    <value>Customize the text copied from completed uploads.</value>
+    <value>완료된 업로드에서 복사되는 텍스트를 사용자 지정합니다.</value>
   </data>
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
-    <value>Description</value>
+    <value>설명</value>
   </data>
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
-    <value>Format</value>
+    <value>형식</value>
   </data>
   <data name="ApplicationSettingsWindow_RightClickToInsertAVariable" xml:space="preserve">
-    <value>Right-click to insert a variable.</value>
+    <value>마우스 오른쪽 버튼을 클릭하여 변수를 삽입하세요.</value>
   </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>저장</value>
   </data>
   <data name="ApplicationSettingsWindow_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>취소</value>
   </data>
   <data name="ApplicationSettingsWindow_ChooseShareXPersonalFolderPath" xml:space="preserve">
-    <value>Choose ShareX personal folder path</value>
+    <value>ShareX 개인 폴더 경로 선택</value>
   </data>
   <data name="ApplicationSettingsWindow_ChooseScreenshotsFolderPath" xml:space="preserve">
-    <value>Choose screenshots folder path</value>
+    <value>스크린샷 폴더 경로 선택</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportShareXBackup" xml:space="preserve">
-    <value>Export ShareX backup</value>
+    <value>ShareX 백업 내보내기</value>
   </data>
   <data name="ApplicationSettingsWindow_ShareXBackup" xml:space="preserve">
-    <value>ShareX backup</value>
+    <value>ShareX 백업</value>
   </data>
   <data name="ApplicationSettingsWindow_ImportShareXBackup" xml:space="preserve">
-    <value>Import ShareX backup</value>
+    <value>ShareX 백업 가져오기</value>
   </data>
   <data name="ApplicationSettingsWindow_EditClipboardFormat" xml:space="preserve">
-    <value>Edit clipboard format</value>
+    <value>클립보드 형식 편집</value>
   </data>
   <data name="ApplicationSettingsWindow_UploadResult" xml:space="preserve">
-    <value>Upload result</value>
+    <value>업로드 결과</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportingBackup" xml:space="preserve">
-    <value>Exporting backup...</value>
+    <value>백업 내보내는 중...</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupExportedTo" xml:space="preserve">
-    <value>Backup exported to {0}</value>
+    <value>백업을 {0}에 내보냈습니다</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupExportFailed" xml:space="preserve">
-    <value>Backup export failed.</value>
+    <value>백업 내보내기에 실패했습니다.</value>
   </data>
   <data name="ApplicationSettingsWindow_ImportingBackup" xml:space="preserve">
-    <value>Importing backup...</value>
+    <value>백업 가져오는 중...</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupImportedFrom" xml:space="preserve">
-    <value>Backup imported from {0}</value>
+    <value>{0}에서 백업을 가져왔습니다</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupImportFailed" xml:space="preserve">
-    <value>Backup import failed.</value>
+    <value>백업 가져오기에 실패했습니다.</value>
   </data>
   <data name="ApplicationSettingsWindow_SettingsReset" xml:space="preserve">
-    <value>Settings reset.</value>
+    <value>설정이 초기화되었습니다.</value>
   </data>
   <data name="ApplicationSettingsWindow_ErrorPrefix" xml:space="preserve">
-    <value>Error:</value>
+    <value>오류:</value>
   </data>
   <data name="ApplicationSettingsWindow_Dark" xml:space="preserve">
-    <value>Dark</value>
+    <value>어둡게</value>
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
-    <value>Light</value>
+    <value>밝게</value>
   </data>
   <data name="ApplicationSettingsWindow_AdvancedApplication" xml:space="preserve">
     <value>애플리케이션</value>

@@ -19,7 +19,7 @@
     <value>Przeszukaj nazwy plików i tagi</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Zaawansowane</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>Ulubione</value>
@@ -31,7 +31,7 @@
     <value>Importuj</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Ustawienia</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>Data</value>
@@ -178,7 +178,7 @@
     <value>Ścieżka folderu</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>Przeglądaj...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>Importuj tylko pliki obrazów</value>
@@ -187,7 +187,7 @@
     <value>Pomiń zduplikowane pliki</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Anuluj</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>Ustawienia historii</value>
@@ -211,7 +211,7 @@
     <value>Jedna para klucz=wartość w każdym wierszu</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Zapisz</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>OK</value>

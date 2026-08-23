@@ -147,7 +147,7 @@ Szeretné menteni a módosításokat a képszerkesztő bezárása előtt?</value
     <value>Kilépés</value>
   </data>
   <data name="AnnotationToolbar_OpenEllipsis" xml:space="preserve">
-    <value>Open...</value>
+    <value>Megnyitás...</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Mentés</value>

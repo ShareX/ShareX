@@ -152,7 +152,7 @@
     <value>Geselecteerd item verwijderen</value>
   </data>
   <data name="MainWindow_DeletionUrl" xml:space="preserve">
-    <value>Deletion URL</value>
+    <value>Verwijderings-URL</value>
   </data>
   <data name="MainMenuBuilder_DestinationSettings" xml:space="preserve">
     <value>Bestemmingsinstellingen...</value>
@@ -368,7 +368,7 @@
     <value>URL verkorten</value>
   </data>
   <data name="MainWindow_ShortenedUrl" xml:space="preserve">
-    <value>Shortened URL</value>
+    <value>Verkorte URL</value>
   </data>
   <data name="MainMenuBuilder_ShowCursor" xml:space="preserve">
     <value>Cursor weergeven</value>
@@ -2834,7 +2834,7 @@ Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
     <value>Klembord uploaden</value>
   </data>
   <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
-    <value>FFmpeg does not exist at the following path:</value>
+    <value>FFmpeg bestaat niet op het volgende pad:</value>
   </data>
   <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
     <value>Bestandsupload</value>

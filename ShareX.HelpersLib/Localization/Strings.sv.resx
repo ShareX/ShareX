@@ -980,7 +980,7 @@
     <value>Videominiatyrskapare</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
-    <value>Hue: {0:0.0}°, Saturation: {1:0.0}%, Brightness: {2:0.0}%</value>
+    <value>Nyans: {0:0.0}°, Mättnad: {1:0.0}%, Ljusstyrka: {2:0.0}%</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>Anpassad bilduppladdare</value>
@@ -1017,18 +1017,6 @@
   </data>
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Ja</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Kopiera namn</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Kopiera värde</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Namn</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Värde</value>
   </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 dag</value>
@@ -1271,7 +1259,7 @@
     <value>Mushjul</value>
   </data>
   <data name="ScrollMethod_PageDown" xml:space="preserve">
-    <value>Page Down</value>
+    <value>Sida ned</value>
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>Rullningsmeddelande</value>

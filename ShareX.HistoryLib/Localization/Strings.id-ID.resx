@@ -19,7 +19,7 @@
     <value>Cari nama file dan tag</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Lanjutan</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>Favorit</value>
@@ -31,7 +31,7 @@
     <value>Impor</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Pengaturan</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>Tanggal</value>
@@ -178,7 +178,7 @@
     <value>Jalur folder</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>Telusuri...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>Hanya impor file gambar</value>
@@ -187,7 +187,7 @@
     <value>Lewati file duplikat</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Batal</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>Pengaturan riwayat</value>
@@ -211,7 +211,7 @@
     <value>Satu pasangan kunci=nilai per baris</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Simpan</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>OK</value>

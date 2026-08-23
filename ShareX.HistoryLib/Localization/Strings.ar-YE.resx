@@ -19,7 +19,7 @@
     <value>البحث في أسماء الملفات والعلامات</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>متقدم</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>المفضلة</value>
@@ -31,7 +31,7 @@
     <value>استيراد</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>الإعدادات</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>التاريخ</value>
@@ -178,7 +178,7 @@
     <value>مسار المجلد</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>استعراض...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>استيراد ملفات الصور فقط</value>
@@ -187,7 +187,7 @@
     <value>تخطي الملفات المكررة</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>إلغاء</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>إعدادات السجل</value>
@@ -211,7 +211,7 @@
     <value>زوج مفتاح=قيمة واحد لكل سطر</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>حفظ</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>موافق</value>

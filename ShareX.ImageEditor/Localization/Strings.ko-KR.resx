@@ -147,7 +147,7 @@
     <value>종료</value>
   </data>
   <data name="AnnotationToolbar_OpenEllipsis" xml:space="preserve">
-    <value>Open...</value>
+    <value>열기...</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>저장</value>

@@ -1018,18 +1018,6 @@
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Oui</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Copier nom</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Copier valeur</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Nom</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Valeur</value>
-  </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 jour</value>
   </data>

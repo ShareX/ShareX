@@ -527,7 +527,7 @@
     <value>Jednorazowe</value>
   </data>
   <data name="DestinationSettings_Field_Password" xml:space="preserve">
-    <value>Password:</value>
+    <value>Hasło</value>
   </data>
   <data name="DestinationSettings_Field_Paste_Password" xml:space="preserve">
     <value>Hasło wklejki</value>
@@ -716,7 +716,7 @@
     <value>Klucz użytkownika</value>
   </data>
   <data name="DestinationSettings_Field_Username" xml:space="preserve">
-    <value>Username:</value>
+    <value>Nazwa użytkownika</value>
   </data>
   <data name="DestinationSettings_Field_Web_API_Key" xml:space="preserve">
     <value>Klucz Web API</value>
@@ -1219,7 +1219,7 @@ Wiadomość: {2}</value>
     <value>name@example.com</value>
   </data>
   <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>Password:</value>
+    <value>Hasło</value>
   </data>
   <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
     <value>ShareX — Logowanie do puush</value>

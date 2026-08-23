@@ -1018,18 +1018,6 @@
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>بله</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>کپی name</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>کپی value</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>نام</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>مقدار</value>
-  </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>۱ روز</value>
   </data>
@@ -1271,7 +1259,7 @@
     <value>چرخ ماوس</value>
   </data>
   <data name="ScrollMethod_PageDown" xml:space="preserve">
-    <value>Page Down</value>
+    <value>صفحه به پایین</value>
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>پیام پیمایش</value>

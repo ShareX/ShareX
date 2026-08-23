@@ -19,7 +19,7 @@
     <value>חיפוש בשמות קבצים ובתגים</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>מתקדם</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>מועדפים</value>
@@ -31,7 +31,7 @@
     <value>ייבוא</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>הגדרות</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>תאריך</value>
@@ -178,7 +178,7 @@
     <value>נתיב תיקייה</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>עיון...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>ייבוא קובצי תמונה בלבד</value>
@@ -187,7 +187,7 @@
     <value>דלג על קבצים כפולים</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>ביטול</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>הגדרות היסטוריה</value>
@@ -211,7 +211,7 @@
     <value>זוג מפתח=ערך אחד בכל שורה</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>שמירה</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>אישור</value>

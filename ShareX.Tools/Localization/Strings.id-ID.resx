@@ -725,7 +725,7 @@
     <value>Jatuhkan gambar di sini atau gunakan tombol Tambah</value>
   </data>
   <data name="ImageCombinerWindow_Horizontal" xml:space="preserve">
-    <value>Horizontal</value>
+    <value>Horisontal</value>
   </data>
   <data name="ImageCombinerWindow_Layout" xml:space="preserve">
     <value>Tata letak</value>
@@ -1016,7 +1016,7 @@
     <value>Tinggi</value>
   </data>
   <data name="LocalizedDisplayConverter_Horizontal" xml:space="preserve">
-    <value>Horizontal</value>
+    <value>Horisontal</value>
   </data>
   <data name="LocalizedDisplayConverter_Horizontal_bars" xml:space="preserve">
     <value>Bilah horizontal</value>

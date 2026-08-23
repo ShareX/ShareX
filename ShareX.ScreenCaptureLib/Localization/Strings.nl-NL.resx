@@ -341,13 +341,13 @@
     <value>Klik to sbovenpen opname.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Waiting...</value>
+    <value>Wachten...</value>
   </data>
   <data name="Resume" xml:space="preserve">
     <value>Hervatten</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Encoding...</value>
+    <value>Coderen...</value>
   </data>
   <data name="Pause" xml:space="preserve">
     <value>Pauzeren</value>

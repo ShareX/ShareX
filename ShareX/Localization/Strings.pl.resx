@@ -476,292 +476,292 @@
     <value>Otwórz</value>
   </data>
   <data name="ApplicationSettingsWindow_WindowTitle" xml:space="preserve">
-    <value>ShareX - Application settings</value>
+    <value>ShareX - Ustawienia aplikacji</value>
   </data>
   <data name="ApplicationSettingsWindow_RestartShareXToApplyThisChange" xml:space="preserve">
-    <value>Restart ShareX to apply this change.</value>
+    <value>Uruchom ponownie ShareX, aby zastosować tę zmianę.</value>
   </data>
   <data name="ApplicationSettingsWindow_RestartNow" xml:space="preserve">
-    <value>Restart now</value>
+    <value>Uruchom ponownie teraz</value>
   </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
-    <value>General</value>
+    <value>Ogólne</value>
   </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
-    <value>Application</value>
+    <value>Aplikacja</value>
   </data>
   <data name="ApplicationSettingsWindow_LanguageLabel" xml:space="preserve">
-    <value>Language:</value>
+    <value>Język:</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
-    <value>Show tray icon</value>
+    <value>Pokaż ikonę w zasobniku</value>
   </data>
   <data name="ApplicationSettingsWindow_MinimizeToTrayOnStart" xml:space="preserve">
-    <value>Minimize to tray on start</value>
+    <value>Minimalizuj do zasobnika przy starcie</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowProgressInTrayIcon" xml:space="preserve">
-    <value>Show progress in tray icon</value>
+    <value>Pokaż postęp na ikonie w zasobniku</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowProgressInTaskbarButton" xml:space="preserve">
-    <value>Show progress in taskbar button</value>
+    <value>Pokaż postęp na przycisku paska zadań</value>
   </data>
   <data name="ApplicationSettingsWindow_UseWhiteShareXIcon" xml:space="preserve">
-    <value>Use white ShareX icon</value>
+    <value>Użyj białej ikony ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_RememberMainWindowPosition" xml:space="preserve">
-    <value>Remember main window position</value>
+    <value>Zapamiętaj pozycję głównego okna</value>
   </data>
   <data name="ApplicationSettingsWindow_RememberMainWindowSize" xml:space="preserve">
-    <value>Remember main window size</value>
+    <value>Zapamiętaj rozmiar głównego okna</value>
   </data>
   <data name="ApplicationSettingsWindow_TrayActions" xml:space="preserve">
-    <value>Tray actions</value>
+    <value>Działania zasobnika</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconDoubleLeftClickLabel" xml:space="preserve">
-    <value>On tray icon double left click:</value>
+    <value>Po podwójnym kliknięciu lewym na ikonę w zasobniku:</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconLeftClickLabel" xml:space="preserve">
-    <value>On tray icon left click:</value>
+    <value>Po kliknięciu lewym na ikonę w zasobniku:</value>
   </data>
   <data name="ApplicationSettingsWindow_OnTrayIconMiddleClickLabel" xml:space="preserve">
-    <value>On tray icon middle click:</value>
+    <value>Po kliknięciu środkowym na ikonę w zasobniku:</value>
   </data>
   <data name="ApplicationSettingsWindow_EditQuickTaskMenu" xml:space="preserve">
-    <value>Edit quick task menu...</value>
+    <value>Edytuj menu szybkich zadań...</value>
   </data>
   <data name="ApplicationSettingsWindow_Updates" xml:space="preserve">
-    <value>Updates</value>
+    <value>Aktualizacje</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCheckForUpdates" xml:space="preserve">
-    <value>Automatically check for updates</value>
+    <value>Automatycznie sprawdzaj aktualizacje</value>
   </data>
   <data name="ApplicationSettingsWindow_UpdateChannelLabel" xml:space="preserve">
-    <value>Update channel:</value>
+    <value>Kanał aktualizacji:</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
-    <value>Install dev build...</value>
+    <value>Zainstaluj wersję deweloperską...</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
-    <value>Theme</value>
+    <value>Motyw</value>
   </data>
   <data name="ApplicationSettingsWindow_ApplicationTheme" xml:space="preserve">
-    <value>Application theme</value>
+    <value>Motyw aplikacji</value>
   </data>
   <data name="ApplicationSettingsWindow_FollowSystemTheme" xml:space="preserve">
-    <value>Follow system theme</value>
+    <value>Użyj motywu systemowego</value>
   </data>
   <data name="ApplicationSettingsWindow_ThemeLabel" xml:space="preserve">
-    <value>Theme:</value>
+    <value>Motyw:</value>
   </data>
   <data name="ApplicationSettingsWindow_AccentColor" xml:space="preserve">
-    <value>Accent color</value>
+    <value>Kolor akcentu</value>
   </data>
   <data name="ApplicationSettingsWindow_FollowSystemAccentColor" xml:space="preserve">
-    <value>Follow system accent color</value>
+    <value>Użyj systemowego koloru akcentu</value>
   </data>
   <data name="ApplicationSettingsWindow_AccentColorLabel" xml:space="preserve">
-    <value>Accent color:</value>
+    <value>Kolor akcentu:</value>
   </data>
   <data name="ApplicationSettingsWindow_Integration" xml:space="preserve">
-    <value>Integration</value>
+    <value>Integracja</value>
   </data>
   <data name="ApplicationSettingsWindow_Windows" xml:space="preserve">
     <value>Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Show "Upload with ShareX" button in Windows Explorer context menu</value>
+    <value>Pokaż przycisk &quot;Prześlij za pomocą ShareX&quot; w menu kontekstowym Eksploratora Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Show "Edit with ShareX" button in Windows Explorer context menu</value>
+    <value>Pokaż przycisk &quot;Edytuj za pomocą ShareX&quot; w menu kontekstowym Eksploratora Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowShareXInSendToMenu" xml:space="preserve">
-    <value>Show ShareX in "Send to" menu</value>
+    <value>Pokaż ShareX w menu &quot;Wyślij do&quot;</value>
   </data>
   <data name="ApplicationSettingsWindow_ChromeExtension" xml:space="preserve">
-    <value>Chrome extension</value>
+    <value>Rozszerzenie do Chrome</value>
   </data>
   <data name="ApplicationSettingsWindow_EnableChromeExtensionSupport" xml:space="preserve">
-    <value>Enable Chrome extension support</value>
+    <value>Włącz obsługę rozszerzenia Chrome</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallShareXChromeExtension" xml:space="preserve">
-    <value>Install ShareX Chrome extension...</value>
+    <value>Zainstaluj rozszerzenie ShareX do Chrome...</value>
   </data>
   <data name="ApplicationSettingsWindow_FirefoxAddon" xml:space="preserve">
-    <value>Firefox addon</value>
+    <value>Dodatek do Firefox</value>
   </data>
   <data name="ApplicationSettingsWindow_EnableFirefoxAddonSupport" xml:space="preserve">
-    <value>Enable Firefox addon support</value>
+    <value>Włącz obsługę dodatku do Firefoksa</value>
   </data>
   <data name="ApplicationSettingsWindow_InstallShareXFirefoxAddon" xml:space="preserve">
-    <value>Install ShareX Firefox addon...</value>
+    <value>Zainstaluj dodatek ShareX do Firefox...</value>
   </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
   <data name="ApplicationSettingsWindow_WhileShareXIsOpenShowInAppInSteam" xml:space="preserve">
-    <value>While ShareX is open, show "In-App" in Steam</value>
+    <value>Gdy ShareX jest otwarty, pokaż status &quot;W aplikacji&quot; na Steamie</value>
   </data>
   <data name="ApplicationSettingsWindow_Paths" xml:space="preserve">
-    <value>Paths</value>
+    <value>Ścieżki</value>
   </data>
   <data name="ApplicationSettingsWindow_ShareXPersonalFolder" xml:space="preserve">
-    <value>ShareX personal folder</value>
+    <value>Folder osobisty ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>Przeglądaj...</value>
   </data>
   <data name="ApplicationSettingsWindow_Open" xml:space="preserve">
-    <value>Open...</value>
+    <value>Otwórz...</value>
   </data>
   <data name="ApplicationSettingsWindow_ChangesToThePersonalFolderAreStoredImmediatelyAndTakeEffectAfterRestart" xml:space="preserve">
-    <value>Changes to the personal folder are stored immediately and take effect after restart.</value>
+    <value>Zmiany w folderze osobistym są zapisywane natychmiast i zaczynają obowiązywać po ponownym uruchomieniu.</value>
   </data>
   <data name="ApplicationSettingsWindow_ScreenshotsFolder" xml:space="preserve">
-    <value>Screenshots folder</value>
+    <value>Folder zrzutów ekranu</value>
   </data>
   <data name="ApplicationSettingsWindow_UseCustomScreenshotsFolder" xml:space="preserve">
-    <value>Use custom screenshots folder</value>
+    <value>Użyj niestandardowego folderu zrzutów ekranu</value>
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
-    <value>Sub folder pattern:</value>
+    <value>Wzór podfolderu:</value>
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternForWindowLabel" xml:space="preserve">
-    <value>Sub folder pattern for window:</value>
+    <value>Wzór podfolderu dla okna:</value>
   </data>
   <data name="ApplicationSettingsWindow_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Ustawienia</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportAndImport" xml:space="preserve">
-    <value>Export and import</value>
+    <value>Eksport i import</value>
   </data>
   <data name="ApplicationSettingsWindow_DoNotShareAnExportedBackupItCanContainPrivateInformationSuchAsAccountDetailsAndUploadHistory" xml:space="preserve">
-    <value>Do not share an exported backup. It can contain private information such as account details and upload history.</value>
+    <value>Nie udostępniaj wyeksportowanej kopii zapasowej. Może ona zawierać prywatne informacje, takie jak dane konta i historia przesyłania.</value>
   </data>
   <data name="ApplicationSettingsWindow_History" xml:space="preserve">
-    <value>History</value>
+    <value>Historia</value>
   </data>
   <data name="ApplicationSettingsWindow_Export" xml:space="preserve">
-    <value>Export...</value>
+    <value>Eksportuj...</value>
   </data>
   <data name="ApplicationSettingsWindow_Import" xml:space="preserve">
-    <value>Import...</value>
+    <value>Importuj...</value>
   </data>
   <data name="ApplicationSettingsWindow_ResetSettings" xml:space="preserve">
-    <value>Reset settings...</value>
+    <value>Zresetuj ustawienia...</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticCleanup" xml:space="preserve">
-    <value>Automatic cleanup</value>
+    <value>Automatyczne czyszczenie</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldBackupFiles" xml:space="preserve">
-    <value>Automatically cleanup old backup files</value>
+    <value>Automatycznie czyść stare pliki kopii zapasowych</value>
   </data>
   <data name="ApplicationSettingsWindow_AutomaticallyCleanupOldLogFiles" xml:space="preserve">
-    <value>Automatically cleanup old log files</value>
+    <value>Automatycznie czyść stare pliki dziennika</value>
   </data>
   <data name="ApplicationSettingsWindow_NumberOfFilesToKeepLabel" xml:space="preserve">
-    <value>Number of files to keep:</value>
+    <value>Liczba plików do zachowania:</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
-    <value>Main window</value>
+    <value>Główne okno</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailView" xml:space="preserve">
-    <value>Thumbnail view</value>
+    <value>Widok miniatur</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowTitle" xml:space="preserve">
-    <value>Show title</value>
+    <value>Pokaż tytuł</value>
   </data>
   <data name="ApplicationSettingsWindow_TitleLocationLabel" xml:space="preserve">
-    <value>Title location:</value>
+    <value>Lokalizacja tytułu:</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailSizeLabel" xml:space="preserve">
-    <value>Thumbnail size:</value>
+    <value>Wielkość miniaturki:</value>
   </data>
   <data name="ApplicationSettingsWindow_Reset" xml:space="preserve">
-    <value>Reset</value>
+    <value>Resetuj</value>
   </data>
   <data name="ApplicationSettingsWindow_ThumbnailClickActionLabel" xml:space="preserve">
-    <value>Thumbnail click action:</value>
+    <value>Akcja kliknięcia miniatury:</value>
   </data>
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
-    <value>Clipboard formats</value>
+    <value>Formaty schowka</value>
   </data>
   <data name="ApplicationSettingsWindow_TheseFormatsAppearUnderTheCopySubmenuInTheMainWindowContextMenu" xml:space="preserve">
-    <value>These formats appear under the Copy submenu in the main window context menu.</value>
+    <value>Te formaty są wyświetlane w podmenu Kopiuj menu kontekstowego głównego okna.</value>
   </data>
   <data name="ApplicationSettingsWindow_Add" xml:space="preserve">
-    <value>Add...</value>
+    <value>Dodaj...</value>
   </data>
   <data name="ApplicationSettingsWindow_Edit" xml:space="preserve">
-    <value>Edit...</value>
+    <value>Edytuj...</value>
   </data>
   <data name="ApplicationSettingsWindow_Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>Usuń</value>
   </data>
   <data name="ApplicationSettingsWindow_Upload" xml:space="preserve">
-    <value>Upload</value>
+    <value>Prześlij</value>
   </data>
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
-    <value>Simultaneous upload limit:</value>
+    <value>Limit jednoczesnego przesyłania:</value>
   </data>
   <data name="ApplicationSettingsWindow_ZeroDisablesTheLimit" xml:space="preserve">
-    <value>0 disables the limit</value>
+    <value>0 wyłącza limit</value>
   </data>
   <data name="ApplicationSettingsWindow_BufferSizeLabel" xml:space="preserve">
-    <value>Buffer size:</value>
+    <value>Rozmiar bufora:</value>
   </data>
   <data name="ApplicationSettingsWindow_NumberOfTimesToRetryIfUploadFailsLabel" xml:space="preserve">
-    <value>Number of times to retry if upload fails:</value>
+    <value>Liczba ponownych prób w przypadku niepowodzenia przesyłania:</value>
   </data>
   <data name="ApplicationSettingsWindow_SaveTasksToHistory" xml:space="preserve">
-    <value>Save tasks to history</value>
+    <value>Zapisz zadania do historii</value>
   </data>
   <data name="ApplicationSettingsWindow_OnlySaveIfUrlIsNotEmpty" xml:space="preserve">
-    <value>Only save if URL is not empty</value>
+    <value>Zapisuj tylko wtedy, gdy adres URL nie jest pusty</value>
   </data>
   <data name="ApplicationSettingsWindow_RecentTasks" xml:space="preserve">
-    <value>Recent tasks</value>
+    <value>Ostatnie zadania</value>
   </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
-    <value>Save recent tasks</value>
+    <value>Zapisz ostatnie zadania</value>
   </data>
   <data name="ApplicationSettingsWindow_MaximumNumberOfTasksToSaveLabel" xml:space="preserve">
-    <value>Maximum number of tasks to save:</value>
+    <value>Maksymalna liczba zadań do zapisania:</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowRecentTasksInMainWindowOnStartup" xml:space="preserve">
-    <value>Show recent tasks in main window on startup</value>
+    <value>Pokaż ostatnie zadania w głównym oknie przy starcie</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowRecentTasksInTrayMenu" xml:space="preserve">
-    <value>Show recent tasks in tray menu</value>
+    <value>Pokaż ostatnie zadania w menu zasobnika</value>
   </data>
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
-    <value>In tray menu show most recent tasks first</value>
+    <value>W menu zasobnika pokaż najpierw najnowsze zadania</value>
   </data>
   <data name="ApplicationSettingsWindow_Print" xml:space="preserve">
-    <value>Print</value>
+    <value>Drukuj</value>
   </data>
   <data name="ApplicationSettingsWindow_DontShowImagePrintSettingsDialog" xml:space="preserve">
-    <value>Don't show image print settings dialog</value>
+    <value>Nie pokazuj okna dialogowego ustawień drukowania obrazu</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
-    <value>Image print settings...</value>
+    <value>Ustawienia drukowania obrazu...</value>
   </data>
   <data name="ApplicationSettingsWindow_DontShowWindowsPrintDialog" xml:space="preserve">
-    <value>Don't show Windows print dialog</value>
+    <value>Nie pokazuj okna dialogowego drukowania systemu Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_DefaultPrinterOverrideLabel" xml:space="preserve">
-    <value>Default printer override:</value>
+    <value>Zastąpienie domyślnej drukarki:</value>
   </data>
   <data name="ApplicationSettingsWindow_Proxy" xml:space="preserve">
     <value>Proxy</value>
   </data>
   <data name="ApplicationSettingsWindow_ProxyConfigurationLabel" xml:space="preserve">
-    <value>Proxy configuration:</value>
+    <value>Konfiguracja proxy:</value>
   </data>
   <data name="ApplicationSettingsWindow_UsernameLabel" xml:space="preserve">
-    <value>Username:</value>
+    <value>Nazwa użytkownika:</value>
   </data>
   <data name="ApplicationSettingsWindow_PasswordLabel" xml:space="preserve">
-    <value>Password:</value>
+    <value>Hasło:</value>
   </data>
   <data name="ApplicationSettingsWindow_HostLabel" xml:space="preserve">
     <value>Host:</value>
@@ -770,79 +770,79 @@
     <value>Port:</value>
   </data>
   <data name="ApplicationSettingsWindow_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Zaawansowane</value>
   </data>
   <data name="ApplicationSettingsWindow_AddClipboardFormat" xml:space="preserve">
-    <value>Add clipboard format</value>
+    <value>Dodaj format schowka</value>
   </data>
   <data name="ApplicationSettingsWindow_CustomizeTheTextCopiedFromCompletedUploads" xml:space="preserve">
-    <value>Customize the text copied from completed uploads.</value>
+    <value>Dostosuj tekst kopiowany po zakończeniu przesyłania.</value>
   </data>
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
-    <value>Description</value>
+    <value>Opis</value>
   </data>
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
     <value>Format</value>
   </data>
   <data name="ApplicationSettingsWindow_RightClickToInsertAVariable" xml:space="preserve">
-    <value>Right-click to insert a variable.</value>
+    <value>Kliknij prawym przyciskiem myszy, aby wstawić zmienną.</value>
   </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Zapisz</value>
   </data>
   <data name="ApplicationSettingsWindow_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Anuluj</value>
   </data>
   <data name="ApplicationSettingsWindow_ChooseShareXPersonalFolderPath" xml:space="preserve">
-    <value>Choose ShareX personal folder path</value>
+    <value>Wybierz ścieżkę folderu osobistego ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_ChooseScreenshotsFolderPath" xml:space="preserve">
-    <value>Choose screenshots folder path</value>
+    <value>Wybierz ścieżkę folderu zrzutów ekranu</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportShareXBackup" xml:space="preserve">
-    <value>Export ShareX backup</value>
+    <value>Eksportuj kopię zapasową ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_ShareXBackup" xml:space="preserve">
-    <value>ShareX backup</value>
+    <value>Kopia zapasowa ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_ImportShareXBackup" xml:space="preserve">
-    <value>Import ShareX backup</value>
+    <value>Importuj kopię zapasową ShareX</value>
   </data>
   <data name="ApplicationSettingsWindow_EditClipboardFormat" xml:space="preserve">
-    <value>Edit clipboard format</value>
+    <value>Edytuj format schowka</value>
   </data>
   <data name="ApplicationSettingsWindow_UploadResult" xml:space="preserve">
-    <value>Upload result</value>
+    <value>Wynik przesyłania</value>
   </data>
   <data name="ApplicationSettingsWindow_ExportingBackup" xml:space="preserve">
-    <value>Exporting backup...</value>
+    <value>Eksportowanie kopii zapasowej...</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupExportedTo" xml:space="preserve">
-    <value>Backup exported to {0}</value>
+    <value>Kopia zapasowa została wyeksportowana do {0}</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupExportFailed" xml:space="preserve">
-    <value>Backup export failed.</value>
+    <value>Eksport kopii zapasowej nie powiódł się.</value>
   </data>
   <data name="ApplicationSettingsWindow_ImportingBackup" xml:space="preserve">
-    <value>Importing backup...</value>
+    <value>Importowanie kopii zapasowej...</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupImportedFrom" xml:space="preserve">
-    <value>Backup imported from {0}</value>
+    <value>Kopia zapasowa została zaimportowana z {0}</value>
   </data>
   <data name="ApplicationSettingsWindow_BackupImportFailed" xml:space="preserve">
-    <value>Backup import failed.</value>
+    <value>Import kopii zapasowej nie powiódł się.</value>
   </data>
   <data name="ApplicationSettingsWindow_SettingsReset" xml:space="preserve">
-    <value>Settings reset.</value>
+    <value>Ustawienia zostały zresetowane.</value>
   </data>
   <data name="ApplicationSettingsWindow_ErrorPrefix" xml:space="preserve">
-    <value>Error:</value>
+    <value>Błąd:</value>
   </data>
   <data name="ApplicationSettingsWindow_Dark" xml:space="preserve">
-    <value>Dark</value>
+    <value>Ciemny</value>
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
-    <value>Light</value>
+    <value>Jasny</value>
   </data>
   <data name="ApplicationSettingsWindow_AdvancedApplication" xml:space="preserve">
     <value>Aplikacja</value>

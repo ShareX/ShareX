@@ -1018,18 +1018,6 @@
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Igen</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Másolás név</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Másolás érték</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Név</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Érték</value>
-  </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 nap</value>
   </data>
@@ -1271,7 +1259,7 @@
     <value>Egérgörgő</value>
   </data>
   <data name="ScrollMethod_PageDown" xml:space="preserve">
-    <value>Page Down</value>
+    <value>Egy oldallal lejjebb</value>
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>Görgetési üzenet</value>

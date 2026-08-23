@@ -527,7 +527,7 @@
     <value>一次性</value>
   </data>
   <data name="DestinationSettings_Field_Password" xml:space="preserve">
-    <value>Password:</value>
+    <value>密码</value>
   </data>
   <data name="DestinationSettings_Field_Paste_Password" xml:space="preserve">
     <value>粘贴密码</value>
@@ -716,7 +716,7 @@
     <value>用户密钥</value>
   </data>
   <data name="DestinationSettings_Field_Username" xml:space="preserve">
-    <value>Username:</value>
+    <value>用户名</value>
   </data>
   <data name="DestinationSettings_Field_Web_API_Key" xml:space="preserve">
     <value>Web API 密钥</value>
@@ -1219,7 +1219,7 @@
     <value>name@example.com</value>
   </data>
   <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>Password:</value>
+    <value>密码</value>
   </data>
   <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
     <value>ShareX - puush 登录</value>

@@ -653,7 +653,7 @@
     <value>Persentase gambar</value>
   </data>
   <data name="EDataType_Default" xml:space="preserve">
-    <value>Default</value>
+    <value>Bawaan</value>
   </data>
   <data name="EDataType_File" xml:space="preserve">
     <value>File</value>
@@ -1018,18 +1018,6 @@
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Ya</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Salin nama</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Salin nilai</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Nama</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Nilai</value>
-  </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 Hari</value>
   </data>
@@ -1271,7 +1259,7 @@
     <value>Roda mouse</value>
   </data>
   <data name="ScrollMethod_PageDown" xml:space="preserve">
-    <value>Page Down</value>
+    <value>Halaman ke bawah</value>
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>Pesan gulir</value>
@@ -1292,7 +1280,7 @@
     <value>Atas</value>
   </data>
   <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
-    <value>Default</value>
+    <value>Bawaan</value>
   </data>
   <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
     <value>Edit gambar</value>

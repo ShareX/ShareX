@@ -744,7 +744,7 @@ Chemin du fichier : {0}</value>
     <value>Espacement</value>
   </data>
   <data name="ImageCombinerWindow_Vertical" xml:space="preserve">
-    <value>Vertical</value>
+    <value>Verticale</value>
   </data>
   <data name="ImageCombinerWindow_Wrap_after" xml:space="preserve">
     <value>Renvoyer à la ligne après</value>
@@ -1047,7 +1047,7 @@ Chemin du fichier : {0}</value>
     <value>OpenRouter</value>
   </data>
   <data name="LocalizedDisplayConverter_Vertical" xml:space="preserve">
-    <value>Vertical</value>
+    <value>Verticale</value>
   </data>
   <data name="LocalizedDisplayConverter_Vertical_bars" xml:space="preserve">
     <value>Barres verticales</value>

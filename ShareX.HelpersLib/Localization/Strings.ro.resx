@@ -548,10 +548,10 @@
     <value>Început</value>
   </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
-    <value>Dash</value>
+    <value>Linie întreruptă</value>
   </data>
   <data name="BorderStyle_DashDot" xml:space="preserve">
-    <value>DashDot</value>
+    <value>Linie-punct</value>
   </data>
   <data name="BorderStyle_DashDotDot" xml:space="preserve">
     <value>DashDotDotDot</value>
@@ -560,7 +560,7 @@
     <value>Punct</value>
   </data>
   <data name="BorderStyle_Solid" xml:space="preserve">
-    <value>Solid</value>
+    <value>Continuu</value>
   </data>
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
     <value>Cyan: {0:0.0}%, Magenta: {1:0.0}%, Galben: {2:0.0}%, Key: {3:0.0}%</value>
@@ -1018,18 +1018,6 @@
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Da</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Nume de copiere</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Copiați valoarea</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Nume</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Valoare</value>
-  </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 zi</value>
   </data>
@@ -1271,7 +1259,7 @@
     <value>Rotița mouse-ului</value>
   </data>
   <data name="ScrollMethod_PageDown" xml:space="preserve">
-    <value>Page Down</value>
+    <value>Pagină în jos</value>
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>Mesaj de derulare</value>
@@ -1289,7 +1277,7 @@
     <value>Partea de jos</value>
   </data>
   <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
-    <value>Top</value>
+    <value>Sus</value>
   </data>
   <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
     <value>Implicit</value>

@@ -46,13 +46,13 @@
     <value>Openen</value>
   </data>
   <data name="HistoryWindows_Shortened_URL" xml:space="preserve">
-    <value>Shortened URL</value>
+    <value>Verkorte URL</value>
   </data>
   <data name="HistoryWindows_Thumbnail_URL" xml:space="preserve">
     <value>Miniatuur URL</value>
   </data>
   <data name="HistoryWindows_Deletion_URL" xml:space="preserve">
-    <value>Deletion URL</value>
+    <value>Verwijderings-URL</value>
   </data>
   <data name="HistoryWindows_File" xml:space="preserve">
     <value>Bestand</value>

@@ -19,7 +19,7 @@
     <value>搜尋檔案名稱與標籤</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>進階</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>我的最愛</value>
@@ -31,7 +31,7 @@
     <value>匯入</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>設定</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>日期</value>
@@ -178,7 +178,7 @@
     <value>資料夾路徑</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>瀏覽...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>僅匯入圖片檔案</value>
@@ -187,7 +187,7 @@
     <value>略過重複檔案</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>歷史記錄設定</value>
@@ -211,7 +211,7 @@
     <value>每行一組「索引鍵=值」</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>儲存</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>確定</value>

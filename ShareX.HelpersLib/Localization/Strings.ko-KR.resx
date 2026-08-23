@@ -1018,18 +1018,6 @@
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>네</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>복사 name</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>복사 value</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>이름</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>값</value>
-  </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1일</value>
   </data>
@@ -1271,7 +1259,7 @@
     <value>마우스 휠</value>
   </data>
   <data name="ScrollMethod_PageDown" xml:space="preserve">
-    <value>Page Down</value>
+    <value>페이지 아래로</value>
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>스크롤 메시지</value>

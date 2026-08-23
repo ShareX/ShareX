@@ -19,7 +19,7 @@
     <value>Пошук за назвами файлів і тегами</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Розширені</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>Обране</value>
@@ -31,7 +31,7 @@
     <value>Імпортувати</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Налаштування</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>Дата</value>
@@ -178,7 +178,7 @@
     <value>Шлях до папки</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>Огляд...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>Імпортувати лише файли зображень</value>
@@ -187,7 +187,7 @@
     <value>Пропускати дублікати файлів</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Скасувати</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>Налаштування історії</value>
@@ -211,7 +211,7 @@
     <value>Одна пара ключ=значення в рядку</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Зберегти</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>ОК</value>

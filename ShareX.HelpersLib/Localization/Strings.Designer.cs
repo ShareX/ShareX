@@ -989,18 +989,6 @@ namespace ShareX.HelpersLib.Localization {
         public static string MyMessageBox_MyMessageBox_Yes {
             get { return ResourceManager.GetString("MyMessageBox_MyMessageBox_Yes", resourceCulture); }
         }
-        public static string ObjectListView_ObjectListView_Copy_name {
-            get { return ResourceManager.GetString("ObjectListView_ObjectListView_Copy_name", resourceCulture); }
-        }
-        public static string ObjectListView_ObjectListView_Copy_value {
-            get { return ResourceManager.GetString("ObjectListView_ObjectListView_Copy_value", resourceCulture); }
-        }
-        public static string ObjectListView_ObjectListView_Name {
-            get { return ResourceManager.GetString("ObjectListView_ObjectListView_Name", resourceCulture); }
-        }
-        public static string ObjectListView_ObjectListView_Value {
-            get { return ResourceManager.GetString("ObjectListView_ObjectListView_Value", resourceCulture); }
-        }
         public static string PastebinExpiration_D1 {
             get { return ResourceManager.GetString("PastebinExpiration_D1", resourceCulture); }
         }

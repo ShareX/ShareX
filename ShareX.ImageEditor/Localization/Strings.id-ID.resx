@@ -147,7 +147,7 @@ Simpan perubahan sebelum menutup editor gambar?</value>
     <value>Keluar</value>
   </data>
   <data name="AnnotationToolbar_OpenEllipsis" xml:space="preserve">
-    <value>Open...</value>
+    <value>Buka...</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Simpan</value>
@@ -219,7 +219,7 @@ Simpan perubahan sebelum menutup editor gambar?</value>
     <value>Kirim ke belakang</value>
   </data>
   <data name="EditorView_Undo" xml:space="preserve">
-    <value>Undo</value>
+    <value>Urungkan</value>
   </data>
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>Gaya panah</value>

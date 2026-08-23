@@ -857,7 +857,7 @@
     <value>Metagegevens</value>
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
-    <value>Monitor test</value>
+    <value>Monitortest</value>
   </data>
   <data name="HotkeyType_None" xml:space="preserve">
     <value>Geen</value>
@@ -1017,18 +1017,6 @@
   </data>
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Ja</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Kopiëren name</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Kopiëren value</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Naam</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Waarde</value>
   </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 dag</value>

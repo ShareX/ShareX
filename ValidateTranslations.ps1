@@ -44,6 +44,19 @@ $languageCatalogMap = [ordered]@{
     'zh-TW' = 'zh-TW'
 }
 $supportedCatalogCultures = @($languageCatalogMap.Values | Sort-Object -Unique)
+$localizedScriptPatterns = @{
+    'ar-YE' = '[\u0600-\u06FF]'
+    'fa-IR' = '[\u0600-\u06FF]'
+    'he-IL' = '[\u0590-\u05FF]'
+    'hi' = '[\u0900-\u097F]'
+    'ja-JP' = '[\u3040-\u30FF\u3400-\u9FFF]'
+    'ko-KR' = '[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF\u3400-\u9FFF]'
+    'ru' = '[\u0400-\u04FF]'
+    'th' = '[\u0E00-\u0E7F]'
+    'uk' = '[\u0400-\u04FF]'
+    'zh-CN' = '[\u3400-\u9FFF]'
+    'zh-TW' = '[\u3400-\u9FFF]'
+}
 
 $projects = @(
     [pscustomobject]@{
@@ -254,6 +267,25 @@ function Get-CommandPlaceholders([string]$value)
     )
 }
 
+function Get-NormalizedTranslationValue([string]$value)
+{
+    return [regex]::Replace($value.Normalize().ToLowerInvariant(), '[\p{P}\p{Z}]', '')
+}
+
+function Get-SourceHash([string]$value)
+{
+    $algorithm = [Security.Cryptography.SHA256]::Create()
+    try
+    {
+        $hash = $algorithm.ComputeHash([Text.Encoding]::UTF8.GetBytes($value))
+        return ([BitConverter]::ToString($hash)).Replace('-', '').ToLowerInvariant()
+    }
+    finally
+    {
+        $algorithm.Dispose()
+    }
+}
+
 function Test-SequenceEqual([object[]]$left, [object[]]$right)
 {
     if ($left.Count -ne $right.Count)
@@ -301,6 +333,65 @@ function Test-AllowedAxamlLiteral([string]$value)
     }
 
     return $false
+}
+
+$englishAllowlistPath = Join-Path $repositoryDirectory 'TranslationEnglishAllowlist.txt'
+$approvedEnglishEquivalents = [Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
+$usedEnglishEquivalents = [Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
+if (-not (Test-Path -LiteralPath $englishAllowlistPath -PathType Leaf))
+{
+    Add-ValidationError 'TranslationEnglishAllowlist.txt is missing.'
+}
+else
+{
+    $allowlistBytes = [IO.File]::ReadAllBytes($englishAllowlistPath)
+    if ($allowlistBytes.Length -ge 3 -and $allowlistBytes[0] -eq 0xEF -and $allowlistBytes[1] -eq 0xBB -and $allowlistBytes[2] -eq 0xBF)
+    {
+        Add-ValidationError 'TranslationEnglishAllowlist.txt has a UTF-8 BOM.'
+    }
+    $allowlistText = $strictUtf8.GetString($allowlistBytes)
+    if (-not $allowlistText.EndsWith("`r`n", [StringComparison]::Ordinal) -or $allowlistText.Replace("`r`n", '').Contains("`n"))
+    {
+        Add-ValidationError 'TranslationEnglishAllowlist.txt must use CRLF and end with a newline.'
+    }
+
+    $allowlistLineNumber = 0
+    foreach ($line in $allowlistText -split "`r`n")
+    {
+        $allowlistLineNumber++
+        if ([string]::IsNullOrWhiteSpace($line) -or $line.StartsWith('#', [StringComparison]::Ordinal))
+        {
+            continue
+        }
+
+        $parts = @($line.Split('|'))
+        if ($parts.Count -ne 4 -or $parts[0] -notmatch '^[A-Za-z0-9.]+$' -or
+            $parts[1] -notmatch '^[A-Za-z_][A-Za-z0-9_]*$' -or $parts[2] -notmatch '^[a-f0-9]{64}$')
+        {
+            Add-ValidationError "TranslationEnglishAllowlist.txt:$allowlistLineNumber is malformed."
+            continue
+        }
+
+        $cultures = @($parts[3].Split(',') | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
+        if ($cultures.Count -eq 0)
+        {
+            Add-ValidationError "TranslationEnglishAllowlist.txt:$allowlistLineNumber has no cultures."
+            continue
+        }
+        foreach ($culture in $cultures)
+        {
+            if ($culture -notin $supportedCatalogCultures)
+            {
+                Add-ValidationError "TranslationEnglishAllowlist.txt:$allowlistLineNumber contains unsupported culture '$culture'."
+                continue
+            }
+            $approval = "$($parts[0])|$culture|$($parts[1])|$($parts[2])"
+            if (-not $approvedEnglishEquivalents.Add($approval))
+            {
+                Add-ValidationError "TranslationEnglishAllowlist.txt:$allowlistLineNumber duplicates '$approval'."
+            }
+        }
+    }
 }
 
 $languageHelperPath = Join-Path $repositoryDirectory 'ShareX\LanguageHelper.cs'
@@ -405,6 +496,27 @@ foreach ($project in $projects)
             if (-not (Test-SequenceEqual (Get-CommandPlaceholders $default.Values[$key]) (Get-CommandPlaceholders $localized.Values[$key])))
             {
                 Add-ValidationError "$($project.Name)/Strings.$culture.resx: '$key' has different command placeholders."
+            }
+            $isEnglishEquivalent = $default.Values[$key] -match '[A-Za-z]' -and
+                (Get-NormalizedTranslationValue $localized.Values[$key]) -ceq (Get-NormalizedTranslationValue $default.Values[$key])
+            if ($isEnglishEquivalent)
+            {
+                $sourceHash = Get-SourceHash $default.Values[$key]
+                $approval = "$($project.Name)|$culture|$key|$sourceHash"
+                if ($approvedEnglishEquivalents.Contains($approval))
+                {
+                    $null = $usedEnglishEquivalents.Add($approval)
+                }
+                else
+                {
+                    Add-ValidationError "$($project.Name)/Strings.$culture.resx: '$key' still matches the English source without an approved invariant."
+                }
+            }
+            elseif ($localizedScriptPatterns.ContainsKey($culture) -and
+                [regex]::Matches($localized.Values[$key], '[A-Za-z]{4,}').Count -ge 2 -and
+                $localized.Values[$key] -notmatch $localizedScriptPatterns[$culture])
+            {
+                Add-ValidationError "$($project.Name)/Strings.$culture.resx: '$key' contains an English-only phrase without the expected localized script."
             }
         }
         foreach ($key in $localized.Keys)
@@ -668,6 +780,14 @@ foreach ($project in $projects)
         Total = $defaultCount + ($localizedCounts | Measure-Object -Sum).Sum
         Status = if ($errors.Count -eq $projectErrorCount) { 'Complete' } else { 'Failed' }
     })
+}
+
+foreach ($approval in $approvedEnglishEquivalents)
+{
+    if (-not $usedEnglishEquivalents.Contains($approval))
+    {
+        Add-ValidationError "TranslationEnglishAllowlist.txt contains stale approval '$approval'."
+    }
 }
 
 Write-Host

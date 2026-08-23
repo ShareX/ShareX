@@ -147,7 +147,7 @@ Pretende guardar as alterações antes de fechar o editor de imagens?</value>
     <value>Sair</value>
   </data>
   <data name="AnnotationToolbar_OpenEllipsis" xml:space="preserve">
-    <value>Open...</value>
+    <value>Abrir...</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Guardar</value>

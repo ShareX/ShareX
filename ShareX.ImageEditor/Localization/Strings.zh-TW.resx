@@ -147,7 +147,7 @@
     <value>結束</value>
   </data>
   <data name="AnnotationToolbar_OpenEllipsis" xml:space="preserve">
-    <value>Open...</value>
+    <value>開啟...</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>儲存</value>

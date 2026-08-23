@@ -363,7 +363,7 @@ Filsti: {0}</value>
     <value>ShareX – Udklipsholdervisning</value>
   </data>
   <data name="DirectoryIndexerViewModel_Index_for" xml:space="preserve">
-    <value>Index for {0}</value>
+    <value>Indeks for {0}</value>
   </data>
   <data name="DirectoryIndexerViewModel_Text" xml:space="preserve">
     <value>Tekst</value>
@@ -897,7 +897,7 @@ Filsti: {0}</value>
     <value>Genereret af {0} den {1:yyyy-MM-dd 'at' HH:mm:ss 'UTC'}</value>
   </data>
   <data name="IndexerHtml_Index_for" xml:space="preserve">
-    <value>Index for {0}</value>
+    <value>Indeks for {0}</value>
   </data>
   <data name="IndexerHtml_One_file" xml:space="preserve">
     <value>{0:n0} fil</value>

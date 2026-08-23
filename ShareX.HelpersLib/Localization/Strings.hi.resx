@@ -980,7 +980,7 @@
     <value>वीडियो थंबनेल निर्माता</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
-    <value>Hue: {0:0.0}°, Saturation: {1:0.0}%, Brightness: {2:0.0}%</value>
+    <value>रंगत: {0:0.0}°, संतृप्ति: {1:0.0}%, चमक: {2:0.0}%</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>अनुकूलित छवि अपलोडर</value>
@@ -1017,18 +1017,6 @@
   </data>
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>हाँ</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>नाम कॉपी करें</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>मान कॉपी करें</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>नाम</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>मान</value>
   </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 दिन</value>

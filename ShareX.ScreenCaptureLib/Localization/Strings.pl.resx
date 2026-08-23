@@ -239,7 +239,7 @@
     <value>Wstrzymaj</value>
   </data>
   <data name="ScreenRecordWindow_Restart" xml:space="preserve">
-    <value>Restart</value>
+    <value>Uruchom ponownie</value>
   </data>
   <data name="ScreenRecordWindow_Abort" xml:space="preserve">
     <value>Przerwij</value>

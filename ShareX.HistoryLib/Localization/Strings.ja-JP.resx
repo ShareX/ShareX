@@ -19,7 +19,7 @@
     <value>ファイル名とタグを検索</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>詳細</value>
   </data>
   <data name="HistoryWindows_Favorites" xml:space="preserve">
     <value>お気に入り</value>
@@ -31,7 +31,7 @@
     <value>インポート</value>
   </data>
   <data name="HistoryWindows_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>設定</value>
   </data>
   <data name="HistoryWindows_Date" xml:space="preserve">
     <value>日付</value>
@@ -178,7 +178,7 @@
     <value>フォルダーのパス</value>
   </data>
   <data name="HistoryWindows_Browse" xml:space="preserve">
-    <value>Browse...</value>
+    <value>参照...</value>
   </data>
   <data name="HistoryWindows_Only_import_image_files" xml:space="preserve">
     <value>画像ファイルのみインポート</value>
@@ -187,7 +187,7 @@
     <value>重複ファイルをスキップ</value>
   </data>
   <data name="HistoryWindows_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>キャンセル</value>
   </data>
   <data name="HistoryWindows_History_settings" xml:space="preserve">
     <value>履歴設定</value>
@@ -211,7 +211,7 @@
     <value>1 行につき 1 つのキー=値ペア</value>
   </data>
   <data name="HistoryWindows_Save" xml:space="preserve">
-    <value>Save</value>
+    <value>保存</value>
   </data>
   <data name="HistoryWindows_OK" xml:space="preserve">
     <value>OK</value>

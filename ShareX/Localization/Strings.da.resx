@@ -1859,7 +1859,7 @@
     <value>Åbn logfil...</value>
   </data>
   <data name="DebugLogWindow_UploadLog" xml:space="preserve">
-    <value>Upload log...</value>
+    <value>Uploadlog...</value>
   </data>
   <data name="DebugLogWindow_StartupPath" xml:space="preserve">
     <value>Startsti:</value>

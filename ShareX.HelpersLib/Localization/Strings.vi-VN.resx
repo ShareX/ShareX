@@ -563,7 +563,7 @@
     <value>In đậm</value>
   </data>
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
-    <value>Cyan: {0:0.0}%, Magenta: {1:0.0}%, Yellow: {2:0.0}%, Key: {3:0.0}%</value>
+    <value>Xanh lơ: {0:0.0}%, Hồng sẫm: {1:0.0}%, Vàng: {2:0.0}%, Đen: {3:0.0}%</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Đóng</value>
@@ -1018,18 +1018,6 @@
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
     <value>Đồng ý</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Sao chép tên</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Sao chép giá trị</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Tên</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Giá trị</value>
-  </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 Ngày</value>
   </data>
@@ -1163,7 +1151,7 @@
     <value>Ngẫu nhiên</value>
   </data>
   <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
-    <value>Window</value>
+    <value>Cửa sổ</value>
   </data>
   <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
     <value>Tên máy tính</value>
@@ -1271,7 +1259,7 @@
     <value>Con lăn chuột</value>
   </data>
   <data name="ScrollMethod_PageDown" xml:space="preserve">
-    <value>Page Down</value>
+    <value>Trang xuống</value>
   </data>
   <data name="ScrollMethod_ScrollMessage" xml:space="preserve">
     <value>Thông báo cuộn</value>

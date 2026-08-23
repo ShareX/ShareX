@@ -984,7 +984,7 @@ De waarde moet tussen 0 en 255 liggen.</value>
     <value>90° draaien</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate180" xml:space="preserve">
-    <value>Rotate 180°</value>
+    <value>180° draaien</value>
   </data>
   <data name="ImageEffectEnum_ImageRotateFlipType_Rotate270" xml:space="preserve">
     <value>270° draaien</value>
