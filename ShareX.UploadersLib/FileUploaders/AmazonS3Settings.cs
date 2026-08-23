@@ -42,6 +42,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public AmazonS3StorageClass StorageClass { get; set; }
         public bool SetPublicACL { get; set; } = true;
         public bool SignedPayload { get; set; }
+        public bool UseMultipartUpload { get; set; }
         public bool RemoveExtensionImage { get; set; }
         public bool RemoveExtensionVideo { get; set; }
         public bool RemoveExtensionText { get; set; }

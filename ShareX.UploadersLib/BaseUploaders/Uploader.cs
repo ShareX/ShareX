@@ -150,6 +150,31 @@ namespace ShareX.UploadersLib
             return SendRequestAsync(method, url, content, args, headers, cookies, true, cancellationToken);
         }
 
+        protected Task<string> SendRequestAsync(HttpMethod method, string url, Stream data, long position, long length, string contentType = null,
+            Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null,
+            CancellationToken cancellationToken = default)
+        {
+            if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
+            long streamLength = GetStreamLength(data);
+
+            if (position < 0 || position > streamLength)
+            {
+                throw new ArgumentOutOfRangeException(nameof(position), "The requested upload position must be within the stream.");
+            }
+
+            if (length < 0 || length > streamLength - position)
+            {
+                throw new ArgumentOutOfRangeException(nameof(length), "The requested upload range must be within the stream.");
+            }
+
+            HttpContent content = CreateStreamContent(data, position, length, contentType);
+            return SendRequestAsync(method, url, content, args, headers, cookies, true, cancellationToken);
+        }
+
         protected Task<string> SendRequestAsync(HttpMethod method, string url, string content, string contentType = null, Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, CancellationToken cancellationToken = default)
         {
