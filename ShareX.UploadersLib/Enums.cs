@@ -109,6 +109,8 @@ namespace ShareX.UploadersLib
         Localhostr,
         [Description("Lambda")]
         Lambda,
+        [Description("img.fish")]
+        ImgFish,
         [Description("Pomf")]
         Pomf,
         [Description("Uguu")]

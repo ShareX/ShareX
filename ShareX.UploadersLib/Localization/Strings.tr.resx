@@ -460,6 +460,9 @@
   <data name="DestinationSettings_Field_Exposure" xml:space="preserve">
     <value>Görünürlük</value>
   </data>
+  <data name="DestinationSettings_Field_File_ID_Length" xml:space="preserve">
+    <value>Dosya kimliği uzunluğu</value>
+  </data>
   <data name="DestinationSettings_Field_Files" xml:space="preserve">
     <value>Dosyalar</value>
   </data>
@@ -700,6 +703,9 @@
   <data name="DestinationSettings_Field_Use_Long_Link" xml:space="preserve">
     <value>Uzun bağlantı kullan</value>
   </data>
+  <data name="DestinationSettings_Field_Use_Multipart_Upload" xml:space="preserve">
+    <value>Çok parçalı yüklemeyi kullan</value>
+  </data>
   <data name="DestinationSettings_Field_Use_Path_Style" xml:space="preserve">
     <value>Yol stilini kullan</value>
   </data>
@@ -891,6 +897,9 @@
   </data>
   <data name="FileDestination_GoogleDrive" xml:space="preserve">
     <value>Google Drive</value>
+  </data>
+  <data name="FileDestination_ImgFish" xml:space="preserve">
+    <value>img.fish</value>
   </data>
   <data name="FileDestination_Lambda" xml:space="preserve">
     <value>Lambda</value>

@@ -460,6 +460,9 @@
   <data name="DestinationSettings_Field_Exposure" xml:space="preserve">
     <value>Visibilidade</value>
   </data>
+  <data name="DestinationSettings_Field_File_ID_Length" xml:space="preserve">
+    <value>Comprimento do ID do ficheiro</value>
+  </data>
   <data name="DestinationSettings_Field_Files" xml:space="preserve">
     <value>Ficheiros</value>
   </data>
@@ -700,6 +703,9 @@
   <data name="DestinationSettings_Field_Use_Long_Link" xml:space="preserve">
     <value>Utilizar ligação longa</value>
   </data>
+  <data name="DestinationSettings_Field_Use_Multipart_Upload" xml:space="preserve">
+    <value>Utilizar carregamento multipartes</value>
+  </data>
   <data name="DestinationSettings_Field_Use_Path_Style" xml:space="preserve">
     <value>Utilizar estilo de caminho</value>
   </data>
@@ -891,6 +897,9 @@
   </data>
   <data name="FileDestination_GoogleDrive" xml:space="preserve">
     <value>Google Drive</value>
+  </data>
+  <data name="FileDestination_ImgFish" xml:space="preserve">
+    <value>img.fish</value>
   </data>
   <data name="FileDestination_Lambda" xml:space="preserve">
     <value>Lambda</value>

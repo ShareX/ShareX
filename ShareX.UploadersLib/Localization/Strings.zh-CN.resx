@@ -460,6 +460,9 @@
   <data name="DestinationSettings_Field_Exposure" xml:space="preserve">
     <value>可见性</value>
   </data>
+  <data name="DestinationSettings_Field_File_ID_Length" xml:space="preserve">
+    <value>文件 ID 长度</value>
+  </data>
   <data name="DestinationSettings_Field_Files" xml:space="preserve">
     <value>文件</value>
   </data>
@@ -700,6 +703,9 @@
   <data name="DestinationSettings_Field_Use_Long_Link" xml:space="preserve">
     <value>使用长链接</value>
   </data>
+  <data name="DestinationSettings_Field_Use_Multipart_Upload" xml:space="preserve">
+    <value>使用分段上传</value>
+  </data>
   <data name="DestinationSettings_Field_Use_Path_Style" xml:space="preserve">
     <value>使用路径样式</value>
   </data>
@@ -891,6 +897,9 @@
   </data>
   <data name="FileDestination_GoogleDrive" xml:space="preserve">
     <value>Google Drive</value>
+  </data>
+  <data name="FileDestination_ImgFish" xml:space="preserve">
+    <value>img.fish</value>
   </data>
   <data name="FileDestination_Lambda" xml:space="preserve">
     <value>Lambda</value>

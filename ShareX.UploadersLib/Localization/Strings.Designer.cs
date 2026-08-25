@@ -297,6 +297,8 @@ namespace ShareX.UploadersLib.Localization
 
         public static string DestinationSettings_Field_Exposure => ResourceManager.GetString("DestinationSettings_Field_Exposure", resourceCulture) ?? string.Empty;
 
+        public static string DestinationSettings_Field_File_ID_Length => ResourceManager.GetString("DestinationSettings_Field_File_ID_Length", resourceCulture) ?? string.Empty;
+
         public static string DestinationSettings_Field_Files => ResourceManager.GetString("DestinationSettings_Field_Files", resourceCulture) ?? string.Empty;
 
         public static string DestinationSettings_Field_Folder_ID => ResourceManager.GetString("DestinationSettings_Field_Folder_ID", resourceCulture) ?? string.Empty;
@@ -457,6 +459,8 @@ namespace ShareX.UploadersLib.Localization
 
         public static string DestinationSettings_Field_Use_Long_Link => ResourceManager.GetString("DestinationSettings_Field_Use_Long_Link", resourceCulture) ?? string.Empty;
 
+        public static string DestinationSettings_Field_Use_Multipart_Upload => ResourceManager.GetString("DestinationSettings_Field_Use_Multipart_Upload", resourceCulture) ?? string.Empty;
+
         public static string DestinationSettings_Field_Use_Path_Style => ResourceManager.GetString("DestinationSettings_Field_Use_Path_Style", resourceCulture) ?? string.Empty;
 
         public static string DestinationSettings_Field_Use_Preview_Links => ResourceManager.GetString("DestinationSettings_Field_Use_Preview_Links", resourceCulture) ?? string.Empty;
@@ -584,6 +588,8 @@ namespace ShareX.UploadersLib.Localization
         public static string FileDestination_GoogleCloudStorage => ResourceManager.GetString("FileDestination_GoogleCloudStorage", resourceCulture) ?? string.Empty;
 
         public static string FileDestination_GoogleDrive => ResourceManager.GetString("FileDestination_GoogleDrive", resourceCulture) ?? string.Empty;
+
+        public static string FileDestination_ImgFish => ResourceManager.GetString("FileDestination_ImgFish", resourceCulture) ?? string.Empty;
 
         public static string FileDestination_Lambda => ResourceManager.GetString("FileDestination_Lambda", resourceCulture) ?? string.Empty;
 

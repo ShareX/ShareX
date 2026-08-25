@@ -296,6 +296,12 @@ namespace ShareX.UploadersLib
 
         #endregion Lambda
 
+        #region img.fish
+
+        public ImgFishSettings ImgFishSettings { get; set; } = new ImgFishSettings();
+
+        #endregion img.fish
+
         #region LobFile
 
         public LobFileSettings LithiioSettings { get; set; } = new LobFileSettings();

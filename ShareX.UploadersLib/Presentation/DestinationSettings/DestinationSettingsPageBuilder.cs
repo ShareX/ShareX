@@ -90,6 +90,10 @@ internal sealed class DestinationSettingsPageBuilder
         {
             cards.AddRange(BuildAmazonS3Cards());
         }
+        else if (definition.Id == "img-fish")
+        {
+            cards.Add(BuildImgFishCard());
+        }
 
         List<Control> simpleEditors = [];
         foreach (PropertyInfo property in properties)
@@ -253,6 +257,20 @@ internal sealed class DestinationSettingsPageBuilder
             usePathStyle,
             Row(FormatLabel("RemoveFileExtensionOn") + ":",
                 HorizontalControls(removeImageExtension, removeVideoExtension, removeTextExtension)));
+    }
+
+    private Control BuildImgFishCard()
+    {
+        ImgFishSettings settings = _config.ImgFishSettings;
+        TextBox apiKey = Text(() => settings.APIKey, value => settings.APIKey = value);
+        apiKey.PasswordChar = '●';
+        NumericUpDown fileIDLength = Number(settings.FileIDLength, value => settings.FileIDLength = (int)value, typeof(int));
+        fileIDLength.Minimum = ImgFishSettings.MinFileIDLength;
+        fileIDLength.Maximum = ImgFishSettings.MaxFileIDLength;
+
+        return Card(Localization.Strings.DestinationSettings_Settings,
+            Row(FormatLabel(nameof(settings.APIKey)) + ":", apiKey),
+            Row(FormatLabel(nameof(settings.FileIDLength)) + ":", fileIDLength));
     }
 
     private Control BuildImgurAlbumsCard()
@@ -751,6 +769,7 @@ internal sealed class DestinationSettingsPageBuilder
             "onedrive" => member.Name == nameof(UploadersConfig.OneDriveV2SelectedFolder),
             "box" => member.Name == nameof(UploadersConfig.BoxSelectedFolder),
             "amazon-s3" => member.Name == nameof(UploadersConfig.AmazonS3Settings),
+            "img-fish" => member.Name == nameof(UploadersConfig.ImgFishSettings),
             _ => false
         };
     }
