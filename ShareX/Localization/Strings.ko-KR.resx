@@ -2515,6 +2515,9 @@
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>텍스트 또는 URL 입력</value>
   </data>
+  <data name="CustomUploaderSettingsWindow_TextUploadSample" xml:space="preserve">
+    <value>ShareX 텍스트 업로드 테스트</value>
+  </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>미리 보기 URL</value>
   </data>

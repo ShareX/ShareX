@@ -162,7 +162,7 @@ public partial class CustomUploaderSettingsWindow : Window
 
     private async void OnTestTextClick(object? sender, RoutedEventArgs e)
     {
-        string? text = await TextUploadWindow.ShowAsync();
+        string? text = await TextUploadWindow.ShowAsync(Strings.CustomUploaderSettingsWindow_TextUploadSample);
         if (text != null) await RunTestAsync(CustomUploaderDestinationType.TextUploader, _viewModel?.CustomTextUploaderSelected ?? -1, text);
     }
 

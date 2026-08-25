@@ -4722,6 +4722,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_TextOrURLInput", resourceCulture);
             }
         }
+        public static string CustomUploaderSettingsWindow_TextUploadSample {
+            get {
+                return ResourceManager.GetString("CustomUploaderSettingsWindow_TextUploadSample", resourceCulture);
+            }
+        }
         public static string CustomUploaderSettingsWindow_ThumbnailURL {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_ThumbnailURL", resourceCulture);
