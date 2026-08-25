@@ -99,6 +99,8 @@ namespace ShareX.UploadersLib
         BackblazeB2,
         [Description("ownCloud / Nextcloud")]
         OwnCloud,
+        [Description("Immich")]
+        Immich,
         [Description("MediaFire")]
         MediaFire,
         [Description("Pushbullet")]

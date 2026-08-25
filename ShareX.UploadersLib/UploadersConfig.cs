@@ -405,6 +405,14 @@ namespace ShareX.UploadersLib
 
         #endregion Google Cloud Storage
 
+        #region Immich
+
+        public string ImmichURL { get; set; } = "";
+        [JsonEncrypt]
+        public string ImmichAPIKey { get; set; } = "";
+
+        #endregion Immich
+
         #endregion File uploaders
 
         #region URL shorteners

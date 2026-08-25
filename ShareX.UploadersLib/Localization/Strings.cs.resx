@@ -901,6 +901,9 @@
   <data name="FileDestination_ImgFish" xml:space="preserve">
     <value>img.fish</value>
   </data>
+  <data name="FileDestination_Immich" xml:space="preserve">
+    <value>Immich</value>
+  </data>
   <data name="FileDestination_Lambda" xml:space="preserve">
     <value>Lambda</value>
   </data>
