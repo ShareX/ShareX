@@ -2374,9 +2374,6 @@
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>बॉडी प्रकार</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_Cancel" xml:space="preserve">
-    <value>रद्द करें</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_ClearConfirmation" xml:space="preserve">
     <value>सभी अनुकूलित अपलोडर हटाएँ?</value>
   </data>
@@ -2518,15 +2515,6 @@
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>पाठ या URL इनपुट</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_TextToUpload" xml:space="preserve">
-    <value>अपलोड करने का पाठ:</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TextUploadSample" xml:space="preserve">
-    <value>ShareX पाठ अपलोड परीक्षण</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TextUploadTestTitle" xml:space="preserve">
-    <value>ShareX - पाठ अपलोड परीक्षण</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>थंबनेल URL</value>
   </data>
@@ -2535,9 +2523,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolderDialogTitle" xml:space="preserve">
     <value>अनुकूलित अपलोडर फ़ोल्डर अपडेट करें</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_Upload" xml:space="preserve">
-    <value>अपलोड करें</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UploadedFile" xml:space="preserve">
     <value>अपलोड की गई फ़ाइल</value>

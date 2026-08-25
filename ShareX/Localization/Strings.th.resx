@@ -2374,9 +2374,6 @@
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>เนื้อหา ชนิด</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_Cancel" xml:space="preserve">
-    <value>ยกเลิก</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_ClearConfirmation" xml:space="preserve">
     <value>เอาออก ทั้งหมด ตัวอัปโหลดกำหนดเอง?</value>
   </data>
@@ -2518,15 +2515,6 @@
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>อินพุตข้อความหรือ URL</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_TextToUpload" xml:space="preserve">
-    <value>ข้อความ เพื่อ อัปโหลด:</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TextUploadSample" xml:space="preserve">
-    <value>ShareX การอัปโหลดข้อความ ทดสอบ</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TextUploadTestTitle" xml:space="preserve">
-    <value>ShareX - ทดสอบการอัปโหลดข้อความ</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>URL ภาพขนาดย่อ</value>
   </data>
@@ -2535,9 +2523,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolderDialogTitle" xml:space="preserve">
     <value>อัปเดต ตัวอัปโหลดกำหนดเอง โฟลเดอร์</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_Upload" xml:space="preserve">
-    <value>อัปโหลด</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UploadedFile" xml:space="preserve">
     <value>อัปโหลดแล้ว ไฟล์</value>

@@ -2374,9 +2374,6 @@
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>Gövde türü</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_Cancel" xml:space="preserve">
-    <value>İptal</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_ClearConfirmation" xml:space="preserve">
     <value>Tüm özel yükleyiciler kaldırılsın mı?</value>
   </data>
@@ -2518,15 +2515,6 @@
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>Metin veya URL girdisi</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_TextToUpload" xml:space="preserve">
-    <value>Yüklenecek metin:</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TextUploadSample" xml:space="preserve">
-    <value>ShareX metin yükleme testi</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TextUploadTestTitle" xml:space="preserve">
-    <value>ShareX - Metin yükleme testi</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>Küçük resim URL&apos;&apos;si</value>
   </data>
@@ -2535,9 +2523,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolderDialogTitle" xml:space="preserve">
     <value>Özel yükleyici klasörünü güncelle</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_Upload" xml:space="preserve">
-    <value>Yükle</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UploadedFile" xml:space="preserve">
     <value>Yüklenen dosya</value>

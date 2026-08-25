@@ -2374,9 +2374,6 @@
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>본문 형식</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_Cancel" xml:space="preserve">
-    <value>취소</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_ClearConfirmation" xml:space="preserve">
     <value>모든 사용자 지정 업로더를 제거하시겠습니까?</value>
   </data>
@@ -2518,15 +2515,6 @@
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>텍스트 또는 URL 입력</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_TextToUpload" xml:space="preserve">
-    <value>업로드할 텍스트:</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TextUploadSample" xml:space="preserve">
-    <value>ShareX 텍스트 업로드 테스트</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TextUploadTestTitle" xml:space="preserve">
-    <value>ShareX - 텍스트 업로드 테스트</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>미리 보기 URL</value>
   </data>
@@ -2535,9 +2523,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolderDialogTitle" xml:space="preserve">
     <value>사용자 지정 업로더 폴더 업데이트</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_Upload" xml:space="preserve">
-    <value>업로드</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UploadedFile" xml:space="preserve">
     <value>업로드된 파일</value>

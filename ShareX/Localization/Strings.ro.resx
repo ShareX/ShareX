@@ -2374,9 +2374,6 @@
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>Tip corp</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_Cancel" xml:space="preserve">
-    <value>Anulare</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_ClearConfirmation" xml:space="preserve">
     <value>Eliminați toate serviciile de încărcare personalizate?</value>
   </data>
@@ -2518,15 +2515,6 @@
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>Introducere text sau URL</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_TextToUpload" xml:space="preserve">
-    <value>Text de încărcat:</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TextUploadSample" xml:space="preserve">
-    <value>Test de încărcare text ShareX</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TextUploadTestTitle" xml:space="preserve">
-    <value>ShareX - Test încărcare text</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>URL miniatură</value>
   </data>
@@ -2535,9 +2523,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolderDialogTitle" xml:space="preserve">
     <value>Actualizează dosarul serviciilor personalizate</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_Upload" xml:space="preserve">
-    <value>Încarcă</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UploadedFile" xml:space="preserve">
     <value>Fișier încărcat</value>

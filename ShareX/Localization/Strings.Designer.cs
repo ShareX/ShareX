@@ -4487,11 +4487,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_BodyType", resourceCulture);
             }
         }
-        public static string CustomUploaderSettingsWindow_Cancel {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_Cancel", resourceCulture);
-            }
-        }
         public static string CustomUploaderSettingsWindow_ClearConfirmation {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_ClearConfirmation", resourceCulture);
@@ -4727,21 +4722,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_TextOrURLInput", resourceCulture);
             }
         }
-        public static string CustomUploaderSettingsWindow_TextToUpload {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_TextToUpload", resourceCulture);
-            }
-        }
-        public static string CustomUploaderSettingsWindow_TextUploadSample {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_TextUploadSample", resourceCulture);
-            }
-        }
-        public static string CustomUploaderSettingsWindow_TextUploadTestTitle {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_TextUploadTestTitle", resourceCulture);
-            }
-        }
         public static string CustomUploaderSettingsWindow_ThumbnailURL {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_ThumbnailURL", resourceCulture);
@@ -4755,11 +4735,6 @@ namespace ShareX.Localization {
         public static string CustomUploaderSettingsWindow_UpdateFolderDialogTitle {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_UpdateFolderDialogTitle", resourceCulture);
-            }
-        }
-        public static string CustomUploaderSettingsWindow_Upload {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_Upload", resourceCulture);
             }
         }
         public static string CustomUploaderSettingsWindow_UploadedFile {
