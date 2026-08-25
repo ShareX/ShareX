@@ -2276,7 +2276,7 @@
     <value>Библиотека загрузчиков</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>Руководство по пользовательским загрузчикам</value>
+    <value>Руководство по пользовательским загрузчикам...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>Поиск загрузчиков</value>
@@ -2285,25 +2285,25 @@
     <value>Создать</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>Импортировать</value>
+    <value>Импортировать...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>Дублировать выбранный загрузчик</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>Экспортировать выбранный загрузчик</value>
+    <value>Экспортировать выбранный загрузчик...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>Удалить выбранный загрузчик</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>Экспортировать все</value>
+    <value>Экспортировать все...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>Очистить все</value>
+    <value>Очистить все...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>Обновить папку</value>
+    <value>Обновить папку...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>Обзор</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>Проверить синтаксис URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>Проверить синтаксис URL...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>Ввод текста или URL</value>

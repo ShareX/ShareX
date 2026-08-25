@@ -2276,7 +2276,7 @@
     <value>Knihovna nahrávání</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>Průvodce vlastním nahráváním</value>
+    <value>Průvodce vlastním nahráváním...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>Hledat nahrávání</value>
@@ -2285,25 +2285,25 @@
     <value>Nové</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>Importovat</value>
+    <value>Importovat...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>Duplikovat vybrané nahrávání</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>Exportovat vybrané nahrávání</value>
+    <value>Exportovat vybrané nahrávání...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>Odebrat vybrané nahrávání</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>Exportovat vše</value>
+    <value>Exportovat vše...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>Vymazat vše</value>
+    <value>Vymazat vše...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>Aktualizovat složku</value>
+    <value>Aktualizovat složku...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>Přehled</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>Otestovat syntaxi URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>Otestovat syntaxi URL...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>Vstup textu nebo adresy URL</value>

@@ -2276,7 +2276,7 @@
     <value>अपलोडर लाइब्रेरी</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>अनुकूलित अपलोडर मार्गदर्शिका</value>
+    <value>अनुकूलित अपलोडर मार्गदर्शिका...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>अपलोडर खोजें</value>
@@ -2285,25 +2285,25 @@
     <value>नया</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>आयात करें</value>
+    <value>आयात करें...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>चुने गए अपलोडर की प्रतिलिपि बनाएँ</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>चुना गया अपलोडर निर्यात करें</value>
+    <value>चुना गया अपलोडर निर्यात करें...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>चुना गया अपलोडर हटाएँ</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>सभी निर्यात करें</value>
+    <value>सभी निर्यात करें...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>सभी साफ़ करें</value>
+    <value>सभी साफ़ करें...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>फ़ोल्डर अपडेट करें</value>
+    <value>फ़ोल्डर अपडेट करें...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>अवलोकन</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>URL सिंटैक्स जाँचें</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>URL सिंटैक्स जाँचें...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>पाठ या URL इनपुट</value>

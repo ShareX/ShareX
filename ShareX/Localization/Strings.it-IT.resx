@@ -2276,7 +2276,7 @@
     <value>Libreria uploader</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>Guida agli uploader personalizzati</value>
+    <value>Guida agli uploader personalizzati...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>Cerca uploader</value>
@@ -2285,25 +2285,25 @@
     <value>Nuovo</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>Importa</value>
+    <value>Importa...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>Duplica uploader selezionato</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>Esporta uploader selezionato</value>
+    <value>Esporta uploader selezionato...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>Rimuovi uploader selezionato</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>Esporta tutto</value>
+    <value>Esporta tutto...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>Cancella tutto</value>
+    <value>Cancella tutto...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>Aggiorna cartella</value>
+    <value>Aggiorna cartella...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>Panoramica</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>Verifica sintassi URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>Verifica sintassi URL...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>Input di testo o URL</value>

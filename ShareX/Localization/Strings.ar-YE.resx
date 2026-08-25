@@ -2276,7 +2276,7 @@
     <value>مكتبة برامج الرفع</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>دليل الرافع المخصص</value>
+    <value>دليل الرافع المخصص...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>البحث عن برامج رفع</value>
@@ -2285,25 +2285,25 @@
     <value>جديد</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>استيراد</value>
+    <value>استيراد...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>تكرار الرافع المحدد</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>تصدير الرافع المحدد</value>
+    <value>تصدير الرافع المحدد...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>إزالة الرافع المحدد</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>تصدير الكل</value>
+    <value>تصدير الكل...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>مسح الكل</value>
+    <value>مسح الكل...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>تحديث المجلد</value>
+    <value>تحديث المجلد...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>نظرة عامة</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>اختبار صياغة الرابط</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>اختبار صياغة الرابط...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>إدخال نص أو رابط</value>

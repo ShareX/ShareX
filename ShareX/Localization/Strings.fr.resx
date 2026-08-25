@@ -2276,7 +2276,7 @@
     <value>Bibliothèque d’outils</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>Guide des outils personnalisés</value>
+    <value>Guide des outils personnalisés...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>Rechercher des outils</value>
@@ -2285,25 +2285,25 @@
     <value>Nouveau</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>Importer</value>
+    <value>Importer...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>Dupliquer l’outil sélectionné</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>Exporter l’outil sélectionné</value>
+    <value>Exporter l’outil sélectionné...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>Supprimer l’outil sélectionné</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>Tout exporter</value>
+    <value>Tout exporter...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>Tout effacer</value>
+    <value>Tout effacer...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>Mettre à jour le dossier</value>
+    <value>Mettre à jour le dossier...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>Vue d’ensemble</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>Tester la syntaxe de l’URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>Tester la syntaxe de l’URL...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>Entrée de texte ou d’URL</value>

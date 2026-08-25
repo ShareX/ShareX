@@ -510,7 +510,7 @@
                                                 Click="OnSyntaxTestClick">
                                             <StackPanel Orientation="Horizontal" Spacing="6">
                                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.test_tube_2}" FontSize="15"/>
-                                                <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_TestURLSyntax}"/>
+                                                <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_TestURLSyntaxButton}"/>
                                             </StackPanel>
                                         </Button>
                                     </StackPanel>

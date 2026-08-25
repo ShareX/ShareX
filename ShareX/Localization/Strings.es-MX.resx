@@ -2276,7 +2276,7 @@
     <value>Biblioteca de cargadores</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>Guía de cargadores personalizados</value>
+    <value>Guía de cargadores personalizados...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>Buscar cargadores</value>
@@ -2285,25 +2285,25 @@
     <value>Nuevo</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>Importar</value>
+    <value>Importar...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>Duplicar el cargador seleccionado</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>Exportar el cargador seleccionado</value>
+    <value>Exportar el cargador seleccionado...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>Quitar el cargador seleccionado</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>Exportar todo</value>
+    <value>Exportar todo...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>Borrar todo</value>
+    <value>Borrar todo...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>Actualizar carpeta</value>
+    <value>Actualizar carpeta...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>Resumen</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>Probar sintaxis de URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>Probar sintaxis de URL...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>Entrada de texto o URL</value>

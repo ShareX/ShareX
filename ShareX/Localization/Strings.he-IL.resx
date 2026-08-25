@@ -2276,7 +2276,7 @@
     <value>ספריית מעלים</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>מדריך למעלה מותאם אישית</value>
+    <value>מדריך למעלה מותאם אישית...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>חיפוש מעלים</value>
@@ -2285,25 +2285,25 @@
     <value>חדש</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>ייבוא</value>
+    <value>ייבוא...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>שכפל את המעלה שנבחר</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>ייצא את המעלה שנבחר</value>
+    <value>ייצא את המעלה שנבחר...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>הסר את המעלה שנבחר</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>ייצא הכול</value>
+    <value>ייצא הכול...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>נקה הכול</value>
+    <value>נקה הכול...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>עדכן תיקייה</value>
+    <value>עדכן תיקייה...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>סקירה</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>בדיקת תחביר URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>בדיקת תחביר URL...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>קלט טקסט או URL</value>

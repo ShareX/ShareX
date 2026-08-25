@@ -2276,7 +2276,7 @@
     <value>Uploaderbibliotheek</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>Handleiding voor aangepaste uploaders</value>
+    <value>Handleiding voor aangepaste uploaders...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>Uploaders zoeken</value>
@@ -2285,25 +2285,25 @@
     <value>Nieuw</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>Importeren</value>
+    <value>Importeren...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>Geselecteerde uploader dupliceren</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>Geselecteerde uploader exporteren</value>
+    <value>Geselecteerde uploader exporteren...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>Geselecteerde uploader verwijderen</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>Alles exporteren</value>
+    <value>Alles exporteren...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>Alles wissen</value>
+    <value>Alles wissen...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>Map bijwerken</value>
+    <value>Map bijwerken...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>Overzicht</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>URL-syntaxis testen</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>URL-syntaxis testen...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>Tekst- of URL-invoer</value>

@@ -2276,7 +2276,7 @@
     <value>Yükleyici kitaplığı</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>Özel yükleyici kılavuzu</value>
+    <value>Özel yükleyici kılavuzu...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>Yükleyicilerde ara</value>
@@ -2285,25 +2285,25 @@
     <value>Yeni</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>İçe aktar</value>
+    <value>İçe aktar...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>Seçili yükleyiciyi çoğalt</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>Seçili yükleyiciyi dışa aktar</value>
+    <value>Seçili yükleyiciyi dışa aktar...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>Seçili yükleyiciyi kaldır</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>Tümünü dışa aktar</value>
+    <value>Tümünü dışa aktar...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>Tümünü temizle</value>
+    <value>Tümünü temizle...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>Klasörü güncelle</value>
+    <value>Klasörü güncelle...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>Genel bakış</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>URL söz dizimini test et</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>URL söz dizimini test et...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>Metin veya URL girdisi</value>

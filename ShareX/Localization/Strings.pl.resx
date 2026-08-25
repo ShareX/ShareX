@@ -2276,7 +2276,7 @@
     <value>Biblioteka usług przesyłania</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>Przewodnik po usługach niestandardowych</value>
+    <value>Przewodnik po usługach niestandardowych...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>Szukaj usług przesyłania</value>
@@ -2285,25 +2285,25 @@
     <value>Nowa</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>Importuj</value>
+    <value>Importuj...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>Duplikuj wybraną usługę</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>Eksportuj wybraną usługę</value>
+    <value>Eksportuj wybraną usługę...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>Usuń wybraną usługę</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>Eksportuj wszystko</value>
+    <value>Eksportuj wszystko...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>Wyczyść wszystko</value>
+    <value>Wyczyść wszystko...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>Aktualizuj folder</value>
+    <value>Aktualizuj folder...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>Przegląd</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>Testuj składnię adresu URL</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>Testuj składnię adresu URL...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>Tekst lub adres URL</value>

@@ -2276,7 +2276,7 @@
     <value>کتابخانه بارگذارها</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>راهنمای بارگذار سفارشی</value>
+    <value>راهنمای بارگذار سفارشی...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>جستجوی بارگذارها</value>
@@ -2285,25 +2285,25 @@
     <value>جدید</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>درون‌ریزی</value>
+    <value>درون‌ریزی...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>تکثیر بارگذار انتخاب‌شده</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>برون‌ریزی بارگذار انتخاب‌شده</value>
+    <value>برون‌ریزی بارگذار انتخاب‌شده...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>حذف بارگذار انتخاب‌شده</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>برون‌ریزی همه</value>
+    <value>برون‌ریزی همه...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>پاک کردن همه</value>
+    <value>پاک کردن همه...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>به‌روزرسانی پوشه</value>
+    <value>به‌روزرسانی پوشه...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>نمای کلی</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>آزمایش نگارش نشانی</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>آزمایش نگارش نشانی...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>ورودی متن یا نشانی</value>

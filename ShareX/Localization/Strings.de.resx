@@ -2276,7 +2276,7 @@
     <value>Uploader-Bibliothek</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Guide" xml:space="preserve">
-    <value>Anleitung für benutzerdefinierte Uploader</value>
+    <value>Anleitung für benutzerdefinierte Uploader...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SearchUploaders" xml:space="preserve">
     <value>Uploader suchen</value>
@@ -2285,25 +2285,25 @@
     <value>Neu</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Import" xml:space="preserve">
-    <value>Importieren</value>
+    <value>Importieren...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Duplicate" xml:space="preserve">
     <value>Ausgewählten Uploader duplizieren</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Export" xml:space="preserve">
-    <value>Ausgewählten Uploader exportieren</value>
+    <value>Ausgewählten Uploader exportieren...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Remove" xml:space="preserve">
     <value>Ausgewählten Uploader entfernen</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAll" xml:space="preserve">
-    <value>Alle exportieren</value>
+    <value>Alle exportieren...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ClearAll" xml:space="preserve">
-    <value>Alle löschen</value>
+    <value>Alle löschen...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdateFolder" xml:space="preserve">
-    <value>Ordner aktualisieren</value>
+    <value>Ordner aktualisieren...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_Overview" xml:space="preserve">
     <value>Übersicht</value>
@@ -2511,6 +2511,9 @@
   </data>
   <data name="CustomUploaderSettingsWindow_TestURLSyntax" xml:space="preserve">
     <value>URL-Syntax testen</value>
+  </data>
+  <data name="CustomUploaderSettingsWindow_TestURLSyntaxButton" xml:space="preserve">
+    <value>URL-Syntax testen...</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TextOrURLInput" xml:space="preserve">
     <value>Text- oder URL-Eingabe</value>
