@@ -2320,9 +2320,6 @@
   <data name="CustomUploaderSettingsWindow_Test" xml:space="preserve">
     <value>Тест</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_OverviewDescription" xml:space="preserve">
-    <value>Задайте загрузчику узнаваемое имя и выберите, где ShareX сможет его использовать.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Identity" xml:space="preserve">
     <value>Идентификатор</value>
   </data>
@@ -2332,14 +2329,8 @@
   <data name="CustomUploaderSettingsWindow_NamePlaceholder" xml:space="preserve">
     <value>Если пусто, используется хост запроса</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_NameDescription" xml:space="preserve">
-    <value>Это имя отображается в ShareX. Изменения сохраняются немедленно.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Capabilities" xml:space="preserve">
     <value>Возможности</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_CapabilitiesDescription" xml:space="preserve">
-    <value>Включите все типы назначений, поддерживаемые этой конечной точкой.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ImageUploader" xml:space="preserve">
     <value>Загрузчик изображений</value>
@@ -2380,9 +2371,6 @@
   <data name="CustomUploaderSettingsWindow_Beautify" xml:space="preserve">
     <value>Форматировать</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_BodyDescription" xml:space="preserve">
-    <value>Выберите способ кодирования данных запроса и загружаемых файлов.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>Тип тела</value>
   </data>
@@ -2404,9 +2392,6 @@
   <data name="CustomUploaderSettingsWindow_DeletionURL" xml:space="preserve">
     <value>URL удаления</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_DeletionURLDescription" xml:space="preserve">
-    <value>Необязательный URL для удаления загруженного содержимого.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_DestinationRequired" xml:space="preserve">
     <value>Перед экспортом выберите хотя бы один тип назначения.</value>
   </data>
@@ -2424,9 +2409,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ErrorMessage" xml:space="preserve">
     <value>Сообщение об ошибке</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ErrorMessageDescription" xml:space="preserve">
-    <value>Текст, извлекаемый при сообщении службы об ошибке.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAllDialogTitle" xml:space="preserve">
     <value>Экспорт всех пользовательских загрузчиков</value>
@@ -2458,9 +2440,6 @@
   <data name="CustomUploaderSettingsWindow_ImportedCount" xml:space="preserve">
     <value>Импортировано пользовательских загрузчиков: {0}.</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_InputTokensDescription" xml:space="preserve">
-    <value>Токены ввода доступны в контекстном меню редактора.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_JSONPathResponseValue" xml:space="preserve">
     <value>Значение ответа JSONPath</value>
   </data>
@@ -2491,17 +2470,11 @@
   <data name="CustomUploaderSettingsWindow_RequestData" xml:space="preserve">
     <value>Данные запроса</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_RequestDescription" xml:space="preserve">
-    <value>Настройте конечную точку, параметры запроса и HTTP-заголовки, отправляемые ShareX.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_RequestURL" xml:space="preserve">
     <value>URL запроса</value>
   </data>
   <data name="CustomUploaderSettingsWindow_RequestURLRequired" xml:space="preserve">
     <value>Перед экспортом необходимо настроить URL запроса.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResponseDescription" xml:space="preserve">
-    <value>Извлеките значения результата ShareX из ответа службы.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResponseHeader" xml:space="preserve">
     <value>Заголовок ответа</value>
@@ -2512,17 +2485,11 @@
   <data name="CustomUploaderSettingsWindow_ResponseText" xml:space="preserve">
     <value>Текст ответа</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_ResponseTokensDescription" xml:space="preserve">
-    <value>Щёлкните правой кнопкой, чтобы вставить токены ответа.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Result" xml:space="preserve">
     <value>Результат</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResultURL" xml:space="preserve">
     <value>URL результата</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResultURLDescription" xml:space="preserve">
-    <value>Конечный URL, копируемый или открываемый после успешной загрузки.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SelectToExport" xml:space="preserve">
     <value>Выберите пользовательский загрузчик для экспорта.</value>
@@ -2530,20 +2497,11 @@
   <data name="CustomUploaderSettingsWindow_SelectUploaderToEdit" xml:space="preserve">
     <value>Выберите загрузчик для редактирования</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_SelectUploaderToEditDescription" xml:space="preserve">
-    <value>Создайте загрузчик, импортируйте файл .sxcu или выберите загрузчик из библиотеки.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_SyntaxTestDescription" xml:space="preserve">
-    <value>Предпросмотр разбора выражения ответа.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_TestCancelled" xml:space="preserve">
     <value>Тест отменён.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestCompleted" xml:space="preserve">
     <value>Тест завершён.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TestDescription" xml:space="preserve">
-    <value>Выберите активный загрузчик для каждого назначения и запустите реальный тест.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestFailed" xml:space="preserve">
     <value>Тест не пройден.</value>
@@ -2568,9 +2526,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>URL миниатюры</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ThumbnailURLDescription" xml:space="preserve">
-    <value>Необязательное изображение предпросмотра, возвращаемое службой.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdatedCount" xml:space="preserve">
     <value>Обновлено файлов загрузчиков: {0}.</value>

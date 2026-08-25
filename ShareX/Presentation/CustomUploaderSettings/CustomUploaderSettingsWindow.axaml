@@ -322,10 +322,9 @@
                 <Grid Grid.Row="2" IsVisible="{Binding HasSelection}">
                     <!-- Overview -->
                     <ScrollViewer IsVisible="{Binding IsOverviewSection}" VerticalScrollBarVisibility="Auto">
-                        <StackPanel Spacing="10" Margin="0,0,4,0" MaxWidth="820" HorizontalAlignment="Left">
+                        <StackPanel Spacing="10" Margin="0,0,4,0">
                             <StackPanel Spacing="2">
                             <TextBlock Classes="section-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Overview}"/>
-                            <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_OverviewDescription}"/>
                             </StackPanel>
 
                             <Border Classes="card">
@@ -335,7 +334,6 @@
                                     <TextBox Classes="dense"
                                          PlaceholderText="{x:Static res:Strings.CustomUploaderSettingsWindow_NamePlaceholder}"
                                              Text="{Binding SelectedUploader.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_NameDescription}"/>
                                 </StackPanel>
                             </Border>
 
@@ -343,7 +341,6 @@
                                 <StackPanel Spacing="8">
                                     <StackPanel Spacing="2">
                                 <TextBlock Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Capabilities}"/>
-                                <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_CapabilitiesDescription}"/>
                                     </StackPanel>
                                     <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="7" RowSpacing="7">
                                         <Border Classes="choice-card">
@@ -388,16 +385,16 @@
                         <StackPanel Spacing="10" Margin="0,0,4,0">
                             <StackPanel Spacing="2">
                                 <TextBlock Classes="section-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Request}"/>
-                                <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_RequestDescription}"/>
                             </StackPanel>
 
                             <Border Classes="card">
                                 <StackPanel Spacing="7">
                                     <TextBlock Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Endpoint}"/>
-                                    <Grid ColumnDefinitions="150,*" ColumnSpacing="7">
+                                    <Grid ColumnDefinitions="120,*" ColumnSpacing="7">
                                         <StackPanel Spacing="3">
                                             <TextBlock Classes="field-label" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Method}"/>
                                             <ComboBox Classes="dense"
+                                                      HorizontalAlignment="Stretch"
                                                       ItemsSource="{Binding RequestMethods}"
                                                       SelectedIndex="{Binding SelectedUploader.RequestMethodIndex, Mode=TwoWay}"/>
                                         </StackPanel>
@@ -428,7 +425,6 @@
                         <StackPanel Spacing="10" Margin="0,0,4,0">
                             <StackPanel Spacing="2">
                                 <TextBlock Classes="section-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Body}"/>
-                                <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_BodyDescription}"/>
                             </StackPanel>
 
                             <Border Classes="card">
@@ -466,7 +462,6 @@
                                     <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="5">
                                         <StackPanel Spacing="2">
                                             <TextBlock Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_RequestData}"/>
-                                            <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_InputTokensDescription}"/>
                                         </StackPanel>
                                         <Button Grid.Column="1" Classes="compact" Content="{x:Static res:Strings.CustomUploaderSettingsWindow_Beautify}" Click="OnBeautifyClick"/>
                                         <Button Grid.Column="2" Classes="compact" Content="{x:Static res:Strings.CustomUploaderSettingsWindow_Minify}" IsVisible="{Binding SelectedUploader.IsJsonBody}" Click="OnMinifyClick"/>
@@ -504,7 +499,6 @@
                             <Grid ColumnDefinitions="*,Auto">
                                 <StackPanel Spacing="2">
                                     <TextBlock Classes="section-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Response}"/>
-                                    <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_ResponseDescription}"/>
                                 </StackPanel>
                                 <Button Grid.Column="1" Classes="compact" Click="OnSyntaxTestClick">
                                     <StackPanel Orientation="Horizontal" Spacing="6">
@@ -518,7 +512,6 @@
                                 <Border Classes="card">
                                     <StackPanel Spacing="5">
                                         <TextBlock Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_ResultURL}"/>
-                                        <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_ResultURLDescription}"/>
                                         <TextBox x:Name="ResultURLBox"
                                                  Classes="dense syntax-input"
                                                  Text="{Binding SelectedUploader.URL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -527,7 +520,6 @@
                                 <Border Classes="card">
                                     <StackPanel Spacing="5">
                                         <TextBlock Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_ThumbnailURL}"/>
-                                        <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_ThumbnailURLDescription}"/>
                                         <TextBox x:Name="ThumbnailURLBox"
                                                  Classes="dense syntax-input"
                                                  Text="{Binding SelectedUploader.ThumbnailURL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -536,7 +528,6 @@
                                 <Border Classes="card">
                                     <StackPanel Spacing="5">
                                         <TextBlock Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_DeletionURL}"/>
-                                        <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_DeletionURLDescription}"/>
                                         <TextBox x:Name="DeletionURLBox"
                                                  Classes="dense syntax-input"
                                                  Text="{Binding SelectedUploader.DeletionURL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -545,7 +536,6 @@
                                 <Border Classes="card">
                                     <StackPanel Spacing="5">
                                         <TextBlock Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_ErrorMessage}"/>
-                                        <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_ErrorMessageDescription}"/>
                                         <TextBox x:Name="ErrorMessageBox"
                                                  Classes="dense syntax-input"
                                                  Text="{Binding SelectedUploader.ErrorMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -560,7 +550,6 @@
                         <StackPanel Spacing="10" Margin="0,0,4,0" IsEnabled="{Binding !IsTesting}">
                             <StackPanel Spacing="2">
                                 <TextBlock Classes="section-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Test}"/>
-                                <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_TestDescription}"/>
                             </StackPanel>
 
                             <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="8" RowSpacing="8">
@@ -643,9 +632,6 @@
                                    FontSize="17"
                                    FontWeight="SemiBold"
                                    HorizontalAlignment="Center"/>
-                        <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_SelectUploaderToEditDescription}"
-                                   Classes="description"
-                                   TextAlignment="Center"/>
                     </StackPanel>
                 </Border>
 
@@ -686,7 +672,6 @@
                                        VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_TestURLSyntax}" FontSize="19" FontWeight="SemiBold"/>
-                                <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_SyntaxTestDescription}"/>
                             </StackPanel>
                             <Button Grid.Column="2"
                                     Classes="icon-button"
@@ -715,7 +700,6 @@
                                     <TextBox x:Name="SyntaxTestExpressionBox"
                                              Classes="dense syntax-input"
                                              Text="{Binding SyntaxTestExpression, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                    <TextBlock Classes="description" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_ResponseTokensDescription}"/>
                                 </StackPanel>
 
                                 <StackPanel Spacing="4">

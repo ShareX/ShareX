@@ -2320,9 +2320,6 @@
   <data name="CustomUploaderSettingsWindow_Test" xml:space="preserve">
     <value>ทดสอบ</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_OverviewDescription" xml:space="preserve">
-    <value>ตั้งชื่อที่จดจำได้ให้ตัวอัปโหลดนี้ และเลือกตำแหน่งที่ ShareX สามารถใช้งานได้</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Identity" xml:space="preserve">
     <value>ข้อมูลประจำตัว</value>
   </data>
@@ -2332,14 +2329,8 @@
   <data name="CustomUploaderSettingsWindow_NamePlaceholder" xml:space="preserve">
     <value>ใช้โฮสต์ของคำขอเมื่อเว้นว่าง</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_NameDescription" xml:space="preserve">
-    <value>ชื่อนี้จะแสดงทั่วทั้ง ShareX และการเปลี่ยนแปลงจะถูกบันทึกทันที</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Capabilities" xml:space="preserve">
     <value>ความสามารถ</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_CapabilitiesDescription" xml:space="preserve">
-    <value>เปิดใช้งานชนิดปลายทางทั้งหมดที่ปลายทางนี้รองรับ</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ImageUploader" xml:space="preserve">
     <value>ตัวอัปโหลดรูปภาพ</value>
@@ -2380,9 +2371,6 @@
   <data name="CustomUploaderSettingsWindow_Beautify" xml:space="preserve">
     <value>ตกแต่ง</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_BodyDescription" xml:space="preserve">
-    <value>เลือกวิธีเข้ารหัสข้อมูลคำขอและไฟล์ที่อัปโหลด</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>เนื้อหา ชนิด</value>
   </data>
@@ -2404,9 +2392,6 @@
   <data name="CustomUploaderSettingsWindow_DeletionURL" xml:space="preserve">
     <value>URL สำหรับลบ</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_DeletionURLDescription" xml:space="preserve">
-    <value>URL ไม่บังคับสำหรับลบเนื้อหาที่อัปโหลด</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_DestinationRequired" xml:space="preserve">
     <value>ต้องเลือกชนิดปลายทางอย่างน้อยหนึ่งชนิดก่อนส่งออก</value>
   </data>
@@ -2424,9 +2409,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ErrorMessage" xml:space="preserve">
     <value>ข้อความข้อผิดพลาด</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ErrorMessageDescription" xml:space="preserve">
-    <value>ข้อความที่แยกเมื่อบริการรายงานความล้มเหลว</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAllDialogTitle" xml:space="preserve">
     <value>ส่งออก ทั้งหมด ตัวอัปโหลดกำหนดเอง</value>
@@ -2458,9 +2440,6 @@
   <data name="CustomUploaderSettingsWindow_ImportedCount" xml:space="preserve">
     <value>นำเข้าแล้ว {0} ตัวอัปโหลดกำหนดเอง(s).</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_InputTokensDescription" xml:space="preserve">
-    <value>โทเค็นอินพุตพร้อมใช้จากเมนูบริบทของตัวแก้ไข</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_JSONPathResponseValue" xml:space="preserve">
     <value>JSONPath การตอบกลับ ค่า</value>
   </data>
@@ -2491,17 +2470,11 @@
   <data name="CustomUploaderSettingsWindow_RequestData" xml:space="preserve">
     <value>คำขอ ข้อมูล</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_RequestDescription" xml:space="preserve">
-    <value>กำหนดค่าปลายทาง พารามิเตอร์คิวรี และส่วนหัว HTTP ที่ ShareX ส่ง</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_RequestURL" xml:space="preserve">
     <value>URL คำขอ</value>
   </data>
   <data name="CustomUploaderSettingsWindow_RequestURLRequired" xml:space="preserve">
     <value>ต้องกำหนดค่า URL คำขอก่อนส่งออก</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResponseDescription" xml:space="preserve">
-    <value>แยกค่าผลลัพธ์ ShareX จากการตอบกลับของบริการ</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResponseHeader" xml:space="preserve">
     <value>ส่วนหัวการตอบกลับ</value>
@@ -2512,17 +2485,11 @@
   <data name="CustomUploaderSettingsWindow_ResponseText" xml:space="preserve">
     <value>การตอบกลับ ข้อความ</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_ResponseTokensDescription" xml:space="preserve">
-    <value>ขวา-คลิกเพื่อ แทรก การตอบกลับ โทเค็น.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Result" xml:space="preserve">
     <value>ผลลัพธ์</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResultURL" xml:space="preserve">
     <value>ผลลัพธ์ URL</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResultURLDescription" xml:space="preserve">
-    <value>URL สุดท้ายที่คัดลอกหรือเปิดหลังอัปโหลดสำเร็จ</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SelectToExport" xml:space="preserve">
     <value>เลือก ตัวอัปโหลดกำหนดเอง เพื่อ ส่งออก.</value>
@@ -2530,20 +2497,11 @@
   <data name="CustomUploaderSettingsWindow_SelectUploaderToEdit" xml:space="preserve">
     <value>เลือกตัวอัปโหลดเพื่อแก้ไข</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_SelectUploaderToEditDescription" xml:space="preserve">
-    <value>สร้างตัวอัปโหลดใหม่ นำเข้าไฟล์ .sxcu หรือเลือกจากไลบรารี</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_SyntaxTestDescription" xml:space="preserve">
-    <value>แสดงตัวอย่างวิธีแยกวิเคราะห์นิพจน์การตอบกลับ</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_TestCancelled" xml:space="preserve">
     <value>ทดสอบ ยกเลิกแล้ว.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestCompleted" xml:space="preserve">
     <value>ทดสอบ เสร็จสมบูรณ์.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TestDescription" xml:space="preserve">
-    <value>เลือกตัวอัปโหลดกำหนดเองที่ใช้งานสำหรับแต่ละปลายทาง แล้วเรียกใช้การทดสอบจริง</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestFailed" xml:space="preserve">
     <value>การทดสอบล้มเหลว</value>
@@ -2568,9 +2526,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>URL ภาพขนาดย่อ</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ThumbnailURLDescription" xml:space="preserve">
-    <value>รูปภาพตัวอย่างไม่บังคับที่บริการส่งคืน</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdatedCount" xml:space="preserve">
     <value>อัปเดตแล้ว {0} ตัวอัปโหลดกำหนดเอง ไฟล์(s).</value>

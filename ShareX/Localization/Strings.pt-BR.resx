@@ -2320,9 +2320,6 @@
   <data name="CustomUploaderSettingsWindow_Test" xml:space="preserve">
     <value>Teste</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_OverviewDescription" xml:space="preserve">
-    <value>Dê um nome reconhecível a este uploader e escolha onde o ShareX pode usá-lo.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Identity" xml:space="preserve">
     <value>Identidade</value>
   </data>
@@ -2332,14 +2329,8 @@
   <data name="CustomUploaderSettingsWindow_NamePlaceholder" xml:space="preserve">
     <value>Usa o host da solicitação quando vazio</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_NameDescription" xml:space="preserve">
-    <value>Este é o nome exibido em todo o ShareX. As alterações são salvas imediatamente.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Capabilities" xml:space="preserve">
     <value>Recursos</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_CapabilitiesDescription" xml:space="preserve">
-    <value>Ative cada tipo de destino compatível com este endpoint.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ImageUploader" xml:space="preserve">
     <value>Uploader de imagens</value>
@@ -2380,9 +2371,6 @@
   <data name="CustomUploaderSettingsWindow_Beautify" xml:space="preserve">
     <value>Embelezar</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_BodyDescription" xml:space="preserve">
-    <value>Escolha como os dados da solicitação e os arquivos enviados são codificados.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>Tipo de corpo</value>
   </data>
@@ -2404,9 +2392,6 @@
   <data name="CustomUploaderSettingsWindow_DeletionURL" xml:space="preserve">
     <value>URL de exclusão</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_DeletionURLDescription" xml:space="preserve">
-    <value>URL opcional usada para remover o conteúdo enviado.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_DestinationRequired" xml:space="preserve">
     <value>Pelo menos um tipo de destino deve ser selecionado antes da exportação.</value>
   </data>
@@ -2424,9 +2409,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ErrorMessage" xml:space="preserve">
     <value>Mensagem de erro</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ErrorMessageDescription" xml:space="preserve">
-    <value>Texto extraído quando o serviço informa uma falha.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAllDialogTitle" xml:space="preserve">
     <value>Exportar todos os carregadores personalizados</value>
@@ -2458,9 +2440,6 @@
   <data name="CustomUploaderSettingsWindow_ImportedCount" xml:space="preserve">
     <value>{0} carregador(es) personalizado(s) importado(s).</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_InputTokensDescription" xml:space="preserve">
-    <value>Os tokens de entrada estão disponíveis no menu de contexto do editor.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_JSONPathResponseValue" xml:space="preserve">
     <value>Valor de resposta JSONPath</value>
   </data>
@@ -2491,17 +2470,11 @@
   <data name="CustomUploaderSettingsWindow_RequestData" xml:space="preserve">
     <value>Dados da solicitação</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_RequestDescription" xml:space="preserve">
-    <value>Configure o endpoint, os parâmetros de consulta e os cabeçalhos HTTP enviados pelo ShareX.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_RequestURL" xml:space="preserve">
     <value>URL da solicitação</value>
   </data>
   <data name="CustomUploaderSettingsWindow_RequestURLRequired" xml:space="preserve">
     <value>A URL da solicitação deve ser configurada antes da exportação.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResponseDescription" xml:space="preserve">
-    <value>Extraia os valores de resultado do ShareX da resposta do serviço.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResponseHeader" xml:space="preserve">
     <value>Cabeçalho da resposta</value>
@@ -2512,17 +2485,11 @@
   <data name="CustomUploaderSettingsWindow_ResponseText" xml:space="preserve">
     <value>Texto da resposta</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_ResponseTokensDescription" xml:space="preserve">
-    <value>Clique com o botão direito para inserir tokens de resposta.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Result" xml:space="preserve">
     <value>Resultado</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResultURL" xml:space="preserve">
     <value>URL do resultado</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResultURLDescription" xml:space="preserve">
-    <value>A URL final copiada ou aberta após um envio bem-sucedido.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SelectToExport" xml:space="preserve">
     <value>Selecione um carregador personalizado para exportar.</value>
@@ -2530,20 +2497,11 @@
   <data name="CustomUploaderSettingsWindow_SelectUploaderToEdit" xml:space="preserve">
     <value>Selecione um carregador para editar</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_SelectUploaderToEditDescription" xml:space="preserve">
-    <value>Crie um novo carregador, importe um arquivo .sxcu ou escolha um da biblioteca.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_SyntaxTestDescription" xml:space="preserve">
-    <value>Visualize como a expressão de resposta será analisada.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_TestCancelled" xml:space="preserve">
     <value>Teste cancelado.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestCompleted" xml:space="preserve">
     <value>Teste concluído.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TestDescription" xml:space="preserve">
-    <value>Escolha o carregador personalizado ativo para cada destino e execute um teste ao vivo.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestFailed" xml:space="preserve">
     <value>Falha no teste.</value>
@@ -2568,9 +2526,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>URL da miniatura</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ThumbnailURLDescription" xml:space="preserve">
-    <value>Imagem de visualização opcional retornada pelo serviço.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdatedCount" xml:space="preserve">
     <value>{0} arquivo(s) de carregador personalizado atualizado(s).</value>

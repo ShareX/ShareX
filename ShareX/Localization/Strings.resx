@@ -2320,9 +2320,6 @@
   <data name="CustomUploaderSettingsWindow_Test" xml:space="preserve">
     <value>Test</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_OverviewDescription" xml:space="preserve">
-    <value>Give this uploader a recognizable name and choose where ShareX can use it.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Identity" xml:space="preserve">
     <value>Identity</value>
   </data>
@@ -2332,14 +2329,8 @@
   <data name="CustomUploaderSettingsWindow_NamePlaceholder" xml:space="preserve">
     <value>Uses the request host when left empty</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_NameDescription" xml:space="preserve">
-    <value>This is the name shown throughout ShareX. Changes are saved immediately.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Capabilities" xml:space="preserve">
     <value>Capabilities</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_CapabilitiesDescription" xml:space="preserve">
-    <value>Enable every destination type supported by this endpoint.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ImageUploader" xml:space="preserve">
     <value>Image uploader</value>
@@ -2380,9 +2371,6 @@
   <data name="CustomUploaderSettingsWindow_Beautify" xml:space="preserve">
     <value>Beautify</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_BodyDescription" xml:space="preserve">
-    <value>Choose how request data and uploaded files are encoded.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>Body type</value>
   </data>
@@ -2404,9 +2392,6 @@
   <data name="CustomUploaderSettingsWindow_DeletionURL" xml:space="preserve">
     <value>Deletion URL</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_DeletionURLDescription" xml:space="preserve">
-    <value>Optional URL used to remove the uploaded content.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_DestinationRequired" xml:space="preserve">
     <value>At least one destination type must be selected before exporting.</value>
   </data>
@@ -2424,9 +2409,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ErrorMessage" xml:space="preserve">
     <value>Error message</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ErrorMessageDescription" xml:space="preserve">
-    <value>Text extracted when the service reports a failure.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAllDialogTitle" xml:space="preserve">
     <value>Export all custom uploaders</value>
@@ -2458,9 +2440,6 @@
   <data name="CustomUploaderSettingsWindow_ImportedCount" xml:space="preserve">
     <value>Imported {0} custom uploader(s).</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_InputTokensDescription" xml:space="preserve">
-    <value>Input tokens are available from the editor context menu.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_JSONPathResponseValue" xml:space="preserve">
     <value>JSONPath response value</value>
   </data>
@@ -2491,17 +2470,11 @@
   <data name="CustomUploaderSettingsWindow_RequestData" xml:space="preserve">
     <value>Request data</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_RequestDescription" xml:space="preserve">
-    <value>Configure the endpoint, query parameters, and HTTP headers sent by ShareX.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_RequestURL" xml:space="preserve">
     <value>Request URL</value>
   </data>
   <data name="CustomUploaderSettingsWindow_RequestURLRequired" xml:space="preserve">
     <value>Request URL must be configured before exporting.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResponseDescription" xml:space="preserve">
-    <value>Extract ShareX result values from the service response.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResponseHeader" xml:space="preserve">
     <value>Response header</value>
@@ -2512,17 +2485,11 @@
   <data name="CustomUploaderSettingsWindow_ResponseText" xml:space="preserve">
     <value>Response text</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_ResponseTokensDescription" xml:space="preserve">
-    <value>Right-click to insert response tokens.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Result" xml:space="preserve">
     <value>Result</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResultURL" xml:space="preserve">
     <value>Result URL</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResultURLDescription" xml:space="preserve">
-    <value>The final URL copied or opened after a successful upload.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SelectToExport" xml:space="preserve">
     <value>Select a custom uploader to export.</value>
@@ -2530,20 +2497,11 @@
   <data name="CustomUploaderSettingsWindow_SelectUploaderToEdit" xml:space="preserve">
     <value>Select an uploader to edit</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_SelectUploaderToEditDescription" xml:space="preserve">
-    <value>Create a new uploader, import an .sxcu file, or choose one from the library.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_SyntaxTestDescription" xml:space="preserve">
-    <value>Preview how the response expression will be parsed.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_TestCancelled" xml:space="preserve">
     <value>Test cancelled.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestCompleted" xml:space="preserve">
     <value>Test completed.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TestDescription" xml:space="preserve">
-    <value>Choose the active custom uploader for each destination and run a live test.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestFailed" xml:space="preserve">
     <value>Test failed.</value>
@@ -2568,9 +2526,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>Thumbnail URL</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ThumbnailURLDescription" xml:space="preserve">
-    <value>Optional preview image returned by the service.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdatedCount" xml:space="preserve">
     <value>Updated {0} custom uploader file(s).</value>

@@ -2320,9 +2320,6 @@
   <data name="CustomUploaderSettingsWindow_Test" xml:space="preserve">
     <value>Teszt</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_OverviewDescription" xml:space="preserve">
-    <value>Adjon felismerhető nevet a feltöltőnek, és válassza ki, hol használhatja a ShareX.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Identity" xml:space="preserve">
     <value>Azonosítás</value>
   </data>
@@ -2332,14 +2329,8 @@
   <data name="CustomUploaderSettingsWindow_NamePlaceholder" xml:space="preserve">
     <value>Üresen hagyva a kérés gazdagépét használja</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_NameDescription" xml:space="preserve">
-    <value>Ez a név jelenik meg a ShareX-ben. A módosítások azonnal mentődnek.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Capabilities" xml:space="preserve">
     <value>Képességek</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_CapabilitiesDescription" xml:space="preserve">
-    <value>Engedélyezze a végpont által támogatott összes céltípust.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ImageUploader" xml:space="preserve">
     <value>Képfeltöltő</value>
@@ -2380,9 +2371,6 @@
   <data name="CustomUploaderSettingsWindow_Beautify" xml:space="preserve">
     <value>Formázás</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_BodyDescription" xml:space="preserve">
-    <value>Válassza ki a kérésadatok és a feltöltött fájlok kódolását.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>Törzs típusa</value>
   </data>
@@ -2404,9 +2392,6 @@
   <data name="CustomUploaderSettingsWindow_DeletionURL" xml:space="preserve">
     <value>Törlési URL</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_DeletionURLDescription" xml:space="preserve">
-    <value>A feltöltött tartalom eltávolítására szolgáló opcionális URL.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_DestinationRequired" xml:space="preserve">
     <value>Exportálás előtt legalább egy céltípust ki kell választani.</value>
   </data>
@@ -2424,9 +2409,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ErrorMessage" xml:space="preserve">
     <value>Hibaüzenet</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ErrorMessageDescription" xml:space="preserve">
-    <value>A szolgáltatás hibajelzésekor kinyert szöveg.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAllDialogTitle" xml:space="preserve">
     <value>Összes egyéni feltöltő exportálása</value>
@@ -2458,9 +2440,6 @@
   <data name="CustomUploaderSettingsWindow_ImportedCount" xml:space="preserve">
     <value>{0} egyéni feltöltő importálva.</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_InputTokensDescription" xml:space="preserve">
-    <value>A bemeneti tokenek a szerkesztő helyi menüjében érhetők el.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_JSONPathResponseValue" xml:space="preserve">
     <value>JSONPath-válaszérték</value>
   </data>
@@ -2491,17 +2470,11 @@
   <data name="CustomUploaderSettingsWindow_RequestData" xml:space="preserve">
     <value>Kérésadatok</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_RequestDescription" xml:space="preserve">
-    <value>Állítsa be a ShareX által küldött végpontot, lekérdezési paramétereket és HTTP-fejléceket.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_RequestURL" xml:space="preserve">
     <value>Kérés URL-je</value>
   </data>
   <data name="CustomUploaderSettingsWindow_RequestURLRequired" xml:space="preserve">
     <value>Exportálás előtt be kell állítani a kérés URL-jét.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResponseDescription" xml:space="preserve">
-    <value>ShareX-eredményértékek kinyerése a szolgáltatás válaszából.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResponseHeader" xml:space="preserve">
     <value>Válaszfejléc</value>
@@ -2512,17 +2485,11 @@
   <data name="CustomUploaderSettingsWindow_ResponseText" xml:space="preserve">
     <value>Válasz szövege</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_ResponseTokensDescription" xml:space="preserve">
-    <value>Választokenek beszúrásához kattintson jobb gombbal.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Result" xml:space="preserve">
     <value>Eredmény</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResultURL" xml:space="preserve">
     <value>Eredmény URL-je</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResultURLDescription" xml:space="preserve">
-    <value>A sikeres feltöltés után másolt vagy megnyitott végleges URL.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SelectToExport" xml:space="preserve">
     <value>Válasszon exportálandó egyéni feltöltőt.</value>
@@ -2530,20 +2497,11 @@
   <data name="CustomUploaderSettingsWindow_SelectUploaderToEdit" xml:space="preserve">
     <value>Válasszon szerkesztendő feltöltőt</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_SelectUploaderToEditDescription" xml:space="preserve">
-    <value>Hozzon létre új feltöltőt, importáljon .sxcu fájlt, vagy válasszon a könyvtárból.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_SyntaxTestDescription" xml:space="preserve">
-    <value>A válaszkifejezés feldolgozásának előnézete.</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_TestCancelled" xml:space="preserve">
     <value>Teszt megszakítva.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestCompleted" xml:space="preserve">
     <value>Teszt befejezve.</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TestDescription" xml:space="preserve">
-    <value>Válassza ki minden célhoz az aktív feltöltőt, és futtasson élő tesztet.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestFailed" xml:space="preserve">
     <value>A teszt sikertelen.</value>
@@ -2568,9 +2526,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>Bélyegkép URL-je</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ThumbnailURLDescription" xml:space="preserve">
-    <value>A szolgáltatás által visszaadott opcionális előnézeti kép.</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdatedCount" xml:space="preserve">
     <value>{0} egyéni feltöltőfájl frissítve.</value>

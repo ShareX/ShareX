@@ -4397,11 +4397,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_Test", resourceCulture);
             }
         }
-        public static string CustomUploaderSettingsWindow_OverviewDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_OverviewDescription", resourceCulture);
-            }
-        }
         public static string CustomUploaderSettingsWindow_Identity {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_Identity", resourceCulture);
@@ -4417,19 +4412,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_NamePlaceholder", resourceCulture);
             }
         }
-        public static string CustomUploaderSettingsWindow_NameDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_NameDescription", resourceCulture);
-            }
-        }
         public static string CustomUploaderSettingsWindow_Capabilities {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_Capabilities", resourceCulture);
-            }
-        }
-        public static string CustomUploaderSettingsWindow_CapabilitiesDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_CapabilitiesDescription", resourceCulture);
             }
         }
         public static string CustomUploaderSettingsWindow_ImageUploader {
@@ -4497,11 +4482,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_Beautify", resourceCulture);
             }
         }
-        public static string CustomUploaderSettingsWindow_BodyDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_BodyDescription", resourceCulture);
-            }
-        }
         public static string CustomUploaderSettingsWindow_BodyType {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_BodyType", resourceCulture);
@@ -4537,11 +4517,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_DeletionURL", resourceCulture);
             }
         }
-        public static string CustomUploaderSettingsWindow_DeletionURLDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_DeletionURLDescription", resourceCulture);
-            }
-        }
         public static string CustomUploaderSettingsWindow_DestinationRequired {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_DestinationRequired", resourceCulture);
@@ -4570,11 +4545,6 @@ namespace ShareX.Localization {
         public static string CustomUploaderSettingsWindow_ErrorMessage {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_ErrorMessage", resourceCulture);
-            }
-        }
-        public static string CustomUploaderSettingsWindow_ErrorMessageDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_ErrorMessageDescription", resourceCulture);
             }
         }
         public static string CustomUploaderSettingsWindow_ExportAllDialogTitle {
@@ -4627,11 +4597,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_ImportedCount", resourceCulture);
             }
         }
-        public static string CustomUploaderSettingsWindow_InputTokensDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_InputTokensDescription", resourceCulture);
-            }
-        }
         public static string CustomUploaderSettingsWindow_JSONPathResponseValue {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_JSONPathResponseValue", resourceCulture);
@@ -4682,11 +4647,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_RequestData", resourceCulture);
             }
         }
-        public static string CustomUploaderSettingsWindow_RequestDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_RequestDescription", resourceCulture);
-            }
-        }
         public static string CustomUploaderSettingsWindow_RequestURL {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_RequestURL", resourceCulture);
@@ -4695,11 +4655,6 @@ namespace ShareX.Localization {
         public static string CustomUploaderSettingsWindow_RequestURLRequired {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_RequestURLRequired", resourceCulture);
-            }
-        }
-        public static string CustomUploaderSettingsWindow_ResponseDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_ResponseDescription", resourceCulture);
             }
         }
         public static string CustomUploaderSettingsWindow_ResponseHeader {
@@ -4717,11 +4672,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_ResponseText", resourceCulture);
             }
         }
-        public static string CustomUploaderSettingsWindow_ResponseTokensDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_ResponseTokensDescription", resourceCulture);
-            }
-        }
         public static string CustomUploaderSettingsWindow_Result {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_Result", resourceCulture);
@@ -4730,11 +4680,6 @@ namespace ShareX.Localization {
         public static string CustomUploaderSettingsWindow_ResultURL {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_ResultURL", resourceCulture);
-            }
-        }
-        public static string CustomUploaderSettingsWindow_ResultURLDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_ResultURLDescription", resourceCulture);
             }
         }
         public static string CustomUploaderSettingsWindow_SelectToExport {
@@ -4747,16 +4692,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_SelectUploaderToEdit", resourceCulture);
             }
         }
-        public static string CustomUploaderSettingsWindow_SelectUploaderToEditDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_SelectUploaderToEditDescription", resourceCulture);
-            }
-        }
-        public static string CustomUploaderSettingsWindow_SyntaxTestDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_SyntaxTestDescription", resourceCulture);
-            }
-        }
         public static string CustomUploaderSettingsWindow_TestCancelled {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_TestCancelled", resourceCulture);
@@ -4765,11 +4700,6 @@ namespace ShareX.Localization {
         public static string CustomUploaderSettingsWindow_TestCompleted {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_TestCompleted", resourceCulture);
-            }
-        }
-        public static string CustomUploaderSettingsWindow_TestDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_TestDescription", resourceCulture);
             }
         }
         public static string CustomUploaderSettingsWindow_TestFailed {
@@ -4810,11 +4740,6 @@ namespace ShareX.Localization {
         public static string CustomUploaderSettingsWindow_ThumbnailURL {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_ThumbnailURL", resourceCulture);
-            }
-        }
-        public static string CustomUploaderSettingsWindow_ThumbnailURLDescription {
-            get {
-                return ResourceManager.GetString("CustomUploaderSettingsWindow_ThumbnailURLDescription", resourceCulture);
             }
         }
         public static string CustomUploaderSettingsWindow_UpdatedCount {

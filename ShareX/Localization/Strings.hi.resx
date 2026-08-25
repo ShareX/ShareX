@@ -2320,9 +2320,6 @@
   <data name="CustomUploaderSettingsWindow_Test" xml:space="preserve">
     <value>परीक्षण</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_OverviewDescription" xml:space="preserve">
-    <value>इस अपलोडर को पहचानने योग्य नाम दें और चुनें कि ShareX इसे कहाँ उपयोग कर सकता है।</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Identity" xml:space="preserve">
     <value>पहचान</value>
   </data>
@@ -2332,14 +2329,8 @@
   <data name="CustomUploaderSettingsWindow_NamePlaceholder" xml:space="preserve">
     <value>खाली छोड़ने पर अनुरोध होस्ट उपयोग होता है</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_NameDescription" xml:space="preserve">
-    <value>यह नाम पूरे ShareX में दिखाई देता है। परिवर्तन तुरंत सहेजे जाते हैं।</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Capabilities" xml:space="preserve">
     <value>क्षमताएँ</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_CapabilitiesDescription" xml:space="preserve">
-    <value>इस एंडपॉइंट द्वारा समर्थित हर गंतव्य प्रकार सक्षम करें।</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ImageUploader" xml:space="preserve">
     <value>छवि अपलोडर</value>
@@ -2380,9 +2371,6 @@
   <data name="CustomUploaderSettingsWindow_Beautify" xml:space="preserve">
     <value>सुंदर बनाएँ</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_BodyDescription" xml:space="preserve">
-    <value>चुनें कि अनुरोध डेटा और अपलोड की गई फ़ाइलें कैसे एन्कोड हों।</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_BodyType" xml:space="preserve">
     <value>बॉडी प्रकार</value>
   </data>
@@ -2404,9 +2392,6 @@
   <data name="CustomUploaderSettingsWindow_DeletionURL" xml:space="preserve">
     <value>हटाने का URL</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_DeletionURLDescription" xml:space="preserve">
-    <value>अपलोड की गई सामग्री हटाने के लिए वैकल्पिक URL।</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_DestinationRequired" xml:space="preserve">
     <value>निर्यात से पहले कम से कम एक गंतव्य प्रकार चुनना आवश्यक है।</value>
   </data>
@@ -2424,9 +2409,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ErrorMessage" xml:space="preserve">
     <value>त्रुटि संदेश</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ErrorMessageDescription" xml:space="preserve">
-    <value>सेवा द्वारा विफलता बताने पर निकाला गया पाठ।</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ExportAllDialogTitle" xml:space="preserve">
     <value>सभी अनुकूलित अपलोडर निर्यात करें</value>
@@ -2458,9 +2440,6 @@
   <data name="CustomUploaderSettingsWindow_ImportedCount" xml:space="preserve">
     <value>{0} अनुकूलित अपलोडर आयात किए गए।</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_InputTokensDescription" xml:space="preserve">
-    <value>इनपुट टोकन संपादक के संदर्भ मेनू में उपलब्ध हैं।</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_JSONPathResponseValue" xml:space="preserve">
     <value>JSONPath प्रतिक्रिया मान</value>
   </data>
@@ -2491,17 +2470,11 @@
   <data name="CustomUploaderSettingsWindow_RequestData" xml:space="preserve">
     <value>अनुरोध डेटा</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_RequestDescription" xml:space="preserve">
-    <value>ShareX द्वारा भेजे गए एंडपॉइंट, क्वेरी पैरामीटर और HTTP हेडर कॉन्फ़िगर करें।</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_RequestURL" xml:space="preserve">
     <value>अनुरोध URL</value>
   </data>
   <data name="CustomUploaderSettingsWindow_RequestURLRequired" xml:space="preserve">
     <value>निर्यात से पहले अनुरोध URL कॉन्फ़िगर होना चाहिए।</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResponseDescription" xml:space="preserve">
-    <value>सेवा प्रतिक्रिया से ShareX परिणाम मान निकालें।</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResponseHeader" xml:space="preserve">
     <value>प्रतिक्रिया हेडर</value>
@@ -2512,17 +2485,11 @@
   <data name="CustomUploaderSettingsWindow_ResponseText" xml:space="preserve">
     <value>प्रतिक्रिया पाठ</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_ResponseTokensDescription" xml:space="preserve">
-    <value>प्रतिक्रिया टोकन सम्मिलित करने के लिए दायाँ-क्लिक करें।</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_Result" xml:space="preserve">
     <value>परिणाम</value>
   </data>
   <data name="CustomUploaderSettingsWindow_ResultURL" xml:space="preserve">
     <value>परिणाम URL</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ResultURLDescription" xml:space="preserve">
-    <value>सफल अपलोड के बाद कॉपी या खोला जाने वाला अंतिम URL।</value>
   </data>
   <data name="CustomUploaderSettingsWindow_SelectToExport" xml:space="preserve">
     <value>निर्यात करने के लिए अनुकूलित अपलोडर चुनें।</value>
@@ -2530,20 +2497,11 @@
   <data name="CustomUploaderSettingsWindow_SelectUploaderToEdit" xml:space="preserve">
     <value>संपादित करने के लिए अपलोडर चुनें</value>
   </data>
-  <data name="CustomUploaderSettingsWindow_SelectUploaderToEditDescription" xml:space="preserve">
-    <value>नया अपलोडर बनाएँ, .sxcu फ़ाइल आयात करें या लाइब्रेरी से चुनें।</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_SyntaxTestDescription" xml:space="preserve">
-    <value>पूर्वावलोकन करें कि प्रतिक्रिया अभिव्यक्ति कैसे पार्स होगी।</value>
-  </data>
   <data name="CustomUploaderSettingsWindow_TestCancelled" xml:space="preserve">
     <value>परीक्षण रद्द किया गया।</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestCompleted" xml:space="preserve">
     <value>परीक्षण पूरा हुआ।</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_TestDescription" xml:space="preserve">
-    <value>प्रत्येक गंतव्य के लिए सक्रिय अनुकूलित अपलोडर चुनें और लाइव परीक्षण चलाएँ।</value>
   </data>
   <data name="CustomUploaderSettingsWindow_TestFailed" xml:space="preserve">
     <value>परीक्षण विफल।</value>
@@ -2568,9 +2526,6 @@
   </data>
   <data name="CustomUploaderSettingsWindow_ThumbnailURL" xml:space="preserve">
     <value>थंबनेल URL</value>
-  </data>
-  <data name="CustomUploaderSettingsWindow_ThumbnailURLDescription" xml:space="preserve">
-    <value>सेवा द्वारा लौटाई गई वैकल्पिक पूर्वावलोकन छवि।</value>
   </data>
   <data name="CustomUploaderSettingsWindow_UpdatedCount" xml:space="preserve">
     <value>{0} अनुकूलित अपलोडर फ़ाइलें अपडेट की गईं।</value>
