@@ -355,7 +355,7 @@
                                         <Border Grid.Row="1" Grid.Column="1" Classes="choice-card">
                                     <CheckBox Classes="destination-type" Content="{x:Static res:Strings.CustomUploaderSettingsWindow_URLShortener}" IsChecked="{Binding SelectedUploader.IsURLShortener, Mode=TwoWay}"/>
                                         </Border>
-                                        <Border Grid.Row="2" Grid.ColumnSpan="2" Classes="choice-card">
+                                        <Border Grid.Row="2" Classes="choice-card">
                                     <CheckBox Classes="destination-type" Content="{x:Static res:Strings.CustomUploaderSettingsWindow_URLSharingService}" IsChecked="{Binding SelectedUploader.IsURLSharingService, Mode=TwoWay}"/>
                                         </Border>
                                     </Grid>
@@ -496,17 +496,7 @@
                     <!-- Response -->
                     <ScrollViewer IsVisible="{Binding IsResponseSection}" VerticalScrollBarVisibility="Auto">
                         <StackPanel Spacing="10" Margin="0,0,4,0">
-                            <Grid ColumnDefinitions="*,Auto">
-                                <StackPanel Spacing="2">
-                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Response}"/>
-                                </StackPanel>
-                                <Button Grid.Column="1" Classes="compact" Click="OnSyntaxTestClick">
-                                    <StackPanel Orientation="Horizontal" Spacing="6">
-                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.test_tube_2}" FontSize="15"/>
-                                        <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_TestURLSyntax}"/>
-                                    </StackPanel>
-                                </Button>
-                            </Grid>
+                            <TextBlock Classes="section-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Response}"/>
 
                             <StackPanel Spacing="8">
                                 <Border Classes="card">
@@ -515,6 +505,14 @@
                                         <TextBox x:Name="ResultURLBox"
                                                  Classes="dense syntax-input"
                                                  Text="{Binding SelectedUploader.URL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Button Classes="compact"
+                                                HorizontalAlignment="Right"
+                                                Click="OnSyntaxTestClick">
+                                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.test_tube_2}" FontSize="15"/>
+                                                <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_TestURLSyntax}"/>
+                                            </StackPanel>
+                                        </Button>
                                     </StackPanel>
                                 </Border>
                                 <Border Classes="card">
@@ -601,7 +599,7 @@
                                         </Grid>
                                     </StackPanel>
                                 </Border>
-                                <Border Grid.Row="2" Grid.ColumnSpan="2" Classes="card">
+                                <Border Grid.Row="2" Classes="card">
                                     <StackPanel Spacing="7">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
                                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.share_2}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
