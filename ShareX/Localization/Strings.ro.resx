@@ -2609,13 +2609,6 @@
     <value>Fișierul nu există:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool nu există la următoarea cale:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - ExifTool lipsește</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Doriți să adăugați serviciul de încărcare personalizat „{0}”?</value>
   </data>

@@ -2609,13 +2609,6 @@
     <value>Datei ist nicht vorhanden:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool ist unter folgendem Pfad nicht vorhanden:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX – ExifTool fehlt</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Möchten Sie den benutzerdefinierten Uploader „{0}“ hinzufügen?</value>
   </data>

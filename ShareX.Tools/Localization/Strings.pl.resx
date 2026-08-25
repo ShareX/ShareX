@@ -1051,15 +1051,6 @@
   <data name="LocalizedDisplayConverter_Vertical_lines" xml:space="preserve">
     <value>Linie pionowe</value>
   </data>
-  <data name="MetadataService_ExifTool_not_found" xml:space="preserve">
-    <value>Nie znaleziono programu ExifTool.</value>
-  </data>
-  <data name="MetadataService_Exited_with_code" xml:space="preserve">
-    <value>Program ExifTool zakończył działanie z kodem {0}.</value>
-  </data>
-  <data name="MetadataService_Failed_start_ExifTool" xml:space="preserve">
-    <value>Nie udało się uruchomić programu ExifTool.</value>
-  </data>
   <data name="MetadataService_Selected_file_not_found" xml:space="preserve">
     <value>Nie znaleziono wybranego pliku.</value>
   </data>

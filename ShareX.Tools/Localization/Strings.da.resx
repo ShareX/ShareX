@@ -1055,15 +1055,6 @@ Filsti: {0}</value>
   <data name="LocalizedDisplayConverter_Vertical_lines" xml:space="preserve">
     <value>Lodrette linjer</value>
   </data>
-  <data name="MetadataService_ExifTool_not_found" xml:space="preserve">
-    <value>ExifTool kunne ikke findes.</value>
-  </data>
-  <data name="MetadataService_Exited_with_code" xml:space="preserve">
-    <value>ExifTool blev afsluttet med koden {0}.</value>
-  </data>
-  <data name="MetadataService_Failed_start_ExifTool" xml:space="preserve">
-    <value>Det var ikke muligt at starte ExifTool.</value>
-  </data>
   <data name="MetadataService_Selected_file_not_found" xml:space="preserve">
     <value>Den valgte fil kunne ikke findes.</value>
   </data>

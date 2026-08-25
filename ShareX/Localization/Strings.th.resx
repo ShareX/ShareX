@@ -2609,13 +2609,6 @@
     <value>ไม่มีไฟล์:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ไม่พบ ExifTool ที่เส้นทางต่อไปนี้:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - ExifTool หายไป</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>คุณต้องการ เพิ่ม "{0}" ตัวอัปโหลดกำหนดเอง?</value>
   </data>

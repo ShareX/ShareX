@@ -12,23 +12,58 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
-using System.Diagnostics;
-
 namespace ShareX.Tools;
+
+public sealed record MetadataValue(string Group, string Tag, string Value);
 
 public static class MetadataService
 {
-    public static string ExifToolPath => FileHelpers.GetAbsolutePath("exiftool.exe");
-
-    public static async Task<string> ReadMetadataAsync(string filePath, CancellationToken cancellationToken = default)
+    public static async Task<IReadOnlyList<MetadataValue>> ReadMetadataAsync(
+        string filePath,
+        CancellationToken cancellationToken = default)
     {
-        return await RunExifToolAsync(filePath, ["-G", "-t", "-m", "-q"], cancellationToken);
+        ValidateFile(filePath);
+
+        return await Task.Run(() =>
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            return MetadataReader.Read(filePath, cancellationToken);
+        }, cancellationToken);
+    }
+
+    public static bool CanStripMetadata(string filePath)
+    {
+        if (!File.Exists(filePath))
+        {
+            return false;
+        }
+
+        try
+        {
+            MetadataFormat format = MetadataFormatDetector.Detect(filePath);
+            return format == MetadataFormat.IsoBaseMedia
+                ? MetadataStripper.IsIsoVideoPath(filePath)
+                : format.CanStripMetadata();
+        }
+        catch (IOException)
+        {
+            return false;
+        }
+        catch (UnauthorizedAccessException)
+        {
+            return false;
+        }
     }
 
     public static async Task StripMetadataAsync(string filePath, CancellationToken cancellationToken = default)
     {
-        await RunExifToolAsync(filePath, ["-all=", "-overwrite_original", "-q"], cancellationToken);
+        ValidateFile(filePath);
+
+        await Task.Run(() =>
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            MetadataStripper.Strip(filePath, cancellationToken);
+        }, cancellationToken);
     }
 
     public static void StripFileMetadata(string filePath)
@@ -36,49 +71,11 @@ public static class MetadataService
         StripMetadataAsync(filePath).GetAwaiter().GetResult();
     }
 
-    private static async Task<string> RunExifToolAsync(
-        string filePath,
-        IReadOnlyList<string> arguments,
-        CancellationToken cancellationToken)
+    private static void ValidateFile(string filePath)
     {
-        if (!File.Exists(ExifToolPath))
-        {
-            throw new FileNotFoundException(Localization.Strings.MetadataService_ExifTool_not_found, ExifToolPath);
-        }
         if (!File.Exists(filePath))
         {
             throw new FileNotFoundException(Localization.Strings.MetadataService_Selected_file_not_found, filePath);
         }
-
-        ProcessStartInfo startInfo = new()
-        {
-            FileName = ExifToolPath,
-            RedirectStandardOutput = true,
-            RedirectStandardError = true,
-            UseShellExecute = false,
-            CreateNoWindow = true
-        };
-        startInfo.ArgumentList.Add(filePath);
-        foreach (string argument in arguments)
-        {
-            startInfo.ArgumentList.Add(argument);
-        }
-
-        using Process process = Process.Start(startInfo)
-            ?? throw new InvalidOperationException(Localization.Strings.MetadataService_Failed_start_ExifTool);
-        Task<string> outputTask = process.StandardOutput.ReadToEndAsync(cancellationToken);
-        Task<string> errorTask = process.StandardError.ReadToEndAsync(cancellationToken);
-        await process.WaitForExitAsync(cancellationToken);
-        string output = await outputTask;
-        string error = await errorTask;
-
-        if (process.ExitCode != 0)
-        {
-            throw new InvalidOperationException(string.IsNullOrWhiteSpace(error)
-                ? string.Format(Localization.Strings.MetadataService_Exited_with_code, process.ExitCode)
-                : error.Trim());
-        }
-
-        return output;
     }
 }

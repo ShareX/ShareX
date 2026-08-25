@@ -2609,13 +2609,6 @@
     <value>A fájl nem létezik:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>Az ExifTool nem található a következő útvonalon:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX – Az ExifTool hiányzik</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Hozzáadja a(z) „{0}” egyéni feltöltőt?</value>
   </data>

@@ -2609,13 +2609,6 @@
     <value>الملف غير موجود:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool غير موجود في المسار التالي:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - ‏ExifTool مفقود</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>هل تريد إضافة أداة الرفع المخصصة «{0}»؟</value>
   </data>

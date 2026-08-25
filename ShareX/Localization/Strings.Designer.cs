@@ -4877,16 +4877,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskHelpers_FileDoesNotExist", resourceCulture);
             }
         }
-        public static string TaskHelpers_ExifToolDoesNotExist {
-            get {
-                return ResourceManager.GetString("TaskHelpers_ExifToolDoesNotExist", resourceCulture);
-            }
-        }
-        public static string TaskHelpers_ExifToolMissingTitle {
-            get {
-                return ResourceManager.GetString("TaskHelpers_ExifToolMissingTitle", resourceCulture);
-            }
-        }
         public static string TaskHelpers_AddCustomUploaderConfirmation {
             get {
                 return ResourceManager.GetString("TaskHelpers_AddCustomUploaderConfirmation", resourceCulture);

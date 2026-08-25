@@ -2609,13 +2609,6 @@
     <value>Dosya mevcut değil:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool şu yolda mevcut değil:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - ExifTool eksik</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>&quot;{0}&quot; özel yükleyicisini eklemek istiyor musunuz?</value>
   </data>

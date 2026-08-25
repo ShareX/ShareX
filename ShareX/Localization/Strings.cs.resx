@@ -2609,13 +2609,6 @@
     <value>Soubor neexistuje:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>Nástroj ExifTool neexistuje v následující cestě:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX – Chybí ExifTool</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Chcete přidat vlastní nahrávání „{0}“?</value>
   </data>

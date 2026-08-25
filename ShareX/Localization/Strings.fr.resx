@@ -2609,13 +2609,6 @@
     <value>Le fichier n’existe pas :
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool n’existe pas à l’emplacement suivant :
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - ExifTool est manquant</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Voulez-vous ajouter le module d’envoi personnalisé « {0} » ?</value>
   </data>

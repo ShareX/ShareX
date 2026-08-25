@@ -1051,15 +1051,6 @@
   <data name="LocalizedDisplayConverter_Vertical_lines" xml:space="preserve">
     <value>세로선</value>
   </data>
-  <data name="MetadataService_ExifTool_not_found" xml:space="preserve">
-    <value>ExifTool을 찾을 수 없습니다.</value>
-  </data>
-  <data name="MetadataService_Exited_with_code" xml:space="preserve">
-    <value>ExifTool이 코드 {0}(으)로 종료되었습니다.</value>
-  </data>
-  <data name="MetadataService_Failed_start_ExifTool" xml:space="preserve">
-    <value>ExifTool을 시작하지 못했습니다.</value>
-  </data>
   <data name="MetadataService_Selected_file_not_found" xml:space="preserve">
     <value>선택한 파일을 찾을 수 없습니다.</value>
   </data>

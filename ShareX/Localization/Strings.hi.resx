@@ -2609,13 +2609,6 @@
     <value>फ़ाइल मौजूद नहीं है:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool निम्न पथ पर मौजूद नहीं है:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - ExifTool मौजूद नहीं है</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>क्या आप "{0}" अनुकूलित अपलोडर जोड़ना चाहते हैं?</value>
   </data>

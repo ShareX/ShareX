@@ -90,14 +90,11 @@ namespace ShareX.Setup
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-MicrosoftStore-{Platform}.appx");
         private static string MicrosoftStoreDebugAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-MicrosoftStore-debug-{Platform}.appx");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
-        private static string ExifToolPath => Path.Combine(OutputDir, "exiftool.exe");
         private static string MakeAppxPath => Path.Combine(WindowsKitsDir, "x64", "makeappx.exe");
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         private const string FFmpegVersion = "8.1";
         private static string FFmpegDownloadURL => $"https://github.com/ShareX/FFmpeg/releases/download/v{FFmpegVersion}/ffmpeg-{FFmpegVersion}-win-{Platform}.zip";
-        private const string ExifToolVersion = "13.29";
-        private static string ExifToolDownloadURL = $"https://github.com/ShareX/ExifTool/releases/download/v{ExifToolVersion}/exiftool-{ExifToolVersion}-win64.zip";
 
         private static void Main(string[] args)
         {
@@ -119,7 +116,6 @@ namespace ShareX.Setup
             if (Job.HasFlag(SetupJobs.DownloadTools))
             {
                 DownloadFFmpeg();
-                DownloadExifTool();
             }
 
             if (Job.HasFlag(SetupJobs.CreateSetup))
@@ -391,12 +387,6 @@ namespace ShareX.Setup
                 FileHelpers.CopyFiles(FFmpegPath, destination);
             }
 
-            if (File.Exists(ExifToolPath))
-            {
-                FileHelpers.CopyFiles(ExifToolPath, destination);
-                FileHelpers.CopyAll(Path.Combine(OutputDir, "exiftool_files"), Path.Combine(destination, "exiftool_files"));
-            }
-
             if (job == SetupJobs.CreatePortable)
             {
                 FileHelpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
@@ -447,21 +437,6 @@ namespace ShareX.Setup
 
                 Console.WriteLine("Extracting: " + filePath);
                 ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
-            }
-        }
-
-        private static void DownloadExifTool()
-        {
-            if (!File.Exists(ExifToolPath))
-            {
-                string fileName = Path.GetFileName(ExifToolDownloadURL);
-                string filePath = Path.Combine(OutputDir, fileName);
-
-                Console.WriteLine("Downloading: " + ExifToolDownloadURL);
-                WebHelpers.DownloadFileAsync(ExifToolDownloadURL, filePath).GetAwaiter().GetResult();
-
-                Console.WriteLine("Extracting: " + filePath);
-                ZipManager.Extract(filePath, OutputDir);
             }
         }
 

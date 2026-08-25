@@ -2609,13 +2609,6 @@
     <value>Tệp không tồn tại:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool không tồn tại tại đường dẫn sau:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - Thiếu ExifTool</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Bạn có muốn thêm trình tải lên tùy chỉnh &quot;{0}&quot; không?</value>
   </data>

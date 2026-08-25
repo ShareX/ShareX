@@ -2609,13 +2609,6 @@
     <value>Filen findes ikke:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool findes ikke på følgende sti:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - ExifTool mangler</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Vil du tilføje til den brugerdefinerede uploader "{0}"?</value>
   </data>

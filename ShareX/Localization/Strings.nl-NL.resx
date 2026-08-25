@@ -2609,13 +2609,6 @@
     <value>Bestand bestaat niet:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool bestaat niet op het volgende pad:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - ExifTool ontbreekt</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Wilt u de aangepaste uploader &apos;&apos;{0}&apos;&apos; toevoegen?</value>
   </data>

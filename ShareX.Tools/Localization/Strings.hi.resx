@@ -1055,15 +1055,6 @@
   <data name="LocalizedDisplayConverter_Vertical_lines" xml:space="preserve">
     <value>लंबवत रेखाएँ</value>
   </data>
-  <data name="MetadataService_ExifTool_not_found" xml:space="preserve">
-    <value>ExifTool नहीं मिला।</value>
-  </data>
-  <data name="MetadataService_Exited_with_code" xml:space="preserve">
-    <value>ExifTool कोड {0} के साथ बंद हुआ।</value>
-  </data>
-  <data name="MetadataService_Failed_start_ExifTool" xml:space="preserve">
-    <value>ExifTool आरंभ करने में विफल।</value>
-  </data>
   <data name="MetadataService_Selected_file_not_found" xml:space="preserve">
     <value>चुनी गई फ़ाइल नहीं मिली।</value>
   </data>

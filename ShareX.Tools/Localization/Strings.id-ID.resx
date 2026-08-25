@@ -1051,15 +1051,6 @@
   <data name="LocalizedDisplayConverter_Vertical_lines" xml:space="preserve">
     <value>Garis vertikal</value>
   </data>
-  <data name="MetadataService_ExifTool_not_found" xml:space="preserve">
-    <value>ExifTool tidak dapat ditemukan.</value>
-  </data>
-  <data name="MetadataService_Exited_with_code" xml:space="preserve">
-    <value>ExifTool keluar dengan kode {0}.</value>
-  </data>
-  <data name="MetadataService_Failed_start_ExifTool" xml:space="preserve">
-    <value>Gagal memulai ExifTool.</value>
-  </data>
   <data name="MetadataService_Selected_file_not_found" xml:space="preserve">
     <value>File yang dipilih tidak dapat ditemukan.</value>
   </data>

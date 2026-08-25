@@ -2609,13 +2609,6 @@
     <value>File tidak ada:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool tidak ada di lokasi berikut:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - ExifTool tidak ada</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Tambahkan pengunggah khusus &quot;{0}&quot;?</value>
   </data>

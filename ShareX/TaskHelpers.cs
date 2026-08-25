@@ -920,11 +920,6 @@ namespace ShareX
 
         public static void OpenMetadataWindow(string filePath = null)
         {
-            if (!CheckExifTool())
-            {
-                return;
-            }
-
             ToolsIntegration.ShowMetadataWindow(filePath,
                 () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted));
         }
@@ -944,11 +939,6 @@ namespace ShareX
         public static bool StripMetadata(string filePath = null, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (!CheckExifTool())
-            {
-                return false;
-            }
 
             try
             {
@@ -2111,21 +2101,6 @@ namespace ShareX
             {
                 MessageBox.Show(Strings.FFmpegDoesNotExistAtTheFollowingPath + "\r\n" + ffmpegPath,
                     "ShareX - " + Strings.FFmpegIsMissing, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                return false;
-            }
-
-            return true;
-        }
-
-        public static bool CheckExifTool()
-        {
-            string exifToolPath = FileHelpers.GetAbsolutePath("exiftool.exe");
-
-            if (!File.Exists(exifToolPath))
-            {
-                MessageBox.Show(string.Format(Strings.TaskHelpers_ExifToolDoesNotExist, exifToolPath),
-                    Strings.TaskHelpers_ExifToolMissingTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return false;
             }

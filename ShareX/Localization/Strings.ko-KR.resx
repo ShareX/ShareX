@@ -2609,13 +2609,6 @@
     <value>파일이 없습니다:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>다음 경로에 ExifTool이 없습니다:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - ExifTool 없음</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>사용자 지정 업로더 &quot;{0}&quot;을(를) 추가하시겠습니까?</value>
   </data>

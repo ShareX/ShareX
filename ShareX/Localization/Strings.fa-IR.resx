@@ -2609,13 +2609,6 @@
     <value>پرونده وجود ندارد:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool در مسیر زیر وجود ندارد:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - ‏ExifTool یافت نشد</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>آیا می‌خواهید بارگذار سفارشی «{0}» را اضافه کنید؟</value>
   </data>

@@ -3043,33 +3043,6 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ExifTool could not be found..
-        /// </summary>
-        public static string MetadataService_ExifTool_not_found {
-            get {
-                return ResourceManager.GetString("MetadataService_ExifTool_not_found", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ExifTool exited with code {0}..
-        /// </summary>
-        public static string MetadataService_Exited_with_code {
-            get {
-                return ResourceManager.GetString("MetadataService_Exited_with_code", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to start ExifTool..
-        /// </summary>
-        public static string MetadataService_Failed_start_ExifTool {
-            get {
-                return ResourceManager.GetString("MetadataService_Failed_start_ExifTool", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The selected file could not be found..
         /// </summary>
         public static string MetadataService_Selected_file_not_found {

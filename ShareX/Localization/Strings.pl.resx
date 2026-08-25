@@ -2609,13 +2609,6 @@
     <value>Plik nie istnieje:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>Program ExifTool nie istnieje w następującej lokalizacji:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX — Brak programu ExifTool</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Czy chcesz dodać niestandardowy moduł wysyłania „{0}”?</value>
   </data>

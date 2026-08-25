@@ -2609,13 +2609,6 @@
     <value>Файл не существует:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool отсутствует по следующему пути:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX — ExifTool отсутствует</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Добавить пользовательский загрузчик «{0}»?</value>
   </data>

@@ -2609,13 +2609,6 @@
     <value>El archivo no existe:
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>ExifTool no existe en la siguiente ruta:
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - Falta ExifTool</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>¿Desea agregar el cargador personalizado «{0}»?</value>
   </data>

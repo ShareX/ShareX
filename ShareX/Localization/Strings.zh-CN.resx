@@ -2609,13 +2609,6 @@
     <value>文件不存在：
 {0}</value>
   </data>
-  <data name="TaskHelpers_ExifToolDoesNotExist" xml:space="preserve">
-    <value>以下路径中不存在 ExifTool：
-{0}</value>
-  </data>
-  <data name="TaskHelpers_ExifToolMissingTitle" xml:space="preserve">
-    <value>ShareX - 缺少 ExifTool</value>
-  </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>是否添加自定义上传器“{0}”？</value>
   </data>
