@@ -526,7 +526,8 @@ namespace ShareX.UploadersLib
         {
             MultipartFormDataContent content = CreateMultipartFormDataContent(args);
             HttpContent fileContent = CreateStreamContent(data, 0, GetStreamLength(data), MimeTypes.GetMimeTypeFromFileName(fileName));
-            content.Add(fileContent, fileFormName, fileName);
+            fileContent.Headers.ContentDisposition = CreateFormDataContentDisposition(fileFormName, fileName);
+            content.Add(fileContent);
             return content;
         }
 
@@ -554,12 +555,34 @@ namespace ShareX.UploadersLib
                     {
                         StringContent valueContent = new StringContent(argument.Value ?? "", Encoding.UTF8);
                         valueContent.Headers.ContentType = null;
-                        content.Add(valueContent, argument.Key);
+                        valueContent.Headers.ContentDisposition = CreateFormDataContentDisposition(argument.Key);
+                        content.Add(valueContent);
                     }
                 }
             }
 
             return content;
+        }
+
+        private static ContentDispositionHeaderValue CreateFormDataContentDisposition(string name, string fileName = null)
+        {
+            ContentDispositionHeaderValue contentDisposition = new ContentDispositionHeaderValue("form-data")
+            {
+                Name = QuoteHeaderValue(name)
+            };
+
+            if (fileName != null)
+            {
+                contentDisposition.FileName = QuoteHeaderValue(fileName);
+            }
+
+            return contentDisposition;
+        }
+
+        private static string QuoteHeaderValue(string value)
+        {
+            ArgumentNullException.ThrowIfNull(value);
+            return $"\"{value.Replace("\\", "\\\\").Replace("\"", "\\\"")}\"";
         }
 
         private static void AddHeaders(HttpRequestMessage request, NameValueCollection headers)
