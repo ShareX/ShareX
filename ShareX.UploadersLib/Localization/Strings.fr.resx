@@ -613,6 +613,9 @@
   <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
     <value>Afficher la boîte de dialogue</value>
   </data>
+  <data name="DestinationSettings_Field_Show_Metadata" xml:space="preserve">
+    <value>Afficher les métadonnées</value>
+  </data>
   <data name="DestinationSettings_Field_Signature" xml:space="preserve">
     <value>Signature</value>
   </data>

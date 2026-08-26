@@ -613,6 +613,9 @@
   <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
     <value>संवाद दिखाएँ</value>
   </data>
+  <data name="DestinationSettings_Field_Show_Metadata" xml:space="preserve">
+    <value>मेटाडेटा दिखाएँ</value>
+  </data>
   <data name="DestinationSettings_Field_Signature" xml:space="preserve">
     <value>हस्ताक्षर</value>
   </data>

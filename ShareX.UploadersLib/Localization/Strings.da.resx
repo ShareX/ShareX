@@ -613,6 +613,9 @@
   <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
     <value>Vis dialogboks</value>
   </data>
+  <data name="DestinationSettings_Field_Show_Metadata" xml:space="preserve">
+    <value>Vis metadata</value>
+  </data>
   <data name="DestinationSettings_Field_Signature" xml:space="preserve">
     <value>Signatur</value>
   </data>

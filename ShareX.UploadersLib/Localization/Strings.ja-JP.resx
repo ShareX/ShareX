@@ -613,6 +613,9 @@
   <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
     <value>ダイアログを表示</value>
   </data>
+  <data name="DestinationSettings_Field_Show_Metadata" xml:space="preserve">
+    <value>メタデータを表示</value>
+  </data>
   <data name="DestinationSettings_Field_Signature" xml:space="preserve">
     <value>署名</value>
   </data>

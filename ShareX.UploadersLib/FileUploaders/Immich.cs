@@ -29,7 +29,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using System.Threading;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -46,7 +45,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Immich(config.ImmichURL, config.ImmichAPIKey);
+            return new Immich(config.ImmichURL, config.ImmichAPIKey)
+            {
+                AutoCreateShareableLink = config.ImmichAutoCreateShareableLink,
+                ShowMetadata = config.ImmichShowMetadata
+            };
         }
     }
 
@@ -54,6 +57,8 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public string URL { get; }
         public string APIKey { get; }
+        public bool AutoCreateShareableLink { get; set; }
+        public bool ShowMetadata { get; set; }
 
         public Immich(string url, string apiKey)
         {
@@ -87,7 +92,15 @@ namespace ShareX.UploadersLib.FileUploaders
                 ImmichUploadResponse response = JsonConvert.DeserializeObject<ImmichUploadResponse>(result.Response);
                 if (!string.IsNullOrWhiteSpace(response?.Id))
                 {
-                    result.URL = URLHelpers.CombineURL(GetWebURL(URL), "photos", response.Id);
+                    if (AutoCreateShareableLink)
+                    {
+                        result.URL = await CreateShareableLinkAsync(response.Id, headers, cancellationToken).ConfigureAwait(false);
+                        result.IsSuccess = !string.IsNullOrWhiteSpace(result.URL);
+                    }
+                    else
+                    {
+                        result.URL = URLHelpers.CombineURL(GetWebURL(URL), "photos", response.Id);
+                    }
                 }
                 else
                 {
@@ -96,6 +109,25 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return result;
+        }
+
+        private async Task<string> CreateShareableLinkAsync(string assetId, NameValueCollection headers, CancellationToken cancellationToken)
+        {
+            string requestBody = JsonConvert.SerializeObject(new
+            {
+                type = "INDIVIDUAL",
+                assetIds = new[] { assetId },
+                allowUpload = false,
+                allowDownload = true,
+                showMetadata = ShowMetadata
+            });
+            string responseText = await SendRequestAsync(HttpMethod.POST, GetSharedLinksURL(URL), requestBody,
+                RequestHelpers.ContentTypeJSON, headers: headers, cancellationToken: cancellationToken).ConfigureAwait(false);
+            ImmichSharedLinkResponse response = JsonConvert.DeserializeObject<ImmichSharedLinkResponse>(responseText);
+
+            return string.IsNullOrWhiteSpace(response?.Key)
+                ? null
+                : URLHelpers.CombineURL(GetWebURL(URL), "share", response.Key);
         }
 
         internal static string GetUploadURL(string url)
@@ -125,6 +157,11 @@ namespace ShareX.UploadersLib.FileUploaders
             }
             return normalizedURL;
         }
+
+        internal static string GetSharedLinksURL(string url)
+        {
+            return URLHelpers.CombineURL(GetWebURL(url), "api", "shared-links");
+        }
     }
 
     public sealed class ImmichUploadResponse
@@ -132,5 +169,10 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Id { get; set; }
         public string Status { get; set; }
         public bool Duplicate { get; set; }
+    }
+
+    public sealed class ImmichSharedLinkResponse
+    {
+        public string Key { get; set; }
     }
 }

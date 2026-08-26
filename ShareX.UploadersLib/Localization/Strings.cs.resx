@@ -613,6 +613,9 @@
   <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
     <value>Zobrazit dialog</value>
   </data>
+  <data name="DestinationSettings_Field_Show_Metadata" xml:space="preserve">
+    <value>Zobrazit metadata</value>
+  </data>
   <data name="DestinationSettings_Field_Signature" xml:space="preserve">
     <value>Podpis</value>
   </data>

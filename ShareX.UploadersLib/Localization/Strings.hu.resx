@@ -613,6 +613,9 @@
   <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
     <value>Párbeszédpanel megjelenítése</value>
   </data>
+  <data name="DestinationSettings_Field_Show_Metadata" xml:space="preserve">
+    <value>Metaadatok megjelenítése</value>
+  </data>
   <data name="DestinationSettings_Field_Signature" xml:space="preserve">
     <value>Aláírás</value>
   </data>

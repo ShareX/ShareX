@@ -410,6 +410,8 @@ namespace ShareX.UploadersLib
         public string ImmichURL { get; set; } = "";
         [JsonEncrypt]
         public string ImmichAPIKey { get; set; } = "";
+        public bool ImmichAutoCreateShareableLink { get; set; } = true;
+        public bool ImmichShowMetadata { get; set; } = false;
 
         #endregion Immich
 

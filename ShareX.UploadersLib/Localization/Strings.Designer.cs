@@ -399,6 +399,8 @@ namespace ShareX.UploadersLib.Localization
 
         public static string DestinationSettings_Field_Show_Dialog => ResourceManager.GetString("DestinationSettings_Field_Show_Dialog", resourceCulture) ?? string.Empty;
 
+        public static string DestinationSettings_Field_Show_Metadata => ResourceManager.GetString("DestinationSettings_Field_Show_Metadata", resourceCulture) ?? string.Empty;
+
         public static string DestinationSettings_Field_Signature => ResourceManager.GetString("DestinationSettings_Field_Signature", resourceCulture) ?? string.Empty;
 
         public static string DestinationSettings_Field_Signed_Payload => ResourceManager.GetString("DestinationSettings_Field_Signed_Payload", resourceCulture) ?? string.Empty;

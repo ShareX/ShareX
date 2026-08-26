@@ -613,6 +613,9 @@
   <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
     <value>แสดง กล่องโต้ตอบ</value>
   </data>
+  <data name="DestinationSettings_Field_Show_Metadata" xml:space="preserve">
+    <value>แสดงข้อมูลเมตา</value>
+  </data>
   <data name="DestinationSettings_Field_Signature" xml:space="preserve">
     <value>ลายเซ็น</value>
   </data>

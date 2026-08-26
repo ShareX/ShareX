@@ -613,6 +613,9 @@
   <data name="DestinationSettings_Field_Show_Dialog" xml:space="preserve">
     <value>显示对话框</value>
   </data>
+  <data name="DestinationSettings_Field_Show_Metadata" xml:space="preserve">
+    <value>顯示中繼資料</value>
+  </data>
   <data name="DestinationSettings_Field_Signature" xml:space="preserve">
     <value>簽章</value>
   </data>
