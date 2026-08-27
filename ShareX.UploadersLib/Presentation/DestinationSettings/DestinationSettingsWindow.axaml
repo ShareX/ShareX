@@ -36,6 +36,12 @@
             <Setter Property="FontSize" Value="12"/><Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/><Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
+        <Style Selector="TextBlock.hint.connection-connected">
+            <Setter Property="Foreground" Value="#79B58A"/>
+        </Style>
+        <Style Selector="TextBlock.hint.connection-disconnected">
+            <Setter Property="Foreground" Value="#D07C7C"/>
+        </Style>
         <Style Selector="Border.section-card">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/><Setter Property="BorderThickness" Value="1"/>
