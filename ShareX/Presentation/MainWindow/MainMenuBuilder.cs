@@ -460,7 +460,8 @@ internal sealed class MainMenuBuilder
                     })
                 : null,
             isChecked: settings.ImageDestination == value,
-            toggleType: MainMenuToggleType.Radio)).ToArray();
+            toggleType: MainMenuToggleType.Radio,
+            staysOpenOnClick: true)).ToArray();
     }
 
     private static IReadOnlyList<MainMenuEntry> BuildTextDestinations(TaskSettings settings)
@@ -478,7 +479,8 @@ internal sealed class MainMenuBuilder
                     })
                 : null,
             isChecked: settings.TextDestination == value,
-            toggleType: MainMenuToggleType.Radio)).ToArray();
+            toggleType: MainMenuToggleType.Radio,
+            staysOpenOnClick: true)).ToArray();
     }
 
     private static IReadOnlyList<MainMenuEntry> BuildEnumDestinations<T>(T selected, Action<T> setValue) where T : struct, Enum
@@ -488,7 +490,8 @@ internal sealed class MainMenuBuilder
             string.Empty,
             () => setValue(value),
             isChecked: EqualityComparer<T>.Default.Equals(selected, value),
-            toggleType: MainMenuToggleType.Radio)).ToArray();
+            toggleType: MainMenuToggleType.Radio,
+            staysOpenOnClick: true)).ToArray();
     }
 
     private IReadOnlyList<MainMenuEntry> BuildDebugMenu()
