@@ -658,6 +658,9 @@
   <data name="DestinationSettings_Field_Token" xml:space="preserve">
     <value>Mã thông báo</value>
   </data>
+  <data name="DestinationSettings_Field_Two_Factor_Authentication_Code" xml:space="preserve">
+    <value>Mã xác thực hai yếu tố (không bắt buộc)</value>
+  </data>
   <data name="DestinationSettings_Field_TTL" xml:space="preserve">
     <value>Thời gian tồn tại</value>
   </data>
@@ -915,6 +918,9 @@
   </data>
   <data name="FileDestination_Localhostr" xml:space="preserve">
     <value>Hostr</value>
+  </data>
+  <data name="FileDestination_Mega" xml:space="preserve">
+    <value>MEGA</value>
   </data>
   <data name="FileDestination_MediaFire" xml:space="preserve">
     <value>MediaFire</value>

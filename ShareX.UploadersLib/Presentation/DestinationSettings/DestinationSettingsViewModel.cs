@@ -37,7 +37,7 @@ public sealed class DestinationSettingsViewModel : INotifyPropertyChanged
             Page("ftp", "FTP / FTPS / SFTP", "FTP", "FTP", "FTPS", "SFTP"),
             Page("dropbox", "Dropbox", "Dropbox"), Page("onedrive", "OneDrive", "OneDrive"),
             Page("google-drive", "Google Drive", "GoogleDrive"), Page("puush", "puush", "Puush"),
-            Page("box", "Box", "Box"), Page("amazon-s3", "Amazon S3", "AmazonS3"),
+            Page("box", "Box", "Box"), Page("mega", "MEGA", "Mega"), Page("amazon-s3", "Amazon S3", "AmazonS3"),
             Page("google-cloud-storage", "Google Cloud Storage", "GoogleCloudStorage"),
             Page("azure-storage", "Azure Storage", "AzureStorage"), Page("backblaze-b2", "Backblaze B2", "B2", "BackblazeB2"),
             Page("owncloud", "ownCloud / Nextcloud", "OwnCloud", "ownCloud", "Nextcloud"),

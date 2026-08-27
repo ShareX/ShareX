@@ -429,6 +429,8 @@ namespace ShareX.UploadersLib.Localization
 
         public static string DestinationSettings_Field_Token => ResourceManager.GetString("DestinationSettings_Field_Token", resourceCulture) ?? string.Empty;
 
+        public static string DestinationSettings_Field_Two_Factor_Authentication_Code => ResourceManager.GetString("DestinationSettings_Field_Two_Factor_Authentication_Code", resourceCulture) ?? string.Empty;
+
         public static string DestinationSettings_Field_TTL => ResourceManager.GetString("DestinationSettings_Field_TTL", resourceCulture) ?? string.Empty;
 
         public static string DestinationSettings_Field_TTL_Unit => ResourceManager.GetString("DestinationSettings_Field_TTL_Unit", resourceCulture) ?? string.Empty;
@@ -600,6 +602,8 @@ namespace ShareX.UploadersLib.Localization
         public static string FileDestination_Lithiio => ResourceManager.GetString("FileDestination_Lithiio", resourceCulture) ?? string.Empty;
 
         public static string FileDestination_Localhostr => ResourceManager.GetString("FileDestination_Localhostr", resourceCulture) ?? string.Empty;
+
+        public static string FileDestination_Mega => ResourceManager.GetString("FileDestination_Mega", resourceCulture) ?? string.Empty;
 
         public static string FileDestination_MediaFire => ResourceManager.GetString("FileDestination_MediaFire", resourceCulture) ?? string.Empty;
 

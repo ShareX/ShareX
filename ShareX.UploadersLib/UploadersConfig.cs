@@ -214,6 +214,16 @@ namespace ShareX.UploadersLib
 
         #endregion Box
 
+        #region MEGA
+
+        public string MegaEmail { get; set; } = "";
+        [JsonEncrypt]
+        public string MegaPassword { get; set; } = "";
+        [JsonEncrypt]
+        public string MegaTwoFactorAuthenticationCode { get; set; } = "";
+
+        #endregion MEGA
+
         #region Localhostr
 
         public string LocalhostrEmail { get; set; } = "";

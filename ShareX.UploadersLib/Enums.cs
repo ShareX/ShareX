@@ -89,6 +89,8 @@ namespace ShareX.UploadersLib
         Puush,
         [Description("Box")]
         Box,
+        [Description("MEGA")]
+        Mega,
         [Description("Amazon S3")]
         AmazonS3,
         [Description("Google Cloud Storage")]
