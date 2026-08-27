@@ -84,7 +84,7 @@ public sealed class DestinationSettingsViewModel : INotifyPropertyChanged
     {
         foreach (DestinationCategoryDefinition category in Categories)
         {
-            NavigationItems.Add(new SettingsNavigationItem(category.Id, category.Title, category.Icon,
+            NavigationItems.Add(new SettingsNavigationItem(category.Id, category.Title,
                 children: category.Pages.Select(page => new SettingsNavigationItem(page.Id, page.Title))));
         }
 
