@@ -415,7 +415,6 @@ internal sealed class DestinationSettingsPageBuilder
         TextBlock selectedStatus = Hint(string.IsNullOrWhiteSpace(selectedFolder.Name)
             ? Localization.Strings.DestinationSettings_Root_folder
             : selectedFolder.Name);
-        TextBlock browseStatus = Hint(Localization.Strings.DestinationSettings_Select_Refresh_to_load_folders);
         HashSet<TreeViewItem> loadedItems = [];
         HashSet<TreeViewItem> loadingItems = [];
 
@@ -441,9 +440,9 @@ internal sealed class DestinationSettingsPageBuilder
             return item;
         }
 
-        async Task LoadChildrenAsync(TreeViewItem item, ObservableCollection<TreeViewItem> children, bool force = false)
+        async Task LoadChildrenAsync(TreeViewItem item, ObservableCollection<TreeViewItem> children)
         {
-            if ((!force && loadedItems.Contains(item)) || !loadingItems.Add(item)) return;
+            if (loadedItems.Contains(item) || !loadingItems.Add(item)) return;
 
             try
             {
@@ -463,11 +462,6 @@ internal sealed class DestinationSettingsPageBuilder
                 }
 
                 loadedItems.Add(item);
-                browseStatus.Text = folders.Count == 0
-                    ? Localization.Strings.DestinationSettings_No_child_folders
-                    : string.Format(folders.Count == 1
-                        ? Localization.Strings.DestinationSettings_Folder_count_singular
-                        : Localization.Strings.DestinationSettings_Folder_count_plural, folders.Count);
             }
             catch (Exception exception)
             {
@@ -475,7 +469,6 @@ internal sealed class DestinationSettingsPageBuilder
                 children.Clear();
                 children.Add(new TreeViewItem { Header = "…", IsEnabled = false });
                 loadedItems.Remove(item);
-                browseStatus.Text = exception.Message;
             }
             finally
             {
@@ -499,27 +492,8 @@ internal sealed class DestinationSettingsPageBuilder
             }
         };
 
-        Button refresh = Button(Localization.Strings.DestinationSettings_Refresh, async () =>
-        {
-            loadedItems.Remove(rootItem);
-            if (rootItem.ItemsSource is ObservableCollection<TreeViewItem> children)
-            {
-                await LoadChildrenAsync(rootItem, children, force: true);
-                rootItem.IsExpanded = true;
-            }
-        });
-        Button rootButton = Button(Localization.Strings.DestinationSettings_Root, () =>
-        {
-            tree.SelectedItem = rootItem;
-            _config.MegaSelectedFolder = Mega.RootFolder;
-            selectedFolder = Mega.RootFolder;
-            selectedStatus.Text = Localization.Strings.DestinationSettings_Root_folder;
-        });
-
         return Card(Localization.Strings.DestinationSettings_Upload_folder,
-            Row(Localization.Strings.DestinationSettings_Selected_folder, selectedStatus), tree,
-            ButtonRow(refresh, rootButton),
-            Row(Localization.Strings.DestinationSettings_Browser_status, browseStatus));
+            Row(Localization.Strings.DestinationSettings_Selected_folder, selectedStatus), tree);
     }
 
     private Control BuildRemoteFolderCard<T>(
