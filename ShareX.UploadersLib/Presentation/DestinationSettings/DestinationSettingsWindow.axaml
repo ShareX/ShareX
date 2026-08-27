@@ -37,10 +37,10 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/><Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
         <Style Selector="TextBlock.hint.connection-connected">
-            <Setter Property="Foreground" Value="#79B58A"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Status.Success}"/>
         </Style>
         <Style Selector="TextBlock.hint.connection-disconnected">
-            <Setter Property="Foreground" Value="#D07C7C"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Status.Error}"/>
         </Style>
         <Style Selector="Border.section-card">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>

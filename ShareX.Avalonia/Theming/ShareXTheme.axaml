@@ -18,6 +18,8 @@
 
             <Color x:Key="ShareX.Color.Text">#D8DADB</Color>
             <Color x:Key="ShareX.Color.Text.Secondary">#D8DADB</Color>
+            <Color x:Key="ShareX.Color.Status.Success">#79B58A</Color>
+            <Color x:Key="ShareX.Color.Status.Error">#D07C7C</Color>
 
             <Color x:Key="ShareX.Color.Background.Main">#272727</Color>
             <Color x:Key="ShareX.Color.Background.Panel">#242424</Color>
@@ -45,6 +47,8 @@
 
             <SolidColorBrush x:Key="ShareX.Brush.Text" Color="{StaticResource ShareX.Color.Text}" />
             <SolidColorBrush x:Key="ShareX.Brush.Text.Secondary" Color="{StaticResource ShareX.Color.Text.Secondary}" />
+            <SolidColorBrush x:Key="ShareX.Brush.Status.Success" Color="{StaticResource ShareX.Color.Status.Success}" />
+            <SolidColorBrush x:Key="ShareX.Brush.Status.Error" Color="{StaticResource ShareX.Color.Status.Error}" />
 
             <SolidColorBrush x:Key="ShareX.Brush.Background.Main" Color="{StaticResource ShareX.Color.Background.Main}" />
             <SolidColorBrush x:Key="ShareX.Brush.Background.Panel" Color="{StaticResource ShareX.Color.Background.Panel}" />
@@ -116,6 +120,8 @@
 
             <Color x:Key="ShareX.Color.Text">#4E4E4E</Color>
             <Color x:Key="ShareX.Color.Text.Secondary">#4E4E4E</Color>
+            <Color x:Key="ShareX.Color.Status.Success">#4F8A63</Color>
+            <Color x:Key="ShareX.Color.Status.Error">#B85F66</Color>
 
             <Color x:Key="ShareX.Color.Background.Main">#F5F5F7</Color>
             <Color x:Key="ShareX.Color.Background.Panel">#FDFDFD</Color>
@@ -143,6 +149,8 @@
 
             <SolidColorBrush x:Key="ShareX.Brush.Text" Color="{StaticResource ShareX.Color.Text}" />
             <SolidColorBrush x:Key="ShareX.Brush.Text.Secondary" Color="{StaticResource ShareX.Color.Text.Secondary}" />
+            <SolidColorBrush x:Key="ShareX.Brush.Status.Success" Color="{StaticResource ShareX.Color.Status.Success}" />
+            <SolidColorBrush x:Key="ShareX.Brush.Status.Error" Color="{StaticResource ShareX.Color.Status.Error}" />
 
             <SolidColorBrush x:Key="ShareX.Brush.Background.Main" Color="{StaticResource ShareX.Color.Background.Main}" />
             <SolidColorBrush x:Key="ShareX.Brush.Background.Panel" Color="{StaticResource ShareX.Color.Background.Panel}" />
