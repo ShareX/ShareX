@@ -429,7 +429,7 @@ namespace ShareX.UploadersLib.Localization
 
         public static string DestinationSettings_Field_Token => ResourceManager.GetString("DestinationSettings_Field_Token", resourceCulture) ?? string.Empty;
 
-        public static string DestinationSettings_Field_Two_Factor_Authentication_Code => ResourceManager.GetString("DestinationSettings_Field_Two_Factor_Authentication_Code", resourceCulture) ?? string.Empty;
+        public static string DestinationSettings_Enter_current_two_factor_authentication_code => ResourceManager.GetString("DestinationSettings_Enter_current_two_factor_authentication_code", resourceCulture) ?? string.Empty;
 
         public static string DestinationSettings_Field_TTL => ResourceManager.GetString("DestinationSettings_Field_TTL", resourceCulture) ?? string.Empty;
 

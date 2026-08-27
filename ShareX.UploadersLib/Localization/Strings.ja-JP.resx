@@ -658,8 +658,8 @@
   <data name="DestinationSettings_Field_Token" xml:space="preserve">
     <value>トークン</value>
   </data>
-  <data name="DestinationSettings_Field_Two_Factor_Authentication_Code" xml:space="preserve">
-    <value>2要素認証コード（任意）</value>
+  <data name="DestinationSettings_Enter_current_two_factor_authentication_code" xml:space="preserve">
+    <value>現在の2要素認証コードを入力してください</value>
   </data>
   <data name="DestinationSettings_Field_TTL" xml:space="preserve">
     <value>有効期間</value>

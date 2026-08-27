@@ -658,8 +658,8 @@
   <data name="DestinationSettings_Field_Token" xml:space="preserve">
     <value>Jeton</value>
   </data>
-  <data name="DestinationSettings_Field_Two_Factor_Authentication_Code" xml:space="preserve">
-    <value>Code d’authentification à deux facteurs (facultatif)</value>
+  <data name="DestinationSettings_Enter_current_two_factor_authentication_code" xml:space="preserve">
+    <value>Saisissez votre code actuel d’authentification à deux facteurs</value>
   </data>
   <data name="DestinationSettings_Field_TTL" xml:space="preserve">
     <value>TTL</value>

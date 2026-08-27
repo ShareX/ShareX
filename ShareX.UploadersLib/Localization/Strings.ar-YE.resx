@@ -658,8 +658,8 @@
   <data name="DestinationSettings_Field_Token" xml:space="preserve">
     <value>الرمز</value>
   </data>
-  <data name="DestinationSettings_Field_Two_Factor_Authentication_Code" xml:space="preserve">
-    <value>رمز المصادقة الثنائية (اختياري)</value>
+  <data name="DestinationSettings_Enter_current_two_factor_authentication_code" xml:space="preserve">
+    <value>أدخل رمز المصادقة الثنائية الحالي</value>
   </data>
   <data name="DestinationSettings_Field_TTL" xml:space="preserve">
     <value>مدة البقاء</value>

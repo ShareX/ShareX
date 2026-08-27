@@ -658,8 +658,8 @@
   <data name="DestinationSettings_Field_Token" xml:space="preserve">
     <value>토큰</value>
   </data>
-  <data name="DestinationSettings_Field_Two_Factor_Authentication_Code" xml:space="preserve">
-    <value>2단계 인증 코드(선택 사항)</value>
+  <data name="DestinationSettings_Enter_current_two_factor_authentication_code" xml:space="preserve">
+    <value>현재 2단계 인증 코드를 입력하세요</value>
   </data>
   <data name="DestinationSettings_Field_TTL" xml:space="preserve">
     <value>유효 기간</value>

@@ -43,6 +43,7 @@ internal sealed class DestinationSettingsAccounts
             info => new OneDrive(info), CreateOneDriveInfo),
         "box" => BasicOAuth2(() => _config.BoxOAuth2Info, value => _config.BoxOAuth2Info = value,
             info => new Box(info), UploaderOAuthClientFactory.CreateBox),
+        "mega" => MegaAccount(),
         "bitly" => BasicOAuth2(() => _config.BitlyOAuth2Info, value => _config.BitlyOAuth2Info = value,
             info => new BitlyURLShortener(info), UploaderOAuthClientFactory.CreateBitly),
         "google-drive" => LoopbackOAuth(
@@ -76,6 +77,73 @@ internal sealed class DestinationSettingsAccounts
         "pushbullet" => PushbulletAccount(),
         _ => null
     };
+
+    private Control MegaAccount()
+    {
+        bool IsConnected() => !string.IsNullOrWhiteSpace(_config.MegaSessionID) &&
+            !string.IsNullOrWhiteSpace(_config.MegaMasterKey);
+
+        TextBlock status = DestinationSettingsPageBuilder.Hint(IsConnected()
+            ? Localization.Strings.DestinationSettings_Connected
+            : Localization.Strings.DestinationSettings_Not_connected);
+
+        void Disconnect()
+        {
+            _config.MegaSessionID = string.Empty;
+            _config.MegaMasterKey = string.Empty;
+            status.Text = Localization.Strings.DestinationSettings_Not_connected;
+        }
+
+        TextBox email = DestinationSettingsPageBuilder.Text(() => _config.MegaEmail, value =>
+        {
+            if (!string.Equals(_config.MegaEmail, value, StringComparison.Ordinal)) Disconnect();
+            _config.MegaEmail = value;
+        });
+        TextBox password = DestinationSettingsPageBuilder.Text(() => _config.MegaPassword, value =>
+        {
+            if (!string.Equals(_config.MegaPassword, value, StringComparison.Ordinal)) Disconnect();
+            _config.MegaPassword = value;
+        });
+        password.PasswordChar = '●';
+
+        Button login = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Log_in, async () =>
+        {
+            try
+            {
+                Mega mega = new(email.Text ?? string.Empty, password.Text ?? string.Empty);
+                MegaSessionInfo session;
+
+                try
+                {
+                    session = await mega.LoginAsync();
+                }
+                catch (MegaApiException exception) when (exception.ErrorCode == -26)
+                {
+                    string? code = InputBoxWindowIntegration.Show(
+                        Localization.Strings.DestinationSettings_Enter_current_two_factor_authentication_code);
+                    if (code == null) return;
+                    session = await mega.LoginAsync(code);
+                }
+
+                ((DestinationValue<string>)password.DataContext!).Value = string.Empty;
+                _config.MegaSessionID = session.SessionID;
+                _config.MegaMasterKey = session.MasterKey;
+                status.Text = Localization.Strings.DestinationSettings_Connected;
+            }
+            catch (Exception exception)
+            {
+                DebugHelper.WriteException(exception);
+                status.Text = exception.Message;
+            }
+        });
+        Button disconnect = DestinationSettingsPageBuilder.Button(Localization.Strings.DestinationSettings_Disconnect, Disconnect);
+
+        return DestinationSettingsPageBuilder.Card(Localization.Strings.DestinationSettings_Account,
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Field_Email, email),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Field_Password, password),
+            DestinationSettingsPageBuilder.ButtonRow(login, disconnect),
+            DestinationSettingsPageBuilder.Row(Localization.Strings.DestinationSettings_Status, status));
+    }
 
     private Control ImageShackAccount()
     {

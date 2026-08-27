@@ -46,13 +46,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrWhiteSpace(config.MegaEmail) &&
-                !string.IsNullOrWhiteSpace(config.MegaPassword);
+            return !string.IsNullOrWhiteSpace(config.MegaSessionID) &&
+                !string.IsNullOrWhiteSpace(config.MegaMasterKey);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Mega(config.MegaEmail, config.MegaPassword, config.MegaTwoFactorAuthenticationCode);
+            return new Mega(config.MegaSessionID, Mega.FromBase64URL(config.MegaMasterKey));
         }
     }
 
@@ -70,13 +70,16 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string Email { get; }
         public string Password { get; }
-        public string TwoFactorAuthenticationCode { get; }
-
-        public Mega(string email, string password, string twoFactorAuthenticationCode = null)
+        public Mega(string email, string password)
         {
             Email = email?.Trim();
             Password = password;
-            TwoFactorAuthenticationCode = twoFactorAuthenticationCode;
+        }
+
+        internal Mega(string authenticatedSessionID, byte[] accountMasterKey)
+        {
+            sessionID = authenticatedSessionID;
+            masterKey = accountMasterKey;
         }
 
         protected override async Task<UploadResult> UploadCoreAsync(Stream stream, string fileName, CancellationToken cancellationToken)
@@ -98,7 +101,11 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
 
                 long fileSize = stream.Length - stream.Position;
-                await LoginAsync(cancellationToken).ConfigureAwait(false);
+                if (string.IsNullOrWhiteSpace(sessionID) || masterKey?.Length != 16)
+                {
+                    throw new MegaRequestException("MEGA login is required. Log in from Destination settings.");
+                }
+
                 string rootNodeID = await GetRootNodeIDAsync(cancellationToken).ConfigureAwait(false);
                 string uploadURL = await GetUploadURLAsync(fileSize, cancellationToken).ConfigureAwait(false);
 
@@ -215,8 +222,12 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        private async Task LoginAsync(CancellationToken cancellationToken)
+        internal async Task<MegaSessionInfo> LoginAsync(string twoFactorAuthenticationCode = null,
+            CancellationToken cancellationToken = default)
         {
+            sessionID = null;
+            masterKey = null;
+
             JToken preLoginResponse = await SendApiRequestAsync(new JObject
             {
                 ["a"] = "us0",
@@ -234,9 +245,9 @@ namespace ShareX.UploadersLib.FileUploaders
                 ["uh"] = authentication.UserHash
             };
 
-            if (!string.IsNullOrWhiteSpace(TwoFactorAuthenticationCode))
+            if (!string.IsNullOrWhiteSpace(twoFactorAuthenticationCode))
             {
-                request["mfa"] = TwoFactorAuthenticationCode.Trim();
+                request["mfa"] = twoFactorAuthenticationCode.Trim();
             }
 
             JToken loginResponse = await SendApiRequestAsync(request, cancellationToken, includeSession: false).ConfigureAwait(false);
@@ -247,16 +258,19 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 byte[] encryptedPrivateKey = FromBase64URL(loginResponse.Value<string>("privk"));
                 sessionID = DecryptSessionID(encryptedSessionID, encryptedPrivateKey, masterKey);
-                return;
             }
-
-            string temporarySessionID = loginResponse.Value<string>("tsid");
-            if (!ValidateTemporarySessionID(temporarySessionID, masterKey))
+            else
             {
-                throw new MegaRequestException("MEGA returned an invalid login session.");
+                string temporarySessionID = loginResponse.Value<string>("tsid");
+                if (!ValidateTemporarySessionID(temporarySessionID, masterKey))
+                {
+                    throw new MegaRequestException("MEGA returned an invalid login session.");
+                }
+
+                sessionID = temporarySessionID;
             }
 
-            sessionID = temporarySessionID;
+            return new MegaSessionInfo(sessionID, ToBase64URL(masterKey));
         }
 
         private async Task<string> GetRootNodeIDAsync(CancellationToken cancellationToken)
@@ -821,6 +835,18 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public byte[] PasswordKey { get; set; }
         public string UserHash { get; set; }
+    }
+
+    internal sealed class MegaSessionInfo
+    {
+        public string SessionID { get; }
+        public string MasterKey { get; }
+
+        public MegaSessionInfo(string sessionID, string masterKey)
+        {
+            SessionID = sessionID;
+            MasterKey = masterKey;
+        }
     }
 
     internal class MegaRequestException : Exception

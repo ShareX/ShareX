@@ -768,6 +768,7 @@ internal sealed class DestinationSettingsPageBuilder
             "lobfile" => member.Name == nameof(UploadersConfig.LithiioSettings),
             "onedrive" => member.Name == nameof(UploadersConfig.OneDriveV2SelectedFolder),
             "box" => member.Name == nameof(UploadersConfig.BoxSelectedFolder),
+            "mega" => member.Name is nameof(UploadersConfig.MegaEmail) or nameof(UploadersConfig.MegaPassword),
             "amazon-s3" => member.Name == nameof(UploadersConfig.AmazonS3Settings),
             "img-fish" => member.Name == nameof(UploadersConfig.ImgFishSettings),
             _ => false

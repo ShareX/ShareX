@@ -658,8 +658,8 @@
   <data name="DestinationSettings_Field_Token" xml:space="preserve">
     <value>Токен</value>
   </data>
-  <data name="DestinationSettings_Field_Two_Factor_Authentication_Code" xml:space="preserve">
-    <value>Код двофакторної автентифікації (необов’язково)</value>
+  <data name="DestinationSettings_Enter_current_two_factor_authentication_code" xml:space="preserve">
+    <value>Введіть поточний код двофакторної автентифікації</value>
   </data>
   <data name="DestinationSettings_Field_TTL" xml:space="preserve">
     <value>Термін життя</value>

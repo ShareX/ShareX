@@ -658,8 +658,8 @@
   <data name="DestinationSettings_Field_Token" xml:space="preserve">
     <value>Token</value>
   </data>
-  <data name="DestinationSettings_Field_Two_Factor_Authentication_Code" xml:space="preserve">
-    <value>Kod för tvåfaktorsautentisering (valfritt)</value>
+  <data name="DestinationSettings_Enter_current_two_factor_authentication_code" xml:space="preserve">
+    <value>Ange din aktuella kod för tvåfaktorsautentisering</value>
   </data>
   <data name="DestinationSettings_Field_TTL" xml:space="preserve">
     <value>TTL</value>

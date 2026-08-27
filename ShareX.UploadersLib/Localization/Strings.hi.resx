@@ -658,8 +658,8 @@
   <data name="DestinationSettings_Field_Token" xml:space="preserve">
     <value>टोकन</value>
   </data>
-  <data name="DestinationSettings_Field_Two_Factor_Authentication_Code" xml:space="preserve">
-    <value>दो-कारक प्रमाणीकरण कोड (वैकल्पिक)</value>
+  <data name="DestinationSettings_Enter_current_two_factor_authentication_code" xml:space="preserve">
+    <value>अपना वर्तमान दो-कारक प्रमाणीकरण कोड दर्ज करें</value>
   </data>
   <data name="DestinationSettings_Field_TTL" xml:space="preserve">
     <value>TTL</value>

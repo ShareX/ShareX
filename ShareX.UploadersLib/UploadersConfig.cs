@@ -219,8 +219,12 @@ namespace ShareX.UploadersLib
         public string MegaEmail { get; set; } = "";
         [JsonEncrypt]
         public string MegaPassword { get; set; } = "";
+        [System.ComponentModel.Browsable(false)]
         [JsonEncrypt]
-        public string MegaTwoFactorAuthenticationCode { get; set; } = "";
+        public string MegaSessionID { get; set; } = "";
+        [System.ComponentModel.Browsable(false)]
+        [JsonEncrypt]
+        public string MegaMasterKey { get; set; } = "";
 
         #endregion MEGA
 

@@ -658,8 +658,8 @@
   <data name="DestinationSettings_Field_Token" xml:space="preserve">
     <value>Token</value>
   </data>
-  <data name="DestinationSettings_Field_Two_Factor_Authentication_Code" xml:space="preserve">
-    <value>Kode autentikasi dua faktor (opsional)</value>
+  <data name="DestinationSettings_Enter_current_two_factor_authentication_code" xml:space="preserve">
+    <value>Masukkan kode autentikasi dua faktor Anda saat ini</value>
   </data>
   <data name="DestinationSettings_Field_TTL" xml:space="preserve">
     <value>Masa aktif</value>
