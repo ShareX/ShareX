@@ -447,6 +447,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             MenuItem item = new()
             {
                 Header = entry.Header,
+                Tag = entry,
                 InputGesture = entry.InputGesture,
                 IsEnabled = entry.IsEnabled,
                 IsChecked = entry.IsChecked,
@@ -515,7 +516,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                         try
                         {
                             await entry.ExecuteAsync();
-                            if (!entry.StaysOpenOnClick)
+                            if (entry.StaysOpenOnClick)
+                            {
+                                RefreshMenuHeaders(menu.Items);
+                            }
+                            else
                             {
                                 RefreshMenus();
                             }
@@ -529,6 +534,19 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             }
 
             yield return item;
+        }
+    }
+
+    private static void RefreshMenuHeaders(IEnumerable<object?> items)
+    {
+        foreach (MenuItem item in items.OfType<MenuItem>())
+        {
+            if (item.Tag is MainMenuEntry entry)
+            {
+                item.Header = entry.Header;
+            }
+
+            RefreshMenuHeaders(item.Items);
         }
     }
 

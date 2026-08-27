@@ -30,7 +30,10 @@ internal enum MainMenuToggleType
 
 internal sealed class MainMenuEntry
 {
-    public string Header { get; }
+    private readonly string _header;
+    private readonly Func<string>? _createHeader;
+
+    public string Header => _createHeader?.Invoke() ?? _header;
     public string Icon { get; }
     public byte[]? BitmapIcon { get; }
     public Func<Task>? ExecuteAsync { get; }
@@ -54,9 +57,11 @@ internal sealed class MainMenuEntry
         MainMenuToggleType toggleType = MainMenuToggleType.None,
         bool staysOpenOnClick = false,
         KeyGesture? inputGesture = null,
-        byte[]? bitmapIcon = null)
+        byte[]? bitmapIcon = null,
+        Func<string>? createHeader = null)
     {
-        Header = header;
+        _header = header;
+        _createHeader = createHeader;
         Icon = icon;
         BitmapIcon = bitmapIcon;
         ExecuteAsync = execute == null ? null : () =>
@@ -84,9 +89,11 @@ internal sealed class MainMenuEntry
         MainMenuToggleType toggleType = MainMenuToggleType.None,
         bool staysOpenOnClick = false,
         KeyGesture? inputGesture = null,
-        byte[]? bitmapIcon = null)
+        byte[]? bitmapIcon = null,
+        Func<string>? createHeader = null)
     {
-        Header = header;
+        _header = header;
+        _createHeader = createHeader;
         Icon = icon;
         BitmapIcon = bitmapIcon;
         ExecuteAsync = executeAsync;
@@ -101,7 +108,7 @@ internal sealed class MainMenuEntry
 
     private MainMenuEntry()
     {
-        Header = string.Empty;
+        _header = string.Empty;
         Icon = string.Empty;
         IsSeparator = true;
         IsEnabled = false;

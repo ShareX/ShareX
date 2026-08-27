@@ -412,19 +412,19 @@ internal sealed class MainMenuBuilder
     {
         return new List<MainMenuEntry>
         {
-            Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_,
+            Parent(() => string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_,
                 GetImageUploaderName(settings)), LucideIcons.image, () => BuildImageDestinations(settings)),
-            Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_,
+            Parent(() => string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_,
                 GetTextUploaderName(settings)), LucideIcons.file_text, () => BuildTextDestinations(settings)),
-            Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_,
+            Parent(() => string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_,
                 settings.FileDestination.GetLocalizedDescription()), LucideIcons.file_up, () => BuildEnumDestinations(
                 settings.FileDestination,
                 value => settings.FileDestination = value)),
-            Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
+            Parent(() => string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
                 settings.URLShortenerDestination.GetLocalizedDescription()), LucideIcons.link_2, () => BuildEnumDestinations(
                 settings.URLShortenerDestination,
                 value => settings.URLShortenerDestination = value)),
-            Parent(string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
+            Parent(() => string.Format(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
                 settings.URLSharingServiceDestination.GetLocalizedDescription()), LucideIcons.share_2, () => BuildEnumDestinations(
                 settings.URLSharingServiceDestination,
                 value => settings.URLSharingServiceDestination = value))
@@ -542,5 +542,8 @@ internal sealed class MainMenuBuilder
 
     private static MainMenuEntry Parent(string header, string icon, Func<IReadOnlyList<MainMenuEntry>> children, bool isVisible = true) =>
         new(header, icon, createChildren: children, isVisible: isVisible);
+
+    private static MainMenuEntry Parent(Func<string> createHeader, string icon, Func<IReadOnlyList<MainMenuEntry>> children, bool isVisible = true) =>
+        new(createHeader(), icon, createChildren: children, isVisible: isVisible, createHeader: createHeader);
 
 }
