@@ -52,7 +52,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Mega(config.MegaSessionID, Mega.FromBase64URL(config.MegaMasterKey));
+            return new Mega(config.MegaSessionID, Mega.FromBase64URL(config.MegaMasterKey))
+            {
+                FolderID = config.MegaSelectedFolder?.ID
+            };
         }
     }
 
@@ -68,8 +71,11 @@ namespace ShareX.UploadersLib.FileUploaders
         private string sessionID;
         private byte[] masterKey;
 
+        public static MegaFolderInfo RootFolder { get; } = new MegaFolderInfo();
+
         public string Email { get; }
         public string Password { get; }
+        public string FolderID { get; set; }
         public Mega(string email, string password)
         {
             Email = email?.Trim();
@@ -106,7 +112,9 @@ namespace ShareX.UploadersLib.FileUploaders
                     throw new MegaRequestException("MEGA login is required. Log in from Destination settings.");
                 }
 
-                string rootNodeID = await GetRootNodeIDAsync(cancellationToken).ConfigureAwait(false);
+                string targetNodeID = string.IsNullOrWhiteSpace(FolderID)
+                    ? await GetRootNodeIDAsync(cancellationToken).ConfigureAwait(false)
+                    : FolderID;
                 string uploadURL = await GetUploadURLAsync(fileSize, cancellationToken).ConfigureAwait(false);
 
                 string completionHandle = null;
@@ -168,7 +176,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 JToken createNodeResponse = await SendApiRequestAsync(new JObject
                 {
                     ["a"] = "p",
-                    ["t"] = rootNodeID,
+                    ["t"] = targetNodeID,
                     ["n"] = new JArray
                     {
                         new JObject
@@ -275,11 +283,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private async Task<string> GetRootNodeIDAsync(CancellationToken cancellationToken)
         {
-            JToken response = await SendApiRequestAsync(new JObject
-            {
-                ["a"] = "f",
-                ["c"] = 1
-            }, cancellationToken).ConfigureAwait(false);
+            JToken response = await GetNodesAsync(cancellationToken).ConfigureAwait(false);
 
             string rootNodeID = response["f"]?
                 .Children<JToken>()
@@ -292,6 +296,88 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return rootNodeID;
+        }
+
+        internal async Task<IReadOnlyList<MegaFolderInfo>> GetFoldersAsync(MegaFolderInfo parent,
+            CancellationToken cancellationToken = default)
+        {
+            if (string.IsNullOrWhiteSpace(sessionID) || masterKey?.Length != 16)
+            {
+                throw new MegaRequestException("MEGA login is required. Log in from Destination settings.");
+            }
+
+            JToken response = await GetNodesAsync(cancellationToken).ConfigureAwait(false);
+            IEnumerable<JToken> nodes = response["f"]?.Children<JToken>() ?? [];
+            string parentID = parent?.ID;
+            if (string.IsNullOrWhiteSpace(parentID))
+            {
+                parentID = nodes.FirstOrDefault(node => node.Value<int?>("t") == 2)?.Value<string>("h");
+            }
+
+            if (string.IsNullOrWhiteSpace(parentID))
+            {
+                throw new MegaRequestException("MEGA did not return the Cloud Drive root folder.");
+            }
+
+            return nodes
+                .Where(node => node.Value<int?>("t") == 1 && node.Value<string>("p") == parentID)
+                .Select(node => new MegaFolderInfo
+                {
+                    ID = node.Value<string>("h"),
+                    Name = DecryptNodeName(node)
+                })
+                .Where(folder => !string.IsNullOrWhiteSpace(folder.ID))
+                .OrderBy(folder => folder.Name, StringComparer.CurrentCultureIgnoreCase)
+                .ToArray();
+        }
+
+        private Task<JToken> GetNodesAsync(CancellationToken cancellationToken)
+        {
+            return SendApiRequestAsync(new JObject
+            {
+                ["a"] = "f",
+                ["c"] = 1
+            }, cancellationToken);
+        }
+
+        private string DecryptNodeName(JToken node)
+        {
+            string encryptedAttributes = node.Value<string>("a");
+            string keyData = node.Value<string>("k");
+            if (string.IsNullOrWhiteSpace(encryptedAttributes) || string.IsNullOrWhiteSpace(keyData))
+            {
+                return null;
+            }
+
+            foreach (string keyEntry in keyData.Split('/'))
+            {
+                int separatorIndex = keyEntry.IndexOf(':');
+                string encodedKey = separatorIndex >= 0 ? keyEntry[(separatorIndex + 1)..] : keyEntry;
+
+                try
+                {
+                    byte[] encryptedKey = FromBase64URL(encodedKey);
+                    if (encryptedKey.Length != 16) continue;
+
+                    byte[] folderKey = TransformEcb(encryptedKey, masterKey, encrypt: false);
+                    byte[] attributeData = FromBase64URL(encryptedAttributes);
+                    if (attributeData.Length == 0 || attributeData.Length % 16 != 0) continue;
+
+                    using Aes aes = CreateAes(folderKey, CipherMode.CBC);
+                    aes.IV = new byte[16];
+                    using ICryptoTransform decryptor = aes.CreateDecryptor();
+                    byte[] decryptedAttributes = decryptor.TransformFinalBlock(attributeData, 0, attributeData.Length);
+                    string json = Encoding.UTF8.GetString(decryptedAttributes).TrimEnd('\0');
+                    if (!json.StartsWith("MEGA", StringComparison.Ordinal)) continue;
+
+                    return JObject.Parse(json[4..]).Value<string>("n");
+                }
+                catch (Exception exception) when (exception is FormatException or CryptographicException or JsonException)
+                {
+                }
+            }
+
+            return null;
         }
 
         private async Task<string> GetUploadURLAsync(long fileSize, CancellationToken cancellationToken)
@@ -847,6 +933,12 @@ namespace ShareX.UploadersLib.FileUploaders
             SessionID = sessionID;
             MasterKey = masterKey;
         }
+    }
+
+    public sealed class MegaFolderInfo
+    {
+        public string ID { get; set; } = "";
+        public string Name { get; set; } = "";
     }
 
     internal class MegaRequestException : Exception

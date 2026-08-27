@@ -91,6 +91,7 @@ internal sealed class DestinationSettingsAccounts
         {
             _config.MegaSessionID = string.Empty;
             _config.MegaMasterKey = string.Empty;
+            _config.MegaSelectedFolder = Mega.RootFolder;
             status.Text = Localization.Strings.DestinationSettings_Not_connected;
         }
 

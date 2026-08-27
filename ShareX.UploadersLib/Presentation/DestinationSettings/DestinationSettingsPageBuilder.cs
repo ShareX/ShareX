@@ -86,6 +86,10 @@ internal sealed class DestinationSettingsPageBuilder
         {
             cards.Add(BuildBoxFolderCard());
         }
+        else if (definition.Id == "mega")
+        {
+            cards.Add(BuildMegaFolderCard());
+        }
         else if (definition.Id == "amazon-s3")
         {
             cards.AddRange(BuildAmazonS3Cards());
@@ -404,6 +408,13 @@ internal sealed class DestinationSettingsPageBuilder
         value => _config.BoxSelectedFolder = value,
         async value => (await new Box(_config.BoxOAuth2Info).GetFilesAsync(value))?.entries?.Where(x => x.type == "folder"),
         value => value.name);
+
+    private Control BuildMegaFolderCard() => BuildRemoteFolderCard(
+        Mega.RootFolder,
+        () => _config.MegaSelectedFolder ?? Mega.RootFolder,
+        value => _config.MegaSelectedFolder = value,
+        async value => await new Mega(_config.MegaSessionID, Mega.FromBase64URL(_config.MegaMasterKey)).GetFoldersAsync(value),
+        value => string.IsNullOrWhiteSpace(value.Name) ? null : value.Name);
 
     private Control BuildRemoteFolderCard<T>(
         T root,
@@ -768,7 +779,8 @@ internal sealed class DestinationSettingsPageBuilder
             "lobfile" => member.Name == nameof(UploadersConfig.LithiioSettings),
             "onedrive" => member.Name == nameof(UploadersConfig.OneDriveV2SelectedFolder),
             "box" => member.Name == nameof(UploadersConfig.BoxSelectedFolder),
-            "mega" => member.Name is nameof(UploadersConfig.MegaEmail) or nameof(UploadersConfig.MegaPassword),
+            "mega" => member.Name is nameof(UploadersConfig.MegaEmail) or nameof(UploadersConfig.MegaPassword) or
+                nameof(UploadersConfig.MegaSelectedFolder),
             "amazon-s3" => member.Name == nameof(UploadersConfig.AmazonS3Settings),
             "img-fish" => member.Name == nameof(UploadersConfig.ImgFishSettings),
             _ => false

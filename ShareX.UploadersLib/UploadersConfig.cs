@@ -225,6 +225,7 @@ namespace ShareX.UploadersLib
         [System.ComponentModel.Browsable(false)]
         [JsonEncrypt]
         public string MegaMasterKey { get; set; } = "";
+        public MegaFolderInfo MegaSelectedFolder { get; set; } = Mega.RootFolder;
 
         #endregion MEGA
 
