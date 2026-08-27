@@ -88,7 +88,7 @@ internal sealed class DestinationSettingsPageBuilder
         }
         else if (definition.Id == "mega")
         {
-            cards.Add(BuildMegaFolderCard());
+            cards.Add(BuildMegaFolderTreeCard());
         }
         else if (definition.Id == "amazon-s3")
         {
@@ -409,12 +409,118 @@ internal sealed class DestinationSettingsPageBuilder
         async value => (await new Box(_config.BoxOAuth2Info).GetFilesAsync(value))?.entries?.Where(x => x.type == "folder"),
         value => value.name);
 
-    private Control BuildMegaFolderCard() => BuildRemoteFolderCard(
-        Mega.RootFolder,
-        () => _config.MegaSelectedFolder ?? Mega.RootFolder,
-        value => _config.MegaSelectedFolder = value,
-        async value => await new Mega(_config.MegaSessionID, Mega.FromBase64URL(_config.MegaMasterKey)).GetFoldersAsync(value),
-        value => string.IsNullOrWhiteSpace(value.Name) ? null : value.Name);
+    private Control BuildMegaFolderTreeCard()
+    {
+        MegaFolderInfo selectedFolder = _config.MegaSelectedFolder ?? Mega.RootFolder;
+        TextBlock selectedStatus = Hint(string.IsNullOrWhiteSpace(selectedFolder.Name)
+            ? Localization.Strings.DestinationSettings_Root_folder
+            : selectedFolder.Name);
+        TextBlock browseStatus = Hint(Localization.Strings.DestinationSettings_Select_Refresh_to_load_folders);
+        HashSet<TreeViewItem> loadedItems = [];
+        HashSet<TreeViewItem> loadingItems = [];
+
+        TreeViewItem CreateItem(MegaFolderInfo folder)
+        {
+            ObservableCollection<TreeViewItem> children = [new TreeViewItem { Header = "…", IsEnabled = false }];
+            TreeViewItem item = new()
+            {
+                Header = string.IsNullOrWhiteSpace(folder.Name)
+                    ? Localization.Strings.DestinationSettings_Root_folder
+                    : folder.Name,
+                DataContext = folder,
+                ItemsSource = children
+            };
+            item.Expanded += async (_, _) => await LoadChildrenAsync(item, children);
+
+            if ((!string.IsNullOrWhiteSpace(folder.ID) && folder.ID == selectedFolder.ID) ||
+                (string.IsNullOrWhiteSpace(folder.ID) && string.IsNullOrWhiteSpace(selectedFolder.ID)))
+            {
+                item.IsSelected = true;
+            }
+
+            return item;
+        }
+
+        async Task LoadChildrenAsync(TreeViewItem item, ObservableCollection<TreeViewItem> children, bool force = false)
+        {
+            if ((!force && loadedItems.Contains(item)) || !loadingItems.Add(item)) return;
+
+            try
+            {
+                if (item.DataContext is not MegaFolderInfo folder) return;
+
+                if (string.IsNullOrWhiteSpace(_config.MegaSessionID) || string.IsNullOrWhiteSpace(_config.MegaMasterKey))
+                {
+                    throw new InvalidOperationException(Localization.Strings.DestinationSettings_Not_connected);
+                }
+
+                children.Clear();
+                Mega mega = new(_config.MegaSessionID, Mega.FromBase64URL(_config.MegaMasterKey));
+                IReadOnlyList<MegaFolderInfo> folders = await mega.GetFoldersAsync(folder);
+                foreach (MegaFolderInfo child in folders)
+                {
+                    children.Add(CreateItem(child));
+                }
+
+                loadedItems.Add(item);
+                browseStatus.Text = folders.Count == 0
+                    ? Localization.Strings.DestinationSettings_No_child_folders
+                    : string.Format(folders.Count == 1
+                        ? Localization.Strings.DestinationSettings_Folder_count_singular
+                        : Localization.Strings.DestinationSettings_Folder_count_plural, folders.Count);
+            }
+            catch (Exception exception)
+            {
+                DebugHelper.WriteException(exception);
+                children.Clear();
+                children.Add(new TreeViewItem { Header = "…", IsEnabled = false });
+                loadedItems.Remove(item);
+                browseStatus.Text = exception.Message;
+            }
+            finally
+            {
+                loadingItems.Remove(item);
+            }
+        }
+
+        TreeViewItem rootItem = CreateItem(Mega.RootFolder);
+        ObservableCollection<TreeViewItem> roots = [rootItem];
+        TreeView tree = new() { ItemsSource = roots, MinHeight = 180, MaxHeight = 320 };
+        tree.Classes.Add("settings-tree");
+        tree.SelectionChanged += (_, _) =>
+        {
+            if (tree.SelectedItem is TreeViewItem { DataContext: MegaFolderInfo folder })
+            {
+                _config.MegaSelectedFolder = folder;
+                selectedFolder = folder;
+                selectedStatus.Text = string.IsNullOrWhiteSpace(folder.Name)
+                    ? Localization.Strings.DestinationSettings_Root_folder
+                    : folder.Name;
+            }
+        };
+
+        Button refresh = Button(Localization.Strings.DestinationSettings_Refresh, async () =>
+        {
+            loadedItems.Remove(rootItem);
+            if (rootItem.ItemsSource is ObservableCollection<TreeViewItem> children)
+            {
+                await LoadChildrenAsync(rootItem, children, force: true);
+                rootItem.IsExpanded = true;
+            }
+        });
+        Button rootButton = Button(Localization.Strings.DestinationSettings_Root, () =>
+        {
+            tree.SelectedItem = rootItem;
+            _config.MegaSelectedFolder = Mega.RootFolder;
+            selectedFolder = Mega.RootFolder;
+            selectedStatus.Text = Localization.Strings.DestinationSettings_Root_folder;
+        });
+
+        return Card(Localization.Strings.DestinationSettings_Upload_folder,
+            Row(Localization.Strings.DestinationSettings_Selected_folder, selectedStatus), tree,
+            ButtonRow(refresh, rootButton),
+            Row(Localization.Strings.DestinationSettings_Browser_status, browseStatus));
+    }
 
     private Control BuildRemoteFolderCard<T>(
         T root,

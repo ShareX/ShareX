@@ -58,6 +58,14 @@
             <Setter Property="MinHeight" Value="150"/><Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Main}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/><Setter Property="BorderThickness" Value="1"/>
         </Style>
+        <Style Selector="TreeView.settings-tree">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Main}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/><Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="4"/>
+        </Style>
+        <Style Selector="TreeView.settings-tree TreeViewItem">
+            <Setter Property="Padding" Value="2"/><Setter Property="Margin" Value="0,1"/>
+        </Style>
     </Window.Styles>
 
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" ColumnDefinitions="220,*">
