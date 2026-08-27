@@ -651,13 +651,22 @@ namespace ShareX.UploadersLib
                 headers[header.Key] = string.Join(", ", header.Value);
             }
 
+            byte[] responseData = null;
+            string responseText = null;
+            if (readResponseText)
+            {
+                responseData = await response.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
+                responseText = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+            }
+
             return new ResponseInfo()
             {
                 StatusCode = response.StatusCode,
                 StatusDescription = response.ReasonPhrase,
                 ResponseURL = response.RequestMessage?.RequestUri?.OriginalString,
                 Headers = headers,
-                ResponseText = readResponseText ? await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false) : null
+                ResponseText = responseText,
+                ResponseData = responseData
             };
         }
 

@@ -62,6 +62,7 @@ namespace ShareX.UploadersLib.FileUploaders
         private const string PublicFileURL = "https://mega.nz/file/";
         private const int InitialChunkSize = 128 * 1024;
         private const int MaximumChunkSize = 1024 * 1024;
+        private const int UploadTokenLength = 36;
 
         private long sequenceNumber = RandomNumberGenerator.GetInt32(int.MaxValue);
         private string sessionID;
@@ -118,23 +119,27 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
 
                     using MemoryStream chunkStream = new MemoryStream(chunk, writable: false);
-                    string response = await SendRequestAsync(HttpMethod.POST, $"{uploadURL}/{uploadPosition}", chunkStream,
+                    ResponseInfo uploadResponse = await GetResponseAsync(HttpMethod.POST, $"{uploadURL}/{uploadPosition}", chunkStream,
                         RequestHelpers.ContentTypeOctetStream, cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                    if (response == null)
+                    if (uploadResponse == null)
                     {
                         throw new MegaRequestException("MEGA rejected the upload request.");
                     }
 
-                    response = response.Trim();
+                    string response = uploadResponse.ResponseText?.Trim();
                     if (long.TryParse(response, out long uploadError) && uploadError < 0)
                     {
                         throw new MegaApiException(uploadError);
                     }
 
-                    if (!string.IsNullOrEmpty(response))
+                    if (uploadResponse.ResponseData?.Length == UploadTokenLength)
                     {
-                        completionHandle = response;
+                        completionHandle = ToBase64URL(uploadResponse.ResponseData);
+                    }
+                    else if (uploadResponse.ResponseData?.Length > 0)
+                    {
+                        throw new MegaRequestException($"MEGA returned an invalid upload token ({uploadResponse.ResponseData.Length} bytes).");
                     }
 
                     uploadPosition += chunkSize;
@@ -350,22 +355,39 @@ namespace ShareX.UploadersLib.FileUploaders
                     throw new MegaRequestException("MEGA returned an empty API response.");
                 }
 
-                JArray responseArray;
+                JToken parsedResponse;
                 try
                 {
-                    responseArray = JArray.Parse(responseInfo.ResponseText);
+                    parsedResponse = JToken.Parse(responseInfo.ResponseText);
                 }
                 catch (JsonException e)
                 {
-                    throw new MegaRequestException("MEGA returned an invalid API response.", e);
+                    string command = request.Value<string>("a") ?? "unknown";
+                    string responseKind = responseInfo.ResponseText.TrimStart().StartsWith("<", StringComparison.Ordinal) ?
+                        "HTML" : $"a {responseInfo.ResponseText.Length}-character payload";
+                    throw new MegaRequestException($"MEGA returned {responseKind} instead of JSON for API command '{command}'.", e);
                 }
 
-                if (responseArray.Count == 0)
+                JToken responseToken;
+                if (parsedResponse is JArray responseArray)
                 {
-                    throw new MegaRequestException("MEGA returned an empty API response.");
+                    if (responseArray.Count == 0)
+                    {
+                        throw new MegaRequestException("MEGA returned an empty API response.");
+                    }
+
+                    responseToken = responseArray[0];
+                }
+                else
+                {
+                    responseToken = parsedResponse;
                 }
 
-                JToken responseToken = responseArray[0];
+                if (responseToken is JObject responseObject && responseObject.TryGetValue("result", out JToken resultToken))
+                {
+                    responseToken = resultToken;
+                }
+
                 if (responseToken.Type == JTokenType.Integer)
                 {
                     long errorCode = responseToken.Value<long>();

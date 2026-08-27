@@ -37,6 +37,7 @@ namespace ShareX.UploadersLib
         public string ResponseURL { get; set; }
         public WebHeaderCollection Headers { get; set; }
         public string ResponseText { get; set; }
+        public byte[] ResponseData { get; set; }
 
         public string ToReadableString(bool includeResponseText)
         {
