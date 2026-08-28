@@ -16,6 +16,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Documents;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
@@ -446,7 +447,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
             MenuItem item = new()
             {
-                Header = entry.Header,
+                Header = CreateMenuHeader(entry),
                 Tag = entry,
                 InputGesture = entry.InputGesture,
                 IsEnabled = entry.IsEnabled,
@@ -537,17 +538,49 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
     }
 
-    private static void RefreshMenuHeaders(IEnumerable<object?> items)
+    private void RefreshMenuHeaders(IEnumerable<object?> items)
     {
         foreach (MenuItem item in items.OfType<MenuItem>())
         {
             if (item.Tag is MainMenuEntry entry)
             {
-                item.Header = entry.Header;
+                item.Header = CreateMenuHeader(entry);
             }
 
             RefreshMenuHeaders(item.Items);
         }
+    }
+
+    private object CreateMenuHeader(MainMenuEntry entry)
+    {
+        string header = entry.Header;
+        string? accentText = entry.AccentText;
+        if (string.IsNullOrEmpty(accentText))
+        {
+            return header;
+        }
+
+        int accentIndex = header.IndexOf(accentText, StringComparison.CurrentCulture);
+        if (accentIndex < 0)
+        {
+            return header;
+        }
+
+        Run accentRun = new()
+        {
+            Text = accentText,
+            Foreground = this.FindResource("ShareX.Brush.Accent.Start") as IBrush
+        };
+        InlineCollection inlines = new();
+        inlines.Add(header[..accentIndex]);
+        inlines.Add(accentRun);
+        inlines.Add(header[(accentIndex + accentText.Length)..]);
+
+        return new TextBlock
+        {
+            Inlines = inlines,
+            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
+        };
     }
 
     private void AddLazySubmenu(MenuItem item, Func<IReadOnlyList<MainMenuEntry>> createChildren, ContextMenu menu)

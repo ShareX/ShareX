@@ -32,8 +32,10 @@ internal sealed class MainMenuEntry
 {
     private readonly string _header;
     private readonly Func<string>? _createHeader;
+    private readonly Func<string>? _createAccentText;
 
     public string Header => _createHeader?.Invoke() ?? _header;
+    public string? AccentText => _createAccentText?.Invoke();
     public string Icon { get; }
     public byte[]? BitmapIcon { get; }
     public Func<Task>? ExecuteAsync { get; }
@@ -58,10 +60,12 @@ internal sealed class MainMenuEntry
         bool staysOpenOnClick = false,
         KeyGesture? inputGesture = null,
         byte[]? bitmapIcon = null,
-        Func<string>? createHeader = null)
+        Func<string>? createHeader = null,
+        Func<string>? createAccentText = null)
     {
         _header = header;
         _createHeader = createHeader;
+        _createAccentText = createAccentText;
         Icon = icon;
         BitmapIcon = bitmapIcon;
         ExecuteAsync = execute == null ? null : () =>
@@ -90,10 +94,12 @@ internal sealed class MainMenuEntry
         bool staysOpenOnClick = false,
         KeyGesture? inputGesture = null,
         byte[]? bitmapIcon = null,
-        Func<string>? createHeader = null)
+        Func<string>? createHeader = null,
+        Func<string>? createAccentText = null)
     {
         _header = header;
         _createHeader = createHeader;
+        _createAccentText = createAccentText;
         Icon = icon;
         BitmapIcon = bitmapIcon;
         ExecuteAsync = executeAsync;
