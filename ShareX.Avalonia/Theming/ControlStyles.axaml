@@ -933,6 +933,14 @@
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
     </Style>
 
+    <Style Selector="MenuItem.bold-when-checked">
+        <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+
+    <Style Selector="MenuItem.bold-when-checked:checked">
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
     <Style Selector="Separator.compact-menu-separator">
         <Setter Property="Margin" Value="6,2"/>
     </Style>
