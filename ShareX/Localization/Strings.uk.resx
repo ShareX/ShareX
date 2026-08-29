@@ -2816,4 +2816,7 @@
     <value>Збій завантаження:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Монітор мережі...</value>
+  </data>
 </root>

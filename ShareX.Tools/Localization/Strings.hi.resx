@@ -1711,4 +1711,130 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>वीडियो फ़ाइलें</value>
   </data>
+  <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="NetworkMonitorProbe_Endpoint_timed_out" xml:space="preserve">
+    <value>{0} का समय समाप्त हो गया।</value>
+  </data>
+  <data name="NetworkMonitorProbe_No_network_interface" xml:space="preserve">
+    <value>कोई सक्रिय नेटवर्क इंटरफ़ेस नहीं मिला।</value>
+  </data>
+  <data name="NetworkMonitorProbe_No_response" xml:space="preserve">
+    <value>किसी एंडपॉइंट ने उत्तर नहीं दिया।</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Automatic_recommended" xml:space="preserve">
+    <value>स्वचालित (अनुशंसित)</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Checking" xml:space="preserve">
+    <value>जाँच जारी है...</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
+    <value>कनेक्टेड</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
+    <value>{0} ({1}) के माध्यम से कनेक्टेड</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
+    <value>डिस्कनेक्टेड</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
+    <value>पिछले 15 मिनट</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Last_5_minutes" xml:space="preserve">
+    <value>पिछले 5 मिनट</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Last_6_hours" xml:space="preserve">
+    <value>पिछले 6 घंटे</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Last_hour" xml:space="preserve">
+    <value>पिछला घंटा</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Milliseconds" xml:space="preserve">
+    <value>{0:0} मि॰से॰</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Monitoring_failed" xml:space="preserve">
+    <value>निगरानी रुक गई: {0}</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Monitoring_paused" xml:space="preserve">
+    <value>निगरानी रुकी हुई है।</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Paused" xml:space="preserve">
+    <value>रुका हुआ</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Percentage" xml:space="preserve">
+    <value>{0:0.0}%</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Reply_from" xml:space="preserve">
+    <value>{1} के माध्यम से {0} से उत्तर</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Session" xml:space="preserve">
+    <value>सत्र</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Waiting_for_first_check" xml:space="preserve">
+    <value>पहली जाँच की प्रतीक्षा...</value>
+  </data>
+  <data name="NetworkMonitorWindow_Availability" xml:space="preserve">
+    <value>उपलब्धता</value>
+  </data>
+  <data name="NetworkMonitorWindow_Average_latency" xml:space="preserve">
+    <value>औसत विलंबता</value>
+  </data>
+  <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
+    <value>हर इतने समय में जाँचें</value>
+  </data>
+  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
+    <value>अभी जाँचें</value>
+  </data>
+  <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
+    <value>कनेक्शन घटनाएँ</value>
+  </data>
+  <data name="NetworkMonitorWindow_Copy_all" xml:space="preserve">
+    <value>सभी कॉपी करें</value>
+  </data>
+  <data name="NetworkMonitorWindow_Current_latency" xml:space="preserve">
+    <value>वर्तमान विलंबता</value>
+  </data>
+  <data name="NetworkMonitorWindow_Date" xml:space="preserve">
+    <value>दिनांक</value>
+  </data>
+  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
+    <value>विवरण</value>
+  </data>
+  <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
+    <value>डिस्कनेक्शन</value>
+  </data>
+  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
+    <value>अवधि</value>
+  </data>
+  <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
+    <value>विलंबता इतिहास</value>
+  </data>
+  <data name="NetworkMonitorWindow_No_events" xml:space="preserve">
+    <value>अभी तक कोई कनेक्शन परिवर्तन दर्ज नहीं हुआ।</value>
+  </data>
+  <data name="NetworkMonitorWindow_No_samples" xml:space="preserve">
+    <value>अभी तक कोई विलंबता नमूना नहीं है।</value>
+  </data>
+  <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
+    <value>लॉग खोलें</value>
+  </data>
+  <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
+    <value>रोकें</value>
+  </data>
+  <data name="NetworkMonitorWindow_Range" xml:space="preserve">
+    <value>समय सीमा</value>
+  </data>
+  <data name="NetworkMonitorWindow_ShareX_Network_Monitor" xml:space="preserve">
+    <value>ShareX - नेटवर्क मॉनिटर</value>
+  </data>
+  <data name="NetworkMonitorWindow_Start" xml:space="preserve">
+    <value>शुरू करें</value>
+  </data>
+  <data name="NetworkMonitorWindow_Status" xml:space="preserve">
+    <value>स्थिति</value>
+  </data>
+  <data name="NetworkMonitorWindow_Target" xml:space="preserve">
+    <value>लक्ष्य</value>
+  </data>
 </root>

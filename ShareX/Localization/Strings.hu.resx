@@ -2816,4 +2816,7 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
     <value>Sikertelen letöltés:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Hálózatfigyelő...</value>
+  </data>
 </root>

@@ -2816,4 +2816,7 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
     <value>Stažení se nezdařilo:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Sledování sítě...</value>
+  </data>
 </root>

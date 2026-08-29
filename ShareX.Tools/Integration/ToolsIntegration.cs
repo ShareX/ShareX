@@ -33,6 +33,8 @@ namespace ShareX.Tools.Integration;
 
 public static class ToolsIntegration
 {
+    private static NetworkMonitorWindow? _networkMonitorWindow;
+
     public static void ShowDirectoryIndexerWindow(IndexerSettings settings,
         Func<string, IndexerOutput, Task>? uploadRequested = null)
     {
@@ -112,6 +114,27 @@ public static class ToolsIntegration
     public static void ShowMonitorTestWindow()
     {
         Show(() => new MonitorTestWindow());
+    }
+
+    public static void ShowNetworkMonitorWindow(NetworkMonitorServices services)
+    {
+        AvaloniaBootstrapper.EnsureInitialized();
+        Dispatcher.UIThread.Post(() =>
+        {
+            if (_networkMonitorWindow != null)
+            {
+                if (!_networkMonitorWindow.IsVisible)
+                {
+                    _networkMonitorWindow.Show();
+                }
+                _networkMonitorWindow.Activate();
+                return;
+            }
+
+            _networkMonitorWindow = new NetworkMonitorWindow(services);
+            _networkMonitorWindow.Closed += (_, _) => _networkMonitorWindow = null;
+            _networkMonitorWindow.Show();
+        });
     }
 
     public static void ShowPinToScreenWindow(PinToScreenServices services, PinToScreenOptions options)

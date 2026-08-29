@@ -1705,4 +1705,130 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>ملفات الفيديو</value>
   </data>
+  <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="NetworkMonitorProbe_Endpoint_timed_out" xml:space="preserve">
+    <value>انتهت مهلة {0}.</value>
+  </data>
+  <data name="NetworkMonitorProbe_No_network_interface" xml:space="preserve">
+    <value>لم يتم العثور على واجهة شبكة نشطة.</value>
+  </data>
+  <data name="NetworkMonitorProbe_No_response" xml:space="preserve">
+    <value>لم تستجب أي نقطة نهاية.</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Automatic_recommended" xml:space="preserve">
+    <value>تلقائي (موصى به)</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Checking" xml:space="preserve">
+    <value>جارٍ التحقق...</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
+    <value>متصل</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
+    <value>متصل عبر {0} ({1})</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
+    <value>غير متصل</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
+    <value>آخر 15 دقيقة</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Last_5_minutes" xml:space="preserve">
+    <value>آخر 5 دقائق</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Last_6_hours" xml:space="preserve">
+    <value>آخر 6 ساعات</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Last_hour" xml:space="preserve">
+    <value>الساعة الأخيرة</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Milliseconds" xml:space="preserve">
+    <value>{0:0} مللي ثانية</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Monitoring_failed" xml:space="preserve">
+    <value>توقفت المراقبة: {0}</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Monitoring_paused" xml:space="preserve">
+    <value>المراقبة متوقفة مؤقتًا.</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Paused" xml:space="preserve">
+    <value>متوقف مؤقتًا</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Percentage" xml:space="preserve">
+    <value>{0:0.0}%</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Reply_from" xml:space="preserve">
+    <value>رد من {0} عبر {1}</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Session" xml:space="preserve">
+    <value>الجلسة</value>
+  </data>
+  <data name="NetworkMonitorViewModel_Waiting_for_first_check" xml:space="preserve">
+    <value>في انتظار الفحص الأول...</value>
+  </data>
+  <data name="NetworkMonitorWindow_Availability" xml:space="preserve">
+    <value>التوفر</value>
+  </data>
+  <data name="NetworkMonitorWindow_Average_latency" xml:space="preserve">
+    <value>متوسط زمن الاستجابة</value>
+  </data>
+  <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
+    <value>الفحص كل</value>
+  </data>
+  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
+    <value>افحص الآن</value>
+  </data>
+  <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
+    <value>أحداث الاتصال</value>
+  </data>
+  <data name="NetworkMonitorWindow_Copy_all" xml:space="preserve">
+    <value>نسخ الكل</value>
+  </data>
+  <data name="NetworkMonitorWindow_Current_latency" xml:space="preserve">
+    <value>زمن الاستجابة الحالي</value>
+  </data>
+  <data name="NetworkMonitorWindow_Date" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
+    <value>مرات انقطاع الاتصال</value>
+  </data>
+  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
+    <value>المدة</value>
+  </data>
+  <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
+    <value>سجل زمن الاستجابة</value>
+  </data>
+  <data name="NetworkMonitorWindow_No_events" xml:space="preserve">
+    <value>لم يتم تسجيل أي تغييرات في الاتصال بعد.</value>
+  </data>
+  <data name="NetworkMonitorWindow_No_samples" xml:space="preserve">
+    <value>لا توجد عينات لزمن الاستجابة بعد.</value>
+  </data>
+  <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
+    <value>فتح السجل</value>
+  </data>
+  <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
+    <value>إيقاف مؤقت</value>
+  </data>
+  <data name="NetworkMonitorWindow_Range" xml:space="preserve">
+    <value>النطاق</value>
+  </data>
+  <data name="NetworkMonitorWindow_ShareX_Network_Monitor" xml:space="preserve">
+    <value>ShareX - مراقب الشبكة</value>
+  </data>
+  <data name="NetworkMonitorWindow_Start" xml:space="preserve">
+    <value>بدء</value>
+  </data>
+  <data name="NetworkMonitorWindow_Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="NetworkMonitorWindow_Target" xml:space="preserve">
+    <value>الهدف</value>
+  </data>
 </root>

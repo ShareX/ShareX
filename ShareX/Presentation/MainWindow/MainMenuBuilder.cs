@@ -253,6 +253,7 @@ internal sealed class MainMenuBuilder
             Item(Strings.MainMenuBuilder_ClipboardViewer, LucideIcons.clipboard_list, () => TaskHelpers.OpenClipboardViewer()),
             Item(Strings.MainMenuBuilder_BorderlessWindow, LucideIcons.frame, () => TaskHelpers.OpenBorderlessWindow()),
             Item(Strings.MainMenuBuilder_InspectWindow, LucideIcons.scan_search, () => TaskHelpers.OpenInspectWindow()),
+            Item(Strings.MainMenuBuilder_NetworkMonitor, LucideIcons.activity, () => TaskHelpers.OpenNetworkMonitor()),
             Item(Strings.MainMenuBuilder_MonitorTest, LucideIcons.monitor, () => TaskHelpers.OpenMonitorTest())
         };
     }

@@ -2816,4 +2816,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Download mislukt:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Netwerkmonitor...</value>
+  </data>
 </root>

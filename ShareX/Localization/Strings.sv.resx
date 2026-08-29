@@ -2816,4 +2816,7 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
     <value>Hämtningen misslyckades:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Nätverksövervakare...</value>
+  </data>
 </root>

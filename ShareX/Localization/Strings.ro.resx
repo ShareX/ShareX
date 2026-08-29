@@ -2816,4 +2816,7 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
     <value>Descărcarea a eșuat:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Monitor de rețea...</value>
+  </data>
 </root>

@@ -1,0 +1,240 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:controls="using:ShareX.Tools.Controls"
+        xmlns:localization="using:ShareX.Tools.Localization"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="760"
+        x:Class="ShareX.Tools.NetworkMonitorWindow"
+        x:DataType="vm:NetworkMonitorViewModel"
+        Title="{x:Static localization:Strings.NetworkMonitorWindow_ShareX_Network_Monitor}"
+        Width="1080"
+        Height="760"
+        MinWidth="840"
+        MinHeight="620"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.metric-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="14,11"/>
+        </Style>
+        <Style Selector="TextBlock.metric-label">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="TextBlock.metric-value">
+            <Setter Property="FontSize" Value="21"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style Selector="Border.status-dot">
+            <Setter Property="Width" Value="11"/>
+            <Setter Property="Height" Value="11"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="Border.status-dot.connected">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Status.Success}"/>
+        </Style>
+        <Style Selector="Border.status-dot.disconnected">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Status.Error}"/>
+        </Style>
+        <Style Selector="ListBox.event-list ListBoxItem">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="Border.event-row">
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        </Style>
+        <Style Selector="Border.event-row.connected TextBlock.event-status">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Status.Success}"/>
+        </Style>
+        <Style Selector="Border.event-row.disconnected TextBlock.event-status">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Status.Error}"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <Grid Margin="16" RowDefinitions="Auto,Auto,*,1.15*" RowSpacing="12">
+            <Border Grid.Row="0" Classes="tool-panel">
+                <Grid ColumnDefinitions="*,Auto,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="8">
+                    <Grid Grid.Column="0" ColumnDefinitions="Auto,*" ColumnSpacing="10" VerticalAlignment="Center">
+                        <Border Grid.Column="0"
+                                Classes="status-dot"
+                                Classes.connected="{Binding IsConnected}"
+                                Classes.disconnected="{Binding IsDisconnected}"/>
+                        <StackPanel Grid.Column="1" Spacing="1">
+                            <TextBlock Text="{Binding StatusText}" FontSize="18" FontWeight="SemiBold"/>
+                            <TextBlock Text="{Binding StatusDetails}"
+                                       FontWeight="Normal"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       TextTrimming="CharacterEllipsis"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <StackPanel Grid.Column="1" Spacing="3">
+                        <TextBlock Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Target}"/>
+                        <ComboBox Width="200"
+                                  ItemsSource="{x:Static vm:NetworkMonitorViewModel.Targets}"
+                                  SelectedItem="{Binding SelectedTarget}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate x:DataType="vm:NetworkMonitorTargetItem">
+                                    <TextBlock Text="{Binding DisplayName}" FontWeight="Normal"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Spacing="3">
+                        <TextBlock Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Check_every}"/>
+                        <ComboBox Width="78"
+                                  ItemsSource="{x:Static vm:NetworkMonitorViewModel.Intervals}"
+                                  SelectedItem="{Binding SelectedInterval}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate x:DataType="vm:NetworkMonitorIntervalItem">
+                                    <TextBlock Text="{Binding DisplayName}" FontWeight="Normal"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <Button Grid.Column="3" Command="{Binding CheckNowCommand}" IsEnabled="{Binding CanCheckNow}" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal" Spacing="7">
+                            <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                            <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Check_now}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="4" Command="{Binding StartMonitoringCommand}" IsVisible="{Binding CanStart}" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal" Spacing="7">
+                            <TextBlock Text="{x:Static theming:LucideIcons.play}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                            <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Start}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="5" Command="{Binding StopMonitoringCommand}" IsVisible="{Binding CanStop}" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal" Spacing="7">
+                            <TextBlock Text="{x:Static theming:LucideIcons.pause}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                            <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Pause}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="6" Command="{Binding OpenLogFileCommand}" IsEnabled="{Binding CanOpenLog}" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal" Spacing="7">
+                            <TextBlock Text="{x:Static theming:LucideIcons.file_text}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                            <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Open_log}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" ColumnDefinitions="*,*,*,*" ColumnSpacing="10">
+                <Border Grid.Column="0" Classes="metric-card">
+                    <StackPanel Spacing="2">
+                        <TextBlock Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Current_latency}"/>
+                        <TextBlock Classes="metric-value" Text="{Binding CurrentLatencyText}"/>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="1" Classes="metric-card">
+                    <StackPanel Spacing="2">
+                        <TextBlock Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Average_latency}"/>
+                        <TextBlock Classes="metric-value" Text="{Binding AverageLatencyText}"/>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="2" Classes="metric-card">
+                    <StackPanel Spacing="2">
+                        <TextBlock Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Availability}"/>
+                        <TextBlock Classes="metric-value" Text="{Binding AvailabilityText}"/>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="3" Classes="metric-card">
+                    <StackPanel Spacing="2">
+                        <TextBlock Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Disconnects}"/>
+                        <TextBlock Classes="metric-value" Text="{Binding DisconnectCountText}"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Border Grid.Row="2" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                <Grid RowDefinitions="Auto,*">
+                    <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+                        <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                            <TextBlock Text="{x:Static theming:LucideIcons.chart_spline}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                            <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.NetworkMonitorWindow_Latency_history}"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Range}" VerticalAlignment="Center"/>
+                        <ComboBox Grid.Column="2" Width="150"
+                                  ItemsSource="{x:Static vm:NetworkMonitorViewModel.TimeRanges}"
+                                  SelectedItem="{Binding SelectedTimeRange}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate x:DataType="vm:NetworkMonitorTimeRangeItem">
+                                    <TextBlock Text="{Binding DisplayName}" FontWeight="Normal"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </Grid>
+                    <controls:NetworkMonitorChart Grid.Row="1"
+                                                  Margin="10,0,10,10"
+                                                  Samples="{Binding Samples}"
+                                                  TimeRange="{Binding ChartRange}"
+                                                  EmptyText="{x:Static localization:Strings.NetworkMonitorWindow_No_samples}"/>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="3" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                <Grid RowDefinitions="Auto,Auto,*">
+                    <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto">
+                        <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                            <TextBlock Text="{x:Static theming:LucideIcons.list_restart}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                            <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.NetworkMonitorWindow_Connection_events}"/>
+                        </StackPanel>
+                        <Button Grid.Column="1" Command="{Binding CopyAllCommand}" IsEnabled="{Binding HasEvents}">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Text="{x:Static theming:LucideIcons.copy}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Copy_all}"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                    <Border Grid.Row="1" Background="{DynamicResource ShareX.Brush.Background.Toolbar}" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,1">
+                        <Grid Margin="10,7" ColumnDefinitions="165,115,90,*" ColumnSpacing="12">
+                            <TextBlock Grid.Column="0" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Date}"/>
+                            <TextBlock Grid.Column="1" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Status}"/>
+                            <TextBlock Grid.Column="2" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Duration}"/>
+                            <TextBlock Grid.Column="3" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Details}"/>
+                        </Grid>
+                    </Border>
+                    <Grid Grid.Row="2">
+                        <ListBox Classes="event-list" ItemsSource="{Binding Events}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate x:DataType="vm:NetworkMonitorEvent">
+                                    <Border Classes="event-row"
+                                            Classes.connected="{Binding IsConnected}"
+                                            Classes.disconnected="{Binding IsDisconnected}">
+                                        <Grid ColumnDefinitions="165,115,90,*" ColumnSpacing="12">
+                                            <TextBlock Grid.Column="0" Text="{Binding TimestampText}" FontWeight="Normal"/>
+                                            <TextBlock Grid.Column="1" Classes="event-status" Text="{Binding StatusText}" FontWeight="SemiBold"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding DurationText}" FontWeight="Normal"/>
+                                            <TextBlock Grid.Column="3" Text="{Binding Details}" FontWeight="Normal" TextTrimming="CharacterEllipsis"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <StackPanel IsVisible="{Binding !HasEvents}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Spacing="7"
+                                    IsHitTestVisible="False">
+                            <TextBlock Text="{x:Static theming:LucideIcons.activity}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" FontSize="34" Foreground="{DynamicResource ShareX.Brush.Text.Secondary}" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_No_events}" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

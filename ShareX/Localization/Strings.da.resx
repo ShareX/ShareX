@@ -2816,4 +2816,7 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
     <value>Downloaden mislykkedes:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Netværksovervågning...</value>
+  </data>
 </root>

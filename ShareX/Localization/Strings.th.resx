@@ -2816,4 +2816,7 @@
     <value>ดาวน์โหลด ล้มเหลว:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>ตัวตรวจสอบเครือข่าย...</value>
+  </data>
 </root>

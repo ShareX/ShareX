@@ -2815,4 +2815,7 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
     <value>Descarga fallida: {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Monitor de red...</value>
+  </data>
 </root>

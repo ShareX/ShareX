@@ -2816,4 +2816,7 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
     <value>Unduhan gagal:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Pemantau jaringan...</value>
+  </data>
 </root>

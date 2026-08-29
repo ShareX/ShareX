@@ -2816,4 +2816,7 @@
     <value>डाउनलोड विफल:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>नेटवर्क मॉनिटर...</value>
+  </data>
 </root>

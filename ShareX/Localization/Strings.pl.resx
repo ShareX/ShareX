@@ -2816,4 +2816,7 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
     <value>Pobieranie nie powiodło się:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Monitor sieci...</value>
+  </data>
 </root>

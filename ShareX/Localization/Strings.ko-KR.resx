@@ -2816,4 +2816,7 @@ Do you want to abort the active 화면 녹화?</value>
     <value>다운로드 실패:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>네트워크 모니터...</value>
+  </data>
 </root>

@@ -298,6 +298,9 @@
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Monitor test...</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Network monitor...</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>No image effect presets</value>
   </data>

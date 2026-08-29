@@ -2816,4 +2816,7 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
     <value>Falha na transferência:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Monitor de rede...</value>
+  </data>
 </root>

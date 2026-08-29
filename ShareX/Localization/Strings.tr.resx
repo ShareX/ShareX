@@ -2816,4 +2816,7 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
     <value>İndirme başarısız:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Ağ izleyicisi...</value>
+  </data>
 </root>

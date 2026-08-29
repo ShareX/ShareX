@@ -5006,5 +5006,383 @@ namespace ShareX.Tools.Localization {
                 return ResourceManager.GetString("VideoThumbnailerWindow_Video_files", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: {1}.
+        /// </summary>
+        public static string NetworkMonitorProbe_Endpoint_failed {
+            get {
+                return ResourceManager.GetString("NetworkMonitorProbe_Endpoint_failed", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to {0} timed out..
+        /// </summary>
+        public static string NetworkMonitorProbe_Endpoint_timed_out {
+            get {
+                return ResourceManager.GetString("NetworkMonitorProbe_Endpoint_timed_out", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to No active network interface was found..
+        /// </summary>
+        public static string NetworkMonitorProbe_No_network_interface {
+            get {
+                return ResourceManager.GetString("NetworkMonitorProbe_No_network_interface", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to No endpoint responded..
+        /// </summary>
+        public static string NetworkMonitorProbe_No_response {
+            get {
+                return ResourceManager.GetString("NetworkMonitorProbe_No_response", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Automatic (recommended).
+        /// </summary>
+        public static string NetworkMonitorViewModel_Automatic_recommended {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Automatic_recommended", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Checking....
+        /// </summary>
+        public static string NetworkMonitorViewModel_Checking {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Checking", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Connected.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Connected {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Connected", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Connected via {0} ({1}).
+        /// </summary>
+        public static string NetworkMonitorViewModel_Connected_via {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Connected_via", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Disconnected.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Disconnected {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Disconnected", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Last 15 minutes.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Last_15_minutes {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Last_15_minutes", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Last 5 minutes.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Last_5_minutes {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Last_5_minutes", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Last 6 hours.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Last_6_hours {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Last_6_hours", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Last hour.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Last_hour {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Last_hour", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to {0:0} ms.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Milliseconds {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Milliseconds", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Monitoring stopped: {0}.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Monitoring_failed {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Monitoring_failed", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Monitoring is paused..
+        /// </summary>
+        public static string NetworkMonitorViewModel_Monitoring_paused {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Monitoring_paused", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Paused.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Paused {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Paused", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to {0:0.0}%.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Percentage {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Percentage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Reply from {0} via {1}.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Reply_from {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Reply_from", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Session.
+        /// </summary>
+        public static string NetworkMonitorViewModel_Session {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Session", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting for the first check....
+        /// </summary>
+        public static string NetworkMonitorViewModel_Waiting_for_first_check {
+            get {
+                return ResourceManager.GetString("NetworkMonitorViewModel_Waiting_for_first_check", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Availability.
+        /// </summary>
+        public static string NetworkMonitorWindow_Availability {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Availability", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Average latency.
+        /// </summary>
+        public static string NetworkMonitorWindow_Average_latency {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Average_latency", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Check every.
+        /// </summary>
+        public static string NetworkMonitorWindow_Check_every {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Check_every", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Check now.
+        /// </summary>
+        public static string NetworkMonitorWindow_Check_now {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Check_now", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Connection events.
+        /// </summary>
+        public static string NetworkMonitorWindow_Connection_events {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Connection_events", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Copy all.
+        /// </summary>
+        public static string NetworkMonitorWindow_Copy_all {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Copy_all", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Current latency.
+        /// </summary>
+        public static string NetworkMonitorWindow_Current_latency {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Current_latency", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string NetworkMonitorWindow_Date {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Date", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string NetworkMonitorWindow_Details {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Details", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Disconnects.
+        /// </summary>
+        public static string NetworkMonitorWindow_Disconnects {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Disconnects", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Duration.
+        /// </summary>
+        public static string NetworkMonitorWindow_Duration {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Duration", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Latency history.
+        /// </summary>
+        public static string NetworkMonitorWindow_Latency_history {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Latency_history", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to No connection changes recorded yet..
+        /// </summary>
+        public static string NetworkMonitorWindow_No_events {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_No_events", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to No latency samples yet..
+        /// </summary>
+        public static string NetworkMonitorWindow_No_samples {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_No_samples", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Open log.
+        /// </summary>
+        public static string NetworkMonitorWindow_Open_log {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Open_log", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Pause.
+        /// </summary>
+        public static string NetworkMonitorWindow_Pause {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Pause", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Range.
+        /// </summary>
+        public static string NetworkMonitorWindow_Range {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Range", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX - Network Monitor.
+        /// </summary>
+        public static string NetworkMonitorWindow_ShareX_Network_Monitor {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_ShareX_Network_Monitor", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        public static string NetworkMonitorWindow_Start {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Start", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string NetworkMonitorWindow_Status {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Status", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Target.
+        /// </summary>
+        public static string NetworkMonitorWindow_Target {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Target", resourceCulture);
+            }
+        }
     }
 }

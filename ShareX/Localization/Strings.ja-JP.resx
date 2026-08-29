@@ -2816,4 +2816,7 @@
     <value>ダウンロード失敗:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>ネットワーク モニター...</value>
+  </data>
 </root>

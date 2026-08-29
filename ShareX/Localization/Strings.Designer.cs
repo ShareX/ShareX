@@ -5202,5 +5202,14 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("UploadManager_DownloadAndUploadFile_Download_failed", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Network monitor....
+        /// </summary>
+        public static string MainMenuBuilder_NetworkMonitor {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_NetworkMonitor", resourceCulture);
+            }
+        }
     }
 }

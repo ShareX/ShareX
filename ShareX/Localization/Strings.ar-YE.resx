@@ -2816,4 +2816,7 @@
     <value>فشل التنزيل:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>مراقب الشبكة...</value>
+  </data>
 </root>

@@ -2816,4 +2816,7 @@ Please select a different hotkey or quit the conflicting application and reبا�
     <value>دانلود با مشکل مواجه شد:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>پایشگر شبکه...</value>
+  </data>
 </root>

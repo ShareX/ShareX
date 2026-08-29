@@ -2816,4 +2816,7 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
     <value>Tải về thất bại:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Trình giám sát mạng...</value>
+  </data>
 </root>

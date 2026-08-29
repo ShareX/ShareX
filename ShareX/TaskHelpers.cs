@@ -1590,6 +1590,19 @@ namespace ShareX
             ToolsIntegration.ShowMonitorTestWindow();
         }
 
+        public static void OpenNetworkMonitor()
+        {
+            string logFilePath = Program.LogsFilePath != null
+                ? Path.Combine(Program.LogsFolder, "NetworkMonitor.log")
+                : null;
+            ToolsIntegration.ShowNetworkMonitorWindow(new NetworkMonitorServices
+            {
+                LogFilePath = logFilePath,
+                CopyText = text => ClipboardHelpers.CopyText(text),
+                OpenFile = path => FileHelpers.OpenFile(path)
+            });
+        }
+
         public static void RunShareXAsAdmin(string arguments = null)
         {
             try

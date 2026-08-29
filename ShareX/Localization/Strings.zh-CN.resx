@@ -2816,4 +2816,7 @@
     <value>下载失败：
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>网络监控器...</value>
+  </data>
 </root>

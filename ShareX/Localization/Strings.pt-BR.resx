@@ -2816,4 +2816,7 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
     <value>Falha no download:
 {0}</value>
   </data>
+  <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
+    <value>Monitor de rede...</value>
+  </data>
 </root>
