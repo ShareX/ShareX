@@ -72,6 +72,7 @@ public sealed class NetworkMonitorEvent
             return "—";
         }
 
-        return duration.Value.ToString("g", System.Globalization.CultureInfo.CurrentCulture);
+        TimeSpan roundedDuration = TimeSpan.FromSeconds(Math.Round(duration.Value.TotalSeconds));
+        return roundedDuration.ToString("g", System.Globalization.CultureInfo.CurrentCulture);
     }
 }
