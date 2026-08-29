@@ -1783,9 +1783,6 @@ Percorso file: {0}</value>
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Controlla ogni</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Controlla ora</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Eventi di connessione</value>
   </data>
@@ -1817,7 +1814,7 @@ Percorso file: {0}</value>
     <value>Non sono ancora presenti campioni di latenza.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Apri registro</value>
+    <value>Apri registro...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Pausa</value>

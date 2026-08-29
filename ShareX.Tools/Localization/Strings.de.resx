@@ -1783,9 +1783,6 @@ Dateipfad: {0}</value>
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Prüfen alle</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Jetzt prüfen</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Verbindungsereignisse</value>
   </data>
@@ -1817,7 +1814,7 @@ Dateipfad: {0}</value>
     <value>Noch keine Latenzmesswerte vorhanden.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Protokoll öffnen</value>
+    <value>Protokoll öffnen...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Pausieren</value>

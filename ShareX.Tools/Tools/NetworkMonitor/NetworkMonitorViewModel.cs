@@ -75,11 +75,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
     private bool _isMonitoring;
 
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(CanCheckNow))]
-    [NotifyCanExecuteChangedFor(nameof(CheckNowCommand))]
-    private bool _isChecking;
-
-    [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsConnected))]
     [NotifyPropertyChangedFor(nameof(IsDisconnected))]
     private string _statusText = Localization.Strings.NetworkMonitorViewModel_Checking;
@@ -106,7 +101,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
     public bool IsDisconnected => _connectedState == false;
     public bool CanStart => !IsMonitoring;
     public bool CanStop => IsMonitoring;
-    public bool CanCheckNow => !IsChecking;
     public bool CanOpenLog => _services.OpenFile != null && !string.IsNullOrWhiteSpace(_services.LogFilePath);
     public TimeSpan? ChartRange => SelectedTimeRange.Duration;
 
@@ -161,15 +155,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
             StatusText = Localization.Strings.NetworkMonitorViewModel_Paused;
             StatusDetails = Localization.Strings.NetworkMonitorViewModel_Monitoring_paused;
         }
-    }
-
-    [RelayCommand(CanExecute = nameof(CanCheckNow))]
-    private async Task CheckNowAsync()
-    {
-        CancellationToken cancellationToken = IsMonitoring
-            ? _monitoringCancellation?.Token ?? CancellationToken.None
-            : CancellationToken.None;
-        await ProbeOnceAsync(cancellationToken);
     }
 
     [RelayCommand]
@@ -234,7 +219,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
             return;
         }
 
-        IsChecking = true;
         try
         {
             NetworkMonitorProbeResult result = await _probe.ProbeAsync(SelectedTarget, TimeSpan.FromSeconds(2), cancellationToken);
@@ -253,7 +237,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
         }
         finally
         {
-            IsChecking = false;
             _probeLock.Release();
         }
     }

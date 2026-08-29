@@ -1783,9 +1783,6 @@
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>हर इतने समय में जाँचें</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>अभी जाँचें</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>कनेक्शन घटनाएँ</value>
   </data>
@@ -1817,7 +1814,7 @@
     <value>अभी तक कोई विलंबता नमूना नहीं है।</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>लॉग खोलें</value>
+    <value>लॉग खोलें...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>रोकें</value>

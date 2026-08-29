@@ -1783,9 +1783,6 @@ Chemin du fichier : {0}</value>
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Vérifier toutes les</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Vérifier maintenant</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Événements de connexion</value>
   </data>
@@ -1817,7 +1814,7 @@ Chemin du fichier : {0}</value>
     <value>Aucun échantillon de latence pour le moment.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Ouvrir le journal</value>
+    <value>Ouvrir le journal...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Mettre en pause</value>

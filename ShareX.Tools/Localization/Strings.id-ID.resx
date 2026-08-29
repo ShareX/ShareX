@@ -1777,9 +1777,6 @@
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Periksa setiap</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Periksa sekarang</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Peristiwa koneksi</value>
   </data>
@@ -1811,7 +1808,7 @@
     <value>Belum ada sampel latensi.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Buka log</value>
+    <value>Buka log...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Jeda</value>

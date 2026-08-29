@@ -1777,9 +1777,6 @@
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>ตรวจสอบทุก</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>ตรวจสอบตอนนี้</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>เหตุการณ์การเชื่อมต่อ</value>
   </data>
@@ -1811,7 +1808,7 @@
     <value>ยังไม่มีตัวอย่างเวลาแฝง</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>เปิดบันทึก</value>
+    <value>เปิดบันทึก...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>หยุดชั่วคราว</value>

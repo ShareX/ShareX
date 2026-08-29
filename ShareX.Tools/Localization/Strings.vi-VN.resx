@@ -1777,9 +1777,6 @@
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Kiểm tra mỗi</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Kiểm tra ngay</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Sự kiện kết nối</value>
   </data>
@@ -1811,7 +1808,7 @@
     <value>Chưa có mẫu độ trễ nào.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Mở nhật ký</value>
+    <value>Mở nhật ký...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Tạm dừng</value>

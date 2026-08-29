@@ -1783,9 +1783,6 @@ Filsökväg: {0}</value>
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Kontrollera varje</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Kontrollera nu</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Anslutningshändelser</value>
   </data>
@@ -1817,7 +1814,7 @@ Filsökväg: {0}</value>
     <value>Det finns inga latensmätningar ännu.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Öppna logg</value>
+    <value>Öppna logg...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Pausa</value>

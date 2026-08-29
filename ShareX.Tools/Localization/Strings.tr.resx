@@ -1783,9 +1783,6 @@ Dosya yolu: {0}</value>
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Denetim aralığı</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Şimdi denetle</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Bağlantı olayları</value>
   </data>
@@ -1817,7 +1814,7 @@ Dosya yolu: {0}</value>
     <value>Henüz gecikme örneği yok.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Günlüğü aç</value>
+    <value>Günlüğü aç...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Duraklat</value>

@@ -1777,9 +1777,6 @@
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>확인 간격</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>지금 확인</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>연결 이벤트</value>
   </data>
@@ -1811,7 +1808,7 @@
     <value>아직 지연 시간 샘플이 없습니다.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>로그 열기</value>
+    <value>로그 열기...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>일시 중지</value>

@@ -2,7 +2,7 @@
 
 `Strings.resx` is the default English catalog for the `ShareX.Tools` project. Each supported application culture has a complete satellite catalog named `Strings.<culture>.resx`.
 
-The catalog contains 591 scoped keys covering all Avalonia views and user-visible runtime messages in the Tools project, including image analysis, background removal, borderless windows, clipboard viewing, directory indexing, hash checking, icon conversion, image combining/comparison/splitting/thumbnailing, window inspection, metadata, monitor testing, network monitoring, OCR, pinning, QR codes, the ruler, video conversion, and video thumbnailing.
+The catalog contains 590 scoped keys covering all Avalonia views and user-visible runtime messages in the Tools project, including image analysis, background removal, borderless windows, clipboard viewing, directory indexing, hash checking, icon conversion, image combining/comparison/splitting/thumbnailing, window inspection, metadata, monitor testing, network monitoring, OCR, pinning, QR codes, the ruler, video conversion, and video thumbnailing.
 
 Supported cultures: `ar-YE`, `cs-CZ`, `da-DK`, `de`, `es`, `es-MX`, `fa-IR`, `fr`, `he-IL`, `hi-IN`, `hu`, `id-ID`, `it-IT`, `ja-JP`, `ko-KR`, `nl-NL`, `pl`, `pt-BR`, `pt-PT`, `ro`, `ru`, `sv-SE`, `th-TH`, `tr`, `uk`, `vi-VN`, `zh-CN`, and `zh-TW`.
 

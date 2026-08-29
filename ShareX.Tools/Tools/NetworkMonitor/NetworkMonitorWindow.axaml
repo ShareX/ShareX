@@ -64,10 +64,11 @@
     <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
         <Grid Margin="16" RowDefinitions="Auto,Auto,*,1.15*" RowSpacing="12">
             <Border Grid.Row="0" Classes="tool-panel">
-                <Grid ColumnDefinitions="*,Auto,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="8">
-                    <Grid Grid.Column="0" ColumnDefinitions="Auto,*" ColumnSpacing="10" VerticalAlignment="Center">
+                <Grid ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="8">
+                    <Grid Grid.Column="0" ColumnDefinitions="Auto,*" ColumnSpacing="14" VerticalAlignment="Center">
                         <Border Grid.Column="0"
                                 Classes="status-dot"
+                                Margin="8,0,6,0"
                                 Classes.connected="{Binding IsConnected}"
                                 Classes.disconnected="{Binding IsDisconnected}"/>
                         <StackPanel Grid.Column="1" Spacing="1">
@@ -81,7 +82,7 @@
 
                     <StackPanel Grid.Column="1" Spacing="3">
                         <TextBlock Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Target}"/>
-                        <ComboBox Width="200"
+                        <ComboBox Width="235"
                                   ItemsSource="{x:Static vm:NetworkMonitorViewModel.Targets}"
                                   SelectedItem="{Binding SelectedTarget}">
                             <ComboBox.ItemTemplate>
@@ -105,28 +106,16 @@
                         </ComboBox>
                     </StackPanel>
 
-                    <Button Grid.Column="3" Command="{Binding CheckNowCommand}" IsEnabled="{Binding CanCheckNow}" VerticalAlignment="Bottom">
-                        <StackPanel Orientation="Horizontal" Spacing="7">
-                            <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                            <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Check_now}"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Grid.Column="4" Command="{Binding StartMonitoringCommand}" IsVisible="{Binding CanStart}" VerticalAlignment="Bottom">
+                    <Button Grid.Column="3" Command="{Binding StartMonitoringCommand}" IsVisible="{Binding CanStart}" VerticalAlignment="Bottom">
                         <StackPanel Orientation="Horizontal" Spacing="7">
                             <TextBlock Text="{x:Static theming:LucideIcons.play}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                             <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Start}"/>
                         </StackPanel>
                     </Button>
-                    <Button Grid.Column="5" Command="{Binding StopMonitoringCommand}" IsVisible="{Binding CanStop}" VerticalAlignment="Bottom">
+                    <Button Grid.Column="3" Command="{Binding StopMonitoringCommand}" IsVisible="{Binding CanStop}" VerticalAlignment="Bottom">
                         <StackPanel Orientation="Horizontal" Spacing="7">
                             <TextBlock Text="{x:Static theming:LucideIcons.pause}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                             <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Pause}"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Grid.Column="6" Command="{Binding OpenLogFileCommand}" IsEnabled="{Binding CanOpenLog}" VerticalAlignment="Bottom">
-                        <StackPanel Orientation="Horizontal" Spacing="7">
-                            <TextBlock Text="{x:Static theming:LucideIcons.file_text}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                            <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Open_log}"/>
                         </StackPanel>
                     </Button>
                 </Grid>
@@ -187,12 +176,18 @@
 
             <Border Grid.Row="3" Classes="tool-panel" Padding="0" ClipToBounds="True">
                 <Grid RowDefinitions="Auto,Auto,*">
-                    <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto">
+                    <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
                         <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                             <TextBlock Text="{x:Static theming:LucideIcons.list_restart}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                             <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.NetworkMonitorWindow_Connection_events}"/>
                         </StackPanel>
-                        <Button Grid.Column="1" Command="{Binding CopyAllCommand}" IsEnabled="{Binding HasEvents}">
+                        <Button Grid.Column="1" Command="{Binding OpenLogFileCommand}" IsEnabled="{Binding CanOpenLog}">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Text="{x:Static theming:LucideIcons.file_text}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Open_log}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="2" Command="{Binding CopyAllCommand}" IsEnabled="{Binding HasEvents}">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Text="{x:Static theming:LucideIcons.copy}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                                 <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Copy_all}"/>

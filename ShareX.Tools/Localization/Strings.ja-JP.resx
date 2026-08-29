@@ -1777,9 +1777,6 @@
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>確認間隔</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>今すぐ確認</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>接続イベント</value>
   </data>
@@ -1811,7 +1808,7 @@
     <value>遅延サンプルはまだありません。</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>ログを開く</value>
+    <value>ログを開く...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>一時停止</value>

@@ -1777,9 +1777,6 @@
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>بررسی هر</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>اکنون بررسی شود</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>رویدادهای اتصال</value>
   </data>
@@ -1811,7 +1808,7 @@
     <value>هنوز هیچ نمونه تأخیری وجود ندارد.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>باز کردن گزارش</value>
+    <value>باز کردن گزارش...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>مکث</value>

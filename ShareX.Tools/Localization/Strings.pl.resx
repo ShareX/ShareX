@@ -1777,9 +1777,6 @@
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Sprawdzaj co</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Sprawdź teraz</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Zdarzenia połączenia</value>
   </data>
@@ -1811,7 +1808,7 @@
     <value>Nie ma jeszcze próbek opóźnienia.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Otwórz dziennik</value>
+    <value>Otwórz dziennik...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Wstrzymaj</value>

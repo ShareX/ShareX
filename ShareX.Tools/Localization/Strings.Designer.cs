@@ -5224,15 +5224,6 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Check now.
-        /// </summary>
-        public static string NetworkMonitorWindow_Check_now {
-            get {
-                return ResourceManager.GetString("NetworkMonitorWindow_Check_now", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Looks up a localized string similar to Connection events.
         /// </summary>
         public static string NetworkMonitorWindow_Connection_events {
@@ -5323,7 +5314,7 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Open log.
+        ///   Looks up a localized string similar to Open log....
         /// </summary>
         public static string NetworkMonitorWindow_Open_log {
             get {

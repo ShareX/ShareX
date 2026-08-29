@@ -1783,9 +1783,6 @@ Caminho do arquivo: {0}</value>
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Verificar a cada</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Verificar agora</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Eventos de conexão</value>
   </data>
@@ -1817,7 +1814,7 @@ Caminho do arquivo: {0}</value>
     <value>Ainda não há amostras de latência.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Abrir registro</value>
+    <value>Abrir registro...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Pausar</value>

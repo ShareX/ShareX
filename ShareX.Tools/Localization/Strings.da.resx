@@ -1783,9 +1783,6 @@ Filsti: {0}</value>
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Kontrollér hver</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Kontrollér nu</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Forbindelseshændelser</value>
   </data>
@@ -1817,7 +1814,7 @@ Filsti: {0}</value>
     <value>Der er endnu ingen latenstidsmålinger.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Åbn log</value>
+    <value>Åbn log...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Sæt på pause</value>

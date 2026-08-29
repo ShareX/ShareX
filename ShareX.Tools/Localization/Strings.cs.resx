@@ -1783,9 +1783,6 @@ Cesta k souboru: {0}</value>
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Kontrolovat každých</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Zkontrolovat nyní</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Události připojení</value>
   </data>
@@ -1817,7 +1814,7 @@ Cesta k souboru: {0}</value>
     <value>Zatím nejsou žádné vzorky latence.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Otevřít protokol</value>
+    <value>Otevřít protokol...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Pozastavit</value>

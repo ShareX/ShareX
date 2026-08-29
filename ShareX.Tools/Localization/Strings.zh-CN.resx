@@ -1783,9 +1783,6 @@
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>检查间隔</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>立即检查</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>连接事件</value>
   </data>
@@ -1817,7 +1814,7 @@
     <value>尚无延迟样本。</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>打开日志</value>
+    <value>打开日志...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>暂停</value>

@@ -1783,9 +1783,6 @@ Bestandspad: {0}</value>
   <data name="NetworkMonitorWindow_Check_every" xml:space="preserve">
     <value>Controleren elke</value>
   </data>
-  <data name="NetworkMonitorWindow_Check_now" xml:space="preserve">
-    <value>Nu controleren</value>
-  </data>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Verbindingsgebeurtenissen</value>
   </data>
@@ -1817,7 +1814,7 @@ Bestandspad: {0}</value>
     <value>Er zijn nog geen latentiemonsters.</value>
   </data>
   <data name="NetworkMonitorWindow_Open_log" xml:space="preserve">
-    <value>Logboek openen</value>
+    <value>Logboek openen...</value>
   </data>
   <data name="NetworkMonitorWindow_Pause" xml:space="preserve">
     <value>Pauzeren</value>
