@@ -85,6 +85,7 @@ public sealed class NetworkMonitorChart : Control
         SolidColorBrush failureBrush = new(Color.FromRgb(235, 78, 78));
         Pen gridPen = new(gridBrush, 1);
         Pen linePen = new(successBrush, 2);
+        Pen failurePen = new(failureBrush, 2);
         Rect plot = new(52, 12, Math.Max(1, Bounds.Width - 64), Math.Max(1, Bounds.Height - 42));
 
         DateTimeOffset now = DateTimeOffset.Now;
@@ -127,24 +128,26 @@ public sealed class NetworkMonitorChart : Control
         DrawTimeLabel(context, end, textBrush, plot.Right, plot.Bottom + 8, TextAlignment.Right);
 
         Point? previousPoint = null;
+        bool previousSampleSucceeded = false;
         foreach (NetworkMonitorSample sample in visible)
         {
             double xRatio = Math.Clamp((sample.Timestamp - start).TotalMilliseconds / (end - start).TotalMilliseconds, 0, 1);
             double x = plot.Left + plot.Width * xRatio;
-            if (!sample.Success || sample.LatencyMilliseconds == null)
+            bool sampleSucceeded = sample.Success && sample.LatencyMilliseconds != null;
+            double y = plot.Bottom;
+            if (sampleSucceeded)
             {
-                context.DrawLine(new Pen(failureBrush, 1.5), new Point(x, plot.Bottom - 12), new Point(x, plot.Bottom));
-                previousPoint = null;
-                continue;
+                double yRatio = Math.Clamp(sample.LatencyMilliseconds!.Value / maximumLatency, 0, 1);
+                y = plot.Bottom - plot.Height * yRatio;
             }
-
-            double yRatio = Math.Clamp(sample.LatencyMilliseconds.Value / maximumLatency, 0, 1);
-            Point point = new(x, plot.Bottom - plot.Height * yRatio);
+            Point point = new(x, y);
             if (previousPoint != null)
             {
-                context.DrawLine(linePen, previousPoint.Value, point);
+                Pen pen = previousSampleSucceeded && sampleSucceeded ? linePen : failurePen;
+                context.DrawLine(pen, previousPoint.Value, point);
             }
             previousPoint = point;
+            previousSampleSucceeded = sampleSucceeded;
         }
     }
 
