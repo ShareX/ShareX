@@ -46,6 +46,7 @@ internal sealed class MainMenuEntry
     public bool IsChecked { get; }
     public MainMenuToggleType ToggleType { get; }
     public bool StaysOpenOnClick { get; }
+    public bool BoldWhenChecked { get; }
     public KeyGesture? InputGesture { get; }
 
     public MainMenuEntry(
@@ -61,7 +62,8 @@ internal sealed class MainMenuEntry
         KeyGesture? inputGesture = null,
         byte[]? bitmapIcon = null,
         Func<string>? createHeader = null,
-        Func<string>? createAccentText = null)
+        Func<string>? createAccentText = null,
+        bool boldWhenChecked = false)
     {
         _header = header;
         _createHeader = createHeader;
@@ -79,6 +81,7 @@ internal sealed class MainMenuEntry
         IsChecked = isChecked;
         ToggleType = toggleType;
         StaysOpenOnClick = staysOpenOnClick;
+        BoldWhenChecked = boldWhenChecked;
         InputGesture = inputGesture;
     }
 
@@ -95,7 +98,8 @@ internal sealed class MainMenuEntry
         KeyGesture? inputGesture = null,
         byte[]? bitmapIcon = null,
         Func<string>? createHeader = null,
-        Func<string>? createAccentText = null)
+        Func<string>? createAccentText = null,
+        bool boldWhenChecked = false)
     {
         _header = header;
         _createHeader = createHeader;
@@ -109,6 +113,7 @@ internal sealed class MainMenuEntry
         IsChecked = isChecked;
         ToggleType = toggleType;
         StaysOpenOnClick = staysOpenOnClick;
+        BoldWhenChecked = boldWhenChecked;
         InputGesture = inputGesture;
     }
 

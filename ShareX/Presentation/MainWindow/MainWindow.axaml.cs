@@ -461,7 +461,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 }
             };
             item.Classes.Add("compact-menu-item");
-            if (entry.StaysOpenOnClick && entry.ToggleType != MainMenuToggleType.None)
+            if (entry.BoldWhenChecked)
             {
                 item.Classes.Add("bold-when-checked");
             }

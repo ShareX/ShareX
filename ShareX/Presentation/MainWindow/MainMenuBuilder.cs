@@ -307,7 +307,8 @@ internal sealed class MainMenuBuilder
             createChildren: option.Task == AfterCaptureTasks.AddImageEffects ? BuildImageEffectPresetMenu : null,
             isChecked: value.HasFlag(option.Task),
             toggleType: MainMenuToggleType.CheckBox,
-            staysOpenOnClick: true)).ToArray();
+            staysOpenOnClick: true,
+            boldWhenChecked: true)).ToArray();
     }
 
     internal static IReadOnlyList<(AfterCaptureTasks Task, string Header, string Icon)> GetAfterCaptureTaskMenuOptions(bool includeUploadTasks = true)
@@ -337,7 +338,8 @@ internal sealed class MainMenuBuilder
                     items.Add(new MainMenuEntry(preset.ToString(), string.Empty,
                         () => Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset = index,
                         isChecked: index == Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset,
-                        toggleType: MainMenuToggleType.Radio));
+                        toggleType: MainMenuToggleType.Radio,
+                        boldWhenChecked: true));
                 }
             }
         }
@@ -359,7 +361,8 @@ internal sealed class MainMenuBuilder
             () => Program.DefaultTaskSettings.AfterUploadJob = Program.DefaultTaskSettings.AfterUploadJob.Swap(option.Task),
             isChecked: value.HasFlag(option.Task),
             toggleType: MainMenuToggleType.CheckBox,
-            staysOpenOnClick: true)).ToArray();
+            staysOpenOnClick: true,
+            boldWhenChecked: true)).ToArray();
     }
 
     internal static IReadOnlyList<(AfterUploadTasks Task, string Header, string Icon)> GetAfterUploadTaskMenuOptions() =>
@@ -461,7 +464,8 @@ internal sealed class MainMenuBuilder
                 : null,
             isChecked: settings.ImageDestination == value,
             toggleType: MainMenuToggleType.Radio,
-            staysOpenOnClick: true)).ToArray();
+            staysOpenOnClick: true,
+            boldWhenChecked: true)).ToArray();
     }
 
     private static IReadOnlyList<MainMenuEntry> BuildTextDestinations(TaskSettings settings)
@@ -480,7 +484,8 @@ internal sealed class MainMenuBuilder
                 : null,
             isChecked: settings.TextDestination == value,
             toggleType: MainMenuToggleType.Radio,
-            staysOpenOnClick: true)).ToArray();
+            staysOpenOnClick: true,
+            boldWhenChecked: true)).ToArray();
     }
 
     private static IReadOnlyList<MainMenuEntry> BuildEnumDestinations<T>(T selected, Action<T> setValue) where T : struct, Enum
@@ -491,7 +496,8 @@ internal sealed class MainMenuBuilder
             () => setValue(value),
             isChecked: EqualityComparer<T>.Default.Equals(selected, value),
             toggleType: MainMenuToggleType.Radio,
-            staysOpenOnClick: true)).ToArray();
+            staysOpenOnClick: true,
+            boldWhenChecked: true)).ToArray();
     }
 
     private IReadOnlyList<MainMenuEntry> BuildDebugMenu()
