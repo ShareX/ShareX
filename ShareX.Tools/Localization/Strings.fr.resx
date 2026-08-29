@@ -1730,13 +1730,10 @@ Chemin du fichier : {0}</value>
     <value>Vérification...</value>
   </data>
   <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
-    <value>Connecté</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
-    <value>Connecté via {0} ({1})</value>
+    <value>Connecté.</value>
   </data>
   <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
-    <value>Déconnecté</value>
+    <value>Déconnecté.</value>
   </data>
   <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
     <value>15 dernières minutes</value>
@@ -1798,14 +1795,8 @@ Chemin du fichier : {0}</value>
   <data name="NetworkMonitorWindow_Date" xml:space="preserve">
     <value>Date</value>
   </data>
-  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
-    <value>Détails</value>
-  </data>
   <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
     <value>Déconnexions</value>
-  </data>
-  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
-    <value>Durée</value>
   </data>
   <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
     <value>Historique de latence</value>

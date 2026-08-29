@@ -201,11 +201,9 @@
                         </Button>
                     </Grid>
                     <Border Grid.Row="1" Background="{DynamicResource ShareX.Brush.Background.Toolbar}" BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,1">
-                        <Grid Margin="10,7" ColumnDefinitions="165,115,90,*" ColumnSpacing="12">
+                        <Grid Margin="10,7" ColumnDefinitions="165,*" ColumnSpacing="12">
                             <TextBlock Grid.Column="0" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Date}"/>
                             <TextBlock Grid.Column="1" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Status}"/>
-                            <TextBlock Grid.Column="2" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Duration}"/>
-                            <TextBlock Grid.Column="3" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Details}"/>
                         </Grid>
                     </Border>
                     <Grid Grid.Row="2">
@@ -215,11 +213,9 @@
                                     <Border Classes="event-row"
                                             Classes.connected="{Binding IsConnected}"
                                             Classes.disconnected="{Binding IsDisconnected}">
-                                        <Grid ColumnDefinitions="165,115,90,*" ColumnSpacing="12">
+                                        <Grid ColumnDefinitions="165,*" ColumnSpacing="12">
                                             <TextBlock Grid.Column="0" Text="{Binding TimestampText}" FontWeight="Normal"/>
                                             <TextBlock Grid.Column="1" Classes="event-status" Text="{Binding StatusText}" FontWeight="SemiBold"/>
-                                            <TextBlock Grid.Column="2" Text="{Binding DurationText}" FontWeight="Normal"/>
-                                            <TextBlock Grid.Column="3" Text="{Binding Details}" FontWeight="Normal" TextTrimming="CharacterEllipsis"/>
                                         </Grid>
                                     </Border>
                                 </DataTemplate>

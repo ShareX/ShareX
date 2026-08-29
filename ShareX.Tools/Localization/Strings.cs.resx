@@ -1730,13 +1730,10 @@ Cesta k souboru: {0}</value>
     <value>Kontrola...</value>
   </data>
   <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
-    <value>Připojeno</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
-    <value>Připojeno přes {0} ({1})</value>
+    <value>Připojeno.</value>
   </data>
   <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
-    <value>Odpojeno</value>
+    <value>Odpojeno.</value>
   </data>
   <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
     <value>Posledních 15 minut</value>
@@ -1798,14 +1795,8 @@ Cesta k souboru: {0}</value>
   <data name="NetworkMonitorWindow_Date" xml:space="preserve">
     <value>Datum</value>
   </data>
-  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
-    <value>Podrobnosti</value>
-  </data>
   <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
     <value>Odpojení</value>
-  </data>
-  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
-    <value>Doba trvání</value>
   </data>
   <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
     <value>Historie latence</value>

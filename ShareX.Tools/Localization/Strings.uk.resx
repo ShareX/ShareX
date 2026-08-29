@@ -1724,13 +1724,10 @@
     <value>Перевірка...</value>
   </data>
   <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
-    <value>Підключено</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
-    <value>Підключено через {0} ({1})</value>
+    <value>Підключено.</value>
   </data>
   <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
-    <value>Відключено</value>
+    <value>Відключено.</value>
   </data>
   <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
     <value>Останні 15 хвилин</value>
@@ -1792,14 +1789,8 @@
   <data name="NetworkMonitorWindow_Date" xml:space="preserve">
     <value>Дата</value>
   </data>
-  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
-    <value>Подробиці</value>
-  </data>
   <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
     <value>Відключення</value>
-  </data>
-  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
-    <value>Тривалість</value>
   </data>
   <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
     <value>Історія затримки</value>

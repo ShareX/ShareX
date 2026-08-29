@@ -1724,13 +1724,10 @@
     <value>กำลังตรวจสอบ...</value>
   </data>
   <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
-    <value>เชื่อมต่อแล้ว</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
-    <value>เชื่อมต่อผ่าน {0} ({1})</value>
+    <value>เชื่อมต่อแล้ว.</value>
   </data>
   <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
-    <value>ตัดการเชื่อมต่อแล้ว</value>
+    <value>ตัดการเชื่อมต่อแล้ว.</value>
   </data>
   <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
     <value>15 นาทีล่าสุด</value>
@@ -1792,14 +1789,8 @@
   <data name="NetworkMonitorWindow_Date" xml:space="preserve">
     <value>วันที่</value>
   </data>
-  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
-    <value>รายละเอียด</value>
-  </data>
   <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
     <value>การตัดการเชื่อมต่อ</value>
-  </data>
-  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
-    <value>ระยะเวลา</value>
   </data>
   <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
     <value>ประวัติเวลาแฝง</value>

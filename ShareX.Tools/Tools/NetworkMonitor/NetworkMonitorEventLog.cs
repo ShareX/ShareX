@@ -12,44 +12,19 @@
 
 #endregion License Information (GPL v3)
 
-using System.Globalization;
 using System.Text;
 
 namespace ShareX.Tools;
 
 internal sealed class NetworkMonitorEventLog
 {
-    private const string Header = "# ShareX Network Monitor event log";
+    private static readonly Encoding Utf8NoBom = new UTF8Encoding(false);
     private readonly string? _filePath;
     private readonly SemaphoreSlim _fileLock = new(1, 1);
 
     public NetworkMonitorEventLog(string? filePath)
     {
         _filePath = filePath;
-    }
-
-    public IReadOnlyList<NetworkMonitorEvent> Load(int maximumCount)
-    {
-        if (string.IsNullOrWhiteSpace(_filePath) || !File.Exists(_filePath))
-        {
-            return [];
-        }
-
-        try
-        {
-            return File.ReadLines(_filePath, Encoding.UTF8)
-                .Select(Parse)
-                .Where(x => x != null)
-                .Cast<NetworkMonitorEvent>()
-                .TakeLast(maximumCount)
-                .Reverse()
-                .ToArray();
-        }
-        catch (Exception ex)
-        {
-            ToolsDiagnostics.ReportWarning(nameof(NetworkMonitorEventLog), "Failed to read the network monitor event log.", ex);
-            return [];
-        }
     }
 
     public async Task AppendAsync(NetworkMonitorEvent entry, CancellationToken cancellationToken)
@@ -65,10 +40,7 @@ internal sealed class NetworkMonitorEventLog
             try
             {
                 EnsureFileExists();
-                string duration = entry.PreviousStateDuration?.TotalMilliseconds.ToString("F0", CultureInfo.InvariantCulture) ?? string.Empty;
-                string details = Sanitize(entry.Details);
-                string line = $"{entry.Timestamp:O}\t{entry.Status}\t{duration}\t{details}{Environment.NewLine}";
-                await File.AppendAllTextAsync(_filePath, line, Encoding.UTF8, cancellationToken);
+                await File.AppendAllTextAsync(_filePath, entry.LogText + Environment.NewLine, Utf8NoBom, cancellationToken);
             }
             finally
             {
@@ -101,7 +73,7 @@ internal sealed class NetworkMonitorEventLog
                 {
                     Directory.CreateDirectory(directory);
                 }
-                await File.WriteAllTextAsync(_filePath, Header + Environment.NewLine, new UTF8Encoding(false), cancellationToken);
+                await File.WriteAllTextAsync(_filePath, string.Empty, Utf8NoBom, cancellationToken);
                 return true;
             }
             finally
@@ -136,7 +108,7 @@ internal sealed class NetworkMonitorEventLog
             }
             if (!File.Exists(_filePath))
             {
-                File.WriteAllText(_filePath, Header + Environment.NewLine, new UTF8Encoding(false));
+                File.WriteAllText(_filePath, string.Empty, Utf8NoBom);
             }
             return true;
         }
@@ -146,39 +118,4 @@ internal sealed class NetworkMonitorEventLog
             return false;
         }
     }
-
-    private static NetworkMonitorEvent? Parse(string line)
-    {
-        if (string.IsNullOrWhiteSpace(line) || line.StartsWith('#'))
-        {
-            return null;
-        }
-
-        string[] parts = line.Split('\t', 4);
-        if (parts.Length < 2 ||
-            !DateTimeOffset.TryParse(parts[0], CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind, out DateTimeOffset timestamp) ||
-            !Enum.TryParse(parts[1], true, out NetworkMonitorEventStatus status))
-        {
-            return null;
-        }
-
-        TimeSpan? duration = null;
-        if (parts.Length >= 3 && double.TryParse(parts[2], NumberStyles.Float, CultureInfo.InvariantCulture, out double milliseconds))
-        {
-            duration = TimeSpan.FromMilliseconds(Math.Max(0, milliseconds));
-        }
-
-        return new NetworkMonitorEvent
-        {
-            Timestamp = timestamp,
-            Status = status,
-            PreviousStateDuration = duration,
-            Details = parts.Length >= 4 ? parts[3] : string.Empty
-        };
-    }
-
-    private static string Sanitize(string value) => value
-        .Replace('\t', ' ')
-        .Replace('\r', ' ')
-        .Replace('\n', ' ');
 }

@@ -51,7 +51,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
     private Task? _monitoringTask;
     private int _monitoringGeneration;
     private bool? _connectedState;
-    private DateTimeOffset _stateChangedAt;
     private int _consecutiveFailures;
 
     public ObservableCollection<NetworkMonitorEvent> Events { get; } = [];
@@ -114,11 +113,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
         _services = services;
         _probe = probe;
         _eventLog = new NetworkMonitorEventLog(services.LogFilePath);
-
-        foreach (NetworkMonitorEvent entry in _eventLog.Load(MaximumVisibleEvents))
-        {
-            Events.Add(entry);
-        }
         UpdateEventSummary();
     }
 
@@ -168,10 +162,7 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
         StringBuilder text = new();
         foreach (NetworkMonitorEvent entry in Events.Reverse())
         {
-            text.Append(entry.TimestampText).Append('\t')
-                .Append(entry.StatusText).Append('\t')
-                .Append(entry.DurationText).Append('\t')
-                .AppendLine(entry.Details);
+            text.AppendLine(entry.LogText);
         }
         _services.CopyText(text.ToString().TrimEnd());
     }
@@ -288,24 +279,17 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
         CancellationToken cancellationToken)
     {
         DateTimeOffset changedAt = result.Timestamp;
-        TimeSpan? duration = _connectedState == null ? null : changedAt - _stateChangedAt;
         _connectedState = status == NetworkMonitorEventStatus.Connected;
-        _stateChangedAt = changedAt;
         StatusText = _connectedState.Value
             ? Localization.Strings.NetworkMonitorViewModel_Connected
             : Localization.Strings.NetworkMonitorViewModel_Disconnected;
         OnPropertyChanged(nameof(IsConnected));
         OnPropertyChanged(nameof(IsDisconnected));
 
-        string details = result.Success
-            ? string.Format(Localization.Strings.NetworkMonitorViewModel_Connected_via, result.Endpoint, result.Method)
-            : result.ErrorMessage;
         NetworkMonitorEvent entry = new()
         {
             Timestamp = changedAt,
-            Status = status,
-            PreviousStateDuration = duration,
-            Details = details
+            Status = status
         };
 
         Events.Insert(0, entry);

@@ -5062,7 +5062,7 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Connected.
+        ///   Looks up a localized string similar to Connected..
         /// </summary>
         public static string NetworkMonitorViewModel_Connected {
             get {
@@ -5071,16 +5071,7 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Connected via {0} ({1}).
-        /// </summary>
-        public static string NetworkMonitorViewModel_Connected_via {
-            get {
-                return ResourceManager.GetString("NetworkMonitorViewModel_Connected_via", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Disconnected.
+        ///   Looks up a localized string similar to Disconnected..
         /// </summary>
         public static string NetworkMonitorViewModel_Disconnected {
             get {
@@ -5269,29 +5260,11 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Details.
-        /// </summary>
-        public static string NetworkMonitorWindow_Details {
-            get {
-                return ResourceManager.GetString("NetworkMonitorWindow_Details", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Looks up a localized string similar to Disconnects.
         /// </summary>
         public static string NetworkMonitorWindow_Disconnects {
             get {
                 return ResourceManager.GetString("NetworkMonitorWindow_Disconnects", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Duration.
-        /// </summary>
-        public static string NetworkMonitorWindow_Duration {
-            get {
-                return ResourceManager.GetString("NetworkMonitorWindow_Duration", resourceCulture);
             }
         }
 

@@ -1730,13 +1730,10 @@ Caminho do ficheiro: {0}</value>
     <value>A verificar...</value>
   </data>
   <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
-    <value>Ligado</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
-    <value>Ligado através de {0} ({1})</value>
+    <value>Ligado.</value>
   </data>
   <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
-    <value>Desligado</value>
+    <value>Desligado.</value>
   </data>
   <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
     <value>Últimos 15 minutos</value>
@@ -1798,14 +1795,8 @@ Caminho do ficheiro: {0}</value>
   <data name="NetworkMonitorWindow_Date" xml:space="preserve">
     <value>Data</value>
   </data>
-  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
-    <value>Detalhes</value>
-  </data>
   <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
     <value>Desligações</value>
-  </data>
-  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
-    <value>Duração</value>
   </data>
   <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
     <value>Histórico de latência</value>

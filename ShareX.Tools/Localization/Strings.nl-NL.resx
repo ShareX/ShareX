@@ -1730,13 +1730,10 @@ Bestandspad: {0}</value>
     <value>Controleren...</value>
   </data>
   <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
-    <value>Verbonden</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
-    <value>Verbonden via {0} ({1})</value>
+    <value>Verbonden.</value>
   </data>
   <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
-    <value>Verbinding verbroken</value>
+    <value>Verbinding verbroken.</value>
   </data>
   <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
     <value>Laatste 15 minuten</value>
@@ -1798,14 +1795,8 @@ Bestandspad: {0}</value>
   <data name="NetworkMonitorWindow_Date" xml:space="preserve">
     <value>Datum</value>
   </data>
-  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
-    <value>Details</value>
-  </data>
   <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
     <value>Verbindingsonderbrekingen</value>
-  </data>
-  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
-    <value>Duur</value>
   </data>
   <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
     <value>Latentiegeschiedenis</value>

@@ -1730,13 +1730,10 @@ Filsti: {0}</value>
     <value>Kontrollerer...</value>
   </data>
   <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
-    <value>Forbundet</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
-    <value>Forbundet via {0} ({1})</value>
+    <value>Forbundet.</value>
   </data>
   <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
-    <value>Afbrudt</value>
+    <value>Afbrudt.</value>
   </data>
   <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
     <value>Seneste 15 minutter</value>
@@ -1798,14 +1795,8 @@ Filsti: {0}</value>
   <data name="NetworkMonitorWindow_Date" xml:space="preserve">
     <value>Dato</value>
   </data>
-  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
-    <value>Detaljer</value>
-  </data>
   <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
     <value>Afbrydelser</value>
-  </data>
-  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
-    <value>Varighed</value>
   </data>
   <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
     <value>Historik for latenstid</value>

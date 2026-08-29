@@ -54,8 +54,6 @@ public sealed class NetworkMonitorEvent
 {
     public required DateTimeOffset Timestamp { get; init; }
     public required NetworkMonitorEventStatus Status { get; init; }
-    public TimeSpan? PreviousStateDuration { get; init; }
-    public string Details { get; init; } = string.Empty;
 
     public bool IsConnected => Status == NetworkMonitorEventStatus.Connected;
     public bool IsDisconnected => Status == NetworkMonitorEventStatus.Disconnected;
@@ -63,16 +61,5 @@ public sealed class NetworkMonitorEvent
     public string StatusText => IsConnected
         ? Localization.Strings.NetworkMonitorViewModel_Connected
         : Localization.Strings.NetworkMonitorViewModel_Disconnected;
-    public string DurationText => FormatDuration(PreviousStateDuration);
-
-    private static string FormatDuration(TimeSpan? duration)
-    {
-        if (duration == null)
-        {
-            return "—";
-        }
-
-        TimeSpan roundedDuration = TimeSpan.FromSeconds(Math.Round(duration.Value.TotalSeconds));
-        return roundedDuration.ToString("g", System.Globalization.CultureInfo.CurrentCulture);
-    }
+    public string LogText => $"{Timestamp.LocalDateTime.ToString("yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture)} - {Status}.";
 }

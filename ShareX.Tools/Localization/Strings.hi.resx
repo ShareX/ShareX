@@ -1730,13 +1730,10 @@
     <value>जाँच जारी है...</value>
   </data>
   <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
-    <value>कनेक्टेड</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
-    <value>{0} ({1}) के माध्यम से कनेक्टेड</value>
+    <value>कनेक्टेड.</value>
   </data>
   <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
-    <value>डिस्कनेक्टेड</value>
+    <value>डिस्कनेक्टेड.</value>
   </data>
   <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
     <value>पिछले 15 मिनट</value>
@@ -1798,14 +1795,8 @@
   <data name="NetworkMonitorWindow_Date" xml:space="preserve">
     <value>दिनांक</value>
   </data>
-  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
-    <value>विवरण</value>
-  </data>
   <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
     <value>डिस्कनेक्शन</value>
-  </data>
-  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
-    <value>अवधि</value>
   </data>
   <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
     <value>विलंबता इतिहास</value>

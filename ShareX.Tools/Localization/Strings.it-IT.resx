@@ -1730,13 +1730,10 @@ Percorso file: {0}</value>
     <value>Controllo...</value>
   </data>
   <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
-    <value>Connesso</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
-    <value>Connesso tramite {0} ({1})</value>
+    <value>Connesso.</value>
   </data>
   <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
-    <value>Disconnesso</value>
+    <value>Disconnesso.</value>
   </data>
   <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
     <value>Ultimi 15 minuti</value>
@@ -1798,14 +1795,8 @@ Percorso file: {0}</value>
   <data name="NetworkMonitorWindow_Date" xml:space="preserve">
     <value>Data</value>
   </data>
-  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
-    <value>Dettagli</value>
-  </data>
   <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
     <value>Disconnessioni</value>
-  </data>
-  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
-    <value>Durata</value>
   </data>
   <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
     <value>Cronologia latenza</value>

@@ -1730,13 +1730,10 @@ Ruta del archivo: {0}</value>
     <value>Comprobando...</value>
   </data>
   <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
-    <value>Conectado</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
-    <value>Conectado mediante {0} ({1})</value>
+    <value>Conectado.</value>
   </data>
   <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
-    <value>Desconectado</value>
+    <value>Desconectado.</value>
   </data>
   <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
     <value>Últimos 15 minutos</value>
@@ -1798,14 +1795,8 @@ Ruta del archivo: {0}</value>
   <data name="NetworkMonitorWindow_Date" xml:space="preserve">
     <value>Fecha</value>
   </data>
-  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
-    <value>Detalles</value>
-  </data>
   <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
     <value>Desconexiones</value>
-  </data>
-  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
-    <value>Duración</value>
   </data>
   <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
     <value>Historial de latencia</value>

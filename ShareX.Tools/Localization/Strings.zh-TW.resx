@@ -1730,13 +1730,10 @@
     <value>正在檢查...</value>
   </data>
   <data name="NetworkMonitorViewModel_Connected" xml:space="preserve">
-    <value>已連線</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Connected_via" xml:space="preserve">
-    <value>已透過 {0}（{1}）連線</value>
+    <value>已連線.</value>
   </data>
   <data name="NetworkMonitorViewModel_Disconnected" xml:space="preserve">
-    <value>已中斷連線</value>
+    <value>已中斷連線.</value>
   </data>
   <data name="NetworkMonitorViewModel_Last_15_minutes" xml:space="preserve">
     <value>最近 15 分鐘</value>
@@ -1798,14 +1795,8 @@
   <data name="NetworkMonitorWindow_Date" xml:space="preserve">
     <value>日期</value>
   </data>
-  <data name="NetworkMonitorWindow_Details" xml:space="preserve">
-    <value>詳細資料</value>
-  </data>
   <data name="NetworkMonitorWindow_Disconnects" xml:space="preserve">
     <value>中斷次數</value>
-  </data>
-  <data name="NetworkMonitorWindow_Duration" xml:space="preserve">
-    <value>持續時間</value>
   </data>
   <data name="NetworkMonitorWindow_Latency_history" xml:space="preserve">
     <value>延遲歷程</value>
