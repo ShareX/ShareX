@@ -133,7 +133,6 @@ public sealed class NetworkMonitorChart : Control
             double x = plot.Left + plot.Width * xRatio;
             if (!sample.Success || sample.LatencyMilliseconds == null)
             {
-                context.DrawEllipse(failureBrush, null, new Point(x, plot.Bottom - 3), 3.5, 3.5);
                 context.DrawLine(new Pen(failureBrush, 1.5), new Point(x, plot.Bottom - 12), new Point(x, plot.Bottom));
                 previousPoint = null;
                 continue;
@@ -145,7 +144,6 @@ public sealed class NetworkMonitorChart : Control
             {
                 context.DrawLine(linePen, previousPoint.Value, point);
             }
-            context.DrawEllipse(successBrush, null, point, 2.5, 2.5);
             previousPoint = point;
         }
     }

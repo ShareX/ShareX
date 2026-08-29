@@ -65,7 +65,7 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(ChartRange))]
-    private NetworkMonitorTimeRangeItem _selectedTimeRange = TimeRanges[1];
+    private NetworkMonitorTimeRangeItem _selectedTimeRange = TimeRanges[0];
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(CanStart))]
