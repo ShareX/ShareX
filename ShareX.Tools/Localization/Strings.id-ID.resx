@@ -1780,6 +1780,9 @@
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Peristiwa koneksi</value>
   </data>
+  <data name="NetworkMonitorWindow_Clear_log" xml:space="preserve">
+    <value>Hapus log</value>
+  </data>
   <data name="NetworkMonitorWindow_Copy_all" xml:space="preserve">
     <value>Salin semua</value>
   </data>

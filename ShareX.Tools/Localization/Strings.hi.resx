@@ -1786,6 +1786,9 @@
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>कनेक्शन घटनाएँ</value>
   </data>
+  <data name="NetworkMonitorWindow_Clear_log" xml:space="preserve">
+    <value>लॉग साफ़ करें</value>
+  </data>
   <data name="NetworkMonitorWindow_Copy_all" xml:space="preserve">
     <value>सभी कॉपी करें</value>
   </data>

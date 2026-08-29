@@ -177,6 +177,20 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
     }
 
     [RelayCommand]
+    private async Task ClearLogAsync(CancellationToken cancellationToken)
+    {
+        NetworkMonitorEvent[] eventsToClear = Events.ToArray();
+        if (await _eventLog.ClearAsync(cancellationToken))
+        {
+            foreach (NetworkMonitorEvent entry in eventsToClear)
+            {
+                Events.Remove(entry);
+            }
+            UpdateEventSummary();
+        }
+    }
+
+    [RelayCommand]
     private void OpenLogFile()
     {
         if (_services.OpenFile != null && !string.IsNullOrWhiteSpace(_services.LogFilePath) && _eventLog.EnsureFileExists())

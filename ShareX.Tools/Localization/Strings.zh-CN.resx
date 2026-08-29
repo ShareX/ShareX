@@ -1786,6 +1786,9 @@
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>连接事件</value>
   </data>
+  <data name="NetworkMonitorWindow_Clear_log" xml:space="preserve">
+    <value>清除日志</value>
+  </data>
   <data name="NetworkMonitorWindow_Copy_all" xml:space="preserve">
     <value>全部复制</value>
   </data>

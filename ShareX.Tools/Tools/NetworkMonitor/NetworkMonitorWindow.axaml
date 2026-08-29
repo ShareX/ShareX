@@ -176,21 +176,27 @@
 
             <Border Grid.Row="3" Classes="tool-panel" Padding="0" ClipToBounds="True">
                 <Grid RowDefinitions="Auto,Auto,*">
-                    <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+                    <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="8">
                         <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                             <TextBlock Text="{x:Static theming:LucideIcons.list_restart}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                             <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.NetworkMonitorWindow_Connection_events}"/>
                         </StackPanel>
-                        <Button Grid.Column="1" Command="{Binding OpenLogFileCommand}" IsEnabled="{Binding CanOpenLog}">
-                            <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Text="{x:Static theming:LucideIcons.file_text}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
-                                <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Open_log}"/>
-                            </StackPanel>
-                        </Button>
-                        <Button Grid.Column="2" Command="{Binding CopyAllCommand}" IsEnabled="{Binding HasEvents}">
+                        <Button Grid.Column="1" Command="{Binding CopyAllCommand}" IsEnabled="{Binding HasEvents}">
                             <StackPanel Orientation="Horizontal" Spacing="7">
                                 <TextBlock Text="{x:Static theming:LucideIcons.copy}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
                                 <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Copy_all}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="2" Command="{Binding ClearLogCommand}" IsEnabled="{Binding HasEvents}">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Text="{x:Static theming:LucideIcons.trash_2}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Clear_log}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="3" Command="{Binding OpenLogFileCommand}" IsEnabled="{Binding CanOpenLog}">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <TextBlock Text="{x:Static theming:LucideIcons.file_text}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Open_log}"/>
                             </StackPanel>
                         </Button>
                     </Grid>

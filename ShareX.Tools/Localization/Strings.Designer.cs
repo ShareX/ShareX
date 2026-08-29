@@ -5233,6 +5233,15 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Clear log.
+        /// </summary>
+        public static string NetworkMonitorWindow_Clear_log {
+            get {
+                return ResourceManager.GetString("NetworkMonitorWindow_Clear_log", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Copy all.
         /// </summary>
         public static string NetworkMonitorWindow_Copy_all {

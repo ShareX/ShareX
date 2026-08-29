@@ -1786,6 +1786,9 @@ Chemin du fichier : {0}</value>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Événements de connexion</value>
   </data>
+  <data name="NetworkMonitorWindow_Clear_log" xml:space="preserve">
+    <value>Effacer le journal</value>
+  </data>
   <data name="NetworkMonitorWindow_Copy_all" xml:space="preserve">
     <value>Tout copier</value>
   </data>

@@ -1786,6 +1786,9 @@ Filsökväg: {0}</value>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Anslutningshändelser</value>
   </data>
+  <data name="NetworkMonitorWindow_Clear_log" xml:space="preserve">
+    <value>Rensa logg</value>
+  </data>
   <data name="NetworkMonitorWindow_Copy_all" xml:space="preserve">
     <value>Kopiera alla</value>
   </data>

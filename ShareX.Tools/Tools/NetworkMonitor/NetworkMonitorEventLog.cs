@@ -21,6 +21,7 @@ internal sealed class NetworkMonitorEventLog
 {
     private const string Header = "# ShareX Network Monitor event log";
     private readonly string? _filePath;
+    private readonly SemaphoreSlim _fileLock = new(1, 1);
 
     public NetworkMonitorEventLog(string? filePath)
     {
@@ -60,11 +61,19 @@ internal sealed class NetworkMonitorEventLog
 
         try
         {
-            EnsureFileExists();
-            string duration = entry.PreviousStateDuration?.TotalMilliseconds.ToString("F0", CultureInfo.InvariantCulture) ?? string.Empty;
-            string details = Sanitize(entry.Details);
-            string line = $"{entry.Timestamp:O}\t{entry.Status}\t{duration}\t{details}{Environment.NewLine}";
-            await File.AppendAllTextAsync(_filePath, line, Encoding.UTF8, cancellationToken);
+            await _fileLock.WaitAsync(cancellationToken);
+            try
+            {
+                EnsureFileExists();
+                string duration = entry.PreviousStateDuration?.TotalMilliseconds.ToString("F0", CultureInfo.InvariantCulture) ?? string.Empty;
+                string details = Sanitize(entry.Details);
+                string line = $"{entry.Timestamp:O}\t{entry.Status}\t{duration}\t{details}{Environment.NewLine}";
+                await File.AppendAllTextAsync(_filePath, line, Encoding.UTF8, cancellationToken);
+            }
+            finally
+            {
+                _fileLock.Release();
+            }
         }
         catch (OperationCanceledException)
         {
@@ -72,6 +81,42 @@ internal sealed class NetworkMonitorEventLog
         catch (Exception ex)
         {
             ToolsDiagnostics.ReportWarning(nameof(NetworkMonitorEventLog), "Failed to write the network monitor event log.", ex);
+        }
+    }
+
+    public async Task<bool> ClearAsync(CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(_filePath))
+        {
+            return true;
+        }
+
+        try
+        {
+            await _fileLock.WaitAsync(cancellationToken);
+            try
+            {
+                string? directory = Path.GetDirectoryName(_filePath);
+                if (!string.IsNullOrWhiteSpace(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+                await File.WriteAllTextAsync(_filePath, Header + Environment.NewLine, new UTF8Encoding(false), cancellationToken);
+                return true;
+            }
+            finally
+            {
+                _fileLock.Release();
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            return false;
+        }
+        catch (Exception ex)
+        {
+            ToolsDiagnostics.ReportWarning(nameof(NetworkMonitorEventLog), "Failed to clear the network monitor event log.", ex);
+            return false;
         }
     }
 

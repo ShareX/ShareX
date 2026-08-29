@@ -1786,6 +1786,9 @@ Cesta k souboru: {0}</value>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Události připojení</value>
   </data>
+  <data name="NetworkMonitorWindow_Clear_log" xml:space="preserve">
+    <value>Vymazat protokol</value>
+  </data>
   <data name="NetworkMonitorWindow_Copy_all" xml:space="preserve">
     <value>Kopírovat vše</value>
   </data>

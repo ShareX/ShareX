@@ -1786,6 +1786,9 @@ Dateipfad: {0}</value>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Verbindungsereignisse</value>
   </data>
+  <data name="NetworkMonitorWindow_Clear_log" xml:space="preserve">
+    <value>Protokoll löschen</value>
+  </data>
   <data name="NetworkMonitorWindow_Copy_all" xml:space="preserve">
     <value>Alles kopieren</value>
   </data>

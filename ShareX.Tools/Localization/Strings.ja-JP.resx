@@ -1780,6 +1780,9 @@
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>接続イベント</value>
   </data>
+  <data name="NetworkMonitorWindow_Clear_log" xml:space="preserve">
+    <value>ログを消去</value>
+  </data>
   <data name="NetworkMonitorWindow_Copy_all" xml:space="preserve">
     <value>すべてコピー</value>
   </data>

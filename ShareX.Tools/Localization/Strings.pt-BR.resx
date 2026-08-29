@@ -1786,6 +1786,9 @@ Caminho do arquivo: {0}</value>
   <data name="NetworkMonitorWindow_Connection_events" xml:space="preserve">
     <value>Eventos de conexão</value>
   </data>
+  <data name="NetworkMonitorWindow_Clear_log" xml:space="preserve">
+    <value>Limpar registro</value>
+  </data>
   <data name="NetworkMonitorWindow_Copy_all" xml:space="preserve">
     <value>Copiar tudo</value>
   </data>
