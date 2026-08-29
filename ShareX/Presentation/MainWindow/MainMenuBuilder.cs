@@ -339,6 +339,7 @@ internal sealed class MainMenuBuilder
                         () => Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset = index,
                         isChecked: index == Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset,
                         toggleType: MainMenuToggleType.Radio,
+                        staysOpenOnClick: true,
                         boldWhenChecked: true));
                 }
             }
