@@ -29,6 +29,7 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
     public static IReadOnlyList<NetworkMonitorTargetItem> Targets { get; } = CreateTargets();
     public static IReadOnlyList<NetworkMonitorIntervalItem> Intervals { get; } =
     [
+        new("1 s", TimeSpan.FromSeconds(1)),
         new("2 s", TimeSpan.FromSeconds(2)),
         new("5 s", TimeSpan.FromSeconds(5)),
         new("10 s", TimeSpan.FromSeconds(10)),
@@ -313,7 +314,7 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
         else
         {
             CurrentLatencyText = "—";
-            StatusDetails = result.ErrorMessage;
+            StatusDetails = string.Empty;
         }
 
         NetworkMonitorSample[] visible = GetVisibleSamples().ToArray();
