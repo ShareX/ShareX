@@ -23,6 +23,7 @@ namespace ShareX.Tools;
 public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
 {
     private const int MaximumVisibleEvents = 1000;
+    private static readonly TimeSpan DisconnectConfirmationDelay = TimeSpan.FromSeconds(1);
     private static readonly TimeSpan MaximumSampleAge = TimeSpan.FromHours(24);
 
     public static IReadOnlyList<NetworkMonitorTargetItem> Targets { get; } = CreateTargets();
@@ -223,11 +224,12 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
 
         try
         {
-            TriggerPingAnimation();
-            NetworkMonitorProbeResult result = await _probe.ProbeAsync(SelectedTarget, TimeSpan.FromSeconds(2), cancellationToken);
-            Samples.Add(new NetworkMonitorSample(result.Timestamp, result.Success, result.LatencyMilliseconds));
-            TrimSamples(result.Timestamp);
-            UpdateSampleSummary(result);
+            NetworkMonitorProbeResult result = await RunProbeAsync(cancellationToken);
+            if (!result.Success && _connectedState != false)
+            {
+                await Task.Delay(DisconnectConfirmationDelay, cancellationToken);
+                result = await RunProbeAsync(cancellationToken);
+            }
             await UpdateConnectionStateAsync(result, cancellationToken);
         }
         catch (OperationCanceledException)
@@ -241,6 +243,16 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
         {
             _probeLock.Release();
         }
+    }
+
+    private async Task<NetworkMonitorProbeResult> RunProbeAsync(CancellationToken cancellationToken)
+    {
+        TriggerPingAnimation();
+        NetworkMonitorProbeResult result = await _probe.ProbeAsync(SelectedTarget, TimeSpan.FromSeconds(2), cancellationToken);
+        Samples.Add(new NetworkMonitorSample(result.Timestamp, result.Success, result.LatencyMilliseconds));
+        TrimSamples(result.Timestamp);
+        UpdateSampleSummary(result);
+        return result;
     }
 
     private void TriggerPingAnimation()
