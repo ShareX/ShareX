@@ -14,7 +14,6 @@
 
 using System.Diagnostics;
 using System.Net.NetworkInformation;
-using System.Net.Sockets;
 
 namespace ShareX.Tools;
 
@@ -68,7 +67,6 @@ internal sealed class NetworkMonitorProbe : INetworkMonitorProbe
         TimeSpan timeout,
         CancellationToken cancellationToken)
     {
-        string pingError = string.Empty;
         try
         {
             using Ping ping = new();
@@ -82,41 +80,28 @@ internal sealed class NetworkMonitorProbe : INetworkMonitorProbe
                 return EndpointProbeResult.Succeeded(endpoint, latency, "ICMP");
             }
 
-            pingError = reply.Status.ToString();
+            if (reply.Status == IPStatus.TimedOut)
+            {
+                return EndpointProbeResult.Failed(endpoint,
+                    string.Format(Localization.Strings.NetworkMonitorProbe_Endpoint_timed_out, endpoint.Name));
+            }
+
+            return EndpointProbeResult.Failed(endpoint,
+                string.Format(Localization.Strings.NetworkMonitorProbe_Endpoint_failed, endpoint.Name, reply.Status));
         }
         catch (OperationCanceledException)
         {
             throw;
         }
-        catch (Exception ex)
-        {
-            pingError = ex.Message;
-        }
-
-        try
-        {
-            using TcpClient client = new();
-            using CancellationTokenSource timeoutSource = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
-            timeoutSource.CancelAfter(timeout);
-            Stopwatch stopwatch = Stopwatch.StartNew();
-            await client.ConnectAsync(endpoint.Host, endpoint.TcpPort, timeoutSource.Token);
-            stopwatch.Stop();
-            return EndpointProbeResult.Succeeded(endpoint, stopwatch.Elapsed.TotalMilliseconds, "TCP");
-        }
-        catch (OperationCanceledException) when (!cancellationToken.IsCancellationRequested)
+        catch (TimeoutException)
         {
             return EndpointProbeResult.Failed(endpoint,
                 string.Format(Localization.Strings.NetworkMonitorProbe_Endpoint_timed_out, endpoint.Name));
         }
-        catch (OperationCanceledException)
-        {
-            throw;
-        }
         catch (Exception ex)
         {
-            string reason = string.IsNullOrWhiteSpace(pingError) ? ex.Message : pingError;
             return EndpointProbeResult.Failed(endpoint,
-                string.Format(Localization.Strings.NetworkMonitorProbe_Endpoint_failed, endpoint.Name, reason));
+                string.Format(Localization.Strings.NetworkMonitorProbe_Endpoint_failed, endpoint.Name, ex.Message));
         }
     }
 

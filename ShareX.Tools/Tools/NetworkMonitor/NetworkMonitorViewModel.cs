@@ -22,7 +22,6 @@ namespace ShareX.Tools;
 
 public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
 {
-    private const int DisconnectFailureThreshold = 2;
     private const int MaximumVisibleEvents = 1000;
     private static readonly TimeSpan MaximumSampleAge = TimeSpan.FromHours(24);
 
@@ -52,7 +51,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
     private Task? _monitoringTask;
     private int _monitoringGeneration;
     private bool? _connectedState;
-    private int _consecutiveFailures;
 
     public ObservableCollection<NetworkMonitorEvent> Events { get; } = [];
     public ObservableCollection<NetworkMonitorSample> Samples { get; } = [];
@@ -251,7 +249,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
     {
         if (result.Success)
         {
-            _consecutiveFailures = 0;
             if (_connectedState != true)
             {
                 await AddTransitionAsync(NetworkMonitorEventStatus.Connected, result, cancellationToken);
@@ -263,14 +260,9 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
             return;
         }
 
-        _consecutiveFailures++;
-        if (_consecutiveFailures >= DisconnectFailureThreshold && _connectedState != false)
+        if (_connectedState != false)
         {
             await AddTransitionAsync(NetworkMonitorEventStatus.Disconnected, result, cancellationToken);
-        }
-        else if (_connectedState == null)
-        {
-            StatusText = Localization.Strings.NetworkMonitorViewModel_Checking;
         }
     }
 
@@ -369,9 +361,9 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
 
     private static IReadOnlyList<NetworkMonitorTargetItem> CreateTargets()
     {
-        NetworkMonitorEndpoint cloudflare = new("Cloudflare", "1.1.1.1", 443);
-        NetworkMonitorEndpoint google = new("Google DNS", "8.8.8.8", 53);
-        NetworkMonitorEndpoint quad9 = new("Quad9", "9.9.9.9", 53);
+        NetworkMonitorEndpoint cloudflare = new("Cloudflare", "1.1.1.1");
+        NetworkMonitorEndpoint google = new("Google DNS", "8.8.8.8");
+        NetworkMonitorEndpoint quad9 = new("Quad9", "9.9.9.9");
         return
         [
             new(Localization.Strings.NetworkMonitorViewModel_Automatic_recommended, [cloudflare, google, quad9]),

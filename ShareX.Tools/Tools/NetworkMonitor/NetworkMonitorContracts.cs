@@ -21,7 +21,7 @@ public sealed class NetworkMonitorServices
     public Action<string>? OpenFile { get; init; }
 }
 
-public sealed record NetworkMonitorEndpoint(string Name, string Host, int TcpPort);
+public sealed record NetworkMonitorEndpoint(string Name, string Host);
 
 public sealed record NetworkMonitorTargetItem(
     string DisplayName,
