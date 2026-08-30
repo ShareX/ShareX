@@ -37,12 +37,31 @@
             <Setter Property="Height" Value="11"/>
             <Setter Property="CornerRadius" Value="6"/>
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="Opacity" Value="1"/>
         </Style>
         <Style Selector="Border.status-dot.connected">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Status.Success}"/>
         </Style>
         <Style Selector="Border.status-dot.disconnected">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Status.Error}"/>
+        </Style>
+        <Style Selector="Border.status-dot.pinging">
+            <Style.Animations>
+                <Animation Duration="0:0:0.6">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="Opacity" Value="1"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="35%">
+                        <Setter Property="Opacity" Value="0.2"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="70%">
+                        <Setter Property="Opacity" Value="1"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="Opacity" Value="1"/>
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
         </Style>
         <Style Selector="ListBox.event-list ListBoxItem">
             <Setter Property="Padding" Value="0"/>
@@ -70,7 +89,8 @@
                                 Classes="status-dot"
                                 Margin="8,0,6,0"
                                 Classes.connected="{Binding IsConnected}"
-                                Classes.disconnected="{Binding IsDisconnected}"/>
+                                Classes.disconnected="{Binding IsDisconnected}"
+                                Classes.pinging="{Binding IsPingAnimating}"/>
                         <TextBlock Grid.Column="1" Text="{Binding StatusText}" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Center"/>
                     </Grid>
 

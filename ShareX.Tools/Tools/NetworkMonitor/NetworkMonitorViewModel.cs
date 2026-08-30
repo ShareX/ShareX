@@ -92,6 +92,9 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
     [ObservableProperty]
     private bool _hasEvents;
 
+    [ObservableProperty]
+    private bool _isPingAnimating;
+
     public bool IsConnected => _connectedState == true;
     public bool IsDisconnected => _connectedState == false;
     public bool CanStart => !IsMonitoring;
@@ -220,6 +223,7 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
 
         try
         {
+            TriggerPingAnimation();
             NetworkMonitorProbeResult result = await _probe.ProbeAsync(SelectedTarget, TimeSpan.FromSeconds(2), cancellationToken);
             Samples.Add(new NetworkMonitorSample(result.Timestamp, result.Success, result.LatencyMilliseconds));
             TrimSamples(result.Timestamp);
@@ -237,6 +241,18 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
         {
             _probeLock.Release();
         }
+    }
+
+    private void TriggerPingAnimation()
+    {
+        IsPingAnimating = true;
+        _ = ResetPingAnimationAsync();
+    }
+
+    private async Task ResetPingAnimationAsync()
+    {
+        await Task.Delay(600);
+        IsPingAnimating = false;
     }
 
     private async Task UpdateConnectionStateAsync(NetworkMonitorProbeResult result, CancellationToken cancellationToken)
