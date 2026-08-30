@@ -71,13 +71,7 @@
                                 Margin="8,0,6,0"
                                 Classes.connected="{Binding IsConnected}"
                                 Classes.disconnected="{Binding IsDisconnected}"/>
-                        <StackPanel Grid.Column="1" Spacing="1">
-                            <TextBlock Text="{Binding StatusText}" FontSize="18" FontWeight="SemiBold"/>
-                            <TextBlock Text="{Binding StatusDetails}"
-                                       FontWeight="Normal"
-                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                       TextTrimming="CharacterEllipsis"/>
-                        </StackPanel>
+                        <TextBlock Grid.Column="1" Text="{Binding StatusText}" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Center"/>
                     </Grid>
 
                     <StackPanel Grid.Column="1" Spacing="3">

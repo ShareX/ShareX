@@ -5125,24 +5125,6 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Monitoring stopped: {0}.
-        /// </summary>
-        public static string NetworkMonitorViewModel_Monitoring_failed {
-            get {
-                return ResourceManager.GetString("NetworkMonitorViewModel_Monitoring_failed", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Monitoring is paused..
-        /// </summary>
-        public static string NetworkMonitorViewModel_Monitoring_paused {
-            get {
-                return ResourceManager.GetString("NetworkMonitorViewModel_Monitoring_paused", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Looks up a localized string similar to Paused.
         /// </summary>
         public static string NetworkMonitorViewModel_Paused {
@@ -5161,29 +5143,11 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Reply from {0} via {1}.
-        /// </summary>
-        public static string NetworkMonitorViewModel_Reply_from {
-            get {
-                return ResourceManager.GetString("NetworkMonitorViewModel_Reply_from", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Looks up a localized string similar to Session.
         /// </summary>
         public static string NetworkMonitorViewModel_Session {
             get {
                 return ResourceManager.GetString("NetworkMonitorViewModel_Session", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Waiting for the first check....
-        /// </summary>
-        public static string NetworkMonitorViewModel_Waiting_for_first_check {
-            get {
-                return ResourceManager.GetString("NetworkMonitorViewModel_Waiting_for_first_check", resourceCulture);
             }
         }
 

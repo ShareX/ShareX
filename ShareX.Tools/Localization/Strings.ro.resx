@@ -1744,26 +1744,14 @@
   <data name="NetworkMonitorViewModel_Milliseconds" xml:space="preserve">
     <value>{0:0} ms</value>
   </data>
-  <data name="NetworkMonitorViewModel_Monitoring_failed" xml:space="preserve">
-    <value>Monitorizarea s-a oprit: {0}</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Monitoring_paused" xml:space="preserve">
-    <value>Monitorizarea este întreruptă.</value>
-  </data>
   <data name="NetworkMonitorViewModel_Paused" xml:space="preserve">
     <value>Întrerupt</value>
   </data>
   <data name="NetworkMonitorViewModel_Percentage" xml:space="preserve">
     <value>{0:0.0}%</value>
   </data>
-  <data name="NetworkMonitorViewModel_Reply_from" xml:space="preserve">
-    <value>Răspuns de la {0} prin {1}</value>
-  </data>
   <data name="NetworkMonitorViewModel_Session" xml:space="preserve">
     <value>Sesiune</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Waiting_for_first_check" xml:space="preserve">
-    <value>Se așteaptă prima verificare...</value>
   </data>
   <data name="NetworkMonitorWindow_Availability" xml:space="preserve">
     <value>Disponibilitate</value>

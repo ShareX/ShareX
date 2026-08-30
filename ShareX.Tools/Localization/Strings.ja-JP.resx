@@ -1744,26 +1744,14 @@
   <data name="NetworkMonitorViewModel_Milliseconds" xml:space="preserve">
     <value>{0:0} ミリ秒</value>
   </data>
-  <data name="NetworkMonitorViewModel_Monitoring_failed" xml:space="preserve">
-    <value>監視が停止しました: {0}</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Monitoring_paused" xml:space="preserve">
-    <value>監視は一時停止中です。</value>
-  </data>
   <data name="NetworkMonitorViewModel_Paused" xml:space="preserve">
     <value>一時停止</value>
   </data>
   <data name="NetworkMonitorViewModel_Percentage" xml:space="preserve">
     <value>{0:0.0}%</value>
   </data>
-  <data name="NetworkMonitorViewModel_Reply_from" xml:space="preserve">
-    <value>{1} 経由で {0} から応答</value>
-  </data>
   <data name="NetworkMonitorViewModel_Session" xml:space="preserve">
     <value>セッション</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Waiting_for_first_check" xml:space="preserve">
-    <value>最初の確認を待機中...</value>
   </data>
   <data name="NetworkMonitorWindow_Availability" xml:space="preserve">
     <value>可用性</value>

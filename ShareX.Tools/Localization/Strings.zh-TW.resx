@@ -1750,26 +1750,14 @@
   <data name="NetworkMonitorViewModel_Milliseconds" xml:space="preserve">
     <value>{0:0} 毫秒</value>
   </data>
-  <data name="NetworkMonitorViewModel_Monitoring_failed" xml:space="preserve">
-    <value>監控已停止：{0}</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Monitoring_paused" xml:space="preserve">
-    <value>監控已暫停。</value>
-  </data>
   <data name="NetworkMonitorViewModel_Paused" xml:space="preserve">
     <value>已暫停</value>
   </data>
   <data name="NetworkMonitorViewModel_Percentage" xml:space="preserve">
     <value>{0:0.0}%</value>
   </data>
-  <data name="NetworkMonitorViewModel_Reply_from" xml:space="preserve">
-    <value>透過 {1} 收到來自 {0} 的回應</value>
-  </data>
   <data name="NetworkMonitorViewModel_Session" xml:space="preserve">
     <value>工作階段</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Waiting_for_first_check" xml:space="preserve">
-    <value>正在等候首次檢查...</value>
   </data>
   <data name="NetworkMonitorWindow_Availability" xml:space="preserve">
     <value>可用性</value>

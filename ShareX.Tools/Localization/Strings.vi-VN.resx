@@ -1744,26 +1744,14 @@
   <data name="NetworkMonitorViewModel_Milliseconds" xml:space="preserve">
     <value>{0:0} mili giây</value>
   </data>
-  <data name="NetworkMonitorViewModel_Monitoring_failed" xml:space="preserve">
-    <value>Đã dừng giám sát: {0}</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Monitoring_paused" xml:space="preserve">
-    <value>Giám sát đang tạm dừng.</value>
-  </data>
   <data name="NetworkMonitorViewModel_Paused" xml:space="preserve">
     <value>Đã tạm dừng</value>
   </data>
   <data name="NetworkMonitorViewModel_Percentage" xml:space="preserve">
     <value>{0:0.0}%</value>
   </data>
-  <data name="NetworkMonitorViewModel_Reply_from" xml:space="preserve">
-    <value>Phản hồi từ {0} qua {1}</value>
-  </data>
   <data name="NetworkMonitorViewModel_Session" xml:space="preserve">
     <value>Phiên</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Waiting_for_first_check" xml:space="preserve">
-    <value>Đang chờ lần kiểm tra đầu tiên...</value>
   </data>
   <data name="NetworkMonitorWindow_Availability" xml:space="preserve">
     <value>Khả dụng</value>

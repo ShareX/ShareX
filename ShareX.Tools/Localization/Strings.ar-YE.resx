@@ -1744,26 +1744,14 @@
   <data name="NetworkMonitorViewModel_Milliseconds" xml:space="preserve">
     <value>{0:0} مللي ثانية</value>
   </data>
-  <data name="NetworkMonitorViewModel_Monitoring_failed" xml:space="preserve">
-    <value>توقفت المراقبة: {0}</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Monitoring_paused" xml:space="preserve">
-    <value>المراقبة متوقفة مؤقتًا.</value>
-  </data>
   <data name="NetworkMonitorViewModel_Paused" xml:space="preserve">
     <value>متوقف مؤقتًا</value>
   </data>
   <data name="NetworkMonitorViewModel_Percentage" xml:space="preserve">
     <value>{0:0.0}%</value>
   </data>
-  <data name="NetworkMonitorViewModel_Reply_from" xml:space="preserve">
-    <value>رد من {0} عبر {1}</value>
-  </data>
   <data name="NetworkMonitorViewModel_Session" xml:space="preserve">
     <value>الجلسة</value>
-  </data>
-  <data name="NetworkMonitorViewModel_Waiting_for_first_check" xml:space="preserve">
-    <value>في انتظار الفحص الأول...</value>
   </data>
   <data name="NetworkMonitorWindow_Availability" xml:space="preserve">
     <value>التوفر</value>

@@ -78,9 +78,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
     private string _statusText = Localization.Strings.NetworkMonitorViewModel_Checking;
 
     [ObservableProperty]
-    private string _statusDetails = Localization.Strings.NetworkMonitorViewModel_Waiting_for_first_check;
-
-    [ObservableProperty]
     private string _currentLatencyText = "—";
 
     [ObservableProperty]
@@ -146,7 +143,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
         if (_connectedState == null)
         {
             StatusText = Localization.Strings.NetworkMonitorViewModel_Paused;
-            StatusDetails = Localization.Strings.NetworkMonitorViewModel_Monitoring_paused;
         }
     }
 
@@ -205,7 +201,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
         catch (Exception ex)
         {
             ToolsDiagnostics.ReportWarning(nameof(NetworkMonitorViewModel), "Network monitoring stopped unexpectedly.", ex);
-            StatusDetails = string.Format(Localization.Strings.NetworkMonitorViewModel_Monitoring_failed, ex.Message);
         }
         finally
         {
@@ -237,7 +232,6 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
         catch (Exception ex)
         {
             ToolsDiagnostics.ReportWarning(nameof(NetworkMonitorViewModel), "Network probe failed.", ex);
-            StatusDetails = string.Format(Localization.Strings.NetworkMonitorViewModel_Monitoring_failed, ex.Message);
         }
         finally
         {
@@ -300,13 +294,10 @@ public sealed partial class NetworkMonitorViewModel : ViewModelBase, IDisposable
         {
             CurrentLatencyText = string.Format(CultureInfo.CurrentCulture,
                 Localization.Strings.NetworkMonitorViewModel_Milliseconds, result.LatencyMilliseconds.Value);
-            StatusDetails = string.Format(Localization.Strings.NetworkMonitorViewModel_Reply_from,
-                result.Endpoint, result.Method);
         }
         else
         {
             CurrentLatencyText = "—";
-            StatusDetails = string.Empty;
         }
 
         NetworkMonitorSample[] visible = GetVisibleSamples().ToArray();
