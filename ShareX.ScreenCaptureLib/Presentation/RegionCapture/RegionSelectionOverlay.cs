@@ -16,8 +16,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 
@@ -34,12 +32,8 @@ public sealed class RegionSelectionOverlay : Control
         new SolidColorBrush(Color.FromArgb(230, 0, 0, 0)),
         1,
         new DashStyle([5, 5], 0));
-    private static readonly IBrush HandleFill = Brushes.White;
-    private static readonly IPen HandleBorder = new Pen(Brushes.Black, 1);
-
     private Rect _selectionRectangle;
     private Rect _hoverRectangle;
-    private bool _showHandles;
     private bool _showCenterCrosshair;
     private byte _dimAlpha = 51;
     private IBrush _dimBrush = new SolidColorBrush(Color.FromArgb(51, 0, 0, 0));
@@ -76,19 +70,6 @@ public sealed class RegionSelectionOverlay : Control
             if (_hoverRectangle != value)
             {
                 _hoverRectangle = value;
-                InvalidateVisual();
-            }
-        }
-    }
-
-    public bool ShowHandles
-    {
-        get => _showHandles;
-        set
-        {
-            if (_showHandles != value)
-            {
-                _showHandles = value;
                 InvalidateVisual();
             }
         }
@@ -159,15 +140,6 @@ public sealed class RegionSelectionOverlay : Control
             DrawCenterCrosshair(context, SelectionRectangle);
         }
 
-        if (ShowHandles && IsValid(SelectionRectangle))
-        {
-            foreach (Point point in GetHandlePoints(SelectionRectangle))
-            {
-                const double size = 8;
-                Rect handle = new Rect(point.X - size / 2, point.Y - size / 2, size, size);
-                context.DrawRectangle(HandleFill, HandleBorder, handle);
-            }
-        }
     }
 
     private void DrawAntRectangle(DrawingContext context, Rect rectangle)
@@ -196,37 +168,6 @@ public sealed class RegionSelectionOverlay : Control
         context.DrawRectangle(brush, null, new Rect(centerX, centerY - radius, 1, diameter));
     }
 
-    public RegionResizeHandle HitTestHandle(Point point, double tolerance = 10)
-    {
-        if (!IsValid(SelectionRectangle))
-        {
-            return RegionResizeHandle.None;
-        }
-
-        Point[] points = GetHandlePoints(SelectionRectangle).ToArray();
-        RegionResizeHandle[] handles =
-        [
-            RegionResizeHandle.TopLeft,
-            RegionResizeHandle.Top,
-            RegionResizeHandle.TopRight,
-            RegionResizeHandle.Right,
-            RegionResizeHandle.BottomRight,
-            RegionResizeHandle.Bottom,
-            RegionResizeHandle.BottomLeft,
-            RegionResizeHandle.Left
-        ];
-
-        for (int i = 0; i < points.Length; i++)
-        {
-            if (Math.Abs(point.X - points[i].X) <= tolerance && Math.Abs(point.Y - points[i].Y) <= tolerance)
-            {
-                return handles[i];
-            }
-        }
-
-        return RegionResizeHandle.None;
-    }
-
     private static void DrawDimmedOutside(DrawingContext context, Rect surface, Rect clear, IBrush brush)
     {
         DrawIfValid(context, brush, new Rect(surface.Left, surface.Top, surface.Width, clear.Top - surface.Top));
@@ -241,18 +182,6 @@ public sealed class RegionSelectionOverlay : Control
         {
             context.DrawRectangle(brush, null, rectangle);
         }
-    }
-
-    private static IEnumerable<Point> GetHandlePoints(Rect rectangle)
-    {
-        yield return rectangle.TopLeft;
-        yield return new Point(rectangle.Center.X, rectangle.Top);
-        yield return rectangle.TopRight;
-        yield return new Point(rectangle.Right, rectangle.Center.Y);
-        yield return rectangle.BottomRight;
-        yield return new Point(rectangle.Center.X, rectangle.Bottom);
-        yield return rectangle.BottomLeft;
-        yield return new Point(rectangle.Left, rectangle.Center.Y);
     }
 
     internal static Rect NormalizeAndClamp(Point first, Point second, Size bounds)
@@ -276,17 +205,4 @@ public sealed class RegionSelectionOverlay : Control
     }
 
     internal static bool IsValid(Rect rectangle) => rectangle.Width > 0 && rectangle.Height > 0;
-}
-
-public enum RegionResizeHandle
-{
-    None,
-    TopLeft,
-    Top,
-    TopRight,
-    Right,
-    BottomRight,
-    Bottom,
-    BottomLeft,
-    Left
 }

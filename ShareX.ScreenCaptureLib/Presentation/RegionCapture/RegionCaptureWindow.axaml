@@ -51,6 +51,7 @@
                 <capture:RegionSelectionOverlay x:Name="RegionOverlay"
                                                 AccentBrush="{DynamicResource ShareX.Brush.Accent.Start}"
                                                 IsHitTestVisible="False"/>
+                <Canvas x:Name="RegionResizeNodeCanvas" IsVisible="False"/>
             </Grid>
         </LayoutTransformControl>
 

@@ -680,27 +680,18 @@ public class EditorSelectionController
             || _selectedShape is Grid
             || _selectedShape is OutlinedTextControl)
         {
-            double newLeft = left;
-            double newTop = top;
-            double newWidth = width;
-            double newHeight = height;
+            Rect resized = SelectionResizeNode.Resize(shapeRect, handleTag, new Vector(deltaX, deltaY));
 
-            if (handleTag.Contains("Right")) newWidth = Math.Max(1, width + deltaX);
-            else if (handleTag.Contains("Left")) { var change = Math.Min(width - 1, deltaX); newLeft += change; newWidth -= change; }
-
-            if (handleTag.Contains("Bottom")) newHeight = Math.Max(1, height + deltaY);
-            else if (handleTag.Contains("Top")) { var change = Math.Min(height - 1, deltaY); newTop += change; newHeight -= change; }
-
-            Canvas.SetLeft(_selectedShape, newLeft);
-            Canvas.SetTop(_selectedShape, newTop);
-            _selectedShape.Width = newWidth;
-            _selectedShape.Height = newHeight;
+            Canvas.SetLeft(_selectedShape, resized.Left);
+            Canvas.SetTop(_selectedShape, resized.Top);
+            _selectedShape.Width = resized.Width;
+            _selectedShape.Height = resized.Height;
 
             // Sync annotation points for hit testing
             if (_selectedShape.Tag is Annotation annotation)
             {
-                annotation.StartPoint = new SKPoint((float)newLeft, (float)newTop);
-                annotation.EndPoint = new SKPoint((float)(newLeft + newWidth), (float)(newTop + newHeight));
+                annotation.StartPoint = new SKPoint((float)resized.Left, (float)resized.Top);
+                annotation.EndPoint = new SKPoint((float)resized.Right, (float)resized.Bottom);
             }
         }
 
@@ -919,9 +910,7 @@ public class EditorSelectionController
 
     private static bool TryGetHandleDirection(string handleTag, out int horizontalDirection, out int verticalDirection)
     {
-        horizontalDirection = handleTag.Contains("Left") ? -1 : handleTag.Contains("Right") ? 1 : 0;
-        verticalDirection = handleTag.Contains("Top") ? -1 : handleTag.Contains("Bottom") ? 1 : 0;
-        return horizontalDirection != 0 || verticalDirection != 0;
+        return SelectionResizeNode.TryGetDirection(handleTag, out horizontalDirection, out verticalDirection);
     }
 
     public void MoveSelectedShape(double deltaX, double deltaY)
@@ -1187,14 +1176,12 @@ public class EditorSelectionController
         var shapeLeft = boundsRect.Left;
         var shapeTop = boundsRect.Top;
 
-        CreateHandle(shapeLeft, shapeTop, "TopLeft");
-        CreateHandle(shapeLeft + width / 2, shapeTop, "TopCenter");
-        CreateHandle(shapeLeft + width, shapeTop, "TopRight");
-        CreateHandle(shapeLeft + width, shapeTop + height / 2, "RightCenter");
-        CreateHandle(shapeLeft + width, shapeTop + height, "BottomRight");
-        CreateHandle(shapeLeft + width / 2, shapeTop + height, "BottomCenter");
-        CreateHandle(shapeLeft, shapeTop + height, "BottomLeft");
-        CreateHandle(shapeLeft, shapeTop + height / 2, "LeftCenter");
+        Rect selectionBounds = new(shapeLeft, shapeTop, width, height);
+        foreach (SelectionResizeNodeKind node in SelectionResizeNode.RectangleNodes)
+        {
+            Point position = SelectionResizeNode.GetPosition(selectionBounds, node);
+            CreateHandle(position.X, position.Y, node.ToString());
+        }
         UpdateHoverOutline();
     }
 
@@ -1422,30 +1409,12 @@ public class EditorSelectionController
         var overlay = _view.FindControl<Canvas>("OverlayCanvas");
         if (overlay == null) return;
 
-        var handleBorder = new Border
-        {
-            Width = 15,
-            Height = 15,
-            CornerRadius = new CornerRadius(10),
-            Background = Brushes.White,
-            Tag = tag,
-            Cursor = GetSelectionHandleCursor(),
-            // Keep handle centers stable while dragging; layout rounding can cause
-            // half-pixel positions to snap left/right on consecutive frames.
-            UseLayoutRounding = false,
-            BoxShadow = new BoxShadows(new BoxShadow
-            {
-                OffsetX = 0,
-                OffsetY = 0,
-                Blur = 8,
-                Spread = 0,
-                Color = Color.FromArgb(100, 0, 0, 0)
-            })
-        };
-        handleBorder.SetValue(Panel.ZIndexProperty, 2);
-
-        Canvas.SetLeft(handleBorder, ToOverlayCoordinate(x) - handleBorder.Width / 2);
-        Canvas.SetTop(handleBorder, ToOverlayCoordinate(y) - handleBorder.Height / 2);
+        Border handleBorder = SelectionResizeNode.Create(
+            x,
+            y,
+            tag,
+            GetSelectionHandleCursor(),
+            EditorView.OverlayCanvasBleed);
 
         overlay.Children.Add(handleBorder);
         _selectionHandles.Add(handleBorder);
