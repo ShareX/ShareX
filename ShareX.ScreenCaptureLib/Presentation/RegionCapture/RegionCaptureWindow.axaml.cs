@@ -89,6 +89,7 @@ public partial class RegionCaptureWindow : Window
     private bool _isMovingSelectionDuringCreation;
     private bool _wasControlHeldDuringCreation;
     private bool _suppressNextRightButtonReleaseAction;
+    private bool _annotationMiddleButtonPressed;
     private bool _annotationRightButtonPressed;
     private bool _workspaceOwnsScreenshot;
     private bool _closing;
@@ -103,6 +104,7 @@ public partial class RegionCaptureWindow : Window
 #endif
         ResolveControls();
         AddHandler(PointerPressedEvent, OnCaptureHostPointerPressed, RoutingStrategies.Tunnel, handledEventsToo: true);
+        AddHandler(PointerMovedEvent, OnCaptureHostPointerMoved, RoutingStrategies.Tunnel, handledEventsToo: true);
         AddHandler(PointerReleasedEvent, OnCaptureHostPointerReleased, RoutingStrategies.Tunnel, handledEventsToo: true);
     }
 
@@ -914,7 +916,22 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        if (e.GetCurrentPoint(_editorWorkspace).Properties.PointerUpdateKind == PointerUpdateKind.RightButtonPressed)
+        PointerUpdateKind updateKind = e.GetCurrentPoint(_editorWorkspace).Properties.PointerUpdateKind;
+        if (updateKind == PointerUpdateKind.MiddleButtonPressed)
+        {
+            if (_viewModel?.IsModalOpen == true || IsEditorNotificationSource(e.Source))
+            {
+                _annotationMiddleButtonPressed = false;
+                return;
+            }
+
+            _annotationMiddleButtonPressed = true;
+            e.Handled = true;
+            RunCaptureAction(_request.CaptureOptions.RegionCaptureActionMiddleClick);
+            return;
+        }
+
+        if (updateKind == PointerUpdateKind.RightButtonPressed)
         {
             if (_viewModel?.IsModalOpen == true || IsEditorNotificationSource(e.Source))
             {
@@ -927,8 +944,32 @@ public partial class RegionCaptureWindow : Window
         }
     }
 
+    private void OnCaptureHostPointerMoved(object? sender, PointerEventArgs e)
+    {
+        if (!_annotationMiddleButtonPressed)
+        {
+            return;
+        }
+
+        if (!e.GetCurrentPoint(this).Properties.IsMiddleButtonPressed)
+        {
+            _annotationMiddleButtonPressed = false;
+            return;
+        }
+
+        e.Handled = true;
+    }
+
     private void OnCaptureHostPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
+        if (_annotationMiddleButtonPressed &&
+            e.GetCurrentPoint(this).Properties.PointerUpdateKind == PointerUpdateKind.MiddleButtonReleased)
+        {
+            _annotationMiddleButtonPressed = false;
+            e.Handled = true;
+            return;
+        }
+
         if (!_annotationRightButtonPressed || _regionToolActive || _closing || _request == null)
         {
             return;
