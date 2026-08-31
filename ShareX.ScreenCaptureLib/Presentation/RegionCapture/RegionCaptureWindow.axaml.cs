@@ -475,7 +475,7 @@ public partial class RegionCaptureWindow : Window
 
             _ = LoadWindowRegionsAsync();
 
-            int inputDelay = Math.Max(0, _request.CaptureOptions.InputDelay);
+            int inputDelay = Math.Max(0, RegionCaptureOptions.InputDelay);
             if (inputDelay > 0)
             {
                 await Task.Delay(inputDelay);
@@ -782,7 +782,7 @@ public partial class RegionCaptureWindow : Window
         ResetCreationModifiers();
 
         Rect selection = _regionOverlay.SelectionRectangle;
-        if (selection.Width < _request.CaptureOptions.MinimumSize || selection.Height < _request.CaptureOptions.MinimumSize)
+        if (selection.Width < RegionCaptureOptions.MinimumSize || selection.Height < RegionCaptureOptions.MinimumSize)
         {
             if (RegionSelectionOverlay.IsValid(_regionOverlay.HoverRectangle))
             {
@@ -1619,8 +1619,8 @@ public partial class RegionCaptureWindow : Window
         }
 
         Rect selection = _regionOverlay.SelectionRectangle;
-        return selection.Width >= _request.CaptureOptions.MinimumSize &&
-            selection.Height >= _request.CaptureOptions.MinimumSize;
+        return selection.Width >= RegionCaptureOptions.MinimumSize &&
+            selection.Height >= RegionCaptureOptions.MinimumSize;
     }
 
     private Point ClampPoint(Point point)

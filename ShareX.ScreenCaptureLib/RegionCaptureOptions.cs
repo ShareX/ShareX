@@ -29,7 +29,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RegionCaptureOptions
     {
-        public const int DefaultMinimumSize = 5;
+        public const int MinimumSize = 5;
+        public const int InputDelay = 500;
         public const int MagnifierSizeMinimum = 50;
         public const int MagnifierSizeMaximum = 500;
         public const int MagnifierPixelCountMinimum = 3;
@@ -58,9 +59,6 @@ namespace ShareX.ScreenCaptureLib
         public int MagnifierPixelCount = 15; // Must be odd number like 11, 13, 15 etc.
         public bool ShowCenterCrosshair = true;
         public bool ShowScreenCrosshair = false;
-
-        public int MinimumSize = DefaultMinimumSize;
-        public int InputDelay = 500;
 
         // Color picker
         public ColorPickerOptions ColorPickerOptions = new ColorPickerOptions();
