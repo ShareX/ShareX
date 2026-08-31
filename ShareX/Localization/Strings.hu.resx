@@ -1354,8 +1354,8 @@
   <data name="TaskSettingsWindow_Add" xml:space="preserve">
     <value>Hozzáadás</value>
   </data>
-  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
-    <value>Többterületes mód használata</value>
+  <data name="TaskSettingsWindow_QuickCapture" xml:space="preserve">
+    <value>Gyors rögzítés</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Ablakterületek észlelése</value>

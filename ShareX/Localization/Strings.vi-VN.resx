@@ -1354,8 +1354,8 @@
   <data name="TaskSettingsWindow_Add" xml:space="preserve">
     <value>Thêm</value>
   </data>
-  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
-    <value>Dùng chế độ nhiều vùng</value>
+  <data name="TaskSettingsWindow_QuickCapture" xml:space="preserve">
+    <value>Chụp nhanh</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Phát hiện vùng cửa sổ</value>

@@ -1354,8 +1354,8 @@
   <data name="TaskSettingsWindow_Add" xml:space="preserve">
     <value>Tilføj</value>
   </data>
-  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
-    <value>Brug tilstand med flere områder</value>
+  <data name="TaskSettingsWindow_QuickCapture" xml:space="preserve">
+    <value>Hurtig optagelse</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Registrér vinduesområder</value>

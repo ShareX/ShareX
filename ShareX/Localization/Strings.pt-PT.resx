@@ -1354,8 +1354,8 @@
   <data name="TaskSettingsWindow_Add" xml:space="preserve">
     <value>Adicionar</value>
   </data>
-  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
-    <value>Usar modo de múltiplas regiões</value>
+  <data name="TaskSettingsWindow_QuickCapture" xml:space="preserve">
+    <value>Captura rápida</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Detectar regiões de janela</value>

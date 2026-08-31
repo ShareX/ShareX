@@ -394,7 +394,7 @@ internal sealed class TaskSettingsPageBuilder
 
         return Page("capture-region", Strings.TaskSettingsWindow_RegionCapture, LucideIcons.crop,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Selection,
-                Check(Strings.TaskSettingsWindow_UseMultiRegionMode, () => !options.QuickCrop, value => options.QuickCrop = !value),
+                Check(Strings.TaskSettingsWindow_QuickCapture, () => options.QuickCapture, value => options.QuickCapture = value),
                 Check(Strings.TaskSettingsWindow_DetectWindowRegions, detectWindows), detectControls,
                 Check(Strings.TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor, () => options.ActiveMonitorMode, value => options.ActiveMonitorMode = value),
                 Row(Strings.TaskSettingsWindow_BackgroundDimStrengthPercent, Number(() => options.BackgroundDimStrength, value => options.BackgroundDimStrength = (int)value, 0, 100))),

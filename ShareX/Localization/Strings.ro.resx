@@ -1354,8 +1354,8 @@
   <data name="TaskSettingsWindow_Add" xml:space="preserve">
     <value>Adaugă</value>
   </data>
-  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
-    <value>Folosește modul cu mai multe regiuni</value>
+  <data name="TaskSettingsWindow_QuickCapture" xml:space="preserve">
+    <value>Captură rapidă</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Detectează regiunile ferestrelor</value>

@@ -709,7 +709,7 @@ public partial class RegionCaptureWindow : Window
             }
         }
 
-        if (HasValidSelection() && _request.CaptureOptions.QuickCrop)
+        if (HasValidSelection() && _request.CaptureOptions.QuickCapture)
         {
             Complete(_regionOverlay.SelectionRectangle);
         }

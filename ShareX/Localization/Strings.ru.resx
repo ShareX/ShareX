@@ -1354,8 +1354,8 @@
   <data name="TaskSettingsWindow_Add" xml:space="preserve">
     <value>Добавить</value>
   </data>
-  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
-    <value>Использовать режим нескольких областей</value>
+  <data name="TaskSettingsWindow_QuickCapture" xml:space="preserve">
+    <value>Быстрый захват</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Обнаруживать области окон</value>

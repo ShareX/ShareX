@@ -1354,8 +1354,8 @@
   <data name="TaskSettingsWindow_Add" xml:space="preserve">
     <value>افزودن</value>
   </data>
-  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
-    <value>استفاده از حالت چندناحیه‌ای</value>
+  <data name="TaskSettingsWindow_QuickCapture" xml:space="preserve">
+    <value>ثبت سریع</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>شناسایی ناحیه‌های پنجره</value>

@@ -1354,8 +1354,8 @@
   <data name="TaskSettingsWindow_Add" xml:space="preserve">
     <value>เพิ่ม</value>
   </data>
-  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
-    <value>ใช้ หลายรายการ โหมดพื้นที่</value>
+  <data name="TaskSettingsWindow_QuickCapture" xml:space="preserve">
+    <value>จับภาพด่วน</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>ตรวจจับพื้นที่หน้าต่าง</value>

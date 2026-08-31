@@ -1354,8 +1354,8 @@
   <data name="TaskSettingsWindow_Add" xml:space="preserve">
     <value>जोड़ें</value>
   </data>
-  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
-    <value>बहु-क्षेत्र मोड उपयोग करें</value>
+  <data name="TaskSettingsWindow_QuickCapture" xml:space="preserve">
+    <value>त्वरित कैप्चर</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>विंडो क्षेत्र पहचानें</value>

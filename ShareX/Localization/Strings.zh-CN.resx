@@ -1354,8 +1354,8 @@
   <data name="TaskSettingsWindow_Add" xml:space="preserve">
     <value>添加</value>
   </data>
-  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
-    <value>使用多区域模式</value>
+  <data name="TaskSettingsWindow_QuickCapture" xml:space="preserve">
+    <value>快速捕获</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>检测窗口区域</value>

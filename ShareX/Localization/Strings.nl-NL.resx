@@ -1354,8 +1354,8 @@
   <data name="TaskSettingsWindow_Add" xml:space="preserve">
     <value>Toevoegen</value>
   </data>
-  <data name="TaskSettingsWindow_UseMultiRegionMode" xml:space="preserve">
-    <value>Modus voor meerdere gebieden gebruiken</value>
+  <data name="TaskSettingsWindow_QuickCapture" xml:space="preserve">
+    <value>Snelle opname</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Venstergebieden detecteren</value>

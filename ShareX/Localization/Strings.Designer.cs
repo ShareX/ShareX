@@ -2787,9 +2787,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_Add", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_UseMultiRegionMode {
+        public static string TaskSettingsWindow_QuickCapture {
             get {
-                return ResourceManager.GetString("TaskSettingsWindow_UseMultiRegionMode", resourceCulture);
+                return ResourceManager.GetString("TaskSettingsWindow_QuickCapture", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_DetectWindowRegions {
