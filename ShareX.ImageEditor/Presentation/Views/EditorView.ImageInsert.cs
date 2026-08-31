@@ -248,7 +248,11 @@ namespace ShareX.ImageEditor.Presentation.Views
             InsertImageAnnotationCore(skBitmap, position);
         }
 
-        private void InsertImageAnnotationCore(SKBitmap skBitmap, Point? position = null, bool showNotification = true)
+        private void InsertImageAnnotationCore(
+            SKBitmap skBitmap,
+            Point? position = null,
+            bool showNotification = true,
+            bool selectAnnotation = true)
         {
             var canvas = this.FindControl<Canvas>("AnnotationCanvas");
             if (canvas == null || DataContext is not MainViewModel vm)
@@ -288,8 +292,12 @@ namespace ShareX.ImageEditor.Presentation.Views
             canvas.Children.Add(control);
             _editorCore.AddAnnotation(annotation);
             vm.HasAnnotations = true;
-            vm.ActiveTool = EditorTool.Select;
-            _selectionController.SetSelectedShape(control);
+            if (selectAnnotation)
+            {
+                vm.ActiveTool = EditorTool.Select;
+                _selectionController.SetSelectedShape(control);
+            }
+
             if (showNotification)
             {
                 vm.ShowImageInsertedNotification();
