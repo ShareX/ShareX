@@ -978,8 +978,7 @@ internal sealed class TaskSettingsPageBuilder
         StackPanel content = new()
         {
             Margin = new Thickness(28, 24, 28, 32),
-            MaxWidth = 780,
-            HorizontalAlignment = HorizontalAlignment.Left,
+            HorizontalAlignment = HorizontalAlignment.Stretch,
             Spacing = 0
         };
 
@@ -1006,7 +1005,13 @@ internal sealed class TaskSettingsPageBuilder
             content.Children.Add(control);
         }
 
-        ScrollViewer page = new() { Content = content, IsVisible = false };
+        ScrollViewer page = new()
+        {
+            Content = content,
+            IsVisible = false,
+            HorizontalContentAlignment = HorizontalAlignment.Stretch,
+            HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled
+        };
         SettingsSearch.SetPageId(page, id);
         return page;
     }
