@@ -114,6 +114,10 @@ public partial class RegionCaptureWindow : Window
         _request = request ?? throw new ArgumentNullException(nameof(request));
         _imageWidth = Math.Max(1, request.ScreenBounds.Width);
         _imageHeight = Math.Max(1, request.ScreenBounds.Height);
+        if (request.CaptureOptions.ActiveMonitorMode)
+        {
+            Helpers.LockCursorToWindow(this);
+        }
         InitializeCaptureWorkspace();
         Opened += OnOpened;
     }

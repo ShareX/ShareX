@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia.Platform;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using System;
@@ -988,6 +989,24 @@ namespace ShareX.HelpersLib
         {
             form.Activated += (sender, e) => Cursor.Clip = form.Bounds;
             form.Deactivate += (sender, e) => Cursor.Clip = Rectangle.Empty;
+        }
+
+        public static void LockCursorToWindow(Avalonia.Controls.Window window)
+        {
+            window.Activated += (sender, e) =>
+            {
+                IntPtr handle = window.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+                if (handle != IntPtr.Zero)
+                {
+                    Rectangle bounds = NativeMethods.GetWindowRect(handle);
+                    if (bounds.Width > 0 && bounds.Height > 0)
+                    {
+                        Cursor.Clip = bounds;
+                    }
+                }
+            };
+            window.Deactivated += (sender, e) => Cursor.Clip = Rectangle.Empty;
+            window.Closed += (sender, e) => Cursor.Clip = Rectangle.Empty;
         }
 
         public static bool IsDefaultSettings<T>(IEnumerable<T> current, IEnumerable<T> source, Func<T, T, bool> predicate)
