@@ -254,7 +254,7 @@
     <value>Dimensioni immagine</value>
   </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
-    <value>Modificaor immagini</value>
+    <value>Modificatore immagini</value>
   </data>
   <data name="MainMenuBuilder_ImageEffects" xml:space="preserve">
     <value>Effetti Immagine</value>
@@ -2820,7 +2820,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Monitor di rete...</value>
   </data>
   <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
-    <value>Modificaor immagini</value>
+    <value>Modificatore immagini</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Ricorda stato finestra</value>
