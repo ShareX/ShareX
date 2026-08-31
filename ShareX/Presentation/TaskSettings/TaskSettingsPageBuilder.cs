@@ -410,7 +410,7 @@ internal sealed class TaskSettingsPageBuilder
                 Row(Strings.TaskSettingsWindow_MagnifierPixelCount, pixelCount),
                 Row(Strings.TaskSettingsWindow_MagnifierPixelSize, pixelSize),
                 Check(Strings.TaskSettingsWindow_ShowCenterCrosshair, () => options.ShowCenterCrosshair, value => options.ShowCenterCrosshair = value),
-                Check(Strings.TaskSettingsWindow_ShowScreenWideCrosshair, () => options.ShowCursorCrosshair, value => options.ShowCursorCrosshair = value)));
+                Check(Strings.TaskSettingsWindow_ShowScreenWideCrosshair, () => options.ShowScreenCrosshair, value => options.ShowScreenCrosshair = value)));
     }
 
     private Control BuildScreenRecorderPage()

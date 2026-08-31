@@ -43,20 +43,22 @@ namespace ShareX.ScreenCaptureLib
         public bool ActiveMonitorMode = false;
         public int BackgroundDimStrength = 20;
 
-        public int MinimumSize = DefaultMinimumSize;
         public RegionCaptureAction RegionCaptureActionRightClick = RegionCaptureAction.RemoveShapeCancelCapture;
         public RegionCaptureAction RegionCaptureActionMiddleClick = RegionCaptureAction.SwapToolType;
         public RegionCaptureAction RegionCaptureActionX1Click = RegionCaptureAction.CaptureFullscreen;
         public RegionCaptureAction RegionCaptureActionX2Click = RegionCaptureAction.CaptureActiveMonitor;
+
+        public bool ShowInfo = true;
         public bool UseCustomInfoText = false;
         public string CustomInfoText = "X: $x, Y: $y$nR: $r, G: $g, B: $b$nHex: $hex"; // Formats: $x, $y, $r, $g, $b, $hex, $HEX, $n
-        public bool ShowInfo = true;
         public bool ShowMagnifier = true;
         public bool UseSquareMagnifier = false;
         public int MagnifierPixelCount = 15; // Must be odd number like 11, 13, 15 etc.
         public int MagnifierPixelSize = 10;
         public bool ShowCenterCrosshair = false;
-        public bool ShowCursorCrosshair = false;
+        public bool ShowScreenCrosshair = false;
+
+        public int MinimumSize = DefaultMinimumSize;
         public int InputDelay = 500;
 
         // Color picker
