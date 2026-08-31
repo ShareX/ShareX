@@ -2819,4 +2819,34 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>नेटवर्क मॉनिटर...</value>
   </data>
+  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
+    <value>छवि संपादक</value>
+  </data>
+  <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
+    <value>विंडो स्थिति याद रखें</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowExitConfirmation" xml:space="preserve">
+    <value>बाहर निकलने की पुष्टि दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_ZoomToFitOnOpen" xml:space="preserve">
+    <value>खोलते समय फ़िट करने के लिए ज़ूम करें</value>
+  </data>
+  <data name="TaskSettingsWindow_QuickCrop" xml:space="preserve">
+    <value>त्वरित काट-छाँट</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>कार्य होने पर संपादक स्वतः बंद करें</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>छवि को क्लिपबोर्ड पर स्वतः कॉपी करें</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowInsertImageDialog" xml:space="preserve">
+    <value>छवि सम्मिलन संवाद दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
+    <value>सूचनाएँ दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
+    <value>टूलबार अनुकूलित करें...</value>
+  </data>
 </root>

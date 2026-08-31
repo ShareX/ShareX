@@ -152,9 +152,6 @@
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Guardar</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Cerrar</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>Copiar</value>
   </data>
@@ -184,12 +181,6 @@
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Color</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Opciones</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Opciones</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>Enviar adelante</value>
@@ -320,9 +311,6 @@ Opciones de sombra (Clic derecho)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Elegir color de la pantalla</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Personalizar barra de herramientas...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Automático</value>
@@ -489,15 +477,6 @@ Opciones de sombra (Clic derecho)</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Derecha</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Ajustar a la ventana al abrir</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Cerrar automáticamente el editor después de la tarea</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Copiar automáticamente la imagen al portapapeles</value>
-  </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Degradado</value>
   </data>
@@ -647,21 +626,6 @@ Opciones de sombra (Clic derecho)</value>
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>Línea</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Recordar estado de la ventana</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Mostrar confirmación al salir</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Recorte rápido</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Mostrar diálogo para insertar imagen</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Mostrar notificaciones</value>
   </data>
   <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
     <value>Color</value>

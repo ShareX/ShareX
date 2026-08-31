@@ -209,9 +209,6 @@ Vill du spara ändringarna innan bildredigeraren stängs?</value>
   <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
     <value>Öppna senaste</value>
   </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Alternativ</value>
-  </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Gör om (Ctrl+Y)</value>
   </data>
@@ -260,15 +257,6 @@ Skuggalternativ (högerklick)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Välj färg från skärmen</value>
-  </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Stäng</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Anpassa verktygsfält...</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Alternativ</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Automatiskt</value>
@@ -624,30 +612,6 @@ Favoritbildeffekter (högerklick)</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Höger</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Kom ihåg fönstrets tillstånd</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Visa bekräftelse vid avslut</value>
-  </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Anpassa zoom vid öppning</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Snabb beskärning</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Stäng redigeraren automatiskt vid uppgift</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Kopiera bilden automatiskt till Urklipp</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Visa dialogrutan Infoga bild</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Visa aviseringar</value>
   </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Övertoning</value>

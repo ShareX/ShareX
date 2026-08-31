@@ -209,9 +209,6 @@ Vil du gemme ændringerne, før billededitoren lukkes?</value>
   <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
     <value>Åbn seneste</value>
   </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Indstilling</value>
-  </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Annuller fortryd (Ctrl+Y)</value>
   </data>
@@ -260,15 +257,6 @@ Skyggeindstillinger (højreklik)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Vælg farve fra skærmen</value>
-  </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Luk</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Tilpas værktøjslinje...</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Indstilling</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Automatisk</value>
@@ -624,30 +612,6 @@ Favoritbilledeffekter (højreklik)</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Højre</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Husk vinduets tilstand</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Vis bekræftelse ved avslut</value>
-  </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Tilpas zoom ved åbning</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Hurtig beskæring</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Luk editoren automatisk ved opgave</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Kopiér billedet automatisk til Udklipsholder</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Vis dialogboksen Indsæt billede</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Vis meddelelser</value>
   </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Farveovergang</value>

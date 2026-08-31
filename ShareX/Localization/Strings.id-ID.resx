@@ -2819,4 +2819,34 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Pemantau jaringan...</value>
   </data>
+  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
+    <value>Editor gambar</value>
+  </data>
+  <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
+    <value>Ingat keadaan jendela</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowExitConfirmation" xml:space="preserve">
+    <value>Tampilkan konfirmasi keluar</value>
+  </data>
+  <data name="TaskSettingsWindow_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Sesuaikan ke jendela saat dibuka</value>
+  </data>
+  <data name="TaskSettingsWindow_QuickCrop" xml:space="preserve">
+    <value>Pangkas cepat</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Tutup editor otomatis setelah tugas</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Salin gambar otomatis ke papan klip</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowInsertImageDialog" xml:space="preserve">
+    <value>Tampilkan dialog sisipkan gambar</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
+    <value>Tampilkan notifikasi</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
+    <value>Sesuaikan bilah alat...</value>
+  </data>
 </root>

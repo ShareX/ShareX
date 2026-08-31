@@ -318,7 +318,6 @@ public partial class RegionCaptureWindow : Window
         _viewModel = new MainViewModel(_request.ImageEditorOptions)
         {
             ShowFileMenu = false,
-            ShowOptionsButton = false,
             ShowTaskButtons = false,
             ShowBottomToolbar = false,
             ShowToolbars = false,

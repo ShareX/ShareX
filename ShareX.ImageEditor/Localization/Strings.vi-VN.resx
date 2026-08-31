@@ -152,9 +152,6 @@ Bạn có muốn lưu thay đổi trước khi đóng trình chỉnh sửa ảnh
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Lưu</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Đóng</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>Sao chép</value>
   </data>
@@ -184,12 +181,6 @@ Bạn có muốn lưu thay đổi trước khi đóng trình chỉnh sửa ảnh
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Màu</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Lựa chọn</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Lựa chọn</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>Đem ra phía trước</value>
@@ -320,9 +311,6 @@ Tùy chọn bóng đổ (Nhấp phải)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Chọn màu từ màn hình</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Tùy chỉnh thanh công cụ...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Tự động</value>
@@ -489,15 +477,6 @@ Tùy chọn bóng đổ (Nhấp phải)</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Phải</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Vừa cửa sổ khi mở</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Tự động đóng trình chỉnh sửa sau tác vụ</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Tự động sao chép hình ảnh vào bảng tạm</value>
-  </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Chuyển sắc</value>
   </data>
@@ -650,21 +629,6 @@ Tùy chọn bóng đổ (Nhấp phải)</value>
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>Đường thẳng</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Ghi nhớ trạng thái cửa sổ</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Hiện xác nhận thoát</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Cắt xén nhanh</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Hiện hộp thoại chèn hình ảnh</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Hiện thông báo</value>
   </data>
   <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
     <value>Hình nền</value>

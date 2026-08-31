@@ -2819,4 +2819,34 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Monitor sieci...</value>
   </data>
+  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
+    <value>Edytor obrazów</value>
+  </data>
+  <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
+    <value>Zapamiętaj stan okna</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowExitConfirmation" xml:space="preserve">
+    <value>Pokaż potwierdzenie wyjścia</value>
+  </data>
+  <data name="TaskSettingsWindow_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Dopasuj do okna po otwarciu</value>
+  </data>
+  <data name="TaskSettingsWindow_QuickCrop" xml:space="preserve">
+    <value>Szybkie przycinanie</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Automatycznie zamknij edytor po zadaniu</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Automatycznie kopiuj obraz do schowka</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowInsertImageDialog" xml:space="preserve">
+    <value>Pokaż okno wstawiania obrazu</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
+    <value>Pokaż powiadomienia</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
+    <value>Dostosuj pasek narzędzi...</value>
+  </data>
 </root>

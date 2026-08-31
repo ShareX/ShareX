@@ -2819,4 +2819,34 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Netværksovervågning...</value>
   </data>
+  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
+    <value>Billedredigering</value>
+  </data>
+  <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
+    <value>Husk vinduets tilstand</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowExitConfirmation" xml:space="preserve">
+    <value>Vis bekræftelse ved avslut</value>
+  </data>
+  <data name="TaskSettingsWindow_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Tilpas zoom ved åbning</value>
+  </data>
+  <data name="TaskSettingsWindow_QuickCrop" xml:space="preserve">
+    <value>Hurtig beskæring</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Luk editoren automatisk ved opgave</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Kopiér billedet automatisk til Udklipsholder</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowInsertImageDialog" xml:space="preserve">
+    <value>Vis dialogboksen Indsæt billede</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
+    <value>Vis meddelelser</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
+    <value>Tilpas værktøjslinje...</value>
+  </data>
 </root>

@@ -2819,4 +2819,34 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>网络监控器...</value>
   </data>
+  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
+    <value>图像编辑器</value>
+  </data>
+  <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
+    <value>记住窗口状态</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowExitConfirmation" xml:space="preserve">
+    <value>显示退出确认</value>
+  </data>
+  <data name="TaskSettingsWindow_ZoomToFitOnOpen" xml:space="preserve">
+    <value>打开时适合窗口</value>
+  </data>
+  <data name="TaskSettingsWindow_QuickCrop" xml:space="preserve">
+    <value>快速裁剪</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>任务完成后自动关闭编辑器</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>自动将图像复制到剪贴板</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowInsertImageDialog" xml:space="preserve">
+    <value>显示插入图像对话框</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
+    <value>显示通知</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
+    <value>自定义工具栏...</value>
+  </data>
 </root>

@@ -152,9 +152,6 @@ Voulez-vous les enregistrer avant de fermer l’éditeur d’images ?</value>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Enregistrer</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>Copier</value>
   </data>
@@ -184,12 +181,6 @@ Voulez-vous les enregistrer avant de fermer l’éditeur d’images ?</value>
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Couleur</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Options</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Options</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>Avancer</value>
@@ -320,9 +311,6 @@ Options de l’ombre (Clic droit)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Prélever une couleur à l’écran</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Personnaliser la barre d’outils...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Automatique</value>
@@ -489,15 +477,6 @@ Options de l’ombre (Clic droit)</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Droite</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Ajuster à la fenêtre à l’ouverture</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Fermer automatiquement l’éditeur après la tâche</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Copier automatiquement l’image dans le presse-papiers</value>
-  </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Dégradé</value>
   </data>
@@ -644,21 +623,6 @@ Options de l’ombre (Clic droit)</value>
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>Ligne</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Mémoriser l’état de la fenêtre</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Afficher la confirmation de fermeture</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Rognage rapide</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Afficher la boîte de dialogue d’insertion d’image</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Afficher les notifications</value>
   </data>
   <data name="MainViewModel_BackgroundModeTransparent" xml:space="preserve">
     <value>Transparent</value>

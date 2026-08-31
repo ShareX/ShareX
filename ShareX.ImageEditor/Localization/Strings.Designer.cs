@@ -355,11 +355,6 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("AnnotationToolbar_Openrecent", resourceCulture);
             }
         }
-        public static string AnnotationToolbar_Options {
-            get {
-                return ResourceManager.GetString("AnnotationToolbar_Options", resourceCulture);
-            }
-        }
         public static string AnnotationToolbar_RedoCtrlY {
             get {
                 return ResourceManager.GetString("AnnotationToolbar_RedoCtrlY", resourceCulture);
@@ -438,21 +433,6 @@ namespace ShareX.ImageEditor.Localization {
         public static string ColorPickerPanel_Pickcolorfromscreen {
             get {
                 return ResourceManager.GetString("ColorPickerPanel_Pickcolorfromscreen", resourceCulture);
-            }
-        }
-        public static string EditorOptionsPanel_Close {
-            get {
-                return ResourceManager.GetString("EditorOptionsPanel_Close", resourceCulture);
-            }
-        }
-        public static string EditorOptionsPanel_CustomizetoolbarEllipsis {
-            get {
-                return ResourceManager.GetString("EditorOptionsPanel_CustomizetoolbarEllipsis", resourceCulture);
-            }
-        }
-        public static string EditorOptionsPanel_Options {
-            get {
-                return ResourceManager.GetString("EditorOptionsPanel_Options", resourceCulture);
             }
         }
         public static string EditorView_Auto {
@@ -1043,46 +1023,6 @@ namespace ShareX.ImageEditor.Localization {
         public static string TextHorizontalAlignmentHelper_Right {
             get {
                 return ResourceManager.GetString("TextHorizontalAlignmentHelper_Right", resourceCulture);
-            }
-        }
-        public static string EditorOptionsPanel_RememberWindowState {
-            get {
-                return ResourceManager.GetString("EditorOptionsPanel_RememberWindowState", resourceCulture);
-            }
-        }
-        public static string EditorOptionsPanel_ShowExitConfirmation {
-            get {
-                return ResourceManager.GetString("EditorOptionsPanel_ShowExitConfirmation", resourceCulture);
-            }
-        }
-        public static string EditorOptionsPanel_ZoomToFitOnOpen {
-            get {
-                return ResourceManager.GetString("EditorOptionsPanel_ZoomToFitOnOpen", resourceCulture);
-            }
-        }
-        public static string EditorOptionsPanel_QuickCrop {
-            get {
-                return ResourceManager.GetString("EditorOptionsPanel_QuickCrop", resourceCulture);
-            }
-        }
-        public static string EditorOptionsPanel_AutoCloseEditorOnTask {
-            get {
-                return ResourceManager.GetString("EditorOptionsPanel_AutoCloseEditorOnTask", resourceCulture);
-            }
-        }
-        public static string EditorOptionsPanel_AutoCopyImageToClipboard {
-            get {
-                return ResourceManager.GetString("EditorOptionsPanel_AutoCopyImageToClipboard", resourceCulture);
-            }
-        }
-        public static string EditorOptionsPanel_ShowInsertImageDialog {
-            get {
-                return ResourceManager.GetString("EditorOptionsPanel_ShowInsertImageDialog", resourceCulture);
-            }
-        }
-        public static string EditorOptionsPanel_ShowNotifications {
-            get {
-                return ResourceManager.GetString("EditorOptionsPanel_ShowNotifications", resourceCulture);
             }
         }
         public static string MainViewModel_BackgroundModeGradient {

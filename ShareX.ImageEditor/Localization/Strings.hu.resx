@@ -152,9 +152,6 @@ Szeretné menteni a módosításokat a képszerkesztő bezárása előtt?</value
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Mentés</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Bezárás</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>Másolás</value>
   </data>
@@ -184,12 +181,6 @@ Szeretné menteni a módosításokat a képszerkesztő bezárása előtt?</value
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Szín</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Beállítások</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Beállítások</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>Előrébb hozás</value>
@@ -320,9 +311,6 @@ Szeretné menteni a módosításokat a képszerkesztő bezárása előtt?</value
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Szín kiválasztása a képernyőről</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Eszköztár testreszabása...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Automatikus</value>
@@ -492,15 +480,6 @@ Szeretné menteni a módosításokat a képszerkesztő bezárása előtt?</value
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Jobbra</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Megnyitáskor ablakhoz igazítás</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Szerkesztő automatikus bezárása a feladat után</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Kép automatikus másolása a vágólapra</value>
-  </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Színátmenet</value>
   </data>
@@ -650,21 +629,6 @@ Szeretné menteni a módosításokat a képszerkesztő bezárása előtt?</value
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>Vonal</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Ablakállapot megjegyzése</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Kilépési megerősítés megjelenítése</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Gyors körülvágás</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Képbeszúrási párbeszédpanel megjelenítése</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Értesítések megjelenítése</value>
   </data>
   <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
     <value>Háttérkép</value>

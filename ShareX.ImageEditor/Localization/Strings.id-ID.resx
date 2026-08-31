@@ -152,9 +152,6 @@ Simpan perubahan sebelum menutup editor gambar?</value>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Simpan</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Tutup</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>Salin</value>
   </data>
@@ -184,12 +181,6 @@ Simpan perubahan sebelum menutup editor gambar?</value>
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Warna</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Opsi</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Opsi</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>Bawa maju</value>
@@ -320,9 +311,6 @@ Opsi bayangan (Klik kanan)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Pilih warna dari layar</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Sesuaikan bilah alat...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Otomatis</value>
@@ -486,15 +474,6 @@ Opsi bayangan (Klik kanan)</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Kanan</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Sesuaikan ke jendela saat dibuka</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Tutup editor otomatis setelah tugas</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Salin gambar otomatis ke papan klip</value>
-  </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Gradien</value>
   </data>
@@ -650,21 +629,6 @@ Opsi bayangan (Klik kanan)</value>
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>Garis</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Ingat keadaan jendela</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Tampilkan konfirmasi keluar</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Pangkas cepat</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Tampilkan dialog sisipkan gambar</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Tampilkan notifikasi</value>
   </data>
   <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
     <value>Wallpaper</value>

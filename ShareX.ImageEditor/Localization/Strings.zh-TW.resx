@@ -152,9 +152,6 @@
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>儲存</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>關閉</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>複製</value>
   </data>
@@ -184,12 +181,6 @@
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>顏色</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>選項</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>選項</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>上移一層</value>
@@ -320,9 +311,6 @@
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>從螢幕選取色彩</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>自訂工具列...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>自動</value>
@@ -492,15 +480,6 @@
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>靠右</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>開啟時符合視窗</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>工作完成後自動關閉編輯器</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>自動將影像複製到剪貼簿</value>
-  </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>漸層</value>
   </data>
@@ -650,21 +629,6 @@
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>直線</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>記住視窗狀態</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>顯示結束確認</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>快速裁剪</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>顯示插入影像對話方塊</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>顯示通知</value>
   </data>
   <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
     <value>桌布</value>

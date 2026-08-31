@@ -27,7 +27,6 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using ShareX.ImageEditor.Core.Abstractions;
 using ShareX.ImageEditor.Core.Annotations;
-using ShareX.ImageEditor.Presentation.Controls;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -322,9 +321,7 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter
         set => _viewModel.IsEffectsPanelOpen = value;
     }
 
-    public bool IsEffectsButtonActive =>
-        _viewModel.IsEffectsPanelOpen &&
-        _viewModel.EffectsPanelContent is not EditorOptionsPanel;
+    public bool IsEffectsButtonActive => _viewModel.IsEffectsPanelOpen;
 
     public double Zoom
     {
@@ -360,8 +357,6 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter
 
     public bool ShowFileMenu => _viewModel.ShowFileMenu;
 
-    public bool ShowOptionsButton => _viewModel.ShowOptionsButton;
-
     public ReadOnlyObservableCollection<string> RecentImageFiles => _viewModel.RecentImageFiles;
 
     public ReadOnlyObservableCollection<ToolbarCustomizationItemViewModel> ToolbarItems => _viewModel.ToolbarItems;
@@ -378,8 +373,6 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter
     public ICommand SaveCommand => _viewModel.SaveCommand;
 
     public ICommand SaveAsCommand => _viewModel.SaveAsCommand;
-
-    public ICommand OpenOptionsPanelCommand => _viewModel.OpenOptionsPanelCommand;
 
     public ICommand ExitEditorCommand => _viewModel.ExitEditorCommand;
 
@@ -467,17 +460,11 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter
                 OnPropertyChanged(nameof(IsEffectsPanelOpen));
                 OnPropertyChanged(nameof(IsEffectsButtonActive));
                 break;
-            case nameof(MainViewModel.EffectsPanelContent):
-                OnPropertyChanged(nameof(IsEffectsButtonActive));
-                break;
             case nameof(MainViewModel.IsSettingsPanelOpen):
                 OnPropertyChanged(nameof(IsSettingsPanelOpen));
                 break;
             case nameof(MainViewModel.ShowFileMenu):
                 OnPropertyChanged(nameof(ShowFileMenu));
-                break;
-            case nameof(MainViewModel.ShowOptionsButton):
-                OnPropertyChanged(nameof(ShowOptionsButton));
                 break;
             case nameof(MainViewModel.HasRecentImageFiles):
                 OnPropertyChanged(nameof(HasRecentImageFiles));

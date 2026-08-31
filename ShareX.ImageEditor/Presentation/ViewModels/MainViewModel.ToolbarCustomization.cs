@@ -25,7 +25,6 @@
 
 using Avalonia.Input;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.ImageEditor.Presentation.Controls;
 using System.Collections.ObjectModel;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
@@ -167,7 +166,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     : item.Id switch
                     {
                         ToolbarCustomizationItemViewModel.BackgroundItemId => IsSettingsPanelOpen,
-                        ToolbarCustomizationItemViewModel.ImageEffectsItemId => IsEffectsPanelOpen && EffectsPanelContent is not EditorOptionsPanel,
+                        ToolbarCustomizationItemViewModel.ImageEffectsItemId => IsEffectsPanelOpen,
                         _ => false
                     };
             }

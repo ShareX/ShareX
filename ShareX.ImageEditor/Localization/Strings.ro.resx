@@ -152,9 +152,6 @@ Doriți să salvați modificările înainte de a închide editorul de imagini?</
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Salvează</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Închidere</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>Copiere</value>
   </data>
@@ -184,12 +181,6 @@ Doriți să salvați modificările înainte de a închide editorul de imagini?</
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Culoare</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Opțiuni</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Opțiuni</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>Aducere în față</value>
@@ -320,9 +311,6 @@ Opțiuni umbră (Clic dreapta)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Alege culoarea de pe ecran</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Personalizare bară de instrumente...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Automat</value>
@@ -480,15 +468,6 @@ Opțiuni umbră (Clic dreapta)</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Dreapta</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Potrivește în fereastră la deschidere</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Închide automat editorul după sarcină</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Copiază automat imaginea în clipboard</value>
-  </data>
   <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
     <value>Culoare</value>
   </data>
@@ -644,21 +623,6 @@ Opțiuni umbră (Clic dreapta)</value>
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>Linie</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Memorează starea ferestrei</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Afișează confirmarea la ieșire</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Decupare rapidă</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Afișează dialogul de inserare a imaginii</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Afișează notificările</value>
   </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Gradient</value>

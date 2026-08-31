@@ -103,7 +103,6 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     bool ShowEffectEllipse { get; }
     bool ShowToolOptions { get; }
     bool ShowToolOptionsSeparator { get; }
-    bool ShowOptionsButton { get; }
     ReadOnlyObservableCollection<MenuItem> RecentImageMenuItems { get; }
     ReadOnlyObservableCollection<string> RecentImageFiles { get; }
     bool HasRecentImageFiles { get; }
@@ -114,7 +113,6 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     ICommand SaveAsCommand { get; }
     ICommand ExitEditorCommand { get; }
     ICommand OpenRecentImageCommand { get; }
-    ICommand OpenOptionsPanelCommand { get; }
     void SelectTool(EditorTool tool);
     void Undo();
     void Redo();

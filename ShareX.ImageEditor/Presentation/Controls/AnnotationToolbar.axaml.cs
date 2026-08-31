@@ -314,16 +314,6 @@ public partial class AnnotationToolbar : UserControl
         e.Handled = true;
     }
 
-    private void OnOpenOptionsClick(object? sender, RoutedEventArgs e)
-    {
-        if (DataContext is IAnnotationToolbarAdapter toolbar &&
-            toolbar.OpenOptionsPanelCommand.CanExecute(null))
-        {
-            toolbar.OpenOptionsPanelCommand.Execute(null);
-            e.Handled = true;
-        }
-    }
-
     private void OnTextBoldClick(object? sender, RoutedEventArgs e)
     {
         if (DataContext is IAnnotationToolbarAdapter toolbar)

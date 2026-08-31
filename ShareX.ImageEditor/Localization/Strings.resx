@@ -209,9 +209,6 @@ Would you like to save the changes before closing the image editor?</value>
   <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
     <value>Open recent</value>
   </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Options</value>
-  </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Redo (Ctrl+Y)</value>
   </data>
@@ -260,15 +257,6 @@ Shadow options (Right click)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Pick color from screen</value>
-  </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Customize toolbar...</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Options</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Auto</value>
@@ -624,30 +612,6 @@ Favorite image effects (Right click)</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Right</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Remember window state</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Show exit confirmation</value>
-  </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Zoom to fit on open</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Quick crop</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Auto close editor on task</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Auto copy image to clipboard</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Show insert image dialog</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Show notifications</value>
   </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Gradient</value>

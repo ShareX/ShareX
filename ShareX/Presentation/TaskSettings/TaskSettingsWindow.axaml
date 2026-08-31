@@ -137,6 +137,15 @@
                 <Grid x:Name="SettingsPages" Grid.Column="1"/>
             </Grid>
 
+            <Border x:Name="ImageEditorToolbarEditorOverlay"
+                    ZIndex="100"
+                    IsVisible="False"
+                    Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+                <ContentControl x:Name="ImageEditorToolbarEditor"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+            </Border>
+
             <Border x:Name="ActionEditorOverlay"
                     ZIndex="100"
                     IsVisible="False"

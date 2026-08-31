@@ -152,9 +152,6 @@
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>저장</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>닫기</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>복사</value>
   </data>
@@ -184,12 +181,6 @@
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>색상</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>설정</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>설정</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>앞으로 보내기</value>
@@ -320,9 +311,6 @@
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>화면에서 색 선택</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>도구 모음 사용자 지정...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>자동</value>
@@ -492,15 +480,6 @@
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>오른쪽</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>열 때 창에 맞춤</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>작업 후 편집기 자동 닫기</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>이미지를 클립보드에 자동 복사</value>
-  </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>그라데이션</value>
   </data>
@@ -650,21 +629,6 @@
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>선</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>창 상태 기억</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>종료 확인 표시</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>빠른 자르기</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>이미지 삽입 대화 상자 표시</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>알림 표시</value>
   </data>
   <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
     <value>배경 화면</value>

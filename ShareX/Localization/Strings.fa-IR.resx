@@ -2819,4 +2819,34 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>پایشگر شبکه...</value>
   </data>
+  <data name="TaskSettingsWindow_ImageEditor" xml:space="preserve">
+    <value>ویرایشگر عکس</value>
+  </data>
+  <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
+    <value>به خاطر سپردن وضعیت پنجره</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowExitConfirmation" xml:space="preserve">
+    <value>نمایش تأیید خروج</value>
+  </data>
+  <data name="TaskSettingsWindow_ZoomToFitOnOpen" xml:space="preserve">
+    <value>جا دادن در پنجره هنگام باز کردن</value>
+  </data>
+  <data name="TaskSettingsWindow_QuickCrop" xml:space="preserve">
+    <value>برش سریع</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>بستن خودکار ویرایشگر پس از کار</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
+    <value>کپی خودکار تصویر در کلیپ‌بورد</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowInsertImageDialog" xml:space="preserve">
+    <value>نمایش پنجره درج تصویر</value>
+  </data>
+  <data name="TaskSettingsWindow_ShowNotifications" xml:space="preserve">
+    <value>نمایش اعلان‌ها</value>
+  </data>
+  <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
+    <value>سفارشی‌سازی نوار ابزار...</value>
+  </data>
 </root>

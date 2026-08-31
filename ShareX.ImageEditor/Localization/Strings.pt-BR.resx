@@ -152,9 +152,6 @@ Deseja salvar as alterações antes de fechar o editor de imagens?</value>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Salvar</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Fechar</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>Copiar</value>
   </data>
@@ -184,12 +181,6 @@ Deseja salvar as alterações antes de fechar o editor de imagens?</value>
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Cor</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Opções</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Opções</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>Trazer para frente</value>
@@ -320,9 +311,6 @@ Opções de sombra (Clique direito)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Selecionar cor da tela</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Personalizar barra de ferramentas...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Automático</value>
@@ -492,15 +480,6 @@ Opções de sombra (Clique direito)</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Direita</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Ajustar à janela ao abrir</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Fechar automaticamente o editor após a tarefa</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Copiar imagem automaticamente para a área de transferência</value>
-  </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Gradiente</value>
   </data>
@@ -650,21 +629,6 @@ Opções de sombra (Clique direito)</value>
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>Linha</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Lembrar estado da janela</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Mostrar confirmação de saída</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Recorte rápido</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Mostrar diálogo de inserção de imagem</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Mostrar notificações</value>
   </data>
   <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
     <value>Papel de parede</value>

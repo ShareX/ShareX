@@ -152,9 +152,6 @@
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>保存</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>閉じる</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>コピー</value>
   </data>
@@ -184,12 +181,6 @@
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>色</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>オプション</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>オプション</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>前面へ移動</value>
@@ -320,9 +311,6 @@
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>画面から色を取得</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>ツールバーをカスタマイズ...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>自動</value>
@@ -492,15 +480,6 @@
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>右</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>開いたときにウィンドウに合わせる</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>タスク後にエディターを自動的に閉じる</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>画像をクリップボードに自動コピー</value>
-  </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>グラデーション</value>
   </data>
@@ -650,21 +629,6 @@
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>線</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>ウィンドウの状態を記憶</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>終了確認を表示</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>クイック切り抜き</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>画像挿入ダイアログを表示</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>通知を表示</value>
   </data>
   <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
     <value>壁紙</value>

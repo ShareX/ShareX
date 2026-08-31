@@ -3282,6 +3282,56 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_Tools", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_ImageEditor {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ImageEditor", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_RememberWindowState {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_RememberWindowState", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowExitConfirmation {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowExitConfirmation", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ZoomToFitOnOpen {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ZoomToFitOnOpen", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_QuickCrop {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_QuickCrop", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutoCloseEditorOnTask {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoCloseEditorOnTask", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutoCopyImageToClipboard {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoCopyImageToClipboard", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowInsertImageDialog {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowInsertImageDialog", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_ShowNotifications {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ShowNotifications", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_CustomizeToolbarWithEllipsis {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CustomizeToolbarWithEllipsis", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_Advanced {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_Advanced", resourceCulture);

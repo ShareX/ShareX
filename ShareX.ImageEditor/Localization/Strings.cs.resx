@@ -209,9 +209,6 @@ Chcete před zavřením editoru obrázků změny uložit?</value>
   <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
     <value>Otevřít nedávné</value>
   </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Možnosti</value>
-  </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Znovu (Ctrl+Y)</value>
   </data>
@@ -260,15 +257,6 @@ Možnosti stínu (kliknutí pravým tlačítkem)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Vybrat barvu z obrazovky</value>
-  </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Zavřít</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Přizpůsobit panel nástrojů...</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Možnosti</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Automaticky</value>
@@ -624,30 +612,6 @@ Oblíbené obrazové efekty (kliknutí pravým tlačítkem)</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Vpravo</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Zapamatovat stav okna</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Zobrazit potvrzení ukončení</value>
-  </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Po otevření přizpůsobit zobrazení</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Rychlé oříznutí</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Po spuštění úlohy automaticky zavřít editor</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Automaticky kopírovat obrázek do schránky</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Zobrazit dialog vložení obrázku</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Zobrazovat oznámení</value>
   </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Přechod</value>

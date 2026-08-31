@@ -86,9 +86,6 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private bool _showFileMenu;
 
         [ObservableProperty]
-        private bool _showOptionsButton = true;
-
-        [ObservableProperty]
         private bool _showTaskButtons = true;
 
         [ObservableProperty]

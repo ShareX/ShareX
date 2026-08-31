@@ -19,6 +19,7 @@ using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.ImageEditor.Integration;
 using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
@@ -132,6 +133,7 @@ internal sealed class TaskSettingsPageBuilder
         pages.Add("upload-clipboard", BuildClipboardUploadPage());
         pages.Add("upload-filters", BuildUploaderFiltersPage());
         pages.Add("tools", BuildToolsPage());
+        pages.Add("tools-image-editor", BuildImageEditorPage());
         pages.Add("actions", BuildActionsPage());
         pages.Add("watch-folders", BuildWatchFoldersPage());
         pages.Add("advanced", BuildAdvancedPage());
@@ -653,7 +655,7 @@ internal sealed class TaskSettingsPageBuilder
 
     private Control BuildToolsPage()
     {
-        TaskSettingsTools tools = _settings.ToolsSettings;
+        TaskSettingsTools tools = _toolsSettings;
         var picker = tools.ScreenColorPickerOptions;
         return Page("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench,
             OverrideCard(_toolsOverride, Strings.TaskSettingsWindow_OverrideToolsSettings),
@@ -662,6 +664,23 @@ internal sealed class TaskSettingsPageBuilder
                 Row(Strings.TaskSettingsWindow_FormatCtrlPlusClick, Text(() => picker.FormatCtrl, value => picker.FormatCtrl = value)),
                 Row(Strings.TaskSettingsWindow_InfoText, Text(() => picker.InfoText, value => picker.InfoText = value)),
                 Check(Strings.TaskSettingsWindow_ShowMagnifier, () => picker.ShowMagnifier, value => picker.ShowMagnifier = value)));
+    }
+
+    private Control BuildImageEditorPage()
+    {
+        ImageEditorOptions options = _toolsSettings.ImageEditorOptions;
+
+        return Page("tools-image-editor", Strings.TaskSettingsWindow_ImageEditor, LucideIcons.image,
+            EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_General,
+                Check(Strings.TaskSettingsWindow_RememberWindowState, () => options.RememberWindowState, value => options.RememberWindowState = value),
+                Check(Strings.TaskSettingsWindow_ShowExitConfirmation, () => options.ShowExitConfirmation, value => options.ShowExitConfirmation = value),
+                Check(Strings.TaskSettingsWindow_ZoomToFitOnOpen, () => options.ZoomToFitOnOpen, value => options.ZoomToFitOnOpen = value),
+                Check(Strings.TaskSettingsWindow_QuickCrop, () => options.QuickCrop, value => options.QuickCrop = value),
+                Check(Strings.TaskSettingsWindow_AutoCloseEditorOnTask, () => options.AutoCloseEditorOnTask, value => options.AutoCloseEditorOnTask = value),
+                Check(Strings.TaskSettingsWindow_AutoCopyImageToClipboard, () => options.AutoCopyImageToClipboard, value => options.AutoCopyImageToClipboard = value),
+                Check(Strings.TaskSettingsWindow_ShowInsertImageDialog, () => options.ShowInsertImageDialog, value => options.ShowInsertImageDialog = value),
+                Check(Strings.TaskSettingsWindow_ShowNotifications, () => options.ShowNotifications, value => options.ShowNotifications = value),
+                Button(Strings.TaskSettingsWindow_CustomizeToolbarWithEllipsis, () => _window.ShowImageEditorToolbarEditor(options))));
     }
 
     private Control BuildActionsPage()

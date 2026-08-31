@@ -209,9 +209,6 @@
   <data name="AnnotationToolbar_Openrecent" xml:space="preserve">
     <value>เปิดรายการล่าสุด</value>
   </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>ตัวเลือก</value>
-  </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>ทำซ้ำ (Ctrl+Y)</value>
   </data>
@@ -260,15 +257,6 @@
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>เลือกสีจากหน้าจอ</value>
-  </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>ปิด</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>ปรับแต่ง แถบเครื่องมือ...</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>ตัวเลือก</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>อัตโนมัติ</value>
@@ -624,30 +612,6 @@
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>ขวา</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>จดจำ หน้าต่าง สถานะ</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>แสดง ออก การยืนยัน</value>
-  </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>ซูมให้พอดีเมื่อเปิด</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>ด่วน ครอบตัด</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>ปิดตัวแก้ไขอัตโนมัติเมื่อทำงาน</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>อัตโนมัติ คัดลอกรูปภาพ ไปยังคลิปบอร์ด</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>แสดงกล่องโต้ตอบแทรกรูปภาพ</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>แสดง การแจ้งเตือน</value>
   </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>ไล่ระดับสี</value>

@@ -109,7 +109,6 @@ namespace ShareX.ImageEditor.Integration
                     }
 
                     vm.ShowFileMenu = true;
-                    vm.ShowOptionsButton = true;
                     vm.ShowTaskButtons = true;
                     vm.UseContinueWorkflow = taskMode;
                     vm.ShowBottomToolbar = true;

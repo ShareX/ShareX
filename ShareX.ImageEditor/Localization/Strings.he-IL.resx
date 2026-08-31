@@ -152,9 +152,6 @@
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>שמור</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>סגירה</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>העתק</value>
   </data>
@@ -184,12 +181,6 @@
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>צבע</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>אפשרויות</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>אפשרויות</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>הבא קדימה</value>
@@ -320,9 +311,6 @@
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>בחירת צבע מהמסך</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>התאמה אישית של סרגל הכלים...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>אוטומטי</value>
@@ -492,15 +480,6 @@
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>ימין</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>התאם לחלון בעת הפתיחה</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>סגור אוטומטית את העורך לאחר משימה</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>העתק אוטומטית את התמונה ללוח</value>
-  </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>מעבר צבע</value>
   </data>
@@ -651,21 +630,6 @@
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>קו</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>זכור את מצב החלון</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>הצג אישור יציאה</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>חיתוך מהיר</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>הצג תיבת דו־שיח להוספת תמונה</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>הצג התראות</value>
   </data>
   <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
     <value>טפט</value>

@@ -538,7 +538,6 @@ namespace ShareX.ImageEditor.Presentation.Views
                 vm.CopyRequested += OnCopyImageRequested;
                 vm.SaveRequested += OnSaveRequested;
                 vm.SaveAsRequested += OnSaveAsRequested;
-                vm.OpenOptionsPanelRequested += OnOpenOptionsPanelRequested;
                 vm.FileMenuRequested += OnFileMenuRequested;
 
                 // Original code subscribed to vm.PropertyChanged
@@ -600,7 +599,6 @@ namespace ShareX.ImageEditor.Presentation.Views
                 vm.CopyRequested -= OnCopyImageRequested;
                 vm.SaveRequested -= OnSaveRequested;
                 vm.SaveAsRequested -= OnSaveAsRequested;
-                vm.OpenOptionsPanelRequested -= OnOpenOptionsPanelRequested;
                 vm.FileMenuRequested -= OnFileMenuRequested;
                 vm.ImageInsertionRequested -= OnImageInsertionRequested;
                 vm.EmojiInsertionRequested -= OnEmojiInsertionRequested;
@@ -733,35 +731,6 @@ namespace ShareX.ImageEditor.Presentation.Views
                     ApplyStepTypeToAnnotations(vm.SelectedStepType);
                 }
             }
-        }
-
-        private void OnOpenOptionsPanelRequested(object? sender, EventArgs e)
-        {
-            if (DataContext is not MainViewModel vm)
-            {
-                return;
-            }
-
-            if (vm.IsEffectsPanelOpen && vm.EffectsPanelContent is EditorOptionsPanel)
-            {
-                if (vm.CloseEffectsPanelCommand.CanExecute(null))
-                {
-                    vm.CloseEffectsPanelCommand.Execute(null);
-                }
-
-                return;
-            }
-
-            if (vm.IsEffectsPanelOpen && vm.CloseEffectsPanelCommand.CanExecute(null))
-            {
-                vm.CloseEffectsPanelCommand.Execute(null);
-            }
-
-            vm.EffectsPanelContent = new EditorOptionsPanel
-            {
-                DataContext = vm
-            };
-            vm.IsEffectsPanelOpen = true;
         }
 
         private void OnFileMenuRequested(object? sender, EventArgs e)

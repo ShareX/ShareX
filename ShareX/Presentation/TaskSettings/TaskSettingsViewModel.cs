@@ -72,7 +72,8 @@ public sealed class TaskSettingsViewModel : INotifyPropertyChanged
             Child("upload-file-naming", Strings.TaskSettingsWindow_FileNaming, LucideIcons.file_pen),
             Child("upload-clipboard", Strings.TaskSettingsWindow_ClipboardUpload, LucideIcons.clipboard),
             Child("upload-filters", Strings.TaskSettingsWindow_UploaderFilters, LucideIcons.filter)));
-        NavigationItems.Add(Parent("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench));
+        NavigationItems.Add(Parent("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench,
+            Child("tools-image-editor", Strings.TaskSettingsWindow_ImageEditor, LucideIcons.image)));
         NavigationItems.Add(Parent("actions", Strings.TaskSettingsWindow_Actions, LucideIcons.zap));
         NavigationItems.Add(Parent("watch-folders", Strings.TaskSettingsWindow_WatchFolders, LucideIcons.folder_search));
         NavigationItems.Add(Parent("advanced", Strings.TaskSettingsWindow_Advanced, LucideIcons.sliders_horizontal));

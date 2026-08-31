@@ -152,9 +152,6 @@ Wilt u de wijzigingen opslaan voordat u de afbeeldingseditor sluit?</value>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Opslaan</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Sluiten</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>Kopieer</value>
   </data>
@@ -184,12 +181,6 @@ Wilt u de wijzigingen opslaan voordat u de afbeeldingseditor sluit?</value>
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Kleur</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Options</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Options</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>Naar voren brengen</value>
@@ -320,9 +311,6 @@ Schaduwopties (Rechtsklik)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Kleur van scherm kiezen</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Werkbalk aanpassen...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Automatisch</value>
@@ -476,15 +464,6 @@ Schaduwopties (Rechtsklik)</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Rechts</value>
-  </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Bij openen passend zoomen</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Editor automatisch sluiten na taak</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Afbeelding automatisch naar klembord kopiëren</value>
   </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Verloop</value>
@@ -650,21 +629,6 @@ Schaduwopties (Rechtsklik)</value>
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>Lijn</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Vensterstatus onthouden</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Afsluitbevestiging tonen</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Snel bijsnijden</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Dialoogvenster voor afbeelding invoegen tonen</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Meldingen tonen</value>
   </data>
   <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
     <value>Bureaubladachtergrond</value>

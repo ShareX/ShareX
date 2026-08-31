@@ -152,9 +152,6 @@
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>ذخیره</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>بستن</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>کپی</value>
   </data>
@@ -184,12 +181,6 @@
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>رنگ</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>تنظیمات</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>تنظیمات</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>آوردن به جلو</value>
@@ -320,9 +311,6 @@
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>انتخاب رنگ از صفحه</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>سفارشی‌سازی نوار ابزار...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>خودکار</value>
@@ -492,15 +480,6 @@
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>راست</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>جا دادن در پنجره هنگام باز کردن</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>بستن خودکار ویرایشگر پس از کار</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>کپی خودکار تصویر در کلیپ‌بورد</value>
-  </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>گرادیان</value>
   </data>
@@ -651,21 +630,6 @@
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>خط</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>به خاطر سپردن وضعیت پنجره</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>نمایش تأیید خروج</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>برش سریع</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>نمایش پنجره درج تصویر</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>نمایش اعلان‌ها</value>
   </data>
   <data name="MainViewModel_BackgroundModeWallpaper" xml:space="preserve">
     <value>تصویر زمینه</value>

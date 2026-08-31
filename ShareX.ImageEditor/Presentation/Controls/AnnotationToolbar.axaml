@@ -105,14 +105,6 @@
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <Separator/>
-                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Options}"
-                                                          IsVisible="{Binding #AnnotationToolbarRoot.DataContext.ShowOptionsButton}"
-                                                          Click="OnOpenOptionsClick">
-                                                    <MenuItem.Icon>
-                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static icons:LucideIcons.settings}"/>
-                                                    </MenuItem.Icon>
-                                                </MenuItem>
-                                                <Separator IsVisible="{Binding #AnnotationToolbarRoot.DataContext.ShowOptionsButton}"/>
                                                 <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Exit}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.ExitEditorCommand}"
                                                           InputGesture="Escape">

@@ -152,9 +152,6 @@ Czy zapisać zmiany przed zamknięciem edytora obrazów?</value>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Zapisz</value>
   </data>
-  <data name="EditorOptionsPanel_Close" xml:space="preserve">
-    <value>Zamknij</value>
-  </data>
   <data name="EditorView_Copy" xml:space="preserve">
     <value>Kopiuj</value>
   </data>
@@ -184,12 +181,6 @@ Czy zapisać zmiany przed zamknięciem edytora obrazów?</value>
   </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Kolor</value>
-  </data>
-  <data name="AnnotationToolbar_Options" xml:space="preserve">
-    <value>Opcje</value>
-  </data>
-  <data name="EditorOptionsPanel_Options" xml:space="preserve">
-    <value>Opcje</value>
   </data>
   <data name="EditorView_Bringforward" xml:space="preserve">
     <value>Przesuń do góry</value>
@@ -320,9 +311,6 @@ Opcje cienia (Prawy przycisk)</value>
   </data>
   <data name="ColorPickerPanel_Pickcolorfromscreen" xml:space="preserve">
     <value>Pobierz kolor z ekranu</value>
-  </data>
-  <data name="EditorOptionsPanel_CustomizetoolbarEllipsis" xml:space="preserve">
-    <value>Dostosuj pasek narzędzi...</value>
   </data>
   <data name="EditorView_Auto" xml:space="preserve">
     <value>Automatycznie</value>
@@ -492,15 +480,6 @@ Opcje cienia (Prawy przycisk)</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Do prawej</value>
   </data>
-  <data name="EditorOptionsPanel_ZoomToFitOnOpen" xml:space="preserve">
-    <value>Dopasuj do okna po otwarciu</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>Automatycznie zamknij edytor po zadaniu</value>
-  </data>
-  <data name="EditorOptionsPanel_AutoCopyImageToClipboard" xml:space="preserve">
-    <value>Automatycznie kopiuj obraz do schowka</value>
-  </data>
   <data name="MainViewModel_BackgroundModeColor" xml:space="preserve">
     <value>Kolor</value>
   </data>
@@ -647,21 +626,6 @@ Opcje cienia (Prawy przycisk)</value>
   </data>
   <data name="ArrowStyleDisplayNameConverter_Line" xml:space="preserve">
     <value>Linia</value>
-  </data>
-  <data name="EditorOptionsPanel_RememberWindowState" xml:space="preserve">
-    <value>Zapamiętaj stan okna</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowExitConfirmation" xml:space="preserve">
-    <value>Pokaż potwierdzenie wyjścia</value>
-  </data>
-  <data name="EditorOptionsPanel_QuickCrop" xml:space="preserve">
-    <value>Szybkie przycinanie</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowInsertImageDialog" xml:space="preserve">
-    <value>Pokaż okno wstawiania obrazu</value>
-  </data>
-  <data name="EditorOptionsPanel_ShowNotifications" xml:space="preserve">
-    <value>Pokaż powiadomienia</value>
   </data>
   <data name="MainViewModel_BackgroundModeGradient" xml:space="preserve">
     <value>Gradient</value>
