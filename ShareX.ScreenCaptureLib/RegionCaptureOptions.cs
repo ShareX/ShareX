@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
-
 namespace ShareX.ScreenCaptureLib
 {
     public class RegionCaptureOptions
@@ -59,8 +57,5 @@ namespace ShareX.ScreenCaptureLib
         public int MagnifierPixelCount = 15; // Must be odd number like 11, 13, 15 etc.
         public bool ShowCenterCrosshair = true;
         public bool ShowScreenCrosshair = false;
-
-        // Color picker
-        public ColorPickerOptions ColorPickerOptions = new ColorPickerOptions();
     }
 }

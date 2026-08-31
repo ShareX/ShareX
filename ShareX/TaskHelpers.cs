@@ -50,15 +50,15 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
+using ZXing.Windows.Compatibility;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxDefaultButton = ShareX.AvaloniaUI.MessageBoxDefaultButton;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
 using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
-using ZXing;
-using ZXing.Common;
-using ZXing.QrCode;
-using ZXing.Windows.Compatibility;
 
 namespace ShareX
 {
@@ -189,7 +189,7 @@ namespace ShareX
                     break;
                 // Tools
                 case HotkeyType.ColorPicker:
-                    ShowScreenColorPickerDialog(safeTaskSettings);
+                    ShowColorPickerDialog(safeTaskSettings);
                     break;
                 case HotkeyType.ScreenColorPicker:
                     OpenScreenColorPicker(safeTaskSettings);
@@ -858,11 +858,11 @@ namespace ShareX
                 Strings.MainForm_UploadDebugLogWarning);
         }
 
-        public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null)
+        public static void ShowColorPickerDialog(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
             ColorPickerWindowIntegration.Show(
-                taskSettings.CaptureSettingsReference.RegionCaptureOptions.ColorPickerOptions,
+                taskSettings.ToolsSettingsReference.ColorPickerOptions,
                 taskSettings.ToolsSettingsReference.ScreenColorPickerOptions);
         }
 

@@ -458,6 +458,7 @@ namespace ShareX
 
     public class TaskSettingsTools
     {
+        public ColorPickerOptions ColorPickerOptions = new ColorPickerOptions();
         public ScreenColorPickerOptions ScreenColorPickerOptions = new ScreenColorPickerOptions();
         public PinToScreenOptions PinToScreenOptions = new PinToScreenOptions();
         public IndexerSettings IndexerSettings = new IndexerSettings();
