@@ -63,9 +63,6 @@ namespace ShareX.ImageEditor.App
                 if (window.DataContext is MainViewModel vm)
                 {
                     vm.ShowFileMenu = true;
-#if !DEBUG
-                    vm.ShowOptionsButton = false;
-#endif
                     vm.ShowTaskButtons = false;
                     vm.UseContinueWorkflow = false;
                     vm.ShowBottomToolbar = true;
