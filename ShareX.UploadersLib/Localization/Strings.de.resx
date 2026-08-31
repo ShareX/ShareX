@@ -964,9 +964,6 @@
   <data name="FileDestination_Uguu" xml:space="preserve">
     <value>Uguu</value>
   </data>
-  <data name="FileDestination_Vault_ooo" xml:space="preserve">
-    <value>Vault.ooo</value>
-  </data>
   <data name="FileDestination_YouTube" xml:space="preserve">
     <value>YouTube</value>
   </data>
@@ -1515,9 +1512,6 @@
   </data>
   <data name="UrlShortenerType_ZeroWidthShortener" xml:space="preserve">
     <value>Kürzer mit unsichtbaren Zeichen</value>
-  </data>
-  <data name="Vault_No_valid_metadata_returned" xml:space="preserve">
-    <value>Es wurden keine gültigen Metadaten zurückgegeben.</value>
   </data>
   <data name="Yourls_Credentials_missing" xml:space="preserve">
     <value>Die Signatur oder der Benutzername/das Passwort fehlt.</value>

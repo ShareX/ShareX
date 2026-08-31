@@ -633,8 +633,6 @@ namespace ShareX.UploadersLib.Localization
 
         public static string FileDestination_Uguu => ResourceManager.GetString("FileDestination_Uguu", resourceCulture) ?? string.Empty;
 
-        public static string FileDestination_Vault_ooo => ResourceManager.GetString("FileDestination_Vault_ooo", resourceCulture) ?? string.Empty;
-
         public static string FileDestination_YouTube => ResourceManager.GetString("FileDestination_YouTube", resourceCulture) ?? string.Empty;
 
         public static string FileSonic_Get_upload_URL_failed => ResourceManager.GetString("FileSonic_Get_upload_URL_failed", resourceCulture) ?? string.Empty;
@@ -1000,8 +998,6 @@ namespace ShareX.UploadersLib.Localization
         public static string UrlShortenerType_YOURLS => ResourceManager.GetString("UrlShortenerType_YOURLS", resourceCulture) ?? string.Empty;
 
         public static string UrlShortenerType_ZeroWidthShortener => ResourceManager.GetString("UrlShortenerType_ZeroWidthShortener", resourceCulture) ?? string.Empty;
-
-        public static string Vault_No_valid_metadata_returned => ResourceManager.GetString("Vault_No_valid_metadata_returned", resourceCulture) ?? string.Empty;
 
         public static string Yourls_Credentials_missing => ResourceManager.GetString("Yourls_Credentials_missing", resourceCulture) ?? string.Empty;
 
