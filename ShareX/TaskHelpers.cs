@@ -862,7 +862,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
             ColorPickerWindowIntegration.Show(
-                taskSettings.CaptureSettingsReference.SurfaceOptions.ColorPickerOptions,
+                taskSettings.CaptureSettingsReference.RegionCaptureOptions.ColorPickerOptions,
                 taskSettings.ToolsSettingsReference.ScreenColorPickerOptions);
         }
 
@@ -1696,7 +1696,7 @@ namespace ShareX
             {
                 QRCodeScanMode.Screen => new Screenshot().CaptureFullscreen(),
                 QRCodeScanMode.Region => await RegionCaptureTasks.GetRegionImageAsync(
-                    TaskSettings.GetDefaultTaskSettings().CaptureSettings.SurfaceOptions),
+                    TaskSettings.GetDefaultTaskSettings().CaptureSettings.RegionCaptureOptions),
                 QRCodeScanMode.ImageFile when !string.IsNullOrWhiteSpace(filePath) => ImageHelpers.LoadImage(filePath),
                 _ => null
             };
@@ -1790,7 +1790,7 @@ namespace ShareX
                 options,
                 async () =>
                 {
-                    using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.SurfaceOptions);
+                    using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions);
                     if (region == null)
                     {
                         return null;
@@ -1807,7 +1807,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (Bitmap bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.SurfaceOptions))
+            using (Bitmap bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions))
             {
                 await OCRImage(bmp, taskSettings);
             }
@@ -1868,7 +1868,7 @@ namespace ShareX
                             },
                             async () =>
                             {
-                                using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.SurfaceOptions);
+                                using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions);
                                 if (region == null)
                                 {
                                     return null;

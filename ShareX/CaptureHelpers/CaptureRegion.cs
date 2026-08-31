@@ -49,7 +49,7 @@ namespace ShareX
             Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
             screenshot.CaptureCursor = false;
 
-            bool activeMonitorMode = taskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
+            bool activeMonitorMode = taskSettings.CaptureSettings.RegionCaptureOptions.ActiveMonitorMode;
             Rectangle screenBounds = activeMonitorMode
                 ? CaptureHelpers.GetActiveScreenBounds()
                 : CaptureHelpers.GetScreenBounds();
@@ -82,7 +82,7 @@ namespace ShareX
             {
                 Screenshot = frozenScreenshot,
                 ScreenBounds = screenBounds,
-                CaptureOptions = taskSettings.CaptureSettingsReference.SurfaceOptions,
+                CaptureOptions = taskSettings.CaptureSettingsReference.RegionCaptureOptions,
                 EditorOptions = taskSettings.ToolsSettingsReference.ImageEditorOptions,
                 EnableAnnotations = !taskSettings.AdvancedSettings.RegionCaptureDisableAnnotation,
                 CursorBitmap = cursorBitmap,

@@ -390,7 +390,7 @@ namespace ShareX
 
         #region Capture / Region capture
 
-        public RegionCaptureOptions SurfaceOptions = new RegionCaptureOptions();
+        public RegionCaptureOptions RegionCaptureOptions = new RegionCaptureOptions();
 
         #endregion Capture / Region capture
 

@@ -328,7 +328,7 @@ internal sealed class TaskSettingsPageBuilder
 
         Button selectRegion = Button(Strings.TaskSettingsWindow_SelectRegionWithEllipsis, async () =>
         {
-            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(capture.SurfaceOptions);
+            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(capture.RegionCaptureOptions);
             if (selection != null)
             {
                 DrawingRectangle rectangle = selection.Value.Rectangle;
@@ -373,7 +373,7 @@ internal sealed class TaskSettingsPageBuilder
 
     private Control BuildRegionCapturePage()
     {
-        RegionCaptureOptions options = _settings.CaptureSettings.SurfaceOptions;
+        RegionCaptureOptions options = _settings.CaptureSettings.RegionCaptureOptions;
         BoundValue<bool> detectWindows = new(options.DetectWindows, value => options.DetectWindows = value);
         CheckBox detectControls = Check(Strings.TaskSettingsWindow_AlsoDetectControlsInsideWindows, () => options.DetectControls, value => options.DetectControls = value);
         BindEnabled(detectControls, detectWindows);
