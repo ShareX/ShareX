@@ -36,9 +36,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
+using AvaloniaCanvas = Avalonia.Controls.Canvas;
 using DrawingPoint = System.Drawing.Point;
 using DrawingRectangle = System.Drawing.Rectangle;
-using AvaloniaCanvas = Avalonia.Controls.Canvas;
 
 namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 
@@ -1575,7 +1575,7 @@ public partial class RegionCaptureWindow : Window
 
     private static byte GetDimAlpha(RegionCaptureOptions options)
     {
-        if (!options.UseDimming || options.BackgroundDimStrength <= 0)
+        if (options.BackgroundDimStrength <= 0)
         {
             return 0;
         }

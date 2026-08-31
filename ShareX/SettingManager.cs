@@ -27,7 +27,6 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.Localization;
-using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
@@ -36,7 +35,6 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
@@ -267,11 +265,6 @@ namespace ShareX
                 if (Settings.CheckPreReleaseUpdates)
                 {
                     Settings.UpdateChannel = UpdateChannel.PreRelease;
-                }
-
-                if (!DefaultTaskSettings.CaptureSettings.RegionCaptureOptions.UseDimming)
-                {
-                    DefaultTaskSettings.CaptureSettings.RegionCaptureOptions.BackgroundDimStrength = 0;
                 }
             }
         }
