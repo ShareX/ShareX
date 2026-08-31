@@ -1390,8 +1390,8 @@
   <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
     <value>Nombre de pixels de la loupe :</value>
   </data>
-  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
-    <value>Taille des pixels de la loupe :</value>
+  <data name="TaskSettingsWindow_MagnifierSize" xml:space="preserve">
+    <value>Taille de la loupe :</value>
   </data>
   <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
     <value>Afficher le réticule central</value>

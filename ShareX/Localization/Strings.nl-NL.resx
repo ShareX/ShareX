@@ -1390,8 +1390,8 @@
   <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
     <value>Aantal pixels vergrootglas:</value>
   </data>
-  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
-    <value>Pixelgrootte vergrootglas:</value>
+  <data name="TaskSettingsWindow_MagnifierSize" xml:space="preserve">
+    <value>Grootte vergrootglas:</value>
   </data>
   <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
     <value>Middenkruis tonen</value>

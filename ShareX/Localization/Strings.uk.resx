@@ -1390,8 +1390,8 @@
   <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
     <value>Кількість пікселів лупи:</value>
   </data>
-  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
-    <value>Розмір пікселя лупи:</value>
+  <data name="TaskSettingsWindow_MagnifierSize" xml:space="preserve">
+    <value>Розмір лупи:</value>
   </data>
   <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
     <value>Показувати центральний перехрест</value>

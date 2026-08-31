@@ -45,9 +45,6 @@ namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 
 public partial class RegionCaptureWindow : Window
 {
-    private const double MagnifierSize = 150;
-    private const int MinimumMagnifierPixelSize = 6;
-
     private readonly TaskCompletionSource<AvaloniaRegionCaptureResult?> _completionSource =
         new(TaskCreationOptions.RunContinuationsAsynchronously);
 
@@ -358,16 +355,47 @@ public partial class RegionCaptureWindow : Window
 
     private void ApplyMagnifierShape()
     {
-        bool useSquare = _request?.CaptureOptions.UseSquareMagnifier == true;
-        this.FindControl<Control>("MagnifierCircleOuter")!.IsVisible = !useSquare;
-        this.FindControl<Control>("MagnifierCircleInner")!.IsVisible = !useSquare;
-        this.FindControl<Control>("MagnifierSquareOuter")!.IsVisible = useSquare;
-        this.FindControl<Control>("MagnifierSquareInner")!.IsVisible = useSquare;
+        if (_request == null)
+        {
+            return;
+        }
+
+        RegionCaptureOptions options = _request.CaptureOptions;
+        int magnifierSize = Math.Clamp(options.MagnifierSize,
+            RegionCaptureOptions.MagnifierSizeMinimum,
+            RegionCaptureOptions.MagnifierSizeMaximum);
+        options.MagnifierSize = magnifierSize;
+        double outerSize = magnifierSize + 2;
+
+        Control circleOuter = this.FindControl<Control>("MagnifierCircleOuter")!;
+        Control circleInner = this.FindControl<Control>("MagnifierCircleInner")!;
+        Control squareOuter = this.FindControl<Control>("MagnifierSquareOuter")!;
+        Control squareInner = this.FindControl<Control>("MagnifierSquareInner")!;
+        bool useSquare = options.UseSquareMagnifier;
+        circleOuter.IsVisible = !useSquare;
+        circleInner.IsVisible = !useSquare;
+        squareOuter.IsVisible = useSquare;
+        squareInner.IsVisible = useSquare;
+
+        _magnifierView.Width = outerSize;
+        _magnifierView.Height = outerSize;
+        circleOuter.Width = outerSize;
+        circleOuter.Height = outerSize;
+        squareOuter.Width = outerSize;
+        squareOuter.Height = outerSize;
+        circleInner.Width = magnifierSize;
+        circleInner.Height = magnifierSize;
+        squareInner.Width = magnifierSize;
+        squareInner.Height = magnifierSize;
 
         Grid magnifierContent = this.FindControl<Grid>("MagnifierContent")!;
+        magnifierContent.Width = magnifierSize;
+        magnifierContent.Height = magnifierSize;
+        _magnifierImage.Width = magnifierSize;
+        _magnifierImage.Height = magnifierSize;
         magnifierContent.Clip = useSquare
             ? null
-            : new EllipseGeometry(new Rect(0, 0, MagnifierSize, MagnifierSize));
+            : new EllipseGeometry(new Rect(0, 0, magnifierSize, magnifierSize));
     }
 
     private void InitializeRegionResizeNodes()
@@ -1280,7 +1308,11 @@ public partial class RegionCaptureWindow : Window
     private int NormalizeMagnifierPixelCount(int requestedCount)
     {
         double scale = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
-        int sizeLimitedMaximum = (int)Math.Floor(MagnifierSize * scale / MinimumMagnifierPixelSize);
+        int magnifierSize = Math.Clamp(_request?.CaptureOptions.MagnifierSize ?? RegionCaptureOptions.MagnifierSizeMinimum,
+            RegionCaptureOptions.MagnifierSizeMinimum,
+            RegionCaptureOptions.MagnifierSizeMaximum);
+        int sizeLimitedMaximum = (int)Math.Floor(
+            magnifierSize * scale / RegionCaptureOptions.MagnifierPixelSizeMinimum);
         int maximum = Math.Clamp(
             sizeLimitedMaximum,
             RegionCaptureOptions.MagnifierPixelCountMinimum,
@@ -1335,8 +1367,11 @@ public partial class RegionCaptureWindow : Window
 
     private void PositionPanelNearPointer(Control panel, Point pointer, double offset)
     {
-        double width = panel.Bounds.Width > 0 ? panel.Bounds.Width : 170;
-        double height = panel.Bounds.Height > 0 ? panel.Bounds.Height : 205;
+        bool isMagnifierPanel = ReferenceEquals(panel, _magnifierPanel);
+        double fallbackWidth = isMagnifierPanel ? _magnifierView.Width : 170;
+        double fallbackHeight = isMagnifierPanel ? _magnifierView.Height + 53 : 205;
+        double width = panel.Bounds.Width > 0 ? panel.Bounds.Width : fallbackWidth;
+        double height = panel.Bounds.Height > 0 ? panel.Bounds.Height : fallbackHeight;
         double x = pointer.X + offset;
         double y = pointer.Y + offset;
 
@@ -1353,7 +1388,7 @@ public partial class RegionCaptureWindow : Window
         double targetX = Math.Clamp(x, 0, Math.Max(0, Bounds.Width - width));
         double targetY = Math.Clamp(y, 0, Math.Max(0, Bounds.Height - height));
 
-        if (ReferenceEquals(panel, _magnifierPanel))
+        if (isMagnifierPanel)
         {
             double scale = Math.Max(1, RenderScaling);
             targetX = Math.Round(targetX * scale) / scale;

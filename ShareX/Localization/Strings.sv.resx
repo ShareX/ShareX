@@ -1390,8 +1390,8 @@
   <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
     <value>Antal bildpunkter i förstoringsglaset:</value>
   </data>
-  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
-    <value>Bildpunktsstorlek i förstoringsglaset:</value>
+  <data name="TaskSettingsWindow_MagnifierSize" xml:space="preserve">
+    <value>Förstoringsglasets storlek:</value>
   </data>
   <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
     <value>Visa hårkors i mitten</value>

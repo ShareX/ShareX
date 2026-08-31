@@ -384,13 +384,13 @@ internal sealed class TaskSettingsPageBuilder
 
         BoundValue<bool> magnifier = new(options.ShowMagnifier, value => options.ShowMagnifier = value);
         CheckBox squareMagnifier = Check(Strings.TaskSettingsWindow_UseSquareMagnifier, () => options.UseSquareMagnifier, value => options.UseSquareMagnifier = value);
+        NumericUpDown magnifierSize = Number(() => options.MagnifierSize, value => options.MagnifierSize = (int)value,
+            RegionCaptureOptions.MagnifierSizeMinimum, RegionCaptureOptions.MagnifierSizeMaximum);
         NumericUpDown pixelCount = Number(() => options.MagnifierPixelCount, value => options.MagnifierPixelCount = (int)value,
             RegionCaptureOptions.MagnifierPixelCountMinimum, RegionCaptureOptions.MagnifierPixelCountMaximum);
-        NumericUpDown pixelSize = Number(() => options.MagnifierPixelSize, value => options.MagnifierPixelSize = (int)value,
-            RegionCaptureOptions.MagnifierPixelSizeMinimum, RegionCaptureOptions.MagnifierPixelSizeMaximum);
         BindEnabled(squareMagnifier, magnifier);
+        BindEnabled(magnifierSize, magnifier);
         BindEnabled(pixelCount, magnifier);
-        BindEnabled(pixelSize, magnifier);
 
         return Page("capture-region", Strings.TaskSettingsWindow_RegionCapture, LucideIcons.crop,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Selection,
@@ -407,8 +407,8 @@ internal sealed class TaskSettingsPageBuilder
                 Check(Strings.TaskSettingsWindow_ShowPositionAndSizeInfo, () => options.ShowInfo, value => options.ShowInfo = value),
                 Check(Strings.TaskSettingsWindow_UseCustomInfoText, customInfo), customInfoText,
                 Check(Strings.TaskSettingsWindow_ShowMagnifierNearCursor, magnifier), squareMagnifier,
+                Row(Strings.TaskSettingsWindow_MagnifierSize, magnifierSize),
                 Row(Strings.TaskSettingsWindow_MagnifierPixelCount, pixelCount),
-                Row(Strings.TaskSettingsWindow_MagnifierPixelSize, pixelSize),
                 Check(Strings.TaskSettingsWindow_ShowCenterCrosshair, () => options.ShowCenterCrosshair, value => options.ShowCenterCrosshair = value),
                 Check(Strings.TaskSettingsWindow_ShowScreenWideCrosshair, () => options.ShowScreenCrosshair, value => options.ShowScreenCrosshair = value)));
     }

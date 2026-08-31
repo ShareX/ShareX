@@ -1390,8 +1390,8 @@
   <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
     <value>מספר פיקסלים בזכוכית המגדלת:</value>
   </data>
-  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
-    <value>גודל פיקסל בזכוכית המגדלת:</value>
+  <data name="TaskSettingsWindow_MagnifierSize" xml:space="preserve">
+    <value>גודל זכוכית המגדלת:</value>
   </data>
   <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
     <value>הצגת צלב מרכזי</value>

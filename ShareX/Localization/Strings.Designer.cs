@@ -2847,9 +2847,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_MagnifierPixelCount", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_MagnifierPixelSize {
+        public static string TaskSettingsWindow_MagnifierSize {
             get {
-                return ResourceManager.GetString("TaskSettingsWindow_MagnifierPixelSize", resourceCulture);
+                return ResourceManager.GetString("TaskSettingsWindow_MagnifierSize", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_ShowCenterCrosshair {

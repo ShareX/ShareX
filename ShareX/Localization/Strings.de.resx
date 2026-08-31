@@ -1390,8 +1390,8 @@
   <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
     <value>Pixelanzahl der Lupe:</value>
   </data>
-  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
-    <value>Pixelgröße der Lupe:</value>
+  <data name="TaskSettingsWindow_MagnifierSize" xml:space="preserve">
+    <value>Lupengröße:</value>
   </data>
   <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
     <value>Mittleres Fadenkreuz anzeigen</value>

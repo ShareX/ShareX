@@ -1390,8 +1390,8 @@
   <data name="TaskSettingsWindow_MagnifierPixelCount" xml:space="preserve">
     <value>放大镜像素数量：</value>
   </data>
-  <data name="TaskSettingsWindow_MagnifierPixelSize" xml:space="preserve">
-    <value>放大镜像素大小：</value>
+  <data name="TaskSettingsWindow_MagnifierSize" xml:space="preserve">
+    <value>放大镜大小：</value>
   </data>
   <data name="TaskSettingsWindow_ShowCenterCrosshair" xml:space="preserve">
     <value>显示中心十字线</value>

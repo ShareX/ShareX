@@ -60,21 +60,14 @@
             <StackPanel x:Name="MagnifierPanel"
                         Spacing="10"
                         IsVisible="False">
-                <Grid x:Name="MagnifierView" Width="152" Height="152">
+                <Grid x:Name="MagnifierView">
                     <!-- Legacy magnifier: white outer ring around a black inner ring. -->
-                    <Ellipse x:Name="MagnifierCircleOuter"
-                             Width="152" Height="152" Fill="White"/>
+                    <Ellipse x:Name="MagnifierCircleOuter" Fill="White"/>
                     <Border x:Name="MagnifierSquareOuter"
-                            Width="152" Height="152"
                             Background="White"
                             IsVisible="False"/>
-                    <Grid x:Name="MagnifierContent" Width="150" Height="150">
-                        <Grid.Clip>
-                            <EllipseGeometry Rect="0,0,150,150"/>
-                        </Grid.Clip>
+                    <Grid x:Name="MagnifierContent">
                         <Image x:Name="MagnifierImage"
-                               Width="150"
-                               Height="150"
                                Stretch="Fill"
                                RenderOptions.BitmapInterpolationMode="None"/>
                         <capture:MagnifierPixelGrid x:Name="MagnifierPixelGrid"
@@ -83,13 +76,10 @@
                                                     IsHitTestVisible="False"/>
                     </Grid>
                     <Ellipse x:Name="MagnifierCircleInner"
-                             Width="150"
-                             Height="150"
                              Stroke="Black"
                              StrokeThickness="1"
                              IsHitTestVisible="False"/>
                     <Border x:Name="MagnifierSquareInner"
-                            Width="150" Height="150"
                             BorderBrush="Black"
                             BorderThickness="1"
                             IsVisible="False"

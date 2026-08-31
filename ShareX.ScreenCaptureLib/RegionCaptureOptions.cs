@@ -30,10 +30,11 @@ namespace ShareX.ScreenCaptureLib
     public class RegionCaptureOptions
     {
         public const int DefaultMinimumSize = 5;
+        public const int MagnifierSizeMinimum = 50;
+        public const int MagnifierSizeMaximum = 500;
         public const int MagnifierPixelCountMinimum = 3;
         public const int MagnifierPixelCountMaximum = 35;
         public const int MagnifierPixelSizeMinimum = 3;
-        public const int MagnifierPixelSizeMaximum = 30;
         public const int MoveSpeedMinimum = 1;
         public const int MoveSpeedMaximum = 10;
 
@@ -53,8 +54,8 @@ namespace ShareX.ScreenCaptureLib
         public string CustomInfoText = "X: $x, Y: $y$nR: $r, G: $g, B: $b$nHex: $hex"; // Formats: $x, $y, $r, $g, $b, $hex, $HEX, $n
         public bool ShowMagnifier = true;
         public bool UseSquareMagnifier = false;
+        public int MagnifierSize = 150;
         public int MagnifierPixelCount = 15; // Must be odd number like 11, 13, 15 etc.
-        public int MagnifierPixelSize = 10;
         public bool ShowCenterCrosshair = true;
         public bool ShowScreenCrosshair = false;
 
