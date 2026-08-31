@@ -927,7 +927,9 @@ public partial class RegionCaptureWindow : Window
 
             _annotationMiddleButtonPressed = true;
             e.Handled = true;
-            RunCaptureAction(_request.CaptureOptions.RegionCaptureActionMiddleClick);
+            RunAnnotationCaptureAction(
+                _request.CaptureOptions.RegionCaptureActionMiddleClick,
+                e.GetPosition(_editorWorkspace));
             return;
         }
 
@@ -981,7 +983,9 @@ public partial class RegionCaptureWindow : Window
         }
 
         _annotationRightButtonPressed = false;
-        RunAnnotationRightClickAction(e.GetPosition(_editorWorkspace));
+        RunAnnotationCaptureAction(
+            _request.CaptureOptions.RegionCaptureActionRightClick,
+            e.GetPosition(_editorWorkspace));
         e.Handled = true;
     }
 
@@ -1017,14 +1021,13 @@ public partial class RegionCaptureWindow : Window
         return false;
     }
 
-    private void RunAnnotationRightClickAction(Point workspacePoint)
+    private void RunAnnotationCaptureAction(RegionCaptureAction action, Point workspacePoint)
     {
         if (_request == null)
         {
             return;
         }
 
-        RegionCaptureAction action = _request.CaptureOptions.RegionCaptureActionRightClick;
         if (action == RegionCaptureAction.RemoveShapeCancelCapture)
         {
             if (!_editorWorkspace.DeleteWorkspaceAnnotationAt(workspacePoint))
