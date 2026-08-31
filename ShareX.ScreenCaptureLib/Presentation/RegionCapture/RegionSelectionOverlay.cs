@@ -35,6 +35,8 @@ public sealed class RegionSelectionOverlay : Control
     private Rect _selectionRectangle;
     private Rect _hoverRectangle;
     private bool _showCenterCrosshair;
+    private bool _showCursorCrosshair;
+    private Point _cursorPosition;
     private byte _dimAlpha = 51;
     private IBrush _dimBrush = new SolidColorBrush(Color.FromArgb(51, 0, 0, 0));
 
@@ -88,6 +90,35 @@ public sealed class RegionSelectionOverlay : Control
         }
     }
 
+    public bool ShowCursorCrosshair
+    {
+        get => _showCursorCrosshair;
+        set
+        {
+            if (_showCursorCrosshair != value)
+            {
+                _showCursorCrosshair = value;
+                InvalidateVisual();
+            }
+        }
+    }
+
+    public Point CursorPosition
+    {
+        get => _cursorPosition;
+        set
+        {
+            if (_cursorPosition != value)
+            {
+                _cursorPosition = value;
+                if (ShowCursorCrosshair)
+                {
+                    InvalidateVisual();
+                }
+            }
+        }
+    }
+
     public byte DimAlpha
     {
         get => _dimAlpha;
@@ -123,23 +154,25 @@ public sealed class RegionSelectionOverlay : Control
             }
         }
 
-        if (!IsValid(active))
+        if (IsValid(active))
         {
-            return;
+            Rect antRectangle = new(
+                active.X + 0.5,
+                active.Y + 0.5,
+                Math.Max(0, active.Width - 1),
+                Math.Max(0, active.Height - 1));
+            DrawAntRectangle(context, antRectangle);
+
+            if (ShowCenterCrosshair && IsValid(SelectionRectangle))
+            {
+                DrawCenterCrosshair(context, SelectionRectangle);
+            }
         }
 
-        Rect antRectangle = new(
-            active.X + 0.5,
-            active.Y + 0.5,
-            Math.Max(0, active.Width - 1),
-            Math.Max(0, active.Height - 1));
-        DrawAntRectangle(context, antRectangle);
-
-        if (ShowCenterCrosshair && IsValid(SelectionRectangle))
+        if (ShowCursorCrosshair)
         {
-            DrawCenterCrosshair(context, SelectionRectangle);
+            DrawCursorCrosshair(context, surface);
         }
-
     }
 
     private void DrawAntRectangle(DrawingContext context, Rect rectangle)
@@ -149,6 +182,29 @@ public sealed class RegionSelectionOverlay : Control
         context.DrawLine(AntDashPen, rectangle.TopLeft, rectangle.BottomLeft);
         context.DrawLine(AntDashPen, rectangle.TopRight, rectangle.BottomRight);
         context.DrawLine(AntDashPen, rectangle.BottomLeft, rectangle.BottomRight);
+    }
+
+    private void DrawCursorCrosshair(DrawingContext context, Rect surface)
+    {
+        const double cursorGap = 5;
+        double x = Math.Clamp(Math.Floor(CursorPosition.X), surface.Left, Math.Max(surface.Left, surface.Right - 1)) + 0.5;
+        double y = Math.Clamp(Math.Floor(CursorPosition.Y), surface.Top, Math.Max(surface.Top, surface.Bottom - 1)) + 0.5;
+
+        DrawAntLineIfVisible(context, new Point(surface.Left, y), new Point(x - cursorGap, y));
+        DrawAntLineIfVisible(context, new Point(x + cursorGap, y), new Point(surface.Right, y));
+        DrawAntLineIfVisible(context, new Point(x, surface.Top), new Point(x, y - cursorGap));
+        DrawAntLineIfVisible(context, new Point(x, y + cursorGap), new Point(x, surface.Bottom));
+    }
+
+    private void DrawAntLineIfVisible(DrawingContext context, Point start, Point end)
+    {
+        if (end.X <= start.X && end.Y <= start.Y)
+        {
+            return;
+        }
+
+        context.DrawLine(new Pen(AccentBrush, 1), start, end);
+        context.DrawLine(AntDashPen, start, end);
     }
 
     private void DrawCenterCrosshair(DrawingContext context, Rect rectangle)
