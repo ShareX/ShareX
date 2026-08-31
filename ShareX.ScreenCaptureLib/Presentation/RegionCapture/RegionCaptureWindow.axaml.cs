@@ -37,6 +37,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using AvaloniaCanvas = Avalonia.Controls.Canvas;
+using DrawingColor = System.Drawing.Color;
 using DrawingPoint = System.Drawing.Point;
 using DrawingRectangle = System.Drawing.Rectangle;
 
@@ -1143,7 +1144,7 @@ public partial class RegionCaptureWindow : Window
             _magnifierView.IsVisible = showMagnifier;
             _pointerInfoPanel.IsVisible = showInfo;
             _magnifierPanel.IsVisible = true;
-            _pointerInfoText.Text = $"X: {_request.ScreenBounds.X + (int)imagePoint.X} Y: {_request.ScreenBounds.Y + (int)imagePoint.Y}";
+            _pointerInfoText.Text = GetPointerInfoText(imagePoint);
 
             double scale = Math.Max(1, RenderScaling);
             Point pointer = new Point(imagePoint.X / scale, imagePoint.Y / scale);
@@ -1156,6 +1157,38 @@ public partial class RegionCaptureWindow : Window
         }
 
         UpdateSelectionInfo();
+    }
+
+    private string GetPointerInfoText(Point imagePoint)
+    {
+        if (_request == null)
+        {
+            return string.Empty;
+        }
+
+        int imageX = Math.Clamp((int)Math.Round(imagePoint.X), 0, _imageWidth - 1);
+        int imageY = Math.Clamp((int)Math.Round(imagePoint.Y), 0, _imageHeight - 1);
+        DrawingPoint screenPosition = new(
+            _request.ScreenBounds.X + imageX,
+            _request.ScreenBounds.Y + imageY);
+
+        RegionCaptureOptions options = _request.CaptureOptions;
+        if (options.UseCustomInfoText)
+        {
+            SKColor pixel = _editorWorkspace.GetWorkspacePixel(imageX, imageY);
+            DrawingColor color = DrawingColor.FromArgb(pixel.Alpha, pixel.Red, pixel.Green, pixel.Blue);
+
+            if (!string.IsNullOrEmpty(options.CustomInfoText))
+            {
+                return CodeMenuEntryPixelInfo.Parse(options.CustomInfoText, color, screenPosition);
+            }
+
+            return $"RGB: {color.R}, {color.G}, {color.B}{Environment.NewLine}" +
+                $"Hex: {ColorHelpers.ColorToHex(color)}{Environment.NewLine}" +
+                $"X: {screenPosition.X} Y: {screenPosition.Y}";
+        }
+
+        return $"X: {screenPosition.X} Y: {screenPosition.Y}";
     }
 
     private unsafe void UpdateMagnifier(Point imagePoint)

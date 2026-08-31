@@ -63,8 +63,5 @@ namespace ShareX.ScreenCaptureLib
 
         // Color picker
         public ColorPickerOptions ColorPickerOptions = new ColorPickerOptions();
-
-        // Screen color picker
-        public string ScreenColorPickerInfoText = "";
     }
 }
