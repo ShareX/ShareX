@@ -82,8 +82,8 @@ namespace ShareX
             {
                 Screenshot = frozenScreenshot,
                 ScreenBounds = screenBounds,
-                CaptureOptions = taskSettings.CaptureSettingsReference.RegionCaptureOptions,
-                EditorOptions = taskSettings.ToolsSettingsReference.ImageEditorOptions,
+                RegionCaptureOptions = taskSettings.CaptureSettingsReference.RegionCaptureOptions,
+                ImageEditorOptions = taskSettings.ToolsSettingsReference.ImageEditorOptions,
                 EnableAnnotations = !taskSettings.AdvancedSettings.RegionCaptureDisableAnnotation,
                 CursorBitmap = cursorBitmap,
                 CursorPosition = cursorPosition

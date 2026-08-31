@@ -103,8 +103,8 @@ public static class RegionCaptureTasks
         {
             Screenshot = frozenScreenshot,
             ScreenBounds = screenBounds,
-            CaptureOptions = options,
-            EditorOptions = new ImageEditorOptions(),
+            RegionCaptureOptions = options,
+            ImageEditorOptions = new ImageEditorOptions(),
             EnableAnnotations = false
         };
 

@@ -28,9 +28,9 @@ public sealed class AvaloniaRegionCaptureRequest
     /// <summary>Physical-pixel desktop bounds represented by <see cref="Screenshot"/>.</summary>
     public required Rectangle ScreenBounds { get; init; }
 
-    public required RegionCaptureOptions CaptureOptions { get; init; }
+    public required RegionCaptureOptions RegionCaptureOptions { get; init; }
 
-    public required ImageEditorOptions EditorOptions { get; init; }
+    public required ImageEditorOptions ImageEditorOptions { get; init; }
 
     public bool EnableAnnotations { get; init; } = true;
 
