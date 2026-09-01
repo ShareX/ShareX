@@ -26,14 +26,13 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
 
 namespace ShareX.ImageEffectsLib
 {
     [Description("Background image")]
     public class DrawBackgroundImage : ImageEffect
     {
-        [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
+        [DefaultValue("")]
         public string ImageFilePath { get; set; }
 
         [DefaultValue(true)]

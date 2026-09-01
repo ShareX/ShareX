@@ -38,7 +38,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue("Text watermark")]
         public string Text { get; set; }
 
-        [DefaultValue(ContentAlignment.BottomRight), TypeConverter(typeof(EnumProperNameConverter))]
+        [DefaultValue(ContentAlignment.BottomRight)]
         public ContentAlignment Placement { get; set; }
 
         [DefaultValue(typeof(Point), "5, 5")]
@@ -66,7 +66,7 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(TextRenderingHint.SystemDefault), TypeConverter(typeof(EnumProperNameConverter))]
+        [DefaultValue(TextRenderingHint.SystemDefault)]
         public TextRenderingHint TextRenderingMode { get; set; }
 
         [DefaultValue(typeof(Color), "235, 235, 235")]

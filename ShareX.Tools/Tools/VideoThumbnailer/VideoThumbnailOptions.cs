@@ -27,7 +27,6 @@
 
 using ShareX.HelpersLib;
 using System.ComponentModel;
-using System.Drawing.Design;
 
 namespace ShareX.Tools
 {
@@ -36,7 +35,7 @@ namespace ShareX.Tools
         [Category("Thumbnails"), DefaultValue(ThumbnailLocationType.DefaultFolder), Description("Create thumbnails in default screenshot folder, same folder as the media file or in a custom folder.")]
         public ThumbnailLocationType OutputLocation { get; set; }
 
-        [Category("Thumbnails"), DefaultValue(""), Description("Output folder where thumbnails will get saved."), Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
+        [Category("Thumbnails"), DefaultValue(""), Description("Output folder where thumbnails will get saved.")]
         public string CustomOutputDirectory { get; set; }
 
         [Category("Thumbnails"), DefaultValue(EImageFormat.PNG), Description("Thumbnail image format to save.")]

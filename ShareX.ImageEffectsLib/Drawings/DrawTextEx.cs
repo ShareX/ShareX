@@ -36,7 +36,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue("Text")]
         public string Text { get; set; }
 
-        [DefaultValue(ContentAlignment.TopLeft), TypeConverter(typeof(EnumProperNameConverter))]
+        [DefaultValue(ContentAlignment.TopLeft)]
         public ContentAlignment Placement { get; set; }
 
         [DefaultValue(typeof(Point), "0, 0")]

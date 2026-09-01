@@ -51,7 +51,7 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(DashStyle.Solid), TypeConverter(typeof(EnumProperNameConverter))]
+        [DefaultValue(DashStyle.Solid)]
         public DashStyle DashStyle { get; set; }
 
         [DefaultValue(typeof(Color), "Black")]

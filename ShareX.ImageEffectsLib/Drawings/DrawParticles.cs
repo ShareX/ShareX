@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 
@@ -35,7 +34,7 @@ namespace ShareX.ImageEffectsLib
     [Description("Particles")]
     public class DrawParticles : ImageEffect
     {
-        [DefaultValue(""), Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
+        [DefaultValue("")]
         public string ImageFolder { get; set; }
 
         private int imageCount;
