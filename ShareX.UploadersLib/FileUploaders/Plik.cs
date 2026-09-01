@@ -30,7 +30,6 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -109,25 +108,6 @@ namespace ShareX.UploadersLib.FileUploaders
             UploadMetadataResponseFile actFile = metaData.files.First().Value;
             result.URL = $"{Settings.URL}/file/{metaData.id}/{actFile.id}/{URLHelpers.URLEncode(actFile.fileName)}";
             return result;
-        }
-
-        internal static void CalculateTTLValue(NumericUpDown nudTTL, int newUnit, int oldUnit)
-        {
-            if (newUnit != 3)
-            {
-                if (nudTTL.Value == -1)
-                {
-                    nudTTL.SetValue(1);
-                }
-
-                nudTTL.SetValue(nudTTL.Value * GetMultiplyIndex(newUnit, oldUnit));
-                nudTTL.ReadOnly = false;
-            }
-            else
-            {
-                nudTTL.SetValue(-1);
-                nudTTL.ReadOnly = true;
-            }
         }
 
         internal static decimal GetMultiplyIndex(int newUnit, int oldUnit)
