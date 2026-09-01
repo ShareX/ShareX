@@ -39,6 +39,12 @@ namespace ShareX;
 
 internal sealed class TaskSettingsPageBuilder
 {
+    private static readonly string[] UploadInfoTokens =
+    [
+        "$result", "$url", "$shorturl", "$thumbnailurl", "$deletionurl", "$filepath", "$filename",
+        "$filenamenoext", "$thumbnailfilename", "$thumbnailfilenamenoext", "$folderpath", "$foldername", "$uploadtime"
+    ];
+
     private readonly TaskSettingsWindow _window;
     private readonly TaskSettings _settings;
     private readonly bool _isDefault;
@@ -910,7 +916,18 @@ internal sealed class TaskSettingsPageBuilder
 
         if (property.PropertyType == typeof(string))
         {
-            TextBox text = Text(() => (string?)property.GetValue(_settings.AdvancedSettings) ?? string.Empty, value => property.SetValue(_settings.AdvancedSettings, value));
+            BoundValue<string> value = new(
+                (string?)property.GetValue(_settings.AdvancedSettings) ?? string.Empty,
+                value => property.SetValue(_settings.AdvancedSettings, value));
+
+            if (property.Name is nameof(TaskSettingsAdvanced.ClipboardContentFormat)
+                or nameof(TaskSettingsAdvanced.BalloonTipContentFormat)
+                or nameof(TaskSettingsAdvanced.OpenURLFormat))
+            {
+                return UploadInfoText(value);
+            }
+
+            TextBox text = Text(value);
             if (property.Name == nameof(TaskSettingsAdvanced.TextCustom))
             {
                 text.AcceptsReturn = true;
@@ -1125,6 +1142,31 @@ internal sealed class TaskSettingsPageBuilder
 
     private TextBox PixelInfoText(BoundValue<string> value)
         => CodeMenuText<CodeMenuEntryPixelInfo>(value, false);
+
+    private TextBox UploadInfoText(BoundValue<string> value)
+    {
+        TextBox textBox = NamePatternText(value);
+        List<MenuItem> uploadItems = UploadInfoTokens.Select(token =>
+        {
+            MenuItem item = new() { Header = token, Focusable = false };
+            item.Click += (_, _) => InsertText(textBox, token);
+            return item;
+        }).ToList();
+
+        List<MenuItem> rootItems =
+        [
+            new MenuItem
+            {
+                Header = Strings.ApplicationSettingsWindow_UploadResult,
+                ItemsSource = uploadItems,
+                Focusable = false
+            }
+        ];
+        rootItems.AddRange((IEnumerable<MenuItem>)textBox.ContextMenu!.ItemsSource!);
+        textBox.ContextMenu.ItemsSource = rootItems;
+
+        return textBox;
+    }
 
     private TextBox CodeMenuText<T>(BoundValue<string> value, bool useCategories, params T[] ignoredEntries) where T : CodeMenuEntry
     {
