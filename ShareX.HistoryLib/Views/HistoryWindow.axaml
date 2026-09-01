@@ -136,9 +136,6 @@
                                          Classes="history-list"
                                          SelectionMode="Multiple"
                                          SelectionChanged="OnHistorySelectionChanged"
-                                         PointerPressed="OnHistoryPointerPressed"
-                                         PointerMoved="OnHistoryPointerMoved"
-                                         PointerReleased="OnHistoryPointerReleased"
                                          DoubleTapped="OnHistoryDoubleTapped"
                                          KeyDown="OnHistoryListKeyDown"
                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
