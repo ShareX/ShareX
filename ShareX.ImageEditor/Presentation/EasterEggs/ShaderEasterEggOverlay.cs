@@ -28,7 +28,6 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Rendering.Composition;
 using Avalonia.Skia;
-using Avalonia.VisualTree;
 using SkiaSharp;
 using System.Diagnostics;
 using System.Numerics;

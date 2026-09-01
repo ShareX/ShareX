@@ -11,7 +11,6 @@
 
 using Avalonia.Controls;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.TextUploaders;

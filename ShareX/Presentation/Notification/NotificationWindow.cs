@@ -19,7 +19,6 @@
 
 #nullable enable
 
-using ShareX.Localization;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -31,11 +30,11 @@ using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using System;
 using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using DrawingBitmap = System.Drawing.Bitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingContentAlignment = System.Drawing.ContentAlignment;

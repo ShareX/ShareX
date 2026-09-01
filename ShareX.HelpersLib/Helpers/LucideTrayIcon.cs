@@ -16,7 +16,6 @@
 
 using Avalonia.Platform;
 using Microsoft.Win32;
-using ShareX.HelpersLib;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;

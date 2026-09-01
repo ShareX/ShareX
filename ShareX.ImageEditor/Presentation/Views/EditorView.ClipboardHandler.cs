@@ -29,7 +29,6 @@ using Avalonia.Input.Platform;
 using Avalonia.Platform.Storage;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
-using ShareX.ImageEditor.Presentation.Rendering;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
 

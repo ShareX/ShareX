@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.ImageEditor.Presentation.Rendering;
-
 namespace ShareX.ImageEditor.Presentation.ViewModels
 {
     public partial class MainViewModel : ViewModelBase

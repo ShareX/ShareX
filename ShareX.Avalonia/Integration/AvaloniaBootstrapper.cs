@@ -29,8 +29,6 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Themes.Fluent;
 using Avalonia.Threading;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace ShareX.AvaloniaUI.Integration;
 

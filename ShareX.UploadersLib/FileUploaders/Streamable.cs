@@ -27,7 +27,6 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System.Collections.Specialized;
 using System.IO;
-using System.Threading;
 
 namespace ShareX.UploadersLib.FileUploaders
 {

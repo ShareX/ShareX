@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 
 namespace ShareX.ImageEffectsLib
@@ -34,7 +33,7 @@ namespace ShareX.ImageEffectsLib
     [Description("Text")]
     public class DrawTextEx : ImageEffect
     {
-        [DefaultValue("Text"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
+        [DefaultValue("Text")]
         public string Text { get; set; }
 
         [DefaultValue(ContentAlignment.TopLeft), TypeConverter(typeof(EnumProperNameConverter))]

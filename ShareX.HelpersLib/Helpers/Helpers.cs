@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Avalonia.Platform;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using System;

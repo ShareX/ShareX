@@ -26,7 +26,6 @@
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Localization;
-using ShareX.AvaloniaUI.Theming;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels;
 

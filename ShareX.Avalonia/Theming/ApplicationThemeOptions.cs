@@ -7,9 +7,9 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia.Media;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Avalonia.Media;
 
 namespace ShareX.AvaloniaUI.Theming;
 

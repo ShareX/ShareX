@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
 
 namespace ShareX.ImageEffectsLib
 {

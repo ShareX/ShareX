@@ -25,10 +25,8 @@
 
 using Avalonia.Controls;
 using Avalonia.Input;
-using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
-using ShareX.Tools;
 using ShareX.AvaloniaUI.Theming;
 
 namespace ShareX.Tools;

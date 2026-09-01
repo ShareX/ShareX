@@ -25,9 +25,9 @@
 
 using Avalonia.Layout;
 using Avalonia.Media;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Localization;
-using ShareX.AvaloniaUI.Theming;
 
 namespace ShareX.ImageEditor.Presentation.Helpers;
 

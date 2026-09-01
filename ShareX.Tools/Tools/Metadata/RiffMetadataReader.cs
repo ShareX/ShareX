@@ -164,8 +164,10 @@ internal static class RiffMetadataReader
         context.Type = FourCc(data);
         context.Group = context.Type switch
         {
-            "vids" => $"Video Track {context.Index}", "auds" => $"Audio Track {context.Index}",
-            "txts" => $"Text Track {context.Index}", _ => $"Track {context.Index}"
+            "vids" => $"Video Track {context.Index}",
+            "auds" => $"Audio Track {context.Index}",
+            "txts" => $"Text Track {context.Index}",
+            _ => $"Track {context.Index}"
         };
         metadata.Add(context.Group, "Stream Type", context.Type switch { "vids" => "Video", "auds" => "Audio", "txts" => "Text", _ => context.Type });
         metadata.Add(context.Group, "Codec", FourCc(data[4..8]));
@@ -204,9 +206,18 @@ internal static class RiffMetadataReader
     {
         Dictionary<string, string> names = new(StringComparer.Ordinal)
         {
-            ["INAM"] = "Title", ["IART"] = "Artist", ["ICMT"] = "Comment", ["ICOP"] = "Copyright",
-            ["ICRD"] = "Creation Date", ["ISFT"] = "Software", ["IGNR"] = "Genre", ["IKEY"] = "Keywords",
-            ["ISBJ"] = "Subject", ["ISRC"] = "Source", ["ITCH"] = "Technician", ["IDIT"] = "Date/Time Original"
+            ["INAM"] = "Title",
+            ["IART"] = "Artist",
+            ["ICMT"] = "Comment",
+            ["ICOP"] = "Copyright",
+            ["ICRD"] = "Creation Date",
+            ["ISFT"] = "Software",
+            ["IGNR"] = "Genre",
+            ["IKEY"] = "Keywords",
+            ["ISBJ"] = "Subject",
+            ["ISRC"] = "Source",
+            ["ITCH"] = "Technician",
+            ["IDIT"] = "Date/Time Original"
         };
         stream.Position = start;
         byte[] header = new byte[8];
@@ -239,8 +250,17 @@ internal static class RiffMetadataReader
     private static string FormatDuration(double seconds) => TimeSpan.FromSeconds(seconds).ToString(seconds >= 3600 ? @"h\:mm\:ss\.fff" : @"m\:ss\.fff");
     private static string GetWaveFormat(ushort value) => value switch
     {
-        1 => "PCM", 2 => "Microsoft ADPCM", 3 => "IEEE float", 6 => "A-law", 7 => "mu-law",
-        0x50 => "MPEG", 0x55 => "MP3", 0x00FF => "AAC", 0x0161 => "Windows Media Audio", 0x2000 => "AC-3", _ => $"0x{value:X4}"
+        1 => "PCM",
+        2 => "Microsoft ADPCM",
+        3 => "IEEE float",
+        6 => "A-law",
+        7 => "mu-law",
+        0x50 => "MPEG",
+        0x55 => "MP3",
+        0x00FF => "AAC",
+        0x0161 => "Windows Media Audio",
+        0x2000 => "AC-3",
+        _ => $"0x{value:X4}"
     };
     private static FileStream OpenRead(string filePath) =>
         new(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete, 64 * 1024, FileOptions.SequentialScan);

@@ -158,63 +158,63 @@ internal static class TiffMetadataReader
                     return DecodeText(data.AsSpan(offset, (int)byteCount));
                 case 3:
                 case 13:
-                {
-                    ulong[] values = new ulong[count];
-                    for (int index = 0; index < values.Length; index++) values[index] = ReadUInt16(offset + index * 2);
-                    return values;
-                }
+                    {
+                        ulong[] values = new ulong[count];
+                        for (int index = 0; index < values.Length; index++) values[index] = ReadUInt16(offset + index * 2);
+                        return values;
+                    }
                 case 4:
-                {
-                    ulong[] values = new ulong[count];
-                    for (int index = 0; index < values.Length; index++) values[index] = ReadUInt32(offset + index * 4);
-                    return values;
-                }
+                    {
+                        ulong[] values = new ulong[count];
+                        for (int index = 0; index < values.Length; index++) values[index] = ReadUInt32(offset + index * 4);
+                        return values;
+                    }
                 case 5:
-                {
-                    double[] values = new double[count];
-                    for (int index = 0; index < values.Length; index++)
                     {
-                        uint numerator = ReadUInt32(offset + index * 8);
-                        uint denominator = ReadUInt32(offset + index * 8 + 4);
-                        values[index] = denominator == 0 ? double.NaN : (double)numerator / denominator;
+                        double[] values = new double[count];
+                        for (int index = 0; index < values.Length; index++)
+                        {
+                            uint numerator = ReadUInt32(offset + index * 8);
+                            uint denominator = ReadUInt32(offset + index * 8 + 4);
+                            values[index] = denominator == 0 ? double.NaN : (double)numerator / denominator;
+                        }
+                        return values;
                     }
-                    return values;
-                }
                 case 8:
-                {
-                    long[] values = new long[count];
-                    for (int index = 0; index < values.Length; index++) values[index] = ReadInt16(offset + index * 2);
-                    return values;
-                }
-                case 9:
-                {
-                    long[] values = new long[count];
-                    for (int index = 0; index < values.Length; index++) values[index] = ReadInt32(offset + index * 4);
-                    return values;
-                }
-                case 10:
-                {
-                    double[] values = new double[count];
-                    for (int index = 0; index < values.Length; index++)
                     {
-                        int numerator = ReadInt32(offset + index * 8);
-                        int denominator = ReadInt32(offset + index * 8 + 4);
-                        values[index] = denominator == 0 ? double.NaN : (double)numerator / denominator;
+                        long[] values = new long[count];
+                        for (int index = 0; index < values.Length; index++) values[index] = ReadInt16(offset + index * 2);
+                        return values;
                     }
-                    return values;
-                }
+                case 9:
+                    {
+                        long[] values = new long[count];
+                        for (int index = 0; index < values.Length; index++) values[index] = ReadInt32(offset + index * 4);
+                        return values;
+                    }
+                case 10:
+                    {
+                        double[] values = new double[count];
+                        for (int index = 0; index < values.Length; index++)
+                        {
+                            int numerator = ReadInt32(offset + index * 8);
+                            int denominator = ReadInt32(offset + index * 8 + 4);
+                            values[index] = denominator == 0 ? double.NaN : (double)numerator / denominator;
+                        }
+                        return values;
+                    }
                 case 11:
-                {
-                    double[] values = new double[count];
-                    for (int index = 0; index < values.Length; index++) values[index] = ReadSingle(offset + index * 4);
-                    return values;
-                }
+                    {
+                        double[] values = new double[count];
+                        for (int index = 0; index < values.Length; index++) values[index] = ReadSingle(offset + index * 4);
+                        return values;
+                    }
                 case 12:
-                {
-                    double[] values = new double[count];
-                    for (int index = 0; index < values.Length; index++) values[index] = ReadDouble(offset + index * 8);
-                    return values;
-                }
+                    {
+                        double[] values = new double[count];
+                        for (int index = 0; index < values.Length; index++) values[index] = ReadDouble(offset + index * 8);
+                        return values;
+                    }
             }
             return null;
         }
@@ -309,43 +309,119 @@ internal static class TiffMetadataReader
             {
                 return tag switch
                 {
-                    0x0000 => "GPS Version", 0x0001 => "Latitude Reference", 0x0002 => "Latitude",
-                    0x0003 => "Longitude Reference", 0x0004 => "Longitude", 0x0005 => "Altitude Reference",
-                    0x0006 => "Altitude", 0x0007 => "Time Stamp", 0x0008 => "Satellites", 0x0009 => "Status",
-                    0x000A => "Measure Mode", 0x000B => "DOP", 0x000C => "Speed Reference", 0x000D => "Speed",
-                    0x000E => "Track Reference", 0x000F => "Track", 0x0010 => "Image Direction Reference",
-                    0x0011 => "Image Direction", 0x0012 => "Map Datum", 0x001B => "Processing Method",
-                    0x001D => "Date Stamp", 0x001F => "Horizontal Positioning Error", _ => null
+                    0x0000 => "GPS Version",
+                    0x0001 => "Latitude Reference",
+                    0x0002 => "Latitude",
+                    0x0003 => "Longitude Reference",
+                    0x0004 => "Longitude",
+                    0x0005 => "Altitude Reference",
+                    0x0006 => "Altitude",
+                    0x0007 => "Time Stamp",
+                    0x0008 => "Satellites",
+                    0x0009 => "Status",
+                    0x000A => "Measure Mode",
+                    0x000B => "DOP",
+                    0x000C => "Speed Reference",
+                    0x000D => "Speed",
+                    0x000E => "Track Reference",
+                    0x000F => "Track",
+                    0x0010 => "Image Direction Reference",
+                    0x0011 => "Image Direction",
+                    0x0012 => "Map Datum",
+                    0x001B => "Processing Method",
+                    0x001D => "Date Stamp",
+                    0x001F => "Horizontal Positioning Error",
+                    _ => null
                 };
             }
 
             return tag switch
             {
-                0x00FE => "Subfile Type", 0x0100 => "Image Width", 0x0101 => "Image Height",
-                0x0102 => "Bits Per Sample", 0x0103 => "Compression", 0x0106 => "Photometric Interpretation",
-                0x010E => "Image Description", 0x010F => "Make", 0x0110 => "Camera Model Name",
-                0x0112 => "Orientation", 0x0115 => "Samples Per Pixel", 0x0116 => "Rows Per Strip",
-                0x011A => "X Resolution", 0x011B => "Y Resolution", 0x011C => "Planar Configuration",
-                0x0128 => "Resolution Unit", 0x0131 => "Software", 0x0132 => "Modify Date", 0x013B => "Artist",
-                0x013C => "Host Computer", 0x0201 => "Thumbnail Offset", 0x0202 => "Thumbnail Length",
-                0x8298 => "Copyright", 0x829A => "Exposure Time", 0x829D => "F Number",
-                0x8822 => "Exposure Program", 0x8827 => "ISO", 0x8830 => "Sensitivity Type", 0x8832 => "Recommended Exposure Index",
-                0x8833 => "ISO Speed", 0x9000 => "EXIF Version", 0x9003 => "Date/Time Original", 0x9004 => "Create Date",
-                0x9010 => "Offset Time", 0x9011 => "Offset Time Original", 0x9012 => "Offset Time Digitized",
-                0x9101 => "Components Configuration", 0x9201 => "Shutter Speed", 0x9202 => "Aperture",
-                0x9204 => "Exposure Compensation", 0x9205 => "Max Aperture Value", 0x9206 => "Subject Distance",
-                0x9207 => "Metering Mode", 0x9208 => "Light Source", 0x9209 => "Flash", 0x920A => "Focal Length",
-                0x927C => "Maker Note", 0x9286 => "User Comment", 0x9290 => "Sub Sec Time", 0x9291 => "Sub Sec Time Original",
-                0x9292 => "Sub Sec Time Digitized", 0x9C9B => "XP Title", 0x9C9C => "XP Comment", 0x9C9D => "XP Author",
-                0x9C9E => "XP Keywords", 0x9C9F => "XP Subject", 0xA000 => "Flashpix Version", 0xA001 => "Color Space",
-                0xA002 => "EXIF Image Width", 0xA003 => "EXIF Image Height", 0xA20E => "Focal Plane X Resolution",
-                0xA20F => "Focal Plane Y Resolution", 0xA210 => "Focal Plane Resolution Unit", 0xA217 => "Sensing Method",
-                0xA300 => "File Source", 0xA301 => "Scene Type", 0xA401 => "Custom Rendered", 0xA402 => "Exposure Mode",
-                0xA403 => "White Balance", 0xA404 => "Digital Zoom Ratio", 0xA405 => "Focal Length In 35mm Format",
-                0xA406 => "Scene Capture Type", 0xA407 => "Gain Control", 0xA408 => "Contrast", 0xA409 => "Saturation",
-                0xA40A => "Sharpness", 0xA40C => "Subject Distance Range", 0xA420 => "Image Unique ID",
-                0xA430 => "Camera Owner Name", 0xA431 => "Body Serial Number", 0xA432 => "Lens Specification",
-                0xA433 => "Lens Make", 0xA434 => "Lens Model", 0xA435 => "Lens Serial Number", _ => null
+                0x00FE => "Subfile Type",
+                0x0100 => "Image Width",
+                0x0101 => "Image Height",
+                0x0102 => "Bits Per Sample",
+                0x0103 => "Compression",
+                0x0106 => "Photometric Interpretation",
+                0x010E => "Image Description",
+                0x010F => "Make",
+                0x0110 => "Camera Model Name",
+                0x0112 => "Orientation",
+                0x0115 => "Samples Per Pixel",
+                0x0116 => "Rows Per Strip",
+                0x011A => "X Resolution",
+                0x011B => "Y Resolution",
+                0x011C => "Planar Configuration",
+                0x0128 => "Resolution Unit",
+                0x0131 => "Software",
+                0x0132 => "Modify Date",
+                0x013B => "Artist",
+                0x013C => "Host Computer",
+                0x0201 => "Thumbnail Offset",
+                0x0202 => "Thumbnail Length",
+                0x8298 => "Copyright",
+                0x829A => "Exposure Time",
+                0x829D => "F Number",
+                0x8822 => "Exposure Program",
+                0x8827 => "ISO",
+                0x8830 => "Sensitivity Type",
+                0x8832 => "Recommended Exposure Index",
+                0x8833 => "ISO Speed",
+                0x9000 => "EXIF Version",
+                0x9003 => "Date/Time Original",
+                0x9004 => "Create Date",
+                0x9010 => "Offset Time",
+                0x9011 => "Offset Time Original",
+                0x9012 => "Offset Time Digitized",
+                0x9101 => "Components Configuration",
+                0x9201 => "Shutter Speed",
+                0x9202 => "Aperture",
+                0x9204 => "Exposure Compensation",
+                0x9205 => "Max Aperture Value",
+                0x9206 => "Subject Distance",
+                0x9207 => "Metering Mode",
+                0x9208 => "Light Source",
+                0x9209 => "Flash",
+                0x920A => "Focal Length",
+                0x927C => "Maker Note",
+                0x9286 => "User Comment",
+                0x9290 => "Sub Sec Time",
+                0x9291 => "Sub Sec Time Original",
+                0x9292 => "Sub Sec Time Digitized",
+                0x9C9B => "XP Title",
+                0x9C9C => "XP Comment",
+                0x9C9D => "XP Author",
+                0x9C9E => "XP Keywords",
+                0x9C9F => "XP Subject",
+                0xA000 => "Flashpix Version",
+                0xA001 => "Color Space",
+                0xA002 => "EXIF Image Width",
+                0xA003 => "EXIF Image Height",
+                0xA20E => "Focal Plane X Resolution",
+                0xA20F => "Focal Plane Y Resolution",
+                0xA210 => "Focal Plane Resolution Unit",
+                0xA217 => "Sensing Method",
+                0xA300 => "File Source",
+                0xA301 => "Scene Type",
+                0xA401 => "Custom Rendered",
+                0xA402 => "Exposure Mode",
+                0xA403 => "White Balance",
+                0xA404 => "Digital Zoom Ratio",
+                0xA405 => "Focal Length In 35mm Format",
+                0xA406 => "Scene Capture Type",
+                0xA407 => "Gain Control",
+                0xA408 => "Contrast",
+                0xA409 => "Saturation",
+                0xA40A => "Sharpness",
+                0xA40C => "Subject Distance Range",
+                0xA420 => "Image Unique ID",
+                0xA430 => "Camera Owner Name",
+                0xA431 => "Body Serial Number",
+                0xA432 => "Lens Specification",
+                0xA433 => "Lens Make",
+                0xA434 => "Lens Model",
+                0xA435 => "Lens Serial Number",
+                _ => null
             };
         }
 
@@ -426,42 +502,96 @@ internal static class TiffMetadataReader
 
         private static string GetCompression(int value) => value switch
         {
-            1 => "Uncompressed", 2 => "CCITT 1D", 3 => "Group 3 Fax", 4 => "Group 4 Fax", 5 => "LZW",
-            6 => "Old JPEG", 7 => "JPEG", 8 => "Deflate", 32773 => "PackBits", 34712 => "JPEG 2000", _ => $"Unknown ({value})"
+            1 => "Uncompressed",
+            2 => "CCITT 1D",
+            3 => "Group 3 Fax",
+            4 => "Group 4 Fax",
+            5 => "LZW",
+            6 => "Old JPEG",
+            7 => "JPEG",
+            8 => "Deflate",
+            32773 => "PackBits",
+            34712 => "JPEG 2000",
+            _ => $"Unknown ({value})"
         };
 
         private static string GetPhotometricInterpretation(int value) => value switch
         {
-            0 => "WhiteIsZero", 1 => "BlackIsZero", 2 => "RGB", 3 => "Palette", 4 => "Transparency mask",
-            5 => "CMYK", 6 => "YCbCr", 8 => "CIELab", _ => $"Unknown ({value})"
+            0 => "WhiteIsZero",
+            1 => "BlackIsZero",
+            2 => "RGB",
+            3 => "Palette",
+            4 => "Transparency mask",
+            5 => "CMYK",
+            6 => "YCbCr",
+            8 => "CIELab",
+            _ => $"Unknown ({value})"
         };
 
         private static string GetOrientation(int value) => value switch
         {
-            1 => "Horizontal (normal)", 2 => "Mirror horizontal", 3 => "Rotate 180", 4 => "Mirror vertical",
-            5 => "Mirror horizontal and rotate 270 CW", 6 => "Rotate 90 CW", 7 => "Mirror horizontal and rotate 90 CW",
-            8 => "Rotate 270 CW", _ => $"Unknown ({value})"
+            1 => "Horizontal (normal)",
+            2 => "Mirror horizontal",
+            3 => "Rotate 180",
+            4 => "Mirror vertical",
+            5 => "Mirror horizontal and rotate 270 CW",
+            6 => "Rotate 90 CW",
+            7 => "Mirror horizontal and rotate 90 CW",
+            8 => "Rotate 270 CW",
+            _ => $"Unknown ({value})"
         };
 
         private static string GetExposureProgram(int value) => value switch
         {
-            0 => "Not defined", 1 => "Manual", 2 => "Program AE", 3 => "Aperture-priority AE", 4 => "Shutter-priority AE",
-            5 => "Creative", 6 => "Action", 7 => "Portrait", 8 => "Landscape", _ => value.ToString()
+            0 => "Not defined",
+            1 => "Manual",
+            2 => "Program AE",
+            3 => "Aperture-priority AE",
+            4 => "Shutter-priority AE",
+            5 => "Creative",
+            6 => "Action",
+            7 => "Portrait",
+            8 => "Landscape",
+            _ => value.ToString()
         };
 
         private static string GetMeteringMode(int value) => value switch
         {
-            0 => "Unknown", 1 => "Average", 2 => "Center-weighted average", 3 => "Spot", 4 => "Multi-spot",
-            5 => "Multi-segment", 6 => "Partial", 255 => "Other", _ => value.ToString()
+            0 => "Unknown",
+            1 => "Average",
+            2 => "Center-weighted average",
+            3 => "Spot",
+            4 => "Multi-spot",
+            5 => "Multi-segment",
+            6 => "Partial",
+            255 => "Other",
+            _ => value.ToString()
         };
 
         private static string GetLightSource(int value) => value switch
         {
-            0 => "Unknown", 1 => "Daylight", 2 => "Fluorescent", 3 => "Tungsten", 4 => "Flash", 9 => "Fine weather",
-            10 => "Cloudy", 11 => "Shade", 12 => "Daylight fluorescent", 13 => "Day white fluorescent",
-            14 => "Cool white fluorescent", 15 => "White fluorescent", 17 => "Standard light A", 18 => "Standard light B",
-            19 => "Standard light C", 20 => "D55", 21 => "D65", 22 => "D75", 23 => "D50", 24 => "ISO studio tungsten",
-            255 => "Other", _ => value.ToString()
+            0 => "Unknown",
+            1 => "Daylight",
+            2 => "Fluorescent",
+            3 => "Tungsten",
+            4 => "Flash",
+            9 => "Fine weather",
+            10 => "Cloudy",
+            11 => "Shade",
+            12 => "Daylight fluorescent",
+            13 => "Day white fluorescent",
+            14 => "Cool white fluorescent",
+            15 => "White fluorescent",
+            17 => "Standard light A",
+            18 => "Standard light B",
+            19 => "Standard light C",
+            20 => "D55",
+            21 => "D65",
+            22 => "D75",
+            23 => "D50",
+            24 => "ISO studio tungsten",
+            255 => "Other",
+            _ => value.ToString()
         };
 
         private static string GetFlash(int value)
@@ -540,8 +670,12 @@ internal static class IccMetadataReader
             {
                 metadata.Add("ICC Profile", signature switch
                 {
-                    "desc" => "Profile Description", "cprt" => "Copyright", "dmnd" => "Device Manufacturer Description",
-                    "dmdd" => "Device Model Description", "vued" => "Viewing Conditions Description", _ => signature
+                    "desc" => "Profile Description",
+                    "cprt" => "Copyright",
+                    "dmnd" => "Device Manufacturer Description",
+                    "dmdd" => "Device Model Description",
+                    "vued" => "Viewing Conditions Description",
+                    _ => signature
                 }, value);
             }
         }
@@ -588,11 +722,21 @@ internal static class IccMetadataReader
     private static string FourCc(ReadOnlySpan<byte> value) => Encoding.ASCII.GetString(value).TrimEnd('\0', ' ');
     private static string GetProfileClass(string value) => value switch
     {
-        "scnr" => "Input device", "mntr" => "Display device", "prtr" => "Output device", "link" => "Device link",
-        "spac" => "Color space conversion", "abst" => "Abstract", "nmcl" => "Named color", _ => value
+        "scnr" => "Input device",
+        "mntr" => "Display device",
+        "prtr" => "Output device",
+        "link" => "Device link",
+        "spac" => "Color space conversion",
+        "abst" => "Abstract",
+        "nmcl" => "Named color",
+        _ => value
     };
     private static string GetRenderingIntent(uint value) => value switch
     {
-        0 => "Perceptual", 1 => "Media-relative colorimetric", 2 => "Saturation", 3 => "ICC-absolute colorimetric", _ => value.ToString()
+        0 => "Perceptual",
+        1 => "Media-relative colorimetric",
+        2 => "Saturation",
+        3 => "ICC-absolute colorimetric",
+        _ => value.ToString()
     };
 }

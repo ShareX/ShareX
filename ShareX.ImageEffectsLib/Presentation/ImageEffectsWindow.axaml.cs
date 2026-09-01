@@ -5,7 +5,6 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
@@ -119,7 +118,7 @@ public partial class ImageEffectsWindow : Window
 
     private async void OnClearEffectsClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-            if (await new ImageEffectsConfirmationWindow(Localization.Strings.ImageEffectsWindow_Clear_confirmation).ShowDialog<bool>(this))
+        if (await new ImageEffectsConfirmationWindow(Localization.Strings.ImageEffectsWindow_Clear_confirmation).ShowDialog<bool>(this))
         {
             ViewModel.ClearEffectsCommand.Execute(null);
         }

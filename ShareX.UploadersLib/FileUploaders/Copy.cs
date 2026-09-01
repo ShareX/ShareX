@@ -156,7 +156,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (content != null && content.objects != null && content.objects.Length > 0)
                 {
                     AllowReportProgress = false;
-                result.URL = await CreatePublicURLAsync(content.objects[0].path, URLType, cancellationToken).ConfigureAwait(false);
+                    result.URL = await CreatePublicURLAsync(content.objects[0].path, URLType, cancellationToken).ConfigureAwait(false);
                 }
             }
 

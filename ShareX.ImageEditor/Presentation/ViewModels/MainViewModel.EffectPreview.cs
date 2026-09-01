@@ -29,7 +29,6 @@ using ShareX.ImageEditor.Core.ImageEffects.Adjustments;
 using ShareX.ImageEditor.Core.ImageEffects.Filters;
 using ShareX.ImageEditor.Core.ImageEffects.Manipulations;
 using ShareX.ImageEditor.Integration;
-using ShareX.ImageEditor.Presentation.Rendering;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
 {

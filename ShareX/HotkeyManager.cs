@@ -23,9 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.Localization;
 using ShareX.HelpersLib;
-using ShareX.Properties;
+using ShareX.Localization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;

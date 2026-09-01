@@ -9,15 +9,15 @@
 
 #nullable enable
 
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
 using ShareX.UploadersLib.SharingServices;
 using ShareX.UploadersLib.TextUploaders;
 using ShareX.UploadersLib.URLShorteners;
-using ShareX.AvaloniaUI.Theming;
-using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

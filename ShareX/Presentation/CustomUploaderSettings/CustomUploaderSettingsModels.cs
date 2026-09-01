@@ -11,8 +11,8 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib;
 using ShareX.Localization;
+using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

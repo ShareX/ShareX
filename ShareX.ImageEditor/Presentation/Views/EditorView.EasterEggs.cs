@@ -25,9 +25,8 @@
 
 using Avalonia.Controls;
 using Avalonia.Input;
-using ShareX.ImageEditor.Presentation.EasterEggs;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Localization;
+using ShareX.ImageEditor.Presentation.EasterEggs;
 using ShareX.ImageEditor.Presentation.ViewModels;
 
 namespace ShareX.ImageEditor.Presentation.Views;

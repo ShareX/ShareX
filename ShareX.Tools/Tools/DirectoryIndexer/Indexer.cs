@@ -25,9 +25,6 @@
 
 #nullable disable
 
-using System;
-using System.IO;
-
 namespace ShareX.Tools
 {
     public abstract class Indexer

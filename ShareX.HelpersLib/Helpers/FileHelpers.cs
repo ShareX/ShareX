@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.VisualBasic.FileIO;
-using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

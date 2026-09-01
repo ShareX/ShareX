@@ -26,7 +26,6 @@
 #nullable disable
 
 using ShareX.HelpersLib;
-using System.IO;
 using System.Text;
 using System.Xml;
 

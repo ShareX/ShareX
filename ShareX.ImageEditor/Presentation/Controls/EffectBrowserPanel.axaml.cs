@@ -32,8 +32,8 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.ImageEditor.Core.ImageEffects;
 using ShareX.ImageEditor.Integration;
-using ShareX.ImageEditor.Presentation.Effects;
 using ShareX.ImageEditor.Localization;
+using ShareX.ImageEditor.Presentation.Effects;
 using System.Collections.ObjectModel;
 using System.Text;
 

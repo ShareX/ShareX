@@ -23,10 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.Localization;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using System;
-using System.Windows.Forms;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;

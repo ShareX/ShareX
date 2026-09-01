@@ -23,9 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace ShareX.UploadersLib
 {
     public interface IOAuthBase

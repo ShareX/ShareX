@@ -26,8 +26,6 @@
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.Tools;
-using ShareX.AvaloniaUI.Imaging;
 using SkiaSharp;
 
 namespace ShareX.Tools;

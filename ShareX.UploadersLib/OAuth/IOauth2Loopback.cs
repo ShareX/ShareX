@@ -25,9 +25,6 @@
 
 #nullable enable
 
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace ShareX.UploadersLib
 {
     public interface IOAuth2Loopback : IOAuth2

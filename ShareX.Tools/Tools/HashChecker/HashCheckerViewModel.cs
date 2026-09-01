@@ -25,7 +25,6 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.Tools.Infrastructure;
 
 namespace ShareX.Tools;
 

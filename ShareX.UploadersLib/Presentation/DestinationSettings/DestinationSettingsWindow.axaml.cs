@@ -11,7 +11,6 @@
 
 using Avalonia.Controls;
 using ShareX.AvaloniaUI.Theming;
-using ShareX.UploadersLib;
 using System.Collections.Generic;
 using System.Linq;
 

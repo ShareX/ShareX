@@ -26,7 +26,6 @@
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.AvaloniaUI.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using SkiaSharp;
 using System.Collections.ObjectModel;

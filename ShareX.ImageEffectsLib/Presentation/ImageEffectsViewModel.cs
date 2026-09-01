@@ -15,7 +15,6 @@ using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json.Serialization;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.ImageEffectsLib.Localization;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;

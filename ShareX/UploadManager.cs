@@ -23,10 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.Localization;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using ShareX.Tools;
-using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
 using System.Drawing;

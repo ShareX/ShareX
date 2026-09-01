@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.Localization;
-using ShareX.Properties;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;

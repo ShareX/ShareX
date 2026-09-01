@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Media.Imaging;
-using ShareX.ImageEditor.Presentation.Rendering;
 using SkiaSharp;
 using System.Runtime.InteropServices;
 using Vortice.Direct2D1;

@@ -27,9 +27,9 @@ using Avalonia;
 using Avalonia.Input;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
-using SkiaSharp;
-using ShareX.AvaloniaUI.Localization;
 using ShareX.AvaloniaUI.Imaging;
+using ShareX.AvaloniaUI.Localization;
+using SkiaSharp;
 using System.Buffers.Binary;
 
 namespace ShareX.AvaloniaUI.Input

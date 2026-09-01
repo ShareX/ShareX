@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.ScreenCaptureLib;
 using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 using System.Drawing;
 using System.Threading.Tasks;

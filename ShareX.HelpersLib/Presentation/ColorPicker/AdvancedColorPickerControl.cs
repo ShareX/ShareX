@@ -270,8 +270,12 @@ public sealed class AdvancedColorPickerControl : Control
         double t = value * (1 - (1 - fraction) * saturation);
         (double r, double g, double b) = sector switch
         {
-            0 => (value, t, p), 1 => (q, value, p), 2 => (p, value, t),
-            3 => (p, q, value), 4 => (t, p, value), _ => (value, p, q)
+            0 => (value, t, p),
+            1 => (q, value, p),
+            2 => (p, value, t),
+            3 => (p, q, value),
+            4 => (t, p, value),
+            _ => (value, p, q)
         };
         return DrawingColor.FromArgb(alpha, ToByte(r), ToByte(g), ToByte(b));
     }

@@ -26,10 +26,8 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
@@ -37,7 +35,7 @@ namespace ShareX.ImageEffectsLib
     [Description("Text watermark")]
     public class DrawText : ImageEffect
     {
-        [DefaultValue("Text watermark"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
+        [DefaultValue("Text watermark")]
         public string Text { get; set; }
 
         [DefaultValue(ContentAlignment.BottomRight), TypeConverter(typeof(EnumProperNameConverter))]

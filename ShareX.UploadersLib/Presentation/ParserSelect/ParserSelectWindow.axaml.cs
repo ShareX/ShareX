@@ -11,7 +11,6 @@
 
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
 using System;
 using System.Collections.Generic;

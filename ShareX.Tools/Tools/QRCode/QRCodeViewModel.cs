@@ -26,7 +26,6 @@
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using ShareX.Tools.Infrastructure;
 using System.Text;
 
 namespace ShareX.Tools;

@@ -11,7 +11,6 @@
 
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
@@ -22,7 +21,6 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using DrawingPoint = System.Drawing.Point;
 using FormsDataFormats = System.Windows.Forms.DataFormats;

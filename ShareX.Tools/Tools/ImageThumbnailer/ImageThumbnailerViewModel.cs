@@ -15,7 +15,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.HelpersLib;
-using ShareX.Tools.Infrastructure;
 using System.Collections.ObjectModel;
 using System.Drawing;
 

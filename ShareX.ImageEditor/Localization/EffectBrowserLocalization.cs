@@ -1,5 +1,4 @@
 using ShareX.ImageEditor.Core.ImageEffects;
-using System;
 
 namespace ShareX.ImageEditor.Localization;
 

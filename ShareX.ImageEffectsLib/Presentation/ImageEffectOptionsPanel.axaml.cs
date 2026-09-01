@@ -14,7 +14,6 @@ using Avalonia.Media;
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib.Localization;
 using System.ComponentModel;
-using System.Drawing;
 using System.Globalization;
 using System.Reflection;
 using DrawingColor = System.Drawing.Color;

@@ -10,7 +10,6 @@
 #nullable enable
 
 using Avalonia;
-using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using ShareX.HelpersLib;
 using System;

@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
-using ShareX.AvaloniaUI.Theming;
 using SkiaSharp;
 using System.Collections.Concurrent;
 

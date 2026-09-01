@@ -36,7 +36,6 @@ using System.Net;
 using System.Net.Mime;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading;
 
 namespace ShareX.UploadersLib.FileUploaders
 {

@@ -15,7 +15,6 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using System;
-using System.Threading.Tasks;
 
 namespace ShareX.UploadersLib;
 

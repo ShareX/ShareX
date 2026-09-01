@@ -173,8 +173,12 @@ internal static class IsoBaseMediaMetadataReader
         string type = FourCc(data[8..]);
         metadata.Add(group, "Handler Type", type switch
         {
-            "vide" => "Video", "soun" => "Audio", "text" or "sbtl" or "subt" => "Subtitle",
-            "meta" => "Metadata", "hint" => "Hint", _ => type
+            "vide" => "Video",
+            "soun" => "Audio",
+            "text" or "sbtl" or "subt" => "Subtitle",
+            "meta" => "Metadata",
+            "hint" => "Hint",
+            _ => type
         });
         if (data.Length > 24)
         {
@@ -418,34 +422,73 @@ internal static class IsoBaseMediaMetadataReader
 
     private static string? GetMetadataName(string type) => type switch
     {
-        "©nam" => "Title", "©ART" => "Artist", "©alb" => "Album", "©day" => "Date", "©too" => "Encoder",
-        "©cmt" => "Comment", "©gen" => "Genre", "©wrt" => "Composer", "©cpy" => "Copyright", "©grp" => "Grouping",
-        "aART" => "Album Artist", "desc" => "Description", "ldes" => "Long Description", "©xyz" => "Location",
-        "keyw" => "Keywords", "purd" => "Purchase Date", "tvsh" => "TV Show", "tven" => "TV Episode ID",
-        "tvnn" => "TV Network", "catg" => "Category", "purl" => "Podcast URL", "egid" => "Episode Global ID",
-        "covr" => "Cover Art", "trkn" => "Track Number", "disk" => "Disc Number", "tmpo" => "Tempo", _ => null
+        "©nam" => "Title",
+        "©ART" => "Artist",
+        "©alb" => "Album",
+        "©day" => "Date",
+        "©too" => "Encoder",
+        "©cmt" => "Comment",
+        "©gen" => "Genre",
+        "©wrt" => "Composer",
+        "©cpy" => "Copyright",
+        "©grp" => "Grouping",
+        "aART" => "Album Artist",
+        "desc" => "Description",
+        "ldes" => "Long Description",
+        "©xyz" => "Location",
+        "keyw" => "Keywords",
+        "purd" => "Purchase Date",
+        "tvsh" => "TV Show",
+        "tven" => "TV Episode ID",
+        "tvnn" => "TV Network",
+        "catg" => "Category",
+        "purl" => "Podcast URL",
+        "egid" => "Episode Global ID",
+        "covr" => "Cover Art",
+        "trkn" => "Track Number",
+        "disk" => "Disc Number",
+        "tmpo" => "Tempo",
+        _ => null
     };
 
     private static string GetCodecName(string codec) => codec switch
     {
-        "avc1" or "avc3" => $"H.264 / AVC ({codec})", "hvc1" or "hev1" => $"H.265 / HEVC ({codec})",
-        "av01" => "AV1", "vp09" => "VP9", "mp4v" => "MPEG-4 Visual", "jpeg" => "Motion JPEG",
-        "ap4h" => "Apple ProRes 4444", "apch" => "Apple ProRes 422 HQ", "apcn" => "Apple ProRes 422",
-        "apcs" => "Apple ProRes 422 LT", "apco" => "Apple ProRes 422 Proxy", "mp4a" => "MPEG-4 Audio / AAC",
-        "ac-3" => "Dolby Digital (AC-3)", "ec-3" => "Dolby Digital Plus (E-AC-3)", "alac" => "Apple Lossless",
-        "Opus" => "Opus", "flac" => "FLAC", _ => codec
+        "avc1" or "avc3" => $"H.264 / AVC ({codec})",
+        "hvc1" or "hev1" => $"H.265 / HEVC ({codec})",
+        "av01" => "AV1",
+        "vp09" => "VP9",
+        "mp4v" => "MPEG-4 Visual",
+        "jpeg" => "Motion JPEG",
+        "ap4h" => "Apple ProRes 4444",
+        "apch" => "Apple ProRes 422 HQ",
+        "apcn" => "Apple ProRes 422",
+        "apcs" => "Apple ProRes 422 LT",
+        "apco" => "Apple ProRes 422 Proxy",
+        "mp4a" => "MPEG-4 Audio / AAC",
+        "ac-3" => "Dolby Digital (AC-3)",
+        "ec-3" => "Dolby Digital Plus (E-AC-3)",
+        "alac" => "Apple Lossless",
+        "Opus" => "Opus",
+        "flac" => "FLAC",
+        _ => codec
     };
 
     private static double ReadFixed16_16(ReadOnlySpan<byte> data) => BinaryPrimitives.ReadInt32BigEndian(data) / 65536d;
     private static long ReadSignedInteger(ReadOnlySpan<byte> data) => data.Length switch
     {
-        1 => (sbyte)data[0], 2 => BinaryPrimitives.ReadInt16BigEndian(data), 4 => BinaryPrimitives.ReadInt32BigEndian(data),
-        >= 8 => BinaryPrimitives.ReadInt64BigEndian(data), _ => 0
+        1 => (sbyte)data[0],
+        2 => BinaryPrimitives.ReadInt16BigEndian(data),
+        4 => BinaryPrimitives.ReadInt32BigEndian(data),
+        >= 8 => BinaryPrimitives.ReadInt64BigEndian(data),
+        _ => 0
     };
     private static ulong ReadUnsignedInteger(ReadOnlySpan<byte> data) => data.Length switch
     {
-        1 => data[0], 2 => BinaryPrimitives.ReadUInt16BigEndian(data), 4 => BinaryPrimitives.ReadUInt32BigEndian(data),
-        >= 8 => BinaryPrimitives.ReadUInt64BigEndian(data), _ => 0
+        1 => data[0],
+        2 => BinaryPrimitives.ReadUInt16BigEndian(data),
+        4 => BinaryPrimitives.ReadUInt32BigEndian(data),
+        >= 8 => BinaryPrimitives.ReadUInt64BigEndian(data),
+        _ => 0
     };
     private static bool IsMostlyText(ReadOnlySpan<byte> data)
     {

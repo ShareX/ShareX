@@ -17,7 +17,6 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Localization;
 using ShareX.AvaloniaUI.Theming;
-using System.Threading.Tasks;
 
 namespace ShareX.AvaloniaUI;
 

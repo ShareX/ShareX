@@ -25,8 +25,6 @@
 
 using System.Drawing;
 using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace ShareX.UploadersLib
 {

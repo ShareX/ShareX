@@ -26,8 +26,6 @@
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Windows;
-using ShareX.HelpersLib;
-using ShareX.Tools;
 
 namespace ShareX.Tools.Integration;
 

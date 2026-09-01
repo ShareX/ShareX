@@ -15,7 +15,6 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
-using Avalonia.VisualTree;
 using System;
 
 namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;

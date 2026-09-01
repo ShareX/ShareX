@@ -26,15 +26,11 @@
 #nullable disable
 
 using ShareX.HelpersLib;
-using System;
 using System.Drawing;
-using System.IO;
-using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace ShareX.Tools
 {

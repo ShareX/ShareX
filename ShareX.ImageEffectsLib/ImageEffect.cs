@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib.Localization;
 using System.ComponentModel;
 using System.Drawing;

@@ -25,7 +25,6 @@
 
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Localization;
 using System.Globalization;
 

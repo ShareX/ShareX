@@ -27,7 +27,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
-using ShareX.AvaloniaUI.Imaging;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.Annotations;

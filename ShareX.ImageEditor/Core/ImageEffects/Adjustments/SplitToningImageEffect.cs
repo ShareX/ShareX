@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Adjustments;

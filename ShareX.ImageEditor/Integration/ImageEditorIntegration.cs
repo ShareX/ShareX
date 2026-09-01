@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Avalonia.Controls;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Threading;
 using ShareX.ImageEditor.Presentation.ViewModels;

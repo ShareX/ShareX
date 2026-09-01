@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.ImageEditor.Core.Annotations;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.ImageEditor.Core.Annotations;
 
 namespace ShareX.ImageEditor.Presentation.Theming
 {

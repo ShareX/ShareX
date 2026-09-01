@@ -26,7 +26,6 @@
 using Renci.SshNet;
 using Renci.SshNet.Common;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;

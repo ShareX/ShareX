@@ -361,8 +361,15 @@ internal static class MatroskaMetadataReader
 
     private static string GetTrackType(ulong value) => value switch
     {
-        1 => "Video", 2 => "Audio", 3 => "Complex", 0x10 => "Logo", 0x11 => "Subtitle",
-        0x12 => "Buttons", 0x20 => "Control", 0x21 => "Metadata", _ => value.ToString()
+        1 => "Video",
+        2 => "Audio",
+        3 => "Complex",
+        0x10 => "Logo",
+        0x11 => "Subtitle",
+        0x12 => "Buttons",
+        0x20 => "Control",
+        0x21 => "Metadata",
+        _ => value.ToString()
     };
     private static string FormatDuration(double seconds) => TimeSpan.FromSeconds(seconds).ToString(seconds >= 3600 ? @"h\:mm\:ss\.fff" : @"m\:ss\.fff");
 

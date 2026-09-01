@@ -16,7 +16,6 @@ using Avalonia;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
-using DrawingPoint = System.Drawing.Point;
 using DrawingRectangle = System.Drawing.Rectangle;
 
 namespace ShareX.Tools.Ruler;

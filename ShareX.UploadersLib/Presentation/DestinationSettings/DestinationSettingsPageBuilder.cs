@@ -17,7 +17,6 @@ using Avalonia.Layout;
 using Avalonia.Media;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
 using System;
@@ -925,7 +924,8 @@ internal sealed class DestinationSettingsPageBuilder
     {
         StackPanel content = new()
         {
-            Margin = new Thickness(28, 24, 28, 32), MaxWidth = 780,
+            Margin = new Thickness(28, 24, 28, 32),
+            MaxWidth = 780,
             HorizontalAlignment = HorizontalAlignment.Left
         };
         Grid header = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*"), ColumnSpacing = 9 };

@@ -29,8 +29,6 @@ using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
-using Avalonia.VisualTree;
-using ShareX.AvaloniaUI.Imaging;
 using SkiaSharp;
 
 namespace ShareX.Tools.Controls;

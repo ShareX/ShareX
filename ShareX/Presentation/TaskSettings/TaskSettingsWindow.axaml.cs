@@ -9,12 +9,11 @@
 
 #nullable enable
 
+using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
-using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;

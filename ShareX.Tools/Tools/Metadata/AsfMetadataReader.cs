@@ -197,9 +197,17 @@ internal static class AsfMetadataReader
     private static string FormatDuration(double seconds) => TimeSpan.FromSeconds(seconds).ToString(seconds >= 3600 ? @"h\:mm\:ss\.fff" : @"m\:ss\.fff");
     private static string GetAudioCodec(ushort value) => value switch
     {
-        1 => "PCM", 2 => "Microsoft ADPCM", 3 => "IEEE float", 0x50 => "MPEG", 0x55 => "MP3",
-        0x00FF => "AAC", 0x0161 => "Windows Media Audio", 0x0162 => "Windows Media Audio Professional",
-        0x0163 => "Windows Media Audio Lossless", 0x2000 => "AC-3", _ => $"0x{value:X4}"
+        1 => "PCM",
+        2 => "Microsoft ADPCM",
+        3 => "IEEE float",
+        0x50 => "MPEG",
+        0x55 => "MP3",
+        0x00FF => "AAC",
+        0x0161 => "Windows Media Audio",
+        0x0162 => "Windows Media Audio Professional",
+        0x0163 => "Windows Media Audio Lossless",
+        0x2000 => "AC-3",
+        _ => $"0x{value:X4}"
     };
 
     private static bool TryReadExactly(Stream stream, Span<byte> buffer)
