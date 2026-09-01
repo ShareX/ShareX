@@ -330,11 +330,11 @@
                                     </Grid>
                                     <Grid ColumnDefinitions="210,*" ColumnSpacing="8">
                                         <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SubFolderPatternLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
-                                        <TextBox Grid.Column="1" Classes="form-control" Text="{Binding SaveImageSubFolderPattern, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBox x:Name="SaveImageSubFolderPatternTextBox" Grid.Column="1" Classes="form-control" Text="{Binding SaveImageSubFolderPattern, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="210,*" ColumnSpacing="8">
                                         <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SubFolderPatternForWindowLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
-                                        <TextBox Grid.Column="1" Classes="form-control" Text="{Binding SaveImageSubFolderPatternWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBox x:Name="SaveImageSubFolderPatternWindowTextBox" Grid.Column="1" Classes="form-control" Text="{Binding SaveImageSubFolderPatternWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                     </Grid>
                                     <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
                                         <TextBlock Classes="hint" Text="{Binding ScreenshotsFolderPreview}" VerticalAlignment="Center"/>

@@ -15,6 +15,7 @@
 #nullable enable
 
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
@@ -34,6 +35,7 @@ public partial class ApplicationSettingsWindow : Window
 {
     private ApplicationSettingsViewModel ViewModel => (ApplicationSettingsViewModel)DataContext!;
     private ClipboardFormatItem? _editedClipboardFormat;
+    private ContextMenu? _activeCodeMenu;
 
     private static readonly string[] ClipboardResultTokens =
     [
@@ -47,6 +49,11 @@ public partial class ApplicationSettingsWindow : Window
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         DataContext = new ApplicationSettingsViewModel();
         AttachClipboardFormatMenu();
+        AttachFilenamePatternMenu(SaveImageSubFolderPatternTextBox,
+            CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn, CodeMenuEntryFilename.i,
+            CodeMenuEntryFilename.width, CodeMenuEntryFilename.height, CodeMenuEntryFilename.n);
+        AttachFilenamePatternMenu(SaveImageSubFolderPatternWindowTextBox,
+            CodeMenuEntryFilename.i, CodeMenuEntryFilename.n);
         ClipboardFormatSupportedVariablesText.Text = string.Format(
             Strings.ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_,
             string.Join(", ", ClipboardResultTokens),
@@ -233,6 +240,81 @@ public partial class ApplicationSettingsWindow : Window
         }
 
         ClipboardFormatTextBox.ContextMenu = new ContextMenu { ItemsSource = menuItems };
+    }
+
+    private void AttachFilenamePatternMenu(TextBox textBox, params CodeMenuEntryFilename[] ignoredEntries)
+    {
+        HashSet<CodeMenuEntryFilename> ignored = ignoredEntries.ToHashSet();
+        IEnumerable<CodeMenuEntryFilename> entries = typeof(CodeMenuEntryFilename)
+            .GetFields(BindingFlags.Public | BindingFlags.Static)
+            .Where(field => field.FieldType == typeof(CodeMenuEntryFilename))
+            .Select(field => field.GetValue(null))
+            .OfType<CodeMenuEntryFilename>()
+            .Where(entry => !ignored.Contains(entry));
+
+        MenuItem CreateItem(CodeMenuEntryFilename entry)
+        {
+            string pattern = entry.ToPrefixString();
+            MenuItem item = new() { Header = $"{pattern} - {entry.Description}", Focusable = false };
+            item.Click += (_, _) => InsertText(textBox, pattern);
+            return item;
+        }
+
+        List<MenuItem> rootItems = [];
+        foreach (IGrouping<string?, CodeMenuEntryFilename> group in entries.GroupBy(entry => entry.Category))
+        {
+            List<MenuItem> items = group.Select(CreateItem).ToList();
+            if (string.IsNullOrWhiteSpace(group.Key))
+            {
+                rootItems.AddRange(items);
+            }
+            else
+            {
+                rootItems.Add(new MenuItem { Header = group.Key, ItemsSource = items, Focusable = false });
+            }
+        }
+
+        ContextMenu menu = new()
+        {
+            Focusable = false,
+            Placement = PlacementMode.RightEdgeAlignedTop,
+            PlacementTarget = textBox,
+            ItemsSource = rootItems
+        };
+        textBox.ContextMenu = menu;
+
+        void OpenMenu()
+        {
+            if (_activeCodeMenu != null && !ReferenceEquals(_activeCodeMenu, menu))
+            {
+                _activeCodeMenu.Close();
+            }
+
+            if (!menu.IsOpen)
+            {
+                _activeCodeMenu = menu;
+                menu.Open(textBox);
+            }
+        }
+
+        menu.Closed += (_, _) =>
+        {
+            if (ReferenceEquals(_activeCodeMenu, menu))
+            {
+                _activeCodeMenu = null;
+            }
+        };
+        textBox.GotFocus += (_, _) => OpenMenu();
+        textBox.PointerReleased += (_, _) => OpenMenu();
+    }
+
+    private static void InsertText(TextBox textBox, string textToInsert)
+    {
+        string text = textBox.Text ?? string.Empty;
+        int start = Math.Clamp(Math.Min(textBox.SelectionStart, textBox.SelectionEnd), 0, text.Length);
+        textBox.Text = text.Insert(start, textToInsert);
+        textBox.CaretIndex = start + textToInsert.Length;
+        textBox.Focus();
     }
 
     private MenuItem CreateClipboardTokenItem(string token) => CreateClipboardTokenItem(token, null);
