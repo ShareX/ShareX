@@ -57,7 +57,7 @@ internal sealed class TaskSettingsPageBuilder
     private readonly BoundValue<bool> _toolsOverride;
     private readonly BoundValue<bool> _actionsOverride;
     private readonly BoundValue<bool> _advancedOverride;
-    private ContextMenu? _activeNamePatternMenu;
+    private ContextMenu? _activeCodeMenu;
 
     public TaskSettingsPageBuilder(TaskSettingsWindow window, TaskSettings settings, bool isDefault)
     {
@@ -660,9 +660,9 @@ internal sealed class TaskSettingsPageBuilder
         return Page("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench,
             OverrideCard(_toolsOverride, Strings.TaskSettingsWindow_OverrideToolsSettings),
             EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_ScreenColorPicker,
-                Row(Strings.TaskSettingsWindow_Format, Text(() => picker.Format, value => picker.Format = value)),
-                Row(Strings.TaskSettingsWindow_FormatCtrlPlusClick, Text(() => picker.FormatCtrl, value => picker.FormatCtrl = value)),
-                Row(Strings.TaskSettingsWindow_InfoText, Text(() => picker.InfoText, value => picker.InfoText = value)),
+                Row(Strings.TaskSettingsWindow_Format, PixelInfoText(new(picker.Format, value => picker.Format = value))),
+                Row(Strings.TaskSettingsWindow_FormatCtrlPlusClick, PixelInfoText(new(picker.FormatCtrl, value => picker.FormatCtrl = value))),
+                Row(Strings.TaskSettingsWindow_InfoText, PixelInfoText(new(picker.InfoText, value => picker.InfoText = value))),
                 Check(Strings.TaskSettingsWindow_ShowMagnifier, () => picker.ShowMagnifier, value => picker.ShowMagnifier = value)));
     }
 
@@ -1120,40 +1120,56 @@ internal sealed class TaskSettingsPageBuilder
     }
 
     private TextBox NamePatternText(BoundValue<string> value, params CodeMenuEntryFilename[] ignoredEntries)
+        => CodeMenuText(value, true, ignoredEntries);
+
+    private TextBox PixelInfoText(BoundValue<string> value)
+        => CodeMenuText<CodeMenuEntryPixelInfo>(value, false);
+
+    private TextBox CodeMenuText<T>(BoundValue<string> value, bool useCategories, params T[] ignoredEntries) where T : CodeMenuEntry
     {
         TextBox textBox = Text(value);
-        HashSet<CodeMenuEntryFilename> ignored = ignoredEntries.ToHashSet();
-        IEnumerable<CodeMenuEntryFilename> entries = typeof(CodeMenuEntryFilename)
+        HashSet<T> ignored = ignoredEntries.ToHashSet();
+        List<T> entries = typeof(T)
             .GetFields(BindingFlags.Public | BindingFlags.Static)
-            .Where(field => field.FieldType == typeof(CodeMenuEntryFilename))
+            .Where(field => field.FieldType == typeof(T))
             .Select(field => field.GetValue(null))
-            .OfType<CodeMenuEntryFilename>()
-            .Where(entry => !ignored.Contains(entry));
+            .OfType<T>()
+            .Where(entry => !ignored.Contains(entry))
+            .ToList();
 
         List<MenuItem> rootItems = [];
 
-        foreach (IGrouping<string?, CodeMenuEntryFilename> group in entries.GroupBy(entry => entry.Category))
+        MenuItem CreateItem(T entry)
         {
-            List<MenuItem> items = group.Select(entry =>
+            string pattern = entry.ToPrefixString();
+            MenuItem item = new()
             {
-                string pattern = entry.ToPrefixString();
-                MenuItem item = new()
-                {
-                    Header = $"{pattern} - {entry.Description}",
-                    Focusable = false
-                };
-                item.Click += (_, _) => InsertText(textBox, pattern);
-                return item;
-            }).ToList();
+                Header = $"{pattern} - {entry.Description}",
+                Focusable = false
+            };
+            item.Click += (_, _) => InsertText(textBox, pattern);
+            return item;
+        }
 
-            if (string.IsNullOrWhiteSpace(group.Key))
+        if (useCategories)
+        {
+            foreach (IGrouping<string?, T> group in entries.GroupBy(entry => entry.Category))
             {
-                rootItems.AddRange(items);
+                List<MenuItem> items = group.Select(CreateItem).ToList();
+
+                if (string.IsNullOrWhiteSpace(group.Key))
+                {
+                    rootItems.AddRange(items);
+                }
+                else
+                {
+                    rootItems.Add(new MenuItem { Header = group.Key, ItemsSource = items, Focusable = false });
+                }
             }
-            else
-            {
-                rootItems.Add(new MenuItem { Header = group.Key, ItemsSource = items, Focusable = false });
-            }
+        }
+        else
+        {
+            rootItems.AddRange(entries.Select(CreateItem));
         }
 
         ContextMenu menu = new()
@@ -1167,23 +1183,23 @@ internal sealed class TaskSettingsPageBuilder
 
         void OpenMenu()
         {
-            if (_activeNamePatternMenu != null && !ReferenceEquals(_activeNamePatternMenu, menu))
+            if (_activeCodeMenu != null && !ReferenceEquals(_activeCodeMenu, menu))
             {
-                _activeNamePatternMenu.Close();
+                _activeCodeMenu.Close();
             }
 
             if (!menu.IsOpen)
             {
-                _activeNamePatternMenu = menu;
+                _activeCodeMenu = menu;
                 menu.Open(textBox);
             }
         }
 
         menu.Closed += (_, _) =>
         {
-            if (ReferenceEquals(_activeNamePatternMenu, menu))
+            if (ReferenceEquals(_activeCodeMenu, menu))
             {
-                _activeNamePatternMenu = null;
+                _activeCodeMenu = null;
             }
         };
         textBox.GotFocus += (_, _) => OpenMenu();
