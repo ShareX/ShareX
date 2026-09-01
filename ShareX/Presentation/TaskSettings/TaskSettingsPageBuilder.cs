@@ -381,7 +381,8 @@ internal sealed class TaskSettingsPageBuilder
         BindEnabled(detectControls, detectWindows);
 
         BoundValue<bool> customInfo = new(options.UseCustomInfoText, value => options.UseCustomInfoText = value);
-        TextBox customInfoText = Text(() => options.CustomInfoText, value => options.CustomInfoText = value.Replace("\r\n", "$n").Replace("\n", "$n"));
+        TextBox customInfoText = PixelInfoText(new(options.CustomInfoText,
+            value => options.CustomInfoText = value.Replace("\r\n", "$n").Replace("\n", "$n")));
         BindEnabled(customInfoText, customInfo);
 
         BoundValue<bool> magnifier = new(options.ShowMagnifier, value => options.ShowMagnifier = value);
