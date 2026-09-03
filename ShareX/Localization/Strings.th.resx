@@ -151,6 +151,21 @@
   <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
     <value>ลบ รายการที่เลือก</value>
   </data>
+  <data name="MainWindow_DeleteItemRemotely" xml:space="preserve">
+    <value>ลบรายการจากระยะไกล...</value>
+  </data>
+  <data name="MainWindow_DeleteItemRemotelyConfirmation" xml:space="preserve">
+    <value>คุณต้องการลบรายการนี้จากระยะไกลจริงหรือไม่?</value>
+  </data>
+  <data name="MainWindow_RemoteDeletion" xml:space="preserve">
+    <value>การลบจากระยะไกล</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteSucceeded" xml:space="preserve">
+    <value>ลบรายการจากระยะไกลแล้ว</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteFailed" xml:space="preserve">
+    <value>ไม่สามารถลบรายการจากระยะไกลได้</value>
+  </data>
   <data name="MainWindow_DeletionUrl" xml:space="preserve">
     <value>URL สำหรับลบ</value>
   </data>

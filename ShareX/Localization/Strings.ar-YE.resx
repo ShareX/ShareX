@@ -151,6 +151,21 @@
   <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
     <value>حذف العنصر المحدد</value>
   </data>
+  <data name="MainWindow_DeleteItemRemotely" xml:space="preserve">
+    <value>حذف العنصر عن بُعد...</value>
+  </data>
+  <data name="MainWindow_DeleteItemRemotelyConfirmation" xml:space="preserve">
+    <value>هل تريد حقًا حذف هذا العنصر عن بُعد؟</value>
+  </data>
+  <data name="MainWindow_RemoteDeletion" xml:space="preserve">
+    <value>الحذف عن بُعد</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteSucceeded" xml:space="preserve">
+    <value>تم حذف العنصر عن بُعد.</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteFailed" xml:space="preserve">
+    <value>فشل حذف العنصر عن بُعد.</value>
+  </data>
   <data name="MainWindow_DeletionUrl" xml:space="preserve">
     <value>عنوان الحذف</value>
   </data>

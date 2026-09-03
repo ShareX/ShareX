@@ -151,6 +151,21 @@
   <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
     <value>Geselecteerd item verwijderen</value>
   </data>
+  <data name="MainWindow_DeleteItemRemotely" xml:space="preserve">
+    <value>Item extern verwijderen...</value>
+  </data>
+  <data name="MainWindow_DeleteItemRemotelyConfirmation" xml:space="preserve">
+    <value>Wilt u dit item echt extern verwijderen?</value>
+  </data>
+  <data name="MainWindow_RemoteDeletion" xml:space="preserve">
+    <value>Extern verwijderen</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteSucceeded" xml:space="preserve">
+    <value>Het item is extern verwijderd.</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteFailed" xml:space="preserve">
+    <value>Het item kon niet extern worden verwijderd.</value>
+  </data>
   <data name="MainWindow_DeletionUrl" xml:space="preserve">
     <value>Verwijderings-URL</value>
   </data>

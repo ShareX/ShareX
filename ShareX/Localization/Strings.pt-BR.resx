@@ -151,6 +151,21 @@
   <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
     <value>Eliminar item selecionado</value>
   </data>
+  <data name="MainWindow_DeleteItemRemotely" xml:space="preserve">
+    <value>Excluir item remotamente...</value>
+  </data>
+  <data name="MainWindow_DeleteItemRemotelyConfirmation" xml:space="preserve">
+    <value>Deseja realmente excluir este item remotamente?</value>
+  </data>
+  <data name="MainWindow_RemoteDeletion" xml:space="preserve">
+    <value>Exclusão remota</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteSucceeded" xml:space="preserve">
+    <value>O item foi excluído remotamente.</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteFailed" xml:space="preserve">
+    <value>Falha ao excluir o item remotamente.</value>
+  </data>
   <data name="MainWindow_DeletionUrl" xml:space="preserve">
     <value>URL de exclusão</value>
   </data>

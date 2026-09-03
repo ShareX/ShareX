@@ -151,6 +151,21 @@
   <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
     <value>Удалить выбранный элемент</value>
   </data>
+  <data name="MainWindow_DeleteItemRemotely" xml:space="preserve">
+    <value>Удалить элемент с сервера...</value>
+  </data>
+  <data name="MainWindow_DeleteItemRemotelyConfirmation" xml:space="preserve">
+    <value>Вы действительно хотите удалить этот элемент с сервера?</value>
+  </data>
+  <data name="MainWindow_RemoteDeletion" xml:space="preserve">
+    <value>Удаление с сервера</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteSucceeded" xml:space="preserve">
+    <value>Элемент удалён с сервера.</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteFailed" xml:space="preserve">
+    <value>Не удалось удалить элемент с сервера.</value>
+  </data>
   <data name="MainWindow_DeletionUrl" xml:space="preserve">
     <value>Ссылка на удаление</value>
   </data>

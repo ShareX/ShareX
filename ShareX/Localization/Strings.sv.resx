@@ -151,6 +151,21 @@
   <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
     <value>Ta bort valt objekt</value>
   </data>
+  <data name="MainWindow_DeleteItemRemotely" xml:space="preserve">
+    <value>Ta bort objektet på distans...</value>
+  </data>
+  <data name="MainWindow_DeleteItemRemotelyConfirmation" xml:space="preserve">
+    <value>Vill du verkligen ta bort det här objektet på distans?</value>
+  </data>
+  <data name="MainWindow_RemoteDeletion" xml:space="preserve">
+    <value>Fjärrborttagning</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteSucceeded" xml:space="preserve">
+    <value>Objektet togs bort på distans.</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteFailed" xml:space="preserve">
+    <value>Det gick inte att ta bort objektet på distans.</value>
+  </data>
   <data name="MainWindow_DeletionUrl" xml:space="preserve">
     <value>Raderings-URL</value>
   </data>

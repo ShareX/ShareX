@@ -881,6 +881,51 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("MainWindow_DeleteSelectedItem", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Delete item remotely....
+        /// </summary>
+        public static string MainWindow_DeleteItemRemotely {
+            get {
+                return ResourceManager.GetString("MainWindow_DeleteItemRemotely", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to delete this item remotely?.
+        /// </summary>
+        public static string MainWindow_DeleteItemRemotelyConfirmation {
+            get {
+                return ResourceManager.GetString("MainWindow_DeleteItemRemotelyConfirmation", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Remote deletion.
+        /// </summary>
+        public static string MainWindow_RemoteDeletion {
+            get {
+                return ResourceManager.GetString("MainWindow_RemoteDeletion", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to The item was deleted remotely..
+        /// </summary>
+        public static string MainWindow_RemoteDeleteSucceeded {
+            get {
+                return ResourceManager.GetString("MainWindow_RemoteDeleteSucceeded", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to delete the item remotely..
+        /// </summary>
+        public static string MainWindow_RemoteDeleteFailed {
+            get {
+                return ResourceManager.GetString("MainWindow_RemoteDeleteFailed", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Deletion URL.

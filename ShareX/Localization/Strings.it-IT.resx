@@ -151,6 +151,21 @@
   <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
     <value>Elimina elemento selezionato</value>
   </data>
+  <data name="MainWindow_DeleteItemRemotely" xml:space="preserve">
+    <value>Elimina elemento da remoto...</value>
+  </data>
+  <data name="MainWindow_DeleteItemRemotelyConfirmation" xml:space="preserve">
+    <value>Vuoi davvero eliminare questo elemento da remoto?</value>
+  </data>
+  <data name="MainWindow_RemoteDeletion" xml:space="preserve">
+    <value>Eliminazione remota</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteSucceeded" xml:space="preserve">
+    <value>L’elemento è stato eliminato da remoto.</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteFailed" xml:space="preserve">
+    <value>Impossibile eliminare l’elemento da remoto.</value>
+  </data>
   <data name="MainWindow_DeletionUrl" xml:space="preserve">
     <value>URL eliminazione</value>
   </data>

@@ -151,6 +151,21 @@
   <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
     <value>Odstranit vybranou položku</value>
   </data>
+  <data name="MainWindow_DeleteItemRemotely" xml:space="preserve">
+    <value>Odstranit položku vzdáleně...</value>
+  </data>
+  <data name="MainWindow_DeleteItemRemotelyConfirmation" xml:space="preserve">
+    <value>Opravdu chcete tuto položku vzdáleně odstranit?</value>
+  </data>
+  <data name="MainWindow_RemoteDeletion" xml:space="preserve">
+    <value>Vzdálené odstranění</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteSucceeded" xml:space="preserve">
+    <value>Položka byla vzdáleně odstraněna.</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteFailed" xml:space="preserve">
+    <value>Položku se nepodařilo vzdáleně odstranit.</value>
+  </data>
   <data name="MainWindow_DeletionUrl" xml:space="preserve">
     <value>Adresa URL pro odstranění</value>
   </data>

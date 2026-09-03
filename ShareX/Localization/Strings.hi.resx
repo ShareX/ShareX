@@ -151,6 +151,21 @@
   <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
     <value>चुना गया आइटम हटाएँ</value>
   </data>
+  <data name="MainWindow_DeleteItemRemotely" xml:space="preserve">
+    <value>आइटम को रिमोट रूप से हटाएं...</value>
+  </data>
+  <data name="MainWindow_DeleteItemRemotelyConfirmation" xml:space="preserve">
+    <value>क्या आप वाकई इस आइटम को रिमोट रूप से हटाना चाहते हैं?</value>
+  </data>
+  <data name="MainWindow_RemoteDeletion" xml:space="preserve">
+    <value>रिमोट विलोपन</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteSucceeded" xml:space="preserve">
+    <value>आइटम को रिमोट रूप से हटा दिया गया.</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteFailed" xml:space="preserve">
+    <value>आइटम को रिमोट रूप से हटाने में विफल.</value>
+  </data>
   <data name="MainWindow_DeletionUrl" xml:space="preserve">
     <value>हटाने का URL</value>
   </data>

@@ -151,6 +151,21 @@
   <data name="MainWindow_DeleteSelectedItem" xml:space="preserve">
     <value>선택한 항목 삭제</value>
   </data>
+  <data name="MainWindow_DeleteItemRemotely" xml:space="preserve">
+    <value>항목을 원격으로 삭제...</value>
+  </data>
+  <data name="MainWindow_DeleteItemRemotelyConfirmation" xml:space="preserve">
+    <value>이 항목을 원격으로 삭제하시겠습니까?</value>
+  </data>
+  <data name="MainWindow_RemoteDeletion" xml:space="preserve">
+    <value>원격 삭제</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteSucceeded" xml:space="preserve">
+    <value>항목을 원격으로 삭제했습니다.</value>
+  </data>
+  <data name="MainWindow_RemoteDeleteFailed" xml:space="preserve">
+    <value>항목을 원격으로 삭제하지 못했습니다.</value>
+  </data>
   <data name="MainWindow_DeletionUrl" xml:space="preserve">
     <value>삭제 URL</value>
   </data>

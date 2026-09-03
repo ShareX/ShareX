@@ -26,6 +26,7 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.FileUploaders;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -1089,6 +1090,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         UploadInfoStatus[] statuses = _uploadInfoManager.SelectedItems ?? Array.Empty<UploadInfoStatus>();
         bool hasSelection = selected != null;
         bool isWorking = selectedTasks.Any(x => x.IsWorking);
+        bool canDeleteRemotely = selectedModels.Length == 1 && !isWorking && CanDeleteAmazonS3Object(selected);
 
         List<MainMenuEntry> entries = new()
         {
@@ -1120,6 +1122,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Item(Strings.MainWindow_DeleteSelectedFile, LucideIcons.file_x, DeleteSelectedFiles,
                 hasSelection && !isWorking && selected!.IsFileExist,
                 new KeyGesture(Key.Delete, KeyModifiers.Shift)),
+            Item(Strings.MainWindow_DeleteItemRemotely, LucideIcons.cloud_off, DeleteSelectedItemRemotelyAsync,
+                canDeleteRemotely),
             Submenu(Strings.MainWindow_ShortenSelectedUrl, LucideIcons.link_2, BuildUrlShortenerMenu,
                 !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsURLExist),
             Submenu(Strings.MainWindow_ShareSelectedUrl, LucideIcons.share_2, BuildUrlSharingMenu,
@@ -1257,6 +1261,58 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             _uploadInfoManager.DeleteFiles();
             RemoveSelectedTasks();
         }
+    }
+
+    private static bool CanDeleteAmazonS3Object(UploadInfoStatus? selected)
+    {
+        if (selected?.Info is not TaskInfo info ||
+            string.IsNullOrEmpty(info.Result?.URL) ||
+            !info.IsUploadJob ||
+            info.UploadDestination != EDataType.File ||
+            info.TaskSettings.GetFileDestinationByDataType(info.DataType) != FileDestination.AmazonS3)
+        {
+            return false;
+        }
+
+        return Program.UploadersConfig != null &&
+            UploadersConfigValidator.Validate(FileDestination.AmazonS3, Program.UploadersConfig);
+    }
+
+    private async Task DeleteSelectedItemRemotelyAsync()
+    {
+        UploadInfoStatus? selected = _uploadInfoManager.SelectedItem;
+
+        if (!CanDeleteAmazonS3Object(selected))
+        {
+            return;
+        }
+
+        if (MessageBox.Show(Strings.MainWindow_DeleteItemRemotelyConfirmation,
+            "ShareX - " + Strings.MainWindow_RemoteDeletion,
+            MessageBoxButtons.YesNo) != MessageBoxResult.Yes)
+        {
+            return;
+        }
+
+        bool isSuccess = false;
+
+        try
+        {
+            AmazonS3 uploader = new AmazonS3(Program.UploadersConfig.AmazonS3Settings);
+
+            if (uploader.TryGetObjectKey(selected!.Info.Result.URL, out string objectKey))
+            {
+                isSuccess = await uploader.DeleteObjectAsync(objectKey);
+            }
+        }
+        catch (Exception ex)
+        {
+            DebugHelper.WriteException(ex);
+        }
+
+        TaskHelpers.ShowNotificationTip(
+            isSuccess ? Strings.MainWindow_RemoteDeleteSucceeded : Strings.MainWindow_RemoteDeleteFailed,
+            "ShareX - " + Strings.MainWindow_RemoteDeletion);
     }
 
     private void ClearTasks()
