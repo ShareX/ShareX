@@ -173,6 +173,19 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
+        public async Task<bool> DeleteObjectAsync(string objectKey, CancellationToken cancellationToken = default)
+        {
+            ArgumentException.ThrowIfNullOrEmpty(objectKey);
+
+            AmazonS3RequestData requestData = CreateRequestData(objectKey);
+
+            using MemoryStream emptyStream = new MemoryStream(Array.Empty<byte>(), false);
+            await SendAmazonS3RequestAsync(HttpMethod.DELETE, requestData, "", emptyStream, 0, 0, null, null,
+                cancellationToken).ConfigureAwait(false);
+
+            return LastResponseInfo != null && LastResponseInfo.IsSuccess;
+        }
+
         private async Task<UploadResult> UploadSingleRequestAsync(Stream stream, string contentType, string resultURL,
             AmazonS3RequestData requestData, CancellationToken cancellationToken)
         {
