@@ -33,7 +33,7 @@
                 <SelectableTextBlock x:Name="MessageText"
                                      Grid.Column="1"
                                      FontFamily="{DynamicResource ShareX.FontFamily.Default}"
-                                     FontSize="13"
+                                     FontSize="14"
                                      Foreground="{DynamicResource ShareX.Brush.Text}"
                                      TextWrapping="Wrap"
                                      VerticalAlignment="Center"/>
