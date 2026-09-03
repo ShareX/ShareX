@@ -315,7 +315,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 : new NameValueCollection();
 
             headers["Host"] = requestData.Host;
-            headers["Content-Length"] = length.ToString(CultureInfo.InvariantCulture);
 
             if (!string.IsNullOrEmpty(contentType))
             {
