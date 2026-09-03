@@ -36,7 +36,7 @@ public enum SmartEraserFillMode
 
 /// <summary>
 /// Smart Eraser annotation - hides content by stretching a matching pair of opposing edges,
-/// or by using the selection's top-left pixel when neither edge pair matches.
+/// or by using the color sampled when drawing started when neither edge pair matches.
 /// </summary>
 public partial class SmartEraserAnnotation : RectangleAnnotation
 {
@@ -62,7 +62,7 @@ public partial class SmartEraserAnnotation : RectangleAnnotation
     /// <summary>
     /// Chooses the best fill for the current bounds from the source image.
     /// Matching left/right columns are preferred, followed by matching top/bottom
-    /// rows and finally the top-left pixel color.
+    /// rows and finally the annotation's existing fill color.
     /// </summary>
     public void ConfigureFill(SKBitmap source)
     {
@@ -79,10 +79,6 @@ public partial class SmartEraserAnnotation : RectangleAnnotation
         int right = Math.Clamp(Math.Max(left, (int)Math.Ceiling(bounds.Right) - 1), 0, source.Width - 1);
         int bottom = Math.Clamp(Math.Max(top, (int)Math.Ceiling(bounds.Bottom) - 1), 0, source.Height - 1);
 
-        SKColor fallbackColor = source.GetPixel(left, top);
-        string fallbackColorHex = ToColorHex(fallbackColor);
-        StrokeColor = fallbackColorHex;
-        FillColor = fallbackColorHex;
         FillMode = SmartEraserFillMode.SolidColor;
         EdgePixels = null;
 
@@ -139,10 +135,6 @@ public partial class SmartEraserAnnotation : RectangleAnnotation
         ((uint)color.Red << 16) |
         ((uint)color.Green << 8) |
         color.Blue;
-
-    private static string ToColorHex(SKColor color) => color.Alpha == byte.MaxValue
-        ? $"#{color.Red:X2}{color.Green:X2}{color.Blue:X2}"
-        : $"#{color.Alpha:X2}{color.Red:X2}{color.Green:X2}{color.Blue:X2}";
 
     public override Annotation Clone()
     {

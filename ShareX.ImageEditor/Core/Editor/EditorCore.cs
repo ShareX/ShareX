@@ -794,6 +794,12 @@ public class EditorCore : IDisposable
             // Handle special tools
             if (_currentAnnotation is SmartEraserAnnotation smartEraser)
             {
+                var sampledColor = SampleCanvasColor(point);
+                if (!string.IsNullOrEmpty(sampledColor))
+                {
+                    smartEraser.StrokeColor = sampledColor;
+                    smartEraser.FillColor = sampledColor;
+                }
                 smartEraser.StrokeWidth = 0;
                 if (SourceImage != null)
                 {

@@ -501,8 +501,11 @@ public class EditorInputController
                 // Legacy said: "Keep _isDrawing true so it goes through OnCanvasPointerReleased for auto-selection"
                 break;
             case EditorTool.SmartEraser:
+                var sampledColor = _view.EditorCore.SampleCanvasColor(ToSKPoint(_startPoint)) ?? "#80FF0000";
                 var smartEraser = new SmartEraserAnnotation
                 {
+                    StrokeColor = sampledColor,
+                    FillColor = sampledColor,
                     StrokeWidth = 0,
                     StartPoint = ToSKPoint(_startPoint),
                     EndPoint = ToSKPoint(_startPoint)
