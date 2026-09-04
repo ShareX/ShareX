@@ -54,7 +54,12 @@ public sealed class ShareXClickerControl : IDisposable
     private readonly List<LogoParticle> _particles = [];
     private readonly List<StoreRow> _buildingRows = [];
     private readonly List<StoreRow> _upgradeRows = [];
+    private readonly List<Button> _buyModeButtons = [];
+    private readonly StackPanel _statsPanel;
     private readonly TextBlock _counter;
+    private readonly TextBlock _rateText;
+    private readonly TextBlock _goalText;
+    private readonly ProgressBar _goalProgress;
     private long _lastTick;
     private double _pressUntil;
     private double _uiRefreshElapsed;
@@ -64,7 +69,10 @@ public sealed class ShareXClickerControl : IDisposable
     private bool _disposed;
     private bool _activated;
     private bool _storeVisible;
+    private bool _empireCelebrated;
+    private BuyMode _buyMode = BuyMode.One;
     private string _displayedBuildingIds = "";
+    private string _displayedUpgradeIds = "";
 
     public ShareXClickerControl(ShareXClickerState state, Image logoImage, Canvas overlay, Canvas particleOverlay, Control normalContent,
         ContentControl storeHost, IBrush? panelBackground, IReadOnlyList<Control> aboutTextControls)
@@ -81,26 +89,58 @@ public sealed class ShareXClickerControl : IDisposable
 
         _counter = new TextBlock
         {
-            Width = 230,
-            FontSize = 22,
-            LineHeight = 34,
+            FontSize = 24,
+            FontWeight = FontWeight.Bold,
+            Foreground = _accentBrush,
             TextAlignment = TextAlignment.Center,
-            TextWrapping = TextWrapping.Wrap,
-            IsVisible = false
+            TextWrapping = TextWrapping.Wrap
         };
-        Canvas.SetLeft(_counter, 5);
-        Canvas.SetTop(_counter, 278);
-        _overlay.Children.Add(_counter);
+        _rateText = new TextBlock
+        {
+            FontSize = 12,
+            Opacity = 0.75,
+            TextAlignment = TextAlignment.Center
+        };
+        _goalText = new TextBlock
+        {
+            FontSize = 11,
+            Opacity = 0.75,
+            TextAlignment = TextAlignment.Center,
+            TextWrapping = TextWrapping.Wrap
+        };
+        _goalProgress = new ProgressBar
+        {
+            Height = 4,
+            Minimum = 0,
+            Maximum = 1
+        };
+        _statsPanel = new StackPanel
+        {
+            Width = 230,
+            Spacing = 4,
+            IsVisible = false,
+            Children =
+            {
+                _counter,
+                _rateText,
+                _goalText,
+                _goalProgress
+            }
+        };
+        Canvas.SetLeft(_statsPanel, 5);
+        Canvas.SetTop(_statsPanel, 225);
+        _overlay.Children.Add(_statsPanel);
 
         _logoImage.Cursor = new Cursor(StandardCursorType.Hand);
+        _logoImage.Focusable = true;
         _logoImage.RenderTransformOrigin = RelativePoint.Center;
         _logoImage.PointerPressed += OnLogoPointerPressed;
+        _logoImage.KeyDown += OnLogoKeyDown;
 
         RefreshUi();
         _lastTick = Stopwatch.GetTimestamp();
         _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(33) };
         _timer.Tick += OnTimerTick;
-        _timer.Start();
     }
 
     private void OnLogoPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -112,15 +152,38 @@ public sealed class ShareXClickerControl : IDisposable
 
         Point position = e.GetPosition(_overlay);
         Point particleOrigin = e.GetPosition(_particleOverlay);
+        ClickLogo(position, particleOrigin);
+        _logoImage.Focus();
+        e.Handled = true;
+    }
+
+    private void OnLogoKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (_disposed || (e.Key != Key.Enter && e.Key != Key.Space))
+        {
+            return;
+        }
+
+        Point logoCenter = new(_logoImage.Bounds.Width / 2, _logoImage.Bounds.Height / 2);
+        Point overlayPosition = _logoImage.TranslatePoint(logoCenter, _overlay) ?? new Point(120, 130);
+        Point particleOrigin = _logoImage.TranslatePoint(logoCenter, _particleOverlay) ?? new Point(120, 130);
+        ClickLogo(overlayPosition, particleOrigin);
+        e.Handled = true;
+    }
+
+    private void ClickLogo(Point position, Point particleOrigin)
+    {
         double clickGain = _game.Click();
         Helpers.PlaySound(Resources.ActionCompletedSound);
         if (!_activated)
         {
             _activated = true;
             _passiveVisualCooldown = PassiveAnimationIntervalSeconds;
+            _lastTick = Stopwatch.GetTimestamp();
+            _timer.Start();
         }
         HideAboutText();
-        _counter.IsVisible = true;
+        _statsPanel.IsVisible = true;
         _pressUntil = ElapsedSeconds() + 0.12;
         AddFloatingText(position, clickGain);
         AddParticles((int)Math.Ceiling(clickGain), particleOrigin);
@@ -131,7 +194,6 @@ public sealed class ShareXClickerControl : IDisposable
         }
 
         RefreshUi();
-        e.Handled = true;
     }
 
     private void OnTimerTick(object? sender, EventArgs e)
@@ -177,34 +239,44 @@ public sealed class ShareXClickerControl : IDisposable
     {
         _buildingRows.Clear();
         _upgradeRows.Clear();
+        _buyModeButtons.Clear();
 
-        StackPanel panel = new() { Spacing = 8, Margin = new Thickness(4, 0, 4, 0) };
-        panel.Children.Add(new StackPanel
+        StackPanel panel = new() { Spacing = 10, Margin = new Thickness(4, 0, 4, 0) };
+        StackPanel buyModeSelector = CreateBuyModeSelector();
+        Grid.SetColumn(buyModeSelector, 1);
+        panel.Children.Add(new Grid
         {
-            HorizontalAlignment = HorizontalAlignment.Center,
-            Spacing = 2,
+            ColumnDefinitions = new ColumnDefinitions("*,Auto"),
             Children =
             {
                 new StackPanel
                 {
-                    Orientation = Orientation.Horizontal,
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    Spacing = 7,
-                    Children = { Icon(LucideIcons.landmark, 18), new TextBlock { Text = "ShareX Clicker", FontSize = 18, Foreground = _accentBrush } }
+                    Spacing = 2,
+                    Children =
+                    {
+                        new StackPanel
+                        {
+                            Orientation = Orientation.Horizontal,
+                            Spacing = 7,
+                            Children = { Icon(LucideIcons.landmark, 18), new TextBlock { Text = "ShareX Clicker", FontSize = 18, Foreground = _accentBrush } }
+                        },
+                        new TextBlock { Text = "Build a tiny screenshot empire.", FontSize = 12, Opacity = 0.7 }
+                    }
                 },
-                new TextBlock { Text = "Build a tiny screenshot empire.", FontSize = 12, Opacity = 0.7, TextAlignment = TextAlignment.Center }
+                buyModeSelector
             }
         });
-        panel.Children.Add(new TextBlock { Text = "Upgrades", FontSize = 17, Margin = new Thickness(0, 5, 0, 0) });
 
-        foreach (ShareXClickerUpgrade upgrade in ShareXClickerGame.Upgrades)
+        panel.Children.Add(CreateSectionHeading("Upgrades", LucideIcons.sparkles));
+
+        foreach (ShareXClickerUpgrade upgrade in UpgradesToDisplay())
         {
             StoreRow row = CreateUpgradeRow(upgrade);
             _upgradeRows.Add(row);
             panel.Children.Add(row.Container);
         }
 
-        panel.Children.Add(new TextBlock { Text = "Generators", FontSize = 17, Margin = new Thickness(0, 5, 0, 0) });
+        panel.Children.Add(CreateSectionHeading("Generators", LucideIcons.factory));
         foreach (ShareXClickerBuilding building in BuildingsToDisplay())
         {
             StoreRow row = CreateBuildingRow(building);
@@ -223,6 +295,8 @@ public sealed class ShareXClickerControl : IDisposable
             }
         };
         _displayedBuildingIds = string.Join(",", _buildingRows.Select(x => x.Id));
+        _displayedUpgradeIds = string.Join(",", _upgradeRows.Select(x => x.Id));
+        UpdateBuyModeButtons();
     }
 
     private IEnumerable<ShareXClickerBuilding> BuildingsToDisplay()
@@ -231,15 +305,88 @@ public sealed class ShareXClickerControl : IDisposable
             .Concat(ShareXClickerGame.Buildings.Where(x => !_game.IsUnlocked(x)).Take(2));
     }
 
+    private IEnumerable<ShareXClickerUpgrade> UpgradesToDisplay()
+    {
+        return ShareXClickerGame.Upgrades.Where(_game.IsUnlocked)
+            .Concat(ShareXClickerGame.Upgrades.Where(x => !_game.IsUnlocked(x)).Take(1));
+    }
+
+    private StackPanel CreateBuyModeSelector()
+    {
+        StackPanel buttons = new() { Orientation = Orientation.Horizontal, Spacing = 4 };
+        foreach ((BuyMode mode, string label) in new[] { (BuyMode.One, "x1"), (BuyMode.Ten, "x10"), (BuyMode.Max, "Max") })
+        {
+            Button button = new()
+            {
+                Content = label,
+                Width = mode == BuyMode.Max ? 48 : 40,
+                Height = 30,
+                Padding = new Thickness(4),
+                Tag = mode
+            };
+            ToolTip.SetTip(button, $"Buy {label}");
+            button.Click += (_, _) =>
+            {
+                _buyMode = mode;
+                UpdateBuyModeButtons();
+                RefreshUi();
+            };
+            _buyModeButtons.Add(button);
+            buttons.Children.Add(button);
+        }
+
+        return new StackPanel
+        {
+            Spacing = 3,
+            HorizontalAlignment = HorizontalAlignment.Right,
+            Children =
+            {
+                new TextBlock { Text = "Generator amount", FontSize = 11, Opacity = 0.7, HorizontalAlignment = HorizontalAlignment.Right },
+                buttons
+            }
+        };
+    }
+
+    private StackPanel CreateSectionHeading(string text, string glyph)
+    {
+        return new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            Spacing = 7,
+            Margin = new Thickness(0, 6, 0, 0),
+            Children =
+            {
+                Icon(glyph, 16),
+                new TextBlock { Text = text, FontSize = 16 }
+            }
+        };
+    }
+
+    private void UpdateBuyModeButtons()
+    {
+        foreach (Button button in _buyModeButtons)
+        {
+            button.Classes.Set("active", button.Tag is BuyMode mode && mode == _buyMode);
+        }
+    }
+
     private StoreRow CreateBuildingRow(ShareXClickerBuilding building)
     {
-        TextBlock title = new() { FontSize = 16, TextWrapping = TextWrapping.NoWrap, VerticalAlignment = VerticalAlignment.Center };
+        TextBlock title = new() { FontSize = 15, TextWrapping = TextWrapping.Wrap, VerticalAlignment = VerticalAlignment.Center };
         TextBlock details = new() { FontSize = 13, Opacity = 0.75, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Right, HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Center };
-        Button buyButton = new() { Width = 88, VerticalAlignment = VerticalAlignment.Center };
+        Button buyButton = new() { MinWidth = 94, VerticalAlignment = VerticalAlignment.Center };
         buyButton.Click += (_, _) =>
         {
-            if (_game.BuyBuilding(building))
+            int quantity = GetBuyQuantity(building);
+            int previousOwned = _game.GetOwned(building);
+            if (_game.BuyBuilding(building, quantity))
             {
+                int currentOwned = _game.GetOwned(building);
+                int? reachedMilestone = ShareXClickerGame.BuildingMilestones.LastOrDefault(x => previousOwned < x && currentOwned >= x);
+                string message = reachedMilestone > 0
+                    ? $"{building.Name} {_game.GetBuildingMilestoneMultiplier(building)}x boost!"
+                    : $"Bought {quantity} {building.Name}";
+                CelebratePurchase(buyButton, message, reachedMilestone > 0 ? 24 : 8);
                 RefreshUi();
             }
         };
@@ -252,13 +399,14 @@ public sealed class ShareXClickerControl : IDisposable
 
     private StoreRow CreateUpgradeRow(ShareXClickerUpgrade upgrade)
     {
-        TextBlock title = new() { FontSize = 16, TextWrapping = TextWrapping.NoWrap, VerticalAlignment = VerticalAlignment.Center };
+        TextBlock title = new() { FontSize = 15, TextWrapping = TextWrapping.Wrap, VerticalAlignment = VerticalAlignment.Center };
         TextBlock details = new() { FontSize = 13, Opacity = 0.75, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Right, HorizontalAlignment = HorizontalAlignment.Right, VerticalAlignment = VerticalAlignment.Center };
-        Button buyButton = new() { Width = 88, VerticalAlignment = VerticalAlignment.Center };
+        Button buyButton = new() { MinWidth = 94, VerticalAlignment = VerticalAlignment.Center };
         buyButton.Click += (_, _) =>
         {
             if (_game.BuyUpgrade(upgrade))
             {
+                CelebratePurchase(buyButton, upgrade.Name + " unlocked!", 20);
                 RefreshUi();
             }
         };
@@ -295,12 +443,12 @@ public sealed class ShareXClickerControl : IDisposable
 
         return new Border
         {
-            Padding = new Thickness(14, 6, 8, 6),
-            CornerRadius = new CornerRadius(4),
+            Padding = new Thickness(12, 7, 8, 7),
+            CornerRadius = new CornerRadius(6),
             Background = background,
             Child = new Grid
             {
-                ColumnDefinitions = new ColumnDefinitions("26,210,*,Auto"),
+                ColumnDefinitions = new ColumnDefinitions("26,1.4*,1.2*,Auto"),
                 Children =
                 {
                     icon,
@@ -314,14 +462,18 @@ public sealed class ShareXClickerControl : IDisposable
 
     private void RefreshUi()
     {
-        _counter.Text = $"{ShareXClickerNumberFormatter.Format(_game.State.Logos)} logos\n+{ShareXClickerNumberFormatter.Format(_game.LogosPerSecond)} / sec";
+        _counter.Text = $"{ShareXClickerNumberFormatter.Format(_game.State.Logos)} logos";
+        _rateText.Text = $"+{ShareXClickerNumberFormatter.Format(_game.LogosPerSecond)}/sec  •  {ShareXClickerNumberFormatter.Format(_game.ClickValue)} per click";
+        ToolTip.SetTip(_statsPanel, $"{ShareXClickerNumberFormatter.Format(_game.State.LifetimeLogos)} lifetime logos • {_game.State.ManualClicks:N0} clicks • {_game.TotalBuildings:N0} generators");
+        UpdateGoal();
         if (!_storeVisible)
         {
             return;
         }
 
         string buildingIds = string.Join(",", BuildingsToDisplay().Select(x => x.Id));
-        if (buildingIds != _displayedBuildingIds)
+        string upgradeIds = string.Join(",", UpgradesToDisplay().Select(x => x.Id));
+        if (buildingIds != _displayedBuildingIds || upgradeIds != _displayedUpgradeIds)
         {
             RebuildStoreRows();
         }
@@ -329,12 +481,15 @@ public sealed class ShareXClickerControl : IDisposable
         foreach (StoreRow row in _upgradeRows)
         {
             ShareXClickerUpgrade upgrade = row.Upgrade!;
+            bool unlocked = _game.IsUnlocked(upgrade);
             bool purchased = _game.IsPurchased(upgrade);
+            row.Icon.Text = unlocked ? upgrade.Icon : LucideIcons.@lock;
             row.Title.Text = upgrade.Name;
-            row.Details.Text = upgrade.Effect;
+            row.Details.Text = unlocked ? upgrade.Effect : $"Unlock at {ShareXClickerNumberFormatter.Format(upgrade.UnlockAt)} logos";
             row.Price.Text = ShareXClickerNumberFormatter.Format(upgrade.Cost);
-            row.Button.Content = purchased ? "Owned" : row.PriceContent;
+            row.Button.Content = purchased ? "Owned" : unlocked ? row.PriceContent : "Locked";
             row.Button.IsEnabled = _game.CanBuy(upgrade);
+            row.Container.Opacity = unlocked ? 1 : 0.55;
         }
 
         foreach (StoreRow row in _buildingRows)
@@ -343,29 +498,120 @@ public sealed class ShareXClickerControl : IDisposable
             bool unlocked = _game.IsUnlocked(building);
             row.Icon.Text = unlocked ? building.Icon : LucideIcons.@lock;
             row.Title.Text = $"{building.Name} ({_game.GetOwned(building)})";
-            row.Details.Text = unlocked
-                ? $"+{ShareXClickerNumberFormatter.Format(building.ProductionPerSecond)}/sec each"
-                : $"Unlock at {ShareXClickerNumberFormatter.Format(building.UnlockAt)} logos";
-            row.Price.Text = ShareXClickerNumberFormatter.Format(_game.GetBuildingCost(building));
+            row.Details.Text = GetBuildingDetails(building, unlocked);
+            int quantity = GetBuyQuantity(building);
+            int displayedQuantity = Math.Max(1, quantity);
+            double cost = _game.GetBuildingCost(building, displayedQuantity);
+            row.Price.Text = displayedQuantity > 1
+                ? $"x{displayedQuantity}  {ShareXClickerNumberFormatter.Format(cost)}"
+                : ShareXClickerNumberFormatter.Format(cost);
             row.Button.Content = unlocked ? row.PriceContent : "Locked";
-            row.Button.IsEnabled = _game.CanBuy(building);
+            row.Button.IsEnabled = quantity > 0 && _game.CanBuy(building, quantity);
             row.Container.Opacity = unlocked ? 1 : 0.55;
         }
     }
 
+    private int GetBuyQuantity(ShareXClickerBuilding building) => _buyMode switch
+    {
+        BuyMode.Ten => 10,
+        BuyMode.Max => _game.GetMaxAffordableQuantity(building),
+        _ => 1
+    };
+
+    private string GetBuildingDetails(ShareXClickerBuilding building, bool unlocked)
+    {
+        if (!unlocked)
+        {
+            return $"Unlock at {ShareXClickerNumberFormatter.Format(building.UnlockAt)} logos";
+        }
+
+        double each = _game.GetBuildingProductionPerSecond(building);
+        int? nextMilestone = _game.GetNextBuildingMilestone(building);
+        return nextMilestone.HasValue
+            ? $"+{ShareXClickerNumberFormatter.Format(each)}/sec each • 2x at {nextMilestone}"
+            : $"+{ShareXClickerNumberFormatter.Format(each)}/sec each • max boost";
+    }
+
+    private void UpdateGoal()
+    {
+        double lifetime = _game.State.LifetimeLogos;
+        if (lifetime < ShareXClickerGame.StoreUnlockAt)
+        {
+            UpdateGoalProgress("Store", ShareXClickerGame.StoreUnlockAt, 0);
+            return;
+        }
+
+        (string name, double target)? nextGoal = ShareXClickerGame.Buildings
+            .Where(x => !_game.IsUnlocked(x))
+            .Select(x => (x.Name, x.UnlockAt))
+            .Concat(ShareXClickerGame.Upgrades.Where(x => !_game.IsUnlocked(x)).Select(x => (x.Name, x.UnlockAt)))
+            .OrderBy(x => x.UnlockAt)
+            .FirstOrDefault();
+
+        if (nextGoal.HasValue && nextGoal.Value.target > 0)
+        {
+            double previousTarget = ShareXClickerGame.Buildings.Where(_game.IsUnlocked).Select(x => x.UnlockAt)
+                .Concat(ShareXClickerGame.Upgrades.Where(_game.IsUnlocked).Select(x => x.UnlockAt))
+                .DefaultIfEmpty(ShareXClickerGame.StoreUnlockAt)
+                .Max();
+            UpdateGoalProgress(nextGoal.Value.name, nextGoal.Value.target, previousTarget);
+            return;
+        }
+
+        if (lifetime < ShareXClickerGame.EmpireGoalAt)
+        {
+            UpdateGoalProgress("Complete the empire", ShareXClickerGame.EmpireGoalAt, 1_000_000);
+            return;
+        }
+
+        _goalText.Text = "Screenshot empire complete!";
+        _goalProgress.Value = 1;
+        if (_activated && !_empireCelebrated)
+        {
+            _empireCelebrated = true;
+            Point center = new(_particleOverlay.Bounds.Width / 2, _particleOverlay.Bounds.Height / 2);
+            AddParticles(80, center);
+            AddFloatingText(_particleOverlay, center, "Empire complete!", 24, 1.5);
+        }
+    }
+
+    private void UpdateGoalProgress(string name, double target, double previousTarget)
+    {
+        double remaining = Math.Max(0, target - _game.State.LifetimeLogos);
+        _goalText.Text = $"Next: {name} • {ShareXClickerNumberFormatter.Format(remaining)} to go";
+        _goalProgress.Value = Math.Clamp((_game.State.LifetimeLogos - previousTarget) / Math.Max(1, target - previousTarget), 0, 1);
+    }
+
     private void AddFloatingText(Point position, double amount)
+    {
+        AddFloatingText(_overlay, position, "+" + ShareXClickerNumberFormatter.Format(amount), 24);
+    }
+
+    private void AddFloatingText(Canvas canvas, Point position, string content, double fontSize, double lifetime = 0.65)
     {
         TextBlock text = new()
         {
-            Text = "+" + ShareXClickerNumberFormatter.Format(amount),
-            FontSize = 24,
-            IsHitTestVisible = false
+            Text = content,
+            FontSize = fontSize,
+            Foreground = _accentBrush,
+            IsHitTestVisible = false,
+            TextAlignment = TextAlignment.Center
         };
-        double left = Math.Clamp(position.X - 12 + _random.Next(-10, 11), 0, 205);
+        double estimatedWidth = Math.Max(40, content.Length * fontSize * 0.55);
+        double left = Math.Clamp(position.X - estimatedWidth / 2 + _random.Next(-8, 9), 0, Math.Max(0, canvas.Bounds.Width - estimatedWidth));
         Canvas.SetLeft(text, left);
-        Canvas.SetTop(text, Math.Clamp(position.Y - 16, 50, 260));
-        _overlay.Children.Add(text);
-        _floatingTexts.Add(new FloatingText(text, Canvas.GetTop(text)));
+        Canvas.SetTop(text, Math.Clamp(position.Y - 16, 8, Math.Max(8, canvas.Bounds.Height - 40)));
+        canvas.Children.Add(text);
+        _floatingTexts.Add(new FloatingText(text, canvas, Canvas.GetTop(text), lifetime));
+    }
+
+    private void CelebratePurchase(Control control, string message, int particleCount)
+    {
+        Point localCenter = new(control.Bounds.Width / 2, control.Bounds.Height / 2);
+        Point origin = control.TranslatePoint(localCenter, _particleOverlay) ?? new Point(_particleOverlay.Bounds.Width / 2, 80);
+        AddParticles(particleCount, origin);
+        AddFloatingText(_particleOverlay, origin, message, 17, 1.1);
+        Helpers.PlaySound(Resources.ActionCompletedSound);
     }
 
     private void AddParticles(int count, Point? origin = null)
@@ -453,11 +699,11 @@ public sealed class ShareXClickerControl : IDisposable
         {
             FloatingText floating = _floatingTexts[i];
             floating.Age += elapsedSeconds;
-            floating.Control.Opacity = Math.Max(0, 1 - floating.Age / 0.65);
+            floating.Control.Opacity = Math.Max(0, 1 - floating.Age / floating.Lifetime);
             Canvas.SetTop(floating.Control, floating.StartTop - floating.Age * 34);
-            if (floating.Age >= 0.65)
+            if (floating.Age >= floating.Lifetime)
             {
-                _overlay.Children.Remove(floating.Control);
+                floating.Canvas.Children.Remove(floating.Control);
                 _floatingTexts.RemoveAt(i);
             }
         }
@@ -475,7 +721,7 @@ public sealed class ShareXClickerControl : IDisposable
             particle.Control.RenderTransform = new RotateTransform(particle.Rotation * particle.Age);
             Canvas.SetLeft(particle.Control, particle.X);
             Canvas.SetTop(particle.Control, particle.Y);
-            if (particle.Age >= particle.Lifetime || particle.Y >= _particleOverlay.Bounds.Height - particle.Control.Height || particle.X < -20 || particle.X > 320)
+            if (particle.Age >= particle.Lifetime || particle.Y >= _particleOverlay.Bounds.Height - particle.Control.Height || particle.X < -20 || particle.X > _particleOverlay.Bounds.Width + 20)
             {
                 RemoveParticle(particle);
             }
@@ -508,18 +754,21 @@ public sealed class ShareXClickerControl : IDisposable
         _timer.Stop();
         _timer.Tick -= OnTimerTick;
         _logoImage.PointerPressed -= OnLogoPointerPressed;
+        _logoImage.KeyDown -= OnLogoKeyDown;
         _logoImage.RenderTransform = null;
-        foreach (FloatingText text in _floatingTexts) _overlay.Children.Remove(text.Control);
+        foreach (FloatingText text in _floatingTexts) text.Canvas.Children.Remove(text.Control);
         foreach (LogoParticle particle in _particles) _particleOverlay.Children.Remove(particle.Control);
         _floatingTexts.Clear();
         _particles.Clear();
-        _overlay.Children.Remove(_counter);
+        _overlay.Children.Remove(_statsPanel);
     }
 
-    private sealed class FloatingText(TextBlock control, double startTop)
+    private sealed class FloatingText(TextBlock control, Canvas canvas, double startTop, double lifetime)
     {
         public TextBlock Control { get; } = control;
+        public Canvas Canvas { get; } = canvas;
         public double StartTop { get; } = startTop;
+        public double Lifetime { get; } = lifetime;
         public double Age { get; set; }
     }
 
@@ -547,5 +796,12 @@ public sealed class ShareXClickerControl : IDisposable
         public Button Button { get; } = button;
         public StackPanel PriceContent { get; } = priceContent;
         public TextBlock Price { get; } = price;
+    }
+
+    private enum BuyMode
+    {
+        One,
+        Ten,
+        Max
     }
 }

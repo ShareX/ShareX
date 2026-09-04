@@ -23,7 +23,7 @@ public sealed class ShareXClickerState
     public double Logos;
     public double LifetimeLogos;
     public Dictionary<string, int> Buildings = [];
-    public bool BetterClickPurchased;
-    public bool DoubleClickPurchased;
+    public HashSet<string> PurchasedUpgrades = [];
+    public long ManualClicks;
     public bool StoreDiscovered;
 }
