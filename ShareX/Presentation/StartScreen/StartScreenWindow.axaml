@@ -65,6 +65,10 @@
             <Setter Property="Padding" Value="9,5"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
+        <Style Selector="ToggleSwitch">
+            <Setter Property="OnContent" Value="{x:Null}"/>
+            <Setter Property="OffContent" Value="{x:Null}"/>
+        </Style>
         <Style Selector="Button.primary">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
