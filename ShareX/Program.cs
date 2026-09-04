@@ -372,6 +372,14 @@ namespace ShareX
         {
             ImageEditorIntegration.Initialize();
 
+            if (Settings.IsFirstTimeRun)
+            {
+                DebugHelper.WriteLine("Start screen opening.");
+                StartScreenWindow startScreen = new StartScreenWindow();
+                await startScreen.ShowAsync();
+                DebugHelper.WriteLine("Start screen closed.");
+            }
+
             DebugHelper.WriteLine("MainForm host init started.");
             MainForm = new MainForm();
             await MainForm.InitializeAsync();

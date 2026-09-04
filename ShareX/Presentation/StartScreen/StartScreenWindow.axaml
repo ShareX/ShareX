@@ -1,0 +1,300 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:ShareX"
+        xmlns:res="using:ShareX.Localization"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        xmlns:imageEditorControls="using:ShareX.ImageEditor.Presentation.Controls"
+        mc:Ignorable="d"
+        d:DesignWidth="920"
+        d:DesignHeight="620"
+        x:Class="ShareX.StartScreenWindow"
+        x:DataType="local:StartScreenViewModel"
+        Title="{Binding WindowTitle}"
+        Width="920"
+        Height="620"
+        MinWidth="840"
+        MinHeight="580"
+        CanResize="True"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Border.setting-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="16,12"/>
+        </Style>
+        <Style Selector="Border.setting-icon">
+            <Setter Property="Width" Value="38"/>
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="CornerRadius" Value="9"/>
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.setting-title">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.setting-description">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style Selector="ComboBox.option-control">
+            <Setter Property="Width" Value="190"/>
+            <Setter Property="MinHeight" Value="38"/>
+            <Setter Property="Padding" Value="9,5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="MinHeight" Value="42"/>
+            <Setter Property="Padding" Value="20,8"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope>
+        <Grid ColumnDefinitions="340,*"
+              Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Border Grid.Column="0"
+                    Background="{DynamicResource ShareX.Brush.Accent}"
+                    ClipToBounds="True">
+                <Grid>
+                    <Canvas IsHitTestVisible="False">
+                        <Ellipse Width="280" Height="280" Canvas.Left="185" Canvas.Top="-105" Fill="#18FFFFFF"/>
+                        <Ellipse Width="170" Height="170" Canvas.Left="-72" Canvas.Top="465" Fill="#12FFFFFF"/>
+                        <Ellipse Width="72" Height="72" Canvas.Left="270" Canvas.Top="430" Fill="#10FFFFFF"/>
+                    </Canvas>
+
+                    <Grid Margin="38,42,38,36" RowDefinitions="Auto,*,Auto">
+                        <Border Width="86"
+                                Height="86"
+                                HorizontalAlignment="Left"
+                                CornerRadius="22"
+                                Background="#F3FFFFFF"
+                                BoxShadow="0 12 28 0 #30000000">
+                            <Image x:Name="LogoImage"
+                                   Width="60"
+                                   Height="60"
+                                   Stretch="Uniform"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                        </Border>
+
+                        <StackPanel Grid.Row="1" VerticalAlignment="Center" Spacing="18">
+                            <StackPanel Spacing="8">
+                                <TextBlock Text="{Binding WelcomeTitle}"
+                                           FontSize="31"
+                                           FontWeight="Bold"
+                                           Foreground="White"
+                                           TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding WelcomeSubtitle}"
+                                           MaxWidth="250"
+                                           FontSize="15"
+                                           FontWeight="Normal"
+                                           Foreground="#E8FFFFFF"
+                                           LineHeight="22"
+                                           TextWrapping="Wrap"/>
+                            </StackPanel>
+
+                            <StackPanel Spacing="12">
+                                <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.camera}" FontSize="18" Foreground="White"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding CaptureFeature}" Foreground="White" FontWeight="Normal"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.wand_sparkles}" FontSize="18" Foreground="White"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding AutomateFeature}" Foreground="White" FontWeight="Normal"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.zap}" FontSize="18" Foreground="White"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding ShareFeature}" Foreground="White" FontWeight="Normal"/>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <TextBlock Grid.Row="2"
+                                   Text="{Binding PlatformNote}"
+                                   FontSize="11"
+                                   Foreground="#C8FFFFFF"
+                                   FontWeight="Normal"/>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Column="1"
+                  Margin="42,34,42,30"
+                  RowDefinitions="Auto,*,Auto">
+                <StackPanel Spacing="5">
+                    <TextBlock Text="{Binding PersonalizeTitle}"
+                               FontSize="25"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Text}"/>
+                    <TextBlock Text="{Binding PersonalizeSubtitle}"
+                               FontSize="13"
+                               FontWeight="Normal"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                </StackPanel>
+
+                <ScrollViewer Grid.Row="1"
+                              Margin="0,22,0,18"
+                              HorizontalScrollBarVisibility="Disabled"
+                              VerticalScrollBarVisibility="Auto">
+                    <StackPanel Spacing="8">
+                        <Border Classes="setting-card">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                <Border Classes="setting-icon">
+                                    <TextBlock Classes="icon"
+                                               Text="{x:Static theming:LucideIcons.languages}"
+                                               FontSize="19"
+                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+                                    <TextBlock Classes="setting-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_LanguageLabel}"/>
+                                    <TextBlock Classes="setting-description" Text="{Binding LanguageDescription}"/>
+                                </StackPanel>
+                                <ComboBox Grid.Column="2"
+                                          Classes="option-control"
+                                          ItemsSource="{Binding LanguageOptions}"
+                                          SelectedItem="{Binding SelectedLanguage, Mode=TwoWay}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate x:DataType="local:LanguageOption">
+                                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                                <Grid Width="16" Height="16">
+                                                    <TextBlock Classes="icon"
+                                                               Text="{Binding IconGlyph}"
+                                                               FontSize="16"
+                                                               HorizontalAlignment="Center"
+                                                               VerticalAlignment="Center"/>
+                                                    <Image Source="{Binding Flag}" Stretch="Uniform"/>
+                                                </Grid>
+                                                <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </Grid>
+                        </Border>
+
+                        <Border Classes="setting-card">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                <Border Classes="setting-icon">
+                                    <TextBlock Classes="icon"
+                                               Text="{x:Static theming:LucideIcons.monitor}"
+                                               FontSize="19"
+                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+                                    <TextBlock Classes="setting-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_FollowSystemTheme}"/>
+                                    <TextBlock Classes="setting-description" Text="{Binding SystemThemeDescription}"/>
+                                </StackPanel>
+                                <ToggleSwitch Grid.Column="2"
+                                              VerticalAlignment="Center"
+                                              IsChecked="{Binding UseSystemTheme, Mode=TwoWay}"/>
+                            </Grid>
+                        </Border>
+
+                        <Border Classes="setting-card">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                <Border Classes="setting-icon">
+                                    <TextBlock Classes="icon"
+                                               Text="{x:Static theming:LucideIcons.sun_moon}"
+                                               FontSize="19"
+                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+                                    <TextBlock Classes="setting-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ThemeLabel}"/>
+                                    <TextBlock Classes="setting-description" Text="{Binding ThemeDescription}"/>
+                                </StackPanel>
+                                <ComboBox Grid.Column="2"
+                                          Classes="option-control"
+                                          IsEnabled="{Binding CanEditTheme}"
+                                          ItemsSource="{Binding ThemeOptions}"
+                                          SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"/>
+                            </Grid>
+                        </Border>
+
+                        <Border Classes="setting-card">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                <Border Classes="setting-icon">
+                                    <TextBlock Classes="icon"
+                                               Text="{x:Static theming:LucideIcons.palette}"
+                                               FontSize="19"
+                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+                                    <TextBlock Classes="setting-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_FollowSystemAccentColor}"/>
+                                    <TextBlock Classes="setting-description" Text="{Binding SystemAccentDescription}"/>
+                                </StackPanel>
+                                <ToggleSwitch Grid.Column="2"
+                                              VerticalAlignment="Center"
+                                              IsChecked="{Binding UseSystemAccentColor, Mode=TwoWay}"/>
+                            </Grid>
+                        </Border>
+
+                        <Border Classes="setting-card">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                <Border Classes="setting-icon">
+                                    <TextBlock Classes="icon"
+                                               Text="{x:Static theming:LucideIcons.swatch_book}"
+                                               FontSize="19"
+                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+                                    <TextBlock Classes="setting-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AccentColorLabel}"/>
+                                    <TextBlock Classes="setting-description" Text="{Binding AccentDescription}"/>
+                                </StackPanel>
+                                <imageEditorControls:ColorPickerDropdown Grid.Column="2"
+                                                                                Width="190"
+                                                                                IsEnabled="{Binding CanEditAccentColor}"
+                                                                                SelectedColorValue="{Binding AccentColor, Mode=TwoWay}"
+                                                                                VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                    <TextBlock Text="{Binding SettingsNote}"
+                               MaxWidth="270"
+                               FontSize="11"
+                               FontWeight="Normal"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Center"/>
+                    <Button Grid.Column="1"
+                            Classes="primary"
+                            IsDefault="True"
+                            Click="OnGetStartedClick">
+                        <StackPanel Orientation="Horizontal" Spacing="9">
+                            <TextBlock Text="{Binding GetStartedText}" VerticalAlignment="Center"/>
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.arrow_right}"
+                                       FontSize="16"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>
