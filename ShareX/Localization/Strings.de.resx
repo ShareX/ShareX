@@ -2863,4 +2863,25 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Symbolleiste anpassen...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Willkommen bei ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Erfassen, bearbeiten und teilen Sie alles auf Ihre Weise.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Open Source • Für Windows entwickelt</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Machen Sie ShareX zu Ihrem</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Wählen Sie aus, wie die App aussehen und wirken soll.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Sie können diese Optionen jederzeit in den Anwendungseinstellungen ändern.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Loslegen</value>
+  </data>
 </root>

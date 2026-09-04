@@ -3,7 +3,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
-        xmlns:res="using:ShareX.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         xmlns:imageEditorControls="using:ShareX.ImageEditor.Presentation.Controls"
         mc:Ignorable="d"
@@ -59,12 +58,6 @@
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-        <Style Selector="TextBlock.setting-description">
-            <Setter Property="FontSize" Value="11"/>
-            <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
         <Style Selector="ComboBox.option-control">
             <Setter Property="Width" Value="190"/>
@@ -168,14 +161,13 @@
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
                                     <TextBlock Classes="setting-title" Text="{Binding LanguageLabel}"/>
-                                    <TextBlock Classes="setting-description" Text="{Binding LanguageDescription}"/>
                                 </StackPanel>
                                 <ComboBox Grid.Column="2"
                                           Classes="option-control"
                                           ItemsSource="{Binding LanguageOptions}"
                                           SelectedItem="{Binding SelectedLanguage, Mode=TwoWay}">
                                     <ComboBox.ItemTemplate>
-                                        <DataTemplate x:DataType="local:LanguageOption">
+                                        <DataTemplate x:DataType="local:StartScreenLanguageOption">
                                             <StackPanel Orientation="Horizontal" Spacing="8">
                                                 <Grid Width="16" Height="16">
                                                     <TextBlock Classes="icon"
@@ -205,7 +197,6 @@
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
                                     <TextBlock Classes="setting-title" Text="{Binding StartWithWindowsText}"/>
-                                    <TextBlock Classes="setting-description" Text="{Binding StartWithWindowsDescription}"/>
                                 </StackPanel>
                                 <ToggleSwitch Grid.Column="2"
                                               VerticalAlignment="Center"
@@ -225,8 +216,7 @@
                                                VerticalAlignment="Center"/>
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_FollowSystemTheme}"/>
-                                    <TextBlock Classes="setting-description" Text="{Binding SystemThemeDescription}"/>
+                                    <TextBlock Classes="setting-title" Text="{Binding FollowSystemThemeLabel}"/>
                                 </StackPanel>
                                 <ToggleSwitch Grid.Column="2"
                                               VerticalAlignment="Center"
@@ -247,13 +237,18 @@
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
                                     <TextBlock Classes="setting-title" Text="{Binding ThemeLabel}"/>
-                                    <TextBlock Classes="setting-description" Text="{Binding ThemeDescription}"/>
                                 </StackPanel>
                                 <ComboBox Grid.Column="2"
                                           Classes="option-control"
                                           IsEnabled="{Binding CanEditTheme}"
                                           ItemsSource="{Binding ThemeOptions}"
-                                          SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"/>
+                                          SelectedItem="{Binding SelectedTheme, Mode=TwoWay}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate x:DataType="local:StartScreenThemeOption">
+                                            <TextBlock Text="{Binding DisplayName}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
                             </Grid>
                         </Border>
 
@@ -268,8 +263,7 @@
                                                VerticalAlignment="Center"/>
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_FollowSystemAccentColor}"/>
-                                    <TextBlock Classes="setting-description" Text="{Binding SystemAccentDescription}"/>
+                                    <TextBlock Classes="setting-title" Text="{Binding FollowSystemAccentColorLabel}"/>
                                 </StackPanel>
                                 <ToggleSwitch Grid.Column="2"
                                               VerticalAlignment="Center"
@@ -290,7 +284,6 @@
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
                                     <TextBlock Classes="setting-title" Text="{Binding AccentColorLabel}"/>
-                                    <TextBlock Classes="setting-description" Text="{Binding AccentDescription}"/>
                                 </StackPanel>
                                 <imageEditorControls:ColorPickerDropdown Grid.Column="2"
                                                                                 Width="72"

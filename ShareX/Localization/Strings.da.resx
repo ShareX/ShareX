@@ -2864,4 +2864,25 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Tilpas værktøjslinje...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Velkommen til ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Optag, rediger og del alt på din måde.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Open source • Bygget til Windows</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Gør ShareX til dit eget</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Vælg, hvordan appen skal se ud og føles.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Du kan altid ændre disse indstillinger under programindstillinger.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Kom i gang</value>
+  </data>
 </root>

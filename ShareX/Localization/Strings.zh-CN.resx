@@ -2864,4 +2864,25 @@
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>自定义工具栏...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>欢迎使用 ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>按照你的方式捕获、编辑和分享任何内容。</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>开源 • 专为 Windows 打造</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>打造你的 ShareX</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>选择应用的外观和体验。</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>你可以随时在应用程序设置中更改这些选项。</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>开始使用</value>
+  </data>
 </root>

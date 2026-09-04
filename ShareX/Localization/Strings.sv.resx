@@ -2864,4 +2864,25 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Anpassa verktygsfält...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Välkommen till ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Fånga, redigera och dela vad som helst på ditt sätt.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Öppen källkod • Byggt för Windows</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Gör ShareX till ditt</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Välj hur appen ska se ut och kännas.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Du kan ändra dessa alternativ när som helst i programinställningarna.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Kom igång</value>
+  </data>
 </root>

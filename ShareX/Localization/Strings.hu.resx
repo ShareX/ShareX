@@ -2864,4 +2864,25 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Eszköztár testreszabása...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Üdvözli a ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Rögzítsen, szerkesszen és osszon meg bármit a saját módján.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Nyílt forráskódú • Windowshoz készült</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Tegye egyedivé a ShareX-et</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Válassza ki az alkalmazás megjelenését.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Ezeket a beállításokat bármikor módosíthatja az alkalmazás beállításaiban.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Kezdés</value>
+  </data>
 </root>

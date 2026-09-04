@@ -21,6 +21,7 @@ using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -37,29 +38,25 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
 
     private ApplicationConfig Settings => Program.Settings;
 
-    public string WindowTitle => "Welcome to ShareX";
-    public string WelcomeTitle => "Welcome to ShareX";
-    public string WelcomeSubtitle => "Capture, edit and share anything your way.";
-    public string CaptureFeature => "Capture with precision";
-    public string AutomateFeature => "Automate your workflow";
-    public string ShareFeature => "Share in seconds";
-    public string PlatformNote => "Open source • Built for Windows";
-    public string PersonalizeTitle => "Make ShareX yours";
-    public string PersonalizeSubtitle => "Choose how the app should look and feel.";
-    public string LanguageDescription => "Select the language used throughout ShareX.";
-    public string SystemThemeDescription => "Switch automatically with Windows.";
-    public string ThemeDescription => "Choose a light or dark appearance.";
-    public string SystemAccentDescription => "Use the Windows accent color.";
-    public string AccentDescription => "Pick the color used for highlights.";
-    public string StartWithWindowsDescription => "Keep ShareX ready whenever you sign in.";
-    public string SettingsNote => "You can change these options anytime in Application settings.";
-    public string GetStartedText => "Get started";
+    public string WindowTitle => Strings.StartScreen_Welcome;
+    public string WelcomeTitle => Strings.StartScreen_Welcome;
+    public string WelcomeSubtitle => Strings.StartScreen_WelcomeSubtitle;
+    public string CaptureFeature => Strings.MainMenuBuilder_Capture;
+    public string AutomateFeature => Strings.MainMenuBuilder_Workflows;
+    public string ShareFeature => Strings.MainMenuBuilder_Tools;
+    public string PlatformNote => Strings.StartScreen_PlatformNote;
+    public string PersonalizeTitle => Strings.StartScreen_PersonalizeTitle;
+    public string PersonalizeSubtitle => Strings.StartScreen_PersonalizeSubtitle;
+    public string SettingsNote => Strings.StartScreen_SettingsNote;
+    public string GetStartedText => Strings.StartScreen_GetStarted;
     public string LanguageLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_LanguageLabel);
+    public string FollowSystemThemeLabel => Strings.ApplicationSettingsWindow_FollowSystemTheme;
     public string ThemeLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_ThemeLabel);
+    public string FollowSystemAccentColorLabel => Strings.ApplicationSettingsWindow_FollowSystemAccentColor;
     public string AccentColorLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_AccentColorLabel);
 
-    public IReadOnlyList<LanguageOption> LanguageOptions { get; } = CreateLanguageOptions();
-    public IReadOnlyList<EnumOption<string>> ThemeOptions { get; } =
+    public IReadOnlyList<StartScreenLanguageOption> LanguageOptions { get; } = CreateLanguageOptions();
+    public IReadOnlyList<StartScreenThemeOption> ThemeOptions { get; } =
     [
         new("Dark", Strings.ApplicationSettingsWindow_Dark),
         new("Light", Strings.ApplicationSettingsWindow_Light)
@@ -67,10 +64,10 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
 
     public StartScreenViewModel()
     {
-        RefreshStartWithWindows();
+        RefreshLocalizedText();
     }
 
-    public LanguageOption? SelectedLanguage
+    public StartScreenLanguageOption? SelectedLanguage
     {
         get => LanguageOptions.FirstOrDefault(x => x.Value == Settings.Language);
         set
@@ -82,7 +79,12 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
 
             Settings.Language = value.Value;
             LanguageHelper.ChangeLanguage(value.Value);
-            OnPropertyChanged();
+            CultureInfo culture = value.Value == SupportedLanguage.Automatic
+                ? CultureInfo.InstalledUICulture
+                : CultureInfo.GetCultureInfo(LanguageHelper.GetCultureName(value.Value));
+            CultureInfo.CurrentUICulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
+            RefreshLocalizedText();
         }
     }
 
@@ -102,7 +104,7 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
 
     public bool CanEditTheme => !UseSystemTheme;
 
-    public EnumOption<string>? SelectedTheme
+    public StartScreenThemeOption? SelectedTheme
     {
         get => ThemeOptions.FirstOrDefault(x => string.Equals(x.Value, NormalizeTheme(Settings.ThemeOptions.Theme), StringComparison.Ordinal));
         set
@@ -207,9 +209,9 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
         OnPropertyChanged(nameof(StartWithWindowsText));
     }
 
-    private static IReadOnlyList<LanguageOption> CreateLanguageOptions() =>
+    private static IReadOnlyList<StartScreenLanguageOption> CreateLanguageOptions() =>
         Helpers.GetEnums<SupportedLanguage>()
-            .Select(x => new LanguageOption(
+            .Select(x => new StartScreenLanguageOption(
                 x,
                 x.GetLocalizedDescription(),
                 LoadLanguageFlag(x),
@@ -233,6 +235,28 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
 
     private static string RemoveTrailingColon(string text) => text.TrimEnd().TrimEnd(':', '：').TrimEnd();
 
+    private void RefreshLocalizedText()
+    {
+        foreach (StartScreenLanguageOption language in LanguageOptions)
+        {
+            language.UpdateDisplayName(language.Value.GetLocalizedDescription());
+        }
+
+        ThemeOptions[0].UpdateDisplayName(Strings.ApplicationSettingsWindow_Dark);
+        ThemeOptions[1].UpdateDisplayName(Strings.ApplicationSettingsWindow_Light);
+
+        RefreshStartWithWindows();
+        OnPropertyChanged(string.Empty);
+    }
+
+    private void DisposeLanguageOptions()
+    {
+        foreach (StartScreenLanguageOption language in LanguageOptions)
+        {
+            language.Flag?.Dispose();
+        }
+    }
+
     private void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
@@ -240,9 +264,60 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
 
     public void Dispose()
     {
-        foreach (LanguageOption language in LanguageOptions)
+        DisposeLanguageOptions();
+    }
+}
+
+public sealed class StartScreenLanguageOption : INotifyPropertyChanged
+{
+    private string _displayName;
+
+    public SupportedLanguage Value { get; }
+    public string DisplayName => _displayName;
+    public AvaloniaBitmap? Flag { get; }
+    public string? IconGlyph { get; }
+
+    public StartScreenLanguageOption(SupportedLanguage value, string displayName, AvaloniaBitmap? flag, string? iconGlyph)
+    {
+        Value = value;
+        _displayName = displayName;
+        Flag = flag;
+        IconGlyph = iconGlyph;
+    }
+
+    public void UpdateDisplayName(string displayName)
+    {
+        if (_displayName != displayName)
         {
-            language.Flag?.Dispose();
+            _displayName = displayName;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayName)));
         }
     }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+}
+
+public sealed class StartScreenThemeOption : INotifyPropertyChanged
+{
+    private string _displayName;
+
+    public string Value { get; }
+    public string DisplayName => _displayName;
+
+    public StartScreenThemeOption(string value, string displayName)
+    {
+        Value = value;
+        _displayName = displayName;
+    }
+
+    public void UpdateDisplayName(string displayName)
+    {
+        if (_displayName != displayName)
+        {
+            _displayName = displayName;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayName)));
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
 }

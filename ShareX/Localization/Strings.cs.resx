@@ -2864,4 +2864,25 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Přizpůsobit panel nástrojů...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Vítejte v ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Zachyťte, upravte a sdílejte cokoli podle sebe.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Open source • Vytvořeno pro Windows</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Přizpůsobte si ShareX</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Zvolte si vzhled a chování aplikace.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Tyto možnosti můžete kdykoli změnit v nastavení aplikace.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Začít</value>
+  </data>
 </root>

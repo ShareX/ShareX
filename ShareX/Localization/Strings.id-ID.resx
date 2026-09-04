@@ -2864,4 +2864,25 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Sesuaikan bilah alat...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Selamat datang di ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Tangkap, edit, dan bagikan apa pun dengan cara Anda.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Sumber terbuka • Dibuat untuk Windows</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Jadikan ShareX milik Anda</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Pilih tampilan dan nuansa aplikasi.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Anda dapat mengubah opsi ini kapan saja di pengaturan aplikasi.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Mulai</value>
+  </data>
 </root>

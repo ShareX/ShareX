@@ -2864,4 +2864,25 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Tùy chỉnh thanh công cụ...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Chào mừng bạn đến với ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Chụp, chỉnh sửa và chia sẻ mọi thứ theo cách của bạn.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Mã nguồn mở • Được xây dựng cho Windows</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Biến ShareX thành của riêng bạn</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Chọn giao diện và phong cách của ứng dụng.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Bạn có thể thay đổi các tùy chọn này bất cứ lúc nào trong cài đặt ứng dụng.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Bắt đầu</value>
+  </data>
 </root>

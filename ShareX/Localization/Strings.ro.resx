@@ -2864,4 +2864,25 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Personalizare bară de instrumente...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Bun venit la ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Capturați, editați și partajați orice în stilul dvs.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Sursă deschisă • Creat pentru Windows</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Personalizați ShareX</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Alegeți aspectul și stilul aplicației.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Puteți modifica oricând aceste opțiuni din setările aplicației.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Începeți</value>
+  </data>
 </root>

@@ -2864,4 +2864,25 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>سفارشی‌سازی نوار ابزار...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>به ShareX خوش آمدید</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>هر چیزی را به روش خود ثبت، ویرایش و به‌اشتراک بگذارید.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>متن‌باز • ساخته‌شده برای Windows</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>ShareX را مطابق سلیقه خود تنظیم کنید</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>ظاهر و حس برنامه را انتخاب کنید.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>می‌توانید هر زمان این گزینه‌ها را در تنظیمات برنامه تغییر دهید.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>شروع کنید</value>
+  </data>
 </root>

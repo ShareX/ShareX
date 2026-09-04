@@ -2863,4 +2863,25 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Personalizar barra de herramientas...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Te damos la bienvenida a ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Captura, edita y comparte cualquier cosa a tu manera.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Código abierto • Creado para Windows</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Haz que ShareX sea tuyo</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Elige cómo quieres que se vea y se sienta la aplicación.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Puedes cambiar estas opciones en cualquier momento en la configuración de la aplicación.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Comenzar</value>
+  </data>
 </root>

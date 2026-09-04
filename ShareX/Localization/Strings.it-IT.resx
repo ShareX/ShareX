@@ -2864,4 +2864,25 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Personalizza barra degli strumenti...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Benvenuto in ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Cattura, modifica e condividi qualsiasi cosa a modo tuo.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Open source • Creato per Windows</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Rendi ShareX davvero tuo</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Scegli l'aspetto dell'app.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Puoi modificare queste opzioni in qualsiasi momento nelle impostazioni dell'applicazione.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Inizia</value>
+  </data>
 </root>

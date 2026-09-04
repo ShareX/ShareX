@@ -2864,4 +2864,25 @@
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>ツールバーをカスタマイズ...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>ShareX へようこそ</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>自分らしい方法で、あらゆるものをキャプチャ、編集、共有できます。</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>オープンソース • Windows 向け</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>ShareX を自分好みに</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>アプリの外観と操作感を選択します。</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>これらのオプションは、アプリケーション設定でいつでも変更できます。</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>始める</value>
+  </data>
 </root>

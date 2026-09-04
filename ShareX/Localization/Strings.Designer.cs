@@ -5297,6 +5297,41 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("UploadManager_DownloadAndUploadFile_Download_failed", resourceCulture);
             }
         }
+        public static string StartScreen_Welcome {
+            get {
+                return ResourceManager.GetString("StartScreen_Welcome", resourceCulture);
+            }
+        }
+        public static string StartScreen_WelcomeSubtitle {
+            get {
+                return ResourceManager.GetString("StartScreen_WelcomeSubtitle", resourceCulture);
+            }
+        }
+        public static string StartScreen_PlatformNote {
+            get {
+                return ResourceManager.GetString("StartScreen_PlatformNote", resourceCulture);
+            }
+        }
+        public static string StartScreen_PersonalizeTitle {
+            get {
+                return ResourceManager.GetString("StartScreen_PersonalizeTitle", resourceCulture);
+            }
+        }
+        public static string StartScreen_PersonalizeSubtitle {
+            get {
+                return ResourceManager.GetString("StartScreen_PersonalizeSubtitle", resourceCulture);
+            }
+        }
+        public static string StartScreen_SettingsNote {
+            get {
+                return ResourceManager.GetString("StartScreen_SettingsNote", resourceCulture);
+            }
+        }
+        public static string StartScreen_GetStarted {
+            get {
+                return ResourceManager.GetString("StartScreen_GetStarted", resourceCulture);
+            }
+        }
 
         /// <summary>
         ///   Looks up a localized string similar to Network monitor....

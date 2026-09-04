@@ -2864,4 +2864,25 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Werkbalk aanpassen...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Welkom bij ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Leg alles vast, bewerk het en deel het op jouw manier.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Open source • Gebouwd voor Windows</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Maak ShareX helemaal van jou</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Kies hoe de app eruitziet en aanvoelt.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Je kunt deze opties op elk moment wijzigen in de applicatie-instellingen.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Aan de slag</value>
+  </data>
 </root>

@@ -2864,4 +2864,25 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Dostosuj pasek narzędzi...</value>
   </data>
+  <data name="StartScreen_Welcome" xml:space="preserve">
+    <value>Witamy w ShareX</value>
+  </data>
+  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
+    <value>Przechwytuj, edytuj i udostępniaj wszystko po swojemu.</value>
+  </data>
+  <data name="StartScreen_PlatformNote" xml:space="preserve">
+    <value>Otwarte źródło • Stworzone dla Windows</value>
+  </data>
+  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
+    <value>Dostosuj ShareX do siebie</value>
+  </data>
+  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
+    <value>Wybierz wygląd i sposób działania aplikacji.</value>
+  </data>
+  <data name="StartScreen_SettingsNote" xml:space="preserve">
+    <value>Te opcje możesz w każdej chwili zmienić w ustawieniach aplikacji.</value>
+  </data>
+  <data name="StartScreen_GetStarted" xml:space="preserve">
+    <value>Rozpocznij</value>
+  </data>
 </root>
