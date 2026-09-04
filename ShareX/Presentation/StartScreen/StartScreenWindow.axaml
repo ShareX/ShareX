@@ -7,13 +7,13 @@
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         xmlns:imageEditorControls="using:ShareX.ImageEditor.Presentation.Controls"
         mc:Ignorable="d"
-        d:DesignWidth="920"
-        d:DesignHeight="620"
+        d:DesignWidth="1000"
+        d:DesignHeight="720"
         x:Class="ShareX.StartScreenWindow"
         x:DataType="local:StartScreenViewModel"
         Title="{Binding WindowTitle}"
-        Width="920"
-        Height="620"
+        Width="1000"
+        Height="720"
         MinWidth="840"
         MinHeight="580"
         CanResize="True"
@@ -27,6 +27,26 @@
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="CornerRadius" Value="10"/>
             <Setter Property="Padding" Value="16,12"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+        </Style>
+        <Style Selector="Border.conditional-option">
+            <Setter Property="ClipToBounds" Value="True"/>
+            <Setter Property="MaxHeight" Value="90"/>
+            <Setter Property="Opacity" Value="1"/>
+            <Setter Property="IsHitTestVisible" Value="True"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="MaxHeight" Duration="0:0:0.22"/>
+                    <DoubleTransition Property="Opacity" Duration="0:0:0.16"/>
+                    <ThicknessTransition Property="Margin" Duration="0:0:0.22"/>
+                </Transitions>
+            </Setter>
+            <Style Selector="^.hidden">
+                <Setter Property="MaxHeight" Value="0"/>
+                <Setter Property="Opacity" Value="0"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="IsHitTestVisible" Value="False"/>
+            </Style>
         </Style>
         <Style Selector="Border.setting-icon">
             <Setter Property="Width" Value="38"/>
@@ -75,22 +95,8 @@
                         <Ellipse Width="72" Height="72" Canvas.Left="270" Canvas.Top="430" Fill="#10FFFFFF"/>
                     </Canvas>
 
-                    <Grid Margin="38,42,38,36" RowDefinitions="Auto,*,Auto">
-                        <Border Width="86"
-                                Height="86"
-                                HorizontalAlignment="Left"
-                                CornerRadius="22"
-                                Background="#F3FFFFFF"
-                                BoxShadow="0 12 28 0 #30000000">
-                            <Image x:Name="LogoImage"
-                                   Width="60"
-                                   Height="60"
-                                   Stretch="Uniform"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"/>
-                        </Border>
-
-                        <StackPanel Grid.Row="1" VerticalAlignment="Center" Spacing="18">
+                    <Grid Margin="38,42,38,36" RowDefinitions="*,Auto">
+                        <StackPanel VerticalAlignment="Center" Spacing="18">
                             <StackPanel Spacing="8">
                                 <TextBlock Text="{Binding WelcomeTitle}"
                                            FontSize="31"
@@ -98,7 +104,7 @@
                                            Foreground="White"
                                            TextWrapping="Wrap"/>
                                 <TextBlock Text="{Binding WelcomeSubtitle}"
-                                           MaxWidth="250"
+                                           HorizontalAlignment="Left"
                                            FontSize="15"
                                            FontWeight="Normal"
                                            Foreground="#E8FFFFFF"
@@ -122,7 +128,7 @@
                             </StackPanel>
                         </StackPanel>
 
-                        <TextBlock Grid.Row="2"
+                        <TextBlock Grid.Row="1"
                                    Text="{Binding PlatformNote}"
                                    FontSize="11"
                                    Foreground="#C8FFFFFF"
@@ -132,7 +138,7 @@
             </Border>
 
             <Grid Grid.Column="1"
-                  Margin="42,34,42,30"
+                  Margin="42,34,42,36"
                   RowDefinitions="Auto,*,Auto">
                 <StackPanel Spacing="5">
                     <TextBlock Text="{Binding PersonalizeTitle}"
@@ -149,7 +155,7 @@
                               Margin="0,22,0,18"
                               HorizontalScrollBarVisibility="Disabled"
                               VerticalScrollBarVisibility="Auto">
-                    <StackPanel Spacing="8">
+                    <StackPanel>
                         <Border Classes="setting-card">
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                                 <Border Classes="setting-icon">
@@ -161,7 +167,7 @@
                                                VerticalAlignment="Center"/>
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_LanguageLabel}"/>
+                                    <TextBlock Classes="setting-title" Text="{Binding LanguageLabel}"/>
                                     <TextBlock Classes="setting-description" Text="{Binding LanguageDescription}"/>
                                 </StackPanel>
                                 <ComboBox Grid.Column="2"
@@ -191,6 +197,27 @@
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                                 <Border Classes="setting-icon">
                                     <TextBlock Classes="icon"
+                                               Text="{x:Static theming:LucideIcons.rocket}"
+                                               FontSize="19"
+                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+                                    <TextBlock Classes="setting-title" Text="{Binding StartWithWindowsText}"/>
+                                    <TextBlock Classes="setting-description" Text="{Binding StartWithWindowsDescription}"/>
+                                </StackPanel>
+                                <ToggleSwitch Grid.Column="2"
+                                              VerticalAlignment="Center"
+                                              IsEnabled="{Binding StartWithWindowsEnabled}"
+                                              IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
+                            </Grid>
+                        </Border>
+
+                        <Border Classes="setting-card">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                <Border Classes="setting-icon">
+                                    <TextBlock Classes="icon"
                                                Text="{x:Static theming:LucideIcons.monitor}"
                                                FontSize="19"
                                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
@@ -207,7 +234,8 @@
                             </Grid>
                         </Border>
 
-                        <Border Classes="setting-card">
+                        <Border Classes="setting-card conditional-option"
+                                Classes.hidden="{Binding UseSystemTheme}">
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                                 <Border Classes="setting-icon">
                                     <TextBlock Classes="icon"
@@ -218,7 +246,7 @@
                                                VerticalAlignment="Center"/>
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ThemeLabel}"/>
+                                    <TextBlock Classes="setting-title" Text="{Binding ThemeLabel}"/>
                                     <TextBlock Classes="setting-description" Text="{Binding ThemeDescription}"/>
                                 </StackPanel>
                                 <ComboBox Grid.Column="2"
@@ -249,7 +277,8 @@
                             </Grid>
                         </Border>
 
-                        <Border Classes="setting-card">
+                        <Border Classes="setting-card conditional-option"
+                                Classes.hidden="{Binding UseSystemAccentColor}">
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                                 <Border Classes="setting-icon">
                                     <TextBlock Classes="icon"
@@ -260,25 +289,27 @@
                                                VerticalAlignment="Center"/>
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AccentColorLabel}"/>
+                                    <TextBlock Classes="setting-title" Text="{Binding AccentColorLabel}"/>
                                     <TextBlock Classes="setting-description" Text="{Binding AccentDescription}"/>
                                 </StackPanel>
                                 <imageEditorControls:ColorPickerDropdown Grid.Column="2"
-                                                                                Width="190"
+                                                                                Width="72"
                                                                                 IsEnabled="{Binding CanEditAccentColor}"
                                                                                 SelectedColorValue="{Binding AccentColor, Mode=TwoWay}"
+                                                                                HorizontalAlignment="Right"
                                                                                 VerticalAlignment="Center"/>
                             </Grid>
                         </Border>
+
                     </StackPanel>
                 </ScrollViewer>
 
                 <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="16">
                     <TextBlock Text="{Binding SettingsNote}"
-                               MaxWidth="270"
                                FontSize="11"
                                FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               HorizontalAlignment="Left"
                                TextWrapping="Wrap"
                                VerticalAlignment="Center"/>
                     <Button Grid.Column="1"

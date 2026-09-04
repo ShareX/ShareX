@@ -372,7 +372,7 @@ namespace ShareX
         {
             ImageEditorIntegration.Initialize();
 
-            if (Settings.IsFirstTimeRun)
+            if (!Settings.IsFirstTimeRun)
             {
                 DebugHelper.WriteLine("Start screen opening.");
                 StartScreenWindow startScreen = new StartScreenWindow();

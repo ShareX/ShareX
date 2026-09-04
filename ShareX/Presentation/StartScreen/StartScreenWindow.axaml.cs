@@ -17,18 +17,13 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
-using ShareX.HelpersLib;
 using System;
-using System.IO;
 using System.Threading.Tasks;
-using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
-using DrawingBitmap = System.Drawing.Bitmap;
 
 namespace ShareX;
 
 public partial class StartScreenWindow : Window
 {
-    private readonly AvaloniaBitmap _logoBitmap;
     private readonly StartScreenViewModel _viewModel;
 
     public StartScreenWindow()
@@ -38,12 +33,6 @@ public partial class StartScreenWindow : Window
 
         _viewModel = new StartScreenViewModel();
         DataContext = _viewModel;
-
-        using DrawingBitmap logo = ShareXResources.Logo;
-        using Stream logoStream = logo.GetStream();
-        logoStream.Position = 0;
-        _logoBitmap = new AvaloniaBitmap(logoStream);
-        LogoImage.Source = _logoBitmap;
 
         Opened += (_, _) => Activate();
         ThemeManager.ThemeChanged += OnThemeChanged;
@@ -68,6 +57,5 @@ public partial class StartScreenWindow : Window
         ThemeManager.ThemeChanged -= OnThemeChanged;
         SettingManager.SaveApplicationConfigAsync();
         _viewModel.Dispose();
-        _logoBitmap.Dispose();
     }
 }

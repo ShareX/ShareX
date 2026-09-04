@@ -31,11 +31,15 @@ namespace ShareX;
 
 public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
 {
+    private bool _startWithWindows;
+    private bool _startWithWindowsEnabled;
+    private string _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
+
     private ApplicationConfig Settings => Program.Settings;
 
     public string WindowTitle => "Welcome to ShareX";
     public string WelcomeTitle => "Welcome to ShareX";
-    public string WelcomeSubtitle => "Capture, edit and share anything — your way.";
+    public string WelcomeSubtitle => "Capture, edit and share anything your way.";
     public string CaptureFeature => "Capture with precision";
     public string AutomateFeature => "Automate your workflow";
     public string ShareFeature => "Share in seconds";
@@ -47,8 +51,12 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
     public string ThemeDescription => "Choose a light or dark appearance.";
     public string SystemAccentDescription => "Use the Windows accent color.";
     public string AccentDescription => "Pick the color used for highlights.";
+    public string StartWithWindowsDescription => "Keep ShareX ready whenever you sign in.";
     public string SettingsNote => "You can change these options anytime in Application settings.";
     public string GetStartedText => "Get started";
+    public string LanguageLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_LanguageLabel);
+    public string ThemeLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_ThemeLabel);
+    public string AccentColorLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_AccentColorLabel);
 
     public IReadOnlyList<LanguageOption> LanguageOptions { get; } = CreateLanguageOptions();
     public IReadOnlyList<EnumOption<string>> ThemeOptions { get; } =
@@ -56,6 +64,11 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
         new("Dark", Strings.ApplicationSettingsWindow_Dark),
         new("Light", Strings.ApplicationSettingsWindow_Light)
     ];
+
+    public StartScreenViewModel()
+    {
+        RefreshStartWithWindows();
+    }
 
     public LanguageOption? SelectedLanguage
     {
@@ -131,6 +144,69 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
         }
     }
 
+    public bool StartWithWindows
+    {
+        get => _startWithWindows;
+        set
+        {
+            if (!_startWithWindowsEnabled || _startWithWindows == value)
+            {
+                return;
+            }
+
+            try
+            {
+                StartupManager.State = value ? StartupState.Enabled : StartupState.Disabled;
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            RefreshStartWithWindows();
+        }
+    }
+
+    public bool StartWithWindowsEnabled => _startWithWindowsEnabled;
+    public string StartWithWindowsText => _startWithWindowsText;
+
+    private void RefreshStartWithWindows()
+    {
+        _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
+        _startWithWindowsEnabled = false;
+
+        try
+        {
+            StartupState state = StartupManager.State;
+            _startWithWindows = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
+
+            if (state == StartupState.DisabledByUser)
+            {
+                _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+            }
+            else if (state == StartupState.DisabledByPolicy)
+            {
+                _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text;
+            }
+            else if (state == StartupState.EnabledByPolicy)
+            {
+                _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text;
+            }
+            else
+            {
+                _startWithWindowsEnabled = true;
+            }
+        }
+        catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
+        }
+
+        OnPropertyChanged(nameof(StartWithWindows));
+        OnPropertyChanged(nameof(StartWithWindowsEnabled));
+        OnPropertyChanged(nameof(StartWithWindowsText));
+    }
+
     private static IReadOnlyList<LanguageOption> CreateLanguageOptions() =>
         Helpers.GetEnums<SupportedLanguage>()
             .Select(x => new LanguageOption(
@@ -154,6 +230,8 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
 
     private static string NormalizeTheme(string? theme) =>
         string.Equals(theme, "Light", StringComparison.OrdinalIgnoreCase) ? "Light" : "Dark";
+
+    private static string RemoveTrailingColon(string text) => text.TrimEnd().TrimEnd(':', '：').TrimEnd();
 
     private void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
