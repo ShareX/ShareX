@@ -1865,10 +1865,10 @@
     <value>Precise trim</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
-    <value>Start (seconds)</value>
+    <value>Start:</value>
   </data>
   <data name="VideoTrimmer_End" xml:space="preserve">
-    <value>End (seconds)</value>
+    <value>End:</value>
   </data>
   <data name="VideoTrimmer_Position" xml:space="preserve">
     <value>Seek (seconds)</value>

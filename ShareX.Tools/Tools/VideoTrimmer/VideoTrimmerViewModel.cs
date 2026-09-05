@@ -71,6 +71,8 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     public string ModeDescription => Precise ? Strings.VideoTrimmer_PreciseHint : Strings.VideoTrimmer_CopyHint;
     public string PositionText => FormatTime(Position);
     public string DurationText => FormatTime(Duration);
+    public string StartTimeText => FormatTime(Start);
+    public string EndTimeText => FormatTime(End);
     public string SelectionText => string.Format(Strings.VideoTrimmer_Selection, FormatTime(End - Start));
     public string InputDisplay => string.IsNullOrEmpty(InputFilePath) ? Strings.VideoTrimmer_ChooseVideo : InputFilePath;
 
@@ -78,6 +80,35 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     {
         TimeSpan time = TimeSpan.FromSeconds(Math.Max(0, seconds));
         return $"{(int)time.TotalHours:00}:{time.Minutes:00}:{time.Seconds:00}.{time.Milliseconds:000}";
+    }
+
+    public void SetStartTime(string? text)
+    {
+        if (TryParseTime(text, out double seconds)) Start = seconds;
+        OnPropertyChanged(nameof(StartTimeText));
+    }
+
+    public void SetEndTime(string? text)
+    {
+        if (TryParseTime(text, out double seconds)) End = seconds;
+        OnPropertyChanged(nameof(EndTimeText));
+    }
+
+    internal static bool TryParseTime(string? text, out double seconds)
+    {
+        seconds = 0;
+        string[] parts = text?.Trim().Split(':') ?? [];
+        if (parts.Length != 3 ||
+            !int.TryParse(parts[0], System.Globalization.NumberStyles.None, System.Globalization.CultureInfo.InvariantCulture, out int hours) ||
+            !int.TryParse(parts[1], System.Globalization.NumberStyles.None, System.Globalization.CultureInfo.InvariantCulture, out int minutes) ||
+            !double.TryParse(parts[2], System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out double secondsPart) ||
+            hours < 0 || minutes is < 0 or > 59 || secondsPart is < 0 or >= 60)
+        {
+            return false;
+        }
+
+        seconds = hours * 3600d + minutes * 60d + secondsPart;
+        return double.IsFinite(seconds);
     }
 
     [RelayCommand]
@@ -224,6 +255,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     {
         double clamped = double.IsFinite(value) ? Math.Clamp(value, 0, Math.Max(0, End - MinimumSelection)) : 0;
         if (value != clamped) { Start = clamped; return; }
+        OnPropertyChanged(nameof(StartTimeText));
         OnPropertyChanged(nameof(SelectionText));
         if (HasVideo) Position = Start;
     }
@@ -232,6 +264,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     {
         double clamped = double.IsFinite(value) ? Math.Clamp(value, Math.Min(Duration, Start + MinimumSelection), Duration) : Duration;
         if (value != clamped) { End = clamped; return; }
+        OnPropertyChanged(nameof(EndTimeText));
         OnPropertyChanged(nameof(SelectionText));
         if (HasVideo) Position = End;
     }

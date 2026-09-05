@@ -59,9 +59,9 @@
                     <Grid Grid.Row="4" ColumnDefinitions="*,*,Auto" ColumnSpacing="16" IsEnabled="{Binding CanEdit}">
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
                             <TextBlock Classes="row-label" Text="{x:Static loc:Strings.VideoTrimmer_Start}"/>
-                            <NumericUpDown Grid.Column="1" Value="{Binding Start, Mode=TwoWay}" Minimum="0" Maximum="{Binding Duration}"
-                                           Increment="0.1" FormatString="0.000" ShowButtonSpinner="False"
-                                           AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_Start}"/>
+                            <TextBox Grid.Column="1" Text="{Binding StartTimeText, Mode=OneWay}"
+                                     TextAlignment="Center" LostFocus="OnStartTimeLostFocus" KeyDown="OnStartTimeKeyDown"
+                                     AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_Start}"/>
                             <Button Grid.Column="2" Command="{Binding SetStartCommand}" Width="40"
                                     ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_SetStart}"
                                     AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_SetStart}">
@@ -70,9 +70,9 @@
                         </Grid>
                         <Grid Grid.Column="1" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
                             <TextBlock Classes="row-label" Text="{x:Static loc:Strings.VideoTrimmer_End}"/>
-                            <NumericUpDown Grid.Column="1" Value="{Binding End, Mode=TwoWay}" Minimum="0" Maximum="{Binding Duration}"
-                                           Increment="0.1" FormatString="0.000" ShowButtonSpinner="False"
-                                           AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_End}"/>
+                            <TextBox Grid.Column="1" Text="{Binding EndTimeText, Mode=OneWay}"
+                                     TextAlignment="Center" LostFocus="OnEndTimeLostFocus" KeyDown="OnEndTimeKeyDown"
+                                     AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_End}"/>
                             <Button Grid.Column="2" Command="{Binding SetEndCommand}" Width="40"
                                     ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_SetEnd}"
                                     AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_SetEnd}">
@@ -96,14 +96,14 @@
                            FontSize="12" TextWrapping="Wrap" VerticalAlignment="Center"/>
             </Grid>
 
-            <Grid Grid.Row="3" ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="8">
+            <Grid Grid.Row="3" ColumnDefinitions="Auto,Auto,*,Auto" ColumnSpacing="8">
                 <Button Grid.Column="0" Command="{Binding ExportCommand}" IsEnabled="{Binding CanEdit}">
                     <StackPanel Orientation="Horizontal" Spacing="8">
                         <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scissors}"/>
                         <TextBlock Text="{x:Static loc:Strings.VideoTrimmer_Export}"/>
                     </StackPanel>
                 </Button>
-                <Button Grid.Column="2" Command="{Binding OpenOutputCommand}" IsVisible="{Binding HasOutput}"
+                <Button Grid.Column="1" Command="{Binding OpenOutputCommand}" IsVisible="{Binding HasOutput}"
                             ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_ShowOutput}"
                             AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_ShowOutput}">
                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/>

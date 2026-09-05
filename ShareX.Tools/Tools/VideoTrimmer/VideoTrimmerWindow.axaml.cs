@@ -27,6 +27,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
+using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
 using Strings = ShareX.Tools.Localization.Strings;
 
@@ -87,6 +88,34 @@ public partial class VideoTrimmerWindow : Window
             FileTypeChoices = [new FilePickerFileType(Strings.VideoTrimmer_VideoFiles) { Patterns = ["*" + extension] }]
         });
         return file?.TryGetLocalPath();
+    }
+
+    private void OnStartTimeLostFocus(object? sender, RoutedEventArgs e)
+    {
+        if (sender is TextBox textBox) _viewModel.SetStartTime(textBox.Text);
+    }
+
+    private void OnEndTimeLostFocus(object? sender, RoutedEventArgs e)
+    {
+        if (sender is TextBox textBox) _viewModel.SetEndTime(textBox.Text);
+    }
+
+    private void OnStartTimeKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Enter && sender is TextBox textBox)
+        {
+            _viewModel.SetStartTime(textBox.Text);
+            e.Handled = true;
+        }
+    }
+
+    private void OnEndTimeKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Enter && sender is TextBox textBox)
+        {
+            _viewModel.SetEndTime(textBox.Text);
+            e.Handled = true;
+        }
     }
 
     private void OnDragOver(object? sender, DragEventArgs e)

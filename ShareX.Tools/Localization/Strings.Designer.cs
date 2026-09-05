@@ -5484,7 +5484,7 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Start (seconds)
+        ///   Start:
         /// </summary>
         public static string VideoTrimmer_Start {
             get {
@@ -5493,7 +5493,7 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   End (seconds)
+        ///   End:
         /// </summary>
         public static string VideoTrimmer_End {
             get {
