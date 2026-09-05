@@ -1387,4 +1387,7 @@
   <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
     <value>Medium thumbnail</value>
   </data>
+  <data name="HotkeyType_VideoTrimmer" xml:space="preserve">
+    <value>Video trimmer</value>
+  </data>
 </root>

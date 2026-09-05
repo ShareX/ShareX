@@ -1358,5 +1358,14 @@ namespace ShareX.HelpersLib.Localization {
         public static string YouTubeVideoPrivacy_Unlisted {
             get { return ResourceManager.GetString("YouTubeVideoPrivacy_Unlisted", resourceCulture); }
         }
+        /// <summary>
+        ///   Video trimmer
+        /// </summary>
+        public static string HotkeyType_VideoTrimmer {
+            get {
+                return ResourceManager.GetString("HotkeyType_VideoTrimmer", resourceCulture);
+            }
+        }
+
     }
 }

@@ -2885,4 +2885,7 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Get started</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Video trimmer...</value>
+  </data>
 </root>

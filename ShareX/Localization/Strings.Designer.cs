@@ -5341,5 +5341,14 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("MainMenuBuilder_NetworkMonitor", resourceCulture);
             }
         }
+        /// <summary>
+        ///   Video trimmer
+        /// </summary>
+        public static string MainMenuBuilder_VideoTrimmer {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_VideoTrimmer", resourceCulture);
+            }
+        }
+
     }
 }

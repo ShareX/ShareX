@@ -304,6 +304,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         VideoConverter,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        VideoTrimmer,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         VideoThumbnailer,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         AnalyzeImage,

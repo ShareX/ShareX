@@ -1810,4 +1810,103 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Target</value>
   </data>
+  <data name="VideoTrimmer_Title" xml:space="preserve">
+    <value>ShareX - Video trimmer</value>
+  </data>
+  <data name="VideoTrimmer_Open" xml:space="preserve">
+    <value>Open video…</value>
+  </data>
+  <data name="VideoTrimmer_VideoFiles" xml:space="preserve">
+    <value>Video files</value>
+  </data>
+  <data name="VideoTrimmer_ChooseVideo" xml:space="preserve">
+    <value>Open or drop a video to begin</value>
+  </data>
+  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
+    <value>Still-frame preview • no audio playback</value>
+  </data>
+  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
+    <value>Approximate cached preview • refining when you pause</value>
+  </data>
+  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
+    <value>Preview near {0} • no audio playback</value>
+  </data>
+  <data name="VideoTrimmer_Loading" xml:space="preserve">
+    <value>Preparing timeline previews…</value>
+  </data>
+  <data name="VideoTrimmer_Ready" xml:space="preserve">
+    <value>Drag the handles to choose the part to keep.</value>
+  </data>
+  <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
+    <value>Select a video with a known, finite duration.</value>
+  </data>
+  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
+    <value>No preview frame was available at this position.</value>
+  </data>
+  <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
+    <value>Choose a different output file. The source video cannot be overwritten.</value>
+  </data>
+  <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
+    <value>Use the {0} extension for this export mode.</value>
+  </data>
+  <data name="VideoTrimmer_EmptyOutput" xml:space="preserve">
+    <value>FFmpeg did not produce an output video.</value>
+  </data>
+  <data name="VideoTrimmer_Selection" xml:space="preserve">
+    <value>Keep {0}</value>
+  </data>
+  <data name="VideoTrimmer_CopyHint" xml:space="preserve">
+    <value>No re-encoding. Keyframe-based cuts may include extra content.</value>
+  </data>
+  <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
+    <value>Re-encode to H.264 / AAC MP4 for precise cuts. Subtitles are not included.</value>
+  </data>
+  <data name="VideoTrimmer_Precise" xml:space="preserve">
+    <value>Precise trim</value>
+  </data>
+  <data name="VideoTrimmer_Start" xml:space="preserve">
+    <value>Start (seconds)</value>
+  </data>
+  <data name="VideoTrimmer_End" xml:space="preserve">
+    <value>End (seconds)</value>
+  </data>
+  <data name="VideoTrimmer_Position" xml:space="preserve">
+    <value>Seek (seconds)</value>
+  </data>
+  <data name="VideoTrimmer_SetStart" xml:space="preserve">
+    <value>Set start here</value>
+  </data>
+  <data name="VideoTrimmer_SetEnd" xml:space="preserve">
+    <value>Set end here</value>
+  </data>
+  <data name="VideoTrimmer_Reset" xml:space="preserve">
+    <value>Reset selection</value>
+  </data>
+  <data name="VideoTrimmer_SeekHint" xml:space="preserve">
+    <value>Arrow keys: 0.1 s • Shift: 1 s</value>
+  </data>
+  <data name="VideoTrimmer_KeyboardHint" xml:space="preserve">
+    <value>Drag handles to trim, or click to seek. Left/Right: seek. Shift: 1 second. I/O: set start/end. Home/End: go to selection boundaries.</value>
+  </data>
+  <data name="VideoTrimmer_Timeline" xml:space="preserve">
+    <value>Video timeline and trim selection</value>
+  </data>
+  <data name="VideoTrimmer_Export" xml:space="preserve">
+    <value>Save trimmed video…</value>
+  </data>
+  <data name="VideoTrimmer_Exporting" xml:space="preserve">
+    <value>Saving trimmed video…</value>
+  </data>
+  <data name="VideoTrimmer_Saved" xml:space="preserve">
+    <value>Saved: {0}</value>
+  </data>
+  <data name="VideoTrimmer_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="VideoTrimmer_Cancelled" xml:space="preserve">
+    <value>Cancelled.</value>
+  </data>
+  <data name="VideoTrimmer_ShowOutput" xml:space="preserve">
+    <value>Show output</value>
+  </data>
 </root>

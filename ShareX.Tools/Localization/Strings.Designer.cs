@@ -5321,5 +5321,302 @@ namespace ShareX.Tools.Localization {
                 return ResourceManager.GetString("NetworkMonitorWindow_Target", resourceCulture);
             }
         }
+        /// <summary>
+        ///   ShareX - Video trimmer
+        /// </summary>
+        public static string VideoTrimmer_Title {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Title", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Open video…
+        /// </summary>
+        public static string VideoTrimmer_Open {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Open", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Video files
+        /// </summary>
+        public static string VideoTrimmer_VideoFiles {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_VideoFiles", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Open or drop a video to begin
+        /// </summary>
+        public static string VideoTrimmer_ChooseVideo {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_ChooseVideo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Still-frame preview • no audio playback
+        /// </summary>
+        public static string VideoTrimmer_PreviewHint {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_PreviewHint", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Approximate cached preview • refining when you pause
+        /// </summary>
+        public static string VideoTrimmer_CachedPreview {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_CachedPreview", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Preview near {0} • no audio playback
+        /// </summary>
+        public static string VideoTrimmer_FrameAt {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_FrameAt", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Preparing timeline previews…
+        /// </summary>
+        public static string VideoTrimmer_Loading {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Loading", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Drag the handles to choose the part to keep.
+        /// </summary>
+        public static string VideoTrimmer_Ready {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Ready", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Select a video with a known, finite duration.
+        /// </summary>
+        public static string VideoTrimmer_InvalidVideo {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_InvalidVideo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   No preview frame was available at this position.
+        /// </summary>
+        public static string VideoTrimmer_NoFrame {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_NoFrame", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Choose a different output file. The source video cannot be overwritten.
+        /// </summary>
+        public static string VideoTrimmer_SourceOverwrite {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_SourceOverwrite", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Use the {0} extension for this export mode.
+        /// </summary>
+        public static string VideoTrimmer_OutputExtension {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_OutputExtension", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   FFmpeg did not produce an output video.
+        /// </summary>
+        public static string VideoTrimmer_EmptyOutput {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_EmptyOutput", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Keep {0}
+        /// </summary>
+        public static string VideoTrimmer_Selection {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Selection", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   No re-encoding. Keyframe-based cuts may include extra content.
+        /// </summary>
+        public static string VideoTrimmer_CopyHint {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_CopyHint", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Re-encode to H.264 / AAC MP4 for precise cuts. Subtitles are not included.
+        /// </summary>
+        public static string VideoTrimmer_PreciseHint {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_PreciseHint", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Precise trim
+        /// </summary>
+        public static string VideoTrimmer_Precise {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Precise", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Start (seconds)
+        /// </summary>
+        public static string VideoTrimmer_Start {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Start", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   End (seconds)
+        /// </summary>
+        public static string VideoTrimmer_End {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_End", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Seek (seconds)
+        /// </summary>
+        public static string VideoTrimmer_Position {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Position", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Set start here
+        /// </summary>
+        public static string VideoTrimmer_SetStart {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_SetStart", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Set end here
+        /// </summary>
+        public static string VideoTrimmer_SetEnd {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_SetEnd", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Reset selection
+        /// </summary>
+        public static string VideoTrimmer_Reset {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Reset", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Arrow keys: 0.1 s • Shift: 1 s
+        /// </summary>
+        public static string VideoTrimmer_SeekHint {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_SeekHint", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Drag handles to trim, or click to seek. Left/Right: seek. Shift: 1 second. I/O: set start/end. Home/End: go to selection boundaries.
+        /// </summary>
+        public static string VideoTrimmer_KeyboardHint {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_KeyboardHint", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Video timeline and trim selection
+        /// </summary>
+        public static string VideoTrimmer_Timeline {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Timeline", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Save trimmed video…
+        /// </summary>
+        public static string VideoTrimmer_Export {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Export", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Saving trimmed video…
+        /// </summary>
+        public static string VideoTrimmer_Exporting {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Exporting", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Saved: {0}
+        /// </summary>
+        public static string VideoTrimmer_Saved {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Saved", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Cancel
+        /// </summary>
+        public static string VideoTrimmer_Cancel {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Cancel", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Cancelled.
+        /// </summary>
+        public static string VideoTrimmer_Cancelled {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Cancelled", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Show output
+        /// </summary>
+        public static string VideoTrimmer_ShowOutput {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_ShowOutput", resourceCulture);
+            }
+        }
+
     }
 }

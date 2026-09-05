@@ -1,0 +1,120 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:ShareX.Tools"
+        xmlns:loc="using:ShareX.Tools.Localization"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.Tools.VideoTrimmerWindow"
+        x:DataType="local:VideoTrimmerViewModel"
+        Title="{x:Static loc:Strings.VideoTrimmer_Title}"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        Width="900" Height="720" MinWidth="760" MinHeight="620"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <Grid Margin="16" RowDefinitions="Auto,*,Auto,Auto" RowSpacing="12">
+            <Border Classes="tool-panel">
+                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                    <TextBlock Classes="section-heading" Text="{x:Static loc:Strings.VideoThumbnailerWindow_Video}"/>
+                    <TextBlock Grid.Column="1" Classes="path-text" Text="{Binding InputDisplay}"
+                               VerticalAlignment="Center" ToolTip.Tip="{Binding InputFilePath}"/>
+                    <Button Grid.Column="2" Command="{Binding BrowseCommand}" IsEnabled="{Binding CanBrowse}">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/>
+                            <TextBlock Text="{x:Static loc:Strings.VideoTrimmer_Open}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Classes="tool-panel">
+                <Grid RowDefinitions="*,Auto,Auto,Auto" RowSpacing="8">
+                    <Border Background="{DynamicResource ShareX.Brush.Background.Main}" CornerRadius="4" ClipToBounds="True">
+                        <Grid Margin="8">
+                            <Image Source="{Binding Preview}" Stretch="Uniform"
+                                   RenderOptions.BitmapInterpolationMode="HighQuality" ToolTip.Tip="{Binding PreviewText}"/>
+                            <StackPanel IsVisible="{Binding !HasVideo}" Spacing="12"
+                                        HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.film}"
+                                           FontSize="36" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{x:Static loc:Strings.VideoTrimmer_ChooseVideo}" FontWeight="Normal"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Margin="0,4,0,0">
+                        <StackPanel Orientation="Horizontal" Spacing="6">
+                            <TextBlock Text="{Binding PositionText}" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Text}"/>
+                            <TextBlock Text="/" FontWeight="Normal"/>
+                            <TextBlock Text="{Binding DurationText}" FontWeight="Normal"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" Text="{Binding SelectionText}" FontWeight="Normal"/>
+                    </Grid>
+
+                    <local:VideoTrimmerTimeline Grid.Row="2" Height="72" IsEnabled="{Binding CanEdit}"
+                                               Accent="{DynamicResource ShareX.Brush.Accent}"
+                                               TrackBackground="{DynamicResource ShareX.Brush.Control.Background}"
+                                               ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_KeyboardHint}"
+                                               AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_Timeline}"/>
+
+                    <Grid Grid.Row="3" ColumnDefinitions="*,*,Auto" ColumnSpacing="16" IsEnabled="{Binding CanEdit}">
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
+                            <TextBlock Classes="row-label" Text="{x:Static loc:Strings.VideoTrimmer_Start}"/>
+                            <NumericUpDown Grid.Column="1" Value="{Binding Start, Mode=TwoWay}" Minimum="0" Maximum="{Binding Duration}"
+                                           Increment="0.1" FormatString="0.000" ShowButtonSpinner="False"
+                                           AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_Start}"/>
+                            <Button Grid.Column="2" Command="{Binding SetStartCommand}" Width="40"
+                                    ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_SetStart}"
+                                    AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_SetStart}">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_left_to_line}"/>
+                            </Button>
+                        </Grid>
+                        <Grid Grid.Column="1" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
+                            <TextBlock Classes="row-label" Text="{x:Static loc:Strings.VideoTrimmer_End}"/>
+                            <NumericUpDown Grid.Column="1" Value="{Binding End, Mode=TwoWay}" Minimum="0" Maximum="{Binding Duration}"
+                                           Increment="0.1" FormatString="0.000" ShowButtonSpinner="False"
+                                           AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_End}"/>
+                            <Button Grid.Column="2" Command="{Binding SetEndCommand}" Width="40"
+                                    ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_SetEnd}"
+                                    AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_SetEnd}">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_right_to_line}"/>
+                            </Button>
+                        </Grid>
+                        <Button Grid.Column="2" Command="{Binding ResetCommand}" Width="40"
+                                ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_Reset}"
+                                AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_Reset}">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="2" ColumnDefinitions="Auto,*" ColumnSpacing="16">
+                <CheckBox IsChecked="{Binding Precise}" IsEnabled="{Binding CanBrowse}" VerticalAlignment="Center">
+                    <TextBlock Text="{x:Static loc:Strings.VideoTrimmer_Precise}" FontWeight="Normal"/>
+                </CheckBox>
+                <TextBlock Grid.Column="1" Text="{Binding ModeDescription}" FontWeight="Normal"
+                           FontSize="12" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="3" RowDefinitions="Auto,Auto" RowSpacing="8">
+                <ProgressBar Height="4" IsVisible="{Binding IsWorking}" IsIndeterminate="{Binding IsLoading}" Value="{Binding Progress}"/>
+                <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="8">
+                    <TextBlock Text="{Binding StatusText}" FontWeight="Normal" TextTrimming="CharacterEllipsis"
+                               ToolTip.Tip="{Binding StatusText}" VerticalAlignment="Center"/>
+                    <Button Grid.Column="1" Command="{Binding OpenOutputCommand}" IsVisible="{Binding HasOutput}"
+                            ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_ShowOutput}"
+                            AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_ShowOutput}">
+                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/>
+                    </Button>
+                    <Button Grid.Column="2" Content="{x:Static loc:Strings.VideoTrimmer_Cancel}"
+                            Command="{Binding CancelCommand}" IsVisible="{Binding IsWorking}"/>
+                    <Button Grid.Column="3" Command="{Binding ExportCommand}" IsEnabled="{Binding CanEdit}">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scissors}"/>
+                            <TextBlock Text="{x:Static loc:Strings.VideoTrimmer_Export}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
