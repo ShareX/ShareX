@@ -1870,6 +1870,9 @@
   <data name="VideoTrimmer_End" xml:space="preserve">
     <value>End:</value>
   </data>
+  <data name="VideoTrimmer_Duration" xml:space="preserve">
+    <value>Duration:</value>
+  </data>
   <data name="VideoTrimmer_Position" xml:space="preserve">
     <value>Seek (seconds)</value>
   </data>

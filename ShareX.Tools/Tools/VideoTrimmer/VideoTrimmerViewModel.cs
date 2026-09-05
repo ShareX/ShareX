@@ -73,6 +73,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     public string DurationText => FormatTime(Duration);
     public string StartTimeText => FormatTime(Start);
     public string EndTimeText => FormatTime(End);
+    public string SelectionDurationText => FormatTime(End - Start);
     public string SelectionText => string.Format(Strings.VideoTrimmer_Selection, FormatTime(End - Start));
     public string InputDisplay => string.IsNullOrEmpty(InputFilePath) ? Strings.VideoTrimmer_ChooseVideo : InputFilePath;
 
@@ -256,6 +257,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         double clamped = double.IsFinite(value) ? Math.Clamp(value, 0, Math.Max(0, End - MinimumSelection)) : 0;
         if (value != clamped) { Start = clamped; return; }
         OnPropertyChanged(nameof(StartTimeText));
+        OnPropertyChanged(nameof(SelectionDurationText));
         OnPropertyChanged(nameof(SelectionText));
         if (HasVideo) Position = Start;
     }
@@ -265,6 +267,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         double clamped = double.IsFinite(value) ? Math.Clamp(value, Math.Min(Duration, Start + MinimumSelection), Duration) : Duration;
         if (value != clamped) { End = clamped; return; }
         OnPropertyChanged(nameof(EndTimeText));
+        OnPropertyChanged(nameof(SelectionDurationText));
         OnPropertyChanged(nameof(SelectionText));
         if (HasVideo) Position = End;
     }

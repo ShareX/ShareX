@@ -56,7 +56,7 @@
                     <ProgressBar Grid.Row="3" Height="4" IsVisible="{Binding IsWorking}"
                                  IsIndeterminate="{Binding IsLoading}" Value="{Binding Progress}"/>
 
-                    <Grid Grid.Row="4" ColumnDefinitions="*,*,Auto" ColumnSpacing="16" IsEnabled="{Binding CanEdit}">
+                    <Grid Grid.Row="4" ColumnDefinitions="*,*,Auto,Auto" ColumnSpacing="16" IsEnabled="{Binding CanEdit}">
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
                             <TextBlock Classes="row-label" Text="{x:Static loc:Strings.VideoTrimmer_Start}"/>
                             <TextBox Grid.Column="1" Text="{Binding StartTimeText, Mode=OneWay}"
@@ -79,7 +79,12 @@
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_right_to_line}"/>
                             </Button>
                         </Grid>
-                        <Button Grid.Column="2" Command="{Binding ResetCommand}" Width="40"
+                        <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                            <TextBlock Classes="row-label" Text="{x:Static loc:Strings.VideoTrimmer_Duration}"/>
+                            <TextBlock Text="{Binding SelectionDurationText}" FontWeight="Normal"
+                                       Foreground="{DynamicResource ShareX.Brush.Text}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Button Grid.Column="3" Command="{Binding ResetCommand}" Width="40"
                                 ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_Reset}"
                                 AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_Reset}">
                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>

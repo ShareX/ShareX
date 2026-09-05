@@ -5502,6 +5502,15 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Duration:
+        /// </summary>
+        public static string VideoTrimmer_Duration {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Duration", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Seek (seconds)
         /// </summary>
         public static string VideoTrimmer_Position {
