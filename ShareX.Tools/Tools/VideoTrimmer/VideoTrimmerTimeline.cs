@@ -53,7 +53,7 @@ public sealed class VideoTrimmerTimeline : Control
 
     static VideoTrimmerTimeline()
     {
-        AffectsRender<VideoTrimmerTimeline>(AccentProperty, TrackBackgroundProperty, IsFocusedProperty);
+        AffectsRender<VideoTrimmerTimeline>(AccentProperty, TrackBackgroundProperty);
     }
 
     public VideoTrimmerTimeline()
@@ -116,7 +116,6 @@ public sealed class VideoTrimmerTimeline : Control
         context.DrawLine(new Pen(Brushes.Black, 4), new Point(playhead, 4), new Point(playhead, TrackBottom + 8));
         context.DrawLine(new Pen(Brushes.White, 2), new Point(playhead, 4), new Point(playhead, TrackBottom + 8));
         context.DrawEllipse(Brushes.White, null, new Point(playhead, 5), 4, 4);
-        if (IsFocused) context.DrawRectangle(null, new Pen(Accent, 1), new Rect(1, 1, Bounds.Width - 2, Bounds.Height - 2), 6, 6);
     }
 
     protected override void OnPointerPressed(PointerPressedEventArgs e)

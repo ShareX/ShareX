@@ -133,7 +133,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
                 }
             }
 
-            StatusText = Strings.VideoTrimmer_Ready;
+            StatusText = string.Empty;
         }
         catch (OperationCanceledException) { }
         catch (Exception ex)
