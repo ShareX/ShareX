@@ -37,12 +37,12 @@ internal class EditorMemento : IDisposable
     /// <summary>
     /// Duplicated list of annotations at this state
     /// </summary>
-    public List<Annotation> Annotations { get; private set; }
+    public List<Annotation> Annotations { get; }
 
     /// <summary>
     /// Canvas size at this state
     /// </summary>
-    public SKSize CanvasSize { get; private set; }
+    public SKSize CanvasSize { get; }
 
     /// <summary>
     /// Optional full canvas bitmap (for destructive operations like crop/cutout)
@@ -50,14 +50,14 @@ internal class EditorMemento : IDisposable
     public SKBitmap? Canvas { get; private set; }
 
     /// <summary>
-    /// ISSUE-010 fix: ID of the selected annotation at this state (for undo/redo selection restoration)
+    /// ID of the selected annotation at this state (for undo/redo selection restoration)
     /// </summary>
-    public Guid? SelectedAnnotationId { get; private set; }
+    public Guid? SelectedAnnotationId { get; }
 
     /// <summary>
     /// Create a new memento
     /// </summary>
-    /// <param name="annotations">Annotation list to duplicate</param>
+    /// <param name="annotations">Snapshot of annotations owned by this memento</param>
     /// <param name="canvasSize">Canvas size</param>
     /// <param name="canvas">Optional canvas bitmap for destructive operations</param>
     /// <param name="selectedAnnotationId">Optional selected annotation ID for selection restoration</param>
@@ -71,11 +71,11 @@ internal class EditorMemento : IDisposable
 
     public void Dispose()
     {
-        // Note: Annotations are not disposed here because they may be restored during undo/redo
-        // They will be garbage collected when no longer referenced
-
+        // Restoring transfers the annotation references to the editor's own list.
+        // Clear this list without disposing annotations that may now be in use.
         Annotations.Clear();
 
         Canvas?.Dispose();
+        Canvas = null;
     }
 }

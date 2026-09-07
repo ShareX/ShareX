@@ -40,17 +40,14 @@ internal class EditorHistory : IDisposable
 
     /// <summary>
     /// Maximum number of canvas mementos (destructive operations) to keep.
-    /// ISSUE-003 mitigation: Canvas mementos contain full bitmap copies and can consume
-    /// significant memory (e.g., 8MB per 4K screenshot). Limiting to 5 balances undo depth with memory.
+    /// Canvas mementos contain full bitmap copies, so their count is limited separately.
     /// </summary>
     private const int MaxCanvasMementos = 5;
 
     /// <summary>
-    /// Maximum number of annotation-only mementos to keep (lightweight operations).
-    /// These don't store canvas bitmaps, so we can keep more.
-    /// Default increased to 50 to prevent premature history loss causing perceived bugs.
+    /// Maximum total number of mementos, including canvas mementos.
     /// </summary>
-    private const int MaxAnnotationMementos = 50;
+    private const int MaxMementos = 50;
 
     private readonly EditorCore _editorCore;
     private readonly Stack<EditorMemento> _undoMementoStack = new();
@@ -66,79 +63,49 @@ internal class EditorHistory : IDisposable
     /// </summary>
     private void AddMemento(EditorMemento memento)
     {
-        // Push the new memento first
         _undoMementoStack.Push(memento);
+        TrimUndoHistory();
+        ClearStack(_redoMementoStack);
+    }
 
-        // Flatten stack to apply limits linearly from Newest to Oldest
-        EditorMemento[] allMementos = _undoMementoStack.ToArray();
-        _undoMementoStack.Clear(); // Clear and rebuild
+    private void TrimUndoHistory()
+    {
+        // Stack enumeration runs from newest to oldest. Keep a contiguous history
+        // so undo never skips an operation whose state has been discarded.
+        EditorMemento[] mementos = _undoMementoStack.ToArray();
+        int keepCount = 0;
+        int canvasCount = 0;
 
-        var keptItems = new List<EditorMemento>();
-        int keptCanvasCount = 0;
-
-        for (int i = 0; i < allMementos.Length; i++)
+        while (keepCount < mementos.Length && keepCount < MaxMementos)
         {
-            var m = allMementos[i];
-            bool keep = false;
-
-            // Check Total Limit
-            if (keptItems.Count < MaxAnnotationMementos)
+            if (mementos[keepCount].Canvas != null && ++canvasCount > MaxCanvasMementos)
             {
-                if (m.Canvas != null)
-                {
-                    // Check Canvas Limit
-                    if (keptCanvasCount < MaxCanvasMementos)
-                    {
-                        keep = true;
-                        keptCanvasCount++;
-                    }
-                }
-                else
-                {
-                    // Annotation memento - keep if within total limit
-                    keep = true;
-                }
+                break;
             }
 
-            if (keep)
-            {
-                keptItems.Add(m);
-            }
-            else
-            {
-                // Discard this item and ALL older items (since history is linear)
-                m.Dispose();
-
-                // Dispose the rest of the array
-                for (int j = i + 1; j < allMementos.Length; j++)
-                {
-                    allMementos[j].Dispose();
-                }
-                break; // Stop processing
-            }
+            keepCount++;
         }
 
-        // Rebuild stack (Reverse of keptItems to restore Oldest -> Newest)
-        // keptItems[0] is Newest (Top).
-        // Stack.Push pushes to Top.
-        // So we push Oldest first.
-        for (int i = keptItems.Count - 1; i >= 0; i--)
+        if (keepCount == mementos.Length)
         {
-            _undoMementoStack.Push(keptItems[i]);
+            return;
         }
 
-        // Clear redo stack when new action is performed
-        foreach (EditorMemento redoMemento in _redoMementoStack)
+        _undoMementoStack.Clear();
+
+        for (int i = keepCount - 1; i >= 0; i--)
         {
-            redoMemento?.Dispose();
+            _undoMementoStack.Push(mementos[i]);
         }
 
-        _redoMementoStack.Clear();
+        for (int i = keepCount; i < mementos.Length; i++)
+        {
+            mementos[i].Dispose();
+        }
     }
 
     /// <summary>
     /// Create a memento with full canvas bitmap (for destructive operations like crop/cutout)
-    /// ISSUE-010 fix: Captures selected annotation ID for restoration
     /// </summary>
     private EditorMemento GetMementoFromCanvas()
     {
@@ -150,7 +117,6 @@ internal class EditorHistory : IDisposable
 
     /// <summary>
     /// Create a memento with only annotations (for non-destructive annotation operations)
-    /// ISSUE-010 fix: Captures selected annotation ID for restoration
     /// </summary>
     private EditorMemento GetMementoFromAnnotations(Annotation? excludeAnnotation = null)
     {
@@ -193,29 +159,7 @@ internal class EditorHistory : IDisposable
     /// </summary>
     public void Undo()
     {
-        if (!CanUndo) return;
-
-        EditorMemento undoMemento = _undoMementoStack.Pop();
-
-        if (undoMemento.Annotations != null)
-        {
-            if (undoMemento.Canvas == null)
-            {
-                // Annotations-only undo: save current annotations to redo stack
-                EditorMemento redoMemento = GetMementoFromAnnotations();
-                _redoMementoStack.Push(redoMemento);
-
-                _editorCore.RestoreState(undoMemento);
-            }
-            else
-            {
-                // Canvas undo: save current full state to redo stack
-                EditorMemento redoMemento = GetMementoFromCanvas();
-                _redoMementoStack.Push(redoMemento);
-
-                _editorCore.RestoreState(undoMemento);
-            }
-        }
+        RestoreMemento(_undoMementoStack, _redoMementoStack);
     }
 
     /// <summary>
@@ -223,28 +167,20 @@ internal class EditorHistory : IDisposable
     /// </summary>
     public void Redo()
     {
-        if (!CanRedo) return;
+        RestoreMemento(_redoMementoStack, _undoMementoStack);
+    }
 
-        EditorMemento redoMemento = _redoMementoStack.Pop();
-
-        if (redoMemento.Annotations != null)
+    private void RestoreMemento(Stack<EditorMemento> source, Stack<EditorMemento> destination)
+    {
+        if (!source.TryPop(out EditorMemento? memento))
         {
-            if (redoMemento.Canvas == null)
-            {
-                // Annotations-only redo: save current annotations to undo stack
-                EditorMemento undoMemento = GetMementoFromAnnotations();
-                _undoMementoStack.Push(undoMemento);
+            return;
+        }
 
-                _editorCore.RestoreState(redoMemento);
-            }
-            else
-            {
-                // Canvas redo: save current full state to undo stack
-                EditorMemento undoMemento = GetMementoFromCanvas();
-                _undoMementoStack.Push(undoMemento);
-
-                _editorCore.RestoreState(redoMemento);
-            }
+        using (memento)
+        {
+            destination.Push(memento.Canvas == null ? GetMementoFromAnnotations() : GetMementoFromCanvas());
+            _editorCore.RestoreState(memento);
         }
     }
 
@@ -253,18 +189,15 @@ internal class EditorHistory : IDisposable
     /// </summary>
     public void Dispose()
     {
-        foreach (EditorMemento undoMemento in _undoMementoStack)
+        ClearStack(_undoMementoStack);
+        ClearStack(_redoMementoStack);
+    }
+
+    private static void ClearStack(Stack<EditorMemento> stack)
+    {
+        while (stack.TryPop(out EditorMemento? memento))
         {
-            undoMemento?.Dispose();
+            memento.Dispose();
         }
-
-        _undoMementoStack.Clear();
-
-        foreach (EditorMemento redoMemento in _redoMementoStack)
-        {
-            redoMemento?.Dispose();
-        }
-
-        _redoMementoStack.Clear();
     }
 }

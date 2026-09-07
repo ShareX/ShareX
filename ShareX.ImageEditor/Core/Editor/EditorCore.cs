@@ -567,97 +567,43 @@ public class EditorCore : IDisposable
             (startPos, endPos) = (endPos, startPos);
         }
 
-        if (isVertical)
+        int imageLength = isVertical ? SourceImage.Width : SourceImage.Height;
+        if (startPos < 0 || endPos > imageLength || startPos >= endPos)
         {
-            if (startPos < 0 || endPos > SourceImage.Width || startPos >= endPos)
-            {
-                return false;
-            }
-        }
-        else
-        {
-            if (startPos < 0 || endPos > SourceImage.Height || startPos >= endPos)
-            {
-                return false;
-            }
+            return false;
         }
 
         _history.CreateCanvasMemento();
 
-        if (isVertical)
+        if (endPos - startPos >= imageLength)
         {
-            int cutX = startPos;
-            int cutWidth = endPos - startPos;
-            int newWidth = SourceImage.Width - cutWidth;
-            if (newWidth <= 0)
-            {
-                return false;
-            }
-
-            var resultBitmap = new SKBitmap(newWidth, SourceImage.Height);
-            using (var canvas = new SKCanvas(resultBitmap))
-            {
-                if (cutX > 0)
-                {
-                    var sourceRect = new SKRect(0, 0, cutX, SourceImage.Height);
-                    var destRect = new SKRect(0, 0, cutX, SourceImage.Height);
-                    canvas.DrawBitmap(SourceImage, sourceRect, destRect);
-                }
-
-                int rightStart = cutX + cutWidth;
-                if (rightStart < SourceImage.Width)
-                {
-                    var sourceRect = new SKRect(rightStart, 0, SourceImage.Width, SourceImage.Height);
-                    var destRect = new SKRect(cutX, 0, newWidth, SourceImage.Height);
-                    canvas.DrawBitmap(SourceImage, sourceRect, destRect);
-                }
-            }
-
-            SourceImage.Dispose();
-            SourceImage = resultBitmap;
-            CanvasSize = new SKSize(newWidth, SourceImage.Height);
-            AdjustAnnotationsForVerticalCut(cutX, cutWidth, newWidth);
+            return false;
         }
-        else
-        {
-            int cutY = startPos;
-            int cutHeight = endPos - startPos;
-            int newHeight = SourceImage.Height - cutHeight;
-            if (newHeight <= 0)
-            {
-                return false;
-            }
 
-            var resultBitmap = new SKBitmap(SourceImage.Width, newHeight);
-            using (var canvas = new SKCanvas(resultBitmap))
-            {
-                if (cutY > 0)
-                {
-                    var sourceRect = new SKRect(0, 0, SourceImage.Width, cutY);
-                    var destRect = new SKRect(0, 0, SourceImage.Width, cutY);
-                    canvas.DrawBitmap(SourceImage, sourceRect, destRect);
-                }
-
-                int bottomStart = cutY + cutHeight;
-                if (bottomStart < SourceImage.Height)
-                {
-                    var sourceRect = new SKRect(0, bottomStart, SourceImage.Width, SourceImage.Height);
-                    var destRect = new SKRect(0, cutY, SourceImage.Width, newHeight);
-                    canvas.DrawBitmap(SourceImage, sourceRect, destRect);
-                }
-            }
-
-            SourceImage.Dispose();
-            SourceImage = resultBitmap;
-            CanvasSize = new SKSize(SourceImage.Width, newHeight);
-            AdjustAnnotationsForHorizontalCut(cutY, cutHeight, newHeight);
-        }
+        ApplyCutOut(SourceImage, startPos, endPos, isVertical);
 
         AnnotationsRestored?.Invoke();
         ImageChanged?.Invoke();
         HistoryChanged?.Invoke();
         InvalidateRequested?.Invoke();
         return true;
+    }
+
+    private void ApplyCutOut(SKBitmap source, int startPos, int endPos, bool isVertical)
+    {
+        SourceImage = ImageHelpers.CutOut(source, startPos, endPos, isVertical);
+        source.Dispose();
+        CanvasSize = new SKSize(SourceImage.Width, SourceImage.Height);
+
+        int cutLength = endPos - startPos;
+        if (isVertical)
+        {
+            AdjustAnnotationsForVerticalCut(startPos, cutLength);
+        }
+        else
+        {
+            AdjustAnnotationsForHorizontalCut(startPos, cutLength);
+        }
     }
 
     /// <summary>
@@ -1199,17 +1145,7 @@ public class EditorCore : IDisposable
     /// </summary>
     public void BringToFront()
     {
-        if (_selectedAnnotation == null || !_annotations.Contains(_selectedAnnotation)) return;
-        int index = _annotations.IndexOf(_selectedAnnotation);
-        // Already at top
-        if (index < 0 || index == _annotations.Count - 1) return;
-
-        _history.CreateAnnotationsMemento();
-        _annotations.RemoveAt(index);
-        _annotations.Add(_selectedAnnotation);
-        AnnotationOrderChanged?.Invoke();
-        HistoryChanged?.Invoke();
-        InvalidateRequested?.Invoke();
+        MoveSelectedAnnotation(_annotations.Count - 1);
     }
 
     /// <summary>
@@ -1217,17 +1153,7 @@ public class EditorCore : IDisposable
     /// </summary>
     public void SendToBack()
     {
-        if (_selectedAnnotation == null || !_annotations.Contains(_selectedAnnotation)) return;
-        int index = _annotations.IndexOf(_selectedAnnotation);
-        // Already at bottom
-        if (index <= 0) return;
-
-        _history.CreateAnnotationsMemento();
-        _annotations.RemoveAt(index);
-        _annotations.Insert(0, _selectedAnnotation);
-        AnnotationOrderChanged?.Invoke();
-        HistoryChanged?.Invoke();
-        InvalidateRequested?.Invoke();
+        MoveSelectedAnnotation(0);
     }
 
     /// <summary>
@@ -1235,17 +1161,10 @@ public class EditorCore : IDisposable
     /// </summary>
     public void BringForward()
     {
-        if (_selectedAnnotation == null || !_annotations.Contains(_selectedAnnotation)) return;
-        int index = _annotations.IndexOf(_selectedAnnotation);
-        // Already at top
-        if (index < 0 || index == _annotations.Count - 1) return;
-
-        _history.CreateAnnotationsMemento();
-        _annotations.RemoveAt(index);
-        _annotations.Insert(index + 1, _selectedAnnotation);
-        AnnotationOrderChanged?.Invoke();
-        HistoryChanged?.Invoke();
-        InvalidateRequested?.Invoke();
+        if (_selectedAnnotation != null)
+        {
+            MoveSelectedAnnotation(_annotations.IndexOf(_selectedAnnotation) + 1);
+        }
     }
 
     /// <summary>
@@ -1253,14 +1172,28 @@ public class EditorCore : IDisposable
     /// </summary>
     public void SendBackward()
     {
-        if (_selectedAnnotation == null || !_annotations.Contains(_selectedAnnotation)) return;
+        if (_selectedAnnotation != null)
+        {
+            MoveSelectedAnnotation(_annotations.IndexOf(_selectedAnnotation) - 1);
+        }
+    }
+
+    private void MoveSelectedAnnotation(int targetIndex)
+    {
+        if (_selectedAnnotation == null || targetIndex < 0 || targetIndex >= _annotations.Count)
+        {
+            return;
+        }
+
         int index = _annotations.IndexOf(_selectedAnnotation);
-        // Already at bottom
-        if (index <= 0) return;
+        if (index < 0 || index == targetIndex)
+        {
+            return;
+        }
 
         _history.CreateAnnotationsMemento();
         _annotations.RemoveAt(index);
-        _annotations.Insert(index - 1, _selectedAnnotation);
+        _annotations.Insert(targetIndex, _selectedAnnotation);
         AnnotationOrderChanged?.Invoke();
         HistoryChanged?.Invoke();
         InvalidateRequested?.Invoke();
@@ -1667,128 +1600,39 @@ public class EditorCore : IDisposable
     public void PerformCutOut()
     {
         var cutOutAnnotation = _annotations.OfType<CutOutAnnotation>().FirstOrDefault();
-        if (cutOutAnnotation == null || SourceImage == null) return;
+        if (cutOutAnnotation == null || SourceImage == null)
+        {
+            return;
+        }
 
-        var bounds = cutOutAnnotation.GetBounds();
-
-        // Create canvas memento before destructive cutout operation
+        SKRect bounds = cutOutAnnotation.GetBounds();
         _history.CreateCanvasMemento();
 
-        if (cutOutAnnotation.IsVertical)
+        bool isVertical = cutOutAnnotation.IsVertical;
+        int imageLength = isVertical ? SourceImage.Width : SourceImage.Height;
+        if (imageLength <= 0)
         {
-            // Vertical cut: remove a vertical strip and join left and right parts
-            int cutX = (int)Math.Round(bounds.MidX);
-            int cutWidth = (int)Math.Max(1, Math.Round(bounds.Width));
-
-            // Clamp to image bounds
-            if (cutX < 0) cutX = 0;
-            if (cutX >= SourceImage.Width) cutX = SourceImage.Width - 1;
-
-            // Ensure we don't cut past the end of the image
-            int maxCutWidth = SourceImage.Width - cutX;
-            if (cutWidth > maxCutWidth) cutWidth = maxCutWidth;
-
-            if (cutWidth <= 0)
-            {
-                return;
-            }
-
-            int newWidth = SourceImage.Width - cutWidth;
-            if (newWidth <= 0)
-            {
-                return;
-            }
-
-            var resultBitmap = new SKBitmap(newWidth, SourceImage.Height);
-            using (var canvas = new SKCanvas(resultBitmap))
-            {
-                // Draw left part
-                if (cutX > 0)
-                {
-                    var sourceRect = new SKRect(0, 0, cutX, SourceImage.Height);
-                    var destRect = new SKRect(0, 0, cutX, SourceImage.Height);
-                    canvas.DrawBitmap(SourceImage, sourceRect, destRect);
-                }
-
-                // Draw right part
-                int rightStart = cutX + cutWidth;
-                if (rightStart < SourceImage.Width)
-                {
-                    var sourceRect = new SKRect(rightStart, 0, SourceImage.Width, SourceImage.Height);
-                    var destRect = new SKRect(cutX, 0, newWidth, SourceImage.Height);
-                    canvas.DrawBitmap(SourceImage, sourceRect, destRect);
-                }
-            }
-
-            SourceImage.Dispose();
-            SourceImage = resultBitmap;
-            CanvasSize = new SKSize(newWidth, SourceImage.Height);
-
-            // Adjust annotations for vertical cut
-            AdjustAnnotationsForVerticalCut(cutX, cutWidth, newWidth);
-        }
-        else
-        {
-            // Horizontal cut: remove a horizontal strip and join top and bottom parts
-            int cutY = (int)Math.Round(bounds.MidY);
-            int cutHeight = (int)Math.Max(1, Math.Round(bounds.Height));
-
-            // Clamp to image bounds
-            if (cutY < 0) cutY = 0;
-            if (cutY >= SourceImage.Height) cutY = SourceImage.Height - 1;
-
-            // Ensure we don't cut past the end of the image
-            int maxCutHeight = SourceImage.Height - cutY;
-            if (cutHeight > maxCutHeight) cutHeight = maxCutHeight;
-
-            if (cutHeight <= 0)
-            {
-                return;
-            }
-
-            int newHeight = SourceImage.Height - cutHeight;
-            if (newHeight <= 0)
-            {
-                return;
-            }
-
-            var resultBitmap = new SKBitmap(SourceImage.Width, newHeight);
-            using (var canvas = new SKCanvas(resultBitmap))
-            {
-                // Draw top part
-                if (cutY > 0)
-                {
-                    var sourceRect = new SKRect(0, 0, SourceImage.Width, cutY);
-                    var destRect = new SKRect(0, 0, SourceImage.Width, cutY);
-                    canvas.DrawBitmap(SourceImage, sourceRect, destRect);
-                }
-
-                // Draw bottom part
-                int bottomStart = cutY + cutHeight;
-                if (bottomStart < SourceImage.Height)
-                {
-                    var sourceRect = new SKRect(0, bottomStart, SourceImage.Width, SourceImage.Height);
-                    var destRect = new SKRect(0, cutY, SourceImage.Width, newHeight);
-                    canvas.DrawBitmap(SourceImage, sourceRect, destRect);
-                }
-            }
-
-            SourceImage.Dispose();
-            SourceImage = resultBitmap;
-            CanvasSize = new SKSize(SourceImage.Width, newHeight);
-
-            // Adjust annotations for horizontal cut
-            AdjustAnnotationsForHorizontalCut(cutY, cutHeight, newHeight);
+            return;
         }
 
-        // Remove cutout annotation
+        int startPos = (int)Math.Round(isVertical ? bounds.MidX : bounds.MidY);
+        int cutLength = (int)Math.Max(1, Math.Round(isVertical ? bounds.Width : bounds.Height));
+
+        startPos = Math.Clamp(startPos, 0, imageLength - 1);
+        cutLength = Math.Min(cutLength, imageLength - startPos);
+        if (cutLength <= 0 || cutLength >= imageLength)
+        {
+            return;
+        }
+
+        ApplyCutOut(SourceImage, startPos, startPos + cutLength, isVertical);
         _annotations.Remove(cutOutAnnotation);
 
         ImageChanged?.Invoke();
         InvalidateRequested?.Invoke();
     }
 
-    private void AdjustAnnotationsForVerticalCut(int cutX, int cutWidth, int newWidth)
+    private void AdjustAnnotationsForVerticalCut(int cutX, int cutWidth)
     {
         int cutEnd = cutX + cutWidth;
 
@@ -1883,7 +1727,7 @@ public class EditorCore : IDisposable
         }
     }
 
-    private void AdjustAnnotationsForHorizontalCut(int cutY, int cutHeight, int newHeight)
+    private void AdjustAnnotationsForHorizontalCut(int cutY, int cutHeight)
     {
         int cutEnd = cutY + cutHeight;
 
