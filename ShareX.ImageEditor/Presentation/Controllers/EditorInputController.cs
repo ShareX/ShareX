@@ -98,8 +98,7 @@ public class EditorInputController
     private string? _draggedCropHandleTag;
     private Point _cropDragStartPoint;
     private Rect _cropDragStartRect;
-    private readonly List<Rectangle> _cropShadeRects = new();
-    private readonly List<Line> _cropGuideLines = new();
+    private readonly CropAdorner _cropAdorner = new();
     private Button? _cropConfirmButton;
 
     public EditorInputController(EditorView view, EditorSelectionController selectionController, EditorZoomController zoomController)
@@ -1145,7 +1144,7 @@ public class EditorInputController
         cropOverlay.Width = cropRect.Width;
         cropOverlay.Height = cropRect.Height;
         _cropActive = true;
-        EnsureCropAdorners(overlayCanvas);
+        _cropAdorner.Attach(overlayCanvas);
         UpdateCropAdorners(overlayCanvas, cropRect);
         ShowCropHandles(overlayCanvas, cropRect);
     }
@@ -1177,7 +1176,7 @@ public class EditorInputController
     private void ShowCropHandles(Canvas overlay, Rect cropRect)
     {
         HideCropHandles(overlay);
-        EnsureCropAdorners(overlay);
+        _cropAdorner.Attach(overlay);
         UpdateCropAdorners(overlay, cropRect);
 
         double centerX = cropRect.Left + (cropRect.Width / 2.0);
@@ -1214,7 +1213,7 @@ public class EditorInputController
             HideCropHandles(overlayCanvas);
         }
 
-        HideCropAdorners();
+        _cropAdorner.Hide();
         ResetCropDragState();
         _cropActive = false;
     }
@@ -1402,158 +1401,13 @@ public class EditorInputController
         TryConfirmCrop();
     }
 
-    // Crop UI layers and dimensions tuned after surveying common editor patterns.
-    private const int CropShadeZIndex = 5000;
     private const int CropOverlayZIndex = 6000;
-    private const int CropGuideZIndex = 6500;
-    private const double MinCropGuideSize = 24;
-
-    private static readonly Color CropShadeFill = Color.FromArgb(140, 0, 0, 0);
-    private static readonly Color CropGuideStroke = Color.FromArgb(210, 255, 255, 255);
-
-    private void EnsureCropAdorners(Canvas overlay)
-    {
-        if (_cropShadeRects.Count == 0)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                var shade = new Rectangle
-                {
-                    Fill = new SolidColorBrush(CropShadeFill),
-                    Stroke = null,
-                    IsHitTestVisible = false,
-                    IsVisible = false
-                };
-                shade.SetValue(Panel.ZIndexProperty, CropShadeZIndex);
-                _cropShadeRects.Add(shade);
-                overlay.Children.Add(shade);
-            }
-        }
-        else
-        {
-            foreach (var shade in _cropShadeRects)
-            {
-                if (shade.Parent != overlay)
-                {
-                    (shade.Parent as Panel)?.Children.Remove(shade);
-                    overlay.Children.Add(shade);
-                }
-            }
-        }
-
-        if (_cropGuideLines.Count == 0)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                var guide = new Line
-                {
-                    Stroke = new SolidColorBrush(CropGuideStroke),
-                    StrokeThickness = 1,
-                    StrokeDashArray = new global::Avalonia.Collections.AvaloniaList<double> { 3, 3 },
-                    IsHitTestVisible = false,
-                    IsVisible = false
-                };
-                guide.SetValue(Panel.ZIndexProperty, CropGuideZIndex);
-                _cropGuideLines.Add(guide);
-                overlay.Children.Add(guide);
-            }
-        }
-        else
-        {
-            foreach (var guide in _cropGuideLines)
-            {
-                if (guide.Parent != overlay)
-                {
-                    (guide.Parent as Panel)?.Children.Remove(guide);
-                    overlay.Children.Add(guide);
-                }
-            }
-        }
-    }
-
-    private void HideCropAdorners()
-    {
-        foreach (var shade in _cropShadeRects)
-        {
-            shade.IsVisible = false;
-        }
-
-        foreach (var guide in _cropGuideLines)
-        {
-            guide.IsVisible = false;
-        }
-    }
 
     private void UpdateCropAdorners(Canvas overlay, Rect cropRect)
     {
-        EnsureCropAdorners(overlay);
-
         var annotationCanvas = _view.FindControl<Canvas>("AnnotationCanvas");
-        double canvasWidth = annotationCanvas?.Bounds.Width ?? overlay.Bounds.Width;
-        double canvasHeight = annotationCanvas?.Bounds.Height ?? overlay.Bounds.Height;
-
-        if (canvasWidth <= 0 || canvasHeight <= 0)
-        {
-            HideCropAdorners();
-            return;
-        }
-
-        double left = Math.Clamp(cropRect.Left, 0, canvasWidth);
-        double top = Math.Clamp(cropRect.Top, 0, canvasHeight);
-        double right = Math.Clamp(cropRect.Right, 0, canvasWidth);
-        double bottom = Math.Clamp(cropRect.Bottom, 0, canvasHeight);
-        double width = Math.Max(0, right - left);
-        double height = Math.Max(0, bottom - top);
-
-        double overlayImageLeft = EditorView.OverlayCanvasBleed;
-        double overlayImageTop = EditorView.OverlayCanvasBleed;
-        double overlayLeft = ToOverlayCoordinate(left);
-        double overlayTop = ToOverlayCoordinate(top);
-        double overlayRight = ToOverlayCoordinate(right);
-        double overlayBottom = ToOverlayCoordinate(bottom);
-
-        SetCropAdornerRect(_cropShadeRects[0], overlayImageLeft, overlayImageTop, canvasWidth, Math.Max(0, overlayTop - overlayImageTop));
-        SetCropAdornerRect(_cropShadeRects[1], overlayImageLeft, overlayTop, Math.Max(0, overlayLeft - overlayImageLeft), height);
-        SetCropAdornerRect(_cropShadeRects[2], overlayRight, overlayTop, Math.Max(0, (overlayImageLeft + canvasWidth) - overlayRight), height);
-        SetCropAdornerRect(_cropShadeRects[3], overlayImageLeft, overlayBottom, canvasWidth, Math.Max(0, (overlayImageTop + canvasHeight) - overlayBottom));
-
-        bool showGuides = width >= MinCropGuideSize && height >= MinCropGuideSize;
-        if (!showGuides)
-        {
-            foreach (var guide in _cropGuideLines)
-            {
-                guide.IsVisible = false;
-            }
-            return;
-        }
-
-        double v1 = left + width / 3.0;
-        double v2 = left + (2.0 * width / 3.0);
-        double h1 = top + height / 3.0;
-        double h2 = top + (2.0 * height / 3.0);
-
-        _cropGuideLines[0].StartPoint = ToOverlayPoint(new Point(v1, top));
-        _cropGuideLines[0].EndPoint = ToOverlayPoint(new Point(v1, bottom));
-        _cropGuideLines[1].StartPoint = ToOverlayPoint(new Point(v2, top));
-        _cropGuideLines[1].EndPoint = ToOverlayPoint(new Point(v2, bottom));
-        _cropGuideLines[2].StartPoint = ToOverlayPoint(new Point(left, h1));
-        _cropGuideLines[2].EndPoint = ToOverlayPoint(new Point(right, h1));
-        _cropGuideLines[3].StartPoint = ToOverlayPoint(new Point(left, h2));
-        _cropGuideLines[3].EndPoint = ToOverlayPoint(new Point(right, h2));
-
-        foreach (var guide in _cropGuideLines)
-        {
-            guide.IsVisible = true;
-        }
-    }
-
-    private static void SetCropAdornerRect(Rectangle rect, double left, double top, double width, double height)
-    {
-        Canvas.SetLeft(rect, left);
-        Canvas.SetTop(rect, top);
-        rect.Width = Math.Max(0, width);
-        rect.Height = Math.Max(0, height);
-        rect.IsVisible = rect.Width > 0 && rect.Height > 0;
+        Size canvasSize = annotationCanvas?.Bounds.Size ?? overlay.Bounds.Size;
+        _cropAdorner.Update(overlay, cropRect, canvasSize, ToOverlayPoint(default));
     }
 
     private Border CreateCropHandle(Canvas overlay, double x, double y, string tag)
@@ -1595,12 +1449,12 @@ public class EditorInputController
 
         if (cropOverlay.IsVisible)
         {
-            EnsureCropAdorners(overlayCanvas);
+            _cropAdorner.Attach(overlayCanvas);
             UpdateCropAdorners(overlayCanvas, newRect);
         }
         else
         {
-            HideCropAdorners();
+            _cropAdorner.Hide();
         }
     }
 
