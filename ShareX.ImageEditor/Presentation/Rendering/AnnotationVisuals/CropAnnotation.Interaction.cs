@@ -28,6 +28,8 @@ using Avalonia.Controls;
 using Avalonia.Controls.Shapes;
 using Avalonia.Input;
 using Avalonia.Media;
+using ShareX.ImageEditor.Core.ImageEffects.Helpers;
+using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.Annotations;
 
@@ -42,6 +44,27 @@ public partial class CropAnnotation
     private const double CropHandleThickness = 5;
     private static readonly Color CropHandleFill = Color.FromRgb(255, 255, 255);
     private const double MinCropSize = 16;
+
+    internal static Rect GetAutoCropBounds(SKBitmap? source, Size canvasSize)
+    {
+        const int tolerance = 10;
+        var fullRect = new Rect(canvasSize);
+
+        if (source == null || source.Width <= 0 || source.Height <= 0)
+        {
+            return fullRect;
+        }
+
+        SKRectI? bounds = ImageHelpers.FindContentBounds(source, source.GetPixel(0, 0), tolerance);
+        if (bounds is not SKRectI rect || (rect.Width >= source.Width && rect.Height >= source.Height))
+        {
+            return fullRect;
+        }
+
+        double scaleX = canvasSize.Width / source.Width;
+        double scaleY = canvasSize.Height / source.Height;
+        return new Rect(rect.Left * scaleX, rect.Top * scaleY, rect.Width * scaleX, rect.Height * scaleY);
+    }
 
     internal static Border CreateResizeHandle(Point center, string tag)
     {

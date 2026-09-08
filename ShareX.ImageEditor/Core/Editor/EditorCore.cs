@@ -397,31 +397,12 @@ public class EditorCore : IDisposable
         }
 
         SKColor topLeft = SourceImage.GetPixel(0, 0);
-        int w = SourceImage.Width;
-        int h = SourceImage.Height;
-        int minX = w, minY = h, maxX = 0, maxY = 0;
-        bool hasContent = false;
-
-        for (int y = 0; y < h; y++)
-        {
-            for (int x = 0; x < w; x++)
-            {
-                SKColor pixel = SourceImage.GetPixel(x, y);
-                if (!ImageHelpers.ColorsMatch(pixel, topLeft, tolerance))
-                {
-                    hasContent = true;
-                    if (x < minX) minX = x;
-                    if (x > maxX) maxX = x;
-                    if (y < minY) minY = y;
-                    if (y > maxY) maxY = y;
-                }
-            }
-        }
-
-        if (!hasContent) minX = minY = 0;
+        SKRectI? bounds = ImageHelpers.FindContentBounds(SourceImage, topLeft, tolerance);
+        int minX = bounds?.Left ?? 0;
+        int minY = bounds?.Top ?? 0;
 
         return ApplyImageOperation(
-            img => ImageHelpers.AutoCrop(img, topLeft, tolerance),
+            img => ImageHelpers.CropToContentBounds(img, bounds),
             clearAnnotations: false,
             transformAnnotations: () => TranslateAnnotations(-minX, -minY));
     }

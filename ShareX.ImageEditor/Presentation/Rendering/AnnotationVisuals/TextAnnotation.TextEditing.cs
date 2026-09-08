@@ -27,11 +27,65 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using ShareX.ImageEditor.Presentation.Helpers;
+using ShareX.ImageEditor.Presentation.Controls;
+using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.Annotations;
 
 public partial class TextAnnotation
 {
+    internal TextBox CreateCreationTextEditor(SolidColorBrush brush)
+    {
+        var textBrush = Avalonia.Media.Color.TryParse(TextColor, out var c) ? new SolidColorBrush(c) : brush;
+        var textBox = new TextBox
+        {
+            Foreground = textBrush,
+            Background = Brushes.Transparent,
+            BorderThickness = new Thickness(1),
+            BorderBrush = Brushes.White,
+            FontSize = FontSize,
+            FontFamily = new Avalonia.Media.FontFamily(FontFamily),
+            FontWeight = IsBold ? Avalonia.Media.FontWeight.Bold : Avalonia.Media.FontWeight.Normal,
+            FontStyle = IsItalic ? Avalonia.Media.FontStyle.Italic : Avalonia.Media.FontStyle.Normal,
+            TextAlignment = TextHorizontalAlignmentHelper.ToAvaloniaTextAlignment(HorizontalAlignment),
+            HorizontalContentAlignment = TextHorizontalAlignmentHelper.ToHorizontalContentAlignment(HorizontalAlignment),
+            VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center,
+            Text = string.Empty,
+            Padding = new Thickness(4),
+            AcceptsReturn = false,
+            Tag = this,
+            MinWidth = 0
+        };
+
+        SetTransparentEditorBackground(textBox);
+
+        if (ShadowEnabled)
+        {
+            textBox.Effect = ShareX.ImageEditor.Presentation.Helpers.ShadowEffectHelper.CreateDropShadow(this);
+        }
+
+        return textBox;
+    }
+
+    internal void SetCreatedText(TextBox textBox)
+    {
+        Text = textBox.Text ?? string.Empty;
+        Size naturalSize = OutlinedTextControl.MeasureNaturalSize(this);
+        double width = naturalSize.Width > 0 ? naturalSize.Width : textBox.Bounds.Width;
+        double height = naturalSize.Height > 0 ? naturalSize.Height : textBox.Bounds.Height;
+        EndPoint = new SKPoint(
+            (float)(Canvas.GetLeft(textBox) + width),
+            (float)(Canvas.GetTop(textBox) + height));
+    }
+
+    private static void SetTransparentEditorBackground(TextBox textBox)
+    {
+        // Force Avalonia's internal text box states to be transparent
+        textBox.Resources["TextControlBackground"] = Brushes.Transparent;
+        textBox.Resources["TextControlBackgroundFocused"] = Brushes.Transparent;
+        textBox.Resources["TextControlBackgroundPointerOver"] = Brushes.Transparent;
+    }
+
     internal TextBox CreateTextEditor()
     {
         string textColor = TextColor;
@@ -63,10 +117,7 @@ public partial class TextAnnotation
             Tag = this
         };
 
-        // Force Avalonia's internal text box states to be transparent
-        textBox.Resources["TextControlBackground"] = Brushes.Transparent;
-        textBox.Resources["TextControlBackgroundFocused"] = Brushes.Transparent;
-        textBox.Resources["TextControlBackgroundPointerOver"] = Brushes.Transparent;
+        SetTransparentEditorBackground(textBox);
 
         // Apply rotation to make editing match display
         if (RotationAngle != 0)

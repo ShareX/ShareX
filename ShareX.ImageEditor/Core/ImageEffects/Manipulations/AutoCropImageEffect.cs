@@ -84,33 +84,7 @@ public sealed class AutoCropImageEffect : ImageEffectBase
             ? source.GetPixel(0, 0)
             : _color;
 
-        int minX = width, minY = height, maxX = 0, maxY = 0;
-        bool hasContent = false;
-
-        for (int y = 0; y < height; y++)
-        {
-            for (int x = 0; x < width; x++)
-            {
-                SKColor pixel = source.GetPixel(x, y);
-                if (!ImageHelpers.ColorsMatch(pixel, matchColor, _tolerance))
-                {
-                    hasContent = true;
-                    if (x < minX) minX = x;
-                    if (x > maxX) maxX = x;
-                    if (y < minY) minY = y;
-                    if (y > maxY) maxY = y;
-                }
-            }
-        }
-
-        if (!hasContent)
-        {
-            return new SKBitmap(1, 1, source.ColorType, source.AlphaType);
-        }
-
-        int cropWidth = maxX - minX + 1;
-        int cropHeight = maxY - minY + 1;
-
-        return ImageHelpers.Crop(source, minX, minY, cropWidth, cropHeight);
+        SKRectI? bounds = ImageHelpers.FindContentBounds(source, matchColor, _tolerance);
+        return ImageHelpers.CropToContentBounds(source, bounds);
     }
 }

@@ -276,6 +276,37 @@ public static class ImageHelpers
         return new AutoCropImageEffect(color, tolerance).Apply(source);
     }
 
+    /// <summary>
+    /// Finds the bounds of pixels that differ from the background, or null for a uniform image.
+    /// </summary>
+    internal static SKRectI? FindContentBounds(SKBitmap source, SKColor background, int tolerance)
+    {
+        int minX = source.Width, minY = source.Height, maxX = -1, maxY = -1;
+
+        for (int y = 0; y < source.Height; y++)
+        {
+            for (int x = 0; x < source.Width; x++)
+            {
+                if (!ColorsMatch(source.GetPixel(x, y), background, tolerance))
+                {
+                    minX = Math.Min(minX, x);
+                    minY = Math.Min(minY, y);
+                    maxX = Math.Max(maxX, x);
+                    maxY = Math.Max(maxY, y);
+                }
+            }
+        }
+
+        return maxX < 0 ? null : new SKRectI(minX, minY, maxX + 1, maxY + 1);
+    }
+
+    internal static SKBitmap CropToContentBounds(SKBitmap source, SKRectI? bounds)
+    {
+        return bounds is SKRectI rect
+            ? Crop(source, rect.Left, rect.Top, rect.Width, rect.Height)
+            : new SKBitmap(1, 1, source.ColorType, source.AlphaType);
+    }
+
     internal static bool ColorsMatch(SKColor c1, SKColor c2, int tolerance)
     {
         return Math.Abs(c1.Red - c2.Red) <= tolerance &&
