@@ -31,7 +31,7 @@ namespace ShareX.ImageEditor.Core.Annotations;
 /// <summary>
 /// Base class for effect annotations (Blur, Pixelate, Highlight)
 /// </summary>
-public abstract class BaseEffectAnnotation : Annotation, IDisposable
+public abstract partial class BaseEffectAnnotation : Annotation, IDisposable
 {
     public override AnnotationCategory Category => AnnotationCategory.Effects;
 
@@ -55,30 +55,11 @@ public abstract class BaseEffectAnnotation : Annotation, IDisposable
     /// </summary>
     public SKBitmap? EffectBitmap { get; protected set; }
 
-    public override SKRect GetBounds()
-    {
-        return new SKRect(
-            Math.Min(StartPoint.X, EndPoint.X),
-            Math.Min(StartPoint.Y, EndPoint.Y),
-            Math.Max(StartPoint.X, EndPoint.X),
-            Math.Max(StartPoint.Y, EndPoint.Y));
-    }
-
     public override bool HitTest(SKPoint point, float tolerance = 5)
     {
         var bounds = GetBounds();
 
-        if (RotationAngle != 0)
-        {
-            float cx = bounds.MidX;
-            float cy = bounds.MidY;
-            float rad = -RotationAngle * (float)Math.PI / 180f;
-            float cos = (float)Math.Cos(rad);
-            float sin = (float)Math.Sin(rad);
-            float dx = point.X - cx;
-            float dy = point.Y - cy;
-            point = new SKPoint(cx + dx * cos - dy * sin, cy + dx * sin + dy * cos);
-        }
+        point = GetUnrotatedPoint(point, bounds);
 
         var inflatedBounds = SKRect.Inflate(bounds, tolerance, tolerance);
 

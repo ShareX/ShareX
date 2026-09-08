@@ -28,7 +28,7 @@ namespace ShareX.ImageEditor.Core.Annotations;
 /// <summary>
 /// Image-backed cursor annotation.
 /// </summary>
-public class CursorAnnotation : ImageAnnotation
+public partial class CursorAnnotation : ImageAnnotation
 {
     public CursorType CursorType { get; set; } = CursorType.Default;
 

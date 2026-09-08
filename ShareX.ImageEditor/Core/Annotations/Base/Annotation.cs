@@ -189,4 +189,43 @@ public abstract class Annotation
         return SKColor.Parse(hexColor);
     }
 
+    /// <summary>
+    /// Transforms the annotation's endpoints and any shape-specific points.
+    /// </summary>
+    internal void TransformPoints(Func<SKPoint, SKPoint> transformPoint)
+    {
+        StartPoint = transformPoint(StartPoint);
+        EndPoint = transformPoint(EndPoint);
+        TransformAdditionalPoints(transformPoint);
+    }
+
+    internal virtual void TransformAdditionalPoints(Func<SKPoint, SKPoint> transformPoint)
+    {
+    }
+
+    internal virtual void Scale(float scaleX, float scaleY)
+    {
+        TransformPoints(point => new SKPoint(point.X * scaleX, point.Y * scaleY));
+        StrokeWidth *= Math.Min(scaleX, scaleY);
+    }
+
+    /// <summary>
+    /// Converts a canvas point to the annotation's unrotated coordinates for hit testing.
+    /// </summary>
+    protected SKPoint GetUnrotatedPoint(SKPoint point, SKRect bounds)
+    {
+        if (RotationAngle == 0)
+        {
+            return point;
+        }
+
+        float cx = bounds.MidX;
+        float cy = bounds.MidY;
+        float rad = -RotationAngle * (float)Math.PI / 180f;
+        float cos = (float)Math.Cos(rad);
+        float sin = (float)Math.Sin(rad);
+        float dx = point.X - cx;
+        float dy = point.Y - cy;
+        return new SKPoint(cx + dx * cos - dy * sin, cy + dx * sin + dy * cos);
+    }
 }

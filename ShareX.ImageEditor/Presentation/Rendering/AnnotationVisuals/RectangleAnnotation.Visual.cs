@@ -24,8 +24,10 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Controls;
+using Avalonia.Controls.Shapes;
 using Avalonia.Media;
 using ShareX.ImageEditor.Presentation.Helpers;
+using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
 
 namespace ShareX.ImageEditor.Core.Annotations;
 
@@ -60,5 +62,15 @@ public partial class RectangleAnnotation
         }
 
         return rect;
+    }
+
+    internal void UpdateVisual(Rectangle rectangleControl, bool ensureMinimumSize)
+    {
+        rectangleControl.StrokeDashArray = BorderStyleDashHelper.CreateStrokeDashArray(BorderStyle);
+        rectangleControl.StrokeLineCap = BorderStyleDashHelper.CreateStrokeLineCap(BorderStyle);
+        ApplyBoundsControl(rectangleControl, GetBounds(), ensureMinimumSize);
+        rectangleControl.RadiusX = Math.Max(0, CornerRadius);
+        rectangleControl.RadiusY = Math.Max(0, CornerRadius);
+        ApplyRotationTransform(rectangleControl, RotationAngle);
     }
 }

@@ -78,17 +78,7 @@ public partial class TextAnnotation : Annotation
         var textBounds = GetBounds();
 
         // If rotated, transform the test point by the inverse rotation
-        if (RotationAngle != 0)
-        {
-            float cx = textBounds.MidX;
-            float cy = textBounds.MidY;
-            float rad = -RotationAngle * (float)Math.PI / 180f;
-            float cos = (float)Math.Cos(rad);
-            float sin = (float)Math.Sin(rad);
-            float dx = point.X - cx;
-            float dy = point.Y - cy;
-            point = new SKPoint(cx + dx * cos - dy * sin, cy + dx * sin + dy * cos);
-        }
+        point = GetUnrotatedPoint(point, textBounds);
 
         var inflatedBounds = SKRect.Inflate(textBounds, tolerance, tolerance);
         return inflatedBounds.Contains(point);
@@ -103,12 +93,17 @@ public partial class TextAnnotation : Annotation
         float bottom = Math.Max(StartPoint.Y, EndPoint.Y);
 
         // Ensure minimum size for visibility
-        // Ensure minimum size for visibility
         const float minSize = 10f;
         if (right - left < minSize) right = left + minSize;
         if (bottom - top < minSize) bottom = top + minSize;
 
         // Return the bounds defined by StartPoint and EndPoint
         return new SKRect(left, top, right, bottom);
+    }
+
+    internal override void Scale(float scaleX, float scaleY)
+    {
+        base.Scale(scaleX, scaleY);
+        FontSize *= scaleY;
     }
 }

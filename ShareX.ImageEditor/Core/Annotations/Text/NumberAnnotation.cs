@@ -288,4 +288,12 @@ public partial class NumberAnnotation : Annotation
 
         return MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
     }
+
+    internal override void TransformAdditionalPoints(Func<SKPoint, SKPoint> transformPoint)
+    {
+        if (HasTailPoint)
+        {
+            SetTailPoint(transformPoint(TailPoint));
+        }
+    }
 }

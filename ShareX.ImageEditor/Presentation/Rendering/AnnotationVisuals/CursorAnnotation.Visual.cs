@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -24,38 +24,45 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Controls;
-using ShareX.ImageEditor.Presentation.Controls;
+using ShareX.ImageEditor.Presentation.Rendering;
+using SkiaSharp;
 using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
 
 namespace ShareX.ImageEditor.Core.Annotations;
 
-public partial class NumberAnnotation
+public partial class CursorAnnotation
 {
-    /// <summary>
-    /// Creates the Avalonia visual for this annotation.
-    /// </summary>
-    public Control CreateVisual()
+    public override Control CreateVisual()
     {
-        var control = new StepControl
+        var image = new Image
         {
-            Width = Radius * 2,
-            Height = Radius * 2,
-            Annotation = this,
             Tag = this
         };
 
-        if (ShadowEnabled)
-        {
-            control.Effect = ShareX.ImageEditor.Presentation.Helpers.ShadowEffectHelper.CreateDropShadow(this);
-        }
-
-        return control;
+        UpdateVisual(image);
+        return image;
     }
 
-    internal void UpdateVisual(StepControl stepControl, bool ensureMinimumSize)
+    internal override void UpdateVisual(Image imageControl, bool useInteractiveRender = false)
     {
-        stepControl.Annotation = this;
-        ApplyBoundsControl(stepControl, GetInteractionBounds(), ensureMinimumSize);
-        stepControl.InvalidateVisual();
+        if (ImageBitmap == null)
+        {
+            SKBitmap? renderedBitmap = WindowsCursorBitmapRenderer.CreateAnnotationBitmap(CursorType);
+            if (renderedBitmap != null)
+            {
+                SetImage(renderedBitmap);
+            }
+        }
+
+        imageControl.Source = ImageBitmap != null
+            ? BitmapConversionHelpers.ToAvaloniBitmap(ImageBitmap)
+            : null;
+
+        var cursorBounds = GetBounds();
+        Canvas.SetLeft(imageControl, cursorBounds.Left);
+        Canvas.SetTop(imageControl, cursorBounds.Top);
+        imageControl.Width = Math.Max(1, cursorBounds.Width);
+        imageControl.Height = Math.Max(1, cursorBounds.Height);
+        ApplyRotationTransform(imageControl, RotationAngle);
     }
 }

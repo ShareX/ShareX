@@ -83,4 +83,11 @@ public partial class LineAnnotation
 
         return geometry;
     }
+
+    internal void UpdateVisual(Avalonia.Controls.Shapes.Path linePath)
+    {
+        linePath.StrokeDashArray = BorderStyleDashHelper.CreateStrokeDashArray(BorderStyle);
+        linePath.StrokeLineCap = BorderStyleDashHelper.CreateStrokeLineCap(BorderStyle);
+        linePath.Data = CreateLineGeometry();
+    }
 }

@@ -99,4 +99,12 @@ public partial class FreehandAnnotation : Annotation, IPointBasedAnnotation
     {
         return (float)Math.Sqrt(Math.Pow(p1.X - p2.X, 2) + Math.Pow(p1.Y - p2.Y, 2));
     }
+
+    internal override void TransformAdditionalPoints(Func<SKPoint, SKPoint> transformPoint)
+    {
+        for (int i = 0; i < Points.Count; i++)
+        {
+            Points[i] = transformPoint(Points[i]);
+        }
+    }
 }

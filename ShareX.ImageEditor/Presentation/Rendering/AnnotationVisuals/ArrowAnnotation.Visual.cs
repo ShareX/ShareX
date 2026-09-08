@@ -387,4 +387,15 @@ public partial class ArrowAnnotation
         context.LineTo(new Point(head.RightBase.X, head.RightBase.Y));
         context.EndFigure(false);
     }
+
+    internal void UpdateVisual(Avalonia.Controls.Shapes.Path arrowPath)
+    {
+        var brush = new SolidColorBrush(Color.Parse(StrokeColor));
+        arrowPath.Stroke = brush;
+        arrowPath.Fill = brush;
+        arrowPath.StrokeThickness = StrokeWidth;
+        arrowPath.StrokeLineCap = PenLineCap.Round;
+        arrowPath.StrokeJoin = PenLineJoin.Round;
+        arrowPath.Data = CreateArrowGeometry();
+    }
 }

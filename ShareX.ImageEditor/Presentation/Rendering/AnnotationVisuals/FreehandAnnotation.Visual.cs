@@ -92,4 +92,11 @@ public partial class FreehandAnnotation
         context.EndFigure(false);
         return geometry;
     }
+
+    internal void UpdateVisual(Avalonia.Controls.Shapes.Path freehandPath)
+    {
+        freehandPath.StrokeDashArray = BorderStyleDashHelper.CreateStrokeDashArray(BorderStyle);
+        freehandPath.StrokeLineCap = BorderStyleDashHelper.CreateStrokeLineCap(BorderStyle);
+        freehandPath.Data = CreateSmoothedGeometry();
+    }
 }

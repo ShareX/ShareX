@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -59,6 +59,67 @@ public class CutOutAnnotation : Annotation
             // Check if point is near the horizontal line
             float y = rect.MidY;
             return Math.Abs(point.Y - y) <= tolerance;
+        }
+    }
+
+    /// <summary>
+    /// Adjusts an annotation after removing a strip. Returns false when it lies entirely inside the strip.
+    /// </summary>
+    internal static bool AdjustAnnotation(Annotation annotation, int startPos, int endPos, bool isVertical, SKBitmap source)
+    {
+        SKRect bounds = annotation.GetBounds();
+        float leadingEdge = isVertical ? bounds.Left : bounds.Top;
+        float trailingEdge = isVertical ? bounds.Right : bounds.Bottom;
+
+        if (leadingEdge >= startPos && trailingEdge <= endPos)
+        {
+            return false;
+        }
+
+        bool isAfterCut = leadingEdge >= endPos;
+        bool needsAdjustment = isAfterCut || trailingEdge > endPos;
+        if (!needsAdjustment)
+        {
+            return true;
+        }
+
+        int cutLength = endPos - startPos;
+        annotation.StartPoint = ShiftEndpoint(annotation.StartPoint);
+        annotation.EndPoint = ShiftEndpoint(annotation.EndPoint);
+        annotation.TransformAdditionalPoints(CollapsePoint);
+
+        if (annotation is BaseEffectAnnotation effect)
+        {
+            effect.UpdateEffect(source);
+        }
+
+        return true;
+
+        SKPoint ShiftEndpoint(SKPoint point)
+        {
+            float position = isVertical ? point.X : point.Y;
+            if (!isAfterCut && position > startPos && position < endPos)
+            {
+                position = startPos;
+            }
+
+            position -= cutLength;
+            return isVertical ? new SKPoint(position, point.Y) : new SKPoint(point.X, position);
+        }
+
+        SKPoint CollapsePoint(SKPoint point)
+        {
+            float position = isVertical ? point.X : point.Y;
+            if (position >= endPos)
+            {
+                position -= cutLength;
+            }
+            else if (position > startPos)
+            {
+                position = startPos;
+            }
+
+            return isVertical ? new SKPoint(position, point.Y) : new SKPoint(point.X, position);
         }
     }
 }

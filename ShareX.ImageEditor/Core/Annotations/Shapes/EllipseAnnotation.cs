@@ -44,17 +44,7 @@ public partial class EllipseAnnotation : Annotation
     {
         var rect = GetBounds();
 
-        if (RotationAngle != 0)
-        {
-            float cx = rect.MidX;
-            float cy = rect.MidY;
-            float rad = -RotationAngle * (float)Math.PI / 180f;
-            float cos = (float)Math.Cos(rad);
-            float sin = (float)Math.Sin(rad);
-            float rotatedDx = point.X - cx;
-            float rotatedDy = point.Y - cy;
-            point = new SKPoint(cx + rotatedDx * cos - rotatedDy * sin, cy + rotatedDx * sin + rotatedDy * cos);
-        }
+        point = GetUnrotatedPoint(point, rect);
 
         var expanded = SKRect.Inflate(rect, tolerance, tolerance);
 

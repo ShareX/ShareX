@@ -238,17 +238,7 @@ public partial class SpeechBalloonAnnotation : Annotation
     {
         var bounds = GetBounds();
 
-        if (RotationAngle != 0)
-        {
-            float cx = bounds.MidX;
-            float cy = bounds.MidY;
-            float rad = -RotationAngle * (float)Math.PI / 180f;
-            float cos = (float)Math.Cos(rad);
-            float sin = (float)Math.Sin(rad);
-            float dx = point.X - cx;
-            float dy = point.Y - cy;
-            point = new SKPoint(cx + dx * cos - dy * sin, cy + dx * sin + dy * cos);
-        }
+        point = GetUnrotatedPoint(point, bounds);
 
         var bodyBounds = SKRect.Inflate(bounds, tolerance, tolerance);
         if (bodyBounds.Contains(point.X, point.Y))
@@ -353,5 +343,10 @@ public partial class SpeechBalloonAnnotation : Annotation
         float deltaY = point.Y - projectionY;
 
         return MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
+    }
+
+    internal override void TransformAdditionalPoints(Func<SKPoint, SKPoint> transformPoint)
+    {
+        SetTailPoint(transformPoint(GetEffectiveTailPoint()));
     }
 }

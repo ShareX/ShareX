@@ -23,8 +23,13 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Shapes;
+using Avalonia.Media;
 using ShareX.ImageEditor.Presentation.Controls;
+using SkiaSharp;
+using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
 
 namespace ShareX.ImageEditor.Core.Annotations;
 
@@ -48,5 +53,47 @@ public partial class SpeechBalloonAnnotation
         }
 
         return control;
+    }
+
+    internal void UpdateVisual(SpeechBalloonControl balloonControl, bool ensureMinimumSize)
+    {
+        var balloonBounds = GetInteractionBounds();
+        balloonControl.Annotation = this;
+        ApplyBoundsControl(balloonControl, balloonBounds, ensureMinimumSize);
+        ApplyRotationTransform(balloonControl, RotationAngle, GetRelativeCenterOrigin(GetBounds(), balloonBounds));
+        balloonControl.InvalidateVisual();
+    }
+
+    internal Control CreatePreviewVisual()
+    {
+        return new Rectangle
+        {
+            Stroke = new SolidColorBrush(Color.Parse(StrokeColor)),
+            StrokeThickness = StrokeWidth,
+            Fill = new SolidColorBrush(Color.FromArgb(128, 255, 255, 255)),
+            RadiusX = Math.Max(0, CornerRadius),
+            RadiusY = Math.Max(0, CornerRadius),
+            Tag = this
+        };
+    }
+
+    internal void UpdatePreviewVisual(Rectangle preview)
+    {
+        ApplyBoundsControl(preview, GetBounds(), ensureMinimumSize: true);
+        preview.RadiusX = Math.Max(0, CornerRadius);
+        preview.RadiusY = Math.Max(0, CornerRadius);
+    }
+
+    private static RelativePoint GetRelativeCenterOrigin(SKRect innerBounds, SKRect outerBounds)
+    {
+        if (outerBounds.Width <= 0 || outerBounds.Height <= 0)
+        {
+            return new RelativePoint(0.5, 0.5, RelativeUnit.Relative);
+        }
+
+        return new RelativePoint(
+            (innerBounds.MidX - outerBounds.Left) / outerBounds.Width,
+            (innerBounds.MidY - outerBounds.Top) / outerBounds.Height,
+            RelativeUnit.Relative);
     }
 }

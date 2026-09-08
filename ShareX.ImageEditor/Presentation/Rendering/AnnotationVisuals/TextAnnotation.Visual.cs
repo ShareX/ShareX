@@ -23,7 +23,12 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia.Collections;
 using Avalonia.Controls;
+using Avalonia.Controls.Shapes;
+using Avalonia.Media;
+using ShareX.ImageEditor.Presentation.Controls;
+using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
 
 namespace ShareX.ImageEditor.Core.Annotations;
 
@@ -46,8 +51,35 @@ public partial class TextAnnotation
             control.Effect = ShareX.ImageEditor.Presentation.Helpers.ShadowEffectHelper.CreateDropShadow(this);
         }
 
-        // Rotation is handled by AnnotationVisualFactory.UpdateVisualControl
-
         return control;
+    }
+
+    internal void UpdateVisual(OutlinedTextControl textControl)
+    {
+        var textBounds = GetBounds();
+        textControl.Annotation = this;
+        Canvas.SetLeft(textControl, textBounds.Left);
+        Canvas.SetTop(textControl, textBounds.Top);
+        textControl.Width = Math.Max(1, textBounds.Width);
+        textControl.Height = Math.Max(1, textBounds.Height);
+
+        // The control renders text styling from the annotation; geometry changes still need invalidation.
+
+        ApplyRotationTransform(textControl, RotationAngle);
+
+        textControl.InvalidateVisual();
+        textControl.InvalidateMeasure();
+    }
+
+    internal Control CreatePreviewVisual()
+    {
+        return new Rectangle
+        {
+            Stroke = new SolidColorBrush(Color.Parse(StrokeColor)),
+            StrokeThickness = 1,
+            StrokeDashArray = new AvaloniaList<double> { 4, 4 },
+            Fill = new SolidColorBrush(Color.FromArgb(30, 255, 255, 255)),
+            Tag = this
+        };
     }
 }

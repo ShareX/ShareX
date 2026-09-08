@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,33 +23,16 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia.Controls.Shapes;
+using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
+
 namespace ShareX.ImageEditor.Core.Annotations;
 
-/// <summary>
-/// Emoji sticker annotation backed by a Unicode emoji sequence.
-/// </summary>
-public sealed partial class EmojiAnnotation : ImageAnnotation
+public partial class BaseEffectAnnotation
 {
-    /// <summary>
-    /// Space-separated Unicode code points (hex) for the emoji sequence.
-    /// </summary>
-    public string UnicodeSequence { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Human-readable emoji name for accessibility/debugging.
-    /// </summary>
-    public string DisplayName { get; set; } = string.Empty;
-
-    public EmojiAnnotation()
+    internal void UpdateVisual(Shape effectControl, bool ensureMinimumSize)
     {
-        ToolType = EditorTool.Emoji;
-    }
-
-    public override Annotation Clone()
-    {
-        var clone = (EmojiAnnotation)base.Clone();
-        clone.UnicodeSequence = UnicodeSequence;
-        clone.DisplayName = DisplayName;
-        return clone;
+        ApplyBoundsControl(effectControl, GetBounds(), ensureMinimumSize);
+        ApplyRotationTransform(effectControl, RotationAngle);
     }
 }

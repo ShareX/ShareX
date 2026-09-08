@@ -430,24 +430,9 @@ public class EditorCore : IDisposable
 
     private void TransformAnnotations(Func<SKPoint, SKPoint> transformPoint)
     {
-        foreach (var ann in _annotations)
+        foreach (Annotation annotation in _annotations)
         {
-            ann.StartPoint = transformPoint(ann.StartPoint);
-            ann.EndPoint = transformPoint(ann.EndPoint);
-
-            if (ann is FreehandAnnotation freehand)
-            {
-                for (int i = 0; i < freehand.Points.Count; i++)
-                    freehand.Points[i] = transformPoint(freehand.Points[i]);
-            }
-            else if (ann is NumberAnnotation number && number.HasTailPoint)
-            {
-                number.SetTailPoint(transformPoint(number.TailPoint));
-            }
-            else if (ann is SpeechBalloonAnnotation balloon)
-            {
-                balloon.SetTailPoint(transformPoint(balloon.GetEffectiveTailPoint()));
-            }
+            annotation.TransformPoints(transformPoint);
         }
     }
 
@@ -458,14 +443,9 @@ public class EditorCore : IDisposable
 
     private void ScaleAnnotations(float scaleX, float scaleY)
     {
-        TransformAnnotations(p => new SKPoint(p.X * scaleX, p.Y * scaleY));
-        foreach (var ann in _annotations)
+        foreach (Annotation annotation in _annotations)
         {
-            ann.StrokeWidth *= Math.Min(scaleX, scaleY);
-            if (ann is TextAnnotation text)
-            {
-                text.FontSize *= scaleY;
-            }
+            annotation.Scale(scaleX, scaleY);
         }
     }
 
@@ -595,14 +575,12 @@ public class EditorCore : IDisposable
         source.Dispose();
         CanvasSize = new SKSize(SourceImage.Width, SourceImage.Height);
 
-        int cutLength = endPos - startPos;
-        if (isVertical)
+        for (int i = _annotations.Count - 1; i >= 0; i--)
         {
-            AdjustAnnotationsForVerticalCut(startPos, cutLength);
-        }
-        else
-        {
-            AdjustAnnotationsForHorizontalCut(startPos, cutLength);
+            if (!CutOutAnnotation.AdjustAnnotation(_annotations[i], startPos, endPos, isVertical, SourceImage))
+            {
+                _annotations.RemoveAt(i);
+            }
         }
     }
 
@@ -1534,40 +1512,7 @@ public class EditorCore : IDisposable
                 continue;
             }
 
-            // Adjust annotation coordinates
-            annotation.StartPoint = new SKPoint(
-                annotation.StartPoint.X + offsetX,
-                annotation.StartPoint.Y + offsetY);
-            annotation.EndPoint = new SKPoint(
-                annotation.EndPoint.X + offsetX,
-                annotation.EndPoint.Y + offsetY);
-
-            // Handle freehand annotations (they have a Points list)
-            if (annotation is FreehandAnnotation freehand)
-            {
-                for (int j = 0; j < freehand.Points.Count; j++)
-                {
-                    freehand.Points[j] = new SKPoint(
-                        freehand.Points[j].X + offsetX,
-                        freehand.Points[j].Y + offsetY);
-                }
-            }
-
-            // XIP0039 Guardrail 2: Adjust SpeechBalloon tail point so it stays
-            // anchored to the same visual position relative to the new canvas origin.
-            if (annotation is SpeechBalloonAnnotation balloon)
-            {
-                var tailPoint = balloon.GetEffectiveTailPoint();
-                balloon.SetTailPoint(new SKPoint(
-                    tailPoint.X + offsetX,
-                    tailPoint.Y + offsetY));
-            }
-            else if (annotation is NumberAnnotation number && number.HasTailPoint)
-            {
-                number.SetTailPoint(new SKPoint(
-                    number.TailPoint.X + offsetX,
-                    number.TailPoint.Y + offsetY));
-            }
+            annotation.TransformPoints(point => new SKPoint(point.X + offsetX, point.Y + offsetY));
 
             // Update effect annotations with new bounds
             if (annotation is BaseEffectAnnotation effect)
@@ -1630,196 +1575,6 @@ public class EditorCore : IDisposable
 
         ImageChanged?.Invoke();
         InvalidateRequested?.Invoke();
-    }
-
-    private void AdjustAnnotationsForVerticalCut(int cutX, int cutWidth)
-    {
-        int cutEnd = cutX + cutWidth;
-
-        // Process annotations in reverse to allow safe removal
-        for (int i = _annotations.Count - 1; i >= 0; i--)
-        {
-            var annotation = _annotations[i];
-            var bounds = annotation.GetBounds();
-
-            // Remove annotations completely within the cut area
-            if (bounds.Left >= cutX && bounds.Right <= cutEnd)
-            {
-                _annotations.RemoveAt(i);
-                continue;
-            }
-
-            // Adjust annotations that cross or are to the right of the cut
-            bool needsAdjustment = false;
-            float offsetX = 0;
-
-            // Annotations to the right of the cut area: shift left by cutWidth
-            if (bounds.Left >= cutEnd)
-            {
-                offsetX = -cutWidth;
-                needsAdjustment = true;
-            }
-            // Annotations that span across the cut: shift right portion left
-            else if (bounds.Right > cutEnd)
-            {
-                offsetX = -cutWidth;
-                needsAdjustment = true;
-                // Clamp the left edge to not go into the cut area
-                if (annotation.StartPoint.X > cutX && annotation.StartPoint.X < cutEnd)
-                {
-                    annotation.StartPoint = new SKPoint(cutX, annotation.StartPoint.Y);
-                }
-                if (annotation.EndPoint.X > cutX && annotation.EndPoint.X < cutEnd)
-                {
-                    annotation.EndPoint = new SKPoint(cutX, annotation.EndPoint.Y);
-                }
-            }
-
-            if (needsAdjustment)
-            {
-                annotation.StartPoint = new SKPoint(annotation.StartPoint.X + offsetX, annotation.StartPoint.Y);
-                annotation.EndPoint = new SKPoint(annotation.EndPoint.X + offsetX, annotation.EndPoint.Y);
-
-                // Handle freehand annotations
-                if (annotation is FreehandAnnotation freehand)
-                {
-                    for (int j = 0; j < freehand.Points.Count; j++)
-                    {
-                        var pt = freehand.Points[j];
-                        if (pt.X >= cutEnd)
-                        {
-                            freehand.Points[j] = new SKPoint(pt.X - cutWidth, pt.Y);
-                        }
-                        else if (pt.X > cutX)
-                        {
-                            freehand.Points[j] = new SKPoint(cutX, pt.Y);
-                        }
-                    }
-                }
-
-                // XIP0039 Guardrail 2: Adjust SpeechBalloon tail for vertical cut
-                if (annotation is SpeechBalloonAnnotation balloon)
-                {
-                    var tailPoint = balloon.GetEffectiveTailPoint();
-                    float tailX = tailPoint.X;
-                    if (tailX >= cutEnd)
-                        tailX -= cutWidth;
-                    else if (tailX > cutX)
-                        tailX = cutX;
-                    balloon.SetTailPoint(new SKPoint(tailX, tailPoint.Y));
-                }
-                else if (annotation is NumberAnnotation number && number.HasTailPoint)
-                {
-                    float tailX = number.TailPoint.X;
-                    if (tailX >= cutEnd)
-                        tailX -= cutWidth;
-                    else if (tailX > cutX)
-                        tailX = cutX;
-                    number.SetTailPoint(new SKPoint(tailX, number.TailPoint.Y));
-                }
-
-                // Update effect annotations
-                if (annotation is BaseEffectAnnotation effect && SourceImage != null)
-                {
-                    effect.UpdateEffect(SourceImage);
-                }
-            }
-        }
-    }
-
-    private void AdjustAnnotationsForHorizontalCut(int cutY, int cutHeight)
-    {
-        int cutEnd = cutY + cutHeight;
-
-        // Process annotations in reverse to allow safe removal
-        for (int i = _annotations.Count - 1; i >= 0; i--)
-        {
-            var annotation = _annotations[i];
-            var bounds = annotation.GetBounds();
-
-            // Remove annotations completely within the cut area
-            if (bounds.Top >= cutY && bounds.Bottom <= cutEnd)
-            {
-                _annotations.RemoveAt(i);
-                continue;
-            }
-
-            // Adjust annotations that cross or are below the cut
-            bool needsAdjustment = false;
-            float offsetY = 0;
-
-            // Annotations below the cut area: shift up by cutHeight
-            if (bounds.Top >= cutEnd)
-            {
-                offsetY = -cutHeight;
-                needsAdjustment = true;
-            }
-            // Annotations that span across the cut: shift bottom portion up
-            else if (bounds.Bottom > cutEnd)
-            {
-                offsetY = -cutHeight;
-                needsAdjustment = true;
-                // Clamp the top edge to not go into the cut area
-                if (annotation.StartPoint.Y > cutY && annotation.StartPoint.Y < cutEnd)
-                {
-                    annotation.StartPoint = new SKPoint(annotation.StartPoint.X, cutY);
-                }
-                if (annotation.EndPoint.Y > cutY && annotation.EndPoint.Y < cutEnd)
-                {
-                    annotation.EndPoint = new SKPoint(annotation.EndPoint.X, cutY);
-                }
-            }
-
-            if (needsAdjustment)
-            {
-                annotation.StartPoint = new SKPoint(annotation.StartPoint.X, annotation.StartPoint.Y + offsetY);
-                annotation.EndPoint = new SKPoint(annotation.EndPoint.X, annotation.EndPoint.Y + offsetY);
-
-                // Handle freehand annotations
-                if (annotation is FreehandAnnotation freehand)
-                {
-                    for (int j = 0; j < freehand.Points.Count; j++)
-                    {
-                        var pt = freehand.Points[j];
-                        if (pt.Y >= cutEnd)
-                        {
-                            freehand.Points[j] = new SKPoint(pt.X, pt.Y - cutHeight);
-                        }
-                        else if (pt.Y > cutY)
-                        {
-                            freehand.Points[j] = new SKPoint(pt.X, cutY);
-                        }
-                    }
-                }
-
-                // XIP0039 Guardrail 2: Adjust SpeechBalloon tail for horizontal cut
-                if (annotation is SpeechBalloonAnnotation balloon)
-                {
-                    var tailPoint = balloon.GetEffectiveTailPoint();
-                    float tailY = tailPoint.Y;
-                    if (tailY >= cutEnd)
-                        tailY -= cutHeight;
-                    else if (tailY > cutY)
-                        tailY = cutY;
-                    balloon.SetTailPoint(new SKPoint(tailPoint.X, tailY));
-                }
-                else if (annotation is NumberAnnotation number && number.HasTailPoint)
-                {
-                    float tailY = number.TailPoint.Y;
-                    if (tailY >= cutEnd)
-                        tailY -= cutHeight;
-                    else if (tailY > cutY)
-                        tailY = cutY;
-                    number.SetTailPoint(new SKPoint(number.TailPoint.X, tailY));
-                }
-
-                // Update effect annotations
-                if (annotation is BaseEffectAnnotation effect && SourceImage != null)
-                {
-                    effect.UpdateEffect(SourceImage);
-                }
-            }
-        }
     }
 
     #endregion

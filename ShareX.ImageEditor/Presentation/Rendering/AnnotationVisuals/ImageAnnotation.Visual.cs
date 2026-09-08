@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -24,38 +24,44 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Controls;
-using ShareX.ImageEditor.Presentation.Controls;
 using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
 
 namespace ShareX.ImageEditor.Core.Annotations;
 
-public partial class NumberAnnotation
+public partial class ImageAnnotation
 {
-    /// <summary>
-    /// Creates the Avalonia visual for this annotation.
-    /// </summary>
-    public Control CreateVisual()
+    internal virtual void UpdateVisual(Image imageControl, bool useInteractiveRender = false)
     {
-        var control = new StepControl
+        if (ImageBitmap != null)
         {
-            Width = Radius * 2,
-            Height = Radius * 2,
-            Annotation = this,
+            imageControl.Source = BitmapConversionHelpers.ToAvaloniBitmap(ImageBitmap);
+        }
+
+        var imageBounds = GetBounds();
+        Canvas.SetLeft(imageControl, imageBounds.Left);
+        Canvas.SetTop(imageControl, imageBounds.Top);
+        imageControl.Width = Math.Max(1, imageBounds.Width);
+        imageControl.Height = Math.Max(1, imageBounds.Height);
+        ApplyRotationTransform(imageControl, RotationAngle);
+    }
+
+    public virtual Control CreateVisual()
+    {
+        var image = new Image
+        {
             Tag = this
         };
 
-        if (ShadowEnabled)
+        if (ImageBitmap != null)
         {
-            control.Effect = ShareX.ImageEditor.Presentation.Helpers.ShadowEffectHelper.CreateDropShadow(this);
+            image.Source = BitmapConversionHelpers.ToAvaloniBitmap(ImageBitmap);
         }
 
-        return control;
-    }
+        var imageBounds = GetBounds();
+        image.Width = Math.Max(1, imageBounds.Width);
+        image.Height = Math.Max(1, imageBounds.Height);
+        ApplyRotationTransform(image, RotationAngle);
 
-    internal void UpdateVisual(StepControl stepControl, bool ensureMinimumSize)
-    {
-        stepControl.Annotation = this;
-        ApplyBoundsControl(stepControl, GetInteractionBounds(), ensureMinimumSize);
-        stepControl.InvalidateVisual();
+        return image;
     }
 }
