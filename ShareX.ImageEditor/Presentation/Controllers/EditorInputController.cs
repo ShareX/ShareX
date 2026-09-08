@@ -70,35 +70,12 @@ public class EditorInputController
             Math.Clamp(point.X, 0, canvas.Bounds.Width),
             Math.Clamp(point.Y, 0, canvas.Bounds.Height));
 
-    private static void ClampSmartEraserBoundsToCanvas(
-        global::Avalonia.Controls.Shapes.Rectangle rectangle,
-        SmartEraserAnnotation annotation,
-        Canvas canvas)
-    {
-        double left = Canvas.GetLeft(rectangle);
-        double top = Canvas.GetTop(rectangle);
-        double right = left + rectangle.Width;
-        double bottom = top + rectangle.Height;
-
-        double clippedLeft = Math.Clamp(left, 0, canvas.Bounds.Width);
-        double clippedTop = Math.Clamp(top, 0, canvas.Bounds.Height);
-        double clippedRight = Math.Clamp(right, 0, canvas.Bounds.Width);
-        double clippedBottom = Math.Clamp(bottom, 0, canvas.Bounds.Height);
-
-        Canvas.SetLeft(rectangle, clippedLeft);
-        Canvas.SetTop(rectangle, clippedTop);
-        rectangle.Width = Math.Max(0, clippedRight - clippedLeft);
-        rectangle.Height = Math.Max(0, clippedBottom - clippedTop);
-        annotation.StartPoint = ToSKPoint(new Point(clippedLeft, clippedTop));
-        annotation.EndPoint = ToSKPoint(new Point(clippedRight, clippedBottom));
-    }
-
     private void UpdateSmartEraserFill(
         global::Avalonia.Controls.Shapes.Rectangle rectangle,
         SmartEraserAnnotation annotation,
         Canvas canvas)
     {
-        ClampSmartEraserBoundsToCanvas(rectangle, annotation, canvas);
+        annotation.ClampVisualBounds(rectangle, canvas.Bounds.Size);
 
         var sourceImage = _view.EditorCore.SourceImage;
         if (sourceImage != null)
@@ -621,7 +598,7 @@ public class EditorInputController
             {
                 _view.ApplyInteractionCursor(CursorAssetLoader.CustomCursorKind.ClosedHand);
                 var cropCurrent = e.GetPosition(cvs);
-                var newRect = ComputeCropHandleResizedRect(_draggedCropHandleTag!, _cropDragStartPoint, cropCurrent, _cropDragStartRect, cvs.Bounds.Width, cvs.Bounds.Height);
+                var newRect = CropAnnotation.ResizeBounds(_draggedCropHandleTag!, _cropDragStartPoint, cropCurrent, _cropDragStartRect, cvs.Bounds.Width, cvs.Bounds.Height);
                 UpdateCropOverlayBounds(newRect);
             }
             e.Handled = true;
@@ -1478,16 +1455,8 @@ public class EditorInputController
     private const int CropShadeZIndex = 5000;
     private const int CropOverlayZIndex = 6000;
     private const int CropGuideZIndex = 6500;
-    private const int CropHandleZIndex = 7000;
-    private const double CropHandleCornerHitSize = 40;
-    private const double CropHandleEdgeHitLength = 40;
-    private const double CropHandleEdgeHitThickness = 28;
-    private const double CropHandleCornerArmLength = 24;
-    private const double CropHandleCenterBarLength = 30;
-    private const double CropHandleThickness = 5;
     private const double MinCropGuideSize = 24;
 
-    private static readonly Color CropHandleFill = Color.FromRgb(255, 255, 255);
     private static readonly Color CropShadeFill = Color.FromArgb(140, 0, 0, 0);
     private static readonly Color CropGuideStroke = Color.FromArgb(210, 255, 255, 255);
 
@@ -1578,10 +1547,10 @@ public class EditorInputController
             return;
         }
 
-        double left = ClampSafe(cropRect.Left, 0, canvasWidth);
-        double top = ClampSafe(cropRect.Top, 0, canvasHeight);
-        double right = ClampSafe(cropRect.Right, 0, canvasWidth);
-        double bottom = ClampSafe(cropRect.Bottom, 0, canvasHeight);
+        double left = Math.Clamp(cropRect.Left, 0, canvasWidth);
+        double top = Math.Clamp(cropRect.Top, 0, canvasHeight);
+        double right = Math.Clamp(cropRect.Right, 0, canvasWidth);
+        double bottom = Math.Clamp(cropRect.Bottom, 0, canvasHeight);
         double width = Math.Max(0, right - left);
         double height = Math.Max(0, bottom - top);
 
@@ -1638,139 +1607,9 @@ public class EditorInputController
 
     private Border CreateCropHandle(Canvas overlay, double x, double y, string tag)
     {
-        Cursor cursor = new Cursor(StandardCursorType.SizeNorthSouth);
-        if (tag.Contains("TopLeft") || tag.Contains("BottomRight")) cursor = new Cursor(StandardCursorType.TopLeftCorner);
-        else if (tag.Contains("TopRight") || tag.Contains("BottomLeft")) cursor = new Cursor(StandardCursorType.TopRightCorner);
-        else if (tag.Contains("Top") || tag.Contains("Bottom")) cursor = new Cursor(StandardCursorType.SizeNorthSouth);
-        else if (tag.Contains("Left") || tag.Contains("Right")) cursor = new Cursor(StandardCursorType.SizeWestEast);
-
-        bool isCorner = tag.EndsWith("TopLeft", StringComparison.Ordinal) || tag.EndsWith("TopRight", StringComparison.Ordinal)
-            || tag.EndsWith("BottomRight", StringComparison.Ordinal) || tag.EndsWith("BottomLeft", StringComparison.Ordinal);
-
-        bool isHorizontalEdge = tag.Contains("Top", StringComparison.Ordinal) || tag.Contains("Bottom", StringComparison.Ordinal);
-        double width = isCorner ? CropHandleCornerHitSize : (isHorizontalEdge ? CropHandleEdgeHitLength : CropHandleEdgeHitThickness);
-        double height = isCorner ? CropHandleCornerHitSize : (isHorizontalEdge ? CropHandleEdgeHitThickness : CropHandleEdgeHitLength);
-        Control visual;
-
-        if (isCorner)
-        {
-            visual = CreateCropCornerLShape(tag);
-        }
-        else
-        {
-            visual = CreateCropEdgeBar(width, height);
-        }
-
-        var handle = new Border
-        {
-            Width = width,
-            Height = height,
-            Background = Brushes.Transparent,
-            BorderBrush = Brushes.Transparent,
-            BorderThickness = new Thickness(0),
-            Tag = tag,
-            Cursor = cursor,
-            Child = visual,
-            ClipToBounds = false
-        };
-        handle.SetValue(Panel.ZIndexProperty, CropHandleZIndex);
-
-        Canvas.SetLeft(handle, ToOverlayCoordinate(x) - (width / 2.0));
-        Canvas.SetTop(handle, ToOverlayCoordinate(y) - (height / 2.0));
+        var handle = CropAnnotation.CreateResizeHandle(ToOverlayPoint(new Point(x, y)), tag);
         overlay.Children.Add(handle);
         return handle;
-    }
-
-    /// <summary>
-    /// Creates an L-shaped crop bracket that sits on the crop corner and points into the crop area.
-    /// </summary>
-    private static Control CreateCropCornerLShape(string tag)
-    {
-        const double size = CropHandleCornerHitSize;
-        const double arm = CropHandleCornerArmLength;
-        const double w = CropHandleThickness;
-        const double half = size / 2.0;
-
-        // Build a 6-point polygon that forms a single connected L shape.
-        // The vertex of the L sits at (half, half), centered in the hit area.
-        // The polygon traces the outer boundary of the L clockwise.
-        //
-        // For TopLeft corner (arms extend right and down into the crop area):
-        //   P0 ──────── P1
-        //   │            │
-        //   │   P3 ── P2
-        //   │   │
-        //   │   │
-        //   P5  P4
-        //
-        bool extendsLeft = tag.Contains("Right", StringComparison.Ordinal);
-        bool extendsUp = tag.Contains("Bottom", StringComparison.Ordinal);
-        double horizontalEnd = extendsLeft ? half - arm : half + arm;
-        double verticalEnd = extendsUp ? half - arm : half + arm;
-
-        var geometry = new StreamGeometry();
-        using (StreamGeometryContext context = geometry.Open())
-        {
-            context.BeginFigure(new Point(horizontalEnd, half), false);
-            context.LineTo(new Point(half, half));
-            context.LineTo(new Point(half, verticalEnd));
-        }
-
-        return new global::Avalonia.Controls.Shapes.Path
-        {
-            Width = size,
-            Height = size,
-            Data = geometry,
-            Stroke = new SolidColorBrush(CropHandleFill),
-            StrokeThickness = w,
-            StrokeLineCap = PenLineCap.Round,
-            StrokeJoin = PenLineJoin.Round,
-            Stretch = Stretch.None,
-            IsHitTestVisible = false
-        };
-    }
-
-    /// <summary>
-    /// Creates a small center resize node while keeping a larger hit target around it.
-    /// </summary>
-    private static Control CreateCropEdgeBar(double width, double height)
-    {
-        bool isHorizontal = width >= height;
-        double barWidth = isHorizontal ? CropHandleCenterBarLength : CropHandleThickness;
-        double barHeight = isHorizontal ? CropHandleThickness : CropHandleCenterBarLength;
-
-        var canvas = new Canvas
-        {
-            Width = width,
-            Height = height,
-            IsHitTestVisible = false,
-            ClipToBounds = false
-        };
-
-        canvas.Children.Add(CreateCropHandleRect(
-            (width - barWidth) / 2.0,
-            (height - barHeight) / 2.0,
-            barWidth,
-            barHeight));
-
-        return canvas;
-    }
-
-    private static Rectangle CreateCropHandleRect(double left, double top, double width, double height)
-    {
-        var rect = new Rectangle
-        {
-            Width = width,
-            Height = height,
-            Fill = new SolidColorBrush(CropHandleFill),
-            RadiusX = CropHandleThickness / 2.0,
-            RadiusY = CropHandleThickness / 2.0,
-            IsHitTestVisible = false
-        };
-
-        Canvas.SetLeft(rect, left);
-        Canvas.SetTop(rect, top);
-        return rect;
     }
 
     private void UpdateCropOverlayBounds(Rect newRect)
@@ -1812,73 +1651,6 @@ public class EditorInputController
         {
             HideCropAdorners();
         }
-    }
-
-    private const double MinCropSize = 16;
-
-    private static Rect ComputeCropHandleResizedRect(string handleTag, Point dragStart, Point current, Rect originalRect, double canvasW, double canvasH)
-    {
-        double left = originalRect.Left;
-        double top = originalRect.Top;
-        double right = originalRect.Right;
-        double bottom = originalRect.Bottom;
-        double cx = ClampSafe(current.X, 0, canvasW);
-        double cy = ClampSafe(current.Y, 0, canvasH);
-
-        switch (handleTag)
-        {
-            case "Crop_TopLeft":
-                left = ClampSafe(cx, 0, right - MinCropSize);
-                top = ClampSafe(cy, 0, bottom - MinCropSize);
-                break;
-            case "Crop_TopCenter":
-                top = ClampSafe(cy, 0, bottom - MinCropSize);
-                break;
-            case "Crop_TopRight":
-                right = ClampSafe(cx, left + MinCropSize, canvasW);
-                top = ClampSafe(cy, 0, bottom - MinCropSize);
-                break;
-            case "Crop_RightCenter":
-                right = ClampSafe(cx, left + MinCropSize, canvasW);
-                break;
-            case "Crop_BottomRight":
-                right = ClampSafe(cx, left + MinCropSize, canvasW);
-                bottom = ClampSafe(cy, top + MinCropSize, canvasH);
-                break;
-            case "Crop_BottomCenter":
-                bottom = ClampSafe(cy, top + MinCropSize, canvasH);
-                break;
-            case "Crop_BottomLeft":
-                left = ClampSafe(cx, 0, right - MinCropSize);
-                bottom = ClampSafe(cy, top + MinCropSize, canvasH);
-                break;
-            case "Crop_LeftCenter":
-                left = ClampSafe(cx, 0, right - MinCropSize);
-                break;
-            case "Crop_Move":
-                double deltaX = current.X - dragStart.X;
-                double deltaY = current.Y - dragStart.Y;
-                double maxLeft = Math.Max(0, canvasW - originalRect.Width);
-                double maxTop = Math.Max(0, canvasH - originalRect.Height);
-                double newLeft = ClampSafe(originalRect.Left + deltaX, 0, maxLeft);
-                double newTop = ClampSafe(originalRect.Top + deltaY, 0, maxTop);
-                return new Rect(newLeft, newTop, originalRect.Width, originalRect.Height);
-            default:
-                return originalRect;
-        }
-
-        left = ClampSafe(left, 0, canvasW - MinCropSize);
-        top = ClampSafe(top, 0, canvasH - MinCropSize);
-        right = ClampSafe(right, left + MinCropSize, canvasW);
-        bottom = ClampSafe(bottom, top + MinCropSize, canvasH);
-
-        return new Rect(left, top, Math.Max(MinCropSize, right - left), Math.Max(MinCropSize, bottom - top));
-    }
-
-    private static double ClampSafe(double value, double min, double max)
-    {
-        if (max < min) return min;
-        return Math.Clamp(value, min, max);
     }
 
     private void PerformCrop()

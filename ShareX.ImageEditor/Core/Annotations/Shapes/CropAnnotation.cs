@@ -31,7 +31,7 @@ namespace ShareX.ImageEditor.Core.Annotations;
 /// Crop annotation - modifies the image dimensions
 /// Note: This is a special annotation that triggers actual image modification
 /// </summary>
-public class CropAnnotation : Annotation
+public partial class CropAnnotation : Annotation
 {
     public override AnnotationCategory Category => AnnotationCategory.Shapes;
     public CropAnnotation()
