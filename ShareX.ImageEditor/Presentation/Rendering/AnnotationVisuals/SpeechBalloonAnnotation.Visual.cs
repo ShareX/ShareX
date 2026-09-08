@@ -29,6 +29,7 @@ using Avalonia.Controls.Shapes;
 using Avalonia.Media;
 using ShareX.ImageEditor.Presentation.Controls;
 using SkiaSharp;
+using static ShareX.ImageEditor.Presentation.Rendering.AnnotationCoordinateHelper;
 using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
 
 namespace ShareX.ImageEditor.Core.Annotations;
@@ -95,5 +96,34 @@ public partial class SpeechBalloonAnnotation
             (innerBounds.MidX - outerBounds.Left) / outerBounds.Width,
             (innerBounds.MidY - outerBounds.Top) / outerBounds.Height,
             RelativeUnit.Relative);
+    }
+
+    internal Point GetTailHandlePoint()
+    {
+        var tailPoint = GetEffectiveTailPoint();
+        Point handlePoint = new(tailPoint.X, tailPoint.Y);
+
+        if (RotationAngle == 0)
+        {
+            return handlePoint;
+        }
+
+        var bounds = GetBounds();
+        Point center = new(bounds.MidX, bounds.MidY);
+        return RotatePoint(handlePoint, center, RotationAngle);
+    }
+
+    internal SKPoint GetTailPointFromVisual(Point visualPoint)
+    {
+        Point unrotatedPoint = visualPoint;
+
+        if (RotationAngle != 0)
+        {
+            var bounds = GetBounds();
+            Point center = new(bounds.MidX, bounds.MidY);
+            unrotatedPoint = UnrotatePoint(visualPoint, center, RotationAngle);
+        }
+
+        return new SKPoint((float)unrotatedPoint.X, (float)unrotatedPoint.Y);
     }
 }

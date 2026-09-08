@@ -228,4 +228,13 @@ public abstract class Annotation
         float dy = point.Y - cy;
         return new SKPoint(cx + dx * cos - dy * sin, cy + dx * sin + dy * cos);
     }
+
+    /// <summary>
+    /// Moves the annotation during a selection drag or keyboard nudge.
+    /// </summary>
+    internal virtual void MoveBy(float deltaX, float deltaY)
+    {
+        StartPoint = new SKPoint(StartPoint.X + deltaX, StartPoint.Y + deltaY);
+        EndPoint = new SKPoint(EndPoint.X + deltaX, EndPoint.Y + deltaY);
+    }
 }

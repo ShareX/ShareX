@@ -32,15 +32,15 @@ using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Presentation.Controls;
-using ShareX.ImageEditor.Presentation.Helpers;
 using ShareX.ImageEditor.Presentation.Rendering;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using ShareX.ImageEditor.Presentation.Views;
 using SkiaSharp;
+using static ShareX.ImageEditor.Presentation.Rendering.AnnotationCoordinateHelper;
 
 namespace ShareX.ImageEditor.Presentation.Controllers;
 
-public class EditorSelectionController
+public partial class EditorSelectionController
 {
     private static readonly Cursor SelectToolCursor = new(StandardCursorType.Arrow);
     private const string SegmentStartHandleTag = "SegmentStart";
@@ -72,7 +72,6 @@ public class EditorSelectionController
     private global::Avalonia.Controls.Shapes.Polyline? _hoverPolylineWhite;
     private global::Avalonia.Controls.Shapes.Ellipse? _hoverEllipseBlack;
     private global::Avalonia.Controls.Shapes.Ellipse? _hoverEllipseWhite;
-    private TextBox? _balloonTextEditor;
     private Point _lastPointerCanvasPoint;
     private bool _hasLastPointerCanvasPoint;
     private KeyModifiers _currentKeyModifiers;
@@ -144,7 +143,7 @@ public class EditorSelectionController
             {
                 Dispatcher.UIThread.Post(() =>
                 {
-                    ShowSpeechBalloonTextEditor(balloonControl, canvas);
+                    ShowSpeechBalloonTextEditor(balloonControl);
                 }, DispatcherPriority.Normal);
             }
         }
@@ -229,7 +228,7 @@ public class EditorSelectionController
 
                 if (hitTarget != null && GetControlToolType(hitTarget) == activeVm.ActiveTool)
                 {
-                    if (e.ClickCount == 2 && TryHandleDoubleClickEdit(hitTarget, canvas))
+                    if (e.ClickCount == 2 && TryHandleDoubleClickEdit(hitTarget))
                     {
                         e.Handled = true;
                         return true;
@@ -283,7 +282,7 @@ public class EditorSelectionController
 
                 if (hitTarget != null)
                 {
-                    if (e.ClickCount == 2 && TryHandleDoubleClickEdit(hitTarget, canvas))
+                    if (e.ClickCount == 2 && TryHandleDoubleClickEdit(hitTarget))
                     {
                         e.Handled = true;
                         return true;
@@ -303,7 +302,7 @@ public class EditorSelectionController
                 {
                     if (manualHit != null)
                     {
-                        if (e.ClickCount == 2 && TryHandleDoubleClickEdit(manualHit, canvas))
+                        if (e.ClickCount == 2 && TryHandleDoubleClickEdit(manualHit))
                         {
                             e.Handled = true;
                             return true;
@@ -330,15 +329,15 @@ public class EditorSelectionController
         return false;
     }
 
-    private bool TryHandleDoubleClickEdit(Control hitTarget, Canvas canvas)
+    private bool TryHandleDoubleClickEdit(Control hitTarget)
     {
         switch (hitTarget)
         {
             case OutlinedTextControl otc:
-                ShowTextEditor(otc, canvas);
+                ShowTextEditor(otc);
                 return true;
             case SpeechBalloonControl balloon:
-                ShowSpeechBalloonTextEditor(balloon, canvas);
+                ShowSpeechBalloonTextEditor(balloon);
                 return true;
             case global::Avalonia.Controls.Image emojiControl when emojiControl.Tag is EmojiAnnotation emojiAnnotation:
                 ShowEmojiPickerForReplacement(emojiControl, emojiAnnotation);
@@ -559,7 +558,7 @@ public class EditorSelectionController
         // Special handling for SpeechBalloonControl tail dragging
         if (_selectedShape is SpeechBalloonControl balloonControl && balloonControl.Annotation is SpeechBalloonAnnotation balloon && balloon.TailEnabled && handleTag == "BalloonTail")
         {
-            balloon.SetTailPoint(GetSpeechBalloonTailPoint(balloon, currentPoint));
+            balloon.SetTailPoint(balloon.GetTailPointFromVisual(currentPoint));
             AnnotationVisualFactory.UpdateVisualControl(
                 balloonControl,
                 balloon,
@@ -872,7 +871,7 @@ public class EditorSelectionController
 
         if (annotation is SpeechBalloonAnnotation balloon)
         {
-            UpdateSpeechBalloonTailForResize(balloon, previousBounds, newBounds);
+            balloon.ResizeTail(previousBounds, newBounds);
         }
 
         if (annotation.RotationAngle != 0)
@@ -890,22 +889,6 @@ public class EditorSelectionController
 
         _selectedShape.InvalidateVisual();
         _selectedShape.InvalidateMeasure();
-    }
-
-    private static void UpdateSpeechBalloonTailForResize(SpeechBalloonAnnotation annotation, SKRect previousBounds, SKRect newBounds)
-    {
-        if (!annotation.HasTailPoint || previousBounds.Width <= 0 || previousBounds.Height <= 0)
-        {
-            return;
-        }
-
-        var tailPoint = annotation.GetEffectiveTailPoint();
-        float scaleX = newBounds.Width / previousBounds.Width;
-        float scaleY = newBounds.Height / previousBounds.Height;
-
-        annotation.SetTailPoint(new SKPoint(
-            newBounds.Left + ((tailPoint.X - previousBounds.Left) * scaleX),
-            newBounds.Top + ((tailPoint.Y - previousBounds.Top) * scaleY)));
     }
 
     private static bool TryGetHandleDirection(string handleTag, out int horizontalDirection, out int verticalDirection)
@@ -938,11 +921,9 @@ public class EditorSelectionController
 
         if (_selectedShape is global::Avalonia.Controls.Shapes.Path segmentPath
             && segmentPath.Tag is Annotation segmentAnnotation
-            && segmentPath.Tag is ICurvedSegmentAnnotation curvedSegment)
+            && segmentPath.Tag is ICurvedSegmentAnnotation)
         {
-            curvedSegment.StartPoint = new SKPoint(curvedSegment.StartPoint.X + (float)deltaX, curvedSegment.StartPoint.Y + (float)deltaY);
-            curvedSegment.EndPoint = new SKPoint(curvedSegment.EndPoint.X + (float)deltaX, curvedSegment.EndPoint.Y + (float)deltaY);
-            CurvedSegmentHelper.OffsetCurvePoint(curvedSegment, (float)deltaX, (float)deltaY);
+            segmentAnnotation.MoveBy((float)deltaX, (float)deltaY);
             AnnotationVisualFactory.UpdateVisualControl(segmentPath, segmentAnnotation);
 
             _lastDragPoint = currentPoint;
@@ -952,17 +933,7 @@ public class EditorSelectionController
 
         if (_selectedShape is SpeechBalloonControl balloonControl && balloonControl.Annotation is SpeechBalloonAnnotation balloon)
         {
-            var currentStart = balloon.StartPoint;
-            var currentEnd = balloon.EndPoint;
-            var currentTailPoint = balloon.GetEffectiveTailPoint();
-
-            var newStartPoint = new SKPoint(currentStart.X + (float)deltaX, currentStart.Y + (float)deltaY);
-            var newEndPoint = new SKPoint(currentEnd.X + (float)deltaX, currentEnd.Y + (float)deltaY);
-
-            balloon.StartPoint = newStartPoint;
-            balloon.EndPoint = newEndPoint;
-
-            balloon.SetTailPoint(new SKPoint(currentTailPoint.X + (float)deltaX, currentTailPoint.Y + (float)deltaY));
+            balloon.MoveBy((float)deltaX, (float)deltaY);
 
             var newLeft = Canvas.GetLeft(balloonControl) + deltaX;
             var newTop = Canvas.GetTop(balloonControl) + deltaY;
@@ -977,13 +948,7 @@ public class EditorSelectionController
 
         if (_selectedShape is StepControl stepControl && stepControl.Annotation is NumberAnnotation number)
         {
-            number.StartPoint = new SKPoint(number.StartPoint.X + (float)deltaX, number.StartPoint.Y + (float)deltaY);
-            number.EndPoint = new SKPoint(number.EndPoint.X + (float)deltaX, number.EndPoint.Y + (float)deltaY);
-
-            if (number.HasTailPoint)
-            {
-                number.SetTailPoint(new SKPoint(number.TailPoint.X + (float)deltaX, number.TailPoint.Y + (float)deltaY));
-            }
+            number.MoveBy((float)deltaX, (float)deltaY);
 
             var newLeft = Canvas.GetLeft(stepControl) + deltaX;
             var newTop = Canvas.GetTop(stepControl) + deltaY;
@@ -996,15 +961,10 @@ public class EditorSelectionController
             return;
         }
 
-        // Handle Path (Freehand/SmartEraser) movement by translating all points
+        // Freehand visuals must rebuild their path after moving.
         if (_selectedShape is global::Avalonia.Controls.Shapes.Path path && path.Tag is FreehandAnnotation freehand)
         {
-            // Update all points in the annotation
-            for (int i = 0; i < freehand.Points.Count; i++)
-            {
-                var oldPt = freehand.Points[i];
-                freehand.Points[i] = new SKPoint(oldPt.X + (float)deltaX, oldPt.Y + (float)deltaY);
-            }
+            freehand.MoveBy((float)deltaX, (float)deltaY);
 
             // Regenerate the path geometry using the new points
             path.Data = freehand.CreateSmoothedGeometry();
@@ -1018,10 +978,7 @@ public class EditorSelectionController
 
         if (_selectedShape is SpotlightControl spotlight && spotlight.Annotation is SpotlightAnnotation sa)
         {
-            var currentStart = sa.StartPoint;
-            var currentEnd = sa.EndPoint;
-            sa.StartPoint = new SKPoint(currentStart.X + (float)deltaX, currentStart.Y + (float)deltaY);
-            sa.EndPoint = new SKPoint(currentEnd.X + (float)deltaX, currentEnd.Y + (float)deltaY);
+            sa.MoveBy((float)deltaX, (float)deltaY);
             _view.RefreshSpotlightOverlay();
 
             _lastDragPoint = currentPoint;
@@ -1038,8 +995,7 @@ public class EditorSelectionController
         // Sync annotation points for hit testing (Rectangle, Ellipse, Highlight, etc.)
         if (_selectedShape.Tag is Annotation annotation)
         {
-            annotation.StartPoint = new SKPoint(annotation.StartPoint.X + (float)deltaX, annotation.StartPoint.Y + (float)deltaY);
-            annotation.EndPoint = new SKPoint(annotation.EndPoint.X + (float)deltaX, annotation.EndPoint.Y + (float)deltaY);
+            annotation.MoveBy((float)deltaX, (float)deltaY);
         }
 
         _lastDragPoint = currentPoint;
@@ -1103,7 +1059,7 @@ public class EditorSelectionController
             {
                 if (balloon.TailEnabled)
                 {
-                    Point rotatedTailHandle = GetSpeechBalloonTailHandlePoint(balloon);
+                    Point rotatedTailHandle = balloon.GetTailHandlePoint();
                     CreateHandle(rotatedTailHandle.X, rotatedTailHandle.Y, "BalloonTail");
                 }
 
@@ -1353,57 +1309,6 @@ public class EditorSelectionController
         }
     }
 
-    private static Point RotatePoint(Point point, Point center, double angleDeg)
-    {
-        if (angleDeg == 0)
-        {
-            return point;
-        }
-
-        double rad = angleDeg * Math.PI / 180.0;
-        double cos = Math.Cos(rad);
-        double sin = Math.Sin(rad);
-        double dx = point.X - center.X;
-        double dy = point.Y - center.Y;
-        return new Point(
-            center.X + dx * cos - dy * sin,
-            center.Y + dx * sin + dy * cos);
-    }
-
-    private static Point UnrotatePoint(Point point, Point center, double angleDeg)
-    {
-        return RotatePoint(point, center, -angleDeg);
-    }
-
-    private static Point GetSpeechBalloonTailHandlePoint(SpeechBalloonAnnotation annotation)
-    {
-        var tailPoint = annotation.GetEffectiveTailPoint();
-        Point handlePoint = new(tailPoint.X, tailPoint.Y);
-
-        if (annotation.RotationAngle == 0)
-        {
-            return handlePoint;
-        }
-
-        var bounds = annotation.GetBounds();
-        Point center = new(bounds.MidX, bounds.MidY);
-        return RotatePoint(handlePoint, center, annotation.RotationAngle);
-    }
-
-    private static SKPoint GetSpeechBalloonTailPoint(SpeechBalloonAnnotation annotation, Point visualPoint)
-    {
-        Point unrotatedPoint = visualPoint;
-
-        if (annotation.RotationAngle != 0)
-        {
-            var bounds = annotation.GetBounds();
-            Point center = new(bounds.MidX, bounds.MidY);
-            unrotatedPoint = UnrotatePoint(visualPoint, center, annotation.RotationAngle);
-        }
-
-        return new SKPoint((float)unrotatedPoint.X, (float)unrotatedPoint.Y);
-    }
-
     private void CreateHandle(double x, double y, string tag)
     {
         var overlay = _view.FindControl<Canvas>("OverlayCanvas");
@@ -1470,182 +1375,6 @@ public class EditorSelectionController
             EditorTool.Crop or EditorTool.CutOut => _view.GetCrosshairCursor(),
             _ => _view.GetCrosshairCursor()
         };
-    }
-
-    private void ShowSpeechBalloonTextEditor(SpeechBalloonControl balloonControl, Canvas unusedCanvas)
-    {
-        if (balloonControl.Annotation == null) return;
-
-        // Use OverlayCanvas to ensure TextBox is on top of everything
-        var overlay = _view.FindControl<Canvas>("OverlayCanvas");
-        if (overlay == null) return;
-
-        if (_balloonTextEditor != null)
-        {
-            // Remove from whichever parent it has
-            (_balloonTextEditor.Parent as Panel)?.Children.Remove(_balloonTextEditor);
-            _balloonTextEditor = null;
-        }
-
-        var annotation = balloonControl.Annotation;
-        var balloonRect = GetLogicalRect(balloonControl);
-        var balloonLeft = balloonRect.Left;
-        var balloonTop = balloonRect.Top;
-        var balloonWidth = balloonRect.Width;
-        var balloonHeight = balloonRect.Height;
-
-        // Check if balloon is too small (e.g. user just clicked without dragging)
-        if (balloonWidth < 50 || balloonHeight < 30)
-        {
-            balloonWidth = Math.Max(balloonWidth, 200);
-            balloonHeight = Math.Max(balloonHeight, 100);
-
-            annotation.EndPoint = new SKPoint(
-                annotation.StartPoint.X + (float)balloonWidth,
-                annotation.StartPoint.Y + (float)balloonHeight
-            );
-
-            // Fix Tail Point if it was at 0,0 or default
-            if (annotation.TailEnabled &&
-                (!annotation.HasTailPoint ||
-                (Math.Abs(annotation.TailPoint.X - annotation.StartPoint.X) < 1 && Math.Abs(annotation.TailPoint.Y - annotation.StartPoint.Y) < 1)))
-            {
-                annotation.SetTailPoint(annotation.GetDefaultTailPoint());
-            }
-
-            AnnotationVisualFactory.UpdateVisualControl(
-                balloonControl,
-                annotation,
-                AnnotationVisualMode.Persisted,
-                _view.EditorCore.CanvasSize.Width,
-                _view.EditorCore.CanvasSize.Height);
-            UpdateSelectionHandles();
-        }
-
-        // Ensure text is visible during editing
-        IBrush foregroundBrush = new SolidColorBrush(Avalonia.Media.Color.Parse(annotation.TextColor));
-        try
-        {
-            var foreColor = Avalonia.Media.Color.Parse(annotation.TextColor);
-            var backColor = Avalonia.Media.Color.Parse(annotation.FillColor);
-
-            // Calculate relative luminance
-            double foreLum = (0.299 * foreColor.R + 0.587 * foreColor.G + 0.114 * foreColor.B) / 255.0;
-            double backLum = (0.299 * backColor.R + 0.587 * backColor.G + 0.114 * backColor.B) / 255.0;
-            double backAlpha = backColor.A / 255.0;
-
-            // If background is transparent (showing image/canvas behind), we can't guarantee contrast.
-
-            // If background is visible and contrast is low, pick black or white
-            if (backAlpha > 0.1)
-            {
-                if (Math.Abs(foreLum - backLum) < 0.3)
-                {
-                    foregroundBrush = backLum > 0.5 ? Avalonia.Media.Brushes.Black : Avalonia.Media.Brushes.White;
-                }
-            }
-        }
-        catch { /* Fallback to stroke color */ }
-
-        // Determine a safe background for the TextBox to ensure visibility
-        // Use the fill color of the balloon as the base background for the editor
-        IBrush editorBackground;
-        var fillColor = Avalonia.Media.Color.Parse(annotation.FillColor);
-
-        if (fillColor.A < 20)
-        {
-            // If balloon is transparent, continue to use the high-contrast semi-transparent background
-            var fgBrush = foregroundBrush as SolidColorBrush;
-            var fgColor = fgBrush?.Color ?? Avalonia.Media.Colors.Black;
-            editorBackground = fgColor.R > 127
-                ? new SolidColorBrush(Avalonia.Media.Color.Parse("#AA000000"))
-                : new SolidColorBrush(Avalonia.Media.Color.Parse("#AAFFFFFF"));
-        }
-        else
-        {
-            // Use the actual fill color
-            // We use the exact fill color so it looks seamless
-            editorBackground = new SolidColorBrush(fillColor);
-        }
-
-        var textBox = new TextBox
-        {
-            Text = annotation.Text,
-            Background = editorBackground,
-            BorderThickness = new Thickness(0),
-            CornerRadius = new CornerRadius(0), // No corner radius needed if no border/background match
-            Foreground = foregroundBrush,
-            FontSize = annotation.FontSize,
-            FontFamily = new Avalonia.Media.FontFamily(string.IsNullOrWhiteSpace(annotation.FontFamily) ? "Segoe UI" : annotation.FontFamily),
-            FontWeight = annotation.IsBold ? FontWeight.Bold : FontWeight.Normal,
-            FontStyle = annotation.IsItalic ? FontStyle.Italic : FontStyle.Normal,
-            Padding = new Thickness(12),
-            TextAlignment = TextHorizontalAlignmentHelper.ToAvaloniaTextAlignment(annotation.HorizontalAlignment),
-            HorizontalContentAlignment = TextHorizontalAlignmentHelper.ToHorizontalContentAlignment(annotation.HorizontalAlignment),
-            VerticalContentAlignment = global::Avalonia.Layout.VerticalAlignment.Center,
-            AcceptsReturn = false,
-            TextWrapping = TextWrapping.Wrap,
-            Tag = annotation
-        };
-
-        // ISSUE-FIX: Override theme resources to ensure Focus state doesn't revert to White background
-        textBox.Resources["TextControlBackground"] = editorBackground;
-        textBox.Resources["TextControlBackgroundFocused"] = editorBackground;
-        textBox.Resources["TextControlBackgroundPointerOver"] = editorBackground;
-
-        // ISSUE-FIX: Override border resources to remove them completely in all states
-        textBox.Resources["TextControlBorderThemeThickness"] = new Thickness(0);
-        textBox.Resources["TextControlBorderThemeThicknessFocused"] = new Thickness(0);
-        textBox.Resources["TextControlBorderThemeThicknessPointerOver"] = new Thickness(0);
-        textBox.Resources["TextControlBorderBrush"] = Avalonia.Media.Brushes.Transparent;
-        textBox.Resources["TextControlBorderBrushFocused"] = Avalonia.Media.Brushes.Transparent;
-        textBox.Resources["TextControlBorderBrushPointerOver"] = Avalonia.Media.Brushes.Transparent;
-
-        // Ensure TextBox is above the balloon geometry (ZIndex 100 might not be enough if Overlay is higher)
-        // But AnnotationCanvas is usually below Overlay.
-        // We can't put TextBox in Overlay because Overlay is for handles.
-        textBox.SetValue(Panel.ZIndexProperty, 9999);
-        ApplySpeechBalloonTextEditorLayout(textBox, annotation, balloonLeft, balloonTop, balloonWidth, balloonHeight);
-
-        textBox.LostFocus += (s, args) =>
-        {
-            if (s is TextBox tb)
-            {
-                annotation.Text = tb.Text ?? string.Empty;
-                balloonControl.InvalidateVisual();
-                (tb.Parent as Panel)?.Children.Remove(tb); // Remove from OverlayCanvas
-                _balloonTextEditor = null;
-            }
-        };
-
-        textBox.KeyDown += (s, args) =>
-        {
-            if (args.Key == Key.Enter && args.KeyModifiers.HasFlag(KeyModifiers.Control))
-            {
-                args.Handled = true;
-                int caretIndex = textBox.CaretIndex;
-                string currentText = textBox.Text ?? string.Empty;
-                textBox.Text = currentText.Substring(0, caretIndex) + "\n" + currentText.Substring(caretIndex);
-                textBox.CaretIndex = caretIndex + 1;
-            }
-        };
-
-        textBox.KeyUp += (s, args) =>
-        {
-            if ((args.Key == Key.Enter && !args.KeyModifiers.HasFlag(KeyModifiers.Control)) || args.Key == Key.Escape)
-            {
-                args.Handled = true;
-                _view.Focus();
-            }
-        };
-
-        overlay.Children.Add(textBox); // Add to OverlayCanvas
-        _balloonTextEditor = textBox;
-        textBox.Focus();
-        textBox.CaretIndex = textBox.Text.Length; // Place caret at end
-
-        // Attach extended handlers for live update if needed, or rely on LostFocus
-        AttachTextBoxEditHandlers(textBox);
     }
 
     public void PerformDelete()
@@ -2103,66 +1832,6 @@ public class EditorSelectionController
         }
     }
 
-    private void AttachTextBoxEditHandlers(TextBox tb)
-    {
-        EventHandler<FocusChangedEventArgs>? lostFocusHandler = null;
-        EventHandler<KeyEventArgs>? keyDownHandler = null;
-        EventHandler<KeyEventArgs>? keyUpHandler = null;
-
-        lostFocusHandler = (s, args) =>
-        {
-            if (lostFocusHandler != null) tb.LostFocus -= lostFocusHandler;
-            if (keyDownHandler != null) tb.KeyDown -= keyDownHandler;
-            if (keyUpHandler != null) tb.KeyUp -= keyUpHandler;
-
-            tb.IsHitTestVisible = false;
-
-            if (tb.Tag is Annotation annotation)
-            {
-                // Sync Text
-                if (annotation is TextAnnotation textAnn)
-                {
-                    textAnn.Text = tb.Text ?? string.Empty;
-
-                    // Sync Bounds
-                    var textBoxRect = GetLogicalRect(tb);
-                    textAnn.EndPoint = new SKPoint(
-                        (float)(textBoxRect.Left + textBoxRect.Width),
-                        (float)(textBoxRect.Top + textBoxRect.Height)
-                    );
-
-                    UpdateSelectionHandles();
-                    UpdateHoverOutline();
-                }
-            }
-        };
-
-        keyDownHandler = (s, args) =>
-        {
-            if (args.Key == Key.Enter && args.KeyModifiers.HasFlag(KeyModifiers.Control))
-            {
-                args.Handled = true;
-                int caretIndex = tb.CaretIndex;
-                string currentText = tb.Text ?? string.Empty;
-                tb.Text = currentText.Substring(0, caretIndex) + "\n" + currentText.Substring(caretIndex);
-                tb.CaretIndex = caretIndex + 1;
-            }
-        };
-
-        keyUpHandler = (s, args) =>
-        {
-            if ((args.Key == Key.Enter && !args.KeyModifiers.HasFlag(KeyModifiers.Control)) || args.Key == Key.Escape)
-            {
-                args.Handled = true;
-                _view.Focus();
-            }
-        };
-
-        tb.LostFocus += lostFocusHandler;
-        tb.KeyDown += keyDownHandler;
-        tb.KeyUp += keyUpHandler;
-    }
-
     private static SKPoint ToSKPoint(Point point) => new((float)point.X, (float)point.Y);
 
     /// <summary>
@@ -2177,226 +1846,6 @@ public class EditorSelectionController
         if (control.Tag is Annotation ann) return ann.ToolType;
         return null;
     }
-    public void UpdateActiveTextEditorProperties()
-    {
-        if (_balloonTextEditor == null || !(_selectedShape is SpeechBalloonControl balloonControl)) return;
-        if (balloonControl.Annotation is not SpeechBalloonAnnotation annotation) return;
-
-        // Update Font Size
-        _balloonTextEditor.FontSize = annotation.FontSize;
-        _balloonTextEditor.FontFamily = new Avalonia.Media.FontFamily(string.IsNullOrWhiteSpace(annotation.FontFamily) ? "Segoe UI" : annotation.FontFamily);
-        _balloonTextEditor.FontWeight = annotation.IsBold ? FontWeight.Bold : FontWeight.Normal;
-        _balloonTextEditor.FontStyle = annotation.IsItalic ? FontStyle.Italic : FontStyle.Normal;
-        _balloonTextEditor.TextAlignment = TextHorizontalAlignmentHelper.ToAvaloniaTextAlignment(annotation.HorizontalAlignment);
-        _balloonTextEditor.HorizontalContentAlignment = TextHorizontalAlignmentHelper.ToHorizontalContentAlignment(annotation.HorizontalAlignment);
-
-        // Re-execute color logic (matching ShowSpeechBalloonTextEditor logic)
-        IBrush foregroundBrush = new SolidColorBrush(Avalonia.Media.Color.Parse(annotation.StrokeColor));
-
-        try
-        {
-            var foreColor = Avalonia.Media.Color.Parse(annotation.StrokeColor);
-            var backColor = Avalonia.Media.Color.Parse(annotation.FillColor);
-            double foreLum = (0.299 * foreColor.R + 0.587 * foreColor.G + 0.114 * foreColor.B) / 255.0;
-            double backLum = (0.299 * backColor.R + 0.587 * backColor.G + 0.114 * backColor.B) / 255.0;
-            double backAlpha = backColor.A / 255.0;
-
-            if (backAlpha > 0.1)
-            {
-                if (Math.Abs(foreLum - backLum) < 0.3)
-                {
-                    foregroundBrush = backLum > 0.5 ? Avalonia.Media.Brushes.Black : Avalonia.Media.Brushes.White;
-                }
-            }
-        }
-        catch { }
-
-        IBrush editorBackground;
-        var fillColor = Avalonia.Media.Color.Parse(annotation.FillColor);
-        if (fillColor.A < 20)
-        {
-            var fgBrush = foregroundBrush as SolidColorBrush;
-            var fgColor = fgBrush?.Color ?? Avalonia.Media.Colors.Black;
-            editorBackground = fgColor.R > 127
-                ? new SolidColorBrush(Avalonia.Media.Color.Parse("#AA000000"))
-                : new SolidColorBrush(Avalonia.Media.Color.Parse("#AAFFFFFF"));
-        }
-        else
-        {
-            editorBackground = new SolidColorBrush(fillColor);
-        }
-
-        _balloonTextEditor.Background = editorBackground;
-        _balloonTextEditor.Foreground = foregroundBrush;
-
-        // Update resource overrides for Focus state
-        _balloonTextEditor.Resources["TextControlBackground"] = editorBackground;
-        _balloonTextEditor.Resources["TextControlBackgroundFocused"] = editorBackground;
-        _balloonTextEditor.Resources["TextControlBackgroundPointerOver"] = editorBackground;
-
-        _balloonTextEditor.Resources["TextControlBorderThemeThickness"] = new Thickness(0);
-        _balloonTextEditor.Resources["TextControlBorderThemeThicknessFocused"] = new Thickness(0);
-        _balloonTextEditor.Resources["TextControlBorderThemeThicknessPointerOver"] = new Thickness(0);
-        _balloonTextEditor.Resources["TextControlBorderBrush"] = Avalonia.Media.Brushes.Transparent;
-        _balloonTextEditor.Resources["TextControlBorderBrushFocused"] = Avalonia.Media.Brushes.Transparent;
-        _balloonTextEditor.Resources["TextControlBorderBrushPointerOver"] = Avalonia.Media.Brushes.Transparent;
-
-        var bodyBounds = annotation.GetBounds();
-        ApplySpeechBalloonTextEditorLayout(
-            _balloonTextEditor,
-            annotation,
-            bodyBounds.Left,
-            bodyBounds.Top,
-            bodyBounds.Width,
-            bodyBounds.Height);
-    }
-
-    private static void ApplySpeechBalloonTextEditorLayout(TextBox textBox, SpeechBalloonAnnotation annotation, double left, double top, double width, double height)
-    {
-        Canvas.SetLeft(textBox, ToOverlayCoordinate(left));
-        Canvas.SetTop(textBox, ToOverlayCoordinate(top));
-        textBox.Width = width;
-        textBox.Height = height;
-
-        if (annotation.RotationAngle != 0)
-        {
-            textBox.RenderTransformOrigin = new RelativePoint(0.5, 0.5, RelativeUnit.Relative);
-            textBox.RenderTransform = new RotateTransform(annotation.RotationAngle);
-        }
-        else
-        {
-            textBox.RenderTransform = null;
-        }
-    }
-
-    private void ShowTextEditor(OutlinedTextControl textControl, Canvas canvas)
-    {
-        if (textControl.Annotation is not TextAnnotation annotation) return;
-
-        var overlay = _view.FindControl<Canvas>("OverlayCanvas");
-        if (overlay == null) return;
-
-        // Hide the original control while editing
-        textControl.IsVisible = false;
-
-        // Create a temporary TextBox for editing
-        string textColor = annotation.TextColor;
-        if (string.IsNullOrEmpty(textColor) || textColor == "#00000000")
-        {
-            // Fallback to black for editing if text is transparent
-            // Only if stroke isn't set. Actually if TextColor is transparent but StrokeColor is set, text is stroke-only.
-            // Using StrokeColor for the editor text if TextColor is transparent makes sense so it's visible.
-            string strokeColor = annotation.StrokeColor;
-            if (string.IsNullOrEmpty(strokeColor) || strokeColor == "#00000000")
-            {
-                textColor = "#FF000000";
-            }
-            else
-            {
-                textColor = strokeColor;
-            }
-        }
-
-        var textBox = new TextBox
-        {
-            Text = annotation.Text,
-            Foreground = new SolidColorBrush(Avalonia.Media.Color.Parse(textColor)),
-            Background = Brushes.Transparent,
-            BorderThickness = new Thickness(1),
-            BorderBrush = Brushes.Gray,
-            FontSize = annotation.FontSize,
-            FontFamily = new Avalonia.Media.FontFamily(string.IsNullOrWhiteSpace(annotation.FontFamily) ? "Segoe UI" : annotation.FontFamily),
-            FontWeight = annotation.IsBold ? FontWeight.Bold : FontWeight.Normal,
-            FontStyle = annotation.IsItalic ? FontStyle.Italic : FontStyle.Normal,
-            Padding = new Thickness(4),
-            AcceptsReturn = false,
-            TextAlignment = TextHorizontalAlignmentHelper.ToAvaloniaTextAlignment(annotation.HorizontalAlignment),
-            HorizontalContentAlignment = TextHorizontalAlignmentHelper.ToHorizontalContentAlignment(annotation.HorizontalAlignment),
-            VerticalContentAlignment = global::Avalonia.Layout.VerticalAlignment.Center,
-            TextWrapping = TextWrapping.Wrap,
-            MinWidth = 20,
-            Tag = annotation
-        };
-
-        // Force Avalonia's internal text box states to be transparent
-        textBox.Resources["TextControlBackground"] = Brushes.Transparent;
-        textBox.Resources["TextControlBackgroundFocused"] = Brushes.Transparent;
-        textBox.Resources["TextControlBackgroundPointerOver"] = Brushes.Transparent;
-
-        // Apply rotation to make editing match display
-        if (annotation.RotationAngle != 0)
-        {
-            textBox.RenderTransformOrigin = new RelativePoint(0.5, 0.5, RelativeUnit.Relative);
-            textBox.RenderTransform = new RotateTransform(annotation.RotationAngle);
-        }
-
-        var annotationBounds = annotation.GetBounds();
-        Canvas.SetLeft(textBox, ToOverlayCoordinate(annotationBounds.Left));
-        Canvas.SetTop(textBox, ToOverlayCoordinate(annotationBounds.Top));
-        textBox.Width = Math.Max(20, annotationBounds.Width);
-        textBox.Height = Math.Max(20, annotationBounds.Height);
-
-        EventHandler<FocusChangedEventArgs>? lostFocusHandler = null;
-        EventHandler<KeyEventArgs>? keyDownHandler = null;
-        EventHandler<KeyEventArgs>? keyUpHandler = null;
-
-        void CompleteEditing()
-        {
-            if (lostFocusHandler != null) textBox.LostFocus -= lostFocusHandler;
-            if (keyDownHandler != null) textBox.KeyDown -= keyDownHandler;
-            if (keyUpHandler != null) textBox.KeyUp -= keyUpHandler;
-
-            annotation.Text = textBox.Text ?? string.Empty;
-
-            // Remove from overlay
-            overlay.Children.Remove(textBox);
-
-            // Keep the existing annotation rectangle so wrapped text stays inside the resized bounds.
-            textControl.IsVisible = true;
-            textControl.InvalidateMeasure();
-            textControl.InvalidateVisual();
-
-            // Fire RequestUpdateEffect to save new state if needed
-            RequestUpdateEffect?.Invoke(textControl);
-
-            UpdateSelectionHandles();
-            UpdateHoverOutline();
-        }
-
-        lostFocusHandler = (s, args) => CompleteEditing();
-
-        keyDownHandler = (s, args) =>
-        {
-            if (args.Key == Key.Enter && args.KeyModifiers.HasFlag(KeyModifiers.Control))
-            {
-                args.Handled = true;
-                int caretIndex = textBox.CaretIndex;
-                string currentText = textBox.Text ?? string.Empty;
-                textBox.Text = currentText.Substring(0, caretIndex) + "\n" + currentText.Substring(caretIndex);
-                textBox.CaretIndex = caretIndex + 1;
-            }
-        };
-
-        keyUpHandler = (s, args) =>
-        {
-            if ((args.Key == Key.Enter && !args.KeyModifiers.HasFlag(KeyModifiers.Control)) || args.Key == Key.Escape)
-            {
-                args.Handled = true;
-                _view.Focus();
-            }
-        };
-
-        textBox.LostFocus += lostFocusHandler;
-        textBox.KeyDown += keyDownHandler;
-        textBox.KeyUp += keyUpHandler;
-
-        overlay.Children.Add(textBox);
-        textBox.Focus();
-        textBox.CaretIndex = textBox.Text?.Length ?? 0;
-        textBox.SelectionStart = textBox.CaretIndex;
-        textBox.SelectionEnd = textBox.CaretIndex;
-    }
-
     private void UpdateBoundsObserver()
     {
         if (_observedShape != null && _boundsHandler != null)

@@ -107,4 +107,10 @@ public partial class FreehandAnnotation : Annotation, IPointBasedAnnotation
             Points[i] = transformPoint(Points[i]);
         }
     }
+
+    internal override void MoveBy(float deltaX, float deltaY)
+    {
+        // A freehand selection is positioned by its path points, not its drawing endpoints.
+        TransformAdditionalPoints(point => new SKPoint(point.X + deltaX, point.Y + deltaY));
+    }
 }

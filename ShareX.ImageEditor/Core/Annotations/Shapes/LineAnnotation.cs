@@ -52,4 +52,10 @@ public partial class LineAnnotation : Annotation, ICurvedSegmentAnnotation
     {
         return CurvedSegmentHelper.GetBounds(this);
     }
+
+    internal override void MoveBy(float deltaX, float deltaY)
+    {
+        base.MoveBy(deltaX, deltaY);
+        CurvedSegmentHelper.OffsetCurvePoint(this, deltaX, deltaY);
+    }
 }

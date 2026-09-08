@@ -83,4 +83,26 @@ public static class AnnotationCoordinateHelper
             Math.Min(start.Y, end.Y),
             Math.Abs(end.X - start.X),
             Math.Abs(end.Y - start.Y));
+
+    internal static Point RotatePoint(Point point, Point center, double angleDeg)
+    {
+        if (angleDeg == 0)
+        {
+            return point;
+        }
+
+        double rad = angleDeg * Math.PI / 180.0;
+        double cos = Math.Cos(rad);
+        double sin = Math.Sin(rad);
+        double dx = point.X - center.X;
+        double dy = point.Y - center.Y;
+        return new Point(
+            center.X + dx * cos - dy * sin,
+            center.Y + dx * sin + dy * cos);
+    }
+
+    internal static Point UnrotatePoint(Point point, Point center, double angleDeg)
+    {
+        return RotatePoint(point, center, -angleDeg);
+    }
 }

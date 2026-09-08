@@ -151,11 +151,7 @@ public partial class NumberAnnotation : Annotation
 
         if (TryGetTailPolygon(out var tailBaseStart, out var tailTip, out var tailBaseEnd))
         {
-            var tailBounds = new SKRect(
-                MathF.Min(tailBaseStart.X, MathF.Min(tailTip.X, tailBaseEnd.X)),
-                MathF.Min(tailBaseStart.Y, MathF.Min(tailTip.Y, tailBaseEnd.Y)),
-                MathF.Max(tailBaseStart.X, MathF.Max(tailTip.X, tailBaseEnd.X)),
-                MathF.Max(tailBaseStart.Y, MathF.Max(tailTip.Y, tailBaseEnd.Y)));
+            SKRect tailBounds = TailGeometryHelper.GetBounds(tailBaseStart, tailTip, tailBaseEnd);
             interactionBounds = SKRect.Union(interactionBounds, tailBounds);
         }
 
@@ -230,63 +226,17 @@ public partial class NumberAnnotation : Annotation
             return false;
         }
 
-        if (PointInTriangle(point, tailBaseStart, tailTip, tailBaseEnd))
-        {
-            return true;
-        }
-
-        return DistanceToSegment(point, tailBaseStart, tailTip) <= tolerance ||
-               DistanceToSegment(point, tailTip, tailBaseEnd) <= tolerance ||
-               DistanceToSegment(point, tailBaseEnd, tailBaseStart) <= tolerance;
+        return TailGeometryHelper.HitTest(point, tailBaseStart, tailTip, tailBaseEnd, tolerance);
     }
 
     public override SKRect GetBounds()
     {
+        float radius = Radius;
         return new SKRect(
-            StartPoint.X - Radius,
-            StartPoint.Y - Radius,
-            StartPoint.X + Radius,
-            StartPoint.Y + Radius);
-    }
-
-    private static bool PointInTriangle(SKPoint point, SKPoint a, SKPoint b, SKPoint c)
-    {
-        float d1 = Sign(point, a, b);
-        float d2 = Sign(point, b, c);
-        float d3 = Sign(point, c, a);
-
-        bool hasNegative = d1 < 0 || d2 < 0 || d3 < 0;
-        bool hasPositive = d1 > 0 || d2 > 0 || d3 > 0;
-
-        return !(hasNegative && hasPositive);
-    }
-
-    private static float Sign(SKPoint p1, SKPoint p2, SKPoint p3)
-    {
-        return (p1.X - p3.X) * (p2.Y - p3.Y) -
-               (p2.X - p3.X) * (p1.Y - p3.Y);
-    }
-
-    private static float DistanceToSegment(SKPoint point, SKPoint start, SKPoint end)
-    {
-        float dx = end.X - start.X;
-        float dy = end.Y - start.Y;
-        float segmentLengthSquared = dx * dx + dy * dy;
-
-        if (segmentLengthSquared <= GeometryEpsilon)
-        {
-            return MathF.Sqrt((point.X - start.X) * (point.X - start.X) + (point.Y - start.Y) * (point.Y - start.Y));
-        }
-
-        float t = ((point.X - start.X) * dx + (point.Y - start.Y) * dy) / segmentLengthSquared;
-        t = Math.Clamp(t, 0f, 1f);
-
-        float projectionX = start.X + t * dx;
-        float projectionY = start.Y + t * dy;
-        float deltaX = point.X - projectionX;
-        float deltaY = point.Y - projectionY;
-
-        return MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
+            StartPoint.X - radius,
+            StartPoint.Y - radius,
+            StartPoint.X + radius,
+            StartPoint.Y + radius);
     }
 
     internal override void TransformAdditionalPoints(Func<SKPoint, SKPoint> transformPoint)
@@ -295,5 +245,11 @@ public partial class NumberAnnotation : Annotation
         {
             SetTailPoint(transformPoint(TailPoint));
         }
+    }
+
+    internal override void MoveBy(float deltaX, float deltaY)
+    {
+        base.MoveBy(deltaX, deltaY);
+        TransformAdditionalPoints(point => new SKPoint(point.X + deltaX, point.Y + deltaY));
     }
 }
