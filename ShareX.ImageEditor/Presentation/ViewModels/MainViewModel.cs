@@ -966,6 +966,14 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             UpdateCoreHistoryState(editorCore.CanUndo, editorCore.CanRedo);
         }
 
+        internal void DetachEditorCore(EditorCore editorCore)
+        {
+            if (ReferenceEquals(_editorCore, editorCore))
+            {
+                _editorCore = null;
+            }
+        }
+
         public void RequestZoomToFitOnNextImageLoad()
         {
             _zoomToFitOnNextImageLoad = Options.ZoomToFitOnOpen;

@@ -308,16 +308,6 @@ public partial class EmojiAnnotation
         }
     }
 
-    private static void ReplaceImageSource(Image imageControl, Bitmap bitmapSource)
-    {
-        if (imageControl.Source is IDisposable previousSource)
-        {
-            previousSource.Dispose();
-        }
-
-        imageControl.Source = bitmapSource;
-    }
-
     private sealed class EmojiInteractiveRenderState
     {
         public object SyncRoot { get; } = new();

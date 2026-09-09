@@ -60,13 +60,20 @@ public partial class SmartEraserAnnotation
         EndPoint = new SKPoint((float)clippedRight, (float)clippedBottom);
     }
 
+    private static void ReplaceFill(Avalonia.Controls.Shapes.Rectangle rectangle, IBrush fill)
+    {
+        var previousBitmap = (rectangle.Fill as ImageBrush)?.Source;
+        rectangle.Fill = fill;
+        (previousBitmap as IDisposable)?.Dispose();
+    }
+
     public void ApplyFill(Avalonia.Controls.Shapes.Rectangle rectangle)
     {
         ArgumentNullException.ThrowIfNull(rectangle);
 
         if (FillMode == SmartEraserFillMode.SolidColor || EdgePixels is not { Length: > 0 })
         {
-            rectangle.Fill = new SolidColorBrush(Color.Parse(FillColor));
+            ReplaceFill(rectangle, new SolidColorBrush(Color.Parse(FillColor)));
             return;
         }
 
@@ -81,11 +88,11 @@ public partial class SmartEraserAnnotation
             edgeBitmap.SetPixel(x, y, UnpackColor(EdgePixels[i]));
         }
 
-        rectangle.Fill = new ImageBrush(BitmapConversionHelpers.ToAvaloniBitmap(edgeBitmap))
+        ReplaceFill(rectangle, new ImageBrush(BitmapConversionHelpers.ToAvaloniBitmap(edgeBitmap))
         {
             Stretch = Stretch.Fill,
             SourceRect = new RelativeRect(0, 0, 1, 1, RelativeUnit.Relative)
-        };
+        });
         RenderOptions.SetBitmapInterpolationMode(rectangle, BitmapInterpolationMode.None);
     }
 }

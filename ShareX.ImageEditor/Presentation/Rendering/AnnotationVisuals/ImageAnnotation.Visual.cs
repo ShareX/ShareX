@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Controls;
+using Avalonia.Media.Imaging;
 using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
 
 namespace ShareX.ImageEditor.Core.Annotations;
@@ -34,7 +35,7 @@ public partial class ImageAnnotation
     {
         if (ImageBitmap != null)
         {
-            imageControl.Source = BitmapConversionHelpers.ToAvaloniBitmap(ImageBitmap);
+            ReplaceImageSource(imageControl, BitmapConversionHelpers.ToAvaloniBitmap(ImageBitmap));
         }
 
         var imageBounds = GetBounds();
@@ -43,6 +44,15 @@ public partial class ImageAnnotation
         imageControl.Width = Math.Max(1, imageBounds.Width);
         imageControl.Height = Math.Max(1, imageBounds.Height);
         ApplyRotationTransform(imageControl, RotationAngle);
+    }
+
+    protected static void ReplaceImageSource(Image imageControl, Bitmap? bitmapSource)
+    {
+        var previousSource = imageControl.Source;
+        if (ReferenceEquals(previousSource, bitmapSource)) return;
+
+        imageControl.Source = bitmapSource;
+        (previousSource as IDisposable)?.Dispose();
     }
 
     public virtual Control CreateVisual()
@@ -54,7 +64,7 @@ public partial class ImageAnnotation
 
         if (ImageBitmap != null)
         {
-            image.Source = BitmapConversionHelpers.ToAvaloniBitmap(ImageBitmap);
+            ReplaceImageSource(image, BitmapConversionHelpers.ToAvaloniBitmap(ImageBitmap));
         }
 
         var imageBounds = GetBounds();

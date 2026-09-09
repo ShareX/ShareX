@@ -491,11 +491,14 @@ namespace ShareX.ImageEditor.Presentation.Views
         {
             base.OnLoaded(e);
 
+            if (_workspaceDisposed) return;
+
             // Check clipboard initially
             _ = CheckClipboardStatus();
 
             // Attach key handlers to the parent Window so shortcuts work
             // regardless of which child control has focus (buttons, dropdowns, etc.).
+            DetachParentWindow();
             _parentWindow = TopLevel.GetTopLevel(this) as Window;
             if (_parentWindow != null)
             {
@@ -509,47 +512,13 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             if (DataContext is MainViewModel vm)
             {
-                vm.AttachEditorCore(_editorCore);
+                AttachViewModel(vm);
                 _editorCore.ActiveTool = vm.ActiveTool;
                 HookAnnotationToolbarEvents();
-
-                vm.DeleteRequested += (s, args) => PerformDelete();
-                vm.UndoRequested += (s, args) => PerformUndo();
-                vm.RedoRequested += (s, args) => PerformRedo();
-                vm.ClearAnnotationsRequested += (s, args) => ClearAllAnnotations();
-
-                // Subscribe to new context menu events
-                vm.CutAnnotationRequested += OnCutRequested;
-                vm.CopyAnnotationRequested += OnCopyRequested;
-                vm.PasteRequested += OnPasteRequested;
-                vm.DuplicateRequested += OnDuplicateRequested;
-                vm.ZoomToFitRequested += OnZoomToFitRequested;
-                vm.FlattenRequested += OnFlattenRequested;
-                vm.ImageInsertionRequested += OnImageInsertionRequested;
-                vm.EmojiInsertionRequested += OnEmojiInsertionRequested;
-
-                // File menu event handlers (Image Editor Mode)
-                vm.NewImageRequested += OnNewImageRequested;
-                vm.OpenImageRequested += OnOpenImageRequested;
-                vm.StartScreenRequested += OnStartScreenRequested;
-                vm.LoadFromClipboardRequested += OnLoadFromClipboardRequested;
-                vm.LoadFromUrlRequested += OnLoadFromUrlRequested;
-                vm.LoadRecentFileRequested += OnLoadRecentFileRequested;
-                vm.CopyRequested += OnCopyImageRequested;
-                vm.SaveRequested += OnSaveRequested;
-                vm.SaveAsRequested += OnSaveAsRequested;
-                vm.FileMenuRequested += OnFileMenuRequested;
-
-                // Original code subscribed to vm.PropertyChanged
-                vm.PropertyChanged += OnViewModelPropertyChanged;
 
                 // Initialize zoom
                 _zoomController.InitLastZoom(vm.Zoom);
                 UpdateCursorForTool();
-
-                // Wire up View interactions
-                vm.DeselectRequested += OnDeselectRequested;
-                vm.CanvasFocusRequested += OnCanvasFocusRequested;
 
                 // Initial load
                 if (vm.PreviewImage != null)
@@ -578,35 +547,11 @@ namespace ShareX.ImageEditor.Presentation.Views
         {
             base.OnUnloaded(e);
 
-            if (_parentWindow != null)
-            {
-                _parentWindow.KeyDown -= OnKeyDown;
-                _parentWindow.KeyUp -= OnKeyUp;
-                _parentWindow.Activated -= OnWindowActivated;
-            }
-
-            if (DataContext is MainViewModel vm)
-            {
-                vm.PropertyChanged -= OnViewModelPropertyChanged;
-                vm.DeselectRequested -= OnDeselectRequested;
-                vm.ZoomToFitRequested -= OnZoomToFitRequested;
-                vm.NewImageRequested -= OnNewImageRequested;
-                vm.OpenImageRequested -= OnOpenImageRequested;
-                vm.StartScreenRequested -= OnStartScreenRequested;
-                vm.LoadFromClipboardRequested -= OnLoadFromClipboardRequested;
-                vm.LoadFromUrlRequested -= OnLoadFromUrlRequested;
-                vm.LoadRecentFileRequested -= OnLoadRecentFileRequested;
-                vm.CopyRequested -= OnCopyImageRequested;
-                vm.SaveRequested -= OnSaveRequested;
-                vm.SaveAsRequested -= OnSaveAsRequested;
-                vm.FileMenuRequested -= OnFileMenuRequested;
-                vm.ImageInsertionRequested -= OnImageInsertionRequested;
-                vm.EmojiInsertionRequested -= OnEmojiInsertionRequested;
-            }
+            DetachParentWindow();
+            DetachViewModel();
 
             UnhookAnnotationToolbarEvents();
             StopEasterEggs();
-            _selectionController.RequestUpdateEffect -= OnRequestUpdateEffect;
             ClearEffectPreviewCache();
         }
 
@@ -1104,6 +1049,11 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
 
             _workspaceDisposed = true;
+            DetachParentWindow();
+            DetachViewModel();
+            UnhookAnnotationToolbarEvents();
+            StopEasterEggs();
+            _selectionController.RequestUpdateEffect -= OnRequestUpdateEffect;
             ClearEffectPreviewCache();
             _canvasControl?.Dispose();
             _editorCore.Dispose();

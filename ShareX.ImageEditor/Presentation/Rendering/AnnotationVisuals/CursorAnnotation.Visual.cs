@@ -54,9 +54,9 @@ public partial class CursorAnnotation
             }
         }
 
-        imageControl.Source = ImageBitmap != null
+        ReplaceImageSource(imageControl, ImageBitmap != null
             ? BitmapConversionHelpers.ToAvaloniBitmap(ImageBitmap)
-            : null;
+            : null);
 
         var cursorBounds = GetBounds();
         Canvas.SetLeft(imageControl, cursorBounds.Left);
