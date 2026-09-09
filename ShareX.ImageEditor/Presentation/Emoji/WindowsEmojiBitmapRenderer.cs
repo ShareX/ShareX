@@ -45,7 +45,7 @@ public static class WindowsEmojiBitmapRenderer
     private const float RawFontScale = 1.32f;
 
     private static readonly object SyncRoot = new();
-    private static readonly Dictionary<string, Bitmap> PreviewCache = new(StringComparer.Ordinal);
+    private static readonly Dictionary<string, WeakReference<Bitmap>> PreviewCache = new(StringComparer.Ordinal);
     private static readonly Dictionary<string, SKBitmap> StickerCache = new(StringComparer.Ordinal);
     private static readonly ID2D1Factory7? D2DFactory;
     private static readonly IDWriteFactory? DWriteFactoryInstance;
@@ -74,7 +74,7 @@ public static class WindowsEmojiBitmapRenderer
 
         lock (SyncRoot)
         {
-            if (PreviewCache.TryGetValue(cacheKey, out Bitmap? cached))
+            if (PreviewCache.TryGetValue(cacheKey, out var reference) && reference.TryGetTarget(out Bitmap? cached))
             {
                 return cached;
             }
@@ -86,7 +86,9 @@ public static class WindowsEmojiBitmapRenderer
             }
 
             Bitmap preview = BitmapConversionHelpers.ToAvaloniBitmap(bitmap);
-            PreviewCache[cacheKey] = preview;
+            // Controls borrow previews; evict references without disposing images still in use.
+            if (PreviewCache.Count >= 256) PreviewCache.Clear();
+            PreviewCache[cacheKey] = new WeakReference<Bitmap>(preview);
             return preview;
         }
     }

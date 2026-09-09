@@ -292,9 +292,20 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             get => _previewImage;
             set
             {
-                if (SetProperty(ref _previewImage, value))
+                if (_disposed)
                 {
-                    OnPreviewImageChanged(value);
+                    value?.Dispose();
+                    return;
+                }
+                if (ReferenceEquals(_previewImage, value)) return;
+                var previous = _previewImage;
+                try
+                {
+                    if (SetProperty(ref _previewImage, value)) OnPreviewImageChanged(value);
+                }
+                finally
+                {
+                    previous?.Dispose();
                 }
             }
         }

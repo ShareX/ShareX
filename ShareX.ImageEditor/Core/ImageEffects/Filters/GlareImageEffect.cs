@@ -78,15 +78,16 @@ public sealed class GlareImageEffect : ImageEffectBase
         SKColor centerColor = new(Color.Red, Color.Green, Color.Blue, glareAlpha);
         SKColor edgeColor = new(Color.Red, Color.Green, Color.Blue, 0);
 
-        using (SKPaint glarePaint = new()
-        {
-            IsAntialias = true,
-            Shader = SKShader.CreateRadialGradient(
+        using (var ownedShader1 = SKShader.CreateRadialGradient(
                 new SKPoint(cx, cy),
                 radiusPx,
                 [centerColor, new SKColor(Color.Red, Color.Green, Color.Blue, (byte)(glareAlpha * 0.4f)), edgeColor],
                 [0f, 0.4f, 1f],
-                SKShaderTileMode.Clamp),
+                SKShaderTileMode.Clamp))
+        using (SKPaint glarePaint = new()
+        {
+            IsAntialias = true,
+            Shader = ownedShader1,
             BlendMode = SKBlendMode.Screen
         })
         {
@@ -106,18 +107,19 @@ public sealed class GlareImageEffect : ImageEffectBase
                 float endX = cx + MathF.Cos(angle) * rayLengthPx;
                 float endY = cy + MathF.Sin(angle) * rayLengthPx;
 
+                using var ownedShader2 = SKShader.CreateLinearGradient(
+                        new SKPoint(cx, cy),
+                        new SKPoint(endX, endY),
+                        [centerColor, edgeColor],
+                        [0f, 1f],
+                        SKShaderTileMode.Clamp);
                 using SKPaint rayPaint = new()
                 {
                     IsAntialias = true,
                     Style = SKPaintStyle.Stroke,
                     StrokeWidth = rayWidth,
                     StrokeCap = SKStrokeCap.Round,
-                    Shader = SKShader.CreateLinearGradient(
-                        new SKPoint(cx, cy),
-                        new SKPoint(endX, endY),
-                        [centerColor, edgeColor],
-                        [0f, 1f],
-                        SKShaderTileMode.Clamp),
+                    Shader = ownedShader2,
                     BlendMode = SKBlendMode.Screen
                 };
 

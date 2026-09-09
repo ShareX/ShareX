@@ -45,12 +45,14 @@ public partial class EmojiAnnotation
             Tag = this
         };
 
+        image.DetachedFromVisualTree += (_, _) => CancelQueuedEmojiRefresh(image);
         UpdateVisual(image);
         return image;
     }
 
     internal override void UpdateVisual(Image imageControl, bool useInteractiveRender = false)
     {
+        if (IsDisposed) return;
         var imageBounds = GetBounds();
         int renderSize = Math.Max(1, (int)Math.Ceiling(Math.Max(imageBounds.Width, imageBounds.Height)));
         int targetBitmapSize = useInteractiveRender
@@ -212,7 +214,7 @@ public partial class EmojiAnnotation
 
                     lock (state.SyncRoot)
                     {
-                        skipRender = version != state.UpdateVersion
+                        skipRender = emojiAnnotation.IsDisposed || version != state.UpdateVersion
                             || !string.Equals(state.InFlightRequestKey, requestKey, StringComparison.Ordinal)
                             || !ReferenceEquals(state.InFlightAnnotation, emojiAnnotation);
                     }
@@ -250,7 +252,7 @@ public partial class EmojiAnnotation
 
                         lock (state.SyncRoot)
                         {
-                            isCurrentRequest = version == state.UpdateVersion
+                            isCurrentRequest = !emojiAnnotation.IsDisposed && version == state.UpdateVersion
                                 && string.Equals(state.InFlightRequestKey, requestKey, StringComparison.Ordinal)
                                 && ReferenceEquals(state.InFlightAnnotation, emojiAnnotation)
                                 && ReferenceEquals(imageControl.Tag, emojiAnnotation);

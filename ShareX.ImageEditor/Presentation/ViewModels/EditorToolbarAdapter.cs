@@ -37,7 +37,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels;
 /// <summary>
 /// Bridges <see cref="MainViewModel"/> to the core-facing toolbar contract.
 /// </summary>
-public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter
+public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposable
 {
     private readonly MainViewModel _viewModel;
     private readonly ObservableCollection<MenuItem> _recentImageMenuItems = new();
@@ -56,6 +56,15 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter
         }
 
         SyncRecentImageMenuItems();
+    }
+
+    public void Dispose()
+    {
+        _viewModel.PropertyChanged -= OnViewModelPropertyChanged;
+        if (_viewModel.RecentImageFiles is INotifyCollectionChanged recentFiles)
+            recentFiles.CollectionChanged -= OnRecentImageFilesChanged;
+        PropertyChanged = null;
+        _recentImageMenuItems.Clear();
     }
 
     public ReadOnlyObservableCollection<MenuItem> RecentImageMenuItems { get; }

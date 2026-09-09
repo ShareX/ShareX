@@ -36,7 +36,7 @@ namespace ShareX.ImageEditor.Presentation.Controls;
 /// A control that allows direct SkiaSharp rendering into a WriteableBitmap.
 /// This acts as the high-performance raster layer.
 /// </summary>
-public class SKCanvasControl : Control
+public class SKCanvasControl : Control, IDisposable
 {
     private WriteableBitmap? _bitmap;
     private object _lock = new object();
@@ -108,7 +108,7 @@ public class SKCanvasControl : Control
     /// <summary>
     /// Releases resources
     /// </summary>
-    public void Dispose()
+    public virtual void Dispose()
     {
         _bitmap?.Dispose();
         _bitmap = null;

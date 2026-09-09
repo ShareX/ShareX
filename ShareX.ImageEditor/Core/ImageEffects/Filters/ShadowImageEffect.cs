@@ -91,10 +91,12 @@ public sealed class ShadowImageEffect : ImageEffectBase
 
         SKColor shadowColor = new(Color.Red, Color.Green, Color.Blue, (byte)(255 * Opacity / 100f));
 
+        using var ownedColorFilter1 = SKColorFilter.CreateBlendMode(shadowColor, SKBlendMode.SrcIn);
+        using var ownedImageFilter2 = SKImageFilter.CreateBlur(Size / 2f, Size / 2f);
         using SKPaint shadowPaint = new()
         {
-            ColorFilter = SKColorFilter.CreateBlendMode(shadowColor, SKBlendMode.SrcIn),
-            ImageFilter = SKImageFilter.CreateBlur(Size / 2f, Size / 2f)
+            ColorFilter = ownedColorFilter1,
+            ImageFilter = ownedImageFilter2
         };
 
         canvas.DrawBitmap(source, shadowX, shadowY, shadowPaint);

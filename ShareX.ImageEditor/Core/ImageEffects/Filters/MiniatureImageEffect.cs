@@ -56,10 +56,11 @@ public sealed class MiniatureImageEffect : ImageEffectBase
         int w = source.Width, h = source.Height;
 
         // Create blurred version
-        SKBitmap blurred = new(w, h, source.ColorType, source.AlphaType);
+        using SKBitmap blurred = new(w, h, source.ColorType, source.AlphaType);
         using (SKCanvas bc = new(blurred))
         {
-            using SKPaint bp = new() { ImageFilter = SKImageFilter.CreateBlur(radius, radius) };
+            using var ownedImageFilter1 = SKImageFilter.CreateBlur(radius, radius);
+            using SKPaint bp = new() { ImageFilter = ownedImageFilter1 };
             bc.DrawBitmap(source, 0, 0, bp);
         }
 
@@ -106,7 +107,6 @@ public sealed class MiniatureImageEffect : ImageEffectBase
             }
         }
 
-        blurred.Dispose();
         return new SKBitmap(w, h, source.ColorType, source.AlphaType) { Pixels = dst };
     }
 }

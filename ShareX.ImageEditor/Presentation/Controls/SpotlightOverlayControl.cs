@@ -121,6 +121,12 @@ public class SpotlightOverlayControl : SKCanvasControl
         return _cachedBlurredSource;
     }
 
+    public override void Dispose()
+    {
+        ClearBlurCache();
+        base.Dispose();
+    }
+
     private void ClearBlurCache()
     {
         _cachedBlurredSource?.Dispose();

@@ -71,12 +71,13 @@ public sealed class RetroSunsetImageEffect : ImageEffectBase
         for (int i = 0; i < colors.Length; i++)
             alphaColors[i] = colors[i].WithAlpha(gradientAlpha);
 
-        using SKPaint gradPaint = new()
-        {
-            Shader = SKShader.CreateLinearGradient(
+        using var ownedShader1 = SKShader.CreateLinearGradient(
                 new SKPoint(0, 0), new SKPoint(0, h),
                 alphaColors, positions,
-                SKShaderTileMode.Clamp),
+                SKShaderTileMode.Clamp);
+        using SKPaint gradPaint = new()
+        {
+            Shader = ownedShader1,
             BlendMode = SKBlendMode.Overlay
         };
         canvas.DrawRect(0, 0, w, h, gradPaint);

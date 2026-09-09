@@ -52,7 +52,7 @@ public sealed class PixelateImageEffect : ImageEffectBase
         int smallWidth = Math.Max(1, source.Width / Size);
         int smallHeight = Math.Max(1, source.Height / Size);
 
-        SKBitmap small = new SKBitmap(smallWidth, smallHeight);
+        using SKBitmap small = new SKBitmap(smallWidth, smallHeight);
         using (SKCanvas smallCanvas = new SKCanvas(small))
         {
             smallCanvas.DrawBitmap(source, new SKRect(0, 0, smallWidth, smallHeight));
@@ -65,7 +65,6 @@ public sealed class PixelateImageEffect : ImageEffectBase
             using SKImage smallImage = SKImage.FromBitmap(small);
             canvas.DrawImage(smallImage, new SKRect(0, 0, source.Width, source.Height), new SKSamplingOptions(SKFilterMode.Nearest, SKMipmapMode.None), paint);
         }
-        small.Dispose();
         return result;
     }
 }

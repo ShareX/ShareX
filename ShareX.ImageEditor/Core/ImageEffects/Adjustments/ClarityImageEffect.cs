@@ -65,12 +65,13 @@ public sealed class ClarityImageEffect : AdjustmentImageEffectBase
         float blurRadius = Math.Max(width, height) * 0.02f;
         blurRadius = Math.Max(blurRadius, 3f);
 
-        SKBitmap blurred = new(width, height, source.ColorType, source.AlphaType);
+        using SKBitmap blurred = new(width, height, source.ColorType, source.AlphaType);
         using (SKCanvas blurCanvas = new(blurred))
         {
+            using var ownedImageFilter1 = SKImageFilter.CreateBlur(blurRadius, blurRadius);
             using SKPaint blurPaint = new()
             {
-                ImageFilter = SKImageFilter.CreateBlur(blurRadius, blurRadius)
+                ImageFilter = ownedImageFilter1
             };
             blurCanvas.DrawBitmap(source, 0, 0, blurPaint);
         }
@@ -79,7 +80,6 @@ public sealed class ClarityImageEffect : AdjustmentImageEffectBase
         // then add it back weighted by the amount, targeting midtones.
         SKColor[] srcPixels = source.Pixels;
         SKColor[] blurPixels = blurred.Pixels;
-        blurred.Dispose();
 
         int count = srcPixels.Length;
         SKColor[] result = new SKColor[count];

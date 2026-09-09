@@ -78,13 +78,14 @@ public sealed class LomoImageEffect : AdjustmentImageEffectBase
         float cx = w / 2f, cy = h / 2f;
         float radius = MathF.Sqrt(w * w + h * h) * 0.5f;
 
-        using SKPaint vigPaint = new()
-        {
-            Shader = SKShader.CreateRadialGradient(
+        using var ownedShader1 = SKShader.CreateRadialGradient(
                 new SKPoint(cx, cy), radius,
                 [SKColors.Transparent, new SKColor(0, 0, 0, (byte)(180 * s))],
                 [0.5f, 1f],
-                SKShaderTileMode.Clamp)
+                SKShaderTileMode.Clamp);
+        using SKPaint vigPaint = new()
+        {
+            Shader = ownedShader1
         };
         canvas.DrawRect(0, 0, w, h, vigPaint);
 

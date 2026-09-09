@@ -242,6 +242,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         /// </summary>
         public void UpdatePreviewImageOnly(SkiaSharp.SKBitmap preview, bool syncSourceState = false)
         {
+            if (_disposed) return;
             if (!IsBitmapAlive(preview))
             {
                 return;

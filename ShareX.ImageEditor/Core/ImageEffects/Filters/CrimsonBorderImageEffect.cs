@@ -81,62 +81,68 @@ public sealed class CrimsonBorderImageEffect : ImageEffectBase
             float glowWidth = size * 0.7f;
 
             // Top glow (dark edge -> lighter)
+            using (var ownedShader1 = SKShader.CreateLinearGradient(new SKPoint(0, 0), new SKPoint(0, glowWidth),
+                    [darkColor.WithAlpha((byte)(200 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp))
             using (SKPaint p = new()
             {
                 IsAntialias = true,
                 Style = SKPaintStyle.Fill,
-                Shader = SKShader.CreateLinearGradient(new SKPoint(0, 0), new SKPoint(0, glowWidth),
-                    [darkColor.WithAlpha((byte)(200 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp)
+                Shader = ownedShader1
             })
             { canvas.DrawRect(0, 0, newWidth, glowWidth, p); }
 
             // Bottom glow
+            using (var ownedShader2 = SKShader.CreateLinearGradient(new SKPoint(0, newHeight), new SKPoint(0, newHeight - glowWidth),
+                    [darkColor.WithAlpha((byte)(200 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp))
             using (SKPaint p = new()
             {
                 IsAntialias = true,
                 Style = SKPaintStyle.Fill,
-                Shader = SKShader.CreateLinearGradient(new SKPoint(0, newHeight), new SKPoint(0, newHeight - glowWidth),
-                    [darkColor.WithAlpha((byte)(200 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp)
+                Shader = ownedShader2
             })
             { canvas.DrawRect(0, newHeight - glowWidth, newWidth, glowWidth, p); }
 
             // Left glow
+            using (var ownedShader3 = SKShader.CreateLinearGradient(new SKPoint(0, 0), new SKPoint(glowWidth, 0),
+                    [darkColor.WithAlpha((byte)(180 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp))
             using (SKPaint p = new()
             {
                 IsAntialias = true,
                 Style = SKPaintStyle.Fill,
-                Shader = SKShader.CreateLinearGradient(new SKPoint(0, 0), new SKPoint(glowWidth, 0),
-                    [darkColor.WithAlpha((byte)(180 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp)
+                Shader = ownedShader3
             })
             { canvas.DrawRect(0, 0, glowWidth, newHeight, p); }
 
             // Right glow
+            using (var ownedShader4 = SKShader.CreateLinearGradient(new SKPoint(newWidth, 0), new SKPoint(newWidth - glowWidth, 0),
+                    [darkColor.WithAlpha((byte)(180 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp))
             using (SKPaint p = new()
             {
                 IsAntialias = true,
                 Style = SKPaintStyle.Fill,
-                Shader = SKShader.CreateLinearGradient(new SKPoint(newWidth, 0), new SKPoint(newWidth - glowWidth, 0),
-                    [darkColor.WithAlpha((byte)(180 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp)
+                Shader = ownedShader4
             })
             { canvas.DrawRect(newWidth - glowWidth, 0, glowWidth, newHeight, p); }
 
             // Inner highlight near the image
             float innerGlowW = size * 0.4f;
+            using (var ownedShader5 = SKShader.CreateLinearGradient(new SKPoint(0, size), new SKPoint(0, size - innerGlowW),
+                    [lightColor.WithAlpha((byte)(120 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp))
             using (SKPaint p = new()
             {
                 IsAntialias = true,
                 Style = SKPaintStyle.Fill,
-                Shader = SKShader.CreateLinearGradient(new SKPoint(0, size), new SKPoint(0, size - innerGlowW),
-                    [lightColor.WithAlpha((byte)(120 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp)
+                Shader = ownedShader5
             })
             { canvas.DrawRect(size, size - innerGlowW, source.Width, innerGlowW, p); }
 
+            using (var ownedShader6 = SKShader.CreateLinearGradient(new SKPoint(0, newHeight - size), new SKPoint(0, newHeight - size + innerGlowW),
+                    [lightColor.WithAlpha((byte)(120 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp))
             using (SKPaint p = new()
             {
                 IsAntialias = true,
                 Style = SKPaintStyle.Fill,
-                Shader = SKShader.CreateLinearGradient(new SKPoint(0, newHeight - size), new SKPoint(0, newHeight - size + innerGlowW),
-                    [lightColor.WithAlpha((byte)(120 * glow)), baseColor.WithAlpha(0)], SKShaderTileMode.Clamp)
+                Shader = ownedShader6
             })
             { canvas.DrawRect(size, newHeight - size, source.Width, innerGlowW, p); }
         }

@@ -54,7 +54,7 @@ public sealed class GaussianBlurImageEffect : ImageEffectBase
         int expandedWidth = source.Width + padding * 2;
         int expandedHeight = source.Height + padding * 2;
 
-        SKBitmap expanded = new SKBitmap(expandedWidth, expandedHeight, source.ColorType, source.AlphaType);
+        using SKBitmap expanded = new SKBitmap(expandedWidth, expandedHeight, source.ColorType, source.AlphaType);
         using (SKCanvas expandCanvas = new SKCanvas(expanded))
         {
             using SKShader shader = SKShader.CreateBitmap(
@@ -66,17 +66,17 @@ public sealed class GaussianBlurImageEffect : ImageEffectBase
             expandCanvas.DrawRect(new SKRect(0, 0, expandedWidth, expandedHeight), paint);
         }
 
-        SKBitmap blurred = new SKBitmap(expandedWidth, expandedHeight, source.ColorType, source.AlphaType);
+        using SKBitmap blurred = new SKBitmap(expandedWidth, expandedHeight, source.ColorType, source.AlphaType);
         using (SKCanvas blurCanvas = new SKCanvas(blurred))
         {
+            using var ownedImageFilter1 = SKImageFilter.CreateBlur(sigma, sigma);
             using SKPaint blurPaint = new SKPaint
             {
-                ImageFilter = SKImageFilter.CreateBlur(sigma, sigma)
+                ImageFilter = ownedImageFilter1
             };
             blurCanvas.DrawBitmap(expanded, 0, 0, blurPaint);
         }
 
-        expanded.Dispose();
 
         SKBitmap result = new SKBitmap(source.Width, source.Height, source.ColorType, source.AlphaType);
         using (SKCanvas resultCanvas = new SKCanvas(result))
@@ -87,7 +87,6 @@ public sealed class GaussianBlurImageEffect : ImageEffectBase
                 new SKRect(0, 0, source.Width, source.Height));
         }
 
-        blurred.Dispose();
         return result;
     }
 }

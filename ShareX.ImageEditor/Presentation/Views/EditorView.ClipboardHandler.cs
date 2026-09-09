@@ -36,12 +36,23 @@ namespace ShareX.ImageEditor.Presentation.Views
 {
     public partial class EditorView : UserControl
     {
+        /// <summary>Clears the shared annotation clipboard and releases its owned bitmap.</summary>
+        public static void ClearAnnotationClipboard() => ReplaceClipboardAnnotation(null);
+
+        private static void ReplaceClipboardAnnotation(Annotation? annotation)
+        {
+            if (ReferenceEquals(_clipboardAnnotation, annotation)) return;
+            var previous = _clipboardAnnotation;
+            _clipboardAnnotation = annotation;
+            (previous as IDisposable)?.Dispose();
+        }
+
         private async void OnCutRequested(object? sender, EventArgs e)
         {
             if (_selectionController.SelectedShape?.Tag is Annotation annotation)
             {
                 // Copy to internal clipboard
-                _clipboardAnnotation = annotation.Clone();
+                ReplaceClipboardAnnotation(annotation.Clone());
 
                 // Update clipboard status
                 _ = CheckClipboardStatus();
@@ -75,7 +86,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             if (_selectionController.SelectedShape?.Tag is Annotation annotation)
             {
                 // Deep clone to internal clipboard
-                _clipboardAnnotation = annotation.Clone();
+                ReplaceClipboardAnnotation(annotation.Clone());
 
                 // Update clipboard status
                 _ = CheckClipboardStatus();

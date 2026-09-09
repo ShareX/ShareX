@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
@@ -51,7 +50,7 @@ internal sealed class LinuxDesktopWallpaperService : IDesktopWallpaperService
     private const string WallpaperConversionCacheDirectoryName = "sharex-imageeditor-wallpaper-cache";
     private const int WallpaperConverterTimeoutMilliseconds = 15000;
     private const int GdkPixbufWallpaperSize = 4096;
-    private static readonly ConcurrentDictionary<string, object> WallpaperConversionLocks = new(StringComparer.Ordinal);
+    private static readonly object[] WallpaperConversionLocks = Enumerable.Range(0, 64).Select(_ => new object()).ToArray();
 
     private enum Provider
     {
@@ -690,7 +689,7 @@ internal sealed class LinuxDesktopWallpaperService : IDesktopWallpaperService
         convertedPath = null;
 
         string cachePath = GetWallpaperConversionCachePath(sourcePath);
-        object conversionLock = WallpaperConversionLocks.GetOrAdd(cachePath, static _ => new object());
+        object conversionLock = WallpaperConversionLocks[(uint)StringComparer.Ordinal.GetHashCode(cachePath) % (uint)WallpaperConversionLocks.Length];
 
         lock (conversionLock)
         {

@@ -102,7 +102,7 @@ public sealed class MatrixDigitalRainImageEffect : ImageEffectBase
             canvas.DrawBitmap(source, 0, 0, srcBlendPaint);
         }
 
-        SKTypeface? customTypeface = SKTypeface.FromFamilyName("Consolas");
+        using SKTypeface? customTypeface = SKTypeface.FromFamilyName("Consolas");
         using SKFont glyphFont = new SKFont(customTypeface ?? SKTypeface.Default, cell * 1.02f);
         using SKPaint glyphPaint = new SKPaint
         {
@@ -181,7 +181,6 @@ public sealed class MatrixDigitalRainImageEffect : ImageEffectBase
             }
         }
 
-        customTypeface?.Dispose();
         return result;
     }
 

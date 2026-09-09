@@ -576,7 +576,8 @@ public sealed class RemoveBackgroundImageEffect : ImageEffectBase
 
         using SKBitmap blurredExpanded = new(expandedWidth, expandedHeight, source.ColorType, source.AlphaType);
         using (SKCanvas blurCanvas = new(blurredExpanded))
-        using (SKPaint blurPaint = new() { ImageFilter = SKImageFilter.CreateBlur(sigma, sigma) })
+        using (var ownedImageFilter1 = SKImageFilter.CreateBlur(sigma, sigma))
+        using (SKPaint blurPaint = new() { ImageFilter = ownedImageFilter1 })
         {
             blurCanvas.DrawBitmap(expanded, 0, 0, blurPaint);
         }

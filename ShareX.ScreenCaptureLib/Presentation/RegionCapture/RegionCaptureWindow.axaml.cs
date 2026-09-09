@@ -159,6 +159,7 @@ public partial class RegionCaptureWindow : Window
                 _request?.Screenshot.Dispose();
             }
 
+            _viewModel?.Dispose();
             _request?.CursorBitmap?.Dispose();
         }
         catch (Exception ex)

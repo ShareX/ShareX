@@ -124,8 +124,16 @@ namespace ShareX.ImageEditor.Presentation.Views
             return skBitmap == null ? null : (skBitmap, files[0].Path.LocalPath);
         }
 
+        private Action? _cancelPendingImageInsertion;
+
         private async Task InsertExternalImageAsync(SKBitmap skBitmap, string? sourceFilePath = null)
         {
+            if (_workspaceDisposed)
+            {
+                skBitmap.Dispose();
+                return;
+            }
+
             if (DataContext is not MainViewModel vm)
             {
                 InsertImageAnnotation(skBitmap);
@@ -142,7 +150,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 ? await ShowInsertImageDialogAsync(vm, skBitmap)
                 : InsertImagePlacement.Center;
 
-            if (!placement.HasValue)
+            if (_workspaceDisposed || !placement.HasValue)
             {
                 skBitmap.Dispose();
                 return;
@@ -153,7 +161,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private Task<InsertImagePlacement?> ShowInsertImageDialogAsync(MainViewModel vm, SKBitmap skBitmap)
         {
-            if (vm.IsModalOpen)
+            if (_workspaceDisposed || vm.IsModalOpen)
             {
                 return Task.FromResult<InsertImagePlacement?>(null);
             }
@@ -167,6 +175,8 @@ namespace ShareX.ImageEditor.Presentation.Views
                 {
                     return;
                 }
+
+                _cancelPendingImageInsertion = null;
 
                 if (propertyChangedHandler != null)
                 {
@@ -200,6 +210,16 @@ namespace ShareX.ImageEditor.Presentation.Views
                     vm.CloseModalCommand.Execute(null);
                     ResetModalContentPosition();
                 });
+
+            _cancelPendingImageInsertion = () =>
+            {
+                Complete(null);
+                if (ReferenceEquals(vm.ModalContent, dialog))
+                {
+                    vm.CloseModalCommand.Execute(null);
+                    ResetModalContentPosition();
+                }
+            };
 
             vm.ModalContent = dialog;
             PositionModalOnCursorScreen();

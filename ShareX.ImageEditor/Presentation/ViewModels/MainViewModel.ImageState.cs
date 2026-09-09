@@ -101,6 +101,11 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         /// <param name="clearAnnotations">Whether to clear all annotations</param>
         public void UpdatePreview(SkiaSharp.SKBitmap image, bool clearAnnotations = true)
         {
+            if (_disposed)
+            {
+                image?.Dispose();
+                return;
+            }
             if (!IsBitmapAlive(image))
             {
                 return;

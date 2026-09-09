@@ -83,6 +83,8 @@ namespace ShareX.ImageEditor.Presentation.Views
         protected override void OnClosed(EventArgs e)
         {
             SaveWindowState();
+            this.FindControl<EditorView>("EditorViewControl")?.DisposeWorkspace();
+            _viewModel.Dispose();
             base.OnClosed(e);
         }
 

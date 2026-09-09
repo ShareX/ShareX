@@ -91,13 +91,14 @@ public sealed class LightLeakImageEffect : ImageEffectBase
         float radius = MathF.Sqrt(w * w + h * h) * 0.8f;
         SKColor leakColor = Color.WithAlpha((byte)(255 * alpha));
 
-        using SKPaint paint = new()
-        {
-            Shader = SKShader.CreateRadialGradient(
+        using var ownedShader1 = SKShader.CreateRadialGradient(
                 center, radius,
                 [leakColor, SKColors.Transparent],
                 [0f, 1f],
-                SKShaderTileMode.Clamp),
+                SKShaderTileMode.Clamp);
+        using SKPaint paint = new()
+        {
+            Shader = ownedShader1,
             BlendMode = SKBlendMode.Screen
         };
 

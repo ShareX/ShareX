@@ -122,6 +122,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
                 Avalonia.Threading.Dispatcher.UIThread.Post(() =>
                 {
+                    if (_workspaceDisposed) return;
                     if (_canvasControl != null)
                     {
                         _canvasControl.Initialize((int)_editorCore.CanvasSize.Width, (int)_editorCore.CanvasSize.Height);
@@ -1049,14 +1050,42 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
 
             _workspaceDisposed = true;
+            _pendingAutoCopyImageVersion++;
+            _cancelPendingImageInsertion?.Invoke();
             DetachParentWindow();
             DetachViewModel();
             UnhookAnnotationToolbarEvents();
             StopEasterEggs();
             _selectionController.RequestUpdateEffect -= OnRequestUpdateEffect;
             ClearEffectPreviewCache();
+            this.FindControl<SpotlightOverlayControl>("SpotlightOverlayControl")?.Dispose();
+            ReleaseAnnotationDisplayBitmaps();
             _canvasControl?.Dispose();
             _editorCore.Dispose();
+        }
+
+        private void ReleaseAnnotationDisplayBitmaps()
+        {
+            foreach (string canvasName in new[] { "AnnotationCanvas", "OverlayCanvas" })
+            {
+                if (this.FindControl<Canvas>(canvasName) is not { } canvas) continue;
+
+                foreach (Control control in canvas.Children)
+                {
+                    if (control is Image { Tag: ImageAnnotation } image)
+                    {
+                        var source = image.Source;
+                        image.Source = null;
+                        (source as IDisposable)?.Dispose();
+                    }
+                    else if (control is global::Avalonia.Controls.Shapes.Rectangle { Tag: SmartEraserAnnotation } rectangle
+                        && rectangle.Fill is ImageBrush brush)
+                    {
+                        rectangle.Fill = null;
+                        (brush.Source as IDisposable)?.Dispose();
+                    }
+                }
+            }
         }
 
         private void LoadImageFromViewModel(MainViewModel vm)
@@ -1147,7 +1176,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void QueueAutoCopyImageToClipboard(MainViewModel vm)
         {
-            if (_isWorkspaceHostMode || !vm.Options.AutoCopyImageToClipboard || !vm.HasPreviewImage)
+            if (_workspaceDisposed || _isWorkspaceHostMode || !vm.Options.AutoCopyImageToClipboard || !vm.HasPreviewImage)
             {
                 return;
             }

@@ -161,9 +161,10 @@ public sealed class HalationImageEffect : ImageEffectBase
         using SKBitmap blurredExpanded = new SKBitmap(expandedWidth, expandedHeight, source.ColorType, source.AlphaType);
         using (SKCanvas blurCanvas = new SKCanvas(blurredExpanded))
         {
+            using var ownedImageFilter1 = SKImageFilter.CreateBlur(sigma, sigma);
             using SKPaint blurPaint = new SKPaint
             {
-                ImageFilter = SKImageFilter.CreateBlur(sigma, sigma)
+                ImageFilter = ownedImageFilter1
             };
             blurCanvas.DrawBitmap(expanded, 0, 0, blurPaint);
         }

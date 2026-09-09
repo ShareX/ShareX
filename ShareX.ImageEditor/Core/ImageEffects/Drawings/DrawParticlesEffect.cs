@@ -249,7 +249,8 @@ public sealed class DrawParticlesEffect : ImageEffectBase
 
         if (alpha < 255)
         {
-            paint.ColorFilter = SKColorFilter.CreateBlendMode(new SKColor(255, 255, 255, (byte)alpha), SKBlendMode.Modulate);
+            using var ownedColorFilter1 = SKColorFilter.CreateBlendMode(new SKColor(255, 255, 255, (byte)alpha), SKBlendMode.Modulate);
+            paint.ColorFilter = ownedColorFilter1;
         }
 
         using SKImage particleImage = SKImage.FromBitmap(particle);

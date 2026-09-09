@@ -79,13 +79,10 @@ public sealed class HeatHazeRefractionImageEffect : ImageEffectBase
         SKColor[] srcPixels = source.Pixels;
         SKColor[] dstPixels = new SKColor[srcPixels.Length];
 
-        SKBitmap? blurredBitmap = null;
-        SKColor[]? blurredPixels = null;
-        if (blurRadiusPx > 0.01f && strength01 > 0.01f)
-        {
-            blurredBitmap = CreateBlurred(source, blurRadiusPx);
-            blurredPixels = blurredBitmap.Pixels;
-        }
+        using SKBitmap? blurredBitmap = blurRadiusPx > 0.01f && strength01 > 0.01f
+            ? CreateBlurred(source, blurRadiusPx)
+            : null;
+        SKColor[]? blurredPixels = blurredBitmap?.Pixels;
 
         // Precompute for speed.
         float invW = 1f / MathF.Max(1, width - 1);
@@ -150,7 +147,6 @@ public sealed class HeatHazeRefractionImageEffect : ImageEffectBase
             }
         });
 
-        blurredBitmap?.Dispose();
         return new SKBitmap(width, height, source.ColorType, source.AlphaType)
         {
             Pixels = dstPixels
@@ -163,10 +159,11 @@ public sealed class HeatHazeRefractionImageEffect : ImageEffectBase
 
         SKBitmap blurred = new SKBitmap(source.Width, source.Height, source.ColorType, source.AlphaType);
         using SKCanvas canvas = new SKCanvas(blurred);
+        using var ownedImageFilter1 = SKImageFilter.CreateBlur(radius, radius);
         using SKPaint paint = new SKPaint
         {
             IsAntialias = true,
-            ImageFilter = SKImageFilter.CreateBlur(radius, radius)
+            ImageFilter = ownedImageFilter1
         };
         canvas.DrawBitmap(source, 0, 0, paint);
         return blurred;

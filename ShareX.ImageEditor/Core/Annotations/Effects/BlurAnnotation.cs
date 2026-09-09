@@ -79,7 +79,8 @@ public partial class BlurAnnotation : BaseEffectAnnotation
 
         using (var extendedImage = extendedSurface.Snapshot())
         using (var extendedBitmap = SKBitmap.FromImage(extendedImage))
-        using (var blurPaint = new SKPaint { ImageFilter = SKImageFilter.CreateBlur(blurSigma, blurSigma) })
+        using (var ownedImageFilter1 = SKImageFilter.CreateBlur(blurSigma, blurSigma))
+        using (var blurPaint = new SKPaint { ImageFilter = ownedImageFilter1 })
         {
             blurSurface.Canvas.DrawBitmap(extendedBitmap, 0, 0, blurPaint);
         }
@@ -212,7 +213,8 @@ public partial class BlurAnnotation : BaseEffectAnnotation
         var blurCanvas = blurSurface.Canvas;
 
         using var blurPaint = new SKPaint();
-        blurPaint.ImageFilter = SKImageFilter.CreateBlur(blurSigma, blurSigma);
+        using var ownedImageFilter2 = SKImageFilter.CreateBlur(blurSigma, blurSigma);
+        blurPaint.ImageFilter = ownedImageFilter2;
         blurCanvas.DrawBitmap(extendedBitmap, 0, 0, blurPaint);
 
         // Step 3: Extract the valid region from blurred result

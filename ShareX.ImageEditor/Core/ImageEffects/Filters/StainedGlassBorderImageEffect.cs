@@ -202,28 +202,30 @@ public sealed class StainedGlassBorderImageEffect : ImageEffectBase
         SKColor lightColor = LightenColor(baseColor, 0.25f).WithAlpha(245);
         SKColor darkColor = DarkenColor(baseColor, 0.15f).WithAlpha(235);
 
+        using var ownedShader1 = SKShader.CreateLinearGradient(
+                new SKPoint(x1, y1),
+                new SKPoint(x2, y2),
+                [lightColor, darkColor],
+                SKShaderTileMode.Clamp);
         using SKPaint glassPaint = new()
         {
             IsAntialias = true,
             Style = SKPaintStyle.Fill,
-            Shader = SKShader.CreateLinearGradient(
-                new SKPoint(x1, y1),
-                new SKPoint(x2, y2),
-                [lightColor, darkColor],
-                SKShaderTileMode.Clamp)
+            Shader = ownedShader1
         };
         canvas.DrawRect(x1, y1, w, h, glassPaint);
 
         // Specular highlight in top-left corner
+        using var ownedShader2 = SKShader.CreateRadialGradient(
+                new SKPoint(x1 + w * 0.2f, y1 + h * 0.2f),
+                Math.Min(w, h) * 0.4f,
+                [new SKColor(255, 255, 255, 90), SKColors.Transparent],
+                SKShaderTileMode.Clamp);
         using SKPaint specPaint = new()
         {
             IsAntialias = true,
             Style = SKPaintStyle.Fill,
-            Shader = SKShader.CreateRadialGradient(
-                new SKPoint(x1 + w * 0.2f, y1 + h * 0.2f),
-                Math.Min(w, h) * 0.4f,
-                [new SKColor(255, 255, 255, 90), SKColors.Transparent],
-                SKShaderTileMode.Clamp)
+            Shader = ownedShader2
         };
         canvas.DrawRect(x1, y1, w, h, specPaint);
     }
