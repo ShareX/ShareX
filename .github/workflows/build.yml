@@ -104,8 +104,8 @@ jobs:
           if ($null -eq $ffmpegPath) {
             throw "ffmpeg.exe was not found in the downloaded archive."
           }
-          New-Item -Path "Output" -ItemType Directory -Force | Out-Null
-          Copy-Item -LiteralPath $ffmpegPath.FullName -Destination "Output\ffmpeg.exe" -Force
+          $destinationPath = "${{ github.workspace }}\ShareX\bin\${{ matrix.configuration }}\${{ env.RUNTIME_ID }}\ffmpeg.exe"
+          Copy-Item -LiteralPath $ffmpegPath.FullName -Destination $destinationPath -Force
 
       - name: Azure login
         if: github.ref == 'refs/heads/test-signing'
@@ -122,9 +122,8 @@ jobs:
           endpoint: ${{ vars.SIGNING_ENDPOINT }}
           signing-account-name: ${{ vars.SIGNING_ACCOUNT_NAME }}
           certificate-profile-name: ${{ vars.CERTIFICATE_PROFILE_NAME }}
-          files: ${{ github.workspace }}\Output\ffmpeg.exe
           files-folder: ${{ github.workspace }}\ShareX\bin\${{ matrix.configuration }}\${{ env.RUNTIME_ID }}
-          files-folder-filter: ShareX*.dll,ShareX*.exe
+          files-folder-filter: ShareX*.dll,ShareX*.exe,ffmpeg.exe
           file-digest: SHA256
           timestamp-rfc3161: http://timestamp.acs.microsoft.com
           timestamp-digest: SHA256

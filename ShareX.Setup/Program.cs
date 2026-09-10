@@ -88,7 +88,6 @@ namespace ShareX.Setup
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam-{Platform}.zip");
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-MicrosoftStore-{Platform}.appx");
         private static string MicrosoftStoreDebugAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-MicrosoftStore-debug-{Platform}.appx");
-        private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
         private static string MakeAppxPath => Path.Combine(WindowsKitsDir, "x64", "makeappx.exe");
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
@@ -105,22 +104,9 @@ namespace ShareX.Setup
 
             if (Directory.Exists(OutputDir))
             {
-                Console.WriteLine("Cleaning output directory while preserving FFmpeg: " + OutputDir);
+                Console.WriteLine("Cleaning output directory: " + OutputDir);
 
-                foreach (string path in Directory.GetFileSystemEntries(OutputDir))
-                {
-                    if (!path.Equals(FFmpegPath, StringComparison.OrdinalIgnoreCase))
-                    {
-                        if (Directory.Exists(path))
-                        {
-                            Directory.Delete(path, true);
-                        }
-                        else
-                        {
-                            File.Delete(path);
-                        }
-                    }
-                }
+                Directory.Delete(OutputDir, true);
             }
 
             if (Job.HasFlag(SetupJobs.CreateSetup))
@@ -385,11 +371,6 @@ namespace ShareX.Setup
                 {
                     FileHelpers.CopyFiles(Path.Combine(source, language), Path.Combine(destination, "Languages", language), "*.resources.dll");
                 }
-            }
-
-            if (File.Exists(FFmpegPath))
-            {
-                FileHelpers.CopyFiles(FFmpegPath, destination);
             }
 
             if (job == SetupJobs.CreatePortable)
