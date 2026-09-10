@@ -218,8 +218,16 @@ internal sealed class DestinationSettingsPageBuilder
         Button storageClassHelp = Button("?", () => URLHelpers.OpenURL("https://aws.amazon.com/s3/storage-classes/"));
         CheckBox signedPayload = Check(FormatLabel(nameof(settings.SignedPayload)), () => settings.SignedPayload,
             value => settings.SignedPayload = value);
-        CheckBox useMultipartUpload = Check(FormatLabel(nameof(settings.UseMultipartUpload)), () => settings.UseMultipartUpload,
-            value => settings.UseMultipartUpload = value);
+        NumericUpDown multipartConcurrency = Number(settings.MultipartConcurrency,
+            value => settings.MultipartConcurrency = (int)value, typeof(int));
+        multipartConcurrency.Minimum = AmazonS3Settings.MinMultipartConcurrency;
+        multipartConcurrency.Maximum = AmazonS3Settings.MaxMultipartConcurrency;
+        multipartConcurrency.IsEnabled = settings.UseMultipartUpload;
+        CheckBox useMultipartUpload = Check(FormatLabel(nameof(settings.UseMultipartUpload)), () => settings.UseMultipartUpload, value =>
+        {
+            settings.UseMultipartUpload = value;
+            multipartConcurrency.IsEnabled = value;
+        });
         CheckBox publicAcl = Check(FormatLabel(nameof(settings.SetPublicACL)), () => settings.SetPublicACL,
             value => settings.SetPublicACL = value);
         CheckBox removeImageExtension = Check(FormatLabel("Image"), () => settings.RemoveExtensionImage, value =>
@@ -256,6 +264,7 @@ internal sealed class DestinationSettingsPageBuilder
             Row(FormatLabel(nameof(settings.StorageClass)) + ":", EditorWithButton(storageClass, storageClassHelp)),
             signedPayload,
             useMultipartUpload,
+            Row(FormatLabel(nameof(settings.MultipartConcurrency)) + ":", multipartConcurrency),
             publicAcl,
             usePathStyle,
             Row(FormatLabel("RemoveFileExtensionOn") + ":",

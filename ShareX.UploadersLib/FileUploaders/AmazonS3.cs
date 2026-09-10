@@ -222,34 +222,12 @@ namespace ShareX.UploadersLib.FileUploaders
                     return null;
                 }
 
-                List<AmazonS3MultipartPart> parts = new List<AmazonS3MultipartPart>();
-                long position = 0;
-                int partNumber = 1;
+                AmazonS3MultipartPart[] parts = await UploadPartsAsync(stream, partSize, contentType, requestData, uploadID,
+                    cancellationToken).ConfigureAwait(false);
 
-                while (position < stream.Length)
+                if (parts == null)
                 {
-                    long length = Math.Min(partSize, stream.Length - position);
-                    string queryString = "partNumber=" + partNumber.ToString(CultureInfo.InvariantCulture) +
-                        "&uploadId=" + URLHelpers.URLEncode(uploadID);
-
-                    await SendAmazonS3RequestAsync(HttpMethod.PUT, requestData, queryString, stream, position, length,
-                        contentType, null, cancellationToken).ConfigureAwait(false);
-
-                    if (LastResponseInfo == null || !LastResponseInfo.IsSuccess)
-                    {
-                        return null;
-                    }
-
-                    string entityTag = LastResponseInfo.Headers?["ETag"];
-
-                    if (string.IsNullOrWhiteSpace(entityTag))
-                    {
-                        return null;
-                    }
-
-                    parts.Add(new AmazonS3MultipartPart(partNumber, entityTag.Trim()));
-                    position += length;
-                    partNumber++;
+                    return null;
                 }
 
                 byte[] completePayload = CreateCompleteMultipartUploadPayload(parts);
@@ -275,6 +253,146 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     await AbortMultipartUploadAsync(requestData, uploadID).ConfigureAwait(false);
                 }
+            }
+        }
+
+        private sealed class AmazonS3MultipartUploadContext
+        {
+            public Stream Stream { get; }
+            public object StreamLock { get; } = new object();
+            public object ProgressLock { get; } = new object();
+            public ProgressManager Progress { get; }
+            public bool ReportProgress { get; }
+            public SemaphoreSlim Throttle { get; }
+            public CancellationTokenSource Cancellation { get; }
+            public AmazonS3MultipartPart[] Parts { get; }
+            public AmazonS3RequestData RequestData { get; }
+            public string UploadID { get; }
+            public string ContentType { get; }
+
+            public AmazonS3MultipartUploadContext(Stream stream, int partCount, bool reportProgress, SemaphoreSlim throttle,
+                CancellationTokenSource cancellation, AmazonS3RequestData requestData, string uploadID, string contentType)
+            {
+                Stream = stream;
+                Progress = new ProgressManager(stream.Length);
+                ReportProgress = reportProgress;
+                Throttle = throttle;
+                Cancellation = cancellation;
+                Parts = new AmazonS3MultipartPart[partCount];
+                RequestData = requestData;
+                UploadID = uploadID;
+                ContentType = contentType;
+            }
+        }
+
+        private async Task<AmazonS3MultipartPart[]> UploadPartsAsync(Stream stream, long partSize, string contentType,
+            AmazonS3RequestData requestData, string uploadID, CancellationToken cancellationToken)
+        {
+            int partCount = (int)((stream.Length + partSize - 1) / partSize);
+            int concurrency = Math.Clamp(Settings.MultipartConcurrency, AmazonS3Settings.MinMultipartConcurrency,
+                AmazonS3Settings.MaxMultipartConcurrency);
+            concurrency = Math.Min(concurrency, partCount);
+
+            bool allowReportProgress = AllowReportProgress;
+            AllowReportProgress = false;
+
+            using CancellationTokenSource partsCancellation = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            using SemaphoreSlim throttle = new SemaphoreSlim(concurrency, concurrency);
+            AmazonS3MultipartUploadContext context = new AmazonS3MultipartUploadContext(stream, partCount, allowReportProgress,
+                throttle, partsCancellation, requestData, uploadID, contentType);
+
+            try
+            {
+                Task<bool>[] uploads = new Task<bool>[partCount];
+
+                for (int partIndex = 0; partIndex < partCount; partIndex++)
+                {
+                    long position = partIndex * partSize;
+                    long length = Math.Min(partSize, stream.Length - position);
+                    uploads[partIndex] = UploadPartAsync(context, partIndex, position, length);
+                }
+
+                bool[] results = await Task.WhenAll(uploads).ConfigureAwait(false);
+                return results.All(x => x) ? context.Parts : null;
+            }
+            catch (OperationCanceledException) when (!cancellationToken.IsCancellationRequested)
+            {
+                return null;
+            }
+            finally
+            {
+                AllowReportProgress = allowReportProgress;
+            }
+        }
+
+        private async Task<bool> UploadPartAsync(AmazonS3MultipartUploadContext context, int partIndex, long position, long length)
+        {
+            CancellationToken cancellationToken = context.Cancellation.Token;
+            bool succeeded = false;
+
+            await context.Throttle.WaitAsync(cancellationToken).ConfigureAwait(false);
+
+            try
+            {
+                int partNumber = partIndex + 1;
+                string queryString = "partNumber=" + partNumber.ToString(CultureInfo.InvariantCulture) +
+                    "&uploadId=" + URLHelpers.URLEncode(context.UploadID);
+                string hashedPayload;
+
+                using (SharedStreamSegment hashSegment = new SharedStreamSegment(context.Stream, context.StreamLock, position, length))
+                {
+                    hashedPayload = GetPayloadHash(hashSegment, 0, length, cancellationToken);
+                }
+
+                using SharedStreamSegment uploadSegment = new SharedStreamSegment(context.Stream, context.StreamLock, position, length,
+                    bytesRead => ReportMultipartProgress(context, bytesRead));
+                ResponseInfo responseInfo = await SendAmazonS3RequestForResponseAsync(HttpMethod.PUT, context.RequestData, queryString,
+                    uploadSegment, 0, length, context.ContentType, null, hashedPayload, cancellationToken).ConfigureAwait(false);
+
+                if (responseInfo == null || !responseInfo.IsSuccess)
+                {
+                    return false;
+                }
+
+                string entityTag = responseInfo.Headers?["ETag"];
+
+                if (string.IsNullOrWhiteSpace(entityTag))
+                {
+                    return false;
+                }
+
+                context.Parts[partIndex] = new AmazonS3MultipartPart(partNumber, entityTag.Trim());
+                succeeded = true;
+                return true;
+            }
+            finally
+            {
+                if (!succeeded)
+                {
+                    context.Cancellation.Cancel();
+                }
+
+                context.Throttle.Release();
+            }
+        }
+
+        private void ReportMultipartProgress(AmazonS3MultipartUploadContext context, int bytesRead)
+        {
+            if (!context.ReportProgress)
+            {
+                return;
+            }
+
+            bool changed;
+
+            lock (context.ProgressLock)
+            {
+                changed = context.Progress.UpdateProgress(bytesRead);
+            }
+
+            if (changed)
+            {
+                OnProgressChanged(context.Progress);
             }
         }
 
@@ -304,6 +422,26 @@ namespace ShareX.UploadersLib.FileUploaders
             NameValueCollection requestHeaders, CancellationToken cancellationToken)
         {
             string hashedPayload = GetPayloadHash(stream, position, length, cancellationToken);
+            NameValueCollection headers = CreateSignedRequestHeaders(method, requestData, canonicalQueryString, hashedPayload,
+                contentType, requestHeaders);
+            string url = GetRequestURL(requestData, canonicalQueryString);
+            return await SendRequestAsync(method, url, stream, position, length, contentType, null, headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        private Task<ResponseInfo> SendAmazonS3RequestForResponseAsync(HttpMethod method, AmazonS3RequestData requestData,
+            string canonicalQueryString, Stream stream, long position, long length, string contentType,
+            NameValueCollection requestHeaders, string hashedPayload, CancellationToken cancellationToken)
+        {
+            NameValueCollection headers = CreateSignedRequestHeaders(method, requestData, canonicalQueryString, hashedPayload,
+                contentType, requestHeaders);
+            string url = GetRequestURL(requestData, canonicalQueryString);
+            return SendRequestForResponseAsync(method, url, stream, position, length, contentType, headers, cancellationToken);
+        }
+
+        private NameValueCollection CreateSignedRequestHeaders(HttpMethod method, AmazonS3RequestData requestData,
+            string canonicalQueryString, string hashedPayload, string contentType, NameValueCollection requestHeaders)
+        {
             DateTime requestTime = DateTime.UtcNow;
             string credentialDate = requestTime.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
             string timeStamp = requestTime.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
@@ -350,10 +488,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             headers.Remove("Host");
             headers.Remove("Content-Type");
-
-            string url = GetRequestURL(requestData, canonicalQueryString);
-            return await SendRequestAsync(method, url, stream, position, length, contentType, null, headers,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
+            return headers;
         }
 
         private AmazonS3RequestData CreateRequestData(string uploadPath)

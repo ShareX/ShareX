@@ -29,6 +29,10 @@ namespace ShareX.UploadersLib.FileUploaders
 {
     public class AmazonS3Settings
     {
+        public const int MinMultipartConcurrency = 1;
+        public const int MaxMultipartConcurrency = 16;
+        public const int DefaultMultipartConcurrency = 4;
+
         public string AccessKeyID { get; set; }
         [JsonEncrypt]
         public string SecretAccessKey { get; set; }
@@ -43,6 +47,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool SetPublicACL { get; set; } = true;
         public bool SignedPayload { get; set; }
         public bool UseMultipartUpload { get; set; }
+        public int MultipartConcurrency { get; set; } = DefaultMultipartConcurrency;
         public bool RemoveExtensionImage { get; set; }
         public bool RemoveExtensionVideo { get; set; }
         public bool RemoveExtensionText { get; set; }

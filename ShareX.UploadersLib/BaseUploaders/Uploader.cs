@@ -152,6 +152,19 @@ namespace ShareX.UploadersLib
             Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null,
             CancellationToken cancellationToken = default)
         {
+            HttpContent content = CreateRangeStreamContent(data, position, length, contentType);
+            return SendRequestAsync(method, url, content, args, headers, cookies, true, cancellationToken);
+        }
+
+        protected Task<ResponseInfo> SendRequestForResponseAsync(HttpMethod method, string url, Stream data, long position, long length,
+            string contentType = null, NameValueCollection headers = null, CancellationToken cancellationToken = default)
+        {
+            HttpContent content = CreateRangeStreamContent(data, position, length, contentType);
+            return GetResponseAsync(method, url, content, null, headers, null, false, true, cancellationToken);
+        }
+
+        private HttpContent CreateRangeStreamContent(Stream data, long position, long length, string contentType)
+        {
             if (data == null)
             {
                 throw new ArgumentNullException(nameof(data));
@@ -169,8 +182,7 @@ namespace ShareX.UploadersLib
                 throw new ArgumentOutOfRangeException(nameof(length), "The requested upload range must be within the stream.");
             }
 
-            HttpContent content = CreateStreamContent(data, position, length, contentType);
-            return SendRequestAsync(method, url, content, args, headers, cookies, true, cancellationToken);
+            return CreateStreamContent(data, position, length, contentType);
         }
 
         protected Task<string> SendRequestAsync(HttpMethod method, string url, string content, string contentType = null, Dictionary<string, string> args = null,
