@@ -40,6 +40,7 @@ jobs:
     env:
       SOLUTION_FILE_PATH: ShareX.sln
       ASSEMBLY_INFO_PATH: Directory.build.props
+      FFMPEG_VERSION: "8.1"
 
     outputs:
       APP_VERSION: ${{ env.APP_VERSION }}
@@ -92,6 +93,20 @@ jobs:
       - name: Build
         run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" -p:Platform="${{ matrix.platform }}" --self-contained true /m:1 "${{ env.SOLUTION_FILE_PATH }}"
 
+      - name: Download FFmpeg
+        run: |
+          $archivePath = Join-Path $env:RUNNER_TEMP "ffmpeg.zip"
+          $extractPath = Join-Path $env:RUNNER_TEMP "ffmpeg"
+          $downloadUrl = "https://github.com/ShareX/FFmpeg/releases/download/v${{ env.FFMPEG_VERSION }}/ffmpeg-${{ env.FFMPEG_VERSION }}-win-${{ env.PLATFORM }}.zip"
+          Invoke-WebRequest -Uri $downloadUrl -OutFile $archivePath
+          Expand-Archive -Path $archivePath -DestinationPath $extractPath -Force
+          $ffmpegPath = Get-ChildItem -Path $extractPath -Filter "ffmpeg.exe" -Recurse -File | Select-Object -First 1
+          if ($null -eq $ffmpegPath) {
+            throw "ffmpeg.exe was not found in the downloaded archive."
+          }
+          New-Item -Path "Output" -ItemType Directory -Force | Out-Null
+          Copy-Item -LiteralPath $ffmpegPath.FullName -Destination "Output\ffmpeg.exe" -Force
+
       - name: Azure login
         if: github.ref == 'refs/heads/test-signing'
         uses: azure/login@v3
@@ -107,6 +122,7 @@ jobs:
           endpoint: ${{ vars.SIGNING_ENDPOINT }}
           signing-account-name: ${{ vars.SIGNING_ACCOUNT_NAME }}
           certificate-profile-name: ${{ vars.CERTIFICATE_PROFILE_NAME }}
+          files: ${{ github.workspace }}\Output\ffmpeg.exe
           files-folder: ${{ github.workspace }}\ShareX\bin\${{ matrix.configuration }}\${{ env.RUNTIME_ID }}
           files-folder-filter: ShareX*.dll,ShareX*.exe
           file-digest: SHA256
