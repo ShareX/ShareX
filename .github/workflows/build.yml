@@ -128,6 +128,18 @@ jobs:
           timestamp-rfc3161: http://timestamp.acs.microsoft.com
           timestamp-digest: SHA256
 
+      - name: Sign Steam launcher
+        if: github.ref == 'refs/heads/test-signing' && matrix.configuration == 'Steam'
+        uses: azure/artifact-signing-action@v2
+        with:
+          endpoint: ${{ vars.SIGNING_ENDPOINT }}
+          signing-account-name: ${{ vars.SIGNING_ACCOUNT_NAME }}
+          certificate-profile-name: ${{ vars.CERTIFICATE_PROFILE_NAME }}
+          files: ${{ github.workspace }}\ShareX.Steam\bin\Steam\ShareX_Launcher.exe
+          file-digest: SHA256
+          timestamp-rfc3161: http://timestamp.acs.microsoft.com
+          timestamp-digest: SHA256
+
       - name: Build Setup (x64)
         if: matrix.platform == 'ARM64'
         run: |
