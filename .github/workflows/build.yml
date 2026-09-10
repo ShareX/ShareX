@@ -108,7 +108,7 @@ jobs:
           Copy-Item -LiteralPath $ffmpegPath.FullName -Destination $destinationPath -Force
 
       - name: Azure login
-        if: github.ref == 'refs/heads/test-signing'
+        if: github.ref == 'refs/heads/test-signing' && matrix.configuration != 'Debug' && matrix.configuration != 'MicrosoftStoreDebug'
         uses: azure/login@v3
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -116,14 +116,14 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Sign ShareX binaries
-        if: github.ref == 'refs/heads/test-signing'
+        if: github.ref == 'refs/heads/test-signing' && matrix.configuration != 'Debug' && matrix.configuration != 'MicrosoftStoreDebug'
         uses: azure/artifact-signing-action@v2
         with:
           endpoint: ${{ vars.SIGNING_ENDPOINT }}
           signing-account-name: ${{ vars.SIGNING_ACCOUNT_NAME }}
           certificate-profile-name: ${{ vars.CERTIFICATE_PROFILE_NAME }}
           files-folder: ${{ github.workspace }}\ShareX\bin\${{ matrix.configuration }}\${{ env.RUNTIME_ID }}
-          files-folder-filter: ShareX*.dll,ShareX*.exe,ffmpeg.exe
+          files-folder-filter: ShareX*.exe,ShareX*.dll,ffmpeg.exe
           file-digest: SHA256
           timestamp-rfc3161: http://timestamp.acs.microsoft.com
           timestamp-digest: SHA256
