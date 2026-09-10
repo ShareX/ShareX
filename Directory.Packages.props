@@ -5,8 +5,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="FluentFTP" Version="54.2.0" />
-    <PackageVersion Include="Microsoft.Data.Sqlite" Version="11.0.0-preview.6.26359.118" />
-    <PackageVersion Include="Microsoft.Data.Sqlite.Core" Version="11.0.0-preview.6.26359.118" />
+    <PackageVersion Include="Microsoft.Data.Sqlite" Version="11.0.0-rc.1.26425.128" />
+    <PackageVersion Include="Microsoft.Data.Sqlite.Core" Version="11.0.0-rc.1.26425.128" />
     <PackageVersion Include="Microsoft.ML.OnnxRuntime.DirectML" Version="1.24.4" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="SkiaSharp.Views.WindowsForms" Version="3.119.4" />
