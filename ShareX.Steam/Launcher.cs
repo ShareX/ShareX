@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -100,12 +100,7 @@ namespace ShareX.Steam
             {
                 string arguments = "";
 
-                if (IsFirstTimeRunning)
-                {
-                    // Show first time config window.
-                    arguments = "-SteamConfig";
-                }
-                else if (IsStartupRun)
+                if (IsStartupRun)
                 {
                     // Don't show ShareX main window.
                     arguments = "-silent";

@@ -17,7 +17,6 @@ All translatable strings in the ShareX project use the shared `Strings.resx` res
 | Large file upload warning | `LargeFileUploadWarningWindow_` | 2 | 5 | Complete |
 | Multi-upload confirmation | `MultiUploadConfirmationWindow_` | 2 | 5 | Complete |
 | Debug log | `DebugLogWindow_` | 2 | 9 | Complete |
-| First-time configuration | `FirstTimeConfigWindow_` | 2 | 11 | Complete |
 | Shorten URL | `ShortenURLWindow_` | 2 | 6 | Complete |
 | URL upload | `URLUploadWindow_` | 2 | 7 | Complete |
 | Before upload | `BeforeUploadWindow_` | 2 | 10 | Complete |

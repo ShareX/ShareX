@@ -3756,61 +3756,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("DebugLogWindow_Upload", resourceCulture);
             }
         }
-        public static string FirstTimeConfigWindow_Heading {
-            get {
-                return ResourceManager.GetString("FirstTimeConfigWindow_Heading", resourceCulture);
-            }
-        }
-        public static string FirstTimeConfigWindow_Subtitle {
-            get {
-                return ResourceManager.GetString("FirstTimeConfigWindow_Subtitle", resourceCulture);
-            }
-        }
-        public static string FirstTimeConfigWindow_ShellContextMenu {
-            get {
-                return ResourceManager.GetString("FirstTimeConfigWindow_ShellContextMenu", resourceCulture);
-            }
-        }
-        public static string FirstTimeConfigWindow_SendToMenu {
-            get {
-                return ResourceManager.GetString("FirstTimeConfigWindow_SendToMenu", resourceCulture);
-            }
-        }
-        public static string FirstTimeConfigWindow_SteamInApp {
-            get {
-                return ResourceManager.GetString("FirstTimeConfigWindow_SteamInApp", resourceCulture);
-            }
-        }
-        public static string FirstTimeConfigWindow_OptionsLater {
-            get {
-                return ResourceManager.GetString("FirstTimeConfigWindow_OptionsLater", resourceCulture);
-            }
-        }
-        public static string FirstTimeConfigWindow_OK {
-            get {
-                return ResourceManager.GetString("FirstTimeConfigWindow_OK", resourceCulture);
-            }
-        }
-        public static string FirstTimeConfigWindow_StartWithWindows {
-            get {
-                return ResourceManager.GetString("FirstTimeConfigWindow_StartWithWindows", resourceCulture);
-            }
-        }
-        public static string FirstTimeConfigWindow_StartWithWindowsDisabledByUser {
-            get {
-                return ResourceManager.GetString("FirstTimeConfigWindow_StartWithWindowsDisabledByUser", resourceCulture);
-            }
-        }
-        public static string FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy {
-            get {
-                return ResourceManager.GetString("FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy", resourceCulture);
-            }
-        }
-        public static string FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy {
-            get {
-                return ResourceManager.GetString("FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy", resourceCulture);
-            }
-        }
         public static string ShortenURLWindow_Title {
             get {
                 return ResourceManager.GetString("ShortenURLWindow_Title", resourceCulture);

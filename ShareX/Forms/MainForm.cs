@@ -71,7 +71,7 @@ public sealed class MainForm : HotkeyForm
 
         if (showMainWindow)
         {
-            await AfterShownJobs();
+            MainWindowIntegration.Activate();
         }
 
         DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
@@ -226,18 +226,6 @@ public sealed class MainForm : HotkeyForm
         if (Program.UploadersConfig != null)
         {
             Program.UploadersConfig.PuushAPIKey = puushApiKey;
-        }
-    }
-
-    private static async Task AfterShownJobs()
-    {
-        if (Program.SteamFirstTimeConfig)
-        {
-            await FirstTimeConfigWindowIntegration.ShowAsync();
-        }
-        else
-        {
-            MainWindowIntegration.Activate();
         }
     }
 

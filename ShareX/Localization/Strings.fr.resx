@@ -1237,39 +1237,6 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>Utiliser un nom unique</value>
   </data>
-  <data name="FirstTimeConfigWindow_Heading" xml:space="preserve">
-    <value>Configuration initiale de ShareX</value>
-  </data>
-  <data name="FirstTimeConfigWindow_OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="FirstTimeConfigWindow_OptionsLater" xml:space="preserve">
-    <value>Vous pourrez modifier ces options plus tard dans Paramètres de l’application → Intégration.</value>
-  </data>
-  <data name="FirstTimeConfigWindow_SendToMenu" xml:space="preserve">
-    <value>Afficher ShareX dans le menu « Envoyer vers »</value>
-  </data>
-  <data name="FirstTimeConfigWindow_ShellContextMenu" xml:space="preserve">
-    <value>Afficher « Téléverser avec ShareX » dans le menu contextuel de l’Explorateur Windows</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindows" xml:space="preserve">
-    <value>Exécuter ShareX au démarrage de Windows</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy" xml:space="preserve">
-    <value>Le démarrage a été désactivé par votre organisation</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByUser" xml:space="preserve">
-    <value>Le démarrage a été désactivé dans le Gestionnaire des tâches</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
-    <value>Le démarrage a été activé par votre organisation</value>
-  </data>
-  <data name="FirstTimeConfigWindow_SteamInApp" xml:space="preserve">
-    <value>Lorsque ShareX est ouvert, afficher « Dans l’application » dans Steam</value>
-  </data>
-  <data name="FirstTimeConfigWindow_Subtitle" xml:space="preserve">
-    <value>Choisissez la façon dont ShareX s’intègre à Windows.</value>
-  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>La définition du raccourci a échoué</value>
   </data>

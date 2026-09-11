@@ -1237,39 +1237,6 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>使用唯一名称</value>
   </data>
-  <data name="FirstTimeConfigWindow_Heading" xml:space="preserve">
-    <value>ShareX 初始配置</value>
-  </data>
-  <data name="FirstTimeConfigWindow_OK" xml:space="preserve">
-    <value>确定</value>
-  </data>
-  <data name="FirstTimeConfigWindow_OptionsLater" xml:space="preserve">
-    <value>稍后可在应用程序设置 → 集成中更改这些选项。</value>
-  </data>
-  <data name="FirstTimeConfigWindow_SendToMenu" xml:space="preserve">
-    <value>在“发送到”菜单中显示 ShareX</value>
-  </data>
-  <data name="FirstTimeConfigWindow_ShellContextMenu" xml:space="preserve">
-    <value>在 Windows 文件资源管理器右键菜单中显示“使用 ShareX 上传”</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindows" xml:space="preserve">
-    <value>Windows 启动时运行 ShareX</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy" xml:space="preserve">
-    <value>你的组织已禁用启动</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByUser" xml:space="preserve">
-    <value>已在任务管理器中禁用启动</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
-    <value>你的组织已启用启动</value>
-  </data>
-  <data name="FirstTimeConfigWindow_SteamInApp" xml:space="preserve">
-    <value>ShareX 运行时在 Steam 中显示“应用内”</value>
-  </data>
-  <data name="FirstTimeConfigWindow_Subtitle" xml:space="preserve">
-    <value>选择 ShareX 与 Windows 的集成方式。</value>
-  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>快捷键注册失败</value>
   </data>

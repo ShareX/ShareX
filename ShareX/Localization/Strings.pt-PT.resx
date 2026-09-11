@@ -1237,39 +1237,6 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>Usar um nome único</value>
   </data>
-  <data name="FirstTimeConfigWindow_Heading" xml:space="preserve">
-    <value>Configuração inicial do ShareX</value>
-  </data>
-  <data name="FirstTimeConfigWindow_OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="FirstTimeConfigWindow_OptionsLater" xml:space="preserve">
-    <value>Pode alterar estas opções mais tarde em Definições da aplicação → Integração.</value>
-  </data>
-  <data name="FirstTimeConfigWindow_SendToMenu" xml:space="preserve">
-    <value>Mostrar o ShareX no menu «Enviar para»</value>
-  </data>
-  <data name="FirstTimeConfigWindow_ShellContextMenu" xml:space="preserve">
-    <value>Mostrar «Carregar com o ShareX» no menu de contexto do Explorador de Ficheiros</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindows" xml:space="preserve">
-    <value>Executar o ShareX ao iniciar o Windows</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy" xml:space="preserve">
-    <value>O arranque foi desativado pela sua organização</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByUser" xml:space="preserve">
-    <value>O arranque foi desativado no Gestor de Tarefas</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
-    <value>O arranque foi ativado pela sua organização</value>
-  </data>
-  <data name="FirstTimeConfigWindow_SteamInApp" xml:space="preserve">
-    <value>Enquanto o ShareX estiver aberto, mostrar «Na aplicação» no Steam</value>
-  </data>
-  <data name="FirstTimeConfigWindow_Subtitle" xml:space="preserve">
-    <value>Escolha como o ShareX se integra no Windows.</value>
-  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>Falha no registo da tecla de atalho</value>
   </data>

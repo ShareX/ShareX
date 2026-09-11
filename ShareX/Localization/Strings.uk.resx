@@ -1237,39 +1237,6 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>Використати унікальне ім’я</value>
   </data>
-  <data name="FirstTimeConfigWindow_Heading" xml:space="preserve">
-    <value>Початкове налаштування ShareX</value>
-  </data>
-  <data name="FirstTimeConfigWindow_OK" xml:space="preserve">
-    <value>ОК</value>
-  </data>
-  <data name="FirstTimeConfigWindow_OptionsLater" xml:space="preserve">
-    <value>Ці параметри можна змінити пізніше в розділі Налаштування програми → Інтеграція.</value>
-  </data>
-  <data name="FirstTimeConfigWindow_SendToMenu" xml:space="preserve">
-    <value>Показувати ShareX у меню «Надіслати»</value>
-  </data>
-  <data name="FirstTimeConfigWindow_ShellContextMenu" xml:space="preserve">
-    <value>Показувати «Завантажити через ShareX» у контекстному меню Провідника</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindows" xml:space="preserve">
-    <value>Запускати ShareX під час запуску Windows</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy" xml:space="preserve">
-    <value>Автозапуск вимкнено вашою організацією</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByUser" xml:space="preserve">
-    <value>Автозапуск вимкнено в Диспетчері завдань</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
-    <value>Автозапуск увімкнено вашою організацією</value>
-  </data>
-  <data name="FirstTimeConfigWindow_SteamInApp" xml:space="preserve">
-    <value>Поки ShareX відкрито, показувати у Steam стан «У програмі»</value>
-  </data>
-  <data name="FirstTimeConfigWindow_Subtitle" xml:space="preserve">
-    <value>Виберіть спосіб інтеграції ShareX із Windows.</value>
-  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>Збій реєстрації гарячих клавіш</value>
   </data>

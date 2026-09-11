@@ -1237,39 +1237,6 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>अद्वितीय नाम उपयोग करें</value>
   </data>
-  <data name="FirstTimeConfigWindow_Heading" xml:space="preserve">
-    <value>ShareX प्रथम-बार कॉन्फ़िगरेशन</value>
-  </data>
-  <data name="FirstTimeConfigWindow_OK" xml:space="preserve">
-    <value>ठीक है</value>
-  </data>
-  <data name="FirstTimeConfigWindow_OptionsLater" xml:space="preserve">
-    <value>आप ये विकल्प बाद में अनुप्रयोग सेटिंग &gt; एकीकरण में बदल सकते हैं।</value>
-  </data>
-  <data name="FirstTimeConfigWindow_SendToMenu" xml:space="preserve">
-    <value>"यहाँ भेजें" मेनू में ShareX दिखाएँ</value>
-  </data>
-  <data name="FirstTimeConfigWindow_ShellContextMenu" xml:space="preserve">
-    <value>Windows Explorer संदर्भ मेनू में "ShareX से अपलोड करें" दिखाएँ</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindows" xml:space="preserve">
-    <value>Windows आरंभ होने पर ShareX चलाएँ</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByPolicy" xml:space="preserve">
-    <value>आपके संगठन ने स्टार्टअप अक्षम किया है</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsDisabledByUser" xml:space="preserve">
-    <value>टास्क मैनेजर में स्टार्टअप अक्षम किया गया है</value>
-  </data>
-  <data name="FirstTimeConfigWindow_StartWithWindowsEnabledByPolicy" xml:space="preserve">
-    <value>आपके संगठन ने स्टार्टअप सक्षम किया है</value>
-  </data>
-  <data name="FirstTimeConfigWindow_SteamInApp" xml:space="preserve">
-    <value>ShareX खुला होने पर Steam में "In-app" दिखाएँ</value>
-  </data>
-  <data name="FirstTimeConfigWindow_Subtitle" xml:space="preserve">
-    <value>चुनें कि ShareX Windows से कैसे एकीकृत हो।</value>
-  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>हॉटकी पंजीकरण विफल</value>
   </data>
