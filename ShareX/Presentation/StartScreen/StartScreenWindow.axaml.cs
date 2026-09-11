@@ -55,6 +55,7 @@ public partial class StartScreenWindow : Window
     private void OnClosed(object? sender, EventArgs e)
     {
         ThemeManager.ThemeChanged -= OnThemeChanged;
+        Program.Settings.ShowStartScreen = false;
         SettingManager.SaveApplicationConfigAsync();
         _viewModel.Dispose();
     }
