@@ -19,6 +19,7 @@ jobs:
   build:
     name: Build
     runs-on: windows-latest
+    environment: release
 
     strategy:
       fail-fast: false
@@ -109,7 +110,7 @@ jobs:
 
       - name: Azure login
         if: >-
-          (github.ref == 'refs/heads/develop' && matrix.configuration == 'Release') ||
+          (startsWith(github.ref, 'refs/heads/') && matrix.configuration == 'Release') ||
           (startsWith(github.ref, 'refs/tags/v') &&
           (matrix.configuration == 'Release' || matrix.configuration == 'Steam' || matrix.configuration == 'MicrosoftStore'))
         uses: azure/login@v3
@@ -120,7 +121,7 @@ jobs:
 
       - name: Sign ShareX binaries
         if: >-
-          (github.ref == 'refs/heads/develop' && matrix.configuration == 'Release') ||
+          (startsWith(github.ref, 'refs/heads/') && matrix.configuration == 'Release') ||
           (startsWith(github.ref, 'refs/tags/v') &&
           (matrix.configuration == 'Release' || matrix.configuration == 'Steam' || matrix.configuration == 'MicrosoftStore'))
         uses: azure/artifact-signing-action@v2
@@ -159,7 +160,7 @@ jobs:
 
       - name: Sign setup
         if: >-
-          (github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/tags/v')) &&
+          (startsWith(github.ref, 'refs/heads/') || startsWith(github.ref, 'refs/tags/v')) &&
           matrix.configuration == 'Release'
         uses: azure/artifact-signing-action@v2
         with:
