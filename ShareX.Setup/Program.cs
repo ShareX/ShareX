@@ -45,15 +45,14 @@ namespace ShareX.Setup
             CreateMicrosoftStoreFolder = 1 << 4,
             CreateMicrosoftStoreDebugFolder = 1 << 5,
             CompileAppx = 1 << 6,
-            DownloadTools = 1 << 7,
-            CreateChecksumFile = 1 << 8,
-            OpenOutputDirectory = 1 << 9,
+            CreateChecksumFile = 1 << 7,
+            OpenOutputDirectory = 1 << 8,
 
-            Release = CreateSetup | CreatePortable | DownloadTools | OpenOutputDirectory,
-            Debug = CreateDebug | DownloadTools | OpenOutputDirectory,
-            Steam = CreateSteamFolder | DownloadTools | OpenOutputDirectory,
-            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadTools | OpenOutputDirectory,
-            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadTools | OpenOutputDirectory
+            Release = CreateSetup | CreatePortable | OpenOutputDirectory,
+            Debug = CreateDebug | OpenOutputDirectory,
+            Steam = CreateSteamFolder | OpenOutputDirectory,
+            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | OpenOutputDirectory,
+            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | OpenOutputDirectory
         }
 
         private static SetupJobs Job { get; set; } = SetupJobs.Release;
@@ -89,12 +88,9 @@ namespace ShareX.Setup
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam-{Platform}.zip");
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-MicrosoftStore-{Platform}.appx");
         private static string MicrosoftStoreDebugAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-MicrosoftStore-debug-{Platform}.appx");
-        private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
         private static string MakeAppxPath => Path.Combine(WindowsKitsDir, "x64", "makeappx.exe");
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
-        private const string FFmpegVersion = "8.1";
-        private static string FFmpegDownloadURL => $"https://github.com/ShareX/FFmpeg/releases/download/v{FFmpegVersion}/ffmpeg-{FFmpegVersion}-win-{Platform}.zip";
 
         private static void Main(string[] args)
         {
@@ -111,11 +107,6 @@ namespace ShareX.Setup
                 Console.WriteLine("Cleaning output directory: " + OutputDir);
 
                 Directory.Delete(OutputDir, true);
-            }
-
-            if (Job.HasFlag(SetupJobs.DownloadTools))
-            {
-                DownloadFFmpeg();
             }
 
             if (Job.HasFlag(SetupJobs.CreateSetup))
@@ -382,11 +373,6 @@ namespace ShareX.Setup
                 }
             }
 
-            if (File.Exists(FFmpegPath))
-            {
-                FileHelpers.CopyFiles(FFmpegPath, destination);
-            }
-
             if (job == SetupJobs.CreatePortable)
             {
                 FileHelpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
@@ -423,21 +409,6 @@ namespace ShareX.Setup
 
             ZipManager.Compress(source, archivePath);
             CreateChecksumFile(archivePath);
-        }
-
-        private static void DownloadFFmpeg()
-        {
-            if (!File.Exists(FFmpegPath))
-            {
-                string fileName = Path.GetFileName(FFmpegDownloadURL);
-                string filePath = Path.Combine(OutputDir, fileName);
-
-                Console.WriteLine("Downloading: " + FFmpegDownloadURL);
-                WebHelpers.DownloadFileAsync(FFmpegDownloadURL, filePath).GetAwaiter().GetResult();
-
-                Console.WriteLine("Extracting: " + filePath);
-                ZipManager.Extract(filePath, OutputDir, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
-            }
         }
 
         private static void CreateChecksumFile(string filePath)
