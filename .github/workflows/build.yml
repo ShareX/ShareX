@@ -108,7 +108,10 @@ jobs:
           Copy-Item -LiteralPath $ffmpegPath.FullName -Destination $destinationPath -Force
 
       - name: Azure login
-        if: matrix.configuration != 'Debug' && matrix.configuration != 'MicrosoftStoreDebug'
+        if: >-
+          (github.ref == 'refs/heads/develop' && matrix.configuration == 'Release') ||
+          (startsWith(github.ref, 'refs/tags/v') &&
+          (matrix.configuration == 'Release' || matrix.configuration == 'Steam' || matrix.configuration == 'MicrosoftStore'))
         uses: azure/login@v3
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -116,7 +119,10 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Sign ShareX binaries
-        if: matrix.configuration != 'Debug' && matrix.configuration != 'MicrosoftStoreDebug'
+        if: >-
+          (github.ref == 'refs/heads/develop' && matrix.configuration == 'Release') ||
+          (startsWith(github.ref, 'refs/tags/v') &&
+          (matrix.configuration == 'Release' || matrix.configuration == 'Steam' || matrix.configuration == 'MicrosoftStore'))
         uses: azure/artifact-signing-action@v2
         with:
           endpoint: ${{ vars.SIGNING_ENDPOINT }}
@@ -129,7 +135,7 @@ jobs:
           timestamp-digest: SHA256
 
       - name: Sign Steam launcher
-        if: matrix.configuration == 'Steam'
+        if: startsWith(github.ref, 'refs/tags/v') && matrix.configuration == 'Steam'
         uses: azure/artifact-signing-action@v2
         with:
           endpoint: ${{ vars.SIGNING_ENDPOINT }}
@@ -152,7 +158,9 @@ jobs:
           & "ShareX.Setup\bin\${{ matrix.configuration }}\win-x64\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}" -platform "${{ matrix.platform }}"
 
       - name: Sign setup
-        if: matrix.configuration == 'Release'
+        if: >-
+          (github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/tags/v')) &&
+          matrix.configuration == 'Release'
         uses: azure/artifact-signing-action@v2
         with:
           endpoint: ${{ vars.SIGNING_ENDPOINT }}
