@@ -108,7 +108,7 @@ jobs:
           Copy-Item -LiteralPath $ffmpegPath.FullName -Destination $destinationPath -Force
 
       - name: Azure login
-        if: github.ref == 'refs/heads/test-signing' && matrix.configuration != 'Debug' && matrix.configuration != 'MicrosoftStoreDebug'
+        if: matrix.configuration != 'Debug' && matrix.configuration != 'MicrosoftStoreDebug'
         uses: azure/login@v3
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -116,7 +116,7 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Sign ShareX binaries
-        if: github.ref == 'refs/heads/test-signing' && matrix.configuration != 'Debug' && matrix.configuration != 'MicrosoftStoreDebug'
+        if: matrix.configuration != 'Debug' && matrix.configuration != 'MicrosoftStoreDebug'
         uses: azure/artifact-signing-action@v2
         with:
           endpoint: ${{ vars.SIGNING_ENDPOINT }}
@@ -129,7 +129,7 @@ jobs:
           timestamp-digest: SHA256
 
       - name: Sign Steam launcher
-        if: github.ref == 'refs/heads/test-signing' && matrix.configuration == 'Steam'
+        if: matrix.configuration == 'Steam'
         uses: azure/artifact-signing-action@v2
         with:
           endpoint: ${{ vars.SIGNING_ENDPOINT }}
@@ -152,7 +152,7 @@ jobs:
           & "ShareX.Setup\bin\${{ matrix.configuration }}\win-x64\ShareX.Setup.exe" -silent -job "${{ matrix.configuration }}" -platform "${{ matrix.platform }}"
 
       - name: Sign setup
-        if: github.ref == 'refs/heads/test-signing' && matrix.configuration == 'Release'
+        if: matrix.configuration == 'Release'
         uses: azure/artifact-signing-action@v2
         with:
           endpoint: ${{ vars.SIGNING_ENDPOINT }}
