@@ -20,6 +20,11 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AvaloniaDialogResult = ShareX.AvaloniaUI.DialogResult;
+using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
+using MessageBoxDefaultButton = ShareX.AvaloniaUI.MessageBoxDefaultButton;
+using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
 
 namespace ShareX.HelpersLib;
 
@@ -39,6 +44,7 @@ public partial class DownloaderWindow : Window
     public bool AutoStartInstall { get; set; } = true;
     public DownloaderWindowStatus Status { get; private set; } = DownloaderWindowStatus.Waiting;
     public bool RunInstallerInBackground { get; set; } = true;
+    public bool VerifyInstallerSignature { get; set; }
 
     private FileDownloader? _fileDownloader;
     private DialogResult _result;
@@ -78,6 +84,8 @@ public partial class DownloaderWindow : Window
             {
                 window.AcceptHeader = "application/octet-stream";
             }
+
+            window.VerifyInstallerSignature = true;
         });
     }
 
@@ -109,6 +117,19 @@ public partial class DownloaderWindow : Window
     public void Install()
     {
         if (Status != DownloaderWindowStatus.DownloadCompleted) return;
+
+        if (VerifyInstallerSignature && !AuthenticodeSignatureVerifier.IsTrusted(DownloadLocation))
+        {
+            AvaloniaDialogResult result = MessageBox.Show(
+                this,
+                Localization.Strings.DownloaderWindow_InvalidSignatureWarning,
+                Localization.Strings.DownloaderWindow_InvalidSignatureTitle,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning,
+                MessageBoxDefaultButton.Button2);
+
+            if (result != AvaloniaDialogResult.Yes) return;
+        }
 
         Status = DownloaderWindowStatus.InstallStarted;
         _result = DialogResult.OK;

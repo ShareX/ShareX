@@ -227,6 +227,12 @@ namespace ShareX.HelpersLib.Localization {
         public static string DownloaderWindow_Download {
             get { return ResourceManager.GetString("DownloaderWindow_Download", resourceCulture); }
         }
+        public static string DownloaderWindow_InvalidSignatureTitle {
+            get { return ResourceManager.GetString("DownloaderWindow_InvalidSignatureTitle", resourceCulture); }
+        }
+        public static string DownloaderWindow_InvalidSignatureWarning {
+            get { return ResourceManager.GetString("DownloaderWindow_InvalidSignatureWarning", resourceCulture); }
+        }
         public static string UpdateMessageWindow_View_changelog {
             get { return ResourceManager.GetString("UpdateMessageWindow_View_changelog", resourceCulture); }
         }
