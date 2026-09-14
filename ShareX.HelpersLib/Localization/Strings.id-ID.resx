@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Pengunduh berkas</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Tanda tangan digital tidak valid</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows tidak dapat memverifikasi tanda tangan digital yang valid untuk penginstal yang diunduh. File mungkin telah diubah atau mungkin bukan penginstal ShareX resmi.
+
+Apakah Anda tetap ingin menjalankannya?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Pengunduh berkas</value>
   </data>

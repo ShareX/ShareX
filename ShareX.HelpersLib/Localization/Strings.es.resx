@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Descargador de archivos</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Firma digital no válida</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows no pudo comprobar una firma digital válida para el instalador descargado. Es posible que el archivo se haya modificado o que no sea un instalador oficial de ShareX.
+
+¿Desea ejecutarlo de todos modos?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Descargador de archivos</value>
   </data>

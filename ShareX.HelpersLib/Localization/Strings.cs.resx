@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Stahování souborů</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Neplatný digitální podpis</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Systému Windows se nepodařilo ověřit platný digitální podpis staženého instalačního programu. Soubor mohl být změněn nebo se nemusí jednat o oficiální instalační program ShareX.
+
+Chcete jej přesto spustit?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX – Stahování souborů</value>
   </data>

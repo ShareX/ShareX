@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Download file</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Firma digitale non valida</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows non è riuscito a verificare una firma digitale valida per il programma di installazione scaricato. Il file potrebbe essere stato modificato o potrebbe non essere un programma di installazione ufficiale di ShareX.
+
+Vuoi eseguirlo comunque?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Download file</value>
   </data>

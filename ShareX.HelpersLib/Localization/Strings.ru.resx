@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Загрузчик файлов</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Недействительная цифровая подпись</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Системе Windows не удалось проверить действительную цифровую подпись скачанного установщика. Возможно, файл был изменен или не является официальным установщиком ShareX.
+
+Все равно запустить его?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX — Загрузчик файлов</value>
   </data>

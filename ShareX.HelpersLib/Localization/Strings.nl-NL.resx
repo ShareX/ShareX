@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Bestandsdownloader</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Ongeldige digitale handtekening</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows kan geen geldige digitale handtekening voor het gedownloade installatieprogramma verifiëren. Het bestand is mogelijk gewijzigd of is mogelijk geen officieel ShareX-installatieprogramma.
+
+Wilt u het toch uitvoeren?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Bestandsdownloader</value>
   </data>

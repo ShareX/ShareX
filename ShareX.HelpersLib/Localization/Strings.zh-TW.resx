@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>檔案下載器</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>數位簽章無效</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows 無法驗證所下載安裝程式的有效數位簽章。該檔案可能已遭修改，或不是 ShareX 官方安裝程式。
+
+仍要執行嗎？</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - 檔案下載器</value>
   </data>

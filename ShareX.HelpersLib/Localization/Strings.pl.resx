@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Pobieranie plików</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Nieprawidłowy podpis cyfrowy</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>System Windows nie mógł zweryfikować prawidłowego podpisu cyfrowego pobranego instalatora. Plik mógł zostać zmodyfikowany lub może nie być oficjalnym instalatorem ShareX.
+
+Czy mimo to chcesz go uruchomić?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Pobieranie plików</value>
   </data>

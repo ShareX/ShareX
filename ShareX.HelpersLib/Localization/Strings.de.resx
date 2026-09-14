@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Datei-Downloader</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Ungültige digitale Signatur</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows konnte keine gültige digitale Signatur für das heruntergeladene Installationsprogramm bestätigen. Die Datei wurde möglicherweise verändert oder ist möglicherweise kein offizielles ShareX-Installationsprogramm.
+
+Möchten Sie es dennoch ausführen?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Datei-Downloader</value>
   </data>

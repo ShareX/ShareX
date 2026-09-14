@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>تنزيل الملفات</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>توقيع رقمي غير صالح</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>تعذر على Windows التحقق من وجود توقيع رقمي صالح لبرنامج التثبيت الذي تم تنزيله. ربما تم تعديل الملف أو ربما لا يكون برنامج تثبيت رسميًا لـ ShareX.
+
+هل ما زلت تريد تشغيله؟</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - تنزيل الملفات</value>
   </data>

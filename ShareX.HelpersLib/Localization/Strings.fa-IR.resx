@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>بارگیری فایل</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>امضای دیجیتال نامعتبر</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows نتوانست یک امضای دیجیتال معتبر را برای نصب‌کننده دانلودشده تأیید کند. ممکن است فایل تغییر کرده باشد یا نصب‌کننده رسمی ShareX نباشد.
+
+آیا همچنان می‌خواهید آن را اجرا کنید؟</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - بارگیری فایل</value>
   </data>

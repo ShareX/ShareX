@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>파일 다운로더</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>유효하지 않은 디지털 서명</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows에서 다운로드한 설치 프로그램의 유효한 디지털 서명을 확인할 수 없습니다. 파일이 변경되었거나 공식 ShareX 설치 프로그램이 아닐 수 있습니다.
+
+그래도 실행하시겠습니까?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - 파일 다운로더</value>
   </data>

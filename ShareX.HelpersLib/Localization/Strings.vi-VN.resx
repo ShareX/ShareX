@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Trình tải tệp</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Chữ ký số không hợp lệ</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows không thể xác minh chữ ký số hợp lệ cho trình cài đặt đã tải xuống. Tệp có thể đã bị sửa đổi hoặc có thể không phải là trình cài đặt ShareX chính thức.
+
+Bạn vẫn muốn chạy tệp này chứ?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Trình tải tệp</value>
   </data>

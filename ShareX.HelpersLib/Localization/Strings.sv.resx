@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Filhämtare</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Ogiltig digital signatur</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows kunde inte verifiera en giltig digital signatur för det hämtade installationsprogrammet. Filen kan ha ändrats eller är kanske inte ett officiellt ShareX-installationsprogram.
+
+Vill du ändå köra det?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX – Filhämtare</value>
   </data>

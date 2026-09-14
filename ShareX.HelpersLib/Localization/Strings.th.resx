@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>ไฟล์ ตัวดาวน์โหลด</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>ลายเซ็นดิจิทัลไม่ถูกต้อง</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows ไม่สามารถตรวจสอบลายเซ็นดิจิทัลที่ถูกต้องสำหรับโปรแกรมติดตั้งที่ดาวน์โหลดมาได้ ไฟล์อาจถูกแก้ไขหรืออาจไม่ใช่โปรแกรมติดตั้ง ShareX อย่างเป็นทางการ
+
+คุณยังต้องการเรียกใช้หรือไม่?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - ตัวดาวน์โหลดไฟล์</value>
   </data>

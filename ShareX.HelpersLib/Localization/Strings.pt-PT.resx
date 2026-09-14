@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Transferência de ficheiros</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Assinatura digital inválida</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>O Windows não conseguiu verificar uma assinatura digital válida para o instalador transferido. O ficheiro pode ter sido modificado ou pode não ser um instalador oficial do ShareX.
+
+Ainda assim, pretende executá-lo?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Transferência de ficheiros</value>
   </data>

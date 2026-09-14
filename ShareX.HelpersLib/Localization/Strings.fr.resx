@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Téléchargeur de fichiers</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Signature numérique non valide</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows n’a pas pu vérifier la validité de la signature numérique du programme d’installation téléchargé. Le fichier a peut-être été modifié ou il ne s’agit peut-être pas d’un programme d’installation officiel de ShareX.
+
+Voulez-vous quand même l’exécuter ?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Téléchargeur de fichiers</value>
   </data>

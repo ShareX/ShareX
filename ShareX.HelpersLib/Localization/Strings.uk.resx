@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Завантажувач файлів</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Недійсний цифровий підпис</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows не вдалося перевірити дійсний цифровий підпис завантаженого інсталятора. Можливо, файл було змінено або він не є офіційним інсталятором ShareX.
+
+Усе одно запустити його?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX — Завантажувач файлів</value>
   </data>

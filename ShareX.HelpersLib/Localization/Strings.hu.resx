@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Fájlletöltő</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Érvénytelen digitális aláírás</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>A Windows nem tudta ellenőrizni a letöltött telepítő érvényes digitális aláírását. Lehetséges, hogy a fájlt módosították, vagy nem hivatalos ShareX-telepítő.
+
+Ennek ellenére szeretné futtatni?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Fájlletöltő</value>
   </data>

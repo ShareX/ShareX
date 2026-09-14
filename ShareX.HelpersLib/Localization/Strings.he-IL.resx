@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>הורדת קבצים</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>חתימה דיגיטלית לא חוקית</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows לא הצליח לאמת חתימה דיגיטלית חוקית עבור תוכנית ההתקנה שהורדה. ייתכן שהקובץ שונה או שאינו תוכנית התקנה רשמית של ShareX.
+
+האם עדיין ברצונך להפעיל אותו?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - הורדת קבצים</value>
   </data>

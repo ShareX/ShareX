@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Dosya indirici</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Geçersiz dijital imza</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows, indirilen yükleyicide geçerli bir dijital imza olduğunu doğrulayamadı. Dosya değiştirilmiş veya resmi bir ShareX yükleyicisi olmayabilir.
+
+Yine de çalıştırmak istiyor musunuz?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Dosya indirici</value>
   </data>

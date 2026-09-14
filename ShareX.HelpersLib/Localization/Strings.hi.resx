@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>फ़ाइल डाउनलोडर</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>अमान्य डिजिटल हस्ताक्षर</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows डाउनलोड किए गए इंस्टॉलर के लिए मान्य डिजिटल हस्ताक्षर सत्यापित नहीं कर सका। हो सकता है कि फ़ाइल में बदलाव किया गया हो या यह आधिकारिक ShareX इंस्टॉलर न हो।
+
+क्या आप फिर भी इसे चलाना चाहते हैं?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - फ़ाइल डाउनलोडर</value>
   </data>

@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>Descărcare fișiere</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>Semnătură digitală nevalidă</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows nu a putut verifica o semnătură digitală validă pentru programul de instalare descărcat. Este posibil ca fișierul să fi fost modificat sau să nu fie un program de instalare ShareX oficial.
+
+Doriți totuși să îl executați?</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - Descărcare fișiere</value>
   </data>

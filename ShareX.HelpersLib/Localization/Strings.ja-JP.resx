@@ -439,6 +439,14 @@
   <data name="DownloaderWindow_Heading" xml:space="preserve">
     <value>ファイルダウンローダー</value>
   </data>
+  <data name="DownloaderWindow_InvalidSignatureTitle" xml:space="preserve">
+    <value>無効なデジタル署名</value>
+  </data>
+  <data name="DownloaderWindow_InvalidSignatureWarning" xml:space="preserve">
+    <value>Windows は、ダウンロードしたインストーラーの有効なデジタル署名を確認できませんでした。ファイルが変更されているか、公式の ShareX インストーラーではない可能性があります。
+
+それでも実行しますか？</value>
+  </data>
   <data name="DownloaderWindow_Title" xml:space="preserve">
     <value>ShareX - ファイルダウンローダー</value>
   </data>
