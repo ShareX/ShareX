@@ -11,6 +11,7 @@
 
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
 using System;
 using System.IO;
@@ -92,7 +93,7 @@ public partial class ErrorWindow : Window
     {
         DebugHelper.WriteLine("ShareX closing. Reason: Unhandled exception.");
         Close();
-        System.Windows.Forms.Application.Exit();
+        AvaloniaBootstrapper.Shutdown();
     }
 
     private void OnOKClick(object? sender, RoutedEventArgs e) => Close();
