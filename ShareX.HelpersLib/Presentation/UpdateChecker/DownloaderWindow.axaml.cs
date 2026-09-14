@@ -128,7 +128,12 @@ public partial class DownloaderWindow : Window
                 MessageBoxIcon.Warning,
                 MessageBoxDefaultButton.Button2);
 
-            if (result != AvaloniaDialogResult.Yes) return;
+            if (result != AvaloniaDialogResult.Yes)
+            {
+                _result = DialogResult.Cancel;
+                Close();
+                return;
+            }
         }
 
         Status = DownloaderWindowStatus.InstallStarted;
