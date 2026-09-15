@@ -24,33 +24,36 @@ internal sealed class MouseHighlight
     public bool Crosshairs { get; init; }
 }
 
-// Created and disposed on the Avalonia UI thread, which pumps the mouse hook.
+// Animation state stays on the Avalonia UI thread. The mouse hook has its own
+// message loop and only communicates through the nonblocking input buffer.
 internal sealed class MouseHighlighterService : IDisposable
 {
     private readonly List<MouseHighlighterOverlayWindow> _windows = [];
     private readonly List<MouseHighlight> _highlights = [];
     private readonly DispatcherTimer _timer;
     private readonly MouseHighlighterMouseHook? _hook;
+    private readonly MouseHighlighterInputBuffer _input;
     private readonly Window _screenProbe = new();
-    private readonly Stopwatch _clock = Stopwatch.StartNew();
+    private readonly long _startTimestamp = Stopwatch.GetTimestamp();
     private MouseHighlight? _primaryHeld;
     private MouseHighlight? _secondaryHeld;
 
     public MouseHighlighterOptions Options { get; private set; }
     public DrawingPoint CursorPosition { get; private set; }
     public IReadOnlyList<MouseHighlight> Highlights => _highlights;
-    public double Time => _clock.Elapsed.TotalMilliseconds;
+    public double Time => Stopwatch.GetElapsedTime(_startTimestamp).TotalMilliseconds;
 
     public MouseHighlighterService(MouseHighlighterOptions options)
     {
         Options = options;
         options.Validate();
         CursorPosition = CaptureHelpers.GetCursorPosition();
+        _input = new MouseHighlighterInputBuffer(CursorPosition);
         _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(1000d / 60) };
         _timer.Tick += OnTick;
         try
         {
-            _hook = new MouseHighlighterMouseHook(OnMouseInput);
+            _hook = new MouseHighlighterMouseHook(_input);
             CreateOverlays();
             _screenProbe.Screens.Changed += OnScreensChanged;
             _timer.Start();
@@ -68,6 +71,7 @@ internal sealed class MouseHighlighterService : IDisposable
         Options = options;
         _highlights.Clear();
         _primaryHeld = _secondaryHeld = null;
+        _input.DiscardPendingEvents();
     }
 
     private void CreateOverlays()
@@ -93,7 +97,7 @@ internal sealed class MouseHighlighterService : IDisposable
         catch (Exception ex) { MouseHighlighterManager.StopOnError(this, ex); }
     }
 
-    private void OnMouseInput(int message, DrawingPoint point)
+    private void MoveCursor(DrawingPoint point)
     {
         CursorPosition = point;
         bool follow = Options.Mode != MouseHighlightMode.Ripple || Options.FollowCursorWhileHeld;
@@ -102,33 +106,46 @@ internal sealed class MouseHighlighterService : IDisposable
             if (_primaryHeld != null) _primaryHeld.Position = point;
             if (_secondaryHeld != null) _secondaryHeld.Position = point;
         }
-
-        // Respect the Windows primary/secondary button assignment.
-        bool swapped = NativeMethods.GetSystemMetrics(SystemMetric.SM_SWAPBUTTON) != 0;
-        switch (message)
-        {
-            case 0x0201: Press(swapped, point); break; // WM_LBUTTONDOWN
-            case 0x0204: Press(!swapped, point); break; // WM_RBUTTONDOWN
-            case 0x0202: Release(swapped, point); break;
-            case 0x0205: Release(!swapped, point); break;
-        }
     }
 
-    private void Press(bool secondary, DrawingPoint point)
+    private void ProcessPendingInput()
+    {
+        if (_input.ConsumeOverflow())
+        {
+            _input.DiscardPendingEvents();
+            _highlights.Clear();
+            _primaryHeld = _secondaryHeld = null;
+            MoveCursor(_input.Position);
+            int pressed = _input.PressedButtons;
+            if ((pressed & 1) != 0) Press(false, CursorPosition, Time);
+            if ((pressed & 2) != 0) Press(true, CursorPosition, Time);
+        }
+        // Limit work per frame even if input arrives continuously.
+        for (int i = 0; i < MouseHighlighterInputBuffer.Capacity && _input.TryRead(out MouseHighlighterButtonEvent input); i++)
+        {
+            MoveCursor(input.Position);
+            double time = Stopwatch.GetElapsedTime(_startTimestamp, input.Timestamp).TotalMilliseconds;
+            if (input.Pressed) Press(input.Secondary, input.Position, time);
+            else Release(input.Secondary, input.Position, time);
+        }
+        MoveCursor(_input.Position);
+    }
+
+    private void Press(bool secondary, DrawingPoint point, double time)
     {
         MouseHighlight? previous = secondary ? _secondaryHeld : _primaryHeld;
-        if (previous != null) previous.Released = Time;
-        MouseHighlight highlight = new() { Position = point, Secondary = secondary, Started = Time };
+        if (previous != null) previous.Released = time;
+        MouseHighlight highlight = new() { Position = point, Secondary = secondary, Started = time };
         _highlights.Add(highlight);
         if (secondary) _secondaryHeld = highlight;
         else _primaryHeld = highlight;
     }
 
-    private void Release(bool secondary, DrawingPoint point)
+    private void Release(bool secondary, DrawingPoint point, double time)
     {
         MouseHighlight? highlight = secondary ? _secondaryHeld : _primaryHeld;
         if (highlight == null) return;
-        highlight.Released = Time;
+        highlight.Released = time;
         if (secondary) _secondaryHeld = null;
         else _primaryHeld = null;
 
@@ -136,13 +153,19 @@ internal sealed class MouseHighlighterService : IDisposable
         {
             _highlights.Add(new MouseHighlight
             {
-                Position = point, Secondary = true, Started = Time, Released = Time, Crosshairs = true
+                Position = point, Secondary = true, Started = time, Released = time, Crosshairs = true
             });
         }
     }
 
     private void OnTick(object? sender, EventArgs e)
     {
+        if (_hook?.Failure is Exception failure)
+        {
+            MouseHighlighterManager.StopOnError(this, failure);
+            return;
+        }
+        ProcessPendingInput();
         double time = Time;
         _highlights.RemoveAll(highlight => highlight.Released.HasValue &&
             time - highlight.Released.Value >= (Options.Mode == MouseHighlightMode.Ripple
