@@ -46,8 +46,8 @@ public sealed class MouseHighlighterSettingsControl : UserControl
 
         ComboBox mode = new()
         {
-            ItemsSource = new[] { Strings.MouseHighlighter_Circle, Strings.MouseHighlighter_Spotlight, Strings.MouseHighlighter_Ripple },
-            SelectedIndex = (int)options.Mode,
+            ItemsSource = new[] { Strings.MouseHighlighter_Circle, Strings.MouseHighlighter_Ripple },
+            SelectedIndex = options.Mode == MouseHighlightMode.Circle ? 0 : 1,
             HorizontalAlignment = HorizontalAlignment.Stretch
         };
         void UpdateMode()
@@ -55,13 +55,12 @@ public sealed class MouseHighlighterSettingsControl : UserControl
             bool isRipple = options.Mode == MouseHighlightMode.Ripple;
             circle.IsVisible = !isRipple;
             ripple.IsVisible = isRipple;
-            primaryColor.IsVisible = secondaryColor.IsVisible = middleColor.IsVisible = options.Mode != MouseHighlightMode.Spotlight;
             primaryCrosshairs.IsVisible = secondaryCrosshairs.IsVisible = middleCrosshairs.IsVisible = isRipple;
         }
         mode.SelectionChanged += (_, _) =>
         {
             if (mode.SelectedIndex < 0) return;
-            options.Mode = (MouseHighlightMode)mode.SelectedIndex;
+            options.Mode = mode.SelectedIndex == 0 ? MouseHighlightMode.Circle : MouseHighlightMode.Ripple;
             UpdateMode();
             Changed();
         };

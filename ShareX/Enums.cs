@@ -272,6 +272,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         Ruler,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        MouseHighlighter,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         PinToScreen,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         PinToScreenFromScreen,
@@ -355,9 +357,7 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Other)]
         ToggleTrayMenu,
         [Category(EnumExtensions.HotkeyType_Category_Other)]
-        ExitShareX,
-        [Category(EnumExtensions.HotkeyType_Category_Tools)]
-        MouseHighlighter
+        ExitShareX
     }
 
     public enum ToastClickAction // Localized

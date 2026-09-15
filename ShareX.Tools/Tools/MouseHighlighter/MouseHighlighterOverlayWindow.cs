@@ -83,11 +83,6 @@ internal sealed class MouseHighlighterOverlayWindow : NativeWindow, IDisposable
 
     private Rectangle GetEffectBounds(MouseHighlighterOptions options)
     {
-        if (options.Mode == MouseHighlightMode.Spotlight)
-        {
-            return options.AlwaysColor.A == 0 ? Rectangle.Empty : _screenBounds;
-        }
-
         Rectangle bounds = Rectangle.Empty;
         if (options.Mode == MouseHighlightMode.Circle && options.AlwaysColor.A > 0)
         {
@@ -114,23 +109,6 @@ internal sealed class MouseHighlighterOverlayWindow : NativeWindow, IDisposable
     {
         double time = _service.Time;
         SKPoint cursor = new(_service.CursorPosition.X, _service.CursorPosition.Y);
-        if (options.Mode == MouseHighlightMode.Spotlight)
-        {
-            bool held = _service.Highlights.Any(highlight => !highlight.Released.HasValue);
-            MouseHighlight? released = _service.Highlights.LastOrDefault(highlight => highlight.Released.HasValue);
-            double press = held ? 1 : released == null ? 0 : FadeOpacity(released, options, time);
-            float radius = (float)(options.Radius * (1 - 0.2 * press));
-            using SKPaint backdrop = Paint(options.AlwaysColor);
-            canvas.DrawRect(_screenBounds.X, _screenBounds.Y, _screenBounds.Width, _screenBounds.Height, backdrop);
-            // Punch a feathered hole in the backdrop using premultiplied alpha.
-            float feather = Math.Min(8, radius * 0.15f);
-            using SKShader mask = SKShader.CreateRadialGradient(cursor, radius + feather,
-                [SKColors.Black, SKColors.Black, SKColors.Transparent], [0, (radius - feather) / (radius + feather), 1], SKShaderTileMode.Clamp);
-            using SKPaint hole = new() { IsAntialias = true, Shader = mask, BlendMode = SKBlendMode.DstOut };
-            canvas.DrawCircle(cursor, radius + feather, hole);
-            return;
-        }
-
         if (options.Mode == MouseHighlightMode.Circle)
         {
             using SKPaint always = Paint(options.AlwaysColor);

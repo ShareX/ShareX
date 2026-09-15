@@ -1927,9 +1927,6 @@
   <data name="MouseHighlighter_Circle" xml:space="preserve">
     <value>Circle highlight</value>
   </data>
-  <data name="MouseHighlighter_Spotlight" xml:space="preserve">
-    <value>Spotlight</value>
-  </data>
   <data name="MouseHighlighter_Ripple" xml:space="preserve">
     <value>Ripple</value>
   </data>
@@ -1946,7 +1943,7 @@
     <value>Always highlight color:</value>
   </data>
   <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
-    <value>Use a transparent color to disable the persistent highlight. In Spotlight mode, this color dims the area outside the pointer.</value>
+    <value>Use a transparent color to disable the persistent highlight.</value>
   </data>
   <data name="MouseHighlighter_Radius" xml:space="preserve">
     <value>Radius (px):</value>

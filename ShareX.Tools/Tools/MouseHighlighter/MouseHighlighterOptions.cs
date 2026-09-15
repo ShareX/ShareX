@@ -14,7 +14,6 @@ namespace ShareX.Tools;
 public enum MouseHighlightMode
 {
     Circle,
-    Spotlight,
     Ripple
 }
 
