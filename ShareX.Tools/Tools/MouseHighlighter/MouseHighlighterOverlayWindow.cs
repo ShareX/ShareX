@@ -95,7 +95,7 @@ internal sealed class MouseHighlighterOverlayWindow : NativeWindow, IDisposable
         }
         foreach (MouseHighlight highlight in _service.Highlights)
         {
-            Color color = highlight.Secondary ? options.SecondaryColor : options.PrimaryColor;
+            Color color = options.GetColor(highlight.Button);
             if (color.A == 0) continue;
             int radius = options.Mode == MouseHighlightMode.Ripple ? options.RippleSize / 2 + 12 : options.Radius + 2;
             Rectangle effect = Rectangle.Intersect(Around(highlight.Position, radius), _screenBounds);
@@ -138,7 +138,7 @@ internal sealed class MouseHighlighterOverlayWindow : NativeWindow, IDisposable
         }
         foreach (MouseHighlight highlight in _service.Highlights)
         {
-            Color color = highlight.Secondary ? options.SecondaryColor : options.PrimaryColor;
+            Color color = options.GetColor(highlight.Button);
             SKPoint center = new(highlight.Position.X, highlight.Position.Y);
             if (options.Mode == MouseHighlightMode.Circle)
             {

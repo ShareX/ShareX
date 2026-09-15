@@ -18,7 +18,7 @@ namespace ShareX.Tools;
 internal sealed class MouseHighlight
 {
     public DrawingPoint Position { get; set; }
-    public bool Secondary { get; init; }
+    public MouseHighlightButton Button { get; init; }
     public double Started { get; init; }
     public double? Released { get; set; }
     public bool Crosshairs { get; init; }
@@ -35,8 +35,7 @@ internal sealed class MouseHighlighterService : IDisposable
     private readonly MouseHighlighterInputBuffer _input;
     private readonly Window _screenProbe = new();
     private readonly long _startTimestamp = Stopwatch.GetTimestamp();
-    private MouseHighlight? _primaryHeld;
-    private MouseHighlight? _secondaryHeld;
+    private readonly MouseHighlight?[] _heldHighlights = new MouseHighlight?[3];
 
     public MouseHighlighterOptions Options { get; private set; }
     public DrawingPoint CursorPosition { get; private set; }
@@ -70,7 +69,7 @@ internal sealed class MouseHighlighterService : IDisposable
         options.Validate();
         Options = options;
         _highlights.Clear();
-        _primaryHeld = _secondaryHeld = null;
+        Array.Clear(_heldHighlights);
         _input.DiscardPendingEvents();
     }
 
@@ -103,8 +102,10 @@ internal sealed class MouseHighlighterService : IDisposable
         bool follow = Options.Mode != MouseHighlightMode.Ripple || Options.FollowCursorWhileHeld;
         if (follow)
         {
-            if (_primaryHeld != null) _primaryHeld.Position = point;
-            if (_secondaryHeld != null) _secondaryHeld.Position = point;
+            foreach (MouseHighlight? highlight in _heldHighlights)
+            {
+                if (highlight != null) highlight.Position = point;
+            }
         }
     }
 
@@ -114,46 +115,46 @@ internal sealed class MouseHighlighterService : IDisposable
         {
             _input.DiscardPendingEvents();
             _highlights.Clear();
-            _primaryHeld = _secondaryHeld = null;
+            Array.Clear(_heldHighlights);
             MoveCursor(_input.Position);
             int pressed = _input.PressedButtons;
-            if ((pressed & 1) != 0) Press(false, CursorPosition, Time);
-            if ((pressed & 2) != 0) Press(true, CursorPosition, Time);
+            for (int i = 0; i < _heldHighlights.Length; i++)
+            {
+                if ((pressed & (1 << i)) != 0) Press((MouseHighlightButton)i, CursorPosition, Time);
+            }
         }
         // Limit work per frame even if input arrives continuously.
         for (int i = 0; i < MouseHighlighterInputBuffer.Capacity && _input.TryRead(out MouseHighlighterButtonEvent input); i++)
         {
             MoveCursor(input.Position);
             double time = Stopwatch.GetElapsedTime(_startTimestamp, input.Timestamp).TotalMilliseconds;
-            if (input.Pressed) Press(input.Secondary, input.Position, time);
-            else Release(input.Secondary, input.Position, time);
+            if (input.Pressed) Press(input.Button, input.Position, time);
+            else Release(input.Button, input.Position, time);
         }
         MoveCursor(_input.Position);
     }
 
-    private void Press(bool secondary, DrawingPoint point, double time)
+    private void Press(MouseHighlightButton button, DrawingPoint point, double time)
     {
-        MouseHighlight? previous = secondary ? _secondaryHeld : _primaryHeld;
+        MouseHighlight? previous = _heldHighlights[(int)button];
         if (previous != null) previous.Released = time;
-        MouseHighlight highlight = new() { Position = point, Secondary = secondary, Started = time };
+        MouseHighlight highlight = new() { Position = point, Button = button, Started = time };
         _highlights.Add(highlight);
-        if (secondary) _secondaryHeld = highlight;
-        else _primaryHeld = highlight;
+        _heldHighlights[(int)button] = highlight;
     }
 
-    private void Release(bool secondary, DrawingPoint point, double time)
+    private void Release(MouseHighlightButton button, DrawingPoint point, double time)
     {
-        MouseHighlight? highlight = secondary ? _secondaryHeld : _primaryHeld;
+        MouseHighlight? highlight = _heldHighlights[(int)button];
         if (highlight == null) return;
         highlight.Released = time;
-        if (secondary) _secondaryHeld = null;
-        else _primaryHeld = null;
+        _heldHighlights[(int)button] = null;
 
-        if (secondary && Options.Mode == MouseHighlightMode.Ripple && Options.ShowSecondaryReleaseCrosshairs)
+        if (Options.Mode == MouseHighlightMode.Ripple && Options.ShowReleaseCrosshairs(button))
         {
             _highlights.Add(new MouseHighlight
             {
-                Position = point, Secondary = true, Started = time, Released = time, Crosshairs = true
+                Position = point, Button = button, Started = time, Released = time, Crosshairs = true
             });
         }
     }

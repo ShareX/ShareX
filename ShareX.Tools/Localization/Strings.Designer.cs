@@ -38,6 +38,8 @@ namespace ShareX.Tools.Localization {
 
         public static string MouseHighlighter_SecondaryColor => ResourceManager.GetString("MouseHighlighter_SecondaryColor", resourceCulture);
 
+        public static string MouseHighlighter_MiddleColor => ResourceManager.GetString("MouseHighlighter_MiddleColor", resourceCulture);
+
         public static string MouseHighlighter_AlwaysColor => ResourceManager.GetString("MouseHighlighter_AlwaysColor", resourceCulture);
 
         public static string MouseHighlighter_AlwaysColorHelp => ResourceManager.GetString("MouseHighlighter_AlwaysColorHelp", resourceCulture);
@@ -56,7 +58,11 @@ namespace ShareX.Tools.Localization {
 
         public static string MouseHighlighter_FollowCursor => ResourceManager.GetString("MouseHighlighter_FollowCursor", resourceCulture);
 
+        public static string MouseHighlighter_PrimaryReleaseCrosshairs => ResourceManager.GetString("MouseHighlighter_PrimaryReleaseCrosshairs", resourceCulture);
+
         public static string MouseHighlighter_ReleaseCrosshairs => ResourceManager.GetString("MouseHighlighter_ReleaseCrosshairs", resourceCulture);
+
+        public static string MouseHighlighter_MiddleReleaseCrosshairs => ResourceManager.GetString("MouseHighlighter_MiddleReleaseCrosshairs", resourceCulture);
 
         public static string MouseHighlighter_AutoActivate => ResourceManager.GetString("MouseHighlighter_AutoActivate", resourceCulture);
 

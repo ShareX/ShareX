@@ -35,6 +35,14 @@ public sealed class MouseHighlighterSettingsControl : UserControl
             color => { options.PrimaryColor = color; Changed(); });
         Control secondaryColor = ColorRow(Strings.MouseHighlighter_SecondaryColor, options.SecondaryColor,
             color => { options.SecondaryColor = color; Changed(); });
+        Control middleColor = ColorRow(Strings.MouseHighlighter_MiddleColor, options.MiddleColor,
+            color => { options.MiddleColor = color; Changed(); });
+        CheckBox primaryCrosshairs = Check(Strings.MouseHighlighter_PrimaryReleaseCrosshairs, options.ShowPrimaryReleaseCrosshairs,
+            value => { options.ShowPrimaryReleaseCrosshairs = value; Changed(); });
+        CheckBox secondaryCrosshairs = Check(Strings.MouseHighlighter_ReleaseCrosshairs, options.ShowSecondaryReleaseCrosshairs,
+            value => { options.ShowSecondaryReleaseCrosshairs = value; Changed(); });
+        CheckBox middleCrosshairs = Check(Strings.MouseHighlighter_MiddleReleaseCrosshairs, options.ShowMiddleReleaseCrosshairs,
+            value => { options.ShowMiddleReleaseCrosshairs = value; Changed(); });
 
         ComboBox mode = new()
         {
@@ -47,7 +55,8 @@ public sealed class MouseHighlighterSettingsControl : UserControl
             bool isRipple = options.Mode == MouseHighlightMode.Ripple;
             circle.IsVisible = !isRipple;
             ripple.IsVisible = isRipple;
-            primaryColor.IsVisible = secondaryColor.IsVisible = options.Mode != MouseHighlightMode.Spotlight;
+            primaryColor.IsVisible = secondaryColor.IsVisible = middleColor.IsVisible = options.Mode != MouseHighlightMode.Spotlight;
+            primaryCrosshairs.IsVisible = secondaryCrosshairs.IsVisible = middleCrosshairs.IsVisible = isRipple;
         }
         mode.SelectionChanged += (_, _) =>
         {
@@ -58,7 +67,11 @@ public sealed class MouseHighlighterSettingsControl : UserControl
         };
         panel.Children.Add(Row(Strings.MouseHighlighter_Mode, mode));
         panel.Children.Add(primaryColor);
+        panel.Children.Add(primaryCrosshairs);
         panel.Children.Add(secondaryColor);
+        panel.Children.Add(secondaryCrosshairs);
+        panel.Children.Add(middleColor);
+        panel.Children.Add(middleCrosshairs);
         circle.Children.Add(ColorRow(Strings.MouseHighlighter_AlwaysColor, options.AlwaysColor,
             color => { options.AlwaysColor = color; Changed(); }));
         circle.Children.Add(new TextBlock
@@ -80,8 +93,6 @@ public sealed class MouseHighlighterSettingsControl : UserControl
             value => { options.RippleDuration = (int)value; Changed(); }));
         ripple.Children.Add(Check(Strings.MouseHighlighter_FollowCursor, options.FollowCursorWhileHeld,
             value => { options.FollowCursorWhileHeld = value; Changed(); }));
-        ripple.Children.Add(Check(Strings.MouseHighlighter_ReleaseCrosshairs, options.ShowSecondaryReleaseCrosshairs,
-            value => { options.ShowSecondaryReleaseCrosshairs = value; Changed(); }));
         panel.Children.Add(circle);
         panel.Children.Add(ripple);
         panel.Children.Add(Check(Strings.MouseHighlighter_AutoActivate, options.AutoActivate,

@@ -226,7 +226,7 @@ internal sealed class MainMenuBuilder
             Item(Strings.MainMenuBuilder_ColorPicker, LucideIcons.palette, () => TaskHelpers.ShowColorPickerDialog()),
             Item(Strings.MainMenuBuilder_ScreenColorPicker, LucideIcons.pipette, () => TaskHelpers.OpenScreenColorPicker()),
             Item(Strings.MainMenuBuilder_Ruler, LucideIcons.ruler, () => TaskHelpers.OpenRuler()),
-            Item(Strings.MouseHighlighter, LucideIcons.mouse_pointer_click, () => TaskHelpers.OpenMouseHighlighter()),
+            Item(Strings.MainMenuBuilder_MouseHighlighter, LucideIcons.mouse_pointer_click, () => TaskHelpers.OpenMouseHighlighter()),
             Item(Strings.MainMenuBuilder_PinToScreenDialog, LucideIcons.pin, () => TaskHelpers.PinToScreen()),
             MainMenuEntry.Separator(),
             Item(Strings.MainMenuBuilder_ImageEditor, LucideIcons.image, () => TaskHelpers.OpenImageEditor()),

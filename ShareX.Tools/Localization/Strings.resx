@@ -1922,7 +1922,7 @@
     <value>Mouse highlighter</value>
   </data>
   <data name="MouseHighlighter_Mode" xml:space="preserve">
-    <value>Highlight mode</value>
+    <value>Highlight mode:</value>
   </data>
   <data name="MouseHighlighter_Circle" xml:space="preserve">
     <value>Circle highlight</value>
@@ -1934,40 +1934,49 @@
     <value>Ripple</value>
   </data>
   <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
-    <value>Primary button color</value>
+    <value>Primary button color:</value>
   </data>
   <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
-    <value>Secondary button color</value>
+    <value>Secondary button color:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>Middle button color:</value>
   </data>
   <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
-    <value>Always highlight color</value>
+    <value>Always highlight color:</value>
   </data>
   <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
     <value>Use a transparent color to disable the persistent highlight. In Spotlight mode, this color dims the area outside the pointer.</value>
   </data>
   <data name="MouseHighlighter_Radius" xml:space="preserve">
-    <value>Radius (px)</value>
+    <value>Radius (px):</value>
   </data>
   <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
-    <value>Fade delay (ms)</value>
+    <value>Fade delay (ms):</value>
   </data>
   <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
-    <value>Fade duration (ms)</value>
+    <value>Fade duration (ms):</value>
   </data>
   <data name="MouseHighlighter_RippleSize" xml:space="preserve">
-    <value>Ripple size (px)</value>
+    <value>Ripple size (px):</value>
   </data>
   <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
-    <value>Ripple intensity</value>
+    <value>Ripple intensity:</value>
   </data>
   <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
-    <value>Ripple duration (ms)</value>
+    <value>Ripple duration (ms):</value>
   </data>
   <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
     <value>Follow cursor while a button is held</value>
   </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>Show crosshairs on primary button release</value>
+  </data>
   <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
     <value>Show crosshairs on secondary button release</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>Show crosshairs on middle button release</value>
   </data>
   <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
     <value>Automatically activate when ShareX starts</value>

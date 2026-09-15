@@ -24,6 +24,7 @@ public sealed class MouseHighlighterOptions
     public MouseHighlightMode Mode { get; set; } = MouseHighlightMode.Ripple;
     public Color PrimaryColor { get; set; } = Color.FromArgb(166, 191, 255, 0);
     public Color SecondaryColor { get; set; } = Color.FromArgb(166, 0, 191, 255);
+    public Color MiddleColor { get; set; } = Color.FromArgb(166, 255, 128, 0);
     public Color AlwaysColor { get; set; } = Color.Transparent;
     public int Radius { get; set; } = 20;
     public int FadeDelay { get; set; } = 500;
@@ -32,7 +33,25 @@ public sealed class MouseHighlighterOptions
     public double RippleIntensity { get; set; } = 0.7;
     public int RippleDuration { get; set; } = 480;
     public bool FollowCursorWhileHeld { get; set; } = true;
+    public bool ShowPrimaryReleaseCrosshairs { get; set; }
     public bool ShowSecondaryReleaseCrosshairs { get; set; } = true;
+    public bool ShowMiddleReleaseCrosshairs { get; set; }
+
+    internal Color GetColor(MouseHighlightButton button) => button switch
+    {
+        MouseHighlightButton.Primary => PrimaryColor,
+        MouseHighlightButton.Secondary => SecondaryColor,
+        MouseHighlightButton.Middle => MiddleColor,
+        _ => Color.Transparent
+    };
+
+    internal bool ShowReleaseCrosshairs(MouseHighlightButton button) => button switch
+    {
+        MouseHighlightButton.Primary => ShowPrimaryReleaseCrosshairs,
+        MouseHighlightButton.Secondary => ShowSecondaryReleaseCrosshairs,
+        MouseHighlightButton.Middle => ShowMiddleReleaseCrosshairs,
+        _ => false
+    };
 
     // Also validate settings loaded from disk, which may bypass the UI limits.
     public void Validate()

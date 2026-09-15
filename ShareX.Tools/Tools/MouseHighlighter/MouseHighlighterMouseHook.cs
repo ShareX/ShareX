@@ -93,12 +93,15 @@ internal sealed class MouseHighlighterMouseHook : IDisposable
             System.Drawing.Point point = new(Marshal.ReadInt32(data), Marshal.ReadInt32(data, 4));
             _input.SetPosition(point);
             int mouseMessage = message.ToInt32();
-            if (mouseMessage is 0x0201 or 0x0202 or 0x0204 or 0x0205)
+            if (mouseMessage is 0x0201 or 0x0202 or 0x0204 or 0x0205 or 0x0207 or 0x0208)
             {
                 bool swapped = NativeMethods.GetSystemMetrics(SystemMetric.SM_SWAPBUTTON) != 0;
                 bool right = mouseMessage is 0x0204 or 0x0205;
-                bool pressed = mouseMessage is 0x0201 or 0x0204;
-                _input.PublishButton(new MouseHighlighterButtonEvent(right != swapped, pressed, point, Stopwatch.GetTimestamp()));
+                MouseHighlightButton button = mouseMessage is 0x0207 or 0x0208
+                    ? MouseHighlightButton.Middle
+                    : right != swapped ? MouseHighlightButton.Secondary : MouseHighlightButton.Primary;
+                bool pressed = mouseMessage is 0x0201 or 0x0204 or 0x0207;
+                _input.PublishButton(new MouseHighlighterButtonEvent(button, pressed, point, Stopwatch.GetTimestamp()));
             }
         }
 

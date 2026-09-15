@@ -11,7 +11,14 @@ using System.Drawing;
 
 namespace ShareX.Tools;
 
-internal readonly record struct MouseHighlighterButtonEvent(bool Secondary, bool Pressed, Point Position, long Timestamp);
+internal enum MouseHighlightButton
+{
+    Primary,
+    Secondary,
+    Middle
+}
+
+internal readonly record struct MouseHighlighterButtonEvent(MouseHighlightButton Button, bool Pressed, Point Position, long Timestamp);
 
 // Single producer (the hook thread), single consumer (the animation thread).
 // The producer never waits for the consumer, allocates, or calls UI code.
@@ -44,7 +51,7 @@ internal sealed class MouseHighlighterInputBuffer
 
     public void PublishButton(MouseHighlighterButtonEvent input)
     {
-        int button = input.Secondary ? 2 : 1;
+        int button = 1 << (int)input.Button;
         Volatile.Write(ref _pressedButtons, input.Pressed ? _pressedButtons | button : _pressedButtons & ~button);
 
         int writeIndex = _writeIndex;

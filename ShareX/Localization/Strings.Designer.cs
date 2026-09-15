@@ -26,6 +26,8 @@ namespace ShareX.Localization {
         
         public static string MouseHighlighter => ResourceManager.GetString("MouseHighlighter", resourceCulture);
 
+        public static string MainMenuBuilder_MouseHighlighter => ResourceManager.GetString("MainMenuBuilder_MouseHighlighter", resourceCulture);
+
         public static string TaskSettingsWindow_HighlightMouseWhileRecording => ResourceManager.GetString("TaskSettingsWindow_HighlightMouseWhileRecording", resourceCulture);
 
         public static string TaskSettingsWindow_MouseHighlighterOptions => ResourceManager.GetString("TaskSettingsWindow_MouseHighlighterOptions", resourceCulture);
