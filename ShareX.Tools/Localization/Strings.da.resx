@@ -1907,7 +1907,7 @@ Filsti: {0}</value>
     <value>Vis outputmappe...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Vælg en anden outputfil. Kildevideoen kan ikke overskrives.</value>
+    <value>Den trimmede video kan ikke erstatte den oprindelige video. Gem den med et andet filnavn eller i en anden mappe.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Start:</value>

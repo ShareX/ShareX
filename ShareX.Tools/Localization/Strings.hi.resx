@@ -1907,7 +1907,7 @@
     <value>आउटपुट फ़ोल्डर दिखाएँ...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>कोई दूसरी आउटपुट फ़ाइल चुनें। स्रोत वीडियो को ओवरराइट नहीं किया जा सकता।</value>
+    <value>ट्रिम किया गया वीडियो मूल वीडियो की जगह नहीं ले सकता। इसे किसी दूसरे फ़ाइल नाम से या दूसरे फ़ोल्डर में सहेजें।</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>आरंभ:</value>

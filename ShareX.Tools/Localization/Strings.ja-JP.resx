@@ -1901,7 +1901,7 @@
     <value>出力フォルダーを表示...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>別の出力ファイルを選択してください。元の動画は上書きできません。</value>
+    <value>トリミングした動画で元の動画を上書きすることはできません。別のファイル名または別のフォルダーに保存してください。</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>開始:</value>

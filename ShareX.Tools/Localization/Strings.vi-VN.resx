@@ -1901,7 +1901,7 @@
     <value>Hiện thư mục đầu ra...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Chọn tệp đầu ra khác. Không thể ghi đè video nguồn.</value>
+    <value>Video đã cắt không thể thay thế video gốc. Hãy lưu bằng tên tệp khác hoặc trong thư mục khác.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Bắt đầu:</value>

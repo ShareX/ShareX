@@ -1901,7 +1901,7 @@
     <value>Показати вихідну папку...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Виберіть інший вихідний файл. Вихідне відео не можна перезаписати.</value>
+    <value>Обрізане відео не може замінити початкове відео. Збережіть його під іншою назвою файлу або в іншій папці.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Початок:</value>

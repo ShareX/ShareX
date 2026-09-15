@@ -47,6 +47,9 @@ public partial class VideoTrimmerWindow : Window
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         _viewModel.SelectInputRequested = SelectInputAsync;
         _viewModel.SelectOutputRequested = SelectOutputAsync;
+        _viewModel.ShowErrorRequested = message => ShareX.AvaloniaUI.MessageBox.Show(
+            this, message, Strings.VideoTrimmer_Title,
+            ShareX.AvaloniaUI.MessageBoxButtons.OK, ShareX.AvaloniaUI.MessageBoxIcon.Error);
         DragDrop.SetAllowDrop(this, true);
         AddHandler(DragDrop.DragOverEvent, OnDragOver);
         AddHandler(DragDrop.DropEvent, OnDrop);

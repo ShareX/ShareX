@@ -1901,7 +1901,7 @@
     <value>출력 폴더 표시...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>다른 출력 파일을 선택하세요. 원본 동영상은 덮어쓸 수 없습니다.</value>
+    <value>자른 동영상으로 원본 동영상을 덮어쓸 수 없습니다. 다른 파일 이름이나 다른 폴더에 저장하세요.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>시작:</value>

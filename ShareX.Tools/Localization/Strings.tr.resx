@@ -1907,7 +1907,7 @@ Dosya yolu: {0}</value>
     <value>Çıktı klasörünü göster...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Farklı bir çıktı dosyası seçin. Kaynak videonun üzerine yazılamaz.</value>
+    <value>Kırpılmış video özgün videonun yerini alamaz. Farklı bir dosya adıyla veya başka bir klasöre kaydedin.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Başlangıç:</value>

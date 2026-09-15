@@ -1901,7 +1901,7 @@
     <value>Tampilkan folder keluaran...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Pilih file keluaran lain. Video sumber tidak dapat ditimpa.</value>
+    <value>Video yang dipotong tidak dapat menggantikan video asli. Simpan dengan nama file lain atau di folder lain.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Mulai:</value>

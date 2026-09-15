@@ -1901,7 +1901,7 @@
     <value>הצגת תיקיית הפלט...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>בחר קובץ פלט אחר. לא ניתן להחליף את וידאו המקור.</value>
+    <value>הווידאו החתוך לא יכול להחליף את הווידאו המקורי. שמור אותו בשם קובץ אחר או בתיקייה אחרת.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>התחלה:</value>

@@ -1907,7 +1907,7 @@ Dateipfad: {0}</value>
     <value>Ausgabeordner anzeigen...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Wähle eine andere Ausgabedatei. Das Quellvideo kann nicht überschrieben werden.</value>
+    <value>Das zugeschnittene Video kann das Originalvideo nicht ersetzen. Speichere es unter einem anderen Dateinamen oder in einem anderen Ordner.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Start:</value>

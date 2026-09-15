@@ -1907,7 +1907,7 @@ Filsökväg: {0}</value>
     <value>Visa utdatamapp...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Välj en annan utdatafil. Källvideon kan inte skrivas över.</value>
+    <value>Den trimmade videon kan inte ersätta originalvideon. Spara den med ett annat filnamn eller i en annan mapp.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Start:</value>

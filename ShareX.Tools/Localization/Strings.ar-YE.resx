@@ -1901,7 +1901,7 @@
     <value>إظهار مجلد الإخراج...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>اختر ملف إخراج مختلفًا. لا يمكن استبدال فيديو المصدر.</value>
+    <value>لا يمكن للفيديو المقصوص استبدال الفيديو الأصلي. احفظه باسم ملف مختلف أو في مجلد آخر.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>البداية:</value>

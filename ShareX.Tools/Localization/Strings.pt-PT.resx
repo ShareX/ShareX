@@ -1907,7 +1907,7 @@ Caminho do ficheiro: {0}</value>
     <value>Mostrar pasta de saída...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Escolha outro ficheiro de saída. O vídeo de origem não pode ser substituído.</value>
+    <value>O vídeo cortado não pode substituir o vídeo original. Guarde-o com outro nome de ficheiro ou noutra pasta.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Início:</value>

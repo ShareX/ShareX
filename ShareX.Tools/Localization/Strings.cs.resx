@@ -1907,7 +1907,7 @@ Cesta k souboru: {0}</value>
     <value>Zobrazit výstupní složku...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Vyberte jiný výstupní soubor. Zdrojové video nelze přepsat.</value>
+    <value>Oříznuté video nemůže nahradit původní video. Uložte ho pod jiným názvem souboru nebo do jiné složky.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Začátek:</value>

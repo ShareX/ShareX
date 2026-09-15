@@ -5421,7 +5421,7 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Choose a different output file. The source video cannot be overwritten.
+        ///   The trimmed video cannot replace the original video. Save it with a different file name or in another folder.
         /// </summary>
         public static string VideoTrimmer_SourceOverwrite {
             get {

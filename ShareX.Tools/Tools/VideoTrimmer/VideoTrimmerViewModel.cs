@@ -67,6 +67,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
 
     public Func<Task<string?>>? SelectInputRequested { get; set; }
     public Func<string, Task<string?>>? SelectOutputRequested { get; set; }
+    public Action<string>? ShowErrorRequested { get; set; }
     public IReadOnlyList<VideoTrimmerThumbnail> Thumbnails => _thumbnails;
     public bool HasVideo => Duration > 0;
     public bool CanEdit => HasVideo && !IsExporting;
@@ -336,6 +337,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         IsExporting = true;
         using CancellationTokenSource cancellation = CancellationTokenSource.CreateLinkedTokenSource(_lifetime.Token);
         _exportCancellation = cancellation;
+        string? errorMessage = null;
         try
         {
             string extension = Precise ? ".mp4" : Path.GetExtension(InputFilePath);
@@ -353,13 +355,24 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
             StatusText = string.Format(Strings.VideoTrimmer_Saved, output);
             _playNotificationSound?.Invoke();
         }
-        catch (OperationCanceledException) { StatusText = Strings.VideoTrimmer_Cancelled; }
-        catch (Exception ex) { StatusText = ex.Message; }
+        catch (OperationCanceledException)
+        {
+            Progress = 0;
+            StatusText = Strings.VideoTrimmer_Cancelled;
+        }
+        catch (Exception ex)
+        {
+            Progress = 0;
+            StatusText = ex.Message;
+            if (!cancellation.IsCancellationRequested) errorMessage = ex.Message;
+        }
         finally
         {
             _exportCancellation = null;
             IsExporting = false;
         }
+
+        if (errorMessage != null && !_disposed) ShowErrorRequested?.Invoke(errorMessage);
     }
 
     private void ClearFrames()

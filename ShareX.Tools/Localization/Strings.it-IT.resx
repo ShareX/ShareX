@@ -1907,7 +1907,7 @@ Percorso file: {0}</value>
     <value>Mostra cartella di output...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Scegli un file di output diverso. Il video sorgente non può essere sovrascritto.</value>
+    <value>Il video tagliato non può sostituire il video originale. Salvalo con un nome diverso o in un’altra cartella.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Inizio:</value>

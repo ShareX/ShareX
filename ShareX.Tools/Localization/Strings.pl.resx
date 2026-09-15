@@ -1901,7 +1901,7 @@
     <value>Pokaż folder wyjściowy...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Wybierz inny plik wyjściowy. Nie można nadpisać źródłowego wideo.</value>
+    <value>Przycięte wideo nie może zastąpić oryginalnego wideo. Zapisz je pod inną nazwą pliku lub w innym folderze.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Początek:</value>

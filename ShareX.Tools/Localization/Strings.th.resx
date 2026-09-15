@@ -1901,7 +1901,7 @@
     <value>แสดงโฟลเดอร์ผลลัพธ์...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>เลือกไฟล์ผลลัพธ์อื่น ไม่สามารถเขียนทับวิดีโอต้นฉบับได้</value>
+    <value>วิดีโอที่ตัดแล้วไม่สามารถแทนที่วิดีโอต้นฉบับได้ บันทึกด้วยชื่อไฟล์อื่นหรือในโฟลเดอร์อื่น</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>เริ่ม:</value>

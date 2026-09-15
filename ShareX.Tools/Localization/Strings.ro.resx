@@ -1901,7 +1901,7 @@
     <value>Arată dosarul de ieșire...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Alege alt fișier de ieșire. Videoclipul sursă nu poate fi suprascris.</value>
+    <value>Videoclipul decupat nu poate înlocui videoclipul original. Salvează-l cu alt nume de fișier sau în alt dosar.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Început:</value>

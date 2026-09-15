@@ -1901,7 +1901,7 @@
     <value>Kimeneti mappa megjelenítése...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Válasszon másik kimeneti fájlt. A forrásvideó nem írható felül.</value>
+    <value>A vágott videó nem írhatja felül az eredeti videót. Mentse más fájlnévvel vagy másik mappába.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Kezdet:</value>

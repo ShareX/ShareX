@@ -1907,7 +1907,7 @@ Bestandspad: {0}</value>
     <value>Uitvoermap weergeven...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Kies een ander uitvoerbestand. De bronvideo kan niet worden overschreven.</value>
+    <value>De bijgesneden video kan de oorspronkelijke video niet vervangen. Sla deze op met een andere bestandsnaam of in een andere map.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Begin:</value>

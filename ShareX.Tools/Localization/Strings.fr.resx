@@ -1907,7 +1907,7 @@ Chemin du fichier : {0}</value>
     <value>Afficher le dossier de sortie...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Choisissez un autre fichier de sortie. La vidéo source ne peut pas être écrasée.</value>
+    <value>La vidéo découpée ne peut pas remplacer la vidéo d’origine. Enregistrez-la sous un autre nom de fichier ou dans un autre dossier.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Début :</value>

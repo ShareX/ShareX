@@ -1907,7 +1907,7 @@ Ruta del archivo: {0}</value>
     <value>Mostrar carpeta de salida...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Elige otro archivo de salida. No se puede sobrescribir el video de origen.</value>
+    <value>El video recortado no puede reemplazar el video original. Guárdalo con otro nombre de archivo o en otra carpeta.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Inicio:</value>

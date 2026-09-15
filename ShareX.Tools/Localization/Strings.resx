@@ -1901,7 +1901,7 @@
     <value>Show output folder...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>Choose a different output file. The source video cannot be overwritten.</value>
+    <value>The trimmed video cannot replace the original video. Save it with a different file name or in another folder.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>Start:</value>

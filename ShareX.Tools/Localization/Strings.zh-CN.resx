@@ -1907,7 +1907,7 @@
     <value>显示输出文件夹...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>请选择其他输出文件。无法覆盖源视频。</value>
+    <value>剪辑后的视频无法替换原始视频。请使用其他文件名或保存到其他文件夹。</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>开始：</value>

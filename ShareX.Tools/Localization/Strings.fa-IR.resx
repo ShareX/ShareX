@@ -1901,7 +1901,7 @@
     <value>نمایش پوشه خروجی...</value>
   </data>
   <data name="VideoTrimmer_SourceOverwrite" xml:space="preserve">
-    <value>فایل خروجی دیگری انتخاب کنید. ویدئوی منبع قابل بازنویسی نیست.</value>
+    <value>ویدئوی برش‌خورده نمی‌تواند جایگزین ویدئوی اصلی شود. آن را با نام فایل دیگری یا در پوشه‌ای دیگر ذخیره کنید.</value>
   </data>
   <data name="VideoTrimmer_Start" xml:space="preserve">
     <value>شروع:</value>
