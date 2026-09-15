@@ -299,22 +299,10 @@ namespace ShareX
                     singleInstanceManager.ArgumentsReceived += SingleInstanceManager_ArgumentsReceived;
 
                     Run(args);
-
-                    if (restartRequested)
-                    {
-                        DebugHelper.WriteLine("ShareX restarting.");
-
-                        if (restartAsAdmin)
-                        {
-                            TaskHelpers.RunShareXAsAdmin("-silent");
-                        }
-                        else
-                        {
-                            Process.Start(Application.ExecutablePath);
-                        }
-                    }
                 }
             }
+
+            HandleRestart();
 
             DebugHelper.Flush();
         }
@@ -402,6 +390,29 @@ namespace ShareX
                 SettingManager.SaveAllSettings();
 
                 DebugHelper.WriteLine("ShareX closed.");
+            }
+        }
+
+        private static void HandleRestart()
+        {
+            if (restartRequested)
+            {
+                DebugHelper.WriteLine("ShareX restarting.");
+
+                if (restartAsAdmin)
+                {
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = Application.ExecutablePath,
+                        Arguments = "-silent",
+                        UseShellExecute = true,
+                        Verb = "runas"
+                    });
+                }
+                else
+                {
+                    Process.Start(Application.ExecutablePath);
+                }
             }
         }
 

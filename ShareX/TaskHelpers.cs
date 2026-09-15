@@ -40,7 +40,6 @@ using SkiaSharp;
 using SkiaSharp.Views.Desktop;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -1619,35 +1618,6 @@ namespace ShareX
                 CopyText = text => ClipboardHelpers.CopyText(text),
                 OpenFile = path => FileHelpers.OpenFile(path)
             });
-        }
-
-        public static void RunShareXAsAdmin(string arguments = null)
-        {
-            try
-            {
-                string exePath = Application.ExecutablePath;
-
-                string cmdArgs = $"/c timeout /t 1 & powershell -Command \"Start-Process '{exePath}' -Verb runAs";
-
-                if (!string.IsNullOrEmpty(arguments))
-                {
-                    cmdArgs += $" -ArgumentList '{arguments}'";
-                }
-
-                cmdArgs += "\"";
-
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = "cmd.exe",
-                    Arguments = cmdArgs,
-                    UseShellExecute = true,
-                    CreateNoWindow = true,
-                    WindowStyle = ProcessWindowStyle.Hidden
-                });
-            }
-            catch
-            {
-            }
         }
 
         public static void OpenQRCode(string text = null)
