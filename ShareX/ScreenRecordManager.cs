@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
+using ShareX.Tools;
 using System;
 using System.Drawing;
 using System.IO;
@@ -197,7 +198,7 @@ namespace ShareX
             recordForm.StopRequested += StopRecording;
             recordForm.Show();
 
-            _ = Task.Run(() =>
+            _ = Task.Run(async () =>
             {
                 try
                 {
@@ -290,7 +291,15 @@ namespace ShareX
                             screenRecorder = new ScreenRecorder(ScreenRecordOutput.FFmpeg, options, screenshot, captureRectangle);
                             screenRecorder.RecordingStarted += ScreenRecorder_RecordingStarted;
                             screenRecorder.EncodingProgressChanged += ScreenRecorder_EncodingProgressChanged;
-                            screenRecorder.StartRecording();
+                            using (IDisposable highlighter = taskSettings.CaptureSettings.ScreenRecordMouseHighlighter
+                                ? await MouseHighlighterManager.BeginRecordingAsync(taskSettings.ToolsSettingsReference.MouseHighlighterOptions)
+                                : null)
+                            {
+                                if (recordForm.Status != ScreenRecordingStatus.Aborted && recordForm.Status != ScreenRecordingStatus.Stopped)
+                                {
+                                    screenRecorder.StartRecording();
+                                }
+                            }
                             recordForm.ChangeState(ScreenRecordState.RecordingEnd);
 
                             if (recordForm.Status == ScreenRecordingStatus.Aborted)

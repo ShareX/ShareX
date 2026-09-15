@@ -11,6 +11,8 @@ namespace ShareX.HelpersLib.Localization {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Strings {
+        public static string HotkeyType_MouseHighlighter => ResourceManager.GetString("HotkeyType_MouseHighlighter", resourceCulture);
+
         private static global::System.Resources.ResourceManager resourceMan;
         private static global::System.Globalization.CultureInfo resourceCulture;
 

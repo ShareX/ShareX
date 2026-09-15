@@ -24,6 +24,66 @@ namespace ShareX.Tools.Localization {
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Strings {
         
+        public static string MouseHighlighter_Title => ResourceManager.GetString("MouseHighlighter_Title", resourceCulture);
+
+        public static string MouseHighlighter_Mode => ResourceManager.GetString("MouseHighlighter_Mode", resourceCulture);
+
+        public static string MouseHighlighter_Circle => ResourceManager.GetString("MouseHighlighter_Circle", resourceCulture);
+
+        public static string MouseHighlighter_Spotlight => ResourceManager.GetString("MouseHighlighter_Spotlight", resourceCulture);
+
+        public static string MouseHighlighter_Ripple => ResourceManager.GetString("MouseHighlighter_Ripple", resourceCulture);
+
+        public static string MouseHighlighter_PrimaryColor => ResourceManager.GetString("MouseHighlighter_PrimaryColor", resourceCulture);
+
+        public static string MouseHighlighter_SecondaryColor => ResourceManager.GetString("MouseHighlighter_SecondaryColor", resourceCulture);
+
+        public static string MouseHighlighter_AlwaysColor => ResourceManager.GetString("MouseHighlighter_AlwaysColor", resourceCulture);
+
+        public static string MouseHighlighter_AlwaysColorHelp => ResourceManager.GetString("MouseHighlighter_AlwaysColorHelp", resourceCulture);
+
+        public static string MouseHighlighter_Radius => ResourceManager.GetString("MouseHighlighter_Radius", resourceCulture);
+
+        public static string MouseHighlighter_FadeDelay => ResourceManager.GetString("MouseHighlighter_FadeDelay", resourceCulture);
+
+        public static string MouseHighlighter_FadeDuration => ResourceManager.GetString("MouseHighlighter_FadeDuration", resourceCulture);
+
+        public static string MouseHighlighter_RippleSize => ResourceManager.GetString("MouseHighlighter_RippleSize", resourceCulture);
+
+        public static string MouseHighlighter_RippleIntensity => ResourceManager.GetString("MouseHighlighter_RippleIntensity", resourceCulture);
+
+        public static string MouseHighlighter_RippleDuration => ResourceManager.GetString("MouseHighlighter_RippleDuration", resourceCulture);
+
+        public static string MouseHighlighter_FollowCursor => ResourceManager.GetString("MouseHighlighter_FollowCursor", resourceCulture);
+
+        public static string MouseHighlighter_ReleaseCrosshairs => ResourceManager.GetString("MouseHighlighter_ReleaseCrosshairs", resourceCulture);
+
+        public static string MouseHighlighter_AutoActivate => ResourceManager.GetString("MouseHighlighter_AutoActivate", resourceCulture);
+
+        public static string MouseHighlighter_ConfigureShortcut => ResourceManager.GetString("MouseHighlighter_ConfigureShortcut", resourceCulture);
+
+        public static string MouseHighlighter_ShortcutHelp => ResourceManager.GetString("MouseHighlighter_ShortcutHelp", resourceCulture);
+
+        public static string MouseHighlighter_RecordingHelp => ResourceManager.GetString("MouseHighlighter_RecordingHelp", resourceCulture);
+
+        public static string MouseHighlighter_Start => ResourceManager.GetString("MouseHighlighter_Start", resourceCulture);
+
+        public static string MouseHighlighter_Stop => ResourceManager.GetString("MouseHighlighter_Stop", resourceCulture);
+
+        public static string MouseHighlighter_Active => ResourceManager.GetString("MouseHighlighter_Active", resourceCulture);
+
+        public static string MouseHighlighter_Inactive => ResourceManager.GetString("MouseHighlighter_Inactive", resourceCulture);
+
+        public static string MouseHighlighter_RecordingActive => ResourceManager.GetString("MouseHighlighter_RecordingActive", resourceCulture);
+
+        public static string MouseHighlighter_StartFailed => ResourceManager.GetString("MouseHighlighter_StartFailed", resourceCulture);
+
+        public static string MouseHighlighter_KeepAfterRecording => ResourceManager.GetString("MouseHighlighter_KeepAfterRecording", resourceCulture);
+
+        public static string MouseHighlighter_StopAfterRecording => ResourceManager.GetString("MouseHighlighter_StopAfterRecording", resourceCulture);
+
+        public static string MouseHighlighter_RecordingAndManualActive => ResourceManager.GetString("MouseHighlighter_RecordingAndManualActive", resourceCulture);
+
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;

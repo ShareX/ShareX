@@ -73,7 +73,8 @@ public sealed class TaskSettingsViewModel : INotifyPropertyChanged
             Child("upload-clipboard", Strings.TaskSettingsWindow_ClipboardUpload, LucideIcons.clipboard),
             Child("upload-filters", Strings.TaskSettingsWindow_UploaderFilters, LucideIcons.filter)));
         NavigationItems.Add(Parent("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench,
-            Child("tools-image-editor", Strings.TaskSettingsWindow_ImageEditor, LucideIcons.image)));
+            Child("tools-image-editor", Strings.TaskSettingsWindow_ImageEditor, LucideIcons.image),
+            Child("tools-mouse-highlighter", Strings.MouseHighlighter, LucideIcons.mouse_pointer_click)));
         NavigationItems.Add(Parent("actions", Strings.TaskSettingsWindow_Actions, LucideIcons.zap));
         NavigationItems.Add(Parent("watch-folders", Strings.TaskSettingsWindow_WatchFolders, LucideIcons.folder_search));
         NavigationItems.Add(Parent("advanced", Strings.TaskSettingsWindow_Advanced, LucideIcons.sliders_horizontal));
@@ -85,6 +86,11 @@ public sealed class TaskSettingsViewModel : INotifyPropertyChanged
 
     private static SettingsNavigationItem Parent(string id, string title, string icon, params SettingsNavigationItem[] children) =>
         new(id, title, icon, children: children);
+
+    public void SelectPage(string id)
+    {
+        SelectedNavigationItem = NavigationItems.SelectMany(item => item.Children.Prepend(item)).First(item => item.Id == id);
+    }
 
     private static SettingsNavigationItem Child(string id, string title, string icon) => new(id, title, icon);
 }

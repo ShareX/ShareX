@@ -196,6 +196,9 @@ namespace ShareX
                 case HotkeyType.Ruler:
                     OpenRuler(safeTaskSettings);
                     break;
+                case HotkeyType.MouseHighlighter:
+                    MouseHighlighterManager.Toggle(safeTaskSettings.ToolsSettingsReference.MouseHighlighterOptions);
+                    break;
                 case HotkeyType.PinToScreen:
                     if (!string.IsNullOrEmpty(filePath))
                     {
@@ -1745,6 +1748,14 @@ namespace ShareX
             ToolsIntegration.ShowRulerWindow();
         }
 
+        public static void OpenMouseHighlighter(TaskSettings taskSettings = null)
+        {
+            taskSettings ??= Program.DefaultTaskSettings;
+            ToolsIntegration.ShowMouseHighlighterWindow(taskSettings.ToolsSettingsReference.MouseHighlighterOptions,
+                () => Program.MainForm.ExecuteAvaloniaMainFormCommand(MainFormCommand.HotkeySettings),
+                () => SettingManager.SaveApplicationConfigAsync());
+        }
+
         public static Task<UploadResult> SearchImageUsingGoogleLensAsync(string url)
         {
             return new GoogleLensSharingService().CreateSharer(null, null).ShareURLAsync(url);
@@ -2229,6 +2240,7 @@ namespace ShareX
                 HotkeyType.ColorPicker => LucideIcons.palette,
                 HotkeyType.ScreenColorPicker => LucideIcons.pipette,
                 HotkeyType.Ruler => LucideIcons.ruler,
+                HotkeyType.MouseHighlighter => LucideIcons.mouse_pointer_click,
                 HotkeyType.PinToScreen => LucideIcons.pin,
                 HotkeyType.PinToScreenFromScreen => LucideIcons.picture_in_picture,
                 HotkeyType.PinToScreenFromClipboard => LucideIcons.clipboard,

@@ -1401,4 +1401,7 @@ Do you still want to run it?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Maximum allowed file size: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Toggle mouse highlighter</value>
+  </data>
 </root>

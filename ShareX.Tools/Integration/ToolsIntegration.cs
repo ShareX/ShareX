@@ -205,6 +205,12 @@ public static class ToolsIntegration
         Show(() => new RulerWindow());
     }
 
+    public static void ShowMouseHighlighterWindow(MouseHighlighterOptions options,
+        Action? configureHotkey = null, Action? settingsChanged = null)
+    {
+        MouseHighlighterManager.ShowWindow(options, configureHotkey, settingsChanged);
+    }
+
     public static void ShowVideoConverterWindow(VideoConverterOptions options, VideoConversionHandler handler,
         string? inputFilePath = null)
     {

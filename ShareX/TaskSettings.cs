@@ -400,6 +400,7 @@ namespace ShareX
         public int ScreenRecordFPS = 30;
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;
+        public bool ScreenRecordMouseHighlighter = false;
         public bool ScreenRecordShowTimer = true;
         public bool ScreenRecordShowButtonLabels = true;
         public bool ScreenRecordAutoStart = true;
@@ -461,6 +462,7 @@ namespace ShareX
         public ColorPickerOptions ColorPickerOptions = new ColorPickerOptions();
         public ScreenColorPickerOptions ScreenColorPickerOptions = new ScreenColorPickerOptions();
         public PinToScreenOptions PinToScreenOptions = new PinToScreenOptions();
+        public MouseHighlighterOptions MouseHighlighterOptions = new MouseHighlighterOptions();
         public IndexerSettings IndexerSettings = new IndexerSettings();
         public ImageCombinerOptions ImageCombinerOptions = new ImageCombinerOptions();
         public VideoConverterOptions VideoConverterOptions = new VideoConverterOptions();

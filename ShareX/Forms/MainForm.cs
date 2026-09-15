@@ -69,6 +69,8 @@ public sealed class MainForm : HotkeyForm
         bool showMainWindow = !(Program.SilentRun || Program.Settings.SilentRun) || !Program.Settings.ShowTray;
         MainWindowIntegration.Initialize(this, showMainWindow);
 
+        ShareX.Tools.MouseHighlighterManager.ActivateOnStartup(Program.DefaultTaskSettings.ToolsSettings.MouseHighlighterOptions);
+
         if (showMainWindow)
         {
             MainWindowIntegration.Activate();
@@ -442,6 +444,7 @@ public sealed class MainForm : HotkeyForm
 
     private void MainForm_FormClosed(object? sender, FormClosedEventArgs e)
     {
+        ShareX.Tools.MouseHighlighterManager.Shutdown();
         ThemeManager.ThemeChanged -= ThemeManager_ThemeChanged;
         MainWindowIntegration.Close();
         TrayIconService.Dispose();

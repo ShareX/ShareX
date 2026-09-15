@@ -75,6 +75,8 @@ public partial class TaskSettingsWindow : Window
         };
     }
 
+    internal void NavigateToPage(string pageId) => _viewModel?.SelectPage(pageId);
+
     private void SelectPage(string? pageId)
     {
         foreach ((string id, Control page) in _pages)

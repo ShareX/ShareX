@@ -2856,4 +2856,13 @@ You can later disable it from "After capture tasks" menu.</value>
     <value>Your system admin disabled the upload feature.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Trim video...</value></data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Mouse highlighter</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Automatically start mouse highlighter when recording starts and stop it when recording stops</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Mouse highlighter options...</value>
+  </data>
 </root>
