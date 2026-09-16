@@ -107,6 +107,7 @@ namespace ShareX
         public ThumbnailTitleLocation ThumbnailTitleLocation = ThumbnailTitleLocation.Top;
         public Size ThumbnailSize = new Size(200, 150);
         public ThumbnailViewClickAction ThumbnailClickAction = ThumbnailViewClickAction.Default;
+        public List<string> HiddenTools = new List<string>();
 
         #endregion Main window
 

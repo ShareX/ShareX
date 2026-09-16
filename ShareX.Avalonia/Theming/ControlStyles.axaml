@@ -735,6 +735,8 @@
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="OnContent" Value="{x:Null}"/>
+        <Setter Property="OffContent" Value="{x:Null}"/>
 
         <Style Selector="^:disabled">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
@@ -985,6 +987,23 @@
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Separator}"/>
     </Style>
 
+    <Style Selector="Button.tool-grid-edit-button">
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="7,3"/>
+        <Setter Property="Margin" Value="2,0,2,4"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+    </Style>
+
+    <Style Selector="Button.tool-grid-edit-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
     <Style Selector="Button.tool-grid-button">
         <Setter Property="Height" Value="34"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -1000,6 +1019,37 @@
     <Style Selector="Button.tool-grid-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
         <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style Selector="ToggleButton.tool-grid-visibility-button">
+        <Setter Property="Height" Value="34"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="8,4"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+    </Style>
+
+    <Style Selector="ToggleButton.tool-grid-visibility-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style Selector="ToggleButton.tool-grid-visibility-button:checked /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style Selector="ToggleButton.tool-grid-visibility-button:checked:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style Selector="ToggleSwitch.tool-grid-visibility-switch">
+        <Setter Property="Margin" Value="0"/>
     </Style>
 
     <Style Selector="MenuItem.tool-grid-submenu-host">

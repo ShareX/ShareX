@@ -241,47 +241,47 @@ internal sealed class MainMenuBuilder
     [
         new(Strings.MainMenuBuilder_ToolCategoryScreen,
         [
-            Item(Strings.MainMenuBuilder_ColorPicker, LucideIcons.palette, () => TaskHelpers.ShowColorPickerDialog()),
-            Item(Strings.MainMenuBuilder_ScreenColorPicker, LucideIcons.pipette, () => TaskHelpers.OpenScreenColorPicker()),
-            Item(Strings.MainMenuBuilder_Ruler, LucideIcons.ruler, () => TaskHelpers.OpenRuler()),
-            Item(Strings.MainMenuBuilder_MouseHighlighter, LucideIcons.mouse_pointer_click, () => TaskHelpers.OpenMouseHighlighter()),
-            Item(Strings.MainMenuBuilder_PinToScreenDialog, LucideIcons.pin, () => TaskHelpers.PinToScreen())
+            Tool(nameof(Strings.MainMenuBuilder_ColorPicker), Strings.MainMenuBuilder_ColorPicker, LucideIcons.palette, () => TaskHelpers.ShowColorPickerDialog()),
+            Tool(nameof(Strings.MainMenuBuilder_ScreenColorPicker), Strings.MainMenuBuilder_ScreenColorPicker, LucideIcons.pipette, () => TaskHelpers.OpenScreenColorPicker()),
+            Tool(nameof(Strings.MainMenuBuilder_Ruler), Strings.MainMenuBuilder_Ruler, LucideIcons.ruler, () => TaskHelpers.OpenRuler()),
+            Tool(nameof(Strings.MainMenuBuilder_MouseHighlighter), Strings.MainMenuBuilder_MouseHighlighter, LucideIcons.mouse_pointer_click, () => TaskHelpers.OpenMouseHighlighter()),
+            Tool(nameof(Strings.MainMenuBuilder_PinToScreenDialog), Strings.MainMenuBuilder_PinToScreenDialog, LucideIcons.pin, () => TaskHelpers.PinToScreen())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryImages,
         [
-            Item(Strings.MainMenuBuilder_ImageEditor, LucideIcons.image, () => TaskHelpers.OpenImageEditor()),
-            Item(Strings.MainMenuBuilder_ImageBeautifier, LucideIcons.sparkles, () => TaskHelpers.OpenImageBeautifier()),
-            Item(Strings.MainMenuBuilder_ImageEffects, LucideIcons.wand_sparkles, () => TaskHelpers.OpenImageEffects()),
-            Item(Strings.MainMenuBuilder_ImageViewer, LucideIcons.eye, () => TaskHelpers.OpenImageViewer()),
-            Item(Strings.MainMenuBuilder_BackgroundRemover, LucideIcons.eraser, () => TaskHelpers.OpenBackgroundRemover()),
-            Item(Strings.MainMenuBuilder_ImageComparer, LucideIcons.images, () => TaskHelpers.OpenImageComparer()),
-            Item(Strings.MainMenuBuilder_IconConverter, LucideIcons.file_image, () => TaskHelpers.OpenIconConverter()),
-            Item(Strings.MainMenuBuilder_ImageCombiner, LucideIcons.combine, () => TaskHelpers.OpenImageCombiner()),
-            Item(Strings.MainMenuBuilder_ImageSplitter, LucideIcons.split, () => TaskHelpers.OpenImageSplitter()),
-            Item(Strings.MainMenuBuilder_ImageThumbnailer, LucideIcons.shrink, () => TaskHelpers.OpenImageThumbnailer())
+            Tool(nameof(Strings.MainMenuBuilder_ImageEditor), Strings.MainMenuBuilder_ImageEditor, LucideIcons.image, () => TaskHelpers.OpenImageEditor()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageBeautifier), Strings.MainMenuBuilder_ImageBeautifier, LucideIcons.sparkles, () => TaskHelpers.OpenImageBeautifier()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageEffects), Strings.MainMenuBuilder_ImageEffects, LucideIcons.wand_sparkles, () => TaskHelpers.OpenImageEffects()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageViewer), Strings.MainMenuBuilder_ImageViewer, LucideIcons.eye, () => TaskHelpers.OpenImageViewer()),
+            Tool(nameof(Strings.MainMenuBuilder_BackgroundRemover), Strings.MainMenuBuilder_BackgroundRemover, LucideIcons.eraser, () => TaskHelpers.OpenBackgroundRemover()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageComparer), Strings.MainMenuBuilder_ImageComparer, LucideIcons.images, () => TaskHelpers.OpenImageComparer()),
+            Tool(nameof(Strings.MainMenuBuilder_IconConverter), Strings.MainMenuBuilder_IconConverter, LucideIcons.file_image, () => TaskHelpers.OpenIconConverter()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageCombiner), Strings.MainMenuBuilder_ImageCombiner, LucideIcons.combine, () => TaskHelpers.OpenImageCombiner()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageSplitter), Strings.MainMenuBuilder_ImageSplitter, LucideIcons.split, () => TaskHelpers.OpenImageSplitter()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageThumbnailer), Strings.MainMenuBuilder_ImageThumbnailer, LucideIcons.shrink, () => TaskHelpers.OpenImageThumbnailer())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryVideo,
         [
-            Item(Strings.MainMenuBuilder_VideoConverter, LucideIcons.file_video, () => TaskHelpers.OpenVideoConverter()),
-            Item(Strings.MainMenuBuilder_VideoTrimmer, LucideIcons.scissors, () => TaskHelpers.OpenVideoTrimmer()),
-            Item(Strings.MainMenuBuilder_VideoThumbnailer, LucideIcons.clapperboard, () => TaskHelpers.OpenVideoThumbnailer())
+            Tool(nameof(Strings.MainMenuBuilder_VideoConverter), Strings.MainMenuBuilder_VideoConverter, LucideIcons.file_video, () => TaskHelpers.OpenVideoConverter()),
+            Tool(nameof(Strings.MainMenuBuilder_VideoTrimmer), Strings.MainMenuBuilder_VideoTrimmer, LucideIcons.scissors, () => TaskHelpers.OpenVideoTrimmer()),
+            Tool(nameof(Strings.MainMenuBuilder_VideoThumbnailer), Strings.MainMenuBuilder_VideoThumbnailer, LucideIcons.clapperboard, () => TaskHelpers.OpenVideoThumbnailer())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryData,
         [
-            Item(Strings.MainMenuBuilder_AnalyzeImage, LucideIcons.bot, () => TaskHelpers.AnalyzeImage()),
-            Item(Strings.MainMenuBuilder_OCR, LucideIcons.scan_text, async () => await TaskHelpers.OCRImage()),
-            Item(Strings.MainMenuBuilder_QRCode, LucideIcons.qr_code, () => TaskHelpers.OpenQRCode()),
-            Item(Strings.MainMenuBuilder_HashChecker, LucideIcons.hash, () => TaskHelpers.OpenHashCheck()),
-            Item(Strings.MainMenuBuilder_Metadata, LucideIcons.tags, () => TaskHelpers.OpenMetadataWindow()),
-            Item(Strings.MainMenuBuilder_IndexFolder, LucideIcons.folder_tree, () => TaskHelpers.OpenDirectoryIndexer())
+            Tool(nameof(Strings.MainMenuBuilder_AnalyzeImage), Strings.MainMenuBuilder_AnalyzeImage, LucideIcons.bot, () => TaskHelpers.AnalyzeImage()),
+            Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, LucideIcons.scan_text, async () => await TaskHelpers.OCRImage()),
+            Tool(nameof(Strings.MainMenuBuilder_QRCode), Strings.MainMenuBuilder_QRCode, LucideIcons.qr_code, () => TaskHelpers.OpenQRCode()),
+            Tool(nameof(Strings.MainMenuBuilder_HashChecker), Strings.MainMenuBuilder_HashChecker, LucideIcons.hash, () => TaskHelpers.OpenHashCheck()),
+            Tool(nameof(Strings.MainMenuBuilder_Metadata), Strings.MainMenuBuilder_Metadata, LucideIcons.tags, () => TaskHelpers.OpenMetadataWindow()),
+            Tool(nameof(Strings.MainMenuBuilder_IndexFolder), Strings.MainMenuBuilder_IndexFolder, LucideIcons.folder_tree, () => TaskHelpers.OpenDirectoryIndexer())
         ]),
         new(Strings.MainMenuBuilder_ToolCategorySystem,
         [
-            Item(Strings.MainMenuBuilder_ClipboardViewer, LucideIcons.clipboard_list, () => TaskHelpers.OpenClipboardViewer()),
-            Item(Strings.MainMenuBuilder_BorderlessWindow, LucideIcons.frame, () => TaskHelpers.OpenBorderlessWindow()),
-            Item(Strings.MainMenuBuilder_InspectWindow, LucideIcons.scan_search, () => TaskHelpers.OpenInspectWindow()),
-            Item(Strings.MainMenuBuilder_NetworkMonitor, LucideIcons.activity, () => TaskHelpers.OpenNetworkMonitor()),
-            Item(Strings.MainMenuBuilder_MonitorTest, LucideIcons.monitor, () => TaskHelpers.OpenMonitorTest())
+            Tool(nameof(Strings.MainMenuBuilder_ClipboardViewer), Strings.MainMenuBuilder_ClipboardViewer, LucideIcons.clipboard_list, () => TaskHelpers.OpenClipboardViewer()),
+            Tool(nameof(Strings.MainMenuBuilder_BorderlessWindow), Strings.MainMenuBuilder_BorderlessWindow, LucideIcons.frame, () => TaskHelpers.OpenBorderlessWindow()),
+            Tool(nameof(Strings.MainMenuBuilder_InspectWindow), Strings.MainMenuBuilder_InspectWindow, LucideIcons.scan_search, () => TaskHelpers.OpenInspectWindow()),
+            Tool(nameof(Strings.MainMenuBuilder_NetworkMonitor), Strings.MainMenuBuilder_NetworkMonitor, LucideIcons.activity, () => TaskHelpers.OpenNetworkMonitor()),
+            Tool(nameof(Strings.MainMenuBuilder_MonitorTest), Strings.MainMenuBuilder_MonitorTest, LucideIcons.monitor, () => TaskHelpers.OpenMonitorTest())
         ])
     ];
 
@@ -574,6 +574,12 @@ internal sealed class MainMenuBuilder
 
     private static MainMenuEntry Item(string header, string icon, Func<Task> execute, bool isVisible = true) =>
         new(header, icon, execute, isVisible: isVisible);
+
+    private static MainMenuEntry Tool(string id, string header, string icon, Action execute) =>
+        new(header, icon, execute, id: id);
+
+    private static MainMenuEntry Tool(string id, string header, string icon, Func<Task> execute) =>
+        new(header, icon, execute, id: id);
 
     private static MainMenuEntry Parent(string header, string icon, Func<IReadOnlyList<MainMenuEntry>> children, bool isVisible = true) =>
         new(header, icon, createChildren: children, isVisible: isVisible);

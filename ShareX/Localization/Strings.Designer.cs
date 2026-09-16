@@ -265,6 +265,15 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("MainMenuBuilder_DragAndDropUpload", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string MainMenuBuilder_EditTools {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_EditTools", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Enable add image effects.
@@ -285,6 +294,15 @@ namespace ShareX.Localization {
         public static string MainMenuBuilder_Exit {
             get {
                 return ResourceManager.GetString("MainMenuBuilder_Exit", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Done.
+        /// </summary>
+        public static string MainMenuBuilder_FinishEditingTools {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_FinishEditingTools", resourceCulture);
             }
         }
         

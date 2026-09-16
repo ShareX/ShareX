@@ -392,16 +392,57 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private static Control BuildGridMenuContent(IEnumerable<MainMenuCategory> categories, Action<MainMenuEntry> execute)
     {
+        IReadOnlyList<MainMenuCategory> categoryList = categories.ToArray();
+        Grid root = new()
+        {
+            RowDefinitions = new RowDefinitions("Auto,Auto"),
+            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left
+        };
+
+        Button editButton = new()
+        {
+            Classes = { "tool-grid-edit-button" },
+            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Right
+        };
+        root.Children.Add(editButton);
+
         StackPanel content = new()
         {
             Orientation = Avalonia.Layout.Orientation.Vertical,
-            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left
+            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Stretch
         };
+        Grid.SetRow(content, 1);
+        root.Children.Add(content);
+
+        bool isEditing = false;
+
+        void RebuildContent()
+        {
+            editButton.Content = CreateGridMenuEditButtonContent(isEditing);
+            PopulateGridMenuCategories(content, categoryList, isEditing, execute);
+        }
+
+        editButton.Click += (_, _) =>
+        {
+            isEditing = !isEditing;
+            RebuildContent();
+        };
+
+        RebuildContent();
+        return root;
+    }
+
+    private static void PopulateGridMenuCategories(StackPanel content, IReadOnlyList<MainMenuCategory> categories,
+        bool isEditing, Action<MainMenuEntry> execute)
+    {
+        content.Children.Clear();
 
         bool hasCategory = false;
         foreach (MainMenuCategory category in categories)
         {
-            IReadOnlyList<MainMenuEntry> entries = category.Entries.Where(x => x.IsVisible && !x.IsSeparator).ToArray();
+            IReadOnlyList<MainMenuEntry> entries = category.Entries
+                .Where(x => x.IsVisible && !x.IsSeparator && (isEditing || IsToolVisible(x)))
+                .ToArray();
             if (entries.Count == 0)
             {
                 continue;
@@ -432,21 +473,117 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
             foreach (MainMenuEntry entry in entries)
             {
-                Button button = new()
+                if (isEditing)
                 {
-                    Classes = { "tool-grid-button" },
-                    Content = CreateGridMenuItemContent(entry),
-                    IsEnabled = entry.IsEnabled
-                };
-                button.Click += (_, _) => execute(entry);
-                itemGrid.Children.Add(button);
+                    bool isVisible = IsToolVisible(entry);
+                    ToggleSwitch visibilitySwitch = new()
+                    {
+                        IsChecked = isVisible,
+                        IsHitTestVisible = false,
+                        Focusable = false,
+                        VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
+                    };
+                    visibilitySwitch.Classes.Add("tool-grid-visibility-switch");
+
+                    ToggleButton visibilityButton = new()
+                    {
+                        Classes = { "tool-grid-button", "tool-grid-visibility-button" },
+                        Content = CreateGridMenuVisibilityContent(entry, visibilitySwitch),
+                        IsChecked = isVisible
+                    };
+                    visibilityButton.Click += (_, _) =>
+                    {
+                        bool showTool = visibilityButton.IsChecked == true;
+                        visibilitySwitch.IsChecked = showTool;
+                        SetToolVisibility(entry, showTool);
+                    };
+                    itemGrid.Children.Add(visibilityButton);
+                }
+                else
+                {
+                    Button button = new()
+                    {
+                        Classes = { "tool-grid-button" },
+                        Content = CreateGridMenuItemContent(entry),
+                        IsEnabled = entry.IsEnabled
+                    };
+                    button.Click += (_, _) => execute(entry);
+                    itemGrid.Children.Add(button);
+                }
             }
 
             content.Children.Add(itemGrid);
             hasCategory = true;
         }
+    }
 
+    private static Control CreateGridMenuEditButtonContent(bool isEditing)
+    {
+        StackPanel content = new()
+        {
+            Orientation = Avalonia.Layout.Orientation.Horizontal,
+            Spacing = 6
+        };
+        content.Children.Add(CreateAccentMenuIcon(isEditing ? LucideIcons.check : LucideIcons.pencil, 14));
+        content.Children.Add(new TextBlock
+        {
+            Text = isEditing ? Strings.MainMenuBuilder_FinishEditingTools : Strings.MainMenuBuilder_EditTools,
+            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
+        });
         return content;
+    }
+
+    private static Control CreateGridMenuVisibilityContent(MainMenuEntry entry, ToggleSwitch visibilitySwitch)
+    {
+        StackPanel content = new()
+        {
+            Orientation = Avalonia.Layout.Orientation.Horizontal,
+            Spacing = 8
+        };
+        content.Children.Add(visibilitySwitch);
+        content.Children.Add(CreateGridMenuItemContent(entry));
+        return content;
+    }
+
+    private static bool IsToolVisible(MainMenuEntry entry)
+    {
+        if (string.IsNullOrEmpty(entry.Id))
+        {
+            return true;
+        }
+
+        List<string> hiddenTools = Program.Settings.HiddenTools ??= new List<string>();
+        return !hiddenTools.Any(x => string.Equals(x, entry.Id, StringComparison.Ordinal));
+    }
+
+    private static void SetToolVisibility(MainMenuEntry entry, bool isVisible)
+    {
+        if (string.IsNullOrEmpty(entry.Id))
+        {
+            return;
+        }
+
+        List<string> hiddenTools = Program.Settings.HiddenTools ??= new List<string>();
+        bool changed;
+
+        if (isVisible)
+        {
+            changed = hiddenTools.RemoveAll(x => string.Equals(x, entry.Id, StringComparison.Ordinal)) > 0;
+        }
+        else if (!hiddenTools.Any(x => string.Equals(x, entry.Id, StringComparison.Ordinal)))
+        {
+            hiddenTools.Add(entry.Id);
+            changed = true;
+        }
+        else
+        {
+            changed = false;
+        }
+
+        if (changed)
+        {
+            SettingManager.SaveApplicationConfigAsync();
+        }
     }
 
     private static Control CreateGridMenuItemContent(MainMenuEntry entry)

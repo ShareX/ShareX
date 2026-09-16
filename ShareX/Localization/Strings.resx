@@ -1424,11 +1424,17 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Drag and drop upload...</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Enable hotkeys</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>Done</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>Follow ShareX...</value>

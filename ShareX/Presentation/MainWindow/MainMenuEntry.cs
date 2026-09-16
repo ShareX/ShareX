@@ -41,6 +41,7 @@ internal sealed class MainMenuEntry
     public Func<Task>? ExecuteAsync { get; }
     public Func<IReadOnlyList<MainMenuEntry>>? CreateChildren { get; }
     public Func<IReadOnlyList<MainMenuCategory>>? CreateCategories { get; }
+    public string? Id { get; }
     public bool IsSeparator { get; }
     public bool IsEnabled { get; }
     public bool IsVisible { get; }
@@ -65,7 +66,8 @@ internal sealed class MainMenuEntry
         byte[]? bitmapIcon = null,
         Func<string>? createHeader = null,
         Func<string>? createAccentText = null,
-        bool boldWhenChecked = false)
+        bool boldWhenChecked = false,
+        string? id = null)
     {
         _header = header;
         _createHeader = createHeader;
@@ -79,6 +81,7 @@ internal sealed class MainMenuEntry
         };
         CreateChildren = createChildren;
         CreateCategories = createCategories;
+        Id = id;
         IsEnabled = isEnabled;
         IsVisible = isVisible;
         IsChecked = isChecked;
@@ -103,7 +106,8 @@ internal sealed class MainMenuEntry
         byte[]? bitmapIcon = null,
         Func<string>? createHeader = null,
         Func<string>? createAccentText = null,
-        bool boldWhenChecked = false)
+        bool boldWhenChecked = false,
+        string? id = null)
     {
         _header = header;
         _createHeader = createHeader;
@@ -113,6 +117,7 @@ internal sealed class MainMenuEntry
         ExecuteAsync = executeAsync;
         CreateChildren = createChildren;
         CreateCategories = createCategories;
+        Id = id;
         IsEnabled = isEnabled;
         IsVisible = isVisible;
         IsChecked = isChecked;
