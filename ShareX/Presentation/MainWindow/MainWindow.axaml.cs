@@ -433,7 +433,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                     Content = CreateGridMenuItemContent(entry),
                     IsEnabled = entry.IsEnabled
                 };
-                ToolTip.SetTip(button, entry.Header);
                 button.Click += (_, _) => ExecuteGridMenuEntry(flyout, entry);
                 itemGrid.Children.Add(button);
             }
