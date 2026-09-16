@@ -979,6 +979,12 @@
         <Setter Property="Margin" Value="7,3,7,3"/>
     </Style>
 
+    <Style Selector="Border.tool-grid-category-separator">
+        <Setter Property="Height" Value="1"/>
+        <Setter Property="Margin" Value="7,9,7,7"/>
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Separator}"/>
+    </Style>
+
     <Style Selector="Button.tool-grid-button">
         <Setter Property="Height" Value="34"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>

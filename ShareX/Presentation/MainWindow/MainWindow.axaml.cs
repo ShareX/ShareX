@@ -402,12 +402,25 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 continue;
             }
 
+            if (currentRow > 0)
+            {
+                content.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+                Border separator = new()
+                {
+                    Classes = { "tool-grid-category-separator" }
+                };
+                Grid.SetRow(separator, currentRow);
+                Grid.SetColumnSpan(separator, 3);
+                content.Children.Add(separator);
+                currentRow++;
+            }
+
             content.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
             TextBlock categoryHeader = new()
             {
                 Text = category.Header,
                 Classes = { "tool-grid-category-header" },
-                Margin = new Thickness(7, currentRow == 0 ? 1 : 9, 7, 3)
+                Margin = new Thickness(7, currentRow == 0 ? 1 : 3, 7, 3)
             };
             Grid.SetRow(categoryHeader, currentRow);
             Grid.SetColumnSpan(categoryHeader, 3);
