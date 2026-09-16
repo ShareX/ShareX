@@ -987,7 +987,7 @@
 
     <Style Selector="Button.tool-grid-button">
         <Setter Property="Height" Value="34"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="Padding" Value="8,4"/>
         <Setter Property="Margin" Value="2"/>
