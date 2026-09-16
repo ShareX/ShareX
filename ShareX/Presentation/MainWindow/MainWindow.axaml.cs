@@ -484,6 +484,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                         VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
                     };
                     visibilitySwitch.Classes.Add("tool-grid-visibility-switch");
+                    visibilitySwitch.Resources["ToggleSwitchPreContentMargin"] = new GridLength(0);
+                    visibilitySwitch.Resources["ToggleSwitchPostContentMargin"] = new GridLength(0);
 
                     ToggleButton visibilityButton = new()
                     {
@@ -538,7 +540,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         StackPanel content = new()
         {
             Orientation = Avalonia.Layout.Orientation.Horizontal,
-            Spacing = 8
+            Spacing = 4,
+            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
         };
         content.Children.Add(visibilitySwitch);
         content.Children.Add(CreateGridMenuItemContent(entry));

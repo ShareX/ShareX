@@ -1025,6 +1025,7 @@
         <Setter Property="Height" Value="34"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="8,4"/>
         <Setter Property="Margin" Value="2"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -1049,7 +1050,9 @@
     </Style>
 
     <Style Selector="ToggleSwitch.tool-grid-visibility-switch">
+        <Setter Property="Height" Value="20"/>
         <Setter Property="Margin" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 
     <Style Selector="MenuItem.tool-grid-submenu-host">
