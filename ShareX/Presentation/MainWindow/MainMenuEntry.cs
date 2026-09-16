@@ -134,14 +134,17 @@ internal sealed class MainNavigationSection
     public string Header { get; }
     public string Icon { get; }
     public Func<IReadOnlyList<MainMenuEntry>>? CreateChildren { get; }
+    public Func<IReadOnlyList<MainMenuCategory>>? CreateCategories { get; }
     public Action? Execute { get; }
     public bool IsVisible { get; }
 
-    public MainNavigationSection(string header, string icon, Func<IReadOnlyList<MainMenuEntry>> createChildren, bool isVisible = true)
+    public MainNavigationSection(string header, string icon, Func<IReadOnlyList<MainMenuEntry>> createChildren,
+        bool isVisible = true, Func<IReadOnlyList<MainMenuCategory>>? createCategories = null)
     {
         Header = header;
         Icon = icon;
         CreateChildren = createChildren;
+        CreateCategories = createCategories;
         IsVisible = isVisible;
     }
 
@@ -151,5 +154,17 @@ internal sealed class MainNavigationSection
         Icon = icon;
         Execute = execute;
         IsVisible = isVisible;
+    }
+}
+
+internal sealed class MainMenuCategory
+{
+    public string Header { get; }
+    public IReadOnlyList<MainMenuEntry> Entries { get; }
+
+    public MainMenuCategory(string header, IReadOnlyList<MainMenuEntry> entries)
+    {
+        Header = header;
+        Entries = entries;
     }
 }

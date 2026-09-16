@@ -17,6 +17,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Documents;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
@@ -56,6 +57,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private readonly MainMenuBuilder _trayMenuBuilder;
     private readonly UploadInfoManager _uploadInfoManager = new();
     private ContextMenu? _activeContextMenu;
+    private Flyout? _activeGridMenu;
     private Window? _trayMenuAnchor;
     private PointerPressedEventArgs? _thumbnailDragTrigger;
     private Task<IStorageFile?>? _thumbnailDragFileTask;
@@ -340,7 +342,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         Grid.SetColumn(label, 2);
         grid.Children.Add(label);
 
-        if (section.CreateChildren != null)
+        if (section.CreateChildren != null || section.CreateCategories != null)
         {
             TextBlock chevron = CreateAccentMenuIcon(LucideIcons.chevron_right, 14);
             chevron.Margin = new Thickness(5, 0, 0, 0);
@@ -365,11 +367,131 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return;
         }
 
-        if (section.CreateChildren != null)
+        if (section.CreateCategories != null)
+        {
+            Flyout flyout = BuildGridMenu(section.CreateCategories());
+            TryOpenGridMenu(flyout, button);
+        }
+        else if (section.CreateChildren != null)
         {
             ContextMenu menu = BuildContextMenu(section.CreateChildren());
             TryOpenContextMenu(menu, button, PlacementMode.RightEdgeAlignedTop);
         }
+    }
+
+    private Flyout BuildGridMenu(IEnumerable<MainMenuCategory> categories)
+    {
+        Flyout flyout = new()
+        {
+            Placement = PlacementMode.RightEdgeAlignedTop
+        };
+        flyout.FlyoutPresenterClasses.Add("tool-grid-flyout");
+
+        StackPanel content = new()
+        {
+            Spacing = 8,
+            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left
+        };
+
+        foreach (MainMenuCategory category in categories)
+        {
+            IReadOnlyList<MainMenuEntry> entries = category.Entries.Where(x => x.IsVisible && !x.IsSeparator).ToArray();
+            if (entries.Count == 0)
+            {
+                continue;
+            }
+
+            StackPanel categoryPanel = new()
+            {
+                Spacing = 2,
+                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left
+            };
+            TextBlock categoryHeader = new()
+            {
+                Text = category.Header,
+                Classes = { "tool-grid-category-header" }
+            };
+            categoryPanel.Children.Add(categoryHeader);
+
+            Grid grid = new()
+            {
+                ColumnDefinitions = new ColumnDefinitions("Auto,Auto,Auto"),
+                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left
+            };
+
+            for (int i = 0; i < entries.Count; i++)
+            {
+                MainMenuEntry entry = entries[i];
+                int row = i / 3;
+                if (grid.RowDefinitions.Count <= row)
+                {
+                    grid.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+                }
+
+                Button button = new()
+                {
+                    Classes = { "tool-grid-button" },
+                    Content = CreateGridMenuItemContent(entry),
+                    IsEnabled = entry.IsEnabled
+                };
+                ToolTip.SetTip(button, entry.Header);
+                button.Click += (_, _) => ExecuteGridMenuEntry(flyout, entry);
+                Grid.SetColumn(button, i % 3);
+                Grid.SetRow(button, row);
+                grid.Children.Add(button);
+            }
+
+            categoryPanel.Children.Add(grid);
+            content.Children.Add(categoryPanel);
+        }
+
+        flyout.Content = content;
+        return flyout;
+    }
+
+    private static Control CreateGridMenuItemContent(MainMenuEntry entry)
+    {
+        StackPanel content = new()
+        {
+            Orientation = Avalonia.Layout.Orientation.Horizontal,
+            Spacing = 8
+        };
+        TextBlock icon = CreateAccentMenuIcon(entry.Icon, 16);
+        icon.VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center;
+        content.Children.Add(icon);
+
+        TextBlock label = new()
+        {
+            Text = entry.Header,
+            TextTrimming = TextTrimming.CharacterEllipsis,
+            MaxLines = 1,
+            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
+        };
+        content.Children.Add(label);
+        return content;
+    }
+
+    private void ExecuteGridMenuEntry(Flyout flyout, MainMenuEntry entry)
+    {
+        flyout.Hide();
+
+        if (entry.ExecuteAsync == null)
+        {
+            return;
+        }
+
+        Dispatcher.UIThread.Post(async () =>
+        {
+            try
+            {
+                await entry.ExecuteAsync();
+                RefreshMenus();
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+        }, DispatcherPriority.Background);
     }
 
     private ContextMenu BuildContextMenu(IEnumerable<MainMenuEntry> entries)
@@ -386,7 +508,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private bool TryOpenContextMenu(ContextMenu menu, Control placementTarget, PlacementMode placement)
     {
-        if (_activeContextMenu != null)
+        if (_activeContextMenu != null || _activeGridMenu != null)
         {
             return false;
         }
@@ -408,6 +530,34 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
     }
 
+    private bool TryOpenGridMenu(Flyout flyout, Control placementTarget)
+    {
+        if (_activeContextMenu != null || _activeGridMenu != null)
+        {
+            return false;
+        }
+
+        _activeGridMenu = flyout;
+        flyout.Closed += (_, _) =>
+        {
+            if (ReferenceEquals(_activeGridMenu, flyout))
+            {
+                _activeGridMenu = null;
+            }
+        };
+
+        try
+        {
+            flyout.ShowAt(placementTarget);
+            return true;
+        }
+        catch
+        {
+            _activeGridMenu = null;
+            throw;
+        }
+    }
+
     private void OnActiveContextMenuClosed(object? sender, RoutedEventArgs e)
     {
         if (sender is ContextMenu menu)
@@ -423,6 +573,13 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void CloseActiveContextMenu()
     {
+        if (_activeGridMenu != null)
+        {
+            Flyout flyout = _activeGridMenu;
+            _activeGridMenu = null;
+            flyout.Hide();
+        }
+
         if (_activeContextMenu == null)
         {
             return;

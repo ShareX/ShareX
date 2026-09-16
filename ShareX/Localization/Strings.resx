@@ -1571,6 +1571,21 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>Test URL shortener</value>
   </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>Data &amp; text</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>Screen &amp; color</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>Video</value>
+  </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>Tools</value>
   </data>

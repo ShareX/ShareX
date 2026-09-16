@@ -709,6 +709,51 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("MainMenuBuilder_TestUrlShortener", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Data &amp; text.
+        /// </summary>
+        public static string MainMenuBuilder_ToolCategoryData {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ToolCategoryData", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Images.
+        /// </summary>
+        public static string MainMenuBuilder_ToolCategoryImages {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ToolCategoryImages", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Screen &amp; color.
+        /// </summary>
+        public static string MainMenuBuilder_ToolCategoryScreen {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ToolCategoryScreen", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        public static string MainMenuBuilder_ToolCategorySystem {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ToolCategorySystem", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Video.
+        /// </summary>
+        public static string MainMenuBuilder_ToolCategoryVideo {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ToolCategoryVideo", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Tools.

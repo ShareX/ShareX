@@ -960,6 +960,40 @@
         <Setter Property="Margin" Value="6,2"/>
     </Style>
 
+    <Style Selector="FlyoutPresenter.tool-grid-flyout">
+        <Setter Property="Background" Value="{DynamicResource MenuFlyoutPresenterBackground}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="MaxWidth" Value="Infinity"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+    </Style>
+
+    <Style Selector="TextBlock.tool-grid-category-header">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="7,1,7,3"/>
+    </Style>
+
+    <Style Selector="Button.tool-grid-button">
+        <Setter Property="Height" Value="34"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="8,4"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+    </Style>
+
+    <Style Selector="Button.tool-grid-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
     <Style Selector="TextBlock.accent-menu-icon">
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
         <Setter Property="FontWeight" Value="Normal"/>
