@@ -2863,7 +2863,7 @@ You can later disable it from "After capture tasks" menu.</value>
     <value>Mouse highlighter...</value>
   </data>
   <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Automatically start mouse highlighter when recording starts and stop it when recording stops</value>
+    <value>Automatically start mouse highlighter</value>
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Mouse highlighter options...</value>
