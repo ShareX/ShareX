@@ -648,6 +648,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>자동 촬영</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>배경 제거</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>테두리 없는 창</value>
   </data>

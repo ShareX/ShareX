@@ -648,6 +648,9 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Capture automatique</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Suppression de l’arrière-plan</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Fenêtre sans bordure</value>
   </data>

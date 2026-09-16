@@ -648,6 +648,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>ضبط خودکار</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>حذف‌کننده پس‌زمینه</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>پنجره بدون حاشیه</value>
   </data>

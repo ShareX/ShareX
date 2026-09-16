@@ -648,6 +648,9 @@ Chcete jej přesto spustit?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Automatické zachytávání</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Odstranění pozadí</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Okno bez ohraničení</value>
   </data>

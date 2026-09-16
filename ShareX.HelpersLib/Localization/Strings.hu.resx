@@ -648,6 +648,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Auto képlopás</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Háttér eltávolítása</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Borderless ablak</value>
   </data>

@@ -648,6 +648,9 @@ Vill du ändå köra det?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Automatisk bildtagning</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Bakgrundsborttagning</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Kantlöst fönster</value>
   </data>

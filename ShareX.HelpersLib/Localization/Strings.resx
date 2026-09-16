@@ -648,6 +648,9 @@ Do you still want to run it?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Auto capture</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Background remover</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Borderless window</value>
   </data>

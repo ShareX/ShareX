@@ -648,6 +648,9 @@ Wilt u het toch uitvoeren?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Automatisch vastleggen</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Achtergrondverwijderaar</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Borderless venster</value>
   </data>

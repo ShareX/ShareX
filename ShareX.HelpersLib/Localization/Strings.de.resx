@@ -648,6 +648,9 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Autoaufnahme</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Hintergrundentferner</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Randloses Fenster</value>
   </data>

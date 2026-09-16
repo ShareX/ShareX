@@ -742,6 +742,9 @@ namespace ShareX.HelpersLib.Localization {
         public static string HotkeyType_AutoCapture {
             get { return ResourceManager.GetString("HotkeyType_AutoCapture", resourceCulture); }
         }
+        public static string HotkeyType_BackgroundRemover {
+            get { return ResourceManager.GetString("HotkeyType_BackgroundRemover", resourceCulture); }
+        }
         public static string HotkeyType_BorderlessWindow {
             get { return ResourceManager.GetString("HotkeyType_BorderlessWindow", resourceCulture); }
         }

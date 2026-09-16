@@ -648,6 +648,9 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Otomatik yakala</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Arka plan kaldırıcı</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Kenarsız pencere</value>
   </data>

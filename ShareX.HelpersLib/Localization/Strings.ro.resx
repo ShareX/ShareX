@@ -648,6 +648,9 @@ Doriți totuși să îl executați?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Captură automată</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Eliminare fundal</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Fereastră fără margini</value>
   </data>

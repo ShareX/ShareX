@@ -648,6 +648,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Tự động chụp</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Xóa nền</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Cửa sổ không viền</value>
   </data>

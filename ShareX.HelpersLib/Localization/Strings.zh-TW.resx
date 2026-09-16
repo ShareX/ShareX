@@ -648,6 +648,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>自動擷取</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>背景移除</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>無邊框視窗</value>
   </data>

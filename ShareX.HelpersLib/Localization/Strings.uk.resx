@@ -648,6 +648,9 @@
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Автоматичне захоплення</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Видалення тла</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Безрамкове вікно</value>
   </data>

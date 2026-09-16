@@ -648,6 +648,9 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Automatyczne przechwytywanie</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Usuwanie tła</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Okno bez obramowania</value>
   </data>

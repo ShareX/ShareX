@@ -648,6 +648,9 @@ Vil du stadig køre den?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Automatisk optagelse</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Fjern baggrund</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Vindue uden kant</value>
   </data>

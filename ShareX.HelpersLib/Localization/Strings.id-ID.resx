@@ -648,6 +648,9 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Otomatis ambil</value>
   </data>
+  <data name="HotkeyType_BackgroundRemover" xml:space="preserve">
+    <value>Penghapus latar belakang</value>
+  </data>
   <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
     <value>Jendela tanpa bingkai</value>
   </data>
