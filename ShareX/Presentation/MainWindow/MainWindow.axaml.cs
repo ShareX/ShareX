@@ -395,15 +395,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         IReadOnlyList<MainMenuCategory> categoryList = categories.ToArray();
         Grid root = new()
         {
-            RowDefinitions = new RowDefinitions("Auto,Auto"),
             HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left
         };
 
         Button editButton = new()
         {
             Classes = { "tool-grid-edit-button" },
-            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Right
+            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Right,
+            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Top
         };
+        editButton.ZIndex = 1;
         root.Children.Add(editButton);
 
         StackPanel content = new()
@@ -411,7 +412,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Orientation = Avalonia.Layout.Orientation.Vertical,
             HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Stretch
         };
-        Grid.SetRow(content, 1);
         root.Children.Add(content);
 
         bool isEditing = false;
@@ -540,7 +540,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         StackPanel content = new()
         {
             Orientation = Avalonia.Layout.Orientation.Horizontal,
-            Spacing = 4,
+            Spacing = 2,
             VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
         };
         content.Children.Add(visibilitySwitch);

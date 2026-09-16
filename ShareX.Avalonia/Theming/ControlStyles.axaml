@@ -988,14 +988,14 @@
     </Style>
 
     <Style Selector="Button.tool-grid-edit-button">
-        <Setter Property="Height" Value="28"/>
+        <Setter Property="Height" Value="22"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="7,3"/>
-        <Setter Property="Margin" Value="2,0,2,4"/>
+        <Setter Property="Padding" Value="5,1"/>
+        <Setter Property="Margin" Value="2,0"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="CornerRadius" Value="5"/>
-        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontSize" Value="11"/>
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
     </Style>
 
