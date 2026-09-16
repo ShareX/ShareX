@@ -1061,15 +1061,14 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="CornerRadius" Value="0"/>
-    </Style>
-
-    <Style Selector="MenuItem.tool-grid-submenu-host /template/ Border#PART_LayoutRoot">
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0"/>
-    </Style>
-
-    <Style Selector="MenuItem.tool-grid-submenu-host:pointerover /template/ Border#PART_LayoutRoot">
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <ContentPresenter Content="{TemplateBinding Header}"
+                                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"/>
+            </ControlTemplate>
+        </Setter>
     </Style>
 
     <Style Selector="TextBlock.accent-menu-icon">
