@@ -21,20 +21,20 @@ public sealed class MouseHighlighterOptions
 {
     public bool AutoActivate { get; set; }
     public MouseHighlightMode Mode { get; set; } = MouseHighlightMode.Ripple;
-    public Color PrimaryColor { get; set; } = Color.FromArgb(166, 191, 255, 0);
-    public Color SecondaryColor { get; set; } = Color.FromArgb(166, 0, 191, 255);
-    public Color MiddleColor { get; set; } = Color.FromArgb(166, 255, 128, 0);
+    public Color PrimaryColor { get; set; } = Color.FromArgb(166, 119, 221, 119);
+    public bool ShowPrimaryReleaseCrosshairs { get; set; }
+    public Color SecondaryColor { get; set; } = Color.FromArgb(166, 255, 105, 97);
+    public bool ShowSecondaryReleaseCrosshairs { get; set; }
+    public Color MiddleColor { get; set; } = Color.FromArgb(166, 9, 170, 255);
+    public bool ShowMiddleReleaseCrosshairs { get; set; }
     public Color AlwaysColor { get; set; } = Color.Transparent;
     public int Radius { get; set; } = 20;
     public int FadeDelay { get; set; } = 500;
     public int FadeDuration { get; set; } = 250;
     public int RippleSize { get; set; } = 60;
     public double RippleIntensity { get; set; } = 0.7;
-    public int RippleDuration { get; set; } = 480;
+    public int RippleDuration { get; set; } = 500;
     public bool FollowCursorWhileHeld { get; set; } = true;
-    public bool ShowPrimaryReleaseCrosshairs { get; set; }
-    public bool ShowSecondaryReleaseCrosshairs { get; set; } = true;
-    public bool ShowMiddleReleaseCrosshairs { get; set; }
 
     internal Color GetColor(MouseHighlightButton button) => button switch
     {
