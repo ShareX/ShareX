@@ -387,12 +387,13 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         };
         flyout.FlyoutPresenterClasses.Add("tool-grid-flyout");
 
-        StackPanel content = new()
+        Grid content = new()
         {
-            Spacing = 8,
+            ColumnDefinitions = new ColumnDefinitions("Auto,Auto,Auto"),
             HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left
         };
 
+        int currentRow = 0;
         foreach (MainMenuCategory category in categories)
         {
             IReadOnlyList<MainMenuEntry> entries = category.Entries.Where(x => x.IsVisible && !x.IsSeparator).ToArray();
@@ -401,33 +402,27 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 continue;
             }
 
-            StackPanel categoryPanel = new()
-            {
-                Spacing = 2,
-                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left
-            };
+            content.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
             TextBlock categoryHeader = new()
             {
                 Text = category.Header,
-                Classes = { "tool-grid-category-header" }
+                Classes = { "tool-grid-category-header" },
+                Margin = new Thickness(7, currentRow == 0 ? 1 : 9, 7, 3)
             };
-            categoryPanel.Children.Add(categoryHeader);
+            Grid.SetRow(categoryHeader, currentRow);
+            Grid.SetColumnSpan(categoryHeader, 3);
+            content.Children.Add(categoryHeader);
+            currentRow++;
 
-            Grid grid = new()
+            int itemRowCount = (entries.Count + 2) / 3;
+            for (int i = 0; i < itemRowCount; i++)
             {
-                ColumnDefinitions = new ColumnDefinitions("Auto,Auto,Auto"),
-                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left
-            };
+                content.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+            }
 
             for (int i = 0; i < entries.Count; i++)
             {
                 MainMenuEntry entry = entries[i];
-                int row = i / 3;
-                if (grid.RowDefinitions.Count <= row)
-                {
-                    grid.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
-                }
-
                 Button button = new()
                 {
                     Classes = { "tool-grid-button" },
@@ -437,12 +432,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 ToolTip.SetTip(button, entry.Header);
                 button.Click += (_, _) => ExecuteGridMenuEntry(flyout, entry);
                 Grid.SetColumn(button, i % 3);
-                Grid.SetRow(button, row);
-                grid.Children.Add(button);
+                Grid.SetRow(button, currentRow + (i / 3));
+                content.Children.Add(button);
             }
 
-            categoryPanel.Children.Add(grid);
-            content.Children.Add(categoryPanel);
+            currentRow += itemRowCount;
         }
 
         flyout.Content = content;
