@@ -40,6 +40,7 @@ internal sealed class MainMenuEntry
     public byte[]? BitmapIcon { get; }
     public Func<Task>? ExecuteAsync { get; }
     public Func<IReadOnlyList<MainMenuEntry>>? CreateChildren { get; }
+    public Func<IReadOnlyList<MainMenuCategory>>? CreateCategories { get; }
     public bool IsSeparator { get; }
     public bool IsEnabled { get; }
     public bool IsVisible { get; }
@@ -54,6 +55,7 @@ internal sealed class MainMenuEntry
         string icon,
         Action? execute = null,
         Func<IReadOnlyList<MainMenuEntry>>? createChildren = null,
+        Func<IReadOnlyList<MainMenuCategory>>? createCategories = null,
         bool isEnabled = true,
         bool isVisible = true,
         bool isChecked = false,
@@ -76,6 +78,7 @@ internal sealed class MainMenuEntry
             return Task.CompletedTask;
         };
         CreateChildren = createChildren;
+        CreateCategories = createCategories;
         IsEnabled = isEnabled;
         IsVisible = isVisible;
         IsChecked = isChecked;
@@ -90,6 +93,7 @@ internal sealed class MainMenuEntry
         string icon,
         Func<Task> executeAsync,
         Func<IReadOnlyList<MainMenuEntry>>? createChildren = null,
+        Func<IReadOnlyList<MainMenuCategory>>? createCategories = null,
         bool isEnabled = true,
         bool isVisible = true,
         bool isChecked = false,
@@ -108,6 +112,7 @@ internal sealed class MainMenuEntry
         BitmapIcon = bitmapIcon;
         ExecuteAsync = executeAsync;
         CreateChildren = createChildren;
+        CreateCategories = createCategories;
         IsEnabled = isEnabled;
         IsVisible = isVisible;
         IsChecked = isChecked;

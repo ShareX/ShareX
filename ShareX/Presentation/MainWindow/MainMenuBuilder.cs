@@ -79,7 +79,7 @@ internal sealed class MainMenuBuilder
             Parent(Strings.MainMenuBuilder_Capture, LucideIcons.camera, BuildCaptureMenu),
             Parent(Strings.MainMenuBuilder_Upload, LucideIcons.upload, BuildUploadMenu, uploadsEnabled),
             Parent(Strings.MainMenuBuilder_Workflows, LucideIcons.list_checks, BuildWorkflowsMenu),
-            Parent(Strings.MainMenuBuilder_Tools, LucideIcons.wrench, BuildToolsMenu),
+            CategoryParent(Strings.MainMenuBuilder_Tools, LucideIcons.wrench, BuildToolCategories),
             MainMenuEntry.Separator(),
             Parent(Strings.MainMenuBuilder_AfterCaptureTasks, LucideIcons.image_up, BuildAfterCaptureMenu),
             Parent(Strings.MainMenuBuilder_AfterUploadTasks, LucideIcons.cloud_upload, BuildAfterUploadMenu, uploadsEnabled),
@@ -577,6 +577,10 @@ internal sealed class MainMenuBuilder
 
     private static MainMenuEntry Parent(string header, string icon, Func<IReadOnlyList<MainMenuEntry>> children, bool isVisible = true) =>
         new(header, icon, createChildren: children, isVisible: isVisible);
+
+    private static MainMenuEntry CategoryParent(string header, string icon,
+        Func<IReadOnlyList<MainMenuCategory>> categories, bool isVisible = true) =>
+        new(header, icon, createCategories: categories, isVisible: isVisible);
 
     private static MainMenuEntry Parent(string headerFormat, Func<string> createAccentText, string icon,
         Func<IReadOnlyList<MainMenuEntry>> children, bool isVisible = true)

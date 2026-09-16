@@ -386,7 +386,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Placement = PlacementMode.RightEdgeAlignedTop
         };
         flyout.FlyoutPresenterClasses.Add("tool-grid-flyout");
+        flyout.Content = BuildGridMenuContent(categories, entry => ExecuteGridMenuEntry(flyout, entry));
+        return flyout;
+    }
 
+    private static Control BuildGridMenuContent(IEnumerable<MainMenuCategory> categories, Action<MainMenuEntry> execute)
+    {
         StackPanel content = new()
         {
             Orientation = Avalonia.Layout.Orientation.Vertical,
@@ -433,7 +438,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                     Content = CreateGridMenuItemContent(entry),
                     IsEnabled = entry.IsEnabled
                 };
-                button.Click += (_, _) => ExecuteGridMenuEntry(flyout, entry);
+                button.Click += (_, _) => execute(entry);
                 itemGrid.Children.Add(button);
             }
 
@@ -441,8 +446,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             hasCategory = true;
         }
 
-        flyout.Content = content;
-        return flyout;
+        return content;
     }
 
     private static Control CreateGridMenuItemContent(MainMenuEntry entry)
@@ -470,7 +474,17 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void ExecuteGridMenuEntry(Flyout flyout, MainMenuEntry entry)
     {
         flyout.Hide();
+        QueueGridMenuEntry(entry);
+    }
 
+    private void ExecuteGridMenuEntry(ContextMenu menu, MainMenuEntry entry)
+    {
+        menu.Close();
+        QueueGridMenuEntry(entry);
+    }
+
+    private void QueueGridMenuEntry(MainMenuEntry entry)
+    {
         if (entry.ExecuteAsync == null)
         {
             return;
@@ -629,7 +643,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 item.Icon = CreateAccentMenuIcon(entry.Icon, 16);
             }
 
-            if (entry.CreateChildren != null)
+            if (entry.CreateCategories != null)
+            {
+                AddLazyGridSubmenu(item, entry.CreateCategories, menu);
+            }
+            else if (entry.CreateChildren != null)
             {
                 AddLazySubmenu(item, entry.CreateChildren, menu);
 
@@ -738,6 +756,38 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             Inlines = inlines,
             VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
+        };
+    }
+
+    private void AddLazyGridSubmenu(MenuItem item, Func<IReadOnlyList<MainMenuCategory>> createCategories, ContextMenu menu)
+    {
+        item.Resources["FlyoutThemeMaxWidth"] = double.PositiveInfinity;
+        item.Resources["MenuFlyoutPresenterThemePadding"] = new Thickness(10);
+        item.Resources["MenuFlyoutScrollerMargin"] = new Thickness(0);
+
+        // Keep the submenu indicator while deferring the grid construction until it is opened.
+        item.Items.Add(new MenuItem { IsVisible = false });
+
+        bool isPopulated = false;
+        item.SubmenuOpened += (_, e) =>
+        {
+            if (isPopulated || !ReferenceEquals(e.Source, item))
+            {
+                return;
+            }
+
+            item.Items.Clear();
+
+            MenuItem gridHost = new()
+            {
+                Header = BuildGridMenuContent(createCategories(), entry => ExecuteGridMenuEntry(menu, entry)),
+                Focusable = false,
+                StaysOpenOnClick = true
+            };
+            gridHost.Classes.Add("tool-grid-submenu-host");
+            item.Items.Add(gridHost);
+
+            isPopulated = true;
         };
     }
 
