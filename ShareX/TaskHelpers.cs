@@ -1497,13 +1497,22 @@ namespace ShareX
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
                 Bitmap bmp = ImageHelpers.LoadImage(filePath);
+                Bitmap bmpResult = null;
                 ThreadWorker worker = new ThreadWorker();
 
                 worker.DoWork += () =>
                 {
                     using (bmp)
                     {
-                        AnnotateImageModern(bmp, filePath, taskSettings, openBackgroundPanel: true)?.Dispose();
+                        bmpResult = AnnotateImageModern(bmp, filePath, taskSettings, openBackgroundPanel: true);
+                    }
+                };
+
+                worker.Completed += () =>
+                {
+                    if (bmpResult != null)
+                    {
+                        UploadManager.RunImageTask(bmpResult, taskSettings);
                     }
                 };
 
