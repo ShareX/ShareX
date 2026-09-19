@@ -808,6 +808,9 @@
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>Redimensionează imaginea</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>Mod de redimensionare</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Întindere</value>
   </data>

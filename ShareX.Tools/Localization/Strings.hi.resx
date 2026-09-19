@@ -812,6 +812,9 @@
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>चित्र का आकार बदलें</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>आकार बदलने का मोड</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>फैलाएँ</value>
   </data>

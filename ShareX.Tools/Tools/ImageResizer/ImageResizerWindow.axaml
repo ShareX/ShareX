@@ -118,7 +118,7 @@
                                                Value="{Binding Height}"/>
                             </Grid>
                             <Grid Grid.Row="3" ColumnDefinitions="90,*" ColumnSpacing="10">
-                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.MouseHighlighter_Mode}"/>
+                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageResizerWindow_Resize_mode}"/>
                                 <ComboBox Grid.Column="1"
                                           ItemsSource="{Binding ResizeModeOptions}"
                                           SelectedIndex="{Binding SelectedResizeModeIndex}"/>

@@ -808,6 +808,9 @@
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>تغییر اندازه تصویر</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>حالت تغییر اندازه</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>کشیدن</value>
   </data>

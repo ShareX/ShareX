@@ -808,6 +808,9 @@
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>Змінити розмір зображення</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>Режим зміни розміру</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Розтягнути</value>
   </data>

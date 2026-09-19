@@ -812,6 +812,9 @@ Chemin du fichier : {0}</value>
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>Redimensionner l’image</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>Mode de redimensionnement</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Étirer</value>
   </data>

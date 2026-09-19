@@ -808,6 +808,9 @@
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>Kép átméretezése</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>Átméretezési mód</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Nyújtás</value>
   </data>

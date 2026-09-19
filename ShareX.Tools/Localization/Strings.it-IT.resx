@@ -812,6 +812,9 @@ Percorso file: {0}</value>
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>Ridimensiona immagine</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>Modalità di ridimensionamento</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Allunga</value>
   </data>

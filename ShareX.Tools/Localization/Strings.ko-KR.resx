@@ -808,6 +808,9 @@
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>이미지 크기 조정</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>크기 조정 모드</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>늘이기</value>
   </data>

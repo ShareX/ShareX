@@ -812,6 +812,9 @@ Bestandspad: {0}</value>
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>Afbeeldingsgrootte wijzigen</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>Modus voor formaat wijzigen</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Uitrekken</value>
   </data>

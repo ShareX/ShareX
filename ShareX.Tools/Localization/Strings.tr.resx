@@ -812,6 +812,9 @@ Dosya yolu: {0}</value>
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>Görseli yeniden boyutlandır</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>Boyutlandırma modu</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Uzat</value>
   </data>

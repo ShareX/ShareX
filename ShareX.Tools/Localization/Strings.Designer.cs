@@ -2378,6 +2378,15 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Resize mode.
+        /// </summary>
+        public static string ImageResizerWindow_Resize_mode {
+            get {
+                return ResourceManager.GetString("ImageResizerWindow_Resize_mode", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Stretch.
         /// </summary>
         public static string ImageResizerWindow_Stretch {

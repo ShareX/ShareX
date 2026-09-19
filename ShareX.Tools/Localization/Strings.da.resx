@@ -812,6 +812,9 @@ Filsti: {0}</value>
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>Skift billedstørrelse</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>Skaleringstilstand</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Stræk</value>
   </data>

@@ -812,6 +812,9 @@ Dateipfad: {0}</value>
   <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
     <value>Bildgröße ändern</value>
   </data>
+  <data name="ImageResizerWindow_Resize_mode" xml:space="preserve">
+    <value>Größenänderungsmodus</value>
+  </data>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Strecken</value>
   </data>
