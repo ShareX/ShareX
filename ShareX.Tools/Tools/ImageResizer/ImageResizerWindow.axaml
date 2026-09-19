@@ -39,7 +39,7 @@
                         <Grid Grid.Row="1">
                             <ListBox x:Name="ImagesList"
                                      ItemsSource="{Binding Images}"
-                                     SelectedItem="{Binding SelectedImage}"
+                                     SelectedItem="{Binding SelectedImage, Mode=TwoWay}"
                                      SelectionMode="Multiple"
                                      SelectionChanged="OnSelectionChanged">
                                 <ListBox.ItemTemplate>

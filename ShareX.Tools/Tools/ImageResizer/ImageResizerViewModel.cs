@@ -91,7 +91,7 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
     public string ImageCountText => string.Format(Images.Count == 1
         ? Localization.Strings.ImageThumbnailerViewModel_One_image
         : Localization.Strings.ImageThumbnailerViewModel_Image_count, Images.Count);
-    public string PreviewFilePath => Images.FirstOrDefault() ?? string.Empty;
+    public string PreviewFilePath => SelectedImage ?? Images.FirstOrDefault() ?? string.Empty;
     public string PreviewSizeText => $"{(int)Width} × {(int)Height}";
 
     [RelayCommand]
@@ -117,6 +117,11 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
             {
                 OutputFolderPath = Path.GetDirectoryName(file) ?? string.Empty;
             }
+        }
+
+        if (SelectedImage == null)
+        {
+            SelectedImage = Images.FirstOrDefault();
         }
 
         NotifyCollectionChanged();
@@ -145,7 +150,7 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
         }
 
         _selectedImages.Clear();
-        SelectedImage = null;
+        SelectedImage = Images.FirstOrDefault();
         NotifyCollectionChanged();
     }
 
@@ -203,7 +208,12 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
         }
     }
 
-    partial void OnSelectedImageChanged(string? value) => OnPropertyChanged(nameof(CanRemove));
+    partial void OnSelectedImageChanged(string? value)
+    {
+        OnPropertyChanged(nameof(CanRemove));
+        OnPropertyChanged(nameof(PreviewFilePath));
+        QueuePreviewRefresh();
+    }
     partial void OnWidthChanged(decimal value) => NotifyOptionsChanged();
     partial void OnHeightChanged(decimal value) => NotifyOptionsChanged();
     partial void OnSelectedResizeModeIndexChanged(int value) => NotifyOptionsChanged();
@@ -249,7 +259,7 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
     private async Task RefreshPreviewAsync(CancellationToken cancellationToken)
     {
         int version = ++_previewVersion;
-        string? filePath = Images.FirstOrDefault();
+        string? filePath = SelectedImage ?? Images.FirstOrDefault();
         if (_isDisposed || string.IsNullOrWhiteSpace(filePath) || !File.Exists(filePath) || Width < 1 || Height < 1)
         {
             ReplacePreview(null);
