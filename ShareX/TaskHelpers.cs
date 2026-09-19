@@ -286,6 +286,9 @@ namespace ShareX
                 case HotkeyType.ImageResizer:
                     OpenImageResizer();
                     break;
+                case HotkeyType.ImageConverter:
+                    OpenImageConverter();
+                    break;
                 case HotkeyType.ImageThumbnailer:
                     OpenImageThumbnailer();
                     break;
@@ -1074,6 +1077,11 @@ namespace ShareX
         public static void OpenImageResizer()
         {
             ToolsIntegration.ShowImageResizerWindow();
+        }
+
+        public static void OpenImageConverter()
+        {
+            ToolsIntegration.ShowImageConverterWindow();
         }
 
         public static void OpenImageThumbnailer()
@@ -2273,6 +2281,7 @@ namespace ShareX
                 HotkeyType.ImageCombiner => LucideIcons.combine,
                 HotkeyType.ImageSplitter => LucideIcons.split,
                 HotkeyType.ImageResizer => LucideIcons.maximize_2,
+                HotkeyType.ImageConverter => LucideIcons.refresh_cw,
                 HotkeyType.ImageThumbnailer => LucideIcons.shrink,
                 HotkeyType.VideoConverter => LucideIcons.file_video,
                 HotkeyType.VideoTrimmer => LucideIcons.scissors,

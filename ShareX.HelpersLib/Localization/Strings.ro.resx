@@ -723,6 +723,9 @@ Doriți totuși să îl executați?</value>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Efecte de imagine</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>Convertor de imagini</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Redimensionare imagine</value>
   </data>

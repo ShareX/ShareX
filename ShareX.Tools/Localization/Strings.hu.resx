@@ -790,6 +790,12 @@
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Csúszka</value>
   </data>
+  <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
+    <value>Képek átalakítása</value>
+  </data>
+  <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
+    <value>Képkonvertáló</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Kitöltés</value>
   </data>

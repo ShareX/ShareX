@@ -723,6 +723,9 @@
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>圖片效果</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>影像轉換器</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>影像大小調整工具</value>
   </data>

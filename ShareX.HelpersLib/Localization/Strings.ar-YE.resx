@@ -723,6 +723,9 @@
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>مؤثرات الصور</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>محوّل الصور</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>أداة تغيير حجم الصور</value>
   </data>

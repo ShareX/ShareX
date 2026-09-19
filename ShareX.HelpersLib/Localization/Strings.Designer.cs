@@ -811,6 +811,9 @@ namespace ShareX.HelpersLib.Localization {
         public static string HotkeyType_ImageComparer {
             get { return ResourceManager.GetString("HotkeyType_ImageComparer", resourceCulture); }
         }
+        public static string HotkeyType_ImageConverter {
+            get { return ResourceManager.GetString("HotkeyType_ImageConverter", resourceCulture); }
+        }
         public static string HotkeyType_ImageEditor {
             get { return ResourceManager.GetString("HotkeyType_ImageEditor", resourceCulture); }
         }

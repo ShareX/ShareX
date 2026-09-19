@@ -1472,6 +1472,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Image history...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Image converter...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Image resizer...</value>
   </data>

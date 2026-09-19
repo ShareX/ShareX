@@ -1,0 +1,151 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:controls="using:ShareX.Tools.Controls"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="1180" d:DesignHeight="650"
+        x:Class="ShareX.Tools.ImageConverterWindow"
+        x:DataType="vm:ImageConverterViewModel"
+        Title="{x:Static localization:Strings.ImageConverterWindow_Image_converter}"
+        Width="1180"
+        Height="650"
+        MinWidth="960"
+        MinHeight="560"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <Grid RowDefinitions="*,Auto" Margin="16" RowSpacing="12">
+            <Grid Grid.Row="0" ColumnDefinitions="360,340,*" ColumnSpacing="12">
+                <Border Grid.Column="0" Classes="tool-panel">
+                    <Grid RowDefinitions="Auto,*" RowSpacing="10">
+                        <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,*" ColumnSpacing="8">
+                            <Button Grid.Column="0" Command="{Binding AddCommand}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.plus}" Classes="icon"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ImageThumbnailerWindow_Add}"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="1" Command="{Binding RemoveCommand}" IsEnabled="{Binding CanRemove}">
+                                <TextBlock Text="{x:Static theming:LucideIcons.trash_2}" Classes="icon"/>
+                            </Button>
+                            <TextBlock Grid.Column="2" Text="{Binding ImageCountText}"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <ListBox x:Name="ImagesList"
+                                     ItemsSource="{Binding Images}"
+                                     SelectedItem="{Binding SelectedImage, Mode=TwoWay}"
+                                     SelectionMode="Multiple"
+                                     SelectionChanged="OnSelectionChanged">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate x:CompileBindings="False">
+                                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="4,3">
+                                            <TextBlock Text="{x:Static theming:LucideIcons.image}"
+                                                       Classes="icon"
+                                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                       VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding}"
+                                                       TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            <StackPanel IsVisible="{Binding !HasImages}"
+                                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                                        Spacing="8" IsHitTestVisible="False">
+                                <TextBlock Text="{x:Static theming:LucideIcons.square_dashed}"
+                                           Classes="icon" FontSize="42"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.ImageThumbnailerWindow_Drop_images_here_or_use_the_Add_button}"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <StackPanel Grid.Column="1" Spacing="12">
+                    <Border Classes="tool-panel" Padding="16">
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
+                            <TextBlock Grid.Row="0" Classes="section-heading"
+                                       Text="{x:Static localization:Strings.ImageThumbnailerWindow_Output}"/>
+                            <Grid Grid.Row="1" ColumnDefinitions="110,*" ColumnSpacing="10">
+                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.DirectoryIndexerWindow_Output_format}"/>
+                                <ComboBox Grid.Column="1"
+                                          ItemsSource="{Binding OutputFormatOptions}"
+                                          SelectedIndex="{Binding SelectedOutputFormatIndex}"/>
+                            </Grid>
+                            <Grid Grid.Row="2" ColumnDefinitions="110,*,Auto" ColumnSpacing="10"
+                                  IsVisible="{Binding IsJpeg}">
+                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageThumbnailerWindow_JPEG_quality}"/>
+                                <Slider Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Quality}"/>
+                                <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
+                                           MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </Grid>
+                            <TextBlock Grid.Row="3" Classes="row-label"
+                                       Text="{x:Static localization:Strings.ImageThumbnailerWindow_File_name_template}"/>
+                            <TextBox Grid.Row="4" Text="{Binding OutputFileName}"/>
+                        </Grid>
+                    </Border>
+
+                    <Border Classes="tool-panel" Padding="16">
+                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                            <TextBlock Classes="path-text" Text="{Binding OutputFolderPath}"
+                                       VerticalAlignment="Center"/>
+                            <Button Grid.Column="1" Command="{Binding BrowseOutputFolderCommand}"
+                                    Content="{x:Static localization:Strings.ImageThumbnailerWindow_Browse}"/>
+                        </Grid>
+                    </Border>
+
+                    <Border Classes="tool-panel" IsVisible="{Binding HasMessage}">
+                        <TextBlock Text="{Binding Message}" TextWrapping="Wrap"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                    </Border>
+                </StackPanel>
+
+                <Border Grid.Column="2" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                    <Grid RowDefinitions="Auto,*">
+                        <Border Grid.Row="0"
+                                Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                BorderThickness="0,0,0,1"
+                                Padding="12,10">
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                                <TextBlock Text="{Binding PreviewFilePath}" Classes="path-text"
+                                           VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Text="{Binding PreviewSizeText}"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <Grid Grid.Row="1">
+                            <controls:ImageComparisonSlider RightImage="{Binding PreviewImage}"
+                                                            Margin="12"/>
+                            <TextBlock Text="{x:Static theming:LucideIcons.image}"
+                                       IsVisible="{Binding !HasImages}"
+                                       Classes="icon" FontSize="54"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ProgressBar IsVisible="{Binding IsPreviewLoading}"
+                                         IsIndeterminate="True" Width="160" Height="4"
+                                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Button Grid.Row="1" Command="{Binding ConvertCommand}" IsEnabled="{Binding CanConvert}"
+                    HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}" Classes="icon"/>
+                    <TextBlock Text="{x:Static localization:Strings.ImageConverterWindow_Convert_images}"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

@@ -723,6 +723,9 @@
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Эффекты изображений</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>Конвертер изображений</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Изменение размера изображения</value>
   </data>

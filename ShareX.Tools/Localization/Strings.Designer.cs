@@ -2324,6 +2324,24 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Convert images.
+        /// </summary>
+        public static string ImageConverterWindow_Convert_images {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_Convert_images", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Image converter.
+        /// </summary>
+        public static string ImageConverterWindow_Image_converter {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_Image_converter", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Fill.
         /// </summary>
         public static string ImageResizerWindow_Fill {

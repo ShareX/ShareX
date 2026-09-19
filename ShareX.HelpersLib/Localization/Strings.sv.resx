@@ -723,6 +723,9 @@ Vill du ändå köra det?</value>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Bildeffekter</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>Bildkonverterare</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Bildstorleksändrare</value>
   </data>

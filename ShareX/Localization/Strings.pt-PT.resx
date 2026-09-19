@@ -1472,6 +1472,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Histórico de imagens...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Conversor de imagens...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Redimensionador de imagens...</value>
   </data>

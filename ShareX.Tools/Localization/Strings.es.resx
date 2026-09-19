@@ -794,6 +794,12 @@ Ruta del archivo: {0}</value>
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Deslizador</value>
   </data>
+  <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
+    <value>Convertir imágenes</value>
+  </data>
+  <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
+    <value>Convertidor de imágenes</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Rellenar</value>
   </data>

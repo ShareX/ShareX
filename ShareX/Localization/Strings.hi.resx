@@ -1472,6 +1472,9 @@
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>छवि इतिहास...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>छवि रूपांतरक...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>छवि आकार परिवर्तक...</value>
   </data>

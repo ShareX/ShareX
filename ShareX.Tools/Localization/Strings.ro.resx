@@ -790,6 +790,12 @@
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Glisor</value>
   </data>
+  <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
+    <value>Convertește imaginile</value>
+  </data>
+  <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
+    <value>Convertor de imagini</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Umplere</value>
   </data>

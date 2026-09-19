@@ -415,6 +415,15 @@ namespace ShareX.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Image converter....
+        /// </summary>
+        public static string MainMenuBuilder_ImageConverter {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ImageConverter", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Image resizer....
         /// </summary>
         public static string MainMenuBuilder_ImageResizer {

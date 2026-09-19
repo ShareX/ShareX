@@ -1472,6 +1472,9 @@
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>图像历史记录...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>图像转换器...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>图像大小调整工具...</value>
   </data>

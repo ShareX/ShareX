@@ -723,6 +723,9 @@
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>אפקטים לתמונה</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>ממיר תמונות</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>כלי לשינוי גודל תמונה</value>
   </data>

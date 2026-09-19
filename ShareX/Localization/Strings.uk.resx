@@ -1472,6 +1472,9 @@
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Історія зображень...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Конвертер зображень...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Зміна розміру зображення...</value>
   </data>

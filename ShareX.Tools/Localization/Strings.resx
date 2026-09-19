@@ -790,6 +790,12 @@
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Slider</value>
   </data>
+  <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
+    <value>Convert images</value>
+  </data>
+  <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
+    <value>Image converter</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Fill</value>
   </data>

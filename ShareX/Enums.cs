@@ -304,6 +304,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageResizer,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        ImageConverter,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageThumbnailer,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         VideoConverter,

@@ -1472,6 +1472,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Istoric imagini...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Convertor de imagini...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Redimensionare imagine...</value>
   </data>

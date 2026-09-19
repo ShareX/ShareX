@@ -723,6 +723,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Kép effektek</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>Képkonvertáló</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Képátméretező</value>
   </data>

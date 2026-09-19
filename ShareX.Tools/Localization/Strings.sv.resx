@@ -794,6 +794,12 @@ Filsökväg: {0}</value>
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Skjutreglage</value>
   </data>
+  <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
+    <value>Konvertera bilder</value>
+  </data>
+  <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
+    <value>Bildkonverterare</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Fyll</value>
   </data>

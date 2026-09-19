@@ -723,6 +723,9 @@
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>이미지 효과</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>이미지 변환기</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>이미지 크기 조정 도구</value>
   </data>

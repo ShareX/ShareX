@@ -1472,6 +1472,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Billedhistorik...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Billedkonvertering...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Billedskalering...</value>
   </data>

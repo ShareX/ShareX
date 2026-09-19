@@ -726,6 +726,9 @@ Do you still want to run it?</value>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Image resizer</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>Image converter</value>
+  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>Image splitter</value>
   </data>

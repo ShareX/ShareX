@@ -190,6 +190,11 @@ public static class ToolsIntegration
         Show(() => new ImageResizerWindow());
     }
 
+    public static void ShowImageConverterWindow()
+    {
+        Show(() => new ImageConverterWindow());
+    }
+
     public static void ShowImageThumbnailerWindow()
     {
         Show(() => new ImageThumbnailerWindow());

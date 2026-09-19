@@ -794,6 +794,12 @@ Cesta k souboru: {0}</value>
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Posuvník</value>
   </data>
+  <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
+    <value>Převést obrázky</value>
+  </data>
+  <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
+    <value>Převodník obrázků</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Vyplnit</value>
   </data>

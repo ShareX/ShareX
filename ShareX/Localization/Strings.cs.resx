@@ -1472,6 +1472,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Historie obrázků...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Převodník obrázků...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Měnič velikosti obrázků...</value>
   </data>
