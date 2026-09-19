@@ -18,6 +18,7 @@ using ShareX.HelpersLib;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
+using AvaloniaColor = Avalonia.Media.Color;
 
 namespace ShareX.Tools;
 
@@ -39,6 +40,9 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
 
     [ObservableProperty]
     private decimal _quality = 90;
+
+    [ObservableProperty]
+    private AvaloniaColor _backgroundColor = AvaloniaColor.FromRgb(255, 255, 255);
 
     [ObservableProperty]
     private string _outputFolderPath = string.Empty;
@@ -166,6 +170,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         string[] imageFiles = Images.ToArray();
         ImageConverterOutputFormat format = GetOutputFormat();
         int quality = (int)Quality;
+        Color backgroundColor = ToDrawingColor(BackgroundColor);
         string outputFolderPath = OutputFolderPath;
         string outputFileName = OutputFileName;
 
@@ -174,7 +179,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         try
         {
             List<string> outputFiles = await Task.Run(() => ConvertImages(imageFiles, format, quality,
-                outputFolderPath, outputFileName));
+                backgroundColor, outputFolderPath, outputFileName));
             if (outputFiles.Count > 0)
             {
                 FileHelpers.OpenFolderWithFile(outputFiles[0]);
@@ -199,6 +204,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     }
     partial void OnSelectedOutputFormatIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnQualityChanged(decimal value) => NotifyOptionsChanged();
+    partial void OnBackgroundColorChanged(AvaloniaColor value) => NotifyOptionsChanged();
     partial void OnOutputFolderPathChanged(string value) => NotifyStateChanged();
     partial void OnOutputFileNameChanged(string value) => NotifyStateChanged();
     partial void OnIsBusyChanged(bool value) => OnPropertyChanged(nameof(CanConvert));
@@ -253,8 +259,9 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
             await Task.Delay(100, cancellationToken);
             ImageConverterOutputFormat format = GetOutputFormat();
             int quality = (int)Quality;
+            Color backgroundColor = ToDrawingColor(BackgroundColor);
             ImageConverterPreview result = await Task.Run(() =>
-                ImageConverterService.CreatePreview(filePath, format, quality), cancellationToken);
+                ImageConverterService.CreatePreview(filePath, format, quality, backgroundColor), cancellationToken);
             cancellationToken.ThrowIfCancellationRequested();
 
             AvaloniaBitmap? preview = null;
@@ -307,7 +314,8 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         (ImageConverterOutputFormat)Math.Clamp(SelectedOutputFormatIndex, 0, 1);
 
     private static List<string> ConvertImages(IEnumerable<string> imageFiles,
-        ImageConverterOutputFormat format, int quality, string outputFolderPath, string outputFileName)
+        ImageConverterOutputFormat format, int quality, Color backgroundColor, string outputFolderPath,
+        string outputFileName)
     {
         List<string> outputFiles = [];
         string extension = format == ImageConverterOutputFormat.Jpeg ? "jpg" : "png";
@@ -329,12 +337,14 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
             string outputPath = Path.Combine(outputFolderPath,
                 outputFileName.Replace("$filename", sourceName, StringComparison.Ordinal));
             outputPath = Path.ChangeExtension(outputPath, extension);
-            ImageConverterService.Save(source, outputPath, format, quality);
+            ImageConverterService.Save(source, outputPath, format, quality, backgroundColor);
             outputFiles.Add(outputPath);
         }
 
         return outputFiles;
     }
+
+    private static Color ToDrawingColor(AvaloniaColor color) => Color.FromArgb(color.R, color.G, color.B);
 
     public void Dispose()
     {

@@ -18,6 +18,7 @@ using ShareX.HelpersLib;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
+using AvaloniaColor = Avalonia.Media.Color;
 
 namespace ShareX.Tools;
 
@@ -48,6 +49,9 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
 
     [ObservableProperty]
     private decimal _quality = 90;
+
+    [ObservableProperty]
+    private AvaloniaColor _backgroundColor = AvaloniaColor.FromRgb(255, 255, 255);
 
     [ObservableProperty]
     private string _outputFolderPath = string.Empty;
@@ -183,6 +187,7 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
         ImageResizeMode mode = GetResizeMode();
         ImageResizeOutputFormat format = GetOutputFormat();
         int quality = (int)Quality;
+        Color backgroundColor = ToDrawingColor(BackgroundColor);
         string outputFolderPath = OutputFolderPath;
         string outputFileName = OutputFileName;
 
@@ -191,7 +196,7 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
         try
         {
             List<string> outputFiles = await Task.Run(() => ResizeImages(imageFiles, width, height,
-                mode, format, quality, outputFolderPath, outputFileName));
+                mode, format, quality, backgroundColor, outputFolderPath, outputFileName));
             if (outputFiles.Count > 0)
             {
                 FileHelpers.OpenFolderWithFile(outputFiles[0]);
@@ -219,6 +224,7 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
     partial void OnSelectedResizeModeIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnSelectedOutputFormatIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnQualityChanged(decimal value) => NotifyOptionsChanged();
+    partial void OnBackgroundColorChanged(AvaloniaColor value) => NotifyOptionsChanged();
     partial void OnOutputFolderPathChanged(string value) => NotifyStateChanged();
     partial void OnOutputFileNameChanged(string value) => NotifyStateChanged();
     partial void OnIsBusyChanged(bool value) => OnPropertyChanged(nameof(CanResize));
@@ -276,8 +282,9 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
             ImageResizeMode mode = GetResizeMode();
             ImageResizeOutputFormat format = GetOutputFormat();
             int quality = (int)Quality;
+            Color backgroundColor = ToDrawingColor(BackgroundColor);
             byte[] previewBytes = await Task.Run(() => ImageResizerService.CreatePreview(filePath,
-                width, height, mode, format, quality), cancellationToken);
+                width, height, mode, format, quality, backgroundColor), cancellationToken);
             cancellationToken.ThrowIfCancellationRequested();
 
             AvaloniaBitmap? preview = null;
@@ -329,8 +336,8 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
         (ImageResizeOutputFormat)Math.Clamp(SelectedOutputFormatIndex, 0, 1);
 
     private static List<string> ResizeImages(IEnumerable<string> imageFiles, int width, int height,
-        ImageResizeMode mode, ImageResizeOutputFormat format, int quality, string outputFolderPath,
-        string outputFileName)
+        ImageResizeMode mode, ImageResizeOutputFormat format, int quality, Color backgroundColor,
+        string outputFolderPath, string outputFileName)
     {
         List<string> outputFiles = [];
         string extension = format == ImageResizeOutputFormat.Jpeg ? "jpg" : "png";
@@ -353,12 +360,14 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
             string outputPath = Path.Combine(outputFolderPath,
                 outputFileName.Replace("$filename", sourceName, StringComparison.Ordinal));
             outputPath = Path.ChangeExtension(outputPath, extension);
-            ImageResizerService.Save(output, outputPath, format, quality);
+            ImageResizerService.Save(output, outputPath, format, quality, backgroundColor);
             outputFiles.Add(outputPath);
         }
 
         return outputFiles;
     }
+
+    private static Color ToDrawingColor(AvaloniaColor color) => Color.FromArgb(color.R, color.G, color.B);
 
     public void Dispose()
     {

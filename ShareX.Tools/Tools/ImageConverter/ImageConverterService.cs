@@ -32,7 +32,7 @@ public static class ImageConverterService
     private const int MaxPreviewDimension = 1600;
 
     public static ImageConverterPreview CreatePreview(string filePath, ImageConverterOutputFormat format,
-        int jpegQuality)
+        int jpegQuality, Color backgroundColor)
     {
         using Bitmap? source = ImageHelpers.LoadImage(filePath);
         if (source == null)
@@ -43,22 +43,24 @@ public static class ImageConverterService
         Size previewSize = GetPreviewSize(source.Size);
         using Bitmap preview = CreatePreviewBitmap(source, previewSize);
         using MemoryStream stream = new();
-        Save(preview, stream, format, jpegQuality);
+        Save(preview, stream, format, jpegQuality, backgroundColor);
         return new ImageConverterPreview(stream.ToArray(), source.Width, source.Height);
     }
 
-    public static void Save(Bitmap image, string filePath, ImageConverterOutputFormat format, int jpegQuality)
+    public static void Save(Bitmap image, string filePath, ImageConverterOutputFormat format, int jpegQuality,
+        Color backgroundColor)
     {
         FileHelpers.CreateDirectoryFromFilePath(filePath);
         using FileStream stream = new(filePath, FileMode.Create, FileAccess.Write, FileShare.Read);
-        Save(image, stream, format, jpegQuality);
+        Save(image, stream, format, jpegQuality, backgroundColor);
     }
 
-    private static void Save(Bitmap image, Stream stream, ImageConverterOutputFormat format, int jpegQuality)
+    private static void Save(Bitmap image, Stream stream, ImageConverterOutputFormat format, int jpegQuality,
+        Color backgroundColor)
     {
         if (format == ImageConverterOutputFormat.Jpeg)
         {
-            using Bitmap flattened = ImageHelpers.FillBackground(image, Color.White);
+            using Bitmap flattened = ImageHelpers.FillBackground(image, backgroundColor);
             ImageHelpers.SaveJPEG(flattened, stream, jpegQuality);
         }
         else

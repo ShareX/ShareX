@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
         xmlns:controls="using:ShareX.Tools.Controls"
+        xmlns:cp="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.ColorPicker"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="1180" d:DesignHeight="650"
         x:Class="ShareX.Tools.ImageConverterWindow"
@@ -71,7 +72,7 @@
 
                 <StackPanel Grid.Column="1" Spacing="12">
                     <Border Classes="tool-panel" Padding="16">
-                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
                             <TextBlock Grid.Row="0" Classes="section-heading"
                                        Text="{x:Static localization:Strings.ImageThumbnailerWindow_Output}"/>
                             <Grid Grid.Row="1" ColumnDefinitions="110,*" ColumnSpacing="10">
@@ -87,9 +88,16 @@
                                 <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
                                            MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                             </Grid>
-                            <TextBlock Grid.Row="3" Classes="row-label"
+                            <Grid Grid.Row="3" ColumnDefinitions="110,*" ColumnSpacing="10"
+                                  IsVisible="{Binding IsJpeg}">
+                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}"/>
+                                <cp:ColorPicker Grid.Column="1"
+                                                Color="{Binding BackgroundColor, Mode=TwoWay}"
+                                                IsAlphaEnabled="False" IsAlphaVisible="False"/>
+                            </Grid>
+                            <TextBlock Grid.Row="4" Classes="row-label"
                                        Text="{x:Static localization:Strings.ImageThumbnailerWindow_File_name_template}"/>
-                            <TextBox Grid.Row="4" Text="{Binding OutputFileName}"/>
+                            <TextBox Grid.Row="5" Text="{Binding OutputFileName}"/>
                         </Grid>
                     </Border>
 

@@ -72,7 +72,7 @@ public static class ImageResizerService
     }
 
     public static byte[] CreatePreview(string filePath, int width, int height, ImageResizeMode mode,
-        ImageResizeOutputFormat format, int jpegQuality)
+        ImageResizeOutputFormat format, int jpegQuality, Color backgroundColor)
     {
         using Bitmap? source = ImageHelpers.LoadImage(filePath);
         if (source == null)
@@ -83,22 +83,24 @@ public static class ImageResizerService
         Size previewSize = GetPreviewSize(width, height);
         using Bitmap output = Resize(source, previewSize.Width, previewSize.Height, mode);
         using MemoryStream stream = new();
-        Save(output, stream, format, jpegQuality);
+        Save(output, stream, format, jpegQuality, backgroundColor);
         return stream.ToArray();
     }
 
-    public static void Save(Bitmap image, string filePath, ImageResizeOutputFormat format, int jpegQuality)
+    public static void Save(Bitmap image, string filePath, ImageResizeOutputFormat format, int jpegQuality,
+        Color backgroundColor)
     {
         FileHelpers.CreateDirectoryFromFilePath(filePath);
         using FileStream stream = new(filePath, FileMode.Create, FileAccess.Write, FileShare.Read);
-        Save(image, stream, format, jpegQuality);
+        Save(image, stream, format, jpegQuality, backgroundColor);
     }
 
-    private static void Save(Bitmap image, Stream stream, ImageResizeOutputFormat format, int jpegQuality)
+    private static void Save(Bitmap image, Stream stream, ImageResizeOutputFormat format, int jpegQuality,
+        Color backgroundColor)
     {
         if (format == ImageResizeOutputFormat.Jpeg)
         {
-            using Bitmap flattened = ImageHelpers.FillBackground(image, Color.White);
+            using Bitmap flattened = ImageHelpers.FillBackground(image, backgroundColor);
             ImageHelpers.SaveJPEG(flattened, stream, jpegQuality);
         }
         else
