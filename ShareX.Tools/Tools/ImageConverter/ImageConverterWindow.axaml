@@ -123,6 +123,11 @@
                                            VerticalAlignment="Center"/>
                             </Grid>
                         </Border>
+                        <ProgressBar Grid.Row="1"
+                                     IsVisible="{Binding IsPreviewLoading}"
+                                     IsIndeterminate="True" Height="4"
+                                     HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                                     ZIndex="1"/>
                         <Grid Grid.Row="1">
                             <controls:ImageComparisonSlider RightImage="{Binding PreviewImage}"
                                                             Margin="12"/>
@@ -131,9 +136,6 @@
                                        Classes="icon" FontSize="54"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <ProgressBar IsVisible="{Binding IsPreviewLoading}"
-                                         IsIndeterminate="True" Width="160" Height="4"
-                                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
                     </Grid>
                 </Border>
