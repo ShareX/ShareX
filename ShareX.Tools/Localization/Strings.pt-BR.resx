@@ -794,6 +794,21 @@ Caminho do arquivo: {0}</value>
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Controle deslizante</value>
   </data>
+  <data name="ImageResizerWindow_Fill" xml:space="preserve">
+    <value>Preencher</value>
+  </data>
+  <data name="ImageResizerWindow_Fit" xml:space="preserve">
+    <value>Ajustar</value>
+  </data>
+  <data name="ImageResizerWindow_Image_resizer" xml:space="preserve">
+    <value>Redimensionador de imagens</value>
+  </data>
+  <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
+    <value>Redimensionar imagem</value>
+  </data>
+  <data name="ImageResizerWindow_Stretch" xml:space="preserve">
+    <value>Esticar</value>
+  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>

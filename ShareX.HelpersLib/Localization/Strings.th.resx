@@ -723,6 +723,9 @@
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>เอฟเฟกต์รูปภาพ</value>
   </data>
+  <data name="HotkeyType_ImageResizer" xml:space="preserve">
+    <value>เครื่องมือปรับขนาดภาพ</value>
+  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>ตัวแบ่งรูปภาพ</value>
   </data>

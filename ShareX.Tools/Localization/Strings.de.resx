@@ -794,6 +794,21 @@ Dateipfad: {0}</value>
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Schieberegler</value>
   </data>
+  <data name="ImageResizerWindow_Fill" xml:space="preserve">
+    <value>Ausfüllen</value>
+  </data>
+  <data name="ImageResizerWindow_Fit" xml:space="preserve">
+    <value>Einpassen</value>
+  </data>
+  <data name="ImageResizerWindow_Image_resizer" xml:space="preserve">
+    <value>Bildgrößenänderung</value>
+  </data>
+  <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
+    <value>Bildgröße ändern</value>
+  </data>
+  <data name="ImageResizerWindow_Stretch" xml:space="preserve">
+    <value>Strecken</value>
+  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>

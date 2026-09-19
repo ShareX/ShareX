@@ -1472,6 +1472,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Historia obrazów...</value>
   </data>
+  <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
+    <value>Narzędzie zmiany rozmiaru obrazu...</value>
+  </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
     <value>Rozdzielacz obrazu</value>
   </data>

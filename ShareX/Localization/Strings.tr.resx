@@ -1472,6 +1472,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Resim geçmişi...</value>
   </data>
+  <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
+    <value>Görsel boyutlandırıcı...</value>
+  </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
     <value>Resim ayırıcı...</value>
   </data>

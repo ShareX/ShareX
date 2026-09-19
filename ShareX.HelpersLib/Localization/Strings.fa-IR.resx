@@ -723,6 +723,9 @@
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>افکت های تصویر</value>
   </data>
+  <data name="HotkeyType_ImageResizer" xml:space="preserve">
+    <value>ابزار تغییر اندازه تصویر</value>
+  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>تقسیم‌کننده تصویر</value>
   </data>

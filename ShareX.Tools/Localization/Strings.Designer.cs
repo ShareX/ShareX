@@ -2322,6 +2322,51 @@ namespace ShareX.Tools.Localization {
                 return ResourceManager.GetString("ImageComparerWindow_Slider", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Fill.
+        /// </summary>
+        public static string ImageResizerWindow_Fill {
+            get {
+                return ResourceManager.GetString("ImageResizerWindow_Fill", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Fit.
+        /// </summary>
+        public static string ImageResizerWindow_Fit {
+            get {
+                return ResourceManager.GetString("ImageResizerWindow_Fit", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Image resizer.
+        /// </summary>
+        public static string ImageResizerWindow_Image_resizer {
+            get {
+                return ResourceManager.GetString("ImageResizerWindow_Image_resizer", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Resize image.
+        /// </summary>
+        public static string ImageResizerWindow_Resize_image {
+            get {
+                return ResourceManager.GetString("ImageResizerWindow_Resize_image", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Stretch.
+        /// </summary>
+        public static string ImageResizerWindow_Stretch {
+            get {
+                return ResourceManager.GetString("ImageResizerWindow_Stretch", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to {0} × {1}.

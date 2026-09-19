@@ -723,6 +723,9 @@ Wilt u het toch uitvoeren?</value>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Afbeeldingseffecten</value>
   </data>
+  <data name="HotkeyType_ImageResizer" xml:space="preserve">
+    <value>Afbeeldingsformaat wijzigen</value>
+  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>Afbeelding splitter</value>
   </data>

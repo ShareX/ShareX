@@ -723,6 +723,9 @@
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>图像效果</value>
   </data>
+  <data name="HotkeyType_ImageResizer" xml:space="preserve">
+    <value>图像大小调整工具</value>
+  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>图像分割器</value>
   </data>

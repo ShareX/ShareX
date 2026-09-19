@@ -1472,6 +1472,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Histórico de imagens...</value>
   </data>
+  <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
+    <value>Redimensionador de imagens...</value>
+  </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
     <value>Divisor de imagem</value>
   </data>

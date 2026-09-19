@@ -1472,6 +1472,9 @@
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>画像履歴...</value>
   </data>
+  <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
+    <value>画像リサイザー...</value>
+  </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
     <value>画像の分割</value>
   </data>

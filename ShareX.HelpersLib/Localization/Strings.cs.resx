@@ -723,6 +723,9 @@ Chcete jej přesto spustit?</value>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Efekty obrázku</value>
   </data>
+  <data name="HotkeyType_ImageResizer" xml:space="preserve">
+    <value>Měnič velikosti obrázků</value>
+  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>Rozdělení obrázku</value>
   </data>

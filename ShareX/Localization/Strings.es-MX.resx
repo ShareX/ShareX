@@ -1472,6 +1472,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Historial de imágenes...</value>
   </data>
+  <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
+    <value>Redimensionador de imágenes...</value>
+  </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
     <value>Divisor de imágenes</value>
   </data>

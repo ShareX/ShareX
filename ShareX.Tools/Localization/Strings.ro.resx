@@ -790,6 +790,21 @@
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Glisor</value>
   </data>
+  <data name="ImageResizerWindow_Fill" xml:space="preserve">
+    <value>Umplere</value>
+  </data>
+  <data name="ImageResizerWindow_Fit" xml:space="preserve">
+    <value>Potrivire</value>
+  </data>
+  <data name="ImageResizerWindow_Image_resizer" xml:space="preserve">
+    <value>Redimensionare imagine</value>
+  </data>
+  <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
+    <value>Redimensionează imaginea</value>
+  </data>
+  <data name="ImageResizerWindow_Stretch" xml:space="preserve">
+    <value>Întindere</value>
+  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>

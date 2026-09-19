@@ -413,6 +413,15 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("MainMenuBuilder_ImageHistory", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Image resizer....
+        /// </summary>
+        public static string MainMenuBuilder_ImageResizer {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ImageResizer", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Image splitter....

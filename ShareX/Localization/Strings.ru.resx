@@ -1472,6 +1472,9 @@
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>История изображений...</value>
   </data>
+  <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
+    <value>Изменение размера изображения...</value>
+  </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
     <value>Разделитель изображений</value>
   </data>

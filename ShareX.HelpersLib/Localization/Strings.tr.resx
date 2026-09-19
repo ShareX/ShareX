@@ -723,6 +723,9 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Resim efektleri</value>
   </data>
+  <data name="HotkeyType_ImageResizer" xml:space="preserve">
+    <value>Görsel boyutlandırıcı</value>
+  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>Resim ayırıcı</value>
   </data>

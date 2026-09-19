@@ -1472,6 +1472,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>تاریخچه تصاویر...</value>
   </data>
+  <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
+    <value>ابزار تغییر اندازه تصویر...</value>
+  </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
     <value>تقسیم‌کننده تصویر</value>
   </data>

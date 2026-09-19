@@ -817,6 +817,9 @@ namespace ShareX.HelpersLib.Localization {
         public static string HotkeyType_ImageEffects {
             get { return ResourceManager.GetString("HotkeyType_ImageEffects", resourceCulture); }
         }
+        public static string HotkeyType_ImageResizer {
+            get { return ResourceManager.GetString("HotkeyType_ImageResizer", resourceCulture); }
+        }
         public static string HotkeyType_ImageSplitter {
             get { return ResourceManager.GetString("HotkeyType_ImageSplitter", resourceCulture); }
         }

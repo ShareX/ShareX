@@ -794,6 +794,21 @@ Percorso file: {0}</value>
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Cursore</value>
   </data>
+  <data name="ImageResizerWindow_Fill" xml:space="preserve">
+    <value>Riempi</value>
+  </data>
+  <data name="ImageResizerWindow_Fit" xml:space="preserve">
+    <value>Adatta</value>
+  </data>
+  <data name="ImageResizerWindow_Image_resizer" xml:space="preserve">
+    <value>Ridimensionatore immagini</value>
+  </data>
+  <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
+    <value>Ridimensiona immagine</value>
+  </data>
+  <data name="ImageResizerWindow_Stretch" xml:space="preserve">
+    <value>Allunga</value>
+  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>

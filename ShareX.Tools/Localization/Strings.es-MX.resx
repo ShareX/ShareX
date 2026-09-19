@@ -794,6 +794,21 @@ Ruta del archivo: {0}</value>
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Deslizador</value>
   </data>
+  <data name="ImageResizerWindow_Fill" xml:space="preserve">
+    <value>Rellenar</value>
+  </data>
+  <data name="ImageResizerWindow_Fit" xml:space="preserve">
+    <value>Ajustar</value>
+  </data>
+  <data name="ImageResizerWindow_Image_resizer" xml:space="preserve">
+    <value>Redimensionador de imágenes</value>
+  </data>
+  <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
+    <value>Redimensionar imagen</value>
+  </data>
+  <data name="ImageResizerWindow_Stretch" xml:space="preserve">
+    <value>Estirar</value>
+  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>

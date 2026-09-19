@@ -723,6 +723,9 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Bildeffekte</value>
   </data>
+  <data name="HotkeyType_ImageResizer" xml:space="preserve">
+    <value>Bildgrößenänderung</value>
+  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>Bildteiler</value>
   </data>

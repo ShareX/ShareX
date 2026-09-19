@@ -790,6 +790,21 @@
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>แถบเลื่อน</value>
   </data>
+  <data name="ImageResizerWindow_Fill" xml:space="preserve">
+    <value>เติมเต็ม</value>
+  </data>
+  <data name="ImageResizerWindow_Fit" xml:space="preserve">
+    <value>พอดี</value>
+  </data>
+  <data name="ImageResizerWindow_Image_resizer" xml:space="preserve">
+    <value>เครื่องมือปรับขนาดภาพ</value>
+  </data>
+  <data name="ImageResizerWindow_Resize_image" xml:space="preserve">
+    <value>ปรับขนาดรูปภาพ</value>
+  </data>
+  <data name="ImageResizerWindow_Stretch" xml:space="preserve">
+    <value>ยืด</value>
+  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>

@@ -1472,6 +1472,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Cronologia immagini...</value>
   </data>
+  <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
+    <value>Ridimensionatore immagini...</value>
+  </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
     <value>Divisore immagini</value>
   </data>

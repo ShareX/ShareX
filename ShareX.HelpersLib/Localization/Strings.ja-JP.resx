@@ -723,6 +723,9 @@
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>画像エフェクト</value>
   </data>
+  <data name="HotkeyType_ImageResizer" xml:space="preserve">
+    <value>画像リサイザー</value>
+  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>画像の分割</value>
   </data>

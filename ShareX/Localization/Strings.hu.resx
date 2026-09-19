@@ -1472,6 +1472,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Képelőzmények...</value>
   </data>
+  <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
+    <value>Képátméretező...</value>
+  </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
     <value>Kép splitter</value>
   </data>

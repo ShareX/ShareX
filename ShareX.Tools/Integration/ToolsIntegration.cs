@@ -185,6 +185,11 @@ public static class ToolsIntegration
         Show(() => new ImageSplitterWindow());
     }
 
+    public static void ShowImageResizerWindow()
+    {
+        Show(() => new ImageResizerWindow());
+    }
+
     public static void ShowImageThumbnailerWindow()
     {
         Show(() => new ImageThumbnailerWindow());
