@@ -410,13 +410,11 @@ jobs:
             Output/ShareX-${{ env.APP_VERSION }}-MicrosoftStore-debug-arm64.appx
 
       - name: Release (Stable)
-        env:
-          CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
-        if: env.CUSTOM_GITHUB_TOKEN != '' && startsWith(github.ref, 'refs/tags/v')
+        if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v3
         with:
           repository: ${{ github.repository }}
-          token: ${{ env.CUSTOM_GITHUB_TOKEN }}
+          token: ${{ github.token }}
           tag_name: ${{ github.ref_name }}
           name: ShareX ${{ env.APP_VERSION }}
           body_path: ${{ env.RELEASE_BODY_PATH }}
