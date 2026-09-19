@@ -814,6 +814,30 @@
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>کشیدن</value>
   </data>
+  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
+    <value>اعمال واترمارک</value>
+  </data>
+  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
+    <value>اندازه قلم</value>
+  </data>
+  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
+    <value>واترمارک تصویر</value>
+  </data>
+  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
+    <value>حاشیه</value>
+  </data>
+  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
+    <value>چرخش</value>
+  </data>
+  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
+    <value>مقیاس</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
+    <value>واترمارک</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
+    <value>نوع واترمارک</value>
+  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>

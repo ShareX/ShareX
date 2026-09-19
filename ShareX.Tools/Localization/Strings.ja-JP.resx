@@ -814,6 +814,30 @@
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>引き伸ばし</value>
   </data>
+  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
+    <value>透かしを適用</value>
+  </data>
+  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
+    <value>フォントサイズ</value>
+  </data>
+  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
+    <value>画像透かし</value>
+  </data>
+  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
+    <value>余白</value>
+  </data>
+  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
+    <value>回転</value>
+  </data>
+  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
+    <value>拡大縮小</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
+    <value>透かし</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
+    <value>透かしの種類</value>
+  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>

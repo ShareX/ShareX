@@ -726,6 +726,9 @@
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>이미지 변환기</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>이미지 워터마크</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>이미지 크기 조정 도구</value>
   </data>

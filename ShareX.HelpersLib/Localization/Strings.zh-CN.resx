@@ -726,6 +726,9 @@
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>图像转换器</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>图像水印</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>图像大小调整工具</value>
   </data>

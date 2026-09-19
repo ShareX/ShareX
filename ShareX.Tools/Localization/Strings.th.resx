@@ -814,6 +814,30 @@
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>ยืด</value>
   </data>
+  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
+    <value>ใช้ลายน้ำ</value>
+  </data>
+  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
+    <value>ขนาดแบบอักษร</value>
+  </data>
+  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
+    <value>ลายน้ำรูปภาพ</value>
+  </data>
+  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
+    <value>ระยะขอบ</value>
+  </data>
+  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
+    <value>หมุน</value>
+  </data>
+  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
+    <value>มาตราส่วน</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
+    <value>ลายน้ำ</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
+    <value>ประเภทลายน้ำ</value>
+  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>

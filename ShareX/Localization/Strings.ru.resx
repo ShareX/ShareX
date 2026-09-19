@@ -1475,6 +1475,9 @@
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Конвертер изображений...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Водяной знак изображения...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Изменение размера изображения...</value>
   </data>

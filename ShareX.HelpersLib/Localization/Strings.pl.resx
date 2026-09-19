@@ -726,6 +726,9 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>Konwerter obrazów</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>Znak wodny obrazu</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Narzędzie zmiany rozmiaru obrazu</value>
   </data>

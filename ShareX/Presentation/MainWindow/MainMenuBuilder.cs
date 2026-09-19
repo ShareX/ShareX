@@ -260,6 +260,7 @@ internal sealed class MainMenuBuilder
             Tool(nameof(Strings.MainMenuBuilder_ImageSplitter), Strings.MainMenuBuilder_ImageSplitter, LucideIcons.split, () => TaskHelpers.OpenImageSplitter()),
             Tool(nameof(Strings.MainMenuBuilder_ImageResizer), Strings.MainMenuBuilder_ImageResizer, LucideIcons.maximize_2, () => TaskHelpers.OpenImageResizer()),
             Tool(nameof(Strings.MainMenuBuilder_ImageConverter), Strings.MainMenuBuilder_ImageConverter, LucideIcons.refresh_cw, () => TaskHelpers.OpenImageConverter()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageWatermark), Strings.MainMenuBuilder_ImageWatermark, LucideIcons.stamp, () => TaskHelpers.OpenImageWatermark()),
             Tool(nameof(Strings.MainMenuBuilder_ImageThumbnailer), Strings.MainMenuBuilder_ImageThumbnailer, LucideIcons.shrink, () => TaskHelpers.OpenImageThumbnailer())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryVideo,

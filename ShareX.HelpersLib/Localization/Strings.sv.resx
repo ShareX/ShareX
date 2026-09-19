@@ -726,6 +726,9 @@ Vill du ändå köra det?</value>
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>Bildkonverterare</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>Bildvattenstämpel</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Bildstorleksändrare</value>
   </data>

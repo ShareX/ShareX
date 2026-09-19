@@ -1475,6 +1475,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Convertitore di immagini...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Filigrana immagine...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Ridimensionatore immagini...</value>
   </data>

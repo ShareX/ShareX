@@ -726,6 +726,9 @@ Chcete jej přesto spustit?</value>
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>Převodník obrázků</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>Vodoznak obrázku</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Měnič velikosti obrázků</value>
   </data>

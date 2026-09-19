@@ -1475,6 +1475,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Konwerter obrazów...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Znak wodny obrazu...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Narzędzie zmiany rozmiaru obrazu...</value>
   </data>

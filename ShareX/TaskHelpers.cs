@@ -289,6 +289,9 @@ namespace ShareX
                 case HotkeyType.ImageConverter:
                     OpenImageConverter();
                     break;
+                case HotkeyType.ImageWatermark:
+                    OpenImageWatermark();
+                    break;
                 case HotkeyType.ImageThumbnailer:
                     OpenImageThumbnailer();
                     break;
@@ -1082,6 +1085,11 @@ namespace ShareX
         public static void OpenImageConverter()
         {
             ToolsIntegration.ShowImageConverterWindow();
+        }
+
+        public static void OpenImageWatermark()
+        {
+            ToolsIntegration.ShowImageWatermarkWindow();
         }
 
         public static void OpenImageThumbnailer()
@@ -2282,6 +2290,7 @@ namespace ShareX
                 HotkeyType.ImageSplitter => LucideIcons.split,
                 HotkeyType.ImageResizer => LucideIcons.maximize_2,
                 HotkeyType.ImageConverter => LucideIcons.refresh_cw,
+                HotkeyType.ImageWatermark => LucideIcons.stamp,
                 HotkeyType.ImageThumbnailer => LucideIcons.shrink,
                 HotkeyType.VideoConverter => LucideIcons.file_video,
                 HotkeyType.VideoTrimmer => LucideIcons.scissors,

@@ -726,6 +726,9 @@
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>छवि रूपांतरक</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>छवि वॉटरमार्क</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>छवि आकार परिवर्तक</value>
   </data>

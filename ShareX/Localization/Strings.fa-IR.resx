@@ -1475,6 +1475,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>مبدل تصویر...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>واترمارک تصویر...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>ابزار تغییر اندازه تصویر...</value>
   </data>

@@ -1475,6 +1475,9 @@
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>影像轉換器...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>影像浮水印...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>影像大小調整工具...</value>
   </data>

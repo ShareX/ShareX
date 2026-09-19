@@ -818,6 +818,30 @@
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>拉伸</value>
   </data>
+  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
+    <value>套用浮水印</value>
+  </data>
+  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
+    <value>字型大小</value>
+  </data>
+  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
+    <value>影像浮水印</value>
+  </data>
+  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
+    <value>邊界</value>
+  </data>
+  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
+    <value>旋轉</value>
+  </data>
+  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
+    <value>縮放</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
+    <value>浮水印</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
+    <value>浮水印類型</value>
+  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>

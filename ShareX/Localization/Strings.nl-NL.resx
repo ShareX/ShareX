@@ -1475,6 +1475,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Afbeeldingsconverter...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Afbeeldingswatermerk...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Afbeeldingsformaat wijzigen...</value>
   </data>

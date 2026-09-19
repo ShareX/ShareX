@@ -818,6 +818,30 @@ Caminho do arquivo: {0}</value>
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Esticar</value>
   </data>
+  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
+    <value>Aplicar marca-d’água</value>
+  </data>
+  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
+    <value>Tamanho da fonte</value>
+  </data>
+  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
+    <value>Marca-d’água de imagem</value>
+  </data>
+  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
+    <value>Margem</value>
+  </data>
+  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
+    <value>Girar</value>
+  </data>
+  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
+    <value>Escalar</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
+    <value>Marca-d’água</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
+    <value>Tipo de marca-d’água</value>
+  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>

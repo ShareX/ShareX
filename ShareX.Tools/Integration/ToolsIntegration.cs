@@ -195,6 +195,11 @@ public static class ToolsIntegration
         Show(() => new ImageConverterWindow());
     }
 
+    public static void ShowImageWatermarkWindow()
+    {
+        Show(() => new ImageWatermarkWindow());
+    }
+
     public static void ShowImageThumbnailerWindow()
     {
         Show(() => new ImageThumbnailerWindow());

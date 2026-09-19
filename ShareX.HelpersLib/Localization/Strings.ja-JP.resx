@@ -726,6 +726,9 @@
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>画像変換</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>画像透かし</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>画像リサイザー</value>
   </data>

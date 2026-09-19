@@ -1475,6 +1475,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Convertor de imagini...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Filigran imagine...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Redimensionare imagine...</value>
   </data>

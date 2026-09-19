@@ -726,6 +726,9 @@ Ainda assim, pretende executá-lo?</value>
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>Conversor de imagens</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>Marca-d’água de imagem</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Redimensionador de imagens</value>
   </data>

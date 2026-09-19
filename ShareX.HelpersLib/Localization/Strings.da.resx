@@ -726,6 +726,9 @@ Vil du stadig køre den?</value>
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>Billedkonvertering</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>Billedvandmærke</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Billedskalering</value>
   </data>

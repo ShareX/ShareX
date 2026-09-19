@@ -1475,6 +1475,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Bildkonverterare...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Bildvattenstämpel...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Bildstorleksändrare...</value>
   </data>

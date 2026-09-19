@@ -1475,6 +1475,9 @@
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>画像変換...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>画像透かし...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>画像リサイザー...</value>
   </data>

@@ -726,6 +726,9 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>Görsel dönüştürücü</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>Görsel filigranı</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Görsel boyutlandırıcı</value>
   </data>

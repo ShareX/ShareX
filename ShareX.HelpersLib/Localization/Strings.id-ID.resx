@@ -726,6 +726,9 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>Konverter gambar</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>Tanda air gambar</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Pengubah ukuran gambar</value>
   </data>

@@ -1475,6 +1475,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Billedkonvertering...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Billedvandmærke...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Billedskalering...</value>
   </data>

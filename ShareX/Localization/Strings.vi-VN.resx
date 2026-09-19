@@ -1475,6 +1475,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Trình chuyển đổi hình ảnh...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Hình mờ ảnh...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Trình thay đổi kích thước ảnh...</value>
   </data>

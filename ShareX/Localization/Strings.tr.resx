@@ -1475,6 +1475,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Görsel dönüştürücü...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Görsel filigranı...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Görsel boyutlandırıcı...</value>
   </data>

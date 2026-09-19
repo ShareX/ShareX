@@ -726,6 +726,9 @@
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>Конвертер зображень</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>Водяний знак зображення</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Зміна розміру зображення</value>
   </data>

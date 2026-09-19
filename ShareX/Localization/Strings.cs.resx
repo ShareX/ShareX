@@ -1475,6 +1475,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Převodník obrázků...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Vodoznak obrázku...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Měnič velikosti obrázků...</value>
   </data>

@@ -1475,6 +1475,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Képkonvertáló...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Képvízjel...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Képátméretező...</value>
   </data>

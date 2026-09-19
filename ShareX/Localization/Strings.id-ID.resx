@@ -1475,6 +1475,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Konverter gambar...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Tanda air gambar...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Pengubah ukuran gambar...</value>
   </data>

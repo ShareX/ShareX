@@ -726,6 +726,9 @@
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>محوّل الصور</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>علامة مائية للصور</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>أداة تغيير حجم الصور</value>
   </data>

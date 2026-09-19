@@ -726,6 +726,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="HotkeyType_ImageConverter" xml:space="preserve">
     <value>Trình chuyển đổi hình ảnh</value>
   </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>Hình mờ ảnh</value>
+  </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Trình thay đổi kích thước ảnh</value>
   </data>

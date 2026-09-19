@@ -1475,6 +1475,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
     <value>Bildkonverter...</value>
   </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Bildwasserzeichen...</value>
+  </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Bildgrößenänderung...</value>
   </data>

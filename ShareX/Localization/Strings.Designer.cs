@@ -424,6 +424,15 @@ namespace ShareX.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Image watermark....
+        /// </summary>
+        public static string MainMenuBuilder_ImageWatermark {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ImageWatermark", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Image resizer....
         /// </summary>
         public static string MainMenuBuilder_ImageResizer {

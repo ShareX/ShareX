@@ -2394,7 +2394,79 @@ namespace ShareX.Tools.Localization {
                 return ResourceManager.GetString("ImageResizerWindow_Stretch", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Apply watermark.
+        /// </summary>
+        public static string ImageWatermarkWindow_Apply_watermark {
+            get {
+                return ResourceManager.GetString("ImageWatermarkWindow_Apply_watermark", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Font size.
+        /// </summary>
+        public static string ImageWatermarkWindow_Font_size {
+            get {
+                return ResourceManager.GetString("ImageWatermarkWindow_Font_size", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Image watermark.
+        /// </summary>
+        public static string ImageWatermarkWindow_Image_watermark {
+            get {
+                return ResourceManager.GetString("ImageWatermarkWindow_Image_watermark", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Margin.
+        /// </summary>
+        public static string ImageWatermarkWindow_Margin {
+            get {
+                return ResourceManager.GetString("ImageWatermarkWindow_Margin", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Rotation.
+        /// </summary>
+        public static string ImageWatermarkWindow_Rotation {
+            get {
+                return ResourceManager.GetString("ImageWatermarkWindow_Rotation", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Scale.
+        /// </summary>
+        public static string ImageWatermarkWindow_Scale {
+            get {
+                return ResourceManager.GetString("ImageWatermarkWindow_Scale", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Watermark.
+        /// </summary>
+        public static string ImageWatermarkWindow_Watermark {
+            get {
+                return ResourceManager.GetString("ImageWatermarkWindow_Watermark", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Watermark type.
+        /// </summary>
+        public static string ImageWatermarkWindow_Watermark_type {
+            get {
+                return ResourceManager.GetString("ImageWatermarkWindow_Watermark_type", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to {0} × {1}.
         /// </summary>
