@@ -18,7 +18,7 @@
 
     <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
         <Grid RowDefinitions="*,Auto" Margin="16" RowSpacing="12">
-            <Grid Grid.Row="0" ColumnDefinitions="360,*,340" ColumnSpacing="12">
+            <Grid Grid.Row="0" ColumnDefinitions="360,340,*" ColumnSpacing="12">
                 <Border Grid.Column="0" Classes="tool-panel">
                     <Grid RowDefinitions="Auto,*" RowSpacing="10">
                         <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,*" ColumnSpacing="8">
@@ -69,7 +69,7 @@
                     </Grid>
                 </Border>
 
-                <Border Grid.Column="1" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                <Border Grid.Column="2" Classes="tool-panel" Padding="0" ClipToBounds="True">
                     <Grid RowDefinitions="Auto,*">
                         <Border Grid.Row="0"
                                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
@@ -99,7 +99,7 @@
                     </Grid>
                 </Border>
 
-                <StackPanel Grid.Column="2" Spacing="12">
+                <StackPanel Grid.Column="1" Spacing="12">
                     <Border Classes="tool-panel" Padding="16">
                         <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10">
                             <TextBlock Grid.Row="0" Classes="section-heading"

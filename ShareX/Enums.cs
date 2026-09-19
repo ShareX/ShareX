@@ -302,6 +302,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageSplitter,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        ImageResizer,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         ImageThumbnailer,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         VideoConverter,
@@ -357,9 +359,7 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Other)]
         ToggleTrayMenu,
         [Category(EnumExtensions.HotkeyType_Category_Other)]
-        ExitShareX,
-        [Category(EnumExtensions.HotkeyType_Category_Tools)]
-        ImageResizer
+        ExitShareX
     }
 
     public enum ToastClickAction // Localized
