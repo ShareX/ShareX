@@ -830,6 +830,9 @@
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>हाशिया</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>स्थान</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>घुमाएँ</value>
   </data>

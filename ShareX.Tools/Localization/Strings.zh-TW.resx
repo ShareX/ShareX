@@ -830,6 +830,9 @@
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>邊界</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>位置</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>旋轉</value>
   </data>

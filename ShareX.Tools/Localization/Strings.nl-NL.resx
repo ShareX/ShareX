@@ -830,6 +830,9 @@ Bestandspad: {0}</value>
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>Marge</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>Positie</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>Draaien</value>
   </data>

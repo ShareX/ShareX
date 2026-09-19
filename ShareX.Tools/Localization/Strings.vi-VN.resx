@@ -826,6 +826,9 @@
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>Lề</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>Vị trí</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>Xoay</value>
   </data>

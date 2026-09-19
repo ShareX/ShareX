@@ -830,6 +830,9 @@ Filsökväg: {0}</value>
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>Marginal</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>Rotera</value>
   </data>

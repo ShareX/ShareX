@@ -826,6 +826,9 @@
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>Margin</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>Rotation</value>
   </data>

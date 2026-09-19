@@ -830,6 +830,9 @@ Cesta k souboru: {0}</value>
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>Okraj</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>Pozice</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>Otočení</value>
   </data>

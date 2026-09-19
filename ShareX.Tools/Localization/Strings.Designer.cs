@@ -2432,6 +2432,15 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Position.
+        /// </summary>
+        public static string ImageWatermarkWindow_Position {
+            get {
+                return ResourceManager.GetString("ImageWatermarkWindow_Position", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Rotation.
         /// </summary>
         public static string ImageWatermarkWindow_Rotation {

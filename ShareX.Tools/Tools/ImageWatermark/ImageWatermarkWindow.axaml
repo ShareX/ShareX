@@ -124,7 +124,7 @@
                                 </StackPanel>
 
                                 <Grid ColumnDefinitions="110,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.VideoTrimmer_Position}"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageWatermarkWindow_Position}"/>
                                     <ComboBox Grid.Column="1" ItemsSource="{Binding PositionOptions}"
                                               SelectedIndex="{Binding SelectedPositionIndex}"/>
                                 </Grid>

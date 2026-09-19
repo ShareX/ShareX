@@ -826,6 +826,9 @@
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>ระยะขอบ</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>ตำแหน่ง</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>หมุน</value>
   </data>

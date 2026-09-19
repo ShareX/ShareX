@@ -826,6 +826,9 @@
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>여백</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>위치</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>회전</value>
   </data>

@@ -826,6 +826,9 @@
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>حاشیه</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>موقعیت</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>چرخش</value>
   </data>

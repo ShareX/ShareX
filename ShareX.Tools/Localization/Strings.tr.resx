@@ -830,6 +830,9 @@ Dosya yolu: {0}</value>
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>Kenar boşluğu</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>Konum</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>Döndür</value>
   </data>

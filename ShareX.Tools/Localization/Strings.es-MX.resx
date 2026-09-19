@@ -830,6 +830,9 @@ Ruta del archivo: {0}</value>
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>Margen</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>Posición</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>Girar</value>
   </data>

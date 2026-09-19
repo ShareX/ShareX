@@ -830,6 +830,9 @@ Dateipfad: {0}</value>
   <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
     <value>Außenabstand</value>
   </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
   <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
     <value>Drehen</value>
   </data>
