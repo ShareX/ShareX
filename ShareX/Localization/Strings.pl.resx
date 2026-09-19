@@ -1424,11 +1424,17 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Przeciągnij i upuść przesyłanie</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Włącz skróty klawiszowe</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>Zakończ</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>Ukończono</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>Obserwuj ShareX...</value>
@@ -1570,6 +1576,21 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   </data>
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>Testuj skracanie URL</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>Dane i tekst</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>Obrazy</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>Ekran i kolor</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>Wideo</value>
   </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>Narzędzia</value>

@@ -1424,11 +1424,17 @@
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Вивантажити перетягуванням</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>Редагувати</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Увімкнути гарячі клавіші</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>Вийти</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>Зроблено</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>Стежити за ShareX...</value>
@@ -1570,6 +1576,21 @@
   </data>
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>Перевірити скорочення URL</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>Дані й текст</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>Зображення</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>Екран і колір</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>Система</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>Відео</value>
   </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>Інструменти</value>

@@ -1424,11 +1424,17 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Kéo và thả để tải lên</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Kích hoạt phím tắt</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>Thoát</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>Đã xong</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>Theo dõi ShareX...</value>
@@ -1570,6 +1576,21 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   </data>
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>Kiểm tra trình rút gọn URL</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>Dữ liệu và văn bản</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>Hình ảnh</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>Màn hình và màu sắc</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>Hệ thống</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>Video</value>
   </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>Công cụ</value>

@@ -1424,11 +1424,17 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Mise en ligne par glisser-déposer</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Activer les raccourcis clavier</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>Quitter</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>Terminé</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>Suivre ShareX...</value>
@@ -1570,6 +1576,21 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>Tester le raccourcisseur d’URL</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>Données et texte</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>Écran et couleur</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>Système</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>Vidéo</value>
   </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>Outils</value>

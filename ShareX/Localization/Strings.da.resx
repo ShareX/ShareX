@@ -1424,11 +1424,17 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Upload med træk og slip...</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>Rediger</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Aktivér genvejstaster</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>Afslut</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>Færdig</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>Følg ShareX...</value>
@@ -1570,6 +1576,21 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>Test URL-forkortere</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>Data og tekst</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>Billeder</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>Skærm og farve</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>Video</value>
   </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>Værktøjer</value>

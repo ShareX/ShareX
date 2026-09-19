@@ -1424,11 +1424,17 @@
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>拖放上传</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>编辑</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>启用快捷键</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>退出</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>完成</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>关注 ShareX...</value>
@@ -1570,6 +1576,21 @@
   </data>
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>测试 URL 缩短器</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>数据和文本</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>图像</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>屏幕和颜色</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>系统</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>视频</value>
   </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>工具</value>

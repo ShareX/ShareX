@@ -1424,11 +1424,17 @@
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>גרור ושחרר העלאה</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>ערוך</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>אפשר מקשי קיצור</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>יציאה</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>בוצע</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>עקוב אחר ShareX...</value>
@@ -1570,6 +1576,21 @@
   </data>
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>בדוק מקצר URL</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>נתונים וטקסט</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>תמונות</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>מסך וצבע</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>מערכת</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>וידאו</value>
   </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>כלים</value>

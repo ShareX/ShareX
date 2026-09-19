@@ -1424,11 +1424,17 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Húzd és vond feltöltés</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>Szerkesztés</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Enable gyorsbillentyűk</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>Kilépés</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>Kész</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>ShareX követése...</value>
@@ -1570,6 +1576,21 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>URL-rövidítő tesztelése</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>Adatok és szöveg</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>Képek</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>Képernyő és szín</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>Rendszer</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>Videó</value>
   </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>Eszközök</value>

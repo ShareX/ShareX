@@ -1424,11 +1424,17 @@
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>खींचकर छोड़ने वाला अपलोड...</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>संपादित करें</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>हॉटकी सक्षम करें</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>बाहर निकलें</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>पूर्ण</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>ShareX को फ़ॉलो करें...</value>
@@ -1570,6 +1576,21 @@
   </data>
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>URL संक्षिप्तकर्ता जाँचें</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>डेटा और पाठ</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>छवियाँ</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>स्क्रीन और रंग</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>सिस्टम</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>वीडियो</value>
   </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>उपकरण</value>

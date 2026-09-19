@@ -1424,11 +1424,17 @@
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>الرفع بالسحب والإفلات</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>تحرير</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>تفعيل مفاتيح الاختصارات</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>خروج</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>تـم</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>متابعة ShareX...</value>
@@ -1570,6 +1576,21 @@
   </data>
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>اختبار مختصر URL</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>البيانات والنصوص</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>الصور</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>الشاشة والألوان</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>النظام</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>الفيديو</value>
   </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>الأدوات</value>

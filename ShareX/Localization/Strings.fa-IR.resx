@@ -1424,11 +1424,17 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>آپلود با کشیدن و رهاکردن</value>
   </data>
+  <data name="MainMenuBuilder_EditTools" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>فعال سازی کلیدهای میانبر</value>
   </data>
   <data name="MainMenuBuilder_Exit" xml:space="preserve">
     <value>خروج</value>
+  </data>
+  <data name="MainMenuBuilder_FinishEditingTools" xml:space="preserve">
+    <value>انجام شد</value>
   </data>
   <data name="MainMenuBuilder_FollowShareX" xml:space="preserve">
     <value>دنبال کردن ShareX...</value>
@@ -1570,6 +1576,21 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainMenuBuilder_TestUrlShortener" xml:space="preserve">
     <value>آزمایش کوتاه‌کننده URL</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryData" xml:space="preserve">
+    <value>داده و متن</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryImages" xml:space="preserve">
+    <value>تصاویر</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryScreen" xml:space="preserve">
+    <value>صفحه‌نمایش و رنگ</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategorySystem" xml:space="preserve">
+    <value>سیستم</value>
+  </data>
+  <data name="MainMenuBuilder_ToolCategoryVideo" xml:space="preserve">
+    <value>ویدئو</value>
   </data>
   <data name="MainMenuBuilder_Tools" xml:space="preserve">
     <value>ابزار</value>
