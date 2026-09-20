@@ -91,8 +91,12 @@
                                      HorizontalAlignment="Stretch" VerticalAlignment="Top"
                                      ZIndex="1"/>
                         <Grid Grid.Row="1">
-                            <controls:ImageComparisonSlider RightImage="{Binding PreviewImage}"
-                                                            Margin="12"/>
+                            <Border Margin="12" Cursor="Hand" Background="Transparent"
+                                    IsVisible="{Binding HasPreview}"
+                                    PointerPressed="OnPreviewPointerPressed">
+                                <controls:ImageComparisonSlider RightImage="{Binding PreviewImage}"
+                                                                IsHitTestVisible="False"/>
+                            </Border>
                             <TextBlock Text="{x:Static theming:LucideIcons.image}"
                                        IsVisible="{Binding !HasImages}"
                                        Classes="icon" FontSize="54"

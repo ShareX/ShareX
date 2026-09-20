@@ -15,8 +15,10 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media.Imaging;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.HelpersLib;
 
 namespace ShareX.Tools;
 
@@ -77,6 +79,19 @@ public partial class ImageResizerWindow : Window
         {
             _viewModel.SetSelectedImages(listBox.SelectedItems.OfType<string>());
         }
+    }
+
+    private void OnPreviewPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (_viewModel.PreviewImage == null || !e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
+        {
+            return;
+        }
+
+        using MemoryStream stream = new();
+        _viewModel.PreviewImage.Save(stream, PngBitmapEncoderOptions.Default);
+        ImageViewerWindowIntegration.ShowImage(stream.ToArray(), Path.GetFileName(_viewModel.PreviewFilePath), this);
+        e.Handled = true;
     }
 
     private void OnDragOver(object? sender, DragEventArgs e)
