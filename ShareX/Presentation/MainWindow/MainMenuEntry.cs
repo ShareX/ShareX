@@ -17,6 +17,7 @@
 using Avalonia.Input;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ShareX;
@@ -175,6 +176,6 @@ internal sealed class MainMenuCategory
     public MainMenuCategory(string header, IReadOnlyList<MainMenuEntry> entries)
     {
         Header = header;
-        Entries = entries;
+        Entries = entries.OrderBy(entry => entry.Header, StringComparer.CurrentCultureIgnoreCase).ToArray();
     }
 }
