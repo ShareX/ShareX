@@ -41,7 +41,8 @@ namespace ShareX
         {
             WindowHandle = windowHandle;
 
-            AllowAutoHideForm = WindowHandle != Program.MainForm.Handle;
+            IntPtr mainWindowHandle = MainWindowIntegration.WindowHandle;
+            AllowAutoHideForm = mainWindowHandle == IntPtr.Zero || WindowHandle != mainWindowHandle;
         }
 
         protected override TaskMetadata Execute(TaskSettings taskSettings)

@@ -52,7 +52,7 @@ namespace ShareX;
 
 public partial class MainWindow : Window, INotifyPropertyChanged
 {
-    private readonly MainForm _host;
+    private readonly ITrayIconService _trayIconService;
     private readonly MainMenuBuilder _navigationMenuBuilder;
     private readonly MainMenuBuilder _trayMenuBuilder;
     private readonly UploadInfoManager _uploadInfoManager = new();
@@ -77,15 +77,15 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     internal ObservableCollection<HotkeyTipViewModel> HotkeyTips { get; } = new();
     public bool IsEmpty => ThumbnailItems.Count == 0;
 
-    public MainWindow() : this(Program.MainForm)
+    public MainWindow() : this(MainWindowIntegration.TrayIconService)
     {
     }
 
-    public MainWindow(MainForm host)
+    internal MainWindow(ITrayIconService trayIconService)
     {
-        _host = host;
-        _navigationMenuBuilder = new MainMenuBuilder(host);
-        _trayMenuBuilder = new MainMenuBuilder(host, trayMenu: true);
+        _trayIconService = trayIconService;
+        _navigationMenuBuilder = new MainMenuBuilder();
+        _trayMenuBuilder = new MainMenuBuilder(trayMenu: true);
 
         InitializeComponent();
         DataContext = this;
@@ -93,8 +93,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         Title = Program.Title;
         Icon = CreateWindowIcon();
 
-        _host.TrayIconService.RightButtonDown += OnTrayIconRightButtonDown;
-        _host.TrayIconService.RightButtonUp += OnTrayIconRightButtonUp;
+        _trayIconService.RightButtonDown += OnTrayIconRightButtonDown;
+        _trayIconService.RightButtonUp += OnTrayIconRightButtonUp;
 
         BuildNavigation();
         ConfigureWindowHeightFromNavigation();
@@ -1999,7 +1999,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (!_allowClose)
         {
             e.Cancel = true;
-            Dispatcher.UIThread.Post(_host.ForceClose);
+            Dispatcher.UIThread.Post(Program.ForceClose);
             return;
         }
 
@@ -2024,9 +2024,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ResetThumbnailDrag();
         CloseActiveContextMenu();
         CloseTrayMenuAnchor();
-        _host.TrayIconService.RightButtonDown -= OnTrayIconRightButtonDown;
-        _host.TrayIconService.RightButtonUp -= OnTrayIconRightButtonUp;
-        _host.TrayIconService.Visible = false;
+        _trayIconService.RightButtonDown -= OnTrayIconRightButtonDown;
+        _trayIconService.RightButtonUp -= OnTrayIconRightButtonUp;
+        _trayIconService.Visible = false;
 
         foreach (ThumbnailItemViewModel item in ThumbnailItems)
         {

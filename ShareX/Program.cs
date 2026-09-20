@@ -271,6 +271,8 @@ namespace ShareX
 
         private static bool closeSequenceStarted, restartRequested, restartAsAdmin;
 
+        internal static bool IsClosing => closeSequenceStarted || MainForm?.IsClosing == true;
+
         [STAThread]
         private static void Main(string[] args)
         {
@@ -426,14 +428,48 @@ namespace ShareX
 
         public static void Exit()
         {
-            if (MainForm is { IsDisposed: false } mainForm)
+            void ExitCore()
             {
-                mainForm.InvokeSafe(mainForm.ExitApplication);
+                if (MainForm is { IsDisposed: false } mainForm)
+                {
+                    mainForm.ExitApplication();
+                }
+                else
+                {
+                    AvaloniaBootstrapper.Shutdown();
+                }
+            }
+
+            if (Dispatcher.UIThread.CheckAccess())
+            {
+                ExitCore();
             }
             else
             {
-                AvaloniaBootstrapper.Shutdown();
+                Dispatcher.UIThread.Post(ExitCore);
             }
+        }
+
+        public static void ForceClose()
+        {
+            if (!Dispatcher.UIThread.CheckAccess())
+            {
+                Dispatcher.UIThread.Post(ForceClose);
+                return;
+            }
+
+            if (ScreenRecordManager.IsRecording)
+            {
+                if (MessageBox.Show(Strings.ShareXCannotBeClosedWhileScreenRecordingIsActive, AppName,
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == ShareX.AvaloniaUI.DialogResult.Yes)
+                {
+                    ScreenRecordManager.AbortRecording();
+                }
+
+                return;
+            }
+
+            Exit();
         }
 
         private static void SingleInstanceManager_ArgumentsReceived(string[] arguments)

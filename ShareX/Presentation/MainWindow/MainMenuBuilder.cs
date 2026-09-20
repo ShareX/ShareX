@@ -32,12 +32,10 @@ namespace ShareX;
 
 internal sealed class MainMenuBuilder
 {
-    private readonly MainForm _host;
     private readonly bool _trayMenu;
 
-    public MainMenuBuilder(MainForm host, bool trayMenu = false)
+    public MainMenuBuilder(bool trayMenu = false)
     {
-        _host = host;
         _trayMenu = trayMenu;
     }
 
@@ -103,7 +101,7 @@ internal sealed class MainMenuBuilder
                 Program.Settings.RecentTasksSave && Program.Settings.RecentTasksShowInTrayMenu && TaskManager.RecentManager.Tasks.Count > 0),
             Item(Strings.MainMenuBuilder_ActionsToolbar, LucideIcons.panel_top, () => TaskHelpers.ToggleActionsToolbar()),
             Item(Strings.MainMenuBuilder_ShowShareX, LucideIcons.maximize, MainWindowIntegration.Activate),
-            Item(Strings.MainMenuBuilder_Exit, LucideIcons.log_out, _host.ForceClose)
+            Item(Strings.MainMenuBuilder_Exit, LucideIcons.log_out, Program.ForceClose)
         };
 
         return items;
@@ -200,7 +198,7 @@ internal sealed class MainMenuBuilder
             .Select(delay => new MainMenuEntry(
                 string.Format(Strings.ScreenshotDelay0S, delay),
                 delay == 0 ? LucideIcons.timer_off : LucideIcons.timer,
-                () => _host.SetAvaloniaScreenshotDelay(delay),
+                () => MainWindowIntegration.SetScreenshotDelay(delay),
                 isChecked: Math.Abs(current - delay) < 0.01m,
                 toggleType: MainMenuToggleType.Radio))
             .ToArray();
@@ -570,7 +568,7 @@ internal sealed class MainMenuBuilder
         return LucideIcons.file;
     }
 
-    private void Run(MainFormCommand command) => _host.ExecuteAvaloniaMainFormCommand(command);
+    private static void Run(MainFormCommand command) => MainWindowIntegration.ExecuteCommand(command);
 
     private static MainMenuEntry Item(string header, string icon, Action execute, bool isVisible = true, byte[]? bitmapIcon = null) =>
         new(header, icon, execute, isVisible: isVisible, bitmapIcon: bitmapIcon);

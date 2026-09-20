@@ -92,7 +92,7 @@ namespace ShareX
 
             if (autoHideForm && AllowAutoHideForm)
             {
-                Program.MainForm.Hide();
+                MainWindowIntegration.Hide();
                 showMainForm = true;
                 wait = true;
             }
@@ -122,7 +122,7 @@ namespace ShareX
 
                 if (showMainForm)
                 {
-                    Program.MainForm.ForceActivate();
+                    MainWindowIntegration.Activate();
                 }
 
                 AfterCapture(metadata, taskSettings);

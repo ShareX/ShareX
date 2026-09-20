@@ -15,6 +15,7 @@
 #nullable enable
 
 using Avalonia.Platform;
+using Avalonia.Threading;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
@@ -1057,34 +1058,24 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     private static void InvokeOnMainThread(Action action)
     {
-        if (Program.MainForm == null || Program.MainForm.IsDisposed)
+        if (Dispatcher.UIThread.CheckAccess())
         {
-            return;
-        }
-
-        if (Program.MainForm.InvokeRequired)
-        {
-            Program.MainForm.Invoke(action);
+            action();
         }
         else
         {
-            action();
+            Dispatcher.UIThread.Invoke(action);
         }
     }
 
     private static T InvokeOnMainThread<T>(Func<T> action)
     {
-        if (Program.MainForm == null || Program.MainForm.IsDisposed)
+        if (Dispatcher.UIThread.CheckAccess())
         {
             return action();
         }
 
-        if (Program.MainForm.InvokeRequired)
-        {
-            return (T)Program.MainForm.Invoke(action);
-        }
-
-        return action();
+        return Dispatcher.UIThread.Invoke(action);
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
@@ -1117,7 +1108,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             language.Flag?.Dispose();
         }
 
-        if (!Program.MainForm.IsClosing)
+        if (!Program.IsClosing)
         {
             FlushPersonalPath();
             InvokeOnMainThread(Program.MainForm.ApplyApplicationSettings);

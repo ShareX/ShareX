@@ -627,13 +627,13 @@ public partial class NotificationWindow : Window
             }
         }
 
-        if (Program.MainForm != null && Program.MainForm.InvokeRequired)
+        if (Dispatcher.UIThread.CheckAccess())
         {
-            Program.MainForm.BeginInvoke((Action)Execute);
+            Execute();
         }
         else
         {
-            Execute();
+            Dispatcher.UIThread.Post(Execute);
         }
     }
 

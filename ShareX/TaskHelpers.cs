@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.AvaloniaUI.Windows;
 using ShareX.HelpersLib;
@@ -385,7 +386,7 @@ namespace ShareX
                     ToggleHotkeys(safeTaskSettings);
                     break;
                 case HotkeyType.OpenMainWindow:
-                    Program.MainForm.ForceActivate();
+                    MainWindowIntegration.Activate();
                     break;
                 case HotkeyType.OpenScreenshotsFolder:
                     OpenScreenshotsFolder();
@@ -403,7 +404,7 @@ namespace ShareX
                     ToggleTrayMenu();
                     break;
                 case HotkeyType.ExitShareX:
-                    Program.MainForm.ForceClose();
+                    Program.ForceClose();
                     break;
             }
         }
@@ -1331,7 +1332,7 @@ namespace ShareX
                 CopyImageRequested = (skBitmap) =>
                 {
                     using Bitmap img = skBitmap.ToBitmap();
-                    MainFormCopyImage(img);
+                    CopyImageOnUiThread(img);
                 },
                 SaveImageRequested = (skBitmap, newFilePath) =>
                 {
@@ -1364,7 +1365,7 @@ namespace ShareX
                 PrintImageRequested = (skBitmap) =>
                 {
                     Bitmap bmp = skBitmap.ToBitmap();
-                    MainFormPrintImage(bmp);
+                    PrintImageOnUiThread(bmp);
                 },
                 PinImageRequested = (skBitmap) =>
                 {
@@ -1374,7 +1375,7 @@ namespace ShareX
                 UploadImageRequested = (skBitmap) =>
                 {
                     Bitmap bmp = skBitmap.ToBitmap();
-                    MainFormUploadImage(bmp, taskSettings);
+                    UploadImageOnUiThread(bmp, taskSettings);
                 }
             };
 
@@ -1480,31 +1481,37 @@ namespace ShareX
             }
         }
 
-        public static void MainFormCopyImage(Bitmap bmp)
+        private static void CopyImageOnUiThread(Bitmap bmp)
         {
-            Program.MainForm.InvokeSafe(() =>
-            {
-                ClipboardHelpers.CopyImage(bmp);
-            });
+            InvokeOnUiThread(() => ClipboardHelpers.CopyImage(bmp));
         }
 
-        public static void MainFormUploadImage(Bitmap bmp, TaskSettings taskSettings = null)
+        private static void UploadImageOnUiThread(Bitmap bmp, TaskSettings taskSettings = null)
         {
-            Program.MainForm.InvokeSafe(() =>
-            {
-                UploadManager.UploadImage(bmp, taskSettings);
-            });
+            InvokeOnUiThread(() => UploadManager.UploadImage(bmp, taskSettings));
         }
 
-        public static void MainFormPrintImage(Bitmap bmp)
+        private static void PrintImageOnUiThread(Bitmap bmp)
         {
-            Program.MainForm.InvokeSafe(() =>
+            InvokeOnUiThread(() =>
             {
                 using (bmp)
                 {
                     PrintImage(bmp);
                 }
             });
+        }
+
+        private static void InvokeOnUiThread(Action action)
+        {
+            if (Dispatcher.UIThread.CheckAccess())
+            {
+                action();
+            }
+            else
+            {
+                Dispatcher.UIThread.Invoke(action);
+            }
         }
 
         public static void OpenImageBeautifier(TaskSettings taskSettings = null)
@@ -1772,7 +1779,7 @@ namespace ShareX
             using Image image = GenerateQRCode(text, size);
             if (image != null)
             {
-                MainFormUploadImage(new Bitmap(image));
+                UploadImageOnUiThread(new Bitmap(image));
             }
         }
 
@@ -1785,7 +1792,7 @@ namespace ShareX
         {
             taskSettings ??= Program.DefaultTaskSettings;
             ToolsIntegration.ShowMouseHighlighterWindow(taskSettings.ToolsSettingsReference.MouseHighlighterOptions,
-                () => Program.MainForm.ExecuteAvaloniaMainFormCommand(MainFormCommand.HotkeySettings),
+                () => MainWindowIntegration.ExecuteCommand(MainFormCommand.HotkeySettings),
                 () => SettingManager.SaveApplicationConfigAsync());
         }
 
@@ -1938,10 +1945,7 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(result))
                 {
-                    Program.MainForm.InvokeSafe(() =>
-                    {
-                        ClipboardHelpers.CopyText(result);
-                    });
+                    InvokeOnUiThread(() => ClipboardHelpers.CopyText(result));
 
                     if (!string.IsNullOrEmpty(filePath))
                     {
@@ -1951,10 +1955,7 @@ namespace ShareX
                 }
                 else
                 {
-                    Program.MainForm.InvokeSafe(() =>
-                    {
-                        ClipboardHelpers.Clear();
-                    });
+                    InvokeOnUiThread(() => ClipboardHelpers.Clear());
                 }
 
                 PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
@@ -2689,10 +2690,7 @@ namespace ShareX
                 Text = text
             };
 
-            Program.MainForm.InvokeSafe(() =>
-            {
-                NotificationWindow.Show(toastConfig);
-            });
+            NotificationWindow.Show(toastConfig);
         }
 
         public static void ToggleTrayMenu()

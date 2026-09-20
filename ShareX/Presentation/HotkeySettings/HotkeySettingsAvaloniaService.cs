@@ -12,6 +12,7 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia.Threading;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,6 @@ namespace ShareX;
 internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
 {
     private readonly HotkeyManager _manager;
-    private readonly MainForm _mainForm;
     private readonly Action _closed;
     private readonly IReadOnlyList<HotkeyTaskOption> _taskOptions;
     private bool _disposed;
@@ -32,10 +32,9 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
 
     public bool AreHotkeysDisabled => InvokeOnMainThread(() => Program.Settings.DisableHotkeys);
 
-    public HotkeySettingsAvaloniaService(HotkeyManager manager, MainForm mainForm, Action closed)
+    public HotkeySettingsAvaloniaService(HotkeyManager manager, Action closed)
     {
         _manager = manager;
-        _mainForm = mainForm;
         _closed = closed;
         _taskOptions = Helpers.GetEnums<HotkeyType>()
             .Select(value => new EnumInfo(value))
@@ -263,29 +262,24 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
 
     private void InvokeOnMainThread(Action action)
     {
-        if (_mainForm.IsDisposed)
+        if (Dispatcher.UIThread.CheckAccess())
         {
-            return;
-        }
-
-        if (_mainForm.InvokeRequired)
-        {
-            _mainForm.Invoke(action);
+            action();
         }
         else
         {
-            action();
+            Dispatcher.UIThread.Invoke(action);
         }
     }
 
     private T InvokeOnMainThread<T>(Func<T> action)
     {
-        if (_mainForm.InvokeRequired)
+        if (Dispatcher.UIThread.CheckAccess())
         {
-            return (T)_mainForm.Invoke(action);
+            return action();
         }
 
-        return action();
+        return Dispatcher.UIThread.Invoke(action);
     }
 
     public void Dispose()

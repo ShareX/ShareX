@@ -15,19 +15,15 @@
 #nullable enable
 
 using Avalonia.Styling;
+using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.Localization;
 using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MessageBox = ShareX.AvaloniaUI.MessageBox;
-using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
-using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
-using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
 namespace ShareX;
 
@@ -67,7 +63,7 @@ public sealed class MainForm : HotkeyForm
         await UpdateControls();
 
         bool showMainWindow = !(Program.SilentRun || Program.Settings.SilentRun) || !Program.Settings.ShowTray;
-        MainWindowIntegration.Initialize(this, showMainWindow);
+        MainWindowIntegration.Initialize(TrayIconService, showMainWindow);
 
         ShareX.Tools.MouseHighlighterManager.ActivateOnStartup(Program.DefaultTaskSettings.ToolsSettings.MouseHighlighterOptions);
 
@@ -162,13 +158,13 @@ public sealed class MainForm : HotkeyForm
             return;
         }
 
-        if (InvokeRequired)
+        if (Dispatcher.UIThread.CheckAccess())
         {
-            BeginInvoke(UpdateTheme);
+            UpdateTheme();
         }
         else
         {
-            UpdateTheme();
+            Dispatcher.UIThread.Post(UpdateTheme);
         }
     }
 
@@ -231,161 +227,11 @@ public sealed class MainForm : HotkeyForm
         }
     }
 
-    public void ForceClose()
-    {
-        if (ScreenRecordManager.IsRecording)
-        {
-            if (MessageBox.Show(Strings.ShareXCannotBeClosedWhileScreenRecordingIsActive, "ShareX",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == MessageBoxResult.Yes)
-            {
-                ScreenRecordManager.AbortRecording();
-            }
-
-            return;
-        }
-
-        ExitApplication();
-    }
-
     internal void ExitApplication()
     {
         _forceClose = true;
         MainWindowIntegration.Close();
         Close();
-    }
-
-    public new bool Visible => MainWindowIntegration.IsVisible;
-
-    public new void Hide()
-    {
-        if (MainWindowIntegration.IsInitialized)
-        {
-            MainWindowIntegration.Hide();
-        }
-        else
-        {
-            base.Hide();
-        }
-    }
-
-    public void ForceActivate()
-    {
-        if (MainWindowIntegration.IsInitialized)
-        {
-            MainWindowIntegration.Activate();
-        }
-        else
-        {
-            FormExtensions.ForceActivate(this);
-        }
-    }
-
-    internal void SetAvaloniaScreenshotDelay(decimal delay)
-    {
-        Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay = delay;
-        MainWindowIntegration.RefreshMenus();
-    }
-
-    internal void ExecuteAvaloniaMainFormCommand(MainFormCommand command)
-    {
-        switch (command)
-        {
-            case MainFormCommand.ApplicationSettings:
-                OpenApplicationSettings();
-                break;
-            case MainFormCommand.TaskSettings:
-                OpenTaskSettings();
-                break;
-            case MainFormCommand.HotkeySettings:
-                OpenHotkeySettings();
-                break;
-            case MainFormCommand.DestinationSettings:
-                TaskHelpers.OpenUploadersConfigWindow();
-                break;
-            case MainFormCommand.CustomUploaderSettings:
-                TaskHelpers.OpenCustomUploaderSettingsWindow();
-                break;
-            case MainFormCommand.ScreenshotsFolder:
-                TaskHelpers.OpenScreenshotsFolder();
-                break;
-            case MainFormCommand.History:
-                TaskHelpers.OpenHistory();
-                break;
-            case MainFormCommand.ImageHistory:
-                TaskHelpers.OpenImageHistory();
-                break;
-            case MainFormCommand.DebugLog:
-                TaskHelpers.OpenDebugLog();
-                break;
-            case MainFormCommand.TestImageUpload:
-                UploadManager.UploadImage(ShareXResources.Logo);
-                break;
-            case MainFormCommand.TestTextUpload:
-                UploadManager.UploadText(Strings.MainForm_tsmiTestTextUpload_Click_Text_upload_test);
-                break;
-            case MainFormCommand.TestFileUpload:
-                UploadManager.UploadImage(ShareXResources.Logo, ImageDestination.FileUploader, Program.DefaultTaskSettings.FileDestination);
-                break;
-            case MainFormCommand.TestUrlShortener:
-                UploadManager.ShortenURL(Links.Website);
-                break;
-            case MainFormCommand.TestUrlSharing:
-                UploadManager.ShareURL(Links.Website);
-                break;
-            case MainFormCommand.Donate:
-#if STEAM
-                URLHelpers.OpenURL(Links.Website);
-#else
-                URLHelpers.OpenURL(Links.Donate);
-#endif
-                break;
-            case MainFormCommand.X:
-                URLHelpers.OpenURL(Links.XFollow);
-                break;
-            case MainFormCommand.Discord:
-                URLHelpers.OpenURL(Links.Discord);
-                break;
-            case MainFormCommand.About:
-                AboutWindowIntegration.Show();
-                break;
-        }
-    }
-
-    private void OpenApplicationSettings()
-    {
-        ApplicationSettingsIntegration.Show();
-    }
-
-    private void OpenTaskSettings()
-    {
-        TaskSettingsIntegration.Show(Program.DefaultTaskSettings, true, () =>
-        {
-            if (!IsDisposed)
-            {
-                MainWindowIntegration.RefreshMenus();
-                SettingManager.SaveApplicationConfigAsync();
-            }
-        });
-    }
-
-    private void OpenHotkeySettings()
-    {
-        if (Program.HotkeyManager == null)
-        {
-            return;
-        }
-
-        HotkeySettingsIntegration.Show(new HotkeySettingsAvaloniaService(
-            Program.HotkeyManager,
-            this,
-            () =>
-            {
-                if (!IsDisposed)
-                {
-                    MainWindowIntegration.RefreshMenus();
-                    SettingManager.SaveHotkeysConfigAsync();
-                }
-            }));
     }
 
     protected override void WndProc(ref Message m)
