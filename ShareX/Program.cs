@@ -29,6 +29,7 @@ using ShareX.HistoryLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.Localization;
 using ShareX.UploadersLib;
+using Avalonia.Threading;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -452,7 +453,7 @@ namespace ShareX
 
             if (WaitFormLoad(5000))
             {
-                MainForm.InvokeSafe(async () =>
+                Dispatcher.UIThread.Post(async () =>
                 {
                     await UseCommandLineArgs(arguments);
                 });
@@ -484,11 +485,11 @@ namespace ShareX
                     MainWindowIntegration.SetTrayVisible(true);
                 }
 
-                MainForm.ForceActivate();
+                MainWindowIntegration.Activate();
             }
-            else if (MainForm.Visible)
+            else if (MainWindowIntegration.IsVisible)
             {
-                MainForm.ForceActivate();
+                MainWindowIntegration.Activate();
             }
 
             CLIManager cli = new CLIManager(args);
