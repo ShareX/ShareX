@@ -214,6 +214,7 @@
                                     IsVisible="{Binding HasPreview}"
                                     PointerPressed="OnPreviewPointerPressed">
                                 <controls:ImageComparisonSlider RightImage="{Binding PreviewImage}"
+                                                                StretchDirection="DownOnly"
                                                                 IsHitTestVisible="False"/>
                             </Border>
                             <TextBlock Text="{x:Static theming:LucideIcons.image}"
