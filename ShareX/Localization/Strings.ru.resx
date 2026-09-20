@@ -2883,4 +2883,5 @@
     <value>Ваш системный администратор отключил возможность загрузки.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Обрезать видео...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Изменить размер изображения...</value></data>
 </root>

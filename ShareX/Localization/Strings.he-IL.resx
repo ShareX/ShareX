@@ -2883,4 +2883,5 @@
     <value>מנהל המערכת שלך השבית את תכונת ההעלאה.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>חיתוך וידאו...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>שינוי גודל התמונה...</value></data>
 </root>

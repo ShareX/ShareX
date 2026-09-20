@@ -1077,9 +1077,9 @@ namespace ShareX
             ToolsIntegration.ShowImageSplitterWindow();
         }
 
-        public static void OpenImageResizer()
+        public static void OpenImageResizer(IEnumerable<string> imageFiles = null)
         {
-            ToolsIntegration.ShowImageResizerWindow();
+            ToolsIntegration.ShowImageResizerWindow(imageFiles);
         }
 
         public static void OpenImageConverter()

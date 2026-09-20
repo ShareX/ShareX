@@ -2898,4 +2898,5 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Mouse highlighter options...</value>
   </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Resize image...</value></data>
 </root>

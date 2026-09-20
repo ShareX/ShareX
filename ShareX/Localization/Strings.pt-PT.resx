@@ -2883,4 +2883,5 @@ Pode desativá-los mais tarde no menu "Tarefas após captura".</value>
     <value>O administrador do sistema desativou a funcionalidade de carregamento.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Cortar vídeo...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Redimensionar imagem...</value></data>
 </root>

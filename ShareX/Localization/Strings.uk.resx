@@ -2883,4 +2883,5 @@
     <value>Ваш системний адміністратор вимкнув функцію вивантаження.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Обрізати відео...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Змінити розмір зображення...</value></data>
 </root>

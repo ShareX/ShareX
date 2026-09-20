@@ -2883,4 +2883,5 @@ You can later disable it from "After 캡처 tasks" 메뉴.</value>
     <value>Your system admin disabled the 업로드 feature.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>동영상 자르기...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>이미지 크기 조정...</value></data>
 </root>

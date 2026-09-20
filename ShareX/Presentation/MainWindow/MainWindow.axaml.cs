@@ -1451,6 +1451,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Item(Strings.MainWindow_EditImage, LucideIcons.image, _uploadInfoManager.EditImage,
                 hasSelection && !isWorking && selected!.IsImageFile,
                 new KeyGesture(Key.E, KeyModifiers.Control)),
+            Item(Strings.MainWindow_ResizeImage, LucideIcons.maximize_2, _uploadInfoManager.ResizeImages,
+                hasSelection && !isWorking && statuses.Any(x => x.IsImageFile)),
             Item(Strings.MainWindow_TrimVideo, LucideIcons.scissors, _uploadInfoManager.TrimVideo,
                 hasSelection && !isWorking && selected!.IsVideoFile),
             Item(Strings.MainWindow_BeautifyImage, LucideIcons.sparkles, _uploadInfoManager.BeautifyImage,

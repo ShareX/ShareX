@@ -2883,4 +2883,5 @@ You can later disable it from "After acquisizione tasks" menu.</value>
     <value>Your system admin disabled the caricamento feature.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Taglia video...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Ridimensiona immagine...</value></data>
 </root>

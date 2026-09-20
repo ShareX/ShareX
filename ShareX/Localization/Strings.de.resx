@@ -2882,4 +2882,5 @@ Sie können sie später im Menü „Aufgaben nach der Aufnahme“ deaktivieren.<
     <value>Ihr Systemadministrator hat diese Funktion ausgeschaltet.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Video zuschneiden...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Bildgröße ändern...</value></data>
 </root>

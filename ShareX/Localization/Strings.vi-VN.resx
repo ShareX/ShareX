@@ -2883,4 +2883,5 @@ Sau đó, bạn có thể tắt nó từ menu "Sau khi chụp tác vụ".</value
     <value>Quản trị viên hệ thống của bạn đã tắt tính năng tải lên.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Cắt video...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Đổi kích thước ảnh...</value></data>
 </root>

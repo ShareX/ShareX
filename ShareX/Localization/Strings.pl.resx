@@ -2883,4 +2883,5 @@ Możesz je później wyłączyć w menu "Zadania po przechwyceniu".</value>
     <value>Administrator systemu wyłączył funkcję przesyłania.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Przytnij wideo...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Zmień rozmiar obrazu...</value></data>
 </root>

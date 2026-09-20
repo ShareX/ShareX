@@ -2883,4 +2883,5 @@ Daha sonra "Yakalama sonrası" menüsünden devre dışı bırakabilirsiniz.</va
     <value>Sistem yöneticiniz yükleme özelliğini devre dışı bıraktı.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Videoyu kırp...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Görseli yeniden boyutlandır...</value></data>
 </root>

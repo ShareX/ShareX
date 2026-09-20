@@ -2883,4 +2883,5 @@ Vous pourrez les désactiver plus tard depuis le manu "Tâches après la capture
     <value>Votre administrateur système a désactivé la fonctionnalité de mise en ligne.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Découper la vidéo...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Redimensionner l’image...</value></data>
 </root>

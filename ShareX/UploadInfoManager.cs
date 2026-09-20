@@ -457,6 +457,19 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsImageFile) await TaskHelpers.OCRImage(SelectedItem.Info.FilePath);
         }
 
+        public void ResizeImages()
+        {
+            if (IsItemSelected)
+            {
+                string[] imageFiles = SelectedItems.Where(x => x.IsImageFile).Select(x => x.Info.FilePath).ToArray();
+
+                if (imageFiles.Length > 0)
+                {
+                    TaskHelpers.OpenImageResizer(imageFiles);
+                }
+            }
+        }
+
         public void CombineImages()
         {
             if (IsItemSelected)

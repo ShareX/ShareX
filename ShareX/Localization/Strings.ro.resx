@@ -2883,4 +2883,5 @@ Puteți să le dezactivați ulterior din meniul "Sarcini după captură".</value
     <value>Administratorul de sistem a dezactivat funcția de încărcare.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Decupează videoclipul...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Redimensionează imaginea...</value></data>
 </root>

@@ -2883,4 +2883,5 @@ Você pode desativar posteriormente no menu "Tarefas após a captura".</value>
     <value>O administrador do sistema desativou o recurso de upload.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Cortar vídeo...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Redimensionar imagem...</value></data>
 </root>

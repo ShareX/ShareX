@@ -2882,4 +2882,5 @@ Puedes desactivarlo más adelante desde el menú "Tareas después de capturar".<
     <value>El administrador de tu sistema desactivó la característica de carga.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Recortar video...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Redimensionar imagen...</value></data>
 </root>

@@ -2883,4 +2883,5 @@ Du kan deaktivere dem senere fra menuen ”Opgaver efter optagelse”.</value>
     <value>Din systemadministrator har deaktiveret uploadfunktionen.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Trim video...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Skift billedstørrelse...</value></data>
 </root>

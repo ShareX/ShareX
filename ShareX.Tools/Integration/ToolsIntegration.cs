@@ -185,9 +185,9 @@ public static class ToolsIntegration
         Show(() => new ImageSplitterWindow());
     }
 
-    public static void ShowImageResizerWindow()
+    public static void ShowImageResizerWindow(IEnumerable<string>? imageFiles = null)
     {
-        Show(() => new ImageResizerWindow());
+        Show(() => new ImageResizerWindow(imageFiles));
     }
 
     public static void ShowImageConverterWindow()

@@ -24,7 +24,11 @@ public partial class ImageResizerWindow : Window
 {
     private readonly ImageResizerViewModel _viewModel;
 
-    public ImageResizerWindow()
+    public ImageResizerWindow() : this(null)
+    {
+    }
+
+    public ImageResizerWindow(IEnumerable<string>? imageFiles)
     {
         _viewModel = new ImageResizerViewModel();
         DataContext = _viewModel;
@@ -37,6 +41,8 @@ public partial class ImageResizerWindow : Window
         AddHandler(DragDrop.DragOverEvent, OnDragOver);
         AddHandler(DragDrop.DropEvent, OnDrop);
         Closed += (_, _) => _viewModel.Dispose();
+
+        _viewModel.AddFiles(imageFiles);
     }
 
     private void InitializeComponent() => AvaloniaXamlLoader.Load(this);

@@ -2883,4 +2883,5 @@ Du kan inaktivera dem senare från menyn "Uppgifter efter bildtagning".</value>
     <value>Din systemadministratör har inaktiverat uppladdningsfunktionen.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Trimma video...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Ändra bildstorlek...</value></data>
 </root>

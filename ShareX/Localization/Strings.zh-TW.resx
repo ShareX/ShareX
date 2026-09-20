@@ -2883,4 +2883,5 @@
     <value>你的系統管理員已停用上傳功能。</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>剪輯影片...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>調整圖片大小...</value></data>
 </root>

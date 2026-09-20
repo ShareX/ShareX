@@ -2883,4 +2883,5 @@ Anda dapat menonaktifkannya nanti dari menu "Tugas setelah tangkapan".</value>
     <value>Admin sistem Anda menonaktifkan fitur unggah.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Potong video...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Ubah ukuran gambar...</value></data>
 </root>

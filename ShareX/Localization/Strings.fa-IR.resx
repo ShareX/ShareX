@@ -2883,4 +2883,5 @@ You can later disable it from "After ضبط tasks" منو.</value>
     <value>Your system admin disabled the بارگذاری feature.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>برش ویدئو...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>تغییر اندازه تصویر...</value></data>
 </root>

@@ -2883,4 +2883,5 @@
     <value>ผู้ดูแลระบบของคุณปิดใช้งานคุณลักษณะการอัปโหลด</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>ตัดวิดีโอ...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>ปรับขนาดรูปภาพ...</value></data>
 </root>

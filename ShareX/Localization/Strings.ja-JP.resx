@@ -2883,4 +2883,5 @@
     <value>お使いのシステムの管理者がアップロード機能を無効にしています。</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>動画をトリミング...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>画像のサイズ変更...</value></data>
 </root>

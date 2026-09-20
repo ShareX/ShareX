@@ -2882,4 +2882,5 @@ You can later disable it from "After captura tasks" menú.</value>
     <value>Your system admin disabled the subida feature.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Recortar vídeo...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Redimensionar imagen...</value></data>
 </root>

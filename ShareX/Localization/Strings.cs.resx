@@ -2883,4 +2883,5 @@ Později je můžete zakázat v nabídce „Úlohy po zachycení“.</value>
     <value>Správce systému zakázal funkci nahrávání.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Oříznout video...</value></data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Změnit velikost obrázku...</value></data>
 </root>

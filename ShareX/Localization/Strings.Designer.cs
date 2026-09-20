@@ -1053,6 +1053,15 @@ namespace ShareX.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Resize image....
+        /// </summary>
+        public static string MainWindow_ResizeImage {
+            get {
+                return ResourceManager.GetString("MainWindow_ResizeImage", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Trim video....
         /// </summary>
         public static string MainWindow_TrimVideo {
