@@ -101,6 +101,7 @@
                                         <TextBlock Classes="row-label"
                                                    Text="{x:Static localization:Strings.MonitorTestWindow_Color}"/>
                                         <cp:ColorPicker Grid.Column="1" Color="{Binding TextColor, Mode=TwoWay}"
+                                                        HorizontalAlignment="Left"
                                                         IsAlphaEnabled="False" IsAlphaVisible="False"/>
                                     </Grid>
                                 </StackPanel>
@@ -168,6 +169,7 @@
                                 <Grid ColumnDefinitions="110,*" ColumnSpacing="10" IsVisible="{Binding IsJpeg}">
                                     <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}"/>
                                     <cp:ColorPicker Grid.Column="1" Color="{Binding BackgroundColor, Mode=TwoWay}"
+                                                    HorizontalAlignment="Left"
                                                     IsAlphaEnabled="False" IsAlphaVisible="False"/>
                                 </Grid>
                                 <TextBlock Classes="row-label"
