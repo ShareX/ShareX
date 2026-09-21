@@ -88,6 +88,12 @@
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
+        <Style Selector="Button.caption-close">
+            <Setter Property="CornerRadius" Value="0,7,0,0"/>
+        </Style>
+        <Style Selector="Button.caption-close.maximized">
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
         <Style Selector="Button.caption-close:pointerover">
             <Setter Property="Foreground" Value="White"/>
         </Style>
@@ -132,7 +138,6 @@
                     <StackPanel Grid.Column="1" Orientation="Horizontal">
                         <Button Classes="caption-button"
                                 AutomationProperties.Name="Minimize"
-                                ToolTip.Tip="Minimize"
                                 Click="OnMinimizeClick"
                                 chrome:WindowDecorationProperties.ElementRole="MinimizeButton">
                             <TextBlock Classes="icon"
@@ -141,7 +146,6 @@
                         </Button>
                         <Button Classes="caption-button"
                                 AutomationProperties.Name="Maximize or restore"
-                                ToolTip.Tip="Maximize or restore"
                                 Click="OnMaximizeRestoreClick"
                                 chrome:WindowDecorationProperties.ElementRole="MaximizeButton">
                             <Grid>
@@ -156,8 +160,8 @@
                             </Grid>
                         </Button>
                         <Button Classes="caption-button caption-close"
+                                Classes.maximized="{Binding IsWindowMaximized}"
                                 AutomationProperties.Name="Close"
-                                ToolTip.Tip="Close"
                                 Click="OnCloseClick"
                                 chrome:WindowDecorationProperties.ElementRole="CloseButton">
                             <TextBlock Classes="icon"
