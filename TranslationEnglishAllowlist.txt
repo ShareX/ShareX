@@ -594,10 +594,6 @@ ShareX.UploadersLib|PrivateBinExpiration_W1|99b15ca862e51b2f7ae25730ef9a4e10d3d0
 ShareX.UploadersLib|PrivateBinFormat_Markdown|bc18f7068971a44e264848ecd54b72b02d38216abb8ce3c3d2148e37e8a12398|ar-YE,cs,da,de,es-MX,es,fa-IR,fr,he-IL,hi,hu,id-ID,it-IT,ja-JP,ko-KR,nl-NL,pl,pt-BR,pt-PT,ro,ru,sv,tr,uk,vi-VN,zh-CN,zh-TW
 ShareX.UploadersLib|PrivateBinFormat_PlainText|96d62e2abd3e42de5f50330fb8efc4c5599835278077b21e9aa0b33c1df07a1c|th
 ShareX.UploadersLib|PrivateBinFormat_SyntaxHighlighting|a4bf3c25929fb50c7fe7524c71e98cb4985ce30396b7fc9273d0cbd45d1034ef|th
-ShareX.UploadersLib|PuushLoginWindow_Email|969ccbd3cf6300ecd5c880459d81ae9027df7517563184a1b8b15282db230621|cs,de,hu,id-ID,it-IT,nl-NL,pl,pt-BR,pt-PT,ro,vi-VN
-ShareX.UploadersLib|PuushLoginWindow_name_example_com|7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068|ar-YE,de,es-MX,es,fa-IR,fr,he-IL,hi,hu,id-ID,it-IT,ja-JP,ko-KR,nl-NL,pl,pt-BR,pt-PT,ro,ru,tr,uk,vi-VN,zh-CN,zh-TW
-ShareX.UploadersLib|PuushLoginWindow_Password|e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a|it-IT
-ShareX.UploadersLib|PuushLoginWindow_ShareX_puush_login|7681c1aefbfb418733c39fa9994d5f4240b554ff5d7cd47a05778f6a90156b5e|da
 ShareX.UploadersLib|ResponseWindow_JSON_format|d16a74fa0069d2da488d30a2a01a0fd906df7eb909c1132256d5901766d5ac1a|da,sv
 ShareX.UploadersLib|ResponseWindow_Status_code|dfed0d2824a2c8418da50efbb767441857799d51b43e3b57bf6cb1fd6adc55b3|de,nl-NL
 ShareX.UploadersLib|ResponseWindow_Thumbnail_URL|86264c047243b9b51bd57f3b5bedf4e1d1c28052aaa4c1f2463cb87c24b904c8|de

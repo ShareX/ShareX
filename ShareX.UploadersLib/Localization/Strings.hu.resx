@@ -1200,36 +1200,6 @@
   <data name="Pushbullet_No_device_selected" xml:space="preserve">
     <value>Nincs kiválasztva eszköz a küldéshez.</value>
   </data>
-  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
-    <value>Mégse</value>
-  </data>
-  <data name="PuushLoginWindow_Email" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
-    <value>Adja meg az e-mail-címét és a jelszavát.</value>
-  </data>
-  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
-    <value>Elfelejtette a jelszavát?</value>
-  </data>
-  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
-    <value>Bejelentkezés...</value>
-  </data>
-  <data name="PuushLoginWindow_Login" xml:space="preserve">
-    <value>Bejelentkezés</value>
-  </data>
-  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
-    <value>Bejelentkezési hiba.</value>
-  </data>
-  <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>Jelszó</value>
-  </data>
-  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
-    <value>ShareX – Bejelentkezés a puushba</value>
-  </data>
-  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
-    <value>name@example.com</value>
-  </data>
   <data name="Puush_Authentication_failure" xml:space="preserve">
     <value>A hitelesítés sikertelen.</value>
   </data>

@@ -1200,36 +1200,6 @@
   <data name="Pushbullet_No_device_selected" xml:space="preserve">
     <value>送信先のデバイスが選択されていません。</value>
   </data>
-  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
-    <value>キャンセル</value>
-  </data>
-  <data name="PuushLoginWindow_Email" xml:space="preserve">
-    <value>Eメール</value>
-  </data>
-  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
-    <value>メール アドレスとパスワードを入力してください。</value>
-  </data>
-  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
-    <value>パスワードを忘れた場合</value>
-  </data>
-  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
-    <value>ログインしています...</value>
-  </data>
-  <data name="PuushLoginWindow_Login" xml:space="preserve">
-    <value>ログイン</value>
-  </data>
-  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
-    <value>ログイン失敗。</value>
-  </data>
-  <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>パスワード</value>
-  </data>
-  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
-    <value>ShareX — puush ログイン</value>
-  </data>
-  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
-    <value>name@example.com</value>
-  </data>
   <data name="Puush_Authentication_failure" xml:space="preserve">
     <value>認証に失敗しました。</value>
   </data>

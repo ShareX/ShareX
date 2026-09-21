@@ -1198,36 +1198,6 @@
   <data name="Pushbullet_No_device_selected" xml:space="preserve">
     <value>No se ha seleccionado ningún dispositivo para el envío.</value>
   </data>
-  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
-    <value>Cancelar</value>
-  </data>
-  <data name="PuushLoginWindow_Email" xml:space="preserve">
-    <value>Correo electrónico</value>
-  </data>
-  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
-    <value>Introduce el correo electrónico y la contraseña.</value>
-  </data>
-  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
-    <value>¿Olvidaste la contraseña?</value>
-  </data>
-  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
-    <value>Iniciando sesión...</value>
-  </data>
-  <data name="PuushLoginWindow_Login" xml:space="preserve">
-    <value>Inicio de sesión</value>
-  </data>
-  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
-    <value>No se pudo acceder.</value>
-  </data>
-  <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>Contraseña</value>
-  </data>
-  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
-    <value>ShareX - Inicio de sesión de puush</value>
-  </data>
-  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
-    <value>name@example.com</value>
-  </data>
   <data name="Puush_Authentication_failure" xml:space="preserve">
     <value>Error de autenticación.</value>
   </data>

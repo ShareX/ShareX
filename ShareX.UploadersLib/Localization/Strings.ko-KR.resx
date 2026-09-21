@@ -1200,36 +1200,6 @@
   <data name="Pushbullet_No_device_selected" xml:space="preserve">
     <value>보낼 장치를 선택하지 않았습니다.</value>
   </data>
-  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
-    <value>취소</value>
-  </data>
-  <data name="PuushLoginWindow_Email" xml:space="preserve">
-    <value>이메일</value>
-  </data>
-  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
-    <value>이메일과 암호를 모두 입력하세요.</value>
-  </data>
-  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
-    <value>암호를 잊으셨나요?</value>
-  </data>
-  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
-    <value>로그인 중...</value>
-  </data>
-  <data name="PuushLoginWindow_Login" xml:space="preserve">
-    <value>로그인</value>
-  </data>
-  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
-    <value>로그인 실패.</value>
-  </data>
-  <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>비밀번호</value>
-  </data>
-  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
-    <value>ShareX — puush 로그인</value>
-  </data>
-  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
-    <value>name@example.com</value>
-  </data>
   <data name="Puush_Authentication_failure" xml:space="preserve">
     <value>인증에 실패했습니다.</value>
   </data>

@@ -1198,36 +1198,6 @@
   <data name="Pushbullet_No_device_selected" xml:space="preserve">
     <value>ยังไม่ได้เลือกอุปกรณ์สำหรับการพุช</value>
   </data>
-  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
-    <value>ยกเลิก</value>
-  </data>
-  <data name="PuushLoginWindow_Email" xml:space="preserve">
-    <value>อีเมล</value>
-  </data>
-  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
-    <value>ป้อนทั้งอีเมลและรหัสผ่านของคุณ</value>
-  </data>
-  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
-    <value>ลืมรหัสผ่านหรือไม่</value>
-  </data>
-  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
-    <value>การบันทึกเหตุการณ์ ใน...</value>
-  </data>
-  <data name="PuushLoginWindow_Login" xml:space="preserve">
-    <value>เข้าสู่ระบบ</value>
-  </data>
-  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
-    <value>การเข้าสู่ระบบล้มเหลว</value>
-  </data>
-  <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>รหัสผ่าน</value>
-  </data>
-  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
-    <value>ShareX - เข้าสู่ระบบ puush</value>
-  </data>
-  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
-    <value>ชื่อ@ตัวอย่าง.com</value>
-  </data>
   <data name="Puush_Authentication_failure" xml:space="preserve">
     <value>การรับรองความถูกต้อง ล้มเหลว.</value>
   </data>

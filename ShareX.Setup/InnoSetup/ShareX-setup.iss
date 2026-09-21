@@ -82,7 +82,6 @@ Source: "{#MyAppReleaseDirectory}\uk\*.resources.dll"; DestDir: {app}\Languages\
 Source: "{#MyAppReleaseDirectory}\vi-VN\*.resources.dll"; DestDir: {app}\Languages\vi-VN; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\zh-CN\*.resources.dll"; DestDir: {app}\Languages\zh-CN; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\zh-TW\*.resources.dll"; DestDir: {app}\Languages\zh-TW; Flags: ignoreversion
-Source: "puush"; DestDir: {app}; Check: IsPuushMode
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppFileName}"; WorkingDir: "{app}"
@@ -162,11 +161,6 @@ end;
 function IsNoRun(): Boolean;
 begin
   Result := CmdLineParamExists('/NORUN');
-end;
-
-function IsPuushMode(): Boolean;
-begin
-  Result := CmdLineParamExists('-puush');
 end;
 
 function DesktopIconExists(): Boolean;

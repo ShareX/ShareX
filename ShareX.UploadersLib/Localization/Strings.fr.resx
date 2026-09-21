@@ -1200,36 +1200,6 @@ Message : {2}</value>
   <data name="Pushbullet_No_device_selected" xml:space="preserve">
     <value>Aucun appareil n’est sélectionné pour l’envoi.</value>
   </data>
-  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
-  <data name="PuushLoginWindow_Email" xml:space="preserve">
-    <value>Adresse e-mail</value>
-  </data>
-  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
-    <value>Saisissez votre adresse e-mail et votre mot de passe.</value>
-  </data>
-  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
-    <value>Mot de passe oublié ?</value>
-  </data>
-  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
-    <value>Connexion en cours...</value>
-  </data>
-  <data name="PuushLoginWindow_Login" xml:space="preserve">
-    <value>Se connecter</value>
-  </data>
-  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
-    <value>Échec de la connexion.</value>
-  </data>
-  <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>Mot de passe :</value>
-  </data>
-  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
-    <value>ShareX — Connexion à puush</value>
-  </data>
-  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
-    <value>name@example.com</value>
-  </data>
   <data name="Puush_Authentication_failure" xml:space="preserve">
     <value>Échec de l’authentification.</value>
   </data>

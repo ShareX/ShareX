@@ -1200,36 +1200,6 @@ Meddelelse: {2}</value>
   <data name="Pushbullet_No_device_selected" xml:space="preserve">
     <value>Ingen enhed har valgt for push-meddelelsen.</value>
   </data>
-  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
-    <value>Annuller</value>
-  </data>
-  <data name="PuushLoginWindow_Email" xml:space="preserve">
-    <value>E-post</value>
-  </data>
-  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
-    <value>Angiv begge e-mailadresse og adgangskode.</value>
-  </data>
-  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
-    <value>Glemt adgangskoden?</value>
-  </data>
-  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
-    <value>Logfiler in...</value>
-  </data>
-  <data name="PuushLoginWindow_Login" xml:space="preserve">
-    <value>Log ind</value>
-  </data>
-  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
-    <value>Login mislykkedes.</value>
-  </data>
-  <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>Adgangskode</value>
-  </data>
-  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
-    <value>ShareX – puush-login</value>
-  </data>
-  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
-    <value>navn@example.com</value>
-  </data>
   <data name="Puush_Authentication_failure" xml:space="preserve">
     <value>Godkendelsen mislykkedes.</value>
   </data>

@@ -1200,36 +1200,6 @@
   <data name="Pushbullet_No_device_selected" xml:space="preserve">
     <value>未选择用于推送的设备。</value>
   </data>
-  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
-    <value>取消</value>
-  </data>
-  <data name="PuushLoginWindow_Email" xml:space="preserve">
-    <value>电子邮箱</value>
-  </data>
-  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
-    <value>请输入电子邮件和密码。</value>
-  </data>
-  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
-    <value>忘记密码？</value>
-  </data>
-  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
-    <value>正在登录...</value>
-  </data>
-  <data name="PuushLoginWindow_Login" xml:space="preserve">
-    <value>登录</value>
-  </data>
-  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
-    <value>登录失败。</value>
-  </data>
-  <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>密码</value>
-  </data>
-  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
-    <value>ShareX - puush 登录</value>
-  </data>
-  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
-    <value>name@example.com</value>
-  </data>
   <data name="Puush_Authentication_failure" xml:space="preserve">
     <value>身份验证失败。</value>
   </data>

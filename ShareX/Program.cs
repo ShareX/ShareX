@@ -126,7 +126,6 @@ namespace ShareX
         public static bool Sandbox { get; private set; }
         public static bool IsAdmin { get; private set; }
         public static bool IgnoreHotkeyWarning { get; private set; }
-        public static bool PuushMode { get; private set; }
 
         internal static ApplicationConfig Settings { get; set; }
         internal static TaskSettings DefaultTaskSettings { get; set; }
@@ -338,7 +337,6 @@ namespace ShareX
 
             CreateParentFolders();
             RegisterExtensions();
-            CheckPuushMode();
             DebugWriteFlags();
 
             DebugHelper.WriteLine("Avalonia application initializing.");
@@ -372,7 +370,6 @@ namespace ShareX
             hotkeyForm = new MainForm();
             hotkeyForm.Initialize();
 
-            RunPuushTasks();
             await UpdateApplicationAsync();
 
             bool showMainWindow = !(SilentRun || Settings.SilentRun) || !Settings.ShowTray;
@@ -449,32 +446,6 @@ namespace ShareX
         }
 
         internal static void UpdateTrayIcon() => hotkeyForm?.UpdateTrayIcon();
-
-        private static void RunPuushTasks()
-        {
-            if (!PuushMode || !Settings.IsFirstTimeRun)
-            {
-                return;
-            }
-
-            string puushApiKey = PuushLoginWindowIntegration.Show();
-            if (string.IsNullOrEmpty(puushApiKey))
-            {
-                return;
-            }
-
-            DefaultTaskSettings.ImageDestination = ImageDestination.FileUploader;
-            DefaultTaskSettings.ImageFileDestination = FileDestination.Puush;
-            DefaultTaskSettings.TextDestination = TextDestination.FileUploader;
-            DefaultTaskSettings.TextFileDestination = FileDestination.Puush;
-            DefaultTaskSettings.FileDestination = FileDestination.Puush;
-
-            SettingManager.WaitUploadersConfig();
-            if (UploadersConfig != null)
-            {
-                UploadersConfig.PuushAPIKey = puushApiKey;
-            }
-        }
 
         internal static void OnMainFormClosed()
         {
@@ -880,13 +851,6 @@ namespace ShareX
             return false;
         }
 
-        private static bool CheckPuushMode()
-        {
-            string puushPath = FileHelpers.GetAbsolutePath("puush");
-            PuushMode = File.Exists(puushPath);
-            return PuushMode;
-        }
-
         private static void DebugWriteFlags()
         {
             List<string> flags = new List<string>();
@@ -900,7 +864,6 @@ namespace ShareX
             if (SystemOptions.DisableUpdateCheck) flags.Add(nameof(SystemOptions.DisableUpdateCheck));
             if (SystemOptions.DisableUpload) flags.Add(nameof(SystemOptions.DisableUpload));
             if (SystemOptions.DisableLogging) flags.Add(nameof(SystemOptions.DisableLogging));
-            if (PuushMode) flags.Add(nameof(PuushMode));
 
             string output = string.Join(", ", flags);
 

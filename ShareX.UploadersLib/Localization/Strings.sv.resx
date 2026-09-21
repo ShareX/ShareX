@@ -1200,36 +1200,6 @@ Meddelande: {2}</value>
   <data name="Pushbullet_No_device_selected" xml:space="preserve">
     <value>Ingen enhet har valts för push-meddelandet.</value>
   </data>
-  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
-    <value>Avbryt</value>
-  </data>
-  <data name="PuushLoginWindow_Email" xml:space="preserve">
-    <value>E-post</value>
-  </data>
-  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
-    <value>Ange både e-postadress och lösenord.</value>
-  </data>
-  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
-    <value>Glömt lösenordet?</value>
-  </data>
-  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
-    <value>Loggar in...</value>
-  </data>
-  <data name="PuushLoginWindow_Login" xml:space="preserve">
-    <value>Logga in</value>
-  </data>
-  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
-    <value>Inloggningen misslyckades.</value>
-  </data>
-  <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>Lösenord</value>
-  </data>
-  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
-    <value>ShareX – puush-inloggning</value>
-  </data>
-  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
-    <value>namn@example.com</value>
-  </data>
   <data name="Puush_Authentication_failure" xml:space="preserve">
     <value>Autentiseringen misslyckades.</value>
   </data>

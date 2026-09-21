@@ -1200,36 +1200,6 @@ Bericht: {2}</value>
   <data name="Pushbullet_No_device_selected" xml:space="preserve">
     <value>Er is geen apparaat geselecteerd voor verzenden.</value>
   </data>
-  <data name="PuushLoginWindow_Cancel" xml:space="preserve">
-    <value>Annuleren</value>
-  </data>
-  <data name="PuushLoginWindow_Email" xml:space="preserve">
-    <value>E-mail</value>
-  </data>
-  <data name="PuushLoginWindow_Enter_both_your_email_and_password" xml:space="preserve">
-    <value>Voer uw e-mailadres en wachtwoord in.</value>
-  </data>
-  <data name="PuushLoginWindow_Forgotten_password" xml:space="preserve">
-    <value>Wachtwoord vergeten?</value>
-  </data>
-  <data name="PuushLoginWindow_Logging_in" xml:space="preserve">
-    <value>Aanmelden...</value>
-  </data>
-  <data name="PuushLoginWindow_Login" xml:space="preserve">
-    <value>Aanmelden</value>
-  </data>
-  <data name="PuushLoginWindow_Login_failed" xml:space="preserve">
-    <value>Aanmelden mislukt.</value>
-  </data>
-  <data name="PuushLoginWindow_Password" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="PuushLoginWindow_ShareX_puush_login" xml:space="preserve">
-    <value>ShareX — Aanmelden bij puush</value>
-  </data>
-  <data name="PuushLoginWindow_name_example_com" xml:space="preserve">
-    <value>name@example.com</value>
-  </data>
   <data name="Puush_Authentication_failure" xml:space="preserve">
     <value>Verificatie mislukt.</value>
   </data>

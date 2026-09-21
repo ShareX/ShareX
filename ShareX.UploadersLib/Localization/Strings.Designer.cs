@@ -797,26 +797,6 @@ namespace ShareX.UploadersLib.Localization
 
         public static string Puush_Insufficient_account_storage => ResourceManager.GetString("Puush_Insufficient_account_storage", resourceCulture) ?? string.Empty;
 
-        public static string PuushLoginWindow_Cancel => ResourceManager.GetString("PuushLoginWindow_Cancel", resourceCulture) ?? string.Empty;
-
-        public static string PuushLoginWindow_Email => ResourceManager.GetString("PuushLoginWindow_Email", resourceCulture) ?? string.Empty;
-
-        public static string PuushLoginWindow_Enter_both_your_email_and_password => ResourceManager.GetString("PuushLoginWindow_Enter_both_your_email_and_password", resourceCulture) ?? string.Empty;
-
-        public static string PuushLoginWindow_Forgotten_password => ResourceManager.GetString("PuushLoginWindow_Forgotten_password", resourceCulture) ?? string.Empty;
-
-        public static string PuushLoginWindow_Logging_in => ResourceManager.GetString("PuushLoginWindow_Logging_in", resourceCulture) ?? string.Empty;
-
-        public static string PuushLoginWindow_Login => ResourceManager.GetString("PuushLoginWindow_Login", resourceCulture) ?? string.Empty;
-
-        public static string PuushLoginWindow_Login_failed => ResourceManager.GetString("PuushLoginWindow_Login_failed", resourceCulture) ?? string.Empty;
-
-        public static string PuushLoginWindow_name_example_com => ResourceManager.GetString("PuushLoginWindow_name_example_com", resourceCulture) ?? string.Empty;
-
-        public static string PuushLoginWindow_Password => ResourceManager.GetString("PuushLoginWindow_Password", resourceCulture) ?? string.Empty;
-
-        public static string PuushLoginWindow_ShareX_puush_login => ResourceManager.GetString("PuushLoginWindow_ShareX_puush_login", resourceCulture) ?? string.Empty;
-
         public static string ResponseWindow_Copy_deletion_URL => ResourceManager.GetString("ResponseWindow_Copy_deletion_URL", resourceCulture) ?? string.Empty;
 
         public static string ResponseWindow_Copy_response => ResourceManager.GetString("ResponseWindow_Copy_response", resourceCulture) ?? string.Empty;
