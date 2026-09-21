@@ -11,7 +11,7 @@
         Height="720"
         MinWidth="760"
         ExtendClientAreaToDecorationsHint="True"
-        ExtendClientAreaTitleBarHeightHint="40"
+        ExtendClientAreaTitleBarHeightHint="38"
         WindowDecorations="BorderOnly"
         WindowStartupLocation="CenterScreen"
         DragDrop.AllowDrop="True"
@@ -69,7 +69,7 @@
         </Style>
         <Style Selector="Button.caption-button">
             <Setter Property="Width" Value="46"/>
-            <Setter Property="Height" Value="40"/>
+            <Setter Property="Height" Value="38"/>
             <Setter Property="MinWidth" Value="0"/>
             <Setter Property="MinHeight" Value="0"/>
             <Setter Property="Padding" Value="0"/>
@@ -102,10 +102,10 @@
     <Border Background="{DynamicResource ShareX.Brush.Background.Main}"
             BorderBrush="{DynamicResource ShareX.Brush.Border}"
             BorderThickness="1">
-        <Grid RowDefinitions="40,*">
+        <Grid RowDefinitions="38,*">
             <Border Grid.Row="0"
                     Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
-                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Separator}"
                     BorderThickness="0,0,0,1"
                     chrome:WindowDecorationProperties.ElementRole="TitleBar">
                 <Grid ColumnDefinitions="*,Auto">
