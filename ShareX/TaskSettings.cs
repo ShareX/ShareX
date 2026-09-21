@@ -90,7 +90,7 @@ namespace ShareX
             {
                 if (UseDefaultImageSettings)
                 {
-                    return Program.DefaultTaskSettings.ImageSettings;
+                    return ApplicationState.DefaultTaskSettings.ImageSettings;
                 }
 
                 return TaskSettingsReference.ImageSettings;
@@ -107,7 +107,7 @@ namespace ShareX
             {
                 if (UseDefaultCaptureSettings)
                 {
-                    return Program.DefaultTaskSettings.CaptureSettings;
+                    return ApplicationState.DefaultTaskSettings.CaptureSettings;
                 }
 
                 return TaskSettingsReference.CaptureSettings;
@@ -130,7 +130,7 @@ namespace ShareX
             {
                 if (UseDefaultToolsSettings)
                 {
-                    return Program.DefaultTaskSettings.ToolsSettings;
+                    return ApplicationState.DefaultTaskSettings.ToolsSettings;
                 }
 
                 return TaskSettingsReference.ToolsSettings;
@@ -162,7 +162,7 @@ namespace ShareX
         {
             TaskSettings taskSettings = new TaskSettings();
             taskSettings.SetDefaultSettings();
-            taskSettings.TaskSettingsReference = Program.DefaultTaskSettings;
+            taskSettings.TaskSettingsReference = ApplicationState.DefaultTaskSettings;
             return taskSettings;
         }
 
@@ -170,9 +170,9 @@ namespace ShareX
         {
             TaskSettings safeTaskSettings;
 
-            if (taskSettings.IsUsingDefaultSettings && Program.DefaultTaskSettings != null)
+            if (taskSettings.IsUsingDefaultSettings && ApplicationState.DefaultTaskSettings != null)
             {
-                safeTaskSettings = Program.DefaultTaskSettings.Copy();
+                safeTaskSettings = ApplicationState.DefaultTaskSettings.Copy();
                 safeTaskSettings.Description = taskSettings.Description;
                 safeTaskSettings.Job = taskSettings.Job;
             }
@@ -188,9 +188,9 @@ namespace ShareX
 
         public void SetDefaultSettings()
         {
-            if (Program.DefaultTaskSettings != null)
+            if (ApplicationState.DefaultTaskSettings != null)
             {
-                TaskSettings defaultTaskSettings = Program.DefaultTaskSettings.Copy();
+                TaskSettings defaultTaskSettings = ApplicationState.DefaultTaskSettings.Copy();
 
                 if (UseDefaultAfterCaptureJob)
                 {

@@ -41,7 +41,10 @@ internal sealed class MouseHighlighterOverlayWindow : NativeWindow, IDisposable
             Style = unchecked((int)WindowStyles.WS_POPUP),
             ExStyle = (int)(WindowStyles.WS_EX_LAYERED | WindowStyles.WS_EX_TRANSPARENT |
                 WindowStyles.WS_EX_TOOLWINDOW | WindowStyles.WS_EX_NOACTIVATE),
-            X = bounds.X, Y = bounds.Y, Width = 1, Height = 1
+            X = bounds.X,
+            Y = bounds.Y,
+            Width = 1,
+            Height = 1
         });
     }
 

@@ -133,7 +133,7 @@ public partial class AfterCaptureWindow : Window
         foreach (ImageDestination destination in Helpers.GetEnums<ImageDestination>())
         {
             if (destination == ImageDestination.FileUploader ||
-                !UploadersConfigValidator.Validate<ImageDestination>((int)destination, Program.UploadersConfig))
+                !UploadersConfigValidator.Validate<ImageDestination>((int)destination, ApplicationState.UploadersConfig))
             {
                 continue;
             }
@@ -141,7 +141,7 @@ public partial class AfterCaptureWindow : Window
             string label = destination.GetLocalizedDescription();
             if (destination == ImageDestination.CustomImageUploader)
             {
-                label = GetCustomDestinationLabel(Program.UploadersConfig.CustomImageUploaderSelected, taskSettings, label);
+                label = GetCustomDestinationLabel(ApplicationState.UploadersConfig.CustomImageUploaderSelected, taskSettings, label);
             }
 
             bool selected = taskSettings.ImageDestination == destination;
@@ -150,7 +150,7 @@ public partial class AfterCaptureWindow : Window
 
         foreach (FileDestination destination in Helpers.GetEnums<FileDestination>())
         {
-            if (!UploadersConfigValidator.Validate<FileDestination>((int)destination, Program.UploadersConfig))
+            if (!UploadersConfigValidator.Validate<FileDestination>((int)destination, ApplicationState.UploadersConfig))
             {
                 continue;
             }
@@ -158,7 +158,7 @@ public partial class AfterCaptureWindow : Window
             string label = destination.GetLocalizedDescription();
             if (destination == FileDestination.CustomFileUploader)
             {
-                label = GetCustomDestinationLabel(Program.UploadersConfig.CustomFileUploaderSelected, taskSettings, label);
+                label = GetCustomDestinationLabel(ApplicationState.UploadersConfig.CustomFileUploaderSelected, taskSettings, label);
             }
 
             bool selected = taskSettings.ImageDestination == ImageDestination.FileUploader &&
@@ -177,10 +177,10 @@ public partial class AfterCaptureWindow : Window
     {
         if (taskSettings.OverrideCustomUploader)
         {
-            index = taskSettings.CustomUploaderIndex.BetweenOrDefault(0, Program.UploadersConfig.CustomUploadersList.Count - 1);
+            index = taskSettings.CustomUploaderIndex.BetweenOrDefault(0, ApplicationState.UploadersConfig.CustomUploadersList.Count - 1);
         }
 
-        CustomUploaderItem? uploader = Program.UploadersConfig.CustomUploadersList.ReturnIfValidIndex(index);
+        CustomUploaderItem? uploader = ApplicationState.UploadersConfig.CustomUploadersList.ReturnIfValidIndex(index);
         return uploader == null
             ? fallback
             : string.Format(Strings.AfterCaptureWindow_CustomUploader, uploader);

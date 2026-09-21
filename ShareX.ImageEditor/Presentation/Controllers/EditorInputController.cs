@@ -25,7 +25,6 @@
 
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Shapes;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
@@ -34,7 +33,6 @@ using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.ImageEditor.Core.Annotations;
-using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.Helpers;

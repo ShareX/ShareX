@@ -121,7 +121,7 @@ public static class MainWindowIntegration
 
     internal static void SetScreenshotDelay(decimal delay)
     {
-        Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay = delay;
+        ApplicationState.DefaultTaskSettings.CaptureSettings.ScreenshotDelay = delay;
         RefreshMenus();
     }
 
@@ -133,9 +133,9 @@ public static class MainWindowIntegration
                 ApplicationSettingsIntegration.Show();
                 break;
             case MainFormCommand.TaskSettings:
-                TaskSettingsIntegration.Show(Program.DefaultTaskSettings, true, () =>
+                TaskSettingsIntegration.Show(ApplicationState.DefaultTaskSettings, true, () =>
                 {
-                    if (!Program.IsClosing)
+                    if (!ApplicationLifecycle.IsClosing)
                     {
                         RefreshMenus();
                         SettingManager.SaveApplicationConfigAsync();
@@ -170,7 +170,7 @@ public static class MainWindowIntegration
                 UploadManager.UploadText(Strings.MainForm_tsmiTestTextUpload_Click_Text_upload_test);
                 break;
             case MainFormCommand.TestFileUpload:
-                UploadManager.UploadImage(ShareXResources.Logo, ImageDestination.FileUploader, Program.DefaultTaskSettings.FileDestination);
+                UploadManager.UploadImage(ShareXResources.Logo, ImageDestination.FileUploader, ApplicationState.DefaultTaskSettings.FileDestination);
                 break;
             case MainFormCommand.TestUrlShortener:
                 UploadManager.ShortenURL(Links.Website);
@@ -199,16 +199,16 @@ public static class MainWindowIntegration
 
     private static void OpenHotkeySettings()
     {
-        if (Program.HotkeyManager == null)
+        if (ApplicationState.HotkeyManager == null)
         {
             return;
         }
 
         HotkeySettingsIntegration.Show(new HotkeySettingsAvaloniaService(
-            Program.HotkeyManager,
+            ApplicationState.HotkeyManager,
             () =>
             {
-                if (!Program.IsClosing)
+                if (!ApplicationLifecycle.IsClosing)
                 {
                     RefreshMenus();
                     SettingManager.SaveHotkeysConfigAsync();

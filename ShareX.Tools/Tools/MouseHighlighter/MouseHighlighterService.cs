@@ -154,7 +154,11 @@ internal sealed class MouseHighlighterService : IDisposable
         {
             _highlights.Add(new MouseHighlight
             {
-                Position = point, Button = button, Started = time, Released = time, Crosshairs = true
+                Position = point,
+                Button = button,
+                Started = time,
+                Released = time,
+                Crosshairs = true
             });
         }
     }

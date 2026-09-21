@@ -47,7 +47,7 @@ public partial class AboutWindow : Window
             LogoImage, ClickerOverlay, ClickerParticleOverlay, SectionsViewer, ClickerHost, AboutPanel.Background,
             [BrandText, ProductNameText, AboutDetailsPanel, CopyrightText]);
 
-        ProductNameText.Text = Program.Title;
+        ProductNameText.Text = ApplicationInfo.Title;
         CopyrightText.Text = Strings.AboutWindow_Copyright;
         SectionsControl.ItemsSource = CreateSections();
 
@@ -83,7 +83,7 @@ public partial class AboutWindow : Window
         }
 
         _updateChecked = true;
-        _updateChecker = Program.UpdateManager.CreateUpdateChecker();
+        _updateChecker = ApplicationState.UpdateManager.CreateUpdateChecker();
         await _updateChecker.CheckUpdateAsync();
 
         UpdateProgress.IsVisible = false;

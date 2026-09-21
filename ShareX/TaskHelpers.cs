@@ -66,7 +66,7 @@ namespace ShareX
     {
         public static async Task ExecuteJob(HotkeyType job, string filePath = null)
         {
-            await ExecuteJob(Program.DefaultTaskSettings, job, filePath);
+            await ExecuteJob(ApplicationState.DefaultTaskSettings, job, filePath);
         }
 
         public static async Task ExecuteJob(TaskSettings taskSettings)
@@ -404,7 +404,7 @@ namespace ShareX
                     ToggleTrayMenu();
                     break;
                 case HotkeyType.ExitShareX:
-                    Program.ForceClose();
+                    ApplicationLifecycle.ForceClose();
                     break;
             }
         }
@@ -479,7 +479,7 @@ namespace ShareX
                     case EImageFormat.PNG:
                         ImageHelpers.SavePNG(img, ms, pngBitDepth);
 
-                        if (Program.Settings.PNGStripColorSpaceInformation)
+                        if (ApplicationState.Settings.PNGStripColorSpaceInformation)
                         {
                             using (ms)
                             {
@@ -546,7 +546,7 @@ namespace ShareX
 
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
-                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
+                AutoIncrementNumber = ApplicationState.Settings.NameParserAutoIncrementNumber,
                 MaxNameLength = taskSettings.AdvancedSettings.NamePatternMaxLength,
                 MaxTitleLength = taskSettings.AdvancedSettings.NamePatternMaxTitleLength,
                 CustomTimeZone = taskSettings.UploadSettings.UseCustomTimeZone ? taskSettings.UploadSettings.CustomTimeZone : null
@@ -573,7 +573,7 @@ namespace ShareX
                 fileName = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern);
             }
 
-            Program.Settings.NameParserAutoIncrementNumber = nameParser.AutoIncrementNumber;
+            ApplicationState.Settings.NameParserAutoIncrementNumber = nameParser.AutoIncrementNumber;
 
             if (!string.IsNullOrEmpty(extension))
             {
@@ -609,17 +609,17 @@ namespace ShareX
             {
                 string subFolderPattern;
 
-                if (!string.IsNullOrEmpty(Program.Settings.SaveImageSubFolderPatternWindow) && !string.IsNullOrEmpty(nameParser.WindowText))
+                if (!string.IsNullOrEmpty(ApplicationState.Settings.SaveImageSubFolderPatternWindow) && !string.IsNullOrEmpty(nameParser.WindowText))
                 {
-                    subFolderPattern = Program.Settings.SaveImageSubFolderPatternWindow;
+                    subFolderPattern = ApplicationState.Settings.SaveImageSubFolderPatternWindow;
                 }
                 else
                 {
-                    subFolderPattern = Program.Settings.SaveImageSubFolderPattern;
+                    subFolderPattern = ApplicationState.Settings.SaveImageSubFolderPattern;
                 }
 
                 string subFolderPath = nameParser.Parse(subFolderPattern);
-                screenshotsFolder = Path.Combine(Program.ScreenshotsParentFolder, subFolderPath);
+                screenshotsFolder = Path.Combine(AppPaths.ScreenshotsParentFolder, subFolderPath);
             }
 
             return FileHelpers.GetAbsolutePath(screenshotsFolder);
@@ -647,11 +647,11 @@ namespace ShareX
 
         public static void PrintImage(Image img)
         {
-            if (Program.Settings.DontShowPrintSettingsDialog)
+            if (ApplicationState.Settings.DontShowPrintSettingsDialog)
             {
                 using (PrintHelper printHelper = new PrintHelper(img))
                 {
-                    printHelper.Settings = Program.Settings.PrintSettings;
+                    printHelper.Settings = ApplicationState.Settings.PrintSettings;
                     printHelper.Print();
                 }
             }
@@ -659,7 +659,7 @@ namespace ShareX
             {
                 PrintWindowIntegration.Show(
                     img,
-                    Program.Settings.PrintSettings,
+                    ApplicationState.Settings.PrintSettings,
                     owner: MainWindowIntegration.Instance);
             }
         }
@@ -766,11 +766,11 @@ namespace ShareX
         public static void OpenDropWindow(TaskSettings taskSettings = null)
         {
             DragDropUploadWindowIntegration.Show(
-                Program.Settings.DropSize,
-                Program.Settings.DropOffset,
-                Program.Settings.DropAlignment,
-                Program.Settings.DropOpacity,
-                Program.Settings.DropHoverOpacity,
+                ApplicationState.Settings.DropSize,
+                ApplicationState.Settings.DropOffset,
+                ApplicationState.Settings.DropAlignment,
+                ApplicationState.Settings.DropOpacity,
+                ApplicationState.Settings.DropHoverOpacity,
                 taskSettings);
         }
 
@@ -834,13 +834,13 @@ namespace ShareX
             }
             else
             {
-                FileHelpers.OpenFolder(Program.ScreenshotsParentFolder);
+                FileHelpers.OpenFolder(AppPaths.ScreenshotsParentFolder);
             }
         }
 
         public static void OpenHistory()
         {
-            HistoryIntegration.ShowHistoryWindow(Program.HistoryManager, Program.Settings.HistorySettings,
+            HistoryIntegration.ShowHistoryWindow(ApplicationState.HistoryManager, ApplicationState.Settings.HistorySettings,
                 new HistoryWindowServices
                 {
                     UploadFile = filePath => UploadManager.UploadFile(filePath),
@@ -855,7 +855,7 @@ namespace ShareX
 
         public static void OpenImageHistory()
         {
-            HistoryIntegration.ShowImageHistoryWindow(Program.HistoryManager, Program.Settings.ImageHistorySettings,
+            HistoryIntegration.ShowImageHistoryWindow(ApplicationState.HistoryManager, ApplicationState.Settings.ImageHistorySettings,
                 new HistoryWindowServices
                 {
                     UploadFile = filePath => UploadManager.UploadFile(filePath),
@@ -980,7 +980,7 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             IndexerSettings indexerSettings = taskSettings.ToolsSettingsReference.IndexerSettings;
-            indexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
+            indexerSettings.BinaryUnits = ApplicationState.Settings.BinaryUnits;
             ToolsIntegration.ShowDirectoryIndexerWindow(indexerSettings, (source, output) =>
             {
                 WorkerTask task = WorkerTask.CreateTextUploaderTask(source, taskSettings);
@@ -1055,7 +1055,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            ToolsIntegration.ShowBackgroundRemoverWindow(Program.ModelsFolder, taskSettings.ToolsSettingsReference.BackgroundRemoverOptions);
+            ToolsIntegration.ShowBackgroundRemoverWindow(AppPaths.ModelsFolder, taskSettings.ToolsSettingsReference.BackgroundRemoverOptions);
         }
 
         public static void CombineImages(IEnumerable<string> imageFiles, Orientation orientation, TaskSettings taskSettings = null)
@@ -1587,7 +1587,7 @@ namespace ShareX
                 {
                     bmp = ImageHelpers.NonIndexedBitmap(bmp);
 
-                    if (taskSettings == null) taskSettings = Program.DefaultTaskSettings;
+                    if (taskSettings == null) taskSettings = ApplicationState.DefaultTaskSettings;
 
                     using (bmp)
                     {
@@ -1603,7 +1603,7 @@ namespace ShareX
 
         public static void OpenImageEffectsSingleton(TaskSettings taskSettings = null, string importJson = null)
         {
-            if (taskSettings == null) taskSettings = Program.DefaultTaskSettings;
+            if (taskSettings == null) taskSettings = ApplicationState.DefaultTaskSettings;
 
             ImageEffectsIntegration.ShowPresetWindow(taskSettings.ImageSettings.ImageEffectPresets,
                 taskSettings.ImageSettings.SelectedImageEffectPreset,
@@ -1652,8 +1652,8 @@ namespace ShareX
 
         public static void OpenNetworkMonitor()
         {
-            string logFilePath = Program.LogsFilePath != null
-                ? Path.Combine(Program.LogsFolder, "NetworkMonitor.log")
+            string logFilePath = AppPaths.LogsFilePath != null
+                ? Path.Combine(AppPaths.LogsFolder, "NetworkMonitor.log")
                 : null;
             ToolsIntegration.ShowNetworkMonitorWindow(new NetworkMonitorServices
             {
@@ -1790,7 +1790,7 @@ namespace ShareX
 
         public static void OpenMouseHighlighter(TaskSettings taskSettings = null)
         {
-            taskSettings ??= Program.DefaultTaskSettings;
+            taskSettings ??= ApplicationState.DefaultTaskSettings;
             ToolsIntegration.ShowMouseHighlighterWindow(taskSettings.ToolsSettingsReference.MouseHighlighterOptions,
                 () => MainWindowIntegration.ExecuteCommand(MainFormCommand.HotkeySettings),
                 () => SettingManager.SaveApplicationConfigAsync());
@@ -2110,7 +2110,7 @@ namespace ShareX
 
         public static bool ToggleHotkeys(TaskSettings taskSettings = null)
         {
-            bool disableHotkeys = !Program.Settings.DisableHotkeys;
+            bool disableHotkeys = !ApplicationState.Settings.DisableHotkeys;
             ToggleHotkeys(disableHotkeys, taskSettings);
             return disableHotkeys;
         }
@@ -2119,8 +2119,8 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            Program.Settings.DisableHotkeys = disableHotkeys;
-            Program.HotkeyManager.ToggleHotkeys(disableHotkeys);
+            ApplicationState.Settings.DisableHotkeys = disableHotkeys;
+            ApplicationState.HotkeyManager.ToggleHotkeys(disableHotkeys);
             MainWindowIntegration.RefreshMenus();
 
             PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
@@ -2218,7 +2218,7 @@ namespace ShareX
         public static void OpenUploadersConfigWindow(IUploaderService uploaderService = null)
         {
             SettingManager.WaitUploadersConfig();
-            DestinationSettingsIntegration.Show(Program.UploadersConfig, uploaderService,
+            DestinationSettingsIntegration.Show(ApplicationState.UploadersConfig, uploaderService,
                 () => SettingManager.SaveUploadersConfigAsync());
         }
 
@@ -2346,7 +2346,7 @@ namespace ShareX
 
         public static void ImportCustomUploader(string filePath)
         {
-            if (Program.UploadersConfig != null)
+            if (ApplicationState.UploadersConfigOrNull != null)
             {
                 try
                 {
@@ -2391,40 +2391,40 @@ namespace ShareX
                         }
 
                         cui.CheckBackwardCompatibility();
-                        Program.UploadersConfig.CustomUploadersList.Add(cui);
+                        ApplicationState.UploadersConfig.CustomUploadersList.Add(cui);
 
                         if (activate)
                         {
-                            int index = Program.UploadersConfig.CustomUploadersList.Count - 1;
+                            int index = ApplicationState.UploadersConfig.CustomUploadersList.Count - 1;
 
                             if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.ImageUploader))
                             {
-                                Program.UploadersConfig.CustomImageUploaderSelected = index;
-                                Program.DefaultTaskSettings.ImageDestination = ImageDestination.CustomImageUploader;
+                                ApplicationState.UploadersConfig.CustomImageUploaderSelected = index;
+                                ApplicationState.DefaultTaskSettings.ImageDestination = ImageDestination.CustomImageUploader;
                             }
 
                             if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.TextUploader))
                             {
-                                Program.UploadersConfig.CustomTextUploaderSelected = index;
-                                Program.DefaultTaskSettings.TextDestination = TextDestination.CustomTextUploader;
+                                ApplicationState.UploadersConfig.CustomTextUploaderSelected = index;
+                                ApplicationState.DefaultTaskSettings.TextDestination = TextDestination.CustomTextUploader;
                             }
 
                             if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.FileUploader))
                             {
-                                Program.UploadersConfig.CustomFileUploaderSelected = index;
-                                Program.DefaultTaskSettings.FileDestination = FileDestination.CustomFileUploader;
+                                ApplicationState.UploadersConfig.CustomFileUploaderSelected = index;
+                                ApplicationState.DefaultTaskSettings.FileDestination = FileDestination.CustomFileUploader;
                             }
 
                             if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLShortener))
                             {
-                                Program.UploadersConfig.CustomURLShortenerSelected = index;
-                                Program.DefaultTaskSettings.URLShortenerDestination = UrlShortenerType.CustomURLShortener;
+                                ApplicationState.UploadersConfig.CustomURLShortenerSelected = index;
+                                ApplicationState.DefaultTaskSettings.URLShortenerDestination = UrlShortenerType.CustomURLShortener;
                             }
 
                             if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLSharingService))
                             {
-                                Program.UploadersConfig.CustomURLSharingServiceSelected = index;
-                                Program.DefaultTaskSettings.URLSharingServiceDestination = URLSharingServices.CustomURLSharingService;
+                                ApplicationState.UploadersConfig.CustomURLSharingServiceSelected = index;
+                                ApplicationState.DefaultTaskSettings.URLSharingServiceDestination = URLSharingServices.CustomURLSharingService;
                             }
 
                             MainWindowIntegration.RefreshMenus();
@@ -2447,7 +2447,7 @@ namespace ShareX
 
             try
             {
-                configJson = ImageEffectPackager.ExtractPackage(filePath, Program.ImageEffectsFolder);
+                configJson = ImageEffectPackager.ExtractPackage(filePath, AppPaths.ImageEffectsFolder);
             }
             catch (Exception ex)
             {
@@ -2456,13 +2456,13 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(configJson))
             {
-                OpenImageEffectsSingleton(Program.DefaultTaskSettings, configJson);
+                OpenImageEffectsSingleton(ApplicationState.DefaultTaskSettings, configJson);
 
-                if (!Program.DefaultTaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects) &&
+                if (!ApplicationState.DefaultTaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects) &&
                     MessageBox.Show(Strings.WouldYouLikeToEnableImageEffects,
                     "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == MessageBoxResult.Yes)
                 {
-                    Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.AddImageEffects);
+                    ApplicationState.DefaultTaskSettings.AfterCaptureJob = ApplicationState.DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.AddImageEffects);
                     MainWindowIntegration.RefreshMenus();
                 }
             }
@@ -2571,7 +2571,7 @@ namespace ShareX
             GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "DevBuilds")
             {
                 IsDev = true,
-                IsPortable = Program.Portable
+                IsPortable = StartupOptions.Portable
             };
 
             await updateChecker.CheckUpdateAsync();
@@ -2591,7 +2591,7 @@ namespace ShareX
             AppVeyorUpdateChecker updateChecker = new AppVeyorUpdateChecker()
             {
                 IsDev = true,
-                IsPortable = Program.Portable,
+                IsPortable = StartupOptions.Portable,
                 Branch = "develop"
             };
 
@@ -2675,17 +2675,17 @@ namespace ShareX
         {
             if (duration < 0)
             {
-                duration = (int)(Program.DefaultTaskSettings.GeneralSettings.ToastWindowDuration * 1000);
+                duration = (int)(ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowDuration * 1000);
             }
 
             NotificationWindowConfig toastConfig = new NotificationWindowConfig()
             {
                 Duration = duration,
-                FadeDuration = (int)(Program.DefaultTaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
-                Placement = Program.DefaultTaskSettings.GeneralSettings.ToastWindowPlacement,
-                Size = Program.DefaultTaskSettings.GeneralSettings.ToastWindowSize,
-                ActionButtonSize = Program.DefaultTaskSettings.GeneralSettings.ToastWindowButtonSize,
-                ActionButtons = NotificationActionButton.CloneButtons(Program.DefaultTaskSettings.GeneralSettings.ToastWindowButtons),
+                FadeDuration = (int)(ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
+                Placement = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowPlacement,
+                Size = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowSize,
+                ActionButtonSize = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowButtonSize,
+                ActionButtons = NotificationActionButton.CloneButtons(ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowButtons),
                 Title = title,
                 Text = text
             };
@@ -2707,7 +2707,7 @@ namespace ShareX
                 return false;
             }
 
-            if (Program.Settings.DisableUpload)
+            if (ApplicationState.Settings.DisableUpload)
             {
                 MessageBox.Show(Strings.ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

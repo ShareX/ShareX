@@ -44,12 +44,12 @@ namespace ShareX
 
             WatchFolders = new List<WatchFolder>();
 
-            foreach (WatchFolderSettings defaultWatchFolderSetting in Program.DefaultTaskSettings.WatchFolderList)
+            foreach (WatchFolderSettings defaultWatchFolderSetting in ApplicationState.DefaultTaskSettings.WatchFolderList)
             {
-                AddWatchFolder(defaultWatchFolderSetting, Program.DefaultTaskSettings);
+                AddWatchFolder(defaultWatchFolderSetting, ApplicationState.DefaultTaskSettings);
             }
 
-            foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
+            foreach (HotkeySettings hotkeySetting in ApplicationState.HotkeysConfig.Hotkeys)
             {
                 foreach (WatchFolderSettings watchFolderSetting in hotkeySetting.TaskSettings.WatchFolderList)
                 {

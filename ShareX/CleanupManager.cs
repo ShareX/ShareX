@@ -40,11 +40,11 @@ namespace ShareX
             {
                 CleanupAppTempFolder();
 
-                if (Program.Settings != null)
+                if (ApplicationState.SettingsOrNull is { } settings)
                 {
-                    int keepFileCount = Math.Max(Program.Settings.CleanupKeepFileCount, 0);
+                    int keepFileCount = Math.Max(settings.CleanupKeepFileCount, 0);
 
-                    if (Program.Settings.AutoCleanupBackupFiles)
+                    if (settings.AutoCleanupBackupFiles)
                     {
                         CleanupFolder(SettingManager.BackupFolder, "ApplicationConfig-*.json", keepFileCount);
                         CleanupFolder(SettingManager.BackupFolder, "HotkeysConfig-*.json", keepFileCount);
@@ -52,9 +52,9 @@ namespace ShareX
                         CleanupFolder(SettingManager.BackupFolder, "History-*.json", keepFileCount);
                     }
 
-                    if (Program.Settings.AutoCleanupLogFiles)
+                    if (settings.AutoCleanupLogFiles)
                     {
-                        CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
+                        CleanupFolder(AppPaths.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
                     }
                 }
             }

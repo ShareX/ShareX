@@ -25,9 +25,9 @@
 
 using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
-using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
 using Strings = ShareX.Tools.Localization.Strings;
 

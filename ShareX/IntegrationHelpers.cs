@@ -378,12 +378,12 @@ namespace ShareX
 
         public static bool CheckSteamShowInApp()
         {
-            return File.Exists(Program.SteamInAppFilePath);
+            return File.Exists(AppPaths.SteamInAppFilePath);
         }
 
         public static void SteamShowInApp(bool showInApp)
         {
-            string path = Program.SteamInAppFilePath;
+            string path = AppPaths.SteamInAppFilePath;
 
             try
             {

@@ -86,8 +86,8 @@ internal sealed class MainMenuBuilder
             Item(Strings.MainMenuBuilder_ApplicationSettings, LucideIcons.settings, () => Run(MainFormCommand.ApplicationSettings)),
             Item(Strings.MainMenuBuilder_TaskSettings, LucideIcons.sliders_horizontal, () => Run(MainFormCommand.TaskSettings)),
             Item(Strings.MainMenuBuilder_HotkeySettings, LucideIcons.keyboard, () => Run(MainFormCommand.HotkeySettings)),
-            Item(Program.Settings.DisableHotkeys ? Strings.MainMenuBuilder_EnableHotkeys : Strings.MainMenuBuilder_DisableHotkeys,
-                Program.Settings.DisableHotkeys ? LucideIcons.keyboard : LucideIcons.keyboard_off,
+            Item(ApplicationState.Settings.DisableHotkeys ? Strings.MainMenuBuilder_EnableHotkeys : Strings.MainMenuBuilder_DisableHotkeys,
+                ApplicationState.Settings.DisableHotkeys ? LucideIcons.keyboard : LucideIcons.keyboard_off,
                 () => TaskHelpers.ToggleHotkeys()),
             Item(Strings.MainMenuBuilder_DestinationSettings, LucideIcons.cloud_cog, () => Run(MainFormCommand.DestinationSettings), uploadsEnabled),
             Item(Strings.MainMenuBuilder_CustomUploaderSettings, LucideIcons.cloud, () => Run(MainFormCommand.CustomUploaderSettings), uploadsEnabled),
@@ -96,12 +96,12 @@ internal sealed class MainMenuBuilder
             Item(Strings.MainMenuBuilder_History, LucideIcons.history, () => Run(MainFormCommand.History)),
             Item(Strings.MainMenuBuilder_ImageHistory, LucideIcons.images, () => Run(MainFormCommand.ImageHistory)),
             MainMenuEntry.Separator(),
-            Item(Strings.MainMenuBuilder_RestartAsAdministrator, LucideIcons.shield, () => Program.Restart(true)),
+            Item(Strings.MainMenuBuilder_RestartAsAdministrator, LucideIcons.shield, () => ApplicationLifecycle.Restart(true)),
             Parent(Strings.MainMenuBuilder_RecentItems, LucideIcons.clipboard_list, BuildRecentItemsMenu,
-                Program.Settings.RecentTasksSave && Program.Settings.RecentTasksShowInTrayMenu && TaskManager.RecentManager.Tasks.Count > 0),
+                ApplicationState.Settings.RecentTasksSave && ApplicationState.Settings.RecentTasksShowInTrayMenu && TaskManager.RecentManager.Tasks.Count > 0),
             Item(Strings.MainMenuBuilder_ActionsToolbar, LucideIcons.panel_top, () => TaskHelpers.ToggleActionsToolbar()),
             Item(Strings.MainMenuBuilder_ShowShareX, LucideIcons.maximize, MainWindowIntegration.Activate),
-            Item(Strings.MainMenuBuilder_Exit, LucideIcons.log_out, Program.ForceClose)
+            Item(Strings.MainMenuBuilder_Exit, LucideIcons.log_out, ApplicationLifecycle.ForceClose)
         };
 
         return items;
@@ -125,10 +125,10 @@ internal sealed class MainMenuBuilder
             Item(Strings.MainMenuBuilder_AutoCapture, LucideIcons.clock, () => TaskHelpers.OpenAutoCapture()),
             MainMenuEntry.Separator(),
             new MainMenuEntry(Strings.MainMenuBuilder_ShowCursor, LucideIcons.mouse_pointer_2,
-                () => Program.DefaultTaskSettings.CaptureSettings.ShowCursor = !Program.DefaultTaskSettings.CaptureSettings.ShowCursor,
-                isChecked: Program.DefaultTaskSettings.CaptureSettings.ShowCursor,
+                () => ApplicationState.DefaultTaskSettings.CaptureSettings.ShowCursor = !ApplicationState.DefaultTaskSettings.CaptureSettings.ShowCursor,
+                isChecked: ApplicationState.DefaultTaskSettings.CaptureSettings.ShowCursor,
                 toggleType: MainMenuToggleType.CheckBox),
-            Parent(string.Format(Strings.ScreenshotDelay0S, Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay.ToString("0.#")),
+            Parent(string.Format(Strings.ScreenshotDelay0S, ApplicationState.DefaultTaskSettings.CaptureSettings.ScreenshotDelay.ToString("0.#")),
                 LucideIcons.timer, BuildScreenshotDelayMenu)
         };
     }
@@ -193,7 +193,7 @@ internal sealed class MainMenuBuilder
 
     private IReadOnlyList<MainMenuEntry> BuildScreenshotDelayMenu()
     {
-        decimal current = Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay;
+        decimal current = ApplicationState.DefaultTaskSettings.CaptureSettings.ScreenshotDelay;
         return Enumerable.Range(0, 6)
             .Select(delay => new MainMenuEntry(
                 string.Format(Strings.ScreenshotDelay0S, delay),
@@ -290,12 +290,12 @@ internal sealed class MainMenuBuilder
     {
         List<MainMenuEntry> items = new();
 
-        if (Program.HotkeysConfig?.Hotkeys != null)
+        if (ApplicationState.HotkeysConfigOrNull?.Hotkeys != null)
         {
-            foreach (HotkeySettings hotkey in Program.HotkeysConfig.Hotkeys)
+            foreach (HotkeySettings hotkey in ApplicationState.HotkeysConfig.Hotkeys)
             {
                 if (hotkey.TaskSettings.Job == HotkeyType.None ||
-                    (Program.Settings.WorkflowsOnlyShowEdited && hotkey.TaskSettings.IsUsingDefaultSettings))
+                    (ApplicationState.Settings.WorkflowsOnlyShowEdited && hotkey.TaskSettings.IsUsingDefaultSettings))
                 {
                     continue;
                 }
@@ -328,11 +328,11 @@ internal sealed class MainMenuBuilder
 
     private IReadOnlyList<MainMenuEntry> BuildAfterCaptureMenu()
     {
-        AfterCaptureTasks value = Program.DefaultTaskSettings.AfterCaptureJob;
+        AfterCaptureTasks value = ApplicationState.DefaultTaskSettings.AfterCaptureJob;
         return GetAfterCaptureTaskMenuOptions(!SystemOptions.DisableUpload).Select(option => new MainMenuEntry(
             option.Header,
             option.Icon,
-            () => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(option.Task),
+            () => ApplicationState.DefaultTaskSettings.AfterCaptureJob = ApplicationState.DefaultTaskSettings.AfterCaptureJob.Swap(option.Task),
             createChildren: option.Task == AfterCaptureTasks.AddImageEffects ? BuildImageEffectPresetMenu : null,
             isChecked: value.HasFlag(option.Task),
             toggleType: MainMenuToggleType.CheckBox,
@@ -354,7 +354,7 @@ internal sealed class MainMenuBuilder
     private IReadOnlyList<MainMenuEntry> BuildImageEffectPresetMenu()
     {
         List<MainMenuEntry> items = new();
-        List<ImageEffectsLib.ImageEffectPreset>? presets = Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets;
+        List<ImageEffectsLib.ImageEffectPreset>? presets = ApplicationState.DefaultTaskSettings.ImageSettings.ImageEffectPresets;
 
         if (presets != null)
         {
@@ -365,8 +365,8 @@ internal sealed class MainMenuBuilder
                 if (preset != null)
                 {
                     items.Add(new MainMenuEntry(preset.ToString(), string.Empty,
-                        () => Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset = index,
-                        isChecked: index == Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset,
+                        () => ApplicationState.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset = index,
+                        isChecked: index == ApplicationState.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset,
                         toggleType: MainMenuToggleType.Radio,
                         staysOpenOnClick: true,
                         boldWhenChecked: true));
@@ -384,11 +384,11 @@ internal sealed class MainMenuBuilder
 
     private IReadOnlyList<MainMenuEntry> BuildAfterUploadMenu()
     {
-        AfterUploadTasks value = Program.DefaultTaskSettings.AfterUploadJob;
+        AfterUploadTasks value = ApplicationState.DefaultTaskSettings.AfterUploadJob;
         return GetAfterUploadTaskMenuOptions().Select(option => new MainMenuEntry(
             option.Header,
             option.Icon,
-            () => Program.DefaultTaskSettings.AfterUploadJob = Program.DefaultTaskSettings.AfterUploadJob.Swap(option.Task),
+            () => ApplicationState.DefaultTaskSettings.AfterUploadJob = ApplicationState.DefaultTaskSettings.AfterUploadJob.Swap(option.Task),
             isChecked: value.HasFlag(option.Task),
             toggleType: MainMenuToggleType.CheckBox,
             staysOpenOnClick: true,
@@ -439,7 +439,7 @@ internal sealed class MainMenuBuilder
     };
 
     private static IReadOnlyList<MainMenuEntry> BuildDestinationsMenu() =>
-        BuildDestinationsMenu(Program.DefaultTaskSettings);
+        BuildDestinationsMenu(ApplicationState.DefaultTaskSettings);
 
     internal static IReadOnlyList<MainMenuEntry> BuildDestinationsMenu(TaskSettings settings)
     {
@@ -547,7 +547,7 @@ internal sealed class MainMenuBuilder
     private static IReadOnlyList<MainMenuEntry> BuildRecentItemsMenu()
     {
         IEnumerable<RecentTask> tasks = TaskManager.RecentManager.Tasks;
-        if (Program.Settings.RecentTasksTrayMenuMostRecentFirst)
+        if (ApplicationState.Settings.RecentTasksTrayMenuMostRecentFirst)
         {
             tasks = tasks.Reverse();
         }

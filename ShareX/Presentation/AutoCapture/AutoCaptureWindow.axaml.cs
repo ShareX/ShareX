@@ -64,10 +64,10 @@ public partial class AutoCaptureWindow : Window
         _trayIconBinding = LucideTrayIcon.Bind(_trayIcon, LucideIcons.clock);
         _trayIcon.MouseClick += OnTrayIconClick;
 
-        _customRegion = Program.Settings.AutoCaptureRegion;
-        RepeatTimeInput.Value = Program.Settings.AutoCaptureRepeatTime;
-        AutoMinimizeInput.IsChecked = Program.Settings.AutoCaptureMinimizeToTray;
-        WaitUploadsInput.IsChecked = Program.Settings.AutoCaptureWaitUpload;
+        _customRegion = ApplicationState.Settings.AutoCaptureRegion;
+        RepeatTimeInput.Value = ApplicationState.Settings.AutoCaptureRepeatTime;
+        AutoMinimizeInput.IsChecked = ApplicationState.Settings.AutoCaptureMinimizeToTray;
+        WaitUploadsInput.IsChecked = ApplicationState.Settings.AutoCaptureWaitUpload;
         UpdateRegion();
 
         PropertyChanged += OnWindowPropertyChanged;
@@ -105,13 +105,13 @@ public partial class AutoCaptureWindow : Window
         ExecuteIcon.Text = LucideIcons.square;
         StatusIcon.Text = LucideIcons.timer;
         _screenshotTimer.Interval = TimeSpan.FromSeconds(1);
-        _delay = (int)(Program.Settings.AutoCaptureRepeatTime * 1000);
-        _waitUploads = Program.Settings.AutoCaptureWaitUpload;
+        _delay = (int)(ApplicationState.Settings.AutoCaptureRepeatTime * 1000);
+        _waitUploads = ApplicationState.Settings.AutoCaptureWaitUpload;
 
         _screenshotTimer.Start();
         _statusTimer.Start();
 
-        if (Program.Settings.AutoCaptureMinimizeToTray)
+        if (ApplicationState.Settings.AutoCaptureMinimizeToTray)
         {
             HideToTray();
         }
@@ -152,7 +152,7 @@ public partial class AutoCaptureWindow : Window
 
     private void TakeScreenshot()
     {
-        Rectangle rectangle = Program.Settings.AutoCaptureRegion;
+        Rectangle rectangle = ApplicationState.Settings.AutoCaptureRegion;
 
         if (rectangle.IsEmpty)
         {
@@ -197,14 +197,14 @@ public partial class AutoCaptureWindow : Window
         var selection = await RegionCaptureTasks.GetRectangleRegionAsync(TaskSettings.CaptureSettings.RegionCaptureOptions);
         if (selection != null)
         {
-            Program.Settings.AutoCaptureRegion = selection.Value.Rectangle;
+            ApplicationState.Settings.AutoCaptureRegion = selection.Value.Rectangle;
             UpdateRegion();
         }
     }
 
     private void UpdateRegion()
     {
-        Rectangle rectangle = Program.Settings.AutoCaptureRegion;
+        Rectangle rectangle = ApplicationState.Settings.AutoCaptureRegion;
         ExecuteButton.IsEnabled = !rectangle.IsEmpty;
 
         RegionText.Text = rectangle.IsEmpty
@@ -237,8 +237,8 @@ public partial class AutoCaptureWindow : Window
     {
         if (_isLoaded && FullscreenRadio.IsChecked == true)
         {
-            _customRegion = Program.Settings.AutoCaptureRegion;
-            Program.Settings.AutoCaptureRegion = CaptureHelpers.GetScreenBounds();
+            _customRegion = ApplicationState.Settings.AutoCaptureRegion;
+            ApplicationState.Settings.AutoCaptureRegion = CaptureHelpers.GetScreenBounds();
             SelectRegionButton.IsEnabled = false;
             UpdateRegion();
         }
@@ -248,7 +248,7 @@ public partial class AutoCaptureWindow : Window
     {
         if (_isLoaded && CustomRegionRadio.IsChecked == true)
         {
-            Program.Settings.AutoCaptureRegion = _customRegion;
+            ApplicationState.Settings.AutoCaptureRegion = _customRegion;
             SelectRegionButton.IsEnabled = true;
             UpdateRegion();
         }
@@ -258,7 +258,7 @@ public partial class AutoCaptureWindow : Window
     {
         if (_isLoaded && RepeatTimeInput.Value is decimal value)
         {
-            Program.Settings.AutoCaptureRepeatTime = value;
+            ApplicationState.Settings.AutoCaptureRepeatTime = value;
         }
     }
 
@@ -266,7 +266,7 @@ public partial class AutoCaptureWindow : Window
     {
         if (_isLoaded)
         {
-            Program.Settings.AutoCaptureMinimizeToTray = AutoMinimizeInput.IsChecked == true;
+            ApplicationState.Settings.AutoCaptureMinimizeToTray = AutoMinimizeInput.IsChecked == true;
         }
     }
 
@@ -274,14 +274,14 @@ public partial class AutoCaptureWindow : Window
     {
         if (_isLoaded)
         {
-            Program.Settings.AutoCaptureWaitUpload = WaitUploadsInput.IsChecked == true;
+            ApplicationState.Settings.AutoCaptureWaitUpload = WaitUploadsInput.IsChecked == true;
         }
     }
 
     private void OnWindowPropertyChanged(object? sender, AvaloniaPropertyChangedEventArgs e)
     {
         if (e.Property == WindowStateProperty
-            && Program.Settings.AutoCaptureMinimizeToTray
+            && ApplicationState.Settings.AutoCaptureMinimizeToTray
             && WindowState == Avalonia.Controls.WindowState.Minimized)
         {
             HideToTray();

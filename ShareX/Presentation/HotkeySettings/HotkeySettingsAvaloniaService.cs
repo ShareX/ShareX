@@ -30,7 +30,7 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
 
     public event EventHandler StateChanged;
 
-    public bool AreHotkeysDisabled => InvokeOnMainThread(() => Program.Settings.DisableHotkeys);
+    public bool AreHotkeysDisabled => InvokeOnMainThread(() => ApplicationState.Settings.DisableHotkeys);
 
     public HotkeySettingsAvaloniaService(HotkeyManager manager, Action closed)
     {

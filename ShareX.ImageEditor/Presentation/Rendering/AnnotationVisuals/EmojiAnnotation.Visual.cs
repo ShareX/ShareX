@@ -28,8 +28,8 @@ using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 using ShareX.ImageEditor.Presentation.Emoji;
 using SkiaSharp;
-using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
 using System.Runtime.CompilerServices;
+using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
 
 namespace ShareX.ImageEditor.Core.Annotations;
 

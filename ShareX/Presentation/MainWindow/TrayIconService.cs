@@ -104,9 +104,9 @@ internal sealed class WinFormsTrayIconService : ITrayIconService
         switch (e.Button)
         {
             case MouseButtons.Left:
-                if (Program.Settings.TrayLeftDoubleClickAction == HotkeyType.None)
+                if (ApplicationState.Settings.TrayLeftDoubleClickAction == HotkeyType.None)
                 {
-                    await TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
+                    await TaskHelpers.ExecuteJob(ApplicationState.Settings.TrayLeftClickAction);
                 }
                 else
                 {
@@ -120,12 +120,12 @@ internal sealed class WinFormsTrayIconService : ITrayIconService
                     {
                         _leftClickCount = 0;
                         _singleClickTimer.Stop();
-                        await TaskHelpers.ExecuteJob(Program.Settings.TrayLeftDoubleClickAction);
+                        await TaskHelpers.ExecuteJob(ApplicationState.Settings.TrayLeftDoubleClickAction);
                     }
                 }
                 break;
             case MouseButtons.Middle:
-                await TaskHelpers.ExecuteJob(Program.Settings.TrayMiddleClickAction);
+                await TaskHelpers.ExecuteJob(ApplicationState.Settings.TrayMiddleClickAction);
                 break;
             case MouseButtons.Right:
                 RightButtonUp?.Invoke();
@@ -140,7 +140,7 @@ internal sealed class WinFormsTrayIconService : ITrayIconService
         if (_leftClickCount == 1)
         {
             _leftClickCount = 0;
-            await TaskHelpers.ExecuteJob(Program.Settings.TrayLeftClickAction);
+            await TaskHelpers.ExecuteJob(ApplicationState.Settings.TrayLeftClickAction);
         }
     }
 

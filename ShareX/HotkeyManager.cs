@@ -56,7 +56,7 @@ namespace ShareX
 
         private void HotkeyForm_HotkeyPress(ushort id, Keys key, Modifiers modifier)
         {
-            if (!IgnoreHotkeys && (!Program.Settings.DisableHotkeysOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
+            if (!IgnoreHotkeys && (!ApplicationState.Settings.DisableHotkeysOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
             {
                 HotkeySettings hotkeySetting = Hotkeys.Find(x => x.HotkeyInfo.ID == id);
 
@@ -99,7 +99,7 @@ namespace ShareX
 
         public void RegisterHotkey(HotkeySettings hotkeySetting)
         {
-            if (!Program.Settings.DisableHotkeys || hotkeySetting.TaskSettings.Job == HotkeyType.DisableHotkeys)
+            if (!ApplicationState.Settings.DisableHotkeys || hotkeySetting.TaskSettings.Job == HotkeyType.DisableHotkeys)
             {
                 UnregisterHotkey(hotkeySetting, false);
 
@@ -214,7 +214,7 @@ namespace ShareX
             Hotkeys.AddRange(GetDefaultHotkeyList());
             RegisterAllHotkeys();
 
-            if (Program.Settings.DisableHotkeys)
+            if (ApplicationState.Settings.DisableHotkeys)
             {
                 TaskHelpers.ToggleHotkeys();
             }

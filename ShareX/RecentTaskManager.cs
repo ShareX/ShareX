@@ -68,11 +68,11 @@ namespace ShareX
         {
             lock (itemsLock)
             {
-                MaxCount = Program.Settings.RecentTasksMaxCount;
+                MaxCount = ApplicationState.Settings.RecentTasksMaxCount;
 
-                if (Program.Settings.RecentTasks != null)
+                if (ApplicationState.Settings.RecentTasks != null)
                 {
-                    Tasks = new Queue<RecentTask>(Program.Settings.RecentTasks.Take(MaxCount));
+                    Tasks = new Queue<RecentTask>(ApplicationState.Settings.RecentTasks.Take(MaxCount));
                 }
 
                 UpdateTrayMenu();
@@ -98,13 +98,13 @@ namespace ShareX
                 Add(recentItem);
             }
 
-            if (Program.Settings.RecentTasksSave)
+            if (ApplicationState.Settings.RecentTasksSave)
             {
-                Program.Settings.RecentTasks = Tasks.ToArray();
+                ApplicationState.Settings.RecentTasks = Tasks.ToArray();
             }
             else
             {
-                Program.Settings.RecentTasks = null;
+                ApplicationState.Settings.RecentTasks = null;
             }
         }
 
@@ -129,7 +129,7 @@ namespace ShareX
             {
                 Tasks.Clear();
 
-                Program.Settings.RecentTasks = null;
+                ApplicationState.Settings.RecentTasks = null;
 
                 UpdateTrayMenu();
             }
@@ -142,7 +142,7 @@ namespace ShareX
 
         private void UpdateMainWindowList()
         {
-            if (Program.Settings.RecentTasksSave && Program.Settings.RecentTasksShowInMainWindow && Tasks.Count > 0)
+            if (ApplicationState.Settings.RecentTasksSave && ApplicationState.Settings.RecentTasksShowInMainWindow && Tasks.Count > 0)
             {
                 TaskManager.AddRecentTasksToMainWindow();
             }

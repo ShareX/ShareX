@@ -38,7 +38,7 @@ namespace ShareX
                 return new GitHubUpdateChecker("ShareX", "DevBuilds")
                 {
                     IsDev = true,
-                    IsPortable = Program.Portable,
+                    IsPortable = StartupOptions.Portable,
                     IgnoreRevision = true
                 };
             }
@@ -46,7 +46,7 @@ namespace ShareX
             {
                 return new GitHubUpdateChecker("ShareX", "ShareX")
                 {
-                    IsPortable = Program.Portable,
+                    IsPortable = StartupOptions.Portable,
                     IncludePreRelease = UpdateChannel == UpdateChannel.PreRelease,
                     IgnoreRevision = true
                 };

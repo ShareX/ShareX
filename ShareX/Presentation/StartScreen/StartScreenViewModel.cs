@@ -36,7 +36,7 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
     private bool _startWithWindowsEnabled;
     private string _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
 
-    private ApplicationConfig Settings => Program.Settings;
+    private ApplicationConfig Settings => ApplicationState.Settings;
 
     public string WindowTitle => Strings.StartScreen_Welcome;
     public string WelcomeTitle => Strings.StartScreen_Welcome;

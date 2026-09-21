@@ -38,8 +38,8 @@ public partial class ActionsToolbarWindow : Window
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        Topmost = Program.Settings.ActionsToolbarStayTopMost;
-        Program.Settings.ActionsToolbarList ??= [];
+        Topmost = ApplicationState.Settings.ActionsToolbarStayTopMost;
+        ApplicationState.Settings.ActionsToolbarList ??= [];
 
         ToolTip.SetTip(TitleHandle, Strings.ActionsToolbarWindow_Tip);
         ToolTip.SetPlacement(TitleHandle, PlacementMode.Top);
@@ -62,7 +62,7 @@ public partial class ActionsToolbarWindow : Window
             ToolbarItems.Children.RemoveAt(1);
         }
 
-        foreach (HotkeyType action in Program.Settings.ActionsToolbarList)
+        foreach (HotkeyType action in ApplicationState.Settings.ActionsToolbarList)
         {
             if (action == HotkeyType.None)
             {
@@ -112,7 +112,7 @@ public partial class ActionsToolbarWindow : Window
             return;
         }
 
-        bool restoreTopmost = Program.Settings.ActionsToolbarStayTopMost;
+        bool restoreTopmost = ApplicationState.Settings.ActionsToolbarStayTopMost;
         if (restoreTopmost)
         {
             Topmost = false;
@@ -126,7 +126,7 @@ public partial class ActionsToolbarWindow : Window
         {
             if (!_closing)
             {
-                Topmost = Program.Settings.ActionsToolbarStayTopMost;
+                Topmost = ApplicationState.Settings.ActionsToolbarStayTopMost;
             }
         }
     }
@@ -147,11 +147,11 @@ public partial class ActionsToolbarWindow : Window
         {
             Header = Strings.ActionsToolbarWindow_LockPosition,
             ToggleType = MenuItemToggleType.CheckBox,
-            IsChecked = Program.Settings.ActionsToolbarLockPosition
+            IsChecked = ApplicationState.Settings.ActionsToolbarLockPosition
         };
         lockPosition.Click += (_, _) =>
         {
-            Program.Settings.ActionsToolbarLockPosition = lockPosition.IsChecked;
+            ApplicationState.Settings.ActionsToolbarLockPosition = lockPosition.IsChecked;
             UpdateTitleCursor();
             SaveSettings();
         };
@@ -161,11 +161,11 @@ public partial class ActionsToolbarWindow : Window
         {
             Header = Strings.ActionsToolbarWindow_StayOnTop,
             ToggleType = MenuItemToggleType.CheckBox,
-            IsChecked = Program.Settings.ActionsToolbarStayTopMost
+            IsChecked = ApplicationState.Settings.ActionsToolbarStayTopMost
         };
         stayTopmost.Click += (_, _) =>
         {
-            Program.Settings.ActionsToolbarStayTopMost = stayTopmost.IsChecked;
+            ApplicationState.Settings.ActionsToolbarStayTopMost = stayTopmost.IsChecked;
             Topmost = stayTopmost.IsChecked;
             SaveSettings();
         };
@@ -175,11 +175,11 @@ public partial class ActionsToolbarWindow : Window
         {
             Header = Strings.ActionsToolbarWindow_OpenAtStartup,
             ToggleType = MenuItemToggleType.CheckBox,
-            IsChecked = Program.Settings.ActionsToolbarRunAtStartup
+            IsChecked = ApplicationState.Settings.ActionsToolbarRunAtStartup
         };
         runAtStartup.Click += (_, _) =>
         {
-            Program.Settings.ActionsToolbarRunAtStartup = runAtStartup.IsChecked;
+            ApplicationState.Settings.ActionsToolbarRunAtStartup = runAtStartup.IsChecked;
             SaveSettings();
         };
         menu.Items.Add(runAtStartup);
@@ -194,7 +194,7 @@ public partial class ActionsToolbarWindow : Window
 
     private async System.Threading.Tasks.Task ShowEditorAsync()
     {
-        bool restoreTopmost = Program.Settings.ActionsToolbarStayTopMost;
+        bool restoreTopmost = ApplicationState.Settings.ActionsToolbarStayTopMost;
         Topmost = false;
 
         try
@@ -215,7 +215,7 @@ public partial class ActionsToolbarWindow : Window
     private void OnTitlePointerPressed(object? sender, PointerPressedEventArgs e)
     {
         PointerUpdateKind kind = e.GetCurrentPoint(TitleHandle).Properties.PointerUpdateKind;
-        if (kind == PointerUpdateKind.LeftButtonPressed && !Program.Settings.ActionsToolbarLockPosition)
+        if (kind == PointerUpdateKind.LeftButtonPressed && !ApplicationState.Settings.ActionsToolbarLockPosition)
         {
             BeginMoveDrag(e);
             e.Handled = true;
@@ -229,7 +229,7 @@ public partial class ActionsToolbarWindow : Window
 
     private void UpdateTitleCursor()
     {
-        TitleHandle.Cursor = new Cursor(Program.Settings.ActionsToolbarLockPosition
+        TitleHandle.Cursor = new Cursor(ApplicationState.Settings.ActionsToolbarLockPosition
             ? StandardCursorType.Arrow
             : StandardCursorType.SizeAll);
     }
@@ -244,7 +244,7 @@ public partial class ActionsToolbarWindow : Window
 
     private void RestorePosition()
     {
-        DrawingPoint saved = Program.Settings.ActionsToolbarPosition;
+        DrawingPoint saved = ApplicationState.Settings.ActionsToolbarPosition;
         if (!saved.IsEmpty)
         {
             PixelPoint point = new(saved.X, saved.Y);
@@ -303,7 +303,7 @@ public partial class ActionsToolbarWindow : Window
             _adjustingPosition = false;
         }
 
-        Program.Settings.ActionsToolbarPosition = new DrawingPoint(adjusted.X, adjusted.Y);
+        ApplicationState.Settings.ActionsToolbarPosition = new DrawingPoint(adjusted.X, adjusted.Y);
     }
 
     private void OnDragEnter(object? sender, DragEventArgs e) => UpdateDragState(e);

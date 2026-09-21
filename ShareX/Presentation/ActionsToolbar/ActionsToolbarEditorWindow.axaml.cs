@@ -39,8 +39,8 @@ public partial class ActionsToolbarEditorWindow : Window
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         _toolbarChanged = toolbarChanged;
 
-        Program.Settings.ActionsToolbarList ??= [];
-        foreach (HotkeyType action in Program.Settings.ActionsToolbarList)
+        ApplicationState.Settings.ActionsToolbarList ??= [];
+        foreach (HotkeyType action in ApplicationState.Settings.ActionsToolbarList)
         {
             _items.Add(new ActionsToolbarItem(action));
         }
@@ -114,7 +114,7 @@ public partial class ActionsToolbarEditorWindow : Window
     private void AddAction(HotkeyType action)
     {
         ActionsToolbarItem item = new(action);
-        Program.Settings.ActionsToolbarList.Add(action);
+        ApplicationState.Settings.ActionsToolbarList.Add(action);
         _items.Add(item);
         ActionList.SelectedItem = item;
         NotifyChanged();
@@ -128,7 +128,7 @@ public partial class ActionsToolbarEditorWindow : Window
         }
 
         int index = _items.IndexOf(item);
-        Program.Settings.ActionsToolbarList.RemoveAt(index);
+        ApplicationState.Settings.ActionsToolbarList.RemoveAt(index);
         _items.RemoveAt(index);
         ActionList.SelectedItem = _items.Count == 0 ? null : _items[Math.Min(index, _items.Count - 1)];
         NotifyChanged();
@@ -153,9 +153,9 @@ public partial class ActionsToolbarEditorWindow : Window
         }
 
         _items.Move(oldIndex, newIndex);
-        HotkeyType model = Program.Settings.ActionsToolbarList[oldIndex];
-        Program.Settings.ActionsToolbarList.RemoveAt(oldIndex);
-        Program.Settings.ActionsToolbarList.Insert(newIndex, model);
+        HotkeyType model = ApplicationState.Settings.ActionsToolbarList[oldIndex];
+        ApplicationState.Settings.ActionsToolbarList.RemoveAt(oldIndex);
+        ApplicationState.Settings.ActionsToolbarList.Insert(newIndex, model);
         ActionList.SelectedItem = item;
         NotifyChanged();
     }

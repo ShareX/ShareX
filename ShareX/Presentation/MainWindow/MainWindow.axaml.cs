@@ -90,7 +90,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         InitializeComponent();
         DataContext = this;
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        Title = Program.Title;
+        Title = ApplicationInfo.Title;
         Icon = CreateWindowIcon();
 
         _trayIconService.RightButtonDown += OnTrayIconRightButtonDown;
@@ -187,7 +187,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 menu.Closed -= OnTrayMenuClosed;
                 CloseTrayMenuAnchor();
             }
-            else if (Program.Settings.TrayAutoExpandCaptureMenu && menu.Items.OfType<MenuItem>().FirstOrDefault() is MenuItem captureItem)
+            else if (ApplicationState.Settings.TrayAutoExpandCaptureMenu && menu.Items.OfType<MenuItem>().FirstOrDefault() is MenuItem captureItem)
             {
                 Dispatcher.UIThread.Post(captureItem.Open);
             }
@@ -321,8 +321,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         MinHeight = navigationHeight;
 
-        DrawingSize savedSize = Program.Settings.MainFormSize;
-        if (!Program.Settings.RememberMainFormSize || savedSize.IsEmpty)
+        DrawingSize savedSize = ApplicationState.Settings.MainFormSize;
+        if (!ApplicationState.Settings.RememberMainFormSize || savedSize.IsEmpty)
         {
             Height = navigationHeight;
         }
@@ -555,7 +555,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return true;
         }
 
-        List<string> hiddenTools = Program.Settings.HiddenTools ??= new List<string>();
+        List<string> hiddenTools = ApplicationState.Settings.HiddenTools ??= new List<string>();
         return !hiddenTools.Any(x => string.Equals(x, entry.Id, StringComparison.Ordinal));
     }
 
@@ -566,7 +566,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return;
         }
 
-        List<string> hiddenTools = Program.Settings.HiddenTools ??= new List<string>();
+        List<string> hiddenTools = ApplicationState.Settings.HiddenTools ??= new List<string>();
         bool changed;
 
         if (isVisible)
@@ -1086,12 +1086,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         HotkeyTips.Clear();
 
-        if (Program.HotkeysConfig?.Hotkeys == null)
+        if (ApplicationState.HotkeysConfigOrNull?.Hotkeys == null)
         {
             return;
         }
 
-        foreach (HotkeySettings hotkey in Program.HotkeysConfig.Hotkeys.Where(x => x.HotkeyInfo.IsValidHotkey))
+        foreach (HotkeySettings hotkey in ApplicationState.HotkeysConfig.Hotkeys.Where(x => x.HotkeyInfo.IsValidHotkey))
         {
             HotkeyTips.Add(new HotkeyTipViewModel(hotkey));
         }
@@ -1289,9 +1289,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
             if (!wasDragging &&
                 !_suppressThumbnailClickAction &&
-                Program.Settings.ThumbnailClickAction != ThumbnailViewClickAction.Select)
+                ApplicationState.Settings.ThumbnailClickAction != ThumbnailViewClickAction.Select)
             {
-                ExecuteThumbnailClick(item, Program.Settings.ThumbnailClickAction);
+                ExecuteThumbnailClick(item, ApplicationState.Settings.ThumbnailClickAction);
             }
 
             e.Handled = true;
@@ -1366,7 +1366,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         if (sender is Control { DataContext: ThumbnailItemViewModel item } &&
             !_suppressThumbnailClickAction &&
-            Program.Settings.ThumbnailClickAction == ThumbnailViewClickAction.Select)
+            ApplicationState.Settings.ThumbnailClickAction == ThumbnailViewClickAction.Select)
         {
             ExecuteThumbnailClick(item, ThumbnailViewClickAction.OpenFile);
             e.Handled = true;
@@ -1550,10 +1550,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Item(Strings.MainWindow_Folder, LucideIcons.folder, _uploadInfoManager.CopyFolder, statuses.Any(x => x.IsFilePathValid))
         };
 
-        if (Program.Settings.ClipboardContentFormats?.Count > 0)
+        if (ApplicationState.Settings.ClipboardContentFormats?.Count > 0)
         {
             entries.Add(MainMenuEntry.Separator());
-            foreach (ClipboardFormat format in Program.Settings.ClipboardContentFormats)
+            foreach (ClipboardFormat format in ApplicationState.Settings.ClipboardContentFormats)
             {
                 ClipboardFormat selectedFormat = format;
                 entries.Add(Item(selectedFormat.Description, LucideIcons.clipboard_copy,
@@ -1566,12 +1566,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private static bool HasExternalActions(string filePath) =>
         !string.IsNullOrEmpty(filePath) && File.Exists(filePath) &&
-        Program.DefaultTaskSettings.ExternalPrograms.Any(x => !string.IsNullOrEmpty(x.Name) && x.CheckExtension(filePath));
+        ApplicationState.DefaultTaskSettings.ExternalPrograms.Any(x => !string.IsNullOrEmpty(x.Name) && x.CheckExtension(filePath));
 
     private static IReadOnlyList<MainMenuEntry> BuildExternalActionsMenu(UploadInfoStatus? selected)
     {
         string filePath = selected?.Info.FilePath ?? string.Empty;
-        return Program.DefaultTaskSettings.ExternalPrograms
+        return ApplicationState.DefaultTaskSettings.ExternalPrograms
             .Where(x => !string.IsNullOrEmpty(x.Name) && x.CheckExtension(filePath))
             .Select(action => Item(action.Name.Truncate(50, "..."), LucideIcons.play,
                 async () => await action.RunAsync(filePath))).ToArray();
@@ -1621,8 +1621,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return false;
         }
 
-        return Program.UploadersConfig != null &&
-            UploadersConfigValidator.Validate(FileDestination.AmazonS3, Program.UploadersConfig);
+        return ApplicationState.UploadersConfigOrNull != null &&
+            UploadersConfigValidator.Validate(FileDestination.AmazonS3, ApplicationState.UploadersConfig);
     }
 
     private async Task DeleteSelectedItemRemotelyAsync()
@@ -1645,7 +1645,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         try
         {
-            AmazonS3 uploader = new AmazonS3(Program.UploadersConfig.AmazonS3Settings);
+            AmazonS3 uploader = new AmazonS3(ApplicationState.UploadersConfig.AmazonS3Settings);
 
             if (uploader.TryGetObjectKey(selected!.Info.Result.URL, out string objectKey))
             {
@@ -1981,16 +1981,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnClosing(object? sender, WindowClosingEventArgs e)
     {
-        if (!_allowClose && Program.Settings.ShowTray)
+        if (!_allowClose && ApplicationState.Settings.ShowTray)
         {
             e.Cancel = true;
             HideToTray();
             SettingManager.SaveAllSettingsAsync();
 
-            if (Program.Settings.FirstTimeMinimizeToTray)
+            if (ApplicationState.Settings.FirstTimeMinimizeToTray)
             {
                 TaskHelpers.ShowNotificationTip(Strings.ShareXIsMinimizedToTheSystemTray, "ShareX", 8000);
-                Program.Settings.FirstTimeMinimizeToTray = false;
+                ApplicationState.Settings.FirstTimeMinimizeToTray = false;
             }
 
             return;
@@ -1999,7 +1999,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (!_allowClose)
         {
             e.Cancel = true;
-            Dispatcher.UIThread.Post(Program.ForceClose);
+            Dispatcher.UIThread.Post(ApplicationLifecycle.ForceClose);
             return;
         }
 
@@ -2039,15 +2039,15 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void RestoreWindowBounds()
     {
-        DrawingSize savedSize = Program.Settings.MainFormSize;
-        if (Program.Settings.RememberMainFormSize && !savedSize.IsEmpty)
+        DrawingSize savedSize = ApplicationState.Settings.MainFormSize;
+        if (ApplicationState.Settings.RememberMainFormSize && !savedSize.IsEmpty)
         {
             Width = Math.Max(MinWidth, savedSize.Width);
             Height = Math.Max(MinHeight, savedSize.Height);
         }
 
-        DrawingPoint savedPosition = Program.Settings.MainFormPosition;
-        if (Program.Settings.RememberMainFormPosition && !savedPosition.IsEmpty)
+        DrawingPoint savedPosition = ApplicationState.Settings.MainFormPosition;
+        if (ApplicationState.Settings.RememberMainFormPosition && !savedPosition.IsEmpty)
         {
             Position = new PixelPoint(savedPosition.X, savedPosition.Y);
             WindowStartupLocation = WindowStartupLocation.Manual;
@@ -2061,8 +2061,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return;
         }
 
-        Program.Settings.MainFormPosition = new DrawingPoint(Position.X, Position.Y);
-        Program.Settings.MainFormSize = new DrawingSize((int)Math.Round(ClientSize.Width), (int)Math.Round(ClientSize.Height));
+        ApplicationState.Settings.MainFormPosition = new DrawingPoint(Position.X, Position.Y);
+        ApplicationState.Settings.MainFormSize = new DrawingSize((int)Math.Round(ClientSize.Width), (int)Math.Round(ClientSize.Height));
     }
 
     private static WindowIcon CreateWindowIcon()

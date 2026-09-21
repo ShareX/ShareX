@@ -83,7 +83,7 @@ public partial class AfterUploadWindow : Window
 
         if (isImageURL)
         {
-            foreach (ClipboardFormat format in Program.Settings.ClipboardContentFormats)
+            foreach (ClipboardFormat format in ApplicationState.Settings.ClipboardContentFormats)
             {
                 AddFormat(formats, Strings.AfterUploadWindow_GroupCustom, format.Description, _parser.Parse(_info, format.Format));
             }

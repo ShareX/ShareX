@@ -179,25 +179,25 @@ internal sealed class TaskSettingsPageBuilder
 
         List<Control> accountControls = [];
 
-        if (Program.UploadersConfig?.FTPAccountList.Count > 0)
+        if (ApplicationState.UploadersConfigOrNull?.FTPAccountList.Count > 0)
         {
             BoundValue<bool> ftpOverride = new(_settings.OverrideFTP, value => _settings.OverrideFTP = value);
             ComboBox ftp = ObjectCombo(
-                Program.UploadersConfig.FTPAccountList,
-                () => Program.UploadersConfig.FTPAccountList[_settings.FTPIndex.BetweenOrDefault(0, Program.UploadersConfig.FTPAccountList.Count - 1)],
-                value => _settings.FTPIndex = Program.UploadersConfig.FTPAccountList.IndexOf(value));
+                ApplicationState.UploadersConfig.FTPAccountList,
+                () => ApplicationState.UploadersConfig.FTPAccountList[_settings.FTPIndex.BetweenOrDefault(0, ApplicationState.UploadersConfig.FTPAccountList.Count - 1)],
+                value => _settings.FTPIndex = ApplicationState.UploadersConfig.FTPAccountList.IndexOf(value));
             BindEnabled(ftp, ftpOverride);
             accountControls.Add(Check(Strings.TaskSettingsWindow_OverrideDefaultFTPAccount, ftpOverride));
             accountControls.Add(Row(Strings.TaskSettingsWindow_FTPAccount, ftp));
         }
 
-        if (Program.UploadersConfig?.CustomUploadersList.Count > 0)
+        if (ApplicationState.UploadersConfigOrNull?.CustomUploadersList.Count > 0)
         {
             BoundValue<bool> customOverride = new(_settings.OverrideCustomUploader, value => _settings.OverrideCustomUploader = value);
             ComboBox custom = ObjectCombo(
-                Program.UploadersConfig.CustomUploadersList,
-                () => Program.UploadersConfig.CustomUploadersList[_settings.CustomUploaderIndex.BetweenOrDefault(0, Program.UploadersConfig.CustomUploadersList.Count - 1)],
-                value => _settings.CustomUploaderIndex = Program.UploadersConfig.CustomUploadersList.IndexOf(value));
+                ApplicationState.UploadersConfig.CustomUploadersList,
+                () => ApplicationState.UploadersConfig.CustomUploadersList[_settings.CustomUploaderIndex.BetweenOrDefault(0, ApplicationState.UploadersConfig.CustomUploadersList.Count - 1)],
+                value => _settings.CustomUploaderIndex = ApplicationState.UploadersConfig.CustomUploadersList.IndexOf(value));
             BindEnabled(custom, customOverride);
             accountControls.Add(Check(Strings.TaskSettingsWindow_OverrideDefaultCustomUploader, customOverride));
             accountControls.Add(Row(Strings.TaskSettingsWindow_CustomUploader, custom));
@@ -510,7 +510,7 @@ internal sealed class TaskSettingsPageBuilder
         {
             NameParser parser = new(NameParserType.FileName)
             {
-                AutoIncrementNumber = Program.Settings.NameParserAutoIncrementNumber,
+                AutoIncrementNumber = ApplicationState.Settings.NameParserAutoIncrementNumber,
                 ImageWidth = 1920,
                 ImageHeight = 1080,
                 MaxNameLength = _settings.AdvancedSettings.NamePatternMaxLength,
@@ -540,7 +540,7 @@ internal sealed class TaskSettingsPageBuilder
         BindEnabled(regexPattern, regexReplace);
         BindEnabled(regexReplacement, regexReplace);
 
-        NumericUpDown autoIncrement = Number(() => Program.Settings.NameParserAutoIncrementNumber, value => Program.Settings.NameParserAutoIncrementNumber = (int)value, 0, int.MaxValue);
+        NumericUpDown autoIncrement = Number(() => ApplicationState.Settings.NameParserAutoIncrementNumber, value => ApplicationState.Settings.NameParserAutoIncrementNumber = (int)value, 0, int.MaxValue);
         if (autoIncrement.DataContext is BoundValue<decimal?> autoIncrementValue)
         {
             autoIncrementValue.PropertyChanged += (_, _) => UpdatePreviews();
@@ -810,20 +810,20 @@ internal sealed class TaskSettingsPageBuilder
 
         foreach (WatchFolderSettings folder in _settings.WatchFolderList)
         {
-            Program.WatchFolderManager?.AddWatchFolder(folder, _settings);
+            ApplicationState.WatchFolderManager?.AddWatchFolder(folder, _settings);
         }
 
         ObservableCollection<string> rows = new(_settings.WatchFolderList.Select(WatchFolderTitle));
         ListBox list = new() { ItemsSource = rows, MinHeight = 230 };
         list.Classes.Add("settings-list");
 
-        void UpdateState(WatchFolderSettings folder) => Program.WatchFolderManager?.UpdateWatchFolderState(folder);
+        void UpdateState(WatchFolderSettings folder) => ApplicationState.WatchFolderManager?.UpdateWatchFolderState(folder);
 
         Button add = Button(Strings.TaskSettingsWindow_AddWithEllipsis, () =>
         {
             _window.ShowWatchFolderEditor(null, folder =>
             {
-                Program.WatchFolderManager?.AddWatchFolder(folder, _settings);
+                ApplicationState.WatchFolderManager?.AddWatchFolder(folder, _settings);
                 if (!_settings.WatchFolderList.Contains(folder))
                 {
                     _settings.WatchFolderList.Add(folder);
@@ -851,7 +851,7 @@ internal sealed class TaskSettingsPageBuilder
             if (index >= 0)
             {
                 WatchFolderSettings folder = _settings.WatchFolderList[index];
-                Program.WatchFolderManager?.RemoveWatchFolder(folder);
+                ApplicationState.WatchFolderManager?.RemoveWatchFolder(folder);
                 _settings.WatchFolderList.Remove(folder);
                 rows.RemoveAt(index);
             }

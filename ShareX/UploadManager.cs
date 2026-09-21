@@ -81,10 +81,10 @@ namespace ShareX
 
         private static bool IsUploadConfirmed(int length)
         {
-            if (Program.Settings.ShowMultiUploadWarning)
+            if (ApplicationState.Settings.ShowMultiUploadWarning)
             {
                 MultiUploadConfirmationResult result = MultiUploadConfirmationWindowIntegration.Show(length);
-                Program.Settings.ShowMultiUploadWarning = !result.DontShowAgain;
+                ApplicationState.Settings.ShowMultiUploadWarning = !result.DontShowAgain;
                 return result.IsConfirmed;
             }
 
@@ -97,9 +97,9 @@ namespace ShareX
             {
                 ofd.Title = "ShareX - " + Strings.UploadManager_UploadFile_File_upload;
 
-                if (!string.IsNullOrEmpty(Program.Settings.FileUploadDefaultDirectory) && Directory.Exists(Program.Settings.FileUploadDefaultDirectory))
+                if (!string.IsNullOrEmpty(ApplicationState.Settings.FileUploadDefaultDirectory) && Directory.Exists(ApplicationState.Settings.FileUploadDefaultDirectory))
                 {
-                    ofd.InitialDirectory = Program.Settings.FileUploadDefaultDirectory;
+                    ofd.InitialDirectory = ApplicationState.Settings.FileUploadDefaultDirectory;
                 }
                 else
                 {
@@ -112,7 +112,7 @@ namespace ShareX
                 {
                     if (!string.IsNullOrEmpty(ofd.FileName))
                     {
-                        Program.Settings.FileUploadDefaultDirectory = Path.GetDirectoryName(ofd.FileName);
+                        ApplicationState.Settings.FileUploadDefaultDirectory = Path.GetDirectoryName(ofd.FileName);
                     }
 
                     UploadFile(ofd.FileNames, taskSettings);
@@ -123,9 +123,9 @@ namespace ShareX
         public static void UploadFolder(TaskSettings taskSettings = null)
         {
             string initialDirectory;
-            if (!string.IsNullOrEmpty(Program.Settings.FileUploadDefaultDirectory) && Directory.Exists(Program.Settings.FileUploadDefaultDirectory))
+            if (!string.IsNullOrEmpty(ApplicationState.Settings.FileUploadDefaultDirectory) && Directory.Exists(ApplicationState.Settings.FileUploadDefaultDirectory))
             {
-                initialDirectory = Program.Settings.FileUploadDefaultDirectory;
+                initialDirectory = ApplicationState.Settings.FileUploadDefaultDirectory;
             }
             else
             {
@@ -135,7 +135,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(selectedPath))
             {
-                Program.Settings.FileUploadDefaultDirectory = selectedPath;
+                ApplicationState.Settings.FileUploadDefaultDirectory = selectedPath;
                 UploadFile(selectedPath, taskSettings);
             }
         }
@@ -260,10 +260,10 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (Program.Settings.ShowClipboardContentViewer)
+            if (ApplicationState.Settings.ShowClipboardContentViewer)
             {
                 ClipboardUploadWindowIntegration.Show(taskSettings, true, dontShowAgain =>
-                    Program.Settings.ShowClipboardContentViewer = !dontShowAgain);
+                    ApplicationState.Settings.ShowClipboardContentViewer = !dontShowAgain);
             }
             else
             {
@@ -569,7 +569,7 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                taskSettings.ToolsSettings.IndexerSettings.BinaryUnits = Program.Settings.BinaryUnits;
+                taskSettings.ToolsSettings.IndexerSettings.BinaryUnits = ApplicationState.Settings.BinaryUnits;
 
                 string source = null;
 

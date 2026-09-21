@@ -34,24 +34,21 @@ internal sealed class MainForm : HotkeyForm
     {
         ShowInTaskbar = false;
 
-        ShareXResources.UseWhiteIcon = Program.Settings.UseWhiteShareXIcon;
+        ShareXResources.UseWhiteIcon = ApplicationState.Settings.UseWhiteShareXIcon;
         using Icon icon = ShareXResources.Icon;
-        TrayIconService = new WinFormsTrayIconService(icon, Program.TitleShort, Program.Settings.ShowTray);
+        TrayIconService = new WinFormsTrayIconService(icon, ApplicationInfo.TitleShort, ApplicationState.Settings.ShowTray);
     }
 
     internal void Initialize() => Show();
 
-    internal void ApplySettings()
+    internal void ApplyHotkeySettings()
     {
-        HotkeyRepeatLimit = Program.Settings.HotkeyRepeatLimit;
-        UpdateTrayIcon();
-        TrayIconService.ToolTipText = Program.TitleShort;
-        TrayIconService.Visible = Program.Settings.ShowTray;
+        HotkeyRepeatLimit = ApplicationState.Settings.HotkeyRepeatLimit;
     }
 
     internal void UpdateTrayIcon()
     {
-        ShareXResources.UseWhiteIcon = Program.Settings.UseWhiteShareXIcon;
+        ShareXResources.UseWhiteIcon = ApplicationState.Settings.UseWhiteShareXIcon;
         using Icon icon = ShareXResources.Icon;
         TrayIconService.SetIcon(icon);
     }
@@ -60,13 +57,16 @@ internal sealed class MainForm : HotkeyForm
     {
         await Task.Run(SettingManager.WaitHotkeysConfig);
 
-        if (Program.HotkeyManager == null)
+        HotkeyManager? hotkeyManager = ApplicationState.HotkeyManager;
+
+        if (hotkeyManager == null)
         {
-            Program.HotkeyManager = new HotkeyManager(this);
-            Program.HotkeyManager.HotkeyTrigger += HandleHotkeys;
+            hotkeyManager = new HotkeyManager(this);
+            hotkeyManager.HotkeyTrigger += HandleHotkeys;
+            ApplicationState.HotkeyManager = hotkeyManager;
         }
 
-        Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IgnoreHotkeyWarning);
+        hotkeyManager.UpdateHotkeys(ApplicationState.HotkeysConfig.Hotkeys, !StartupOptions.IgnoreHotkeyWarning);
         DebugHelper.WriteLine("HotkeyManager started.");
     }
 
@@ -94,7 +94,7 @@ internal sealed class MainForm : HotkeyForm
         {
             if (m.WParam != IntPtr.Zero)
             {
-                Program.CloseSequence();
+                ApplicationLifecycle.CloseSequence();
             }
 
             m.Result = IntPtr.Zero;
@@ -119,6 +119,6 @@ internal sealed class MainForm : HotkeyForm
     {
         base.OnFormClosed(e);
         TrayIconService.Dispose();
-        Program.OnMainFormClosed();
+        ApplicationLifecycle.OnHotkeyHostClosed();
     }
 }

@@ -11,8 +11,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Layout;
 using Avalonia.Media;
-using Strings = ShareX.Tools.Localization.Strings;
 using DrawingColor = System.Drawing.Color;
+using Strings = ShareX.Tools.Localization.Strings;
 
 namespace ShareX.Tools;
 
@@ -75,8 +75,10 @@ public sealed class MouseHighlighterSettingsControl : UserControl
             color => { options.AlwaysColor = color; Changed(); }));
         circle.Children.Add(new TextBlock
         {
-            Text = Strings.MouseHighlighter_AlwaysColorHelp, TextWrapping = TextWrapping.Wrap,
-            Foreground = Brushes.Gray, FontWeight = FontWeight.Normal
+            Text = Strings.MouseHighlighter_AlwaysColorHelp,
+            TextWrapping = TextWrapping.Wrap,
+            Foreground = Brushes.Gray,
+            FontWeight = FontWeight.Normal
         });
         circle.Children.Add(NumberRow(Strings.MouseHighlighter_Radius, options.Radius, 5, 500, 1,
             value => { options.Radius = (int)value; Changed(); }));

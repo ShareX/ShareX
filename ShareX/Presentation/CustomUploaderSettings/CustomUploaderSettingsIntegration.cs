@@ -24,7 +24,7 @@ public static class CustomUploaderSettingsIntegration
         {
             if (_window == null)
             {
-                _window = new CustomUploaderSettingsWindow(Program.UploadersConfig);
+                _window = new CustomUploaderSettingsWindow(ApplicationState.UploadersConfig);
                 _window.Closed += (_, _) =>
                 {
                     _window = null;

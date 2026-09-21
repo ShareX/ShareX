@@ -99,13 +99,13 @@ namespace ShareX
             {
                 int len;
 
-                if (Program.Settings.UploadLimit == 0)
+                if (ApplicationState.Settings.UploadLimit == 0)
                 {
                     len = inQueueTasks.Length;
                 }
                 else
                 {
-                    len = (Program.Settings.UploadLimit - workingTasksCount).Clamp(0, inQueueTasks.Length);
+                    len = (ApplicationState.Settings.UploadLimit - workingTasksCount).Clamp(0, inQueueTasks.Length);
                 }
 
                 for (int i = 0; i < len; i++)
@@ -202,7 +202,7 @@ namespace ShareX
 
                         if (!string.IsNullOrEmpty(result))
                         {
-                            if (Program.Settings.HistorySaveTasks && (!Program.Settings.HistoryCheckURL ||
+                            if (ApplicationState.Settings.HistorySaveTasks && (!ApplicationState.Settings.HistoryCheckURL ||
                                 !string.IsNullOrEmpty(info.Result.URL) || !string.IsNullOrEmpty(info.Result.ShortenedURL)))
                             {
                                 HistoryItem historyItem = info.GetHistoryItem();
@@ -295,16 +295,16 @@ namespace ShareX
             {
                 TaskChanged?.Invoke(task);
 
-                if (!IsBusy && Program.CLI.IsCommandExist("AutoClose"))
+                if (!IsBusy && StartupOptions.AutoClose)
                 {
-                    Program.Exit();
+                    ApplicationLifecycle.Exit();
                 }
                 else
                 {
                     StartTasks();
                     UpdateProgressUI();
 
-                    if (Program.Settings.SaveSettingsAfterTaskCompleted && !IsBusy)
+                    if (ApplicationState.Settings.SaveSettingsAfterTaskCompleted && !IsBusy)
                     {
                         SettingManager.SaveAllSettingsAsync();
                     }
@@ -338,14 +338,14 @@ namespace ShareX
 
             if (isTasksWorking)
             {
-                string title = string.Format("{0} - {1:0.0}%", Program.Title, averageProgress);
+                string title = string.Format("{0} - {1:0.0}%", ApplicationInfo.Title, averageProgress);
                 MainWindowIntegration.SetTitle(title);
                 UpdateTrayIcon((int)averageProgress);
                 TaskbarManager.SetProgressValue((int)averageProgress);
             }
             else
             {
-                MainWindowIntegration.SetTitle(Program.Title);
+                MainWindowIntegration.SetTitle(ApplicationInfo.Title);
                 UpdateTrayIcon();
                 TaskbarManager.SetProgressState(TaskbarProgressBarStatus.NoProgress);
             }
@@ -353,7 +353,7 @@ namespace ShareX
 
         public static void UpdateTrayIcon(int progress = -1)
         {
-            if (Program.Settings.TrayIconProgressEnabled && Program.Settings.ShowTray && lastIconStatus != progress)
+            if (ApplicationState.Settings.TrayIconProgressEnabled && ApplicationState.Settings.ShowTray && lastIconStatus != progress)
             {
                 Icon icon;
 
@@ -412,7 +412,7 @@ namespace ShareX
             {
                 try
                 {
-                    Program.HistoryManager.AppendHistoryItem(historyItem);
+                    ApplicationState.HistoryManager.AppendHistoryItem(historyItem);
                 }
                 catch (Exception e)
                 {

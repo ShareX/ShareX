@@ -49,9 +49,9 @@ namespace ShareX
         {
             get
             {
-                if (Program.Sandbox) return null;
+                if (StartupOptions.Sandbox) return null;
 
-                return Path.Combine(Program.PersonalFolder, ApplicationConfigFileName);
+                return Path.Combine(AppPaths.PersonalFolder, ApplicationConfigFileName);
             }
         }
 
@@ -63,7 +63,7 @@ namespace ShareX
         {
             get
             {
-                if (Program.Sandbox) return null;
+                if (StartupOptions.Sandbox) return null;
 
                 string uploadersConfigFolder;
 
@@ -73,7 +73,7 @@ namespace ShareX
                 }
                 else
                 {
-                    uploadersConfigFolder = Program.PersonalFolder;
+                    uploadersConfigFolder = AppPaths.PersonalFolder;
                 }
 
                 string uploadersConfigFileName = GetUploadersConfigFileName(uploadersConfigFolder);
@@ -88,7 +88,7 @@ namespace ShareX
         {
             get
             {
-                if (Program.Sandbox) return null;
+                if (StartupOptions.Sandbox) return null;
 
                 string hotkeysConfigFolder;
 
@@ -98,19 +98,19 @@ namespace ShareX
                 }
                 else
                 {
-                    hotkeysConfigFolder = Program.PersonalFolder;
+                    hotkeysConfigFolder = AppPaths.PersonalFolder;
                 }
 
                 return Path.Combine(hotkeysConfigFolder, HotkeysConfigFileName);
             }
         }
 
-        public static string BackupFolder => Path.Combine(Program.PersonalFolder, "Backup");
+        public static string BackupFolder => Path.Combine(AppPaths.PersonalFolder, "Backup");
 
-        private static ApplicationConfig Settings { get => Program.Settings; set => Program.Settings = value; }
-        private static TaskSettings DefaultTaskSettings { get => Program.DefaultTaskSettings; set => Program.DefaultTaskSettings = value; }
-        private static UploadersConfig UploadersConfig { get => Program.UploadersConfig; set => Program.UploadersConfig = value; }
-        private static HotkeysConfig HotkeysConfig { get => Program.HotkeysConfig; set => Program.HotkeysConfig = value; }
+        private static ApplicationConfig Settings { get => ApplicationState.SettingsOrNull; set => ApplicationState.Settings = value; }
+        private static TaskSettings DefaultTaskSettings { get => ApplicationState.DefaultTaskSettings; set => ApplicationState.DefaultTaskSettings = value; }
+        private static UploadersConfig UploadersConfig { get => ApplicationState.UploadersConfigOrNull; set => ApplicationState.UploadersConfig = value; }
+        private static HotkeysConfig HotkeysConfig { get => ApplicationState.HotkeysConfigOrNull; set => ApplicationState.HotkeysConfig = value; }
 
         private static ManualResetEvent uploadersConfigResetEvent = new ManualResetEvent(false);
         private static ManualResetEvent hotkeysConfigResetEvent = new ManualResetEvent(false);
@@ -272,35 +272,35 @@ namespace ShareX
         public static void HistoryConnect()
         {
             HistoryClose();
-            Program.HistoryManager = new HistoryManagerSQLite(Program.HistoryFilePath);
+            ApplicationState.HistoryManager = new HistoryManagerSQLite(AppPaths.HistoryFilePath);
         }
 
         public static void HistoryClose()
         {
-            if (Program.HistoryManager != null)
+            if (ApplicationState.HistoryManager != null)
             {
-                Program.HistoryManager.Dispose();
-                Program.HistoryManager = null;
+                ApplicationState.HistoryManager.Dispose();
+                ApplicationState.HistoryManager = null;
             }
         }
 
         private static void MigrateHistoryFile()
         {
-            if (File.Exists(Program.HistoryFilePathOld))
+            if (File.Exists(AppPaths.HistoryFilePathOld))
             {
                 try
                 {
-                    if (!File.Exists(Program.HistoryFilePath))
+                    if (!File.Exists(AppPaths.HistoryFilePath))
                     {
-                        DebugHelper.WriteLine($"Migrating JSON history file \"{Program.HistoryFilePathOld}\" to SQLite history file \"{Program.HistoryFilePath}\"");
+                        DebugHelper.WriteLine($"Migrating JSON history file \"{AppPaths.HistoryFilePathOld}\" to SQLite history file \"{AppPaths.HistoryFilePath}\"");
 
-                        using (HistoryManagerSQLite historyManager = new HistoryManagerSQLite(Program.HistoryFilePath))
+                        using (HistoryManagerSQLite historyManager = new HistoryManagerSQLite(AppPaths.HistoryFilePath))
                         {
-                            historyManager.MigrateFromJSON(Program.HistoryFilePathOld);
+                            historyManager.MigrateFromJSON(AppPaths.HistoryFilePathOld);
                         }
                     }
 
-                    FileHelpers.MoveFile(Program.HistoryFilePathOld, BackupFolder);
+                    FileHelpers.MoveFile(AppPaths.HistoryFilePathOld, BackupFolder);
                 }
                 catch (Exception e)
                 {
@@ -446,7 +446,7 @@ namespace ShareX
 
                 if (history)
                 {
-                    entries.Add(new ZipEntryInfo(Program.HistoryFilePath));
+                    entries.Add(new ZipEntryInfo(AppPaths.HistoryFilePath));
                     HistoryClose();
                 }
 
@@ -479,7 +479,7 @@ namespace ShareX
             {
                 HistoryClose();
 
-                ZipManager.Extract(archivePath, Program.PersonalFolder, true, entry =>
+                ZipManager.Extract(archivePath, AppPaths.PersonalFolder, true, entry =>
                 {
                     return FileHelpers.CheckExtension(entry.Name, new string[] { "json", "xml" });
                 }, 1_000_000_000);

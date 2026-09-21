@@ -39,7 +39,7 @@ public partial class QuickTaskMenuEditorWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
 
-        Program.Settings.QuickTaskPresets ??= [];
+        ApplicationState.Settings.QuickTaskPresets ??= [];
         ResetConfirmationText.Text = Strings.QuickTaskMenuEditorWindow_ResetConfirmation;
         TaskList.ItemsSource = _items;
         ReloadItems();
@@ -52,7 +52,7 @@ public partial class QuickTaskMenuEditorWindow : Window
     private void ReloadItems()
     {
         _items.Clear();
-        foreach (QuickTaskInfo task in Program.Settings.QuickTaskPresets)
+        foreach (QuickTaskInfo task in ApplicationState.Settings.QuickTaskPresets)
         {
             _items.Add(new QuickTaskPresetItem(task));
         }
@@ -79,7 +79,7 @@ public partial class QuickTaskMenuEditorWindow : Window
         }
 
         int index = _items.IndexOf(item);
-        Program.Settings.QuickTaskPresets.Remove(item.Model);
+        ApplicationState.Settings.QuickTaskPresets.Remove(item.Model);
         _items.Remove(item);
         TaskList.SelectedItem = _items.Count == 0 ? null : _items[Math.Min(index, _items.Count - 1)];
         SaveSettings();
@@ -105,9 +105,9 @@ public partial class QuickTaskMenuEditorWindow : Window
         }
 
         _items.Move(oldIndex, newIndex);
-        QuickTaskInfo model = Program.Settings.QuickTaskPresets[oldIndex];
-        Program.Settings.QuickTaskPresets.RemoveAt(oldIndex);
-        Program.Settings.QuickTaskPresets.Insert(newIndex, model);
+        QuickTaskInfo model = ApplicationState.Settings.QuickTaskPresets[oldIndex];
+        ApplicationState.Settings.QuickTaskPresets.RemoveAt(oldIndex);
+        ApplicationState.Settings.QuickTaskPresets.Insert(newIndex, model);
         TaskList.SelectedItem = item;
         SaveSettings();
         UpdateSelectionState();
@@ -117,7 +117,7 @@ public partial class QuickTaskMenuEditorWindow : Window
 
     private void OnConfirmResetClick(object? sender, RoutedEventArgs e)
     {
-        Program.Settings.QuickTaskPresets = QuickTaskInfo.DefaultPresets;
+        ApplicationState.Settings.QuickTaskPresets = QuickTaskInfo.DefaultPresets;
         ResetConfirmationOverlay.IsVisible = false;
         ReloadItems();
         SaveSettings();
@@ -211,7 +211,7 @@ public partial class QuickTaskMenuEditorWindow : Window
         {
             task = new QuickTaskInfo();
             item = new QuickTaskPresetItem(task);
-            Program.Settings.QuickTaskPresets.Add(task);
+            ApplicationState.Settings.QuickTaskPresets.Add(task);
             _items.Add(item);
         }
         else

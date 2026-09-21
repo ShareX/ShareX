@@ -62,7 +62,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     private string _statusMessage = string.Empty;
     private bool _disposed;
 
-    private ApplicationConfig Settings => Program.Settings;
+    private ApplicationConfig Settings => ApplicationState.Settings;
 
     public ObservableCollection<SettingsNavigationItem> NavigationItems { get; private set; } = [];
     public ObservableCollection<ClipboardFormatItem> ClipboardFormats { get; private set; } = [];
@@ -216,7 +216,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         {
             if (SetSetting(Settings.UseWhiteShareXIcon, value, x => Settings.UseWhiteShareXIcon = x))
             {
-                InvokeOnMainThread(Program.UpdateTrayIcon);
+                InvokeOnMainThread(ApplicationSettingsRuntime.UpdateTrayIcon);
             }
         }
     }
@@ -822,11 +822,11 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
     }
 
-    public void Restart() => InvokeOnMainThread(() => Program.Restart());
+    public void Restart() => InvokeOnMainThread(() => ApplicationLifecycle.Restart());
 
     public void Reload()
     {
-        _personalFolderPath = Program.ReadPersonalPathConfig();
+        _personalFolderPath = PersonalPathManager.ReadConfig();
         UpdatePersonalFolderPreview();
         UpdateScreenshotsFolderPreview();
         RefreshIntegrations();
@@ -929,7 +929,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             string path = FileHelpers.SanitizePath(_personalFolderPath);
             if (string.IsNullOrEmpty(path))
             {
-                path = Program.Portable ? Program.PortablePersonalFolder : Program.DefaultPersonalFolder;
+                path = StartupOptions.Portable ? AppPaths.PortablePersonalFolder : AppPaths.DefaultPersonalFolder;
             }
             else
             {
@@ -1006,7 +1006,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
         try
         {
-            bool changed = InvokeOnMainThread(() => Program.WritePersonalPathConfig(FileHelpers.SanitizePath(_personalFolderPath)));
+            bool changed = InvokeOnMainThread(() => PersonalPathManager.WriteConfig(FileHelpers.SanitizePath(_personalFolderPath)));
             if (changed)
             {
                 RestartRequired = true;
@@ -1021,7 +1021,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     private async Task UpdateApplicationAsync()
     {
-        Task updateTask = InvokeOnMainThread(Program.UpdateApplicationAsync);
+        Task updateTask = InvokeOnMainThread(ApplicationSettingsRuntime.ReloadAsync);
         await updateTask;
     }
 
@@ -1108,10 +1108,10 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             language.Flag?.Dispose();
         }
 
-        if (!Program.IsClosing)
+        if (!ApplicationLifecycle.IsClosing)
         {
             FlushPersonalPath();
-            InvokeOnMainThread(Program.ApplyApplicationSettings);
+            InvokeOnMainThread(ApplicationSettingsRuntime.Apply);
             SettingManager.SaveApplicationConfigAsync();
         }
     }

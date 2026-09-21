@@ -297,7 +297,7 @@ namespace ShareX
                 if (!string.IsNullOrEmpty(errors))
                 {
                     ErrorWindowIntegration.Show(Strings.UploadInfoManager_ShowErrors_Upload_errors, errors,
-                        Program.LogsFilePath, Links.GitHubIssues, false);
+                        AppPaths.LogsFilePath, Links.GitHubIssues, false);
                 }
             }
         }
@@ -370,13 +370,13 @@ namespace ShareX
 
         private void DoUploadJob()
         {
-            if (Program.Settings.ShowLargeFileSizeWarning > 0)
+            if (ApplicationState.Settings.ShowLargeFileSizeWarning > 0)
             {
-                long dataSize = Program.Settings.BinaryUnits ? Program.Settings.ShowLargeFileSizeWarning * 1024 * 1024 : Program.Settings.ShowLargeFileSizeWarning * 1000 * 1000;
+                long dataSize = ApplicationState.Settings.BinaryUnits ? ApplicationState.Settings.ShowLargeFileSizeWarning * 1024 * 1024 : ApplicationState.Settings.ShowLargeFileSizeWarning * 1000 * 1000;
                 if (Data != null && Data.Length > dataSize)
                 {
                     LargeFileUploadWarningResult result = LargeFileUploadWarningWindowIntegration.Show();
-                    if (result.DontShowAgain) Program.Settings.ShowLargeFileSizeWarning = 0;
+                    if (result.DontShowAgain) ApplicationState.Settings.ShowLargeFileSizeWarning = 0;
                     if (!result.ShouldContinue) Stop();
                 }
             }
@@ -403,9 +403,9 @@ namespace ShareX
 
                     bool isError = DoUpload(Data, Info.FileName);
 
-                    if (isError && Program.Settings.MaxUploadFailRetry > 0)
+                    if (isError && ApplicationState.Settings.MaxUploadFailRetry > 0)
                     {
-                        for (int retry = 1; !StopRequested && isError && retry <= Program.Settings.MaxUploadFailRetry; retry++)
+                        for (int retry = 1; !StopRequested && isError && retry <= ApplicationState.Settings.MaxUploadFailRetry; retry++)
                         {
                             DebugHelper.WriteLine("Upload failed. Retrying upload.");
                             isError = DoUpload(Data, Info.FileName, retry);
@@ -901,17 +901,17 @@ namespace ShareX
 
         public UploadResult UploadData(IGenericUploaderService service, Stream stream, string fileName)
         {
-            if (!service.CheckConfig(Program.UploadersConfig))
+            if (!service.CheckConfig(ApplicationState.UploadersConfig))
             {
                 return GetInvalidConfigResult(service);
             }
 
-            uploader = service.CreateUploader(Program.UploadersConfig, taskReferenceHelper);
+            uploader = service.CreateUploader(ApplicationState.UploadersConfig, taskReferenceHelper);
 
             if (uploader != null)
             {
                 uploader.Errors.DefaultTitle = string.Format(Strings.WorkerTask_ErrorTitle, service.ServiceName);
-                uploader.BufferSize = (int)Math.Pow(2, Program.Settings.BufferSizePower) * 1024;
+                uploader.BufferSize = (int)Math.Pow(2, ApplicationState.Settings.BufferSizePower) * 1024;
                 uploader.ProgressChanged += uploader_ProgressChanged;
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard) && Info.TaskSettings.AdvancedSettings.EarlyCopyURL)
@@ -992,12 +992,12 @@ namespace ShareX
         {
             URLShortenerService service = UploaderFactory.URLShortenerServices[Info.TaskSettings.URLShortenerDestination];
 
-            if (!service.CheckConfig(Program.UploadersConfig))
+            if (!service.CheckConfig(ApplicationState.UploadersConfig))
             {
                 return GetInvalidConfigResult(service);
             }
 
-            URLShortener urlShortener = service.CreateShortener(Program.UploadersConfig, taskReferenceHelper);
+            URLShortener urlShortener = service.CreateShortener(ApplicationState.UploadersConfig, taskReferenceHelper);
 
             if (urlShortener != null)
             {
@@ -1013,12 +1013,12 @@ namespace ShareX
             {
                 URLSharingService service = UploaderFactory.URLSharingServices[Info.TaskSettings.URLSharingServiceDestination];
 
-                if (!service.CheckConfig(Program.UploadersConfig))
+                if (!service.CheckConfig(ApplicationState.UploadersConfig))
                 {
                     return GetInvalidConfigResult(service);
                 }
 
-                URLSharer urlSharer = service.CreateSharer(Program.UploadersConfig, taskReferenceHelper);
+                URLSharer urlSharer = service.CreateSharer(ApplicationState.UploadersConfig, taskReferenceHelper);
 
                 if (urlSharer != null)
                 {

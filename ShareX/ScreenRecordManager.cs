@@ -158,7 +158,7 @@ namespace ShareX
                     captureRectangle = taskSettings.CaptureSettings.CaptureCustomRegion;
                     break;
                 case ScreenRecordStartMethod.LastRegion:
-                    captureRectangle = Program.Settings.ScreenRecordRegion;
+                    captureRectangle = ApplicationState.Settings.ScreenRecordRegion;
                     break;
             }
 
@@ -175,7 +175,7 @@ namespace ShareX
                 return;
             }
 
-            Program.Settings.ScreenRecordRegion = captureRectangle;
+            ApplicationState.Settings.ScreenRecordRegion = captureRectangle;
 
             IsRecording = true;
 

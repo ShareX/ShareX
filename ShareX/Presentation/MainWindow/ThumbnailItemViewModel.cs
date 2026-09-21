@@ -40,11 +40,11 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     private bool _isCombineTarget;
 
     public WorkerTask Task { get; }
-    public int Width => Math.Max(96, Program.Settings.ThumbnailSize.Width);
-    public int Height => Math.Max(72, Program.Settings.ThumbnailSize.Height);
-    public bool ShowTitle => Program.Settings.ShowThumbnailTitle;
-    public bool ShowTitleAbove => ShowTitle && Program.Settings.ThumbnailTitleLocation == ThumbnailTitleLocation.Top;
-    public bool ShowTitleBelow => ShowTitle && Program.Settings.ThumbnailTitleLocation == ThumbnailTitleLocation.Bottom;
+    public int Width => Math.Max(96, ApplicationState.Settings.ThumbnailSize.Width);
+    public int Height => Math.Max(72, ApplicationState.Settings.ThumbnailSize.Height);
+    public bool ShowTitle => ApplicationState.Settings.ShowThumbnailTitle;
+    public bool ShowTitleAbove => ShowTitle && ApplicationState.Settings.ThumbnailTitleLocation == ThumbnailTitleLocation.Top;
+    public bool ShowTitleBelow => ShowTitle && ApplicationState.Settings.ThumbnailTitleLocation == ThumbnailTitleLocation.Bottom;
 
     public Bitmap? Thumbnail
     {
@@ -77,7 +77,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
             TaskInfo? info = Task.Info;
             string? filePath = info?.FilePath;
 
-            return Program.Settings.ThumbnailClickAction switch
+            return ApplicationState.Settings.ThumbnailClickAction switch
             {
                 ThumbnailViewClickAction.Default => !string.IsNullOrEmpty(filePath) && File.Exists(filePath),
                 ThumbnailViewClickAction.OpenImageViewer => !string.IsNullOrEmpty(filePath) &&
