@@ -31,6 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.build.props = Directory.build.props
 		Directory.build.targets = Directory.build.targets
 		Directory.Packages.props = Directory.Packages.props
+		.github\workflows\pr.yml = .github\workflows\pr.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.ImageEditor", "ShareX.ImageEditor\ShareX.ImageEditor.csproj", "{0156A9D8-E6EC-CE3A-92B7-AE1A23B9FBAE}"

@@ -93,7 +93,7 @@ jobs:
           }
 
       - name: Build
-        run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" -p:Platform="${{ matrix.platform }}" --self-contained true /m:1 "${{ env.SOLUTION_FILE_PATH }}"
+        run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" -p:Platform="${{ matrix.platform }}" --self-contained true /m "${{ env.SOLUTION_FILE_PATH }}"
 
       - name: Download FFmpeg
         run: |
