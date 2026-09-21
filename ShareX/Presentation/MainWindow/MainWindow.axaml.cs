@@ -75,7 +75,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     internal ObservableCollection<ThumbnailItemViewModel> ThumbnailItems { get; } = new();
     internal ObservableCollection<HotkeyTipViewModel> HotkeyTips { get; } = new();
+    public AvaloniaBitmap TitleBarIcon { get; }
     public bool IsEmpty => ThumbnailItems.Count == 0;
+    public bool IsWindowMaximized => WindowState == Avalonia.Controls.WindowState.Maximized;
 
     public MainWindow() : this(MainWindowIntegration.TrayIconService)
     {
@@ -88,10 +90,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         _trayMenuBuilder = new MainMenuBuilder(trayMenu: true);
 
         InitializeComponent();
-        DataContext = this;
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Title = ApplicationInfo.Title;
         Icon = CreateWindowIcon();
+        TitleBarIcon = CreateTitleBarIcon();
+        DataContext = this;
 
         _trayIconService.RightButtonDown += OnTrayIconRightButtonDown;
         _trayIconService.RightButtonUp += OnTrayIconRightButtonUp;
@@ -155,6 +158,23 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public void SetTitle(string title)
     {
         Title = title;
+    }
+
+    private void OnMinimizeClick(object? sender, RoutedEventArgs e)
+    {
+        WindowState = Avalonia.Controls.WindowState.Minimized;
+    }
+
+    private void OnMaximizeRestoreClick(object? sender, RoutedEventArgs e)
+    {
+        WindowState = IsWindowMaximized
+            ? Avalonia.Controls.WindowState.Normal
+            : Avalonia.Controls.WindowState.Maximized;
+    }
+
+    private void OnCloseClick(object? sender, RoutedEventArgs e)
+    {
+        Close();
     }
 
     public void ShowTrayMenu()
@@ -2027,6 +2047,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         _trayIconService.RightButtonDown -= OnTrayIconRightButtonDown;
         _trayIconService.RightButtonUp -= OnTrayIconRightButtonUp;
         _trayIconService.Visible = false;
+        TitleBarIcon.Dispose();
 
         foreach (ThumbnailItemViewModel item in ThumbnailItems)
         {
@@ -2067,10 +2088,31 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private static WindowIcon CreateWindowIcon()
     {
+        using System.Drawing.Icon icon = ShareXResources.Icon;
         using MemoryStream stream = new();
-        ShareXResources.Icon.Save(stream);
+        icon.Save(stream);
         stream.Position = 0;
         return new WindowIcon(stream);
+    }
+
+    private static AvaloniaBitmap CreateTitleBarIcon()
+    {
+        using System.Drawing.Icon icon = ShareXResources.Icon;
+        using DrawingBitmap bitmap = icon.ToBitmap();
+        using MemoryStream stream = new();
+        bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+        stream.Position = 0;
+        return new AvaloniaBitmap(stream);
+    }
+
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+    {
+        base.OnPropertyChanged(change);
+
+        if (change.Property == WindowStateProperty)
+        {
+            OnPropertyChanged(nameof(IsWindowMaximized));
+        }
     }
 
     public new event PropertyChangedEventHandler? PropertyChanged;

@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:chrome="using:Avalonia.Controls.Chrome"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         xmlns:res="using:ShareX.Localization"
         xmlns:local="using:ShareX"
@@ -9,6 +10,9 @@
         Width="900"
         Height="720"
         MinWidth="760"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaTitleBarHeightHint="40"
+        WindowDecorations="BorderOnly"
         WindowStartupLocation="CenterScreen"
         DragDrop.AllowDrop="True"
         DragDrop.DragEnter="OnDragEnter"
@@ -63,9 +67,105 @@
             <Setter Property="CornerRadius" Value="8"/>
             <Setter Property="Padding" Value="18"/>
         </Style>
+        <Style Selector="Button.caption-button">
+            <Setter Property="Width" Value="46"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="MinWidth" Value="0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="0"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Button.caption-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="Button.caption-button:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="Button.caption-close:pointerover">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Button.caption-close:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#C42B1C"/>
+        </Style>
+        <Style Selector="Button.caption-close:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#A51D12"/>
+        </Style>
     </Window.Styles>
 
-    <Grid ColumnDefinitions="Auto,*" Background="{DynamicResource ShareX.Brush.Background.Main}">
+    <Border Background="{DynamicResource ShareX.Brush.Background.Main}"
+            BorderBrush="{DynamicResource ShareX.Brush.Border}"
+            BorderThickness="1">
+        <Grid RowDefinitions="40,*">
+            <Border Grid.Row="0"
+                    Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                    BorderThickness="0,0,0,1"
+                    chrome:WindowDecorationProperties.ElementRole="TitleBar">
+                <Grid ColumnDefinitions="*,Auto">
+                    <StackPanel Margin="14,0,12,0"
+                                Orientation="Horizontal"
+                                Spacing="9"
+                                VerticalAlignment="Center"
+                                IsHitTestVisible="False">
+                        <Image Width="20"
+                               Height="20"
+                               Source="{Binding TitleBarIcon}"
+                               Stretch="Uniform"/>
+                        <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=Window}}"
+                                   Foreground="{DynamicResource ShareX.Brush.Text}"
+                                   FontSize="13"
+                                   FontWeight="SemiBold"
+                                   TextTrimming="CharacterEllipsis"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <Button Classes="caption-button"
+                                AutomationProperties.Name="Minimize"
+                                ToolTip.Tip="Minimize"
+                                Click="OnMinimizeClick"
+                                chrome:WindowDecorationProperties.ElementRole="MinimizeButton">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.minus}"
+                                       FontSize="14"/>
+                        </Button>
+                        <Button Classes="caption-button"
+                                AutomationProperties.Name="Maximize or restore"
+                                ToolTip.Tip="Maximize or restore"
+                                Click="OnMaximizeRestoreClick"
+                                chrome:WindowDecorationProperties.ElementRole="MaximizeButton">
+                            <Grid>
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.square}"
+                                           FontSize="12"
+                                           IsVisible="{Binding !IsWindowMaximized}"/>
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.copy}"
+                                           FontSize="12"
+                                           IsVisible="{Binding IsWindowMaximized}"/>
+                            </Grid>
+                        </Button>
+                        <Button Classes="caption-button caption-close"
+                                AutomationProperties.Name="Close"
+                                ToolTip.Tip="Close"
+                                Click="OnCloseClick"
+                                chrome:WindowDecorationProperties.ElementRole="CloseButton">
+                            <TextBlock Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.x}"
+                                       FontSize="14"/>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" ColumnDefinitions="Auto,*">
         <Border Grid.Column="0"
                 MinWidth="210"
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
@@ -353,5 +453,7 @@
                 </StackPanel>
             </Border>
         </Border>
-    </Grid>
+            </Grid>
+        </Grid>
+    </Border>
 </Window>
