@@ -99,11 +99,14 @@
         </Style>
     </Window.Styles>
 
-    <Border Background="{DynamicResource ShareX.Brush.Background.Main}"
+    <Border x:Name="WindowFrame"
+            Background="{DynamicResource ShareX.Brush.Background.Main}"
             BorderBrush="{DynamicResource ShareX.Brush.Border}"
             BorderThickness="1">
-        <Grid RowDefinitions="38,*">
-            <Border Grid.Row="0"
+        <Grid RowDefinitions="Auto,*">
+            <Border x:Name="TitleBar"
+                    Grid.Row="0"
+                    Height="38"
                     Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                     BorderBrush="{DynamicResource ShareX.Brush.Separator}"
                     BorderThickness="0,0,0,1"
@@ -175,7 +178,7 @@
                           HorizontalScrollBarVisibility="Disabled"
                           HorizontalContentAlignment="Stretch">
                 <StackPanel x:Name="NavigationPanel"
-                            Margin="6,5,6,8"
+                            Margin="6,6,6,0"
                             Spacing="0"
                             HorizontalAlignment="Stretch"/>
             </ScrollViewer>

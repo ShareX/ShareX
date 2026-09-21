@@ -331,20 +331,26 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void ConfigureWindowHeightFromNavigation()
     {
-        NavigationPanel.Measure(new Avalonia.Size(double.PositiveInfinity, double.PositiveInfinity));
-        double navigationHeight = Math.Ceiling(NavigationPanel.DesiredSize.Height);
+        Avalonia.Size availableSize = new(double.PositiveInfinity, double.PositiveInfinity);
+        NavigationPanel.Measure(availableSize);
+        TitleBar.Measure(availableSize);
 
-        if (navigationHeight <= 0 || double.IsNaN(navigationHeight) || double.IsInfinity(navigationHeight))
+        double navigationHeight = Math.Ceiling(NavigationPanel.DesiredSize.Height);
+        double titleBarHeight = Math.Ceiling(TitleBar.DesiredSize.Height);
+        double frameHeight = WindowFrame.BorderThickness.Top + WindowFrame.BorderThickness.Bottom;
+        double windowHeight = navigationHeight + titleBarHeight + frameHeight;
+
+        if (windowHeight <= 0 || double.IsNaN(windowHeight) || double.IsInfinity(windowHeight))
         {
             return;
         }
 
-        MinHeight = navigationHeight;
+        MinHeight = windowHeight;
 
         DrawingSize savedSize = ApplicationState.Settings.MainFormSize;
         if (!ApplicationState.Settings.RememberMainFormSize || savedSize.IsEmpty)
         {
-            Height = navigationHeight;
+            Height = windowHeight;
         }
     }
 
