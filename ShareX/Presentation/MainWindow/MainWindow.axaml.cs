@@ -163,6 +163,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void OnTopmostClick(object? sender, RoutedEventArgs e)
     {
         Topmost = !Topmost;
+        TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted);
     }
 
     private void OnMinimizeClick(object? sender, RoutedEventArgs e)
