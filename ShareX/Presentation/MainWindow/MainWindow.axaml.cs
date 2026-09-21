@@ -160,6 +160,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         Title = title;
     }
 
+    private void OnTopmostClick(object? sender, RoutedEventArgs e)
+    {
+        Topmost = !Topmost;
+    }
+
     private void OnMinimizeClick(object? sender, RoutedEventArgs e)
     {
         WindowState = Avalonia.Controls.WindowState.Minimized;

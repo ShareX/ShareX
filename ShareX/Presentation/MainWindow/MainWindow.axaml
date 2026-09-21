@@ -137,6 +137,21 @@
 
                     <StackPanel Grid.Column="1" Orientation="Horizontal">
                         <Button Classes="caption-button"
+                                AutomationProperties.Name="Always on top"
+                                Click="OnTopmostClick"
+                                chrome:WindowDecorationProperties.ElementRole="User">
+                            <Grid>
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.pin}"
+                                           FontSize="13"
+                                           IsVisible="{Binding !Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                                <TextBlock Classes="icon"
+                                           Text="{x:Static theming:LucideIcons.pin_off}"
+                                           FontSize="13"
+                                           IsVisible="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                            </Grid>
+                        </Button>
+                        <Button Classes="caption-button"
                                 AutomationProperties.Name="Minimize"
                                 Click="OnMinimizeClick"
                                 chrome:WindowDecorationProperties.ElementRole="MinimizeButton">
