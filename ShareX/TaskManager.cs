@@ -54,7 +54,6 @@ namespace ShareX
             if (task != null)
             {
                 Tasks.Add(task);
-                UpdateMainFormTip();
 
                 if (task.Status != TaskStatus.History)
                 {
@@ -83,7 +82,6 @@ namespace ShareX
             {
                 task.Stop();
                 Tasks.Remove(task);
-                UpdateMainFormTip();
 
                 TaskRemoved?.Invoke(task);
                 TaskCollectionChanged?.Invoke();
@@ -123,11 +121,6 @@ namespace ShareX
             {
                 if (task != null) task.Stop();
             }
-        }
-
-        public static void UpdateMainFormTip()
-        {
-            TaskCollectionChanged?.Invoke();
         }
 
         private static void Task_StatusChanged(WorkerTask task)

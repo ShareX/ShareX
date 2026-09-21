@@ -14,12 +14,7 @@
 
 #nullable enable
 
-using Avalonia.Styling;
-using Avalonia.Threading;
-using ShareX.AvaloniaUI.Integration;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
@@ -28,154 +23,40 @@ using System.Windows.Forms;
 namespace ShareX;
 
 /// <summary>
-/// Hidden WinForms host for global hotkeys and the tray icon.
-/// Avalonia owns the application lifetime, message loop, and visible windows.
+/// Hidden WinForms host for global hotkeys and the notification-area icon.
+/// Avalonia owns the application lifetime and all visible windows.
 /// </summary>
-public sealed class MainForm : HotkeyForm
+internal sealed class MainForm : HotkeyForm
 {
-    private bool _forceClose;
-    private bool _isClosing;
-
-    public bool IsReady { get; private set; }
-    internal bool IsClosing => _isClosing;
     internal ITrayIconService TrayIconService { get; }
 
     public MainForm()
     {
         ShowInTaskbar = false;
-        FormBorderStyle = FormBorderStyle.FixedToolWindow;
-        Text = Program.Title;
+
         ShareXResources.UseWhiteIcon = Program.Settings.UseWhiteShareXIcon;
-        Icon = ShareXResources.Icon;
-        TrayIconService = new WinFormsTrayIconService(Icon, Program.TitleShort, Program.Settings.ShowTray);
-
-        FormClosed += MainForm_FormClosed;
-        ThemeManager.ThemeChanged += ThemeManager_ThemeChanged;
+        using Icon icon = ShareXResources.Icon;
+        TrayIconService = new WinFormsTrayIconService(icon, Program.TitleShort, Program.Settings.ShowTray);
     }
 
-    internal async Task InitializeAsync()
-    {
-        Show();
+    internal void Initialize() => Show();
 
-        RunPuushTasks();
-        NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.IsDarkTheme);
-
-        await UpdateControls();
-
-        bool showMainWindow = !(Program.SilentRun || Program.Settings.SilentRun) || !Program.Settings.ShowTray;
-        MainWindowIntegration.Initialize(TrayIconService, showMainWindow);
-
-        ShareX.Tools.MouseHighlighterManager.ActivateOnStartup(Program.DefaultTaskSettings.ToolsSettings.MouseHighlighterOptions);
-
-        if (showMainWindow)
-        {
-            MainWindowIntegration.Activate();
-        }
-
-        DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
-
-        await Program.CLI.UseCommandLineArgs();
-
-        if (Program.Settings.ActionsToolbarRunAtStartup)
-        {
-            TaskHelpers.OpenActionsToolbar();
-        }
-    }
-
-    public async Task UpdateControls()
-    {
-        IsReady = false;
-
-        TaskManager.UpdateMainFormTip();
-        TaskManager.RecentManager.InitItems();
-        TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
-
-        ApplyApplicationSettings();
-        await InitHotkeys();
-
-        IsReady = true;
-        MainWindowIntegration.RefreshMenus();
-    }
-
-    internal void ApplyApplicationSettings()
+    internal void ApplySettings()
     {
         HotkeyRepeatLimit = Program.Settings.HotkeyRepeatLimit;
-
-        HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
-        HelpersOptions.URLEncodeIgnoreEmoji = Program.Settings.URLEncodeIgnoreEmoji;
-        HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
-        HelpersOptions.UseAlternativeClipboardCopyImage = Program.Settings.UseAlternativeClipboardCopyImage;
-        HelpersOptions.UseAlternativeClipboardGetImage = Program.Settings.UseAlternativeClipboardGetImage;
-        HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
-        HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
-        HelpersOptions.RecentColors = Program.Settings.RecentColors;
-        HelpersOptions.DevMode = Program.Settings.DevMode;
-        Program.UpdateHelpersSpecialFolders();
-
-        TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
-
-        ShareXResources.UseWhiteIcon = Program.Settings.UseWhiteShareXIcon;
-        Icon = ShareXResources.Icon;
-        Text = Program.Title;
+        UpdateTrayIcon();
         TrayIconService.ToolTipText = Program.TitleShort;
         TrayIconService.Visible = Program.Settings.ShowTray;
-
-        UpdateTheme();
-        ConfigureAutoUpdate();
-
-        MainWindowIntegration.SetTitle(Program.Title);
-        MainWindowIntegration.SetTrayVisible(Program.Settings.ShowTray);
-        MainWindowIntegration.RefreshMenus();
     }
 
-    public void UpdateTheme()
+    internal void UpdateTrayIcon()
     {
-        bool isDarkTheme = ThemeManager.IsDarkTheme;
-
-        if (ShareXResources.IsDarkTheme != isDarkTheme)
-        {
-            ShareXResources.Theme = isDarkTheme ? ShareXTheme.DarkTheme : ShareXTheme.LightTheme;
-        }
-
-        if (IsHandleCreated)
-        {
-            NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.IsDarkTheme);
-        }
-
-#pragma warning disable WFO5001
-        Application.SetColorMode(ShareXResources.IsDarkTheme ? SystemColorMode.Dark : SystemColorMode.Classic);
-#pragma warning restore WFO5001
-
-        using Icon trayIcon = ShareXResources.Icon;
-        TrayIconService.SetIcon(trayIcon);
-        MainWindowIntegration.RefreshMenus();
+        ShareXResources.UseWhiteIcon = Program.Settings.UseWhiteShareXIcon;
+        using Icon icon = ShareXResources.Icon;
+        TrayIconService.SetIcon(icon);
     }
 
-    private void ThemeManager_ThemeChanged(object? sender, ThemeVariant theme)
-    {
-        if (IsDisposed)
-        {
-            return;
-        }
-
-        if (Dispatcher.UIThread.CheckAccess())
-        {
-            UpdateTheme();
-        }
-        else
-        {
-            Dispatcher.UIThread.Post(UpdateTheme);
-        }
-    }
-
-    private void ConfigureAutoUpdate()
-    {
-        Program.UpdateManager.AllowAutoUpdate = !SystemOptions.DisableUpdateCheck && Program.Settings.AutoCheckUpdate;
-        Program.UpdateManager.UpdateChannel = Program.Settings.UpdateChannel;
-        Program.UpdateManager.ConfigureAutoUpdate();
-    }
-
-    private async Task InitHotkeys()
+    internal async Task UpdateHotkeysAsync()
     {
         await Task.Run(SettingManager.WaitHotkeysConfig);
 
@@ -187,12 +68,6 @@ public sealed class MainForm : HotkeyForm
 
         Program.HotkeyManager.UpdateHotkeys(Program.HotkeysConfig.Hotkeys, !Program.IgnoreHotkeyWarning);
         DebugHelper.WriteLine("HotkeyManager started.");
-
-        Program.WatchFolderManager ??= new WatchFolderManager();
-        Program.WatchFolderManager.UpdateWatchFolders();
-        DebugHelper.WriteLine("WatchFolderManager started.");
-
-        MainWindowIntegration.RefreshMenus();
     }
 
     private async void HandleHotkeys(HotkeySettings hotkeySetting)
@@ -201,38 +76,7 @@ public sealed class MainForm : HotkeyForm
         await TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
     }
 
-    private static void RunPuushTasks()
-    {
-        if (!Program.PuushMode || !Program.Settings.IsFirstTimeRun)
-        {
-            return;
-        }
-
-        string? puushApiKey = PuushLoginWindowIntegration.Show();
-        if (string.IsNullOrEmpty(puushApiKey))
-        {
-            return;
-        }
-
-        Program.DefaultTaskSettings.ImageDestination = ImageDestination.FileUploader;
-        Program.DefaultTaskSettings.ImageFileDestination = FileDestination.Puush;
-        Program.DefaultTaskSettings.TextDestination = TextDestination.FileUploader;
-        Program.DefaultTaskSettings.TextFileDestination = FileDestination.Puush;
-        Program.DefaultTaskSettings.FileDestination = FileDestination.Puush;
-
-        SettingManager.WaitUploadersConfig();
-        if (Program.UploadersConfig != null)
-        {
-            Program.UploadersConfig.PuushAPIKey = puushApiKey;
-        }
-    }
-
-    internal void ExitApplication()
-    {
-        _forceClose = true;
-        MainWindowIntegration.Close();
-        Close();
-    }
+    internal void ExitApplication() => Close();
 
     protected override void WndProc(ref Message m)
     {
@@ -271,30 +115,10 @@ public sealed class MainForm : HotkeyForm
         base.SetVisibleCore(false);
     }
 
-    protected override void OnFormClosing(FormClosingEventArgs e)
+    protected override void OnFormClosed(FormClosedEventArgs e)
     {
-        if (e.CloseReason == CloseReason.UserClosing && Program.Settings.ShowTray && !_forceClose)
-        {
-            e.Cancel = true;
-            MainWindowIntegration.Hide();
-            SettingManager.SaveAllSettingsAsync();
-        }
-
-        base.OnFormClosing(e);
-
-        if (!e.Cancel)
-        {
-            _isClosing = true;
-        }
-    }
-
-    private void MainForm_FormClosed(object? sender, FormClosedEventArgs e)
-    {
-        ShareX.Tools.MouseHighlighterManager.Shutdown();
-        ThemeManager.ThemeChanged -= ThemeManager_ThemeChanged;
-        MainWindowIntegration.Close();
+        base.OnFormClosed(e);
         TrayIconService.Dispose();
-        TaskManager.StopAllTasks();
-        AvaloniaBootstrapper.Shutdown();
+        Program.OnMainFormClosed();
     }
 }

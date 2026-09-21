@@ -134,12 +134,13 @@ namespace ShareX
         internal static HotkeysConfig HotkeysConfig { get; set; }
         internal static HistoryManagerSQLite HistoryManager { get; set; }
 
-        internal static MainForm MainForm { get; private set; }
         internal static Stopwatch StartTimer { get; private set; }
         internal static HotkeyManager HotkeyManager { get; set; }
         internal static WatchFolderManager WatchFolderManager { get; set; }
         internal static ShareXUpdateManager UpdateManager { get; private set; }
         internal static ShareXCLIManager CLI { get; private set; }
+
+        private static MainForm hotkeyForm;
 
         #region Paths
 
@@ -269,9 +270,10 @@ namespace ShareX
 
         #endregion Paths
 
-        private static bool closeSequenceStarted, restartRequested, restartAsAdmin;
+        private static volatile bool applicationReady;
+        private static bool closeSequenceStarted, exitStarted, restartRequested, restartAsAdmin;
 
-        internal static bool IsClosing => closeSequenceStarted || MainForm?.IsClosing == true;
+        internal static bool IsClosing => closeSequenceStarted || exitStarted;
 
         [STAThread]
         private static void Main(string[] args)
@@ -366,18 +368,121 @@ namespace ShareX
                 DebugHelper.WriteLine("Start screen closed.");
             }
 
-            DebugHelper.WriteLine("MainForm host init started.");
-            MainForm = new MainForm();
-            await MainForm.InitializeAsync();
-            DebugHelper.WriteLine("MainForm host init finished.");
+            DebugHelper.WriteLine("Hotkey host init started.");
+            hotkeyForm = new MainForm();
+            hotkeyForm.Initialize();
+
+            RunPuushTasks();
+            await UpdateApplicationAsync();
+
+            bool showMainWindow = !(SilentRun || Settings.SilentRun) || !Settings.ShowTray;
+            MainWindowIntegration.Initialize(hotkeyForm.TrayIconService, showMainWindow);
+
+            ShareX.Tools.MouseHighlighterManager.ActivateOnStartup(DefaultTaskSettings.ToolsSettings.MouseHighlighterOptions);
+
+            if (showMainWindow)
+            {
+                MainWindowIntegration.Activate();
+            }
+
+            DebugHelper.WriteLine("Startup time: {0} ms", StartTimer.ElapsedMilliseconds);
+
+            await CLI.UseCommandLineArgs();
+
+            if (Settings.ActionsToolbarRunAtStartup)
+            {
+                TaskHelpers.OpenActionsToolbar();
+            }
+
+            DebugHelper.WriteLine("Hotkey host init finished.");
         }
 
         private static void StopApplication()
         {
-            if (MainForm is { IsDisposed: false })
+            if (hotkeyForm is { IsDisposed: false })
             {
-                MainForm.ExitApplication();
+                hotkeyForm.ExitApplication();
             }
+        }
+
+        internal static async Task UpdateApplicationAsync()
+        {
+            applicationReady = false;
+
+            TaskManager.RecentManager.InitItems();
+            TaskbarManager.Enabled = Settings.TaskbarProgressEnabled;
+
+            ApplyApplicationSettings();
+            await hotkeyForm.UpdateHotkeysAsync();
+
+            WatchFolderManager ??= new WatchFolderManager();
+            WatchFolderManager.UpdateWatchFolders();
+            DebugHelper.WriteLine("WatchFolderManager started.");
+
+            MainWindowIntegration.RefreshMenus();
+            applicationReady = true;
+        }
+
+        internal static void ApplyApplicationSettings()
+        {
+            HelpersOptions.CurrentProxy = Settings.ProxySettings;
+            HelpersOptions.URLEncodeIgnoreEmoji = Settings.URLEncodeIgnoreEmoji;
+            HelpersOptions.DefaultCopyImageFillBackground = Settings.DefaultClipboardCopyImageFillBackground;
+            HelpersOptions.UseAlternativeClipboardCopyImage = Settings.UseAlternativeClipboardCopyImage;
+            HelpersOptions.UseAlternativeClipboardGetImage = Settings.UseAlternativeClipboardGetImage;
+            HelpersOptions.RotateImageByExifOrientationData = Settings.RotateImageByExifOrientationData;
+            HelpersOptions.BrowserPath = Settings.BrowserPath;
+            HelpersOptions.RecentColors = Settings.RecentColors;
+            HelpersOptions.DevMode = Settings.DevMode;
+            UpdateHelpersSpecialFolders();
+
+            TaskManager.RecentManager.MaxCount = Settings.RecentTasksMaxCount;
+            hotkeyForm?.ApplySettings();
+
+            UpdateManager.AllowAutoUpdate = !SystemOptions.DisableUpdateCheck && Settings.AutoCheckUpdate;
+            UpdateManager.UpdateChannel = Settings.UpdateChannel;
+            UpdateManager.ConfigureAutoUpdate();
+
+            MainWindowIntegration.SetTitle(Title);
+            MainWindowIntegration.SetTrayVisible(Settings.ShowTray);
+            MainWindowIntegration.RefreshMenus();
+        }
+
+        internal static void UpdateTrayIcon() => hotkeyForm?.UpdateTrayIcon();
+
+        private static void RunPuushTasks()
+        {
+            if (!PuushMode || !Settings.IsFirstTimeRun)
+            {
+                return;
+            }
+
+            string puushApiKey = PuushLoginWindowIntegration.Show();
+            if (string.IsNullOrEmpty(puushApiKey))
+            {
+                return;
+            }
+
+            DefaultTaskSettings.ImageDestination = ImageDestination.FileUploader;
+            DefaultTaskSettings.ImageFileDestination = FileDestination.Puush;
+            DefaultTaskSettings.TextDestination = TextDestination.FileUploader;
+            DefaultTaskSettings.TextFileDestination = FileDestination.Puush;
+            DefaultTaskSettings.FileDestination = FileDestination.Puush;
+
+            SettingManager.WaitUploadersConfig();
+            if (UploadersConfig != null)
+            {
+                UploadersConfig.PuushAPIKey = puushApiKey;
+            }
+        }
+
+        internal static void OnMainFormClosed()
+        {
+            exitStarted = true;
+            ShareX.Tools.MouseHighlighterManager.Shutdown();
+            MainWindowIntegration.Close();
+            TaskManager.StopAllTasks();
+            AvaloniaBootstrapper.Shutdown();
         }
 
         public static void CloseSequence()
@@ -430,9 +535,11 @@ namespace ShareX
         {
             void ExitCore()
             {
-                if (MainForm is { IsDisposed: false } mainForm)
+                exitStarted = true;
+
+                if (hotkeyForm is { IsDisposed: false })
                 {
-                    mainForm.ExitApplication();
+                    hotkeyForm.ExitApplication();
                 }
                 else
                 {
@@ -502,7 +609,7 @@ namespace ShareX
 
             while (timer.ElapsedMilliseconds < wait)
             {
-                if (MainForm != null && MainForm.IsReady) return true;
+                if (applicationReady) return true;
 
                 Thread.Sleep(10);
             }

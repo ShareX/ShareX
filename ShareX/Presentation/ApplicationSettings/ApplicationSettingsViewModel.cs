@@ -216,7 +216,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         {
             if (SetSetting(Settings.UseWhiteShareXIcon, value, x => Settings.UseWhiteShareXIcon = x))
             {
-                InvokeOnMainThread(Program.MainForm.UpdateTheme);
+                InvokeOnMainThread(Program.UpdateTrayIcon);
             }
         }
     }
@@ -765,7 +765,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             {
                 LanguageHelper.ChangeLanguage(Settings.Language);
                 Reload();
-                await UpdateMainFormAsync();
+                await UpdateApplicationAsync();
                 StatusMessage = string.Format(Strings.ApplicationSettingsWindow_BackupImportedFrom, path);
             }
             else
@@ -808,7 +808,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             });
             LanguageHelper.ChangeLanguage(Settings.Language);
             Reload();
-            await UpdateMainFormAsync();
+            await UpdateApplicationAsync();
             StatusMessage = Strings.ApplicationSettingsWindow_SettingsReset;
         }
         catch (Exception e)
@@ -1019,9 +1019,9 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
     }
 
-    private async Task UpdateMainFormAsync()
+    private async Task UpdateApplicationAsync()
     {
-        Task updateTask = InvokeOnMainThread(() => Program.MainForm.UpdateControls());
+        Task updateTask = InvokeOnMainThread(Program.UpdateApplicationAsync);
         await updateTask;
     }
 
@@ -1111,7 +1111,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         if (!Program.IsClosing)
         {
             FlushPersonalPath();
-            InvokeOnMainThread(Program.MainForm.ApplyApplicationSettings);
+            InvokeOnMainThread(Program.ApplyApplicationSettings);
             SettingManager.SaveApplicationConfigAsync();
         }
     }
