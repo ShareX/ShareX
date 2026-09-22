@@ -22,7 +22,8 @@ public enum RemoteStorageProviderCapabilities
     Upload = 2,
     Rename = 4,
     Delete = 8,
-    Url = 16
+    Url = 16,
+    CreateFolder = 32
 }
 
 public sealed class RemoteStorageItem
@@ -56,6 +57,7 @@ public interface IRemoteStorageProvider
     Task<IReadOnlyList<RemoteStorageItem>> GetItemsAsync(string path, CancellationToken cancellationToken = default);
     Task DownloadAsync(RemoteStorageItem item, Stream destination, CancellationToken cancellationToken = default);
     Task UploadAsync(string directoryPath, string fileName, Stream source, CancellationToken cancellationToken = default);
+    Task CreateFolderAsync(string directoryPath, string folderName, CancellationToken cancellationToken = default);
     Task RenameAsync(RemoteStorageItem item, string newName, CancellationToken cancellationToken = default);
     Task DeleteAsync(RemoteStorageItem item, CancellationToken cancellationToken = default);
     string? GetUrl(RemoteStorageItem item);

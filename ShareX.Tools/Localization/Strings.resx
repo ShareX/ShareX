@@ -2080,6 +2080,12 @@
   <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
     <value>Upload...</value>
   </data>
+  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
+    <value>Create folder...</value>
+  </data>
+  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
+    <value>New folder</value>
+  </data>
   <data name="RemoteStorageBrowser_Location" xml:space="preserve">
     <value>Location:</value>
   </data>
@@ -2096,16 +2102,16 @@
     <value>Download...</value>
   </data>
   <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
-    <value>Rename</value>
+    <value>Rename...</value>
   </data>
   <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Delete...</value>
   </data>
   <data name="RemoteStorageBrowser_View" xml:space="preserve">
     <value>View</value>
   </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
-    <value>Open URL</value>
+    <value>Open URL...</value>
   </data>
   <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
     <value>Copy URL</value>
@@ -2133,6 +2139,9 @@
   </data>
   <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
     <value>Uploaded {0} file(s).</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
+    <value>Created folder “{0}”.</value>
   </data>
   <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
     <value>An item named “{0}” already exists in this folder.</value>

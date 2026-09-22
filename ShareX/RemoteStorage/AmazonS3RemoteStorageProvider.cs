@@ -37,6 +37,7 @@ internal sealed class AmazonS3RemoteStorageProvider : IRemoteStorageProvider
     public RemoteStorageProviderCapabilities Capabilities =>
         RemoteStorageProviderCapabilities.Download |
         (_allowUpload ? RemoteStorageProviderCapabilities.Upload : RemoteStorageProviderCapabilities.None) |
+        RemoteStorageProviderCapabilities.CreateFolder |
         RemoteStorageProviderCapabilities.Rename |
         RemoteStorageProviderCapabilities.Delete |
         RemoteStorageProviderCapabilities.Url;
@@ -138,6 +139,19 @@ internal sealed class AmazonS3RemoteStorageProvider : IRemoteStorageProvider
         if (!await _client.UploadObjectAsync(source, objectKey, cancellationToken))
         {
             throw CreateOperationException("Uploading the object");
+        }
+    }
+
+    public async Task CreateFolderAsync(string directoryPath, string folderName,
+        CancellationToken cancellationToken = default)
+    {
+        ValidateName(folderName);
+        string objectKey = NormalizeDirectoryPath(directoryPath) + folderName + "/";
+        using MemoryStream stream = new();
+
+        if (!await _client.UploadObjectAsync(stream, objectKey, cancellationToken))
+        {
+            throw CreateOperationException("Creating the folder");
         }
     }
 

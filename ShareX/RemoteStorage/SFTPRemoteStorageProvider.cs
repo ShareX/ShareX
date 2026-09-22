@@ -38,6 +38,7 @@ internal sealed class SFTPRemoteStorageProvider : IRemoteStorageProvider, IDispo
     public RemoteStorageProviderCapabilities Capabilities =>
         RemoteStorageProviderCapabilities.Download |
         (_allowUpload ? RemoteStorageProviderCapabilities.Upload : RemoteStorageProviderCapabilities.None) |
+        RemoteStorageProviderCapabilities.CreateFolder |
         RemoteStorageProviderCapabilities.Rename |
         RemoteStorageProviderCapabilities.Delete |
         RemoteStorageProviderCapabilities.Url;
@@ -116,6 +117,14 @@ internal sealed class SFTPRemoteStorageProvider : IRemoteStorageProvider, IDispo
         ValidateName(fileName);
         string remotePath = CombinePath(NormalizePath(directoryPath), fileName);
         await _client.UploadFileAsync(source, ToRemotePath(remotePath), cancellationToken);
+    }
+
+    public async Task CreateFolderAsync(string directoryPath, string folderName,
+        CancellationToken cancellationToken = default)
+    {
+        ValidateName(folderName);
+        string remotePath = CombinePath(NormalizePath(directoryPath), folderName);
+        await _client.CreateDirectoryAsync(ToRemotePath(remotePath), cancellationToken);
     }
 
     public async Task RenameAsync(RemoteStorageItem item, string newName,

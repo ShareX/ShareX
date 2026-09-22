@@ -87,6 +87,20 @@ public partial class RemoteStorageBrowserWindow : Window
         await _viewModel.UploadAsync(sources);
     }
 
+    private async void OnCreateFolderClick(object? sender, RoutedEventArgs e)
+    {
+        string dialogTitle = Localization.Strings.RemoteStorageBrowser_CreateFolder.TrimEnd('.', '…');
+        string? folderName = InputBoxWindowIntegration.Show(
+            dialogTitle,
+            Localization.Strings.RemoteStorageBrowser_NewFolder,
+            dialogTitle,
+            Localization.Strings.RemoteStorageBrowser_Cancel);
+        if (folderName != null)
+        {
+            await _viewModel.CreateFolderAsync(folderName.Trim());
+        }
+    }
+
     private async void OnDownloadClick(object? sender, RoutedEventArgs e) => await DownloadSelectedAsync();
 
     private async Task DownloadSelectedAsync()
@@ -137,10 +151,11 @@ public partial class RemoteStorageBrowserWindow : Window
             return;
         }
 
+        string dialogTitle = Localization.Strings.RemoteStorageBrowser_Rename.TrimEnd('.', '…');
         string? newName = InputBoxWindowIntegration.Show(
-            Localization.Strings.RemoteStorageBrowser_Rename,
+            dialogTitle,
             item.Name,
-            Localization.Strings.RemoteStorageBrowser_Rename,
+            dialogTitle,
             Localization.Strings.RemoteStorageBrowser_Cancel);
         if (newName != null)
         {
@@ -159,7 +174,8 @@ public partial class RemoteStorageBrowserWindow : Window
         string prompt = item.IsFolder
             ? string.Format(Localization.Strings.RemoteStorageBrowser_DeleteFolderConfirmation, item.Name)
             : string.Format(Localization.Strings.RemoteStorageBrowser_DeleteFileConfirmation, item.Name);
-        if (MessageBox.Show(this, prompt, Localization.Strings.RemoteStorageBrowser_Delete,
+        string dialogTitle = Localization.Strings.RemoteStorageBrowser_Delete.TrimEnd('.', '…');
+        if (MessageBox.Show(this, prompt, dialogTitle,
             MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
         {
             await _viewModel.DeleteAsync(item);
@@ -252,21 +268,23 @@ public partial class RemoteStorageBrowserWindow : Window
 
         MenuItem[] menuItems = contextMenu.Items.OfType<MenuItem>().ToArray();
         Separator[] separators = contextMenu.Items.OfType<Separator>().ToArray();
-        if (menuItems.Length < 7 || separators.Length < 2)
+        if (menuItems.Length < 8 || separators.Length < 2)
         {
             return;
         }
 
         MenuItem downloadMenuItem = menuItems[0];
         MenuItem uploadMenuItem = menuItems[1];
-        MenuItem renameMenuItem = menuItems[2];
-        MenuItem deleteMenuItem = menuItems[3];
-        MenuItem viewMenuItem = menuItems[4];
-        MenuItem openUrlMenuItem = menuItems[5];
-        MenuItem copyUrlMenuItem = menuItems[6];
+        MenuItem createFolderMenuItem = menuItems[2];
+        MenuItem renameMenuItem = menuItems[3];
+        MenuItem deleteMenuItem = menuItems[4];
+        MenuItem viewMenuItem = menuItems[5];
+        MenuItem openUrlMenuItem = menuItems[6];
+        MenuItem copyUrlMenuItem = menuItems[7];
 
         downloadMenuItem.IsVisible = _viewModel.CanDownload;
         uploadMenuItem.IsVisible = _viewModel.CanUpload;
+        createFolderMenuItem.IsVisible = _viewModel.CanCreateFolder;
         renameMenuItem.IsVisible = _viewModel.CanRename;
         deleteMenuItem.IsVisible = _viewModel.CanDelete;
         separators[0].IsVisible = renameMenuItem.IsVisible || deleteMenuItem.IsVisible;
@@ -298,6 +316,8 @@ public partial class RemoteStorageBrowserWindow : Window
         public Task DownloadAsync(RemoteStorageItem item, Stream destination,
             CancellationToken cancellationToken = default) => Task.CompletedTask;
         public Task UploadAsync(string directoryPath, string fileName, Stream source,
+            CancellationToken cancellationToken = default) => Task.CompletedTask;
+        public Task CreateFolderAsync(string directoryPath, string folderName,
             CancellationToken cancellationToken = default) => Task.CompletedTask;
         public Task RenameAsync(RemoteStorageItem item, string newName,
             CancellationToken cancellationToken = default) => Task.CompletedTask;

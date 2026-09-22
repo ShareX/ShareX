@@ -44,7 +44,7 @@
                 BorderThickness="0,0,0,1"
                 Padding="12">
             <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
-                <Grid Grid.Row="0" ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="8">
+                <Grid Grid.Row="0" ColumnDefinitions="Auto,*,Auto,Auto,Auto,Auto" ColumnSpacing="8">
                     <TextBlock Grid.Column="0"
                                Text="{x:Static localization:Strings.RemoteStorageBrowser_Provider}"
                                VerticalAlignment="Center"
@@ -81,6 +81,17 @@
                                    FontWeight="Normal"/>
                     </Button>
                     <Button Grid.Column="4"
+                            Classes="toolbar-button auto-width"
+                            IsEnabled="{Binding CanCreateFolder}"
+                            Click="OnCreateFolderClick">
+                        <StackPanel Orientation="Horizontal" Spacing="7">
+                            <TextBlock Text="{x:Static theming:LucideIcons.folder_plus}"
+                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                       FontWeight="Normal"/>
+                            <TextBlock Text="{x:Static localization:Strings.RemoteStorageBrowser_CreateFolder}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Column="5"
                             Classes="toolbar-button auto-width"
                             IsEnabled="{Binding CanUpload}"
                             Click="OnUploadClick">
@@ -139,6 +150,8 @@
                                           Click="OnDownloadClick"/>
                                 <MenuItem Header="{x:Static localization:Strings.RemoteStorageBrowser_Upload}"
                                           Click="OnUploadClick"/>
+                                <MenuItem Header="{x:Static localization:Strings.RemoteStorageBrowser_CreateFolder}"
+                                          Click="OnCreateFolderClick"/>
                                 <Separator/>
                                 <MenuItem Header="{x:Static localization:Strings.RemoteStorageBrowser_Rename}"
                                           Click="OnRenameClick"/>

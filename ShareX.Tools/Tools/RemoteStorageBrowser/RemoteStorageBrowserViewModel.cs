@@ -59,6 +59,7 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(CanGoUp))]
     [NotifyPropertyChangedFor(nameof(CanUpload))]
+    [NotifyPropertyChangedFor(nameof(CanCreateFolder))]
     [NotifyPropertyChangedFor(nameof(CanDownload))]
     [NotifyPropertyChangedFor(nameof(CanRename))]
     [NotifyPropertyChangedFor(nameof(CanDelete))]
@@ -86,6 +87,7 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
     [NotifyPropertyChangedFor(nameof(IsEmpty))]
     [NotifyPropertyChangedFor(nameof(CanGoUp))]
     [NotifyPropertyChangedFor(nameof(CanUpload))]
+    [NotifyPropertyChangedFor(nameof(CanCreateFolder))]
     [NotifyPropertyChangedFor(nameof(CanDownload))]
     [NotifyPropertyChangedFor(nameof(CanRename))]
     [NotifyPropertyChangedFor(nameof(CanDelete))]
@@ -104,6 +106,7 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
     public bool HasSelection => SelectedItem != null;
     public bool CanGoUp => !IsBusy && SelectedProvider.GetParentPath(CurrentPath) != null;
     public bool CanUpload => !IsBusy && HasCapability(RemoteStorageProviderCapabilities.Upload);
+    public bool CanCreateFolder => !IsBusy && HasCapability(RemoteStorageProviderCapabilities.CreateFolder);
     public bool CanDownload => !IsBusy && SelectedItem is { IsFolder: false } &&
         HasCapability(RemoteStorageProviderCapabilities.Download);
     public bool CanRename => !IsBusy && HasSelection && HasCapability(RemoteStorageProviderCapabilities.Rename);
@@ -202,6 +205,28 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
         }, string.Format(Localization.Strings.RemoteStorageBrowser_UploadedFiles, sources.Count));
 
         if (success)
+        {
+            await BrowseAsync(targetPath);
+        }
+    }
+
+    public async Task CreateFolderAsync(string folderName)
+    {
+        if (string.IsNullOrWhiteSpace(folderName))
+        {
+            return;
+        }
+
+        if (Items.Any(x => x.Name.Equals(folderName, StringComparison.Ordinal)))
+        {
+            ShowErrorRequested?.Invoke(string.Format(Localization.Strings.RemoteStorageBrowser_NameAlreadyExists, folderName));
+            return;
+        }
+
+        string targetPath = CurrentPath;
+        if (await RunOperationAsync(
+            cancellationToken => SelectedProvider.CreateFolderAsync(targetPath, folderName, cancellationToken),
+            string.Format(Localization.Strings.RemoteStorageBrowser_CreatedFolder, folderName)))
         {
             await BrowseAsync(targetPath);
         }

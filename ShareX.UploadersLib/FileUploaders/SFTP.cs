@@ -150,6 +150,13 @@ namespace ShareX.UploadersLib.FileUploaders
                 cancellationToken);
         }
 
+        public async Task CreateDirectoryAsync(string remotePath,
+            CancellationToken cancellationToken = default)
+        {
+            await EnsureConnectedAsync(cancellationToken);
+            await client.CreateDirectoryAsync(remotePath, cancellationToken);
+        }
+
         public async Task RenameAsync(string sourcePath, string destinationPath,
             CancellationToken cancellationToken = default)
         {
