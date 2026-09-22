@@ -5416,9 +5416,9 @@ namespace ShareX.Localization {
             }
         }
 
-        public static string TaskHelpers_AmazonS3NotConfigured {
+        public static string TaskHelpers_RemoteStorageNotConfigured {
             get {
-                return ResourceManager.GetString("TaskHelpers_AmazonS3NotConfigured", resourceCulture);
+                return ResourceManager.GetString("TaskHelpers_RemoteStorageNotConfigured", resourceCulture);
             }
         }
 

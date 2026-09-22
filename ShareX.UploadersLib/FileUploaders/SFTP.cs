@@ -98,38 +98,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public bool Connect()
         {
-            if (client == null)
-            {
-                if (!string.IsNullOrEmpty(Account.Keypath))
-                {
-                    if (!File.Exists(Account.Keypath))
-                    {
-                        throw new FileNotFoundException(Localization.Strings.SFTP_Key_file_not_found, Account.Keypath);
-                    }
-
-                    PrivateKeyFile keyFile;
-
-                    if (string.IsNullOrEmpty(Account.Passphrase))
-                    {
-                        keyFile = new PrivateKeyFile(Account.Keypath);
-                    }
-                    else
-                    {
-                        keyFile = new PrivateKeyFile(Account.Keypath, Account.Passphrase);
-                    }
-
-                    client = new SftpClient(Account.Host, Account.Port, Account.Username, keyFile);
-                }
-                else if (!string.IsNullOrEmpty(Account.Password))
-                {
-                    client = new SftpClient(Account.Host, Account.Port, Account.Username, Account.Password);
-                }
-
-                if (client != null)
-                {
-                    client.BufferSize = (uint)BufferSize;
-                }
-            }
+            EnsureClient();
 
             if (client != null && !client.IsConnected)
             {
@@ -137,6 +106,113 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return IsConnected;
+        }
+
+        public async Task<bool> ConnectAsync(CancellationToken cancellationToken = default)
+        {
+            EnsureClient();
+
+            if (client != null && !client.IsConnected)
+            {
+                await client.ConnectAsync(cancellationToken);
+            }
+
+            return IsConnected;
+        }
+
+        public async Task<IReadOnlyList<SFTPFileInfo>> ListDirectoryAsync(string path,
+            CancellationToken cancellationToken = default)
+        {
+            await EnsureConnectedAsync(cancellationToken);
+
+            List<SFTPFileInfo> files = new List<SFTPFileInfo>();
+            await foreach (var file in client.ListDirectoryAsync(path, cancellationToken))
+            {
+                files.Add(new SFTPFileInfo(file.Name, file.IsDirectory, file.IsRegularFile,
+                    file.IsSymbolicLink, file.Length, file.LastWriteTimeUtc));
+            }
+
+            return files;
+        }
+
+        public async Task DownloadFileAsync(string remotePath, Stream destination,
+            CancellationToken cancellationToken = default)
+        {
+            await EnsureConnectedAsync(cancellationToken);
+            await client.DownloadFileAsync(remotePath, destination, cancellationToken);
+        }
+
+        public async Task UploadFileAsync(Stream source, string remotePath,
+            CancellationToken cancellationToken = default)
+        {
+            await EnsureConnectedAsync(cancellationToken);
+            await client.UploadFileAsync(source, remotePath, canOverride: true, uploadProgress: null,
+                cancellationToken);
+        }
+
+        public async Task RenameAsync(string sourcePath, string destinationPath,
+            CancellationToken cancellationToken = default)
+        {
+            await EnsureConnectedAsync(cancellationToken);
+            await client.RenameFileAsync(sourcePath, destinationPath, cancellationToken);
+        }
+
+        public async Task DeleteFileAsync(string remotePath, CancellationToken cancellationToken = default)
+        {
+            await EnsureConnectedAsync(cancellationToken);
+            await client.DeleteFileAsync(remotePath, cancellationToken);
+        }
+
+        public async Task DeleteDirectoryAsync(string remotePath, CancellationToken cancellationToken = default)
+        {
+            await EnsureConnectedAsync(cancellationToken);
+            await client.DeleteDirectoryAsync(remotePath, cancellationToken);
+        }
+
+        private void EnsureClient()
+        {
+            if (client != null)
+            {
+                return;
+            }
+
+            if (!string.IsNullOrEmpty(Account.Keypath))
+            {
+                if (!File.Exists(Account.Keypath))
+                {
+                    throw new FileNotFoundException(Localization.Strings.SFTP_Key_file_not_found, Account.Keypath);
+                }
+
+                PrivateKeyFile keyFile;
+
+                if (string.IsNullOrEmpty(Account.Passphrase))
+                {
+                    keyFile = new PrivateKeyFile(Account.Keypath);
+                }
+                else
+                {
+                    keyFile = new PrivateKeyFile(Account.Keypath, Account.Passphrase);
+                }
+
+                client = new SftpClient(Account.Host, Account.Port, Account.Username, keyFile);
+            }
+            else if (!string.IsNullOrEmpty(Account.Password))
+            {
+                client = new SftpClient(Account.Host, Account.Port, Account.Username, Account.Password);
+            }
+
+            if (client != null)
+            {
+                client.BufferSize = (uint)BufferSize;
+            }
+        }
+
+        private async Task EnsureConnectedAsync(CancellationToken cancellationToken)
+        {
+            if (!await ConnectAsync(cancellationToken))
+            {
+                throw new InvalidOperationException("SFTP account does not contain valid authentication credentials.");
+            }
         }
 
         public void Disconnect()

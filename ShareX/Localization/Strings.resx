@@ -2902,7 +2902,7 @@ You can later disable it from "After capture tasks" menu.</value>
     <value>Mouse highlighter options...</value>
   </data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Resize image...</value></data>
-  <data name="TaskHelpers_AmazonS3NotConfigured" xml:space="preserve">
-    <value>Configure the Amazon S3 uploader in Destination settings before opening the remote storage browser.</value>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Configure an Amazon S3 or SFTP uploader in Destination settings before opening the remote storage browser.</value>
   </data>
 </root>

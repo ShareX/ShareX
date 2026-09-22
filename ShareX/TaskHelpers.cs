@@ -1667,23 +1667,40 @@ namespace ShareX
         {
             SettingManager.WaitUploadersConfig();
 
-            if (!UploadersConfigValidator.Validate(FileDestination.AmazonS3, ApplicationState.UploadersConfig))
+            UploadersConfig config = ApplicationState.UploadersConfig;
+            List<IRemoteStorageProvider> providers = new List<IRemoteStorageProvider>();
+
+            if (UploadersConfigValidator.Validate(FileDestination.AmazonS3, config))
             {
-                MessageBox.Show(Strings.TaskHelpers_AmazonS3NotConfigured,
+                providers.Add(new AmazonS3RemoteStorageProvider(config.AmazonS3Settings, !SystemOptions.DisableUpload));
+            }
+
+            if (config.FTPAccountList != null)
+            {
+                providers.AddRange(config.FTPAccountList
+                    .Where(IsConfiguredSFTPAccount)
+                    .Select(account => new SFTPRemoteStorageProvider(account, !SystemOptions.DisableUpload)));
+            }
+
+            if (providers.Count == 0)
+            {
+                MessageBox.Show(Strings.TaskHelpers_RemoteStorageNotConfigured,
                     "ShareX - " + Strings.MainMenuBuilder_RemoteStorageBrowser.TrimEnd('.', '…'),
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            IRemoteStorageProvider[] providers =
-            [
-                new AmazonS3RemoteStorageProvider(ApplicationState.UploadersConfig.AmazonS3Settings, !SystemOptions.DisableUpload)
-            ];
-
             ToolsIntegration.ShowRemoteStorageBrowserWindow(providers, new RemoteStorageBrowserServices
             {
                 OpenUrl = URLHelpers.OpenURL
             });
+        }
+
+        private static bool IsConfiguredSFTPAccount(FTPAccount account)
+        {
+            return account != null && account.Protocol == FTPProtocol.SFTP &&
+                !string.IsNullOrWhiteSpace(account.Host) && !string.IsNullOrWhiteSpace(account.Username) &&
+                (!string.IsNullOrWhiteSpace(account.Password) || !string.IsNullOrWhiteSpace(account.Keypath));
         }
 
         public static void OpenQRCode(string text = null)

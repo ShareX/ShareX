@@ -334,5 +334,10 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
         _operationCancellation?.Cancel();
         _operationCancellation?.Dispose();
         _operationCancellation = null;
+
+        foreach (IDisposable provider in Providers.OfType<IDisposable>())
+        {
+            provider.Dispose();
+        }
     }
 }
