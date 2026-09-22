@@ -1078,6 +1078,11 @@ namespace ShareX
             ToolsIntegration.ShowImageSplitterWindow();
         }
 
+        public static void OpenAnimatedGifMaker(IEnumerable<string> imageFiles = null)
+        {
+            ToolsIntegration.ShowAnimatedGifMakerWindow(imageFiles);
+        }
+
         public static void OpenImageResizer(IEnumerable<string> imageFiles = null)
         {
             ToolsIntegration.ShowImageResizerWindow(imageFiles);

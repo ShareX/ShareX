@@ -2884,4 +2884,7 @@ Du kan deaktivere dem senere fra menuen ”Opgaver efter optagelse”.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Trim video...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Skift billedstørrelse...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Værktøj til animerede GIF&apos;er...</value>
+  </data>
 </root>

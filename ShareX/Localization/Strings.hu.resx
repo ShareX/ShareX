@@ -2884,4 +2884,7 @@ You can later disable it from "Rögzítés után tasks" menü.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Videó vágása...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Kép átméretezése...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Animált GIF készítő...</value>
+  </data>
 </root>

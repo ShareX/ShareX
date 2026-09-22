@@ -2288,6 +2288,168 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to create GIF: {0}.
+        /// </summary>
+        public static string AnimatedGifMakerViewModel_Create_failed {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerViewModel_Create_failed", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Animated GIF created..
+        /// </summary>
+        public static string AnimatedGifMakerViewModel_Created {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerViewModel_Created", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Creating animated GIF....
+        /// </summary>
+        public static string AnimatedGifMakerViewModel_Creating {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerViewModel_Creating", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Preview failed: {0}.
+        /// </summary>
+        public static string AnimatedGifMakerViewModel_Preview_failed {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerViewModel_Preview_failed", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to {0} frames • {1} ms.
+        /// </summary>
+        public static string AnimatedGifMakerViewModel_Preview_info {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerViewModel_Preview_info", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Add images.
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Add_images_dialog {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Add_images_dialog", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Add at least two images to preview the animation..
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Add_two_images_to_preview {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Add_two_images_to_preview", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Animated GIF maker.
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Animated_GIF_maker {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Animated_GIF_maker", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Animation.
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Animation {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Animation", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Create GIF.
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Create_GIF {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Create_GIF", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Frame delay.
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Frame_delay {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Frame_delay", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to GIF images.
+        /// </summary>
+        public static string AnimatedGifMakerWindow_GIF_images {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_GIF_images", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Loop animation.
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Loop_animation {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Loop_animation", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Output.
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Output {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Output", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Preview.
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Preview {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Preview", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Repeat count.
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Repeat_count {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Repeat_count", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Save animated GIF.
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Save_GIF_dialog {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Save_GIF_dialog", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 0 repeats forever..
+        /// </summary>
+        public static string AnimatedGifMakerWindow_Zero_repeats_forever {
+            get {
+                return ResourceManager.GetString("AnimatedGifMakerWindow_Zero_repeats_forever", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Image 2.
         /// </summary>
         public static string ImageComparerWindow_Image_2 {

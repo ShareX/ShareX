@@ -2884,4 +2884,7 @@ Anda dapat menonaktifkannya nanti dari menu "Tugas setelah tangkapan".</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Potong video...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Ubah ukuran gambar...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Pembuat GIF animasi...</value>
+  </data>
 </root>

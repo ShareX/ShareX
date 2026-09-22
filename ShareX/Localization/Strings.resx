@@ -2905,4 +2905,7 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
     <value>Configure an Amazon S3, FTP, FTPS, or SFTP uploader in Destination settings before opening the remote storage browser.</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Animated GIF maker...</value>
+  </data>
 </root>

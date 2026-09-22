@@ -2884,4 +2884,7 @@ Możesz je później wyłączyć w menu "Zadania po przechwyceniu".</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Przytnij wideo...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Zmień rozmiar obrazu...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Kreator animowanych GIF-ów...</value>
+  </data>
 </root>

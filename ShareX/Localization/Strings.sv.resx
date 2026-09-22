@@ -2884,4 +2884,7 @@ Du kan inaktivera dem senare från menyn "Uppgifter efter bildtagning".</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Trimma video...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Ändra bildstorlek...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Skapare av animerade GIF-bilder...</value>
+  </data>
 </root>

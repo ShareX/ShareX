@@ -34,15 +34,17 @@ namespace ShareX.HelpersLib
         public string FilePath { get; private set; }
         public int Delay { get; private set; }
         public int Repeat { get; private set; }
+        public bool Loop { get; private set; }
         public int FrameCount { get; private set; }
 
         private FileStream stream;
 
-        public AnimatedGifCreator(string filePath, int delay, int repeat = 0)
+        public AnimatedGifCreator(string filePath, int delay, int repeat = 0, bool loop = true)
         {
             FilePath = filePath;
             Delay = delay;
             Repeat = repeat;
+            Loop = loop;
         }
 
         public void AddFrame(Image img, GIFQuality quality = GIFQuality.Default)
@@ -55,7 +57,10 @@ namespace ShareX.HelpersLib
                 stream = new FileStream(FilePath, FileMode.Create, FileAccess.Write, FileShare.Read);
                 stream.Write(CreateHeaderBlock());
                 stream.Write(gif.ScreenDescriptor.ToArray());
-                stream.Write(CreateApplicationExtensionBlock(Repeat));
+                if (Loop)
+                {
+                    stream.Write(CreateApplicationExtensionBlock(Repeat));
+                }
             }
 
             stream.Write(CreateGraphicsControlExtensionBlock(Delay));

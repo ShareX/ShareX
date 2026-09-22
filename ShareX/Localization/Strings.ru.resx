@@ -2884,4 +2884,7 @@
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Обрезать видео...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Изменить размер изображения...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Создание анимированных GIF...</value>
+  </data>
 </root>

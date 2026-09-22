@@ -2884,4 +2884,7 @@ Daha sonra "Yakalama sonrası" menüsünden devre dışı bırakabilirsiniz.</va
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Videoyu kırp...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Görseli yeniden boyutlandır...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Animasyonlu GIF oluşturucu...</value>
+  </data>
 </root>

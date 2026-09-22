@@ -350,6 +350,15 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("MainMenuBuilder_HotkeySettings", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Animated GIF maker....
+        /// </summary>
+        public static string MainMenuBuilder_AnimatedGifMaker {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_AnimatedGifMaker", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Icon converter....

@@ -2884,4 +2884,7 @@
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>ตัดวิดีโอ...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>ปรับขนาดรูปภาพ...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>เครื่องมือสร้าง GIF เคลื่อนไหว...</value>
+  </data>
 </root>

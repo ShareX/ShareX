@@ -2884,4 +2884,7 @@ Sau đó, bạn có thể tắt nó từ menu "Sau khi chụp tác vụ".</value
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Cắt video...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Đổi kích thước ảnh...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Trình tạo GIF động...</value>
+  </data>
 </root>

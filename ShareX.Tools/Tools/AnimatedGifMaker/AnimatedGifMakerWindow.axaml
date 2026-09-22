@@ -1,0 +1,175 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="1120" d:DesignHeight="650"
+        x:Class="ShareX.Tools.AnimatedGifMakerWindow"
+        x:DataType="vm:AnimatedGifMakerViewModel"
+        Title="{x:Static localization:Strings.AnimatedGifMakerWindow_Animated_GIF_maker}"
+        Width="1120"
+        Height="650"
+        MinWidth="900"
+        MinHeight="560"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <Grid RowDefinitions="*,Auto" Margin="16" RowSpacing="12">
+            <Grid Grid.Row="0" ColumnDefinitions="360,320,*" ColumnSpacing="12">
+                <Border Grid.Column="0" Classes="tool-panel">
+                    <Grid RowDefinitions="Auto,*" RowSpacing="10">
+                        <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,Auto,Auto,*" ColumnSpacing="8">
+                            <Button Grid.Column="0" Command="{Binding AddCommand}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.plus}" Classes="icon"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ImageThumbnailerWindow_Add}"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="1" Command="{Binding RemoveCommand}" IsEnabled="{Binding CanRemove}">
+                                <TextBlock Text="{x:Static theming:LucideIcons.trash_2}" Classes="icon"/>
+                            </Button>
+                            <Button Grid.Column="2" Command="{Binding MoveUpCommand}" IsEnabled="{Binding CanMoveUp}">
+                                <TextBlock Text="{x:Static theming:LucideIcons.arrow_up}" Classes="icon"/>
+                            </Button>
+                            <Button Grid.Column="3" Command="{Binding MoveDownCommand}" IsEnabled="{Binding CanMoveDown}">
+                                <TextBlock Text="{x:Static theming:LucideIcons.arrow_down}" Classes="icon"/>
+                            </Button>
+                            <TextBlock Grid.Column="4" Text="{Binding ImageCountText}"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <ListBox x:Name="ImagesList"
+                                     ItemsSource="{Binding Images}"
+                                     SelectedItem="{Binding SelectedImage, Mode=TwoWay}"
+                                     SelectionMode="Multiple"
+                                     SelectionChanged="OnSelectionChanged">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate x:CompileBindings="False">
+                                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="4,3">
+                                            <TextBlock Text="{x:Static theming:LucideIcons.image}"
+                                                       Classes="icon"
+                                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                       VerticalAlignment="Center"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding}"
+                                                       TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            <StackPanel IsVisible="{Binding !HasImages}"
+                                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                                        Spacing="8" IsHitTestVisible="False">
+                                <TextBlock Text="{x:Static theming:LucideIcons.square_dashed}"
+                                           Classes="icon" FontSize="42"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.ImageThumbnailerWindow_Drop_images_here_or_use_the_Add_button}"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <StackPanel Grid.Column="1" Spacing="12">
+                    <Border Classes="tool-panel" Padding="16">
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
+                            <TextBlock Grid.Row="0" Classes="section-heading"
+                                       Text="{x:Static localization:Strings.AnimatedGifMakerWindow_Animation}"/>
+                            <Grid Grid.Row="1" ColumnDefinitions="110,*,Auto" ColumnSpacing="10">
+                                <TextBlock Classes="row-label"
+                                           Text="{x:Static localization:Strings.AnimatedGifMakerWindow_Frame_delay}"/>
+                                <NumericUpDown Grid.Column="1" Minimum="10" Maximum="60000"
+                                               Increment="100" FormatString="0" MinWidth="140"
+                                               Value="{Binding Delay}"/>
+                                <TextBlock Grid.Column="2" Classes="row-label"
+                                           Text="{Binding FrameDelayUnit}"/>
+                            </Grid>
+                            <CheckBox Grid.Row="2" IsChecked="{Binding Loop}"
+                                      Content="{x:Static localization:Strings.AnimatedGifMakerWindow_Loop_animation}"/>
+                            <Grid Grid.Row="3" ColumnDefinitions="110,*" ColumnSpacing="10">
+                                <TextBlock Classes="row-label"
+                                           Text="{x:Static localization:Strings.AnimatedGifMakerWindow_Repeat_count}"/>
+                                <NumericUpDown Grid.Column="1" Minimum="0" Maximum="65535"
+                                               FormatString="0" Value="{Binding RepeatCount}"
+                                               IsEnabled="{Binding Loop}"/>
+                            </Grid>
+                            <TextBlock Grid.Row="4"
+                                       Text="{x:Static localization:Strings.AnimatedGifMakerWindow_Zero_repeats_forever}"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       TextWrapping="Wrap"/>
+                        </Grid>
+                    </Border>
+
+                    <Border Classes="tool-panel" IsVisible="{Binding HasOutput}">
+                        <Grid RowDefinitions="Auto,Auto" RowSpacing="8">
+                            <TextBlock Classes="section-heading"
+                                       Text="{x:Static localization:Strings.AnimatedGifMakerWindow_Output}"/>
+                            <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                <TextBlock Text="{Binding OutputFilePath}" Classes="path-text"
+                                           VerticalAlignment="Center"/>
+                                <Button Grid.Column="1" Command="{Binding OpenOutputCommand}">
+                                    <TextBlock Text="{x:Static theming:LucideIcons.folder_open}" Classes="icon"/>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <Border Classes="tool-panel" IsVisible="{Binding HasMessage}">
+                        <TextBlock Text="{Binding Message}" TextWrapping="Wrap"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                    </Border>
+                </StackPanel>
+
+                <Border Grid.Column="2" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                    <Grid RowDefinitions="Auto,*">
+                        <Border Grid.Row="0"
+                                Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                BorderThickness="0,0,0,1"
+                                Padding="12,10">
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                                <TextBlock Text="{x:Static localization:Strings.AnimatedGifMakerWindow_Preview}"
+                                           Classes="section-heading" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Text="{Binding PreviewInfoText}"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <ProgressBar Grid.Row="1"
+                                     IsVisible="{Binding IsPreviewLoading}"
+                                     IsIndeterminate="True" Height="4"
+                                     HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                                     ZIndex="1"/>
+                        <Grid Grid.Row="1">
+                            <Image Source="{Binding PreviewImage}"
+                                   Margin="12" Stretch="Uniform" StretchDirection="DownOnly"
+                                   RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                            <StackPanel IsVisible="{Binding !HasPreview}"
+                                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                                        Spacing="8" IsHitTestVisible="False">
+                                <TextBlock Text="{x:Static theming:LucideIcons.film}"
+                                           Classes="icon" FontSize="54"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.AnimatedGifMakerWindow_Add_two_images_to_preview}"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Button Grid.Row="1" Command="{Binding CreateCommand}" IsEnabled="{Binding CanCreate}"
+                    HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <TextBlock Text="{x:Static theming:LucideIcons.film}" Classes="icon"/>
+                    <TextBlock Text="{x:Static localization:Strings.AnimatedGifMakerWindow_Create_GIF}"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

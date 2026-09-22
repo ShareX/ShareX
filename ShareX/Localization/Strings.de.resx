@@ -2883,4 +2883,7 @@ Sie können sie später im Menü „Aufgaben nach der Aufnahme“ deaktivieren.<
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Video zuschneiden...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Bildgröße ändern...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Ersteller für animierte GIFs...</value>
+  </data>
 </root>

@@ -2884,4 +2884,7 @@
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>剪辑视频...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>调整图像大小...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>动态 GIF 制作器...</value>
+  </data>
 </root>

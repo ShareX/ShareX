@@ -191,6 +191,11 @@ public static class ToolsIntegration
         Show(() => new ImageSplitterWindow());
     }
 
+    public static void ShowAnimatedGifMakerWindow(IEnumerable<string>? imageFiles = null)
+    {
+        Show(() => new AnimatedGifMakerWindow(imageFiles));
+    }
+
     public static void ShowImageResizerWindow(IEnumerable<string>? imageFiles = null)
     {
         Show(() => new ImageResizerWindow(imageFiles));

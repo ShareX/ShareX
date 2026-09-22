@@ -2884,4 +2884,7 @@ You can later disable it from "After opname taken" menu.</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Video bijsnijden...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Afbeeldingsgrootte wijzigen...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Maker van geanimeerde GIF&apos;s...</value>
+  </data>
 </root>

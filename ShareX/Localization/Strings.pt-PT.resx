@@ -2884,4 +2884,7 @@ Pode desativá-los mais tarde no menu "Tarefas após captura".</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Cortar vídeo...</value></data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Redimensionar imagem...</value></data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Criador de GIF animado...</value>
+  </data>
 </root>
