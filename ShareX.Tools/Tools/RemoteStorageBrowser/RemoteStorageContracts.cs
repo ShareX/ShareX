@@ -59,6 +59,7 @@ public interface IRemoteStorageProvider
     Task UploadAsync(string directoryPath, string fileName, Stream source, CancellationToken cancellationToken = default);
     Task CreateFolderAsync(string directoryPath, string folderName, CancellationToken cancellationToken = default);
     Task RenameAsync(RemoteStorageItem item, string newName, CancellationToken cancellationToken = default);
+    Task<bool> HasChildrenAsync(RemoteStorageItem folder, CancellationToken cancellationToken = default);
     Task DeleteAsync(RemoteStorageItem item, CancellationToken cancellationToken = default);
     string? GetUrl(RemoteStorageItem item);
 }

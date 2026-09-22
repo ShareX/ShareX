@@ -176,10 +176,33 @@ public partial class RemoteStorageBrowserWindow : Window
             : string.Format(Localization.Strings.RemoteStorageBrowser_DeleteFileConfirmation, item.Name);
         string dialogTitle = Localization.Strings.RemoteStorageBrowser_Delete.TrimEnd('.', '…');
         if (MessageBox.Show(this, prompt, dialogTitle,
-            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
         {
-            await _viewModel.DeleteAsync(item);
+            return;
         }
+
+        if (item.IsFolder)
+        {
+            bool? hasChildren = await _viewModel.HasChildrenAsync(item);
+            if (!hasChildren.HasValue)
+            {
+                return;
+            }
+
+            if (hasChildren.Value)
+            {
+                string warning = string.Format(
+                    Localization.Strings.RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation, item.Name);
+                if (MessageBox.Show(this, warning, dialogTitle,
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
+                    MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+                {
+                    return;
+                }
+            }
+        }
+
+        await _viewModel.DeleteAsync(item);
     }
 
     private async void OnViewClick(object? sender, RoutedEventArgs e) => await ViewSelectedAsync();
@@ -321,6 +344,8 @@ public partial class RemoteStorageBrowserWindow : Window
             CancellationToken cancellationToken = default) => Task.CompletedTask;
         public Task RenameAsync(RemoteStorageItem item, string newName,
             CancellationToken cancellationToken = default) => Task.CompletedTask;
+        public Task<bool> HasChildrenAsync(RemoteStorageItem folder,
+            CancellationToken cancellationToken = default) => Task.FromResult(false);
         public Task DeleteAsync(RemoteStorageItem item,
             CancellationToken cancellationToken = default) => Task.CompletedTask;
         public string? GetUrl(RemoteStorageItem item) => null;

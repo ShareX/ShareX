@@ -270,6 +270,21 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
         }
     }
 
+    public async Task<bool?> HasChildrenAsync(RemoteStorageBrowserItemViewModel item)
+    {
+        if (item?.IsFolder != true)
+        {
+            return false;
+        }
+
+        bool hasChildren = false;
+        bool success = await RunOperationAsync(async cancellationToken =>
+        {
+            hasChildren = await SelectedProvider.HasChildrenAsync(item.Item, cancellationToken);
+        });
+        return success ? hasChildren : null;
+    }
+
     private async Task BrowseAsync(string path)
     {
         if (IsBusy || _disposed)

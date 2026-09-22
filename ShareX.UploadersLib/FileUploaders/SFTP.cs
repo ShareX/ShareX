@@ -135,6 +135,22 @@ namespace ShareX.UploadersLib.FileUploaders
             return files;
         }
 
+        public async Task<bool> DirectoryHasItemsAsync(string path,
+            CancellationToken cancellationToken = default)
+        {
+            await EnsureConnectedAsync(cancellationToken);
+
+            await foreach (var file in client.ListDirectoryAsync(path, cancellationToken))
+            {
+                if (file.Name != "." && file.Name != "..")
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public async Task DownloadFileAsync(string remotePath, Stream destination,
             CancellationToken cancellationToken = default)
         {

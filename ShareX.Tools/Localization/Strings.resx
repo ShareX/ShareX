@@ -2129,7 +2129,10 @@
     <value>Cancel</value>
   </data>
   <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
-    <value>Delete the folder “{0}” and all of its contents?</value>
+    <value>Delete the folder “{0}”?</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
+    <value>The folder “{0}” is not empty. Delete it and all of its contents? This action cannot be undone.</value>
   </data>
   <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
     <value>Delete the file “{0}”?</value>

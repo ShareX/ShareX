@@ -152,6 +152,18 @@ internal sealed class SFTPRemoteStorageProvider : IRemoteStorageProvider, IDispo
         }
     }
 
+    public Task<bool> HasChildrenAsync(RemoteStorageItem folder,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(folder);
+        if (!folder.IsFolder)
+        {
+            throw new ArgumentException("The operation requires a folder.", nameof(folder));
+        }
+
+        return _client.DirectoryHasItemsAsync(ToRemotePath(folder.Path), cancellationToken);
+    }
+
     public string? GetUrl(RemoteStorageItem item)
     {
         if (item == null || item.IsFolder)

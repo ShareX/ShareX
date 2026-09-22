@@ -217,6 +217,26 @@ internal sealed class AmazonS3RemoteStorageProvider : IRemoteStorageProvider
         }
     }
 
+    public async Task<bool> HasChildrenAsync(RemoteStorageItem folder,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(folder);
+        if (!folder.IsFolder)
+        {
+            throw new ArgumentException("The operation requires a folder.", nameof(folder));
+        }
+
+        string prefix = NormalizeDirectoryPath(folder.Path);
+        IReadOnlyList<AmazonS3ObjectInfo>? objects = await _client.ListObjectsAsync(
+            prefix, null!, cancellationToken, maxKeys: 2);
+        if (objects == null)
+        {
+            throw CreateOperationException("Checking the folder contents");
+        }
+
+        return objects.Any(x => !x.Key.Equals(prefix, StringComparison.Ordinal));
+    }
+
     public string? GetUrl(RemoteStorageItem item)
     {
         return item == null || item.IsFolder ? null : _client.GenerateURL(item.Path);

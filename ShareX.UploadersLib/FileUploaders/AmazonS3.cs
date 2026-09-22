@@ -187,7 +187,7 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         public async Task<IReadOnlyList<AmazonS3ObjectInfo>> ListObjectsAsync(string prefix = "", string delimiter = "/",
-            CancellationToken cancellationToken = default)
+            CancellationToken cancellationToken = default, int? maxKeys = null)
         {
             prefix = NormalizeObjectKey(prefix);
             List<AmazonS3ObjectInfo> objects = new List<AmazonS3ObjectInfo>();
@@ -209,6 +209,11 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (!string.IsNullOrEmpty(delimiter))
                 {
                     query["delimiter"] = delimiter;
+                }
+
+                if (maxKeys > 0)
+                {
+                    query["max-keys"] = maxKeys.Value.ToString(CultureInfo.InvariantCulture);
                 }
 
                 if (!string.IsNullOrEmpty(continuationToken))
@@ -235,6 +240,11 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
 
                 objects.AddRange(page.Objects);
+                if (maxKeys > 0 && objects.Count >= maxKeys.Value)
+                {
+                    break;
+                }
+
                 continuationToken = page.IsTruncated ? page.NextContinuationToken : null;
 
                 if (page.IsTruncated && string.IsNullOrEmpty(continuationToken))
