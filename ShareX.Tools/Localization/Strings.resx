@@ -2162,7 +2162,7 @@
     <value>Loading...</value>
   </data>
   <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
-    <value>{0} item(s)</value>
+    <value>{0} item(s) • {1} total</value>
   </data>
   <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
     <value>The remote storage operation failed.</value>

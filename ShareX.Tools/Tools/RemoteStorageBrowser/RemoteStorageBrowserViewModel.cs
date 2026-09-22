@@ -361,7 +361,11 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
             CurrentPath = path;
             HasItems = Items.Count > 0;
             UpdateLocation();
-            StatusText = string.Format(Localization.Strings.RemoteStorageBrowser_ItemCount, Items.Count);
+            long totalFileSize = items
+                .Where(item => !item.IsFolder)
+                .Sum(item => item.Size ?? 0);
+            StatusText = string.Format(Localization.Strings.RemoteStorageBrowser_ItemCount,
+                Items.Count, totalFileSize.ToSizeString());
         });
     }
 

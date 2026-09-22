@@ -31,7 +31,7 @@
             <Setter Property="Width" Value="NaN"/>
         </Style>
         <Style Selector="TextBlock.column-heading">
-            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
