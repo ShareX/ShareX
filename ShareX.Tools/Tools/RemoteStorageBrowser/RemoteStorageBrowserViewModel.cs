@@ -18,6 +18,13 @@ using System.Collections.ObjectModel;
 
 namespace ShareX.Tools;
 
+public enum RemoteStorageSortColumn
+{
+    Name,
+    Size,
+    Modified
+}
+
 public sealed class RemoteStorageUploadSource
 {
     public string FileName { get; }
@@ -51,6 +58,8 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
 {
     private CancellationTokenSource? _operationCancellation;
     private bool _disposed;
+    private RemoteStorageSortColumn _sortColumn = RemoteStorageSortColumn.Name;
+    private bool _sortDescending;
 
     public IReadOnlyList<IRemoteStorageProvider> Providers { get; }
     public ObservableCollection<RemoteStorageBrowserItemViewModel> Items { get; } = [];
@@ -118,6 +127,12 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
     public bool CanUseUrl => !IsBusy && SelectedItem is { IsFolder: false } &&
         HasCapability(RemoteStorageProviderCapabilities.Url) &&
         !string.IsNullOrWhiteSpace(SelectedProvider.GetUrl(SelectedItem.Item));
+    public bool IsNameSortColumn => _sortColumn == RemoteStorageSortColumn.Name;
+    public bool IsSizeSortColumn => _sortColumn == RemoteStorageSortColumn.Size;
+    public bool IsModifiedSortColumn => _sortColumn == RemoteStorageSortColumn.Modified;
+    public string SortIndicator => _sortDescending
+        ? AvaloniaUI.Theming.LucideIcons.arrow_down
+        : AvaloniaUI.Theming.LucideIcons.arrow_up;
 
     public RemoteStorageBrowserViewModel(IEnumerable<IRemoteStorageProvider> providers)
     {
@@ -161,6 +176,32 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
     {
         string? parentPath = SelectedProvider.GetParentPath(CurrentPath);
         return parentPath != null ? BrowseAsync(parentPath) : Task.CompletedTask;
+    }
+
+    public void SortBy(RemoteStorageSortColumn column)
+    {
+        if (_sortColumn == column)
+        {
+            _sortDescending = !_sortDescending;
+        }
+        else
+        {
+            _sortColumn = column;
+            _sortDescending = false;
+        }
+
+        SelectedItem = null;
+        RemoteStorageBrowserItemViewModel[] sortedItems = GetSortedItems(Items).ToArray();
+        Items.Clear();
+        foreach (RemoteStorageBrowserItemViewModel item in sortedItems)
+        {
+            Items.Add(item);
+        }
+
+        OnPropertyChanged(nameof(IsNameSortColumn));
+        OnPropertyChanged(nameof(IsSizeSortColumn));
+        OnPropertyChanged(nameof(IsModifiedSortColumn));
+        OnPropertyChanged(nameof(SortIndicator));
     }
 
     public async Task<bool> DownloadAsync(RemoteStorageBrowserItemViewModel item, Stream destination)
@@ -307,10 +348,13 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
                 return;
             }
 
+            RemoteStorageBrowserItemViewModel[] sortedItems = GetSortedItems(
+                items.Select(item => new RemoteStorageBrowserItemViewModel(item))).ToArray();
+
             Items.Clear();
-            foreach (RemoteStorageItem item in items)
+            foreach (RemoteStorageBrowserItemViewModel item in sortedItems)
             {
-                Items.Add(new RemoteStorageBrowserItemViewModel(item));
+                Items.Add(item);
             }
 
             SelectedItem = null;
@@ -360,6 +404,35 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
 
     private bool HasCapability(RemoteStorageProviderCapabilities capability) =>
         SelectedProvider.Capabilities.HasFlag(capability);
+
+    private IEnumerable<RemoteStorageBrowserItemViewModel> GetSortedItems(
+        IEnumerable<RemoteStorageBrowserItemViewModel> items)
+    {
+        IOrderedEnumerable<RemoteStorageBrowserItemViewModel> sortedItems =
+            items.OrderByDescending(item => item.IsFolder);
+
+        switch (_sortColumn)
+        {
+            case RemoteStorageSortColumn.Size:
+                sortedItems = sortedItems.ThenBy(item => item.Item.Size.HasValue ? 0 : 1);
+                sortedItems = _sortDescending
+                    ? sortedItems.ThenByDescending(item => item.Item.Size)
+                    : sortedItems.ThenBy(item => item.Item.Size);
+                break;
+            case RemoteStorageSortColumn.Modified:
+                sortedItems = sortedItems.ThenBy(item => item.Item.Modified.HasValue ? 0 : 1);
+                sortedItems = _sortDescending
+                    ? sortedItems.ThenByDescending(item => item.Item.Modified)
+                    : sortedItems.ThenBy(item => item.Item.Modified);
+                break;
+            default:
+                return _sortDescending
+                    ? sortedItems.ThenByDescending(item => item.Name, StringComparer.CurrentCultureIgnoreCase)
+                    : sortedItems.ThenBy(item => item.Name, StringComparer.CurrentCultureIgnoreCase);
+        }
+
+        return sortedItems.ThenBy(item => item.Name, StringComparer.CurrentCultureIgnoreCase);
+    }
 
     private void UpdateLocation()
     {

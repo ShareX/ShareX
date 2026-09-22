@@ -35,6 +35,17 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
+        <Style Selector="Button.column-heading">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="MinWidth" Value="0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
     </Window.Styles>
 
     <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" RowDefinitions="Auto,*,Auto">
@@ -125,15 +136,51 @@
                         BorderThickness="0,0,0,1"
                         Padding="10,0">
                     <Grid ColumnDefinitions="34,*,140,190" ColumnSpacing="8">
-                        <TextBlock Grid.Column="1"
-                                   Classes="column-heading"
-                                   Text="{x:Static localization:Strings.RemoteStorageBrowser_Name}"/>
-                        <TextBlock Grid.Column="2"
-                                   Classes="column-heading"
-                                   Text="{x:Static localization:Strings.RemoteStorageBrowser_Size}"/>
-                        <TextBlock Grid.Column="3"
-                                   Classes="column-heading"
-                                   Text="{x:Static localization:Strings.RemoteStorageBrowser_Modified}"/>
+                        <Button Grid.Column="1"
+                                Classes="column-heading"
+                                IsEnabled="{Binding !IsBusy}"
+                                Click="OnNameSortClick">
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <TextBlock Classes="column-heading"
+                                           Text="{x:Static localization:Strings.RemoteStorageBrowser_Name}"/>
+                                <TextBlock IsVisible="{Binding IsNameSortColumn}"
+                                           Text="{Binding SortIndicator}"
+                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="2"
+                                Classes="column-heading"
+                                IsEnabled="{Binding !IsBusy}"
+                                Click="OnSizeSortClick">
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <TextBlock Classes="column-heading"
+                                           Text="{x:Static localization:Strings.RemoteStorageBrowser_Size}"/>
+                                <TextBlock IsVisible="{Binding IsSizeSortColumn}"
+                                           Text="{Binding SortIndicator}"
+                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="3"
+                                Classes="column-heading"
+                                IsEnabled="{Binding !IsBusy}"
+                                Click="OnModifiedSortClick">
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <TextBlock Classes="column-heading"
+                                           Text="{x:Static localization:Strings.RemoteStorageBrowser_Modified}"/>
+                                <TextBlock IsVisible="{Binding IsModifiedSortColumn}"
+                                           Text="{Binding SortIndicator}"
+                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
                     </Grid>
                 </Border>
 

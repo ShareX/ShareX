@@ -2111,7 +2111,7 @@
     <value>View</value>
   </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
-    <value>Open URL...</value>
+    <value>Open URL</value>
   </data>
   <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
     <value>Copy URL</value>

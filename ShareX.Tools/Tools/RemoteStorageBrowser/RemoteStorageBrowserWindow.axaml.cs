@@ -73,6 +73,15 @@ public partial class RemoteStorageBrowserWindow : Window
 
     private async void OnRefreshClick(object? sender, RoutedEventArgs e) => await _viewModel.RefreshAsync();
 
+    private void OnNameSortClick(object? sender, RoutedEventArgs e) =>
+        _viewModel.SortBy(RemoteStorageSortColumn.Name);
+
+    private void OnSizeSortClick(object? sender, RoutedEventArgs e) =>
+        _viewModel.SortBy(RemoteStorageSortColumn.Size);
+
+    private void OnModifiedSortClick(object? sender, RoutedEventArgs e) =>
+        _viewModel.SortBy(RemoteStorageSortColumn.Modified);
+
     private async void OnUploadClick(object? sender, RoutedEventArgs e)
     {
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
