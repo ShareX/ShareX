@@ -844,7 +844,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private static string DecodeListObjectValue(string value)
         {
-            return string.IsNullOrEmpty(value) ? value : Uri.UnescapeDataString(value);
+            return string.IsNullOrEmpty(value) ? value : URLHelpers.URLDecode(value);
         }
 
         private static string CreateCanonicalQueryString(IEnumerable<KeyValuePair<string, string>> parameters)
