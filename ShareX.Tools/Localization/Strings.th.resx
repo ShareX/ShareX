@@ -1969,4 +1969,106 @@
   <data name="VideoTrimmer_VideoFiles" xml:space="preserve">
     <value>ไฟล์วิดีโอ</value>
   </data>
+  <data name="RemoteStorageBrowser_Title" xml:space="preserve">
+    <value>เบราว์เซอร์ที่เก็บข้อมูลระยะไกล</value>
+  </data>
+  <data name="RemoteStorageBrowser_Provider" xml:space="preserve">
+    <value>ผู้ให้บริการ:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Up" xml:space="preserve">
+    <value>ขึ้น</value>
+  </data>
+  <data name="RemoteStorageBrowser_Refresh" xml:space="preserve">
+    <value>รีเฟรช</value>
+  </data>
+  <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
+    <value>อัปโหลด...</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
+    <value>สร้างโฟลเดอร์...</value>
+  </data>
+  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
+    <value>โฟลเดอร์ใหม่</value>
+  </data>
+  <data name="RemoteStorageBrowser_Location" xml:space="preserve">
+    <value>ตำแหน่ง:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Name" xml:space="preserve">
+    <value>ชื่อ</value>
+  </data>
+  <data name="RemoteStorageBrowser_Size" xml:space="preserve">
+    <value>ขนาด</value>
+  </data>
+  <data name="RemoteStorageBrowser_Modified" xml:space="preserve">
+    <value>แก้ไขเมื่อ</value>
+  </data>
+  <data name="RemoteStorageBrowser_Download" xml:space="preserve">
+    <value>ดาวน์โหลด...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
+    <value>เปลี่ยนชื่อ...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
+    <value>ลบ...</value>
+  </data>
+  <data name="RemoteStorageBrowser_View" xml:space="preserve">
+    <value>ดู</value>
+  </data>
+  <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
+    <value>เปิด URL</value>
+  </data>
+  <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
+    <value>คัดลอก URL</value>
+  </data>
+  <data name="RemoteStorageBrowser_EmptyFolder" xml:space="preserve">
+    <value>โฟลเดอร์นี้ว่างเปล่า</value>
+  </data>
+  <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
+    <value>เลือกไฟล์ที่จะอัปโหลด</value>
+  </data>
+  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
+    <value>วางไฟล์เพื่ออัปโหลดไปยังโฟลเดอร์นี้</value>
+  </data>
+  <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
+    <value>บันทึกไฟล์ที่ดาวน์โหลด</value>
+  </data>
+  <data name="RemoteStorageBrowser_Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
+    <value>ลบโฟลเดอร์ “{0}” หรือไม่</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
+    <value>โฟลเดอร์ “{0}” ไม่ว่างเปล่า ต้องการลบโฟลเดอร์และเนื้อหาทั้งหมดหรือไม่ การดำเนินการนี้ไม่สามารถย้อนกลับได้</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
+    <value>ลบไฟล์ “{0}” หรือไม่</value>
+  </data>
+  <data name="RemoteStorageBrowser_Downloaded" xml:space="preserve">
+    <value>ดาวน์โหลด “{0}” แล้ว</value>
+  </data>
+  <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
+    <value>อัปโหลดไฟล์แล้ว {0} ไฟล์</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
+    <value>สร้างโฟลเดอร์ “{0}” แล้ว</value>
+  </data>
+  <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
+    <value>มีรายการชื่อ “{0}” อยู่แล้ว</value>
+  </data>
+  <data name="RemoteStorageBrowser_Renamed" xml:space="preserve">
+    <value>เปลี่ยนชื่อ “{0}” เป็น “{1}” แล้ว</value>
+  </data>
+  <data name="RemoteStorageBrowser_Deleted" xml:space="preserve">
+    <value>ลบ “{0}” แล้ว</value>
+  </data>
+  <data name="RemoteStorageBrowser_Loading" xml:space="preserve">
+    <value>กำลังโหลด...</value>
+  </data>
+  <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
+    <value>{0} ไฟล์, {1} โฟลเดอร์ • รวม {2}</value>
+  </data>
+  <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
+    <value>การดำเนินการกับที่เก็บข้อมูลระยะไกลล้มเหลว</value>
+  </data>
 </root>
