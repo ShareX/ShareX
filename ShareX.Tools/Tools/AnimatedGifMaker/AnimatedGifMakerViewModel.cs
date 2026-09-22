@@ -38,7 +38,7 @@ public sealed partial class AnimatedGifMakerViewModel : ViewModelBase, IDisposab
     private string? _selectedImage;
 
     [ObservableProperty]
-    private decimal _delay = 100;
+    private decimal _delay = 500;
 
     [ObservableProperty]
     private bool _loop = true;
