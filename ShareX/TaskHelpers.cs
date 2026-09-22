@@ -1663,6 +1663,29 @@ namespace ShareX
             });
         }
 
+        public static void OpenRemoteStorageBrowser()
+        {
+            SettingManager.WaitUploadersConfig();
+
+            if (!UploadersConfigValidator.Validate(FileDestination.AmazonS3, ApplicationState.UploadersConfig))
+            {
+                MessageBox.Show(Strings.TaskHelpers_AmazonS3NotConfigured,
+                    "ShareX - " + Strings.MainMenuBuilder_RemoteStorageBrowser.TrimEnd('.', '…'),
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            IRemoteStorageProvider[] providers =
+            [
+                new AmazonS3RemoteStorageProvider(ApplicationState.UploadersConfig.AmazonS3Settings, !SystemOptions.DisableUpload)
+            ];
+
+            ToolsIntegration.ShowRemoteStorageBrowserWindow(providers, new RemoteStorageBrowserServices
+            {
+                OpenUrl = URLHelpers.OpenURL
+            });
+        }
+
         public static void OpenQRCode(string text = null)
         {
             if (text == null)

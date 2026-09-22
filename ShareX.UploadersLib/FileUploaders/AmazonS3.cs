@@ -186,6 +186,128 @@ namespace ShareX.UploadersLib.FileUploaders
             return LastResponseInfo != null && LastResponseInfo.IsSuccess;
         }
 
+        public async Task<IReadOnlyList<AmazonS3ObjectInfo>> ListObjectsAsync(string prefix = "", string delimiter = "/",
+            CancellationToken cancellationToken = default)
+        {
+            prefix = NormalizeObjectKey(prefix);
+            List<AmazonS3ObjectInfo> objects = new List<AmazonS3ObjectInfo>();
+            string continuationToken = null;
+
+            do
+            {
+                SortedDictionary<string, string> query = new SortedDictionary<string, string>(StringComparer.Ordinal)
+                {
+                    ["encoding-type"] = "url",
+                    ["list-type"] = "2"
+                };
+
+                if (!string.IsNullOrEmpty(prefix))
+                {
+                    query["prefix"] = prefix;
+                }
+
+                if (!string.IsNullOrEmpty(delimiter))
+                {
+                    query["delimiter"] = delimiter;
+                }
+
+                if (!string.IsNullOrEmpty(continuationToken))
+                {
+                    query["continuation-token"] = continuationToken;
+                }
+
+                string canonicalQueryString = CreateCanonicalQueryString(query);
+                AmazonS3RequestData requestData = CreateRequestData("");
+                NameValueCollection headers = CreateSignedRequestHeaders(HttpMethod.GET, requestData, canonicalQueryString,
+                    GetEmptyPayloadHash(), null, null);
+                string response = await SendRequestAsync(HttpMethod.GET, GetRequestURL(requestData, canonicalQueryString),
+                    headers: headers, cancellationToken: cancellationToken).ConfigureAwait(false);
+
+                if (LastResponseInfo == null || !LastResponseInfo.IsSuccess || string.IsNullOrWhiteSpace(response))
+                {
+                    return null;
+                }
+
+                AmazonS3ListPage page = ParseListObjectsResponse(response);
+                if (page == null)
+                {
+                    return null;
+                }
+
+                objects.AddRange(page.Objects);
+                continuationToken = page.IsTruncated ? page.NextContinuationToken : null;
+
+                if (page.IsTruncated && string.IsNullOrEmpty(continuationToken))
+                {
+                    return null;
+                }
+            }
+            while (!string.IsNullOrEmpty(continuationToken));
+
+            return objects;
+        }
+
+        public async Task<bool> DownloadObjectAsync(string objectKey, Stream destination,
+            CancellationToken cancellationToken = default)
+        {
+            ArgumentException.ThrowIfNullOrEmpty(objectKey);
+            ArgumentNullException.ThrowIfNull(destination);
+
+            AmazonS3RequestData requestData = CreateRequestData(NormalizeObjectKey(objectKey));
+            NameValueCollection headers = CreateSignedRequestHeaders(HttpMethod.GET, requestData, "", GetEmptyPayloadHash(), null, null);
+            return await SendRequestDownloadAsync(HttpMethod.GET, GetRequestURL(requestData, ""), destination, headers: headers,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        public Task<bool> UploadObjectAsync(Stream stream, string objectKey, CancellationToken cancellationToken = default)
+        {
+            ArgumentNullException.ThrowIfNull(stream);
+            ArgumentException.ThrowIfNullOrEmpty(objectKey);
+
+            objectKey = NormalizeObjectKey(objectKey);
+            return RunOperationAsync(token => UploadObjectCoreAsync(stream, objectKey, token), cancellationToken);
+        }
+
+        private async Task<bool> UploadObjectCoreAsync(Stream stream, string objectKey, CancellationToken cancellationToken)
+        {
+            string contentType = MimeTypes.GetMimeTypeFromFileName(objectKey);
+            AmazonS3RequestData requestData = CreateRequestData(objectKey);
+            UploadResult result;
+
+            if (Settings.UseMultipartUpload && stream.Length > 0)
+            {
+                result = await UploadMultipartAsync(stream, contentType, GenerateURL(objectKey), requestData,
+                    cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                result = await UploadSingleRequestAsync(stream, contentType, GenerateURL(objectKey), requestData,
+                    cancellationToken).ConfigureAwait(false);
+            }
+
+            return result != null;
+        }
+
+        public async Task<bool> CopyObjectAsync(string sourceObjectKey, string destinationObjectKey,
+            CancellationToken cancellationToken = default)
+        {
+            ArgumentException.ThrowIfNullOrEmpty(sourceObjectKey);
+            ArgumentException.ThrowIfNullOrEmpty(destinationObjectKey);
+
+            sourceObjectKey = NormalizeObjectKey(sourceObjectKey);
+            destinationObjectKey = NormalizeObjectKey(destinationObjectKey);
+            AmazonS3RequestData requestData = CreateRequestData(destinationObjectKey);
+            NameValueCollection headers = CreateObjectHeaders();
+            headers["x-amz-copy-source"] = "/" + URLHelpers.URLEncode(
+                URLHelpers.CombineURL(Settings.Bucket, sourceObjectKey), true);
+
+            using MemoryStream emptyStream = new MemoryStream(Array.Empty<byte>(), false);
+            string response = await SendAmazonS3RequestAsync(HttpMethod.PUT, requestData, "", emptyStream, 0, 0, null,
+                headers, cancellationToken).ConfigureAwait(false);
+
+            return LastResponseInfo != null && LastResponseInfo.IsSuccess && !IsAmazonS3ErrorResponse(response);
+        }
+
         private async Task<UploadResult> UploadSingleRequestAsync(Stream stream, string contentType, string resultURL,
             AmazonS3RequestData requestData, CancellationToken cancellationToken)
         {
@@ -654,6 +776,91 @@ namespace ShareX.UploadersLib.FileUploaders
                 IsSuccess = true,
                 URL = resultURL
             };
+        }
+
+        private sealed class AmazonS3ListPage
+        {
+            public List<AmazonS3ObjectInfo> Objects { get; } = new List<AmazonS3ObjectInfo>();
+            public bool IsTruncated { get; set; }
+            public string NextContinuationToken { get; set; }
+        }
+
+        private static AmazonS3ListPage ParseListObjectsResponse(string response)
+        {
+            try
+            {
+                XDocument document = XDocument.Parse(response);
+                XElement root = document.Root;
+                if (root == null || root.Name.LocalName != "ListBucketResult")
+                {
+                    return null;
+                }
+
+                AmazonS3ListPage page = new AmazonS3ListPage
+                {
+                    IsTruncated = bool.TryParse(GetElementValue(root, "IsTruncated"), out bool isTruncated) && isTruncated,
+                    NextContinuationToken = GetElementValue(root, "NextContinuationToken")
+                };
+
+                foreach (XElement commonPrefix in root.Elements().Where(x => x.Name.LocalName == "CommonPrefixes"))
+                {
+                    string encodedPrefix = GetElementValue(commonPrefix, "Prefix");
+                    string key = DecodeListObjectValue(encodedPrefix);
+                    if (!string.IsNullOrEmpty(key))
+                    {
+                        page.Objects.Add(new AmazonS3ObjectInfo(key, true));
+                    }
+                }
+
+                foreach (XElement content in root.Elements().Where(x => x.Name.LocalName == "Contents"))
+                {
+                    string encodedKey = GetElementValue(content, "Key");
+                    string key = DecodeListObjectValue(encodedKey);
+                    if (string.IsNullOrEmpty(key))
+                    {
+                        continue;
+                    }
+
+                    long? size = long.TryParse(GetElementValue(content, "Size"), NumberStyles.Integer,
+                        CultureInfo.InvariantCulture, out long parsedSize) ? parsedSize : null;
+                    DateTimeOffset? lastModified = DateTimeOffset.TryParse(GetElementValue(content, "LastModified"),
+                        CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out DateTimeOffset parsedDate)
+                        ? parsedDate : null;
+                    page.Objects.Add(new AmazonS3ObjectInfo(key, false, size, lastModified));
+                }
+
+                return page;
+            }
+            catch (XmlException)
+            {
+                return null;
+            }
+        }
+
+        private static string GetElementValue(XElement parent, string localName)
+        {
+            return parent.Elements().FirstOrDefault(x => x.Name.LocalName == localName)?.Value;
+        }
+
+        private static string DecodeListObjectValue(string value)
+        {
+            return string.IsNullOrEmpty(value) ? value : Uri.UnescapeDataString(value);
+        }
+
+        private static string CreateCanonicalQueryString(IEnumerable<KeyValuePair<string, string>> parameters)
+        {
+            return string.Join("&", parameters.OrderBy(x => x.Key, StringComparer.Ordinal).Select(x =>
+                URLHelpers.URLEncode(x.Key) + "=" + URLHelpers.URLEncode(x.Value ?? "")));
+        }
+
+        private static string NormalizeObjectKey(string objectKey)
+        {
+            return objectKey?.Replace('\\', '/').TrimStart('/') ?? "";
+        }
+
+        private string GetEmptyPayloadHash()
+        {
+            return Settings.SignedPayload ? Helpers.BytesToHex(Helpers.ComputeSHA256("")) : UnsignedPayload;
         }
 
         private string GetRegion()

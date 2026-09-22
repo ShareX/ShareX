@@ -5402,12 +5402,23 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("MainMenuBuilder_NetworkMonitor", resourceCulture);
             }
         }
+        public static string MainMenuBuilder_RemoteStorageBrowser {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_RemoteStorageBrowser", resourceCulture);
+            }
+        }
         /// <summary>
         ///   Video trimmer
         /// </summary>
         public static string MainMenuBuilder_VideoTrimmer {
             get {
                 return ResourceManager.GetString("MainMenuBuilder_VideoTrimmer", resourceCulture);
+            }
+        }
+
+        public static string TaskHelpers_AmazonS3NotConfigured {
+            get {
+                return ResourceManager.GetString("TaskHelpers_AmazonS3NotConfigured", resourceCulture);
             }
         }
 

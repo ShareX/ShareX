@@ -1,0 +1,227 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:localization="using:ShareX.Tools.Localization"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="1000"
+        d:DesignHeight="650"
+        x:Class="ShareX.Tools.RemoteStorageBrowserWindow"
+        x:DataType="vm:RemoteStorageBrowserViewModel"
+        Title="{x:Static localization:Strings.RemoteStorageBrowser_Title}"
+        Width="1000"
+        Height="650"
+        MinWidth="760"
+        MinHeight="480"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="ListBox.storage-list ListBoxItem">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="Button.toolbar-button">
+            <Setter Property="MinWidth" Value="38"/>
+            <Setter Property="MinHeight" Value="34"/>
+            <Setter Property="Padding" Value="9,5"/>
+        </Style>
+        <Style Selector="Button.toolbar-button.auto-width">
+            <Setter Property="Width" Value="NaN"/>
+        </Style>
+        <Style Selector="TextBlock.column-heading">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" RowDefinitions="Auto,*,Auto">
+        <Border Grid.Row="0"
+                Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                BorderThickness="0,0,0,1"
+                Padding="12">
+            <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
+                <Grid Grid.Row="0" ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="8">
+                    <TextBlock Grid.Column="0"
+                               Text="{x:Static localization:Strings.RemoteStorageBrowser_Provider}"
+                               VerticalAlignment="Center"
+                               FontWeight="Normal"/>
+                    <ComboBox Grid.Column="1"
+                              HorizontalAlignment="Stretch"
+                              ItemsSource="{Binding Providers}"
+                              SelectedItem="{Binding SelectedProvider, Mode=OneWay}"
+                              IsEnabled="{Binding !IsBusy}"
+                              SelectionChanged="OnProviderSelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate x:DataType="vm:IRemoteStorageProvider">
+                                <TextBlock Text="{Binding DisplayName}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <Button Grid.Column="2"
+                            Classes="toolbar-button"
+                            IsEnabled="{Binding CanGoUp}"
+                            Click="OnUpClick"
+                            ToolTip.Tip="{x:Static localization:Strings.RemoteStorageBrowser_Up}">
+                        <TextBlock Text="{x:Static theming:LucideIcons.arrow_up}"
+                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                   FontWeight="Normal"/>
+                    </Button>
+                    <Button Grid.Column="3"
+                            Classes="toolbar-button"
+                            IsEnabled="{Binding !IsBusy}"
+                            Click="OnRefreshClick"
+                            ToolTip.Tip="{x:Static localization:Strings.RemoteStorageBrowser_Refresh}">
+                        <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}"
+                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                   FontWeight="Normal"/>
+                    </Button>
+                    <Button Grid.Column="4"
+                            Classes="toolbar-button auto-width"
+                            IsEnabled="{Binding CanUpload}"
+                            Click="OnUploadClick">
+                        <StackPanel Orientation="Horizontal" Spacing="7">
+                            <TextBlock Text="{x:Static theming:LucideIcons.upload}"
+                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                       FontWeight="Normal"/>
+                            <TextBlock Text="{x:Static localization:Strings.RemoteStorageBrowser_Upload}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+
+                <Grid Grid.Row="1" ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                    <TextBlock Grid.Column="0"
+                               Text="{x:Static localization:Strings.RemoteStorageBrowser_Location}"
+                               VerticalAlignment="Center"
+                               FontWeight="Normal"/>
+                    <TextBox Grid.Column="1"
+                             Text="{Binding LocationText}"
+                             IsReadOnly="True"
+                             VerticalContentAlignment="Center"/>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Margin="12" Classes="tool-panel" Padding="0" ClipToBounds="True">
+            <Grid RowDefinitions="38,*">
+                <Border Grid.Row="0"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                        BorderThickness="0,0,0,1"
+                        Padding="10,0">
+                    <Grid ColumnDefinitions="34,*,140,190" ColumnSpacing="8">
+                        <TextBlock Grid.Column="1"
+                                   Classes="column-heading"
+                                   Text="{x:Static localization:Strings.RemoteStorageBrowser_Name}"/>
+                        <TextBlock Grid.Column="2"
+                                   Classes="column-heading"
+                                   Text="{x:Static localization:Strings.RemoteStorageBrowser_Size}"/>
+                        <TextBlock Grid.Column="3"
+                                   Classes="column-heading"
+                                   Text="{x:Static localization:Strings.RemoteStorageBrowser_Modified}"/>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="1">
+                    <ListBox Classes="storage-list"
+                             ItemsSource="{Binding Items}"
+                             SelectedItem="{Binding SelectedItem}"
+                             IsEnabled="{Binding !IsBusy}"
+                             DoubleTapped="OnItemDoubleTapped"
+                             KeyDown="OnFileListKeyDown">
+                        <ListBox.ContextMenu>
+                            <ContextMenu Opened="OnContextMenuOpened">
+                                <MenuItem Header="{x:Static localization:Strings.RemoteStorageBrowser_Download}"
+                                          Click="OnDownloadClick"/>
+                                <MenuItem Header="{x:Static localization:Strings.RemoteStorageBrowser_Upload}"
+                                          Click="OnUploadClick"/>
+                                <Separator/>
+                                <MenuItem Header="{x:Static localization:Strings.RemoteStorageBrowser_Rename}"
+                                          Click="OnRenameClick"/>
+                                <MenuItem Header="{x:Static localization:Strings.RemoteStorageBrowser_Delete}"
+                                          Click="OnDeleteClick"/>
+                                <Separator/>
+                                <MenuItem Header="{x:Static localization:Strings.RemoteStorageBrowser_View}"
+                                          Click="OnViewClick"/>
+                                <MenuItem Header="{x:Static localization:Strings.RemoteStorageBrowser_OpenUrl}"
+                                          Click="OnOpenUrlClick"/>
+                                <MenuItem Header="{x:Static localization:Strings.RemoteStorageBrowser_CopyUrl}"
+                                          Click="OnCopyUrlClick"/>
+                            </ContextMenu>
+                        </ListBox.ContextMenu>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate x:DataType="vm:RemoteStorageBrowserItemViewModel">
+                                <Border Padding="10,8" PointerPressed="OnItemPointerPressed">
+                                    <Grid ColumnDefinitions="34,*,140,190" ColumnSpacing="8">
+                                        <TextBlock Grid.Column="0"
+                                                   Text="{Binding Icon}"
+                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                   FontWeight="Normal"
+                                                   FontSize="17"
+                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                   VerticalAlignment="Center"/>
+                                        <TextBlock Grid.Column="1"
+                                                   Text="{Binding Name}"
+                                                   TextTrimming="CharacterEllipsis"
+                                                   VerticalAlignment="Center"
+                                                   FontWeight="Normal"/>
+                                        <TextBlock Grid.Column="2"
+                                                   Text="{Binding SizeText}"
+                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                   VerticalAlignment="Center"
+                                                   FontWeight="Normal"/>
+                                        <TextBlock Grid.Column="3"
+                                                   Text="{Binding ModifiedText}"
+                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                   VerticalAlignment="Center"
+                                                   FontWeight="Normal"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <StackPanel IsVisible="{Binding IsEmpty}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Spacing="10"
+                                IsHitTestVisible="False">
+                        <TextBlock Text="{x:Static theming:LucideIcons.folder_open}"
+                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                   FontWeight="Normal"
+                                   FontSize="48"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Static localization:Strings.RemoteStorageBrowser_EmptyFolder}"
+                                   FontWeight="Normal"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                    </StackPanel>
+
+                    <Border IsVisible="{Binding IsBusy}"
+                            Background="#66000000">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="12">
+                            <ProgressBar Width="220" IsIndeterminate="True"/>
+                            <TextBlock Text="{Binding StatusText}"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2"
+                Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                BorderThickness="0,1,0,0"
+                Padding="12,7">
+            <TextBlock Text="{Binding StatusText}"
+                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                       FontWeight="Normal"/>
+        </Border>
+    </Grid>
+</Window>

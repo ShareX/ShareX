@@ -135,6 +135,12 @@ public static class ToolsIntegration
         });
     }
 
+    public static void ShowRemoteStorageBrowserWindow(IEnumerable<IRemoteStorageProvider> providers,
+        RemoteStorageBrowserServices? services = null)
+    {
+        Show(() => new RemoteStorageBrowserWindow(providers, services));
+    }
+
     public static void ShowPinToScreenWindow(PinToScreenServices services, PinToScreenOptions options)
     {
         Show(() => new PinToScreenStartupWindow(services, options));

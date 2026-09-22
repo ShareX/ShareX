@@ -5862,5 +5862,35 @@ namespace ShareX.Tools.Localization {
             }
         }
 
+        public static string RemoteStorageBrowser_Title => ResourceManager.GetString("RemoteStorageBrowser_Title", resourceCulture);
+        public static string RemoteStorageBrowser_Provider => ResourceManager.GetString("RemoteStorageBrowser_Provider", resourceCulture);
+        public static string RemoteStorageBrowser_Up => ResourceManager.GetString("RemoteStorageBrowser_Up", resourceCulture);
+        public static string RemoteStorageBrowser_Refresh => ResourceManager.GetString("RemoteStorageBrowser_Refresh", resourceCulture);
+        public static string RemoteStorageBrowser_Upload => ResourceManager.GetString("RemoteStorageBrowser_Upload", resourceCulture);
+        public static string RemoteStorageBrowser_Location => ResourceManager.GetString("RemoteStorageBrowser_Location", resourceCulture);
+        public static string RemoteStorageBrowser_Name => ResourceManager.GetString("RemoteStorageBrowser_Name", resourceCulture);
+        public static string RemoteStorageBrowser_Size => ResourceManager.GetString("RemoteStorageBrowser_Size", resourceCulture);
+        public static string RemoteStorageBrowser_Modified => ResourceManager.GetString("RemoteStorageBrowser_Modified", resourceCulture);
+        public static string RemoteStorageBrowser_Download => ResourceManager.GetString("RemoteStorageBrowser_Download", resourceCulture);
+        public static string RemoteStorageBrowser_Rename => ResourceManager.GetString("RemoteStorageBrowser_Rename", resourceCulture);
+        public static string RemoteStorageBrowser_Delete => ResourceManager.GetString("RemoteStorageBrowser_Delete", resourceCulture);
+        public static string RemoteStorageBrowser_View => ResourceManager.GetString("RemoteStorageBrowser_View", resourceCulture);
+        public static string RemoteStorageBrowser_OpenUrl => ResourceManager.GetString("RemoteStorageBrowser_OpenUrl", resourceCulture);
+        public static string RemoteStorageBrowser_CopyUrl => ResourceManager.GetString("RemoteStorageBrowser_CopyUrl", resourceCulture);
+        public static string RemoteStorageBrowser_EmptyFolder => ResourceManager.GetString("RemoteStorageBrowser_EmptyFolder", resourceCulture);
+        public static string RemoteStorageBrowser_SelectFilesToUpload => ResourceManager.GetString("RemoteStorageBrowser_SelectFilesToUpload", resourceCulture);
+        public static string RemoteStorageBrowser_SaveDownloadedFile => ResourceManager.GetString("RemoteStorageBrowser_SaveDownloadedFile", resourceCulture);
+        public static string RemoteStorageBrowser_Cancel => ResourceManager.GetString("RemoteStorageBrowser_Cancel", resourceCulture);
+        public static string RemoteStorageBrowser_DeleteFolderConfirmation => ResourceManager.GetString("RemoteStorageBrowser_DeleteFolderConfirmation", resourceCulture);
+        public static string RemoteStorageBrowser_DeleteFileConfirmation => ResourceManager.GetString("RemoteStorageBrowser_DeleteFileConfirmation", resourceCulture);
+        public static string RemoteStorageBrowser_Downloaded => ResourceManager.GetString("RemoteStorageBrowser_Downloaded", resourceCulture);
+        public static string RemoteStorageBrowser_UploadedFiles => ResourceManager.GetString("RemoteStorageBrowser_UploadedFiles", resourceCulture);
+        public static string RemoteStorageBrowser_NameAlreadyExists => ResourceManager.GetString("RemoteStorageBrowser_NameAlreadyExists", resourceCulture);
+        public static string RemoteStorageBrowser_Renamed => ResourceManager.GetString("RemoteStorageBrowser_Renamed", resourceCulture);
+        public static string RemoteStorageBrowser_Deleted => ResourceManager.GetString("RemoteStorageBrowser_Deleted", resourceCulture);
+        public static string RemoteStorageBrowser_Loading => ResourceManager.GetString("RemoteStorageBrowser_Loading", resourceCulture);
+        public static string RemoteStorageBrowser_ItemCount => ResourceManager.GetString("RemoteStorageBrowser_ItemCount", resourceCulture);
+        public static string RemoteStorageBrowser_OperationFailed => ResourceManager.GetString("RemoteStorageBrowser_OperationFailed", resourceCulture);
+
     }
 }
