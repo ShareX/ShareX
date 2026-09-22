@@ -92,7 +92,7 @@ public static class AnimatedGifMakerService
     {
         using Bitmap frame = ImageResizerService.Resize(source, canvasSize.Width, canvasSize.Height,
             ImageResizeMode.Fit);
-        creator.AddFrame(frame);
+        creator.AddFrame(frame, GIFQuality.Bit8);
     }
 
     private static Bitmap LoadImage(string imageFile)
