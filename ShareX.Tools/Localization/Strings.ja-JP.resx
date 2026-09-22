@@ -2099,7 +2099,7 @@
     <value>アニメーション</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>GIF を作成</value>
+    <value>GIF を作成...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>フレーム遅延</value>

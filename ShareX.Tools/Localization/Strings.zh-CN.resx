@@ -2105,7 +2105,7 @@
     <value>动画</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>创建 GIF</value>
+    <value>创建 GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>帧延迟</value>

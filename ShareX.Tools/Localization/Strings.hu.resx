@@ -2099,7 +2099,7 @@
     <value>Animáció</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>GIF létrehozása</value>
+    <value>GIF létrehozása...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Képkocka késleltetése</value>

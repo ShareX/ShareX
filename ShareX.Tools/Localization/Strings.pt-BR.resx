@@ -2105,7 +2105,7 @@ Caminho do arquivo: {0}</value>
     <value>Animação</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Criar GIF</value>
+    <value>Criar GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Atraso do quadro</value>

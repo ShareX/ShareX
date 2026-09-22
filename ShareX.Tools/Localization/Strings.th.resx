@@ -2099,7 +2099,7 @@
     <value>ภาพเคลื่อนไหว</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>สร้าง GIF</value>
+    <value>สร้าง GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>ระยะหน่วงเฟรม</value>

@@ -2099,7 +2099,7 @@
     <value>הנפשה</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>יצירת GIF</value>
+    <value>יצירת GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>השהיית פריים</value>

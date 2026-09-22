@@ -2099,7 +2099,7 @@
     <value>پویانمایی</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>ساخت GIF</value>
+    <value>ساخت GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>تأخیر فریم</value>

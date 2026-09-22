@@ -2195,7 +2195,7 @@
     <value>Animation</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Create GIF</value>
+    <value>Create GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Frame delay</value>

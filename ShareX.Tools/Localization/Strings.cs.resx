@@ -2105,7 +2105,7 @@ Cesta k souboru: {0}</value>
     <value>Animace</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Vytvořit GIF</value>
+    <value>Vytvořit GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Prodleva snímku</value>

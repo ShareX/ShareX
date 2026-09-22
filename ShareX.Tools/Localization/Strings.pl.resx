@@ -2099,7 +2099,7 @@
     <value>Animacja</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Utwórz GIF</value>
+    <value>Utwórz GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Opóźnienie klatki</value>

@@ -2105,7 +2105,7 @@ Dosya yolu: {0}</value>
     <value>Animasyon</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>GIF oluştur</value>
+    <value>GIF oluştur...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Kare gecikmesi</value>

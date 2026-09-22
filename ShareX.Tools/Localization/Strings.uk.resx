@@ -2099,7 +2099,7 @@
     <value>Анімація</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Створити GIF</value>
+    <value>Створити GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Затримка кадру</value>

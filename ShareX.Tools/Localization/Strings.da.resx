@@ -2105,7 +2105,7 @@ Filsti: {0}</value>
     <value>Animering</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Opret GIF</value>
+    <value>Opret GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Billedforsinkelse</value>

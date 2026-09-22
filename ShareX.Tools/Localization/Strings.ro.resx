@@ -2099,7 +2099,7 @@
     <value>Animație</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Creează GIF</value>
+    <value>Creează GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Întârziere cadru</value>

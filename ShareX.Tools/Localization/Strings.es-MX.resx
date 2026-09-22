@@ -2105,7 +2105,7 @@ Ruta del archivo: {0}</value>
     <value>Animación</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Crear GIF</value>
+    <value>Crear GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Retraso de fotograma</value>

@@ -2099,7 +2099,7 @@
     <value>Hoạt ảnh</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Tạo GIF</value>
+    <value>Tạo GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Độ trễ khung hình</value>

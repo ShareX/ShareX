@@ -2105,7 +2105,7 @@ Bestandspad: {0}</value>
     <value>Animatie</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>GIF maken</value>
+    <value>GIF maken...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Framevertraging</value>

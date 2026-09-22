@@ -2105,7 +2105,7 @@ Percorso file: {0}</value>
     <value>Animazione</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Crea GIF</value>
+    <value>Crea GIF...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>Ritardo fotogramma</value>

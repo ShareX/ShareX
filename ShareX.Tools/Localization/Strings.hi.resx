@@ -2105,7 +2105,7 @@
     <value>एनिमेशन</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>GIF बनाएँ</value>
+    <value>GIF बनाएँ...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>फ़्रेम विलंब</value>

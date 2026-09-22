@@ -2099,7 +2099,7 @@
     <value>애니메이션</value>
   </data>
   <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>GIF 만들기</value>
+    <value>GIF 만들기...</value>
   </data>
   <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
     <value>프레임 지연</value>
