@@ -137,7 +137,12 @@
                     </Grid>
                 </Border>
 
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1"
+                      DragDrop.AllowDrop="True"
+                      DragDrop.DragEnter="OnFilesDragEnter"
+                      DragDrop.DragOver="OnFilesDragOver"
+                      DragDrop.DragLeave="OnFilesDragLeave"
+                      DragDrop.Drop="OnFilesDrop">
                     <ListBox Classes="storage-list"
                              ItemsSource="{Binding Items}"
                              SelectedItem="{Binding SelectedItem}"
@@ -213,6 +218,29 @@
                                    FontWeight="Normal"
                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                     </StackPanel>
+
+                    <Border IsVisible="{Binding IsDragOver}"
+                            IsHitTestVisible="False"
+                            Margin="8"
+                            Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                            BorderBrush="{DynamicResource ShareX.Brush.Accent}"
+                            BorderThickness="2"
+                            CornerRadius="8"
+                            Opacity="0.96">
+                        <StackPanel HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Spacing="10">
+                            <TextBlock Text="{x:Static theming:LucideIcons.upload}"
+                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                       FontWeight="Normal"
+                                       FontSize="42"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                       HorizontalAlignment="Center"/>
+                            <TextBlock Text="{x:Static localization:Strings.RemoteStorageBrowser_DropFilesToUpload}"
+                                       FontWeight="SemiBold"
+                                       HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
 
                     <Border IsVisible="{Binding IsBusy}"
                             Background="#66000000">

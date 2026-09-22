@@ -2122,6 +2122,9 @@
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>Select files to upload</value>
   </data>
+  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
+    <value>Drop files to upload to this folder</value>
+  </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>Save downloaded file</value>
   </data>

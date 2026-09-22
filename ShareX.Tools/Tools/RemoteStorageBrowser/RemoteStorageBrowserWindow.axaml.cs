@@ -87,6 +87,59 @@ public partial class RemoteStorageBrowserWindow : Window
         await _viewModel.UploadAsync(sources);
     }
 
+    private void OnFilesDragEnter(object? sender, DragEventArgs e) => UpdateFilesDragState(e);
+
+    private void OnFilesDragOver(object? sender, DragEventArgs e) => UpdateFilesDragState(e);
+
+    private void UpdateFilesDragState(DragEventArgs e)
+    {
+        bool canUpload = _viewModel.CanUpload && GetDroppedFiles(e.DataTransfer).Count > 0;
+        e.DragEffects = canUpload ? DragDropEffects.Copy : DragDropEffects.None;
+        _viewModel.IsDragOver = canUpload;
+        e.Handled = true;
+    }
+
+    private void OnFilesDragLeave(object? sender, DragEventArgs e)
+    {
+        _viewModel.IsDragOver = false;
+        e.Handled = true;
+    }
+
+    private async void OnFilesDrop(object? sender, DragEventArgs e)
+    {
+        IReadOnlyList<IStorageFile> files = _viewModel.CanUpload
+            ? GetDroppedFiles(e.DataTransfer)
+            : [];
+
+        _viewModel.IsDragOver = false;
+        e.DragEffects = files.Count > 0 ? DragDropEffects.Copy : DragDropEffects.None;
+        e.Handled = true;
+
+        if (files.Count > 0)
+        {
+            RemoteStorageUploadSource[] sources = files.Select(file =>
+                new RemoteStorageUploadSource(file.Name, file.OpenReadAsync)).ToArray();
+            await _viewModel.UploadAsync(sources);
+        }
+    }
+
+    private static IReadOnlyList<IStorageFile> GetDroppedFiles(IDataTransfer dataTransfer)
+    {
+        List<IStorageFile> files = dataTransfer.TryGetFiles()?.OfType<IStorageFile>().ToList() ?? [];
+        if (files.Count == 0)
+        {
+            foreach (IDataTransferItem item in dataTransfer.Items)
+            {
+                if (item.TryGetRaw(DataFormat.File) is IStorageFile file)
+                {
+                    files.Add(file);
+                }
+            }
+        }
+
+        return files;
+    }
+
     private async void OnCreateFolderClick(object? sender, RoutedEventArgs e)
     {
         string dialogTitle = Localization.Strings.RemoteStorageBrowser_CreateFolder.TrimEnd('.', '…');

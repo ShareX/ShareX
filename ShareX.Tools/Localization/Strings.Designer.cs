@@ -5881,6 +5881,7 @@ namespace ShareX.Tools.Localization {
         public static string RemoteStorageBrowser_CopyUrl => ResourceManager.GetString("RemoteStorageBrowser_CopyUrl", resourceCulture);
         public static string RemoteStorageBrowser_EmptyFolder => ResourceManager.GetString("RemoteStorageBrowser_EmptyFolder", resourceCulture);
         public static string RemoteStorageBrowser_SelectFilesToUpload => ResourceManager.GetString("RemoteStorageBrowser_SelectFilesToUpload", resourceCulture);
+        public static string RemoteStorageBrowser_DropFilesToUpload => ResourceManager.GetString("RemoteStorageBrowser_DropFilesToUpload", resourceCulture);
         public static string RemoteStorageBrowser_SaveDownloadedFile => ResourceManager.GetString("RemoteStorageBrowser_SaveDownloadedFile", resourceCulture);
         public static string RemoteStorageBrowser_Cancel => ResourceManager.GetString("RemoteStorageBrowser_Cancel", resourceCulture);
         public static string RemoteStorageBrowser_DeleteFolderConfirmation => ResourceManager.GetString("RemoteStorageBrowser_DeleteFolderConfirmation", resourceCulture);

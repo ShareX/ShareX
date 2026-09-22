@@ -102,6 +102,9 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
     [ObservableProperty]
     private string _statusText = string.Empty;
 
+    [ObservableProperty]
+    private bool _isDragOver;
+
     public bool IsEmpty => !IsBusy && !HasItems;
     public bool HasSelection => SelectedItem != null;
     public bool CanGoUp => !IsBusy && SelectedProvider.GetParentPath(CurrentPath) != null;
