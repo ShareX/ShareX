@@ -2903,6 +2903,6 @@ You can later disable it from "After capture tasks" menu.</value>
   </data>
   <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Resize image...</value></data>
   <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
-    <value>Configure an Amazon S3 or SFTP uploader in Destination settings before opening the remote storage browser.</value>
+    <value>Configure an Amazon S3, FTP, FTPS, or SFTP uploader in Destination settings before opening the remote storage browser.</value>
   </data>
 </root>

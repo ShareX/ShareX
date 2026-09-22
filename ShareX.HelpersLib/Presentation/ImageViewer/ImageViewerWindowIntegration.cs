@@ -97,9 +97,17 @@ public static class ImageViewerWindowIntegration
             try
             {
                 Window window = windowFactory();
-                if (owner is { IsVisible: true })
+                if (owner is { IsVisible: true } visibleOwner)
                 {
-                    window.Show(owner);
+                    window.Closed += (_, _) => Dispatcher.UIThread.Post(() =>
+                    {
+                        if (visibleOwner.IsVisible)
+                        {
+                            visibleOwner.Activate();
+                        }
+                    }, DispatcherPriority.Input);
+
+                    window.Show(visibleOwner);
                 }
                 else
                 {

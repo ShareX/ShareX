@@ -321,7 +321,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 using (Stream remoteStream = client.OpenRead(remotePath))
                 {
-                    TransferData(remoteStream, localStream);
+                    remoteStream.CopyTo(localStream, BufferSize);
                 }
                 client.GetReply();
             }

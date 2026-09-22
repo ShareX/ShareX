@@ -1677,9 +1677,17 @@ namespace ShareX
 
             if (config.FTPAccountList != null)
             {
-                providers.AddRange(config.FTPAccountList
-                    .Where(IsConfiguredSFTPAccount)
-                    .Select(account => new SFTPRemoteStorageProvider(account, !SystemOptions.DisableUpload)));
+                foreach (FTPAccount account in config.FTPAccountList)
+                {
+                    if (IsConfiguredFTPAccount(account))
+                    {
+                        providers.Add(new FTPRemoteStorageProvider(account, !SystemOptions.DisableUpload));
+                    }
+                    else if (IsConfiguredSFTPAccount(account))
+                    {
+                        providers.Add(new SFTPRemoteStorageProvider(account, !SystemOptions.DisableUpload));
+                    }
+                }
             }
 
             if (providers.Count == 0)
@@ -1694,6 +1702,12 @@ namespace ShareX
             {
                 OpenUrl = URLHelpers.OpenURL
             });
+        }
+
+        private static bool IsConfiguredFTPAccount(FTPAccount account)
+        {
+            return account != null && account.Protocol is FTPProtocol.FTP or FTPProtocol.FTPS &&
+                !string.IsNullOrWhiteSpace(account.Host) && account.Port > 0;
         }
 
         private static bool IsConfiguredSFTPAccount(FTPAccount account)
