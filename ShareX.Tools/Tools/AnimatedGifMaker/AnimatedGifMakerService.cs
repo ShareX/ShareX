@@ -103,7 +103,8 @@ public static class AnimatedGifMakerService
     {
         using Bitmap frame = ImageResizerService.Resize(source, canvasSize.Width, canvasSize.Height,
             ImageResizeMode.Fit);
-        creator.AddFrame(frame, GIFQuality.Bit8);
+        using Bitmap quantizedFrame = GifFrameQuantizer.Quantize(frame);
+        creator.AddFrame(quantizedFrame);
     }
 
     private static Bitmap LoadImage(string imageFile)
