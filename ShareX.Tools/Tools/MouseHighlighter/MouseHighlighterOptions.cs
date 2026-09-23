@@ -28,7 +28,7 @@ public sealed class MouseHighlighterOptions
     public Color SecondaryColor { get; set; } = Color.FromArgb(166, 89, 184, 106);
     public bool ShowSecondaryReleaseCrosshairs { get; set; }
     public bool HighlightMiddleClicks { get; set; } = true;
-    public Color MiddleColor { get; set; } = Color.FromArgb(166, 242, 142, 43);
+    public Color MiddleColor { get; set; } = Color.FromArgb(166, 242, 193, 78);
     public bool ShowMiddleReleaseCrosshairs { get; set; }
     public Color AlwaysColor { get; set; } = Color.Transparent;
     public int Radius { get; set; } = 20;
