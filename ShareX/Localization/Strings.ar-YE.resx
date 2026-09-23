@@ -1376,6 +1376,9 @@
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>تحليل الصورة</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>صانع GIF متحرك...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>إعدادات التطبيق...</value>
   </data>
@@ -1463,6 +1466,9 @@
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>مقارن الصور</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>محوّل الصور...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>محرّر الصور</value>
   </data>
@@ -1471,12 +1477,6 @@
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>سجل الصور...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>محوّل الصور...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>علامة مائية للصور...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>أداة تغيير حجم الصور...</value>
@@ -1489,6 +1489,9 @@
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>عارض الصور</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>علامة مائية للصور...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>فهرسة المجلد...</value>
@@ -1507,6 +1510,9 @@
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>اختبار الشاشة</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>تسليط الضوء على الماوس...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>مراقب الشبكة...</value>
@@ -1534,6 +1540,9 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>منطقة...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>متصفح التخزين البعيد...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>إعادة التشغيل كمسؤول</value>
@@ -1628,6 +1637,9 @@
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>صانع مصغرات الفيديو</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>برنامج تقطيع الفيديو...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>النافذة</value>
   </data>
@@ -1636,6 +1648,9 @@
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>إضافة مؤثرات للصورة...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>دائمًا في المقدمة</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>تحليل الصورة</value>
@@ -1736,6 +1751,12 @@
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>صورة Markdown مرتبطة</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>تعظيم أو استعادة</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>تصغير</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>صورة OCR...</value>
   </data>
@@ -1759,6 +1780,9 @@
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>الحذف عن بُعد</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>تغيير حجم الصورة...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>تشغيل الإجراء</value>
@@ -1808,6 +1832,9 @@
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>عنوان URL للصورة المصغرة</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>قص الفيديو...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>رفع الملف المحدد</value>
   </data>
@@ -1819,6 +1846,9 @@
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>عمودياً</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>تمييز الماوس</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>إلغاء</value>
@@ -2002,6 +2032,9 @@
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>تم نسخ {0} إلى الحافظة</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>قم بتكوين برنامج تحميل Amazon S3 أو FTP أو FTPS أو SFTP في إعدادات الوجهة قبل فتح متصفح التخزين البعيد.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>هل تريد تعيين «{0}» كأداة الرفع المخصصة النشطة لـ {1}؟</value>
@@ -2279,6 +2312,9 @@
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>إخفاء شريط المهام عندما يتقاطع مع نافذة ملتقطة</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>بدء تشغيل أداة تمييز الماوس تلقائيًا</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>إذا كانت الحافظة تحتوي على URL لملف، فنزّله وارفعه</value>
   </data>
@@ -2353,6 +2389,9 @@
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>إجراءات الماوس</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>خيارات تمييز الماوس...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>نقل إلى أسفل</value>
@@ -2881,22 +2920,5 @@
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>مسؤول النظام قام بإيقاف وظيفة الرفع.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>قص الفيديو...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>تغيير حجم الصورة...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>صانع GIF متحرك...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>تمييز الماوس</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>تسليط الضوء على الماوس...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>بدء تشغيل أداة تمييز الماوس تلقائيًا</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>خيارات تمييز الماوس...</value>
   </data>
 </root>

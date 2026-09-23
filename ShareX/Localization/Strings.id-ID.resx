@@ -1376,6 +1376,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Analisis gambar</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Pembuat GIF animasi...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Pengaturan aplikasi...</value>
   </data>
@@ -1425,7 +1428,7 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
     <value>Unggah seret dan jatuhkan</value>
   </data>
   <data name="MainMenuBuilder_EditTools" xml:space="preserve">
-    <value>Edit</value>
+    <value>Sunting</value>
   </data>
   <data name="MainMenuBuilder_EnableHotkeys" xml:space="preserve">
     <value>Aktifkan tombol cepat</value>
@@ -1463,6 +1466,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Pembanding gambar</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Konverter gambar...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Editor gambar</value>
   </data>
@@ -1471,12 +1477,6 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Riwayat gambar...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Konverter gambar...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Tanda air gambar...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Pengubah ukuran gambar...</value>
@@ -1489,6 +1489,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Penampil gambar</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Tanda air gambar...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Indeks folder...</value>
@@ -1507,6 +1510,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Uji Monitor</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Penyorot mouse...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Pemantau jaringan...</value>
@@ -1534,6 +1540,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Wilayah...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Browser penyimpanan jarak jauh...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Mulai ulang sebagai administrator</value>
@@ -1628,6 +1637,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Pemotret video</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Pemangkas video...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Jendela</value>
   </data>
@@ -1636,6 +1648,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Tambahkan efek gambar...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Selalu di atas</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Analisis gambar</value>
@@ -1736,6 +1751,12 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Gambar Markdown tertaut</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maksimalkan atau pulihkan</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Memperkecil</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>Gambar OCR...</value>
   </data>
@@ -1759,6 +1780,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Penghapusan jarak jauh</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Ubah ukuran gambar...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Jalankan tindakan</value>
@@ -1808,6 +1832,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>URL thumbnail</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Potong video...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Unggah file terpilih</value>
   </data>
@@ -1819,6 +1846,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Secara vertikal</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Penyorot mouse</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Batal</value>
@@ -2002,6 +2032,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Disalin ke papan klip: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Konfigurasikan pengunggah Amazon S3, FTP, FTPS, atau SFTP di pengaturan Tujuan sebelum membuka browser penyimpanan jarak jauh.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Tetapkan "{0}" sebagai pengunggah khusus aktif untuk {1}?</value>
@@ -2279,6 +2312,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Sembunyikan bilah tugas saat beririsan dengan jendela yang ditangkap</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Secara otomatis memulai penyorot mouse</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Jika papan klip berisi URL berkas, unduh dan unggah berkas tersebut</value>
   </data>
@@ -2353,6 +2389,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Tindakan mouse</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opsi penyorot mouse...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Pindah ke bawah</value>
@@ -2881,22 +2920,5 @@ Anda dapat menonaktifkannya nanti dari menu "Tugas setelah tangkapan".</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Admin sistem Anda menonaktifkan fitur unggah.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Potong video...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Ubah ukuran gambar...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Pembuat GIF animasi...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Penyorot mouse</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Penyorot mouse...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Secara otomatis memulai penyorot mouse</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Opsi penyorot mouse...</value>
   </data>
 </root>

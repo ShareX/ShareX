@@ -214,6 +214,60 @@
   <data name="AnalyzeImageWindow_ShareX_Analyze_image" xml:space="preserve">
     <value>ShareX - Analisis gambar</value>
   </data>
+  <data name="AnimatedGifMakerViewModel_Create_failed" xml:space="preserve">
+    <value>Gagal membuat GIF: {0}</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Created" xml:space="preserve">
+    <value>GIF animasi berhasil dibuat.</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Creating" xml:space="preserve">
+    <value>Membuat GIF animasi...</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Preview_failed" xml:space="preserve">
+    <value>Pratinjau gagal: {0}</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Preview_info" xml:space="preserve">
+    <value>{0} bingkai • {1} mdtk</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Add_images_dialog" xml:space="preserve">
+    <value>Tambah gambar</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Add_two_images_to_preview" xml:space="preserve">
+    <value>Tambahkan setidaknya dua gambar untuk melihat pratinjau animasi.</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Animated_GIF_maker" xml:space="preserve">
+    <value>Pembuat GIF animasi</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Animation" xml:space="preserve">
+    <value>Animasi</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
+    <value>Buat GIF...</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
+    <value>Jeda bingkai</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_GIF_images" xml:space="preserve">
+    <value>Gambar GIF</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Loop_animation" xml:space="preserve">
+    <value>Ulangi animasi</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Output" xml:space="preserve">
+    <value>Keluaran</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Preview" xml:space="preserve">
+    <value>Pratinjau</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Repeat_count" xml:space="preserve">
+    <value>Jumlah pengulangan</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Save_GIF_dialog" xml:space="preserve">
+    <value>Simpan GIF animasi</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
+    <value>0 mengulang selamanya.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Latar belakang dihapus dalam {0} md.</value>
   </data>
@@ -814,33 +868,6 @@
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Regangkan</value>
   </data>
-  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
-    <value>Terapkan tanda air</value>
-  </data>
-  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
-    <value>Ukuran font</value>
-  </data>
-  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
-    <value>Tanda air gambar</value>
-  </data>
-  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
-    <value>Margin</value>
-  </data>
-  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
-    <value>Posisi</value>
-  </data>
-  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
-    <value>Putar</value>
-  </data>
-  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
-    <value>Skalakan</value>
-  </data>
-  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
-    <value>Tanda air</value>
-  </data>
-  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
-    <value>Jenis tanda air</value>
-  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>
@@ -933,6 +960,33 @@
   </data>
   <data name="ImageThumbnailerWindow_filename_th" xml:space="preserve">
     <value>$filename_th</value>
+  </data>
+  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
+    <value>Terapkan tanda air</value>
+  </data>
+  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
+    <value>Ukuran font</value>
+  </data>
+  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
+    <value>Tanda air gambar</value>
+  </data>
+  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
+    <value>Jarak tepi</value>
+  </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>Posisi</value>
+  </data>
+  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
+    <value>Putar</value>
+  </data>
+  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
+    <value>Skalakan</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
+    <value>Tanda air</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
+    <value>Jenis tanda air</value>
   </data>
   <data name="IndexerHtml_File_count" xml:space="preserve">
     <value>{0:n0} file</value>
@@ -1224,6 +1278,84 @@
   </data>
   <data name="MonitorTestWindow_Speed" xml:space="preserve">
     <value>Kecepatan</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>Selalu sorot warna:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>Gunakan warna transparan untuk menonaktifkan sorotan persisten.</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>Aktif secara otomatis ketika ShareX dimulai</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>Sorotan lingkaran</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>Penundaan pudar (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>Durasi pudar (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>Ikuti kursor saat tombol ditahan</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>Terus sorot setelah merekam</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>Warna tombol tengah:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>Tampilkan garis bidik pada pelepasan tombol tengah</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>Modus sorotan:</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>Warna tombol utama:</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>Tampilkan garis bidik pada pelepasan tombol utama</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>Jari-jari (px):</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>Untuk menyorot klik dalam rekaman, aktifkan opsi penyorot mouse di Pengaturan tugas → Tangkap → Perekam layar.</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>Tampilkan garis bidik pada pelepasan tombol sekunder</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>riak</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>Durasi riak (ms):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>Intensitas riak:</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>Ukuran riak (px):</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>Warna tombol sekunder:</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>Mulai menyorot</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>Tidak dapat memulai penyorotan mouse.</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>Berhenti menyorot</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>Berhenti menyorot saat perekaman berhenti</value>
+  </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>Penyorot mouse</value>
   </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
@@ -1651,6 +1783,108 @@
   <data name="QRCodeWindow_px" xml:space="preserve">
     <value>px</value>
   </data>
+  <data name="RemoteStorageBrowser_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
+    <value>Salin URL</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
+    <value>Buat folder...</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
+    <value>Folder “{0}” telah dibuat.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
+    <value>Hapus...</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
+    <value>Hapus file “{0}”?</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
+    <value>Hapus folder “{0}”?</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
+    <value>Folder “{0}” tidak kosong. Hapus folder beserta seluruh isinya? Tindakan ini tidak dapat dibatalkan.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Deleted" xml:space="preserve">
+    <value>“{0}” telah dihapus.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Download" xml:space="preserve">
+    <value>Unduh...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Downloaded" xml:space="preserve">
+    <value>“{0}” telah diunduh.</value>
+  </data>
+  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
+    <value>Letakkan file untuk mengunggahnya ke folder ini</value>
+  </data>
+  <data name="RemoteStorageBrowser_EmptyFolder" xml:space="preserve">
+    <value>Folder ini kosong.</value>
+  </data>
+  <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
+    <value>{0} file, {1} folder • total {2}</value>
+  </data>
+  <data name="RemoteStorageBrowser_Loading" xml:space="preserve">
+    <value>Memuat...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Location" xml:space="preserve">
+    <value>Lokasi:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Modified" xml:space="preserve">
+    <value>Diubah</value>
+  </data>
+  <data name="RemoteStorageBrowser_Name" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
+    <value>Item bernama “{0}” sudah ada.</value>
+  </data>
+  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
+    <value>Folder baru</value>
+  </data>
+  <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
+    <value>Buka URL</value>
+  </data>
+  <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
+    <value>Operasi penyimpanan jarak jauh gagal.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Provider" xml:space="preserve">
+    <value>Penyedia:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Refresh" xml:space="preserve">
+    <value>Segarkan</value>
+  </data>
+  <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
+    <value>Ubah nama...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Renamed" xml:space="preserve">
+    <value>“{0}” telah diubah namanya menjadi “{1}”.</value>
+  </data>
+  <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
+    <value>Simpan file yang diunduh</value>
+  </data>
+  <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
+    <value>Pilih file untuk diunggah</value>
+  </data>
+  <data name="RemoteStorageBrowser_Size" xml:space="preserve">
+    <value>Ukuran</value>
+  </data>
+  <data name="RemoteStorageBrowser_Title" xml:space="preserve">
+    <value>Penjelajah Penyimpanan Jarak Jauh</value>
+  </data>
+  <data name="RemoteStorageBrowser_Up" xml:space="preserve">
+    <value>Naik</value>
+  </data>
+  <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
+    <value>Unggah...</value>
+  </data>
+  <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
+    <value>{0} file telah diunggah.</value>
+  </data>
+  <data name="RemoteStorageBrowser_View" xml:space="preserve">
+    <value>Lihat</value>
+  </data>
   <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
     <value>Toleransi: {0}%</value>
   </data>
@@ -1897,9 +2131,6 @@
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Pilih video dengan durasi terbatas yang diketahui.</value>
   </data>
-  <data name="VideoTrimmer_KeyboardHint" xml:space="preserve">
-    <value>Seret gagang untuk memotong atau klik untuk mencari. Kiri/Kanan: cari. Shift: 1 detik. I/O: atur mulai/selesai. Home/End: ke batas pilihan.</value>
-  </data>
   <data name="VideoTrimmer_Loading" xml:space="preserve">
     <value>Menyiapkan pratinjau linimasa…</value>
   </data>
@@ -1915,9 +2146,6 @@
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Gunakan ekstensi {0} untuk mode ekspor ini.</value>
   </data>
-  <data name="VideoTrimmer_Position" xml:space="preserve">
-    <value>Posisi (detik)</value>
-  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Presisi (kode ulang)</value>
   </data>
@@ -1927,17 +2155,11 @@
   <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
     <value>Pratinjau bingkai diam • tanpa pemutaran audio</value>
   </data>
-  <data name="VideoTrimmer_Ready" xml:space="preserve">
-    <value>Seret gagang untuk memilih bagian yang akan disimpan.</value>
-  </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Atur ulang pilihan</value>
   </data>
   <data name="VideoTrimmer_Saved" xml:space="preserve">
     <value>Disimpan: {0}</value>
-  </data>
-  <data name="VideoTrimmer_SeekHint" xml:space="preserve">
-    <value>Tombol panah: 0,1 dtk • Shift: 1 dtk</value>
   </data>
   <data name="VideoTrimmer_Selection" xml:space="preserve">
     <value>Simpan {0}</value>
@@ -1968,239 +2190,5 @@
   </data>
   <data name="VideoTrimmer_VideoFiles" xml:space="preserve">
     <value>File video</value>
-  </data>
-  <data name="RemoteStorageBrowser_Title" xml:space="preserve">
-    <value>Penjelajah Penyimpanan Jarak Jauh</value>
-  </data>
-  <data name="RemoteStorageBrowser_Provider" xml:space="preserve">
-    <value>Penyedia:</value>
-  </data>
-  <data name="RemoteStorageBrowser_Up" xml:space="preserve">
-    <value>Naik</value>
-  </data>
-  <data name="RemoteStorageBrowser_Refresh" xml:space="preserve">
-    <value>Segarkan</value>
-  </data>
-  <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
-    <value>Unggah...</value>
-  </data>
-  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
-    <value>Buat folder...</value>
-  </data>
-  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
-    <value>Folder baru</value>
-  </data>
-  <data name="RemoteStorageBrowser_Location" xml:space="preserve">
-    <value>Lokasi:</value>
-  </data>
-  <data name="RemoteStorageBrowser_Name" xml:space="preserve">
-    <value>Nama</value>
-  </data>
-  <data name="RemoteStorageBrowser_Size" xml:space="preserve">
-    <value>Ukuran</value>
-  </data>
-  <data name="RemoteStorageBrowser_Modified" xml:space="preserve">
-    <value>Diubah</value>
-  </data>
-  <data name="RemoteStorageBrowser_Download" xml:space="preserve">
-    <value>Unduh...</value>
-  </data>
-  <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
-    <value>Ubah nama...</value>
-  </data>
-  <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
-    <value>Hapus...</value>
-  </data>
-  <data name="RemoteStorageBrowser_View" xml:space="preserve">
-    <value>Lihat</value>
-  </data>
-  <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
-    <value>Buka URL</value>
-  </data>
-  <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
-    <value>Salin URL</value>
-  </data>
-  <data name="RemoteStorageBrowser_EmptyFolder" xml:space="preserve">
-    <value>Folder ini kosong.</value>
-  </data>
-  <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
-    <value>Pilih file untuk diunggah</value>
-  </data>
-  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
-    <value>Letakkan file untuk mengunggahnya ke folder ini</value>
-  </data>
-  <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
-    <value>Simpan file yang diunduh</value>
-  </data>
-  <data name="RemoteStorageBrowser_Cancel" xml:space="preserve">
-    <value>Batal</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
-    <value>Hapus folder “{0}”?</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
-    <value>Folder “{0}” tidak kosong. Hapus folder beserta seluruh isinya? Tindakan ini tidak dapat dibatalkan.</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
-    <value>Hapus file “{0}”?</value>
-  </data>
-  <data name="RemoteStorageBrowser_Downloaded" xml:space="preserve">
-    <value>“{0}” telah diunduh.</value>
-  </data>
-  <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
-    <value>{0} file telah diunggah.</value>
-  </data>
-  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
-    <value>Folder “{0}” telah dibuat.</value>
-  </data>
-  <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
-    <value>Item bernama “{0}” sudah ada.</value>
-  </data>
-  <data name="RemoteStorageBrowser_Renamed" xml:space="preserve">
-    <value>“{0}” telah diubah namanya menjadi “{1}”.</value>
-  </data>
-  <data name="RemoteStorageBrowser_Deleted" xml:space="preserve">
-    <value>“{0}” telah dihapus.</value>
-  </data>
-  <data name="RemoteStorageBrowser_Loading" xml:space="preserve">
-    <value>Memuat...</value>
-  </data>
-  <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
-    <value>{0} file, {1} folder • total {2}</value>
-  </data>
-  <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
-    <value>Operasi penyimpanan jarak jauh gagal.</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Create_failed" xml:space="preserve">
-    <value>Gagal membuat GIF: {0}</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Created" xml:space="preserve">
-    <value>GIF animasi berhasil dibuat.</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Creating" xml:space="preserve">
-    <value>Membuat GIF animasi...</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Preview_failed" xml:space="preserve">
-    <value>Pratinjau gagal: {0}</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Preview_info" xml:space="preserve">
-    <value>{0} bingkai • {1} mdtk</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Add_images_dialog" xml:space="preserve">
-    <value>Tambah gambar</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Add_two_images_to_preview" xml:space="preserve">
-    <value>Tambahkan setidaknya dua gambar untuk melihat pratinjau animasi.</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Animated_GIF_maker" xml:space="preserve">
-    <value>Pembuat GIF animasi</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Animation" xml:space="preserve">
-    <value>Animasi</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Buat GIF...</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
-    <value>Jeda bingkai</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_GIF_images" xml:space="preserve">
-    <value>Gambar GIF</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Loop_animation" xml:space="preserve">
-    <value>Ulangi animasi</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Output" xml:space="preserve">
-    <value>Keluaran</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Preview" xml:space="preserve">
-    <value>Pratinjau</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Repeat_count" xml:space="preserve">
-    <value>Jumlah pengulangan</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Save_GIF_dialog" xml:space="preserve">
-    <value>Simpan GIF animasi</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
-    <value>0 mengulang selamanya.</value>
-  </data>
-  <data name="MouseHighlighter_Title" xml:space="preserve">
-    <value>Penyorot mouse</value>
-  </data>
-  <data name="MouseHighlighter_Mode" xml:space="preserve">
-    <value>Modus sorotan:</value>
-  </data>
-  <data name="MouseHighlighter_Circle" xml:space="preserve">
-    <value>Sorotan lingkaran</value>
-  </data>
-  <data name="MouseHighlighter_Ripple" xml:space="preserve">
-    <value>riak</value>
-  </data>
-  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
-    <value>Warna tombol utama:</value>
-  </data>
-  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
-    <value>Warna tombol sekunder:</value>
-  </data>
-  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
-    <value>Warna tombol tengah:</value>
-  </data>
-  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
-    <value>Selalu sorot warna:</value>
-  </data>
-  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
-    <value>Gunakan warna transparan untuk menonaktifkan sorotan persisten.</value>
-  </data>
-  <data name="MouseHighlighter_Radius" xml:space="preserve">
-    <value>Jari-jari (px):</value>
-  </data>
-  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
-    <value>Penundaan pudar (ms):</value>
-  </data>
-  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
-    <value>Durasi pudar (ms):</value>
-  </data>
-  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
-    <value>Ukuran riak (px):</value>
-  </data>
-  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
-    <value>Intensitas riak:</value>
-  </data>
-  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
-    <value>Durasi riak (ms):</value>
-  </data>
-  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
-    <value>Ikuti kursor saat tombol ditahan</value>
-  </data>
-  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
-    <value>Tampilkan garis bidik pada pelepasan tombol utama</value>
-  </data>
-  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
-    <value>Tampilkan garis bidik pada pelepasan tombol sekunder</value>
-  </data>
-  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
-    <value>Tampilkan garis bidik pada pelepasan tombol tengah</value>
-  </data>
-  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
-    <value>Aktif secara otomatis ketika ShareX dimulai</value>
-  </data>
-  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
-    <value>Untuk menyorot klik dalam rekaman, aktifkan opsi penyorot mouse di Pengaturan tugas → Tangkap → Perekam layar.</value>
-  </data>
-  <data name="MouseHighlighter_Start" xml:space="preserve">
-    <value>Mulai menyorot</value>
-  </data>
-  <data name="MouseHighlighter_Stop" xml:space="preserve">
-    <value>Berhenti menyorot</value>
-  </data>
-  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
-    <value>Tidak dapat memulai penyorotan mouse.</value>
-  </data>
-  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
-    <value>Terus sorot setelah merekam</value>
-  </data>
-  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
-    <value>Berhenti menyorot saat perekaman berhenti</value>
   </data>
 </root>

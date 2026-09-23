@@ -26,7 +26,7 @@
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Strings = ShareX.Tools.Localization.Strings;
+using ShareX.Tools.Localization;
 
 namespace ShareX.Tools;
 

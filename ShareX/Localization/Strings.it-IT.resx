@@ -1376,6 +1376,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Analizza immagine</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Creatore di GIF animate...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Impostazioni applicazione...</value>
   </data>
@@ -1463,6 +1466,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Comparatore immagini</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Convertitore di immagini...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Modificatore immagini</value>
   </data>
@@ -1471,12 +1477,6 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Cronologia immagini...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Convertitore di immagini...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Filigrana immagine...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Ridimensionatore immagini...</value>
@@ -1489,6 +1489,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Visualizzatore immagini</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Filigrana immagine...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Indicizza cartella...</value>
@@ -1507,6 +1510,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Prova Monitor</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Evidenziatore del mouse...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Monitor di rete...</value>
@@ -1534,6 +1540,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Regione...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Browser di archiviazione remota...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Riavvia come amministratore</value>
@@ -1628,6 +1637,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Generatore Miniature Video</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Rifinitore video...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Finestra</value>
   </data>
@@ -1636,6 +1648,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Aggiungi effetti immagine...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Sempre in primo piano</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Analizza immagine</value>
@@ -1736,6 +1751,12 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Immagine Markdown collegata</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Massimizzare o ripristinare</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Minimizzare</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>Immagine OCR...</value>
   </data>
@@ -1759,6 +1780,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Eliminazione remota</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Ridimensiona immagine...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Esegui azione</value>
@@ -1808,6 +1832,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Miniatura URL</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Taglia video...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Carica file selezionato</value>
   </data>
@@ -1819,6 +1846,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Verticalmente</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Evidenziatore del mouse</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Annulla</value>
@@ -2002,6 +2032,9 @@ Do you want to abort the active registrazione schermo?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiato negli Appunti: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Configurare un uploader Amazon S3, FTP, FTPS o SFTP nelle impostazioni di destinazione prima di aprire il browser di archiviazione remoto.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Impostare "{0}" come uploader personalizzato attivo per {1}?</value>
@@ -2279,6 +2312,9 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Nascondi la barra delle applicazioni quando interseca una finestra acquisita</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Avvia automaticamente l'evidenziatore del mouse</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Se gli appunti contengono l'URL di un file, scaricalo e caricalo</value>
   </data>
@@ -2353,6 +2389,9 @@ Do you want to abort the active registrazione schermo?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Azioni del mouse</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opzioni dell'evidenziatore del mouse...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Sposta giù</value>
@@ -2881,22 +2920,5 @@ You can later disable it from "After acquisizione tasks" menu.</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the caricamento feature.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Taglia video...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Ridimensiona immagine...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Creatore di GIF animate...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Evidenziatore del mouse</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Evidenziatore del mouse...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Avvia automaticamente l'evidenziatore del mouse</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Opzioni dell'evidenziatore del mouse...</value>
   </data>
 </root>

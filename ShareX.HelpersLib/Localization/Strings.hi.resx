@@ -256,9 +256,6 @@
   <data name="CodeMenuEntryPixelInfo_Yellow_100" xml:space="preserve">
     <value>पीला रंग (0-100)</value>
   </data>
-  <data name="CodeMenu_Create_Close" xml:space="preserve">
-    <value>बंद करें</value>
-  </data>
   <data name="ColorPickerWindow_Alpha" xml:space="preserve">
     <value>अल्फ़ा</value>
   </data>
@@ -361,12 +358,6 @@
   <data name="ColorPickerWindow_Yellow_percent" xml:space="preserve">
     <value>पीला %</value>
   </data>
-  <data name="CssFileNameEditor_Cascading_Style_Sheets" xml:space="preserve">
-    <value>कैस्केडिंग स्टाइल शीट</value>
-  </data>
-  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>कैस्केडिंग स्टाइल शीट ब्राउज़ करें...</value>
-  </data>
   <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
     <value>फ़ाइल अपलोडर</value>
   </data>
@@ -393,9 +384,6 @@
   </data>
   <data name="CutOutEffectType_ZigZag" xml:space="preserve">
     <value>आरी-दाँत</value>
-  </data>
-  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>फ़ोल्डर ब्राउज़ करें...</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>स्थिति: {0}</value>
@@ -509,12 +497,6 @@
   </data>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>एक अनपेक्षित त्रुटि हुई।</value>
-  </data>
-  <data name="ExeFileNameEditor_Applications" xml:space="preserve">
-    <value>अनुप्रयोग</value>
-  </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>निष्पादन योग्य फ़ाइल ब्राउज़ करें...</value>
   </data>
   <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
     <value>कॉपी करें</value>
@@ -717,17 +699,14 @@
   <data name="HotkeyType_ImageComparer" xml:space="preserve">
     <value>छवि तुलनाकर्ता</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>छवि रूपांतरक</value>
+  </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>छवि संपादक</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>छवि प्रभाव</value>
-  </data>
-  <data name="HotkeyType_ImageConverter" xml:space="preserve">
-    <value>छवि रूपांतरक</value>
-  </data>
-  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
-    <value>छवि वॉटरमार्क</value>
   </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>छवि आकार परिवर्तक</value>
@@ -740,6 +719,9 @@
   </data>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>छवि दर्शक</value>
+  </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>छवि वॉटरमार्क</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>निर्देशिका अनुक्रमक</value>
@@ -755,6 +737,9 @@
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>मॉनिटर परीक्षण</value>
+  </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>माउस हाइलाइटर टॉगल करें</value>
   </data>
   <data name="HotkeyType_NetworkMonitor" xml:space="preserve">
     <value>नेटवर्क मॉनिटर</value>
@@ -879,6 +864,9 @@
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>वीडियो थंबनेल निर्माता</value>
   </data>
+  <data name="HotkeyType_VideoTrimmer" xml:space="preserve">
+    <value>वीडियो ट्रिमर</value>
+  </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>अनुकूलित छवि अपलोडर</value>
   </data>
@@ -917,9 +905,6 @@
   </data>
   <data name="InputBoxWindow_Title" xml:space="preserve">
     <value>ShareX - {0}</value>
-  </data>
-  <data name="JsonFileNameEditor_JavaScript_Object_Notation_files" xml:space="preserve">
-    <value>JavaScript ऑब्जेक्ट नोटेशन फ़ाइलें</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
@@ -1386,12 +1371,6 @@
   <data name="VideoInfo_Video_details" xml:space="preserve">
     <value>, वीडियो कोडेक: {0}, रिज़ॉल्यूशन: {1}x{2}, FPS: {3}</value>
   </data>
-  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>ध्वनि फ़ाइल ब्राउज़ करें...</value>
-  </data>
-  <data name="WavFileNameEditor_Sound_file" xml:space="preserve">
-    <value>ध्वनि फ़ाइल</value>
-  </data>
   <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
     <value>निजी</value>
   </data>
@@ -1409,8 +1388,5 @@
   </data>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>अधिकतम अनुमत फ़ाइल आकार: {0}</value>
-  </data>
-  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
-    <value>माउस हाइलाइटर टॉगल करें</value>
   </data>
 </root>

@@ -214,6 +214,60 @@
   <data name="AnalyzeImageWindow_ShareX_Analyze_image" xml:space="preserve">
     <value>ShareX — analiza obrazu</value>
   </data>
+  <data name="AnimatedGifMakerViewModel_Create_failed" xml:space="preserve">
+    <value>Nie udało się utworzyć GIF-a: {0}</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Created" xml:space="preserve">
+    <value>Animowany GIF został utworzony.</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Creating" xml:space="preserve">
+    <value>Tworzenie animowanego GIF-a...</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Preview_failed" xml:space="preserve">
+    <value>Podgląd nie powiódł się: {0}</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Preview_info" xml:space="preserve">
+    <value>{0} klatek • {1} ms</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Add_images_dialog" xml:space="preserve">
+    <value>Dodaj obrazy</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Add_two_images_to_preview" xml:space="preserve">
+    <value>Dodaj co najmniej dwa obrazy, aby wyświetlić podgląd animacji.</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Animated_GIF_maker" xml:space="preserve">
+    <value>Kreator animowanych GIF-ów</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Animation" xml:space="preserve">
+    <value>Animacja</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
+    <value>Utwórz GIF...</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
+    <value>Opóźnienie klatki</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_GIF_images" xml:space="preserve">
+    <value>Obrazy GIF</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Loop_animation" xml:space="preserve">
+    <value>Zapętl animację</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Output" xml:space="preserve">
+    <value>Wyjście</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Preview" xml:space="preserve">
+    <value>Podgląd</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Repeat_count" xml:space="preserve">
+    <value>Liczba powtórzeń</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Save_GIF_dialog" xml:space="preserve">
+    <value>Zapisz animowany GIF</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
+    <value>0 oznacza powtarzanie bez końca.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Tło usunięto w {0} ms.</value>
   </data>
@@ -814,33 +868,6 @@
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Rozciągnij</value>
   </data>
-  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
-    <value>Zastosuj znak wodny</value>
-  </data>
-  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
-    <value>Rozmiar czcionki</value>
-  </data>
-  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
-    <value>Znak wodny obrazu</value>
-  </data>
-  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
-    <value>Margines</value>
-  </data>
-  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
-    <value>Pozycja</value>
-  </data>
-  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
-    <value>Obrót</value>
-  </data>
-  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
-    <value>Skalowanie</value>
-  </data>
-  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
-    <value>Znak wodny</value>
-  </data>
-  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
-    <value>Typ znaku wodnego</value>
-  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>
@@ -933,6 +960,33 @@
   </data>
   <data name="ImageThumbnailerWindow_filename_th" xml:space="preserve">
     <value>$filename_th</value>
+  </data>
+  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
+    <value>Zastosuj znak wodny</value>
+  </data>
+  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
+    <value>Rozmiar czcionki</value>
+  </data>
+  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
+    <value>Znak wodny obrazu</value>
+  </data>
+  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
+    <value>Margines</value>
+  </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>Pozycja</value>
+  </data>
+  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
+    <value>Obrót</value>
+  </data>
+  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
+    <value>Skalowanie</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
+    <value>Znak wodny</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
+    <value>Typ znaku wodnego</value>
   </data>
   <data name="IndexerHtml_File_count" xml:space="preserve">
     <value>Plików: {0:n0}</value>
@@ -1224,6 +1278,84 @@
   </data>
   <data name="MonitorTestWindow_Speed" xml:space="preserve">
     <value>Szybkość</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>Zawsze podkreślaj kolor:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>Użyj przezroczystego koloru, aby wyłączyć trwałe podświetlenie.</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>Aktywuj automatycznie po uruchomieniu ShareX</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>Podświetlenie koła</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>Opóźnienie zanikania (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>Czas trwania zanikania (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>Podążaj za kursorem, gdy przycisk jest przytrzymywany</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>Kontynuuj zaznaczanie po nagraniu</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>Kolor środkowego przycisku:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>Pokaż celownik po zwolnieniu środkowego przycisku</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>Tryb podświetlenia:</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>Podstawowy kolor przycisku:</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>Pokaż celownik po zwolnieniu głównego przycisku</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>Promień (px):</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>Aby wyróżnić kliknięcia w nagraniach, włącz opcję podświetlania myszy w Ustawieniach zadania → Przechwytywanie → Rejestrator ekranu.</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>Pokaż celownik po zwolnieniu dodatkowego przycisku</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>Tętnienie</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>Czas trwania tętnienia (ms):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>Intensywność tętnienia:</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>Rozmiar tętnienia (px):</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>Kolor przycisku dodatkowego:</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>Zacznij podkreślać</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>Nie można rozpocząć podświetlania myszy.</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>Przestań podkreślać</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>Zatrzymaj zaznaczanie po zakończeniu nagrywania</value>
+  </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>Podświetlanie kliknięć myszy</value>
   </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
@@ -1651,6 +1783,108 @@
   <data name="QRCodeWindow_px" xml:space="preserve">
     <value>px</value>
   </data>
+  <data name="RemoteStorageBrowser_Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
+    <value>Kopiuj adres URL</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
+    <value>Utwórz folder...</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
+    <value>Utworzono folder „{0}”.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
+    <value>Usuń...</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
+    <value>Usunąć plik „{0}”?</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
+    <value>Usunąć folder „{0}”?</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
+    <value>Folder „{0}” nie jest pusty. Usunąć go wraz z całą zawartością? Tej operacji nie można cofnąć.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Deleted" xml:space="preserve">
+    <value>Usunięto „{0}”.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Download" xml:space="preserve">
+    <value>Pobierz...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Downloaded" xml:space="preserve">
+    <value>Pobrano „{0}”.</value>
+  </data>
+  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
+    <value>Upuść pliki, aby przesłać je do tego folderu</value>
+  </data>
+  <data name="RemoteStorageBrowser_EmptyFolder" xml:space="preserve">
+    <value>Ten folder jest pusty.</value>
+  </data>
+  <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
+    <value>{0} plików, {1} folderów • łącznie {2}</value>
+  </data>
+  <data name="RemoteStorageBrowser_Loading" xml:space="preserve">
+    <value>Wczytywanie...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Location" xml:space="preserve">
+    <value>Lokalizacja:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Modified" xml:space="preserve">
+    <value>Zmodyfikowano</value>
+  </data>
+  <data name="RemoteStorageBrowser_Name" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
+    <value>Element o nazwie „{0}” już istnieje.</value>
+  </data>
+  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
+    <value>Nowy folder</value>
+  </data>
+  <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
+    <value>Otwórz link</value>
+  </data>
+  <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
+    <value>Operacja zdalnego magazynu nie powiodła się.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Provider" xml:space="preserve">
+    <value>Dostawca:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Refresh" xml:space="preserve">
+    <value>Odśwież</value>
+  </data>
+  <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
+    <value>Zmień nazwę...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Renamed" xml:space="preserve">
+    <value>Zmieniono nazwę „{0}” na „{1}”.</value>
+  </data>
+  <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
+    <value>Zapisz pobrany plik</value>
+  </data>
+  <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
+    <value>Wybierz pliki do przesłania</value>
+  </data>
+  <data name="RemoteStorageBrowser_Size" xml:space="preserve">
+    <value>Rozmiar</value>
+  </data>
+  <data name="RemoteStorageBrowser_Title" xml:space="preserve">
+    <value>Przeglądarka zdalnego magazynu</value>
+  </data>
+  <data name="RemoteStorageBrowser_Up" xml:space="preserve">
+    <value>Do góry</value>
+  </data>
+  <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
+    <value>Prześlij...</value>
+  </data>
+  <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
+    <value>Przesłano pliki: {0}.</value>
+  </data>
+  <data name="RemoteStorageBrowser_View" xml:space="preserve">
+    <value>Wyświetl</value>
+  </data>
   <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
     <value>Tolerancja: {0}%</value>
   </data>
@@ -1897,9 +2131,6 @@
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Wybierz wideo o znanym, skończonym czasie trwania.</value>
   </data>
-  <data name="VideoTrimmer_KeyboardHint" xml:space="preserve">
-    <value>Przeciągnij uchwyty, aby przyciąć, lub kliknij, aby przewinąć. Lewo/Prawo: przewijanie. Shift: 1 sekunda. I/O: ustaw początek/koniec. Home/End: przejdź do granic zaznaczenia.</value>
-  </data>
   <data name="VideoTrimmer_Loading" xml:space="preserve">
     <value>Przygotowywanie podglądów osi czasu…</value>
   </data>
@@ -1915,9 +2146,6 @@
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Użyj rozszerzenia {0} dla tego trybu eksportu.</value>
   </data>
-  <data name="VideoTrimmer_Position" xml:space="preserve">
-    <value>Pozycja (sekundy)</value>
-  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Dokładny (ponowne kodowanie)</value>
   </data>
@@ -1927,17 +2155,11 @@
   <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
     <value>Podgląd nieruchomej klatki • bez odtwarzania dźwięku</value>
   </data>
-  <data name="VideoTrimmer_Ready" xml:space="preserve">
-    <value>Przeciągnij uchwyty, aby wybrać fragment do zachowania.</value>
-  </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Resetuj zaznaczenie</value>
   </data>
   <data name="VideoTrimmer_Saved" xml:space="preserve">
     <value>Zapisano: {0}</value>
-  </data>
-  <data name="VideoTrimmer_SeekHint" xml:space="preserve">
-    <value>Klawisze strzałek: 0,1 s • Shift: 1 s</value>
   </data>
   <data name="VideoTrimmer_Selection" xml:space="preserve">
     <value>Zachowaj {0}</value>
@@ -1968,239 +2190,5 @@
   </data>
   <data name="VideoTrimmer_VideoFiles" xml:space="preserve">
     <value>Pliki wideo</value>
-  </data>
-  <data name="RemoteStorageBrowser_Title" xml:space="preserve">
-    <value>Przeglądarka zdalnego magazynu</value>
-  </data>
-  <data name="RemoteStorageBrowser_Provider" xml:space="preserve">
-    <value>Dostawca:</value>
-  </data>
-  <data name="RemoteStorageBrowser_Up" xml:space="preserve">
-    <value>Do góry</value>
-  </data>
-  <data name="RemoteStorageBrowser_Refresh" xml:space="preserve">
-    <value>Odśwież</value>
-  </data>
-  <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
-    <value>Prześlij...</value>
-  </data>
-  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
-    <value>Utwórz folder...</value>
-  </data>
-  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
-    <value>Nowy folder</value>
-  </data>
-  <data name="RemoteStorageBrowser_Location" xml:space="preserve">
-    <value>Lokalizacja:</value>
-  </data>
-  <data name="RemoteStorageBrowser_Name" xml:space="preserve">
-    <value>Nazwa</value>
-  </data>
-  <data name="RemoteStorageBrowser_Size" xml:space="preserve">
-    <value>Rozmiar</value>
-  </data>
-  <data name="RemoteStorageBrowser_Modified" xml:space="preserve">
-    <value>Zmodyfikowano</value>
-  </data>
-  <data name="RemoteStorageBrowser_Download" xml:space="preserve">
-    <value>Pobierz...</value>
-  </data>
-  <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
-    <value>Zmień nazwę...</value>
-  </data>
-  <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
-    <value>Usuń...</value>
-  </data>
-  <data name="RemoteStorageBrowser_View" xml:space="preserve">
-    <value>Wyświetl</value>
-  </data>
-  <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
-    <value>Otwórz link</value>
-  </data>
-  <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
-    <value>Kopiuj adres URL</value>
-  </data>
-  <data name="RemoteStorageBrowser_EmptyFolder" xml:space="preserve">
-    <value>Ten folder jest pusty.</value>
-  </data>
-  <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
-    <value>Wybierz pliki do przesłania</value>
-  </data>
-  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
-    <value>Upuść pliki, aby przesłać je do tego folderu</value>
-  </data>
-  <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
-    <value>Zapisz pobrany plik</value>
-  </data>
-  <data name="RemoteStorageBrowser_Cancel" xml:space="preserve">
-    <value>Anuluj</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
-    <value>Usunąć folder „{0}”?</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
-    <value>Folder „{0}” nie jest pusty. Usunąć go wraz z całą zawartością? Tej operacji nie można cofnąć.</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
-    <value>Usunąć plik „{0}”?</value>
-  </data>
-  <data name="RemoteStorageBrowser_Downloaded" xml:space="preserve">
-    <value>Pobrano „{0}”.</value>
-  </data>
-  <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
-    <value>Przesłano pliki: {0}.</value>
-  </data>
-  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
-    <value>Utworzono folder „{0}”.</value>
-  </data>
-  <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
-    <value>Element o nazwie „{0}” już istnieje.</value>
-  </data>
-  <data name="RemoteStorageBrowser_Renamed" xml:space="preserve">
-    <value>Zmieniono nazwę „{0}” na „{1}”.</value>
-  </data>
-  <data name="RemoteStorageBrowser_Deleted" xml:space="preserve">
-    <value>Usunięto „{0}”.</value>
-  </data>
-  <data name="RemoteStorageBrowser_Loading" xml:space="preserve">
-    <value>Wczytywanie...</value>
-  </data>
-  <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
-    <value>{0} plików, {1} folderów • łącznie {2}</value>
-  </data>
-  <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
-    <value>Operacja zdalnego magazynu nie powiodła się.</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Create_failed" xml:space="preserve">
-    <value>Nie udało się utworzyć GIF-a: {0}</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Created" xml:space="preserve">
-    <value>Animowany GIF został utworzony.</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Creating" xml:space="preserve">
-    <value>Tworzenie animowanego GIF-a...</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Preview_failed" xml:space="preserve">
-    <value>Podgląd nie powiódł się: {0}</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Preview_info" xml:space="preserve">
-    <value>{0} klatek • {1} ms</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Add_images_dialog" xml:space="preserve">
-    <value>Dodaj obrazy</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Add_two_images_to_preview" xml:space="preserve">
-    <value>Dodaj co najmniej dwa obrazy, aby wyświetlić podgląd animacji.</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Animated_GIF_maker" xml:space="preserve">
-    <value>Kreator animowanych GIF-ów</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Animation" xml:space="preserve">
-    <value>Animacja</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Utwórz GIF...</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
-    <value>Opóźnienie klatki</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_GIF_images" xml:space="preserve">
-    <value>Obrazy GIF</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Loop_animation" xml:space="preserve">
-    <value>Zapętl animację</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Output" xml:space="preserve">
-    <value>Wyjście</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Preview" xml:space="preserve">
-    <value>Podgląd</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Repeat_count" xml:space="preserve">
-    <value>Liczba powtórzeń</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Save_GIF_dialog" xml:space="preserve">
-    <value>Zapisz animowany GIF</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
-    <value>0 oznacza powtarzanie bez końca.</value>
-  </data>
-  <data name="MouseHighlighter_Title" xml:space="preserve">
-    <value>Podświetlanie kliknięć myszy</value>
-  </data>
-  <data name="MouseHighlighter_Mode" xml:space="preserve">
-    <value>Tryb podświetlenia:</value>
-  </data>
-  <data name="MouseHighlighter_Circle" xml:space="preserve">
-    <value>Podświetlenie koła</value>
-  </data>
-  <data name="MouseHighlighter_Ripple" xml:space="preserve">
-    <value>Tętnienie</value>
-  </data>
-  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
-    <value>Podstawowy kolor przycisku:</value>
-  </data>
-  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
-    <value>Kolor przycisku dodatkowego:</value>
-  </data>
-  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
-    <value>Kolor środkowego przycisku:</value>
-  </data>
-  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
-    <value>Zawsze podkreślaj kolor:</value>
-  </data>
-  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
-    <value>Użyj przezroczystego koloru, aby wyłączyć trwałe podświetlenie.</value>
-  </data>
-  <data name="MouseHighlighter_Radius" xml:space="preserve">
-    <value>Promień (px):</value>
-  </data>
-  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
-    <value>Opóźnienie zanikania (ms):</value>
-  </data>
-  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
-    <value>Czas trwania zanikania (ms):</value>
-  </data>
-  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
-    <value>Rozmiar tętnienia (px):</value>
-  </data>
-  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
-    <value>Intensywność tętnienia:</value>
-  </data>
-  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
-    <value>Czas trwania tętnienia (ms):</value>
-  </data>
-  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
-    <value>Podążaj za kursorem, gdy przycisk jest przytrzymywany</value>
-  </data>
-  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
-    <value>Pokaż celownik po zwolnieniu głównego przycisku</value>
-  </data>
-  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
-    <value>Pokaż celownik po zwolnieniu dodatkowego przycisku</value>
-  </data>
-  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
-    <value>Pokaż celownik po zwolnieniu środkowego przycisku</value>
-  </data>
-  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
-    <value>Aktywuj automatycznie po uruchomieniu ShareX</value>
-  </data>
-  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
-    <value>Aby wyróżnić kliknięcia w nagraniach, włącz opcję podświetlania myszy w Ustawieniach zadania → Przechwytywanie → Rejestrator ekranu.</value>
-  </data>
-  <data name="MouseHighlighter_Start" xml:space="preserve">
-    <value>Zacznij podkreślać</value>
-  </data>
-  <data name="MouseHighlighter_Stop" xml:space="preserve">
-    <value>Przestań podkreślać</value>
-  </data>
-  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
-    <value>Nie można rozpocząć podświetlania myszy.</value>
-  </data>
-  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
-    <value>Kontynuuj zaznaczanie po nagraniu</value>
-  </data>
-  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
-    <value>Zatrzymaj zaznaczanie po zakończeniu nagrywania</value>
   </data>
 </root>

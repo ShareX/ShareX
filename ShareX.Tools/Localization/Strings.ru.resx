@@ -214,6 +214,60 @@
   <data name="AnalyzeImageWindow_ShareX_Analyze_image" xml:space="preserve">
     <value>ShareX — анализ изображения</value>
   </data>
+  <data name="AnimatedGifMakerViewModel_Create_failed" xml:space="preserve">
+    <value>Не удалось создать GIF: {0}</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Created" xml:space="preserve">
+    <value>Анимированный GIF создан.</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Creating" xml:space="preserve">
+    <value>Создание анимированного GIF...</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Preview_failed" xml:space="preserve">
+    <value>Ошибка предпросмотра: {0}</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Preview_info" xml:space="preserve">
+    <value>{0} кадров • {1} мс</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Add_images_dialog" xml:space="preserve">
+    <value>Добавить изображения</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Add_two_images_to_preview" xml:space="preserve">
+    <value>Добавьте не менее двух изображений для предпросмотра анимации.</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Animated_GIF_maker" xml:space="preserve">
+    <value>Создание анимированных GIF</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Animation" xml:space="preserve">
+    <value>Анимация</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
+    <value>Создать GIF...</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
+    <value>Задержка кадра</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_GIF_images" xml:space="preserve">
+    <value>Изображения GIF</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Loop_animation" xml:space="preserve">
+    <value>Повторять анимацию</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Output" xml:space="preserve">
+    <value>Вывод</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Preview" xml:space="preserve">
+    <value>Предпросмотр</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Repeat_count" xml:space="preserve">
+    <value>Количество повторов</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Save_GIF_dialog" xml:space="preserve">
+    <value>Сохранить анимированный GIF</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
+    <value>0 — повторять бесконечно.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Фон удалён за {0} мс.</value>
   </data>
@@ -814,33 +868,6 @@
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>Растянуть</value>
   </data>
-  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
-    <value>Применить водяной знак</value>
-  </data>
-  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
-    <value>Размер шрифта</value>
-  </data>
-  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
-    <value>Водяной знак изображения</value>
-  </data>
-  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
-    <value>Поля</value>
-  </data>
-  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
-    <value>Положение</value>
-  </data>
-  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
-    <value>Поворот</value>
-  </data>
-  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
-    <value>Масштабирование</value>
-  </data>
-  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
-    <value>Водяной знак</value>
-  </data>
-  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
-    <value>Тип водяного знака</value>
-  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>
@@ -933,6 +960,33 @@
   </data>
   <data name="ImageThumbnailerWindow_filename_th" xml:space="preserve">
     <value>$filename_th</value>
+  </data>
+  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
+    <value>Применить водяной знак</value>
+  </data>
+  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
+    <value>Размер шрифта</value>
+  </data>
+  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
+    <value>Водяной знак изображения</value>
+  </data>
+  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
+    <value>Поля</value>
+  </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>Положение</value>
+  </data>
+  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
+    <value>Поворот</value>
+  </data>
+  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
+    <value>Масштабирование</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
+    <value>Водяной знак</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
+    <value>Тип водяного знака</value>
   </data>
   <data name="IndexerHtml_File_count" xml:space="preserve">
     <value>Файлов: {0:n0}</value>
@@ -1224,6 +1278,84 @@
   </data>
   <data name="MonitorTestWindow_Speed" xml:space="preserve">
     <value>Скорость</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>Всегда выделяйте цвет:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>Используйте прозрачный цвет, чтобы отключить постоянное выделение.</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>Автоматически активировать при запуске ShareX</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>Выделение круга</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>Задержка исчезновения (мс):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>Продолжительность затухания (мс):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>Следуйте за курсором, пока удерживается кнопка</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>Продолжайте выделять после записи</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>Цвет средней кнопки:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>Показывать перекрестие при отпускании средней кнопки</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>Режим выделения:</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>Основной цвет кнопки:</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>Показывать перекрестие при отпускании основной кнопки</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>Радиус (пикселей):</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>Чтобы выделять клики в записях, включите опцию выделения мыши в настройках задачи → Захват → Запись экрана.</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>Показывать перекрестие при отпускании дополнительной кнопки</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>Пульсация</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>Длительность пульсации (мс):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>Интенсивность пульсации:</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>Размер пульсации (пикселей):</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>Цвет вторичной кнопки:</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>Начать выделение</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>Не удалось запустить подсветку мышью.</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>Перестать выделять</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>Перестаньте выделять, когда запись остановится</value>
+  </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>Подсветка кликов мыши</value>
   </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
@@ -1651,6 +1783,108 @@
   <data name="QRCodeWindow_px" xml:space="preserve">
     <value>пкс</value>
   </data>
+  <data name="RemoteStorageBrowser_Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
+    <value>Копировать URL</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
+    <value>Создать папку...</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
+    <value>Папка «{0}» создана.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
+    <value>Удалить...</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
+    <value>Удалить файл «{0}»?</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
+    <value>Удалить папку «{0}»?</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
+    <value>Папка «{0}» не пуста. Удалить её вместе со всем содержимым? Это действие нельзя отменить.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Deleted" xml:space="preserve">
+    <value>«{0}» удалён.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Download" xml:space="preserve">
+    <value>Скачать...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Downloaded" xml:space="preserve">
+    <value>Файл «{0}» скачан.</value>
+  </data>
+  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
+    <value>Перетащите файлы, чтобы загрузить их в эту папку</value>
+  </data>
+  <data name="RemoteStorageBrowser_EmptyFolder" xml:space="preserve">
+    <value>Эта папка пуста.</value>
+  </data>
+  <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
+    <value>{0} файл(ов), {1} папок • всего {2}</value>
+  </data>
+  <data name="RemoteStorageBrowser_Loading" xml:space="preserve">
+    <value>Загрузка...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Location" xml:space="preserve">
+    <value>Расположение:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Modified" xml:space="preserve">
+    <value>Изменён</value>
+  </data>
+  <data name="RemoteStorageBrowser_Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
+    <value>Элемент с именем «{0}» уже существует.</value>
+  </data>
+  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
+    <value>Новая папка</value>
+  </data>
+  <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
+    <value>Открыть ссылку</value>
+  </data>
+  <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
+    <value>Не удалось выполнить операцию с удалённым хранилищем.</value>
+  </data>
+  <data name="RemoteStorageBrowser_Provider" xml:space="preserve">
+    <value>Провайдер:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
+    <value>Переименовать...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Renamed" xml:space="preserve">
+    <value>«{0}» переименован в «{1}».</value>
+  </data>
+  <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
+    <value>Сохранить скачанный файл</value>
+  </data>
+  <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
+    <value>Выберите файлы для загрузки</value>
+  </data>
+  <data name="RemoteStorageBrowser_Size" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="RemoteStorageBrowser_Title" xml:space="preserve">
+    <value>Браузер удалённого хранилища</value>
+  </data>
+  <data name="RemoteStorageBrowser_Up" xml:space="preserve">
+    <value>Вверх</value>
+  </data>
+  <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
+    <value>Загрузить...</value>
+  </data>
+  <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
+    <value>Загружено файлов: {0}.</value>
+  </data>
+  <data name="RemoteStorageBrowser_View" xml:space="preserve">
+    <value>Просмотреть</value>
+  </data>
   <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
     <value>Допуск: {0}%</value>
   </data>
@@ -1897,9 +2131,6 @@
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Выберите видео с известной конечной длительностью.</value>
   </data>
-  <data name="VideoTrimmer_KeyboardHint" xml:space="preserve">
-    <value>Перетаскивайте маркеры для обрезки или щёлкните для перехода. Влево/Вправо: переход. Shift: 1 секунда. I/O: задать начало/конец. Home/End: перейти к границам выделения.</value>
-  </data>
   <data name="VideoTrimmer_Loading" xml:space="preserve">
     <value>Подготовка предпросмотра временной шкалы…</value>
   </data>
@@ -1915,9 +2146,6 @@
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Используйте расширение {0} для этого режима экспорта.</value>
   </data>
-  <data name="VideoTrimmer_Position" xml:space="preserve">
-    <value>Позиция (секунды)</value>
-  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Точный (перекодирование)</value>
   </data>
@@ -1927,17 +2155,11 @@
   <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
     <value>Предпросмотр неподвижного кадра • без воспроизведения звука</value>
   </data>
-  <data name="VideoTrimmer_Ready" xml:space="preserve">
-    <value>Перетащите маркеры, чтобы выбрать сохраняемую часть.</value>
-  </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Сбросить выделение</value>
   </data>
   <data name="VideoTrimmer_Saved" xml:space="preserve">
     <value>Сохранено: {0}</value>
-  </data>
-  <data name="VideoTrimmer_SeekHint" xml:space="preserve">
-    <value>Стрелки: 0,1 с • Shift: 1 с</value>
   </data>
   <data name="VideoTrimmer_Selection" xml:space="preserve">
     <value>Сохранить {0}</value>
@@ -1968,239 +2190,5 @@
   </data>
   <data name="VideoTrimmer_VideoFiles" xml:space="preserve">
     <value>Видеофайлы</value>
-  </data>
-  <data name="RemoteStorageBrowser_Title" xml:space="preserve">
-    <value>Браузер удалённого хранилища</value>
-  </data>
-  <data name="RemoteStorageBrowser_Provider" xml:space="preserve">
-    <value>Провайдер:</value>
-  </data>
-  <data name="RemoteStorageBrowser_Up" xml:space="preserve">
-    <value>Вверх</value>
-  </data>
-  <data name="RemoteStorageBrowser_Refresh" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
-    <value>Загрузить...</value>
-  </data>
-  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
-    <value>Создать папку...</value>
-  </data>
-  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
-    <value>Новая папка</value>
-  </data>
-  <data name="RemoteStorageBrowser_Location" xml:space="preserve">
-    <value>Расположение:</value>
-  </data>
-  <data name="RemoteStorageBrowser_Name" xml:space="preserve">
-    <value>Имя</value>
-  </data>
-  <data name="RemoteStorageBrowser_Size" xml:space="preserve">
-    <value>Размер</value>
-  </data>
-  <data name="RemoteStorageBrowser_Modified" xml:space="preserve">
-    <value>Изменён</value>
-  </data>
-  <data name="RemoteStorageBrowser_Download" xml:space="preserve">
-    <value>Скачать...</value>
-  </data>
-  <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
-    <value>Переименовать...</value>
-  </data>
-  <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
-    <value>Удалить...</value>
-  </data>
-  <data name="RemoteStorageBrowser_View" xml:space="preserve">
-    <value>Просмотреть</value>
-  </data>
-  <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
-    <value>Открыть ссылку</value>
-  </data>
-  <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
-    <value>Копировать URL</value>
-  </data>
-  <data name="RemoteStorageBrowser_EmptyFolder" xml:space="preserve">
-    <value>Эта папка пуста.</value>
-  </data>
-  <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
-    <value>Выберите файлы для загрузки</value>
-  </data>
-  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
-    <value>Перетащите файлы, чтобы загрузить их в эту папку</value>
-  </data>
-  <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
-    <value>Сохранить скачанный файл</value>
-  </data>
-  <data name="RemoteStorageBrowser_Cancel" xml:space="preserve">
-    <value>Отмена</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
-    <value>Удалить папку «{0}»?</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
-    <value>Папка «{0}» не пуста. Удалить её вместе со всем содержимым? Это действие нельзя отменить.</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
-    <value>Удалить файл «{0}»?</value>
-  </data>
-  <data name="RemoteStorageBrowser_Downloaded" xml:space="preserve">
-    <value>Файл «{0}» скачан.</value>
-  </data>
-  <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
-    <value>Загружено файлов: {0}.</value>
-  </data>
-  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
-    <value>Папка «{0}» создана.</value>
-  </data>
-  <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
-    <value>Элемент с именем «{0}» уже существует.</value>
-  </data>
-  <data name="RemoteStorageBrowser_Renamed" xml:space="preserve">
-    <value>«{0}» переименован в «{1}».</value>
-  </data>
-  <data name="RemoteStorageBrowser_Deleted" xml:space="preserve">
-    <value>«{0}» удалён.</value>
-  </data>
-  <data name="RemoteStorageBrowser_Loading" xml:space="preserve">
-    <value>Загрузка...</value>
-  </data>
-  <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
-    <value>{0} файл(ов), {1} папок • всего {2}</value>
-  </data>
-  <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
-    <value>Не удалось выполнить операцию с удалённым хранилищем.</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Create_failed" xml:space="preserve">
-    <value>Не удалось создать GIF: {0}</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Created" xml:space="preserve">
-    <value>Анимированный GIF создан.</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Creating" xml:space="preserve">
-    <value>Создание анимированного GIF...</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Preview_failed" xml:space="preserve">
-    <value>Ошибка предпросмотра: {0}</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Preview_info" xml:space="preserve">
-    <value>{0} кадров • {1} мс</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Add_images_dialog" xml:space="preserve">
-    <value>Добавить изображения</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Add_two_images_to_preview" xml:space="preserve">
-    <value>Добавьте не менее двух изображений для предпросмотра анимации.</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Animated_GIF_maker" xml:space="preserve">
-    <value>Создание анимированных GIF</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Animation" xml:space="preserve">
-    <value>Анимация</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>Создать GIF...</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
-    <value>Задержка кадра</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_GIF_images" xml:space="preserve">
-    <value>Изображения GIF</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Loop_animation" xml:space="preserve">
-    <value>Повторять анимацию</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Output" xml:space="preserve">
-    <value>Вывод</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Preview" xml:space="preserve">
-    <value>Предпросмотр</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Repeat_count" xml:space="preserve">
-    <value>Количество повторов</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Save_GIF_dialog" xml:space="preserve">
-    <value>Сохранить анимированный GIF</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
-    <value>0 — повторять бесконечно.</value>
-  </data>
-  <data name="MouseHighlighter_Title" xml:space="preserve">
-    <value>Подсветка кликов мыши</value>
-  </data>
-  <data name="MouseHighlighter_Mode" xml:space="preserve">
-    <value>Режим выделения:</value>
-  </data>
-  <data name="MouseHighlighter_Circle" xml:space="preserve">
-    <value>Выделение круга</value>
-  </data>
-  <data name="MouseHighlighter_Ripple" xml:space="preserve">
-    <value>Пульсация</value>
-  </data>
-  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
-    <value>Основной цвет кнопки:</value>
-  </data>
-  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
-    <value>Цвет вторичной кнопки:</value>
-  </data>
-  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
-    <value>Цвет средней кнопки:</value>
-  </data>
-  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
-    <value>Всегда выделяйте цвет:</value>
-  </data>
-  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
-    <value>Используйте прозрачный цвет, чтобы отключить постоянное выделение.</value>
-  </data>
-  <data name="MouseHighlighter_Radius" xml:space="preserve">
-    <value>Радиус (пикселей):</value>
-  </data>
-  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
-    <value>Задержка исчезновения (мс):</value>
-  </data>
-  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
-    <value>Продолжительность затухания (мс):</value>
-  </data>
-  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
-    <value>Размер пульсации (пикселей):</value>
-  </data>
-  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
-    <value>Интенсивность пульсации:</value>
-  </data>
-  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
-    <value>Длительность пульсации (мс):</value>
-  </data>
-  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
-    <value>Следуйте за курсором, пока удерживается кнопка</value>
-  </data>
-  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
-    <value>Показывать перекрестие при отпускании основной кнопки</value>
-  </data>
-  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
-    <value>Показывать перекрестие при отпускании дополнительной кнопки</value>
-  </data>
-  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
-    <value>Показывать перекрестие при отпускании средней кнопки</value>
-  </data>
-  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
-    <value>Автоматически активировать при запуске ShareX</value>
-  </data>
-  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
-    <value>Чтобы выделять клики в записях, включите опцию выделения мыши в настройках задачи → Захват → Запись экрана.</value>
-  </data>
-  <data name="MouseHighlighter_Start" xml:space="preserve">
-    <value>Начать выделение</value>
-  </data>
-  <data name="MouseHighlighter_Stop" xml:space="preserve">
-    <value>Перестать выделять</value>
-  </data>
-  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
-    <value>Не удалось запустить подсветку мышью.</value>
-  </data>
-  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
-    <value>Продолжайте выделять после записи</value>
-  </data>
-  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
-    <value>Перестаньте выделять, когда запись остановится</value>
   </data>
 </root>

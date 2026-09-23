@@ -1376,6 +1376,9 @@
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Анализировать изображение</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Создание анимированных GIF...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Настройки приложения...</value>
   </data>
@@ -1463,6 +1466,9 @@
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Сравнение изображений</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Конвертер изображений...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Редактор изображений</value>
   </data>
@@ -1471,12 +1477,6 @@
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>История изображений...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Конвертер изображений...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Водяной знак изображения...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Изменение размера изображения...</value>
@@ -1489,6 +1489,9 @@
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Просмотр изображений</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Водяной знак изображения...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Индексировать папку...</value>
@@ -1507,6 +1510,9 @@
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Проверка монитора</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Подсветка кликов мыши...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Монитор сети...</value>
@@ -1534,6 +1540,9 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Область...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Браузер удаленного хранилища...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Перезапустить от имени администратора</value>
@@ -1628,6 +1637,9 @@
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Миниатюры из видео</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Видео триммер...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Окно</value>
   </data>
@@ -1636,6 +1648,9 @@
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Добавить эффекты изображений...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Поверх всех окон</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Анализировать изображение</value>
@@ -1736,6 +1751,12 @@
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Связанное изображение Markdown</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Максимизировать или восстановить</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Свернуть</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>OCR изображения...</value>
   </data>
@@ -1759,6 +1780,9 @@
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Удаление с сервера</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Изменить размер изображения...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Выполнить действие</value>
@@ -1808,6 +1832,9 @@
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Ссылка на миниатюру</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Обрезать видео...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Загрузить выбранный файл</value>
   </data>
@@ -1819,6 +1846,9 @@
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Вертикально</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Подсветка кликов мыши</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Отмена</value>
@@ -2002,6 +2032,9 @@
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Скопировано в буфер: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Прежде чем открывать браузер удаленного хранилища, настройте загрузчик Amazon S3, FTP, FTPS или SFTP в настройках места назначения.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Сделать «{0}» активным пользовательским загрузчиком для {1}?</value>
@@ -2279,6 +2312,9 @@
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Скрывать панель задач, когда она пересекается с захватываемым окном</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Автоматически запускать подсветку кликов мыши</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Если буфер обмена содержит URL файла, скачать и загрузить его</value>
   </data>
@@ -2353,6 +2389,9 @@
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Действия мыши</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Параметры подсветки кликов мыши...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Переместить вниз</value>
@@ -2881,22 +2920,5 @@
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Ваш системный администратор отключил возможность загрузки.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Обрезать видео...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Изменить размер изображения...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Создание анимированных GIF...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Подсветка кликов мыши</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Подсветка кликов мыши...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Автоматически запускать подсветку кликов мыши</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Параметры подсветки кликов мыши...</value>
   </data>
 </root>

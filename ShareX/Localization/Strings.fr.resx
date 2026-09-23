@@ -1376,6 +1376,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Analyser l’image</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Créateur de GIF animés...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Paramètres de l’application...</value>
   </data>
@@ -1463,6 +1466,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Comparateur d'images</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Convertisseur d’images...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Éditeur d'image</value>
   </data>
@@ -1471,12 +1477,6 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Historique des images...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Convertisseur d’images...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Filigrane d’image...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Redimensionneur d’image...</value>
@@ -1489,6 +1489,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Visionneuse d’images</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Filigrane d’image...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Indexer un dossier...</value>
@@ -1507,6 +1510,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Test d'écran</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Surligneur de souris...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Moniteur réseau...</value>
@@ -1534,6 +1540,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Région...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Navigateur de stockage distant...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Redémarrer en tant qu’administrateur</value>
@@ -1628,6 +1637,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Générateur de miniatures de vidéo</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Découpeur vidéo...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Fenêtre</value>
   </data>
@@ -1636,6 +1648,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Ajouter des effets d'image...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Toujours au premier plan</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Analyser l’image</value>
@@ -1736,6 +1751,12 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Image liée Markdown</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maximiser ou restaurer</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Minimiser</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>Image OCR...</value>
   </data>
@@ -1759,6 +1780,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Suppression à distance</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Redimensionner l’image...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Exécuter l’action</value>
@@ -1808,6 +1832,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>URL de la miniature</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Découper la vidéo...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Téléverser le fichier sélectionné</value>
   </data>
@@ -1819,6 +1846,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Verticalement</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Surligneur de souris</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Annuler</value>
@@ -2002,6 +2032,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copié dans le presse-papier : {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Configurez un programme de téléchargement Amazon S3, FTP, FTPS ou SFTP dans les paramètres de destination avant d'ouvrir le navigateur de stockage distant.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Voulez-vous définir « {0} » comme module d’envoi personnalisé actif pour {1} ?</value>
@@ -2279,6 +2312,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Masquer la barre des tâches lorsqu’elle chevauche une fenêtre capturée</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Démarrer automatiquement le surligneur de la souris</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Si le presse-papiers contient une URL de fichier, le télécharger et l’envoyer</value>
   </data>
@@ -2353,6 +2389,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Actions de la souris</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Options du surligneur de la souris...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Descendre</value>
@@ -2881,22 +2920,5 @@ Vous pourrez les désactiver plus tard depuis le manu "Tâches après la capture
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Votre administrateur système a désactivé la fonctionnalité de mise en ligne.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Découper la vidéo...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Redimensionner l’image...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Créateur de GIF animés...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Surligneur de souris</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Surligneur de souris...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Démarrer automatiquement le surligneur de la souris</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Options du surligneur de la souris...</value>
   </data>
 </root>

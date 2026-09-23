@@ -1376,6 +1376,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>تحلیل تصویر</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>سازنده GIF متحرک...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>تنظیمات برنامه...</value>
   </data>
@@ -1463,6 +1466,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>مقایسه‌گر تصویر</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>مبدل تصویر...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>ویرایشگر عکس</value>
   </data>
@@ -1471,12 +1477,6 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>تاریخچه تصاویر...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>مبدل تصویر...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>واترمارک تصویر...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>ابزار تغییر اندازه تصویر...</value>
@@ -1489,6 +1489,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>نمایشگر تصویر</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>واترمارک تصویر...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>فهرست‌سازی پوشه...</value>
@@ -1507,6 +1510,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>تست صفحه نمایش ...</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>هایلایتر موس...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>پایشگر شبکه...</value>
@@ -1534,6 +1540,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>ناحیه...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>مرورگر ذخیره سازی از راه دور...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>راه‌اندازی مجدد به‌عنوان مدیر</value>
@@ -1628,6 +1637,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>خلاصه کننده ویدئو</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>دستگاه اصلاح تصویری ...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>پنجره</value>
   </data>
@@ -1636,6 +1648,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>اضافه کردن افکت های عکس...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>همیشه در بالا</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>تحلیل تصویر</value>
@@ -1736,6 +1751,12 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>تصویر پیوندشده Markdown</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>به حداکثر رساندن یا بازیابی</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>به حداقل رساندن</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>تصویر OCR...</value>
   </data>
@@ -1759,6 +1780,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>حذف از راه دور</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>تغییر اندازه تصویر...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>اجرای عملیات</value>
@@ -1808,6 +1832,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>بندانگشتی URL</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>برش ویدئو...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>بارگذاری فایل انتخاب‌شده</value>
   </data>
@@ -1819,6 +1846,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>عمودی</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>هایلایتر موس</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>انصراف</value>
@@ -2002,6 +2032,9 @@ Do you want to abort the active ضبط صفحه?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>به کلیپ بورد کپی شد: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>قبل از باز کردن مرورگر ذخیره‌سازی راه دور، آپلودکننده Amazon S3، FTP، FTPS یا SFTP را در تنظیمات مقصد پیکربندی کنید.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>آیا می‌خواهید «{0}» را بارگذار سفارشی فعال برای {1} قرار دهید؟</value>
@@ -2279,6 +2312,9 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>پنهان کردن نوار وظیفه هنگام هم‌پوشانی با پنجره ثبت‌شده</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>هایلایت ماوس را به صورت خودکار شروع کنید</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>اگر کلیپ‌بورد دارای URL فایل است، آن را بارگیری و بارگذاری کن</value>
   </data>
@@ -2353,6 +2389,9 @@ Do you want to abort the active ضبط صفحه?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>کنش‌های ماوس</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>گزینه های هایلایت ماوس...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>انتقال به پایین</value>
@@ -2881,22 +2920,5 @@ You can later disable it from "After ضبط tasks" منو.</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the بارگذاری feature.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>برش ویدئو...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>تغییر اندازه تصویر...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>سازنده GIF متحرک...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>هایلایتر موس</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>هایلایتر موس...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>هایلایت ماوس را به صورت خودکار شروع کنید</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>گزینه های هایلایت ماوس...</value>
   </data>
 </root>

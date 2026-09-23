@@ -1376,6 +1376,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Analyze image...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Animated GIF maker...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Application settings...</value>
   </data>
@@ -1463,6 +1466,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Image comparer...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Image converter...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Image editor...</value>
   </data>
@@ -1471,12 +1477,6 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Image history...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Image converter...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Image watermark...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Image resizer...</value>
@@ -1489,6 +1489,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Image viewer...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Image watermark...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Index folder...</value>
@@ -1508,11 +1511,11 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Monitor test...</value>
   </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Mouse highlighter...</value>
+  </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Network monitor...</value>
-  </data>
-  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
-    <value>Remote storage browser...</value>
   </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>No image effect presets</value>
@@ -1537,6 +1540,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Region...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Remote storage browser...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Restart as administrator</value>
@@ -1643,6 +1649,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Add image effects...</value>
   </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Always on top</value>
+  </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Analyze image...</value>
   </data>
@@ -1742,6 +1751,12 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Markdown linked image</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maximize or restore</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>OCR image...</value>
   </data>
@@ -1765,6 +1780,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Remote deletion</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Resize image...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Run action</value>
@@ -1814,6 +1832,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Thumbnail URL</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Trim video...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Upload selected file</value>
   </data>
@@ -1825,6 +1846,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Vertically</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Mouse highlighter</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -2008,6 +2032,9 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copied to clipboard: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Configure an Amazon S3, FTP, FTPS, or SFTP uploader in Destination settings before opening the remote storage browser.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Would you like to set "{0}" as the active custom uploader for {1}?</value>
@@ -2285,6 +2312,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Hide taskbar when it intersects a captured window</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Automatically start mouse highlighter</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>If clipboard contains a file URL, download and upload it</value>
   </data>
@@ -2359,6 +2389,9 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Mouse actions</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Mouse highlighter options...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Move down</value>
@@ -2887,25 +2920,5 @@ You can later disable it from "After capture tasks" menu.</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the upload feature.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Trim video...</value></data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Mouse highlighter</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Mouse highlighter...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Automatically start mouse highlighter</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Mouse highlighter options...</value>
-  </data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Resize image...</value></data>
-  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
-    <value>Configure an Amazon S3, FTP, FTPS, or SFTP uploader in Destination settings before opening the remote storage browser.</value>
-  </data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Animated GIF maker...</value>
   </data>
 </root>

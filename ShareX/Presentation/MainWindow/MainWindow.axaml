@@ -137,7 +137,7 @@
 
                     <StackPanel Grid.Column="1" Orientation="Horizontal">
                         <Button Classes="caption-button"
-                                AutomationProperties.Name="Always on top"
+                                AutomationProperties.Name="{x:Static res:Strings.MainWindow_AlwaysOnTop}"
                                 Click="OnTopmostClick"
                                 chrome:WindowDecorationProperties.ElementRole="User">
                             <Grid>
@@ -152,7 +152,7 @@
                             </Grid>
                         </Button>
                         <Button Classes="caption-button"
-                                AutomationProperties.Name="Minimize"
+                                AutomationProperties.Name="{x:Static res:Strings.MainWindow_Minimize}"
                                 Click="OnMinimizeClick"
                                 chrome:WindowDecorationProperties.ElementRole="MinimizeButton">
                             <TextBlock Classes="icon"
@@ -160,7 +160,7 @@
                                        FontSize="14"/>
                         </Button>
                         <Button Classes="caption-button"
-                                AutomationProperties.Name="Maximize or restore"
+                                AutomationProperties.Name="{x:Static res:Strings.MainWindow_MaximizeOrRestore}"
                                 Click="OnMaximizeRestoreClick"
                                 chrome:WindowDecorationProperties.ElementRole="MaximizeButton">
                             <Grid>
@@ -176,7 +176,7 @@
                         </Button>
                         <Button Classes="caption-button caption-close"
                                 Classes.maximized="{Binding IsWindowMaximized}"
-                                AutomationProperties.Name="Close"
+                                AutomationProperties.Name="{x:Static res:Strings.ActionsToolbarWindow_Close}"
                                 Click="OnCloseClick"
                                 chrome:WindowDecorationProperties.ElementRole="CloseButton">
                             <TextBlock Classes="icon"

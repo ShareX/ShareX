@@ -12,7 +12,7 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml.MarkupExtensions;
 using Avalonia.Media;
 using ShareX.AvaloniaUI.Theming;
-using Strings = ShareX.Tools.Localization.Strings;
+using ShareX.Tools.Localization;
 
 namespace ShareX.Tools;
 

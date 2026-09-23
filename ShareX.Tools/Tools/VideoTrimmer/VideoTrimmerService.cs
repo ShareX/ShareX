@@ -27,7 +27,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
-using Strings = ShareX.Tools.Localization.Strings;
+using ShareX.Tools.Localization;
 
 namespace ShareX.Tools;
 

@@ -256,9 +256,6 @@
   <data name="CodeMenuEntryPixelInfo_Yellow_100" xml:space="preserve">
     <value>رنگ زرد (0-100)</value>
   </data>
-  <data name="CodeMenu_Create_Close" xml:space="preserve">
-    <value>بستن</value>
-  </data>
   <data name="ColorPickerWindow_Alpha" xml:space="preserve">
     <value>آلفا</value>
   </data>
@@ -361,12 +358,6 @@
   <data name="ColorPickerWindow_Yellow_percent" xml:space="preserve">
     <value>زرد %</value>
   </data>
-  <data name="CssFileNameEditor_Cascading_Style_Sheets" xml:space="preserve">
-    <value>شیوه‌نامه‌های آبشاری</value>
-  </data>
-  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>مرور برای برگه سبک آبشاری...</value>
-  </data>
   <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
     <value>آپلود کننده فایل</value>
   </data>
@@ -393,9 +384,6 @@
   </data>
   <data name="CutOutEffectType_ZigZag" xml:space="preserve">
     <value>دندانه‌اره‌ای</value>
-  </data>
-  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>Browse for a پوشه...</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>وضعیت: {0}</value>
@@ -509,12 +497,6 @@
   </data>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>خطای غیرمنتظره‌ای رخ داد.</value>
-  </data>
-  <data name="ExeFileNameEditor_Applications" xml:space="preserve">
-    <value>برنامه‌ها</value>
-  </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>مرور برای فایل اجرایی...</value>
   </data>
   <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
     <value>کپی</value>
@@ -717,17 +699,14 @@
   <data name="HotkeyType_ImageComparer" xml:space="preserve">
     <value>مقایسه‌گر تصویر</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>مبدل تصویر</value>
+  </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>ویرایشگر عکس</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>افکت های تصویر</value>
-  </data>
-  <data name="HotkeyType_ImageConverter" xml:space="preserve">
-    <value>مبدل تصویر</value>
-  </data>
-  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
-    <value>واترمارک تصویر</value>
   </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>ابزار تغییر اندازه تصویر</value>
@@ -740,6 +719,9 @@
   </data>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>نمایشگر تصویر</value>
+  </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>واترمارک تصویر</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>پوشه ایندکس</value>
@@ -755,6 +737,9 @@
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>تست صفحه نمایش ...</value>
+  </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>روشن کننده ماوس را روشن کنید</value>
   </data>
   <data name="HotkeyType_NetworkMonitor" xml:space="preserve">
     <value>پایشگر شبکه</value>
@@ -879,6 +864,9 @@
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>خلاصه کننده ویدئو</value>
   </data>
+  <data name="HotkeyType_VideoTrimmer" xml:space="preserve">
+    <value>دستگاه اصلاح تصویری</value>
+  </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>آپلود کننده عکس سفارشی</value>
   </data>
@@ -917,9 +905,6 @@
   </data>
   <data name="InputBoxWindow_Title" xml:space="preserve">
     <value>ShareX - {0}</value>
-  </data>
-  <data name="JsonFileNameEditor_JavaScript_Object_Notation_files" xml:space="preserve">
-    <value>فایل‌های نشانه‌گذاری شیء جاوااسکریپت</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>انصراف</value>
@@ -1386,12 +1371,6 @@
   <data name="VideoInfo_Video_details" xml:space="preserve">
     <value>، کدک ویدئو: {0}، وضوح: {1}x{2}، فریم‌برثانیه: {3}</value>
   </data>
-  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>Browse for a sound فایل...</value>
-  </data>
-  <data name="WavFileNameEditor_Sound_file" xml:space="preserve">
-    <value>فایل صوتی</value>
-  </data>
   <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
     <value>شخصی</value>
   </data>
@@ -1409,8 +1388,5 @@
   </data>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>بیشترین اندازهٔ مجاز فایل: {0}</value>
-  </data>
-  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
-    <value>روشن کننده ماوس را روشن کنید</value>
   </data>
 </root>

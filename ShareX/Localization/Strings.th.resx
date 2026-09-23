@@ -1376,6 +1376,9 @@
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>วิเคราะห์รูปภาพ...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>เครื่องมือสร้าง GIF เคลื่อนไหว...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>การตั้งค่าแอปพลิเคชัน...</value>
   </data>
@@ -1463,6 +1466,9 @@
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>รูปภาพ ตัวเปรียบเทียบ...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>เครื่องมือแปลงภาพ...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>ตัวแก้ไขรูปภาพ...</value>
   </data>
@@ -1471,12 +1477,6 @@
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>รูปภาพ ประวัติ...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>เครื่องมือแปลงภาพ...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>ลายน้ำรูปภาพ...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>เครื่องมือปรับขนาดภาพ...</value>
@@ -1489,6 +1489,9 @@
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>รูปภาพ ตัวแสดง...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>ลายน้ำรูปภาพ...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>ดัชนี โฟลเดอร์...</value>
@@ -1507,6 +1510,9 @@
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>จอภาพ ทดสอบ...</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>ไฮไลท์เมาส์...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>ตัวตรวจสอบเครือข่าย...</value>
@@ -1534,6 +1540,9 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>พื้นที่...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>เบราว์เซอร์จัดเก็บข้อมูลระยะไกล...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>เริ่มใหม่ในฐานะผู้ดูแลระบบ</value>
@@ -1628,6 +1637,9 @@
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>วิดีโอ ตัวสร้างภาพขนาดย่อ...</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>โปรแกรมตัดแต่งวีดีโอ...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>หน้าต่าง</value>
   </data>
@@ -1636,6 +1648,9 @@
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>เพิ่มเอฟเฟกต์รูปภาพ...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>เสมอ บน ด้านบน</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>วิเคราะห์รูปภาพ...</value>
@@ -1736,6 +1751,12 @@
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>มาร์กดาวน์ รูปภาพเชื่อมโยง</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>ขยายใหญ่สุดหรือคืนค่า</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>ย่อเล็กสุด</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>OCR รูปภาพ...</value>
   </data>
@@ -1759,6 +1780,9 @@
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>การลบจากระยะไกล</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>ปรับขนาดรูปภาพ...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>เรียกใช้ การดำเนินการ</value>
@@ -1808,6 +1832,9 @@
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>URL ภาพขนาดย่อ</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>ตัดวิดีโอ...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>อัปโหลด ไฟล์ที่เลือก</value>
   </data>
@@ -1819,6 +1846,9 @@
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>ในแนวตั้ง</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>ปากกาเน้นข้อความเมาส์</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>ยกเลิก</value>
@@ -2002,6 +2032,9 @@
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>คัดลอกแล้ว ไปยังคลิปบอร์ด: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>กำหนดค่าตัวอัปโหลด Amazon S3, FTP, FTPS หรือ SFTP ในการตั้งค่าปลายทางก่อนเปิดเบราว์เซอร์ที่จัดเก็บข้อมูลระยะไกล</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>ต้องการตั้ง "{0}" เป็นตัวอัปโหลดกำหนดเองที่ใช้งานสำหรับ {1} หรือไม่</value>
@@ -2279,6 +2312,9 @@
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>ซ่อนแถบงานเมื่อทับกับหน้าต่างที่จับภาพ</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>เริ่มปากกาเน้นข้อความเมาส์โดยอัตโนมัติ</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>หากคลิปบอร์ดมี URL ไฟล์ ให้ดาวน์โหลดและอัปโหลด</value>
   </data>
@@ -2353,6 +2389,9 @@
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>การทำงานของเมาส์</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>ตัวเลือกปากกาเน้นข้อความเมาส์...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>ย้ายลง</value>
@@ -2881,22 +2920,5 @@
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>ผู้ดูแลระบบของคุณปิดใช้งานคุณลักษณะการอัปโหลด</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>ตัดวิดีโอ...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>ปรับขนาดรูปภาพ...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>เครื่องมือสร้าง GIF เคลื่อนไหว...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>ปากกาเน้นข้อความเมาส์</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>ไฮไลท์เมาส์...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>เริ่มปากกาเน้นข้อความเมาส์โดยอัตโนมัติ</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>ตัวเลือกปากกาเน้นข้อความเมาส์...</value>
   </data>
 </root>

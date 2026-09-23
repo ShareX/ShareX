@@ -1376,6 +1376,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Afbeelding analyseren</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Maker van geanimeerde GIF's...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Toepassingsinstellingen...</value>
   </data>
@@ -1463,6 +1466,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Afbeeldingsvergelijker</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Afbeeldingsconverter...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Afbeelding bewerkenor</value>
   </data>
@@ -1471,12 +1477,6 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Afbeeldingsgeschiedenis...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Afbeeldingsconverter...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Afbeeldingswatermerk...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Afbeeldingsformaat wijzigen...</value>
@@ -1489,6 +1489,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Afbeelding weergaveer</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Afbeeldingswatermerk...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Map indexeren...</value>
@@ -1507,6 +1510,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Monitor test</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Muisklikmarkering...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Netwerkmonitor...</value>
@@ -1534,6 +1540,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Regio...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Browser voor externe opslag...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Opnieuw starten als beheerder</value>
@@ -1628,6 +1637,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Video miniaturen</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Videotrimmer...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Venster</value>
   </data>
@@ -1636,6 +1648,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Toevoegen afbeelding effects...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Altijd op de voorgrond</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Afbeelding analyseren</value>
@@ -1736,6 +1751,12 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Gekoppelde Markdown-afbeelding</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maximaliseren of herstellen</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Minimaliseer</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>OCR-afbeelding...</value>
   </data>
@@ -1759,6 +1780,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Extern verwijderen</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Afbeeldingsgrootte wijzigen...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Actie uitvoeren</value>
@@ -1808,6 +1832,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Miniatuur URL</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Video bijsnijden...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Geselecteerd bestand uploaden</value>
   </data>
@@ -1819,6 +1846,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Verticaal</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Muisklikmarkering</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Annuleren</value>
@@ -2002,6 +2032,9 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Gekopieerd naar klembord: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Configureer een Amazon S3-, FTP-, FTPS- of SFTP-uploader in Bestemmingsinstellingen voordat u de browser voor externe opslag opent.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Wilt u ''{0}'' instellen als actieve aangepaste uploader voor {1}?</value>
@@ -2279,6 +2312,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Taakbalk verbergen wanneer deze een vastgelegd venster overlapt</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Muisklikmarkering automatisch starten</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Als het klembord een bestands-URL bevat, het bestand downloaden en uploaden</value>
   </data>
@@ -2353,6 +2389,9 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Muisacties</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opties voor muisklikmarkering...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Omlaag</value>
@@ -2881,22 +2920,5 @@ You can later disable it from "After opname taken" menu.</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin uitgeschakeld the uploaden feature.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Video bijsnijden...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Afbeeldingsgrootte wijzigen...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Maker van geanimeerde GIF&apos;s...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Muisklikmarkering</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Muisklikmarkering...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Muisklikmarkering automatisch starten</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Opties voor muisklikmarkering...</value>
   </data>
 </root>

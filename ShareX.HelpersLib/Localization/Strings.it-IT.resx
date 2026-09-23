@@ -256,9 +256,6 @@
   <data name="CodeMenuEntryPixelInfo_Yellow_100" xml:space="preserve">
     <value>Colore giallo (0-100)</value>
   </data>
-  <data name="CodeMenu_Create_Close" xml:space="preserve">
-    <value>Chiudi</value>
-  </data>
   <data name="ColorPickerWindow_Alpha" xml:space="preserve">
     <value>Alfa</value>
   </data>
@@ -361,12 +358,6 @@
   <data name="ColorPickerWindow_Yellow_percent" xml:space="preserve">
     <value>Giallo %</value>
   </data>
-  <data name="CssFileNameEditor_Cascading_Style_Sheets" xml:space="preserve">
-    <value>Fogli di stile a cascata</value>
-  </data>
-  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>Cerca CSS...</value>
-  </data>
   <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
     <value>Servizio Caricamento File</value>
   </data>
@@ -393,9 +384,6 @@
   </data>
   <data name="CutOutEffectType_ZigZag" xml:space="preserve">
     <value>Dente di sega</value>
-  </data>
-  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>Cerca Cartella...</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Stato: {0}</value>
@@ -509,12 +497,6 @@ Vuoi eseguirlo comunque?</value>
   </data>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>Si è verificato un errore imprevisto.</value>
-  </data>
-  <data name="ExeFileNameEditor_Applications" xml:space="preserve">
-    <value>Applicazioni</value>
-  </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>Cerca Eseguibile...</value>
   </data>
   <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
     <value>Copia</value>
@@ -717,17 +699,14 @@ Vuoi eseguirlo comunque?</value>
   <data name="HotkeyType_ImageComparer" xml:space="preserve">
     <value>Comparatore immagini</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>Convertitore di immagini</value>
+  </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>Editor Immagini</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Effetti Immagine</value>
-  </data>
-  <data name="HotkeyType_ImageConverter" xml:space="preserve">
-    <value>Convertitore di immagini</value>
-  </data>
-  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
-    <value>Filigrana immagine</value>
   </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Ridimensionatore immagini</value>
@@ -740,6 +719,9 @@ Vuoi eseguirlo comunque?</value>
   </data>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>Visualizzatore immagini</value>
+  </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>Filigrana immagine</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>Indicizza Cartella</value>
@@ -755,6 +737,9 @@ Vuoi eseguirlo comunque?</value>
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>Prova Monitor</value>
+  </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Attiva/disattiva l'evidenziatore del mouse</value>
   </data>
   <data name="HotkeyType_NetworkMonitor" xml:space="preserve">
     <value>Monitor di rete</value>
@@ -879,6 +864,9 @@ Vuoi eseguirlo comunque?</value>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>Generatore Miniature Video</value>
   </data>
+  <data name="HotkeyType_VideoTrimmer" xml:space="preserve">
+    <value>Rifinitore video</value>
+  </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>Servizio Caricamento Immagini Personalizzato</value>
   </data>
@@ -917,9 +905,6 @@ Vuoi eseguirlo comunque?</value>
   </data>
   <data name="InputBoxWindow_Title" xml:space="preserve">
     <value>ShareX - {0}</value>
-  </data>
-  <data name="JsonFileNameEditor_JavaScript_Object_Notation_files" xml:space="preserve">
-    <value>File JavaScript Object Notation</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>Annulla</value>
@@ -1386,12 +1371,6 @@ Vuoi eseguirlo comunque?</value>
   <data name="VideoInfo_Video_details" xml:space="preserve">
     <value>, Codec video: {0}, Risoluzione: {1}x{2}, FPS: {3}</value>
   </data>
-  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>Sfoglia per un file audio...</value>
-  </data>
-  <data name="WavFileNameEditor_Sound_file" xml:space="preserve">
-    <value>File audio</value>
-  </data>
   <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
     <value>Privato</value>
   </data>
@@ -1409,8 +1388,5 @@ Vuoi eseguirlo comunque?</value>
   </data>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Dimensione massima consentita per i file: {0}</value>
-  </data>
-  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
-    <value>Attiva/disattiva l'evidenziatore del mouse</value>
   </data>
 </root>

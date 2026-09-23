@@ -5760,14 +5760,6 @@ namespace ShareX.Tools.Localization {
             }
         }
 
-        /// <summary>
-        ///   Drag the handles to choose the part to keep.
-        /// </summary>
-        public static string VideoTrimmer_Ready {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_Ready", resourceCulture);
-            }
-        }
 
         /// <summary>
         ///   Select a video with a known, finite duration.
@@ -5895,14 +5887,6 @@ namespace ShareX.Tools.Localization {
             }
         }
 
-        /// <summary>
-        ///   Seek (seconds)
-        /// </summary>
-        public static string VideoTrimmer_Position {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_Position", resourceCulture);
-            }
-        }
 
         /// <summary>
         ///   Set start here
@@ -5931,23 +5915,7 @@ namespace ShareX.Tools.Localization {
             }
         }
 
-        /// <summary>
-        ///   Arrow keys: 0.1 s • Shift: 1 s
-        /// </summary>
-        public static string VideoTrimmer_SeekHint {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_SeekHint", resourceCulture);
-            }
-        }
 
-        /// <summary>
-        ///   Drag handles to trim, or click to seek. Left/Right: seek. Shift: 1 second. I/O: set start/end. Home/End: go to selection boundaries.
-        /// </summary>
-        public static string VideoTrimmer_KeyboardHint {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_KeyboardHint", resourceCulture);
-            }
-        }
 
         /// <summary>
         ///   Video timeline and trim selection

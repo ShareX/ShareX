@@ -133,9 +133,6 @@
   <data name="BrowserProtocol_sftp" xml:space="preserve">
     <value>sftp://</value>
   </data>
-  <data name="CertFileNameEditor_Browse_for_certificate_file" xml:space="preserve">
-    <value>인증 파일 탐색...</value>
-  </data>
   <data name="Common_API_key_is_missing" xml:space="preserve">
     <value>API 키가 없습니다.</value>
   </data>
@@ -1029,9 +1026,6 @@
   </data>
   <data name="Imgur_Upload_failed" xml:space="preserve">
     <value>Imgur 업로드 실패: ({0}) {1}</value>
-  </data>
-  <data name="KeyFileNameEditor_Browse_for_key_file" xml:space="preserve">
-    <value>키 파일 탐색...</value>
   </data>
   <data name="Lambda_Upload_failed_check_API_key" xml:space="preserve">
     <value>알 수 없는 이유로 업로드하지 못했습니다. API 키를 확인하세요.</value>

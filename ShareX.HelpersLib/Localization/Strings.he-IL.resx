@@ -256,9 +256,6 @@
   <data name="CodeMenuEntryPixelInfo_Yellow_100" xml:space="preserve">
     <value>צבע צהוב (0-100)</value>
   </data>
-  <data name="CodeMenu_Create_Close" xml:space="preserve">
-    <value>סגור</value>
-  </data>
   <data name="ColorPickerWindow_Alpha" xml:space="preserve">
     <value>אלפא</value>
   </data>
@@ -361,12 +358,6 @@
   <data name="ColorPickerWindow_Yellow_percent" xml:space="preserve">
     <value>צהוב %</value>
   </data>
-  <data name="CssFileNameEditor_Cascading_Style_Sheets" xml:space="preserve">
-    <value>גיליונות סגנון מדורגים</value>
-  </data>
-  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>חפש גיליונות סגנון מדורגים...</value>
-  </data>
   <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
     <value>שירות העלאת קבצים</value>
   </data>
@@ -393,9 +384,6 @@
   </data>
   <data name="CutOutEffectType_ZigZag" xml:space="preserve">
     <value>משונן</value>
-  </data>
-  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>בחר תיקייה...</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>סטטוס: {0}</value>
@@ -509,12 +497,6 @@
   </data>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>אירעה שגיאה בלתי צפויה.</value>
-  </data>
-  <data name="ExeFileNameEditor_Applications" xml:space="preserve">
-    <value>יישומים</value>
-  </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>חפש קובץ הפעלה...</value>
   </data>
   <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
     <value>העתק</value>
@@ -717,17 +699,14 @@
   <data name="HotkeyType_ImageComparer" xml:space="preserve">
     <value>משווה תמונות</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>ממיר תמונות</value>
+  </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>עורך תמונה</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>אפקטים לתמונה</value>
-  </data>
-  <data name="HotkeyType_ImageConverter" xml:space="preserve">
-    <value>ממיר תמונות</value>
-  </data>
-  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
-    <value>סימן מים לתמונה</value>
   </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>כלי לשינוי גודל תמונה</value>
@@ -740,6 +719,9 @@
   </data>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>מציג תמונה</value>
+  </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>סימן מים לתמונה</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>מאנדקס תיקייה</value>
@@ -755,6 +737,9 @@
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>בדיקת מסך</value>
+  </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>החלף את סימון העכבר</value>
   </data>
   <data name="HotkeyType_NetworkMonitor" xml:space="preserve">
     <value>מנטר רשת</value>
@@ -879,6 +864,9 @@
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>וידאו תמונה ממוזערת</value>
   </data>
+  <data name="HotkeyType_VideoTrimmer" xml:space="preserve">
+    <value>גוזם וידאו</value>
+  </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>שירות העלאת תמונות מותאמת אישית</value>
   </data>
@@ -917,9 +905,6 @@
   </data>
   <data name="InputBoxWindow_Title" xml:space="preserve">
     <value>ShareX - {0}</value>
-  </data>
-  <data name="JsonFileNameEditor_JavaScript_Object_Notation_files" xml:space="preserve">
-    <value>קובצי JavaScript Object Notation</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>ביטול</value>
@@ -1386,12 +1371,6 @@
   <data name="VideoInfo_Video_details" xml:space="preserve">
     <value>, מקודד וידאו: {0}, רזולוציה: {1}x{2}, FPS: {3}</value>
   </data>
-  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>חפש קובץ קול...</value>
-  </data>
-  <data name="WavFileNameEditor_Sound_file" xml:space="preserve">
-    <value>קובץ שמע</value>
-  </data>
   <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
     <value>פרטי</value>
   </data>
@@ -1409,8 +1388,5 @@
   </data>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>גודל הקובץ המרבי המותר: {0}</value>
-  </data>
-  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
-    <value>החלף את סימון העכבר</value>
   </data>
 </root>

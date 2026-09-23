@@ -256,9 +256,6 @@
   <data name="CodeMenuEntryPixelInfo_Yellow_100" xml:space="preserve">
     <value>노란색 (0-100)</value>
   </data>
-  <data name="CodeMenu_Create_Close" xml:space="preserve">
-    <value>닫기</value>
-  </data>
   <data name="ColorPickerWindow_Alpha" xml:space="preserve">
     <value>알파</value>
   </data>
@@ -361,12 +358,6 @@
   <data name="ColorPickerWindow_Yellow_percent" xml:space="preserve">
     <value>노랑 %</value>
   </data>
-  <data name="CssFileNameEditor_Cascading_Style_Sheets" xml:space="preserve">
-    <value>종속형 시트</value>
-  </data>
-  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>CSS 탐색하기...</value>
-  </data>
   <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
     <value>파일 업로더</value>
   </data>
@@ -393,9 +384,6 @@
   </data>
   <data name="CutOutEffectType_ZigZag" xml:space="preserve">
     <value>톱니</value>
-  </data>
-  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>폴더 탐색하기...</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>상태: {0}</value>
@@ -509,12 +497,6 @@
   </data>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>예기치 않은 오류가 발생했습니다.</value>
-  </data>
-  <data name="ExeFileNameEditor_Applications" xml:space="preserve">
-    <value>응용 프로그램</value>
-  </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>실행 파일 탐색하기...</value>
   </data>
   <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
     <value>복사</value>
@@ -717,17 +699,14 @@
   <data name="HotkeyType_ImageComparer" xml:space="preserve">
     <value>이미지 비교기</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>이미지 변환기</value>
+  </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>이미지 편집기</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>이미지 효과</value>
-  </data>
-  <data name="HotkeyType_ImageConverter" xml:space="preserve">
-    <value>이미지 변환기</value>
-  </data>
-  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
-    <value>이미지 워터마크</value>
   </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>이미지 크기 조정 도구</value>
@@ -740,6 +719,9 @@
   </data>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>이미지 뷰어</value>
+  </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>이미지 워터마크</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>폴더 색인 만들기</value>
@@ -755,6 +737,9 @@
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>모니터 테스트</value>
+  </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>마우스 클릭 강조 표시 전환</value>
   </data>
   <data name="HotkeyType_NetworkMonitor" xml:space="preserve">
     <value>네트워크 모니터</value>
@@ -879,6 +864,9 @@
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>비디오 섬네일 생성기</value>
   </data>
+  <data name="HotkeyType_VideoTrimmer" xml:space="preserve">
+    <value>비디오 트리머</value>
+  </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>사용자 정의 이미지 업로더</value>
   </data>
@@ -917,9 +905,6 @@
   </data>
   <data name="InputBoxWindow_Title" xml:space="preserve">
     <value>ShareX - {0}</value>
-  </data>
-  <data name="JsonFileNameEditor_JavaScript_Object_Notation_files" xml:space="preserve">
-    <value>JavaScript Object Notation 파일</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>취소</value>
@@ -1386,12 +1371,6 @@
   <data name="VideoInfo_Video_details" xml:space="preserve">
     <value>, 비디오 코덱: {0}, 해상도: {1}x{2}, FPS: {3}</value>
   </data>
-  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>사운드 파일 탐색...</value>
-  </data>
-  <data name="WavFileNameEditor_Sound_file" xml:space="preserve">
-    <value>소리 파일</value>
-  </data>
   <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
     <value>비공개</value>
   </data>
@@ -1409,8 +1388,5 @@
   </data>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>허용되는 최대 파일 크기: {0}</value>
-  </data>
-  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
-    <value>마우스 클릭 강조 표시 전환</value>
   </data>
 </root>

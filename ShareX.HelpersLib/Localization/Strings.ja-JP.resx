@@ -256,9 +256,6 @@
   <data name="CodeMenuEntryPixelInfo_Yellow_100" xml:space="preserve">
     <value>黄色 (0-100)</value>
   </data>
-  <data name="CodeMenu_Create_Close" xml:space="preserve">
-    <value>閉じる</value>
-  </data>
   <data name="ColorPickerWindow_Alpha" xml:space="preserve">
     <value>アルファ</value>
   </data>
@@ -361,12 +358,6 @@
   <data name="ColorPickerWindow_Yellow_percent" xml:space="preserve">
     <value>黄 %</value>
   </data>
-  <data name="CssFileNameEditor_Cascading_Style_Sheets" xml:space="preserve">
-    <value>カスケーディングスタイルシート</value>
-  </data>
-  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>CSSファイルの閲覧...</value>
-  </data>
   <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
     <value>ファイル アップローダ</value>
   </data>
@@ -393,9 +384,6 @@
   </data>
   <data name="CutOutEffectType_ZigZag" xml:space="preserve">
     <value>のこぎり歯</value>
-  </data>
-  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>フォルダーの閲覧...</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>状態: {0}</value>
@@ -509,12 +497,6 @@
   </data>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>予期しないエラーが発生しました。</value>
-  </data>
-  <data name="ExeFileNameEditor_Applications" xml:space="preserve">
-    <value>アプリケーション</value>
-  </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>実行可能ファイルの閲覧...</value>
   </data>
   <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
     <value>コピー</value>
@@ -717,17 +699,14 @@
   <data name="HotkeyType_ImageComparer" xml:space="preserve">
     <value>画像比較</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>画像変換</value>
+  </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>画像エディタ</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>画像エフェクト</value>
-  </data>
-  <data name="HotkeyType_ImageConverter" xml:space="preserve">
-    <value>画像変換</value>
-  </data>
-  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
-    <value>画像透かし</value>
   </data>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>画像リサイザー</value>
@@ -740,6 +719,9 @@
   </data>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>画像ビューア</value>
+  </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>画像透かし</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>フォルダ内一覧の作成</value>
@@ -755,6 +737,9 @@
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>モニター テスト</value>
+  </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>マウスのハイライトを切り替えます</value>
   </data>
   <data name="HotkeyType_NetworkMonitor" xml:space="preserve">
     <value>ネットワーク モニター</value>
@@ -879,6 +864,9 @@
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
     <value>動画のサムネイル作成</value>
   </data>
+  <data name="HotkeyType_VideoTrimmer" xml:space="preserve">
+    <value>ビデオトリマー</value>
+  </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
     <value>独自の画像アップローダー</value>
   </data>
@@ -917,9 +905,6 @@
   </data>
   <data name="InputBoxWindow_Title" xml:space="preserve">
     <value>ShareX - {0}</value>
-  </data>
-  <data name="JsonFileNameEditor_JavaScript_Object_Notation_files" xml:space="preserve">
-    <value>JavaScript Object Notation ファイル</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>キャンセル</value>
@@ -1386,12 +1371,6 @@
   <data name="VideoInfo_Video_details" xml:space="preserve">
     <value>、動画コーデック: {0}、解像度: {1}x{2}、FPS: {3}</value>
   </data>
-  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>音声ファイルの参照...</value>
-  </data>
-  <data name="WavFileNameEditor_Sound_file" xml:space="preserve">
-    <value>音声ファイル</value>
-  </data>
   <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
     <value>非公開(Private)</value>
   </data>
@@ -1409,8 +1388,5 @@
   </data>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>許可されている最大ファイルサイズ: {0}</value>
-  </data>
-  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
-    <value>マウスのハイライトを切り替えます</value>
   </data>
 </root>

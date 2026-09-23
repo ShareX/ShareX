@@ -5431,5 +5431,23 @@ namespace ShareX.Localization {
             }
         }
 
+        public static string MainWindow_AlwaysOnTop {
+            get {
+                return ResourceManager.GetString("MainWindow_AlwaysOnTop", resourceCulture);
+            }
+        }
+
+        public static string MainWindow_Minimize {
+            get {
+                return ResourceManager.GetString("MainWindow_Minimize", resourceCulture);
+            }
+        }
+
+        public static string MainWindow_MaximizeOrRestore {
+            get {
+                return ResourceManager.GetString("MainWindow_MaximizeOrRestore", resourceCulture);
+            }
+        }
+
     }
 }

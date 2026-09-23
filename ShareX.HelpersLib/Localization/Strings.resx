@@ -256,9 +256,6 @@
   <data name="CodeMenuEntryPixelInfo_Yellow_100" xml:space="preserve">
     <value>Yellow color (0-100)</value>
   </data>
-  <data name="CodeMenu_Create_Close" xml:space="preserve">
-    <value>Close</value>
-  </data>
   <data name="ColorPickerWindow_Alpha" xml:space="preserve">
     <value>Alpha</value>
   </data>
@@ -361,12 +358,6 @@
   <data name="ColorPickerWindow_Yellow_percent" xml:space="preserve">
     <value>Yellow %</value>
   </data>
-  <data name="CssFileNameEditor_Cascading_Style_Sheets" xml:space="preserve">
-    <value>Cascading Style Sheets</value>
-  </data>
-  <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>Browse for a Cascading Style Sheet...</value>
-  </data>
   <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
     <value>File uploader</value>
   </data>
@@ -393,9 +384,6 @@
   </data>
   <data name="CutOutEffectType_ZigZag" xml:space="preserve">
     <value>Sawtooth</value>
-  </data>
-  <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>Browse for a folder...</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Status: {0}</value>
@@ -509,12 +497,6 @@ Do you still want to run it?</value>
   </data>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>An unexpected error occurred.</value>
-  </data>
-  <data name="ExeFileNameEditor_Applications" xml:space="preserve">
-    <value>Applications</value>
-  </data>
-  <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>Browse for executable...</value>
   </data>
   <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
     <value>Copy</value>
@@ -717,6 +699,9 @@ Do you still want to run it?</value>
   <data name="HotkeyType_ImageComparer" xml:space="preserve">
     <value>Image comparer</value>
   </data>
+  <data name="HotkeyType_ImageConverter" xml:space="preserve">
+    <value>Image converter</value>
+  </data>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>Image editor</value>
   </data>
@@ -726,12 +711,6 @@ Do you still want to run it?</value>
   <data name="HotkeyType_ImageResizer" xml:space="preserve">
     <value>Image resizer</value>
   </data>
-  <data name="HotkeyType_ImageConverter" xml:space="preserve">
-    <value>Image converter</value>
-  </data>
-  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
-    <value>Image watermark</value>
-  </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>Image splitter</value>
   </data>
@@ -740,6 +719,9 @@ Do you still want to run it?</value>
   </data>
   <data name="HotkeyType_ImageViewer" xml:space="preserve">
     <value>Image viewer</value>
+  </data>
+  <data name="HotkeyType_ImageWatermark" xml:space="preserve">
+    <value>Image watermark</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
     <value>Directory indexer</value>
@@ -755,6 +737,9 @@ Do you still want to run it?</value>
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
     <value>Monitor test</value>
+  </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Toggle mouse highlighter</value>
   </data>
   <data name="HotkeyType_NetworkMonitor" xml:space="preserve">
     <value>Network monitor</value>
@@ -920,9 +905,6 @@ Do you still want to run it?</value>
   </data>
   <data name="InputBoxWindow_Title" xml:space="preserve">
     <value>ShareX - {0}</value>
-  </data>
-  <data name="JsonFileNameEditor_JavaScript_Object_Notation_files" xml:space="preserve">
-    <value>JavaScript Object Notation files</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -1389,12 +1371,6 @@ Do you still want to run it?</value>
   <data name="VideoInfo_Video_details" xml:space="preserve">
     <value>, Video codec: {0}, Resolution: {1}x{2}, FPS: {3}</value>
   </data>
-  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>Browse for a sound file...</value>
-  </data>
-  <data name="WavFileNameEditor_Sound_file" xml:space="preserve">
-    <value>Sound file</value>
-  </data>
   <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
     <value>Private</value>
   </data>
@@ -1412,8 +1388,5 @@ Do you still want to run it?</value>
   </data>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Maximum allowed file size: {0}</value>
-  </data>
-  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
-    <value>Toggle mouse highlighter</value>
   </data>
 </root>

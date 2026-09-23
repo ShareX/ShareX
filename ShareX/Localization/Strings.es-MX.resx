@@ -1376,6 +1376,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Analizar imagen</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Creador de GIF animados...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Configuración de la aplicación...</value>
   </data>
@@ -1463,6 +1466,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Comparador de imágenes</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Convertidor de imágenes...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Editor de imágenes</value>
   </data>
@@ -1471,12 +1477,6 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Historial de imágenes...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Convertidor de imágenes...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Marca de agua de imagen...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Redimensionador de imágenes...</value>
@@ -1489,6 +1489,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Visualizador de imágenes</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Marca de agua de imagen...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Indexar carpeta...</value>
@@ -1507,6 +1510,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Prueba de pantalla</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Resaltador del mouse...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Monitor de red...</value>
@@ -1534,6 +1540,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Región...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Navegador de almacenamiento remoto...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Reiniciar como administrador</value>
@@ -1628,6 +1637,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Generador de miniaturas de video</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Recortador de vídeo...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Ventana</value>
   </data>
@@ -1636,6 +1648,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Agregar efectos...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Siempre en primer plano</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Analizar imagen</value>
@@ -1736,6 +1751,12 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Imagen Markdown enlazada</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maximizar o restaurar</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Minimizar</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>Imagen OCR...</value>
   </data>
@@ -1759,6 +1780,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Eliminación remota</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Redimensionar imagen...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Ejecutar acción</value>
@@ -1808,6 +1832,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>URL de miniatura</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Recortar video...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Subir archivo seleccionado</value>
   </data>
@@ -1819,6 +1846,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Verticalmente</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Resaltador del mouse</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Cancelar</value>
@@ -2002,6 +2032,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiado al portapapeles: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Configure un cargador de Amazon S3, FTP, FTPS o SFTP en la configuración de Destino antes de abrir el navegador de almacenamiento remoto.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>¿Desea establecer «{0}» como cargador personalizado activo para {1}?</value>
@@ -2279,6 +2312,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Ocultar la barra de tareas cuando se superponga con una ventana capturada</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Iniciar automáticamente el resaltador del mouse</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Si el portapapeles contiene una URL de archivo, descargarlo y cargarlo</value>
   </data>
@@ -2353,6 +2389,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Acciones del ratón</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opciones del resaltador del mouse...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Bajar</value>
@@ -2880,22 +2919,5 @@ Puedes desactivarlo más adelante desde el menú "Tareas después de capturar".<
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>El administrador de tu sistema desactivó la característica de carga.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Recortar video...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Redimensionar imagen...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Creador de GIF animados...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Resaltador del mouse</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Resaltador del mouse...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Iniciar automáticamente el resaltador del mouse</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Opciones del resaltador del mouse...</value>
   </data>
 </root>

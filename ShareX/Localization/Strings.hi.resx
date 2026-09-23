@@ -1376,6 +1376,9 @@
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>छवि का विश्लेषण करें...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>एनिमेटेड GIF निर्माता...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>अनुप्रयोग सेटिंग...</value>
   </data>
@@ -1463,6 +1466,9 @@
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>छवि तुलनाकर्ता...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>छवि रूपांतरक...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>छवि संपादक...</value>
   </data>
@@ -1471,12 +1477,6 @@
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>छवि इतिहास...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>छवि रूपांतरक...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>छवि वॉटरमार्क...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>छवि आकार परिवर्तक...</value>
@@ -1489,6 +1489,9 @@
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>छवि दर्शक...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>छवि वॉटरमार्क...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>फ़ोल्डर अनुक्रमित करें...</value>
@@ -1507,6 +1510,9 @@
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>मॉनिटर परीक्षण...</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>माउस हाइलाइटर...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>नेटवर्क मॉनिटर...</value>
@@ -1534,6 +1540,9 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>क्षेत्र...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>रिमोट स्टोरेज ब्राउज़र...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>व्यवस्थापक के रूप में पुनः आरंभ करें</value>
@@ -1628,6 +1637,9 @@
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>वीडियो थंबनेल निर्माता...</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>वीडियो ट्रिमर...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>विंडो</value>
   </data>
@@ -1636,6 +1648,9 @@
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>छवि प्रभाव जोड़ें...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>हमेशा ऊपर</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>छवि का विश्लेषण करें...</value>
@@ -1736,6 +1751,12 @@
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Markdown लिंक की गई छवि</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>अधिकतम करना या पुनर्स्थापित करना</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>छोटा करना</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>छवि पर OCR करें...</value>
   </data>
@@ -1759,6 +1780,9 @@
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>रिमोट विलोपन</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>चित्र का आकार बदलें...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>क्रिया चलाएँ</value>
@@ -1808,6 +1832,9 @@
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>थंबनेल URL</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>वीडियो ट्रिम करें...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>चुनी गई फ़ाइल अपलोड करें</value>
   </data>
@@ -1819,6 +1846,9 @@
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>लंबवत रूप से</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>माउस हाइलाइटर</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
@@ -2002,6 +2032,9 @@
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>क्लिपबोर्ड पर कॉपी किया गया: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>रिमोट स्टोरेज ब्राउज़र खोलने से पहले डेस्टिनेशन सेटिंग्स में Amazon S3, FTP, FTPS, या SFTP अपलोडर को कॉन्फ़िगर करें।</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>क्या आप "{0}" को {1} के लिए सक्रिय अनुकूलित अपलोडर बनाना चाहते हैं?</value>
@@ -2279,6 +2312,9 @@
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>कैप्चर की गई विंडो से टास्कबार टकराए तो उसे छिपाएँ</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>माउस हाइलाइटर स्वचालित रूप से प्रारंभ करें</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>क्लिपबोर्ड में फ़ाइल URL हो तो उसे डाउनलोड और अपलोड करें</value>
   </data>
@@ -2353,6 +2389,9 @@
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>माउस क्रियाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>माउस हाइलाइटर विकल्प...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>नीचे ले जाएँ</value>
@@ -2881,22 +2920,5 @@
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>आपके सिस्टम व्यवस्थापक ने अपलोड सुविधा अक्षम की है।</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>वीडियो ट्रिम करें...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>चित्र का आकार बदलें...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>एनिमेटेड GIF निर्माता...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>माउस हाइलाइटर</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>माउस हाइलाइटर...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>माउस हाइलाइटर स्वचालित रूप से प्रारंभ करें</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>माउस हाइलाइटर विकल्प...</value>
   </data>
 </root>

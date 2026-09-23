@@ -1376,6 +1376,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Bild analysieren</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Ersteller für animierte GIFs...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Anwendungseinstellungen...</value>
   </data>
@@ -1463,6 +1466,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Bildvergleich</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Bildkonverter...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Bildeditor</value>
   </data>
@@ -1471,12 +1477,6 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Bildverlauf...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Bildkonverter...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Bildwasserzeichen...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Bildgrößenänderung...</value>
@@ -1489,6 +1489,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Bildbetrachter</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Bildwasserzeichen...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Ordner indizieren...</value>
@@ -1507,6 +1510,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Monitortest</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Mausklick-Hervorhebung...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Netzwerkmonitor...</value>
@@ -1534,6 +1540,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Region...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Remote-Speicherbrowser...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Als Administrator neu starten</value>
@@ -1628,6 +1637,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Video-Thumbnailer</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Videotrimmer...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Fenster</value>
   </data>
@@ -1636,6 +1648,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Bildeffekte hinzufügen...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Immer im Vordergrund</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Bild analysieren</value>
@@ -1736,6 +1751,12 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Verknüpftes Markdown-Bild</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maximieren oder wiederherstellen</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Minimieren</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>OCR-Bild...</value>
   </data>
@@ -1759,6 +1780,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Remote-Löschung</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Bildgröße ändern...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Aktion ausführen</value>
@@ -1808,6 +1832,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Thumbnail-URL</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Video zuschneiden...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Ausgewählte Datei hochladen</value>
   </data>
@@ -1819,6 +1846,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Vertikal</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Mausklick-Hervorhebung</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Abbrechen</value>
@@ -2002,6 +2032,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>In Zwischenablage kopiert: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Konfigurieren Sie einen Amazon S3-, FTP-, FTPS- oder SFTP-Uploader in den Zieleinstellungen, bevor Sie den Remote-Speicherbrowser öffnen.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Möchten Sie „{0}“ als aktiven benutzerdefinierten Uploader für {1} festlegen?</value>
@@ -2279,6 +2312,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Taskleiste ausblenden, wenn sie ein aufgenommenes Fenster überschneidet</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Mausklick-Hervorhebung automatisch starten</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Wenn die Zwischenablage eine Datei-URL enthält, herunterladen und hochladen</value>
   </data>
@@ -2353,6 +2389,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Mausaktionen</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Optionen für Mausklick-Hervorhebung...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Nach unten</value>
@@ -2880,22 +2919,5 @@ Sie können sie später im Menü „Aufgaben nach der Aufnahme“ deaktivieren.<
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Ihr Systemadministrator hat diese Funktion ausgeschaltet.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Video zuschneiden...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Bildgröße ändern...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Ersteller für animierte GIFs...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Mausklick-Hervorhebung</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Mausklick-Hervorhebung...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Mausklick-Hervorhebung automatisch starten</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Optionen für Mausklick-Hervorhebung...</value>
   </data>
 </root>

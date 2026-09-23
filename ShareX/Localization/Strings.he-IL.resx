@@ -1376,6 +1376,9 @@
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>נתח תמונה</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>יוצר GIF מונפש...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>הגדרות יישום...</value>
   </data>
@@ -1463,6 +1466,9 @@
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>משווה תמונות</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>ממיר תמונות...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>עורך תמונה</value>
   </data>
@@ -1471,12 +1477,6 @@
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>היסטוריית תמונות...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>ממיר תמונות...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>סימן מים לתמונה...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>כלי לשינוי גודל תמונה...</value>
@@ -1489,6 +1489,9 @@
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>מציג תמונה</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>סימן מים לתמונה...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>צור אינדקס לתיקייה...</value>
@@ -1507,6 +1510,9 @@
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>בדיקת מסך</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>סימון עכבר...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>מנטר רשת...</value>
@@ -1534,6 +1540,9 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>אזור...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>דפדפן אחסון מרוחק...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>הפעל מחדש כמנהל מערכת</value>
@@ -1628,6 +1637,9 @@
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>וידאו תמונה ממוזערת</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>גוזם וידאו...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>חלון</value>
   </data>
@@ -1636,6 +1648,9 @@
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>הוסף אפקטי תמונה...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>תמיד מעל</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>נתח תמונה</value>
@@ -1736,6 +1751,12 @@
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>תמונת Markdown מקושרת</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>למקסם או לשחזר</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>לְצַמְצֵם</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>תמונת OCR...</value>
   </data>
@@ -1759,6 +1780,9 @@
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>מחיקה מרחוק</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>שינוי גודל התמונה...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>הפעל פעולה</value>
@@ -1808,6 +1832,9 @@
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>קישור תמונה ממוזערת</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>חיתוך וידאו...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>העלה קובץ נבחר</value>
   </data>
@@ -1819,6 +1846,9 @@
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>אנכית</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>סימון עכבר</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>ביטול</value>
@@ -2002,6 +2032,9 @@
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>הועתק ללוח הגזירה: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>הגדר מעלה Amazon S3, FTP, FTPS או SFTP בהגדרות יעד לפני פתיחת דפדפן האחסון המרוחק.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>להגדיר את "{0}" כמעלה המותאם אישית הפעיל עבור {1}?</value>
@@ -2279,6 +2312,9 @@
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>הסתרת שורת המשימות כאשר היא חופפת לחלון שנלכד</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>הפעל אוטומטית את מדגיש העכבר</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>אם הלוח מכיל כתובת URL של קובץ, הורדה והעלאה שלו</value>
   </data>
@@ -2353,6 +2389,9 @@
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>פעולות עכבר</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>אפשרויות סימון עכבר...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>העברה למטה</value>
@@ -2881,22 +2920,5 @@
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>מנהל המערכת שלך השבית את תכונת ההעלאה.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>חיתוך וידאו...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>שינוי גודל התמונה...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>יוצר GIF מונפש...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>סימון עכבר</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>סימון עכבר...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>הפעל אוטומטית את מדגיש העכבר</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>אפשרויות סימון עכבר...</value>
   </data>
 </root>

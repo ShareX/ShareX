@@ -1376,6 +1376,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Analisar imagem</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Criador de GIF animado...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Definições da aplicação...</value>
   </data>
@@ -1463,6 +1466,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Comparador de imagens</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Conversor de imagens...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Editor de Imagem</value>
   </data>
@@ -1471,12 +1477,6 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Histórico de imagens...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Conversor de imagens...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Marca-d’água de imagem...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Redimensionador de imagens...</value>
@@ -1489,6 +1489,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Imagem viewer</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Marca-d’água de imagem...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Indexar pasta...</value>
@@ -1507,6 +1510,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Teste de monitor</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Marcador de rato...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Monitor de rede...</value>
@@ -1534,6 +1540,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Região...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Navegador de armazenamento remoto...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Reiniciar como administrador</value>
@@ -1628,6 +1637,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Conversor de vídeo para miniatura</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Aparador de vídeo...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Janela</value>
   </data>
@@ -1636,6 +1648,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Adicionar efeitos de imagem...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Sempre no topo</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Analisar imagem</value>
@@ -1736,6 +1751,12 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Imagem Markdown ligada</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maximizar ou restaurar</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Minimizar</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>Imagem OCR...</value>
   </data>
@@ -1759,6 +1780,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Eliminação remota</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Redimensionar imagem...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Executar ação</value>
@@ -1808,6 +1832,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Miniatura URL</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Cortar vídeo...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Carregar ficheiro selecionado</value>
   </data>
@@ -1819,6 +1846,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Verticalmente</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Marcador de rato</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Cancelar</value>
@@ -2002,6 +2032,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiado para a área de transferência: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Configure um carregador Amazon S3, FTP, FTPS ou SFTP nas definições de destino antes de abrir o navegador de armazenamento remoto.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Pretende definir «{0}» como carregador personalizado ativo para {1}?</value>
@@ -2279,6 +2312,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Ocultar a barra de tarefas quando ela cruzar uma janela capturada</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Iniciar automaticamente o marcador do rato</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Se a área de transferência contiver uma URL de arquivo, baixar e enviar o arquivo</value>
   </data>
@@ -2353,6 +2389,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Ações do mouse</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opções de marcador de rato...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Mover para baixo</value>
@@ -2881,22 +2920,5 @@ Pode desativá-los mais tarde no menu "Tarefas após captura".</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>O administrador do sistema desativou a funcionalidade de carregamento.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Cortar vídeo...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Redimensionar imagem...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Criador de GIF animado...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Marcador de rato</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Marcador de rato...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Iniciar automaticamente o marcador do rato</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Opções de marcador de rato...</value>
   </data>
 </root>

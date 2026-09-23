@@ -1376,6 +1376,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Görüntüyü analiz et...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Animasyonlu GIF oluşturucu...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Uygulama ayarları...</value>
   </data>
@@ -1463,6 +1466,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Görüntü karşılaştırıcı...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Görsel dönüştürücü...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Resim düzenleyici...</value>
   </data>
@@ -1471,12 +1477,6 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Resim geçmişi...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Görsel dönüştürücü...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Görsel filigranı...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Görsel boyutlandırıcı...</value>
@@ -1489,6 +1489,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Resim görüntüleyici...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Görsel filigranı...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Dizini indeksle...</value>
@@ -1507,6 +1510,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Monitör testi...</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Fare vurgulayıcı...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Ağ izleyicisi...</value>
@@ -1534,6 +1540,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Bölge...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Uzak depolama tarayıcısı...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Yönetici olarak yeniden başlat</value>
@@ -1628,6 +1637,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Video küçük resim oluşturucu...</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Video düzeltici...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Pencere</value>
   </data>
@@ -1636,6 +1648,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Resim efektleri ekle...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Her zaman üstte</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Görüntüyü analiz et...</value>
@@ -1736,6 +1751,12 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Markdown bağlantılı resim</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Büyütme veya geri yükleme</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Küçült</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>Resimden yazı yakala (OCR)...</value>
   </data>
@@ -1759,6 +1780,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Uzaktan silme</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Görseli yeniden boyutlandır...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Eylem çalıştır</value>
@@ -1808,6 +1832,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Küçük resim adresi</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Videoyu kırp...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Seçili dosyayı yükle</value>
   </data>
@@ -1819,6 +1846,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Dikey olarak</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Fare vurgulayıcı</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>İptal</value>
@@ -2002,6 +2032,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Panoya kopyalandı: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Uzak depolama tarayıcısını açmadan önce Hedef ayarlarında bir Amazon S3, FTP, FTPS veya SFTP yükleyicisini yapılandırın.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>"{0}" özel yükleyicisini {1} için etkin yükleyici olarak ayarlamak istiyor musunuz?</value>
@@ -2279,6 +2312,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Yakalanan pencereyle kesiştiğinde görev çubuğunu gizle</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Fare vurgulayıcıyı otomatik olarak başlat</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Panoda bir dosya URL'si varsa indir ve yükle</value>
   </data>
@@ -2353,6 +2389,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Fare eylemleri</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Fare vurgulayıcı seçenekleri...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Aşağı taşı</value>
@@ -2881,22 +2920,5 @@ Daha sonra "Yakalama sonrası" menüsünden devre dışı bırakabilirsiniz.</va
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Sistem yöneticiniz yükleme özelliğini devre dışı bıraktı.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Videoyu kırp...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Görseli yeniden boyutlandır...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Animasyonlu GIF oluşturucu...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Fare vurgulayıcı</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Fare vurgulayıcı...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Fare vurgulayıcıyı otomatik olarak başlat</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Fare vurgulayıcı seçenekleri...</value>
   </data>
 </root>

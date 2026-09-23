@@ -133,9 +133,6 @@
   <data name="BrowserProtocol_sftp" xml:space="preserve">
     <value>sftp://</value>
   </data>
-  <data name="CertFileNameEditor_Browse_for_certificate_file" xml:space="preserve">
-    <value>Chercher un fichier certificat...</value>
-  </data>
   <data name="Common_API_key_is_missing" xml:space="preserve">
     <value>La clé API est manquante.</value>
   </data>
@@ -1029,9 +1026,6 @@
   </data>
   <data name="Imgur_Upload_failed" xml:space="preserve">
     <value>Échec du téléversement Imgur : ({0}) {1}</value>
-  </data>
-  <data name="KeyFileNameEditor_Browse_for_key_file" xml:space="preserve">
-    <value>Parcourir pour un fichier clé...</value>
   </data>
   <data name="Lambda_Upload_failed_check_API_key" xml:space="preserve">
     <value>Le téléversement a échoué pour une raison inconnue. Vérifiez votre clé API.</value>

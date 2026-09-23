@@ -1376,6 +1376,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Analysér billede...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Værktøj til animerede GIF'er...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Programindstillinger...</value>
   </data>
@@ -1463,6 +1466,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Billedsammenligning...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Billedkonvertering...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Billedredigering...</value>
   </data>
@@ -1471,12 +1477,6 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Billedhistorik...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Billedkonvertering...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Billedvandmærke...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Billedskalering...</value>
@@ -1489,6 +1489,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Billedvisning...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Billedvandmærke...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Indeksér mappe...</value>
@@ -1507,6 +1510,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Skærmtest...</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Musemarkering...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Netværksovervågning...</value>
@@ -1534,6 +1540,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Område...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Fjernlagringsbrowser...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Genstart som administrator</value>
@@ -1628,6 +1637,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Videominiaturegenerator...</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Video trimmer...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Vindue</value>
   </data>
@@ -1636,6 +1648,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Tilføj billedeffekter...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Altid øverst</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Analysér billede...</value>
@@ -1736,6 +1751,12 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Tilknyttet Markdown-billede</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maksimer eller gendan</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Minimer</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>OCR af billede...</value>
   </data>
@@ -1759,6 +1780,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Ekstern sletning</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Skift billedstørrelse...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Kør handling</value>
@@ -1808,6 +1832,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Miniature-URL</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Beskær video...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Upload valgt fil</value>
   </data>
@@ -1819,6 +1846,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Lodret</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Mus highlighter</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Annuller</value>
@@ -2002,6 +2032,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Kopieret til udklipsholder: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Konfigurer en Amazon S3-, FTP-, FTPS- eller SFTP-uploader i Destinationsindstillinger, før du åbner fjernlagringsbrowseren.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Vil du angive "{0}" som aktiv brugerdefineret uploader for {1}?</value>
@@ -2279,6 +2312,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Skjul Proceslinjen når det overlapper et registreret vindue</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Start automatisk musemarkering</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Hvis Udklipsholder indeholder en fil-URL, hent og upload den</value>
   </data>
@@ -2353,6 +2389,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Musehandlinger</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Indstillinger for musemarkering...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Flyt ned</value>
@@ -2881,22 +2920,5 @@ Du kan deaktivere dem senere fra menuen ”Opgaver efter optagelse”.</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Din systemadministrator har deaktiveret uploadfunktionen.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Trim video...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Skift billedstørrelse...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Værktøj til animerede GIF&apos;er...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Mus highlighter</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Musemarkering...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Start automatisk musemarkering</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Indstillinger for musemarkering...</value>
   </data>
 </root>

@@ -1376,6 +1376,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Analizează imaginea</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Creator de GIF-uri animate...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Setările aplicației...</value>
   </data>
@@ -1463,6 +1466,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Comparator de imagini</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Convertor de imagini...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Editor de imagini</value>
   </data>
@@ -1471,12 +1477,6 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Istoric imagini...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Convertor de imagini...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Filigran imagine...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Redimensionare imagine...</value>
@@ -1489,6 +1489,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Vizualizator de imagini</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Filigran imagine...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Indexează dosarul...</value>
@@ -1507,6 +1510,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Test de monitor</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Evidențiator mouse...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Monitor de rețea...</value>
@@ -1534,6 +1540,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Regiune...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Browser de stocare la distanță...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Repornește ca administrator</value>
@@ -1628,6 +1637,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Miniaturizator video</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Trimmer video...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Fereastra</value>
   </data>
@@ -1636,6 +1648,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Adăugați efecte de imagine...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Întotdeauna deasupra</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Analizează imaginea</value>
@@ -1736,6 +1751,12 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Imagine Markdown legată</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maximizați sau restaurați</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Minimizați</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>Imagine OCR...</value>
   </data>
@@ -1759,6 +1780,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Ștergere de la distanță</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Redimensionează imaginea...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Execută acțiunea</value>
@@ -1808,6 +1832,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>URL miniatură</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Decupează videoclipul...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Încarcă fișierul selectat</value>
   </data>
@@ -1819,6 +1846,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Vertical</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Evidențiator mouse-ului</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Anulare</value>
@@ -2002,6 +2032,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiat în clipboard: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Configurați un dispozitiv de încărcare Amazon S3, FTP, FTPS sau SFTP în setările de destinație înainte de a deschide browserul de stocare la distanță.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Doriți să setați „{0}” ca serviciu activ pentru {1}?</value>
@@ -2279,6 +2312,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Ascunde bara de activități când intersectează o fereastră capturată</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Porniți automat evidențierea mouse-ului</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Dacă clipboardul conține URL-ul unui fișier, descarcă-l și încarcă-l</value>
   </data>
@@ -2353,6 +2389,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Acțiuni mouse</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opțiuni pentru evidențierea mouse-ului...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Mută în jos</value>
@@ -2881,22 +2920,5 @@ Puteți să le dezactivați ulterior din meniul "Sarcini după captură".</value
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Administratorul de sistem a dezactivat funcția de încărcare.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Decupează videoclipul...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Redimensionează imaginea...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Creator de GIF-uri animate...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Evidențiator mouse-ului</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Evidențiator mouse...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Porniți automat evidențierea mouse-ului</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Opțiuni pentru evidențierea mouse-ului...</value>
   </data>
 </root>

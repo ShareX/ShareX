@@ -1376,6 +1376,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Analyze kép</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Animált GIF készítő...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Alkalmazásbeállítások...</value>
   </data>
@@ -1463,6 +1466,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Kép-összehasonlító</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Képkonvertáló...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Képszerkesztő</value>
   </data>
@@ -1471,12 +1477,6 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Képelőzmények...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Képkonvertáló...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Képvízjel...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Képátméretező...</value>
@@ -1489,6 +1489,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Kép viewer</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Képvízjel...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Mappa indexelése...</value>
@@ -1507,6 +1510,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Monitor teszt</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Egér kiemelő...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Hálózatfigyelő...</value>
@@ -1534,6 +1540,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Terület...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Távoli tároló böngésző...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Újraindítás rendszergazdaként</value>
@@ -1628,6 +1637,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Videó miniatűrer</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Videóvágó...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Ablak</value>
   </data>
@@ -1636,6 +1648,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Hozzáadás képeffektusok...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Mindig felül</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Analyze kép</value>
@@ -1736,6 +1751,12 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Hivatkozott Markdown-kép</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maximalizálás vagy visszaállítás</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Minimalizálás</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>OCR-kép...</value>
   </data>
@@ -1759,6 +1780,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Távoli törlés</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Kép átméretezése...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Művelet futtatása</value>
@@ -1808,6 +1832,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Miniatűr URL</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Videó vágása...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Kijelölt fájl feltöltése</value>
   </data>
@@ -1819,6 +1846,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Függőlegesen</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Egér kiemelő</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Mégse</value>
@@ -2002,6 +2032,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copied to vágólap: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>A távoli tárolóböngésző megnyitása előtt konfiguráljon egy Amazon S3, FTP, FTPS vagy SFTP feltöltőt a Cél beállításaiban.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Beállítja a(z) „{0}” feltöltőt aktívként ehhez: {1}?</value>
@@ -2279,6 +2312,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Tálca elrejtése, ha metszi a rögzített ablakot</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Az egérkiemelő automatikus indítása</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Ha a vágólap fájl URL-jét tartalmazza, letöltés és feltöltés</value>
   </data>
@@ -2353,6 +2389,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Egérműveletek</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Egérkiemelő opciók...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Mozgatás lefelé</value>
@@ -2881,22 +2920,5 @@ You can later disable it from "Rögzítés után tasks" menü.</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin letiltva the feltöltés feature.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Videó vágása...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Kép átméretezése...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Animált GIF készítő...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Egér kiemelő</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Egér kiemelő...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Az egérkiemelő automatikus indítása</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Egérkiemelő opciók...</value>
   </data>
 </root>

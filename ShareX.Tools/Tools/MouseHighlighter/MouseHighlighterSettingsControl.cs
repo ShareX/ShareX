@@ -12,7 +12,7 @@ using Avalonia.Controls;
 using Avalonia.Layout;
 using Avalonia.Media;
 using DrawingColor = System.Drawing.Color;
-using Strings = ShareX.Tools.Localization.Strings;
+using ShareX.Tools.Localization;
 
 namespace ShareX.Tools;
 

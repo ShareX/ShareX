@@ -214,6 +214,60 @@
   <data name="AnalyzeImageWindow_ShareX_Analyze_image" xml:space="preserve">
     <value>ShareX - วิเคราะห์รูปภาพ</value>
   </data>
+  <data name="AnimatedGifMakerViewModel_Create_failed" xml:space="preserve">
+    <value>สร้าง GIF ไม่สำเร็จ: {0}</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Created" xml:space="preserve">
+    <value>สร้าง GIF เคลื่อนไหวแล้ว</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Creating" xml:space="preserve">
+    <value>กำลังสร้าง GIF เคลื่อนไหว...</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Preview_failed" xml:space="preserve">
+    <value>แสดงตัวอย่างไม่สำเร็จ: {0}</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Preview_info" xml:space="preserve">
+    <value>{0} เฟรม • {1} มิลลิวินาที</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Add_images_dialog" xml:space="preserve">
+    <value>เพิ่มรูปภาพ</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Add_two_images_to_preview" xml:space="preserve">
+    <value>เพิ่มรูปภาพอย่างน้อยสองรูปเพื่อดูตัวอย่างภาพเคลื่อนไหว</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Animated_GIF_maker" xml:space="preserve">
+    <value>เครื่องมือสร้าง GIF เคลื่อนไหว</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Animation" xml:space="preserve">
+    <value>ภาพเคลื่อนไหว</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
+    <value>สร้าง GIF...</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
+    <value>ระยะหน่วงเฟรม</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_GIF_images" xml:space="preserve">
+    <value>รูปภาพ GIF</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Loop_animation" xml:space="preserve">
+    <value>วนซ้ำภาพเคลื่อนไหว</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Output" xml:space="preserve">
+    <value>ผลลัพธ์</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Preview" xml:space="preserve">
+    <value>แสดงตัวอย่าง</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Repeat_count" xml:space="preserve">
+    <value>จำนวนการวนซ้ำ</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Save_GIF_dialog" xml:space="preserve">
+    <value>บันทึก GIF เคลื่อนไหว</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
+    <value>0 คือวนซ้ำตลอดไป</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>ลบพื้นหลังใน {0} ms แล้ว</value>
   </data>
@@ -814,33 +868,6 @@
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>ยืด</value>
   </data>
-  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
-    <value>ใช้ลายน้ำ</value>
-  </data>
-  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
-    <value>ขนาดแบบอักษร</value>
-  </data>
-  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
-    <value>ลายน้ำรูปภาพ</value>
-  </data>
-  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
-    <value>ระยะขอบ</value>
-  </data>
-  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
-    <value>ตำแหน่ง</value>
-  </data>
-  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
-    <value>หมุน</value>
-  </data>
-  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
-    <value>มาตราส่วน</value>
-  </data>
-  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
-    <value>ลายน้ำ</value>
-  </data>
-  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
-    <value>ประเภทลายน้ำ</value>
-  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>
@@ -933,6 +960,33 @@
   </data>
   <data name="ImageThumbnailerWindow_filename_th" xml:space="preserve">
     <value>$filename_th</value>
+  </data>
+  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
+    <value>ใช้ลายน้ำ</value>
+  </data>
+  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
+    <value>ขนาดแบบอักษร</value>
+  </data>
+  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
+    <value>ลายน้ำรูปภาพ</value>
+  </data>
+  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
+    <value>ระยะขอบ</value>
+  </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>ตำแหน่ง</value>
+  </data>
+  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
+    <value>หมุน</value>
+  </data>
+  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
+    <value>มาตราส่วน</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
+    <value>ลายน้ำ</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
+    <value>ประเภทลายน้ำ</value>
   </data>
   <data name="IndexerHtml_File_count" xml:space="preserve">
     <value>{0:n0} ไฟล์</value>
@@ -1224,6 +1278,84 @@
   </data>
   <data name="MonitorTestWindow_Speed" xml:space="preserve">
     <value>ความเร็ว</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>เน้นสีเสมอ:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>ใช้สีโปร่งใสเพื่อปิดใช้งานการไฮไลต์แบบถาวร</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>เปิดใช้งานโดยอัตโนมัติเมื่อ ShareX เริ่มทำงาน</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>ไฮไลท์แบบวงกลม</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>ความล่าช้าในการจางหาย (มิลลิวินาที):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>ระยะเวลาจางลง (มิลลิวินาที):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>ติดตามเคอร์เซอร์ในขณะที่กดปุ่มค้างไว้</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>เน้นต่อไปหลังจากบันทึก</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>สีของปุ่มตรงกลาง:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>แสดงเป้าเล็งเมื่อปล่อยปุ่มกลาง</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>โหมดไฮไลท์:</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>สีของปุ่มหลัก:</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>แสดงเป้าเล็งเมื่อปล่อยปุ่มหลัก</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>รัศมี (px):</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>หากต้องการเน้นการคลิกในการบันทึก ให้เปิดใช้งานตัวเลือกปากกาเน้นข้อความเมาส์ในการตั้งค่างาน → จับภาพ → ตัวบันทึกหน้าจอ</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>แสดงเป้าเล็งเมื่อปล่อยปุ่มรอง</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>ระลอกคลื่น</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>ระยะเวลาระลอกคลื่น (มิลลิวินาที):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>ความเข้มของระลอกคลื่น:</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>ขนาดระลอกคลื่น (px):</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>สีของปุ่มรอง:</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>เริ่มไฮไลท์</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>ไม่สามารถเริ่มการไฮไลต์ด้วยเมาส์ได้</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>หยุดเน้น</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>หยุดไฮไลท์เมื่อหยุดการบันทึก</value>
+  </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>ปากกาเน้นข้อความเมาส์</value>
   </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
@@ -1651,6 +1783,108 @@
   <data name="QRCodeWindow_px" xml:space="preserve">
     <value>px</value>
   </data>
+  <data name="RemoteStorageBrowser_Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
+    <value>คัดลอก URL</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
+    <value>สร้างโฟลเดอร์...</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
+    <value>สร้างโฟลเดอร์ “{0}” แล้ว</value>
+  </data>
+  <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
+    <value>ลบ...</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
+    <value>ลบไฟล์ “{0}” หรือไม่</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
+    <value>ลบโฟลเดอร์ “{0}” หรือไม่</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
+    <value>โฟลเดอร์ “{0}” ไม่ว่างเปล่า ต้องการลบโฟลเดอร์และเนื้อหาทั้งหมดหรือไม่ การดำเนินการนี้ไม่สามารถย้อนกลับได้</value>
+  </data>
+  <data name="RemoteStorageBrowser_Deleted" xml:space="preserve">
+    <value>ลบ “{0}” แล้ว</value>
+  </data>
+  <data name="RemoteStorageBrowser_Download" xml:space="preserve">
+    <value>ดาวน์โหลด...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Downloaded" xml:space="preserve">
+    <value>ดาวน์โหลด “{0}” แล้ว</value>
+  </data>
+  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
+    <value>วางไฟล์เพื่ออัปโหลดไปยังโฟลเดอร์นี้</value>
+  </data>
+  <data name="RemoteStorageBrowser_EmptyFolder" xml:space="preserve">
+    <value>โฟลเดอร์นี้ว่างเปล่า</value>
+  </data>
+  <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
+    <value>{0} ไฟล์, {1} โฟลเดอร์ • รวม {2}</value>
+  </data>
+  <data name="RemoteStorageBrowser_Loading" xml:space="preserve">
+    <value>กำลังโหลด...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Location" xml:space="preserve">
+    <value>ตำแหน่ง:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Modified" xml:space="preserve">
+    <value>แก้ไขเมื่อ</value>
+  </data>
+  <data name="RemoteStorageBrowser_Name" xml:space="preserve">
+    <value>ชื่อ</value>
+  </data>
+  <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
+    <value>มีรายการชื่อ “{0}” อยู่แล้ว</value>
+  </data>
+  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
+    <value>โฟลเดอร์ใหม่</value>
+  </data>
+  <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
+    <value>เปิด URL</value>
+  </data>
+  <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
+    <value>การดำเนินการกับที่เก็บข้อมูลระยะไกลล้มเหลว</value>
+  </data>
+  <data name="RemoteStorageBrowser_Provider" xml:space="preserve">
+    <value>ผู้ให้บริการ:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Refresh" xml:space="preserve">
+    <value>รีเฟรช</value>
+  </data>
+  <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
+    <value>เปลี่ยนชื่อ...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Renamed" xml:space="preserve">
+    <value>เปลี่ยนชื่อ “{0}” เป็น “{1}” แล้ว</value>
+  </data>
+  <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
+    <value>บันทึกไฟล์ที่ดาวน์โหลด</value>
+  </data>
+  <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
+    <value>เลือกไฟล์ที่จะอัปโหลด</value>
+  </data>
+  <data name="RemoteStorageBrowser_Size" xml:space="preserve">
+    <value>ขนาด</value>
+  </data>
+  <data name="RemoteStorageBrowser_Title" xml:space="preserve">
+    <value>เบราว์เซอร์ที่เก็บข้อมูลระยะไกล</value>
+  </data>
+  <data name="RemoteStorageBrowser_Up" xml:space="preserve">
+    <value>ขึ้น</value>
+  </data>
+  <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
+    <value>อัปโหลด...</value>
+  </data>
+  <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
+    <value>อัปโหลดไฟล์แล้ว {0} ไฟล์</value>
+  </data>
+  <data name="RemoteStorageBrowser_View" xml:space="preserve">
+    <value>ดู</value>
+  </data>
   <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
     <value>ค่าความคลาดเคลื่อน: {0}%</value>
   </data>
@@ -1897,9 +2131,6 @@
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>เลือกวิดีโอที่ทราบระยะเวลาแน่นอน</value>
   </data>
-  <data name="VideoTrimmer_KeyboardHint" xml:space="preserve">
-    <value>ลากที่จับเพื่อตัด หรือคลิกเพื่อเลื่อนตำแหน่ง ซ้าย/ขวา: เลื่อน Shift: 1 วินาที I/O: ตั้งจุดเริ่ม/สิ้นสุด Home/End: ไปยังขอบเขตที่เลือก</value>
-  </data>
   <data name="VideoTrimmer_Loading" xml:space="preserve">
     <value>กำลังเตรียมตัวอย่างไทม์ไลน์…</value>
   </data>
@@ -1915,9 +2146,6 @@
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>ใช้นามสกุล {0} สำหรับโหมดส่งออกนี้</value>
   </data>
-  <data name="VideoTrimmer_Position" xml:space="preserve">
-    <value>ตำแหน่ง (วินาที)</value>
-  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>แม่นยำ (เข้ารหัสใหม่)</value>
   </data>
@@ -1927,17 +2155,11 @@
   <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
     <value>ตัวอย่างภาพนิ่ง • ไม่มีการเล่นเสียง</value>
   </data>
-  <data name="VideoTrimmer_Ready" xml:space="preserve">
-    <value>ลากที่จับเพื่อเลือกส่วนที่ต้องการเก็บไว้</value>
-  </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>รีเซ็ตช่วงที่เลือก</value>
   </data>
   <data name="VideoTrimmer_Saved" xml:space="preserve">
     <value>บันทึกแล้ว: {0}</value>
-  </data>
-  <data name="VideoTrimmer_SeekHint" xml:space="preserve">
-    <value>ปุ่มลูกศร: 0.1 วินาที • Shift: 1 วินาที</value>
   </data>
   <data name="VideoTrimmer_Selection" xml:space="preserve">
     <value>เก็บ {0}</value>
@@ -1968,239 +2190,5 @@
   </data>
   <data name="VideoTrimmer_VideoFiles" xml:space="preserve">
     <value>ไฟล์วิดีโอ</value>
-  </data>
-  <data name="RemoteStorageBrowser_Title" xml:space="preserve">
-    <value>เบราว์เซอร์ที่เก็บข้อมูลระยะไกล</value>
-  </data>
-  <data name="RemoteStorageBrowser_Provider" xml:space="preserve">
-    <value>ผู้ให้บริการ:</value>
-  </data>
-  <data name="RemoteStorageBrowser_Up" xml:space="preserve">
-    <value>ขึ้น</value>
-  </data>
-  <data name="RemoteStorageBrowser_Refresh" xml:space="preserve">
-    <value>รีเฟรช</value>
-  </data>
-  <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
-    <value>อัปโหลด...</value>
-  </data>
-  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
-    <value>สร้างโฟลเดอร์...</value>
-  </data>
-  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
-    <value>โฟลเดอร์ใหม่</value>
-  </data>
-  <data name="RemoteStorageBrowser_Location" xml:space="preserve">
-    <value>ตำแหน่ง:</value>
-  </data>
-  <data name="RemoteStorageBrowser_Name" xml:space="preserve">
-    <value>ชื่อ</value>
-  </data>
-  <data name="RemoteStorageBrowser_Size" xml:space="preserve">
-    <value>ขนาด</value>
-  </data>
-  <data name="RemoteStorageBrowser_Modified" xml:space="preserve">
-    <value>แก้ไขเมื่อ</value>
-  </data>
-  <data name="RemoteStorageBrowser_Download" xml:space="preserve">
-    <value>ดาวน์โหลด...</value>
-  </data>
-  <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
-    <value>เปลี่ยนชื่อ...</value>
-  </data>
-  <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
-    <value>ลบ...</value>
-  </data>
-  <data name="RemoteStorageBrowser_View" xml:space="preserve">
-    <value>ดู</value>
-  </data>
-  <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
-    <value>เปิด URL</value>
-  </data>
-  <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
-    <value>คัดลอก URL</value>
-  </data>
-  <data name="RemoteStorageBrowser_EmptyFolder" xml:space="preserve">
-    <value>โฟลเดอร์นี้ว่างเปล่า</value>
-  </data>
-  <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
-    <value>เลือกไฟล์ที่จะอัปโหลด</value>
-  </data>
-  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
-    <value>วางไฟล์เพื่ออัปโหลดไปยังโฟลเดอร์นี้</value>
-  </data>
-  <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
-    <value>บันทึกไฟล์ที่ดาวน์โหลด</value>
-  </data>
-  <data name="RemoteStorageBrowser_Cancel" xml:space="preserve">
-    <value>ยกเลิก</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
-    <value>ลบโฟลเดอร์ “{0}” หรือไม่</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
-    <value>โฟลเดอร์ “{0}” ไม่ว่างเปล่า ต้องการลบโฟลเดอร์และเนื้อหาทั้งหมดหรือไม่ การดำเนินการนี้ไม่สามารถย้อนกลับได้</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
-    <value>ลบไฟล์ “{0}” หรือไม่</value>
-  </data>
-  <data name="RemoteStorageBrowser_Downloaded" xml:space="preserve">
-    <value>ดาวน์โหลด “{0}” แล้ว</value>
-  </data>
-  <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
-    <value>อัปโหลดไฟล์แล้ว {0} ไฟล์</value>
-  </data>
-  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
-    <value>สร้างโฟลเดอร์ “{0}” แล้ว</value>
-  </data>
-  <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
-    <value>มีรายการชื่อ “{0}” อยู่แล้ว</value>
-  </data>
-  <data name="RemoteStorageBrowser_Renamed" xml:space="preserve">
-    <value>เปลี่ยนชื่อ “{0}” เป็น “{1}” แล้ว</value>
-  </data>
-  <data name="RemoteStorageBrowser_Deleted" xml:space="preserve">
-    <value>ลบ “{0}” แล้ว</value>
-  </data>
-  <data name="RemoteStorageBrowser_Loading" xml:space="preserve">
-    <value>กำลังโหลด...</value>
-  </data>
-  <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
-    <value>{0} ไฟล์, {1} โฟลเดอร์ • รวม {2}</value>
-  </data>
-  <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
-    <value>การดำเนินการกับที่เก็บข้อมูลระยะไกลล้มเหลว</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Create_failed" xml:space="preserve">
-    <value>สร้าง GIF ไม่สำเร็จ: {0}</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Created" xml:space="preserve">
-    <value>สร้าง GIF เคลื่อนไหวแล้ว</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Creating" xml:space="preserve">
-    <value>กำลังสร้าง GIF เคลื่อนไหว...</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Preview_failed" xml:space="preserve">
-    <value>แสดงตัวอย่างไม่สำเร็จ: {0}</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Preview_info" xml:space="preserve">
-    <value>{0} เฟรม • {1} มิลลิวินาที</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Add_images_dialog" xml:space="preserve">
-    <value>เพิ่มรูปภาพ</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Add_two_images_to_preview" xml:space="preserve">
-    <value>เพิ่มรูปภาพอย่างน้อยสองรูปเพื่อดูตัวอย่างภาพเคลื่อนไหว</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Animated_GIF_maker" xml:space="preserve">
-    <value>เครื่องมือสร้าง GIF เคลื่อนไหว</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Animation" xml:space="preserve">
-    <value>ภาพเคลื่อนไหว</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>สร้าง GIF...</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
-    <value>ระยะหน่วงเฟรม</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_GIF_images" xml:space="preserve">
-    <value>รูปภาพ GIF</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Loop_animation" xml:space="preserve">
-    <value>วนซ้ำภาพเคลื่อนไหว</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Output" xml:space="preserve">
-    <value>ผลลัพธ์</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Preview" xml:space="preserve">
-    <value>แสดงตัวอย่าง</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Repeat_count" xml:space="preserve">
-    <value>จำนวนการวนซ้ำ</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Save_GIF_dialog" xml:space="preserve">
-    <value>บันทึก GIF เคลื่อนไหว</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
-    <value>0 คือวนซ้ำตลอดไป</value>
-  </data>
-  <data name="MouseHighlighter_Title" xml:space="preserve">
-    <value>ปากกาเน้นข้อความเมาส์</value>
-  </data>
-  <data name="MouseHighlighter_Mode" xml:space="preserve">
-    <value>โหมดไฮไลท์:</value>
-  </data>
-  <data name="MouseHighlighter_Circle" xml:space="preserve">
-    <value>ไฮไลท์แบบวงกลม</value>
-  </data>
-  <data name="MouseHighlighter_Ripple" xml:space="preserve">
-    <value>ระลอกคลื่น</value>
-  </data>
-  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
-    <value>สีของปุ่มหลัก:</value>
-  </data>
-  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
-    <value>สีของปุ่มรอง:</value>
-  </data>
-  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
-    <value>สีของปุ่มตรงกลาง:</value>
-  </data>
-  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
-    <value>เน้นสีเสมอ:</value>
-  </data>
-  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
-    <value>ใช้สีโปร่งใสเพื่อปิดใช้งานการไฮไลต์แบบถาวร</value>
-  </data>
-  <data name="MouseHighlighter_Radius" xml:space="preserve">
-    <value>รัศมี (px):</value>
-  </data>
-  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
-    <value>ความล่าช้าในการจางหาย (มิลลิวินาที):</value>
-  </data>
-  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
-    <value>ระยะเวลาจางลง (มิลลิวินาที):</value>
-  </data>
-  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
-    <value>ขนาดระลอกคลื่น (px):</value>
-  </data>
-  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
-    <value>ความเข้มของระลอกคลื่น:</value>
-  </data>
-  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
-    <value>ระยะเวลาระลอกคลื่น (มิลลิวินาที):</value>
-  </data>
-  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
-    <value>ติดตามเคอร์เซอร์ในขณะที่กดปุ่มค้างไว้</value>
-  </data>
-  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
-    <value>แสดงเป้าเล็งเมื่อปล่อยปุ่มหลัก</value>
-  </data>
-  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
-    <value>แสดงเป้าเล็งเมื่อปล่อยปุ่มรอง</value>
-  </data>
-  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
-    <value>แสดงเป้าเล็งเมื่อปล่อยปุ่มกลาง</value>
-  </data>
-  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
-    <value>เปิดใช้งานโดยอัตโนมัติเมื่อ ShareX เริ่มทำงาน</value>
-  </data>
-  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
-    <value>หากต้องการเน้นการคลิกในการบันทึก ให้เปิดใช้งานตัวเลือกปากกาเน้นข้อความเมาส์ในการตั้งค่างาน → จับภาพ → ตัวบันทึกหน้าจอ</value>
-  </data>
-  <data name="MouseHighlighter_Start" xml:space="preserve">
-    <value>เริ่มไฮไลท์</value>
-  </data>
-  <data name="MouseHighlighter_Stop" xml:space="preserve">
-    <value>หยุดเน้น</value>
-  </data>
-  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
-    <value>ไม่สามารถเริ่มการไฮไลต์ด้วยเมาส์ได้</value>
-  </data>
-  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
-    <value>เน้นต่อไปหลังจากบันทึก</value>
-  </data>
-  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
-    <value>หยุดไฮไลท์เมื่อหยุดการบันทึก</value>
   </data>
 </root>

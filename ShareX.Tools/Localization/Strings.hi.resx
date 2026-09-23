@@ -214,6 +214,60 @@
   <data name="AnalyzeImageWindow_ShareX_Analyze_image" xml:space="preserve">
     <value>ShareX - छवि विश्लेषण</value>
   </data>
+  <data name="AnimatedGifMakerViewModel_Create_failed" xml:space="preserve">
+    <value>GIF नहीं बनाया जा सका: {0}</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Created" xml:space="preserve">
+    <value>एनिमेटेड GIF बनाया गया।</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Creating" xml:space="preserve">
+    <value>एनिमेटेड GIF बनाया जा रहा है...</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Preview_failed" xml:space="preserve">
+    <value>पूर्वावलोकन विफल: {0}</value>
+  </data>
+  <data name="AnimatedGifMakerViewModel_Preview_info" xml:space="preserve">
+    <value>{0} फ़्रेम • {1} मि.से.</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Add_images_dialog" xml:space="preserve">
+    <value>छवियाँ जोड़ें</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Add_two_images_to_preview" xml:space="preserve">
+    <value>एनिमेशन का पूर्वावलोकन करने के लिए कम से कम दो छवियाँ जोड़ें।</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Animated_GIF_maker" xml:space="preserve">
+    <value>एनिमेटेड GIF निर्माता</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Animation" xml:space="preserve">
+    <value>एनिमेशन</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
+    <value>GIF बनाएँ...</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
+    <value>फ़्रेम विलंब</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_GIF_images" xml:space="preserve">
+    <value>GIF छवियाँ</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Loop_animation" xml:space="preserve">
+    <value>एनिमेशन दोहराएँ</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Output" xml:space="preserve">
+    <value>आउटपुट</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Preview" xml:space="preserve">
+    <value>पूर्वावलोकन</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Repeat_count" xml:space="preserve">
+    <value>दोहराव की संख्या</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Save_GIF_dialog" xml:space="preserve">
+    <value>एनिमेटेड GIF सहेजें</value>
+  </data>
+  <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
+    <value>0 हमेशा दोहराता है।</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>पृष्ठभूमि {0} ms में हटाई गई।</value>
   </data>
@@ -818,33 +872,6 @@
   <data name="ImageResizerWindow_Stretch" xml:space="preserve">
     <value>फैलाएँ</value>
   </data>
-  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
-    <value>वॉटरमार्क लागू करें</value>
-  </data>
-  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
-    <value>फ़ॉन्ट आकार</value>
-  </data>
-  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
-    <value>छवि वॉटरमार्क</value>
-  </data>
-  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
-    <value>हाशिया</value>
-  </data>
-  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
-    <value>स्थान</value>
-  </data>
-  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
-    <value>घुमाएँ</value>
-  </data>
-  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
-    <value>मापक्रम</value>
-  </data>
-  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
-    <value>वॉटरमार्क</value>
-  </data>
-  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
-    <value>वॉटरमार्क प्रकार</value>
-  </data>
   <data name="ImageSplitterViewModel_Grid_size" xml:space="preserve">
     <value>{0} × {1}</value>
   </data>
@@ -937,6 +964,33 @@
   </data>
   <data name="ImageThumbnailerWindow_filename_th" xml:space="preserve">
     <value>$filename_th</value>
+  </data>
+  <data name="ImageWatermarkWindow_Apply_watermark" xml:space="preserve">
+    <value>वॉटरमार्क लागू करें</value>
+  </data>
+  <data name="ImageWatermarkWindow_Font_size" xml:space="preserve">
+    <value>फ़ॉन्ट आकार</value>
+  </data>
+  <data name="ImageWatermarkWindow_Image_watermark" xml:space="preserve">
+    <value>छवि वॉटरमार्क</value>
+  </data>
+  <data name="ImageWatermarkWindow_Margin" xml:space="preserve">
+    <value>हाशिया</value>
+  </data>
+  <data name="ImageWatermarkWindow_Position" xml:space="preserve">
+    <value>स्थान</value>
+  </data>
+  <data name="ImageWatermarkWindow_Rotation" xml:space="preserve">
+    <value>घुमाएँ</value>
+  </data>
+  <data name="ImageWatermarkWindow_Scale" xml:space="preserve">
+    <value>मापक्रम</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark" xml:space="preserve">
+    <value>वॉटरमार्क</value>
+  </data>
+  <data name="ImageWatermarkWindow_Watermark_type" xml:space="preserve">
+    <value>वॉटरमार्क प्रकार</value>
   </data>
   <data name="IndexerHtml_File_count" xml:space="preserve">
     <value>{0:n0} फ़ाइलें</value>
@@ -1230,6 +1284,84 @@
   </data>
   <data name="MonitorTestWindow_Speed" xml:space="preserve">
     <value>गति</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>हमेशा रंग को हाइलाइट करें:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>लगातार हाइलाइट को अक्षम करने के लिए पारदर्शी रंग का उपयोग करें।</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>ShareX प्रारंभ होने पर स्वचालित रूप से सक्रिय हो जाता है</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>वृत्त हाइलाइट</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>फीका विलंब (एमएस):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>फीका अवधि (एमएस):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>बटन दबाए रखने पर कर्सर का अनुसरण करें</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>रिकॉर्डिंग के बाद हाइलाइट करते रहें</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>मध्य बटन का रंग:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>मध्य बटन रिलीज़ पर क्रॉसहेयर दिखाएँ</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>हाइलाइट मोड:</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>प्राथमिक बटन का रंग:</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>प्राथमिक बटन रिलीज़ पर क्रॉसहेयर दिखाएँ</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>त्रिज्या (पीएक्स):</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>रिकॉर्डिंग में क्लिक को हाइलाइट करने के लिए, टास्क सेटिंग्स → कैप्चर → स्क्रीन रिकॉर्डर में माउस हाइलाइटर विकल्प को सक्षम करें।</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>सेकेंडरी बटन रिलीज़ पर क्रॉसहेयर दिखाएँ</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>लहर</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>तरंग अवधि (एमएस):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>तरंग तीव्रता:</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>लहर का आकार (px):</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>द्वितीयक बटन का रंग:</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>हाइलाइट करना प्रारंभ करें</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>माउस हाइलाइटिंग प्रारंभ नहीं हो सका.</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>हाइलाइट करना बंद करें</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>रिकॉर्डिंग बंद होने पर हाइलाइट करना बंद करें</value>
+  </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>माउस हाइलाइटर</value>
   </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
@@ -1657,6 +1789,108 @@
   <data name="QRCodeWindow_px" xml:space="preserve">
     <value>px</value>
   </data>
+  <data name="RemoteStorageBrowser_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
+    <value>URL कॉपी करें</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
+    <value>फ़ोल्डर बनाएँ...</value>
+  </data>
+  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
+    <value>फ़ोल्डर “{0}” बनाया गया।</value>
+  </data>
+  <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
+    <value>हटाएँ...</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
+    <value>फ़ाइल “{0}” हटाएँ?</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
+    <value>फ़ोल्डर “{0}” हटाएँ?</value>
+  </data>
+  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
+    <value>फ़ोल्डर “{0}” खाली नहीं है। क्या इसे और इसकी सभी सामग्री को हटाना है? इस क्रिया को पूर्ववत नहीं किया जा सकता।</value>
+  </data>
+  <data name="RemoteStorageBrowser_Deleted" xml:space="preserve">
+    <value>“{0}” हटाया गया।</value>
+  </data>
+  <data name="RemoteStorageBrowser_Download" xml:space="preserve">
+    <value>डाउनलोड करें...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Downloaded" xml:space="preserve">
+    <value>“{0}” डाउनलोड किया गया।</value>
+  </data>
+  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
+    <value>इस फ़ोल्डर में अपलोड करने के लिए फ़ाइलें छोड़ें</value>
+  </data>
+  <data name="RemoteStorageBrowser_EmptyFolder" xml:space="preserve">
+    <value>यह फ़ोल्डर खाली है।</value>
+  </data>
+  <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
+    <value>{0} फ़ाइलें, {1} फ़ोल्डर • कुल {2}</value>
+  </data>
+  <data name="RemoteStorageBrowser_Loading" xml:space="preserve">
+    <value>लोड हो रहा है...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Location" xml:space="preserve">
+    <value>स्थान:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Modified" xml:space="preserve">
+    <value>संशोधित</value>
+  </data>
+  <data name="RemoteStorageBrowser_Name" xml:space="preserve">
+    <value>नाम</value>
+  </data>
+  <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
+    <value>“{0}” नाम का एक आइटम पहले से मौजूद है।</value>
+  </data>
+  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
+    <value>नया फ़ोल्डर</value>
+  </data>
+  <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
+    <value>URL खोलें</value>
+  </data>
+  <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
+    <value>रिमोट स्टोरेज कार्रवाई विफल रही।</value>
+  </data>
+  <data name="RemoteStorageBrowser_Provider" xml:space="preserve">
+    <value>प्रदाता:</value>
+  </data>
+  <data name="RemoteStorageBrowser_Refresh" xml:space="preserve">
+    <value>ताज़ा करें</value>
+  </data>
+  <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
+    <value>नाम बदलें...</value>
+  </data>
+  <data name="RemoteStorageBrowser_Renamed" xml:space="preserve">
+    <value>“{0}” का नाम बदलकर “{1}” किया गया।</value>
+  </data>
+  <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
+    <value>डाउनलोड की गई फ़ाइल सहेजें</value>
+  </data>
+  <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
+    <value>अपलोड करने के लिए फ़ाइलें चुनें</value>
+  </data>
+  <data name="RemoteStorageBrowser_Size" xml:space="preserve">
+    <value>आकार</value>
+  </data>
+  <data name="RemoteStorageBrowser_Title" xml:space="preserve">
+    <value>रिमोट स्टोरेज ब्राउज़र</value>
+  </data>
+  <data name="RemoteStorageBrowser_Up" xml:space="preserve">
+    <value>ऊपर</value>
+  </data>
+  <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
+    <value>अपलोड करें...</value>
+  </data>
+  <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
+    <value>{0} फ़ाइल अपलोड की गईं।</value>
+  </data>
+  <data name="RemoteStorageBrowser_View" xml:space="preserve">
+    <value>देखें</value>
+  </data>
   <data name="RulerOverlayControl_Tolerance" xml:space="preserve">
     <value>सहनशीलता: {0}%</value>
   </data>
@@ -1903,9 +2137,6 @@
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>ज्ञात और सीमित अवधि वाला वीडियो चुनें।</value>
   </data>
-  <data name="VideoTrimmer_KeyboardHint" xml:space="preserve">
-    <value>ट्रिम करने के लिए हैंडल खींचें या स्थान बदलने के लिए क्लिक करें। बायाँ/दायाँ: स्थान बदलें। Shift: 1 सेकंड। I/O: आरंभ/अंत सेट करें। Home/End: चयन सीमाओं पर जाएँ।</value>
-  </data>
   <data name="VideoTrimmer_Loading" xml:space="preserve">
     <value>टाइमलाइन पूर्वावलोकन तैयार किए जा रहे हैं…</value>
   </data>
@@ -1921,9 +2152,6 @@
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>इस निर्यात मोड के लिए {0} एक्सटेंशन का उपयोग करें।</value>
   </data>
-  <data name="VideoTrimmer_Position" xml:space="preserve">
-    <value>स्थान (सेकंड)</value>
-  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>सटीक (दोबारा एन्कोड)</value>
   </data>
@@ -1933,17 +2161,11 @@
   <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
     <value>स्थिर फ़्रेम पूर्वावलोकन • ऑडियो प्लेबैक नहीं</value>
   </data>
-  <data name="VideoTrimmer_Ready" xml:space="preserve">
-    <value>रखने वाला भाग चुनने के लिए हैंडल खींचें।</value>
-  </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>चयन रीसेट करें</value>
   </data>
   <data name="VideoTrimmer_Saved" xml:space="preserve">
     <value>सहेजा गया: {0}</value>
-  </data>
-  <data name="VideoTrimmer_SeekHint" xml:space="preserve">
-    <value>तीर कुंजियाँ: 0.1 सेकंड • Shift: 1 सेकंड</value>
   </data>
   <data name="VideoTrimmer_Selection" xml:space="preserve">
     <value>{0} रखें</value>
@@ -1974,239 +2196,5 @@
   </data>
   <data name="VideoTrimmer_VideoFiles" xml:space="preserve">
     <value>वीडियो फ़ाइलें</value>
-  </data>
-  <data name="RemoteStorageBrowser_Title" xml:space="preserve">
-    <value>रिमोट स्टोरेज ब्राउज़र</value>
-  </data>
-  <data name="RemoteStorageBrowser_Provider" xml:space="preserve">
-    <value>प्रदाता:</value>
-  </data>
-  <data name="RemoteStorageBrowser_Up" xml:space="preserve">
-    <value>ऊपर</value>
-  </data>
-  <data name="RemoteStorageBrowser_Refresh" xml:space="preserve">
-    <value>ताज़ा करें</value>
-  </data>
-  <data name="RemoteStorageBrowser_Upload" xml:space="preserve">
-    <value>अपलोड करें...</value>
-  </data>
-  <data name="RemoteStorageBrowser_CreateFolder" xml:space="preserve">
-    <value>फ़ोल्डर बनाएँ...</value>
-  </data>
-  <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
-    <value>नया फ़ोल्डर</value>
-  </data>
-  <data name="RemoteStorageBrowser_Location" xml:space="preserve">
-    <value>स्थान:</value>
-  </data>
-  <data name="RemoteStorageBrowser_Name" xml:space="preserve">
-    <value>नाम</value>
-  </data>
-  <data name="RemoteStorageBrowser_Size" xml:space="preserve">
-    <value>आकार</value>
-  </data>
-  <data name="RemoteStorageBrowser_Modified" xml:space="preserve">
-    <value>संशोधित</value>
-  </data>
-  <data name="RemoteStorageBrowser_Download" xml:space="preserve">
-    <value>डाउनलोड करें...</value>
-  </data>
-  <data name="RemoteStorageBrowser_Rename" xml:space="preserve">
-    <value>नाम बदलें...</value>
-  </data>
-  <data name="RemoteStorageBrowser_Delete" xml:space="preserve">
-    <value>हटाएँ...</value>
-  </data>
-  <data name="RemoteStorageBrowser_View" xml:space="preserve">
-    <value>देखें</value>
-  </data>
-  <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
-    <value>URL खोलें</value>
-  </data>
-  <data name="RemoteStorageBrowser_CopyUrl" xml:space="preserve">
-    <value>URL कॉपी करें</value>
-  </data>
-  <data name="RemoteStorageBrowser_EmptyFolder" xml:space="preserve">
-    <value>यह फ़ोल्डर खाली है।</value>
-  </data>
-  <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
-    <value>अपलोड करने के लिए फ़ाइलें चुनें</value>
-  </data>
-  <data name="RemoteStorageBrowser_DropFilesToUpload" xml:space="preserve">
-    <value>इस फ़ोल्डर में अपलोड करने के लिए फ़ाइलें छोड़ें</value>
-  </data>
-  <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
-    <value>डाउनलोड की गई फ़ाइल सहेजें</value>
-  </data>
-  <data name="RemoteStorageBrowser_Cancel" xml:space="preserve">
-    <value>रद्द करें</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteFolderConfirmation" xml:space="preserve">
-    <value>फ़ोल्डर “{0}” हटाएँ?</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteNonEmptyFolderConfirmation" xml:space="preserve">
-    <value>फ़ोल्डर “{0}” खाली नहीं है। क्या इसे और इसकी सभी सामग्री को हटाना है? इस क्रिया को पूर्ववत नहीं किया जा सकता।</value>
-  </data>
-  <data name="RemoteStorageBrowser_DeleteFileConfirmation" xml:space="preserve">
-    <value>फ़ाइल “{0}” हटाएँ?</value>
-  </data>
-  <data name="RemoteStorageBrowser_Downloaded" xml:space="preserve">
-    <value>“{0}” डाउनलोड किया गया।</value>
-  </data>
-  <data name="RemoteStorageBrowser_UploadedFiles" xml:space="preserve">
-    <value>{0} फ़ाइल अपलोड की गईं।</value>
-  </data>
-  <data name="RemoteStorageBrowser_CreatedFolder" xml:space="preserve">
-    <value>फ़ोल्डर “{0}” बनाया गया।</value>
-  </data>
-  <data name="RemoteStorageBrowser_NameAlreadyExists" xml:space="preserve">
-    <value>“{0}” नाम का एक आइटम पहले से मौजूद है।</value>
-  </data>
-  <data name="RemoteStorageBrowser_Renamed" xml:space="preserve">
-    <value>“{0}” का नाम बदलकर “{1}” किया गया।</value>
-  </data>
-  <data name="RemoteStorageBrowser_Deleted" xml:space="preserve">
-    <value>“{0}” हटाया गया।</value>
-  </data>
-  <data name="RemoteStorageBrowser_Loading" xml:space="preserve">
-    <value>लोड हो रहा है...</value>
-  </data>
-  <data name="RemoteStorageBrowser_ItemCount" xml:space="preserve">
-    <value>{0} फ़ाइलें, {1} फ़ोल्डर • कुल {2}</value>
-  </data>
-  <data name="RemoteStorageBrowser_OperationFailed" xml:space="preserve">
-    <value>रिमोट स्टोरेज कार्रवाई विफल रही।</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Create_failed" xml:space="preserve">
-    <value>GIF नहीं बनाया जा सका: {0}</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Created" xml:space="preserve">
-    <value>एनिमेटेड GIF बनाया गया।</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Creating" xml:space="preserve">
-    <value>एनिमेटेड GIF बनाया जा रहा है...</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Preview_failed" xml:space="preserve">
-    <value>पूर्वावलोकन विफल: {0}</value>
-  </data>
-  <data name="AnimatedGifMakerViewModel_Preview_info" xml:space="preserve">
-    <value>{0} फ़्रेम • {1} मि.से.</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Add_images_dialog" xml:space="preserve">
-    <value>छवियाँ जोड़ें</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Add_two_images_to_preview" xml:space="preserve">
-    <value>एनिमेशन का पूर्वावलोकन करने के लिए कम से कम दो छवियाँ जोड़ें।</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Animated_GIF_maker" xml:space="preserve">
-    <value>एनिमेटेड GIF निर्माता</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Animation" xml:space="preserve">
-    <value>एनिमेशन</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Create_GIF" xml:space="preserve">
-    <value>GIF बनाएँ...</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Frame_delay" xml:space="preserve">
-    <value>फ़्रेम विलंब</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_GIF_images" xml:space="preserve">
-    <value>GIF छवियाँ</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Loop_animation" xml:space="preserve">
-    <value>एनिमेशन दोहराएँ</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Output" xml:space="preserve">
-    <value>आउटपुट</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Preview" xml:space="preserve">
-    <value>पूर्वावलोकन</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Repeat_count" xml:space="preserve">
-    <value>दोहराव की संख्या</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Save_GIF_dialog" xml:space="preserve">
-    <value>एनिमेटेड GIF सहेजें</value>
-  </data>
-  <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
-    <value>0 हमेशा दोहराता है।</value>
-  </data>
-  <data name="MouseHighlighter_Title" xml:space="preserve">
-    <value>माउस हाइलाइटर</value>
-  </data>
-  <data name="MouseHighlighter_Mode" xml:space="preserve">
-    <value>हाइलाइट मोड:</value>
-  </data>
-  <data name="MouseHighlighter_Circle" xml:space="preserve">
-    <value>वृत्त हाइलाइट</value>
-  </data>
-  <data name="MouseHighlighter_Ripple" xml:space="preserve">
-    <value>लहर</value>
-  </data>
-  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
-    <value>प्राथमिक बटन का रंग:</value>
-  </data>
-  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
-    <value>द्वितीयक बटन का रंग:</value>
-  </data>
-  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
-    <value>मध्य बटन का रंग:</value>
-  </data>
-  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
-    <value>हमेशा रंग को हाइलाइट करें:</value>
-  </data>
-  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
-    <value>लगातार हाइलाइट को अक्षम करने के लिए पारदर्शी रंग का उपयोग करें।</value>
-  </data>
-  <data name="MouseHighlighter_Radius" xml:space="preserve">
-    <value>त्रिज्या (पीएक्स):</value>
-  </data>
-  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
-    <value>फीका विलंब (एमएस):</value>
-  </data>
-  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
-    <value>फीका अवधि (एमएस):</value>
-  </data>
-  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
-    <value>लहर का आकार (px):</value>
-  </data>
-  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
-    <value>तरंग तीव्रता:</value>
-  </data>
-  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
-    <value>तरंग अवधि (एमएस):</value>
-  </data>
-  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
-    <value>बटन दबाए रखने पर कर्सर का अनुसरण करें</value>
-  </data>
-  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
-    <value>प्राथमिक बटन रिलीज़ पर क्रॉसहेयर दिखाएँ</value>
-  </data>
-  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
-    <value>सेकेंडरी बटन रिलीज़ पर क्रॉसहेयर दिखाएँ</value>
-  </data>
-  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
-    <value>मध्य बटन रिलीज़ पर क्रॉसहेयर दिखाएँ</value>
-  </data>
-  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
-    <value>ShareX प्रारंभ होने पर स्वचालित रूप से सक्रिय हो जाता है</value>
-  </data>
-  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
-    <value>रिकॉर्डिंग में क्लिक को हाइलाइट करने के लिए, टास्क सेटिंग्स → कैप्चर → स्क्रीन रिकॉर्डर में माउस हाइलाइटर विकल्प को सक्षम करें।</value>
-  </data>
-  <data name="MouseHighlighter_Start" xml:space="preserve">
-    <value>हाइलाइट करना प्रारंभ करें</value>
-  </data>
-  <data name="MouseHighlighter_Stop" xml:space="preserve">
-    <value>हाइलाइट करना बंद करें</value>
-  </data>
-  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
-    <value>माउस हाइलाइटिंग प्रारंभ नहीं हो सका.</value>
-  </data>
-  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
-    <value>रिकॉर्डिंग के बाद हाइलाइट करते रहें</value>
-  </data>
-  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
-    <value>रिकॉर्डिंग बंद होने पर हाइलाइट करना बंद करें</value>
   </data>
 </root>

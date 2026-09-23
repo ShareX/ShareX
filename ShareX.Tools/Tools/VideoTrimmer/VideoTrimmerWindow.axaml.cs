@@ -29,7 +29,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
-using Strings = ShareX.Tools.Localization.Strings;
+using ShareX.Tools.Localization;
 
 namespace ShareX.Tools;
 

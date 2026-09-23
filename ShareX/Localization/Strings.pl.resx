@@ -1376,6 +1376,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Analizuj obraz</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Kreator animowanych GIF-ów...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Ustawienia aplikacji...</value>
   </data>
@@ -1463,6 +1466,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Porównywarka obrazów</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Konwerter obrazów...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Edytor obrazów</value>
   </data>
@@ -1471,12 +1477,6 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Historia obrazów...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Konwerter obrazów...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Znak wodny obrazu...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Narzędzie zmiany rozmiaru obrazu...</value>
@@ -1489,6 +1489,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Przeglądarka obrazów</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Znak wodny obrazu...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Indeksuj folder...</value>
@@ -1507,6 +1510,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Test monitora</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Podświetlanie kliknięć myszy...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Monitor sieci...</value>
@@ -1534,6 +1540,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Region...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Przeglądarka pamięci zdalnej...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Uruchom ponownie jako administrator</value>
@@ -1628,6 +1637,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Generator miniatur wideo</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Trymer wideo...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Okno</value>
   </data>
@@ -1636,6 +1648,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Dodawanie efektów obrazu...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Zawsze na wierzchu</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Analizuj obraz</value>
@@ -1736,6 +1751,12 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Połączony obraz Markdown</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maksymalizuj lub przywróć</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Zminimalizować</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>Obraz OCR...</value>
   </data>
@@ -1759,6 +1780,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Usuwanie zdalne</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Zmień rozmiar obrazu...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Uruchom działanie</value>
@@ -1808,6 +1832,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Link miniatury</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Przytnij wideo...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Prześlij wybrany plik</value>
   </data>
@@ -1819,6 +1846,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Pionowo</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Podświetlanie kliknięć myszy</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Anuluj</value>
@@ -2002,6 +2032,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Skopiowano do schowka: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Skonfiguruj moduł przesyłania Amazon S3, FTP, FTPS lub SFTP w ustawieniach miejsca docelowego przed otwarciem przeglądarki zdalnej pamięci masowej.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Czy chcesz ustawić „{0}” jako aktywny moduł wysyłania dla {1}?</value>
@@ -2279,6 +2312,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Ukryj pasek zadań, gdy przecina przechwytywane okno</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Automatycznie uruchamiaj podświetlanie kliknięć myszy</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Jeśli schowek zawiera URL pliku, pobierz go i prześlij</value>
   </data>
@@ -2353,6 +2389,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Akcje myszy</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opcje podświetlania kliknięć myszy...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Przenieś w dół</value>
@@ -2881,22 +2920,5 @@ Możesz je później wyłączyć w menu "Zadania po przechwyceniu".</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Administrator systemu wyłączył funkcję przesyłania.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Przytnij wideo...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Zmień rozmiar obrazu...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Kreator animowanych GIF-ów...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Podświetlanie kliknięć myszy</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Podświetlanie kliknięć myszy...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Automatycznie uruchamiaj podświetlanie kliknięć myszy</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Opcje podświetlania kliknięć myszy...</value>
   </data>
 </root>

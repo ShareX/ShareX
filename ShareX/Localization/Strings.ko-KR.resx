@@ -1376,6 +1376,9 @@
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>이미지 분석</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>움직이는 GIF 만들기...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>응용 프로그램 설정...</value>
   </data>
@@ -1463,6 +1466,9 @@
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>이미지 비교기</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>이미지 변환기...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>이미지 편집기</value>
   </data>
@@ -1471,12 +1477,6 @@
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>이미지 기록...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>이미지 변환기...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>이미지 워터마크...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>이미지 크기 조정 도구...</value>
@@ -1489,6 +1489,9 @@
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>이미지 뷰어</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>이미지 워터마크...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>폴더 인덱싱...</value>
@@ -1507,6 +1510,9 @@
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>모니터 테스트</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>마우스 클릭 강조 표시...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>네트워크 모니터...</value>
@@ -1534,6 +1540,9 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>영역...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>원격 저장소 브라우저...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>관리자 권한으로 다시 시작</value>
@@ -1628,6 +1637,9 @@
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>비디오 섬네일 생성기</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>비디오 트리머...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>창</value>
   </data>
@@ -1636,6 +1648,9 @@
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>추가 이미지 effects...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>항상 위</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>이미지 분석</value>
@@ -1736,6 +1751,12 @@
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Markdown 링크 이미지</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>최대화 또는 복원</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>최소화</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>이미지 OCR...</value>
   </data>
@@ -1759,6 +1780,9 @@
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>원격 삭제</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>이미지 크기 조정...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>작업 실행</value>
@@ -1808,6 +1832,9 @@
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>썸네일 URL</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>동영상 자르기...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>선택한 파일 업로드</value>
   </data>
@@ -1819,6 +1846,9 @@
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>세로로</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>마우스 클릭 강조 표시</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>취소</value>
@@ -2002,6 +2032,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>클립보드에 복사됨: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>원격 스토리지 브라우저를 열기 전에 대상 설정에서 Amazon S3, FTP, FTPS 또는 SFTP 업로더를 구성하십시오.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>"{0}"을(를) {1}의 활성 사용자 지정 업로더로 설정하시겠습니까?</value>
@@ -2279,6 +2312,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>작업 표시줄이 캡처할 창과 겹치면 숨기기</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>마우스 클릭 강조 표시 자동 시작</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>클립보드에 파일 URL이 있으면 다운로드하여 업로드</value>
   </data>
@@ -2353,6 +2389,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>마우스 동작</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>마우스 클릭 강조 표시 옵션...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>아래로 이동</value>
@@ -2881,22 +2920,5 @@ You can later disable it from "After 캡처 tasks" 메뉴.</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the 업로드 feature.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>동영상 자르기...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>이미지 크기 조정...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>움직이는 GIF 만들기...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>마우스 클릭 강조 표시</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>마우스 클릭 강조 표시...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>마우스 클릭 강조 표시 자동 시작</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>마우스 클릭 강조 표시 옵션...</value>
   </data>
 </root>

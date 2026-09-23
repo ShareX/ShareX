@@ -1376,6 +1376,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainMenuBuilder_AnalyzeImage" xml:space="preserve">
     <value>Analysera bild...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
+    <value>Skapare av animerade GIF-bilder...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Programinställningar...</value>
   </data>
@@ -1463,6 +1466,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">
     <value>Bildjämförelse...</value>
   </data>
+  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
+    <value>Bildkonverterare...</value>
+  </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Bildredigerare...</value>
   </data>
@@ -1471,12 +1477,6 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainMenuBuilder_ImageHistory" xml:space="preserve">
     <value>Bildhistorik...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageConverter" xml:space="preserve">
-    <value>Bildkonverterare...</value>
-  </data>
-  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
-    <value>Bildvattenstämpel...</value>
   </data>
   <data name="MainMenuBuilder_ImageResizer" xml:space="preserve">
     <value>Bildstorleksändrare...</value>
@@ -1489,6 +1489,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
     <value>Bildvisare...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
+    <value>Bildvattenstämpel...</value>
   </data>
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Indexera mapp...</value>
@@ -1507,6 +1510,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainMenuBuilder_MonitorTest" xml:space="preserve">
     <value>Bildskärmstest...</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Musmarkering...</value>
   </data>
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Nätverksövervakare...</value>
@@ -1534,6 +1540,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Område...</value>
+  </data>
+  <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
+    <value>Webbläsare för fjärrlagring...</value>
   </data>
   <data name="MainMenuBuilder_RestartAsAdministrator" xml:space="preserve">
     <value>Starta om som administratör</value>
@@ -1628,6 +1637,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Videominiatyrskapare...</value>
   </data>
+  <data name="MainMenuBuilder_VideoTrimmer" xml:space="preserve">
+    <value>Videotrimmer...</value>
+  </data>
   <data name="MainMenuBuilder_Window" xml:space="preserve">
     <value>Fönster</value>
   </data>
@@ -1636,6 +1648,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainWindow_AddImageEffects" xml:space="preserve">
     <value>Lägg till bildeffekter...</value>
+  </data>
+  <data name="MainWindow_AlwaysOnTop" xml:space="preserve">
+    <value>Alltid överst</value>
   </data>
   <data name="MainWindow_AnalyzeImage" xml:space="preserve">
     <value>Analysera bild...</value>
@@ -1736,6 +1751,12 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainWindow_MarkdownLinkedImage" xml:space="preserve">
     <value>Länkad Markdown-bild</value>
   </data>
+  <data name="MainWindow_MaximizeOrRestore" xml:space="preserve">
+    <value>Maximera eller återställ</value>
+  </data>
+  <data name="MainWindow_Minimize" xml:space="preserve">
+    <value>Minimera</value>
+  </data>
   <data name="MainWindow_OCRImage" xml:space="preserve">
     <value>OCR av bild...</value>
   </data>
@@ -1759,6 +1780,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainWindow_RemoteDeletion" xml:space="preserve">
     <value>Fjärrborttagning</value>
+  </data>
+  <data name="MainWindow_ResizeImage" xml:space="preserve">
+    <value>Ändra bildstorlek...</value>
   </data>
   <data name="MainWindow_RunAction" xml:space="preserve">
     <value>Kör åtgärd</value>
@@ -1808,6 +1832,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Miniatyr-URL</value>
   </data>
+  <data name="MainWindow_TrimVideo" xml:space="preserve">
+    <value>Trimma video...</value>
+  </data>
   <data name="MainWindow_UploadSelectedFile" xml:space="preserve">
     <value>Ladda upp vald fil</value>
   </data>
@@ -1819,6 +1846,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainWindow_Vertically" xml:space="preserve">
     <value>Lodrätt</value>
+  </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Musmarkering</value>
   </data>
   <data name="MultiUploadConfirmationWindow_Cancel" xml:space="preserve">
     <value>Avbryt</value>
@@ -2002,6 +2032,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Kopierat till urklipp: {0}</value>
+  </data>
+  <data name="TaskHelpers_RemoteStorageNotConfigured" xml:space="preserve">
+    <value>Konfigurera en Amazon S3-, FTP-, FTPS- eller SFTP-uppladdare i Destinationsinställningarna innan du öppnar fjärrlagringswebbläsaren.</value>
   </data>
   <data name="TaskHelpers_SetActiveCustomUploaderConfirmation" xml:space="preserve">
     <value>Vill du ange "{0}" som aktiv anpassad uppladdare för {1}?</value>
@@ -2279,6 +2312,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow" xml:space="preserve">
     <value>Dölj Aktivitetsfältet när det överlappar ett avbildat fönster</value>
   </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Starta musmarkering automatiskt</value>
+  </data>
   <data name="TaskSettingsWindow_IfClipboardContainsAFileURLDownloadAndUploadIt" xml:space="preserve">
     <value>Om Urklipp innehåller en fil-URL, hämta och ladda upp den</value>
   </data>
@@ -2353,6 +2389,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskSettingsWindow_MouseActions" xml:space="preserve">
     <value>Musåtgärder</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Alternativ för musmarkering...</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Flytta ned</value>
@@ -2881,22 +2920,5 @@ Du kan inaktivera dem senare från menyn "Uppgifter efter bildtagning".</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Din systemadministratör har inaktiverat uppladdningsfunktionen.</value>
-  </data>
-  <data name="MainWindow_TrimVideo" xml:space="preserve"><value>Trimma video...</value></data>
-  <data name="MainWindow_ResizeImage" xml:space="preserve"><value>Ändra bildstorlek...</value></data>
-  <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
-    <value>Skapare av animerade GIF-bilder...</value>
-  </data>
-  <data name="MouseHighlighter" xml:space="preserve">
-    <value>Musmarkering</value>
-  </data>
-  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
-    <value>Musmarkering...</value>
-  </data>
-  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
-    <value>Starta musmarkering automatiskt</value>
-  </data>
-  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
-    <value>Alternativ för musmarkering...</value>
   </data>
 </root>
