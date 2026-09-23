@@ -64,29 +64,17 @@ namespace ShareX.Tools.Localization {
 
         public static string MouseHighlighter_AutoActivate => ResourceManager.GetString("MouseHighlighter_AutoActivate", resourceCulture);
 
-        public static string MouseHighlighter_ConfigureShortcut => ResourceManager.GetString("MouseHighlighter_ConfigureShortcut", resourceCulture);
-
-        public static string MouseHighlighter_ShortcutHelp => ResourceManager.GetString("MouseHighlighter_ShortcutHelp", resourceCulture);
-
         public static string MouseHighlighter_RecordingHelp => ResourceManager.GetString("MouseHighlighter_RecordingHelp", resourceCulture);
 
         public static string MouseHighlighter_Start => ResourceManager.GetString("MouseHighlighter_Start", resourceCulture);
 
         public static string MouseHighlighter_Stop => ResourceManager.GetString("MouseHighlighter_Stop", resourceCulture);
 
-        public static string MouseHighlighter_Active => ResourceManager.GetString("MouseHighlighter_Active", resourceCulture);
-
-        public static string MouseHighlighter_Inactive => ResourceManager.GetString("MouseHighlighter_Inactive", resourceCulture);
-
-        public static string MouseHighlighter_RecordingActive => ResourceManager.GetString("MouseHighlighter_RecordingActive", resourceCulture);
-
         public static string MouseHighlighter_StartFailed => ResourceManager.GetString("MouseHighlighter_StartFailed", resourceCulture);
 
         public static string MouseHighlighter_KeepAfterRecording => ResourceManager.GetString("MouseHighlighter_KeepAfterRecording", resourceCulture);
 
         public static string MouseHighlighter_StopAfterRecording => ResourceManager.GetString("MouseHighlighter_StopAfterRecording", resourceCulture);
-
-        public static string MouseHighlighter_RecordingAndManualActive => ResourceManager.GetString("MouseHighlighter_RecordingAndManualActive", resourceCulture);
 
         private static global::System.Resources.ResourceManager resourceMan;
         

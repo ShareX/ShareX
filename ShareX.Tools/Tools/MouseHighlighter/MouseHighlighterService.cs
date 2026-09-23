@@ -136,6 +136,7 @@ internal sealed class MouseHighlighterService : IDisposable
 
     private void Press(MouseHighlightButton button, DrawingPoint point, double time)
     {
+        if (!Options.IsButtonEnabled(button)) return;
         MouseHighlight? previous = _heldHighlights[(int)button];
         if (previous != null) previous.Released = time;
         MouseHighlight highlight = new() { Position = point, Button = button, Started = time };

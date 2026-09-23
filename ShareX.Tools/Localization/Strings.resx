@@ -2029,12 +2029,6 @@
   <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
     <value>Automatically activate when ShareX starts</value>
   </data>
-  <data name="MouseHighlighter_ConfigureShortcut" xml:space="preserve">
-    <value>Configure activation shortcut...</value>
-  </data>
-  <data name="MouseHighlighter_ShortcutHelp" xml:space="preserve">
-    <value>Assign a shortcut to the “Toggle mouse highlighter” task in Hotkey settings.</value>
-  </data>
   <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
     <value>To highlight clicks in recordings, enable the mouse highlighter option in Task settings → Capture → Screen recorder.</value>
   </data>
@@ -2044,15 +2038,6 @@
   <data name="MouseHighlighter_Stop" xml:space="preserve">
     <value>Stop highlighting</value>
   </data>
-  <data name="MouseHighlighter_Active" xml:space="preserve">
-    <value>Mouse highlighting is active. Close this window to keep highlighting; use the button or activation shortcut to stop.</value>
-  </data>
-  <data name="MouseHighlighter_Inactive" xml:space="preserve">
-    <value>Mouse highlighting is stopped.</value>
-  </data>
-  <data name="MouseHighlighter_RecordingActive" xml:space="preserve">
-    <value>Mouse highlighting is active for screen recording. It stops automatically when capture stops.</value>
-  </data>
   <data name="MouseHighlighter_StartFailed" xml:space="preserve">
     <value>Could not start mouse highlighting.</value>
   </data>
@@ -2061,9 +2046,6 @@
   </data>
   <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
     <value>Stop highlighting when recording stops</value>
-  </data>
-  <data name="MouseHighlighter_RecordingAndManualActive" xml:space="preserve">
-    <value>Mouse highlighting is active for screen recording and stays active after capture stops.</value>
   </data>
   <data name="RemoteStorageBrowser_Title" xml:space="preserve">
     <value>ShareX - Remote Storage Browser</value>

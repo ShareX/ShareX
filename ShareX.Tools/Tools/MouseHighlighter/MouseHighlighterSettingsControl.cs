@@ -31,18 +31,24 @@ public sealed class MouseHighlighterSettingsControl : UserControl
         StackPanel panel = new() { Spacing = 12 };
         StackPanel circle = new() { Spacing = 10 };
         StackPanel ripple = new() { Spacing = 10 };
-        Control primaryColor = ColorRow(Strings.MouseHighlighter_PrimaryColor, options.PrimaryColor,
-            color => { options.PrimaryColor = color; Changed(); });
-        Control secondaryColor = ColorRow(Strings.MouseHighlighter_SecondaryColor, options.SecondaryColor,
-            color => { options.SecondaryColor = color; Changed(); });
-        Control middleColor = ColorRow(Strings.MouseHighlighter_MiddleColor, options.MiddleColor,
-            color => { options.MiddleColor = color; Changed(); });
         CheckBox primaryCrosshairs = Check(Strings.MouseHighlighter_PrimaryReleaseCrosshairs, options.ShowPrimaryReleaseCrosshairs,
             value => { options.ShowPrimaryReleaseCrosshairs = value; Changed(); });
         CheckBox secondaryCrosshairs = Check(Strings.MouseHighlighter_ReleaseCrosshairs, options.ShowSecondaryReleaseCrosshairs,
             value => { options.ShowSecondaryReleaseCrosshairs = value; Changed(); });
         CheckBox middleCrosshairs = Check(Strings.MouseHighlighter_MiddleReleaseCrosshairs, options.ShowMiddleReleaseCrosshairs,
             value => { options.ShowMiddleReleaseCrosshairs = value; Changed(); });
+        primaryCrosshairs.IsEnabled = options.HighlightPrimaryClicks;
+        secondaryCrosshairs.IsEnabled = options.HighlightSecondaryClicks;
+        middleCrosshairs.IsEnabled = options.HighlightMiddleClicks;
+        Control primaryColor = EnabledColorRow(Strings.MouseHighlighter_PrimaryColor, options.HighlightPrimaryClicks,
+            value => { options.HighlightPrimaryClicks = value; primaryCrosshairs.IsEnabled = value; Changed(); }, options.PrimaryColor,
+            color => { options.PrimaryColor = color; Changed(); });
+        Control secondaryColor = EnabledColorRow(Strings.MouseHighlighter_SecondaryColor, options.HighlightSecondaryClicks,
+            value => { options.HighlightSecondaryClicks = value; secondaryCrosshairs.IsEnabled = value; Changed(); }, options.SecondaryColor,
+            color => { options.SecondaryColor = color; Changed(); });
+        Control middleColor = EnabledColorRow(Strings.MouseHighlighter_MiddleColor, options.HighlightMiddleClicks,
+            value => { options.HighlightMiddleClicks = value; middleCrosshairs.IsEnabled = value; Changed(); }, options.MiddleColor,
+            color => { options.MiddleColor = color; Changed(); });
 
         ComboBox mode = new()
         {
@@ -122,6 +128,31 @@ public sealed class MouseHighlighterSettingsControl : UserControl
             changed(DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B));
         };
         return Row(label, button);
+    }
+
+    private static Control EnabledColorRow(string label, bool enabled, Action<bool> enabledChanged,
+        DrawingColor color, Action<DrawingColor> colorChanged)
+    {
+        ColorView picker = new() { Color = Color.FromArgb(color.A, color.R, color.G, color.B), IsAlphaEnabled = true, IsAlphaVisible = true };
+        Border swatch = new() { Width = 28, Height = 20, Background = new SolidColorBrush(picker.Color), BorderBrush = Brushes.Gray, BorderThickness = new Thickness(1) };
+        Button button = new() { Content = swatch, HorizontalAlignment = HorizontalAlignment.Left, Flyout = new Flyout { Content = picker }, IsEnabled = enabled };
+        picker.ColorChanged += (_, _) =>
+        {
+            Color selected = picker.Color;
+            swatch.Background = new SolidColorBrush(selected);
+            colorChanged(DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B));
+        };
+
+        CheckBox check = Check(label, enabled, value =>
+        {
+            button.IsEnabled = value;
+            enabledChanged(value);
+        });
+        Grid row = new() { ColumnDefinitions = new ColumnDefinitions("*,180"), ColumnSpacing = 12 };
+        row.Children.Add(check);
+        Grid.SetColumn(button, 1);
+        row.Children.Add(button);
+        return row;
     }
 
     private static CheckBox Check(string label, bool value, Action<bool> changed)

@@ -20,9 +20,8 @@ public sealed class MouseHighlighterWindow : Window
 {
     private readonly MouseHighlighterOptions _options;
     private readonly Button _toggle;
-    private readonly TextBlock _status;
 
-    public MouseHighlighterWindow(MouseHighlighterOptions options, Action? configureHotkey, Action? settingsChanged)
+    public MouseHighlighterWindow(MouseHighlighterOptions options, Action? settingsChanged)
     {
         _options = options;
         Title = "ShareX - " + Strings.MouseHighlighter_Title;
@@ -34,31 +33,63 @@ public sealed class MouseHighlighterWindow : Window
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         this.Bind(BackgroundProperty, new DynamicResourceExtension("ShareX.Brush.Background.Main"));
         StackPanel panel = new() { Spacing = 14, Margin = new Thickness(20) };
-        panel.Children.Add(new TextBlock { Text = Strings.MouseHighlighter_Title, FontSize = 22, FontWeight = FontWeight.SemiBold });
-        _status = new TextBlock { TextWrapping = TextWrapping.Wrap, FontWeight = FontWeight.Normal };
-        panel.Children.Add(_status);
         _toggle = new Button();
         _toggle.Click += (_, _) => Toggle();
         panel.Children.Add(_toggle);
+        panel.Children.Add(CreateRecordingTip());
         panel.Children.Add(new MouseHighlighterSettingsControl(options, settingsChanged));
-        if (configureHotkey != null)
-        {
-            Button shortcut = new() { Content = Strings.MouseHighlighter_ConfigureShortcut };
-            shortcut.Click += (_, _) => configureHotkey();
-            panel.Children.Add(shortcut);
-            panel.Children.Add(new TextBlock { Text = Strings.MouseHighlighter_ShortcutHelp, TextWrapping = TextWrapping.Wrap, FontWeight = FontWeight.Normal });
-        }
-        panel.Children.Add(new TextBlock { Text = Strings.MouseHighlighter_RecordingHelp, TextWrapping = TextWrapping.Wrap, FontWeight = FontWeight.Normal });
         Content = new ScrollViewer { Content = panel };
         MouseHighlighterManager.StateChanged += RefreshState;
         Closed += (_, _) => MouseHighlighterManager.StateChanged -= RefreshState;
         RefreshState();
     }
 
+    private static Control CreateRecordingTip()
+    {
+        TextBlock icon = new()
+        {
+            Text = LucideIcons.info,
+            FontSize = 18,
+            FontWeight = FontWeight.Normal,
+            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Top
+        };
+        icon.Bind(TextBlock.FontFamilyProperty, new DynamicResourceExtension("ShareX.FontFamily.Icon"));
+        icon.Bind(TextBlock.ForegroundProperty, new DynamicResourceExtension("ShareX.Brush.Accent.Start"));
+
+        TextBlock text = new()
+        {
+            Text = Strings.MouseHighlighter_RecordingHelp,
+            TextWrapping = TextWrapping.Wrap,
+            FontWeight = FontWeight.Normal,
+            Margin = new Thickness(10, 0, 0, 0)
+        };
+        text.Bind(TextBlock.ForegroundProperty, new DynamicResourceExtension("ShareX.Brush.Text.Secondary"));
+        Grid.SetColumn(text, 1);
+
+        Grid content = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*") };
+        content.Children.Add(icon);
+        content.Children.Add(text);
+
+        Border tip = new()
+        {
+            Child = content,
+            Padding = new Thickness(12),
+            BorderThickness = new Thickness(1),
+            CornerRadius = new CornerRadius(6)
+        };
+        tip.Bind(Border.BackgroundProperty, new DynamicResourceExtension("ShareX.Brush.Background.Panel"));
+        tip.Bind(Border.BorderBrushProperty, new DynamicResourceExtension("ShareX.Brush.Border"));
+        return tip;
+    }
+
     private void Toggle()
     {
         try { MouseHighlighterManager.SetManualActive(!MouseHighlighterManager.IsManuallyActive, _options); }
-        catch (Exception ex) { _status.Text = Strings.MouseHighlighter_StartFailed + " " + ex.Message; }
+        catch (Exception ex)
+        {
+            ShareX.AvaloniaUI.MessageBox.Show(Strings.MouseHighlighter_StartFailed + " " + ex.Message,
+                "ShareX", ShareX.AvaloniaUI.MessageBoxButtons.OK, ShareX.AvaloniaUI.MessageBoxIcon.Error);
+        }
     }
 
     private void RefreshState()
@@ -66,12 +97,10 @@ public sealed class MouseHighlighterWindow : Window
         if (MouseHighlighterManager.IsRecordingActive)
         {
             _toggle.Content = MouseHighlighterManager.IsManuallyActive ? Strings.MouseHighlighter_StopAfterRecording : Strings.MouseHighlighter_KeepAfterRecording;
-            _status.Text = MouseHighlighterManager.IsManuallyActive ? Strings.MouseHighlighter_RecordingAndManualActive : Strings.MouseHighlighter_RecordingActive;
         }
         else
         {
             _toggle.Content = MouseHighlighterManager.IsManuallyActive ? Strings.MouseHighlighter_Stop : Strings.MouseHighlighter_Start;
-            _status.Text = MouseHighlighterManager.IsManuallyActive ? Strings.MouseHighlighter_Active : Strings.MouseHighlighter_Inactive;
         }
     }
 }

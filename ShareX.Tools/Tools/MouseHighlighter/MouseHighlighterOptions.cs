@@ -21,11 +21,14 @@ public sealed class MouseHighlighterOptions
 {
     public bool AutoActivate { get; set; }
     public MouseHighlightMode Mode { get; set; } = MouseHighlightMode.Ripple;
-    public Color PrimaryColor { get; set; } = Color.FromArgb(166, 119, 221, 119);
+    public bool HighlightPrimaryClicks { get; set; } = true;
+    public Color PrimaryColor { get; set; } = Color.FromArgb(166, 54, 169, 225);
     public bool ShowPrimaryReleaseCrosshairs { get; set; }
-    public Color SecondaryColor { get; set; } = Color.FromArgb(166, 255, 105, 97);
+    public bool HighlightSecondaryClicks { get; set; } = true;
+    public Color SecondaryColor { get; set; } = Color.FromArgb(166, 89, 184, 106);
     public bool ShowSecondaryReleaseCrosshairs { get; set; }
-    public Color MiddleColor { get; set; } = Color.FromArgb(166, 9, 170, 255);
+    public bool HighlightMiddleClicks { get; set; } = true;
+    public Color MiddleColor { get; set; } = Color.FromArgb(166, 242, 142, 43);
     public bool ShowMiddleReleaseCrosshairs { get; set; }
     public Color AlwaysColor { get; set; } = Color.Transparent;
     public int Radius { get; set; } = 20;
@@ -35,6 +38,14 @@ public sealed class MouseHighlighterOptions
     public double RippleIntensity { get; set; } = 0.7;
     public int RippleDuration { get; set; } = 500;
     public bool FollowCursorWhileHeld { get; set; } = true;
+
+    internal bool IsButtonEnabled(MouseHighlightButton button) => button switch
+    {
+        MouseHighlightButton.Primary => HighlightPrimaryClicks,
+        MouseHighlightButton.Secondary => HighlightSecondaryClicks,
+        MouseHighlightButton.Middle => HighlightMiddleClicks,
+        _ => false
+    };
 
     internal Color GetColor(MouseHighlightButton button) => button switch
     {
@@ -46,9 +57,9 @@ public sealed class MouseHighlighterOptions
 
     internal bool ShowReleaseCrosshairs(MouseHighlightButton button) => button switch
     {
-        MouseHighlightButton.Primary => ShowPrimaryReleaseCrosshairs,
-        MouseHighlightButton.Secondary => ShowSecondaryReleaseCrosshairs,
-        MouseHighlightButton.Middle => ShowMiddleReleaseCrosshairs,
+        MouseHighlightButton.Primary => HighlightPrimaryClicks && ShowPrimaryReleaseCrosshairs,
+        MouseHighlightButton.Secondary => HighlightSecondaryClicks && ShowSecondaryReleaseCrosshairs,
+        MouseHighlightButton.Middle => HighlightMiddleClicks && ShowMiddleReleaseCrosshairs,
         _ => false
     };
 

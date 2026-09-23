@@ -1851,7 +1851,6 @@ namespace ShareX
         {
             taskSettings ??= ApplicationState.DefaultTaskSettings;
             ToolsIntegration.ShowMouseHighlighterWindow(taskSettings.ToolsSettingsReference.MouseHighlighterOptions,
-                () => MainWindowIntegration.ExecuteCommand(MainFormCommand.HotkeySettings),
                 () => SettingManager.SaveApplicationConfigAsync());
         }
 

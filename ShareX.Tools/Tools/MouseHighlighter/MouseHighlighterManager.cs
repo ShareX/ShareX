@@ -24,7 +24,7 @@ public static class MouseHighlighterManager
     public static bool IsRecordingActive => _recordingSession != null;
     public static event Action? StateChanged;
 
-    public static void ShowWindow(MouseHighlighterOptions options, Action? configureHotkey = null, Action? settingsChanged = null)
+    public static void ShowWindow(MouseHighlighterOptions options, Action? settingsChanged = null)
     {
         AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
@@ -35,7 +35,7 @@ public static class MouseHighlighterManager
                 _settingsWindow.Activate();
                 return;
             }
-            _settingsWindow = new MouseHighlighterWindow(options, configureHotkey, settingsChanged);
+            _settingsWindow = new MouseHighlighterWindow(options, settingsChanged);
             _settingsWindow.Closed += (_, _) => _settingsWindow = null;
             _settingsWindow.Show();
         });
