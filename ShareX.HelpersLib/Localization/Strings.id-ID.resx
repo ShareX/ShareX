@@ -1410,4 +1410,7 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Ukuran berkas maksimum yang diizinkan: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Alihkan penyorot mouse</value>
+  </data>
 </root>

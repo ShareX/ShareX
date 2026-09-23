@@ -1410,4 +1410,7 @@ Chcete jej přesto spustit?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Maximální povolená velikost souboru: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Přepnout zvýrazňovač myši</value>
+  </data>
 </root>

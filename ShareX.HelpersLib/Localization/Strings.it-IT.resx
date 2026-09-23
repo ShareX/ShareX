@@ -1410,4 +1410,7 @@ Vuoi eseguirlo comunque?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Dimensione massima consentita per i file: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Attiva/disattiva l'evidenziatore del mouse</value>
+  </data>
 </root>

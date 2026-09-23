@@ -1410,4 +1410,7 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Megengedett legnagyobb fájlméret: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Egér kiemelő váltása</value>
+  </data>
 </root>

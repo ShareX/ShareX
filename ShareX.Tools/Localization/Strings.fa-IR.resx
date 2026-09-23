@@ -2125,4 +2125,82 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>۰ یعنی تکرار همیشگی.</value>
   </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>هایلایتر موس</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>حالت برجسته:</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>برجسته دایره</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>ریپل</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>رنگ دکمه اصلی:</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>رنگ دکمه ثانویه:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>رنگ دکمه وسط:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>همیشه رنگ را برجسته کنید:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>از یک رنگ شفاف برای غیرفعال کردن هایلایت مداوم استفاده کنید.</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>شعاع (px):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>تاخیر محو (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>مدت زمان محو شدن (ms):</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>اندازه ریپل (px):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>شدت امواج:</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>مدت زمان ریپل (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>وقتی یک دکمه را نگه داشته اید، مکان نما را دنبال کنید</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>نمایش خطوط متقاطع در آزاد کردن دکمه اصلی</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>نمایش خطوط متقاطع در آزاد کردن دکمه ثانویه</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>نشان دادن خطوط متقاطع در باز کردن دکمه وسط</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>هنگامی که ShareX شروع به کار می کند، به طور خودکار فعال می شود</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>برای برجسته کردن کلیک‌ها در ضبط‌ها، گزینه برجسته‌کننده ماوس را در تنظیمات وظیفه → ضبط → ضبط کننده صفحه فعال کنید.</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>برجسته کردن را شروع کنید</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>برجسته کردن را متوقف کنید</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>برجسته کردن ماوس شروع نشد.</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>پس از ضبط به برجسته سازی ادامه دهید</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>هنگامی که ضبط متوقف می شود، برجسته سازی را متوقف کنید</value>
+  </data>
 </root>

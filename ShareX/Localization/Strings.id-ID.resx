@@ -2887,4 +2887,16 @@ Anda dapat menonaktifkannya nanti dari menu "Tugas setelah tangkapan".</value>
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Pembuat GIF animasi...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Penyorot mouse</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Penyorot mouse...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Secara otomatis memulai penyorot mouse</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opsi penyorot mouse...</value>
+  </data>
 </root>

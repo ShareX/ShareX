@@ -1410,4 +1410,7 @@ Ainda assim, pretende executá-lo?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Tamanho máximo de ficheiro permitido: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Alternar o marcador do rato</value>
+  </data>
 </root>

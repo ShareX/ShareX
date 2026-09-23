@@ -1410,4 +1410,7 @@
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Tamaño máximo permitido: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Alternar el resaltador del ratón</value>
+  </data>
 </root>

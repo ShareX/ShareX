@@ -2887,4 +2887,16 @@ Możesz je później wyłączyć w menu "Zadania po przechwyceniu".</value>
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Kreator animowanych GIF-ów...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Podświetlanie kliknięć myszy</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Podświetlanie kliknięć myszy...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Automatycznie uruchamiaj podświetlanie kliknięć myszy</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opcje podświetlania kliknięć myszy...</value>
+  </data>
 </root>

@@ -2887,4 +2887,16 @@
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>יוצר GIF מונפש...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>סימון עכבר</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>סימון עכבר...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>הפעל אוטומטית את מדגיש העכבר</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>אפשרויות סימון עכבר...</value>
+  </data>
 </root>

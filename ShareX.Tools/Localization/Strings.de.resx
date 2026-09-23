@@ -2131,4 +2131,82 @@ Dateipfad: {0}</value>
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 wiederholt endlos.</value>
   </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>Mausklick-Hervorhebung</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>Hervorhebungsmodus:</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>Kreis-Highlight</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>Welligkeit</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>Farbe der primären Schaltfläche:</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>Farbe der sekundären Schaltfläche:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>Farbe der mittleren Taste:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>Markieren Sie immer die Farbe:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>Verwenden Sie eine transparente Farbe, um die dauerhafte Hervorhebung zu deaktivieren.</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>Kreisradius (px):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>Fade-Verzögerung (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>Fade-Dauer (ms):</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>Welligkeitsgröße (px):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>Welligkeitsintensität:</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>Welligkeitsdauer (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>Folgen Sie dem Cursor, während eine Taste gedrückt gehalten wird</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>Fadenkreuz beim Loslassen der primären Taste anzeigen</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>Fadenkreuz beim Auslösen der sekundären Taste anzeigen</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>Fadenkreuz beim Auslösen der mittleren Taste anzeigen</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>Automatisch aktivieren, wenn ShareX startet</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>Um Klicks in Aufzeichnungen hervorzuheben, aktivieren Sie die Mausmarkierungsoption in den Aufgabeneinstellungen → Aufnahme → Bildschirmrekorder.</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>Beginnen Sie mit dem Hervorheben</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>Hören Sie auf, hervorzuheben</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>Die Mausklick-Hervorhebung konnte nicht gestartet werden.</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>Markieren Sie nach der Aufnahme weiter</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>Stoppen Sie die Hervorhebung, wenn die Aufnahme stoppt</value>
+  </data>
 </root>

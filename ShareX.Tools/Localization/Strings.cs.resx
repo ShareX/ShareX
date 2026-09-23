@@ -2131,4 +2131,82 @@ Cesta k souboru: {0}</value>
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 znamená opakovat navždy.</value>
   </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>Zvýrazňovač myši</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>Režim zvýraznění:</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>Zvýraznění kruhu</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>Zvlnění</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>Barva primárního tlačítka:</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>Barva sekundárního tlačítka:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>Barva prostředního tlačítka:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>Vždy zvýraznit barvu:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>Chcete-li zakázat trvalé zvýraznění, použijte průhlednou barvu.</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>Poloměr (px):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>Zpoždění slábnutí (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>Doba prolínání (ms):</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>Velikost zvlnění (px):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>Intenzita zvlnění:</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>Trvání zvlnění (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>Při držení tlačítka sledujte kurzor</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>Ukázat zaměřovací kříž při uvolnění primárního tlačítka</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>Ukázat zaměřovací kříž při uvolnění sekundárního tlačítka</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>Zobrazit zaměřovací kříž při uvolnění prostředního tlačítka</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>Automaticky aktivovat při spuštění ShareX</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>Chcete-li zvýraznit kliknutí v nahrávkách, povolte možnost zvýraznění myši v Nastavení úlohy → Zachytit → Záznam obrazovky.</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>Začněte zvýrazňovat</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>Přestaňte zvýrazňovat</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>Nelze spustit zvýraznění myší.</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>Po nahrávání pokračujte ve zvýrazňování</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>Zastavte zvýraznění, když se nahrávání zastaví</value>
+  </data>
 </root>

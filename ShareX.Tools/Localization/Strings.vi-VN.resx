@@ -2125,4 +2125,82 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 lặp mãi mãi.</value>
   </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>Bút đánh dấu chuột</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>Chế độ nổi bật:</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>Đánh dấu vòng tròn</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>gợn sóng</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>Màu nút chính:</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>Màu nút phụ:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>Màu nút giữa:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>Luôn làm nổi bật màu sắc:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>Sử dụng màu trong suốt để tắt phần đánh dấu liên tục.</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>Bán kính (px):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>Độ trễ mờ dần (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>Thời lượng mờ dần (ms):</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>Kích thước gợn sóng (px):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>Cường độ gợn sóng:</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>Thời lượng gợn sóng (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>Đi theo con trỏ trong khi một nút được giữ</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>Hiển thị dấu thập khi nhả nút chính</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>Hiển thị dấu thập khi nhả nút phụ</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>Hiển thị dấu thập khi nhả nút giữa</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>Tự động kích hoạt khi ShareX khởi động</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>Để đánh dấu các lần nhấp chuột trong bản ghi, hãy bật tùy chọn công cụ đánh dấu chuột trong Cài đặt tác vụ → Chụp → Trình ghi màn hình.</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>Bắt đầu đánh dấu</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>Dừng đánh dấu</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>Không thể bắt đầu tô sáng chuột.</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>Tiếp tục đánh dấu sau khi ghi</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>Dừng đánh dấu khi dừng ghi</value>
+  </data>
 </root>

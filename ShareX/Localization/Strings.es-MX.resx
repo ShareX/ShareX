@@ -2886,4 +2886,16 @@ Puedes desactivarlo más adelante desde el menú "Tareas después de capturar".<
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Creador de GIF animados...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Resaltador del mouse</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Resaltador del mouse...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Iniciar automáticamente el resaltador del mouse</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opciones del resaltador del mouse...</value>
+  </data>
 </root>

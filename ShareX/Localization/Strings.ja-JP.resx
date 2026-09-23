@@ -2887,4 +2887,16 @@
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>アニメーション GIF メーカー...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>マウスハイライター</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>マウスハイライト...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>マウス ハイライターを自動的に開始する</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>マウス ハイライターのオプション...</value>
+  </data>
 </root>

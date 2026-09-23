@@ -2887,4 +2887,16 @@
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>動畫 GIF 製作器...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>滑鼠螢光筆</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>滑鼠螢光筆...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>自動啟動滑鼠螢光筆</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>滑鼠螢光筆選項...</value>
+  </data>
 </root>

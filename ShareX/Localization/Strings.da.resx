@@ -2887,4 +2887,16 @@ Du kan deaktivere dem senere fra menuen ”Opgaver efter optagelse”.</value>
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Værktøj til animerede GIF&apos;er...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Mus highlighter</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Musemarkering...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Start automatisk musemarkering</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Indstillinger for musemarkering...</value>
+  </data>
 </root>

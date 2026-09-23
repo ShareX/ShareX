@@ -1410,4 +1410,7 @@
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>ขนาดไฟล์สูงสุดที่อนุญาต: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>สลับปากกาเน้นข้อความของเมาส์</value>
+  </data>
 </root>

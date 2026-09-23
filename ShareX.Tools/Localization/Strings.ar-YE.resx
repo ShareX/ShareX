@@ -2125,4 +2125,82 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 يعني التكرار إلى ما لا نهاية.</value>
   </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>تمييز الماوس</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>وضع التمييز:</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>تسليط الضوء على الدائرة</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>تموج</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>لون الزر الأساسي:</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>لون الزر الثانوي:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>لون الزر الأوسط:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>تسليط الضوء دائما على اللون:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>استخدم لونًا شفافًا لتعطيل التمييز المستمر.</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>نصف القطر (بكسل):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>تأخير الخبو (مللي ثانية):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>مدة الخبو (بالمللي ثانية):</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>حجم تموج (بكسل):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>شدة تموج:</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>مدة التموج (مللي ثانية):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>اتبع المؤشر أثناء الضغط على الزر</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>إظهار الشعيرات المتقاطعة عند تحرير الزر الأساسي</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>إظهار الشعيرات المتقاطعة عند تحرير الزر الثانوي</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>إظهار الشعيرات المتقاطعة عند تحرير الزر الأوسط</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>يتم التنشيط تلقائيًا عند بدء تشغيل ShareX</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>لتمييز النقرات في التسجيلات، قم بتمكين خيار تمييز الماوس في إعدادات المهام → الالتقاط → مسجل الشاشة.</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>ابدأ في تسليط الضوء</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>التوقف عن تسليط الضوء</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>تعذر بدء تمييز الماوس.</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>استمر في التمييز بعد التسجيل</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>توقف عن التمييز عند توقف التسجيل</value>
+  </data>
 </root>

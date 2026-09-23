@@ -2887,4 +2887,16 @@ You can later disable it from "After opname taken" menu.</value>
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Maker van geanimeerde GIF&apos;s...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Muisklikmarkering</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Muisklikmarkering...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Muisklikmarkering automatisch starten</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opties voor muisklikmarkering...</value>
+  </data>
 </root>

@@ -2887,4 +2887,16 @@ Vous pourrez les désactiver plus tard depuis le manu "Tâches après la capture
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Créateur de GIF animés...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Surligneur de souris</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Surligneur de souris...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Démarrer automatiquement le surligneur de la souris</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Options du surligneur de la souris...</value>
+  </data>
 </root>

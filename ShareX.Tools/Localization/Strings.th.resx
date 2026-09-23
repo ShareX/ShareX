@@ -2125,4 +2125,82 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 คือวนซ้ำตลอดไป</value>
   </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>ปากกาเน้นข้อความเมาส์</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>โหมดไฮไลท์:</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>ไฮไลท์แบบวงกลม</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>ระลอกคลื่น</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>สีของปุ่มหลัก:</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>สีของปุ่มรอง:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>สีของปุ่มตรงกลาง:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>เน้นสีเสมอ:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>ใช้สีโปร่งใสเพื่อปิดใช้งานการไฮไลต์แบบถาวร</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>รัศมี (px):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>ความล่าช้าในการจางหาย (มิลลิวินาที):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>ระยะเวลาจางลง (มิลลิวินาที):</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>ขนาดระลอกคลื่น (px):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>ความเข้มของระลอกคลื่น:</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>ระยะเวลาระลอกคลื่น (มิลลิวินาที):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>ติดตามเคอร์เซอร์ในขณะที่กดปุ่มค้างไว้</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>แสดงเป้าเล็งเมื่อปล่อยปุ่มหลัก</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>แสดงเป้าเล็งเมื่อปล่อยปุ่มรอง</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>แสดงเป้าเล็งเมื่อปล่อยปุ่มกลาง</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>เปิดใช้งานโดยอัตโนมัติเมื่อ ShareX เริ่มทำงาน</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>หากต้องการเน้นการคลิกในการบันทึก ให้เปิดใช้งานตัวเลือกปากกาเน้นข้อความเมาส์ในการตั้งค่างาน → จับภาพ → ตัวบันทึกหน้าจอ</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>เริ่มไฮไลท์</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>หยุดเน้น</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>ไม่สามารถเริ่มการไฮไลต์ด้วยเมาส์ได้</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>เน้นต่อไปหลังจากบันทึก</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>หยุดไฮไลท์เมื่อหยุดการบันทึก</value>
+  </data>
 </root>

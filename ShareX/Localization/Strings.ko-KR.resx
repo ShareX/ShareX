@@ -2887,4 +2887,16 @@ You can later disable it from "After 캡처 tasks" 메뉴.</value>
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>움직이는 GIF 만들기...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>마우스 클릭 강조 표시</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>마우스 클릭 강조 표시...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>마우스 클릭 강조 표시 자동 시작</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>마우스 클릭 강조 표시 옵션...</value>
+  </data>
 </root>

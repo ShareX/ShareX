@@ -2887,4 +2887,16 @@
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>เครื่องมือสร้าง GIF เคลื่อนไหว...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>ปากกาเน้นข้อความเมาส์</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>ไฮไลท์เมาส์...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>เริ่มปากกาเน้นข้อความเมาส์โดยอัตโนมัติ</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>ตัวเลือกปากกาเน้นข้อความเมาส์...</value>
+  </data>
 </root>

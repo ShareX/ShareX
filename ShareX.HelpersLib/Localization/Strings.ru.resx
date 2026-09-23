@@ -1410,4 +1410,7 @@
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Максимально допустимый размер файла: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Переключить подсветку кликов мыши</value>
+  </data>
 </root>

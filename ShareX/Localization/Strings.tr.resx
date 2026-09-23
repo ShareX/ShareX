@@ -2887,4 +2887,16 @@ Daha sonra "Yakalama sonrası" menüsünden devre dışı bırakabilirsiniz.</va
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Animasyonlu GIF oluşturucu...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Fare vurgulayıcı</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Fare vurgulayıcı...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Fare vurgulayıcıyı otomatik olarak başlat</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Fare vurgulayıcı seçenekleri...</value>
+  </data>
 </root>

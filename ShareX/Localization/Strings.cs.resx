@@ -2887,4 +2887,16 @@ Později je můžete zakázat v nabídce „Úlohy po zachycení“.</value>
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Tvůrce animovaných GIFů...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Zvýrazňovač myši</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Zvýrazňovač myši...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Automaticky spustit zvýrazňovač myši</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Možnosti zvýrazňovače myši...</value>
+  </data>
 </root>

@@ -2887,4 +2887,16 @@ Puteți să le dezactivați ulterior din meniul "Sarcini după captură".</value
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Creator de GIF-uri animate...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Evidențiator mouse-ului</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Evidențiator mouse...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Porniți automat evidențierea mouse-ului</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opțiuni pentru evidențierea mouse-ului...</value>
+  </data>
 </root>

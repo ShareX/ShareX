@@ -1410,4 +1410,7 @@ Doriți totuși să îl executați?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Dimensiunea maximă permisă pentru fișiere: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Comutați evidențiatorul mouse-ului</value>
+  </data>
 </root>

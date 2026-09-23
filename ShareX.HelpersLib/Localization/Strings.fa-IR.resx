@@ -1410,4 +1410,7 @@
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>بیشترین اندازهٔ مجاز فایل: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>روشن کننده ماوس را روشن کنید</value>
+  </data>
 </root>

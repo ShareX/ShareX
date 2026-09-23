@@ -1410,4 +1410,7 @@ Wilt u het toch uitvoeren?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Maximaal toegestane bestandsgrootte: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Muisklikmarkering in-/uitschakelen</value>
+  </data>
 </root>

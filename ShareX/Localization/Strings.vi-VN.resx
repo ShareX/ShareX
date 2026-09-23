@@ -2887,4 +2887,16 @@ Sau đó, bạn có thể tắt nó từ menu "Sau khi chụp tác vụ".</value
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Trình tạo GIF động...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Bút đánh dấu chuột</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Bút đánh dấu chuột...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Tự động khởi động công cụ đánh dấu chuột</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Tùy chọn tô sáng chuột...</value>
+  </data>
 </root>

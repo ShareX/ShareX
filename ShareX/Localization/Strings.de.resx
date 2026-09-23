@@ -2886,4 +2886,16 @@ Sie können sie später im Menü „Aufgaben nach der Aufnahme“ deaktivieren.<
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Ersteller für animierte GIFs...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Mausklick-Hervorhebung</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Mausklick-Hervorhebung...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Mausklick-Hervorhebung automatisch starten</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Optionen für Mausklick-Hervorhebung...</value>
+  </data>
 </root>

@@ -2131,4 +2131,82 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 表示无限重复。</value>
   </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>鼠标荧光笔</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>突出显示模式：</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>圆圈突出显示</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>波纹</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>主按钮颜色：</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>辅助按钮颜色：</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>中间按钮颜色：</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>始终突出显示颜色：</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>使用透明颜色禁用持续突出显示。</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>半径（像素）：</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>淡入淡出延迟（毫秒）：</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>淡入淡出持续时间（毫秒）：</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>波纹尺寸（像素）：</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>纹波强度：</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>纹波持续时间（毫秒）：</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>按住按钮时跟随光标</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>在主按钮释放时显示十字准线</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>释放辅助按钮时显示十字准线</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>释放中间按钮时显示十字准线</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>ShareX 启动时自动激活</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>要突出显示录制中的点击，请在任务设置 → 捕获 → 屏幕录像机中启用鼠标突出显示选项。</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>开始突出显示</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>停止突出显示</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>无法启动鼠标突出显示。</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>录制后保持高亮显示</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>录制停止时停止突出显示</value>
+  </data>
 </root>

@@ -1410,4 +1410,7 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>İzin verilen en büyük dosya boyutu: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Fare vurgulayıcıyı aç/kapat</value>
+  </data>
 </root>

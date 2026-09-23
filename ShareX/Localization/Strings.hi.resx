@@ -2887,4 +2887,16 @@
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>एनिमेटेड GIF निर्माता...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>माउस हाइलाइटर</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>माउस हाइलाइटर...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>माउस हाइलाइटर स्वचालित रूप से प्रारंभ करें</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>माउस हाइलाइटर विकल्प...</value>
+  </data>
 </root>

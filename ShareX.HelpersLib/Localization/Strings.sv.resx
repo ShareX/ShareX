@@ -1410,4 +1410,7 @@ Vill du ändå köra det?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Högsta tillåtna filstorlek: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Växla musmarkering</value>
+  </data>
 </root>

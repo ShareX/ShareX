@@ -2887,4 +2887,16 @@ You can later disable it from "After acquisizione tasks" menu.</value>
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Creatore di GIF animate...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Evidenziatore del mouse</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Evidenziatore del mouse...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Avvia automaticamente l'evidenziatore del mouse</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opzioni dell'evidenziatore del mouse...</value>
+  </data>
 </root>

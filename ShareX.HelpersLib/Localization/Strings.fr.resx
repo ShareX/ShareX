@@ -1410,4 +1410,7 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Taille de fichier maximale autorisée : {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Activer le surligneur de la souris</value>
+  </data>
 </root>

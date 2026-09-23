@@ -2886,4 +2886,16 @@ You can later disable it from "After captura tasks" menú.</value>
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Creador de GIF animados...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>Resaltador del ratón</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>Resaltador del ratón...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>Iniciar automáticamente el resaltador del ratón</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>Opciones del resaltador del ratón...</value>
+  </data>
 </root>

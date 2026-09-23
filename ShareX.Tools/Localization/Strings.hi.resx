@@ -2131,4 +2131,82 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 हमेशा दोहराता है।</value>
   </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>माउस हाइलाइटर</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>हाइलाइट मोड:</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>वृत्त हाइलाइट</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>लहर</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>प्राथमिक बटन का रंग:</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>द्वितीयक बटन का रंग:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>मध्य बटन का रंग:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>हमेशा रंग को हाइलाइट करें:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>लगातार हाइलाइट को अक्षम करने के लिए पारदर्शी रंग का उपयोग करें।</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>त्रिज्या (पीएक्स):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>फीका विलंब (एमएस):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>फीका अवधि (एमएस):</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>लहर का आकार (px):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>तरंग तीव्रता:</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>तरंग अवधि (एमएस):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>बटन दबाए रखने पर कर्सर का अनुसरण करें</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>प्राथमिक बटन रिलीज़ पर क्रॉसहेयर दिखाएँ</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>सेकेंडरी बटन रिलीज़ पर क्रॉसहेयर दिखाएँ</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>मध्य बटन रिलीज़ पर क्रॉसहेयर दिखाएँ</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>ShareX प्रारंभ होने पर स्वचालित रूप से सक्रिय हो जाता है</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>रिकॉर्डिंग में क्लिक को हाइलाइट करने के लिए, टास्क सेटिंग्स → कैप्चर → स्क्रीन रिकॉर्डर में माउस हाइलाइटर विकल्प को सक्षम करें।</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>हाइलाइट करना प्रारंभ करें</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>हाइलाइट करना बंद करें</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>माउस हाइलाइटिंग प्रारंभ नहीं हो सका.</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>रिकॉर्डिंग के बाद हाइलाइट करते रहें</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>रिकॉर्डिंग बंद होने पर हाइलाइट करना बंद करें</value>
+  </data>
 </root>

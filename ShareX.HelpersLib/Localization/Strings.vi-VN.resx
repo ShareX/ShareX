@@ -1410,4 +1410,7 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Kích thước tệp tối đa được phép: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>Chuyển đổi công cụ đánh dấu chuột</value>
+  </data>
 </root>

@@ -2887,4 +2887,16 @@
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>صانع GIF متحرك...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>تمييز الماوس</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>تسليط الضوء على الماوس...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>بدء تشغيل أداة تمييز الماوس تلقائيًا</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>خيارات تمييز الماوس...</value>
+  </data>
 </root>

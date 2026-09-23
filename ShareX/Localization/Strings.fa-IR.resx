@@ -2887,4 +2887,16 @@ You can later disable it from "After ضبط tasks" منو.</value>
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>سازنده GIF متحرک...</value>
   </data>
+  <data name="MouseHighlighter" xml:space="preserve">
+    <value>هایلایتر موس</value>
+  </data>
+  <data name="MainMenuBuilder_MouseHighlighter" xml:space="preserve">
+    <value>هایلایتر موس...</value>
+  </data>
+  <data name="TaskSettingsWindow_HighlightMouseWhileRecording" xml:space="preserve">
+    <value>هایلایت ماوس را به صورت خودکار شروع کنید</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
+    <value>گزینه های هایلایت ماوس...</value>
+  </data>
 </root>

@@ -2125,4 +2125,82 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 חוזר ללא הגבלה.</value>
   </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>סימון עכבר</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>מצב הדגשה:</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>סימון עיגול</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>אדווה</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>צבע כפתור ראשי:</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>צבע כפתור משני:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>צבע הכפתור האמצעי:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>תמיד הדגש צבע:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>השתמש בצבע שקוף כדי להשבית את ההדגשה המתמשכת.</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>רדיוס (פיקסלים):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>עיכוב דהייה (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>משך דהייה (ms):</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>גודל אדוות (px):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>עוצמת אדוות:</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>משך אדוות (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>עקוב אחר הסמן בזמן שהלחצן מוחזק</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>הצג את הכוונת בשחרור הכפתור הראשי</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>הצג את הכוונת בשחרור הכפתור המשני</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>הצג את הכוונת בשחרור הכפתור האמצעי</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>הפעלה אוטומטית כאשר ShareX מתחיל</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>כדי להדגיש קליקים בהקלטות, הפעל את אפשרות סימון העכבר בהגדרות משימות ← לכידה ← מקליט מסך.</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>התחל להדגיש</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>תפסיק להדגיש</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>לא ניתן היה להתחיל את הדגשת העכבר.</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>המשך להדגיש לאחר ההקלטה</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>הפסק את ההדגשה כאשר ההקלטה נפסקת</value>
+  </data>
 </root>

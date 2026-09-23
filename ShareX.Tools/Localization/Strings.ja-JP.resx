@@ -2125,4 +2125,82 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 は無限に繰り返します。</value>
   </data>
+  <data name="MouseHighlighter_Title" xml:space="preserve">
+    <value>マウスハイライター</value>
+  </data>
+  <data name="MouseHighlighter_Mode" xml:space="preserve">
+    <value>ハイライトモード:</value>
+  </data>
+  <data name="MouseHighlighter_Circle" xml:space="preserve">
+    <value>サークルハイライト</value>
+  </data>
+  <data name="MouseHighlighter_Ripple" xml:space="preserve">
+    <value>リップル</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryColor" xml:space="preserve">
+    <value>主なボタンの色:</value>
+  </data>
+  <data name="MouseHighlighter_SecondaryColor" xml:space="preserve">
+    <value>二次ボタンの色:</value>
+  </data>
+  <data name="MouseHighlighter_MiddleColor" xml:space="preserve">
+    <value>中央のボタンの色:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColor" xml:space="preserve">
+    <value>常にハイライトカラー:</value>
+  </data>
+  <data name="MouseHighlighter_AlwaysColorHelp" xml:space="preserve">
+    <value>永続的なハイライトを無効にするには、透明色を使用します。</value>
+  </data>
+  <data name="MouseHighlighter_Radius" xml:space="preserve">
+    <value>半径 (ピクセル):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDelay" xml:space="preserve">
+    <value>フェード遅延 (ミリ秒):</value>
+  </data>
+  <data name="MouseHighlighter_FadeDuration" xml:space="preserve">
+    <value>フェード持続時間 (ミリ秒):</value>
+  </data>
+  <data name="MouseHighlighter_RippleSize" xml:space="preserve">
+    <value>リップルサイズ (px):</value>
+  </data>
+  <data name="MouseHighlighter_RippleIntensity" xml:space="preserve">
+    <value>リップル強度:</value>
+  </data>
+  <data name="MouseHighlighter_RippleDuration" xml:space="preserve">
+    <value>リップル持続時間 (ms):</value>
+  </data>
+  <data name="MouseHighlighter_FollowCursor" xml:space="preserve">
+    <value>ボタンを押したままカーソルを追う</value>
+  </data>
+  <data name="MouseHighlighter_PrimaryReleaseCrosshairs" xml:space="preserve">
+    <value>主ボタンを放したときに十字線を表示する</value>
+  </data>
+  <data name="MouseHighlighter_ReleaseCrosshairs" xml:space="preserve">
+    <value>二次ボタンを離したときに十字線を表示する</value>
+  </data>
+  <data name="MouseHighlighter_MiddleReleaseCrosshairs" xml:space="preserve">
+    <value>中ボタンを離したときに十字線を表示する</value>
+  </data>
+  <data name="MouseHighlighter_AutoActivate" xml:space="preserve">
+    <value>ShareX の起動時に自動的にアクティブ化する</value>
+  </data>
+  <data name="MouseHighlighter_RecordingHelp" xml:space="preserve">
+    <value>録画内のクリックを強調表示するには、[タスク設定] → [キャプチャ] → [スクリーン レコーダー] でマウス ハイライト オプションを有効にします。</value>
+  </data>
+  <data name="MouseHighlighter_Start" xml:space="preserve">
+    <value>ハイライトの開始</value>
+  </data>
+  <data name="MouseHighlighter_Stop" xml:space="preserve">
+    <value>ハイライトをやめる</value>
+  </data>
+  <data name="MouseHighlighter_StartFailed" xml:space="preserve">
+    <value>マウスの強調表示を開始できませんでした。</value>
+  </data>
+  <data name="MouseHighlighter_KeepAfterRecording" xml:space="preserve">
+    <value>録画後もハイライトを維持する</value>
+  </data>
+  <data name="MouseHighlighter_StopAfterRecording" xml:space="preserve">
+    <value>録画が停止したらハイライトを停止します</value>
+  </data>
 </root>

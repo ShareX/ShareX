@@ -1410,4 +1410,7 @@
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>अधिकतम अनुमत फ़ाइल आकार: {0}</value>
   </data>
+  <data name="HotkeyType_MouseHighlighter" xml:space="preserve">
+    <value>माउस हाइलाइटर टॉगल करें</value>
+  </data>
 </root>
