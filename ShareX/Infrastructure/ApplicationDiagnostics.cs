@@ -24,6 +24,8 @@ namespace ShareX;
 
 internal static class ApplicationDiagnostics
 {
+    private static bool _exceptionHandlersEnabled;
+
     internal static void Initialize()
     {
         AssemblyLoadContext.Default.Resolving += ResolveLocalizedAssembly;
@@ -35,10 +37,18 @@ internal static class ApplicationDiagnostics
         }
 #endif
 
+        _exceptionHandlersEnabled = true;
         Application.ThreadException += OnWinFormsThreadException;
         Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-        Dispatcher.UIThread.UnhandledException += OnAvaloniaDispatcherException;
         AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
+    }
+
+    internal static void InitializeAvalonia()
+    {
+        if (_exceptionHandlersEnabled)
+        {
+            Dispatcher.UIThread.UnhandledException += OnAvaloniaDispatcherException;
+        }
     }
 
     internal static void WriteStartupFlags()

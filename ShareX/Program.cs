@@ -107,6 +107,7 @@ internal static class Program
 
         DebugHelper.WriteLine("Avalonia application initializing.");
         AvaloniaBootstrapper.Initialize(args, StartApplicationAsync, ApplicationLifecycle.OnAvaloniaStopped);
+        ApplicationDiagnostics.InitializeAvalonia();
 
         SettingManager.LoadInitialSettings();
         ApplicationState.UpdateManager = new ShareXUpdateManager();
