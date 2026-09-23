@@ -3,7 +3,7 @@ param()
 
 $ErrorActionPreference = 'Stop'
 
-$repositoryDirectory = $PSScriptRoot
+$repositoryDirectory = Split-Path -Parent $PSScriptRoot
 $utf8WithoutBom = [Text.UTF8Encoding]::new($false)
 $formattedFiles = [Collections.Generic.List[object]]::new()
 

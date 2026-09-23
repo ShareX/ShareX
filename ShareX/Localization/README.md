@@ -31,7 +31,7 @@ All translatable strings in the ShareX project use the shared `Strings.resx` res
 | About | `AboutWindow_` | 2 | 15 | Complete |
 | Core runtime messages | `TaskHelpers_`, `SettingManager_`, `WorkerTask_`, `TaskManager_` | 4 | 18 | Complete |
 
-The repository-level `ValidateTranslations.ps1` verifies that:
+The repository-level `Scripts/ValidateTranslations.ps1` verifies that:
 
 - every supported language has a catalog in every localized project;
 - every localized catalog has the same entry count and keys as `Strings.resx`;
@@ -45,7 +45,7 @@ The repository-level `ValidateTranslations.ps1` verifies that:
 Run it from the repository root:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ValidateTranslations.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File Scripts\ValidateTranslations.ps1
 ```
 
 ## Localizing another area
@@ -53,4 +53,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ValidateTranslations.ps1
 1. Add directly scoped keys to `Strings.resx`, such as `AboutWindow_Title`.
 2. Add translated values to every `Strings.<culture>.resx` file.
 3. Use direct `Strings.<key>` references in AXAML and C#.
-4. Run `ValidateTranslations.ps1` and build ShareX.
+4. Run `Scripts/ValidateTranslations.ps1` and build ShareX.

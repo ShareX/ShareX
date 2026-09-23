@@ -15,5 +15,5 @@ All 139 keys are translated in all 28 supported cultures. The former `Properties
 Run validation from the repository root:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ValidateTranslations.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File Scripts\ValidateTranslations.ps1
 ```

@@ -3,7 +3,7 @@ param()
 
 $ErrorActionPreference = 'Stop'
 
-$repositoryDirectory = $PSScriptRoot
+$repositoryDirectory = Split-Path -Parent $PSScriptRoot
 $strictUtf8 = [Text.UTF8Encoding]::new($false, $true)
 $legacyEncodings = @(
     [Text.Encoding]::GetEncoding(28591, [Text.EncoderExceptionFallback]::new(), [Text.DecoderExceptionFallback]::new())
@@ -808,4 +808,4 @@ if ($errors.Count -gt 0)
 Write-Host
 Write-Host "Translation validation succeeded for $($projects.Count) projects: $totalDefaultEntries English entries and $totalLocalizedEntries localized entries across $($supportedCatalogCultures.Count) cultures."
 
-& (Join-Path $repositoryDirectory 'FormatTranslations.ps1')
+& (Join-Path $PSScriptRoot 'FormatTranslations.ps1')
