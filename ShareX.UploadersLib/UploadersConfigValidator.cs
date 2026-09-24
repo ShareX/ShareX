@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.UploadersLib.FileUploaders;
 using System;
 
 namespace ShareX.UploadersLib
@@ -75,6 +76,23 @@ namespace ShareX.UploadersLib
         public static bool Validate(URLSharingServices destination, UploadersConfig config)
         {
             return UploaderFactory.URLSharingServices[destination].CheckConfig(config);
+        }
+
+        public static bool IsValidRemoteStorageAccount(FTPAccount account)
+        {
+            if (account == null || string.IsNullOrWhiteSpace(account.Host))
+            {
+                return false;
+            }
+
+            if (account.Protocol is FTPProtocol.FTP or FTPProtocol.FTPS)
+            {
+                return account.Port > 0;
+            }
+
+            return account.Protocol == FTPProtocol.SFTP &&
+                !string.IsNullOrWhiteSpace(account.Username) &&
+                (!string.IsNullOrWhiteSpace(account.Password) || !string.IsNullOrWhiteSpace(account.Keypath));
         }
     }
 }

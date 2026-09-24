@@ -802,6 +802,9 @@
   <data name="DestinationSettings_Register" xml:space="preserve">
     <value>ثبت‌نام</value>
   </data>
+  <data name="DestinationSettings_Remote_storage_browser" xml:space="preserve">
+    <value>مرورگر ذخیره سازی از راه دور...</value>
+  </data>
   <data name="DestinationSettings_Remove" xml:space="preserve">
     <value>حذف</value>
   </data>

@@ -35,14 +35,15 @@ public static class DestinationSettingsIntegration
 {
     private static DestinationSettingsWindow? _window;
 
-    public static void Show(UploadersConfig config, IUploaderService? service = null, Action? onClosed = null)
+    public static void Show(UploadersConfig config, IUploaderService? service = null, Action? onClosed = null,
+        Action? openRemoteStorageBrowser = null)
     {
         AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
         {
             if (_window == null)
             {
-                _window = new DestinationSettingsWindow(config);
+                _window = new DestinationSettingsWindow(config, openRemoteStorageBrowser);
                 _window.Closed += (_, _) =>
                 {
                     _window = null;

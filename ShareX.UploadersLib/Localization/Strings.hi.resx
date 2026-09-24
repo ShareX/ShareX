@@ -802,6 +802,9 @@
   <data name="DestinationSettings_Register" xml:space="preserve">
     <value>पंजीकरण करें</value>
   </data>
+  <data name="DestinationSettings_Remote_storage_browser" xml:space="preserve">
+    <value>रिमोट स्टोरेज ब्राउज़र...</value>
+  </data>
   <data name="DestinationSettings_Remove" xml:space="preserve">
     <value>हटाएँ</value>
   </data>

@@ -802,6 +802,9 @@
   <data name="DestinationSettings_Register" xml:space="preserve">
     <value>登録</value>
   </data>
+  <data name="DestinationSettings_Remote_storage_browser" xml:space="preserve">
+    <value>リモート ストレージ ブラウザ...</value>
+  </data>
   <data name="DestinationSettings_Remove" xml:space="preserve">
     <value>削除</value>
   </data>

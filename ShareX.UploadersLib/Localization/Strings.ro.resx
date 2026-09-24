@@ -802,6 +802,9 @@
   <data name="DestinationSettings_Register" xml:space="preserve">
     <value>Înregistrare</value>
   </data>
+  <data name="DestinationSettings_Remote_storage_browser" xml:space="preserve">
+    <value>Browser de stocare la distanță...</value>
+  </data>
   <data name="DestinationSettings_Remove" xml:space="preserve">
     <value>Elimină</value>
   </data>

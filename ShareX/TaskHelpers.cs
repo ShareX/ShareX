@@ -1684,11 +1684,16 @@ namespace ShareX
             {
                 foreach (FTPAccount account in config.FTPAccountList)
                 {
-                    if (IsConfiguredFTPAccount(account))
+                    if (!UploadersConfigValidator.IsValidRemoteStorageAccount(account))
+                    {
+                        continue;
+                    }
+
+                    if (account.Protocol is FTPProtocol.FTP or FTPProtocol.FTPS)
                     {
                         providers.Add(new FTPRemoteStorageProvider(account, !SystemOptions.DisableUpload));
                     }
-                    else if (IsConfiguredSFTPAccount(account))
+                    else
                     {
                         providers.Add(new SFTPRemoteStorageProvider(account, !SystemOptions.DisableUpload));
                     }
@@ -1707,19 +1712,6 @@ namespace ShareX
             {
                 OpenUrl = URLHelpers.OpenURL
             });
-        }
-
-        private static bool IsConfiguredFTPAccount(FTPAccount account)
-        {
-            return account != null && account.Protocol is FTPProtocol.FTP or FTPProtocol.FTPS &&
-                !string.IsNullOrWhiteSpace(account.Host) && account.Port > 0;
-        }
-
-        private static bool IsConfiguredSFTPAccount(FTPAccount account)
-        {
-            return account != null && account.Protocol == FTPProtocol.SFTP &&
-                !string.IsNullOrWhiteSpace(account.Host) && !string.IsNullOrWhiteSpace(account.Username) &&
-                (!string.IsNullOrWhiteSpace(account.Password) || !string.IsNullOrWhiteSpace(account.Keypath));
         }
 
         public static void OpenQRCode(string text = null)
@@ -2277,7 +2269,7 @@ namespace ShareX
         {
             SettingManager.WaitUploadersConfig();
             DestinationSettingsIntegration.Show(ApplicationState.UploadersConfig, uploaderService,
-                () => SettingManager.SaveUploadersConfigAsync());
+                () => SettingManager.SaveUploadersConfigAsync(), OpenRemoteStorageBrowser);
         }
 
         public static void OpenCustomUploaderSettingsWindow()

@@ -27,6 +27,7 @@
 
 using Avalonia.Controls;
 using ShareX.AvaloniaUI.Theming;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -43,11 +44,11 @@ public partial class DestinationSettingsWindow : Window
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
     }
 
-    public DestinationSettingsWindow(UploadersConfig config) : this()
+    public DestinationSettingsWindow(UploadersConfig config, Action? openRemoteStorageBrowser = null) : this()
     {
         _viewModel = new DestinationSettingsViewModel();
         DataContext = _viewModel;
-        _pages = new DestinationSettingsPageBuilder(config).BuildPages();
+        _pages = new DestinationSettingsPageBuilder(config, openRemoteStorageBrowser).BuildPages();
 
         foreach (Control page in _pages.Values)
         {

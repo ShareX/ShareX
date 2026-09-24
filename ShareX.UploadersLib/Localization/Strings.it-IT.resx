@@ -802,6 +802,9 @@
   <data name="DestinationSettings_Register" xml:space="preserve">
     <value>Registrati</value>
   </data>
+  <data name="DestinationSettings_Remote_storage_browser" xml:space="preserve">
+    <value>Browser di archiviazione remota...</value>
+  </data>
   <data name="DestinationSettings_Remove" xml:space="preserve">
     <value>Rimuovi</value>
   </data>

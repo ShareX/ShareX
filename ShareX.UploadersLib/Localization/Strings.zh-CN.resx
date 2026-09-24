@@ -802,6 +802,9 @@
   <data name="DestinationSettings_Register" xml:space="preserve">
     <value>注册</value>
   </data>
+  <data name="DestinationSettings_Remote_storage_browser" xml:space="preserve">
+    <value>远程存储浏览器...</value>
+  </data>
   <data name="DestinationSettings_Remove" xml:space="preserve">
     <value>移除</value>
   </data>

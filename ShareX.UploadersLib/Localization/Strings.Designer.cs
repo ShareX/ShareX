@@ -514,6 +514,8 @@ namespace ShareX.UploadersLib.Localization
 
         public static string DestinationSettings_Public_profile => ResourceManager.GetString("DestinationSettings_Public_profile", resourceCulture) ?? string.Empty;
 
+        public static string DestinationSettings_Remote_storage_browser => ResourceManager.GetString("DestinationSettings_Remote_storage_browser", resourceCulture) ?? string.Empty;
+
         public static string DestinationSettings_Refresh => ResourceManager.GetString("DestinationSettings_Refresh", resourceCulture) ?? string.Empty;
 
         public static string DestinationSettings_Refresh_albums => ResourceManager.GetString("DestinationSettings_Refresh_albums", resourceCulture) ?? string.Empty;

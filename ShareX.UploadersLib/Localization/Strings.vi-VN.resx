@@ -802,6 +802,9 @@
   <data name="DestinationSettings_Register" xml:space="preserve">
     <value>Đăng ký</value>
   </data>
+  <data name="DestinationSettings_Remote_storage_browser" xml:space="preserve">
+    <value>Trình duyệt lưu trữ từ xa...</value>
+  </data>
   <data name="DestinationSettings_Remove" xml:space="preserve">
     <value>Xóa</value>
   </data>
