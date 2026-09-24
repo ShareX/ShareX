@@ -1849,6 +1849,9 @@ Chemin du fichier : {0}</value>
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>Nouveau dossier</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>Aucun élément correspondant.</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>Ouvrir l’URL</value>
   </data>
@@ -1869,6 +1872,9 @@ Chemin du fichier : {0}</value>
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>Enregistrer le fichier téléchargé</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>Rechercher dans le dossier actuel...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>Sélectionner les fichiers à téléverser</value>

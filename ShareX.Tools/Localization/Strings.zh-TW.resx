@@ -1849,6 +1849,9 @@
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>新增資料夾</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>沒有相符的項目。</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>開啟網址</value>
   </data>
@@ -1869,6 +1872,9 @@
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>儲存下載的檔案</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>搜尋目前資料夾...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>選取要上傳的檔案</value>

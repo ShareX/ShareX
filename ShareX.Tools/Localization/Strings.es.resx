@@ -1849,6 +1849,9 @@ Ruta del archivo: {0}</value>
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>Nueva carpeta</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>No hay elementos coincidentes.</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>Abrir URL</value>
   </data>
@@ -1869,6 +1872,9 @@ Ruta del archivo: {0}</value>
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>Guardar archivo descargado</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>Buscar en la carpeta actual...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>Seleccionar archivos para subir</value>

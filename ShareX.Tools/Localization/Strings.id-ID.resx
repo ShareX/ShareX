@@ -1843,6 +1843,9 @@
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>Folder baru</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>Tidak ada item yang cocok.</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>Buka URL</value>
   </data>
@@ -1863,6 +1866,9 @@
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>Simpan file yang diunduh</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>Cari di folder saat ini...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>Pilih file untuk diunggah</value>

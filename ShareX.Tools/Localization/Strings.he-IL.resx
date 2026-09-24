@@ -1843,6 +1843,9 @@
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>תיקייה חדשה</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>לא נמצאו פריטים תואמים.</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>פתח קישור</value>
   </data>
@@ -1863,6 +1866,9 @@
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>שמור קובץ שהורד</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>חיפוש בתיקייה הנוכחית...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>בחר קבצים להעלאה</value>

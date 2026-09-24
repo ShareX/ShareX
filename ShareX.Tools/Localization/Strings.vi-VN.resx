@@ -1843,6 +1843,9 @@
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>Thư mục mới</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>Không có mục phù hợp.</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>Mở URL</value>
   </data>
@@ -1863,6 +1866,9 @@
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>Lưu tệp đã tải xuống</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>Tìm kiếm trong thư mục hiện tại...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>Chọn tệp để tải lên</value>

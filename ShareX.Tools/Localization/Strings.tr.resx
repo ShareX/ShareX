@@ -1849,6 +1849,9 @@ Dosya yolu: {0}</value>
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>Yeni klasör</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>Eşleşen öğe yok.</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>Adresi aç</value>
   </data>
@@ -1869,6 +1872,9 @@ Dosya yolu: {0}</value>
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>İndirilen dosyayı kaydet</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>Geçerli klasörde ara...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>Yüklenecek dosyaları seçin</value>

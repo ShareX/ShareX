@@ -1843,6 +1843,9 @@
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>مجلد جديد</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>لا توجد عناصر مطابقة.</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>فتح URL</value>
   </data>
@@ -1863,6 +1866,9 @@
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>حفظ الملف الذي تم تنزيله</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>البحث في المجلد الحالي...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>حدد الملفات المراد رفعها</value>

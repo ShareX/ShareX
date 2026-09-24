@@ -1843,6 +1843,9 @@
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>Новая папка</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>Нет подходящих элементов.</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>Открыть ссылку</value>
   </data>
@@ -1863,6 +1866,9 @@
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>Сохранить скачанный файл</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>Поиск в текущей папке...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>Выберите файлы для загрузки</value>

@@ -1849,6 +1849,9 @@ Dateipfad: {0}</value>
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>Neuer Ordner</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>Keine übereinstimmenden Elemente.</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>URL öffnen</value>
   </data>
@@ -1869,6 +1872,9 @@ Dateipfad: {0}</value>
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>Heruntergeladene Datei speichern</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>Aktuellen Ordner durchsuchen...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>Dateien zum Hochladen auswählen</value>

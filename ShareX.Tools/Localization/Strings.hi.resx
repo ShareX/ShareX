@@ -1849,6 +1849,9 @@
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>नया फ़ोल्डर</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>कोई मेल खाता आइटम नहीं मिला।</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>URL खोलें</value>
   </data>
@@ -1869,6 +1872,9 @@
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>डाउनलोड की गई फ़ाइल सहेजें</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>वर्तमान फ़ोल्डर में खोजें...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>अपलोड करने के लिए फ़ाइलें चुनें</value>

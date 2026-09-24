@@ -1849,6 +1849,9 @@ Filsti: {0}</value>
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>Ny mappe</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>Ingen matchende elementer.</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>Åbn URL</value>
   </data>
@@ -1869,6 +1872,9 @@ Filsti: {0}</value>
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>Gem downloadet fil</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>Søg i den aktuelle mappe...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>Vælg filer, der skal uploades</value>

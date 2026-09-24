@@ -1849,6 +1849,9 @@
   <data name="RemoteStorageBrowser_NewFolder" xml:space="preserve">
     <value>新文件夹</value>
   </data>
+  <data name="RemoteStorageBrowser_NoMatchingItems" xml:space="preserve">
+    <value>没有匹配的项目。</value>
+  </data>
   <data name="RemoteStorageBrowser_OpenUrl" xml:space="preserve">
     <value>打开网址</value>
   </data>
@@ -1869,6 +1872,9 @@
   </data>
   <data name="RemoteStorageBrowser_SaveDownloadedFile" xml:space="preserve">
     <value>保存下载的文件</value>
+  </data>
+  <data name="RemoteStorageBrowser_SearchCurrentFolder" xml:space="preserve">
+    <value>搜索当前文件夹...</value>
   </data>
   <data name="RemoteStorageBrowser_SelectFilesToUpload" xml:space="preserve">
     <value>选择要上传的文件</value>

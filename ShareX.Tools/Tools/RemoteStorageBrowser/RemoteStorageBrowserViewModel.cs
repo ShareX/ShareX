@@ -71,6 +71,7 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
     private bool _disposed;
     private RemoteStorageSortColumn _sortColumn = RemoteStorageSortColumn.Name;
     private bool _sortDescending;
+    private readonly List<RemoteStorageBrowserItemViewModel> _currentFolderItems = [];
 
     public IReadOnlyList<IRemoteStorageProvider> Providers { get; }
     public ObservableCollection<RemoteStorageBrowserItemViewModel> Items { get; } = [];
@@ -104,6 +105,10 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
     private string _locationText = string.Empty;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(EmptyMessage))]
+    private string _searchText = string.Empty;
+
+    [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsEmpty))]
     [NotifyPropertyChangedFor(nameof(CanGoUp))]
     [NotifyPropertyChangedFor(nameof(CanUpload))]
@@ -126,6 +131,9 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
     private bool _isDragOver;
 
     public bool IsEmpty => !IsBusy && !HasItems;
+    public string EmptyMessage => string.IsNullOrWhiteSpace(SearchText)
+        ? Localization.Strings.RemoteStorageBrowser_EmptyFolder
+        : Localization.Strings.RemoteStorageBrowser_NoMatchingItems;
     public bool HasSelection => SelectedItem != null;
     public bool CanGoUp => !IsBusy && SelectedProvider.GetParentPath(CurrentPath) != null;
     public bool CanUpload => !IsBusy && HasCapability(RemoteStorageProviderCapabilities.Upload);
@@ -168,6 +176,8 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
         }
 
         SelectedProvider = provider;
+        _currentFolderItems.Clear();
+        SearchText = string.Empty;
         Items.Clear();
         HasItems = false;
         SelectedItem = null;
@@ -201,13 +211,7 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
             _sortDescending = false;
         }
 
-        SelectedItem = null;
-        RemoteStorageBrowserItemViewModel[] sortedItems = GetSortedItems(Items).ToArray();
-        Items.Clear();
-        foreach (RemoteStorageBrowserItemViewModel item in sortedItems)
-        {
-            Items.Add(item);
-        }
+        ApplyFilter();
 
         OnPropertyChanged(nameof(IsNameSortColumn));
         OnPropertyChanged(nameof(IsSizeSortColumn));
@@ -272,7 +276,7 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
             return;
         }
 
-        if (Items.Any(x => x.Name.Equals(folderName, StringComparison.Ordinal)))
+        if (_currentFolderItems.Any(x => x.Name.Equals(folderName, StringComparison.Ordinal)))
         {
             ShowErrorRequested?.Invoke(string.Format(Localization.Strings.RemoteStorageBrowser_NameAlreadyExists, folderName));
             return;
@@ -294,7 +298,7 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
             return;
         }
 
-        if (Items.Any(x => !ReferenceEquals(x, item) && x.Name.Equals(newName, StringComparison.Ordinal)))
+        if (_currentFolderItems.Any(x => !ReferenceEquals(x, item) && x.Name.Equals(newName, StringComparison.Ordinal)))
         {
             ShowErrorRequested?.Invoke(string.Format(Localization.Strings.RemoteStorageBrowser_NameAlreadyExists, newName));
             return;
@@ -359,18 +363,18 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
                 return;
             }
 
-            RemoteStorageBrowserItemViewModel[] sortedItems = GetSortedItems(
-                items.Select(item => new RemoteStorageBrowserItemViewModel(item))).ToArray();
-
-            Items.Clear();
-            foreach (RemoteStorageBrowserItemViewModel item in sortedItems)
-            {
-                Items.Add(item);
-            }
-
-            SelectedItem = null;
+            bool pathChanged = !string.Equals(path, CurrentPath, StringComparison.Ordinal);
+            _currentFolderItems.Clear();
+            _currentFolderItems.AddRange(items.Select(item => new RemoteStorageBrowserItemViewModel(item)));
             CurrentPath = path;
-            HasItems = Items.Count > 0;
+            if (pathChanged && !string.IsNullOrEmpty(SearchText))
+            {
+                SearchText = string.Empty;
+            }
+            else
+            {
+                ApplyFilter();
+            }
             UpdateLocation();
             int fileCount = items.Count(item => !item.IsFolder);
             int folderCount = items.Count - fileCount;
@@ -378,6 +382,31 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
             StatusText = string.Format(Localization.Strings.RemoteStorageBrowser_ItemCount,
                 fileCount, folderCount, totalFileSize.ToSizeString());
         });
+    }
+
+    partial void OnSearchTextChanged(string value)
+    {
+        ApplyFilter();
+    }
+
+    private void ApplyFilter()
+    {
+        string searchText = SearchText?.Trim() ?? string.Empty;
+        IEnumerable<RemoteStorageBrowserItemViewModel> filteredItems = _currentFolderItems;
+        if (!string.IsNullOrEmpty(searchText))
+        {
+            filteredItems = filteredItems.Where(item =>
+                item.Name.Contains(searchText, StringComparison.CurrentCultureIgnoreCase));
+        }
+
+        SelectedItem = null;
+        Items.Clear();
+        foreach (RemoteStorageBrowserItemViewModel item in GetSortedItems(filteredItems))
+        {
+            Items.Add(item);
+        }
+
+        HasItems = Items.Count > 0;
     }
 
     private async Task<bool> RunOperationAsync(Func<CancellationToken, Task> operation, string? successStatus = null)

@@ -122,7 +122,7 @@
                     </Button>
                 </Grid>
 
-                <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="8">
+                <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="8">
                     <TextBlock Grid.Column="0"
                                Text="{x:Static localization:Strings.RemoteStorageBrowser_Location}"
                                VerticalAlignment="Center"
@@ -149,6 +149,13 @@
                                    FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                    FontWeight="Normal"/>
                     </Button>
+                    <TextBox Grid.Column="4"
+                             Width="220"
+                             Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             PlaceholderText="{x:Static localization:Strings.RemoteStorageBrowser_SearchCurrentFolder}"
+                             ToolTip.Tip="{x:Static localization:Strings.RemoteStorageBrowser_SearchCurrentFolder}"
+                             IsEnabled="{Binding !IsBusy}"
+                             VerticalContentAlignment="Center"/>
                 </Grid>
             </Grid>
         </Border>
@@ -286,7 +293,7 @@
                                    FontSize="48"
                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                    HorizontalAlignment="Center"/>
-                        <TextBlock Text="{x:Static localization:Strings.RemoteStorageBrowser_EmptyFolder}"
+                        <TextBlock Text="{Binding EmptyMessage}"
                                    FontWeight="Normal"
                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                     </StackPanel>

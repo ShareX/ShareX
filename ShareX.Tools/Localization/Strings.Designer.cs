@@ -5990,6 +5990,8 @@ namespace ShareX.Tools.Localization {
         public static string RemoteStorageBrowser_Location => ResourceManager.GetString("RemoteStorageBrowser_Location", resourceCulture);
         public static string RemoteStorageBrowser_Name => ResourceManager.GetString("RemoteStorageBrowser_Name", resourceCulture);
         public static string RemoteStorageBrowser_Size => ResourceManager.GetString("RemoteStorageBrowser_Size", resourceCulture);
+        public static string RemoteStorageBrowser_NoMatchingItems => ResourceManager.GetString("RemoteStorageBrowser_NoMatchingItems", resourceCulture);
+        public static string RemoteStorageBrowser_SearchCurrentFolder => ResourceManager.GetString("RemoteStorageBrowser_SearchCurrentFolder", resourceCulture);
         public static string RemoteStorageBrowser_Modified => ResourceManager.GetString("RemoteStorageBrowser_Modified", resourceCulture);
         public static string RemoteStorageBrowser_Download => ResourceManager.GetString("RemoteStorageBrowser_Download", resourceCulture);
         public static string RemoteStorageBrowser_Rename => ResourceManager.GetString("RemoteStorageBrowser_Rename", resourceCulture);
