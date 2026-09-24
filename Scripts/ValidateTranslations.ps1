@@ -335,7 +335,7 @@ function Test-AllowedAxamlLiteral([string]$value)
     return $false
 }
 
-$englishAllowlistPath = Join-Path $repositoryDirectory 'TranslationEnglishAllowlist.txt'
+$englishAllowlistPath = Join-Path $PSScriptRoot 'TranslationEnglishAllowlist.txt'
 $approvedEnglishEquivalents = [Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
 $usedEnglishEquivalents = [Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
 if (-not (Test-Path -LiteralPath $englishAllowlistPath -PathType Leaf))
