@@ -149,13 +149,22 @@
                                    FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                    FontWeight="Normal"/>
                     </Button>
-                    <TextBox Grid.Column="4"
-                             Width="220"
-                             Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                             PlaceholderText="{x:Static localization:Strings.RemoteStorageBrowser_SearchCurrentFolder}"
-                             ToolTip.Tip="{x:Static localization:Strings.RemoteStorageBrowser_SearchCurrentFolder}"
-                             IsEnabled="{Binding !IsBusy}"
-                             VerticalContentAlignment="Center"/>
+                    <Grid Grid.Column="4" Width="220" ColumnDefinitions="Auto,*">
+                        <TextBlock Margin="8,0,0,0"
+                                   Classes="icon"
+                                   Text="{x:Static theming:LucideIcons.search}"
+                                   FontSize="16"
+                                   IsHitTestVisible="False"
+                                   VerticalAlignment="Center"
+                                   ZIndex="1"/>
+                        <TextBox Grid.ColumnSpan="2"
+                                 Padding="30,0,8,0"
+                                 Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 PlaceholderText="{x:Static localization:Strings.RemoteStorageBrowser_SearchCurrentFolder}"
+                                 ToolTip.Tip="{x:Static localization:Strings.RemoteStorageBrowser_SearchCurrentFolder}"
+                                 IsEnabled="{Binding !IsBusy}"
+                                 VerticalContentAlignment="Center"/>
+                    </Grid>
                 </Grid>
             </Grid>
         </Border>
