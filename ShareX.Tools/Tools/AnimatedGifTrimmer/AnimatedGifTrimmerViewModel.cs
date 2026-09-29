@@ -35,6 +35,8 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     private int _positionIndex;
     private int _startIndex;
     private int _endIndex;
+    private long _previewRequestVersion;
+    private long _displayedPreviewRequestVersion;
     private bool _disposed;
 
     [ObservableProperty] private string _inputFilePath = string.Empty;
@@ -256,20 +258,24 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
         _seekCancellation = cancellation;
         AnimatedGifTrimmerDocument? document = _document;
         int index = _positionIndex;
+        long requestVersion = ++_previewRequestVersion;
         if (document == null) return;
         try
         {
             byte[]? bytes = await Task.Run(() => document.TryRenderFrame(index, cancellation.Token));
-            if (bytes == null || cancellation.IsCancellationRequested || _disposed) return;
+            if (bytes == null || _disposed || !ReferenceEquals(document, _document) ||
+                requestVersion < _displayedPreviewRequestVersion) return;
             using MemoryStream stream = new(bytes, writable: false);
             Bitmap bitmap = new(stream);
-            if (cancellation.Token.IsCancellationRequested || _disposed) bitmap.Dispose();
+            if (_disposed || !ReferenceEquals(document, _document) ||
+                requestVersion < _displayedPreviewRequestVersion) bitmap.Dispose();
             else
             {
                 Bitmap? old = Preview;
                 Preview = bitmap;
+                _displayedPreviewRequestVersion = requestVersion;
                 if (!_thumbnails.Any(x => ReferenceEquals(x.Image, old))) old?.Dispose();
-                PreviewText = FrameText;
+                PreviewText = string.Format(Strings.AnimatedGifTrimmer_Frame, index + 1, document.FrameCount);
             }
         }
         catch (OperationCanceledException) { }
