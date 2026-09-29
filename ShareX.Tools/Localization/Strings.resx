@@ -2206,7 +2206,6 @@
   <data name="AnimatedGifTrimmer_Loading" xml:space="preserve"><value>Preparing GIF timeline…</value></data>
   <data name="AnimatedGifTrimmer_Timeline" xml:space="preserve"><value>GIF timeline and trim selection</value></data>
   <data name="AnimatedGifTrimmer_Frame" xml:space="preserve"><value>Frame {0} of {1}</value></data>
-  <data name="AnimatedGifTrimmer_FrameBoundaryHint" xml:space="preserve"><value>Cut points snap to frame boundaries.</value></data>
   <data name="AnimatedGifTrimmer_Play" xml:space="preserve"><value>Play</value></data>
   <data name="AnimatedGifTrimmer_Pause" xml:space="preserve"><value>Pause</value></data>
   <data name="AnimatedGifTrimmer_Export" xml:space="preserve"><value>Save trimmed GIF…</value></data>

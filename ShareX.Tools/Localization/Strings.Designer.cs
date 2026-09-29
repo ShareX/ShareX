@@ -6026,7 +6026,6 @@ namespace ShareX.Tools.Localization {
         public static string AnimatedGifTrimmer_Loading => ResourceManager.GetString("AnimatedGifTrimmer_Loading", resourceCulture);
         public static string AnimatedGifTrimmer_Timeline => ResourceManager.GetString("AnimatedGifTrimmer_Timeline", resourceCulture);
         public static string AnimatedGifTrimmer_Frame => ResourceManager.GetString("AnimatedGifTrimmer_Frame", resourceCulture);
-        public static string AnimatedGifTrimmer_FrameBoundaryHint => ResourceManager.GetString("AnimatedGifTrimmer_FrameBoundaryHint", resourceCulture);
         public static string AnimatedGifTrimmer_Play => ResourceManager.GetString("AnimatedGifTrimmer_Play", resourceCulture);
         public static string AnimatedGifTrimmer_Pause => ResourceManager.GetString("AnimatedGifTrimmer_Pause", resourceCulture);
         public static string AnimatedGifTrimmer_Export => ResourceManager.GetString("AnimatedGifTrimmer_Export", resourceCulture);
