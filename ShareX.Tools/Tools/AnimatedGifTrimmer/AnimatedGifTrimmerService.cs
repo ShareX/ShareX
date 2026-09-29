@@ -102,14 +102,14 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
         return Math.Clamp(index, 0, includeEnd ? FrameCount : FrameCount - 1);
     }
 
-    public byte[] RenderFrame(int index, CancellationToken token)
+    public byte[] RenderFrame(int index, CancellationToken token, int maxDimension = 640)
     {
         token.ThrowIfCancellationRequested();
         lock (_imageLock)
         {
             ObjectDisposedException.ThrowIf(_disposed, this);
             token.ThrowIfCancellationRequested();
-            return RenderFrameCore(index);
+            return RenderFrameCore(index, maxDimension);
         }
     }
 
@@ -119,14 +119,14 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
         lock (_imageLock)
         {
             if (_disposed || token.IsCancellationRequested) return null;
-            return RenderFrameCore(index);
+            return RenderFrameCore(index, int.MaxValue);
         }
     }
 
-    private byte[] RenderFrameCore(int index)
+    private byte[] RenderFrameCore(int index, int maxDimension)
     {
         _image.SelectActiveFrame(FrameDimension.Time, index);
-        using Bitmap frame = DrawFrame(_image, 640);
+        using Bitmap frame = DrawFrame(_image, maxDimension);
         using MemoryStream stream = new();
         frame.Save(stream, ImageFormat.Png);
         return stream.ToArray();

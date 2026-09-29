@@ -29,7 +29,8 @@
                 <Grid RowDefinitions="*,Auto,Auto,Auto,Auto" RowSpacing="8">
                     <Border Background="{DynamicResource ShareX.Brush.Background.Main}" CornerRadius="4" ClipToBounds="True">
                         <Grid>
-                            <Image Source="{Binding Preview}" Stretch="Uniform"
+                            <Image Source="{Binding Preview}" Stretch="Uniform" StretchDirection="DownOnly"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
                                    RenderOptions.BitmapInterpolationMode="HighQuality"/>
                             <StackPanel IsVisible="{Binding !HasGif}" Spacing="12"
                                         HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False">

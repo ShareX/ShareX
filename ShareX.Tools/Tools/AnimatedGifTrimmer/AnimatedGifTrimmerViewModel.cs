@@ -212,6 +212,11 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
             _positionIndex = _startIndex = 0;
             _endIndex = document.FrameCount;
             NotifyDocumentChanged();
+            byte[] previewBytes = await Task.Run(() => document.RenderFrame(0, token, int.MaxValue), token);
+            token.ThrowIfCancellationRequested();
+            using (MemoryStream previewStream = new(previewBytes, writable: false))
+                Preview = new Bitmap(previewStream);
+            PreviewText = FrameText;
             for (int i = 0; i < 12; i++)
             {
                 int index = document.FrameAt(document.Duration * i / 12);
@@ -221,9 +226,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
                 Bitmap bitmap = new(stream);
                 _thumbnails.Add(new(document.FrameStart(index), bitmap));
                 OnPropertyChanged(nameof(Thumbnails));
-                if (Preview == null) Preview = bitmap;
             }
-            PreviewText = FrameText;
             StatusText = string.Empty;
         }
         catch (OperationCanceledException) { }
