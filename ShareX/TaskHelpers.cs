@@ -2355,7 +2355,7 @@ namespace ShareX
                 HotkeyType.ImageThumbnailer => LucideIcons.shrink,
                 HotkeyType.VideoConverter => LucideIcons.file_video,
                 HotkeyType.VideoTrimmer => LucideIcons.scissors,
-                HotkeyType.AnimatedGifTrimmer => LucideIcons.scissors,
+                HotkeyType.AnimatedGifTrimmer => LucideIcons.scissors_square,
                 HotkeyType.VideoThumbnailer => LucideIcons.clapperboard,
                 HotkeyType.AnalyzeImage => LucideIcons.bot,
                 HotkeyType.OCR => LucideIcons.scan_text,

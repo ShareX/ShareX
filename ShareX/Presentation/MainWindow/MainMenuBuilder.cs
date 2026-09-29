@@ -258,8 +258,6 @@ internal sealed class MainMenuBuilder
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryImages,
         [
-            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifMaker), Strings.MainMenuBuilder_AnimatedGifMaker, LucideIcons.film, () => TaskHelpers.OpenAnimatedGifMaker()),
-            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifTrimmer), Strings.MainMenuBuilder_AnimatedGifTrimmer, LucideIcons.scissors, () => TaskHelpers.OpenAnimatedGifTrimmer()),
             Tool(nameof(Strings.MainMenuBuilder_BackgroundRemover), Strings.MainMenuBuilder_BackgroundRemover, LucideIcons.eraser, () => TaskHelpers.OpenBackgroundRemover()),
             Tool(nameof(Strings.MainMenuBuilder_IconConverter), Strings.MainMenuBuilder_IconConverter, LucideIcons.file_image, () => TaskHelpers.OpenIconConverter()),
             Tool(nameof(Strings.MainMenuBuilder_ImageBeautifier), Strings.MainMenuBuilder_ImageBeautifier, LucideIcons.sparkles, () => TaskHelpers.OpenImageBeautifier()),
@@ -276,6 +274,8 @@ internal sealed class MainMenuBuilder
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryVideo,
         [
+            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifMaker), Strings.MainMenuBuilder_AnimatedGifMaker, LucideIcons.film, () => TaskHelpers.OpenAnimatedGifMaker()),
+            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifTrimmer), Strings.MainMenuBuilder_AnimatedGifTrimmer, LucideIcons.scissors_square, () => TaskHelpers.OpenAnimatedGifTrimmer()),
             Tool(nameof(Strings.MainMenuBuilder_VideoConverter), Strings.MainMenuBuilder_VideoConverter, LucideIcons.file_video, () => TaskHelpers.OpenVideoConverter()),
             Tool(nameof(Strings.MainMenuBuilder_VideoThumbnailer), Strings.MainMenuBuilder_VideoThumbnailer, LucideIcons.clapperboard, () => TaskHelpers.OpenVideoThumbnailer()),
             Tool(nameof(Strings.MainMenuBuilder_VideoTrimmer), Strings.MainMenuBuilder_VideoTrimmer, LucideIcons.scissors, () => TaskHelpers.OpenVideoTrimmer())
