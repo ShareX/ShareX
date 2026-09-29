@@ -120,21 +120,21 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
         if (CanEdit && _document != null)
         {
             StopPlayback();
-            _ = SetPositionIndex(Math.Clamp(_positionIndex + frames, 0, _document.FrameCount - 1), immediatePreview: true);
+            _ = SetPositionIndex(Math.Clamp(_positionIndex + frames, 0, _document.FrameCount - 1));
         }
     }
 
     [RelayCommand] private void StepBackward() => StepPosition(-1);
     [RelayCommand] private void StepForward() => StepPosition(1);
 
-    private Task SetPositionIndex(int index, bool immediatePreview = false)
+    private Task SetPositionIndex(int index)
     {
         if (_document == null || index == _positionIndex) return Task.CompletedTask;
         _positionIndex = index;
         OnPropertyChanged(nameof(Position));
         OnPropertyChanged(nameof(PositionText));
         OnPropertyChanged(nameof(FrameText));
-        return RefreshPreviewAsync(immediatePreview);
+        return RefreshPreviewAsync();
     }
 
     private void SetStartIndex(int index)
@@ -246,7 +246,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
         }
     }
 
-    private async Task RefreshPreviewAsync(bool immediate = false)
+    private async Task RefreshPreviewAsync()
     {
         _seekCancellation?.Cancel();
         using CancellationTokenSource cancellation = CancellationTokenSource.CreateLinkedTokenSource(_lifetime.Token);
@@ -256,9 +256,8 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
         if (document == null) return;
         try
         {
-            if (!immediate) await Task.Delay(80, cancellation.Token);
-            byte[] bytes = await Task.Run(() => document.RenderFrame(index, cancellation.Token), cancellation.Token);
-            cancellation.Token.ThrowIfCancellationRequested();
+            byte[]? bytes = await Task.Run(() => document.TryRenderFrame(index, cancellation.Token));
+            if (bytes == null || cancellation.IsCancellationRequested || _disposed) return;
             using MemoryStream stream = new(bytes, writable: false);
             Bitmap bitmap = new(stream);
             if (cancellation.Token.IsCancellationRequested || _disposed) bitmap.Dispose();
@@ -295,7 +294,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
         else
         {
             if (_positionIndex < _startIndex || _positionIndex >= _endIndex - 1)
-                await SetPositionIndex(_startIndex, immediatePreview: true);
+                await SetPositionIndex(_startIndex);
             if (!CanPlay) return;
             IsPlaying = true;
             ScheduleNextFrame();
@@ -307,7 +306,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
         _playTimer.Stop();
         if (_document == null || !IsPlaying) return;
         if (_positionIndex + 1 >= _endIndex) { StopPlayback(); return; }
-        await SetPositionIndex(_positionIndex + 1, immediatePreview: true);
+        await SetPositionIndex(_positionIndex + 1);
         if (IsPlaying) ScheduleNextFrame();
     }
 

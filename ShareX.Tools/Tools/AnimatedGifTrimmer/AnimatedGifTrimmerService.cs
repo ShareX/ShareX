@@ -108,12 +108,28 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
         lock (_imageLock)
         {
             ObjectDisposedException.ThrowIf(_disposed, this);
-            _image.SelectActiveFrame(FrameDimension.Time, index);
-            using Bitmap frame = DrawFrame(_image, 640);
-            using MemoryStream stream = new();
-            frame.Save(stream, ImageFormat.Png);
-            return stream.ToArray();
+            token.ThrowIfCancellationRequested();
+            return RenderFrameCore(index);
         }
+    }
+
+    public byte[]? TryRenderFrame(int index, CancellationToken token)
+    {
+        if (token.IsCancellationRequested) return null;
+        lock (_imageLock)
+        {
+            if (_disposed || token.IsCancellationRequested) return null;
+            return RenderFrameCore(index);
+        }
+    }
+
+    private byte[] RenderFrameCore(int index)
+    {
+        _image.SelectActiveFrame(FrameDimension.Time, index);
+        using Bitmap frame = DrawFrame(_image, 640);
+        using MemoryStream stream = new();
+        frame.Save(stream, ImageFormat.Png);
+        return stream.ToArray();
     }
 
     public void Export(string output, int firstFrame, int endFrameExclusive, IProgress<double>? progress,
