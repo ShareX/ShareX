@@ -41,22 +41,36 @@
                     </Border>
 
                     <Grid Grid.Row="1" Margin="0,4,0,0">
-                        <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Button Command="{Binding TogglePlayCommand}" IsEnabled="{Binding CanPlay}" Width="40"
-                                    ToolTip.Tip="{Binding PlayActionText}"
-                                    AutomationProperties.Name="{Binding PlayActionText}">
-                                <Grid>
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.play}"
-                                               IsVisible="{Binding !IsPlaying}" VerticalAlignment="Center"/>
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pause}"
-                                               IsVisible="{Binding IsPlaying}" VerticalAlignment="Center"/>
-                                </Grid>
-                            </Button>
-                            <TextBlock Text="{Binding PositionText}" FontWeight="Normal" VerticalAlignment="Center"
-                                       Foreground="{DynamicResource ShareX.Brush.Text}"/>
-                            <TextBlock Text="/" FontWeight="Normal" VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding DurationText}" FontWeight="Normal" VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding FrameText}" FontWeight="Normal" VerticalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" Spacing="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <Button Command="{Binding StepBackwardCommand}" IsEnabled="{Binding CanEdit}" Width="40"
+                                        ToolTip.Tip="{x:Static loc:Strings.AnimatedGifTrimmer_PreviousFrame}"
+                                        AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_PreviousFrame}">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.step_back}"/>
+                                </Button>
+                                <Button Command="{Binding TogglePlayCommand}" IsEnabled="{Binding CanPlay}" Width="40"
+                                        ToolTip.Tip="{Binding PlayActionText}"
+                                        AutomationProperties.Name="{Binding PlayActionText}">
+                                    <Grid>
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.play}"
+                                                   IsVisible="{Binding !IsPlaying}" VerticalAlignment="Center"/>
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pause}"
+                                                   IsVisible="{Binding IsPlaying}" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Button>
+                                <Button Command="{Binding StepForwardCommand}" IsEnabled="{Binding CanEdit}" Width="40"
+                                        ToolTip.Tip="{x:Static loc:Strings.AnimatedGifTrimmer_NextFrame}"
+                                        AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_NextFrame}">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.step_forward}"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding PositionText}" FontWeight="Normal" VerticalAlignment="Center"
+                                           Foreground="{DynamicResource ShareX.Brush.Text}"/>
+                                <TextBlock Text="/" FontWeight="Normal" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding DurationText}" FontWeight="Normal" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding FrameText}" FontWeight="Normal" VerticalAlignment="Center"/>
+                            </StackPanel>
                         </StackPanel>
                     </Grid>
 

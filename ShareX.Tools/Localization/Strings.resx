@@ -2208,6 +2208,8 @@
   <data name="AnimatedGifTrimmer_Frame" xml:space="preserve"><value>Frame {0} of {1}</value></data>
   <data name="AnimatedGifTrimmer_Play" xml:space="preserve"><value>Play</value></data>
   <data name="AnimatedGifTrimmer_Pause" xml:space="preserve"><value>Pause</value></data>
+  <data name="AnimatedGifTrimmer_PreviousFrame" xml:space="preserve"><value>Previous frame</value></data>
+  <data name="AnimatedGifTrimmer_NextFrame" xml:space="preserve"><value>Next frame</value></data>
   <data name="AnimatedGifTrimmer_Export" xml:space="preserve"><value>Save trimmed GIF…</value></data>
   <data name="AnimatedGifTrimmer_Exporting" xml:space="preserve"><value>Saving trimmed GIF…</value></data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve"><value>Save the trimmed GIF with a different file name or in another folder.</value></data>

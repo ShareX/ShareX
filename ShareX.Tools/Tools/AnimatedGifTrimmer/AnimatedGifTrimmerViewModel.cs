@@ -117,12 +117,15 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
 
     public void StepPosition(int frames)
     {
-        if (_document != null)
+        if (CanEdit && _document != null)
         {
             StopPlayback();
-            _ = SetPositionIndex(Math.Clamp(_positionIndex + frames, 0, _document.FrameCount - 1));
+            _ = SetPositionIndex(Math.Clamp(_positionIndex + frames, 0, _document.FrameCount - 1), immediatePreview: true);
         }
     }
+
+    [RelayCommand] private void StepBackward() => StepPosition(-1);
+    [RelayCommand] private void StepForward() => StepPosition(1);
 
     private Task SetPositionIndex(int index, bool immediatePreview = false)
     {

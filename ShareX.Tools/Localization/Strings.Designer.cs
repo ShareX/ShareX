@@ -6028,6 +6028,8 @@ namespace ShareX.Tools.Localization {
         public static string AnimatedGifTrimmer_Frame => ResourceManager.GetString("AnimatedGifTrimmer_Frame", resourceCulture);
         public static string AnimatedGifTrimmer_Play => ResourceManager.GetString("AnimatedGifTrimmer_Play", resourceCulture);
         public static string AnimatedGifTrimmer_Pause => ResourceManager.GetString("AnimatedGifTrimmer_Pause", resourceCulture);
+        public static string AnimatedGifTrimmer_PreviousFrame => ResourceManager.GetString("AnimatedGifTrimmer_PreviousFrame", resourceCulture);
+        public static string AnimatedGifTrimmer_NextFrame => ResourceManager.GetString("AnimatedGifTrimmer_NextFrame", resourceCulture);
         public static string AnimatedGifTrimmer_Export => ResourceManager.GetString("AnimatedGifTrimmer_Export", resourceCulture);
         public static string AnimatedGifTrimmer_Exporting => ResourceManager.GetString("AnimatedGifTrimmer_Exporting", resourceCulture);
         public static string AnimatedGifTrimmer_SourceOverwrite => ResourceManager.GetString("AnimatedGifTrimmer_SourceOverwrite", resourceCulture);
