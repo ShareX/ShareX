@@ -179,7 +179,11 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
             string? file = await SelectInputRequested();
             if (file != null) await LoadInputAsync(file);
         }
-        catch (Exception ex) { StatusText = ex.Message; }
+        catch (Exception ex)
+        {
+            StatusText = ex.Message;
+            if (!_disposed) ShowErrorRequested?.Invoke(ex.Message);
+        }
     }
 
     public async Task LoadInputAsync(string file)
@@ -229,6 +233,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
             {
                 ClearDocument();
                 StatusText = ex.Message;
+                if (!_disposed) ShowErrorRequested?.Invoke(ex.Message);
             }
         }
         finally
@@ -273,6 +278,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
             {
                 PreviewText = StatusText = ex.Message;
                 StopPlayback();
+                if (!_disposed) ShowErrorRequested?.Invoke(ex.Message);
             }
         }
         finally { if (_seekCancellation == cancellation) _seekCancellation = null; }
