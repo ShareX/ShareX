@@ -309,6 +309,9 @@ namespace ShareX
                 case HotkeyType.VideoTrimmer:
                     OpenVideoTrimmer(safeTaskSettings, filePath);
                     break;
+                case HotkeyType.AnimatedGifTrimmer:
+                    OpenAnimatedGifTrimmer(filePath, safeTaskSettings);
+                    break;
                 case HotkeyType.VideoThumbnailer:
                     OpenVideoThumbnailer(safeTaskSettings);
                     break;
@@ -1081,6 +1084,13 @@ namespace ShareX
         public static void OpenAnimatedGifMaker(IEnumerable<string> imageFiles = null)
         {
             ToolsIntegration.ShowAnimatedGifMakerWindow(imageFiles);
+        }
+
+        public static void OpenAnimatedGifTrimmer(string inputFilePath = null, TaskSettings taskSettings = null)
+        {
+            taskSettings ??= TaskSettings.GetDefaultTaskSettings();
+            ToolsIntegration.ShowAnimatedGifTrimmerWindow(inputFilePath,
+                () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
         }
 
         public static void OpenImageResizer(IEnumerable<string> imageFiles = null)
@@ -2345,6 +2355,7 @@ namespace ShareX
                 HotkeyType.ImageThumbnailer => LucideIcons.shrink,
                 HotkeyType.VideoConverter => LucideIcons.file_video,
                 HotkeyType.VideoTrimmer => LucideIcons.scissors,
+                HotkeyType.AnimatedGifTrimmer => LucideIcons.scissors,
                 HotkeyType.VideoThumbnailer => LucideIcons.clapperboard,
                 HotkeyType.AnalyzeImage => LucideIcons.bot,
                 HotkeyType.OCR => LucideIcons.scan_text,

@@ -2921,4 +2921,6 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the upload feature.</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve"><value>Animated GIF trimmer...</value></data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve"><value>Trim animated GIF</value></data>
 </root>

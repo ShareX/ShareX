@@ -5449,5 +5449,7 @@ namespace ShareX.Localization {
             }
         }
 
+        public static string MainMenuBuilder_AnimatedGifTrimmer => ResourceManager.GetString("MainMenuBuilder_AnimatedGifTrimmer", resourceCulture);
+        public static string MainWindow_TrimAnimatedGif => ResourceManager.GetString("MainWindow_TrimAnimatedGif", resourceCulture);
     }
 }

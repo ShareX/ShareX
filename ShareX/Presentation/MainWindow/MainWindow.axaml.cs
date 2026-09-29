@@ -1498,6 +1498,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 hasSelection && !isWorking && statuses.Any(x => x.IsImageFile)),
             Item(Strings.MainWindow_TrimVideo, LucideIcons.scissors, _uploadInfoManager.TrimVideo,
                 hasSelection && !isWorking && selected!.IsVideoFile),
+            Item(Strings.MainWindow_TrimAnimatedGif, LucideIcons.scissors, _uploadInfoManager.TrimAnimatedGif,
+                hasSelection && !isWorking && selected!.IsFileExist &&
+                string.Equals(Path.GetExtension(selected.Info.FilePath), ".gif", StringComparison.OrdinalIgnoreCase)),
             Item(Strings.MainWindow_BeautifyImage, LucideIcons.sparkles, _uploadInfoManager.BeautifyImage,
                 hasSelection && !isWorking && selected!.IsImageFile),
             Item(Strings.MainWindow_AddImageEffects, LucideIcons.wand_sparkles, _uploadInfoManager.AddImageEffects,

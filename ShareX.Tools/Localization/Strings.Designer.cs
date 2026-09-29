@@ -6017,5 +6017,21 @@ namespace ShareX.Tools.Localization {
         public static string RemoteStorageBrowser_ItemCount => ResourceManager.GetString("RemoteStorageBrowser_ItemCount", resourceCulture);
         public static string RemoteStorageBrowser_OperationFailed => ResourceManager.GetString("RemoteStorageBrowser_OperationFailed", resourceCulture);
 
+        public static string AnimatedGifTrimmer_Title => ResourceManager.GetString("AnimatedGifTrimmer_Title", resourceCulture);
+        public static string AnimatedGifTrimmer_Gif => ResourceManager.GetString("AnimatedGifTrimmer_Gif", resourceCulture);
+        public static string AnimatedGifTrimmer_GifFiles => ResourceManager.GetString("AnimatedGifTrimmer_GifFiles", resourceCulture);
+        public static string AnimatedGifTrimmer_Open => ResourceManager.GetString("AnimatedGifTrimmer_Open", resourceCulture);
+        public static string AnimatedGifTrimmer_ChooseGif => ResourceManager.GetString("AnimatedGifTrimmer_ChooseGif", resourceCulture);
+        public static string AnimatedGifTrimmer_InvalidGif => ResourceManager.GetString("AnimatedGifTrimmer_InvalidGif", resourceCulture);
+        public static string AnimatedGifTrimmer_Loading => ResourceManager.GetString("AnimatedGifTrimmer_Loading", resourceCulture);
+        public static string AnimatedGifTrimmer_Timeline => ResourceManager.GetString("AnimatedGifTrimmer_Timeline", resourceCulture);
+        public static string AnimatedGifTrimmer_Frame => ResourceManager.GetString("AnimatedGifTrimmer_Frame", resourceCulture);
+        public static string AnimatedGifTrimmer_FrameBoundaryHint => ResourceManager.GetString("AnimatedGifTrimmer_FrameBoundaryHint", resourceCulture);
+        public static string AnimatedGifTrimmer_Play => ResourceManager.GetString("AnimatedGifTrimmer_Play", resourceCulture);
+        public static string AnimatedGifTrimmer_Pause => ResourceManager.GetString("AnimatedGifTrimmer_Pause", resourceCulture);
+        public static string AnimatedGifTrimmer_Export => ResourceManager.GetString("AnimatedGifTrimmer_Export", resourceCulture);
+        public static string AnimatedGifTrimmer_Exporting => ResourceManager.GetString("AnimatedGifTrimmer_Exporting", resourceCulture);
+        public static string AnimatedGifTrimmer_SourceOverwrite => ResourceManager.GetString("AnimatedGifTrimmer_SourceOverwrite", resourceCulture);
+        public static string AnimatedGifTrimmer_OutputExtension => ResourceManager.GetString("AnimatedGifTrimmer_OutputExtension", resourceCulture);
     }
 }

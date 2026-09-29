@@ -196,6 +196,12 @@ public static class ToolsIntegration
         Show(() => new AnimatedGifMakerWindow(imageFiles));
     }
 
+    public static void ShowAnimatedGifTrimmerWindow(string? inputFilePath = null,
+        Action? playNotificationSound = null)
+    {
+        Show(() => new AnimatedGifTrimmerWindow(inputFilePath, playNotificationSound));
+    }
+
     public static void ShowImageResizerWindow(IEnumerable<string>? imageFiles = null)
     {
         Show(() => new ImageResizerWindow(imageFiles));

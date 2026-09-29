@@ -363,7 +363,9 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Other)]
         ToggleTrayMenu,
         [Category(EnumExtensions.HotkeyType_Category_Other)]
-        ExitShareX
+        ExitShareX,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        AnimatedGifTrimmer
     }
 
     public enum ToastClickAction // Localized

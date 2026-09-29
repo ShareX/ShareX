@@ -390,6 +390,15 @@ namespace ShareX
             }
         }
 
+        public void TrimAnimatedGif()
+        {
+            if (IsItemSelected && SelectedItem.IsFileExist &&
+                string.Equals(Path.GetExtension(SelectedItem.Info.FilePath), ".gif", System.StringComparison.OrdinalIgnoreCase))
+            {
+                TaskHelpers.OpenAnimatedGifTrimmer(SelectedItem.Info.FilePath, SelectedItem.Info.TaskSettings);
+            }
+        }
+
         public void BeautifyImage()
         {
             if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageBeautifier(SelectedItem.Info.FilePath);
