@@ -27,6 +27,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
+using Avalonia.Threading;
 using System.ComponentModel;
 
 namespace ShareX.Tools;
@@ -77,7 +78,21 @@ public sealed class AnimatedGifTrimmerTimeline : Control
         InvalidateVisual();
     }
 
-    private void ModelChanged(object? sender, PropertyChangedEventArgs e) => InvalidateVisual();
+    private void ModelChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName != null && e.PropertyName != nameof(AnimatedGifTrimmerViewModel.HasGif) &&
+            e.PropertyName != nameof(AnimatedGifTrimmerViewModel.Duration) &&
+            e.PropertyName != nameof(AnimatedGifTrimmerViewModel.Start) &&
+            e.PropertyName != nameof(AnimatedGifTrimmerViewModel.End) &&
+            e.PropertyName != nameof(AnimatedGifTrimmerViewModel.Position) &&
+            e.PropertyName != nameof(AnimatedGifTrimmerViewModel.Thumbnails)) return;
+
+        if (Dispatcher.UIThread.CheckAccess()) InvalidateVisual();
+        else Dispatcher.UIThread.Post(() =>
+        {
+            if (ReferenceEquals(_model, sender)) InvalidateVisual();
+        });
+    }
 
     public override void Render(DrawingContext context)
     {

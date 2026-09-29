@@ -49,11 +49,6 @@ namespace ShareX.HelpersLib
 
         public void AddFrame(Image img, GIFQuality quality = GIFQuality.Default)
         {
-            AddFrame(img, Delay, quality);
-        }
-
-        public void AddFrame(Image img, int delay, GIFQuality quality = GIFQuality.Default)
-        {
             GifClass gif = new GifClass();
             gif.LoadGifPicture(img, quality);
 
@@ -68,7 +63,7 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            stream.Write(CreateGraphicsControlExtensionBlock(delay));
+            stream.Write(CreateGraphicsControlExtensionBlock(Delay));
             stream.Write(gif.ImageDescriptor.ToArray());
             stream.Write(gif.ColorTable.ToArray());
             stream.Write(gif.ImageData.ToArray());

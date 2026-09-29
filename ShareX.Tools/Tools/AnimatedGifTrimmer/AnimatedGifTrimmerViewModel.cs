@@ -61,7 +61,8 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     public bool CanBrowse => !IsExporting;
     public bool CanEdit => HasGif && !IsLoading && !IsExporting;
     public bool CanPlay => CanEdit && _endIndex - _startIndex > 1;
-    public bool CanTrim => CanEdit && (_startIndex > 0 || _endIndex < _document!.FrameCount);
+    public bool CanTrim => CanEdit && (_startIndex > 0 || _endIndex < _document!.FrameCount) &&
+        _document!.CanCopySelection(_startIndex, _endIndex);
     public bool IsWorking => IsLoading || IsExporting;
     public bool HasOutput => !string.IsNullOrEmpty(OutputFilePath);
     public bool CanUsePrimaryAction => IsExporting || CanTrim;
@@ -153,6 +154,9 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
 
     private void NotifySelectionChanged()
     {
+        if (_document != null && !IsLoading && !IsExporting)
+            StatusText = _document.CanCopySelection(_startIndex, _endIndex)
+                ? string.Empty : Strings.AnimatedGifTrimmer_DependentFrame;
         OnPropertyChanged(nameof(Start));
         OnPropertyChanged(nameof(End));
         OnPropertyChanged(nameof(StartTimeText));
@@ -332,9 +336,16 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
         {
             AnimatedGifTrimmerDocument document = _document;
             int first = _startIndex, end = _endIndex;
-            await Task.Run(() => document.Export(output, first, end,
-                new Progress<double>(value => { if (!cancellation.IsCancellationRequested && !_disposed) Progress = value; }),
-                cancellation.Token), cancellation.Token);
+            IProgress<double> progress = new Progress<double>(value =>
+            {
+                if (cancellation.IsCancellationRequested || _disposed) return;
+                Dispatcher.UIThread.Post(() =>
+                {
+                    if (_exportCancellation == cancellation && !cancellation.IsCancellationRequested && !_disposed)
+                        Progress = Math.Max(Progress, Math.Clamp(value, 0, 100));
+                });
+            });
+            await Task.Run(() => document.Export(output, first, end, progress, cancellation.Token), cancellation.Token);
             OutputFilePath = output;
             Progress = 100;
             StatusText = string.Format(Strings.VideoTrimmer_Saved, output);

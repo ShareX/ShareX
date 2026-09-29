@@ -2212,4 +2212,6 @@
   <data name="AnimatedGifTrimmer_Exporting" xml:space="preserve"><value>Saving trimmed GIF…</value></data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve"><value>Save the trimmed GIF with a different file name or in another folder.</value></data>
   <data name="AnimatedGifTrimmer_OutputExtension" xml:space="preserve"><value>Use the .gif extension for the output file.</value></data>
+  <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve"><value>This cut starts on a frame that needs earlier frames. Choose another start frame for lossless export.</value></data>
+  <data name="AnimatedGifTrimmer_UnsupportedGif" xml:space="preserve"><value>This GIF contains a plain-text graphic block that the lossless trimmer cannot copy safely.</value></data>
 </root>

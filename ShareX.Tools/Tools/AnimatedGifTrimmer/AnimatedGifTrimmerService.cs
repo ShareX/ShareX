@@ -12,7 +12,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using ShareX.Tools.Localization;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -24,6 +23,7 @@ namespace ShareX.Tools;
 internal sealed class AnimatedGifTrimmerDocument : IDisposable
 {
     private readonly Image _image;
+    private readonly GifLosslessTrimmer _gif;
     private readonly object _imageLock = new();
     private readonly long[] _starts;
     private readonly int[] _delays;
@@ -32,17 +32,19 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
     public string FilePath { get; }
     public int FrameCount => _delays.Length;
     public double Duration => _starts[^1] / 100d;
-    public int? RepeatCount { get; }
     public double FrameStart(int index) => _starts[index] / 100d;
     public double FrameEnd(int index) => _starts[index + 1] / 100d;
+    public bool CanCopySelection(int firstFrame, int endFrameExclusive) =>
+        _gif.CanCopySelection(firstFrame, endFrameExclusive);
 
-    private AnimatedGifTrimmerDocument(string filePath, Image image, long[] starts, int[] delays, int? repeatCount)
+    private AnimatedGifTrimmerDocument(string filePath, Image image, GifLosslessTrimmer gif,
+        long[] starts, int[] delays)
     {
         FilePath = filePath;
         _image = image;
+        _gif = gif;
         _starts = starts;
         _delays = delays;
-        RepeatCount = repeatCount;
     }
 
     public static AnimatedGifTrimmerDocument Open(string filePath, CancellationToken token)
@@ -51,6 +53,7 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
         if (!File.Exists(filePath) || !string.Equals(Path.GetExtension(filePath), ".gif", StringComparison.OrdinalIgnoreCase))
             throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
 
+        GifLosslessTrimmer gif = GifLosslessTrimmer.Parse(filePath, token);
         Image image = Image.FromFile(filePath);
         try
         {
@@ -58,24 +61,19 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
                 throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
 
             int count = image.GetFrameCount(FrameDimension.Time);
-            if (count < 2) throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
+            if (count != gif.FrameCount) throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
 
-            byte[]? delayData = image.PropertyIdList.Contains(0x5100) ? image.GetPropertyItem(0x5100)?.Value : null;
             long[] starts = new long[count + 1];
             int[] delays = new int[count];
             for (int i = 0; i < count; i++)
             {
                 token.ThrowIfCancellationRequested();
-                int delay = delayData != null && delayData.Length >= (i + 1) * 4
-                    ? (int)Math.Clamp(BitConverter.ToUInt32(delayData, i * 4), 1u, 65535u)
-                    : 10;
+                int delay = gif.GetDelay(i);
                 delays[i] = delay;
                 starts[i + 1] = checked(starts[i] + delay);
             }
 
-            byte[]? repeatData = image.PropertyIdList.Contains(0x5101) ? image.GetPropertyItem(0x5101)?.Value : null;
-            int? repeatCount = repeatData is { Length: >= 2 } ? BitConverter.ToUInt16(repeatData) : null;
-            return new AnimatedGifTrimmerDocument(filePath, image, starts, delays, repeatCount);
+            return new AnimatedGifTrimmerDocument(filePath, image, gif, starts, delays);
         }
         catch
         {
@@ -127,26 +125,17 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
             throw new InvalidOperationException(Strings.AnimatedGifTrimmer_SourceOverwrite);
         if (!string.Equals(Path.GetExtension(output), ".gif", StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException(Strings.AnimatedGifTrimmer_OutputExtension);
+        if (!CanCopySelection(firstFrame, endFrameExclusive))
+            throw new InvalidOperationException(Strings.AnimatedGifTrimmer_DependentFrame);
 
         string temporary = Path.Combine(Path.GetDirectoryName(Path.GetFullPath(output))!,
             $".sharex-gif-trim-{Guid.NewGuid():N}.gif");
         try
         {
-            using Image source = Image.FromFile(FilePath);
-            using (AnimatedGifCreator creator = new(temporary, _delays[firstFrame] * 10,
-                RepeatCount ?? 0, RepeatCount.HasValue))
-            {
-                for (int index = firstFrame; index < endFrameExclusive; index++)
-                {
-                    token.ThrowIfCancellationRequested();
-                    source.SelectActiveFrame(FrameDimension.Time, index);
-                    using Bitmap frame = DrawFrame(source);
-                    using Bitmap quantized = GifFrameQuantizer.Quantize(frame);
-                    creator.AddFrame(quantized, _delays[index] * 10);
-                    progress?.Report((index - firstFrame + 1d) / (endFrameExclusive - firstFrame) * 100);
-                }
-            }
+            _gif.Copy(FilePath, temporary, firstFrame, endFrameExclusive, progress, token);
             token.ThrowIfCancellationRequested();
+            if (_gif.NeedsVisualValidation(firstFrame) && !FirstFrameMatches(temporary, firstFrame, token))
+                throw new InvalidOperationException(Strings.AnimatedGifTrimmer_DependentFrame);
             File.Move(temporary, output, true);
         }
         finally
@@ -167,6 +156,43 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
         graphics.DrawImage(source, new Rectangle(0, 0, width, height), 0, 0, source.Width, source.Height,
             GraphicsUnit.Pixel);
         return frame;
+    }
+
+    private bool FirstFrameMatches(string trimmedPath, int originalIndex, CancellationToken token)
+    {
+        token.ThrowIfCancellationRequested();
+        using Image original = Image.FromFile(FilePath);
+        using Image trimmed = Image.FromFile(trimmedPath);
+        original.SelectActiveFrame(FrameDimension.Time, originalIndex);
+        trimmed.SelectActiveFrame(FrameDimension.Time, 0);
+        using Bitmap originalFrame = DrawFrame(original);
+        using Bitmap trimmedFrame = DrawFrame(trimmed);
+        return SamePixels(originalFrame, trimmedFrame, token);
+    }
+
+    private static unsafe bool SamePixels(Bitmap first, Bitmap second, CancellationToken token)
+    {
+        if (first.Size != second.Size) return false;
+        Rectangle bounds = new(Point.Empty, first.Size);
+        BitmapData firstData = first.LockBits(bounds, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+        try
+        {
+            BitmapData secondData = second.LockBits(bounds, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+            try
+            {
+                for (int y = 0; y < first.Height; y++)
+                {
+                    token.ThrowIfCancellationRequested();
+                    byte* firstRow = (byte*)firstData.Scan0 + y * firstData.Stride;
+                    byte* secondRow = (byte*)secondData.Scan0 + y * secondData.Stride;
+                    if (!new ReadOnlySpan<byte>(firstRow, first.Width * 4).SequenceEqual(
+                        new ReadOnlySpan<byte>(secondRow, second.Width * 4))) return false;
+                }
+                return true;
+            }
+            finally { second.UnlockBits(secondData); }
+        }
+        finally { first.UnlockBits(firstData); }
     }
 
     public void Dispose()
