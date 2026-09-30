@@ -72,16 +72,6 @@ public sealed class DesktopHost : IEditorLauncher
     {
         AvaloniaBootstrapper.Initialize(args, () =>
         {
-            // Avalonia's Linux tray watcher throws TaskCanceledException on the UI thread when the icon is disposed at shutdown.
-            // That is expected, and must not turn a clean quit into a crash. Other cancellations are real bugs and still surface.
-            Dispatcher.UIThread.UnhandledException += (_, e) =>
-            {
-                if (IsTrayWatcherCancellation(e.Exception))
-                {
-                    e.Handled = true;
-                }
-            };
-
             // The theme manager needs a running Avalonia application, so it is configured here and not before Initialize.
             ThemeManager.Configure(new ApplicationThemeOptions());
             CreateTrayIcon();
@@ -249,16 +239,6 @@ public sealed class DesktopHost : IEditorLauncher
         };
 
         TrayIcon.SetIcons(Application.Current, new TrayIcons { trayIcon });
-    }
-
-    /// <summary>
-    /// True for the cancellation that Avalonia's DBusTrayIconImpl.WatchAsync (async void) lets escape once the tray icon is disposed:
-    /// Dispose cancels the watcher before setting _isDisposed, and the catch filter skips disposed instances (Avalonia 12.1.2).
-    /// </summary>
-    internal static bool IsTrayWatcherCancellation(Exception exception)
-    {
-        return exception is OperationCanceledException &&
-            exception.StackTrace?.Contains("Avalonia.FreeDesktop.DBusTrayIconImpl.", StringComparison.Ordinal) == true;
     }
 
     private static NativeMenuItem Item(string header, Action click)
