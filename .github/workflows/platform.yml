@@ -1,0 +1,52 @@
+name: Platform layer
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - "ShareX.Platform*/**"
+      - "Directory.*.props"
+      - ".github/workflows/platform.yml"
+  pull_request:
+    branches:
+      - "**"
+    paths:
+      - "ShareX.Platform*/**"
+      - "Directory.*.props"
+      - ".github/workflows/platform.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      # Each platform project builds on every OS. The tests exercise parsing and argument generation, so they run everywhere too.
+      - name: Build platform projects
+        run: |
+          dotnet build ShareX.Platform.Linux/ShareX.Platform.Linux.csproj --configuration Release
+          dotnet build ShareX.Platform.MacOS/ShareX.Platform.MacOS.csproj --configuration Release
+          dotnet build ShareX.Platform.Windows/ShareX.Platform.Windows.csproj --configuration Release
+
+      - name: Test
+        run: dotnet test ShareX.Platform.Tests/ShareX.Platform.Tests.csproj --configuration Release --logger "console;verbosity=normal"

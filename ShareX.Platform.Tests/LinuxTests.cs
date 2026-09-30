@@ -86,7 +86,7 @@ public class XdgPathServiceTests
     private static XdgPathService Create(Dictionary<string, string>? environment = null, string? userDirs = null) =>
         new XdgPathService(name => environment?.GetValueOrDefault(name), path => path == "/home/user/.config/user-dirs.dirs" ? userDirs : null, Home);
 
-    [Fact]
+    [UnixFact]
     public void BaseDirectories_FallBackToHome()
     {
         XdgPathService paths = Create();
@@ -97,7 +97,7 @@ public class XdgPathServiceTests
         Assert.Equal("/home/user/.config/ShareX", paths.GetDefaultPersonalFolder("ShareX"));
     }
 
-    [Fact]
+    [UnixFact]
     public void BaseDirectories_IgnoreRelativeValues()
     {
         XdgPathService paths = Create(new Dictionary<string, string> { ["XDG_CONFIG_HOME"] = "relative/config", ["XDG_DATA_HOME"] = "/data" });
@@ -106,7 +106,7 @@ public class XdgPathServiceTests
         Assert.Equal("/data", paths.DataHome);
     }
 
-    [Fact]
+    [UnixFact]
     public void UserDirectories_ReadLocalisedUserDirs()
     {
         const string userDirs = "# written by xdg-user-dirs-update\nXDG_DESKTOP_DIR=\"$HOME/Schreibtisch\"\nXDG_PICTURES_DIR=\"$HOME/Bilder\"\nXDG_VIDEOS_DIR=\"$HOME/\"\nXDG_DOCUMENTS_DIR=\"/mnt/docs\"\n";
@@ -119,7 +119,7 @@ public class XdgPathServiceTests
         Assert.Equal("/home/user/Videos", paths.GetVideosDirectory());
     }
 
-    [Fact]
+    [UnixFact]
     public void UserDirectories_PreferEnvironment()
     {
         XdgPathService paths = Create(new Dictionary<string, string> { ["XDG_PICTURES_DIR"] = "~/Shots" }, "XDG_PICTURES_DIR=\"$HOME/Bilder\"");
@@ -240,7 +240,7 @@ public class LinuxParsingTests
     private static readonly PlatformInfo Sway = new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.Wayland, DesktopEnvironment.Sway, "sway", false);
     private static readonly PlatformInfo X11Session = new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.X11, DesktopEnvironment.Xfce, "XFCE", false);
 
-    [Fact]
+    [UnixFact]
     public void ParseUriList_ReadsFilesAndSkipsComments()
     {
         IReadOnlyList<string> paths = LinuxClipboardService.ParseUriList("copy\n# comment\nfile:///home/user/My%20Pictures/a.png\r\nhttps://example.com/b.png\nfile:///tmp/c.txt\n");
