@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Destinations;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.UploadersLib;
@@ -91,10 +92,60 @@ namespace ShareX
         public EDataType DataType { get; set; }
         public TaskMetadata Metadata { get; set; }
 
+        /// <summary>The route and instance used for the upload. Set when the upload starts.</summary>
+        public RouteMatch Route { get; set; }
+
+        /// <summary>An instance picked for this upload only, for example in the before upload window.</summary>
+        public Guid? DestinationInstanceOverride { get; set; }
+
+        /// <summary>The route this upload will use, or the one it used. Null when routing is unavailable.</summary>
+        public RouteMatch GetRoute()
+        {
+            if (Route != null)
+            {
+                return Route;
+            }
+
+            if (DataType == EDataType.URL || ApplicationState.UploadersConfigOrNull == null || ApplicationState.DefaultTaskSettings == null)
+            {
+                return null;
+            }
+
+            try
+            {
+                RouteMatch route = DestinationRouting.Resolve(TaskSettings, DataType, FileName);
+
+                if (route != null && DestinationInstanceOverride is Guid id && DestinationRouting.Config.FindInstance(id) is DestinationInstance instance &&
+                    DestinationRouting.Config.IsCompatible(instance, route.FileType))
+                {
+                    route = route with { Instance = instance };
+                }
+
+                return route;
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+                return null;
+            }
+        }
+
         public EDataType UploadDestination
         {
             get
             {
+                RouteMatch route = Route;
+
+                if (route != null)
+                {
+                    return route.Instance.Category switch
+                    {
+                        UploaderCategory.Image => EDataType.Image,
+                        UploaderCategory.Text => EDataType.Text,
+                        _ => EDataType.File
+                    };
+                }
+
                 if ((DataType == EDataType.Image && TaskSettings.ImageDestination == ImageDestination.FileUploader) ||
                     (DataType == EDataType.Text && TaskSettings.TextDestination == TextDestination.FileUploader))
                 {
@@ -111,6 +162,11 @@ namespace ShareX
             {
                 if (IsUploadJob)
                 {
+                    if (DataType != EDataType.URL && GetRoute() is RouteMatch route)
+                    {
+                        return route.Instance.Name;
+                    }
+
                     switch (UploadDestination)
                     {
                         case EDataType.Image:
@@ -179,13 +235,32 @@ namespace ShareX
                     tags.Add("ProcessName", Metadata.ProcessName);
                 }
 
+                AddRouteTags(tags);
+
                 if (tags.Count > 0)
                 {
                     return tags;
                 }
             }
+            else if (Route != null)
+            {
+                Dictionary<string, string> tags = new Dictionary<string, string>();
+                AddRouteTags(tags);
+                return tags;
+            }
 
             return null;
+        }
+
+        private void AddRouteTags(Dictionary<string, string> tags)
+        {
+            // Tags keep the history database format unchanged.
+            if (Route != null)
+            {
+                tags["Route"] = Route.FileType.Name;
+                tags["DestinationInstance"] = Route.Instance.Name;
+                tags["DestinationInstanceId"] = Route.Instance.Id.ToString();
+            }
         }
 
         public override string ToString()

@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -312,6 +312,15 @@ namespace ShareX
 
         private static void UploadersConfigBackwardCompatibilityTasks()
         {
+            try
+            {
+                DestinationRouting.Migrate(UploadersConfig, DefaultTaskSettings, HotkeysConfig?.Hotkeys?.Select(x => x.TaskSettings));
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
             if (UploadersConfig.CustomUploadersList != null)
             {
                 foreach (CustomUploaderItem cui in UploadersConfig.CustomUploadersList)
@@ -329,6 +338,18 @@ namespace ShareX
 
         private static void HotkeysConfigBackwardCompatibilityTasks()
         {
+            if (UploadersConfig != null)
+            {
+                try
+                {
+                    DestinationRouting.Migrate(UploadersConfig, null, HotkeysConfig.Hotkeys.Select(x => x.TaskSettings));
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
+            }
+
             if (SystemOptions.DisableUpload)
             {
                 foreach (TaskSettings taskSettings in HotkeysConfig.Hotkeys.Select(x => x.TaskSettings))

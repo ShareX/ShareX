@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Destinations;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
@@ -500,5 +501,12 @@ namespace ShareX.UploadersLib
         #endregion Custom uploaders
 
         #endregion Other uploaders
+
+        #region Destination routing
+
+        /// <summary>Destination instances and custom file types. Routes live in task settings.</summary>
+        public DestinationRoutingConfig DestinationRouting { get; set; } = new DestinationRoutingConfig();
+
+        #endregion Destination routing
     }
 }

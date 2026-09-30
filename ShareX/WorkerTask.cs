@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Destinations;
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using ShareX.UploadersLib;
@@ -435,7 +436,7 @@ namespace ShareX
 
             try
             {
-                if (!CheckUploadFilters(data, fileName))
+                if (!CheckUploadFilters(data, fileName) && !UploadWithRoute(data, fileName))
                 {
                     switch (Info.UploadDestination)
                     {
@@ -899,14 +900,51 @@ namespace ShareX
             }
         }
 
-        public UploadResult UploadData(IGenericUploaderService service, Stream stream, string fileName)
+        /// <summary>Uploads through the route that matches the file. Returns false when no route applies, so the legacy destinations are used.</summary>
+        private bool UploadWithRoute(Stream data, string fileName)
         {
-            if (!service.CheckConfig(ApplicationState.UploadersConfig))
+            Info.Route = null;
+            RouteMatch route = Info.GetRoute();
+
+            if (route == null)
+            {
+                return false;
+            }
+
+            IGenericUploaderService service = DestinationCatalog.GetService(route.Instance);
+
+            if (service == null)
+            {
+                DebugHelper.WriteLine($"Destination instance \"{route.Instance.Name}\" uses an unknown uploader \"{route.Instance.Uploader}\".");
+                return false;
+            }
+
+            Info.Route = route;
+            DebugHelper.WriteLine("Upload route: " + route.Description);
+            DestinationCatalog.ApplyAccount(taskReferenceHelper, route.Instance);
+            Info.Result = UploadData(service, data, fileName, route.Instance);
+            return true;
+        }
+
+        public UploadResult UploadData(IGenericUploaderService service, Stream stream, string fileName, DestinationInstance instance = null)
+        {
+            UploadersConfig config = ApplicationState.UploadersConfig;
+
+            if (instance != null)
+            {
+                if (!DestinationCatalog.CheckConfig(instance, config))
+                {
+                    return GetInvalidConfigResult(service);
+                }
+
+                config = DestinationCatalog.CreateConfig(config, instance);
+            }
+            else if (!service.CheckConfig(config))
             {
                 return GetInvalidConfigResult(service);
             }
 
-            uploader = service.CreateUploader(ApplicationState.UploadersConfig, taskReferenceHelper);
+            uploader = service.CreateUploader(config, taskReferenceHelper);
 
             if (uploader != null)
             {
@@ -938,6 +976,12 @@ namespace ShareX
                 UploadResult result = uploader.UploadAsync(stream, fileName).GetAwaiter().GetResult();
 
                 Info.UploadDuration.Stop();
+
+                if (instance != null && instance.HasOwnSettings && config != ApplicationState.UploadersConfig)
+                {
+                    // Uploaders refresh OAuth tokens in the settings they were given. Keep them with the instance.
+                    DestinationCatalog.CaptureSettings(config, instance);
+                }
 
                 return result;
             }

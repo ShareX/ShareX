@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -1674,19 +1674,39 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
     }
 
-    private static bool CanDeleteAmazonS3Object(UploadInfoStatus? selected)
+    private static bool CanDeleteAmazonS3Object(UploadInfoStatus? selected) => GetAmazonS3Settings(selected) != null;
+
+    /// <summary>The Amazon S3 settings the selected upload used, including those of a duplicated instance.</summary>
+    private static AmazonS3Settings? GetAmazonS3Settings(UploadInfoStatus? selected)
     {
         if (selected?.Info is not TaskInfo info ||
             string.IsNullOrEmpty(info.Result?.URL) ||
             !info.IsUploadJob ||
-            info.UploadDestination != EDataType.File ||
-            info.TaskSettings.GetFileDestinationByDataType(info.DataType) != FileDestination.AmazonS3)
+            ApplicationState.UploadersConfigOrNull == null)
         {
-            return false;
+            return null;
         }
 
-        return ApplicationState.UploadersConfigOrNull != null &&
-            UploadersConfigValidator.Validate(FileDestination.AmazonS3, ApplicationState.UploadersConfig);
+        if (info.Route != null)
+        {
+            if (info.Route.Instance.Category != Destinations.UploaderCategory.File || info.Route.Instance.Uploader != nameof(FileDestination.AmazonS3))
+            {
+                return null;
+            }
+
+            UploadersConfig config = DestinationCatalog.CreateConfig(ApplicationState.UploadersConfig, info.Route.Instance);
+            return UploadersConfigValidator.Validate(FileDestination.AmazonS3, config) ? config.AmazonS3Settings : null;
+        }
+
+        if (info.UploadDestination != EDataType.File ||
+            info.TaskSettings.GetFileDestinationByDataType(info.DataType) != FileDestination.AmazonS3)
+        {
+            return null;
+        }
+
+        return UploadersConfigValidator.Validate(FileDestination.AmazonS3, ApplicationState.UploadersConfig)
+            ? ApplicationState.UploadersConfig.AmazonS3Settings
+            : null;
     }
 
     private async Task DeleteSelectedItemRemotelyAsync()
@@ -1709,7 +1729,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         try
         {
-            AmazonS3 uploader = new AmazonS3(ApplicationState.UploadersConfig.AmazonS3Settings);
+            AmazonS3 uploader = new AmazonS3(GetAmazonS3Settings(selected)!);
 
             if (uploader.TryGetObjectKey(selected!.Info.Result.URL, out string objectKey))
             {

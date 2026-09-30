@@ -1,4 +1,4 @@
-name: Platform layer
+name: Portable libraries
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - "**"
     paths:
       - "ShareX.Platform*/**"
+      - "ShareX.Destinations*/**"
       - "Directory.*.props"
       - ".github/workflows/platform.yml"
   pull_request:
@@ -13,6 +14,7 @@ on:
       - "**"
     paths:
       - "ShareX.Platform*/**"
+      - "ShareX.Destinations*/**"
       - "Directory.*.props"
       - ".github/workflows/platform.yml"
 
@@ -48,5 +50,8 @@ jobs:
           dotnet build ShareX.Platform.MacOS/ShareX.Platform.MacOS.csproj --configuration Release
           dotnet build ShareX.Platform.Windows/ShareX.Platform.Windows.csproj --configuration Release
 
-      - name: Test
+      - name: Test platform layer
         run: dotnet test ShareX.Platform.Tests/ShareX.Platform.Tests.csproj --configuration Release --logger "console;verbosity=normal"
+
+      - name: Test destination routing
+        run: dotnet test ShareX.Destinations.Tests/ShareX.Destinations.Tests.csproj --configuration Release --logger "console;verbosity=normal"

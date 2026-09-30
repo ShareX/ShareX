@@ -25,6 +25,7 @@
 
 using Newtonsoft.Json;
 using ShareX.AvaloniaUI.Windows;
+using ShareX.Destinations;
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEffectsLib;
@@ -65,6 +66,11 @@ namespace ShareX
         public TextDestination TextDestination = TextDestination.Pastebin;
         public FileDestination TextFileDestination = FileDestination.Dropbox;
         public FileDestination FileDestination = FileDestination.Dropbox;
+        /// <summary>
+        /// Upload routes. The default task settings hold the full table. Other tasks hold only the routes they override,
+        /// and use them when UseDefaultDestinations is false. The image, text and file destinations above are kept in step for older versions.
+        /// </summary>
+        public List<DestinationRoute> DestinationRoutes = null;
         public UrlShortenerType URLShortenerDestination = UrlShortenerType.BITLY;
         public URLSharingServices URLSharingServiceDestination = URLSharingServices.Email;
 
