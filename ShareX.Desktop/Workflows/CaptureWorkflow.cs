@@ -68,6 +68,11 @@ public sealed class CaptureWorkflow
         {
             result = await capture.CaptureAsync(CreateRequest(target, capture), cancellationToken).ConfigureAwait(false);
         }
+        catch (OperationCanceledException) when (!cancellationToken.IsCancellationRequested)
+        {
+            // The selector was closed or killed, which is a cancel and not a failure of the workflow itself.
+            return new WorkflowResult(false, "Capture cancelled.");
+        }
         catch (Exception ex) when (ex is not OperationCanceledException)
         {
             // Closing the region selector without choosing an area is the normal way to cancel, not an error worth a notification.

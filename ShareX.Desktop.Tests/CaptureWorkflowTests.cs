@@ -244,6 +244,28 @@ public sealed class CaptureWorkflowTests : IDisposable
     }
 
     [Fact]
+    public async Task Region_SelectorKilled_IsACancelNotACrash()
+    {
+        platform.Capture.Throw = new OperationCanceledException();
+
+        WorkflowResult result = await workflow.CaptureAsync(CaptureTarget.Region, Actions());
+
+        Assert.False(result.Success);
+        Assert.Equal("Capture cancelled.", result.Message);
+        Assert.Empty(platform.NotificationsFake.Shown);
+    }
+
+    [Fact]
+    public async Task Capture_CancelledByTheCaller_StillPropagates()
+    {
+        platform.Capture.Throw = new OperationCanceledException();
+        using CancellationTokenSource cts = new CancellationTokenSource();
+        cts.Cancel();
+
+        await Assert.ThrowsAsync<OperationCanceledException>(() => workflow.CaptureAsync(CaptureTarget.Region, Actions(), cts.Token));
+    }
+
+    [Fact]
     public async Task FullScreen_RealFailure_IsNotMistakenForACancel()
     {
         platform.Capture.Throw = new InvalidOperationException("grim failed: compositor does not support screencopy");

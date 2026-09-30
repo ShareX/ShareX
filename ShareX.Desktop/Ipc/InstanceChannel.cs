@@ -211,6 +211,10 @@ public sealed class InstanceServer : IAsyncDisposable
                 {
                     response = new CommandResponse(false, "The command could not be read.");
                 }
+                catch (OperationCanceledException) when (!cancellation.IsCancellationRequested)
+                {
+                    response = new CommandResponse(false, "The command was cancelled.");
+                }
                 catch (Exception ex) when (ex is not OperationCanceledException)
                 {
                     response = new CommandResponse(false, ex.Message);

@@ -68,6 +68,16 @@ public sealed class DesktopHost : IEditorLauncher
     {
         AvaloniaBootstrapper.Initialize(args, () =>
         {
+            // Avalonia's Linux tray watcher throws TaskCanceledException on the UI thread when the icon is disposed at shutdown.
+            // That is expected, and must not turn a clean quit into a crash.
+            Dispatcher.UIThread.UnhandledException += (_, e) =>
+            {
+                if (e.Exception is OperationCanceledException)
+                {
+                    e.Handled = true;
+                }
+            };
+
             // The theme manager needs a running Avalonia application, so it is configured here and not before Initialize.
             ThemeManager.Configure(new ApplicationThemeOptions());
             CreateTrayIcon();
