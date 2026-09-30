@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.Win32;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
 using System.Windows.Forms;
 
@@ -53,6 +53,12 @@ namespace ShareX
             }
         }
 
+        private static StartupRegistration Registration => new StartupRegistration("ShareX", "ShareX", StartupTargetPath, ["-silent"])
+        {
+            BundleIdentifier = "com.getsharex.ShareX",
+            IconName = "sharex"
+        };
+
         public static StartupState State
         {
             get
@@ -60,22 +66,8 @@ namespace ShareX
 #if MicrosoftStore
                 return (StartupState)packageTask.State;
 #else
-                if (ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath))
-                {
-                    if (Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder",
-                        "ShareX.lnk", null) is byte[] status && status.Length > 0 && status[0] == 3)
-                    {
-                        return StartupState.DisabledByUser;
-                    }
-                    else
-                    {
-                        return StartupState.Enabled;
-                    }
-                }
-                else
-                {
-                    return StartupState.Disabled;
-                }
+                // Startup folder shortcut on Windows, launch agent on macOS, XDG autostart entry on Linux.
+                return (StartupState)PlatformServices.Current.Startup.GetState(Registration);
 #endif
             }
             set
@@ -96,7 +88,15 @@ namespace ShareX
 #else
                 if (value == StartupState.Enabled || value == StartupState.Disabled)
                 {
-                    ShortcutHelpers.SetShortcut(value == StartupState.Enabled, Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath, "-silent");
+                    try
+                    {
+                        PlatformServices.Current.Startup.SetEnabled(Registration, value == StartupState.Enabled);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                        e.ShowError();
+                    }
                 }
                 else
                 {

@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.Localization;
+using ShareX.Platform;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -40,20 +41,10 @@ namespace ShareX
         private static readonly string FileIconPath = $"\"{FileHelpers.GetAbsolutePath("ShareX_File_Icon.ico")}\"";
 
         private static readonly string ShellExtMenuName = "ShareX";
-        private static readonly string ShellExtMenuFiles = $@"Software\Classes\*\shell\{ShellExtMenuName}";
-        private static readonly string ShellExtMenuFilesCmd = $@"{ShellExtMenuFiles}\command";
-        private static readonly string ShellExtMenuDirectory = $@"Software\Classes\Directory\shell\{ShellExtMenuName}";
-        private static readonly string ShellExtMenuDirectoryCmd = $@"{ShellExtMenuDirectory}\command";
         private static readonly string ShellExtDesc = Strings.IntegrationHelpers_UploadWithShareX;
-        private static readonly string ShellExtIcon = $"{ApplicationPath},0";
-        private static readonly string ShellExtPath = $"{ApplicationPath} \"%1\"";
 
         private static readonly string ShellExtEditName = "ShareXImageEditor";
-        private static readonly string ShellExtEditImage = $@"Software\Classes\SystemFileAssociations\image\shell\{ShellExtEditName}";
-        private static readonly string ShellExtEditImageCmd = $@"{ShellExtEditImage}\command";
         private static readonly string ShellExtEditDesc = Strings.IntegrationHelpers_EditWithShareX;
-        private static readonly string ShellExtEditIcon = $"{ApplicationPath},0";
-        private static readonly string ShellExtEditPath = $"{ApplicationPath} -ImageEditor \"%1\"";
 
         private static readonly string ShellCustomUploaderExtensionPath = @"Software\Classes\.sxcu";
         private static readonly string ShellCustomUploaderExtensionValue = "ShareX.sxcu";
@@ -78,12 +69,18 @@ namespace ShareX
         private static readonly string ChromeHostManifestFilePath = FileHelpers.GetAbsolutePath("host-manifest-chrome.json");
         private static readonly string FirefoxHostManifestFilePath = FileHelpers.GetAbsolutePath("host-manifest-firefox.json");
 
+        // Explorer on Windows, Nautilus, Dolphin, Nemo, Caja and Thunar on Linux.
+        private static ShellMenuEntry UploadMenuEntry => new ShellMenuEntry(ShellExtMenuName, ShellExtDesc, Application.ExecutablePath,
+            Array.Empty<string>(), ShellMenuTarget.FilesAndFolders);
+
+        private static ShellMenuEntry EditMenuEntry => new ShellMenuEntry(ShellExtEditName, ShellExtEditDesc, Application.ExecutablePath,
+            ["-ImageEditor"], ShellMenuTarget.Images);
+
         public static bool CheckShellContextMenuButton()
         {
             try
             {
-                return RegistryHelpers.CheckStringValue(ShellExtMenuFilesCmd, null, ShellExtPath) &&
-                    RegistryHelpers.CheckStringValue(ShellExtMenuDirectoryCmd, null, ShellExtPath);
+                return PlatformServices.Current.ShellIntegration.IsRegistered(UploadMenuEntry);
             }
             catch (Exception e)
             {
@@ -115,26 +112,19 @@ namespace ShareX
 
         private static void RegisterShellContextMenuButton()
         {
-            RegistryHelpers.CreateRegistry(ShellExtMenuFiles, ShellExtDesc);
-            RegistryHelpers.CreateRegistry(ShellExtMenuFiles, "Icon", ShellExtIcon);
-            RegistryHelpers.CreateRegistry(ShellExtMenuFilesCmd, ShellExtPath);
-
-            RegistryHelpers.CreateRegistry(ShellExtMenuDirectory, ShellExtDesc);
-            RegistryHelpers.CreateRegistry(ShellExtMenuDirectory, "Icon", ShellExtIcon);
-            RegistryHelpers.CreateRegistry(ShellExtMenuDirectoryCmd, ShellExtPath);
+            PlatformServices.Current.ShellIntegration.Register(UploadMenuEntry);
         }
 
         private static void UnregisterShellContextMenuButton()
         {
-            RegistryHelpers.RemoveRegistry(ShellExtMenuFiles);
-            RegistryHelpers.RemoveRegistry(ShellExtMenuDirectory);
+            PlatformServices.Current.ShellIntegration.Unregister(UploadMenuEntry);
         }
 
         public static bool CheckEditShellContextMenuButton()
         {
             try
             {
-                return RegistryHelpers.CheckStringValue(ShellExtEditImageCmd, null, ShellExtEditPath);
+                return PlatformServices.Current.ShellIntegration.IsRegistered(EditMenuEntry);
             }
             catch (Exception e)
             {
@@ -166,14 +156,12 @@ namespace ShareX
 
         private static void RegisterEditShellContextMenuButton()
         {
-            RegistryHelpers.CreateRegistry(ShellExtEditImage, ShellExtEditDesc);
-            RegistryHelpers.CreateRegistry(ShellExtEditImage, "Icon", ShellExtEditIcon);
-            RegistryHelpers.CreateRegistry(ShellExtEditImageCmd, ShellExtEditPath);
+            PlatformServices.Current.ShellIntegration.Register(EditMenuEntry);
         }
 
         private static void UnregisterEditShellContextMenuButton()
         {
-            RegistryHelpers.RemoveRegistry(ShellExtEditImage);
+            PlatformServices.Current.ShellIntegration.Unregister(EditMenuEntry);
         }
 
         public static bool CheckCustomUploaderExtension()

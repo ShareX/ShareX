@@ -26,6 +26,7 @@
 #nullable enable
 
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
 using System.IO;
 
@@ -37,8 +38,10 @@ internal static class AppPaths
     internal const string HistoryFileNameOld = "History.json";
     internal const string LogsFolderName = "Logs";
 
-    internal static readonly string DefaultPersonalFolder =
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), ApplicationInfo.Name);
+    // Documents\ShareX on Windows, ~/Library/Application Support/ShareX on macOS, $XDG_CONFIG_HOME/ShareX on Linux.
+    internal static string DefaultPersonalFolder => PlatformServices.IsInitialized
+        ? PlatformServices.Current.Paths.GetDefaultPersonalFolder(ApplicationInfo.Name)
+        : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), ApplicationInfo.Name);
     internal static readonly string PortablePersonalFolder = FileHelpers.GetAbsolutePath(ApplicationInfo.Name);
     internal static readonly string PortableCheckFilePath = FileHelpers.GetAbsolutePath("Portable");
     internal static readonly string SteamInAppFilePath = FileHelpers.GetAbsolutePath("Steam");
