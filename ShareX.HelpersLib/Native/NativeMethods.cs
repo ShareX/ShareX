@@ -38,6 +38,7 @@ namespace ShareX.HelpersLib
 
     #endregion Delegates
 
+    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     public static partial class NativeMethods
     {
         #region user32.dll

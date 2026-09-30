@@ -29,6 +29,7 @@ using System.Drawing;
 
 namespace ShareX.HelpersLib
 {
+    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     public class WindowInfo
     {
         public IntPtr Handle { get; }

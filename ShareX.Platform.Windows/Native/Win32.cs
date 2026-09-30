@@ -214,6 +214,10 @@ internal static unsafe partial class Win32
 
     [LibraryImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool GetCursorPos(out POINT point);
+
+    [LibraryImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
     public static partial bool GetIconInfo(IntPtr icon, out ICONINFO info);
 
     [LibraryImport("user32.dll")]

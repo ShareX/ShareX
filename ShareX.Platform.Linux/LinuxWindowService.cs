@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -85,6 +85,43 @@ public sealed class LinuxWindowService : IWindowService
         Backend.Sway => RunJson("swaymsg", ["-t", "get_tree", "-r"], ParseSwayTree),
         _ => Array.Empty<PlatformWindow>()
     };
+
+    public PlatformPoint? GetCursorPosition()
+    {
+        switch (ActiveBackend)
+        {
+            case Backend.X11:
+                using (X11Display? display = X11Display.TryOpen())
+                {
+                    return display?.GetPointerPosition();
+                }
+            case Backend.Hyprland:
+                try
+                {
+                    CommandResult result = runner.RunAsync("hyprctl", ["cursorpos"], timeout: TimeSpan.FromSeconds(2)).GetAwaiter().GetResult();
+                    return result.Success ? ParseHyprlandCursorPosition(result.StandardOutputText) : null;
+                }
+                catch (Exception e) when (e is TimeoutException or System.ComponentModel.Win32Exception or InvalidOperationException)
+                {
+                    return null;
+                }
+            default:
+                // sway and the other Wayland compositors do not tell clients where the pointer is.
+                return null;
+        }
+    }
+
+    /// <summary>hyprctl cursorpos prints "x, y" in layout coordinates.</summary>
+    internal static PlatformPoint? ParseHyprlandCursorPosition(string output)
+    {
+        string[] parts = output.Trim().Split(',', StringSplitOptions.TrimEntries);
+
+        return parts.Length == 2 &&
+            double.TryParse(parts[0], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out double x) &&
+            double.TryParse(parts[1], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out double y)
+            ? new PlatformPoint((int)Math.Round(x), (int)Math.Round(y))
+            : null;
+    }
 
     public PlatformWindow? GetActiveWindow()
     {

@@ -28,7 +28,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -474,11 +473,6 @@ namespace ShareX.HelpersLib
                     chs[i] = ' ';
             }
             return new string(chs);
-        }
-
-        public static bool FlashWindowEx(Form frm, uint flashCount = uint.MaxValue)
-        {
-            return FlashWindowEx(frm.Handle, flashCount);
         }
 
         public static bool FlashWindowEx(IntPtr handle, uint flashCount = uint.MaxValue)

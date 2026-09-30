@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -41,4 +41,10 @@ public interface IWindowService
     IReadOnlyList<PlatformWindow> GetWindows();
 
     PlatformWindow? GetActiveWindow();
+
+    /// <summary>
+    /// The mouse pointer on the virtual desktop, in the same coordinates as IScreenCaptureService.GetScreens, or null where the session does not reveal it
+    /// (for example Wayland compositors other than Hyprland).
+    /// </summary>
+    PlatformPoint? GetCursorPosition();
 }

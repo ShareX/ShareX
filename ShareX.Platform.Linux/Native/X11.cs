@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -159,6 +159,10 @@ internal static unsafe partial class X11
 
     [LibraryImport(LibX11)]
     public static partial int XDefaultScreen(IntPtr display);
+
+    [LibraryImport(LibX11)]
+    public static partial int XQueryPointer(IntPtr display, nuint window, out nuint rootReturn, out nuint childReturn,
+        out int rootX, out int rootY, out int windowX, out int windowY, out uint mask);
 
     [LibraryImport(LibX11)]
     public static partial nuint XDefaultRootWindow(IntPtr display);

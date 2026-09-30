@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -225,6 +225,24 @@ public class LinuxShellIntegrationTests
 
 public class LinuxParsingTests
 {
+    [Theory]
+    [InlineData("2874, 144", 2874, 144)]
+    [InlineData("-1920, 30.6", -1920, 31)]
+    [InlineData(" 10,20 \n", 10, 20)]
+    public void ParseHyprlandCursorPosition_ReadsLayoutCoordinates(string output, int x, int y)
+    {
+        Assert.Equal(new PlatformPoint(x, y), LinuxWindowService.ParseHyprlandCursorPosition(output));
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("error: no monitors")]
+    [InlineData("1, 2, 3")]
+    public void ParseHyprlandCursorPosition_RejectsAnythingElse(string output)
+    {
+        Assert.Null(LinuxWindowService.ParseHyprlandCursorPosition(output));
+    }
+
     private sealed class FakeRunner(params string[] commands) : Diagnostics.ICommandRunner
     {
         public bool Exists(string command) => Array.IndexOf(commands, command) >= 0;

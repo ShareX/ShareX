@@ -23,50 +23,23 @@
 
 #endregion License Information (GPL v3)
 
+using System.Diagnostics;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Windows.Forms;
 using System;
 
 namespace ShareX.HelpersLib
 {
-    public class DWMManager : IDisposable
+    // Windows-only members of NativeMethods, kept in the same namespace so existing call sites keep compiling.
+    public static class NativeMethodsWindows
     {
-        private bool isDWMEnabled;
-        private bool autoEnable;
-
-        public DWMManager()
+        extension(NativeMethods)
         {
-            isDWMEnabled = NativeMethods.IsDWMEnabled();
-        }
-
-        public bool AutoDisable()
-        {
-            if (isDWMEnabled)
+            public static bool FlashWindowEx(Form frm, uint flashCount = uint.MaxValue)
             {
-                ChangeComposition(false);
-                autoEnable = true;
-                return true;
-            }
-
-            return false;
-        }
-
-        public void ChangeComposition(bool enable)
-        {
-            try
-            {
-                NativeMethods.DwmEnableComposition(enable ? DWM_EC.DWM_EC_ENABLECOMPOSITION : DWM_EC.DWM_EC_DISABLECOMPOSITION);
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-        }
-
-        public void Dispose()
-        {
-            if (isDWMEnabled && autoEnable)
-            {
-                ChangeComposition(true);
-                autoEnable = false;
+                return NativeMethods.FlashWindowEx(frm.Handle, flashCount);
             }
         }
     }

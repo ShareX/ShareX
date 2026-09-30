@@ -30,6 +30,7 @@ using System.Runtime.InteropServices;
 
 namespace ShareX.HelpersLib
 {
+    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     public class CursorData
     {
         public IntPtr Handle { get; private set; }
@@ -111,7 +112,7 @@ namespace ShareX.HelpersLib
         {
             float sizeMultiplier = 1f;
 
-            int? cursorSize = RegistryHelpers.GetValueDWord(@"SOFTWARE\Microsoft\Accessibility", "CursorSize");
+            int? cursorSize = Microsoft.Win32.Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\Microsoft\Accessibility", "CursorSize", null) as int?;
 
             if (cursorSize != null && cursorSize > 1)
             {

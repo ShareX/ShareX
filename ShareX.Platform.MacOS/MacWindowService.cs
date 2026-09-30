@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -87,6 +87,27 @@ public sealed class MacWindowService : IWindowService
         finally
         {
             CoreFoundation.CFRelease(list);
+        }
+    }
+
+    /// <summary>A null event's location is the current pointer position, in global display coordinates with the origin top left.</summary>
+    public PlatformPoint? GetCursorPosition()
+    {
+        IntPtr evt = CoreGraphics.CGEventCreate(IntPtr.Zero);
+
+        if (evt == IntPtr.Zero)
+        {
+            return null;
+        }
+
+        try
+        {
+            CoreGraphics.CGPoint location = CoreGraphics.CGEventGetLocation(evt);
+            return new PlatformPoint((int)Math.Round(location.X), (int)Math.Round(location.Y));
+        }
+        finally
+        {
+            CoreFoundation.CFRelease(evt);
         }
     }
 

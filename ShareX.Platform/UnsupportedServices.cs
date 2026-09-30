@@ -64,6 +64,8 @@ public sealed class UnsupportedWindowService(string reason) : IWindowService
     public IReadOnlyList<PlatformWindow> GetWindows() => Array.Empty<PlatformWindow>();
 
     public PlatformWindow? GetActiveWindow() => null;
+
+    public PlatformPoint? GetCursorPosition() => null;
 }
 
 public sealed class UnsupportedShellIntegrationService(string reason) : IShellIntegrationService

@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -74,6 +74,9 @@ internal sealed unsafe class X11Display : IDisposable
             return null;
         }
     }
+
+    public PlatformPoint? GetPointerPosition() =>
+        X11.XQueryPointer(Display, Root, out _, out _, out int x, out int y, out _, out _, out _) != 0 ? new PlatformPoint(x, y) : null;
 
     public PlatformRectangle GetRootBounds()
     {

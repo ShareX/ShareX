@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -49,6 +49,19 @@ internal static unsafe partial class CoreGraphics
 
     [LibraryImport(Library)]
     public static partial int CGGetActiveDisplayList(uint maxDisplays, uint* displays, out uint displayCount);
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CGPoint
+    {
+        public double X;
+        public double Y;
+    }
+
+    [LibraryImport(Library)]
+    public static partial IntPtr CGEventCreate(IntPtr source);
+
+    [LibraryImport(Library)]
+    public static partial CGPoint CGEventGetLocation(IntPtr evt);
 
     [LibraryImport(Library)]
     public static partial uint CGMainDisplayID();

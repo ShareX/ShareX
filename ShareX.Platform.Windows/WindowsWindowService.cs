@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -65,6 +65,8 @@ public sealed unsafe class WindowsWindowService : IWindowService
 
         return windows;
     }
+
+    public PlatformPoint? GetCursorPosition() => Win32.GetCursorPos(out Win32.POINT point) ? new PlatformPoint(point.X, point.Y) : null;
 
     public PlatformWindow? GetActiveWindow()
     {
