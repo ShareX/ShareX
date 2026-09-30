@@ -50,7 +50,16 @@ powershell -NoProfile -ExecutionPolicy Bypass -File Scripts\ValidateTranslations
 
 ## Localizing another area
 
-1. Add directly scoped keys to `Strings.resx`, such as `AboutWindow_Title`.
-2. Add translated values to every `Strings.<culture>.resx` file.
-3. Use direct `Strings.<key>` references in AXAML and C#.
-4. Run `Scripts/ValidateTranslations.ps1` and build ShareX.
+Add directly scoped keys to `Strings.resx`, such as `AboutWindow_Title`, and use direct `Strings.<key>` references in AXAML and C#. Keep the corresponding `Strings.Designer.cs` accessors up to date.
+
+Use the reusable batch helper with PowerShell 7.2 or newer to translate a particular project and resource prefix:
+
+```powershell
+pwsh -File Scripts/Resx.ps1 export -Project ShareX -Prefix AboutWindow_ -Path artifacts/about-translations.json
+pwsh -File Scripts/Resx.ps1 import -Path artifacts/about-translations.json
+pwsh -File Scripts/Resx.ps1 check -Project ShareX -Prefix AboutWindow_
+```
+
+Fill the exported JSON's `translations` values before importing. Missing values start as null; null cells remain pending. The helper discovers supported catalog cultures, suggests matching existing translations, checks placeholders and stale snapshots, and only writes changed catalogs. Use `find -Text 'Pause' -Culture tr,fr` for compact terminology lookup, `-IncludeExisting` when revising existing wording, or `import -WhatIf` for a preview. Batches default to at most 40 keys and can be split by `-Key`, `-Prefix`, or `-Culture`.
+
+The repository skill at `.agents/skills/sharex-resx/SKILL.md` documents the workflow for AI agents. Run `Scripts/ValidateTranslations.ps1` once after completing the requested translations and build ShareX when source or designer references changed. Test changes to the helper with `pwsh -File Scripts/Test-ResxTools.ps1`.

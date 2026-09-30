@@ -1,0 +1,7 @@
+interface:
+  display_name: "ShareX RESX Translations"
+  short_description: "Translate ShareX RESX strings using batch helpers"
+  default_prompt: "Use $sharex-resx to translate the requested ShareX UI strings with the repository's batch helpers."
+
+policy:
+  allow_implicit_invocation: true
