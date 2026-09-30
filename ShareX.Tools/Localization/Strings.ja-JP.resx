@@ -268,6 +268,72 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 は無限に繰り返します。</value>
   </data>
+  <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
+    <value>アニメーションGIFを開くかドロップして開始します</value>
+  </data>
+  <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
+    <value>この範囲の先頭フレームには前のフレームが必要です。ロスレスで出力するには別の開始フレームを選択してください。</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Export" xml:space="preserve">
+    <value>トリミングしたGIFを保存…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Exporting" xml:space="preserve">
+    <value>トリミングしたGIFを保存中…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Frame" xml:space="preserve">
+    <value>フレーム {0} / {1}</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Gif" xml:space="preserve">
+    <value>アニメーションGIF</value>
+  </data>
+  <data name="AnimatedGifTrimmer_GifFiles" xml:space="preserve">
+    <value>GIFファイル</value>
+  </data>
+  <data name="AnimatedGifTrimmer_InvalidGif" xml:space="preserve">
+    <value>2フレーム以上のアニメーションGIFを選択してください。</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Loading" xml:space="preserve">
+    <value>GIFのタイムラインを準備中…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Lossless" xml:space="preserve">
+    <value>ロスレス</value>
+  </data>
+  <data name="AnimatedGifTrimmer_NextFrame" xml:space="preserve">
+    <value>次のフレーム</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Open" xml:space="preserve">
+    <value>GIFを開く…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_OutputExtension" xml:space="preserve">
+    <value>出力ファイルの拡張子には .gif を使用してください。</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Pause" xml:space="preserve">
+    <value>一時停止</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Play" xml:space="preserve">
+    <value>再生</value>
+  </data>
+  <data name="AnimatedGifTrimmer_PreviousFrame" xml:space="preserve">
+    <value>前のフレーム</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
+    <value>再エンコード</value>
+  </data>
+  <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
+    <value>トリミングしたGIFは別のファイル名または別のフォルダーに保存してください。</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Timeline" xml:space="preserve">
+    <value>GIFのタイムラインとトリミング範囲</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Title" xml:space="preserve">
+    <value>ShareX - アニメーションGIFトリマー</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UnsupportedGif" xml:space="preserve">
+    <value>このGIFにはプレーンテキストのグラフィックブロックが含まれており、ロスレストリマーで安全にコピーできません。</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
+    <value>この範囲には前のフレームが必要なため、ロスレスで保存できません。トリミングモードを「再エンコード」にして、もう一度保存してください。</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>{0} ms で背景を削除しました。</value>
   </data>

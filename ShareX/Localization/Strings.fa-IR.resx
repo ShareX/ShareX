@@ -1379,6 +1379,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>سازنده GIF متحرک...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>برش‌دهندهٔ GIF متحرک...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>تنظیمات برنامه...</value>
   </data>
@@ -1831,6 +1834,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>بندانگشتی URL</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>برش GIF متحرک</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>برش ویدئو...</value>

@@ -1379,6 +1379,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Trình tạo GIF động...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Công cụ cắt GIF động...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Cài đặt ứng dụng...</value>
   </data>
@@ -1831,6 +1834,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>URL hình thu nhỏ</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Cắt GIF động</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Cắt video...</value>

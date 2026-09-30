@@ -1379,6 +1379,9 @@
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>صانع GIF متحرك...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>أداة قص صور GIF المتحركة...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>إعدادات التطبيق...</value>
   </data>
@@ -1831,6 +1834,9 @@
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>عنوان URL للصورة المصغرة</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>قص صورة GIF متحركة</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>قص الفيديو...</value>

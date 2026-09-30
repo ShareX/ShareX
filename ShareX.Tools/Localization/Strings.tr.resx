@@ -268,6 +268,72 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 sonsuza kadar tekrarlar.</value>
   </data>
+  <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
+    <value>Başlamak için animasyonlu bir GIF açın veya sürükleyip bırakın</value>
+  </data>
+  <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
+    <value>Bu kesim, önceki karelere ihtiyaç duyan bir kareyle başlıyor. Kayıpsız dışa aktarmak için başka bir başlangıç karesi seçin.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Export" xml:space="preserve">
+    <value>Kırpılmış GIF'i kaydet…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Exporting" xml:space="preserve">
+    <value>Kırpılmış GIF kaydediliyor…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Frame" xml:space="preserve">
+    <value>Kare {0} / {1}</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Gif" xml:space="preserve">
+    <value>Animasyonlu GIF</value>
+  </data>
+  <data name="AnimatedGifTrimmer_GifFiles" xml:space="preserve">
+    <value>GIF dosyaları</value>
+  </data>
+  <data name="AnimatedGifTrimmer_InvalidGif" xml:space="preserve">
+    <value>En az iki kare içeren animasyonlu bir GIF seçin.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Loading" xml:space="preserve">
+    <value>GIF zaman çizelgesi hazırlanıyor…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Lossless" xml:space="preserve">
+    <value>Kayıpsız</value>
+  </data>
+  <data name="AnimatedGifTrimmer_NextFrame" xml:space="preserve">
+    <value>Sonraki kare</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Open" xml:space="preserve">
+    <value>GIF aç…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_OutputExtension" xml:space="preserve">
+    <value>Çıktı dosyası için .gif uzantısını kullanın.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Pause" xml:space="preserve">
+    <value>Duraklat</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Play" xml:space="preserve">
+    <value>Oynat</value>
+  </data>
+  <data name="AnimatedGifTrimmer_PreviousFrame" xml:space="preserve">
+    <value>Önceki kare</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
+    <value>Yeniden kodla</value>
+  </data>
+  <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
+    <value>Kırpılmış GIF'i farklı bir dosya adıyla veya başka bir klasöre kaydedin.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Timeline" xml:space="preserve">
+    <value>GIF zaman çizelgesi ve kırpma seçimi</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Title" xml:space="preserve">
+    <value>ShareX - Animasyonlu GIF kırpıcı</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UnsupportedGif" xml:space="preserve">
+    <value>Bu GIF, kayıpsız kırpıcının güvenle kopyalayamadığı bir düz metin grafik bloğu içeriyor.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
+    <value>Bu kesim önceki karelere ihtiyaç duyduğu için kayıpsız olarak kaydedilemez. Yeniden kodla kırpma modunu seçip tekrar kaydedin.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Arka plan {0} ms içinde kaldırıldı.</value>
   </data>

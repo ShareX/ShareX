@@ -268,6 +268,72 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 répète indéfiniment.</value>
   </data>
+  <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
+    <value>Ouvrez ou déposez un GIF animé pour commencer</value>
+  </data>
+  <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
+    <value>Cette découpe commence sur une image qui nécessite des images précédentes. Choisissez une autre image de début pour une exportation sans perte.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Export" xml:space="preserve">
+    <value>Enregistrer le GIF découpé…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Exporting" xml:space="preserve">
+    <value>Enregistrement du GIF découpé…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Frame" xml:space="preserve">
+    <value>Image {0} sur {1}</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Gif" xml:space="preserve">
+    <value>GIF animé</value>
+  </data>
+  <data name="AnimatedGifTrimmer_GifFiles" xml:space="preserve">
+    <value>Fichiers GIF</value>
+  </data>
+  <data name="AnimatedGifTrimmer_InvalidGif" xml:space="preserve">
+    <value>Sélectionnez un GIF animé comportant au moins deux images.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Loading" xml:space="preserve">
+    <value>Préparation de la chronologie du GIF…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Lossless" xml:space="preserve">
+    <value>Sans perte</value>
+  </data>
+  <data name="AnimatedGifTrimmer_NextFrame" xml:space="preserve">
+    <value>Image suivante</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Open" xml:space="preserve">
+    <value>Ouvrir un GIF…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_OutputExtension" xml:space="preserve">
+    <value>Utilisez l’extension .gif pour le fichier de sortie.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Pause" xml:space="preserve">
+    <value>Mettre en pause</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Play" xml:space="preserve">
+    <value>Lire</value>
+  </data>
+  <data name="AnimatedGifTrimmer_PreviousFrame" xml:space="preserve">
+    <value>Image précédente</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
+    <value>Réencodage</value>
+  </data>
+  <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
+    <value>Enregistrez le GIF découpé sous un autre nom de fichier ou dans un autre dossier.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Timeline" xml:space="preserve">
+    <value>Chronologie du GIF et sélection de découpe</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Title" xml:space="preserve">
+    <value>ShareX - Découpeur de GIF animés</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UnsupportedGif" xml:space="preserve">
+    <value>Ce GIF contient un bloc graphique de texte brut que le découpeur sans perte ne peut pas copier en toute sécurité.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
+    <value>Cette découpe nécessite des images précédentes et ne peut pas être enregistrée sans perte. Sélectionnez le mode de découpe Réencodage et enregistrez à nouveau.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Arrière-plan supprimé en {0} ms.</value>
   </data>

@@ -627,6 +627,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>Analyze kép</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Animált GIF-vágó</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Auto képlopás</value>
   </data>

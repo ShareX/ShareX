@@ -1379,6 +1379,9 @@
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Создание анимированных GIF...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Обрезка анимированных GIF...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Настройки приложения...</value>
   </data>
@@ -1831,6 +1834,9 @@
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Ссылка на миниатюру</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Обрезать анимированный GIF</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Обрезать видео...</value>

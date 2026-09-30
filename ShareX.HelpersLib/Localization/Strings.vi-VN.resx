@@ -627,6 +627,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>Phân tích ảnh</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Công cụ cắt GIF động</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Tự động chụp</value>
   </data>

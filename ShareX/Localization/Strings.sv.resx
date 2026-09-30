@@ -1379,6 +1379,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Skapare av animerade GIF-bilder...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Trimning av animerade GIF-filer...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Programinställningar...</value>
   </data>
@@ -1831,6 +1834,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Miniatyr-URL</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Trimma animerad GIF</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Trimma video...</value>

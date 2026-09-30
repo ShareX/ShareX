@@ -627,6 +627,9 @@
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>تحلیل تصویر</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>برش‌دهندهٔ GIF متحرک</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>ضبط خودکار</value>
   </data>

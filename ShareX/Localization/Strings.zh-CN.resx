@@ -1379,6 +1379,9 @@
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>动态 GIF 制作器...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>动态 GIF 裁剪工具...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>应用程序设置...</value>
   </data>
@@ -1831,6 +1834,9 @@
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>缩略图网址</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>裁剪动态 GIF</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>剪辑视频...</value>

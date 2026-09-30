@@ -1379,6 +1379,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Ersteller für animierte GIFs...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Zuschnitt animierter GIFs...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Anwendungseinstellungen...</value>
   </data>
@@ -1831,6 +1834,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Thumbnail-URL</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Animiertes GIF zuschneiden</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Video zuschneiden...</value>

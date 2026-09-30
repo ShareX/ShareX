@@ -1379,6 +1379,9 @@
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>เครื่องมือสร้าง GIF เคลื่อนไหว...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>เครื่องมือตัด GIF แบบเคลื่อนไหว...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>การตั้งค่าแอปพลิเคชัน...</value>
   </data>
@@ -1831,6 +1834,9 @@
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>URL ภาพขนาดย่อ</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>ตัด GIF แบบเคลื่อนไหว</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>ตัดวิดีโอ...</value>

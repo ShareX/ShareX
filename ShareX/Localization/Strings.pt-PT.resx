@@ -1379,6 +1379,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Criador de GIF animado...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Ferramenta de corte de GIFs animados...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Definições da aplicação...</value>
   </data>
@@ -1831,6 +1834,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Miniatura URL</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Cortar GIF animado</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Cortar vídeo...</value>

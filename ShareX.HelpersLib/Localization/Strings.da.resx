@@ -627,6 +627,9 @@ Vil du stadig køre den?</value>
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>Analysér billede</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Beskæring af animerede GIF-filer</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Automatisk optagelse</value>
   </data>

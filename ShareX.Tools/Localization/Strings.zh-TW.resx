@@ -268,6 +268,72 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 表示無限重複。</value>
   </data>
+  <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
+    <value>開啟或拖入動畫 GIF 即可開始</value>
+  </data>
+  <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
+    <value>此裁剪片段的起始影格需要先前的影格。請另選起始影格以進行無損匯出。</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Export" xml:space="preserve">
+    <value>儲存裁剪後的 GIF…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Exporting" xml:space="preserve">
+    <value>正在儲存裁剪後的 GIF…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Frame" xml:space="preserve">
+    <value>第 {0} 個影格，共 {1} 個</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Gif" xml:space="preserve">
+    <value>動畫 GIF</value>
+  </data>
+  <data name="AnimatedGifTrimmer_GifFiles" xml:space="preserve">
+    <value>GIF 檔案</value>
+  </data>
+  <data name="AnimatedGifTrimmer_InvalidGif" xml:space="preserve">
+    <value>請選擇至少包含兩個影格的動畫 GIF。</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Loading" xml:space="preserve">
+    <value>正在準備 GIF 時間軸…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Lossless" xml:space="preserve">
+    <value>無損</value>
+  </data>
+  <data name="AnimatedGifTrimmer_NextFrame" xml:space="preserve">
+    <value>下一個影格</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Open" xml:space="preserve">
+    <value>開啟 GIF…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_OutputExtension" xml:space="preserve">
+    <value>輸出檔案請使用 .gif 副檔名。</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Pause" xml:space="preserve">
+    <value>暫停</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Play" xml:space="preserve">
+    <value>播放</value>
+  </data>
+  <data name="AnimatedGifTrimmer_PreviousFrame" xml:space="preserve">
+    <value>上一個影格</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
+    <value>重新編碼</value>
+  </data>
+  <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
+    <value>請使用其他檔案名稱，或將裁剪後的 GIF 儲存至其他資料夾。</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Timeline" xml:space="preserve">
+    <value>GIF 時間軸與裁剪選取範圍</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Title" xml:space="preserve">
+    <value>ShareX - 動畫 GIF 裁剪工具</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UnsupportedGif" xml:space="preserve">
+    <value>此 GIF 包含純文字圖形區塊，無損裁剪工具無法安全複製該區塊。</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
+    <value>此裁剪片段需要先前的影格，無法無損儲存。請選擇「重新編碼」裁剪模式，然後再次儲存。</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>已在 {0} 毫秒內移除背景。</value>
   </data>

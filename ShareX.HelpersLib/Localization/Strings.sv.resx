@@ -627,6 +627,9 @@ Vill du ändå köra det?</value>
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>Analysera bild</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Trimning av animerade GIF-filer</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Automatisk bildtagning</value>
   </data>

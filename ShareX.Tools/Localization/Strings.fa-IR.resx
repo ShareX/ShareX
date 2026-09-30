@@ -268,6 +268,72 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>۰ یعنی تکرار همیشگی.</value>
   </data>
+  <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
+    <value>برای شروع، یک GIF متحرک را باز کنید یا بکشید و رها کنید</value>
+  </data>
+  <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
+    <value>این برش از فریمی آغاز می‌شود که به فریم‌های قبلی نیاز دارد. برای خروجی بدون افت کیفیت، فریم شروع دیگری انتخاب کنید.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Export" xml:space="preserve">
+    <value>ذخیرهٔ GIF برش‌خورده…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Exporting" xml:space="preserve">
+    <value>در حال ذخیرهٔ GIF برش‌خورده…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Frame" xml:space="preserve">
+    <value>فریم {0} از {1}</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Gif" xml:space="preserve">
+    <value>GIF متحرک</value>
+  </data>
+  <data name="AnimatedGifTrimmer_GifFiles" xml:space="preserve">
+    <value>فایل‌های GIF</value>
+  </data>
+  <data name="AnimatedGifTrimmer_InvalidGif" xml:space="preserve">
+    <value>یک GIF متحرک با حداقل دو فریم انتخاب کنید.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Loading" xml:space="preserve">
+    <value>در حال آماده‌سازی خط زمانی GIF…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Lossless" xml:space="preserve">
+    <value>بدون افت کیفیت</value>
+  </data>
+  <data name="AnimatedGifTrimmer_NextFrame" xml:space="preserve">
+    <value>فریم بعدی</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Open" xml:space="preserve">
+    <value>باز کردن GIF…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_OutputExtension" xml:space="preserve">
+    <value>برای فایل خروجی از پسوند .gif استفاده کنید.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Pause" xml:space="preserve">
+    <value>مکث</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Play" xml:space="preserve">
+    <value>پخش</value>
+  </data>
+  <data name="AnimatedGifTrimmer_PreviousFrame" xml:space="preserve">
+    <value>فریم قبلی</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
+    <value>کدگذاری مجدد</value>
+  </data>
+  <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
+    <value>GIF برش‌خورده را با نام فایل دیگری یا در پوشه‌ای دیگر ذخیره کنید.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Timeline" xml:space="preserve">
+    <value>خط زمانی GIF و انتخاب محدودهٔ برش</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Title" xml:space="preserve">
+    <value>ShareX - برش‌دهندهٔ GIF متحرک</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UnsupportedGif" xml:space="preserve">
+    <value>این GIF حاوی یک بلوک گرافیکی متن ساده است که برش‌دهندهٔ بدون افت کیفیت نمی‌تواند آن را با اطمینان کپی کند.</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
+    <value>این برش به فریم‌های قبلی نیاز دارد و نمی‌توان آن را بدون افت کیفیت ذخیره کرد. حالت برش «کدگذاری مجدد» را انتخاب کنید و دوباره ذخیره کنید.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>پس‌زمینه در {0} میلی‌ثانیه حذف شد.</value>
   </data>

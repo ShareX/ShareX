@@ -1379,6 +1379,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Maker van geanimeerde GIF's...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Geanimeerde GIF bijsnijden...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Toepassingsinstellingen...</value>
   </data>
@@ -1831,6 +1834,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Miniatuur URL</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Geanimeerde GIF bijsnijden</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Video bijsnijden...</value>

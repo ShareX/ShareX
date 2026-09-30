@@ -268,6 +268,72 @@
   <data name="AnimatedGifMakerWindow_Zero_repeats_forever" xml:space="preserve">
     <value>0 हमेशा दोहराता है।</value>
   </data>
+  <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
+    <value>शुरू करने के लिए एनिमेटेड GIF खोलें या खींचकर छोड़ें</value>
+  </data>
+  <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
+    <value>यह कट ऐसे फ़्रेम से शुरू होता है जिसके लिए पिछले फ़्रेम चाहिए। हानिरहित निर्यात के लिए कोई दूसरा शुरुआती फ़्रेम चुनें।</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Export" xml:space="preserve">
+    <value>ट्रिम किया गया GIF सहेजें…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Exporting" xml:space="preserve">
+    <value>ट्रिम किया गया GIF सहेजा जा रहा है…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Frame" xml:space="preserve">
+    <value>फ़्रेम {0} / {1}</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Gif" xml:space="preserve">
+    <value>एनिमेटेड GIF</value>
+  </data>
+  <data name="AnimatedGifTrimmer_GifFiles" xml:space="preserve">
+    <value>GIF फ़ाइलें</value>
+  </data>
+  <data name="AnimatedGifTrimmer_InvalidGif" xml:space="preserve">
+    <value>कम से कम दो फ़्रेम वाला एनिमेटेड GIF चुनें।</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Loading" xml:space="preserve">
+    <value>GIF टाइमलाइन तैयार हो रही है…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Lossless" xml:space="preserve">
+    <value>हानिरहित</value>
+  </data>
+  <data name="AnimatedGifTrimmer_NextFrame" xml:space="preserve">
+    <value>अगला फ़्रेम</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Open" xml:space="preserve">
+    <value>GIF खोलें…</value>
+  </data>
+  <data name="AnimatedGifTrimmer_OutputExtension" xml:space="preserve">
+    <value>आउटपुट फ़ाइल के लिए .gif एक्सटेंशन का उपयोग करें।</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Pause" xml:space="preserve">
+    <value>रोकें</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Play" xml:space="preserve">
+    <value>चलाएँ</value>
+  </data>
+  <data name="AnimatedGifTrimmer_PreviousFrame" xml:space="preserve">
+    <value>पिछला फ़्रेम</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
+    <value>दोबारा एन्कोड</value>
+  </data>
+  <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
+    <value>ट्रिम किए गए GIF को किसी दूसरे फ़ाइल नाम से या दूसरे फ़ोल्डर में सहेजें।</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Timeline" xml:space="preserve">
+    <value>GIF टाइमलाइन और ट्रिम चयन</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Title" xml:space="preserve">
+    <value>ShareX - एनिमेटेड GIF ट्रिमर</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UnsupportedGif" xml:space="preserve">
+    <value>इस GIF में सादा टेक्स्ट ग्राफ़िक ब्लॉक है जिसे हानिरहित ट्रिमर सुरक्षित रूप से कॉपी नहीं कर सकता।</value>
+  </data>
+  <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
+    <value>इस कट के लिए पिछले फ़्रेम चाहिए और इसे बिना हानि के सहेजा नहीं जा सकता। दोबारा एन्कोड ट्रिम मोड चुनें और फिर से सहेजें।</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>पृष्ठभूमि {0} ms में हटाई गई।</value>
   </data>

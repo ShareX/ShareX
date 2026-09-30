@@ -627,6 +627,9 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>Görüntüyü analiz et</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Animasyonlu GIF kırpıcı</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Otomatik yakala</value>
   </data>

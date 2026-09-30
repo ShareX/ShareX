@@ -627,6 +627,9 @@ Do you still want to run it?</value>
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>Analyze image</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Animated GIF trimmer</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Auto capture</value>
   </data>
@@ -1389,5 +1392,4 @@ Do you still want to run it?</value>
   <data name="ZipManager_Maximum_allowed_file_size" xml:space="preserve">
     <value>Maximum allowed file size: {0}</value>
   </data>
-  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve"><value>Animated GIF trimmer</value></data>
 </root>

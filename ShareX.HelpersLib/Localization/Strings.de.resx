@@ -627,6 +627,9 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>Bild analysieren</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Zuschnitt animierter GIFs</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Autoaufnahme</value>
   </data>

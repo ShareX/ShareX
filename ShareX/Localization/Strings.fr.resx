@@ -1379,6 +1379,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Créateur de GIF animés...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Découpeur de GIF animés...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Paramètres de l’application...</value>
   </data>
@@ -1831,6 +1834,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>URL de la miniature</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Découper un GIF animé</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Découper la vidéo...</value>

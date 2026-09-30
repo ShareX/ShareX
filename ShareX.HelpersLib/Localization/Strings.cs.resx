@@ -627,6 +627,9 @@ Chcete jej přesto spustit?</value>
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>Analyzovat obrázek</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Ořezávač animovaných GIFů</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Automatické zachytávání</value>
   </data>

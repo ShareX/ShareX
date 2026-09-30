@@ -627,6 +627,9 @@
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>छवि का विश्लेषण करें</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>एनिमेटेड GIF ट्रिमर</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>स्वचालित कैप्चर</value>
   </data>

@@ -627,6 +627,9 @@
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>이미지 분석</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>애니메이션 GIF 자르기</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>자동 촬영</value>
   </data>

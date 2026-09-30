@@ -1379,6 +1379,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Værktøj til animerede GIF'er...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Beskæring af animerede GIF-filer...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Programindstillinger...</value>
   </data>
@@ -1831,6 +1834,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Miniature-URL</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Beskær animeret GIF</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Beskær video...</value>

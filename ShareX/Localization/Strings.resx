@@ -1379,6 +1379,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Animated GIF maker...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Animated GIF trimmer...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Application settings...</value>
   </data>
@@ -1831,6 +1834,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Thumbnail URL</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Trim animated GIF</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Trim video...</value>
@@ -2921,6 +2927,4 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the upload feature.</value>
   </data>
-  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve"><value>Animated GIF trimmer...</value></data>
-  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve"><value>Trim animated GIF</value></data>
 </root>

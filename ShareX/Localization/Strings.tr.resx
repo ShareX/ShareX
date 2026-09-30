@@ -1379,6 +1379,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Animasyonlu GIF oluşturucu...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Animasyonlu GIF kırpıcı...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Uygulama ayarları...</value>
   </data>
@@ -1831,6 +1834,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Küçük resim adresi</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Animasyonlu GIF'i kırp</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Videoyu kırp...</value>

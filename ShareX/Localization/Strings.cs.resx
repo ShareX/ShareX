@@ -1379,6 +1379,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Tvůrce animovaných GIFů...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Ořezávač animovaných GIFů...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Nastavení aplikace...</value>
   </data>
@@ -1831,6 +1834,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Adresa URL miniatury</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Oříznout animovaný GIF</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Oříznout video...</value>

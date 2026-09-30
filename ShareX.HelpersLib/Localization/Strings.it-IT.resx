@@ -627,6 +627,9 @@ Vuoi eseguirlo comunque?</value>
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>Analizza immagine</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Strumento di taglio per GIF animate</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Cattura Automatica</value>
   </data>

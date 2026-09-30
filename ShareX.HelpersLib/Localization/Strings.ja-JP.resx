@@ -627,6 +627,9 @@
   <data name="HotkeyType_AnalyzeImage" xml:space="preserve">
     <value>画像を解析</value>
   </data>
+  <data name="HotkeyType_AnimatedGifTrimmer" xml:space="preserve">
+    <value>アニメーションGIFトリマー</value>
+  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>自動キャプチャー</value>
   </data>

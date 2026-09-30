@@ -1379,6 +1379,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_AnimatedGifMaker" xml:space="preserve">
     <value>Animált GIF készítő...</value>
   </data>
+  <data name="MainMenuBuilder_AnimatedGifTrimmer" xml:space="preserve">
+    <value>Animált GIF-vágó...</value>
+  </data>
   <data name="MainMenuBuilder_ApplicationSettings" xml:space="preserve">
     <value>Alkalmazásbeállítások...</value>
   </data>
@@ -1831,6 +1834,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainWindow_ThumbnailUrl" xml:space="preserve">
     <value>Miniatűr URL</value>
+  </data>
+  <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
+    <value>Animált GIF vágása</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Videó vágása...</value>
