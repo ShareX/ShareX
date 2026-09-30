@@ -1,0 +1,101 @@
+using Microsoft.Win32;
+using ShareX.Platform.Windows.Native;
+using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
+
+namespace ShareX.Platform.Windows;
+
+/// <summary>Shell execution and Explorer selection.</summary>
+public sealed class WindowsShellService : IShellService
+{
+    public bool OpenUrl(string url) => Start(url);
+
+    public bool OpenPath(string path) => Start(path);
+
+    public bool RevealInFileManager(string path)
+    {
+        // The same call ShareX.HelpersLib uses. It needs COM on the calling thread.
+        Win32.CoInitializeEx(IntPtr.Zero, Win32.COINIT_APARTMENTTHREADED);
+        IntPtr pidl = Win32.ILCreateFromPathW(path);
+
+        if (pidl == IntPtr.Zero)
+        {
+            return false;
+        }
+
+        try
+        {
+            return Win32.SHOpenFolderAndSelectItems(pidl, 0, IntPtr.Zero, 0) == 0;
+        }
+        finally
+        {
+            Win32.ILFree(pidl);
+        }
+    }
+
+    private static bool Start(string target)
+    {
+        try
+        {
+            using Process? process = Process.Start(new ProcessStartInfo(target) { UseShellExecute = true });
+            return true;
+        }
+        catch (Win32Exception)
+        {
+            return false;
+        }
+    }
+}
+
+/// <summary>Explorer context menu entries under HKCU\Software\Classes, identical to the keys ShareX has always written.</summary>
+public sealed class WindowsShellIntegrationService : IShellIntegrationService
+{
+    public FeatureSupport Support => FeatureSupport.Supported;
+
+    public static string[] GetMenuKeys(ShellMenuEntry entry) => entry.Target switch
+    {
+        ShellMenuTarget.Images => [$@"Software\Classes\SystemFileAssociations\image\shell\{entry.Id}"],
+        _ => [$@"Software\Classes\*\shell\{entry.Id}", $@"Software\Classes\Directory\shell\{entry.Id}"]
+    };
+
+    /// <summary>For example "C:\Program Files\ShareX\ShareX.exe" -ImageEditor "%1".</summary>
+    public static string GetCommand(ShellMenuEntry entry) =>
+        string.Join(" ", new[] { $"\"{entry.ExecutablePath}\"" }.Concat(entry.Arguments).Append("\"%1\""));
+
+    public static string GetIcon(ShellMenuEntry entry) => entry.Icon ?? $"\"{entry.ExecutablePath}\",0";
+
+    public bool IsRegistered(ShellMenuEntry entry) => GetMenuKeys(entry).All(key =>
+    {
+        using RegistryKey? command = Registry.CurrentUser.OpenSubKey(key + @"\command");
+        return command?.GetValue(null) is string value && value.Equals(GetCommand(entry), StringComparison.OrdinalIgnoreCase);
+    });
+
+    public void Register(ShellMenuEntry entry)
+    {
+        Unregister(entry);
+
+        foreach (string key in GetMenuKeys(entry))
+        {
+            using (RegistryKey menu = Registry.CurrentUser.CreateSubKey(key))
+            {
+                menu.SetValue(null, entry.Label, RegistryValueKind.String);
+                menu.SetValue("Icon", GetIcon(entry), RegistryValueKind.String);
+            }
+
+            using (RegistryKey command = Registry.CurrentUser.CreateSubKey(key + @"\command"))
+            {
+                command.SetValue(null, GetCommand(entry), RegistryValueKind.String);
+            }
+        }
+    }
+
+    public void Unregister(ShellMenuEntry entry)
+    {
+        foreach (string key in GetMenuKeys(entry))
+        {
+            Registry.CurrentUser.DeleteSubKeyTree(key, false);
+        }
+    }
+}
