@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -1559,8 +1559,13 @@ internal sealed class TaskSettingsPageBuilder
         return button;
     }
 
-    private static MenuItem CreateDestinationMenuItem(MainMenuEntry entry)
+    private static Control CreateDestinationMenuItem(MainMenuEntry entry)
     {
+        if (entry.IsSeparator)
+        {
+            return new Separator();
+        }
+
         MenuItem item = new()
         {
             Header = entry.Header,

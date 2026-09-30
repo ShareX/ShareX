@@ -2927,4 +2927,160 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the upload feature.</value>
   </data>
+  <data name="DestinationFileType_Images" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="DestinationFileType_Videos" xml:space="preserve">
+    <value>Videos</value>
+  </data>
+  <data name="DestinationFileType_Audio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="DestinationFileType_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="DestinationFileType_Documents" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="DestinationFileType_Archives" xml:space="preserve">
+    <value>Archives</value>
+  </data>
+  <data name="DestinationFileType_OtherFiles" xml:space="preserve">
+    <value>Other files</value>
+  </data>
+  <data name="DestinationRoutesWindow_Title" xml:space="preserve">
+    <value>Routes and instances</value>
+  </data>
+  <data name="DestinationRoutesWindow_Routes" xml:space="preserve">
+    <value>Routes</value>
+  </data>
+  <data name="DestinationRoutesWindow_Instances" xml:space="preserve">
+    <value>Instances</value>
+  </data>
+  <data name="DestinationRoutesWindow_RoutesFor" xml:space="preserve">
+    <value>Upload routes for {0}</value>
+  </data>
+  <data name="DestinationRoutesWindow_DefaultTaskSettings" xml:space="preserve">
+    <value>the default task settings</value>
+  </data>
+  <data name="DestinationRoutesWindow_RoutesHint" xml:space="preserve">
+    <value>A file goes to the route of a custom file type that lists its extension, otherwise to the route of its premade file type, otherwise to Other files. Screenshots use the image format extension and text uploads use the text file extension.</value>
+  </data>
+  <data name="DestinationRoutesWindow_TaskRoutesHint" xml:space="preserve">
+    <value>Rows set to Use default follow the default task settings.</value>
+  </data>
+  <data name="DestinationRoutesWindow_RoutesNeedAttention" xml:space="preserve">
+    <value>Some routes need attention:</value>
+  </data>
+  <data name="DestinationRoutesWindow_FileType" xml:space="preserve">
+    <value>File type</value>
+  </data>
+  <data name="DestinationRoutesWindow_Extensions" xml:space="preserve">
+    <value>Extensions</value>
+  </data>
+  <data name="DestinationRoutesWindow_Instance" xml:space="preserve">
+    <value>Instance</value>
+  </data>
+  <data name="DestinationRoutesWindow_UseDefault" xml:space="preserve">
+    <value>Use default</value>
+  </data>
+  <data name="DestinationRoutesWindow_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="DestinationRoutesWindow_AddRoute" xml:space="preserve">
+    <value>Add route</value>
+  </data>
+  <data name="DestinationRoutesWindow_AllOtherExtensions" xml:space="preserve">
+    <value>Everything no other route matches</value>
+  </data>
+  <data name="DestinationRoutesWindow_CustomFileTypes" xml:space="preserve">
+    <value>Custom file types</value>
+  </data>
+  <data name="DestinationRoutesWindow_CustomFileTypesHint" xml:space="preserve">
+    <value>Create a file type from extensions, for example PNG = png or JPG = jpg, jpeg. It wins over the premade file type that contains the same extension once it has a route.</value>
+  </data>
+  <data name="DestinationRoutesWindow_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="DestinationRoutesWindow_AddFileType" xml:space="preserve">
+    <value>Add file type</value>
+  </data>
+  <data name="DestinationRoutesWindow_FileTypeInvalid" xml:space="preserve">
+    <value>Enter a name and at least one extension.</value>
+  </data>
+  <data name="DestinationRoutesWindow_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="DestinationRoutesWindow_Duplicate" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="DestinationRoutesWindow_Rename" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="DestinationRoutesWindow_EditSettings" xml:space="preserve">
+    <value>Edit settings...</value>
+  </data>
+  <data name="DestinationRoutesWindow_UploaderInfo" xml:space="preserve">
+    <value>{0} ({1})</value>
+  </data>
+  <data name="DestinationRoutesWindow_CategoryImage" xml:space="preserve">
+    <value>image uploader</value>
+  </data>
+  <data name="DestinationRoutesWindow_CategoryText" xml:space="preserve">
+    <value>text uploader</value>
+  </data>
+  <data name="DestinationRoutesWindow_CategoryFile" xml:space="preserve">
+    <value>file uploader</value>
+  </data>
+  <data name="DestinationRoutesWindow_SharedSettings" xml:space="preserve">
+    <value>Uses the shared {0} settings from the Destination settings window.</value>
+  </data>
+  <data name="DestinationRoutesWindow_OwnSettings" xml:space="preserve">
+    <value>Has its own {0} settings, including credentials. Edit settings changes only this instance.</value>
+  </data>
+  <data name="DestinationRoutesWindow_AccountSettings" xml:space="preserve">
+    <value>Uses account {0} from the {1} account list.</value>
+  </data>
+  <data name="DestinationRoutesWindow_SharedSettingsShort" xml:space="preserve">
+    <value>shared settings</value>
+  </data>
+  <data name="DestinationRoutesWindow_OwnSettingsShort" xml:space="preserve">
+    <value>own settings</value>
+  </data>
+  <data name="DestinationRoutesWindow_Account" xml:space="preserve">
+    <value>account</value>
+  </data>
+  <data name="DestinationRoutesWindow_UsedByRoutes" xml:space="preserve">
+    <value>Used by routes: {0}</value>
+  </data>
+  <data name="DestinationRoutesWindow_DefaultInstanceHint" xml:space="preserve">
+    <value>This is the default instance of the uploader. It can be renamed and duplicated but not removed.</value>
+  </data>
+  <data name="DestinationRoutesWindow_AcceptedFileTypes" xml:space="preserve">
+    <value>Accepted file types</value>
+  </data>
+  <data name="DestinationRoutesWindow_AcceptedFileTypesHint" xml:space="preserve">
+    <value>Only routes for these file types can use this instance.</value>
+  </data>
+  <data name="DestinationRoutesWindow_AllFiles" xml:space="preserve">
+    <value>All files</value>
+  </data>
+  <data name="DestinationRoutesWindow_RemoveInUse" xml:space="preserve">
+    <value>{0} is used by these routes: {1}. Files of those types will go to the next matching route. Remove it?</value>
+  </data>
+  <data name="DestinationRoutesWindow_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="MainMenuBuilder_AddRoute" xml:space="preserve">
+    <value>Add route...</value>
+  </data>
+  <data name="MainMenuBuilder_RoutesAndInstances" xml:space="preserve">
+    <value>Routes and instances...</value>
+  </data>
+  <data name="MainMenuBuilder_RouteUseDefault" xml:space="preserve">
+    <value>Use default</value>
+  </data>
+  <data name="MainMenuBuilder_RouteMissingInstance" xml:space="preserve">
+    <value>(missing instance)</value>
+  </data>
 </root>

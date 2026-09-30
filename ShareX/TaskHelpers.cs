@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -26,6 +26,7 @@
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.AvaloniaUI.Windows;
+using ShareX.Destinations;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.ImageEditor.Integration;
@@ -2462,18 +2463,21 @@ namespace ShareX
                             {
                                 ApplicationState.UploadersConfig.CustomImageUploaderSelected = index;
                                 ApplicationState.DefaultTaskSettings.ImageDestination = ImageDestination.CustomImageUploader;
+                                DestinationRouting.SetDefaultRoute(PremadeFileTypes.Images, UploaderCategory.Image, nameof(ImageDestination.CustomImageUploader));
                             }
 
                             if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.TextUploader))
                             {
                                 ApplicationState.UploadersConfig.CustomTextUploaderSelected = index;
                                 ApplicationState.DefaultTaskSettings.TextDestination = TextDestination.CustomTextUploader;
+                                DestinationRouting.SetDefaultRoute(PremadeFileTypes.Text, UploaderCategory.Text, nameof(TextDestination.CustomTextUploader));
                             }
 
                             if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.FileUploader))
                             {
                                 ApplicationState.UploadersConfig.CustomFileUploaderSelected = index;
                                 ApplicationState.DefaultTaskSettings.FileDestination = FileDestination.CustomFileUploader;
+                                DestinationRouting.SetDefaultRoute(PremadeFileTypes.OtherFiles, UploaderCategory.File, nameof(FileDestination.CustomFileUploader));
                             }
 
                             if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLShortener))

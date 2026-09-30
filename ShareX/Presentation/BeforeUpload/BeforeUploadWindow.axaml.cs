@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -30,6 +30,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Destinations;
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using ShareX.UploadersLib;
@@ -95,6 +96,23 @@ public partial class BeforeUploadWindow : Window
     {
         List<BeforeUploadDestinationOption> options = new();
         TaskSettings taskSettings = info.TaskSettings;
+
+        // Files follow routes: offer the instances that accept this file's type, for this upload only.
+        if (info.DataType != EDataType.URL && info.GetRoute() is RouteMatch route)
+        {
+            string fileTypeName = DestinationRouting.GetFileTypeName(route.FileType);
+
+            foreach (DestinationInstance instance in DestinationRouting.GetUsableInstances(route.FileType))
+            {
+                string label = $"{fileTypeName} \u2192 {instance.Name}";
+                options.Add(CreateOption(label, instance.Id == route.Instance.Id, () => info.DestinationInstanceOverride = instance.Id));
+            }
+
+            if (options.Count > 0)
+            {
+                return options;
+            }
+        }
 
         switch (info.DataType)
         {

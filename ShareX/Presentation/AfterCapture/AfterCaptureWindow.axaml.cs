@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -30,6 +30,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Destinations;
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using ShareX.UploadersLib;
@@ -65,7 +66,7 @@ public partial class AfterCaptureWindow : Window
         TaskSettings = taskSettings;
         AfterCaptureOptions = CreateAfterCaptureOptions(taskSettings.AfterCaptureJob);
         AfterUploadOptions = CreateAfterUploadOptions(taskSettings.AfterUploadJob);
-        DestinationOptions = CreateDestinationOptions(taskSettings);
+        DestinationOptions = CreateDestinationOptions(taskSettings, filePath);
 
         InitializeComponent();
         DataContext = this;
@@ -142,9 +143,36 @@ public partial class AfterCaptureWindow : Window
             .ToArray();
     }
 
-    private static IReadOnlyList<AfterCaptureDestinationOption> CreateDestinationOptions(TaskSettings taskSettings)
+    private static IReadOnlyList<AfterCaptureDestinationOption> CreateDestinationOptions(TaskSettings taskSettings, string? filePath)
     {
         List<AfterCaptureDestinationOption> options = new();
+
+        // Captures follow the route for their image format, for example PNG or Images, and recordings the route for their file.
+        // Picking an instance overrides it for this capture only.
+        RouteMatch? route = null;
+
+        if (ApplicationState.UploadersConfigOrNull != null)
+        {
+            route = string.IsNullOrEmpty(filePath)
+                ? DestinationRouting.Resolve(taskSettings, EDataType.Image, DestinationRouting.GetCaptureFileName(taskSettings))
+                : DestinationRouting.Resolve(taskSettings, TaskHelpers.FindDataType(filePath, taskSettings), filePath);
+        }
+
+        if (route != null)
+        {
+            string fileTypeName = DestinationRouting.GetFileTypeName(route.FileType);
+
+            foreach (DestinationInstance instance in DestinationRouting.GetUsableInstances(route.FileType))
+            {
+                options.Add(new AfterCaptureDestinationOption($"{fileTypeName} \u2192 {instance.Name}", instance.Id == route.Instance.Id,
+                    () => DestinationRouting.OverrideForTask(taskSettings, route.FileType.Id, instance)));
+            }
+
+            if (options.Count > 0)
+            {
+                return options;
+            }
+        }
 
         foreach (ImageDestination destination in Helpers.GetEnums<ImageDestination>())
         {

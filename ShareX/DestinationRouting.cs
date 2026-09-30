@@ -26,7 +26,9 @@
 #nullable enable
 
 using ShareX.Destinations;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -216,9 +218,96 @@ internal static class DestinationRouting
         SetLegacy(target, legacy);
     }
 
-    /// <summary>The instance a route uses, for menus: "Videos: Dropbox".</summary>
-    internal static string GetRouteLabel(FileTypeDefinition fileType, DestinationInstance? instance) =>
-        instance != null ? $"{fileType.Name}: {instance.Name}" : fileType.Name;
+    /// <summary>The name of the instance a route of the task uses, for menu labels such as "Videos: Dropbox".</summary>
+    internal static string GetRouteInstanceName(TaskSettings taskSettings, string fileTypeId)
+    {
+        DestinationRoute? route = DestinationRoutes.Find(GetEffectiveRoutes(taskSettings).Select(x => x.Route), fileTypeId);
+        DestinationInstance? instance = route != null ? Config.FindInstance(route.InstanceId) : null;
+        return instance?.Name ?? Strings.MainMenuBuilder_RouteMissingInstance;
+    }
+
+    /// <summary>"PNG → Imgur" with the localised name of premade file types.</summary>
+    internal static string Describe(RouteMatch route) => $"{GetFileTypeName(route.FileType)} \u2192 {route.Instance.Name}";
+
+    /// <summary>Premade file types are localised. Custom types show the name the user gave them.</summary>
+    internal static string GetFileTypeName(FileTypeDefinition fileType) => fileType.Id switch
+    {
+        PremadeFileTypes.Images => Strings.DestinationFileType_Images,
+        PremadeFileTypes.Videos => Strings.DestinationFileType_Videos,
+        PremadeFileTypes.Audio => Strings.DestinationFileType_Audio,
+        PremadeFileTypes.Text => Strings.DestinationFileType_Text,
+        PremadeFileTypes.Documents => Strings.DestinationFileType_Documents,
+        PremadeFileTypes.Archives => Strings.DestinationFileType_Archives,
+        PremadeFileTypes.OtherFiles => Strings.DestinationFileType_OtherFiles,
+        _ => fileType.Name
+    };
+
+    internal static string GetFileTypeIcon(FileTypeDefinition fileType) => fileType.Id switch
+    {
+        PremadeFileTypes.Images => LucideIcons.file_image,
+        PremadeFileTypes.Videos => LucideIcons.file_video,
+        PremadeFileTypes.Audio => LucideIcons.file_audio,
+        PremadeFileTypes.Text => LucideIcons.file_text,
+        PremadeFileTypes.Documents => LucideIcons.file_type,
+        PremadeFileTypes.Archives => LucideIcons.file_archive,
+        PremadeFileTypes.OtherFiles => LucideIcons.file,
+        _ => LucideIcons.file_badge
+    };
+
+    /// <summary>
+    /// Sends one file type of this task to another instance, for example from the after capture window.
+    /// Only use it on the task's own copy of its settings.
+    /// </summary>
+    internal static void OverrideForTask(TaskSettings taskCopy, string fileTypeId, DestinationInstance instance)
+    {
+        if (ReferenceEquals(taskCopy, ApplicationState.DefaultTaskSettings))
+        {
+            DebugHelper.WriteLine("Ignored a one task route override on the default task settings.");
+            return;
+        }
+
+        if (taskCopy.UseDefaultDestinations || taskCopy.DestinationRoutes == null)
+        {
+            taskCopy.UseDefaultDestinations = false;
+            taskCopy.DestinationRoutes = new List<DestinationRoute>();
+        }
+
+        DestinationRoutes.Set(taskCopy.DestinationRoutes, fileTypeId, instance.Id);
+    }
+
+    /// <summary>
+    /// Makes a task copy use the image, text and file destinations set on it, as ShareX did before routes.
+    /// For callers that pick a legacy destination for one task, such as the test uploads.
+    /// </summary>
+    internal static void UseLegacyDestinations(TaskSettings taskCopy)
+    {
+        if (ApplicationState.UploadersConfigOrNull == null || ReferenceEquals(taskCopy, ApplicationState.DefaultTaskSettings))
+        {
+            return;
+        }
+
+        taskCopy.UseDefaultDestinations = false;
+        taskCopy.DestinationRoutes = DestinationMigration.CreateRoutes(ApplicationState.UploadersConfig, GetLegacy(taskCopy));
+    }
+
+    /// <summary>Points a default route at the default instance of an uploader, for example after activating an imported custom uploader.</summary>
+    internal static void SetDefaultRoute(string fileTypeId, UploaderCategory category, string uploader)
+    {
+        UploadersConfig config = ApplicationState.UploadersConfig;
+        DestinationMigration.EnsureInstances(config);
+
+        if (config.DestinationRouting.FindDefaultInstance(category, uploader) is DestinationInstance instance)
+        {
+            SetRoute(ApplicationState.DefaultTaskSettings, fileTypeId, instance);
+        }
+    }
+
+    /// <summary>The file name a capture of this task will get, used to find its route before the image is encoded.</summary>
+    internal static string GetCaptureFileName(TaskSettings taskSettings) => "capture." + taskSettings.ImageSettings.ImageFormat.GetDescription();
+
+    /// <summary>Instances that accept the file type and have valid settings, for pickers.</summary>
+    internal static IEnumerable<DestinationInstance> GetUsableInstances(FileTypeDefinition fileType) =>
+        GetCompatibleInstances(fileType).Where(instance => DestinationCatalog.CheckConfig(instance, ApplicationState.UploadersConfig));
 
     internal static IEnumerable<DestinationInstance> GetCompatibleInstances(FileTypeDefinition fileType) =>
         Config.GetCompatibleInstances(fileType);

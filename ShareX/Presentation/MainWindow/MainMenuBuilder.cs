@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -26,6 +26,7 @@
 #nullable enable
 
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Destinations;
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
@@ -457,79 +458,65 @@ internal sealed class MainMenuBuilder
 
     internal static IReadOnlyList<MainMenuEntry> BuildDestinationsMenu(TaskSettings settings)
     {
-        return new List<MainMenuEntry>
+        List<MainMenuEntry> items = new();
+
+        if (ApplicationState.UploadersConfigOrNull != null)
         {
-            Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_,
-                () => GetImageUploaderName(settings), LucideIcons.image, () => BuildImageDestinations(settings)),
-            Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_,
-                () => GetTextUploaderName(settings), LucideIcons.file_text, () => BuildTextDestinations(settings)),
-            Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_,
-                () => settings.FileDestination.GetLocalizedDescription(), LucideIcons.file_up, () => BuildEnumDestinations(
-                settings.FileDestination,
-                value => settings.FileDestination = value)),
-            Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
-                () => settings.URLShortenerDestination.GetLocalizedDescription(), LucideIcons.link_2, () => BuildEnumDestinations(
-                settings.URLShortenerDestination,
-                value => settings.URLShortenerDestination = value)),
-            Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
-                () => settings.URLSharingServiceDestination.GetLocalizedDescription(), LucideIcons.share_2, () => BuildEnumDestinations(
-                settings.URLSharingServiceDestination,
-                value => settings.URLSharingServiceDestination = value))
-        };
+            // One submenu per route, labelled with the instance it uses, for example "Videos: Dropbox".
+            foreach ((DestinationRoute route, bool isOverride) in DestinationRouting.GetEffectiveRoutes(settings))
+            {
+                FileTypeDefinition? fileType = DestinationRouting.Config.FindFileType(route.FileTypeId);
+
+                if (fileType == null)
+                {
+                    continue;
+                }
+
+                FileTypeDefinition type = fileType;
+                string header = DestinationRouting.GetFileTypeName(type).Replace("{", "{{").Replace("}", "}}") + ": {0}";
+                items.Add(Parent(header, () => DestinationRouting.GetRouteInstanceName(settings, type.Id),
+                    DestinationRouting.GetFileTypeIcon(type), () => BuildRouteInstances(settings, type)));
+            }
+
+            items.Add(MainMenuEntry.Separator());
+        }
+
+        items.Add(Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
+            () => settings.URLShortenerDestination.GetLocalizedDescription(), LucideIcons.link_2, () => BuildEnumDestinations(
+            settings.URLShortenerDestination,
+            value => settings.URLShortenerDestination = value)));
+        items.Add(Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
+            () => settings.URLSharingServiceDestination.GetLocalizedDescription(), LucideIcons.share_2, () => BuildEnumDestinations(
+            settings.URLSharingServiceDestination,
+            value => settings.URLSharingServiceDestination = value)));
+        items.Add(MainMenuEntry.Separator());
+        items.Add(Item(Strings.MainMenuBuilder_AddRoute, LucideIcons.circle_plus, () => DestinationRoutesWindow.Show(settings, DestinationRoutesTab.Routes)));
+        items.Add(Item(Strings.MainMenuBuilder_RoutesAndInstances, LucideIcons.route, () => DestinationRoutesWindow.Show(settings, DestinationRoutesTab.Instances)));
+        return items;
     }
 
-    private static string GetImageUploaderName(TaskSettings settings)
+    /// <summary>A radio list of the instances that accept the route's file type, plus Use default for a task override.</summary>
+    private static IReadOnlyList<MainMenuEntry> BuildRouteInstances(TaskSettings settings, FileTypeDefinition fileType)
     {
-        return settings.ImageDestination == ImageDestination.FileUploader
-            ? settings.ImageFileDestination.GetLocalizedDescription()
-            : settings.ImageDestination.GetLocalizedDescription();
-    }
-
-    private static string GetTextUploaderName(TaskSettings settings)
-    {
-        return settings.TextDestination == TextDestination.FileUploader
-            ? settings.TextFileDestination.GetLocalizedDescription()
-            : settings.TextDestination.GetLocalizedDescription();
-    }
-
-    private static IReadOnlyList<MainMenuEntry> BuildImageDestinations(TaskSettings settings)
-    {
-        return Helpers.GetEnums<ImageDestination>().Select(value => new MainMenuEntry(
-            value.GetLocalizedDescription(),
+        List<(DestinationRoute Route, bool IsOverride)> routes = DestinationRouting.GetEffectiveRoutes(settings).ToList();
+        (DestinationRoute Route, bool IsOverride) current = routes.FirstOrDefault(x => x.Route.FileTypeId == fileType.Id);
+        List<MainMenuEntry> items = DestinationRouting.GetCompatibleInstances(fileType).Select(instance => new MainMenuEntry(
+            instance.Name,
             string.Empty,
-            () => settings.ImageDestination = value,
-            createChildren: value == ImageDestination.FileUploader
-                ? () => BuildEnumDestinations(settings.ImageFileDestination,
-                    selected =>
-                    {
-                        settings.ImageDestination = ImageDestination.FileUploader;
-                        settings.ImageFileDestination = selected;
-                    })
-                : null,
-            isChecked: settings.ImageDestination == value,
+            () => DestinationRouting.SetRoute(settings, fileType.Id, instance),
+            isChecked: current.Route?.InstanceId == instance.Id,
             toggleType: MainMenuToggleType.Radio,
             staysOpenOnClick: true,
-            boldWhenChecked: true)).ToArray();
-    }
+            boldWhenChecked: true)).ToList();
 
-    private static IReadOnlyList<MainMenuEntry> BuildTextDestinations(TaskSettings settings)
-    {
-        return Helpers.GetEnums<TextDestination>().Select(value => new MainMenuEntry(
-            value.GetLocalizedDescription(),
-            string.Empty,
-            () => settings.TextDestination = value,
-            createChildren: value == TextDestination.FileUploader
-                ? () => BuildEnumDestinations(settings.TextFileDestination,
-                    selected =>
-                    {
-                        settings.TextDestination = TextDestination.FileUploader;
-                        settings.TextFileDestination = selected;
-                    })
-                : null,
-            isChecked: settings.TextDestination == value,
-            toggleType: MainMenuToggleType.Radio,
-            staysOpenOnClick: true,
-            boldWhenChecked: true)).ToArray();
+        if (!DestinationRouting.IsDefaultTable(settings) && current.IsOverride)
+        {
+            items.Add(MainMenuEntry.Separator());
+            items.Add(new MainMenuEntry(Strings.MainMenuBuilder_RouteUseDefault, LucideIcons.undo_2,
+                () => DestinationRouting.RemoveRoute(settings, fileType.Id)));
+        }
+
+        return items;
     }
 
     private static IReadOnlyList<MainMenuEntry> BuildEnumDestinations<T>(T selected, Action<T> setValue) where T : struct, Enum
