@@ -34,6 +34,15 @@ namespace ShareX.HistoryLib
 {
     public static class HistoryHelpers
     {
+        public static string[] GetProcessNames(IEnumerable<HistoryItem> historyItems)
+        {
+            return historyItems.Select(item => item.TagsProcessName).
+                Where(name => !string.IsNullOrWhiteSpace(name)).
+                Distinct(StringComparer.OrdinalIgnoreCase).
+                OrderBy(name => name, StringComparer.OrdinalIgnoreCase).
+                ToArray();
+        }
+
         public static string OutputStats(List<HistoryItem> historyItems)
         {
             string empty = Strings.HistoryHelpers_Empty;

@@ -242,7 +242,7 @@ public partial class HistoryWindow : Window
             List<HistoryItem> items = await _historyManager.GetHistoryItemsAsync();
             items.Reverse();
 
-            (string[] types, string[] hosts) = await Task.Run(() =>
+            (string[] types, string[] hosts, string[] processNames) = await Task.Run(() =>
             {
                 string[] availableTypes = items.Select(item => item.Type)
                     .Where(type => !string.IsNullOrWhiteSpace(type))
@@ -254,7 +254,7 @@ public partial class HistoryWindow : Window
                     .Distinct(StringComparer.OrdinalIgnoreCase)
                     .OrderBy(host => host)
                     .ToArray()!;
-                return (availableTypes, availableHosts);
+                return (availableTypes, availableHosts, HistoryHelpers.GetProcessNames(items));
             });
 
             _allHistoryItems = items;
@@ -262,6 +262,7 @@ public partial class HistoryWindow : Window
             _suppressFilterChanges = true;
             TypeFilterComboBox.ItemsSource = types;
             HostFilterComboBox.ItemsSource = hosts;
+            SearchTextBox.ItemsSource = processNames;
             _suppressFilterChanges = false;
             await ApplyFilterAsync();
         }
@@ -867,6 +868,7 @@ public partial class HistoryWindow : Window
         item.ShortenedURL = EditShortUrlTextBox.Text;
         item.Tags = ParseTags(EditTagsTextBox.Text);
         _historyManager.Edit(item);
+        SearchTextBox.ItemsSource = HistoryHelpers.GetProcessNames(_allHistoryItems);
         RefreshVisibleItem(item);
         CloseModal();
     }
@@ -934,6 +936,7 @@ public partial class HistoryWindow : Window
                 _historyManager.Delete(items);
                 HashSet<long> ids = items.Select(item => item.Id).ToHashSet();
                 _allHistoryItems.RemoveAll(item => ids.Contains(item.Id));
+                SearchTextBox.ItemsSource = HistoryHelpers.GetProcessNames(_allHistoryItems);
                 await ApplyFilterAsync();
             });
     }

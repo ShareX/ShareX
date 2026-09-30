@@ -464,6 +464,26 @@
         </Style>
     </Style>
 
+    <Style Selector="AutoCompleteBox">
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+        <Setter Property="Padding" Value="8,6"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="MinHeight" Value="40"/>
+
+        <Style Selector="^:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+
+        <Style Selector="^:disabled">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Disabled}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+    </Style>
+
     <Style Selector="TextBox.effect-search">
         <Setter Property="Height" Value="40"/>
         <Setter Property="Padding" Value="8,0"/>

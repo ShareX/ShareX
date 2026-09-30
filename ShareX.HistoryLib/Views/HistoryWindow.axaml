@@ -69,9 +69,10 @@
                         Classes="tool-panel docked-top-toolbar">
                     <Grid ColumnDefinitions="250,Auto,Auto,Auto,Auto,Auto,*">
                         <Grid Grid.Column="0">
-                            <TextBox x:Name="SearchTextBox"
+                            <AutoCompleteBox x:Name="SearchTextBox"
                                      PlaceholderText="{x:Static localization:Strings.HistoryWindows_Search_file_names_and_tags}"
                                      TextChanged="OnSearchTextChanged"
+                                     FilterMode="ContainsOrdinal"
                                      Padding="12,7,38,7"/>
                             <TextBlock Text="{x:Static theming:LucideIcons.search}"
                                        Classes="icon"

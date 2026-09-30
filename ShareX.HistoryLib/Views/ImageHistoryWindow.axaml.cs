@@ -231,7 +231,9 @@ public partial class ImageHistoryWindow : Window
         {
             List<HistoryItem> items = await _historyManager.GetHistoryItemsAsync();
             items.Reverse();
+            string[] processNames = await Task.Run(() => HistoryHelpers.GetProcessNames(items));
             _allHistoryItems = items;
+            SearchTextBox.ItemsSource = processNames;
             _historyLoaded = true;
             await ApplyFilterAsync();
         }
@@ -787,6 +789,7 @@ public partial class ImageHistoryWindow : Window
         item.ShortenedURL = EditShortUrlTextBox.Text;
         item.Tags = ParseTags(EditTagsTextBox.Text);
         _historyManager.Edit(item);
+        SearchTextBox.ItemsSource = HistoryHelpers.GetProcessNames(_allHistoryItems);
         RefreshVisibleItem(item);
         CloseModal();
     }
@@ -865,6 +868,7 @@ public partial class ImageHistoryWindow : Window
                 _historyManager.Delete(items);
                 HashSet<long> ids = items.Select(item => item.Id).ToHashSet();
                 _allHistoryItems.RemoveAll(item => ids.Contains(item.Id));
+                SearchTextBox.ItemsSource = HistoryHelpers.GetProcessNames(_allHistoryItems);
                 await ApplyFilterAsync();
             });
     }
