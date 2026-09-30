@@ -33,6 +33,7 @@ using ShareX.Desktop.Commands;
 using ShareX.Desktop.Ipc;
 using ShareX.Desktop.Settings;
 using ShareX.Desktop.Workflows;
+using ShareX.HistoryLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using ShareX.ImageEditor.Presentation.Views;
@@ -53,14 +54,17 @@ public sealed class DesktopHost : IEditorLauncher
     private readonly DesktopSettings settings;
     private readonly IUploadService uploader;
     private readonly CaptureWorkflow workflow;
+    private readonly SqliteHistoryRecorder? history;
+    private readonly ImageHistorySettings historySettings = new ImageHistorySettings();
     private TrayIcon? trayIcon;
 
-    public DesktopHost(IPlatformServices platform, DesktopSettings settings, IUploadService uploader)
+    public DesktopHost(IPlatformServices platform, DesktopSettings settings, IUploadService uploader, SqliteHistoryRecorder? history = null)
     {
         this.platform = platform;
         this.settings = settings;
         this.uploader = uploader;
-        workflow = new CaptureWorkflow(platform, settings, uploader, this);
+        this.history = history;
+        workflow = new CaptureWorkflow(platform, settings, uploader, this, history: history);
     }
 
     /// <summary>Runs the Avalonia application until Quit. Must be called on the main thread.</summary>
@@ -95,6 +99,7 @@ public sealed class DesktopHost : IEditorLauncher
         }, () =>
         {
             trayIcon?.Dispose();
+            history?.Dispose();
             onShutdown();
         });
 
@@ -109,6 +114,9 @@ public sealed class DesktopHost : IEditorLauncher
                 return new CommandResponse(true, "ShareX is running.");
             case CommandKind.Status:
                 return new CommandResponse(true, $"ShareX is running (process {Environment.ProcessId}) on {platform.Info}.");
+            case CommandKind.History:
+                ShowHistory();
+                return new CommandResponse(history != null, history != null ? "Opened the history." : "History is not available.");
             case CommandKind.Quit:
                 AvaloniaBootstrapper.Shutdown();
                 return new CommandResponse(true, "ShareX is shutting down.");
@@ -226,6 +234,7 @@ public sealed class DesktopHost : IEditorLauncher
         menu.Items.Add(Item("Capture full screen", () => Fire(new DesktopCommand(CommandKind.Capture) { Target = CaptureTarget.FullScreen })));
         menu.Items.Add(new NativeMenuItemSeparator());
         menu.Items.Add(Item("Image editor", () => Fire(new DesktopCommand(CommandKind.Editor))));
+        menu.Items.Add(Item("History", ShowHistory));
         menu.Items.Add(Item("Open screenshots folder", OpenScreenshotsFolder));
         menu.Items.Add(new NativeMenuItemSeparator());
         menu.Items.Add(Item("Quit", () => AvaloniaBootstrapper.Shutdown()));
@@ -247,6 +256,20 @@ public sealed class DesktopHost : IEditorLauncher
         NativeMenuItem item = new NativeMenuItem(header);
         item.Click += (_, _) => click();
         return item;
+    }
+
+    private void ShowHistory()
+    {
+        if (history == null)
+        {
+            return;
+        }
+
+        HistoryIntegration.ShowImageHistoryWindow(history.Manager, historySettings, new HistoryWindowServices
+        {
+            EditImage = path => Fire(new DesktopCommand(CommandKind.Editor) { Files = [path] }),
+            UploadFile = path => Fire(new DesktopCommand(CommandKind.Upload) { Files = [path] })
+        });
     }
 
     private void Fire(DesktopCommand command) => _ = Task.Run(() => HandleAsync(command, CancellationToken.None));

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -40,6 +41,19 @@ public interface IUploadService
     bool IsConfigured(bool isImage, out string? reason);
 
     Task<UploadOutcome> UploadAsync(string fileName, byte[] data, bool isImage, CancellationToken cancellationToken);
+
+    /// <summary>The name shown in history for the destination, for example "Imgur".</summary>
+    string GetDestinationName(bool isImage);
+}
+
+/// <param name="Type">Image, Text, File or URL, as in the Windows application's history.</param>
+/// <param name="Host">The uploader that received the file, empty when it was only saved.</param>
+public sealed record HistoryEntry(string FileName, string? FilePath, string? Url, string Type, string Host, DateTime When);
+
+/// <summary>Remembers captures and uploads so they can be found again in the history window.</summary>
+public interface IHistoryRecorder
+{
+    void Record(HistoryEntry entry);
 }
 
 /// <summary>Opens the image editor.</summary>

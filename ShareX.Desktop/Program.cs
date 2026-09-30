@@ -67,7 +67,7 @@ internal static class Program
         }
 
         // Fast path for key bindings: hand the command to the instance that is already running and leave.
-        if (command.Kind != CommandKind.Doctor && command.Kind != CommandKind.Hotkeys)
+        if (command.Kind is not (CommandKind.Doctor or CommandKind.Hotkeys or CommandKind.Config))
         {
             CommandResponse? response = SendToRunningInstance(command);
 
@@ -97,13 +97,20 @@ internal static class Program
                 case CommandKind.Hotkeys:
                     Console.Out.Write(HotkeyBindings.Report(platform.Info, Environment.ProcessPath ?? "sharex"));
                     return 0;
+                case CommandKind.Config:
+                    string folder = platform.Paths.GetDefaultPersonalFolder(ApplicationName);
+                    Console.Out.WriteLine($"Settings:         {Path.Combine(folder, DesktopSettings.FileName)}");
+                    Console.Out.WriteLine($"Upload accounts:  {Path.Combine(folder, "UploadersConfig.json")}");
+                    Console.Out.WriteLine($"History:          {Path.Combine(folder, "History.db")}");
+                    return 0;
             }
 
             string personalFolder = platform.Paths.GetDefaultPersonalFolder(ApplicationName);
             string settingsPath = Path.Combine(personalFolder, DesktopSettings.FileName);
             DesktopSettings settings = DesktopSettings.Load(settingsPath);
             UploadersUploadService uploader = new UploadersUploadService(settings, personalFolder);
-            DesktopHost host = new DesktopHost(platform, settings, uploader);
+            SqliteHistoryRecorder history = new SqliteHistoryRecorder(Path.Combine(personalFolder, "History.db"));
+            DesktopHost host = new DesktopHost(platform, settings, uploader, history);
 
             InstanceServer? server = InstanceChannel.TryStartServer(InstanceChannel.GetPipeName(), host.HandleAsync);
 

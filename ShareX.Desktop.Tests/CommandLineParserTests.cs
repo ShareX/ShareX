@@ -102,6 +102,8 @@ public class CommandLineParserTests
     [Theory]
     [InlineData("doctor", CommandKind.Doctor, false)]
     [InlineData("hotkeys", CommandKind.Hotkeys, false)]
+    [InlineData("config", CommandKind.Config, false)]
+    [InlineData("history", CommandKind.History, true)]
     [InlineData("--help", CommandKind.Help, false)]
     [InlineData("-v", CommandKind.Version, false)]
     [InlineData("quit", CommandKind.Quit, true)]

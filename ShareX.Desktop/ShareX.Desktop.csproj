@@ -32,6 +32,7 @@
     <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
     <ProjectReference Include="..\ShareX.Destinations\ShareX.Destinations.csproj" />
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
+    <ProjectReference Include="..\ShareX.HistoryLib\ShareX.HistoryLib.csproj" />
     <ProjectReference Include="..\ShareX.ImageEditor\ShareX.ImageEditor.csproj" />
     <ProjectReference Include="..\ShareX.Platform\ShareX.Platform.csproj" />
     <ProjectReference Include="..\ShareX.Platform.Linux\ShareX.Platform.Linux.csproj" />

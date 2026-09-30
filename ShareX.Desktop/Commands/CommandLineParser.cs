@@ -34,7 +34,7 @@ public sealed record ParseResult(DesktopCommand? Command, string? Error)
 }
 
 /// <summary>
-/// sharex [capture region|fullscreen|screen] [upload FILE...] [editor [FILE]] [quit] [status] [doctor] [hotkeys] [--help] [--version]
+/// sharex [capture region|fullscreen|screen] [upload FILE...] [editor [FILE]] [history] [config] [quit] [status] [doctor] [hotkeys] [--help] [--version]
 /// Capture options: --upload, --no-upload, --edit, --no-save, --no-copy, --no-notify.
 /// </summary>
 public static class CommandLineParser
@@ -45,9 +45,11 @@ Commands:
   (none)                    Start the tray application
   capture region            Select an area and capture it
   capture fullscreen        Capture every screen
-  capture screen            Capture the screen under the cursor
+  capture screen            Capture the primary screen
   upload FILE...            Upload files with the configured destinations
   editor [FILE]             Open the image editor
+  history                   Open the history window
+  config                    Show where the settings are stored
   status                    Show whether the application is running
   quit                      Stop the running application
   doctor                    Show what works on this system and what to install
@@ -92,6 +94,10 @@ Capture options:
                 return NoArguments(args, CommandKind.Doctor);
             case "hotkeys":
                 return NoArguments(args, CommandKind.Hotkeys);
+            case "config":
+                return NoArguments(args, CommandKind.Config);
+            case "history":
+                return NoArguments(args, CommandKind.History);
             case "capture":
                 return ParseCapture(args);
             case "upload":

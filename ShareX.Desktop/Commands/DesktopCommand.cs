@@ -35,12 +35,16 @@ public enum CommandKind
     Capture,
     Upload,
     Editor,
+    /// <summary>Open the history window.</summary>
+    History,
     Quit,
     Status,
     /// <summary>Print what works on this system. Runs locally, without the tray application.</summary>
     Doctor,
     /// <summary>Print compositor key bindings for the capture commands. Runs locally.</summary>
     Hotkeys,
+    /// <summary>Print where the settings live. Runs locally.</summary>
+    Config,
     Help,
     Version
 }
@@ -76,5 +80,5 @@ public sealed record DesktopCommand(CommandKind Kind)
     public AfterCaptureOverrides AfterCapture { get; init; } = new AfterCaptureOverrides();
 
     /// <summary>True for commands the running application answers. The others are handled by the process that was started.</summary>
-    public bool NeedsRunningInstance => Kind is CommandKind.Capture or CommandKind.Upload or CommandKind.Editor or CommandKind.Quit or CommandKind.Status;
+    public bool NeedsRunningInstance => Kind is CommandKind.Capture or CommandKind.Upload or CommandKind.Editor or CommandKind.History or CommandKind.Quit or CommandKind.Status;
 }

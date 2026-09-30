@@ -28,6 +28,7 @@ using ShareX.Desktop.Settings;
 using ShareX.Desktop.Workflows;
 using ShareX.Platform;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -52,6 +53,8 @@ public sealed class CaptureWorkflowTests : IDisposable
 
         public int Uploads { get; private set; }
 
+        public string GetDestinationName(bool isImage) => "Example host";
+
         public string? LastFileName { get; private set; }
 
         public bool IsConfigured(bool isImage, out string? reason)
@@ -66,6 +69,13 @@ public sealed class CaptureWorkflowTests : IDisposable
             LastFileName = fileName;
             return Task.FromResult(Outcome);
         }
+    }
+
+    private sealed class FakeHistory : IHistoryRecorder
+    {
+        public List<HistoryEntry> Entries { get; } = new List<HistoryEntry>();
+
+        public void Record(HistoryEntry entry) => Entries.Add(entry);
     }
 
     private sealed class FakeEditor : IEditorLauncher
@@ -89,13 +99,14 @@ public sealed class CaptureWorkflowTests : IDisposable
     private readonly FakePlatform platform;
     private readonly FakeUploader uploader = new FakeUploader();
     private readonly FakeEditor editor = new FakeEditor();
+    private readonly FakeHistory history = new FakeHistory();
     private readonly DesktopSettings settings = new DesktopSettings();
     private readonly CaptureWorkflow workflow;
 
     public CaptureWorkflowTests()
     {
         platform = new FakePlatform(root);
-        workflow = new CaptureWorkflow(platform, settings, uploader, editor, new FixedClock(new DateTimeOffset(2026, 10, 1, 5, 52, 39, TimeSpan.Zero)));
+        workflow = new CaptureWorkflow(platform, settings, uploader, editor, new FixedClock(new DateTimeOffset(2026, 10, 1, 5, 52, 39, TimeSpan.Zero)), history);
     }
 
     public void Dispose()
@@ -177,6 +188,30 @@ public sealed class CaptureWorkflowTests : IDisposable
         Assert.Equal("https://example.test/a.png", platform.ClipboardFake.Text);
         Assert.Equal("ShareX_20261001_055239.png", uploader.LastFileName);
         Assert.Equal("Uploaded", platform.NotificationsFake.Shown[0].Title);
+    }
+
+    [Fact]
+    public async Task History_RecordsTheSavedFile_AndTheUploadHost()
+    {
+        await workflow.CaptureAsync(CaptureTarget.FullScreen, Actions());
+        await workflow.CaptureAsync(CaptureTarget.FullScreen, Actions(upload: true));
+
+        Assert.Equal(2, history.Entries.Count);
+        Assert.Equal("", history.Entries[0].Host);
+        Assert.Null(history.Entries[0].Url);
+        Assert.NotNull(history.Entries[0].FilePath);
+        Assert.Equal("Example host", history.Entries[1].Host);
+        Assert.Equal("https://example.test/a.png", history.Entries[1].Url);
+        Assert.Equal("Image", history.Entries[1].Type);
+        Assert.Equal(new DateTime(2026, 10, 1, 5, 52, 39), history.Entries[1].When);
+    }
+
+    [Fact]
+    public async Task History_SkipsACaptureThatWasNeitherSavedNorUploaded()
+    {
+        await workflow.CaptureAsync(CaptureTarget.FullScreen, Actions(save: false));
+
+        Assert.Empty(history.Entries);
     }
 
     [Fact]

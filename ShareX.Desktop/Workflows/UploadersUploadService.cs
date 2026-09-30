@@ -124,6 +124,12 @@ public sealed class UploadersUploadService : IUploadService
         }
     }
 
+    public string GetDestinationName(bool isImage)
+    {
+        string name = isImage ? settings.ImageUploader : settings.FileUploader;
+        return string.IsNullOrWhiteSpace(name) ? "" : DestinationCatalog.GetUploaderName(isImage ? ShareX.Destinations.UploaderCategory.Image : ShareX.Destinations.UploaderCategory.File, name);
+    }
+
     private IGenericUploaderService? GetService(bool isImage, out string name)
     {
         name = isImage ? settings.ImageUploader : settings.FileUploader;

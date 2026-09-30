@@ -42,10 +42,12 @@ public sealed class CaptureWorkflow
     private readonly DesktopSettings settings;
     private readonly IUploadService uploader;
     private readonly IEditorLauncher editor;
+    private readonly IHistoryRecorder? history;
     private readonly TimeProvider clock;
 
-    public CaptureWorkflow(IPlatformServices platform, DesktopSettings settings, IUploadService uploader, IEditorLauncher editor, TimeProvider? clock = null)
+    public CaptureWorkflow(IPlatformServices platform, DesktopSettings settings, IUploadService uploader, IEditorLauncher editor, TimeProvider? clock = null, IHistoryRecorder? history = null)
     {
+        this.history = history;
         this.platform = platform;
         this.settings = settings;
         this.uploader = uploader;
@@ -143,6 +145,11 @@ public sealed class CaptureWorkflow
             {
                 summary += " Upload failed: " + uploadError;
             }
+        }
+
+        if (filePath != null || url != null)
+        {
+            history?.Record(new HistoryEntry(fileName, filePath, url, "Image", url != null ? uploader.GetDestinationName(isImage: true) : "", now.DateTime));
         }
 
         if (actions.Edit)
