@@ -29,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
 {
@@ -39,7 +40,7 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(text))
             {
-                _ = PlatformServices.Current.Clipboard.SetTextAsync(text);
+                Observe(PlatformServices.Current.Clipboard.SetTextAsync(text), "copy text");
             }
         }
 
@@ -57,7 +58,7 @@ namespace ShareX.HelpersLib
 
             if (files.Length > 0)
             {
-                _ = PlatformServices.Current.Clipboard.SetFilesAsync(files);
+                Observe(PlatformServices.Current.Clipboard.SetFilesAsync(files), "copy files");
             }
         }
 
@@ -72,9 +73,25 @@ namespace ShareX.HelpersLib
             using Bitmap bitmap = new Bitmap(path);
             using MemoryStream stream = new MemoryStream();
             bitmap.Save(stream);
-            _ = PlatformServices.Current.Clipboard.SetImageAsync(stream.ToArray());
+            Observe(PlatformServices.Current.Clipboard.SetImageAsync(stream.ToArray()), "copy image");
         }
 
         public static bool OpenFolderWithFile(string path) => PlatformServices.Current.Shell.RevealInFileManager(path);
+
+        /// <summary>Clipboard writes finish in the background. A failure is logged instead of being lost with the task.</summary>
+        private static async void Observe(Task<bool> task, string action)
+        {
+            try
+            {
+                if (!await task.ConfigureAwait(false))
+                {
+                    DebugHelper.WriteLine($"Clipboard: could not {action}. {PlatformServices.Current.Clipboard.Support.Reason}");
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, $"Clipboard: could not {action}");
+            }
+        }
     }
 }

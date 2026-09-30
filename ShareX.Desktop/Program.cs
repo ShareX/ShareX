@@ -32,6 +32,7 @@ using ShareX.Desktop.Workflows;
 using ShareX.Platform;
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
@@ -54,7 +55,8 @@ internal static class Program
             return 2;
         }
 
-        DesktopCommand command = parsed.Command!;
+        // Relative paths mean the folder the user typed the command in, not the running instance's folder, so resolve them here.
+        DesktopCommand command = WithAbsolutePaths(parsed.Command!);
 
         switch (command.Kind)
         {
@@ -107,7 +109,7 @@ internal static class Program
 
             string personalFolder = platform.Paths.GetDefaultPersonalFolder(ApplicationName);
             string settingsPath = Path.Combine(personalFolder, DesktopSettings.FileName);
-            DesktopSettings settings = DesktopSettings.Load(settingsPath);
+            DesktopSettingsStore settings = new DesktopSettingsStore(settingsPath);
             UploadersUploadService uploader = new UploadersUploadService(settings, personalFolder);
             SqliteHistoryRecorder history = new SqliteHistoryRecorder(Path.Combine(personalFolder, "History.db"));
             DesktopHost host = new DesktopHost(platform, settings, uploader, history);
@@ -129,6 +131,9 @@ internal static class Program
             PlatformServices.Shutdown();
         }
     }
+
+    internal static DesktopCommand WithAbsolutePaths(DesktopCommand command) =>
+        command.Files.Count == 0 ? command : command with { Files = command.Files.Select(file => string.IsNullOrEmpty(file) ? file : Path.GetFullPath(file)).ToArray() };
 
     private static CommandResponse? SendToRunningInstance(DesktopCommand command)
     {

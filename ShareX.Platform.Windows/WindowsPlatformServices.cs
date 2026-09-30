@@ -55,6 +55,7 @@ public sealed class WindowsPlatformServices : IPlatformServices
         Credentials = new WindowsCredentialService();
         Secrets = new WindowsSecretProtectionService();
         Thumbnails = new WindowsThumbnailService();
+        Preferences = new WindowsSystemPreferencesService();
     }
 
     public PlatformInfo Info { get; }
@@ -85,6 +86,8 @@ public sealed class WindowsPlatformServices : IPlatformServices
     public ISecretProtectionService Secrets { get; }
 
     public IThumbnailService Thumbnails { get; }
+
+    public ISystemPreferencesService Preferences { get; }
 
     public void Dispose()
     {

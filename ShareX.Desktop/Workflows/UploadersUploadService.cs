@@ -40,14 +40,24 @@ namespace ShareX.Desktop.Workflows;
 /// </summary>
 public sealed class UploadersUploadService : IUploadService
 {
-    private readonly DesktopSettings settings;
+    private Func<DesktopSettings> getSettings;
     private readonly string configPath;
     private readonly object sync = new object();
     private UploadersConfig? config;
+    private DateTime configWriteTime;
+
+    // Read on every use so DesktopSettings.json edits apply without a restart.
+    private DesktopSettings settings => getSettings();
+
+    public UploadersUploadService(DesktopSettingsStore store, string personalFolder)
+        : this(store.Current, personalFolder)
+    {
+        getSettings = () => store.Current;
+    }
 
     public UploadersUploadService(DesktopSettings settings, string personalFolder)
     {
-        this.settings = settings;
+        getSettings = () => settings;
         configPath = Path.Combine(personalFolder, "UploadersConfig.json");
     }
 
@@ -57,7 +67,19 @@ public sealed class UploadersUploadService : IUploadService
         {
             lock (sync)
             {
-                return config ??= UploadersConfig.Load(configPath);
+                DateTime writeTime = File.Exists(configPath) ? File.GetLastWriteTimeUtc(configPath) : DateTime.MinValue;
+
+                // Reload when the file changes, for example after the user adds an account, so a restart is not needed.
+                if (config == null || writeTime != configWriteTime)
+                {
+                    configWriteTime = writeTime;
+                    config = UploadersConfig.Load(configPath);
+
+                    // Same as the Windows application: tokens that uploaders refresh are written back encrypted, never in plain text.
+                    config.SupportDPAPIEncryption = true;
+                }
+
+                return config;
             }
         }
     }
@@ -77,12 +99,30 @@ public sealed class UploadersUploadService : IUploadService
 
         if (!service.CheckConfig(Config))
         {
-            reason = $"{name} is not set up. Add its account to {configPath} (for example by copying UploadersConfig.json from the Windows application).";
+            reason = HasSecretsFromAnotherComputer()
+                ? $"{name} is not set up. {configPath} holds passwords or tokens encrypted by Windows, which only that Windows account can read. Sign in to {name} again on this computer."
+                : $"{name} is not set up. Add its account to {configPath}.";
             return false;
         }
 
         reason = null;
         return true;
+    }
+
+    /// <summary>
+    /// True when the file has values encrypted for another user or computer, for example UploadersConfig.json copied from Windows,
+    /// where DPAPI encrypts them. Those values load as empty.
+    /// </summary>
+    private bool HasSecretsFromAnotherComputer()
+    {
+        try
+        {
+            return File.Exists(configPath) && File.ReadAllText(configPath).Contains(DPAPIEncryptedStringValueProvider.EncryptedTag, StringComparison.Ordinal);
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+        {
+            return false;
+        }
     }
 
     public async Task<UploadOutcome> UploadAsync(string fileName, byte[] data, bool isImage, CancellationToken cancellationToken)

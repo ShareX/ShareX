@@ -111,20 +111,69 @@ public class FreedesktopThumbnailTests
             FreedesktopThumbnailService.GetThumbnailName("/home/jens/photo with spaces.png"));
     }
 
+    /// <summary>A PNG signature, a tEXt chunk and IEND: enough for the chunk reader, like a real thumbnailer's output.</summary>
+    private static byte[] ThumbnailPng(params (string Key, string Value)[] texts)
+    {
+        using MemoryStream stream = new MemoryStream();
+        stream.Write(new byte[] { 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A });
+
+        void Chunk(string type, byte[] data)
+        {
+            stream.Write(new[] { (byte)(data.Length >> 24), (byte)(data.Length >> 16), (byte)(data.Length >> 8), (byte)data.Length });
+            stream.Write(Encoding.ASCII.GetBytes(type));
+            stream.Write(data);
+            stream.Write(new byte[4]); // CRC, not checked by the reader
+        }
+
+        foreach ((string key, string value) in texts)
+        {
+            Chunk("tEXt", Encoding.Latin1.GetBytes(key + "\0" + value));
+        }
+
+        Chunk("IEND", Array.Empty<byte>());
+        return stream.ToArray();
+    }
+
+    [Fact]
+    public void ReadTextChunk_FindsTheKeywordAndStopsAtImageData()
+    {
+        byte[] png = ThumbnailPng(("Thumb::URI", "file:///a.png"), ("Thumb::MTime", "1700000000"));
+
+        Assert.Equal("1700000000", FreedesktopThumbnailService.ReadTextChunk(png, "Thumb::MTime"));
+        Assert.Equal("file:///a.png", FreedesktopThumbnailService.ReadTextChunk(png, "Thumb::URI"));
+        Assert.Null(FreedesktopThumbnailService.ReadTextChunk(png, "Thumb::Size"));
+        Assert.Null(FreedesktopThumbnailService.ReadTextChunk(new byte[] { 1, 2, 3 }, "Thumb::MTime"));
+    }
+
     [UnixFact]
-    public void GetThumbnail_ReturnsTheCachedPngAndNullWhenMissing()
+    public void GetThumbnail_ReturnsOnlyThumbnailsThatMatchTheFilesModificationTime()
     {
         string cache = Path.Combine(Path.GetTempPath(), "sharex-thumbs-" + Guid.NewGuid().ToString("N"));
 
         try
         {
             string image = Path.Combine(cache, "pictures", "a.png");
-            string name = FreedesktopThumbnailService.GetThumbnailName(image);
-            Directory.CreateDirectory(Path.Combine(cache, "thumbnails", "normal"));
-            File.WriteAllBytes(Path.Combine(cache, "thumbnails", "normal", name), new byte[] { 1, 2, 3 });
+            Directory.CreateDirectory(Path.GetDirectoryName(image)!);
+            File.WriteAllBytes(image, new byte[] { 9 });
+            File.SetLastWriteTimeUtc(image, new DateTime(2026, 10, 1, 0, 0, 0, DateTimeKind.Utc));
+            long mtime = new DateTimeOffset(File.GetLastWriteTimeUtc(image)).ToUnixTimeSeconds();
+
+            string thumbnail = Path.Combine(cache, "thumbnails", "normal", FreedesktopThumbnailService.GetThumbnailName(image));
+            Directory.CreateDirectory(Path.GetDirectoryName(thumbnail)!);
+            byte[] current = ThumbnailPng(("Thumb::MTime", mtime.ToString(System.Globalization.CultureInfo.InvariantCulture)));
+            File.WriteAllBytes(thumbnail, current);
             FreedesktopThumbnailService service = new FreedesktopThumbnailService(Path.Combine(cache, "thumbnails"));
 
-            Assert.Equal(new byte[] { 1, 2, 3 }, service.GetThumbnail(image, 100, 100));
+            Assert.Equal(current, service.GetThumbnail(image, 100, 100));
+
+            // The user edited the picture after the file manager made the thumbnail.
+            File.SetLastWriteTimeUtc(image, new DateTime(2026, 10, 2, 0, 0, 0, DateTimeKind.Utc));
+            Assert.Null(service.GetThumbnail(image, 100, 100));
+
+            // A thumbnail without Thumb::MTime is invalid under the specification.
+            File.WriteAllBytes(thumbnail, ThumbnailPng());
+            Assert.Null(service.GetThumbnail(image, 100, 100));
+
             Assert.Null(service.GetThumbnail(Path.Combine(cache, "pictures", "missing.png"), 100, 100));
         }
         finally

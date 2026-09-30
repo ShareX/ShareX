@@ -62,12 +62,67 @@ public sealed class FreedesktopThumbnailService : IThumbnailService
 
                 if (File.Exists(candidate))
                 {
-                    return File.ReadAllBytes(candidate);
+                    byte[] png = File.ReadAllBytes(candidate);
+
+                    // The spec requires checking Thumb::MTime. A file edited after the thumbnail was made needs a new one.
+                    if (IsCurrent(png, fullPath))
+                    {
+                        return png;
+                    }
                 }
             }
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or ArgumentException or NotSupportedException)
         {
+        }
+
+        return null;
+    }
+
+    internal static bool IsCurrent(byte[] png, string fullPath)
+    {
+        string? mtime = ReadTextChunk(png, "Thumb::MTime");
+
+        if (mtime == null || !long.TryParse(mtime, System.Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture, out long seconds))
+        {
+            return false;
+        }
+
+        return seconds == new DateTimeOffset(File.GetLastWriteTimeUtc(fullPath)).ToUnixTimeSeconds();
+    }
+
+    /// <summary>Returns the value of a PNG tEXt chunk, or null. Thumbnailers write Thumb::URI and Thumb::MTime this way.</summary>
+    internal static string? ReadTextChunk(byte[] png, string keyword)
+    {
+        int offset = 8;
+
+        while (offset + 8 <= png.Length)
+        {
+            int length = (png[offset] << 24) | (png[offset + 1] << 16) | (png[offset + 2] << 8) | png[offset + 3];
+            string type = Encoding.ASCII.GetString(png, offset + 4, 4);
+            int data = offset + 8;
+
+            if (length < 0 || data + length > png.Length)
+            {
+                return null;
+            }
+
+            if (type == "tEXt")
+            {
+                int separator = Array.IndexOf(png, (byte)0, data, length);
+
+                if (separator > data && Encoding.Latin1.GetString(png, data, separator - data) == keyword)
+                {
+                    return Encoding.Latin1.GetString(png, separator + 1, data + length - separator - 1);
+                }
+            }
+            else if (type == "IDAT" || type == "IEND")
+            {
+                // Text chunks the spec cares about come before the image data.
+                return null;
+            }
+
+            offset = data + length + 4;
         }
 
         return null;

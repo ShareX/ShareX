@@ -41,10 +41,9 @@ namespace ShareX.Desktop.Tests;
 /// Runs the real UploadersLib custom uploader against a server on localhost, so the whole upload path is exercised
 /// without sending anything to a third party.
 /// </summary>
+[Collection(PlatformServicesCollection.Name)]
 public sealed class UploadServiceTests : IDisposable
 {
-    private static readonly object InitLock = new object();
-
     private readonly string folder = Path.Combine(Path.GetTempPath(), "sharex-upload-" + Guid.NewGuid().ToString("N"));
     private readonly HttpListener listener = new HttpListener();
     private readonly string baseUrl;
@@ -52,16 +51,9 @@ public sealed class UploadServiceTests : IDisposable
     private int status = 200;
     private string? lastBody;
 
-    public UploadServiceTests()
+    public UploadServiceTests(PlatformServicesFixture fixture)
     {
-        lock (InitLock)
-        {
-            // UploadersConfig encrypts secrets through the platform services, like the real application does.
-            if (!PlatformServices.IsInitialized)
-            {
-                PlatformServices.Initialize(new FakePlatform(Path.Combine(Path.GetTempPath(), "sharex-upload-platform-" + Guid.NewGuid().ToString("N"))));
-            }
-        }
+        fixture.Platform.SecretsFake.Fail = false;
 
         Directory.CreateDirectory(folder);
         int port = GetFreePort();
@@ -167,6 +159,19 @@ public sealed class UploadServiceTests : IDisposable
 
         Assert.False(service.IsConfigured(isImage: true, out string? reason));
         Assert.Contains(expectedReason, reason);
+    }
+
+    [Fact]
+    public void IsConfigured_ExplainsThatWindowsEncryptedAccountsMustBeSignedInAgain()
+    {
+        CreateService("CustomImageUploader");
+        UploadersUploadService service = new UploadersUploadService(new DesktopSettings { FileUploader = "Immich" }, folder);
+        string path = Path.Combine(folder, "UploadersConfig.json");
+        File.WriteAllText(path, "{ \"ImmichURL\": \"https://photos.example.test\", \"ImmichAPIKey\": \"$DPAPIEncrypted$AQAAANCMnd8BFdERjHoAwE\" }");
+        File.SetLastWriteTimeUtc(path, DateTime.UtcNow.AddSeconds(5));
+
+        Assert.False(service.IsConfigured(isImage: false, out string? reason));
+        Assert.Contains("encrypted by Windows", reason);
     }
 
     [Fact]

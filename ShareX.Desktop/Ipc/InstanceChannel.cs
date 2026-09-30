@@ -125,9 +125,19 @@ public static class InstanceChannel
         return server;
     }
 
+    /// <summary>
+    /// $XDG_RUNTIME_DIR is private to the user, so another account cannot create the lock file first and stop ShareX from starting.
+    /// Windows and macOS temp folders are already per user.
+    /// </summary>
+    internal static string GetLockFolder()
+    {
+        string? runtime = Environment.GetEnvironmentVariable("XDG_RUNTIME_DIR");
+        return !string.IsNullOrEmpty(runtime) && Directory.Exists(runtime) ? runtime : Path.GetTempPath();
+    }
+
     private static FileStream? TryAcquireLock(string pipeName)
     {
-        string path = Path.Combine(Path.GetTempPath(), pipeName + ".lock");
+        string path = Path.Combine(GetLockFolder(), pipeName + ".lock");
 
         try
         {

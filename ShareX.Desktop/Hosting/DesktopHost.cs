@@ -51,17 +51,20 @@ namespace ShareX.Desktop.Hosting;
 public sealed class DesktopHost : IEditorLauncher
 {
     private readonly IPlatformServices platform;
-    private readonly DesktopSettings settings;
+    private readonly Func<DesktopSettings> getSettings;
     private readonly IUploadService uploader;
     private readonly CaptureWorkflow workflow;
     private readonly SqliteHistoryRecorder? history;
     private readonly ImageHistorySettings historySettings = new ImageHistorySettings();
     private TrayIcon? trayIcon;
 
-    public DesktopHost(IPlatformServices platform, DesktopSettings settings, IUploadService uploader, SqliteHistoryRecorder? history = null)
+    // Read on every use so DesktopSettings.json edits apply without a restart.
+    private DesktopSettings settings => getSettings();
+
+    public DesktopHost(IPlatformServices platform, DesktopSettingsStore settings, IUploadService uploader, SqliteHistoryRecorder? history = null)
     {
         this.platform = platform;
-        this.settings = settings;
+        getSettings = () => settings.Current;
         this.uploader = uploader;
         this.history = history;
         workflow = new CaptureWorkflow(platform, settings, uploader, this, history: history);

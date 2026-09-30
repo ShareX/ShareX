@@ -93,4 +93,28 @@ public sealed class SettingsTests : IDisposable
         Assert.False(actions.Edit);
         Assert.True(actions.Notify);
     }
+
+    [Fact]
+    public void Store_PicksUpEditsWithoutARestart()
+    {
+        string path = Path.Combine(folder, DesktopSettings.FileName);
+        new DesktopSettings { ImageUploader = "" }.Save(path);
+        DesktopSettingsStore store = new DesktopSettingsStore(path);
+        Assert.Equal("", store.Current.ImageUploader);
+
+        new DesktopSettings { ImageUploader = "CustomImageUploader" }.Save(path);
+        File.SetLastWriteTimeUtc(path, DateTime.UtcNow.AddSeconds(5));
+
+        Assert.Equal("CustomImageUploader", store.Current.ImageUploader);
+    }
+
+    [Fact]
+    public void Store_KeepsTheSameInstanceWhileTheFileIsUnchanged()
+    {
+        string path = Path.Combine(folder, DesktopSettings.FileName);
+        new DesktopSettings().Save(path);
+        DesktopSettingsStore store = new DesktopSettingsStore(path);
+
+        Assert.Same(store.Current, store.Current);
+    }
 }

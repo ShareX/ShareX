@@ -156,12 +156,24 @@ internal sealed class NullCredentials : ICredentialService
     public Task<bool> DeleteAsync(string service, string account, CancellationToken cancellationToken = default) => Task.FromResult(false);
 }
 
+/// <summary>Real encryption that a test can make fail, to check that nothing falls back to plain text.</summary>
+internal sealed class SwitchableSecrets(ISecretProtectionService inner) : ISecretProtectionService
+{
+    public bool Fail { get; set; }
+
+    public byte[] Protect(byte[] data, byte[]? entropy = null) =>
+        Fail ? throw new System.Security.Cryptography.CryptographicException("fake failure") : inner.Protect(data, entropy);
+
+    public byte[] Unprotect(byte[] protectedData, byte[]? entropy = null) =>
+        Fail ? throw new System.Security.Cryptography.CryptographicException("fake failure") : inner.Unprotect(protectedData, entropy);
+}
+
 internal sealed class FakePlatform : IPlatformServices
 {
     public FakePlatform(string root)
     {
         Paths = new FakePaths(root);
-        Secrets = new KeyFileSecretProtectionService(Path.Combine(root, "secret.key"));
+        SecretsFake = new SwitchableSecrets(new KeyFileSecretProtectionService(Path.Combine(root, "secret.key")));
     }
 
     public FakeCapture Capture { get; } = new FakeCapture();
@@ -194,9 +206,13 @@ internal sealed class FakePlatform : IPlatformServices
 
     public ICredentialService Credentials { get; } = new NullCredentials();
 
-    public ISecretProtectionService Secrets { get; }
+    public SwitchableSecrets SecretsFake { get; }
+
+    public ISecretProtectionService Secrets => SecretsFake;
 
     public IThumbnailService Thumbnails { get; } = new UnsupportedThumbnailService("fake");
+
+    public ISystemPreferencesService Preferences { get; } = new DefaultSystemPreferencesService();
 
     public void Dispose()
     {

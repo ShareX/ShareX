@@ -24,13 +24,14 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json.Serialization;
+using System;
 using System.Reflection;
 
 namespace ShareX.HelpersLib
 {
     public class DPAPIEncryptedStringValueProvider : IValueProvider
     {
-        private const string encryptedTag = "$DPAPIEncrypted$";
+        public const string EncryptedTag = "$DPAPIEncrypted$";
 
         private PropertyInfo targetProperty;
 
@@ -47,10 +48,12 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    value = encryptedTag + DPAPI.Encrypt(value);
+                    value = EncryptedTag + DPAPI.Encrypt(value);
                 }
-                catch
+                catch (Exception e)
                 {
+                    // Writing the secret in plain text would leak it. Failing the save keeps the previous file, which SettingsBase reports.
+                    throw new InvalidOperationException($"Could not encrypt {targetProperty.Name}, so the settings were not saved.", e);
                 }
             }
 
@@ -61,15 +64,17 @@ namespace ShareX.HelpersLib
         {
             string text = (string)value;
 
-            if (!string.IsNullOrEmpty(text) && text.StartsWith(encryptedTag))
+            if (!string.IsNullOrEmpty(text) && text.StartsWith(EncryptedTag))
             {
                 try
                 {
-                    string encryptedString = text.Substring(encryptedTag.Length);
+                    string encryptedString = text.Substring(EncryptedTag.Length);
                     text = DPAPI.Decrypt(encryptedString);
                 }
-                catch
+                catch (Exception e)
                 {
+                    // Encrypted for another user or computer (for example by Windows DPAPI). The value cannot be recovered here.
+                    DebugHelper.WriteLine($"Could not decrypt {targetProperty.Name}: {e.Message}");
                     text = null;
                 }
             }

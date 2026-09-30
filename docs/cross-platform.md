@@ -96,7 +96,7 @@ sharex config              # where settings, upload accounts and history are sto
 
 The first `sharex` command starts the tray application. Later commands are handed to it, which is how a key binding that runs `sharex capture region` works without starting a second copy.
 
-Screenshots go to `~/Pictures/ShareX/<yyyy-MM>/` and are copied to the clipboard. **Nothing is uploaded until you choose a destination**: set `ImageUploader` (for example `CustomImageUploader`) and `UploadImage` in `~/.config/ShareX/DesktopSettings.json`. Upload accounts live in `UploadersConfig.json`, the same file the Windows application uses, so you can copy it across.
+Screenshots go to `~/Pictures/ShareX/<yyyy-MM>/` and are copied to the clipboard. **Nothing is uploaded until you choose a destination**: set `ImageUploader` (for example `CustomImageUploader`) and `UploadImage` in `~/.config/ShareX/DesktopSettings.json`. Upload accounts live in `UploadersConfig.json`, the same format the Windows application uses. Settings without secrets (custom uploaders, FTP hosts, S3 buckets) can be copied across, but passwords and tokens the Windows application saved are encrypted with DPAPI for that Windows account, so they load as empty on Linux and macOS: sign in to those destinations again. ShareX saves secrets encrypted on every platform and refuses to save rather than write one in plain text.
 
 ## Building
 

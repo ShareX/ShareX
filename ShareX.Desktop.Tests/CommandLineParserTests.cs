@@ -24,6 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.Desktop.Commands;
+using System;
+using System.IO;
 using Xunit;
 
 namespace ShareX.Desktop.Tests;
@@ -115,5 +117,22 @@ public class CommandLineParserTests
 
         Assert.Equal(kind, command.Kind);
         Assert.Equal(needsInstance, command.NeedsRunningInstance);
+    }
+
+    [Fact]
+    public void FilePaths_AreMadeAbsoluteBeforeTheyReachTheRunningInstance()
+    {
+        DesktopCommand command = Program.WithAbsolutePaths(CommandLineParser.Parse(["upload", "shot.png", "/abs/b.txt"]).Command!);
+
+        Assert.Equal(Path.Combine(Environment.CurrentDirectory, "shot.png"), command.Files[0]);
+        Assert.Equal(Path.GetFullPath("/abs/b.txt"), command.Files[1]);
+    }
+
+    [Fact]
+    public void CommandsWithoutFiles_AreUnchanged()
+    {
+        DesktopCommand command = new DesktopCommand(CommandKind.Status);
+
+        Assert.Same(command, Program.WithAbsolutePaths(command));
     }
 }

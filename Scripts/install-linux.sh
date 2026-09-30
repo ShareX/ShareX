@@ -36,8 +36,8 @@ case "${1:-}" in
 esac
 
 case "$(uname -m)" in
-  x86_64) rid=linux-x64 ;;
-  aarch64|arm64) rid=linux-arm64 ;;
+  x86_64) rid=linux-x64; platform=x64 ;;
+  aarch64|arm64) rid=linux-arm64; platform=ARM64 ;;
   *) echo "Unsupported CPU: $(uname -m)" >&2; exit 1 ;;
 esac
 
@@ -48,7 +48,7 @@ trap 'rm -rf "$staging"' EXIT
 
 echo "Building ShareX.Desktop for $rid..."
 dotnet publish "$repo/ShareX.Desktop/ShareX.Desktop.csproj" -c Release -r "$rid" --self-contained true \
-  -p:Platform=x64 -p:PublishTrimmed=false -p:DebugType=none -p:DebugSymbols=false -o "$staging/app" >"$staging/build.log" 2>&1 \
+  -p:Platform="$platform" -p:PublishTrimmed=false -p:DebugType=none -p:DebugSymbols=false -o "$staging/app" >"$staging/build.log" 2>&1 \
   || { cat "$staging/build.log" >&2; exit 1; }
 
 stop_running

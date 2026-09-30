@@ -39,17 +39,26 @@ public sealed record WorkflowResult(bool Success, string Message, string? FilePa
 public sealed class CaptureWorkflow
 {
     private readonly IPlatformServices platform;
-    private readonly DesktopSettings settings;
+    private Func<DesktopSettings> getSettings;
     private readonly IUploadService uploader;
     private readonly IEditorLauncher editor;
     private readonly IHistoryRecorder? history;
     private readonly TimeProvider clock;
 
+    // Read on every use so DesktopSettings.json edits apply without a restart.
+    private DesktopSettings settings => getSettings();
+
+    public CaptureWorkflow(IPlatformServices platform, DesktopSettingsStore store, IUploadService uploader, IEditorLauncher editor, TimeProvider? clock = null, IHistoryRecorder? history = null)
+        : this(platform, store.Current, uploader, editor, clock, history)
+    {
+        getSettings = () => store.Current;
+    }
+
     public CaptureWorkflow(IPlatformServices platform, DesktopSettings settings, IUploadService uploader, IEditorLauncher editor, TimeProvider? clock = null, IHistoryRecorder? history = null)
     {
         this.history = history;
         this.platform = platform;
-        this.settings = settings;
+        getSettings = () => settings;
         this.uploader = uploader;
         this.editor = editor;
         this.clock = clock ?? TimeProvider.System;
@@ -72,14 +81,12 @@ public sealed class CaptureWorkflow
         }
         catch (OperationCanceledException) when (!cancellationToken.IsCancellationRequested)
         {
-            // The selector was closed or killed, which is a cancel and not a failure of the workflow itself.
+            // The platform reports a closed region selector or portal dialog as a cancellation. It is not an error worth a notification.
             return new WorkflowResult(false, "Capture cancelled.");
         }
         catch (Exception ex) when (ex is not OperationCanceledException)
         {
-            // Closing the region selector without choosing an area is the normal way to cancel, not an error worth a notification.
-            bool cancelled = target == CaptureTarget.Region && IsSelectionCancelled(ex);
-            return cancelled ? new WorkflowResult(false, "Capture cancelled.") : await FailAsync(actions, "Capture failed: " + ex.Message).ConfigureAwait(false);
+            return await FailAsync(actions, "Capture failed: " + ex.Message).ConfigureAwait(false);
         }
 
         return await RunAfterCaptureAsync(result.Png, actions, cancellationToken).ConfigureAwait(false);
@@ -186,9 +193,6 @@ public sealed class CaptureWorkflow
                 return ScreenCaptureRequest.FullScreen(settings.IncludeCursor);
         }
     }
-
-    private static bool IsSelectionCancelled(Exception ex) =>
-        ex is OperationCanceledException || ex.Message.Contains("cancel", StringComparison.OrdinalIgnoreCase) || ex.Message.Contains("selection", StringComparison.OrdinalIgnoreCase);
 
     private async Task<string> SaveAsync(byte[] png, string fileName, DateTime now, CancellationToken cancellationToken)
     {

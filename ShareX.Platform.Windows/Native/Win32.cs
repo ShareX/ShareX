@@ -55,6 +55,7 @@ internal static unsafe partial class Win32
     public const uint MOD_NOREPEAT = 0x4000;
     public const int ERROR_HOTKEY_ALREADY_REGISTERED = 1409;
 
+    public const uint SPI_GETWHEELSCROLLLINES = 0x0068;
     public const int GWL_EXSTYLE = -20;
     public const long WS_EX_TOOLWINDOW = 0x00000080;
     public const int DWMWA_EXTENDED_FRAME_BOUNDS = 9;
@@ -186,6 +187,10 @@ internal static unsafe partial class Win32
     public static partial bool GdiFlush();
 
     // user32
+    [LibraryImport("user32.dll", EntryPoint = "SystemParametersInfoW")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool SystemParametersInfo(uint action, uint param, void* value, uint winIni);
+
     [LibraryImport("user32.dll")]
     public static partial IntPtr GetDC(IntPtr hwnd);
 

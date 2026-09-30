@@ -267,15 +267,16 @@ public sealed class CaptureWorkflowTests : IDisposable
     }
 
     [Fact]
-    public async Task Region_CancelledSelection_IsQuiet()
+    public async Task Region_AFailureThatMentionsTheSelection_IsStillReportedAsAFailure()
     {
-        platform.Capture.Throw = new InvalidOperationException("slurp selection was cancelled");
+        // Only OperationCanceledException means cancel. Guessing from the message hid real errors before.
+        platform.Capture.Throw = new InvalidOperationException("grim failed: invalid selection geometry");
 
         WorkflowResult result = await workflow.CaptureAsync(CaptureTarget.Region, Actions());
 
         Assert.False(result.Success);
-        Assert.Equal("Capture cancelled.", result.Message);
-        Assert.Empty(platform.NotificationsFake.Shown);
+        Assert.Contains("invalid selection geometry", result.Message);
+        Assert.Single(platform.NotificationsFake.Shown);
     }
 
     [Fact]

@@ -66,4 +66,7 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>File thumbnails from the OS.</summary>
     IThumbnailService Thumbnails { get; }
+
+    /// <summary>OS preferences such as the mouse wheel scroll amount.</summary>
+    ISystemPreferencesService Preferences { get; }
 }

@@ -34,6 +34,7 @@ using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using ShareX.HistoryLib.Localization;
 using System;
 using System.Collections.Generic;
@@ -374,14 +375,11 @@ public partial class ImageHistoryWindow : Window
         if (remaining <= Math.Max(120, _settings.ThumbnailSize.Height)) LoadNextBatch();
     }
 
-    // Lines per wheel notch. WinForms read the user's Windows setting; 3 is the default on every platform.
-    private const int ScrollLinesPerNotch = 3;
-
     private void OnThumbnailRowsPointerWheelChanged(object? sender, PointerWheelEventArgs e)
     {
         if (_scrollViewer == null || e.Delta.Y == 0) return;
 
-        int lines = ScrollLinesPerNotch;
+        int lines = PlatformServices.IsInitialized ? PlatformServices.Current.Preferences.WheelScrollLines : DefaultSystemPreferencesService.DefaultWheelScrollLines;
         if (lines == 0)
         {
             e.Handled = true;
