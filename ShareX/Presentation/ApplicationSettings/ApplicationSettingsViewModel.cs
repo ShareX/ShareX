@@ -249,6 +249,13 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     public bool CanEditTheme => !UseSystemTheme;
 
+    public void RefreshThemeSettings()
+    {
+        OnPropertyChanged(nameof(UseSystemTheme));
+        OnPropertyChanged(nameof(CanEditTheme));
+        OnPropertyChanged(nameof(SelectedTheme));
+    }
+
     public EnumOption<string>? SelectedTheme
     {
         get => Find(ThemeOptions, NormalizeTheme(Settings.ThemeOptions.Theme));

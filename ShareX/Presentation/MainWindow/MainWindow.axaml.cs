@@ -89,6 +89,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public AvaloniaBitmap TitleBarIcon { get; }
     public bool IsEmpty => ThumbnailItems.Count == 0;
     public bool IsWindowMaximized => WindowState == Avalonia.Controls.WindowState.Maximized;
+    public string ThemeToggleIcon => ThemeManager.IsDarkTheme ? LucideIcons.moon : LucideIcons.sun;
+    public string ThemeToggleText => ThemeManager.IsDarkTheme
+        ? Strings.ApplicationSettingsWindow_Dark
+        : Strings.ApplicationSettingsWindow_Light;
 
     public MainWindow() : this(MainWindowIntegration.TrayIconService)
     {
@@ -169,6 +173,15 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public void SetTitle(string title)
     {
         Title = title;
+    }
+
+    private void OnThemeToggleClick(object? sender, RoutedEventArgs e)
+    {
+        string theme = ThemeManager.IsDarkTheme ? "Light" : "Dark";
+        ApplicationThemeOptions options = ApplicationState.Settings.ThemeOptions;
+        options.Theme = theme;
+        options.UseSystemTheme = false;
+        SettingManager.SaveApplicationConfigAsync();
     }
 
     private void OnTopmostClick(object? sender, RoutedEventArgs e)
@@ -1118,7 +1131,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void OnTaskCollectionChanged() => Dispatcher.UIThread.Post(NotifyTaskCollectionChanged);
 
     private void OnThemeChanged(object? sender, Avalonia.Styling.ThemeVariant theme) =>
-        Dispatcher.UIThread.Post(() => RequestedThemeVariant = theme);
+        Dispatcher.UIThread.Post(() =>
+        {
+            RequestedThemeVariant = theme;
+            OnPropertyChanged(nameof(ThemeToggleIcon));
+            OnPropertyChanged(nameof(ThemeToggleText));
+        });
 
     private void NotifyTaskCollectionChanged()
     {

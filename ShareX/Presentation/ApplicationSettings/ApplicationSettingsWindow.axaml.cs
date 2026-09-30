@@ -75,7 +75,11 @@ public partial class ApplicationSettingsWindow : Window
     }
 
     private void OnThemeChanged(object? sender, Avalonia.Styling.ThemeVariant theme) =>
-        Dispatcher.UIThread.Post(() => RequestedThemeVariant = theme);
+        Dispatcher.UIThread.Post(() =>
+        {
+            RequestedThemeVariant = theme;
+            ViewModel.RefreshThemeSettings();
+        });
 
     private void OnClosed(object? sender, EventArgs e)
     {

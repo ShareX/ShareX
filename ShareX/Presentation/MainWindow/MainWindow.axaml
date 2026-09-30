@@ -137,6 +137,15 @@
 
                     <StackPanel Grid.Column="1" Orientation="Horizontal">
                         <Button Classes="caption-button"
+                                AutomationProperties.Name="{Binding ThemeToggleText}"
+                                ToolTip.Tip="{Binding ThemeToggleText}"
+                                Click="OnThemeToggleClick"
+                                chrome:WindowDecorationProperties.ElementRole="User">
+                            <TextBlock Classes="icon"
+                                       Text="{Binding ThemeToggleIcon}"
+                                       FontSize="14"/>
+                        </Button>
+                        <Button Classes="caption-button"
                                 AutomationProperties.Name="{x:Static res:Strings.MainWindow_AlwaysOnTop}"
                                 Click="OnTopmostClick"
                                 chrome:WindowDecorationProperties.ElementRole="User">
