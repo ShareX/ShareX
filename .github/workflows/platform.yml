@@ -7,6 +7,10 @@ on:
     paths:
       - "ShareX.Platform*/**"
       - "ShareX.Destinations*/**"
+      - "ShareX.Desktop*/**"
+      - "ShareX.HelpersLib*/**"
+      - "ShareX.UploadersLib/**"
+      - "ShareX.HistoryLib/**"
       - "Directory.Build.*"
       - ".github/workflows/platform.yml"
   pull_request:
@@ -15,6 +19,10 @@ on:
     paths:
       - "ShareX.Platform*/**"
       - "ShareX.Destinations*/**"
+      - "ShareX.Desktop*/**"
+      - "ShareX.HelpersLib*/**"
+      - "ShareX.UploadersLib/**"
+      - "ShareX.HistoryLib/**"
       - "Directory.Build.*"
       - ".github/workflows/platform.yml"
 
@@ -55,6 +63,10 @@ jobs:
 
       - name: Test destination routing
         run: dotnet test ShareX.Destinations.Tests/ShareX.Destinations.Tests.csproj --configuration Release --logger "console;verbosity=normal"
+
+      # Runs the cross-platform application's workflow, single-instance channel and the real uploaders against a local server.
+      - name: Test the desktop application
+        run: dotnet test ShareX.Desktop.Tests/ShareX.Desktop.Tests.csproj --configuration Release --logger "console;verbosity=normal"
 
   build-solution:
     name: Build solution (${{ matrix.os }})

@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>sharex</AssemblyName>
+    <RootNamespace>ShareX.Desktop</RootNamespace>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>x64;ARM64</Platforms>
+    <!-- Directory.Build.props pins win-x64 for the Windows application. This host runs on every OS, so it builds for the machine it is built on. -->
+    <RuntimeIdentifier></RuntimeIdentifier>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <Description>ShareX for Windows, macOS and Linux: tray application with capture, upload and the image editor.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="ShareX.Desktop.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\ShareX.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Newtonsoft.Json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
+    <ProjectReference Include="..\ShareX.Destinations\ShareX.Destinations.csproj" />
+    <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
+    <ProjectReference Include="..\ShareX.ImageEditor\ShareX.ImageEditor.csproj" />
+    <ProjectReference Include="..\ShareX.Platform\ShareX.Platform.csproj" />
+    <ProjectReference Include="..\ShareX.Platform.Linux\ShareX.Platform.Linux.csproj" />
+    <ProjectReference Include="..\ShareX.Platform.MacOS\ShareX.Platform.MacOS.csproj" />
+    <ProjectReference Include="..\ShareX.Platform.Windows\ShareX.Platform.Windows.csproj" />
+    <ProjectReference Include="..\ShareX.UploadersLib\ShareX.UploadersLib.csproj" />
+  </ItemGroup>
+</Project>

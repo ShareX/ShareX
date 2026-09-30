@@ -64,13 +64,14 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static Icon icon = Resources.ShareX_Icon;
+        // Created on first use. GDI+ objects cannot be created on Linux and macOS, and this class also carries the user agent that every uploader needs.
+        private static Icon icon;
 
         public static Icon Icon
         {
             get
             {
-                return icon.CloneSafe();
+                return (icon ??= Resources.ShareX_Icon).CloneSafe();
             }
             set
             {
@@ -82,13 +83,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static Bitmap logo = Resources.ShareX_Logo;
+        private static Bitmap logo;
 
         public static Bitmap Logo
         {
             get
             {
-                return logo.CloneSafe();
+                return (logo ??= Resources.ShareX_Logo).CloneSafe();
             }
             set
             {
@@ -100,7 +101,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static ShareXTheme Theme { get; set; } = ShareXTheme.DarkTheme;
+        private static ShareXTheme theme;
+
+        public static ShareXTheme Theme
+        {
+            get => theme ??= ShareXTheme.DarkTheme;
+            set => theme = value;
+        }
 
     }
 }
