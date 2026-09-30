@@ -5843,7 +5843,7 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Lossless (fast)
+        ///   Lossless
         /// </summary>
         public static string VideoTrimmer_Lossless {
             get {
@@ -5852,7 +5852,7 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Precise (re-encode)
+        ///   Re-encode
         /// </summary>
         public static string VideoTrimmer_Precise {
             get {

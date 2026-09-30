@@ -2141,7 +2141,7 @@
     <value>กำลังเตรียมตัวอย่างไทม์ไลน์…</value>
   </data>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
-    <value>ไม่สูญเสียคุณภาพ (เร็ว)</value>
+    <value>ไม่สูญเสียคุณภาพ</value>
   </data>
   <data name="VideoTrimmer_NoFrame" xml:space="preserve">
     <value>ไม่มีเฟรมตัวอย่างในตำแหน่งนี้</value>
@@ -2153,7 +2153,7 @@
     <value>ใช้นามสกุล {0} สำหรับโหมดส่งออกนี้</value>
   </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
-    <value>แม่นยำ (เข้ารหัสใหม่)</value>
+    <value>เข้ารหัสใหม่</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>เข้ารหัสใหม่เป็น H.264 / AAC MP4 เพื่อให้ได้จุดตัดที่แม่นยำ</value>

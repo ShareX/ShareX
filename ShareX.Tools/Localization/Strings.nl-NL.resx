@@ -2147,7 +2147,7 @@ Bestandspad: {0}</value>
     <value>Tijdlijnvoorbeelden voorbereiden…</value>
   </data>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
-    <value>Verliesvrij (snel)</value>
+    <value>Verliesvrij</value>
   </data>
   <data name="VideoTrimmer_NoFrame" xml:space="preserve">
     <value>Op deze positie is geen voorbeeldframe beschikbaar.</value>
@@ -2159,7 +2159,7 @@ Bestandspad: {0}</value>
     <value>Gebruik de extensie {0} voor deze exportmodus.</value>
   </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
-    <value>Precies (opnieuw coderen)</value>
+    <value>Opnieuw coderen</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Codeert opnieuw naar H.264 / AAC MP4 voor exacte knippunten.</value>

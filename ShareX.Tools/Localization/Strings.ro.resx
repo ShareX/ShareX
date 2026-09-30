@@ -2141,7 +2141,7 @@
     <value>Se pregătesc previzualizările cronologiei…</value>
   </data>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
-    <value>Fără pierderi (rapid)</value>
+    <value>Fără pierderi</value>
   </data>
   <data name="VideoTrimmer_NoFrame" xml:space="preserve">
     <value>Nu este disponibil niciun cadru de previzualizare la această poziție.</value>
@@ -2153,7 +2153,7 @@
     <value>Folosește extensia {0} pentru acest mod de export.</value>
   </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
-    <value>Precis (recodificare)</value>
+    <value>Recodificare</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Recodifică în H.264 / AAC MP4 pentru puncte de tăiere exacte.</value>

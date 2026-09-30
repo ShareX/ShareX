@@ -2147,7 +2147,7 @@ Ruta del archivo: {0}</value>
     <value>Preparando vistas previas de la línea de tiempo…</value>
   </data>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
-    <value>Sin pérdida (rápido)</value>
+    <value>Sin pérdida</value>
   </data>
   <data name="VideoTrimmer_NoFrame" xml:space="preserve">
     <value>No hay una imagen de vista previa disponible en esta posición.</value>
@@ -2159,7 +2159,7 @@ Ruta del archivo: {0}</value>
     <value>Usa la extensión {0} para este modo de exportación.</value>
   </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
-    <value>Preciso (recodificar)</value>
+    <value>Recodificar</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Vuelve a codificar a H.264 / AAC MP4 para obtener puntos de corte exactos.</value>

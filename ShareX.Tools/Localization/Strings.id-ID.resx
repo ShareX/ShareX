@@ -2141,7 +2141,7 @@
     <value>Menyiapkan pratinjau linimasa…</value>
   </data>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
-    <value>Tanpa kehilangan (cepat)</value>
+    <value>Tanpa kehilangan</value>
   </data>
   <data name="VideoTrimmer_NoFrame" xml:space="preserve">
     <value>Tidak ada bingkai pratinjau pada posisi ini.</value>
@@ -2153,7 +2153,7 @@
     <value>Gunakan ekstensi {0} untuk mode ekspor ini.</value>
   </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
-    <value>Presisi (kode ulang)</value>
+    <value>Kode ulang</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Mengodekan ulang ke H.264 / AAC MP4 untuk titik potong yang tepat.</value>

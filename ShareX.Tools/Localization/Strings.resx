@@ -2141,7 +2141,7 @@
     <value>Preparing timeline previews…</value>
   </data>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
-    <value>Lossless (fast)</value>
+    <value>Lossless</value>
   </data>
   <data name="VideoTrimmer_NoFrame" xml:space="preserve">
     <value>No preview frame was available at this position.</value>
@@ -2153,7 +2153,7 @@
     <value>Use the {0} extension for this export mode.</value>
   </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
-    <value>Precise (re-encode)</value>
+    <value>Re-encode</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Re-encodes to H.264 / AAC MP4 for exact cut points.</value>

@@ -2147,7 +2147,7 @@
     <value>正在準備時間軸預覽…</value>
   </data>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
-    <value>無損（快速）</value>
+    <value>無損</value>
   </data>
   <data name="VideoTrimmer_NoFrame" xml:space="preserve">
     <value>此位置沒有可用的預覽影格。</value>
@@ -2159,7 +2159,7 @@
     <value>此匯出模式請使用 {0} 副檔名。</value>
   </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
-    <value>精確（重新編碼）</value>
+    <value>重新編碼</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>重新編碼為 H.264 / AAC MP4，以獲得精確的剪切點。</value>
