@@ -7,7 +7,7 @@ on:
     paths:
       - "ShareX.Platform*/**"
       - "ShareX.Destinations*/**"
-      - "Directory.*.props"
+      - "Directory.Build.*"
       - ".github/workflows/platform.yml"
   pull_request:
     branches:
@@ -15,7 +15,7 @@ on:
     paths:
       - "ShareX.Platform*/**"
       - "ShareX.Destinations*/**"
-      - "Directory.*.props"
+      - "Directory.Build.*"
       - ".github/workflows/platform.yml"
 
 permissions:
@@ -55,3 +55,27 @@ jobs:
 
       - name: Test destination routing
         run: dotnet test ShareX.Destinations.Tests/ShareX.Destinations.Tests.csproj --configuration Release --logger "console;verbosity=normal"
+
+  build-solution:
+    name: Build solution (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      # Windows-only projects compile on any OS through EnableWindowsTargeting (set in Directory.Build.props). They cannot run off Windows yet.
+      - name: Build ShareX.sln
+        run: dotnet build ShareX.sln --configuration Release -p:Platform=x64

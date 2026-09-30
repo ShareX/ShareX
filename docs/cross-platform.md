@@ -74,11 +74,13 @@ dotnet build ShareX.Platform.Windows -p:EnableWindowsTargeting=true
 dotnet test ShareX.Platform.Tests
 dotnet test ShareX.Destinations.Tests
 
-# The application
-dotnet build ShareX/ShareX.csproj -c Release -p:Platform=x64
+# The whole solution, on any OS
+dotnet build ShareX.sln -c Release -p:Platform=x64
 ```
 
-On Linux or macOS add `-p:EnableWindowsTargeting=true` to build projects that still target Windows. The `Portable libraries` workflow (`.github/workflows/platform.yml`) builds and tests the platform projects on Ubuntu, macOS and Windows.
+`Directory.Build.props` sets `EnableWindowsTargeting` on non-Windows hosts, so every project, including the WinForms application, compiles on Linux and macOS. Projects that target `net10.0-windows` compile there but only run on Windows until their WinForms and Win32 code is migrated to Avalonia and the platform services. Pass `-p:Platform=x64` (or `ARM64`); a plain `dotnet build ShareX.sln` uses the `Any CPU` platform, which the Windows projects do not configure.
+
+The `Portable libraries` workflow (`.github/workflows/platform.yml`) builds and tests the platform projects on Ubuntu, macOS and Windows.
 
 ## Status
 

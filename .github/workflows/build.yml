@@ -40,7 +40,7 @@ jobs:
 
     env:
       SOLUTION_FILE_PATH: ShareX.sln
-      ASSEMBLY_INFO_PATH: Directory.build.props
+      ASSEMBLY_INFO_PATH: Directory.Build.props
       FFMPEG_VERSION: "8.1"
 
     outputs:
