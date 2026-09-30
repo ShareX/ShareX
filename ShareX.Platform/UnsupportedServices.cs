@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -86,4 +86,11 @@ public sealed class UnsupportedScreenRecordingService(string reason) : IScreenRe
     public IReadOnlyList<string> GetSupportedDevices() => Array.Empty<string>();
 
     public FFmpegVideoInput CreateVideoInput(ScreenRecordingRequest request) => throw new PlatformNotSupportedException(Support.Reason);
+}
+
+public sealed class UnsupportedThumbnailService(string reason) : IThumbnailService
+{
+    public FeatureSupport Support { get; } = FeatureSupport.NotSupported(reason);
+
+    public byte[]? GetThumbnail(string path, int maxWidth, int maxHeight) => null;
 }

@@ -1,8 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net10.0-windows</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.Sqlite" />
@@ -11,7 +10,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
-    <ProjectReference Include="..\ShareX.HelpersLib.Windows\ShareX.HelpersLib.Windows.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Localization\Strings.resx">

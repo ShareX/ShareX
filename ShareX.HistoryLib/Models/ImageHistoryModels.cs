@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -28,18 +28,15 @@
 using Avalonia;
 using Avalonia.Platform;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
-using DrawingBitmap = System.Drawing.Bitmap;
-using DrawingRectangle = System.Drawing.Rectangle;
-using DrawingSize = System.Drawing.Size;
 
 namespace ShareX.HistoryLib;
 
@@ -229,28 +226,24 @@ public sealed class ImageHistoryThumbnailLoader : IDisposable
         }
     }
 
+    /// <summary>The OS thumbnail (Explorer, the freedesktop.org cache), or null when there is none or platform services are not running.</summary>
+    private static byte[]? GetOsThumbnail(string filePath, int width, int height)
+    {
+        return PlatformServices.IsInitialized ? PlatformServices.Current.Thumbnails.GetThumbnail(filePath, width, height) : null;
+    }
+
     private static AvaloniaBitmap? LoadCore(string filePath, int width, int height, CancellationToken token)
     {
         if (token.IsCancellationRequested) return null;
 
         try
         {
-            using DrawingBitmap? shellThumbnail = NativeMethods.GetFileThumbnail(filePath, new DrawingSize(width, height));
-            if (shellThumbnail != null)
+            byte[]? osThumbnail = GetOsThumbnail(filePath, width, height);
+            if (osThumbnail != null)
             {
-                DrawingRectangle bounds = new(0, 0, shellThumbnail.Width, shellThumbnail.Height);
-                BitmapData data = shellThumbnail.LockBits(bounds, ImageLockMode.ReadOnly,
-                    System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
-                try
-                {
-                    if (token.IsCancellationRequested) return null;
-                    return new AvaloniaBitmap(Avalonia.Platform.PixelFormat.Bgra8888, AlphaFormat.Premul, data.Scan0,
-                        new PixelSize(shellThumbnail.Width, shellThumbnail.Height), new Vector(96, 96), data.Stride);
-                }
-                finally
-                {
-                    shellThumbnail.UnlockBits(data);
-                }
+                if (token.IsCancellationRequested) return null;
+                using MemoryStream thumbnailStream = new(osThumbnail);
+                return new AvaloniaBitmap(thumbnailStream);
             }
         }
         catch (OperationCanceledException)

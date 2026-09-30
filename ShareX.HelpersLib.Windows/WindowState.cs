@@ -29,44 +29,40 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class WindowState
+    public static class WindowStateExtensions
     {
-        public Point Location { get; set; }
-        public Size Size { get; set; }
-        public bool IsMaximized { get; set; }
-
-        public void ApplyFormState(Form form)
+        public static void ApplyFormState(this WindowState state, Form form)
         {
-            if (!Location.IsEmpty && !Size.IsEmpty && CaptureHelpers.GetScreenWorkingArea().Contains(new Rectangle(Location, Size)))
+            if (!state.Location.IsEmpty && !state.Size.IsEmpty && CaptureHelpers.GetScreenWorkingArea().Contains(new Rectangle(state.Location, state.Size)))
             {
                 form.StartPosition = FormStartPosition.Manual;
-                form.Location = Location;
-                form.Size = Size;
+                form.Location = state.Location;
+                form.Size = state.Size;
             }
 
-            if (IsMaximized)
+            if (state.IsMaximized)
             {
                 form.WindowState = FormWindowState.Maximized;
             }
         }
 
-        public void UpdateFormState(Form form)
+        public static void UpdateFormState(this WindowState state, Form form)
         {
             WINDOWPLACEMENT wp = new WINDOWPLACEMENT();
             wp.length = Marshal.SizeOf(wp);
 
             if (NativeMethods.GetWindowPlacement(form.Handle, ref wp))
             {
-                Location = wp.rcNormalPosition.Location;
-                Size = wp.rcNormalPosition.Size;
-                IsMaximized = wp.showCmd == WindowShowStyle.Maximize;
+                state.Location = wp.rcNormalPosition.Location;
+                state.Size = wp.rcNormalPosition.Size;
+                state.IsMaximized = wp.showCmd == WindowShowStyle.Maximize;
             }
         }
 
-        public void AutoHandleFormState(Form form)
+        public static void AutoHandleFormState(this WindowState state, Form form)
         {
-            ApplyFormState(form);
-            form.FormClosing += (sender, e) => UpdateFormState(form);
+            state.ApplyFormState(form);
+            form.FormClosing += (sender, e) => state.UpdateFormState(form);
         }
     }
 }

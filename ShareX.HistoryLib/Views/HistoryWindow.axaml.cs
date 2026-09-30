@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -991,14 +991,14 @@ public partial class HistoryWindow : Window
     private void OnOpenFolderClick(object? sender, RoutedEventArgs e)
     {
         HistoryItem? item = GetPrimaryItem();
-        if (item != null && File.Exists(item.FilePath)) FileHelpers.OpenFolderWithFile(item.FilePath);
+        if (item != null && File.Exists(item.FilePath)) PortableShell.OpenFolderWithFile(item.FilePath);
     }
 
     private void CopyValues(Func<HistoryItem, string?> selector, Func<HistoryItem, bool>? predicate = null)
     {
         string[] values = GetSelectedItems().Where(item => predicate?.Invoke(item) != false)
             .Select(selector).Where(value => !string.IsNullOrWhiteSpace(value)).ToArray()!;
-        if (values.Length > 0) ClipboardHelpers.CopyText(string.Join(Environment.NewLine, values));
+        if (values.Length > 0) PortableShell.CopyText(string.Join(Environment.NewLine, values));
     }
 
     private void OnCopyUrlClick(object? sender, RoutedEventArgs e) => CopyValues(item => item.URL);
@@ -1021,19 +1021,19 @@ public partial class HistoryWindow : Window
     private void OnCopyFileClick(object? sender, RoutedEventArgs e)
     {
         string[] files = GetSelectedItems().Select(item => item.FilePath).Where(File.Exists).ToArray();
-        if (files.Length > 0) ClipboardHelpers.CopyFile(files);
+        if (files.Length > 0) PortableShell.CopyFiles(files);
     }
 
     private void OnCopyImageClick(object? sender, RoutedEventArgs e)
     {
         HistoryItem? item = GetPrimaryItem();
-        if (item != null && File.Exists(item.FilePath) && FileHelpers.IsImageFile(item.FilePath)) ClipboardHelpers.CopyImageFromFile(item.FilePath);
+        if (item != null && File.Exists(item.FilePath) && FileHelpers.IsImageFile(item.FilePath)) PortableShell.CopyImageFromFile(item.FilePath);
     }
 
     private void OnCopyTextClick(object? sender, RoutedEventArgs e)
     {
         HistoryItem? item = GetPrimaryItem();
-        if (item != null && File.Exists(item.FilePath) && FileHelpers.IsTextFile(item.FilePath)) ClipboardHelpers.CopyTextFromFile(item.FilePath);
+        if (item != null && File.Exists(item.FilePath) && FileHelpers.IsTextFile(item.FilePath)) PortableShell.CopyTextFromFile(item.FilePath);
     }
 
     private void OnCopyFilePathClick(object? sender, RoutedEventArgs e) => CopyValues(item => item.FilePath, item => !string.IsNullOrWhiteSpace(item.FilePath) && Path.HasExtension(item.FilePath));

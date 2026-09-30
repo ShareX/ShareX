@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia.Controls;
+using Avalonia.Input.Platform;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
@@ -38,7 +39,7 @@ namespace ShareX.UploadersLib;
 public partial class TextUploadWindow : Window
 {
     private string? _submittedContent;
-    private readonly bool _selectInitialContent;
+    private bool _selectInitialContent;
 
     public TextUploadWindow() : this(null)
     {
@@ -48,11 +49,6 @@ public partial class TextUploadWindow : Window
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-
-        if (string.IsNullOrEmpty(content) && ClipboardHelpers.ContainsText())
-        {
-            content = ClipboardHelpers.GetText();
-        }
 
         if (!string.IsNullOrEmpty(content))
         {
@@ -86,10 +82,29 @@ public partial class TextUploadWindow : Window
         return completion.Task;
     }
 
-    private void OnOpened(object? sender, EventArgs e)
+    private async void OnOpened(object? sender, EventArgs e)
     {
         Activate();
         ContentTextBox.Focus();
+
+        // Start from the clipboard text when nothing was passed in. The window's own clipboard works on Windows, macOS, X11 and Wayland.
+        if (string.IsNullOrEmpty(ContentTextBox.Text) && Clipboard != null)
+        {
+            try
+            {
+                string? text = await Clipboard.TryGetTextAsync();
+
+                if (!string.IsNullOrEmpty(text))
+                {
+                    ContentTextBox.Text = text;
+                    _selectInitialContent = true;
+                }
+            }
+            catch (Exception)
+            {
+                // A clipboard that cannot be read is the same as an empty one.
+            }
+        }
 
         if (_selectInitialContent)
         {

@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -141,6 +141,18 @@ internal static unsafe partial class Win32
         public int fWide;
     }
 
+    [StructLayout(LayoutKind.Sequential)]
+    public struct BITMAP
+    {
+        public int bmType;
+        public int bmWidth;
+        public int bmHeight;
+        public int bmWidthBytes;
+        public ushort bmPlanes;
+        public ushort bmBitsPixel;
+        public IntPtr bmBits;
+    }
+
     // gdi32
     [LibraryImport("gdi32.dll")]
     public static partial IntPtr CreateCompatibleDC(IntPtr hdc);
@@ -158,6 +170,12 @@ internal static unsafe partial class Win32
     [LibraryImport("gdi32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     public static partial bool DeleteObject(IntPtr obj);
+
+    [LibraryImport("gdi32.dll", EntryPoint = "GetObjectW")]
+    public static partial int GetObject(IntPtr handle, int size, BITMAP* bitmap);
+
+    [LibraryImport("gdi32.dll")]
+    public static partial int GetDIBits(IntPtr hdc, IntPtr bitmap, uint startScan, uint scanLines, byte* bits, BITMAPINFOHEADER* info, uint usage);
 
     [LibraryImport("gdi32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]

@@ -54,6 +54,7 @@ public sealed class WindowsPlatformServices : IPlatformServices
         ShellIntegration = new WindowsShellIntegrationService();
         Credentials = new WindowsCredentialService();
         Secrets = new WindowsSecretProtectionService();
+        Thumbnails = new WindowsThumbnailService();
     }
 
     public PlatformInfo Info { get; }
@@ -82,6 +83,8 @@ public sealed class WindowsPlatformServices : IPlatformServices
     public ICredentialService Credentials { get; }
 
     public ISecretProtectionService Secrets { get; }
+
+    public IThumbnailService Thumbnails { get; }
 
     public void Dispose()
     {

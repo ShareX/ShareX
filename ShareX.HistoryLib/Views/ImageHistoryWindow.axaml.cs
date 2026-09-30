@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -374,11 +374,14 @@ public partial class ImageHistoryWindow : Window
         if (remaining <= Math.Max(120, _settings.ThumbnailSize.Height)) LoadNextBatch();
     }
 
+    // Lines per wheel notch. WinForms read the user's Windows setting; 3 is the default on every platform.
+    private const int ScrollLinesPerNotch = 3;
+
     private void OnThumbnailRowsPointerWheelChanged(object? sender, PointerWheelEventArgs e)
     {
         if (_scrollViewer == null || e.Delta.Y == 0) return;
 
-        int lines = System.Windows.Forms.SystemInformation.MouseWheelScrollLines;
+        int lines = ScrollLinesPerNotch;
         if (lines == 0)
         {
             e.Handled = true;
@@ -928,7 +931,7 @@ public partial class ImageHistoryWindow : Window
     private void OnOpenFolderClick(object? sender, RoutedEventArgs e)
     {
         HistoryItem? item = GetPrimaryItem();
-        if (item != null && File.Exists(item.FilePath)) FileHelpers.OpenFolderWithFile(item.FilePath);
+        if (item != null && File.Exists(item.FilePath)) PortableShell.OpenFolderWithFile(item.FilePath);
     }
 
     private void OnOpenUrlClick(object? sender, RoutedEventArgs e) => OpenUrl(item => item.URL);
@@ -947,7 +950,7 @@ public partial class ImageHistoryWindow : Window
     {
         string[] values = GetSelectedItems().Where(item => predicate?.Invoke(item) != false)
             .Select(selector).Where(value => !string.IsNullOrWhiteSpace(value)).ToArray()!;
-        if (values.Length > 0) ClipboardHelpers.CopyText(string.Join(Environment.NewLine, values));
+        if (values.Length > 0) PortableShell.CopyText(string.Join(Environment.NewLine, values));
     }
 
     private void OnCopyUrlClick(object? sender, RoutedEventArgs e) => CopyValues(item => item.URL);
@@ -976,21 +979,21 @@ public partial class ImageHistoryWindow : Window
     private void OnCopyFileClick(object? sender, RoutedEventArgs e)
     {
         string[] files = GetSelectedItems().Select(item => item.FilePath).Where(File.Exists).ToArray();
-        if (files.Length > 0) ClipboardHelpers.CopyFile(files);
+        if (files.Length > 0) PortableShell.CopyFiles(files);
     }
 
     private void OnCopyImageClick(object? sender, RoutedEventArgs e)
     {
         HistoryItem? item = GetPrimaryItem();
         if (item != null && File.Exists(item.FilePath) && FileHelpers.IsImageFile(item.FilePath))
-            ClipboardHelpers.CopyImageFromFile(item.FilePath);
+            PortableShell.CopyImageFromFile(item.FilePath);
     }
 
     private void OnCopyTextClick(object? sender, RoutedEventArgs e)
     {
         HistoryItem? item = GetPrimaryItem();
         if (item != null && File.Exists(item.FilePath) && FileHelpers.IsTextFile(item.FilePath))
-            ClipboardHelpers.CopyTextFromFile(item.FilePath);
+            PortableShell.CopyTextFromFile(item.FilePath);
     }
 
     private void OnUploadFileClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.UploadFile, false);

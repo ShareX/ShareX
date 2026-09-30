@@ -58,6 +58,7 @@ public sealed class LinuxPlatformServices : IPlatformServices
         ShellIntegration = new LinuxShellIntegrationService(paths);
         Credentials = new SecretServiceCredentialService(info, runner);
         Secrets = new KeyFileSecretProtectionService(System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "secret.key"));
+        Thumbnails = new FreedesktopThumbnailService(System.IO.Path.Combine(paths.CacheHome, "thumbnails"));
     }
 
     public PlatformInfo Info { get; }
@@ -86,6 +87,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
     public ICredentialService Credentials { get; }
 
     public ISecretProtectionService Secrets { get; }
+
+    public IThumbnailService Thumbnails { get; }
 
     private static IHotkeyService CreateHotkeyService(PlatformInfo info, Func<int, string>? describeHotkey)
     {

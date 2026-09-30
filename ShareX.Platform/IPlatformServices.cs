@@ -63,4 +63,7 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>Encrypts values stored in settings files.</summary>
     ISecretProtectionService Secrets { get; }
+
+    /// <summary>File thumbnails from the OS.</summary>
+    IThumbnailService Thumbnails { get; }
 }

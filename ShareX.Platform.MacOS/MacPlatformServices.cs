@@ -58,6 +58,7 @@ public sealed class MacPlatformServices : IPlatformServices
             "Finder integration needs an NSServices entry in the app bundle's Info.plist, which the macOS packaging adds.");
         Credentials = new KeychainCredentialService();
         Secrets = new KeyFileSecretProtectionService(System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "secret.key"));
+        Thumbnails = new UnsupportedThumbnailService("macOS file thumbnails need QuickLook, which the macOS build does not wrap yet.");
     }
 
     public PlatformInfo Info { get; }
@@ -86,6 +87,8 @@ public sealed class MacPlatformServices : IPlatformServices
     public ICredentialService Credentials { get; }
 
     public ISecretProtectionService Secrets { get; }
+
+    public IThumbnailService Thumbnails { get; }
 
     public void Dispose()
     {
