@@ -88,6 +88,29 @@
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
+        <Style Selector="TextBlock.theme-toggle-icon">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Opacity" Value="0"/>
+            <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Opacity" Duration="0:0:0.32" Easing="CubicEaseOut"/>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.32" Easing="CubicEaseOut"/>
+                </Transitions>
+            </Setter>
+            <Style Selector="^.moon">
+                <Setter Property="RenderTransform" Value="translateY(20px) rotate(-45deg)"/>
+            </Style>
+            <Style Selector="^.sun">
+                <Setter Property="RenderTransform" Value="translateY(-20px) rotate(45deg)"/>
+            </Style>
+            <Style Selector="^.active">
+                <Setter Property="Opacity" Value="1"/>
+                <Setter Property="RenderTransform" Value="translateY(0px) rotate(0deg)"/>
+            </Style>
+        </Style>
         <Style Selector="Button.caption-close">
             <Setter Property="CornerRadius" Value="0,7,0,0"/>
         </Style>
@@ -141,9 +164,14 @@
                                 ToolTip.Tip="{Binding ThemeToggleText}"
                                 Click="OnThemeToggleClick"
                                 chrome:WindowDecorationProperties.ElementRole="User">
-                            <TextBlock Classes="icon"
-                                       Text="{Binding ThemeToggleIcon}"
-                                       FontSize="14"/>
+                            <Grid Width="20" Height="20" ClipToBounds="True" IsHitTestVisible="False">
+                                <TextBlock Classes="icon theme-toggle-icon moon"
+                                           Classes.active="{Binding IsDarkTheme}"
+                                           Text="{x:Static theming:LucideIcons.moon}"/>
+                                <TextBlock Classes="icon theme-toggle-icon sun"
+                                           Classes.active="{Binding !IsDarkTheme}"
+                                           Text="{x:Static theming:LucideIcons.sun}"/>
+                            </Grid>
                         </Button>
                         <Button Classes="caption-button"
                                 AutomationProperties.Name="{x:Static res:Strings.MainWindow_AlwaysOnTop}"

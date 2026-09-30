@@ -89,8 +89,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public AvaloniaBitmap TitleBarIcon { get; }
     public bool IsEmpty => ThumbnailItems.Count == 0;
     public bool IsWindowMaximized => WindowState == Avalonia.Controls.WindowState.Maximized;
-    public string ThemeToggleIcon => ThemeManager.IsDarkTheme ? LucideIcons.moon : LucideIcons.sun;
-    public string ThemeToggleText => ThemeManager.IsDarkTheme
+    public bool IsDarkTheme => ThemeManager.IsDarkTheme;
+    public string ThemeToggleText => IsDarkTheme
         ? Strings.ApplicationSettingsWindow_Dark
         : Strings.ApplicationSettingsWindow_Light;
 
@@ -1134,7 +1134,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         Dispatcher.UIThread.Post(() =>
         {
             RequestedThemeVariant = theme;
-            OnPropertyChanged(nameof(ThemeToggleIcon));
+            OnPropertyChanged(nameof(IsDarkTheme));
             OnPropertyChanged(nameof(ThemeToggleText));
         });
 
