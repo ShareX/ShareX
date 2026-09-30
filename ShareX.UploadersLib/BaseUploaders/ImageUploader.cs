@@ -30,6 +30,8 @@ namespace ShareX.UploadersLib
 {
     public abstract class ImageUploader : FileUploader
     {
+        // System.Drawing images only exist on Windows. Other platforms pass the encoded bytes to UploadAsync.
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         public async Task<UploadResult> UploadImageAsync(Image image, string fileName, CancellationToken cancellationToken = default)
         {
             using MemoryStream stream = new MemoryStream();

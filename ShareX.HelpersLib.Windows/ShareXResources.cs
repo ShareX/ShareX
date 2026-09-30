@@ -34,8 +34,81 @@ namespace ShareX.HelpersLib
     // Windows-only members of ShareXResources, kept in the same namespace so existing call sites keep compiling.
     public static class ShareXResourcesWindows
     {
+        private static bool useWhiteIcon;
+        private static Icon icon;
+        private static Bitmap logo;
+        private static ShareXTheme theme;
+
         extension(ShareXResources)
         {
+            public static bool IsDarkTheme => ShareXResources.Theme.IsDarkTheme;
+
+
+            public static bool UseWhiteIcon
+            {
+                get
+                {
+                    return useWhiteIcon;
+                }
+                set
+                {
+                    if (useWhiteIcon != value)
+                    {
+                        useWhiteIcon = value;
+
+                        if (useWhiteIcon)
+                        {
+                            ShareXResources.Icon = Resources.ShareX_Icon_White;
+                        }
+                        else
+                        {
+                            ShareXResources.Icon = Resources.ShareX_Icon;
+                        }
+                    }
+                }
+            }
+
+
+            public static Icon Icon
+            {
+                get
+                {
+                    return (icon ??= Resources.ShareX_Icon).CloneSafe();
+                }
+                set
+                {
+                    if (icon != value)
+                    {
+                        icon?.Dispose();
+                        icon = value;
+                    }
+                }
+            }
+
+
+            public static Bitmap Logo
+            {
+                get
+                {
+                    return (logo ??= Resources.ShareX_Logo).CloneSafe();
+                }
+                set
+                {
+                    if (logo != value)
+                    {
+                        logo?.Dispose();
+                        logo = value;
+                    }
+                }
+            }
+
+
+            public static ShareXTheme Theme
+            {
+                get => theme ??= ShareXTheme.DarkTheme;
+                set => theme = value;
+            }
+
             public static void ApplyTheme(Form form, bool closeOnEscape = false, bool setIcon = true)
             {
                 if (closeOnEscape)

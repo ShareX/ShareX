@@ -67,11 +67,18 @@ namespace ShareX.HelpersLib
                         return mimeType;
                     }
 
-                    mimeType = RegistryHelpers.GetValueString(extension, "Content Type", RegistryHive.ClassesRoot);
-
-                    if (!string.IsNullOrEmpty(mimeType))
+                    // Windows also knows the types that installed applications registered. Elsewhere the table above is the source.
+                    if (OperatingSystem.IsWindows())
                     {
-                        return mimeType;
+                        using (RegistryKey key = Registry.ClassesRoot.OpenSubKey(extension))
+                        {
+                            mimeType = key?.GetValue("Content Type") as string;
+                        }
+
+                        if (!string.IsNullOrEmpty(mimeType))
+                        {
+                            return mimeType;
+                        }
                     }
                 }
             }

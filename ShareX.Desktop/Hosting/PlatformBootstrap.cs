@@ -46,6 +46,11 @@ public static class PlatformBootstrap
             return new MacPlatformServices();
         }
 
-        return new LinuxPlatformServices();
+        if (OperatingSystem.IsLinux())
+        {
+            return new LinuxPlatformServices();
+        }
+
+        throw new PlatformNotSupportedException($"ShareX runs on Windows, macOS and Linux, not on {System.Runtime.InteropServices.RuntimeInformation.OSDescription}.");
     }
 }

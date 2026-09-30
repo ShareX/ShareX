@@ -23,91 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib.Properties;
-using System.ComponentModel;
-using System.Drawing;
-using System.Reflection;
 
 namespace ShareX.HelpersLib
 {
+    /// <summary>Application name and user agent. The WinForms theme, icon and logo are in ShareX.HelpersLib.Windows.</summary>
     public static class ShareXResources
     {
         public static string Name { get; set; } = "ShareX";
 
         public static string UserAgent => $"{Name}/{Helpers.GetApplicationVersion()}";
-
-        public static bool IsDarkTheme => Theme.IsDarkTheme;
-
-        private static bool useWhiteIcon;
-
-        public static bool UseWhiteIcon
-        {
-            get
-            {
-                return useWhiteIcon;
-            }
-            set
-            {
-                if (useWhiteIcon != value)
-                {
-                    useWhiteIcon = value;
-
-                    if (useWhiteIcon)
-                    {
-                        Icon = Resources.ShareX_Icon_White;
-                    }
-                    else
-                    {
-                        Icon = Resources.ShareX_Icon;
-                    }
-                }
-            }
-        }
-
-        // Created on first use. GDI+ objects cannot be created on Linux and macOS, and this class also carries the user agent that every uploader needs.
-        private static Icon icon;
-
-        public static Icon Icon
-        {
-            get
-            {
-                return (icon ??= Resources.ShareX_Icon).CloneSafe();
-            }
-            set
-            {
-                if (icon != value)
-                {
-                    icon?.Dispose();
-                    icon = value;
-                }
-            }
-        }
-
-        private static Bitmap logo;
-
-        public static Bitmap Logo
-        {
-            get
-            {
-                return (logo ??= Resources.ShareX_Logo).CloneSafe();
-            }
-            set
-            {
-                if (logo != value)
-                {
-                    logo?.Dispose();
-                    logo = value;
-                }
-            }
-        }
-
-        private static ShareXTheme theme;
-
-        public static ShareXTheme Theme
-        {
-            get => theme ??= ShareXTheme.DarkTheme;
-            set => theme = value;
-        }
-
     }
 }

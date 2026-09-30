@@ -273,6 +273,8 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
+        // System.Drawing images only exist on Windows. Other platforms pass the encoded bytes to UploadAsync.
+        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         public void UploadImage(Image image, string remotePath)
         {
             using (MemoryStream stream = new MemoryStream())

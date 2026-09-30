@@ -25,6 +25,7 @@
 
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -444,70 +445,6 @@ namespace ShareX.HelpersLib
             return Guid.NewGuid().ToString("N");
         }
 
-        public static Point GetPosition(ContentAlignment placement, int offset, Size backgroundSize, Size objectSize)
-        {
-            return GetPosition(placement, new Point(offset, offset), backgroundSize, objectSize);
-        }
-
-        public static Point GetPosition(ContentAlignment placement, int offset, Rectangle background, Size objectSize)
-        {
-            return GetPosition(placement, new Point(offset, offset), background, objectSize);
-        }
-
-        public static Point GetPosition(ContentAlignment placement, Point offset, Rectangle background, Size objectSize)
-        {
-            Point position = GetPosition(placement, offset, background.Size, objectSize);
-
-            return new Point(background.X + position.X, background.Y + position.Y);
-        }
-
-        public static Point GetPosition(ContentAlignment placement, Point offset, Size backgroundSize, Size objectSize)
-        {
-            int midX = (int)Math.Round((backgroundSize.Width / 2f) - (objectSize.Width / 2f));
-            int midY = (int)Math.Round((backgroundSize.Height / 2f) - (objectSize.Height / 2f));
-            int right = backgroundSize.Width - objectSize.Width;
-            int bottom = backgroundSize.Height - objectSize.Height;
-
-            switch (placement)
-            {
-                default:
-                case ContentAlignment.TopLeft:
-                    return new Point(offset.X, offset.Y);
-                case ContentAlignment.TopCenter:
-                    return new Point(midX, offset.Y);
-                case ContentAlignment.TopRight:
-                    return new Point(right - offset.X, offset.Y);
-                case ContentAlignment.MiddleLeft:
-                    return new Point(offset.X, midY);
-                case ContentAlignment.MiddleCenter:
-                    return new Point(midX, midY);
-                case ContentAlignment.MiddleRight:
-                    return new Point(right - offset.X, midY);
-                case ContentAlignment.BottomLeft:
-                    return new Point(offset.X, bottom - offset.Y);
-                case ContentAlignment.BottomCenter:
-                    return new Point(midX, bottom - offset.Y);
-                case ContentAlignment.BottomRight:
-                    return new Point(right - offset.X, bottom - offset.Y);
-            }
-        }
-
-        public static Size MeasureText(string text, Font font)
-        {
-            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
-            {
-                return g.MeasureString(text, font).ToSize();
-            }
-        }
-
-        public static Size MeasureText(string text, Font font, int width)
-        {
-            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
-            {
-                return g.MeasureString(text, font, width).ToSize();
-            }
-        }
-
         public static string SendPing(string host)
         {
             return SendPing(host, 1);
@@ -562,8 +499,14 @@ namespace ShareX.HelpersLib
             }
         }
 
+        /// <summary>True when the process runs elevated: an administrator token on Windows, root elsewhere.</summary>
         public static bool IsAdministrator()
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                return Environment.IsPrivilegedProcess;
+            }
+
             try
             {
                 using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
@@ -578,15 +521,21 @@ namespace ShareX.HelpersLib
             }
         }
 
+        /// <summary>True when the user belongs to the Windows Administrators group, even without elevation. Elsewhere, true only for root.</summary>
         public static bool IsMemberOfAdministratorsGroup()
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                return Environment.IsPrivilegedProcess;
+            }
+
             try
             {
                 using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
                 {
                     WindowsPrincipal principal = new WindowsPrincipal(identity);
-                    SecurityIdentifier sid = new SecurityIdentifier(WellKnownSidType.BuiltinAdministratorsSid, null);
-                    return principal.UserClaims.Any(x => x.Value.Contains(sid.Value));
+                    string administratorsSid = new SecurityIdentifier(WellKnownSidType.BuiltinAdministratorsSid, null).Value;
+                    return principal.UserClaims.Any(x => x.Value.Contains(administratorsSid));
                 }
             }
             catch
@@ -637,7 +586,23 @@ namespace ShareX.HelpersLib
 
         public static string GetOperatingSystemProductName(bool includeBit = false)
         {
-            string productName = RegistryHelpers.GetValueString(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", RegistryHive.LocalMachine);
+            string productName = null;
+
+            if (OperatingSystem.IsWindows())
+            {
+                using (RegistryKey key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Default).OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion"))
+                {
+                    productName = key?.GetValue("ProductName") as string;
+                }
+            }
+            else if (PlatformServices.IsInitialized && PlatformServices.Current.Info.Distribution is LinuxDistribution distribution)
+            {
+                productName = distribution.PrettyName;
+            }
+            else
+            {
+                productName = RuntimeInformation.OSDescription;
+            }
 
             if (string.IsNullOrEmpty(productName))
             {
@@ -795,6 +760,11 @@ namespace ShareX.HelpersLib
             //int state = NativeMethods.GetSystemMetrics(SystemMetric.SM_CONVERTIBLESLATEMODE);
             //return state == 0;
 
+            if (!OperatingSystem.IsWindows())
+            {
+                return false;
+            }
+
             try
             {
                 int result = (int)Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell", "TabletMode", 0);
@@ -893,15 +863,6 @@ namespace ShareX.HelpersLib
             }
 
             return true;
-        }
-
-        public static string GetDesktopWallpaperFilePath()
-        {
-            byte[] transcodedImageCache = (byte[])RegistryHelpers.GetValue(@"Control Panel\Desktop", "TranscodedImageCache");
-            byte[] transcodedImageCacheDest = new byte[transcodedImageCache.Length - 24];
-            Array.Copy(transcodedImageCache, 24, transcodedImageCacheDest, 0, transcodedImageCacheDest.Length);
-            string wallpaperFilePath = Encoding.Unicode.GetString(transcodedImageCacheDest);
-            return wallpaperFilePath.TrimEnd('\0');
         }
 
         public static IEnumerable<int> Range(int from, int to, int increment = 1)

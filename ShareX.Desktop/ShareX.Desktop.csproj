@@ -12,6 +12,8 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <Description>ShareX for Windows, macOS and Linux: tray application with capture, upload and the image editor.</Description>
+    <!-- Portable project: calling a Windows-only API without an OperatingSystem check is a build error, not a Linux runtime crash. -->
+    <WarningsAsErrors>$(WarningsAsErrors);CA1416</WarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>

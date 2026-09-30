@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>ShareX.Destinations</RootNamespace>
@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
     <Platforms>x64;ARM64</Platforms>
     <Description>Destination instances, file types and upload routes. Portable so the routing rules can be tested on any OS.</Description>
+    <!-- Portable project: calling a Windows-only API without an OperatingSystem check is a build error, not a Linux runtime crash. -->
+    <WarningsAsErrors>$(WarningsAsErrors);CA1416</WarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>

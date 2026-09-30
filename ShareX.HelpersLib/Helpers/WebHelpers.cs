@@ -78,41 +78,6 @@ namespace ShareX.HelpersLib
             return response;
         }
 
-        public static async Task<Bitmap> DownloadImageAsync(string url)
-        {
-            Bitmap bmp = null;
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                HttpClient client = HttpClientFactory.Create();
-
-                using (HttpResponseMessage responseMessage = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
-                {
-                    if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType != null)
-                    {
-                        string mediaType = responseMessage.Content.Headers.ContentType.MediaType;
-
-                        if (MimeTypes.IsImageMimeType(mediaType))
-                        {
-                            byte[] data = await responseMessage.Content.ReadAsByteArrayAsync();
-                            MemoryStream memoryStream = new MemoryStream(data);
-
-                            try
-                            {
-                                bmp = new Bitmap(memoryStream);
-                            }
-                            catch
-                            {
-                                memoryStream.Dispose();
-                            }
-                        }
-                    }
-                }
-            }
-
-            return bmp;
-        }
-
         public static async Task<string> GetFileNameFromWebServerAsync(string url)
         {
             string fileName = null;
@@ -144,41 +109,6 @@ namespace ShareX.HelpersLib
         }
 
         // https://en.wikipedia.org/wiki/Data_URI_scheme
-        public static Bitmap DataURLToImage(string url)
-        {
-            if (!string.IsNullOrEmpty(url) && url.StartsWith("data:", StringComparison.OrdinalIgnoreCase))
-            {
-                Match match = Regex.Match(url, @"^data:(?<mediaType>[\w\/]+);base64,(?<data>.+)$", RegexOptions.IgnoreCase);
-
-                if (match.Success)
-                {
-                    string mediaType = match.Groups["mediaType"].Value;
-
-                    if (MimeTypes.IsImageMimeType(mediaType))
-                    {
-                        string data = match.Groups["data"].Value;
-
-                        if (!string.IsNullOrEmpty(data))
-                        {
-                            try
-                            {
-                                byte[] dataBytes = Convert.FromBase64String(data);
-
-                                using (MemoryStream ms = new MemoryStream(dataBytes))
-                                {
-                                    return new Bitmap(ms);
-                                }
-                            }
-                            catch
-                            {
-                            }
-                        }
-                    }
-                }
-            }
-
-            return null;
-        }
 
         public static bool IsSuccessStatusCode(HttpStatusCode statusCode)
         {

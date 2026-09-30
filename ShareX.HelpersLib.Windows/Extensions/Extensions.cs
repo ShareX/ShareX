@@ -51,5 +51,53 @@ namespace ShareX.HelpersLib
             }
         }
 
+
+        public static byte[] GetBytes(this Image img)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, img.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
+        public static Stream GetStream(this Image img)
+        {
+            MemoryStream ms = new MemoryStream();
+            img.Save(ms, img.RawFormat);
+            return ms;
+        }
+
+        public static ImageCodecInfo GetCodecInfo(this ImageFormat format)
+        {
+            return ImageCodecInfo.GetImageEncoders().FirstOrDefault(info => info.FormatID.Equals(format.Guid));
+        }
+
+        public static string GetMimeType(this ImageFormat format)
+        {
+            ImageCodecInfo codec = format.GetCodecInfo();
+
+            if (codec != null) return codec.MimeType;
+
+            return "image/unknown";
+        }
+
+        public static Icon ToIcon(this Bitmap bmp)
+        {
+            IntPtr handle = bmp.GetHicon();
+            return Icon.FromHandle(handle);
+        }
+
+        public static Bitmap CreateEmptyBitmap(this Image img, int widthOffset = 0, int heightOffset = 0, PixelFormat pixelFormat = PixelFormat.Format32bppArgb)
+        {
+            Bitmap bmp = new Bitmap(img.Width + widthOffset, img.Height + heightOffset, pixelFormat);
+            bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
+            return bmp;
+        }
+
+        public static Bitmap CreateEmptyBitmap(this Image img, PixelFormat pixelFormat)
+        {
+            return img.CreateEmptyBitmap(0, 0, pixelFormat);
+        }
     }
 }

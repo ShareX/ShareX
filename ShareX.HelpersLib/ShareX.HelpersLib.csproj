@@ -3,6 +3,8 @@
     <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- Portable project: calling a Windows-only API without an OperatingSystem check is a build error, not a Linux runtime crash. -->
+    <WarningsAsErrors>$(WarningsAsErrors);CA1416</WarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="ShareX.HelpersLib.Windows" />
