@@ -29,12 +29,17 @@ internal sealed class GifLosslessTrimmer
 
     public int FrameCount => _frames.Length;
     public int GetDelay(int index) => Math.Max(1, _frames[index].Delay);
+    public bool Loop { get; }
+    public int RepeatCount { get; }
 
-    private GifLosslessTrimmer(long headerLength, List<Block> blocks, List<Frame> frames)
+    private GifLosslessTrimmer(long headerLength, List<Block> blocks, List<Frame> frames,
+        bool loop, int repeatCount)
     {
         _headerLength = headerLength;
         _blocks = blocks.ToArray();
         _frames = frames.ToArray();
+        Loop = loop;
+        RepeatCount = repeatCount;
     }
 
     public bool CanCopySelection(int firstFrame, int endFrameExclusive)
@@ -68,6 +73,8 @@ internal sealed class GifLosslessTrimmer
         int pendingControl = -1;
         int pendingDelay = 10;
         int pendingPacked = 0;
+        bool loop = false;
+        int repeatCount = 0;
         byte[] control = new byte[4];
         byte[] descriptor = new byte[9];
 
@@ -96,6 +103,11 @@ internal sealed class GifLosslessTrimmer
                     {
                         // Plain Text is a graphic-rendering block, so it may alter the canvas and consume a GCE.
                         if (label == 0x01) throw new InvalidDataException(Strings.AnimatedGifTrimmer_UnsupportedGif);
+                        if (label == 0xFF && TryReadLoopExtension(source) is int repeat)
+                        {
+                            loop = true;
+                            repeatCount = repeat;
+                        }
                         SkipSubBlocks(source);
                         blocks.Add(new Block(offset, source.Position - offset, BlockKind.Extension, -1));
                     }
@@ -128,11 +140,28 @@ internal sealed class GifLosslessTrimmer
                 case 0x3B:
                     if (pendingControl >= 0 || frames.Count < 2)
                         throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
-                    return new GifLosslessTrimmer(headerLength, blocks, frames);
+                    return new GifLosslessTrimmer(headerLength, blocks, frames, loop, repeatCount);
                 default:
                     throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
             }
         }
+    }
+
+    private static int? TryReadLoopExtension(Stream source)
+    {
+        long start = source.Position;
+        try
+        {
+            if (ReadByte(source) != 11) return null;
+            Span<byte> identifier = stackalloc byte[11];
+            source.ReadExactly(identifier);
+            if (!identifier.SequenceEqual("NETSCAPE2.0"u8) && !identifier.SequenceEqual("ANIMEXTS1.0"u8)) return null;
+            if (ReadByte(source) != 3) return null;
+            Span<byte> data = stackalloc byte[3];
+            source.ReadExactly(data);
+            return data[0] == 1 ? ReadWord(data, 1) : null;
+        }
+        finally { source.Position = start; }
     }
 
     public void Copy(string inputPath, string outputPath, int firstFrame, int endFrameExclusive,

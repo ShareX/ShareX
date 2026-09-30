@@ -12,6 +12,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using ShareX.Tools.Localization;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -132,8 +133,9 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
         return stream.ToArray();
     }
 
-    public void Export(string output, int firstFrame, int endFrameExclusive, IProgress<double>? progress,
-        CancellationToken token)
+    /// <returns>False when the selected lossless cut needs frames before its start.</returns>
+    public bool Export(string output, int firstFrame, int endFrameExclusive, bool reencode,
+        IProgress<double>? progress, CancellationToken token)
     {
         if (firstFrame < 0 || endFrameExclusive > FrameCount || firstFrame >= endFrameExclusive)
             throw new ArgumentOutOfRangeException(nameof(firstFrame));
@@ -141,22 +143,40 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
             throw new InvalidOperationException(Strings.AnimatedGifTrimmer_SourceOverwrite);
         if (!string.Equals(Path.GetExtension(output), ".gif", StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException(Strings.AnimatedGifTrimmer_OutputExtension);
-        if (!CanCopySelection(firstFrame, endFrameExclusive))
-            throw new InvalidOperationException(Strings.AnimatedGifTrimmer_DependentFrame);
+        if (!reencode && !CanCopySelection(firstFrame, endFrameExclusive)) return false;
 
         string temporary = Path.Combine(Path.GetDirectoryName(Path.GetFullPath(output))!,
             $".sharex-gif-trim-{Guid.NewGuid():N}.gif");
         try
         {
-            _gif.Copy(FilePath, temporary, firstFrame, endFrameExclusive, progress, token);
+            if (reencode) Reencode(temporary, firstFrame, endFrameExclusive, progress, token);
+            else _gif.Copy(FilePath, temporary, firstFrame, endFrameExclusive, progress, token);
             token.ThrowIfCancellationRequested();
-            if (_gif.NeedsVisualValidation(firstFrame) && !FirstFrameMatches(temporary, firstFrame, token))
-                throw new InvalidOperationException(Strings.AnimatedGifTrimmer_DependentFrame);
+            if (!reencode && _gif.NeedsVisualValidation(firstFrame) &&
+                !FirstFrameMatches(temporary, firstFrame, token)) return false;
             File.Move(temporary, output, true);
+            return true;
         }
         finally
         {
             if (File.Exists(temporary)) File.Delete(temporary);
+        }
+    }
+
+    private void Reencode(string temporary, int firstFrame, int endFrameExclusive,
+        IProgress<double>? progress, CancellationToken token)
+    {
+        using Image image = Image.FromFile(FilePath);
+        using AnimatedGifCreator creator = new(temporary, _delays[firstFrame] * 10,
+            _gif.RepeatCount, _gif.Loop);
+        for (int i = firstFrame; i < endFrameExclusive; i++)
+        {
+            token.ThrowIfCancellationRequested();
+            image.SelectActiveFrame(FrameDimension.Time, i);
+            using Bitmap frame = DrawFrame(image);
+            using Bitmap quantized = GifFrameQuantizer.Quantize(frame);
+            creator.AddFrame(quantized, _delays[i] * 10);
+            progress?.Report((i - firstFrame + 1d) / (endFrameExclusive - firstFrame) * 100);
         }
     }
 

@@ -44,6 +44,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     [ObservableProperty] private Bitmap? _preview;
     [ObservableProperty] private string _statusText = Strings.AnimatedGifTrimmer_ChooseGif;
     [ObservableProperty] private string _previewText = string.Empty;
+    [ObservableProperty] private bool _reencode;
     [ObservableProperty] private bool _isLoading;
     [ObservableProperty] private bool _isExporting;
     [ObservableProperty] private bool _isPlaying;
@@ -63,13 +64,17 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     public bool CanBrowse => !IsExporting;
     public bool CanEdit => HasGif && !IsLoading && !IsExporting;
     public bool CanPlay => CanEdit && _endIndex - _startIndex > 1;
-    public bool CanTrim => CanEdit && (_startIndex > 0 || _endIndex < _document!.FrameCount) &&
-        _document!.CanCopySelection(_startIndex, _endIndex);
+    public bool CanTrim => CanEdit && (_startIndex > 0 || _endIndex < _document!.FrameCount);
     public bool IsWorking => IsLoading || IsExporting;
     public bool HasOutput => !string.IsNullOrEmpty(OutputFilePath);
     public bool CanUsePrimaryAction => IsExporting || CanTrim;
     public System.Windows.Input.ICommand PrimaryActionCommand => IsExporting ? CancelCommand : ExportCommand;
     public string PrimaryActionText => IsExporting ? Strings.VideoTrimmer_Cancel : Strings.AnimatedGifTrimmer_Export;
+    public bool Lossless
+    {
+        get => !Reencode;
+        set { if (value) Reencode = false; }
+    }
     public string PlayActionText => IsPlaying ? Strings.AnimatedGifTrimmer_Pause : Strings.AnimatedGifTrimmer_Play;
     public double Duration => _document?.Duration ?? 0;
     public double Position => _document?.FrameStart(_positionIndex) ?? 0;
@@ -160,8 +165,8 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     private void NotifySelectionChanged()
     {
         if (_document != null && !IsLoading && !IsExporting)
-            StatusText = _document.CanCopySelection(_startIndex, _endIndex)
-                ? string.Empty : Strings.AnimatedGifTrimmer_DependentFrame;
+            StatusText = Reencode || _document.CanCopySelection(_startIndex, _endIndex)
+                ? string.Empty : Strings.AnimatedGifTrimmer_UseReencode;
         OnPropertyChanged(nameof(Start));
         OnPropertyChanged(nameof(End));
         OnPropertyChanged(nameof(StartTimeText));
@@ -340,6 +345,12 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     private async Task ExportAsync()
     {
         if (!CanTrim || SelectOutputRequested == null || _disposed || _document == null) return;
+        bool reencode = Reencode;
+        if (!reencode && !_document.CanCopySelection(_startIndex, _endIndex))
+        {
+            ShowErrorRequested?.Invoke(Strings.AnimatedGifTrimmer_UseReencode);
+            return;
+        }
         string? output = await SelectOutputRequested(Path.GetFileNameWithoutExtension(InputFilePath) + "-trimmed.gif");
         if (output == null || _disposed) return;
         StopPlayback();
@@ -362,11 +373,19 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
                         Progress = Math.Max(Progress, Math.Clamp(value, 0, 100));
                 });
             });
-            await Task.Run(() => document.Export(output, first, end, progress, cancellation.Token), cancellation.Token);
-            OutputFilePath = output;
-            Progress = 100;
-            StatusText = string.Format(Strings.VideoTrimmer_Saved, output);
-            _playNotificationSound?.Invoke();
+            bool saved = await Task.Run(() => document.Export(output, first, end, reencode, progress, cancellation.Token), cancellation.Token);
+            if (saved)
+            {
+                OutputFilePath = output;
+                Progress = 100;
+                StatusText = string.Format(Strings.VideoTrimmer_Saved, output);
+                _playNotificationSound?.Invoke();
+            }
+            else
+            {
+                Progress = 0;
+                StatusText = error = Strings.AnimatedGifTrimmer_UseReencode;
+            }
         }
         catch (OperationCanceledException) { StatusText = Strings.VideoTrimmer_Cancelled; }
         catch (Exception ex) { StatusText = error = ex.Message; }
@@ -412,6 +431,11 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
 
     partial void OnInputFilePathChanged(string value) => OnPropertyChanged(nameof(InputDisplay));
     partial void OnOutputFilePathChanged(string value) => OnPropertyChanged(nameof(HasOutput));
+    partial void OnReencodeChanged(bool value)
+    {
+        OnPropertyChanged(nameof(Lossless));
+        NotifySelectionChanged();
+    }
     partial void OnIsPlayingChanged(bool value) => OnPropertyChanged(nameof(PlayActionText));
     partial void OnIsLoadingChanged(bool value)
     {

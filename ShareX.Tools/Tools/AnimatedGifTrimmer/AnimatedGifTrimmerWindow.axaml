@@ -121,22 +121,33 @@
             </Border>
 
             <Border Grid.Row="2" Classes="tool-panel">
-                <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
-                    <Button Command="{Binding PrimaryActionCommand}" IsEnabled="{Binding CanUsePrimaryAction}">
-                        <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scissors}"
-                                       IsVisible="{Binding !IsExporting}"/>
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.x}"
-                                       IsVisible="{Binding IsExporting}"/>
-                            <TextBlock Text="{Binding PrimaryActionText}"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Command="{Binding OpenOutputCommand}" IsEnabled="{Binding HasOutput}" Width="40"
-                            ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_ShowOutput}"
-                            AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_ShowOutput}">
-                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/>
-                    </Button>
-                </StackPanel>
+                <Grid ColumnDefinitions="Auto,Auto,Auto,*" ColumnSpacing="16">
+                    <TextBlock Classes="row-label" Text="{x:Static loc:Strings.VideoTrimmer_TrimMode}"/>
+                    <RadioButton Grid.Column="1" GroupName="GifTrimMode" IsChecked="{Binding Lossless, Mode=TwoWay}"
+                                 IsEnabled="{Binding CanBrowse}" VerticalAlignment="Center">
+                        <TextBlock Text="{x:Static loc:Strings.AnimatedGifTrimmer_Lossless}" FontWeight="Normal"/>
+                    </RadioButton>
+                    <RadioButton Grid.Column="2" GroupName="GifTrimMode" IsChecked="{Binding Reencode, Mode=TwoWay}"
+                                 IsEnabled="{Binding CanBrowse}" VerticalAlignment="Center">
+                        <TextBlock Text="{x:Static loc:Strings.AnimatedGifTrimmer_Reencode}" FontWeight="Normal"/>
+                    </RadioButton>
+                    <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                        <Button Command="{Binding PrimaryActionCommand}" IsEnabled="{Binding CanUsePrimaryAction}">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scissors}"
+                                           IsVisible="{Binding !IsExporting}"/>
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.x}"
+                                           IsVisible="{Binding IsExporting}"/>
+                                <TextBlock Text="{Binding PrimaryActionText}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Command="{Binding OpenOutputCommand}" IsEnabled="{Binding HasOutput}" Width="40"
+                                ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_ShowOutput}"
+                                AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_ShowOutput}">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/>
+                        </Button>
+                    </StackPanel>
+                </Grid>
             </Border>
         </Grid>
     </Grid>

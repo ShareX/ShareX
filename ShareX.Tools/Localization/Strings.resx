@@ -2208,6 +2208,9 @@
   <data name="AnimatedGifTrimmer_Frame" xml:space="preserve"><value>Frame {0} of {1}</value></data>
   <data name="AnimatedGifTrimmer_Play" xml:space="preserve"><value>Play</value></data>
   <data name="AnimatedGifTrimmer_Pause" xml:space="preserve"><value>Pause</value></data>
+  <data name="AnimatedGifTrimmer_Lossless" xml:space="preserve"><value>Lossless</value></data>
+  <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve"><value>Re-encode</value></data>
+  <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve"><value>This cut needs earlier frames and cannot be saved losslessly. Select Re-encode trim mode and save again.</value></data>
   <data name="AnimatedGifTrimmer_PreviousFrame" xml:space="preserve"><value>Previous frame</value></data>
   <data name="AnimatedGifTrimmer_NextFrame" xml:space="preserve"><value>Next frame</value></data>
   <data name="AnimatedGifTrimmer_Export" xml:space="preserve"><value>Save trimmed GIF…</value></data>
