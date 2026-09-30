@@ -13,11 +13,12 @@ public static class PlatformDetector
             OperatingSystem.IsLinux() ? OperatingSystemKind.Linux :
             OperatingSystemKind.Unknown;
 
-        return Detect(os, Environment.GetEnvironmentVariable, File.Exists);
+        return Detect(os, Environment.GetEnvironmentVariable, File.Exists, os == OperatingSystemKind.Linux ? LinuxDistribution.Detect() : null);
     }
 
     /// <summary>Detects the platform from the supplied environment, which keeps the logic testable on any OS.</summary>
-    public static PlatformInfo Detect(OperatingSystemKind os, Func<string, string?> getEnvironmentVariable, Func<string, bool> fileExists)
+    public static PlatformInfo Detect(OperatingSystemKind os, Func<string, string?> getEnvironmentVariable, Func<string, bool> fileExists,
+        LinuxDistribution? distribution = null)
     {
         switch (os)
         {
@@ -31,7 +32,7 @@ public static class PlatformDetector
                 (DesktopEnvironment desktop, string desktopName) = DetectDesktopEnvironment(getEnvironmentVariable);
                 bool sandboxed = !string.IsNullOrEmpty(getEnvironmentVariable("FLATPAK_ID")) || fileExists("/.flatpak-info") ||
                     !string.IsNullOrEmpty(getEnvironmentVariable("SNAP"));
-                return new PlatformInfo(os, displayServer, desktop, desktopName, sandboxed);
+                return new PlatformInfo(os, displayServer, desktop, desktopName, sandboxed) { Distribution = distribution ?? LinuxDistribution.Unknown };
             default:
                 return new PlatformInfo(os, DisplayServer.Unknown, DesktopEnvironment.Unknown, "Unknown", false);
         }

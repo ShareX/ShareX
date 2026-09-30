@@ -25,8 +25,12 @@ public interface ICommandRunner
     Task<CommandResult> RunAsync(string command, IReadOnlyList<string> arguments, byte[]? standardInput = null,
         TimeSpan? timeout = null, CancellationToken cancellationToken = default);
 
-    /// <summary>Starts a long running process without waiting for it, for example wl-copy which serves the clipboard until replaced.</summary>
-    bool StartDetached(string command, IReadOnlyList<string> arguments, byte[]? standardInput = null);
+    /// <summary>
+    /// Runs a helper that forks a background server, for example wl-copy or xclip which keep serving the clipboard.
+    /// Output is not captured because the forked child would hold the pipes open. Returns the exit code of the launched process.
+    /// </summary>
+    Task<int> RunForkingAsync(string command, IReadOnlyList<string> arguments, byte[]? standardInput = null,
+        TimeSpan? timeout = null, CancellationToken cancellationToken = default);
 }
 
 public sealed class CommandRunner : ICommandRunner
@@ -112,33 +116,35 @@ public sealed class CommandRunner : ICommandRunner
         }
     }
 
-    public bool StartDetached(string command, IReadOnlyList<string> arguments, byte[]? standardInput = null)
+    public async Task<int> RunForkingAsync(string command, IReadOnlyList<string> arguments, byte[]? standardInput = null,
+        TimeSpan? timeout = null, CancellationToken cancellationToken = default)
     {
+        using Process process = new Process { StartInfo = CreateStartInfo(command, arguments, standardInput != null) };
+        process.Start();
+
+        using CancellationTokenSource timeoutSource = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        timeoutSource.CancelAfter(timeout ?? DefaultTimeout);
+
         try
         {
-            ProcessStartInfo startInfo = CreateStartInfo(command, arguments, standardInput != null);
-            // Discard output so a chatty helper never blocks on a full pipe.
-            startInfo.RedirectStandardOutput = false;
-            startInfo.RedirectStandardError = false;
-
-            using Process? process = Process.Start(startInfo);
-
-            if (process == null)
-            {
-                return false;
-            }
-
             if (standardInput != null)
             {
-                process.StandardInput.BaseStream.Write(standardInput);
-                process.StandardInput.Close();
+                await WriteInputAsync(process, standardInput, timeoutSource.Token).ConfigureAwait(false);
             }
 
-            return true;
+            await process.WaitForExitAsync(timeoutSource.Token).ConfigureAwait(false);
+            return process.ExitCode;
         }
-        catch (Exception e) when (e is System.ComponentModel.Win32Exception or IOException or InvalidOperationException)
+        catch (OperationCanceledException)
         {
-            return false;
+            TryKill(process);
+
+            if (cancellationToken.IsCancellationRequested)
+            {
+                throw;
+            }
+
+            throw new TimeoutException($"'{command}' did not finish within {(timeout ?? DefaultTimeout).TotalSeconds:0} seconds.");
         }
     }
 

@@ -44,6 +44,9 @@ public sealed record PlatformInfo(
     string DesktopEnvironmentName,
     bool IsSandboxed)
 {
+    /// <summary>The Linux distribution from /etc/os-release. Null on Windows and macOS.</summary>
+    public LinuxDistribution? Distribution { get; init; }
+
     public bool IsWindows => OperatingSystem == OperatingSystemKind.Windows;
 
     public bool IsMacOS => OperatingSystem == OperatingSystemKind.MacOS;
@@ -60,6 +63,7 @@ public sealed record PlatformInfo(
     public override string ToString()
     {
         string sandbox = IsSandboxed ? ", sandboxed" : "";
-        return $"{OperatingSystem} ({DisplayServer}, {DesktopEnvironmentName}{sandbox})";
+        string distribution = Distribution != null ? $"{Distribution.PrettyName}, " : "";
+        return $"{OperatingSystem} ({distribution}{DisplayServer}, {DesktopEnvironmentName}{sandbox})";
     }
 }

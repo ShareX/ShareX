@@ -11,8 +11,27 @@ public sealed record ScreenRecordingRequest
 
     public bool DrawCursor { get; init; } = true;
 
+    /// <summary>Round the size down to even numbers, which yuv420p encoders such as libx264 require.</summary>
+    public bool RequireEvenSize { get; init; } = true;
+
     /// <summary>Optional screen to record, as returned by <see cref="IScreenCaptureService.GetScreens"/>.</summary>
     public ScreenInfo? Screen { get; init; }
+}
+
+public static class ScreenRecordingRequestExtensions
+{
+    /// <summary>The region to record with <see cref="ScreenRecordingRequest.RequireEvenSize"/> applied.</summary>
+    public static PlatformRectangle GetEffectiveRegion(this ScreenRecordingRequest request, PlatformRectangle fallback)
+    {
+        PlatformRectangle region = request.Region.IsEmpty ? request.Screen?.Bounds ?? fallback : request.Region;
+
+        if (request.RequireEvenSize)
+        {
+            region = region with { Width = region.Width & ~1, Height = region.Height & ~1 };
+        }
+
+        return region;
+    }
 }
 
 /// <summary>FFmpeg arguments describing the video input for the current platform.</summary>
