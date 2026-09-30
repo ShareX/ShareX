@@ -8,5 +8,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
+    <ProjectReference Include="..\ShareX.HelpersLib.Windows\ShareX.HelpersLib.Windows.csproj" />
   </ItemGroup>
 </Project>

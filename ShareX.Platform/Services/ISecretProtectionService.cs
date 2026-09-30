@@ -23,44 +23,17 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-
 namespace ShareX.Platform;
 
 /// <summary>
-/// Entry point to everything that differs between Windows, macOS and Linux. Implemented by
-/// ShareX.Platform.Windows, ShareX.Platform.MacOS and ShareX.Platform.Linux.
+/// Encrypts small values (upload tokens, passwords) so they can be written to settings files.
+/// Windows uses DPAPI. macOS and Linux use <see cref="KeyFileSecretProtectionService"/>.
 /// </summary>
-/// <remarks>
-/// The system tray is not part of this interface because Avalonia's TrayIcon already covers NotifyIcon,
-/// NSStatusItem and StatusNotifierItem.
-/// </remarks>
-public interface IPlatformServices : IDisposable
+/// <remarks>Protected data is tied to the current user. A value protected on one OS cannot be read on another.</remarks>
+public interface ISecretProtectionService
 {
-    PlatformInfo Info { get; }
+    byte[] Protect(byte[] data, byte[]? entropy = null);
 
-    IPathService Paths { get; }
-
-    IStartupService Startup { get; }
-
-    IClipboardService Clipboard { get; }
-
-    IScreenCaptureService ScreenCapture { get; }
-
-    IScreenRecordingService ScreenRecording { get; }
-
-    IHotkeyService Hotkeys { get; }
-
-    IWindowService Windows { get; }
-
-    INotificationService Notifications { get; }
-
-    IShellService Shell { get; }
-
-    IShellIntegrationService ShellIntegration { get; }
-
-    ICredentialService Credentials { get; }
-
-    /// <summary>Encrypts values stored in settings files.</summary>
-    ISecretProtectionService Secrets { get; }
+    /// <exception cref="System.Security.Cryptography.CryptographicException">The data was not protected for this user or was altered.</exception>
+    byte[] Unprotect(byte[] protectedData, byte[]? entropy = null);
 }

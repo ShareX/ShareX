@@ -282,14 +282,6 @@ namespace ShareX.HelpersLib
             return Icon.FromHandle(handle);
         }
 
-        public static void DisposeHandle(this Icon icon)
-        {
-            if (icon.Handle != IntPtr.Zero)
-            {
-                NativeMethods.DestroyIcon(icon.Handle);
-            }
-        }
-
         public static void ApplyDefaultPropertyValues(this object self)
         {
             foreach (PropertyDescriptor prop in TypeDescriptor.GetProperties(self))

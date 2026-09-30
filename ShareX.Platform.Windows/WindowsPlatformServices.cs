@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -53,6 +53,7 @@ public sealed class WindowsPlatformServices : IPlatformServices
         Shell = new WindowsShellService();
         ShellIntegration = new WindowsShellIntegrationService();
         Credentials = new WindowsCredentialService();
+        Secrets = new WindowsSecretProtectionService();
     }
 
     public PlatformInfo Info { get; }
@@ -79,6 +80,8 @@ public sealed class WindowsPlatformServices : IPlatformServices
     public IShellIntegrationService ShellIntegration { get; }
 
     public ICredentialService Credentials { get; }
+
+    public ISecretProtectionService Secrets { get; }
 
     public void Dispose()
     {

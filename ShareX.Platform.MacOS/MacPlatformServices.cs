@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -57,6 +57,7 @@ public sealed class MacPlatformServices : IPlatformServices
         ShellIntegration = new UnsupportedShellIntegrationService(
             "Finder integration needs an NSServices entry in the app bundle's Info.plist, which the macOS packaging adds.");
         Credentials = new KeychainCredentialService();
+        Secrets = new KeyFileSecretProtectionService(System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "secret.key"));
     }
 
     public PlatformInfo Info { get; }
@@ -83,6 +84,8 @@ public sealed class MacPlatformServices : IPlatformServices
     public IShellIntegrationService ShellIntegration { get; }
 
     public ICredentialService Credentials { get; }
+
+    public ISecretProtectionService Secrets { get; }
 
     public void Dispose()
     {

@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -57,6 +57,7 @@ public sealed class LinuxPlatformServices : IPlatformServices
         Shell = new LinuxShellService(runner);
         ShellIntegration = new LinuxShellIntegrationService(paths);
         Credentials = new SecretServiceCredentialService(info, runner);
+        Secrets = new KeyFileSecretProtectionService(System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "secret.key"));
     }
 
     public PlatformInfo Info { get; }
@@ -83,6 +84,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
     public IShellIntegrationService ShellIntegration { get; }
 
     public ICredentialService Credentials { get; }
+
+    public ISecretProtectionService Secrets { get; }
 
     private static IHotkeyService CreateHotkeyService(PlatformInfo info, Func<int, string>? describeHotkey)
     {

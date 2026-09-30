@@ -12,6 +12,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -300,7 +301,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     [RelayCommand] private void SetStartHere() { if (CanEdit) SetStartIndex(Math.Min(_positionIndex, _endIndex - 1)); }
     [RelayCommand] private void SetEndHere() { if (CanEdit) SetEndIndex(Math.Max(_positionIndex + 1, _startIndex + 1)); }
     [RelayCommand] private void Reset() { if (CanEdit && _document != null) { SetStartIndex(0); SetEndIndex(_document.FrameCount); _ = SetPositionIndex(0); } }
-    [RelayCommand] private void OpenOutput() { if (HasOutput) ShareX.HelpersLib.FileHelpers.OpenFolderWithFile(OutputFilePath); }
+    [RelayCommand] private void OpenOutput() { if (HasOutput) FileHelpers.OpenFolderWithFile(OutputFilePath); }
     [RelayCommand] private async Task TogglePlayAsync()
     {
         if (!CanPlay || _document == null) return;

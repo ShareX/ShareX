@@ -60,6 +60,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Destinations", "Shar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Destinations.Tests", "ShareX.Destinations.Tests\ShareX.Destinations.Tests.csproj", "{FE128F58-49F6-42AB-B267-1159AEC95382}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.HelpersLib.Windows", "ShareX.HelpersLib.Windows\ShareX.HelpersLib.Windows.csproj", "{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -880,6 +882,46 @@ Global
 		{FE128F58-49F6-42AB-B267-1159AEC95382}.Steam|Any CPU.Build.0 = Steam|Any CPU
 		{FE128F58-49F6-42AB-B267-1159AEC95382}.Steam|x86.ActiveCfg = Steam|Any CPU
 		{FE128F58-49F6-42AB-B267-1159AEC95382}.Steam|x86.Build.0 = Steam|Any CPU
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Debug|ARM64.Build.0 = Debug|ARM64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Debug|x64.ActiveCfg = Debug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Debug|x64.Build.0 = Debug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Debug|Any CPU.Build.0 = Debug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Debug|x86.ActiveCfg = Debug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Debug|x86.Build.0 = Debug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStore|ARM64.ActiveCfg = MicrosoftStore|ARM64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStore|ARM64.Build.0 = MicrosoftStore|ARM64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStore|x64.ActiveCfg = MicrosoftStore|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStore|x64.Build.0 = MicrosoftStore|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStore|Any CPU.ActiveCfg = MicrosoftStore|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStore|Any CPU.Build.0 = MicrosoftStore|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStore|x86.ActiveCfg = MicrosoftStore|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStore|x86.Build.0 = MicrosoftStore|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStoreDebug|ARM64.ActiveCfg = MicrosoftStoreDebug|ARM64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStoreDebug|ARM64.Build.0 = MicrosoftStoreDebug|ARM64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStoreDebug|x64.ActiveCfg = MicrosoftStoreDebug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStoreDebug|x64.Build.0 = MicrosoftStoreDebug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStoreDebug|Any CPU.ActiveCfg = MicrosoftStoreDebug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStoreDebug|Any CPU.Build.0 = MicrosoftStoreDebug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStoreDebug|x86.ActiveCfg = MicrosoftStoreDebug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.MicrosoftStoreDebug|x86.Build.0 = MicrosoftStoreDebug|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Release|ARM64.ActiveCfg = Release|ARM64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Release|ARM64.Build.0 = Release|ARM64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Release|x64.ActiveCfg = Release|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Release|x64.Build.0 = Release|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Release|Any CPU.ActiveCfg = Release|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Release|Any CPU.Build.0 = Release|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Release|x86.ActiveCfg = Release|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Release|x86.Build.0 = Release|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Steam|ARM64.ActiveCfg = Steam|ARM64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Steam|ARM64.Build.0 = Steam|ARM64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Steam|x64.ActiveCfg = Steam|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Steam|x64.Build.0 = Steam|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Steam|Any CPU.ActiveCfg = Steam|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Steam|Any CPU.Build.0 = Steam|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Steam|x86.ActiveCfg = Steam|x64
+		{0F8A2BD7-E225-4AAE-B352-0E1E1A259F2E}.Steam|x86.Build.0 = Steam|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

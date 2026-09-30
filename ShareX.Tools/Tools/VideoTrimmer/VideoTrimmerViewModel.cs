@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -320,7 +321,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     [RelayCommand] private void SetStart() { if (CanEdit) Start = Position; }
     [RelayCommand] private void SetEnd() { if (CanEdit) End = Position; }
     [RelayCommand] private void Reset() { if (CanEdit) { Start = 0; End = Duration; Position = 0; } }
-    [RelayCommand] private void OpenOutput() { if (HasOutput) ShareX.HelpersLib.FileHelpers.OpenFolderWithFile(OutputFilePath); }
+    [RelayCommand] private void OpenOutput() { if (HasOutput) FileHelpers.OpenFolderWithFile(OutputFilePath); }
     [RelayCommand]
     private void Cancel()
     {

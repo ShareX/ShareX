@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -44,7 +44,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
-using System.Windows.Forms;
 using System.Xml;
 
 namespace ShareX.HelpersLib
@@ -61,27 +60,6 @@ namespace ShareX.HelpersLib
         public const string Base56 = "23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz"; // A variant, Base56, excludes 1 (one) and o (lowercase o) compared to Base 58.
 
         public static readonly Version OSVersion = Environment.OSVersion.Version;
-
-        private static Cursor[] cursorList;
-
-        public static Cursor[] CursorList
-        {
-            get
-            {
-                if (cursorList == null)
-                {
-                    cursorList = new Cursor[] {
-                        Cursors.AppStarting, Cursors.Arrow, Cursors.Cross, Cursors.Default, Cursors.Hand, Cursors.Help,
-                        Cursors.HSplit, Cursors.IBeam, Cursors.No, Cursors.NoMove2D, Cursors.NoMoveHoriz, Cursors.NoMoveVert,
-                        Cursors.PanEast, Cursors.PanNE, Cursors.PanNorth, Cursors.PanNW, Cursors.PanSE, Cursors.PanSouth,
-                        Cursors.PanSW, Cursors.PanWest, Cursors.SizeAll, Cursors.SizeNESW, Cursors.SizeNS, Cursors.SizeNWSE,
-                        Cursors.SizeWE, Cursors.UpArrow, Cursors.VSplit, Cursors.WaitCursor
-                    };
-                }
-
-                return cursorList;
-            }
-        }
 
         public static string AddZeroes(string input, int digits = 2)
         {
@@ -278,22 +256,67 @@ namespace ShareX.HelpersLib
             return sb.ToString();
         }
 
-        public static string GetApplicationVersion(bool includeRevision = false)
-        {
-            Version version = Version.Parse(Application.ProductVersion);
-            string result = $"{version.Major}.{version.Minor}.{version.Build}";
-            if (includeRevision)
-            {
-                result = $"{result}.{version.Revision}";
-            }
-            return result;
-        }
-
         /// <summary>
         /// If version1 newer than version2 = 1
         /// If version1 equal to version2 = 0
         /// If version1 older than version2 = -1
         /// </summary>
+        /// <summary>The version of the running application, read from the entry assembly so it works without WinForms.</summary>
+        public static string GetApplicationVersion(bool includeRevision = false)
+        {
+            Version version = GetApplicationVersionInfo();
+            string result = $"{version.Major}.{version.Minor}.{Math.Max(version.Build, 0)}";
+
+            if (includeRevision)
+            {
+                result = $"{result}.{Math.Max(version.Revision, 0)}";
+            }
+
+            return result;
+        }
+
+        private static Version GetApplicationVersionInfo()
+        {
+            Assembly assembly = Assembly.GetEntryAssembly() ?? typeof(Helpers).Assembly;
+
+            // Same source as Application.ProductVersion: the informational version, without a "+commit" or "-prerelease" suffix.
+            string productVersion = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+
+            if (!string.IsNullOrEmpty(productVersion))
+            {
+                int suffix = productVersion.IndexOfAny(new[] { '+', '-' });
+
+                if (suffix >= 0)
+                {
+                    productVersion = productVersion.Substring(0, suffix);
+                }
+
+                if (Version.TryParse(productVersion, out Version parsed))
+                {
+                    return parsed;
+                }
+            }
+
+            return assembly.GetName().Version ?? new Version(0, 0, 0, 0);
+        }
+
+        public static bool IsDefaultInstallDir()
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
+            string executable = Environment.ProcessPath;
+            return !string.IsNullOrEmpty(path) && !string.IsNullOrEmpty(executable) && executable.StartsWith(path, StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// If version newer than ApplicationVersion = 1
+        /// If version equal to ApplicationVersion = 0
+        /// If version older than ApplicationVersion = -1
+        /// </summary>
+        public static int CompareApplicationVersion(string version, bool includeRevision = false)
+        {
+            return CompareVersion(version, GetApplicationVersion(includeRevision));
+        }
+
         public static int CompareVersion(string version1, string version2, bool ignoreRevision = false)
         {
             return NormalizeVersion(version1, ignoreRevision).CompareTo(NormalizeVersion(version2, ignoreRevision));
@@ -307,16 +330,6 @@ namespace ShareX.HelpersLib
         public static int CompareVersion(Version version1, Version version2, bool ignoreRevision = false)
         {
             return version1.Normalize(ignoreRevision).CompareTo(version2.Normalize(ignoreRevision));
-        }
-
-        /// <summary>
-        /// If version newer than ApplicationVersion = 1
-        /// If version equal to ApplicationVersion = 0
-        /// If version older than ApplicationVersion = -1
-        /// </summary>
-        public static int CompareApplicationVersion(string version, bool includeRevision = false)
-        {
-            return CompareVersion(version, GetApplicationVersion(includeRevision));
         }
 
         public static Version NormalizeVersion(string version, bool ignoreRevision = false)
@@ -375,12 +388,6 @@ namespace ShareX.HelpersLib
             return OSVersion.Major >= 10 && OSVersion.Build >= build;
         }
 
-        public static bool IsDefaultInstallDir()
-        {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
-            return Application.ExecutablePath.StartsWith(path);
-        }
-
         public static bool IsValidIPAddress(string ip)
         {
             if (string.IsNullOrEmpty(ip)) return false;
@@ -396,50 +403,6 @@ namespace ShareX.HelpersLib
             int hours = (int)ts.TotalHours;
             if (hours > 0) time = hours + ":" + time;
             return time;
-        }
-
-        public static void PlaySound(Stream stream)
-        {
-            if (stream != null)
-            {
-                Task.Run(() =>
-                {
-                    using (stream)
-                    using (SoundPlayer soundPlayer = new SoundPlayer(stream))
-                    {
-                        soundPlayer.Play();
-                    }
-                });
-            }
-        }
-
-        public static void PlaySoundSync(Stream stream)
-        {
-            if (stream != null)
-            {
-                Task.Run(() =>
-                {
-                    using (stream)
-                    using (SoundPlayer soundPlayer = new SoundPlayer(stream))
-                    {
-                        soundPlayer.PlaySync();
-                    }
-                });
-            }
-        }
-
-        public static void PlaySoundAsync(string filePath)
-        {
-            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
-            {
-                Task.Run(() =>
-                {
-                    using (SoundPlayer soundPlayer = new SoundPlayer(filePath))
-                    {
-                        soundPlayer.PlaySync();
-                    }
-                });
-            }
         }
 
         public static bool WaitWhile(Func<bool> check, int interval, int timeout = -1)
@@ -700,14 +663,6 @@ namespace ShareX.HelpersLib
             return productName;
         }
 
-        public static Cursor CreateCursor(byte[] data)
-        {
-            using (MemoryStream ms = new MemoryStream(data))
-            {
-                return new Cursor(ms);
-            }
-        }
-
         public static string EscapeCLIText(string text)
         {
             string escapedText = text.Replace("\\", "\\\\").Replace("\"", "\\\"");
@@ -875,60 +830,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Icon GetProgressIcon(int percentage)
-        {
-            return GetProgressIcon(percentage, Color.FromArgb(16, 116, 193));
-        }
-
-        public static Icon GetProgressIcon(int percentage, Color color)
-        {
-            percentage = percentage.Clamp(0, 100);
-
-            Size size = SystemInformation.SmallIconSize;
-
-            using (Bitmap bmp = new Bitmap(size.Width, size.Height))
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                using (Brush brush = new SolidBrush(Color.FromArgb(39, 39, 39)))
-                {
-                    g.FillRectangle(brush, 0, 0, size.Width, size.Height);
-                }
-
-                int y = (int)(size.Height * (percentage / 100f));
-
-                if (y > 0)
-                {
-                    using (Brush brush = new SolidBrush(color))
-                    {
-                        g.FillRectangle(brush, 0, size.Height - y, size.Width, y);
-                    }
-
-                    if (y < size.Height)
-                    {
-                        using (Pen pen = new Pen(ColorHelpers.LighterColor(color, 0.3f)))
-                        {
-                            g.DrawLine(pen, 0, size.Height - y, size.Width - 1, size.Height - y);
-                        }
-                    }
-                }
-
-                using (Font font = new Font("Arial", 10))
-                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-                {
-                    percentage = percentage.Clamp(0, 99);
-
-                    g.DrawString(percentage.ToString(), font, Brushes.White, size.Width / 2f, size.Height / 2f, sf);
-                }
-
-                bmp.SetPixel(0, 0, Color.Transparent);
-                bmp.SetPixel(bmp.Width - 1, 0, Color.Transparent);
-                bmp.SetPixel(0, bmp.Height - 1, Color.Transparent);
-                bmp.SetPixel(bmp.Width - 1, bmp.Height - 1, Color.Transparent);
-
-                return Icon.FromHandle(bmp.GetHicon());
-            }
-        }
-
         public static string GetChecksum(string filePath)
         {
             using (HashAlgorithm hashAlgorithm = SHA256.Create())
@@ -982,30 +883,6 @@ namespace ShareX.HelpersLib
             });
 
             return Task.WhenAll(tasks);
-        }
-
-        public static void LockCursorToWindow(Form form)
-        {
-            form.Activated += (sender, e) => Cursor.Clip = form.Bounds;
-            form.Deactivate += (sender, e) => Cursor.Clip = Rectangle.Empty;
-        }
-
-        public static void LockCursorToWindow(Avalonia.Controls.Window window)
-        {
-            window.Activated += (sender, e) =>
-            {
-                IntPtr handle = window.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-                if (handle != IntPtr.Zero)
-                {
-                    Rectangle bounds = NativeMethods.GetWindowRect(handle);
-                    if (bounds.Width > 0 && bounds.Height > 0)
-                    {
-                        Cursor.Clip = bounds;
-                    }
-                }
-            };
-            window.Deactivated += (sender, e) => Cursor.Clip = Rectangle.Empty;
-            window.Closed += (sender, e) => Cursor.Clip = Rectangle.Empty;
         }
 
         public static bool IsDefaultSettings<T>(IEnumerable<T> current, IEnumerable<T> source, Func<T, T, bool> predicate)

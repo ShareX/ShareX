@@ -23,30 +23,33 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.Platform;
-using System;
+using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
+using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing.Imaging;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System;
 
 namespace ShareX.HelpersLib
 {
-    /// <summary>
-    /// Encrypts values for the current user. Named after the Windows Data Protection API for compatibility with existing settings,
-    /// but the work is done by <see cref="IPlatformServices.Secrets"/>, so it also works on macOS and Linux.
-    /// </summary>
-    public static class DPAPI
+    // Windows-only members of Extensions, kept in the same namespace so existing call sites keep compiling.
+    public static class ExtensionsWindows
     {
-        public static string Encrypt(string stringToEncrypt, string optionalEntropy = null)
+        public static void DisposeHandle(this Icon icon)
         {
-            byte[] data = Encoding.UTF8.GetBytes(stringToEncrypt);
-            return Convert.ToBase64String(PlatformServices.Current.Secrets.Protect(data, GetEntropy(optionalEntropy)));
+            if (icon.Handle != IntPtr.Zero)
+            {
+                NativeMethods.DestroyIcon(icon.Handle);
+            }
         }
 
-        public static string Decrypt(string encryptedString, string optionalEntropy = null)
-        {
-            byte[] data = Convert.FromBase64String(encryptedString);
-            return Encoding.UTF8.GetString(PlatformServices.Current.Secrets.Unprotect(data, GetEntropy(optionalEntropy)));
-        }
-
-        private static byte[] GetEntropy(string optionalEntropy) => optionalEntropy == null ? null : Encoding.UTF8.GetBytes(optionalEntropy);
     }
 }
