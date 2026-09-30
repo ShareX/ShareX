@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -61,7 +61,7 @@ public static class ColorPickerWindowIntegration
         Func<PointInfo>? openScreenColorPicker = null,
         ScreenColorPickerOptions? screenColorPickerOptions = null)
     {
-        NativeMethods.ReleaseCapture();
+        if (OperatingSystem.IsWindows()) WindowsInput.ReleaseCapture();
         AvaloniaBootstrapper.EnsureInitialized();
 
         DrawingColor? result;
@@ -99,7 +99,7 @@ public static class ColorPickerWindowIntegration
     {
         try
         {
-            NativeMethods.ReleaseCapture();
+            if (OperatingSystem.IsWindows()) WindowsInput.ReleaseCapture();
             ColorPickerWindow window =
                 new(currentColor, options, screenColorPickerOptions, openScreenColorPicker);
             window.Closed += (_, _) => completed(window.SelectedColor);

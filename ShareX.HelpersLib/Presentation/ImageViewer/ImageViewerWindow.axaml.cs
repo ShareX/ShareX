@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia;
+using Avalonia.Platform;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -72,9 +73,16 @@ public partial class ImageViewerWindow : Window
     {
         DataContext = _viewModel;
         AvaloniaXamlLoader.Load(this);
-        System.Drawing.Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
-        WindowStartupLocation = WindowStartupLocation.Manual;
-        Position = new PixelPoint(activeScreen.X, activeScreen.Y);
+        // Open on the screen under the cursor where the OS tells us where it is (Windows); elsewhere let the window manager place it.
+        if (OperatingSystem.IsWindows() && WindowsInput.GetCursorPos(out WindowsInput.POINT cursor) && Screens.ScreenFromPoint(new PixelPoint(cursor.X, cursor.Y)) is Screen screen)
+        {
+            WindowStartupLocation = WindowStartupLocation.Manual;
+            Position = screen.Bounds.Position;
+        }
+        else
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        }
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Title = Localization.Strings.ImageViewerWindow_Title;
         KeyDown += OnKeyDown;

@@ -33,6 +33,7 @@ using ShareX.Desktop.Commands;
 using ShareX.Desktop.Ipc;
 using ShareX.Desktop.Settings;
 using ShareX.Desktop.Workflows;
+using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
@@ -261,7 +262,9 @@ public sealed class DesktopHost : IEditorLauncher
         HistoryIntegration.ShowImageHistoryWindow(history.Manager, historySettings, new HistoryWindowServices
         {
             EditImage = path => Fire(new DesktopCommand(CommandKind.Editor) { Files = [path] }),
-            UploadFile = path => Fire(new DesktopCommand(CommandKind.Upload) { Files = [path] })
+            UploadFile = path => Fire(new DesktopCommand(CommandKind.Upload) { Files = [path] }),
+            ShowImage = ImageViewerWindowIntegration.ShowImage,
+            ShowImages = ImageViewerWindowIntegration.ShowImage
         });
     }
 

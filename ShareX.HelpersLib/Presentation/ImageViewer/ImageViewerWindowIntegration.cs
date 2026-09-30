@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -79,6 +79,8 @@ public static class ImageViewerWindowIntegration
         ShowWindow(() => new ImageViewerWindow(data, displayName), owner);
     }
 
+    /// <summary>For the Windows application, which still passes System.Drawing images. Other callers pass the encoded bytes.</summary>
+    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     public static void ShowImage(DrawingImage? image, Window? owner = null)
     {
         if (image == null)

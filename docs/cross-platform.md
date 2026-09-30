@@ -40,7 +40,9 @@ Every service reports a `FeatureSupport` value. When a feature is unavailable th
 
 Shared libraries target plain `net10.0` and never reference WinForms, WPF or Win32. When shared code needs the operating system it asks `PlatformServices.Current`: settings secrets use `Secrets`, copy to clipboard uses `Clipboard`, "show in folder" uses `Shell`, file thumbnails use `Thumbnails`.
 
-Code that can only work on Windows lives in `ShareX.HelpersLib.Windows` (or, for real operating system services, in `ShareX.Platform.Windows`). A class that mixes both keeps its portable members in `HelpersLib` and exposes the Windows members through C# 14 extension members in the same namespace, so `Helpers.CreateCursor(...)` still compiles in the Windows application. Call sites that use an alias for the type (`using Helpers = ShareX.HelpersLib.Helpers;`) also need `using ShareX.HelpersLib;`.
+The portable projects treat the platform compatibility analyzer (CA1416) as an error, so calling a Windows-only API there without an `OperatingSystem.IsWindows()` check does not compile. That is what keeps GDI+ (`System.Drawing.Bitmap`, `Font`, `Graphics`), the registry and Win32 from turning into run time crashes on Linux and macOS.
+
+Code that can only work on Windows lives in `ShareX.HelpersLib.Windows` (or, for real operating system services, in `ShareX.Platform.Windows`). A class that mixes both keeps its portable members in `HelpersLib` and exposes the Windows members through C# 14 extension members in the same namespace, so `Helpers.CreateCursor(...)` still compiles in the Windows application. Today `ShareX.HelpersLib.Windows` holds the WinForms helpers, Win32 interop, the GDI+ image code (image helpers, colour matrices, GIF encoding, gradients), printing, the registry, the WinForms theme and the update and installer windows. The update system stays there because it downloads and runs the Windows installer; the GDI+ code moves back once it is rewritten on SkiaSharp. Call sites that use an alias for the type (`using Helpers = ShareX.HelpersLib.Helpers;`) also need `using ShareX.HelpersLib;`.
 
 ## Start up
 
