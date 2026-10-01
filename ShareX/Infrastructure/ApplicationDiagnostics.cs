@@ -33,7 +33,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Runtime.Loader;
-using System.Threading;
 
 namespace ShareX;
 
@@ -53,7 +52,6 @@ internal static class ApplicationDiagnostics
 #endif
 
         _exceptionHandlersEnabled = true;
-        HotkeyForm.ConfigureExceptionHandling(ShowError);
         AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
     }
 

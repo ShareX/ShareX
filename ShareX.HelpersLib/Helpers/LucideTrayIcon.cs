@@ -25,16 +25,15 @@
 
 #nullable enable
 
+using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Platform;
 using Microsoft.Win32;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Threading;
-using Avalonia.Controls;
-using Avalonia;
 
 namespace ShareX.HelpersLib;
 

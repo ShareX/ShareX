@@ -45,16 +45,16 @@ namespace ShareX
         public HotkeyTriggerEventHandler HotkeyTrigger;
         public HotkeysToggledEventHandler HotkeysToggledTrigger;
 
-        private IHotkeyHost hotkeyForm;
+        private IHotkeyHost hotkeyHost;
 
-        public HotkeyManager(IHotkeyHost form)
+        public HotkeyManager(IHotkeyHost host)
         {
-            hotkeyForm = form;
-            hotkeyForm.HotkeyPress += HotkeyForm_HotkeyPress;
-            hotkeyForm.Closed += HotkeyForm_FormClosed;
+            hotkeyHost = host;
+            hotkeyHost.HotkeyPress += OnHotkeyPressed;
+            hotkeyHost.Closed += OnHostClosed;
         }
 
-        private void HotkeyForm_HotkeyPress(ushort id, InputKey key, Modifiers modifier)
+        private void OnHotkeyPressed(ushort id, InputKey key, Modifiers modifier)
         {
             if (!IgnoreHotkeys && (!ApplicationState.Settings.DisableHotkeysOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
             {
@@ -67,9 +67,9 @@ namespace ShareX
             }
         }
 
-        private void HotkeyForm_FormClosed(object sender, EventArgs e)
+        private void OnHostClosed(object sender, EventArgs e)
         {
-            if (hotkeyForm != null && !hotkeyForm.IsDisposed)
+            if (hotkeyHost != null && !hotkeyHost.IsDisposed)
             {
                 UnregisterAllHotkeys(false);
             }
@@ -105,7 +105,7 @@ namespace ShareX
 
                 if (hotkeySetting.HotkeyInfo.Status != HotkeyStatus.Registered && hotkeySetting.HotkeyInfo.IsValidHotkey)
                 {
-                    hotkeyForm.RegisterHotkey(hotkeySetting.HotkeyInfo);
+                    hotkeyHost.RegisterHotkey(hotkeySetting.HotkeyInfo);
 
                     if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Registered)
                     {
@@ -148,7 +148,7 @@ namespace ShareX
         {
             if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Registered)
             {
-                hotkeyForm.UnregisterHotkey(hotkeySetting.HotkeyInfo);
+                hotkeyHost.UnregisterHotkey(hotkeySetting.HotkeyInfo);
 
                 if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.NotConfigured)
                 {

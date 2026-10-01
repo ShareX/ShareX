@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia.Input;
+using Avalonia.Platform.Storage;
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using ShareX.Tools;
@@ -33,8 +35,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Web;
-using Avalonia.Input;
-using Avalonia.Platform.Storage;
 using Bitmap = SkiaSharp.SKBitmap;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;

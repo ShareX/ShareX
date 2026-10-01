@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia.Controls;
 using SkiaSharp;
 using System;
 using System.Drawing;
 using System.IO;
 using System.Text;
-using Avalonia.Controls;
 
 namespace ShareX.HelpersLib;
 

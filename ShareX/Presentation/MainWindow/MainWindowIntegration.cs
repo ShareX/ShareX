@@ -32,7 +32,6 @@ using ShareX.HelpersLib;
 using ShareX.Localization;
 using ShareX.UploadersLib;
 using System;
-using System.IO;
 
 namespace ShareX;
 

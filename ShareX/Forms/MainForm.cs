@@ -43,7 +43,7 @@ internal sealed class MainForm
 
     public MainForm()
     {
-        _hotkeyHost = HotkeyForm.CreateHost();
+        _hotkeyHost = new WindowsHotkeyHost();
         _hotkeyHost.NativeMessageReceived += OnNativeMessage;
         _hotkeyHost.Closed += OnHostClosed;
 

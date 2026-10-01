@@ -34,9 +34,7 @@ using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.Design;
 using System.Drawing;
-using System.Drawing.Design;
 using System.Linq;
 
 namespace ShareX
@@ -511,8 +509,7 @@ namespace ShareX
         [Category("Upload text"), DefaultValue("text"), Description("Text format e.g. csharp, cpp, etc.")]
         public string TextFormat { get; set; }
 
-        [Category("Upload text"), DefaultValue(""), Description("Custom text input. Use %input for text input. Example you can create web page with your text in it."),
-        Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
+        [Category("Upload text"), DefaultValue(""), Description("Custom text input. Use %input for text input. Example you can create web page with your text in it.")]
         public string TextCustom { get; set; }
 
         [Category("Upload text"), DefaultValue(true), Description("HTML encode custom text input.")]
