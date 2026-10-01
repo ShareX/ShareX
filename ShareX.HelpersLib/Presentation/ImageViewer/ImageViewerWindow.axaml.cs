@@ -133,6 +133,11 @@ public partial class ImageViewerWindow : Window
             Close();
             e.Handled = true;
         }
+        else if (e.InitialPressMouseButton == MouseButton.Middle && e.KeyModifiers.HasFlag(KeyModifiers.Control))
+        {
+            _previewTransform.Matrix = Matrix.Identity;
+            e.Handled = true;
+        }
     }
 
     private void OnPreviewPointerWheelChanged(object? sender, PointerWheelEventArgs e)
