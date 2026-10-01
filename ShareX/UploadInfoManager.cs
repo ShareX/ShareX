@@ -202,7 +202,7 @@ namespace ShareX
         {
             if (IsItemSelected && SelectedItem.IsImageFile)
             {
-                Size size = ImageHelpers.GetImageFileDimensions(SelectedItem.Info.FilePath);
+                Size size = SkiaImageHelpers.GetImageFileDimensions(SelectedItem.Info.FilePath);
 
                 if (!size.IsEmpty)
                 {

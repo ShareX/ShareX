@@ -95,7 +95,7 @@ public static class LucideTrayIcon
     /// Creates a small bitmap using the color appropriate for the current
     /// Windows taskbar theme.
     /// </summary>
-    public static Image CreateImage(string glyph)
+    public static SKBitmap CreateImage(string glyph)
     {
         return CreateImage(glyph, GetThemeIconColor());
     }
@@ -103,7 +103,7 @@ public static class LucideTrayIcon
     /// <summary>
     /// Creates a small bitmap using a specific glyph color.
     /// </summary>
-    public static Image CreateImage(string glyph, System.Drawing.Color color)
+    public static SKBitmap CreateImage(string glyph, System.Drawing.Color color)
     {
         if (string.IsNullOrEmpty(glyph))
         {
@@ -115,9 +115,13 @@ public static class LucideTrayIcon
         byte[] imageData = RenderGlyph(glyph, skColor, size);
 
         using MemoryStream stream = new(imageData, writable: false);
-        using Image image = Image.FromStream(stream);
-        return new Bitmap(image);
+        return SkiaImageHelpers.Decode(stream);
     }
+
+    public static byte[] CreateIconBytes(string glyph) => CreateIconBytes(glyph, GetThemeIconColor());
+
+    public static byte[] CreateIconBytes(string glyph, System.Drawing.Color color)
+        => CreateIconData(glyph, color.ToSKColor());
 
     private static System.Drawing.Color GetThemeIconColor()
     {

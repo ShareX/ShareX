@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
@@ -51,7 +50,6 @@ namespace ShareX.ImageEffectsLib
 
         private FontSafe fontSafe = new FontSafe();
 
-        // Workaround for "System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt."
         [DefaultValue(typeof(ImageFont), "Arial, 36pt")]
         public ImageFont Font
         {
@@ -116,7 +114,7 @@ namespace ShareX.ImageEffectsLib
         private GradientInfo AddDefaultGradient()
         {
             GradientInfo gradientInfo = new GradientInfo();
-            gradientInfo.Type = LinearGradientMode.Horizontal;
+            gradientInfo.Type = ImageGradientMode.Horizontal;
 
             switch (RandomFast.Next(0, 2))
             {

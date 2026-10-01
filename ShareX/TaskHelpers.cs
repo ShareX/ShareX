@@ -671,8 +671,6 @@ namespace ShareX
         {
             if (bmp != null)
             {
-                bmp = SkiaImageHelpers.NonIndexedBitmap(bmp);
-
                 if (taskSettingsImage.ShowImageEffectsWindowAfterCapture)
                 {
                     ImageEffectsDialogResult result = ImageEffectsIntegration.ShowDialog(bmp,
@@ -1398,7 +1396,7 @@ namespace ShareX
 
             if (bmp != null)
             {
-                using SKBitmap skBitmap = GdiBitmapToSkBitmap(bmp);
+                using SKBitmap skBitmap = CopyBitmapForEditor(bmp);
                 skBitmapResult = ImageEditorIntegration.ShowEditorDialog(skBitmap, taskSettings.ToolsSettingsReference.ImageEditorOptions,
                     events, taskMode, filePath, openBackgroundPanel);
             }
@@ -1419,9 +1417,8 @@ namespace ShareX
             return bmpResult;
         }
 
-        // Avoid the slow PNG re-encode path for large captures while still bypassing
-        // the WindowsForms Bitmap->SKBitmap conversion that regressed post-effects opens.
-        private static SKBitmap GdiBitmapToSkBitmap(Bitmap bitmap) => bitmap.Copy();
+        // Give the editor an independent copy of the captured pixels.
+        private static SKBitmap CopyBitmapForEditor(Bitmap bitmap) => bitmap.Copy();
         private static SKBitmap CopyBitmap(SKBitmap bitmap) => bitmap.Copy();
 
 
@@ -1529,8 +1526,6 @@ namespace ShareX
 
                 if (bmp != null)
                 {
-                    bmp = SkiaImageHelpers.NonIndexedBitmap(bmp);
-
                     if (taskSettings == null) taskSettings = ApplicationState.DefaultTaskSettings;
 
                     using (bmp)

@@ -26,7 +26,6 @@
 using SkiaSharp;
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.IO;
 
 namespace ShareX.HelpersLib;
@@ -69,7 +68,7 @@ public static partial class SkiaImageHelpers
     }
 
     public static SKBitmap ResizeImage(SKBitmap source, int width, int height,
-        InterpolationMode interpolationMode = InterpolationMode.HighQualityBicubic)
+        ImageSamplingMode interpolationMode = ImageSamplingMode.HighQualityBicubic)
     {
         if (width < 1 || height < 1 || source.Width == width && source.Height == height) return source;
         SKBitmap result = CreateBitmap(width, height);
@@ -79,8 +78,8 @@ public static partial class SkiaImageHelpers
         {
             SKSamplingOptions sampling = interpolationMode switch
             {
-                InterpolationMode.NearestNeighbor => new(SKFilterMode.Nearest),
-                InterpolationMode.Bilinear or InterpolationMode.HighQualityBilinear => new(SKFilterMode.Linear),
+                ImageSamplingMode.NearestNeighbor => new(SKFilterMode.Nearest),
+                ImageSamplingMode.Bilinear or ImageSamplingMode.HighQualityBilinear => new(SKFilterMode.Linear),
                 _ => HighQualitySampling
             };
             canvas.DrawImage(image, new SKRect(0, 0, width, height), sampling);
@@ -89,7 +88,7 @@ public static partial class SkiaImageHelpers
     }
 
     public static SKBitmap ResizeImage(SKBitmap source, Size size,
-        InterpolationMode interpolationMode = InterpolationMode.HighQualityBicubic)
+        ImageSamplingMode interpolationMode = ImageSamplingMode.HighQualityBicubic)
         => ResizeImage(source, size.Width, size.Height, interpolationMode);
 
     public static SKBitmap ResizeImage(SKBitmap source, int width, int height, bool allowEnlarge,
@@ -187,7 +186,7 @@ public static partial class SkiaImageHelpers
         try
         {
             using FileStream stream = File.OpenRead(filePath);
-            return Decode(stream);
+            return Decode(stream, HelpersOptions.RotateImageByExifOrientationData);
         }
         catch (Exception exception)
         {
@@ -196,14 +195,14 @@ public static partial class SkiaImageHelpers
         }
     }
 
-    public static SKBitmap Decode(Stream stream)
+    public static SKBitmap Decode(Stream stream, bool applyOrientation = true)
     {
         if (!stream.CanSeek)
         {
             using MemoryStream copy = new();
             stream.CopyTo(copy);
             copy.Position = 0;
-            return Decode(copy);
+            return Decode(copy, applyOrientation);
         }
         using SKManagedStream managedStream = new(stream, false);
         using SKCodec codec = SKCodec.Create(managedStream);
@@ -217,7 +216,7 @@ public static partial class SkiaImageHelpers
             throw new InvalidDataException($"Image decoding failed: {result}.");
         }
 
-        if (codec.EncodedOrigin == SKEncodedOrigin.TopLeft) return bitmap;
+        if (!applyOrientation || codec.EncodedOrigin == SKEncodedOrigin.TopLeft) return bitmap;
 
         // EXIF orientation applies to the decoded pixels, including mirrored orientations.
         bool swapDimensions = (int)codec.EncodedOrigin >= (int)SKEncodedOrigin.LeftTop;
@@ -337,7 +336,7 @@ public static partial class SkiaImageHelpers
     }
 
     public static SKBitmap CreateThumbnail(SKBitmap source, int width, int height,
-        InterpolationMode interpolationMode = InterpolationMode.HighQualityBicubic)
+        ImageSamplingMode interpolationMode = ImageSamplingMode.HighQualityBicubic)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(width, 1);
         ArgumentOutOfRangeException.ThrowIfLessThan(height, 1);

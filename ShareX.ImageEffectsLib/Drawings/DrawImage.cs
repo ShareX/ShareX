@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using SkiaSharp;
 
 
@@ -62,8 +61,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(ImageInterpolationMode.HighQualityBicubic)]
         public ImageInterpolationMode InterpolationMode { get; set; }
 
-        [DefaultValue(CompositingMode.SourceOver)]
-        public CompositingMode CompositingMode { get; set; }
+        [DefaultValue(ImageCompositingMode.SourceOver)]
+        public ImageCompositingMode CompositingMode { get; set; }
 
         private int opacity;
 
@@ -139,10 +138,10 @@ namespace ShareX.ImageEffectsLib
                         using (SKCanvas canvas = new(bmp))
                         using (SKPaint paint = new())
                         {
-                            paint.BlendMode = CompositingMode == CompositingMode.SourceCopy ? SKBlendMode.Src : SKBlendMode.SrcOver;
+                            paint.BlendMode = CompositingMode == ImageCompositingMode.SourceCopy ? SKBlendMode.Src : SKBlendMode.SrcOver;
                             if (Tile)
                             {
-                                using SKPaint texture = SkiaDrawing.Texture(bmpWatermark, WrapMode.Tile);
+                                using SKPaint texture = SkiaDrawing.Texture(bmpWatermark, ImageTileMode.Tile);
                                 texture.BlendMode = paint.BlendMode;
                                 texture.Translate(imageRectangle.X, imageRectangle.Y);
                                 canvas.FillRectangle(texture, imageRectangle);

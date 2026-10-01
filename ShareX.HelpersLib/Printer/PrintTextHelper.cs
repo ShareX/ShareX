@@ -23,212 +23,100 @@
 
 #endregion License Information (GPL v3)
 
+using SkiaSharp;
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Text;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+internal sealed class PrintTextHelper
 {
-    internal class PrintTextHelper
+    private string text = "";
+    private int offset, page;
+    public string Text { get => text; set => text = value.Replace("\r\n", "\n").Replace('\r', '\n'); }
+    public ImageFont Font { get; set; }
+    public void BeginPrint() { offset = 0; page = 1; }
+
+    public void PrintPage(PrintPageEventArgs args)
     {
-        private const int Eos = -1;
-        private const int NewLine = -2;
+        using SKBitmap bitmap = RenderPage(args.PageBounds.Size, args.MarginBounds, out bool morePages);
+        if (bitmap != null) WindowsPrintInterop.DrawImage(args, bitmap, args.PageBounds);
+        args.HasMorePages = morePages;
+    }
 
-        private string text = "";
-        private Font font;
-        private int offset;
-        private int page;
-
-        public string Text
+    // Page and margin bounds are in hundredths of an inch; rasterize at 300 dpi.
+    public SKBitmap RenderPage(Size pageSize, Rectangle margin, out bool morePages)
+    {
+        using ImageFont settings = new(Font.Name, Font.PixelSize * 300 / 96, Font.Style, ImageFontUnit.Pixel);
+        using SKFont font = settings.CreateFont();
+        float lineHeight = font.Spacing;
+        float width = margin.Width * 3f, height = margin.Height * 3f - lineHeight * 3;
+        if (width <= 0 || height < lineHeight)
         {
-            get
-            {
-                return text;
-            }
-            set
-            {
-                text = value;
-            }
+            morePages = false;
+            return null;
         }
-
-        public Font Font
+        SKBitmap bitmap = SkiaImageHelpers.CreateBitmap(pageSize.Width * 3, pageSize.Height * 3);
+        using SKCanvas canvas = new(bitmap);
+        using SKPaint paint = new() { Color = SKColors.Black, IsAntialias = true };
+        canvas.Clear(SKColors.White);
+        canvas.ClipRect(SKRect.Create(margin.Left * 3f, margin.Top * 3f, width, margin.Height * 3f));
+        int lineCount = Math.Max(1, (int)(height / lineHeight));
+        for (int row = 0; row < lineCount && offset < text.Length; row++)
         {
-            get
+            int start = offset, lastWhitespace = -1;
+            StringBuilder line = new();
+            while (offset < text.Length)
             {
-                return font;
-            }
-            set
-            {
-                font = value;
-            }
-        }
-
-        public void BeginPrint()
-        {
-            offset = 0;
-            page = 1;
-        }
-
-        public void PrintPage(PrintPageEventArgs e)
-        {
-            float pagewidth = e.MarginBounds.Width * 3.0f;
-            float pageheight = e.MarginBounds.Height * 3.0f;
-
-            float textwidth = 0.0f;
-            float textheight = 0.0f;
-
-            float offsetx = e.MarginBounds.Left * 3.0f;
-            float offsety = e.MarginBounds.Top * 3.0f;
-
-            float x = offsetx;
-            float y = offsety;
-
-            StringBuilder line = new StringBuilder(256);
-            StringFormat sf = StringFormat.GenericTypographic;
-            sf.FormatFlags = StringFormatFlags.DisplayFormatControl;
-            sf.SetTabStops(0.0f, new float[] { 300.0f });
-
-            RectangleF r;
-
-            Graphics g = e.Graphics;
-            g.PageUnit = GraphicsUnit.Document;
-
-            SizeF size = g.MeasureString("X", font, 1, sf);
-            float lineheight = size.Height;
-
-            // make sure we can print at least 1 line (font too big?)
-            if (lineheight + (lineheight * 3) > pageheight)
-            {
-                // cannot print at least 1 line and footer
-                g.Dispose();
-
-                e.HasMorePages = false;
-
-                return;
-            }
-
-            // don't include footer
-            pageheight -= lineheight * 3;
-
-            // last whitespace in line buffer
-            int lastws = -1;
-
-            // next character
-            int c;
-
-            while (true)
-            {
-                // get next character
-                c = NextChar();
-
-                // append c to line if not NewLine or Eos
-                if ((c != NewLine) && (c != Eos))
+                char character = text[offset++];
+                if (character == '\n') break;
+                line.Append(character);
+                if (char.IsWhiteSpace(character)) lastWhitespace = line.Length - 1;
+                if (MeasureLine(font, line.ToString()) <= width || line.Length == 1) continue;
+                if (lastWhitespace >= 0)
                 {
-                    char ch = Convert.ToChar(c);
-                    line.Append(ch);
-
-                    // if ch is whitespace, remember pos and continue
-                    if (ch == ' ' || ch == '\t')
-                    {
-                        lastws = line.Length - 1;
-                        continue;
-                    }
+                    offset = start + lastWhitespace + 1;
+                    line.Length = lastWhitespace;
                 }
-
-                // measure string if line is not empty
-                if (line.Length > 0)
-                {
-                    size = g.MeasureString(line.ToString(), font, int.MaxValue, StringFormat.GenericTypographic);
-                    textwidth = size.Width;
-                }
-
-                // draw line if line is full, if NewLine or if last line
-                if (c == Eos || (textwidth > pagewidth) || (c == NewLine))
-                {
-                    if (textwidth > pagewidth)
-                    {
-                        if (lastws != -1)
-                        {
-                            offset -= line.Length - lastws - 1;
-                            line.Length = lastws + 1;
-                        }
-                        else
-                        {
-                            line.Length--;
-                            offset--;
-                        }
-                    }
-
-                    // there's something to draw
-                    if (line.Length > 0)
-                    {
-                        r = new RectangleF(x, y, pagewidth, lineheight);
-                        sf.Alignment = StringAlignment.Near;
-                        g.DrawString(line.ToString(), font, Brushes.Black, r, sf);
-                    }
-
-                    // increase ypos
-                    y += lineheight;
-                    textheight += lineheight;
-
-                    // empty line buffer
-                    line.Length = 0;
-                    textwidth = 0.0f;
-                    lastws = -1;
-                }
-
-                // if next line doesn't fit on page anymore, exit loop
-                if (textheight > (pageheight - lineheight) || c == Eos)
-                {
-                    break;
-                }
+                else { offset--; line.Length--; }
+                break;
             }
-
-            // print footer
-            x = offsetx;
-            y = offsety + pageheight + (lineheight * 2);
-            r = new RectangleF(x, y, pagewidth, lineheight);
-            sf.Alignment = StringAlignment.Center;
-            g.DrawString(page.ToString(), font, Brushes.Black, r, sf);
-
-            g.Dispose();
-
-            page++;
-
-            e.HasMorePages = c != Eos;
+            DrawLine(canvas, font, paint, line.ToString(), margin.Left * 3f,
+                margin.Top * 3f + row * lineHeight - font.Metrics.Ascent, Font.Style);
         }
+        string footer = page.ToString();
+        canvas.DrawText(footer, margin.Left * 3f + (width - font.MeasureText(footer)) / 2,
+            margin.Top * 3f + height + lineHeight * 2 - font.Metrics.Ascent, font, paint);
+        page++;
+        morePages = offset < text.Length;
+        return bitmap;
+    }
 
-        private bool NextCharIsNewLine()
+    private static float MeasureLine(SKFont font, string text)
+    {
+        float width = 0;
+        string[] parts = text.Split('\t');
+        for (int i = 0; i < parts.Length; i++)
         {
-            int nl = Environment.NewLine.Length;
-            int tl = text.Length - offset;
-
-            if (tl < nl) return false;
-
-            string newline = Environment.NewLine;
-
-            for (int i = 0; i < nl; i++)
-            {
-                if (text[offset + i] != newline[i])
-                    return false;
-            }
-
-            return true;
+            width += font.MeasureText(parts[i]);
+            if (i < parts.Length - 1) width = (MathF.Floor(width / 300) + 1) * 300;
         }
+        return width;
+    }
 
-        private int NextChar()
+    private static void DrawLine(SKCanvas canvas, SKFont font, SKPaint paint, string text, float x, float baseline, ImageFontStyle style)
+    {
+        float width = 0;
+        string[] parts = text.Split('\t');
+        for (int i = 0; i < parts.Length; i++)
         {
-            if (offset >= text.Length)
-                return -1;
-
-            if (NextCharIsNewLine())
-            {
-                offset += Environment.NewLine.Length;
-                return -2;
-            }
-
-            return text[offset++];
+            canvas.DrawText(parts[i], x + width, baseline, font, paint);
+            using SKPath decorations = SkiaDrawing.TextDecorations(parts[i], font, style, x + width, baseline);
+            canvas.DrawPath(decorations, paint);
+            width += font.MeasureText(parts[i]);
+            if (i < parts.Length - 1) width = (MathF.Floor(width / 300) + 1) * 300;
         }
     }
 }

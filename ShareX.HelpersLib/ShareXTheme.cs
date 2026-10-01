@@ -119,9 +119,9 @@ namespace ShareX.HelpersLib
 
         public Color MenuCheckBackgroundColor { get; set; }
 
-        public Font MenuFont { get; set; } = new Font("Segoe UI", 9.75f);
+        public ImageFont MenuFont { get; set; } = new ImageFont("Segoe UI", 9.75f);
 
-        public Font ContextMenuFont { get; set; } = new Font("Segoe UI", 9.75f);
+        public ImageFont ContextMenuFont { get; set; } = new ImageFont("Segoe UI", 9.75f);
 
         public int ContextMenuOpacity { get; set; } = 100;
 

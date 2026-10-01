@@ -25,7 +25,6 @@
 
 using System;
 using SkiaSharp;
-using System.Drawing;
 using System.IO;
 
 namespace ShareX.HelpersLib
@@ -48,38 +47,9 @@ namespace ShareX.HelpersLib
             Loop = loop;
         }
 
-        public void AddFrame(Image img, GIFQuality quality = GIFQuality.Default)
-        {
-            AddFrame(img, Delay, quality);
-        }
-
-        public void AddFrame(Image img, int delay, GIFQuality quality = GIFQuality.Default)
-        {
-            GifClass gif = new GifClass();
-            gif.LoadGifPicture(img, quality);
-
-            if (stream == null)
-            {
-                stream = new FileStream(FilePath, FileMode.Create, FileAccess.Write, FileShare.Read);
-                stream.Write(CreateHeaderBlock());
-                stream.Write(gif.ScreenDescriptor.ToArray());
-                if (Loop)
-                {
-                    stream.Write(CreateApplicationExtensionBlock(Repeat));
-                }
-            }
-
-            stream.Write(CreateGraphicsControlExtensionBlock(delay));
-            stream.Write(gif.ImageDescriptor.ToArray());
-            stream.Write(gif.ColorTable.ToArray());
-            stream.Write(gif.ImageData.ToArray());
-
-            FrameCount++;
-        }
-
         public void AddFrame(string path, GIFQuality quality = GIFQuality.Default)
         {
-            using (Bitmap bmp = ImageHelpers.LoadImage(path))
+            using (SKBitmap bmp = SkiaImageHelpers.LoadImage(path))
             {
                 AddFrame(bmp, quality);
             }
@@ -111,17 +81,13 @@ namespace ShareX.HelpersLib
             {
                 stream.WriteByte(0x3B); // Image terminator
                 stream.Dispose();
+                stream = null;
             }
         }
 
         public void Dispose()
         {
             Finish();
-        }
-
-        private byte[] CreateHeaderBlock()
-        {
-            return new byte[] { (byte)'G', (byte)'I', (byte)'F', (byte)'8', (byte)'9', (byte)'a' };
         }
 
         private byte[] CreateApplicationExtensionBlock(int repeat)
@@ -149,18 +115,5 @@ namespace ShareX.HelpersLib
             return buffer;
         }
 
-        private byte[] CreateGraphicsControlExtensionBlock(int delay)
-        {
-            byte[] buffer = new byte[8];
-            buffer[0] = 0x21; // Extension introducer
-            buffer[1] = 0xF9; // Graphic control extension
-            buffer[2] = 0x04; // Size of block
-            buffer[3] = 0x09; // Flags: reserved, disposal method, user input, transparent color
-            buffer[4] = (byte)((delay / 10) % 0x100); // Delay time low byte
-            buffer[5] = (byte)(delay / 10 / 0x100); // Delay time high byte
-            buffer[6] = 0xFF; // Transparent color index
-            buffer[7] = 0x00; // Block terminator
-            return buffer;
-        }
     }
 }

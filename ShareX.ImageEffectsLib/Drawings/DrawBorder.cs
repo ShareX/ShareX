@@ -28,7 +28,6 @@ using System.ComponentModel;
 using System.Drawing;
 using SkiaSharp;
 
-using System.Drawing.Drawing2D;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -53,8 +52,8 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(DashStyle.Solid)]
-        public DashStyle DashStyle { get; set; }
+        [DefaultValue(ImageDashStyle.Solid)]
+        public ImageDashStyle DashStyle { get; set; }
 
         [DefaultValue(typeof(Color), "Black")]
         public Color Color { get; set; }

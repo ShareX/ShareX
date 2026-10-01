@@ -58,7 +58,15 @@ internal static class ImageEffectsLocalization
         string name = Enum.GetName(enumType, value) ?? value.ToString() ?? string.Empty;
         FieldInfo? field = enumType.GetField(name);
         string fallback = field?.GetCustomAttribute<DescriptionAttribute>()?.Description ?? Helpers.GetProperName(name);
-        return Get($"ImageEffectEnum_{Sanitize(enumType.Name)}_{name}", fallback);
+        string resourceType = enumType.Name switch
+        {
+            nameof(ImageDashStyle) => "DashStyle",
+            nameof(ImageGradientMode) => "LinearGradientMode",
+            nameof(ImageCompositingMode) => "CompositingMode",
+            nameof(ImageTextRenderingMode) => "TextRenderingHint",
+            _ => enumType.Name
+        };
+        return Get($"ImageEffectEnum_{Sanitize(resourceType)}_{name}", fallback);
     }
 
     private static string Get(string key, string fallback)

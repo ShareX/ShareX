@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
@@ -83,7 +82,7 @@ namespace ShareX.ImageEffectsLib
         private GradientInfo AddDefaultGradient()
         {
             GradientInfo gradientInfo = new GradientInfo();
-            gradientInfo.Type = LinearGradientMode.ForwardDiagonal;
+            gradientInfo.Type = ImageGradientMode.ForwardDiagonal;
 
             switch (RandomFast.Next(0, 2))
             {

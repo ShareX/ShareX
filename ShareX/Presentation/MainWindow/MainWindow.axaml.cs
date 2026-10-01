@@ -1100,7 +1100,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         try
         {
             // WorkerTask owns and disposes the ImageReady bitmap as soon as the event returns.
-            // Give the asynchronous Avalonia decoder its own image to avoid sharing GDI+ state.
+            // Give the asynchronous Avalonia decoder its own image to avoid sharing mutable bitmap pixels.
             imageCopy = (DrawingBitmap)image.Copy();
         }
         catch (Exception e)

@@ -148,15 +148,6 @@ namespace ShareX.HelpersLib
             catch (Exception exception) { DebugHelper.WriteException(exception, "Clipboard copy image failed."); return false; }
         }
 
-
-
-
-
-
-
-
-
-
         public static bool CopyFile(string path)
         {
             if (!string.IsNullOrEmpty(path))
@@ -238,9 +229,6 @@ namespace ShareX.HelpersLib
             catch (Exception exception) { DebugHelper.WriteException(exception, "Clipboard get image failed."); return null; }
         }
 
-
-
-
         public static Bitmap GetImageAlternative2()
         {
             IDataObject data = Clipboard.GetDataObject();
@@ -254,9 +242,6 @@ namespace ShareX.HelpersLib
             }
             return null;
         }
-
-
-
 
         public static string GetText(bool checkContainsText = false)
         {
@@ -357,7 +342,7 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                return Clipboard.ContainsImage();
+                return Clipboard.ContainsImage() || Clipboard.ContainsData(FORMAT_PNG) || Clipboard.ContainsData(FORMAT_17) || Clipboard.ContainsData(DataFormats.Dib);
             }
             catch (Exception e)
             {

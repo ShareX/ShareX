@@ -26,6 +26,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using ShareX.HelpersLib;
 using Bitmap = SkiaSharp.SKBitmap;
 using Image = SkiaSharp.SKBitmap;
 
@@ -44,9 +45,9 @@ namespace ShareX
         public Color BackgroundColor { get; set; } = Color.FromArgb(50, 50, 50);
         public Color BorderColor { get; set; } = Color.FromArgb(40, 40, 40);
         public int TextPadding { get; set; } = 10;
-        public Font TextFont { get; set; } = new Font("Arial", 11);
+        public ImageFont TextFont { get; set; } = new ImageFont("Arial", 11);
         public Color TextColor { get; set; } = Color.FromArgb(210, 210, 210);
-        public Font TitleFont { get; set; } = new Font("Arial", 11, FontStyle.Bold);
+        public ImageFont TitleFont { get; set; } = new ImageFont("Arial", 11, ImageFontStyle.Bold);
         public Color TitleColor { get; set; } = Color.FromArgb(240, 240, 240);
 
         public Bitmap Image { get; set; }

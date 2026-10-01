@@ -26,8 +26,6 @@
 using System;
 using System.Drawing;
 using SkiaSharp;
-using System.IO;
-using System.Runtime.InteropServices;
 using Image = SkiaSharp.SKBitmap;
 using System.Drawing.Printing;
 using System.Windows.Forms;
@@ -157,92 +155,54 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void PrintImage(PrintPageEventArgs e)
+        private void PrintImage(PrintPageEventArgs args)
         {
-            Rectangle rect = e.PageBounds;
-            rect.Inflate(-Settings.Margin, -Settings.Margin);
-
-            Image img;
-
-            if (Settings.AutoRotateImage && ((rect.Width > rect.Height && Image.Width < Image.Height) ||
-                (rect.Width < rect.Height && Image.Width > Image.Height)))
-            {
-                img = Image.Copy();
-                SkiaImageHelpers.RotateFlipInPlace(img, 1);
-            }
-            else
-            {
-                img = Image;
-            }
-
-            if (Settings.AutoScaleImage)
-            {
-                DrawAutoScaledImage(e.Graphics, img, rect, Settings.AllowEnlargeImage, Settings.CenterImage);
-            }
-            else
-            {
-                DrawImage(e.Graphics, img, rect);
-            }
-            if (!ReferenceEquals(img, Image)) img.Dispose();
+            using SKBitmap page = RenderImagePage(Image, args.PageBounds.Size, Settings);
+            WindowsPrintInterop.DrawImage(args, page, args.PageBounds);
         }
 
-        [DllImport("gdi32.dll", SetLastError = true)]
-        private static extern int StretchDIBits(IntPtr dc, int x, int y, int width, int height,
-            int sourceX, int sourceY, int sourceWidth, int sourceHeight, IntPtr pixels,
-            ref BITMAPINFOHEADER info, uint usage, uint operation);
-
-        internal static void DrawImage(Graphics graphics, SKBitmap image, Rectangle rectangle)
+        internal static SKBitmap RenderImagePage(SKBitmap source, Size pageSize, PrintSettings settings)
         {
-            using SKBitmap opaque = SkiaImageHelpers.FillBackground(image, Color.White);
-            using MemoryStream stream = new();
-            opaque.Save(stream, SKEncodedImageFormat.Bmp);
-            byte[] bytes = stream.ToArray();
-            BITMAPINFOHEADER header = new(image.Width, image.Height, 24) { biSize = 40 };
-            header.biSizeImage = (uint)(bytes.Length - 54);
-            GCHandle pinned = GCHandle.Alloc(bytes, GCHandleType.Pinned);
-            float scaleX = graphics.DpiX / 100f, scaleY = graphics.DpiY / 100f;
-            rectangle = new Rectangle((int)Math.Round(rectangle.X * scaleX), (int)Math.Round(rectangle.Y * scaleY),
-                (int)Math.Round(rectangle.Width * scaleX), (int)Math.Round(rectangle.Height * scaleY));
-            IntPtr dc = graphics.GetHdc();
+            SKBitmap rotated = null;
+            SKBitmap image = source;
+            SKBitmap page = SkiaImageHelpers.CreateBitmap(pageSize.Width * 3, pageSize.Height * 3);
+            Rectangle rectangle = new(0, 0, pageSize.Width, pageSize.Height);
+            rectangle.Inflate(-settings.Margin, -settings.Margin);
             try
             {
-                StretchDIBits(dc, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height,
-                    0, 0, image.Width, image.Height, IntPtr.Add(pinned.AddrOfPinnedObject(), 54),
-                    ref header, 0, 0x00CC0020);
+                using SKCanvas canvas = new(page);
+                canvas.Clear(SKColors.White);
+                if (rectangle.Width <= 0 || rectangle.Height <= 0) return page;
+                if (settings.AutoRotateImage && ((rectangle.Width > rectangle.Height && source.Width < source.Height) ||
+                    (rectangle.Width < rectangle.Height && source.Width > source.Height)))
+                {
+                    rotated = source.Copy();
+                    SkiaImageHelpers.RotateFlipInPlace(rotated, 1);
+                    image = rotated;
+                }
+                canvas.Scale(3, 3);
+                canvas.ClipRect(rectangle.ToSKRect());
+                if (settings.AutoScaleImage)
+                {
+                    float scale = Math.Min(rectangle.Width / (float)image.Width, rectangle.Height / (float)image.Height);
+                    if (!settings.AllowEnlargeImage) scale = Math.Min(1, scale);
+                    float width = image.Width * scale, height = image.Height * scale;
+                    float x = rectangle.X, y = rectangle.Y;
+                    if (settings.CenterImage)
+                    {
+                        x += (rectangle.Width - width) / 2;
+                        y += (rectangle.Height - height) / 2;
+                    }
+                    canvas.DrawImage(image, x, y, width, height);
+                }
+                else
+                {
+                    canvas.DrawBitmap(image, rectangle.X, rectangle.Y);
+                }
+                return page;
             }
-            finally { graphics.ReleaseHdc(dc); pinned.Free(); }
-        }
-
-        private void DrawAutoScaledImage(Graphics g, Image img, Rectangle rect, bool allowEnlarge = false, bool centerImage = false)
-        {
-            double ratio;
-            int newWidth, newHeight;
-
-            if (!allowEnlarge && img.Width <= rect.Width && img.Height <= rect.Height)
-            {
-                ratio = 1.0;
-                newWidth = img.Width;
-                newHeight = img.Height;
-            }
-            else
-            {
-                double ratioX = (double)rect.Width / img.Width;
-                double ratioY = (double)rect.Height / img.Height;
-                ratio = ratioX < ratioY ? ratioX : ratioY;
-                newWidth = (int)(img.Width * ratio);
-                newHeight = (int)(img.Height * ratio);
-            }
-
-            int newX = rect.X;
-            int newY = rect.Y;
-
-            if (centerImage)
-            {
-                newX += (int)((rect.Width - (img.Width * ratio)) / 2);
-                newY += (int)((rect.Height - (img.Height * ratio)) / 2);
-            }
-
-            DrawImage(g, img, new Rectangle(newX, newY, newWidth, newHeight));
+            catch { page.Dispose(); throw; }
+            finally { rotated?.Dispose(); }
         }
     }
 }

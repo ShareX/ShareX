@@ -29,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using SkiaSharp;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -529,22 +530,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Size MeasureText(string text, Font font)
-        {
-            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
-            {
-                return g.MeasureString(text, font).ToSize();
-            }
-        }
-
-        public static Size MeasureText(string text, Font font, int width)
-        {
-            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
-            {
-                return g.MeasureString(text, font, width).ToSize();
-            }
-        }
-
         public static string SendPing(string host)
         {
             return SendPing(host, 1);
@@ -882,51 +867,38 @@ namespace ShareX.HelpersLib
 
         public static Icon GetProgressIcon(int percentage, Color color)
         {
+            using MemoryStream stream = new(GetProgressIconBytes(percentage, color));
+            using Icon icon = new(stream);
+            return (Icon)icon.Clone();
+        }
+
+        public static byte[] GetProgressIconBytes(int percentage, Color color)
+        {
             percentage = percentage.Clamp(0, 100);
-
             Size size = SystemInformation.SmallIconSize;
-
-            using (Bitmap bmp = new Bitmap(size.Width, size.Height))
-            using (Graphics g = Graphics.FromImage(bmp))
+            using SKBitmap bitmap = SkiaImageHelpers.CreateBitmap(size.Width, size.Height);
+            using SKCanvas canvas = new(bitmap);
+            canvas.Clear(new SKColor(39, 39, 39));
+            int height = (int)(size.Height * (percentage / 100f));
+            using SKPaint fill = SkiaDrawing.Fill(color);
+            canvas.DrawRect(0, size.Height - height, size.Width, height, fill);
+            if (height > 0 && height < size.Height)
             {
-                using (Brush brush = new SolidBrush(Color.FromArgb(39, 39, 39)))
-                {
-                    g.FillRectangle(brush, 0, 0, size.Width, size.Height);
-                }
-
-                int y = (int)(size.Height * (percentage / 100f));
-
-                if (y > 0)
-                {
-                    using (Brush brush = new SolidBrush(color))
-                    {
-                        g.FillRectangle(brush, 0, size.Height - y, size.Width, y);
-                    }
-
-                    if (y < size.Height)
-                    {
-                        using (Pen pen = new Pen(ColorHelpers.LighterColor(color, 0.3f)))
-                        {
-                            g.DrawLine(pen, 0, size.Height - y, size.Width - 1, size.Height - y);
-                        }
-                    }
-                }
-
-                using (Font font = new Font("Arial", 10))
-                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
-                {
-                    percentage = percentage.Clamp(0, 99);
-
-                    g.DrawString(percentage.ToString(), font, Brushes.White, size.Width / 2f, size.Height / 2f, sf);
-                }
-
-                bmp.SetPixel(0, 0, Color.Transparent);
-                bmp.SetPixel(bmp.Width - 1, 0, Color.Transparent);
-                bmp.SetPixel(0, bmp.Height - 1, Color.Transparent);
-                bmp.SetPixel(bmp.Width - 1, bmp.Height - 1, Color.Transparent);
-
-                return Icon.FromHandle(bmp.GetHicon());
+                using SKPaint line = SkiaDrawing.Stroke(ColorHelpers.LighterColor(color, 0.3f));
+                canvas.DrawLine(0, size.Height - height, size.Width - 1, size.Height - height, line);
             }
+            using ImageFont settings = new("Arial", 10);
+            using SKFont font = settings.CreateFont();
+            using SKPaint text = new() { Color = SKColors.White, IsAntialias = true };
+            string label = Math.Min(percentage, 99).ToString();
+            font.MeasureText(label, out SKRect bounds);
+            canvas.DrawText(label, (size.Width - bounds.Width) / 2 - bounds.Left,
+                (size.Height - bounds.Height) / 2 - bounds.Top, font, text);
+            bitmap.SetPixel(0, 0, SKColors.Transparent);
+            bitmap.SetPixel(size.Width - 1, 0, SKColors.Transparent);
+            bitmap.SetPixel(0, size.Height - 1, SKColors.Transparent);
+            bitmap.SetPixel(size.Width - 1, size.Height - 1, SKColors.Transparent);
+            return bitmap.GetIconBytes();
         }
 
         public static string GetChecksum(string filePath)

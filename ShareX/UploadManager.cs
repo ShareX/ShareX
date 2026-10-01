@@ -209,7 +209,7 @@ namespace ShareX
 
             try
             {
-                if (Clipboard.ContainsImage())
+                if (ClipboardHelpers.ContainsImage())
                 {
                     Bitmap image;
 

@@ -80,6 +80,17 @@ public sealed class ClipboardViewerData
 
     public ClipboardViewerPreview GetPreview(string format)
     {
+        // Retrieve the synthesized DIB rather than asking WinForms to create a GDI bitmap.
+        if (format.Equals(DataFormats.Bitmap, StringComparison.OrdinalIgnoreCase))
+        {
+            foreach (string imageFormat in new[] { ClipboardHelpers.FORMAT_17, DataFormats.Dib })
+            {
+                if (_dataObject?.GetData(imageFormat, true) is not MemoryStream imageStream) continue;
+                using Bitmap? image = ClipboardHelpers.ConvertClipboardDibToBitmap(imageStream.ToArray());
+                if (image != null) return ClipboardViewerPreview.FromImage(image);
+            }
+            return ClipboardViewerPreview.FromText(string.Empty);
+        }
         object? data = _dataObject?.GetData(format);
         if (data == null)
         {

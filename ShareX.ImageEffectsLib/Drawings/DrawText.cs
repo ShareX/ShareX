@@ -49,7 +49,6 @@ namespace ShareX.ImageEffectsLib
 
         private FontSafe textFontSafe = new FontSafe();
 
-        // Workaround for "System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt."
         [DefaultValue(typeof(ImageFont), "Arial, 11.25pt")]
         public ImageFont TextFont
         {
@@ -164,11 +163,11 @@ namespace ShareX.ImageEffectsLib
             if (DrawTextShadow)
             {
                 using SKPaint shadow = SkiaDrawing.Fill(TextShadowColor);
-                canvas.DrawText(text, new PointF(textPosition.X + TextShadowOffset.X, textPosition.Y + TextShadowOffset.Y), font, shadow);
+                canvas.DrawText(text, new PointF(textPosition.X + TextShadowOffset.X, textPosition.Y + TextShadowOffset.Y), font, shadow, TextRenderingMode);
             }
             using SKPaint paint = SkiaDrawing.Fill(TextColor);
             paint.IsAntialias = TextRenderingMode is not ImageTextRenderingMode.SingleBitPerPixel and not ImageTextRenderingMode.SingleBitPerPixelGridFit;
-            canvas.DrawText(text, textPosition, font, paint);
+            canvas.DrawText(text, textPosition, font, paint, TextRenderingMode);
             return bmp;
         }
 

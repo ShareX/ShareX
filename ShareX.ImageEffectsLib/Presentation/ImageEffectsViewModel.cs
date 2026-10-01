@@ -486,7 +486,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         System.Drawing.Color accentEnd = GetThemeColor("ShareX.Color.Accent.End", System.Drawing.Color.FromArgb(57, 117, 213));
         System.Drawing.Color accentForeground = GetThemeColor("ShareX.Color.Accent.Foreground", System.Drawing.Color.FromArgb(216, 218, 219));
 
-        using SKPaint background = SkiaDrawing.Gradient(new Rectangle(0, 0, bitmap.Width, bitmap.Height), backgroundMain, backgroundPanel, System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal);
+        using SKPaint background = SkiaDrawing.Gradient(new Rectangle(0, 0, bitmap.Width, bitmap.Height), backgroundMain, backgroundPanel, ShareX.HelpersLib.ImageGradientMode.ForwardDiagonal);
         graphics.FillRectangle(background, 0, 0, bitmap.Width, bitmap.Height);
 
         const float shapeSize = 200f;

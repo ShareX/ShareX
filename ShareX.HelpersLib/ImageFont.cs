@@ -44,7 +44,7 @@ public sealed class ImageFont : IDisposable
     public float Size { get; }
     public ImageFontStyle Style { get; }
     public ImageFontUnit Unit { get; }
-    public float SizeInPoints => Unit == ImageFontUnit.Pixel ? Size * 72 / 96 : Size;
+    public float SizeInPoints => PixelSize * 72 / 96;
     public float PixelSize => Unit switch
     {
         ImageFontUnit.Point => Size * 96 / 72,
@@ -66,7 +66,18 @@ public sealed class ImageFont : IDisposable
             SKFontStyleWidth.Normal, Style.HasFlag(ImageFontStyle.Italic) ? SKFontStyleSlant.Italic : SKFontStyleSlant.Upright);
         return new SKFont(typeface ?? SKTypeface.Default, PixelSize);
     }
-    public override string ToString() => $"{Name}, {Size.ToString(CultureInfo.InvariantCulture)}{(Unit == ImageFontUnit.Pixel ? "px" : "pt")}" +
+    internal static string GetUnitSuffix(ImageFontUnit unit) => unit switch
+    {
+        ImageFontUnit.World => "world",
+        ImageFontUnit.Display => "display",
+        ImageFontUnit.Pixel => "px",
+        ImageFontUnit.Inch => "in",
+        ImageFontUnit.Document => "doc",
+        ImageFontUnit.Millimeter => "mm",
+        _ => "pt"
+    };
+
+    public override string ToString() => $"{Name}, {Size.ToString(CultureInfo.InvariantCulture)}{GetUnitSuffix(Unit)}" +
         (Style == ImageFontStyle.Regular ? "" : $", style={Style}");
     public void Dispose() { }
 }
@@ -80,8 +91,16 @@ public sealed class ImageFontConverter : TypeConverter
         if (value is not string text) return base.ConvertFrom(context, culture, value);
         string[] pieces = text.Split(',');
         string sizeText = pieces.Length > 1 ? pieces[1].Trim() : "8.25pt";
-        ImageFontUnit unit = sizeText.EndsWith("px", StringComparison.OrdinalIgnoreCase) ? ImageFontUnit.Pixel : ImageFontUnit.Point;
-        float size = float.Parse(sizeText.TrimEnd('p', 't', 'x'), CultureInfo.InvariantCulture);
+        ImageFontUnit unit = ImageFontUnit.Point;
+        foreach (ImageFontUnit candidate in Enum.GetValues<ImageFontUnit>())
+        {
+            string suffix = ImageFont.GetUnitSuffix(candidate);
+            if (!sizeText.EndsWith(suffix, StringComparison.OrdinalIgnoreCase)) continue;
+            unit = candidate;
+            sizeText = sizeText[..^suffix.Length].TrimEnd();
+            break;
+        }
+        float size = float.Parse(sizeText, CultureInfo.InvariantCulture);
         ImageFontStyle style = ImageFontStyle.Regular;
         if (pieces.Length > 2) Enum.TryParse(string.Join(",", pieces.Skip(2)).Replace("style=", "").Trim(), true, out style);
         return new ImageFont(pieces[0].Trim(), size, style, unit);

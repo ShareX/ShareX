@@ -26,7 +26,6 @@
 using SkiaSharp;
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 
 namespace ShareX.HelpersLib;
@@ -51,26 +50,29 @@ public static class SkiaDrawing
         return paint;
     }
 
-    public static SKPaint Texture(SKBitmap bitmap, WrapMode mode = WrapMode.Tile)
+    public static SKPaint Texture(SKBitmap bitmap, ImageTileMode mode = ImageTileMode.Tile)
     {
-        SKShaderTileMode tileMode = mode == WrapMode.Clamp ? SKShaderTileMode.Clamp : SKShaderTileMode.Repeat;
-        return new SKPaint { Shader = SKShader.CreateBitmap(bitmap, tileMode, tileMode), IsAntialias = true };
+        SKShaderTileMode xMode = mode == ImageTileMode.Clamp ? SKShaderTileMode.Clamp : mode is ImageTileMode.TileFlipX or ImageTileMode.TileFlipXY ? SKShaderTileMode.Mirror : SKShaderTileMode.Repeat;
+        SKShaderTileMode yMode = mode == ImageTileMode.Clamp ? SKShaderTileMode.Clamp : mode is ImageTileMode.TileFlipY or ImageTileMode.TileFlipXY ? SKShaderTileMode.Mirror : SKShaderTileMode.Repeat;
+        return new SKPaint { Shader = SKShader.CreateBitmap(bitmap, xMode, yMode), IsAntialias = true };
     }
 
-    public static SKPaint Gradient(Rectangle rectangle, Color first, Color second, LinearGradientMode mode)
+    public static SKPaint Gradient(Rectangle rectangle, Color first, Color second, ImageGradientMode mode)
         => Gradient(rectangle, new[] { first, second }, new[] { 0f, 1f }, mode);
 
-    public static SKPaint Gradient(Rectangle rectangle, Color[] colors, float[] positions, LinearGradientMode mode)
+    public static SKPaint Gradient(Rectangle rectangle, Color[] colors, float[] positions, ImageGradientMode mode)
     {
+        if (colors.Length == 0) return Fill(Color.Transparent);
+        if (colors.Length == 1) return Fill(colors[0]);
         SKPoint start = new(rectangle.Left, rectangle.Top);
         SKPoint end = mode switch
         {
-            LinearGradientMode.Horizontal => new(rectangle.Right, rectangle.Top),
-            LinearGradientMode.Vertical => new(rectangle.Left, rectangle.Bottom),
-            LinearGradientMode.BackwardDiagonal => new(rectangle.Left, rectangle.Bottom),
+            ImageGradientMode.Horizontal => new(rectangle.Right, rectangle.Top),
+            ImageGradientMode.Vertical => new(rectangle.Left, rectangle.Bottom),
+            ImageGradientMode.BackwardDiagonal => new(rectangle.Left, rectangle.Bottom),
             _ => new(rectangle.Right, rectangle.Bottom)
         };
-        if (mode == LinearGradientMode.BackwardDiagonal) start = new(rectangle.Right, rectangle.Top);
+        if (mode == ImageGradientMode.BackwardDiagonal) start = new(rectangle.Right, rectangle.Top);
         return new SKPaint
         {
             IsAntialias = true,
@@ -79,12 +81,12 @@ public static class SkiaDrawing
         };
     }
 
-    public static SKPathEffect DashEffect(DashStyle style, float width) => style switch
+    public static SKPathEffect DashEffect(ImageDashStyle style, float width) => style switch
     {
-        DashStyle.Dash => SKPathEffect.CreateDash(new[] { 3 * width, width }, 0),
-        DashStyle.Dot => SKPathEffect.CreateDash(new[] { width, width }, 0),
-        DashStyle.DashDot => SKPathEffect.CreateDash(new[] { 3 * width, width, width, width }, 0),
-        DashStyle.DashDotDot => SKPathEffect.CreateDash(new[] { 3 * width, width, width, width, width, width }, 0),
+        ImageDashStyle.Dash => SKPathEffect.CreateDash(new[] { 3 * width, width }, 0),
+        ImageDashStyle.Dot => SKPathEffect.CreateDash(new[] { width, width }, 0),
+        ImageDashStyle.DashDot => SKPathEffect.CreateDash(new[] { 3 * width, width, width, width }, 0),
+        ImageDashStyle.DashDotDot => SKPathEffect.CreateDash(new[] { 3 * width, width, width, width, width, width }, 0),
         _ => null
     };
 
@@ -196,14 +198,24 @@ public static class SkiaDrawing
     }
 
     public static void DrawText(this SKCanvas canvas, string text, PointF position, ImageFont settings,
-        SKPaint paint)
+        SKPaint paint, ImageTextRenderingMode renderingMode = ImageTextRenderingMode.AntiAliasGridFit)
     {
         using SKFont font = settings.CreateFont();
+        font.Edging = renderingMode switch
+        {
+            ImageTextRenderingMode.SingleBitPerPixel or ImageTextRenderingMode.SingleBitPerPixelGridFit => SKFontEdging.Alias,
+            ImageTextRenderingMode.ClearTypeGridFit => SKFontEdging.SubpixelAntialias,
+            _ => SKFontEdging.Antialias
+        };
+        font.Hinting = renderingMode is ImageTextRenderingMode.SingleBitPerPixel or ImageTextRenderingMode.AntiAlias
+            ? SKFontHinting.None : SKFontHinting.Normal;
         string[] lines = text.Replace("\r", "").Split('\n');
         float baseline = position.Y - font.Metrics.Ascent;
         foreach (string line in lines)
         {
             canvas.DrawText(line, position.X, baseline, font, paint);
+            using SKPath decorations = TextDecorations(line, font, settings.Style, position.X, baseline);
+            canvas.DrawPath(decorations, paint);
             baseline += font.Spacing;
         }
     }
@@ -217,8 +229,23 @@ public static class SkiaDrawing
         {
             using SKPath path = font.GetTextPath(line, new SKPoint(0, baseline));
             result.AddPath(path);
+            using SKPath decorations = TextDecorations(line, font, settings.Style, 0, baseline);
+            result.AddPath(decorations);
             baseline += font.Spacing;
         }
         return result;
+    }
+    internal static SKPath TextDecorations(string text, SKFont font, ImageFontStyle style, float x, float baseline)
+    {
+        SKPath path = new();
+        float width = font.MeasureText(text);
+        SKFontMetrics metrics = font.Metrics;
+        if (style.HasFlag(ImageFontStyle.Underline))
+            path.AddRect(SKRect.Create(x, baseline + (metrics.UnderlinePosition ?? font.Size / 10), width,
+                metrics.UnderlineThickness ?? font.Size / 16));
+        if (style.HasFlag(ImageFontStyle.Strikeout))
+            path.AddRect(SKRect.Create(x, baseline + (metrics.StrikeoutPosition ?? -font.Size / 3), width,
+                metrics.StrikeoutThickness ?? font.Size / 16));
+        return path;
     }
 }

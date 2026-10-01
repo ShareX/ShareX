@@ -24,7 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Drawing.Imaging;
+using SkiaSharp;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.Runtime.InteropServices;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 
@@ -133,7 +134,7 @@ public static class InspectWindowService
                 return null;
             }
 
-            using System.Drawing.Bitmap bitmap = icon.ToBitmap();
+            using SKBitmap bitmap = WindowsImageInterop.FromIcon(icon.Handle);
             using MemoryStream stream = new();
             bitmap.Save(stream, ImageFormat.Png);
             stream.Position = 0;

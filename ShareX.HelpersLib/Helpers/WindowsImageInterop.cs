@@ -63,7 +63,7 @@ public static class WindowsImageInterop
         IntPtr dc = NativeMethods.GetDC(IntPtr.Zero);
         try
         {
-            BITMAPINFOHEADER header = new(size.Width, -size.Height, 32) { biSize = 40 };
+            BITMAPINFOHEADER header = new(size.Width, -size.Height, 32) { biSize = 40, biSizeImage = checked((uint)size.Width * (uint)size.Height * 4) };
             if (GetDIBits(dc, handle, 0, (uint)size.Height, result.GetPixels(), ref header, 0) != size.Height)
                 throw new Win32Exception();
             if (!preserveAlpha) SetOpaque(result);
@@ -99,7 +99,7 @@ public static class WindowsImageInterop
         IntPtr handle = IntPtr.Zero, previous = IntPtr.Zero;
         try
         {
-            BITMAPINFOHEADER header = new(size.Width, -size.Height, 32) { biSize = 40 };
+            BITMAPINFOHEADER header = new(size.Width, -size.Height, 32) { biSize = 40, biSizeImage = checked((uint)size.Width * (uint)size.Height * 4) };
             handle = NativeMethods.CreateDIBSection(dc, ref header, 0, out IntPtr pixels, IntPtr.Zero, 0);
             if (handle == IntPtr.Zero) throw new Win32Exception();
             previous = NativeMethods.SelectObject(dc, handle);
@@ -155,6 +155,13 @@ public static class WindowsImageInterop
                 (byte)Math.Min(255, d.Green * 255 / alpha), (byte)Math.Min(255, d.Red * 255 / alpha), (byte)alpha));
         }
         return result;
+    }
+
+    public static System.Drawing.Icon ToIcon(this SKBitmap bitmap)
+    {
+        using System.IO.MemoryStream stream = new(bitmap.GetIconBytes(), false);
+        using System.Drawing.Icon icon = new(stream);
+        return (System.Drawing.Icon)icon.Clone();
     }
 
     private static unsafe void SetOpaque(SKBitmap bitmap)

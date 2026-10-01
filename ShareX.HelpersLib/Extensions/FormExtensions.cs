@@ -94,11 +94,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void ChangeFontStyle(this Control control, FontStyle fontStyle)
-        {
-            control.Font = new Font(control.Font, fontStyle);
-        }
-
         public static void BeginUpdate(this RichTextBox rtb)
         {
             NativeMethods.SendMessage(rtb.Handle, (int)WindowsMessages.SETREDRAW, 0, 0);
@@ -108,43 +103,6 @@ namespace ShareX.HelpersLib
         {
             NativeMethods.SendMessage(rtb.Handle, (int)WindowsMessages.SETREDRAW, 1, 0);
             rtb.Invalidate();
-        }
-
-        public static void SetFontRegular(this RichTextBox rtb)
-        {
-            rtb.SelectionFont = new Font(rtb.Font, FontStyle.Regular);
-        }
-
-        public static void SetFontBold(this RichTextBox rtb)
-        {
-            rtb.SelectionFont = new Font(rtb.Font, FontStyle.Bold);
-        }
-
-        public static void AppendText(this RichTextBox rtb, string text, FontStyle fontStyle, float fontSize = 0)
-        {
-            Font font;
-
-            if (fontSize > 0)
-            {
-                font = new Font(rtb.Font.FontFamily, fontSize, fontStyle);
-            }
-            else
-            {
-                font = new Font(rtb.Font, fontStyle);
-            }
-
-            rtb.SelectionFont = font;
-            rtb.AppendText(text);
-        }
-
-        public static void AppendLine(this RichTextBox rtb, string text = "")
-        {
-            rtb.AppendText(text + Environment.NewLine);
-        }
-
-        public static void AppendLine(this RichTextBox rtb, string text, FontStyle fontStyle, float fontSize = 0)
-        {
-            rtb.AppendText(text + Environment.NewLine, fontStyle, fontSize);
         }
 
         public static void AddContextMenu(this RichTextBox rtb)
@@ -267,45 +225,6 @@ namespace ShareX.HelpersLib
             tsb.Checked = true;
         }
 
-        public static void SupportCustomTheme(this ListView lv)
-        {
-            if (!lv.OwnerDraw)
-            {
-                lv.OwnerDraw = true;
-
-                lv.DrawItem += (sender, e) =>
-                {
-                    e.DrawDefault = true;
-                };
-
-                lv.DrawSubItem += (sender, e) =>
-                {
-                    e.DrawDefault = true;
-                };
-
-                lv.DrawColumnHeader += (sender, e) =>
-                {
-                    using (Brush brush = new SolidBrush(ShareXResources.Theme.BackgroundColor))
-                    {
-                        e.Graphics.FillRectangle(brush, e.Bounds);
-                    }
-
-                    TextRenderer.DrawText(e.Graphics, e.Header.Text, e.Font, e.Bounds.LocationOffset(2, 0).SizeOffset(-4, 0), ShareXResources.Theme.TextColor,
-                        TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
-
-                    if (e.Bounds.Right < lv.ClientRectangle.Right)
-                    {
-                        using (Pen pen = new Pen(ShareXResources.Theme.SeparatorDarkColor))
-                        using (Pen pen2 = new Pen(ShareXResources.Theme.SeparatorLightColor))
-                        {
-                            e.Graphics.DrawLine(pen, e.Bounds.Right - 2, e.Bounds.Top, e.Bounds.Right - 2, e.Bounds.Bottom - 1);
-                            e.Graphics.DrawLine(pen2, e.Bounds.Right - 1, e.Bounds.Top, e.Bounds.Right - 1, e.Bounds.Bottom - 1);
-                        }
-                    }
-                };
-            }
-        }
-
         public static void MoveUp(this ListViewItem lvi)
         {
             ListView lv = lvi.ListView;
@@ -410,24 +329,6 @@ namespace ShareX.HelpersLib
         public static void RefreshItems(this ComboBox cb)
         {
             typeof(ComboBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, cb, new object[] { });
-        }
-
-        public static void AutoSizeDropDown(this ComboBox cb)
-        {
-            int maxWidth = 0;
-            int verticalScrollBarWidth = cb.Items.Count > cb.MaxDropDownItems ? SystemInformation.VerticalScrollBarWidth : 0;
-
-            foreach (object item in cb.Items)
-            {
-                int tempWidth = TextRenderer.MeasureText(cb.GetItemText(item), cb.Font).Width + verticalScrollBarWidth;
-
-                if (tempWidth > maxWidth)
-                {
-                    maxWidth = tempWidth;
-                }
-            }
-
-            cb.DropDownWidth = maxWidth;
         }
 
         public static void RefreshItem(this ListBox lb, int index)

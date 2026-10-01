@@ -28,15 +28,15 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using SkiaSharp;
 using System.Linq;
 
 namespace ShareX.HelpersLib
 {
     public class GradientInfo
     {
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode Type { get; set; }
+        [DefaultValue(ImageGradientMode.Vertical)]
+        public ImageGradientMode Type { get; set; }
 
         public List<GradientStop> Colors { get; set; }
 
@@ -49,34 +49,34 @@ namespace ShareX.HelpersLib
         [JsonIgnore]
         public bool IsTransparent => IsValid && Colors.Any(x => x.Color.IsTransparent());
 
-        public GradientInfo() : this(LinearGradientMode.Vertical)
+        public GradientInfo() : this(ImageGradientMode.Vertical)
         {
         }
 
-        public GradientInfo(LinearGradientMode type)
+        public GradientInfo(ImageGradientMode type)
         {
             Type = type;
             Colors = new List<GradientStop>();
         }
 
-        public GradientInfo(LinearGradientMode type, params GradientStop[] colors) : this(type)
+        public GradientInfo(ImageGradientMode type, params GradientStop[] colors) : this(type)
         {
             Colors = colors.ToList();
         }
 
-        public GradientInfo(LinearGradientMode type, params Color[] colors) : this(type)
+        public GradientInfo(ImageGradientMode type, params Color[] colors) : this(type)
         {
             for (int i = 0; i < colors.Length; i++)
             {
-                Colors.Add(new GradientStop(colors[i], (int)Math.Round(100f / (colors.Length - 1) * i)));
+                Colors.Add(new GradientStop(colors[i], colors.Length == 1 ? 0 : (int)Math.Round(100f / (colors.Length - 1) * i)));
             }
         }
 
-        public GradientInfo(params GradientStop[] colors) : this(LinearGradientMode.Vertical, colors)
+        public GradientInfo(params GradientStop[] colors) : this(ImageGradientMode.Vertical, colors)
         {
         }
 
-        public GradientInfo(params Color[] colors) : this(LinearGradientMode.Vertical, colors)
+        public GradientInfo(params Color[] colors) : this(ImageGradientMode.Vertical, colors)
         {
         }
 
@@ -100,86 +100,35 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public ColorBlend GetColorBlend()
+        public SKPaint GetGradientBrush(Rectangle rectangle) => this.GetSkiaPaint(rectangle);
+
+        public void Draw(SKCanvas canvas, Rectangle rectangle)
         {
-            List<GradientStop> colors = new List<GradientStop>(Colors.OrderBy(x => x.Location));
-
-            if (!colors.Any(x => x.Location == 0))
-            {
-                colors.Insert(0, new GradientStop(colors[0].Color, 0f));
-            }
-
-            if (!colors.Any(x => x.Location == 100))
-            {
-                colors.Add(new GradientStop(colors[colors.Count - 1].Color, 100f));
-            }
-
-            ColorBlend colorBlend = new ColorBlend();
-            colorBlend.Colors = colors.Select(x => x.Color).ToArray();
-            colorBlend.Positions = colors.Select(x => x.Location / 100).ToArray();
-            return colorBlend;
+            if (!IsValid) return;
+            using SKPaint paint = this.GetSkiaPaint(rectangle);
+            canvas.DrawRect(rectangle.ToSKRect(), paint);
         }
 
-        public LinearGradientBrush GetGradientBrush(Rectangle rect)
-        {
-            LinearGradientBrush brush = new LinearGradientBrush(rect, Color.Transparent, Color.Transparent, Type);
-            brush.InterpolationColors = GetColorBlend();
-            return brush;
-        }
+        public void Draw(SKBitmap image) => this.DrawSkia(image);
 
-        public void Draw(Graphics g, Rectangle rect)
+        public SKBitmap CreateGradientPreview(int width, int height, bool border = false, bool checkers = false)
         {
-            if (IsValid)
+            SKBitmap bitmap = SkiaImageHelpers.CreateBitmap(width, height);
+            Rectangle rectangle = new(0, 0, width, height);
+            using SKCanvas canvas = new(bitmap);
+            if (checkers && IsTransparent)
             {
-                try
-                {
-                    using (LinearGradientBrush brush = GetGradientBrush(new Rectangle(0, 0, rect.Width, rect.Height)))
-                    {
-                        g.FillRectangle(brush, rect);
-                    }
-                }
-                catch
-                {
-                }
+                using SKBitmap pattern = SkiaImageHelpers.CreateCheckerPattern();
+                using SKPaint paint = SkiaDrawing.Texture(pattern);
+                canvas.DrawRect(rectangle.ToSKRect(), paint);
             }
-        }
-
-        public void Draw(Image img)
-        {
-            if (IsValid)
+            Draw(canvas, rectangle);
+            if (border)
             {
-                using (Graphics g = Graphics.FromImage(img))
-                {
-                    Draw(g, new Rectangle(0, 0, img.Width, img.Height));
-                }
+                using SKPaint paint = SkiaDrawing.Stroke(Color.Black);
+                canvas.DrawRectangleProper(paint, rectangle);
             }
-        }
-
-        public Bitmap CreateGradientPreview(int width, int height, bool border = false, bool checkers = false)
-        {
-            Bitmap bmp = new Bitmap(width, height);
-            Rectangle rect = new Rectangle(0, 0, width, height);
-
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                if (checkers && IsTransparent)
-                {
-                    using (Image checker = ImageHelpers.CreateCheckerPattern())
-                    using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
-                    {
-                        g.FillRectangle(checkerBrush, rect);
-                    }
-                }
-
-                Draw(g, rect);
-
-                if (border)
-                {
-                    g.DrawRectangleProper(Pens.Black, rect);
-                }
-            }
-
-            return bmp;
+            return bitmap;
         }
 
         public override string ToString()

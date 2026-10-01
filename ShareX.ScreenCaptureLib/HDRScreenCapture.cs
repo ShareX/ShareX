@@ -28,7 +28,6 @@ using System;
 using System.Drawing;
 using Bitmap = SkiaSharp.SKBitmap;
 using Image = SkiaSharp.SKBitmap;
-using System.Drawing.Drawing2D;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.Runtime.InteropServices;
 using Vortice.Direct3D;

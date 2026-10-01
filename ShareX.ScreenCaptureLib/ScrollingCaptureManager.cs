@@ -29,7 +29,6 @@ using System.Diagnostics;
 using System.Drawing;
 using Bitmap = SkiaSharp.SKBitmap;
 using Image = SkiaSharp.SKBitmap;
-using System.Drawing.Drawing2D;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;

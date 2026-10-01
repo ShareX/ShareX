@@ -29,210 +29,245 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+
 namespace ShareX.HelpersLib;
+
 public static partial class SkiaImageHelpers
 {
-        public static string OpenImageFileDialog(Form form = null, string initialDirectory = null)
+    public static string OpenImageFileDialog(Form form = null, string initialDirectory = null)
+    {
+        string[] images = OpenImageFileDialog(false, form, initialDirectory);
+
+        if (images != null && images.Length > 0)
         {
-            string[] images = OpenImageFileDialog(false, form, initialDirectory);
-
-            if (images != null && images.Length > 0)
-            {
-                return images[0];
-            }
-
-            return null;
+            return images[0];
         }
-        public static string[] OpenImageFileDialog(bool multiselect, Form form = null, string initialDirectory = null)
+
+        return null;
+    }
+
+    public static string[] OpenImageFileDialog(bool multiselect, Form form = null, string initialDirectory = null)
+    {
+        using (OpenFileDialog ofd = new OpenFileDialog())
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
+            ofd.Filter = $"{Localization.Strings.ImageHelpers_Image_files} (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp|" +
+                "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp";
+
+            ofd.Multiselect = multiselect;
+
+            if (!string.IsNullOrEmpty(initialDirectory))
             {
-                ofd.Filter = $"{Localization.Strings.ImageHelpers_Image_files} (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp|" +
-                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp";
-
-                ofd.Multiselect = multiselect;
-
-                if (!string.IsNullOrEmpty(initialDirectory))
-                {
-                    ofd.InitialDirectory = initialDirectory;
-                }
-
-                if (ofd.ShowDialog(form) == DialogResult.OK)
-                {
-                    return ofd.FileNames;
-                }
+                ofd.InitialDirectory = initialDirectory;
             }
 
-            return null;
+            if (ofd.ShowDialog(form) == DialogResult.OK)
+            {
+                return ofd.FileNames;
+            }
         }
-        public static bool SaveImage(SKBitmap img, string filePath)
+
+        return null;
+    }
+
+    public static bool SaveImage(SKBitmap img, string filePath)
+    {
+        FileHelpers.CreateDirectoryFromFilePath(filePath);
+        ImageFileFormat imageFormat = GetImageFormat(filePath);
+
+        try
         {
-            FileHelpers.CreateDirectoryFromFilePath(filePath);
-            ImageFileFormat imageFormat = GetImageFormat(filePath);
-
-            try
-            {
-                img.Save(filePath, imageFormat);
-                return true;
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-                e.ShowError();
-            }
-
-            return false;
+            img.Save(filePath, imageFormat);
+            return true;
         }
-        public static string SaveImageFileDialog(SKBitmap img, string filePath = "", bool useLastDirectory = true)
+        catch (Exception e)
         {
-            using (SaveFileDialog sfd = new SaveFileDialog())
-            {
-                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp";
-                sfd.DefaultExt = "png";
-
-                string initialDirectory = null;
-
-                if (useLastDirectory && !string.IsNullOrEmpty(HelpersOptions.LastSaveDirectory) && Directory.Exists(HelpersOptions.LastSaveDirectory))
-                {
-                    initialDirectory = HelpersOptions.LastSaveDirectory;
-                }
-
-                if (!string.IsNullOrEmpty(filePath))
-                {
-                    string folder = Path.GetDirectoryName(filePath);
-
-                    if (string.IsNullOrEmpty(initialDirectory) && !string.IsNullOrEmpty(folder) && Directory.Exists(folder))
-                    {
-                        initialDirectory = folder;
-                    }
-
-                    sfd.FileName = Path.GetFileName(filePath);
-
-                    string ext = FileHelpers.GetFileNameExtension(filePath);
-
-                    if (!string.IsNullOrEmpty(ext))
-                    {
-                        ext = ext.ToLowerInvariant();
-
-                        switch (ext)
-                        {
-                            case "png":
-                                sfd.FilterIndex = 1;
-                                break;
-                            case "jpg":
-                            case "jpeg":
-                            case "jpe":
-                            case "jfif":
-                                sfd.FilterIndex = 2;
-                                break;
-                            case "gif":
-                                sfd.FilterIndex = 3;
-                                break;
-                            case "bmp":
-                                sfd.FilterIndex = 4;
-                                break;
-                        }
-                    }
-                }
-
-                sfd.InitialDirectory = initialDirectory;
-
-                if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
-                {
-                    SaveImage(img, sfd.FileName);
-                    HelpersOptions.LastSaveDirectory = Path.GetDirectoryName(sfd.FileName);
-                    return sfd.FileName;
-                }
-            }
-
-            return null;
+            DebugHelper.WriteException(e);
+            e.ShowError();
         }
-        public static SKBitmap LoadImageWithFileDialog(Form form = null)
+
+        return false;
+    }
+
+    public static string SaveImageFileDialog(SKBitmap img, string filePath = "", bool useLastDirectory = true)
+    {
+        using (SaveFileDialog sfd = new SaveFileDialog())
         {
-            string filePath = OpenImageFileDialog(form);
+            sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp";
+            sfd.DefaultExt = "png";
+
+            string initialDirectory = null;
+
+            if (useLastDirectory && !string.IsNullOrEmpty(HelpersOptions.LastSaveDirectory) && Directory.Exists(HelpersOptions.LastSaveDirectory))
+            {
+                initialDirectory = HelpersOptions.LastSaveDirectory;
+            }
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                return LoadImage(filePath);
+                string folder = Path.GetDirectoryName(filePath);
+
+                if (string.IsNullOrEmpty(initialDirectory) && !string.IsNullOrEmpty(folder) && Directory.Exists(folder))
+                {
+                    initialDirectory = folder;
+                }
+
+                sfd.FileName = Path.GetFileName(filePath);
+
+                string ext = FileHelpers.GetFileNameExtension(filePath);
+
+                if (!string.IsNullOrEmpty(ext))
+                {
+                    ext = ext.ToLowerInvariant();
+
+                    switch (ext)
+                    {
+                        case "png":
+                            sfd.FilterIndex = 1;
+                            break;
+                        case "jpg":
+                        case "jpeg":
+                        case "jpe":
+                        case "jfif":
+                            sfd.FilterIndex = 2;
+                            break;
+                        case "gif":
+                            sfd.FilterIndex = 3;
+                            break;
+                        case "bmp":
+                            sfd.FilterIndex = 4;
+                            break;
+                    }
+                }
             }
 
-            return null;
-        }
-        public static MemoryStream PNGStripChunks(MemoryStream stream, params string[] chunks)
-        {
-            MemoryStream output = new MemoryStream();
-            stream.Seek(0, SeekOrigin.Begin);
+            sfd.InitialDirectory = initialDirectory;
 
-            byte[] signature = new byte[8];
-            stream.Read(signature, 0, 8);
-            output.Write(signature, 0, 8);
-
-            while (true)
+            if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
             {
-                byte[] lenBytes = new byte[4];
-                if (stream.Read(lenBytes, 0, 4) != 4)
-                {
-                    break;
-                }
+                SaveImage(img, sfd.FileName);
+                HelpersOptions.LastSaveDirectory = Path.GetDirectoryName(sfd.FileName);
+                return sfd.FileName;
+            }
+        }
 
-                if (BitConverter.IsLittleEndian)
-                {
-                    Array.Reverse(lenBytes);
-                }
+        return null;
+    }
 
-                int len = BitConverter.ToInt32(lenBytes, 0);
+    public static SKBitmap LoadImageWithFileDialog(Form form = null)
+    {
+        string filePath = OpenImageFileDialog(form);
 
-                if (BitConverter.IsLittleEndian)
-                {
-                    Array.Reverse(lenBytes);
-                }
+        if (!string.IsNullOrEmpty(filePath))
+        {
+            return LoadImage(filePath);
+        }
 
-                byte[] type = new byte[4];
-                stream.Read(type, 0, 4);
+        return null;
+    }
 
-                byte[] data = new byte[len + 4];
-                stream.Read(data, 0, data.Length);
+    public static MemoryStream PNGStripChunks(MemoryStream stream, params string[] chunks)
+    {
+        MemoryStream output = new MemoryStream();
+        stream.Seek(0, SeekOrigin.Begin);
 
-                string strType = Encoding.ASCII.GetString(type);
+        byte[] signature = new byte[8];
+        stream.Read(signature, 0, 8);
+        output.Write(signature, 0, 8);
 
-                if (!chunks.Contains(strType))
-                {
-                    output.Write(lenBytes, 0, lenBytes.Length);
-                    output.Write(type, 0, type.Length);
-                    output.Write(data, 0, data.Length);
-                }
+        while (true)
+        {
+            byte[] lenBytes = new byte[4];
+            if (stream.Read(lenBytes, 0, 4) != 4)
+            {
+                break;
             }
 
-            return output;
+            if (BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(lenBytes);
+            }
+
+            int len = BitConverter.ToInt32(lenBytes, 0);
+
+            if (BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(lenBytes);
+            }
+
+            byte[] type = new byte[4];
+            stream.Read(type, 0, 4);
+
+            byte[] data = new byte[len + 4];
+            stream.Read(data, 0, data.Length);
+
+            string strType = Encoding.ASCII.GetString(type);
+
+            if (!chunks.Contains(strType))
+            {
+                output.Write(lenBytes, 0, lenBytes.Length);
+                output.Write(type, 0, type.Length);
+                output.Write(data, 0, data.Length);
+            }
         }
-        public static MemoryStream PNGStripColorSpaceInformation(MemoryStream stream)
-        {
-            // http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html
-            // 4.2.2.1. gAMA SKBitmap gamma
-            // 4.2.2.2. cHRM Primary chromaticities
-            // 4.2.2.3. sRGB Standard RGB color space
-            // 4.2.2.4. iCCP Embedded ICC profile
-            return PNGStripChunks(stream, "gAMA", "cHRM", "sRGB", "iCCP");
-        }
-        public static string ImageFileToBase64(string path)
-        {
-            byte[] imageBytes = File.ReadAllBytes(path);
-            return Convert.ToBase64String(imageBytes);
-        }
-        public static SKBitmap NonIndexedBitmap(SKBitmap bitmap) => bitmap;
-        public static Size GetImageFileDimensions(string path)
+
+        return output;
+    }
+
+    public static MemoryStream PNGStripColorSpaceInformation(MemoryStream stream)
+    {
+        // http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html
+        // 4.2.2.1. gAMA Image gamma
+        // 4.2.2.2. cHRM Primary chromaticities
+        // 4.2.2.3. sRGB Standard RGB color space
+        // 4.2.2.4. iCCP Embedded ICC profile
+        return PNGStripChunks(stream, "gAMA", "cHRM", "sRGB", "iCCP");
+    }
+
+    public static string ImageFileToBase64(string path)
+    {
+        byte[] imageBytes = File.ReadAllBytes(path);
+        return Convert.ToBase64String(imageBytes);
+    }
+
+    public static Size GetImageFileDimensions(string path)
+    {
+        try
         {
             using FileStream stream = File.OpenRead(path);
             using SKManagedStream managed = new(stream, false);
             using SKCodec codec = SKCodec.Create(managed);
-            return codec == null ? Size.Empty : new Size(codec.Info.Width, codec.Info.Height);
+            if (codec == null) return Size.Empty;
+            return HelpersOptions.RotateImageByExifOrientationData && (int)codec.EncodedOrigin >= 5
+                ? new Size(codec.Info.Height, codec.Info.Width) : new Size(codec.Info.Width, codec.Info.Height);
         }
-        public static MemoryStream GetStream(this SKBitmap bitmap)
+        catch (Exception exception)
         {
-            MemoryStream stream = new();
-            bitmap.Save(stream, SKEncodedImageFormat.Png);
-            stream.Position = 0;
-            return stream;
+            DebugHelper.WriteException(exception);
+            return Size.Empty;
         }
+    }
 
+    public static MemoryStream GetStream(this SKBitmap bitmap)
+    {
+        MemoryStream stream = new();
+        bitmap.Save(stream, SKEncodedImageFormat.Png);
+        stream.Position = 0;
+        return stream;
+    }
+
+    public static byte[] GetIconBytes(this SKBitmap bitmap)
+    {
+        using MemoryStream png = new();
+        bitmap.Save(png, SKEncodedImageFormat.Png);
+        using MemoryStream stream = new();
+        using (BinaryWriter writer = new(stream, Encoding.UTF8, true))
+        {
+            writer.Write((ushort)0); writer.Write((ushort)1); writer.Write((ushort)1);
+            writer.Write((byte)(bitmap.Width < 256 ? bitmap.Width : 0));
+            writer.Write((byte)(bitmap.Height < 256 ? bitmap.Height : 0));
+            writer.Write((byte)0); writer.Write((byte)0); writer.Write((ushort)1); writer.Write((ushort)32);
+            writer.Write((int)png.Length); writer.Write(22); writer.Write(png.ToArray());
+        }
+        return stream.ToArray();
+    }
 }

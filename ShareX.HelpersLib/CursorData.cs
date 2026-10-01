@@ -129,7 +129,6 @@ namespace ShareX.HelpersLib
             if (IsVisible)
             {
                 Point drawPosition = new Point(DrawPosition.X - offset.X, DrawPosition.Y - offset.Y);
-                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
 
                 NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, Size.Width, Size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
             }
@@ -142,7 +141,7 @@ namespace ShareX.HelpersLib
             if (!IsVisible) return;
             using SKBitmap cursor = ToBitmap();
             using SKCanvas canvas = new(image);
-            Point position = CaptureHelpers.ScreenToClient(new Point(DrawPosition.X - offset.X, DrawPosition.Y - offset.Y));
+            Point position = new(DrawPosition.X - offset.X, DrawPosition.Y - offset.Y);
             canvas.DrawBitmap(cursor, position.X, position.Y);
         }
 

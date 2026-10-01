@@ -1773,7 +1773,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                     {
                         var ext = System.IO.Path.GetExtension(file.Name)?.ToLowerInvariant();
 
-                        if (ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".bmp" || ext == ".gif" || ext == ".webp" || ext == ".ico" || ext == ".tiff" || ext == ".tif")
+                        if (ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".bmp" || ext == ".gif" || ext == ".webp" || ext == ".ico")
                         {
                             try
                             {

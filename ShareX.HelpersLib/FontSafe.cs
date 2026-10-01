@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System.Drawing;
-
 namespace ShareX.HelpersLib
 {
     public class FontSafe
@@ -35,25 +33,7 @@ namespace ShareX.HelpersLib
         {
         }
 
-        public FontSafe(Font font)
-        {
-            SetFont(font);
-        }
-
-        public void SetFont(Font font)
-        {
-            Font = new FontConverter().ConvertToInvariantString(font);
-        }
-
-        public Font GetFont()
-        {
-            if (!string.IsNullOrEmpty(Font))
-            {
-                return new FontConverter().ConvertFromInvariantString(Font) as Font;
-            }
-
-            return null;
-        }
+        public FontSafe(ImageFont font) => SetImageFont(font);
 
         public ImageFont GetImageFont() => string.IsNullOrEmpty(Font) ? null :
             new ImageFontConverter().ConvertFromInvariantString(Font) as ImageFont;

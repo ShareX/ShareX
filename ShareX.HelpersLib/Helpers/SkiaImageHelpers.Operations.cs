@@ -27,7 +27,6 @@ using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -321,6 +320,7 @@ namespace ShareX.HelpersLib
 
                     using (SKPaint brush = SkiaDrawing.Fill(canvasColor))
                     {
+                        brush.BlendMode = SKBlendMode.Src;
                         if (margin.Left > 0)
                         {
                             g.FillRectangle(brush, 0, 0, margin.Left, bmp.Height);
@@ -372,7 +372,7 @@ namespace ShareX.HelpersLib
 
                         if (tile)
                         {
-                            using (SKPaint brush = SkiaDrawing.Texture(backgroundImage, WrapMode.Tile))
+                            using (SKPaint brush = SkiaDrawing.Texture(backgroundImage, ImageTileMode.Tile))
                             {
                                 if (center)
                                 {
@@ -607,7 +607,7 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        public static SKBitmap DrawBorder(SKBitmap bmp, Color borderColor, int borderSize, BorderType borderType, DashStyle dashStyle = DashStyle.Solid)
+        public static SKBitmap DrawBorder(SKBitmap bmp, Color borderColor, int borderSize, BorderType borderType, ImageDashStyle dashStyle = ImageDashStyle.Solid)
         {
             using (SKPaint borderPen = SkiaDrawing.Stroke(borderColor, borderSize))
             {
@@ -616,8 +616,8 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static SKBitmap DrawBorder(SKBitmap bmp, Color fromBorderColor, Color toBorderColor, LinearGradientMode gradientType, int borderSize, BorderType borderType,
-            DashStyle dashStyle = DashStyle.Solid)
+        public static SKBitmap DrawBorder(SKBitmap bmp, Color fromBorderColor, Color toBorderColor, ImageGradientMode gradientType, int borderSize, BorderType borderType,
+            ImageDashStyle dashStyle = ImageDashStyle.Solid)
         {
             int width = bmp.Width;
             int height = bmp.Height;
@@ -636,7 +636,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static SKBitmap DrawBorder(SKBitmap bmp, GradientInfo gradientInfo, int borderSize, BorderType borderType, DashStyle dashStyle = DashStyle.Solid)
+        public static SKBitmap DrawBorder(SKBitmap bmp, GradientInfo gradientInfo, int borderSize, BorderType borderType, ImageDashStyle dashStyle = ImageDashStyle.Solid)
         {
             int width = bmp.Width;
             int height = bmp.Height;
@@ -701,7 +701,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static SKBitmap FillBackground(SKBitmap img, Color fromColor, Color toColor, LinearGradientMode gradientType)
+        public static SKBitmap FillBackground(SKBitmap img, Color fromColor, Color toColor, ImageGradientMode gradientType)
         {
             using (SKPaint brush = SkiaDrawing.Gradient(new Rectangle(0, 0, img.Width, img.Height), fromColor, toColor, gradientType))
             {
@@ -742,7 +742,7 @@ namespace ShareX.HelpersLib
             using (img)
             using (SKCanvas g = new SKCanvas(bmpResult))
             using (SKBitmap checker = CreateCheckerPattern(checkerSize, checkerSize, checkerColor1, checkerColor2))
-            using (SKPaint checkerBrush = SkiaDrawing.Texture(checker, WrapMode.Tile))
+            using (SKPaint checkerBrush = SkiaDrawing.Texture(checker, ImageTileMode.Tile))
             {
                 g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmpResult.Width, bmpResult.Height));
                 g.DrawImage(img, 0, 0, img.Width, img.Height);
@@ -762,7 +762,7 @@ namespace ShareX.HelpersLib
 
             using (SKCanvas g = new SKCanvas(bmp))
             using (SKBitmap checker = CreateCheckerPattern(checkerSize, checkerSize, checkerColor1, checkerColor2))
-            using (SKPaint checkerBrush = SkiaDrawing.Texture(checker, WrapMode.Tile))
+            using (SKPaint checkerBrush = SkiaDrawing.Texture(checker, ImageTileMode.Tile))
             {
                 g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmp.Width, bmp.Height));
             }
@@ -1349,7 +1349,7 @@ namespace ShareX.HelpersLib
             int size = radius * 2 + 1;
             double sigma = radius / 3.0;
 
-            ConvolutionMatrix kernelHorizontal = ConvolutionMatrixManager.GaussianBlur(1, size, sigma);
+            ConvolutionMatrix kernelHorizontal = SkiaConvolutionMatrixManager.GaussianBlur(1, size, sigma);
 
             ConvolutionMatrix kernelVertical = new ConvolutionMatrix(size, 1)
             {
@@ -2156,21 +2156,21 @@ namespace ShareX.HelpersLib
 
 
 
-        public static InterpolationMode GetInterpolationMode(ImageInterpolationMode interpolationMode)
+        public static ImageSamplingMode GetInterpolationMode(ImageInterpolationMode interpolationMode)
         {
             switch (interpolationMode)
             {
                 default:
                 case ImageInterpolationMode.HighQualityBicubic:
-                    return InterpolationMode.HighQualityBicubic;
+                    return ImageSamplingMode.HighQualityBicubic;
                 case ImageInterpolationMode.Bicubic:
-                    return InterpolationMode.Bicubic;
+                    return ImageSamplingMode.Bicubic;
                 case ImageInterpolationMode.HighQualityBilinear:
-                    return InterpolationMode.HighQualityBilinear;
+                    return ImageSamplingMode.HighQualityBilinear;
                 case ImageInterpolationMode.Bilinear:
-                    return InterpolationMode.Bilinear;
+                    return ImageSamplingMode.Bilinear;
                 case ImageInterpolationMode.NearestNeighbor:
-                    return InterpolationMode.NearestNeighbor;
+                    return ImageSamplingMode.NearestNeighbor;
             }
         }
 

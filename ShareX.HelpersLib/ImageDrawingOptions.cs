@@ -23,26 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-
 namespace ShareX.HelpersLib;
 
-[Serializable]
-public class XmlFont
-{
-    public string FontFamily { get; set; }
-    public float Size { get; set; }
-    public ImageFontStyle Style { get; set; }
-    public ImageFontUnit GraphicsUnit { get; set; }
-    public XmlFont() { }
-    public XmlFont(ImageFont font)
-    {
-        FontFamily = font.Name; Size = font.Size; Style = font.Style; GraphicsUnit = font.Unit;
-    }
-    public XmlFont(string name, float size, ImageFontStyle style = ImageFontStyle.Regular)
-        : this(new ImageFont(name, size, style)) { }
-    public static implicit operator ImageFont(XmlFont font) => font.ToFont();
-    public static implicit operator XmlFont(ImageFont font) => new(font);
-    public ImageFont ToFont() => new(FontFamily, Size, Style, GraphicsUnit);
-    public override string ToString() => $"{FontFamily}; {Size}" + (Style == ImageFontStyle.Regular ? "" : $"; {Style}");
-}
+// Preserve numeric values used by existing image effect settings.
+public enum ImageSamplingMode { Invalid = -1, Default = 0, Low = 1, High = 2, Bilinear = 3, Bicubic = 4, NearestNeighbor = 5, HighQualityBilinear = 6, HighQualityBicubic = 7 }
+public enum ImageGradientMode { Horizontal = 0, Vertical = 1, ForwardDiagonal = 2, BackwardDiagonal = 3 }
+public enum ImageDashStyle { Solid = 0, Dash = 1, Dot = 2, DashDot = 3, DashDotDot = 4, Custom = 5 }
+public enum ImageTileMode { Tile = 0, TileFlipX = 1, TileFlipY = 2, TileFlipXY = 3, Clamp = 4 }
+
+public enum ImageCompositingMode { SourceOver = 0, SourceCopy = 1 }
