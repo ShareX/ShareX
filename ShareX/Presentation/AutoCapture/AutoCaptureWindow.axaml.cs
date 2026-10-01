@@ -28,6 +28,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
@@ -47,6 +48,7 @@ public partial class AutoCaptureWindow : Window
     private readonly Stopwatch _stopwatch = new();
     private readonly TrayIcon _trayIcon;
     private readonly IDisposable _trayIconBinding;
+    private readonly IDisposable _trayIconRegistration;
     private bool _isLoaded;
     private int _delay;
     private int _count;
@@ -73,6 +75,7 @@ public partial class AutoCaptureWindow : Window
         };
         _trayIconBinding = LucideTrayIcon.Bind(_trayIcon, LucideIcons.clock);
         _trayIcon.Clicked += OnTrayIconClick;
+        _trayIconRegistration = DesktopServices.RegisterTrayIcon(_trayIcon);
 
         _customRegion = ApplicationState.Settings.AutoCaptureRegion;
         RepeatTimeInput.Value = ApplicationState.Settings.AutoCaptureRepeatTime;
@@ -309,6 +312,6 @@ public partial class AutoCaptureWindow : Window
         _trayIcon.IsVisible = false;
         _trayIcon.Clicked -= OnTrayIconClick;
         _trayIconBinding.Dispose();
-        _trayIcon.Dispose();
+        _trayIconRegistration.Dispose();
     }
 }

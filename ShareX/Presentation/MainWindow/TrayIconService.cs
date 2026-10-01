@@ -25,6 +25,7 @@
 
 #nullable enable
 
+using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
 using System;
 using System.IO;
@@ -47,6 +48,7 @@ internal sealed class DesktopTrayIconService : ITrayIconService
 {
     private readonly WindowsTrayIcon? _windowsIcon;
     private readonly Avalonia.Controls.TrayIcon? _avaloniaIcon;
+    private readonly IDisposable? _avaloniaIconRegistration;
     private readonly Avalonia.Threading.DispatcherTimer _singleClickTimer;
     private int _leftClickCount;
     private bool _disposed;
@@ -80,12 +82,13 @@ internal sealed class DesktopTrayIconService : ITrayIconService
         }
         else
         {
-            _avaloniaIcon = new Avalonia.Controls.TrayIcon { Menu = new Avalonia.Controls.NativeMenu() };
+            _avaloniaIcon = new Avalonia.Controls.TrayIcon { Menu = new Avalonia.Controls.NativeMenu(), IsVisible = false };
             _avaloniaIcon.Clicked += OnAvaloniaClick;
             _avaloniaIcon.Menu.Opening += (_, _) => BuildNativeMenu(_avaloniaIcon.Menu, new MainMenuBuilder(true).BuildTrayMenu());
         }
         ToolTipText = text;
         SetIcon(icon);
+        if (_avaloniaIcon != null) _avaloniaIconRegistration = DesktopServices.RegisterTrayIcon(_avaloniaIcon);
         Visible = visible;
     }
 
@@ -197,7 +200,7 @@ internal sealed class DesktopTrayIconService : ITrayIconService
         if (_avaloniaIcon != null)
         {
             _avaloniaIcon.Clicked -= OnAvaloniaClick;
-            _avaloniaIcon.Dispose();
+            _avaloniaIconRegistration?.Dispose();
         }
     }
 }

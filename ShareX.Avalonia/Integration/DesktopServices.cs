@@ -56,6 +56,40 @@ public static class DesktopServices
         return _serviceWindow;
     }
 
+    /// <summary>
+    /// Attaches a dynamic tray icon to the application. Disposing the registration
+    /// removes it from the application collection and disposes its native resources.
+    /// </summary>
+    public static IDisposable RegisterTrayIcon(TrayIcon icon)
+    {
+        Dispatcher.UIThread.VerifyAccess();
+        ArgumentNullException.ThrowIfNull(icon);
+        Application application = Application.Current ??
+            throw new InvalidOperationException("Avalonia must be initialized before registering a tray icon.");
+        TrayIcons? icons = TrayIcon.GetIcons(application);
+        if (icons == null)
+        {
+            icons = new TrayIcons();
+            TrayIcon.SetIcons(application, icons);
+        }
+        icons.Add(icon);
+        return new TrayIconRegistration(icons, icon);
+    }
+
+    private sealed class TrayIconRegistration(TrayIcons icons, TrayIcon icon) : IDisposable
+    {
+        private bool _disposed;
+
+        public void Dispose()
+        {
+            Dispatcher.UIThread.VerifyAccess();
+            if (_disposed) return;
+            _disposed = true;
+            icons.Remove(icon);
+            icon.Dispose();
+        }
+    }
+
     public static T Run<T>(Func<Task<T>> operation)
     {
         AvaloniaBootstrapper.EnsureInitialized();
