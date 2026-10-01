@@ -191,10 +191,10 @@ namespace ShareX.HelpersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ShareX_Logo {
+        internal static byte[] ShareX_Logo {
             get {
                 object obj = ResourceManager.GetObject("ShareX_Logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
     }

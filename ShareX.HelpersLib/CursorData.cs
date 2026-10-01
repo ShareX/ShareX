@@ -25,7 +25,7 @@
 
 using System;
 using System.Drawing;
-using System.Drawing.Imaging;
+using SkiaSharp;
 using System.Runtime.InteropServices;
 
 namespace ShareX.HelpersLib
@@ -89,12 +89,10 @@ namespace ShareX.HelpersLib
                             {
                                 if (!IsDefaultSize)
                                 {
-                                    using (Bitmap bmpMask = Image.FromHbitmap(iconInfo.hbmMask))
-                                    {
-                                        int cursorWidth = bmpMask.Width;
-                                        int cursorHeight = iconInfo.hbmColor != IntPtr.Zero ? bmpMask.Height : bmpMask.Height / 2;
-                                        Size = new Size((int)Math.Round(cursorWidth * SizeMultiplier), (int)Math.Round(cursorHeight * SizeMultiplier));
-                                    }
+                                    Size maskSize = WindowsImageInterop.GetBitmapSize(iconInfo.hbmMask);
+                                    int cursorWidth = maskSize.Width;
+                                    int cursorHeight = iconInfo.hbmColor != IntPtr.Zero ? maskSize.Height : maskSize.Height / 2;
+                                    Size = new Size((int)Math.Round(cursorWidth * SizeMultiplier), (int)Math.Round(cursorHeight * SizeMultiplier));
                                 }
 
                                 NativeMethods.DeleteObject(iconInfo.hbmMask);
@@ -137,46 +135,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void DrawCursor(Image img)
+        public void DrawCursor(SKBitmap image) => DrawCursor(image, Point.Empty);
+
+        public void DrawCursor(SKBitmap image, Point offset)
         {
-            DrawCursor(img, Point.Empty);
+            if (!IsVisible) return;
+            using SKBitmap cursor = ToBitmap();
+            using SKCanvas canvas = new(image);
+            Point position = CaptureHelpers.ScreenToClient(new Point(DrawPosition.X - offset.X, DrawPosition.Y - offset.Y));
+            canvas.DrawBitmap(cursor, position.X, position.Y);
         }
 
-        public void DrawCursor(Image img, Point offset)
-        {
-            if (IsVisible)
-            {
-                using (Graphics g = Graphics.FromImage(img))
-                {
-                    IntPtr hdcDest = g.GetHdc();
-
-                    DrawCursor(hdcDest, offset);
-
-                    g.ReleaseHdc(hdcDest);
-                }
-            }
-        }
-
-        public Bitmap ToBitmap()
-        {
-            if (IsDefaultSize || Size.IsEmpty)
-            {
-                Icon icon = Icon.FromHandle(Handle);
-                return icon.ToBitmap();
-            }
-
-            Bitmap bmp = new Bitmap(Size.Width, Size.Height, PixelFormat.Format32bppArgb);
-
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                IntPtr hdcDest = g.GetHdc();
-
-                NativeMethods.DrawIconEx(hdcDest, 0, 0, Handle, Size.Width, Size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
-
-                g.ReleaseHdc(hdcDest);
-            }
-
-            return bmp;
-        }
+        public SKBitmap ToBitmap() => WindowsImageInterop.FromIcon(Handle, Size);
     }
 }

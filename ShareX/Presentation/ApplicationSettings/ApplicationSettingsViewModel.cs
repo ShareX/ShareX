@@ -36,6 +36,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -46,6 +48,8 @@ using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
 using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
+
+using SkiaSharp;
 
 namespace ShareX;
 

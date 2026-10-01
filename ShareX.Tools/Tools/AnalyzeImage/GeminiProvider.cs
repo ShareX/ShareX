@@ -28,7 +28,11 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System.Drawing;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
 using System.Text;
+
+using SkiaSharp;
 
 namespace ShareX.Tools
 {
@@ -45,13 +49,13 @@ namespace ShareX.Tools
 
         public async Task<string> AnalyzeImage(Image image, string prompt, string reasoningEffort, string verbosity)
         {
-            string base64Image = ImageHelpers.ImageToBase64(image, System.Drawing.Imaging.ImageFormat.Png);
+            string base64Image = SkiaImageHelpers.ImageToBase64(image, ImageFileFormat.Png);
             return await AnalyzeImageInternal(base64Image, prompt, reasoningEffort, verbosity);
         }
 
         public async Task<string> AnalyzeImage(string imagePath, string prompt, string reasoningEffort, string verbosity)
         {
-            string base64Image = ImageHelpers.ImageFileToBase64(imagePath);
+            string base64Image = SkiaImageHelpers.ImageFileToBase64(imagePath);
             return await AnalyzeImageInternal(base64Image, prompt, reasoningEffort, verbosity);
         }
 

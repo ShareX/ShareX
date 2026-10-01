@@ -48,7 +48,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
-using DrawingBitmap = System.Drawing.Bitmap;
+using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingPoint = System.Drawing.Point;
 using DrawingSize = System.Drawing.Size;
 using FormsCursor = System.Windows.Forms.Cursor;
@@ -58,6 +58,8 @@ using FormsOrientation = System.Windows.Forms.Orientation;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
+
+using SkiaSharp;
 
 namespace ShareX;
 
@@ -1099,7 +1101,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             // WorkerTask owns and disposes the ImageReady bitmap as soon as the event returns.
             // Give the asynchronous Avalonia decoder its own image to avoid sharing GDI+ state.
-            imageCopy = (DrawingBitmap)image.Clone();
+            imageCopy = (DrawingBitmap)image.Copy();
         }
         catch (Exception e)
         {
@@ -2142,9 +2144,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private static AvaloniaBitmap CreateTitleBarIcon()
     {
         using System.Drawing.Icon icon = ShareXResources.Icon;
-        using DrawingBitmap bitmap = icon.ToBitmap();
+        using DrawingBitmap bitmap = WindowsImageInterop.FromIcon(icon.Handle);
         using MemoryStream stream = new();
-        bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+        bitmap.Save(stream, SkiaSharp.SKEncodedImageFormat.Png);
         stream.Position = 0;
         return new AvaloniaBitmap(stream);
     }

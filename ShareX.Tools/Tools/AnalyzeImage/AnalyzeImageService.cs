@@ -25,8 +25,12 @@
 
 using ShareX.HelpersLib;
 using System.Drawing;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
 using System.Net.Http.Headers;
 using System.Text.Json;
+
+using SkiaSharp;
 
 namespace ShareX.Tools;
 
@@ -46,7 +50,7 @@ public sealed class AnalyzeImageService
             return string.Empty;
         }
 
-        using Bitmap image = ImageHelpers.ByteArrayToBitmap(imageData);
+        using Bitmap image = SkiaImageHelpers.ByteArrayToBitmap(imageData);
         return await provider.AnalyzeImage(image, options.Input, options.OpenAIReasoningEffort, options.OpenAIVerbosity);
     }
 

@@ -37,8 +37,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DrawingBitmap = System.Drawing.Bitmap;
-using DrawingImageFormat = System.Drawing.Imaging.ImageFormat;
+using DrawingBitmap = SkiaSharp.SKBitmap;
+using DrawingImageFormat = SkiaSharp.SKEncodedImageFormat;
+
+using SkiaSharp;
 
 namespace ShareX;
 
@@ -77,7 +79,7 @@ public partial class AfterCaptureWindow : Window
             fileName = Path.GetFileNameWithoutExtension(filePath);
             if (FileHelpers.IsImageFile(filePath))
             {
-                _ownedSourceImage = ImageHelpers.LoadImage(filePath);
+                _ownedSourceImage = SkiaImageHelpers.LoadImage(filePath);
                 _sourceImage = _ownedSourceImage;
             }
         }

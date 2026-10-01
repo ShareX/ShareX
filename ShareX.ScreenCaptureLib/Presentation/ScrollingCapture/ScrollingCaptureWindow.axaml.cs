@@ -32,11 +32,13 @@ using Avalonia.Media;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using System;
-using System.Drawing.Imaging;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
 using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
-using DrawingBitmap = System.Drawing.Bitmap;
+using DrawingBitmap = SkiaSharp.SKBitmap;
+
+using SkiaSharp;
 
 namespace ShareX.ScreenCaptureLib;
 
@@ -277,7 +279,7 @@ public partial class ScrollingCaptureWindow : Window
     {
         if (_service.Result != null)
         {
-            _uploadRequested?.Invoke((DrawingBitmap)_service.Result.Clone());
+            _uploadRequested?.Invoke((DrawingBitmap)_service.Result.Copy());
         }
     }
 

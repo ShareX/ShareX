@@ -39,15 +39,17 @@ using ShareX.HelpersLib;
 using ShareX.Localization;
 using System;
 using System.Diagnostics;
-using System.Drawing.Imaging;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
-using DrawingBitmap = System.Drawing.Bitmap;
+using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingContentAlignment = System.Drawing.ContentAlignment;
 using FormsCursor = System.Windows.Forms.Cursor;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
+
+using SkiaSharp;
 
 namespace ShareX;
 
@@ -101,7 +103,7 @@ public partial class NotificationWindow : Window
 
         if (config.Image == null)
         {
-            config.Image = ImageHelpers.LoadImage(config.FilePath);
+            config.Image = SkiaImageHelpers.LoadImage(config.FilePath);
         }
 
         if (config.Image == null && string.IsNullOrEmpty(config.Text))
@@ -182,7 +184,7 @@ public partial class NotificationWindow : Window
 
         if (source == null && !string.IsNullOrEmpty(config.FilePath))
         {
-            source = ImageHelpers.LoadImage(config.FilePath);
+            source = SkiaImageHelpers.LoadImage(config.FilePath);
             config.Image = source;
         }
 

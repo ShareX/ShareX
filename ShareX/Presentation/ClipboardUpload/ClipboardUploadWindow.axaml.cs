@@ -33,9 +33,11 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using System;
-using System.Drawing.Imaging;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
-using DrawingBitmap = System.Drawing.Bitmap;
+using DrawingBitmap = SkiaSharp.SKBitmap;
+
+using SkiaSharp;
 
 namespace ShareX;
 
@@ -80,7 +82,7 @@ public partial class ClipboardUploadWindow : Window
             using DrawingBitmap? clipboardImage = ClipboardHelpers.GetImage();
             if (clipboardImage != null)
             {
-                DrawingBitmap image = (DrawingBitmap)clipboardImage.Clone();
+                DrawingBitmap image = (DrawingBitmap)clipboardImage.Copy();
                 _clipboardContent = image;
                 _previewBitmap = CreatePreviewBitmap(image);
                 ImagePreview.Source = _previewBitmap;

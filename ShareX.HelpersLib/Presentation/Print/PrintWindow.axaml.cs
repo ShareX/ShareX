@@ -29,7 +29,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using ShareX.AvaloniaUI.Theming;
 using System;
-using DrawingImage = System.Drawing.Image;
+using DrawingImage = SkiaSharp.SKBitmap;
 
 namespace ShareX.HelpersLib;
 

@@ -26,8 +26,12 @@
 using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
+
+using SkiaSharp;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -89,7 +93,7 @@ namespace ShareX.ScreenCaptureLib
                         using (MemoryStream ms = new MemoryStream())
                         {
                             fsCache.CopyStreamTo64(ms, index.Location, (int)index.Length);
-                            yield return Image.FromStream(ms);
+                            yield return SkiaImageHelpers.Decode(ms);
                         }
                     }
                 }

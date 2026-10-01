@@ -26,6 +26,7 @@
 using ShareX.HelpersLib.Properties;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -61,22 +62,23 @@ namespace ShareX.HelpersLib
 
                     if (useWhiteIcon)
                     {
-                        Icon = Resources.ShareX_Icon_White;
+                        Icon = null;
                     }
                     else
                     {
-                        Icon = Resources.ShareX_Icon;
+                        Icon = null;
                     }
                 }
             }
         }
 
-        private static Icon icon = Resources.ShareX_Icon;
+        private static Icon icon;
 
         public static Icon Icon
         {
             get
             {
+                icon ??= UseWhiteIcon ? Resources.ShareX_Icon_White : Resources.ShareX_Icon;
                 return icon.CloneSafe();
             }
             set
@@ -89,13 +91,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static Bitmap logo = Resources.ShareX_Logo;
+        private static SKBitmap logo = SkiaImageHelpers.ByteArrayToBitmap(Resources.ShareX_Logo);
 
-        public static Bitmap Logo
+        public static SKBitmap Logo
         {
             get
             {
-                return logo.CloneSafe();
+                return logo.Copy();
             }
             set
             {

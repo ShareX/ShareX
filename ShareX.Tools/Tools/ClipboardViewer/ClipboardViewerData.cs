@@ -25,8 +25,12 @@
 
 using ShareX.HelpersLib;
 using System.Drawing;
-using System.Drawing.Imaging;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.Windows.Forms;
+
+using SkiaSharp;
 
 namespace ShareX.Tools;
 
@@ -89,7 +93,7 @@ public sealed class ClipboardViewerData
             if (format.Equals(ClipboardHelpers.FORMAT_PNG, StringComparison.OrdinalIgnoreCase))
             {
                 using MemoryStream imageStream = new(bytes, writable: false);
-                using Bitmap source = new(imageStream);
+                using Bitmap source = SkiaImageHelpers.Decode(imageStream);
                 return ClipboardViewerPreview.FromImage(source);
             }
 
@@ -102,7 +106,7 @@ public sealed class ClipboardViewerData
             if (format.Equals(ClipboardHelpers.FORMAT_17, StringComparison.OrdinalIgnoreCase))
             {
                 using Bitmap source = ClipboardHelpers.ConvertClipboardDibV5ToBitmap(bytes);
-                using Bitmap image = new(source);
+                using Bitmap image = source.Copy();
                 return ClipboardViewerPreview.FromImage(image);
             }
         }

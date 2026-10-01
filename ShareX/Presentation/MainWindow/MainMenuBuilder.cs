@@ -33,11 +33,15 @@ using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using SkiaSharp;
 
 namespace ShareX;
 
@@ -180,7 +184,7 @@ internal sealed class MainMenuBuilder
             return null;
         }
 
-        using Bitmap bitmap = icon.ToBitmap();
+        using Bitmap bitmap = WindowsImageInterop.FromIcon(icon.Handle);
         using MemoryStream stream = new();
         bitmap.Save(stream, ImageFormat.Png);
         return stream.ToArray();

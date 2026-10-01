@@ -2154,18 +2154,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Size GetImageFileDimensions(string filePath)
-        {
-            using (SKBitmap bmp = LoadImage(filePath))
-            {
-                if (bmp != null)
-                {
-                    return bmp.GetSize();
-                }
-            }
 
-            return Size.Empty;
-        }
 
         public static InterpolationMode GetInterpolationMode(ImageInterpolationMode interpolationMode)
         {

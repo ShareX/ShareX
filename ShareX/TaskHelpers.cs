@@ -39,11 +39,12 @@ using ShareX.Tools.Integration;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.SharingServices;
 using SkiaSharp;
-using SkiaSharp.Views.Desktop;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -54,7 +55,6 @@ using System.Windows.Forms;
 using ZXing;
 using ZXing.Common;
 using ZXing.QrCode;
-using ZXing.Windows.Compatibility;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxDefaultButton = ShareX.AvaloniaUI.MessageBoxDefaultButton;
@@ -425,15 +425,15 @@ namespace ShareX
             {
                 imageData.ImageStream.Dispose();
 
-                using (Bitmap newImage = ImageHelpers.FillBackground(img, Color.White))
+                using (Bitmap newImage = SkiaImageHelpers.FillBackground(img, Color.White))
                 {
                     if (taskSettings.ImageSettings.ImageAutoJPEGQuality)
                     {
-                        imageData.ImageStream = ImageHelpers.SaveJPEGAutoQuality(newImage, taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000, 2, 70, 100);
+                        imageData.ImageStream = SkiaImageHelpers.SaveJPEGAutoQuality(newImage, taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000, 2, 70, 100);
                     }
                     else
                     {
-                        imageData.ImageStream = ImageHelpers.SaveJPEG(newImage, taskSettings.ImageSettings.ImageJPEGQuality);
+                        imageData.ImageStream = SkiaImageHelpers.SaveJPEG(newImage, taskSettings.ImageSettings.ImageJPEGQuality);
                     }
                 }
 
@@ -453,7 +453,7 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(thumbnailFilePath))
                 {
-                    using (SKBitmap thumbnail = GdiSkiaBitmapConverter.ToSKBitmap(bmp))
+                    using (SKBitmap thumbnail = CopyBitmap(bmp))
                     using (SKBitmap resizedImage = new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight).Apply(thumbnail))
                     using (SKBitmap newImage = SkiaImageHelpers.FillBackground(resizedImage, Color.White))
                     {
@@ -483,24 +483,24 @@ namespace ShareX
                 {
                     default:
                     case EImageFormat.PNG:
-                        ImageHelpers.SavePNG(img, ms, pngBitDepth);
+                        SkiaImageHelpers.SavePNG(img, ms, pngBitDepth);
 
                         if (ApplicationState.Settings.PNGStripColorSpaceInformation)
                         {
                             using (ms)
                             {
-                                return ImageHelpers.PNGStripColorSpaceInformation(ms);
+                                return SkiaImageHelpers.PNGStripColorSpaceInformation(ms);
                             }
                         }
                         break;
                     case EImageFormat.JPEG:
-                        using (Bitmap newImage = ImageHelpers.FillBackground(img, Color.White))
+                        using (Bitmap newImage = SkiaImageHelpers.FillBackground(img, Color.White))
                         {
-                            ImageHelpers.SaveJPEG(newImage, ms, jpegQuality);
+                            SkiaImageHelpers.SaveJPEG(newImage, ms, jpegQuality);
                         }
                         break;
                     case EImageFormat.GIF:
-                        ImageHelpers.SaveGIF(img, ms, gifQuality);
+                        SkiaImageHelpers.SaveGIF(img, ms, gifQuality);
                         break;
                     case EImageFormat.BMP:
                         img.Save(ms, ImageFormat.Bmp);
@@ -671,12 +671,11 @@ namespace ShareX
         {
             if (bmp != null)
             {
-                bmp = ImageHelpers.NonIndexedBitmap(bmp);
+                bmp = SkiaImageHelpers.NonIndexedBitmap(bmp);
 
                 if (taskSettingsImage.ShowImageEffectsWindowAfterCapture)
                 {
-                    using SKBitmap skiaSource = GdiSkiaBitmapConverter.ToSKBitmap(bmp);
-                    ImageEffectsDialogResult result = ImageEffectsIntegration.ShowDialog(skiaSource,
+                    ImageEffectsDialogResult result = ImageEffectsIntegration.ShowDialog(bmp,
                         taskSettingsImage.ImageEffectPresets, taskSettingsImage.SelectedImageEffectPreset,
                         ImageEffectsWindowMode.Editor);
                     taskSettingsImage.SelectedImageEffectPreset = result.SelectedPresetIndex;
@@ -697,9 +696,7 @@ namespace ShareX
                 {
                     using (bmp)
                     {
-                        using SKBitmap skiaSource = GdiSkiaBitmapConverter.ToSKBitmap(bmp);
-                        using SKBitmap skiaResult = imageEffect.ApplyEffects(skiaSource);
-                        return GdiSkiaBitmapConverter.ToGdiBitmap(skiaResult);
+                        return imageEffect.ApplyEffects(bmp);
                     }
                 }
             }
@@ -1038,7 +1035,7 @@ namespace ShareX
 
         private static Bitmap CombineImages(ImageCombineRequest request)
         {
-            return ImageHelpers.CombineImages(
+            return SkiaImageHelpers.CombineImages(
                 request.ImageFiles,
                 (Orientation)request.Options.Orientation,
                 (ShareX.HelpersLib.ImageCombinerAlignment)request.Options.Alignment,
@@ -1068,7 +1065,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            Bitmap output = ImageHelpers.CombineImages(imageFiles, orientation,
+            Bitmap output = SkiaImageHelpers.CombineImages(imageFiles, orientation,
                 (ShareX.HelpersLib.ImageCombinerAlignment)taskSettings.ToolsSettings.ImageCombinerOptions.Alignment,
                 taskSettings.ToolsSettings.ImageCombinerOptions.Space, taskSettings.ToolsSettings.ImageCombinerOptions.WrapAfter,
                 taskSettings.ToolsSettings.ImageCombinerOptions.AutoFillBackground);
@@ -1305,7 +1302,7 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                Bitmap bmp = ImageHelpers.LoadImage(filePath);
+                Bitmap bmp = SkiaImageHelpers.LoadImage(filePath);
 
                 AnnotateImageAsync(bmp, filePath, taskSettings);
             }
@@ -1349,12 +1346,12 @@ namespace ShareX
             {
                 CopyImageRequested = (skBitmap) =>
                 {
-                    using Bitmap img = skBitmap.ToBitmap();
+                    using Bitmap img = skBitmap.Copy();
                     CopyImageOnUiThread(img);
                 },
                 SaveImageRequested = (skBitmap, newFilePath) =>
                 {
-                    using Bitmap img = skBitmap.ToBitmap();
+                    using Bitmap img = skBitmap.Copy();
 
                     if (string.IsNullOrEmpty(newFilePath))
                     {
@@ -1363,12 +1360,12 @@ namespace ShareX
                         newFilePath = Path.Combine(screenshotsFolder, fileName);
                     }
 
-                    ImageHelpers.SaveImage(img, newFilePath);
+                    SkiaImageHelpers.SaveImage(img, newFilePath);
                     return newFilePath;
                 },
                 SaveImageAsRequested = (skBitmap, newFilePath) =>
                 {
-                    using Bitmap img = skBitmap.ToBitmap();
+                    using Bitmap img = skBitmap.Copy();
 
                     if (string.IsNullOrEmpty(newFilePath))
                     {
@@ -1377,22 +1374,22 @@ namespace ShareX
                         newFilePath = Path.Combine(screenshotsFolder, fileName);
                     }
 
-                    newFilePath = ImageHelpers.SaveImageFileDialog(img, newFilePath);
+                    newFilePath = SkiaImageHelpers.SaveImageFileDialog(img, newFilePath);
                     return newFilePath;
                 },
                 PrintImageRequested = (skBitmap) =>
                 {
-                    Bitmap bmp = skBitmap.ToBitmap();
+                    Bitmap bmp = skBitmap.Copy();
                     PrintImageOnUiThread(bmp);
                 },
                 PinImageRequested = (skBitmap) =>
                 {
-                    Bitmap bmp = skBitmap.ToBitmap();
+                    Bitmap bmp = skBitmap.Copy();
                     PinToScreen(bmp, taskSettings);
                 },
                 UploadImageRequested = (skBitmap) =>
                 {
-                    Bitmap bmp = skBitmap.ToBitmap();
+                    Bitmap bmp = skBitmap.Copy();
                     UploadImageOnUiThread(bmp, taskSettings);
                 }
             };
@@ -1415,7 +1412,7 @@ namespace ShareX
             {
                 using (skBitmapResult)
                 {
-                    bmpResult = skBitmapResult.ToBitmap();
+                    bmpResult = skBitmapResult.Copy();
                 }
             }
 
@@ -1424,80 +1421,9 @@ namespace ShareX
 
         // Avoid the slow PNG re-encode path for large captures while still bypassing
         // the WindowsForms Bitmap->SKBitmap conversion that regressed post-effects opens.
-        private static SKBitmap GdiBitmapToSkBitmap(Bitmap bitmap)
-        {
-            Bitmap sourceBitmap = bitmap;
-            bool disposeSourceBitmap = false;
-            PixelFormat pixelFormat = bitmap.PixelFormat;
+        private static SKBitmap GdiBitmapToSkBitmap(Bitmap bitmap) => bitmap.Copy();
+        private static SKBitmap CopyBitmap(SKBitmap bitmap) => bitmap.Copy();
 
-            if (pixelFormat != PixelFormat.Format32bppArgb && pixelFormat != PixelFormat.Format32bppPArgb)
-            {
-                sourceBitmap = new Bitmap(bitmap.Width, bitmap.Height, PixelFormat.Format32bppPArgb);
-                sourceBitmap.SetResolution(bitmap.HorizontalResolution, bitmap.VerticalResolution);
-
-                using (Graphics graphics = Graphics.FromImage(sourceBitmap))
-                {
-                    graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
-                    graphics.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
-                }
-
-                disposeSourceBitmap = true;
-                pixelFormat = sourceBitmap.PixelFormat;
-            }
-
-            Rectangle rect = new Rectangle(0, 0, sourceBitmap.Width, sourceBitmap.Height);
-            BitmapData bmpData = sourceBitmap.LockBits(rect, ImageLockMode.ReadOnly, pixelFormat);
-
-            try
-            {
-                SKAlphaType alphaType = pixelFormat == PixelFormat.Format32bppPArgb ? SKAlphaType.Premul : SKAlphaType.Unpremul;
-                SKBitmap skBitmap = new SKBitmap(new SKImageInfo(sourceBitmap.Width, sourceBitmap.Height, SKColorType.Bgra8888, alphaType));
-
-                IntPtr dstPtr = skBitmap.GetPixels();
-                int dstStride = skBitmap.RowBytes;
-                int srcStride = bmpData.Stride;
-                int srcStrideAbs = Math.Abs(srcStride);
-                int height = sourceBitmap.Height;
-                int rowBytes = sourceBitmap.Width * 4;
-                IntPtr srcStart = bmpData.Scan0;
-
-                if (srcStride < 0)
-                {
-                    srcStart = IntPtr.Add(srcStart, srcStride * (height - 1));
-                }
-
-                if (srcStrideAbs == dstStride)
-                {
-                    int copyLength = dstStride * height;
-                    byte[] pixels = new byte[copyLength];
-                    Marshal.Copy(srcStart, pixels, 0, copyLength);
-                    Marshal.Copy(pixels, 0, dstPtr, copyLength);
-                }
-                else
-                {
-                    byte[] row = new byte[rowBytes];
-
-                    for (int y = 0; y < height; y++)
-                    {
-                        IntPtr srcRow = IntPtr.Add(srcStart, y * srcStrideAbs);
-                        IntPtr dstRow = IntPtr.Add(dstPtr, y * dstStride);
-                        Marshal.Copy(srcRow, row, 0, rowBytes);
-                        Marshal.Copy(row, 0, dstRow, rowBytes);
-                    }
-                }
-
-                return skBitmap;
-            }
-            finally
-            {
-                sourceBitmap.UnlockBits(bmpData);
-
-                if (disposeSourceBitmap)
-                {
-                    sourceBitmap.Dispose();
-                }
-            }
-        }
 
         private static void CopyImageOnUiThread(Bitmap bmp)
         {
@@ -1534,7 +1460,7 @@ namespace ShareX
 
         public static void OpenImageBeautifier(TaskSettings taskSettings = null)
         {
-            string filePath = ImageHelpers.OpenImageFileDialog();
+            string filePath = SkiaImageHelpers.OpenImageFileDialog();
 
             OpenImageBeautifier(filePath, taskSettings);
         }
@@ -1545,7 +1471,7 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                Bitmap bmp = ImageHelpers.LoadImage(filePath);
+                Bitmap bmp = SkiaImageHelpers.LoadImage(filePath);
                 Bitmap bmpResult = null;
                 ThreadWorker worker = new ThreadWorker();
 
@@ -1590,7 +1516,7 @@ namespace ShareX
 
         public static void OpenImageEffects(TaskSettings taskSettings = null)
         {
-            string filePath = ImageHelpers.OpenImageFileDialog();
+            string filePath = SkiaImageHelpers.OpenImageFileDialog();
 
             OpenImageEffects(filePath, taskSettings);
         }
@@ -1599,17 +1525,17 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(filePath))
             {
-                Bitmap bmp = ImageHelpers.LoadImage(filePath);
+                Bitmap bmp = SkiaImageHelpers.LoadImage(filePath);
 
                 if (bmp != null)
                 {
-                    bmp = ImageHelpers.NonIndexedBitmap(bmp);
+                    bmp = SkiaImageHelpers.NonIndexedBitmap(bmp);
 
                     if (taskSettings == null) taskSettings = ApplicationState.DefaultTaskSettings;
 
                     using (bmp)
                     {
-                        using SKBitmap skiaSource = GdiSkiaBitmapConverter.ToSKBitmap(bmp);
+                        using SKBitmap skiaSource = CopyBitmap(bmp);
                         ImageEffectsIntegration.ShowToolWindow(skiaSource,
                             taskSettings.ImageSettingsReference.ImageEffectPresets,
                             taskSettings.ImageSettings.SelectedImageEffectPreset,
@@ -1636,21 +1562,20 @@ namespace ShareX
             {
                 LoadImageFromFile = () =>
                 {
-                    string path = ImageHelpers.OpenImageFileDialog();
+                    string path = SkiaImageHelpers.OpenImageFileDialog();
                     SKBitmap image = !string.IsNullOrWhiteSpace(path) ? SkiaImageHelpers.LoadImage(path) : null;
                     return image != null ? new ImageEffectsSource(image, path) : null;
                 },
                 LoadImageFromClipboard = () =>
                 {
-                    using Bitmap image = ClipboardHelpers.GetImage();
-                    return image != null ? new ImageEffectsSource(GdiSkiaBitmapConverter.ToSKBitmap(image)) : null;
+                    Bitmap image = ClipboardHelpers.GetImage();
+                    return image != null ? new ImageEffectsSource(image) : null;
                 },
                 SaveImage = (image, path) =>
                 {
-                    using Bitmap drawingImage = GdiSkiaBitmapConverter.ToGdiBitmap(image);
-                    return ImageHelpers.SaveImageFileDialog(drawingImage, path);
+                    return SkiaImageHelpers.SaveImageFileDialog(image, path);
                 },
-                UploadImage = image => UploadManager.RunImageTask(GdiSkiaBitmapConverter.ToGdiBitmap(image), taskSettings),
+                UploadImage = image => UploadManager.RunImageTask(image.Copy(), taskSettings),
                 OpenImageEffectsPage = () => URLHelpers.OpenURL(Links.ImageEffects)
             };
         }
@@ -1797,7 +1722,7 @@ namespace ShareX
                 QRCodeScanMode.Screen => new Screenshot().CaptureFullscreen(),
                 QRCodeScanMode.Region => await RegionCaptureTasks.GetRegionImageAsync(
                     TaskSettings.GetDefaultTaskSettings().CaptureSettings.RegionCaptureOptions),
-                QRCodeScanMode.ImageFile when !string.IsNullOrWhiteSpace(filePath) => ImageHelpers.LoadImage(filePath),
+                QRCodeScanMode.ImageFile when !string.IsNullOrWhiteSpace(filePath) => SkiaImageHelpers.LoadImage(filePath),
                 _ => null
             };
 
@@ -1828,7 +1753,7 @@ namespace ShareX
                     using Image image = GenerateQRCode(text, size);
                     if (image != null)
                     {
-                        ImageHelpers.SaveImage(image, filePath);
+                        SkiaImageHelpers.SaveImage(image, filePath);
                     }
                 }
             });
@@ -1848,7 +1773,7 @@ namespace ShareX
             using Image image = GenerateQRCode(text, size);
             if (image != null)
             {
-                UploadImageOnUiThread(new Bitmap(image));
+                UploadImageOnUiThread(image.Copy());
             }
         }
 
@@ -1924,7 +1849,7 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
-                using (Bitmap bmp = ImageHelpers.LoadImage(filePath))
+                using (Bitmap bmp = SkiaImageHelpers.LoadImage(filePath))
                 {
                     await OCRImage(bmp, filePath, taskSettings);
                 }
@@ -1970,7 +1895,7 @@ namespace ShareX
                             options,
                             async (imageData, language, scaleFactor, singleLine) =>
                             {
-                                using Bitmap source = ImageHelpers.ByteArrayToBitmap(imageData);
+                                using Bitmap source = SkiaImageHelpers.ByteArrayToBitmap(imageData);
                                 return await OCRHelper.OCR(source, language, scaleFactor, singleLine);
                             },
                             async () =>
@@ -2055,7 +1980,7 @@ namespace ShareX
                 },
                 SelectImageFileAsync = () =>
                 {
-                    using Image image = ImageHelpers.LoadImageWithFileDialog();
+                    using Image image = SkiaImageHelpers.LoadImageWithFileDialog();
                     return Task.FromResult(CreatePinToScreenSource(image));
                 },
                 CopyImage = CopyPinnedImage,
@@ -2094,7 +2019,7 @@ namespace ShareX
 
         public static void PinToScreen(string filePath, TaskSettings taskSettings = null)
         {
-            Image image = ImageHelpers.LoadImage(filePath);
+            Image image = SkiaImageHelpers.LoadImage(filePath);
 
             PinToScreen(image, taskSettings);
         }
@@ -2126,7 +2051,7 @@ namespace ShareX
 
         public static void PinToScreenFromFile(TaskSettings taskSettings = null)
         {
-            Image image = ImageHelpers.LoadImageWithFileDialog();
+            Image image = SkiaImageHelpers.LoadImageWithFileDialog();
 
             if (image != null)
             {
@@ -2157,7 +2082,7 @@ namespace ShareX
 
         private static void CopyPinnedImage(byte[] imageData)
         {
-            using Bitmap image = ImageHelpers.ByteArrayToBitmap(imageData);
+            using Bitmap image = SkiaImageHelpers.ByteArrayToBitmap(imageData);
             ClipboardHelpers.CopyImage(image);
         }
 
@@ -2675,7 +2600,7 @@ namespace ShareX
             {
                 try
                 {
-                    BarcodeWriter writer = new BarcodeWriter()
+                    BarcodeWriterGeneric writer = new BarcodeWriterGeneric()
                     {
                         Format = BarcodeFormat.QR_CODE,
                         Options = new QrCodeEncodingOptions
@@ -2686,11 +2611,18 @@ namespace ShareX
                             PureBarcode = true,
                             NoPadding = false,
                             Margin = 1
-                        },
-                        Renderer = new BitmapRenderer()
+                        }
                     };
 
-                    return writer.Write(text);
+                    BitMatrix matrix = writer.Encode(text);
+                    SKBitmap image = SkiaImageHelpers.CreateBitmap(matrix.Width, matrix.Height);
+                    using SKCanvas canvas = new(image);
+                    using SKPaint paint = new() { Color = SKColors.Black, IsAntialias = false };
+                    canvas.Clear(SKColors.White);
+                    for (int y = 0; y < matrix.Height; y++)
+                        for (int x = 0; x < matrix.Width; x++)
+                            if (matrix[x, y]) canvas.DrawRect(x, y, 1, 1, paint);
+                    return image;
                 }
                 catch (Exception e)
                 {
@@ -2705,7 +2637,7 @@ namespace ShareX
         {
             try
             {
-                BarcodeReader barcodeReader = new BarcodeReader()
+                BarcodeReaderGeneric barcodeReader = new BarcodeReaderGeneric()
                 {
                     AutoRotate = true,
                     Options = new DecodingOptions
@@ -2720,7 +2652,12 @@ namespace ShareX
                     barcodeReader.Options.PossibleFormats = new List<BarcodeFormat>() { BarcodeFormat.QR_CODE };
                 }
 
-                Result[] results = barcodeReader.DecodeMultiple(bmp);
+                using SKBitmap pixels = new(new SKImageInfo(bmp.Width, bmp.Height, SKColorType.Bgra8888, SKAlphaType.Unpremul));
+                using (SKPixmap source = bmp.PeekPixels())
+                    if (!source.ReadPixels(pixels.Info, pixels.GetPixels(), pixels.RowBytes)) return null;
+                byte[] bytes = new byte[pixels.ByteCount];
+                Marshal.Copy(pixels.GetPixels(), bytes, 0, bytes.Length);
+                Result[] results = barcodeReader.DecodeMultiple(bytes, pixels.Width, pixels.Height, RGBLuminanceSource.BitmapFormat.BGRA32);
 
                 if (results != null)
                 {

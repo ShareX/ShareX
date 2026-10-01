@@ -30,6 +30,8 @@ using ShareX.ImageEditor.Integration;
 using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 using SkiaSharp;
 using System.Drawing;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
 using System.Threading.Tasks;
 
 namespace ShareX.ScreenCaptureLib;
@@ -46,7 +48,7 @@ public static class RegionCaptureTasks
 
         using (result.Image)
         {
-            return GdiSkiaBitmapConverter.ToGdiBitmap(result.Image);
+            return result.Image.Copy();
         }
     }
 
@@ -61,7 +63,7 @@ public static class RegionCaptureTasks
 
         using (result.Image)
         {
-            return (GdiSkiaBitmapConverter.ToGdiBitmap(result.Image), result.ScreenRectangle);
+            return (result.Image.Copy(), result.ScreenRectangle);
         }
     }
 
@@ -96,7 +98,7 @@ public static class RegionCaptureTasks
             ? screenshot.CaptureActiveMonitor()
             : screenshot.CaptureFullscreen())
         {
-            frozenScreenshot = GdiSkiaBitmapConverter.ToSKBitmap(canvas);
+            frozenScreenshot = canvas.Copy();
         }
 
         AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest

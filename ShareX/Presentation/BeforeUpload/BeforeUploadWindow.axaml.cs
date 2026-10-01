@@ -36,8 +36,10 @@ using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using DrawingBitmap = System.Drawing.Bitmap;
-using DrawingImageFormat = System.Drawing.Imaging.ImageFormat;
+using DrawingBitmap = SkiaSharp.SKBitmap;
+using DrawingImageFormat = SkiaSharp.SKEncodedImageFormat;
+
+using SkiaSharp;
 
 namespace ShareX;
 
@@ -70,7 +72,7 @@ public partial class BeforeUploadWindow : Window
         }
         else if (!string.IsNullOrEmpty(info.FilePath) && File.Exists(info.FilePath) && FileHelpers.IsImageFile(info.FilePath))
         {
-            _ownedSourceImage = ImageHelpers.LoadImage(info.FilePath);
+            _ownedSourceImage = SkiaImageHelpers.LoadImage(info.FilePath);
             _sourceImage = _ownedSourceImage;
         }
 

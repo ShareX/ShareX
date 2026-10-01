@@ -25,6 +25,10 @@
 
 using ShareX.HelpersLib;
 using System.Drawing;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
+
+using SkiaSharp;
 
 namespace ShareX
 {

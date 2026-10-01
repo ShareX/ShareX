@@ -29,6 +29,10 @@ using ShareX.HelpersLib;
 using System.Diagnostics;
 using System.Drawing;
 
+
+
+using SkiaSharp;
+
 namespace ShareX.Tools
 {
     public class VideoThumbnailer
@@ -125,10 +129,10 @@ namespace ShareX.Tools
             {
                 if (Options.CombineScreenshots)
                 {
-                    using (Image img = CombineScreenshots(tempThumbnails))
+                    using (SKBitmap img = CombineScreenshots(tempThumbnails))
                     {
                         string tempFilePath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + Options.FilenameSuffix + "." + Options.ImageFormat.GetDescription());
-                        ImageHelpers.SaveImage(img, tempFilePath);
+                        SkiaImageHelpers.SaveImage(img, tempFilePath);
                         thumbnails.Add(new VideoThumbnailInfo(tempFilePath));
                     }
 
@@ -196,10 +200,10 @@ namespace ShareX.Tools
             return (int)((RandomFast.NextDouble() * (mediaSeekTimes[start + 1] - mediaSeekTimes[start])) + mediaSeekTimes[start]);
         }
 
-        private Image CombineScreenshots(List<VideoThumbnailInfo> thumbnails)
+        private SKBitmap CombineScreenshots(List<VideoThumbnailInfo> thumbnails)
         {
-            List<Bitmap> images = new List<Bitmap>();
-            Image finalImage = null;
+            List<SKBitmap> images = new List<SKBitmap>();
+            SKBitmap finalImage = null;
 
             try
             {
@@ -210,20 +214,20 @@ namespace ShareX.Tools
                 {
                     infoString = VideoInfo.ToString();
 
-                    using (Font font = new Font("Arial", 12))
+                    using (ImageFont font = new ImageFont("Arial", 12))
                     {
-                        infoStringHeight = Helpers.MeasureText(infoString, font).Height;
+                        infoStringHeight = SkiaDrawing.MeasureText(infoString, font).Height;
                     }
                 }
 
                 foreach (VideoThumbnailInfo thumbnail in thumbnails)
                 {
-                    Bitmap bmp = ImageHelpers.LoadImage(thumbnail.FilePath);
+                    SKBitmap bmp = SkiaImageHelpers.LoadImage(thumbnail.FilePath);
 
                     if (Options.MaxThumbnailWidth > 0 && bmp.Width > Options.MaxThumbnailWidth)
                     {
                         int maxThumbnailHeight = (int)((float)Options.MaxThumbnailWidth / bmp.Width * bmp.Height);
-                        bmp = ImageHelpers.ResizeImage(bmp, Options.MaxThumbnailWidth, maxThumbnailHeight);
+                        bmp = SkiaImageHelpers.ResizeImage(bmp, Options.MaxThumbnailWidth, maxThumbnailHeight);
                     }
 
                     images.Add(bmp);
@@ -246,17 +250,18 @@ namespace ShareX.Tools
                              (thumbHeight * rowCount) +
                              ((rowCount - 1) * Options.Spacing);
 
-                finalImage = new Bitmap(width, height);
+                finalImage = SkiaImageHelpers.CreateBitmap(width, height);
 
-                using (Graphics g = Graphics.FromImage(finalImage))
+                using (SKCanvas g = new SKCanvas(finalImage))
                 {
                     g.Clear(Color.WhiteSmoke);
 
                     if (!string.IsNullOrEmpty(infoString))
                     {
-                        using (Font font = new Font("Arial", 12))
+                        using (ImageFont font = new ImageFont("Arial", 12))
                         {
-                            g.DrawString(infoString, font, Brushes.Black, Options.Padding, Options.Padding);
+                            using SKPaint textPaint = SkiaDrawing.Fill(Color.Black);
+                            g.DrawText(infoString, new PointF(Options.Padding, Options.Padding), font, textPaint);
                         }
                     }
 
@@ -273,7 +278,7 @@ namespace ShareX.Tools
                             {
                                 int shadowOffset = 3;
 
-                                using (Brush shadowBrush = new SolidBrush(Color.FromArgb(75, Color.Black)))
+                                using (SKPaint shadowBrush = SkiaDrawing.Fill(Color.FromArgb(75, Color.Black)))
                                 {
                                     g.FillRectangle(shadowBrush, offsetX + shadowOffset, offsetY + shadowOffset, thumbWidth, thumbHeight);
                                 }
@@ -283,16 +288,20 @@ namespace ShareX.Tools
 
                             if (Options.DrawBorder)
                             {
-                                g.DrawRectangleProper(Pens.Black, offsetX, offsetY, thumbWidth, thumbHeight);
+                                using SKPaint borderPaint = SkiaDrawing.Stroke(Color.Black);
+                                g.DrawRectangleProper(borderPaint, offsetX, offsetY, thumbWidth, thumbHeight);
                             }
 
                             if (Options.AddTimestamp)
                             {
                                 int timestampOffset = 10;
 
-                                using (Font font = new Font("Arial", 10, FontStyle.Bold))
+                                using (ImageFont font = new ImageFont("Arial", 10, ImageFontStyle.Bold))
                                 {
-                                    g.DrawTextWithShadow(thumbnails[i].Timestamp.ToString(), new Point(offsetX + timestampOffset, offsetY + timestampOffset), font, Brushes.White, Brushes.Black);
+                                    using SKPaint foreground = SkiaDrawing.Fill(Color.White);
+                                    using SKPaint shadow = SkiaDrawing.Fill(Color.Black);
+                                    g.DrawText(thumbnails[i].Timestamp.ToString(), new PointF(offsetX + timestampOffset + 1, offsetY + timestampOffset + 1), font, shadow);
+                                    g.DrawText(thumbnails[i].Timestamp.ToString(), new PointF(offsetX + timestampOffset, offsetY + timestampOffset), font, foreground);
                                 }
                             }
 
@@ -323,7 +332,7 @@ namespace ShareX.Tools
             }
             finally
             {
-                foreach (Bitmap image in images)
+                foreach (SKBitmap image in images)
                 {
                     if (image != null)
                     {

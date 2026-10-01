@@ -26,10 +26,14 @@
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
-using System.Drawing.Imaging;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+
+using SkiaSharp;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -112,7 +116,7 @@ namespace ShareX.ScreenCaptureLib
 
                     Bitmap transparentImage;
 
-                    if (ImageHelpers.CompareImages(whiteBackground, whiteBackground2))
+                    if (SkiaImageHelpers.CompareImages(whiteBackground, whiteBackground2))
                     {
                         transparentImage = CreateTransparentImage(whiteBackground, blackBackground);
                         isTransparent = true;
@@ -130,7 +134,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (isTransparent)
                     {
-                        transparentImage = ImageHelpers.AutoCropImage(transparentImage);
+                        transparentImage = SkiaImageHelpers.AutoCropImage(transparentImage);
 
                         if (!CaptureShadow)
                         {
@@ -165,13 +169,13 @@ namespace ShareX.ScreenCaptureLib
 
         private Bitmap CreateTransparentImage(Bitmap whiteBackground, Bitmap blackBackground)
         {
-            if (whiteBackground != null && blackBackground != null && whiteBackground.Size == blackBackground.Size)
+            if (whiteBackground != null && blackBackground != null && whiteBackground.GetSize() == blackBackground.GetSize())
             {
-                Bitmap result = new Bitmap(whiteBackground.Width, whiteBackground.Height, PixelFormat.Format32bppArgb);
+                Bitmap result = SkiaImageHelpers.CreateBitmap(whiteBackground.Width, whiteBackground.Height);
 
-                using (UnsafeBitmap whiteBitmap = new UnsafeBitmap(whiteBackground, true, ImageLockMode.ReadOnly))
-                using (UnsafeBitmap blackBitmap = new UnsafeBitmap(blackBackground, true, ImageLockMode.ReadOnly))
-                using (UnsafeBitmap resultBitmap = new UnsafeBitmap(result, true, ImageLockMode.WriteOnly))
+                using (SkiaPixelBuffer whiteBitmap = new SkiaPixelBuffer(whiteBackground, true, PixelAccess.ReadOnly))
+                using (SkiaPixelBuffer blackBitmap = new SkiaPixelBuffer(blackBackground, true, PixelAccess.ReadOnly))
+                using (SkiaPixelBuffer resultBitmap = new SkiaPixelBuffer(result, true, PixelAccess.WriteOnly))
                 {
                     int pixelCount = blackBitmap.PixelCount;
 
@@ -209,7 +213,7 @@ namespace ShareX.ScreenCaptureLib
             int cornerSize = 10;
             int alphaOffset = 200;
 
-            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bitmap, true))
+            using (SkiaPixelBuffer unsafeBitmap = new SkiaPixelBuffer(bitmap, true))
             {
                 for (int i = 0; i < cornerSize; i++)
                 {

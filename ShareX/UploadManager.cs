@@ -29,6 +29,8 @@ using ShareX.Tools;
 using ShareX.UploadersLib;
 using System;
 using System.Drawing;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -39,6 +41,8 @@ using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
 using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
+
+using SkiaSharp;
 
 namespace ShareX
 {
@@ -215,7 +219,7 @@ namespace ShareX
                     }
                     else
                     {
-                        image = (Bitmap)Clipboard.GetImage();
+                        image = ClipboardHelpers.GetImage();
                     }
 
                     ProcessImageUpload(image, taskSettings);

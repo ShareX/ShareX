@@ -30,9 +30,9 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Imaging;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
-using DrawingImage = System.Drawing.Image;
+using DrawingImage = SkiaSharp.SKBitmap;
 
 namespace ShareX.HelpersLib;
 
@@ -88,7 +88,7 @@ public static class ImageViewerWindowIntegration
 
         try
         {
-            using DrawingImage? clonedImage = image.CloneSafe();
+            using DrawingImage? clonedImage = image.Copy();
             if (clonedImage == null)
             {
                 return;

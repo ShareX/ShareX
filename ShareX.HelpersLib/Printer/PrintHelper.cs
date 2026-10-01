@@ -25,6 +25,10 @@
 
 using System;
 using System.Drawing;
+using SkiaSharp;
+using System.IO;
+using System.Runtime.InteropServices;
+using Image = SkiaSharp.SKBitmap;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
@@ -163,8 +167,8 @@ namespace ShareX.HelpersLib
             if (Settings.AutoRotateImage && ((rect.Width > rect.Height && Image.Width < Image.Height) ||
                 (rect.Width < rect.Height && Image.Width > Image.Height)))
             {
-                img = (Image)Image.Clone();
-                img.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                img = Image.Copy();
+                SkiaImageHelpers.RotateFlipInPlace(img, 1);
             }
             else
             {
@@ -177,8 +181,36 @@ namespace ShareX.HelpersLib
             }
             else
             {
-                e.Graphics.DrawImage(img, rect, new Rectangle(0, 0, rect.Width, rect.Height), GraphicsUnit.Pixel);
+                DrawImage(e.Graphics, img, rect);
             }
+            if (!ReferenceEquals(img, Image)) img.Dispose();
+        }
+
+        [DllImport("gdi32.dll", SetLastError = true)]
+        private static extern int StretchDIBits(IntPtr dc, int x, int y, int width, int height,
+            int sourceX, int sourceY, int sourceWidth, int sourceHeight, IntPtr pixels,
+            ref BITMAPINFOHEADER info, uint usage, uint operation);
+
+        internal static void DrawImage(Graphics graphics, SKBitmap image, Rectangle rectangle)
+        {
+            using SKBitmap opaque = SkiaImageHelpers.FillBackground(image, Color.White);
+            using MemoryStream stream = new();
+            opaque.Save(stream, SKEncodedImageFormat.Bmp);
+            byte[] bytes = stream.ToArray();
+            BITMAPINFOHEADER header = new(image.Width, image.Height, 24) { biSize = 40 };
+            header.biSizeImage = (uint)(bytes.Length - 54);
+            GCHandle pinned = GCHandle.Alloc(bytes, GCHandleType.Pinned);
+            float scaleX = graphics.DpiX / 100f, scaleY = graphics.DpiY / 100f;
+            rectangle = new Rectangle((int)Math.Round(rectangle.X * scaleX), (int)Math.Round(rectangle.Y * scaleY),
+                (int)Math.Round(rectangle.Width * scaleX), (int)Math.Round(rectangle.Height * scaleY));
+            IntPtr dc = graphics.GetHdc();
+            try
+            {
+                StretchDIBits(dc, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height,
+                    0, 0, image.Width, image.Height, IntPtr.Add(pinned.AddrOfPinnedObject(), 54),
+                    ref header, 0, 0x00CC0020);
+            }
+            finally { graphics.ReleaseHdc(dc); pinned.Free(); }
         }
 
         private void DrawAutoScaledImage(Graphics g, Image img, Rectangle rect, bool allowEnlarge = false, bool centerImage = false)
@@ -210,8 +242,7 @@ namespace ShareX.HelpersLib
                 newY += (int)((rect.Height - (img.Height * ratio)) / 2);
             }
 
-            g.SetHighQuality();
-            g.DrawImage(img, newX, newY, newWidth, newHeight);
+            DrawImage(g, img, new Rectangle(newX, newY, newWidth, newHeight));
         }
     }
 }

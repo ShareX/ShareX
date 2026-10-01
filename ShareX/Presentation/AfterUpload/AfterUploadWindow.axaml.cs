@@ -38,8 +38,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using DrawingBitmap = System.Drawing.Bitmap;
-using DrawingImageFormat = System.Drawing.Imaging.ImageFormat;
+using DrawingBitmap = SkiaSharp.SKBitmap;
+using DrawingImageFormat = SkiaSharp.SKEncodedImageFormat;
+
+using SkiaSharp;
 
 namespace ShareX;
 
@@ -169,11 +171,11 @@ public partial class AfterUploadWindow : Window
         {
             if (!string.IsNullOrEmpty(_info.FilePath) && File.Exists(_info.FilePath) && FileHelpers.IsImageFile(_info.FilePath))
             {
-                _ownedSourceImage = ImageHelpers.LoadImage(_info.FilePath);
+                _ownedSourceImage = SkiaImageHelpers.LoadImage(_info.FilePath);
             }
             else if (_info.Metadata?.Image != null)
             {
-                _ownedSourceImage = _info.Metadata.Image.CloneSafe();
+                _ownedSourceImage = _info.Metadata.Image?.Copy();
             }
 
             _sourceImage = _ownedSourceImage;

@@ -30,7 +30,7 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using System;
 using System.Threading.Tasks;
-using DrawingImage = System.Drawing.Image;
+using DrawingImage = SkiaSharp.SKBitmap;
 
 namespace ShareX.HelpersLib;
 

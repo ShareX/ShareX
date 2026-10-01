@@ -26,7 +26,11 @@
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
-using System.Drawing.Imaging;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
+
+using SkiaSharp;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -157,50 +161,11 @@ namespace ShareX.ScreenCaptureLib
 
         private Bitmap CaptureRectangleGDI(IntPtr handle, Rectangle rect, bool captureCursor)
         {
-            IntPtr hdcSrc = NativeMethods.GetWindowDC(handle);
-            IntPtr hdcDest = NativeMethods.CreateCompatibleDC(hdcSrc);
-            IntPtr hBitmap = NativeMethods.CreateCompatibleBitmap(hdcSrc, rect.Width, rect.Height);
-            IntPtr hOld = NativeMethods.SelectObject(hdcDest, hBitmap);
-            NativeMethods.BitBlt(hdcDest, 0, 0, rect.Width, rect.Height, hdcSrc, rect.X, rect.Y, CopyPixelOperation.SourceCopy | CopyPixelOperation.CaptureBlt);
-
-            if (captureCursor)
+            return WindowsImageInterop.Capture(rect, captureCursor ? dc =>
             {
-                try
-                {
-                    CursorData cursorData = new CursorData();
-                    cursorData.DrawCursor(hdcDest, rect.Location);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Cursor capture failed.");
-                }
-            }
-
-            NativeMethods.SelectObject(hdcDest, hOld);
-            NativeMethods.DeleteDC(hdcDest);
-            NativeMethods.ReleaseDC(handle, hdcSrc);
-            Bitmap bmp = Image.FromHbitmap(hBitmap);
-            NativeMethods.DeleteObject(hBitmap);
-
-            return bmp;
-        }
-
-        private Bitmap CaptureRectangleManaged(Rectangle rect)
-        {
-            if (rect.Width == 0 || rect.Height == 0)
-            {
-                return null;
-            }
-
-            Bitmap bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format24bppRgb);
-
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                // Managed can't use SourceCopy | CaptureBlt because of .NET bug
-                g.CopyFromScreen(rect.Location, Point.Empty, rect.Size, CopyPixelOperation.SourceCopy);
-            }
-
-            return bmp;
+                try { new CursorData().DrawCursor(dc, rect.Location); }
+                catch (Exception exception) { DebugHelper.WriteException(exception, "Cursor capture failed."); }
+            } : null, handle);
         }
     }
 }

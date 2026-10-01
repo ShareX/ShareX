@@ -30,6 +30,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -39,6 +41,8 @@ using System.Windows.Forms;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
+
+using SkiaSharp;
 
 namespace ShareX
 {
@@ -116,7 +120,7 @@ namespace ShareX
             if (task.Info.TaskSettings.AdvancedSettings.ProcessImagesDuringFileUpload && task.Info.DataType == EDataType.Image)
             {
                 task.Info.Job = TaskJob.Job;
-                task.Image = ImageHelpers.LoadImage(task.Info.FilePath);
+                task.Image = SkiaImageHelpers.LoadImage(task.Info.FilePath);
             }
             else
             {
@@ -604,7 +608,7 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.PinToScreen))
             {
-                Image imageCopy = Image.CloneSafe();
+                Image imageCopy = Image?.Copy();
                 TaskHelpers.PinToScreen(imageCopy, Info.TaskSettings);
             }
 
@@ -1148,7 +1152,7 @@ namespace ShareX
 
                 if (Image != null)
                 {
-                    image = (Bitmap)Image.Clone();
+                    image = (Bitmap)Image.Copy();
                 }
 
                 threadWorker.InvokeAsync(() =>

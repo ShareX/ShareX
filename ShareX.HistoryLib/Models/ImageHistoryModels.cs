@@ -31,13 +31,13 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Drawing.Imaging;
+using SkiaSharp;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
-using DrawingBitmap = System.Drawing.Bitmap;
+using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingRectangle = System.Drawing.Rectangle;
 using DrawingSize = System.Drawing.Size;
 
@@ -238,19 +238,9 @@ public sealed class ImageHistoryThumbnailLoader : IDisposable
             using DrawingBitmap? shellThumbnail = NativeMethods.GetFileThumbnail(filePath, new DrawingSize(width, height));
             if (shellThumbnail != null)
             {
-                DrawingRectangle bounds = new(0, 0, shellThumbnail.Width, shellThumbnail.Height);
-                BitmapData data = shellThumbnail.LockBits(bounds, ImageLockMode.ReadOnly,
-                    System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
-                try
-                {
-                    if (token.IsCancellationRequested) return null;
-                    return new AvaloniaBitmap(Avalonia.Platform.PixelFormat.Bgra8888, AlphaFormat.Premul, data.Scan0,
-                        new PixelSize(shellThumbnail.Width, shellThumbnail.Height), new Vector(96, 96), data.Stride);
-                }
-                finally
-                {
-                    shellThumbnail.UnlockBits(data);
-                }
+                if (token.IsCancellationRequested) return null;
+                return new AvaloniaBitmap(Avalonia.Platform.PixelFormat.Bgra8888, AlphaFormat.Unpremul, shellThumbnail.GetPixels(),
+                    new PixelSize(shellThumbnail.Width, shellThumbnail.Height), new Vector(96, 96), shellThumbnail.RowBytes);
             }
         }
         catch (OperationCanceledException)
