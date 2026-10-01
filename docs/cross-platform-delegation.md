@@ -18,16 +18,33 @@ ShareX is cross-platform when all of these hold:
 5. On Linux (X11 and Wayland: Hyprland, sway, GNOME, KDE) and macOS, every feature either works or is disabled with a reason that tells the user what to install or why it is not possible.
 6. CI builds and tests on all three operating systems, and Linux has an install path (script, then a package).
 
-## Step 0: one branch (decision needed)
+## Branches and phases
 
-`develop` has no `ShareX.Platform*` projects, so platform work cannot be done there. Before the split starts, pick one:
+### Phase 1: until v22.0.0 is released
 
-- **A (recommended).** Jaex merges `cross-platform` into `develop` once, and both agents then work on `develop`. There is a single line of history and no more two-way merges.
-- **B.** Both agents work on `cross-platform` and Jaex keeps `develop` for releases. `develop` is merged into `cross-platform` after every Jaex push, as now.
+- **Agent J works on `develop`.** v22.0.0 is released from `develop`, and Jaex keeps working there until then. `develop` has no `ShareX.Platform*` projects and no `ShareX.HelpersLib.Windows`, so J does only the tasks marked *Phase 1* below. These are mostly removing GDI+ and WinForms inside the existing files, plus checking on Windows that the `cross-platform` build behaves the same (J1).
+- **Agent M works on `cross-platform`** and merges `develop` into it after every Jaex push (task M0). When both branches changed the same code, `develop`'s version wins and M re-applies the platform abstraction on top.
+- **Keep the Phase 1 merges small:**
+  - Agent J changes code inside existing files and avoids moving or renaming files between projects. Moves are what made the first merge conflict in 123 files.
+  - Agent J puts any new Windows-only code in files named `Windows…` or behind a clearly separated method, so M can lift it into `ShareX.Platform.Windows`.
+  - On `cross-platform`, Agent M edits J-owned projects only where the platform abstraction requires it, and records each such edit in the status log so J knows about it after Phase 2 starts.
+- **Bug rows and J1 results** can be added to this file on `cross-platform` by Jaex, by McoreD, or by M on Jaex's behalf.
 
-Until this is decided, Agent J keeps working on `develop` and Agent M merges `develop` into `cross-platform` after each Jaex push. When both changed the same code, `develop`'s version wins and the platform abstraction is re-applied on top.
+### Handover at v22.0.0
 
-Decision: _pending_ (record the choice and date here).
+1. Jaex releases v22.0.0 from `develop` and tags it.
+2. Agent M merges the final `develop` into `cross-platform`. The solution builds and all tests pass on Windows, Linux and macOS (CI green).
+3. Agent M records the merge commit here, and lists every J-owned file that M changed during Phase 1.
+4. Agent J switches to `cross-platform`, reads AGENTS.md and this file, and claims Phase 2 tasks.
+5. `develop` becomes hotfix-only for 22.x. Whoever makes a hotfix there also merges it into `cross-platform` the same day.
+
+Handover: _pending_ (record the v22.0.0 tag, the merge commit and the date here).
+
+### Phase 2: after v22.0.0
+
+- **Both agents work on `cross-platform`** and own the projects listed below. The other agent's projects are changed only through the request log.
+- **Before every push:** fetch, rebase or merge, build and test. Two agents now push to the same branch, so claim tasks in this file first.
+- **When the goal is met,** `cross-platform` becomes the main line, either merged into `develop` for v23 or replacing it. Jaex and McoreD decide which; record it here.
 
 ## Ownership
 
@@ -67,21 +84,22 @@ Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (
 
 ## Tasks: Agent J (Windows and application shell)
 
-| ID | Task | Projects | Depends on | Status |
-| --- | --- | --- | --- | --- |
-| J1 | **Verify on Windows** everything M moved into `ShareX.Platform.Windows`, and file a bug row for anything that differs from before. Checklist below. | run the app | none | todo |
-| J2 | Replace the WinForms hotkey host (`HotkeyForm`, `IHotkeyHost`, `HotkeyManager`) with `IPlatformServices.Hotkeys` (`IHotkeyService`; `WindowsHotkeyService` already exists). | `ShareX`, `HelpersLib.Windows/Input` | none | todo |
-| J3 | Replace `MainForm` and the WinForms message loop in `Program.cs` with the Avalonia lifetime; tray via Avalonia `TrayIcon` and `DesktopServices.RegisterTrayIcon` (retire `TrayIconService`'s WinForms parts and `WindowsTrayIcon`). | `ShareX` | J2 | todo |
-| J4 | Replace the Win32 calls left in the app: `CaptureBase`, `CaptureWindow`, `CaptureCustomWindow`, `TaskMetadata`, `MainMenuBuilder` (window icons via `IWindowManagementService.GetIcon`), `ScreenRecordManager` (active window via `IWindowService.GetActiveWindow`), `NotificationWindow`, `AfterCaptureWindow`, `AfterUploadWindow`, `BeforeUploadWindow`, `ClipboardUploadWindow`, `ThumbnailItemViewModel`. File a request for anything the services do not cover yet. | `ShareX` | none | todo |
-| J5 | Replace the registry use in `SystemOptions` and `IntegrationHelpers` with `IStartupService`, `IShellIntegrationService` and the settings files (request a service if one is missing, for example browser native-messaging registration). | `ShareX` | R-rows | todo |
-| J6 | Dissolve `ShareX.HelpersLib.Windows`. Move portable code (update checkers, FFmpeg downloader, `WindowState`, `XmlFont`, print settings, update windows) into `HelpersLib`. Request services for Windows-only behaviour (printing, DWM, taskbar progress, desktop icons, timer resolution, shortcuts, clipboard extras, input simulation). Delete the rest, then remove the project from the solution. | `HelpersLib.Windows`, `HelpersLib` | J2 to J5, R-rows | todo |
-| J7 | Retarget `ShareX.csproj` to `net10.0;net10.0-windows10.0.22621.0`. The plain target is what Linux and macOS build. The Windows release builds the Windows SDK target, so `ShareX.Platform.Windows` supplies its WinRT features (OCR) there. Choose `IPlatformServices` by OS at start up. Add the host-project exception to AGENTS.md. | `ShareX` | J2 to J6, M1 | todo |
-| J8 | `ShareX.NativeMessagingHost` → `net10.0`: replace `CreateProcess` with `Process.Start` (job breakaway behind a service if still needed) and move manifest registration to a service. | `NativeMessagingHost` | R-row | todo |
-| J9 | Keep `ShareX.Setup` and `ShareX.Steam` Windows-only, and document them as the allowed exceptions in AGENTS.md. | `Setup`, `Steam` | none | todo |
+| ID | Task | Projects | Depends on | When | Status |
+| --- | --- | --- | --- | --- | --- |
+| J0 | On `develop`, keep replacing GDI+ and WinForms with SkiaSharp and Avalonia inside the existing files (as in the 2026-10-01 commits), and release v22.0.0. | all J projects on `develop` | none | Phase 1 | in progress |
+| J1 | **Verify on Windows** everything M moved into `ShareX.Platform.Windows`, and file a bug row for anything that differs from before. Checklist below. | run the app | none | Phase 1 and 2 | todo |
+| J2 | Replace the WinForms hotkey host (`HotkeyForm`, `IHotkeyHost`, `HotkeyManager`) with `IPlatformServices.Hotkeys` (`IHotkeyService`; `WindowsHotkeyService` already exists). | `ShareX`, `HelpersLib.Windows/Input` | none | Phase 2 | todo |
+| J3 | Replace `MainForm` and the WinForms message loop in `Program.cs` with the Avalonia lifetime; tray via Avalonia `TrayIcon` and `DesktopServices.RegisterTrayIcon` (retire `TrayIconService`'s WinForms parts and `WindowsTrayIcon`). | `ShareX` | none to start; J2 to finish | Phase 1 (on `develop`, with its Windows hotkey adapter), finished in Phase 2 | todo |
+| J4 | Replace the Win32 calls left in the app: `CaptureBase`, `CaptureWindow`, `CaptureCustomWindow`, `TaskMetadata`, `MainMenuBuilder` (window icons via `IWindowManagementService.GetIcon`), `ScreenRecordManager` (active window via `IWindowService.GetActiveWindow`), `NotificationWindow`, `AfterCaptureWindow`, `AfterUploadWindow`, `BeforeUploadWindow`, `ClipboardUploadWindow`, `ThumbnailItemViewModel`. File a request for anything the services do not cover yet. | `ShareX` | none | Phase 2 | todo |
+| J5 | Replace the registry use in `SystemOptions` and `IntegrationHelpers` with `IStartupService`, `IShellIntegrationService` and the settings files (request a service if one is missing, for example browser native-messaging registration). | `ShareX` | R-rows | Phase 2 | todo |
+| J6 | Dissolve `ShareX.HelpersLib.Windows`. Move portable code (update checkers, FFmpeg downloader, `WindowState`, `XmlFont`, print settings, update windows) into `HelpersLib`. Request services for Windows-only behaviour (printing, DWM, taskbar progress, desktop icons, timer resolution, shortcuts, clipboard extras, input simulation). Delete the rest, then remove the project from the solution. | `HelpersLib.Windows`, `HelpersLib` | J2 to J5, R-rows | Phase 2 (in Phase 1: keep removing GDI+ and WinForms from the files involved, without moving them) | todo |
+| J7 | Retarget `ShareX.csproj` to `net10.0;net10.0-windows10.0.22621.0`. The plain target is what Linux and macOS build. The Windows release builds the Windows SDK target, so `ShareX.Platform.Windows` supplies its WinRT features (OCR) there. Choose `IPlatformServices` by OS at start up. Add the host-project exception to AGENTS.md. | `ShareX` | J2 to J6, M1 | Phase 2 | todo |
+| J8 | `ShareX.NativeMessagingHost` → `net10.0`: replace `CreateProcess` with `Process.Start` (job breakaway behind a service if still needed) and move manifest registration to a service. | `NativeMessagingHost` | R-row | Phase 2 | todo |
+| J9 | Keep `ShareX.Setup` and `ShareX.Steam` Windows-only, and document them as the allowed exceptions in AGENTS.md. | `Setup`, `Steam` | none | Phase 1 or 2 | todo |
 
 ### J1 Windows verification checklist
 
-Tick each item once it behaves as in the last release on Windows 10 and 11. File a bug row for anything that does not.
+Build the `cross-platform` branch on Windows (Phase 1) or work on it directly (Phase 2). Tick each item once it behaves as in the last release on Windows 10 and 11. File a bug row for anything that does not.
 
 - [ ] Full screen, monitor, region and last-region capture (GDI, `WindowsScreenCaptureService`)
 - [ ] Capture with cursor; mixed-DPI multi-monitor bounds
@@ -100,8 +118,11 @@ Tick each item once it behaves as in the last release on Windows 10 and 11. File
 
 ## Tasks: Agent M (platform layer, Linux, macOS, Tools)
 
+Agent M works on `cross-platform` in both phases.
+
 | ID | Task | Projects | Depends on | Status |
 | --- | --- | --- | --- | --- |
+| M0 | Merge `develop` into `cross-platform` after every Jaex push in Phase 1, re-applying the platform abstraction; do the final merge at the handover. | all | Jaex pushes | ongoing (last: `6c66e109c`, 2026-10-02) |
 | M1 | Finish `ShareX.Tools` → `net10.0` and drop its `HelpersLib.Windows` reference: OCR, clipboard viewer, mouse highlighter (stashed work), inspect and borderless window via `IWindowManagementService`, ruler capture via `IScreenCaptureService`, and the leftovers in pin to screen, monitor test, image combiner and GIF trimmer. Reconcile with develop's new `AvaloniaClipboard`. | `Tools` | none | todo |
 | M2 | ImageEditor OS integrations → services: `IDesktopWallpaperService` (move the Windows, Linux and macOS implementations into `ShareX.Platform.*`), the emoji and cursor renderers, and the P/Invoke in `EditorView.ImageInsert`. | `ImageEditor` (owned files), `Platform.*` | none | todo |
 | M3 | `ShareX.Avalonia`: screen colour picker P/Invoke and OS branch → `IWindowService`/`IScreenCaptureService`; cursor asset loader. | `Avalonia` (owned files) | none | todo |
@@ -135,3 +156,4 @@ J adds rows. M fills in "Interface" and "Status".
 Newest at the bottom, one line per working session.
 
 - 2026-10-02, M: Document created after merging `develop` (Jaex, 12 commits) into `cross-platform` at `6c66e109c`. Solution builds on Linux; 326 tests pass. Tools port stashed pending Jaex finishing.
+- 2026-10-02, M: Added the two phases (Jaex on `develop` until v22.0.0, then both agents on `cross-platform`) and the handover steps.
