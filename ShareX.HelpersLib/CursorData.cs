@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using SkiaSharp;
 using System;
 using System.Drawing;
-using SkiaSharp;
 using System.Runtime.InteropServices;
 
 namespace ShareX.HelpersLib

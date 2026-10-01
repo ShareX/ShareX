@@ -27,10 +27,6 @@ using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
-
-using SkiaSharp;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -165,7 +161,8 @@ namespace ShareX.ScreenCaptureLib
             {
                 try { new CursorData().DrawCursor(dc, rect.Location); }
                 catch (Exception exception) { DebugHelper.WriteException(exception, "Cursor capture failed."); }
-            } : null, handle);
+            }
+            : null, handle);
         }
     }
 }

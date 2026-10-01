@@ -29,20 +29,17 @@ using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
+using Bitmap = SkiaSharp.SKBitmap;
+using Image = SkiaSharp.SKBitmap;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
-
-using SkiaSharp;
 
 namespace ShareX
 {

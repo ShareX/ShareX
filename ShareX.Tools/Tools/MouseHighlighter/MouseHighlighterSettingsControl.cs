@@ -27,8 +27,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Layout;
 using Avalonia.Media;
-using DrawingColor = System.Drawing.Color;
 using ShareX.Tools.Localization;
+using DrawingColor = System.Drawing.Color;
 
 namespace ShareX.Tools;
 

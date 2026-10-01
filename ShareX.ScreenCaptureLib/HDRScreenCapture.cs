@@ -24,20 +24,16 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System;
 using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.Runtime.InteropServices;
 using Vortice.Direct3D;
 using Vortice.Direct3D11;
 using Vortice.DXGI;
 using Vortice.Mathematics;
 using Vortice.WIC;
-
-
-using SkiaSharp;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -590,33 +586,33 @@ namespace ShareX.ScreenCaptureLib
             using SkiaPixelBuffer destinationData = new(destination, true);
             using SkiaPixelBuffer toneMappedData = new(toneMappedBitmap, true, PixelAccess.ReadOnly);
             using SkiaPixelBuffer referenceData = new(sdrReferenceBitmap, true, PixelAccess.ReadOnly);
-                for (int y = 0; y < sourceRectangle.Height; y++)
+            for (int y = 0; y < sourceRectangle.Height; y++)
+            {
+                byte* destinationRow = (byte*)destinationData.Pointer + ((y + destinationRectangle.Y) * destination.Width + destinationRectangle.X) * 4;
+                byte* toneMappedRow = (byte*)toneMappedData.Pointer + ((y + sourceRectangle.Y) * toneMappedBitmap.Width + sourceRectangle.X) * 4;
+                byte* referenceRow = (byte*)referenceData.Pointer + ((y + sourceRectangle.Y) * sdrReferenceBitmap.Width + sourceRectangle.X) * 4;
+
+                for (int x = 0; x < sourceRectangle.Width; x++)
                 {
-                    byte* destinationRow = (byte*)destinationData.Pointer + ((y + destinationRectangle.Y) * destination.Width + destinationRectangle.X) * 4;
-                    byte* toneMappedRow = (byte*)toneMappedData.Pointer + ((y + sourceRectangle.Y) * toneMappedBitmap.Width + sourceRectangle.X) * 4;
-                    byte* referenceRow = (byte*)referenceData.Pointer + ((y + sourceRectangle.Y) * sdrReferenceBitmap.Width + sourceRectangle.X) * 4;
+                    byte* destinationPixel = destinationRow + x * 4;
+                    byte* toneMappedPixel = toneMappedRow + x * 4;
+                    byte* referencePixel = referenceRow + x * 4;
 
-                    for (int x = 0; x < sourceRectangle.Width; x++)
+                    bool extendedRange = referencePixel[3] != 0;
+                    bool legacyCaptureMatchesSdr =
+                        Math.Abs(destinationPixel[0] - referencePixel[0]) <= SdrReferenceTolerance &&
+                        Math.Abs(destinationPixel[1] - referencePixel[1]) <= SdrReferenceTolerance &&
+                        Math.Abs(destinationPixel[2] - referencePixel[2]) <= SdrReferenceTolerance;
+
+                    if (extendedRange || !legacyCaptureMatchesSdr)
                     {
-                        byte* destinationPixel = destinationRow + x * 4;
-                        byte* toneMappedPixel = toneMappedRow + x * 4;
-                        byte* referencePixel = referenceRow + x * 4;
-
-                        bool extendedRange = referencePixel[3] != 0;
-                        bool legacyCaptureMatchesSdr =
-                            Math.Abs(destinationPixel[0] - referencePixel[0]) <= SdrReferenceTolerance &&
-                            Math.Abs(destinationPixel[1] - referencePixel[1]) <= SdrReferenceTolerance &&
-                            Math.Abs(destinationPixel[2] - referencePixel[2]) <= SdrReferenceTolerance;
-
-                        if (extendedRange || !legacyCaptureMatchesSdr)
-                        {
-                            destinationPixel[0] = toneMappedPixel[0];
-                            destinationPixel[1] = toneMappedPixel[1];
-                            destinationPixel[2] = toneMappedPixel[2];
-                            destinationPixel[3] = 255;
-                        }
+                        destinationPixel[0] = toneMappedPixel[0];
+                        destinationPixel[1] = toneMappedPixel[1];
+                        destinationPixel[2] = toneMappedPixel[2];
+                        destinationPixel[3] = 255;
                     }
                 }
+            }
         }
 
         private sealed class CapturedOutput : IDisposable

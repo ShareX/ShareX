@@ -26,12 +26,9 @@
 #nullable disable
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.Diagnostics;
 using System.Drawing;
-
-
-
-using SkiaSharp;
 
 namespace ShareX.Tools
 {

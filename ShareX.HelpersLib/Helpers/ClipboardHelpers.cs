@@ -25,16 +25,13 @@
 
 using System;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
 using Bitmap = SkiaSharp.SKBitmap;
 using Image = SkiaSharp.SKBitmap;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Windows.Forms;
-
-using SkiaSharp;
 
 namespace ShareX.HelpersLib
 {

@@ -31,14 +31,12 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using SkiaSharp;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingBitmap = SkiaSharp.SKBitmap;
-using DrawingRectangle = System.Drawing.Rectangle;
 using DrawingSize = System.Drawing.Size;
 
 namespace ShareX.HistoryLib;

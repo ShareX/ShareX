@@ -36,12 +36,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
 using System.Drawing.Design;
 using System.Linq;
-
-using SkiaSharp;
 
 namespace ShareX
 {

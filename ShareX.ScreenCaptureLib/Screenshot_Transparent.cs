@@ -26,14 +26,10 @@
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-
-using SkiaSharp;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX.ScreenCaptureLib
 {

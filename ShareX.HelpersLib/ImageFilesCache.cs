@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
-using SkiaSharp;
 
 namespace ShareX.HelpersLib
 {
@@ -55,7 +55,7 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-   public void Clear()
+        public void Clear()
         {
             if (images != null)
             {

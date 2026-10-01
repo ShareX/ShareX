@@ -25,7 +25,6 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
-using System.Drawing;
 using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib;

@@ -39,17 +39,15 @@ using ShareX.HelpersLib;
 using ShareX.Localization;
 using System;
 using System.Diagnostics;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingContentAlignment = System.Drawing.ContentAlignment;
 using FormsCursor = System.Windows.Forms.Cursor;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
-
-using SkiaSharp;
 
 namespace ShareX;
 

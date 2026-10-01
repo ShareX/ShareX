@@ -35,8 +35,6 @@ using System.IO;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 
-using SkiaSharp;
-
 namespace ShareX;
 
 public partial class AboutWindow : Window

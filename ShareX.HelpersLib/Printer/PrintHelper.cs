@@ -23,12 +23,12 @@
 
 #endregion License Information (GPL v3)
 
+using SkiaSharp;
 using System;
 using System.Drawing;
-using SkiaSharp;
-using Image = SkiaSharp.SKBitmap;
 using System.Drawing.Printing;
 using System.Windows.Forms;
+using Image = SkiaSharp.SKBitmap;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;

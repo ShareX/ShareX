@@ -39,8 +39,6 @@ using System.IO;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingImageFormat = SkiaSharp.SKEncodedImageFormat;
 
-using SkiaSharp;
-
 namespace ShareX;
 
 public partial class BeforeUploadWindow : Window

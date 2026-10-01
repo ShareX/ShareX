@@ -129,13 +129,13 @@ public static partial class SkiaImageHelpers
         }
         using SkiaPixelBuffer pixels = new(result, true);
         for (int y = 0; y < height; y++)
-        for (int x = 0; x < result.Width; x++)
-        {
-            ColorBgra color = pixels.GetPixel(x, y);
-            int alpha = (int)(maxAlpha - (maxAlpha - minAlpha) * y / (float)Math.Max(1, height - 1));
-            color.Alpha = (byte)Math.Min(color.Alpha, Math.Clamp(alpha, 0, 255));
-            pixels.SetPixel(x, y, color);
-        }
+            for (int x = 0; x < result.Width; x++)
+            {
+                ColorBgra color = pixels.GetPixel(x, y);
+                int alpha = (int)(maxAlpha - (maxAlpha - minAlpha) * y / (float)Math.Max(1, height - 1));
+                color.Alpha = (byte)Math.Min(color.Alpha, Math.Clamp(alpha, 0, 255));
+                pixels.SetPixel(x, y, color);
+            }
         return result;
     }
 
@@ -324,7 +324,8 @@ public static partial class SkiaImageHelpers
     public static ImageFileFormat GetImageFormat(string path) => Path.GetExtension(path).ToLowerInvariant() switch
     {
         ".jpg" or ".jpeg" or ".jpe" or ".jfif" => ImageFileFormat.Jpeg,
-        ".gif" => ImageFileFormat.Gif, ".bmp" => ImageFileFormat.Bmp,
+        ".gif" => ImageFileFormat.Gif,
+        ".bmp" => ImageFileFormat.Bmp,
         ".webp" => ImageFileFormat.Webp,
         _ => ImageFileFormat.Png
     };

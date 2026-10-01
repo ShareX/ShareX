@@ -27,12 +27,8 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
 using System.Text;
-
-using SkiaSharp;
+using Image = SkiaSharp.SKBitmap;
 
 namespace ShareX.Tools
 {

@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.UploadersLib.FileUploaders;
 using System;
 
 namespace ShareX.UploadersLib

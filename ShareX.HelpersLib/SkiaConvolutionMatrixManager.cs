@@ -26,9 +26,8 @@
 // Adapted from https://stackoverflow.com/questions/33569396/correctly-implement-a-2-pass-gaussian-blur
 // Filters: http://www.codeproject.com/Articles/2008/Image-Processing-for-Dummies-with-C-and-GDI-Part-2
 
-using System;
-using System.Drawing;
 using SkiaSharp;
+using System;
 using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib

@@ -24,12 +24,8 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
 using System.Threading.Tasks;
-
-using SkiaSharp;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX.ScreenCaptureLib;
 

@@ -59,8 +59,6 @@ using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
-using SkiaSharp;
-
 namespace ShareX;
 
 public partial class MainWindow : Window, INotifyPropertyChanged

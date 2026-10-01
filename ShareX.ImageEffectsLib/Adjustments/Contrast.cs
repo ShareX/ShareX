@@ -24,9 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.ComponentModel;
-using System.Drawing;
 using SkiaSharp;
+using System.ComponentModel;
 
 namespace ShareX.ImageEffectsLib
 {

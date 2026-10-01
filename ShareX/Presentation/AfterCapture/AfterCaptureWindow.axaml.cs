@@ -40,8 +40,6 @@ using System.Linq;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingImageFormat = SkiaSharp.SKEncodedImageFormat;
 
-using SkiaSharp;
-
 namespace ShareX;
 
 public readonly record struct AfterCaptureWindowResult(bool Accepted, string? FileName);

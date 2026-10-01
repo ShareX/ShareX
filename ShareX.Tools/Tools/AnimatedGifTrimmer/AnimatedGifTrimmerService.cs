@@ -14,7 +14,6 @@
 
 using ShareX.HelpersLib;
 using ShareX.Tools.Localization;
-using System.Drawing;
 using SkiaSharp;
 
 

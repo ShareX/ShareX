@@ -26,15 +26,11 @@
 #nullable disable
 
 using ShareX.HelpersLib;
-using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-
-using SkiaSharp;
+using Image = SkiaSharp.SKBitmap;
 
 namespace ShareX.Tools
 {

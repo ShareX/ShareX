@@ -33,16 +33,16 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Localization;
+using SkiaSharp;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
+using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingRectangle = System.Drawing.Rectangle;
-using System.IO;
-using System.Collections.Generic;
-using SkiaSharp;
-using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 
 namespace ShareX.ScreenCaptureLib;
 

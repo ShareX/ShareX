@@ -33,13 +33,11 @@ using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using DrawingBitmap = SkiaSharp.SKBitmap;
-
-using SkiaSharp;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX;
 

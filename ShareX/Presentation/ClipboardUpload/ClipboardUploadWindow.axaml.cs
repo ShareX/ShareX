@@ -33,11 +33,9 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using System;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
 using DrawingBitmap = SkiaSharp.SKBitmap;
-
-using SkiaSharp;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX;
 

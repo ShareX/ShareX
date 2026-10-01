@@ -41,8 +41,6 @@ using System.Threading.Tasks;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingImageFormat = SkiaSharp.SKEncodedImageFormat;
 
-using SkiaSharp;
-
 namespace ShareX;
 
 public partial class AfterUploadWindow : Window

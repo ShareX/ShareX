@@ -30,9 +30,9 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using System;
 using System.Collections.Generic;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
 using DrawingImage = SkiaSharp.SKBitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX.HelpersLib;
 

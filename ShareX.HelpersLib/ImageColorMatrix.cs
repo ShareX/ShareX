@@ -35,7 +35,8 @@ public sealed class ImageColorMatrix
     {
         new float[] { 1, 0, 0, 0, 0 }, new float[] { 0, 1, 0, 0, 0 },
         new float[] { 0, 0, 1, 0, 0 }, new float[] { 0, 0, 0, 1, 0 }, new float[] { 0, 0, 0, 0, 1 }
-    }) { }
+    })
+    { }
     public ImageColorMatrix(float[][] values) => this.values = values;
     public float Matrix33 { get => values[3][3]; set => values[3][3] = value; }
     public float Matrix00 { get => values[0][0]; set => values[0][0] = value; }

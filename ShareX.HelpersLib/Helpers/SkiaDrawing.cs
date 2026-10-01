@@ -38,8 +38,11 @@ public static class SkiaDrawing
     public static SKPaint Fill(Color color) => new() { Color = color.ToSKColor(), IsAntialias = true };
     public static SKPaint Stroke(Color color, float width = 1) => new()
     {
-        Color = color.ToSKColor(), Style = SKPaintStyle.Stroke, StrokeWidth = width,
-        IsAntialias = true, StrokeJoin = SKStrokeJoin.Round
+        Color = color.ToSKColor(),
+        Style = SKPaintStyle.Stroke,
+        StrokeWidth = width,
+        IsAntialias = true,
+        StrokeJoin = SKStrokeJoin.Round
     };
     public static SKPaint Stroke(SKPaint brush, float width = 1)
     {

@@ -24,8 +24,8 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
-using System.Drawing;
 using SkiaSharp;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib

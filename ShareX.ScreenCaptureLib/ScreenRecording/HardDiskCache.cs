@@ -25,13 +25,9 @@
 
 using ShareX.HelpersLib;
 using System.Collections.Generic;
-using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
+using System.IO;
 using Image = SkiaSharp.SKBitmap;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
-using System.IO;
-
-using SkiaSharp;
 
 namespace ShareX.ScreenCaptureLib
 {

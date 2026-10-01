@@ -28,21 +28,17 @@ using ShareX.Localization;
 using ShareX.Tools;
 using ShareX.UploadersLib;
 using System;
-using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using Bitmap = SkiaSharp.SKBitmap;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
 using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
-
-using SkiaSharp;
 
 namespace ShareX
 {

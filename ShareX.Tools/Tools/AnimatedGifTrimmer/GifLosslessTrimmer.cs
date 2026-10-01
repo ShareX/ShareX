@@ -85,58 +85,58 @@ internal sealed class GifLosslessTrimmer
             switch (ReadByte(source))
             {
                 case 0x21:
-                {
-                    int label = ReadByte(source);
-                    if (label == 0xF9)
                     {
-                        if (pendingControl >= 0 || ReadByte(source) != 4)
-                            throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
-                        source.ReadExactly(control);
-                        if (ReadByte(source) != 0)
-                            throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
-                        pendingControl = blocks.Count;
-                        pendingPacked = control[0];
-                        pendingDelay = ReadWord(control, 1);
-                        blocks.Add(new Block(offset, source.Position - offset, BlockKind.GraphicControl, -1));
-                    }
-                    else
-                    {
-                        // Plain Text is a graphic-rendering block, so it may alter the canvas and consume a GCE.
-                        if (label == 0x01) throw new InvalidDataException(Strings.AnimatedGifTrimmer_UnsupportedGif);
-                        if (label == 0xFF && TryReadLoopExtension(source) is int repeat)
+                        int label = ReadByte(source);
+                        if (label == 0xF9)
                         {
-                            loop = true;
-                            repeatCount = repeat;
+                            if (pendingControl >= 0 || ReadByte(source) != 4)
+                                throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
+                            source.ReadExactly(control);
+                            if (ReadByte(source) != 0)
+                                throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
+                            pendingControl = blocks.Count;
+                            pendingPacked = control[0];
+                            pendingDelay = ReadWord(control, 1);
+                            blocks.Add(new Block(offset, source.Position - offset, BlockKind.GraphicControl, -1));
                         }
-                        SkipSubBlocks(source);
-                        blocks.Add(new Block(offset, source.Position - offset, BlockKind.Extension, -1));
+                        else
+                        {
+                            // Plain Text is a graphic-rendering block, so it may alter the canvas and consume a GCE.
+                            if (label == 0x01) throw new InvalidDataException(Strings.AnimatedGifTrimmer_UnsupportedGif);
+                            if (label == 0xFF && TryReadLoopExtension(source) is int repeat)
+                            {
+                                loop = true;
+                                repeatCount = repeat;
+                            }
+                            SkipSubBlocks(source);
+                            blocks.Add(new Block(offset, source.Position - offset, BlockKind.Extension, -1));
+                        }
+                        break;
                     }
-                    break;
-                }
                 case 0x2C:
-                {
-                    source.ReadExactly(descriptor);
-                    int left = ReadWord(descriptor, 0), top = ReadWord(descriptor, 2);
-                    int width = ReadWord(descriptor, 4), height = ReadWord(descriptor, 6);
-                    if (width == 0 || height == 0 || left + width > screenWidth || top + height > screenHeight)
-                        throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
-                    if ((descriptor[8] & 0x80) != 0)
-                        Skip(source, 3L << ((descriptor[8] & 7) + 1));
-                    ReadByte(source); // LZW minimum code size
-                    SkipSubBlocks(source);
+                    {
+                        source.ReadExactly(descriptor);
+                        int left = ReadWord(descriptor, 0), top = ReadWord(descriptor, 2);
+                        int width = ReadWord(descriptor, 4), height = ReadWord(descriptor, 6);
+                        if (width == 0 || height == 0 || left + width > screenWidth || top + height > screenHeight)
+                            throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
+                        if ((descriptor[8] & 0x80) != 0)
+                            Skip(source, 3L << ((descriptor[8] & 7) + 1));
+                        ReadByte(source); // LZW minimum code size
+                        SkipSubBlocks(source);
 
-                    int frameIndex = frames.Count;
-                    bool coversScreen = left == 0 && top == 0 && width == screenWidth && height == screenHeight;
-                    frames.Add(new Frame(pendingDelay, coversScreen, (pendingPacked & 1) != 0,
-                        (pendingPacked >> 2) & 7));
-                    if (pendingControl >= 0)
-                        blocks[pendingControl] = blocks[pendingControl] with { FrameIndex = frameIndex };
-                    blocks.Add(new Block(offset, source.Position - offset, BlockKind.Image, frameIndex));
-                    pendingControl = -1;
-                    pendingDelay = 10;
-                    pendingPacked = 0;
-                    break;
-                }
+                        int frameIndex = frames.Count;
+                        bool coversScreen = left == 0 && top == 0 && width == screenWidth && height == screenHeight;
+                        frames.Add(new Frame(pendingDelay, coversScreen, (pendingPacked & 1) != 0,
+                            (pendingPacked >> 2) & 7));
+                        if (pendingControl >= 0)
+                            blocks[pendingControl] = blocks[pendingControl] with { FrameIndex = frameIndex };
+                        blocks.Add(new Block(offset, source.Position - offset, BlockKind.Image, frameIndex));
+                        pendingControl = -1;
+                        pendingDelay = 10;
+                        pendingPacked = 0;
+                        break;
+                    }
                 case 0x3B:
                     if (pendingControl >= 0 || frames.Count < 2)
                         throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);

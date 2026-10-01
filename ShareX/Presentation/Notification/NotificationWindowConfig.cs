@@ -23,14 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using ShareX.HelpersLib;
 using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
-
-using SkiaSharp;
 
 namespace ShareX
 {

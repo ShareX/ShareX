@@ -23,10 +23,10 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Linq;
-using System.Drawing;
 using SkiaSharp;
+using System;
+using System.Drawing;
+using System.Linq;
 
 namespace ShareX.HelpersLib
 {

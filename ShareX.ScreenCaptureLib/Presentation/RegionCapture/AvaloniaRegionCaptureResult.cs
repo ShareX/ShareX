@@ -28,8 +28,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
 
 namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 

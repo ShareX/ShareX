@@ -27,12 +27,9 @@ using ShareX.HelpersLib;
 using System;
 using System.Diagnostics;
 using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
 using System.Text;
 using System.Threading;
-
-using SkiaSharp;
+using Image = SkiaSharp.SKBitmap;
 
 namespace ShareX.ScreenCaptureLib
 {

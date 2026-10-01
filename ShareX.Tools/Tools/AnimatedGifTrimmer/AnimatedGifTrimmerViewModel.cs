@@ -301,7 +301,8 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     [RelayCommand] private void SetEndHere() { if (CanEdit) SetEndIndex(Math.Max(_positionIndex + 1, _startIndex + 1)); }
     [RelayCommand] private void Reset() { if (CanEdit && _document != null) { SetStartIndex(0); SetEndIndex(_document.FrameCount); _ = SetPositionIndex(0); } }
     [RelayCommand] private void OpenOutput() { if (HasOutput) ShareX.HelpersLib.FileHelpers.OpenFolderWithFile(OutputFilePath); }
-    [RelayCommand] private async Task TogglePlayAsync()
+    [RelayCommand]
+    private async Task TogglePlayAsync()
     {
         if (!CanPlay || _document == null) return;
         if (IsPlaying) StopPlayback();

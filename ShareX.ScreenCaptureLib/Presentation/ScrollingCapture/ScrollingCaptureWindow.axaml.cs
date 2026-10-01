@@ -32,13 +32,11 @@ using Avalonia.Media;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using System;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.IO;
 using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingBitmap = SkiaSharp.SKBitmap;
-
-using SkiaSharp;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX.ScreenCaptureLib;
 

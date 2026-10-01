@@ -25,9 +25,8 @@
 
 using Newtonsoft.Json;
 using ShareX.ImageEffectsLib.Localization;
-using System.ComponentModel;
-using System.Drawing;
 using SkiaSharp;
+using System.ComponentModel;
 
 namespace ShareX.ImageEffectsLib
 {

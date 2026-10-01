@@ -30,12 +30,9 @@ using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
 using System.Linq;
 using System.Threading.Tasks;
-
-using SkiaSharp;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX
 {

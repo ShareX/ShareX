@@ -25,9 +25,9 @@
 
 using ShareX.HelpersLib;
 using SkiaSharp;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using System.Runtime.InteropServices;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX.Tools;
 

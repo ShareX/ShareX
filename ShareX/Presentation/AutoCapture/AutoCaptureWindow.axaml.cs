@@ -35,13 +35,10 @@ using ShareX.ScreenCaptureLib;
 using System;
 using System.Diagnostics;
 using System.Drawing;
-using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
 using System.Threading.Tasks;
+using Bitmap = SkiaSharp.SKBitmap;
 using WinFormsMouseEventArgs = System.Windows.Forms.MouseEventArgs;
 using WinFormsNotifyIcon = System.Windows.Forms.NotifyIcon;
-
-using SkiaSharp;
 
 namespace ShareX;
 

@@ -29,9 +29,6 @@ using ShareX.HelpersLib;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using Bitmap = SkiaSharp.SKBitmap;
-using Image = SkiaSharp.SKBitmap;
-
-using SkiaSharp;
 
 namespace ShareX.Tools;
 

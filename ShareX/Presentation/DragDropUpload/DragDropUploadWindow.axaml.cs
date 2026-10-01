@@ -33,6 +33,7 @@ using Avalonia.Platform;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.HelpersLib;
 using ShareX.Localization;
 using System;
 using System.IO;
@@ -40,9 +41,6 @@ using System.Linq;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingContentAlignment = System.Drawing.ContentAlignment;
-
-using SkiaSharp;
-using ShareX.HelpersLib;
 
 namespace ShareX;
 
