@@ -31,6 +31,8 @@ using System.IO;
 
 namespace ShareX.HelpersLib;
 
+public enum ImageFileFormat { Png, Jpeg, Gif, Bmp, Webp }
+
 /// <summary>Image operations that own their pixels independently of the source file or stream.</summary>
 public static partial class SkiaImageHelpers
 {
@@ -159,6 +161,27 @@ public static partial class SkiaImageHelpers
         return stream;
     }
 
+    public static IndexedImage Quantize(SKBitmap bitmap, GIFQuality quality = GIFQuality.Default)
+    {
+        SkiaQuantizer quantizer = quality switch
+        {
+            GIFQuality.Grayscale => new SkiaGrayscaleQuantizer(),
+            GIFQuality.Bit4 => new SkiaOctreeQuantizer(15, 4),
+            _ => new SkiaOctreeQuantizer(255, 4)
+        };
+        return quantizer.Quantize(bitmap);
+    }
+
+    public static MemoryStream SaveGIF(SKBitmap bitmap, GIFQuality quality)
+    {
+        MemoryStream stream = new();
+        SaveGIF(bitmap, stream, quality);
+        return stream;
+    }
+
+    public static void SaveGIF(SKBitmap bitmap, Stream stream, GIFQuality quality)
+        => Quantize(bitmap, quality).SaveGif(stream);
+
     public static SKBitmap LoadImage(string filePath)
     {
         try
@@ -175,6 +198,13 @@ public static partial class SkiaImageHelpers
 
     public static SKBitmap Decode(Stream stream)
     {
+        if (!stream.CanSeek)
+        {
+            using MemoryStream copy = new();
+            stream.CopyTo(copy);
+            copy.Position = 0;
+            return Decode(copy);
+        }
         using SKManagedStream managedStream = new(stream, false);
         using SKCodec codec = SKCodec.Create(managedStream);
         if (codec == null) throw new InvalidDataException("The image format is not supported.");
@@ -239,16 +269,114 @@ public static partial class SkiaImageHelpers
 
     public static void Save(this SKBitmap bitmap, Stream stream, SKEncodedImageFormat format, int quality = 100)
     {
+        if (format == SKEncodedImageFormat.Gif) { SaveGIF(bitmap, stream, GIFQuality.Default); return; }
+        if (format == SKEncodedImageFormat.Bmp) { SaveBMP(bitmap, stream); return; }
         using SKImage image = SKImage.FromBitmap(bitmap);
         using SKData data = image.Encode(format, Math.Clamp(quality, 0, 100));
         if (data == null) throw new InvalidDataException($"Image encoding failed: {format}.");
         data.SaveTo(stream);
     }
 
+    private static void SaveBMP(SKBitmap bitmap, Stream stream)
+    {
+        int stride = checked((bitmap.Width * 3 + 3) / 4 * 4);
+        using BinaryWriter writer = new(stream, System.Text.Encoding.UTF8, true);
+        writer.Write((ushort)0x4D42); writer.Write(checked(54 + stride * bitmap.Height));
+        writer.Write(0); writer.Write(54); writer.Write(40); writer.Write(bitmap.Width); writer.Write(bitmap.Height);
+        writer.Write((ushort)1); writer.Write((ushort)24); writer.Write(0); writer.Write(checked(stride * bitmap.Height));
+        writer.Write(3780); writer.Write(3780); writer.Write(0); writer.Write(0);
+        using SkiaPixelBuffer pixels = new(bitmap, true, PixelAccess.ReadOnly);
+        byte[] row = new byte[stride];
+        for (int y = bitmap.Height - 1; y >= 0; y--)
+        {
+            for (int x = 0; x < bitmap.Width; x++)
+            {
+                ColorBgra color = pixels.GetPixel(x, y);
+                row[x * 3] = color.Blue; row[x * 3 + 1] = color.Green; row[x * 3 + 2] = color.Red;
+            }
+            writer.Write(row);
+        }
+    }
+
     public static void Save(this SKBitmap bitmap, string filePath, SKEncodedImageFormat format, int quality = 100)
     {
         using FileStream stream = new(filePath, FileMode.Create, FileAccess.Write, FileShare.Read);
         bitmap.Save(stream, format, quality);
+    }
+
+    public static void Save(this SKBitmap bitmap, Stream stream, ImageFileFormat format, int quality = 100)
+    {
+        bitmap.Save(stream, format switch
+        {
+            ImageFileFormat.Jpeg => SKEncodedImageFormat.Jpeg,
+            ImageFileFormat.Gif => SKEncodedImageFormat.Gif,
+            ImageFileFormat.Bmp => SKEncodedImageFormat.Bmp,
+            ImageFileFormat.Webp => SKEncodedImageFormat.Webp,
+            _ => SKEncodedImageFormat.Png
+        }, quality);
+    }
+
+    public static void Save(this SKBitmap bitmap, string filePath, ImageFileFormat format, int quality = 100)
+    {
+        using FileStream stream = new(filePath, FileMode.Create, FileAccess.Write, FileShare.Read);
+        bitmap.Save(stream, format, quality);
+    }
+
+    public static ImageFileFormat GetImageFormat(string path) => Path.GetExtension(path).ToLowerInvariant() switch
+    {
+        ".jpg" or ".jpeg" or ".jpe" or ".jfif" => ImageFileFormat.Jpeg,
+        ".gif" => ImageFileFormat.Gif, ".bmp" => ImageFileFormat.Bmp,
+        ".webp" => ImageFileFormat.Webp,
+        _ => ImageFileFormat.Png
+    };
+
+    public static SKBitmap ByteArrayToBitmap(byte[] bytes)
+    {
+        using MemoryStream stream = new(bytes, false);
+        return Decode(stream);
+    }
+
+    public static SKBitmap CreateThumbnail(SKBitmap source, int width, int height,
+        InterpolationMode interpolationMode = InterpolationMode.HighQualityBicubic)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThan(width, 1);
+        ArgumentOutOfRangeException.ThrowIfLessThan(height, 1);
+        float scale = Math.Max(width / (float)source.Width, height / (float)source.Height);
+        float sourceWidth = width / scale, sourceHeight = height / scale;
+        SKRect crop = SKRect.Create((source.Width - sourceWidth) / 2, (source.Height - sourceHeight) / 2, sourceWidth, sourceHeight);
+        SKBitmap result = CreateBitmap(width, height);
+        using (source)
+        using (SKCanvas canvas = new(result)) canvas.DrawImage(source, crop, SKRect.Create(width, height));
+        return result;
+    }
+
+    public static void SaveJPEG(SKBitmap bitmap, Stream stream, int quality) => bitmap.Save(stream, SKEncodedImageFormat.Jpeg, quality);
+    public static void SaveJPEG(SKBitmap bitmap, string path, int quality) => bitmap.Save(path, SKEncodedImageFormat.Jpeg, quality);
+    public static MemoryStream SavePNG(SKBitmap bitmap, PNGBitDepth depth)
+    {
+        MemoryStream stream = new(); SavePNG(bitmap, stream, depth); return stream;
+    }
+    public static void SavePNG(SKBitmap bitmap, Stream stream, PNGBitDepth depth)
+    {
+        if (depth == PNGBitDepth.Bit24 || depth == PNGBitDepth.Automatic && !IsImageTransparent(bitmap))
+        {
+            using SKBitmap opaque = new(new SKImageInfo(bitmap.Width, bitmap.Height, SKColorType.Bgra8888, SKAlphaType.Opaque));
+            using (SkiaPixelBuffer source = new(bitmap, true, PixelAccess.ReadOnly))
+            using (SkiaPixelBuffer target = new(opaque, true, PixelAccess.WriteOnly))
+            {
+                for (int index = 0; index < source.PixelCount; index++)
+                {
+                    ColorBgra pixel = source.GetPixel(index); pixel.Alpha = 255; target.SetPixel(index, pixel);
+                }
+            }
+            opaque.Save(stream, SKEncodedImageFormat.Png);
+        }
+        else bitmap.Save(stream, SKEncodedImageFormat.Png);
+    }
+
+    public static string ImageToBase64(SKBitmap bitmap, ImageFileFormat format)
+    {
+        using MemoryStream stream = new(); bitmap.Save(stream, format); return Convert.ToBase64String(stream.ToArray());
     }
 
     public static void FlipInPlace(this SKBitmap bitmap, bool horizontal, bool vertical)

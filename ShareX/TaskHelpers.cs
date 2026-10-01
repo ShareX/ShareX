@@ -416,8 +416,9 @@ namespace ShareX
         public static ImageData PrepareImage(Image img, TaskSettings taskSettings)
         {
             ImageData imageData = new ImageData();
-            imageData.ImageStream = SaveImageAsStream(img, taskSettings.ImageSettings.ImageFormat, taskSettings);
-            imageData.ImageFormat = taskSettings.ImageSettings.ImageFormat;
+            EImageFormat imageFormat = Enum.IsDefined(taskSettings.ImageSettings.ImageFormat) ? taskSettings.ImageSettings.ImageFormat : EImageFormat.PNG;
+            imageData.ImageStream = SaveImageAsStream(img, imageFormat, taskSettings);
+            imageData.ImageFormat = imageFormat;
 
             if (taskSettings.ImageSettings.ImageAutoUseJPEG && taskSettings.ImageSettings.ImageFormat != EImageFormat.JPEG &&
                 imageData.ImageStream.Length > taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000)
@@ -480,6 +481,7 @@ namespace ShareX
             {
                 switch (imageFormat)
                 {
+                    default:
                     case EImageFormat.PNG:
                         ImageHelpers.SavePNG(img, ms, pngBitDepth);
 
@@ -502,9 +504,6 @@ namespace ShareX
                         break;
                     case EImageFormat.BMP:
                         img.Save(ms, ImageFormat.Bmp);
-                        break;
-                    case EImageFormat.TIFF:
-                        img.Save(ms, ImageFormat.Tiff);
                         break;
                 }
             }

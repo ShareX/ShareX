@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using SkiaSharp;
 using System.Drawing;
 using System.IO;
 
@@ -82,6 +83,26 @@ namespace ShareX.HelpersLib
             {
                 AddFrame(bmp, quality);
             }
+        }
+
+        public void AddFrame(SKBitmap bitmap, GIFQuality quality = GIFQuality.Default)
+            => AddFrame(bitmap, Delay, quality);
+
+        public void AddFrame(SKBitmap bitmap, int delay, GIFQuality quality = GIFQuality.Default)
+            => AddFrame(SkiaImageHelpers.Quantize(bitmap, quality), delay);
+
+        public void AddFrame(IndexedImage image) => AddFrame(image, Delay);
+
+        public void AddFrame(IndexedImage image, int delay)
+        {
+            if (stream == null)
+            {
+                stream = new FileStream(FilePath, FileMode.Create, FileAccess.Write, FileShare.Read);
+                image.WriteHeader(stream);
+                if (Loop) stream.Write(CreateApplicationExtensionBlock(Repeat));
+            }
+            image.WriteFrame(stream, delay);
+            FrameCount++;
         }
 
         private void Finish()

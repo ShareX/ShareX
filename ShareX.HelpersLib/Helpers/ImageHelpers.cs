@@ -2136,8 +2136,8 @@ namespace ShareX.HelpersLib
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Filter = $"{Localization.Strings.ImageHelpers_Image_files} (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff|" +
-                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
+                ofd.Filter = $"{Localization.Strings.ImageHelpers_Image_files} (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp|" +
+                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp";
 
                 ofd.Multiselect = multiselect;
 
@@ -2179,10 +2179,6 @@ namespace ShareX.HelpersLib
                 {
                     imageFormat = ImageFormat.Bmp;
                 }
-                else if (ext.Equals("tif", StringComparison.OrdinalIgnoreCase) || ext.Equals("tiff", StringComparison.OrdinalIgnoreCase))
-                {
-                    imageFormat = ImageFormat.Tiff;
-                }
             }
 
             return imageFormat;
@@ -2211,7 +2207,7 @@ namespace ShareX.HelpersLib
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
-                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
+                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp";
                 sfd.DefaultExt = "png";
 
                 string initialDirectory = null;
@@ -2254,10 +2250,6 @@ namespace ShareX.HelpersLib
                                 break;
                             case "bmp":
                                 sfd.FilterIndex = 4;
-                                break;
-                            case "tif":
-                            case "tiff":
-                                sfd.FilterIndex = 5;
                                 break;
                         }
                     }
