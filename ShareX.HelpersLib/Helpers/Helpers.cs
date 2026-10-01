@@ -45,7 +45,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
-using System.Windows.Forms;
 using System.Xml;
 
 namespace ShareX.HelpersLib
@@ -62,27 +61,6 @@ namespace ShareX.HelpersLib
         public const string Base56 = "23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz"; // A variant, Base56, excludes 1 (one) and o (lowercase o) compared to Base 58.
 
         public static readonly Version OSVersion = Environment.OSVersion.Version;
-
-        private static Cursor[] cursorList;
-
-        public static Cursor[] CursorList
-        {
-            get
-            {
-                if (cursorList == null)
-                {
-                    cursorList = new Cursor[] {
-                        Cursors.AppStarting, Cursors.Arrow, Cursors.Cross, Cursors.Default, Cursors.Hand, Cursors.Help,
-                        Cursors.HSplit, Cursors.IBeam, Cursors.No, Cursors.NoMove2D, Cursors.NoMoveHoriz, Cursors.NoMoveVert,
-                        Cursors.PanEast, Cursors.PanNE, Cursors.PanNorth, Cursors.PanNW, Cursors.PanSE, Cursors.PanSouth,
-                        Cursors.PanSW, Cursors.PanWest, Cursors.SizeAll, Cursors.SizeNESW, Cursors.SizeNS, Cursors.SizeNWSE,
-                        Cursors.SizeWE, Cursors.UpArrow, Cursors.VSplit, Cursors.WaitCursor
-                    };
-                }
-
-                return cursorList;
-            }
-        }
 
         public static string AddZeroes(string input, int digits = 2)
         {
@@ -281,7 +259,7 @@ namespace ShareX.HelpersLib
 
         public static string GetApplicationVersion(bool includeRevision = false)
         {
-            Version version = Version.Parse(Application.ProductVersion);
+            Version version = (Assembly.GetEntryAssembly() ?? typeof(Helpers).Assembly).GetName().Version;
             string result = $"{version.Major}.{version.Minor}.{version.Build}";
             if (includeRevision)
             {
@@ -379,7 +357,7 @@ namespace ShareX.HelpersLib
         public static bool IsDefaultInstallDir()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
-            return Application.ExecutablePath.StartsWith(path);
+            return Environment.ProcessPath.StartsWith(path);
         }
 
         public static bool IsValidIPAddress(string ip)
@@ -685,14 +663,6 @@ namespace ShareX.HelpersLib
             return productName;
         }
 
-        public static Cursor CreateCursor(byte[] data)
-        {
-            using (MemoryStream ms = new MemoryStream(data))
-            {
-                return new Cursor(ms);
-            }
-        }
-
         public static string EscapeCLIText(string text)
         {
             string escapedText = text.Replace("\\", "\\\\").Replace("\"", "\\\"");
@@ -875,7 +845,9 @@ namespace ShareX.HelpersLib
         public static byte[] GetProgressIconBytes(int percentage, Color color)
         {
             percentage = percentage.Clamp(0, 100);
-            Size size = SystemInformation.SmallIconSize;
+            Size size = OperatingSystem.IsWindows()
+                ? new Size(NativeMethods.GetSystemMetrics(SystemMetric.SM_CXSMICON), NativeMethods.GetSystemMetrics(SystemMetric.SM_CYSMICON))
+                : new Size(16, 16);
             using SKBitmap bitmap = SkiaImageHelpers.CreateBitmap(size.Width, size.Height);
             using SKCanvas canvas = new(bitmap);
             canvas.Clear(new SKColor(39, 39, 39));
@@ -956,28 +928,22 @@ namespace ShareX.HelpersLib
             return Task.WhenAll(tasks);
         }
 
-        public static void LockCursorToWindow(Form form)
-        {
-            form.Activated += (sender, e) => Cursor.Clip = form.Bounds;
-            form.Deactivate += (sender, e) => Cursor.Clip = Rectangle.Empty;
-        }
-
         public static void LockCursorToWindow(Avalonia.Controls.Window window)
         {
             window.Activated += (sender, e) =>
             {
                 IntPtr handle = window.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-                if (handle != IntPtr.Zero)
+                if (OperatingSystem.IsWindows() && handle != IntPtr.Zero)
                 {
                     Rectangle bounds = NativeMethods.GetWindowRect(handle);
                     if (bounds.Width > 0 && bounds.Height > 0)
                     {
-                        Cursor.Clip = bounds;
+                        NativeMethods.ClipCursor(new RECT(bounds));
                     }
                 }
             };
-            window.Deactivated += (sender, e) => Cursor.Clip = Rectangle.Empty;
-            window.Closed += (sender, e) => Cursor.Clip = Rectangle.Empty;
+            window.Deactivated += (sender, e) => { if (OperatingSystem.IsWindows()) NativeMethods.ClipCursor(IntPtr.Zero); };
+            window.Closed += (sender, e) => { if (OperatingSystem.IsWindows()) NativeMethods.ClipCursor(IntPtr.Zero); };
         }
 
         public static bool IsDefaultSettings<T>(IEnumerable<T> current, IEnumerable<T> source, Func<T, T, bool> predicate)

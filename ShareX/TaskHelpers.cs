@@ -47,7 +47,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using ZXing;
 using ZXing.Common;
 using ZXing.QrCode;
@@ -1034,7 +1033,7 @@ namespace ShareX
         {
             return SkiaImageHelpers.CombineImages(
                 request.ImageFiles,
-                (Orientation)request.Options.Orientation,
+                (ImageOrientation)request.Options.Orientation,
                 (ShareX.HelpersLib.ImageCombinerAlignment)request.Options.Alignment,
                 request.Options.Space,
                 request.Options.WrapAfter,
@@ -1058,7 +1057,7 @@ namespace ShareX
             ToolsIntegration.ShowBackgroundRemoverWindow(AppPaths.ModelsFolder, taskSettings.ToolsSettingsReference.BackgroundRemoverOptions);
         }
 
-        public static void CombineImages(IEnumerable<string> imageFiles, Orientation orientation, TaskSettings taskSettings = null)
+        public static void CombineImages(IEnumerable<string> imageFiles, ImageOrientation orientation, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 

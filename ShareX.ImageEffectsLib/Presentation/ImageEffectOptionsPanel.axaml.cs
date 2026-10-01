@@ -38,7 +38,7 @@ using System.Reflection;
 using DrawingColor = System.Drawing.Color;
 using DrawingPoint = System.Drawing.Point;
 using DrawingSize = System.Drawing.Size;
-using FormsPadding = System.Windows.Forms.Padding;
+using EffectMargins = ShareX.HelpersLib.ImageMargins;
 
 namespace ShareX.ImageEffectsLib;
 
@@ -202,9 +202,9 @@ public partial class ImageEffectOptionsPanel : UserControl
                 (x, y) => Apply(property, new DrawingSize(x, y)));
         }
 
-        if (type == typeof(FormsPadding))
+        if (type == typeof(EffectMargins))
         {
-            FormsPadding padding = value is FormsPadding p ? p : FormsPadding.Empty;
+            EffectMargins padding = value is EffectMargins p ? p : EffectMargins.Empty;
             return CreatePaddingEditor(padding, result => Apply(property, result));
         }
 
@@ -341,7 +341,7 @@ public partial class ImageEffectOptionsPanel : UserControl
         return grid;
     }
 
-    private Control CreatePaddingEditor(FormsPadding padding, Action<FormsPadding> changed)
+    private Control CreatePaddingEditor(EffectMargins padding, Action<EffectMargins> changed)
     {
         Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("*,*,*,*"), ColumnSpacing = 6 };
         int[] values = [padding.Left, padding.Top, padding.Right, padding.Bottom];
@@ -354,7 +354,7 @@ public partial class ImageEffectOptionsPanel : UserControl
         ];
         NumericUpDown[] inputs = new NumericUpDown[4];
 
-        void ApplyPadding() => changed(new FormsPadding((int)(inputs[0].Value ?? 0), (int)(inputs[1].Value ?? 0),
+        void ApplyPadding() => changed(new EffectMargins((int)(inputs[0].Value ?? 0), (int)(inputs[1].Value ?? 0),
             (int)(inputs[2].Value ?? 0), (int)(inputs[3].Value ?? 0)));
 
         for (int i = 0; i < inputs.Length; i++)

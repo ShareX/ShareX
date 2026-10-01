@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -94,8 +93,8 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(typeof(Padding), "5, 5, 5, 5")]
-        public Padding Padding { get; set; }
+        [DefaultValue(typeof(ImageMargins), "5, 5, 5, 5")]
+        public ImageMargins Padding { get; set; }
 
         [DefaultValue(true)]
         public bool DrawBorder { get; set; }

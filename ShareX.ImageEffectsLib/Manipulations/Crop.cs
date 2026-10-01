@@ -27,16 +27,15 @@ using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
     internal class Crop : ImageEffect
     {
-        private Padding margin;
+        private ImageMargins margin;
 
-        [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
-        public Padding Margin
+        [DefaultValue(typeof(ImageMargins), "0, 0, 0, 0")]
+        public ImageMargins Margin
         {
             get
             {

@@ -54,7 +54,7 @@ using DrawingSize = System.Drawing.Size;
 using FormsCursor = System.Windows.Forms.Cursor;
 using FormsDataFormats = System.Windows.Forms.DataFormats;
 using FormsDataObject = System.Windows.Forms.DataObject;
-using FormsOrientation = System.Windows.Forms.Orientation;
+using ImageOrientation = ShareX.HelpersLib.ImageOrientation;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
@@ -1651,8 +1651,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private IReadOnlyList<MainMenuEntry> BuildCombineImagesMenu() => new List<MainMenuEntry>
     {
-            Item(Strings.MainWindow_Horizontally, LucideIcons.rows_2, () => _uploadInfoManager.CombineImages(FormsOrientation.Horizontal)),
-            Item(Strings.MainWindow_Vertically, LucideIcons.columns_2, () => _uploadInfoManager.CombineImages(FormsOrientation.Vertical))
+            Item(Strings.MainWindow_Horizontally, LucideIcons.rows_2, () => _uploadInfoManager.CombineImages(ImageOrientation.Horizontal)),
+            Item(Strings.MainWindow_Vertically, LucideIcons.columns_2, () => _uploadInfoManager.CombineImages(ImageOrientation.Vertical))
     };
 
     private void RemoveSelectedTasks()
@@ -1924,7 +1924,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (sender is Border { Tag: string orientationName } &&
             CanCombineThumbnails(source, target) &&
-            Enum.TryParse(orientationName, out FormsOrientation orientation))
+            Enum.TryParse(orientationName, out ImageOrientation orientation))
         {
             string sourcePath = source!.Task.Info.FilePath;
             string targetPath = target!.Task.Info.FilePath;

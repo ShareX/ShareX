@@ -30,7 +30,7 @@ namespace ShareX.HelpersLib
 {
     public class HotkeyForm : Form
     {
-        public delegate void HotkeyEventHandler(ushort id, Keys key, Modifiers modifier);
+        public delegate void HotkeyEventHandler(ushort id, InputKey key, Modifiers modifier);
 
         public event HotkeyEventHandler HotkeyPress;
 
@@ -108,7 +108,7 @@ namespace ShareX.HelpersLib
             if (m.Msg == (int)WindowsMessages.HOTKEY && CheckRepeatLimitTime())
             {
                 ushort id = (ushort)m.WParam;
-                Keys key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);
+                InputKey key = (InputKey)(((int)m.LParam >> 16) & 0xFFFF);
                 Modifiers modifier = (Modifiers)((int)m.LParam & 0xFFFF);
                 OnKeyPressed(id, key, modifier);
                 return;
@@ -117,7 +117,7 @@ namespace ShareX.HelpersLib
             base.WndProc(ref m);
         }
 
-        protected void OnKeyPressed(ushort id, Keys key, Modifiers modifier)
+        protected void OnKeyPressed(ushort id, InputKey key, Modifiers modifier)
         {
             HotkeyPress?.Invoke(id, key, modifier);
         }

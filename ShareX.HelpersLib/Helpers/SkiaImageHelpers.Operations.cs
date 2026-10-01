@@ -30,7 +30,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -68,7 +67,7 @@ namespace ShareX.HelpersLib
             return ResizeImageLimit(bmp, size, size);
         }
 
-        private static SKBitmap ApplyCutOutEffect(SKBitmap bmp, AnchorStyles effectEdge, CutOutEffectType effectType, int effectSize, Color backgroundColor)
+        private static SKBitmap ApplyCutOutEffect(SKBitmap bmp, ImageSides effectEdge, CutOutEffectType effectType, int effectSize, Color backgroundColor)
         {
             switch (effectType)
             {
@@ -85,7 +84,7 @@ namespace ShareX.HelpersLib
             throw new NotImplementedException();
         }
 
-        public static SKBitmap CutOutBitmapMiddle(SKBitmap bmp, Orientation orientation, int start, int size, CutOutEffectType effectType, int effectSize, Color backgroundColor)
+        public static SKBitmap CutOutBitmapMiddle(SKBitmap bmp, ImageOrientation orientation, int start, int size, CutOutEffectType effectType, int effectSize, Color backgroundColor)
         {
             if (bmp != null && size > 0)
             {
@@ -93,23 +92,23 @@ namespace ShareX.HelpersLib
 
                 if (start > 0)
                 {
-                    Rectangle r = orientation == Orientation.Horizontal
+                    Rectangle r = orientation == ImageOrientation.Horizontal
                         ? new Rectangle(0, 0, Math.Min(start, bmp.Width), bmp.Height)
                         : new Rectangle(0, 0, bmp.Width, Math.Min(start, bmp.Height));
                     firstPart = CropBitmap(bmp, r);
-                    AnchorStyles effectEdge = orientation == Orientation.Horizontal ? AnchorStyles.Right : AnchorStyles.Bottom;
+                    ImageSides effectEdge = orientation == ImageOrientation.Horizontal ? ImageSides.Right : ImageSides.Bottom;
                     firstPart = ApplyCutOutEffect(firstPart, effectEdge, effectType, effectSize, backgroundColor);
                 }
 
-                int cutDimension = orientation == Orientation.Horizontal ? bmp.Width : bmp.Height;
+                int cutDimension = orientation == ImageOrientation.Horizontal ? bmp.Width : bmp.Height;
                 if (start + size < cutDimension)
                 {
                     int end = Math.Max(start + size, 0);
-                    Rectangle r = orientation == Orientation.Horizontal
+                    Rectangle r = orientation == ImageOrientation.Horizontal
                         ? new Rectangle(end, 0, bmp.Width - end, bmp.Height)
                         : new Rectangle(0, end, bmp.Width, bmp.Height - end);
                     secondPart = CropBitmap(bmp, r);
-                    AnchorStyles effectEdge = orientation == Orientation.Horizontal ? AnchorStyles.Left : AnchorStyles.Top;
+                    ImageSides effectEdge = orientation == ImageOrientation.Horizontal ? ImageSides.Left : ImageSides.Top;
                     secondPart = ApplyCutOutEffect(secondPart, effectEdge, effectType, effectSize, backgroundColor);
                 }
 
@@ -289,20 +288,20 @@ namespace ShareX.HelpersLib
 
         public static SKBitmap AddCanvas(SKBitmap img, int margin)
         {
-            return AddCanvas(img, new Padding(margin));
+            return AddCanvas(img, new ImageMargins(margin));
         }
 
         public static SKBitmap AddCanvas(SKBitmap img, int margin, Color canvasColor)
         {
-            return AddCanvas(img, new Padding(margin), canvasColor);
+            return AddCanvas(img, new ImageMargins(margin), canvasColor);
         }
 
-        public static SKBitmap AddCanvas(SKBitmap img, Padding margin)
+        public static SKBitmap AddCanvas(SKBitmap img, ImageMargins margin)
         {
             return AddCanvas(img, margin, Color.Transparent);
         }
 
-        public static SKBitmap AddCanvas(SKBitmap img, Padding margin, Color canvasColor)
+        public static SKBitmap AddCanvas(SKBitmap img, ImageMargins margin, Color canvasColor)
         {
             if (margin.All == 0 || img.Width + margin.Horizontal < 1 || img.Height + margin.Vertical < 1)
             {
@@ -1514,14 +1513,14 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static SKBitmap WavyEdges(SKBitmap bmp, int waveDepth, int waveRange, AnchorStyles sides)
+        public static SKBitmap WavyEdges(SKBitmap bmp, int waveDepth, int waveRange, ImageSides sides)
         {
             return WavyEdges(bmp, waveDepth, waveRange, sides, Color.Transparent);
         }
 
-        public static SKBitmap WavyEdges(SKBitmap bmp, int waveDepth, int waveRange, AnchorStyles sides, Color backgroundColor)
+        public static SKBitmap WavyEdges(SKBitmap bmp, int waveDepth, int waveRange, ImageSides sides, Color backgroundColor)
         {
-            if (waveDepth < 1 || waveRange < 1 || sides == AnchorStyles.None)
+            if (waveDepth < 1 || waveRange < 1 || sides == ImageSides.None)
             {
                 return bmp;
             }
@@ -1537,10 +1536,10 @@ namespace ShareX.HelpersLib
 
             int waveFunction(int t, int max, int depth) => (int)((1 - Math.Cos(t * Math.PI / max)) * depth / 2);
 
-            if (sides.HasFlag(AnchorStyles.Top))
+            if (sides.HasFlag(ImageSides.Top))
             {
-                int startX = sides.HasFlag(AnchorStyles.Left) ? waveDepth : 0;
-                int endX = sides.HasFlag(AnchorStyles.Right) ? bmp.Width - waveDepth : bmp.Width;
+                int startX = sides.HasFlag(ImageSides.Left) ? waveDepth : 0;
+                int endX = sides.HasFlag(ImageSides.Right) ? bmp.Width - waveDepth : bmp.Width;
                 for (int x = startX; x < endX; x += step)
                 {
                     points.Add(new Point(x, waveFunction(x, horizontalWaveRange, waveDepth)));
@@ -1552,10 +1551,10 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(0, 0));
             }
 
-            if (sides.HasFlag(AnchorStyles.Right))
+            if (sides.HasFlag(ImageSides.Right))
             {
-                int startY = sides.HasFlag(AnchorStyles.Top) ? waveDepth : 0;
-                int endY = sides.HasFlag(AnchorStyles.Bottom) ? bmp.Height - waveDepth : bmp.Height;
+                int startY = sides.HasFlag(ImageSides.Top) ? waveDepth : 0;
+                int endY = sides.HasFlag(ImageSides.Bottom) ? bmp.Height - waveDepth : bmp.Height;
                 for (int y = startY; y < endY; y += step)
                 {
                     points.Add(new Point(bmp.Width - waveDepth + waveFunction(y, verticalWaveRange, waveDepth), y));
@@ -1567,10 +1566,10 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(bmp.Width, points[points.Count - 1].Y));
             }
 
-            if (sides.HasFlag(AnchorStyles.Bottom))
+            if (sides.HasFlag(ImageSides.Bottom))
             {
-                int startX = sides.HasFlag(AnchorStyles.Right) ? bmp.Width - waveDepth : bmp.Width;
-                int endX = sides.HasFlag(AnchorStyles.Left) ? waveDepth : 0;
+                int startX = sides.HasFlag(ImageSides.Right) ? bmp.Width - waveDepth : bmp.Width;
+                int endX = sides.HasFlag(ImageSides.Left) ? waveDepth : 0;
                 for (int x = startX; x >= endX; x -= step)
                 {
                     points.Add(new Point(x, bmp.Height - waveDepth + waveFunction(x, horizontalWaveRange, waveDepth)));
@@ -1582,10 +1581,10 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(points[points.Count - 1].X, bmp.Height));
             }
 
-            if (sides.HasFlag(AnchorStyles.Left))
+            if (sides.HasFlag(ImageSides.Left))
             {
-                int startY = sides.HasFlag(AnchorStyles.Bottom) ? bmp.Height - waveDepth : bmp.Height;
-                int endY = sides.HasFlag(AnchorStyles.Top) ? waveDepth : 0;
+                int startY = sides.HasFlag(ImageSides.Bottom) ? bmp.Height - waveDepth : bmp.Height;
+                int endY = sides.HasFlag(ImageSides.Top) ? waveDepth : 0;
                 for (int y = startY; y >= endY; y -= step)
                 {
                     points.Add(new Point(waveFunction(y, verticalWaveRange, waveDepth), y));
@@ -1597,7 +1596,7 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(0, points[points.Count - 1].Y));
             }
 
-            if (!sides.HasFlag(AnchorStyles.Top))
+            if (!sides.HasFlag(ImageSides.Top))
             {
                 points[0] = new Point(points[points.Count - 1].X, 0);
             }
@@ -1619,14 +1618,14 @@ namespace ShareX.HelpersLib
             return bmpResult;
         }
 
-        public static SKBitmap TornEdges(SKBitmap bmp, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges, bool random)
+        public static SKBitmap TornEdges(SKBitmap bmp, int tornDepth, int tornRange, ImageSides sides, bool curvedEdges, bool random)
         {
             return TornEdges(bmp, tornDepth, tornRange, sides, curvedEdges, random, Color.Transparent);
         }
 
-        public static SKBitmap TornEdges(SKBitmap bmp, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges, bool random, Color backgroundColor)
+        public static SKBitmap TornEdges(SKBitmap bmp, int tornDepth, int tornRange, ImageSides sides, bool curvedEdges, bool random, Color backgroundColor)
         {
-            if (tornDepth < 1 || tornRange < 1 || sides == AnchorStyles.None)
+            if (tornDepth < 1 || tornRange < 1 || sides == ImageSides.None)
             {
                 return bmp;
             }
@@ -1641,10 +1640,10 @@ namespace ShareX.HelpersLib
                 return bmp;
             }
 
-            if (sides.HasFlag(AnchorStyles.Top) && horizontalTornCount > 1)
+            if (sides.HasFlag(ImageSides.Top) && horizontalTornCount > 1)
             {
-                int startX = (sides.HasFlag(AnchorStyles.Left) && verticalTornCount > 1) ? tornDepth : 0;
-                int endX = (sides.HasFlag(AnchorStyles.Right) && verticalTornCount > 1) ? bmp.Width - tornDepth : bmp.Width;
+                int startX = (sides.HasFlag(ImageSides.Left) && verticalTornCount > 1) ? tornDepth : 0;
+                int endX = (sides.HasFlag(ImageSides.Right) && verticalTornCount > 1) ? bmp.Width - tornDepth : bmp.Width;
                 for (int x = startX; x < endX; x += tornRange)
                 {
                     int y = random ? RandomFast.Next(0, tornDepth) : ((x / tornRange) & 1) * tornDepth;
@@ -1657,10 +1656,10 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(bmp.Width, 0));
             }
 
-            if (sides.HasFlag(AnchorStyles.Right) && verticalTornCount > 1)
+            if (sides.HasFlag(ImageSides.Right) && verticalTornCount > 1)
             {
-                int startY = (sides.HasFlag(AnchorStyles.Top) && horizontalTornCount > 1) ? tornDepth : 0;
-                int endY = (sides.HasFlag(AnchorStyles.Bottom) && horizontalTornCount > 1) ? bmp.Height - tornDepth : bmp.Height;
+                int startY = (sides.HasFlag(ImageSides.Top) && horizontalTornCount > 1) ? tornDepth : 0;
+                int endY = (sides.HasFlag(ImageSides.Bottom) && horizontalTornCount > 1) ? bmp.Height - tornDepth : bmp.Height;
                 for (int y = startY; y < endY; y += tornRange)
                 {
                     int x = random ? RandomFast.Next(0, tornDepth) : ((y / tornRange) & 1) * tornDepth;
@@ -1673,10 +1672,10 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(bmp.Width, bmp.Height));
             }
 
-            if (sides.HasFlag(AnchorStyles.Bottom) && horizontalTornCount > 1)
+            if (sides.HasFlag(ImageSides.Bottom) && horizontalTornCount > 1)
             {
-                int startX = (sides.HasFlag(AnchorStyles.Right) && verticalTornCount > 1) ? bmp.Width - tornDepth : bmp.Width;
-                int endX = (sides.HasFlag(AnchorStyles.Left) && verticalTornCount > 1) ? tornDepth : 0;
+                int startX = (sides.HasFlag(ImageSides.Right) && verticalTornCount > 1) ? bmp.Width - tornDepth : bmp.Width;
+                int endX = (sides.HasFlag(ImageSides.Left) && verticalTornCount > 1) ? tornDepth : 0;
                 for (int x = startX; x >= endX; x = (x / tornRange - 1) * tornRange)
                 {
                     int y = random ? RandomFast.Next(0, tornDepth) : ((x / tornRange) & 1) * tornDepth;
@@ -1689,10 +1688,10 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(0, bmp.Height));
             }
 
-            if (sides.HasFlag(AnchorStyles.Left) && verticalTornCount > 1)
+            if (sides.HasFlag(ImageSides.Left) && verticalTornCount > 1)
             {
-                int startY = (sides.HasFlag(AnchorStyles.Bottom) && horizontalTornCount > 1) ? bmp.Height - tornDepth : bmp.Height;
-                int endY = (sides.HasFlag(AnchorStyles.Top) && horizontalTornCount > 1) ? tornDepth : 0;
+                int startY = (sides.HasFlag(ImageSides.Bottom) && horizontalTornCount > 1) ? bmp.Height - tornDepth : bmp.Height;
+                int endY = (sides.HasFlag(ImageSides.Top) && horizontalTornCount > 1) ? tornDepth : 0;
                 for (int y = startY; y >= endY; y = (y / tornRange - 1) * tornRange)
                 {
                     int x = random ? RandomFast.Next(0, tornDepth) : ((y / tornRange) & 1) * tornDepth;
@@ -1772,7 +1771,7 @@ namespace ShareX.HelpersLib
             return bmpResult;
         }
 
-        public static SKBitmap CombineImages(List<SKBitmap> images, Orientation orientation, ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop,
+        public static SKBitmap CombineImages(List<SKBitmap> images, ImageOrientation orientation, ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop,
             int space = 0, int wrapAfter = 0, bool autoFillBackground = false)
         {
             int imageCount = images.Count;
@@ -1785,7 +1784,7 @@ namespace ShareX.HelpersLib
                 SKBitmap image = images[i];
                 Point offset = new Point(0, 0);
 
-                if (orientation == Orientation.Horizontal)
+                if (orientation == ImageOrientation.Horizontal)
                 {
                     if (wrapAfter > 0)
                     {
@@ -1883,7 +1882,7 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static SKBitmap CombineImages(IEnumerable<string> imageFiles, Orientation orientation, ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop,
+        public static SKBitmap CombineImages(IEnumerable<string> imageFiles, ImageOrientation orientation, ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop,
             int space = 0, int wrapAfter = 0, bool autoFillBackground = false)
         {
             List<SKBitmap> images = new List<SKBitmap>();
@@ -1947,11 +1946,11 @@ namespace ShareX.HelpersLib
         }
 
         public static Rectangle FindAutoCropRectangle(SKBitmap bmp, bool sameColorCrop = false,
-            AnchorStyles sides = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)
+            ImageSides sides = ImageSides.Top | ImageSides.Bottom | ImageSides.Left | ImageSides.Right)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
 
-            if (sides == AnchorStyles.None)
+            if (sides == ImageSides.None)
             {
                 return source;
             }
@@ -1966,7 +1965,7 @@ namespace ShareX.HelpersLib
                 uint mask = checkColor.Alpha == 0 ? 0xFF000000 : 0xFFFFFFFF;
                 uint check = checkColor.Bgra & mask;
 
-                if (sides.HasFlag(AnchorStyles.Left))
+                if (sides.HasFlag(ImageSides.Left))
                 {
                     // Find X (Left to right)
                     for (int x = 0; x < bmp.Width && !leave; x++)
@@ -1992,7 +1991,7 @@ namespace ShareX.HelpersLib
                     leave = false;
                 }
 
-                if (sides.HasFlag(AnchorStyles.Top))
+                if (sides.HasFlag(ImageSides.Top))
                 {
                     // Find Y (Top to bottom)
                     for (int y = 0; y < bmp.Height && !leave; y++)
@@ -2019,7 +2018,7 @@ namespace ShareX.HelpersLib
                     check = checkColor.Bgra & mask;
                 }
 
-                if (sides.HasFlag(AnchorStyles.Right))
+                if (sides.HasFlag(ImageSides.Right))
                 {
                     // Find Width (Right to left)
                     for (int x = bmp.Width - 1; x >= 0 && !leave; x--)
@@ -2038,7 +2037,7 @@ namespace ShareX.HelpersLib
                     leave = false;
                 }
 
-                if (sides.HasFlag(AnchorStyles.Bottom))
+                if (sides.HasFlag(ImageSides.Bottom))
                 {
                     // Find Height (Bottom to top)
                     for (int y = bmp.Height - 1; y >= 0 && !leave; y--)
@@ -2060,7 +2059,7 @@ namespace ShareX.HelpersLib
         }
 
         public static SKBitmap AutoCropImage(SKBitmap bmp, bool sameColorCrop = false,
-            AnchorStyles sides = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right, int padding = 0)
+            ImageSides sides = ImageSides.Top | ImageSides.Bottom | ImageSides.Left | ImageSides.Right, int padding = 0)
         {
             Rectangle source = new Rectangle(0, 0, bmp.Width, bmp.Height);
             Rectangle rect = FindAutoCropRectangle(bmp, sameColorCrop, sides);

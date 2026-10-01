@@ -24,16 +24,14 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
-using System.Windows.Forms;
 
 namespace ShareX
 {
     public static class LanguageHelper
     {
-        public static bool ChangeLanguage(SupportedLanguage language, params Form[] forms)
+        public static bool ChangeLanguage(SupportedLanguage language)
         {
             CultureInfo currentCulture;
 
@@ -52,12 +50,6 @@ namespace ShareX
                 Helpers.SetDefaultUICulture(currentCulture);
                 DebugHelper.WriteLine("Language changed to: " + currentCulture.DisplayName);
 
-                foreach (Form form in forms)
-                {
-                    ComponentResourceManager resources = new ComponentResourceManager(form.GetType());
-                    ApplyResourceToControl(form, resources, currentCulture);
-                    resources.ApplyResources(form, "$this", currentCulture);
-                }
 
                 return true;
             }
@@ -164,34 +156,5 @@ namespace ShareX
             return cultureName;
         }
 
-        private static void ApplyResourceToControl(Control control, ComponentResourceManager resource, CultureInfo culture)
-        {
-            if (control is ToolStrip ts)
-            {
-                ApplyResourceToToolStripItemCollection(ts.Items, resource, culture);
-            }
-            else
-            {
-                foreach (Control child in control.Controls)
-                {
-                    ApplyResourceToControl(child, resource, culture);
-                }
-            }
-
-            resource.ApplyResources(control, control.Name, culture);
-        }
-
-        private static void ApplyResourceToToolStripItemCollection(ToolStripItemCollection collection, ComponentResourceManager resource, CultureInfo culture)
-        {
-            foreach (ToolStripItem item in collection)
-            {
-                if (item is ToolStripDropDownItem tsddi)
-                {
-                    ApplyResourceToToolStripItemCollection(tsddi.DropDownItems, resource, culture);
-                }
-
-                resource.ApplyResources(item, item.Name, culture);
-            }
-        }
     }
 }

@@ -61,6 +61,7 @@ internal static class ImageEffectsLocalization
         string resourceType = enumType.Name switch
         {
             nameof(ImageContentAlignment) => "ContentAlignment",
+            nameof(ImageSides) => "AnchorStyles",
             nameof(ImageDashStyle) => "DashStyle",
             nameof(ImageGradientMode) => "LinearGradientMode",
             nameof(ImageCompositingMode) => "CompositingMode",

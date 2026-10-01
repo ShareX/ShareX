@@ -28,7 +28,6 @@ using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace ShareX;
 
@@ -154,7 +153,7 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
 
             if (finalize && settings.HotkeyInfo.IsOnlyModifiers)
             {
-                settings.HotkeyInfo.Hotkey = Keys.None;
+                settings.HotkeyInfo.Hotkey = InputKey.None;
                 settings.HotkeyInfo.Win = false;
             }
 
@@ -170,7 +169,7 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
         {
             if (settings.HotkeyInfo.IsOnlyModifiers)
             {
-                settings.HotkeyInfo.Hotkey = Keys.None;
+                settings.HotkeyInfo.Hotkey = InputKey.None;
                 settings.HotkeyInfo.Win = false;
             }
 
@@ -231,36 +230,36 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
         return (HotkeySettings)item.Source;
     }
 
-    private static Keys ConvertGesture(HotkeyGesture gesture)
+    private static InputKey ConvertGesture(HotkeyGesture gesture)
     {
-        Keys key = gesture.KeyName switch
+        InputKey key = gesture.KeyName switch
         {
-            nameof(Avalonia.Input.Key.LeftCtrl) => Keys.ControlKey,
-            nameof(Avalonia.Input.Key.RightCtrl) => Keys.ControlKey,
-            nameof(Avalonia.Input.Key.LeftShift) => Keys.ShiftKey,
-            nameof(Avalonia.Input.Key.RightShift) => Keys.ShiftKey,
-            nameof(Avalonia.Input.Key.LeftAlt) => Keys.Menu,
-            nameof(Avalonia.Input.Key.RightAlt) => Keys.Menu,
-            nameof(Avalonia.Input.Key.Enter) => Keys.Enter,
-            nameof(Avalonia.Input.Key.CapsLock) => Keys.CapsLock,
-            nameof(Avalonia.Input.Key.PageUp) => Keys.PageUp,
-            nameof(Avalonia.Input.Key.PageDown) => Keys.PageDown,
-            nameof(Avalonia.Input.Key.PrintScreen) => Keys.PrintScreen,
-            _ when Enum.TryParse(gesture.KeyName, true, out Keys parsed) => parsed,
-            _ => Keys.None
+            nameof(Avalonia.Input.Key.LeftCtrl) => InputKey.ControlKey,
+            nameof(Avalonia.Input.Key.RightCtrl) => InputKey.ControlKey,
+            nameof(Avalonia.Input.Key.LeftShift) => InputKey.ShiftKey,
+            nameof(Avalonia.Input.Key.RightShift) => InputKey.ShiftKey,
+            nameof(Avalonia.Input.Key.LeftAlt) => InputKey.Menu,
+            nameof(Avalonia.Input.Key.RightAlt) => InputKey.Menu,
+            nameof(Avalonia.Input.Key.Enter) => InputKey.Enter,
+            nameof(Avalonia.Input.Key.CapsLock) => InputKey.CapsLock,
+            nameof(Avalonia.Input.Key.PageUp) => InputKey.PageUp,
+            nameof(Avalonia.Input.Key.PageDown) => InputKey.PageDown,
+            nameof(Avalonia.Input.Key.PrintScreen) => InputKey.PrintScreen,
+            _ when Enum.TryParse(gesture.KeyName, true, out InputKey parsed) => parsed,
+            _ => InputKey.None
         };
 
         if (gesture.Control)
         {
-            key |= Keys.Control;
+            key |= InputKey.Control;
         }
         if (gesture.Shift)
         {
-            key |= Keys.Shift;
+            key |= InputKey.Shift;
         }
         if (gesture.Alt)
         {
-            key |= Keys.Alt;
+            key |= InputKey.Alt;
         }
 
         return key;

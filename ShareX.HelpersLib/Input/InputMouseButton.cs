@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,39 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
-using SkiaSharp;
-using System.ComponentModel;
+namespace ShareX.HelpersLib;
 
-namespace ShareX.ImageEffectsLib
+public enum InputMouseButton
 {
-    [Description("Auto crop")]
-    internal class AutoCrop : ImageEffect
-    {
-        [DefaultValue(ImageSides.Top | ImageSides.Bottom | ImageSides.Left | ImageSides.Right)]
-        public ImageSides Sides { get; set; }
-
-        [DefaultValue(0)]
-        public int Padding { get; set; }
-
-        public AutoCrop()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override SKBitmap Apply(SKBitmap bmp)
-        {
-            return SkiaImageHelpers.AutoCropImage(bmp, true, Sides, Padding);
-        }
-
-        protected override string GetSummary()
-        {
-            if (Padding > 0)
-            {
-                return Padding.ToString();
-            }
-
-            return null;
-        }
-    }
+    None = 0,
+    Left = 1048576,
+    Right = 2097152,
+    Middle = 4194304,
+    XButton1 = 8388608,
+    XButton2 = 16777216
 }

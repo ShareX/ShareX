@@ -54,7 +54,7 @@ namespace ShareX
             hotkeyForm.FormClosed += HotkeyForm_FormClosed;
         }
 
-        private void HotkeyForm_HotkeyPress(ushort id, Keys key, Modifiers modifier)
+        private void HotkeyForm_HotkeyPress(ushort id, InputKey key, Modifiers modifier)
         {
             if (!IgnoreHotkeys && (!ApplicationState.Settings.DisableHotkeysOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
             {
@@ -224,11 +224,11 @@ namespace ShareX
         {
             return new List<HotkeySettings>
             {
-                new HotkeySettings(HotkeyType.RectangleRegion, Keys.Control | Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.PrintScreen, Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.ActiveWindow, Keys.Alt | Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.ScreenRecorder, Keys.Shift | Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.ScreenRecorderGIF, Keys.Control | Keys.Shift | Keys.PrintScreen)
+                new HotkeySettings(HotkeyType.RectangleRegion, InputKey.Control | InputKey.PrintScreen),
+                new HotkeySettings(HotkeyType.PrintScreen, InputKey.PrintScreen),
+                new HotkeySettings(HotkeyType.ActiveWindow, InputKey.Alt | InputKey.PrintScreen),
+                new HotkeySettings(HotkeyType.ScreenRecorder, InputKey.Shift | InputKey.PrintScreen),
+                new HotkeySettings(HotkeyType.ScreenRecorderGIF, InputKey.Control | InputKey.Shift | InputKey.PrintScreen)
             };
         }
     }

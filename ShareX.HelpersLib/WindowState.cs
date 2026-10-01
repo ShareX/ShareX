@@ -24,8 +24,6 @@
 #endregion License Information (GPL v3)
 
 using System.Drawing;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -34,39 +32,5 @@ namespace ShareX.HelpersLib
         public Point Location { get; set; }
         public Size Size { get; set; }
         public bool IsMaximized { get; set; }
-
-        public void ApplyFormState(Form form)
-        {
-            if (!Location.IsEmpty && !Size.IsEmpty && CaptureHelpers.GetScreenWorkingArea().Contains(new Rectangle(Location, Size)))
-            {
-                form.StartPosition = FormStartPosition.Manual;
-                form.Location = Location;
-                form.Size = Size;
-            }
-
-            if (IsMaximized)
-            {
-                form.WindowState = FormWindowState.Maximized;
-            }
-        }
-
-        public void UpdateFormState(Form form)
-        {
-            WINDOWPLACEMENT wp = new WINDOWPLACEMENT();
-            wp.length = Marshal.SizeOf(wp);
-
-            if (NativeMethods.GetWindowPlacement(form.Handle, ref wp))
-            {
-                Location = wp.rcNormalPosition.Location;
-                Size = wp.rcNormalPosition.Size;
-                IsMaximized = wp.showCmd == WindowShowStyle.Maximize;
-            }
-        }
-
-        public void AutoHandleFormState(Form form)
-        {
-            ApplyFormState(form);
-            form.FormClosing += (sender, e) => UpdateFormState(form);
-        }
     }
 }

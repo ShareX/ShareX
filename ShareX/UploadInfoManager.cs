@@ -30,7 +30,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ShareX
 {
@@ -492,7 +491,7 @@ namespace ShareX
             }
         }
 
-        public void CombineImages(Orientation orientation)
+        public void CombineImages(ImageOrientation orientation)
         {
             if (IsItemSelected)
             {

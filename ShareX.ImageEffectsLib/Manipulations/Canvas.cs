@@ -27,14 +27,13 @@ using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
     internal class Canvas : ImageEffect
     {
-        [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
-        public Padding Margin { get; set; }
+        [DefaultValue(typeof(ImageMargins), "0, 0, 0, 0")]
+        public ImageMargins Margin { get; set; }
 
         [DefaultValue(CanvasMarginMode.AbsoluteSize), Description("How the margin around the canvas will be calculated.")]
         public CanvasMarginMode MarginMode { get; set; }
@@ -55,11 +54,11 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            Padding canvasMargin;
+            ImageMargins canvasMargin;
 
             if (MarginMode == CanvasMarginMode.PercentageOfCanvas)
             {
-                canvasMargin = new Padding();
+                canvasMargin = new ImageMargins();
                 canvasMargin.Left = (int)Math.Round(Margin.Left / 100f * bmp.Width);
                 canvasMargin.Right = (int)Math.Round(Margin.Right / 100f * bmp.Width);
                 canvasMargin.Top = (int)Math.Round(Margin.Top / 100f * bmp.Height);

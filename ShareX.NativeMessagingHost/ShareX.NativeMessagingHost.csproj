@@ -4,7 +4,6 @@
     <BaseOutputPath>$(MSBuildThisFileDirectory)..\ShareX\bin\</BaseOutputPath>
     <OutputType>WinExe</OutputType>
     <AssemblyName>ShareX_NativeMessagingHost</AssemblyName>
-    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />

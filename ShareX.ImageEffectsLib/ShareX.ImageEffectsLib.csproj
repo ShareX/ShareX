@@ -2,7 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net10.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
-    <UseWindowsForms>true</UseWindowsForms>
     <UseSystemDrawing>true</UseSystemDrawing>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>annotations</Nullable>

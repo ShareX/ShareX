@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -39,8 +38,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(20)]
         public int Range { get; set; }
 
-        [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
-        public AnchorStyles Sides { get; set; }
+        [DefaultValue(ImageSides.Top | ImageSides.Bottom | ImageSides.Left | ImageSides.Right)]
+        public ImageSides Sides { get; set; }
 
         public WaveEdge()
         {

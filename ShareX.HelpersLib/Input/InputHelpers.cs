@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -65,35 +64,35 @@ namespace ShareX.HelpersLib
             return inputManager.SendInputs();
         }
 
-        public static bool SendMouseDown(MouseButtons button = MouseButtons.Left)
+        public static bool SendMouseDown(InputMouseButton button = InputMouseButton.Left)
         {
             InputManager inputManager = new InputManager();
             inputManager.AddMouseDown(button);
             return inputManager.SendInputs();
         }
 
-        public static bool SendMouseUp(MouseButtons button = MouseButtons.Left)
+        public static bool SendMouseUp(InputMouseButton button = InputMouseButton.Left)
         {
             InputManager inputManager = new InputManager();
             inputManager.AddMouseUp(button);
             return inputManager.SendInputs();
         }
 
-        public static bool SendMouseClick(MouseButtons button = MouseButtons.Left)
+        public static bool SendMouseClick(InputMouseButton button = InputMouseButton.Left)
         {
             InputManager inputManager = new InputManager();
             inputManager.AddMouseClick(button);
             return inputManager.SendInputs();
         }
 
-        public static bool SendMouseClick(int x, int y, MouseButtons button = MouseButtons.Left)
+        public static bool SendMouseClick(int x, int y, InputMouseButton button = InputMouseButton.Left)
         {
             InputManager inputManager = new InputManager();
             inputManager.AddMouseClick(x, y, button);
             return inputManager.SendInputs();
         }
 
-        public static bool SendMouseClick(Point position, MouseButtons button = MouseButtons.Left)
+        public static bool SendMouseClick(Point position, InputMouseButton button = InputMouseButton.Left)
         {
             return SendMouseClick(position.X, position.Y, button);
         }

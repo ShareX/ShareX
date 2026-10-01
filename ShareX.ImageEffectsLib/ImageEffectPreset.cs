@@ -24,9 +24,9 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using SkiaSharp;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -72,7 +72,7 @@ namespace ShareX.ImageEffectsLib
             ImageEffectPreset preset = new ImageEffectPreset();
 
             Canvas canvas = new Canvas();
-            canvas.Margin = new Padding(0, 0, 0, 30);
+            canvas.Margin = new ImageMargins(0, 0, 0, 30);
             preset.Effects.Add(canvas);
 
             DrawText text = new DrawText();
