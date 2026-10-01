@@ -90,6 +90,17 @@ public sealed class MacWindowService : IWindowService
         }
     }
 
+    // macOS has no application-held mouse capture, and only the frontmost app's own windows can restrict the pointer.
+    public void ReleaseMouseCapture()
+    {
+    }
+
+    public bool ConfineCursor(long windowHandle) => false;
+
+    public void ReleaseCursorConfinement()
+    {
+    }
+
     /// <summary>A null event's location is the current pointer position, in global display coordinates with the origin top left.</summary>
     public PlatformPoint? GetCursorPosition()
     {

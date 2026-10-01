@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -45,6 +45,8 @@ public sealed class LinuxShellService : IShellService
     public bool OpenUrl(string url) => Open(url);
 
     public bool OpenPath(string path) => Open(path);
+
+    public string? GetMimeType(string extension) => MimeDatabase.Default.GetMimeType(extension);
 
     public bool RevealInFileManager(string path)
     {

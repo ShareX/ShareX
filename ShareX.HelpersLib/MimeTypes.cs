@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.Win32;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -67,18 +67,12 @@ namespace ShareX.HelpersLib
                         return mimeType;
                     }
 
-                    // Windows also knows the types that installed applications registered. Elsewhere the table above is the source.
-                    if (OperatingSystem.IsWindows())
-                    {
-                        using (RegistryKey key = Registry.ClassesRoot.OpenSubKey(extension))
-                        {
-                            mimeType = key?.GetValue("Content Type") as string;
-                        }
+                    // The system database knows the types that installed applications registered.
+                    mimeType = PlatformServices.IsInitialized ? PlatformServices.Current.Shell.GetMimeType(extension) : null;
 
-                        if (!string.IsNullOrEmpty(mimeType))
-                        {
-                            return mimeType;
-                        }
+                    if (!string.IsNullOrEmpty(mimeType))
+                    {
+                        return mimeType;
                     }
                 }
             }

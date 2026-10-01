@@ -69,4 +69,7 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>OS preferences such as the mouse wheel scroll amount.</summary>
     ISystemPreferencesService Preferences { get; }
+
+    /// <summary>Operating system name, elevation and similar facts.</summary>
+    ISystemInfoService SystemInfo { get; }
 }

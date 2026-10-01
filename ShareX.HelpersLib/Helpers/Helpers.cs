@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using ShareX.Platform;
 using System;
@@ -318,6 +317,28 @@ namespace ShareX.HelpersLib
             return CompareVersion(version, GetApplicationVersion(includeRevision));
         }
 
+        /// <summary>Keeps the pointer inside the window while it is active, where the platform allows it (Windows).</summary>
+        public static void LockCursorToWindow(Avalonia.Controls.Window window)
+        {
+            if (!PlatformServices.IsInitialized)
+            {
+                return;
+            }
+
+            IWindowService windows = PlatformServices.Current.Windows;
+            window.Activated += (sender, e) =>
+            {
+                IntPtr handle = window.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+
+                if (handle != IntPtr.Zero)
+                {
+                    windows.ConfineCursor(handle);
+                }
+            };
+            window.Deactivated += (sender, e) => windows.ReleaseCursorConfinement();
+            window.Closed += (sender, e) => windows.ReleaseCursorConfinement();
+        }
+
         public static int CompareVersion(string version1, string version2, bool ignoreRevision = false)
         {
             return NormalizeVersion(version1, ignoreRevision).CompareTo(NormalizeVersion(version2, ignoreRevision));
@@ -499,51 +520,10 @@ namespace ShareX.HelpersLib
             }
         }
 
-        /// <summary>True when the process runs elevated: an administrator token on Windows, root elsewhere.</summary>
-        public static bool IsAdministrator()
-        {
-            if (!OperatingSystem.IsWindows())
-            {
-                return Environment.IsPrivilegedProcess;
-            }
+        /// <summary>True when ShareX runs elevated: an administrator token on Windows, root elsewhere.</summary>
+        public static bool IsAdministrator() => PlatformServices.IsInitialized && PlatformServices.Current.SystemInfo.IsElevated;
 
-            try
-            {
-                using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
-                {
-                    WindowsPrincipal principal = new WindowsPrincipal(identity);
-                    return principal.IsInRole(WindowsBuiltInRole.Administrator);
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        /// <summary>True when the user belongs to the Windows Administrators group, even without elevation. Elsewhere, true only for root.</summary>
-        public static bool IsMemberOfAdministratorsGroup()
-        {
-            if (!OperatingSystem.IsWindows())
-            {
-                return Environment.IsPrivilegedProcess;
-            }
-
-            try
-            {
-                using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
-                {
-                    WindowsPrincipal principal = new WindowsPrincipal(identity);
-                    string administratorsSid = new SecurityIdentifier(WellKnownSidType.BuiltinAdministratorsSid, null).Value;
-                    return principal.UserClaims.Any(x => x.Value.Contains(administratorsSid));
-                }
-            }
-            catch
-            {
-            }
-
-            return false;
-        }
+        public static bool IsMemberOfAdministratorsGroup() => PlatformServices.IsInitialized && PlatformServices.Current.SystemInfo.IsAdministratorGroupMember;
 
         public static string RepeatGenerator(int count, Func<string> generator)
         {
@@ -586,23 +566,7 @@ namespace ShareX.HelpersLib
 
         public static string GetOperatingSystemProductName(bool includeBit = false)
         {
-            string productName = null;
-
-            if (OperatingSystem.IsWindows())
-            {
-                using (RegistryKey key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Default).OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion"))
-                {
-                    productName = key?.GetValue("ProductName") as string;
-                }
-            }
-            else if (PlatformServices.IsInitialized && PlatformServices.Current.Info.Distribution is LinuxDistribution distribution)
-            {
-                productName = distribution.PrettyName;
-            }
-            else
-            {
-                productName = RuntimeInformation.OSDescription;
-            }
+            string productName = PlatformServices.IsInitialized ? PlatformServices.Current.SystemInfo.OperatingSystemName : null;
 
             if (string.IsNullOrEmpty(productName))
             {
@@ -755,27 +719,7 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        public static bool IsTabletMode()
-        {
-            //int state = NativeMethods.GetSystemMetrics(SystemMetric.SM_CONVERTIBLESLATEMODE);
-            //return state == 0;
-
-            if (!OperatingSystem.IsWindows())
-            {
-                return false;
-            }
-
-            try
-            {
-                int result = (int)Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell", "TabletMode", 0);
-                return result > 0;
-            }
-            catch
-            {
-            }
-
-            return false;
-        }
+        public static bool IsTabletMode() => PlatformServices.IsInitialized && PlatformServices.Current.SystemInfo.IsTabletMode;
 
         public static string JSONFormat(string json, Newtonsoft.Json.Formatting formatting)
         {

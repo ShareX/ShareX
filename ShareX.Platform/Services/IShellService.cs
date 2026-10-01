@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -37,6 +37,12 @@ public interface IShellService
 
     /// <summary>Opens the containing folder and selects the file where the file manager supports it.</summary>
     bool RevealInFileManager(string path);
+
+    /// <summary>
+    /// The MIME type the system associates with a file extension such as ".png", or null. Windows reads the registry,
+    /// Linux the shared-mime-info and mime.types databases. Callers keep their own table for the common types.
+    /// </summary>
+    string? GetMimeType(string extension);
 }
 
 public enum ShellMenuTarget

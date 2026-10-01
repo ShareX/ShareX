@@ -184,23 +184,6 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            public static void LockCursorToWindow(Avalonia.Controls.Window window)
-            {
-                window.Activated += (sender, e) =>
-                {
-                    IntPtr handle = window.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-                    if (handle != IntPtr.Zero)
-                    {
-                        Rectangle bounds = NativeMethods.GetWindowRect(handle);
-                        if (bounds.Width > 0 && bounds.Height > 0)
-                        {
-                            Cursor.Clip = bounds;
-                        }
-                    }
-                };
-                window.Deactivated += (sender, e) => Cursor.Clip = Rectangle.Empty;
-                window.Closed += (sender, e) => Cursor.Clip = Rectangle.Empty;
-            }
 
 
             public static Icon GetProgressIcon(int percentage)

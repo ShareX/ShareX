@@ -143,6 +143,8 @@ internal sealed class NullShell : IShellService
     public bool OpenPath(string path) => true;
 
     public bool RevealInFileManager(string path) => true;
+
+    public string? GetMimeType(string extension) => null;
 }
 
 internal sealed class NullCredentials : ICredentialService
@@ -166,6 +168,17 @@ internal sealed class SwitchableSecrets(ISecretProtectionService inner) : ISecre
 
     public byte[] Unprotect(byte[] protectedData, byte[]? entropy = null) =>
         Fail ? throw new System.Security.Cryptography.CryptographicException("fake failure") : inner.Unprotect(protectedData, entropy);
+}
+
+internal sealed class FakeSystemInfo : ISystemInfoService
+{
+    public string OperatingSystemName => "Test OS";
+
+    public bool IsElevated => false;
+
+    public bool IsAdministratorGroupMember => false;
+
+    public bool IsTabletMode => false;
 }
 
 internal sealed class FakePlatform : IPlatformServices
@@ -213,6 +226,8 @@ internal sealed class FakePlatform : IPlatformServices
     public IThumbnailService Thumbnails { get; } = new UnsupportedThumbnailService("fake");
 
     public ISystemPreferencesService Preferences { get; } = new DefaultSystemPreferencesService();
+
+    public ISystemInfoService SystemInfo { get; } = new FakeSystemInfo();
 
     public void Dispose()
     {

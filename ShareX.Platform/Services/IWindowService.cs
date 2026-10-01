@@ -47,4 +47,18 @@ public interface IWindowService
     /// (for example Wayland compositors other than Hyprland).
     /// </summary>
     PlatformPoint? GetCursorPosition();
+
+    /// <summary>
+    /// Releases the mouse capture another window of this process holds, so a newly opened window receives clicks straight away.
+    /// Only Windows has application-held mouse capture; elsewhere this does nothing.
+    /// </summary>
+    void ReleaseMouseCapture();
+
+    /// <summary>
+    /// Keeps the pointer inside the window (for single monitor region capture). Returns false where the platform does not let
+    /// applications confine the pointer, which includes every Wayland compositor.
+    /// </summary>
+    bool ConfineCursor(long windowHandle);
+
+    void ReleaseCursorConfinement();
 }

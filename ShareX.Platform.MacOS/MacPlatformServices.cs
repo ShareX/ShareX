@@ -60,6 +60,7 @@ public sealed class MacPlatformServices : IPlatformServices
         Secrets = new KeyFileSecretProtectionService(System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "secret.key"));
         Thumbnails = new UnsupportedThumbnailService("macOS file thumbnails need QuickLook, which the macOS build does not wrap yet.");
         Preferences = new DefaultSystemPreferencesService();
+        SystemInfo = new MacSystemInfoService(runner);
     }
 
     public PlatformInfo Info { get; }
@@ -92,6 +93,8 @@ public sealed class MacPlatformServices : IPlatformServices
     public IThumbnailService Thumbnails { get; }
 
     public ISystemPreferencesService Preferences { get; }
+
+    public ISystemInfoService SystemInfo { get; }
 
     public void Dispose()
     {

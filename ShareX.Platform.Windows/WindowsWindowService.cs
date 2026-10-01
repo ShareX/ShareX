@@ -68,6 +68,20 @@ public sealed unsafe class WindowsWindowService : IWindowService
 
     public PlatformPoint? GetCursorPosition() => Win32.GetCursorPos(out Win32.POINT point) ? new PlatformPoint(point.X, point.Y) : null;
 
+    public void ReleaseMouseCapture() => Win32.ReleaseCapture();
+
+    public bool ConfineCursor(long windowHandle)
+    {
+        if (!Win32.GetWindowRect((IntPtr)windowHandle, out Win32.RECT rect) || rect.Right <= rect.Left || rect.Bottom <= rect.Top)
+        {
+            return false;
+        }
+
+        return Win32.ClipCursor(&rect);
+    }
+
+    public void ReleaseCursorConfinement() => Win32.ClipCursor(null);
+
     public PlatformWindow? GetActiveWindow()
     {
         IntPtr hwnd = Win32.GetForegroundWindow();

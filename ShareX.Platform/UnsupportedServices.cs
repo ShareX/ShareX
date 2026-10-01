@@ -66,6 +66,16 @@ public sealed class UnsupportedWindowService(string reason) : IWindowService
     public PlatformWindow? GetActiveWindow() => null;
 
     public PlatformPoint? GetCursorPosition() => null;
+
+    public void ReleaseMouseCapture()
+    {
+    }
+
+    public bool ConfineCursor(long windowHandle) => false;
+
+    public void ReleaseCursorConfinement()
+    {
+    }
 }
 
 public sealed class UnsupportedShellIntegrationService(string reason) : IShellIntegrationService

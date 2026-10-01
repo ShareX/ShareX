@@ -60,6 +60,7 @@ public sealed class LinuxPlatformServices : IPlatformServices
         Secrets = new KeyFileSecretProtectionService(System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "secret.key"));
         Thumbnails = new FreedesktopThumbnailService(System.IO.Path.Combine(paths.CacheHome, "thumbnails"));
         Preferences = new DefaultSystemPreferencesService();
+        SystemInfo = new UnixSystemInfoService(info, runner);
     }
 
     public PlatformInfo Info { get; }
@@ -92,6 +93,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
     public IThumbnailService Thumbnails { get; }
 
     public ISystemPreferencesService Preferences { get; }
+
+    public ISystemInfoService SystemInfo { get; }
 
     private static IHotkeyService CreateHotkeyService(PlatformInfo info, Func<int, string>? describeHotkey)
     {

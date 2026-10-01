@@ -47,11 +47,8 @@ namespace ShareX.HelpersLib
             {
                 thread = new Thread(WorkThread);
                 thread.IsBackground = true;
-                if (OperatingSystem.IsWindows())
-                {
-                    // Apartments are a COM concept. Other platforms have no equivalent to set.
-                    thread.SetApartmentState(state);
-                }
+                // Apartments are a COM concept. On other platforms this returns false and the thread runs as usual.
+                thread.TrySetApartmentState(state);
                 thread.Start();
             }
         }

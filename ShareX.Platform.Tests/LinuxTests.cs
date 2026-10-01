@@ -225,6 +225,35 @@ public class LinuxShellIntegrationTests
 
 public class LinuxParsingTests
 {
+    [Fact]
+    public void MimeDatabase_ReadsGlobs2AndMimeTypes_FirstDefinitionWins()
+    {
+        Dictionary<string, string> types = new Dictionary<string, string>();
+        MimeDatabase.ParseGlobs2Line("# comment", types);
+        MimeDatabase.ParseGlobs2Line("50:image/png:*.png", types);
+        MimeDatabase.ParseGlobs2Line("50:text/x-readme:README", types);
+        MimeDatabase.ParseGlobs2Line("50:application/x-tar:*.tar.*", types);
+        MimeDatabase.ParseMimeTypesLine("image/x-png png", types);
+        MimeDatabase.ParseMimeTypesLine("video/webm\twebm WEBMX", types);
+
+        Assert.Equal("image/png", types["png"]);
+        Assert.Equal("video/webm", types["webm"]);
+        Assert.Equal("video/webm", types["webmx"]);
+        Assert.False(types.ContainsKey("readme"));
+        Assert.Equal(3, types.Count);
+    }
+
+    [Theory]
+    [InlineData("mike wheel video", true)]
+    [InlineData("mike sudo", true)]
+    [InlineData("staff admin", true)]
+    [InlineData("mike video audio", false)]
+    [InlineData("", false)]
+    public void UnixSystemInfo_RecognisesAdministratorGroups(string groups, bool expected)
+    {
+        Assert.Equal(expected, UnixSystemInfoService.IsAdministratorGroupList(groups));
+    }
+
     [Theory]
     [InlineData("2874, 144", 2874, 144)]
     [InlineData("-1920, 30.6", -1920, 31)]

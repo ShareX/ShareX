@@ -123,6 +123,18 @@ public sealed class LinuxWindowService : IWindowService
             : null;
     }
 
+    // X11 could grab the pointer, but a grab also blocks input to every other client, which is worse than no confinement.
+    // Wayland does not let clients confine the pointer outside their own surface at all.
+    public void ReleaseMouseCapture()
+    {
+    }
+
+    public bool ConfineCursor(long windowHandle) => false;
+
+    public void ReleaseCursorConfinement()
+    {
+    }
+
     public PlatformWindow? GetActiveWindow()
     {
         switch (ActiveBackend)

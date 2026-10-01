@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -46,6 +46,9 @@ public sealed class MacShellService : IShellService
     public bool OpenPath(string path) => Run("open", [path]);
 
     public bool RevealInFileManager(string path) => Run("open", ["-R", path]);
+
+    // macOS uniform type identifiers have no simple extension to MIME table; callers fall back to their own.
+    public string? GetMimeType(string extension) => null;
 
     private bool Run(string command, IReadOnlyList<string> arguments)
     {

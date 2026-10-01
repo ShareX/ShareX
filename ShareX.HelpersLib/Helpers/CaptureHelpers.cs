@@ -43,9 +43,9 @@ namespace ShareX.HelpersLib
         private static IReadOnlyList<ScreenInfo> GetScreens() =>
             PlatformServices.IsInitialized ? PlatformServices.Current.ScreenCapture.GetScreens() : Array.Empty<ScreenInfo>();
 
-        private static Rectangle ToRectangle(PlatformRectangle r) => new Rectangle(r.X, r.Y, r.Width, r.Height);
+        internal static Rectangle ToRectangle(PlatformRectangle r) => new Rectangle(r.X, r.Y, r.Width, r.Height);
 
-        private static ScreenInfo? GetScreenAt(Point point)
+        internal static ScreenInfo? GetScreenAt(Point point)
         {
             IReadOnlyList<ScreenInfo> screens = GetScreens();
             return screens.FirstOrDefault(s => s.Bounds.Contains(new PlatformPoint(point.X, point.Y))) ?? screens.FirstOrDefault(s => s.IsPrimary) ?? screens.FirstOrDefault();
@@ -60,14 +60,6 @@ namespace ShareX.HelpersLib
         public static Rectangle GetScreenWorkingArea()
         {
             return GetScreens().Select(x => ToRectangle(x.WorkingArea)).Combine();
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static Rectangle GetScreenBounds(IntPtr handle, bool workingArea)
-        {
-            Rectangle window = GetWindowRectangle(handle);
-            ScreenInfo? screen = GetScreenAt(new Point(window.X + window.Width / 2, window.Y + window.Height / 2));
-            return screen == null ? Rectangle.Empty : ToRectangle(workingArea ? screen.WorkingArea : screen.Bounds);
         }
 
         public static Rectangle GetActiveScreenBounds()
@@ -89,90 +81,11 @@ namespace ShareX.HelpersLib
             return screen == null ? Rectangle.Empty : ToRectangle(screen.Bounds);
         }
 
-        [SupportedOSPlatform("windows")]
-        public static Point ScreenToClient(Point p)
-        {
-            int screenX = NativeMethods.GetSystemMetrics(SystemMetric.SM_XVIRTUALSCREEN);
-            int screenY = NativeMethods.GetSystemMetrics(SystemMetric.SM_YVIRTUALSCREEN);
-            return new Point(p.X - screenX, p.Y - screenY);
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static Rectangle ScreenToClient(Rectangle r)
-        {
-            return new Rectangle(ScreenToClient(r.Location), r.Size);
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static Point ClientToScreen(Point p)
-        {
-            int screenX = NativeMethods.GetSystemMetrics(SystemMetric.SM_XVIRTUALSCREEN);
-            int screenY = NativeMethods.GetSystemMetrics(SystemMetric.SM_YVIRTUALSCREEN);
-            return new Point(p.X + screenX, p.Y + screenY);
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static Rectangle ClientToScreen(Rectangle r)
-        {
-            return new Rectangle(ClientToScreen(r.Location), r.Size);
-        }
-
         /// <summary>The pointer position, or Point.Empty where the platform does not reveal it.</summary>
         public static Point GetCursorPosition()
         {
             PlatformPoint? point = PlatformServices.IsInitialized ? PlatformServices.Current.Windows.GetCursorPosition() : null;
             return point is PlatformPoint p ? new Point(p.X, p.Y) : Point.Empty;
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static void SetCursorPosition(int x, int y)
-        {
-            NativeMethods.SetCursorPos(x, y);
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static void SetCursorPosition(Point position)
-        {
-            SetCursorPosition(position.X, position.Y);
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static Color GetPixelColor()
-        {
-            return GetPixelColor(GetCursorPosition());
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static Color GetPixelColor(int x, int y)
-        {
-            IntPtr hdc = NativeMethods.GetDC(IntPtr.Zero);
-            uint pixel = NativeMethods.GetPixel(hdc, x, y);
-            NativeMethods.ReleaseDC(IntPtr.Zero, hdc);
-            return Color.FromArgb((int)(pixel & 0x000000FF), (int)(pixel & 0x0000FF00) >> 8, (int)(pixel & 0x00FF0000) >> 16);
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static Color GetPixelColor(Point position)
-        {
-            return GetPixelColor(position.X, position.Y);
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static bool CheckPixelColor(int x, int y, Color color)
-        {
-            Color targetColor = GetPixelColor(x, y);
-
-            return targetColor.R == color.R && targetColor.G == color.G && targetColor.B == color.B;
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static bool CheckPixelColor(int x, int y, Color color, byte variation)
-        {
-            Color targetColor = GetPixelColor(x, y);
-
-            return targetColor.R.IsBetween((byte)(color.R - variation), (byte)(color.R + variation)) &&
-                targetColor.G.IsBetween((byte)(color.G - variation), (byte)(color.G + variation)) &&
-                targetColor.B.IsBetween((byte)(color.B - variation), (byte)(color.B + variation));
         }
 
         public static Rectangle CreateRectangle(int x, int y, int x2, int y2)
@@ -318,65 +231,6 @@ namespace ShareX.HelpersLib
         {
             PointF newPosition = CalculateNewPosition(posOnClick, posCurrent, size);
             return CreateRectangle(posOnClick, newPosition);
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static Rectangle GetWindowRectangle(IntPtr handle)
-        {
-            Rectangle rect = Rectangle.Empty;
-
-            if (NativeMethods.IsDWMEnabled() && NativeMethods.GetExtendedFrameBounds(handle, out Rectangle tempRect))
-            {
-                rect = tempRect;
-            }
-
-            if (rect.IsEmpty)
-            {
-                rect = NativeMethods.GetWindowRect(handle);
-            }
-
-            if (!Helpers.IsWindows10OrGreater() && NativeMethods.IsZoomed(handle))
-            {
-                rect = NativeMethods.MaximizedWindowFix(handle, rect);
-            }
-
-            return rect;
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static Rectangle GetActiveWindowRectangle()
-        {
-            IntPtr handle = NativeMethods.GetForegroundWindow();
-            return GetWindowRectangle(handle);
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static Rectangle GetActiveWindowClientRectangle()
-        {
-            IntPtr handle = NativeMethods.GetForegroundWindow();
-            return NativeMethods.GetClientRect(handle);
-        }
-
-        [SupportedOSPlatform("windows")]
-        public static bool IsActiveWindowFullscreen()
-        {
-            IntPtr handle = NativeMethods.GetForegroundWindow();
-
-            if (handle.ToInt32() > 0)
-            {
-                WindowInfo windowInfo = new WindowInfo(handle);
-                string className = windowInfo.ClassName;
-                string[] ignoreList = new string[] { "Progman", "WorkerW" };
-
-                if (ignoreList.All(ignore => !className.Equals(ignore, StringComparison.OrdinalIgnoreCase)))
-                {
-                    Rectangle windowRectangle = windowInfo.Rectangle;
-                    Rectangle monitorRectangle = GetScreenBounds(handle, workingArea: false);
-                    return windowRectangle.Contains(monitorRectangle);
-                }
-            }
-
-            return false;
         }
 
         public static Rectangle EvenRectangleSize(Rectangle rect)

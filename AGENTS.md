@@ -44,11 +44,12 @@ Rules for people and coding agents working in this repository. The `cross-platfo
 These break the rules above and are being moved behind platform services. Do not copy their patterns into new code. Update the list as items are done.
 
 - [ ] `ShareX.HelpersLib.Windows` (WinForms helpers, update and print windows) and the `net10.0-windows` targets of `ShareX`, `ScreenCaptureLib`, `ImageEffectsLib`, `Tools`.
-- [ ] Win32 interop in `ShareX.HelpersLib/Native` (`NativeMethods`, `WindowInfo`, `CursorData`, `DWMManager`) → `ShareX.Platform.Windows`.
+- [ ] Win32 interop (`NativeMethods`, `WindowInfo`, `CursorData`, `DWMManager`, now in `ShareX.HelpersLib.Windows`) → `ShareX.Platform.Windows`, as each caller moves to a platform service.
 - [ ] GDI+ image code (`ImageHelpers`, `ImageEffectsLib`, `ColorMatrixManager`, GIF encoding, the capture pipeline in `TaskHelpers`) → SkiaSharp.
 - [ ] Remaining P/Invoke in `ScreenCaptureLib` (HDR, scrolling and transparent capture), `Tools` (mouse highlighter, borderless window, inspect window), `ImageEditor` and `ShareX.Avalonia` → platform services.
 - [ ] WinForms tray icon and hotkey host (`MainForm`, `TrayIconService`) → Avalonia `TrayIcon` and `IHotkeyService`.
-- [ ] `OperatingSystem.Is…()` branches in shared code: `HelpersLib` (`Helpers` admin checks, OS name, tablet mode and cursor clipping, `MimeTypes`, `ThreadWorker`, `Native/WindowsInput`, `ColorPickerWindowIntegration`), `ShareX.Avalonia` (`ScreenColorPickerWindow`), `ImageEditor` (desktop wallpaper services, emoji and cursor renderers, `EditorServices`).
+- [x] `HelpersLib` free of P/Invoke, registry and OS branches (system info, MIME types, cursor confinement and mouse capture now come from `ISystemInfoService`, `IShellService` and `IWindowService`).
+- [ ] `OperatingSystem.Is…()` branches in shared code: `ShareX.Avalonia` (`ScreenColorPickerWindow`), `ImageEditor` (desktop wallpaper services, emoji and cursor renderers, `EditorServices`).
 
 ## Other rules
 

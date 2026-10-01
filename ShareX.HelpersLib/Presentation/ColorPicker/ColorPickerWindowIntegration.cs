@@ -27,6 +27,7 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
+using ShareX.Platform;
 using ShareX.AvaloniaUI.Windows;
 using System;
 using System.Threading.Tasks;
@@ -61,7 +62,7 @@ public static class ColorPickerWindowIntegration
         Func<PointInfo>? openScreenColorPicker = null,
         ScreenColorPickerOptions? screenColorPickerOptions = null)
     {
-        if (OperatingSystem.IsWindows()) WindowsInput.ReleaseCapture();
+        if (PlatformServices.IsInitialized) PlatformServices.Current.Windows.ReleaseMouseCapture();
         AvaloniaBootstrapper.EnsureInitialized();
 
         DrawingColor? result;
@@ -99,7 +100,7 @@ public static class ColorPickerWindowIntegration
     {
         try
         {
-            if (OperatingSystem.IsWindows()) WindowsInput.ReleaseCapture();
+            if (PlatformServices.IsInitialized) PlatformServices.Current.Windows.ReleaseMouseCapture();
             ColorPickerWindow window =
                 new(currentColor, options, screenColorPickerOptions, openScreenColorPicker);
             window.Closed += (_, _) => completed(window.SelectedColor);
