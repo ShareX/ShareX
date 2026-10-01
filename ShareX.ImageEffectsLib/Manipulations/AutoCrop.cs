@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
@@ -44,9 +45,9 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            return ImageHelpers.AutoCropImage(bmp, true, Sides, Padding);
+            return SkiaImageHelpers.AutoCropImage(bmp, true, Sides, Padding);
         }
 
         protected override string GetSummary()

@@ -25,6 +25,7 @@
 
 using Newtonsoft.Json;
 using System.Drawing;
+using SkiaSharp;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
@@ -36,10 +37,9 @@ namespace ShareX.ImageEffectsLib
         [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
         public List<ImageEffect> Effects { get; set; } = new List<ImageEffect>();
 
-        public Bitmap ApplyEffects(Bitmap bmp)
+        public SKBitmap ApplyEffects(SKBitmap bmp)
         {
-            Bitmap result = (Bitmap)bmp.Clone();
-            result.SetResolution(96f, 96f);
+            SKBitmap result = (SKBitmap)bmp.Copy();
 
             if (Effects != null && Effects.Count > 0)
             {

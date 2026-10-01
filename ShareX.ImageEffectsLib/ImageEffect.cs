@@ -27,6 +27,7 @@ using Newtonsoft.Json;
 using ShareX.ImageEffectsLib.Localization;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -44,7 +45,7 @@ namespace ShareX.ImageEffectsLib
             Enabled = true;
         }
 
-        public abstract Bitmap Apply(Bitmap bmp);
+        public abstract SKBitmap Apply(SKBitmap bmp);
 
         protected virtual string GetSummary()
         {

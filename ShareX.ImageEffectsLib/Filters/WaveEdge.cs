@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
@@ -47,9 +48,9 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            return ImageHelpers.WavyEdges(bmp, Depth, Range, Sides);
+            return SkiaImageHelpers.WavyEdges(bmp, Depth, Range, Sides);
         }
 
         protected override string GetSummary()

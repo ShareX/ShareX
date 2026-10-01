@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -103,9 +104,9 @@ namespace ShareX.ImageEffectsLib
             return gradientInfo;
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            return ImageHelpers.AddGlow(bmp, Size, Strength, Color, Offset, UseGradient ? Gradient : null);
+            return SkiaImageHelpers.AddGlow(bmp, Size, Strength, Color, Offset, UseGradient ? Gradient : null);
         }
 
         protected override string GetSummary()

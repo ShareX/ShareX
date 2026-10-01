@@ -25,16 +25,17 @@
 
 using ShareX.HelpersLib;
 using System.Drawing;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
     internal class Emboss : ImageEffect
     {
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             using (bmp)
             {
-                return ConvolutionMatrixManager.Emboss().Apply(bmp);
+                return SkiaConvolutionMatrixManager.Emboss().Apply(bmp);
             }
         }
     }

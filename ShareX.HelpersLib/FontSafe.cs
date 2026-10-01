@@ -54,5 +54,10 @@ namespace ShareX.HelpersLib
 
             return null;
         }
+
+        public ImageFont GetImageFont() => string.IsNullOrEmpty(Font) ? null :
+            new ImageFontConverter().ConvertFromInvariantString(Font) as ImageFont;
+
+        public void SetImageFont(ImageFont font) => Font = font?.ToString();
     }
 }

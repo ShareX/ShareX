@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -45,7 +46,7 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             if (Angle == 0)
             {
@@ -54,7 +55,7 @@ namespace ShareX.ImageEffectsLib
 
             using (bmp)
             {
-                return ImageHelpers.RotateImage(bmp, Angle, Upsize, Clip);
+                return SkiaImageHelpers.RotateImage(bmp, Angle, Upsize, Clip);
             }
         }
 

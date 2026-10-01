@@ -26,17 +26,18 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
     [Description("Edge detect")]
     internal class EdgeDetect : ImageEffect
     {
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             using (bmp)
             {
-                return ConvolutionMatrixManager.EdgeDetect().Apply(bmp);
+                return SkiaConvolutionMatrixManager.EdgeDetect().Apply(bmp);
             }
         }
     }

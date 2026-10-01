@@ -23,34 +23,26 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
-using System.ComponentModel;
-using System.Drawing;
 using SkiaSharp;
+using System.Drawing;
+using System.Linq;
 
-namespace ShareX.ImageEffectsLib
+namespace ShareX.HelpersLib;
+
+public static class SkiaGradientExtensions
 {
-    internal class Brightness : ImageEffect
+    public static SKPaint GetSkiaPaint(this GradientInfo gradient, Rectangle rectangle)
     {
-        [DefaultValue(0f), Description("Pixel color = Pixel color + Value\r\nExample 0.5 will increase color of pixel 127.5")]
-        public float Value { get; set; }
+        GradientStop[] stops = gradient.Colors.OrderBy(stop => stop.Location).ToArray();
+        return SkiaDrawing.Gradient(rectangle, stops.Select(stop => stop.Color).ToArray(),
+            stops.Select(stop => stop.Location / 100f).ToArray(), gradient.Type);
+    }
 
-        public Brightness()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
-
-        public override SKBitmap Apply(SKBitmap bmp)
-        {
-            using (bmp)
-            {
-                return SkiaColorMatrixManager.Brightness(Value).Apply(bmp);
-            }
-        }
-
-        protected override string GetSummary()
-        {
-            return Value.ToString();
-        }
+    public static void DrawSkia(this GradientInfo gradient, SKBitmap bitmap)
+    {
+        if (!gradient.IsValid) return;
+        using SKCanvas canvas = new(bitmap);
+        using SKPaint paint = gradient.GetSkiaPaint(new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+        canvas.DrawRect(0, 0, bitmap.Width, bitmap.Height, paint);
     }
 }

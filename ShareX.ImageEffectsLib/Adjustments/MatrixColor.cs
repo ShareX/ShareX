@@ -26,7 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Imaging;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -82,9 +82,9 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            ColorMatrix colorMatrix = new ColorMatrix(new[]
+            ImageColorMatrix colorMatrix = new ImageColorMatrix(new[]
             {
                 new float[] { Rr, Gr, Br, Ar, 0 },
                 new float[] { Rg, Gg, Bg, Ag, 0 },

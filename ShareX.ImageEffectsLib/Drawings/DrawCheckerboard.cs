@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -58,9 +59,9 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            return ImageHelpers.DrawCheckers(bmp, Size, Color, Color2);
+            return SkiaImageHelpers.DrawCheckers(bmp, Size, Color, Color2);
         }
 
         protected override string GetSummary()

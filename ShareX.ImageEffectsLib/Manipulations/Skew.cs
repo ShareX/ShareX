@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -42,14 +43,14 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             if (Horizontally == 0 && Vertically == 0)
             {
                 return bmp;
             }
 
-            return ImageHelpers.AddSkew(bmp, Horizontally, Vertically);
+            return SkiaImageHelpers.AddSkew(bmp, Horizontally, Vertically);
         }
 
         protected override string GetSummary()

@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -55,16 +56,16 @@ namespace ShareX.ImageEffectsLib
             Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             using (bmp)
             {
                 if (UseGradient && Gradient != null && Gradient.IsValid)
                 {
-                    return ImageHelpers.FillBackground(bmp, Gradient);
+                    return SkiaImageHelpers.FillBackground(bmp, Gradient);
                 }
 
-                return ImageHelpers.FillBackground(bmp, Color);
+                return SkiaImageHelpers.FillBackground(bmp, Color);
             }
         }
 

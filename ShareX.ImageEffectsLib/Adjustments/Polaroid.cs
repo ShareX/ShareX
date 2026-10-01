@@ -25,16 +25,17 @@
 
 using ShareX.HelpersLib;
 using System.Drawing;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
     internal class Polaroid : ImageEffect
     {
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             using (bmp)
             {
-                return ColorMatrixManager.Polaroid().Apply(bmp);
+                return SkiaColorMatrixManager.Polaroid().Apply(bmp);
             }
         }
     }

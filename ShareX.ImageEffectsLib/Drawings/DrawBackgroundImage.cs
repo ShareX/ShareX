@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -46,11 +47,11 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             if (ImageEffectPathHelpers.TryGetSafeLocalFilePath(ImageFilePath, out string imageFilePath))
             {
-                return ImageHelpers.DrawBackgroundImage(bmp, imageFilePath, Center, Tile);
+                return SkiaImageHelpers.DrawBackgroundImage(bmp, imageFilePath, Center, Tile);
             }
 
             return bmp;

@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
@@ -52,7 +53,7 @@ namespace ShareX.ImageEffectsLib
             PercentageOfCanvas
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             Padding canvasMargin;
 
@@ -69,7 +70,7 @@ namespace ShareX.ImageEffectsLib
                 canvasMargin = Margin;
             }
 
-            Bitmap bmpResult = ImageHelpers.AddCanvas(bmp, canvasMargin, Color);
+            SKBitmap bmpResult = SkiaImageHelpers.AddCanvas(bmp, canvasMargin, Color);
 
             if (bmpResult == null)
             {

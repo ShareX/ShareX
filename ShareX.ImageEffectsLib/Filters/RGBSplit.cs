@@ -26,7 +26,7 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Imaging;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -42,12 +42,12 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Point), "5, 0")]
         public Point OffsetBlue { get; set; } = new Point(5, 0);
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            Bitmap bmpResult = bmp.CreateEmptyBitmap();
+            SKBitmap bmpResult = bmp.CreateEmptyBitmap();
 
-            using (UnsafeBitmap source = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
-            using (UnsafeBitmap dest = new UnsafeBitmap(bmpResult, true, ImageLockMode.WriteOnly))
+            using (SkiaPixelBuffer source = new SkiaPixelBuffer(bmp, true, PixelAccess.ReadOnly))
+            using (SkiaPixelBuffer dest = new SkiaPixelBuffer(bmpResult, true, PixelAccess.WriteOnly))
             {
                 int right = source.Width - 1;
                 int bottom = source.Height - 1;

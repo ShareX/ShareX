@@ -26,6 +26,8 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using SkiaSharp;
+
 using System.Drawing.Drawing2D;
 
 namespace ShareX.ImageEffectsLib
@@ -77,14 +79,14 @@ namespace ShareX.ImageEffectsLib
             Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             if (UseGradient && Gradient != null && Gradient.IsValid)
             {
-                return ImageHelpers.DrawBorder(bmp, Gradient, Size, Type, DashStyle);
+                return SkiaImageHelpers.DrawBorder(bmp, Gradient, Size, Type, DashStyle);
             }
 
-            return ImageHelpers.DrawBorder(bmp, Color, Size, Type, DashStyle);
+            return SkiaImageHelpers.DrawBorder(bmp, Color, Size, Type, DashStyle);
         }
 
         protected override string GetSummary()

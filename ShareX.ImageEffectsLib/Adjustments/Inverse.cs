@@ -25,16 +25,17 @@
 
 using ShareX.HelpersLib;
 using System.Drawing;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib
 {
     internal class Inverse : ImageEffect
     {
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             using (bmp)
             {
-                return ColorMatrixManager.Inverse().Apply(bmp);
+                return SkiaColorMatrixManager.Inverse().Apply(bmp);
             }
         }
     }
