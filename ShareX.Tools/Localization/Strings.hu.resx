@@ -910,6 +910,9 @@
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Csúszka</value>
   </data>
+  <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
+    <value>Nem sikerült a képet {0} formátumba kódolni.</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Képek átalakítása</value>
   </data>

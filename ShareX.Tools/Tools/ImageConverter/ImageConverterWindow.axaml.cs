@@ -26,10 +26,10 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
-using Avalonia.Media.Imaging;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using SkiaSharp;
 
 namespace ShareX.Tools;
 
@@ -93,9 +93,15 @@ public partial class ImageConverterWindow : Window
             return;
         }
 
-        using MemoryStream stream = new();
-        _viewModel.PreviewImage.Save(stream, PngBitmapEncoderOptions.Default);
-        ImageViewerWindowIntegration.ShowImage(stream.ToArray(), Path.GetFileName(_viewModel.PreviewFilePath), this);
+        using SKBitmap bitmap = BitmapConversionHelpers.ToSKBitmap(_viewModel.PreviewImage);
+        using SKImage image = SKImage.FromBitmap(bitmap);
+        using SKData? data = image.Encode(SKEncodedImageFormat.Png, 100);
+        if (data == null)
+        {
+            return;
+        }
+
+        ImageViewerWindowIntegration.ShowImage(data.ToArray(), Path.GetFileName(_viewModel.PreviewFilePath), this);
         e.Handled = true;
     }
 

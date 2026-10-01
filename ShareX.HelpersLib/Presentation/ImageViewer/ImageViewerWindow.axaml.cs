@@ -31,6 +31,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
 using System;
@@ -42,7 +43,12 @@ namespace ShareX.HelpersLib;
 
 public partial class ImageViewerWindow : Window
 {
+    private const double MinZoom = 0.1;
+    private const double MaxZoom = 10;
+    private const double ZoomFactor = 1.2;
+
     private readonly ImageViewerViewModel _viewModel = new();
+    private readonly MatrixTransform _previewTransform = new() { Matrix = Matrix.Identity };
     private bool _closeOnDeactivate;
 
     public ImageViewerWindow()
@@ -73,15 +79,26 @@ public partial class ImageViewerWindow : Window
     {
         DataContext = _viewModel;
         AvaloniaXamlLoader.Load(this);
-        // Open on the screen under the cursor where the OS tells us where it is (Windows); elsewhere let the window manager place it.
-        if (OperatingSystem.IsWindows() && WindowsInput.GetCursorPos(out WindowsInput.POINT cursor) && Screens.ScreenFromPoint(new PixelPoint(cursor.X, cursor.Y)) is Screen screen)
+        this.FindControl<Image>("PreviewImage")!.RenderTransform = _previewTransform;
+        _viewModel.PropertyChanged += (_, e) =>
         {
-            WindowStartupLocation = WindowStartupLocation.Manual;
-            Position = screen.Bounds.Position;
+            if (e.PropertyName == nameof(ImageViewerViewModel.CurrentImage))
+            {
+                _previewTransform.Matrix = Matrix.Identity;
+            }
+        };
+
+        // Open on the screen under the pointer where the platform reveals it; otherwise let the window manager place the window.
+        System.Drawing.Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
+
+        if (activeScreen.IsEmpty)
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
         else
         {
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            WindowStartupLocation = WindowStartupLocation.Manual;
+            Position = new PixelPoint(activeScreen.X, activeScreen.Y);
         }
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Title = Localization.Strings.ImageViewerWindow_Title;
@@ -127,10 +144,32 @@ public partial class ImageViewerWindow : Window
             Close();
             e.Handled = true;
         }
+        else if (e.InitialPressMouseButton == MouseButton.Middle)
+        {
+            _previewTransform.Matrix = Matrix.Identity;
+            e.Handled = true;
+        }
     }
 
     private void OnPreviewPointerWheelChanged(object? sender, PointerWheelEventArgs e)
     {
+        if (e.KeyModifiers.HasFlag(KeyModifiers.Control))
+        {
+            if (_viewModel.HasImage && e.Delta.Y != 0 && sender is Border { Child: Image previewImage })
+            {
+                Matrix matrix = _previewTransform.Matrix;
+                double zoom = Math.Clamp(matrix.M11 * Math.Pow(ZoomFactor, e.Delta.Y), MinZoom, MaxZoom);
+                // Account for the image's layout offset and current transform when finding the anchor.
+                Point pointerPosition = e.GetPosition(previewImage);
+                _previewTransform.Matrix = new Matrix(zoom, 0, 0, zoom,
+                    matrix.M31 + pointerPosition.X * (matrix.M11 - zoom),
+                    matrix.M32 + pointerPosition.Y * (matrix.M22 - zoom));
+            }
+
+            e.Handled = true;
+            return;
+        }
+
         if (e.Delta.Y > 0 && _viewModel.CanNavigateLeft)
         {
             _viewModel.Navigate(-1);
