@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -87,6 +87,10 @@ public sealed class UnsupportedWindowService(string reason) : IWindowService
     public bool SetOverlayStyle(long windowHandle, bool clickThrough) => false;
 
     public bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas) => false;
+
+    public FeatureSupport OverlaySupport => Support;
+
+    public IScreenOverlay CreateOverlay(PlatformRectangle screenBounds) => throw new PlatformNotSupportedException(Support.Reason);
 }
 
 public sealed class UnsupportedInputService(string reason) : IInputService
@@ -102,6 +106,10 @@ public sealed class UnsupportedInputService(string reason) : IInputService
     public bool SendMouseWheel(int detents) => false;
 
     public bool ScrollWindow(long windowHandle, WindowScrollCommand command) => false;
+
+    public FeatureSupport MouseHookSupport { get; } = FeatureSupport.NotSupported(reason);
+
+    public IDisposable HookMouse(IGlobalMouseListener listener) => throw new PlatformNotSupportedException(MouseHookSupport.Reason);
 }
 
 public sealed class UnsupportedShellIntegrationService(string reason) : IShellIntegrationService
@@ -128,6 +136,16 @@ public sealed class UnsupportedScreenRecordingService(string reason) : IScreenRe
     public void PrepareDevice(string device, ScreenRecordingRequest request)
     {
     }
+}
+
+public sealed class UnsupportedOcrService(string reason) : IOcrService
+{
+    public FeatureSupport Support { get; } = FeatureSupport.NotSupported(reason);
+
+    public IReadOnlyList<OcrLanguage> GetLanguages() => Array.Empty<OcrLanguage>();
+
+    public Task<string> RecognizeAsync(byte[] png, string languageTag, bool singleLine, CancellationToken cancellationToken = default) =>
+        throw new PlatformNotSupportedException(Support.Reason);
 }
 
 public sealed class UnsupportedThumbnailService(string reason) : IThumbnailService

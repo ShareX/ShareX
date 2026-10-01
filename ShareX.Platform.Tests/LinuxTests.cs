@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Platform.Imaging;
 using ShareX.Platform.Linux;
 using System;
 using System.Collections.Generic;
@@ -414,6 +415,84 @@ public class LinuxParsingTests
 
         Assert.Equal(new[] { 2, 5, -98 }.Order(), visible.Order());
         Assert.Equal(new[] { "On screen", "Scratchpad" }, windows.Select(w => w.Title).Order());
+    }
+
+    [Fact]
+    public void ParseHyprlandDetails_FloatingPinnedWindowIsTopMost()
+    {
+        using JsonDocument json = JsonDocument.Parse("""
+            { "address": "0x20", "mapped": true, "at": [10, 20], "size": [640, 480], "class": "firefox", "title": "Browser", "pid": -1,
+              "floating": true, "pinned": true, "fullscreen": 0, "xwayland": false, "workspace": { "id": 2, "name": "2" } }
+            """);
+
+        WindowDetails details = LinuxWindowManagementService.ParseHyprlandDetails(json.RootElement);
+
+        Assert.Equal("firefox", details.ClassName);
+        Assert.True(details.IsTopMost);
+        Assert.Null(details.Opacity);
+        Assert.Equal(new[] { "floating", "pinned", "workspace 2" }, details.Styles);
+    }
+
+    [Fact]
+    public void ParseHyprlandDetails_TiledWindowCannotBePinned()
+    {
+        using JsonDocument json = JsonDocument.Parse("""
+            { "address": "0x20", "at": [0, 0], "size": [10, 10], "title": "T", "pid": -1, "floating": false, "pinned": false }
+            """);
+
+        Assert.Null(LinuxWindowManagementService.ParseHyprlandDetails(json.RootElement).IsTopMost);
+    }
+
+    [Fact]
+    public void ParseNetWmIcon_PicksSmallestAtLeastPreferred()
+    {
+        nuint[] data =
+        [
+            1, 1, 0xFF000000,
+            2, 1, 0x80FF0000, 0xFF00FF00,
+            4, 1, 0, 0, 0, 0
+        ];
+
+        PixelBuffer? icon = LinuxWindowManagementService.ParseNetWmIcon(data, 2);
+
+        Assert.NotNull(icon);
+        Assert.Equal(2, icon.Width);
+        // 0x80FF0000 is half transparent red: B, G, R, A.
+        Assert.Equal(new byte[] { 0, 0, 255, 128, 0, 255, 0, 255 }, icon.Pixels);
+    }
+
+    [Fact]
+    public void ParseNetWmIcon_RejectsTruncatedData()
+    {
+        Assert.Null(LinuxWindowManagementService.ParseNetWmIcon([16, 16, 0], 32));
+    }
+
+    [Fact]
+    public void Tesseract_ParsesLanguageList()
+    {
+        IReadOnlyList<OcrLanguage> languages = TesseractOcrService.ParseLanguages("List of available languages in \"/usr/share/tessdata/\" (3):\neng\nosd\ndeu\n");
+
+        Assert.Equal(new[] { "deu", "eng" }.Order(), languages.Select(l => l.Tag).Order());
+    }
+
+    [Theory]
+    [InlineData("en", "eng")]
+    [InlineData("en-US", "eng")]
+    [InlineData("de-DE", "deu")]
+    [InlineData("zh-Hans", "chi_sim")]
+    [InlineData("zh-TW", "chi_tra")]
+    [InlineData("eng", "eng")]
+    public void Tesseract_MatchesWindowsLanguageTags(string tag, string expected)
+    {
+        OcrLanguage[] installed = [new("eng", "English"), new("deu", "German"), new("chi_sim", "Chinese"), new("chi_tra", "Chinese (Traditional)")];
+
+        Assert.Equal(expected, TesseractOcrService.MatchLanguage(tag, installed));
+    }
+
+    [Fact]
+    public void Tesseract_FormatsSingleLine()
+    {
+        Assert.Equal("first second", TesseractOcrService.FormatText("first\n\nsecond\n\f", singleLine: true));
     }
 
     [Fact]

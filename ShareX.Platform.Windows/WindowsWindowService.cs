@@ -137,6 +137,10 @@ public sealed unsafe class WindowsWindowService : IWindowService
         return true;
     }
 
+    public FeatureSupport OverlaySupport => FeatureSupport.Supported;
+
+    public IScreenOverlay CreateOverlay(PlatformRectangle screenBounds) => new WindowsScreenOverlay(screenBounds);
+
     public PlatformWindow? GetActiveWindow()
     {
         IntPtr hwnd = Win32.GetForegroundWindow();

@@ -255,7 +255,11 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
         }
     }
 
-    private static PixelBuffer DrawIcon(IntPtr icon, int size, uint background)
+    /// <summary>An icon or cursor drawn at <paramref name="size"/> pixels with its transparency.</summary>
+    internal static PixelBuffer RenderIcon(IntPtr icon, int size) =>
+        TransparentWindowCapture.CombineBackgrounds(DrawIcon(icon, size, 0xFFFFFFFF, true), DrawIcon(icon, size, 0xFF000000, true));
+
+    private static PixelBuffer DrawIcon(IntPtr icon, int size, uint background, bool fitToSize = false)
     {
         IntPtr screenDc = Win32.GetDC(IntPtr.Zero);
         IntPtr memoryDc = Win32.CreateCompatibleDC(screenDc);
@@ -275,7 +279,9 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
         try
         {
             new Span<uint>((void*)bits, size * size).Fill(background);
-            Win32.DrawIconEx(memoryDc, 0, 0, icon, 0, 0, 0, IntPtr.Zero, Win32.DI_NORMAL);
+            // Width and height 0 draw a cursor at its own size; window icons are scaled to fill the buffer.
+            int drawSize = fitToSize ? size : 0;
+            Win32.DrawIconEx(memoryDc, 0, 0, icon, drawSize, drawSize, 0, IntPtr.Zero, Win32.DI_NORMAL);
             Win32.GdiFlush();
             return PixelBuffer.FromBgra(bits, size, size, size * 4, forceOpaque: true);
         }

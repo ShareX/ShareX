@@ -171,6 +171,10 @@ public sealed class LinuxClipboardService : IClipboardService
         return paths;
     }
 
+    public Task<IReadOnlyList<string>> GetFormatsAsync(CancellationToken cancellationToken = default) => GetTypesAsync(cancellationToken);
+
+    public Task<byte[]?> GetDataAsync(string format, CancellationToken cancellationToken = default) => GetAsync(format, cancellationToken);
+
     private async Task<bool> SetAsync(string mimeType, byte[] data, CancellationToken cancellationToken)
     {
         (string command, string[] arguments) = ActiveBackend switch

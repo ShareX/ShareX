@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -56,6 +57,24 @@ public sealed record SnapTarget(long Handle, PlatformRectangle Bounds, PlatformW
 
         return targets;
     }
+}
+
+/// <summary>Memory to draw the next overlay frame into: <see cref="Height"/> premultiplied BGRA rows of <see cref="Stride"/> bytes.</summary>
+public readonly record struct OverlayBuffer(IntPtr Pixels, int Stride, int Height);
+
+/// <summary>
+/// An always on top, click through surface over one screen, for effects drawn over other applications such as the mouse
+/// highlighter. Use from the UI thread.
+/// </summary>
+public interface IScreenOverlay : IDisposable
+{
+    /// <summary>A buffer of at least <paramref name="width"/> by <paramref name="height"/> pixels, valid until the next call.</summary>
+    OverlayBuffer GetBuffer(int width, int height);
+
+    /// <summary>Shows the top left area of the buffer at <paramref name="area"/> on the desktop.</summary>
+    void Present(PlatformRectangle area);
+
+    void Hide();
 }
 
 /// <summary>Window enumeration for window and region capture.</summary>
@@ -113,4 +132,10 @@ public interface IWindowService
     /// stays rectangular and relies on a transparent background.
     /// </summary>
     bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas);
+
+    /// <summary>Whether <see cref="CreateOverlay"/> works.</summary>
+    FeatureSupport OverlaySupport { get; }
+
+    /// <summary>Creates a hidden overlay for the screen at <paramref name="screenBounds"/>.</summary>
+    IScreenOverlay CreateOverlay(PlatformRectangle screenBounds);
 }

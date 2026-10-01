@@ -27,6 +27,7 @@ using ShareX.Platform.Imaging;
 using ShareX.Platform.Windows.Native;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -223,6 +224,62 @@ public sealed unsafe class WindowsClipboardService : IClipboardService
 
         return result;
     }
+
+    // The names WinForms' DataFormats uses for the predefined formats, so the clipboard viewer shows what it always did.
+    private static readonly Dictionary<uint, string> StandardFormatNames = new Dictionary<uint, string>
+    {
+        [1] = "Text",
+        [2] = "Bitmap",
+        [3] = "MetaFilePict",
+        [4] = "SymbolicLink",
+        [5] = "DataInterchangeFormat",
+        [6] = "TaggedImageFileFormat",
+        [7] = "OEMText",
+        [8] = "DeviceIndependentBitmap",
+        [9] = "Palette",
+        [10] = "PenData",
+        [11] = "RiffAudio",
+        [12] = "WaveAudio",
+        [13] = "UnicodeText",
+        [14] = "EnhancedMetafile",
+        [15] = "FileDrop",
+        [16] = "Locale",
+        [17] = "Format17"
+    };
+
+    public Task<IReadOnlyList<string>> GetFormatsAsync(CancellationToken cancellationToken = default) => Task.FromResult(Read<IReadOnlyList<string>>(() =>
+    {
+        List<string> formats = new List<string>();
+        char* name = stackalloc char[256];
+
+        for (uint format = Win32.EnumClipboardFormats(0); format != 0; format = Win32.EnumClipboardFormats(format))
+        {
+            if (StandardFormatNames.TryGetValue(format, out string? standard))
+            {
+                formats.Add(standard);
+            }
+            else
+            {
+                int length = Win32.GetClipboardFormatName(format, name, 256);
+                formats.Add(length > 0 ? new string(name, 0, length) : "Format" + format);
+            }
+        }
+
+        return formats;
+    }) ?? Array.Empty<string>());
+
+    public Task<byte[]?> GetDataAsync(string format, CancellationToken cancellationToken = default) => Task.FromResult(Read(() =>
+    {
+        uint id = StandardFormatNames.FirstOrDefault(pair => pair.Value.Equals(format, StringComparison.OrdinalIgnoreCase)).Key;
+
+        if (id == 0)
+        {
+            id = Win32.RegisterClipboardFormat(format);
+        }
+
+        // Bitmap, MetaFilePict, Palette and EnhancedMetafile hold GDI handles, not memory.
+        return id is 2 or 3 or 9 or 14 ? null : GetData(id);
+    }));
 
     private static bool SetData(uint format, byte[] data)
     {

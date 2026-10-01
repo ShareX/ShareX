@@ -23,7 +23,29 @@
 
 #endregion License Information (GPL v3)
 
+using System;
+
 namespace ShareX.Platform;
+
+public enum GlobalMouseButton
+{
+    /// <summary>The button the user clicks with, the left one unless the buttons are swapped.</summary>
+    Primary,
+    Secondary,
+    Middle
+}
+
+/// <summary>A mouse button press or release anywhere on the desktop.</summary>
+/// <param name="Timestamp">A <see cref="System.Diagnostics.Stopwatch"/> timestamp taken when the event arrived.</param>
+public readonly record struct GlobalMouseButtonEvent(GlobalMouseButton Button, bool Pressed, PlatformPoint Position, long Timestamp);
+
+/// <summary>Receives mouse input from every application. Called on a background thread; implementations must return quickly.</summary>
+public interface IGlobalMouseListener
+{
+    void OnMove(PlatformPoint position);
+
+    void OnButton(GlobalMouseButtonEvent buttonEvent);
+}
 
 /// <summary>Scroll bar commands sent straight to a window, without moving the mouse or the keyboard focus.</summary>
 public enum WindowScrollCommand
@@ -51,4 +73,10 @@ public interface IInputService
     bool SendMouseWheel(int detents);
 
     bool ScrollWindow(long windowHandle, WindowScrollCommand command);
+
+    /// <summary>Whether <see cref="HookMouse"/> works. Wayland, by design, does not show applications input meant for others.</summary>
+    FeatureSupport MouseHookSupport { get; }
+
+    /// <summary>Reports mouse movement and buttons across the whole desktop until the returned object is disposed.</summary>
+    IDisposable HookMouse(IGlobalMouseListener listener);
 }

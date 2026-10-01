@@ -47,7 +47,9 @@ public enum LinuxTool
     XdgUtils,
     /// <summary>xdg-desktop-portal plus a backend for the current desktop.</summary>
     XdgDesktopPortal,
-    WfRecorder
+    WfRecorder,
+    /// <summary>Tesseract OCR with at least one language's data.</summary>
+    Tesseract
 }
 
 /// <summary>Maps helper programs to package names and install commands for each distribution family.</summary>
@@ -65,7 +67,8 @@ public static class LinuxPackages
         [LinuxTool.FFmpeg] = "ffmpeg",
         [LinuxTool.XdgUtils] = "xdg-open",
         [LinuxTool.XdgDesktopPortal] = "xdg-desktop-portal",
-        [LinuxTool.WfRecorder] = "wf-recorder"
+        [LinuxTool.WfRecorder] = "wf-recorder",
+        [LinuxTool.Tesseract] = "tesseract"
     };
 
     /// <summary>The executable name used to check whether the tool is installed.</summary>
@@ -89,6 +92,9 @@ public static class LinuxPackages
             (LinuxTool.XdgUtils, _) => "xdg-utils",
             (LinuxTool.XdgDesktopPortal, _) => "xdg-desktop-portal",
             (LinuxTool.WfRecorder, _) => "wf-recorder",
+            (LinuxTool.Tesseract, LinuxDistributionFamily.Debian) => "tesseract-ocr",
+            (LinuxTool.Tesseract, LinuxDistributionFamily.OpenSuse) => "tesseract-ocr",
+            (LinuxTool.Tesseract, LinuxDistributionFamily.Arch) => "tesseract tesseract-data-eng",
             _ => Commands[tool]
         };
     }

@@ -49,4 +49,13 @@ public interface IClipboardService
     Task<IReadOnlyList<string>> GetFilesAsync(CancellationToken cancellationToken = default);
 
     Task<bool> ClearAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Every format on the clipboard, named the way the platform names them: Windows clipboard format names ("UnicodeText",
+    /// "DeviceIndependentBitmap", "PNG"), MIME types on Linux, uniform type identifiers on macOS. For the clipboard viewer.
+    /// </summary>
+    Task<IReadOnlyList<string>> GetFormatsAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>The raw bytes of one format from <see cref="GetFormatsAsync"/>, or null when it is gone or not a data format.</summary>
+    Task<byte[]?> GetDataAsync(string format, CancellationToken cancellationToken = default);
 }

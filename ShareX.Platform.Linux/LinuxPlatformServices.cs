@@ -52,6 +52,7 @@ public sealed class LinuxPlatformServices : IPlatformServices
         LinuxWindowService windows = new LinuxWindowService(info, runner);
         Windows = windows;
         Input = new LinuxInputService(info, runner);
+        WindowManagement = new LinuxWindowManagementService(windows, runner);
         screenCapture = new Lazy<IScreenCaptureService>(() => new LinuxScreenCaptureService(info, runner, windows));
         ScreenRecording = new LinuxScreenRecordingService(info, runner);
         hotkeys = new Lazy<IHotkeyService>(() => CreateHotkeyService(info, describeHotkey));
@@ -63,6 +64,7 @@ public sealed class LinuxPlatformServices : IPlatformServices
         Thumbnails = new FreedesktopThumbnailService(System.IO.Path.Combine(paths.CacheHome, "thumbnails"));
         Preferences = new DefaultSystemPreferencesService();
         SystemInfo = new UnixSystemInfoService(info, runner);
+        Ocr = new TesseractOcrService(info, runner);
     }
 
     public PlatformInfo Info { get; }
@@ -84,6 +86,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
 
     public IInputService Input { get; }
 
+    public IWindowManagementService WindowManagement { get; }
+
     public INotificationService Notifications { get; }
 
     public IShellService Shell { get; }
@@ -99,6 +103,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
     public ISystemPreferencesService Preferences { get; }
 
     public ISystemInfoService SystemInfo { get; }
+
+    public IOcrService Ocr { get; }
 
     private static IHotkeyService CreateHotkeyService(PlatformInfo info, Func<int, string>? describeHotkey)
     {

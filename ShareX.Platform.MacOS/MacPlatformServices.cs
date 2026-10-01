@@ -84,6 +84,9 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public IInputService Input { get; }
 
+    public IWindowManagementService WindowManagement { get; } =
+        new UnsupportedWindowManagementService("Inspecting and changing other applications' windows is not available on macOS yet.");
+
     public INotificationService Notifications { get; }
 
     public IShellService Shell { get; }
@@ -99,6 +102,9 @@ public sealed class MacPlatformServices : IPlatformServices
     public ISystemPreferencesService Preferences { get; }
 
     public ISystemInfoService SystemInfo { get; }
+
+    /// <summary>Apple's Vision framework is not wired up yet.</summary>
+    public IOcrService Ocr { get; } = new UnsupportedOcrService("Text recognition is not available on macOS yet.");
 
     public void Dispose()
     {

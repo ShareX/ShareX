@@ -53,6 +53,9 @@ public interface IPlatformServices : IDisposable
 
     IWindowService Windows { get; }
 
+    /// <summary>Inspecting and changing other applications' windows.</summary>
+    IWindowManagementService WindowManagement { get; }
+
     /// <summary>Synthetic keyboard and mouse input.</summary>
     IInputService Input { get; }
 
@@ -75,4 +78,7 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>Operating system name, elevation and similar facts.</summary>
     ISystemInfoService SystemInfo { get; }
+
+    /// <summary>Text recognition in images.</summary>
+    IOcrService Ocr { get; }
 }

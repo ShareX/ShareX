@@ -131,6 +131,44 @@ internal static unsafe partial class Win32
     [LibraryImport("user32.dll")]
     public static partial int SetWindowRgn(IntPtr hwnd, IntPtr region, [MarshalAs(UnmanagedType.Bool)] bool redraw);
 
+    public const int GWL_STYLE = -16;
+    public const long WS_EX_TOPMOST = 0x00000008;
+    public const long WS_EX_LAYERED = 0x00080000;
+    public const uint LWA_ALPHA = 0x00000002;
+    public const uint GA_ROOT = 2;
+    public const uint SWP_NOZORDER = 0x0004;
+    public const uint SWP_FRAMECHANGED = 0x0020;
+    public const uint SWP_NOOWNERZORDER = 0x0200;
+    public const int SW_RESTORE = 9;
+    public static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+    public static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
+
+    [LibraryImport("user32.dll")]
+    public static partial IntPtr WindowFromPoint(POINT point);
+
+    [LibraryImport("user32.dll")]
+    public static partial IntPtr GetAncestor(IntPtr hwnd, uint flags);
+
+    [LibraryImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool GetLayeredWindowAttributes(IntPtr hwnd, out uint colorKey, out byte alpha, out uint flags);
+
+    [LibraryImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool SetLayeredWindowAttributes(IntPtr hwnd, uint colorKey, byte alpha, uint flags);
+
+    [LibraryImport("user32.dll", EntryPoint = "SendMessageTimeoutW")]
+    public static partial nint SendMessageTimeout(IntPtr hwnd, uint message, nuint wParam, nint lParam, uint flags, uint timeout, out nint result);
+
+    [LibraryImport("user32.dll", EntryPoint = "GetClassLongPtrW")]
+    public static partial nint GetClassLongPtr(IntPtr hwnd, int index);
+
+    [LibraryImport("user32.dll")]
+    public static partial uint EnumClipboardFormats(uint format);
+
+    [LibraryImport("user32.dll", EntryPoint = "GetClipboardFormatNameW")]
+    public static partial int GetClipboardFormatName(uint format, char* name, int maxCount);
+
     [LibraryImport("gdi32.dll")]
     public static partial IntPtr CreateRectRgn(int left, int top, int right, int bottom);
 

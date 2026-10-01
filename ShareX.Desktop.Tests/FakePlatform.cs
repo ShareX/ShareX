@@ -88,6 +88,10 @@ internal sealed class FakeClipboard : IClipboardService
     public Task<IReadOnlyList<string>> GetFilesAsync(CancellationToken cancellationToken = default) => Task.FromResult<IReadOnlyList<string>>([]);
 
     public Task<bool> ClearAsync(CancellationToken cancellationToken = default) { Text = null; Image = null; return Task.FromResult(true); }
+
+    public Task<IReadOnlyList<string>> GetFormatsAsync(CancellationToken cancellationToken = default) => Task.FromResult<IReadOnlyList<string>>([]);
+
+    public Task<byte[]?> GetDataAsync(string format, CancellationToken cancellationToken = default) => Task.FromResult<byte[]?>(null);
 }
 
 internal sealed class FakeNotifications : INotificationService
@@ -219,6 +223,8 @@ internal sealed class FakePlatform : IPlatformServices
 
     public IInputService Input { get; } = new UnsupportedInputService("fake");
 
+    public IWindowManagementService WindowManagement { get; } = new UnsupportedWindowManagementService("fake");
+
     public INotificationService Notifications => NotificationsFake;
 
     public IShellService Shell { get; } = new NullShell();
@@ -236,6 +242,8 @@ internal sealed class FakePlatform : IPlatformServices
     public ISystemPreferencesService Preferences { get; } = new DefaultSystemPreferencesService();
 
     public ISystemInfoService SystemInfo { get; } = new FakeSystemInfo();
+
+    public IOcrService Ocr { get; } = new UnsupportedOcrService("fake");
 
     public void Dispose()
     {

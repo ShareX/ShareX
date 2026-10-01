@@ -369,6 +369,35 @@ internal sealed unsafe class X11Display : IDisposable
         return sent != 0 && X11.TakeLastError() == 0;
     }
 
+    /// <summary>
+    /// Asks the window manager to change _NET_WM_STATE (EWMH): <paramref name="action"/> 0 removes, 1 adds, 2 toggles the states.
+    /// </summary>
+    public bool ChangeWmState(nuint window, int action, string state, string? secondState = null)
+    {
+        X11.XClientMessageEventPadded message = default;
+        message.xclient.type = X11.ClientMessage;
+        message.xclient.window = window;
+        message.xclient.message_type = GetAtom("_NET_WM_STATE");
+        message.xclient.format = 32;
+        message.xclient.data[0] = action;
+        message.xclient.data[1] = (long)GetAtom(state);
+        message.xclient.data[2] = secondState != null ? (long)GetAtom(secondState) : 0;
+        message.xclient.data[3] = 2; // Source: a pager or similar tool acting for the user.
+
+        int sent = X11.XSendEvent(Display, Root, false, X11.SubstructureRedirectMask | X11.SubstructureNotifyMask, &message);
+        X11.XFlush(Display);
+        return sent != 0 && X11.TakeLastError() == 0;
+    }
+
+    public bool SetCardinalProperty(nuint window, string property, uint value)
+    {
+        // Format 32 data is passed as C longs.
+        nuint data = value;
+        X11.XChangeProperty(Display, window, GetAtom(property), X11.XA_CARDINAL, 32, X11.PropModeReplace, &data, 1);
+        X11.XSync(Display, false);
+        return X11.TakeLastError() == 0;
+    }
+
     /// <summary>Limits where a window receives mouse input. An empty list makes it click through.</summary>
     public bool SetInputShape(nuint window, IReadOnlyList<PlatformRectangle> areas)
     {

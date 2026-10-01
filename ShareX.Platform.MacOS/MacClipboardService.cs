@@ -199,6 +199,35 @@ public sealed class MacClipboardService : IClipboardService
         return true;
     }));
 
+    public Task<IReadOnlyList<string>> GetFormatsAsync(CancellationToken cancellationToken = default) => Task.FromResult(Run<IReadOnlyList<string>>(pasteboard =>
+    {
+        IntPtr types = ObjC.Send(pasteboard, "types");
+        List<string> formats = new List<string>();
+
+        if (types != IntPtr.Zero)
+        {
+            nint count = CoreFoundation.CFArrayGetCount(types);
+
+            for (nint i = 0; i < count; i++)
+            {
+                string? type = CoreFoundation.ToManagedString(CoreFoundation.CFArrayGetValueAtIndex(types, i));
+
+                if (type != null)
+                {
+                    formats.Add(type);
+                }
+            }
+        }
+
+        return formats;
+    }));
+
+    public Task<byte[]?> GetDataAsync(string format, CancellationToken cancellationToken = default) => Task.FromResult(Run<byte[]?>(pasteboard =>
+    {
+        IntPtr data = GetData(pasteboard, format);
+        return data != IntPtr.Zero ? CoreFoundation.ToArray(data) : null;
+    }));
+
     private static IntPtr GetData(IntPtr pasteboard, string typeName)
     {
         IntPtr type = CoreFoundation.CreateString(typeName);

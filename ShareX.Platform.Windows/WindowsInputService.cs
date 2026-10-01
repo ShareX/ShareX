@@ -56,6 +56,10 @@ public sealed unsafe class WindowsInputService : IInputService
         return Win32.SendInput(1, &input, sizeof(Win32.INPUT)) == 1;
     }
 
+    public FeatureSupport MouseHookSupport => FeatureSupport.Supported;
+
+    public IDisposable HookMouse(IGlobalMouseListener listener) => new WindowsMouseHook(listener);
+
     public bool ScrollWindow(long windowHandle, WindowScrollCommand command)
     {
         int code = command == WindowScrollCommand.Top ? Win32.SB_TOP : Win32.SB_LINEDOWN;

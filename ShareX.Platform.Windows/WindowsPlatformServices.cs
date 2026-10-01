@@ -50,6 +50,7 @@ public sealed class WindowsPlatformServices : IPlatformServices
         ScreenRecording = new WindowsScreenRecordingService(screenCapture.GetScreens);
         Windows = new WindowsWindowService();
         Input = new WindowsInputService();
+        WindowManagement = new WindowsWindowManagementService(screenCapture);
         Notifications = new UnsupportedNotificationService("ShareX shows its own notification window on Windows.");
         Shell = new WindowsShellService();
         ShellIntegration = new WindowsShellIntegrationService();
@@ -58,6 +59,13 @@ public sealed class WindowsPlatformServices : IPlatformServices
         Thumbnails = new WindowsThumbnailService();
         Preferences = new WindowsSystemPreferencesService();
         SystemInfo = new WindowsSystemInfoService();
+#if WINDOWS10_0_17763_0_OR_GREATER
+        Ocr = OperatingSystem.IsWindowsVersionAtLeast(10, 0, 18362)
+            ? new WindowsOcrService()
+            : new UnsupportedOcrService("Text recognition needs Windows 10 version 1903 or later.");
+#else
+        Ocr = new UnsupportedOcrService("Text recognition uses the Windows Runtime, which this build of ShareX was compiled without.");
+#endif
     }
 
     public PlatformInfo Info { get; }
@@ -79,6 +87,8 @@ public sealed class WindowsPlatformServices : IPlatformServices
 
     public IInputService Input { get; }
 
+    public IWindowManagementService WindowManagement { get; }
+
     public INotificationService Notifications { get; }
 
     public IShellService Shell { get; }
@@ -94,6 +104,8 @@ public sealed class WindowsPlatformServices : IPlatformServices
     public ISystemPreferencesService Preferences { get; }
 
     public ISystemInfoService SystemInfo { get; }
+
+    public IOcrService Ocr { get; }
 
     public void Dispose()
     {

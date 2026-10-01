@@ -81,6 +81,15 @@ internal static unsafe partial class X11
     public static partial int XSendEvent(IntPtr display, nuint window, [MarshalAs(UnmanagedType.Bool)] bool propagate, nint eventMask,
         XClientMessageEventPadded* xEvent);
 
+    public const int PropModeReplace = 0;
+    public static readonly nuint XA_CARDINAL = 6;
+
+    [LibraryImport(LibX11)]
+    public static partial int XChangeProperty(IntPtr display, nuint window, nuint property, nuint type, int format, int mode, void* data, int count);
+
+    [LibraryImport(LibX11)]
+    public static partial int XDeleteProperty(IntPtr display, nuint window, nuint property);
+
     [LibraryImport(LibXext)]
     public static partial void XShapeCombineRectangles(IntPtr display, nuint window, int destinationKind, int xOffset, int yOffset,
         XRectangle* rectangles, int count, int operation, int ordering);
