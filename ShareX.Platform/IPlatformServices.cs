@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -52,6 +52,9 @@ public interface IPlatformServices : IDisposable
     IHotkeyService Hotkeys { get; }
 
     IWindowService Windows { get; }
+
+    /// <summary>Synthetic keyboard and mouse input.</summary>
+    IInputService Input { get; }
 
     INotificationService Notifications { get; }
 

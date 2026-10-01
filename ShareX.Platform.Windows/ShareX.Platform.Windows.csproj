@@ -15,6 +15,9 @@
 
   <ItemGroup>
     <PackageReference Include="System.Security.Cryptography.ProtectedData" />
+    <!-- HDR capture: Desktop Duplication (DXGI, Direct3D 11) and the WIC tone mapper (shipped in Vortice.Direct2D1). -->
+    <PackageReference Include="Vortice.Direct3D11" />
+    <PackageReference Include="Vortice.Direct2D1" />
   </ItemGroup>
 
   <ItemGroup>

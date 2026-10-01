@@ -44,11 +44,16 @@ namespace ShareX.Platform.MacOS;
 public sealed class MacScreenCaptureService : IScreenCaptureService
 {
     private readonly ICommandRunner runner;
+    private readonly IWindowService? windows;
 
-    public MacScreenCaptureService(ICommandRunner runner)
+    public MacScreenCaptureService(ICommandRunner runner, IWindowService? windows = null)
     {
         this.runner = runner;
+        this.windows = windows;
     }
+
+    /// <summary>screencapture -l captures a window by its CGWindowID, with its transparency and, unless -o is given, its shadow.</summary>
+    public ScreenCaptureFeatures Features => ScreenCaptureFeatures.Window | ScreenCaptureFeatures.TransparentWindow;
 
     public FeatureSupport Support => GetPermissionState() == PermissionState.Denied
         ? FeatureSupport.NotSupported("Allow ShareX in System Settings > Privacy & Security > Screen & System Audio Recording.")
@@ -100,6 +105,7 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
             ScreenCaptureMode.Region => request.Region,
             ScreenCaptureMode.Screen => screens.FirstOrDefault(s => s.Id == request.ScreenId)?.Bounds ?? PlatformRectangle.Empty,
             ScreenCaptureMode.FullScreen => screens.FirstOrDefault(s => s.IsPrimary)?.Bounds ?? PlatformRectangle.Empty,
+            ScreenCaptureMode.Window => windows?.GetWindows().FirstOrDefault(w => w.Handle == request.WindowHandle)?.Bounds ?? PlatformRectangle.Empty,
             _ => PlatformRectangle.Empty
         };
 
@@ -156,6 +162,16 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
                 break;
             case ScreenCaptureMode.Interactive:
                 arguments.Add("-i");
+                break;
+            case ScreenCaptureMode.Window:
+                arguments.Add(string.Create(CultureInfo.InvariantCulture, $"-l{request.WindowHandle}"));
+
+                // A window keeps its rounded corners transparent either way; the shadow only when asked for.
+                if (!request.Window.Transparent || !request.Window.IncludeShadow)
+                {
+                    arguments.Add("-o");
+                }
+
                 break;
             default:
                 // The main display. Several displays are captured as a region, see CaptureAsync.

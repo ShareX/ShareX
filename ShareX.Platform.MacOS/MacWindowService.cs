@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -26,6 +26,8 @@
 using ShareX.Platform.MacOS.Native;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 
 namespace ShareX.Platform.MacOS;
 
@@ -121,6 +123,39 @@ public sealed class MacWindowService : IWindowService
             CoreFoundation.CFRelease(evt);
         }
     }
+
+    public IReadOnlyList<SnapTarget> GetSnapTargets(bool includeControls, long ignoredHandle, CancellationToken cancellationToken = default)
+    {
+        // The handle Avalonia reports is an NSWindow pointer, not a CGWindowID, so leave out every window of this process.
+        int ownProcess = Environment.ProcessId;
+        return SnapTarget.FromWindows(GetWindows().Where(window => window.ProcessId != ownProcess), ignoredHandle);
+    }
+
+    public bool SetCursorPosition(PlatformPoint position) =>
+        CoreGraphics.CGWarpMouseCursorPosition(new CoreGraphics.CGPoint { X = position.X, Y = position.Y }) == 0;
+
+    /// <summary>macOS activates applications, not windows: this brings the window's application to the front.</summary>
+    public bool ActivateWindow(long windowHandle)
+    {
+        int? processId = GetWindows().FirstOrDefault(window => window.Handle == windowHandle)?.ProcessId;
+
+        if (processId == null)
+        {
+            return false;
+        }
+
+        return ObjC.WithAutoreleasePool(() =>
+        {
+            IntPtr application = ObjC.Send(ObjC.GetClass("NSRunningApplication"), "runningApplicationWithProcessIdentifier:", processId.Value);
+            // NSApplicationActivateIgnoringOtherApps
+            return application != IntPtr.Zero && ObjC.SendBool(application, "activateWithOptions:", 2);
+        });
+    }
+
+    // Avalonia's ShowInTaskbar and transparent windows cover this on macOS; AppKit has no input shape for a window.
+    public bool SetOverlayStyle(long windowHandle, bool clickThrough) => false;
+
+    public bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas) => false;
 
     public PlatformWindow? GetActiveWindow()
     {

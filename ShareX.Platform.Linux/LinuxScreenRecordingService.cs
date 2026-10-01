@@ -91,4 +91,8 @@ public sealed class LinuxScreenRecordingService : IScreenRecordingService
 
         return new FFmpegVideoInput("x11grab", arguments, Array.Empty<string>());
     }
+
+    public void PrepareDevice(string device, ScreenRecordingRequest request)
+    {
+    }
 }

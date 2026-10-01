@@ -54,6 +54,12 @@ public readonly record struct PlatformRectangle(int X, int Y, int Width, int Hei
 
     public bool Contains(PlatformPoint point) => point.X >= X && point.X < Right && point.Y >= Y && point.Y < Bottom;
 
+    public bool Contains(PlatformRectangle other) => X <= other.X && other.Right <= Right && Y <= other.Y && other.Bottom <= Bottom;
+
+    public bool IntersectsWith(PlatformRectangle other) => other.X < Right && X < other.Right && other.Y < Bottom && Y < other.Bottom;
+
+    public PlatformRectangle Inflate(int width, int height) => new PlatformRectangle(X - width, Y - height, Width + (2 * width), Height + (2 * height));
+
     public PlatformRectangle Intersect(PlatformRectangle other)
     {
         int left = Math.Max(X, other.X);

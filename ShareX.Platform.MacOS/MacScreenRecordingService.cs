@@ -101,5 +101,9 @@ public sealed class MacScreenRecordingService : IScreenRecordingService
         return new FFmpegVideoInput("avfoundation", arguments, filters);
     }
 
+    public void PrepareDevice(string device, ScreenRecordingRequest request)
+    {
+    }
+
     private static long Area(PlatformRectangle rectangle) => rectangle.IsEmpty ? 0 : (long)rectangle.Width * rectangle.Height;
 }

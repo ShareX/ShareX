@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -35,6 +35,8 @@ namespace ShareX.Desktop.Tests;
 internal sealed class FakeCapture : IScreenCaptureService
 {
     public FeatureSupport Support { get; set; } = FeatureSupport.Supported;
+
+    public ScreenCaptureFeatures Features => ScreenCaptureFeatures.None;
 
     public Exception? Throw { get; set; }
 
@@ -134,6 +136,10 @@ internal sealed class NullRecording : IScreenRecordingService
     public IReadOnlyList<string> GetSupportedDevices() => [];
 
     public FFmpegVideoInput CreateVideoInput(ScreenRecordingRequest request) => throw new NotSupportedException();
+
+    public void PrepareDevice(string device, ScreenRecordingRequest request)
+    {
+    }
 }
 
 internal sealed class NullShell : IShellService
@@ -210,6 +216,8 @@ internal sealed class FakePlatform : IPlatformServices
     public IHotkeyService Hotkeys { get; } = new UnsupportedHotkeyService("fake");
 
     public IWindowService Windows { get; } = new UnsupportedWindowService("fake");
+
+    public IInputService Input { get; } = new UnsupportedInputService("fake");
 
     public INotificationService Notifications => NotificationsFake;
 

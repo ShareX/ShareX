@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -49,6 +49,7 @@ public sealed class WindowsPlatformServices : IPlatformServices
         ScreenCapture = screenCapture;
         ScreenRecording = new WindowsScreenRecordingService(screenCapture.GetScreens);
         Windows = new WindowsWindowService();
+        Input = new WindowsInputService();
         Notifications = new UnsupportedNotificationService("ShareX shows its own notification window on Windows.");
         Shell = new WindowsShellService();
         ShellIntegration = new WindowsShellIntegrationService();
@@ -75,6 +76,8 @@ public sealed class WindowsPlatformServices : IPlatformServices
     public IHotkeyService Hotkeys => hotkeys.Value;
 
     public IWindowService Windows { get; }
+
+    public IInputService Input { get; }
 
     public INotificationService Notifications { get; }
 

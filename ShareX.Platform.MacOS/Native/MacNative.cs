@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -59,6 +59,22 @@ internal static unsafe partial class CoreGraphics
 
     [LibraryImport(Library)]
     public static partial IntPtr CGEventCreate(IntPtr source);
+
+    public const uint kCGHIDEventTap = 0;
+    public const uint kCGScrollEventUnitLine = 1;
+
+    [LibraryImport(Library)]
+    public static partial int CGWarpMouseCursorPosition(CGPoint point);
+
+    [LibraryImport(Library)]
+    public static partial IntPtr CGEventCreateKeyboardEvent(IntPtr source, ushort virtualKey, [MarshalAs(UnmanagedType.U1)] bool keyDown);
+
+    /// <summary>The non variadic form of CGEventCreateScrollWheelEvent (macOS 10.13), which P/Invoke can call on Apple silicon.</summary>
+    [LibraryImport(Library)]
+    public static partial IntPtr CGEventCreateScrollWheelEvent2(IntPtr source, uint units, uint wheelCount, int wheel1, int wheel2, int wheel3);
+
+    [LibraryImport(Library)]
+    public static partial void CGEventPost(uint tap, IntPtr evt);
 
     [LibraryImport(Library)]
     public static partial CGPoint CGEventGetLocation(IntPtr evt);

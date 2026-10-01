@@ -85,6 +85,22 @@ public class MacCaptureTests
     }
 
     [Fact]
+    public void CreateArguments_WindowWithoutShadow()
+    {
+        ScreenCaptureRequest request = ScreenCaptureRequest.ForWindow(4242) with { Window = new WindowCaptureOptions { Transparent = true } };
+
+        Assert.Equal(new[] { "-x", "-t", "png", "-l4242", "-o", "/tmp/a.png" }, MacScreenCaptureService.CreateArguments(request, "/tmp/a.png"));
+    }
+
+    [Fact]
+    public void CreateArguments_WindowWithShadow()
+    {
+        ScreenCaptureRequest request = ScreenCaptureRequest.ForWindow(7) with { Window = new WindowCaptureOptions { Transparent = true, IncludeShadow = true } };
+
+        Assert.Equal(new[] { "-x", "-t", "png", "-l7", "/tmp/a.png" }, MacScreenCaptureService.CreateArguments(request, "/tmp/a.png"));
+    }
+
+    [Fact]
     public void AVFoundation_RecordsWholePrimaryScreen()
     {
         FFmpegVideoInput input = MacScreenRecordingService.CreateAVFoundationInput(new ScreenRecordingRequest(), [Retina, External]);

@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Platform.Imaging;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -44,7 +46,44 @@ public enum ScreenCaptureMode
     /// <summary>A single display identified by <see cref="ScreenCaptureRequest.ScreenId"/>.</summary>
     Screen,
     /// <summary>Let the OS or compositor ask the user to choose (xdg-desktop-portal, screencapture -i).</summary>
-    Interactive
+    Interactive,
+    /// <summary>The window identified by <see cref="ScreenCaptureRequest.WindowHandle"/>, as it appears on screen.</summary>
+    Window
+}
+
+/// <summary>Capture features beyond plain screen and region capture. Read them from <see cref="IScreenCaptureService.Features"/> before offering the option.</summary>
+[Flags]
+public enum ScreenCaptureFeatures
+{
+    None = 0,
+    /// <summary><see cref="ScreenCaptureMode.Window"/> works.</summary>
+    Window = 1 << 0,
+    /// <summary><see cref="WindowCaptureOptions.ClientAreaOnly"/> is honoured.</summary>
+    WindowClientArea = 1 << 1,
+    /// <summary><see cref="WindowCaptureOptions.Transparent"/> and <see cref="WindowCaptureOptions.IncludeShadow"/> are honoured.</summary>
+    TransparentWindow = 1 << 2,
+    /// <summary><see cref="WindowCaptureOptions.HideTaskbar"/> is honoured.</summary>
+    HideTaskbar = 1 << 3,
+    /// <summary><see cref="ScreenCaptureRequest.HdrToneMapping"/> is honoured.</summary>
+    HdrToneMapping = 1 << 4
+}
+
+public sealed record WindowCaptureOptions
+{
+    /// <summary>Only the client area, without the title bar and borders.</summary>
+    public bool ClientAreaOnly { get; init; }
+
+    /// <summary>Keep the window's transparency (rounded corners, translucent areas) and crop to the window.</summary>
+    public bool Transparent { get; init; }
+
+    /// <summary>With <see cref="Transparent"/>, keep the drop shadow the window manager draws.</summary>
+    public bool IncludeShadow { get; init; }
+
+    /// <summary>Pixels of shadow to keep around the window with <see cref="IncludeShadow"/>.</summary>
+    public int ShadowOffset { get; init; } = 20;
+
+    /// <summary>Hide the task bar while capturing when it overlaps the window.</summary>
+    public bool HideTaskbar { get; init; }
 }
 
 public sealed record ScreenCaptureRequest
@@ -57,6 +96,19 @@ public sealed record ScreenCaptureRequest
 
     public bool IncludeCursor { get; init; }
 
+    /// <summary>The window to capture in <see cref="ScreenCaptureMode.Window"/>.</summary>
+    public long WindowHandle { get; init; }
+
+    public WindowCaptureOptions Window { get; init; } = new WindowCaptureOptions();
+
+    /// <summary>Tone map HDR displays to SDR so the image matches what the user sees.</summary>
+    public bool HdrToneMapping { get; init; }
+
+    /// <summary>Clip the region to the screens. When false, areas outside every screen come back black.</summary>
+    public bool ClipToScreens { get; init; } = true;
+
+    public static ScreenCaptureRequest ForWindow(long windowHandle, bool includeCursor = false) => new ScreenCaptureRequest { Mode = ScreenCaptureMode.Window, WindowHandle = windowHandle, IncludeCursor = includeCursor };
+
     public static ScreenCaptureRequest FullScreen(bool includeCursor = false) => new ScreenCaptureRequest { Mode = ScreenCaptureMode.FullScreen, IncludeCursor = includeCursor };
 
     public static ScreenCaptureRequest ForRegion(PlatformRectangle region, bool includeCursor = false) => new ScreenCaptureRequest { Mode = ScreenCaptureMode.Region, Region = region, IncludeCursor = includeCursor };
@@ -64,15 +116,46 @@ public sealed record ScreenCaptureRequest
     public static ScreenCaptureRequest ForScreen(string screenId, bool includeCursor = false) => new ScreenCaptureRequest { Mode = ScreenCaptureMode.Screen, ScreenId = screenId, IncludeCursor = includeCursor };
 }
 
-/// <param name="Png">The captured image encoded as PNG.</param>
-/// <param name="Bounds">The area of the virtual desktop the image covers.</param>
-/// <param name="Backend">The mechanism used, for example "GDI", "screencapture", "xdg-desktop-portal" or "grim". Useful for diagnostics.</param>
-public sealed record ScreenCaptureResult(byte[] Png, PlatformRectangle Bounds, string Backend);
+/// <summary>A captured image, kept as pixels when the backend produced pixels and as PNG when it produced a file.</summary>
+public sealed class ScreenCaptureResult
+{
+    private byte[]? png;
+
+    /// <param name="png">The captured image encoded as PNG.</param>
+    /// <param name="bounds">The area of the virtual desktop the image covers.</param>
+    /// <param name="backend">The mechanism used, for example "GDI", "screencapture", "xdg-desktop-portal" or "grim". Useful for diagnostics.</param>
+    public ScreenCaptureResult(byte[] png, PlatformRectangle bounds, string backend)
+    {
+        this.png = png ?? throw new ArgumentNullException(nameof(png));
+        Bounds = bounds;
+        Backend = backend;
+    }
+
+    public ScreenCaptureResult(PixelBuffer pixels, PlatformRectangle bounds, string backend)
+    {
+        Pixels = pixels ?? throw new ArgumentNullException(nameof(pixels));
+        Bounds = bounds;
+        Backend = backend;
+    }
+
+    /// <summary>Straight alpha BGRA pixels, when the backend captured pixels directly. Saves a PNG round trip.</summary>
+    public PixelBuffer? Pixels { get; }
+
+    /// <summary>The image encoded as PNG, encoded on first use when the backend captured pixels.</summary>
+    public byte[] Png => png ??= PngCodec.Encode(Pixels!);
+
+    public PlatformRectangle Bounds { get; }
+
+    public string Backend { get; }
+}
 
 /// <summary>Still image capture: GDI on Windows, CoreGraphics on macOS, X11 or Wayland portals on Linux.</summary>
 public interface IScreenCaptureService
 {
     FeatureSupport Support { get; }
+
+    /// <summary>Optional capture features this platform implements.</summary>
+    ScreenCaptureFeatures Features { get; }
 
     /// <summary>macOS Screen Recording permission, or <see cref="PermissionState.NotRequired"/> elsewhere.</summary>
     PermissionState GetPermissionState();

@@ -27,6 +27,7 @@ using ShareX.Platform.Imaging;
 using ShareX.Platform.Windows.Native;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -34,11 +35,17 @@ using System.Threading.Tasks;
 
 namespace ShareX.Platform.Windows;
 
-/// <summary>GDI screen capture (BitBlt with CAPTUREBLT), matching ShareX's default capture method.</summary>
+/// <summary>
+/// GDI screen capture (BitBlt with CAPTUREBLT), matching ShareX's default capture method, plus the Windows-only extras: window
+/// capture with optional transparency and shadow, hiding the task bar, and HDR tone mapping through Desktop Duplication.
+/// </summary>
 /// <remarks>Coordinates are physical pixels when the process is per monitor DPI aware, as the ShareX manifest declares.</remarks>
 public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
 {
     public FeatureSupport Support => FeatureSupport.Supported;
+
+    public ScreenCaptureFeatures Features => ScreenCaptureFeatures.Window | ScreenCaptureFeatures.WindowClientArea |
+        ScreenCaptureFeatures.TransparentWindow | ScreenCaptureFeatures.HideTaskbar | ScreenCaptureFeatures.HdrToneMapping;
 
     public PermissionState GetPermissionState() => PermissionState.NotRequired;
 
@@ -97,6 +104,11 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
 
     public Task<ScreenCaptureResult> CaptureAsync(ScreenCaptureRequest request, CancellationToken cancellationToken = default)
     {
+        if (request.Mode == ScreenCaptureMode.Window)
+        {
+            return Task.FromResult(CaptureWindow(request));
+        }
+
         PlatformRectangle area = request.Mode switch
         {
             ScreenCaptureMode.Region => request.Region,
@@ -106,18 +118,53 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
             _ => GetVirtualScreen()
         };
 
-        area = area.Intersect(GetVirtualScreen());
+        return Task.FromResult(CaptureArea(area, request));
+    }
+
+    private static ScreenCaptureResult CaptureArea(PlatformRectangle area, ScreenCaptureRequest request)
+    {
+        if (request.ClipToScreens)
+        {
+            area = area.Intersect(GetVirtualScreen());
+        }
 
         if (area.IsEmpty)
         {
             throw new ArgumentException("The capture area is outside the screen.", nameof(request));
         }
 
-        PixelBuffer pixels = Capture(area, request.IncludeCursor);
-        return Task.FromResult(new ScreenCaptureResult(PngCodec.Encode(pixels), area, "GDI"));
+        PixelBuffer pixels = Capture(area, request.IncludeCursor, request.HdrToneMapping);
+        return new ScreenCaptureResult(pixels, area, request.HdrToneMapping ? "GDI+HDR" : "GDI");
     }
 
-    public static PixelBuffer Capture(PlatformRectangle area, bool includeCursor)
+    private static ScreenCaptureResult CaptureWindow(ScreenCaptureRequest request)
+    {
+        IntPtr hwnd = (IntPtr)request.WindowHandle;
+
+        if (hwnd == IntPtr.Zero)
+        {
+            throw new ArgumentException("No window was given.", nameof(request));
+        }
+
+        if (request.Window.Transparent)
+        {
+            ScreenCaptureResult? transparent = TransparentWindowCapture.Capture(hwnd, request);
+
+            if (transparent != null)
+            {
+                return transparent;
+            }
+        }
+
+        PlatformRectangle area = request.Window.ClientAreaOnly ? WindowsWindowService.GetClientBounds(hwnd) : WindowsWindowService.GetBounds(hwnd);
+
+        using (request.Window.HideTaskbar ? TaskbarHider.HideIfIntersecting(area) : null)
+        {
+            return CaptureArea(area, request);
+        }
+    }
+
+    public static PixelBuffer Capture(PlatformRectangle area, bool includeCursor, bool hdrToneMapping = false)
     {
         IntPtr screenDc = Win32.GetDC(IntPtr.Zero);
         IntPtr memoryDc = Win32.CreateCompatibleDC(screenDc);
@@ -149,6 +196,20 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
                 throw new InvalidOperationException("BitBlt failed.");
             }
 
+            if (hdrToneMapping)
+            {
+                Win32.GdiFlush();
+
+                try
+                {
+                    HdrScreenCapture.ApplyColorCorrection((byte*)bits, area.Width * 4, area);
+                }
+                catch (Exception e)
+                {
+                    Trace.WriteLine($"HDR screenshot color correction failed: {e}");
+                }
+            }
+
             if (includeCursor)
             {
                 DrawCursor(memoryDc, area);
@@ -156,6 +217,67 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
 
             Win32.GdiFlush();
             return PixelBuffer.FromBgra(bits, area.Width, area.Height, area.Width * 4, forceOpaque: true);
+        }
+        finally
+        {
+            Win32.SelectObject(memoryDc, previous);
+            Win32.DeleteObject(bitmap);
+            Win32.DeleteDC(memoryDc);
+            Win32.ReleaseDC(IntPtr.Zero, screenDc);
+        }
+    }
+
+    /// <summary>
+    /// The cursor as an image with alpha and its top left corner on the desktop, or null when it is hidden. Drawn over white and
+    /// over black so monochrome and inverting cursors come out the way GDI would draw them over a light background.
+    /// </summary>
+    internal static (PixelBuffer Image, PlatformPoint Position)? CaptureCursorImage()
+    {
+        Win32.CURSORINFO cursor = new Win32.CURSORINFO { cbSize = sizeof(Win32.CURSORINFO) };
+
+        if (!Win32.GetCursorInfo(&cursor) || cursor.flags != Win32.CURSOR_SHOWING || !Win32.GetIconInfo(cursor.hCursor, out Win32.ICONINFO icon))
+        {
+            return null;
+        }
+
+        try
+        {
+            const int size = 64;
+            PlatformPoint position = new PlatformPoint(cursor.ptScreenPos.X - icon.xHotspot, cursor.ptScreenPos.Y - icon.yHotspot);
+            PixelBuffer white = DrawIcon(cursor.hCursor, size, 0xFFFFFFFF);
+            PixelBuffer black = DrawIcon(cursor.hCursor, size, 0xFF000000);
+            return (TransparentWindowCapture.CombineBackgrounds(white, black), position);
+        }
+        finally
+        {
+            if (icon.hbmMask != IntPtr.Zero) Win32.DeleteObject(icon.hbmMask);
+            if (icon.hbmColor != IntPtr.Zero) Win32.DeleteObject(icon.hbmColor);
+        }
+    }
+
+    private static PixelBuffer DrawIcon(IntPtr icon, int size, uint background)
+    {
+        IntPtr screenDc = Win32.GetDC(IntPtr.Zero);
+        IntPtr memoryDc = Win32.CreateCompatibleDC(screenDc);
+        Win32.BITMAPINFOHEADER header = new Win32.BITMAPINFOHEADER
+        {
+            biSize = (uint)sizeof(Win32.BITMAPINFOHEADER),
+            biWidth = size,
+            biHeight = -size,
+            biPlanes = 1,
+            biBitCount = 32,
+            biCompression = Win32.BI_RGB
+        };
+
+        IntPtr bitmap = Win32.CreateDIBSection(screenDc, &header, Win32.DIB_RGB_COLORS, out IntPtr bits, IntPtr.Zero, 0);
+        IntPtr previous = Win32.SelectObject(memoryDc, bitmap);
+
+        try
+        {
+            new Span<uint>((void*)bits, size * size).Fill(background);
+            Win32.DrawIconEx(memoryDc, 0, 0, icon, 0, 0, 0, IntPtr.Zero, Win32.DI_NORMAL);
+            Win32.GdiFlush();
+            return PixelBuffer.FromBgra(bits, size, size, size * 4, forceOpaque: true);
         }
         finally
         {

@@ -76,6 +76,32 @@ public sealed class UnsupportedWindowService(string reason) : IWindowService
     public void ReleaseCursorConfinement()
     {
     }
+
+    public IReadOnlyList<SnapTarget> GetSnapTargets(bool includeControls, long ignoredHandle, System.Threading.CancellationToken cancellationToken = default) =>
+        Array.Empty<SnapTarget>();
+
+    public bool SetCursorPosition(PlatformPoint position) => false;
+
+    public bool ActivateWindow(long windowHandle) => false;
+
+    public bool SetOverlayStyle(long windowHandle, bool clickThrough) => false;
+
+    public bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas) => false;
+}
+
+public sealed class UnsupportedInputService(string reason) : IInputService
+{
+    public FeatureSupport KeyboardSupport { get; } = FeatureSupport.NotSupported(reason);
+
+    public FeatureSupport MouseWheelSupport { get; } = FeatureSupport.NotSupported(reason);
+
+    public FeatureSupport WindowScrollSupport { get; } = FeatureSupport.NotSupported(reason);
+
+    public bool SendKeyPress(int virtualKey) => false;
+
+    public bool SendMouseWheel(int detents) => false;
+
+    public bool ScrollWindow(long windowHandle, WindowScrollCommand command) => false;
 }
 
 public sealed class UnsupportedShellIntegrationService(string reason) : IShellIntegrationService
@@ -98,6 +124,10 @@ public sealed class UnsupportedScreenRecordingService(string reason) : IScreenRe
     public IReadOnlyList<string> GetSupportedDevices() => Array.Empty<string>();
 
     public FFmpegVideoInput CreateVideoInput(ScreenRecordingRequest request) => throw new PlatformNotSupportedException(Support.Reason);
+
+    public void PrepareDevice(string device, ScreenRecordingRequest request)
+    {
+    }
 }
 
 public sealed class UnsupportedThumbnailService(string reason) : IThumbnailService

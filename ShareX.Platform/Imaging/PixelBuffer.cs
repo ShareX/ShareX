@@ -118,7 +118,7 @@ public sealed class PixelBuffer
         }
     }
 
-    /// <summary>Alpha blends <paramref name="overlay"/>, for example a cursor image, at the given position.</summary>
+    /// <summary>Alpha blends <paramref name="overlay"/> over this image ("source over"), for example a cursor image, at the given position.</summary>
     public void BlendFrom(PixelBuffer overlay, int x, int y)
     {
         PlatformRectangle target = new PlatformRectangle(0, 0, Width, Height).Intersect(new PlatformRectangle(x, y, overlay.Width, overlay.Height));
@@ -129,16 +129,20 @@ public sealed class PixelBuffer
             {
                 int s = (target.Y - y + row) * overlay.Stride + (target.X - x + column) * 4;
                 int d = (target.Y + row) * Stride + (target.X + column) * 4;
-                int alpha = overlay.Pixels[s + 3];
+                int sourceAlpha = overlay.Pixels[s + 3];
 
-                if (alpha == 0) continue;
+                if (sourceAlpha == 0) continue;
+
+                // Straight alpha: weight each colour by its own alpha, then divide by the combined alpha.
+                int destinationWeight = Pixels[d + 3] * (255 - sourceAlpha);
+                int outputAlpha = sourceAlpha * 255 + destinationWeight;
 
                 for (int channel = 0; channel < 3; channel++)
                 {
-                    Pixels[d + channel] = (byte)((overlay.Pixels[s + channel] * alpha + Pixels[d + channel] * (255 - alpha) + 127) / 255);
+                    Pixels[d + channel] = (byte)((overlay.Pixels[s + channel] * sourceAlpha * 255 + Pixels[d + channel] * destinationWeight + outputAlpha / 2) / outputAlpha);
                 }
 
-                Pixels[d + 3] = (byte)Math.Max(Pixels[d + 3], alpha);
+                Pixels[d + 3] = (byte)((outputAlpha + 127) / 255);
             }
         }
     }

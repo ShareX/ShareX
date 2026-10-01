@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System.Collections.Generic;
+using System.Threading;
 
 namespace ShareX.Platform;
 
@@ -31,6 +32,31 @@ namespace ShareX.Platform;
 /// <param name="Handle">Native handle: HWND on Windows, CGWindowID on macOS, X11 window id, or compositor address on Wayland.</param>
 /// <param name="Bounds">Visible bounds on the virtual desktop in physical pixels, excluding invisible resize borders where the OS reports them.</param>
 public sealed record PlatformWindow(long Handle, string Title, string? ProcessName, int? ProcessId, PlatformRectangle Bounds, bool IsMinimized);
+
+/// <summary>A rectangle region capture can snap to.</summary>
+/// <param name="Handle">The window or control the rectangle belongs to.</param>
+/// <param name="Bounds">Visible bounds on the virtual desktop, in the same coordinates as <see cref="PlatformWindow.Bounds"/>.</param>
+/// <param name="Window">The top level window when the rectangle is a whole window; null for client areas and controls.</param>
+public sealed record SnapTarget(long Handle, PlatformRectangle Bounds, PlatformWindow? Window)
+{
+    public bool IsWindow => Window != null;
+
+    /// <summary>Snap targets for platforms that only know top level windows: one per visible window, topmost first.</summary>
+    public static IReadOnlyList<SnapTarget> FromWindows(IEnumerable<PlatformWindow> windows, long ignoredHandle)
+    {
+        List<SnapTarget> targets = new List<SnapTarget>();
+
+        foreach (PlatformWindow window in windows)
+        {
+            if (window.Handle != ignoredHandle && !window.IsMinimized && !window.Bounds.IsEmpty)
+            {
+                targets.Add(new SnapTarget(window.Handle, window.Bounds, window));
+            }
+        }
+
+        return targets;
+    }
+}
 
 /// <summary>Window enumeration for window and region capture.</summary>
 public interface IWindowService
@@ -61,4 +87,30 @@ public interface IWindowService
     bool ConfineCursor(long windowHandle);
 
     void ReleaseCursorConfinement();
+
+    /// <summary>
+    /// Rectangles region capture snaps to, topmost first: windows and, where the platform can see inside other applications'
+    /// windows (Windows), their client areas and, with <paramref name="includeControls"/>, child controls.
+    /// </summary>
+    /// <param name="ignoredHandle">A window to leave out, normally the region capture window itself.</param>
+    IReadOnlyList<SnapTarget> GetSnapTargets(bool includeControls, long ignoredHandle, CancellationToken cancellationToken = default);
+
+    /// <summary>Moves the mouse pointer. Returns false where applications may not move it (most Wayland compositors).</summary>
+    bool SetCursorPosition(PlatformPoint position);
+
+    /// <summary>Brings a window to the front and gives it keyboard focus. Returns false when the platform refused.</summary>
+    bool ActivateWindow(long windowHandle);
+
+    /// <summary>
+    /// Makes one of ShareX's own windows an overlay: hidden from the task bar and window switcher and, with
+    /// <paramref name="clickThrough"/>, transparent to mouse input. Returns false where the platform has no such control.
+    /// </summary>
+    bool SetOverlayStyle(long windowHandle, bool clickThrough);
+
+    /// <summary>
+    /// Limits one of ShareX's own windows to the union of <paramref name="visibleAreas"/> (window relative, physical pixels), so
+    /// clicks outside them reach the windows behind. Returns false where the platform cannot shape windows; the window then
+    /// stays rectangular and relies on a transparent background.
+    /// </summary>
+    bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas);
 }

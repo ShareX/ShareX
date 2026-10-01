@@ -120,3 +120,57 @@ public class WindowsFormatTests
         Assert.Throws<InvalidOperationException>(() => WindowsScreenRecordingService.CreateDdaGrabInput(new ScreenRecordingRequest(), []));
     }
 }
+
+public class TransparentWindowCaptureTests
+{
+    private static PixelBuffer Solid(int width, int height, byte b, byte g, byte r)
+    {
+        PixelBuffer buffer = new PixelBuffer(width, height);
+
+        for (int i = 0; i < buffer.Pixels.Length; i += 4)
+        {
+            buffer.Pixels[i] = b;
+            buffer.Pixels[i + 1] = g;
+            buffer.Pixels[i + 2] = r;
+            buffer.Pixels[i + 3] = 255;
+        }
+
+        return buffer;
+    }
+
+    [Fact]
+    public void CombineBackgrounds_RecoversAlphaAndColour()
+    {
+        // A pure red pixel at 50% alpha: over white (255, 128, 128) in RGB, over black (128, 0, 0).
+        PixelBuffer white = Solid(1, 1, 128, 128, 255);
+        PixelBuffer black = Solid(1, 1, 0, 0, 128);
+
+        PixelBuffer result = TransparentWindowCapture.CombineBackgrounds(white, black);
+
+        Assert.Equal(128, result.Pixels[3]);
+        Assert.Equal(255, result.Pixels[2]);
+        Assert.Equal(0, result.Pixels[1]);
+        Assert.Equal(0, result.Pixels[0]);
+    }
+
+    [Fact]
+    public void CombineBackgrounds_OpaqueAndFullyTransparent()
+    {
+        PixelBuffer white = new PixelBuffer(2, 1, [10, 20, 30, 255, 255, 255, 255, 255]);
+        PixelBuffer black = new PixelBuffer(2, 1, [10, 20, 30, 255, 0, 0, 0, 255]);
+
+        PixelBuffer result = TransparentWindowCapture.CombineBackgrounds(white, black);
+
+        Assert.Equal(new byte[] { 10, 20, 30, 255, 0, 0, 0, 0 }, result.Pixels);
+    }
+
+    [Fact]
+    public void FindAutoCropRectangle_CropsTransparentBorder()
+    {
+        PixelBuffer image = new PixelBuffer(5, 4);
+        image.Pixels[((2 * 5) + 1) * 4 + 3] = 255;
+        image.Pixels[((1 * 5) + 3) * 4 + 3] = 40;
+
+        Assert.Equal(new PlatformRectangle(1, 1, 3, 2), TransparentWindowCapture.FindAutoCropRectangle(image));
+    }
+}

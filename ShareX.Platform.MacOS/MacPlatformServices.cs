@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -47,11 +47,13 @@ public sealed class MacPlatformServices : IPlatformServices
         Paths = paths;
         Startup = new LaunchAgentStartupService(paths, runner);
         Clipboard = new MacClipboardService();
-        MacScreenCaptureService screenCapture = new MacScreenCaptureService(runner);
+        MacWindowService windows = new MacWindowService();
+        MacScreenCaptureService screenCapture = new MacScreenCaptureService(runner, windows);
         ScreenCapture = screenCapture;
         ScreenRecording = new MacScreenRecordingService(runner, screenCapture.GetScreens);
         hotkeys = new Lazy<IHotkeyService>(() => new CarbonHotkeyService());
-        Windows = new MacWindowService();
+        Windows = windows;
+        Input = new MacInputService();
         Notifications = new MacNotificationService(runner);
         Shell = new MacShellService(runner);
         ShellIntegration = new UnsupportedShellIntegrationService(
@@ -79,6 +81,8 @@ public sealed class MacPlatformServices : IPlatformServices
     public IHotkeyService Hotkeys => hotkeys.Value;
 
     public IWindowService Windows { get; }
+
+    public IInputService Input { get; }
 
     public INotificationService Notifications { get; }
 

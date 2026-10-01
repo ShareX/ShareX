@@ -77,4 +77,10 @@ public interface IScreenRecordingService
     IReadOnlyList<string> GetSupportedDevices();
 
     FFmpegVideoInput CreateVideoInput(ScreenRecordingRequest request);
+
+    /// <summary>
+    /// Configures an FFmpeg input device that reads the capture area from system settings instead of its arguments
+    /// (the screen-capture-recorder DirectShow filter on Windows). Does nothing for every other device.
+    /// </summary>
+    void PrepareDevice(string device, ScreenRecordingRequest request);
 }

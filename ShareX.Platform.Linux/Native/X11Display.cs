@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -352,6 +352,45 @@ internal sealed unsafe class X11Display : IDisposable
         }
 
         return bounds;
+    }
+
+    /// <summary>Asks the window manager to raise and focus a window (EWMH _NET_ACTIVE_WINDOW, source indication 2: a pager).</summary>
+    public bool RequestActivation(nuint window)
+    {
+        X11.XClientMessageEventPadded message = default;
+        message.xclient.type = X11.ClientMessage;
+        message.xclient.window = window;
+        message.xclient.message_type = GetAtom("_NET_ACTIVE_WINDOW");
+        message.xclient.format = 32;
+        message.xclient.data[0] = 2;
+
+        int sent = X11.XSendEvent(Display, Root, false, X11.SubstructureRedirectMask | X11.SubstructureNotifyMask, &message);
+        X11.XFlush(Display);
+        return sent != 0 && X11.TakeLastError() == 0;
+    }
+
+    /// <summary>Limits where a window receives mouse input. An empty list makes it click through.</summary>
+    public bool SetInputShape(nuint window, IReadOnlyList<PlatformRectangle> areas)
+    {
+        X11.XRectangle* rectangles = stackalloc X11.XRectangle[Math.Max(areas.Count, 1)];
+
+        for (int i = 0; i < areas.Count; i++)
+        {
+            PlatformRectangle area = areas[i];
+            rectangles[i] = new X11.XRectangle { x = (short)area.X, y = (short)area.Y, width = (ushort)area.Width, height = (ushort)area.Height };
+        }
+
+        try
+        {
+            X11.XShapeCombineRectangles(Display, window, X11.ShapeInput, 0, 0, rectangles, areas.Count, X11.ShapeSet, X11.Unsorted);
+        }
+        catch (DllNotFoundException)
+        {
+            return false;
+        }
+
+        X11.XSync(Display, false);
+        return X11.TakeLastError() == 0;
     }
 
     public void Dispose() => handle.Dispose();

@@ -53,11 +53,14 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
 
     private readonly PlatformInfo info;
     private readonly ICommandRunner runner;
+    private readonly IWindowService? windows;
 
-    public LinuxScreenCaptureService(PlatformInfo info, ICommandRunner runner)
+    /// <param name="windows">Locates windows for <see cref="ScreenCaptureMode.Window"/>; window capture is unavailable without it.</param>
+    public LinuxScreenCaptureService(PlatformInfo info, ICommandRunner runner, IWindowService? windows = null)
     {
         this.info = info;
         this.runner = runner;
+        this.windows = windows;
         ActiveBackend = SelectBackend(info, runner.Exists("grim"), DBusSession.IsAvailable);
     }
 
@@ -70,6 +73,13 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
         Backend.None => LinuxPackages.Missing(info.Distribution ?? LinuxDistribution.Unknown, LinuxTool.XdgDesktopPortal),
         _ => FeatureSupport.Supported
     };
+
+    /// <summary>
+    /// Window capture works wherever ShareX can list windows and capture a region (X11, Hyprland, sway): it captures the window's
+    /// rectangle as it is on screen. Transparency, client area only and the other Windows extras are not available.
+    /// </summary>
+    public ScreenCaptureFeatures Features =>
+        windows != null && windows.Support.IsSupported && ActiveBackend is Backend.X11 or Backend.Grim ? ScreenCaptureFeatures.Window : ScreenCaptureFeatures.None;
 
     internal static Backend SelectBackend(PlatformInfo info, bool grimAvailable, bool sessionBusAvailable)
     {
@@ -125,6 +135,11 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
 
     public async Task<ScreenCaptureResult> CaptureAsync(ScreenCaptureRequest request, CancellationToken cancellationToken = default)
     {
+        if (request.Mode == ScreenCaptureMode.Window)
+        {
+            request = ToRegionRequest(request);
+        }
+
         switch (ActiveBackend)
         {
             case Backend.X11:
@@ -138,12 +153,25 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
         }
     }
 
+    private ScreenCaptureRequest ToRegionRequest(ScreenCaptureRequest request)
+    {
+        if ((Features & ScreenCaptureFeatures.Window) == 0)
+        {
+            throw new PlatformNotSupportedException(windows?.Support.Reason ?? "Window capture is not available in this session.");
+        }
+
+        PlatformWindow window = windows!.GetWindows().FirstOrDefault(w => w.Handle == request.WindowHandle)
+            ?? throw new ArgumentException("The window was not found. It may have closed.", nameof(request));
+
+        return request with { Mode = ScreenCaptureMode.Region, Region = window.Bounds };
+    }
+
     private ScreenCaptureResult CaptureX11(ScreenCaptureRequest request)
     {
         using X11Display display = X11Display.TryOpen() ?? throw new InvalidOperationException("Cannot open the X11 display.");
         PlatformRectangle area = ResolveArea(request, display.GetMonitors(), display.GetRootBounds());
         PixelBuffer pixels = display.CaptureRoot(area, request.IncludeCursor);
-        return new ScreenCaptureResult(PngCodec.Encode(pixels), area.Intersect(display.GetRootBounds()), "X11");
+        return new ScreenCaptureResult(pixels, area.Intersect(display.GetRootBounds()), "X11");
     }
 
     private async Task<ScreenCaptureResult> CaptureGrimAsync(ScreenCaptureRequest request, CancellationToken cancellationToken)

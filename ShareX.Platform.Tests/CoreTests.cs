@@ -25,6 +25,7 @@
 
 using ShareX.Platform.Imaging;
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace ShareX.Platform.Tests;
@@ -156,6 +157,52 @@ public class PngCodecTests
         background.BlendFrom(overlay, 0, 0);
 
         Assert.Equal(new byte[] { 128, 128, 128, 255 }, background.Pixels);
+    }
+}
+
+public class SnapTargetTests
+{
+    [Fact]
+    public void FromWindows_SkipsIgnoredMinimizedAndEmpty()
+    {
+        PlatformWindow[] windows =
+        [
+            new PlatformWindow(1, "Region capture", null, null, new PlatformRectangle(0, 0, 100, 100), false),
+            new PlatformWindow(2, "Editor", null, null, new PlatformRectangle(10, 10, 50, 50), false),
+            new PlatformWindow(3, "Minimized", null, null, new PlatformRectangle(0, 0, 10, 10), true),
+            new PlatformWindow(4, "Empty", null, null, PlatformRectangle.Empty, false)
+        ];
+
+        IReadOnlyList<SnapTarget> targets = SnapTarget.FromWindows(windows, ignoredHandle: 1);
+
+        SnapTarget target = Assert.Single(targets);
+        Assert.Equal(2, target.Handle);
+        Assert.True(target.IsWindow);
+    }
+}
+
+public class PixelBlendTests
+{
+    [Fact]
+    public void BlendFrom_OverTransparentKeepsSourceColour()
+    {
+        PixelBuffer target = new PixelBuffer(1, 1);
+        PixelBuffer cursor = new PixelBuffer(1, 1, [0, 0, 255, 128]);
+
+        target.BlendFrom(cursor, 0, 0);
+
+        Assert.Equal(new byte[] { 0, 0, 255, 128 }, target.Pixels);
+    }
+
+    [Fact]
+    public void BlendFrom_OverOpaqueMixes()
+    {
+        PixelBuffer target = new PixelBuffer(1, 1, [255, 255, 255, 255]);
+        PixelBuffer cursor = new PixelBuffer(1, 1, [0, 0, 0, 255]);
+
+        target.BlendFrom(cursor, 0, 0);
+
+        Assert.Equal(new byte[] { 0, 0, 0, 255 }, target.Pixels);
     }
 }
 

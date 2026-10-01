@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -49,10 +49,12 @@ public sealed class LinuxPlatformServices : IPlatformServices
         Paths = paths;
         Startup = new XdgAutostartService(paths);
         Clipboard = new LinuxClipboardService(info, runner);
-        screenCapture = new Lazy<IScreenCaptureService>(() => new LinuxScreenCaptureService(info, runner));
+        LinuxWindowService windows = new LinuxWindowService(info, runner);
+        Windows = windows;
+        Input = new LinuxInputService(info, runner);
+        screenCapture = new Lazy<IScreenCaptureService>(() => new LinuxScreenCaptureService(info, runner, windows));
         ScreenRecording = new LinuxScreenRecordingService(info, runner);
         hotkeys = new Lazy<IHotkeyService>(() => CreateHotkeyService(info, describeHotkey));
-        Windows = new LinuxWindowService(info, runner);
         Notifications = new FreedesktopNotificationService(info, runner);
         Shell = new LinuxShellService(runner);
         ShellIntegration = new LinuxShellIntegrationService(paths);
@@ -79,6 +81,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
     public IHotkeyService Hotkeys => hotkeys.Value;
 
     public IWindowService Windows { get; }
+
+    public IInputService Input { get; }
 
     public INotificationService Notifications { get; }
 

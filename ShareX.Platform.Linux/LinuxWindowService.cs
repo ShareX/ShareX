@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -31,6 +31,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading;
 
 namespace ShareX.Platform.Linux;
 
@@ -135,6 +136,130 @@ public sealed class LinuxWindowService : IWindowService
     {
     }
 
+    public IReadOnlyList<SnapTarget> GetSnapTargets(bool includeControls, long ignoredHandle, CancellationToken cancellationToken = default)
+    {
+        IReadOnlyList<PlatformWindow> windows = ActiveBackend switch
+        {
+            // Clients on hidden workspaces still report their last position, so keep only the workspaces on screen.
+            Backend.Hyprland => GetHyprlandVisibleWindows(),
+            Backend.Sway => GetWindows().Where(window => !window.IsMinimized).ToList(),
+            _ => GetWindows()
+        };
+
+        // Compositor window ids never match the X11 id Avalonia gives ShareX's own window under XWayland, so leave out
+        // every window of this process; otherwise the full screen region capture window would cover everything.
+        int ownProcess = Environment.ProcessId;
+        return SnapTarget.FromWindows(ActiveBackend == Backend.X11 ? windows : windows.Where(window => window.ProcessId != ownProcess), ignoredHandle);
+    }
+
+    private IReadOnlyList<PlatformWindow> GetHyprlandVisibleWindows()
+    {
+        HashSet<int> workspaces = new HashSet<int>();
+
+        RunJson("hyprctl", ["monitors", "-j"], root =>
+        {
+            workspaces.UnionWith(ParseHyprlandVisibleWorkspaces(root));
+            return Array.Empty<PlatformWindow>();
+        });
+
+        return RunJson("hyprctl", ["clients", "-j"], root => ParseHyprlandClients(root, workspaces));
+    }
+
+    /// <summary>The active workspace of every monitor, plus a special workspace shown over it.</summary>
+    internal static IReadOnlyCollection<int> ParseHyprlandVisibleWorkspaces(JsonElement monitors)
+    {
+        HashSet<int> workspaces = new HashSet<int>();
+
+        foreach (JsonElement monitor in monitors.EnumerateArray())
+        {
+            foreach (string property in new[] { "activeWorkspace", "specialWorkspace" })
+            {
+                if (monitor.TryGetProperty(property, out JsonElement workspace) && workspace.TryGetProperty("id", out JsonElement id) && id.GetInt32() != 0)
+                {
+                    workspaces.Add(id.GetInt32());
+                }
+            }
+        }
+
+        return workspaces;
+    }
+
+    public bool SetCursorPosition(PlatformPoint position)
+    {
+        string x = position.X.ToString(CultureInfo.InvariantCulture);
+        string y = position.Y.ToString(CultureInfo.InvariantCulture);
+
+        switch (ActiveBackend)
+        {
+            case Backend.X11:
+                using (X11Display? display = X11Display.TryOpen())
+                {
+                    if (display == null) return false;
+                    X11.XWarpPointer(display.Display, 0, display.Root, 0, 0, 0, 0, position.X, position.Y);
+                    X11.XFlush(display.Display);
+                    return true;
+                }
+            case Backend.Hyprland:
+                return Run("hyprctl", ["dispatch", "movecursor", x, y]);
+            case Backend.Sway:
+                return Run("swaymsg", ["seat", "-", "cursor", "set", x, y]);
+            default:
+                return false;
+        }
+    }
+
+    public bool ActivateWindow(long windowHandle)
+    {
+        switch (ActiveBackend)
+        {
+            case Backend.X11:
+                using (X11Display? display = X11Display.TryOpen())
+                {
+                    return display != null && display.RequestActivation((nuint)windowHandle);
+                }
+            case Backend.Hyprland:
+                return Run("hyprctl", ["dispatch", "focuswindow", FormatHyprlandAddress(windowHandle)]);
+            case Backend.Sway:
+                return Run("swaymsg", [string.Create(CultureInfo.InvariantCulture, $"[con_id={windowHandle}]"), "focus"]);
+            default:
+                return false;
+        }
+    }
+
+    internal static string FormatHyprlandAddress(long handle) => "address:0x" + handle.ToString("x", CultureInfo.InvariantCulture);
+
+    // ShareX's own windows are X11 windows (Avalonia uses X11, through XWayland on Wayland sessions), so the SHAPE extension works
+    // in both kinds of session. Hiding from the task bar is left to Avalonia's ShowInTaskbar.
+    public bool SetOverlayStyle(long windowHandle, bool clickThrough)
+    {
+        if (!clickThrough)
+        {
+            return false;
+        }
+
+        using X11Display? display = X11Display.TryOpen();
+        return display != null && display.SetInputShape((nuint)windowHandle, Array.Empty<PlatformRectangle>());
+    }
+
+    public bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas)
+    {
+        // Only the input region is shaped: the window's transparent background already hides the rest.
+        using X11Display? display = X11Display.TryOpen();
+        return display != null && display.SetInputShape((nuint)windowHandle, visibleAreas);
+    }
+
+    private bool Run(string command, IReadOnlyList<string> arguments)
+    {
+        try
+        {
+            return runner.RunAsync(command, arguments, timeout: TimeSpan.FromSeconds(2)).GetAwaiter().GetResult().Success;
+        }
+        catch (Exception e) when (e is TimeoutException or System.ComponentModel.Win32Exception or InvalidOperationException)
+        {
+            return false;
+        }
+    }
+
     public PlatformWindow? GetActiveWindow()
     {
         switch (ActiveBackend)
@@ -219,7 +344,10 @@ public sealed class LinuxWindowService : IWindowService
         }
     }
 
-    internal static IReadOnlyList<PlatformWindow> ParseHyprlandClients(JsonElement root)
+    internal static IReadOnlyList<PlatformWindow> ParseHyprlandClients(JsonElement root) => ParseHyprlandClients(root, null);
+
+    /// <param name="visibleWorkspaces">When given, only clients on these workspaces.</param>
+    internal static IReadOnlyList<PlatformWindow> ParseHyprlandClients(JsonElement root, IReadOnlyCollection<int>? visibleWorkspaces)
     {
         List<(int FocusHistory, PlatformWindow Window)> windows = new List<(int, PlatformWindow)>();
         IEnumerable<JsonElement> clients = root.ValueKind == JsonValueKind.Array ? root.EnumerateArray() : new[] { root };
@@ -227,6 +355,13 @@ public sealed class LinuxWindowService : IWindowService
         foreach (JsonElement client in clients)
         {
             if (client.TryGetProperty("mapped", out JsonElement mapped) && mapped.ValueKind == JsonValueKind.False)
+            {
+                continue;
+            }
+
+            if (visibleWorkspaces != null &&
+                (!client.TryGetProperty("workspace", out JsonElement workspace) || !workspace.TryGetProperty("id", out JsonElement workspaceId) ||
+                !visibleWorkspaces.Contains(workspaceId.GetInt32())))
             {
                 continue;
             }

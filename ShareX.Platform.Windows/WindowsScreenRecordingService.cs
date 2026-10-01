@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -35,6 +36,9 @@ public sealed class WindowsScreenRecordingService : IScreenRecordingService
 {
     public const string GdiGrab = "gdigrab";
     public const string DdaGrab = "ddagrab";
+
+    /// <summary>The DirectShow filter from https://github.com/rdp/screen-capture-recorder-to-video-windows-free.</summary>
+    public const string ScreenCaptureRecorder = "screen-capture-recorder";
 
     private readonly Func<IReadOnlyList<ScreenInfo>> getScreens;
 
@@ -54,6 +58,24 @@ public sealed class WindowsScreenRecordingService : IScreenRecordingService
     {
         IReadOnlyList<ScreenInfo> screens = getScreens();
         return Device == DdaGrab ? CreateDdaGrabInput(request, screens) : CreateGdiGrabInput(request, WindowsScreenCaptureService.GetVirtualScreen());
+    }
+
+    /// <summary>screen-capture-recorder reads its capture area from the registry rather than from FFmpeg arguments.</summary>
+    public void PrepareDevice(string device, ScreenRecordingRequest request)
+    {
+        if (!string.Equals(device, ScreenCaptureRecorder, StringComparison.OrdinalIgnoreCase))
+        {
+            return;
+        }
+
+        PlatformRectangle region = request.Region;
+        using RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\screen-capture-recorder");
+        key.SetValue("start_x", region.X, RegistryValueKind.DWord);
+        key.SetValue("start_y", region.Y, RegistryValueKind.DWord);
+        key.SetValue("capture_width", region.Width, RegistryValueKind.DWord);
+        key.SetValue("capture_height", region.Height, RegistryValueKind.DWord);
+        key.SetValue("default_max_fps", 60, RegistryValueKind.DWord);
+        key.SetValue("capture_mouse_default_1", request.DrawCursor ? 1 : 0, RegistryValueKind.DWord);
     }
 
     internal static FFmpegVideoInput CreateGdiGrabInput(ScreenRecordingRequest request, PlatformRectangle virtualScreen)

@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -390,6 +390,36 @@ public class LinuxParsingTests
         Assert.Equal(0x20, windows[0].Handle);
         Assert.Equal("firefox", windows[0].ProcessName);
         Assert.Equal(new PlatformRectangle(10, 20, 640, 480), windows[0].Bounds);
+    }
+
+    [Fact]
+    public void ParseHyprlandClients_KeepsOnlyVisibleWorkspaces()
+    {
+        using JsonDocument monitors = JsonDocument.Parse("""
+            [
+              { "name": "eDP-1", "activeWorkspace": { "id": 2, "name": "2" }, "specialWorkspace": { "id": 0, "name": "" } },
+              { "name": "DP-1", "activeWorkspace": { "id": 5, "name": "5" }, "specialWorkspace": { "id": -98, "name": "special:magic" } }
+            ]
+            """);
+        using JsonDocument clients = JsonDocument.Parse("""
+            [
+              { "address": "0x10", "mapped": true, "at": [0, 0], "size": [800, 600], "title": "Hidden workspace", "pid": -1, "workspace": { "id": 1 } },
+              { "address": "0x20", "mapped": true, "at": [0, 0], "size": [800, 600], "title": "On screen", "pid": -1, "workspace": { "id": 2 } },
+              { "address": "0x30", "mapped": true, "at": [0, 0], "size": [800, 600], "title": "Scratchpad", "pid": -1, "workspace": { "id": -98 } }
+            ]
+            """);
+
+        IReadOnlyCollection<int> visible = LinuxWindowService.ParseHyprlandVisibleWorkspaces(monitors.RootElement);
+        IReadOnlyList<PlatformWindow> windows = LinuxWindowService.ParseHyprlandClients(clients.RootElement, visible);
+
+        Assert.Equal(new[] { 2, 5, -98 }.Order(), visible.Order());
+        Assert.Equal(new[] { "On screen", "Scratchpad" }, windows.Select(w => w.Title).Order());
+    }
+
+    [Fact]
+    public void FormatHyprlandAddress_IsHex()
+    {
+        Assert.Equal("address:0x55d0c2a6e3c0", LinuxWindowService.FormatHyprlandAddress(0x55d0c2a6e3c0));
     }
 
     [Fact]
