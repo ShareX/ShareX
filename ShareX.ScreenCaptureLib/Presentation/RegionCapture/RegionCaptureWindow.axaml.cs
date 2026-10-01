@@ -252,7 +252,7 @@ public partial class RegionCaptureWindow : Window
                 : RegionCaptureOptions.MoveSpeedMinimum;
             int dx = e.Key == Key.Left ? -distance : e.Key == Key.Right ? distance : 0;
             int dy = e.Key == Key.Up ? -distance : e.Key == Key.Down ? distance : 0;
-            System.Windows.Forms.Cursor.Position = System.Windows.Forms.Cursor.Position.Add(dx, dy);
+            CaptureHelpers.SetCursorPosition(CaptureHelpers.GetCursorPosition().Add(dx, dy));
             e.Handled = true;
             return;
         }
@@ -477,7 +477,7 @@ public partial class RegionCaptureWindow : Window
             Focus();
             _regionInputSurface.Focus();
 
-            DrawingPoint cursorPosition = System.Windows.Forms.Control.MousePosition;
+            DrawingPoint cursorPosition = CaptureHelpers.GetCursorPosition();
             _lastPointerPoint = ClampPoint(new Point(
                 cursorPosition.X - _request.ScreenBounds.X,
                 cursorPosition.Y - _request.ScreenBounds.Y));

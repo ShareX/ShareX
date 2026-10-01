@@ -830,18 +830,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Icon GetProgressIcon(int percentage)
-        {
-            return GetProgressIcon(percentage, Color.FromArgb(16, 116, 193));
-        }
-
-        public static Icon GetProgressIcon(int percentage, Color color)
-        {
-            using MemoryStream stream = new(GetProgressIconBytes(percentage, color));
-            using Icon icon = new(stream);
-            return (Icon)icon.Clone();
-        }
-
         public static byte[] GetProgressIconBytes(int percentage, Color color)
         {
             percentage = percentage.Clamp(0, 100);

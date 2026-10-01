@@ -26,9 +26,9 @@
 using FluentFTP;
 using FluentFTP.Exceptions;
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
-using SkiaSharp;
 using System.IO;
 using System.Net;
 using System.Net.Security;

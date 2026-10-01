@@ -34,7 +34,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Windows.Forms;
 using Bitmap = SkiaSharp.SKBitmap;
 using Image = SkiaSharp.SKBitmap;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
@@ -638,46 +637,21 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFileWithDialog))
                 {
-                    using (SaveFileDialog sfd = new SaveFileDialog())
+                    string initialDirectory = Directory.Exists(HelpersOptions.LastSaveDirectory)
+                        ? HelpersOptions.LastSaveDirectory : TaskHelpers.GetScreenshotsFolder(Info.TaskSettings, Info.Metadata);
+                    bool imageSaved;
+                    do
                     {
-                        string initialDirectory = null;
-
-                        if (!string.IsNullOrEmpty(HelpersOptions.LastSaveDirectory) && Directory.Exists(HelpersOptions.LastSaveDirectory))
-                        {
-                            initialDirectory = HelpersOptions.LastSaveDirectory;
-                        }
-                        else
-                        {
-                            initialDirectory = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings, Info.Metadata);
-                        }
-
-                        bool imageSaved;
-
-                        do
-                        {
-                            sfd.InitialDirectory = initialDirectory;
-                            sfd.FileName = Info.FileName;
-                            sfd.DefaultExt = Path.GetExtension(Info.FileName).Substring(1);
-                            sfd.Filter = string.Format("*{0}|*{0}|{1}|*.*", Path.GetExtension(Info.FileName), Strings.WorkerTask_AllFilesFilter);
-                            sfd.Title = Strings.UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save + " " + Path.GetFileName(Info.FileName);
-
-                            if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
-                            {
-                                Info.FilePath = sfd.FileName;
-                                HelpersOptions.LastSaveDirectory = Path.GetDirectoryName(Info.FilePath);
-                                imageSaved = imageData.Write(Info.FilePath);
-
-                                if (imageSaved)
-                                {
-                                    DebugHelper.WriteLine("Image saved to file with dialog: " + Info.FilePath);
-                                }
-                            }
-                            else
-                            {
-                                break;
-                            }
-                        } while (!imageSaved);
-                    }
+                        string selectedPath = FileDialogHelpers.SaveFile(
+                            Strings.UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save + " " + Path.GetFileName(Info.FileName),
+                            string.Format("*{0}|*{0}|{1}|*.*", Path.GetExtension(Info.FileName), Strings.WorkerTask_AllFilesFilter),
+                            Info.FileName, initialDirectory, Path.GetExtension(Info.FileName).TrimStart('.'));
+                        if (string.IsNullOrEmpty(selectedPath)) break;
+                        Info.FilePath = selectedPath;
+                        HelpersOptions.LastSaveDirectory = Path.GetDirectoryName(Info.FilePath);
+                        imageSaved = imageData.Write(Info.FilePath);
+                        if (imageSaved) DebugHelper.WriteLine("Image saved to file with dialog: " + Info.FilePath);
+                    } while (!imageSaved);
                 }
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveThumbnailImageToFile))

@@ -31,7 +31,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
@@ -384,51 +383,14 @@ namespace ShareX.HelpersLib
             return filePath;
         }
 
-        public static string BrowseFile(IWin32Window window = null, string title = null)
+        public static string BrowseFile(Avalonia.Controls.Window window = null, string title = null)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                if (!string.IsNullOrEmpty(title))
-                {
-                    ofd.Title = title;
-                }
-
-                if (ofd.ShowDialog(window) == DialogResult.OK)
-                {
-                    string filePath = ofd.FileName;
-
-                    if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
-                    {
-                        return filePath;
-                    }
-                }
-            }
-
-            return null;
+            return FileDialogHelpers.OpenFiles(title, owner: window).FirstOrDefault();
         }
 
         public static string BrowseFolder(string title = null, string initialDirectory = null)
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
-            {
-                if (!string.IsNullOrEmpty(title))
-                {
-                    fbd.Description = title;
-                    fbd.UseDescriptionForTitle = true;
-                }
-
-                if (!string.IsNullOrEmpty(initialDirectory) && Directory.Exists(initialDirectory))
-                {
-                    fbd.InitialDirectory = initialDirectory;
-                }
-
-                if (fbd.ShowDialog() == DialogResult.OK)
-                {
-                    return fbd.SelectedPath;
-                }
-            }
-
-            return null;
+            return FileDialogHelpers.OpenFolder(title, initialDirectory);
         }
 
         public static string GetVariableFolderPath(string path, bool supportCustomSpecialFolders = false)

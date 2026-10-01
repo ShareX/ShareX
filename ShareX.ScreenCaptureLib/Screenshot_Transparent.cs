@@ -27,8 +27,8 @@ using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
-using System.Windows.Forms;
 using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX.ScreenCaptureLib
@@ -37,14 +37,14 @@ namespace ShareX.ScreenCaptureLib
     {
         public Bitmap CaptureWindowTransparent(IntPtr handle)
         {
-            if (handle.ToInt32() > 0)
+            if (handle != IntPtr.Zero)
             {
                 Rectangle rect = CaptureHelpers.GetWindowRectangle(handle);
 
                 if (CaptureShadow && !NativeMethods.IsZoomed(handle) && NativeMethods.IsDWMEnabled())
                 {
                     rect.Inflate(ShadowOffset, ShadowOffset);
-                    Rectangle intersectBounds = Screen.AllScreens.Select(x => x.Bounds).Where(x => x.IntersectsWith(rect)).Combine();
+                    Rectangle intersectBounds = DesktopScreen.AllScreens.Select(x => x.Bounds).Where(x => x.IntersectsWith(rect)).Combine();
                     rect.Intersect(intersectBounds);
                 }
 
@@ -71,43 +71,25 @@ namespace ShareX.ScreenCaptureLib
                         }
                     }
 
-                    using (Form form = new Form())
+                    using (WindowsNativeWindow window = new("ShareX - Transparent capture background", rect,
+                        WindowStyles.WS_EX_LAYERED | WindowStyles.WS_EX_TOOLWINDOW | WindowStyles.WS_EX_NOACTIVATE))
                     {
-                        form.BackColor = Color.White;
-                        form.FormBorderStyle = FormBorderStyle.None;
-                        form.ShowInTaskbar = false;
-                        form.StartPosition = FormStartPosition.Manual;
-                        form.Location = new Point(rect.X, rect.Y);
-                        form.Size = new Size(rect.Width, rect.Height);
-
-                        NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
-
-                        if (!NativeMethods.SetWindowPos(form.Handle, handle, 0, 0, 0, 0,
+                        window.SetBackground(Color.White, rect);
+                        NativeMethods.ShowWindow(window.Handle, (int)WindowShowStyle.ShowNoActivate);
+                        if (!NativeMethods.SetWindowPos(window.Handle, handle, 0, 0, 0, 0,
                             SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE))
                         {
-                            form.Close();
                             DebugHelper.WriteLine("Transparent capture failed. Reason: SetWindowPos fail.");
                             return CaptureWindow(handle);
                         }
-
-                        Application.DoEvents();
-                        Thread.Sleep(10);
-
+                        FlushCaptureBackground();
                         whiteBackground = CaptureRectangleNative(rect);
-
-                        form.BackColor = Color.Black;
-                        Application.DoEvents();
-                        Thread.Sleep(10);
-
+                        window.SetBackground(Color.Black, rect);
+                        FlushCaptureBackground();
                         blackBackground = CaptureRectangleNative(rect);
-
-                        form.BackColor = Color.White;
-                        Application.DoEvents();
-                        Thread.Sleep(10);
-
+                        window.SetBackground(Color.White, rect);
+                        FlushCaptureBackground();
                         whiteBackground2 = CaptureRectangleNative(rect);
-
-                        form.Close();
                     }
 
                     Bitmap transparentImage;
@@ -155,6 +137,15 @@ namespace ShareX.ScreenCaptureLib
 
             return null;
         }
+
+        private static void FlushCaptureBackground()
+        {
+            if (NativeMethods.IsDWMEnabled()) DwmFlush();
+            Thread.Sleep(10);
+        }
+
+        [DllImport("dwmapi.dll")]
+        private static extern int DwmFlush();
 
         public Bitmap CaptureActiveWindowTransparent()
         {

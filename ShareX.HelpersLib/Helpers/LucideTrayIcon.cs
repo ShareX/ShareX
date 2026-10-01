@@ -33,7 +33,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Threading;
-using System.Windows.Forms;
+using Avalonia.Controls;
+using Avalonia;
 
 namespace ShareX.HelpersLib;
 
@@ -52,7 +53,7 @@ public static class LucideTrayIcon
     /// Assigns a Lucide glyph to a tray icon and keeps its color in sync with the
     /// Windows taskbar theme. Dispose the returned binding before the tray icon.
     /// </summary>
-    public static IDisposable Bind(NotifyIcon trayIcon, string glyph)
+    public static IDisposable Bind(TrayIcon trayIcon, string glyph)
     {
         ArgumentNullException.ThrowIfNull(trayIcon);
 
@@ -62,33 +63,6 @@ public static class LucideTrayIcon
         }
 
         return new ThemeBinding(trayIcon, glyph);
-    }
-
-    /// <summary>
-    /// Creates a multi-resolution icon using the color appropriate for the
-    /// current Windows taskbar theme.
-    /// </summary>
-    public static Icon CreateIcon(string glyph)
-    {
-        return CreateIcon(glyph, GetThemeIconColor());
-    }
-
-    /// <summary>
-    /// Creates a multi-resolution icon using a specific glyph color.
-    /// </summary>
-    public static Icon CreateIcon(string glyph, System.Drawing.Color color)
-    {
-        if (string.IsNullOrEmpty(glyph))
-        {
-            throw new ArgumentException("A Lucide glyph is required.", nameof(glyph));
-        }
-
-        SKColor skColor = new(color.R, color.G, color.B, color.A);
-        byte[] iconData = CreateIconData(glyph, skColor);
-
-        using MemoryStream stream = new(iconData, writable: false);
-        using Icon icon = new(stream, SystemInformation.SmallIconSize);
-        return (Icon)icon.Clone();
     }
 
     /// <summary>
@@ -111,7 +85,8 @@ public static class LucideTrayIcon
         }
 
         SKColor skColor = new(color.R, color.G, color.B, color.A);
-        int size = Math.Max(SystemInformation.SmallIconSize.Width, SystemInformation.SmallIconSize.Height);
+        int size = OperatingSystem.IsWindows() ? Math.Max(NativeMethods.GetSystemMetrics(SystemMetric.SM_CXSMICON),
+            NativeMethods.GetSystemMetrics(SystemMetric.SM_CYSMICON)) : 16;
         byte[] imageData = RenderGlyph(glyph, skColor, size);
 
         using MemoryStream stream = new(imageData, writable: false);
@@ -125,7 +100,8 @@ public static class LucideTrayIcon
 
     private static System.Drawing.Color GetThemeIconColor()
     {
-        return IsLightTaskbarTheme() ?
+        return (OperatingSystem.IsWindows() ? IsLightTaskbarTheme() :
+            Application.Current?.PlatformSettings?.GetColorValues().ThemeVariant == PlatformThemeVariant.Light) ?
             System.Drawing.Color.Black :
             System.Drawing.Color.White;
     }
@@ -215,21 +191,24 @@ public static class LucideTrayIcon
 
     private sealed class ThemeBinding : IDisposable
     {
-        private readonly NotifyIcon _trayIcon;
+        private readonly TrayIcon _trayIcon;
         private readonly string _glyph;
         private readonly SynchronizationContext? _synchronizationContext;
-        private Icon? _ownedIcon;
         private bool _disposed;
 
-        public ThemeBinding(NotifyIcon trayIcon, string glyph)
+        public ThemeBinding(TrayIcon trayIcon, string glyph)
         {
             _trayIcon = trayIcon;
             _glyph = glyph;
             _synchronizationContext = SynchronizationContext.Current;
 
             RefreshIcon();
-            SystemEvents.UserPreferenceChanged += OnUserPreferenceChanged;
-            SystemEvents.DisplaySettingsChanged += OnDisplaySettingsChanged;
+            if (OperatingSystem.IsWindows())
+            {
+                SystemEvents.UserPreferenceChanged += OnUserPreferenceChanged;
+                SystemEvents.DisplaySettingsChanged += OnDisplaySettingsChanged;
+            }
+            if (Application.Current?.PlatformSettings is { } platform) platform.ColorValuesChanged += OnColorsChanged;
         }
 
         private void OnUserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
@@ -241,6 +220,8 @@ public static class LucideTrayIcon
         {
             QueueRefresh();
         }
+
+        private void OnColorsChanged(object? sender, PlatformColorValues e) => QueueRefresh();
 
         private void QueueRefresh()
         {
@@ -266,11 +247,8 @@ public static class LucideTrayIcon
                 return;
             }
 
-            Icon replacement = CreateIcon(_glyph);
-            Icon? previous = _ownedIcon;
-            _trayIcon.Icon = replacement;
-            _ownedIcon = replacement;
-            previous?.Dispose();
+            using MemoryStream stream = new(CreateIconBytes(_glyph), writable: false);
+            _trayIcon.Icon = new WindowIcon(stream);
         }
 
         public void Dispose()
@@ -281,11 +259,13 @@ public static class LucideTrayIcon
             }
 
             _disposed = true;
-            SystemEvents.UserPreferenceChanged -= OnUserPreferenceChanged;
-            SystemEvents.DisplaySettingsChanged -= OnDisplaySettingsChanged;
+            if (OperatingSystem.IsWindows())
+            {
+                SystemEvents.UserPreferenceChanged -= OnUserPreferenceChanged;
+                SystemEvents.DisplaySettingsChanged -= OnDisplaySettingsChanged;
+            }
+            if (Application.Current?.PlatformSettings is { } platform) platform.ColorValuesChanged -= OnColorsChanged;
             _trayIcon.Icon = null;
-            _ownedIcon?.Dispose();
-            _ownedIcon = null;
         }
     }
 }

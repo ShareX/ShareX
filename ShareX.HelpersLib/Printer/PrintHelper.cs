@@ -27,7 +27,6 @@ using SkiaSharp;
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Windows.Forms;
 using Image = SkiaSharp.SKBitmap;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
@@ -52,8 +51,6 @@ namespace ShareX.HelpersLib
         }
 
         private PrintDocument printDocument;
-        private PrintDialog printDialog;
-        private PrintPreviewDialog printPreviewDialog;
         private PrintTextHelper printTextHelper;
 
         public PrintHelper(Image image)
@@ -74,29 +71,39 @@ namespace ShareX.HelpersLib
 
         private void InitPrint()
         {
-            printDocument = new PrintDocument();
-            printDocument.BeginPrint += printDocument_BeginPrint;
-            printDocument.PrintPage += printDocument_PrintPage;
-            printDialog = new PrintDialog();
-            printDialog.Document = printDocument;
-            printDialog.UseEXDialog = true;
-            printPreviewDialog = new PrintPreviewDialog();
-            printPreviewDialog.Document = printDocument;
+            if (OperatingSystem.IsWindows())
+            {
+                printDocument = new PrintDocument { PrintController = new StandardPrintController() };
+                printDocument.BeginPrint += printDocument_BeginPrint;
+                printDocument.PrintPage += printDocument_PrintPage;
+            }
         }
 
-        public void Dispose()
-        {
-            if (printDocument != null) printDocument.Dispose();
-            if (printDialog != null) printDialog.Dispose();
-            if (printPreviewDialog != null) printPreviewDialog.Dispose();
-        }
+        public void Dispose() => printDocument?.Dispose();
 
         public void ShowPreview()
         {
-            if (Printable)
+            if (Printable) PrintPreviewWindow.ShowPreview(RenderPreviewPage, Print);
+        }
+
+        internal (SKBitmap Bitmap, bool HasMore) RenderPreviewPage(int pageIndex)
+        {
+            PageSettings pageSettings = printDocument?.PrinterSettings.IsValid == true ? printDocument.DefaultPageSettings : null;
+            Size size = pageSettings?.Bounds.Size ?? new Size(850, 1100);
+            if (PrintType == PrintType.Image) return (RenderImagePage(Image, size, Settings), false);
+            PrintTextHelper renderer = new() { Text = Text, Font = Settings.TextFont };
+            renderer.BeginPrint();
+            Margins margins = pageSettings?.Margins ?? new Margins(100, 100, 100, 100);
+            Rectangle margin = new(margins.Left, margins.Top, size.Width - margins.Left - margins.Right, size.Height - margins.Top - margins.Bottom);
+            SKBitmap page = null;
+            bool hasMore = false;
+            for (int index = 0; index <= pageIndex; index++)
             {
-                printPreviewDialog.ShowDialog();
+                page?.Dispose();
+                page = renderer.RenderPage(size, margin, out hasMore);
+                if (!hasMore) break;
             }
+            return (page, hasMore);
         }
 
         public void TryDefaultPrinterOverride()
@@ -119,7 +126,8 @@ namespace ShareX.HelpersLib
 
         public bool Print()
         {
-            if (Printable && (!Settings.ShowPrintDialog || printDialog.ShowDialog() == DialogResult.OK))
+            if (!OperatingSystem.IsWindows()) throw new PlatformNotSupportedException("A printing backend is required for this platform.");
+            if (Printable && (!Settings.ShowPrintDialog || WindowsPrintDialog.Show(printDocument)))
             {
                 if (PrintType == PrintType.Text)
                 {

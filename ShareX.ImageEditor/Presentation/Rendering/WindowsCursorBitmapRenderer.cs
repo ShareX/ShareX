@@ -26,7 +26,7 @@
 using Avalonia.Media.Imaging;
 using ShareX.ImageEditor.Core.Annotations;
 using SkiaSharp;
-using System.Reflection;
+using System.Buffers.Binary;
 using System.Runtime.InteropServices;
 
 namespace ShareX.ImageEditor.Presentation.Rendering
@@ -40,7 +40,23 @@ namespace ShareX.ImageEditor.Presentation.Rendering
         private static readonly object SyncRoot = new();
         private static readonly Dictionary<CursorType, SKBitmap?> AnnotationBitmapCache = new();
         private static readonly Dictionary<(CursorType CursorType, int PreviewSize), Bitmap?> PreviewBitmapCache = new();
-        private static readonly Lazy<Type?> WinFormsCursorsType = new(TryGetWinFormsCursorsType);
+        // These cursor images previously came from a runtime WinForms reflection lookup.
+        private static readonly IReadOnlyDictionary<CursorType, string> BundledCursors = new Dictionary<CursorType, string>
+        {
+            [CursorType.HSplit] = "hsplit",
+            [CursorType.VSplit] = "vsplit",
+            [CursorType.NoMove2D] = "nomove2d",
+            [CursorType.NoMoveHoriz] = "nomoveh",
+            [CursorType.NoMoveVert] = "nomovev",
+            [CursorType.PanEast] = "east",
+            [CursorType.PanNE] = "ne",
+            [CursorType.PanNorth] = "north",
+            [CursorType.PanNW] = "nw",
+            [CursorType.PanSE] = "se",
+            [CursorType.PanSouth] = "south",
+            [CursorType.PanSW] = "sw",
+            [CursorType.PanWest] = "west",
+        };
         private static readonly IReadOnlyDictionary<CursorType, int> FallbackCursorIds = new Dictionary<CursorType, int>
         {
             [CursorType.AppStarting] = 32650,
@@ -49,33 +65,20 @@ namespace ShareX.ImageEditor.Presentation.Rendering
             [CursorType.Default] = 32512,
             [CursorType.Hand] = 32649,
             [CursorType.Help] = 32651,
-            [CursorType.HSplit] = 32652,
             [CursorType.IBeam] = 32513,
             [CursorType.No] = 32648,
-            [CursorType.NoMove2D] = 32654,
-            [CursorType.NoMoveHoriz] = 32652,
-            [CursorType.NoMoveVert] = 32653,
-            [CursorType.PanEast] = 32658,
-            [CursorType.PanNE] = 32660,
-            [CursorType.PanNorth] = 32655,
-            [CursorType.PanNW] = 32659,
-            [CursorType.PanSE] = 32662,
-            [CursorType.PanSouth] = 32656,
-            [CursorType.PanSW] = 32661,
-            [CursorType.PanWest] = 32657,
             [CursorType.SizeAll] = 32646,
             [CursorType.SizeNESW] = 32643,
             [CursorType.SizeNS] = 32645,
             [CursorType.SizeNWSE] = 32642,
             [CursorType.SizeWE] = 32644,
             [CursorType.UpArrow] = 32516,
-            [CursorType.VSplit] = 32653,
             [CursorType.WaitCursor] = 32514
         };
 
         public static SKBitmap? CreateAnnotationBitmap(CursorType cursorType)
         {
-            if (!OperatingSystem.IsWindows())
+            if (!OperatingSystem.IsWindows() && !BundledCursors.ContainsKey(cursorType))
             {
                 return null;
             }
@@ -94,7 +97,7 @@ namespace ShareX.ImageEditor.Presentation.Rendering
 
         public static Bitmap? GetPreviewBitmap(CursorType cursorType, int previewSize = 28)
         {
-            if (!OperatingSystem.IsWindows())
+            if (!OperatingSystem.IsWindows() && !BundledCursors.ContainsKey(cursorType))
             {
                 return null;
             }
@@ -151,12 +154,24 @@ namespace ShareX.ImageEditor.Presentation.Rendering
 
         private static SKBitmap? RenderCursorBitmap(CursorType cursorType)
         {
-            IntPtr cursorHandle = TryLoadWinFormsCursorHandle(cursorType);
-
-            if (cursorHandle == IntPtr.Zero)
+            if (BundledCursors.TryGetValue(cursorType, out string? asset))
             {
-                cursorHandle = TryLoadFallbackCursorHandle(cursorType);
+                using Stream? source = typeof(WindowsCursorBitmapRenderer).Assembly.GetManifestResourceStream(
+                    $"ShareX.ImageEditor.Assets.Cursors.{asset}.cur");
+                if (source == null) return null;
+                using MemoryStream stream = new();
+                source.CopyTo(stream);
+                byte[] data = stream.ToArray();
+                // CUR and ICO share their DIB payload. Replace the cursor directory's
+                // hotspot fields with icon planes/depth, then let Skia decode its mask.
+                int offset = BinaryPrimitives.ReadInt32LittleEndian(data.AsSpan(18));
+                BinaryPrimitives.WriteInt16LittleEndian(data.AsSpan(2), 1);
+                BinaryPrimitives.WriteInt16LittleEndian(data.AsSpan(10), 1);
+                BinaryPrimitives.WriteInt16LittleEndian(data.AsSpan(12), BinaryPrimitives.ReadInt16LittleEndian(data.AsSpan(offset + 14)));
+                return SKBitmap.Decode(data);
             }
+
+            IntPtr cursorHandle = TryLoadFallbackCursorHandle(cursorType);
 
             if (cursorHandle == IntPtr.Zero)
             {
@@ -265,6 +280,8 @@ namespace ShareX.ImageEditor.Presentation.Rendering
                     return null;
                 }
 
+                GdiFlush();
+
                 var imageInfo = new SKImageInfo(width, height, SKColorType.Bgra8888, SKAlphaType.Premul);
                 var skBitmap = new SKBitmap(imageInfo);
                 int totalBytes = height * skBitmap.RowBytes;
@@ -272,6 +289,36 @@ namespace ShareX.ImageEditor.Presentation.Rendering
                 unsafe
                 {
                     Buffer.MemoryCopy((void*)pixelBuffer, (void*)skBitmap.GetPixels(), totalBytes, totalBytes);
+                }
+
+                // Monochrome system cursors leave the DIB alpha channel empty.
+                // Recover their mask by drawing against black and white backgrounds.
+                if (!skBitmap.Pixels.Any(color => color.Alpha != 0))
+                {
+                    unsafe { new Span<byte>((void*)pixelBuffer, width * height * 4).Fill(255); }
+                    if (!DrawIconEx(memoryDc, 0, 0, cursorHandle, width, height, 0, IntPtr.Zero, DI_NORMAL))
+                    {
+                        skBitmap.Dispose();
+                        return null;
+                    }
+                    GdiFlush();
+                    unsafe
+                    {
+                        byte* dark = (byte*)skBitmap.GetPixels();
+                        byte* light = (byte*)pixelBuffer;
+                        for (int y = 0; y < height; y++)
+                            for (int x = 0; x < width; x++)
+                            {
+                                int index = (y * width + x) * 4;
+                                int alpha = 255 - Math.Clamp(Math.Max(light[index] - dark[index],
+                                    Math.Max(light[index + 1] - dark[index + 1], light[index + 2] - dark[index + 2])), 0, 255);
+                                SKColor color = alpha == 0 ? SKColors.Transparent : new SKColor(
+                                    (byte)Math.Min(255, dark[index + 2] * 255 / alpha),
+                                    (byte)Math.Min(255, dark[index + 1] * 255 / alpha),
+                                    (byte)Math.Min(255, dark[index] * 255 / alpha), (byte)alpha);
+                                skBitmap.SetPixel(x, y, color);
+                            }
+                    }
                 }
 
                 return skBitmap;
@@ -285,54 +332,6 @@ namespace ShareX.ImageEditor.Presentation.Rendering
 
                 DeleteObject(dibSection);
                 DeleteDC(memoryDc);
-            }
-        }
-
-        private static IntPtr TryLoadWinFormsCursorHandle(CursorType cursorType)
-        {
-            Type? cursorsType = WinFormsCursorsType.Value;
-            if (cursorsType == null)
-            {
-                return IntPtr.Zero;
-            }
-
-            string? propertyName = Enum.GetName(cursorType);
-            if (string.IsNullOrWhiteSpace(propertyName))
-            {
-                return IntPtr.Zero;
-            }
-
-            try
-            {
-                object? cursor = cursorsType.GetProperty(propertyName, BindingFlags.Public | BindingFlags.Static)?.GetValue(null);
-                if (cursor == null)
-                {
-                    return IntPtr.Zero;
-                }
-
-                object? handleValue = cursor.GetType().GetProperty("Handle", BindingFlags.Public | BindingFlags.Instance)?.GetValue(cursor);
-                return handleValue is IntPtr handle ? handle : IntPtr.Zero;
-            }
-            catch
-            {
-                return IntPtr.Zero;
-            }
-        }
-
-        private static Type? TryGetWinFormsCursorsType()
-        {
-            if (!OperatingSystem.IsWindows())
-            {
-                return null;
-            }
-
-            try
-            {
-                return Type.GetType("System.Windows.Forms.Cursors, System.Windows.Forms", throwOnError: false);
-            }
-            catch
-            {
-                return null;
             }
         }
 
@@ -399,6 +398,9 @@ namespace ShareX.ImageEditor.Presentation.Rendering
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool DrawIconEx(IntPtr hdc, int xLeft, int yTop, IntPtr hIcon, int cxWidth, int cyWidth, uint istepIfAniCur, IntPtr hbrFlickerFreeDraw, int diFlags);
+
+        [DllImport("gdi32.dll")]
+        private static extern bool GdiFlush();
 
         [DllImport("gdi32.dll", SetLastError = true)]
         private static extern IntPtr CreateCompatibleDC(IntPtr hdc);

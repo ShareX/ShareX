@@ -28,7 +28,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using Bitmap = SkiaSharp.SKBitmap;
 using Image = SkiaSharp.SKBitmap;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
@@ -40,40 +39,13 @@ namespace ShareX.HelpersLib
         public const string FORMAT_PNG = "PNG";
         public const string FORMAT_17 = "Format17";
 
-        private const int RetryTimes = 20;
-        private const int RetryDelay = 100;
-
-        private static readonly object ClipboardLock = new object();
-
-        private static bool CopyData(IDataObject data, bool copy = true)
-        {
-            if (data != null)
-            {
-                lock (ClipboardLock)
-                {
-                    Clipboard.SetDataObject(data, copy, RetryTimes, RetryDelay);
-                }
-
-                return true;
-            }
-
-            return false;
-        }
-
         public static bool Clear()
         {
-            try
-            {
-                IDataObject data = new DataObject();
-                CopyData(data, false);
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e, "Clipboard clear failed.");
-            }
-
-            return false;
+            try { return AvaloniaClipboard.Clear(); }
+            catch (Exception e) { DebugHelper.WriteException(e, "Clipboard clear failed."); return false; }
         }
+
+        public static ClipboardData CaptureData() => AvaloniaClipboard.Capture();
 
         public static Bitmap ConvertClipboardDibToBitmap(byte[] data)
         {
@@ -87,32 +59,9 @@ namespace ShareX.HelpersLib
 
         public static bool CopyText(string text)
         {
-            if (!string.IsNullOrEmpty(text))
-            {
-                try
-                {
-                    IDataObject data = new DataObject();
-                    string dataFormat;
-
-                    if (Environment.OSVersion.Platform != PlatformID.Win32NT || Environment.OSVersion.Version.Major < 5)
-                    {
-                        dataFormat = DataFormats.Text;
-                    }
-                    else
-                    {
-                        dataFormat = DataFormats.UnicodeText;
-                    }
-
-                    data.SetData(dataFormat, false, text);
-                    return CopyData(data);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Clipboard copy text failed.");
-                }
-            }
-
-            return false;
+            if (string.IsNullOrEmpty(text)) return false;
+            try { return AvaloniaClipboard.SetText(text); }
+            catch (Exception e) { DebugHelper.WriteException(e, "Clipboard copy text failed."); return false; }
         }
 
         public static bool CopyImage(Image img, string fileName = null)
@@ -121,28 +70,21 @@ namespace ShareX.HelpersLib
             try
             {
                 using MemoryStream png = new();
-                using MemoryStream dib = new();
-                DataObject data = new();
                 img.Save(png, ImageFormat.Png);
-                data.SetData(FORMAT_PNG, false, png);
+                byte[] dib;
                 if (HelpersOptions.UseAlternativeClipboardCopyImage && !HelpersOptions.DefaultCopyImageFillBackground)
-                {
-                    byte[] bytes = ClipboardHelpersEx.ConvertToDib(img);
-                    dib.Write(bytes);
-                }
+                    dib = ClipboardHelpersEx.ConvertToDib(img);
                 else
                 {
                     using Bitmap opaque = SkiaImageHelpers.FillBackground(img, Color.White);
                     using MemoryStream bmp = new();
                     opaque.Save(bmp, ImageFormat.Bmp);
-                    bmp.CopyStreamTo(dib, 14, (int)bmp.Length - 14);
+                    dib = bmp.ToArray()[14..];
                 }
-                data.SetData(DataFormats.Dib, false, dib);
-                if (!string.IsNullOrEmpty(fileName))
-                    data.SetData(DataFormats.Html, GenerateHTMLFragment($"<img src=\"{fileName}\"/>"));
-                return CopyData(data);
+                return AvaloniaClipboard.SetImage(png.ToArray(), dib,
+                    string.IsNullOrEmpty(fileName) ? null : OperatingSystem.IsWindows() ? GenerateHTMLFragment($"<img src=\"{fileName}\"/>") : $"<img src=\"{fileName}\"/>");
             }
-            catch (Exception exception) { DebugHelper.WriteException(exception, "Clipboard copy image failed."); return false; }
+            catch (Exception e) { DebugHelper.WriteException(e, "Clipboard copy image failed."); return false; }
         }
 
         public static bool CopyFile(string path)
@@ -157,22 +99,9 @@ namespace ShareX.HelpersLib
 
         public static bool CopyFile(string[] paths)
         {
-            if (paths != null && paths.Length > 0)
-            {
-                try
-                {
-                    IDataObject dataObject = new DataObject();
-                    dataObject.SetData(DataFormats.FileDrop, true, paths);
-
-                    return CopyData(dataObject);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Clipboard copy file failed.");
-                }
-            }
-
-            return false;
+            if (paths == null || paths.Length == 0) return false;
+            try { return AvaloniaClipboard.SetFiles(paths); }
+            catch (Exception e) { DebugHelper.WriteException(e, "Clipboard copy file failed."); return false; }
         }
 
         public static bool CopyImageFromFile(string path)
@@ -218,66 +147,33 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                lock (ClipboardLock)
+                byte[] png = AvaloniaClipboard.GetImage();
+                if (png != null) return SkiaImageHelpers.ByteArrayToBitmap(png);
+                ClipboardData data = CaptureData();
+                foreach (string format in new[] { FORMAT_PNG, "image/png", FORMAT_17, ClipboardDataFormats.Dib })
                 {
-                    return GetImageAlternative2();
+                    if (data.GetData(format) is not byte[] bytes) continue;
+                    Bitmap image = format is FORMAT_PNG or "image/png" ? SkiaImageHelpers.ByteArrayToBitmap(bytes) :
+                        ClipboardHelpersEx.ImageFromClipboardDib(bytes);
+                    if (image != null) return image;
                 }
             }
-            catch (Exception exception) { DebugHelper.WriteException(exception, "Clipboard get image failed."); return null; }
-        }
-
-        public static Bitmap GetImageAlternative2()
-        {
-            IDataObject data = Clipboard.GetDataObject();
-            if (data == null) return null;
-            foreach (string format in new[] { FORMAT_PNG, FORMAT_17, DataFormats.Dib })
-            {
-                if (data.GetData(format, true) is not MemoryStream stream) continue;
-                byte[] bytes = stream.ToArray();
-                Bitmap image = format == FORMAT_PNG ? SkiaImageHelpers.ByteArrayToBitmap(bytes) : ClipboardHelpersEx.ImageFromClipboardDib(bytes);
-                if (image != null) return image;
-            }
+            catch (Exception e) { DebugHelper.WriteException(e, "Clipboard get image failed."); }
             return null;
         }
+
+        public static Bitmap GetImageAlternative2() => GetImage();
 
         public static string GetText(bool checkContainsText = false)
         {
-            try
-            {
-                lock (ClipboardLock)
-                {
-                    if (!checkContainsText || Clipboard.ContainsText())
-                    {
-                        return Clipboard.GetText();
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e, "Clipboard get text failed.");
-            }
-
-            return null;
+            try { return AvaloniaClipboard.GetText(); }
+            catch (Exception e) { DebugHelper.WriteException(e, "Clipboard get text failed."); return null; }
         }
 
         public static string[] GetFileDropList(bool checkContainsFileDropList = false)
         {
-            try
-            {
-                lock (ClipboardLock)
-                {
-                    if (!checkContainsFileDropList || Clipboard.ContainsFileDropList())
-                    {
-                        return Clipboard.GetFileDropList().Cast<string>().ToArray();
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e, "Clipboard get file drop list failed.");
-            }
-
-            return null;
+            try { return AvaloniaClipboard.GetFiles(); }
+            catch (Exception e) { DebugHelper.WriteException(e, "Clipboard get files failed."); return null; }
         }
 
         public static Bitmap TryGetImage()
@@ -335,46 +231,14 @@ namespace ShareX.HelpersLib
             return sb.ToString();
         }
 
-        public static bool ContainsImage()
+        public static bool ContainsImage() => Contains(ClipboardDataFormats.Bitmap);
+        public static bool ContainsText() => Contains(ClipboardDataFormats.Text);
+        public static bool ContainsFileDropList() => Contains(ClipboardDataFormats.FileDrop);
+
+        private static bool Contains(string format)
         {
-            try
-            {
-                return Clipboard.ContainsImage() || Clipboard.ContainsData(FORMAT_PNG) || Clipboard.ContainsData(FORMAT_17) || Clipboard.ContainsData(DataFormats.Dib);
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
-        }
-
-        public static bool ContainsText()
-        {
-            try
-            {
-                return Clipboard.ContainsText();
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
-        }
-
-        public static bool ContainsFileDropList()
-        {
-            try
-            {
-                return Clipboard.ContainsFileDropList();
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
+            try { return AvaloniaClipboard.Contains(format); }
+            catch (Exception e) { DebugHelper.WriteException(e); return false; }
         }
     }
 }

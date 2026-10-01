@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Windows.Forms;
 using Bitmap = SkiaSharp.SKBitmap;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
@@ -59,11 +58,11 @@ public sealed class ClipboardViewerPreview
 
 public sealed class ClipboardViewerData
 {
-    private readonly IDataObject? _dataObject;
+    private readonly ClipboardData? _dataObject;
 
     public IReadOnlyList<string> Formats { get; }
 
-    private ClipboardViewerData(IDataObject? dataObject)
+    private ClipboardViewerData(ClipboardData? dataObject)
     {
         _dataObject = dataObject;
         Formats = dataObject?.GetFormats() ?? [];
@@ -71,40 +70,27 @@ public sealed class ClipboardViewerData
 
     public static ClipboardViewerData Capture()
     {
-        return new ClipboardViewerData(Clipboard.GetDataObject());
+        return new ClipboardViewerData(ClipboardHelpers.CaptureData());
     }
 
     public ClipboardViewerPreview GetPreview(string format)
     {
-        // Retrieve the synthesized DIB rather than asking WinForms to create a GDI bitmap.
-        if (format.Equals(DataFormats.Bitmap, StringComparison.OrdinalIgnoreCase))
-        {
-            foreach (string imageFormat in new[] { ClipboardHelpers.FORMAT_17, DataFormats.Dib })
-            {
-                if (_dataObject?.GetData(imageFormat, true) is not MemoryStream imageStream) continue;
-                using Bitmap? image = ClipboardHelpers.ConvertClipboardDibToBitmap(imageStream.ToArray());
-                if (image != null) return ClipboardViewerPreview.FromImage(image);
-            }
-            return ClipboardViewerPreview.FromText(string.Empty);
-        }
         object? data = _dataObject?.GetData(format);
         if (data == null)
         {
             return ClipboardViewerPreview.FromText(string.Empty);
         }
 
-        if (data is MemoryStream memoryStream)
+        if (data is byte[] bytes)
         {
-            byte[] bytes = memoryStream.ToArray();
-
-            if (format.Equals(ClipboardHelpers.FORMAT_PNG, StringComparison.OrdinalIgnoreCase))
+            if ((format.Equals(ClipboardHelpers.FORMAT_PNG, StringComparison.OrdinalIgnoreCase) || format.Equals("image/png", StringComparison.OrdinalIgnoreCase) || format.Equals(ClipboardDataFormats.Bitmap, StringComparison.OrdinalIgnoreCase)))
             {
                 using MemoryStream imageStream = new(bytes, writable: false);
                 using Bitmap source = SkiaImageHelpers.Decode(imageStream);
                 return ClipboardViewerPreview.FromImage(source);
             }
 
-            if (format.Equals(DataFormats.Dib, StringComparison.OrdinalIgnoreCase))
+            if (format.Equals(ClipboardDataFormats.Dib, StringComparison.OrdinalIgnoreCase))
             {
                 using Bitmap image = ClipboardHelpers.ConvertClipboardDibToBitmap(bytes);
                 return ClipboardViewerPreview.FromImage(image);
@@ -123,6 +109,6 @@ public sealed class ClipboardViewerData
             return ClipboardViewerPreview.FromImage(bitmap);
         }
 
-        return ClipboardViewerPreview.FromText(data.ToString());
+        return ClipboardViewerPreview.FromText(data is string[] files ? string.Join(Environment.NewLine, files) : data is byte[] raw ? Convert.ToHexString(raw) : data.ToString());
     }
 }

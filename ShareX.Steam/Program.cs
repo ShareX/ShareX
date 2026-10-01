@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System.Windows.Forms;
 
 namespace ShareX.Steam
 {
@@ -31,9 +30,6 @@ namespace ShareX.Steam
     {
         private static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
             Launcher.Run(args);
         }
     }

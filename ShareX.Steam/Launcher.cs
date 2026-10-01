@@ -28,7 +28,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Management;
 using System.Threading;
-using System.Windows.Forms;
 
 namespace ShareX.Steam
 {
@@ -301,8 +300,7 @@ namespace ShareX.Steam
             {
                 while (IsShareXRunning())
                 {
-                    if (MessageBox.Show("ShareX is currently running.\r\n\r\nPlease close ShareX and press \"Retry\" button after it is closed.", "ShareX - Uninstaller",
-                        MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                    if (!NativeMessageBox.Retry("ShareX is currently running.\r\n\r\nPlease close ShareX and press \"Retry\" button after it is closed.", "ShareX - Uninstaller"))
                     {
                         return;
                     }

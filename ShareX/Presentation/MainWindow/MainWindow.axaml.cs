@@ -51,9 +51,6 @@ using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingPoint = System.Drawing.Point;
 using DrawingSize = System.Drawing.Size;
-using FormsCursor = System.Windows.Forms.Cursor;
-using FormsDataFormats = System.Windows.Forms.DataFormats;
-using FormsDataObject = System.Windows.Forms.DataObject;
 using ImageOrientation = ShareX.HelpersLib.ImageOrientation;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
@@ -218,7 +215,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         CloseActiveContextMenu();
 
-        System.Drawing.Point cursorPosition = FormsCursor.Position;
+        System.Drawing.Point cursorPosition = CaptureHelpers.GetCursorPosition();
         PixelPoint anchorPosition = new(cursorPosition.X, cursorPosition.Y);
         Window anchor = CreateTrayMenuAnchor(anchorPosition);
         _trayMenuAnchor = anchor;
@@ -1298,7 +1295,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
 
         Point position = e.GetPosition(control);
-        DrawingSize dragSize = System.Windows.Forms.SystemInformation.DragSize;
+        Size dragSize = Application.Current?.PlatformSettings?.GetTapSize(PointerType.Mouse) ?? new Size(4, 4);
         if (Math.Abs(position.X - _thumbnailDragStart.X) < dragSize.Width / 2d &&
             Math.Abs(position.Y - _thumbnailDragStart.Y) < dragSize.Height / 2d)
         {
@@ -1868,24 +1865,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return;
         }
 
-        FormsDataObject dataObject = new();
-        string[] files = e.DataTransfer.TryGetFiles()?
-            .Select(x => x.TryGetLocalPath())
-            .Where(x => !string.IsNullOrEmpty(x))
-            .Cast<string>().ToArray() ?? Array.Empty<string>();
-
-        if (files.Length > 0)
-        {
-            dataObject.SetData(FormsDataFormats.FileDrop, files);
-        }
-
-        string? text = e.DataTransfer.TryGetText();
-        if (!string.IsNullOrEmpty(text))
-        {
-            dataObject.SetText(text);
-        }
-
-        UploadManager.DragDropUpload(dataObject);
+        UploadManager.DragDropUpload(e.DataTransfer);
         e.Handled = true;
     }
 
@@ -2132,17 +2112,13 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private static WindowIcon CreateWindowIcon()
     {
-        using System.Drawing.Icon icon = ShareXResources.Icon;
-        using MemoryStream stream = new();
-        icon.Save(stream);
-        stream.Position = 0;
+        using MemoryStream stream = new(ShareXResources.IconBytes, writable: false);
         return new WindowIcon(stream);
     }
 
     private static AvaloniaBitmap CreateTitleBarIcon()
     {
-        using System.Drawing.Icon icon = ShareXResources.Icon;
-        using DrawingBitmap bitmap = WindowsImageInterop.FromIcon(icon.Handle);
+        using DrawingBitmap bitmap = SkiaImageHelpers.ByteArrayToBitmap(ShareXResources.IconBytes);
         using MemoryStream stream = new();
         bitmap.Save(stream, SkiaSharp.SKEncodedImageFormat.Png);
         stream.Position = 0;

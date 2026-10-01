@@ -37,8 +37,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 using Bitmap = SkiaSharp.SKBitmap;
-using WinFormsMouseEventArgs = System.Windows.Forms.MouseEventArgs;
-using WinFormsNotifyIcon = System.Windows.Forms.NotifyIcon;
 
 namespace ShareX;
 
@@ -47,7 +45,7 @@ public partial class AutoCaptureWindow : Window
     private readonly DispatcherTimer _screenshotTimer;
     private readonly DispatcherTimer _statusTimer;
     private readonly Stopwatch _stopwatch = new();
-    private readonly WinFormsNotifyIcon _trayIcon;
+    private readonly TrayIcon _trayIcon;
     private readonly IDisposable _trayIconBinding;
     private bool _isLoaded;
     private int _delay;
@@ -68,13 +66,13 @@ public partial class AutoCaptureWindow : Window
         _statusTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(250) };
         _statusTimer.Tick += (_, _) => UpdateStatus();
 
-        _trayIcon = new WinFormsNotifyIcon
+        _trayIcon = new TrayIcon
         {
-            Text = Strings.AutoCaptureWindow_Title,
-            Visible = false
+            ToolTipText = Strings.AutoCaptureWindow_Title,
+            IsVisible = false
         };
         _trayIconBinding = LucideTrayIcon.Bind(_trayIcon, LucideIcons.clock);
-        _trayIcon.MouseClick += OnTrayIconClick;
+        _trayIcon.Clicked += OnTrayIconClick;
 
         _customRegion = ApplicationState.Settings.AutoCaptureRegion;
         RepeatTimeInput.Value = ApplicationState.Settings.AutoCaptureRepeatTime;
@@ -232,12 +230,12 @@ public partial class AutoCaptureWindow : Window
     private void HideToTray()
     {
         Hide();
-        _trayIcon.Visible = true;
+        _trayIcon.IsVisible = true;
     }
 
     private void RestoreFromTray()
     {
-        _trayIcon.Visible = false;
+        _trayIcon.IsVisible = false;
         ShowAndActivate();
     }
 
@@ -300,7 +298,7 @@ public partial class AutoCaptureWindow : Window
         }
     }
 
-    private void OnTrayIconClick(object? sender, WinFormsMouseEventArgs e)
+    private void OnTrayIconClick(object? sender, EventArgs e)
     {
         Dispatcher.UIThread.Post(RestoreFromTray);
     }
@@ -308,8 +306,8 @@ public partial class AutoCaptureWindow : Window
     private void OnClosed(object? sender, EventArgs e)
     {
         Stop();
-        _trayIcon.Visible = false;
-        _trayIcon.MouseClick -= OnTrayIconClick;
+        _trayIcon.IsVisible = false;
+        _trayIcon.Clicked -= OnTrayIconClick;
         _trayIconBinding.Dispose();
         _trayIcon.Dispose();
     }

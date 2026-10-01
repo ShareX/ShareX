@@ -49,7 +49,6 @@ using System.Reflection;
 using System.Threading.Tasks;
 using DrawingRectangle = System.Drawing.Rectangle;
 using DrawingSize = System.Drawing.Size;
-using WinForms = System.Windows.Forms;
 
 namespace ShareX;
 
@@ -477,7 +476,7 @@ internal sealed class TaskSettingsPageBuilder
             FPS = capture.ScreenRecordFPS,
             Duration = capture.ScreenRecordFixedDuration ? capture.ScreenRecordDuration : 0,
             OutputPath = "output.mp4",
-            CaptureArea = WinForms.Screen.PrimaryScreen?.Bounds ?? DrawingRectangle.Empty,
+            CaptureArea = DesktopScreen.PrimaryScreen?.Bounds ?? DrawingRectangle.Empty,
             DrawCursor = capture.ScreenRecordShowCursor
         };
 

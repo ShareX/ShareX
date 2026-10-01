@@ -28,13 +28,13 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Text;
-using System.Windows.Forms;
+using Avalonia.Controls;
 
 namespace ShareX.HelpersLib;
 
 public static partial class SkiaImageHelpers
 {
-    public static string OpenImageFileDialog(Form form = null, string initialDirectory = null)
+    public static string OpenImageFileDialog(Window form = null, string initialDirectory = null)
     {
         string[] images = OpenImageFileDialog(false, form, initialDirectory);
 
@@ -46,27 +46,12 @@ public static partial class SkiaImageHelpers
         return null;
     }
 
-    public static string[] OpenImageFileDialog(bool multiselect, Form form = null, string initialDirectory = null)
+    public static string[] OpenImageFileDialog(bool multiselect, Window form = null, string initialDirectory = null)
     {
-        using (OpenFileDialog ofd = new OpenFileDialog())
-        {
-            ofd.Filter = $"{Localization.Strings.ImageHelpers_Image_files} (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp|" +
-                "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp";
-
-            ofd.Multiselect = multiselect;
-
-            if (!string.IsNullOrEmpty(initialDirectory))
-            {
-                ofd.InitialDirectory = initialDirectory;
-            }
-
-            if (ofd.ShowDialog(form) == DialogResult.OK)
-            {
-                return ofd.FileNames;
-            }
-        }
-
-        return null;
+        return FileDialogHelpers.OpenFiles(filter:
+            $"{Localization.Strings.ImageHelpers_Image_files} (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp|" +
+            "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp",
+            multiselect: multiselect, initialDirectory: initialDirectory, owner: form);
     }
 
     public static bool SaveImage(SKBitmap img, string filePath)
@@ -90,70 +75,22 @@ public static partial class SkiaImageHelpers
 
     public static string SaveImageFileDialog(SKBitmap img, string filePath = "", bool useLastDirectory = true)
     {
-        using (SaveFileDialog sfd = new SaveFileDialog())
+        string initialDirectory = useLastDirectory && Directory.Exists(HelpersOptions.LastSaveDirectory)
+            ? HelpersOptions.LastSaveDirectory : Path.GetDirectoryName(filePath);
+        string extension = Path.GetExtension(filePath).TrimStart('.').ToLowerInvariant();
+        int filterIndex = extension switch { "jpg" or "jpeg" or "jpe" or "jfif" => 2, "gif" => 3, "bmp" => 4, _ => 1 };
+        string selectedPath = FileDialogHelpers.SaveFile(filter:
+            "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp",
+            fileName: Path.GetFileName(filePath), initialDirectory: initialDirectory, defaultExtension: "png", filterIndex: filterIndex);
+        if (!string.IsNullOrEmpty(selectedPath) && SaveImage(img, selectedPath))
         {
-            sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp";
-            sfd.DefaultExt = "png";
-
-            string initialDirectory = null;
-
-            if (useLastDirectory && !string.IsNullOrEmpty(HelpersOptions.LastSaveDirectory) && Directory.Exists(HelpersOptions.LastSaveDirectory))
-            {
-                initialDirectory = HelpersOptions.LastSaveDirectory;
-            }
-
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                string folder = Path.GetDirectoryName(filePath);
-
-                if (string.IsNullOrEmpty(initialDirectory) && !string.IsNullOrEmpty(folder) && Directory.Exists(folder))
-                {
-                    initialDirectory = folder;
-                }
-
-                sfd.FileName = Path.GetFileName(filePath);
-
-                string ext = FileHelpers.GetFileNameExtension(filePath);
-
-                if (!string.IsNullOrEmpty(ext))
-                {
-                    ext = ext.ToLowerInvariant();
-
-                    switch (ext)
-                    {
-                        case "png":
-                            sfd.FilterIndex = 1;
-                            break;
-                        case "jpg":
-                        case "jpeg":
-                        case "jpe":
-                        case "jfif":
-                            sfd.FilterIndex = 2;
-                            break;
-                        case "gif":
-                            sfd.FilterIndex = 3;
-                            break;
-                        case "bmp":
-                            sfd.FilterIndex = 4;
-                            break;
-                    }
-                }
-            }
-
-            sfd.InitialDirectory = initialDirectory;
-
-            if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
-            {
-                SaveImage(img, sfd.FileName);
-                HelpersOptions.LastSaveDirectory = Path.GetDirectoryName(sfd.FileName);
-                return sfd.FileName;
-            }
+            HelpersOptions.LastSaveDirectory = Path.GetDirectoryName(selectedPath);
+            return selectedPath;
         }
-
         return null;
     }
 
-    public static SKBitmap LoadImageWithFileDialog(Form form = null)
+    public static SKBitmap LoadImageWithFileDialog(Window form = null)
     {
         string filePath = OpenImageFileDialog(form);
 

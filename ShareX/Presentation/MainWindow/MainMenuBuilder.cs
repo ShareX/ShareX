@@ -36,7 +36,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Bitmap = SkiaSharp.SKBitmap;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
@@ -190,7 +189,7 @@ internal sealed class MainMenuBuilder
     private IReadOnlyList<MainMenuEntry> BuildMonitorMenu()
     {
         List<MainMenuEntry> items = new();
-        Screen[] screens = Screen.AllScreens;
+        DesktopScreen[] screens = DesktopScreen.AllScreens;
 
         for (int i = 0; i < screens.Length; i++)
         {

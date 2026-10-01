@@ -30,7 +30,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -129,14 +128,14 @@ namespace ShareX.ScreenCaptureLib
                             args.Append($"-i audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
                         }
 
-                        Screen[] screens = Screen.AllScreens.OrderBy(x => !x.Primary).ToArray();
+                        DesktopScreen[] screens = DesktopScreen.AllScreens.OrderBy(x => !x.Primary).ToArray();
                         int monitorIndex = 0;
                         Rectangle captureArea = screens[0].Bounds;
                         int maxIntersectionArea = 0;
 
                         for (int i = 0; i < screens.Length; i++)
                         {
-                            Screen screen = screens[i];
+                            DesktopScreen screen = screens[i];
                             Rectangle intersection = Rectangle.Intersect(screen.Bounds, CaptureArea);
                             int intersectionArea = intersection.Width * intersection.Height;
 

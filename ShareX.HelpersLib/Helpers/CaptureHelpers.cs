@@ -26,7 +26,6 @@
 using System;
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -34,76 +33,40 @@ namespace ShareX.HelpersLib
     {
         public static Rectangle GetScreenBounds()
         {
-            return SystemInformation.VirtualScreen;
+            return DesktopScreen.AllScreens.Select(x => x.Bounds).Combine();
         }
 
         public static Rectangle GetScreenWorkingArea()
         {
-            return Screen.AllScreens.Select(x => x.WorkingArea).Combine();
+            return DesktopScreen.AllScreens.Select(x => x.WorkingArea).Combine();
         }
 
         public static Rectangle GetScreenBounds(IntPtr handle, bool workingArea)
         {
-            Screen screen = Screen.FromHandle(handle);
+            DesktopScreen screen = DesktopScreen.FromHandle(handle);
             return workingArea ? screen.WorkingArea : screen.Bounds;
-        }
-
-        private static Rectangle GetScreenBounds2()
-        {
-            Point topLeft = Point.Empty;
-            Point bottomRight = Point.Empty;
-
-            foreach (Screen screen in Screen.AllScreens)
-            {
-                if (screen.Bounds.X < topLeft.X) topLeft.X = screen.Bounds.X;
-                if (screen.Bounds.Y < topLeft.Y) topLeft.Y = screen.Bounds.Y;
-                if ((screen.Bounds.X + screen.Bounds.Width) > bottomRight.X) bottomRight.X = screen.Bounds.X + screen.Bounds.Width;
-                if ((screen.Bounds.Y + screen.Bounds.Height) > bottomRight.Y) bottomRight.Y = screen.Bounds.Y + screen.Bounds.Height;
-            }
-
-            return new Rectangle(topLeft.X, topLeft.Y, bottomRight.X + Math.Abs(topLeft.X), bottomRight.Y + Math.Abs(topLeft.Y));
-        }
-
-        private static Rectangle GetScreenBounds3()
-        {
-            Point topLeft = Point.Empty;
-            Point bottomRight = Point.Empty;
-
-            foreach (Screen screen in Screen.AllScreens)
-            {
-                topLeft.X = Math.Min(topLeft.X, screen.Bounds.X);
-                topLeft.Y = Math.Min(topLeft.Y, screen.Bounds.Y);
-                bottomRight.X = Math.Max(bottomRight.X, screen.Bounds.Right);
-                bottomRight.Y = Math.Max(bottomRight.Y, screen.Bounds.Bottom);
-            }
-
-            return new Rectangle(topLeft.X, topLeft.Y, bottomRight.X + Math.Abs(topLeft.X), bottomRight.Y + Math.Abs(topLeft.Y));
-        }
-
-        private static Rectangle GetScreenBounds4()
-        {
-            return Screen.AllScreens.Select(x => x.Bounds).Combine();
         }
 
         public static Rectangle GetActiveScreenBounds()
         {
-            return Screen.FromPoint(GetCursorPosition()).Bounds;
+            return DesktopScreen.FromPoint(GetCursorPosition()).Bounds;
         }
 
         public static Rectangle GetActiveScreenWorkingArea()
         {
-            return Screen.FromPoint(GetCursorPosition()).WorkingArea;
+            return DesktopScreen.FromPoint(GetCursorPosition()).WorkingArea;
         }
 
         public static Rectangle GetPrimaryScreenBounds()
         {
-            return Screen.PrimaryScreen.Bounds;
+            return DesktopScreen.PrimaryScreen.Bounds;
         }
 
         public static Point ScreenToClient(Point p)
         {
-            int screenX = NativeMethods.GetSystemMetrics(SystemMetric.SM_XVIRTUALSCREEN);
-            int screenY = NativeMethods.GetSystemMetrics(SystemMetric.SM_YVIRTUALSCREEN);
+            Rectangle bounds = GetScreenBounds();
+            int screenX = bounds.X;
+            int screenY = bounds.Y;
             return new Point(p.X - screenX, p.Y - screenY);
         }
 
@@ -114,8 +77,9 @@ namespace ShareX.HelpersLib
 
         public static Point ClientToScreen(Point p)
         {
-            int screenX = NativeMethods.GetSystemMetrics(SystemMetric.SM_XVIRTUALSCREEN);
-            int screenY = NativeMethods.GetSystemMetrics(SystemMetric.SM_YVIRTUALSCREEN);
+            Rectangle bounds = GetScreenBounds();
+            int screenX = bounds.X;
+            int screenY = bounds.Y;
             return new Point(p.X + screenX, p.Y + screenY);
         }
 
@@ -370,7 +334,7 @@ namespace ShareX.HelpersLib
                 if (ignoreList.All(ignore => !className.Equals(ignore, StringComparison.OrdinalIgnoreCase)))
                 {
                     Rectangle windowRectangle = windowInfo.Rectangle;
-                    Rectangle monitorRectangle = Screen.FromRectangle(windowRectangle).Bounds;
+                    Rectangle monitorRectangle = DesktopScreen.FromRectangle(windowRectangle).Bounds;
                     return windowRectangle.Contains(monitorRectangle);
                 }
             }

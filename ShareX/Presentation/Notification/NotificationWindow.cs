@@ -43,7 +43,6 @@ using System.IO;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingContentAlignment = ShareX.HelpersLib.ImageContentAlignment;
-using FormsCursor = System.Windows.Forms.Cursor;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
@@ -320,7 +319,7 @@ public partial class NotificationWindow : Window
             return;
         }
 
-        System.Drawing.Point cursor = FormsCursor.Position;
+        System.Drawing.Point cursor = CaptureHelpers.GetCursorPosition();
         Screen? screen = Screens.ScreenFromPoint(new PixelPoint(cursor.X, cursor.Y)) ?? Screens.Primary;
         if (screen == null)
         {
@@ -410,7 +409,7 @@ public partial class NotificationWindow : Window
         PixelPoint topLeft = NotificationCard.PointToScreen(default);
         PixelPoint bottomRight = NotificationCard.PointToScreen(
             new Point(NotificationCard.Bounds.Width, NotificationCard.Bounds.Height));
-        System.Drawing.Point cursor = FormsCursor.Position;
+        System.Drawing.Point cursor = CaptureHelpers.GetCursorPosition();
         bool isInside = cursor.X >= topLeft.X && cursor.X < bottomRight.X &&
             cursor.Y >= topLeft.Y && cursor.Y < bottomRight.Y;
 

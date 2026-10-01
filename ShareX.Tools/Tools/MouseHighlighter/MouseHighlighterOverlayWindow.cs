@@ -29,13 +29,12 @@ using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
 namespace ShareX.Tools;
 
 // A native layered window gives both per-pixel alpha and reliable click-through
 // behavior without changing Avalonia's renderer or the application's DPI mode.
-internal sealed class MouseHighlighterOverlayWindow : NativeWindow, IDisposable
+internal sealed class MouseHighlighterOverlayWindow : IDisposable
 {
     private readonly MouseHighlighterService _service;
     private readonly Rectangle _screenBounds;
@@ -51,18 +50,13 @@ internal sealed class MouseHighlighterOverlayWindow : NativeWindow, IDisposable
     {
         _service = service;
         _screenBounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height);
-        CreateHandle(new CreateParams
-        {
-            Caption = "ShareX - Mouse highlighter overlay",
-            Style = unchecked((int)WindowStyles.WS_POPUP),
-            ExStyle = (int)(WindowStyles.WS_EX_LAYERED | WindowStyles.WS_EX_TRANSPARENT |
-                WindowStyles.WS_EX_TOOLWINDOW | WindowStyles.WS_EX_NOACTIVATE),
-            X = bounds.X,
-            Y = bounds.Y,
-            Width = 1,
-            Height = 1
-        });
+        _window = new WindowsNativeWindow("ShareX - Mouse highlighter overlay", new Rectangle(bounds.X, bounds.Y, 1, 1),
+            WindowStyles.WS_EX_LAYERED | WindowStyles.WS_EX_TRANSPARENT | WindowStyles.WS_EX_TOOLWINDOW | WindowStyles.WS_EX_NOACTIVATE);
+        _window.MessageReceived += OnNativeMessage;
     }
+
+    private readonly WindowsNativeWindow _window;
+    private IntPtr Handle => _window.Handle;
 
     public void Refresh()
     {
@@ -216,17 +210,16 @@ internal sealed class MouseHighlighterOverlayWindow : NativeWindow, IDisposable
         _previousBitmap = _bitmap = _dc = IntPtr.Zero;
     }
 
-    protected override void WndProc(ref Message message)
+    private void OnNativeMessage(object? sender, NativeWindowMessageEventArgs message)
     {
-        if (message.Msg == 0x0084) { message.Result = new IntPtr(-1); return; } // HTTRANSPARENT
-        if (message.Msg == 0x0021) { message.Result = new IntPtr(3); return; } // MA_NOACTIVATE
-        base.WndProc(ref message);
+        if (message.Message == 0x0084) { message.Result = new IntPtr(-1); message.Handled = true; } // HTTRANSPARENT
+        if (message.Message == 0x0021) { message.Result = new IntPtr(3); message.Handled = true; } // MA_NOACTIVATE
     }
 
     public void Dispose()
     {
         ReleaseBuffer();
-        if (Handle != IntPtr.Zero) DestroyHandle();
+        _window.Dispose();
     }
 
     [DllImport("user32.dll", SetLastError = true)]

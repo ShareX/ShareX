@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib.Properties;
 using SkiaSharp;
-using System.Drawing;
 
 namespace ShareX.HelpersLib
 {
@@ -43,50 +42,9 @@ namespace ShareX.HelpersLib
 
         public static bool IsDarkTheme => Theme.IsDarkTheme;
 
-        private static bool useWhiteIcon;
+        public static bool UseWhiteIcon { get; set; }
 
-        public static bool UseWhiteIcon
-        {
-            get
-            {
-                return useWhiteIcon;
-            }
-            set
-            {
-                if (useWhiteIcon != value)
-                {
-                    useWhiteIcon = value;
-
-                    if (useWhiteIcon)
-                    {
-                        Icon = null;
-                    }
-                    else
-                    {
-                        Icon = null;
-                    }
-                }
-            }
-        }
-
-        private static Icon icon;
-
-        public static Icon Icon
-        {
-            get
-            {
-                icon ??= UseWhiteIcon ? Resources.ShareX_Icon_White : Resources.ShareX_Icon;
-                return icon.CloneSafe();
-            }
-            set
-            {
-                if (icon != value)
-                {
-                    icon?.Dispose();
-                    icon = value;
-                }
-            }
-        }
+        public static byte[] IconBytes => UseWhiteIcon ? Resources.ShareX_Icon_White : Resources.ShareX_Icon;
 
         private static SKBitmap logo = SkiaImageHelpers.ByteArrayToBitmap(Resources.ShareX_Logo);
 

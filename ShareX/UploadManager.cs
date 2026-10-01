@@ -33,7 +33,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Web;
-using System.Windows.Forms;
+using Avalonia.Input;
+using Avalonia.Platform.Storage;
 using Bitmap = SkiaSharp.SKBitmap;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
@@ -93,30 +94,14 @@ namespace ShareX
 
         public static void UploadFile(TaskSettings taskSettings = null)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
+            string initialDirectory = Directory.Exists(ApplicationState.Settings.FileUploadDefaultDirectory)
+                ? ApplicationState.Settings.FileUploadDefaultDirectory : Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string[] files = FileDialogHelpers.OpenFiles("ShareX - " + Strings.UploadManager_UploadFile_File_upload,
+                multiselect: true, initialDirectory: initialDirectory);
+            if (files.Length > 0)
             {
-                ofd.Title = "ShareX - " + Strings.UploadManager_UploadFile_File_upload;
-
-                if (!string.IsNullOrEmpty(ApplicationState.Settings.FileUploadDefaultDirectory) && Directory.Exists(ApplicationState.Settings.FileUploadDefaultDirectory))
-                {
-                    ofd.InitialDirectory = ApplicationState.Settings.FileUploadDefaultDirectory;
-                }
-                else
-                {
-                    ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                }
-
-                ofd.Multiselect = true;
-
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    if (!string.IsNullOrEmpty(ofd.FileName))
-                    {
-                        ApplicationState.Settings.FileUploadDefaultDirectory = Path.GetDirectoryName(ofd.FileName);
-                    }
-
-                    UploadFile(ofd.FileNames, taskSettings);
-                }
+                ApplicationState.Settings.FileUploadDefaultDirectory = Path.GetDirectoryName(files[0]);
+                UploadFile(files, taskSettings);
             }
         }
 
@@ -220,15 +205,15 @@ namespace ShareX
 
                     ProcessImageUpload(image, taskSettings);
                 }
-                else if (Clipboard.ContainsText())
+                else if (ClipboardHelpers.ContainsText())
                 {
-                    string text = Clipboard.GetText();
+                    string text = ClipboardHelpers.GetText();
 
                     ProcessTextUpload(text, taskSettings);
                 }
-                else if (Clipboard.ContainsFileDropList())
+                else if (ClipboardHelpers.ContainsFileDropList())
                 {
-                    string[] files = Clipboard.GetFileDropList().Cast<string>().ToArray();
+                    string[] files = ClipboardHelpers.GetFileDropList();
 
                     ProcessFilesUpload(files, taskSettings);
                 }
@@ -283,25 +268,22 @@ namespace ShareX
             }
         }
 
-        public static void DragDropUpload(IDataObject data, TaskSettings taskSettings = null)
+        public static void DragDropUpload(Avalonia.Input.IDataTransfer data, TaskSettings taskSettings = null)
         {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (data.GetDataPresent(DataFormats.FileDrop, false))
+            taskSettings ??= TaskSettings.GetDefaultTaskSettings();
+            string[] files = data.TryGetFiles()?.Select(x => x.TryGetLocalPath()).Where(x => !string.IsNullOrEmpty(x)).ToArray();
+            if (files?.Length > 0) UploadFile(files, taskSettings);
+            else if (data.TryGetBitmap() is { } image)
             {
-                string[] files = data.GetData(DataFormats.FileDrop, false) as string[];
-                UploadFile(files, taskSettings);
+                using (image)
+                using (MemoryStream stream = new())
+                {
+                    image.Save(stream, Avalonia.Media.Imaging.PngBitmapEncoderOptions.Default);
+                    stream.Position = 0;
+                    RunImageTask(SkiaImageHelpers.Decode(stream), taskSettings);
+                }
             }
-            else if (data.GetDataPresent(DataFormats.Bitmap, false))
-            {
-                Bitmap bmp = data.GetData(DataFormats.Bitmap, false) as Bitmap;
-                RunImageTask(bmp, taskSettings);
-            }
-            else if (data.GetDataPresent(DataFormats.Text, false))
-            {
-                string text = data.GetData(DataFormats.Text, false) as string;
-                UploadText(text, taskSettings, true);
-            }
+            else if (data.TryGetText() is { } text) UploadText(text, taskSettings, true);
         }
 
         public static async Task UploadURL(TaskSettings taskSettings = null)

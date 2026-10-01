@@ -27,41 +27,41 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Drawing;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ShareX;
 
 /// <summary>
-/// Hidden WinForms host for global hotkeys and the notification-area icon.
+/// Coordinates the Windows hotkey host and desktop notification-area icon.
 /// Avalonia owns the application lifetime and all visible windows.
 /// </summary>
-internal sealed class MainForm : HotkeyForm
+internal sealed class MainForm
 {
+    private readonly IHotkeyHost _hotkeyHost;
+    internal bool IsDisposed => _hotkeyHost.IsDisposed;
     internal ITrayIconService TrayIconService { get; }
 
     public MainForm()
     {
-        ShowInTaskbar = false;
+        _hotkeyHost = HotkeyForm.CreateHost();
+        _hotkeyHost.NativeMessageReceived += OnNativeMessage;
+        _hotkeyHost.Closed += OnHostClosed;
 
         ShareXResources.UseWhiteIcon = ApplicationState.Settings.UseWhiteShareXIcon;
-        using Icon icon = ShareXResources.Icon;
-        TrayIconService = new WinFormsTrayIconService(icon, ApplicationInfo.TitleShort, ApplicationState.Settings.ShowTray);
+        TrayIconService = new DesktopTrayIconService(_hotkeyHost, ShareXResources.IconBytes, ApplicationInfo.TitleShort, ApplicationState.Settings.ShowTray);
     }
 
-    internal void Initialize() => Show();
+    internal void Initialize() => _hotkeyHost.Initialize();
 
     internal void ApplyHotkeySettings()
     {
-        HotkeyRepeatLimit = ApplicationState.Settings.HotkeyRepeatLimit;
+        _hotkeyHost.HotkeyRepeatLimit = ApplicationState.Settings.HotkeyRepeatLimit;
     }
 
     internal void UpdateTrayIcon()
     {
         ShareXResources.UseWhiteIcon = ApplicationState.Settings.UseWhiteShareXIcon;
-        using Icon icon = ShareXResources.Icon;
-        TrayIconService.SetIcon(icon);
+        TrayIconService.SetIcon(ShareXResources.IconBytes);
     }
 
     internal async Task UpdateHotkeysAsync()
@@ -72,7 +72,7 @@ internal sealed class MainForm : HotkeyForm
 
         if (hotkeyManager == null)
         {
-            hotkeyManager = new HotkeyManager(this);
+            hotkeyManager = new HotkeyManager(_hotkeyHost);
             hotkeyManager.HotkeyTrigger += HandleHotkeys;
             ApplicationState.HotkeyManager = hotkeyManager;
         }
@@ -87,11 +87,11 @@ internal sealed class MainForm : HotkeyForm
         await TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
     }
 
-    internal void ExitApplication() => Close();
+    internal void ExitApplication() => _hotkeyHost.Close();
 
-    protected override void WndProc(ref Message m)
+    private void OnNativeMessage(object? sender, NativeWindowMessageEventArgs m)
     {
-        if (m.Msg == (int)WindowsMessages.QUERYENDSESSION)
+        if (m.Message == (int)WindowsMessages.QUERYENDSESSION)
         {
             EndSessionReasons reason = (EndSessionReasons)m.LParam.ToInt64();
             if (reason.HasFlag(EndSessionReasons.ENDSESSION_CLOSEAPP))
@@ -100,8 +100,9 @@ internal sealed class MainForm : HotkeyForm
             }
 
             m.Result = new IntPtr(1);
+            m.Handled = true;
         }
-        else if (m.Msg == (int)WindowsMessages.ENDSESSION)
+        else if (m.Message == (int)WindowsMessages.ENDSESSION)
         {
             if (m.WParam != IntPtr.Zero)
             {
@@ -109,26 +110,12 @@ internal sealed class MainForm : HotkeyForm
             }
 
             m.Result = IntPtr.Zero;
-        }
-        else
-        {
-            base.WndProc(ref m);
+            m.Handled = true;
         }
     }
 
-    protected override void SetVisibleCore(bool value)
+    private void OnHostClosed(object? sender, EventArgs e)
     {
-        if (value && !IsHandleCreated)
-        {
-            CreateHandle();
-        }
-
-        base.SetVisibleCore(false);
-    }
-
-    protected override void OnFormClosed(FormClosedEventArgs e)
-    {
-        base.OnFormClosed(e);
         TrayIconService.Dispose();
         ApplicationLifecycle.OnHotkeyHostClosed();
     }
