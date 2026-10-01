@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
+#nullable enable
+
+using ShareX.Platform;
+using SkiaSharp;
 using System;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 namespace ShareX.ScreenCaptureLib
@@ -37,15 +37,15 @@ namespace ShareX.ScreenCaptureLib
     internal class ScrollingCaptureManager : IDisposable
     {
         public ScrollingCaptureOptions Options { get; private set; }
-        public Bitmap Result { get; private set; }
+        public SKBitmap? Result { get; private set; }
         public bool IsCapturing { get; private set; }
 
-        private Bitmap lastScreenshot;
-        private Bitmap previousScreenshot;
+        private SKBitmap? lastScreenshot;
+        private SKBitmap? previousScreenshot;
         private bool stopRequested;
         private ScrollingCaptureStatus status;
         private int bestMatchCount, bestMatchIndex, bestIgnoreBottomOffset;
-        private WindowInfo selectedWindow;
+        private PlatformWindow? selectedWindow;
         private Rectangle selectedRectangle;
 
         public ScrollingCaptureManager(ScrollingCaptureOptions options)
@@ -60,21 +60,15 @@ namespace ShareX.ScreenCaptureLib
 
         private void Reset(bool keepResult = false)
         {
-            if (lastScreenshot != null)
-            {
-                lastScreenshot.Dispose();
-                lastScreenshot = null;
-            }
+            lastScreenshot?.Dispose();
+            lastScreenshot = null;
 
-            if (previousScreenshot != null)
-            {
-                previousScreenshot.Dispose();
-                previousScreenshot = null;
-            }
+            previousScreenshot?.Dispose();
+            previousScreenshot = null;
 
-            if (!keepResult && Result != null)
+            if (!keepResult)
             {
-                Result.Dispose();
+                Result?.Dispose();
                 Result = null;
             }
         }
@@ -91,7 +85,7 @@ namespace ShareX.ScreenCaptureLib
                 bestIgnoreBottomOffset = 0;
                 Reset();
 
-                ScrollingCaptureRegionWindow regionWindow = null;
+                ScrollingCaptureRegionWindow? regionWindow = null;
 
                 if (Options.ShowRegion)
                 {
@@ -99,16 +93,19 @@ namespace ShareX.ScreenCaptureLib
                     regionWindow.Show();
                 }
 
+                IWindowService windows = PlatformServices.Current.Windows;
+                IInputService input = PlatformServices.Current.Input;
+
                 try
                 {
-                    selectedWindow.Activate();
+                    windows.ActivateWindow(selectedWindow.Handle);
 
                     await Task.Delay(Options.StartDelay);
 
                     if (Options.AutoScrollTop)
                     {
-                        InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
-                        NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
+                        input.SendKeyPress(VirtualKeys.Home);
+                        input.ScrollWindow(selectedWindow.Handle, WindowScrollCommand.Top);
 
                         await Task.Delay(Options.ScrollDelay);
                     }
@@ -120,7 +117,7 @@ namespace ShareX.ScreenCaptureLib
 
                     while (!stopRequested)
                     {
-                        lastScreenshot = screenshot.CaptureRectangle(selectedRectangle);
+                        lastScreenshot = await screenshot.CaptureRectangleAsync(selectedRectangle);
 
                         if (CompareLastTwoImages())
                         {
@@ -130,21 +127,21 @@ namespace ShareX.ScreenCaptureLib
                         switch (Options.ScrollMethod)
                         {
                             case ScrollMethod.MouseWheel:
-                                InputHelpers.SendMouseWheel(-120 * Options.ScrollAmount);
+                                input.SendMouseWheel(-Options.ScrollAmount);
                                 break;
                             case ScrollMethod.DownArrow:
                                 for (int i = 0; i < Options.ScrollAmount; i++)
                                 {
-                                    InputHelpers.SendKeyPress(VirtualKeyCode.DOWN);
+                                    input.SendKeyPress(VirtualKeys.Down);
                                 }
                                 break;
                             case ScrollMethod.PageDown:
-                                InputHelpers.SendKeyPress(VirtualKeyCode.NEXT);
+                                input.SendKeyPress(VirtualKeys.PageDown);
                                 break;
                             case ScrollMethod.ScrollMessage:
                                 for (int i = 0; i < Options.ScrollAmount; i++)
                                 {
-                                    NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_LINEDOWN, 0);
+                                    input.ScrollWindow(selectedWindow.Handle, WindowScrollCommand.LineDown);
                                 }
                                 break;
                         }
@@ -153,7 +150,7 @@ namespace ShareX.ScreenCaptureLib
 
                         if (lastScreenshot != null)
                         {
-                            Bitmap newResult = await CombineImagesAsync(Result, lastScreenshot);
+                            SKBitmap? newResult = await CombineImagesAsync(Result, lastScreenshot);
 
                             if (newResult != null)
                             {
@@ -173,11 +170,7 @@ namespace ShareX.ScreenCaptureLib
 
                         if (lastScreenshot != null)
                         {
-                            if (previousScreenshot != null)
-                            {
-                                previousScreenshot.Dispose();
-                            }
-
+                            previousScreenshot?.Dispose();
                             previousScreenshot = lastScreenshot;
                             lastScreenshot = null;
                         }
@@ -219,46 +212,33 @@ namespace ShareX.ScreenCaptureLib
             }
 
             selectedRectangle = selection.Value.Rectangle;
-            selectedWindow = selection.Value.WindowInfo;
+            selectedWindow = selection.Value.Window;
             return selectedWindow != null;
-        }
-
-        private bool IsScrollReachedBottom(IntPtr handle)
-        {
-            SCROLLINFO scrollInfo = new SCROLLINFO();
-            scrollInfo.cbSize = (uint)Marshal.SizeOf(scrollInfo);
-            scrollInfo.fMask = (uint)(ScrollInfoMask.SIF_RANGE | ScrollInfoMask.SIF_PAGE | ScrollInfoMask.SIF_TRACKPOS);
-
-            if (NativeMethods.GetScrollInfo(handle, (int)SBOrientation.SB_VERT, ref scrollInfo))
-            {
-                return scrollInfo.nMax == scrollInfo.nTrackPos + scrollInfo.nPage - 1;
-            }
-
-            return CompareLastTwoImages();
         }
 
         private bool CompareLastTwoImages()
         {
-            if (lastScreenshot != null && previousScreenshot != null)
+            if (lastScreenshot != null && previousScreenshot != null &&
+                lastScreenshot.Width == previousScreenshot.Width && lastScreenshot.Height == previousScreenshot.Height)
             {
-                return ImageHelpers.CompareImages(lastScreenshot, previousScreenshot);
+                return lastScreenshot.GetPixelSpan().SequenceEqual(previousScreenshot.GetPixelSpan());
             }
 
             return false;
         }
 
-        private async Task<Bitmap> CombineImagesAsync(Bitmap result, Bitmap currentImage)
+        private Task<SKBitmap?> CombineImagesAsync(SKBitmap? result, SKBitmap currentImage)
         {
-            return await Task.Run(() => CombineImages(result, currentImage));
+            return Task.Run(() => CombineImages(result, currentImage));
         }
 
-        private Bitmap CombineImages(Bitmap result, Bitmap currentImage)
+        private SKBitmap? CombineImages(SKBitmap? result, SKBitmap currentImage)
         {
             if (result == null)
             {
                 status = ScrollingCaptureStatus.Successful;
 
-                return (Bitmap)currentImage.Clone();
+                return currentImage.Copy();
             }
 
             int matchCount = 0;
@@ -270,25 +250,23 @@ namespace ShareX.ScreenCaptureLib
 
             Rectangle rect = new Rectangle(ignoreSideOffset, result.Height - currentImage.Height, currentImage.Width - ignoreSideOffset * 2, currentImage.Height);
 
-            BitmapData bdResult = result.LockBits(new Rectangle(0, 0, result.Width, result.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-            BitmapData bdCurrentImage = currentImage.LockBits(new Rectangle(0, 0, currentImage.Width, currentImage.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-            int stride = bdResult.Stride;
-            int pixelSize = stride / result.Width;
-            IntPtr resultScan0 = bdResult.Scan0 + pixelSize * ignoreSideOffset;
-            IntPtr currentImageScan0 = bdCurrentImage.Scan0 + pixelSize * ignoreSideOffset;
+            // Both bitmaps are 32 bit BGRA captures of the same width, so rows compare byte for byte.
+            int pixelSize = result.BytesPerPixel;
+            int rowStart = pixelSize * ignoreSideOffset;
             int compareLength = pixelSize * rect.Width;
+
+            bool RowsEqual(int resultRow, int currentRow) =>
+                result.GetPixelSpan().Slice(rowStart + resultRow * result.RowBytes, compareLength)
+                    .SequenceEqual(currentImage.GetPixelSpan().Slice(rowStart + currentRow * currentImage.RowBytes, compareLength));
 
             int ignoreBottomOffsetMax = currentImage.Height / 3;
             int ignoreBottomOffset = Math.Max(50, currentImage.Height / 10);
 
             if (Options.AutoIgnoreBottomEdge)
             {
-                IntPtr resultScan0Last = resultScan0 + (result.Height - 1) * stride;
-                IntPtr currentImageScan0Last = currentImageScan0 + (currentImage.Height - 1) * stride;
-
                 for (int i = 0; i <= ignoreBottomOffsetMax; i++)
                 {
-                    if (NativeMethods.memcmp(resultScan0Last - i * stride, currentImageScan0Last - i * stride, compareLength) != 0)
+                    if (!RowsEqual(result.Height - 1 - i, currentImage.Height - 1 - i))
                     {
                         ignoreBottomOffset += i;
                         break;
@@ -308,7 +286,7 @@ namespace ShareX.ScreenCaptureLib
 
                 for (int y = 0; currentImageY - y >= 0 && currentMatchCount < matchLimit; y++)
                 {
-                    if (NativeMethods.memcmp(resultScan0 + ((rectBottom - y) * stride), currentImageScan0 + ((currentImageY - y) * stride), compareLength) == 0)
+                    if (RowsEqual(rectBottom - y, currentImageY - y))
                     {
                         currentMatchCount++;
                     }
@@ -324,9 +302,6 @@ namespace ShareX.ScreenCaptureLib
                     matchIndex = currentImageY;
                 }
             }
-
-            result.UnlockBits(bdResult);
-            currentImage.UnlockBits(bdCurrentImage);
 
             bool bestGuess = false;
 
@@ -351,17 +326,15 @@ namespace ShareX.ScreenCaptureLib
                         bestIgnoreBottomOffset = ignoreBottomOffset;
                     }
 
-                    Bitmap newResult = new Bitmap(result.Width, result.Height - ignoreBottomOffset + matchHeight);
+                    SKBitmap newResult = new SKBitmap(new SKImageInfo(result.Width, result.Height - ignoreBottomOffset + matchHeight, result.ColorType, result.AlphaType));
 
-                    using (Graphics g = Graphics.FromImage(newResult))
+                    using (SKCanvas canvas = new SKCanvas(newResult))
+                    using (SKPaint paint = new SKPaint { BlendMode = SKBlendMode.Src })
                     {
-                        g.CompositingMode = CompositingMode.SourceCopy;
-                        g.InterpolationMode = InterpolationMode.NearestNeighbor;
-
-                        g.DrawImage(result, new Rectangle(0, 0, result.Width, result.Height - ignoreBottomOffset),
-                            new Rectangle(0, 0, result.Width, result.Height - ignoreBottomOffset), GraphicsUnit.Pixel);
-                        g.DrawImage(currentImage, new Rectangle(0, result.Height - ignoreBottomOffset, currentImage.Width, matchHeight),
-                            new Rectangle(0, matchIndex + 1, currentImage.Width, matchHeight), GraphicsUnit.Pixel);
+                        SKRect top = SKRect.Create(0, 0, result.Width, result.Height - ignoreBottomOffset);
+                        canvas.DrawBitmap(result, top, top, paint);
+                        canvas.DrawBitmap(currentImage, SKRect.Create(0, matchIndex + 1, currentImage.Width, matchHeight),
+                            SKRect.Create(0, result.Height - ignoreBottomOffset, currentImage.Width, matchHeight), paint);
                     }
 
                     if (bestGuess)

@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -28,6 +28,7 @@
 using ShareX.AvaloniaUI.Theming;
 using ShareX.Destinations;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -151,13 +152,18 @@ internal sealed class MainMenuBuilder
 
         try
         {
-            foreach (WindowInfo window in new WindowsList().GetVisibleWindowsList())
+            foreach (PlatformWindow window in PlatformServices.Current.Windows.GetWindows())
             {
-                WindowInfo selectedWindow = window;
-                string title = selectedWindow.Text.Truncate(50, "...");
+                if (window.IsMinimized)
+                {
+                    continue;
+                }
+
+                IntPtr handle = (IntPtr)window.Handle;
+                string title = window.Title.Truncate(50, "...");
                 items.Add(Item(title, string.Empty,
-                    () => new CaptureWindow(selectedWindow.Handle).Capture(!_trayMenu),
-                    bitmapIcon: GetWindowIcon(selectedWindow)));
+                    () => new CaptureWindow(handle).Capture(!_trayMenu),
+                    bitmapIcon: GetWindowIcon(new WindowInfo(handle))));
             }
         }
         catch (Exception e)

@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -812,7 +812,7 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             await ScrollingCaptureWindowIntegration.StartStopAsync(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions,
-                img => UploadManager.RunImageTask(img, taskSettings),
+                img => UploadManager.RunImageTask(img.ToGdiBitmapAndDispose(), taskSettings),
                 () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
         }
 
@@ -1808,9 +1808,9 @@ namespace ShareX
         {
             using Bitmap bitmap = mode switch
             {
-                QRCodeScanMode.Screen => new Screenshot().CaptureFullscreen(),
-                QRCodeScanMode.Region => await RegionCaptureTasks.GetRegionImageAsync(
-                    TaskSettings.GetDefaultTaskSettings().CaptureSettings.RegionCaptureOptions),
+                QRCodeScanMode.Screen => new Screenshot().CaptureFullscreen().ToGdiBitmapAndDispose(),
+                QRCodeScanMode.Region => (await RegionCaptureTasks.GetRegionImageAsync(
+                    TaskSettings.GetDefaultTaskSettings().CaptureSettings.RegionCaptureOptions)).ToGdiBitmapAndDispose(),
                 QRCodeScanMode.ImageFile when !string.IsNullOrWhiteSpace(filePath) => ImageHelpers.LoadImage(filePath),
                 _ => null
             };
@@ -1911,7 +1911,7 @@ namespace ShareX
                 options,
                 async () =>
                 {
-                    using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions);
+                    using Bitmap region = (await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions)).ToGdiBitmapAndDispose();
                     if (region == null)
                     {
                         return null;
@@ -1928,7 +1928,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (Bitmap bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions))
+            using (Bitmap bmp = (await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions)).ToGdiBitmapAndDispose())
             {
                 await OCRImage(bmp, taskSettings);
             }
@@ -1989,7 +1989,7 @@ namespace ShareX
                             },
                             async () =>
                             {
-                                using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions);
+                                using Bitmap region = (await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions)).ToGdiBitmapAndDispose();
                                 if (region == null)
                                 {
                                     return null;
@@ -2059,7 +2059,7 @@ namespace ShareX
                         return null;
                     }
 
-                    using Image image = selection.Value.Image;
+                    using Image image = selection.Value.Image.ToGdiBitmapAndDispose();
                     return CreatePinToScreenSource(image, selection.Value.Rectangle.Location);
                 },
                 GetClipboardImageAsync = () =>
@@ -2121,7 +2121,7 @@ namespace ShareX
                 return;
             }
 
-            PinToScreen(selection.Value.Image, selection.Value.Rectangle.Location, taskSettings);
+            PinToScreen(selection.Value.Image.ToGdiBitmapAndDispose(), selection.Value.Rectangle.Location, taskSettings);
         }
 
         public static void PinToScreenFromClipboard(TaskSettings taskSettings = null)

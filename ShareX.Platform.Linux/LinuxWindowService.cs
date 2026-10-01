@@ -50,6 +50,7 @@ public sealed class LinuxWindowService : IWindowService
     }
 
     private readonly ICommandRunner runner;
+    private readonly HashSet<long> clickThroughWindows = new HashSet<long>();
 
     public LinuxWindowService(PlatformInfo info, ICommandRunner runner)
     {
@@ -237,12 +238,26 @@ public sealed class LinuxWindowService : IWindowService
             return false;
         }
 
+        lock (clickThroughWindows)
+        {
+            clickThroughWindows.Add(windowHandle);
+        }
+
         using X11Display? display = X11Display.TryOpen();
         return display != null && display.SetInputShape((nuint)windowHandle, Array.Empty<PlatformRectangle>());
     }
 
     public bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas)
     {
+        // A click through window stays click through, as WS_EX_TRANSPARENT wins over the window region on Windows.
+        lock (clickThroughWindows)
+        {
+            if (clickThroughWindows.Contains(windowHandle))
+            {
+                visibleAreas = Array.Empty<PlatformRectangle>();
+            }
+        }
+
         // Only the input region is shaped: the window's transparent background already hides the rest.
         using X11Display? display = X11Display.TryOpen();
         return display != null && display.SetInputShape((nuint)windowHandle, visibleAreas);

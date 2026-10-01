@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Win32;
 using ShareX.Platform.Windows.Native;
 using System.Runtime.Versioning;
 
@@ -38,6 +39,16 @@ public sealed unsafe class WindowsSystemPreferencesService : ISystemPreferencesS
         {
             uint lines;
             return Win32.SystemParametersInfo(Win32.SPI_GETWHEELSCROLLLINES, 0, &lines, 0) ? (int)lines : DefaultSystemPreferencesService.DefaultWheelScrollLines;
+        }
+    }
+
+    /// <summary>The task bar theme, which Windows keeps apart from the app theme. Missing means light, as on older Windows 10.</summary>
+    public bool? SystemUsesLightTheme
+    {
+        get
+        {
+            using RegistryKey? key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize");
+            return key?.GetValue("SystemUsesLightTheme") is not int value || value != 0;
         }
     }
 }

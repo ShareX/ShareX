@@ -30,8 +30,8 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
-using System.Runtime.InteropServices;
 using DrawingRectangle = System.Drawing.Rectangle;
 
 namespace ShareX.ScreenCaptureLib;
@@ -39,7 +39,6 @@ namespace ShareX.ScreenCaptureLib;
 public partial class ScrollingCaptureRegionWindow : Window
 {
     private const int BorderPixels = 1;
-    private const int RegionDiff = 4;
 
     private readonly int _frameWidth;
     private readonly int _frameHeight;
@@ -91,64 +90,11 @@ public partial class ScrollingCaptureRegionWindow : Window
 
     private void ApplyClickThroughToolWindowStyle()
     {
-        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-        if (handle == IntPtr.Zero)
-        {
-            return;
-        }
-
-        WindowInfo info = new(handle);
-        info.ExStyle |= WindowStyles.WS_EX_TRANSPARENT | WindowStyles.WS_EX_TOOLWINDOW;
+        FrameWindowShape.SetOverlayStyle(this, clickThrough: true);
     }
 
     private void ApplyNativeFrameRegion()
     {
-        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-        if (handle == IntPtr.Zero)
-        {
-            return;
-        }
-
-        IntPtr frameRegion = CreateRectRgn(0, 0, _frameWidth, _frameHeight);
-        IntPtr apertureRegion = CreateRectRgn(
-            BorderPixels,
-            BorderPixels,
-            _frameWidth - BorderPixels,
-            _frameHeight - BorderPixels);
-
-        if (frameRegion == IntPtr.Zero || apertureRegion == IntPtr.Zero)
-        {
-            DeleteRegion(frameRegion);
-            DeleteRegion(apertureRegion);
-            return;
-        }
-
-        CombineRgn(frameRegion, frameRegion, apertureRegion, RegionDiff);
-        DeleteObject(apertureRegion);
-
-        if (SetWindowRgn(handle, frameRegion, true) == 0)
-        {
-            DeleteObject(frameRegion);
-        }
+        FrameWindowShape.Apply(this, FrameWindowShape.Create(new PlatformRectangle(0, 0, _frameWidth, _frameHeight), BorderPixels));
     }
-
-    private static void DeleteRegion(IntPtr region)
-    {
-        if (region != IntPtr.Zero)
-        {
-            DeleteObject(region);
-        }
-    }
-
-    [DllImport("gdi32.dll")]
-    private static extern IntPtr CreateRectRgn(int left, int top, int right, int bottom);
-
-    [DllImport("gdi32.dll")]
-    private static extern int CombineRgn(IntPtr destination, IntPtr source1, IntPtr source2, int combineMode);
-
-    [DllImport("gdi32.dll")]
-    private static extern bool DeleteObject(IntPtr handle);
-
-    [DllImport("user32.dll")]
-    private static extern int SetWindowRgn(IntPtr windowHandle, IntPtr regionHandle, bool redraw);
 }

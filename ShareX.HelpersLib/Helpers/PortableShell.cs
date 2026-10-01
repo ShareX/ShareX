@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -74,6 +74,12 @@ namespace ShareX.HelpersLib
             using MemoryStream stream = new MemoryStream();
             bitmap.Save(stream);
             Observe(PlatformServices.Current.Clipboard.SetImageAsync(stream.ToArray()), "copy image");
+        }
+
+        public static void CopyImage(SkiaSharp.SKBitmap bitmap)
+        {
+            using SkiaSharp.SKData data = bitmap.Encode(SkiaSharp.SKEncodedImageFormat.Png, 100);
+            Observe(PlatformServices.Current.Clipboard.SetImageAsync(data.ToArray()), "copy image");
         }
 
         public static bool OpenFolderWithFile(string path) => PlatformServices.Current.Shell.RevealInFileManager(path);

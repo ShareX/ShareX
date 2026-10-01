@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -30,6 +30,12 @@ public interface ISystemPreferencesService
 {
     /// <summary>Lines to scroll for one mouse wheel notch. Windows lets the user change it; elsewhere it is 3.</summary>
     int WheelScrollLines { get; }
+
+    /// <summary>
+    /// Whether the system surfaces that hold tray icons (the Windows task bar) use the light theme, so tray glyphs can be drawn in a
+    /// contrasting colour. Null where the platform does not say; callers then follow ShareX's own theme.
+    /// </summary>
+    bool? SystemUsesLightTheme { get; }
 }
 
 /// <summary>The defaults used on platforms that do not expose these preferences.</summary>
@@ -38,4 +44,6 @@ public sealed class DefaultSystemPreferencesService : ISystemPreferencesService
     public const int DefaultWheelScrollLines = 3;
 
     public int WheelScrollLines => DefaultWheelScrollLines;
+
+    public bool? SystemUsesLightTheme => null;
 }

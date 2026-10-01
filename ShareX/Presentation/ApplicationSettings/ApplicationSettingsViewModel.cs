@@ -727,7 +727,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     {
         InvokeOnMainThread(() =>
         {
-            using Image image = TaskHelpers.GetScreenshot().CaptureActiveMonitor();
+            using Image image = TaskHelpers.GetScreenshot().CaptureActiveMonitor().ToGdiBitmapAndDispose();
             PrintWindowIntegration.Show(image, Settings.PrintSettings, true, owner);
         });
     }

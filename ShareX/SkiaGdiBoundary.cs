@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -24,34 +24,29 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System;
+using SkiaSharp;
 using System.Drawing;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX
 {
-    public class SimpleWindowInfo
+    /// <summary>
+    /// Captures arrive as SkiaSharp bitmaps from ScreenCaptureLib. The Windows task pipeline still works on GDI+ bitmaps (see the
+    /// migration debt in AGENTS.md), so it converts here, at the boundary.
+    /// </summary>
+    internal static class SkiaGdiBoundary
     {
-        public IntPtr Handle { get; set; }
-        public Rectangle Rectangle { get; set; }
-        public bool IsWindow { get; set; }
-
-        public WindowInfo WindowInfo
+        /// <summary>A GDI+ copy of <paramref name="bitmap"/>, which is disposed. Null stays null.</summary>
+        public static Bitmap ToGdiBitmapAndDispose(this SKBitmap bitmap)
         {
-            get
+            if (bitmap == null)
             {
-                return new WindowInfo(Handle);
+                return null;
             }
-        }
 
-        public SimpleWindowInfo(IntPtr handle)
-        {
-            Handle = handle;
-        }
-
-        public SimpleWindowInfo(IntPtr handle, Rectangle rect)
-        {
-            Handle = handle;
-            Rectangle = rect;
+            using (bitmap)
+            {
+                return GdiSkiaBitmapConverter.ToGdiBitmap(bitmap);
+            }
         }
     }
 }

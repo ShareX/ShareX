@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -27,6 +27,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
+using ShareX.Platform;
 using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 using SkiaSharp;
 using System.Drawing;
@@ -36,36 +37,20 @@ namespace ShareX.ScreenCaptureLib;
 
 public static class RegionCaptureTasks
 {
-    public static async Task<Bitmap?> GetRegionImageAsync(RegionCaptureOptions? options = null)
+    public static async Task<SKBitmap?> GetRegionImageAsync(RegionCaptureOptions? options = null)
     {
         AvaloniaRegionCaptureResult? result = await CaptureAsync(options);
-        if (result == null)
-        {
-            return null;
-        }
-
-        using (result.Image)
-        {
-            return GdiSkiaBitmapConverter.ToGdiBitmap(result.Image);
-        }
+        return result?.Image;
     }
 
-    public static async Task<(Bitmap Image, Rectangle Rectangle)?> GetRegionImageWithRectangleAsync(
+    public static async Task<(SKBitmap Image, Rectangle Rectangle)?> GetRegionImageWithRectangleAsync(
         RegionCaptureOptions? options = null)
     {
         AvaloniaRegionCaptureResult? result = await CaptureAsync(options);
-        if (result == null)
-        {
-            return null;
-        }
-
-        using (result.Image)
-        {
-            return (GdiSkiaBitmapConverter.ToGdiBitmap(result.Image), result.ScreenRectangle);
-        }
+        return result == null ? null : (result.Image, result.ScreenRectangle);
     }
 
-    public static async Task<(Rectangle Rectangle, WindowInfo? WindowInfo)?> GetRectangleRegionAsync(
+    public static async Task<(Rectangle Rectangle, PlatformWindow? Window)?> GetRectangleRegionAsync(
         RegionCaptureOptions? options = null)
     {
         AvaloniaRegionCaptureResult? result = await CaptureAsync(options);
@@ -75,7 +60,7 @@ public static class RegionCaptureTasks
         }
 
         result.Image.Dispose();
-        return (result.ScreenRectangle, result.WindowInfo);
+        return (result.ScreenRectangle, result.Window);
     }
 
     private static async Task<AvaloniaRegionCaptureResult?> CaptureAsync(RegionCaptureOptions? options)
@@ -91,12 +76,19 @@ public static class RegionCaptureTasks
             ? CaptureHelpers.GetActiveScreenBounds()
             : CaptureHelpers.GetScreenBounds();
 
-        SKBitmap frozenScreenshot;
-        using (Bitmap canvas = options.ActiveMonitorMode
-            ? screenshot.CaptureActiveMonitor()
-            : screenshot.CaptureFullscreen())
+        SKBitmap? frozenScreenshot = options.ActiveMonitorMode
+            ? await screenshot.CaptureActiveMonitorAsync()
+            : await screenshot.CaptureFullscreenAsync();
+
+        if (frozenScreenshot == null)
         {
-            frozenScreenshot = GdiSkiaBitmapConverter.ToSKBitmap(canvas);
+            return null;
+        }
+
+        if (screenBounds.IsEmpty)
+        {
+            // The platform does not reveal the screen layout (GNOME, KDE on Wayland); the capture covers the whole desktop.
+            screenBounds = new Rectangle(0, 0, frozenScreenshot.Width, frozenScreenshot.Height);
         }
 
         AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest

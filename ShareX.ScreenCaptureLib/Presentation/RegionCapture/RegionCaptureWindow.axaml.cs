@@ -37,6 +37,7 @@ using Avalonia.VisualTree;
 using ShareX.AvaloniaUI.Input;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.ViewModels;
@@ -46,6 +47,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AvaloniaCanvas = Avalonia.Controls.Canvas;
 using DrawingColor = System.Drawing.Color;
@@ -79,10 +81,10 @@ public partial class RegionCaptureWindow : Window
     private Border _selectionInfoPanel = null!;
     private TextBlock _selectionInfoText = null!;
     private WriteableBitmap? _magnifierBitmap;
-    private IReadOnlyList<SimpleWindowInfo> _windows = Array.Empty<SimpleWindowInfo>();
+    private IReadOnlyList<SnapTarget> _windows = Array.Empty<SnapTarget>();
     private readonly Dictionary<SelectionResizeNodeKind, Border> _regionResizeNodes = [];
-    private SimpleWindowInfo? _hoverCandidate;
-    private SimpleWindowInfo? _selectedCandidate;
+    private SnapTarget? _hoverCandidate;
+    private SnapTarget? _selectedCandidate;
     private RegionInteraction _interaction;
     private SelectionResizeNodeKind? _resizeNode;
     private Point _pressPoint;
@@ -252,7 +254,13 @@ public partial class RegionCaptureWindow : Window
                 : RegionCaptureOptions.MoveSpeedMinimum;
             int dx = e.Key == Key.Left ? -distance : e.Key == Key.Right ? distance : 0;
             int dy = e.Key == Key.Up ? -distance : e.Key == Key.Down ? distance : 0;
-            System.Windows.Forms.Cursor.Position = System.Windows.Forms.Cursor.Position.Add(dx, dy);
+            // Platforms that do not let applications move the pointer (most Wayland compositors) ignore this.
+            IWindowService windowService = PlatformServices.Current.Windows;
+
+            if (windowService.GetCursorPosition() is PlatformPoint cursor)
+            {
+                windowService.SetCursorPosition(new PlatformPoint(cursor.X + dx, cursor.Y + dy));
+            }
             e.Handled = true;
             return;
         }
@@ -477,7 +485,7 @@ public partial class RegionCaptureWindow : Window
             Focus();
             _regionInputSurface.Focus();
 
-            DrawingPoint cursorPosition = System.Windows.Forms.Control.MousePosition;
+            DrawingPoint cursorPosition = CaptureHelpers.GetCursorPosition();
             _lastPointerPoint = ClampPoint(new Point(
                 cursorPosition.X - _request.ScreenBounds.X,
                 cursorPosition.Y - _request.ScreenBounds.Y));
@@ -514,18 +522,13 @@ public partial class RegionCaptureWindow : Window
         try
         {
             IntPtr ignoredHandle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-            WindowsRectangleList windows = new WindowsRectangleList
+            bool detectControls = _request.RegionCaptureOptions.DetectControls;
+            IReadOnlyList<SnapTarget> result = await Task.Run(() =>
             {
-                IncludeChildWindows = _request.RegionCaptureOptions.DetectControls,
-                Timeout = 5000
-            };
-
-            if (ignoredHandle != IntPtr.Zero)
-            {
-                windows.IgnoreHandleList.Add(ignoredHandle);
-            }
-
-            IReadOnlyList<SimpleWindowInfo> result = await Task.Run(windows.GetWindowInfoList);
+                // Enumerating child controls of a hung application can stall; give up after five seconds as before.
+                using CancellationTokenSource timeout = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+                return PlatformServices.Current.Windows.GetSnapTargets(detectControls, ignoredHandle.ToInt64(), timeout.Token);
+            });
             if (!_closing)
             {
                 _windows = result;
@@ -1067,8 +1070,8 @@ public partial class RegionCaptureWindow : Window
 
         double screenX = _request.ScreenBounds.X + Math.Round(imagePoint.X);
         double screenY = _request.ScreenBounds.Y + Math.Round(imagePoint.Y);
-        SimpleWindowInfo? candidate = _windows.FirstOrDefault(window =>
-            ContainsPoint(window.Rectangle, screenX, screenY));
+        SnapTarget? candidate = _windows.FirstOrDefault(window =>
+            ContainsPoint(ToDrawingRectangle(window.Bounds), screenX, screenY));
 
         if (candidate == null)
         {
@@ -1077,7 +1080,7 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        DrawingRectangle candidateRectangle = candidate.Rectangle;
+        DrawingRectangle candidateRectangle = ToDrawingRectangle(candidate.Bounds);
         double candidateLeft = (double)candidateRectangle.X - _request.ScreenBounds.X;
         double candidateTop = (double)candidateRectangle.Y - _request.ScreenBounds.Y;
         double left = Math.Max(0, candidateLeft);
@@ -1092,6 +1095,9 @@ public partial class RegionCaptureWindow : Window
         _regionOverlay.HoverRectangle = hover;
     }
 
+    private static DrawingRectangle ToDrawingRectangle(PlatformRectangle rectangle) =>
+        new DrawingRectangle(rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
+
     private static bool ContainsPoint(DrawingRectangle rectangle, double x, double y)
     {
         return rectangle.Width > 0 && rectangle.Height > 0 &&
@@ -1100,7 +1106,7 @@ public partial class RegionCaptureWindow : Window
             y < (double)rectangle.Y + rectangle.Height;
     }
 
-    private void SetSelection(Rect rectangle, SimpleWindowInfo? candidate)
+    private void SetSelection(Rect rectangle, SnapTarget? candidate)
     {
         _regionOverlay.SelectionRectangle = RegionSelectionOverlay.Intersect(
             rectangle,
@@ -1585,29 +1591,29 @@ public partial class RegionCaptureWindow : Window
             _request.ScreenBounds.Y + top,
             width,
             height);
-        WindowInfo? windowInfo = includeWindowInfo ? FindTopLevelWindowInfo(screenRectangle) : null;
+        SnapTarget? candidate = includeWindowInfo ? FindTopLevelCandidate(screenRectangle) : null;
 
         _pendingResult = new AvaloniaRegionCaptureResult(
             output,
             screenRectangle,
-            windowInfo,
+            candidate?.Window,
             _viewModel?.IsDirty == true);
         RegionCaptureIntegration.LastRegionRectangle = screenRectangle;
         _closing = true;
         Close();
     }
 
-    private WindowInfo? FindTopLevelWindowInfo(DrawingRectangle selectedRectangle)
+    private SnapTarget? FindTopLevelCandidate(DrawingRectangle selectedRectangle)
     {
         if (_selectedCandidate is { IsWindow: true })
         {
-            return _selectedCandidate.WindowInfo;
+            return _selectedCandidate;
         }
 
         DrawingPoint point = new DrawingPoint(
             selectedRectangle.Left + selectedRectangle.Width / 2,
             selectedRectangle.Top + selectedRectangle.Height / 2);
-        return _windows.FirstOrDefault(window => window.IsWindow && window.Rectangle.Contains(point))?.WindowInfo;
+        return _windows.FirstOrDefault(window => window.IsWindow && window.Bounds.Contains(new PlatformPoint(point.X, point.Y)));
     }
 
     private void CancelCapture()

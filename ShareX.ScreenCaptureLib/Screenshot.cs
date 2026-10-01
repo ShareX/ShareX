@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,14 +23,23 @@
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
 using ShareX.HelpersLib;
+using ShareX.Platform;
+using SkiaSharp;
 using System;
 using System.Drawing;
-using System.Drawing.Imaging;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public partial class Screenshot
+    /// <summary>
+    /// Screen, monitor and window capture with ShareX's capture settings, on top of <see cref="IScreenCaptureService"/>. Options a
+    /// platform does not implement (see <see cref="IScreenCaptureService.Features"/>) are ignored there.
+    /// </summary>
+    public class Screenshot
     {
         public bool CaptureCursor { get; set; } = false;
         public bool CaptureClientArea { get; set; } = false;
@@ -40,167 +49,118 @@ namespace ShareX.ScreenCaptureLib
         public bool AutoHideTaskbar { get; set; } = false;
         public bool HDRScreenshotColorCorrection { get; set; } = false;
 
-        public Bitmap CaptureRectangle(Rectangle rect)
+        private static IScreenCaptureService Service => PlatformServices.Current.ScreenCapture;
+
+        public Task<SKBitmap?> CaptureRectangleAsync(Rectangle rect, CancellationToken cancellationToken = default)
         {
-            if (RemoveOutsideScreenArea)
+            if (rect.Width <= 0 || rect.Height <= 0)
             {
-                Rectangle bounds = CaptureHelpers.GetScreenBounds();
-                rect = Rectangle.Intersect(bounds, rect);
+                return Task.FromResult<SKBitmap?>(null);
             }
 
-            return CaptureRectangleNative(rect, CaptureCursor);
+            return CaptureAsync(CreateRequest() with
+            {
+                Mode = ScreenCaptureMode.Region,
+                Region = new PlatformRectangle(rect.X, rect.Y, rect.Width, rect.Height)
+            }, cancellationToken);
         }
 
-        public Bitmap CaptureFullscreen()
+        public Task<SKBitmap?> CaptureFullscreenAsync(CancellationToken cancellationToken = default)
         {
             Rectangle bounds = CaptureHelpers.GetScreenBounds();
 
-            return CaptureRectangle(bounds);
+            // GNOME and KDE on Wayland do not reveal the screen layout; let the platform capture every screen.
+            return bounds.IsEmpty
+                ? CaptureAsync(CreateRequest() with { Mode = ScreenCaptureMode.FullScreen }, cancellationToken)
+                : CaptureRectangleAsync(bounds, cancellationToken);
         }
 
-        public Bitmap CaptureWindow(IntPtr handle)
-        {
-            if (handle.ToInt32() > 0)
-            {
-                Rectangle rect;
-
-                if (CaptureClientArea)
-                {
-                    rect = NativeMethods.GetClientRect(handle);
-                }
-                else
-                {
-                    rect = CaptureHelpers.GetWindowRectangle(handle);
-                }
-
-                bool isTaskbarHide = false;
-
-                try
-                {
-                    if (AutoHideTaskbar)
-                    {
-                        isTaskbarHide = NativeMethods.SetTaskbarVisibilityIfIntersect(false, rect);
-                    }
-
-                    return CaptureRectangle(rect);
-                }
-                finally
-                {
-                    if (isTaskbarHide)
-                    {
-                        NativeMethods.SetTaskbarVisibility(true);
-                    }
-                }
-            }
-
-            return null;
-        }
-
-        public Bitmap CaptureActiveWindow()
-        {
-            IntPtr handle = NativeMethods.GetForegroundWindow();
-
-            return CaptureWindow(handle);
-        }
-
-        public Bitmap CaptureActiveMonitor()
+        public Task<SKBitmap?> CaptureActiveMonitorAsync(CancellationToken cancellationToken = default)
         {
             Rectangle bounds = CaptureHelpers.GetActiveScreenBounds();
-
-            return CaptureRectangle(bounds);
+            return bounds.IsEmpty ? CaptureFullscreenAsync(cancellationToken) : CaptureRectangleAsync(bounds, cancellationToken);
         }
 
-        private Bitmap CaptureRectangleNative(Rectangle rect, bool captureCursor = false)
-        {
-            IntPtr handle = NativeMethods.GetDesktopWindow();
-            return CaptureRectangleNative(handle, rect, captureCursor);
-        }
+        public Task<SKBitmap?> CaptureWindowAsync(IntPtr handle, CancellationToken cancellationToken = default) =>
+            CaptureWindowAsync(handle, transparent: false, cancellationToken);
 
-        private Bitmap CaptureRectangleNative(IntPtr handle, Rectangle rect, bool captureCursor = false)
+        public Task<SKBitmap?> CaptureActiveWindowAsync(CancellationToken cancellationToken = default) =>
+            CaptureWindowAsync(GetActiveWindowHandle(), transparent: false, cancellationToken);
+
+        /// <summary>The window with its transparent corners and, with <see cref="CaptureShadow"/>, its shadow, where the platform supports it.</summary>
+        public Task<SKBitmap?> CaptureWindowTransparentAsync(IntPtr handle, CancellationToken cancellationToken = default) =>
+            CaptureWindowAsync(handle, transparent: true, cancellationToken);
+
+        public Task<SKBitmap?> CaptureActiveWindowTransparentAsync(CancellationToken cancellationToken = default) =>
+            CaptureWindowAsync(GetActiveWindowHandle(), transparent: true, cancellationToken);
+
+        // Synchronous forms for callers that cannot await. Windows captures complete synchronously; elsewhere these block the caller
+        // while the platform captures, which may launch a helper program, so prefer the async methods.
+        public SKBitmap? CaptureRectangle(Rectangle rect) => CaptureRectangleAsync(rect).GetAwaiter().GetResult();
+
+        public SKBitmap? CaptureFullscreen() => CaptureFullscreenAsync().GetAwaiter().GetResult();
+
+        public SKBitmap? CaptureActiveMonitor() => CaptureActiveMonitorAsync().GetAwaiter().GetResult();
+
+        public SKBitmap? CaptureWindow(IntPtr handle) => CaptureWindowAsync(handle).GetAwaiter().GetResult();
+
+        public SKBitmap? CaptureActiveWindow() => CaptureActiveWindowAsync().GetAwaiter().GetResult();
+
+        public SKBitmap? CaptureWindowTransparent(IntPtr handle) => CaptureWindowTransparentAsync(handle).GetAwaiter().GetResult();
+
+        public SKBitmap? CaptureActiveWindowTransparent() => CaptureActiveWindowTransparentAsync().GetAwaiter().GetResult();
+
+        private Task<SKBitmap?> CaptureWindowAsync(IntPtr handle, bool transparent, CancellationToken cancellationToken)
         {
-            if (rect.Width == 0 || rect.Height == 0)
+            if (handle == IntPtr.Zero)
             {
+                return Task.FromResult<SKBitmap?>(null);
+            }
+
+            return CaptureAsync(CreateRequest() with
+            {
+                Mode = ScreenCaptureMode.Window,
+                WindowHandle = handle.ToInt64(),
+                Window = new WindowCaptureOptions
+                {
+                    ClientAreaOnly = CaptureClientArea && !transparent,
+                    Transparent = transparent,
+                    IncludeShadow = CaptureShadow,
+                    ShadowOffset = ShadowOffset,
+                    HideTaskbar = AutoHideTaskbar
+                }
+            }, cancellationToken);
+        }
+
+        private static IntPtr GetActiveWindowHandle()
+        {
+            PlatformWindow? window = PlatformServices.Current.Windows.GetActiveWindow();
+            return window != null ? (IntPtr)window.Handle : IntPtr.Zero;
+        }
+
+        private ScreenCaptureRequest CreateRequest() => new ScreenCaptureRequest
+        {
+            IncludeCursor = CaptureCursor,
+            ClipToScreens = RemoveOutsideScreenArea,
+            HdrToneMapping = HDRScreenshotColorCorrection
+        };
+
+        private static async Task<SKBitmap?> CaptureAsync(ScreenCaptureRequest request, CancellationToken cancellationToken)
+        {
+            ScreenCaptureResult result;
+
+            try
+            {
+                result = await Service.CaptureAsync(request, cancellationToken).ConfigureAwait(false);
+            }
+            catch (ArgumentException e)
+            {
+                // A window that closed or an area outside every screen: nothing to capture, as before.
+                DebugHelper.WriteException(e);
                 return null;
             }
 
-            if (HDRScreenshotColorCorrection)
-            {
-                Bitmap bitmap = CaptureRectangleGDI(handle, rect, false);
-
-                try
-                {
-                    HDRScreenCapture.ApplyColorCorrection(bitmap, rect);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "HDR screenshot color correction failed.");
-                }
-
-                if (captureCursor)
-                {
-                    try
-                    {
-                        CursorData cursorData = new CursorData();
-                        cursorData.DrawCursor(bitmap, rect.Location);
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e, "Cursor capture failed.");
-                    }
-                }
-
-                return bitmap;
-            }
-
-            return CaptureRectangleGDI(handle, rect, captureCursor);
-        }
-
-        private Bitmap CaptureRectangleGDI(IntPtr handle, Rectangle rect, bool captureCursor)
-        {
-            IntPtr hdcSrc = NativeMethods.GetWindowDC(handle);
-            IntPtr hdcDest = NativeMethods.CreateCompatibleDC(hdcSrc);
-            IntPtr hBitmap = NativeMethods.CreateCompatibleBitmap(hdcSrc, rect.Width, rect.Height);
-            IntPtr hOld = NativeMethods.SelectObject(hdcDest, hBitmap);
-            NativeMethods.BitBlt(hdcDest, 0, 0, rect.Width, rect.Height, hdcSrc, rect.X, rect.Y, CopyPixelOperation.SourceCopy | CopyPixelOperation.CaptureBlt);
-
-            if (captureCursor)
-            {
-                try
-                {
-                    CursorData cursorData = new CursorData();
-                    cursorData.DrawCursor(hdcDest, rect.Location);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Cursor capture failed.");
-                }
-            }
-
-            NativeMethods.SelectObject(hdcDest, hOld);
-            NativeMethods.DeleteDC(hdcDest);
-            NativeMethods.ReleaseDC(handle, hdcSrc);
-            Bitmap bmp = Image.FromHbitmap(hBitmap);
-            NativeMethods.DeleteObject(hBitmap);
-
-            return bmp;
-        }
-
-        private Bitmap CaptureRectangleManaged(Rectangle rect)
-        {
-            if (rect.Width == 0 || rect.Height == 0)
-            {
-                return null;
-            }
-
-            Bitmap bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format24bppRgb);
-
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                // Managed can't use SourceCopy | CaptureBlt because of .NET bug
-                g.CopyFromScreen(rect.Location, Point.Empty, rect.Size, CopyPixelOperation.SourceCopy);
-            }
-
-            return bmp;
+            return PlatformImageConverter.ToSKBitmap(result);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -33,7 +33,7 @@ namespace ShareX
         {
             Rectangle rect = taskSettings.CaptureSettings.CaptureCustomRegion;
             TaskMetadata metadata = CreateMetadata(rect);
-            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
+            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect).ToGdiBitmapAndDispose();
             return metadata;
         }
     }

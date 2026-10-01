@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -78,6 +78,15 @@ namespace ShareX
             {
                 WindowTitle = windowInfo.Text;
                 ProcessName = windowInfo.ProcessName;
+            }
+        }
+
+        public void UpdateInfo(ShareX.Platform.PlatformWindow window)
+        {
+            if (window != null)
+            {
+                WindowTitle = window.Title;
+                ProcessName = window.ProcessName;
             }
         }
 

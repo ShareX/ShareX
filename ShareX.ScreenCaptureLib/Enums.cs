@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -31,6 +31,7 @@ namespace ShareX.ScreenCaptureLib
     {
         [Description("FFmpeg")]
         FFmpeg,
+        /// <summary>Recorded with FFmpeg and encoded as an animated GIF.</summary>
         [Description("Animated GIF")]
         GIF
     }

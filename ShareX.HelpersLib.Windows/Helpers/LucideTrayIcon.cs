@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -27,6 +27,7 @@
 
 using Avalonia.Platform;
 using Microsoft.Win32;
+using ShareX.AvaloniaUI.Theming;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
@@ -44,9 +45,6 @@ public static class LucideTrayIcon
 {
     private const string PersonalizeRegistryPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize";
     private const string SystemUsesLightThemeRegistryValue = "SystemUsesLightTheme";
-    private static readonly Uri LucideFontUri = new("avares://ShareX.Avalonia/Assets/lucide.ttf");
-    private static readonly int[] IconSizes = [16, 20, 24, 32, 40, 48, 64];
-    private static readonly Lazy<SKTypeface> LucideTypeface = new(LoadTypeface);
 
     /// <summary>
     /// Assigns a Lucide glyph to a tray icon and keeps its color in sync with the
@@ -136,78 +134,9 @@ public static class LucideTrayIcon
         return value != 0;
     }
 
-    private static SKTypeface LoadTypeface()
-    {
-        using Stream stream = AssetLoader.Open(LucideFontUri);
-        return SKTypeface.FromStream(stream) ??
-            throw new InvalidOperationException("Unable to load the bundled Lucide font.");
-    }
+    private static byte[] CreateIconData(string glyph, SKColor color) => TrayIconRenderer.RenderGlyphIco(glyph, color);
 
-    private static byte[] CreateIconData(string glyph, SKColor color)
-    {
-        List<byte[]> images = new(IconSizes.Length);
-
-        foreach (int size in IconSizes)
-        {
-            images.Add(RenderGlyph(glyph, color, size));
-        }
-
-        using MemoryStream stream = new();
-        using BinaryWriter writer = new(stream);
-
-        writer.Write((ushort)0); // Reserved
-        writer.Write((ushort)1); // Icon
-        writer.Write((ushort)images.Count);
-
-        int imageOffset = 6 + (16 * images.Count);
-
-        for (int index = 0; index < images.Count; index++)
-        {
-            int size = IconSizes[index];
-            byte[] image = images[index];
-            writer.Write((byte)size);
-            writer.Write((byte)size);
-            writer.Write((byte)0); // Color palette
-            writer.Write((byte)0); // Reserved
-            writer.Write((ushort)1); // Color planes
-            writer.Write((ushort)32); // Bits per pixel
-            writer.Write(image.Length);
-            writer.Write(imageOffset);
-            imageOffset += image.Length;
-        }
-
-        foreach (byte[] image in images)
-        {
-            writer.Write(image);
-        }
-
-        writer.Flush();
-        return stream.ToArray();
-    }
-
-    private static byte[] RenderGlyph(string glyph, SKColor color, int size)
-    {
-        using SKBitmap bitmap = new(new SKImageInfo(size, size, SKColorType.Bgra8888, SKAlphaType.Premul));
-        using SKCanvas canvas = new(bitmap);
-        using SKFont font = new(LucideTypeface.Value, size);
-        using SKPaint paint = new()
-        {
-            Color = color,
-            IsAntialias = true
-        };
-
-        canvas.Clear(SKColors.Transparent);
-
-        font.MeasureText(glyph, out SKRect bounds, paint);
-        float x = ((size - bounds.Width) / 2f) - bounds.Left;
-        float y = ((size - bounds.Height) / 2f) - bounds.Top;
-        canvas.DrawText(glyph, x, y, font, paint);
-        canvas.Flush();
-
-        using SKImage image = SKImage.FromBitmap(bitmap);
-        using SKData data = image.Encode(SKEncodedImageFormat.Png, 100);
-        return data.ToArray();
-    }
+    private static byte[] RenderGlyph(string glyph, SKColor color, int size) => TrayIconRenderer.RenderGlyphPng(glyph, color, size);
 
     private sealed class ThemeBinding : IDisposable
     {

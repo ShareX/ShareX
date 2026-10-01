@@ -36,6 +36,8 @@ namespace ShareX.Platform.Windows;
 /// <summary>Top level windows from EnumWindows, skipping hidden, cloaked (other virtual desktops, suspended UWP) and tool windows.</summary>
 public sealed unsafe class WindowsWindowService : IWindowService
 {
+    private static readonly string[] IgnoredClassNames = ["Progman", "Button"];
+
     public FeatureSupport Support => FeatureSupport.Supported;
 
     public IReadOnlyList<PlatformWindow> GetWindows()
@@ -157,7 +159,8 @@ public sealed unsafe class WindowsWindowService : IWindowService
 
         string title = GetTitle(hwnd);
 
-        if (title.Length == 0)
+        // The desktop (Progman) has a title but is not a window anyone means to pick.
+        if (title.Length == 0 || IgnoredClassNames.Contains(GetClassName(hwnd), StringComparer.OrdinalIgnoreCase))
         {
             return null;
         }

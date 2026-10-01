@@ -170,7 +170,7 @@ public partial class AutoCaptureWindow : Window
             return;
         }
 
-        Bitmap bitmap = TaskHelpers.GetScreenshot(TaskSettings).CaptureRectangle(rectangle);
+        Bitmap bitmap = TaskHelpers.GetScreenshot(TaskSettings).CaptureRectangle(rectangle).ToGdiBitmapAndDispose();
 
         if (bitmap == null)
         {
