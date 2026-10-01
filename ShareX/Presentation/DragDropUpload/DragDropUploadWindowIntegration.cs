@@ -26,7 +26,7 @@
 #nullable enable
 
 using Avalonia.Threading;
-using System.Drawing;
+using ShareX.HelpersLib;
 
 namespace ShareX;
 
@@ -37,7 +37,7 @@ public static class DragDropUploadWindowIntegration
     public static void Show(
         int size,
         int offset,
-        ContentAlignment alignment,
+        ImageContentAlignment alignment,
         int opacity,
         int hoverOpacity,
         TaskSettings? taskSettings = null)

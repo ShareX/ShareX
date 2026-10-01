@@ -44,10 +44,29 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
+            SKBitmap bmpResult = bmp.CreateEmptyBitmap();
+
+            using (SkiaPixelBuffer source = new SkiaPixelBuffer(bmp, true, PixelAccess.ReadOnly))
+            using (SkiaPixelBuffer dest = new SkiaPixelBuffer(bmpResult, true, PixelAccess.WriteOnly))
             {
-                return SkiaImageHelpers.RGBSplit(bmp, OffsetRed, OffsetGreen, OffsetBlue);
+                int right = source.Width - 1;
+                int bottom = source.Height - 1;
+
+                for (int y = 0; y < source.Height; y++)
+                {
+                    for (int x = 0; x < source.Width; x++)
+                    {
+                        ColorBgra colorR = source.GetPixel(MathHelpers.Clamp(x - OffsetRed.X, 0, right), MathHelpers.Clamp(y - OffsetRed.Y, 0, bottom));
+                        ColorBgra colorG = source.GetPixel(MathHelpers.Clamp(x - OffsetGreen.X, 0, right), MathHelpers.Clamp(y - OffsetGreen.Y, 0, bottom));
+                        ColorBgra colorB = source.GetPixel(MathHelpers.Clamp(x - OffsetBlue.X, 0, right), MathHelpers.Clamp(y - OffsetBlue.Y, 0, bottom));
+                        ColorBgra shiftedColor = new ColorBgra((byte)(colorB.Blue * colorB.Alpha / 255), (byte)(colorG.Green * colorG.Alpha / 255),
+                            (byte)(colorR.Red * colorR.Alpha / 255), (byte)((colorR.Alpha + colorG.Alpha + colorB.Alpha) / 3));
+                        dest.SetPixel(x, y, shiftedColor);
+                    }
+                }
             }
+
+            return bmpResult;
         }
     }
 }

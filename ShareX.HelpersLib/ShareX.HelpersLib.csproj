@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
@@ -14,6 +14,7 @@
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="System.Drawing.Common" />
     <PackageReference Include="System.Resources.Extensions" />
+    <PackageReference Include="SkiaSharp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />

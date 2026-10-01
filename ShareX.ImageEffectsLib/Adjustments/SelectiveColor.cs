@@ -49,10 +49,8 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
-            {
-                return SkiaImageHelpers.SelectiveColor(bmp, LightColor, DarkColor, MathHelpers.Clamp(PaletteSize, 2, 100));
-            }
+            SkiaImageHelpers.SelectiveColor(bmp, LightColor, DarkColor, MathHelpers.Clamp(PaletteSize, 2, 100));
+            return bmp;
         }
     }
 }

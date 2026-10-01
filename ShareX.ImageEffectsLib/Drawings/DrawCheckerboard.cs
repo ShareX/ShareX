@@ -61,10 +61,7 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
-            {
-                return SkiaImageHelpers.DrawCheckers(bmp, Size, Color, Color2);
-            }
+            return SkiaImageHelpers.DrawCheckers(bmp, Size, Color, Color2);
         }
 
         protected override string GetSummary()

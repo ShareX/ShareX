@@ -34,7 +34,7 @@ namespace ShareX
         {
             Rectangle rect = CaptureHelpers.GetActiveScreenWorkingArea();
             TaskMetadata metadata = CreateMetadata(rect);
-            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveMonitor().ToGdiBitmapAndDispose();
+            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveMonitor();
             return metadata;
         }
     }

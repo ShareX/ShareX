@@ -82,7 +82,7 @@ namespace ShareX.ImageEffectsLib
         private GradientInfo AddDefaultGradient()
         {
             GradientInfo gradientInfo = new GradientInfo();
-            gradientInfo.Type = GradientDirection.ForwardDiagonal;
+            gradientInfo.Type = ImageGradientMode.ForwardDiagonal;
 
             switch (RandomFast.Next(0, 2))
             {
@@ -105,10 +105,7 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
-            {
-                return SkiaImageHelpers.AddGlow(bmp, Size, Strength, Color, Offset, UseGradient ? Gradient : null);
-            }
+            return SkiaImageHelpers.AddGlow(bmp, Size, Strength, Color, Offset, UseGradient ? Gradient : null);
         }
 
         protected override string GetSummary()

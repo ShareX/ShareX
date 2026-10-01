@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -50,10 +49,7 @@ namespace ShareX.ImageEffectsLib
                 return bmp;
             }
 
-            using (bmp)
-            {
-                return SkiaImageHelpers.Skew(bmp, Horizontally, Vertically);
-            }
+            return SkiaImageHelpers.AddSkew(bmp, Horizontally, Vertically);
         }
 
         protected override string GetSummary()

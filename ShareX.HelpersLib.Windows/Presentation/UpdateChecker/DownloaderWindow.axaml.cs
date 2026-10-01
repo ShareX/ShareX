@@ -35,7 +35,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using DialogResult = ShareX.AvaloniaUI.DialogResult;
 using AvaloniaDialogResult = ShareX.AvaloniaUI.DialogResult;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;

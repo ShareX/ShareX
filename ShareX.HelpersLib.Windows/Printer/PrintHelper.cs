@@ -23,10 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+using SkiaSharp;
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Windows.Forms;
+using Image = SkiaSharp.SKBitmap;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
@@ -50,8 +51,6 @@ namespace ShareX.HelpersLib
         }
 
         private PrintDocument printDocument;
-        private PrintDialog printDialog;
-        private PrintPreviewDialog printPreviewDialog;
         private PrintTextHelper printTextHelper;
 
         public PrintHelper(Image image)
@@ -72,29 +71,39 @@ namespace ShareX.HelpersLib
 
         private void InitPrint()
         {
-            printDocument = new PrintDocument();
-            printDocument.BeginPrint += printDocument_BeginPrint;
-            printDocument.PrintPage += printDocument_PrintPage;
-            printDialog = new PrintDialog();
-            printDialog.Document = printDocument;
-            printDialog.UseEXDialog = true;
-            printPreviewDialog = new PrintPreviewDialog();
-            printPreviewDialog.Document = printDocument;
+            if (OperatingSystem.IsWindows())
+            {
+                printDocument = new PrintDocument { PrintController = new StandardPrintController() };
+                printDocument.BeginPrint += printDocument_BeginPrint;
+                printDocument.PrintPage += printDocument_PrintPage;
+            }
         }
 
-        public void Dispose()
-        {
-            if (printDocument != null) printDocument.Dispose();
-            if (printDialog != null) printDialog.Dispose();
-            if (printPreviewDialog != null) printPreviewDialog.Dispose();
-        }
+        public void Dispose() => printDocument?.Dispose();
 
         public void ShowPreview()
         {
-            if (Printable)
+            if (Printable) PrintPreviewWindow.ShowPreview(RenderPreviewPage, Print);
+        }
+
+        internal (SKBitmap Bitmap, bool HasMore) RenderPreviewPage(int pageIndex)
+        {
+            PageSettings pageSettings = printDocument?.PrinterSettings.IsValid == true ? printDocument.DefaultPageSettings : null;
+            Size size = pageSettings?.Bounds.Size ?? new Size(850, 1100);
+            if (PrintType == PrintType.Image) return (RenderImagePage(Image, size, Settings), false);
+            PrintTextHelper renderer = new() { Text = Text, Font = Settings.TextFont };
+            renderer.BeginPrint();
+            Margins margins = pageSettings?.Margins ?? new Margins(100, 100, 100, 100);
+            Rectangle margin = new(margins.Left, margins.Top, size.Width - margins.Left - margins.Right, size.Height - margins.Top - margins.Bottom);
+            SKBitmap page = null;
+            bool hasMore = false;
+            for (int index = 0; index <= pageIndex; index++)
             {
-                printPreviewDialog.ShowDialog();
+                page?.Dispose();
+                page = renderer.RenderPage(size, margin, out hasMore);
+                if (!hasMore) break;
             }
+            return (page, hasMore);
         }
 
         public void TryDefaultPrinterOverride()
@@ -117,7 +126,8 @@ namespace ShareX.HelpersLib
 
         public bool Print()
         {
-            if (Printable && (!Settings.ShowPrintDialog || printDialog.ShowDialog() == DialogResult.OK))
+            if (!OperatingSystem.IsWindows()) throw new PlatformNotSupportedException("A printing backend is required for this platform.");
+            if (Printable && (!Settings.ShowPrintDialog || WindowsPrintDialog.Show(printDocument)))
             {
                 if (PrintType == PrintType.Text)
                 {
@@ -153,65 +163,54 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void PrintImage(PrintPageEventArgs e)
+        private void PrintImage(PrintPageEventArgs args)
         {
-            Rectangle rect = e.PageBounds;
-            rect.Inflate(-Settings.Margin, -Settings.Margin);
-
-            Image img;
-
-            if (Settings.AutoRotateImage && ((rect.Width > rect.Height && Image.Width < Image.Height) ||
-                (rect.Width < rect.Height && Image.Width > Image.Height)))
-            {
-                img = (Image)Image.Clone();
-                img.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            }
-            else
-            {
-                img = Image;
-            }
-
-            if (Settings.AutoScaleImage)
-            {
-                DrawAutoScaledImage(e.Graphics, img, rect, Settings.AllowEnlargeImage, Settings.CenterImage);
-            }
-            else
-            {
-                e.Graphics.DrawImage(img, rect, new Rectangle(0, 0, rect.Width, rect.Height), GraphicsUnit.Pixel);
-            }
+            using SKBitmap page = RenderImagePage(Image, args.PageBounds.Size, Settings);
+            WindowsPrintInterop.DrawImage(args, page, args.PageBounds);
         }
 
-        private void DrawAutoScaledImage(Graphics g, Image img, Rectangle rect, bool allowEnlarge = false, bool centerImage = false)
+        internal static SKBitmap RenderImagePage(SKBitmap source, Size pageSize, PrintSettings settings)
         {
-            double ratio;
-            int newWidth, newHeight;
-
-            if (!allowEnlarge && img.Width <= rect.Width && img.Height <= rect.Height)
+            SKBitmap rotated = null;
+            SKBitmap image = source;
+            SKBitmap page = SkiaImageHelpers.CreateBitmap(pageSize.Width * 3, pageSize.Height * 3);
+            Rectangle rectangle = new(0, 0, pageSize.Width, pageSize.Height);
+            rectangle.Inflate(-settings.Margin, -settings.Margin);
+            try
             {
-                ratio = 1.0;
-                newWidth = img.Width;
-                newHeight = img.Height;
+                using SKCanvas canvas = new(page);
+                canvas.Clear(SKColors.White);
+                if (rectangle.Width <= 0 || rectangle.Height <= 0) return page;
+                if (settings.AutoRotateImage && ((rectangle.Width > rectangle.Height && source.Width < source.Height) ||
+                    (rectangle.Width < rectangle.Height && source.Width > source.Height)))
+                {
+                    rotated = source.Copy();
+                    SkiaImageHelpers.RotateFlipInPlace(rotated, 1);
+                    image = rotated;
+                }
+                canvas.Scale(3, 3);
+                canvas.ClipRect(rectangle.ToSKRect());
+                if (settings.AutoScaleImage)
+                {
+                    float scale = Math.Min(rectangle.Width / (float)image.Width, rectangle.Height / (float)image.Height);
+                    if (!settings.AllowEnlargeImage) scale = Math.Min(1, scale);
+                    float width = image.Width * scale, height = image.Height * scale;
+                    float x = rectangle.X, y = rectangle.Y;
+                    if (settings.CenterImage)
+                    {
+                        x += (rectangle.Width - width) / 2;
+                        y += (rectangle.Height - height) / 2;
+                    }
+                    canvas.DrawImage(image, x, y, width, height);
+                }
+                else
+                {
+                    canvas.DrawBitmap(image, rectangle.X, rectangle.Y);
+                }
+                return page;
             }
-            else
-            {
-                double ratioX = (double)rect.Width / img.Width;
-                double ratioY = (double)rect.Height / img.Height;
-                ratio = ratioX < ratioY ? ratioX : ratioY;
-                newWidth = (int)(img.Width * ratio);
-                newHeight = (int)(img.Height * ratio);
-            }
-
-            int newX = rect.X;
-            int newY = rect.Y;
-
-            if (centerImage)
-            {
-                newX += (int)((rect.Width - (img.Width * ratio)) / 2);
-                newY += (int)((rect.Height - (img.Height * ratio)) / 2);
-            }
-
-            g.SetHighQuality();
-            g.DrawImage(img, newX, newY, newWidth, newHeight);
+            catch { page.Dispose(); throw; }
+            finally { rotated?.Dispose(); }
         }
     }
 }

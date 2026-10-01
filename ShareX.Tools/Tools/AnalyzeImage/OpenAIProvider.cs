@@ -26,11 +26,11 @@
 #nullable disable
 
 using ShareX.HelpersLib;
-using System.Drawing;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Image = SkiaSharp.SKBitmap;
 
 namespace ShareX.Tools
 {
@@ -102,7 +102,7 @@ namespace ShareX.Tools
 
         public async Task<string> AnalyzeImage(string filePath, string input = null, string reasoningEffort = null, string textVerbosity = null)
         {
-            Image image = ImageHelpers.LoadImage(filePath);
+            using Image image = SkiaImageHelpers.LoadImage(filePath);
 
             return await AnalyzeImage(image, input, reasoningEffort, textVerbosity);
         }
@@ -113,7 +113,7 @@ namespace ShareX.Tools
 
             using (MemoryStream ms = new MemoryStream())
             {
-                ImageHelpers.SaveJPEG(image, ms, 90);
+                SkiaImageHelpers.SaveJPEG(image, ms, 90);
                 byte[] imageBytes = ms.ToArray();
                 string base64Image = Convert.ToBase64String(imageBytes);
                 imageDataUri = $"data:image/jpeg;base64,{base64Image}";

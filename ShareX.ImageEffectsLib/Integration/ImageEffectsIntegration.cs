@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -25,7 +25,6 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
-using ShareX.HelpersLib;
 using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib;
@@ -62,7 +61,7 @@ public static class ImageEffectsIntegration
         ImageEffectsCallbacks? callbacks = null, string? filePath = null, Action<int>? selectedPresetChanged = null)
     {
         AvaloniaBootstrapper.EnsureInitialized();
-        SKBitmap sourceCopy = SkiaImageHelpers.Clone(sourceImage);
+        SKBitmap sourceCopy = (SKBitmap)sourceImage.Copy();
 
         Dispatcher.UIThread.Post(() =>
         {

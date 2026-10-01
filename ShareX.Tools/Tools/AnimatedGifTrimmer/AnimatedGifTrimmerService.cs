@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -14,16 +14,15 @@
 
 using ShareX.HelpersLib;
 using ShareX.Tools.Localization;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
+using SkiaSharp;
+
 
 namespace ShareX.Tools;
 
 /// <summary>A GIF's cut points are frame boundaries; all times are stored as GIF centiseconds.</summary>
 internal sealed class AnimatedGifTrimmerDocument : IDisposable
 {
-    private readonly Image _image;
+    private readonly SkiaAnimatedImage _image;
     private readonly GifLosslessTrimmer _gif;
     private readonly object _imageLock = new();
     private readonly long[] _starts;
@@ -38,7 +37,7 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
     public bool CanCopySelection(int firstFrame, int endFrameExclusive) =>
         _gif.CanCopySelection(firstFrame, endFrameExclusive);
 
-    private AnimatedGifTrimmerDocument(string filePath, Image image, GifLosslessTrimmer gif,
+    private AnimatedGifTrimmerDocument(string filePath, SkiaAnimatedImage image, GifLosslessTrimmer gif,
         long[] starts, int[] delays)
     {
         FilePath = filePath;
@@ -55,13 +54,13 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
             throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
 
         GifLosslessTrimmer gif = GifLosslessTrimmer.Parse(filePath, token);
-        Image image = Image.FromFile(filePath);
+        SkiaAnimatedImage image = new SkiaAnimatedImage(filePath);
         try
         {
-            if (image.RawFormat.Guid != ImageFormat.Gif.Guid)
+            if (image.Format != SKEncodedImageFormat.Gif)
                 throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
 
-            int count = image.GetFrameCount(FrameDimension.Time);
+            int count = image.FrameCount;
             if (count != gif.FrameCount) throw new InvalidDataException(Strings.AnimatedGifTrimmer_InvalidGif);
 
             long[] starts = new long[count + 1];
@@ -126,10 +125,10 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
 
     private byte[] RenderFrameCore(int index, int maxDimension)
     {
-        _image.SelectActiveFrame(FrameDimension.Time, index);
-        using Bitmap frame = DrawFrame(_image, maxDimension);
+        using SKBitmap decoded = _image.GetFrame(index);
+        using SKBitmap frame = DrawFrame(decoded, maxDimension);
         using MemoryStream stream = new();
-        frame.Save(stream, ImageFormat.Png);
+        frame.Save(stream, SKEncodedImageFormat.Png);
         return stream.ToArray();
     }
 
@@ -166,69 +165,48 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
     private void Reencode(string temporary, int firstFrame, int endFrameExclusive,
         IProgress<double>? progress, CancellationToken token)
     {
-        using Image image = Image.FromFile(FilePath);
+        using SkiaAnimatedImage image = new SkiaAnimatedImage(FilePath);
         using AnimatedGifCreator creator = new(temporary, _delays[firstFrame] * 10,
             _gif.RepeatCount, _gif.Loop);
         for (int i = firstFrame; i < endFrameExclusive; i++)
         {
             token.ThrowIfCancellationRequested();
-            image.SelectActiveFrame(FrameDimension.Time, i);
-            using Bitmap frame = DrawFrame(image);
-            using Bitmap quantized = GifFrameQuantizer.Quantize(frame);
+            using SKBitmap frame = image.GetFrame(i);
+            IndexedImage quantized = GifFrameQuantizer.Quantize(frame);
             creator.AddFrame(quantized, _delays[i] * 10);
             progress?.Report((i - firstFrame + 1d) / (endFrameExclusive - firstFrame) * 100);
         }
     }
 
-    private static Bitmap DrawFrame(Image source, int maxDimension = int.MaxValue)
+    private static SKBitmap DrawFrame(SKBitmap source, int maxDimension = int.MaxValue)
     {
         double scale = Math.Min(1, maxDimension / (double)Math.Max(source.Width, source.Height));
-        int width = Math.Max(1, (int)Math.Round(source.Width * scale));
-        int height = Math.Max(1, (int)Math.Round(source.Height * scale));
-        Bitmap frame = new(width, height, PixelFormat.Format32bppArgb);
-        using Graphics graphics = Graphics.FromImage(frame);
-        graphics.CompositingMode = CompositingMode.SourceCopy;
-        graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-        graphics.DrawImage(source, new Rectangle(0, 0, width, height), 0, 0, source.Width, source.Height,
-            GraphicsUnit.Pixel);
-        return frame;
+        return SkiaImageHelpers.Resize(source, Math.Max(1, (int)Math.Round(source.Width * scale)),
+            Math.Max(1, (int)Math.Round(source.Height * scale)));
     }
 
     private bool FirstFrameMatches(string trimmedPath, int originalIndex, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
-        using Image original = Image.FromFile(FilePath);
-        using Image trimmed = Image.FromFile(trimmedPath);
-        original.SelectActiveFrame(FrameDimension.Time, originalIndex);
-        trimmed.SelectActiveFrame(FrameDimension.Time, 0);
-        using Bitmap originalFrame = DrawFrame(original);
-        using Bitmap trimmedFrame = DrawFrame(trimmed);
+        using SkiaAnimatedImage original = new SkiaAnimatedImage(FilePath);
+        using SkiaAnimatedImage trimmed = new SkiaAnimatedImage(trimmedPath);
+        using SKBitmap originalFrame = original.GetFrame(originalIndex);
+        using SKBitmap trimmedFrame = trimmed.GetFrame(0);
         return SamePixels(originalFrame, trimmedFrame, token);
     }
 
-    private static unsafe bool SamePixels(Bitmap first, Bitmap second, CancellationToken token)
+    private static unsafe bool SamePixels(SKBitmap first, SKBitmap second, CancellationToken token)
     {
-        if (first.Size != second.Size) return false;
-        Rectangle bounds = new(Point.Empty, first.Size);
-        BitmapData firstData = first.LockBits(bounds, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-        try
+        if (first.GetSize() != second.GetSize()) return false;
+        using SkiaPixelBuffer firstPixels = new(first, true, PixelAccess.ReadOnly);
+        using SkiaPixelBuffer secondPixels = new(second, true, PixelAccess.ReadOnly);
+        for (int y = 0; y < first.Height; y++)
         {
-            BitmapData secondData = second.LockBits(bounds, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-            try
-            {
-                for (int y = 0; y < first.Height; y++)
-                {
-                    token.ThrowIfCancellationRequested();
-                    byte* firstRow = (byte*)firstData.Scan0 + y * firstData.Stride;
-                    byte* secondRow = (byte*)secondData.Scan0 + y * secondData.Stride;
-                    if (!new ReadOnlySpan<byte>(firstRow, first.Width * 4).SequenceEqual(
-                        new ReadOnlySpan<byte>(secondRow, second.Width * 4))) return false;
-                }
-                return true;
-            }
-            finally { second.UnlockBits(secondData); }
+            token.ThrowIfCancellationRequested();
+            if (!new ReadOnlySpan<ColorBgra>(firstPixels.Pointer + y * first.Width, first.Width).SequenceEqual(
+                new ReadOnlySpan<ColorBgra>(secondPixels.Pointer + y * second.Width, second.Width))) return false;
         }
-        finally { first.UnlockBits(firstData); }
+        return true;
     }
 
     public void Dispose()

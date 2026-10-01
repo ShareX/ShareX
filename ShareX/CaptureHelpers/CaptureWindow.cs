@@ -66,11 +66,11 @@ namespace ShareX
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
             {
-                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureWindowTransparent(WindowHandle).ToGdiBitmapAndDispose();
+                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureWindowTransparent(WindowHandle);
             }
             else
             {
-                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureWindow(WindowHandle).ToGdiBitmapAndDispose();
+                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureWindow(WindowHandle);
             }
 
             return metadata;

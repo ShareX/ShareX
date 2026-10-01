@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -37,7 +36,7 @@ namespace ShareX.ImageEffectsLib
         {
             using (bmp)
             {
-                return SkiaImageHelpers.Convolve(bmp, SkiaImageHelpers.EdgeDetectKernel(), 127);
+                return SkiaConvolutionMatrixManager.EdgeDetect().Apply(bmp);
             }
         }
     }

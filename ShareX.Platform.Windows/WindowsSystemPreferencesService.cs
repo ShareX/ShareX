@@ -42,6 +42,15 @@ public sealed unsafe class WindowsSystemPreferencesService : ISystemPreferencesS
         }
     }
 
+    public int SmallIconSize
+    {
+        get
+        {
+            int size = Win32.GetSystemMetrics(49); // SM_CXSMICON
+            return size > 0 ? size : DefaultSystemPreferencesService.DefaultSmallIconSize;
+        }
+    }
+
     /// <summary>The task bar theme, which Windows keeps apart from the app theme. Missing means light, as on older Windows 10.</summary>
     public bool? SystemUsesLightTheme
     {

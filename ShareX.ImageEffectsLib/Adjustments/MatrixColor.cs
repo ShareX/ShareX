@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -84,18 +83,18 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            float[][] colorMatrix =
-            [
-                [Rr, Gr, Br, Ar, 0],
-                [Rg, Gg, Bg, Ag, 0],
-                [Rb, Gb, Bb, Ab, 0],
-                [Ra, Ga, Ba, Aa, 0],
-                [Ro, Go, Bo, Ao, 1]
-            ];
+            ImageColorMatrix colorMatrix = new ImageColorMatrix(new[]
+            {
+                new float[] { Rr, Gr, Br, Ar, 0 },
+                new float[] { Rg, Gg, Bg, Ag, 0 },
+                new float[] { Rb, Gb, Bb, Ab, 0 },
+                new float[] { Ra, Ga, Ba, Aa, 0 },
+                new float[] { Ro, Go, Bo, Ao, 1 }
+            });
 
             using (bmp)
             {
-                return SkiaImageHelpers.ApplyColorMatrix(bmp, colorMatrix);
+                return colorMatrix.Apply(bmp);
             }
         }
     }

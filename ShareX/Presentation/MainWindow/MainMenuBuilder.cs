@@ -35,11 +35,11 @@ using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using Bitmap = SkiaSharp.SKBitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX;
 
@@ -187,7 +187,7 @@ internal sealed class MainMenuBuilder
             return null;
         }
 
-        using Bitmap bitmap = icon.ToBitmap();
+        using Bitmap bitmap = WindowsImageInterop.FromIcon(icon.Handle);
         using MemoryStream stream = new();
         bitmap.Save(stream, ImageFormat.Png);
         return stream.ToArray();
@@ -196,7 +196,7 @@ internal sealed class MainMenuBuilder
     private IReadOnlyList<MainMenuEntry> BuildMonitorMenu()
     {
         List<MainMenuEntry> items = new();
-        Screen[] screens = Screen.AllScreens;
+        DesktopScreen[] screens = DesktopScreen.AllScreens;
 
         for (int i = 0; i < screens.Length; i++)
         {

@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -24,9 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 
 namespace ShareX.Tools;
 
@@ -47,58 +46,46 @@ public static class ImageResizerService
 {
     private const int MaxPreviewDimension = 1600;
 
-    public static Bitmap Resize(Bitmap source, int width, int height, ImageResizeMode mode)
+    public static SKBitmap Resize(SKBitmap source, int width, int height, ImageResizeMode mode)
     {
         ArgumentNullException.ThrowIfNull(source);
         ArgumentOutOfRangeException.ThrowIfLessThan(width, 1);
         ArgumentOutOfRangeException.ThrowIfLessThan(height, 1);
-
-        Bitmap output = new(width, height, PixelFormat.Format32bppArgb);
-        using Graphics graphics = Graphics.FromImage(output);
-        graphics.Clear(Color.Transparent);
-        graphics.CompositingMode = CompositingMode.SourceCopy;
-        graphics.CompositingQuality = CompositingQuality.HighQuality;
-        graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-        graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-        graphics.SmoothingMode = SmoothingMode.HighQuality;
-
+        SKBitmap output = SkiaImageHelpers.CreateBitmap(width, height);
+        using SKCanvas canvas = new(output);
         RectangleF sourceRectangle = new(0, 0, source.Width, source.Height);
         Rectangle destinationRectangle = new(0, 0, width, height);
-
         switch (mode)
         {
             case ImageResizeMode.Fill:
-                sourceRectangle = GetFillSourceRectangle(source.Size, new Size(width, height));
+                sourceRectangle = GetFillSourceRectangle(source.GetSize(), new Size(width, height));
                 break;
             case ImageResizeMode.Fit:
-                destinationRectangle = GetFitDestinationRectangle(source.Size, new Size(width, height));
+                destinationRectangle = GetFitDestinationRectangle(source.GetSize(), new Size(width, height));
                 break;
         }
-
-        using ImageAttributes attributes = new();
-        attributes.SetWrapMode(WrapMode.TileFlipXY);
-        graphics.DrawImage(source, destinationRectangle, sourceRectangle.X, sourceRectangle.Y,
-            sourceRectangle.Width, sourceRectangle.Height, GraphicsUnit.Pixel, attributes);
+        canvas.DrawImage(source, new SKRect(sourceRectangle.Left, sourceRectangle.Top, sourceRectangle.Right, sourceRectangle.Bottom),
+            new SKRect(destinationRectangle.Left, destinationRectangle.Top, destinationRectangle.Right, destinationRectangle.Bottom));
         return output;
     }
 
     public static byte[] CreatePreview(string filePath, int width, int height, ImageResizeMode mode,
         ImageResizeOutputFormat format, int jpegQuality, Color backgroundColor)
     {
-        using Bitmap? source = ImageHelpers.LoadImage(filePath);
+        using SKBitmap? source = SkiaImageHelpers.LoadImage(filePath);
         if (source == null)
         {
             return [];
         }
 
         Size previewSize = GetPreviewSize(width, height);
-        using Bitmap output = Resize(source, previewSize.Width, previewSize.Height, mode);
+        using SKBitmap output = Resize(source, previewSize.Width, previewSize.Height, mode);
         using MemoryStream stream = new();
         Save(output, stream, format, jpegQuality, backgroundColor);
         return stream.ToArray();
     }
 
-    public static void Save(Bitmap image, string filePath, ImageResizeOutputFormat format, int jpegQuality,
+    public static void Save(SKBitmap image, string filePath, ImageResizeOutputFormat format, int jpegQuality,
         Color backgroundColor)
     {
         FileHelpers.CreateDirectoryFromFilePath(filePath);
@@ -106,17 +93,17 @@ public static class ImageResizerService
         Save(image, stream, format, jpegQuality, backgroundColor);
     }
 
-    private static void Save(Bitmap image, Stream stream, ImageResizeOutputFormat format, int jpegQuality,
+    private static void Save(SKBitmap image, Stream stream, ImageResizeOutputFormat format, int jpegQuality,
         Color backgroundColor)
     {
         if (format == ImageResizeOutputFormat.Jpeg)
         {
-            using Bitmap flattened = ImageHelpers.FillBackground(image, backgroundColor);
-            ImageHelpers.SaveJPEG(flattened, stream, jpegQuality);
+            using SKBitmap flattened = SkiaImageHelpers.FillBackground(image, backgroundColor);
+            SkiaImageHelpers.Save(flattened, stream, SKEncodedImageFormat.Jpeg, jpegQuality);
         }
         else
         {
-            image.Save(stream, ImageFormat.Png);
+            SkiaImageHelpers.Save(image, stream, SKEncodedImageFormat.Png);
         }
     }
 

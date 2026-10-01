@@ -26,15 +26,14 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
     [Description("Auto crop")]
     internal class AutoCrop : ImageEffect
     {
-        [DefaultValue(AnchorSides.Top | AnchorSides.Bottom | AnchorSides.Left | AnchorSides.Right)]
-        public AnchorSides Sides { get; set; }
+        [DefaultValue(ImageSides.Top | ImageSides.Bottom | ImageSides.Left | ImageSides.Right)]
+        public ImageSides Sides { get; set; }
 
         [DefaultValue(0)]
         public int Padding { get; set; }
@@ -46,15 +45,7 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            SKBitmap result = SkiaImageHelpers.AutoCrop(bmp, true, Sides, Padding);
-
-            if (result == null)
-            {
-                return bmp;
-            }
-
-            bmp.Dispose();
-            return result;
+            return SkiaImageHelpers.AutoCropImage(bmp, true, Sides, Padding);
         }
 
         protected override string GetSummary()

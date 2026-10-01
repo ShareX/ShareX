@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -39,8 +38,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(20)]
         public int Range { get; set; }
 
-        [DefaultValue(AnchorSides.Top | AnchorSides.Bottom | AnchorSides.Left | AnchorSides.Right)]
-        public AnchorSides Sides { get; set; }
+        [DefaultValue(ImageSides.Top | ImageSides.Bottom | ImageSides.Left | ImageSides.Right)]
+        public ImageSides Sides { get; set; }
 
         public WaveEdge()
         {
@@ -49,10 +48,7 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
-            {
-                return SkiaImageHelpers.WavyEdges(bmp, Depth, Range, Sides);
-            }
+            return SkiaImageHelpers.WavyEdges(bmp, Depth, Range, Sides);
         }
 
         protected override string GetSummary()

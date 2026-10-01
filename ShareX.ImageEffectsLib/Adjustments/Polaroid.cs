@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using SkiaSharp;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -35,7 +34,7 @@ namespace ShareX.ImageEffectsLib
         {
             using (bmp)
             {
-                return SkiaImageHelpers.ApplyColorMatrix(bmp, SkiaImageHelpers.PolaroidMatrix());
+                return SkiaColorMatrixManager.Polaroid().Apply(bmp);
             }
         }
     }

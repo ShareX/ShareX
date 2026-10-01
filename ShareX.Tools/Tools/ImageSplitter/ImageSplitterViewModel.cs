@@ -26,8 +26,8 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.HelpersLib;
-using System.Drawing;
-using System.Drawing.Imaging;
+using Bitmap = SkiaSharp.SKBitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX.Tools;
 
@@ -142,13 +142,13 @@ public sealed partial class ImageSplitterViewModel : ViewModelBase
     private static List<string> SplitImage(string filePath, int rowCount, int columnCount, string outputFolder)
     {
         List<string> filePaths = [];
-        using Bitmap? source = ImageHelpers.LoadImage(filePath);
+        using Bitmap? source = SkiaImageHelpers.LoadImage(filePath);
         if (source == null)
         {
             return filePaths;
         }
 
-        List<Bitmap> images = ImageHelpers.SplitImage(source, rowCount, columnCount);
+        List<Bitmap> images = SkiaImageHelpers.SplitImage(source, rowCount, columnCount);
         try
         {
             string originalFileName = Path.GetFileNameWithoutExtension(filePath);

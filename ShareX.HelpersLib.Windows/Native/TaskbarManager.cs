@@ -27,7 +27,6 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -188,10 +187,6 @@ namespace ShareX.HelpersLib
             SetProgressValue(MainWindowHandle, currentValue, maximumValue);
         }
 
-        public static void SetProgressValue(Form form, int currentValue, int maximumValue = 100)
-        {
-            form.InvokeSafe(() => SetProgressValue(form.Handle, currentValue, maximumValue));
-        }
 
         private static void SetProgressState(IntPtr hwnd, TaskbarProgressBarStatus state)
         {
@@ -206,9 +201,5 @@ namespace ShareX.HelpersLib
             SetProgressState(MainWindowHandle, state);
         }
 
-        public static void SetProgressState(Form form, TaskbarProgressBarStatus state)
-        {
-            form.InvokeSafe(() => SetProgressState(form.Handle, state));
-        }
     }
 }

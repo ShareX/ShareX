@@ -46,8 +46,8 @@ These break the rules above and are being moved behind platform services. Do not
 - [ ] `ShareX.HelpersLib.Windows` (WinForms helpers, update and print windows) and the `net10.0-windows` targets of `ShareX` and `Tools`.
 - [x] `ScreenCaptureLib` → `net10.0`. Capture goes through `IScreenCaptureService` (GDI, HDR tone mapping and transparent window capture now live in `ShareX.Platform.Windows`), window snapping through `IWindowService.GetSnapTargets`, scrolling capture input through `IInputService`, frame windows through `SetWindowShape`/`SetOverlayStyle`, and the recording tray icon is Avalonia's `TrayIcon`.
 - [ ] Win32 interop (`NativeMethods`, `WindowInfo`, `CursorData`, `DWMManager`, now in `ShareX.HelpersLib.Windows`) → `ShareX.Platform.Windows`, as each caller moves to a platform service.
-- [x] `ImageEffectsLib` → SkiaSharp (`net10.0`, presets keep their format; `SkiaImageHelpers` holds the ported algorithms).
-- [ ] Remaining GDI+ image code (`ImageHelpers`, GIF encoding, the capture pipeline in `TaskHelpers`) → SkiaSharp. The Windows app converts at the boundary (`SkiaGdiBoundary`, `GdiSkiaBitmapConverter`) until then.
+- [x] `ImageEffectsLib` → SkiaSharp (`net10.0`, presets keep their format; `SkiaImageHelpers` and the `Image*` types in `HelpersLib` — `ImageFont`, `ImageMargins`, `ImageGradientMode`, … — are the portable imaging layer, shared with `develop`).
+- [x] GDI+ image code (`ImageHelpers`, GIF quantizers, the capture and upload pipeline in `TaskHelpers`) → SkiaSharp, merged from `develop`. What is left is Win32 interop in `HelpersLib.Windows` (`WindowsImageInterop`, `CursorData`).
 - [ ] Remaining P/Invoke in `Tools` (mouse highlighter, borderless window, inspect window), `ImageEditor` and `ShareX.Avalonia` → platform services.
 - [ ] WinForms tray icon and hotkey host (`MainForm`, `TrayIconService`) → Avalonia `TrayIcon` and `IHotkeyService`.
 - [x] `HelpersLib` free of P/Invoke, registry and OS branches (system info, MIME types, cursor confinement and mouse capture now come from `ISystemInfoService`, `IShellService` and `IWindowService`).
@@ -58,4 +58,4 @@ These break the rules above and are being moved behind platform services. Do not
 - Never send real user data (screenshots, files, credentials) to third-party upload services in tests or manual checks. Test uploads against a local HTTP server, as `ShareX.Desktop.Tests` does.
 - Uploading is opt-in. Defaults must not name or contact a third-party host.
 - Secrets in settings are encrypted through `ISecretProtectionService`. Never fall back to writing them in plain text.
-- Merge `develop` into `cross-platform` regularly so the branch does not drift.
+- Merge `develop` into `cross-platform` regularly so the branch does not drift. When both branches ported the same code, keep `develop`'s version and re-apply only the platform abstraction on top, so later merges stay small.

@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -58,20 +58,18 @@ internal static class ImageEffectsLocalization
         string name = Enum.GetName(enumType, value) ?? value.ToString() ?? string.Empty;
         FieldInfo? field = enumType.GetField(name);
         string fallback = field?.GetCustomAttribute<DescriptionAttribute>()?.Description ?? Helpers.GetProperName(name);
-        return Get($"ImageEffectEnum_{Sanitize(GetResourceTypeName(enumType))}_{name}", fallback);
+        string resourceType = enumType.Name switch
+        {
+            nameof(ImageContentAlignment) => "ContentAlignment",
+            nameof(ImageSides) => "AnchorStyles",
+            nameof(ImageDashStyle) => "DashStyle",
+            nameof(ImageGradientMode) => "LinearGradientMode",
+            nameof(ImageCompositingMode) => "CompositingMode",
+            nameof(ImageTextRenderingMode) => "TextRenderingHint",
+            _ => enumType.Name
+        };
+        return Get($"ImageEffectEnum_{Sanitize(resourceType)}_{name}", fallback);
     }
-
-    // The portable enums replaced WinForms and GDI+ ones. Translations are keyed by the original names.
-    private static string GetResourceTypeName(Type enumType) => enumType.Name switch
-    {
-        "AnchorSides" => "AnchorStyles",
-        "LineDashStyle" => "DashStyle",
-        "GradientDirection" => "LinearGradientMode",
-        "ImageAlignment" => "ContentAlignment",
-        "TextRenderingMode" => "TextRenderingHint",
-        "ImageCompositingMode" => "CompositingMode",
-        _ => enumType.Name
-    };
 
     private static string Get(string key, string fallback)
     {

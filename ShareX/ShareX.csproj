@@ -3,7 +3,6 @@
     <TargetFramework>net10.0-windows10.0.22621.0</TargetFramework>
     <OutputType>WinExe</OutputType>
     <ApplicationIcon>ShareX_Icon.ico</ApplicationIcon>
-    <UseWindowsForms>true</UseWindowsForms>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Description>Screen capture, file sharing and productivity tool</Description>
     <SupportedOSPlatformVersion>10.0.22621.0</SupportedOSPlatformVersion>
@@ -11,16 +10,13 @@
     <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
     <ApplicationVisualStyles>true</ApplicationVisualStyles>
     <ApplicationUseCompatibleTextRendering>false</ApplicationUseCompatibleTextRendering>
-    <ApplicationDefaultFont>Microsoft Sans Serif, 8.25pt</ApplicationDefaultFont>
     <CETCompat>false</CETCompat>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="SkiaSharp" />
-    <PackageReference Include="SkiaSharp.Views.WindowsForms" />
     <PackageReference Include="ZXing.Net" />
-    <PackageReference Include="ZXing.Net.Bindings.Windows.Compatibility" />
   </ItemGroup>
   <ItemGroup>
     <AvaloniaResource Include="Resources\Flags\*.png" />

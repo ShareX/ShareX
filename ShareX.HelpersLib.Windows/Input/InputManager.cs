@@ -28,7 +28,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -119,30 +118,30 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void AddMouseInput(MouseButtons button, bool isMouseUp)
+        private void AddMouseInput(InputMouseButton button, bool isMouseUp)
         {
             INPUT input = new INPUT();
             input.Type = InputType.InputMouse;
             input.Data.Mouse = new MOUSEINPUT();
 
-            if (button == MouseButtons.Left)
+            if (button == InputMouseButton.Left)
             {
                 input.Data.Mouse.dwFlags = isMouseUp ? MouseEventFlags.MOUSEEVENTF_LEFTUP : MouseEventFlags.MOUSEEVENTF_LEFTDOWN;
             }
-            else if (button == MouseButtons.Right)
+            else if (button == InputMouseButton.Right)
             {
                 input.Data.Mouse.dwFlags = isMouseUp ? MouseEventFlags.MOUSEEVENTF_RIGHTUP : MouseEventFlags.MOUSEEVENTF_RIGHTDOWN;
             }
-            else if (button == MouseButtons.Middle)
+            else if (button == InputMouseButton.Middle)
             {
                 input.Data.Mouse.dwFlags = isMouseUp ? MouseEventFlags.MOUSEEVENTF_MIDDLEUP : MouseEventFlags.MOUSEEVENTF_MIDDLEDOWN;
             }
-            else if (button == MouseButtons.XButton1)
+            else if (button == InputMouseButton.XButton1)
             {
                 input.Data.Mouse.mouseData = (uint)MouseEventDataXButtons.XBUTTON1;
                 input.Data.Mouse.dwFlags = isMouseUp ? MouseEventFlags.MOUSEEVENTF_XUP : MouseEventFlags.MOUSEEVENTF_XDOWN;
             }
-            else if (button == MouseButtons.XButton2)
+            else if (button == InputMouseButton.XButton2)
             {
                 input.Data.Mouse.mouseData = (uint)MouseEventDataXButtons.XBUTTON2;
                 input.Data.Mouse.dwFlags = isMouseUp ? MouseEventFlags.MOUSEEVENTF_XUP : MouseEventFlags.MOUSEEVENTF_XDOWN;
@@ -151,29 +150,29 @@ namespace ShareX.HelpersLib
             InputList.Add(input);
         }
 
-        public void AddMouseDown(MouseButtons button = MouseButtons.Left)
+        public void AddMouseDown(InputMouseButton button = InputMouseButton.Left)
         {
             AddMouseInput(button, false);
         }
 
-        public void AddMouseUp(MouseButtons button = MouseButtons.Left)
+        public void AddMouseUp(InputMouseButton button = InputMouseButton.Left)
         {
             AddMouseInput(button, true);
         }
 
-        public void AddMouseClick(MouseButtons button = MouseButtons.Left)
+        public void AddMouseClick(InputMouseButton button = InputMouseButton.Left)
         {
             AddMouseDown(button);
             AddMouseUp(button);
         }
 
-        public void AddMouseClick(int x, int y, MouseButtons button = MouseButtons.Left)
+        public void AddMouseClick(int x, int y, InputMouseButton button = InputMouseButton.Left)
         {
             AddMouseMove(x, y);
             AddMouseClick(button);
         }
 
-        public void AddMouseClick(Point position, MouseButtons button = MouseButtons.Left)
+        public void AddMouseClick(Point position, InputMouseButton button = InputMouseButton.Left)
         {
             AddMouseMove(position);
             AddMouseClick(button);

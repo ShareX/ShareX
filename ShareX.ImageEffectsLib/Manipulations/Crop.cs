@@ -32,10 +32,10 @@ namespace ShareX.ImageEffectsLib
 {
     internal class Crop : ImageEffect
     {
-        private Insets margin;
+        private ImageMargins margin;
 
-        [DefaultValue(typeof(Insets), "0, 0, 0, 0")]
-        public Insets Margin
+        [DefaultValue(typeof(ImageMargins), "0, 0, 0, 0")]
+        public ImageMargins Margin
         {
             get
             {
@@ -57,20 +57,9 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            if (Margin.All == 0)
-            {
-                return bmp;
-            }
+            if (Margin.All == 0) return bmp;
 
-            SKBitmap result = SkiaImageHelpers.Crop(bmp, new Rectangle(Margin.Left, Margin.Top, bmp.Width - Margin.Horizontal, bmp.Height - Margin.Vertical));
-
-            if (result == null)
-            {
-                return bmp;
-            }
-
-            bmp.Dispose();
-            return result;
+            return SkiaImageHelpers.CropBitmap(bmp, new Rectangle(Margin.Left, Margin.Top, bmp.Width - Margin.Horizontal, bmp.Height - Margin.Vertical));
         }
 
         protected override string GetSummary()

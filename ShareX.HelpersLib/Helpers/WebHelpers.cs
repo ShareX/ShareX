@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -24,13 +24,13 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Sockets;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX.HelpersLib
 {
@@ -78,6 +78,42 @@ namespace ShareX.HelpersLib
             return response;
         }
 
+        public static async Task<Bitmap> DownloadImageAsync(string url)
+        {
+            Bitmap bmp = null;
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                HttpClient client = HttpClientFactory.Create();
+
+                using (HttpResponseMessage responseMessage = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
+                {
+                    if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType != null)
+                    {
+                        string mediaType = responseMessage.Content.Headers.ContentType.MediaType;
+
+                        if (MimeTypes.IsImageMimeType(mediaType))
+                        {
+                            byte[] data = await responseMessage.Content.ReadAsByteArrayAsync();
+                            MemoryStream memoryStream = new MemoryStream(data);
+
+                            try
+                            {
+                                bmp = SkiaImageHelpers.Decode(memoryStream);
+                                memoryStream.Dispose();
+                            }
+                            catch
+                            {
+                                memoryStream.Dispose();
+                            }
+                        }
+                    }
+                }
+            }
+
+            return bmp;
+        }
+
         public static async Task<string> GetFileNameFromWebServerAsync(string url)
         {
             string fileName = null;
@@ -109,6 +145,41 @@ namespace ShareX.HelpersLib
         }
 
         // https://en.wikipedia.org/wiki/Data_URI_scheme
+        public static Bitmap DataURLToImage(string url)
+        {
+            if (!string.IsNullOrEmpty(url) && url.StartsWith("data:", StringComparison.OrdinalIgnoreCase))
+            {
+                Match match = Regex.Match(url, @"^data:(?<mediaType>[\w\/]+);base64,(?<data>.+)$", RegexOptions.IgnoreCase);
+
+                if (match.Success)
+                {
+                    string mediaType = match.Groups["mediaType"].Value;
+
+                    if (MimeTypes.IsImageMimeType(mediaType))
+                    {
+                        string data = match.Groups["data"].Value;
+
+                        if (!string.IsNullOrEmpty(data))
+                        {
+                            try
+                            {
+                                byte[] dataBytes = Convert.FromBase64String(data);
+
+                                using (MemoryStream ms = new MemoryStream(dataBytes))
+                                {
+                                    return SkiaImageHelpers.Decode(ms);
+                                }
+                            }
+                            catch
+                            {
+                            }
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
 
         public static bool IsSuccessStatusCode(HttpStatusCode statusCode)
         {

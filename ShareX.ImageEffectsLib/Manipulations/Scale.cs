@@ -54,10 +54,7 @@ namespace ShareX.ImageEffectsLib
             int height = (int)Math.Round(HeightPercentage / 100 * bmp.Height);
             Size size = SkiaImageHelpers.ApplyAspectRatio(width, height, bmp);
 
-            using (bmp)
-            {
-                return SkiaImageHelpers.Resize(bmp, size.Width, size.Height);
-            }
+            return SkiaImageHelpers.ResizeImage(bmp, size);
         }
 
         protected override string GetSummary()

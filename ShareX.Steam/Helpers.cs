@@ -28,7 +28,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
-using System.Windows.Forms;
 
 namespace ShareX.Steam
 {
@@ -85,7 +84,7 @@ namespace ShareX.Steam
 
         public static void ShowError(Exception e)
         {
-            MessageBox.Show(e.ToString(), "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            NativeMessageBox.ShowError(e.ToString());
         }
 
         public static void CopyAll(string sourceDirectory, string targetDirectory)

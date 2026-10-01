@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using System.Drawing;
+using Image = SkiaSharp.SKBitmap;
 
 namespace ShareX.Tools
 {

@@ -36,8 +36,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue("Text watermark")]
         public string Text { get; set; }
 
-        [DefaultValue(ImageAlignment.BottomRight)]
-        public ImageAlignment Placement { get; set; }
+        [DefaultValue(ImageContentAlignment.BottomRight)]
+        public ImageContentAlignment Placement { get; set; }
 
         [DefaultValue(typeof(Point), "5, 5")]
         public Point Offset { get; set; }
@@ -45,12 +45,26 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false), Description("If text watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
-        // Workaround for "System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt."
-        [DefaultValue(typeof(FontInfo), "Arial, 11.25pt")]
-        public FontInfo TextFont { get; set; }
+        private FontSafe textFontSafe = new FontSafe();
 
-        [DefaultValue(TextRenderingMode.SystemDefault)]
-        public TextRenderingMode TextRenderingMode { get; set; }
+        [DefaultValue(typeof(ImageFont), "Arial, 11.25pt")]
+        public ImageFont TextFont
+        {
+            get
+            {
+                return textFontSafe.GetImageFont();
+            }
+            set
+            {
+                using (value)
+                {
+                    textFontSafe.SetImageFont(value);
+                }
+            }
+        }
+
+        [DefaultValue(ImageTextRenderingMode.SystemDefault)]
+        public ImageTextRenderingMode TextRenderingMode { get; set; }
 
         [DefaultValue(typeof(Color), "235, 235, 235")]
         public Color TextColor { get; set; }
@@ -79,8 +93,8 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(typeof(Insets), "5, 5, 5, 5")]
-        public Insets Padding { get; set; }
+        [DefaultValue(typeof(ImageMargins), "5, 5, 5, 5")]
+        public ImageMargins Padding { get; set; }
 
         [DefaultValue(true)]
         public bool DrawBorder { get; set; }
@@ -120,60 +134,38 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            if (string.IsNullOrEmpty(Text) || TextFont == null || TextFont.SizeInPoints < 1)
-            {
-                return bmp;
-            }
-
-            NameParser parser = new NameParser(NameParserType.Text)
-            {
-                ImageWidth = bmp.Width,
-                ImageHeight = bmp.Height
-            };
-
-            string parsedText = parser.Parse(Text);
-            Size textSize = SkiaImageHelpers.MeasureText(parsedText, TextFont);
-            Size watermarkSize = new Size(Padding.Left + textSize.Width + Padding.Right, Padding.Top + textSize.Height + Padding.Bottom);
-            Point watermarkPosition = SkiaImageHelpers.GetPosition(Placement, Offset, new Size(bmp.Width, bmp.Height), watermarkSize);
-            Rectangle watermarkRectangle = new Rectangle(watermarkPosition, watermarkSize);
-
-            if (AutoHide && !new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(watermarkRectangle))
-            {
-                return bmp;
-            }
-
-            using SKCanvas canvas = new SKCanvas(bmp);
-            SKRect box = new SKRect(watermarkRectangle.Left, watermarkRectangle.Top, watermarkRectangle.Right - 1, watermarkRectangle.Bottom - 1);
-
+            using ImageFont font = TextFont;
+            if (string.IsNullOrEmpty(Text) || font == null || font.Size < 1) return bmp;
+            NameParser parser = new(NameParserType.Text) { ImageWidth = bmp.Width, ImageHeight = bmp.Height };
+            string text = parser.Parse(Text);
+            Size textSize = SkiaDrawing.MeasureText(text, font);
+            Size size = new(Padding.Horizontal + textSize.Width, Padding.Vertical + textSize.Height);
+            Point position = Helpers.GetPosition(Placement, Offset, bmp.GetSize(), size);
+            Rectangle rectangle = new(position, size);
+            if (AutoHide && !new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(rectangle)) return bmp;
+            using SKCanvas canvas = new(bmp);
+            using SKPath path = new();
+            path.AddRoundedRectangleProper(rectangle, CornerRadius);
             if (DrawBackground)
             {
-                using SKShader shader = UseGradient && Gradient != null && Gradient.IsValid
-                    ? Gradient.CreateShader(new SKRect(watermarkRectangle.Left, watermarkRectangle.Top, watermarkRectangle.Right, watermarkRectangle.Bottom))
-                    : null;
-                using SKPaint background = new SKPaint { IsAntialias = true, Color = BackgroundColor.ToSKColor(), Shader = shader };
-                canvas.DrawRoundRect(box, CornerRadius, CornerRadius, background);
+                using SKPaint background = UseGradient && Gradient != null && Gradient.IsValid
+                    ? Gradient.GetSkiaPaint(rectangle) : SkiaDrawing.Fill(BackgroundColor);
+                canvas.DrawPath(path, background);
             }
-
             if (DrawBorder)
             {
-                int borderSize = BorderSize.Max(1);
-                using SKPaint border = new SKPaint { IsAntialias = true, IsStroke = true, StrokeWidth = borderSize, Color = BorderColor.ToSKColor() };
-                float offset = borderSize % 2 == 0 ? 0 : 0.5f;
-                canvas.DrawRoundRect(new SKRect(box.Left + offset, box.Top + offset, box.Right + offset, box.Bottom + offset), CornerRadius, CornerRadius, border);
+                using SKPaint border = SkiaDrawing.Stroke(BorderColor, Math.Max(1, BorderSize));
+                canvas.DrawPath(path, border);
             }
-
-            bool antialias = TextRenderingMode is not (TextRenderingMode.SingleBitPerPixel or TextRenderingMode.SingleBitPerPixelGridFit);
-            float textX = watermarkRectangle.X + Padding.Left;
-            float textY = watermarkRectangle.Y + Padding.Top;
-
+            PointF textPosition = new(position.X + Padding.Left, position.Y + Padding.Top);
             if (DrawTextShadow)
             {
-                using SKPaint shadow = new SKPaint { IsAntialias = antialias, Color = TextShadowColor.ToSKColor() };
-                SkiaImageHelpers.DrawText(canvas, parsedText, TextFont, shadow, textX + TextShadowOffset.X, textY + TextShadowOffset.Y);
+                using SKPaint shadow = SkiaDrawing.Fill(TextShadowColor);
+                canvas.DrawText(text, new PointF(textPosition.X + TextShadowOffset.X, textPosition.Y + TextShadowOffset.Y), font, shadow, TextRenderingMode);
             }
-
-            using SKPaint text = new SKPaint { IsAntialias = antialias, Color = TextColor.ToSKColor() };
-            SkiaImageHelpers.DrawText(canvas, parsedText, TextFont, text, textX, textY);
+            using SKPaint paint = SkiaDrawing.Fill(TextColor);
+            paint.IsAntialias = TextRenderingMode is not ImageTextRenderingMode.SingleBitPerPixel and not ImageTextRenderingMode.SingleBitPerPixelGridFit;
+            canvas.DrawText(text, textPosition, font, paint, TextRenderingMode);
             return bmp;
         }
 

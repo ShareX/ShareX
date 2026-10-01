@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -24,8 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.Drawing;
-using System.Drawing.Imaging;
 
 namespace ShareX.Tools;
 
@@ -37,17 +37,16 @@ public static class AnimatedGifMakerService
     {
         ValidateImageFiles(imageFiles);
 
-        using Bitmap firstImage = LoadImage(imageFiles[0]);
-        Size canvasSize = GetPreviewSize(firstImage.Size);
+        using SKBitmap firstImage = LoadImage(imageFiles[0]);
+        Size canvasSize = GetPreviewSize(firstImage.GetSize());
         List<byte[]> frames = new(imageFiles.Count);
 
         foreach (string imageFile in imageFiles)
         {
-            using Bitmap source = LoadImage(imageFile);
-            using Bitmap frame = ImageResizerService.Resize(source, canvasSize.Width, canvasSize.Height,
-                ImageResizeMode.Fit);
+            using SKBitmap source = LoadImage(imageFile);
+            using SKBitmap frame = ImageResizerService.Resize(source, canvasSize.Width, canvasSize.Height, ImageResizeMode.Fit);
             using MemoryStream stream = new();
-            frame.Save(stream, ImageFormat.Png);
+            frame.Save(stream, SKEncodedImageFormat.Png);
             frames.Add(stream.ToArray());
         }
 
@@ -75,15 +74,15 @@ public static class AnimatedGifMakerService
 
         try
         {
-            using Bitmap firstImage = LoadImage(imageFiles[0]);
-            Size canvasSize = firstImage.Size;
+            using SKBitmap firstImage = LoadImage(imageFiles[0]);
+            Size canvasSize = firstImage.GetSize();
             using (AnimatedGifCreator creator = new(temporaryFilePath, delay, repeatCount, loop))
             {
                 AddFrame(creator, firstImage, canvasSize);
 
                 foreach (string imageFile in imageFiles.Skip(1))
                 {
-                    using Bitmap source = LoadImage(imageFile);
+                    using SKBitmap source = LoadImage(imageFile);
                     AddFrame(creator, source, canvasSize);
                 }
             }
@@ -99,17 +98,16 @@ public static class AnimatedGifMakerService
         }
     }
 
-    private static void AddFrame(AnimatedGifCreator creator, Bitmap source, Size canvasSize)
+    private static void AddFrame(AnimatedGifCreator creator, SKBitmap source, Size canvasSize)
     {
-        using Bitmap frame = ImageResizerService.Resize(source, canvasSize.Width, canvasSize.Height,
-            ImageResizeMode.Fit);
-        using Bitmap quantizedFrame = GifFrameQuantizer.Quantize(frame);
+        using SKBitmap frame = ImageResizerService.Resize(source, canvasSize.Width, canvasSize.Height, ImageResizeMode.Fit);
+        IndexedImage quantizedFrame = GifFrameQuantizer.Quantize(frame);
         creator.AddFrame(quantizedFrame);
     }
 
-    private static Bitmap LoadImage(string imageFile)
+    private static SKBitmap LoadImage(string imageFile)
     {
-        Bitmap? image = ImageHelpers.LoadImage(imageFile);
+        SKBitmap? image = SkiaImageHelpers.LoadImage(imageFile);
         return image ?? throw new InvalidDataException($"Unable to load image: {Path.GetFileName(imageFile)}");
     }
 

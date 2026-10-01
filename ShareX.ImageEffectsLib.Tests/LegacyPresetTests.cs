@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -61,28 +61,28 @@ namespace ShareX.ImageEffectsLib.Tests
             Assert.Equal(5, preset.Effects.Count);
 
             Canvas canvas = Assert.IsType<Canvas>(preset.Effects[0]);
-            Assert.Equal(new Insets(1, 2, 3, 4), canvas.Margin);
+            Assert.Equal(new ImageMargins(1, 2, 3, 4), canvas.Margin);
             Assert.Equal(Color.Red.ToArgb(), canvas.Color.ToArgb());
 
             TornEdge torn = Assert.IsType<TornEdge>(preset.Effects[1]);
-            Assert.Equal(AnchorSides.Top | AnchorSides.Bottom, torn.Sides);
+            Assert.Equal(ImageSides.Top | ImageSides.Bottom, torn.Sides);
 
             DrawBorder border = Assert.IsType<DrawBorder>(preset.Effects[2]);
-            Assert.Equal(LineDashStyle.Dash, border.DashStyle);
-            Assert.Equal(GradientDirection.ForwardDiagonal, border.Gradient.Type);
+            Assert.Equal(ImageDashStyle.Dash, border.DashStyle);
+            Assert.Equal(ImageGradientMode.ForwardDiagonal, border.Gradient.Type);
             Assert.Equal(2, border.Gradient.Colors.Count);
 
             DrawText text = Assert.IsType<DrawText>(preset.Effects[3]);
-            Assert.Equal(ImageAlignment.BottomRight, text.Placement);
-            Assert.Equal("Arial", text.TextFont.Family);
+            Assert.Equal(ImageContentAlignment.BottomRight, text.Placement);
+            Assert.Equal("Arial", text.TextFont.Name);
             Assert.Equal(11.25f, text.TextFont.SizeInPoints);
-            Assert.True(text.TextFont.Bold);
-            Assert.Equal(TextRenderingMode.AntiAlias, text.TextRenderingMode);
-            Assert.Equal(new Insets(5, 6, 7, 8), text.Padding);
+            Assert.True(text.TextFont.Style.HasFlag(ImageFontStyle.Bold));
+            Assert.Equal(ImageTextRenderingMode.AntiAlias, text.TextRenderingMode);
+            Assert.Equal(new ImageMargins(5, 6, 7, 8), text.Padding);
             Assert.Equal(new Point(5, 5), text.Offset);
 
             DrawImage image = Assert.IsType<DrawImage>(preset.Effects[4]);
-            Assert.Equal(ImageAlignment.MiddleCenter, image.Placement);
+            Assert.Equal(ImageContentAlignment.MiddleCenter, image.Placement);
             Assert.Equal(ImageCompositingMode.SourceCopy, image.CompositingMode);
             Assert.False(image.Enabled);
         }
@@ -99,21 +99,21 @@ namespace ShareX.ImageEffectsLib.Tests
             Assert.Contains("\"Placement\": \"BottomRight\"", json);
 
             ImageEffectPreset again = JsonHelpers.DeserializeFromString<ImageEffectPreset>(json, new ImageEffectsSerializationBinder());
-            Assert.Equal(new Insets(1, 2, 3, 4), ((Canvas)again.Effects[0]).Margin);
+            Assert.Equal(new ImageMargins(1, 2, 3, 4), ((Canvas)again.Effects[0]).Margin);
         }
 
         [Theory]
         [InlineData("Arial, 36pt", "Arial", 36f, false, false)]
         [InlineData("Segoe UI, 9.75pt, style=Bold, Italic", "Segoe UI", 9.75f, true, true)]
         [InlineData("Consolas, 16px", "Consolas", 12f, false, false)]
-        public void FontInfo_ReadsGdiFontConverterStrings(string text, string family, float points, bool bold, bool italic)
+        public void ImageFont_ReadsGdiFontConverterStrings(string text, string family, float points, bool bold, bool italic)
         {
-            FontInfo font = FontInfo.Parse(text);
+            ImageFont font = (ImageFont)new ImageFontConverter().ConvertFrom(null, System.Globalization.CultureInfo.InvariantCulture, text);
 
-            Assert.Equal(family, font.Family);
+            Assert.Equal(family, font.Name);
             Assert.Equal(points, font.SizeInPoints, 3);
-            Assert.Equal(bold, font.Bold);
-            Assert.Equal(italic, font.Italic);
+            Assert.Equal(bold, font.Style.HasFlag(ImageFontStyle.Bold));
+            Assert.Equal(italic, font.Style.HasFlag(ImageFontStyle.Italic));
         }
     }
 
@@ -173,7 +173,7 @@ namespace ShareX.ImageEffectsLib.Tests
         [Fact]
         public void Canvas_AddsTheMargin()
         {
-            using SKBitmap result = new Canvas { Margin = new Insets(1, 2, 3, 4), Color = Color.Red }.Apply(Sample());
+            using SKBitmap result = new Canvas { Margin = new ImageMargins(1, 2, 3, 4), Color = Color.Red }.Apply(Sample());
 
             Assert.Equal(64 + 4, result.Width);
             Assert.Equal(48 + 6, result.Height);
@@ -184,7 +184,7 @@ namespace ShareX.ImageEffectsLib.Tests
         [Fact]
         public void Crop_RemovesTheMargin()
         {
-            using SKBitmap result = new Crop { Margin = new Insets(10, 10, 0, 0) }.Apply(Sample());
+            using SKBitmap result = new Crop { Margin = new ImageMargins(10, 10, 0, 0) }.Apply(Sample());
 
             Assert.Equal(54, result.Width);
             Assert.Equal(38, result.Height);

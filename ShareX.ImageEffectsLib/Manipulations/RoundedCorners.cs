@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -55,10 +54,7 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
-            {
-                return SkiaImageHelpers.RoundedCorners(bmp, CornerRadius);
-            }
+            return SkiaImageHelpers.RoundedCorners(bmp, CornerRadius);
         }
 
         protected override string GetSummary()

@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.Platform;
 using System;
-using System.Windows.Forms;
 
 #if MicrosoftStore
 using Windows.ApplicationModel;
@@ -48,7 +47,7 @@ namespace ShareX
 #if STEAM
                 return FileHelpers.GetAbsolutePath("../ShareX_Launcher.exe");
 #else
-                return Application.ExecutablePath;
+                return Environment.ProcessPath;
 #endif
             }
         }

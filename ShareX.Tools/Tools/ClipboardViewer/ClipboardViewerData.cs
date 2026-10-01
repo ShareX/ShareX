@@ -24,9 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Windows.Forms;
+using Bitmap = SkiaSharp.SKBitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX.Tools;
 
@@ -59,11 +58,11 @@ public sealed class ClipboardViewerPreview
 
 public sealed class ClipboardViewerData
 {
-    private readonly IDataObject? _dataObject;
+    private readonly ClipboardData? _dataObject;
 
     public IReadOnlyList<string> Formats { get; }
 
-    private ClipboardViewerData(IDataObject? dataObject)
+    private ClipboardViewerData(ClipboardData? dataObject)
     {
         _dataObject = dataObject;
         Formats = dataObject?.GetFormats() ?? [];
@@ -71,7 +70,7 @@ public sealed class ClipboardViewerData
 
     public static ClipboardViewerData Capture()
     {
-        return new ClipboardViewerData(Clipboard.GetDataObject());
+        return new ClipboardViewerData(ClipboardHelpers.CaptureData());
     }
 
     public ClipboardViewerPreview GetPreview(string format)
@@ -82,18 +81,16 @@ public sealed class ClipboardViewerData
             return ClipboardViewerPreview.FromText(string.Empty);
         }
 
-        if (data is MemoryStream memoryStream)
+        if (data is byte[] bytes)
         {
-            byte[] bytes = memoryStream.ToArray();
-
-            if (format.Equals(ClipboardHelpers.FORMAT_PNG, StringComparison.OrdinalIgnoreCase))
+            if ((format.Equals(ClipboardHelpers.FORMAT_PNG, StringComparison.OrdinalIgnoreCase) || format.Equals("image/png", StringComparison.OrdinalIgnoreCase) || format.Equals(ClipboardDataFormats.Bitmap, StringComparison.OrdinalIgnoreCase)))
             {
                 using MemoryStream imageStream = new(bytes, writable: false);
-                using Bitmap source = new(imageStream);
+                using Bitmap source = SkiaImageHelpers.Decode(imageStream);
                 return ClipboardViewerPreview.FromImage(source);
             }
 
-            if (format.Equals(DataFormats.Dib, StringComparison.OrdinalIgnoreCase))
+            if (format.Equals(ClipboardDataFormats.Dib, StringComparison.OrdinalIgnoreCase))
             {
                 using Bitmap image = ClipboardHelpers.ConvertClipboardDibToBitmap(bytes);
                 return ClipboardViewerPreview.FromImage(image);
@@ -102,7 +99,7 @@ public sealed class ClipboardViewerData
             if (format.Equals(ClipboardHelpers.FORMAT_17, StringComparison.OrdinalIgnoreCase))
             {
                 using Bitmap source = ClipboardHelpers.ConvertClipboardDibV5ToBitmap(bytes);
-                using Bitmap image = new(source);
+                using Bitmap image = source.Copy();
                 return ClipboardViewerPreview.FromImage(image);
             }
         }
@@ -112,6 +109,6 @@ public sealed class ClipboardViewerData
             return ClipboardViewerPreview.FromImage(bitmap);
         }
 
-        return ClipboardViewerPreview.FromText(data.ToString());
+        return ClipboardViewerPreview.FromText(data is string[] files ? string.Join(Environment.NewLine, files) : data is byte[] raw ? Convert.ToHexString(raw) : data.ToString());
     }
 }

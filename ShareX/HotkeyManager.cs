@@ -25,9 +25,9 @@
 
 using ShareX.HelpersLib;
 using ShareX.Localization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
@@ -45,16 +45,16 @@ namespace ShareX
         public HotkeyTriggerEventHandler HotkeyTrigger;
         public HotkeysToggledEventHandler HotkeysToggledTrigger;
 
-        private HotkeyForm hotkeyForm;
+        private IHotkeyHost hotkeyForm;
 
-        public HotkeyManager(HotkeyForm form)
+        public HotkeyManager(IHotkeyHost form)
         {
             hotkeyForm = form;
             hotkeyForm.HotkeyPress += HotkeyForm_HotkeyPress;
-            hotkeyForm.FormClosed += HotkeyForm_FormClosed;
+            hotkeyForm.Closed += HotkeyForm_FormClosed;
         }
 
-        private void HotkeyForm_HotkeyPress(ushort id, Keys key, Modifiers modifier)
+        private void HotkeyForm_HotkeyPress(ushort id, InputKey key, Modifiers modifier)
         {
             if (!IgnoreHotkeys && (!ApplicationState.Settings.DisableHotkeysOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
             {
@@ -67,7 +67,7 @@ namespace ShareX
             }
         }
 
-        private void HotkeyForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void HotkeyForm_FormClosed(object sender, EventArgs e)
         {
             if (hotkeyForm != null && !hotkeyForm.IsDisposed)
             {
@@ -224,11 +224,11 @@ namespace ShareX
         {
             return new List<HotkeySettings>
             {
-                new HotkeySettings(HotkeyType.RectangleRegion, Keys.Control | Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.PrintScreen, Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.ActiveWindow, Keys.Alt | Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.ScreenRecorder, Keys.Shift | Keys.PrintScreen),
-                new HotkeySettings(HotkeyType.ScreenRecorderGIF, Keys.Control | Keys.Shift | Keys.PrintScreen)
+                new HotkeySettings(HotkeyType.RectangleRegion, InputKey.Control | InputKey.PrintScreen),
+                new HotkeySettings(HotkeyType.PrintScreen, InputKey.PrintScreen),
+                new HotkeySettings(HotkeyType.ActiveWindow, InputKey.Alt | InputKey.PrintScreen),
+                new HotkeySettings(HotkeyType.ScreenRecorder, InputKey.Shift | InputKey.PrintScreen),
+                new HotkeySettings(HotkeyType.ScreenRecorderGIF, InputKey.Control | InputKey.Shift | InputKey.PrintScreen)
             };
         }
     }

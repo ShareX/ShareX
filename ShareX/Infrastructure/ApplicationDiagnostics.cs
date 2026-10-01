@@ -34,7 +34,6 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.Loader;
 using System.Threading;
-using System.Windows.Forms;
 
 namespace ShareX;
 
@@ -54,8 +53,7 @@ internal static class ApplicationDiagnostics
 #endif
 
         _exceptionHandlersEnabled = true;
-        Application.ThreadException += OnWinFormsThreadException;
-        Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+        HotkeyForm.ConfigureExceptionHandling(ShowError);
         AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
     }
 
@@ -97,8 +95,6 @@ internal static class ApplicationDiagnostics
         string path = Path.Combine(AppContext.BaseDirectory, "Languages", assemblyName.CultureName, assemblyName.Name + ".dll");
         return File.Exists(path) ? context.LoadFromAssemblyPath(path) : null;
     }
-
-    private static void OnWinFormsThreadException(object sender, ThreadExceptionEventArgs e) => ShowError(e.Exception);
 
     private static void OnAvaloniaDispatcherException(object? sender, DispatcherUnhandledExceptionEventArgs e)
     {

@@ -33,13 +33,14 @@ using Avalonia.Platform;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.HelpersLib;
 using ShareX.Localization;
 using System;
 using System.IO;
 using System.Linq;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
-using DrawingBitmap = System.Drawing.Bitmap;
-using DrawingContentAlignment = System.Drawing.ContentAlignment;
+using DrawingBitmap = SkiaSharp.SKBitmap;
+using DrawingContentAlignment = ShareX.HelpersLib.ImageContentAlignment;
 
 namespace ShareX;
 
@@ -208,8 +209,8 @@ public partial class DragDropUploadWindow : Window
         using MemoryStream stream = new();
         bitmap.Save(stream, PngBitmapEncoderOptions.Default);
         stream.Position = 0;
-        using DrawingBitmap decoded = new(stream);
-        return new DrawingBitmap(decoded);
+        using DrawingBitmap decoded = SkiaImageHelpers.Decode(stream);
+        return decoded.Copy();
     }
 
     private void SetHovered(bool hovered)

@@ -39,8 +39,6 @@ using ShareX.Localization;
 using System;
 using System.Linq;
 using DrawingPoint = System.Drawing.Point;
-using FormsDataFormats = System.Windows.Forms.DataFormats;
-using FormsDataObject = System.Windows.Forms.DataObject;
 
 namespace ShareX;
 
@@ -345,25 +343,7 @@ public partial class ActionsToolbarWindow : Window
     {
         DropOverlay.IsVisible = false;
 
-        FormsDataObject dataObject = new();
-        string[] files = e.DataTransfer.TryGetFiles()?
-            .Select(file => file.TryGetLocalPath())
-            .Where(path => !string.IsNullOrEmpty(path))
-            .Cast<string>()
-            .ToArray() ?? [];
-
-        if (files.Length > 0)
-        {
-            dataObject.SetData(FormsDataFormats.FileDrop, files);
-        }
-
-        string? text = e.DataTransfer.TryGetText();
-        if (!string.IsNullOrEmpty(text))
-        {
-            dataObject.SetText(text);
-        }
-
-        UploadManager.DragDropUpload(dataObject);
+        UploadManager.DragDropUpload(e.DataTransfer);
         e.DragEffects = DragDropEffects.Copy;
         e.Handled = true;
     }

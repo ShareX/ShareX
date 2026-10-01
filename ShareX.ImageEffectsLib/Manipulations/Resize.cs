@@ -67,10 +67,7 @@ namespace ShareX.ImageEffectsLib
                 return bmp;
             }
 
-            using (bmp)
-            {
-                return SkiaImageHelpers.Resize(bmp, size.Width, size.Height);
-            }
+            return SkiaImageHelpers.ResizeImage(bmp, size);
         }
 
         protected override string GetSummary()

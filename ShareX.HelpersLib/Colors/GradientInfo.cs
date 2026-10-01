@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -36,8 +36,8 @@ namespace ShareX.HelpersLib
     /// <summary>A linear gradient. Drawn with SkiaSharp; the WinForms application gets a GDI+ brush from ShareX.HelpersLib.Windows.</summary>
     public class GradientInfo
     {
-        [DefaultValue(GradientDirection.Vertical)]
-        public GradientDirection Type { get; set; }
+        [DefaultValue(ImageGradientMode.Vertical)]
+        public ImageGradientMode Type { get; set; }
 
         public List<GradientStop> Colors { get; set; }
 
@@ -50,34 +50,34 @@ namespace ShareX.HelpersLib
         [JsonIgnore]
         public bool IsTransparent => IsValid && Colors.Any(x => x.Color.IsTransparent());
 
-        public GradientInfo() : this(GradientDirection.Vertical)
+        public GradientInfo() : this(ImageGradientMode.Vertical)
         {
         }
 
-        public GradientInfo(GradientDirection type)
+        public GradientInfo(ImageGradientMode type)
         {
             Type = type;
             Colors = new List<GradientStop>();
         }
 
-        public GradientInfo(GradientDirection type, params GradientStop[] colors) : this(type)
+        public GradientInfo(ImageGradientMode type, params GradientStop[] colors) : this(type)
         {
             Colors = colors.ToList();
         }
 
-        public GradientInfo(GradientDirection type, params Color[] colors) : this(type)
+        public GradientInfo(ImageGradientMode type, params Color[] colors) : this(type)
         {
             for (int i = 0; i < colors.Length; i++)
             {
-                Colors.Add(new GradientStop(colors[i], (int)Math.Round(100f / (colors.Length - 1) * i)));
+                Colors.Add(new GradientStop(colors[i], colors.Length == 1 ? 0 : (int)Math.Round(100f / (colors.Length - 1) * i)));
             }
         }
 
-        public GradientInfo(params GradientStop[] colors) : this(GradientDirection.Vertical, colors)
+        public GradientInfo(params GradientStop[] colors) : this(ImageGradientMode.Vertical, colors)
         {
         }
 
-        public GradientInfo(params Color[] colors) : this(GradientDirection.Vertical, colors)
+        public GradientInfo(params Color[] colors) : this(ImageGradientMode.Vertical, colors)
         {
         }
 
@@ -101,51 +101,35 @@ namespace ShareX.HelpersLib
             }
         }
 
-        /// <summary>Stops sorted by position, with the first and last colours extended to 0 and 100 like GDI+ requires.</summary>
-        public List<GradientStop> GetNormalizedStops()
+        public SKPaint GetGradientBrush(Rectangle rectangle) => this.GetSkiaPaint(rectangle);
+
+        public void Draw(SKCanvas canvas, Rectangle rectangle)
         {
-            List<GradientStop> colors = new List<GradientStop>(Colors.OrderBy(x => x.Location));
-
-            if (!colors.Any(x => x.Location == 0))
-            {
-                colors.Insert(0, new GradientStop(colors[0].Color, 0f));
-            }
-
-            if (!colors.Any(x => x.Location == 100))
-            {
-                colors.Add(new GradientStop(colors[colors.Count - 1].Color, 100f));
-            }
-
-            return colors;
+            if (!IsValid) return;
+            using SKPaint paint = this.GetSkiaPaint(rectangle);
+            canvas.DrawRect(rectangle.ToSKRect(), paint);
         }
 
-        /// <summary>The gradient as a SkiaSharp shader over the rectangle.</summary>
-        public SKShader CreateShader(SKRect rect)
-        {
-            List<GradientStop> stops = GetNormalizedStops();
-            (SKPoint start, SKPoint end) = Type switch
-            {
-                GradientDirection.Horizontal => (new SKPoint(rect.Left, rect.Top), new SKPoint(rect.Right, rect.Top)),
-                GradientDirection.ForwardDiagonal => (new SKPoint(rect.Left, rect.Top), new SKPoint(rect.Right, rect.Bottom)),
-                GradientDirection.BackwardDiagonal => (new SKPoint(rect.Right, rect.Top), new SKPoint(rect.Left, rect.Bottom)),
-                _ => (new SKPoint(rect.Left, rect.Top), new SKPoint(rect.Left, rect.Bottom))
-            };
+        public void Draw(SKBitmap image) => this.DrawSkia(image);
 
-            return SKShader.CreateLinearGradient(start, end, stops.Select(x => new SKColor(x.Color.R, x.Color.G, x.Color.B, x.Color.A)).ToArray(),
-                stops.Select(x => x.Location / 100f).ToArray(), SKShaderTileMode.Clamp);
-        }
-
-        public void Draw(SKCanvas canvas, SKRect rect)
+        public SKBitmap CreateGradientPreview(int width, int height, bool border = false, bool checkers = false)
         {
-            if (IsValid)
+            SKBitmap bitmap = SkiaImageHelpers.CreateBitmap(width, height);
+            Rectangle rectangle = new(0, 0, width, height);
+            using SKCanvas canvas = new(bitmap);
+            if (checkers && IsTransparent)
             {
-                using SKShader shader = CreateShader(new SKRect(0, 0, rect.Width, rect.Height));
-                using SKPaint paint = new SKPaint { Shader = shader };
-                canvas.Save();
-                canvas.Translate(rect.Left, rect.Top);
-                canvas.DrawRect(0, 0, rect.Width, rect.Height, paint);
-                canvas.Restore();
+                using SKBitmap pattern = SkiaImageHelpers.CreateCheckerPattern();
+                using SKPaint paint = SkiaDrawing.Texture(pattern);
+                canvas.DrawRect(rectangle.ToSKRect(), paint);
             }
+            Draw(canvas, rectangle);
+            if (border)
+            {
+                using SKPaint paint = SkiaDrawing.Stroke(Color.Black);
+                canvas.DrawRectangleProper(paint, rectangle);
+            }
+            return bitmap;
         }
 
         public override string ToString()

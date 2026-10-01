@@ -31,6 +31,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX.ScreenCaptureLib
 {

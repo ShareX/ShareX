@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -143,32 +143,6 @@ namespace ShareX.HelpersLib
                 {
                     tb.Text = detectSpecialFolders ? FileHelpers.GetVariableFolderPath(selectedPath) : selectedPath;
                     return true;
-                }
-
-                return false;
-            }
-
-            public static bool OpenFolderWithFile(string filePath)
-            {
-                if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
-                {
-                    try
-                    {
-                        NativeMethods.OpenFolderAndSelectFile(filePath);
-
-                        DebugHelper.WriteLine("Folder opened with file: " + filePath);
-
-                        return true;
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e, $"OpenFolderWithFile({filePath}) failed.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(Localization.Strings.Helpers_OpenFile_File_not_exist_ + Environment.NewLine + filePath, "ShareX",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 return false;

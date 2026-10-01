@@ -47,7 +47,7 @@ namespace ShareX.ImageEffectsLib
         {
             using (bmp)
             {
-                return SkiaImageHelpers.ApplyColorMatrix(bmp, SkiaImageHelpers.ColorizeMatrix(Color, Value));
+                return SkiaColorMatrixManager.Colorize(Color, Value).Apply(bmp);
             }
         }
 

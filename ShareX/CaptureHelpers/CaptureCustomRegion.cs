@@ -33,7 +33,7 @@ namespace ShareX
         {
             Rectangle rect = taskSettings.CaptureSettings.CaptureCustomRegion;
             TaskMetadata metadata = CreateMetadata(rect);
-            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect).ToGdiBitmapAndDispose();
+            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
             return metadata;
         }
     }

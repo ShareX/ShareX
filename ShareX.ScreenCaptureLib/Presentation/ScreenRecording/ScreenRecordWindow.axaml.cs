@@ -30,6 +30,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Platform;
@@ -64,6 +65,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private readonly NativeMenuItem _trayRestartItem;
     private readonly NativeMenuItem _trayAbortItem;
     private readonly TrayIcon _trayIcon;
+    private readonly IDisposable _trayIconRegistration;
 
     private volatile ScreenRecordingStatus _status;
     private volatile bool _disposed;
@@ -211,6 +213,8 @@ public partial class ScreenRecordWindow : Window, IDisposable
             IsVisible = false
         };
         _trayIcon.Clicked += OnTrayIconClicked;
+        // A tray icon created at run time only appears once the application knows about it (#8875).
+        _trayIconRegistration = DesktopServices.RegisterTrayIcon(_trayIcon);
 
         StartButton.Click += (_, _) => StartStopRecording();
         PauseButton.Click += (_, _) => PauseResumeRecording();
@@ -433,7 +437,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         _refreshTimer.Stop();
         _trayIcon.IsVisible = false;
         _trayIcon.Clicked -= OnTrayIconClicked;
-        _trayIcon.Dispose();
+        _trayIconRegistration.Dispose();
         DisposeTrayMenuIcons();
         RecordResetEvent.Dispose();
         GC.SuppressFinalize(this);

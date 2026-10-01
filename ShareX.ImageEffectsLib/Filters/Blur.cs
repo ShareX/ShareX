@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -59,10 +58,8 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
-            {
-                return SkiaImageHelpers.BoxBlur(bmp, Radius);
-            }
+            SkiaImageHelpers.BoxBlur(bmp, Radius);
+            return bmp;
         }
 
         protected override string GetSummary()

@@ -36,6 +36,9 @@ public interface ISystemPreferencesService
     /// contrasting colour. Null where the platform does not say; callers then follow ShareX's own theme.
     /// </summary>
     bool? SystemUsesLightTheme { get; }
+
+    /// <summary>The size of small icons such as tray icons, in pixels. Windows scales it with the display; elsewhere it is 16.</summary>
+    int SmallIconSize { get; }
 }
 
 /// <summary>The defaults used on platforms that do not expose these preferences.</summary>
@@ -45,5 +48,9 @@ public sealed class DefaultSystemPreferencesService : ISystemPreferencesService
 
     public int WheelScrollLines => DefaultWheelScrollLines;
 
+    public const int DefaultSmallIconSize = 16;
+
     public bool? SystemUsesLightTheme => null;
+
+    public int SmallIconSize => DefaultSmallIconSize;
 }

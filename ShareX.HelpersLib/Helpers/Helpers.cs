@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -25,6 +25,7 @@
 
 using Newtonsoft.Json.Linq;
 using ShareX.Platform;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -256,11 +257,6 @@ namespace ShareX.HelpersLib
             return sb.ToString();
         }
 
-        /// <summary>
-        /// If version1 newer than version2 = 1
-        /// If version1 equal to version2 = 0
-        /// If version1 older than version2 = -1
-        /// </summary>
         /// <summary>The version of the running application, read from the entry assembly so it works without WinForms.</summary>
         public static string GetApplicationVersion(bool includeRevision = false)
         {
@@ -339,6 +335,11 @@ namespace ShareX.HelpersLib
             window.Closed += (sender, e) => windows.ReleaseCursorConfinement();
         }
 
+        /// <summary>
+        /// If version1 newer than version2 = 1
+        /// If version1 equal to version2 = 0
+        /// If version1 older than version2 = -1
+        /// </summary>
         public static int CompareVersion(string version1, string version2, bool ignoreRevision = false)
         {
             return NormalizeVersion(version1, ignoreRevision).CompareTo(NormalizeVersion(version2, ignoreRevision));
@@ -464,6 +465,54 @@ namespace ShareX.HelpersLib
         public static string GetUniqueID()
         {
             return Guid.NewGuid().ToString("N");
+        }
+
+        public static Point GetPosition(ImageContentAlignment placement, int offset, Size backgroundSize, Size objectSize)
+        {
+            return GetPosition(placement, new Point(offset, offset), backgroundSize, objectSize);
+        }
+
+        public static Point GetPosition(ImageContentAlignment placement, int offset, Rectangle background, Size objectSize)
+        {
+            return GetPosition(placement, new Point(offset, offset), background, objectSize);
+        }
+
+        public static Point GetPosition(ImageContentAlignment placement, Point offset, Rectangle background, Size objectSize)
+        {
+            Point position = GetPosition(placement, offset, background.Size, objectSize);
+
+            return new Point(background.X + position.X, background.Y + position.Y);
+        }
+
+        public static Point GetPosition(ImageContentAlignment placement, Point offset, Size backgroundSize, Size objectSize)
+        {
+            int midX = (int)Math.Round((backgroundSize.Width / 2f) - (objectSize.Width / 2f));
+            int midY = (int)Math.Round((backgroundSize.Height / 2f) - (objectSize.Height / 2f));
+            int right = backgroundSize.Width - objectSize.Width;
+            int bottom = backgroundSize.Height - objectSize.Height;
+
+            switch (placement)
+            {
+                default:
+                case ImageContentAlignment.TopLeft:
+                    return new Point(offset.X, offset.Y);
+                case ImageContentAlignment.TopCenter:
+                    return new Point(midX, offset.Y);
+                case ImageContentAlignment.TopRight:
+                    return new Point(right - offset.X, offset.Y);
+                case ImageContentAlignment.MiddleLeft:
+                    return new Point(offset.X, midY);
+                case ImageContentAlignment.MiddleCenter:
+                    return new Point(midX, midY);
+                case ImageContentAlignment.MiddleRight:
+                    return new Point(right - offset.X, midY);
+                case ImageContentAlignment.BottomLeft:
+                    return new Point(offset.X, bottom - offset.Y);
+                case ImageContentAlignment.BottomCenter:
+                    return new Point(midX, bottom - offset.Y);
+                case ImageContentAlignment.BottomRight:
+                    return new Point(right - offset.X, bottom - offset.Y);
+            }
         }
 
         public static string SendPing(string host)
@@ -742,6 +791,36 @@ namespace ShareX.HelpersLib
                 StreamReader sReader = new StreamReader(ms);
                 return sReader.ReadToEnd();
             }
+        }
+
+        public static byte[] GetProgressIconBytes(int percentage, Color color)
+        {
+            percentage = percentage.Clamp(0, 100);
+            int iconSize = PlatformServices.IsInitialized ? PlatformServices.Current.Preferences.SmallIconSize : DefaultSystemPreferencesService.DefaultSmallIconSize;
+            Size size = new Size(iconSize, iconSize);
+            using SKBitmap bitmap = SkiaImageHelpers.CreateBitmap(size.Width, size.Height);
+            using SKCanvas canvas = new(bitmap);
+            canvas.Clear(new SKColor(39, 39, 39));
+            int height = (int)(size.Height * (percentage / 100f));
+            using SKPaint fill = SkiaDrawing.Fill(color);
+            canvas.DrawRect(0, size.Height - height, size.Width, height, fill);
+            if (height > 0 && height < size.Height)
+            {
+                using SKPaint line = SkiaDrawing.Stroke(ColorHelpers.LighterColor(color, 0.3f));
+                canvas.DrawLine(0, size.Height - height, size.Width - 1, size.Height - height, line);
+            }
+            using ImageFont settings = new("Arial", 10);
+            using SKFont font = settings.CreateFont();
+            using SKPaint text = new() { Color = SKColors.White, IsAntialias = true };
+            string label = Math.Min(percentage, 99).ToString();
+            font.MeasureText(label, out SKRect bounds);
+            canvas.DrawText(label, (size.Width - bounds.Width) / 2 - bounds.Left,
+                (size.Height - bounds.Height) / 2 - bounds.Top, font, text);
+            bitmap.SetPixel(0, 0, SKColors.Transparent);
+            bitmap.SetPixel(size.Width - 1, 0, SKColors.Transparent);
+            bitmap.SetPixel(0, size.Height - 1, SKColors.Transparent);
+            bitmap.SetPixel(size.Width - 1, size.Height - 1, SKColors.Transparent);
+            return bitmap.GetIconBytes();
         }
 
         public static string GetChecksum(string filePath)

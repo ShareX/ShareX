@@ -24,12 +24,12 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Drawing;
-using System.Drawing.Imaging;
 using Windows.Globalization;
 using Windows.Graphics.Imaging;
 using Windows.Media.Ocr;
 using Windows.Storage.Streams;
+using Bitmap = SkiaSharp.SKBitmap;
+using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX.Tools;
 
@@ -67,7 +67,7 @@ public static class OCRHelper
 
         return await Task.Run(async () =>
         {
-            using Bitmap scaledBitmap = ImageHelpers.ScaleImageFast(bitmap, scaleFactor);
+            using Bitmap scaledBitmap = SkiaImageHelpers.ScaleImageFast(bitmap, scaleFactor);
             return await OCRInternal(scaledBitmap, languageTag, singleLine);
         });
     }
@@ -82,7 +82,8 @@ public static class OCRHelper
 
         OcrEngine engine = OcrEngine.TryCreateFromLanguage(language);
         using InMemoryRandomAccessStream stream = new();
-        bitmap.Save(stream.AsStream(), ImageFormat.Bmp);
+        bitmap.Save(stream.AsStream(), ImageFormat.Png);
+        stream.Seek(0);
         BitmapDecoder decoder = await BitmapDecoder.CreateAsync(stream);
         using SoftwareBitmap softwareBitmap = await decoder.GetSoftwareBitmapAsync();
         OcrResult result = await engine.RecognizeAsync(softwareBitmap);

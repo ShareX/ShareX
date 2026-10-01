@@ -215,14 +215,6 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        public static bool GetWindowRegion(IntPtr hWnd, out Region region)
-        {
-            IntPtr hRgn = CreateRectRgn(0, 0, 0, 0);
-            RegionType regionType = (RegionType)GetWindowRgn(hWnd, hRgn);
-            region = Region.FromHrgn(hRgn);
-            return regionType != RegionType.ERROR && regionType != RegionType.NULLREGION;
-        }
-
         public static bool IsDWMEnabled()
         {
             return Helpers.IsWindowsVistaOrGreater() && DwmIsCompositionEnabled();
@@ -554,7 +546,7 @@ namespace ShareX.HelpersLib
             return icon;
         }
 
-        public static Bitmap GetFileThumbnail(string filePath, Size thumbnailSize)
+        public static SkiaSharp.SKBitmap GetFileThumbnail(string filePath, Size thumbnailSize)
         {
             Guid guid = typeof(IShellItemImageFactory).GUID;
             IShellItemImageFactory imageFactory = null;
@@ -565,7 +557,7 @@ namespace ShareX.HelpersLib
                 SHCreateItemFromParsingName(filePath, IntPtr.Zero, guid, out imageFactory);
                 SIZE size = new SIZE(thumbnailSize.Width, thumbnailSize.Height);
                 imageFactory.GetImage(size, SIIGBF.SIIGBF_RESIZETOFIT, out hbitmap);
-                return hbitmap != IntPtr.Zero ? Image.FromHbitmap(hbitmap) : null;
+                return hbitmap != IntPtr.Zero ? WindowsImageInterop.FromHBitmap(hbitmap) : null;
             }
             finally
             {
@@ -585,17 +577,17 @@ namespace ShareX.HelpersLib
         {
             float scalingFactor;
 
-            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+            IntPtr desktop = GetDC(IntPtr.Zero);
+            try
             {
-                IntPtr desktop = g.GetHdc();
                 int LogicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.VERTRES);
                 int PhysicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.DESKTOPVERTRES);
                 int logpixelsy = GetDeviceCaps(desktop, (int)DeviceCap.LOGPIXELSY);
                 float screenScalingFactor = (float)PhysicalScreenHeight / LogicalScreenHeight;
                 float dpiScalingFactor = logpixelsy / 96f;
                 scalingFactor = Math.Max(screenScalingFactor, dpiScalingFactor);
-                g.ReleaseHdc(desktop);
             }
+            finally { ReleaseDC(IntPtr.Zero, desktop); }
 
             return scalingFactor;
         }

@@ -28,6 +28,7 @@ using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
 
+
 namespace ShareX.ImageEffectsLib
 {
     [Description("Particles")]
@@ -101,20 +102,25 @@ namespace ShareX.ImageEffectsLib
         {
             if (Background)
             {
-                SKBitmap result = SkiaImageHelpers.CreateEmpty(bmp);
+                SKBitmap result = bmp.CreateEmptyBitmap();
+
                 DrawParticlesFromFolder(result, ImageFolder);
 
-                using (SKCanvas canvas = new SKCanvas(result))
+                using (SKCanvas g = new SKCanvas(result))
                 {
-                    canvas.DrawBitmap(bmp, 0, 0);
+                    g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
                 }
 
                 bmp.Dispose();
+
                 return result;
             }
+            else
+            {
+                DrawParticlesFromFolder(bmp, ImageFolder);
 
-            DrawParticlesFromFolder(bmp, ImageFolder);
-            return bmp;
+                return bmp;
+            }
         }
 
         private void DrawParticlesFromFolder(SKBitmap bmp, string imageFolder)
@@ -126,40 +132,27 @@ namespace ShareX.ImageEffectsLib
                 if (files.Length > 0)
                 {
                     imageRectangles.Clear();
-                    Dictionary<string, SKBitmap> cache = new Dictionary<string, SKBitmap>();
 
-                    try
+                    using (SKCanvas g = new SKCanvas(bmp))
+                    using (ImageFilesCache imageCache = new ImageFilesCache())
                     {
-                        using SKCanvas canvas = new SKCanvas(bmp);
 
                         for (int i = 0; i < ImageCount; i++)
                         {
                             string file = RandomFast.Pick(files);
+                            SKBitmap bmpCached = imageCache.GetImage(file);
 
-                            if (!cache.TryGetValue(file, out SKBitmap particle))
+                            if (bmpCached != null)
                             {
-                                particle = SkiaImageHelpers.LoadImage(file);
-                                cache[file] = particle;
+                                DrawImage(bmp, bmpCached, g);
                             }
-
-                            if (particle != null)
-                            {
-                                DrawImage(bmp, particle, canvas);
-                            }
-                        }
-                    }
-                    finally
-                    {
-                        foreach (SKBitmap particle in cache.Values)
-                        {
-                            particle?.Dispose();
                         }
                     }
                 }
             }
         }
 
-        private void DrawImage(SKBitmap img, SKBitmap img2, SKCanvas canvas)
+        private void DrawImage(SKBitmap img, SKBitmap img2, SKCanvas g)
         {
             int width, height;
 
@@ -209,36 +202,46 @@ namespace ShareX.ImageEffectsLib
                 int x = RandomFast.Next(Math.Min(minOffsetX, maxOffsetX), Math.Max(minOffsetX, maxOffsetX));
                 int y = RandomFast.Next(Math.Min(minOffsetY, maxOffsetY), Math.Max(minOffsetY, maxOffsetY));
                 rect = new Rectangle(x, y, width, height);
+
                 overlapRect = rect.Offset(NoOverlapOffset);
             } while (NoOverlap && imageRectangles.Any(x => x.IntersectsWith(overlapRect)));
 
             imageRectangles.Add(rect);
-            canvas.Save();
 
             if (RandomAngle)
             {
                 float moveX = rect.X + (rect.Width / 2f);
                 float moveY = rect.Y + (rect.Height / 2f);
                 int rotate = RandomFast.Next(Math.Min(RandomAngleMin, RandomAngleMax), Math.Max(RandomAngleMin, RandomAngleMax));
-                canvas.RotateDegrees(rotate, moveX, moveY);
+
+                g.Translate(moveX, moveY);
+                g.RotateDegrees(rotate);
+                g.Translate(-moveX, -moveY);
             }
 
-            using (SKPaint paint = new SKPaint())
-            using (SKImage image = SKImage.FromBitmap(img2))
+            if (RandomOpacity)
             {
-                if (RandomOpacity)
-                {
-                    float opacity = RandomFast.Next(Math.Min(RandomOpacityMin, RandomOpacityMax), Math.Max(RandomOpacityMin, RandomOpacityMax)).Clamp(0, 100) / 100f;
-                    paint.Color = SKColors.White.WithAlpha((byte)Math.Round(opacity * 255));
-                }
+                float opacity = RandomFast.Next(Math.Min(RandomOpacityMin, RandomOpacityMax), Math.Max(RandomOpacityMin, RandomOpacityMax)).Clamp(0, 100) / 100f;
 
-                canvas.DrawImage(image, new SKRect(rect.Left, rect.Top, rect.Right, rect.Bottom), new SKSamplingOptions(SKCubicResampler.Mitchell), paint);
+                ImageColorMatrix matrix = new ImageColorMatrix();
+                matrix.Matrix33 = opacity;
+                using (SKPaint attributes = new SKPaint())
+                {
+                    attributes.ColorFilter = matrix.CreateFilter();
+                    g.DrawImage(img2, rect, 0, 0, img2.Width, img2.Height, attributes);
+                }
+            }
+            else
+            {
+                g.DrawImage(img2, rect);
             }
 
-            canvas.Restore();
+            if (RandomAngle)
+            {
+                g.ResetMatrix();
+            }
+
         }
-
-
 
         protected override string GetSummary()
         {

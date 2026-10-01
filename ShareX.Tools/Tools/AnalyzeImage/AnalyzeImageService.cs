@@ -24,9 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Drawing;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX.Tools;
 
@@ -46,7 +46,7 @@ public sealed class AnalyzeImageService
             return string.Empty;
         }
 
-        using Bitmap image = ImageHelpers.ByteArrayToBitmap(imageData);
+        using Bitmap image = SkiaImageHelpers.ByteArrayToBitmap(imageData);
         return await provider.AnalyzeImage(image, options.Input, options.OpenAIReasoningEffort, options.OpenAIVerbosity);
     }
 

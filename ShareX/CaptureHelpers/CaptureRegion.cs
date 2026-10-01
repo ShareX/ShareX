@@ -29,6 +29,7 @@ using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 using SkiaSharp;
 using System.Drawing;
 using System.Threading.Tasks;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX
 {
@@ -67,7 +68,7 @@ namespace ShareX
                 if (cursorData.IsVisible)
                 {
                     using Bitmap cursor = cursorData.ToBitmap();
-                    cursorBitmap = GdiSkiaBitmapConverter.ToSKBitmap(cursor);
+                    cursorBitmap = cursor.Copy();
                     cursorPosition = new Point(
                         cursorData.DrawPosition.X - screenBounds.X,
                         cursorData.DrawPosition.Y - screenBounds.Y);
@@ -93,7 +94,7 @@ namespace ShareX
 
             using (result.Image)
             {
-                Bitmap output = GdiSkiaBitmapConverter.ToGdiBitmap(result.Image);
+                Bitmap output = result.Image.Copy();
                 TaskMetadata metadata = new TaskMetadata(output);
 
                 if (result.ImageModified)

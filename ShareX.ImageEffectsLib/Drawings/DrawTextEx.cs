@@ -36,8 +36,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue("Text")]
         public string Text { get; set; }
 
-        [DefaultValue(ImageAlignment.TopLeft)]
-        public ImageAlignment Placement { get; set; }
+        [DefaultValue(ImageContentAlignment.TopLeft)]
+        public ImageContentAlignment Placement { get; set; }
 
         [DefaultValue(typeof(Point), "0, 0")]
         public Point Offset { get; set; }
@@ -48,9 +48,23 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false), Description("If text size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
-        // Workaround for "System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt."
-        [DefaultValue(typeof(FontInfo), "Arial, 36pt")]
-        public FontInfo Font { get; set; }
+        private FontSafe fontSafe = new FontSafe();
+
+        [DefaultValue(typeof(ImageFont), "Arial, 36pt")]
+        public ImageFont Font
+        {
+            get
+            {
+                return fontSafe.GetImageFont();
+            }
+            set
+            {
+                using (value)
+                {
+                    fontSafe.SetImageFont(value);
+                }
+            }
+        }
 
         [DefaultValue(typeof(Color), "235, 235, 235")]
         public Color Color { get; set; }
@@ -100,7 +114,7 @@ namespace ShareX.ImageEffectsLib
         private GradientInfo AddDefaultGradient()
         {
             GradientInfo gradientInfo = new GradientInfo();
-            gradientInfo.Type = GradientDirection.Horizontal;
+            gradientInfo.Type = ImageGradientMode.Horizontal;
 
             switch (RandomFast.Next(0, 2))
             {
@@ -123,90 +137,40 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            if (string.IsNullOrEmpty(Text) || Font == null || Font.SizeInPoints < 1)
+            using ImageFont font = Font;
+            if (string.IsNullOrEmpty(Text) || font == null || font.Size < 1) return bmp;
+            NameParser parser = new(NameParserType.Text) { ImageWidth = bmp.Width, ImageHeight = bmp.Height };
+            using SKPath path = SkiaDrawing.TextPath(parser.Parse(Text), font);
+            if (Angle != 0) path.Transform(SKMatrix.CreateRotationDegrees(Angle));
+            SKRect bounds = path.Bounds;
+            if (bounds.IsEmpty) return bmp;
+            Size size = new((int)Math.Ceiling(bounds.Width) + 1, (int)Math.Ceiling(bounds.Height) + 1);
+            Point position = Helpers.GetPosition(Placement, Offset, bmp.GetSize(), size);
+            Rectangle rectangle = new(position, size);
+            if (AutoHide && !new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(rectangle)) return bmp;
+            path.Transform(SKMatrix.CreateTranslation(position.X - bounds.Left, position.Y - bounds.Top));
+            using SKCanvas canvas = new(bmp);
+            if (Shadow && (ShadowUseGradient ? ShadowGradient.IsVisible : ShadowColor.A > 0))
             {
-                return bmp;
+                using SKPath shadowPath = new(path);
+                shadowPath.Transform(SKMatrix.CreateTranslation(ShadowOffset.X, ShadowOffset.Y));
+                using SKPaint shadow = ShadowUseGradient
+                    ? ShadowGradient.GetSkiaPaint(rectangle.Offset(Outline ? OutlineSize + 1 : 1).LocationOffset(ShadowOffset))
+                    : SkiaDrawing.Fill(ShadowColor);
+                if (Outline && OutlineSize > 0) { shadow.Style = SKPaintStyle.Stroke; shadow.StrokeWidth = OutlineSize; shadow.StrokeJoin = SKStrokeJoin.Round; }
+                canvas.DrawPath(shadowPath, shadow);
             }
-
-            NameParser parser = new NameParser(NameParserType.Text)
-            {
-                ImageWidth = bmp.Width,
-                ImageHeight = bmp.Height
-            };
-
-            string parsedText = parser.Parse(Text);
-
-            using SKPath path = SkiaImageHelpers.GetTextPath(parsedText, Font);
-
-            if (Angle != 0)
-            {
-                path.Transform(SKMatrix.CreateRotationDegrees(Angle));
-            }
-
-            SKRect pathRect = path.Bounds;
-
-            if (pathRect.IsEmpty)
-            {
-                return bmp;
-            }
-
-            Size textSize = new Size((int)pathRect.Width + 1, (int)pathRect.Height + 1);
-            Point textPosition = SkiaImageHelpers.GetPosition(Placement, Offset, new Size(bmp.Width, bmp.Height), textSize);
-            Rectangle textRectangle = new Rectangle(textPosition, textSize);
-
-            if (AutoHide && !new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(textRectangle))
-            {
-                return bmp;
-            }
-
-            path.Transform(SKMatrix.CreateTranslation(textRectangle.X - pathRect.Left, textRectangle.Y - pathRect.Top));
-
-            using SKCanvas canvas = new SKCanvas(bmp);
-
-            SKRect Grow(Rectangle rect, int amount, Point offset = default) =>
-                new SKRect(rect.Left - amount + offset.X, rect.Top - amount + offset.Y, rect.Right + amount + offset.X, rect.Bottom + amount + offset.Y);
-
-            if (Shadow && ((!ShadowUseGradient && ShadowColor.A > 0) || (ShadowUseGradient && ShadowGradient.IsVisible)))
-            {
-                canvas.Save();
-                canvas.Translate(ShadowOffset.X, ShadowOffset.Y);
-                bool outline = Outline && OutlineSize > 0;
-                using SKShader shader = ShadowUseGradient ? ShadowGradient.CreateShader(Grow(textRectangle, outline ? OutlineSize + 1 : 1)) : null;
-                using SKPaint paint = new SKPaint { IsAntialias = true, Color = ShadowColor.ToSKColor(), Shader = shader };
-
-                if (outline)
-                {
-                    paint.IsStroke = true;
-                    paint.StrokeWidth = OutlineSize;
-                    paint.StrokeJoin = SKStrokeJoin.Round;
-                }
-
-                canvas.DrawPath(path, paint);
-                canvas.Restore();
-            }
-
             if (Outline && OutlineSize > 0 && (OutlineUseGradient ? OutlineGradient.IsVisible : OutlineColor.A > 0))
             {
-                using SKShader shader = OutlineUseGradient ? OutlineGradient.CreateShader(Grow(textRectangle, OutlineSize + 1)) : null;
-                using SKPaint paint = new SKPaint
-                {
-                    IsAntialias = true,
-                    IsStroke = true,
-                    StrokeWidth = OutlineSize,
-                    StrokeJoin = SKStrokeJoin.Round,
-                    Color = OutlineColor.ToSKColor(),
-                    Shader = shader
-                };
-                canvas.DrawPath(path, paint);
+                using SKPaint outline = OutlineUseGradient ? OutlineGradient.GetSkiaPaint(rectangle.Offset(OutlineSize + 1)) : SkiaDrawing.Fill(OutlineColor);
+                outline.Style = SKPaintStyle.Stroke; outline.StrokeWidth = OutlineSize; outline.StrokeJoin = SKStrokeJoin.Round;
+                canvas.DrawPath(path, outline);
             }
-
             if (UseGradient ? Gradient.IsVisible : Color.A > 0)
             {
-                using SKShader shader = UseGradient ? Gradient.CreateShader(Grow(textRectangle, 1)) : null;
-                using SKPaint paint = new SKPaint { IsAntialias = true, Color = Color.ToSKColor(), Shader = shader };
+                using SKPaint paint = UseGradient ? Gradient.GetSkiaPaint(rectangle.Offset(1)) : SkiaDrawing.Fill(Color);
                 canvas.DrawPath(path, paint);
             }
-
             return bmp;
         }
 

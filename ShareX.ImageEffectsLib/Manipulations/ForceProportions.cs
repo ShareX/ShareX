@@ -79,7 +79,9 @@ namespace ShareX.ImageEffectsLib
         {
             float currentRatio = bmp.Width / (float)bmp.Height;
             float targetRatio = proportionalWidth / (float)proportionalHeight;
+
             bool isTargetWider = targetRatio > currentRatio;
+
             int targetWidth = bmp.Width;
             int targetHeight = bmp.Height;
             int marginLeft = 0;
@@ -98,18 +100,9 @@ namespace ShareX.ImageEffectsLib
                     marginLeft = (bmp.Width - targetWidth) / 2;
                 }
 
-                SKBitmap result = SkiaImageHelpers.Crop(bmp, new Rectangle(marginLeft, marginTop, targetWidth, targetHeight));
-
-                if (result == null)
-                {
-                    return bmp;
-                }
-
-                bmp.Dispose();
-                return result;
+                return SkiaImageHelpers.CropBitmap(bmp, new Rectangle(marginLeft, marginTop, targetWidth, targetHeight));
             }
-
-            if (Method == ForceProportionsMethod.Grow)
+            else if (Method == ForceProportionsMethod.Grow)
             {
                 if (isTargetWider)
                 {
@@ -120,10 +113,7 @@ namespace ShareX.ImageEffectsLib
                     targetHeight = (int)Math.Round(bmp.Width / targetRatio);
                 }
 
-                using (bmp)
-                {
-                    return SkiaImageHelpers.ResizeToFit(bmp, targetWidth, targetHeight, false, true, GrowFillColor);
-                }
+                return SkiaImageHelpers.ResizeImage(bmp, targetWidth, targetHeight, false, true, GrowFillColor);
             }
 
             return bmp;

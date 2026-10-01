@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -27,9 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;

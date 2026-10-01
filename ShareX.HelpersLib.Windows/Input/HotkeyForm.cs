@@ -23,16 +23,45 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class HotkeyForm : Form
+    public class HotkeyForm : Form, IHotkeyHost
     {
-        public delegate void HotkeyEventHandler(ushort id, Keys key, Modifiers modifier);
-
         public event HotkeyEventHandler HotkeyPress;
+        public new event EventHandler Closed;
+        public event EventHandler<NativeWindowMessageEventArgs> NativeMessageReceived;
+
+        // Keep all WinForms initialization and message types inside the Windows host.
+        public static IHotkeyHost CreateHost()
+        {
+            WindowsFormsSynchronizationContext.AutoInstall = false;
+            return new HotkeyForm();
+        }
+
+        public static void ConfigureExceptionHandling(Action<Exception> reportException)
+        {
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+            Application.ThreadException += (_, e) => reportException(e.Exception);
+        }
+
+        public void Initialize() => Show();
+
+        protected override void SetVisibleCore(bool value)
+        {
+            if (value && !IsHandleCreated) CreateHandle();
+            base.SetVisibleCore(false);
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            // Unregister hotkeys before the handle is destroyed.
+            Closed?.Invoke(this, EventArgs.Empty);
+            base.OnFormClosed(e);
+        }
 
         public int HotkeyRepeatLimit { get; set; }
 
@@ -40,6 +69,7 @@ namespace ShareX.HelpersLib
 
         public HotkeyForm()
         {
+            ShowInTaskbar = false;
             HotkeyRepeatLimit = 1000;
             repeatLimitTimer = Stopwatch.StartNew();
         }
@@ -108,16 +138,19 @@ namespace ShareX.HelpersLib
             if (m.Msg == (int)WindowsMessages.HOTKEY && CheckRepeatLimitTime())
             {
                 ushort id = (ushort)m.WParam;
-                Keys key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);
+                InputKey key = (InputKey)(((int)m.LParam >> 16) & 0xFFFF);
                 Modifiers modifier = (Modifiers)((int)m.LParam & 0xFFFF);
                 OnKeyPressed(id, key, modifier);
                 return;
             }
 
-            base.WndProc(ref m);
+            NativeWindowMessageEventArgs message = new(m.Msg, m.WParam, m.LParam);
+            NativeMessageReceived?.Invoke(this, message);
+            if (message.Handled) m.Result = message.Result;
+            else base.WndProc(ref m);
         }
 
-        protected void OnKeyPressed(ushort id, Keys key, Modifiers modifier)
+        protected void OnKeyPressed(ushort id, InputKey key, Modifiers modifier)
         {
             HotkeyPress?.Invoke(id, key, modifier);
         }

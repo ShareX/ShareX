@@ -38,7 +38,7 @@ namespace ShareX.ImageEditor.App
 {
     public partial class App : Application
     {
-        private static readonly string[] ImageExtensions = [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff", ".tif", ".webp", ".ico"];
+        private static readonly string[] ImageExtensions = [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp", ".ico"];
 
         public override void Initialize()
         {

@@ -83,8 +83,6 @@ internal static class Program
 
     private static void Run(string[] args)
     {
-        ApplicationConfiguration.Initialize();
-
         DebugHelper.WriteLine("ShareX starting.");
         DebugHelper.WriteLine("Version: " + ApplicationInfo.VersionText);
         DebugHelper.WriteLine("Build: " + ApplicationInfo.Build);

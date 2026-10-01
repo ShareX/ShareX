@@ -52,10 +52,8 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
-            {
-                return SkiaImageHelpers.ReplaceColor(bmp, SourceColor, TargetColor, AutoSourceColor, Threshold);
-            }
+            SkiaImageHelpers.ReplaceColor(bmp, SourceColor, TargetColor, AutoSourceColor, Threshold);
+            return bmp;
         }
     }
 }

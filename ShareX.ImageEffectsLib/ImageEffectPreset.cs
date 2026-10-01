@@ -37,10 +37,9 @@ namespace ShareX.ImageEffectsLib
         [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
         public List<ImageEffect> Effects { get; set; } = new List<ImageEffect>();
 
-        /// <summary>Applies the enabled effects to a copy of the image. The input is left unchanged.</summary>
         public SKBitmap ApplyEffects(SKBitmap bmp)
         {
-            SKBitmap result = SkiaImageHelpers.Clone(bmp);
+            SKBitmap result = (SKBitmap)bmp.Copy();
 
             if (Effects != null && Effects.Count > 0)
             {
@@ -73,7 +72,7 @@ namespace ShareX.ImageEffectsLib
             ImageEffectPreset preset = new ImageEffectPreset();
 
             Canvas canvas = new Canvas();
-            canvas.Margin = new Insets(0, 0, 0, 30);
+            canvas.Margin = new ImageMargins(0, 0, 0, 30);
             preset.Effects.Add(canvas);
 
             DrawText text = new DrawText();

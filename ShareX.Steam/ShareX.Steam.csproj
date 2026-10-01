@@ -7,7 +7,6 @@
     <Configurations>Release;Debug;Steam</Configurations>
     <AssemblyName>ShareX_Launcher</AssemblyName>
     <ApplicationIcon>ShareX_Icon.ico</ApplicationIcon>
-    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Management" />

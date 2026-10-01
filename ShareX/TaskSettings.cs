@@ -319,7 +319,7 @@ namespace ShareX
         public bool ShowToastNotificationAfterTaskCompleted = true;
         public float ToastWindowDuration = 3f;
         public float ToastWindowFadeDuration = 1f;
-        public ContentAlignment ToastWindowPlacement = ContentAlignment.BottomRight;
+        public ImageContentAlignment ToastWindowPlacement = ImageContentAlignment.BottomRight;
         public Size ToastWindowSize = new Size(400, 300);
         public ToastClickAction ToastWindowLeftClickAction = ToastClickAction.OpenUrl;
         public ToastClickAction ToastWindowRightClickAction = ToastClickAction.CloseNotification;
@@ -502,12 +502,10 @@ namespace ShareX
         [Category("Capture"), DefaultValue(false), Description("Disable annotation support in region capture.")]
         public bool RegionCaptureDisableAnnotation { get; set; }
 
-        [Category("Upload"), Description("Files with these file extensions will be uploaded using image uploader."),
-        Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
+        [Category("Upload"), Description("Files with these file extensions will be uploaded using image uploader.")]
         public List<string> ImageExtensions { get; set; }
 
-        [Category("Upload"), Description("Files with these file extensions will be uploaded using text uploader."),
-        Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
+        [Category("Upload"), Description("Files with these file extensions will be uploaded using text uploader.")]
         public List<string> TextExtensions { get; set; }
 
         [Category("Upload"), DefaultValue(false), Description("Copy URL before start upload. Only works for FTP, FTPS, SFTP, Amazon S3, Google Cloud Storage and Azure Storage.")]

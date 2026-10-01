@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.VisualBasic.FileIO;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -39,7 +40,7 @@ namespace ShareX.HelpersLib
 {
     public static class FileHelpers
     {
-        public static readonly string[] ImageFileExtensions = new string[] { "jpg", "jpeg", "png", "gif", "bmp", "ico", "tif", "tiff" };
+        public static readonly string[] ImageFileExtensions = new string[] { "jpg", "jpeg", "png", "gif", "bmp", "ico" };
         public static readonly string[] TextFileExtensions = new string[] { "txt", "log", "nfo", "c", "cpp", "cc", "cxx", "h", "hpp", "hxx", "cs", "vb",
             "html", "htm", "xhtml", "xht", "xml", "css", "js", "php", "bat", "java", "lua", "py", "pl", "cfg", "ini", "dart", "go", "gohtml" };
         public static readonly string[] VideoFileExtensions = new string[] { "mp4", "webm", "mkv", "avi", "vob", "ogv", "ogg", "mov", "qt", "wmv", "m4p",
@@ -355,6 +356,43 @@ namespace ShareX.HelpersLib
             }
 
             return filePath;
+        }
+
+        /// <summary>Opens the file manager with the file selected (Explorer on Windows, the freedesktop FileManager1 interface on Linux, Finder on macOS).</summary>
+        public static bool OpenFolderWithFile(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            {
+                try
+                {
+                    if (PlatformServices.Current.Shell.RevealInFileManager(filePath))
+                    {
+                        DebugHelper.WriteLine("Folder opened with file: " + filePath);
+                        return true;
+                    }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e, $"OpenFolderWithFile({filePath}) failed.");
+                }
+            }
+            else
+            {
+                ShareX.AvaloniaUI.MessageBox.Show(Localization.Strings.Helpers_OpenFile_File_not_exist_ + Environment.NewLine + filePath, "ShareX",
+                    ShareX.AvaloniaUI.MessageBoxButtons.OK, ShareX.AvaloniaUI.MessageBoxIcon.Information);
+            }
+
+            return false;
+        }
+
+        public static string BrowseFile(Avalonia.Controls.Window window = null, string title = null)
+        {
+            return FileDialogHelpers.OpenFiles(title, owner: window).FirstOrDefault();
+        }
+
+        public static string BrowseFolder(string title = null, string initialDirectory = null)
+        {
+            return FileDialogHelpers.OpenFolder(title, initialDirectory);
         }
 
         public static string GetVariableFolderPath(string path, bool supportCustomSpecialFolders = false)

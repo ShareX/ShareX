@@ -23,11 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Tools.Localization;
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
-using ShareX.Tools.Localization;
 
 namespace ShareX.Tools;
 

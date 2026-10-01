@@ -123,13 +123,7 @@ public static class MainWindowIntegration
         if (_trayIconService != null) _trayIconService.Visible = visible;
     });
 
-    public static void SetTrayIcon(System.Drawing.Icon icon)
-    {
-        using MemoryStream stream = new();
-        icon.Save(stream);
-        byte[] iconBytes = stream.ToArray();
-        RunOnUiThread(() => _trayIconService?.SetIcon(iconBytes));
-    }
+    public static void SetTrayIcon(byte[] iconBytes) => RunOnUiThread(() => _trayIconService?.SetIcon(iconBytes));
 
     public static void ShowTrayMenu() => RunOnUiThread(() => _window?.ShowTrayMenu());
 

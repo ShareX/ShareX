@@ -25,8 +25,8 @@
 
 using Newtonsoft.Json;
 using ShareX.ImageEffectsLib.Localization;
-using System.ComponentModel;
 using SkiaSharp;
+using System.ComponentModel;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -44,7 +44,6 @@ namespace ShareX.ImageEffectsLib
             Enabled = true;
         }
 
-        /// <summary>Applies the effect. Returns the input, changed in place, or a new bitmap after disposing the input.</summary>
         public abstract SKBitmap Apply(SKBitmap bmp);
 
         protected virtual string GetSummary()

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
@@ -10,6 +10,7 @@
     <PackageReference Include="FluentFTP" />
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="SSH.NET" />
+    <PackageReference Include="SkiaSharp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />

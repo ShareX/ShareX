@@ -28,6 +28,7 @@
 using SkiaSharp;
 using System;
 using System.Threading.Tasks;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX.ScreenCaptureLib;
 

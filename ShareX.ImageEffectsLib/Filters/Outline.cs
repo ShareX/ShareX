@@ -75,10 +75,7 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
-            {
-                return SkiaImageHelpers.Outline(bmp, Size, Color, Padding, OutlineOnly);
-            }
+            return SkiaImageHelpers.Outline(bmp, Size, Color, Padding, OutlineOnly);
         }
 
         protected override string GetSummary()

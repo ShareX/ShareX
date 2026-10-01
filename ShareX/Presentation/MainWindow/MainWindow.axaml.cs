@@ -48,13 +48,10 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
-using DrawingBitmap = System.Drawing.Bitmap;
+using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingPoint = System.Drawing.Point;
 using DrawingSize = System.Drawing.Size;
-using FormsCursor = System.Windows.Forms.Cursor;
-using FormsDataFormats = System.Windows.Forms.DataFormats;
-using FormsDataObject = System.Windows.Forms.DataObject;
-using FormsOrientation = System.Windows.Forms.Orientation;
+using ImageOrientation = ShareX.HelpersLib.ImageOrientation;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
@@ -218,7 +215,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         CloseActiveContextMenu();
 
-        System.Drawing.Point cursorPosition = FormsCursor.Position;
+        System.Drawing.Point cursorPosition = CaptureHelpers.GetCursorPosition();
         PixelPoint anchorPosition = new(cursorPosition.X, cursorPosition.Y);
         Window anchor = CreateTrayMenuAnchor(anchorPosition);
         _trayMenuAnchor = anchor;
@@ -1098,8 +1095,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         try
         {
             // WorkerTask owns and disposes the ImageReady bitmap as soon as the event returns.
-            // Give the asynchronous Avalonia decoder its own image to avoid sharing GDI+ state.
-            imageCopy = (DrawingBitmap)image.Clone();
+            // Give the asynchronous Avalonia decoder its own image to avoid sharing mutable bitmap pixels.
+            imageCopy = (DrawingBitmap)image.Copy();
         }
         catch (Exception e)
         {
@@ -1298,7 +1295,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
 
         Point position = e.GetPosition(control);
-        DrawingSize dragSize = System.Windows.Forms.SystemInformation.DragSize;
+        Size dragSize = Application.Current?.PlatformSettings?.GetTapSize(PointerType.Mouse) ?? new Size(4, 4);
         if (Math.Abs(position.X - _thumbnailDragStart.X) < dragSize.Width / 2d &&
             Math.Abs(position.Y - _thumbnailDragStart.Y) < dragSize.Height / 2d)
         {
@@ -1651,8 +1648,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private IReadOnlyList<MainMenuEntry> BuildCombineImagesMenu() => new List<MainMenuEntry>
     {
-            Item(Strings.MainWindow_Horizontally, LucideIcons.rows_2, () => _uploadInfoManager.CombineImages(FormsOrientation.Horizontal)),
-            Item(Strings.MainWindow_Vertically, LucideIcons.columns_2, () => _uploadInfoManager.CombineImages(FormsOrientation.Vertical))
+            Item(Strings.MainWindow_Horizontally, LucideIcons.rows_2, () => _uploadInfoManager.CombineImages(ImageOrientation.Horizontal)),
+            Item(Strings.MainWindow_Vertically, LucideIcons.columns_2, () => _uploadInfoManager.CombineImages(ImageOrientation.Vertical))
     };
 
     private void RemoveSelectedTasks()
@@ -1888,24 +1885,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return;
         }
 
-        FormsDataObject dataObject = new();
-        string[] files = e.DataTransfer.TryGetFiles()?
-            .Select(x => x.TryGetLocalPath())
-            .Where(x => !string.IsNullOrEmpty(x))
-            .Cast<string>().ToArray() ?? Array.Empty<string>();
-
-        if (files.Length > 0)
-        {
-            dataObject.SetData(FormsDataFormats.FileDrop, files);
-        }
-
-        string? text = e.DataTransfer.TryGetText();
-        if (!string.IsNullOrEmpty(text))
-        {
-            dataObject.SetText(text);
-        }
-
-        UploadManager.DragDropUpload(dataObject);
+        UploadManager.DragDropUpload(e.DataTransfer);
         e.Handled = true;
     }
 
@@ -1944,7 +1924,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (sender is Border { Tag: string orientationName } &&
             CanCombineThumbnails(source, target) &&
-            Enum.TryParse(orientationName, out FormsOrientation orientation))
+            Enum.TryParse(orientationName, out ImageOrientation orientation))
         {
             string sourcePath = source!.Task.Info.FilePath;
             string targetPath = target!.Task.Info.FilePath;
@@ -2152,19 +2132,15 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private static WindowIcon CreateWindowIcon()
     {
-        using System.Drawing.Icon icon = ShareXResources.Icon;
-        using MemoryStream stream = new();
-        icon.Save(stream);
-        stream.Position = 0;
+        using MemoryStream stream = new(ShareXResources.IconBytes, writable: false);
         return new WindowIcon(stream);
     }
 
     private static AvaloniaBitmap CreateTitleBarIcon()
     {
-        using System.Drawing.Icon icon = ShareXResources.Icon;
-        using DrawingBitmap bitmap = icon.ToBitmap();
+        using DrawingBitmap bitmap = SkiaImageHelpers.ByteArrayToBitmap(ShareXResources.IconBytes);
         using MemoryStream stream = new();
-        bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+        bitmap.Save(stream, SkiaSharp.SKEncodedImageFormat.Png);
         stream.Position = 0;
         return new AvaloniaBitmap(stream);
     }

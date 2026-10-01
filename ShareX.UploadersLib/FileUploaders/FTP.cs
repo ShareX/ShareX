@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -26,9 +26,9 @@
 using FluentFTP;
 using FluentFTP.Exceptions;
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.Security;
@@ -273,13 +273,12 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        // System.Drawing images only exist on Windows. Other platforms pass the encoded bytes to UploadAsync.
-        [System.Runtime.Versioning.SupportedOSPlatform("windows")]
-        public void UploadImage(Image image, string remotePath)
+        public void UploadImage(SKBitmap image, string remotePath)
         {
             using (MemoryStream stream = new MemoryStream())
             {
-                image.Save(stream, image.RawFormat);
+                image.Save(stream, SkiaImageHelpers.GetImageFormat(remotePath));
+                stream.Position = 0;
                 UploadData(stream, remotePath);
             }
         }

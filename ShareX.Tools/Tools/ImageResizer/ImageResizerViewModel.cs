@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -26,6 +26,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
@@ -360,13 +361,13 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
                 continue;
             }
 
-            using Bitmap? source = ImageHelpers.LoadImage(filePath);
+            using SKBitmap? source = SkiaImageHelpers.LoadImage(filePath);
             if (source == null)
             {
                 continue;
             }
 
-            using Bitmap output = ImageResizerService.Resize(source, width, height, mode);
+            using SKBitmap output = ImageResizerService.Resize(source, width, height, mode);
             string sourceName = Path.GetFileNameWithoutExtension(filePath);
             string outputPath = Path.Combine(outputFolderPath,
                 outputFileName.Replace("$filename", sourceName, StringComparison.Ordinal));

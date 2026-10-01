@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -79,6 +79,32 @@ namespace ShareX.HelpersLib
             IReadOnlyList<ScreenInfo> screens = GetScreens();
             ScreenInfo? screen = screens.FirstOrDefault(s => s.IsPrimary) ?? screens.FirstOrDefault();
             return screen == null ? Rectangle.Empty : ToRectangle(screen.Bounds);
+        }
+
+        public static Point ScreenToClient(Point p)
+        {
+            Rectangle bounds = GetScreenBounds();
+            int screenX = bounds.X;
+            int screenY = bounds.Y;
+            return new Point(p.X - screenX, p.Y - screenY);
+        }
+
+        public static Rectangle ScreenToClient(Rectangle r)
+        {
+            return new Rectangle(ScreenToClient(r.Location), r.Size);
+        }
+
+        public static Point ClientToScreen(Point p)
+        {
+            Rectangle bounds = GetScreenBounds();
+            int screenX = bounds.X;
+            int screenY = bounds.Y;
+            return new Point(p.X + screenX, p.Y + screenY);
+        }
+
+        public static Rectangle ClientToScreen(Rectangle r)
+        {
+            return new Rectangle(ClientToScreen(r.Location), r.Size);
         }
 
         /// <summary>The pointer position, or Point.Empty where the platform does not reveal it.</summary>

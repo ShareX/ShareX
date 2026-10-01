@@ -24,8 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
-using System.Drawing;
 using System.Threading.Tasks;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX
 {
@@ -46,7 +46,7 @@ namespace ShareX
             if (!RegionCaptureIntegration.LastRegionRectangle.IsEmpty)
             {
                 Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(
-                    RegionCaptureIntegration.LastRegionRectangle).ToGdiBitmapAndDispose();
+                    RegionCaptureIntegration.LastRegionRectangle);
                 return new TaskMetadata(bmp);
             }
 

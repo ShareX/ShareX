@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using SkiaSharp;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -35,7 +34,7 @@ namespace ShareX.ImageEffectsLib
         {
             using (bmp)
             {
-                return SkiaImageHelpers.Convolve(bmp, SkiaImageHelpers.EmbossKernel(), 127);
+                return SkiaConvolutionMatrixManager.Emboss().Apply(bmp);
             }
         }
     }

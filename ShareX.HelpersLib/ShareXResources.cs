@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Properties;
+using SkiaSharp;
 
 namespace ShareX.HelpersLib
 {
@@ -31,6 +33,39 @@ namespace ShareX.HelpersLib
     {
         public static string Name { get; set; } = "ShareX";
 
-        public static string UserAgent => $"{Name}/{Helpers.GetApplicationVersion()}";
+        public static string UserAgent
+        {
+            get
+            {
+                return $"{Name}/{Helpers.GetApplicationVersion()}";
+            }
+        }
+
+        public static bool IsDarkTheme => Theme.IsDarkTheme;
+
+        public static bool UseWhiteIcon { get; set; }
+
+        public static byte[] IconBytes => UseWhiteIcon ? Resources.ShareX_Icon_White : Resources.ShareX_Icon;
+
+        private static SKBitmap logo = SkiaImageHelpers.ByteArrayToBitmap(Resources.ShareX_Logo);
+
+        public static SKBitmap Logo
+        {
+            get
+            {
+                return logo.Copy();
+            }
+            set
+            {
+                if (logo != value)
+                {
+                    logo?.Dispose();
+                    logo = value;
+                }
+            }
+        }
+
+        public static ShareXTheme Theme { get; set; } = ShareXTheme.DarkTheme;
+
     }
 }

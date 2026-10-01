@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -55,7 +54,7 @@ namespace ShareX.ImageEffectsLib
 
             using (bmp)
             {
-                return SkiaImageHelpers.Rotate(bmp, Angle, Upsize, Clip);
+                return SkiaImageHelpers.RotateImage(bmp, Angle, Upsize, Clip);
             }
         }
 

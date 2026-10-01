@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX
 {
@@ -355,29 +356,28 @@ namespace ShareX
         {
             if (ApplicationState.Settings.TrayIconProgressEnabled && ApplicationState.Settings.ShowTray && lastIconStatus != progress)
             {
-                Icon icon;
+                byte[] icon;
 
                 if (progress >= 0)
                 {
                     try
                     {
-                        icon = Helpers.GetProgressIcon(progress);
+                        icon = Helpers.GetProgressIconBytes(progress, Color.FromArgb(16, 116, 193));
                     }
                     catch (Exception e)
                     {
                         DebugHelper.WriteException(e);
                         progress = -1;
                         if (lastIconStatus == progress) return;
-                        icon = ShareXResources.Icon;
+                        icon = ShareXResources.IconBytes;
                     }
                 }
                 else
                 {
-                    icon = ShareXResources.Icon;
+                    icon = ShareXResources.IconBytes;
                 }
 
                 MainWindowIntegration.SetTrayIcon(icon);
-                icon.Dispose();
 
                 lastIconStatus = progress;
             }

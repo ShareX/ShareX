@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -45,15 +44,12 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            if (!Horizontally && !Vertically)
+            if (Horizontally || Vertically)
             {
-                return bmp;
+                bmp.FlipInPlace(Horizontally, Vertically);
             }
 
-            using (bmp)
-            {
-                return SkiaImageHelpers.Flip(bmp, Horizontally, Vertically);
-            }
+            return bmp;
         }
 
         protected override string GetSummary()

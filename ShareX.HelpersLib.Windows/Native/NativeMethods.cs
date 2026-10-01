@@ -139,6 +139,14 @@ namespace ShareX.HelpersLib
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         public static extern short GetKeyState(int keyCode);
 
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool ClipCursor(in RECT rectangle);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool ClipCursor(IntPtr rectangle);
+
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         public static extern IntPtr GetParent(IntPtr hWnd);
 
@@ -343,7 +351,7 @@ namespace ShareX.HelpersLib
         #region gdi32.dll
 
         [DllImport("gdi32.dll")]
-        public static extern bool BitBlt(IntPtr hdc, int nXDest, int nYDest, int nWidth, int nHeight, IntPtr hdcSrc, int nXSrc, int nYSrc, CopyPixelOperation dwRop);
+        public static extern bool BitBlt(IntPtr hdc, int nXDest, int nYDest, int nWidth, int nHeight, IntPtr hdcSrc, int nXSrc, int nYSrc, NativeRasterOperation dwRop);
 
         [DllImport("gdi32.dll")]
         public static extern IntPtr CreateCompatibleBitmap(IntPtr hdc, int nWidth, int nHeight);

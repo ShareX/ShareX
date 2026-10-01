@@ -28,6 +28,7 @@ using CommunityToolkit.Mvvm.Input;
 using ShareX.HelpersLib;
 using System.Collections.ObjectModel;
 using System.Drawing;
+using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX.Tools;
 
@@ -205,18 +206,18 @@ public sealed partial class ImageThumbnailerViewModel : ViewModelBase
                 continue;
             }
 
-            using Bitmap? source = ImageHelpers.LoadImage(filePath);
+            using Bitmap? source = SkiaImageHelpers.LoadImage(filePath);
             if (source == null)
             {
                 continue;
             }
 
-            using Bitmap thumbnail = ImageHelpers.CreateThumbnail(source, (int)Width, (int)Height);
-            using Bitmap output = ImageHelpers.FillBackground(thumbnail, Color.White);
+            using Bitmap thumbnail = SkiaImageHelpers.CreateThumbnail(source, (int)Width, (int)Height);
+            using Bitmap output = SkiaImageHelpers.FillBackground(thumbnail, Color.White);
             string sourceName = Path.GetFileNameWithoutExtension(filePath);
             string outputPath = Path.Combine(OutputFolderPath, OutputFileName.Replace("$filename", sourceName));
             outputPath = Path.ChangeExtension(outputPath, "jpg");
-            ImageHelpers.SaveJPEG(output, outputPath, (int)Quality);
+            SkiaImageHelpers.SaveJPEG(output, outputPath, (int)Quality);
             outputFiles.Add(outputPath);
         }
 

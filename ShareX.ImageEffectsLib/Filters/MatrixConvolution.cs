@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -67,16 +66,20 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            double[,] kernel =
-            {
-                { X0Y0 / Factor, X1Y0 / Factor, X2Y0 / Factor },
-                { X0Y1 / Factor, X1Y1 / Factor, X2Y1 / Factor },
-                { X0Y2 / Factor, X1Y2 / Factor, X2Y2 / Factor }
-            };
-
             using (bmp)
             {
-                return SkiaImageHelpers.Convolve(bmp, kernel, Offset);
+                ConvolutionMatrix cm = new ConvolutionMatrix();
+                cm[0, 0] = X0Y0 / Factor;
+                cm[0, 1] = X1Y0 / Factor;
+                cm[0, 2] = X2Y0 / Factor;
+                cm[1, 0] = X0Y1 / Factor;
+                cm[1, 1] = X1Y1 / Factor;
+                cm[1, 2] = X2Y1 / Factor;
+                cm[2, 0] = X0Y2 / Factor;
+                cm[2, 1] = X1Y2 / Factor;
+                cm[2, 2] = X2Y2 / Factor;
+                cm.Offset = Offset;
+                return cm.Apply(bmp);
             }
         }
     }

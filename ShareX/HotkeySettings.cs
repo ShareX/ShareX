@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Windows.Forms;
 
 namespace ShareX
 {
@@ -39,7 +38,7 @@ namespace ShareX
             HotkeyInfo = new HotkeyInfo();
         }
 
-        public HotkeySettings(HotkeyType job, Keys hotkey = Keys.None) : this()
+        public HotkeySettings(HotkeyType job, InputKey hotkey = InputKey.None) : this()
         {
             TaskSettings = TaskSettings.GetDefaultTaskSettings();
             TaskSettings.Job = job;

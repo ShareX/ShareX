@@ -72,10 +72,8 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
-            {
-                return SkiaImageHelpers.Pixelate(bmp, Size, BorderSize, BorderColor);
-            }
+            SkiaImageHelpers.Pixelate(bmp, Size, BorderSize, BorderColor);
+            return bmp;
         }
 
         protected override string GetSummary()

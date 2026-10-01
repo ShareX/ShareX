@@ -25,7 +25,7 @@
 
 using System;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using DialogResult = ShareX.AvaloniaUI.DialogResult;
 using Timer = System.Threading.Timer;
 
 namespace ShareX.HelpersLib

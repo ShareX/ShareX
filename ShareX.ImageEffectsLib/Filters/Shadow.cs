@@ -81,10 +81,7 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
-            {
-                return SkiaImageHelpers.AddShadow(bmp, Opacity, Size, Darkness + 1, Color, Offset, AutoResize);
-            }
+            return SkiaImageHelpers.AddShadow(bmp, Opacity, Size, Darkness + 1, Color, Offset, AutoResize);
         }
 
         protected override string GetSummary()

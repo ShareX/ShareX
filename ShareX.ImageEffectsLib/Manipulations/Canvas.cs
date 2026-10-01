@@ -32,8 +32,8 @@ namespace ShareX.ImageEffectsLib
 {
     internal class Canvas : ImageEffect
     {
-        [DefaultValue(typeof(Insets), "0, 0, 0, 0")]
-        public Insets Margin { get; set; }
+        [DefaultValue(typeof(ImageMargins), "0, 0, 0, 0")]
+        public ImageMargins Margin { get; set; }
 
         [DefaultValue(CanvasMarginMode.AbsoluteSize), Description("How the margin around the canvas will be calculated.")]
         public CanvasMarginMode MarginMode { get; set; }
@@ -54,30 +54,30 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            Insets canvasMargin;
+            ImageMargins canvasMargin;
 
             if (MarginMode == CanvasMarginMode.PercentageOfCanvas)
             {
-                canvasMargin = new Insets(
-                    (int)Math.Round(Margin.Left / 100f * bmp.Width),
-                    (int)Math.Round(Margin.Top / 100f * bmp.Height),
-                    (int)Math.Round(Margin.Right / 100f * bmp.Width),
-                    (int)Math.Round(Margin.Bottom / 100f * bmp.Height));
+                canvasMargin = new ImageMargins();
+                canvasMargin.Left = (int)Math.Round(Margin.Left / 100f * bmp.Width);
+                canvasMargin.Right = (int)Math.Round(Margin.Right / 100f * bmp.Width);
+                canvasMargin.Top = (int)Math.Round(Margin.Top / 100f * bmp.Height);
+                canvasMargin.Bottom = (int)Math.Round(Margin.Bottom / 100f * bmp.Height);
             }
             else
             {
                 canvasMargin = Margin;
             }
 
-            SKBitmap result = SkiaImageHelpers.AddCanvas(bmp, canvasMargin, Color);
+            SKBitmap bmpResult = SkiaImageHelpers.AddCanvas(bmp, canvasMargin, Color);
 
-            if (result == null)
+            if (bmpResult == null)
             {
                 return bmp;
             }
 
             bmp.Dispose();
-            return result;
+            return bmpResult;
         }
 
         protected override string GetSummary()

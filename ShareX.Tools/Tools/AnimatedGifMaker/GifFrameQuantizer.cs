@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -12,9 +12,10 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+using SkiaSharp;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
+
 
 namespace ShareX.Tools;
 
@@ -30,73 +31,25 @@ internal static class GifFrameQuantizer
     private const byte TransparentPaletteIndex = 255;
     private const byte AlphaThreshold = 128;
 
-    public static Bitmap Quantize(Bitmap source)
+    public static IndexedImage Quantize(SKBitmap source)
     {
         ArgumentNullException.ThrowIfNull(source);
-
-        if (source.PixelFormat != PixelFormat.Format32bppArgb)
-        {
-            using Bitmap copy = CreateArgbCopy(source);
-            return Quantize(copy);
-        }
-
-        Rectangle bounds = new(Point.Empty, source.Size);
+        using SkiaPixelBuffer pixels = new(source, true, PixelAccess.ReadOnly);
         ColorMoments moments = new();
-        BitmapData sourceData = source.LockBits(bounds, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-
-        try
-        {
-            moments.AddPixels(sourceData, source.Width, source.Height);
-        }
-        finally
-        {
-            source.UnlockBits(sourceData);
-        }
-
+        moments.AddPixels(pixels, source.Width, source.Height);
         Color[] paletteColors = moments.CreatePalette(MaximumOpaqueColors);
-        byte[] colorLookup = CreateColorLookup(paletteColors);
-
-        Bitmap output = new(source.Width, source.Height, PixelFormat.Format8bppIndexed);
-
-        try
+        byte[] lookup = CreateColorLookup(paletteColors);
+        Color[] palette = Enumerable.Repeat(Color.Black, 256).ToArray();
+        Array.Copy(paletteColors, palette, paletteColors.Length);
+        palette[TransparentPaletteIndex] = Color.Transparent;
+        byte[] indices = new byte[pixels.PixelCount];
+        for (int index = 0; index < indices.Length; index++)
         {
-            SetPalette(output, paletteColors);
-            WriteIndexedPixels(source, output, colorLookup);
-            return output;
+            ColorBgra pixel = pixels.GetPixel(index);
+            indices[index] = pixel.Alpha < AlphaThreshold ? TransparentPaletteIndex :
+                lookup[GetLookupIndex(pixel.Red >> (8 - ColorBits), pixel.Green >> (8 - ColorBits), pixel.Blue >> (8 - ColorBits))];
         }
-        catch
-        {
-            output.Dispose();
-            throw;
-        }
-    }
-
-    private static Bitmap CreateArgbCopy(Bitmap source)
-    {
-        Bitmap copy = new(source.Width, source.Height, PixelFormat.Format32bppArgb);
-
-        using Graphics graphics = Graphics.FromImage(copy);
-        graphics.CompositingMode = CompositingMode.SourceCopy;
-        graphics.DrawImageUnscaled(source, Point.Empty);
-        return copy;
-    }
-
-    private static void SetPalette(Bitmap bitmap, IReadOnlyList<Color> colors)
-    {
-        ColorPalette palette = bitmap.Palette;
-
-        for (int index = 0; index < colors.Count; index++)
-        {
-            palette.Entries[index] = colors[index];
-        }
-
-        for (int index = colors.Count; index < TransparentPaletteIndex; index++)
-        {
-            palette.Entries[index] = Color.Black;
-        }
-
-        palette.Entries[TransparentPaletteIndex] = Color.Transparent;
-        bitmap.Palette = palette;
+        return new IndexedImage(source.Width, source.Height, indices, palette);
     }
 
     private static byte[] CreateColorLookup(IReadOnlyList<Color> palette)
@@ -144,41 +97,6 @@ internal static class GifFrameQuantizer
         return lookup;
     }
 
-    private static unsafe void WriteIndexedPixels(Bitmap source, Bitmap output, byte[] colorLookup)
-    {
-        Rectangle bounds = new(Point.Empty, source.Size);
-        BitmapData sourceData = source.LockBits(bounds, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-        BitmapData outputData = output.LockBits(bounds, ImageLockMode.WriteOnly, PixelFormat.Format8bppIndexed);
-
-        try
-        {
-            for (int y = 0; y < source.Height; y++)
-            {
-                byte* sourceRow = (byte*)sourceData.Scan0 + y * sourceData.Stride;
-                byte* outputRow = (byte*)outputData.Scan0 + y * outputData.Stride;
-
-                for (int x = 0; x < source.Width; x++)
-                {
-                    byte* pixel = sourceRow + x * 4;
-
-                    if (pixel[3] < AlphaThreshold)
-                    {
-                        outputRow[x] = TransparentPaletteIndex;
-                        continue;
-                    }
-
-                    outputRow[x] = colorLookup[GetLookupIndex(pixel[2] >> (8 - ColorBits),
-                        pixel[1] >> (8 - ColorBits), pixel[0] >> (8 - ColorBits))];
-                }
-            }
-        }
-        finally
-        {
-            source.UnlockBits(sourceData);
-            output.UnlockBits(outputData);
-        }
-    }
-
     private static int GetLookupIndex(int red, int green, int blue) =>
         (red * ColorSideLength + green) * ColorSideLength + blue;
 
@@ -194,11 +112,11 @@ internal static class GifFrameQuantizer
 
         public int DistinctColorCount { get; private set; }
 
-        public unsafe void AddPixels(BitmapData bitmapData, int width, int height)
+        public unsafe void AddPixels(SkiaPixelBuffer bitmapData, int width, int height)
         {
             for (int y = 0; y < height; y++)
             {
-                byte* row = (byte*)bitmapData.Scan0 + y * bitmapData.Stride;
+                byte* row = (byte*)bitmapData.Pointer + y * width * 4;
 
                 for (int x = 0; x < width; x++)
                 {

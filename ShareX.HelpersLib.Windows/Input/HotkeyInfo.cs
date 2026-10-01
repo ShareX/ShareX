@@ -25,13 +25,12 @@
 
 using Newtonsoft.Json;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
     public class HotkeyInfo
     {
-        public Keys Hotkey { get; set; }
+        public InputKey Hotkey { get; set; }
 
         [JsonIgnore]
         public ushort ID { get; set; }
@@ -39,15 +38,15 @@ namespace ShareX.HelpersLib
         [JsonIgnore]
         public HotkeyStatus Status { get; set; }
 
-        public Keys KeyCode => Hotkey & Keys.KeyCode;
+        public InputKey KeyCode => Hotkey & InputKey.KeyCode;
 
-        public Keys ModifiersKeys => Hotkey & Keys.Modifiers;
+        public InputKey ModifiersKeys => Hotkey & InputKey.Modifiers;
 
-        public bool Control => Hotkey.HasFlag(Keys.Control);
+        public bool Control => Hotkey.HasFlag(InputKey.Control);
 
-        public bool Shift => Hotkey.HasFlag(Keys.Shift);
+        public bool Shift => Hotkey.HasFlag(InputKey.Shift);
 
-        public bool Alt => Hotkey.HasFlag(Keys.Alt);
+        public bool Alt => Hotkey.HasFlag(InputKey.Alt);
 
         public bool Win { get; set; }
 
@@ -66,21 +65,21 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public bool IsOnlyModifiers => KeyCode == Keys.ControlKey || KeyCode == Keys.ShiftKey || KeyCode == Keys.Menu || (KeyCode == Keys.None && Win);
+        public bool IsOnlyModifiers => KeyCode == InputKey.ControlKey || KeyCode == InputKey.ShiftKey || KeyCode == InputKey.Menu || (KeyCode == InputKey.None && Win);
 
-        public bool IsValidHotkey => KeyCode != Keys.None && !IsOnlyModifiers;
+        public bool IsValidHotkey => KeyCode != InputKey.None && !IsOnlyModifiers;
 
         public HotkeyInfo()
         {
             Status = HotkeyStatus.NotConfigured;
         }
 
-        public HotkeyInfo(Keys hotkey) : this()
+        public HotkeyInfo(InputKey hotkey) : this()
         {
             Hotkey = hotkey;
         }
 
-        public HotkeyInfo(Keys hotkey, ushort id) : this(hotkey)
+        public HotkeyInfo(InputKey hotkey, ushort id) : this(hotkey)
         {
             ID = id;
         }
@@ -113,33 +112,33 @@ namespace ShareX.HelpersLib
             {
                 text += "...";
             }
-            else if (KeyCode == Keys.Back)
+            else if (KeyCode == InputKey.Back)
             {
                 text += Localization.Strings.HotkeyInfo_Backspace;
             }
-            else if (KeyCode == Keys.Return)
+            else if (KeyCode == InputKey.Return)
             {
                 text += Localization.Strings.HotkeyInfo_Enter;
             }
-            else if (KeyCode == Keys.Capital)
+            else if (KeyCode == InputKey.Capital)
             {
                 text += Localization.Strings.HotkeyInfo_Caps_lock;
             }
-            else if (KeyCode == Keys.Next)
+            else if (KeyCode == InputKey.Next)
             {
                 text += Localization.Strings.HotkeyInfo_Page_down;
             }
-            else if (KeyCode == Keys.Scroll)
+            else if (KeyCode == InputKey.Scroll)
             {
                 text += Localization.Strings.HotkeyInfo_Scroll_lock;
             }
-            else if (KeyCode >= Keys.D0 && KeyCode <= Keys.D9)
+            else if (KeyCode >= InputKey.D0 && KeyCode <= InputKey.D9)
             {
-                text += (KeyCode - Keys.D0).ToString();
+                text += (KeyCode - InputKey.D0).ToString();
             }
-            else if (KeyCode >= Keys.NumPad0 && KeyCode <= Keys.NumPad9)
+            else if (KeyCode >= InputKey.NumPad0 && KeyCode <= InputKey.NumPad9)
             {
-                text += Localization.Strings.HotkeyInfo_Numpad + " " + (KeyCode - Keys.NumPad0).ToString();
+                text += Localization.Strings.HotkeyInfo_Numpad + " " + (KeyCode - InputKey.NumPad0).ToString();
             }
             else
             {
@@ -149,7 +148,7 @@ namespace ShareX.HelpersLib
             return text;
         }
 
-        private string ToStringWithSpaces(Keys key)
+        private string ToStringWithSpaces(InputKey key)
         {
             string name = key.ToString();
 

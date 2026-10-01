@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -37,6 +37,8 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
+using DrawingBitmap = SkiaSharp.SKBitmap;
+using DrawingSize = System.Drawing.Size;
 
 namespace ShareX.HistoryLib;
 

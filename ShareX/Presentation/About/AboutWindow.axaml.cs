@@ -33,7 +33,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
-using DrawingBitmap = System.Drawing.Bitmap;
+using DrawingBitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX;
 

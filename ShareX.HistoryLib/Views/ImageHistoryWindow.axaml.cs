@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -88,8 +88,6 @@ public partial class ImageHistoryWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         ThumbnailRows.ItemsSource = _rows;
-        ThumbnailRows.AddHandler(PointerWheelChangedEvent, OnThumbnailRowsPointerWheelChanged,
-            RoutingStrategies.Tunnel, true);
         _filterTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(220) };
         _filterTimer.Tick += OnFilterTimerTick;
     }
@@ -373,24 +371,6 @@ public partial class ImageHistoryWindow : Window
         if (!_settings.AutoLoadMoreItems || _scrollViewer == null) return;
         double remaining = _scrollViewer.Extent.Height - _scrollViewer.Viewport.Height - _scrollViewer.Offset.Y;
         if (remaining <= Math.Max(120, _settings.ThumbnailSize.Height)) LoadNextBatch();
-    }
-
-    private void OnThumbnailRowsPointerWheelChanged(object? sender, PointerWheelEventArgs e)
-    {
-        if (_scrollViewer == null || e.Delta.Y == 0) return;
-
-        int lines = PlatformServices.IsInitialized ? PlatformServices.Current.Preferences.WheelScrollLines : DefaultSystemPreferencesService.DefaultWheelScrollLines;
-        if (lines == 0)
-        {
-            e.Handled = true;
-            return;
-        }
-
-        double distance = lines < 0 ? _scrollViewer.Viewport.Height : lines * 16.0;
-        double maximum = Math.Max(0, _scrollViewer.Extent.Height - _scrollViewer.Viewport.Height);
-        double offset = Math.Clamp(_scrollViewer.Offset.Y - e.Delta.Y * distance, 0, maximum);
-        _scrollViewer.Offset = new Vector(_scrollViewer.Offset.X, offset);
-        e.Handled = true;
     }
 
     private void CheckLoadMoreIfViewportNotFilled()

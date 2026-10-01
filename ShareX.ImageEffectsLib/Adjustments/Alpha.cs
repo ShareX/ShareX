@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -47,7 +46,7 @@ namespace ShareX.ImageEffectsLib
         {
             using (bmp)
             {
-                return SkiaImageHelpers.ApplyColorMatrix(bmp, SkiaImageHelpers.AlphaMatrix(Value, Addition));
+                return SkiaColorMatrixManager.Alpha(Value, Addition).Apply(bmp);
             }
         }
 

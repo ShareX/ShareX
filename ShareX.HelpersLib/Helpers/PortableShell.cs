@@ -82,7 +82,7 @@ namespace ShareX.HelpersLib
             Observe(PlatformServices.Current.Clipboard.SetImageAsync(data.ToArray()), "copy image");
         }
 
-        public static bool OpenFolderWithFile(string path) => PlatformServices.Current.Shell.RevealInFileManager(path);
+        public static bool OpenFolderWithFile(string path) => FileHelpers.OpenFolderWithFile(path);
 
         /// <summary>Clipboard writes finish in the background. A failure is logged instead of being lost with the task.</summary>
         private static async void Observe(Task<bool> task, string action)

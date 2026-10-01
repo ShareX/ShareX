@@ -25,9 +25,9 @@
 
 #nullable enable
 
+using ShareX.HelpersLib;
 using System;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX;
 
@@ -57,7 +57,7 @@ internal static class ApplicationInfo
         get
         {
             StringBuilder versionText = new();
-            Version version = Version.Parse(Application.ProductVersion);
+            Version version = Version.Parse(Helpers.GetApplicationVersion(true));
             versionText.Append(version.Major).Append('.').Append(version.Minor);
             if (version.Build > 0 || version.Revision > 0) versionText.Append('.').Append(version.Build);
             if (version.Revision > 0) versionText.Append('.').Append(version.Revision);

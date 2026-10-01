@@ -28,6 +28,7 @@ using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
 
+
 namespace ShareX.ImageEffectsLib
 {
     [Description("Border")]
@@ -51,8 +52,8 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(LineDashStyle.Solid)]
-        public LineDashStyle DashStyle { get; set; }
+        [DefaultValue(ImageDashStyle.Solid)]
+        public ImageDashStyle DashStyle { get; set; }
 
         [DefaultValue(typeof(Color), "Black")]
         public Color Color { get; set; }
@@ -79,10 +80,12 @@ namespace ShareX.ImageEffectsLib
 
         public override SKBitmap Apply(SKBitmap bmp)
         {
-            using (bmp)
+            if (UseGradient && Gradient != null && Gradient.IsValid)
             {
-                return SkiaImageHelpers.DrawBorder(bmp, Size, Type, DashStyle, Color, UseGradient && Gradient != null && Gradient.IsValid ? Gradient : null);
+                return SkiaImageHelpers.DrawBorder(bmp, Gradient, Size, Type, DashStyle);
             }
+
+            return SkiaImageHelpers.DrawBorder(bmp, Color, Size, Type, DashStyle);
         }
 
         protected override string GetSummary()

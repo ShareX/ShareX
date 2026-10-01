@@ -24,81 +24,25 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Drawing;
 
-namespace ShareX.HelpersLib
+namespace ShareX.HelpersLib;
+
+[Serializable]
+public class XmlFont
 {
-    [Serializable]
-    public class XmlFont
+    public string FontFamily { get; set; }
+    public float Size { get; set; }
+    public ImageFontStyle Style { get; set; }
+    public ImageFontUnit GraphicsUnit { get; set; }
+    public XmlFont() { }
+    public XmlFont(ImageFont font)
     {
-        public string FontFamily { get; set; }
-        public float Size { get; set; }
-        public FontStyle Style { get; set; }
-        public GraphicsUnit GraphicsUnit { get; set; }
-
-        public XmlFont()
-        {
-        }
-
-        public XmlFont(Font font)
-        {
-            Init(font);
-        }
-
-        public XmlFont(string fontName, float fontSize, FontStyle fontStyle = FontStyle.Regular)
-        {
-            Font font = CreateFont(fontName, fontSize, fontStyle);
-            Init(font);
-        }
-
-        private void Init(Font font)
-        {
-            using (font)
-            {
-                FontFamily = font.FontFamily.Name;
-                Size = font.Size;
-                Style = font.Style;
-                GraphicsUnit = font.Unit;
-            }
-        }
-
-        private Font CreateFont(string fontName, float fontSize, FontStyle fontStyle)
-        {
-            try
-            {
-                return new Font(fontName, fontSize, fontStyle);
-            }
-            catch
-            {
-                return new Font(SystemFonts.DefaultFont.FontFamily, fontSize, fontStyle);
-            }
-        }
-
-        public static implicit operator Font(XmlFont font)
-        {
-            return font.ToFont();
-        }
-
-        public static implicit operator XmlFont(Font font)
-        {
-            return new XmlFont(font);
-        }
-
-        public Font ToFont()
-        {
-            return new Font(FontFamily, Size, Style, GraphicsUnit);
-        }
-
-        public override string ToString()
-        {
-            string text = string.Format("{0}; {1}", FontFamily, Size);
-
-            if (Style != FontStyle.Regular)
-            {
-                text += "; " + Style;
-            }
-
-            return text;
-        }
+        FontFamily = font.Name; Size = font.Size; Style = font.Style; GraphicsUnit = font.Unit;
     }
+    public XmlFont(string name, float size, ImageFontStyle style = ImageFontStyle.Regular)
+        : this(new ImageFont(name, size, style)) { }
+    public static implicit operator ImageFont(XmlFont font) => font.ToFont();
+    public static implicit operator XmlFont(ImageFont font) => new(font);
+    public ImageFont ToFont() => new(FontFamily, Size, Style, GraphicsUnit);
+    public override string ToString() => $"{FontFamily}; {Size}" + (Style == ImageFontStyle.Regular ? "" : $"; {Style}");
 }

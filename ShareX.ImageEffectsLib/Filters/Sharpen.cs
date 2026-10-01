@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using SkiaSharp;
-using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -33,9 +32,11 @@ namespace ShareX.ImageEffectsLib
     {
         public override SKBitmap Apply(SKBitmap bmp)
         {
+            //return SkiaImageHelpers.Sharpen(bmp, Strength);
+
             using (bmp)
             {
-                return SkiaImageHelpers.Convolve(bmp, SkiaImageHelpers.SharpenKernel());
+                return SkiaConvolutionMatrixManager.Sharpen().Apply(bmp);
             }
         }
     }

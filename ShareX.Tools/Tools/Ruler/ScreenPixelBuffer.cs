@@ -24,8 +24,9 @@
 #endregion License Information (GPL v3)
 
 using Avalonia;
-using System.Drawing;
-using System.Drawing.Imaging;
+using ShareX.HelpersLib;
+using SkiaSharp;
+
 using System.Runtime.InteropServices;
 using DrawingRectangle = System.Drawing.Rectangle;
 
@@ -50,29 +51,11 @@ internal sealed class ScreenPixelBuffer
             throw new ArgumentOutOfRangeException(nameof(bounds));
         }
 
-        using Bitmap bitmap = new(bounds.Width, bounds.Height, PixelFormat.Format32bppArgb);
-        using (Graphics graphics = Graphics.FromImage(bitmap))
-        {
-            graphics.CopyFromScreen(bounds.X, bounds.Y, 0, 0, bitmap.Size, CopyPixelOperation.SourceCopy);
-        }
-
-        DrawingRectangle bitmapBounds = new(0, 0, bitmap.Width, bitmap.Height);
-        BitmapData data = bitmap.LockBits(bitmapBounds, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-
-        try
-        {
-            int[] pixels = new int[bitmap.Width * bitmap.Height];
-            for (int y = 0; y < bitmap.Height; y++)
-            {
-                Marshal.Copy(IntPtr.Add(data.Scan0, y * data.Stride), pixels, y * bitmap.Width, bitmap.Width);
-            }
-
-            return new ScreenPixelBuffer(bounds, pixels);
-        }
-        finally
-        {
-            bitmap.UnlockBits(data);
-        }
+        using SKBitmap bitmap = WindowsImageInterop.Capture(new DrawingRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height));
+        int[] pixels = new int[bitmap.Width * bitmap.Height];
+        for (int y = 0; y < bitmap.Height; y++)
+            Marshal.Copy(IntPtr.Add(bitmap.GetPixels(), y * bitmap.RowBytes), pixels, y * bitmap.Width, bitmap.Width);
+        return new ScreenPixelBuffer(bounds, pixels);
     }
 
     public DrawingRectangle FindColorRun(PixelPoint point, bool horizontal, int tolerance)
