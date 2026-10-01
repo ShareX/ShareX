@@ -37,8 +37,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue("")]
         public string ImageLocation { get; set; }
 
-        [DefaultValue(ContentAlignment.TopLeft)]
-        public ContentAlignment Placement { get; set; }
+        [DefaultValue(ImageContentAlignment.TopLeft)]
+        public ImageContentAlignment Placement { get; set; }
 
         [DefaultValue(typeof(Point), "0, 0")]
         public Point Offset { get; set; }

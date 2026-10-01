@@ -84,17 +84,17 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public IReadOnlyList<EnumOption<ThumbnailTitleLocation>> ThumbnailTitleLocationOptions { get; } = CreateEnumOptions<ThumbnailTitleLocation>();
     public IReadOnlyList<EnumOption<ThumbnailViewClickAction>> ThumbnailClickActionOptions { get; } = CreateEnumOptions<ThumbnailViewClickAction>();
     public IReadOnlyList<EnumOption<ProxyMethod>> ProxyMethodOptions { get; } = CreateEnumOptions<ProxyMethod>();
-    public IReadOnlyList<EnumOption<ContentAlignment>> DropAlignmentOptions { get; } =
+    public IReadOnlyList<EnumOption<ImageContentAlignment>> DropAlignmentOptions { get; } =
     [
-        new(ContentAlignment.TopLeft, Strings.ApplicationSettingsWindow_TopLeft),
-        new(ContentAlignment.TopCenter, Strings.ApplicationSettingsWindow_TopCenter),
-        new(ContentAlignment.TopRight, Strings.ApplicationSettingsWindow_TopRight),
-        new(ContentAlignment.MiddleLeft, Strings.ApplicationSettingsWindow_MiddleLeft),
-        new(ContentAlignment.MiddleCenter, Strings.ApplicationSettingsWindow_MiddleCenter),
-        new(ContentAlignment.MiddleRight, Strings.ApplicationSettingsWindow_MiddleRight),
-        new(ContentAlignment.BottomLeft, Strings.ApplicationSettingsWindow_BottomLeft),
-        new(ContentAlignment.BottomCenter, Strings.ApplicationSettingsWindow_BottomCenter),
-        new(ContentAlignment.BottomRight, Strings.ApplicationSettingsWindow_BottomRight)
+        new(ImageContentAlignment.TopLeft, Strings.ApplicationSettingsWindow_TopLeft),
+        new(ImageContentAlignment.TopCenter, Strings.ApplicationSettingsWindow_TopCenter),
+        new(ImageContentAlignment.TopRight, Strings.ApplicationSettingsWindow_TopRight),
+        new(ImageContentAlignment.MiddleLeft, Strings.ApplicationSettingsWindow_MiddleLeft),
+        new(ImageContentAlignment.MiddleCenter, Strings.ApplicationSettingsWindow_MiddleCenter),
+        new(ImageContentAlignment.MiddleRight, Strings.ApplicationSettingsWindow_MiddleRight),
+        new(ImageContentAlignment.BottomLeft, Strings.ApplicationSettingsWindow_BottomLeft),
+        new(ImageContentAlignment.BottomCenter, Strings.ApplicationSettingsWindow_BottomCenter),
+        new(ImageContentAlignment.BottomRight, Strings.ApplicationSettingsWindow_BottomRight)
     ];
     public IReadOnlyList<EnumOption<int>> BufferSizeOptions { get; private set; } = [];
     public IReadOnlyList<EnumOption<string>> ThemeOptions { get; } =
@@ -645,7 +645,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public decimal DropSize { get => Settings.DropSize; set => SetSetting(Settings.DropSize, decimal.ToInt32(value), x => Settings.DropSize = x); }
     public decimal DropOffset { get => Settings.DropOffset; set => SetSetting(Settings.DropOffset, decimal.ToInt32(value), x => Settings.DropOffset = x); }
 
-    public EnumOption<ContentAlignment>? SelectedDropAlignment
+    public EnumOption<ImageContentAlignment>? SelectedDropAlignment
     {
         get => Find(DropAlignmentOptions, Settings.DropAlignment);
         set { if (value != null) SetSetting(Settings.DropAlignment, value.Value, x => Settings.DropAlignment = x); }

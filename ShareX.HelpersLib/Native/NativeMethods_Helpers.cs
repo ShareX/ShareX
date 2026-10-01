@@ -216,14 +216,6 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        public static bool GetWindowRegion(IntPtr hWnd, out Region region)
-        {
-            IntPtr hRgn = CreateRectRgn(0, 0, 0, 0);
-            RegionType regionType = (RegionType)GetWindowRgn(hWnd, hRgn);
-            region = Region.FromHrgn(hRgn);
-            return regionType != RegionType.ERROR && regionType != RegionType.NULLREGION;
-        }
-
         public static bool IsDWMEnabled()
         {
             return Helpers.IsWindowsVistaOrGreater() && DwmIsCompositionEnabled();

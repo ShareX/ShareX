@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 
 namespace ShareX.Tools;
@@ -34,7 +35,7 @@ public sealed class PinToScreenOptions
     public bool HighQualityScale { get; set; } = true;
     public int InitialOpacity { get; set; } = 100;
     public int OpacityStep { get; set; } = 10;
-    public ContentAlignment Placement { get; set; } = ContentAlignment.BottomRight;
+    public ImageContentAlignment Placement { get; set; } = ImageContentAlignment.BottomRight;
     public int PlacementOffset { get; set; } = 10;
     public bool TopMost { get; set; } = true;
     public bool KeepCenterLocation { get; set; } = true;

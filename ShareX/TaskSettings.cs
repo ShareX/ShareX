@@ -313,7 +313,7 @@ namespace ShareX
         public bool ShowToastNotificationAfterTaskCompleted = true;
         public float ToastWindowDuration = 3f;
         public float ToastWindowFadeDuration = 1f;
-        public ContentAlignment ToastWindowPlacement = ContentAlignment.BottomRight;
+        public ImageContentAlignment ToastWindowPlacement = ImageContentAlignment.BottomRight;
         public Size ToastWindowSize = new Size(400, 300);
         public ToastClickAction ToastWindowLeftClickAction = ToastClickAction.OpenUrl;
         public ToastClickAction ToastWindowRightClickAction = ToastClickAction.CloseNotification;

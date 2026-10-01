@@ -28,6 +28,13 @@ using System;
 namespace ShareX.HelpersLib
 {
     [Flags]
+    public enum NativeRasterOperation
+    {
+        SourceCopy = 0x00CC0020,
+        CaptureBlt = 0x40000000
+    }
+
+    [Flags]
     public enum AnimateWindowFlags
     {
         AW_HOR_POSITIVE = 0x00000001,

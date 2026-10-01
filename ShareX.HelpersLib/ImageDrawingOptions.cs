@@ -32,3 +32,16 @@ public enum ImageDashStyle { Solid = 0, Dash = 1, Dot = 2, DashDot = 3, DashDotD
 public enum ImageTileMode { Tile = 0, TileFlipX = 1, TileFlipY = 2, TileFlipXY = 3, Clamp = 4 }
 
 public enum ImageCompositingMode { SourceOver = 0, SourceCopy = 1 }
+
+public enum ImageContentAlignment
+{
+    TopLeft = 1,
+    TopCenter = 2,
+    TopRight = 4,
+    MiddleLeft = 16,
+    MiddleCenter = 32,
+    MiddleRight = 64,
+    BottomLeft = 256,
+    BottomCenter = 512,
+    BottomRight = 1024
+}

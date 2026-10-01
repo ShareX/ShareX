@@ -23,17 +23,19 @@
 
 #endregion License Information (GPL v3)
 
-using System.Drawing;
+using ShareX.HelpersLib;
+using SkiaSharp;
 using System.IO;
 
 namespace ShareX.UploadersLib
 {
     public abstract class ImageUploader : FileUploader
     {
-        public async Task<UploadResult> UploadImageAsync(Image image, string fileName, CancellationToken cancellationToken = default)
+        public async Task<UploadResult> UploadImageAsync(SKBitmap image, string fileName, CancellationToken cancellationToken = default)
         {
             using MemoryStream stream = new MemoryStream();
-            image.Save(stream, image.RawFormat);
+            image.Save(stream, SkiaImageHelpers.GetImageFormat(fileName));
+            stream.Position = 0;
             return await UploadAsync(stream, fileName, cancellationToken).ConfigureAwait(false);
         }
     }

@@ -42,7 +42,7 @@ using System.Diagnostics;
 using System.IO;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingColor = System.Drawing.Color;
-using DrawingContentAlignment = System.Drawing.ContentAlignment;
+using DrawingContentAlignment = ShareX.HelpersLib.ImageContentAlignment;
 using FormsCursor = System.Windows.Forms.Cursor;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;

@@ -60,6 +60,7 @@ internal static class ImageEffectsLocalization
         string fallback = field?.GetCustomAttribute<DescriptionAttribute>()?.Description ?? Helpers.GetProperName(name);
         string resourceType = enumType.Name switch
         {
+            nameof(ImageContentAlignment) => "ContentAlignment",
             nameof(ImageDashStyle) => "DashStyle",
             nameof(ImageGradientMode) => "LinearGradientMode",
             nameof(ImageCompositingMode) => "CompositingMode",

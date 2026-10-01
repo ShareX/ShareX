@@ -247,8 +247,8 @@ namespace ShareX
         [Category("Drag and drop window"), DefaultValue(5), Description("Position offset of drop window.")]
         public int DropOffset { get; set; }
 
-        [Category("Drag and drop window"), DefaultValue(ContentAlignment.BottomRight), Description("Where drop window will open.")]
-        public ContentAlignment DropAlignment { get; set; }
+        [Category("Drag and drop window"), DefaultValue(ImageContentAlignment.BottomRight), Description("Where drop window will open.")]
+        public ImageContentAlignment DropAlignment { get; set; }
 
         [Category("Drag and drop window"), DefaultValue(100), Description("Opacity of drop window.")]
         public int DropOpacity { get; set; }

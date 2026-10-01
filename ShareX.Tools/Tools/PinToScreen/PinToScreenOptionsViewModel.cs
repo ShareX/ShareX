@@ -26,12 +26,12 @@
 using Avalonia.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.HelpersLib;
 using System.Collections.ObjectModel;
-using ContentAlignment = System.Drawing.ContentAlignment;
 
 namespace ShareX.Tools;
 
-public sealed record PinPlacementChoice(string Name, ContentAlignment Value)
+public sealed record PinPlacementChoice(string Name, ImageContentAlignment Value)
 {
     public override string ToString() => Name;
 }
@@ -42,11 +42,11 @@ public sealed partial class PinToScreenOptionsViewModel : ViewModelBase
 
     public ObservableCollection<PinPlacementChoice> Placements { get; } =
     [
-        new(Localization.Strings.PinToScreenOptionsViewModel_Top_left, ContentAlignment.TopLeft), new(Localization.Strings.PinToScreenOptionsViewModel_Top_center, ContentAlignment.TopCenter),
-        new(Localization.Strings.PinToScreenOptionsViewModel_Top_right, ContentAlignment.TopRight), new(Localization.Strings.PinToScreenOptionsViewModel_Middle_left, ContentAlignment.MiddleLeft),
-        new(Localization.Strings.PinToScreenOptionsViewModel_Center, ContentAlignment.MiddleCenter), new(Localization.Strings.PinToScreenOptionsViewModel_Middle_right, ContentAlignment.MiddleRight),
-        new(Localization.Strings.PinToScreenOptionsViewModel_Bottom_left, ContentAlignment.BottomLeft), new(Localization.Strings.PinToScreenOptionsViewModel_Bottom_center, ContentAlignment.BottomCenter),
-        new(Localization.Strings.PinToScreenOptionsViewModel_Bottom_right, ContentAlignment.BottomRight)
+        new(Localization.Strings.PinToScreenOptionsViewModel_Top_left, ImageContentAlignment.TopLeft), new(Localization.Strings.PinToScreenOptionsViewModel_Top_center, ImageContentAlignment.TopCenter),
+        new(Localization.Strings.PinToScreenOptionsViewModel_Top_right, ImageContentAlignment.TopRight), new(Localization.Strings.PinToScreenOptionsViewModel_Middle_left, ImageContentAlignment.MiddleLeft),
+        new(Localization.Strings.PinToScreenOptionsViewModel_Center, ImageContentAlignment.MiddleCenter), new(Localization.Strings.PinToScreenOptionsViewModel_Middle_right, ImageContentAlignment.MiddleRight),
+        new(Localization.Strings.PinToScreenOptionsViewModel_Bottom_left, ImageContentAlignment.BottomLeft), new(Localization.Strings.PinToScreenOptionsViewModel_Bottom_center, ImageContentAlignment.BottomCenter),
+        new(Localization.Strings.PinToScreenOptionsViewModel_Bottom_right, ImageContentAlignment.BottomRight)
     ];
 
     [ObservableProperty] private decimal _initialScale;
@@ -99,7 +99,7 @@ public sealed partial class PinToScreenOptionsViewModel : ViewModelBase
         _options.HighQualityScale = HighQualityScale;
         _options.InitialOpacity = (int)InitialOpacity;
         _options.OpacityStep = (int)OpacityStep;
-        _options.Placement = SelectedPlacement?.Value ?? ContentAlignment.BottomRight;
+        _options.Placement = SelectedPlacement?.Value ?? ImageContentAlignment.BottomRight;
         _options.PlacementOffset = (int)PlacementOffset;
         _options.TopMost = TopMost;
         _options.KeepCenterLocation = KeepCenterLocation;

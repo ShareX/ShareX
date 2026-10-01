@@ -482,24 +482,24 @@ namespace ShareX.HelpersLib
             return Guid.NewGuid().ToString("N");
         }
 
-        public static Point GetPosition(ContentAlignment placement, int offset, Size backgroundSize, Size objectSize)
+        public static Point GetPosition(ImageContentAlignment placement, int offset, Size backgroundSize, Size objectSize)
         {
             return GetPosition(placement, new Point(offset, offset), backgroundSize, objectSize);
         }
 
-        public static Point GetPosition(ContentAlignment placement, int offset, Rectangle background, Size objectSize)
+        public static Point GetPosition(ImageContentAlignment placement, int offset, Rectangle background, Size objectSize)
         {
             return GetPosition(placement, new Point(offset, offset), background, objectSize);
         }
 
-        public static Point GetPosition(ContentAlignment placement, Point offset, Rectangle background, Size objectSize)
+        public static Point GetPosition(ImageContentAlignment placement, Point offset, Rectangle background, Size objectSize)
         {
             Point position = GetPosition(placement, offset, background.Size, objectSize);
 
             return new Point(background.X + position.X, background.Y + position.Y);
         }
 
-        public static Point GetPosition(ContentAlignment placement, Point offset, Size backgroundSize, Size objectSize)
+        public static Point GetPosition(ImageContentAlignment placement, Point offset, Size backgroundSize, Size objectSize)
         {
             int midX = (int)Math.Round((backgroundSize.Width / 2f) - (objectSize.Width / 2f));
             int midY = (int)Math.Round((backgroundSize.Height / 2f) - (objectSize.Height / 2f));
@@ -509,23 +509,23 @@ namespace ShareX.HelpersLib
             switch (placement)
             {
                 default:
-                case ContentAlignment.TopLeft:
+                case ImageContentAlignment.TopLeft:
                     return new Point(offset.X, offset.Y);
-                case ContentAlignment.TopCenter:
+                case ImageContentAlignment.TopCenter:
                     return new Point(midX, offset.Y);
-                case ContentAlignment.TopRight:
+                case ImageContentAlignment.TopRight:
                     return new Point(right - offset.X, offset.Y);
-                case ContentAlignment.MiddleLeft:
+                case ImageContentAlignment.MiddleLeft:
                     return new Point(offset.X, midY);
-                case ContentAlignment.MiddleCenter:
+                case ImageContentAlignment.MiddleCenter:
                     return new Point(midX, midY);
-                case ContentAlignment.MiddleRight:
+                case ImageContentAlignment.MiddleRight:
                     return new Point(right - offset.X, midY);
-                case ContentAlignment.BottomLeft:
+                case ImageContentAlignment.BottomLeft:
                     return new Point(offset.X, bottom - offset.Y);
-                case ContentAlignment.BottomCenter:
+                case ImageContentAlignment.BottomCenter:
                     return new Point(midX, bottom - offset.Y);
-                case ContentAlignment.BottomRight:
+                case ImageContentAlignment.BottomRight:
                     return new Point(right - offset.X, bottom - offset.Y);
             }
         }

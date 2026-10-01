@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Drawing;
 
 namespace ShareX.UploadersLib
 {
@@ -37,10 +36,6 @@ namespace ShareX.UploadersLib
         public string ServiceIdentifier => EnumValue.ToString();
 
         public string ServiceName => ((Enum)(object)EnumValue).GetLocalizedDescription(Localization.Strings.ResourceManager);
-
-        public virtual Icon ServiceIcon { get; }
-
-        public virtual Image ServiceImage { get; }
 
         public abstract bool CheckConfig(UploadersConfig config);
 

@@ -302,11 +302,6 @@ namespace ShareX.HelpersLib
             tb.Value = number.Clamp(tb.Minimum, tb.Maximum);
         }
 
-        public static bool IsValidImage(this PictureBox pb)
-        {
-            return pb.Image != null && pb.Image != pb.InitialImage && pb.Image != pb.ErrorImage;
-        }
-
         public static void IgnoreSeparatorClick(this ContextMenuStrip cms)
         {
             bool cancelClose = false;

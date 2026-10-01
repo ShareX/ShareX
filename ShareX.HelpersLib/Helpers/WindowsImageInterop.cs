@@ -84,7 +84,7 @@ public static class WindowsImageInterop
             return DrawNative(rectangle.Size, SKColors.Black, dc =>
             {
                 if (!NativeMethods.BitBlt(dc, 0, 0, rectangle.Width, rectangle.Height, source,
-                    rectangle.X, rectangle.Y, CopyPixelOperation.SourceCopy | CopyPixelOperation.CaptureBlt))
+                    rectangle.X, rectangle.Y, NativeRasterOperation.SourceCopy | NativeRasterOperation.CaptureBlt))
                     throw new Win32Exception();
                 drawCursor?.Invoke(dc);
             });

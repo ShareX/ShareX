@@ -40,7 +40,7 @@ using System.IO;
 using System.Linq;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingBitmap = SkiaSharp.SKBitmap;
-using DrawingContentAlignment = System.Drawing.ContentAlignment;
+using DrawingContentAlignment = ShareX.HelpersLib.ImageContentAlignment;
 
 namespace ShareX;
 

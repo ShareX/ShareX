@@ -37,8 +37,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue("Text watermark")]
         public string Text { get; set; }
 
-        [DefaultValue(ContentAlignment.BottomRight)]
-        public ContentAlignment Placement { get; set; }
+        [DefaultValue(ImageContentAlignment.BottomRight)]
+        public ImageContentAlignment Placement { get; set; }
 
         [DefaultValue(typeof(Point), "5, 5")]
         public Point Offset { get; set; }
