@@ -19,9 +19,12 @@
 
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Border Background="{DynamicResource ShareX.Brush.Checkered}"
+                    ClipToBounds="True"
                     PointerReleased="OnPreviewPointerReleased"
                     PointerWheelChanged="OnPreviewPointerWheelChanged">
-                <Image Source="{Binding CurrentImage}"
+                <Image x:Name="PreviewImage"
+                       Source="{Binding CurrentImage}"
+                       RenderTransformOrigin="0,0"
                        Stretch="Uniform"
                        StretchDirection="DownOnly"/>
             </Border>

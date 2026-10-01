@@ -30,6 +30,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
 using System;
@@ -41,7 +42,12 @@ namespace ShareX.HelpersLib;
 
 public partial class ImageViewerWindow : Window
 {
+    private const double MinZoom = 0.1;
+    private const double MaxZoom = 10;
+    private const double ZoomFactor = 1.2;
+
     private readonly ImageViewerViewModel _viewModel = new();
+    private readonly MatrixTransform _previewTransform = new() { Matrix = Matrix.Identity };
     private bool _closeOnDeactivate;
 
     public ImageViewerWindow()
@@ -72,6 +78,14 @@ public partial class ImageViewerWindow : Window
     {
         DataContext = _viewModel;
         AvaloniaXamlLoader.Load(this);
+        this.FindControl<Image>("PreviewImage")!.RenderTransform = _previewTransform;
+        _viewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName == nameof(ImageViewerViewModel.CurrentImage))
+            {
+                _previewTransform.Matrix = Matrix.Identity;
+            }
+        };
         System.Drawing.Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
         WindowStartupLocation = WindowStartupLocation.Manual;
         Position = new PixelPoint(activeScreen.X, activeScreen.Y);
@@ -123,6 +137,23 @@ public partial class ImageViewerWindow : Window
 
     private void OnPreviewPointerWheelChanged(object? sender, PointerWheelEventArgs e)
     {
+        if (e.KeyModifiers.HasFlag(KeyModifiers.Control))
+        {
+            if (_viewModel.HasImage && e.Delta.Y != 0 && sender is Control preview)
+            {
+                Matrix matrix = _previewTransform.Matrix;
+                double zoom = Math.Clamp(matrix.M11 * Math.Pow(ZoomFactor, e.Delta.Y), MinZoom, MaxZoom);
+                double scale = zoom / matrix.M11;
+                Point pointerPosition = e.GetPosition(preview);
+                _previewTransform.Matrix = new Matrix(zoom, 0, 0, zoom,
+                    pointerPosition.X - (pointerPosition.X - matrix.M31) * scale,
+                    pointerPosition.Y - (pointerPosition.Y - matrix.M32) * scale);
+            }
+
+            e.Handled = true;
+            return;
+        }
+
         if (e.Delta.Y > 0 && _viewModel.CanNavigateLeft)
         {
             _viewModel.Navigate(-1);
