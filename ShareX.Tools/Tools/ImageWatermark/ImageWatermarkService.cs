@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -24,10 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.Drawing.Text;
 
 namespace ShareX.Tools;
 
@@ -77,55 +75,45 @@ public static class ImageWatermarkService
         ImageWatermarkOptions options, ImageWatermarkOutputFormat format, int jpegQuality,
         Color backgroundColor)
     {
-        using Bitmap? source = ImageHelpers.LoadImage(filePath);
+        using SKBitmap? source = SkiaImageHelpers.LoadImage(filePath);
         if (source == null)
         {
             return new ImageWatermarkPreview([], 0, 0);
         }
 
-        Size previewSize = GetPreviewSize(source.Size);
+        Size previewSize = GetPreviewSize(source.GetSize());
         double previewScale = previewSize.Width / (double)source.Width;
-        using Bitmap previewSource = Resize(source, previewSize);
-        using Bitmap? watermarkImage = options.Type == ImageWatermarkType.Image
-            ? ImageHelpers.LoadImage(watermarkImagePath)
+        using SKBitmap previewSource = Resize(source, previewSize);
+        using SKBitmap? watermarkImage = options.Type == ImageWatermarkType.Image
+            ? SkiaImageHelpers.LoadImage(watermarkImagePath)
             : null;
         ImageWatermarkOptions previewOptions = options with
         {
             Margin = Math.Max(0, (int)Math.Round(options.Margin * previewScale)),
             TextSize = Math.Max(1, (float)(options.TextSize * previewScale))
         };
-        using Bitmap output = Apply(previewSource, watermarkImage, previewOptions);
+        using SKBitmap output = Apply(previewSource, watermarkImage, previewOptions);
         using MemoryStream stream = new();
         Save(output, stream, format, jpegQuality, backgroundColor);
         return new ImageWatermarkPreview(stream.ToArray(), source.Width, source.Height);
     }
 
-    public static Bitmap Apply(Bitmap source, Bitmap? watermarkImage, ImageWatermarkOptions options)
+    public static SKBitmap Apply(SKBitmap source, SKBitmap? watermarkImage, ImageWatermarkOptions options)
     {
         ArgumentNullException.ThrowIfNull(source);
-
-        Bitmap output = new(source.Width, source.Height, PixelFormat.Format32bppArgb);
-        using Graphics graphics = Graphics.FromImage(output);
-        ConfigureGraphics(graphics);
-        graphics.CompositingMode = CompositingMode.SourceCopy;
-        graphics.DrawImage(source, new Rectangle(0, 0, source.Width, source.Height));
-        graphics.CompositingMode = CompositingMode.SourceOver;
-
-        using Bitmap? watermark = options.Type == ImageWatermarkType.Text
+        SKBitmap output = source.Copy();
+        using SKCanvas canvas = new(output);
+        using SKBitmap? watermark = options.Type == ImageWatermarkType.Text
             ? CreateTextWatermark(options)
-            : CreateImageWatermark(watermarkImage, source.Size, options);
-        if (watermark == null)
-        {
-            return output;
-        }
-
-        using Bitmap rotatedWatermark = Rotate(watermark, options.Rotation);
-        Point location = GetLocation(source.Size, rotatedWatermark.Size, options.Position, options.Margin);
-        graphics.DrawImageUnscaled(rotatedWatermark, location);
+            : CreateImageWatermark(watermarkImage, source.GetSize(), options);
+        if (watermark == null) return output;
+        using SKBitmap rotatedWatermark = Rotate(watermark, options.Rotation);
+        Point location = GetLocation(source.GetSize(), rotatedWatermark.GetSize(), options.Position, options.Margin);
+        canvas.DrawBitmap(rotatedWatermark, location.X, location.Y);
         return output;
     }
 
-    public static void Save(Bitmap image, string filePath, ImageWatermarkOutputFormat format, int jpegQuality,
+    public static void Save(SKBitmap image, string filePath, ImageWatermarkOutputFormat format, int jpegQuality,
         Color backgroundColor)
     {
         FileHelpers.CreateDirectoryFromFilePath(filePath);
@@ -133,92 +121,71 @@ public static class ImageWatermarkService
         Save(image, stream, format, jpegQuality, backgroundColor);
     }
 
-    private static void Save(Bitmap image, Stream stream, ImageWatermarkOutputFormat format, int jpegQuality,
+    private static void Save(SKBitmap image, Stream stream, ImageWatermarkOutputFormat format, int jpegQuality,
         Color backgroundColor)
     {
         if (format == ImageWatermarkOutputFormat.Jpeg)
         {
-            using Bitmap flattened = ImageHelpers.FillBackground(image, backgroundColor);
-            ImageHelpers.SaveJPEG(flattened, stream, jpegQuality);
+            using SKBitmap flattened = SkiaImageHelpers.FillBackground(image, backgroundColor);
+            SkiaImageHelpers.Save(flattened, stream, SKEncodedImageFormat.Jpeg, jpegQuality);
         }
         else
         {
-            image.Save(stream, ImageFormat.Png);
+            SkiaImageHelpers.Save(image, stream, SKEncodedImageFormat.Png);
         }
     }
 
-    private static Bitmap? CreateTextWatermark(ImageWatermarkOptions options)
+    private static SKBitmap? CreateTextWatermark(ImageWatermarkOptions options)
     {
-        if (string.IsNullOrWhiteSpace(options.Text))
-        {
-            return null;
-        }
-
-        using Font font = new(SystemFonts.DefaultFont.FontFamily, Math.Max(1, options.TextSize),
-            FontStyle.Regular, GraphicsUnit.Pixel);
-        using Bitmap measureBitmap = new(1, 1, PixelFormat.Format32bppArgb);
-        using Graphics measureGraphics = Graphics.FromImage(measureBitmap);
-        measureGraphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-        SizeF measured = measureGraphics.MeasureString(options.Text, font, int.MaxValue,
-            StringFormat.GenericTypographic);
-        int width = Math.Max(1, (int)Math.Ceiling(measured.Width) + 4);
-        int height = Math.Max(1, (int)Math.Ceiling(measured.Height) + 4);
-
-        Bitmap watermark = new(width, height, PixelFormat.Format32bppArgb);
-        using Graphics graphics = Graphics.FromImage(watermark);
-        ConfigureGraphics(graphics);
-        graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-        int alpha = (int)Math.Round(Math.Clamp(options.Opacity, 0, 100) / 100d * 255);
-        using SolidBrush brush = new(Color.FromArgb(alpha, options.TextColor));
-        graphics.DrawString(options.Text, font, brush, new PointF(2, 2), StringFormat.GenericTypographic);
+        if (string.IsNullOrWhiteSpace(options.Text)) return null;
+        using SKFont font = new(SKTypeface.Default, Math.Max(1, options.TextSize));
+        string[] lines = options.Text.Replace("\r", "").Split('\n');
+        float width = lines.Max(line => font.MeasureText(line));
+        SKFontMetrics metrics = font.Metrics;
+        float lineHeight = metrics.Descent - metrics.Ascent + metrics.Leading;
+        SKBitmap watermark = SkiaImageHelpers.CreateBitmap(Math.Max(1, (int)Math.Ceiling(width) + 4),
+            Math.Max(1, (int)Math.Ceiling(lineHeight * lines.Length) + 4));
+        using SKCanvas canvas = new(watermark);
+        byte alpha = (byte)Math.Round(Math.Clamp(options.Opacity, 0, 100) / 100d * 255);
+        using SKPaint paint = new() { Color = options.TextColor.ToSKColor().WithAlpha(alpha), IsAntialias = true };
+        for (int index = 0; index < lines.Length; index++)
+            canvas.DrawText(lines[index], 2, 2 - metrics.Ascent + index * lineHeight, font, paint);
         return watermark;
     }
 
-    private static Bitmap? CreateImageWatermark(Bitmap? watermarkImage, Size canvasSize,
+    private static SKBitmap? CreateImageWatermark(SKBitmap? watermarkImage, Size canvasSize,
         ImageWatermarkOptions options)
     {
-        if (watermarkImage == null || watermarkImage.Width < 1 || watermarkImage.Height < 1)
-        {
-            return null;
-        }
-
+        if (watermarkImage == null || watermarkImage.Width < 1 || watermarkImage.Height < 1) return null;
         double percentage = Math.Clamp(options.ImageScale, 1, 100) / 100d;
         double scale = Math.Min(canvasSize.Width * percentage / watermarkImage.Width,
             canvasSize.Height * percentage / watermarkImage.Height);
         int width = Math.Max(1, (int)Math.Round(watermarkImage.Width * scale));
         int height = Math.Max(1, (int)Math.Round(watermarkImage.Height * scale));
-
-        Bitmap watermark = new(width, height, PixelFormat.Format32bppArgb);
-        using Graphics graphics = Graphics.FromImage(watermark);
-        ConfigureGraphics(graphics);
-        using ImageAttributes attributes = new();
-        float opacity = Math.Clamp(options.Opacity, 0, 100) / 100f;
-        attributes.SetColorMatrix(new ColorMatrix { Matrix33 = opacity });
-        graphics.DrawImage(watermarkImage, new Rectangle(0, 0, width, height),
-            0, 0, watermarkImage.Width, watermarkImage.Height, GraphicsUnit.Pixel, attributes);
+        SKBitmap watermark = SkiaImageHelpers.CreateBitmap(width, height);
+        using SKCanvas canvas = new(watermark);
+        using SKPaint paint = new() { Color = SKColors.White.WithAlpha((byte)Math.Round(Math.Clamp(options.Opacity, 0, 100) * 2.55)) };
+        canvas.DrawImage(watermarkImage, new SKRect(0, 0, watermarkImage.Width, watermarkImage.Height),
+            new SKRect(0, 0, width, height), paint);
         return watermark;
     }
 
-    private static Bitmap Rotate(Bitmap source, float angle)
+    private static SKBitmap Rotate(SKBitmap source, float angle)
     {
         angle %= 360;
-        if (Math.Abs(angle) < 0.01f)
-        {
-            return new Bitmap(source);
-        }
-
+        if (Math.Abs(angle) < 0.01f) return source.Copy();
         double radians = angle * Math.PI / 180d;
         double sin = Math.Abs(Math.Sin(radians));
         double cos = Math.Abs(Math.Cos(radians));
         int width = Math.Max(1, (int)Math.Ceiling(source.Width * cos + source.Height * sin));
         int height = Math.Max(1, (int)Math.Ceiling(source.Width * sin + source.Height * cos));
-        Bitmap output = new(width, height, PixelFormat.Format32bppArgb);
-        using Graphics graphics = Graphics.FromImage(output);
-        ConfigureGraphics(graphics);
-        graphics.TranslateTransform(width / 2f, height / 2f);
-        graphics.RotateTransform(angle);
-        graphics.TranslateTransform(-source.Width / 2f, -source.Height / 2f);
-        graphics.DrawImageUnscaled(source, 0, 0);
+        SKBitmap output = SkiaImageHelpers.CreateBitmap(width, height);
+        using SKCanvas canvas = new(output);
+        canvas.Translate(width / 2f, height / 2f);
+        canvas.RotateDegrees(angle);
+        canvas.Translate(-source.Width / 2f, -source.Height / 2f);
+        canvas.DrawImage(source, new SKRect(0, 0, source.Width, source.Height),
+            new SKRect(0, 0, source.Width, source.Height));
         return output;
     }
 
@@ -245,18 +212,7 @@ public static class ImageWatermarkService
         };
     }
 
-    private static Bitmap Resize(Bitmap source, Size size)
-    {
-        Bitmap output = new(size.Width, size.Height, PixelFormat.Format32bppArgb);
-        using Graphics graphics = Graphics.FromImage(output);
-        ConfigureGraphics(graphics);
-        graphics.CompositingMode = CompositingMode.SourceCopy;
-        using ImageAttributes attributes = new();
-        attributes.SetWrapMode(WrapMode.TileFlipXY);
-        graphics.DrawImage(source, new Rectangle(0, 0, size.Width, size.Height),
-            0, 0, source.Width, source.Height, GraphicsUnit.Pixel, attributes);
-        return output;
-    }
+    private static SKBitmap Resize(SKBitmap source, Size size) => SkiaImageHelpers.Resize(source, size.Width, size.Height);
 
     private static Size GetPreviewSize(Size source)
     {
@@ -271,12 +227,5 @@ public static class ImageWatermarkService
             Math.Max(1, (int)Math.Round(source.Height * scale)));
     }
 
-    private static void ConfigureGraphics(Graphics graphics)
-    {
-        graphics.Clear(Color.Transparent);
-        graphics.CompositingQuality = CompositingQuality.HighQuality;
-        graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-        graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-        graphics.SmoothingMode = SmoothingMode.HighQuality;
-    }
+
 }

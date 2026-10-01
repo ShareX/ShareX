@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -44,8 +44,7 @@ public static class AnimatedGifMakerService
         foreach (string imageFile in imageFiles)
         {
             using Bitmap source = LoadImage(imageFile);
-            using Bitmap frame = ImageResizerService.Resize(source, canvasSize.Width, canvasSize.Height,
-                ImageResizeMode.Fit);
+            using Bitmap frame = ImageHelpers.ResizeImage(source, canvasSize.Width, canvasSize.Height, true);
             using MemoryStream stream = new();
             frame.Save(stream, ImageFormat.Png);
             frames.Add(stream.ToArray());
@@ -101,8 +100,7 @@ public static class AnimatedGifMakerService
 
     private static void AddFrame(AnimatedGifCreator creator, Bitmap source, Size canvasSize)
     {
-        using Bitmap frame = ImageResizerService.Resize(source, canvasSize.Width, canvasSize.Height,
-            ImageResizeMode.Fit);
+        using Bitmap frame = ImageHelpers.ResizeImage(source, canvasSize.Width, canvasSize.Height, true);
         using Bitmap quantizedFrame = GifFrameQuantizer.Quantize(frame);
         creator.AddFrame(quantizedFrame);
     }
