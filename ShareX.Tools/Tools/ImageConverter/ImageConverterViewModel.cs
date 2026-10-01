@@ -26,8 +26,8 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.Collections.ObjectModel;
-using System.Drawing;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using AvaloniaColor = Avalonia.Media.Color;
 
@@ -47,6 +47,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsJpeg))]
+    [NotifyPropertyChangedFor(nameof(HasQuality))]
     private int _selectedOutputFormatIndex;
 
     [ObservableProperty]
@@ -81,12 +82,13 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     public Func<Task<IReadOnlyList<string>?>>? SelectFilesRequested { get; set; }
     public Func<Task<string?>>? SelectOutputFolderRequested { get; set; }
 
-    public IReadOnlyList<string> OutputFormatOptions { get; } = ["PNG", "JPEG"];
+    public IReadOnlyList<string> OutputFormatOptions { get; } = ["PNG", "JPEG", "WebP"];
 
     public bool HasImages => Images.Count > 0;
     public bool HasPreview => PreviewImage != null;
     public bool HasMessage => !string.IsNullOrWhiteSpace(Message);
-    public bool IsJpeg => SelectedOutputFormatIndex == (int)ImageConverterOutputFormat.Jpeg;
+    public bool IsJpeg => GetOutputFormat() == ImageConverterOutputFormat.Jpeg;
+    public bool HasQuality => GetOutputFormat() is ImageConverterOutputFormat.Jpeg or ImageConverterOutputFormat.Webp;
     public bool CanRemove => _selectedImages.Count > 0 || SelectedImage != null;
     public bool CanConvert => !IsBusy && HasImages && Directory.Exists(OutputFolderPath) &&
         !string.IsNullOrWhiteSpace(OutputFileName);
@@ -181,7 +183,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         string[] imageFiles = Images.ToArray();
         ImageConverterOutputFormat format = GetOutputFormat();
         int quality = (int)Quality;
-        Color backgroundColor = ToDrawingColor(BackgroundColor);
+        SKColor backgroundColor = ToSKColor(BackgroundColor);
         string outputFolderPath = OutputFolderPath;
         string outputFileName = OutputFileName;
 
@@ -270,7 +272,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
             await Task.Delay(100, cancellationToken);
             ImageConverterOutputFormat format = GetOutputFormat();
             int quality = (int)Quality;
-            Color backgroundColor = ToDrawingColor(BackgroundColor);
+            SKColor backgroundColor = ToSKColor(BackgroundColor);
             ImageConverterPreview result = await Task.Run(() =>
                 ImageConverterService.CreatePreview(filePath, format, quality, backgroundColor), cancellationToken);
             cancellationToken.ThrowIfCancellationRequested();
@@ -322,14 +324,14 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     }
 
     private ImageConverterOutputFormat GetOutputFormat() =>
-        (ImageConverterOutputFormat)Math.Clamp(SelectedOutputFormatIndex, 0, 1);
+        (ImageConverterOutputFormat)Math.Clamp(SelectedOutputFormatIndex, 0, OutputFormatOptions.Count - 1);
 
     private static List<string> ConvertImages(IEnumerable<string> imageFiles,
-        ImageConverterOutputFormat format, int quality, Color backgroundColor, string outputFolderPath,
+        ImageConverterOutputFormat format, int quality, SKColor backgroundColor, string outputFolderPath,
         string outputFileName)
     {
         List<string> outputFiles = [];
-        string extension = format == ImageConverterOutputFormat.Jpeg ? "jpg" : "png";
+        string extension = ImageConverterService.GetFileExtension(format);
 
         foreach (string filePath in imageFiles)
         {
@@ -338,7 +340,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
                 continue;
             }
 
-            using Bitmap? source = ImageHelpers.LoadImage(filePath);
+            using SKBitmap? source = ImageConverterService.LoadImage(filePath);
             if (source == null)
             {
                 continue;
@@ -355,7 +357,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         return outputFiles;
     }
 
-    private static Color ToDrawingColor(AvaloniaColor color) => Color.FromArgb(color.R, color.G, color.B);
+    private static SKColor ToSKColor(AvaloniaColor color) => new(color.R, color.G, color.B);
 
     public void Dispose()
     {

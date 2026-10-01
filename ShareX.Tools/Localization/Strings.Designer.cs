@@ -2474,6 +2474,15 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Failed to encode the image as {0}..
+        /// </summary>
+        public static string ImageConverterService_Failed_to_encode_image {
+            get {
+                return ResourceManager.GetString("ImageConverterService_Failed_to_encode_image", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Convert images.
         /// </summary>
         public static string ImageConverterWindow_Convert_images {

@@ -82,8 +82,8 @@
                                           SelectedIndex="{Binding SelectedOutputFormatIndex}"/>
                             </Grid>
                             <Grid Grid.Row="2" ColumnDefinitions="110,*,Auto" ColumnSpacing="10"
-                                  IsVisible="{Binding IsJpeg}">
-                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageThumbnailerWindow_JPEG_quality}"/>
+                                  IsVisible="{Binding HasQuality}">
+                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.VideoConverterWindow_Quality}"/>
                                 <Slider Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Quality}"/>
                                 <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
                                            MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>

@@ -914,6 +914,9 @@ Caminho do ficheiro: {0}</value>
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Controlo deslizante</value>
   </data>
+  <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
+    <value>Não foi possível codificar a imagem como {0}.</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Converter imagens</value>
   </data>

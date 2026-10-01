@@ -910,6 +910,9 @@
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Penggeser</value>
   </data>
+  <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
+    <value>Gagal mengodekan gambar sebagai {0}.</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Konversi gambar</value>
   </data>

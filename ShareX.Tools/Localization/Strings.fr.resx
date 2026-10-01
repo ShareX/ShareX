@@ -914,6 +914,9 @@ Chemin du fichier : {0}</value>
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Curseur</value>
   </data>
+  <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
+    <value>Impossible d’encoder l’image au format {0}.</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Convertir les images</value>
   </data>

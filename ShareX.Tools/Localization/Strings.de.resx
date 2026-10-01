@@ -914,6 +914,9 @@ Dateipfad: {0}</value>
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Schieberegler</value>
   </data>
+  <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
+    <value>Das Bild konnte nicht als {0} kodiert werden.</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Bilder konvertieren</value>
   </data>

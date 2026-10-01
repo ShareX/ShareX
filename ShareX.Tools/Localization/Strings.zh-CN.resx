@@ -914,6 +914,9 @@
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>滑块</value>
   </data>
+  <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
+    <value>无法将图像编码为 {0} 格式。</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>转换图像</value>
   </data>

@@ -914,6 +914,9 @@ Bestandspad: {0}</value>
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>Schuifregelaar</value>
   </data>
+  <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
+    <value>De afbeelding kon niet als {0} worden gecodeerd.</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Afbeeldingen converteren</value>
   </data>

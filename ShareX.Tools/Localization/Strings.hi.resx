@@ -914,6 +914,9 @@
   <data name="ImageComparerWindow_Slider" xml:space="preserve">
     <value>स्लाइडर</value>
   </data>
+  <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
+    <value>छवि को {0} प्रारूप में एन्कोड नहीं किया जा सका।</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>छवियाँ रूपांतरित करें</value>
   </data>
