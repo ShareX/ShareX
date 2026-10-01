@@ -1,6 +1,6 @@
 # AGENTS.md — ShareX
 
-Rules for people and coding agents working in this repository. The `cross-platform` branch is moving ShareX from a Windows (WinForms) application to one codebase that runs on Windows, macOS and Linux. Read [docs/cross-platform.md](docs/cross-platform.md) for the architecture and the current status.
+Rules for people and coding agents working in this repository. The `cross-platform` branch is moving ShareX from a Windows (WinForms) application to one codebase that runs on Windows, macOS and Linux. Read [docs/cross-platform.md](docs/cross-platform.md) for the architecture and the current status, and [docs/cross-platform-delegation.md](docs/cross-platform-delegation.md) for which agent owns which project and the task tracker.
 
 ## Platform abstraction rules
 
