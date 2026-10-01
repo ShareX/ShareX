@@ -133,7 +133,7 @@ public partial class ImageViewerWindow : Window
             Close();
             e.Handled = true;
         }
-        else if (e.InitialPressMouseButton == MouseButton.Middle && e.KeyModifiers.HasFlag(KeyModifiers.Control))
+        else if (e.InitialPressMouseButton == MouseButton.Middle)
         {
             _previewTransform.Matrix = Matrix.Identity;
             e.Handled = true;
@@ -144,15 +144,15 @@ public partial class ImageViewerWindow : Window
     {
         if (e.KeyModifiers.HasFlag(KeyModifiers.Control))
         {
-            if (_viewModel.HasImage && e.Delta.Y != 0 && sender is Control preview)
+            if (_viewModel.HasImage && e.Delta.Y != 0 && sender is Border { Child: Image previewImage })
             {
                 Matrix matrix = _previewTransform.Matrix;
                 double zoom = Math.Clamp(matrix.M11 * Math.Pow(ZoomFactor, e.Delta.Y), MinZoom, MaxZoom);
-                double scale = zoom / matrix.M11;
-                Point pointerPosition = e.GetPosition(preview);
+                // Account for the image's layout offset and current transform when finding the anchor.
+                Point pointerPosition = e.GetPosition(previewImage);
                 _previewTransform.Matrix = new Matrix(zoom, 0, 0, zoom,
-                    pointerPosition.X - (pointerPosition.X - matrix.M31) * scale,
-                    pointerPosition.Y - (pointerPosition.Y - matrix.M32) * scale);
+                    matrix.M31 + pointerPosition.X * (matrix.M11 - zoom),
+                    matrix.M32 + pointerPosition.Y * (matrix.M22 - zoom));
             }
 
             e.Handled = true;
