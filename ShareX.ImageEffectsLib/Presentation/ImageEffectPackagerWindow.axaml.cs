@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -104,7 +104,7 @@ public partial class ImageEffectPackagerWindow : Window
             string result = ImageEffectPackager.Package(output, _json, assets);
             if (!string.IsNullOrEmpty(result) && File.Exists(result))
             {
-                FileHelpers.OpenFolderWithFile(result);
+                PortableShell.OpenFolderWithFile(result);
                 _status.Text = Localization.Strings.ImageEffectPackagerWindow_Created_successfully;
             }
         }

@@ -24,19 +24,20 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 
 namespace ShareX.HelpersLib
 {
+    /// <summary>A linear gradient. Drawn with SkiaSharp; the WinForms application gets a GDI+ brush from ShareX.HelpersLib.Windows.</summary>
     public class GradientInfo
     {
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode Type { get; set; }
+        [DefaultValue(GradientDirection.Vertical)]
+        public GradientDirection Type { get; set; }
 
         public List<GradientStop> Colors { get; set; }
 
@@ -49,22 +50,22 @@ namespace ShareX.HelpersLib
         [JsonIgnore]
         public bool IsTransparent => IsValid && Colors.Any(x => x.Color.IsTransparent());
 
-        public GradientInfo() : this(LinearGradientMode.Vertical)
+        public GradientInfo() : this(GradientDirection.Vertical)
         {
         }
 
-        public GradientInfo(LinearGradientMode type)
+        public GradientInfo(GradientDirection type)
         {
             Type = type;
             Colors = new List<GradientStop>();
         }
 
-        public GradientInfo(LinearGradientMode type, params GradientStop[] colors) : this(type)
+        public GradientInfo(GradientDirection type, params GradientStop[] colors) : this(type)
         {
             Colors = colors.ToList();
         }
 
-        public GradientInfo(LinearGradientMode type, params Color[] colors) : this(type)
+        public GradientInfo(GradientDirection type, params Color[] colors) : this(type)
         {
             for (int i = 0; i < colors.Length; i++)
             {
@@ -72,11 +73,11 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public GradientInfo(params GradientStop[] colors) : this(LinearGradientMode.Vertical, colors)
+        public GradientInfo(params GradientStop[] colors) : this(GradientDirection.Vertical, colors)
         {
         }
 
-        public GradientInfo(params Color[] colors) : this(LinearGradientMode.Vertical, colors)
+        public GradientInfo(params Color[] colors) : this(GradientDirection.Vertical, colors)
         {
         }
 
@@ -100,7 +101,8 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public ColorBlend GetColorBlend()
+        /// <summary>Stops sorted by position, with the first and last colours extended to 0 and 100 like GDI+ requires.</summary>
+        public List<GradientStop> GetNormalizedStops()
         {
             List<GradientStop> colors = new List<GradientStop>(Colors.OrderBy(x => x.Location));
 
@@ -114,72 +116,36 @@ namespace ShareX.HelpersLib
                 colors.Add(new GradientStop(colors[colors.Count - 1].Color, 100f));
             }
 
-            ColorBlend colorBlend = new ColorBlend();
-            colorBlend.Colors = colors.Select(x => x.Color).ToArray();
-            colorBlend.Positions = colors.Select(x => x.Location / 100).ToArray();
-            return colorBlend;
+            return colors;
         }
 
-        public LinearGradientBrush GetGradientBrush(Rectangle rect)
+        /// <summary>The gradient as a SkiaSharp shader over the rectangle.</summary>
+        public SKShader CreateShader(SKRect rect)
         {
-            LinearGradientBrush brush = new LinearGradientBrush(rect, Color.Transparent, Color.Transparent, Type);
-            brush.InterpolationColors = GetColorBlend();
-            return brush;
+            List<GradientStop> stops = GetNormalizedStops();
+            (SKPoint start, SKPoint end) = Type switch
+            {
+                GradientDirection.Horizontal => (new SKPoint(rect.Left, rect.Top), new SKPoint(rect.Right, rect.Top)),
+                GradientDirection.ForwardDiagonal => (new SKPoint(rect.Left, rect.Top), new SKPoint(rect.Right, rect.Bottom)),
+                GradientDirection.BackwardDiagonal => (new SKPoint(rect.Right, rect.Top), new SKPoint(rect.Left, rect.Bottom)),
+                _ => (new SKPoint(rect.Left, rect.Top), new SKPoint(rect.Left, rect.Bottom))
+            };
+
+            return SKShader.CreateLinearGradient(start, end, stops.Select(x => new SKColor(x.Color.R, x.Color.G, x.Color.B, x.Color.A)).ToArray(),
+                stops.Select(x => x.Location / 100f).ToArray(), SKShaderTileMode.Clamp);
         }
 
-        public void Draw(Graphics g, Rectangle rect)
+        public void Draw(SKCanvas canvas, SKRect rect)
         {
             if (IsValid)
             {
-                try
-                {
-                    using (LinearGradientBrush brush = GetGradientBrush(new Rectangle(0, 0, rect.Width, rect.Height)))
-                    {
-                        g.FillRectangle(brush, rect);
-                    }
-                }
-                catch
-                {
-                }
+                using SKShader shader = CreateShader(new SKRect(0, 0, rect.Width, rect.Height));
+                using SKPaint paint = new SKPaint { Shader = shader };
+                canvas.Save();
+                canvas.Translate(rect.Left, rect.Top);
+                canvas.DrawRect(0, 0, rect.Width, rect.Height, paint);
+                canvas.Restore();
             }
-        }
-
-        public void Draw(Image img)
-        {
-            if (IsValid)
-            {
-                using (Graphics g = Graphics.FromImage(img))
-                {
-                    Draw(g, new Rectangle(0, 0, img.Width, img.Height));
-                }
-            }
-        }
-
-        public Bitmap CreateGradientPreview(int width, int height, bool border = false, bool checkers = false)
-        {
-            Bitmap bmp = new Bitmap(width, height);
-            Rectangle rect = new Rectangle(0, 0, width, height);
-
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                if (checkers && IsTransparent)
-                {
-                    using (Image checker = ImageHelpers.CreateCheckerPattern())
-                    using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
-                    {
-                        g.FillRectangle(checkerBrush, rect);
-                    }
-                }
-
-                Draw(g, rect);
-
-                if (border)
-                {
-                    g.DrawRectangleProper(Pens.Black, rect);
-                }
-            }
-
-            return bmp;
         }
 
         public override string ToString()

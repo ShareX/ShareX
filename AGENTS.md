@@ -43,9 +43,10 @@ Rules for people and coding agents working in this repository. The `cross-platfo
 
 These break the rules above and are being moved behind platform services. Do not copy their patterns into new code. Update the list as items are done.
 
-- [ ] `ShareX.HelpersLib.Windows` (WinForms helpers, update and print windows) and the `net10.0-windows` targets of `ShareX`, `ScreenCaptureLib`, `ImageEffectsLib`, `Tools`.
+- [ ] `ShareX.HelpersLib.Windows` (WinForms helpers, update and print windows) and the `net10.0-windows` targets of `ShareX`, `ScreenCaptureLib`, `Tools`.
 - [ ] Win32 interop (`NativeMethods`, `WindowInfo`, `CursorData`, `DWMManager`, now in `ShareX.HelpersLib.Windows`) → `ShareX.Platform.Windows`, as each caller moves to a platform service.
-- [ ] GDI+ image code (`ImageHelpers`, `ImageEffectsLib`, `ColorMatrixManager`, GIF encoding, the capture pipeline in `TaskHelpers`) → SkiaSharp.
+- [x] `ImageEffectsLib` → SkiaSharp (`net10.0`, presets keep their format; `SkiaImageHelpers` holds the ported algorithms).
+- [ ] Remaining GDI+ image code (`ImageHelpers`, GIF encoding, the capture pipeline in `TaskHelpers`) → SkiaSharp. The Windows app converts at the boundary with `GdiSkiaBitmapConverter` until then.
 - [ ] Remaining P/Invoke in `ScreenCaptureLib` (HDR, scrolling and transparent capture), `Tools` (mouse highlighter, borderless window, inspect window), `ImageEditor` and `ShareX.Avalonia` → platform services.
 - [ ] WinForms tray icon and hotkey host (`MainForm`, `TrayIconService`) → Avalonia `TrayIcon` and `IHotkeyService`.
 - [x] `HelpersLib` free of P/Invoke, registry and OS branches (system info, MIME types, cursor confinement and mouse capture now come from `ISystemInfoService`, `IShellService` and `IWindowService`).

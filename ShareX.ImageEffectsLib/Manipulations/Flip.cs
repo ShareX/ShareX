@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -42,29 +43,17 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            RotateFlipType flipType = RotateFlipType.RotateNoneFlipNone;
-
-            if (Horizontally && Vertically)
+            if (!Horizontally && !Vertically)
             {
-                flipType = RotateFlipType.RotateNoneFlipXY;
-            }
-            else if (Horizontally)
-            {
-                flipType = RotateFlipType.RotateNoneFlipX;
-            }
-            else if (Vertically)
-            {
-                flipType = RotateFlipType.RotateNoneFlipY;
+                return bmp;
             }
 
-            if (flipType != RotateFlipType.RotateNoneFlipNone)
+            using (bmp)
             {
-                bmp.RotateFlip(flipType);
+                return SkiaImageHelpers.Flip(bmp, Horizontally, Vertically);
             }
-
-            return bmp;
         }
 
         protected override string GetSummary()

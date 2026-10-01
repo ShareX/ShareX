@@ -28,7 +28,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
+namespace ShareX.HelpersLib;
 
 public static class GdiSkiaBitmapConverter
 {

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -74,13 +75,11 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Color), "Transparent")]
         public Color GrowFillColor { get; set; } = Color.Transparent;
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             float currentRatio = bmp.Width / (float)bmp.Height;
             float targetRatio = proportionalWidth / (float)proportionalHeight;
-
             bool isTargetWider = targetRatio > currentRatio;
-
             int targetWidth = bmp.Width;
             int targetHeight = bmp.Height;
             int marginLeft = 0;
@@ -99,9 +98,18 @@ namespace ShareX.ImageEffectsLib
                     marginLeft = (bmp.Width - targetWidth) / 2;
                 }
 
-                return ImageHelpers.CropBitmap(bmp, new Rectangle(marginLeft, marginTop, targetWidth, targetHeight));
+                SKBitmap result = SkiaImageHelpers.Crop(bmp, new Rectangle(marginLeft, marginTop, targetWidth, targetHeight));
+
+                if (result == null)
+                {
+                    return bmp;
+                }
+
+                bmp.Dispose();
+                return result;
             }
-            else if (Method == ForceProportionsMethod.Grow)
+
+            if (Method == ForceProportionsMethod.Grow)
             {
                 if (isTargetWider)
                 {
@@ -112,7 +120,10 @@ namespace ShareX.ImageEffectsLib
                     targetHeight = (int)Math.Round(bmp.Width / targetRatio);
                 }
 
-                return ImageHelpers.ResizeImage(bmp, targetWidth, targetHeight, false, true, GrowFillColor);
+                using (bmp)
+                {
+                    return SkiaImageHelpers.ResizeToFit(bmp, targetWidth, targetHeight, false, true, GrowFillColor);
+                }
             }
 
             return bmp;

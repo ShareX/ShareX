@@ -24,9 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -51,8 +51,8 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(DashStyle.Solid)]
-        public DashStyle DashStyle { get; set; }
+        [DefaultValue(LineDashStyle.Solid)]
+        public LineDashStyle DashStyle { get; set; }
 
         [DefaultValue(typeof(Color), "Black")]
         public Color Color { get; set; }
@@ -77,14 +77,12 @@ namespace ShareX.ImageEffectsLib
             Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            if (UseGradient && Gradient != null && Gradient.IsValid)
+            using (bmp)
             {
-                return ImageHelpers.DrawBorder(bmp, Gradient, Size, Type, DashStyle);
+                return SkiaImageHelpers.DrawBorder(bmp, Size, Type, DashStyle, Color, UseGradient && Gradient != null && Gradient.IsValid ? Gradient : null);
             }
-
-            return ImageHelpers.DrawBorder(bmp, Color, Size, Type, DashStyle);
         }
 
         protected override string GetSummary()

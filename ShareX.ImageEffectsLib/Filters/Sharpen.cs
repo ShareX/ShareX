@@ -24,19 +24,18 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
     internal class Sharpen : ImageEffect
     {
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            //return ImageHelpers.Sharpen(bmp, Strength);
-
             using (bmp)
             {
-                return ConvolutionMatrixManager.Sharpen().Apply(bmp);
+                return SkiaImageHelpers.Convolve(bmp, SkiaImageHelpers.SharpenKernel());
             }
         }
     }

@@ -24,17 +24,18 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
     internal class Polaroid : ImageEffect
     {
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             using (bmp)
             {
-                return ColorMatrixManager.Polaroid().Apply(bmp);
+                return SkiaImageHelpers.ApplyColorMatrix(bmp, SkiaImageHelpers.PolaroidMatrix());
             }
         }
     }

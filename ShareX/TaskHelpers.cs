@@ -452,8 +452,7 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(thumbnailFilePath))
                 {
-                    using (Bitmap thumbnail = (Bitmap)bmp.Clone())
-                    using (Bitmap resizedImage = new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight).Apply(thumbnail))
+                    using (Bitmap resizedImage = ApplyImageEffect(new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight), bmp))
                     using (Bitmap newImage = ImageHelpers.FillBackground(resizedImage, Color.White))
                     {
                         ImageHelpers.SaveJPEG(newImage, thumbnailFilePath, 90);
@@ -676,9 +675,15 @@ namespace ShareX
 
                 if (taskSettingsImage.ShowImageEffectsWindowAfterCapture)
                 {
-                    ImageEffectsDialogResult result = ImageEffectsIntegration.ShowDialog(bmp,
-                        taskSettingsImage.ImageEffectPresets, taskSettingsImage.SelectedImageEffectPreset,
-                        ImageEffectsWindowMode.Editor);
+                    ImageEffectsDialogResult result;
+
+                    using (SKBitmap preview = GdiSkiaBitmapConverter.ToSKBitmap(bmp))
+                    {
+                        result = ImageEffectsIntegration.ShowDialog(preview,
+                            taskSettingsImage.ImageEffectPresets, taskSettingsImage.SelectedImageEffectPreset,
+                            ImageEffectsWindowMode.Editor);
+                    }
+
                     taskSettingsImage.SelectedImageEffectPreset = result.SelectedPresetIndex;
                 }
 
@@ -696,8 +701,10 @@ namespace ShareX
                 if (imageEffect != null)
                 {
                     using (bmp)
+                    using (SKBitmap source = GdiSkiaBitmapConverter.ToSKBitmap(bmp))
+                    using (SKBitmap result = imageEffect.ApplyEffects(source))
                     {
-                        return imageEffect.ApplyEffects(bmp);
+                        return result != null ? GdiSkiaBitmapConverter.ToGdiBitmap(result) : null;
                     }
                 }
             }
@@ -1606,8 +1613,9 @@ namespace ShareX
                     if (taskSettings == null) taskSettings = ApplicationState.DefaultTaskSettings;
 
                     using (bmp)
+                    using (SKBitmap source = GdiSkiaBitmapConverter.ToSKBitmap(bmp))
                     {
-                        ImageEffectsIntegration.ShowToolWindow(bmp,
+                        ImageEffectsIntegration.ShowToolWindow(source,
                             taskSettings.ImageSettingsReference.ImageEffectPresets,
                             taskSettings.ImageSettings.SelectedImageEffectPreset,
                             CreateImageEffectsCallbacks(taskSettings), filePath,
@@ -1627,6 +1635,15 @@ namespace ShareX
                 importJson, CreateImageEffectsCallbacks(taskSettings));
         }
 
+        /// <summary>Runs a SkiaSharp image effect on a GDI+ bitmap. The bitmap is not changed; the result is a new bitmap.</summary>
+        private static Bitmap ApplyImageEffect(ImageEffect effect, Bitmap bmp)
+        {
+            using (SKBitmap result = effect.Apply(GdiSkiaBitmapConverter.ToSKBitmap(bmp)))
+            {
+                return GdiSkiaBitmapConverter.ToGdiBitmap(result);
+            }
+        }
+
         private static ImageEffectsCallbacks CreateImageEffectsCallbacks(TaskSettings taskSettings)
         {
             return new ImageEffectsCallbacks
@@ -1634,16 +1651,20 @@ namespace ShareX
                 LoadImageFromFile = () =>
                 {
                     string path = ImageHelpers.OpenImageFileDialog();
-                    Bitmap image = !string.IsNullOrWhiteSpace(path) ? ImageHelpers.LoadImage(path) : null;
-                    return image != null ? new ImageEffectsSource(image, path) : null;
+                    using Bitmap image = !string.IsNullOrWhiteSpace(path) ? ImageHelpers.LoadImage(path) : null;
+                    return image != null ? new ImageEffectsSource(GdiSkiaBitmapConverter.ToSKBitmap(image), path) : null;
                 },
                 LoadImageFromClipboard = () =>
                 {
-                    Bitmap image = ClipboardHelpers.GetImage();
-                    return image != null ? new ImageEffectsSource(image) : null;
+                    using Bitmap image = ClipboardHelpers.GetImage();
+                    return image != null ? new ImageEffectsSource(GdiSkiaBitmapConverter.ToSKBitmap(image)) : null;
                 },
-                SaveImage = (image, path) => ImageHelpers.SaveImageFileDialog(image, path),
-                UploadImage = image => UploadManager.RunImageTask(image, taskSettings),
+                SaveImage = (image, path) =>
+                {
+                    using Bitmap bitmap = GdiSkiaBitmapConverter.ToGdiBitmap(image);
+                    return ImageHelpers.SaveImageFileDialog(bitmap, path);
+                },
+                UploadImage = image => UploadManager.RunImageTask(GdiSkiaBitmapConverter.ToGdiBitmap(image), taskSettings),
                 OpenImageEffectsPage = () => URLHelpers.OpenURL(Links.ImageEffects)
             };
         }

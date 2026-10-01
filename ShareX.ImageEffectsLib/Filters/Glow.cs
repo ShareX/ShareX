@@ -24,9 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -82,7 +82,7 @@ namespace ShareX.ImageEffectsLib
         private GradientInfo AddDefaultGradient()
         {
             GradientInfo gradientInfo = new GradientInfo();
-            gradientInfo.Type = LinearGradientMode.ForwardDiagonal;
+            gradientInfo.Type = GradientDirection.ForwardDiagonal;
 
             switch (RandomFast.Next(0, 2))
             {
@@ -103,9 +103,12 @@ namespace ShareX.ImageEffectsLib
             return gradientInfo;
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            return ImageHelpers.AddGlow(bmp, Size, Strength, Color, Offset, UseGradient ? Gradient : null);
+            using (bmp)
+            {
+                return SkiaImageHelpers.AddGlow(bmp, Size, Strength, Color, Offset, UseGradient ? Gradient : null);
+            }
         }
 
         protected override string GetSummary()

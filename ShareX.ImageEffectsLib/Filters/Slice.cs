@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -73,7 +74,7 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             int minSliceHeight = Math.Min(MinSliceHeight, MaxSliceHeight);
             int maxSliceHeight = Math.Max(MinSliceHeight, MaxSliceHeight);
@@ -82,7 +83,7 @@ namespace ShareX.ImageEffectsLib
 
             using (bmp)
             {
-                return ImageHelpers.Slice(bmp, minSliceHeight, maxSliceHeight, minSliceShift, maxSliceShift);
+                return SkiaImageHelpers.Slice(bmp, minSliceHeight, maxSliceHeight, minSliceShift, maxSliceShift);
             }
         }
 

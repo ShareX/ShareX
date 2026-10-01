@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,7 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using System.Drawing;
+
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib;
 
@@ -34,14 +35,14 @@ public enum ImageEffectsWindowMode
     Editor
 }
 
-public sealed record ImageEffectsSource(Bitmap Image, string? FilePath = null);
+public sealed record ImageEffectsSource(SKBitmap Image, string? FilePath = null);
 
 public sealed class ImageEffectsCallbacks
 {
     public Func<ImageEffectsSource?>? LoadImageFromFile { get; init; }
     public Func<ImageEffectsSource?>? LoadImageFromClipboard { get; init; }
-    public Func<Bitmap, string?, string?>? SaveImage { get; init; }
-    public Action<Bitmap>? UploadImage { get; init; }
+    public Func<SKBitmap, string?, string?>? SaveImage { get; init; }
+    public Action<SKBitmap>? UploadImage { get; init; }
     public Action? OpenImageEffectsPage { get; init; }
 }
 

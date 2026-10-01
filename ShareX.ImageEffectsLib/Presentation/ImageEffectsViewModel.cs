@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -31,11 +31,10 @@ using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json.Serialization;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 
 namespace ShareX.ImageEffectsLib;
 
@@ -80,7 +79,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     private readonly ImageEffectsCallbacks _callbacks;
     private readonly ISerializationBinder _serializationBinder = new ImageEffectsSerializationBinder();
     private readonly DispatcherTimer _previewTimer;
-    private System.Drawing.Bitmap? _sourceImage;
+    private SKBitmap? _sourceImage;
     private byte[]? _previewImageData;
     private int _previewVersion;
     private bool _disposed;
@@ -155,10 +154,10 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         }
     }
 
-    public ImageEffectsViewModel(System.Drawing.Bitmap? sourceImage, List<ImageEffectPreset> presets, int selectedPresetIndex,
+    public ImageEffectsViewModel(SKBitmap? sourceImage, List<ImageEffectPreset> presets, int selectedPresetIndex,
         ImageEffectsWindowMode mode, ImageEffectsCallbacks? callbacks = null, string? filePath = null)
     {
-        _sourceImage = sourceImage != null ? (System.Drawing.Bitmap)sourceImage.Clone() : CreateSampleImage();
+        _sourceImage = sourceImage != null ? SkiaImageHelpers.Clone(sourceImage) : CreateSampleImage();
         _presets = presets;
         _callbacks = callbacks ?? new ImageEffectsCallbacks();
         Mode = mode;
@@ -331,7 +330,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
 
     public void LoadImageFile(string filePath)
     {
-        System.Drawing.Bitmap image = ImageHelpers.LoadImage(filePath);
+        SKBitmap image = SkiaImageHelpers.LoadImage(filePath);
         if (image != null) ReplaceSource(new ImageEffectsSource(image, filePath));
     }
 
@@ -339,7 +338,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     private async Task SaveAsync()
     {
         if (_callbacks.SaveImage == null) return;
-        using System.Drawing.Bitmap? result = await ApplySelectedPresetAsync();
+        using SKBitmap? result = await ApplySelectedPresetAsync();
         if (result != null)
         {
             string? path = _callbacks.SaveImage(result, FilePath);
@@ -351,7 +350,7 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
     private async Task UploadAsync()
     {
         if (_callbacks.UploadImage == null) return;
-        System.Drawing.Bitmap? result = await ApplySelectedPresetAsync();
+        SKBitmap? result = await ApplySelectedPresetAsync();
         if (result != null) _callbacks.UploadImage(result);
     }
 
@@ -401,15 +400,19 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
 
         try
         {
-            using System.Drawing.Bitmap source = (System.Drawing.Bitmap)_sourceImage.Clone();
+            using SKBitmap source = SkiaImageHelpers.Clone(_sourceImage);
             ImageEffectPreset preset = SelectedPreset.Preset.Copy();
-            System.Drawing.Bitmap? result = await Task.Run(() => preset.ApplyEffects(source));
+            SKBitmap? result = await Task.Run(() => preset.ApplyEffects(source));
             using (result)
             {
                 if (result == null || version != _previewVersion || _disposed) return;
-                using MemoryStream stream = new();
-                result.Save(stream, ImageFormat.Png);
-                byte[] previewImageData = stream.ToArray();
+                byte[] previewImageData;
+
+                using (SKData encoded = result.Encode(SKEncodedImageFormat.Png, 100))
+                {
+                    previewImageData = encoded.ToArray();
+                }
+
                 using MemoryStream previewStream = new(previewImageData);
                 Avalonia.Media.Imaging.Bitmap preview = new(previewStream);
                 Preview?.Dispose();
@@ -430,10 +433,10 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         }
     }
 
-    private async Task<System.Drawing.Bitmap?> ApplySelectedPresetAsync()
+    private async Task<SKBitmap?> ApplySelectedPresetAsync()
     {
         if (_sourceImage == null || SelectedPreset == null) return null;
-        using System.Drawing.Bitmap source = (System.Drawing.Bitmap)_sourceImage.Clone();
+        using SKBitmap source = SkiaImageHelpers.Clone(_sourceImage);
         ImageEffectPreset preset = SelectedPreset.Preset.Copy();
         return await Task.Run(() => preset.ApplyEffects(source));
     }
@@ -475,11 +478,10 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
 
     private static bool IsAllowed(string path, string folder) => string.IsNullOrEmpty(path) || ImageEffectPathHelpers.IsPathInFolder(path, folder);
 
-    private static System.Drawing.Bitmap CreateSampleImage()
+    private static SKBitmap CreateSampleImage()
     {
-        System.Drawing.Bitmap bitmap = new(720, 480);
-        using Graphics graphics = Graphics.FromImage(bitmap);
-        graphics.SmoothingMode = SmoothingMode.HighQuality;
+        SKBitmap bitmap = SkiaImageHelpers.CreateEmpty(720, 480);
+        using SKCanvas canvas = new(bitmap);
 
         System.Drawing.Color backgroundMain = GetThemeColor("ShareX.Color.Background.Main", System.Drawing.Color.FromArgb(39, 39, 39));
         System.Drawing.Color backgroundPanel = GetThemeColor("ShareX.Color.Background.Panel", System.Drawing.Color.FromArgb(36, 36, 36));
@@ -487,33 +489,46 @@ public sealed partial class ImageEffectsViewModel : ObservableObject, IDisposabl
         System.Drawing.Color accentEnd = GetThemeColor("ShareX.Color.Accent.End", System.Drawing.Color.FromArgb(57, 117, 213));
         System.Drawing.Color accentForeground = GetThemeColor("ShareX.Color.Accent.Foreground", System.Drawing.Color.FromArgb(216, 218, 219));
 
-        using LinearGradientBrush background = new(new Rectangle(0, 0, bitmap.Width, bitmap.Height), backgroundMain, backgroundPanel, 35f);
-        graphics.FillRectangle(background, 0, 0, bitmap.Width, bitmap.Height);
+        // A 35 degree gradient across the canvas, as the GDI+ version drew it.
+        double angle = 35 * Math.PI / 180;
+        float half = (float)((bitmap.Width * Math.Abs(Math.Cos(angle)) + bitmap.Height * Math.Abs(Math.Sin(angle))) / 2);
+        SKPoint center = new(bitmap.Width / 2f, bitmap.Height / 2f);
+        SKPoint direction = new((float)Math.Cos(angle) * half, (float)Math.Sin(angle) * half);
+
+        using (SKShader shader = SKShader.CreateLinearGradient(center - direction, center + direction,
+            [backgroundMain.ToSKColor(), backgroundPanel.ToSKColor()], SKShaderTileMode.Clamp))
+        using (SKPaint background = new() { Shader = shader })
+        {
+            canvas.DrawRect(0, 0, bitmap.Width, bitmap.Height, background);
+        }
 
         const float shapeSize = 200f;
-        RectangleF shapeBounds = new(
-            (bitmap.Width - shapeSize) / 2f,
-            (bitmap.Height - shapeSize) / 2f,
-            shapeSize,
-            shapeSize);
+        RectangleF shapeBounds = new((bitmap.Width - shapeSize) / 2f, (bitmap.Height - shapeSize) / 2f, shapeSize, shapeSize);
         PointF[] outerHexagon = CreateHexagon(shapeBounds, 0f);
-        float shapeCenterX = shapeBounds.Left + shapeBounds.Width / 2f;
-        float shapeCenterY = shapeBounds.Top + shapeBounds.Height / 2f;
-        PointF shapeCenter = new(shapeCenterX, shapeCenterY);
-        PointF[] topFace = [outerHexagon[0], outerHexagon[1], shapeCenter, outerHexagon[5]];
-        PointF[] leftFace = [outerHexagon[5], shapeCenter, outerHexagon[3], outerHexagon[4]];
-        PointF[] rightFace = [outerHexagon[1], outerHexagon[2], outerHexagon[3], shapeCenter];
-        using SolidBrush topFaceBrush = new(BlendColors(accentStart, accentForeground, 0.16f));
-        using SolidBrush leftFaceBrush = new(accentStart);
-        using SolidBrush rightFaceBrush = new(accentEnd);
-        using Pen faceOutline = new(System.Drawing.Color.FromArgb(100, accentForeground), 2f);
-        graphics.FillPolygon(topFaceBrush, topFace);
-        graphics.FillPolygon(leftFaceBrush, leftFace);
-        graphics.FillPolygon(rightFaceBrush, rightFace);
-        graphics.DrawPolygon(faceOutline, outerHexagon);
-        graphics.DrawLine(faceOutline, outerHexagon[3], shapeCenter);
-        graphics.DrawLine(faceOutline, outerHexagon[1], shapeCenter);
-        graphics.DrawLine(faceOutline, outerHexagon[5], shapeCenter);
+        PointF shapeCenter = new(shapeBounds.Left + shapeBounds.Width / 2f, shapeBounds.Top + shapeBounds.Height / 2f);
+
+        void Fill(PointF[] points, System.Drawing.Color color)
+        {
+            using SKPath path = new();
+            path.AddPoly(points.Select(p => new SKPoint(p.X, p.Y)).ToArray(), close: true);
+            using SKPaint paint = new() { IsAntialias = true, Color = color.ToSKColor() };
+            canvas.DrawPath(path, paint);
+        }
+
+        Fill([outerHexagon[0], outerHexagon[1], shapeCenter, outerHexagon[5]], BlendColors(accentStart, accentForeground, 0.16f));
+        Fill([outerHexagon[5], shapeCenter, outerHexagon[3], outerHexagon[4]], accentStart);
+        Fill([outerHexagon[1], outerHexagon[2], outerHexagon[3], shapeCenter], accentEnd);
+
+        using (SKPaint outline = new() { IsAntialias = true, IsStroke = true, StrokeWidth = 2f, Color = System.Drawing.Color.FromArgb(100, accentForeground).ToSKColor() })
+        using (SKPath hexagon = new())
+        {
+            hexagon.AddPoly(outerHexagon.Select(p => new SKPoint(p.X, p.Y)).ToArray(), close: true);
+            canvas.DrawPath(hexagon, outline);
+            SKPoint c = new(shapeCenter.X, shapeCenter.Y);
+            canvas.DrawLine(new SKPoint(outerHexagon[3].X, outerHexagon[3].Y), c, outline);
+            canvas.DrawLine(new SKPoint(outerHexagon[1].X, outerHexagon[1].Y), c, outline);
+            canvas.DrawLine(new SKPoint(outerHexagon[5].X, outerHexagon[5].Y), c, outline);
+        }
 
         return bitmap;
     }

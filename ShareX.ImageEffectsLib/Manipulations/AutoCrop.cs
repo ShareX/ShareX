@@ -24,17 +24,17 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
     [Description("Auto crop")]
     internal class AutoCrop : ImageEffect
     {
-        [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
-        public AnchorStyles Sides { get; set; }
+        [DefaultValue(AnchorSides.Top | AnchorSides.Bottom | AnchorSides.Left | AnchorSides.Right)]
+        public AnchorSides Sides { get; set; }
 
         [DefaultValue(0)]
         public int Padding { get; set; }
@@ -44,9 +44,17 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            return ImageHelpers.AutoCropImage(bmp, true, Sides, Padding);
+            SKBitmap result = SkiaImageHelpers.AutoCrop(bmp, true, Sides, Padding);
+
+            if (result == null)
+            {
+                return bmp;
+            }
+
+            bmp.Dispose();
+            return result;
         }
 
         protected override string GetSummary()

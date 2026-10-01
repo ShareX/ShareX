@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -37,7 +37,7 @@ namespace ShareX.ImageEffectsLib;
 
 public partial class GradientOptionsPanel : UserControl
 {
-    private static readonly LinearGradientMode[] GradientDirections = Enum.GetValues<LinearGradientMode>();
+    private static readonly GradientDirection[] GradientDirections = Enum.GetValues<GradientDirection>();
     private readonly GradientInfo _gradient;
     private readonly Action? _changed;
     private readonly Dictionary<HelperGradientStop, Control> _stopRows = [];
@@ -55,7 +55,7 @@ public partial class GradientOptionsPanel : UserControl
         AvaloniaXamlLoader.Load(this);
         _direction = this.FindControl<ComboBox>("DirectionComboBox")!;
         _stopsPanel = this.FindControl<StackPanel>("StopsPanel")!;
-        _direction.ItemsSource = GradientDirections.Select(x => ImageEffectsLocalization.GetEnumValue(typeof(LinearGradientMode), x)).ToArray();
+        _direction.ItemsSource = GradientDirections.Select(x => ImageEffectsLocalization.GetEnumValue(typeof(GradientDirection), x)).ToArray();
         _direction.SelectedIndex = Array.IndexOf(GradientDirections, _gradient.Type);
         _direction.SelectionChanged += (_, _) =>
         {

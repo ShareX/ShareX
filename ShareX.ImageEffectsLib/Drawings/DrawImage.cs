@@ -24,10 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -37,8 +36,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue("")]
         public string ImageLocation { get; set; }
 
-        [DefaultValue(ContentAlignment.TopLeft)]
-        public ContentAlignment Placement { get; set; }
+        [DefaultValue(ImageAlignment.TopLeft)]
+        public ImageAlignment Placement { get; set; }
 
         [DefaultValue(typeof(Point), "0, 0")]
         public Point Offset { get; set; }
@@ -61,8 +60,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(ImageInterpolationMode.HighQualityBicubic)]
         public ImageInterpolationMode InterpolationMode { get; set; }
 
-        [DefaultValue(CompositingMode.SourceOver)]
-        public CompositingMode CompositingMode { get; set; }
+        [DefaultValue(ImageCompositingMode.SourceOver)]
+        public ImageCompositingMode CompositingMode { get; set; }
 
         private int opacity;
 
@@ -84,91 +83,101 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             if (Opacity < 1 || (SizeMode != DrawImageSizeMode.DontResize && Size.Width <= 0 && Size.Height <= 0))
             {
                 return bmp;
             }
 
-            if (ImageEffectPathHelpers.TryGetSafeLocalFilePath(ImageLocation, out string imageFilePath) && File.Exists(imageFilePath))
+            if (!ImageEffectPathHelpers.TryGetSafeLocalFilePath(ImageLocation, out string imageFilePath) || !File.Exists(imageFilePath))
             {
-                using (Bitmap bmpWatermark = ImageHelpers.LoadImage(imageFilePath))
+                return bmp;
+            }
+
+            SKBitmap watermark = SkiaImageHelpers.LoadImage(imageFilePath);
+
+            if (watermark == null)
+            {
+                return bmp;
+            }
+
+            if (RotateFlip != ImageRotateFlipType.None)
+            {
+                using SKBitmap unrotated = watermark;
+                watermark = SkiaImageHelpers.RotateFlip(unrotated, (int)RotateFlip);
+            }
+
+            using (watermark)
+            {
+                Size imageSize;
+
+                if (SizeMode == DrawImageSizeMode.AbsoluteSize)
                 {
-                    if (bmpWatermark != null)
+                    int width = Size.Width == -1 ? bmp.Width : Size.Width;
+                    int height = Size.Height == -1 ? bmp.Height : Size.Height;
+                    imageSize = SkiaImageHelpers.ApplyAspectRatio(width, height, watermark);
+                }
+                else if (SizeMode == DrawImageSizeMode.PercentageOfWatermark)
+                {
+                    int width = (int)Math.Round(Size.Width / 100f * watermark.Width);
+                    int height = (int)Math.Round(Size.Height / 100f * watermark.Height);
+                    imageSize = SkiaImageHelpers.ApplyAspectRatio(width, height, watermark);
+                }
+                else if (SizeMode == DrawImageSizeMode.PercentageOfCanvas)
+                {
+                    int width = (int)Math.Round(Size.Width / 100f * bmp.Width);
+                    int height = (int)Math.Round(Size.Height / 100f * bmp.Height);
+                    imageSize = SkiaImageHelpers.ApplyAspectRatio(width, height, watermark);
+                }
+                else
+                {
+                    imageSize = new Size(watermark.Width, watermark.Height);
+                }
+
+                Point imagePosition = SkiaImageHelpers.GetPosition(Placement, Offset, new Size(bmp.Width, bmp.Height), imageSize);
+                Rectangle imageRectangle = new Rectangle(imagePosition, imageSize);
+
+                if (AutoHide && !new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(imageRectangle))
+                {
+                    return bmp;
+                }
+
+                SKRect destination = new SKRect(imageRectangle.Left, imageRectangle.Top, imageRectangle.Right, imageRectangle.Bottom);
+                SKSamplingOptions sampling = GetSampling(InterpolationMode);
+
+                using (SKCanvas canvas = new SKCanvas(bmp))
+                using (SKPaint paint = new SKPaint { BlendMode = CompositingMode == ImageCompositingMode.SourceCopy ? SKBlendMode.Src : SKBlendMode.SrcOver })
+                {
+                    if (Tile)
                     {
-                        if (RotateFlip != ImageRotateFlipType.None)
+                        using SKShader shader = SKShader.CreateBitmap(watermark, SKShaderTileMode.Repeat, SKShaderTileMode.Repeat,
+                            SKMatrix.CreateTranslation(imageRectangle.X, imageRectangle.Y));
+                        paint.Shader = shader;
+                        canvas.DrawRect(destination, paint);
+                    }
+                    else
+                    {
+                        if (Opacity < 100)
                         {
-                            bmpWatermark.RotateFlip((RotateFlipType)RotateFlip);
+                            paint.Color = SKColors.White.WithAlpha((byte)Math.Round(Opacity / 100f * 255));
                         }
 
-                        Size imageSize;
-
-                        if (SizeMode == DrawImageSizeMode.AbsoluteSize)
-                        {
-                            int width = Size.Width == -1 ? bmp.Width : Size.Width;
-                            int height = Size.Height == -1 ? bmp.Height : Size.Height;
-                            imageSize = ImageHelpers.ApplyAspectRatio(width, height, bmpWatermark);
-                        }
-                        else if (SizeMode == DrawImageSizeMode.PercentageOfWatermark)
-                        {
-                            int width = (int)Math.Round(Size.Width / 100f * bmpWatermark.Width);
-                            int height = (int)Math.Round(Size.Height / 100f * bmpWatermark.Height);
-                            imageSize = ImageHelpers.ApplyAspectRatio(width, height, bmpWatermark);
-                        }
-                        else if (SizeMode == DrawImageSizeMode.PercentageOfCanvas)
-                        {
-                            int width = (int)Math.Round(Size.Width / 100f * bmp.Width);
-                            int height = (int)Math.Round(Size.Height / 100f * bmp.Height);
-                            imageSize = ImageHelpers.ApplyAspectRatio(width, height, bmpWatermark);
-                        }
-                        else
-                        {
-                            imageSize = bmpWatermark.Size;
-                        }
-
-                        Point imagePosition = Helpers.GetPosition(Placement, Offset, bmp.Size, imageSize);
-                        Rectangle imageRectangle = new Rectangle(imagePosition, imageSize);
-
-                        if (AutoHide && !new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(imageRectangle))
-                        {
-                            return bmp;
-                        }
-
-                        using (Graphics g = Graphics.FromImage(bmp))
-                        {
-                            g.InterpolationMode = ImageHelpers.GetInterpolationMode(InterpolationMode);
-                            g.PixelOffsetMode = PixelOffsetMode.Half;
-                            g.CompositingMode = CompositingMode;
-
-                            if (Tile)
-                            {
-                                using (TextureBrush brush = new TextureBrush(bmpWatermark, WrapMode.Tile))
-                                {
-                                    brush.TranslateTransform(imageRectangle.X, imageRectangle.Y);
-                                    g.FillRectangle(brush, imageRectangle);
-                                }
-                            }
-                            else if (Opacity < 100)
-                            {
-                                using (ImageAttributes ia = new ImageAttributes())
-                                {
-                                    ColorMatrix matrix = ColorMatrixManager.Alpha(Opacity / 100f);
-                                    ia.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
-                                    g.DrawImage(bmpWatermark, imageRectangle, 0, 0, bmpWatermark.Width, bmpWatermark.Height, GraphicsUnit.Pixel, ia);
-                                }
-                            }
-                            else
-                            {
-                                g.DrawImage(bmpWatermark, imageRectangle);
-                            }
-                        }
+                        using SKImage image = SKImage.FromBitmap(watermark);
+                        canvas.DrawImage(image, destination, sampling, paint);
                     }
                 }
             }
 
             return bmp;
         }
+
+        private static SKSamplingOptions GetSampling(ImageInterpolationMode mode) => mode switch
+        {
+            ImageInterpolationMode.NearestNeighbor => new SKSamplingOptions(SKFilterMode.Nearest),
+            ImageInterpolationMode.Bilinear or ImageInterpolationMode.HighQualityBilinear => new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear),
+            _ => new SKSamplingOptions(SKCubicResampler.Mitchell)
+        };
 
         protected override string GetSummary()
         {

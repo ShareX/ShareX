@@ -24,8 +24,9 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
+using SkiaSharp;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -36,10 +37,10 @@ namespace ShareX.ImageEffectsLib
         [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
         public List<ImageEffect> Effects { get; set; } = new List<ImageEffect>();
 
-        public Bitmap ApplyEffects(Bitmap bmp)
+        /// <summary>Applies the enabled effects to a copy of the image. The input is left unchanged.</summary>
+        public SKBitmap ApplyEffects(SKBitmap bmp)
         {
-            Bitmap result = (Bitmap)bmp.Clone();
-            result.SetResolution(96f, 96f);
+            SKBitmap result = SkiaImageHelpers.Clone(bmp);
 
             if (Effects != null && Effects.Count > 0)
             {
@@ -72,7 +73,7 @@ namespace ShareX.ImageEffectsLib
             ImageEffectPreset preset = new ImageEffectPreset();
 
             Canvas canvas = new Canvas();
-            canvas.Margin = new Padding(0, 0, 0, 30);
+            canvas.Margin = new Insets(0, 0, 0, 30);
             preset.Effects.Add(canvas);
 
             DrawText text = new DrawText();

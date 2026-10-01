@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -46,11 +47,20 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
             if (ImageEffectPathHelpers.TryGetSafeLocalFilePath(ImageFilePath, out string imageFilePath))
             {
-                return ImageHelpers.DrawBackgroundImage(bmp, imageFilePath, Center, Tile);
+                using (SKBitmap background = SkiaImageHelpers.LoadImage(imageFilePath))
+                {
+                    if (background != null)
+                    {
+                        using (bmp)
+                        {
+                            return SkiaImageHelpers.DrawBackgroundImage(bmp, background, Center, Tile);
+                        }
+                    }
+                }
             }
 
             return bmp;

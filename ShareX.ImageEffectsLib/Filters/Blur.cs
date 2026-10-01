@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -56,10 +57,12 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            ImageHelpers.BoxBlur(bmp, Radius);
-            return bmp;
+            using (bmp)
+            {
+                return SkiaImageHelpers.BoxBlur(bmp, Radius);
+            }
         }
 
         protected override string GetSummary()

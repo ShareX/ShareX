@@ -24,9 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -39,8 +39,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(20)]
         public int Range { get; set; }
 
-        [DefaultValue(AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right)]
-        public AnchorStyles Sides { get; set; }
+        [DefaultValue(AnchorSides.Top | AnchorSides.Bottom | AnchorSides.Left | AnchorSides.Right)]
+        public AnchorSides Sides { get; set; }
 
         [DefaultValue(true)]
         public bool CurvedEdges { get; set; }
@@ -50,9 +50,12 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Bitmap Apply(Bitmap bmp)
+        public override SKBitmap Apply(SKBitmap bmp)
         {
-            return ImageHelpers.TornEdges(bmp, Depth, Range, Sides, CurvedEdges, true);
+            using (bmp)
+            {
+                return SkiaImageHelpers.TornEdges(bmp, Depth, Range, Sides, CurvedEdges, true);
+            }
         }
 
         protected override string GetSummary()

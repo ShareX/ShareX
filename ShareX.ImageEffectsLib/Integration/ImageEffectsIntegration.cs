@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -25,7 +25,8 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
-using System.Drawing;
+using ShareX.HelpersLib;
+using SkiaSharp;
 
 namespace ShareX.ImageEffectsLib;
 
@@ -33,14 +34,14 @@ public static class ImageEffectsIntegration
 {
     private static ImageEffectsWindow? _singletonWindow;
 
-    public static ImageEffectsDialogResult ShowDialog(Bitmap? sourceImage, List<ImageEffectPreset> presets,
+    public static ImageEffectsDialogResult ShowDialog(SKBitmap? sourceImage, List<ImageEffectPreset> presets,
         int selectedPresetIndex, ImageEffectsWindowMode mode, ImageEffectsCallbacks? callbacks = null, string? filePath = null)
     {
         return ShowDialogAsync(sourceImage, presets, selectedPresetIndex, mode, callbacks, filePath)
             .ConfigureAwait(false).GetAwaiter().GetResult();
     }
 
-    public static Task<ImageEffectsDialogResult> ShowDialogAsync(Bitmap? sourceImage, List<ImageEffectPreset> presets,
+    public static Task<ImageEffectsDialogResult> ShowDialogAsync(SKBitmap? sourceImage, List<ImageEffectPreset> presets,
         int selectedPresetIndex, ImageEffectsWindowMode mode, ImageEffectsCallbacks? callbacks = null, string? filePath = null)
     {
         AvaloniaBootstrapper.EnsureInitialized();
@@ -57,11 +58,11 @@ public static class ImageEffectsIntegration
         return completion.Task;
     }
 
-    public static void ShowToolWindow(Bitmap sourceImage, List<ImageEffectPreset> presets, int selectedPresetIndex,
+    public static void ShowToolWindow(SKBitmap sourceImage, List<ImageEffectPreset> presets, int selectedPresetIndex,
         ImageEffectsCallbacks? callbacks = null, string? filePath = null, Action<int>? selectedPresetChanged = null)
     {
         AvaloniaBootstrapper.EnsureInitialized();
-        Bitmap sourceCopy = (Bitmap)sourceImage.Clone();
+        SKBitmap sourceCopy = SkiaImageHelpers.Clone(sourceImage);
 
         Dispatcher.UIThread.Post(() =>
         {

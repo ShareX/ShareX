@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -38,7 +38,7 @@ using System.Reflection;
 using DrawingColor = System.Drawing.Color;
 using DrawingPoint = System.Drawing.Point;
 using DrawingSize = System.Drawing.Size;
-using FormsPadding = System.Windows.Forms.Padding;
+using FormsPadding = ShareX.HelpersLib.Insets;
 
 namespace ShareX.ImageEffectsLib;
 

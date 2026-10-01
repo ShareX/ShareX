@@ -66,6 +66,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Desktop", "ShareX.De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Desktop.Tests", "ShareX.Desktop.Tests\ShareX.Desktop.Tests.csproj", "{B991861B-DE9F-4D1A-83CA-B791EC810EDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.ImageEffectsLib.Tests", "ShareX.ImageEffectsLib.Tests\ShareX.ImageEffectsLib.Tests.csproj", "{804AADC5-1304-4902-A809-A55635EE5DA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -1006,6 +1008,46 @@ Global
 		{B991861B-DE9F-4D1A-83CA-B791EC810EDD}.Steam|Any CPU.Build.0 = Steam|Any CPU
 		{B991861B-DE9F-4D1A-83CA-B791EC810EDD}.Steam|x86.ActiveCfg = Steam|Any CPU
 		{B991861B-DE9F-4D1A-83CA-B791EC810EDD}.Steam|x86.Build.0 = Steam|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Debug|ARM64.Build.0 = Debug|ARM64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Debug|x64.ActiveCfg = Debug|x64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Debug|x64.Build.0 = Debug|x64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Debug|x86.Build.0 = Debug|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStore|ARM64.ActiveCfg = MicrosoftStore|ARM64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStore|ARM64.Build.0 = MicrosoftStore|ARM64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStore|x64.ActiveCfg = MicrosoftStore|x64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStore|x64.Build.0 = MicrosoftStore|x64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStore|Any CPU.ActiveCfg = MicrosoftStore|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStore|Any CPU.Build.0 = MicrosoftStore|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStore|x86.ActiveCfg = MicrosoftStore|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStore|x86.Build.0 = MicrosoftStore|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStoreDebug|ARM64.ActiveCfg = MicrosoftStoreDebug|ARM64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStoreDebug|ARM64.Build.0 = MicrosoftStoreDebug|ARM64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStoreDebug|x64.ActiveCfg = MicrosoftStoreDebug|x64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStoreDebug|x64.Build.0 = MicrosoftStoreDebug|x64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStoreDebug|Any CPU.ActiveCfg = MicrosoftStoreDebug|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStoreDebug|Any CPU.Build.0 = MicrosoftStoreDebug|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStoreDebug|x86.ActiveCfg = MicrosoftStoreDebug|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.MicrosoftStoreDebug|x86.Build.0 = MicrosoftStoreDebug|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Release|ARM64.ActiveCfg = Release|ARM64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Release|ARM64.Build.0 = Release|ARM64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Release|x64.ActiveCfg = Release|x64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Release|x64.Build.0 = Release|x64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Release|x86.ActiveCfg = Release|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Release|x86.Build.0 = Release|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Steam|ARM64.ActiveCfg = Steam|ARM64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Steam|ARM64.Build.0 = Steam|ARM64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Steam|x64.ActiveCfg = Steam|x64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Steam|x64.Build.0 = Steam|x64
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Steam|Any CPU.ActiveCfg = Steam|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Steam|Any CPU.Build.0 = Steam|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Steam|x86.ActiveCfg = Steam|Any CPU
+		{804AADC5-1304-4902-A809-A55635EE5DA7}.Steam|x86.Build.0 = Steam|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

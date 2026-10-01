@@ -10,6 +10,7 @@ on:
       - "ShareX.Desktop*/**"
       - "ShareX.HelpersLib*/**"
       - "ShareX.UploadersLib/**"
+      - "ShareX.ImageEffectsLib*/**"
       - "ShareX.HistoryLib/**"
       - "Directory.Build.*"
       - ".github/workflows/platform.yml"
@@ -22,6 +23,7 @@ on:
       - "ShareX.Desktop*/**"
       - "ShareX.HelpersLib*/**"
       - "ShareX.UploadersLib/**"
+      - "ShareX.ImageEffectsLib*/**"
       - "ShareX.HistoryLib/**"
       - "Directory.Build.*"
       - ".github/workflows/platform.yml"
@@ -63,6 +65,9 @@ jobs:
 
       - name: Test destination routing
         run: dotnet test ShareX.Destinations.Tests/ShareX.Destinations.Tests.csproj --configuration Release --logger "console;verbosity=normal"
+
+      - name: Test image effects
+        run: dotnet test ShareX.ImageEffectsLib.Tests/ShareX.ImageEffectsLib.Tests.csproj --configuration Release --logger "console;verbosity=normal"
 
       # Runs the cross-platform application's workflow, single-instance channel and the real uploaders against a local server.
       - name: Test the desktop application
