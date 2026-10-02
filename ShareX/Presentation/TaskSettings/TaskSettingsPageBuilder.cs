@@ -40,6 +40,7 @@ using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
 using ShareX.UploadersLib;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -296,6 +297,20 @@ internal sealed class TaskSettingsPageBuilder
             EnabledCard(_imageOverride, Strings.TaskSettingsWindow_ImageQuality,
                 Row(Strings.TaskSettingsWindow_ImageFormat, EnumCombo(() => image.ImageFormat, value => image.ImageFormat = value)),
                 Row(Strings.TaskSettingsWindow_PNGBitDepth, EnumCombo(() => image.ImagePNGBitDepth, value => image.ImagePNGBitDepth = value)),
+                Row(Strings.TaskSettingsWindow_PNGCompressionLevel, Number(() => image.ImagePNGCompressionLevel, value => image.ImagePNGCompressionLevel = (int)value, 0, 9)),
+                Hint(Strings.TaskSettingsWindow_PNGCompressionHint),
+                Row(Strings.TaskSettingsWindow_PNGFilter, ObjectCombo(
+                    new[] { SKPngEncoderFilterFlags.AllFilters, SKPngEncoderFilterFlags.None, SKPngEncoderFilterFlags.Sub,
+                        SKPngEncoderFilterFlags.Up, SKPngEncoderFilterFlags.Avg, SKPngEncoderFilterFlags.Paeth },
+                    () => image.ImagePNGFilter, value => image.ImagePNGFilter = value, value => value switch
+                    {
+                        SKPngEncoderFilterFlags.None => Strings.TaskSettingsWindow_PNGFilterNone,
+                        SKPngEncoderFilterFlags.Sub => Strings.TaskSettingsWindow_PNGFilterSub,
+                        SKPngEncoderFilterFlags.Up => Strings.TaskSettingsWindow_PNGFilterUp,
+                        SKPngEncoderFilterFlags.Avg => Strings.TaskSettingsWindow_PNGFilterAverage,
+                        SKPngEncoderFilterFlags.Paeth => Strings.TaskSettingsWindow_PNGFilterPaeth,
+                        _ => Strings.TaskSettingsWindow_PNGFilterAutomatic
+                    })),
                 Row(Strings.TaskSettingsWindow_JPEGQuality, Number(() => image.ImageJPEGQuality, value => image.ImageJPEGQuality = (int)value, 0, 100)),
                 Row(Strings.TaskSettingsWindow_GIFQuality, EnumCombo(() => image.ImageGIFQuality, value => image.ImageGIFQuality = value)),
                 Row(Strings.TaskSettingsWindow_IfFileExists, EnumCombo(() => image.FileExistAction, value => image.FileExistAction = value))),

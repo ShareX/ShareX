@@ -2504,6 +2504,33 @@
   <data name="TaskSettingsWindow_PNGBitDepth" xml:space="preserve">
     <value>PNG ความลึกบิต:</value>
   </data>
+  <data name="TaskSettingsWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = ไม่บีบอัด, 1 = เร็วที่สุด, 9 = ไฟล์เล็กที่สุด ทุกระดับไม่มีการสูญเสียคุณภาพ</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>ระดับการบีบอัด PNG:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilter" xml:space="preserve">
+    <value>ตัวกรอง PNG:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>อัตโนมัติ (ตัวกรองทั้งหมด)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterAverage" xml:space="preserve">
+    <value>ค่าเฉลี่ย (ด้านซ้ายและด้านบน)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterNone" xml:space="preserve">
+    <value>ไม่ใช้ตัวกรอง</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (การคาดการณ์)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (พิกเซลด้านซ้าย)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (พิกเซลด้านบน)</value>
+  </data>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>รูปแบบ:</value>
   </data>

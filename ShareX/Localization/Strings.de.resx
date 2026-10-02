@@ -2504,6 +2504,33 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_PNGBitDepth" xml:space="preserve">
     <value>PNG-Bittiefe:</value>
   </data>
+  <data name="TaskSettingsWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = keine Komprimierung, 1 = am schnellsten, 9 = kleinste Dateien. Alle Stufen sind verlustfrei.</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>PNG-Komprimierungsstufe:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilter" xml:space="preserve">
+    <value>PNG-Filter:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>Automatisch (alle Filter)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterAverage" xml:space="preserve">
+    <value>Durchschnitt (links und oben)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterNone" xml:space="preserve">
+    <value>Keine Filterung</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (Vorhersage)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (linkes Pixel)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (oberes Pixel)</value>
+  </data>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>Muster:</value>
   </data>

@@ -419,7 +419,7 @@ namespace ShareX
             long jpegSizeLimit = (long)taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000;
             imageData.ImageStream = SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
                 taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
-                autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
+                GetPNGEncoderOptions(taskSettings.ImageSettings), autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
             imageData.ImageFormat = imageFormat;
 
             if (autoUseJPEG && (pngSizeLimitExceeded || imageData.ImageStream.Length > jpegSizeLimit))
@@ -470,17 +470,29 @@ namespace ShareX
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, TaskSettings taskSettings)
         {
             return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
-                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality);
+                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
+                GetPNGEncoderOptions(taskSettings.ImageSettings), long.MaxValue, out _);
+        }
+
+        private static SKPngEncoderOptions GetPNGEncoderOptions(TaskSettingsImage settings)
+        {
+            SKPngEncoderFilterFlags filter = settings.ImagePNGFilter switch
+            {
+                SKPngEncoderFilterFlags.None or SKPngEncoderFilterFlags.Sub or SKPngEncoderFilterFlags.Up or
+                SKPngEncoderFilterFlags.Avg or SKPngEncoderFilterFlags.Paeth => settings.ImagePNGFilter,
+                _ => SKPngEncoderFilterFlags.AllFilters
+            };
+            return new SKPngEncoderOptions(filter, Math.Clamp(settings.ImagePNGCompressionLevel, 0, 9));
         }
 
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
             int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
         {
-            return SaveImageAsStream(img, imageFormat, pngBitDepth, jpegQuality, gifQuality, long.MaxValue, out _);
+            return SaveImageAsStream(img, imageFormat, pngBitDepth, jpegQuality, gifQuality, SKPngEncoderOptions.Default, long.MaxValue, out _);
         }
 
         private static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth,
-            int jpegQuality, GIFQuality gifQuality, long pngSizeLimit, out bool pngSizeLimitExceeded)
+            int jpegQuality, GIFQuality gifQuality, SKPngEncoderOptions pngOptions, long pngSizeLimit, out bool pngSizeLimitExceeded)
         {
             MemoryStream ms = new MemoryStream();
             pngSizeLimitExceeded = false;
@@ -494,7 +506,7 @@ namespace ShareX
                         if (ApplicationState.Settings.PNGStripColorSpaceInformation)
                         {
                             // Stripping chunks changes the size used for automatic JPEG selection, so check the complete stripped PNG.
-                            SkiaImageHelpers.SavePNG(img, ms, pngBitDepth);
+                            SkiaImageHelpers.SavePNG(img, ms, pngBitDepth, long.MaxValue, pngOptions);
                             using (ms)
                             {
                                 return SkiaImageHelpers.PNGStripColorSpaceInformation(ms);
@@ -502,7 +514,7 @@ namespace ShareX
                         }
                         else
                         {
-                            pngSizeLimitExceeded = !SkiaImageHelpers.SavePNG(img, ms, pngBitDepth, pngSizeLimit);
+                            pngSizeLimitExceeded = !SkiaImageHelpers.SavePNG(img, ms, pngBitDepth, pngSizeLimit, pngOptions);
                         }
                         break;
                     case EImageFormat.JPEG:

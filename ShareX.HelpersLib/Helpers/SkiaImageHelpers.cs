@@ -364,6 +364,11 @@ public static partial class SkiaImageHelpers
     // Returns false when the encoded PNG exceeds the limit, so callers can discard it without encoding the remaining rows.
     public static bool SavePNG(SKBitmap bitmap, Stream stream, PNGBitDepth depth, long sizeLimit)
     {
+        return SavePNG(bitmap, stream, depth, sizeLimit, SKPngEncoderOptions.Default);
+    }
+
+    public static bool SavePNG(SKBitmap bitmap, Stream stream, PNGBitDepth depth, long sizeLimit, SKPngEncoderOptions options)
+    {
         using SizeLimitedWStream output = new(stream, sizeLimit);
         bool encoded;
 
@@ -379,12 +384,12 @@ public static partial class SkiaImageHelpers
                 }
             }
             using SKPixmap pixels = opaque.PeekPixels();
-            encoded = pixels.Encode(output, SKPngEncoderOptions.Default);
+            encoded = pixels.Encode(output, options);
         }
         else
         {
             using SKPixmap pixels = bitmap.PeekPixels();
-            encoded = pixels.Encode(output, SKPngEncoderOptions.Default);
+            encoded = pixels.Encode(output, options);
         }
 
         if (!encoded && !output.SizeLimitExceeded) throw new InvalidDataException("Image encoding failed: Png.");

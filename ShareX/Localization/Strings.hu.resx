@@ -2504,6 +2504,33 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_PNGBitDepth" xml:space="preserve">
     <value>PNG bitmélység:</value>
   </data>
+  <data name="TaskSettingsWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = nincs tömörítés, 1 = leggyorsabb, 9 = legkisebb fájlok. Minden szint veszteségmentes.</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>PNG tömörítési szint:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilter" xml:space="preserve">
+    <value>PNG-szűrő:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>Automatikus (minden szűrő)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterAverage" xml:space="preserve">
+    <value>Átlag (balra és fent)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterNone" xml:space="preserve">
+    <value>Nincs szűrés</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (becslés)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (bal oldali képpont)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (felső képpont)</value>
+  </data>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>Minta:</value>
   </data>

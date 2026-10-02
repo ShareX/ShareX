@@ -2504,6 +2504,33 @@
   <data name="TaskSettingsWindow_PNGBitDepth" xml:space="preserve">
     <value>PNG 位元深度：</value>
   </data>
+  <data name="TaskSettingsWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = 不壓縮，1 = 最快，9 = 檔案最小。所有級別均為無損。</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>PNG 壓縮級別：</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilter" xml:space="preserve">
+    <value>PNG 篩選器：</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>自動（所有篩選器）</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterAverage" xml:space="preserve">
+    <value>平均（左側和上方）</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterNone" xml:space="preserve">
+    <value>不使用篩選器</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth（預測）</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub（左側像素）</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up（上方像素）</value>
+  </data>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>模式：</value>
   </data>

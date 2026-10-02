@@ -115,6 +115,7 @@ ShareX|TaskSettingsWindow_No|1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da16
 ShareX|TaskSettingsWindow_Notifications|788011833a5a0f22db90c91e8eb7bd8e9f5cd423354ff5ef8c338e7895f44ba9|fr
 ShareX|TaskSettingsWindow_OCR|5e5bea5354e3f22eb70cc9df456ef31b0f9e9c1b0fc37e9f9826fc6b339fc719|ar-YE,cs,da,de,es-MX,es,fa-IR,fr,he-IL,hi,hu,id-ID,it-IT,ja-JP,ko-KR,nl-NL,pl,pt-BR,pt-PT,ro,ru,sv,th,tr,uk,vi-VN,zh-CN,zh-TW
 ShareX|TaskSettingsWindow_OCRHelp|7892e7e9e2718b9ee824f4f798f853a5ae655ee269837a86969138729f5140b9|nl-NL
+ShareX|TaskSettingsWindow_PNGFilter|38d183a555f62a3d95fad7cd7797e799817b84565c13d4aac001881e10c4a143|da,de,nl-NL,sv
 ShareX|TaskSettingsWindow_Screenshots|067348ce68943b630359fea7b8b9aa2f7e00bda7532fa406f0286c943261f823|de
 ShareX|TaskSettingsWindow_TextFormat|2eec038d923d9c873dda781d7f27aebb404e0ad5ce75540d42c83bc0585b13d8|da,de,sv
 ShareX|TaskSettingsWindow_Upload|865e89de78d94c747184d6a7e6f5244b453d8062343c07e014ae698cfb0260e8|da,de

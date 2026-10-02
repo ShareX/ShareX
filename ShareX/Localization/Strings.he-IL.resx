@@ -2504,6 +2504,33 @@
   <data name="TaskSettingsWindow_PNGBitDepth" xml:space="preserve">
     <value>עומק סיביות PNG:</value>
   </data>
+  <data name="TaskSettingsWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = ללא דחיסה, 1 = המהיר ביותר, 9 = הקבצים הקטנים ביותר. כל הרמות ללא אובדן איכות.</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>רמת דחיסת PNG:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilter" xml:space="preserve">
+    <value>מסנן PNG:</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>אוטומטי (כל המסננים)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterAverage" xml:space="preserve">
+    <value>ממוצע (משמאל ומעל)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterNone" xml:space="preserve">
+    <value>ללא סינון</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (חיזוי)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (הפיקסל משמאל)</value>
+  </data>
+  <data name="TaskSettingsWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (הפיקסל מעל)</value>
+  </data>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>תבנית:</value>
   </data>

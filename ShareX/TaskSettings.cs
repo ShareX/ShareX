@@ -31,6 +31,7 @@ using ShareX.ImageEffectsLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
 using ShareX.UploadersLib;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -338,6 +339,8 @@ namespace ShareX
 
         public EImageFormat ImageFormat = EImageFormat.PNG;
         public PNGBitDepth ImagePNGBitDepth = PNGBitDepth.Default;
+        public int ImagePNGCompressionLevel = 1;
+        public SKPngEncoderFilterFlags ImagePNGFilter = SKPngEncoderFilterFlags.AllFilters;
         public int ImageJPEGQuality = 90;
         public GIFQuality ImageGIFQuality = GIFQuality.Default;
         public bool ImageAutoUseJPEG = true;

@@ -2822,6 +2822,51 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_PNGBitDepth", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_PNGCompressionLevel {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PNGCompressionLevel", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PNGCompressionHint {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PNGCompressionHint", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PNGFilter {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PNGFilter", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PNGFilterAutomatic {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PNGFilterAutomatic", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PNGFilterNone {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PNGFilterNone", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PNGFilterSub {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PNGFilterSub", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PNGFilterUp {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PNGFilterUp", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PNGFilterAverage {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PNGFilterAverage", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_PNGFilterPaeth {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_PNGFilterPaeth", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_JPEGQuality {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_JPEGQuality", resourceCulture);
