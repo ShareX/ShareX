@@ -86,7 +86,7 @@ public static class ImageConverterService
     }
 
     public static ImageConverterPreview CreatePreview(string filePath, ImageConverterOutputFormat format,
-        int quality, SKColor backgroundColor)
+        int quality, SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null)
     {
         using SKBitmap? source = LoadImage(filePath);
         if (source == null)
@@ -96,7 +96,7 @@ public static class ImageConverterService
 
         SKSizeI previewSize = GetPreviewSize(new SKSizeI(source.Width, source.Height));
         using SKBitmap preview = CreatePreviewBitmap(source, previewSize);
-        using SKData data = Encode(preview, format, quality, backgroundColor);
+        using SKData data = Encode(preview, format, quality, backgroundColor, pngOptions);
         return new ImageConverterPreview(data.ToArray(), source.Width, source.Height);
     }
 
@@ -109,16 +109,16 @@ public static class ImageConverterService
     };
 
     public static void Save(SKBitmap image, string filePath, ImageConverterOutputFormat format, int quality,
-        SKColor backgroundColor)
+        SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null)
     {
-        using SKData data = Encode(image, format, quality, backgroundColor);
+        using SKData data = Encode(image, format, quality, backgroundColor, pngOptions);
         FileHelpers.CreateDirectoryFromFilePath(filePath);
         using FileStream stream = new(filePath, FileMode.Create, FileAccess.Write, FileShare.Read);
         data.SaveTo(stream);
     }
 
     private static SKData Encode(SKBitmap bitmap, ImageConverterOutputFormat format, int quality,
-        SKColor backgroundColor)
+        SKColor backgroundColor, SKPngEncoderOptions? pngOptions)
     {
         SKEncodedImageFormat encodedFormat = format switch
         {
@@ -128,11 +128,22 @@ public static class ImageConverterService
             _ => throw new ArgumentOutOfRangeException(nameof(format))
         };
 
-        using SKBitmap? flattened = format == ImageConverterOutputFormat.Jpeg
-            ? FlattenBackground(bitmap, backgroundColor)
-            : null;
-        using SKImage image = SKImage.FromBitmap(flattened ?? bitmap);
-        return image.Encode(encodedFormat, Math.Clamp(quality, 0, 100))
+        SKData? data;
+        if (format == ImageConverterOutputFormat.Png)
+        {
+            using SKPixmap pixels = bitmap.PeekPixels();
+            data = pixels.Encode(pngOptions ?? new SKPngEncoderOptions(SKPngEncoderFilterFlags.AllFilters, 1));
+        }
+        else
+        {
+            using SKBitmap? flattened = format == ImageConverterOutputFormat.Jpeg
+                ? FlattenBackground(bitmap, backgroundColor)
+                : null;
+            using SKImage image = SKImage.FromBitmap(flattened ?? bitmap);
+            data = image.Encode(encodedFormat, Math.Clamp(quality, 0, 100));
+        }
+
+        return data
             ?? throw new InvalidOperationException(string.Format(
                 Localization.Strings.ImageConverterService_Failed_to_encode_image, format));
     }

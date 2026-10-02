@@ -70,51 +70,69 @@
                     </Grid>
                 </Border>
 
-                <StackPanel Grid.Column="1" Spacing="12">
-                    <Border Classes="tool-panel" Padding="16">
-                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
-                            <TextBlock Grid.Row="0" Classes="section-heading"
-                                       Text="{x:Static localization:Strings.ImageThumbnailerWindow_Output}"/>
-                            <Grid Grid.Row="1" ColumnDefinitions="110,*" ColumnSpacing="10">
-                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.DirectoryIndexerWindow_Output_format}"/>
-                                <ComboBox Grid.Column="1"
-                                          ItemsSource="{Binding OutputFormatOptions}"
-                                          SelectedIndex="{Binding SelectedOutputFormatIndex}"/>
+                <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Spacing="12">
+                        <Border Classes="tool-panel" Padding="16">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
+                                <TextBlock Grid.Row="0" Classes="section-heading"
+                                           Text="{x:Static localization:Strings.ImageThumbnailerWindow_Output}"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="110,*" ColumnSpacing="10">
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.DirectoryIndexerWindow_Output_format}"/>
+                                    <ComboBox Grid.Column="1"
+                                              ItemsSource="{Binding OutputFormatOptions}"
+                                              SelectedIndex="{Binding SelectedOutputFormatIndex}"/>
+                                </Grid>
+                                <Grid Grid.Row="2" ColumnDefinitions="110,*,Auto" ColumnSpacing="10"
+                                      IsVisible="{Binding HasQuality}">
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.VideoConverterWindow_Quality}"/>
+                                    <Slider Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Quality}"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
+                                               MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </Grid>
+                                <StackPanel x:Name="PngOptionsPanel" Grid.Row="2" Spacing="8" IsVisible="{Binding IsPng}">
+                                    <Grid ColumnDefinitions="*,80" ColumnSpacing="10">
+                                        <TextBlock Classes="row-label" TextWrapping="Wrap"
+                                                   Text="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionLevel}"/>
+                                        <NumericUpDown x:Name="PngCompressionLevelBox" Grid.Column="1"
+                                                       Minimum="0" Maximum="9" Increment="1"
+                                                       Value="{Binding PngCompressionLevel, Mode=TwoWay}"/>
+                                    </Grid>
+                                    <TextBlock Text="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionHint}"
+                                               TextWrapping="Wrap" FontSize="12"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                    <TextBlock Classes="row-label"
+                                               Text="{x:Static localization:Strings.ImageConverterWindow_PNGFilter}"/>
+                                    <ComboBox x:Name="PngFilterBox" ItemsSource="{Binding PngFilterOptions}"
+                                              SelectedIndex="{Binding SelectedPngFilterIndex, Mode=TwoWay}"/>
+                                </StackPanel>
+                                <Grid Grid.Row="3" ColumnDefinitions="110,*" ColumnSpacing="10"
+                                      IsVisible="{Binding IsJpeg}">
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}"/>
+                                    <cp:ColorPicker Grid.Column="1"
+                                                    Color="{Binding BackgroundColor, Mode=TwoWay}"
+                                                    IsAlphaEnabled="False" IsAlphaVisible="False"/>
+                                </Grid>
+                                <TextBlock Grid.Row="4" Classes="row-label"
+                                           Text="{x:Static localization:Strings.ImageThumbnailerWindow_File_name_template}"/>
+                                <TextBox Grid.Row="5" Text="{Binding OutputFileName}"/>
                             </Grid>
-                            <Grid Grid.Row="2" ColumnDefinitions="110,*,Auto" ColumnSpacing="10"
-                                  IsVisible="{Binding HasQuality}">
-                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.VideoConverterWindow_Quality}"/>
-                                <Slider Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Quality}"/>
-                                <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
-                                           MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            </Grid>
-                            <Grid Grid.Row="3" ColumnDefinitions="110,*" ColumnSpacing="10"
-                                  IsVisible="{Binding IsJpeg}">
-                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}"/>
-                                <cp:ColorPicker Grid.Column="1"
-                                                Color="{Binding BackgroundColor, Mode=TwoWay}"
-                                                IsAlphaEnabled="False" IsAlphaVisible="False"/>
-                            </Grid>
-                            <TextBlock Grid.Row="4" Classes="row-label"
-                                       Text="{x:Static localization:Strings.ImageThumbnailerWindow_File_name_template}"/>
-                            <TextBox Grid.Row="5" Text="{Binding OutputFileName}"/>
-                        </Grid>
-                    </Border>
+                        </Border>
 
-                    <Border Classes="tool-panel" Padding="16">
-                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
-                            <TextBlock Classes="path-text" Text="{Binding OutputFolderPath}"
-                                       VerticalAlignment="Center"/>
-                            <Button Grid.Column="1" Command="{Binding BrowseOutputFolderCommand}"
-                                    Content="{x:Static localization:Strings.ImageThumbnailerWindow_Browse}"/>
-                        </Grid>
-                    </Border>
+                        <Border Classes="tool-panel" Padding="16">
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                <TextBlock Classes="path-text" Text="{Binding OutputFolderPath}"
+                                           VerticalAlignment="Center"/>
+                                <Button Grid.Column="1" Command="{Binding BrowseOutputFolderCommand}"
+                                        Content="{x:Static localization:Strings.ImageThumbnailerWindow_Browse}"/>
+                            </Grid>
+                        </Border>
 
-                    <Border Classes="tool-panel" IsVisible="{Binding HasMessage}">
-                        <TextBlock Text="{Binding Message}" TextWrapping="Wrap"
-                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
-                    </Border>
-                </StackPanel>
+                        <Border Classes="tool-panel" IsVisible="{Binding HasMessage}">
+                            <TextBlock Text="{Binding Message}" TextWrapping="Wrap"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
 
                 <Border Grid.Column="2" Classes="tool-panel" Padding="0" ClipToBounds="True">
                     <Grid RowDefinitions="Auto,*">

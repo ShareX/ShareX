@@ -919,6 +919,33 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Képkonvertáló</value>
   </data>
+  <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = nincs tömörítés, 1 = leggyorsabb, 9 = legkisebb fájlok. Minden szint veszteségmentes.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>PNG tömörítési szint:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilter" xml:space="preserve">
+    <value>PNG-szűrő:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>Automatikus (minden szűrő)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAverage" xml:space="preserve">
+    <value>Átlag (balra és fent)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterNone" xml:space="preserve">
+    <value>Nincs szűrés</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (becslés)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (bal oldali képpont)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (felső képpont)</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Kitöltés</value>
   </data>

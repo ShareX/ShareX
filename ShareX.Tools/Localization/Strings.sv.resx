@@ -923,6 +923,33 @@ Filsökväg: {0}</value>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Bildkonverterare</value>
   </data>
+  <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = ingen komprimering, 1 = snabbast, 9 = minsta filer. Alla nivåer är förlustfria.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>PNG-komprimeringsnivå:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilter" xml:space="preserve">
+    <value>PNG-filter:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>Automatiskt (alla filter)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAverage" xml:space="preserve">
+    <value>Medelvärde (vänster och ovanför)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterNone" xml:space="preserve">
+    <value>Ingen filtrering</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (förutsägelse)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (bildpunkt till vänster)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (bildpunkt ovanför)</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Fyll</value>
   </data>

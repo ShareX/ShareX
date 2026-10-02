@@ -923,6 +923,33 @@ Bestandspad: {0}</value>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Afbeeldingsconverter</value>
   </data>
+  <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = geen compressie, 1 = snelst, 9 = kleinste bestanden. Alle niveaus zijn verliesvrij.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>PNG-compressieniveau:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilter" xml:space="preserve">
+    <value>PNG-filter:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>Automatisch (alle filters)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAverage" xml:space="preserve">
+    <value>Gemiddelde (links en boven)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterNone" xml:space="preserve">
+    <value>Geen filtering</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (voorspelling)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (pixel links)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (pixel erboven)</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Vullen</value>
   </data>

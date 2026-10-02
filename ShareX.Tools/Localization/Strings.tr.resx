@@ -923,6 +923,33 @@ Dosya yolu: {0}</value>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Görsel dönüştürücü</value>
   </data>
+  <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = sıkıştırma yok, 1 = en hızlı, 9 = en küçük dosyalar. Tüm seviyeler kayıpsızdır.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>PNG sıkıştırma seviyesi:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilter" xml:space="preserve">
+    <value>PNG filtresi:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>Otomatik (tüm filtreler)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAverage" xml:space="preserve">
+    <value>Ortalama (sol ve üst)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterNone" xml:space="preserve">
+    <value>Filtreleme yok</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (tahmin)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (soldaki piksel)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (üstteki piksel)</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Doldur</value>
   </data>

@@ -919,6 +919,33 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Konwerter obrazów</value>
   </data>
+  <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = bez kompresji, 1 = najszybciej, 9 = najmniejsze pliki. Wszystkie poziomy są bezstratne.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>Poziom kompresji PNG:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilter" xml:space="preserve">
+    <value>Filtr PNG:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>Automatycznie (wszystkie filtry)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAverage" xml:space="preserve">
+    <value>Średnia (z lewej i z góry)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterNone" xml:space="preserve">
+    <value>Bez filtrowania</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (przewidywanie)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (piksel z lewej)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (piksel powyżej)</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Wypełnij</value>
   </data>

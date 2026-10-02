@@ -919,6 +919,33 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>محوّل الصور</value>
   </data>
+  <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = بدون ضغط، 1 = الأسرع، 9 = أصغر الملفات. جميع المستويات دون فقدان الجودة.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>مستوى ضغط PNG:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilter" xml:space="preserve">
+    <value>مرشح PNG:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>تلقائي (جميع المرشحات)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAverage" xml:space="preserve">
+    <value>المتوسط (اليسار والأعلى)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterNone" xml:space="preserve">
+    <value>بدون ترشيح</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (التنبؤ)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (البكسل الأيسر)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (البكسل العلوي)</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>تعبئة</value>
   </data>

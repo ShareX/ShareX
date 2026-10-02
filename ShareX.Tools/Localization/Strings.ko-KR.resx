@@ -919,6 +919,33 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>이미지 변환기</value>
   </data>
+  <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = 압축 없음, 1 = 가장 빠름, 9 = 가장 작은 파일. 모든 단계에서 화질 손실이 없습니다.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>PNG 압축 수준:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilter" xml:space="preserve">
+    <value>PNG 필터:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>자동 (모든 필터)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAverage" xml:space="preserve">
+    <value>평균 (왼쪽 및 위)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterNone" xml:space="preserve">
+    <value>필터링 없음</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (예측)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (왼쪽 픽셀)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (위쪽 픽셀)</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>채우기</value>
   </data>

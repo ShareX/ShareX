@@ -2501,6 +2501,87 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to 0 = no compression, 1 = fastest, 9 = smallest files. All levels are lossless..
+        /// </summary>
+        public static string ImageConverterWindow_PNGCompressionHint {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_PNGCompressionHint", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to PNG compression level:.
+        /// </summary>
+        public static string ImageConverterWindow_PNGCompressionLevel {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_PNGCompressionLevel", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to PNG filter:.
+        /// </summary>
+        public static string ImageConverterWindow_PNGFilter {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_PNGFilter", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Automatic (all filters).
+        /// </summary>
+        public static string ImageConverterWindow_PNGFilterAutomatic {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_PNGFilterAutomatic", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Average (left and above).
+        /// </summary>
+        public static string ImageConverterWindow_PNGFilterAverage {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_PNGFilterAverage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to No filtering.
+        /// </summary>
+        public static string ImageConverterWindow_PNGFilterNone {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_PNGFilterNone", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Paeth (prediction).
+        /// </summary>
+        public static string ImageConverterWindow_PNGFilterPaeth {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_PNGFilterPaeth", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Sub (left pixel).
+        /// </summary>
+        public static string ImageConverterWindow_PNGFilterSub {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_PNGFilterSub", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Up (pixel above).
+        /// </summary>
+        public static string ImageConverterWindow_PNGFilterUp {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_PNGFilterUp", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Fill.
         /// </summary>
         public static string ImageResizerWindow_Fill {

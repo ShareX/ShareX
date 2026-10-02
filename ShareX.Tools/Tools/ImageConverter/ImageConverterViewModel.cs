@@ -35,6 +35,9 @@ namespace ShareX.Tools;
 
 public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
 {
+    private static readonly SKPngEncoderFilterFlags[] PngFilters = [SKPngEncoderFilterFlags.AllFilters,
+        SKPngEncoderFilterFlags.None, SKPngEncoderFilterFlags.Sub, SKPngEncoderFilterFlags.Up,
+        SKPngEncoderFilterFlags.Avg, SKPngEncoderFilterFlags.Paeth];
     private readonly HashSet<string> _selectedImages = [];
     private CancellationTokenSource? _previewCancellationTokenSource;
     private int _previewVersion;
@@ -47,11 +50,18 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsJpeg))]
+    [NotifyPropertyChangedFor(nameof(IsPng))]
     [NotifyPropertyChangedFor(nameof(HasQuality))]
     private int _selectedOutputFormatIndex;
 
     [ObservableProperty]
     private decimal _quality = 90;
+
+    [ObservableProperty]
+    private decimal _pngCompressionLevel = 1;
+
+    [ObservableProperty]
+    private int _selectedPngFilterIndex;
 
     [ObservableProperty]
     private AvaloniaColor _backgroundColor = AvaloniaColor.FromRgb(255, 255, 255);
@@ -84,10 +94,19 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
 
     public IReadOnlyList<string> OutputFormatOptions { get; } = ["PNG", "JPEG", "WebP"];
 
+    public IReadOnlyList<string> PngFilterOptions { get; } = [
+        Localization.Strings.ImageConverterWindow_PNGFilterAutomatic,
+        Localization.Strings.ImageConverterWindow_PNGFilterNone,
+        Localization.Strings.ImageConverterWindow_PNGFilterSub,
+        Localization.Strings.ImageConverterWindow_PNGFilterUp,
+        Localization.Strings.ImageConverterWindow_PNGFilterAverage,
+        Localization.Strings.ImageConverterWindow_PNGFilterPaeth];
+
     public bool HasImages => Images.Count > 0;
     public bool HasPreview => PreviewImage != null;
     public bool HasMessage => !string.IsNullOrWhiteSpace(Message);
     public bool IsJpeg => GetOutputFormat() == ImageConverterOutputFormat.Jpeg;
+    public bool IsPng => GetOutputFormat() == ImageConverterOutputFormat.Png;
     public bool HasQuality => GetOutputFormat() is ImageConverterOutputFormat.Jpeg or ImageConverterOutputFormat.Webp;
     public bool CanRemove => _selectedImages.Count > 0 || SelectedImage != null;
     public bool CanConvert => !IsBusy && HasImages && Directory.Exists(OutputFolderPath) &&
@@ -184,6 +203,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         ImageConverterOutputFormat format = GetOutputFormat();
         int quality = (int)Quality;
         SKColor backgroundColor = ToSKColor(BackgroundColor);
+        SKPngEncoderOptions pngOptions = GetPngEncoderOptions();
         string outputFolderPath = OutputFolderPath;
         string outputFileName = OutputFileName;
 
@@ -192,7 +212,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         try
         {
             List<string> outputFiles = await Task.Run(() => ConvertImages(imageFiles, format, quality,
-                backgroundColor, outputFolderPath, outputFileName));
+                backgroundColor, outputFolderPath, outputFileName, pngOptions));
             if (outputFiles.Count > 0)
             {
                 FileHelpers.OpenFolderWithFile(outputFiles[0]);
@@ -217,6 +237,8 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     }
     partial void OnSelectedOutputFormatIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnQualityChanged(decimal value) => NotifyOptionsChanged();
+    partial void OnPngCompressionLevelChanged(decimal value) => NotifyOptionsChanged();
+    partial void OnSelectedPngFilterIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnBackgroundColorChanged(AvaloniaColor value) => NotifyOptionsChanged();
     partial void OnOutputFolderPathChanged(string value) => NotifyStateChanged();
     partial void OnOutputFileNameChanged(string value) => NotifyStateChanged();
@@ -273,8 +295,9 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
             ImageConverterOutputFormat format = GetOutputFormat();
             int quality = (int)Quality;
             SKColor backgroundColor = ToSKColor(BackgroundColor);
+            SKPngEncoderOptions pngOptions = GetPngEncoderOptions();
             ImageConverterPreview result = await Task.Run(() =>
-                ImageConverterService.CreatePreview(filePath, format, quality, backgroundColor), cancellationToken);
+                ImageConverterService.CreatePreview(filePath, format, quality, backgroundColor, pngOptions), cancellationToken);
             cancellationToken.ThrowIfCancellationRequested();
 
             AvaloniaBitmap? preview = null;
@@ -326,9 +349,13 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     private ImageConverterOutputFormat GetOutputFormat() =>
         (ImageConverterOutputFormat)Math.Clamp(SelectedOutputFormatIndex, 0, OutputFormatOptions.Count - 1);
 
+    private SKPngEncoderOptions GetPngEncoderOptions() => new(
+        PngFilters[Math.Clamp(SelectedPngFilterIndex, 0, PngFilters.Length - 1)],
+        (int)Math.Clamp(PngCompressionLevel, 0, 9));
+
     private static List<string> ConvertImages(IEnumerable<string> imageFiles,
         ImageConverterOutputFormat format, int quality, SKColor backgroundColor, string outputFolderPath,
-        string outputFileName)
+        string outputFileName, SKPngEncoderOptions pngOptions)
     {
         List<string> outputFiles = [];
         string extension = ImageConverterService.GetFileExtension(format);
@@ -350,7 +377,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
             string outputPath = Path.Combine(outputFolderPath,
                 outputFileName.Replace("$filename", sourceName, StringComparison.Ordinal));
             outputPath = Path.ChangeExtension(outputPath, extension);
-            ImageConverterService.Save(source, outputPath, format, quality, backgroundColor);
+            ImageConverterService.Save(source, outputPath, format, quality, backgroundColor, pngOptions);
             outputFiles.Add(outputPath);
         }
 

@@ -923,6 +923,33 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>छवि रूपांतरक</value>
   </data>
+  <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
+    <value>0 = कोई संपीड़न नहीं, 1 = सबसे तेज़, 9 = सबसे छोटी फ़ाइलें। सभी स्तरों पर गुणवत्ता बनी रहती है।</value>
+  </data>
+  <data name="ImageConverterWindow_PNGCompressionLevel" xml:space="preserve">
+    <value>PNG संपीड़न स्तर:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilter" xml:space="preserve">
+    <value>PNG फ़िल्टर:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAutomatic" xml:space="preserve">
+    <value>स्वचालित (सभी फ़िल्टर)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterAverage" xml:space="preserve">
+    <value>औसत (बाएँ और ऊपर)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterNone" xml:space="preserve">
+    <value>कोई फ़िल्टर नहीं</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterPaeth" xml:space="preserve">
+    <value>Paeth (पूर्वानुमान)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterSub" xml:space="preserve">
+    <value>Sub (बायाँ पिक्सेल)</value>
+  </data>
+  <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
+    <value>Up (ऊपर का पिक्सेल)</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>भरें</value>
   </data>
