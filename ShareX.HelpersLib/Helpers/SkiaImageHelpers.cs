@@ -358,6 +358,15 @@ public static partial class SkiaImageHelpers
     }
     public static void SavePNG(SKBitmap bitmap, Stream stream, PNGBitDepth depth)
     {
+        SavePNG(bitmap, stream, depth, long.MaxValue);
+    }
+
+    // Returns false when the encoded PNG exceeds the limit, so callers can discard it without encoding the remaining rows.
+    public static bool SavePNG(SKBitmap bitmap, Stream stream, PNGBitDepth depth, long sizeLimit)
+    {
+        using SizeLimitedWStream output = new(stream, sizeLimit);
+        bool encoded;
+
         if (depth == PNGBitDepth.Bit24 || depth == PNGBitDepth.Automatic && !IsImageTransparent(bitmap))
         {
             using SKBitmap opaque = new(new SKImageInfo(bitmap.Width, bitmap.Height, SKColorType.Bgra8888, SKAlphaType.Opaque));
@@ -369,9 +378,43 @@ public static partial class SkiaImageHelpers
                     ColorBgra pixel = source.GetPixel(index); pixel.Alpha = 255; target.SetPixel(index, pixel);
                 }
             }
-            opaque.Save(stream, SKEncodedImageFormat.Png);
+            using SKPixmap pixels = opaque.PeekPixels();
+            encoded = pixels.Encode(output, SKPngEncoderOptions.Default);
         }
-        else bitmap.Save(stream, SKEncodedImageFormat.Png);
+        else
+        {
+            using SKPixmap pixels = bitmap.PeekPixels();
+            encoded = pixels.Encode(output, SKPngEncoderOptions.Default);
+        }
+
+        if (!encoded && !output.SizeLimitExceeded) throw new InvalidDataException("Image encoding failed: Png.");
+        return encoded;
+    }
+
+    private sealed class SizeLimitedWStream : SKManagedWStream
+    {
+        private readonly long sizeLimit;
+        private long bytesWritten;
+        public bool SizeLimitExceeded { get; private set; }
+
+        public SizeLimitedWStream(Stream stream, long sizeLimit) : base(stream, false)
+        {
+            this.sizeLimit = Math.Max(0, sizeLimit);
+        }
+
+        protected override bool OnWrite(IntPtr buffer, IntPtr size)
+        {
+            long count = size.ToInt64();
+            if (SizeLimitExceeded || count > sizeLimit - bytesWritten)
+            {
+                SizeLimitExceeded = true;
+                return false;
+            }
+
+            if (!base.OnWrite(buffer, size)) return false;
+            bytesWritten += count;
+            return true;
+        }
     }
 
     public static string ImageToBase64(SKBitmap bitmap, ImageFileFormat format)

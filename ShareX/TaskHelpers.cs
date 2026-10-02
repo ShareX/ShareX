@@ -415,11 +415,14 @@ namespace ShareX
         {
             ImageData imageData = new ImageData();
             EImageFormat imageFormat = Enum.IsDefined(taskSettings.ImageSettings.ImageFormat) ? taskSettings.ImageSettings.ImageFormat : EImageFormat.PNG;
-            imageData.ImageStream = SaveImageAsStream(img, imageFormat, taskSettings);
+            bool autoUseJPEG = taskSettings.ImageSettings.ImageAutoUseJPEG && imageFormat != EImageFormat.JPEG;
+            long jpegSizeLimit = (long)taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000;
+            imageData.ImageStream = SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
+                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
+                autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
             imageData.ImageFormat = imageFormat;
 
-            if (taskSettings.ImageSettings.ImageAutoUseJPEG && taskSettings.ImageSettings.ImageFormat != EImageFormat.JPEG &&
-                imageData.ImageStream.Length > taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000)
+            if (autoUseJPEG && (pngSizeLimitExceeded || imageData.ImageStream.Length > jpegSizeLimit))
             {
                 imageData.ImageStream.Dispose();
 
@@ -473,7 +476,14 @@ namespace ShareX
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
             int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
         {
+            return SaveImageAsStream(img, imageFormat, pngBitDepth, jpegQuality, gifQuality, long.MaxValue, out _);
+        }
+
+        private static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth,
+            int jpegQuality, GIFQuality gifQuality, long pngSizeLimit, out bool pngSizeLimitExceeded)
+        {
             MemoryStream ms = new MemoryStream();
+            pngSizeLimitExceeded = false;
 
             try
             {
@@ -481,14 +491,18 @@ namespace ShareX
                 {
                     default:
                     case EImageFormat.PNG:
-                        SkiaImageHelpers.SavePNG(img, ms, pngBitDepth);
-
                         if (ApplicationState.Settings.PNGStripColorSpaceInformation)
                         {
+                            // Stripping chunks changes the size used for automatic JPEG selection, so check the complete stripped PNG.
+                            SkiaImageHelpers.SavePNG(img, ms, pngBitDepth);
                             using (ms)
                             {
                                 return SkiaImageHelpers.PNGStripColorSpaceInformation(ms);
                             }
+                        }
+                        else
+                        {
+                            pngSizeLimitExceeded = !SkiaImageHelpers.SavePNG(img, ms, pngBitDepth, pngSizeLimit);
                         }
                         break;
                     case EImageFormat.JPEG:
