@@ -27,6 +27,7 @@
 
 using Avalonia.Media.Imaging;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
@@ -37,7 +38,6 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using DrawingBitmap = SkiaSharp.SKBitmap;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX;
 
@@ -254,10 +254,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         {
             if (image != null)
             {
-                using MemoryStream stream = new();
-                image.Save(stream, ImageFormat.Png);
-                stream.Position = 0;
-                return Bitmap.DecodeToWidth(stream, width, BitmapInterpolationMode.HighQuality);
+                return BitmapConversionHelpers.CreatePreview(image, new Avalonia.PixelSize(width, height));
             }
 
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsImageFile(filePath))
@@ -272,10 +269,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
 
                 if (shellThumbnail != null)
                 {
-                    using MemoryStream stream = new();
-                    shellThumbnail.Save(stream, ImageFormat.Png);
-                    stream.Position = 0;
-                    return new Bitmap(stream);
+                    return BitmapConversionHelpers.CreatePreview(shellThumbnail, new Avalonia.PixelSize(width, height));
                 }
             }
         }

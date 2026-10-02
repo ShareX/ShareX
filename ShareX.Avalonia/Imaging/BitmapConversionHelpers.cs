@@ -37,6 +37,30 @@ namespace ShareX.AvaloniaUI.Imaging
     /// </summary>
     public static class BitmapConversionHelpers
     {
+        /// <summary>Creates a preview that fits the requested pixel size without enlarging the source.</summary>
+        public static Bitmap CreatePreview(SKBitmap source, PixelSize maximumSize)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+            if (maximumSize.Width <= 0 || maximumSize.Height <= 0)
+                throw new ArgumentOutOfRangeException(nameof(maximumSize));
+
+            double scale = Math.Min(1, Math.Min((double)maximumSize.Width / source.Width,
+                (double)maximumSize.Height / source.Height));
+            int width = Math.Max(1, (int)Math.Round(source.Width * scale));
+            int height = Math.Max(1, (int)Math.Round(source.Height * scale));
+            if (width == source.Width && height == source.Height)
+                return ToAvaloniBitmap(source);
+
+            // Resize the pixels before transferring them to Avalonia. Encoding a full-size
+            // PNG for a small preview makes large captures slow and blocks notification UI.
+            using SKBitmap resized = source.Resize(
+                new SKImageInfo(width, height, SKColorType.Bgra8888,
+                    source.AlphaType == SKAlphaType.Opaque ? SKAlphaType.Opaque : SKAlphaType.Premul),
+                new SKSamplingOptions(SKCubicResampler.Mitchell)) ??
+                throw new InvalidOperationException("Unable to resize the image preview.");
+            return ToAvaloniBitmap(resized);
+        }
+
         /// <summary>
         /// Convert Avalonia Bitmap to SKBitmap.
         /// Warning: This is expensive if the input is not a WriteableBitmap.
@@ -106,85 +130,37 @@ namespace ShareX.AvaloniaUI.Imaging
         /// </summary>
         public static Bitmap ToAvaloniBitmap(SKBitmap skBitmap)
         {
-            if (skBitmap == null)
-                throw new ArgumentNullException(nameof(skBitmap));
-
-            // Ensure we are in a compatible format for Avalonia (BGRA8888 is standard)
-            // If not, we might need to convert.
-            // Avalonia WriteableBitmap usually expects Bgra8888 or Rgba8888 depending on platform, but Bgr8888 is safest default.
-
-            var width = skBitmap.Width;
-            var height = skBitmap.Height;
-
-            // Create WriteableBitmap
-            var writeableBitmap = new WriteableBitmap(
-                new Avalonia.PixelSize(width, height),
-                new Avalonia.Vector(96, 96), // DPI
-                Avalonia.Platform.PixelFormat.Bgra8888,
-                Avalonia.Platform.AlphaFormat.Premul);
-
-            using (var locked = writeableBitmap.Lock())
+            ArgumentNullException.ThrowIfNull(skBitmap);
+            var bitmap = new WriteableBitmap(
+                new PixelSize(skBitmap.Width, skBitmap.Height), new Vector(96, 96),
+                Avalonia.Platform.PixelFormat.Bgra8888, Avalonia.Platform.AlphaFormat.Premul);
+            try
             {
-                var info = skBitmap.Info;
-
-                // Raw byte copy is only valid when the source pixels are already in the
-                // premultiplied format expected by Avalonia's WriteableBitmap buffer.
-                if (info.ColorType == SKColorType.Bgra8888 &&
-                    (info.AlphaType == SKAlphaType.Premul || info.AlphaType == SKAlphaType.Opaque))
+                using var locked = bitmap.Lock();
+                using SKPixmap pixels = skBitmap.PeekPixels();
+                var info = new SKImageInfo(skBitmap.Width, skBitmap.Height, SKColorType.Bgra8888,
+                    skBitmap.AlphaType == SKAlphaType.Opaque ? SKAlphaType.Opaque : SKAlphaType.Premul);
+                if (pixels == null || !pixels.ReadPixels(info, locked.Address, locked.RowBytes))
+                    throw new InvalidOperationException("Unable to convert the image pixels.");
+                if (skBitmap.AlphaType == SKAlphaType.Opaque)
                 {
+                    // Opaque Skia buffers may leave alpha bytes undefined.
                     unsafe
                     {
-                        var srcPtr = skBitmap.GetPixels();
-                        var dstPtr = locked.Address;
-                        var srcStride = skBitmap.RowBytes;
-                        var dstStride = locked.RowBytes;
-                        var copyWidth = Math.Min(srcStride, dstStride);
-
-                        if (srcStride == dstStride)
+                        for (int y = 0; y < info.Height; y++)
                         {
-                            long totalBytes = (long)height * srcStride;
-                            Buffer.MemoryCopy((void*)srcPtr, (void*)dstPtr, totalBytes, totalBytes);
-                        }
-                        else
-                        {
-                            for (int y = 0; y < height; y++)
-                            {
-                                var srcRow = (byte*)srcPtr + (y * srcStride);
-                                var dstRow = (byte*)dstPtr + (y * dstStride);
-                                Buffer.MemoryCopy(srcRow, dstRow, copyWidth, copyWidth);
-                            }
+                            byte* row = (byte*)locked.Address + y * locked.RowBytes;
+                            for (int x = 0; x < info.Width; x++) row[x * 4 + 3] = 255;
                         }
                     }
                 }
-                else
-                {
-                    // If ColorType differs, let Skia handle the pixel conversion into the destination buffer
-                    var dstInfo = new SKImageInfo(width, height, SKColorType.Bgra8888, SKAlphaType.Premul);
-
-                    // We can read pixels directly into the WriteableBitmap's buffer
-                    // We can read pixels directly into the WriteableBitmap's buffer
-                    // using var pixmap = skBitmap.PeekPixels();
-                    // pixmap?.ReadPixels(dstInfo, locked.Address, locked.RowBytes, 0, 0);
-                    // Or safer if PeekPixels returns null? It shouldn't if we have a bitmap.
-                    // But to be safe and fix the compile error:
-                    var pixmap = skBitmap.PeekPixels();
-                    if (pixmap != null)
-                    {
-                        pixmap.ReadPixels(dstInfo, locked.Address, locked.RowBytes, 0, 0);
-                    }
-                    else
-                    {
-                        // Fallback? Or use GetPixels?
-                        // If PeekPixels is null, maybe pixels aren't allocated.
-                        // But we are converting valid bitmap.
-                        // Force allocation/lock?
-                        IntPtr ptr = skBitmap.GetPixels(); // Forces pixel lock
-                        skBitmap.PeekPixels()?.ReadPixels(dstInfo, locked.Address, locked.RowBytes, 0, 0);
-                    }
-                }
+                return bitmap;
             }
-
-            return writeableBitmap;
+            catch
+            {
+                bitmap.Dispose();
+                throw;
+            }
         }
     }
 }

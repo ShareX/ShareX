@@ -34,6 +34,7 @@ using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
@@ -43,7 +44,6 @@ using System.IO;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingContentAlignment = ShareX.HelpersLib.ImageContentAlignment;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
@@ -193,18 +193,15 @@ public partial class NotificationWindow : Window
             return;
         }
 
-        using MemoryStream stream = new();
-        source.Save(stream, ImageFormat.Png);
-        stream.Position = 0;
-        _previewBitmap = new Bitmap(stream);
-        PreviewImage.Source = _previewBitmap;
-        PreviewImage.IsVisible = true;
-
         double maxWidth = Math.Max(1, config.Size.Width);
         double maxHeight = Math.Max(1, config.Size.Height);
         double scale = Math.Min(1, Math.Min(maxWidth / source.Width, maxHeight / source.Height));
         PreviewImage.Width = Math.Max(1, Math.Round(source.Width * scale));
         PreviewImage.Height = Math.Max(1, Math.Round(source.Height * scale));
+        _previewBitmap = BitmapConversionHelpers.CreatePreview(source,
+            PixelSize.FromSize(new Size(PreviewImage.Width, PreviewImage.Height), RenderScaling));
+        PreviewImage.Source = _previewBitmap;
+        PreviewImage.IsVisible = true;
         PreviewImage.Clip = new RectangleGeometry(
             new Rect(0, 0, PreviewImage.Width, PreviewImage.Height), 3, 3);
     }
