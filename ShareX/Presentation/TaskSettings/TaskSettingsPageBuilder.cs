@@ -297,8 +297,9 @@ internal sealed class TaskSettingsPageBuilder
             EnabledCard(_imageOverride, Strings.TaskSettingsWindow_ImageQuality,
                 Row(Strings.TaskSettingsWindow_ImageFormat, EnumCombo(() => image.ImageFormat, value => image.ImageFormat = value)),
                 Row(Strings.TaskSettingsWindow_PNGBitDepth, EnumCombo(() => image.ImagePNGBitDepth, value => image.ImagePNGBitDepth = value)),
-                Row(Strings.TaskSettingsWindow_PNGCompressionLevel, Number(() => image.ImagePNGCompressionLevel, value => image.ImagePNGCompressionLevel = (int)value, 0, 9)),
-                Hint(Strings.TaskSettingsWindow_PNGCompressionHint),
+                Row(Strings.TaskSettingsWindow_PNGCompressionLevel,
+                    Number(() => image.ImagePNGCompressionLevel, value => image.ImagePNGCompressionLevel = (int)value, 0, 9),
+                    Strings.TaskSettingsWindow_PNGCompressionHint),
                 Row(Strings.TaskSettingsWindow_PNGFilter, ObjectCombo(
                     new[] { SKPngEncoderFilterFlags.AllFilters, SKPngEncoderFilterFlags.None, SKPngEncoderFilterFlags.Sub,
                         SKPngEncoderFilterFlags.Up, SKPngEncoderFilterFlags.Avg, SKPngEncoderFilterFlags.Paeth },
@@ -319,8 +320,7 @@ internal sealed class TaskSettingsPageBuilder
                         SKJpegEncoderDownsample.Downsample422 => Strings.TaskSettingsWindow_JPEGSubsampling422,
                         SKJpegEncoderDownsample.Downsample444 => Strings.TaskSettingsWindow_JPEGSubsampling444,
                         _ => Strings.TaskSettingsWindow_JPEGSubsampling420
-                    })),
-                Hint(Strings.TaskSettingsWindow_JPEGSubsamplingHint),
+                    }), Strings.TaskSettingsWindow_JPEGSubsamplingHint),
                 Row(Strings.TaskSettingsWindow_GIFQuality, EnumCombo(() => image.ImageGIFQuality, value => image.ImageGIFQuality = value)),
                 Row(Strings.TaskSettingsWindow_IfFileExists, EnumCombo(() => image.FileExistAction, value => image.FileExistAction = value))),
             EnabledCard(_imageOverride, Strings.TaskSettingsWindow_AutomaticJPEG,
@@ -1129,14 +1129,20 @@ internal sealed class TaskSettingsPageBuilder
         return availability;
     }
 
-    private static Grid Row(string label, Control editor)
+    private static Grid Row(string label, Control editor, string? tooltip = null)
     {
         Grid row = new()
         {
             ColumnDefinitions = new ColumnDefinitions("210,*"),
             ColumnSpacing = 8
         };
-        row.Children.Add(Label(label));
+        TextBlock rowLabel = Label(label);
+        if (tooltip != null)
+        {
+            ToolTip.SetTip(rowLabel, tooltip);
+            ToolTip.SetTip(editor, tooltip);
+        }
+        row.Children.Add(rowLabel);
         Grid.SetColumn(editor, 1);
         row.Children.Add(editor);
         return row;

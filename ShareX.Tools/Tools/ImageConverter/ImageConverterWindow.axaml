@@ -92,14 +92,13 @@
                                 <StackPanel x:Name="PngOptionsPanel" Grid.Row="2" Spacing="8" IsVisible="{Binding IsPng}">
                                     <Grid ColumnDefinitions="*,80" ColumnSpacing="10">
                                         <TextBlock Classes="row-label" TextWrapping="Wrap"
+                                                   ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionHint}"
                                                    Text="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionLevel}"/>
                                         <NumericUpDown x:Name="PngCompressionLevelBox" Grid.Column="1"
                                                        Minimum="0" Maximum="9" Increment="1"
+                                                       ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionHint}"
                                                        Value="{Binding PngCompressionLevel, Mode=TwoWay}"/>
                                     </Grid>
-                                    <TextBlock Text="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionHint}"
-                                               TextWrapping="Wrap" FontSize="12"
-                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                                     <TextBlock Classes="row-label"
                                                Text="{x:Static localization:Strings.ImageConverterWindow_PNGFilter}"/>
                                     <ComboBox x:Name="PngFilterBox" ItemsSource="{Binding PngFilterOptions}"
@@ -107,12 +106,11 @@
                                 </StackPanel>
                                 <StackPanel x:Name="JpegSubsamplingPanel" Grid.Row="3" Spacing="8" IsVisible="{Binding IsJpeg}">
                                     <TextBlock Classes="row-label" TextWrapping="Wrap"
+                                               ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_JPEGSubsamplingHint}"
                                                Text="{x:Static localization:Strings.ImageConverterWindow_JPEGSubsampling}"/>
                                     <ComboBox x:Name="JpegSubsamplingBox" ItemsSource="{Binding JpegSubsamplingOptions}"
+                                              ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_JPEGSubsamplingHint}"
                                               SelectedIndex="{Binding SelectedJpegSubsamplingIndex, Mode=TwoWay}"/>
-                                    <TextBlock Text="{x:Static localization:Strings.ImageConverterWindow_JPEGSubsamplingHint}"
-                                               TextWrapping="Wrap" FontSize="12"
-                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                                 </StackPanel>
                                 <Grid Grid.Row="4" ColumnDefinitions="110,*" ColumnSpacing="10"
                                       IsVisible="{Binding IsJpeg}">
