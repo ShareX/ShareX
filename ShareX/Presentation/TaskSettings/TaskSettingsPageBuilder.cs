@@ -312,6 +312,15 @@ internal sealed class TaskSettingsPageBuilder
                         _ => Strings.TaskSettingsWindow_PNGFilterAutomatic
                     })),
                 Row(Strings.TaskSettingsWindow_JPEGQuality, Number(() => image.ImageJPEGQuality, value => image.ImageJPEGQuality = (int)value, 0, 100)),
+                Row(Strings.TaskSettingsWindow_JPEGSubsampling, ObjectCombo(
+                    new[] { SKJpegEncoderDownsample.Downsample420, SKJpegEncoderDownsample.Downsample422, SKJpegEncoderDownsample.Downsample444 },
+                    () => image.ImageJPEGSubsampling, value => image.ImageJPEGSubsampling = value, value => value switch
+                    {
+                        SKJpegEncoderDownsample.Downsample422 => Strings.TaskSettingsWindow_JPEGSubsampling422,
+                        SKJpegEncoderDownsample.Downsample444 => Strings.TaskSettingsWindow_JPEGSubsampling444,
+                        _ => Strings.TaskSettingsWindow_JPEGSubsampling420
+                    })),
+                Hint(Strings.TaskSettingsWindow_JPEGSubsamplingHint),
                 Row(Strings.TaskSettingsWindow_GIFQuality, EnumCombo(() => image.ImageGIFQuality, value => image.ImageGIFQuality = value)),
                 Row(Strings.TaskSettingsWindow_IfFileExists, EnumCombo(() => image.FileExistAction, value => image.FileExistAction = value))),
             EnabledCard(_imageOverride, Strings.TaskSettingsWindow_AutomaticJPEG,

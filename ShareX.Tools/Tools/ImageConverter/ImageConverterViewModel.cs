@@ -38,6 +38,8 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     private static readonly SKPngEncoderFilterFlags[] PngFilters = [SKPngEncoderFilterFlags.AllFilters,
         SKPngEncoderFilterFlags.None, SKPngEncoderFilterFlags.Sub, SKPngEncoderFilterFlags.Up,
         SKPngEncoderFilterFlags.Avg, SKPngEncoderFilterFlags.Paeth];
+    private static readonly SKJpegEncoderDownsample[] JpegSubsamplingModes = [SKJpegEncoderDownsample.Downsample420,
+        SKJpegEncoderDownsample.Downsample422, SKJpegEncoderDownsample.Downsample444];
     private readonly HashSet<string> _selectedImages = [];
     private CancellationTokenSource? _previewCancellationTokenSource;
     private int _previewVersion;
@@ -62,6 +64,9 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
 
     [ObservableProperty]
     private int _selectedPngFilterIndex;
+
+    [ObservableProperty]
+    private int _selectedJpegSubsamplingIndex;
 
     [ObservableProperty]
     private AvaloniaColor _backgroundColor = AvaloniaColor.FromRgb(255, 255, 255);
@@ -101,6 +106,11 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         Localization.Strings.ImageConverterWindow_PNGFilterUp,
         Localization.Strings.ImageConverterWindow_PNGFilterAverage,
         Localization.Strings.ImageConverterWindow_PNGFilterPaeth];
+
+    public IReadOnlyList<string> JpegSubsamplingOptions { get; } = [
+        Localization.Strings.ImageConverterWindow_JPEGSubsampling420,
+        Localization.Strings.ImageConverterWindow_JPEGSubsampling422,
+        Localization.Strings.ImageConverterWindow_JPEGSubsampling444];
 
     public bool HasImages => Images.Count > 0;
     public bool HasPreview => PreviewImage != null;
@@ -204,6 +214,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         int quality = (int)Quality;
         SKColor backgroundColor = ToSKColor(BackgroundColor);
         SKPngEncoderOptions pngOptions = GetPngEncoderOptions();
+        SKJpegEncoderDownsample jpegSubsampling = GetJpegSubsampling();
         string outputFolderPath = OutputFolderPath;
         string outputFileName = OutputFileName;
 
@@ -212,7 +223,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         try
         {
             List<string> outputFiles = await Task.Run(() => ConvertImages(imageFiles, format, quality,
-                backgroundColor, outputFolderPath, outputFileName, pngOptions));
+                backgroundColor, outputFolderPath, outputFileName, pngOptions, jpegSubsampling));
             if (outputFiles.Count > 0)
             {
                 FileHelpers.OpenFolderWithFile(outputFiles[0]);
@@ -239,6 +250,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     partial void OnQualityChanged(decimal value) => NotifyOptionsChanged();
     partial void OnPngCompressionLevelChanged(decimal value) => NotifyOptionsChanged();
     partial void OnSelectedPngFilterIndexChanged(int value) => NotifyOptionsChanged();
+    partial void OnSelectedJpegSubsamplingIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnBackgroundColorChanged(AvaloniaColor value) => NotifyOptionsChanged();
     partial void OnOutputFolderPathChanged(string value) => NotifyStateChanged();
     partial void OnOutputFileNameChanged(string value) => NotifyStateChanged();
@@ -296,8 +308,9 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
             int quality = (int)Quality;
             SKColor backgroundColor = ToSKColor(BackgroundColor);
             SKPngEncoderOptions pngOptions = GetPngEncoderOptions();
+            SKJpegEncoderDownsample jpegSubsampling = GetJpegSubsampling();
             ImageConverterPreview result = await Task.Run(() =>
-                ImageConverterService.CreatePreview(filePath, format, quality, backgroundColor, pngOptions), cancellationToken);
+                ImageConverterService.CreatePreview(filePath, format, quality, backgroundColor, pngOptions, jpegSubsampling), cancellationToken);
             cancellationToken.ThrowIfCancellationRequested();
 
             AvaloniaBitmap? preview = null;
@@ -353,9 +366,12 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         PngFilters[Math.Clamp(SelectedPngFilterIndex, 0, PngFilters.Length - 1)],
         (int)Math.Clamp(PngCompressionLevel, 0, 9));
 
+    private SKJpegEncoderDownsample GetJpegSubsampling() =>
+        JpegSubsamplingModes[Math.Clamp(SelectedJpegSubsamplingIndex, 0, JpegSubsamplingModes.Length - 1)];
+
     private static List<string> ConvertImages(IEnumerable<string> imageFiles,
         ImageConverterOutputFormat format, int quality, SKColor backgroundColor, string outputFolderPath,
-        string outputFileName, SKPngEncoderOptions pngOptions)
+        string outputFileName, SKPngEncoderOptions pngOptions, SKJpegEncoderDownsample jpegSubsampling)
     {
         List<string> outputFiles = [];
         string extension = ImageConverterService.GetFileExtension(format);
@@ -377,7 +393,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
             string outputPath = Path.Combine(outputFolderPath,
                 outputFileName.Replace("$filename", sourceName, StringComparison.Ordinal));
             outputPath = Path.ChangeExtension(outputPath, extension);
-            ImageConverterService.Save(source, outputPath, format, quality, backgroundColor, pngOptions);
+            ImageConverterService.Save(source, outputPath, format, quality, backgroundColor, pngOptions, jpegSubsampling);
             outputFiles.Add(outputPath);
         }
 

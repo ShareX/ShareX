@@ -923,6 +923,21 @@ Dosya yolu: {0}</value>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Görsel dönüştürücü</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>JPEG renk alt örneklemesi:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (daha küçük dosyalar)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (dengeli)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (tam renk çözünürlüğü)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4, metin ve keskin kenarlar çevresinde daha fazla renk ayrıntısını korur, ancak genellikle daha büyük dosyalar oluşturur.</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = sıkıştırma yok, 1 = en hızlı, 9 = en küçük dosyalar. Tüm seviyeler kayıpsızdır.</value>
   </data>

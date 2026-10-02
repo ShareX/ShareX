@@ -2372,6 +2372,21 @@
   <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
     <value>JPEG 品質:</value>
   </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling" xml:space="preserve">
+    <value>JPEG クロマサブサンプリング:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (ファイルサイズ優先)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (バランス)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (色の解像度を維持)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 は文字や鮮明な輪郭の周囲の色の詳細をより多く保持しますが、通常はファイルサイズが大きくなります。</value>
+  </data>
   <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
     <value>左クリック時の動作:</value>
   </data>

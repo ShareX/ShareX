@@ -2372,6 +2372,21 @@ Do you want to abort the active grabación de pantalla?</value>
   <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
     <value>Calidad JPEG:</value>
   </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling" xml:space="preserve">
+    <value>Submuestreo de crominancia JPEG:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (archivos más pequeños)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (equilibrado)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (resolución de color completa)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 conserva más detalles de color alrededor del texto y los bordes definidos, pero suele generar archivos más grandes.</value>
+  </data>
   <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
     <value>Acción del clic izquierdo:</value>
   </data>

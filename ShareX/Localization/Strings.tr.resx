@@ -2372,6 +2372,21 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
     <value>JPEG kalitesi:</value>
   </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling" xml:space="preserve">
+    <value>JPEG renk alt örneklemesi:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (daha küçük dosyalar)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (dengeli)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (tam renk çözünürlüğü)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4, metin ve keskin kenarlar çevresinde daha fazla renk ayrıntısını korur, ancak genellikle daha büyük dosyalar oluşturur.</value>
+  </data>
   <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
     <value>Sol tıklama eylemi:</value>
   </data>

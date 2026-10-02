@@ -2372,6 +2372,21 @@
   <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
     <value>Якість JPEG:</value>
   </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling" xml:space="preserve">
+    <value>Субдискретизація кольору JPEG:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (менший розмір файлів)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (збалансовано)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (повна колірна роздільність)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 зберігає більше колірних деталей навколо тексту й чітких меж, але зазвичай створює файли більшого розміру.</value>
+  </data>
   <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
     <value>Дія лівої кнопки миші:</value>
   </data>

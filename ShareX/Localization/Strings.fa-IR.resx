@@ -2372,6 +2372,21 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
     <value>کیفیت JPEG:</value>
   </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling" xml:space="preserve">
+    <value>زیرنمونه‌گیری رنگ JPEG:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (فایل‌های کوچک‌تر)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (متعادل)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (وضوح کامل رنگ)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 جزئیات رنگی بیشتری را در اطراف متن و لبه‌های تیز حفظ می‌کند، اما معمولاً فایل‌های بزرگ‌تری ایجاد می‌کند.</value>
+  </data>
   <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
     <value>عمل کلیک چپ:</value>
   </data>

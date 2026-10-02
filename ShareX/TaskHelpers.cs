@@ -419,7 +419,8 @@ namespace ShareX
             long jpegSizeLimit = (long)taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000;
             imageData.ImageStream = SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
                 taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
-                GetPNGEncoderOptions(taskSettings.ImageSettings), autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
+                GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling,
+                autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
             imageData.ImageFormat = imageFormat;
 
             if (autoUseJPEG && (pngSizeLimitExceeded || imageData.ImageStream.Length > jpegSizeLimit))
@@ -430,11 +431,13 @@ namespace ShareX
                 {
                     if (taskSettings.ImageSettings.ImageAutoJPEGQuality)
                     {
-                        imageData.ImageStream = SkiaImageHelpers.SaveJPEGAutoQuality(newImage, taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000, 2, 70, 100);
+                        imageData.ImageStream = SkiaImageHelpers.SaveJPEGAutoQuality(newImage,
+                            taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000, 2, 70, 100, taskSettings.ImageSettings.ImageJPEGSubsampling);
                     }
                     else
                     {
-                        imageData.ImageStream = SkiaImageHelpers.SaveJPEG(newImage, taskSettings.ImageSettings.ImageJPEGQuality);
+                        imageData.ImageStream = SkiaImageHelpers.SaveJPEG(newImage, taskSettings.ImageSettings.ImageJPEGQuality,
+                            taskSettings.ImageSettings.ImageJPEGSubsampling);
                     }
                 }
 
@@ -471,7 +474,7 @@ namespace ShareX
         {
             return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
                 taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
-                GetPNGEncoderOptions(taskSettings.ImageSettings), long.MaxValue, out _);
+                GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling, long.MaxValue, out _);
         }
 
         private static SKPngEncoderOptions GetPNGEncoderOptions(TaskSettingsImage settings)
@@ -486,13 +489,16 @@ namespace ShareX
         }
 
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
-            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
+            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default,
+            SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420)
         {
-            return SaveImageAsStream(img, imageFormat, pngBitDepth, jpegQuality, gifQuality, SKPngEncoderOptions.Default, long.MaxValue, out _);
+            return SaveImageAsStream(img, imageFormat, pngBitDepth, jpegQuality, gifQuality,
+                SKPngEncoderOptions.Default, jpegSubsampling, long.MaxValue, out _);
         }
 
         private static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth,
-            int jpegQuality, GIFQuality gifQuality, SKPngEncoderOptions pngOptions, long pngSizeLimit, out bool pngSizeLimitExceeded)
+            int jpegQuality, GIFQuality gifQuality, SKPngEncoderOptions pngOptions, SKJpegEncoderDownsample jpegSubsampling,
+            long pngSizeLimit, out bool pngSizeLimitExceeded)
         {
             MemoryStream ms = new MemoryStream();
             pngSizeLimitExceeded = false;
@@ -520,7 +526,7 @@ namespace ShareX
                     case EImageFormat.JPEG:
                         using (Bitmap newImage = SkiaImageHelpers.FillBackground(img, Color.White))
                         {
-                            SkiaImageHelpers.SaveJPEG(newImage, ms, jpegQuality);
+                            SkiaImageHelpers.SaveJPEG(newImage, ms, jpegQuality, jpegSubsampling);
                         }
                         break;
                     case EImageFormat.GIF:

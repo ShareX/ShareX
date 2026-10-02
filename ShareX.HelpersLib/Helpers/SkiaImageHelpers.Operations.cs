@@ -2226,7 +2226,8 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static MemoryStream SaveJPEGAutoQuality(SKBitmap img, int sizeLimit, int qualityDecrement = 5, int minQuality = 0, int maxQuality = 100)
+        public static MemoryStream SaveJPEGAutoQuality(SKBitmap img, int sizeLimit, int qualityDecrement = 5,
+            int minQuality = 0, int maxQuality = 100, SKJpegEncoderDownsample subsampling = SKJpegEncoderDownsample.Downsample420)
         {
             qualityDecrement = qualityDecrement.Clamp(1, 100);
             minQuality = minQuality.Clamp(0, 100);
@@ -2234,7 +2235,7 @@ namespace ShareX.HelpersLib
 
             if (minQuality >= maxQuality)
             {
-                return SaveJPEG(img, minQuality);
+                return SaveJPEG(img, minQuality, subsampling);
             }
 
             MemoryStream ms = null;
@@ -2246,7 +2247,7 @@ namespace ShareX.HelpersLib
                     ms.Dispose();
                 }
 
-                ms = SaveJPEG(img, quality);
+                ms = SaveJPEG(img, quality, subsampling);
 
                 //DebugHelper.WriteLine($"Quality: {quality}% - Size: {ms.Length.ToSizeString()}");
 

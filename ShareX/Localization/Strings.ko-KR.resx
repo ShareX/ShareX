@@ -2372,6 +2372,21 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
     <value>JPEG 품질:</value>
   </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling" xml:space="preserve">
+    <value>JPEG 색차 서브샘플링:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (더 작은 파일)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (균형)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (전체 색상 해상도)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4는 텍스트와 선명한 가장자리 주변의 색상 디테일을 더 많이 보존하지만, 일반적으로 파일 크기가 더 커집니다.</value>
+  </data>
   <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
     <value>왼쪽 클릭 동작:</value>
   </data>

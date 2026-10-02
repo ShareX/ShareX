@@ -2372,6 +2372,21 @@
   <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
     <value>جودة JPEG:</value>
   </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling" xml:space="preserve">
+    <value>تقليل عينات اللون في JPEG:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (ملفات أصغر)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (متوازن)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (دقة لونية كاملة)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>يحافظ 4:4:4 على تفاصيل لونية أكثر حول النصوص والحواف الحادة، لكنه عادةً ينتج ملفات أكبر.</value>
+  </data>
   <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
     <value>إجراء النقر الأيسر:</value>
   </data>

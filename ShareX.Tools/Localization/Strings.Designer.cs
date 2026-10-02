@@ -2582,6 +2582,51 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to JPEG chroma subsampling:.
+        /// </summary>
+        public static string ImageConverterWindow_JPEGSubsampling {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_JPEGSubsampling", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 4:2:0 (smaller files).
+        /// </summary>
+        public static string ImageConverterWindow_JPEGSubsampling420 {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_JPEGSubsampling420", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 4:2:2 (balanced).
+        /// </summary>
+        public static string ImageConverterWindow_JPEGSubsampling422 {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_JPEGSubsampling422", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 4:4:4 (full color resolution).
+        /// </summary>
+        public static string ImageConverterWindow_JPEGSubsampling444 {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_JPEGSubsampling444", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 4:4:4 preserves more color detail around text and sharp edges, but usually produces larger files..
+        /// </summary>
+        public static string ImageConverterWindow_JPEGSubsamplingHint {
+            get {
+                return ResourceManager.GetString("ImageConverterWindow_JPEGSubsamplingHint", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Fill.
         /// </summary>
         public static string ImageResizerWindow_Fill {

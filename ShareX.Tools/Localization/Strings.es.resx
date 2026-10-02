@@ -923,6 +923,21 @@ Ruta del archivo: {0}</value>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Convertidor de imágenes</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>Submuestreo de crominancia JPEG:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (archivos más pequeños)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (equilibrado)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (resolución de color completa)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 conserva más detalles de color alrededor del texto y los bordes definidos, pero suele generar archivos más grandes.</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = sin compresión, 1 = más rápido, 9 = archivos más pequeños. Todos los niveles son sin pérdida.</value>
   </data>

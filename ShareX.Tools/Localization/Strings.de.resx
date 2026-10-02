@@ -923,6 +923,21 @@ Dateipfad: {0}</value>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Bildkonverter</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>JPEG-Chroma-Unterabtastung:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (kleinere Dateien)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (ausgewogen)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (volle Farbauflösung)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 erhält mehr Farbdetails an Text und scharfen Kanten, erzeugt aber meist größere Dateien.</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = keine Komprimierung, 1 = am schnellsten, 9 = kleinste Dateien. Alle Stufen sind verlustfrei.</value>
   </data>

@@ -919,6 +919,21 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>이미지 변환기</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>JPEG 색차 서브샘플링:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (더 작은 파일)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (균형)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (전체 색상 해상도)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4는 텍스트와 선명한 가장자리 주변의 색상 디테일을 더 많이 보존하지만, 일반적으로 파일 크기가 더 커집니다.</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = 압축 없음, 1 = 가장 빠름, 9 = 가장 작은 파일. 모든 단계에서 화질 손실이 없습니다.</value>
   </data>

@@ -923,6 +923,21 @@ Bestandspad: {0}</value>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Afbeeldingsconverter</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>Kleuronderbemonstering voor JPEG:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (kleinere bestanden)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (gebalanceerd)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (volledige kleurresolutie)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 behoudt meer kleurdetails rond tekst en scherpe randen, maar levert meestal grotere bestanden op.</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = geen compressie, 1 = snelst, 9 = kleinste bestanden. Alle niveaus zijn verliesvrij.</value>
   </data>

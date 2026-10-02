@@ -923,6 +923,21 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>图像转换器</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>JPEG 色度抽样：</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0（文件更小）</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2（均衡）</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4（完整色彩分辨率）</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 能保留文字和锐利边缘周围的更多色彩细节，但通常会生成更大的文件。</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = 不压缩，1 = 最快，9 = 文件最小。所有级别均为无损。</value>
   </data>

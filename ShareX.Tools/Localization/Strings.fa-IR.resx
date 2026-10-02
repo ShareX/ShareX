@@ -919,6 +919,21 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>مبدل تصویر</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>زیرنمونه‌گیری رنگ JPEG:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (فایل‌های کوچک‌تر)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (متعادل)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (وضوح کامل رنگ)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 جزئیات رنگی بیشتری را در اطراف متن و لبه‌های تیز حفظ می‌کند، اما معمولاً فایل‌های بزرگ‌تری ایجاد می‌کند.</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = بدون فشرده‌سازی، 1 = سریع‌ترین، 9 = کوچک‌ترین فایل‌ها. همهٔ سطوح بدون افت کیفیت هستند.</value>
   </data>

@@ -2872,6 +2872,51 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_JPEGQuality", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to JPEG chroma subsampling:.
+        /// </summary>
+        public static string TaskSettingsWindow_JPEGSubsampling {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_JPEGSubsampling", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 4:2:0 (smaller files).
+        /// </summary>
+        public static string TaskSettingsWindow_JPEGSubsampling420 {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_JPEGSubsampling420", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 4:2:2 (balanced).
+        /// </summary>
+        public static string TaskSettingsWindow_JPEGSubsampling422 {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_JPEGSubsampling422", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 4:4:4 (full color resolution).
+        /// </summary>
+        public static string TaskSettingsWindow_JPEGSubsampling444 {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_JPEGSubsampling444", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to 4:4:4 preserves more color detail around text and sharp edges, but usually produces larger files..
+        /// </summary>
+        public static string TaskSettingsWindow_JPEGSubsamplingHint {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_JPEGSubsamplingHint", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_GIFQuality {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_GIFQuality", resourceCulture);

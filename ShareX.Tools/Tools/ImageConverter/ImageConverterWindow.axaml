@@ -73,7 +73,7 @@
                 <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Disabled">
                     <StackPanel Spacing="12">
                         <Border Classes="tool-panel" Padding="16">
-                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
                                 <TextBlock Grid.Row="0" Classes="section-heading"
                                            Text="{x:Static localization:Strings.ImageThumbnailerWindow_Output}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="110,*" ColumnSpacing="10">
@@ -105,16 +105,25 @@
                                     <ComboBox x:Name="PngFilterBox" ItemsSource="{Binding PngFilterOptions}"
                                               SelectedIndex="{Binding SelectedPngFilterIndex, Mode=TwoWay}"/>
                                 </StackPanel>
-                                <Grid Grid.Row="3" ColumnDefinitions="110,*" ColumnSpacing="10"
+                                <StackPanel x:Name="JpegSubsamplingPanel" Grid.Row="3" Spacing="8" IsVisible="{Binding IsJpeg}">
+                                    <TextBlock Classes="row-label" TextWrapping="Wrap"
+                                               Text="{x:Static localization:Strings.ImageConverterWindow_JPEGSubsampling}"/>
+                                    <ComboBox x:Name="JpegSubsamplingBox" ItemsSource="{Binding JpegSubsamplingOptions}"
+                                              SelectedIndex="{Binding SelectedJpegSubsamplingIndex, Mode=TwoWay}"/>
+                                    <TextBlock Text="{x:Static localization:Strings.ImageConverterWindow_JPEGSubsamplingHint}"
+                                               TextWrapping="Wrap" FontSize="12"
+                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                </StackPanel>
+                                <Grid Grid.Row="4" ColumnDefinitions="110,*" ColumnSpacing="10"
                                       IsVisible="{Binding IsJpeg}">
                                     <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}"/>
                                     <cp:ColorPicker Grid.Column="1"
                                                     Color="{Binding BackgroundColor, Mode=TwoWay}"
                                                     IsAlphaEnabled="False" IsAlphaVisible="False"/>
                                 </Grid>
-                                <TextBlock Grid.Row="4" Classes="row-label"
+                                <TextBlock Grid.Row="5" Classes="row-label"
                                            Text="{x:Static localization:Strings.ImageThumbnailerWindow_File_name_template}"/>
-                                <TextBox Grid.Row="5" Text="{Binding OutputFileName}"/>
+                                <TextBox Grid.Row="6" Text="{Binding OutputFileName}"/>
                             </Grid>
                         </Border>
 

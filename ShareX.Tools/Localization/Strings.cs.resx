@@ -923,6 +923,21 @@ Cesta k souboru: {0}</value>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Převodník obrázků</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>Podvzorkování barev JPEG:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (menší soubory)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (vyvážené)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (plné barevné rozlišení)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 zachovává více barevných detailů kolem textu a ostrých hran, ale obvykle vytváří větší soubory.</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = bez komprese, 1 = nejrychlejší, 9 = nejmenší soubory. Všechny úrovně jsou bezeztrátové.</value>
   </data>

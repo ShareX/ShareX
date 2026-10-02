@@ -2372,6 +2372,21 @@
   <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
     <value>JPEG คุณภาพ:</value>
   </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling" xml:space="preserve">
+    <value>การสุ่มตัวอย่างสีแบบลดทอนของ JPEG:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (ไฟล์เล็กกว่า)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (สมดุล)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (ความละเอียดสีเต็มรูปแบบ)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 เก็บรายละเอียดสีรอบข้อความและขอบที่คมชัดได้มากกว่า แต่โดยทั่วไปจะทำให้ไฟล์มีขนาดใหญ่ขึ้น</value>
+  </data>
   <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
     <value>คลิกซ้าย การดำเนินการ:</value>
   </data>

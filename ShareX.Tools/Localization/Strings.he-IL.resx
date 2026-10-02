@@ -919,6 +919,21 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>ממיר תמונות</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>תת־דגימת צבע ב-JPEG:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (קבצים קטנים יותר)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (מאוזן)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (רזולוציית צבע מלאה)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 שומר על יותר פרטי צבע סביב טקסט וקצוות חדים, אך בדרך כלל יוצר קבצים גדולים יותר.</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = ללא דחיסה, 1 = המהיר ביותר, 9 = הקבצים הקטנים ביותר. כל הרמות ללא אובדן איכות.</value>
   </data>

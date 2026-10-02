@@ -919,6 +919,21 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Képkonvertáló</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>JPEG szín-alulmintavételezés:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (kisebb fájlok)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (kiegyensúlyozott)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (teljes színfelbontás)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>A 4:4:4 több színrészletet őriz meg a szöveg és az éles szélek körül, de általában nagyobb fájlokat eredményez.</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = nincs tömörítés, 1 = leggyorsabb, 9 = legkisebb fájlok. Minden szint veszteségmentes.</value>
   </data>

@@ -2372,6 +2372,21 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_JPEGQuality" xml:space="preserve">
     <value>Qualità JPEG:</value>
   </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling" xml:space="preserve">
+    <value>Sottocampionamento cromatico JPEG:</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (file più piccoli)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (bilanciato)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (risoluzione cromatica completa)</value>
+  </data>
+  <data name="TaskSettingsWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 conserva più dettagli cromatici intorno al testo e ai bordi netti, ma in genere produce file più grandi.</value>
+  </data>
   <data name="TaskSettingsWindow_LeftClickAction" xml:space="preserve">
     <value>Azione clic sinistro:</value>
   </data>

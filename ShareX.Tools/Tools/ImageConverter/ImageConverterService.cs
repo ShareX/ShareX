@@ -86,7 +86,8 @@ public static class ImageConverterService
     }
 
     public static ImageConverterPreview CreatePreview(string filePath, ImageConverterOutputFormat format,
-        int quality, SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null)
+        int quality, SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
+        SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420)
     {
         using SKBitmap? source = LoadImage(filePath);
         if (source == null)
@@ -96,7 +97,7 @@ public static class ImageConverterService
 
         SKSizeI previewSize = GetPreviewSize(new SKSizeI(source.Width, source.Height));
         using SKBitmap preview = CreatePreviewBitmap(source, previewSize);
-        using SKData data = Encode(preview, format, quality, backgroundColor, pngOptions);
+        using SKData data = Encode(preview, format, quality, backgroundColor, pngOptions, jpegSubsampling);
         return new ImageConverterPreview(data.ToArray(), source.Width, source.Height);
     }
 
@@ -109,16 +110,17 @@ public static class ImageConverterService
     };
 
     public static void Save(SKBitmap image, string filePath, ImageConverterOutputFormat format, int quality,
-        SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null)
+        SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
+        SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420)
     {
-        using SKData data = Encode(image, format, quality, backgroundColor, pngOptions);
+        using SKData data = Encode(image, format, quality, backgroundColor, pngOptions, jpegSubsampling);
         FileHelpers.CreateDirectoryFromFilePath(filePath);
         using FileStream stream = new(filePath, FileMode.Create, FileAccess.Write, FileShare.Read);
         data.SaveTo(stream);
     }
 
     private static SKData Encode(SKBitmap bitmap, ImageConverterOutputFormat format, int quality,
-        SKColor backgroundColor, SKPngEncoderOptions? pngOptions)
+        SKColor backgroundColor, SKPngEncoderOptions? pngOptions, SKJpegEncoderDownsample jpegSubsampling)
     {
         SKEncodedImageFormat encodedFormat = format switch
         {
@@ -134,12 +136,15 @@ public static class ImageConverterService
             using SKPixmap pixels = bitmap.PeekPixels();
             data = pixels.Encode(pngOptions ?? new SKPngEncoderOptions(SKPngEncoderFilterFlags.AllFilters, 1));
         }
+        else if (format == ImageConverterOutputFormat.Jpeg)
+        {
+            using SKBitmap flattened = FlattenBackground(bitmap, backgroundColor);
+            using SKPixmap pixels = flattened.PeekPixels();
+            data = pixels.Encode(SkiaImageHelpers.GetJPEGEncoderOptions(quality, jpegSubsampling));
+        }
         else
         {
-            using SKBitmap? flattened = format == ImageConverterOutputFormat.Jpeg
-                ? FlattenBackground(bitmap, backgroundColor)
-                : null;
-            using SKImage image = SKImage.FromBitmap(flattened ?? bitmap);
+            using SKImage image = SKImage.FromBitmap(bitmap);
             data = image.Encode(encodedFormat, Math.Clamp(quality, 0, 100));
         }
 

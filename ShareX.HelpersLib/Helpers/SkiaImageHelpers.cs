@@ -153,10 +153,11 @@ public static partial class SkiaImageHelpers
         return pixels.IsTransparent();
     }
 
-    public static MemoryStream SaveJPEG(SKBitmap bitmap, int quality)
+    public static MemoryStream SaveJPEG(SKBitmap bitmap, int quality,
+        SKJpegEncoderDownsample subsampling = SKJpegEncoderDownsample.Downsample420)
     {
         MemoryStream stream = new();
-        Save(bitmap, stream, SKEncodedImageFormat.Jpeg, quality);
+        SaveJPEG(bitmap, stream, quality, subsampling);
         return stream;
     }
 
@@ -350,8 +351,24 @@ public static partial class SkiaImageHelpers
         return result;
     }
 
-    public static void SaveJPEG(SKBitmap bitmap, Stream stream, int quality) => bitmap.Save(stream, SKEncodedImageFormat.Jpeg, quality);
-    public static void SaveJPEG(SKBitmap bitmap, string path, int quality) => bitmap.Save(path, SKEncodedImageFormat.Jpeg, quality);
+    public static SKJpegEncoderOptions GetJPEGEncoderOptions(int quality, SKJpegEncoderDownsample subsampling)
+        => new(Math.Clamp(quality, 0, 100), Enum.IsDefined(subsampling) ? subsampling : SKJpegEncoderDownsample.Downsample420,
+            SKJpegEncoderAlphaOption.Ignore);
+
+    public static void SaveJPEG(SKBitmap bitmap, Stream stream, int quality,
+        SKJpegEncoderDownsample subsampling = SKJpegEncoderDownsample.Downsample420)
+    {
+        using SKPixmap pixels = bitmap.PeekPixels();
+        if (!pixels.Encode(stream, GetJPEGEncoderOptions(quality, subsampling)))
+            throw new InvalidDataException("Image encoding failed: Jpeg.");
+    }
+
+    public static void SaveJPEG(SKBitmap bitmap, string path, int quality,
+        SKJpegEncoderDownsample subsampling = SKJpegEncoderDownsample.Downsample420)
+    {
+        using FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.Read);
+        SaveJPEG(bitmap, stream, quality, subsampling);
+    }
     public static MemoryStream SavePNG(SKBitmap bitmap, PNGBitDepth depth)
     {
         MemoryStream stream = new(); SavePNG(bitmap, stream, depth); return stream;

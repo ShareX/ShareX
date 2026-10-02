@@ -923,6 +923,21 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>छवि रूपांतरक</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>JPEG रंग उपनमूनाकरण:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (छोटी फ़ाइलें)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (संतुलित)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (पूर्ण रंग रिज़ॉल्यूशन)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 पाठ और तीखे किनारों के आसपास रंग के अधिक विवरण सुरक्षित रखता है, लेकिन आम तौर पर बड़ी फ़ाइलें बनाता है।</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = कोई संपीड़न नहीं, 1 = सबसे तेज़, 9 = सबसे छोटी फ़ाइलें। सभी स्तरों पर गुणवत्ता बनी रहती है।</value>
   </data>

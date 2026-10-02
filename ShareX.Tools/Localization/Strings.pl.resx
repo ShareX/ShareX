@@ -919,6 +919,21 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Konwerter obrazów</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>Podpróbkowanie chrominancji JPEG:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (mniejsze pliki)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (zrównoważone)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (pełna rozdzielczość koloru)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 zachowuje więcej szczegółów koloru wokół tekstu i ostrych krawędzi, ale zwykle tworzy większe pliki.</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = bez kompresji, 1 = najszybciej, 9 = najmniejsze pliki. Wszystkie poziomy są bezstratne.</value>
   </data>

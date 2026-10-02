@@ -923,6 +923,21 @@ Percorso file: {0}</value>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Convertitore di immagini</value>
   </data>
+  <data name="ImageConverterWindow_JPEGSubsampling" xml:space="preserve">
+    <value>Sottocampionamento cromatico JPEG:</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling420" xml:space="preserve">
+    <value>4:2:0 (file più piccoli)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling422" xml:space="preserve">
+    <value>4:2:2 (bilanciato)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsampling444" xml:space="preserve">
+    <value>4:4:4 (risoluzione cromatica completa)</value>
+  </data>
+  <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
+    <value>4:4:4 conserva più dettagli cromatici intorno al testo e ai bordi netti, ma in genere produce file più grandi.</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = nessuna compressione, 1 = più veloce, 9 = file più piccoli. Tutti i livelli sono senza perdita.</value>
   </data>
