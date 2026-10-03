@@ -95,6 +95,8 @@ public sealed class LinuxWindowService : IWindowService
 
     public IReadOnlyList<PlatformWindow> GetWindows() => backend.GetWindows();
 
+    internal IReadOnlyList<ScreenInfo> GetScreens() => backend.GetScreens();
+
     public PlatformPoint? GetCursorPosition() => backend.GetCursorPosition();
 
     /// <summary>hyprctl cursorpos prints "x, y" in layout coordinates.</summary>

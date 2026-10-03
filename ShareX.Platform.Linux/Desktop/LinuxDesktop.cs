@@ -79,6 +79,16 @@ public sealed class LinuxDesktop
         };
     }
 
+    /// <summary>The X11 root window on X11, grim on wlroots compositors, the Screenshot portal elsewhere; null when none works.</summary>
+    internal IScreenCaptureBackend? CreateCaptureBackend(ICommandRunner runner) =>
+        LinuxScreenCaptureService.SelectBackend(info, runner.Exists("grim"), DBusSession.IsAvailable) switch
+        {
+            LinuxScreenCaptureService.Backend.X11 => new X11CaptureBackend(),
+            LinuxScreenCaptureService.Backend.Grim => new GrimCaptureBackend(runner),
+            LinuxScreenCaptureService.Backend.Portal => new PortalCaptureBackend(),
+            _ => null
+        };
+
     /// <summary>EWMH on X11, hyprctl on Hyprland, swaymsg on sway; GNOME, KDE and other Wayland desktops do not expose windows.</summary>
     internal IDesktopWindowBackend CreateWindowBackend(ICommandRunner runner) => Kind switch
     {

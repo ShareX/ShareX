@@ -73,6 +73,12 @@ internal sealed class X11WindowBackend : IDesktopWindowBackend
 
     public IReadOnlyList<PlatformWindow> GetSnapWindows() => GetWindows();
 
+    public IReadOnlyList<ScreenInfo> GetScreens()
+    {
+        using X11Display? display = X11Display.TryOpen();
+        return display?.GetMonitors() ?? (IReadOnlyList<ScreenInfo>)Array.Empty<ScreenInfo>();
+    }
+
     public PlatformWindow? GetActiveWindow()
     {
         using X11Display? display = X11Display.TryOpen();

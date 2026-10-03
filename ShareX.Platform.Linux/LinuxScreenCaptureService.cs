@@ -26,6 +26,7 @@
 using ShareX.Platform.Diagnostics;
 using ShareX.Platform.Imaging;
 using ShareX.Platform.Linux.DBus;
+using ShareX.Platform.Linux.Desktop;
 using ShareX.Platform.Linux.Native;
 using System;
 using System.Collections.Generic;
@@ -38,8 +39,9 @@ using System.Threading.Tasks;
 namespace ShareX.Platform.Linux;
 
 /// <summary>
-/// Screen capture on Linux. X11 reads the root window directly. Wayland uses grim on wlroots compositors (sway, Hyprland)
-/// and the xdg-desktop-portal Screenshot interface on GNOME, KDE Plasma and in Flatpak.
+/// Screen capture on Linux through the backend <see cref="LinuxDesktop"/> chooses: the X11 root window on X11, grim on wlroots
+/// compositors (Hyprland, sway), and the xdg-desktop-portal Screenshot interface on GNOME, KDE Plasma and in sandboxes. The
+/// monitor layout comes from the desktop's window backend.
 /// </summary>
 public sealed class LinuxScreenCaptureService : IScreenCaptureService
 {
@@ -52,19 +54,21 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
     }
 
     private readonly PlatformInfo info;
-    private readonly ICommandRunner runner;
     private readonly IWindowService? windows;
+    private readonly IScreenCaptureBackend? backend;
+    private readonly IDesktopWindowBackend layout;
 
     /// <param name="windows">Locates windows for <see cref="ScreenCaptureMode.Window"/>; window capture is unavailable without it.</param>
     public LinuxScreenCaptureService(PlatformInfo info, ICommandRunner runner, IWindowService? windows = null)
     {
         this.info = info;
-        this.runner = runner;
         this.windows = windows;
-        ActiveBackend = SelectBackend(info, runner.Exists("grim"), DBusSession.IsAvailable);
+        LinuxDesktop desktop = new LinuxDesktop(info);
+        backend = desktop.CreateCaptureBackend(runner);
+        layout = (windows as LinuxWindowService)?.DesktopBackend ?? desktop.CreateWindowBackend(runner);
     }
 
-    internal Backend ActiveBackend { get; }
+    internal Backend ActiveBackend => backend?.Kind ?? Backend.None;
 
     public FeatureSupport Support => ActiveBackend switch
     {
@@ -127,63 +131,24 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
 
     public bool RequestPermission() => true;
 
-    public IReadOnlyList<ScreenInfo> GetScreens()
-    {
-        if (info.IsX11 || ActiveBackend == Backend.X11)
-        {
-            using X11Display? display = X11Display.TryOpen();
-
-            if (display != null)
-            {
-                return display.GetMonitors();
-            }
-        }
-
-        if (info.DesktopEnvironment == DesktopEnvironment.Hyprland)
-        {
-            return RunJson("hyprctl", ["monitors", "-j"], ParseHyprlandMonitors);
-        }
-
-        if (info.DesktopEnvironment == DesktopEnvironment.Sway)
-        {
-            return RunJson("swaymsg", ["-t", "get_outputs", "-r"], ParseSwayOutputs);
-        }
-
-        // GNOME and KDE do not expose output layout to plain Wayland clients. Callers fall back to the UI toolkit's screen list.
-        return Array.Empty<ScreenInfo>();
-    }
+    public IReadOnlyList<ScreenInfo> GetScreens() => layout.GetScreens();
 
     public async Task<ScreenCaptureResult> CaptureAsync(ScreenCaptureRequest request, CancellationToken cancellationToken = default)
     {
+        if (backend == null)
+        {
+            throw new PlatformNotSupportedException(Support.Reason);
+        }
+
         if (request.Mode == ScreenCaptureMode.Window)
         {
             request = ToRegionRequest(request);
         }
 
-        switch (ActiveBackend)
-        {
-            case Backend.X11:
-                return CaptureX11(request);
-            case Backend.Grim:
-                return await CaptureGrimAsync(request, cancellationToken).ConfigureAwait(false);
-            case Backend.Portal:
-                return await CapturePortalAsync(request, cancellationToken).ConfigureAwait(false);
-            default:
-                throw new PlatformNotSupportedException(Support.Reason);
-        }
+        return await backend.CaptureAsync(request, GetScreens(), cancellationToken).ConfigureAwait(false);
     }
 
-    /// <summary>XFixes on X11. Wayland compositors draw the cursor themselves and do not give it to clients.</summary>
-    public CursorCapture? CaptureCursor()
-    {
-        if (ActiveBackend != Backend.X11)
-        {
-            return null;
-        }
-
-        using X11Display? display = X11Display.TryOpen();
-        return display?.GetCursorImage() is (PixelBuffer image, PlatformPoint position) ? new CursorCapture(image, position) : null;
-    }
+    public CursorCapture? CaptureCursor() => backend?.CaptureCursor();
 
     private ScreenCaptureRequest ToRegionRequest(ScreenCaptureRequest request)
     {
@@ -196,97 +161,6 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
             ?? throw new ArgumentException("The window was not found. It may have closed.", nameof(request));
 
         return request with { Mode = ScreenCaptureMode.Region, Region = window.Bounds };
-    }
-
-    private ScreenCaptureResult CaptureX11(ScreenCaptureRequest request)
-    {
-        using X11Display display = X11Display.TryOpen() ?? throw new InvalidOperationException("Cannot open the X11 display.");
-        PlatformRectangle area = ResolveArea(request, display.GetMonitors(), display.GetRootBounds());
-        PixelBuffer pixels = display.CaptureRoot(area, request.IncludeCursor);
-        return new ScreenCaptureResult(pixels, area.Intersect(display.GetRootBounds()), "X11");
-    }
-
-    private async Task<ScreenCaptureResult> CaptureGrimAsync(ScreenCaptureRequest request, CancellationToken cancellationToken)
-    {
-        List<string> arguments = new List<string>();
-
-        if (request.IncludeCursor)
-        {
-            arguments.Add("-c");
-        }
-
-        PlatformRectangle bounds = PlatformRectangle.Empty;
-
-        switch (request.Mode)
-        {
-            case ScreenCaptureMode.Region:
-                bounds = ClipToScreens(request.Region, GetScreens());
-                arguments.Add("-g");
-                arguments.Add(FormatGeometry(bounds));
-                break;
-            case ScreenCaptureMode.Screen when request.ScreenId != null:
-                arguments.Add("-o");
-                arguments.Add(request.ScreenId);
-                bounds = GetScreens().FirstOrDefault(s => s.Id == request.ScreenId)?.Bounds ?? PlatformRectangle.Empty;
-                break;
-            case ScreenCaptureMode.Interactive when runner.Exists("slurp"):
-                CommandResult selection = await runner.RunAsync("slurp", [], timeout: TimeSpan.FromMinutes(5), cancellationToken: cancellationToken).ConfigureAwait(false);
-
-                if (!selection.Success)
-                {
-                    throw new OperationCanceledException("The selection was cancelled.");
-                }
-
-                string geometry = selection.StandardOutputText.Trim();
-                bounds = ParseGeometry(geometry);
-                arguments.Add("-g");
-                arguments.Add(geometry);
-                break;
-        }
-
-        // "-" writes the PNG to standard output.
-        arguments.Add("-t");
-        arguments.Add("png");
-        arguments.Add("-");
-
-        CommandResult result = await runner.RunAsync("grim", arguments, cancellationToken: cancellationToken).ConfigureAwait(false);
-
-        if (!result.Success || !PngCodec.IsPng(result.StandardOutput))
-        {
-            throw new InvalidOperationException($"grim failed: {result.StandardError.Trim()}");
-        }
-
-        if (bounds.IsEmpty)
-        {
-            PlatformSize size = PngCodec.ReadSize(result.StandardOutput);
-            bounds = new PlatformRectangle(0, 0, size.Width, size.Height);
-        }
-
-        return new ScreenCaptureResult(result.StandardOutput, bounds, "grim");
-    }
-
-    private async Task<ScreenCaptureResult> CapturePortalAsync(ScreenCaptureRequest request, CancellationToken cancellationToken)
-    {
-        bool interactive = request.Mode == ScreenCaptureMode.Interactive;
-        byte[] png = await PortalScreenshot.CaptureAsync(interactive, cancellationToken).ConfigureAwait(false);
-        PlatformSize size = PngCodec.ReadSize(png);
-        PlatformRectangle full = new PlatformRectangle(0, 0, size.Width, size.Height);
-
-        if (interactive || request.Mode == ScreenCaptureMode.FullScreen)
-        {
-            return new ScreenCaptureResult(png, full, "xdg-desktop-portal");
-        }
-
-        // The portal always returns the whole desktop, so crop for region and single screen requests.
-        PlatformRectangle area = ResolveArea(request, GetScreens(), full);
-        PlatformRectangle crop = area.Intersect(full);
-
-        if (crop.IsEmpty || crop == full)
-        {
-            return new ScreenCaptureResult(png, full, "xdg-desktop-portal");
-        }
-
-        return new ScreenCaptureResult(PngCodec.Crop(png, crop), crop, "xdg-desktop-portal");
     }
 
     internal static PlatformRectangle ResolveArea(ScreenCaptureRequest request, IReadOnlyList<ScreenInfo> screens, PlatformRectangle desktop)
@@ -389,24 +263,5 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
         }
 
         return screens;
-    }
-
-    private IReadOnlyList<ScreenInfo> RunJson(string command, IReadOnlyList<string> arguments, Func<JsonElement, IReadOnlyList<ScreenInfo>> parse)
-    {
-        try
-        {
-            CommandResult result = runner.RunAsync(command, arguments, timeout: TimeSpan.FromSeconds(5)).GetAwaiter().GetResult();
-
-            if (result.Success)
-            {
-                using JsonDocument document = JsonDocument.Parse(result.StandardOutput);
-                return parse(document.RootElement);
-            }
-        }
-        catch (Exception e) when (e is JsonException or TimeoutException or System.ComponentModel.Win32Exception or InvalidOperationException or KeyNotFoundException)
-        {
-        }
-
-        return Array.Empty<ScreenInfo>();
     }
 }

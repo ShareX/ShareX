@@ -46,6 +46,8 @@ internal sealed class HyprlandWindowBackend(CompositorCommands commands) : IDesk
 
     public IReadOnlyList<PlatformWindow> GetWindows() => commands.ReadList("hyprctl", ["clients", "-j"], LinuxWindowService.ParseHyprlandClients);
 
+    public IReadOnlyList<ScreenInfo> GetScreens() => commands.ReadList("hyprctl", ["monitors", "-j"], LinuxScreenCaptureService.ParseHyprlandMonitors);
+
     /// <summary>Clients on hidden workspaces still report their last position, so keep only the workspaces on screen.</summary>
     public IReadOnlyList<PlatformWindow> GetSnapWindows()
     {
@@ -95,6 +97,8 @@ internal sealed class SwayWindowBackend(CompositorCommands commands) : IDesktopW
 
     public IReadOnlyList<PlatformWindow> GetWindows() => commands.ReadList("swaymsg", ["-t", "get_tree", "-r"], LinuxWindowService.ParseSwayTree);
 
+    public IReadOnlyList<ScreenInfo> GetScreens() => commands.ReadList("swaymsg", ["-t", "get_outputs", "-r"], LinuxScreenCaptureService.ParseSwayOutputs);
+
     public IReadOnlyList<PlatformWindow> GetSnapWindows() => GetWindows().Where(window => !window.IsMinimized).ToList();
 
     public PlatformWindow? GetActiveWindow() =>
@@ -127,6 +131,9 @@ internal sealed class UnsupportedWindowBackend(string reason) : IDesktopWindowBa
     public IReadOnlyList<PlatformWindow> GetWindows() => Array.Empty<PlatformWindow>();
 
     public IReadOnlyList<PlatformWindow> GetSnapWindows() => Array.Empty<PlatformWindow>();
+
+    /// <summary>GNOME and KDE do not expose the output layout to plain Wayland clients; callers fall back to the toolkit's list.</summary>
+    public IReadOnlyList<ScreenInfo> GetScreens() => Array.Empty<ScreenInfo>();
 
     public PlatformWindow? GetActiveWindow() => null;
 

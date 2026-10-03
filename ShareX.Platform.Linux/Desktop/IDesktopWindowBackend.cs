@@ -36,6 +36,9 @@ internal interface IDesktopWindowBackend
 
     IReadOnlyList<PlatformWindow> GetWindows();
 
+    /// <summary>The monitor layout in the coordinates captures and window positions use; empty where the desktop does not reveal it.</summary>
+    IReadOnlyList<ScreenInfo> GetScreens();
+
     /// <summary>The windows region capture may snap to: on screen, topmost first.</summary>
     IReadOnlyList<PlatformWindow> GetSnapWindows();
 
