@@ -144,7 +144,7 @@ Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (
 
 | ID | Task | Depends on | Status |
 | --- | --- | --- | --- |
-| J1 | **Verify on Windows** everything in `ShareX.Platform.Windows`, using the checklist below. Start now on the first branch; continue on `cross-platform-v2` for every change M makes. File bug rows. | none | todo |
+| J1 | **Verify on Windows** everything in `ShareX.Platform.Windows`, using the checklist below. Start now on the first branch; continue on `cross-platform-v2` for every change M makes. File bug rows. | none | in progress (2026-10-03) |
 | J2 | Image editor on Linux (runs today through `ShareX.ImageEditor.App`): emoji and cursors off Windows (Windows keeps its Direct2D and Win32 renderers; Linux and macOS draw emoji with SkiaSharp from the system colour emoji font and use the bundled cursors), font fallbacks for fonts Linux lacks, image insert, screen colour picker window, appearance on Hyprland, GNOME and KDE. | none | todo |
 | J3 | Application shell UI: tray through Avalonia `TrayIcon` and `DesktopServices.RegisterTrayIcon` (retire `WindowsTrayIcon` use in `TrayIconService`), retire what is left of `Forms/MainForm.cs`, main window behaviour on Linux desktops. | M2 | todo |
 | J4 | Capture overlays on every desktop: region capture, screen recording frame and tool bar, scrolling capture region window, mouse highlighter drawing, pin to screen, ruler. Full-screen placement, multi-monitor and mixed scaling on Hyprland, sway, GNOME, KDE and macOS. Switch their window-shape and overlay calls to the services (handoffs from M4, M5). | M4, M5 | todo |
@@ -200,6 +200,7 @@ J asks for backend or platform capabilities here; M fills in the interface and s
 | R1 | Printing: print dialog and printing an image or text (the preview window is J's UI) | print windows | | todo |
 | R2 | Taskbar progress and overlay | upload progress UI | `ITaskbarService` (`PlatformServices.Current.Taskbar`); `TaskbarManager` keeps its API on top. Develop never used overlay icons, so none were added | done |
 | R3 | Synthetic input beyond scrolling: typing text, key combinations | application actions | extend `IInputService` | todo |
+| R4 | Unblock the Windows test baseline before the W1/J1 claim push: thumbnail URI fixture uses `/home/jens/...`, which `new Uri(path)` rejects on Windows; browser-host fixture assumes `Path.GetFullPath("/opt/...")` stays a Unix path. Use a native absolute path and assert the parsed JSON path. | `ShareX.Platform.Tests/SecretAndThumbnailTests.cs:110`, `LinuxTests.cs:294` | test fixtures only | done (W1/J1 claim commit); Jaex approved the ownership exception |
 
 ## Windows work (M → J)
 
@@ -207,7 +208,7 @@ M adds a row when a contract needs a Windows implementation. J implements it in 
 
 | ID | Contract | Old Windows code to move | Linux/macOS | Status |
 | --- | --- | --- | --- | --- |
-| W1 | Review the Windows code M wrote: `WindowsShellIntegrationService` (file types, browser hosts, Send to), `WindowsSystemPreferencesService.GetPolicy`, `WindowsTaskbarService`, `WindowsStartupService` (`b94ebc639`, `1cf9734e9`). Take ownership; fix whatever differs from v22. | already moved | done | todo |
+| W1 | Review the Windows code M wrote: `WindowsShellIntegrationService` (file types, browser hosts, Send to), `WindowsSystemPreferencesService.GetPolicy`, `WindowsTaskbarService`, `WindowsStartupService` (`b94ebc639`, `1cf9734e9`). Take ownership; fix whatever differs from v22. | already moved | done | in progress (2026-10-03) |
 | W2 | `IHotkeyService` for `HotkeyManager` (`WindowsHotkeyService` exists from the first branch; check it against `WindowsHotkeyHost`) | `ShareX.HelpersLib` `WindowsHotkeyHost`, `HotkeyForm` | X11 done; Wayland portal in M9 | todo |
 | W3 | Printing (R1): contract to come from M | `ShareX.HelpersLib` print helpers, `WindowsPrintDialog` | to do (M) | waiting for contract |
 
@@ -227,6 +228,8 @@ M adds a row when a backend API moved and J's UI files still call the old wrappe
 
 | ID | Found by | Platform | Description | Owner | Status |
 | --- | --- | --- | --- | --- | --- |
+| B1 | J | Windows | Baseline platform tests fail in `FreedesktopThumbnailTests.GetThumbnailName_IsTheMd5OfTheFileUri` and `LinuxFileAssociationTests.BrowserHosts_GoToInstalledBrowsersWithAnAbsolutePath` because their fixtures assume Unix paths. Fixed with Jaex's approval (R4): 171 pass, 7 skip, 0 fail; image-effects tests: 65 pass. | M | done (W1/J1 claim commit) |
+| B2 | J | Windows | `WindowsSystemPreferencesService.GetPolicy` selects any non-null HKLM value before validation. Unlike v22, an invalid machine boolean prevents a valid HKCU policy from applying; `PersonalPath` also accepts non-string registry values through `ToString`. Registry access failures now escape instead of falling back. | J | open: W1 |
 
 ## Status log
 
@@ -245,3 +248,5 @@ One line per working session, newest at the bottom.
 - 2026-10-03, M: Claimed M6 (application backend files). Plan for M3's end: Win32 types that J's files still use (`WindowInfo`, `TaskbarManager`, print helpers, `LucideTrayIcon`) become portable façades with the same API over the platform services, so J's files keep building and work on Linux; the handoffs become clean-ups.
 - 2026-10-03, M: M6 steps pushed: startup, shell menus, file types, browser hosts, Send to and admin policies through the platform services (`b94ebc639`); taskbar progress through new `ITaskbarService` (R2 done; Linux uses the Unity launcher API, which KDE and Dash to Dock show). `TaskbarManager` is now a portable façade in `HelpersLib/TaskbarManager.cs`; J's settings view model needs no change. Two J1 checklist items added.
 - 2026-10-03, M: **Ownership change (McoreD's decision):** `ShareX.Platform.Windows` is now J's. J writes, runs and signs off all Windows code; M does contracts, Linux, macOS and shared call sites, and hands Windows work over as W rows. New task J9 (Windows platform) and table "Windows work" (W1 to W3). M3 no longer moves Win32 code itself.
+- 2026-10-03, J: Pulled `cross-platform-v2` and claimed W1/J1. Following Jaex's goal objective, Windows verification starts on this branch; the first-steps wording about checking out the frozen first branch is superseded by that instruction. Reviewing shell integration, startup, policy and taskbar behavior against `develop` before the remaining Windows checklist. No file moves planned in this claim.
+- 2026-10-03, J: Jaex explicitly approved the two M-owned Windows test-fixture fixes in R4 to unblock the claim push. Only the thumbnail hashing fixture and browser-host manifest assertion are changed; no Linux implementation or platform contract changes.

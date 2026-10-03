@@ -281,7 +281,7 @@ public class LinuxFileAssociationTests : IDisposable
         File.WriteAllText(manifest, """{ "name": "x", "path": "ShareX_NativeMessagingHost.exe", "type": "stdio", "allowed_origins": ["chrome-extension://abc/"] }""");
         Directory.CreateDirectory(Path.Combine(root, "config", "chromium"));
         Directory.CreateDirectory(Path.Combine(root, "config", "BraveSoftware", "Brave-Browser"));
-        BrowserHost host = new BrowserHost(BrowserFamily.Chromium, "com.getsharex.sharex", manifest, "/opt/sharex/ShareX_NativeMessagingHost");
+        BrowserHost host = new BrowserHost(BrowserFamily.Chromium, "com.getsharex.sharex", manifest, Path.Combine(root, "ShareX_NativeMessagingHost"));
         LinuxShellIntegrationService service = Create();
 
         Assert.Equal(2, service.GetBrowserHostManifestPaths(host).Count);
@@ -291,7 +291,10 @@ public class LinuxFileAssociationTests : IDisposable
         string written = File.ReadAllText(Path.Combine(root, "config", "chromium", "NativeMessagingHosts", "com.getsharex.sharex.json"));
 
         Assert.True(service.IsBrowserHostRegistered(host));
-        Assert.Contains("\"path\": \"/opt/sharex/ShareX_NativeMessagingHost\"", written);
+        using JsonDocument document = JsonDocument.Parse(written);
+        string hostPath = document.RootElement.GetProperty("path").GetString()!;
+        Assert.True(Path.IsPathFullyQualified(hostPath));
+        Assert.Equal(host.HostExecutablePath, hostPath);
         Assert.Contains("\"name\": \"com.getsharex.sharex\"", written);
         Assert.Contains("chrome-extension://abc/", written);
 

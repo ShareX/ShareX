@@ -106,9 +106,12 @@ public class FreedesktopThumbnailTests
     [Fact]
     public void GetThumbnailName_IsTheMd5OfTheFileUri()
     {
-        // Example from the specification: file:///home/jens/photo%20with%20spaces.png
-        Assert.Equal(Convert.ToHexString(MD5.HashData(Encoding.UTF8.GetBytes("file:///home/jens/photo%20with%20spaces.png"))).ToLowerInvariant() + ".png",
-            FreedesktopThumbnailService.GetThumbnailName("/home/jens/photo with spaces.png"));
+        // Example from the specification, rooted on the host's drive when running on Windows.
+        string root = Path.GetPathRoot(Path.GetTempPath())!;
+        string path = Path.Combine(root, "home", "jens", "photo with spaces.png");
+        string uri = "file:///" + root.Replace('\\', '/').TrimStart('/') + "home/jens/photo%20with%20spaces.png";
+        Assert.Equal(Convert.ToHexString(MD5.HashData(Encoding.UTF8.GetBytes(uri))).ToLowerInvariant() + ".png",
+            FreedesktopThumbnailService.GetThumbnailName(path));
     }
 
     /// <summary>A PNG signature, a tEXt chunk and IEND: enough for the chunk reader, like a real thumbnailer's output.</summary>
