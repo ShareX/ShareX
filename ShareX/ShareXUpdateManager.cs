@@ -24,12 +24,18 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Platform;
 
 namespace ShareX
 {
     internal class ShareXUpdateManager : GitHubUpdateManager
     {
         public UpdateChannel UpdateChannel { get; set; }
+
+        // Portable builds, and platforms without ShareX's installer (Linux and macOS, where updates come from the package
+        // manager and installer signatures cannot be checked), open the release page instead of downloading the Windows setup.
+        private static bool OpensReleasePage => StartupOptions.Portable ||
+            (PlatformServices.IsInitialized && !PlatformServices.Current.CodeSignature.Support.IsSupported);
 
         public override GitHubUpdateChecker CreateUpdateChecker()
         {
@@ -38,7 +44,7 @@ namespace ShareX
                 return new GitHubUpdateChecker("ShareX", "DevBuilds")
                 {
                     IsDev = true,
-                    IsPortable = StartupOptions.Portable,
+                    IsPortable = OpensReleasePage,
                     IgnoreRevision = true
                 };
             }
@@ -46,7 +52,7 @@ namespace ShareX
             {
                 return new GitHubUpdateChecker("ShareX", "ShareX")
                 {
-                    IsPortable = StartupOptions.Portable,
+                    IsPortable = OpensReleasePage,
                     IncludePreRelease = UpdateChannel == UpdateChannel.PreRelease,
                     IgnoreRevision = true
                 };
