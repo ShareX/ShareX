@@ -299,22 +299,69 @@ public sealed class WindowsApplicationLaunchTests
             catch (ArgumentException) { }
         }
 
-        public void Dispose()
+        public void Dispose() => DeleteDirectory(DirectoryPath, TimeSpan.FromSeconds(5));
+
+        internal static void DeleteDirectory(string directory, TimeSpan timeout, Action<Exception>? onRetry = null)
         {
-            if (!Directory.Exists(DirectoryPath)) return;
-            string target = Path.GetFullPath(DirectoryPath);
-            if (!target.StartsWith(Path.GetFullPath(Path.GetTempPath()), StringComparison.OrdinalIgnoreCase) ||
-                !Path.GetFileName(target).StartsWith("ShareX launch fixture 日本語 ", StringComparison.Ordinal))
+            const string prefix = "ShareX launch fixture 日本語 ";
+            string target = Path.TrimEndingDirectorySeparator(Path.GetFullPath(directory));
+            string root = Path.TrimEndingDirectorySeparator(Path.GetFullPath(Path.GetTempPath()));
+            string name = Path.GetFileName(target);
+            if (!string.Equals(Path.GetDirectoryName(target), root, StringComparison.OrdinalIgnoreCase) ||
+                !name.StartsWith(prefix, StringComparison.Ordinal) || !Guid.TryParseExact(name[prefix.Length..], "N", out _))
                 throw new InvalidOperationException("The fixture cleanup path is outside its temporary directory.");
-            foreach (string file in Directory.EnumerateFiles(target, "*", SearchOption.AllDirectories))
-                File.SetAttributes(file, File.GetAttributes(file) & ~FileAttributes.ReadOnly);
-            for (int attempt = 0; ; attempt++)
+            if (timeout <= TimeSpan.Zero || timeout > TimeSpan.FromSeconds(5))
+                throw new ArgumentOutOfRangeException(nameof(timeout));
+            if (!Directory.Exists(target)) return;
+            if ((File.GetAttributes(target) & FileAttributes.ReparsePoint) != 0)
+                throw new InvalidOperationException("The fixture cleanup path must not be a directory link.");
+
+            string records = string.Join(Environment.NewLine, new[] { "parent.json", "child.json", "fixture-error.txt" }
+                .Select(name => ReadDiagnosticFile(Path.Combine(target, name))));
+            Stopwatch elapsed = Stopwatch.StartNew();
+            while (Directory.Exists(target))
             {
-                try { Directory.Delete(target, true); return; }
-                catch (Exception error) when (attempt < 20 && error is IOException or UnauthorizedAccessException)
+                try
                 {
+                    foreach (string file in Directory.EnumerateFiles(target))
+                    {
+                        FileAttributes attributes = File.GetAttributes(file);
+                        if ((attributes & FileAttributes.ReadOnly) != 0)
+                            File.SetAttributes(file, attributes & ~FileAttributes.ReadOnly);
+                    }
+                    Directory.Delete(target, true);
+                }
+                catch (Exception error) when (error is IOException or UnauthorizedAccessException)
+                {
+                    if (!Directory.Exists(target)) return;
+                    if (elapsed.Elapsed >= timeout)
+                    {
+                        string remaining = ReadRemainingEntries(target);
+                        throw new IOException($"Native launch fixture cleanup failed after {elapsed.Elapsed}: {target}. " +
+                            $"Native error 0x{error.HResult:X8}: {error.Message}. Remaining entries: {remaining}." +
+                            Environment.NewLine + records, error);
+                    }
+                    onRetry?.Invoke(error);
                     Thread.Sleep(100);
                 }
+            }
+        }
+
+        private static string ReadDiagnosticFile(string path)
+        {
+            try { return File.Exists(path) ? Path.GetFileName(path) + ": " + File.ReadAllText(path) : string.Empty; }
+            catch (Exception error) when (error is IOException or UnauthorizedAccessException)
+            {
+                return Path.GetFileName(path) + ": " + error.Message;
+            }
+        }
+
+        private static string ReadRemainingEntries(string directory)
+        {
+            try { return string.Join(", ", Directory.EnumerateFileSystemEntries(directory).Select(Path.GetFileName)); }
+            catch (Exception error) when (error is IOException or UnauthorizedAccessException)
+            {
+                return "Unable to list remaining entries: " + error.Message;
             }
         }
     }
