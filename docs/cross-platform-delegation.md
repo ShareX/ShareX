@@ -19,7 +19,7 @@ Both agents must focus on **Windows and Linux only**. The priority is porting th
 
 **Do not work on the macOS port now.** Defer macOS implementations, UI adaptation, desktop testing, packaging and CI. A macOS port may be considered only after the Linux port is **100% complete for the agreed scope and stable enough for normal use**, demonstrated by the real application flows and verification listed below. Linux HDR and OCR support are excluded from this scope.
 
-**OCR is Windows-only.** Keep Windows.Media.Ocr behind `IOcrService`; Linux and macOS must report OCR as unsupported with a user-facing reason. Do not implement or expose non-Windows OCR or recommend its packages. The existing Linux Tesseract backend must be disabled and retired by M (R20); earlier OCR implementation and smoke-test entries below are historical and do not authorize further Linux OCR work. J keeps shared UI gated by the service support value, and M must also guard task execution.
+**OCR uses the operating system's own support.** Windows.Media.Ocr on Windows; on Linux the distribution's Tesseract and language data when installed, otherwise OCR reports unsupported with a reason; macOS unsupported for now (McoreD, 2026-10-04).
 
 Keep existing macOS code in place. Shared contract changes may receive only the minimum unsupported stubs or mechanical updates required to keep the solution compiling, without implementing macOS features. This rule overrides earlier three-platform wording in tasks, requests, status history and architecture documents. Ownership of deferred macOS files does not authorize working on the macOS port.
 
