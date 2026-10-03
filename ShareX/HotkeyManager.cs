@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.Localization;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,16 +46,26 @@ namespace ShareX
         public HotkeyTriggerEventHandler HotkeyTrigger;
         public HotkeysToggledEventHandler HotkeysToggledTrigger;
 
-        private IHotkeyHost hotkeyHost;
+        private readonly HotkeyRegistrar registrar;
+        private readonly IHotkeyHost hotkeyHost;
 
-        public HotkeyManager(IHotkeyHost host)
+        /// <summary>Hotkeys through the platform's hotkey service, throttled by the "hotkey repeat limit" setting.</summary>
+        public HotkeyManager()
+        {
+            registrar = new HotkeyRegistrar(() => ApplicationState.Settings.HotkeyRepeatLimit);
+            registrar.HotkeyPress += OnHotkeyPressed;
+        }
+
+        /// <summary>Kept until MainForm stops passing its window (handoff H6). Only the host's Closed event is still used.</summary>
+        public HotkeyManager(IHotkeyHost host) : this()
         {
             hotkeyHost = host;
-            hotkeyHost.HotkeyPress += OnHotkeyPressed;
             hotkeyHost.Closed += OnHostClosed;
         }
 
-        private void OnHotkeyPressed(ushort id, InputKey key, Modifiers modifier)
+        public FeatureSupport Support => registrar.Support;
+
+        private void OnHotkeyPressed(ushort id)
         {
             if (!IgnoreHotkeys && (!ApplicationState.Settings.DisableHotkeysOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
             {
@@ -69,7 +80,7 @@ namespace ShareX
 
         private void OnHostClosed(object sender, EventArgs e)
         {
-            if (hotkeyHost != null && !hotkeyHost.IsDisposed)
+            if (!hotkeyHost.IsDisposed)
             {
                 UnregisterAllHotkeys(false);
             }
@@ -105,7 +116,7 @@ namespace ShareX
 
                 if (hotkeySetting.HotkeyInfo.Status != HotkeyStatus.Registered && hotkeySetting.HotkeyInfo.IsValidHotkey)
                 {
-                    hotkeyHost.RegisterHotkey(hotkeySetting.HotkeyInfo);
+                    registrar.RegisterHotkey(hotkeySetting.HotkeyInfo);
 
                     if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Registered)
                     {
@@ -148,7 +159,7 @@ namespace ShareX
         {
             if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Registered)
             {
-                hotkeyHost.UnregisterHotkey(hotkeySetting.HotkeyInfo);
+                registrar.UnregisterHotkey(hotkeySetting.HotkeyInfo);
 
                 if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.NotConfigured)
                 {
