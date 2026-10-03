@@ -172,6 +172,15 @@ public interface IScreenCaptureService
     /// later. Null when it is hidden or the platform does not reveal it (Wayland).
     /// </summary>
     CursorCapture? CaptureCursor();
+
+    /// <summary>
+    /// Starts reading screen pixels for the screen colour picker and its magnifier. By default the screen is captured once when the
+    /// session starts and pixels are read from that image, because Wayland does not let applications read the screen continuously;
+    /// show <see cref="IScreenPixelSampler.Snapshot"/> behind the picker so the user sees what is sampled. A platform may override
+    /// this with live reads.
+    /// </summary>
+    async Task<IScreenPixelSampler> CreatePixelSamplerAsync(CancellationToken cancellationToken = default) =>
+        new SnapshotPixelSampler(await CaptureAsync(new ScreenCaptureRequest { Mode = ScreenCaptureMode.FullScreen }, cancellationToken).ConfigureAwait(false));
 }
 
 /// <param name="Position">Top left corner of <paramref name="Image"/> on the virtual desktop (the pointer position minus the hot spot).</param>
