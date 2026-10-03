@@ -108,6 +108,13 @@ public static class DesktopServices
             _ = task.ContinueWith(_ => Dispatcher.UIThread.Post(() => frame.Continue = false,
                 DispatcherPriority.Send), TaskScheduler.Default);
             Dispatcher.UIThread.PushFrame(frame);
+
+            // The frame also ends when the application shuts down. Blocking on the unfinished task here would stop the UI thread
+            // from ever finishing the shutdown (for example a file dialog that is open when the session ends).
+            if (!task.IsCompleted)
+            {
+                throw new OperationCanceledException("The application is closing.");
+            }
         }
         return task.GetAwaiter().GetResult();
     }
