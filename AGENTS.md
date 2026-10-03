@@ -59,8 +59,9 @@ There is no `ShareX.HelpersLib.Windows`. Windows-only code goes into `ShareX.Pla
 
 State at the branch point (`develop` `fd61635f2`). WinForms and GDI+ are already gone. Update this list as items are done.
 
-- [ ] Build on Linux and macOS: rename `Directory.build.props` and `Directory.build.targets` to `Directory.Build.*`, set `EnableWindowsTargeting` on non-Windows hosts, add the cross-OS CI workflow.
-- [ ] `ShareX.Platform*` projects and tests on this branch (bring from `cross-platform`), and `PlatformServices.Initialize` at application start up.
+- [x] Build on Linux and macOS: rename `Directory.build.props` and `Directory.build.targets` to `Directory.Build.*`, set `EnableWindowsTargeting` on non-Windows hosts, add the cross-OS CI workflow.
+- [x] `ShareX.Platform*` projects and tests on this branch (brought from `cross-platform`).
+- [ ] `PlatformServices.Initialize` at application start up.
 - [ ] `net10.0-windows` targets: `HelpersLib`, `HistoryLib`, `UploadersLib`, `ImageEffectsLib`, `ScreenCaptureLib`, `NativeMessagingHost`, `Tools` and `ShareX` (`net10.0-windows10.0.22621.0`).
 - [ ] Win32 interop in `HelpersLib` (`Native/`, P/Invoke in 7 files, registry in 4, `OperatingSystem.Is…` in 8) → `ShareX.Platform.Windows` behind services.
 - [ ] Win32 interop in `ScreenCaptureLib` (GDI and HDR capture, transparent window capture, window lists, scrolling input, frame window regions) → services.
