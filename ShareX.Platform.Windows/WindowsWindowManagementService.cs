@@ -156,10 +156,8 @@ public sealed class WindowsWindowManagementService : IWindowManagementService
         Win32.SetWindowLongPtr(hwnd, Win32.GWL_EXSTYLE, exStyle & ~(nint)(WindowStyles.WS_EX_CLIENTEDGE | WindowStyles.WS_EX_DLGMODALFRAME |
             WindowStyles.WS_EX_STATICEDGE));
 
-        // The screen the window's centre is on.
-        PlatformRectangle windowBounds = rect.ToRectangle();
-        PlatformPoint center = new PlatformPoint(windowBounds.X + windowBounds.Width / 2, windowBounds.Y + windowBounds.Height / 2);
-        ScreenInfo? screen = screens.GetScreens().FirstOrDefault(s => s.Bounds.Contains(center));
+        // v22's DesktopScreen.FromHandle used the entire window rectangle, then the primary screen.
+        ScreenInfo? screen = SelectBorderlessScreen(rect.ToRectangle(), screens.GetScreens());
 
         if (screen == null)
         {
@@ -168,6 +166,26 @@ public sealed class WindowsWindowManagementService : IWindowManagementService
 
         PlatformRectangle target = useWorkingArea ? screen.WorkingArea : screen.Bounds;
         return Win32.SetWindowPos(hwnd, IntPtr.Zero, target.X, target.Y, target.Width, target.Height, flags);
+    }
+
+    internal static ScreenInfo? SelectBorderlessScreen(PlatformRectangle windowBounds, IReadOnlyList<ScreenInfo> screens)
+    {
+        ScreenInfo? best = null;
+        long bestArea = 0;
+
+        foreach (ScreenInfo screen in screens)
+        {
+            PlatformRectangle overlap = screen.Bounds.Intersect(windowBounds);
+            long area = (long)overlap.Width * overlap.Height;
+
+            if (area > bestArea)
+            {
+                best = screen;
+                bestArea = area;
+            }
+        }
+
+        return best ?? screens.FirstOrDefault(screen => screen.IsPrimary) ?? screens.FirstOrDefault();
     }
 
     /// <summary>The flag names, one per set bit group, as WindowStyles.ToString() printed them in ShareX.</summary>
