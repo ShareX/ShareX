@@ -42,7 +42,7 @@ There is no `ShareX.HelpersLib.Windows`. Windows-only code goes into `ShareX.Pla
 
 ### Adding behaviour that differs by operating system
 
-1. Find the service in `ShareX.Platform/Services` that owns the area, or add a new `I…Service` and expose it on `IPlatformServices`. Only the owner of `ShareX.Platform*` (see the delegation file) changes these projects; others file a request.
+1. Find the service in `ShareX.Platform/Services` that owns the area, or add a new `I…Service` and expose it on `IPlatformServices`. Contracts in `ShareX.Platform` are changed only by their owner (Jaex's agent, see the delegation file), who adds "not supported" stubs to every platform project in the same commit; others file a request.
 2. Model the result with portable types. Never leak `IntPtr` meaning, Win32 enums, X11 atoms or Cocoa objects through the interface.
 3. Implement it in **every** platform project. Where a platform cannot do it, return `FeatureSupport.NotSupported(reason)` with a user-facing reason; on Linux use `LinuxPackages` so the reason names the package and the install command for the user's distribution. `UnsupportedServices.cs` holds reusable "not available" implementations.
 4. In shared code, read `Support` before offering the feature, and hide or disable the UI with the reason as its tooltip rather than failing at run time.
