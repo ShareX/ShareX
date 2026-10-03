@@ -9,56 +9,59 @@
         Background="Transparent"
         FontFamily="{DynamicResource ShareX.FontFamily.Default}"
         Foreground="{DynamicResource ShareX.Brush.Text}">
-    <!-- The capture surface stays transparent so the target pixels remain visible. -->
-    <Canvas x:Name="PickerSurface"
-            Background="Transparent">
-        <Border x:Name="PickerPreview"
-            Padding="8"
-            CornerRadius="8"
-            Opacity="0"
-            Background="{DynamicResource ShareX.Brush.Background.Main}"
-            BorderBrush="{DynamicResource ShareX.Brush.Border}"
-            BorderThickness="1"
-            BoxShadow="0 8 24 #66000000"
-            IsHitTestVisible="False">
-            <StackPanel Spacing="8">
-                <Grid x:Name="MagnifierPanel"
-                      Width="136"
-                      Height="136">
-                    <Image x:Name="MagnifierImage"
-                           Width="135"
-                           Height="135"
-                           Stretch="Fill"
-                           RenderOptions.BitmapInterpolationMode="None"/>
-                    <Border Width="11"
-                            Height="11"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            BorderBrush="White"
-                            BorderThickness="1"
-                            BoxShadow="0 0 0 1 #CC000000"/>
-                </Grid>
+    <Grid ClipToBounds="True">
+        <Image x:Name="SnapshotImage" Stretch="Fill" IsHitTestVisible="False" RenderOptions.BitmapInterpolationMode="None"/>
+        <!-- Live samplers leave the background transparent; snapshot samplers show the captured screen. -->
+        <Canvas x:Name="PickerSurface"
+                Background="Transparent">
+            <Border x:Name="PickerPreview"
+                Padding="8"
+                CornerRadius="8"
+                Opacity="0"
+                Background="{DynamicResource ShareX.Brush.Background.Main}"
+                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                BorderThickness="1"
+                BoxShadow="0 8 24 #66000000"
+                IsHitTestVisible="False">
+                <StackPanel Spacing="8">
+                    <Grid x:Name="MagnifierPanel"
+                          Width="136"
+                          Height="136">
+                        <Image x:Name="MagnifierImage"
+                               Width="135"
+                               Height="135"
+                               Stretch="Fill"
+                               RenderOptions.BitmapInterpolationMode="None"/>
+                        <Border Width="11"
+                                Height="11"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                BorderBrush="White"
+                                BorderThickness="1"
+                                BoxShadow="0 0 0 1 #CC000000"/>
+                    </Grid>
 
-                <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                    <Border x:Name="ColorPreview"
-                            Width="28"
-                            Height="28"
-                            CornerRadius="4"
-                            BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                            BorderThickness="1"/>
+                    <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
+                        <Border x:Name="ColorPreview"
+                                Width="28"
+                                Height="28"
+                                CornerRadius="4"
+                                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                BorderThickness="1"/>
 
-                    <TextBlock x:Name="InfoText"
-                               Grid.Column="1"
-                               Text="#000000"
-                               MaxWidth="240"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Default}"
-                               FontSize="14"
-                               FontWeight="SemiBold"
-                               Foreground="{DynamicResource ShareX.Brush.Text}"
-                               TextWrapping="Wrap"
-                               VerticalAlignment="Center"/>
-                </Grid>
-            </StackPanel>
-        </Border>
-    </Canvas>
+                        <TextBlock x:Name="InfoText"
+                                   Grid.Column="1"
+                                   Text="#000000"
+                                   MaxWidth="240"
+                                   FontFamily="{DynamicResource ShareX.FontFamily.Default}"
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource ShareX.Brush.Text}"
+                                   TextWrapping="Wrap"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Canvas>
+    </Grid>
 </Window>

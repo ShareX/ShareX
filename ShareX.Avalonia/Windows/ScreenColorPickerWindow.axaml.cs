@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -32,6 +32,8 @@ using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using ShareX.AvaloniaUI.Input;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Platform;
+using ShareX.Platform.Imaging;
 using System.Runtime.InteropServices;
 
 namespace ShareX.AvaloniaUI.Windows
@@ -40,23 +42,21 @@ namespace ShareX.AvaloniaUI.Windows
     {
         private const double PreviewOffset = 18;
         private const int MagnifierPixelCount = 15;
-        private const uint BiRgb = 0;
-        private const uint DibRgbColors = 0;
-        private const uint SrcCopy = 0x00CC0020;
-        private const uint ClrInvalid = 0xFFFFFFFF;
 
         private readonly ScreenColorPickerOptions _options;
-        private readonly TaskCompletionSource<ScreenColorPickerResult?> _completionSource = new();
+        private readonly TaskCompletionSource<ScreenColorPickerResult?> _completionSource = new(TaskCreationOptions.RunContinuationsAsynchronously);
         private Border _pickerPreview = null!;
         private Border _colorPreview = null!;
         private Grid _magnifierPanel = null!;
         private Image _magnifierImage = null!;
         private TextBlock _infoText = null!;
         private WriteableBitmap? _magnifierBitmap;
-        private nint _magnifierDc;
-        private nint _magnifierDib;
-        private nint _previousMagnifierObject;
-        private nint _magnifierBits;
+        private WriteableBitmap? _snapshotBitmap;
+        private IScreenPixelSampler? _sampler;
+        private PlatformRectangle _desktopBounds;
+        private readonly CancellationTokenSource _captureCancellation = new();
+        private bool _started;
+        private bool _hasColor;
         private Color _currentColor;
         private PixelPoint _currentPosition;
         private PointerAction _pointerAction;
@@ -87,49 +87,71 @@ namespace ShareX.AvaloniaUI.Windows
                     new PixelSize(MagnifierPixelCount, MagnifierPixelCount),
                     new Vector(96, 96),
                     PixelFormat.Bgra8888,
-                    AlphaFormat.Opaque);
+                    AlphaFormat.Premul);
                 _magnifierImage.Source = _magnifierBitmap;
-                InitializeMagnifierCapture();
             }
 
             Loaded += OnLoaded;
         }
 
-        public Task<ScreenColorPickerResult?> PickAsync(Window? owner = null)
+        public async Task<ScreenColorPickerResult?> PickAsync(Window? owner = null)
         {
-            ConfigureOverlayBounds();
-
-            if (owner != null)
+            if (_started) return await _completionSource.Task;
+            _started = true;
+            try
             {
-                Show(owner);
+                IScreenCaptureService capture = PlatformServices.Current.ScreenCapture;
+                if (!capture.Support.IsSupported) throw new PlatformNotSupportedException(capture.Support.Reason);
+                _sampler = await capture.CreatePixelSamplerAsync(_captureCancellation.Token);
+                if (_completionSource.Task.IsCompleted)
+                {
+                    DisposeCapture();
+                    return null;
+                }
+                ConfigureOverlayBounds();
+                if (!_sampler.IsLive && _sampler.Snapshot is PixelBuffer snapshot)
+                {
+                    _snapshotBitmap = new WriteableBitmap(new PixelSize(snapshot.Width, snapshot.Height), new Vector(96, 96),
+                        PixelFormat.Bgra8888, AlphaFormat.Premul);
+                    CopyPixels(snapshot, _snapshotBitmap);
+                    this.FindControl<Image>("SnapshotImage")!.Source = _snapshotBitmap;
+                }
+                if (owner != null) Show(owner);
+                else Show();
+                return await _completionSource.Task;
             }
-            else
+            catch (OperationCanceledException)
             {
-                Show();
+                DisposeCapture();
+                Complete(null);
+                return null;
             }
-
-            return _completionSource.Task;
+            catch
+            {
+                DisposeCapture();
+                Complete(null);
+                throw;
+            }
+            finally
+            {
+                _captureCancellation.Dispose();
+            }
         }
 
         protected override void OnClosed(EventArgs e)
         {
+            if (!_captureCancellation.IsCancellationRequested) _captureCancellation.Cancel();
+            DisposeCapture();
             _completionSource.TrySetResult(null);
-            DisposeMagnifierCapture();
             base.OnClosed(e);
         }
 
         private void OnLoaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            if (!OperatingSystem.IsWindows())
-            {
-                Complete(null);
-                return;
-            }
-
             Activate();
             Focus();
 
-            if (GetCursorPos(out NativePoint cursorPosition))
+            if (PlatformServices.Current.Windows.GetCursorPosition() is PlatformPoint cursorPosition)
             {
                 var screenPoint = new PixelPoint(cursorPosition.X, cursorPosition.Y);
                 UpdatePicker(screenPoint, this.PointToClient(screenPoint));
@@ -151,7 +173,7 @@ namespace ShareX.AvaloniaUI.Windows
             PointerPoint pointerPoint = e.GetCurrentPoint(this);
             UpdatePicker(this.PointToScreen(pointerPoint.Position), pointerPoint.Position);
 
-            if (pointerPoint.Properties.IsLeftButtonPressed)
+            if (pointerPoint.Properties.IsLeftButtonPressed && _hasColor)
             {
                 e.Handled = true;
                 _pressedColor = _currentColor;
@@ -212,6 +234,7 @@ namespace ShareX.AvaloniaUI.Windows
             int top = screens.Min(screen => screen.Bounds.Y);
             int right = screens.Max(screen => screen.Bounds.X + screen.Bounds.Width);
             int bottom = screens.Max(screen => screen.Bounds.Y + screen.Bounds.Height);
+            _desktopBounds = new PlatformRectangle(left, top, right - left, bottom - top);
             var topLeft = new PixelPoint(left, top);
             double scaling = Screens.ScreenFromPoint(topLeft)?.Scaling ?? screens[0].Scaling;
 
@@ -223,13 +246,19 @@ namespace ShareX.AvaloniaUI.Windows
 
         private void UpdatePicker(PixelPoint screenPoint, Point clientPoint)
         {
-            Color color = default;
-            bool colorRead = _magnifierBitmap != null &&
-                TryUpdateMagnifier(screenPoint, _magnifierBitmap, out color);
-
-            if (!colorRead)
+            if (_sampler == null) return;
+            PlatformPoint sample = ScreenColorPickerPixels.MapPosition(screenPoint, _desktopBounds, _sampler.Bounds, _sampler.IsLive);
+            int size = _magnifierBitmap != null ? MagnifierPixelCount : 1;
+            int radius = size / 2;
+            PixelBuffer? pixels = _sampler.Read(new PlatformRectangle(sample.X - radius, sample.Y - radius, size, size));
+            bool colorRead = ScreenColorPickerPixels.TryGetCenterColor(pixels, out Color color);
+            if (pixels != null && _magnifierBitmap != null)
             {
-                colorRead = TryGetScreenColor(screenPoint, out color);
+                CopyPixels(pixels, _magnifierBitmap);
+            }
+            if (!colorRead && size > 1)
+            {
+                colorRead = ScreenColorPickerPixels.TryGetCenterColor(_sampler.Read(new PlatformRectangle(sample.X, sample.Y, 1, 1)), out color);
             }
 
             if (colorRead)
@@ -241,7 +270,8 @@ namespace ShareX.AvaloniaUI.Windows
             }
 
             MovePreviewNextToCursor(clientPoint);
-            _pickerPreview.Opacity = 1;
+            _hasColor = colorRead;
+            _pickerPreview.Opacity = colorRead ? 1 : 0;
         }
 
         private void MovePreviewNextToCursor(Point cursorPosition)
@@ -267,157 +297,32 @@ namespace ShareX.AvaloniaUI.Windows
 
         private void Complete(ScreenColorPickerResult? result)
         {
+            if (!_captureCancellation.IsCancellationRequested) _captureCancellation.Cancel();
             if (_completionSource.TrySetResult(result))
             {
                 Close();
             }
         }
 
-        private void InitializeMagnifierCapture()
+        private static void CopyPixels(PixelBuffer pixels, WriteableBitmap bitmap)
         {
-            nint screenDc = GetDC(nint.Zero);
-
-            if (screenDc == nint.Zero)
+            byte[] premultiplied = ScreenColorPickerPixels.Premultiply(pixels);
+            using ILockedFramebuffer framebuffer = bitmap.Lock();
+            for (int y = 0; y < pixels.Height; y++)
             {
-                return;
-            }
-
-            try
-            {
-                _magnifierDc = CreateCompatibleDC(screenDc);
-
-                if (_magnifierDc == nint.Zero)
-                {
-                    return;
-                }
-
-                BitmapInfo bitmapInfo = new()
-                {
-                    Header = new BitmapInfoHeader
-                    {
-                        Size = (uint)Marshal.SizeOf<BitmapInfoHeader>(),
-                        Width = MagnifierPixelCount,
-                        Height = -MagnifierPixelCount,
-                        Planes = 1,
-                        BitCount = 32,
-                        Compression = BiRgb
-                    }
-                };
-
-                _magnifierDib = CreateDIBSection(screenDc, ref bitmapInfo, DibRgbColors,
-                    out _magnifierBits, nint.Zero, 0);
-
-                if (_magnifierDib != nint.Zero && _magnifierBits != nint.Zero)
-                {
-                    _previousMagnifierObject = SelectObject(_magnifierDc, _magnifierDib);
-                }
-            }
-            finally
-            {
-                ReleaseDC(nint.Zero, screenDc);
+                Marshal.Copy(premultiplied, y * pixels.Stride,
+                    framebuffer.Address + y * framebuffer.RowBytes, pixels.Stride);
             }
         }
 
-        private unsafe bool TryUpdateMagnifier(PixelPoint center, WriteableBitmap bitmap, out Color color)
+        private void DisposeCapture()
         {
-            if (_magnifierDc == nint.Zero || _magnifierDib == nint.Zero || _magnifierBits == nint.Zero)
-            {
-                color = default;
-                return false;
-            }
-
-            nint screenDc = GetDC(nint.Zero);
-
-            if (screenDc == nint.Zero)
-            {
-                color = default;
-                return false;
-            }
-
-            try
-            {
-                int radius = MagnifierPixelCount / 2;
-
-                if (!BitBlt(_magnifierDc, 0, 0, MagnifierPixelCount, MagnifierPixelCount,
-                    screenDc, center.X - radius, center.Y - radius, SrcCopy))
-                {
-                    color = default;
-                    return false;
-                }
-
-                using ILockedFramebuffer framebuffer = bitmap.Lock();
-                int sourceStride = MagnifierPixelCount * 4;
-                byte* source = (byte*)_magnifierBits;
-                byte* destination = (byte*)framebuffer.Address;
-
-                for (int y = 0; y < MagnifierPixelCount; y++)
-                {
-                    Buffer.MemoryCopy(source + (y * sourceStride),
-                        destination + (y * framebuffer.RowBytes), framebuffer.RowBytes, sourceStride);
-                }
-
-                int centerOffset = ((radius * sourceStride) + radius * 4);
-                color = Color.FromRgb(source[centerOffset + 2], source[centerOffset + 1], source[centerOffset]);
-                return true;
-            }
-            finally
-            {
-                ReleaseDC(nint.Zero, screenDc);
-            }
-        }
-
-        private void DisposeMagnifierCapture()
-        {
-            if (_magnifierDc != nint.Zero && _previousMagnifierObject != nint.Zero)
-            {
-                SelectObject(_magnifierDc, _previousMagnifierObject);
-                _previousMagnifierObject = nint.Zero;
-            }
-
-            if (_magnifierDib != nint.Zero)
-            {
-                DeleteObject(_magnifierDib);
-                _magnifierDib = nint.Zero;
-                _magnifierBits = nint.Zero;
-            }
-
-            if (_magnifierDc != nint.Zero)
-            {
-                DeleteDC(_magnifierDc);
-                _magnifierDc = nint.Zero;
-            }
-        }
-
-        private static bool TryGetScreenColor(PixelPoint point, out Color color)
-        {
-            nint screenDc = GetDC(nint.Zero);
-
-            if (screenDc == nint.Zero)
-            {
-                color = default;
-                return false;
-            }
-
-            try
-            {
-                uint pixel = GetPixel(screenDc, point.X, point.Y);
-
-                if (pixel == ClrInvalid)
-                {
-                    color = default;
-                    return false;
-                }
-
-                color = Color.FromRgb(
-                    (byte)(pixel & 0xFF),
-                    (byte)((pixel >> 8) & 0xFF),
-                    (byte)((pixel >> 16) & 0xFF));
-                return true;
-            }
-            finally
-            {
-                ReleaseDC(nint.Zero, screenDc);
-            }
+            _sampler?.Dispose();
+            _sampler = null;
+            _snapshotBitmap?.Dispose();
+            _snapshotBitmap = null;
+            _magnifierBitmap?.Dispose();
+            _magnifierBitmap = null;
         }
 
         private enum PointerAction
@@ -426,69 +331,5 @@ namespace ShareX.AvaloniaUI.Windows
             Select,
             Cancel
         }
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct NativePoint
-        {
-            public int X;
-            public int Y;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct BitmapInfoHeader
-        {
-            public uint Size;
-            public int Width;
-            public int Height;
-            public ushort Planes;
-            public ushort BitCount;
-            public uint Compression;
-            public uint SizeImage;
-            public int XPelsPerMeter;
-            public int YPelsPerMeter;
-            public uint ColorsUsed;
-            public uint ColorsImportant;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct BitmapInfo
-        {
-            public BitmapInfoHeader Header;
-            public uint Colors;
-        }
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool GetCursorPos(out NativePoint point);
-
-        [DllImport("user32.dll")]
-        private static extern nint GetDC(nint windowHandle);
-
-        [DllImport("user32.dll")]
-        private static extern int ReleaseDC(nint windowHandle, nint deviceContext);
-
-        [DllImport("gdi32.dll")]
-        private static extern uint GetPixel(nint deviceContext, int x, int y);
-
-        [DllImport("gdi32.dll")]
-        private static extern nint CreateCompatibleDC(nint deviceContext);
-
-        [DllImport("gdi32.dll")]
-        private static extern bool DeleteDC(nint deviceContext);
-
-        [DllImport("gdi32.dll")]
-        private static extern nint CreateDIBSection(nint deviceContext, ref BitmapInfo bitmapInfo,
-            uint usage, out nint bits, nint section, uint offset);
-
-        [DllImport("gdi32.dll")]
-        private static extern nint SelectObject(nint deviceContext, nint graphicsObject);
-
-        [DllImport("gdi32.dll")]
-        private static extern bool DeleteObject(nint graphicsObject);
-
-        [DllImport("gdi32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool BitBlt(nint destinationDc, int x, int y, int width, int height,
-            nint sourceDc, int sourceX, int sourceY, uint rasterOperation);
     }
 }

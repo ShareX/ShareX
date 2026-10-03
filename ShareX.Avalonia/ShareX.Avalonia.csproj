@@ -7,6 +7,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Platforms>x64;ARM64</Platforms>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <WarningsAsErrors>$(WarningsAsErrors);CA1416</WarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +16,10 @@
     <AvaloniaResource Include="Assets\closedhand.cur" />
     <AvaloniaResource Include="Assets\Crosshair.cur" />
     <AvaloniaResource Include="Assets\openhand.cur" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShareX.Platform\ShareX.Platform.csproj" />
   </ItemGroup>
 
   <ItemGroup>

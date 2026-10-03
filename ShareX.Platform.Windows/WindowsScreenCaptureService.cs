@@ -124,6 +124,12 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
         return Task.FromResult(CaptureArea(area, request));
     }
 
+    public Task<IScreenPixelSampler> CreatePixelSamplerAsync(CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return Task.FromResult<IScreenPixelSampler>(new WindowsScreenPixelSampler(GetVirtualScreen()));
+    }
+
     private static ScreenCaptureResult CaptureArea(PlatformRectangle area, ScreenCaptureRequest request)
     {
         if (request.ClipToScreens)
@@ -168,6 +174,9 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
     }
 
     public static PixelBuffer Capture(PlatformRectangle area, bool includeCursor, bool hdrToneMapping = false)
+        => Capture(area, includeCursor, hdrToneMapping, true);
+
+    internal static PixelBuffer Capture(PlatformRectangle area, bool includeCursor, bool hdrToneMapping, bool captureLayeredWindows)
     {
         IntPtr screenDc = Win32.GetDC(IntPtr.Zero);
         IntPtr memoryDc = Win32.CreateCompatibleDC(screenDc);
@@ -194,7 +203,8 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
 
         try
         {
-            if (!Win32.BitBlt(memoryDc, 0, 0, area.Width, area.Height, screenDc, area.X, area.Y, Win32.SRCCOPY | Win32.CAPTUREBLT))
+            int flags = Win32.SRCCOPY | (captureLayeredWindows ? Win32.CAPTUREBLT : 0);
+            if (!Win32.BitBlt(memoryDc, 0, 0, area.Width, area.Height, screenDc, area.X, area.Y, flags))
             {
                 throw new InvalidOperationException("BitBlt failed.");
             }
