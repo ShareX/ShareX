@@ -123,13 +123,17 @@ public partial class HotkeySettingsWindow : Window
 
     private MenuItem CreateTaskMenuItem(HotkeySettingsItem item, HotkeyTaskOption option)
     {
+        var support = TaskFeatureSupport.Get((HotkeyType)option.Value);
         MenuItem menuItem = new()
         {
             Header = option.Name,
             Icon = CreateTaskMenuIcon(option.Icon),
             ToggleType = MenuItemToggleType.Radio,
-            IsChecked = item.SelectedTask?.Value == option.Value
+            IsChecked = item.SelectedTask?.Value == option.Value,
+            IsEnabled = support.IsSupported
         };
+        ToolTip.SetTip(menuItem, support.IsSupported ? null : support.Reason);
+        ToolTip.SetShowOnDisabled(menuItem, true);
         menuItem.Click += (_, _) => _viewModel?.ChangeTask(item, option);
         return menuItem;
     }

@@ -100,7 +100,8 @@
                                FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                VerticalAlignment="Center"/>
-                    <Button Grid.Column="1" Command="{Binding ToggleCommand}" IsEnabled="{Binding CanToggle}">
+                    <Button Grid.Column="1" Command="{Binding ToggleCommand}" IsEnabled="{Binding CanToggle}"
+                            ToolTip.Tip="{Binding ToggleSupportReason}" ToolTip.ShowOnDisabled="True">
                         <StackPanel Orientation="Horizontal" Spacing="8">
                             <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.maximize_2}"/>
                             <TextBlock Text="{x:Static localization:Strings.BorderlessWindowWindow_Toggle_borderless}"/>

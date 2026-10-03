@@ -1386,6 +1386,8 @@ internal sealed class TaskSettingsPageBuilder
         {
             selectedIcon.Text = TaskHelpers.FindMenuLucideIcon(task);
             selectedTitle.Text = task.GetLocalizedDescription();
+            var support = TaskFeatureSupport.Get(task);
+            ToolTip.SetTip(button, support.IsSupported ? null : support.Reason);
         }
 
         void SelectTask(HotkeyType task)
@@ -1629,13 +1631,17 @@ internal sealed class TaskSettingsPageBuilder
 
     private static MenuItem CreateTaskMenuItem(HotkeyType task, HotkeyType selectedTask, Action<HotkeyType> selectTask)
     {
+        var support = TaskFeatureSupport.Get(task);
         MenuItem item = new()
         {
             Header = task.GetLocalizedDescription(),
             Icon = CreateTaskMenuIcon(task),
             ToggleType = MenuItemToggleType.Radio,
-            IsChecked = task == selectedTask
+            IsChecked = task == selectedTask,
+            IsEnabled = support.IsSupported
         };
+        ToolTip.SetTip(item, support.IsSupported ? null : support.Reason);
+        ToolTip.SetShowOnDisabled(item, true);
         item.Click += (_, _) => selectTask(task);
         return item;
     }

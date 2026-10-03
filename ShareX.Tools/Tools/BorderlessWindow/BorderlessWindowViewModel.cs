@@ -25,6 +25,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.Platform;
 using System.Collections.ObjectModel;
 
 namespace ShareX.Tools;
@@ -60,7 +61,9 @@ public sealed partial class BorderlessWindowViewModel : ViewModelBase, IDisposab
     private string _errorMessage = string.Empty;
 
     public Action? CloseRequested { get; set; }
-    public bool CanToggle => !string.IsNullOrWhiteSpace(WindowTitle);
+    public bool CanToggle => PlatformServices.Current.WindowManagement.BorderlessSupport.IsSupported &&
+        !string.IsNullOrWhiteSpace(WindowTitle);
+    public string? ToggleSupportReason => PlatformServices.Current.WindowManagement.BorderlessSupport.Reason;
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
 
     public BorderlessWindowViewModel(
@@ -127,6 +130,13 @@ public sealed partial class BorderlessWindowViewModel : ViewModelBase, IDisposab
     [RelayCommand]
     private void Toggle()
     {
+        FeatureSupport support = PlatformServices.Current.WindowManagement.BorderlessSupport;
+        if (!support.IsSupported)
+        {
+            ErrorMessage = support.Reason ?? string.Empty;
+            OnPropertyChanged(nameof(HasError));
+            return;
+        }
         string title = WindowTitle.Trim();
         if (string.IsNullOrWhiteSpace(title))
         {

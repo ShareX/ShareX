@@ -120,21 +120,24 @@ internal sealed class MainMenuBuilder
     private IReadOnlyList<MainMenuEntry> BuildCaptureMenu()
     {
         bool autoHide = !_trayMenu;
-        FeatureSupport windowSupport = PlatformServices.Current.Windows.Support;
+        FeatureSupport windowSupport = TaskFeatureSupport.Get(HotkeyType.ActiveWindow);
+        FeatureSupport captureSupport = PlatformServices.Current.ScreenCapture.Support;
+        FeatureSupport recordingSupport = TaskFeatureSupport.Get(HotkeyType.ScreenRecorder);
         return new List<MainMenuEntry>
         {
-            Item(Strings.MainMenuBuilder_Fullscreen, LucideIcons.maximize, () => new CaptureFullscreen().Capture(autoHide)),
+            Item(Strings.MainMenuBuilder_Fullscreen, LucideIcons.maximize, () => new CaptureFullscreen().Capture(autoHide), support: captureSupport),
             new MainMenuEntry(Strings.MainMenuBuilder_Window, LucideIcons.app_window, createChildren: BuildWindowMenu,
                 isEnabled: windowSupport.IsSupported, toolTip: windowSupport.Reason),
-            Parent(Strings.MainMenuBuilder_Monitor, LucideIcons.monitor, BuildMonitorMenu),
-            Item(Strings.MainMenuBuilder_Region, LucideIcons.scan, () => new CaptureRegion().Capture(autoHide)),
-            Item(Strings.MainMenuBuilder_LastRegion, LucideIcons.layers, () => new CaptureLastRegion().Capture(autoHide)),
+            Parent(Strings.MainMenuBuilder_Monitor, LucideIcons.monitor, BuildMonitorMenu, support: captureSupport),
+            Item(Strings.MainMenuBuilder_Region, LucideIcons.scan, () => new CaptureRegion().Capture(autoHide), support: captureSupport),
+            Item(Strings.MainMenuBuilder_LastRegion, LucideIcons.layers, () => new CaptureLastRegion().Capture(autoHide), support: captureSupport),
             Item(Strings.MainMenuBuilder_ScreenRecording, LucideIcons.video,
-                () => TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region)),
+                () => TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region), support: recordingSupport),
             Item(Strings.MainMenuBuilder_ScreenRecordingGif, LucideIcons.film,
-                () => TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region)),
-            Item(Strings.MainMenuBuilder_ScrollingCapture, LucideIcons.scroll_text, async () => await TaskHelpers.OpenScrollingCapture()),
-            Item(Strings.MainMenuBuilder_AutoCapture, LucideIcons.clock, () => TaskHelpers.OpenAutoCapture()),
+                () => TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region), support: recordingSupport),
+            Item(Strings.MainMenuBuilder_ScrollingCapture, LucideIcons.scroll_text, async () => await TaskHelpers.OpenScrollingCapture(),
+                support: TaskFeatureSupport.Get(HotkeyType.ScrollingCapture)),
+            Item(Strings.MainMenuBuilder_AutoCapture, LucideIcons.clock, () => TaskHelpers.OpenAutoCapture(), support: captureSupport),
             MainMenuEntry.Separator(),
             new MainMenuEntry(Strings.MainMenuBuilder_ShowCursor, LucideIcons.mouse_pointer_2,
                 () => ApplicationState.DefaultTaskSettings.CaptureSettings.ShowCursor = !ApplicationState.DefaultTaskSettings.CaptureSettings.ShowCursor,
@@ -251,7 +254,8 @@ internal sealed class MainMenuBuilder
         new(Strings.MainMenuBuilder_ToolCategoryScreen,
         [
             Tool(nameof(Strings.MainMenuBuilder_ColorPicker), Strings.MainMenuBuilder_ColorPicker, LucideIcons.palette, () => TaskHelpers.ShowColorPickerDialog()),
-            Tool(nameof(Strings.MainMenuBuilder_MouseHighlighter), Strings.MainMenuBuilder_MouseHighlighter, LucideIcons.mouse_pointer_click, () => TaskHelpers.OpenMouseHighlighter()),
+            Tool(nameof(Strings.MainMenuBuilder_MouseHighlighter), Strings.MainMenuBuilder_MouseHighlighter, LucideIcons.mouse_pointer_click, () => TaskHelpers.OpenMouseHighlighter(),
+                TaskFeatureSupport.Get(HotkeyType.MouseHighlighter)),
             Tool(nameof(Strings.MainMenuBuilder_PinToScreenDialog), Strings.MainMenuBuilder_PinToScreenDialog, LucideIcons.pin, () => TaskHelpers.PinToScreen()),
             Tool(nameof(Strings.MainMenuBuilder_Ruler), Strings.MainMenuBuilder_Ruler, LucideIcons.ruler, () => TaskHelpers.OpenRuler(),
                 PlatformServices.Current.ScreenCapture.Support),
@@ -287,15 +291,18 @@ internal sealed class MainMenuBuilder
             Tool(nameof(Strings.MainMenuBuilder_HashChecker), Strings.MainMenuBuilder_HashChecker, LucideIcons.hash, () => TaskHelpers.OpenHashCheck()),
             Tool(nameof(Strings.MainMenuBuilder_IndexFolder), Strings.MainMenuBuilder_IndexFolder, LucideIcons.folder_tree, () => TaskHelpers.OpenDirectoryIndexer()),
             Tool(nameof(Strings.MainMenuBuilder_Metadata), Strings.MainMenuBuilder_Metadata, LucideIcons.tags, () => TaskHelpers.OpenMetadataWindow()),
-            Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, LucideIcons.scan_text, async () => await TaskHelpers.OCRImage()),
+            Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, LucideIcons.scan_text, async () => await TaskHelpers.OCRImage(),
+                TaskFeatureSupport.Require(TaskFeatureSupport.Get(HotkeyType.OCR), PlatformServices.Current.ScreenCapture.Support)),
             Tool(nameof(Strings.MainMenuBuilder_QRCode), Strings.MainMenuBuilder_QRCode, LucideIcons.qr_code, () => TaskHelpers.OpenQRCode()),
             Tool(nameof(Strings.MainMenuBuilder_RemoteStorageBrowser), Strings.MainMenuBuilder_RemoteStorageBrowser, LucideIcons.cloud, () => TaskHelpers.OpenRemoteStorageBrowser())
         ]),
         new(Strings.MainMenuBuilder_ToolCategorySystem,
         [
-            Tool(nameof(Strings.MainMenuBuilder_BorderlessWindow), Strings.MainMenuBuilder_BorderlessWindow, LucideIcons.frame, () => TaskHelpers.OpenBorderlessWindow()),
+            Tool(nameof(Strings.MainMenuBuilder_BorderlessWindow), Strings.MainMenuBuilder_BorderlessWindow, LucideIcons.frame, () => TaskHelpers.OpenBorderlessWindow(),
+                TaskFeatureSupport.Get(HotkeyType.BorderlessWindow)),
             Tool(nameof(Strings.MainMenuBuilder_ClipboardViewer), Strings.MainMenuBuilder_ClipboardViewer, LucideIcons.clipboard_list, () => TaskHelpers.OpenClipboardViewer()),
-            Tool(nameof(Strings.MainMenuBuilder_InspectWindow), Strings.MainMenuBuilder_InspectWindow, LucideIcons.scan_search, () => TaskHelpers.OpenInspectWindow()),
+            Tool(nameof(Strings.MainMenuBuilder_InspectWindow), Strings.MainMenuBuilder_InspectWindow, LucideIcons.scan_search, () => TaskHelpers.OpenInspectWindow(),
+                TaskFeatureSupport.Get(HotkeyType.InspectWindow)),
             Tool(nameof(Strings.MainMenuBuilder_MonitorTest), Strings.MainMenuBuilder_MonitorTest, LucideIcons.monitor, () => TaskHelpers.OpenMonitorTest()),
             Tool(nameof(Strings.MainMenuBuilder_NetworkMonitor), Strings.MainMenuBuilder_NetworkMonitor, LucideIcons.activity, () => TaskHelpers.OpenNetworkMonitor())
         ])
@@ -323,7 +330,7 @@ internal sealed class MainMenuBuilder
                 }
 
                 items.Add(Item(title, TaskHelpers.FindMenuLucideIcon(workflow.TaskSettings.Job),
-                    async () => await TaskHelpers.ExecuteJob(workflow.TaskSettings)));
+                    async () => await TaskHelpers.ExecuteJob(workflow.TaskSettings), support: TaskFeatureSupport.Get(workflow.TaskSettings.Job)));
             }
         }
 
@@ -585,20 +592,23 @@ internal sealed class MainMenuBuilder
 
     private static void Run(MainFormCommand command) => MainWindowIntegration.ExecuteCommand(command);
 
-    private static MainMenuEntry Item(string header, string icon, Action execute, bool isVisible = true, byte[]? bitmapIcon = null) =>
-        new(header, icon, execute, isVisible: isVisible, bitmapIcon: bitmapIcon);
+    private static MainMenuEntry Item(string header, string icon, Action execute, bool isVisible = true, byte[]? bitmapIcon = null,
+        FeatureSupport? support = null) =>
+        new(header, icon, execute, isVisible: isVisible, bitmapIcon: bitmapIcon,
+            isEnabled: support?.IsSupported ?? true, toolTip: support?.Reason);
 
-    private static MainMenuEntry Item(string header, string icon, Func<Task> execute, bool isVisible = true) =>
-        new(header, icon, execute, isVisible: isVisible);
+    private static MainMenuEntry Item(string header, string icon, Func<Task> execute, bool isVisible = true, FeatureSupport? support = null) =>
+        new(header, icon, execute, isVisible: isVisible, isEnabled: support?.IsSupported ?? true, toolTip: support?.Reason);
 
     private static MainMenuEntry Tool(string id, string header, string icon, Action execute, FeatureSupport? support = null) =>
         new(header, icon, execute, id: id, isEnabled: support?.IsSupported ?? true, toolTip: support?.Reason);
 
-    private static MainMenuEntry Tool(string id, string header, string icon, Func<Task> execute) =>
-        new(header, icon, execute, id: id);
+    private static MainMenuEntry Tool(string id, string header, string icon, Func<Task> execute, FeatureSupport? support = null) =>
+        new(header, icon, execute, id: id, isEnabled: support?.IsSupported ?? true, toolTip: support?.Reason);
 
-    private static MainMenuEntry Parent(string header, string icon, Func<IReadOnlyList<MainMenuEntry>> children, bool isVisible = true) =>
-        new(header, icon, createChildren: children, isVisible: isVisible);
+    private static MainMenuEntry Parent(string header, string icon, Func<IReadOnlyList<MainMenuEntry>> children, bool isVisible = true,
+        FeatureSupport? support = null) =>
+        new(header, icon, createChildren: children, isVisible: isVisible, isEnabled: support?.IsSupported ?? true, toolTip: support?.Reason);
 
     private static MainMenuEntry CategoryParent(string header, string icon,
         Func<IReadOnlyList<MainMenuCategory>> categories, bool isVisible = true) =>

@@ -35,6 +35,7 @@ using ShareX.Platform;
 using SkiaSharp;
 using System;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 
@@ -70,7 +71,14 @@ public partial class ScrollingCaptureWindow : Window
 
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        ScrollMethodInput.ItemsSource = Helpers.GetLocalizedEnumDescriptions<ScrollMethod>();
+        ScrollMethodInput.ItemsSource = Helpers.GetEnums<ScrollMethod>().Select(method =>
+        {
+            FeatureSupport support = GetScrollSupport(method);
+            ComboBoxItem item = new() { Content = method.GetLocalizedDescription(), IsEnabled = support.IsSupported };
+            ToolTip.SetTip(item, support.IsSupported ? null : support.Reason);
+            ToolTip.SetShowOnDisabled(item, true);
+            return item;
+        }).ToArray();
         WindowState = Avalonia.Controls.WindowState.Minimized;
 
         Opened += OnOpened;
@@ -134,6 +142,7 @@ public partial class ScrollingCaptureWindow : Window
             // Say why instead of capturing a window that never scrolls.
             SetStatus(ScrollingCaptureStatus.Failed);
             StatusText.Text = scrollSupport.Reason;
+            RestoreAndActivate();
             return;
         }
 
@@ -211,7 +220,7 @@ public partial class ScrollingCaptureWindow : Window
 
     private void SetCaptureControlsEnabled(bool enabled)
     {
-        CaptureButton.IsEnabled = enabled;
+        CaptureButton.IsEnabled = enabled && GetScrollSupport(_service.Options.ScrollMethod).IsSupported;
         OptionsButton.IsEnabled = enabled;
         UploadButton.IsEnabled = enabled && _service.Result != null;
         CopyButton.IsEnabled = enabled && _service.Result != null;
@@ -350,6 +359,10 @@ public partial class ScrollingCaptureWindow : Window
     /// <summary>Whether this platform can scroll another window the way <paramref name="method"/> needs.</summary>
     private static FeatureSupport GetScrollSupport(ScrollMethod method)
     {
+        FeatureSupport capture = PlatformServices.Current.ScreenCapture.Support;
+        if (!capture.IsSupported) return capture;
+        FeatureSupport windows = PlatformServices.Current.Windows.Support;
+        if (!windows.IsSupported) return windows;
         IInputService input = PlatformServices.Current.Input;
 
         return method switch
@@ -364,6 +377,9 @@ public partial class ScrollingCaptureWindow : Window
     {
         FeatureSupport support = GetScrollSupport((ScrollMethod)Math.Max(0, ScrollMethodInput.SelectedIndex));
         ToolTip.SetTip(ScrollMethodInput, support.IsSupported ? null : support.Reason);
+        ToolTip.SetTip(CaptureButton, support.IsSupported ? null : support.Reason);
+        ToolTip.SetShowOnDisabled(CaptureButton, true);
+        CaptureButton.IsEnabled = support.IsSupported && !_captureOperation && !_service.IsCapturing;
 
         bool isVisible = (ScrollMethod)ScrollMethodInput.SelectedIndex != ScrollMethod.PageDown;
         ScrollAmountLabel.IsVisible = isVisible;
