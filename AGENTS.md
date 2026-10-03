@@ -96,7 +96,7 @@ State at the branch point (`develop` `fd61635f2`). WinForms and GDI+ are already
 - [ ] Win32 interop in `ScreenCaptureLib` (GDI and HDR capture, transparent window capture, window lists, scrolling input, frame window regions) → services.
 - [ ] Win32 interop and WinRT in `Tools` (OCR, mouse highlighter, inspect and borderless window, ruler, clipboard viewer) → services.
 - [ ] Win32 calls and registry in the `ShareX` application (capture helpers, window menu, task metadata, notification and upload windows, startup and shell integration).
-- [ ] `OperatingSystem.Is…()` and P/Invoke in `ImageEditor` (desktop wallpaper, emoji and cursor renderers, `EditorServices`, image insert) and `ShareX.Avalonia` (screen colour picker, cursor assets).
+- [x] `OperatingSystem.Is…()` and P/Invoke in `ImageEditor` and `ShareX.Avalonia`: wallpaper, native emoji/cursors and colour sampling use platform services; image insert and cursor assets use portable imaging.
 - [ ] `NativeMessagingHost`: `CreateProcess` and browser manifest registration → services.
 
 ## Other rules

@@ -24,86 +24,79 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.Win32;
-using System.Runtime.InteropServices;
+using ShareX.Platform.Windows.Native;
+using System;
+using System.IO;
 using System.Text;
 
-namespace ShareX.ImageEditor.Integration;
+namespace ShareX.Platform.Windows;
 
 /// <summary>
-/// Default Windows wallpaper resolver used by Avalonia hosts that do not provide a custom implementation.
+/// Windows wallpaper lookup, preserving the editor's SPI and TranscodedImageCache fallback behavior.
 /// </summary>
-internal sealed class WindowsDesktopWallpaperService : IDesktopWallpaperService
+public sealed class WindowsDesktopWallpaperService : IDesktopWallpaperService
 {
-    private const int SpiGetDesktopWallpaper = 0x0073;
+    private const uint SpiGetDesktopWallpaper = 0x0073;
     private const int MaxWallpaperPath = short.MaxValue;
     private const string DesktopRegistrySubKey = @"Control Panel\Desktop";
     private const string TranscodedImageCacheValueName = "TranscodedImageCache";
 
-    public bool IsSupported => OperatingSystem.IsWindows();
-    public bool RequiresDesktopWallpaperPrewarm => false;
+    private readonly Func<string?> readSystemWallpaper;
+    private readonly Func<byte[]?> readTranscodedCache;
+    private readonly Func<string, bool> fileExists;
 
-    public bool TryGetDesktopWallpaper(out DesktopWallpaperInfo? wallpaper)
+    public FeatureSupport Support => FeatureSupport.Supported;
+    public bool RequiresPrewarm => false;
+
+    public WindowsDesktopWallpaperService() : this(ReadSystemWallpaper, ReadTranscodedCache, File.Exists)
     {
-        wallpaper = null;
-
-        if (!OperatingSystem.IsWindows())
-        {
-            return false;
-        }
-
-        StringBuilder buffer = new StringBuilder(MaxWallpaperPath);
-        if (SystemParametersInfo(SpiGetDesktopWallpaper, buffer.Capacity, buffer, 0))
-        {
-            string wallpaperPath = buffer.ToString().TrimEnd('\0');
-            if (TryCreateDesktopWallpaperInfo(wallpaperPath, out wallpaper))
-            {
-                return true;
-            }
-
-            if (!string.IsNullOrWhiteSpace(wallpaperPath))
-            {
-                return false;
-            }
-        }
-
-        return TryGetDesktopWallpaperFromRegistryCache(out wallpaper);
     }
 
-    private static bool TryGetDesktopWallpaperFromRegistryCache(out DesktopWallpaperInfo? wallpaper)
+    internal WindowsDesktopWallpaperService(Func<string?> readSystemWallpaper, Func<byte[]?> readTranscodedCache,
+        Func<string, bool> fileExists)
     {
-        wallpaper = null;
+        this.readSystemWallpaper = readSystemWallpaper;
+        this.readTranscodedCache = readTranscodedCache;
+        this.fileExists = fileExists;
+    }
 
-        if (!OperatingSystem.IsWindows())
+    public DesktopWallpaper? GetWallpaper()
+    {
+        string? wallpaperPath = readSystemWallpaper();
+        if (TryCreateWallpaper(wallpaperPath) is DesktopWallpaper wallpaper)
         {
-            return false;
+            return wallpaper;
         }
 
+        // A nonempty SPI path takes precedence even if its file is no longer available.
+        if (!string.IsNullOrWhiteSpace(wallpaperPath)) return null;
+        byte[]? cache = readTranscodedCache();
+        return cache is { Length: > 0 } ? TryCreateWallpaper(TryExtractWallpaperPathFromTranscodedCache(cache)) : null;
+    }
+
+    internal static unsafe string? ReadSystemWallpaper()
+    {
+        char[] buffer = new char[MaxWallpaperPath];
+        fixed (char* characters = buffer)
+        {
+            if (!Win32.SystemParametersInfo(SpiGetDesktopWallpaper, (uint)buffer.Length, characters, 0)) return null;
+        }
+
+        int terminator = Array.IndexOf(buffer, '\0');
+        return new string(buffer, 0, terminator >= 0 ? terminator : buffer.Length);
+    }
+
+    private static byte[]? ReadTranscodedCache()
+    {
         using RegistryKey? desktopKey = Registry.CurrentUser.OpenSubKey(DesktopRegistrySubKey);
-        if (desktopKey?.GetValue(TranscodedImageCacheValueName) is not byte[] transcodedImageCache || transcodedImageCache.Length == 0)
-        {
-            return false;
-        }
-
-        string? wallpaperPath = TryExtractWallpaperPathFromTranscodedCache(transcodedImageCache);
-        return TryCreateDesktopWallpaperInfo(wallpaperPath, out wallpaper);
+        return desktopKey?.GetValue(TranscodedImageCacheValueName) as byte[];
     }
 
-    private static bool TryCreateDesktopWallpaperInfo(string? wallpaperPath, out DesktopWallpaperInfo? wallpaper)
+    private DesktopWallpaper? TryCreateWallpaper(string? wallpaperPath)
     {
-        wallpaper = null;
-
-        if (string.IsNullOrWhiteSpace(wallpaperPath) || !File.Exists(wallpaperPath))
-        {
-            return false;
-        }
-
-        wallpaper = new DesktopWallpaperInfo
-        {
-            Path = wallpaperPath,
-            Layout = DesktopWallpaperLayout.Fill
-        };
-
-        return true;
+        return !string.IsNullOrWhiteSpace(wallpaperPath) && fileExists(wallpaperPath)
+            ? new DesktopWallpaper(wallpaperPath, DesktopWallpaperLayout.Fill)
+            : null;
     }
 
     private static string? TryExtractWallpaperPathFromTranscodedCache(byte[] transcodedImageCache)
@@ -141,11 +134,9 @@ internal sealed class WindowsDesktopWallpaperService : IDesktopWallpaperService
         return -1;
     }
 
-    public void PrewarmDesktopWallpaper()
+    public void Prewarm()
     {
         // Windows exposes the original wallpaper file directly, so there is no conversion cache to prewarm.
     }
 
-    [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-    private static extern bool SystemParametersInfo(int uiAction, int uiParam, StringBuilder pvParam, int fWinIni);
 }

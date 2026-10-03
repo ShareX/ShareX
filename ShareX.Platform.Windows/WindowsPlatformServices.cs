@@ -117,8 +117,7 @@ public sealed class WindowsPlatformServices : IPlatformServices
 
     public ISoundService Sounds { get; } = new WindowsSoundService();
 
-    // Stub until W6: J moves the editor's SPI_GETDESKWALLPAPER lookup here.
-    public IDesktopWallpaperService Wallpaper { get; } = new UnsupportedDesktopWallpaperService("Not implemented on Windows yet.");
+    public IDesktopWallpaperService Wallpaper { get; } = new WindowsDesktopWallpaperService();
 
     // Stub until W8: MainForm's WM_QUERYENDSESSION / WM_ENDSESSION handling and RegisterApplicationRestart move here.
     public IApplicationSessionService Session { get; } = new UnsupportedApplicationSessionService("Not implemented on Windows yet.");

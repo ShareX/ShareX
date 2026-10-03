@@ -82,18 +82,7 @@ public static class EditorServices
             return;
         }
 
-        if (OperatingSystem.IsWindows())
-        {
-            DesktopWallpaper = new WindowsDesktopWallpaperService();
-        }
-        else if (OperatingSystem.IsLinux())
-        {
-            DesktopWallpaper = new LinuxDesktopWallpaperService();
-        }
-        else if (OperatingSystem.IsMacOS())
-        {
-            DesktopWallpaper = new MacOSDesktopWallpaperService();
-        }
+        DesktopWallpaper = new PlatformDesktopWallpaperService();
     }
 
     /// <summary>
