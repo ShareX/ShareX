@@ -25,8 +25,11 @@
 
 #nullable enable
 
+using Avalonia.Threading;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
+using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 
 namespace ShareX;
@@ -38,20 +41,27 @@ namespace ShareX;
 internal sealed class MainForm
 {
     private readonly IHotkeyHost _hotkeyHost;
+    private readonly IApplicationSessionService _session;
     internal bool IsDisposed => _hotkeyHost.IsDisposed;
     internal ITrayIconService TrayIconService { get; }
 
     public MainForm()
     {
         _hotkeyHost = PlatformBootstrap.CreateApplicationHost();
-        _hotkeyHost.NativeMessageReceived += OnNativeMessage;
         _hotkeyHost.Closed += OnHostClosed;
+        _session = PlatformServices.Current.Session;
+        _session.RestartRequested += OnRestartRequested;
+        _session.SessionEnding += OnSessionEnding;
 
         ShareXResources.UseWhiteIcon = ApplicationState.Settings.UseWhiteShareXIcon;
         TrayIconService = new DesktopTrayIconService(_hotkeyHost, ShareXResources.IconBytes, ApplicationInfo.TitleShort, ApplicationState.Settings.ShowTray);
     }
 
-    internal void Initialize() => _hotkeyHost.Initialize();
+    internal void Initialize()
+    {
+        _hotkeyHost.Initialize();
+        _session.Initialize(exception => Dispatcher.UIThread.Post(ExceptionDispatchInfo.Capture(exception).Throw));
+    }
 
     internal void UpdateTrayIcon()
     {
@@ -84,35 +94,23 @@ internal sealed class MainForm
 
     internal void ExitApplication() => _hotkeyHost.Close();
 
-    private void OnNativeMessage(object? sender, NativeWindowMessageEventArgs m)
+    private void OnRestartRequested(object? sender, EventArgs e)
     {
-        if (m.Message == (int)WindowsMessages.QUERYENDSESSION)
+        if (_session.RestartSupport.IsSupported)
         {
-            EndSessionReasons reason = (EndSessionReasons)m.LParam.ToInt64();
-            if (reason.HasFlag(EndSessionReasons.ENDSESSION_CLOSEAPP))
-            {
-                NativeMethods.RegisterApplicationRestart("-silent", 0);
-            }
-
-            m.Result = new IntPtr(1);
-            m.Handled = true;
-        }
-        else if (m.Message == (int)WindowsMessages.ENDSESSION)
-        {
-            if (m.WParam != IntPtr.Zero)
-            {
-                ApplicationLifecycle.CloseSequence();
-            }
-
-            m.Result = IntPtr.Zero;
-            m.Handled = true;
+            _session.RegisterRestart("-silent");
         }
     }
+
+    private void OnSessionEnding(object? sender, SessionEndingEventArgs e) => ApplicationLifecycle.CloseSequence();
 
     private void OnHostClosed(object? sender, EventArgs e)
     {
         ApplicationState.HotkeyManager?.UnregisterAllHotkeys(false);
         TrayIconService.Dispose();
+        _session.RestartRequested -= OnRestartRequested;
+        _session.SessionEnding -= OnSessionEnding;
+        _session.Dispose();
         ApplicationLifecycle.OnHotkeyHostClosed();
     }
 }

@@ -119,11 +119,11 @@ public sealed class WindowsPlatformServices : IPlatformServices
 
     public IDesktopWallpaperService Wallpaper { get; } = new WindowsDesktopWallpaperService();
 
-    // Stub until W8: MainForm's WM_QUERYENDSESSION / WM_ENDSESSION handling and RegisterApplicationRestart move here.
-    public IApplicationSessionService Session { get; } = new UnsupportedApplicationSessionService("Not implemented on Windows yet.");
+    public IApplicationSessionService Session { get; } = new WindowsApplicationSessionService();
 
     public void Dispose()
     {
+        Session.Dispose();
         ((WindowsSystemGraphicsService)Graphics).Dispose();
         if (hotkeys.IsValueCreated)
         {

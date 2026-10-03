@@ -44,7 +44,5 @@ namespace ShareX.HelpersLib
         [DllImport("kernel32.dll")]
         public static extern IntPtr GetModuleHandle(string lpModuleName);
 
-        [DllImport("kernel32.dll", PreserveSig = false)]
-        public static extern void RegisterApplicationRestart(string pwzCommandline, RegisterApplicationRestartFlags dwFlags);
     }
 }

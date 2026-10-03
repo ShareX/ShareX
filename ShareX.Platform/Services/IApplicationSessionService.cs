@@ -27,8 +27,8 @@ using System;
 
 namespace ShareX.Platform;
 
-/// <summary>The end of the user's session, as the operating system announces it.</summary>
-/// <param name="Restarting">True when the system will start ShareX again afterwards (Windows restart manager).</param>
+/// <summary>A confirmed end of the user's session.</summary>
+/// <param name="restarting">True when the system requests restart registration (Windows restart manager).</param>
 public sealed class SessionEndingEventArgs(bool restarting) : EventArgs
 {
     public bool Restarting { get; } = restarting;
@@ -39,13 +39,30 @@ public sealed class SessionEndingEventArgs(bool restarting) : EventArgs
 /// On Linux and macOS the session ends with SIGTERM, which the application handles directly, so <see cref="SessionEnding"/> is not
 /// raised there.
 /// </remarks>
-public interface IApplicationSessionService
+public interface IApplicationSessionService : IDisposable
 {
-    /// <summary>Raised on the UI thread before the session ends. Handlers save state quickly; ShareX is then closed.</summary>
+    /// <summary>
+    /// Raised synchronously on the initializing UI thread while the system queries restart-related shutdown.
+    /// Register restart here, before the query returns. Do not save or close: shutdown may still be cancelled.
+    /// </summary>
+    event EventHandler? RestartRequested;
+
+    /// <summary>
+    /// Raised synchronously on the initializing UI thread only when the system confirms session end.
+    /// Handlers save state quickly. Cancelled queries do not raise this event.
+    /// </summary>
     event EventHandler<SessionEndingEventArgs>? SessionEnding;
 
     /// <summary>Whether <see cref="RegisterRestart"/> works (RegisterApplicationRestart on Windows).</summary>
     FeatureSupport RestartSupport { get; }
+
+    /// <summary>
+    /// Starts session notifications on the application UI thread. Dispose on that same thread.
+    /// Native callback exceptions are passed to <paramref name="onUnhandledException"/> for the host's
+    /// exception handling; the callback must not throw across a native window procedure.
+    /// Repeated initialization does not create another receiver.
+    /// </summary>
+    void Initialize(Action<Exception> onUnhandledException);
 
     /// <summary>Asks the system to start ShareX with <paramref name="arguments"/> when it restarts the session.</summary>
     void RegisterRestart(string arguments);
@@ -53,6 +70,12 @@ public interface IApplicationSessionService
 
 public sealed class UnsupportedApplicationSessionService(string reason) : IApplicationSessionService
 {
+    public event EventHandler? RestartRequested
+    {
+        add { }
+        remove { }
+    }
+
     public event EventHandler<SessionEndingEventArgs>? SessionEnding
     {
         add { }
@@ -61,7 +84,15 @@ public sealed class UnsupportedApplicationSessionService(string reason) : IAppli
 
     public FeatureSupport RestartSupport { get; } = FeatureSupport.NotSupported(reason);
 
+    public void Initialize(Action<Exception> onUnhandledException)
+    {
+    }
+
     public void RegisterRestart(string arguments)
+    {
+    }
+
+    public void Dispose()
     {
     }
 }

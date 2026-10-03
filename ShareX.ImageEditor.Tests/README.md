@@ -33,6 +33,8 @@ The application upload checks use the same isolated copy with a generated binary
 
 These checks skip off Windows or when the application fixture variables are unset. They do not replace Windows 10/11 desktop, capture, tray interaction or editor workflow verification.
 
+Native Windows session checks create only their own hidden top-level windows on an STA thread. Direct messages to those windows verify synchronous restart-query registration, cancelled queries without save/close, confirmed session-end timing, exception routing, thread ownership and disposal without changing foreground focus. A native restart-settings round trip verifies `-silent`, Unicode arguments and zero flags, restoring the test process's previous restart registration afterwards. Nothing is broadcast and no user session is ended. These checks skip off Windows and do not replace interactive Windows 10/11 shutdown/update verification.
+
 Native Windows updater signature checks reject missing, malformed and unsigned fixtures. The trusted/tampered comparison uses an optional, already signed binary:
 
 ```powershell
