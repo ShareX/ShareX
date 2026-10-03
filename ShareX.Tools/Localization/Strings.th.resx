@@ -1771,6 +1771,9 @@
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>หน้าต่าง เงา</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>ไม่สามารถจับภาพพื้นที่ในสภาพแวดล้อมเดสก์ท็อปนี้ได้</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>คลิปบอร์ด ไม่ มี รูปภาพ.</value>
   </data>

@@ -1777,6 +1777,9 @@ Percorso file: {0}</value>
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Ombra finestra</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>L’acquisizione di un’area non è disponibile in questo ambiente desktop.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>Gli appunti non contengono un’immagine.</value>
   </data>

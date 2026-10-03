@@ -1777,6 +1777,9 @@ Bestandspad: {0}</value>
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Vensterschaduw</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>Een gebied vastleggen is niet beschikbaar in deze desktopomgeving.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>Het klembord bevat geen afbeelding.</value>
   </data>

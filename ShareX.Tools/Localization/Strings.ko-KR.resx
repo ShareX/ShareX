@@ -1771,6 +1771,9 @@
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>창 그림자</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>이 데스크톱 환경에서는 영역 캡처를 사용할 수 없습니다.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>클립보드에 이미지가 없습니다.</value>
   </data>

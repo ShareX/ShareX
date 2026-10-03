@@ -1771,6 +1771,9 @@
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Bayangan jendela</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>Tangkapan wilayah tidak tersedia di lingkungan desktop ini.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>Papan klip tidak berisi gambar.</value>
   </data>

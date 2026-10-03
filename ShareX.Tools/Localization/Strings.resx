@@ -1772,6 +1772,9 @@
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Window shadow</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>Region capture is not available on this desktop.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>The clipboard does not contain an image.</value>
   </data>

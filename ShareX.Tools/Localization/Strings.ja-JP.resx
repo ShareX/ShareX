@@ -1771,6 +1771,9 @@
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>ウィンドウの影</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>このデスクトップ環境では範囲キャプチャを利用できません。</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>クリップボードに画像がありません。</value>
   </data>

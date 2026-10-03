@@ -1777,6 +1777,9 @@ Filsti: {0}</value>
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Vinduesskygge</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>Optagelse af et område er ikke tilgængelig i dette skrivebordsmiljø.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>Udklipsholder indeholder intet billede.</value>
   </data>

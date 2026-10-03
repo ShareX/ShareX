@@ -1777,6 +1777,9 @@ Chemin du fichier : {0}</value>
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Ombre de la fenêtre</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>La capture d’une région n’est pas disponible dans cet environnement de bureau.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>Le presse-papiers ne contient aucune image.</value>
   </data>

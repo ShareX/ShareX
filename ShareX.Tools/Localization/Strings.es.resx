@@ -1777,6 +1777,9 @@ Ruta del archivo: {0}</value>
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Sombra de la ventana</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>La captura de una región no está disponible en este entorno de escritorio.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>El portapapeles no contiene una imagen.</value>
   </data>

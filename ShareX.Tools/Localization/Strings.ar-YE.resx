@@ -1771,6 +1771,9 @@
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>ظل النافذة</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>التقاط منطقة غير متاح في بيئة سطح المكتب هذه.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>لا تحتوي الحافظة على صورة.</value>
   </data>

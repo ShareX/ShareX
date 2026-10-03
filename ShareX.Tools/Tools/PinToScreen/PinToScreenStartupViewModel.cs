@@ -25,15 +25,20 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.Platform;
 
 namespace ShareX.Tools;
 
 public sealed partial class PinToScreenStartupViewModel : ViewModelBase
 {
     private readonly PinToScreenServices _services;
+    private readonly Func<FeatureSupport> _getCaptureSupport;
+    private readonly Func<Task> _hideDelay;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsIdle))]
+    [NotifyPropertyChangedFor(nameof(CanCaptureRegion))]
+    [NotifyCanExecuteChangedFor(nameof(CaptureRegionCommand))]
     private bool _isBusy;
 
     [ObservableProperty]
@@ -41,30 +46,27 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
     private string _errorMessage = string.Empty;
 
     public bool IsIdle => !IsBusy;
+    public bool CanCaptureRegion => IsIdle && _getCaptureSupport().IsSupported;
+    public string? CaptureUnavailableReason => _getCaptureSupport().IsSupported ? null :
+        Localization.Strings.PinToScreenStartupViewModel_CaptureUnavailable;
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
     public Action<PinToScreenSource>? SourceSelected { get; set; }
     public Action? RegionCaptureStarted { get; set; }
     public Action? RegionCaptureFinished { get; set; }
 
-    public PinToScreenStartupViewModel(PinToScreenServices services)
+    public PinToScreenStartupViewModel(PinToScreenServices services, Func<FeatureSupport>? getCaptureSupport = null,
+        Func<Task>? hideDelay = null)
     {
         _services = services;
+        _getCaptureSupport = getCaptureSupport ?? (() => PlatformServices.IsInitialized
+            ? PlatformServices.Current.ScreenCapture.Support
+            : FeatureSupport.NotSupported(Localization.Strings.PinToScreenStartupViewModel_CaptureUnavailable));
+        _hideDelay = hideDelay ?? (() => Task.Delay(200));
     }
 
-    [RelayCommand]
-    private async Task CaptureRegionAsync()
-    {
-        RegionCaptureStarted?.Invoke();
-        try
-        {
-            await Task.Delay(200);
-            await SelectAsync(_services.CaptureRegionAsync, Localization.Strings.PinToScreenStartupViewModel_No_region_selected);
-        }
-        finally
-        {
-            RegionCaptureFinished?.Invoke();
-        }
-    }
+    [RelayCommand(CanExecute = nameof(CanCaptureRegion))]
+    private Task CaptureRegionAsync() => SelectAsync(_services.CaptureRegionAsync,
+        Localization.Strings.PinToScreenStartupViewModel_No_region_selected, captureRegion: true);
 
     [RelayCommand]
     private Task FromClipboardAsync() => SelectAsync(_services.GetClipboardImageAsync, Localization.Strings.PinToScreenStartupViewModel_Clipboard_no_image);
@@ -72,18 +74,38 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
     [RelayCommand]
     private Task FromFileAsync() => SelectAsync(_services.SelectImageFileAsync, Localization.Strings.PinToScreenStartupViewModel_No_image_selected);
 
-    private async Task SelectAsync(Func<Task<PinToScreenSource?>> selector, string emptyMessage)
+    private async Task SelectAsync(Func<Task<PinToScreenSource?>> selector, string emptyMessage, bool captureRegion = false)
     {
         if (IsBusy)
         {
             return;
         }
 
+        if (captureRegion && !_getCaptureSupport().IsSupported)
+        {
+            ErrorMessage = Localization.Strings.PinToScreenStartupViewModel_CaptureUnavailable;
+            NotifyCaptureAvailability();
+            return;
+        }
+
         IsBusy = true;
         ErrorMessage = string.Empty;
+        bool regionCaptureStarted = false;
 
         try
         {
+            if (captureRegion)
+            {
+                regionCaptureStarted = true;
+                RegionCaptureStarted?.Invoke();
+                await _hideDelay();
+                if (!_getCaptureSupport().IsSupported)
+                {
+                    ErrorMessage = Localization.Strings.PinToScreenStartupViewModel_CaptureUnavailable;
+                    return;
+                }
+            }
+
             PinToScreenSource? source = await selector();
             if (source == null || source.ImageData.Length == 0)
             {
@@ -101,6 +123,18 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
         finally
         {
             IsBusy = false;
+            if (regionCaptureStarted)
+            {
+                RegionCaptureFinished?.Invoke();
+            }
+            NotifyCaptureAvailability();
         }
+    }
+
+    private void NotifyCaptureAvailability()
+    {
+        OnPropertyChanged(nameof(CanCaptureRegion));
+        OnPropertyChanged(nameof(CaptureUnavailableReason));
+        CaptureRegionCommand.NotifyCanExecuteChanged();
     }
 }

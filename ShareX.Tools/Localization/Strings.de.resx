@@ -1777,6 +1777,9 @@ Dateipfad: {0}</value>
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Fensterschatten</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>In dieser Desktop-Umgebung ist keine Bereichsaufnahme verfügbar.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>Die Zwischenablage enthält kein Bild.</value>
   </data>

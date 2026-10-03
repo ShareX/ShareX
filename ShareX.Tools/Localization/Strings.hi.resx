@@ -1777,6 +1777,9 @@
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>विंडो छाया</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>इस डेस्कटॉप परिवेश में क्षेत्र कैप्चर उपलब्ध नहीं है।</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>क्लिपबोर्ड में कोई छवि नहीं है।</value>
   </data>

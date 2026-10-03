@@ -4510,6 +4510,14 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Region capture is not available on this desktop..
+        /// </summary>
+        public static string PinToScreenStartupViewModel_CaptureUnavailable {
+            get {
+                return ResourceManager.GetString("PinToScreenStartupViewModel_CaptureUnavailable", resourceCulture);
+            }
+        }
+        /// <summary>
         ///   Looks up a localized string similar to The clipboard does not contain an image..
         /// </summary>
         public static string PinToScreenStartupViewModel_Clipboard_no_image {

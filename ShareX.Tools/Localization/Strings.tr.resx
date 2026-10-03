@@ -1777,6 +1777,9 @@ Dosya yolu: {0}</value>
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Pencere gölgesi</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>Bu masaüstü ortamında bölge yakalama kullanılamıyor.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>Panoda görüntü yok.</value>
   </data>

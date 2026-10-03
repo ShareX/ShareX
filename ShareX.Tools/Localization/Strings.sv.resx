@@ -1777,6 +1777,9 @@ Filsökväg: {0}</value>
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Fönsterskugga</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>Områdesinfångning är inte tillgänglig i den här skrivbordsmiljön.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>Urklipp innehåller ingen bild.</value>
   </data>

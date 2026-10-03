@@ -1777,6 +1777,9 @@ Caminho do arquivo: {0}</value>
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Sombra da janela</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>A captura de região não está disponível neste ambiente de área de trabalho.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>A área de transferência não contém uma imagem.</value>
   </data>

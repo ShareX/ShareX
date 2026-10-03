@@ -25,13 +25,15 @@
                     </StackPanel>
                 </Border>
                 <Grid Grid.Row="1" ColumnDefinitions="*,*,*" ColumnSpacing="10">
-                    <Button Command="{Binding CaptureRegionCommand}" IsEnabled="{Binding IsIdle}"
-                            Height="88" HorizontalAlignment="Stretch">
-                        <StackPanel Spacing="8" VerticalAlignment="Center">
-                            <TextBlock Classes="icon" FontSize="24" FontWeight="Normal" Text="{x:Static theming:LucideIcons.scan}" HorizontalAlignment="Center"/>
-                            <TextBlock Text="{x:Static localization:Strings.PinToScreenStartupWindow_Select_region}"/>
-                        </StackPanel>
-                    </Button>
+                    <Border Background="Transparent" ToolTip.Tip="{Binding CaptureUnavailableReason}">
+                        <Button Command="{Binding CaptureRegionCommand}" IsEnabled="{Binding CanCaptureRegion}"
+                                Height="88" HorizontalAlignment="Stretch">
+                            <StackPanel Spacing="8" VerticalAlignment="Center">
+                                <TextBlock Classes="icon" FontSize="24" FontWeight="Normal" Text="{x:Static theming:LucideIcons.scan}" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.PinToScreenStartupWindow_Select_region}"/>
+                            </StackPanel>
+                        </Button>
+                    </Border>
                     <Button Grid.Column="1" Command="{Binding FromClipboardCommand}" IsEnabled="{Binding IsIdle}"
                             Height="88" HorizontalAlignment="Stretch">
                         <StackPanel Spacing="8" VerticalAlignment="Center">

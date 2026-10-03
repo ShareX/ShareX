@@ -1777,6 +1777,9 @@ Cesta k souboru: {0}</value>
   <data name="PinToScreenOptionsWindow_Window_shadow" xml:space="preserve">
     <value>Stín okna</value>
   </data>
+  <data name="PinToScreenStartupViewModel_CaptureUnavailable" xml:space="preserve">
+    <value>Zachycení oblasti není v tomto prostředí plochy dostupné.</value>
+  </data>
   <data name="PinToScreenStartupViewModel_Clipboard_no_image" xml:space="preserve">
     <value>Schránka neobsahuje obrázek.</value>
   </data>
