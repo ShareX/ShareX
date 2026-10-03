@@ -65,9 +65,7 @@ jobs:
         if: runner.os == 'Windows'
         run: dotnet test ShareX.Tools.Tests/ShareX.Tools.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
 
-      # The legacy preset tests need the Windows desktop runtime until ImageEffectsLib and HelpersLib target net10.0 (task M7).
       - name: Test image effects
-        if: runner.os == 'Windows'
         run: dotnet test ShareX.ImageEffectsLib.Tests/ShareX.ImageEffectsLib.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
 
   build-solution:
