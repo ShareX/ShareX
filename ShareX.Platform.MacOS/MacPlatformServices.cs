@@ -109,6 +109,8 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public ITaskbarService Taskbar { get; } = new UnsupportedTaskbarService("Dock icon progress is not available on macOS yet.");
 
+    public ISystemGraphicsService Graphics { get; } = new UnsupportedSystemGraphicsService("Emoji and cursor images are drawn by ShareX on macOS.");
+
     public void Dispose()
     {
         if (hotkeys.IsValueCreated)

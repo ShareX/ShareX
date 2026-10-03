@@ -110,6 +110,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
 
     public ITaskbarService Taskbar { get; } = new UnityLauncherTaskbarService();
 
+    public ISystemGraphicsService Graphics { get; } = new XcursorGraphicsService();
+
     private static IHotkeyService CreateHotkeyService(PlatformInfo info, Func<int, string>? describeHotkey)
     {
         if (info.IsX11 && !info.IsSandboxed)

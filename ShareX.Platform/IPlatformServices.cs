@@ -87,4 +87,7 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>Progress on the taskbar button or dock icon.</summary>
     ITaskbarService Taskbar { get; }
+
+    /// <summary>Colour emoji and standard cursor images drawn the operating system's way.</summary>
+    ISystemGraphicsService Graphics { get; }
 }

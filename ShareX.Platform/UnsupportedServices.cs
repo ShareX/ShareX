@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Platform.Imaging;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -209,4 +210,15 @@ public sealed class UnsupportedTaskbarService(string reason) : ITaskbarService
     public void SetProgressState(TaskbarProgressState state)
     {
     }
+}
+
+public sealed class UnsupportedSystemGraphicsService(string reason) : ISystemGraphicsService
+{
+    public FeatureSupport EmojiSupport { get; } = FeatureSupport.NotSupported(reason);
+
+    public PixelBuffer? RenderEmoji(string text, int canvasSize, float fontSize) => null;
+
+    public FeatureSupport CursorSupport { get; } = FeatureSupport.NotSupported(reason);
+
+    public SystemCursorImage? GetSystemCursor(SystemCursor cursor, int? size = null) => null;
 }

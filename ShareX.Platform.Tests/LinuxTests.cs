@@ -734,3 +734,55 @@ public class WindowDetailsTests
         Assert.Null(LinuxWindowManagementService.ToClientCoordinates(null));
     }
 }
+
+public class XcursorGraphicsTests
+{
+    [Fact]
+    public void EveryCursorHasNames()
+    {
+        foreach (SystemCursor cursor in Enum.GetValues<SystemCursor>())
+        {
+            Assert.NotEmpty(XcursorGraphicsService.GetCursorNames(cursor));
+        }
+    }
+
+    [Fact]
+    public void PremultipliedArgbBecomesStraightBgra()
+    {
+        // Opaque red, half transparent white (premultiplied 0x80), fully transparent.
+        PixelBuffer buffer = XcursorGraphicsService.FromPremultipliedArgb([0xFFFF0000, 0x80808080, 0x00000000], 3, 1);
+
+        Assert.Equal(new byte[] { 0, 0, 255, 255, 255, 255, 255, 128, 0, 0, 0, 0 }, buffer.Pixels);
+    }
+
+    [Fact]
+    public void LoadsArrowFromInstalledTheme()
+    {
+        XcursorGraphicsService service = new XcursorGraphicsService(null, "32");
+
+        if (!OperatingSystem.IsLinux() || !service.CursorSupport.IsSupported)
+        {
+            return;
+        }
+
+        SystemCursorImage? arrow = service.GetSystemCursor(SystemCursor.Arrow);
+
+        // A machine without any cursor theme has no arrow; when there is one, it has pixels and a hotspot inside it.
+        if (arrow != null)
+        {
+            Assert.InRange(arrow.Hotspot.X, 0, arrow.Image.Width - 1);
+            Assert.InRange(arrow.Hotspot.Y, 0, arrow.Image.Height - 1);
+            Assert.Contains(arrow.Image.Pixels.Where((_, i) => i % 4 == 3), alpha => alpha != 0);
+
+            string? dump = Environment.GetEnvironmentVariable("SHAREX_CURSOR_DUMP");
+            if (!string.IsNullOrEmpty(dump))
+            {
+                foreach (SystemCursor cursor in Enum.GetValues<SystemCursor>())
+                {
+                    SystemCursorImage? image = service.GetSystemCursor(cursor);
+                    if (image != null) File.WriteAllBytes(Path.Combine(dump, cursor + ".png"), PngCodec.Encode(image.Image));
+                }
+            }
+        }
+    }
+}
