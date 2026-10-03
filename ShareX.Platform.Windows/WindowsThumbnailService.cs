@@ -25,6 +25,7 @@
 
 using ShareX.Platform.Imaging;
 using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -56,7 +57,7 @@ public sealed unsafe class WindowsThumbnailService : IThumbnailService
             PixelBuffer? pixels = ReadPixels(bitmap);
             return pixels == null ? null : PngCodec.Encode(pixels);
         }
-        catch (Exception ex) when (ex is COMException or ArgumentException or InvalidCastException)
+        catch (Exception ex) when (ex is COMException or IOException or ArgumentException or InvalidCastException)
         {
             return null;
         }
@@ -75,7 +76,7 @@ public sealed unsafe class WindowsThumbnailService : IThumbnailService
     }
 
     /// <summary>Copies the HBITMAP into a top down BGRA buffer. Shell thumbnails use premultiplied alpha, which PixelBuffer does not.</summary>
-    private static PixelBuffer? ReadPixels(IntPtr bitmap)
+    internal static PixelBuffer? ReadPixels(IntPtr bitmap)
     {
         Native.Win32.BITMAP info;
 
@@ -113,6 +114,13 @@ public sealed unsafe class WindowsThumbnailService : IThumbnailService
         }
 
         byte[] data = buffer.Pixels;
+
+        // Converting an RGB bitmap to 32 bits does not supply an alpha channel.
+        if (info.bmBitsPixel < 32)
+        {
+            buffer.MakeOpaque();
+            return buffer;
+        }
 
         for (int i = 0; i < info.bmWidth * info.bmHeight * 4; i += 4)
         {
