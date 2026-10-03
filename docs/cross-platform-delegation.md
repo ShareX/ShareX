@@ -150,7 +150,7 @@ Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (
 | J4 | Capture overlays on every desktop: region capture, screen recording frame and tool bar, scrolling capture region window, mouse highlighter drawing, pin to screen, ruler. Full-screen placement, multi-monitor and mixed scaling on Hyprland, sway, GNOME, KDE and macOS. Switch their window-shape and overlay calls to the services (handoffs from M4, M5). | M4, M5 | todo |
 | J5 | Unsupported features in the UI: wherever a service reports `NotSupported`, hide or disable the menu item, button or setting and show the reason as its tooltip (window capture and snapping on GNOME/KDE Wayland, scroll methods, mouse highlighter, inspect window, OCR without Tesseract, recording on Wayland until M9). | M3 to M6 | todo |
 | J6 | Graphics on other platforms: tray and menu icons on light and dark Linux panels, theme and accent detection, DPI and fractional scaling, image formats and codecs, HDR tone mapping review. | M2 | todo |
-| J7 | Switch UI call sites listed in the handoff log as they appear. | handoffs | ongoing |
+| J7 | Switch UI call sites listed in the handoff log as they appear. | handoffs | in progress (2026-10-03): H1 to H5 |
 | J9 | **Windows platform.** Own `ShareX.Platform.Windows`: work through the W rows, move develop's remaining Win32 code from `HelpersLib` (`Native/`, `NativeMethods*`, `WindowInfo` internals, `DWMManager`, `DesktopIconManager`, `TimerResolutionManager`, `RegistryHelpers`, `WindowsImageInterop`, `InputManager`, `WindowsHotkeyHost`, `CursorData`), `ScreenCaptureLib`, `Tools` and the application into it behind the existing services, and fix Windows bugs found in J1. | none | todo |
 | J8 | End-to-end runs of the real application once M8 lands: on Windows (sign-off) and on Linux (with McoreD). File bug rows. | M8 | todo |
 
@@ -201,6 +201,7 @@ J asks for backend or platform capabilities here; M fills in the interface and s
 | R2 | Taskbar progress and overlay | upload progress UI | `ITaskbarService` (`PlatformServices.Current.Taskbar`); `TaskbarManager` keeps its API on top. Develop never used overlay icons, so none were added | done |
 | R3 | Synthetic input beyond scrolling: typing text, key combinations | application actions | extend `IInputService` | todo |
 | R4 | Unblock the Windows test baseline before the W1/J1 claim push: thumbnail URI fixture uses `/home/jens/...`, which `new Uri(path)` rejects on Windows; browser-host fixture assumes `Path.GetFullPath("/opt/...")` stays a Unix path. Use a native absolute path and assert the parsed JSON path. | `ShareX.Platform.Tests/SecretAndThumbnailTests.cs:110`, `LinuxTests.cs:294` | test fixtures only | done (`ef69ad7a7`); Jaex approved the ownership exception |
+| R5 | Preserve v22's configurable global `HotkeyRepeatLimit` when switching to `IHotkeyService`: `WindowsHotkeyService` must emit native repeats, including when the limit is zero. Apply the existing shared stopwatch throttle in the portable hotkey host/manager, and dispatch callbacks to Avalonia's UI thread so exceptions reach the application's handler. | `Forms/MainForm.cs:58`, `HotkeyManager`, portable replacement for `WindowsHotkeyHost` | existing `IHotkeyService`; shared wrapper, no contract change needed | todo (M); required before switching the shared caller in M6 |
 
 ## Windows work (M → J)
 
@@ -208,8 +209,8 @@ M adds a row when a contract needs a Windows implementation. J implements it in 
 
 | ID | Contract | Old Windows code to move | Linux/macOS | Status |
 | --- | --- | --- | --- | --- |
-| W1 | Review the Windows code M wrote: `WindowsShellIntegrationService` (file types, browser hosts, Send to), `WindowsSystemPreferencesService.GetPolicy`, `WindowsTaskbarService`, `WindowsStartupService` (`b94ebc639`, `1cf9734e9`). Take ownership; fix whatever differs from v22. | already moved | done | done (W1 service review commit); Windows build 26300 smoke checks pass; J1 visual sign-off pending |
-| W2 | `IHotkeyService` for `HotkeyManager` (`WindowsHotkeyService` exists from the first branch; check it against `WindowsHotkeyHost`) | `ShareX.HelpersLib` `WindowsHotkeyHost`, `HotkeyForm` | X11 done; Wayland portal in M9 | in progress (2026-10-03) |
+| W1 | Review the Windows code M wrote: `WindowsShellIntegrationService` (file types, browser hosts, Send to), `WindowsSystemPreferencesService.GetPolicy`, `WindowsTaskbarService`, `WindowsStartupService` (`b94ebc639`, `1cf9734e9`). Take ownership; fix whatever differs from v22. | already moved | done | done (`3cc03f554`); Windows build 26300 smoke checks pass; J1 visual sign-off pending |
+| W2 | `IHotkeyService` for `HotkeyManager` (`WindowsHotkeyService` exists from the first branch; check it against `WindowsHotkeyHost`) | `ShareX.HelpersLib` `WindowsHotkeyHost`, `HotkeyForm` | X11 done; Wayland portal in M9 | done (W2 hotkey service commit); shared repeat-limit wrapper required in R5 |
 | W3 | Printing (R1): contract to come from M | `ShareX.HelpersLib` print helpers, `WindowsPrintDialog` | to do (M) | waiting for contract |
 
 ## Handoffs
@@ -218,18 +219,18 @@ M adds a row when a backend API moved and J's UI files still call the old wrappe
 
 | ID | Old API (wrapper kept) | New API | Call sites in J's files | Status |
 | --- | --- | --- | --- | --- |
-| H1 | `AuthenticodeSignatureVerifier.IsTrusted` (HelpersLib) | `PlatformServices.Current.CodeSignature.IsTrusted` | `ShareX.HelpersLib/Presentation/UpdateChecker/DownloaderWindow.axaml.cs` | todo |
-| H2 | `WindowsList.GetVisibleWindowsList()` and `WindowInfo` (ScreenCaptureLib, HelpersLib) | `PlatformServices.Current.Windows.GetWindows()` (`PlatformWindow`); icons from `WindowManagement.GetIcon` once M5 brings it | `ShareX/Presentation/MainWindow/MainMenuBuilder.cs` (window menu) | todo |
-| H4 | `WindowInfo` (HelpersLib) for the inspected window: title, class, process, rectangles, styles, top most, opacity | `PlatformServices.Current.WindowManagement.GetDetails` (`WindowDetails`), `SetTopMost`, `SetOpacity` | `ShareX.Tools/Tools/InspectWindow/InspectWindowViewModel.cs` | todo |
-| H5 | `NativeMethods.GetCursorPos` in the monitor test window | `CaptureHelpers.GetCursorPosition()` (portable since `6bc0bd5b5`) | `ShareX.Tools/Tools/MonitorTest/MonitorTestWindow.axaml.cs` | todo |
-| H3 | `Screenshot.Capture…()` now return `SKBitmap?` (null when nothing could be captured) | handle null | `ShareX/Presentation/ApplicationSettings/ApplicationSettingsViewModel.cs` (print screen), `ShareX/Presentation/AutoCapture/AutoCaptureWindow.axaml.cs` (nullable warnings) | todo |
+| H1 | `AuthenticodeSignatureVerifier.IsTrusted` (HelpersLib) | `PlatformServices.Current.CodeSignature.IsTrusted` | `ShareX.HelpersLib/Presentation/UpdateChecker/DownloaderWindow.axaml.cs` | in progress (2026-10-03) |
+| H2 | `WindowsList.GetVisibleWindowsList()` and `WindowInfo` (ScreenCaptureLib, HelpersLib) | `PlatformServices.Current.Windows.GetWindows()` (`PlatformWindow`); icons from `WindowManagement.GetIcon` once M5 brings it | `ShareX/Presentation/MainWindow/MainMenuBuilder.cs` (window menu) | in progress (2026-10-03) |
+| H4 | `WindowInfo` (HelpersLib) for the inspected window: title, class, process, rectangles, styles, top most, opacity | `PlatformServices.Current.WindowManagement.GetDetails` (`WindowDetails`), `SetTopMost`, `SetOpacity` | `ShareX.Tools/Tools/InspectWindow/InspectWindowViewModel.cs` | in progress (2026-10-03) |
+| H5 | `NativeMethods.GetCursorPos` in the monitor test window | `CaptureHelpers.GetCursorPosition()` (portable since `6bc0bd5b5`) | `ShareX.Tools/Tools/MonitorTest/MonitorTestWindow.axaml.cs` | in progress (2026-10-03) |
+| H3 | `Screenshot.Capture…()` now return `SKBitmap?` (null when nothing could be captured) | handle null | `ShareX/Presentation/ApplicationSettings/ApplicationSettingsViewModel.cs` (print screen), `ShareX/Presentation/AutoCapture/AutoCaptureWindow.axaml.cs` (nullable warnings) | in progress (2026-10-03) |
 
 ## Bugs
 
 | ID | Found by | Platform | Description | Owner | Status |
 | --- | --- | --- | --- | --- | --- |
 | B1 | J | Windows | Baseline platform tests fail in `FreedesktopThumbnailTests.GetThumbnailName_IsTheMd5OfTheFileUri` and `LinuxFileAssociationTests.BrowserHosts_GoToInstalledBrowsersWithAnAbsolutePath` because their fixtures assume Unix paths. Fixed with Jaex's approval (R4): 171 pass, 7 skip, 0 fail; image-effects tests: 65 pass. | M | done (`ef69ad7a7`) |
-| B2 | J | Windows | `WindowsSystemPreferencesService.GetPolicy` selects any non-null HKLM value before validation. Unlike v22, an invalid machine boolean prevents a valid HKCU policy from applying; `PersonalPath` also accepts non-string registry values through `ToString`. Registry access failures now escape instead of falling back. | J | done (W1 service review commit); verified with synthetic policy inputs |
+| B2 | J | Windows | `WindowsSystemPreferencesService.GetPolicy` selects any non-null HKLM value before validation. Unlike v22, an invalid machine boolean prevents a valid HKCU policy from applying; `PersonalPath` also accepts non-string registry values through `ToString`. Registry access failures now escape instead of falling back. | J | done (`3cc03f554`); verified with synthetic policy inputs |
 
 ## Status log
 
@@ -252,3 +253,4 @@ One line per working session, newest at the bottom.
 - 2026-10-03, J: Jaex explicitly approved the two M-owned Windows test-fixture fixes in R4 to unblock the claim push. Only the thumbnail hashing fixture and browser-host manifest assertion are changed; no Linux implementation or platform contract changes.
 - 2026-10-03, J: J owns the new Windows verification utility in `Scripts/WindowsVerification/` and `Scripts/Verify-WindowsPlatform.ps1`. It exercises J's Windows services using a temporary harness, isolated registry keys and temporary shortcut folders; it does not replace the Windows 10/11 visual checklist or edit M's test project.
 - 2026-10-03, J: W1 reviewed against `develop`. Fixed policy validation/fallback and registry access handling, case-insensitive file/browser registration detection, and escaping of quoted/trailing-backslash arguments. `Scripts/Verify-WindowsPlatform.ps1` passes all five check groups on Windows build 26300, including a temporary Task Manager disabled-startup value and taskbar COM calls against a hidden harness window. Release solution build: 0 errors; platform tests: 171 pass/7 Unix-only skips; image-effects tests: 65 pass. Windows 10/11 visual, HDR and mixed-DPI checklist items remain unchecked; Linux/macOS execution is not available on this host. Claimed W2 next; no file moves in this task.
+- 2026-10-03, J: W2 Windows service is ready: preserves native repeat events for the shared R5 throttle; rejects invalid keys/modifiers; prevents cancelled commands from registering later; cancels queued callers on shutdown; isolates subscriber exceptions and ignores stale key messages; disposal from a callback avoids joining its own thread. Windows verification now passes seven groups, including real native registration conflicts and a blocked-callback timeout. Release solution build and both test projects pass (171 platform tests, 7 Unix-only skips; 65 image-effects tests). Claimed J7/H1 to H5 next; no moves planned.

@@ -19,6 +19,8 @@ internal static class Program
         Run("Startup shortcut and missing-target preservation", VerifyStartup);
         Run("Command-line argument round trip", VerifyArguments);
         Run("Taskbar COM progress calls (visual sign-off pending)", VerifyTaskbar);
+        Run("Hotkey registration, conflicts and callback isolation", VerifyHotkeys);
+        Run("Hotkey timeout cancellation and callback disposal", VerifyHotkeyShutdown);
         Console.WriteLine($"Verification complete: {failures} failure(s). Visual Windows 10/11 checklist remains separate.");
         return failures == 0 ? 0 : 1;
     }
@@ -266,6 +268,108 @@ internal static class Program
         }
     }
 
+    private static readonly PlatformHotkey Hotkey = new(0x87, HotkeyModifiers.Control | HotkeyModifiers.Alt | HotkeyModifiers.Shift); // F24
+    private static readonly PlatformHotkey OtherHotkey = Hotkey with { KeyCode = 0x86 }; // F23
+
+    private static void VerifyHotkeys()
+    {
+        using WindowsHotkeyService first = new();
+        using WindowsHotkeyService second = new();
+        Equal(HotkeyRegistrationStatus.UnsupportedKey, first.Register(1, new PlatformHotkey(0, HotkeyModifiers.None)));
+        Equal(HotkeyRegistrationStatus.UnsupportedKey, first.Register(1, new PlatformHotkey(0x10, HotkeyModifiers.None)));
+        Equal(HotkeyRegistrationStatus.UnsupportedKey, first.Register(1, new PlatformHotkey(0x100, HotkeyModifiers.None)));
+        Equal(HotkeyRegistrationStatus.Registered, first.Register(1, Hotkey));
+        Equal(HotkeyRegistrationStatus.InUse, second.Register(2, Hotkey));
+        Equal(HotkeyRegistrationStatus.Registered, first.Register(1, OtherHotkey));
+        Equal(HotkeyRegistrationStatus.Registered, second.Register(2, Hotkey));
+        Equal(true, first.Unregister(1));
+        Equal(false, first.Unregister(1));
+        Equal(HotkeyRegistrationStatus.Registered, second.Register(3, OtherHotkey));
+        second.UnregisterAll();
+        Equal(HotkeyRegistrationStatus.Registered, first.Register(4, Hotkey));
+
+        int delivered = 0;
+        using ManualResetEventSlim received = new();
+        first.HotkeyPressed += (_, _) => throw new InvalidOperationException("Synthetic subscriber failure.");
+        first.HotkeyPressed += (_, args) =>
+        {
+            Equal(4, args.Id);
+            Equal(Hotkey, args.Hotkey);
+            if (Interlocked.Increment(ref delivered) == 2) received.Set();
+        };
+
+        // A queued message for the old key must not activate the replacement registration.
+        PostHotkey(first, 4, OtherHotkey);
+        PostHotkey(first, 4, Hotkey);
+        PostHotkey(first, 4, Hotkey);
+        Equal(true, received.Wait(TimeSpan.FromSeconds(3)));
+        Equal(2, Volatile.Read(ref delivered));
+        Equal(true, first.Unregister(4));
+        Equal(HotkeyRegistrationStatus.Registered, second.Register(4, Hotkey));
+    }
+
+    private static void VerifyHotkeyShutdown()
+    {
+        using WindowsHotkeyService first = new();
+        using WindowsHotkeyService second = new();
+        using ManualResetEventSlim blocked = new();
+        using ManualResetEventSlim release = new();
+        using ManualResetEventSlim disposed = new();
+        EventHandler<HotkeyPressedEventArgs> blockingHandler = (_, _) =>
+        {
+            blocked.Set();
+            release.Wait(TimeSpan.FromSeconds(10));
+        };
+
+        try
+        {
+            Equal(HotkeyRegistrationStatus.Registered, first.Register(5, Hotkey));
+            first.HotkeyPressed += blockingHandler;
+            PostHotkey(first, 5, Hotkey);
+            Equal(true, blocked.Wait(TimeSpan.FromSeconds(3)));
+            Equal(HotkeyRegistrationStatus.Failed, first.Register(6, OtherHotkey));
+            release.Set();
+            // Flush the queued cancelled command before checking for an unexpected native registration.
+            Equal(false, first.Unregister(999));
+            Equal(HotkeyRegistrationStatus.Registered, second.Register(6, OtherHotkey));
+            first.HotkeyPressed -= blockingHandler;
+            first.UnregisterAll();
+
+            Equal(HotkeyRegistrationStatus.Registered, first.Register(7, Hotkey));
+            first.HotkeyPressed += (_, _) =>
+            {
+                first.Dispose();
+                disposed.Set();
+            };
+            PostHotkey(first, 7, Hotkey);
+            Equal(true, disposed.Wait(TimeSpan.FromSeconds(1)));
+            first.Dispose(); // Wait for cleanup from outside the native thread.
+            Equal(false, first.Support.IsSupported);
+            Equal(HotkeyRegistrationStatus.Failed, first.Register(8, Hotkey));
+            Equal(false, first.Unregister(7));
+            Equal(HotkeyRegistrationStatus.Registered, second.Register(7, Hotkey));
+
+            Task[] callers = Enumerable.Range(0, 16).Select(id => Task.Run(() => second.Register(id + 100, Hotkey))).ToArray();
+            second.Dispose();
+            Equal(true, Task.WaitAll(callers, TimeSpan.FromSeconds(3)));
+        }
+        finally
+        {
+            release.Set();
+        }
+    }
+
+    private static void PostHotkey(WindowsHotkeyService service, int id, PlatformHotkey hotkey)
+    {
+        TaskCompletionSource<uint> threadId = (TaskCompletionSource<uint>)typeof(WindowsHotkeyService)
+            .GetField("threadId", BindingFlags.Instance | BindingFlags.NonPublic)!.GetValue(service)!;
+        uint data = ((uint)hotkey.KeyCode << 16) | (uint)hotkey.Modifiers;
+        if (!PostThreadMessageW(threadId.Task.Result, 0x0312, (nuint)id, (nint)data))
+        {
+            throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
+        }
+    }
+
     [DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
     private static extern IntPtr CommandLineToArgvW(string command, out int count);
 
@@ -279,4 +383,8 @@ internal static class Program
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool DestroyWindow(IntPtr window);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool PostThreadMessageW(uint threadId, uint message, nuint wParam, nint lParam);
 }

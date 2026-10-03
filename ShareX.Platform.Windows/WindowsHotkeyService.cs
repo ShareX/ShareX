@@ -25,8 +25,9 @@
 
 using ShareX.Platform.Windows.Native;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -35,7 +36,8 @@ namespace ShareX.Platform.Windows;
 /// <summary>RegisterHotKey on a dedicated message loop thread, so it works without a WinForms or Avalonia window.</summary>
 public sealed class WindowsHotkeyService : IHotkeyService
 {
-    private readonly ConcurrentQueue<Action> commands = new ConcurrentQueue<Action>();
+    private readonly object syncLock = new object();
+    private readonly Queue<Command> commands = new Queue<Command>();
     private readonly Dictionary<int, PlatformHotkey> registrations = new Dictionary<int, PlatformHotkey>();
     private readonly Thread thread;
     private readonly TaskCompletionSource<uint> threadId = new TaskCompletionSource<uint>(TaskCreationOptions.RunContinuationsAsynchronously);
@@ -45,40 +47,57 @@ public sealed class WindowsHotkeyService : IHotkeyService
     {
         thread = new Thread(Run) { IsBackground = true, Name = "ShareX hotkeys" };
         thread.Start();
-        threadId.Task.Wait();
+        threadId.Task.GetAwaiter().GetResult();
     }
 
-    public FeatureSupport Support => FeatureSupport.Supported;
+    public FeatureSupport Support => running ? FeatureSupport.Supported : FeatureSupport.NotSupported("Global hotkeys are no longer available in this session.");
 
     public event EventHandler<HotkeyPressedEventArgs>? HotkeyPressed;
 
     public HotkeyRegistrationStatus Register(int id, PlatformHotkey hotkey)
     {
-        if (!hotkey.IsValid)
+        if (!hotkey.IsValid || hotkey.KeyCode > 0xFF || hotkey.KeyCode is 0x10 or 0x11 or 0x12 or 0x5B or 0x5C or >= 0xA0 and <= 0xA5 ||
+            (hotkey.Modifiers & ~(HotkeyModifiers.Alt | HotkeyModifiers.Control | HotkeyModifiers.Shift | HotkeyModifiers.Super)) != 0)
         {
             return HotkeyRegistrationStatus.UnsupportedKey;
         }
 
         return Invoke(() =>
         {
-            if (registrations.Remove(id))
+            if (registrations.ContainsKey(id))
             {
-                Win32.UnregisterHotKey(IntPtr.Zero, id);
+                if (!Win32.UnregisterHotKey(IntPtr.Zero, id))
+                {
+                    return HotkeyRegistrationStatus.Failed;
+                }
+
+                registrations.Remove(id);
             }
 
-            if (Win32.RegisterHotKey(IntPtr.Zero, id, (uint)hotkey.Modifiers | Win32.MOD_NOREPEAT, (uint)hotkey.KeyCode))
+            // ShareX's configurable repeat limit belongs to the shared caller. Keep native repeat events,
+            // including when the user sets that limit to zero, just as WindowsHotkeyHost did in v22.
+            if (Win32.RegisterHotKey(IntPtr.Zero, id, (uint)hotkey.Modifiers, (uint)hotkey.KeyCode))
             {
                 registrations[id] = hotkey;
                 return HotkeyRegistrationStatus.Registered;
             }
 
-            return System.Runtime.InteropServices.Marshal.GetLastPInvokeError() == Win32.ERROR_HOTKEY_ALREADY_REGISTERED
+            return Marshal.GetLastPInvokeError() == Win32.ERROR_HOTKEY_ALREADY_REGISTERED
                 ? HotkeyRegistrationStatus.InUse
                 : HotkeyRegistrationStatus.Failed;
         }, HotkeyRegistrationStatus.Failed);
     }
 
-    public bool Unregister(int id) => Invoke(() => registrations.Remove(id) && Win32.UnregisterHotKey(IntPtr.Zero, id), false);
+    public bool Unregister(int id) => Invoke(() =>
+    {
+        if (registrations.ContainsKey(id) && Win32.UnregisterHotKey(IntPtr.Zero, id))
+        {
+            registrations.Remove(id);
+            return true;
+        }
+
+        return false;
+    }, false);
 
     public void UnregisterAll()
     {
@@ -107,64 +126,164 @@ public sealed class WindowsHotkeyService : IHotkeyService
             return action();
         }
 
-        TaskCompletionSource<T> completion = new TaskCompletionSource<T>(TaskCreationOptions.RunContinuationsAsynchronously);
-        commands.Enqueue(() =>
-        {
-            try
-            {
-                completion.SetResult(action());
-            }
-            catch (Exception e)
-            {
-                completion.SetException(e);
-            }
-        });
+        Command<T> command = new Command<T>(action, fallback);
 
-        Win32.PostThreadMessage(threadId.Task.Result, Win32.WM_APP, 0, 0);
-        return completion.Task.Wait(TimeSpan.FromSeconds(5)) ? completion.Task.Result : fallback;
+        lock (syncLock)
+        {
+            if (!running)
+            {
+                return fallback;
+            }
+
+            commands.Enqueue(command);
+
+            if (!Win32.PostThreadMessage(threadId.Task.Result, Win32.WM_APP, 0, 0))
+            {
+                command.Cancel();
+            }
+        }
+
+        if (!command.Completion.Task.Wait(TimeSpan.FromSeconds(5)))
+        {
+            // Cancel only work that has not started. Never report failure and register the key later.
+            command.Cancel();
+        }
+
+        return command.Completion.Task.GetAwaiter().GetResult();
     }
 
     private void Run()
     {
-        // Create the message queue before anyone posts to it.
-        Win32.PeekMessage(out _, IntPtr.Zero, 0, 0, 0);
-        threadId.SetResult(Win32.GetCurrentThreadId());
-
-        while (running && Win32.GetMessage(out Win32.MSG message, IntPtr.Zero, 0, 0) > 0)
+        try
         {
-            if (message.message == Win32.WM_HOTKEY)
-            {
-                int id = (int)message.wParam;
+            // Create the message queue before anyone posts to it.
+            Win32.PeekMessage(out _, IntPtr.Zero, 0, 0, 0);
+            threadId.TrySetResult(Win32.GetCurrentThreadId());
 
-                if (registrations.TryGetValue(id, out PlatformHotkey hotkey))
-                {
-                    HotkeyPressed?.Invoke(this, new HotkeyPressedEventArgs(id, hotkey));
-                }
-            }
-            else if (message.message == Win32.WM_APP)
+            while (running && Win32.GetMessage(out Win32.MSG message, IntPtr.Zero, 0, 0) > 0)
             {
-                while (commands.TryDequeue(out Action? command))
+                if (message.message == Win32.WM_HOTKEY)
                 {
-                    command();
+                    int id = (int)message.wParam;
+                    uint data = unchecked((uint)message.lParam);
+
+                    if (registrations.TryGetValue(id, out PlatformHotkey hotkey) && hotkey.KeyCode == (int)(data >> 16) &&
+                        (uint)hotkey.Modifiers == (data & 0xFFFF))
+                    {
+                        RaiseHotkeyPressed(new HotkeyPressedEventArgs(id, hotkey));
+                    }
+                }
+                else if (message.message == Win32.WM_APP)
+                {
+                    while (running)
+                    {
+                        Command command;
+
+                        lock (syncLock)
+                        {
+                            if (!running || commands.Count == 0) break;
+                            command = commands.Dequeue();
+                        }
+
+                        command.Execute();
+                    }
                 }
             }
         }
-
-        foreach (int id in registrations.Keys)
+        catch (Exception exception)
         {
-            Win32.UnregisterHotKey(IntPtr.Zero, id);
+            threadId.TrySetException(exception);
+            Trace.TraceError("Windows hotkey message loop failed: {0}", exception);
+        }
+        finally
+        {
+            StopAcceptingCommands();
+
+            foreach (int id in registrations.Keys)
+            {
+                Win32.UnregisterHotKey(IntPtr.Zero, id);
+            }
+
+            registrations.Clear();
+        }
+    }
+
+    private void RaiseHotkeyPressed(HotkeyPressedEventArgs args)
+    {
+        if (HotkeyPressed is not EventHandler<HotkeyPressedEventArgs> handlers) return;
+
+        foreach (EventHandler<HotkeyPressedEventArgs> handler in handlers.GetInvocationList())
+        {
+            try
+            {
+                handler(this, args);
+            }
+            catch (Exception exception)
+            {
+                // A subscriber must not kill the native thread and leave its callers waiting.
+                Trace.TraceError("Windows hotkey handler failed: {0}", exception);
+            }
+        }
+    }
+
+    private void StopAcceptingCommands()
+    {
+        lock (syncLock)
+        {
+            running = false;
+
+            while (commands.TryDequeue(out Command? command))
+            {
+                command.Cancel();
+            }
         }
     }
 
     public void Dispose()
     {
-        if (!running)
+        StopAcceptingCommands();
+        if (threadId.Task.IsCompletedSuccessfully)
         {
-            return;
+            Win32.PostThreadMessage(threadId.Task.Result, Win32.WM_QUIT, 0, 0);
         }
 
-        running = false;
-        Win32.PostThreadMessage(threadId.Task.Result, Win32.WM_QUIT, 0, 0);
-        thread.Join(TimeSpan.FromSeconds(2));
+        if (Thread.CurrentThread != thread)
+        {
+            thread.Join(TimeSpan.FromSeconds(2));
+        }
+    }
+
+    private abstract class Command
+    {
+        public abstract void Execute();
+        public abstract void Cancel();
+    }
+
+    private sealed class Command<T>(Func<T> action, T fallback) : Command
+    {
+        private int started;
+        public TaskCompletionSource<T> Completion { get; } = new TaskCompletionSource<T>(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        public override void Execute()
+        {
+            if (Interlocked.CompareExchange(ref started, 1, 0) != 0) return;
+
+            try
+            {
+                Completion.TrySetResult(action());
+            }
+            catch (Exception exception)
+            {
+                Completion.TrySetException(exception);
+            }
+        }
+
+        public override void Cancel()
+        {
+            if (Interlocked.CompareExchange(ref started, 1, 0) == 0)
+            {
+                Completion.TrySetResult(fallback);
+            }
+        }
     }
 }
