@@ -8,6 +8,15 @@ The `cross-platform-v2` branch turns ShareX from a Windows application into one 
 - [docs/cross-platform-delegation.md](docs/cross-platform-delegation.md): which agent owns which project, the task tracker and the request log.
 - [docs/cross-platform.md](docs/cross-platform.md): the target architecture and how to build.
 
+## Start of every session
+
+The other agent pushes to the same branch, and a running session does not see its work. At the start of every session (and again before starting a new task):
+
+1. `git pull` on `cross-platform-v2`.
+2. Read the newest entries of the **Status log** at the bottom of [docs/cross-platform-delegation.md](docs/cross-platform-delegation.md), and the **Handoffs**, **Requests** and **Bugs** rows addressed to you. Deal with those before starting new work.
+3. Check the task tables for what is `in progress` (yours to finish) and what you can claim next.
+4. Claim a task (set it to `in progress` and push) before writing code.
+
 ## Branches
 
 - `cross-platform-v2`: all cross-platform work. Both agents commit here.
