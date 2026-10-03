@@ -21,6 +21,7 @@ internal static class Program
         Run("Taskbar COM progress calls (visual sign-off pending)", VerifyTaskbar);
         Run("Hotkey registration, conflicts and callback isolation", VerifyHotkeys);
         Run("Hotkey timeout cancellation and callback disposal", VerifyHotkeyShutdown);
+        Run("Window enumeration and inspector service handoff", VerifyInspector);
         Console.WriteLine($"Verification complete: {failures} failure(s). Visual Windows 10/11 checklist remains separate.");
         return failures == 0 ? 0 : 1;
     }
@@ -367,6 +368,48 @@ internal static class Program
         if (!PostThreadMessageW(threadId.Task.Result, 0x0312, (nuint)id, (nint)data))
         {
             throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
+        }
+    }
+
+    private static void VerifyInspector()
+    {
+        PlatformServices.Initialize(new WindowsPlatformServices());
+        // Off-screen tool window: visible to enumeration without putting a window on the user's desktop.
+        IntPtr window = CreateWindowExW(0x08000080, "STATIC", "ShareX inspector verification", 0x10000000,
+            -32000, -32000, 100, 80, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero);
+        if (window == IntPtr.Zero) throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
+
+        try
+        {
+            Equal(true, PlatformServices.Current.Windows.GetWindows().Any(item => item.Handle == window.ToInt64()));
+            PlatformRectangle client = PlatformServices.Current.WindowManagement.GetDetails(window.ToInt64())!.ClientBounds!.Value;
+            Equal(0, client.X);
+            Equal(0, client.Y);
+            Equal(false, client.IsEmpty);
+            using ShareX.Tools.InspectWindowViewModel viewModel = new();
+            viewModel.SelectWindow(window, true);
+            Equal(true, viewModel.HasSelection);
+            Equal("ShareX inspector verification", viewModel.SelectedTitle);
+            Equal(true, viewModel.CanChangeTopMost);
+            Equal(true, viewModel.CanChangeOpacity);
+            Equal(10, viewModel.Details.Count);
+            viewModel.IsTopMost = true;
+            Equal(true, PlatformServices.Current.WindowManagement.GetDetails(window.ToInt64())!.IsTopMost!.Value);
+            viewModel.Opacity = 50;
+            Equal((byte)128, PlatformServices.Current.WindowManagement.GetDetails(window.ToInt64())!.Opacity!.Value);
+            viewModel.SelectWindow(window, false);
+            Equal(false, viewModel.CanChangeTopMost);
+            Equal(false, viewModel.CanChangeOpacity);
+            DestroyWindow(window);
+            window = IntPtr.Zero;
+            viewModel.RefreshCommand.Execute(null);
+            Equal(false, viewModel.HasSelection);
+            Equal(0, viewModel.Details.Count);
+        }
+        finally
+        {
+            if (window != IntPtr.Zero) DestroyWindow(window);
+            PlatformServices.Shutdown();
         }
     }
 

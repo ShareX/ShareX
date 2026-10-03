@@ -563,6 +563,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                         IsEnabled = entry.IsEnabled
                     };
                     button.Click += (_, _) => execute(entry);
+                    ToolTip.SetTip(button, entry.ToolTip);
+                    ToolTip.SetShowOnDisabled(button, true);
                     itemGrid.Children.Add(button);
                 }
             }
@@ -822,6 +824,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 }
             };
             item.Classes.Add("compact-menu-item");
+            ToolTip.SetTip(item, entry.ToolTip);
+            ToolTip.SetShowOnDisabled(item, true);
             if (entry.BoldWhenChecked)
             {
                 item.Classes.Add("bold-when-checked");

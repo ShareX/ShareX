@@ -28,6 +28,7 @@
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
+using ShareX.Platform;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
@@ -36,8 +37,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Bitmap = SkiaSharp.SKBitmap;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX;
 
@@ -121,10 +120,12 @@ internal sealed class MainMenuBuilder
     private IReadOnlyList<MainMenuEntry> BuildCaptureMenu()
     {
         bool autoHide = !_trayMenu;
+        FeatureSupport windowSupport = PlatformServices.Current.Windows.Support;
         return new List<MainMenuEntry>
         {
             Item(Strings.MainMenuBuilder_Fullscreen, LucideIcons.maximize, () => new CaptureFullscreen().Capture(autoHide)),
-            Parent(Strings.MainMenuBuilder_Window, LucideIcons.app_window, BuildWindowMenu),
+            new MainMenuEntry(Strings.MainMenuBuilder_Window, LucideIcons.app_window, createChildren: BuildWindowMenu,
+                isEnabled: windowSupport.IsSupported, toolTip: windowSupport.Reason),
             Parent(Strings.MainMenuBuilder_Monitor, LucideIcons.monitor, BuildMonitorMenu),
             Item(Strings.MainMenuBuilder_Region, LucideIcons.scan, () => new CaptureRegion().Capture(autoHide)),
             Item(Strings.MainMenuBuilder_LastRegion, LucideIcons.layers, () => new CaptureLastRegion().Capture(autoHide)),
@@ -150,12 +151,12 @@ internal sealed class MainMenuBuilder
 
         try
         {
-            foreach (WindowInfo window in new WindowsList().GetVisibleWindowsList())
+            foreach (PlatformWindow window in PlatformServices.Current.Windows.GetWindows())
             {
-                WindowInfo selectedWindow = window;
-                string title = selectedWindow.Text.Truncate(50, "...");
+                PlatformWindow selectedWindow = window;
+                string title = selectedWindow.Title.Truncate(50, "...");
                 items.Add(Item(title, string.Empty,
-                    () => new CaptureWindow(selectedWindow.Handle).Capture(!_trayMenu),
+                    () => new CaptureWindow(new IntPtr(selectedWindow.Handle)).Capture(!_trayMenu),
                     bitmapIcon: GetWindowIcon(selectedWindow)));
             }
         }
@@ -172,18 +173,17 @@ internal sealed class MainMenuBuilder
         return items;
     }
 
-    private static byte[]? GetWindowIcon(WindowInfo window)
+    private static byte[]? GetWindowIcon(PlatformWindow window)
     {
-        using Icon? icon = window.Icon;
-        if (icon == null)
+        try
         {
+            return PlatformServices.Current.WindowManagement.GetIcon(window.Handle);
+        }
+        catch (Exception e)
+        {
+            DebugHelper.WriteException(e);
             return null;
         }
-
-        using Bitmap bitmap = WindowsImageInterop.FromIcon(icon.Handle);
-        using MemoryStream stream = new();
-        bitmap.Save(stream, ImageFormat.Png);
-        return stream.ToArray();
     }
 
     private IReadOnlyList<MainMenuEntry> BuildMonitorMenu()

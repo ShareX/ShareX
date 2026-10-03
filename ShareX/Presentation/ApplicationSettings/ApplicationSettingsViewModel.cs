@@ -728,8 +728,11 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     {
         InvokeOnMainThread(() =>
         {
-            using Image image = TaskHelpers.GetScreenshot().CaptureActiveMonitor();
-            PrintWindowIntegration.Show(image, Settings.PrintSettings, true, owner);
+            using Image? image = TaskHelpers.GetScreenshot().CaptureActiveMonitor();
+            if (image != null)
+            {
+                PrintWindowIntegration.Show(image, Settings.PrintSettings, true, owner);
+            }
         });
     }
 

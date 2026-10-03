@@ -33,7 +33,7 @@ using System.Threading;
 
 namespace ShareX.Platform.Windows;
 
-/// <summary>Top level windows from EnumWindows, skipping hidden, cloaked (other virtual desktops, suspended UWP) and tool windows.</summary>
+/// <summary>Top level windows from EnumWindows, with v22's visible-window filters (hidden, cloaked, untitled and desktop windows).</summary>
 public sealed unsafe class WindowsWindowService : IWindowService
 {
     private static readonly string[] IgnoredClassNames = ["Progman", "Button"];
@@ -182,7 +182,7 @@ public sealed unsafe class WindowsWindowService : IWindowService
 
     private static PlatformWindow? ReadWindow(IntPtr hwnd)
     {
-        if (!Win32.IsWindowVisible(hwnd) || IsCloaked(hwnd) || (Win32.GetWindowLongPtr(hwnd, Win32.GWL_EXSTYLE) & Win32.WS_EX_TOOLWINDOW) != 0)
+        if (!Win32.IsWindowVisible(hwnd) || IsCloaked(hwnd))
         {
             return null;
         }

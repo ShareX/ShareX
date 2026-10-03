@@ -49,11 +49,8 @@ public partial class MonitorTestWindow : Window
 
     private void OnOpened(object? sender, EventArgs e)
     {
-        Screen? screen = null;
-        if (NativeMethods.GetCursorPos(out POINT cursorPosition))
-        {
-            screen = Screens.ScreenFromPoint(new PixelPoint(cursorPosition.X, cursorPosition.Y));
-        }
+        System.Drawing.Point cursorPosition = CaptureHelpers.GetCursorPosition();
+        Screen? screen = Screens.ScreenFromPoint(new PixelPoint(cursorPosition.X, cursorPosition.Y));
         screen ??= Screens.Primary;
 
         if (screen != null)

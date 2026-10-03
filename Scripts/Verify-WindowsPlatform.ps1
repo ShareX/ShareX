@@ -14,6 +14,7 @@ New-Item -ItemType Directory -Path $verificationPath -Force | Out-Null
 $projectPath = Join-Path $verificationPath 'WindowsVerification.csproj'
 $sourcePath = [System.Security.SecurityElement]::Escape((Join-Path $PSScriptRoot 'WindowsVerification/Program.cs'))
 $platformPath = [System.Security.SecurityElement]::Escape((Join-Path $repositoryPath 'ShareX.Platform.Windows/ShareX.Platform.Windows.csproj'))
+$toolsPath = [System.Security.SecurityElement]::Escape((Join-Path $repositoryPath 'ShareX.Tools/ShareX.Tools.csproj'))
 
 # Keep the throwaway project and its build outputs out of the solution and source tree.
 @"
@@ -27,6 +28,7 @@ $platformPath = [System.Security.SecurityElement]::Escape((Join-Path $repository
   <ItemGroup>
     <Compile Include="$sourcePath" />
     <ProjectReference Include="$platformPath" />
+    <ProjectReference Include="$toolsPath" />
   </ItemGroup>
 </Project>
 "@ | Set-Content -LiteralPath $projectPath -Encoding utf8

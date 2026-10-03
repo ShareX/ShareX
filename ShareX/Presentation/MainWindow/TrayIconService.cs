@@ -160,7 +160,9 @@ internal sealed class DesktopTrayIconService : ITrayIconService
         {
             if (!entry.IsVisible) continue;
             if (entry.IsSeparator) { menu.Items.Add(new Avalonia.Controls.NativeMenuItemSeparator()); continue; }
-            Avalonia.Controls.NativeMenuItem item = new(entry.Header) { IsEnabled = entry.IsEnabled, IsChecked = entry.IsChecked };
+            // Native tray menus have no tooltip surface, so include the unavailable reason in their label.
+            string header = !entry.IsEnabled && !string.IsNullOrEmpty(entry.ToolTip) ? $"{entry.Header} ({entry.ToolTip})" : entry.Header;
+            Avalonia.Controls.NativeMenuItem item = new(header) { IsEnabled = entry.IsEnabled, IsChecked = entry.IsChecked };
             if (entry.CreateChildren != null)
             {
                 item.Menu = new Avalonia.Controls.NativeMenu();

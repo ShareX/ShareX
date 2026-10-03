@@ -30,6 +30,7 @@ using Avalonia.Interactivity;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Platform;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -134,7 +135,7 @@ public partial class DownloaderWindow : Window
     {
         if (Status != DownloaderWindowStatus.DownloadCompleted) return;
 
-        if (VerifyInstallerSignature && !AuthenticodeSignatureVerifier.IsTrusted(DownloadLocation))
+        if (VerifyInstallerSignature && !PlatformServices.Current.CodeSignature.IsTrusted(DownloadLocation))
         {
             AvaloniaDialogResult result = MessageBox.Show(
                 this,

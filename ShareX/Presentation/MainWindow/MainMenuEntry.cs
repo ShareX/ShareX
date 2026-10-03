@@ -54,6 +54,7 @@ internal sealed class MainMenuEntry
     public Func<IReadOnlyList<MainMenuEntry>>? CreateChildren { get; }
     public Func<IReadOnlyList<MainMenuCategory>>? CreateCategories { get; }
     public string? Id { get; }
+    public string? ToolTip { get; }
     public bool IsSeparator { get; }
     public bool IsEnabled { get; }
     public bool IsVisible { get; }
@@ -79,7 +80,8 @@ internal sealed class MainMenuEntry
         Func<string>? createHeader = null,
         Func<string>? createAccentText = null,
         bool boldWhenChecked = false,
-        string? id = null)
+        string? id = null,
+        string? toolTip = null)
     {
         _header = header;
         _createHeader = createHeader;
@@ -94,6 +96,7 @@ internal sealed class MainMenuEntry
         CreateChildren = createChildren;
         CreateCategories = createCategories;
         Id = id;
+        ToolTip = toolTip;
         IsEnabled = isEnabled;
         IsVisible = isVisible;
         IsChecked = isChecked;
@@ -119,7 +122,8 @@ internal sealed class MainMenuEntry
         Func<string>? createHeader = null,
         Func<string>? createAccentText = null,
         bool boldWhenChecked = false,
-        string? id = null)
+        string? id = null,
+        string? toolTip = null)
     {
         _header = header;
         _createHeader = createHeader;
@@ -130,6 +134,7 @@ internal sealed class MainMenuEntry
         CreateChildren = createChildren;
         CreateCategories = createCategories;
         Id = id;
+        ToolTip = toolTip;
         IsEnabled = isEnabled;
         IsVisible = isVisible;
         IsChecked = isChecked;

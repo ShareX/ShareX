@@ -85,7 +85,8 @@ public sealed class WindowsWindowManagementService : IWindowManagementService
             path,
             processId != 0 ? (int)processId : null,
             WindowsWindowService.GetBounds(hwnd),
-            WindowsWindowService.GetClientBounds(hwnd),
+            // Inspect Window has always shown GetClientRect coordinates relative to the client area.
+            Win32.GetClientRect(hwnd, out Win32.RECT clientRect) ? clientRect.ToRectangle() : null,
             SplitFlags(style),
             SplitFlags(exStyle),
             (exStyle & WindowStyles.WS_EX_TOPMOST) != 0,

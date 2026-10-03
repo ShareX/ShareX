@@ -129,6 +129,7 @@
                             <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
                                 <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.InspectWindowWindow_Window_settings}"/>
                                 <ToggleSwitch Grid.Row="1"
+                                              IsEnabled="{Binding CanChangeTopMost}"
                                               IsChecked="{Binding IsTopMost}"
                                               OnContent="{x:Static localization:Strings.InspectWindowWindow_Always_on_top}"
                                               OffContent="{x:Static localization:Strings.InspectWindowWindow_Always_on_top}"
@@ -141,6 +142,7 @@
                                                    FontWeight="Normal"/>
                                     </Grid>
                                     <Slider Grid.Row="1"
+                                            IsEnabled="{Binding CanChangeOpacity}"
                                             Minimum="10"
                                             Maximum="100"
                                             TickFrequency="10"
