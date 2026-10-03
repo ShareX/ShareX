@@ -25,10 +25,10 @@ This document describes the **target** architecture. At the branch point (`devel
 | --- | --- | --- | --- | --- |
 | `IPathService` | Known folders | `~/Library` | XDG base directories | XDG base directories |
 | `IStartupService` | Run registry key | LaunchAgent plist | XDG autostart `.desktop` | XDG autostart `.desktop` |
-| `IClipboardService` | Win32 clipboard | NSPasteboard | xclip or xsel | wl-clipboard |
+| `IClipboardService` | Win32 clipboard | NSPasteboard | xclip or xsel | wl-clipboard (also used for copying, since Wayland apps cannot read the XWayland clipboard) |
 | `IScreenCaptureService` | GDI, HDR tone mapping, window and transparent window capture | `screencapture` (Screen Recording permission) | Xlib | grim on wlroots, otherwise the xdg-desktop-portal Screenshot interface |
-| `IScreenRecordingService` | FFmpeg gdigrab, ddagrab, DirectShow | FFmpeg avfoundation | FFmpeg x11grab | Not yet (portal ScreenCast) |
-| `IHotkeyService` | RegisterHotKey | Carbon hot keys | XGrabKey | Portal GlobalShortcuts |
+| `IScreenRecordingService` | FFmpeg gdigrab, ddagrab, DirectShow | FFmpeg avfoundation | FFmpeg x11grab | wf-recorder into FFmpeg on Hyprland and sway; not yet on GNOME and KDE (portal ScreenCast) |
+| `IHotkeyService` | RegisterHotKey | Carbon hot keys | XGrabKey | Portal GlobalShortcuts (needs the `sharex.desktop` entry; Hyprland users bind the keys) |
 | `IWindowService` | Win32 windows and child controls, cursor, overlays | CGWindowList | EWMH, XShape | Hyprland and sway IPC only |
 | `IWindowManagementService` | Inspect, top most, opacity, borderless | Not yet | EWMH | Hyprland and sway IPC only |
 | `IInputService` | SendInput, WM_VSCROLL, low-level mouse hook | Quartz events (Accessibility permission) | XTEST | Hyprland key shortcuts only |
@@ -39,6 +39,10 @@ This document describes the **target** architecture. At the branch point (`devel
 | `ICredentialService` | Credential Manager | Keychain | Secret Service (secret-tool) | Same as X11 |
 | `ISecretProtectionService` | DPAPI | AES-GCM with an owner-only key file | AES-GCM with an owner-only key file | Same as X11 |
 | `IThumbnailService` | Explorer shell thumbnails | Not yet | freedesktop.org thumbnail cache | Same as X11 |
+| `IPrintService` | System.Drawing.Printing and the print dialog | CUPS `lp` | CUPS `lp` (no printer dialog) | Same as X11 |
+| `ISoundService` | PlaySound | afplay | pw-play, paplay or aplay | Same as X11 |
+| `ITaskbarService` | ITaskbarList3 progress | Not yet | Unity launcher API (KDE, Dash to Dock, Plank) | Same as X11 |
+| `ISystemGraphicsService` | Not yet (W4: DirectWrite emoji, Win32 cursors) | Not supported | Cursor theme via libXcursor | Same as X11 |
 | `ISystemInfoService`, `ISystemPreferencesService` | OS name, elevation, wheel lines, small icon size, task bar theme | `sw_vers`, defaults | os-release, defaults | Same as X11 |
 
 ## Start up
@@ -59,3 +63,18 @@ dotnet test ShareX.Platform.Tests
 ```
 
 Pass `-p:Platform=x64` (or `ARM64`); a plain `dotnet build ShareX.sln` uses `Any CPU`, which the projects do not configure. Building on Linux and macOS needs `Directory.Build.props` (capital B) with `EnableWindowsTargeting` set off Windows; that is task M0.
+
+## Installing on Linux
+
+```sh
+Scripts/install-linux.sh              # build a self-contained copy and install it to ~/.local
+Scripts/install-linux.sh --uninstall  # remove it; settings and screenshots in ~/Documents/ShareX stay
+```
+
+The script installs `~/.local/lib/sharex/app`, the `sharex` command and the `sharex.desktop` entry with "Capture region", "Capture full screen" and "Capture active window" actions. The desktop entry is required: xdg-desktop-portal identifies ShareX by it (application id `sharex`) before it grants global hotkeys.
+
+Recommended packages: FFmpeg (recording), wl-clipboard (Wayland) or xclip (X11), grim and wf-recorder (Hyprland, sway), libnotify, libsecret, Tesseract with language data (OCR), CUPS (printing). ShareX names the missing package and the install command for the distribution where a feature needs one.
+
+### Hyprland
+
+Hyprland's GlobalShortcuts portal registers ShareX's hotkeys but does not assign keys to them. `hyprctl globalshortcuts` lists them (`sharex:sharex-1`, ...); bind the ones you want, for example `bind = CTRL, Print, global, sharex:sharex-1`, or in a Lua configuration bind the key to `hl.dsp.global("sharex:sharex-1")`. With `xwayland:force_zero_scaling`, ShareX's windows use device pixels; the platform layer converts between them and Hyprland's layout coordinates.
