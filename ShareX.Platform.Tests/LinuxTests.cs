@@ -786,3 +786,24 @@ public class XcursorGraphicsTests
         }
     }
 }
+
+public class GrimRegionTests
+{
+    private static readonly ScreenInfo[] Screens =
+    [
+        new ScreenInfo("DP-1", "DP-1", new PlatformRectangle(0, 0, 3072, 1728), new PlatformRectangle(0, 0, 3072, 1728), true, 1.25),
+        new ScreenInfo("HDMI-A-1", "HDMI-A-1", new PlatformRectangle(3072, 0, 1920, 1080), new PlatformRectangle(3072, 0, 1920, 1080), false, 1)
+    ];
+
+    [Fact]
+    public void PartlyVisibleWindowIsClipped() =>
+        Assert.Equal(new PlatformRectangle(0, 100, 300, 200), LinuxScreenCaptureService.ClipToScreens(new PlatformRectangle(-100, 100, 400, 200), Screens));
+
+    [Fact]
+    public void WindowOffEveryScreenIsNothingToCapture() =>
+        Assert.Throws<ArgumentException>(() => LinuxScreenCaptureService.ClipToScreens(new PlatformRectangle(-25600, -25600, 640, 640), Screens));
+
+    [Fact]
+    public void UnknownLayoutPassesThrough() =>
+        Assert.Equal(new PlatformRectangle(-5, -5, 10, 10), LinuxScreenCaptureService.ClipToScreens(new PlatformRectangle(-5, -5, 10, 10), []));
+}

@@ -200,9 +200,9 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
         switch (request.Mode)
         {
             case ScreenCaptureMode.Region:
-                bounds = request.Region;
+                bounds = ClipToScreens(request.Region, GetScreens());
                 arguments.Add("-g");
-                arguments.Add(FormatGeometry(request.Region));
+                arguments.Add(FormatGeometry(bounds));
                 break;
             case ScreenCaptureMode.Screen when request.ScreenId != null:
                 arguments.Add("-o");
@@ -294,6 +294,28 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
         string[] size = parts[1].Split('x');
         return new PlatformRectangle(int.Parse(position[0], CultureInfo.InvariantCulture), int.Parse(position[1], CultureInfo.InvariantCulture),
             int.Parse(size[0], CultureInfo.InvariantCulture), int.Parse(size[1], CultureInfo.InvariantCulture));
+    }
+
+    /// <summary>
+    /// The part of <paramref name="region"/> on the screens, so a window partly off screen captures its visible part. Throws
+    /// ArgumentException, which callers treat as "nothing to capture", when it is on no screen. Unknown layouts pass through.
+    /// </summary>
+    internal static PlatformRectangle ClipToScreens(PlatformRectangle region, IReadOnlyList<ScreenInfo> screens)
+    {
+        if (screens.Count == 0)
+        {
+            return region;
+        }
+
+        PlatformRectangle desktop = screens.Select(s => s.Bounds).Aggregate((a, b) => a.Union(b));
+        PlatformRectangle visible = region.Intersect(desktop);
+
+        if (visible.IsEmpty)
+        {
+            throw new ArgumentException("The area is not on any screen.", nameof(region));
+        }
+
+        return visible;
     }
 
     internal static IReadOnlyList<ScreenInfo> ParseHyprlandMonitors(JsonElement root)
