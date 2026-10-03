@@ -52,6 +52,7 @@ public sealed class WindowsServiceTests
     [WindowsFact] public void HotkeyRegistrationConflictsAndCallbackIsolation() => RunSta(VerifyHotkeys);
     [WindowsFact] public void HotkeyTimeoutCancellationAndCallbackDisposal() => RunSta(VerifyHotkeyShutdown);
     [WindowsFact] public void LargeCursorDimensionsScalingAndGdiCleanup() => RunSta(VerifyCursorCapture);
+    [WindowsFact] public void WindowAttentionPreservesFocusAndRejectsInvalidRequests() => RunSta(VerifyWindowAttention);
 
     private static void RunSta(Action action)
     {
@@ -63,6 +64,33 @@ public sealed class WindowsServiceTests
         if (failure != null) System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(failure).Throw();
     }
     private static void Equal<T>(T expected, T actual) => Assert.Equal(expected, actual);
+
+    private static void VerifyWindowAttention()
+    {
+        IWindowService service = new WindowsWindowService();
+        Assert.False(service.RequestAttention(0, 10));
+        Assert.False(service.RequestAttention(-1, 10));
+
+        // No WS_VISIBLE: the fixture has no taskbar button and is never shown or activated.
+        IntPtr window = CreateWindowExW(0, "STATIC", "ShareX attention verification", 0, 0, 0, 1, 1,
+            IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero);
+        Assert.NotEqual(IntPtr.Zero, window);
+
+        try
+        {
+            Assert.False(service.RequestAttention(window.ToInt64(), 0));
+            Assert.False(service.RequestAttention(window.ToInt64(), -1));
+            IntPtr foreground = GetForegroundWindow();
+            Assert.True(service.RequestAttention(window.ToInt64(), 10));
+            Assert.Equal(foreground, GetForegroundWindow());
+        }
+        finally
+        {
+            Assert.True(DestroyWindow(window));
+        }
+
+        Assert.False(service.RequestAttention(window.ToInt64(), 10));
+    }
 
     private static void VerifyPolicies()
     {
@@ -492,6 +520,9 @@ public sealed class WindowsServiceTests
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool DestroyWindow(IntPtr window);
+
+    [DllImport("user32.dll")]
+    private static extern IntPtr GetForegroundWindow();
 
     [DllImport("user32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]

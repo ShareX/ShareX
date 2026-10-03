@@ -60,6 +60,8 @@ internal static unsafe partial class Win32
     public const long WS_EX_TOOLWINDOW = 0x00000080;
     public const int DWMWA_EXTENDED_FRAME_BOUNDS = 9;
     public const int DWMWA_CLOAKED = 14;
+    public const uint FLASHW_ALL = 3;
+    public const uint FLASHW_TIMERNOFG = 12;
 
     public static readonly IntPtr HWND_MESSAGE = new IntPtr(-3);
 
@@ -75,6 +77,16 @@ internal static unsafe partial class Win32
     public struct POINT
     {
         public int X, Y;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct FLASHWINFO
+    {
+        public uint cbSize;
+        public IntPtr hwnd;
+        public uint dwFlags;
+        public uint uCount;
+        public uint dwTimeout;
     }
 
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
@@ -314,6 +326,10 @@ internal static unsafe partial class Win32
 
     [LibraryImport("user32.dll")]
     public static partial uint GetWindowThreadProcessId(IntPtr hwnd, out uint processId);
+
+    [LibraryImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool FlashWindowEx(ref FLASHWINFO info);
 
     [LibraryImport("user32.dll")]
     public static partial IntPtr GetForegroundWindow();

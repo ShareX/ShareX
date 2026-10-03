@@ -74,6 +74,30 @@ public sealed unsafe class WindowsWindowService : IWindowService
 
     public void ReleaseMouseCapture() => Win32.ReleaseCapture();
 
+    public bool RequestAttention(long windowHandle, int count)
+    {
+        IntPtr hwnd = (IntPtr)windowHandle;
+
+        if (hwnd == IntPtr.Zero || count <= 0 ||
+            Win32.GetWindowThreadProcessId(hwnd, out uint processId) == 0 || processId != (uint)Environment.ProcessId)
+        {
+            return false;
+        }
+
+        Win32.FLASHWINFO info = new()
+        {
+            cbSize = (uint)sizeof(Win32.FLASHWINFO),
+            hwnd = hwnd,
+            dwFlags = Win32.FLASHW_ALL | Win32.FLASHW_TIMERNOFG,
+            uCount = (uint)count,
+            dwTimeout = 0
+        };
+
+        // FlashWindowEx returns the previous caption state, not whether the request succeeded.
+        Win32.FlashWindowEx(ref info);
+        return true;
+    }
+
     public bool ConfineCursor(long windowHandle)
     {
         if (!Win32.GetWindowRect((IntPtr)windowHandle, out Win32.RECT rect) || rect.Right <= rect.Left || rect.Bottom <= rect.Top)

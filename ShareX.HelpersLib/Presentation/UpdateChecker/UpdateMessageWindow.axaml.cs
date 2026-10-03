@@ -30,6 +30,7 @@ using Avalonia.Interactivity;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Platform;
 using System;
 using System.Text;
 using System.Threading.Tasks;
@@ -160,7 +161,7 @@ public partial class UpdateMessageWindow : Window
 
         WindowState = Avalonia.Controls.WindowState.Minimized;
         IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-        if (handle != IntPtr.Zero) NativeMethods.FlashWindowEx(handle, 10);
+        if (handle != IntPtr.Zero) PlatformServices.Current.Windows.RequestAttention(handle.ToInt64(), 10);
     }
 
     private void OnViewChangelogClick(object? sender, RoutedEventArgs e) => URLHelpers.OpenURL(Links.Changelog);
