@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>Автоматически разворачивать меню захвата</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>Системный трей не предоставляет события щелчка средней кнопкой мыши.</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>Игнорировать эмодзи при URL-кодировании</value>
   </data>

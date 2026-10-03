@@ -1577,6 +1577,15 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("ApplicationSettingsWindow_OnTrayIconMiddleClickLabel", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to The desktop tray does not expose middle-click events..
+        /// </summary>
+        public static string ApplicationSettingsWindow_TrayMiddleClickUnavailable {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_TrayMiddleClickUnavailable", resourceCulture);
+            }
+        }
         public static string ApplicationSettingsWindow_EditQuickTaskMenu {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_EditQuickTaskMenu", resourceCulture);

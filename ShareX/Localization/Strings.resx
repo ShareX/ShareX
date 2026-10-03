@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>Automatically expand the capture menu</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>The desktop tray does not expose middle-click events.</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>Ignore emoji when URL encoding</value>
   </data>

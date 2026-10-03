@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>自動展開擷取選單</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>桌面系統匣不提供滑鼠中鍵點擊事件。</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>URL 編碼時忽略表情符號</value>
   </data>

@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>Tự động mở rộng menu chụp</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>Khay hệ thống không cung cấp sự kiện nhấp chuột giữa.</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>Bỏ qua biểu tượng cảm xúc khi mã hóa URL</value>
   </data>

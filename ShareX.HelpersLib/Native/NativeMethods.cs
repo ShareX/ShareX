@@ -30,19 +30,8 @@ namespace ShareX.HelpersLib
 {
     public static partial class NativeMethods
     {
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool DestroyIcon(IntPtr hIcon);
-
-        [DllImport("user32.dll")]
-        public static extern int GetSystemMetrics(SystemMetric smIndex);
-
         [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
         public static extern bool CreateProcess(string lpApplicationName, string lpCommandLine, ref SECURITY_ATTRIBUTES lpProcessAttributes, ref SECURITY_ATTRIBUTES lpThreadAttributes,
             bool bInheritHandles, uint dwCreationFlags, IntPtr lpEnvironment, string lpCurrentDirectory, [In] ref STARTUPINFO lpStartupInfo, out PROCESS_INFORMATION lpProcessInformation);
-
-        [DllImport("kernel32.dll")]
-        public static extern IntPtr GetModuleHandle(string lpModuleName);
-
     }
 }

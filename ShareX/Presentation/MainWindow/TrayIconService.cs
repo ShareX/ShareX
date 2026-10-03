@@ -27,9 +27,12 @@
 
 using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
+using ShareX.Platform;
+using SkiaSharp;
 using System;
 using System.IO;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 
 namespace ShareX;
 
@@ -37,6 +40,7 @@ internal interface ITrayIconService : IDisposable
 {
     event Action? RightButtonDown;
     event Action? RightButtonUp;
+    event Action? CloseRequested;
 
     bool Visible { get; set; }
     string ToolTipText { get; set; }
@@ -47,7 +51,7 @@ internal interface ITrayIconService : IDisposable
 /// <summary>Desktop tray adapter; Windows retains its additional mouse actions.</summary>
 internal sealed class DesktopTrayIconService : ITrayIconService
 {
-    private readonly WindowsTrayIcon? _windowsIcon;
+    private readonly ITraySession? _nativeIcon;
     private readonly Avalonia.Controls.TrayIcon? _avaloniaIcon;
     private readonly IDisposable? _avaloniaIconRegistration;
     private readonly Avalonia.Threading.DispatcherTimer _singleClickTimer;
@@ -57,31 +61,45 @@ internal sealed class DesktopTrayIconService : ITrayIconService
     private bool _disposed;
     public event Action? RightButtonDown;
     public event Action? RightButtonUp;
+    public event Action? CloseRequested;
 
     public bool Visible
     {
-        get => _windowsIcon?.Visible ?? _avaloniaIcon!.IsVisible;
-        set { if (_windowsIcon != null) _windowsIcon.Visible = value; else _avaloniaIcon!.IsVisible = value; }
+        get => !_disposed && (_nativeIcon?.Visible ?? _avaloniaIcon!.IsVisible);
+        set
+        {
+            // MainWindow clears visibility during its later closing callback, after host disposal.
+            if (_disposed) return;
+            if (_nativeIcon != null) _nativeIcon.Visible = value; else _avaloniaIcon!.IsVisible = value;
+        }
     }
     public string ToolTipText
     {
-        get => _windowsIcon?.ToolTipText ?? _avaloniaIcon!.ToolTipText ?? string.Empty;
-        set { if (_windowsIcon != null) _windowsIcon.ToolTipText = value; else _avaloniaIcon!.ToolTipText = value; }
+        get => _nativeIcon?.ToolTipText ?? _avaloniaIcon!.ToolTipText ?? string.Empty;
+        set
+        {
+            if (_disposed) return;
+            if (_nativeIcon != null) _nativeIcon.ToolTipText = value; else _avaloniaIcon!.ToolTipText = value;
+        }
     }
 
-    public DesktopTrayIconService(IHotkeyHost host, byte[] icon, string text, bool visible)
+    public DesktopTrayIconService(byte[] icon, string text, bool visible)
     {
+        ITrayService tray = PlatformServices.Current.Tray;
+        _nativeIcon = tray.Support.IsSupported
+            ? tray.CreateSession(exception => Avalonia.Threading.Dispatcher.UIThread.Post(ExceptionDispatchInfo.Capture(exception).Throw))
+            : null;
         _singleClickTimer = new Avalonia.Threading.DispatcherTimer
         {
-            Interval = OperatingSystem.IsWindows() ? WindowsTrayIcon.DoubleClickTime :
+            Interval = _nativeIcon?.DoubleClickTime ??
                 Avalonia.Application.Current?.PlatformSettings?.GetDoubleTapTime(Avalonia.Input.PointerType.Mouse) ?? TimeSpan.FromMilliseconds(500)
         };
         _singleClickTimer.Tick += OnSingleClickTimerTick;
-        if (OperatingSystem.IsWindows())
+        if (_nativeIcon != null)
         {
-            _windowsIcon = new WindowsTrayIcon(host);
-            _windowsIcon.MouseDown += OnMouseDown;
-            _windowsIcon.MouseUp += OnMouseUp;
+            _nativeIcon.MouseDown += OnMouseDown;
+            _nativeIcon.MouseUp += OnMouseUp;
+            _nativeIcon.CloseRequested += OnCloseRequested;
         }
         else
         {
@@ -94,15 +112,31 @@ internal sealed class DesktopTrayIconService : ITrayIconService
             _menuRefreshTimer.Tick += (_, _) => RefreshNativeMenu();
             _menuRefreshTimer.Start();
         }
-        ToolTipText = text;
-        SetIcon(icon);
-        if (_avaloniaIcon != null) _avaloniaIconRegistration = DesktopServices.RegisterTrayIcon(_avaloniaIcon);
-        Visible = visible;
+        try
+        {
+            ToolTipText = text;
+            SetIcon(icon);
+            if (_avaloniaIcon != null) _avaloniaIconRegistration = DesktopServices.RegisterTrayIcon(_avaloniaIcon);
+            Visible = visible;
+        }
+        catch
+        {
+            Dispose();
+            throw;
+        }
     }
 
     public void SetIcon(byte[] bytes)
     {
-        if (_windowsIcon != null) _windowsIcon.SetIcon(bytes);
+        if (_disposed) return;
+        if (_nativeIcon != null)
+        {
+            // Keep the existing Skia decode/PNG normalization, with native resource ownership in the platform.
+            using SKBitmap bitmap = SkiaImageHelpers.ByteArrayToBitmap(bytes);
+            using MemoryStream stream = new();
+            bitmap.Save(stream, SKEncodedImageFormat.Png);
+            _nativeIcon.SetIcon(stream.ToArray());
+        }
         else
         {
             using MemoryStream stream = new(bytes, writable: false);
@@ -110,17 +144,19 @@ internal sealed class DesktopTrayIconService : ITrayIconService
         }
     }
 
-    private void OnMouseDown(InputMouseButton button)
-    {
-        if (button == InputMouseButton.Right) RightButtonDown?.Invoke();
-    }
-    private void OnAvaloniaClick(object? sender, EventArgs e) => OnMouseUp(InputMouseButton.Left);
+    private void OnCloseRequested() => CloseRequested?.Invoke();
 
-    private async void OnMouseUp(InputMouseButton button)
+    private void OnMouseDown(TrayMouseButton button)
+    {
+        if (button == TrayMouseButton.Right) RightButtonDown?.Invoke();
+    }
+    private void OnAvaloniaClick(object? sender, EventArgs e) => OnMouseUp(TrayMouseButton.Left);
+
+    private async void OnMouseUp(TrayMouseButton button)
     {
         switch (button)
         {
-            case InputMouseButton.Left:
+            case TrayMouseButton.Left:
                 if (ApplicationState.Settings.TrayLeftDoubleClickAction == HotkeyType.None)
                 {
                     await TaskHelpers.ExecuteJob(ApplicationState.Settings.TrayLeftClickAction);
@@ -141,10 +177,13 @@ internal sealed class DesktopTrayIconService : ITrayIconService
                     }
                 }
                 break;
-            case InputMouseButton.Middle:
-                await TaskHelpers.ExecuteJob(ApplicationState.Settings.TrayMiddleClickAction);
+            case TrayMouseButton.Middle:
+                if (PlatformServices.Current.Tray.MiddleClickSupport.IsSupported)
+                {
+                    await TaskHelpers.ExecuteJob(ApplicationState.Settings.TrayMiddleClickAction);
+                }
                 break;
-            case InputMouseButton.Right:
+            case TrayMouseButton.Right:
                 RightButtonUp?.Invoke();
                 break;
         }
@@ -276,16 +315,18 @@ internal sealed class DesktopTrayIconService : ITrayIconService
         _singleClickTimer.Stop();
         _singleClickTimer.Tick -= OnSingleClickTimerTick;
         _menuRefreshTimer?.Stop();
-        if (_windowsIcon != null)
+        if (_nativeIcon != null)
         {
-            _windowsIcon.MouseDown -= OnMouseDown;
-            _windowsIcon.MouseUp -= OnMouseUp;
-            _windowsIcon.Dispose();
+            _nativeIcon.MouseDown -= OnMouseDown;
+            _nativeIcon.MouseUp -= OnMouseUp;
+            _nativeIcon.CloseRequested -= OnCloseRequested;
+            _nativeIcon.Dispose();
         }
         if (_avaloniaIcon != null)
         {
             _avaloniaIcon.Clicked -= OnAvaloniaClick;
             _avaloniaIconRegistration?.Dispose();
         }
+        CloseRequested = null;
     }
 }

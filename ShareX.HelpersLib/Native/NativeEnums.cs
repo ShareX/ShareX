@@ -27,25 +27,6 @@ using System;
 
 namespace ShareX.HelpersLib
 {
-    public enum SystemMetric
-    {
-        SM_CXSMICON = 49,
-        SM_CYSMICON = 50
-    }
-
-    public enum WindowsMessages : uint
-    {
-        CLOSE = 0x0010
-    }
-
-    [Flags]
-    public enum WindowStyles : uint
-    {
-        WS_POPUP = 0x80000000,
-        WS_EX_TOOLWINDOW = 0x00000080,
-        WS_EX_NOACTIVATE = 0x08000000
-    }
-
     [Flags]
     public enum Modifiers
     {

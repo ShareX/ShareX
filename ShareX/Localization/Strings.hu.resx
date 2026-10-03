@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>A rögzítés menü automatikus kibontása</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>A rendszertálca nem biztosít eseményeket a középső egérgombbal történő kattintásokhoz.</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>Emojik figyelmen kívül hagyása URL-kódoláskor</value>
   </data>

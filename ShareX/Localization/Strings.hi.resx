@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>कैप्चर मेनू स्वतः विस्तृत करें</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>डेस्कटॉप की सिस्टम ट्रे मध्य माउस बटन के क्लिक इवेंट उपलब्ध नहीं कराती है।</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>URL एन्कोडिंग में इमोजी अनदेखा करें</value>
   </data>

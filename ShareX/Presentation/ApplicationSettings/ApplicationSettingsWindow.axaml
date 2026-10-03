@@ -183,10 +183,12 @@
                                         <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_OnTrayIconLeftClickLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding HotkeyTypeOptions}" SelectedItem="{Binding SelectedTrayLeftClickAction, Mode=TwoWay}"/>
                                     </Grid>
-                                    <Grid ColumnDefinitions="220,*" ColumnSpacing="8">
-                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_OnTrayIconMiddleClickLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
-                                        <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding HotkeyTypeOptions}" SelectedItem="{Binding SelectedTrayMiddleClickAction, Mode=TwoWay}"/>
-                                    </Grid>
+                                    <Border ToolTip.Tip="{Binding TrayMiddleClickReason}">
+                                        <Grid ColumnDefinitions="220,*" ColumnSpacing="8" IsEnabled="{Binding TrayMiddleClickSupported}">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_OnTrayIconMiddleClickLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                            <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding HotkeyTypeOptions}" SelectedItem="{Binding SelectedTrayMiddleClickAction, Mode=TwoWay}"/>
+                                        </Grid>
+                                    </Border>
                                     <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_EditQuickTaskMenu}" Click="OnEditQuickTaskMenuClick"/>
                                 </StackPanel>
                             </Border>

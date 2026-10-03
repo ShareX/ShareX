@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>توسيع قائمة الالتقاط تلقائياً</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>لا تتيح علبة النظام في سطح المكتب أحداث النقر بالزر الأوسط.</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>تجاهل الرموز التعبيرية عند ترميز URL</value>
   </data>

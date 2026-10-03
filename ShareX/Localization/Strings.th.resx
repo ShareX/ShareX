@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>โดยอัตโนมัติ ขยาย จับภาพ เมนู</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>ถาดระบบบนเดสก์ท็อปไม่รองรับเหตุการณ์คลิกปุ่มเมาส์กลาง</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>ละเว้นอีโมจิเมื่อเข้ารหัส URL</value>
   </data>

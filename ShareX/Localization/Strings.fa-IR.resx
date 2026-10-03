@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>باز کردن خودکار منوی تصویربرداری</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>سینی سیستم رویدادهای کلیک با دکمهٔ میانی را ارائه نمی‌کند.</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>نادیده گرفتن ایموجی‌ها هنگام کدگذاری URL</value>
   </data>

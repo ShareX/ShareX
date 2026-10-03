@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>הרחב אוטומטית את תפריט הלכידה</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>מגש המערכת אינו מספק אירועי לחיצה באמצעות הכפתור האמצעי.</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>התעלם מאימוג׳י בעת קידוד URL</value>
   </data>

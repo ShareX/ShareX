@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>캡처 메뉴 자동 확장</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>데스크톱 시스템 트레이는 마우스 가운데 버튼 클릭 이벤트를 제공하지 않습니다.</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>URL 인코딩 시 이모지 무시</value>
   </data>

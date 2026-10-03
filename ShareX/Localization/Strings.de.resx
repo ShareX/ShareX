@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>Aufnahmemenü automatisch erweitern</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>Der Infobereich des Desktops stellt keine Ereignisse für Klicks mit der mittleren Maustaste bereit.</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>Emojis bei der URL-Kodierung ignorieren</value>
   </data>

@@ -67,12 +67,8 @@ internal static class PlatformBootstrap
     }
 
     /// <summary>
-    /// The application's message host. Windows keeps its hidden window for the notification area icon and session end messages;
-    /// elsewhere Avalonia's TrayIcon needs no host window.
+    /// The application lifetime host. Native tray and session receivers belong to their platform services;
+    /// hotkeys use the separate platform hotkey service.
     /// </summary>
-    /// <remarks>Migration debt (J3, R15): goes away when the Windows tray and session messages move into ShareX.Platform.Windows.</remarks>
-    public static IHotkeyHost CreateApplicationHost()
-    {
-        return OperatingSystem.IsWindows() ? new WindowsHotkeyHost() : new WindowlessHotkeyHost();
-    }
+    public static IHotkeyHost CreateApplicationHost() => new WindowlessHotkeyHost();
 }

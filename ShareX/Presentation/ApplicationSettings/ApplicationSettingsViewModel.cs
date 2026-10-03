@@ -325,6 +325,9 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         set { if (value != null) SetSetting(Settings.TrayMiddleClickAction, value.Value, x => Settings.TrayMiddleClickAction = x); }
     }
 
+    public bool TrayMiddleClickSupported => PlatformServices.Current.Tray.MiddleClickSupport.IsSupported;
+    public string? TrayMiddleClickReason => TrayMiddleClickSupported ? null : Strings.ApplicationSettingsWindow_TrayMiddleClickUnavailable;
+
     public bool AutoCheckUpdate
     {
         get => Settings.AutoCheckUpdate;

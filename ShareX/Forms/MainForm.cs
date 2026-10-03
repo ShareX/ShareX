@@ -54,7 +54,8 @@ internal sealed class MainForm
         _session.SessionEnding += OnSessionEnding;
 
         ShareXResources.UseWhiteIcon = ApplicationState.Settings.UseWhiteShareXIcon;
-        TrayIconService = new DesktopTrayIconService(_hotkeyHost, ShareXResources.IconBytes, ApplicationInfo.TitleShort, ApplicationState.Settings.ShowTray);
+        TrayIconService = new DesktopTrayIconService(ShareXResources.IconBytes, ApplicationInfo.TitleShort, ApplicationState.Settings.ShowTray);
+        TrayIconService.CloseRequested += ExitApplication;
     }
 
     internal void Initialize()
@@ -107,6 +108,7 @@ internal sealed class MainForm
     private void OnHostClosed(object? sender, EventArgs e)
     {
         ApplicationState.HotkeyManager?.UnregisterAllHotkeys(false);
+        TrayIconService.CloseRequested -= ExitApplication;
         TrayIconService.Dispose();
         _session.RestartRequested -= OnRestartRequested;
         _session.SessionEnding -= OnSessionEnding;

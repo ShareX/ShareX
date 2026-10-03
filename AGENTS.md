@@ -12,21 +12,19 @@ The `cross-platform-v2` branch ports ShareX to Linux while preserving Windows su
 
 All agents must focus on **Windows and Linux only** during the current port. Prioritize porting the full **`ShareX` application project** to Linux, including its main window, tray, hotkeys, capture, upload, history, editor and tools. Keep Windows behaviour identical to v22 throughout the migration.
 
-**Do not work on the macOS port now.** macOS implementation, UI adaptation, desktop verification, packaging and CI work are deferred. Only after the Linux port is **100% complete for the agreed scope and stable enough for normal use**, with real application flows verified on the supported Linux desktops and Windows regressions checked, may a macOS port be considered. A successful build or a working standalone editor alone does not meet this milestone. Linux HDR support is excluded from the agreed scope.
+**Do not work on the macOS port now.** macOS implementation, UI adaptation, desktop verification, packaging and CI work are deferred. Only after the Linux port is **100% complete for the agreed scope and stable enough for normal use**, with real application flows verified on the supported Linux desktops and Windows regressions checked, may a macOS port be considered. A successful build or a working standalone editor alone does not meet this milestone. Linux HDR and OCR support are excluded from the agreed scope.
 
-**OCR uses the operating system's own support.** Windows keeps Windows.Media.Ocr in `ShareX.Platform.Windows`. On Linux, `IOcrService` uses the Tesseract engine and language data the distribution provides, when they are installed; ShareX does not bundle an OCR engine or language files. Where they are missing, the Linux service reports `FeatureSupport.NotSupported` with a user-facing reason, and shared UI and task execution respect it. macOS stays unsupported for now.
+**OCR remains Windows-only.** Preserve the Windows.Media.Ocr implementation behind `IOcrService`. Do not implement or expose OCR on Linux or macOS, or add OCR package requirements there. Non-Windows OCR services must report `FeatureSupport.NotSupported` with a user-facing reason, and shared UI and task execution must respect that support value. This also applies to OCR backends carried over from the first cross-platform attempt.
 
 Existing macOS code may remain. When a shared contract changes, add only the minimum unsupported stubs or mechanical updates needed to keep the solution compiling; this does not authorize macOS feature work. This priority rule takes precedence over older three-platform task wording and target architecture descriptions.
 
-## Linux dependencies: native OS support, nothing large bundled
+## Linux dependencies: no extra installations
 
-**Feature parity with Windows is the goal, reached through what the Linux system itself provides.** Use the desktop's APIs (portals, compositor IPC, D-Bus, X11, freedesktop.org specifications) and programs or libraries that come with the system or from the distribution's packages, for example grim, wl-clipboard, FFmpeg, CUPS or Tesseract. Detect them at run time.
+**Microsoft .NET is the only additional runtime users may be required to install for the Linux port.** Libraries already included with ShareX, such as Avalonia and SkiaSharp, are allowed. Use those libraries and APIs provided by the existing Linux desktop; do not require users to install additional packages, command-line tools, native libraries, engines, fonts or services to enable a ShareX feature.
 
-**Do not bundle large third-party libraries, engines, models or data files with ShareX just to reach feature parity on Linux.** Libraries ShareX already ships on every platform, such as Avalonia and SkiaSharp, are fine.
+**Do not port a feature to Linux if it requires such an external dependency.** OCR is an explicit example and remains Windows-only. These features are excluded from the agreed Linux scope. Report `FeatureSupport.NotSupported` with a clear user-facing reason, and respect it in both shared UI and task execution. Do not offer package-install commands, install dependencies automatically, or add a new bundled dependency to work around this rule.
 
-**When the system support is missing, the feature is not available.** Report `FeatureSupport.NotSupported` with a clear user-facing reason (it may name the package that provides the missing part), and respect it in both shared UI and task execution. Never install anything automatically. Microsoft .NET remains the only thing required to run ShareX itself; every other dependency is optional and only enables the features that need it.
-
-This rule does not change Windows behaviour or dependencies.
+Audit implementations carried over from the first cross-platform attempt against this rule. Use an implementation based on already included libraries or existing desktop APIs where possible; otherwise retire the dependency-based Linux implementation and report the feature as unsupported. An optional helper must not become an installation requirement. This rule supersedes earlier Linux package recommendations and does not change Windows behaviour or dependencies.
 
 ## Start of every session
 
@@ -94,7 +92,7 @@ State at the branch point (`develop` `fd61635f2`). WinForms and GDI+ are already
 - [x] `ShareX.Platform*` projects and tests on this branch (brought from `cross-platform`).
 - [ ] `PlatformServices.Initialize` at application start up.
 - [ ] `net10.0-windows` targets: `HelpersLib`, `HistoryLib`, `UploadersLib`, `ImageEffectsLib`, `ScreenCaptureLib`, `NativeMessagingHost`, `Tools` and `ShareX` (`net10.0-windows10.0.22621.0`).
-- [ ] Remaining legacy tray transport and browser process-launch declarations in `HelpersLib` → `ShareX.Platform.Windows` behind services. Unused `WindowsImageInterop`, overlay rendering and native declarations have been removed; session handling now uses the platform service and duplicate shortcut COM code is removed; the remaining callers await the R25/R26 migrations.
+- [ ] Remaining browser process-launch declarations in `HelpersLib` → `ShareX.Platform.Windows` behind services. Unused `WindowsImageInterop`, overlay rendering and native declarations have been removed; tray/session handling now uses platform services and duplicate shortcut COM code is removed; the browser caller awaits R26.
 - [ ] Win32 interop in `ScreenCaptureLib` (GDI and HDR capture, transparent window capture, window lists, scrolling input, frame window regions) → services.
 - [ ] Win32 interop and WinRT in `Tools` (OCR, mouse highlighter, inspect and borderless window, ruler, clipboard viewer) → services.
 - [ ] Win32 calls and registry in the `ShareX` application (capture helpers, window menu, task metadata, notification and upload windows, startup and shell integration).

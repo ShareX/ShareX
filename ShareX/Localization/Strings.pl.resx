@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>Automatycznie rozwijaj menu przechwytywania</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>Zasobnik systemowy nie udostępnia zdarzeń kliknięcia środkowym przyciskiem myszy.</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>Ignoruj emoji podczas kodowania URL</value>
   </data>

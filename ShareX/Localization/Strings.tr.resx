@@ -718,6 +718,9 @@
   <data name="ApplicationSettingsWindow_TrayAutoExpandCaptureMenu" xml:space="preserve">
     <value>Yakalama menüsünü otomatik olarak genişlet</value>
   </data>
+  <data name="ApplicationSettingsWindow_TrayMiddleClickUnavailable" xml:space="preserve">
+    <value>Masaüstü sistem tepsisi, orta fare düğmesi tıklama olaylarını sağlamıyor.</value>
+  </data>
   <data name="ApplicationSettingsWindow_URLEncodeIgnoreEmoji" xml:space="preserve">
     <value>URL kodlamasında emojileri yok say</value>
   </data>
