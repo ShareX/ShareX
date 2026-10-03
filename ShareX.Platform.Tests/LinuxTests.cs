@@ -991,3 +991,53 @@ public class LinuxDesktopKindTests
     public void DesktopKindFollowsSession(DisplayServer server, DesktopEnvironment desktop, ShareX.Platform.Linux.Desktop.LinuxDesktopKind kind) =>
         Assert.Equal(kind, ShareX.Platform.Linux.Desktop.LinuxDesktop.GetKind(new PlatformInfo(OperatingSystemKind.Linux, server, desktop, desktop.ToString(), false)));
 }
+
+public class PortalRecordingTests
+{
+    private static readonly ShareX.Platform.Linux.DBus.ScreenCastStream Monitor =
+        new(57, new PlatformPoint(0, 0), new PlatformSize(3072, 1728));
+
+    [Fact]
+    public void FullScreenUsesTheWholeEvenFrame() =>
+        Assert.Equal(new PlatformRectangle(0, 0, 3840, 2160),
+            ShareX.Platform.Linux.Desktop.PipeWireRecordingSource.GetCrop(new ScreenRecordingRequest(), Monitor, new PlatformSize(3840, 2161)));
+
+    [Fact]
+    public void RegionIsScaledToStreamPixels()
+    {
+        // 125%: a 960x560 region at (320, 320) in compositor coordinates is 1200x700 stream pixels at (400, 400).
+        ScreenRecordingRequest request = new ScreenRecordingRequest { Region = new PlatformRectangle(320, 320, 960, 560) };
+
+        Assert.Equal(new PlatformRectangle(400, 400, 1200, 700),
+            ShareX.Platform.Linux.Desktop.PipeWireRecordingSource.GetCrop(request, Monitor, new PlatformSize(3840, 2160)));
+    }
+
+    [Fact]
+    public void CropsAllThreePlanes()
+    {
+        // 4x4 I420: Y values 0..15, U 100..103, V 200..203.
+        byte[] input = new byte[24];
+        for (int i = 0; i < 16; i++) input[i] = (byte)i;
+        for (int i = 0; i < 4; i++) { input[16 + i] = (byte)(100 + i); input[20 + i] = (byte)(200 + i); }
+        byte[] output = new byte[6];
+
+        ShareX.Platform.Linux.Desktop.PipeWireRecordingSource.CropI420(input, new PlatformSize(4, 4), new PlatformRectangle(2, 2, 2, 2), output);
+
+        Assert.Equal(new byte[] { 10, 11, 14, 15, 103, 203 }, output);
+    }
+
+    [Fact]
+    public void ReadsNegotiatedFrameSize() =>
+        Assert.Equal(new PlatformSize(3840, 2160), ShareX.Platform.Linux.Desktop.PipeWireRecordingSource.ParseFrameSize(
+            "/GstPipeline:pipeline0/GstPipeWireSrc:pipewiresrc0.GstPad:src: caps = video/x-raw, format=(string)BGRx, width=(int)3840, height=(int)2160, framerate=(fraction)0/1"));
+
+    [Fact]
+    public void PipelineWritesRawFramesAtTheFrameRate()
+    {
+        IReadOnlyList<string> arguments = ShareX.Platform.Linux.Desktop.PipeWireRecordingSource.CreatePipelineArguments(57, new PlatformSize(1920, 1080), 30);
+
+        Assert.Contains("path=57", arguments);
+        Assert.Contains("video/x-raw,format=I420,width=1920,height=1080,framerate=30/1", arguments);
+        Assert.Equal("fd=1", arguments[^1]);
+    }
+}

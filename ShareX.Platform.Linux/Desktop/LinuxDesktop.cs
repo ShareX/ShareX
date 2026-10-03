@@ -80,13 +80,19 @@ public sealed class LinuxDesktop
         };
     }
 
-    /// <summary>x11grab on X11, wf-recorder on wlroots compositors; GNOME and KDE on Wayland need the ScreenCast portal (not yet).</summary>
-    internal IScreenRecordingBackend CreateRecordingBackend(ICommandRunner runner, Func<IReadOnlyList<ScreenInfo>> getScreens) => Kind switch
+    /// <summary>x11grab on X11, wf-recorder on wlroots compositors, the ScreenCast portal with GStreamer on GNOME, KDE and other Wayland desktops.</summary>
+    internal IScreenRecordingBackend CreateRecordingBackend(ICommandRunner runner, Func<IReadOnlyList<ScreenInfo>> getScreens) =>
+        // SHAREX_RECORDING_BACKEND=portal tries the portal path on any Wayland desktop, to test it where another backend is the default.
+        info.IsWayland && Environment.GetEnvironmentVariable("SHAREX_RECORDING_BACKEND") == "portal"
+            ? new PortalRecordingBackend(runner, info.Distribution ?? LinuxDistribution.Unknown)
+            : CreateDefaultRecordingBackend(runner, getScreens);
+
+    private IScreenRecordingBackend CreateDefaultRecordingBackend(ICommandRunner runner, Func<IReadOnlyList<ScreenInfo>> getScreens) => Kind switch
     {
         LinuxDesktopKind.X11 => new X11GrabRecordingBackend(),
         LinuxDesktopKind.Hyprland or LinuxDesktopKind.Sway => new WfRecorderRecordingBackend(runner, info.Distribution ?? LinuxDistribution.Unknown, getScreens),
         _ when info.DisplayServer == DisplayServer.None => new UnsupportedRecordingBackend("No graphical session was found."),
-        _ => new UnsupportedRecordingBackend("Screen recording on GNOME and KDE Wayland needs the xdg-desktop-portal ScreenCast interface, which ShareX does not use yet. Log in to an X11 session to record.")
+        _ => new PortalRecordingBackend(runner, info.Distribution ?? LinuxDistribution.Unknown)
     };
 
     /// <summary>The X11 root window on X11, grim on wlroots compositors, the Screenshot portal elsewhere; null when none works.</summary>

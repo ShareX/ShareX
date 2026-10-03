@@ -53,7 +53,9 @@ public enum LinuxTool
     /// <summary>The CUPS lp, lpstat and lpoptions commands.</summary>
     Cups,
     /// <summary>pw-play, PipeWire's sound player.</summary>
-    PipeWire
+    PipeWire,
+    /// <summary>GStreamer's PipeWire plugin (pipewiresrc), for recording through the ScreenCast portal.</summary>
+    GStreamerPipeWire
 }
 
 /// <summary>Maps helper programs to package names and install commands for each distribution family.</summary>
@@ -74,7 +76,8 @@ public static class LinuxPackages
         [LinuxTool.WfRecorder] = "wf-recorder",
         [LinuxTool.Tesseract] = "tesseract",
         [LinuxTool.Cups] = "lp",
-        [LinuxTool.PipeWire] = "pw-play"
+        [LinuxTool.PipeWire] = "pw-play",
+        [LinuxTool.GStreamerPipeWire] = "gst-launch-1.0"
     };
 
     /// <summary>The executable name used to check whether the tool is installed.</summary>
@@ -108,6 +111,10 @@ public static class LinuxPackages
             (LinuxTool.PipeWire, LinuxDistributionFamily.Debian) => "pipewire-bin",
             (LinuxTool.PipeWire, LinuxDistributionFamily.Fedora) => "pipewire-utils",
             (LinuxTool.PipeWire, _) => "pipewire",
+            (LinuxTool.GStreamerPipeWire, LinuxDistributionFamily.Debian) => "gstreamer1.0-pipewire",
+            (LinuxTool.GStreamerPipeWire, LinuxDistributionFamily.Fedora) => "pipewire-gstreamer",
+            (LinuxTool.GStreamerPipeWire, LinuxDistributionFamily.OpenSuse) => "gstreamer-plugin-pipewire",
+            (LinuxTool.GStreamerPipeWire, _) => "gst-plugin-pipewire",
             _ => Commands[tool]
         };
     }

@@ -27,7 +27,7 @@ This document describes the **target** architecture. At the branch point (`devel
 | `IStartupService` | Run registry key | LaunchAgent plist | XDG autostart `.desktop` | XDG autostart `.desktop` |
 | `IClipboardService` | Win32 clipboard | NSPasteboard | xclip or xsel | wl-clipboard (also used for copying, since Wayland apps cannot read the XWayland clipboard) |
 | `IScreenCaptureService` | GDI, HDR tone mapping, window and transparent window capture | `screencapture` (Screen Recording permission) | Xlib | grim on wlroots, otherwise the xdg-desktop-portal Screenshot interface |
-| `IScreenRecordingService` | FFmpeg gdigrab, ddagrab, DirectShow | FFmpeg avfoundation | FFmpeg x11grab | wf-recorder into FFmpeg on Hyprland and sway; not yet on GNOME and KDE (portal ScreenCast) |
+| `IScreenRecordingService` | FFmpeg gdigrab, ddagrab, DirectShow | FFmpeg avfoundation | FFmpeg x11grab | wf-recorder into FFmpeg on Hyprland and sway; ScreenCast portal with GStreamer's PipeWire plugin on GNOME, KDE and others |
 | `IHotkeyService` | RegisterHotKey | Carbon hot keys | XGrabKey | Hyprland: portal GlobalShortcuts with keys bound by ShareX; sway: IPC binds; GNOME, KDE: portal GlobalShortcuts (needs the `sharex.desktop` entry) |
 | `IWindowService` | Win32 windows and child controls, cursor, overlays | CGWindowList | EWMH, XShape | Hyprland and sway IPC only |
 | `IWindowManagementService` | Inspect, top most, opacity, borderless | Not yet | EWMH | Hyprland and sway IPC only |
@@ -53,7 +53,7 @@ Linux differs between compositors as much as between operating systems, so `Shar
 | --- | --- | --- | --- | --- |
 | Windows, pointer, monitor layout | `X11WindowBackend` (EWMH, Xlib, RandR) | `HyprlandWindowBackend` (hyprctl; `HyprlandDispatcher` speaks Lua or classic dispatchers) | `SwayWindowBackend` (swaymsg) | not exposed (`UnsupportedWindowBackend`) |
 | Screen capture | `X11CaptureBackend` | `GrimCaptureBackend` | `GrimCaptureBackend` | `PortalCaptureBackend` |
-| Screen recording | `X11GrabRecordingBackend` | `WfRecorderRecordingBackend` | `WfRecorderRecordingBackend` | not yet (ScreenCast portal) |
+| Screen recording | `X11GrabRecordingBackend` | `WfRecorderRecordingBackend` | `WfRecorderRecordingBackend` | `PortalRecordingBackend`: ScreenCast portal, GStreamer `pipewiresrc`, frames cropped and passed to FFmpeg as YUV4MPEG |
 | Hotkeys | `X11HotkeyService` | portal + `HyprlandShortcutKeyBinder` | `SwayHotkeyService` | portal |
 
 The services (`LinuxWindowService`, `LinuxScreenCaptureService`, `LinuxScreenRecordingService`, `IHotkeyService`) are façades over these.
