@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Для цього фрагмента потрібні попередні кадри, тому його неможливо зберегти без втрат. Виберіть режим обрізання «Перекодування» та збережіть знову.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>Обробка на GPU недоступна в цій системі. Використовуйте автоматичну обробку або CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Тло видалено за {0} мс.</value>
   </data>

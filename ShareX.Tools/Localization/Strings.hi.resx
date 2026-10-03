@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>इस कट के लिए पिछले फ़्रेम चाहिए और इसे बिना हानि के सहेजा नहीं जा सकता। दोबारा एन्कोड ट्रिम मोड चुनें और फिर से सहेजें।</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>इस सिस्टम पर GPU प्रोसेसिंग उपलब्ध नहीं है। स्वचालित या CPU प्रोसेसिंग का उपयोग करें।</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>पृष्ठभूमि {0} ms में हटाई गई।</value>
   </data>

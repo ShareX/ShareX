@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Este recorte necesita fotogramas anteriores y no se puede guardar sin pérdida. Selecciona el modo de recorte Recodificar y vuelve a guardar.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>El procesamiento por GPU no está disponible en este sistema. Use el procesamiento automático o por CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Fondo eliminado en {0} ms.</value>
   </data>

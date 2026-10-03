@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>이 구간에는 이전 프레임이 필요하므로 무손실로 저장할 수 없습니다. 자르기 모드에서 재인코딩을 선택한 후 다시 저장하세요.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>이 시스템에서는 GPU 처리를 사용할 수 없습니다. 자동 또는 CPU 처리를 사용하세요.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>{0}ms 만에 배경을 제거했습니다.</value>
   </data>

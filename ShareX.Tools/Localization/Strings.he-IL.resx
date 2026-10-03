@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>הקטע הזה דורש תמונות קודמות ולא ניתן לשמור אותו ללא אובדן. יש לבחור במצב החיתוך קידוד מחדש ולשמור שוב.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>עיבוד באמצעות GPU אינו זמין במערכת זו. יש להשתמש בעיבוד אוטומטי או באמצעות CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>הרקע הוסר בתוך {0} אלפיות שנייה.</value>
   </data>

@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>此裁剪片段需要先前的影格，無法無損儲存。請選擇「重新編碼」裁剪模式，然後再次儲存。</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>此系統不支援 GPU 處理。請使用自動處理或 CPU 處理。</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>已在 {0} 毫秒內移除背景。</value>
   </data>

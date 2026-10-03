@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>يحتاج هذا المقطع إلى إطارات سابقة ولا يمكن حفظه دون فقدان. اختر وضع القص «إعادة ترميز» واحفظه مرة أخرى.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>معالجة GPU غير متاحة على هذا النظام. استخدم المعالجة التلقائية أو المعالجة بواسطة CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>تمت إزالة الخلفية خلال {0} مللي ثانية.</value>
   </data>

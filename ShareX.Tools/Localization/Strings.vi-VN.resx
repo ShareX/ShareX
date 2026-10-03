@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Đoạn cắt này cần các khung hình trước đó và không thể lưu mà không mất dữ liệu. Chọn chế độ cắt Mã hóa lại rồi lưu lần nữa.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>Hệ thống này không hỗ trợ xử lý bằng GPU. Hãy sử dụng xử lý tự động hoặc CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Đã xóa nền trong {0} ms.</value>
   </data>

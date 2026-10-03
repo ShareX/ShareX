@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Dieser Ausschnitt benötigt frühere Einzelbilder und kann nicht verlustfrei gespeichert werden. Wählen Sie den Schnittmodus „Neu kodieren“ und speichern Sie erneut.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>GPU-Verarbeitung ist auf diesem System nicht verfügbar. Verwenden Sie die automatische Verarbeitung oder die CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Hintergrund in {0} ms entfernt.</value>
   </data>

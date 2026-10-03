@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>この範囲には前のフレームが必要なため、ロスレスで保存できません。トリミングモードを「再エンコード」にして、もう一度保存してください。</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>このシステムではGPU処理を利用できません。自動処理またはCPU処理を使用してください。</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>{0} ms で背景を削除しました。</value>
   </data>

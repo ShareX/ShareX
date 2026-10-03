@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>ช่วงที่ตัดนี้ต้องใช้เฟรมก่อนหน้าและไม่สามารถบันทึกแบบไม่สูญเสียคุณภาพได้ เลือกโหมดตัด เข้ารหัสใหม่ แล้วบันทึกอีกครั้ง</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>ระบบนี้ไม่รองรับการประมวลผลด้วย GPU โปรดใช้การประมวลผลอัตโนมัติหรือ CPU</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>ลบพื้นหลังใน {0} ms แล้ว</value>
   </data>

@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Для этого фрагмента нужны предыдущие кадры, поэтому его нельзя сохранить без потерь. Выберите режим обрезки «Перекодирование» и сохраните снова.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>Обработка на GPU недоступна в этой системе. Используйте автоматическую обработку или CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Фон удалён за {0} мс.</value>
   </data>

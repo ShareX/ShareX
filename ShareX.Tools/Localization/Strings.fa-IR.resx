@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>این برش به فریم‌های قبلی نیاز دارد و نمی‌توان آن را بدون افت کیفیت ذخیره کرد. حالت برش «کدگذاری مجدد» را انتخاب کنید و دوباره ذخیره کنید.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>پردازش با GPU در این سیستم در دسترس نیست. از پردازش خودکار یا پردازش با CPU استفاده کنید.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>پس‌زمینه در {0} میلی‌ثانیه حذف شد.</value>
   </data>

@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Potongan ini memerlukan bingkai sebelumnya dan tidak dapat disimpan tanpa kehilangan. Pilih mode pemangkasan Kode ulang dan simpan lagi.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>Pemrosesan GPU tidak tersedia pada sistem ini. Gunakan pemrosesan otomatis atau CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Latar belakang dihapus dalam {0} md.</value>
   </data>

@@ -84,6 +84,11 @@ public sealed class BackgroundRemovalService : IDisposable
     private string? _executionDevice;
     private bool _isDisposed;
 
+    public static FeatureSupport GetDeviceSupport(BackgroundRemovalDevice device) =>
+        device == BackgroundRemovalDevice.GPU && PreferredDirectMLAdapter.Value == null
+            ? FeatureSupport.NotSupported(Localization.Strings.BackgroundRemovalService_GPU_unavailable)
+            : FeatureSupport.Supported;
+
     public BackgroundRemovalResult RemoveBackground(SKBitmap source, BackgroundRemovalModel model, BackgroundRemovalDevice device)
     {
         ArgumentNullException.ThrowIfNull(source);

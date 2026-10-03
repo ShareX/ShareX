@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>This cut needs earlier frames and cannot be saved losslessly. Select Re-encode trim mode and save again.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>GPU processing is unavailable on this system. Use automatic or CPU processing.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Background removed in {0} ms.</value>
   </data>

@@ -142,21 +142,27 @@
                                            VerticalAlignment="Center"/>
                                 <ComboBox Grid.Column="5"
                                           ItemsSource="{Binding AvailableDevices}"
-                                          SelectedItem="{Binding SelectedDevice, Mode=TwoWay}"
+                                          SelectedItem="{Binding SelectedDeviceOption, Mode=TwoWay}"
                                           IsEnabled="{Binding !IsProcessing}"
                                           MinWidth="88"
                                           VerticalAlignment="Center"
-                                          ToolTip.Tip="{x:Static localization:Strings.BackgroundRemoverWindow_Processing_device}">
+                                          ToolTip.Tip="{Binding ProcessingDeviceToolTip}">
+                                    <ComboBox.Styles>
+                                        <Style Selector="ComboBoxItem" x:DataType="vm:BackgroundRemovalDeviceOption">
+                                            <Setter Property="IsEnabled" Value="{Binding IsSupported}"/>
+                                        </Style>
+                                    </ComboBox.Styles>
                                     <ComboBox.ItemTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="{Binding Converter={StaticResource LocalizedDisplayConverter}}"/>
+                                        <DataTemplate x:DataType="vm:BackgroundRemovalDeviceOption">
+                                            <TextBlock Text="{Binding Device, Converter={StaticResource LocalizedDisplayConverter}}"/>
                                         </DataTemplate>
                                     </ComboBox.ItemTemplate>
                                 </ComboBox>
                             </Grid>
-                            <Button Grid.Column="2"
-                                    Content="{x:Static localization:Strings.BackgroundRemoverWindow_Remove_Background}"
-                                    Command="{Binding RemoveBackgroundCommand}"/>
+                            <Border Grid.Column="2" ToolTip.Tip="{Binding SelectedDeviceSupportReason}">
+                                <Button Content="{x:Static localization:Strings.BackgroundRemoverWindow_Remove_Background}"
+                                        Command="{Binding RemoveBackgroundCommand}"/>
+                            </Border>
                         </Grid>
                     </Grid>
                 </Border>

@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Bu kesim önceki karelere ihtiyaç duyduğu için kayıpsız olarak kaydedilemez. Yeniden kodla kırpma modunu seçip tekrar kaydedin.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>Bu sistemde GPU ile işleme kullanılamıyor. Otomatik veya CPU ile işlemeyi kullanın.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Arka plan {0} ms içinde kaldırıldı.</value>
   </data>

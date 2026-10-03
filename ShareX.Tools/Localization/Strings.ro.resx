@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Această decupare necesită cadre anterioare și nu poate fi salvată fără pierderi. Selectează modul de decupare Recodificare și salvează din nou.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>Procesarea GPU nu este disponibilă pe acest sistem. Folosiți procesarea automată sau CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Fundalul a fost eliminat în {0} ms.</value>
   </data>

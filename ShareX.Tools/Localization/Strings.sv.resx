@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Det här klippet behöver tidigare bildrutor och kan inte sparas förlustfritt. Välj trimningsläget Omkodning och spara igen.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>GPU-bearbetning är inte tillgänglig på detta system. Använd automatisk bearbetning eller CPU-bearbetning.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Bakgrunden togs bort på {0} ms.</value>
   </data>

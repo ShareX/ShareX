@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Cette découpe nécessite des images précédentes et ne peut pas être enregistrée sans perte. Sélectionnez le mode de découpe Réencodage et enregistrez à nouveau.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>Le traitement GPU est indisponible sur ce système. Utilisez le traitement automatique ou le CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Arrière-plan supprimé en {0} ms.</value>
   </data>

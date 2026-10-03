@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Dette udsnit kræver tidligere billeder og kan ikke gemmes tabsfrit. Vælg beskæringstilstanden Genkodning, og gem igen.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>GPU-behandling er ikke tilgængelig på dette system. Brug automatisk behandling eller CPU-behandling.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Baggrunden blev fjernet på {0} ms.</value>
   </data>

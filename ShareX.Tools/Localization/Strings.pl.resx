@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Ten fragment wymaga wcześniejszych klatek i nie można go zapisać bezstratnie. Wybierz tryb przycinania Ponowne kodowanie i zapisz ponownie.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>Przetwarzanie przez GPU jest niedostępne w tym systemie. Użyj przetwarzania automatycznego lub przez CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Tło usunięto w {0} ms.</value>
   </data>

@@ -3221,6 +3221,15 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to GPU processing is unavailable on this system. Use automatic or CPU processing..
+        /// </summary>
+        public static string BackgroundRemovalService_GPU_unavailable {
+            get {
+                return ResourceManager.GetString("BackgroundRemovalService_GPU_unavailable", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to This setting is unavailable for the selected window..
         /// </summary>
         public static string InspectWindowViewModel_Selected_window_setting_unavailable {

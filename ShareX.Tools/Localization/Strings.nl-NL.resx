@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Deze uitsnede heeft eerdere frames nodig en kan niet verliesvrij worden opgeslagen. Selecteer de bijsnijdmodus Opnieuw coderen en sla opnieuw op.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>GPU-verwerking is niet beschikbaar op dit systeem. Gebruik automatische verwerking of CPU-verwerking.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Achtergrond verwijderd in {0} ms.</value>
   </data>

@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Ehhez a vágáshoz korábbi képkockák szükségesek, ezért nem menthető veszteségmentesen. Válassza az Újrakódolás vágási módot, és mentse újra.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>A GPU-feldolgozás nem érhető el ezen a rendszeren. Használjon automatikus vagy CPU-feldolgozást.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>A háttér eltávolítása {0} ms alatt megtörtént.</value>
   </data>

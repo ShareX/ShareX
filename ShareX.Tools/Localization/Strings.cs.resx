@@ -334,6 +334,9 @@
   <data name="AnimatedGifTrimmer_UseReencode" xml:space="preserve">
     <value>Tento výřez vyžaduje předchozí snímky a nelze jej uložit bezeztrátově. Vyberte režim ořezu Překódování a uložte jej znovu.</value>
   </data>
+  <data name="BackgroundRemovalService_GPU_unavailable" xml:space="preserve">
+    <value>Zpracování pomocí GPU není v tomto systému dostupné. Použijte automatické zpracování nebo CPU.</value>
+  </data>
   <data name="BackgroundRemoverViewModel_Background_removed_ms" xml:space="preserve">
     <value>Pozadí bylo odstraněno za {0} ms.</value>
   </data>

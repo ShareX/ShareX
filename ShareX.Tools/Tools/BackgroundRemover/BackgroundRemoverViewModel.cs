@@ -34,18 +34,33 @@ using System.Diagnostics;
 
 namespace ShareX.Tools;
 
+public sealed record BackgroundRemovalDeviceOption(BackgroundRemovalDevice Device, FeatureSupport Support)
+{
+    public bool IsSupported => Support.IsSupported;
+}
+
 public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposable
 {
     private const string BackgroundRemoverGuideUrl = "https://getsharex.com/docs/background-remover";
     private readonly BackgroundRemovalService _backgroundRemovalService = new();
     private readonly BackgroundRemoverOptions _options;
+    private readonly Func<BackgroundRemovalDevice, FeatureSupport> _getDeviceSupport;
     private SKBitmap? _sourceBitmap;
     private SKBitmap? _resultBitmap;
 
     public BackgroundRemoverViewModel(string? modelsFolder, BackgroundRemoverOptions options)
+        : this(modelsFolder, options, BackgroundRemovalService.GetDeviceSupport)
+    {
+    }
+
+    internal BackgroundRemoverViewModel(string? modelsFolder, BackgroundRemoverOptions options,
+        Func<BackgroundRemovalDevice, FeatureSupport> getDeviceSupport)
     {
         ModelsFolder = modelsFolder;
         _options = options;
+        _getDeviceSupport = getDeviceSupport;
+        AvailableDevices = Enum.GetValues<BackgroundRemovalDevice>()
+            .Select(device => new BackgroundRemovalDeviceOption(device, getDeviceSupport(device))).ToArray();
         SelectedDevice = Enum.IsDefined(options.SelectedDevice) ? options.SelectedDevice : BackgroundRemovalDevice.Auto;
         _options.SelectedDevice = SelectedDevice;
         RefreshModels();
@@ -53,11 +68,27 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
 
     public ObservableCollection<BackgroundRemovalModel> AvailableModels { get; } = [];
 
-    public IReadOnlyList<BackgroundRemovalDevice> AvailableDevices { get; } = Enum.GetValues<BackgroundRemovalDevice>();
+    public IReadOnlyList<BackgroundRemovalDeviceOption> AvailableDevices { get; }
+
+    public BackgroundRemovalDeviceOption? SelectedDeviceOption
+    {
+        get => AvailableDevices.FirstOrDefault(option => option.Device == SelectedDevice);
+        set { if (value != null) SelectedDevice = value.Device; }
+    }
+
+    public string? SelectedDeviceSupportReason => _getDeviceSupport(SelectedDevice).Reason;
+
+    public string ProcessingDeviceToolTip => _getDeviceSupport(BackgroundRemovalDevice.GPU) is { IsSupported: false } support
+        ? support.Reason ?? Localization.Strings.BackgroundRemoverWindow_Processing_device
+        : Localization.Strings.BackgroundRemoverWindow_Processing_device;
 
     public string? ModelsFolder { get; }
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(SelectedDeviceOption))]
+    [NotifyPropertyChangedFor(nameof(SelectedDeviceSupportReason))]
+    [NotifyPropertyChangedFor(nameof(CanRemoveBackground))]
+    [NotifyCanExecuteChangedFor(nameof(RemoveBackgroundCommand))]
     private BackgroundRemovalDevice _selectedDevice = BackgroundRemovalDevice.Auto;
 
     [ObservableProperty]
@@ -125,7 +156,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
 
     public bool HasSelectedModel => SelectedModel != null;
 
-    public bool CanRemoveBackground => HasImage && HasSelectedModel && !IsProcessing;
+    public bool CanRemoveBackground => HasImage && HasSelectedModel && !IsProcessing && _getDeviceSupport(SelectedDevice).IsSupported;
 
     [RelayCommand(CanExecute = nameof(CanRefreshModels))]
     private void RefreshModels()
@@ -261,6 +292,12 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
         }
 
         if (SelectedModel == null)
+        {
+            return;
+        }
+
+        FeatureSupport deviceSupport = _getDeviceSupport(SelectedDevice);
+        if (!deviceSupport.IsSupported)
         {
             return;
         }
