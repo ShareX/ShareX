@@ -77,6 +77,9 @@ public sealed class LinuxWindowManagementService : IWindowManagementService
 
     private LinuxWindowService.Backend Backend => windows.ActiveBackend;
 
+    /// <summary>Hyprland dispatchers in the form the configuration accepts (Lua or classic).</summary>
+    private Desktop.HyprlandDispatcher? Hyprland => (windows.DesktopBackend as Desktop.HyprlandWindowBackend)?.Dispatcher;
+
     public long GetWindowAt(PlatformPoint point, bool topLevel)
     {
         // Only top level windows are visible to other applications here, so a control request also gets the window.
@@ -125,7 +128,7 @@ public sealed class LinuxWindowManagementService : IWindowManagementService
                 // Hyprland pins floating windows (above everything, on every workspace); "pin" toggles.
                 WindowDetails? details = GetDetails(windowHandle);
                 return details?.IsTopMost == null || details.IsTopMost == topMost ||
-                    Run("hyprctl", ["dispatch", "pin", LinuxWindowService.FormatHyprlandAddress(windowHandle)]);
+                    Hyprland?.TogglePin(windowHandle) == true;
             default:
                 return false;
         }
@@ -155,9 +158,8 @@ public sealed class LinuxWindowManagementService : IWindowManagementService
                         : display.ChangeWmState((nuint)windowHandle, 2, "_NET_WM_STATE_FULLSCREEN"));
                 }
             case LinuxWindowService.Backend.Hyprland:
-                // Fullscreen mode 1 keeps the bar and gaps (the working area); mode 0 covers the screen.
-                return Run("hyprctl", ["--batch",
-                    $"dispatch focuswindow {LinuxWindowService.FormatHyprlandAddress(windowHandle)}; dispatch fullscreen {(useWorkingArea ? 1 : 0)}"]);
+                // Maximised keeps the bar and gaps (the working area); fullscreen covers the screen.
+                return Hyprland?.ToggleFullscreen(windowHandle, maximized: useWorkingArea) == true;
             case LinuxWindowService.Backend.Sway:
                 return Run("swaymsg", [string.Create(CultureInfo.InvariantCulture, $"[con_id={windowHandle}]"), "fullscreen", "toggle"]);
             default:

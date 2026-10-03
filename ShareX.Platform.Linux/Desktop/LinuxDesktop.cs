@@ -79,6 +79,15 @@ public sealed class LinuxDesktop
         };
     }
 
+    /// <summary>EWMH on X11, hyprctl on Hyprland, swaymsg on sway; GNOME, KDE and other Wayland desktops do not expose windows.</summary>
+    internal IDesktopWindowBackend CreateWindowBackend(ICommandRunner runner) => Kind switch
+    {
+        LinuxDesktopKind.X11 => new X11WindowBackend(),
+        LinuxDesktopKind.Hyprland => new HyprlandWindowBackend(new CompositorCommands(runner)),
+        LinuxDesktopKind.Sway => new SwayWindowBackend(new CompositorCommands(runner)),
+        _ => new UnsupportedWindowBackend($"{info.DesktopEnvironmentName} on Wayland does not let applications list other windows. Use region capture or the portal's window picker instead.")
+    };
+
     /// <summary>
     /// X11: XGrabKey. Hyprland: the GlobalShortcuts portal, with ShareX binding the keys. sway: IPC binds (its portal has no
     /// GlobalShortcuts). GNOME, KDE and others: the GlobalShortcuts portal, whose dialog lets the user confirm the keys.
