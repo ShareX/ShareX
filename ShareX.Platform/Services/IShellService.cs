@@ -76,9 +76,35 @@ public sealed record ShellMenuEntry(string Id, string Label, string ExecutablePa
     public string? Icon { get; init; }
 }
 
+/// <summary>A file type ShareX opens, such as custom uploaders (.sxcu) and image effect presets (.sxie).</summary>
+/// <param name="Extension">With the dot, for example ".sxcu".</param>
+/// <param name="TypeId">Stable identifier, for example "ShareX.sxcu" (the Windows ProgID).</param>
+/// <param name="Description">Shown by the file manager, for example "ShareX custom uploader".</param>
+/// <param name="MimeType">MIME type for Linux and macOS, for example "application/x-sharex-custom-uploader".</param>
+/// <param name="Arguments">Arguments placed before the file path.</param>
+public sealed record FileAssociation(string Extension, string TypeId, string Description, string MimeType, string ExecutablePath, IReadOnlyList<string> Arguments)
+{
+    /// <summary>Icon file. Windows uses it as DefaultIcon.</summary>
+    public string? Icon { get; init; }
+}
+
+public enum BrowserFamily
+{
+    /// <summary>Chrome, Chromium, Edge, Brave, Vivaldi.</summary>
+    Chromium,
+    Firefox
+}
+
+/// <summary>A native messaging host that lets a browser extension talk to ShareX.</summary>
+/// <param name="Name">The host name in the manifest, for example "com.getsharex.sharex".</param>
+/// <param name="ManifestPath">The manifest shipped with ShareX. Windows registers it where it is; other platforms write a copy for each
+/// browser with <paramref name="HostExecutablePath"/> as an absolute path.</param>
+public sealed record BrowserHost(BrowserFamily Browser, string Name, string ManifestPath, string HostExecutablePath);
+
 /// <summary>File manager integration: Explorer on Windows, Finder Services on macOS, Nautilus, Dolphin, Nemo and Thunar on Linux.</summary>
 public interface IShellIntegrationService
 {
+    /// <summary>Context menu entries.</summary>
     FeatureSupport Support { get; }
 
     bool IsRegistered(ShellMenuEntry entry);
@@ -86,4 +112,27 @@ public interface IShellIntegrationService
     void Register(ShellMenuEntry entry);
 
     void Unregister(ShellMenuEntry entry);
+
+    FeatureSupport FileAssociationSupport { get; }
+
+    bool IsAssociated(FileAssociation association);
+
+    void Associate(FileAssociation association);
+
+    void RemoveAssociation(FileAssociation association);
+
+    FeatureSupport BrowserHostSupport { get; }
+
+    bool IsBrowserHostRegistered(BrowserHost host);
+
+    void RegisterBrowserHost(BrowserHost host);
+
+    void UnregisterBrowserHost(BrowserHost host);
+
+    /// <summary>The Explorer "Send to" menu. Windows only.</summary>
+    FeatureSupport SendToSupport { get; }
+
+    bool IsInSendTo(string name, string executablePath);
+
+    void SetInSendTo(string name, string executablePath, bool enabled);
 }

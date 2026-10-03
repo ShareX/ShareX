@@ -131,6 +131,34 @@ public sealed class UnsupportedShellIntegrationService(string reason) : IShellIn
     public void Unregister(ShellMenuEntry entry)
     {
     }
+
+    public FeatureSupport FileAssociationSupport => Support;
+
+    public bool IsAssociated(FileAssociation association) => false;
+
+    public void Associate(FileAssociation association) => throw new PlatformNotSupportedException(Support.Reason);
+
+    public void RemoveAssociation(FileAssociation association)
+    {
+    }
+
+    public FeatureSupport BrowserHostSupport => Support;
+
+    public bool IsBrowserHostRegistered(BrowserHost host) => false;
+
+    public void RegisterBrowserHost(BrowserHost host) => throw new PlatformNotSupportedException(Support.Reason);
+
+    public void UnregisterBrowserHost(BrowserHost host)
+    {
+    }
+
+    public FeatureSupport SendToSupport => Support;
+
+    public bool IsInSendTo(string name, string executablePath) => false;
+
+    public void SetInSendTo(string name, string executablePath, bool enabled)
+    {
+    }
 }
 
 public sealed class UnsupportedScreenRecordingService(string reason) : IScreenRecordingService

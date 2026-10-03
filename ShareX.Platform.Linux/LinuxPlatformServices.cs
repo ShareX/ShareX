@@ -58,11 +58,11 @@ public sealed class LinuxPlatformServices : IPlatformServices
         hotkeys = new Lazy<IHotkeyService>(() => CreateHotkeyService(info, describeHotkey));
         Notifications = new FreedesktopNotificationService(info, runner);
         Shell = new LinuxShellService(runner);
-        ShellIntegration = new LinuxShellIntegrationService(paths);
+        ShellIntegration = new LinuxShellIntegrationService(paths, runner);
         Credentials = new SecretServiceCredentialService(info, runner);
         Secrets = new KeyFileSecretProtectionService(System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "secret.key"));
         Thumbnails = new FreedesktopThumbnailService(System.IO.Path.Combine(paths.CacheHome, "thumbnails"));
-        Preferences = new DefaultSystemPreferencesService();
+        Preferences = new DefaultSystemPreferencesService("/etc/sharex/policy.json", System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "policy.json"));
         SystemInfo = new UnixSystemInfoService(info, runner);
         Ocr = new TesseractOcrService(info, runner);
     }

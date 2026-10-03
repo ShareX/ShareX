@@ -100,7 +100,7 @@ public sealed class WindowsStartupService : IStartupService
         }
     }
 
-    private static bool IsShortcutTo(string shortcutPath, string targetPath)
+    internal static bool IsShortcutTo(string shortcutPath, string targetPath)
     {
         if (string.IsNullOrEmpty(targetPath) || !File.Exists(shortcutPath))
         {

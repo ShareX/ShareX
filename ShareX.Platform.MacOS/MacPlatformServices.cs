@@ -56,12 +56,11 @@ public sealed class MacPlatformServices : IPlatformServices
         Input = new MacInputService();
         Notifications = new MacNotificationService(runner);
         Shell = new MacShellService(runner);
-        ShellIntegration = new UnsupportedShellIntegrationService(
-            "Finder integration needs an NSServices entry in the app bundle's Info.plist, which the macOS packaging adds.");
+        ShellIntegration = new MacShellIntegrationService();
         Credentials = new KeychainCredentialService();
         Secrets = new KeyFileSecretProtectionService(System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "secret.key"));
         Thumbnails = new UnsupportedThumbnailService("macOS file thumbnails need QuickLook, which the macOS build does not wrap yet.");
-        Preferences = new DefaultSystemPreferencesService();
+        Preferences = new DefaultSystemPreferencesService("/Library/Application Support/ShareX/policy.json", System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "policy.json"));
         SystemInfo = new MacSystemInfoService(runner);
     }
 

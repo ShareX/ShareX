@@ -23,70 +23,43 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.Win32;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
 
 namespace ShareX
 {
     public static class SystemOptions
     {
-        private const string RegistryPath = @"SOFTWARE\ShareX";
-
         public static bool DisableUpdateCheck { get; private set; }
         public static bool DisableUpload { get; private set; }
         public static bool DisableLogging { get; private set; }
         public static string PersonalPath { get; private set; }
 
+        /// <summary>
+        /// Administrator policies: HKLM then HKCU\SOFTWARE\ShareX on Windows, /etc/sharex/policy.json then the user's policy.json
+        /// on Linux (see ISystemPreferencesService.GetPolicy).
+        /// </summary>
         public static void UpdateSystemOptions()
         {
             DisableUpdateCheck = GetSystemOptionBoolean("DisableUpdateCheck");
             DisableUpload = GetSystemOptionBoolean("DisableUpload");
             DisableLogging = GetSystemOptionBoolean("DisableLogging");
-            PersonalPath = GetSystemOptionString("PersonalPath");
+            PersonalPath = PlatformServices.Current.Preferences.GetPolicy("PersonalPath")?.ToString();
         }
 
         private static bool GetSystemOptionBoolean(string name)
         {
-            object value = RegistryHelpers.GetValue(RegistryPath, name, RegistryHive.LocalMachine);
+            object value = PlatformServices.Current.Preferences.GetPolicy(name);
 
-            if (value != null)
+            try
             {
-                try
-                {
-                    return Convert.ToBoolean(value);
-                }
-                catch
-                {
-                }
+                return value != null && Convert.ToBoolean(value);
             }
-
-            value = RegistryHelpers.GetValue(RegistryPath, name, RegistryHive.CurrentUser);
-
-            if (value != null)
+            catch
             {
-                try
-                {
-                    return Convert.ToBoolean(value);
-                }
-                catch
-                {
-                }
+                return false;
             }
-
-            return false;
-        }
-
-        private static string GetSystemOptionString(string name)
-        {
-            string value = RegistryHelpers.GetValueString(RegistryPath, name, RegistryHive.LocalMachine);
-
-            if (value == null)
-            {
-                value = RegistryHelpers.GetValueString(RegistryPath, name, RegistryHive.CurrentUser);
-            }
-
-            return value;
         }
     }
 }

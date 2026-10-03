@@ -181,6 +181,8 @@ Tick each item once it behaves as in v22 on Windows 10 and 11. File a bug row fo
 - [ ] File names and history get the active window's title and process (`WindowManagement.GetDetails`)
 - [ ] First run finds Paint, Paint.NET, Photoshop, IrfanView, XnView as external programs (`WindowsShellService.FindProgram`)
 - [ ] Region capture with "show cursor" draws the cursor in the right place (`WindowsScreenCaptureService.CaptureCursor`)
+- [ ] Integration settings: Explorer "Upload with ShareX" and "Edit with ShareX" entries, .sxcu and .sxie file types (open, icon), Chrome and Firefox extension hosts, Send to menu, start with Windows (Task Manager's "disabled" respected). Registry keys and command lines must match v22 exactly (`WindowsShellIntegrationService`, `WindowsStartupService`)
+- [ ] Administrator policies DisableUpdateCheck, DisableUpload, DisableLogging, PersonalPath from HKLM and HKCU\SOFTWARE\ShareX (`WindowsSystemPreferencesService.GetPolicy`)
 - [ ] MIME type of an unusual extension comes from the registry (`WindowsShellService.GetMimeType`); "Open folder" selects the file
 
 ## Requests

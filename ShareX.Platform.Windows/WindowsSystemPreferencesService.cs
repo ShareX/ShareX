@@ -42,6 +42,10 @@ public sealed unsafe class WindowsSystemPreferencesService : ISystemPreferencesS
         }
     }
 
+    /// <summary>HKLM first, so an administrator's setting wins, then HKCU (SOFTWARE\ShareX).</summary>
+    public object? GetPolicy(string name) =>
+        Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\ShareX", name, null) ?? Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\ShareX", name, null);
+
     public int SmallIconSize
     {
         get

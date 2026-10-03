@@ -224,6 +224,136 @@ public class LinuxShellIntegrationTests
     }
 }
 
+public class LinuxFileAssociationTests : IDisposable
+{
+    private readonly string root = Path.Combine(Path.GetTempPath(), "sharex-tests-" + Guid.NewGuid().ToString("N"));
+
+    private static readonly FileAssociation CustomUploader = new FileAssociation(".sxcu", "ShareX.sxcu", "ShareX custom uploader & more",
+        "application/x-sharex-custom-uploader", "/opt/Share X/ShareX", ["-CustomUploader"]);
+
+    public void Dispose()
+    {
+        if (Directory.Exists(root)) Directory.Delete(root, true);
+    }
+
+    private LinuxShellIntegrationService Create() =>
+        new LinuxShellIntegrationService(Path.Combine(root, "data"), Path.Combine(root, "config"), Path.Combine(root, "home"), new MissingToolsRunner());
+
+    [Fact]
+    public void MimePackage_DeclaresTheGlobAndEscapes()
+    {
+        string xml = LinuxShellIntegrationService.CreateMimePackage(CustomUploader);
+
+        Assert.Contains("<mime-type type=\"application/x-sharex-custom-uploader\">", xml);
+        Assert.Contains("<glob pattern=\"*.sxcu\"/>", xml);
+        Assert.Contains("ShareX custom uploader &amp; more", xml);
+        System.Xml.Linq.XDocument.Parse(xml);
+    }
+
+    [Fact]
+    public void DesktopEntry_OpensOneFileAndStaysOutOfTheLauncher()
+    {
+        string entry = LinuxShellIntegrationService.CreateAssociationDesktopEntry(CustomUploader);
+
+        Assert.Contains("Exec=\"/opt/Share X/ShareX\" -CustomUploader %f\n", entry);
+        Assert.Contains("MimeType=application/x-sharex-custom-uploader;\n", entry);
+        Assert.Contains("NoDisplay=true\n", entry);
+    }
+
+    [Fact]
+    public void Associate_ThenRemove()
+    {
+        LinuxShellIntegrationService service = Create();
+
+        service.Associate(CustomUploader);
+        Assert.True(service.IsAssociated(CustomUploader));
+        Assert.True(File.Exists(Path.Combine(root, "data", "mime", "packages", "sharex-sharex_sxcu.xml")));
+
+        service.RemoveAssociation(CustomUploader);
+        Assert.False(service.IsAssociated(CustomUploader));
+    }
+
+    [Fact]
+    public void BrowserHosts_GoToInstalledBrowsersWithAnAbsolutePath()
+    {
+        string manifest = Path.Combine(root, "host-manifest-chrome.json");
+        Directory.CreateDirectory(root);
+        File.WriteAllText(manifest, """{ "name": "x", "path": "ShareX_NativeMessagingHost.exe", "type": "stdio", "allowed_origins": ["chrome-extension://abc/"] }""");
+        Directory.CreateDirectory(Path.Combine(root, "config", "chromium"));
+        Directory.CreateDirectory(Path.Combine(root, "config", "BraveSoftware", "Brave-Browser"));
+        BrowserHost host = new BrowserHost(BrowserFamily.Chromium, "com.getsharex.sharex", manifest, "/opt/sharex/ShareX_NativeMessagingHost");
+        LinuxShellIntegrationService service = Create();
+
+        Assert.Equal(2, service.GetBrowserHostManifestPaths(host).Count);
+        Assert.False(service.IsBrowserHostRegistered(host));
+
+        service.RegisterBrowserHost(host);
+        string written = File.ReadAllText(Path.Combine(root, "config", "chromium", "NativeMessagingHosts", "com.getsharex.sharex.json"));
+
+        Assert.True(service.IsBrowserHostRegistered(host));
+        Assert.Contains("\"path\": \"/opt/sharex/ShareX_NativeMessagingHost\"", written);
+        Assert.Contains("\"name\": \"com.getsharex.sharex\"", written);
+        Assert.Contains("chrome-extension://abc/", written);
+
+        service.UnregisterBrowserHost(host);
+        Assert.False(service.IsBrowserHostRegistered(host));
+    }
+
+    [Fact]
+    public void FirefoxHost_DefaultsToMozillaFolder()
+    {
+        BrowserHost host = new BrowserHost(BrowserFamily.Firefox, "ShareX", "unused.json", "/opt/sharex/host");
+
+        Assert.Equal(Path.Combine(root, "home", ".mozilla", "native-messaging-hosts", "ShareX.json"), Assert.Single(Create().GetBrowserHostManifestPaths(host)));
+    }
+
+    private sealed class MissingToolsRunner : ShareX.Platform.Diagnostics.ICommandRunner
+    {
+        public bool Exists(string command) => false;
+
+        public System.Threading.Tasks.Task<ShareX.Platform.Diagnostics.CommandResult> RunAsync(string command, IReadOnlyList<string> arguments, byte[]? standardInput = null,
+            TimeSpan? timeout = null, System.Threading.CancellationToken cancellationToken = default) => throw new InvalidOperationException();
+
+        public System.Threading.Tasks.Task<int> RunForkingAsync(string command, IReadOnlyList<string> arguments, byte[]? standardInput = null,
+            TimeSpan? timeout = null, System.Threading.CancellationToken cancellationToken = default) => throw new InvalidOperationException();
+    }
+}
+
+public class PolicyTests : IDisposable
+{
+    private readonly string root = Path.Combine(Path.GetTempPath(), "sharex-policy-" + Guid.NewGuid().ToString("N"));
+
+    public void Dispose()
+    {
+        if (Directory.Exists(root)) Directory.Delete(root, true);
+    }
+
+    [Fact]
+    public void SystemFileWinsOverUserFile()
+    {
+        Directory.CreateDirectory(root);
+        string system = Path.Combine(root, "system.json"), user = Path.Combine(root, "user.json");
+        File.WriteAllText(system, """{ "DisableUpload": true }""");
+        File.WriteAllText(user, """{ "DisableUpload": false, "PersonalPath": "/data/sharex", "DisableLogging": 1 }""");
+        DefaultSystemPreferencesService preferences = new DefaultSystemPreferencesService(system, user, Path.Combine(root, "missing.json"));
+
+        Assert.Equal(true, preferences.GetPolicy("DisableUpload"));
+        Assert.Equal("/data/sharex", preferences.GetPolicy("PersonalPath"));
+        Assert.True(Convert.ToBoolean(preferences.GetPolicy("DisableLogging")));
+        Assert.Null(preferences.GetPolicy("DisableUpdateCheck"));
+    }
+
+    [Fact]
+    public void BrokenFileIsIgnored()
+    {
+        Directory.CreateDirectory(root);
+        string broken = Path.Combine(root, "broken.json");
+        File.WriteAllText(broken, "{ not json");
+
+        Assert.Null(new DefaultSystemPreferencesService(broken).GetPolicy("DisableUpload"));
+    }
+}
+
 public class LinuxParsingTests
 {
     [Fact]

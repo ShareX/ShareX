@@ -166,6 +166,9 @@ internal static unsafe partial class Win32
     [LibraryImport("user32.dll", EntryPoint = "GetClassLongPtrW")]
     public static partial nint GetClassLongPtr(IntPtr hwnd, int index);
 
+    [LibraryImport("shell32.dll")]
+    public static partial void SHChangeNotify(int eventId, uint flags, IntPtr item1, IntPtr item2);
+
     [LibraryImport("user32.dll")]
     public static partial uint EnumClipboardFormats(uint format);
 
