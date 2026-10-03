@@ -169,16 +169,13 @@ public sealed class WindowsPrintService : IPrintService
             document.PrinterSettings.PrinterName = options.PrinterName;
         }
 
-        if (options.Copies > 1)
-        {
-            document.PrinterSettings.Copies = (short)Math.Min(options.Copies, short.MaxValue);
-        }
+        document.PrinterSettings.Copies = (short)Math.Clamp(options.Copies, 1, short.MaxValue);
 
         return document;
     }
 
     /// <summary>Transfers a rendered page to the printer's device context.</summary>
-    private static unsafe void DrawImage(PrintPageEventArgs args, PixelBuffer image, Rectangle rectangle)
+    internal static unsafe void DrawImage(PrintPageEventArgs args, PixelBuffer image, Rectangle rectangle)
     {
         Graphics graphics = args.Graphics ?? throw new InvalidOperationException("The page has no graphics.");
         BitmapInfoHeader header = new()
