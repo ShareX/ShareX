@@ -53,6 +53,18 @@ public sealed record WindowDetails(
     bool? IsTopMost,
     byte? Opacity);
 
+/// <summary>The operations of <see cref="IWindowManagementService"/>, for asking which ones this desktop allows.</summary>
+public enum WindowManagementFeature
+{
+    /// <summary>Reading a window's details (<see cref="IWindowManagementService.GetDetails"/>).</summary>
+    Inspect,
+    /// <summary>Selecting controls inside a window, for the inspector and region capture snapping.</summary>
+    ChildControls,
+    TopMost,
+    Opacity,
+    Borderless
+}
+
 /// <summary>Inspecting and changing other applications' windows, for the Inspect Window and Borderless Window tools.</summary>
 public interface IWindowManagementService
 {
@@ -73,6 +85,9 @@ public interface IWindowManagementService
 
     /// <summary>Whether <see cref="ToggleBorderless"/> works.</summary>
     FeatureSupport BorderlessSupport { get; }
+
+    /// <summary>Whether one operation works here, with a reason to show when it does not.</summary>
+    FeatureSupport GetSupport(WindowManagementFeature feature) => feature == WindowManagementFeature.Borderless ? BorderlessSupport : Support;
 
     /// <summary>
     /// Removes the window's frame and fits it to its screen (or the screen's working area), or, called again, restores it.

@@ -871,3 +871,30 @@ public class LinuxDesktopWallpaperTests
         }
     }
 }
+
+public class FeatureReasonTests
+{
+    private static readonly PlatformInfo Hyprland = new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.Wayland, DesktopEnvironment.Hyprland, "Hyprland", false);
+
+    [Fact]
+    public void WindowsOnlyCaptureOptionsExplainWhy()
+    {
+        LinuxScreenCaptureService capture = new LinuxScreenCaptureService(Hyprland, new RecordingRunner("grim", "slurp"));
+
+        Assert.True(capture.Support.IsSupported);
+        Assert.Contains("only", capture.GetFeatureSupport(ScreenCaptureFeatures.TransparentWindow).Reason);
+        Assert.Contains("HDR", capture.GetFeatureSupport(ScreenCaptureFeatures.HdrToneMapping).Reason);
+        Assert.Contains("single window", capture.GetFeatureSupport(ScreenCaptureFeatures.Window).Reason);
+    }
+
+    [Fact]
+    public void HyprlandWindowOperationsExplainWhatWaylandAllows()
+    {
+        LinuxWindowManagementService management = new LinuxWindowManagementService(new LinuxWindowService(Hyprland, new RecordingRunner("hyprctl")), new RecordingRunner("hyprctl"));
+
+        Assert.True(management.GetSupport(WindowManagementFeature.Inspect).IsSupported);
+        Assert.True(management.GetSupport(WindowManagementFeature.TopMost).IsSupported);
+        Assert.Contains("opacity", management.GetSupport(WindowManagementFeature.Opacity).Reason);
+        Assert.Contains("controls", management.GetSupport(WindowManagementFeature.ChildControls).Reason);
+    }
+}

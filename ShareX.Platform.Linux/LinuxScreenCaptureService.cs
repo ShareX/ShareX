@@ -81,6 +81,26 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
     public ScreenCaptureFeatures Features =>
         windows != null && windows.Support.IsSupported && ActiveBackend is Backend.X11 or Backend.Grim ? ScreenCaptureFeatures.Window : ScreenCaptureFeatures.None;
 
+    public FeatureSupport GetFeatureSupport(ScreenCaptureFeatures feature)
+    {
+        if (!Support.IsSupported || (Features & feature) == feature)
+        {
+            return Support;
+        }
+
+        return feature switch
+        {
+            ScreenCaptureFeatures.Window => FeatureSupport.NotSupported(info.IsWayland
+                ? "This Wayland desktop does not let applications find or capture a single window. Capture a region instead."
+                : "Window capture is not available in this session."),
+            ScreenCaptureFeatures.WindowClientArea => FeatureSupport.NotSupported("On Linux windows are captured with their frame."),
+            ScreenCaptureFeatures.TransparentWindow => FeatureSupport.NotSupported("Transparent corners and window shadows can only be captured on Windows."),
+            ScreenCaptureFeatures.HideTaskbar => FeatureSupport.NotSupported("Hiding the task bar during capture is only available on Windows."),
+            ScreenCaptureFeatures.HdrToneMapping => FeatureSupport.NotSupported("HDR capture is only available on Windows."),
+            _ => FeatureSupport.NotSupported("This capture option is not available on this system.")
+        };
+    }
+
     internal static Backend SelectBackend(PlatformInfo info, bool grimAvailable, bool sessionBusAvailable)
     {
         if (info.IsX11 && !info.IsSandboxed)

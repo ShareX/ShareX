@@ -157,6 +157,15 @@ public interface IScreenCaptureService
     /// <summary>Optional capture features this platform implements.</summary>
     ScreenCaptureFeatures Features { get; }
 
+    /// <summary>
+    /// Whether one feature of <see cref="Features"/> works here, with a reason to show beside a disabled option. Window and control
+    /// snapping follow <see cref="IWindowService.Support"/> and <see cref="WindowManagementFeature.ChildControls"/>.
+    /// </summary>
+    FeatureSupport GetFeatureSupport(ScreenCaptureFeatures feature) =>
+        !Support.IsSupported ? Support :
+        (Features & feature) == feature ? FeatureSupport.Supported :
+        FeatureSupport.NotSupported("This capture option is not available on this system.");
+
     /// <summary>macOS Screen Recording permission, or <see cref="PermissionState.NotRequired"/> elsewhere.</summary>
     PermissionState GetPermissionState();
 

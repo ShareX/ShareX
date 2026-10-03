@@ -54,6 +54,27 @@ public sealed class LinuxWindowManagementService : IWindowManagementService
 
     public FeatureSupport BorderlessSupport => windows.Support;
 
+    public FeatureSupport GetSupport(WindowManagementFeature feature)
+    {
+        if (!Support.IsSupported)
+        {
+            return Support;
+        }
+
+        return (feature, Backend) switch
+        {
+            (WindowManagementFeature.Inspect, _) => FeatureSupport.Supported,
+            (WindowManagementFeature.ChildControls, _) =>
+                FeatureSupport.NotSupported("Linux applications draw their controls themselves, so only whole windows can be selected."),
+            // Hyprland keeps only floating windows above others; WindowDetails.IsTopMost is null for tiled ones.
+            (WindowManagementFeature.TopMost, LinuxWindowService.Backend.X11 or LinuxWindowService.Backend.Hyprland) => FeatureSupport.Supported,
+            (WindowManagementFeature.TopMost, _) => FeatureSupport.NotSupported("This desktop does not let applications keep another window on top."),
+            (WindowManagementFeature.Opacity, LinuxWindowService.Backend.X11) => FeatureSupport.Supported,
+            (WindowManagementFeature.Opacity, _) => FeatureSupport.NotSupported("Wayland desktops do not let applications change another window's opacity."),
+            _ => BorderlessSupport
+        };
+    }
+
     private LinuxWindowService.Backend Backend => windows.ActiveBackend;
 
     public long GetWindowAt(PlatformPoint point, bool topLevel)
