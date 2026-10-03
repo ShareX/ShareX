@@ -25,6 +25,7 @@
 
 using Avalonia.Media.Imaging;
 using ShareX.ImageEditor.Core.Annotations;
+using ShareX.ImageEditor.Localization;
 using SkiaSharp;
 using System.Buffers.Binary;
 using ShareX.Platform;
@@ -70,14 +71,35 @@ namespace ShareX.ImageEditor.Presentation.Rendering
             lock (SyncRoot)
             {
                 RefreshGraphicsCache();
-                if (!AnnotationBitmapCache.TryGetValue(cursorType, out SKBitmap? cachedBitmap))
+                return GetCachedAnnotationBitmap(cursorType)?.Copy();
+            }
+        }
+
+        public static FeatureSupport GetSupport(CursorType cursorType)
+        {
+            lock (SyncRoot)
+            {
+                RefreshGraphicsCache();
+                if (!BundledCursors.ContainsKey(cursorType))
                 {
-                    cachedBitmap = RenderCursorBitmap(cursorType, cachedGraphics);
-                    AnnotationBitmapCache[cursorType] = cachedBitmap;
+                    FeatureSupport support = cachedGraphics?.CursorSupport ??
+                        FeatureSupport.NotSupported(Strings.CursorBitmapRenderer_CursorImagesUnavailable);
+                    if (!support.IsSupported) return support;
                 }
 
-                return cachedBitmap?.Copy();
+                return GetCachedAnnotationBitmap(cursorType) != null ? FeatureSupport.Supported :
+                    FeatureSupport.NotSupported(Strings.CursorBitmapRenderer_CursorUnavailableInTheme);
             }
+        }
+
+        private static SKBitmap? GetCachedAnnotationBitmap(CursorType cursorType)
+        {
+            if (!AnnotationBitmapCache.TryGetValue(cursorType, out SKBitmap? bitmap))
+            {
+                bitmap = RenderCursorBitmap(cursorType, cachedGraphics);
+                AnnotationBitmapCache[cursorType] = bitmap;
+            }
+            return bitmap;
         }
 
         public static Bitmap? GetPreviewBitmap(CursorType cursorType, int previewSize = 28)

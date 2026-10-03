@@ -174,6 +174,12 @@
   <data name="ConfirmationDialogView_Yes" xml:space="preserve">
     <value>예</value>
   </data>
+  <data name="CursorBitmapRenderer_CursorImagesUnavailable" xml:space="preserve">
+    <value>현재 데스크톱 세션에서는 커서 이미지를 사용할 수 없습니다.</value>
+  </data>
+  <data name="CursorBitmapRenderer_CursorUnavailableInTheme" xml:space="preserve">
+    <value>현재 커서 테마에서는 이 커서를 사용할 수 없습니다.</value>
+  </data>
   <data name="CursorTypeDisplayNameConverter_AppStarting" xml:space="preserve">
     <value>앱 시작 중</value>
   </data>

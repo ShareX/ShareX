@@ -174,6 +174,12 @@ Doriți să salvați modificările înainte de a închide editorul de imagini?</
   <data name="ConfirmationDialogView_Yes" xml:space="preserve">
     <value>Da</value>
   </data>
+  <data name="CursorBitmapRenderer_CursorImagesUnavailable" xml:space="preserve">
+    <value>Imaginile cursoarelor nu sunt disponibile în sesiunea desktop curentă.</value>
+  </data>
+  <data name="CursorBitmapRenderer_CursorUnavailableInTheme" xml:space="preserve">
+    <value>Acest cursor nu este disponibil în tema de cursoare curentă.</value>
+  </data>
   <data name="CursorTypeDisplayNameConverter_AppStarting" xml:space="preserve">
     <value>Se pornește aplicația</value>
   </data>

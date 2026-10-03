@@ -174,6 +174,12 @@
   <data name="ConfirmationDialogView_Yes" xml:space="preserve">
     <value>हाँ</value>
   </data>
+  <data name="CursorBitmapRenderer_CursorImagesUnavailable" xml:space="preserve">
+    <value>वर्तमान डेस्कटॉप सत्र में कर्सर की छवियाँ उपलब्ध नहीं हैं।</value>
+  </data>
+  <data name="CursorBitmapRenderer_CursorUnavailableInTheme" xml:space="preserve">
+    <value>यह कर्सर वर्तमान कर्सर थीम में उपलब्ध नहीं है।</value>
+  </data>
   <data name="CursorTypeDisplayNameConverter_AppStarting" xml:space="preserve">
     <value>अनुप्रयोग आरंभ हो रहा है</value>
   </data>

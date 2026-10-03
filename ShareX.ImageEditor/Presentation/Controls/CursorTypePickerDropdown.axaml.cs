@@ -31,6 +31,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using ShareX.ImageEditor.Core.Annotations;
+using ShareX.ImageEditor.Presentation.Rendering;
 
 namespace ShareX.ImageEditor.Presentation.Controls
 {
@@ -83,7 +84,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
             {
                 foreach (var item in itemsControl.GetRealizedContainers())
                 {
-                    if (item is ContentPresenter presenter && presenter.Child is Button button)
+                    if (item is ContentPresenter presenter && presenter.Child is Border { Child: Button button })
                     {
                         if (button.CommandParameter is CursorType cursorType && cursorType == SelectedCursorType)
                         {
@@ -111,6 +112,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
         {
             if (sender is Button button && button.CommandParameter is CursorType selectedCursorType)
             {
+                if (!CursorBitmapRenderer.GetSupport(selectedCursorType).IsSupported) return;
                 SelectedCursorType = selectedCursorType;
                 UpdateActiveStates();
 

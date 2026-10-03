@@ -174,6 +174,12 @@ Simpan perubahan sebelum menutup editor gambar?</value>
   <data name="ConfirmationDialogView_Yes" xml:space="preserve">
     <value>Ya</value>
   </data>
+  <data name="CursorBitmapRenderer_CursorImagesUnavailable" xml:space="preserve">
+    <value>Gambar kursor tidak tersedia dalam sesi desktop saat ini.</value>
+  </data>
+  <data name="CursorBitmapRenderer_CursorUnavailableInTheme" xml:space="preserve">
+    <value>Kursor ini tidak tersedia dalam tema kursor saat ini.</value>
+  </data>
   <data name="CursorTypeDisplayNameConverter_AppStarting" xml:space="preserve">
     <value>Aplikasi dimulai</value>
   </data>

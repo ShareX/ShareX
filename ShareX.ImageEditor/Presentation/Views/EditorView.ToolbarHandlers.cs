@@ -210,6 +210,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void OnCursorTypeChanged(object? sender, CursorType cursorType)
         {
+            if (!CursorBitmapRenderer.GetSupport(cursorType).IsSupported) return;
             if (DataContext is MainViewModel vm)
             {
                 vm.SelectedCursorType = cursorType;
@@ -712,13 +713,10 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             if (selected?.Tag is CursorAnnotation cursorAnnotation && selected is Image cursorImage)
             {
-                cursorAnnotation.CursorType = cursorType;
-
                 var cursorBitmap = CursorBitmapRenderer.CreateAnnotationBitmap(cursorType);
-                if (cursorBitmap != null)
-                {
-                    cursorAnnotation.SetImage(cursorBitmap);
-                }
+                if (cursorBitmap == null) return;
+                cursorAnnotation.CursorType = cursorType;
+                cursorAnnotation.SetImage(cursorBitmap);
 
                 AnnotationVisualFactory.UpdateVisualControl(cursorImage, cursorAnnotation);
                 _selectionController.UpdateSelectionHandles();

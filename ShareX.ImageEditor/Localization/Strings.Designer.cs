@@ -820,6 +820,16 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick", resourceCulture);
             }
         }
+        public static string CursorBitmapRenderer_CursorImagesUnavailable {
+            get {
+                return ResourceManager.GetString("CursorBitmapRenderer_CursorImagesUnavailable", resourceCulture);
+            }
+        }
+        public static string CursorBitmapRenderer_CursorUnavailableInTheme {
+            get {
+                return ResourceManager.GetString("CursorBitmapRenderer_CursorUnavailableInTheme", resourceCulture);
+            }
+        }
         public static string CursorTypeDisplayNameConverter_AppStarting {
             get {
                 return ResourceManager.GetString("CursorTypeDisplayNameConverter_AppStarting", resourceCulture);
