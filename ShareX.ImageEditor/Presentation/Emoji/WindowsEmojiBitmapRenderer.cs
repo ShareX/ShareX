@@ -181,28 +181,7 @@ public static class WindowsEmojiBitmapRenderer
 
     private static SKBitmap? RenderWithSkiaFallback(string glyph, int canvasSize)
     {
-        using SKTypeface? typeface = SKFontManager.Default.MatchFamily(EmojiFontFamily) ?? SKTypeface.Default;
-        using var rawBitmap = new SKBitmap(new SKImageInfo(canvasSize, canvasSize, SKColorType.Bgra8888, SKAlphaType.Premul));
-        using var canvas = new SKCanvas(rawBitmap);
-        using var font = new SKFont(typeface, canvasSize * 0.68f);
-        using var paint = new SKPaint
-        {
-            IsAntialias = true,
-            Color = SKColors.White
-        };
-
-        canvas.Clear(SKColors.Transparent);
-
-        SKRect bounds = default;
-        font.MeasureText(glyph, out bounds);
-
-        float x = (canvasSize - bounds.Width) / 2f - bounds.Left;
-        float y = (canvasSize - bounds.Height) / 2f - bounds.Top;
-
-        canvas.DrawText(glyph, x, y, font, paint);
-        canvas.Flush();
-
-        return rawBitmap.Copy();
+        return SkiaEmojiBitmapRenderer.Render(glyph, canvasSize);
     }
 
     private static SKBitmap CopyWicBitmapToSkBitmap(IWICBitmap wicBitmap, int width, int height)

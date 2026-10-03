@@ -132,7 +132,7 @@ public sealed class Windows11ImageEffect : ImageEffectBase
         if (!string.IsNullOrWhiteSpace(Title))
         {
             SKColor textColor = DarkMode ? new SKColor(220, 220, 220) : new SKColor(50, 50, 50);
-            using SKTypeface titleTypeface = SKTypeface.FromFamilyName("Segoe UI", SKFontStyleWeight.Normal, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright)
+            using SKTypeface titleTypeface = SKTypeface.FromFamilyName(FontFamilyResolver.Resolve("Segoe UI"), SKFontStyleWeight.Normal, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright)
                                             ?? SKTypeface.Default;
             using SKFont titleFont = new SKFont(titleTypeface, 12f);
             using SKPaint textPaint = new()

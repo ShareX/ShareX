@@ -34,9 +34,9 @@ using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Rendering;
 using ShareX.ImageEditor.Presentation.ViewModels;
+using ShareX.Platform;
 using SkiaSharp;
 using System.ComponentModel;
-using System.Runtime.InteropServices;
 
 namespace ShareX.ImageEditor.Presentation.Views
 {
@@ -121,7 +121,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             memStream.Position = 0;
 
             SKBitmap? skBitmap = SKBitmap.Decode(memStream);
-            return skBitmap == null ? null : (skBitmap, files[0].Path.LocalPath);
+            return skBitmap == null ? null : (skBitmap, files[0].TryGetLocalPath());
         }
 
         private Action? _cancelPendingImageInsertion;
@@ -383,14 +383,19 @@ namespace ShareX.ImageEditor.Presentation.Views
         private Point? GetCursorScreenCenter(Visual relativeTo)
         {
             TopLevel? topLevel = TopLevel.GetTopLevel(this);
-            if (topLevel == null || !GetCursorPos(out NativePoint cursorPosition))
+            if (topLevel == null)
             {
                 return null;
             }
 
             Screens? screens = topLevel.Screens;
-            Screen? screen = screens?.ScreenFromPoint(
-                new PixelPoint(cursorPosition.X, cursorPosition.Y));
+            PlatformPoint? cursorPosition = PlatformServices.IsInitialized
+                ? PlatformServices.Current.Windows.GetCursorPosition()
+                : null;
+            Screen? screen = cursorPosition.HasValue
+                ? screens?.ScreenFromPoint(new PixelPoint(cursorPosition.Value.X, cursorPosition.Value.Y))
+                : null;
+            screen ??= screens?.ScreenFromTopLevel(topLevel) ?? screens?.Primary;
             if (screen == null)
             {
                 return null;
@@ -401,16 +406,5 @@ namespace ShareX.ImageEditor.Presentation.Views
                 screen.Bounds.Y + screen.Bounds.Height / 2);
             return topLevel.TranslatePoint(topLevel.PointToClient(screenCenter), relativeTo);
         }
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct NativePoint
-        {
-            public int X;
-            public int Y;
-        }
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool GetCursorPos(out NativePoint point);
     }
 }

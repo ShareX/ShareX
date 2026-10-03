@@ -76,7 +76,7 @@ public sealed class ASCIIArtImageEffect : ImageEffectBase
         using SKCanvas canvas = new SKCanvas(result);
         canvas.Clear(DarkBackground ? new SKColor(12, 12, 12, 255) : SKColors.White);
 
-        using SKTypeface? customTypeface = SKTypeface.FromFamilyName("Consolas");
+        using SKTypeface? customTypeface = SKTypeface.FromFamilyName(FontFamilyResolver.Resolve("Consolas"));
         using SKFont font = new SKFont(customTypeface ?? SKTypeface.Default, cell * 1.02f);
         using SKPaint paint = new SKPaint
         {

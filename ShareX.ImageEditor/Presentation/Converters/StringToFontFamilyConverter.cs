@@ -47,7 +47,7 @@ namespace ShareX.ImageEditor.Presentation.Converters
                 fontFamilyName = DefaultFontFamilyName;
             }
 
-            return new FontFamily(fontFamilyName);
+            return new FontFamily(FontFamilyResolver.Resolve(fontFamilyName));
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

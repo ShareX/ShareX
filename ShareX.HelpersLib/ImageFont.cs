@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using SkiaSharp;
+using ShareX.AvaloniaUI.Imaging;
 using System;
 using System.ComponentModel;
 using System.Globalization;
@@ -61,7 +62,7 @@ public sealed class ImageFont : IDisposable
 
     public SKFont CreateFont()
     {
-        using SKTypeface typeface = SKTypeface.FromFamilyName(Name,
+        using SKTypeface typeface = SKTypeface.FromFamilyName(FontFamilyResolver.Resolve(Name),
             Style.HasFlag(ImageFontStyle.Bold) ? SKFontStyleWeight.Bold : SKFontStyleWeight.Normal,
             SKFontStyleWidth.Normal, Style.HasFlag(ImageFontStyle.Italic) ? SKFontStyleSlant.Italic : SKFontStyleSlant.Upright);
         return new SKFont(typeface ?? SKTypeface.Default, PixelSize);

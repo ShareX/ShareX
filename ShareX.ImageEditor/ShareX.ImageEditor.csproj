@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
+    <ProjectReference Include="..\ShareX.Platform\ShareX.Platform.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +45,8 @@
     <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="SkiaSharp" />
+    <PackageReference Include="SkiaSharp.HarfBuzz" VersionOverride="3.119.4" />
+    <PackageReference Include="HarfBuzzSharp.NativeAssets.Linux" VersionOverride="8.3.1.5" />
     <PackageReference Include="Vortice.Direct2D1" VersionOverride="3.8.3" />
   </ItemGroup>
 </Project>

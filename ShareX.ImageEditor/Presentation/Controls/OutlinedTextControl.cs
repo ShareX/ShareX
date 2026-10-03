@@ -68,7 +68,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
             }
 
             var typeface = new Typeface(
-                annotation.FontFamily,
+                FontFamilyResolver.Resolve(annotation.FontFamily),
                 annotation.IsItalic ? FontStyle.Italic : FontStyle.Normal,
                 annotation.IsBold ? FontWeight.Bold : FontWeight.Normal);
 
@@ -98,7 +98,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
             if (Annotation == null || string.IsNullOrEmpty(Annotation.Text)) return;
 
             var typeface = new Typeface(
-                Annotation.FontFamily,
+                FontFamilyResolver.Resolve(Annotation.FontFamily),
                 Annotation.IsItalic ? FontStyle.Italic : FontStyle.Normal,
                 Annotation.IsBold ? FontWeight.Bold : FontWeight.Normal);
 
@@ -177,7 +177,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
             }
 
             var typeface = new Typeface(
-                Annotation.FontFamily,
+                FontFamilyResolver.Resolve(Annotation.FontFamily),
                 Annotation.IsItalic ? FontStyle.Italic : FontStyle.Normal,
                 Annotation.IsBold ? FontWeight.Bold : FontWeight.Normal);
 

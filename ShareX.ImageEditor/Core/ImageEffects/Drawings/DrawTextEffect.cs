@@ -117,7 +117,7 @@ public sealed class DrawTextEffect : ImageEffectBase
 
         SKFontStyleWeight weight = Bold ? SKFontStyleWeight.Bold : SKFontStyleWeight.Normal;
         SKFontStyleSlant slant = Italic ? SKFontStyleSlant.Italic : SKFontStyleSlant.Upright;
-        using SKTypeface? typeface = SKTypeface.FromFamilyName(FontFamily, weight, SKFontStyleWidth.Normal, slant);
+        using SKTypeface? typeface = SKTypeface.FromFamilyName(FontFamilyResolver.Resolve(FontFamily), weight, SKFontStyleWidth.Normal, slant);
         using SKFont textFont = new SKFont(typeface, FontSize);
 
         using SKPath textPath = CreateTextPath(Text, textFont);

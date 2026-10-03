@@ -126,7 +126,7 @@ public sealed class MacOSWindowImageEffect : ImageEffectBase
         {
             SKColor textColor = DarkMode ? new SKColor(220, 220, 220) : new SKColor(74, 74, 74);
             using SKTypeface titleTypeface = SKTypeface.FromFamilyName("San Francisco", SKFontStyleWeight.Medium, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright)
-                                            ?? SKTypeface.FromFamilyName("Segoe UI", SKFontStyleWeight.Medium, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright)
+                                            ?? SKTypeface.FromFamilyName(FontFamilyResolver.Resolve("Segoe UI"), SKFontStyleWeight.Medium, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright)
                                             ?? SKTypeface.Default;
             using SKFont titleFont = new SKFont(titleTypeface, 13f);
             using SKPaint textPaint = new()
