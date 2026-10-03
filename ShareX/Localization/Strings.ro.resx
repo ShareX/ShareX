@@ -2738,6 +2738,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>Limită dimensiune (kB):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>Sunetele nu sunt disponibile în acest mediu desktop.</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>Sunete</value>
   </data>

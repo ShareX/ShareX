@@ -2738,6 +2738,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>Limit rozmiaru (kB):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>Dźwięki nie są dostępne w tym środowisku pulpitu.</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>Dźwięki</value>
   </data>

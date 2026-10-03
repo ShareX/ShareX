@@ -2738,6 +2738,9 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>Limite dimensione (kB):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>I suoni non sono disponibili in questo ambiente desktop.</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>Suoni</value>
   </data>

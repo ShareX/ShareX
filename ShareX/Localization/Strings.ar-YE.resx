@@ -2738,6 +2738,9 @@
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>حد الحجم (ك.ب):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>الأصوات غير متاحة في بيئة سطح المكتب هذه.</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>الأصوات</value>
   </data>

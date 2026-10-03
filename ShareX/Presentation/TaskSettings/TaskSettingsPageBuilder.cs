@@ -267,13 +267,16 @@ internal sealed class TaskSettingsPageBuilder
         BindEnabled(toastOptions, showToast);
 
         return Page("general-notifications", Strings.TaskSettingsWindow_Notifications, LucideIcons.bell,
-            EnabledCard(_generalOverride, Strings.TaskSettingsWindow_Sounds,
-                Check(Strings.TaskSettingsWindow_PlaySoundAfterCaptureIsMade, () => general.PlaySoundAfterCapture, value => general.PlaySoundAfterCapture = value),
-                Check(Strings.TaskSettingsWindow_PlaySoundAfterTaskIsCompleted, () => general.PlaySoundAfterUpload, value => general.PlaySoundAfterUpload = value),
-                Check(Strings.TaskSettingsWindow_PlaySoundAfterActionIsCompleted, () => general.PlaySoundAfterAction, value => general.PlaySoundAfterAction = value)),
+            WithSoundSupport(EnabledCard(_generalOverride, Strings.TaskSettingsWindow_Sounds,
+                Check(Strings.TaskSettingsWindow_PlaySoundAfterCaptureIsMade, () => general.PlaySoundAfterCapture,
+                    SetIfSoundSupported<bool>(value => general.PlaySoundAfterCapture = value)),
+                Check(Strings.TaskSettingsWindow_PlaySoundAfterTaskIsCompleted, () => general.PlaySoundAfterUpload,
+                    SetIfSoundSupported<bool>(value => general.PlaySoundAfterUpload = value)),
+                Check(Strings.TaskSettingsWindow_PlaySoundAfterActionIsCompleted, () => general.PlaySoundAfterAction,
+                    SetIfSoundSupported<bool>(value => general.PlaySoundAfterAction = value)))),
             EnabledCard(_generalOverride, Strings.TaskSettingsWindow_ToastNotification,
                 Check(Strings.TaskSettingsWindow_ShowToastNotificationAfterTaskIsCompleted, showToast), toastOptions),
-            EnabledCard(_generalOverride, Strings.TaskSettingsWindow_CustomSounds,
+            WithSoundSupport(EnabledCard(_generalOverride, Strings.TaskSettingsWindow_CustomSounds,
                 SoundPath(Strings.TaskSettingsWindow_UseCustomCaptureSound, () => general.UseCustomCaptureSound, value => general.UseCustomCaptureSound = value,
                     () => general.CustomCaptureSoundPath, value => general.CustomCaptureSoundPath = value),
                 SoundPath(Strings.TaskSettingsWindow_UseCustomTaskCompletedSound, () => general.UseCustomTaskCompletedSound, value => general.UseCustomTaskCompletedSound = value,
@@ -281,7 +284,7 @@ internal sealed class TaskSettingsPageBuilder
                 SoundPath(Strings.TaskSettingsWindow_UseCustomActionCompletedSound, () => general.UseCustomActionCompletedSound, value => general.UseCustomActionCompletedSound = value,
                     () => general.CustomActionCompletedSoundPath, value => general.CustomActionCompletedSoundPath = value),
                 SoundPath(Strings.TaskSettingsWindow_UseCustomErrorSound, () => general.UseCustomErrorSound, value => general.UseCustomErrorSound = value,
-                    () => general.CustomErrorSoundPath, value => general.CustomErrorSoundPath = value)));
+                    () => general.CustomErrorSoundPath, value => general.CustomErrorSoundPath = value))));
     }
 
     private Control BuildImagePage()
@@ -1699,13 +1702,14 @@ internal sealed class TaskSettingsPageBuilder
 
     private Control SoundPath(string title, Func<bool> enabledGetter, Action<bool> enabledSetter, Func<string> pathGetter, Action<string> pathSetter)
     {
-        BoundValue<bool> enabled = new(enabledGetter(), enabledSetter);
-        BoundValue<string> path = new(pathGetter(), pathSetter);
+        BoundValue<bool> enabled = new(enabledGetter(), SetIfSoundSupported(enabledSetter));
+        BoundValue<string> path = new(pathGetter(), SetIfSoundSupported(pathSetter));
         TextBox text = Text(path);
         Button browse = Button("...", async () =>
         {
+            if (!PlatformServices.Current.Sounds.Support.IsSupported) return;
             string? selected = await PickFileAsync(Strings.TaskSettingsWindow_ChooseAudioFile, Strings.TaskSettingsWindow_WaveAudio, "*.wav");
-            if (!string.IsNullOrEmpty(selected))
+            if (!string.IsNullOrEmpty(selected) && PlatformServices.Current.Sounds.Support.IsSupported)
             {
                 path.Value = selected;
             }
@@ -1791,6 +1795,18 @@ internal sealed class TaskSettingsPageBuilder
     private static Action<T> SetIfCaptureSupported<T>(ScreenCaptureFeatures feature, Action<T> setter) => value =>
     {
         if (PlatformServices.Current.ScreenCapture.GetFeatureSupport(feature).IsSupported) setter(value);
+    };
+
+    private static Control WithSoundSupport(Control control)
+    {
+        FeatureSupport support = PlatformServices.Current.Sounds.Support;
+        return WithSupport(control, support.IsSupported ? support :
+            FeatureSupport.NotSupported(Strings.TaskSettingsWindow_SoundUnavailable));
+    }
+
+    private static Action<T> SetIfSoundSupported<T>(Action<T> setter) => value =>
+    {
+        if (PlatformServices.Current.Sounds.Support.IsSupported) setter(value);
     };
 
     private async Task<string?> PickFolderAsync(string title)

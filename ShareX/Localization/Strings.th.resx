@@ -2738,6 +2738,9 @@
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>ขนาด ขีดจำกัด (kB):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>ไม่สามารถใช้เสียงในสภาพแวดล้อมเดสก์ท็อปนี้ได้</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>เสียง</value>
   </data>

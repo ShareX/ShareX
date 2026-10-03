@@ -2738,6 +2738,9 @@
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>מגבלת גודל (kB):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>צלילים אינם זמינים בסביבת שולחן העבודה הזו.</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>צלילים</value>
   </data>

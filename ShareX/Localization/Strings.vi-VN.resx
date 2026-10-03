@@ -2738,6 +2738,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>Giới hạn kích thước (kB):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>Âm thanh không khả dụng trong môi trường màn hình nền này.</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>Âm thanh</value>
   </data>

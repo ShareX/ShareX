@@ -2738,6 +2738,9 @@ Do you want to abort the active grabación de pantalla?</value>
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>Límite de tamaño (kB):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>Los sonidos no están disponibles en este entorno de escritorio.</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>Sonidos</value>
   </data>

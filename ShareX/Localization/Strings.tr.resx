@@ -2738,6 +2738,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>Boyut sınırı (kB):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>Bu masaüstü ortamında sesler kullanılamıyor.</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>Sesler</value>
   </data>

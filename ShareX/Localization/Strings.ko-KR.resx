@@ -2738,6 +2738,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>크기 제한(kB):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>이 데스크톱 환경에서는 소리를 사용할 수 없습니다.</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>소리</value>
   </data>

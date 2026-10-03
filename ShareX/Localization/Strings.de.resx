@@ -2738,6 +2738,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>Größenlimit (kB):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>In dieser Desktop-Umgebung sind keine Sounds verfügbar.</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>Töne</value>
   </data>

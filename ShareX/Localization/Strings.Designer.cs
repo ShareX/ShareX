@@ -3371,6 +3371,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_Sounds", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_SoundUnavailable {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SoundUnavailable", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_ToastNotification {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ToastNotification", resourceCulture);

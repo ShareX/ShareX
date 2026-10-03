@@ -2738,6 +2738,9 @@
   <data name="TaskSettingsWindow_SizeLimitKB" xml:space="preserve">
     <value>Обмеження розміру (КБ):</value>
   </data>
+  <data name="TaskSettingsWindow_SoundUnavailable" xml:space="preserve">
+    <value>Звуки недоступні в цьому середовищі стільниці.</value>
+  </data>
   <data name="TaskSettingsWindow_Sounds" xml:space="preserve">
     <value>Звуки</value>
   </data>
