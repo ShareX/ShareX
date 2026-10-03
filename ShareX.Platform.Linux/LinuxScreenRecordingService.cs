@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.Platform.Diagnostics;
+using ShareX.Platform.Linux.Desktop;
 using ShareX.Platform.Linux.Native;
 using System;
 using System.Collections.Generic;
@@ -41,71 +42,22 @@ public sealed class LinuxScreenRecordingService : IScreenRecordingService
 {
     public const string WfRecorderDevice = "wf-recorder";
 
-    private readonly PlatformInfo info;
     private readonly ICommandRunner runner;
-    private readonly Func<IReadOnlyList<ScreenInfo>> getScreens;
+    private readonly LinuxDistribution distribution;
+    private readonly IScreenRecordingBackend backend;
 
     public LinuxScreenRecordingService(PlatformInfo info, ICommandRunner runner, Func<IReadOnlyList<ScreenInfo>> getScreens)
     {
-        this.info = info;
         this.runner = runner;
-        this.getScreens = getScreens;
+        distribution = info.Distribution ?? LinuxDistribution.Unknown;
+        backend = new LinuxDesktop(info).CreateRecordingBackend(runner, getScreens);
     }
 
-    private LinuxDistribution Distribution => info.Distribution ?? LinuxDistribution.Unknown;
+    public FeatureSupport Support => runner.Exists("ffmpeg") ? backend.Support : LinuxPackages.Missing(distribution, LinuxTool.FFmpeg);
 
-    public FeatureSupport Support
-    {
-        get
-        {
-            if (!runner.Exists("ffmpeg"))
-            {
-                return LinuxPackages.Missing(Distribution, LinuxTool.FFmpeg);
-            }
+    public IReadOnlyList<string> GetSupportedDevices() => backend.Support.IsSupported ? [backend.Device] : Array.Empty<string>();
 
-            if (info.IsWayland)
-            {
-                if (!info.IsWlrootsCompositor)
-                {
-                    return FeatureSupport.NotSupported("Screen recording on GNOME and KDE Wayland needs the xdg-desktop-portal ScreenCast interface, which ShareX does not use yet. Log in to an X11 session to record.");
-                }
-
-                return runner.Exists(WfRecorderDevice) ? FeatureSupport.Supported : LinuxPackages.Missing(Distribution, LinuxTool.WfRecorder);
-            }
-
-            return info.IsX11 ? FeatureSupport.Supported : FeatureSupport.NotSupported("No graphical session was found.");
-        }
-    }
-
-    public IReadOnlyList<string> GetSupportedDevices()
-    {
-        if (info.IsWayland)
-        {
-            return info.IsWlrootsCompositor && runner.Exists(WfRecorderDevice) ? [WfRecorderDevice] : Array.Empty<string>();
-        }
-
-        return info.IsX11 ? ["x11grab"] : Array.Empty<string>();
-    }
-
-    public FFmpegVideoInput CreateVideoInput(ScreenRecordingRequest request)
-    {
-        if (info.IsWayland)
-        {
-            PlatformRectangle desktop = getScreens().Select(s => s.Bounds).Aggregate(PlatformRectangle.Empty, (a, b) => a.Union(b));
-            string directory = Environment.GetEnvironmentVariable("XDG_RUNTIME_DIR") is { Length: > 0 } runtime ? runtime : Path.GetTempPath();
-            return CreateWfRecorderInput(request, Path.Combine(directory, $"sharex-recording-{Guid.NewGuid():N}.mkv"), desktop);
-        }
-
-        PlatformRectangle fallback = PlatformRectangle.Empty;
-
-        if (request.Region.IsEmpty && request.Screen == null)
-        {
-            using X11Display? display = X11Display.TryOpen();
-            fallback = display?.GetRootBounds() ?? throw new InvalidOperationException("Cannot open the X11 display.");
-        }
-
-        return CreateX11GrabInput(request, Environment.GetEnvironmentVariable("DISPLAY") ?? ":0", fallback);
-    }
+    public FFmpegVideoInput CreateVideoInput(ScreenRecordingRequest request) => backend.CreateVideoInput(request);
 
     /// <summary>The region is in layout coordinates, as grim and wf-recorder take it; the video has the monitor's pixels.</summary>
     internal static FFmpegVideoInput CreateWfRecorderInput(ScreenRecordingRequest request, string pipePath, PlatformRectangle desktop)

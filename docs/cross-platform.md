@@ -47,7 +47,16 @@ This document describes the **target** architecture. At the branch point (`devel
 
 ## Linux desktops
 
-Linux differs between compositors as much as between operating systems, so `ShareX.Platform.Linux` is desktop aware as well. `Desktop/LinuxDesktop` classifies the session (X11, Hyprland, sway, GNOME, KDE, other Wayland) and decides which implementation a service uses there; services that differ between compositors ask it instead of checking the desktop themselves. Desktop-specific pieces live under `Desktop/`, for example `HyprlandShortcutKeyBinder` and `SwayHotkeyService`. Hotkeys are the first service chosen this way; window, capture and recording backends follow.
+Linux differs between compositors as much as between operating systems, so `ShareX.Platform.Linux` is desktop aware as well. `Desktop/LinuxDesktop` classifies the session (X11, Hyprland, sway, GNOME, KDE, other Wayland) and decides which implementation a service uses there; services that differ between compositors ask it instead of checking the desktop themselves. Desktop-specific pieces live under `Desktop/`, for example `HyprlandShortcutKeyBinder` and `SwayHotkeyService`. Per desktop:
+
+| Area | X11 | Hyprland | sway | GNOME, KDE (Wayland) |
+| --- | --- | --- | --- | --- |
+| Windows, pointer, monitor layout | `X11WindowBackend` (EWMH, Xlib, RandR) | `HyprlandWindowBackend` (hyprctl; `HyprlandDispatcher` speaks Lua or classic dispatchers) | `SwayWindowBackend` (swaymsg) | not exposed (`UnsupportedWindowBackend`) |
+| Screen capture | `X11CaptureBackend` | `GrimCaptureBackend` | `GrimCaptureBackend` | `PortalCaptureBackend` |
+| Screen recording | `X11GrabRecordingBackend` | `WfRecorderRecordingBackend` | `WfRecorderRecordingBackend` | not yet (ScreenCast portal) |
+| Hotkeys | `X11HotkeyService` | portal + `HyprlandShortcutKeyBinder` | `SwayHotkeyService` | portal |
+
+The services (`LinuxWindowService`, `LinuxScreenCaptureService`, `LinuxScreenRecordingService`, `IHotkeyService`) are façades over these.
 
 ## Start up
 
