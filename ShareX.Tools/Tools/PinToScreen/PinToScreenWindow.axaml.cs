@@ -31,6 +31,7 @@ using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 
 namespace ShareX.Tools;
 
@@ -81,6 +82,8 @@ public partial class PinToScreenWindow : Window
         Opened += OnOpened;
         Closed += (_, _) => _bitmap.Dispose();
         ApplyOptions(resize: false);
+        ResizeWindow(keepCenter: false);
+        ConfigureInitialPlacement();
     }
 
     private void OnOpened(object? sender, EventArgs e)
@@ -88,20 +91,21 @@ public partial class PinToScreenWindow : Window
         _opened = true;
         ResizeWindow(keepCenter: false);
 
-        System.Drawing.Point location;
-        if (_requestedLocation.HasValue)
-        {
-            int inset = GetOuterInset();
-            location = new System.Drawing.Point(_requestedLocation.Value.X - inset, _requestedLocation.Value.Y - inset);
-        }
-        else
-        {
-            System.Drawing.Size size = new((int)Math.Ceiling(Width), (int)Math.Ceiling(Height));
-            location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset,
-                CaptureHelpers.GetActiveScreenWorkingArea(), size);
-        }
+        ConfigureInitialPlacement();
+    }
 
-        Position = new PixelPoint(location.X, location.Y);
+    private void ConfigureInitialPlacement()
+    {
+        PlatformPoint? anchor = _requestedLocation.HasValue
+            ? new PlatformPoint(_requestedLocation.Value.X, _requestedLocation.Value.Y)
+            : PlatformServices.IsInitialized ? PlatformServices.Current.Windows.GetCursorPosition() : null;
+        ScreenInfo[] screens = Screens.All.Select((screen, index) => new ScreenInfo(index.ToString(), screen.DisplayName ?? string.Empty,
+            new PlatformRectangle(screen.Bounds.X, screen.Bounds.Y, screen.Bounds.Width, screen.Bounds.Height),
+            new PlatformRectangle(screen.WorkingArea.X, screen.WorkingArea.Y, screen.WorkingArea.Width, screen.WorkingArea.Height),
+            screen.IsPrimary, screen.Scaling)).ToArray();
+        ScreenInfo? target = PinToScreenGeometry.FindScreen(screens, anchor);
+        Position = PinToScreenGeometry.GetInitialPosition(target, new Avalonia.Size(Width, Height), _requestedLocation,
+            GetOuterInset(), Options.Placement, Options.PlacementOffset);
     }
 
     private void ApplyOptions(bool resize = true)
@@ -145,9 +149,8 @@ public partial class PinToScreenWindow : Window
 
         if (keepCenter && previousSize.Width > 0 && previousSize.Height > 0)
         {
-            Position = new PixelPoint(
-                previousPosition.X + (int)Math.Round((previousSize.Width - width) / 2),
-                previousPosition.Y + (int)Math.Round((previousSize.Height - height) / 2));
+            Position = PinToScreenGeometry.KeepCenter(previousPosition, previousSize,
+                new Avalonia.Size(width, height), RenderScaling);
         }
 
         _scaleText.Text = $"{_imageScale}%";
