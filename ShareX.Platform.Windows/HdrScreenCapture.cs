@@ -258,7 +258,7 @@ internal static unsafe class HdrScreenCapture
         return false;
     }
 
-    private static PixelBuffer ConvertWithWindowsToneMapper(MappedSubresource mapped,
+    internal static PixelBuffer ConvertWithWindowsToneMapper(MappedSubresource mapped,
         Texture2DDescription description)
     {
         Guid sourcePixelFormat = description.Format switch
@@ -291,7 +291,7 @@ internal static unsafe class HdrScreenCapture
         return buffer;
     }
 
-    private static PixelBuffer ConvertToSdrReference(MappedSubresource mapped,
+    internal static PixelBuffer ConvertToSdrReference(MappedSubresource mapped,
         Texture2DDescription description, float sdrWhiteScale)
     {
         int width = (int)description.Width;
@@ -349,7 +349,7 @@ internal static unsafe class HdrScreenCapture
         return float.IsFinite(value) && value >= 0f && value <= 1f;
     }
 
-    private static PixelBuffer ConvertToSrgb(MappedSubresource mapped, Texture2DDescription description,
+    internal static PixelBuffer ConvertToSrgb(MappedSubresource mapped, Texture2DDescription description,
         float sdrWhiteScale, float peakNits)
     {
         int width = (int)description.Width;
@@ -492,7 +492,7 @@ internal static unsafe class HdrScreenCapture
     }
 
     /// <summary>Desktop Duplication returns rotated displays in their native orientation.</summary>
-    private static PixelBuffer RotateOutput(PixelBuffer source, ModeRotation rotation)
+    internal static PixelBuffer RotateOutput(PixelBuffer source, ModeRotation rotation)
     {
         if (rotation != ModeRotation.Rotate90 && rotation != ModeRotation.Rotate180 && rotation != ModeRotation.Rotate270)
         {
