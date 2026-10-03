@@ -26,6 +26,7 @@
 using ShareX.Platform;
 using ShareX.Platform.Windows;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using Xunit;
 
 namespace ShareX.Tools.Tests;
@@ -33,9 +34,10 @@ namespace ShareX.Tools.Tests;
 [Collection("Inspector native window")]
 public sealed class InspectWindowTests
 {
-    [Fact]
+    [WindowsInspectorFact]
     public void InspectorUsesPortableDetailsAndClearsClosedWindows()
     {
+        if (!OperatingSystem.IsWindows()) return;
         Exception? failure = null;
         Thread thread = new(() => { try { VerifyInspector(); } catch (Exception exception) { failure = exception; } }) { IsBackground = true };
         thread.SetApartmentState(ApartmentState.STA);
@@ -46,6 +48,7 @@ public sealed class InspectWindowTests
 
     private static void Equal<T>(T expected, T actual) => Assert.Equal(expected, actual);
 
+    [SupportedOSPlatform("windows")]
     private static void VerifyInspector()
     {
         PlatformServices.Initialize(new WindowsPlatformServices());
@@ -98,3 +101,11 @@ public sealed class InspectWindowTests
 
 [CollectionDefinition("Inspector native window", DisableParallelization = true)]
 public sealed class InspectorNativeWindowCollection { }
+
+public sealed class WindowsInspectorFactAttribute : FactAttribute
+{
+    public WindowsInspectorFactAttribute()
+    {
+        if (!OperatingSystem.IsWindows()) Skip = "Requires a native Windows inspector window.";
+    }
+}
