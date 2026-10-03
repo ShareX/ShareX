@@ -3,6 +3,7 @@
 using Microsoft.Win32;
 using ShareX.Platform;
 using ShareX.Platform.Windows;
+using ShareX.Platform.Imaging;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -22,6 +23,7 @@ internal static class Program
         Run("Hotkey registration, conflicts and callback isolation", VerifyHotkeys);
         Run("Hotkey timeout cancellation and callback disposal", VerifyHotkeyShutdown);
         Run("Window enumeration and inspector service handoff", VerifyInspector);
+        Run("Large cursor dimensions, accessibility scaling and GDI cleanup", VerifyCursorCapture);
         Console.WriteLine($"Verification complete: {failures} failure(s). Visual Windows 10/11 checklist remains separate.");
         return failures == 0 ? 0 : 1;
     }
@@ -412,6 +414,104 @@ internal static class Program
             PlatformServices.Shutdown();
         }
     }
+
+    private static void VerifyCursorCapture()
+    {
+        MethodInfo capture = typeof(WindowsScreenCaptureService).GetMethod("CaptureCursorImage", BindingFlags.Static | BindingFlags.NonPublic,
+            [typeof(IntPtr), typeof(PlatformPoint), typeof(int?)])!;
+        foreach (bool monochrome in new[] { false, true })
+        {
+            IntPtr cursor = CreateCursorFixture(monochrome);
+            try
+            {
+                (PixelBuffer Image, PlatformPoint Position) Capture(int? cursorSize) =>
+                    ((PixelBuffer Image, PlatformPoint Position))capture.Invoke(null, [cursor, new PlatformPoint(-50, 250), cursorSize])!;
+                foreach (int? setting in new int?[] { null, 0, 1, 3, 4 })
+                {
+                    var result = Capture(setting);
+                    double factor = setting is > 1 ? 1 + (setting.Value - 1) * 0.5 : 1;
+                    Equal((int)Math.Round(96 * factor), result.Image.Width);
+                    Equal((int)Math.Round(80 * factor), result.Image.Height);
+                    Equal(new PlatformPoint(-50 - (int)Math.Round(3 * factor), 250 - (int)Math.Round(5 * factor)), result.Position);
+                    // The fixture's bottom-right mark lies outside the former 64x64 allocation.
+                    Equal((byte)255, result.Image.Pixels[(result.Image.Height - 2) * result.Image.Stride + (result.Image.Width - 2) * 4 + 3]);
+                    Equal((byte)0, result.Image.Pixels[3]);
+                }
+                using System.Diagnostics.Process process = System.Diagnostics.Process.GetCurrentProcess();
+                uint before = GetGuiResources(process.Handle, 0);
+                for (int i = 0; i < 80; i++) Capture(3);
+                Equal(before, GetGuiResources(process.Handle, 0));
+            }
+            finally { DestroyCursor(cursor); }
+        }
+        Equal<object?>(null, capture.Invoke(null, [IntPtr.Zero, new PlatformPoint(0, 0), null]));
+    }
+
+    private static IntPtr CreateCursorFixture(bool monochrome)
+    {
+        const int width = 96, height = 80, maskStride = 12;
+        IntPtr color = IntPtr.Zero, mask = IntPtr.Zero;
+        try
+        {
+            byte[] maskPixels = Enumerable.Repeat((byte)255, maskStride * height * (monochrome ? 2 : 1)).ToArray();
+            if (monochrome) Array.Clear(maskPixels, maskStride * height, maskStride * height);
+            for (int y = 72; y < height; y++)
+                for (int x = 88; x < width; x++) maskPixels[y * maskStride + x / 8] &= (byte)~(0x80 >> (x % 8));
+            mask = CreateBitmap(width, height * (monochrome ? 2 : 1), 1, 1, maskPixels);
+            if (!monochrome)
+            {
+                BitmapHeader header = new() { Size = 40, Width = width, Height = -height, Planes = 1, BitsPerPixel = 32 };
+                color = CreateDIBSection(IntPtr.Zero, ref header, 0, out IntPtr pixels, IntPtr.Zero, 0);
+                int[] colorPixels = new int[width * height];
+                for (int y = 72; y < height; y++)
+                    for (int x = 88; x < width; x++) colorPixels[y * width + x] = unchecked((int)0xFFC83218);
+                if (color == IntPtr.Zero) throw new InvalidOperationException("Unable to create cursor bitmap.");
+                Marshal.Copy(colorPixels, 0, pixels, colorPixels.Length);
+            }
+            IconInfo info = new() { HotspotX = 3, HotspotY = 5, Mask = mask, Color = color };
+            IntPtr cursor = CreateIconIndirect(ref info);
+            if (cursor == IntPtr.Zero) throw new InvalidOperationException("Unable to create synthetic cursor.");
+            return cursor;
+        }
+        finally
+        {
+            if (color != IntPtr.Zero) DeleteObject(color);
+            if (mask != IntPtr.Zero) DeleteObject(mask);
+        }
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    private struct BitmapHeader
+    {
+        public uint Size;
+        public int Width, Height;
+        public ushort Planes, BitsPerPixel;
+        public uint Compression, ImageSize;
+        public int XPixelsPerMeter, YPixelsPerMeter;
+        public uint ColorsUsed, ColorsImportant;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    private struct IconInfo
+    {
+        public int IsIcon, HotspotX, HotspotY;
+        public IntPtr Mask, Color;
+    }
+
+    [DllImport("gdi32.dll")]
+    private static extern IntPtr CreateBitmap(int width, int height, uint planes, uint bitsPerPixel, byte[] bits);
+    [DllImport("gdi32.dll")]
+    private static extern IntPtr CreateDIBSection(IntPtr dc, ref BitmapHeader info, uint usage, out IntPtr bits, IntPtr section, uint offset);
+    [DllImport("gdi32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool DeleteObject(IntPtr handle);
+    [DllImport("user32.dll")]
+    private static extern IntPtr CreateIconIndirect(ref IconInfo info);
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool DestroyCursor(IntPtr cursor);
+    [DllImport("user32.dll")]
+    private static extern uint GetGuiResources(IntPtr process, uint flag);
 
     [DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
     private static extern IntPtr CommandLineToArgvW(string command, out int count);

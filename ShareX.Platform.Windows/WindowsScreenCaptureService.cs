@@ -23,13 +23,16 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Win32;
 using ShareX.Platform.Imaging;
 using ShareX.Platform.Windows.Native;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -238,18 +241,54 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
     {
         Win32.CURSORINFO cursor = new Win32.CURSORINFO { cbSize = sizeof(Win32.CURSORINFO) };
 
-        if (!Win32.GetCursorInfo(&cursor) || cursor.flags != Win32.CURSOR_SHOWING || !Win32.GetIconInfo(cursor.hCursor, out Win32.ICONINFO icon))
+        if (!Win32.GetCursorInfo(&cursor) || cursor.flags != Win32.CURSOR_SHOWING)
         {
             return null;
         }
 
+        return CaptureCursorImage(cursor.hCursor, new PlatformPoint(cursor.ptScreenPos.X, cursor.ptScreenPos.Y), ReadCursorSize());
+    }
+
+    internal static (PixelBuffer Image, PlatformPoint Position)? CaptureCursorImage(IntPtr handle, PlatformPoint position, int? cursorSize)
+    {
+        if (!TryGetCursorMetrics(handle, cursorSize, out CursorMetrics metrics)) return null;
+        PixelBuffer white = DrawIcon(handle, metrics.Width, metrics.Height, 0xFFFFFFFF);
+        PixelBuffer black = DrawIcon(handle, metrics.Width, metrics.Height, 0xFF000000);
+        PlatformPoint topLeft = new PlatformPoint(position.X - metrics.HotspotX, position.Y - metrics.HotspotY);
+        return (TransparentWindowCapture.CombineBackgrounds(white, black), topLeft);
+    }
+
+    private static int? ReadCursorSize()
+    {
         try
         {
-            const int size = 64;
-            PlatformPoint position = new PlatformPoint(cursor.ptScreenPos.X - icon.xHotspot, cursor.ptScreenPos.Y - icon.yHotspot);
-            PixelBuffer white = DrawIcon(cursor.hCursor, size, 0xFFFFFFFF);
-            PixelBuffer black = DrawIcon(cursor.hCursor, size, 0xFF000000);
-            return (TransparentWindowCapture.CombineBackgrounds(white, black), position);
+            using RegistryKey? key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Accessibility");
+            return key?.GetValue("CursorSize") as int?;
+        }
+        catch (Exception exception) when (exception is IOException or UnauthorizedAccessException or SecurityException)
+        {
+            Trace.WriteLine($"Unable to read the cursor size: {exception}");
+            return null;
+        }
+    }
+
+    private readonly record struct CursorMetrics(int Width, int Height, int HotspotX, int HotspotY);
+
+    private static bool TryGetCursorMetrics(IntPtr handle, int? cursorSize, out CursorMetrics metrics)
+    {
+        metrics = default;
+        if (!Win32.GetIconInfo(handle, out Win32.ICONINFO icon)) return false;
+        try
+        {
+            Win32.BITMAP bitmap = default;
+            IntPtr image = icon.hbmColor != IntPtr.Zero ? icon.hbmColor : icon.hbmMask;
+            if (Win32.GetObject(image, sizeof(Win32.BITMAP), &bitmap) == 0) return false;
+
+            int height = icon.hbmColor != IntPtr.Zero ? bitmap.bmHeight : bitmap.bmHeight / 2;
+            float multiplier = cursorSize is > 1 ? 1f + ((cursorSize.Value - 1) * 0.5f) : 1f;
+            metrics = new CursorMetrics((int)Math.Round(bitmap.bmWidth * multiplier), (int)Math.Round(height * multiplier),
+                (int)Math.Round(icon.xHotspot * multiplier), (int)Math.Round(icon.yHotspot * multiplier));
+            return metrics.Width > 0 && metrics.Height > 0;
         }
         finally
         {
@@ -260,33 +299,38 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
 
     /// <summary>An icon or cursor drawn at <paramref name="size"/> pixels with its transparency.</summary>
     internal static PixelBuffer RenderIcon(IntPtr icon, int size) =>
-        TransparentWindowCapture.CombineBackgrounds(DrawIcon(icon, size, 0xFFFFFFFF, true), DrawIcon(icon, size, 0xFF000000, true));
+        TransparentWindowCapture.CombineBackgrounds(DrawIcon(icon, size, size, 0xFFFFFFFF), DrawIcon(icon, size, size, 0xFF000000));
 
-    private static PixelBuffer DrawIcon(IntPtr icon, int size, uint background, bool fitToSize = false)
+    private static PixelBuffer DrawIcon(IntPtr icon, int width, int height, uint background)
     {
         IntPtr screenDc = Win32.GetDC(IntPtr.Zero);
         IntPtr memoryDc = Win32.CreateCompatibleDC(screenDc);
         Win32.BITMAPINFOHEADER header = new Win32.BITMAPINFOHEADER
         {
             biSize = (uint)sizeof(Win32.BITMAPINFOHEADER),
-            biWidth = size,
-            biHeight = -size,
+            biWidth = width,
+            biHeight = -height,
             biPlanes = 1,
             biBitCount = 32,
             biCompression = Win32.BI_RGB
         };
 
         IntPtr bitmap = Win32.CreateDIBSection(screenDc, &header, Win32.DIB_RGB_COLORS, out IntPtr bits, IntPtr.Zero, 0);
+        if (bitmap == IntPtr.Zero)
+        {
+            Win32.DeleteDC(memoryDc);
+            Win32.ReleaseDC(IntPtr.Zero, screenDc);
+            throw new InvalidOperationException("CreateDIBSection failed while rendering an icon.");
+        }
         IntPtr previous = Win32.SelectObject(memoryDc, bitmap);
 
         try
         {
-            new Span<uint>((void*)bits, size * size).Fill(background);
-            // Width and height 0 draw a cursor at its own size; window icons are scaled to fill the buffer.
-            int drawSize = fitToSize ? size : 0;
-            Win32.DrawIconEx(memoryDc, 0, 0, icon, drawSize, drawSize, 0, IntPtr.Zero, Win32.DI_NORMAL);
+            new Span<uint>((void*)bits, width * height).Fill(background);
+            if (!Win32.DrawIconEx(memoryDc, 0, 0, icon, width, height, 0, IntPtr.Zero, Win32.DI_NORMAL))
+                throw new InvalidOperationException("DrawIconEx failed.");
             Win32.GdiFlush();
-            return PixelBuffer.FromBgra(bits, size, size, size * 4, forceOpaque: true);
+            return PixelBuffer.FromBgra(bits, width, height, width * 4, forceOpaque: true);
         }
         finally
         {
@@ -301,20 +345,13 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
     {
         Win32.CURSORINFO cursor = new Win32.CURSORINFO { cbSize = sizeof(Win32.CURSORINFO) };
 
-        if (!Win32.GetCursorInfo(&cursor) || cursor.flags != Win32.CURSOR_SHOWING || !Win32.GetIconInfo(cursor.hCursor, out Win32.ICONINFO icon))
+        if (!Win32.GetCursorInfo(&cursor) || cursor.flags != Win32.CURSOR_SHOWING ||
+            !TryGetCursorMetrics(cursor.hCursor, ReadCursorSize(), out CursorMetrics metrics))
         {
             return;
         }
 
-        try
-        {
-            Win32.DrawIconEx(hdc, cursor.ptScreenPos.X - icon.xHotspot - area.X, cursor.ptScreenPos.Y - icon.yHotspot - area.Y,
-                cursor.hCursor, 0, 0, 0, IntPtr.Zero, Win32.DI_NORMAL);
-        }
-        finally
-        {
-            if (icon.hbmMask != IntPtr.Zero) Win32.DeleteObject(icon.hbmMask);
-            if (icon.hbmColor != IntPtr.Zero) Win32.DeleteObject(icon.hbmColor);
-        }
+        Win32.DrawIconEx(hdc, cursor.ptScreenPos.X - metrics.HotspotX - area.X, cursor.ptScreenPos.Y - metrics.HotspotY - area.Y,
+            cursor.hCursor, metrics.Width, metrics.Height, 0, IntPtr.Zero, Win32.DI_NORMAL);
     }
 }
