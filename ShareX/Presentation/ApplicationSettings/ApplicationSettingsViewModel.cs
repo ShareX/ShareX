@@ -173,8 +173,13 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public string? ShellIntegrationUnsupportedReason => PlatformServices.Current.ShellIntegration.Support.Reason;
     public bool SendToSupported => PlatformServices.Current.ShellIntegration.SendToSupport.IsSupported;
     public string? SendToUnsupportedReason => PlatformServices.Current.ShellIntegration.SendToSupport.Reason;
-    public bool BrowserHostSupported => PlatformServices.Current.ShellIntegration.BrowserHostSupport.IsSupported;
-    public string? BrowserHostUnsupportedReason => PlatformServices.Current.ShellIntegration.BrowserHostSupport.Reason;
+    private FeatureSupport BrowserHostSupport => PlatformServices.Current.ShellIntegration.BrowserHostSupport.IsSupported
+        ? PlatformServices.Current.ApplicationLaunch.Support
+        : PlatformServices.Current.ShellIntegration.BrowserHostSupport;
+    public bool BrowserHostSupported => BrowserHostSupport.IsSupported;
+    public string? BrowserHostUnsupportedReason => BrowserHostSupport.Reason;
+    public bool ChromeExtensionInstallEnabled => BrowserHostSupported && ChromeExtensionSupport;
+    public bool FirefoxAddonInstallEnabled => BrowserHostSupported && FirefoxAddonSupport;
     public bool PrintDialogSupported => PlatformServices.Current.Printing.DialogSupport.IsSupported;
 
     public bool SteamIntegrationVisible
@@ -417,8 +422,10 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         get => _chromeExtensionSupport;
         set
         {
+            if (!BrowserHostSupported) return;
             if (SetField(ref _chromeExtensionSupport, value))
             {
+                OnPropertyChanged(nameof(ChromeExtensionInstallEnabled));
                 InvokeOnMainThread(() => IntegrationHelpers.CreateChromeExtensionSupport(value));
             }
         }
@@ -429,8 +436,10 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         get => _firefoxAddonSupport;
         set
         {
+            if (!BrowserHostSupported) return;
             if (SetField(ref _firefoxAddonSupport, value))
             {
+                OnPropertyChanged(nameof(FirefoxAddonInstallEnabled));
                 InvokeOnMainThread(() => IntegrationHelpers.CreateFirefoxAddonSupport(value));
             }
         }
@@ -741,8 +750,17 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
     }
 
-    public void OpenChromeExtensionPage() => URLHelpers.OpenURL("https://chrome.google.com/webstore/detail/sharex/nlkoigbdolhchiicbonbihbphgamnaoc");
-    public void OpenFirefoxAddonPage() => URLHelpers.OpenURL("https://addons.mozilla.org/en-US/firefox/addon/sharex/");
+    public void OpenChromeExtensionPage()
+    {
+        if (ChromeExtensionInstallEnabled)
+            URLHelpers.OpenURL("https://chrome.google.com/webstore/detail/sharex/nlkoigbdolhchiicbonbihbphgamnaoc");
+    }
+
+    public void OpenFirefoxAddonPage()
+    {
+        if (FirefoxAddonInstallEnabled)
+            URLHelpers.OpenURL("https://addons.mozilla.org/en-US/firefox/addon/sharex/");
+    }
     public void OpenPersonalFolder() => FileHelpers.OpenFolder(PersonalFolderPreview);
     public void OpenScreenshotsFolder() => FileHelpers.OpenFolder(ScreenshotsFolderPreview);
 

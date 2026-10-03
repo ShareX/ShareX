@@ -279,7 +279,7 @@
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ChromeExtension}"/>
                                         <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableChromeExtensionSupport}" IsEnabled="{Binding BrowserHostSupported}" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" IsChecked="{Binding ChromeExtensionSupport, Mode=TwoWay}"/>
-                                        <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXChromeExtension}" IsEnabled="{Binding ChromeExtensionSupport}" Click="OnOpenChromeExtensionClick"/>
+                                        <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXChromeExtension}" IsEnabled="{Binding ChromeExtensionInstallEnabled}" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" Click="OnOpenChromeExtensionClick"/>
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
@@ -288,7 +288,7 @@
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_FirefoxAddon}"/>
                                         <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableFirefoxAddonSupport}" IsEnabled="{Binding BrowserHostSupported}" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" IsChecked="{Binding FirefoxAddonSupport, Mode=TwoWay}"/>
-                                        <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXFirefoxAddon}" IsEnabled="{Binding FirefoxAddonSupport}" Click="OnOpenFirefoxAddonClick"/>
+                                        <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXFirefoxAddon}" IsEnabled="{Binding FirefoxAddonInstallEnabled}" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" Click="OnOpenFirefoxAddonClick"/>
                                     </StackPanel>
                                 </Border>
                             </StackPanel>

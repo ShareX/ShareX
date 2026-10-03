@@ -39,6 +39,8 @@ Native Windows tray checks use generated transparent PNGs, owned hidden receiver
 
 `WindowsApplicationLaunchTests` execute private copies of this test project's generated apphost. Only the copied PE subsystem is changed to keep the fixture hidden. Generated argument data covers empty values, Unicode, spaces, quotes, backslashes and shell metacharacters. A fixture parent joins its own `BREAKAWAY_OK` / `KILL_ON_JOB_CLOSE` job; the child must escape that specific job and finish after job closure terminates the parent. An isolated fixture checks process/thread handle counts across repeated successful and failed launches, after runtime warmup. No browser, installed ShareX, user data, desktop configuration or third-party service is involved. Native checks skip off Windows; the unsupported capability check runs everywhere. The custom test entry point is inert without fixture arguments and does not affect xUnit discovery.
 
+With `SHAREX_TEST_WINDOWS_APPLICATION_DIRECTORY` set, two additional checks run the built native-messaging host in that private directory, with the generated fixture apphost named `ShareX.exe`. A length-prefixed UTF-8 synthetic payload must be echoed byte for byte and delivered unchanged through the temporary JSON and separate `-NativeMessagingInput` arguments. The fixture child removes its own input file. A zero-length message must exit without echoing or starting a child. These tests do not launch the real ShareX application or a browser.
+
 Native Windows updater signature checks reject missing, malformed and unsigned fixtures. The trusted/tampered comparison uses an optional, already signed binary:
 
 ```powershell

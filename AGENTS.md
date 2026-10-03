@@ -92,12 +92,12 @@ State at the branch point (`develop` `fd61635f2`). WinForms and GDI+ are already
 - [x] `ShareX.Platform*` projects and tests on this branch (brought from `cross-platform`).
 - [ ] `PlatformServices.Initialize` at application start up.
 - [ ] `net10.0-windows` targets: `HelpersLib`, `HistoryLib`, `UploadersLib`, `ImageEffectsLib`, `ScreenCaptureLib`, `NativeMessagingHost`, `Tools` and `ShareX` (`net10.0-windows10.0.22621.0`).
-- [ ] Remaining browser process-launch declarations in `HelpersLib` → `ShareX.Platform.Windows` behind services. Unused `WindowsImageInterop`, overlay rendering and native declarations have been removed; tray/session handling now uses platform services and duplicate shortcut COM code is removed; the browser caller awaits R26.
+- [x] Remaining browser process-launch declarations in `HelpersLib` → `ShareX.Platform.Windows` behind services. Tray/session and browser launch now use portable services; obsolete shared native declarations and duplicate shortcut COM code are removed. The Linux browser launcher remains unsupported pending R28.
 - [ ] Win32 interop in `ScreenCaptureLib` (GDI and HDR capture, transparent window capture, window lists, scrolling input, frame window regions) → services.
 - [ ] Win32 interop and WinRT in `Tools` (OCR, mouse highlighter, inspect and borderless window, ruler, clipboard viewer) → services.
 - [ ] Win32 calls and registry in the `ShareX` application (capture helpers, window menu, task metadata, notification and upload windows, startup and shell integration).
 - [x] `OperatingSystem.Is…()` and P/Invoke in `ImageEditor` and `ShareX.Avalonia`: wallpaper, native emoji/cursors and colour sampling use platform services; image insert and cursor assets use portable imaging.
-- [ ] `NativeMessagingHost`: `CreateProcess` and browser manifest registration → services.
+- [x] `NativeMessagingHost`: Windows `CreateProcess` and browser manifest registration → services. The host initializes its platform and passes separate arguments; Linux launch support and desktop verification remain in R28.
 
 ## Other rules
 

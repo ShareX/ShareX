@@ -24,6 +24,10 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Platform;
+using ShareX.Platform.Linux;
+using ShareX.Platform.MacOS;
+using ShareX.Platform.Windows;
 using System;
 using System.IO;
 using System.Text;
@@ -42,6 +46,7 @@ namespace ShareX.NativeMessagingHost
             {
                 try
                 {
+                    PlatformServices.Initialize(CreateForCurrentOS());
                     HelpersLib.NativeMessagingHost host = new HelpersLib.NativeMessagingHost();
                     string input = host.Read();
 
@@ -49,16 +54,33 @@ namespace ShareX.NativeMessagingHost
                     {
                         host.Write(input);
 
-                        string filePath = FileHelpers.GetAbsolutePath("ShareX.exe");
-                        string tempFilePath = FileHelpers.GetTempFilePath("json");
-                        File.WriteAllText(tempFilePath, input, Encoding.UTF8);
-                        string argument = $"-NativeMessagingInput \"{tempFilePath}\"";
-                        NativeMethods.CreateProcess(filePath, argument, CreateProcessFlags.CREATE_BREAKAWAY_FROM_JOB);
+                        IApplicationLaunchService launch = PlatformServices.Current.ApplicationLaunch;
+                        if (!launch.Support.IsSupported)
+                        {
+                            throw new PlatformNotSupportedException(launch.Support.Reason);
+                        }
+
+                        string filePath = launch.GetExecutablePath(AppContext.BaseDirectory, "ShareX");
+                        string tempFilePath = Path.Combine(Path.GetTempPath(), "ShareX-native-" + Guid.NewGuid().ToString("N") + ".json");
+                        try
+                        {
+                            File.WriteAllText(tempFilePath, input, Encoding.UTF8);
+                            launch.LaunchDetached(filePath, ["-NativeMessagingInput", tempFilePath]);
+                        }
+                        catch
+                        {
+                            File.Delete(tempFilePath);
+                            throw;
+                        }
                     }
                 }
                 catch (Exception e)
                 {
                     e.ShowError();
+                }
+                finally
+                {
+                    PlatformServices.Shutdown();
                 }
             }
             else
@@ -66,6 +88,15 @@ namespace ShareX.NativeMessagingHost
                 MessageBox.Show("This executable is used to receive data from browser addon and send it to ShareX.",
                     "ShareX NativeMessagingHost", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        // The only OS branch: select the implementation at process startup.
+        private static IPlatformServices CreateForCurrentOS()
+        {
+            if (OperatingSystem.IsWindows()) return new WindowsPlatformServices();
+            if (OperatingSystem.IsLinux()) return new LinuxPlatformServices();
+            if (OperatingSystem.IsMacOS()) return new MacPlatformServices();
+            throw new PlatformNotSupportedException("The native messaging host is unavailable on this operating system.");
         }
     }
 }

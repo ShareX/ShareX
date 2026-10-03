@@ -25,9 +25,10 @@
 
 using ShareX.Platform;
 using ShareX.Platform.Windows;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.Versioning;
+using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using Xunit;
 
@@ -117,6 +118,90 @@ public sealed class WindowsApplicationLaunchTests
 
     }
 
+    [WindowsApplicationSmokeFact]
+    [SupportedOSPlatform("windows")]
+    public async Task NativeMessagingHostEchoesTheFramedPayloadAndLaunchesTheFixtureApplication()
+    {
+        if (!OperatingSystem.IsWindows()) return;
+        using LaunchFiles files = new();
+        string hostPath = files.CopyBrowserHost();
+        string output = Path.Combine(files.DirectoryPath, "browser-result.json");
+        string input = JsonSerializer.Serialize(new { TestOutputFile = output, Text = "İstanbul 日本語 😀 \"quoted\" \\ end" },
+            new JsonSerializerOptions { Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping });
+        byte[] body = Encoding.UTF8.GetBytes(input);
+        using Process host = StartHost(hostPath, files.DirectoryPath);
+        using CancellationTokenSource timeout = new(TimeSpan.FromSeconds(25));
+        try
+        {
+            await host.StandardInput.BaseStream.WriteAsync(BitConverter.GetBytes(body.Length), timeout.Token);
+            await host.StandardInput.BaseStream.WriteAsync(body, timeout.Token);
+            await host.StandardInput.BaseStream.FlushAsync(timeout.Token);
+            host.StandardInput.Close();
+            byte[] prefix = new byte[4];
+            await host.StandardOutput.BaseStream.ReadExactlyAsync(prefix, timeout.Token);
+            Assert.Equal(body.Length, BitConverter.ToInt32(prefix));
+            byte[] echoed = new byte[body.Length];
+            await host.StandardOutput.BaseStream.ReadExactlyAsync(echoed, timeout.Token);
+            Assert.Equal(body, echoed);
+            await host.WaitForExitAsync(timeout.Token);
+            Assert.Equal(0, host.ExitCode);
+            BrowserLaunchRecord record = files.ReadRecord<BrowserLaunchRecord>(output);
+            Assert.Equal(input, record.Payload);
+            Assert.Equal(2, record.Arguments.Length);
+            Assert.Equal("-NativeMessagingInput", record.Arguments[0]);
+            Assert.True(Path.IsPathFullyQualified(record.Arguments[1]));
+            Assert.Equal(".json", Path.GetExtension(record.Arguments[1]));
+            files.WaitForOwnedProcess(record.ProcessId);
+            Assert.False(File.Exists(record.Arguments[1]));
+        }
+        finally
+        {
+            if (!host.HasExited) { host.Kill(); await host.WaitForExitAsync(); }
+        }
+    }
+
+    [WindowsApplicationSmokeFact]
+    [SupportedOSPlatform("windows")]
+    public async Task NativeMessagingHostDoesNotLaunchAnApplicationForAnEmptyMessage()
+    {
+        if (!OperatingSystem.IsWindows()) return;
+        using LaunchFiles files = new();
+        string hostPath = files.CopyBrowserHost();
+        using Process host = StartHost(hostPath, files.DirectoryPath);
+        using CancellationTokenSource timeout = new(TimeSpan.FromSeconds(25));
+        try
+        {
+            await host.StandardInput.BaseStream.WriteAsync(new byte[4], timeout.Token);
+            host.StandardInput.Close();
+            string output = await host.StandardOutput.ReadToEndAsync(timeout.Token);
+            await host.WaitForExitAsync(timeout.Token);
+            Assert.Equal(0, host.ExitCode);
+            Assert.Empty(output);
+            Assert.False(File.Exists(Path.Combine(files.DirectoryPath, "fixture-started")));
+        }
+        finally
+        {
+            if (!host.HasExited) { host.Kill(); await host.WaitForExitAsync(); }
+        }
+    }
+
+    [SupportedOSPlatform("windows")]
+    private static Process StartHost(string executable, string workingDirectory)
+    {
+        ProcessStartInfo start = new(executable)
+        {
+            UseShellExecute = false,
+            CreateNoWindow = true,
+            WindowStyle = ProcessWindowStyle.Hidden,
+            WorkingDirectory = workingDirectory,
+            RedirectStandardInput = true,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true
+        };
+        start.ArgumentList.Add("chrome-extension://synthetic-sharex-fixture/");
+        return Assert.IsType<Process>(Process.Start(start));
+    }
+
     [SupportedOSPlatform("windows")]
     internal sealed class LaunchFiles : IDisposable
     {
@@ -151,6 +236,19 @@ public sealed class WindowsApplicationLaunchTests
         }
 
         public Process StartParent() => StartFixture("--job-parent");
+
+        public string CopyBrowserHost()
+        {
+            string source = Environment.GetEnvironmentVariable("SHAREX_TEST_WINDOWS_APPLICATION_DIRECTORY")!;
+            foreach (string file in Directory.EnumerateFiles(source))
+            {
+                string name = Path.GetFileName(file);
+                if (Path.GetExtension(file) is ".dll" or ".json" || name == "ShareX_NativeMessagingHost.exe")
+                    File.Copy(file, Path.Combine(DirectoryPath, name), true);
+            }
+            File.Copy(ExecutablePath, Path.Combine(DirectoryPath, "ShareX.exe"));
+            return Path.Combine(DirectoryPath, "ShareX_NativeMessagingHost.exe");
+        }
 
         public Process StartFixture(string mode)
         {
@@ -201,7 +299,24 @@ public sealed class WindowsApplicationLaunchTests
             catch (ArgumentException) { }
         }
 
-        public void Dispose() => Directory.Delete(DirectoryPath, true);
+        public void Dispose()
+        {
+            if (!Directory.Exists(DirectoryPath)) return;
+            string target = Path.GetFullPath(DirectoryPath);
+            if (!target.StartsWith(Path.GetFullPath(Path.GetTempPath()), StringComparison.OrdinalIgnoreCase) ||
+                !Path.GetFileName(target).StartsWith("ShareX launch fixture 日本語 ", StringComparison.Ordinal))
+                throw new InvalidOperationException("The fixture cleanup path is outside its temporary directory.");
+            foreach (string file in Directory.EnumerateFiles(target, "*", SearchOption.AllDirectories))
+                File.SetAttributes(file, File.GetAttributes(file) & ~FileAttributes.ReadOnly);
+            for (int attempt = 0; ; attempt++)
+            {
+                try { Directory.Delete(target, true); return; }
+                catch (Exception error) when (attempt < 20 && error is IOException or UnauthorizedAccessException)
+                {
+                    Thread.Sleep(100);
+                }
+            }
+        }
     }
 }
 

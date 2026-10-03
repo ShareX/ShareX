@@ -40,6 +40,7 @@ internal static class NativeProcessFixture
         if (!OperatingSystem.IsWindows() || args.Length == 0) return 0;
         try
         {
+            File.WriteAllText(Path.Combine(AppContext.BaseDirectory, "fixture-started"), Environment.ProcessId.ToString());
             return Run(args);
         }
         catch (Exception error)
