@@ -1160,6 +1160,9 @@
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X：{0}  Y：{1}  |  宽度：{2}  高度：{3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>此设置不适用于所选窗口。</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>无标题窗口</value>
   </data>

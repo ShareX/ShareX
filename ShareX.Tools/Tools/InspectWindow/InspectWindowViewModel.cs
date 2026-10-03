@@ -53,6 +53,8 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(CanChangeTopMost))]
     [NotifyPropertyChangedFor(nameof(CanChangeOpacity))]
+    [NotifyPropertyChangedFor(nameof(TopMostSupportReason))]
+    [NotifyPropertyChangedFor(nameof(OpacitySupportReason))]
     private bool _isTopLevelWindow;
 
     [ObservableProperty]
@@ -77,10 +79,16 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
     [ObservableProperty]
     private double _opacity = 100;
 
-    public bool CanRefresh => HasSelection;
+    public bool CanRefresh => HasSelection && CanPickWindow;
     public bool HasSelectedIcon => SelectedIcon != null;
-    public bool CanChangeTopMost => IsTopLevelWindow && _selectedWindow?.IsTopMost != null;
-    public bool CanChangeOpacity => IsTopLevelWindow && _selectedWindow?.Opacity != null;
+    public bool CanPickWindow => GetSupport(WindowManagementFeature.Inspect).IsSupported;
+    public bool CanPickControl => CanPickWindow && GetSupport(WindowManagementFeature.ChildControls).IsSupported;
+    public string? PickWindowSupportReason => GetReason(GetSupport(WindowManagementFeature.Inspect));
+    public string? PickControlSupportReason => CanPickWindow ? GetReason(GetSupport(WindowManagementFeature.ChildControls)) : PickWindowSupportReason;
+    public bool CanChangeTopMost => IsTopLevelWindow && _selectedWindow?.IsTopMost != null && GetSupport(WindowManagementFeature.TopMost).IsSupported;
+    public bool CanChangeOpacity => IsTopLevelWindow && _selectedWindow?.Opacity != null && GetSupport(WindowManagementFeature.Opacity).IsSupported;
+    public string? TopMostSupportReason => GetSettingReason(WindowManagementFeature.TopMost, _selectedWindow?.IsTopMost != null);
+    public string? OpacitySupportReason => GetSettingReason(WindowManagementFeature.Opacity, _selectedWindow?.Opacity != null);
     public string ClipboardText => string.Join(Environment.NewLine + Environment.NewLine,
         Details.Select(x => $"{x.Name}{Environment.NewLine}{x.Value}"));
 
@@ -92,7 +100,7 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
 
     public void SelectWindow(IntPtr handle, bool isTopLevelWindow)
     {
-        if (handle == IntPtr.Zero || handle == _ignoredWindowHandle)
+        if (handle == IntPtr.Zero || handle == _ignoredWindowHandle || !(isTopLevelWindow ? CanPickWindow : CanPickControl))
         {
             return;
         }
@@ -118,6 +126,8 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
         {
             DisposeWindowList();
             Windows.Clear();
+            RefreshCapabilities();
+            if (!CanPickWindow) return;
             foreach (InspectWindowListItem window in InspectWindowService.GetVisibleWindows(_ignoredWindowHandle))
             {
                 Windows.Add(window);
@@ -190,7 +200,7 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
         try
         {
             IWindowManagementService service = PlatformServices.Current.WindowManagement;
-            _selectedWindow = service.Support.IsSupported ? service.GetDetails(_selectedWindowHandle) : null;
+            _selectedWindow = service.GetSupport(WindowManagementFeature.Inspect).IsSupported ? service.GetDetails(_selectedWindowHandle) : null;
             if (_selectedWindow == null)
             {
                 ClearSelection();
@@ -236,8 +246,7 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
             }
 
             HasSelection = true;
-            OnPropertyChanged(nameof(CanChangeTopMost));
-            OnPropertyChanged(nameof(CanChangeOpacity));
+            RefreshCapabilities();
         }
         catch (Exception ex)
         {
@@ -263,8 +272,32 @@ public sealed partial class InspectWindowViewModel : ViewModelBase, IDisposable
         Details = [];
         IsTopMost = false;
         Opacity = 100;
+        RefreshCapabilities();
+    }
+
+    private static FeatureSupport GetSupport(WindowManagementFeature feature) => PlatformServices.Current.WindowManagement.GetSupport(feature);
+
+    private static string? GetReason(FeatureSupport support) => support.IsSupported ? null : support.Reason;
+
+    private string? GetSettingReason(WindowManagementFeature feature, bool hasValue)
+    {
+        FeatureSupport support = GetSupport(feature);
+        if (!support.IsSupported) return support.Reason;
+        return IsTopLevelWindow && _selectedWindow != null && !hasValue
+            ? Localization.Strings.InspectWindowViewModel_Selected_window_setting_unavailable : null;
+    }
+
+    private void RefreshCapabilities()
+    {
+        OnPropertyChanged(nameof(CanRefresh));
+        OnPropertyChanged(nameof(CanPickWindow));
+        OnPropertyChanged(nameof(CanPickControl));
+        OnPropertyChanged(nameof(PickWindowSupportReason));
+        OnPropertyChanged(nameof(PickControlSupportReason));
         OnPropertyChanged(nameof(CanChangeTopMost));
         OnPropertyChanged(nameof(CanChangeOpacity));
+        OnPropertyChanged(nameof(TopMostSupportReason));
+        OnPropertyChanged(nameof(OpacitySupportReason));
     }
 
     private static string FormatRectangle(PlatformRectangle rectangle)

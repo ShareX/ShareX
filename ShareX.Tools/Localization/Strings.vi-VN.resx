@@ -1156,6 +1156,9 @@
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X: {0}  Y: {1}  |  Rộng: {2}  Cao: {3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>Thiết lập này không khả dụng cho cửa sổ đã chọn.</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>Cửa sổ không tiêu đề</value>
   </data>

@@ -31,53 +31,59 @@
             <Grid Margin="16" RowDefinitions="Auto,*" RowSpacing="12">
                 <Border Grid.Row="0" Classes="tool-panel">
                     <Grid ColumnDefinitions="Auto,Auto,*" ColumnSpacing="8">
-                            <Button Grid.Column="0" Click="OnPickWindowClick">
-                                <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.scan}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                               FontWeight="Normal"/>
-                                    <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Pick_window}"/>
-                                </StackPanel>
-                            </Button>
-                            <Button Grid.Column="1" Click="OnPickControlClick">
-                                <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.mouse_pointer_2}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                               FontWeight="Normal"/>
-                                    <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Pick_control}"/>
-                                </StackPanel>
-                            </Button>
-                            <ComboBox Grid.Column="2"
-                                      ItemsSource="{Binding Windows}"
-                                      SelectedItem="{Binding SelectedListItem}"
-                                      PlaceholderText="{x:Static localization:Strings.InspectWindowWindow_Select_window}"
-                                      FontWeight="Normal"
-                                      DropDownOpened="OnWindowListDropDownOpened">
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate x:DataType="vm:InspectWindowListItem">
-                                        <Grid ColumnDefinitions="20,*" ColumnSpacing="8">
-                                            <Grid Grid.Column="0" Width="20" Height="20">
-                                                <Image Source="{Binding Icon}"
-                                                       Width="20"
-                                                       Height="20"
-                                                       Stretch="Uniform"/>
-                                                <TextBlock IsVisible="{Binding !HasIcon}"
-                                                           Text="{x:Static theming:LucideIcons.app_window}"
-                                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                            <Border Grid.Column="0" Background="Transparent" ToolTip.Tip="{Binding PickWindowSupportReason}">
+                                <Button Click="OnPickWindowClick" IsEnabled="{Binding CanPickWindow}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <TextBlock Text="{x:Static theming:LucideIcons.scan}"
+                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                   FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Pick_window}"/>
+                                    </StackPanel>
+                                </Button>
+                            </Border>
+                            <Border Grid.Column="1" Background="Transparent" ToolTip.Tip="{Binding PickControlSupportReason}">
+                                <Button Click="OnPickControlClick" IsEnabled="{Binding CanPickControl}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <TextBlock Text="{x:Static theming:LucideIcons.mouse_pointer_2}"
+                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                   FontWeight="Normal"/>
+                                        <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Pick_control}"/>
+                                    </StackPanel>
+                                </Button>
+                            </Border>
+                            <Border Grid.Column="2" Background="Transparent" ToolTip.Tip="{Binding PickWindowSupportReason}">
+                                <ComboBox IsEnabled="{Binding CanPickWindow}"
+                                          ItemsSource="{Binding Windows}"
+                                          SelectedItem="{Binding SelectedListItem}"
+                                          PlaceholderText="{x:Static localization:Strings.InspectWindowWindow_Select_window}"
+                                          FontWeight="Normal"
+                                          DropDownOpened="OnWindowListDropDownOpened">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate x:DataType="vm:InspectWindowListItem">
+                                            <Grid ColumnDefinitions="20,*" ColumnSpacing="8">
+                                                <Grid Grid.Column="0" Width="20" Height="20">
+                                                    <Image Source="{Binding Icon}"
+                                                           Width="20"
+                                                           Height="20"
+                                                           Stretch="Uniform"/>
+                                                    <TextBlock IsVisible="{Binding !HasIcon}"
+                                                               Text="{x:Static theming:LucideIcons.app_window}"
+                                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                               FontWeight="Normal"
+                                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                               HorizontalAlignment="Center"
+                                                               VerticalAlignment="Center"/>
+                                                </Grid>
+                                                <TextBlock Grid.Column="1"
+                                                           Text="{Binding DisplayName}"
                                                            FontWeight="Normal"
-                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                           HorizontalAlignment="Center"
+                                                           TextTrimming="CharacterEllipsis"
                                                            VerticalAlignment="Center"/>
                                             </Grid>
-                                            <TextBlock Grid.Column="1"
-                                                       Text="{Binding DisplayName}"
-                                                       FontWeight="Normal"
-                                                       TextTrimming="CharacterEllipsis"
-                                                       VerticalAlignment="Center"/>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </Border>
                     </Grid>
                 </Border>
 
@@ -128,13 +134,16 @@
                         <Border Classes="tool-panel" Padding="16" IsVisible="{Binding IsTopLevelWindow}">
                             <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
                                 <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.InspectWindowWindow_Window_settings}"/>
-                                <ToggleSwitch Grid.Row="1"
-                                              IsEnabled="{Binding CanChangeTopMost}"
-                                              IsChecked="{Binding IsTopMost}"
-                                              OnContent="{x:Static localization:Strings.InspectWindowWindow_Always_on_top}"
-                                              OffContent="{x:Static localization:Strings.InspectWindowWindow_Always_on_top}"
-                                              FontWeight="Normal"/>
-                                <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="0">
+                                <Border Grid.Row="1" Background="Transparent" ToolTip.Tip="{Binding TopMostSupportReason}">
+                                    <ToggleSwitch
+                                                  IsEnabled="{Binding CanChangeTopMost}"
+                                                  IsChecked="{Binding IsTopMost}"
+                                                  OnContent="{x:Static localization:Strings.InspectWindowWindow_Always_on_top}"
+                                                  OffContent="{x:Static localization:Strings.InspectWindowWindow_Always_on_top}"
+                                                  FontWeight="Normal"/>
+                                </Border>
+                                <Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="0" Background="Transparent"
+                                      ToolTip.Tip="{Binding OpacitySupportReason}">
                                     <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
                                         <TextBlock Classes="row-label" Text="{x:Static localization:Strings.InspectWindowWindow_Opacity}"/>
                                         <TextBlock Grid.Column="1"

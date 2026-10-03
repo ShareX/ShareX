@@ -1160,6 +1160,9 @@
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X: {0}  Y: {1}  |  चौड़ाई: {2}  ऊँचाई: {3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>चुनी गई विंडो के लिए यह सेटिंग उपलब्ध नहीं है।</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>शीर्षकहीन विंडो</value>
   </data>

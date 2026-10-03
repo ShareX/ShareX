@@ -53,12 +53,6 @@ internal sealed class MainForm
 
     internal void Initialize() => _hotkeyHost.Initialize();
 
-    internal void ApplyHotkeySettings()
-    {
-        // Compatibility entry point for ApplicationSettingsRuntime. HotkeyRegistrar
-        // reads the current repeat limit directly from settings on every press.
-    }
-
     internal void UpdateTrayIcon()
     {
         ShareXResources.UseWhiteIcon = ApplicationState.Settings.UseWhiteShareXIcon;

@@ -52,8 +52,9 @@ internal static class TaskFeatureSupport
             PlatformServices.Current.Windows.Support),
 
         HotkeyType.MouseHighlighter => MouseHighlighterManager.Support,
-        HotkeyType.InspectWindow or HotkeyType.ActiveWindowTopMost => PlatformServices.Current.WindowManagement.Support,
-        HotkeyType.BorderlessWindow or HotkeyType.ActiveWindowBorderless => PlatformServices.Current.WindowManagement.BorderlessSupport,
+        HotkeyType.InspectWindow => PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.Inspect),
+        HotkeyType.ActiveWindowTopMost => PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.TopMost),
+        HotkeyType.BorderlessWindow or HotkeyType.ActiveWindowBorderless => PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.Borderless),
         // OCR tasks also accept image files; capture support is checked separately on the screen OCR menu.
         HotkeyType.OCR => PlatformServices.Current.Ocr.Support,
         _ => FeatureSupport.Supported

@@ -1160,6 +1160,9 @@ Filsökväg: {0}</value>
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X: {0}  Y: {1}  |  Bredd: {2}  Höjd: {3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>Den här inställningen är inte tillgänglig för det valda fönstret.</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>Namnlöst fönster</value>
   </data>

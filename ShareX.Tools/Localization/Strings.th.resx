@@ -1156,6 +1156,9 @@
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X: {0} Y: {1} | ความกว้าง: {2} ความสูง: {3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>การตั้งค่านี้ไม่พร้อมใช้งานสำหรับหน้าต่างที่เลือก</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>ไม่มีชื่อ หน้าต่าง</value>
   </data>

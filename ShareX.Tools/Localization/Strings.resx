@@ -1157,6 +1157,9 @@
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X: {0}  Y: {1}  |  Width: {2}  Height: {3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>This setting is unavailable for the selected window.</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>Untitled window</value>
   </data>

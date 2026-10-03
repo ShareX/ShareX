@@ -1156,6 +1156,9 @@
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X: {0}  Y: {1}  |  너비: {2}  높이: {3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>선택한 창에서는 이 설정을 사용할 수 없습니다.</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>제목 없는 창</value>
   </data>

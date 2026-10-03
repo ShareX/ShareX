@@ -1160,6 +1160,9 @@ Percorso file: {0}</value>
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X: {0}  Y: {1}  |  Larghezza: {2}  Altezza: {3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>Questa impostazione non è disponibile per la finestra selezionata.</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>Finestra senza titolo</value>
   </data>

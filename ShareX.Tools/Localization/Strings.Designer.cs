@@ -3219,6 +3219,15 @@ namespace ShareX.Tools.Localization {
                 return ResourceManager.GetString("InspectWindowViewModel_Untitled_window", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to This setting is unavailable for the selected window..
+        /// </summary>
+        public static string InspectWindowViewModel_Selected_window_setting_unavailable {
+            get {
+                return ResourceManager.GetString("InspectWindowViewModel_Selected_window_setting_unavailable", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Window.

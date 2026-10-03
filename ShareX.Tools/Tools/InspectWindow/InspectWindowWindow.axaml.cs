@@ -67,6 +67,7 @@ public partial class InspectWindowWindow : Window
 
     private void StartPicking(bool selectTopLevelWindow)
     {
+        if (!(selectTopLevelWindow ? _viewModel.CanPickWindow : _viewModel.CanPickControl)) return;
         ClosePickerOverlays();
         Hide();
 
@@ -82,6 +83,11 @@ public partial class InspectWindowWindow : Window
 
     private void CompletePicking(PixelPoint point, bool selectTopLevelWindow)
     {
+        if (!(selectTopLevelWindow ? _viewModel.CanPickWindow : _viewModel.CanPickControl))
+        {
+            CancelPicking();
+            return;
+        }
         foreach (InspectWindowPickerOverlay overlay in _pickerOverlays)
         {
             overlay.Hide();

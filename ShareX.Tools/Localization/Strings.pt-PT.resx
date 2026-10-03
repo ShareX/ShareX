@@ -1160,6 +1160,9 @@ Caminho do ficheiro: {0}</value>
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X: {0}  Y: {1}  |  Largura: {2}  Altura: {3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>Esta definição não está disponível para a janela selecionada.</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>Janela sem título</value>
   </data>

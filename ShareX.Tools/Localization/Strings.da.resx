@@ -1160,6 +1160,9 @@ Filsti: {0}</value>
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X: {0}  Y: {1}  |  Bredde: {2}  Højde: {3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>Denne indstilling er ikke tilgængelig for det valgte vindue.</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>Unavngivet vindue</value>
   </data>

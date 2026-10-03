@@ -1160,6 +1160,9 @@ Chemin du fichier : {0}</value>
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X : {0}  Y : {1}  |  Largeur : {2}  Hauteur : {3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>Ce réglage n’est pas disponible pour la fenêtre sélectionnée.</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>Fenêtre sans titre</value>
   </data>

@@ -1160,6 +1160,9 @@ Dosya yolu: {0}</value>
   <data name="InspectWindowViewModel_Rectangle_format" xml:space="preserve">
     <value>X: {0}  Y: {1}  |  Genişlik: {2}  Yükseklik: {3}</value>
   </data>
+  <data name="InspectWindowViewModel_Selected_window_setting_unavailable" xml:space="preserve">
+    <value>Bu ayar seçili pencere için kullanılamıyor.</value>
+  </data>
   <data name="InspectWindowViewModel_Untitled_window" xml:space="preserve">
     <value>Başlıksız pencere</value>
   </data>
