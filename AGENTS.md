@@ -23,6 +23,8 @@ The other agent pushes to the same branch, and a running session does not see it
 - `develop`: v22 release line, hotfixes only. Every hotfix is merged into `cross-platform-v2` the same day.
 - `cross-platform`: the first attempt, frozen for reference. Do not merge it; bring pieces over by path as described in the learnings.
 
+**Never force push** (`git push --force`, `--force-with-lease`, `+branch`) to any shared branch, and never rewrite pushed history (no amending, rebasing or resetting commits that are already on GitHub). The other agent builds on those commits. If a push is rejected, `git pull --rebase`, rebuild, and push again. To undo a pushed commit, add a `git revert` commit.
+
 ## Platform abstraction rules
 
 ### Where code lives
