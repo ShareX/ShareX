@@ -1,64 +1,75 @@
+#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (c) 2007-2026 ShareX Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
 // Windows service smoke checks. Registry writes use unique test keys/value names;
 // shortcuts and synthetic files stay in a temporary directory. No uploads occur.
 using Microsoft.Win32;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Xunit;
 using ShareX.Platform;
 using ShareX.Platform.Windows;
 using ShareX.Platform.Imaging;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-internal static class Program
+namespace ShareX.Platform.Tests;
+
+[Collection("Windows platform services")]
+public sealed class WindowsServiceTests
 {
-    private static int failures;
+    [WindowsFact] public void PolicyPrecedenceAndInvalidValueFallback() => RunSta(VerifyPolicies);
+    [WindowsFact] public void ExplorerMenusFileAssociationsAndBrowserHosts() => RunSta(VerifyShellIntegration);
+    [WindowsFact] public void StartupShortcutAndMissingTargetPreservation() => RunSta(VerifyStartup);
+    [WindowsFact] public void CommandLineArgumentsRoundTrip() => RunSta(VerifyArguments);
+    [WindowsFact] public void TaskbarProgressCallsSucceed() => RunSta(VerifyTaskbar);
+    [WindowsFact] public void HotkeyRegistrationConflictsAndCallbackIsolation() => RunSta(VerifyHotkeys);
+    [WindowsFact] public void HotkeyTimeoutCancellationAndCallbackDisposal() => RunSta(VerifyHotkeyShutdown);
+    [WindowsFact] public void LargeCursorDimensionsScalingAndGdiCleanup() => RunSta(VerifyCursorCapture);
 
-    [STAThread]
-    private static int Main()
+    private static void RunSta(Action action)
     {
-        Console.WriteLine($"Windows platform verification: {Environment.OSVersion.VersionString}");
-        Run("Policy precedence and invalid-value fallback", VerifyPolicies);
-        Run("Explorer menu, file associations and browser hosts", VerifyShellIntegration);
-        Run("Startup shortcut and missing-target preservation", VerifyStartup);
-        Run("Command-line argument round trip", VerifyArguments);
-        Run("Taskbar COM progress calls (visual sign-off pending)", VerifyTaskbar);
-        Run("Hotkey registration, conflicts and callback isolation", VerifyHotkeys);
-        Run("Hotkey timeout cancellation and callback disposal", VerifyHotkeyShutdown);
-        Run("Window enumeration and inspector service handoff", VerifyInspector);
-        Run("Large cursor dimensions, accessibility scaling and GDI cleanup", VerifyCursorCapture);
-        Console.WriteLine($"Verification complete: {failures} failure(s). Visual Windows 10/11 checklist remains separate.");
-        return failures == 0 ? 0 : 1;
+        Exception? failure = null;
+        Thread thread = new(() => { try { action(); } catch (Exception exception) { failure = exception; } }) { IsBackground = true };
+        thread.SetApartmentState(ApartmentState.STA);
+        thread.Start();
+        Assert.True(thread.Join(TimeSpan.FromSeconds(30)), "Windows verification did not complete.");
+        if (failure != null) System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(failure).Throw();
     }
-
-    private static void Run(string name, Action action)
-    {
-        try
-        {
-            action();
-            Console.WriteLine($"PASS: {name}");
-        }
-        catch (Exception exception)
-        {
-            failures++;
-            Console.WriteLine($"FAIL: {name}: {exception}");
-        }
-    }
-
-    private static void Equal<T>(T expected, T actual)
-    {
-        if (!EqualityComparer<T>.Default.Equals(expected, actual))
-        {
-            throw new InvalidOperationException($"Expected '{expected}', received '{actual}'.");
-        }
-    }
-
-    private static T Create<T>(params object[] arguments) => (T)Activator.CreateInstance(typeof(T),
-        BindingFlags.Instance | BindingFlags.NonPublic, null, arguments, null)!;
+    private static void Equal<T>(T expected, T actual) => Assert.Equal(expected, actual);
 
     private static void VerifyPolicies()
     {
         object? Policy(string name, object? machine, object? user)
         {
             Func<RegistryHive, string, object?> reader = (hive, _) => hive == RegistryHive.LocalMachine ? machine : user;
-            return Create<WindowsSystemPreferencesService>(reader).GetPolicy(name);
+            return new WindowsSystemPreferencesService(reader).GetPolicy(name);
         }
 
         foreach (string name in new[] { "DisableUpdateCheck", "DisableUpload", "DisableLogging" })
@@ -87,7 +98,7 @@ internal static class Program
         try
         {
             using RegistryKey root = Registry.CurrentUser.CreateSubKey(keyPath);
-            WindowsShellIntegrationService service = Create<WindowsShellIntegrationService>(root, directory);
+            WindowsShellIntegrationService service = new WindowsShellIntegrationService(root, directory);
             string executable = Path.Combine(directory, "Share X.exe");
             File.WriteAllText(executable, "Synthetic shortcut target, never executed.");
 
@@ -226,9 +237,8 @@ internal static class Program
 
     private static void VerifyArguments()
     {
-        MethodInfo quote = typeof(WindowsStartupService).GetMethod("QuoteArgument", BindingFlags.NonPublic | BindingFlags.Static)!;
         string[] arguments = ["-silent", "", "two words", "a\"b", @"C:\folder with spaces\", "a\\\"b", "tab\tvalue"];
-        string command = "verification.exe " + string.Join(" ", arguments.Select(argument => (string)quote.Invoke(null, [argument])!));
+        string command = "verification.exe " + string.Join(" ", arguments.Select(WindowsStartupService.QuoteArgument));
         IntPtr argv = CommandLineToArgvW(command, out int count);
         if (argv == IntPtr.Zero) throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
         try
@@ -373,59 +383,15 @@ internal static class Program
         }
     }
 
-    private static void VerifyInspector()
-    {
-        PlatformServices.Initialize(new WindowsPlatformServices());
-        // Off-screen tool window: visible to enumeration without putting a window on the user's desktop.
-        IntPtr window = CreateWindowExW(0x08000080, "STATIC", "ShareX inspector verification", 0x10000000,
-            -32000, -32000, 100, 80, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero);
-        if (window == IntPtr.Zero) throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
-
-        try
-        {
-            Equal(true, PlatformServices.Current.Windows.GetWindows().Any(item => item.Handle == window.ToInt64()));
-            PlatformRectangle client = PlatformServices.Current.WindowManagement.GetDetails(window.ToInt64())!.ClientBounds!.Value;
-            Equal(0, client.X);
-            Equal(0, client.Y);
-            Equal(false, client.IsEmpty);
-            using ShareX.Tools.InspectWindowViewModel viewModel = new();
-            viewModel.SelectWindow(window, true);
-            Equal(true, viewModel.HasSelection);
-            Equal("ShareX inspector verification", viewModel.SelectedTitle);
-            Equal(true, viewModel.CanChangeTopMost);
-            Equal(true, viewModel.CanChangeOpacity);
-            Equal(10, viewModel.Details.Count);
-            viewModel.IsTopMost = true;
-            Equal(true, PlatformServices.Current.WindowManagement.GetDetails(window.ToInt64())!.IsTopMost!.Value);
-            viewModel.Opacity = 50;
-            Equal((byte)128, PlatformServices.Current.WindowManagement.GetDetails(window.ToInt64())!.Opacity!.Value);
-            viewModel.SelectWindow(window, false);
-            Equal(false, viewModel.CanChangeTopMost);
-            Equal(false, viewModel.CanChangeOpacity);
-            DestroyWindow(window);
-            window = IntPtr.Zero;
-            viewModel.RefreshCommand.Execute(null);
-            Equal(false, viewModel.HasSelection);
-            Equal(0, viewModel.Details.Count);
-        }
-        finally
-        {
-            if (window != IntPtr.Zero) DestroyWindow(window);
-            PlatformServices.Shutdown();
-        }
-    }
-
     private static void VerifyCursorCapture()
     {
-        MethodInfo capture = typeof(WindowsScreenCaptureService).GetMethod("CaptureCursorImage", BindingFlags.Static | BindingFlags.NonPublic,
-            [typeof(IntPtr), typeof(PlatformPoint), typeof(int?)])!;
         foreach (bool monochrome in new[] { false, true })
         {
             IntPtr cursor = CreateCursorFixture(monochrome);
             try
             {
                 (PixelBuffer Image, PlatformPoint Position) Capture(int? cursorSize) =>
-                    ((PixelBuffer Image, PlatformPoint Position))capture.Invoke(null, [cursor, new PlatformPoint(-50, 250), cursorSize])!;
+                    WindowsScreenCaptureService.CaptureCursorImage(cursor, new PlatformPoint(-50, 250), cursorSize)!.Value;
                 foreach (int? setting in new int?[] { null, 0, 1, 3, 4 })
                 {
                     var result = Capture(setting);
@@ -444,7 +410,7 @@ internal static class Program
             }
             finally { DestroyCursor(cursor); }
         }
-        Equal<object?>(null, capture.Invoke(null, [IntPtr.Zero, new PlatformPoint(0, 0), null]));
+        Assert.Null(WindowsScreenCaptureService.CaptureCursorImage(IntPtr.Zero, new PlatformPoint(0, 0), null));
     }
 
     private static IntPtr CreateCursorFixture(bool monochrome)
@@ -531,3 +497,14 @@ internal static class Program
     [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool PostThreadMessageW(uint threadId, uint message, nuint wParam, nint lParam);
 }
+
+public sealed class WindowsFactAttribute : FactAttribute
+{
+    public WindowsFactAttribute()
+    {
+        if (!OperatingSystem.IsWindows()) Skip = "Requires native Windows services.";
+    }
+}
+
+[CollectionDefinition("Windows platform services", DisableParallelization = true)]
+public sealed class WindowsPlatformServicesCollection { }

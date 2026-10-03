@@ -47,7 +47,7 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
-      # Each platform project builds on every OS. The tests exercise parsing and argument generation, so they run everywhere too.
+      # Each platform project builds on every OS. Native Windows tests skip on other hosts.
       - name: Build platform projects
         run: |
           dotnet build ShareX.Platform.Linux/ShareX.Platform.Linux.csproj --configuration Release
@@ -56,6 +56,14 @@ jobs:
 
       - name: Test platform layer
         run: dotnet test ShareX.Platform.Tests/ShareX.Platform.Tests.csproj --configuration Release --logger "console;verbosity=normal"
+
+      - name: Test editor graphics
+        run: dotnet test ShareX.ImageEditor.Tests/ShareX.ImageEditor.Tests.csproj --configuration Release --logger "console;verbosity=normal"
+
+      # Tools still need the Windows desktop runtime until M5/M3 retarget them.
+      - name: Test tool UI
+        if: runner.os == 'Windows'
+        run: dotnet test ShareX.Tools.Tests/ShareX.Tools.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
 
       # The legacy preset tests need the Windows desktop runtime until ImageEffectsLib and HelpersLib target net10.0 (task M7).
       - name: Test image effects

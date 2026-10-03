@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="ShareX.ImageEditor.Tests" />
     <AvaloniaResource Include="Assets\lucide.ttf" />
     <AvaloniaResource Include="Assets\closedhand.cur" />
     <AvaloniaResource Include="Assets\Crosshair.cur" />

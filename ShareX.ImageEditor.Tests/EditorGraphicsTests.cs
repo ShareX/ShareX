@@ -1,12 +1,41 @@
+#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (c) 2007-2026 ShareX Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
 // Portable graphics checks and a contact sheet made only from bundled cursors and generated text.
 using ShareX.AvaloniaUI.Imaging;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Presentation.Emoji;
+using ShareX.ImageEditor.Presentation.Rendering;
 using SkiaSharp;
 using SkiaSharp.HarfBuzz;
-using System.Reflection;
+using Xunit;
 
-internal static class Program
+namespace ShareX.ImageEditor.Tests;
+
+[Collection("Editor graphics")]
+public sealed class EditorGraphicsTests
 {
     private static readonly string[] Sequences =
         ["1f600", "2764-fe0f", "1f44d-1f3fd", "1f469-200d-1f4bb", "1f468-200d-1f469-200d-1f467", "0031-fe0f-20e3"];
@@ -15,31 +44,41 @@ internal static class Program
          CursorType.PanEast, CursorType.PanNE, CursorType.PanNorth, CursorType.PanNW, CursorType.PanSE,
          CursorType.PanSouth, CursorType.PanSW, CursorType.PanWest];
 
-    private static int Main(string[] args)
+    [Fact] public void SavedFontNamesResolveToInstalledPortableFamilies() => VerifyFonts();
+    [SystemColorEmojiFact] public void ColorEmojiPreviewsShapingAndCacheOwnership() => RunWithGraphicsApartment(VerifyEmoji);
+    [Fact] public void AllBundledCursorImagesDecodeWithTransparency() => VerifyCursors();
+    [EmojiFixtureFact]
+    public void SuppliedColorEmojiFontRendersLargeAndSmallGlyphs()
     {
-        try
-        {
-            VerifyFonts();
-            VerifyEmoji();
-            VerifyCursors();
-            if (args.Length > 1) VerifyEmojiFont(args[1], args[0]);
-            string sheet = Path.Combine(args[0], "editor-graphics.png");
-            RenderContactSheet(sheet);
-            Console.WriteLine($"PASS: Editor graphics; contact sheet: {sheet}");
-            return 0;
-        }
-        catch (Exception exception)
-        {
-            Console.WriteLine($"FAIL: {exception}");
-            return 1;
-        }
+        string directory = Path.Combine(Path.GetTempPath(), "ShareX-emoji-test-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(directory);
+        try { VerifyEmojiFont(Environment.GetEnvironmentVariable("SHAREX_TEST_EMOJI_FONT")!, directory); }
+        finally { Directory.Delete(directory, true); }
+    }
+    [GraphicsArtifactFact]
+    public void RenderGraphicsContactSheet()
+    {
+        string directory = Environment.GetEnvironmentVariable("SHAREX_TEST_GRAPHICS_OUTPUT")!;
+        Directory.CreateDirectory(directory);
+        RunWithGraphicsApartment(() => RenderContactSheet(Path.Combine(directory, "editor-graphics.png")));
+        string? font = Environment.GetEnvironmentVariable("SHAREX_TEST_EMOJI_FONT");
+        if (!string.IsNullOrEmpty(font)) VerifyEmojiFont(font, directory);
     }
 
+    private static void RunWithGraphicsApartment(Action action)
+    {
+        if (!OperatingSystem.IsWindows()) { action(); return; }
+        Exception? failure = null;
+        Thread thread = new(() => { try { action(); } catch (Exception exception) { failure = exception; } }) { IsBackground = true };
+        thread.SetApartmentState(ApartmentState.STA);
+        thread.Start();
+        Assert.True(thread.Join(TimeSpan.FromSeconds(30)), "Graphics verification did not complete.");
+        if (failure != null) System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(failure).Throw();
+    }
     private static void VerifyFonts()
     {
-        MethodInfo resolve = typeof(FontFamilyResolver).GetMethod("Resolve", BindingFlags.Static | BindingFlags.NonPublic)!;
-        string Resolve(string? family, params string[] installed) => (string)resolve.Invoke(null,
-            [family, new HashSet<string>(installed, StringComparer.OrdinalIgnoreCase), "System default"])!;
+        string Resolve(string? family, params string[] installed) => FontFamilyResolver.Resolve(family,
+            new HashSet<string>(installed, StringComparer.OrdinalIgnoreCase), "System default");
 
         Equal("Segoe UI", Resolve("segoe ui", "Segoe UI", "Noto Sans"));
         Equal("Noto Sans", Resolve("Segoe UI", "DejaVu Sans", "Noto Sans"));
@@ -61,10 +100,8 @@ internal static class Program
         Console.WriteLine("PASS: Saved font names, installed families and portable fallbacks");
     }
 
-    private static SKBitmap? RenderSkia(string sequence, int size) => (SKBitmap?)typeof(WindowsEmojiBitmapRenderer).Assembly
-        .GetType("ShareX.ImageEditor.Presentation.Emoji.SkiaEmojiBitmapRenderer")!
-        .GetMethod("Render", BindingFlags.Static | BindingFlags.Public, [typeof(string), typeof(int)])!
-        .Invoke(null, [EmojiCatalogService.ToGlyph(sequence), size]);
+    private static SKBitmap? RenderSkia(string sequence, int size) =>
+        SkiaEmojiBitmapRenderer.Render(EmojiCatalogService.ToGlyph(sequence), size);
 
     private static void VerifyEmoji()
     {
@@ -104,9 +141,6 @@ internal static class Program
     private static void VerifyEmojiFont(string fontPath, string outputDirectory)
     {
         using SKTypeface typeface = SKTypeface.FromFile(fontPath);
-        MethodInfo render = typeof(WindowsEmojiBitmapRenderer).Assembly
-            .GetType("ShareX.ImageEditor.Presentation.Emoji.SkiaEmojiBitmapRenderer")!
-            .GetMethod("Render", BindingFlags.Static | BindingFlags.NonPublic)!;
         using var sheet = new SKBitmap(1260, 235);
         using var canvas = new SKCanvas(sheet);
         using var labelFont = new SKFont(SKTypeface.Default, 16);
@@ -118,7 +152,7 @@ internal static class Program
             string glyph = EmojiCatalogService.ToGlyph(Sequences[i]);
             foreach (int size in new[] { 28, 160 })
             {
-                using SKBitmap? bitmap = (SKBitmap?)render.Invoke(null, [glyph, size, typeface]);
+                using SKBitmap? bitmap = SkiaEmojiBitmapRenderer.Render(glyph, size, typeface);
                 Require(bitmap != null, $"No {typeface.FamilyName} emoji for {Sequences[i]}");
                 using SKImage sampleImage = SKImage.FromBitmap(bitmap!);
                 using SKData sampleData = sampleImage.Encode(SKEncodedImageFormat.Png, 100);
@@ -136,9 +170,7 @@ internal static class Program
         Console.WriteLine($"PASS: Additional color font fixture ({typeface.FamilyName})");
     }
 
-    private static SKBitmap? RenderCursor(CursorType cursor) => (SKBitmap?)typeof(WindowsEmojiBitmapRenderer).Assembly
-        .GetType("ShareX.ImageEditor.Presentation.Rendering.WindowsCursorBitmapRenderer")!
-        .GetMethod("CreateAnnotationBitmap")!.Invoke(null, [cursor]);
+    private static SKBitmap? RenderCursor(CursorType cursor) => WindowsCursorBitmapRenderer.CreateAnnotationBitmap(cursor);
 
     private static void VerifyCursors()
     {
@@ -207,10 +239,36 @@ internal static class Program
         data.SaveTo(output);
     }
 
-    private static void Equal<T>(T expected, T actual) => Require(EqualityComparer<T>.Default.Equals(expected, actual),
-        $"Expected '{expected}', received '{actual}'");
+    private static void Equal<T>(T expected, T actual) => Assert.Equal(expected, actual);
     private static void Require(bool condition, string message)
     {
-        if (!condition) throw new InvalidOperationException(message);
+        Assert.True(condition, message);
     }
 }
+
+public sealed class SystemColorEmojiFactAttribute : FactAttribute
+{
+    public SystemColorEmojiFactAttribute()
+    {
+        if (!new[] { "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji" }.Any(SKFontManager.Default.FontFamilies.Contains))
+            Skip = "Requires an installed system color emoji font.";
+    }
+}
+public sealed class EmojiFixtureFactAttribute : FactAttribute
+{
+    public EmojiFixtureFactAttribute()
+    {
+        string? path = Environment.GetEnvironmentVariable("SHAREX_TEST_EMOJI_FONT");
+        if (string.IsNullOrEmpty(path)) Skip = "Set SHAREX_TEST_EMOJI_FONT to verify an additional color font fixture.";
+    }
+}
+public sealed class GraphicsArtifactFactAttribute : FactAttribute
+{
+    public GraphicsArtifactFactAttribute()
+    {
+        if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("SHAREX_TEST_GRAPHICS_OUTPUT")))
+            Skip = "Set SHAREX_TEST_GRAPHICS_OUTPUT to generate contact sheets for visual inspection.";
+    }
+}
+[CollectionDefinition("Editor graphics", DisableParallelization = true)]
+public sealed class EditorGraphicsCollection { }
