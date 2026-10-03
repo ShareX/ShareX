@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Ruota le immagini in base all’orientamento EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Avvia ShareX all'accesso</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Salva</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Mostra il visualizzatore del contenuto degli appunti</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Mostra "Modifica con ShareX" nel menu contestuale del gestore file</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostra pulsante "Modifica con ShareX" nel menu contestuale di Esplora file</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Mostra icona nell'area di notifica</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Mostra "Carica con ShareX" nel menu contestuale del gestore file</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostra pulsante "Carica con ShareX" nel menu contestuale di Esplora file</value>
@@ -2016,6 +2025,9 @@ Do you want to abort the active registrazione schermo?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Open source • Creato per Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Open source • Creato per Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Puoi modificare queste opzioni in qualsiasi momento nelle impostazioni dell'applicazione.</value>

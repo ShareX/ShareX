@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>根据 EXIF 方向旋转图像</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>登录时运行 ShareX</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>保存</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>显示剪贴板内容查看器</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>在文件管理器的右键菜单中显示“使用 ShareX 编辑”</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>在Windows上下文菜单中显示“使用ShareX编辑”</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>显示托盘图标</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>在文件管理器的右键菜单中显示“使用 ShareX 上传”</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>在 Windows 资源管理器右键菜单显示 "使用 ShareX 上传" 按钮</value>
@@ -2016,6 +2025,9 @@
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>开源 • 专为 Windows 打造</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>开源 • 专为 Linux 打造</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>你可以随时在应用程序设置中更改这些选项。</value>

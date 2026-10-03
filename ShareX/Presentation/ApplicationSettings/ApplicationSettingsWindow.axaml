@@ -265,18 +265,18 @@
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
-                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_Windows}"/>
-                                    <CheckBox Classes="setting" Content="{Binding StartWithWindowsText}" IsEnabled="{Binding StartWithWindowsEnabled}" IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu}" IsChecked="{Binding ShellContextMenu, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu}" IsChecked="{Binding EditWithShareX, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowShareXInSendToMenu}" IsChecked="{Binding SendToMenu, Mode=TwoWay}"/>
+                                    <TextBlock Classes="section-title" Text="{Binding SystemIntegrationTitle}"/>
+                                    <CheckBox Classes="setting" Content="{Binding StartWithWindowsText}" IsEnabled="{Binding StartWithWindowsEnabled}" ToolTip.Tip="{Binding StartupUnsupportedReason}" IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{Binding UploadContextMenuText}" IsEnabled="{Binding ShellIntegrationSupported}" ToolTip.Tip="{Binding ShellIntegrationUnsupportedReason}" IsChecked="{Binding ShellContextMenu, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{Binding EditContextMenuText}" IsEnabled="{Binding ShellIntegrationSupported}" ToolTip.Tip="{Binding ShellIntegrationUnsupportedReason}" IsChecked="{Binding EditWithShareX, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowShareXInSendToMenu}" IsEnabled="{Binding SendToSupported}" ToolTip.Tip="{Binding SendToUnsupportedReason}" IsChecked="{Binding SendToMenu, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
                             <StackPanel controls:SettingsSearch.IsAvailabilityContainer="True" IsVisible="{Binding WindowsIntegrationVisible}">
                                 <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ChromeExtension}"/>
-                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableChromeExtensionSupport}" IsChecked="{Binding ChromeExtensionSupport, Mode=TwoWay}"/>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableChromeExtensionSupport}" IsEnabled="{Binding BrowserHostSupported}" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" IsChecked="{Binding ChromeExtensionSupport, Mode=TwoWay}"/>
                                         <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXChromeExtension}" IsEnabled="{Binding ChromeExtensionSupport}" Click="OnOpenChromeExtensionClick"/>
                                     </StackPanel>
                                 </Border>
@@ -285,7 +285,7 @@
                                 <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_FirefoxAddon}"/>
-                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableFirefoxAddonSupport}" IsChecked="{Binding FirefoxAddonSupport, Mode=TwoWay}"/>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableFirefoxAddonSupport}" IsEnabled="{Binding BrowserHostSupported}" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" IsChecked="{Binding FirefoxAddonSupport, Mode=TwoWay}"/>
                                         <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXFirefoxAddon}" IsEnabled="{Binding FirefoxAddonSupport}" Click="OnOpenFirefoxAddonClick"/>
                                     </StackPanel>
                                 </Border>
@@ -515,7 +515,7 @@
                                 <StackPanel Spacing="6">
                                     <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_DontShowImagePrintSettingsDialog}" IsChecked="{Binding DontShowPrintSettingsDialog, Mode=TwoWay}"/>
                                     <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_ImagePrintSettings}" Click="OnImagePrintSettingsClick"/>
-                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_DontShowWindowsPrintDialog}" IsChecked="{Binding DontShowWindowsPrintDialog, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" IsVisible="{Binding PrintDialogSupported}" Content="{x:Static res:Strings.ApplicationSettingsWindow_DontShowWindowsPrintDialog}" IsChecked="{Binding DontShowWindowsPrintDialog, Mode=TwoWay}"/>
                                     <Grid ColumnDefinitions="190,*" ColumnSpacing="8" IsVisible="{Binding DefaultPrinterOverrideVisible}">
                                         <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_DefaultPrinterOverrideLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <TextBox Grid.Column="1" Classes="form-control" Text="{Binding DefaultPrinterOverride, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>

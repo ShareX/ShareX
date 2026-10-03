@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>หมุนรูปภาพตามข้อมูลการวางแนว EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>เรียกใช้ ShareX เมื่อฉันเข้าสู่ระบบ</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>บันทึก</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>แสดง คลิปบอร์ด เนื้อหา ตัวแสดง</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>แสดง "แก้ไขด้วย ShareX" ในเมนูบริบทของตัวจัดการไฟล์</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>แสดงปุ่ม "แก้ไขด้วย ShareX" ในเมนูบริบทของ Windows Explorer</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>แสดง ไอคอนถาดระบบ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>แสดง "อัปโหลดด้วย ShareX" ในเมนูบริบทของตัวจัดการไฟล์</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>แสดงปุ่ม "อัปโหลดด้วย ShareX" ในเมนูบริบทของ Windows Explorer</value>
@@ -2016,6 +2025,9 @@
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>โอเพนซอร์ส • สร้างขึ้นสำหรับ Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>โอเพนซอร์ส • สร้างขึ้นสำหรับ Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>คุณสามารถเปลี่ยนตัวเลือกเหล่านี้ได้ทุกเมื่อในการตั้งค่าแอปพลิเคชัน</value>

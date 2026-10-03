@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Rotér billeder ved hjælp af EXIF-orientering</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Kør ShareX, når jeg logger ind</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Gem</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Vis Udklipsvisningen</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Vis "Rediger med ShareX" i filhåndteringens genvejsmenu</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Vis knappen ”Rediger med ShareX” i Stifinders hurtigmenu</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Vis ikon i meddelelsesområdet</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Vis "Upload med ShareX" i filhåndteringens genvejsmenu</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Vis knappen ”Upload med ShareX” i Stifinders hurtigmenu</value>
@@ -2016,6 +2025,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Open source • Bygget til Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Open source • Bygget til Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan altid ændre disse indstillinger under programindstillinger.</value>

@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Girar las imágenes según la orientación EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Ejecutar ShareX al iniciar sesión</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Guardar</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Mostrar el visor de contenido del portapapeles</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Mostrar «Editar con ShareX» en el menú contextual del administrador de archivos</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostrar el botón "Editar con ShareX" en el menú contextual del Explorador de Windows</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Mostrar icono de bandeja</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Mostrar «Subir con ShareX» en el menú contextual del administrador de archivos</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostrar el botón "Subir con ShareX" en el menú contextual del Explorador de Windows</value>
@@ -2016,6 +2025,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Código abierto • Creado para Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Código abierto • Creado para Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Puedes cambiar estas opciones en cualquier momento en la configuración de la aplicación.</value>

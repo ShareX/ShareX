@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Otáčet obrázky podle orientace EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Spouštět ShareX při přihlášení</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Uložit</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Zobrazit prohlížeč obsahu schránky</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Zobrazit „Upravit pomocí ShareX“ v místní nabídce správce souborů</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Zobrazit tlačítko „Upravit pomocí ShareX“ v místní nabídce Průzkumníka Windows</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Zobrazit ikonu v oznamovací oblasti</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Zobrazit „Nahrát pomocí ShareX“ v místní nabídce správce souborů</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Zobrazit tlačítko „Nahrát pomocí ShareX“ v místní nabídce Průzkumníka Windows</value>
@@ -2016,6 +2025,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Open source • Vytvořeno pro Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Open source • Vytvořeno pro Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Tyto možnosti můžete kdykoli změnit v nastavení aplikace.</value>

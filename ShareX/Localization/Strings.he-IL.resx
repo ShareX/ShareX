@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>סובב תמונות לפי כיוון EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>הפעל את ShareX בעת הכניסה למערכת</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>שמירה</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>הצג את מציג תוכן הלוח</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>הצג "ערוך באמצעות ShareX" בתפריט ההקשר של מנהל הקבצים</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>הצג את כפתור "ערוך עם ShareX" בתפריט ההקשר של סייר הקבצים</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>הצג סמל מגש</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>הצג "העלה באמצעות ShareX" בתפריט ההקשר של מנהל הקבצים</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>הצג את כפתור "העלה עם ShareX" בתפריט ההקשר של סייר הקבצים</value>
@@ -2016,6 +2025,9 @@
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>קוד פתוח • נבנה עבור Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>קוד פתוח • נבנה עבור Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>ניתן לשנות אפשרויות אלה בכל עת בהגדרות היישום.</value>

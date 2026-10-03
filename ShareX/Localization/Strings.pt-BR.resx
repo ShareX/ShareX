@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Girar imagens conforme a orientação EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Executar ShareX ao entrar na sessão</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Salvar</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Mostrar o visualizador de conteúdo da área de transferência</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Mostrar "Editar com ShareX" no menu de contexto do gerenciador de arquivos</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostrar o botão "Editar com ShareX" no menu de contexto do Explorador de Arquivos</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Mostrar ícone da bandeja</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Mostrar "Enviar com ShareX" no menu de contexto do gerenciador de arquivos</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostrar o botão "Enviar com ShareX" no menu de contexto do Explorador de Arquivos</value>
@@ -2016,6 +2025,9 @@ Deseja interromper a gravação de tela ativa?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Código aberto • Feito para Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Código aberto • Feito para Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Você pode alterar essas opções a qualquer momento nas configurações do aplicativo.</value>

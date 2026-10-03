@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Rotera bilder med hjälp av EXIF-orientering</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Starta ShareX när jag loggar in</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Spara</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Visa Urklippsvisaren</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Visa "Redigera med ShareX" i filhanterarens snabbmeny</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Visa knappen ”Redigera med ShareX” i Utforskarens snabbmeny</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Visa ikon i meddelandefältet</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Visa "Ladda upp med ShareX" i filhanterarens snabbmeny</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Visa knappen ”Ladda upp med ShareX” i Utforskarens snabbmeny</value>
@@ -2016,6 +2025,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Öppen källkod • Byggt för Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Öppen källkod • Byggt för Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan ändra dessa alternativ när som helst i programinställningarna.</value>

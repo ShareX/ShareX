@@ -499,6 +499,15 @@
   <data name="ApplicationSettingsWindow_Integration" xml:space="preserve">
     <value>Integration</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Run ShareX when I sign in</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Show "Upload with ShareX" in the file manager's context menu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Show "Edit with ShareX" in the file manager's context menu</value>
+  </data>
   <data name="ApplicationSettingsWindow_LanguageLabel" xml:space="preserve">
     <value>Language:</value>
   </data>
@@ -2016,6 +2025,9 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Open source • Built for Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Open source • Built for Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>You can change these options anytime in Application settings.</value>

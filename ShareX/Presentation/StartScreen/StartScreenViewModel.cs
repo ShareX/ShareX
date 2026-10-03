@@ -29,6 +29,7 @@ using Avalonia.Platform;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,7 +46,7 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
 {
     private bool _startWithWindows;
     private bool _startWithWindowsEnabled;
-    private string _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
+    private string _startWithWindowsText = string.Empty;
 
     private ApplicationConfig Settings => ApplicationState.Settings;
 
@@ -55,7 +56,9 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
     public string CaptureFeature => Strings.MainMenuBuilder_Capture;
     public string AutomateFeature => Strings.MainMenuBuilder_Workflows;
     public string ShareFeature => Strings.MainMenuBuilder_Tools;
-    public string PlatformNote => Strings.StartScreen_PlatformNote;
+    public string PlatformNote => PlatformServices.Current.Info.IsLinux
+        ? Strings.StartScreen_PlatformNoteLinux
+        : Strings.StartScreen_PlatformNote;
     public string PersonalizeTitle => Strings.StartScreen_PersonalizeTitle;
     public string PersonalizeSubtitle => Strings.StartScreen_PersonalizeSubtitle;
     public string SettingsNote => Strings.StartScreen_SettingsNote;
@@ -182,20 +185,32 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
 
     public bool StartWithWindowsEnabled => _startWithWindowsEnabled;
     public string StartWithWindowsText => _startWithWindowsText;
+    public string? StartupUnsupportedReason => PlatformServices.Current.Startup.Support.Reason;
 
     private void RefreshStartWithWindows()
     {
-        _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
+        _startWithWindowsText = PlatformServices.Current.Info.IsWindows
+            ? Strings.ApplicationSettingsForm_cbStartWithWindows_Text
+            : Strings.ApplicationSettingsWindow_RunAtSignIn;
         _startWithWindowsEnabled = false;
 
         try
         {
+            if (!PlatformServices.Current.Startup.Support.IsSupported)
+            {
+                _startWithWindows = false;
+                return;
+            }
+
             StartupState state = StartupManager.State;
             _startWithWindows = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
 
             if (state == StartupState.DisabledByUser)
             {
-                _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+                if (PlatformServices.Current.Info.IsWindows)
+                {
+                    _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+                }
             }
             else if (state == StartupState.DisabledByPolicy)
             {
@@ -214,10 +229,13 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
         {
             DebugHelper.WriteException(e);
         }
-
-        OnPropertyChanged(nameof(StartWithWindows));
-        OnPropertyChanged(nameof(StartWithWindowsEnabled));
-        OnPropertyChanged(nameof(StartWithWindowsText));
+        finally
+        {
+            OnPropertyChanged(nameof(StartWithWindows));
+            OnPropertyChanged(nameof(StartWithWindowsEnabled));
+            OnPropertyChanged(nameof(StartWithWindowsText));
+            OnPropertyChanged(nameof(StartupUnsupportedReason));
+        }
     }
 
     private static IReadOnlyList<StartScreenLanguageOption> CreateLanguageOptions() =>

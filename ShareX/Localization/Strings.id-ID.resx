@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Putar gambar sesuai orientasi EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Jalankan ShareX saat saya masuk</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Simpan</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Tampilkan penampil isi papan klip</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Tampilkan "Edit dengan ShareX" di menu konteks pengelola berkas</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Tampilkan "Edit dengan ShareX" di menu konteks Windows Explorer</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Tampilkan ikon baki</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Tampilkan "Unggah dengan ShareX" di menu konteks pengelola berkas</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Tampilkan "Unggah dengan ShareX" di menu konteks Windows Explorer</value>
@@ -2016,6 +2025,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Sumber terbuka • Dibuat untuk Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Sumber terbuka • Dibuat untuk Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Anda dapat mengubah opsi ini kapan saja di pengaturan aplikasi.</value>

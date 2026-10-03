@@ -1642,6 +1642,21 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("ApplicationSettingsWindow_Integration", resourceCulture);
             }
         }
+        public static string ApplicationSettingsWindow_RunAtSignIn {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_RunAtSignIn", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_ShowUploadInFileManager {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowUploadInFileManager", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_ShowEditInFileManager {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowEditInFileManager", resourceCulture);
+            }
+        }
         public static string ApplicationSettingsWindow_Windows {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_Windows", resourceCulture);
@@ -5470,6 +5485,11 @@ namespace ShareX.Localization {
         public static string StartScreen_PlatformNote {
             get {
                 return ResourceManager.GetString("StartScreen_PlatformNote", resourceCulture);
+            }
+        }
+        public static string StartScreen_PlatformNoteLinux {
+            get {
+                return ResourceManager.GetString("StartScreen_PlatformNoteLinux", resourceCulture);
             }
         }
         public static string StartScreen_PersonalizeTitle {

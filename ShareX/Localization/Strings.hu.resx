@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Képek forgatása az EXIF-tájolás alapján</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>A ShareX indítása bejelentkezéskor</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Mentés</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>A vágólap tartalommegjelenítőjének megjelenítése</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>A „Szerkesztés ShareX-szel” megjelenítése a fájlkezelő helyi menüjében</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>"Szerkesztés ShareX-szel" gomb megjelenítése a Windows Intéző helyi menüjében</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Tálca ikon mutatása</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>A „Feltöltés ShareX-szel” megjelenítése a fájlkezelő helyi menüjében</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mutassa a "Feltöltés ShareX használatával" gombot a kontextus menüben</value>
@@ -2016,6 +2025,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Nyílt forráskódú • Windowshoz készült</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Nyílt forráskódú • Linuxhoz készült</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Ezeket a beállításokat bármikor módosíthatja az alkalmazás beállításaiban.</value>

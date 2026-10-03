@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Повертати зображення відповідно до орієнтації EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Запускати ShareX під час входу в систему</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Зберегти</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Показувати переглядач вмісту буфера обміну</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Показувати «Редагувати за допомогою ShareX» у контекстному меню файлового менеджера</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Показувати кнопку „Змінити із ShareX“ у контекстному меню Провідника Windows</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Показувати піктограму в області сповіщень</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Показувати «Завантажити за допомогою ShareX» у контекстному меню файлового менеджера</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Показувати кнопку „Вивантажити із ShareX“ у контекстному меню Провідника Windows</value>
@@ -2016,6 +2025,9 @@
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Відкритий код • Створено для Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Відкритий код • Створено для Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Ці параметри можна будь-коли змінити в налаштуваннях програми.</value>

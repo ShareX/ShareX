@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Obracaj obrazy zgodnie z orientacją EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Uruchom ShareX po zalogowaniu</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Zapisz</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Pokaż podgląd zawartości schowka</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Pokaż „Edytuj za pomocą ShareX” w menu kontekstowym menedżera plików</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Pokaż przycisk "Edytuj za pomocą ShareX" w menu kontekstowym Eksploratora Windows</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Pokaż ikonę w zasobniku</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Pokaż „Prześlij za pomocą ShareX” w menu kontekstowym menedżera plików</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Pokaż przycisk "Prześlij za pomocą ShareX" w menu kontekstowym Eksploratora Windows</value>
@@ -2016,6 +2025,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Otwarte źródło • Stworzone dla Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Otwarte źródło • Stworzone dla systemu Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Te opcje możesz w każdej chwili zmienić w ustawieniach aplikacji.</value>

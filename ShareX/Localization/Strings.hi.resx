@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>EXIF अभिविन्यास से छवियाँ घुमाएँ</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>साइन इन करने पर ShareX चलाएँ</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>सहेजें</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>क्लिपबोर्ड सामग्री दर्शक दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>फ़ाइल प्रबंधक के संदर्भ मेनू में "ShareX से संपादित करें" दिखाएँ</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows Explorer संदर्भ मेनू में "ShareX से संपादित करें" बटन दिखाएँ</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>ट्रे आइकन दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>फ़ाइल प्रबंधक के संदर्भ मेनू में "ShareX से अपलोड करें" दिखाएँ</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows Explorer संदर्भ मेनू में "ShareX से अपलोड करें" बटन दिखाएँ</value>
@@ -2016,6 +2025,9 @@
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>ओपन सोर्स • Windows के लिए निर्मित</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>ओपन सोर्स • Linux के लिए निर्मित</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>आप इन विकल्पों को एप्लिकेशन सेटिंग में कभी भी बदल सकते हैं।</value>

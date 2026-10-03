@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Faire pivoter les images selon l’orientation EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Lancer ShareX à l'ouverture de session</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Enregistrer</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Afficher la visionneuse du contenu du presse-papiers</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Afficher « Modifier avec ShareX » dans le menu contextuel du gestionnaire de fichiers</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Afficher le bouton « Modifier avec ShareX » dans le menu contextuel de l’Explorateur Windows</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Afficher l’icône de la zone de notification</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Afficher « Envoyer avec ShareX » dans le menu contextuel du gestionnaire de fichiers</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Afficher le bouton « Téléverser avec ShareX » dans le menu contextuel de l’Explorateur Windows</value>
@@ -2016,6 +2025,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Open source • Conçu pour Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Open source • Conçu pour Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Vous pouvez modifier ces options à tout moment dans les paramètres de l’application.</value>

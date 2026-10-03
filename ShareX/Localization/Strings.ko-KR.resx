@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>EXIF 방향에 따라 이미지 회전</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>로그인할 때 ShareX 실행</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>저장</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>클립보드 내용 뷰어 표시</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>파일 관리자의 바로 가기 메뉴에 "ShareX로 편집" 표시</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows 탐색기의 컨택스트 메뉴에 "ShareX로 편집"버튼 표시</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>트레이 아이콘 표시하기</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>파일 관리자의 바로 가기 메뉴에 "ShareX로 업로드" 표시</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows 탐색기의 컨텍스트 메뉴에 "ShareX로 업로드하기" 표시하기</value>
@@ -2016,6 +2025,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>오픈 소스 • Windows용으로 제작</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>오픈 소스 • Linux용으로 제작</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>이 옵션은 언제든지 애플리케이션 설정에서 변경할 수 있습니다.</value>

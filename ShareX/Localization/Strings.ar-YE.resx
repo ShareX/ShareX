@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>تدوير الصور وفق اتجاه EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>تشغيل ShareX عند تسجيل الدخول</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>حفظ</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>عرض عارض محتوى الحافظة</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>إظهار «تحرير بواسطة ShareX» في قائمة سياق مدير الملفات</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>عرض الخيار "تعديل باستخدام ShareX" على قائمة خيارات الملفات</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>عرض أيقونة الإشعارات</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>إظهار «رفع بواسطة ShareX» في قائمة سياق مدير الملفات</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>عرض الخيار "رفع باستخدام ShareX" على قائمة خيارات الملفات</value>
@@ -2016,6 +2025,9 @@
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>مفتوح المصدر • مصمم لنظام Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>مفتوح المصدر • مصمم لنظام Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>يمكنك تغيير هذه الخيارات في أي وقت من إعدادات التطبيق.</value>

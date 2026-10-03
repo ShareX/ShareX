@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Rodar imagens conforme a orientação EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Iniciar o ShareX ao iniciar sessão</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Guardar</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Mostrar o visualizador de conteúdo da área de transferência</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Mostrar "Editar com ShareX" no menu de contexto do gestor de ficheiros</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostrar botão de "Editar com ShareX" no menu de contexto do Windows</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Mostrar ícon na bandeja do sistema</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Mostrar "Enviar com ShareX" no menu de contexto do gestor de ficheiros</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostrar botão de "Enviar com ShareX" no menu de contexto do Windows</value>
@@ -2016,6 +2025,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Código aberto • Criado para Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Código aberto • Criado para Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Pode alterar estas opções a qualquer momento nas definições da aplicação.</value>

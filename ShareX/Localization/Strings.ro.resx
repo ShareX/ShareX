@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Rotește imaginile conform orientării EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Pornește ShareX la conectare</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Salvare</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Afișează vizualizatorul conținutului din clipboard</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Afișează „Editează folosind ShareX” în meniul contextual al managerului de fișiere</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Afișați butonul "Editați cu ShareX" în meniul contextual al Windows Explorer</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Afișare pictogramă în bară</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Afișează „Încarcă folosind ShareX” în meniul contextual al managerului de fișiere</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Afișați butonul "Încărcare cu ShareX" în meniul contextual din Windows Explorer</value>
@@ -2016,6 +2025,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Sursă deschisă • Creat pentru Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Sursă deschisă • Creat pentru Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Puteți modifica oricând aceste opțiuni din setările aplicației.</value>

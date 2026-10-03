@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Bilder anhand der EXIF-Ausrichtung drehen</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>ShareX bei der Anmeldung starten</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Speichern</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Zwischenablage-Inhaltsanzeige anzeigen</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>„Mit ShareX bearbeiten“ im Kontextmenü des Dateimanagers anzeigen</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Schaltfläche „Mit ShareX bearbeiten“ im Kontextmenü des Windows-Explorers anzeigen</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Taskleistensymbol anzeigen</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>„Mit ShareX hochladen“ im Kontextmenü des Dateimanagers anzeigen</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Schaltfläche „Mit ShareX hochladen“ im Kontextmenü des Windows-Explorers anzeigen</value>
@@ -2016,6 +2025,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Open Source • Für Windows entwickelt</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Open Source • Für Linux entwickelt</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Sie können diese Optionen jederzeit in den Anwendungseinstellungen ändern.</value>

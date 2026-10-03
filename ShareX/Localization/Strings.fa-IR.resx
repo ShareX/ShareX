@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>چرخاندن تصاویر بر اساس جهت EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>اجرای ShareX هنگام ورود به حساب کاربری</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>ذخیره</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>نمایش مشاهده‌گر محتوای کلیپ‌بورد</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>نمایش «ویرایش با ShareX» در منوی زمینهٔ مدیر فایل</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>شیرایکس را در راست کلیک منوی ویرایش با ویندوز اکسپلورر اضافه کن</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>نشان دادن آیکن در نوار وظیفه:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>نمایش «بارگذاری با ShareX» در منوی زمینهٔ مدیر فایل</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>شیرایکس را در راست کلیک پنجره ویندوز اکسپلورر اضافه کن</value>
@@ -2016,6 +2025,9 @@ Do you want to abort the active ضبط صفحه?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>متن‌باز • ساخته‌شده برای Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>متن‌باز • ساخته‌شده برای Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>می‌توانید هر زمان این گزینه‌ها را در تنظیمات برنامه تغییر دهید.</value>

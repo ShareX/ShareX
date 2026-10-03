@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Görüntüleri EXIF yönüne göre döndür</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Oturum açtığımda ShareX'i çalıştır</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Kaydet</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Pano içerik görüntüleyicisini göster</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Dosya yöneticisinin bağlam menüsünde "ShareX ile düzenle" seçeneğini göster</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows Gezgini bağlam menüsünde "ShareX ile düzenle" düğmesini göster</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Tepsi simgesini göster</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Dosya yöneticisinin bağlam menüsünde "ShareX ile yükle" seçeneğini göster</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows Gezgini bağlam menüsünde "ShareX ile yükle" düğmesini göster</value>
@@ -2016,6 +2025,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Açık kaynak • Windows için geliştirildi</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Açık kaynak • Linux için geliştirildi</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Bu seçenekleri istediğiniz zaman Uygulama ayarlarından değiştirebilirsiniz.</value>

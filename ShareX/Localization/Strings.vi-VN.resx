@@ -595,6 +595,9 @@
   <data name="ApplicationSettingsWindow_RotateImageByExifOrientationData" xml:space="preserve">
     <value>Xoay hình ảnh theo hướng EXIF</value>
   </data>
+  <data name="ApplicationSettingsWindow_RunAtSignIn" xml:space="preserve">
+    <value>Chạy ShareX khi tôi đăng nhập</value>
+  </data>
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Lưu</value>
   </data>
@@ -624,6 +627,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Hiển thị trình xem nội dung bảng nhớ tạm</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
+    <value>Hiển thị "Chỉnh sửa bằng ShareX" trong menu ngữ cảnh của trình quản lý tệp</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Hiện nút "Chỉnh sửa với ShareX" trong menu ngữ cảnh của Windows Explorer</value>
@@ -657,6 +663,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ShowTrayIcon" xml:space="preserve">
     <value>Hiện biểu tượng ở khay hệ thống</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowUploadInFileManager" xml:space="preserve">
+    <value>Hiển thị "Tải lên bằng ShareX" trong menu ngữ cảnh của trình quản lý tệp</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Hiện nút "Tải lên với ShareX" trong menu ngữ cảnh của Windows Explorer</value>
@@ -2016,6 +2025,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   </data>
   <data name="StartScreen_PlatformNote" xml:space="preserve">
     <value>Mã nguồn mở • Được xây dựng cho Windows</value>
+  </data>
+  <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
+    <value>Mã nguồn mở • Được xây dựng cho Linux</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Bạn có thể thay đổi các tùy chọn này bất cứ lúc nào trong cài đặt ứng dụng.</value>

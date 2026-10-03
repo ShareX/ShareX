@@ -31,6 +31,7 @@ using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -158,6 +159,23 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 #endif
         }
     }
+
+    public string SystemIntegrationTitle => PlatformServices.Current.Info.IsWindows
+        ? Strings.ApplicationSettingsWindow_Windows
+        : Strings.ApplicationSettingsWindow_Integration;
+    public string UploadContextMenuText => PlatformServices.Current.Info.IsWindows
+        ? Strings.ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu
+        : Strings.ApplicationSettingsWindow_ShowUploadInFileManager;
+    public string EditContextMenuText => PlatformServices.Current.Info.IsWindows
+        ? Strings.ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu
+        : Strings.ApplicationSettingsWindow_ShowEditInFileManager;
+    public bool ShellIntegrationSupported => PlatformServices.Current.ShellIntegration.Support.IsSupported;
+    public string? ShellIntegrationUnsupportedReason => PlatformServices.Current.ShellIntegration.Support.Reason;
+    public bool SendToSupported => PlatformServices.Current.ShellIntegration.SendToSupport.IsSupported;
+    public string? SendToUnsupportedReason => PlatformServices.Current.ShellIntegration.SendToSupport.Reason;
+    public bool BrowserHostSupported => PlatformServices.Current.ShellIntegration.BrowserHostSupport.IsSupported;
+    public string? BrowserHostUnsupportedReason => PlatformServices.Current.ShellIntegration.BrowserHostSupport.Reason;
+    public bool PrintDialogSupported => PlatformServices.Current.Printing.DialogSupport.IsSupported;
 
     public bool SteamIntegrationVisible
     {
@@ -353,6 +371,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     public bool StartWithWindowsEnabled { get => _startWithWindowsEnabled; private set => SetField(ref _startWithWindowsEnabled, value); }
     public string StartWithWindowsText { get => _startWithWindowsText; private set => SetField(ref _startWithWindowsText, value); }
+    public string? StartupUnsupportedReason => PlatformServices.Current.Startup.Support.Reason;
 
     public bool ShellContextMenu
     {
@@ -569,7 +588,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
     }
 
-    public bool DefaultPrinterOverrideVisible => !Settings.PrintSettings.ShowPrintDialog;
+    public bool DefaultPrinterOverrideVisible => !PrintDialogSupported || !Settings.PrintSettings.ShowPrintDialog;
     public string DefaultPrinterOverride { get => Settings.PrintSettings.DefaultPrinterOverride; set => SetSetting(Settings.PrintSettings.DefaultPrinterOverride, value, x => Settings.PrintSettings.DefaultPrinterOverride = x); }
 
     public EnumOption<ProxyMethod>? SelectedProxyMethod
@@ -911,18 +930,30 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     private void RefreshStartWithWindows()
     {
-        StartWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
+        StartWithWindowsText = PlatformServices.Current.Info.IsWindows
+            ? Strings.ApplicationSettingsForm_cbStartWithWindows_Text
+            : Strings.ApplicationSettingsWindow_RunAtSignIn;
         StartWithWindowsEnabled = false;
 
         try
         {
+            if (!PlatformServices.Current.Startup.Support.IsSupported)
+            {
+                _startWithWindows = false;
+                OnPropertyChanged(nameof(StartWithWindows));
+                return;
+            }
+
             StartupState state = InvokeOnMainThread(() => StartupManager.State);
             _startWithWindows = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
             OnPropertyChanged(nameof(StartWithWindows));
 
             if (state == StartupState.DisabledByUser)
             {
-                StartWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+                if (PlatformServices.Current.Info.IsWindows)
+                {
+                    StartWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+                }
             }
             else if (state == StartupState.DisabledByPolicy)
             {
