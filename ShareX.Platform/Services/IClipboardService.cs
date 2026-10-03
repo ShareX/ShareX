@@ -76,4 +76,11 @@ public interface IClipboardService
     /// Windows, unchanged elsewhere.
     /// </summary>
     string EncodeHtml(string htmlFragment);
+
+    /// <summary>
+    /// True when ShareX should put data on the clipboard through this service rather than the UI toolkit's clipboard. On Wayland
+    /// ShareX's windows run under XWayland, and Wayland applications cannot read what the toolkit puts on the X11 clipboard. False
+    /// on Windows, macOS and X11, where the toolkit's clipboard works and keeps ShareX's extra image formats.
+    /// </summary>
+    bool PreferredForWriting { get; }
 }

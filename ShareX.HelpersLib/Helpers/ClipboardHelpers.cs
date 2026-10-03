@@ -27,6 +27,7 @@ using ShareX.Platform;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Threading.Tasks;
 using System.Linq;
 using System.Text;
 using Bitmap = SkiaSharp.SKBitmap;
@@ -58,10 +59,21 @@ namespace ShareX.HelpersLib
             return ClipboardHelpersEx.DIBV5ToBitmap(data);
         }
 
+        /// <summary>The platform's clipboard where the UI toolkit's cannot be read by other applications (Wayland), otherwise null.</summary>
+        private static IClipboardService PlatformClipboardForWriting =>
+            PlatformServices.IsInitialized && PlatformServices.Current.Clipboard.PreferredForWriting ? PlatformServices.Current.Clipboard : null;
+
+        private static bool Run(Func<IClipboardService, Task<bool>> write, IClipboardService clipboard) =>
+            Task.Run(() => write(clipboard)).GetAwaiter().GetResult();
+
         public static bool CopyText(string text)
         {
             if (string.IsNullOrEmpty(text)) return false;
-            try { return AvaloniaClipboard.SetText(text); }
+            try
+            {
+                IClipboardService platform = PlatformClipboardForWriting;
+                return platform != null ? Run(x => x.SetTextAsync(text), platform) : AvaloniaClipboard.SetText(text);
+            }
             catch (Exception e) { DebugHelper.WriteException(e, "Clipboard copy text failed."); return false; }
         }
 
@@ -72,6 +84,8 @@ namespace ShareX.HelpersLib
             {
                 using MemoryStream png = new();
                 img.Save(png, ImageFormat.Png);
+                IClipboardService platform = PlatformClipboardForWriting;
+                if (platform != null) return Run(x => x.SetImageAsync(png.ToArray()), platform);
                 byte[] dib;
                 if (HelpersOptions.UseAlternativeClipboardCopyImage && !HelpersOptions.DefaultCopyImageFillBackground)
                     dib = ClipboardHelpersEx.ConvertToDib(img);
@@ -101,7 +115,11 @@ namespace ShareX.HelpersLib
         public static bool CopyFile(string[] paths)
         {
             if (paths == null || paths.Length == 0) return false;
-            try { return AvaloniaClipboard.SetFiles(paths); }
+            try
+            {
+                IClipboardService platform = PlatformClipboardForWriting;
+                return platform != null ? Run(x => x.SetFilesAsync(paths), platform) : AvaloniaClipboard.SetFiles(paths);
+            }
             catch (Exception e) { DebugHelper.WriteException(e, "Clipboard copy file failed."); return false; }
         }
 

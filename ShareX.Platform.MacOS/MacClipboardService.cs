@@ -201,6 +201,8 @@ public sealed class MacClipboardService : IClipboardService
 
     public ClipboardFormatNames FormatNames { get; } = new ClipboardFormatNames("public.png", null, "public.html");
 
+    public bool PreferredForWriting => false;
+
     public string EncodeHtml(string htmlFragment) => htmlFragment;
 
     public Task<IReadOnlyList<string>> GetFormatsAsync(CancellationToken cancellationToken = default) => Task.FromResult(Run<IReadOnlyList<string>>(pasteboard =>

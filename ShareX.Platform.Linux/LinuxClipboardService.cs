@@ -173,6 +173,9 @@ public sealed class LinuxClipboardService : IClipboardService
 
     public ClipboardFormatNames FormatNames { get; } = new ClipboardFormatNames("image/png", null, "text/html");
 
+    /// <summary>On Wayland wl-copy offers the data to Wayland applications, which cannot read the XWayland clipboard.</summary>
+    public bool PreferredForWriting => ActiveBackend == Backend.WlClipboard;
+
     public string EncodeHtml(string htmlFragment) => htmlFragment;
 
     public Task<IReadOnlyList<string>> GetFormatsAsync(CancellationToken cancellationToken = default) => GetTypesAsync(cancellationToken);

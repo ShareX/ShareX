@@ -249,6 +249,8 @@ public sealed unsafe class WindowsClipboardService : IClipboardService
 
     public ClipboardFormatNames FormatNames { get; } = new ClipboardFormatNames("PNG", "CF_DIB", "HTML Format");
 
+    public bool PreferredForWriting => false;
+
     /// <summary>CF_HTML: a header with the byte offsets of the document and the fragment, then the fragment wrapped in a document.</summary>
     public string EncodeHtml(string htmlFragment)
     {
