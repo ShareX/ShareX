@@ -1480,6 +1480,9 @@ Cesta k souboru: {0}</value>
   <data name="MouseHighlighter_Title" xml:space="preserve">
     <value>Zvýrazňovač myši</value>
   </data>
+  <data name="MouseHighlighter_Unavailable" xml:space="preserve">
+    <value>V tomto prostředí plochy není zvýraznění myši k dispozici.</value>
+  </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

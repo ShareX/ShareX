@@ -1480,6 +1480,9 @@ Ruta del archivo: {0}</value>
   <data name="MouseHighlighter_Title" xml:space="preserve">
     <value>Resaltador del ratón</value>
   </data>
+  <data name="MouseHighlighter_Unavailable" xml:space="preserve">
+    <value>El resaltado del ratón no está disponible en este escritorio.</value>
+  </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

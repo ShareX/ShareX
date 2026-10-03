@@ -1474,6 +1474,9 @@
   <data name="MouseHighlighter_Title" xml:space="preserve">
     <value>Bút đánh dấu chuột</value>
   </data>
+  <data name="MouseHighlighter_Unavailable" xml:space="preserve">
+    <value>Không thể làm nổi bật chuột trên môi trường máy tính để bàn này.</value>
+  </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

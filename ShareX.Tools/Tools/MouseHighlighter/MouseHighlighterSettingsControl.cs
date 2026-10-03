@@ -34,9 +34,13 @@ namespace ShareX.Tools;
 
 public sealed class MouseHighlighterSettingsControl : UserControl
 {
+    private readonly MouseHighlighterWindowViewModel _availability = new();
+    private readonly Border _settingsContent;
+    private readonly Border _availabilitySurface;
+
     public MouseHighlighterSettingsControl(MouseHighlighterOptions options, Action? settingsChanged = null)
     {
-        options.Validate();
+        _availability.TryChangeSettings(options.Validate);
         void Changed()
         {
             options.Validate();
@@ -74,7 +78,7 @@ public sealed class MouseHighlighterSettingsControl : UserControl
         };
         void UpdateMode()
         {
-            bool isRipple = options.Mode == MouseHighlightMode.Ripple;
+            bool isRipple = mode.SelectedIndex == 1;
             circle.IsVisible = !isRipple;
             ripple.IsVisible = isRipple;
             primaryCrosshairs.IsVisible = secondaryCrosshairs.IsVisible = middleCrosshairs.IsVisible = isRipple;
@@ -82,9 +86,12 @@ public sealed class MouseHighlighterSettingsControl : UserControl
         mode.SelectionChanged += (_, _) =>
         {
             if (mode.SelectedIndex < 0) return;
-            options.Mode = mode.SelectedIndex == 0 ? MouseHighlightMode.Circle : MouseHighlightMode.Ripple;
-            UpdateMode();
-            Changed();
+            ChangeSettings(() =>
+            {
+                options.Mode = mode.SelectedIndex == 0 ? MouseHighlightMode.Circle : MouseHighlightMode.Ripple;
+                UpdateMode();
+                Changed();
+            });
         };
         panel.Children.Add(Row(Strings.MouseHighlighter_Mode, mode));
         panel.Children.Add(primaryColor);
@@ -110,7 +117,10 @@ public sealed class MouseHighlighterSettingsControl : UserControl
             value => { options.FadeDuration = (int)value; Changed(); }));
         ripple.Children.Add(NumberRow(Strings.MouseHighlighter_RippleSize, options.RippleSize, 10, 300, 1,
             value => { options.RippleSize = (int)value; Changed(); }));
-        ripple.Children.Add(NumberRow(Strings.MouseHighlighter_RippleIntensity, (decimal)options.RippleIntensity, 0.15m, 1.35m, 0.05m,
+        // Unsupported saved settings remain untouched; only their displayed value needs to be safe for NumericUpDown.
+        decimal rippleIntensity = double.IsFinite(options.RippleIntensity)
+            ? (decimal)Math.Clamp(options.RippleIntensity, 0.15, 1.35) : 0.7m;
+        ripple.Children.Add(NumberRow(Strings.MouseHighlighter_RippleIntensity, rippleIntensity, 0.15m, 1.35m, 0.05m,
             value => { options.RippleIntensity = (double)value; Changed(); }, "0.00"));
         ripple.Children.Add(NumberRow(Strings.MouseHighlighter_RippleDuration, options.RippleDuration, 60, 2000, 10,
             value => { options.RippleDuration = (int)value; Changed(); }));
@@ -121,32 +131,52 @@ public sealed class MouseHighlighterSettingsControl : UserControl
         panel.Children.Add(Check(Strings.MouseHighlighter_AutoActivate, options.AutoActivate,
             value => { options.AutoActivate = value; Changed(); }));
         UpdateMode();
-        Content = panel;
+        _settingsContent = new Border { Child = panel };
+        _availabilitySurface = new Border { Background = Brushes.Transparent, Child = _settingsContent };
+        Content = _availabilitySurface;
+        Loaded += (_, _) => RefreshAvailability();
+        RefreshAvailability();
     }
 
-    private static Control NumberRow(string label, decimal value, decimal min, decimal max, decimal increment,
+    internal void RefreshAvailability()
+    {
+        var support = _availability.SettingsSupport;
+        // The inner container prevents mode/click bindings from re-enabling unavailable editors.
+        _settingsContent.IsEnabled = support.IsSupported;
+        ToolTip.SetTip(_availabilitySurface, support.IsSupported ? null : support.Reason);
+    }
+
+    private void ChangeSettings(Action change)
+    {
+        if (!_availability.TryChangeSettings(change)) RefreshAvailability();
+    }
+
+    private Control NumberRow(string label, decimal value, decimal min, decimal max, decimal increment,
         Action<decimal> changed, string format = "0")
     {
         NumericUpDown number = new() { Minimum = min, Maximum = max, Increment = increment, Value = value, FormatString = format };
-        number.ValueChanged += (_, _) => { if (number.Value.HasValue) changed(number.Value.Value); };
+        number.ValueChanged += (_, _) => ChangeSettings(() => { if (number.Value.HasValue) changed(number.Value.Value); });
         return Row(label, number);
     }
 
-    private static Control ColorRow(string label, DrawingColor color, Action<DrawingColor> changed)
+    private Control ColorRow(string label, DrawingColor color, Action<DrawingColor> changed)
     {
         ColorView picker = new() { Color = Color.FromArgb(color.A, color.R, color.G, color.B), IsAlphaEnabled = true, IsAlphaVisible = true };
         Border swatch = new() { Width = 28, Height = 20, Background = new SolidColorBrush(picker.Color), BorderBrush = Brushes.Gray, BorderThickness = new Thickness(1) };
         Button button = new() { Content = swatch, HorizontalAlignment = HorizontalAlignment.Left, Flyout = new Flyout { Content = picker } };
         picker.ColorChanged += (_, _) =>
         {
-            Color selected = picker.Color;
-            swatch.Background = new SolidColorBrush(selected);
-            changed(DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B));
+            ChangeSettings(() =>
+            {
+                Color selected = picker.Color;
+                swatch.Background = new SolidColorBrush(selected);
+                changed(DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B));
+            });
         };
         return Row(label, button);
     }
 
-    private static Control EnabledColorRow(string label, bool enabled, Action<bool> enabledChanged,
+    private Control EnabledColorRow(string label, bool enabled, Action<bool> enabledChanged,
         DrawingColor color, Action<DrawingColor> colorChanged)
     {
         ColorView picker = new() { Color = Color.FromArgb(color.A, color.R, color.G, color.B), IsAlphaEnabled = true, IsAlphaVisible = true };
@@ -154,9 +184,12 @@ public sealed class MouseHighlighterSettingsControl : UserControl
         Button button = new() { Content = swatch, HorizontalAlignment = HorizontalAlignment.Left, Flyout = new Flyout { Content = picker }, IsEnabled = enabled };
         picker.ColorChanged += (_, _) =>
         {
-            Color selected = picker.Color;
-            swatch.Background = new SolidColorBrush(selected);
-            colorChanged(DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B));
+            ChangeSettings(() =>
+            {
+                Color selected = picker.Color;
+                swatch.Background = new SolidColorBrush(selected);
+                colorChanged(DrawingColor.FromArgb(selected.A, selected.R, selected.G, selected.B));
+            });
         };
 
         CheckBox check = Check(label, enabled, value =>
@@ -171,10 +204,10 @@ public sealed class MouseHighlighterSettingsControl : UserControl
         return row;
     }
 
-    private static CheckBox Check(string label, bool value, Action<bool> changed)
+    private CheckBox Check(string label, bool value, Action<bool> changed)
     {
         CheckBox check = new() { Content = new TextBlock { Text = label, TextWrapping = TextWrapping.Wrap, FontWeight = FontWeight.Normal }, IsChecked = value };
-        check.IsCheckedChanged += (_, _) => changed(check.IsChecked == true);
+        check.IsCheckedChanged += (_, _) => ChangeSettings(() => changed(check.IsChecked == true));
         return check;
     }
 

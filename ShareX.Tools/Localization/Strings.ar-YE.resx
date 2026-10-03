@@ -1474,6 +1474,9 @@
   <data name="MouseHighlighter_Title" xml:space="preserve">
     <value>تمييز الماوس</value>
   </data>
+  <data name="MouseHighlighter_Unavailable" xml:space="preserve">
+    <value>تمييز مؤشر الفأرة غير متاح على سطح المكتب هذا.</value>
+  </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

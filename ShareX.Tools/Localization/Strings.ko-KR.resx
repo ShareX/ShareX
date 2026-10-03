@@ -1474,6 +1474,9 @@
   <data name="MouseHighlighter_Title" xml:space="preserve">
     <value>마우스 클릭 강조 표시</value>
   </data>
+  <data name="MouseHighlighter_Unavailable" xml:space="preserve">
+    <value>이 데스크톱에서는 마우스 강조 표시를 사용할 수 없습니다.</value>
+  </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

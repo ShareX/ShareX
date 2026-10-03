@@ -1474,6 +1474,9 @@
   <data name="MouseHighlighter_Title" xml:space="preserve">
     <value>هایلایتر موس</value>
   </data>
+  <data name="MouseHighlighter_Unavailable" xml:space="preserve">
+    <value>برجسته‌سازی نشانگر ماوس در این محیط دسکتاپ در دسترس نیست.</value>
+  </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

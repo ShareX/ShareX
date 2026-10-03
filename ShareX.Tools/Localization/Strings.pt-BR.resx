@@ -1480,6 +1480,9 @@ Caminho do arquivo: {0}</value>
   <data name="MouseHighlighter_Title" xml:space="preserve">
     <value>Marcador de mouse</value>
   </data>
+  <data name="MouseHighlighter_Unavailable" xml:space="preserve">
+    <value>O destaque do mouse não está disponível neste ambiente de trabalho.</value>
+  </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

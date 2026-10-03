@@ -54,7 +54,7 @@ internal static class TaskFeatureSupport
             PlatformServices.Current.ScreenRecording.Support, PlatformServices.Current.ScreenCapture.Support,
             PlatformServices.Current.Windows.Support),
 
-        HotkeyType.MouseHighlighter => MouseHighlighterManager.Support,
+        HotkeyType.MouseHighlighter => MouseHighlighterWindowViewModel.CurrentToggleSupport,
         HotkeyType.InspectWindow => PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.Inspect),
         HotkeyType.ActiveWindowTopMost => PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.TopMost),
         HotkeyType.BorderlessWindow or HotkeyType.ActiveWindowBorderless => PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.Borderless),

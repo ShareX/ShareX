@@ -35,7 +35,10 @@ namespace ShareX.Tools;
 public sealed class MouseHighlighterWindow : Window
 {
     private readonly MouseHighlighterOptions _options;
+    private readonly MouseHighlighterWindowViewModel _viewModel = new();
     private readonly Button _toggle;
+    private readonly Border _toggleAvailability;
+    private readonly MouseHighlighterSettingsControl _settings;
 
     public MouseHighlighterWindow(MouseHighlighterOptions options, Action? settingsChanged)
     {
@@ -51,9 +54,11 @@ public sealed class MouseHighlighterWindow : Window
         StackPanel panel = new() { Spacing = 14, Margin = new Thickness(20) };
         _toggle = new Button();
         _toggle.Click += (_, _) => Toggle();
-        panel.Children.Add(_toggle);
+        _toggleAvailability = new Border { Background = Brushes.Transparent, Child = _toggle };
+        panel.Children.Add(_toggleAvailability);
         panel.Children.Add(CreateRecordingTip());
-        panel.Children.Add(new MouseHighlighterSettingsControl(options, settingsChanged));
+        _settings = new MouseHighlighterSettingsControl(options, settingsChanged);
+        panel.Children.Add(_settings);
         Content = new ScrollViewer { Content = panel };
         MouseHighlighterManager.StateChanged += RefreshState;
         Closed += (_, _) => MouseHighlighterManager.StateChanged -= RefreshState;
@@ -100,7 +105,11 @@ public sealed class MouseHighlighterWindow : Window
 
     private void Toggle()
     {
-        try { MouseHighlighterManager.SetManualActive(!MouseHighlighterManager.IsManuallyActive, _options); }
+        try
+        {
+            _viewModel.TryToggle(active => MouseHighlighterManager.SetManualActive(active, _options));
+            RefreshState();
+        }
         catch (Exception ex)
         {
             ShareX.AvaloniaUI.MessageBox.Show(Strings.MouseHighlighter_StartFailed + " " + ex.Message,
@@ -110,13 +119,10 @@ public sealed class MouseHighlighterWindow : Window
 
     private void RefreshState()
     {
-        if (MouseHighlighterManager.IsRecordingActive)
-        {
-            _toggle.Content = MouseHighlighterManager.IsManuallyActive ? Strings.MouseHighlighter_StopAfterRecording : Strings.MouseHighlighter_KeepAfterRecording;
-        }
-        else
-        {
-            _toggle.Content = MouseHighlighterManager.IsManuallyActive ? Strings.MouseHighlighter_Stop : Strings.MouseHighlighter_Start;
-        }
+        _toggle.Content = _viewModel.ToggleText;
+        var support = _viewModel.ToggleSupport;
+        _toggle.IsEnabled = support.IsSupported;
+        ToolTip.SetTip(_toggleAvailability, support.IsSupported ? null : support.Reason);
+        _settings.RefreshAvailability();
     }
 }

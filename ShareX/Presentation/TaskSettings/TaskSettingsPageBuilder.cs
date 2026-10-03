@@ -495,8 +495,11 @@ internal sealed class TaskSettingsPageBuilder
                 Row(Strings.TaskSettingsWindow_ScreenRecordingFPS, Number(() => capture.ScreenRecordFPS, value => capture.ScreenRecordFPS = (int)value, 1, HelpersOptions.DevMode ? 300 : 60)),
                 Row(Strings.TaskSettingsWindow_GIFFPS, Number(() => capture.GIFFPS, value => capture.GIFFPS = (int)value, 1, HelpersOptions.DevMode ? 60 : 30)),
                 Check(Strings.TaskSettingsWindow_ShowCursorInRecording, () => capture.ScreenRecordShowCursor, value => capture.ScreenRecordShowCursor = value),
-                Check(Strings.TaskSettingsWindow_HighlightMouseWhileRecording, () => capture.ScreenRecordMouseHighlighter, value => capture.ScreenRecordMouseHighlighter = value),
-                Button(Strings.TaskSettingsWindow_MouseHighlighterOptions, () => _window.NavigateToPage("tools-mouse-highlighter")),
+                WithSupport(Check(Strings.TaskSettingsWindow_HighlightMouseWhileRecording, () => capture.ScreenRecordMouseHighlighter,
+                    value => { if (MouseHighlighterWindowViewModel.CurrentSettingsSupport.IsSupported) capture.ScreenRecordMouseHighlighter = value; }),
+                    MouseHighlighterWindowViewModel.CurrentSettingsSupport),
+                WithSupport(Button(Strings.TaskSettingsWindow_MouseHighlighterOptions, () => _window.NavigateToPage("tools-mouse-highlighter")),
+                    MouseHighlighterWindowViewModel.CurrentSettingsSupport),
                 Check(Strings.TaskSettingsWindow_ShowRecordingTimer, () => capture.ScreenRecordShowTimer, value => capture.ScreenRecordShowTimer = value),
                 Check(Strings.TaskSettingsWindow_ShowRecordingButtonLabels, () => capture.ScreenRecordShowButtonLabels, value => capture.ScreenRecordShowButtonLabels = value),
                 Check(Strings.TaskSettingsWindow_StartRecordingAfterADelay, autoStart), Row(Strings.TaskSettingsWindow_StartDelaySeconds, startDelay),
@@ -741,8 +744,9 @@ internal sealed class TaskSettingsPageBuilder
     private Control BuildMouseHighlighterPage()
     {
         return Page("tools-mouse-highlighter", Strings.MouseHighlighter, LucideIcons.mouse_pointer_click,
-            EnabledCard(_toolsOverride, Strings.MouseHighlighter,
-                new MouseHighlighterSettingsControl(_toolsSettings.MouseHighlighterOptions)));
+            WithSupport(EnabledCard(_toolsOverride, Strings.MouseHighlighter,
+                new MouseHighlighterSettingsControl(_toolsSettings.MouseHighlighterOptions)),
+                MouseHighlighterWindowViewModel.CurrentSettingsSupport));
     }
 
     private Control BuildImageEditorPage()

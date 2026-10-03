@@ -1474,6 +1474,9 @@
   <data name="MouseHighlighter_Title" xml:space="preserve">
     <value>Evidențiator mouse-ului</value>
   </data>
+  <data name="MouseHighlighter_Unavailable" xml:space="preserve">
+    <value>Evidențierea mouse-ului nu este disponibilă în acest mediu desktop.</value>
+  </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

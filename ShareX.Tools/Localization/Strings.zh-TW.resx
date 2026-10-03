@@ -1480,6 +1480,9 @@
   <data name="MouseHighlighter_Title" xml:space="preserve">
     <value>滑鼠螢光筆</value>
   </data>
+  <data name="MouseHighlighter_Unavailable" xml:space="preserve">
+    <value>此桌面環境不支援滑鼠醒目提示。</value>
+  </data>
   <data name="NetworkMonitorProbe_Endpoint_failed" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>
