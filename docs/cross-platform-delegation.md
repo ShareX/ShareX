@@ -200,7 +200,7 @@ J asks for backend or platform capabilities here; M fills in the interface and s
 | R1 | Printing: print dialog and printing an image or text (the preview window is J's UI) | print windows | | todo |
 | R2 | Taskbar progress and overlay | upload progress UI | `ITaskbarService` (`PlatformServices.Current.Taskbar`); `TaskbarManager` keeps its API on top. Develop never used overlay icons, so none were added | done |
 | R3 | Synthetic input beyond scrolling: typing text, key combinations | application actions | extend `IInputService` | todo |
-| R4 | Unblock the Windows test baseline before the W1/J1 claim push: thumbnail URI fixture uses `/home/jens/...`, which `new Uri(path)` rejects on Windows; browser-host fixture assumes `Path.GetFullPath("/opt/...")` stays a Unix path. Use a native absolute path and assert the parsed JSON path. | `ShareX.Platform.Tests/SecretAndThumbnailTests.cs:110`, `LinuxTests.cs:294` | test fixtures only | done (W1/J1 claim commit); Jaex approved the ownership exception |
+| R4 | Unblock the Windows test baseline before the W1/J1 claim push: thumbnail URI fixture uses `/home/jens/...`, which `new Uri(path)` rejects on Windows; browser-host fixture assumes `Path.GetFullPath("/opt/...")` stays a Unix path. Use a native absolute path and assert the parsed JSON path. | `ShareX.Platform.Tests/SecretAndThumbnailTests.cs:110`, `LinuxTests.cs:294` | test fixtures only | done (`ef69ad7a7`); Jaex approved the ownership exception |
 
 ## Windows work (M → J)
 
@@ -208,8 +208,8 @@ M adds a row when a contract needs a Windows implementation. J implements it in 
 
 | ID | Contract | Old Windows code to move | Linux/macOS | Status |
 | --- | --- | --- | --- | --- |
-| W1 | Review the Windows code M wrote: `WindowsShellIntegrationService` (file types, browser hosts, Send to), `WindowsSystemPreferencesService.GetPolicy`, `WindowsTaskbarService`, `WindowsStartupService` (`b94ebc639`, `1cf9734e9`). Take ownership; fix whatever differs from v22. | already moved | done | in progress (2026-10-03) |
-| W2 | `IHotkeyService` for `HotkeyManager` (`WindowsHotkeyService` exists from the first branch; check it against `WindowsHotkeyHost`) | `ShareX.HelpersLib` `WindowsHotkeyHost`, `HotkeyForm` | X11 done; Wayland portal in M9 | todo |
+| W1 | Review the Windows code M wrote: `WindowsShellIntegrationService` (file types, browser hosts, Send to), `WindowsSystemPreferencesService.GetPolicy`, `WindowsTaskbarService`, `WindowsStartupService` (`b94ebc639`, `1cf9734e9`). Take ownership; fix whatever differs from v22. | already moved | done | done (W1 service review commit); Windows build 26300 smoke checks pass; J1 visual sign-off pending |
+| W2 | `IHotkeyService` for `HotkeyManager` (`WindowsHotkeyService` exists from the first branch; check it against `WindowsHotkeyHost`) | `ShareX.HelpersLib` `WindowsHotkeyHost`, `HotkeyForm` | X11 done; Wayland portal in M9 | in progress (2026-10-03) |
 | W3 | Printing (R1): contract to come from M | `ShareX.HelpersLib` print helpers, `WindowsPrintDialog` | to do (M) | waiting for contract |
 
 ## Handoffs
@@ -228,8 +228,8 @@ M adds a row when a backend API moved and J's UI files still call the old wrappe
 
 | ID | Found by | Platform | Description | Owner | Status |
 | --- | --- | --- | --- | --- | --- |
-| B1 | J | Windows | Baseline platform tests fail in `FreedesktopThumbnailTests.GetThumbnailName_IsTheMd5OfTheFileUri` and `LinuxFileAssociationTests.BrowserHosts_GoToInstalledBrowsersWithAnAbsolutePath` because their fixtures assume Unix paths. Fixed with Jaex's approval (R4): 171 pass, 7 skip, 0 fail; image-effects tests: 65 pass. | M | done (W1/J1 claim commit) |
-| B2 | J | Windows | `WindowsSystemPreferencesService.GetPolicy` selects any non-null HKLM value before validation. Unlike v22, an invalid machine boolean prevents a valid HKCU policy from applying; `PersonalPath` also accepts non-string registry values through `ToString`. Registry access failures now escape instead of falling back. | J | open: W1 |
+| B1 | J | Windows | Baseline platform tests fail in `FreedesktopThumbnailTests.GetThumbnailName_IsTheMd5OfTheFileUri` and `LinuxFileAssociationTests.BrowserHosts_GoToInstalledBrowsersWithAnAbsolutePath` because their fixtures assume Unix paths. Fixed with Jaex's approval (R4): 171 pass, 7 skip, 0 fail; image-effects tests: 65 pass. | M | done (`ef69ad7a7`) |
+| B2 | J | Windows | `WindowsSystemPreferencesService.GetPolicy` selects any non-null HKLM value before validation. Unlike v22, an invalid machine boolean prevents a valid HKCU policy from applying; `PersonalPath` also accepts non-string registry values through `ToString`. Registry access failures now escape instead of falling back. | J | done (W1 service review commit); verified with synthetic policy inputs |
 
 ## Status log
 
@@ -250,3 +250,5 @@ One line per working session, newest at the bottom.
 - 2026-10-03, M: **Ownership change (McoreD's decision):** `ShareX.Platform.Windows` is now J's. J writes, runs and signs off all Windows code; M does contracts, Linux, macOS and shared call sites, and hands Windows work over as W rows. New task J9 (Windows platform) and table "Windows work" (W1 to W3). M3 no longer moves Win32 code itself.
 - 2026-10-03, J: Pulled `cross-platform-v2` and claimed W1/J1. Following Jaex's goal objective, Windows verification starts on this branch; the first-steps wording about checking out the frozen first branch is superseded by that instruction. Reviewing shell integration, startup, policy and taskbar behavior against `develop` before the remaining Windows checklist. No file moves planned in this claim.
 - 2026-10-03, J: Jaex explicitly approved the two M-owned Windows test-fixture fixes in R4 to unblock the claim push. Only the thumbnail hashing fixture and browser-host manifest assertion are changed; no Linux implementation or platform contract changes.
+- 2026-10-03, J: J owns the new Windows verification utility in `Scripts/WindowsVerification/` and `Scripts/Verify-WindowsPlatform.ps1`. It exercises J's Windows services using a temporary harness, isolated registry keys and temporary shortcut folders; it does not replace the Windows 10/11 visual checklist or edit M's test project.
+- 2026-10-03, J: W1 reviewed against `develop`. Fixed policy validation/fallback and registry access handling, case-insensitive file/browser registration detection, and escaping of quoted/trailing-backslash arguments. `Scripts/Verify-WindowsPlatform.ps1` passes all five check groups on Windows build 26300, including a temporary Task Manager disabled-startup value and taskbar COM calls against a hidden harness window. Release solution build: 0 errors; platform tests: 171 pass/7 Unix-only skips; image-effects tests: 65 pass. Windows 10/11 visual, HDR and mixed-DPI checklist items remain unchecked; Linux/macOS execution is not available on this host. Claimed W2 next; no file moves in this task.

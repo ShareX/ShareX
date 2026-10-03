@@ -185,6 +185,20 @@ public sealed class WindowsShellService : IShellService
 /// <summary>Explorer context menu entries under HKCU\Software\Classes, identical to the keys ShareX has always written.</summary>
 public sealed class WindowsShellIntegrationService : IShellIntegrationService
 {
+    private readonly RegistryKey registryRoot;
+    private readonly string sendToFolder;
+
+    public WindowsShellIntegrationService()
+        : this(Registry.CurrentUser, Environment.GetFolderPath(Environment.SpecialFolder.SendTo))
+    {
+    }
+
+    internal WindowsShellIntegrationService(RegistryKey registryRoot, string sendToFolder)
+    {
+        this.registryRoot = registryRoot;
+        this.sendToFolder = sendToFolder;
+    }
+
     public FeatureSupport Support => FeatureSupport.Supported;
 
     public static string[] GetMenuKeys(ShellMenuEntry entry) => entry.Target switch
@@ -195,13 +209,13 @@ public sealed class WindowsShellIntegrationService : IShellIntegrationService
 
     /// <summary>For example "C:\Program Files\ShareX\ShareX.exe" -ImageEditor "%1".</summary>
     public static string GetCommand(ShellMenuEntry entry) =>
-        string.Join(" ", new[] { $"\"{entry.ExecutablePath}\"" }.Concat(entry.Arguments).Append("\"%1\""));
+        string.Join(" ", new[] { $"\"{entry.ExecutablePath}\"" }.Concat(entry.Arguments.Select(WindowsStartupService.QuoteArgument)).Append("\"%1\""));
 
     public static string GetIcon(ShellMenuEntry entry) => entry.Icon ?? $"\"{entry.ExecutablePath}\",0";
 
     public bool IsRegistered(ShellMenuEntry entry) => GetMenuKeys(entry).All(key =>
     {
-        using RegistryKey? command = Registry.CurrentUser.OpenSubKey(key + @"\command");
+        using RegistryKey? command = registryRoot.OpenSubKey(key + @"\command");
         return command?.GetValue(null) is string value && value.Equals(GetCommand(entry), StringComparison.OrdinalIgnoreCase);
     });
 
@@ -211,13 +225,13 @@ public sealed class WindowsShellIntegrationService : IShellIntegrationService
 
         foreach (string key in GetMenuKeys(entry))
         {
-            using (RegistryKey menu = Registry.CurrentUser.CreateSubKey(key))
+            using (RegistryKey menu = registryRoot.CreateSubKey(key))
             {
                 menu.SetValue(null, entry.Label, RegistryValueKind.String);
                 menu.SetValue("Icon", GetIcon(entry), RegistryValueKind.String);
             }
 
-            using (RegistryKey command = Registry.CurrentUser.CreateSubKey(key + @"\command"))
+            using (RegistryKey command = registryRoot.CreateSubKey(key + @"\command"))
             {
                 command.SetValue(null, GetCommand(entry), RegistryValueKind.String);
             }
@@ -228,7 +242,7 @@ public sealed class WindowsShellIntegrationService : IShellIntegrationService
     {
         foreach (string key in GetMenuKeys(entry))
         {
-            Registry.CurrentUser.DeleteSubKeyTree(key, false);
+            registryRoot.DeleteSubKeyTree(key, false);
         }
     }
 
@@ -236,7 +250,7 @@ public sealed class WindowsShellIntegrationService : IShellIntegrationService
 
     /// <summary>For example "C:\Program Files\ShareX\ShareX.exe" -CustomUploader "%1".</summary>
     public static string GetCommand(FileAssociation association) =>
-        string.Join(" ", new[] { $"\"{association.ExecutablePath}\"" }.Concat(association.Arguments).Append("\"%1\""));
+        string.Join(" ", new[] { $"\"{association.ExecutablePath}\"" }.Concat(association.Arguments.Select(WindowsStartupService.QuoteArgument)).Append("\"%1\""));
 
     private static string ExtensionKey(FileAssociation association) => $@"Software\Classes\{association.Extension}";
 
@@ -244,33 +258,33 @@ public sealed class WindowsShellIntegrationService : IShellIntegrationService
 
     public bool IsAssociated(FileAssociation association)
     {
-        using RegistryKey? extension = Registry.CurrentUser.OpenSubKey(ExtensionKey(association));
-        using RegistryKey? command = Registry.CurrentUser.OpenSubKey(TypeKey(association) + @"\shell\open\command");
-        return extension?.GetValue(null) is string typeId && typeId == association.TypeId &&
-            command?.GetValue(null) is string value && value == GetCommand(association);
+        using RegistryKey? extension = registryRoot.OpenSubKey(ExtensionKey(association));
+        using RegistryKey? command = registryRoot.OpenSubKey(TypeKey(association) + @"\shell\open\command");
+        return extension?.GetValue(null) is string typeId && typeId.Equals(association.TypeId, StringComparison.OrdinalIgnoreCase) &&
+            command?.GetValue(null) is string value && value.Equals(GetCommand(association), StringComparison.OrdinalIgnoreCase);
     }
 
     public void Associate(FileAssociation association)
     {
         RemoveAssociation(association, notify: false);
 
-        using (RegistryKey key = Registry.CurrentUser.CreateSubKey(ExtensionKey(association)))
+        using (RegistryKey key = registryRoot.CreateSubKey(ExtensionKey(association)))
         {
             key.SetValue(null, association.TypeId, RegistryValueKind.String);
         }
 
-        using (RegistryKey key = Registry.CurrentUser.CreateSubKey(TypeKey(association)))
+        using (RegistryKey key = registryRoot.CreateSubKey(TypeKey(association)))
         {
             key.SetValue(null, association.Description, RegistryValueKind.String);
         }
 
         if (association.Icon != null)
         {
-            using RegistryKey key = Registry.CurrentUser.CreateSubKey(TypeKey(association) + @"\DefaultIcon");
+            using RegistryKey key = registryRoot.CreateSubKey(TypeKey(association) + @"\DefaultIcon");
             key.SetValue(null, $"\"{association.Icon}\"", RegistryValueKind.String);
         }
 
-        using (RegistryKey key = Registry.CurrentUser.CreateSubKey(TypeKey(association) + @"\shell\open\command"))
+        using (RegistryKey key = registryRoot.CreateSubKey(TypeKey(association) + @"\shell\open\command"))
         {
             key.SetValue(null, GetCommand(association), RegistryValueKind.String);
         }
@@ -280,10 +294,10 @@ public sealed class WindowsShellIntegrationService : IShellIntegrationService
 
     public void RemoveAssociation(FileAssociation association) => RemoveAssociation(association, notify: true);
 
-    private static void RemoveAssociation(FileAssociation association, bool notify)
+    private void RemoveAssociation(FileAssociation association, bool notify)
     {
-        Registry.CurrentUser.DeleteSubKeyTree(ExtensionKey(association), false);
-        Registry.CurrentUser.DeleteSubKeyTree(TypeKey(association), false);
+        registryRoot.DeleteSubKeyTree(ExtensionKey(association), false);
+        registryRoot.DeleteSubKeyTree(TypeKey(association), false);
 
         if (notify)
         {
@@ -303,22 +317,22 @@ public sealed class WindowsShellIntegrationService : IShellIntegrationService
     /// <summary>Windows browsers read the manifest path from the registry; the manifest stays where ShareX installed it.</summary>
     public bool IsBrowserHostRegistered(BrowserHost host)
     {
-        using RegistryKey? key = Registry.CurrentUser.OpenSubKey(BrowserHostKey(host));
-        return key?.GetValue(null) is string path && path == host.ManifestPath && System.IO.File.Exists(host.ManifestPath);
+        using RegistryKey? key = registryRoot.OpenSubKey(BrowserHostKey(host));
+        return key?.GetValue(null) is string path && path.Equals(host.ManifestPath, StringComparison.OrdinalIgnoreCase) && System.IO.File.Exists(host.ManifestPath);
     }
 
     public void RegisterBrowserHost(BrowserHost host)
     {
         UnregisterBrowserHost(host);
-        using RegistryKey key = Registry.CurrentUser.CreateSubKey(BrowserHostKey(host));
+        using RegistryKey key = registryRoot.CreateSubKey(BrowserHostKey(host));
         key.SetValue(null, host.ManifestPath, RegistryValueKind.String);
     }
 
-    public void UnregisterBrowserHost(BrowserHost host) => Registry.CurrentUser.DeleteSubKeyTree(BrowserHostKey(host), false);
+    public void UnregisterBrowserHost(BrowserHost host) => registryRoot.DeleteSubKeyTree(BrowserHostKey(host), false);
 
     public FeatureSupport SendToSupport => FeatureSupport.Supported;
 
-    private static string SendToShortcutPath(string name) => System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.SendTo),
+    private string SendToShortcutPath(string name) => System.IO.Path.Combine(sendToFolder,
         name.EndsWith(".lnk", StringComparison.OrdinalIgnoreCase) ? name : name + ".lnk");
 
     public bool IsInSendTo(string name, string executablePath) => WindowsStartupService.IsShortcutTo(SendToShortcutPath(name), executablePath);

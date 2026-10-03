@@ -28,6 +28,7 @@ using ShareX.Platform.Windows.Native;
 using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace ShareX.Platform.Windows;
 
@@ -118,6 +119,32 @@ public sealed class WindowsStartupService : IStartupService
         }
     }
 
-    internal static string QuoteArgument(string argument) =>
-        argument.Length > 0 && argument.IndexOfAny([' ', '\t', '"']) < 0 ? argument : "\"" + argument.Replace("\"", "\\\"") + "\"";
+    internal static string QuoteArgument(string argument)
+    {
+        if (argument.Length > 0 && argument.IndexOfAny([' ', '\t', '"']) < 0)
+        {
+            return argument;
+        }
+
+        StringBuilder quoted = new StringBuilder("\"");
+        int backslashes = 0;
+
+        foreach (char character in argument)
+        {
+            if (character == '\\')
+            {
+                backslashes++;
+                continue;
+            }
+
+            quoted.Append('\\', character == '"' ? backslashes * 2 + 1 : backslashes);
+            quoted.Append(character);
+            backslashes = 0;
+        }
+
+        // Backslashes before the closing quote must be doubled so they do not escape it.
+        quoted.Append('\\', backslashes * 2);
+        quoted.Append('"');
+        return quoted.ToString();
+    }
 }

@@ -25,7 +25,10 @@
 
 using Microsoft.Win32;
 using ShareX.Platform.Windows.Native;
+using System;
+using System.IO;
 using System.Runtime.Versioning;
+using System.Security;
 
 namespace ShareX.Platform.Windows;
 
@@ -33,6 +36,18 @@ namespace ShareX.Platform.Windows;
 [SupportedOSPlatform("windows")]
 public sealed unsafe class WindowsSystemPreferencesService : ISystemPreferencesService
 {
+    private readonly Func<RegistryHive, string, object?> readPolicy;
+
+    public WindowsSystemPreferencesService()
+        : this(ReadPolicy)
+    {
+    }
+
+    internal WindowsSystemPreferencesService(Func<RegistryHive, string, object?> readPolicy)
+    {
+        this.readPolicy = readPolicy;
+    }
+
     public int WheelScrollLines
     {
         get
@@ -42,9 +57,56 @@ public sealed unsafe class WindowsSystemPreferencesService : ISystemPreferencesS
         }
     }
 
-    /// <summary>HKLM first, so an administrator's setting wins, then HKCU (SOFTWARE\ShareX).</summary>
-    public object? GetPolicy(string name) =>
-        Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\ShareX", name, null) ?? Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\ShareX", name, null);
+    /// <summary>HKLM first, then HKCU, skipping unreadable or invalid values just as v22's SystemOptions does.</summary>
+    public object? GetPolicy(string name)
+    {
+        foreach (RegistryHive hive in new[] { RegistryHive.LocalMachine, RegistryHive.CurrentUser })
+        {
+            object? value = readPolicy(hive, name);
+
+            if (name == "PersonalPath")
+            {
+                if (value is string path)
+                {
+                    return path;
+                }
+            }
+            else if (name is "DisableUpdateCheck" or "DisableUpload" or "DisableLogging")
+            {
+                if (value != null)
+                {
+                    try
+                    {
+                        return Convert.ToBoolean(value);
+                    }
+                    catch (Exception e) when (e is InvalidCastException or FormatException or OverflowException)
+                    {
+                        // An invalid machine policy must still allow the user's valid policy to apply.
+                    }
+                }
+            }
+            else if (value != null)
+            {
+                return value;
+            }
+        }
+
+        return null;
+    }
+
+    private static object? ReadPolicy(RegistryHive hive, string name)
+    {
+        try
+        {
+            using RegistryKey baseKey = RegistryKey.OpenBaseKey(hive, RegistryView.Default);
+            using RegistryKey? key = baseKey.OpenSubKey(@"SOFTWARE\ShareX");
+            return key?.GetValue(name);
+        }
+        catch (Exception e) when (e is IOException or UnauthorizedAccessException or SecurityException)
+        {
+            return null;
+        }
+    }
 
     public int SmallIconSize
     {
