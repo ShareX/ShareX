@@ -24,18 +24,39 @@
 #endregion License Information (GPL v3)
 
 using Avalonia;
+using ShareX.Platform;
+using ShareX.Platform.Linux;
+using ShareX.Platform.MacOS;
+using ShareX.Platform.Windows;
 using System;
 
 namespace ShareX.ImageEditor.App
 {
     internal class Program
     {
-        // Initialization code. Don't use any Avalonia, third-party APIs or any
-        // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
-        // yet and stuff might break.
         [STAThread]
-        public static void Main(string[] args) => BuildAvaloniaApp()
-            .StartWithClassicDesktopLifetime(args);
+        public static void Main(string[] args)
+        {
+            PlatformServices.Initialize(CreatePlatformServices());
+
+            try
+            {
+                BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+            }
+            finally
+            {
+                PlatformServices.Shutdown();
+            }
+        }
+
+        // Platform selection is the sole startup OS check; editor code uses PlatformServices.Current.
+        private static IPlatformServices CreatePlatformServices()
+        {
+            if (OperatingSystem.IsWindows()) return new WindowsPlatformServices();
+            if (OperatingSystem.IsMacOS()) return new MacPlatformServices();
+            if (OperatingSystem.IsLinux()) return new LinuxPlatformServices();
+            throw new PlatformNotSupportedException("ShareX runs on Windows, macOS and Linux.");
+        }
 
         // Avalonia configuration, don't remove; also used by visual designer.
         public static AppBuilder BuildAvaloniaApp()

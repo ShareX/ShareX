@@ -6,6 +6,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Platforms>x64;ARM64</Platforms>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <WarningsAsErrors>$(WarningsAsErrors);CA1416</WarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,5 +20,8 @@
   <ItemGroup>
     <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
     <ProjectReference Include="..\ShareX.ImageEditor\ShareX.ImageEditor.csproj" />
+    <ProjectReference Include="..\ShareX.Platform.Windows\ShareX.Platform.Windows.csproj" />
+    <ProjectReference Include="..\ShareX.Platform.Linux\ShareX.Platform.Linux.csproj" />
+    <ProjectReference Include="..\ShareX.Platform.MacOS\ShareX.Platform.MacOS.csproj" />
   </ItemGroup>
 </Project>
