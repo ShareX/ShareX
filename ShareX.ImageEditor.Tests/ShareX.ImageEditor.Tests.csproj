@@ -7,6 +7,9 @@
     <IsTestProject>true</IsTestProject>
     <Platforms>AnyCPU;x64;ARM64</Platforms>
     <RuntimeIdentifier></RuntimeIdentifier>
+    <GenerateProgramFile>false</GenerateProgramFile>
+    <UseAppHost>true</UseAppHost>
+    <StartupObject>ShareX.ImageEditor.Tests.NativeProcessFixture</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" />

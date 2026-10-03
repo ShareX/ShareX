@@ -123,6 +123,8 @@ public sealed class WindowsPlatformServices : IPlatformServices
 
     public ITrayService Tray { get; } = new WindowsTrayService();
 
+    public IApplicationLaunchService ApplicationLaunch { get; } = new WindowsApplicationLaunchService();
+
     public void Dispose()
     {
         Session.Dispose();

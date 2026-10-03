@@ -104,4 +104,7 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>Native notification-area transport and gesture capabilities.</summary>
     ITrayService Tray { get; }
+
+    /// <summary>Application launch independent of a browser or other parent application's lifetime.</summary>
+    IApplicationLaunchService ApplicationLaunch { get; }
 }

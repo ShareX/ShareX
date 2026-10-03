@@ -199,6 +199,7 @@ public sealed class InspectWindowTests
         public IDesktopWallpaperService Wallpaper => throw new NotImplementedException();
         public IApplicationSessionService Session => throw new NotImplementedException();
         public ITrayService Tray => throw new NotImplementedException();
+        public IApplicationLaunchService ApplicationLaunch => throw new NotImplementedException();
         public void Dispose() { }
     }
 

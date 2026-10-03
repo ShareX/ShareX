@@ -123,6 +123,9 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public ITrayService Tray { get; } = new UnsupportedTrayService();
 
+    public IApplicationLaunchService ApplicationLaunch { get; } =
+        new UnsupportedApplicationLaunchService("Launching ShareX from the browser extension is not available on macOS.");
+
     public void Dispose()
     {
         if (hotkeys.IsValueCreated)

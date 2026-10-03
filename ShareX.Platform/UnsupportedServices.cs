@@ -31,6 +31,16 @@ using System.Threading.Tasks;
 
 namespace ShareX.Platform;
 
+public sealed class UnsupportedApplicationLaunchService(string reason) : IApplicationLaunchService
+{
+    public FeatureSupport Support { get; } = FeatureSupport.NotSupported(reason);
+
+    public string GetExecutablePath(string directory, string applicationName) => System.IO.Path.Combine(directory, applicationName);
+
+    public int LaunchDetached(string executablePath, IReadOnlyList<string> arguments) =>
+        throw new PlatformNotSupportedException(Support.Reason);
+}
+
 /// <summary>Placeholder implementations used when a platform or session cannot provide a feature.</summary>
 public sealed class UnsupportedNotificationService(string reason) : INotificationService
 {
