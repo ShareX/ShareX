@@ -24,10 +24,15 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json.Serialization;
+using ShareX.Platform;
+using System;
 using System.Reflection;
+using System.Text;
 
 namespace ShareX.HelpersLib
 {
+    /// <summary>Encrypts a string setting with the platform's secret protection: DPAPI on Windows, as ShareX always has, and a per-user key elsewhere.</summary>
+    /// <remarks>The tag keeps its historic name so settings written by earlier versions still load.</remarks>
     public class DPAPIEncryptedStringValueProvider : IValueProvider
     {
         private const string encryptedTag = "$DPAPIEncrypted$";
@@ -47,10 +52,14 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    value = encryptedTag + DPAPI.Encrypt(value);
+                    byte[] protectedData = PlatformServices.Current.Secrets.Protect(Encoding.UTF8.GetBytes(value));
+                    value = encryptedTag + Convert.ToBase64String(protectedData);
                 }
-                catch
+                catch (Exception e)
                 {
+                    // Never write the secret in plain text. The setting is saved empty and the user enters it again.
+                    DebugHelper.WriteException(e, "Unable to encrypt setting " + targetProperty.Name);
+                    value = null;
                 }
             }
 
@@ -66,7 +75,8 @@ namespace ShareX.HelpersLib
                 try
                 {
                     string encryptedString = text.Substring(encryptedTag.Length);
-                    text = DPAPI.Decrypt(encryptedString);
+                    byte[] data = PlatformServices.Current.Secrets.Unprotect(Convert.FromBase64String(encryptedString));
+                    text = Encoding.UTF8.GetString(data);
                 }
                 catch
                 {

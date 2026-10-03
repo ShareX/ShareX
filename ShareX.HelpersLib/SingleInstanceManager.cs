@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -26,8 +26,6 @@
 using System;
 using System.IO;
 using System.IO.Pipes;
-using System.Security.AccessControl;
-using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -93,14 +91,9 @@ namespace ShareX.HelpersLib
 
                 try
                 {
-                    PipeSecurity pipeSecurity = new PipeSecurity();
-
-                    using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
-                    {
-                        pipeSecurity.AddAccessRule(new PipeAccessRule(identity.User, PipeAccessRights.ReadWrite, AccessControlType.Allow));
-                    }
-
-                    using (NamedPipeServerStream namedPipeServer = NamedPipeServerStreamAcl.Create(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 0, 0, pipeSecurity))
+                    // CurrentUserOnly limits the pipe to this user on every OS: an ACL for the user's SID on Windows,
+                    // an owner-only socket on Linux and macOS. It replaces the Windows-only PipeSecurity that did the same.
+                    using (NamedPipeServerStream namedPipeServer = new NamedPipeServerStream(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous | PipeOptions.CurrentUserOnly))
                     {
                         namedPipeServerCreated = true;
 
@@ -145,7 +138,7 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                using (NamedPipeClientStream namedPipeClient = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
+                using (NamedPipeClientStream namedPipeClient = new NamedPipeClientStream(".", PipeName, PipeDirection.Out, PipeOptions.CurrentUserOnly))
                 {
                     namedPipeClient.Connect(ConnectTimeout);
 

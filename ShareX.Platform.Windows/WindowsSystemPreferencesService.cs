@@ -126,4 +126,42 @@ public sealed unsafe class WindowsSystemPreferencesService : ISystemPreferencesS
             return key?.GetValue("SystemUsesLightTheme") is not int value || value != 0;
         }
     }
+
+    private readonly object changedLock = new object();
+    private EventHandler? changed;
+
+    /// <summary>Theme and display changes, from SystemEvents as the tray icon has always listened to them.</summary>
+    public event EventHandler? Changed
+    {
+        add
+        {
+            lock (changedLock)
+            {
+                if (changed == null)
+                {
+                    SystemEvents.UserPreferenceChanged += OnUserPreferenceChanged;
+                    SystemEvents.DisplaySettingsChanged += OnDisplaySettingsChanged;
+                }
+
+                changed += value;
+            }
+        }
+        remove
+        {
+            lock (changedLock)
+            {
+                changed -= value;
+
+                if (changed == null)
+                {
+                    SystemEvents.UserPreferenceChanged -= OnUserPreferenceChanged;
+                    SystemEvents.DisplaySettingsChanged -= OnDisplaySettingsChanged;
+                }
+            }
+        }
+    }
+
+    private void OnUserPreferenceChanged(object? sender, UserPreferenceChangedEventArgs e) => changed?.Invoke(this, EventArgs.Empty);
+
+    private void OnDisplaySettingsChanged(object? sender, EventArgs e) => changed?.Invoke(this, EventArgs.Empty);
 }

@@ -222,3 +222,32 @@ public sealed class UnsupportedSystemGraphicsService(string reason) : ISystemGra
 
     public SystemCursorImage? GetSystemCursor(SystemCursor cursor, int? size = null) => null;
 }
+
+public sealed class UnsupportedPrintService(string reason) : IPrintService
+{
+    public FeatureSupport Support { get; } = FeatureSupport.NotSupported(reason);
+
+    public FeatureSupport DialogSupport => Support;
+
+    public bool IsPrinterInstalled(string printerName) => false;
+
+    public PrintPageSetup GetPageSetup(PrintOptions options) => PrintPageSetup.Letter;
+
+    public bool ShowPrintDialog(PrintOptions options) => false;
+
+    public void Print(PrintOptions options, string documentName, Func<PrintPageSetup, int, PrintedPage?> renderPage) =>
+        throw new PlatformNotSupportedException(Support.Reason);
+}
+
+public sealed class UnsupportedSoundService(string reason) : ISoundService
+{
+    public FeatureSupport Support { get; } = FeatureSupport.NotSupported(reason);
+
+    public void Play(byte[] wav)
+    {
+    }
+
+    public void PlayFile(string filePath)
+    {
+    }
+}

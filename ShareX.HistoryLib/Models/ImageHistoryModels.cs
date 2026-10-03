@@ -28,6 +28,7 @@
 using Avalonia;
 using Avalonia.Platform;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -36,8 +37,6 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
-using DrawingBitmap = SkiaSharp.SKBitmap;
-using DrawingSize = System.Drawing.Size;
 
 namespace ShareX.HistoryLib;
 
@@ -233,12 +232,14 @@ public sealed class ImageHistoryThumbnailLoader : IDisposable
 
         try
         {
-            using DrawingBitmap? shellThumbnail = NativeMethods.GetFileThumbnail(filePath, new DrawingSize(width, height));
-            if (shellThumbnail != null)
+            // The Windows shell or the freedesktop thumbnail cache; null when the OS has none for this file.
+            IThumbnailService thumbnails = PlatformServices.Current.Thumbnails;
+            byte[]? png = thumbnails.Support.IsSupported ? thumbnails.GetThumbnail(filePath, width, height) : null;
+            if (png != null)
             {
                 if (token.IsCancellationRequested) return null;
-                return new AvaloniaBitmap(Avalonia.Platform.PixelFormat.Bgra8888, AlphaFormat.Unpremul, shellThumbnail.GetPixels(),
-                    new PixelSize(shellThumbnail.Width, shellThumbnail.Height), new Vector(96, 96), shellThumbnail.RowBytes);
+                using MemoryStream pngStream = new MemoryStream(png, false);
+                return new AvaloniaBitmap(pngStream);
             }
         }
         catch (OperationCanceledException)

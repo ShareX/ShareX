@@ -46,6 +46,8 @@ public sealed class MacPlatformServices : IPlatformServices
         MacPathService paths = new MacPathService();
         Paths = paths;
         Startup = new LaunchAgentStartupService(paths, runner);
+        Printing = new CupsPrintService(info, runner);
+        Sounds = new CommandLineSoundService(runner, ["afplay"], FeatureSupport.NotSupported("afplay is missing."));
         Clipboard = new MacClipboardService();
         MacWindowService windows = new MacWindowService();
         MacScreenCaptureService screenCapture = new MacScreenCaptureService(runner, windows);
@@ -110,6 +112,10 @@ public sealed class MacPlatformServices : IPlatformServices
     public ITaskbarService Taskbar { get; } = new UnsupportedTaskbarService("Dock icon progress is not available on macOS yet.");
 
     public ISystemGraphicsService Graphics { get; } = new UnsupportedSystemGraphicsService("Emoji and cursor images are drawn by ShareX on macOS.");
+
+    public IPrintService Printing { get; }
+
+    public ISoundService Sounds { get; }
 
     public void Dispose()
     {

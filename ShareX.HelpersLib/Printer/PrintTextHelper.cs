@@ -26,7 +26,6 @@
 using SkiaSharp;
 using System;
 using System.Drawing;
-using System.Drawing.Printing;
 using System.Text;
 
 namespace ShareX.HelpersLib;
@@ -38,13 +37,6 @@ internal sealed class PrintTextHelper
     public string Text { get => text; set => text = value.Replace("\r\n", "\n").Replace('\r', '\n'); }
     public ImageFont Font { get; set; }
     public void BeginPrint() { offset = 0; page = 1; }
-
-    public void PrintPage(PrintPageEventArgs args)
-    {
-        using SKBitmap bitmap = RenderPage(args.PageBounds.Size, args.MarginBounds, out bool morePages);
-        if (bitmap != null) WindowsPrintInterop.DrawImage(args, bitmap, args.PageBounds);
-        args.HasMorePages = morePages;
-    }
 
     // Page and margin bounds are in hundredths of an inch; rasterize at 300 dpi.
     public SKBitmap RenderPage(Size pageSize, Rectangle margin, out bool morePages)

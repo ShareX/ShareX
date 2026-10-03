@@ -33,7 +33,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Media;
 using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Resources;
@@ -377,6 +376,7 @@ namespace ShareX.HelpersLib
             return time;
         }
 
+        // Sounds play in the background, as they always have; ISoundService.Play returns when the sound has finished.
         public static void PlaySound(Stream stream)
         {
             if (stream != null)
@@ -384,41 +384,28 @@ namespace ShareX.HelpersLib
                 Task.Run(() =>
                 {
                     using (stream)
-                    using (SoundPlayer soundPlayer = new SoundPlayer(stream))
                     {
-                        soundPlayer.Play();
+                        PlatformServices.Current.Sounds.Play(ReadAll(stream));
                     }
                 });
             }
         }
 
-        public static void PlaySoundSync(Stream stream)
-        {
-            if (stream != null)
-            {
-                Task.Run(() =>
-                {
-                    using (stream)
-                    using (SoundPlayer soundPlayer = new SoundPlayer(stream))
-                    {
-                        soundPlayer.PlaySync();
-                    }
-                });
-            }
-        }
+        public static void PlaySoundSync(Stream stream) => PlaySound(stream);
 
         public static void PlaySoundAsync(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
-                Task.Run(() =>
-                {
-                    using (SoundPlayer soundPlayer = new SoundPlayer(filePath))
-                    {
-                        soundPlayer.PlaySync();
-                    }
-                });
+                Task.Run(() => PlatformServices.Current.Sounds.PlayFile(filePath));
             }
+        }
+
+        private static byte[] ReadAll(Stream stream)
+        {
+            using MemoryStream memory = new MemoryStream();
+            stream.CopyTo(memory);
+            return memory.ToArray();
         }
 
         public static bool WaitWhile(Func<bool> check, int interval, int timeout = -1)

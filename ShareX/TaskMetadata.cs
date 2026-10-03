@@ -90,15 +90,6 @@ namespace ShareX
             }
         }
 
-        public void UpdateInfo(WindowInfo windowInfo)
-        {
-            if (windowInfo != null)
-            {
-                WindowTitle = windowInfo.Text;
-                ProcessName = windowInfo.ProcessName;
-            }
-        }
-
         public void Dispose()
         {
             Image?.Dispose();

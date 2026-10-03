@@ -28,7 +28,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Platform;
-using Microsoft.Win32;
+using ShareX.Platform;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
@@ -42,8 +42,6 @@ namespace ShareX.HelpersLib;
 /// </summary>
 public static class LucideTrayIcon
 {
-    private const string PersonalizeRegistryPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize";
-    private const string SystemUsesLightThemeRegistryValue = "SystemUsesLightTheme";
     private static readonly Uri LucideFontUri = new("avares://ShareX.Avalonia/Assets/lucide.ttf");
     private static readonly int[] IconSizes = [16, 20, 24, 32, 40, 48, 64];
     private static readonly Lazy<SKTypeface> LucideTypeface = new(LoadTypeface);
@@ -84,8 +82,7 @@ public static class LucideTrayIcon
         }
 
         SKColor skColor = new(color.R, color.G, color.B, color.A);
-        int size = OperatingSystem.IsWindows() ? Math.Max(NativeMethods.GetSystemMetrics(SystemMetric.SM_CXSMICON),
-            NativeMethods.GetSystemMetrics(SystemMetric.SM_CYSMICON)) : 16;
+        int size = PlatformServices.Current.Preferences.SmallIconSize;
         byte[] imageData = RenderGlyph(glyph, skColor, size);
 
         using MemoryStream stream = new(imageData, writable: false);
@@ -99,20 +96,11 @@ public static class LucideTrayIcon
 
     private static System.Drawing.Color GetThemeIconColor()
     {
-        return (OperatingSystem.IsWindows() ? IsLightTaskbarTheme() :
-            Application.Current?.PlatformSettings?.GetColorValues().ThemeVariant == PlatformThemeVariant.Light) ?
-            System.Drawing.Color.Black :
-            System.Drawing.Color.White;
-    }
+        // Windows keeps the task bar theme apart from the app theme; elsewhere the panel follows the desktop theme.
+        bool light = PlatformServices.Current.Preferences.SystemUsesLightTheme ??
+            Application.Current?.PlatformSettings?.GetColorValues().ThemeVariant == PlatformThemeVariant.Light;
 
-    private static bool IsLightTaskbarTheme()
-    {
-        int? value = RegistryHelpers.GetValueDWord(
-            PersonalizeRegistryPath,
-            SystemUsesLightThemeRegistryValue,
-            RegistryHive.CurrentUser);
-
-        return value != 0;
+        return light ? System.Drawing.Color.Black : System.Drawing.Color.White;
     }
 
     private static SKTypeface LoadTypeface()
@@ -202,20 +190,11 @@ public static class LucideTrayIcon
             _synchronizationContext = SynchronizationContext.Current;
 
             RefreshIcon();
-            if (OperatingSystem.IsWindows())
-            {
-                SystemEvents.UserPreferenceChanged += OnUserPreferenceChanged;
-                SystemEvents.DisplaySettingsChanged += OnDisplaySettingsChanged;
-            }
+            PlatformServices.Current.Preferences.Changed += OnPreferencesChanged;
             if (Application.Current?.PlatformSettings is { } platform) platform.ColorValuesChanged += OnColorsChanged;
         }
 
-        private void OnUserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
-        {
-            QueueRefresh();
-        }
-
-        private void OnDisplaySettingsChanged(object? sender, EventArgs e)
+        private void OnPreferencesChanged(object? sender, EventArgs e)
         {
             QueueRefresh();
         }
@@ -258,11 +237,7 @@ public static class LucideTrayIcon
             }
 
             _disposed = true;
-            if (OperatingSystem.IsWindows())
-            {
-                SystemEvents.UserPreferenceChanged -= OnUserPreferenceChanged;
-                SystemEvents.DisplaySettingsChanged -= OnDisplaySettingsChanged;
-            }
+            PlatformServices.Current.Preferences.Changed -= OnPreferencesChanged;
             if (Application.Current?.PlatformSettings is { } platform) platform.ColorValuesChanged -= OnColorsChanged;
             _trayIcon.Icon = null;
         }

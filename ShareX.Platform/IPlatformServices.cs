@@ -90,4 +90,10 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>Colour emoji and standard cursor images drawn the operating system's way.</summary>
     ISystemGraphicsService Graphics { get; }
+
+    /// <summary>Printing pages that ShareX renders.</summary>
+    IPrintService Printing { get; }
+
+    /// <summary>Notification sounds.</summary>
+    ISoundService Sounds { get; }
 }

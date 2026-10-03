@@ -59,5 +59,24 @@ namespace ShareX.HelpersLib
 
             return bitmap;
         }
+
+        /// <summary>A straight alpha BGRA copy of <paramref name="bitmap"/> for the platform services.</summary>
+        public static unsafe PixelBuffer ToPixelBuffer(SKBitmap bitmap)
+        {
+            ArgumentNullException.ThrowIfNull(bitmap);
+
+            PixelBuffer pixels = new PixelBuffer(bitmap.Width, bitmap.Height);
+            SKImageInfo target = new SKImageInfo(bitmap.Width, bitmap.Height, SKColorType.Bgra8888, SKAlphaType.Unpremul);
+
+            fixed (byte* data = pixels.Pixels)
+            {
+                if (!bitmap.PeekPixels().ReadPixels(target, (IntPtr)data, pixels.Stride, 0, 0))
+                {
+                    throw new InvalidOperationException("The image could not be converted.");
+                }
+            }
+
+            return pixels;
+        }
     }
 }

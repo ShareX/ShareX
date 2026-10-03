@@ -49,7 +49,11 @@ public enum LinuxTool
     XdgDesktopPortal,
     WfRecorder,
     /// <summary>Tesseract OCR with at least one language's data.</summary>
-    Tesseract
+    Tesseract,
+    /// <summary>The CUPS lp, lpstat and lpoptions commands.</summary>
+    Cups,
+    /// <summary>pw-play, PipeWire's sound player.</summary>
+    PipeWire
 }
 
 /// <summary>Maps helper programs to package names and install commands for each distribution family.</summary>
@@ -68,7 +72,9 @@ public static class LinuxPackages
         [LinuxTool.XdgUtils] = "xdg-open",
         [LinuxTool.XdgDesktopPortal] = "xdg-desktop-portal",
         [LinuxTool.WfRecorder] = "wf-recorder",
-        [LinuxTool.Tesseract] = "tesseract"
+        [LinuxTool.Tesseract] = "tesseract",
+        [LinuxTool.Cups] = "lp",
+        [LinuxTool.PipeWire] = "pw-play"
     };
 
     /// <summary>The executable name used to check whether the tool is installed.</summary>
@@ -95,6 +101,13 @@ public static class LinuxPackages
             (LinuxTool.Tesseract, LinuxDistributionFamily.Debian) => "tesseract-ocr",
             (LinuxTool.Tesseract, LinuxDistributionFamily.OpenSuse) => "tesseract-ocr",
             (LinuxTool.Tesseract, LinuxDistributionFamily.Arch) => "tesseract tesseract-data-eng",
+            (LinuxTool.Cups, LinuxDistributionFamily.Debian) => "cups-client",
+            (LinuxTool.Cups, LinuxDistributionFamily.Fedora) => "cups-client",
+            (LinuxTool.Cups, LinuxDistributionFamily.OpenSuse) => "cups-client",
+            (LinuxTool.Cups, _) => "cups",
+            (LinuxTool.PipeWire, LinuxDistributionFamily.Debian) => "pipewire-bin",
+            (LinuxTool.PipeWire, LinuxDistributionFamily.Fedora) => "pipewire-utils",
+            (LinuxTool.PipeWire, _) => "pipewire",
             _ => Commands[tool]
         };
     }

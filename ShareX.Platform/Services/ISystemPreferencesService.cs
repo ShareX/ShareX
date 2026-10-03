@@ -43,6 +43,12 @@ public interface ISystemPreferencesService
     int SmallIconSize { get; }
 
     /// <summary>
+    /// Raised when <see cref="SystemUsesLightTheme"/> or <see cref="SmallIconSize"/> may have changed (theme or display settings).
+    /// Windows raises it; elsewhere ShareX follows Avalonia's theme changes instead. May be raised on a background thread.
+    /// </summary>
+    event EventHandler? Changed;
+
+    /// <summary>
     /// An administrator policy ShareX honours, such as "DisableUpdateCheck", "DisableUpload", "DisableLogging" or "PersonalPath",
     /// or null when it is not set. The machine wide value wins over the user's. Windows reads HKLM then HKCU\SOFTWARE\ShareX;
     /// Linux and macOS read a JSON object from the system policy file, then the user's.
@@ -70,6 +76,12 @@ public sealed class DefaultSystemPreferencesService : ISystemPreferencesService
     public bool? SystemUsesLightTheme => null;
 
     public int SmallIconSize => DefaultSmallIconSize;
+
+    public event EventHandler? Changed
+    {
+        add { }
+        remove { }
+    }
 
     public object? GetPolicy(string name)
     {

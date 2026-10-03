@@ -114,6 +114,10 @@ public sealed class WindowsPlatformServices : IPlatformServices
     // Stub until W4: J moves the Direct2D emoji and Win32 cursor renderers here.
     public ISystemGraphicsService Graphics { get; } = new UnsupportedSystemGraphicsService("Not implemented on Windows yet.");
 
+    public IPrintService Printing { get; } = new WindowsPrintService();
+
+    public ISoundService Sounds { get; } = new WindowsSoundService();
+
     public void Dispose()
     {
         if (hotkeys.IsValueCreated)

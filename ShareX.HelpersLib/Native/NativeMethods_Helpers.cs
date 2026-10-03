@@ -147,57 +147,6 @@ namespace ShareX.HelpersLib
             return SetWindowLongPtr64(hWnd, nIndex, dwNewLong);
         }
 
-        private static Icon GetSmallApplicationIcon(IntPtr handle)
-        {
-            IntPtr iconHandle;
-
-            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_SMALL2, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
-
-            if (iconHandle == IntPtr.Zero)
-            {
-                SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_SMALL, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
-
-                if (iconHandle == IntPtr.Zero)
-                {
-                    iconHandle = GetClassLongPtrSafe(handle, NativeConstants.GCL_HICONSM);
-
-                    if (iconHandle == IntPtr.Zero)
-                    {
-                        SendMessageTimeout(handle, (int)WindowsMessages.QUERYDRAGICON, 0, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
-                    }
-                }
-            }
-
-            if (iconHandle != IntPtr.Zero)
-            {
-                return Icon.FromHandle(iconHandle);
-            }
-
-            return null;
-        }
-
-        private static Icon GetBigApplicationIcon(IntPtr handle)
-        {
-            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_BIG, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out IntPtr iconHandle);
-
-            if (iconHandle == IntPtr.Zero)
-            {
-                iconHandle = GetClassLongPtrSafe(handle, NativeConstants.GCL_HICON);
-            }
-
-            if (iconHandle != IntPtr.Zero)
-            {
-                return Icon.FromHandle(iconHandle);
-            }
-
-            return null;
-        }
-
-        public static Icon GetApplicationIcon(IntPtr handle)
-        {
-            return GetSmallApplicationIcon(handle) ?? GetBigApplicationIcon(handle);
-        }
-
         public static bool GetBorderSize(IntPtr handle, out Size size)
         {
             WINDOWINFO wi = WINDOWINFO.Create();
@@ -503,74 +452,6 @@ namespace ShareX.HelpersLib
             tSec.nLength = Marshal.SizeOf(tSec);
 
             return CreateProcess(path, $"\"{path}\" {arguments}", ref pSec, ref tSec, false, (uint)flags, IntPtr.Zero, null, ref sInfo, out _);
-        }
-
-        public static Icon GetFileIcon(string filePath, bool isSmallIcon)
-        {
-            SHFILEINFO shfi = new SHFILEINFO();
-
-            SHGFI flags = SHGFI.Icon;
-
-            if (isSmallIcon)
-            {
-                flags |= SHGFI.SmallIcon;
-            }
-            else
-            {
-                flags |= SHGFI.LargeIcon;
-            }
-
-            SHGetFileInfo(filePath, 0, ref shfi, (uint)Marshal.SizeOf(shfi), (uint)flags);
-
-            Icon icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
-            DestroyIcon(shfi.hIcon);
-            return icon;
-        }
-
-        public static Icon GetJumboFileIcon(string filePath, bool jumboSize = true)
-        {
-            SHFILEINFO shfi = new SHFILEINFO();
-
-            SHGFI flags = SHGFI.SysIconIndex | SHGFI.UseFileAttributes;
-            SHGetFileInfo(filePath, 0, ref shfi, (uint)Marshal.SizeOf(shfi), (uint)flags);
-
-            IImageList spiml = null;
-            Guid guil = new Guid(NativeConstants.IID_IImageList2);
-
-            SHGetImageList(jumboSize ? NativeConstants.SHIL_JUMBO : NativeConstants.SHIL_EXTRALARGE, ref guil, ref spiml);
-            IntPtr hIcon = IntPtr.Zero;
-            spiml.GetIcon(shfi.iIcon, NativeConstants.ILD_TRANSPARENT | NativeConstants.ILD_IMAGE, ref hIcon);
-
-            Icon icon = (Icon)Icon.FromHandle(hIcon).Clone();
-            DestroyIcon(hIcon);
-            return icon;
-        }
-
-        public static SkiaSharp.SKBitmap GetFileThumbnail(string filePath, Size thumbnailSize)
-        {
-            Guid guid = typeof(IShellItemImageFactory).GUID;
-            IShellItemImageFactory imageFactory = null;
-            IntPtr hbitmap = IntPtr.Zero;
-
-            try
-            {
-                SHCreateItemFromParsingName(filePath, IntPtr.Zero, guid, out imageFactory);
-                SIZE size = new SIZE(thumbnailSize.Width, thumbnailSize.Height);
-                imageFactory.GetImage(size, SIIGBF.SIIGBF_RESIZETOFIT, out hbitmap);
-                return hbitmap != IntPtr.Zero ? WindowsImageInterop.FromHBitmap(hbitmap) : null;
-            }
-            finally
-            {
-                if (hbitmap != IntPtr.Zero)
-                {
-                    DeleteObject(hbitmap);
-                }
-
-                if (imageFactory != null && Marshal.IsComObject(imageFactory))
-                {
-                    Marshal.ReleaseComObject(imageFactory);
-                }
-            }
         }
 
         public static float GetScreenScalingFactor()

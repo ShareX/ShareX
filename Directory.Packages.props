@@ -8,9 +8,11 @@
     <PackageVersion Include="Microsoft.Data.Sqlite" Version="11.0.0-rc.1.26425.128" />
     <PackageVersion Include="Microsoft.Data.Sqlite.Core" Version="11.0.0-rc.1.26425.128" />
     <PackageVersion Include="Microsoft.ML.OnnxRuntime.DirectML" Version="1.24.4" />
+    <PackageVersion Include="Microsoft.Win32.SystemEvents" Version="10.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="SSH.NET" Version="2026.0.0" />
+    <PackageVersion Include="System.Drawing.Common" Version="10.0.0" />
     <PackageVersion Include="System.Security.Cryptography.ProtectedData" Version="10.0.0" />
     <PackageVersion Include="Tmds.DBus.Protocol" Version="0.94.1" />
     <PackageVersion Include="xunit" Version="2.9.3" />

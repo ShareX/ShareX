@@ -23,10 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.AvaloniaUI.Integration;
+using ShareX.Platform;
 using SkiaSharp;
 using System;
 using System.Drawing;
-using System.Drawing.Printing;
 using Image = SkiaSharp.SKBitmap;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
@@ -34,6 +35,7 @@ using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
 
 namespace ShareX.HelpersLib
 {
+    /// <summary>Prints an image or text. Pages are rendered here with Skia; <see cref="IPrintService"/> picks the printer and prints them.</summary>
     public class PrintHelper : IDisposable
     {
         public PrintType PrintType { get; private set; }
@@ -50,14 +52,15 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private PrintDocument printDocument;
+        private readonly PrintOptions printOptions = new PrintOptions();
         private PrintTextHelper printTextHelper;
+
+        private static IPrintService PrintService => PlatformServices.Current.Printing;
 
         public PrintHelper(Image image)
         {
             PrintType = PrintType.Image;
             Image = image;
-            InitPrint();
         }
 
         public PrintHelper(string text)
@@ -66,20 +69,9 @@ namespace ShareX.HelpersLib
             Text = text;
             printTextHelper = new PrintTextHelper();
             printTextHelper.Text = Text;
-            InitPrint();
         }
 
-        private void InitPrint()
-        {
-            if (OperatingSystem.IsWindows())
-            {
-                printDocument = new PrintDocument { PrintController = new StandardPrintController() };
-                printDocument.BeginPrint += printDocument_BeginPrint;
-                printDocument.PrintPage += printDocument_PrintPage;
-            }
-        }
-
-        public void Dispose() => printDocument?.Dispose();
+        public void Dispose() => (printOptions.PlatformData as IDisposable)?.Dispose();
 
         public void ShowPreview()
         {
@@ -88,13 +80,12 @@ namespace ShareX.HelpersLib
 
         internal (SKBitmap Bitmap, bool HasMore) RenderPreviewPage(int pageIndex)
         {
-            PageSettings pageSettings = printDocument?.PrinterSettings.IsValid == true ? printDocument.DefaultPageSettings : null;
-            Size size = pageSettings?.Bounds.Size ?? new Size(850, 1100);
+            PrintPageSetup setup = PrintService.Support.IsSupported ? PrintService.GetPageSetup(printOptions) : PrintPageSetup.Letter;
+            Size size = new(setup.Width, setup.Height);
             if (PrintType == PrintType.Image) return (RenderImagePage(Image, size, Settings), false);
             PrintTextHelper renderer = new() { Text = Text, Font = Settings.TextFont };
             renderer.BeginPrint();
-            Margins margins = pageSettings?.Margins ?? new Margins(100, 100, 100, 100);
-            Rectangle margin = new(margins.Left, margins.Top, size.Width - margins.Left - margins.Right, size.Height - margins.Top - margins.Bottom);
+            Rectangle margin = ToRectangle(setup.MarginBounds);
             SKBitmap page = null;
             bool hasMore = false;
             for (int index = 0; index <= pageIndex; index++)
@@ -108,17 +99,17 @@ namespace ShareX.HelpersLib
 
         public void TryDefaultPrinterOverride()
         {
-            string defaultPrinterName = printDocument.PrinterSettings.PrinterName;
-
-            if (!string.IsNullOrEmpty(Settings.DefaultPrinterOverride))
+            if (string.IsNullOrEmpty(Settings.DefaultPrinterOverride))
             {
-                printDocument.PrinterSettings.PrinterName = Settings.DefaultPrinterOverride;
+                return;
             }
 
-            if (!printDocument.PrinterSettings.IsValid)
+            if (PrintService.IsPrinterInstalled(Settings.DefaultPrinterOverride))
             {
-                printDocument.PrinterSettings.PrinterName = defaultPrinterName;
-
+                printOptions.PrinterName = Settings.DefaultPrinterOverride;
+            }
+            else
+            {
                 MessageBox.Show(string.Format(Localization.Strings.PrintHelper_Invalid_printer_message, Settings.DefaultPrinterOverride),
                     Localization.Strings.PrintHelper_Invalid_printer_name, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -126,8 +117,10 @@ namespace ShareX.HelpersLib
 
         public bool Print()
         {
-            if (!OperatingSystem.IsWindows()) throw new PlatformNotSupportedException("A printing backend is required for this platform.");
-            if (Printable && (!Settings.ShowPrintDialog || WindowsPrintDialog.Show(printDocument)))
+            FeatureSupport support = PrintService.Support;
+            if (!support.IsSupported) throw new PlatformNotSupportedException(support.Reason);
+
+            if (Printable && (!Settings.ShowPrintDialog || ShowPrintDialog()))
             {
                 if (PrintType == PrintType.Text)
                 {
@@ -135,39 +128,36 @@ namespace ShareX.HelpersLib
                 }
 
                 TryDefaultPrinterOverride();
-                printDocument.Print();
+                printTextHelper?.BeginPrint();
+                PrintService.Print(printOptions, "ShareX", RenderPrintPage);
                 return true;
             }
 
             return false;
         }
 
-        private void printDocument_BeginPrint(object sender, PrintEventArgs e)
+        private bool ShowPrintDialog() => DesktopServices.Run(() =>
         {
-            if (PrintType == PrintType.Text)
-            {
-                printTextHelper.BeginPrint();
-            }
-        }
+            printOptions.OwnerWindowHandle = DesktopServices.GetWindow()?.TryGetPlatformHandle()?.Handle.ToInt64() ?? 0;
+            return PrintService.ShowPrintDialog(printOptions);
+        });
 
-        private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
+        private PrintedPage RenderPrintPage(PrintPageSetup setup, int pageIndex)
         {
+            Size size = new(setup.Width, setup.Height);
+
             if (PrintType == PrintType.Image)
             {
-                PrintImage(e);
+                using SKBitmap page = RenderImagePage(Image, size, Settings);
+                return new PrintedPage(PlatformImageConverter.ToPixelBuffer(page), false);
             }
-            else if (PrintType == PrintType.Text)
-            {
-                printTextHelper.Font = Settings.TextFont;
-                printTextHelper.PrintPage(e);
-            }
+
+            printTextHelper.Font = Settings.TextFont;
+            using SKBitmap textPage = printTextHelper.RenderPage(size, ToRectangle(setup.MarginBounds), out bool morePages);
+            return textPage == null ? null : new PrintedPage(PlatformImageConverter.ToPixelBuffer(textPage), morePages);
         }
 
-        private void PrintImage(PrintPageEventArgs args)
-        {
-            using SKBitmap page = RenderImagePage(Image, args.PageBounds.Size, Settings);
-            WindowsPrintInterop.DrawImage(args, page, args.PageBounds);
-        }
+        private static Rectangle ToRectangle(PlatformRectangle rectangle) => new(rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
 
         internal static SKBitmap RenderImagePage(SKBitmap source, Size pageSize, PrintSettings settings)
         {

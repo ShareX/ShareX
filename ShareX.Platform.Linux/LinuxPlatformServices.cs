@@ -65,6 +65,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
         Preferences = new DefaultSystemPreferencesService("/etc/sharex/policy.json", System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "policy.json"));
         SystemInfo = new UnixSystemInfoService(info, runner);
         Ocr = new TesseractOcrService(info, runner);
+        Printing = new CupsPrintService(info, runner);
+        Sounds = new CommandLineSoundService(runner, ["pw-play", "paplay", "aplay"], LinuxPackages.Missing(info.Distribution ?? LinuxDistribution.Unknown, LinuxTool.PipeWire));
     }
 
     public PlatformInfo Info { get; }
@@ -111,6 +113,10 @@ public sealed class LinuxPlatformServices : IPlatformServices
     public ITaskbarService Taskbar { get; } = new UnityLauncherTaskbarService();
 
     public ISystemGraphicsService Graphics { get; } = new XcursorGraphicsService();
+
+    public IPrintService Printing { get; }
+
+    public ISoundService Sounds { get; }
 
     private static IHotkeyService CreateHotkeyService(PlatformInfo info, Func<int, string>? describeHotkey)
     {

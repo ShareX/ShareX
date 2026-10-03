@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net10.0-windows</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
+    <WarningsAsErrors>$(WarningsAsErrors);CA1416</WarningsAsErrors>
     <OutputType>Library</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
@@ -10,8 +11,6 @@
     <PackageReference Include="SkiaSharp" />
   </ItemGroup>
   <ItemGroup>
-    <!-- Existing Windows printing and shell icon interop still require System.Drawing.Common. -->
-    <FrameworkReference Include="Microsoft.WindowsDesktop.App" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
