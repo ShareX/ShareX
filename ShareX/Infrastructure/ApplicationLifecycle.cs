@@ -32,6 +32,7 @@ using ShareX.HelpersLib;
 using ShareX.Localization;
 using System;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Threading;
 
 namespace ShareX;
@@ -74,6 +75,30 @@ internal static class ApplicationLifecycle
         MainWindowIntegration.Close();
         TaskManager.StopAllTasks();
         AvaloniaBootstrapper.Shutdown();
+    }
+
+    private static PosixSignalRegistration[]? _signalRegistrations;
+
+    /// <summary>
+    /// Logging out or shutting down on Linux and macOS sends SIGTERM (SIGHUP when the session ends, SIGINT from a terminal). Close
+    /// as the Exit menu item does, so settings and history are saved, instead of the runtime ending the process. Windows sends
+    /// session end messages to the hotkey host instead, and these registrations have no effect there.
+    /// </summary>
+    internal static void HandleTerminationSignals()
+    {
+        static void OnSignal(PosixSignalContext context)
+        {
+            context.Cancel = true;
+            DebugHelper.WriteLine($"Received {context.Signal}, closing.");
+            Exit();
+        }
+
+        _signalRegistrations ??=
+        [
+            PosixSignalRegistration.Create(PosixSignal.SIGTERM, OnSignal),
+            PosixSignalRegistration.Create(PosixSignal.SIGINT, OnSignal),
+            PosixSignalRegistration.Create(PosixSignal.SIGHUP, OnSignal)
+        ];
     }
 
     internal static void CloseSequence()

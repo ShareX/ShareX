@@ -129,6 +129,7 @@ internal static class Program
         CleanupManager.CleanupAsync();
 
         DebugHelper.WriteLine("Avalonia application starting.");
+        ApplicationLifecycle.HandleTerminationSignals();
         AvaloniaBootstrapper.Run();
 
         ApplicationLifecycle.CloseSequence();
