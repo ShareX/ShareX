@@ -109,6 +109,9 @@
   <data name="MessageBox_Yes" xml:space="preserve">
     <value>Igen</value>
   </data>
+  <data name="ScreenColorPicker_Unavailable" xml:space="preserve">
+    <value>Ezen az asztali környezeten nem érhető el a képernyőről történő színválasztás.</value>
+  </data>
   <data name="SettingsNavigation_Search_settings" xml:space="preserve">
     <value>Keresés a beállítások között</value>
   </data>

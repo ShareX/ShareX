@@ -109,6 +109,9 @@
   <data name="MessageBox_Yes" xml:space="preserve">
     <value>Ja</value>
   </data>
+  <data name="ScreenColorPicker_Unavailable" xml:space="preserve">
+    <value>Det går inte att välja en färg från skärmen i den här skrivbordsmiljön.</value>
+  </data>
   <data name="SettingsNavigation_Search_settings" xml:space="preserve">
     <value>Sök i inställningar</value>
   </data>

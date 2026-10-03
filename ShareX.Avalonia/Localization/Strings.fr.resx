@@ -109,6 +109,9 @@
   <data name="MessageBox_Yes" xml:space="preserve">
     <value>Oui</value>
   </data>
+  <data name="ScreenColorPicker_Unavailable" xml:space="preserve">
+    <value>La sélection d’une couleur à l’écran n’est pas disponible sur ce bureau.</value>
+  </data>
   <data name="SettingsNavigation_Search_settings" xml:space="preserve">
     <value>Rechercher dans les paramètres</value>
   </data>

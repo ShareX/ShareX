@@ -109,6 +109,9 @@
   <data name="MessageBox_Yes" xml:space="preserve">
     <value>نعم</value>
   </data>
+  <data name="ScreenColorPicker_Unavailable" xml:space="preserve">
+    <value>اختيار لون من الشاشة غير متاح على سطح المكتب هذا.</value>
+  </data>
   <data name="SettingsNavigation_Search_settings" xml:space="preserve">
     <value>البحث في الإعدادات</value>
   </data>

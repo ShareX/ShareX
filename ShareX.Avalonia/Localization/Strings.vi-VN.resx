@@ -109,6 +109,9 @@
   <data name="MessageBox_Yes" xml:space="preserve">
     <value>Đồng ý</value>
   </data>
+  <data name="ScreenColorPicker_Unavailable" xml:space="preserve">
+    <value>Không thể chọn màu từ màn hình trên môi trường máy tính để bàn này.</value>
+  </data>
   <data name="SettingsNavigation_Search_settings" xml:space="preserve">
     <value>Tìm kiếm trong cài đặt</value>
   </data>

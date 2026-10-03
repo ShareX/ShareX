@@ -70,11 +70,13 @@ namespace ShareX.ImageEditor.Presentation.Controls
         public ColorPickerPanel()
         {
             AvaloniaXamlLoader.Load(this);
+            UpdateScreenPickerAvailability();
             Loaded += OnLoaded;
         }
 
         private void OnLoaded(object? sender, RoutedEventArgs e)
         {
+            UpdateScreenPickerAvailability();
             var colorView = this.FindControl<ColorView>("ColorViewControl");
             if (colorView?.PaletteColors == null)
             {
@@ -96,7 +98,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
         private async void OnScreenColorPickerClick(object? sender, RoutedEventArgs e)
         {
-            if (_isScreenColorPickerOpen)
+            if (_isScreenColorPickerOpen || !UpdateScreenPickerAvailability())
             {
                 return;
             }
@@ -126,6 +128,14 @@ namespace ShareX.ImageEditor.Presentation.Controls
             {
                 _isScreenColorPickerOpen = false;
             }
+        }
+
+        private bool UpdateScreenPickerAvailability()
+        {
+            var support = ScreenColorPickerAvailability.Support;
+            this.FindControl<Button>("PickScreenButton")!.IsEnabled = support.IsSupported;
+            ToolTip.SetTip(this.FindControl<Border>("ScreenPickerAvailability")!, support.IsSupported ? null : support.Reason);
+            return support.IsSupported;
         }
     }
 }

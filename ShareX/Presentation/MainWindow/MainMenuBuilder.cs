@@ -259,7 +259,10 @@ internal sealed class MainMenuBuilder
             Tool(nameof(Strings.MainMenuBuilder_PinToScreenDialog), Strings.MainMenuBuilder_PinToScreenDialog, LucideIcons.pin, () => TaskHelpers.PinToScreen()),
             Tool(nameof(Strings.MainMenuBuilder_Ruler), Strings.MainMenuBuilder_Ruler, LucideIcons.ruler, () => TaskHelpers.OpenRuler(),
                 PlatformServices.Current.ScreenCapture.Support),
-            Tool(nameof(Strings.MainMenuBuilder_ScreenColorPicker), Strings.MainMenuBuilder_ScreenColorPicker, LucideIcons.pipette, () => TaskHelpers.OpenScreenColorPicker())
+            Tool(nameof(Strings.MainMenuBuilder_ScreenColorPicker), Strings.MainMenuBuilder_ScreenColorPicker, LucideIcons.pipette, () =>
+            {
+                if (TaskFeatureSupport.Get(HotkeyType.ScreenColorPicker).IsSupported) TaskHelpers.OpenScreenColorPicker();
+            }, TaskFeatureSupport.Get(HotkeyType.ScreenColorPicker))
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryImages,
         [

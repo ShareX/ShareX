@@ -141,12 +141,14 @@
                 </Border>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="8"
                             HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                    <Button Width="38"
-                            Padding="8,4"
-                            ToolTip.Tip="{x:Static localization:Strings.ColorPickerWindow_Pick_from_screen}"
-                            Click="OnPickScreenClick">
-                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pipette}"/>
-                    </Button>
+                    <Border x:Name="ScreenPickerAvailability" Background="Transparent">
+                        <Button x:Name="PickScreenButton" Width="38"
+                                Padding="8,4"
+                                ToolTip.Tip="{x:Static localization:Strings.ColorPickerWindow_Pick_from_screen}"
+                                Click="OnPickScreenClick">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pipette}"/>
+                        </Button>
+                    </Border>
                     <Button Width="38"
                             Padding="8,4"
                             ToolTip.Tip="{x:Static localization:Strings.ColorPickerWindow_Pick_from_clipboard}"

@@ -109,6 +109,9 @@
   <data name="MessageBox_Yes" xml:space="preserve">
     <value>بله</value>
   </data>
+  <data name="ScreenColorPicker_Unavailable" xml:space="preserve">
+    <value>انتخاب رنگ از صفحه‌نمایش در این محیط دسکتاپ در دسترس نیست.</value>
+  </data>
   <data name="SettingsNavigation_Search_settings" xml:space="preserve">
     <value>جستجو در تنظیمات</value>
   </data>

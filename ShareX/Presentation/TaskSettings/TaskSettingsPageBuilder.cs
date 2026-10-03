@@ -34,6 +34,7 @@ using Avalonia.Media;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.AvaloniaUI.Windows;
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.Localization;
@@ -724,12 +725,18 @@ internal sealed class TaskSettingsPageBuilder
         var picker = tools.ScreenColorPickerOptions;
         return Page("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench,
             OverrideCard(_toolsOverride, Strings.TaskSettingsWindow_OverrideToolsSettings),
-            EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_ScreenColorPicker,
-                Row(Strings.TaskSettingsWindow_Format, PixelInfoText(new(picker.Format, value => picker.Format = value))),
-                Row(Strings.TaskSettingsWindow_FormatCtrlPlusClick, PixelInfoText(new(picker.FormatCtrl, value => picker.FormatCtrl = value))),
-                Row(Strings.TaskSettingsWindow_InfoText, PixelInfoText(new(picker.InfoText, value => picker.InfoText = value))),
-                Check(Strings.TaskSettingsWindow_ShowMagnifier, () => picker.ShowMagnifier, value => picker.ShowMagnifier = value)));
+            WithSupport(EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_ScreenColorPicker,
+                Row(Strings.TaskSettingsWindow_Format, PixelInfoText(new(picker.Format, SetIfScreenPickerSupported<string>(value => picker.Format = value)))),
+                Row(Strings.TaskSettingsWindow_FormatCtrlPlusClick, PixelInfoText(new(picker.FormatCtrl, SetIfScreenPickerSupported<string>(value => picker.FormatCtrl = value)))),
+                Row(Strings.TaskSettingsWindow_InfoText, PixelInfoText(new(picker.InfoText, SetIfScreenPickerSupported<string>(value => picker.InfoText = value)))),
+                Check(Strings.TaskSettingsWindow_ShowMagnifier, () => picker.ShowMagnifier, SetIfScreenPickerSupported<bool>(value => picker.ShowMagnifier = value))),
+                ScreenColorPickerAvailability.Support));
     }
+
+    private static Action<T> SetIfScreenPickerSupported<T>(Action<T> setter) => value =>
+    {
+        if (ScreenColorPickerAvailability.Support.IsSupported) setter(value);
+    };
 
     private Control BuildMouseHighlighterPage()
     {

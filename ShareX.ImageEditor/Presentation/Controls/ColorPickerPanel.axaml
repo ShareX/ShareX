@@ -13,23 +13,25 @@
                       SelectedIndex="1"
                       HsvColor="{Binding SelectedHsvColor, ElementName=ColorPickerPanelRoot, Mode=TwoWay}"/>
 
-        <Button
-                Margin="4"
-                Height="40"
-                HorizontalAlignment="Center"
-                HorizontalContentAlignment="Left"
-                Click="OnScreenColorPickerClick">
-            <StackPanel Orientation="Horizontal" Spacing="8">
-                <TextBlock Text="{x:Static theming:EditorIcons.ScreenColorPicker}"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal"
-                           FontSize="16"
-                           VerticalAlignment="Center"/>
-                <TextBlock Text="{x:Static res:Strings.ColorPickerPanel_Pickcolorfromscreen}"
-                           FontWeight="Normal"
-                           FontSize="16"
-                           VerticalAlignment="Center"/>
-            </StackPanel>
-        </Button>
+        <Border x:Name="ScreenPickerAvailability" Background="Transparent" Margin="4"
+                HorizontalAlignment="Center">
+            <Button x:Name="PickScreenButton"
+                    Height="40"
+                    HorizontalAlignment="Center"
+                    HorizontalContentAlignment="Left"
+                    Click="OnScreenColorPickerClick">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <TextBlock Text="{x:Static theming:EditorIcons.ScreenColorPicker}"
+                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                               FontWeight="Normal"
+                               FontSize="16"
+                               VerticalAlignment="Center"/>
+                    <TextBlock Text="{x:Static res:Strings.ColorPickerPanel_Pickcolorfromscreen}"
+                               FontWeight="Normal"
+                               FontSize="16"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </Border>
     </StackPanel>
 </UserControl>

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.AvaloniaUI.Windows;
 using ShareX.Platform;
 using ShareX.Tools;
 
@@ -37,6 +38,8 @@ internal static class TaskFeatureSupport
         HotkeyType.CustomRegion or HotkeyType.LastRegion or HotkeyType.AutoCapture or
         HotkeyType.StartAutoCapture or HotkeyType.Ruler or HotkeyType.PinToScreenFromScreen or
         HotkeyType.QRCodeDecodeFromScreen or HotkeyType.QRCodeScanRegion => PlatformServices.Current.ScreenCapture.Support,
+
+        HotkeyType.ScreenColorPicker => ScreenColorPickerAvailability.Support,
 
         HotkeyType.ActiveWindow or HotkeyType.CustomWindow => Require(
             PlatformServices.Current.ScreenCapture.Support, PlatformServices.Current.Windows.Support),

@@ -33,6 +33,7 @@ using Avalonia.Interactivity;
 using Avalonia.Media;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.AvaloniaUI.Windows;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -111,11 +112,13 @@ public partial class ColorPickerWindow : Window
         SetColor(_currentColor);
         _initialized = true;
         RebuildPalette();
+        UpdateScreenPickerAvailability();
     }
 
     private async void OnOpened(object? sender, EventArgs e)
     {
         Opened -= OnOpened;
+        UpdateScreenPickerAvailability();
         Activate();
         if (Clipboard == null) return;
         try
@@ -220,6 +223,7 @@ public partial class ColorPickerWindow : Window
 
     private async void OnPickScreenClick(object? sender, RoutedEventArgs e)
     {
+        if (!UpdateScreenPickerAvailability()) return;
         DrawingColor? selectedColor = null;
 
         if (_openScreenColorPicker != null)
@@ -249,6 +253,8 @@ public partial class ColorPickerWindow : Window
                 WindowState = Avalonia.Controls.WindowState.Minimized;
                 await Task.Delay(250);
 
+                if (!UpdateScreenPickerAvailability()) return;
+
                 ScreenColorPickerWindow picker = new(_screenColorPickerOptions);
                 ScreenColorPickerResult? result = await picker.PickAsync();
 
@@ -277,6 +283,15 @@ public partial class ColorPickerWindow : Window
             AddRecentColor(_currentColor);
             RebuildPalette();
         }
+    }
+
+    private bool UpdateScreenPickerAvailability()
+    {
+        // A host-provided picker owns its availability independently of the default capture service.
+        FeatureSupport support = _openScreenColorPicker != null ? FeatureSupport.Supported : ScreenColorPickerAvailability.Support;
+        PickScreenButton.IsEnabled = support.IsSupported;
+        ToolTip.SetTip(ScreenPickerAvailability, support.IsSupported ? null : support.Reason);
+        return support.IsSupported;
     }
 
     private async void OnClipboardClick(object? sender, RoutedEventArgs e)

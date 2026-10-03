@@ -109,6 +109,9 @@
   <data name="MessageBox_Yes" xml:space="preserve">
     <value>हाँ</value>
   </data>
+  <data name="ScreenColorPicker_Unavailable" xml:space="preserve">
+    <value>इस डेस्कटॉप पर स्क्रीन से रंग चुनना उपलब्ध नहीं है।</value>
+  </data>
   <data name="SettingsNavigation_Search_settings" xml:space="preserve">
     <value>सेटिंग खोजें</value>
   </data>

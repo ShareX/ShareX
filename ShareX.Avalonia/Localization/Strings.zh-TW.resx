@@ -109,6 +109,9 @@
   <data name="MessageBox_Yes" xml:space="preserve">
     <value>是</value>
   </data>
+  <data name="ScreenColorPicker_Unavailable" xml:space="preserve">
+    <value>此桌面環境不支援從螢幕選取顏色。</value>
+  </data>
   <data name="SettingsNavigation_Search_settings" xml:space="preserve">
     <value>搜尋設定</value>
   </data>

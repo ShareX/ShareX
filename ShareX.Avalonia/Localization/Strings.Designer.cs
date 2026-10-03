@@ -187,6 +187,15 @@ namespace ShareX.AvaloniaUI.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Picking a color from the screen is unavailable on this desktop.
+        /// </summary>
+        public static string ScreenColorPicker_Unavailable {
+            get {
+                return ResourceManager.GetString("ScreenColorPicker_Unavailable", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Search settings.
         /// </summary>
         public static string SettingsNavigation_Search_settings {

@@ -109,6 +109,9 @@
   <data name="MessageBox_Yes" xml:space="preserve">
     <value>はい</value>
   </data>
+  <data name="ScreenColorPicker_Unavailable" xml:space="preserve">
+    <value>このデスクトップでは画面から色を選択できません。</value>
+  </data>
   <data name="SettingsNavigation_Search_settings" xml:space="preserve">
     <value>設定を検索</value>
   </data>
