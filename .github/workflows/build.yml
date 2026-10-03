@@ -2,8 +2,9 @@ name: Build ShareX
 
 on:
   push:
-    branches:
-      - "**"
+    # Temporary while the cross-platform port is in progress.
+    branches-ignore:
+      - "cross-platform-v2"
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+"
     paths-ignore:
