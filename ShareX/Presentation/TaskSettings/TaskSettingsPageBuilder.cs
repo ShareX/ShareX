@@ -37,6 +37,7 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.Localization;
+using ShareX.Platform;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
 using ShareX.UploadersLib;
@@ -422,6 +423,10 @@ internal sealed class TaskSettingsPageBuilder
     private Control BuildRegionCapturePage()
     {
         RegionCaptureOptions options = _settings.CaptureSettings.RegionCaptureOptions;
+        IPlatformServices platform = PlatformServices.Current;
+        FeatureSupport windowSupport = platform.Windows.Support;
+        FeatureSupport controlSupport = TaskFeatureSupport.Require(windowSupport,
+            platform.WindowManagement.GetSupport(WindowManagementFeature.ChildControls));
         BoundValue<bool> detectWindows = new(options.DetectWindows, value => options.DetectWindows = value);
         CheckBox detectControls = Check(Strings.TaskSettingsWindow_AlsoDetectControlsInsideWindows, () => options.DetectControls, value => options.DetectControls = value);
         BindEnabled(detectControls, detectWindows);
@@ -444,7 +449,8 @@ internal sealed class TaskSettingsPageBuilder
         return Page("capture-region", Strings.TaskSettingsWindow_RegionCapture, LucideIcons.crop,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Selection,
                 Check(Strings.TaskSettingsWindow_QuickCapture, () => options.QuickCapture, value => options.QuickCapture = value),
-                Check(Strings.TaskSettingsWindow_DetectWindowRegions, detectWindows), detectControls,
+                WithSupport(Check(Strings.TaskSettingsWindow_DetectWindowRegions, detectWindows), windowSupport),
+                WithSupport(detectControls, controlSupport),
                 Check(Strings.TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor, () => options.ActiveMonitorMode, value => options.ActiveMonitorMode = value),
                 Row(Strings.TaskSettingsWindow_BackgroundDimStrengthPercent, Number(() => options.BackgroundDimStrength, value => options.BackgroundDimStrength = (int)value, 0, 100))),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_MouseActions,
@@ -1752,6 +1758,19 @@ internal sealed class TaskSettingsPageBuilder
             Source = value,
             Converter = invert ? InverseBooleanConverter.Instance : null
         });
+    }
+
+    private static Control WithSupport(Control control, FeatureSupport support)
+    {
+        if (support.IsSupported) return control;
+        // Keep the tooltip surface enabled; the inner container also prevents bindings from re-enabling the control.
+        Border wrapper = new()
+        {
+            Background = Brushes.Transparent,
+            Child = new Border { Child = control, IsEnabled = false }
+        };
+        ToolTip.SetTip(wrapper, support.Reason);
+        return wrapper;
     }
 
     private async Task<string?> PickFolderAsync(string title)

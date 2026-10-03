@@ -525,13 +525,16 @@ public partial class RegionCaptureWindow : Window
 
         try
         {
+            IWindowService windows = PlatformServices.Current.Windows;
+            if (!windows.Support.IsSupported) return;
             IntPtr ignoredHandle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-            bool detectControls = _request.RegionCaptureOptions.DetectControls;
+            bool detectControls = _request.RegionCaptureOptions.DetectControls &&
+                PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.ChildControls).IsSupported;
             IReadOnlyList<SnapTarget> result = await Task.Run(() =>
             {
                 // Enumerating child controls of a hung application can stall; give up after five seconds as before.
                 using CancellationTokenSource timeout = new CancellationTokenSource(TimeSpan.FromSeconds(5));
-                return PlatformServices.Current.Windows.GetSnapTargets(detectControls, ignoredHandle.ToInt64(), timeout.Token);
+                return windows.GetSnapTargets(detectControls, ignoredHandle.ToInt64(), timeout.Token);
             });
             if (!_closing)
             {
