@@ -148,6 +148,13 @@ public sealed class UnsupportedOcrService(string reason) : IOcrService
         throw new PlatformNotSupportedException(Support.Reason);
 }
 
+public sealed class UnsupportedCodeSignatureService(string reason) : ICodeSignatureService
+{
+    public FeatureSupport Support { get; } = FeatureSupport.NotSupported(reason);
+
+    public bool IsTrusted(string filePath) => false;
+}
+
 public sealed class UnsupportedThumbnailService(string reason) : IThumbnailService
 {
     public FeatureSupport Support { get; } = FeatureSupport.NotSupported(reason);

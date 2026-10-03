@@ -79,6 +79,9 @@ public interface IPlatformServices : IDisposable
     /// <summary>Operating system name, elevation and similar facts.</summary>
     ISystemInfoService SystemInfo { get; }
 
+    /// <summary>Signature checks for downloaded installers.</summary>
+    ICodeSignatureService CodeSignature { get; }
+
     /// <summary>Text recognition in images.</summary>
     IOcrService Ocr { get; }
 }

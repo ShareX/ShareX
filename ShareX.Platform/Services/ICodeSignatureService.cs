@@ -23,12 +23,14 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.Platform;
+namespace ShareX.Platform;
 
-namespace ShareX.HelpersLib;
-
-/// <summary>Kept for existing callers (handoff H1); use <see cref="ICodeSignatureService"/> through PlatformServices.</summary>
-internal static class AuthenticodeSignatureVerifier
+/// <summary>Checks that a downloaded program is signed by a trusted publisher before ShareX runs it (the update installer).</summary>
+public interface ICodeSignatureService
 {
-    public static bool IsTrusted(string filePath) => PlatformServices.Current.CodeSignature.IsTrusted(filePath);
+    /// <summary>Authenticode on Windows. Elsewhere updates come from the package manager, so there is nothing to check.</summary>
+    FeatureSupport Support { get; }
+
+    /// <summary>True when the file has a valid signature that chains to a trusted root. False when it does not, or cannot be checked.</summary>
+    bool IsTrusted(string filePath);
 }

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.Win32;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -67,7 +67,8 @@ namespace ShareX.HelpersLib
                         return mimeType;
                     }
 
-                    mimeType = RegistryHelpers.GetValueString(extension, "Content Type", RegistryHive.ClassesRoot);
+                    // The operating system's own database: the registry on Windows, shared-mime-info on Linux.
+                    mimeType = PlatformServices.IsInitialized ? PlatformServices.Current.Shell.GetMimeType(extension) : null;
 
                     if (!string.IsNullOrEmpty(mimeType))
                     {

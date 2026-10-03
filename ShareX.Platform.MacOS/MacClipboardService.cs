@@ -199,6 +199,10 @@ public sealed class MacClipboardService : IClipboardService
         return true;
     }));
 
+    public ClipboardFormatNames FormatNames { get; } = new ClipboardFormatNames("public.png", null, "public.html");
+
+    public string EncodeHtml(string htmlFragment) => htmlFragment;
+
     public Task<IReadOnlyList<string>> GetFormatsAsync(CancellationToken cancellationToken = default) => Task.FromResult(Run<IReadOnlyList<string>>(pasteboard =>
     {
         IntPtr types = ObjC.Send(pasteboard, "types");

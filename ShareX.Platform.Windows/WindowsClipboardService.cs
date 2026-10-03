@@ -247,6 +247,27 @@ public sealed unsafe class WindowsClipboardService : IClipboardService
         [17] = "Format17"
     };
 
+    public ClipboardFormatNames FormatNames { get; } = new ClipboardFormatNames("PNG", "CF_DIB", "HTML Format");
+
+    /// <summary>CF_HTML: a header with the byte offsets of the document and the fragment, then the fragment wrapped in a document.</summary>
+    public string EncodeHtml(string htmlFragment)
+    {
+        const string header = "Version:0.9\r\nStartHTML:{0:D10}\r\nEndHTML:{1:D10}\r\nStartFragment:{2:D10}\r\nEndFragment:{3:D10}\r\n";
+        const string startHtml = "<html>\r\n<body>\r\n";
+        const string startFragment = "<!--StartFragment-->";
+        const string endFragment = "<!--EndFragment-->";
+        const string endHtml = "\r\n</body>\r\n</html>";
+
+        // The header has the same length whatever the numbers are, because they are padded to ten digits.
+        int headerLength = string.Format(System.Globalization.CultureInfo.InvariantCulture, header, 0, 0, 0, 0).Length;
+        int startFragmentOffset = headerLength + startHtml.Length + startFragment.Length;
+        int endFragmentOffset = startFragmentOffset + System.Text.Encoding.UTF8.GetByteCount(htmlFragment);
+        int endHtmlOffset = endFragmentOffset + endFragment.Length + endHtml.Length;
+
+        return string.Format(System.Globalization.CultureInfo.InvariantCulture, header, headerLength, endHtmlOffset, startFragmentOffset, endFragmentOffset) +
+            startHtml + startFragment + htmlFragment + endFragment + endHtml;
+    }
+
     public Task<IReadOnlyList<string>> GetFormatsAsync(CancellationToken cancellationToken = default) => Task.FromResult(Read<IReadOnlyList<string>>(() =>
     {
         List<string> formats = new List<string>();

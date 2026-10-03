@@ -104,6 +104,8 @@ public sealed class MacPlatformServices : IPlatformServices
     public ISystemInfoService SystemInfo { get; }
 
     /// <summary>Apple's Vision framework is not wired up yet.</summary>
+    public ICodeSignatureService CodeSignature { get; } = new UnsupportedCodeSignatureService("Installer signatures are only checked on Windows.");
+
     public IOcrService Ocr { get; } = new UnsupportedOcrService("Text recognition is not available on macOS yet.");
 
     public void Dispose()

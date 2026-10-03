@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Platform;
 using System;
 using System.Drawing;
 using System.IO;
@@ -82,7 +83,7 @@ namespace ShareX.HelpersLib
                     dib = bmp.ToArray()[14..];
                 }
                 return AvaloniaClipboard.SetImage(png.ToArray(), dib,
-                    string.IsNullOrEmpty(fileName) ? null : OperatingSystem.IsWindows() ? GenerateHTMLFragment($"<img src=\"{fileName}\"/>") : $"<img src=\"{fileName}\"/>");
+                    string.IsNullOrEmpty(fileName) ? null : PlatformServices.Current.Clipboard.EncodeHtml($"<img src=\"{fileName}\"/>"));
             }
             catch (Exception e) { DebugHelper.WriteException(e, "Clipboard copy image failed."); return false; }
         }
@@ -198,37 +199,6 @@ namespace ShareX.HelpersLib
             }
 
             return null;
-        }
-
-        private static string GenerateHTMLFragment(string html)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            string header = "Version:0.9\r\nStartHTML:<<<<<<<<<1\r\nEndHTML:<<<<<<<<<2\r\nStartFragment:<<<<<<<<<3\r\nEndFragment:<<<<<<<<<4\r\n";
-            string startHTML = "<html>\r\n<body>\r\n";
-            string startFragment = "<!--StartFragment-->";
-            string endFragment = "<!--EndFragment-->";
-            string endHTML = "\r\n</body>\r\n</html>";
-
-            sb.Append(header);
-
-            int startHTMLLength = header.Length;
-            int startFragmentLength = startHTMLLength + startHTML.Length + startFragment.Length;
-            int endFragmentLength = startFragmentLength + Encoding.UTF8.GetByteCount(html);
-            int endHTMLLength = endFragmentLength + endFragment.Length + endHTML.Length;
-
-            sb.Replace("<<<<<<<<<1", startHTMLLength.ToString("D10"));
-            sb.Replace("<<<<<<<<<2", endHTMLLength.ToString("D10"));
-            sb.Replace("<<<<<<<<<3", startFragmentLength.ToString("D10"));
-            sb.Replace("<<<<<<<<<4", endFragmentLength.ToString("D10"));
-
-            sb.Append(startHTML);
-            sb.Append(startFragment);
-            sb.Append(html);
-            sb.Append(endFragment);
-            sb.Append(endHTML);
-
-            return sb.ToString();
         }
 
         public static bool ContainsImage() => Contains(ClipboardDataFormats.Bitmap);

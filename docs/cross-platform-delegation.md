@@ -124,7 +124,7 @@ Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (
 | M0 | Build plumbing: rename `Directory.build.props` and `Directory.build.targets` to `Directory.Build.*` (one commit, announced, lesson 14), set `EnableWindowsTargeting` off Windows, bring `.github/workflows/platform.yml`, and make `dotnet build ShareX.sln -c Release -p:Platform=x64` pass on Linux. | none | done (`423652e73`) |
 | M1 | Bring `ShareX.Platform`, `.Windows`, `.Linux`, `.MacOS`, `ShareX.Platform.Tests` and `ShareX.ImageEffectsLib.Tests` from the first branch; add them to `ShareX.sln`; tests pass. | M0 | done (`021fe6d39`) |
 | M2 | Platform start up in `Program.cs`: `PlatformServices.Initialize` with the services for the running operating system, `Shutdown` on exit. | M1 | in progress (2026-10-03) |
-| M3 | `HelpersLib` backend → services, then `net10.0` with CA1416 as an error: `Native/`, `CursorData`, `DWMManager`, `DesktopIconManager`, `TimerResolutionManager`, `RegistryHelpers`, `WindowsImageInterop`, `AuthenticodeSignatureVerifier`, `AvaloniaClipboard` and `DesktopScreen` branches, `InputManager`, `WindowsHotkeyHost`, printing back end, and the Windows members of `Helpers`, `FileHelpers`, `CaptureHelpers`, `ClipboardHelpers`, `Extensions`, `MimeTypes`. Handoffs for UI call sites. | M1 | todo |
+| M3 | `HelpersLib` backend → services, then `net10.0` with CA1416 as an error: `Native/`, `CursorData`, `DWMManager`, `DesktopIconManager`, `TimerResolutionManager`, `RegistryHelpers`, `WindowsImageInterop`, `AuthenticodeSignatureVerifier`, `AvaloniaClipboard` and `DesktopScreen` branches, `InputManager`, `WindowsHotkeyHost`, printing back end, and the Windows members of `Helpers`, `FileHelpers`, `CaptureHelpers`, `ClipboardHelpers`, `Extensions`, `MimeTypes`. Handoffs for UI call sites. | M1 | in progress (2026-10-03) |
 | M4 | `ScreenCaptureLib` backend → services and `net10.0`: re-apply first-branch commit `4a25a9e04` (`Screenshot` facade over `IScreenCaptureService`, snap targets, scrolling capture through `IInputService`, recording devices from the platform). The frame windows' `SetWindowShape`/`SetOverlayStyle` calls are handoffs to J. | M3 | todo |
 | M5 | `Tools` backend → services and `net10.0`: OCR (`IOcrService`), mouse hook and overlay surface (`HookMouse`, `CreateOverlay`), inspect and borderless window services (`IWindowManagementService`), clipboard viewer data, ruler capture. Reuse the first branch's stash. | M3 | todo |
 | M6 | Application backend: hotkeys (`HotkeyManager` → `IHotkeyService`), startup, `SystemOptions` and `IntegrationHelpers` registry → `IStartupService`/`IShellIntegrationService`, capture helpers and `ScreenRecordManager` window calls → `IWindowService`, `TaskHelpers` operating system calls. `NativeMessagingHost` → `net10.0`. | M3 | todo |
@@ -171,6 +171,10 @@ Tick each item once it behaves as in v22 on Windows 10 and 11. File a bug row fo
 - [ ] Inspect window and borderless window (`WindowsWindowManagementService`)
 - [ ] Window menu lists the same windows as v22 (Progman excluded)
 - [ ] ShareX starts, runs and exits normally with the platform services initialised at start up (M2)
+- [ ] Copy image: other applications paste PNG, the DIB fallback and the HTML `<img>` fragment (CF_HTML now built by `WindowsClipboardService.EncodeHtml`)
+- [ ] "Run as administrator" detection, Windows product name in the about and debug info, tablet mode (`WindowsSystemInfoService`)
+- [ ] Update installer signature check (`WindowsCodeSignatureService`, moved from `AuthenticodeSignatureVerifier`)
+- [ ] MIME type of an unusual extension comes from the registry (`WindowsShellService.GetMimeType`); "Open folder" selects the file
 
 ## Requests
 
@@ -188,6 +192,7 @@ M adds a row when a backend API moved and J's UI files still call the old wrappe
 
 | ID | Old API (wrapper kept) | New API | Call sites in J's files | Status |
 | --- | --- | --- | --- | --- |
+| H1 | `AuthenticodeSignatureVerifier.IsTrusted` (HelpersLib) | `PlatformServices.Current.CodeSignature.IsTrusted` | `ShareX.HelpersLib/Presentation/UpdateChecker/DownloaderWindow.axaml.cs` | todo |
 
 ## Bugs
 

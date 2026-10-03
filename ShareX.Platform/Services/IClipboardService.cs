@@ -29,6 +29,16 @@ using System.Threading.Tasks;
 
 namespace ShareX.Platform;
 
+/// <summary>
+/// The platform's own names for clipboard formats ShareX writes alongside an image, for code that puts data on the clipboard
+/// through a UI toolkit (Avalonia) rather than through <see cref="IClipboardService"/>.
+/// </summary>
+/// <param name="Png">PNG image data: "PNG" on Windows, "image/png" on Linux, "public.png" on macOS.</param>
+/// <param name="Dib">A device-independent bitmap for older Windows applications, or null where there is no such format.</param>
+/// <param name="Html">HTML: "HTML Format" on Windows, "text/html" on Linux, "public.html" on macOS. Encode the content with
+/// <see cref="IClipboardService.EncodeHtml"/>.</param>
+public sealed record ClipboardFormatNames(string Png, string? Dib, string Html);
+
 /// <summary>System clipboard: Win32, NSPasteboard, X11 selections or Wayland data control.</summary>
 /// <remarks>Images are exchanged as PNG bytes so the interface does not depend on System.Drawing, Avalonia or SkiaSharp.</remarks>
 public interface IClipboardService
@@ -58,4 +68,12 @@ public interface IClipboardService
 
     /// <summary>The raw bytes of one format from <see cref="GetFormatsAsync"/>, or null when it is gone or not a data format.</summary>
     Task<byte[]?> GetDataAsync(string format, CancellationToken cancellationToken = default);
+
+    ClipboardFormatNames FormatNames { get; }
+
+    /// <summary>
+    /// Wraps an HTML fragment the way the platform's HTML clipboard format expects: the CF_HTML header with byte offsets on
+    /// Windows, unchanged elsewhere.
+    /// </summary>
+    string EncodeHtml(string htmlFragment);
 }

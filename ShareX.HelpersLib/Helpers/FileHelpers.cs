@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.VisualBasic.FileIO;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -334,11 +335,12 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    NativeMethods.OpenFolderAndSelectFile(filePath);
-
-                    DebugHelper.WriteLine("Folder opened with file: " + filePath);
-
-                    return true;
+                    // Explorer on Windows, the file manager (FileManager1) on Linux, Finder on macOS.
+                    if (PlatformServices.Current.Shell.RevealInFileManager(filePath))
+                    {
+                        DebugHelper.WriteLine("Folder opened with file: " + filePath);
+                        return true;
+                    }
                 }
                 catch (Exception e)
                 {

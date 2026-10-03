@@ -23,8 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
+using ShareX.Platform;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
@@ -562,39 +562,9 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static bool IsAdministrator()
-        {
-            try
-            {
-                using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
-                {
-                    WindowsPrincipal principal = new WindowsPrincipal(identity);
-                    return principal.IsInRole(WindowsBuiltInRole.Administrator);
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        public static bool IsAdministrator() => PlatformServices.IsInitialized && PlatformServices.Current.SystemInfo.IsElevated;
 
-        public static bool IsMemberOfAdministratorsGroup()
-        {
-            try
-            {
-                using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
-                {
-                    WindowsPrincipal principal = new WindowsPrincipal(identity);
-                    SecurityIdentifier sid = new SecurityIdentifier(WellKnownSidType.BuiltinAdministratorsSid, null);
-                    return principal.UserClaims.Any(x => x.Value.Contains(sid.Value));
-                }
-            }
-            catch
-            {
-            }
-
-            return false;
-        }
+        public static bool IsMemberOfAdministratorsGroup() => PlatformServices.IsInitialized && PlatformServices.Current.SystemInfo.IsAdministratorGroupMember;
 
         public static string RepeatGenerator(int count, Func<string> generator)
         {
@@ -637,7 +607,7 @@ namespace ShareX.HelpersLib
 
         public static string GetOperatingSystemProductName(bool includeBit = false)
         {
-            string productName = RegistryHelpers.GetValueString(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", RegistryHive.LocalMachine);
+            string productName = PlatformServices.IsInitialized ? PlatformServices.Current.SystemInfo.OperatingSystemName : null;
 
             if (string.IsNullOrEmpty(productName))
             {
@@ -790,22 +760,7 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        public static bool IsTabletMode()
-        {
-            //int state = NativeMethods.GetSystemMetrics(SystemMetric.SM_CONVERTIBLESLATEMODE);
-            //return state == 0;
-
-            try
-            {
-                int result = (int)Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell", "TabletMode", 0);
-                return result > 0;
-            }
-            catch
-            {
-            }
-
-            return false;
-        }
+        public static bool IsTabletMode() => PlatformServices.IsInitialized && PlatformServices.Current.SystemInfo.IsTabletMode;
 
         public static string JSONFormat(string json, Newtonsoft.Json.Formatting formatting)
         {
@@ -833,9 +788,8 @@ namespace ShareX.HelpersLib
         public static byte[] GetProgressIconBytes(int percentage, Color color)
         {
             percentage = percentage.Clamp(0, 100);
-            Size size = OperatingSystem.IsWindows()
-                ? new Size(NativeMethods.GetSystemMetrics(SystemMetric.SM_CXSMICON), NativeMethods.GetSystemMetrics(SystemMetric.SM_CYSMICON))
-                : new Size(16, 16);
+            int iconSize = PlatformServices.IsInitialized ? PlatformServices.Current.Preferences.SmallIconSize : DefaultSystemPreferencesService.DefaultSmallIconSize;
+            Size size = new Size(iconSize, iconSize);
             using SKBitmap bitmap = SkiaImageHelpers.CreateBitmap(size.Width, size.Height);
             using SKCanvas canvas = new(bitmap);
             canvas.Clear(new SKColor(39, 39, 39));
@@ -916,22 +870,26 @@ namespace ShareX.HelpersLib
             return Task.WhenAll(tasks);
         }
 
+        /// <summary>Keeps the pointer inside the window while it is active, where the platform allows it (Windows).</summary>
         public static void LockCursorToWindow(Avalonia.Controls.Window window)
         {
+            if (!PlatformServices.IsInitialized)
+            {
+                return;
+            }
+
+            IWindowService windows = PlatformServices.Current.Windows;
             window.Activated += (sender, e) =>
             {
                 IntPtr handle = window.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-                if (OperatingSystem.IsWindows() && handle != IntPtr.Zero)
+
+                if (handle != IntPtr.Zero)
                 {
-                    Rectangle bounds = NativeMethods.GetWindowRect(handle);
-                    if (bounds.Width > 0 && bounds.Height > 0)
-                    {
-                        NativeMethods.ClipCursor(new RECT(bounds));
-                    }
+                    windows.ConfineCursor(handle);
                 }
             };
-            window.Deactivated += (sender, e) => { if (OperatingSystem.IsWindows()) NativeMethods.ClipCursor(IntPtr.Zero); };
-            window.Closed += (sender, e) => { if (OperatingSystem.IsWindows()) NativeMethods.ClipCursor(IntPtr.Zero); };
+            window.Deactivated += (sender, e) => windows.ReleaseCursorConfinement();
+            window.Closed += (sender, e) => windows.ReleaseCursorConfinement();
         }
 
         public static bool IsDefaultSettings<T>(IEnumerable<T> current, IEnumerable<T> source, Func<T, T, bool> predicate)
@@ -942,15 +900,6 @@ namespace ShareX.HelpersLib
             }
 
             return true;
-        }
-
-        public static string GetDesktopWallpaperFilePath()
-        {
-            byte[] transcodedImageCache = (byte[])RegistryHelpers.GetValue(@"Control Panel\Desktop", "TranscodedImageCache");
-            byte[] transcodedImageCacheDest = new byte[transcodedImageCache.Length - 24];
-            Array.Copy(transcodedImageCache, 24, transcodedImageCacheDest, 0, transcodedImageCacheDest.Length);
-            string wallpaperFilePath = Encoding.Unicode.GetString(transcodedImageCacheDest);
-            return wallpaperFilePath.TrimEnd('\0');
         }
 
         public static IEnumerable<int> Range(int from, int to, int increment = 1)

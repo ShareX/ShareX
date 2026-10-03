@@ -105,6 +105,8 @@ public sealed class WindowsPlatformServices : IPlatformServices
 
     public ISystemInfoService SystemInfo { get; }
 
+    public ICodeSignatureService CodeSignature { get; } = new WindowsCodeSignatureService();
+
     public IOcrService Ocr { get; }
 
     public void Dispose()

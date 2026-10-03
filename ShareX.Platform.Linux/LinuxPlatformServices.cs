@@ -104,6 +104,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
 
     public ISystemInfoService SystemInfo { get; }
 
+    public ICodeSignatureService CodeSignature { get; } = new UnsupportedCodeSignatureService("Updates on Linux come from your package manager, which checks signatures itself.");
+
     public IOcrService Ocr { get; }
 
     private static IHotkeyService CreateHotkeyService(PlatformInfo info, Func<int, string>? describeHotkey)

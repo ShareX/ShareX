@@ -171,6 +171,10 @@ public sealed class LinuxClipboardService : IClipboardService
         return paths;
     }
 
+    public ClipboardFormatNames FormatNames { get; } = new ClipboardFormatNames("image/png", null, "text/html");
+
+    public string EncodeHtml(string htmlFragment) => htmlFragment;
+
     public Task<IReadOnlyList<string>> GetFormatsAsync(CancellationToken cancellationToken = default) => GetTypesAsync(cancellationToken);
 
     public Task<byte[]?> GetDataAsync(string format, CancellationToken cancellationToken = default) => GetAsync(format, cancellationToken);

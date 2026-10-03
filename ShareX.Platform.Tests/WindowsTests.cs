@@ -174,3 +174,22 @@ public class TransparentWindowCaptureTests
         Assert.Equal(new PlatformRectangle(1, 1, 3, 2), TransparentWindowCapture.FindAutoCropRectangle(image));
     }
 }
+
+public class WindowsClipboardHtmlTests
+{
+    [Fact]
+    public void EncodeHtml_OffsetsPointAtTheFragmentAndDocument()
+    {
+        string fragment = "<img src=\"C:\\Pictures\\été.png\"/>";
+        string encoded = new WindowsClipboardService().EncodeHtml(fragment);
+        byte[] bytes = System.Text.Encoding.UTF8.GetBytes(encoded);
+
+        int Offset(string name) => int.Parse(System.Text.RegularExpressions.Regex.Match(encoded, name + @":(\d{10})").Groups[1].Value);
+
+        int startHtml = Offset("StartHTML"), endHtml = Offset("EndHTML"), startFragment = Offset("StartFragment"), endFragment = Offset("EndFragment");
+
+        Assert.Equal(fragment, System.Text.Encoding.UTF8.GetString(bytes, startFragment, endFragment - startFragment));
+        Assert.StartsWith("<html>", System.Text.Encoding.UTF8.GetString(bytes, startHtml, 6));
+        Assert.Equal(bytes.Length, endHtml);
+    }
+}

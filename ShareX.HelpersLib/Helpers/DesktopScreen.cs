@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.AvaloniaUI.Integration;
+using ShareX.Platform;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -63,6 +64,15 @@ public sealed class DesktopScreen
         return screen == null ? null : new DesktopScreen(screen);
     });
 
-    public static DesktopScreen FromHandle(IntPtr handle) =>
-        OperatingSystem.IsWindows() ? FromRectangle(NativeMethods.GetWindowRect(handle)) : PrimaryScreen;
+    /// <summary>The screen holding most of the window, or the primary screen when the platform cannot locate the window.</summary>
+    public static DesktopScreen FromHandle(IntPtr handle)
+    {
+        PlatformWindow window = PlatformServices.IsInitialized
+            ? PlatformServices.Current.Windows.GetWindows().FirstOrDefault(x => x.Handle == handle.ToInt64())
+            : null;
+
+        return window != null
+            ? FromRectangle(new Rectangle(window.Bounds.X, window.Bounds.Y, window.Bounds.Width, window.Bounds.Height))
+            : PrimaryScreen;
+    }
 }
