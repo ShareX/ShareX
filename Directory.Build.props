@@ -15,12 +15,19 @@
   <PropertyGroup Condition="!$([MSBuild]::IsOSPlatform('Windows'))">
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
+  <!-- The runtime identifier follows the machine that builds: win-x64 in Visual Studio and the Windows release, linux-x64 or osx-arm64 elsewhere.
+       Pass -r to build for another one, as the Windows installer does. -->
+  <PropertyGroup>
+    <ShareXRuntimeOS Condition="$([MSBuild]::IsOSPlatform('Windows'))">win</ShareXRuntimeOS>
+    <ShareXRuntimeOS Condition="$([MSBuild]::IsOSPlatform('Linux'))">linux</ShareXRuntimeOS>
+    <ShareXRuntimeOS Condition="$([MSBuild]::IsOSPlatform('OSX'))">osx</ShareXRuntimeOS>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Platform)' == 'x64'">
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <RuntimeIdentifier>$(ShareXRuntimeOS)-x64</RuntimeIdentifier>
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Platform)' == 'ARM64'">
-    <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
+    <RuntimeIdentifier>$(ShareXRuntimeOS)-arm64</RuntimeIdentifier>
     <PlatformTarget>ARM64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Steam'">
