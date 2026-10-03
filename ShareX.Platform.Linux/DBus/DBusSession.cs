@@ -37,8 +37,14 @@ internal static class DBusSession
     public const string PortalBusName = "org.freedesktop.portal.Desktop";
     public const string PortalObjectPath = "/org/freedesktop/portal/desktop";
 
+    /// <summary>ShareX's application id, the name of its desktop entry (sharex.desktop), which the portal looks up.</summary>
+    public const string ApplicationId = "sharex";
+
     private static readonly SemaphoreSlim connectLock = new SemaphoreSlim(1, 1);
     private static DBusConnection? connection;
+
+    /// <summary>Null when registration succeeded or was not needed; otherwise why the portal did not accept ShareX's application id.</summary>
+    public static string? RegistrationError { get; private set; }
 
     public static bool IsAvailable => !string.IsNullOrEmpty(DBusAddress.Session);
 
@@ -66,6 +72,7 @@ internal static class DBusSession
 
                 DBusConnection created = new DBusConnection(address);
                 await created.ConnectAsync().ConfigureAwait(false);
+                await RegisterApplicationAsync(created).ConfigureAwait(false);
                 Volatile.Write(ref connection, created);
             }
 
@@ -74,6 +81,35 @@ internal static class DBusSession
         finally
         {
             connectLock.Release();
+        }
+    }
+
+    /// <summary>
+    /// Applications that are not sandboxed tell xdg-desktop-portal 1.19+ who they are before their first portal call; GlobalShortcuts
+    /// refuses to work without it ("An app id is required"). Older portals do not have the registry, which is fine.
+    /// </summary>
+    private static async Task RegisterApplicationAsync(DBusConnection bus)
+    {
+        try
+        {
+            MessageBuffer call = CreateMethodCall(bus, PortalBusName, PortalObjectPath, "org.freedesktop.host.portal.Registry", "Register", "sa{sv}",
+                (ref MessageWriter writer) =>
+                {
+                    writer.WriteString(ApplicationId);
+                    writer.WriteDictionary(new Dictionary<string, VariantValue>());
+                });
+
+            await bus.CallMethodAsync(call).ConfigureAwait(false);
+            RegistrationError = null;
+        }
+        catch (DBusErrorReplyException e) when (e.ErrorName is "org.freedesktop.DBus.Error.UnknownMethod" or "org.freedesktop.DBus.Error.UnknownInterface" or "org.freedesktop.DBus.Error.ServiceUnknown")
+        {
+            RegistrationError = null;
+        }
+        catch (DBusErrorReplyException e)
+        {
+            // Usually "App info not found": the desktop entry is not installed.
+            RegistrationError = e.ErrorMessage;
         }
     }
 

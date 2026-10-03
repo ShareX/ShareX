@@ -53,10 +53,17 @@ internal static class PlatformBootstrap
 
         if (OperatingSystem.IsLinux())
         {
-            return new LinuxPlatformServices();
+            return new LinuxPlatformServices(PlatformDetector.Detect(), ShareX.Platform.Diagnostics.CommandRunner.Default, DescribeHotkey);
         }
 
         throw new PlatformNotSupportedException("ShareX runs on Windows, macOS and Linux.");
+    }
+
+    /// <summary>What the desktop shows for a global hotkey in its shortcut settings, for example "Capture region".</summary>
+    private static string DescribeHotkey(int id)
+    {
+        HotkeySettings hotkey = ApplicationState.HotkeyManager?.Hotkeys?.Find(x => x.HotkeyInfo.ID == id);
+        return hotkey?.TaskSettings?.ToString() ?? $"ShareX hotkey {id}";
     }
 
     /// <summary>

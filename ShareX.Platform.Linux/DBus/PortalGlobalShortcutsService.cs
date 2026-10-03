@@ -70,9 +70,18 @@ public sealed class PortalGlobalShortcutsService : IHotkeyService
         {
         }
 
-        Support = version != null
-            ? FeatureSupport.Supported
-            : FeatureSupport.NotSupported("The desktop's xdg-desktop-portal does not provide GlobalShortcuts. Update the portal backend or bind ShareX commands in the desktop's keyboard settings.");
+        if (version == null)
+        {
+            Support = FeatureSupport.NotSupported("The desktop's xdg-desktop-portal does not provide GlobalShortcuts. Update the portal backend or bind ShareX commands in the desktop's keyboard settings.");
+        }
+        else if (DBusSession.RegistrationError != null)
+        {
+            Support = FeatureSupport.NotSupported($"The desktop does not know ShareX ({DBusSession.RegistrationError}). Install ShareX's desktop entry, {DBusSession.ApplicationId}.desktop, so global hotkeys can be granted.");
+        }
+        else
+        {
+            Support = FeatureSupport.Supported;
+        }
     }
 
     public FeatureSupport Support { get; }
