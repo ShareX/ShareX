@@ -367,7 +367,7 @@ public class EditorInputController
                 break;
             case EditorTool.Cursor:
                 var cursorAnnotation = new CursorAnnotation { CursorType = vm.SelectedCursorType };
-                var cursorBitmap = WindowsCursorBitmapRenderer.CreateAnnotationBitmap(vm.SelectedCursorType);
+                var cursorBitmap = CursorBitmapRenderer.CreateAnnotationBitmap(vm.SelectedCursorType);
 
                 if (cursorBitmap == null)
                 {

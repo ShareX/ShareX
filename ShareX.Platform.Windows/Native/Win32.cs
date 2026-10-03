@@ -228,6 +228,9 @@ internal static unsafe partial class Win32
     [return: MarshalAs(UnmanagedType.Bool)]
     public static partial bool GetIconInfo(IntPtr icon, out ICONINFO info);
 
+    [LibraryImport("user32.dll", EntryPoint = "LoadCursorW", SetLastError = true)]
+    public static partial IntPtr LoadCursor(IntPtr instance, IntPtr resource);
+
     [LibraryImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     public static partial bool DrawIconEx(IntPtr hdc, int x, int y, IntPtr icon, int width, int height, uint step, IntPtr brush, int flags);

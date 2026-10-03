@@ -111,8 +111,7 @@ public sealed class WindowsPlatformServices : IPlatformServices
 
     public ITaskbarService Taskbar { get; } = new WindowsTaskbarService();
 
-    // Stub until W4: J moves the Direct2D emoji and Win32 cursor renderers here.
-    public ISystemGraphicsService Graphics { get; } = new UnsupportedSystemGraphicsService("Not implemented on Windows yet.");
+    public ISystemGraphicsService Graphics { get; } = new WindowsSystemGraphicsService();
 
     public IPrintService Printing { get; } = new WindowsPrintService();
 
@@ -120,6 +119,7 @@ public sealed class WindowsPlatformServices : IPlatformServices
 
     public void Dispose()
     {
+        ((WindowsSystemGraphicsService)Graphics).Dispose();
         if (hotkeys.IsValueCreated)
         {
             hotkeys.Value.Dispose();

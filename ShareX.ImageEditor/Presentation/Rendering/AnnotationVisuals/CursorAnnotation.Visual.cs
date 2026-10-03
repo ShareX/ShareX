@@ -47,7 +47,7 @@ public partial class CursorAnnotation
     {
         if (ImageBitmap == null)
         {
-            SKBitmap? renderedBitmap = WindowsCursorBitmapRenderer.CreateAnnotationBitmap(CursorType);
+            SKBitmap? renderedBitmap = CursorBitmapRenderer.CreateAnnotationBitmap(CursorType);
             if (renderedBitmap != null)
             {
                 SetImage(renderedBitmap);

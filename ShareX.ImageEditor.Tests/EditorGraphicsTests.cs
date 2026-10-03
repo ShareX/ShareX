@@ -119,11 +119,11 @@ public sealed class EditorGraphicsTests
                 Equal(size, bitmap.Height);
             }
 
-            using SKBitmap? sticker = WindowsEmojiBitmapRenderer.RenderStickerBitmap(sequence);
+            using SKBitmap? sticker = EmojiBitmapRenderer.RenderStickerBitmap(sequence);
             Require(sticker != null, $"No primary sticker for {sequence}");
             VerifyPixels(sticker!, $"Primary sticker {sequence}", expectColor: HasColoredArtwork(sequence));
             sticker!.Erase(SKColors.Transparent);
-            using SKBitmap? second = WindowsEmojiBitmapRenderer.RenderStickerBitmap(sequence);
+            using SKBitmap? second = EmojiBitmapRenderer.RenderStickerBitmap(sequence);
             VerifyPixels(second!, "Cached sticker copy", expectColor: HasColoredArtwork(sequence));
         }
 
@@ -170,7 +170,7 @@ public sealed class EditorGraphicsTests
         Console.WriteLine($"PASS: Additional color font fixture ({typeface.FamilyName})");
     }
 
-    private static SKBitmap? RenderCursor(CursorType cursor) => WindowsCursorBitmapRenderer.CreateAnnotationBitmap(cursor);
+    private static SKBitmap? RenderCursor(CursorType cursor) => CursorBitmapRenderer.CreateAnnotationBitmap(cursor);
 
     private static void VerifyCursors()
     {
@@ -217,7 +217,7 @@ public sealed class EditorGraphicsTests
             int x = i * 210;
             using SKBitmap? skia = RenderSkia(Sequences[i], 160);
             using SKBitmap? preview = RenderSkia(Sequences[i], 28);
-            using SKBitmap? primary = WindowsEmojiBitmapRenderer.RenderStickerBitmap(Sequences[i]);
+            using SKBitmap? primary = EmojiBitmapRenderer.RenderStickerBitmap(Sequences[i]);
             canvas.DrawBitmap(skia!, x, 35);
             canvas.DrawBitmap(preview!, x + 174, 173);
             canvas.DrawText(Sequences[i], x + 2, 208, font, paint);

@@ -56,7 +56,7 @@ public partial class EmojiAnnotation
         var imageBounds = GetBounds();
         int renderSize = Math.Max(1, (int)Math.Ceiling(Math.Max(imageBounds.Width, imageBounds.Height)));
         int targetBitmapSize = useInteractiveRender
-            ? WindowsEmojiBitmapRenderer.GetInteractiveStickerSize(renderSize)
+            ? EmojiBitmapRenderer.GetInteractiveStickerSize(renderSize)
             : renderSize;
         bool hasUnicode = !string.IsNullOrWhiteSpace(UnicodeSequence);
         bool hasTargetBitmap = ImageBitmap != null
@@ -83,8 +83,8 @@ public partial class EmojiAnnotation
         if (needsBitmapRefresh)
         {
             var renderedBitmap = useInteractiveRender
-                ? WindowsEmojiBitmapRenderer.RenderInteractiveStickerBitmap(UnicodeSequence, renderSize)
-                : WindowsEmojiBitmapRenderer.RenderStickerBitmap(UnicodeSequence, renderSize);
+                ? EmojiBitmapRenderer.RenderInteractiveStickerBitmap(UnicodeSequence, renderSize)
+                : EmojiBitmapRenderer.RenderStickerBitmap(UnicodeSequence, renderSize);
 
             if (renderedBitmap != null)
             {
@@ -230,8 +230,8 @@ public partial class EmojiAnnotation
                     try
                     {
                         renderedBitmap = await Task.Run(() => useInteractiveRender
-                            ? WindowsEmojiBitmapRenderer.RenderInteractiveStickerBitmap(unicodeSequence, renderSize)
-                            : WindowsEmojiBitmapRenderer.RenderStickerBitmap(unicodeSequence, renderSize));
+                            ? EmojiBitmapRenderer.RenderInteractiveStickerBitmap(unicodeSequence, renderSize)
+                            : EmojiBitmapRenderer.RenderStickerBitmap(unicodeSequence, renderSize));
                         if (renderedBitmap == null)
                         {
                             continue;

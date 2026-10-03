@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -25,19 +25,13 @@
 
 using Avalonia.Media.Imaging;
 using SkiaSharp;
-using System.Runtime.InteropServices;
-using Vortice.Direct2D1;
-using Vortice.DirectWrite;
-using Vortice.Mathematics;
-using Vortice.WIC;
-using static Vortice.Direct2D1.D2D1;
-using static Vortice.DirectWrite.DWrite;
+using ShareX.ImageEditor.Presentation.Rendering;
+using ShareX.Platform;
 
 namespace ShareX.ImageEditor.Presentation.Emoji;
 
-public static class WindowsEmojiBitmapRenderer
+public static class EmojiBitmapRenderer
 {
-    private const string EmojiFontFamily = "Segoe UI Emoji";
     private const int PreviewPadding = 6;
     private const int StickerPadding = 14;
     private const int MaxStickerCacheEntries = 256;
@@ -47,20 +41,15 @@ public static class WindowsEmojiBitmapRenderer
     private static readonly object SyncRoot = new();
     private static readonly Dictionary<string, WeakReference<Bitmap>> PreviewCache = new(StringComparer.Ordinal);
     private static readonly Dictionary<string, SKBitmap> StickerCache = new(StringComparer.Ordinal);
-    private static readonly ID2D1Factory7? D2DFactory;
-    private static readonly IDWriteFactory? DWriteFactoryInstance;
-    private static readonly IWICImagingFactory? WicFactory;
+    private static ISystemGraphicsService? cachedGraphics;
 
-    static WindowsEmojiBitmapRenderer()
+    private static void RefreshGraphicsCache()
     {
-        if (!OperatingSystem.IsWindows())
-        {
-            return;
-        }
-
-        D2D1CreateFactory(out D2DFactory);
-        DWriteCreateFactory(out DWriteFactoryInstance);
-        WicFactory = new IWICImagingFactory();
+        ISystemGraphicsService? graphics = PlatformServices.IsInitialized ? PlatformServices.Current.Graphics : null;
+        if (ReferenceEquals(cachedGraphics, graphics)) return;
+        cachedGraphics = graphics;
+        PreviewCache.Clear();
+        ClearStickerCache();
     }
 
     public static Bitmap? RenderPreviewBitmap(string unicodeSequence, int size)
@@ -74,6 +63,7 @@ public static class WindowsEmojiBitmapRenderer
 
         lock (SyncRoot)
         {
+            RefreshGraphicsCache();
             if (PreviewCache.TryGetValue(cacheKey, out var reference) && reference.TryGetTarget(out Bitmap? cached))
             {
                 return cached;
@@ -139,7 +129,7 @@ public static class WindowsEmojiBitmapRenderer
             int rawCanvasSize = Math.Max(64, (int)Math.Ceiling(size * RawCanvasScale));
             float rawFontSize = Math.Max(24, size * RawFontScale);
 
-            using SKBitmap? rawBitmap = RenderWithDirect2D(glyph, rawCanvasSize, rawFontSize) ?? RenderWithSkiaFallback(glyph, rawCanvasSize);
+            using SKBitmap? rawBitmap = RenderWithPlatform(glyph, rawCanvasSize, rawFontSize) ?? RenderWithSkiaFallback(glyph, rawCanvasSize);
             if (rawBitmap == null)
             {
                 return null;
@@ -154,45 +144,16 @@ public static class WindowsEmojiBitmapRenderer
         }
     }
 
-    private static SKBitmap? RenderWithDirect2D(string glyph, int canvasSize, float fontSize)
+    private static SKBitmap? RenderWithPlatform(string glyph, int canvasSize, float fontSize)
     {
-        if (!OperatingSystem.IsWindows() || D2DFactory == null || DWriteFactoryInstance == null || WicFactory == null)
-        {
-            return null;
-        }
-
-        using IWICBitmap wicBitmap = WicFactory.CreateBitmap((uint)canvasSize, (uint)canvasSize, PixelFormat.Format32bppPBGRA, BitmapCreateCacheOption.CacheOnLoad);
-        using ID2D1RenderTarget renderTarget = D2DFactory.CreateWicBitmapRenderTarget(wicBitmap, new RenderTargetProperties());
-        using ID2D1SolidColorBrush brush = renderTarget.CreateSolidColorBrush(new Color4(1f, 1f, 1f, 1f));
-        using IDWriteTextFormat textFormat = DWriteFactoryInstance.CreateTextFormat(EmojiFontFamily, FontWeight.Normal, FontStyle.Normal, FontStretch.Normal, fontSize);
-        using IDWriteTextLayout textLayout = DWriteFactoryInstance.CreateTextLayout(glyph, textFormat, canvasSize, canvasSize);
-
-        textFormat.TextAlignment = TextAlignment.Center;
-        textFormat.ParagraphAlignment = ParagraphAlignment.Center;
-
-        renderTarget.TextAntialiasMode = Vortice.Direct2D1.TextAntialiasMode.Grayscale;
-        renderTarget.BeginDraw();
-        renderTarget.Clear(new Color4(0f, 0f, 0f, 0f));
-        renderTarget.DrawTextLayout(new System.Numerics.Vector2(0f, 0f), textLayout, brush, DrawTextOptions.EnableColorFont);
-        renderTarget.EndDraw();
-
-        return CopyWicBitmapToSkBitmap(wicBitmap, canvasSize, canvasSize);
+        if (cachedGraphics == null || !cachedGraphics.EmojiSupport.IsSupported) return null;
+        return cachedGraphics.RenderEmoji(glyph, canvasSize, fontSize) is { } pixels
+            ? SystemGraphicsBitmapConversion.ToSkBitmap(pixels) : null;
     }
 
     private static SKBitmap? RenderWithSkiaFallback(string glyph, int canvasSize)
     {
         return SkiaEmojiBitmapRenderer.Render(glyph, canvasSize);
-    }
-
-    private static SKBitmap CopyWicBitmapToSkBitmap(IWICBitmap wicBitmap, int width, int height)
-    {
-        int stride = width * 4;
-        byte[] pixels = new byte[stride * height];
-        wicBitmap.CopyPixels((uint)stride, pixels);
-
-        var bitmap = new SKBitmap(new SKImageInfo(width, height, SKColorType.Bgra8888, SKAlphaType.Premul));
-        Marshal.Copy(pixels, 0, bitmap.GetPixels(), pixels.Length);
-        return bitmap;
     }
 
     private static SKBitmap? TrimTransparentBounds(SKBitmap source)
@@ -267,6 +228,7 @@ public static class WindowsEmojiBitmapRenderer
 
         lock (SyncRoot)
         {
+            RefreshGraphicsCache();
             if (StickerCache.TryGetValue(cacheKey, out SKBitmap? cachedBitmap))
             {
                 return cachedBitmap.Copy();

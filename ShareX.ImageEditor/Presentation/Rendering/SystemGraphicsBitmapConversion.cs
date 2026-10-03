@@ -23,24 +23,25 @@
 
 #endregion License Information (GPL v3)
 
-using Avalonia.Data.Converters;
-using ShareX.ImageEditor.Core.Annotations;
-using ShareX.ImageEditor.Presentation.Rendering;
-using System.Globalization;
+using ShareX.Platform.Imaging;
+using SkiaSharp;
+using System.Runtime.InteropServices;
 
-namespace ShareX.ImageEditor.Presentation.Converters
+namespace ShareX.ImageEditor.Presentation.Rendering;
+
+internal static class SystemGraphicsBitmapConversion
 {
-    public class CursorTypePreviewBitmapConverter : IValueConverter
+    internal static SKBitmap ToSkBitmap(PixelBuffer pixels)
     {
-        public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+        using SKBitmap source = new(new SKImageInfo(pixels.Width, pixels.Height, SKColorType.Bgra8888, SKAlphaType.Unpremul));
+        Marshal.Copy(pixels.Pixels, 0, source.GetPixels(), checked(pixels.Width * pixels.Height * 4));
+        SKBitmap output = new(new SKImageInfo(pixels.Width, pixels.Height, SKColorType.Bgra8888, SKAlphaType.Premul));
+        using SKPixmap pixmap = source.PeekPixels();
+        if (!pixmap.ReadPixels(output.Info, output.GetPixels(), output.RowBytes))
         {
-            CursorType cursorType = value is CursorType typedCursor ? typedCursor : CursorType.Default;
-            return CursorBitmapRenderer.GetPreviewBitmap(cursorType);
+            output.Dispose();
+            throw new InvalidOperationException("Unable to convert platform graphics pixels.");
         }
-
-        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-        {
-            return CursorType.Default;
-        }
+        return output;
     }
 }

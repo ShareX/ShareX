@@ -714,7 +714,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             {
                 cursorAnnotation.CursorType = cursorType;
 
-                var cursorBitmap = WindowsCursorBitmapRenderer.CreateAnnotationBitmap(cursorType);
+                var cursorBitmap = CursorBitmapRenderer.CreateAnnotationBitmap(cursorType);
                 if (cursorBitmap != null)
                 {
                     cursorAnnotation.SetImage(cursorBitmap);

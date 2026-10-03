@@ -15,5 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.ImageEditor\ShareX.ImageEditor.csproj" />
+    <ProjectReference Include="..\ShareX.Platform.Windows\ShareX.Platform.Windows.csproj" />
   </ItemGroup>
 </Project>
