@@ -52,6 +52,8 @@ public sealed class MacSystemInfoService : ISystemInfoService
 
     public GpuAdapter? GetPreferredGpu() => null;
 
+    public string GetSingleInstanceMutexName(string name) => @"Global\" + name + "-" + Environment.UserName;
+
     private string? Run(string command, string argument)
     {
         try

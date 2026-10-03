@@ -45,6 +45,13 @@ public interface ISystemInfoService
     /// numbers adapters. Null where ShareX runs models on the CPU only (Linux and macOS).
     /// </summary>
     GpuAdapter? GetPreferredGpu();
+
+    /// <summary>
+    /// The name of the mutex that keeps ShareX to one instance per user. Windows uses the name as is, which scopes it to the sign
+    /// in session as ShareX always has. On Linux and macOS a plain name only covers one terminal session, so the name is made global
+    /// and unique to the user.
+    /// </summary>
+    string GetSingleInstanceMutexName(string name);
 }
 
 /// <param name="Index">The adapter index DirectML expects.</param>

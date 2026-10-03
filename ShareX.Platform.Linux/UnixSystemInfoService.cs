@@ -55,6 +55,8 @@ public sealed class UnixSystemInfoService : ISystemInfoService
 
     public GpuAdapter? GetPreferredGpu() => null;
 
+    public string GetSingleInstanceMutexName(string name) => @"Global\" + name + "-" + Environment.UserName;
+
     private bool ReadAdministratorGroupMember()
     {
         try
