@@ -50,14 +50,15 @@ The line is **frontend and graphics (J)** against **backend (M)**. The code alre
 
 - Every `.axaml` file and its code-behind, every `*Window`, `*ViewModel`, `*Control` and `*Dialog` class, and every file under a `Presentation/`, `Views/`, `ViewModels/`, `Controls/`, `Theming/` or `Rendering/` folder, in every project.
 - `ShareX.Avalonia` and `ShareX.ImageEditor` (both whole), and `ShareX.ImageEditor.App`.
+- **`ShareX.Platform.Windows` (whole): every Windows implementation of every service.** J is the Windows lead (below).
 - Image processing and rendering: `ShareX.ImageEffectsLib` (whole), the SkiaSharp imaging layer in `ShareX.HelpersLib` (`SkiaImageHelpers*`, `SkiaDrawing`, `Image*` types, `GIF/`, colour and gradient types, `FontSafe`), and the image-processing services of tools (image resizer, watermark, combiner, splitter, converter, thumbnailer, GIF maker and trimmer, background remover, icon converter, QR code, image comparer).
 - The drawing side of capture overlays: region capture, screen recording frame, scrolling capture region, colour picker, mouse highlighter drawing, pin to screen, ruler.
 - `.github/workflows/build.yml`, `ShareX.Setup`, `ShareX.Steam`, Windows installer and release scripts.
 
 ### Agent M owns (backend)
 
-- `ShareX.Platform`, `ShareX.Platform.Windows`, `ShareX.Platform.Linux`, `ShareX.Platform.MacOS` and `ShareX.Platform.Tests`: every contract and every implementation.
-- Every other file: services, helpers, managers, settings, uploaders, history storage and native interop. In practice: the rest of `ShareX.HelpersLib` (including `Native/`), the non-UI files of the `ShareX` application (`Program.cs`, `TaskHelpers.cs`, `TaskManager.cs`, `UploadManager.cs`, `HotkeyManager.cs`, `StartupManager.cs`, `SystemOptions.cs`, `IntegrationHelpers.cs`, `ScreenRecordManager.cs`, `CaptureHelpers/`, `Infrastructure/`, settings and watch folders), the non-UI files of `ShareX.ScreenCaptureLib` and `ShareX.Tools` (capture, scrolling capture, recording options, OCR, mouse hook, inspect and borderless window services, clipboard viewer data, network, hashing, metadata, video tools), `ShareX.UploadersLib`, `ShareX.HistoryLib`'s data layer, `ShareX.NativeMessagingHost`.
+- `ShareX.Platform` (every contract, `UnsupportedServices.cs`, shared helpers), `ShareX.Platform.Linux`, `ShareX.Platform.MacOS` and `ShareX.Platform.Tests`.
+- Every other file except Windows code: services, helpers, managers, settings, uploaders, history storage and native interop. In practice: the rest of `ShareX.HelpersLib` (its Win32 code in `Native/` and similar moves to `ShareX.Platform.Windows`, which is J's job: task J9), the non-UI files of the `ShareX` application (`Program.cs`, `TaskHelpers.cs`, `TaskManager.cs`, `UploadManager.cs`, `HotkeyManager.cs`, `StartupManager.cs`, `SystemOptions.cs`, `IntegrationHelpers.cs`, `ScreenRecordManager.cs`, `CaptureHelpers/`, `Infrastructure/`, settings and watch folders), the non-UI files of `ShareX.ScreenCaptureLib` and `ShareX.Tools` (capture, scrolling capture, recording options, OCR, mouse hook, inspect and borderless window services, clipboard viewer data, network, hashing, metadata, video tools), `ShareX.UploadersLib`, `ShareX.HistoryLib`'s data layer, `ShareX.NativeMessagingHost`.
 - Every `.csproj` target framework change, `Directory.Build.*`, `.github/workflows/platform.yml`, `Scripts/install-linux.sh`, Linux and macOS packaging, `docs/cross-platform.md`.
 
 ### Shared
@@ -67,10 +68,13 @@ The line is **frontend and graphics (J)** against **backend (M)**. The code alre
 
 ### Windows lead
 
-M writes the Windows implementations, but cannot run them. J is the Windows lead:
+J leads Windows: J writes, runs and signs off all Windows code.
 
-- Every change to `ShareX.Platform.Windows` is listed in the [J1 checklist](#j1-windows-verification-checklist) or as a bug row until J has run it on Windows.
-- J decides how a feature should behave on Windows when the old behaviour is ambiguous, and reviews contract changes that affect what the UI can show.
+- J owns `ShareX.Platform.Windows`. All Windows implementations are written there by J, including moving develop's Win32, COM, registry and WinRT code out of `HelpersLib`, `ScreenCaptureLib`, `Tools` and the application (J9).
+- M never edits `ShareX.Platform.Windows`, with one exception: when M adds a new service to `IPlatformServices`, M wires a "not supported" stub into `WindowsPlatformServices` in the same commit (one line, so the build stays green) and adds a W row (below).
+- M does not switch a shared call site to a service until the Windows implementation behind it is done, so Windows never loses a feature in between. Until then the old code stays where it is.
+- J decides how a feature behaves on Windows when the old behaviour is ambiguous, and reviews contract changes that affect what the UI can show.
+- Windows code that M wrote before 2026-10-03 (everything brought from the first branch, and the M3 to M6 commits up to `1cf9734e9`) is J's from now on. It is all on the J1 checklist; fixes are J's.
 
 ### Borderline files
 
@@ -93,7 +97,7 @@ Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (
 
 1. M adds the interface or member to `ShareX.Platform` and, in the same commit, a "not supported" implementation in every platform project (`UnsupportedServices.cs` where possible) and the test fakes, so the build stays green.
 2. If the contract changes what the UI can offer or show, M marks it `review` and J looks at it before it is used.
-3. M then implements it for real on Windows, Linux and macOS; the Windows part goes on the J1 checklist.
+3. M implements it on Linux and macOS and adds a W row for the Windows implementation, naming where the old Windows code lives. J implements it in `ShareX.Platform.Windows` and marks the row done; M then switches the shared call site and deletes the old code.
 4. Changing or removing an existing member needs J's `review` first if UI code uses it.
 
 ## Order of work
@@ -124,7 +128,7 @@ Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (
 | M0 | Build plumbing: rename `Directory.build.props` and `Directory.build.targets` to `Directory.Build.*` (one commit, announced, lesson 14), set `EnableWindowsTargeting` off Windows, bring `.github/workflows/platform.yml`, and make `dotnet build ShareX.sln -c Release -p:Platform=x64` pass on Linux. | none | done (`423652e73`) |
 | M1 | Bring `ShareX.Platform`, `.Windows`, `.Linux`, `.MacOS`, `ShareX.Platform.Tests` and `ShareX.ImageEffectsLib.Tests` from the first branch; add them to `ShareX.sln`; tests pass. | M0 | done (`021fe6d39`) |
 | M2 | Platform start up in `Program.cs`: `PlatformServices.Initialize` with the services for the running operating system, `Shutdown` on exit. | M1 | in progress (2026-10-03) |
-| M3 | `HelpersLib` backend → services, then `net10.0` with CA1416 as an error: `Native/`, `CursorData`, `DWMManager`, `DesktopIconManager`, `TimerResolutionManager`, `RegistryHelpers`, `WindowsImageInterop`, `AuthenticodeSignatureVerifier`, `AvaloniaClipboard` and `DesktopScreen` branches, `InputManager`, `WindowsHotkeyHost`, printing back end, and the Windows members of `Helpers`, `FileHelpers`, `CaptureHelpers`, `ClipboardHelpers`, `Extensions`, `MimeTypes`. Handoffs for UI call sites. | M1 | in progress (2026-10-03) |
+| M3 | `HelpersLib` backend → services, then `net10.0` with CA1416 as an error. M adds the contracts, the Linux and macOS implementations and the portable façades (`WindowInfo`, print helpers and others keep their API over the services), and switches shared callers once J's Windows side is done (W rows). The Win32 code itself (`Native/`, `CursorData`, `DWMManager`, `DesktopIconManager`, `TimerResolutionManager`, `RegistryHelpers`, `WindowsImageInterop`, `InputManager`, `WindowsHotkeyHost`) moves to `ShareX.Platform.Windows` under J9. Handoffs for UI call sites. | M1, J9 | in progress (2026-10-03) |
 | M4 | `ScreenCaptureLib` backend → services and `net10.0`: re-apply first-branch commit `4a25a9e04` (`Screenshot` facade over `IScreenCaptureService`, snap targets, scrolling capture through `IInputService`, recording devices from the platform). The frame windows' `SetWindowShape`/`SetOverlayStyle` calls are handoffs to J. | M3 | in progress (2026-10-03) |
 | M5 | `Tools` backend → services and `net10.0`: OCR (`IOcrService`), mouse hook and overlay surface (`HookMouse`, `CreateOverlay`), inspect and borderless window services (`IWindowManagementService`), clipboard viewer data, ruler capture. Reuse the first branch's stash. | M3 | in progress (2026-10-03): OCR, mouse highlighter, inspect and borderless services done; retarget waits for HelpersLib, and the background remover needs a CPU ONNX Runtime off Windows (DirectML is Windows only) |
 | M6 | Application backend: hotkeys (`HotkeyManager` → `IHotkeyService`), startup, `SystemOptions` and `IntegrationHelpers` registry → `IStartupService`/`IShellIntegrationService`, capture helpers and `ScreenRecordManager` window calls → `IWindowService`, `TaskHelpers` operating system calls. `NativeMessagingHost` → `net10.0`. | M3 | in progress (2026-10-03) |
@@ -147,6 +151,7 @@ Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (
 | J5 | Unsupported features in the UI: wherever a service reports `NotSupported`, hide or disable the menu item, button or setting and show the reason as its tooltip (window capture and snapping on GNOME/KDE Wayland, scroll methods, mouse highlighter, inspect window, OCR without Tesseract, recording on Wayland until M9). | M3 to M6 | todo |
 | J6 | Graphics on other platforms: tray and menu icons on light and dark Linux panels, theme and accent detection, DPI and fractional scaling, image formats and codecs, HDR tone mapping review. | M2 | todo |
 | J7 | Switch UI call sites listed in the handoff log as they appear. | handoffs | ongoing |
+| J9 | **Windows platform.** Own `ShareX.Platform.Windows`: work through the W rows, move develop's remaining Win32 code from `HelpersLib` (`Native/`, `NativeMethods*`, `WindowInfo` internals, `DWMManager`, `DesktopIconManager`, `TimerResolutionManager`, `RegistryHelpers`, `WindowsImageInterop`, `InputManager`, `WindowsHotkeyHost`, `CursorData`), `ScreenCaptureLib`, `Tools` and the application into it behind the existing services, and fix Windows bugs found in J1. | none | todo |
 | J8 | End-to-end runs of the real application once M8 lands: on Windows (sign-off) and on Linux (with McoreD). File bug rows. | M8 | todo |
 
 ### J1 Windows verification checklist
@@ -196,6 +201,16 @@ J asks for backend or platform capabilities here; M fills in the interface and s
 | R2 | Taskbar progress and overlay | upload progress UI | `ITaskbarService` (`PlatformServices.Current.Taskbar`); `TaskbarManager` keeps its API on top. Develop never used overlay icons, so none were added | done |
 | R3 | Synthetic input beyond scrolling: typing text, key combinations | application actions | extend `IInputService` | todo |
 
+## Windows work (M → J)
+
+M adds a row when a contract needs a Windows implementation. J implements it in `ShareX.Platform.Windows`, ticks the matching J1 item after running it, and marks the row `done (commit)`. M then switches the shared call site and deletes the old code.
+
+| ID | Contract | Old Windows code to move | Linux/macOS | Status |
+| --- | --- | --- | --- | --- |
+| W1 | Review the Windows code M wrote: `WindowsShellIntegrationService` (file types, browser hosts, Send to), `WindowsSystemPreferencesService.GetPolicy`, `WindowsTaskbarService`, `WindowsStartupService` (`b94ebc639`, `1cf9734e9`). Take ownership; fix whatever differs from v22. | already moved | done | todo |
+| W2 | `IHotkeyService` for `HotkeyManager` (`WindowsHotkeyService` exists from the first branch; check it against `WindowsHotkeyHost`) | `ShareX.HelpersLib` `WindowsHotkeyHost`, `HotkeyForm` | X11 done; Wayland portal in M9 | todo |
+| W3 | Printing (R1): contract to come from M | `ShareX.HelpersLib` print helpers, `WindowsPrintDialog` | to do (M) | waiting for contract |
+
 ## Handoffs
 
 M adds a row when a backend API moved and J's UI files still call the old wrapper.
@@ -229,3 +244,4 @@ One line per working session, newest at the bottom.
 - 2026-10-03, M: Note for J: M5 changed a J file without claiming it first: `ShareX.Tools/Tools/MouseHighlighter/MouseHighlighterOverlayWindow.cs` (drawing now targets the platform overlay surface, `IScreenOverlay`, instead of a WinForms layered window). The Skia drawing code is unchanged.
 - 2026-10-03, M: Claimed M6 (application backend files). Plan for M3's end: Win32 types that J's files still use (`WindowInfo`, `TaskbarManager`, print helpers, `LucideTrayIcon`) become portable façades with the same API over the platform services, so J's files keep building and work on Linux; the handoffs become clean-ups.
 - 2026-10-03, M: M6 steps pushed: startup, shell menus, file types, browser hosts, Send to and admin policies through the platform services (`b94ebc639`); taskbar progress through new `ITaskbarService` (R2 done; Linux uses the Unity launcher API, which KDE and Dash to Dock show). `TaskbarManager` is now a portable façade in `HelpersLib/TaskbarManager.cs`; J's settings view model needs no change. Two J1 checklist items added.
+- 2026-10-03, M: **Ownership change (McoreD's decision):** `ShareX.Platform.Windows` is now J's. J writes, runs and signs off all Windows code; M does contracts, Linux, macOS and shared call sites, and hands Windows work over as W rows. New task J9 (Windows platform) and table "Windows work" (W1 to W3). M3 no longer moves Win32 code itself.
