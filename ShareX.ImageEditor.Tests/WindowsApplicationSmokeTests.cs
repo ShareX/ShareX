@@ -30,6 +30,7 @@ using Xunit;
 
 namespace ShareX.ImageEditor.Tests;
 
+[Collection("Windows application verification")]
 public sealed class WindowsApplicationSmokeTests
 {
     [WindowsApplicationSmokeFact]
@@ -37,51 +38,7 @@ public sealed class WindowsApplicationSmokeTests
     {
         if (!OperatingSystem.IsWindows()) return;
         using ApplicationFiles files = new();
-        ProcessStartInfo startInfo = new()
-        {
-            FileName = Path.Combine(files.DirectoryPath, "ShareX.exe"),
-            WorkingDirectory = files.DirectoryPath,
-            UseShellExecute = false,
-            CreateNoWindow = true,
-            WindowStyle = ProcessWindowStyle.Hidden,
-            RedirectStandardOutput = true,
-            RedirectStandardError = true
-        };
-        foreach (string argument in new[] { "-portable", "-multi", "-silent", "-NoHotkeys", "-ExitShareX" })
-            startInfo.ArgumentList.Add(argument);
-
-        using Process process = Assert.IsType<Process>(Process.Start(startInfo));
-        Task<string> output = process.StandardOutput.ReadToEndAsync();
-        Task<string> error = process.StandardError.ReadToEndAsync();
-        bool exited = false;
-        try
-        {
-            await process.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(30));
-            exited = true;
-        }
-        catch (TimeoutException)
-        {
-            // Only the process created by this fixture is terminated on timeout.
-        }
-        finally
-        {
-            if (!process.HasExited)
-            {
-                process.Kill(entireProcessTree: true);
-                await process.WaitForExitAsync();
-            }
-        }
-
-        string log = files.ReadLog();
-        string diagnostics = $"Exit code: {process.ExitCode}{Environment.NewLine}{await output}{await error}{log}";
-        string? artifacts = Environment.GetEnvironmentVariable("SHAREX_TEST_GRAPHICS_OUTPUT");
-        if (!string.IsNullOrEmpty(artifacts))
-        {
-            Directory.CreateDirectory(artifacts);
-            File.WriteAllText(Path.Combine(artifacts, "windows-application-startup.log"), diagnostics);
-        }
-        Assert.True(exited, "The isolated application did not exit within 30 seconds." + Environment.NewLine + diagnostics);
-        Assert.True(process.ExitCode == 0, diagnostics);
+        string log = await files.RunAsync("windows-application-startup.log", "-portable", "-multi", "-silent", "-NoHotkeys", "-ExitShareX");
         Assert.Contains("Personal path: " + files.SettingsPath, log);
         Assert.Contains("Personal path detection method: Portable CLI flag", log);
         Assert.Contains("HotkeyManager started.", log);
@@ -107,7 +64,7 @@ public sealed class WindowsApplicationSmokeTests
         Assert.Empty(hotkeys.RootElement.GetProperty("Hotkeys").EnumerateArray());
     }
 
-    private sealed class ApplicationFiles : IDisposable
+    internal sealed class ApplicationFiles : IDisposable
     {
         private readonly string tempRoot = Path.GetFullPath(Path.GetTempPath());
         public string DirectoryPath { get; }
@@ -176,16 +133,74 @@ public sealed class WindowsApplicationSmokeTests
                 : "";
         }
 
+        public async Task<string> RunAsync(string artifactName, params string[] arguments)
+        {
+            ProcessStartInfo startInfo = new()
+            {
+                FileName = Path.Combine(DirectoryPath, "ShareX.exe"),
+                WorkingDirectory = DirectoryPath,
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                WindowStyle = ProcessWindowStyle.Hidden,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
+            };
+            foreach (string argument in arguments) startInfo.ArgumentList.Add(argument);
+            using Process process = Assert.IsType<Process>(Process.Start(startInfo));
+            Task<string> output = process.StandardOutput.ReadToEndAsync();
+            Task<string> error = process.StandardError.ReadToEndAsync();
+            bool exited = false;
+            try
+            {
+                await process.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(30));
+                exited = true;
+            }
+            catch (TimeoutException)
+            {
+                // Only the process created by this fixture is terminated on timeout.
+            }
+            finally
+            {
+                if (!process.HasExited)
+                {
+                    process.Kill(entireProcessTree: true);
+                    await process.WaitForExitAsync();
+                }
+            }
+            string log = ReadLog();
+            string diagnostics = $"Exit code: {process.ExitCode}{Environment.NewLine}{await output}{await error}{log}";
+            string? artifacts = Environment.GetEnvironmentVariable("SHAREX_TEST_GRAPHICS_OUTPUT");
+            if (!string.IsNullOrEmpty(artifacts))
+            {
+                Directory.CreateDirectory(artifacts);
+                File.WriteAllText(Path.Combine(artifacts, artifactName), diagnostics);
+            }
+            Assert.True(exited, "The isolated application did not exit within 30 seconds." + Environment.NewLine + diagnostics);
+            Assert.True(process.ExitCode == 0, diagnostics);
+            return log;
+        }
+
         public void Dispose()
         {
             string target = Path.GetFullPath(DirectoryPath);
             if (Path.GetDirectoryName(target) != Path.TrimEndingDirectorySeparator(tempRoot) ||
                 !Path.GetFileName(target).StartsWith("sharex-application-smoke-", StringComparison.Ordinal))
                 throw new InvalidOperationException("Refusing to remove a directory outside this fixture's temporary root.");
-            if (Directory.Exists(target)) Directory.Delete(target, recursive: true);
+            // A terminated renderer can release its native DLL mappings just after the process handle signals.
+            for (int attempt = 0; Directory.Exists(target); attempt++)
+            {
+                try { Directory.Delete(target, recursive: true); }
+                catch (Exception exception) when (attempt < 20 && exception is IOException or UnauthorizedAccessException)
+                {
+                    Thread.Sleep(100);
+                }
+            }
         }
     }
 }
+
+[CollectionDefinition("Windows application verification", DisableParallelization = true)]
+public sealed class WindowsApplicationVerificationCollection { }
 
 public sealed class WindowsApplicationSmokeFactAttribute : FactAttribute
 {
