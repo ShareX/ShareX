@@ -90,6 +90,8 @@ public sealed class UnsupportedWindowService(string reason) : IWindowService
 
     public bool ActivateWindow(long windowHandle) => false;
 
+    public bool RestoreWindow(long windowHandle) => false;
+
     public bool SetOverlayStyle(long windowHandle, bool clickThrough) => false;
 
     public bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas) => false;

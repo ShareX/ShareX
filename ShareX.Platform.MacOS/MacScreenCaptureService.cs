@@ -140,6 +140,9 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
         }
     }
 
+    // screencapture can include the cursor in a capture (-C) but cannot hand it over on its own.
+    public CursorCapture? CaptureCursor() => null;
+
     internal static List<string> CreateArguments(ScreenCaptureRequest request, string file)
     {
         // -x: no shutter sound. -t png: output format.

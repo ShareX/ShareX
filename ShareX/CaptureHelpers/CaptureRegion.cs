@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using ShareX.ScreenCaptureLib;
 using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 using SkiaSharp;
@@ -55,28 +56,29 @@ namespace ShareX
                 ? CaptureHelpers.GetActiveScreenBounds()
                 : CaptureHelpers.GetScreenBounds();
 
-            SKBitmap frozenScreenshot;
-            using (Bitmap canvas = activeMonitorMode
-                ? screenshot.CaptureActiveMonitor()
-                : screenshot.CaptureFullscreen())
+            SKBitmap frozenScreenshot = activeMonitorMode
+                ? await screenshot.CaptureActiveMonitorAsync()
+                : await screenshot.CaptureFullscreenAsync();
+
+            if (frozenScreenshot == null)
             {
-                frozenScreenshot = canvas.Copy();
+                return null;
+            }
+
+            if (screenBounds.IsEmpty)
+            {
+                // GNOME and KDE on Wayland do not reveal the screen layout; the capture covers the whole desktop.
+                screenBounds = new Rectangle(0, 0, frozenScreenshot.Width, frozenScreenshot.Height);
             }
 
             SKBitmap cursorBitmap = null;
             Point cursorPosition = Point.Empty;
 
-            if (taskSettings.CaptureSettings.ShowCursor)
+            // The cursor is drawn by the region capture editor so it can be moved or removed. Wayland does not reveal it.
+            if (taskSettings.CaptureSettings.ShowCursor && PlatformServices.Current.ScreenCapture.CaptureCursor() is CursorCapture cursor)
             {
-                CursorData cursorData = new CursorData();
-                if (cursorData.IsVisible)
-                {
-                    using Bitmap cursor = cursorData.ToBitmap();
-                    cursorBitmap = cursor.Copy();
-                    cursorPosition = new Point(
-                        cursorData.DrawPosition.X - screenBounds.X,
-                        cursorData.DrawPosition.Y - screenBounds.Y);
-                }
+                cursorBitmap = PlatformImageConverter.ToSKBitmap(cursor.Image);
+                cursorPosition = new Point(cursor.Position.X - screenBounds.X, cursor.Position.Y - screenBounds.Y);
             }
 
             AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest

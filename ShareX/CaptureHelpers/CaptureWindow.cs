@@ -24,6 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Platform;
+using System.Linq;
 using System;
 using System.Threading;
 
@@ -47,22 +49,23 @@ namespace ShareX
 
         protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
-            WindowInfo windowInfo = new WindowInfo(WindowHandle);
+            IWindowService windows = PlatformServices.Current.Windows;
+            long handle = WindowHandle.ToInt64();
 
-            if (windowInfo.IsMinimized)
+            if (windows.GetWindows().FirstOrDefault(x => x.Handle == handle)?.IsMinimized == true)
             {
-                windowInfo.Restore();
+                windows.RestoreWindow(handle);
                 Thread.Sleep(250);
             }
 
-            if (!windowInfo.IsActive)
+            if (windows.GetActiveWindowHandle() != handle)
             {
-                windowInfo.Activate();
+                windows.ActivateWindow(handle);
                 Thread.Sleep(100);
             }
 
             TaskMetadata metadata = new TaskMetadata();
-            metadata.UpdateInfo(windowInfo);
+            metadata.UpdateInfo(PlatformServices.Current.WindowManagement.GetDetails(handle));
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
             {

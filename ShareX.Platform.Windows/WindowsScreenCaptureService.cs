@@ -227,6 +227,9 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
         }
     }
 
+    public CursorCapture? CaptureCursor() =>
+        CaptureCursorImage() is (PixelBuffer image, PlatformPoint position) ? new CursorCapture(image, position) : null;
+
     /// <summary>
     /// The cursor as an image with alpha and its top left corner on the desktop, or null when it is hidden. Drawn over white and
     /// over black so monochrome and inverting cursors come out the way GDI would draw them over a light background.

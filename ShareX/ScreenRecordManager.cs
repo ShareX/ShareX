@@ -150,9 +150,7 @@ namespace ShareX
                         captureRectangle = CaptureHelpers.GetActiveWindowRectangle();
                     }
 
-                    IntPtr handle = NativeMethods.GetForegroundWindow();
-                    WindowInfo activeWindowInfo = new WindowInfo(handle);
-                    metadata.UpdateInfo(activeWindowInfo);
+                    metadata.UpdateInfo(CaptureHelpers.GetActiveWindowDetails());
                     break;
                 case ScreenRecordStartMethod.CustomRegion:
                     captureRectangle = taskSettings.CaptureSettings.CaptureCustomRegion;

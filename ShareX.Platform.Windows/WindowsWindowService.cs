@@ -91,6 +91,18 @@ public sealed unsafe class WindowsWindowService : IWindowService
 
     public bool SetCursorPosition(PlatformPoint position) => Win32.SetCursorPos(position.X, position.Y);
 
+    public bool RestoreWindow(long windowHandle)
+    {
+        IntPtr hwnd = (IntPtr)windowHandle;
+
+        if (Win32.IsIconic(hwnd))
+        {
+            Win32.ShowWindow(hwnd, Win32.SW_RESTORE);
+        }
+
+        return true;
+    }
+
     public bool ActivateWindow(long windowHandle) => windowHandle != 0 && Win32.SetForegroundWindow((IntPtr)windowHandle);
 
     public bool SetOverlayStyle(long windowHandle, bool clickThrough)

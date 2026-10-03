@@ -31,6 +31,7 @@ using ShareX.HistoryLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEffectsLib;
 using ShareX.Localization;
+using ShareX.Platform;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
@@ -752,7 +753,7 @@ namespace ShareX
             {
                 try
                 {
-                    string filePath = RegistryHelpers.SearchProgramPath(fileName);
+                    string filePath = PlatformServices.Current.Shell.FindProgram(fileName);
 
                     if (!string.IsNullOrEmpty(filePath))
                     {
@@ -1270,9 +1271,9 @@ namespace ShareX
 
             try
             {
-                IntPtr handle = NativeMethods.GetForegroundWindow();
+                IntPtr handle = new IntPtr(PlatformServices.Current.Windows.GetActiveWindowHandle());
 
-                if (handle.ToInt32() > 0)
+                if (handle != IntPtr.Zero)
                 {
                     BorderlessWindowManager.ToggleBorderlessWindow(handle, taskSettings.ToolsSettings.BorderlessWindowSettings.ExcludeTaskbarArea);
 
@@ -1291,12 +1292,12 @@ namespace ShareX
 
             try
             {
-                IntPtr handle = NativeMethods.GetForegroundWindow();
+                IWindowManagementService windowManagement = PlatformServices.Current.WindowManagement;
+                long handle = PlatformServices.Current.Windows.GetActiveWindowHandle();
 
-                if (handle.ToInt32() > 0)
+                if (handle != 0 && windowManagement.GetDetails(handle)?.IsTopMost is bool topMost)
                 {
-                    WindowInfo windowInfo = new WindowInfo(handle);
-                    windowInfo.TopMost = !windowInfo.TopMost;
+                    windowManagement.SetTopMost(handle, !topMost);
 
                     PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
                 }

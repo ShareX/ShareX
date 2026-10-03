@@ -135,6 +135,9 @@ public interface IWindowService
     /// <summary>Brings a window to the front and gives it keyboard focus. Returns false when the platform refused.</summary>
     bool ActivateWindow(long windowHandle);
 
+    /// <summary>Restores a minimised window to its normal size. Returns false when the platform refused or cannot.</summary>
+    bool RestoreWindow(long windowHandle);
+
     /// <summary>
     /// Makes one of ShareX's own windows an overlay: hidden from the task bar and window switcher and, with
     /// <paramref name="clickThrough"/>, transparent to mouse input. Returns false where the platform has no such control.

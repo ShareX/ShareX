@@ -25,6 +25,7 @@
 
 using ShareX.Platform.Imaging;
 using ShareX.Platform;
+using System.Collections.Generic;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -305,6 +306,32 @@ namespace ShareX.HelpersLib
         {
             PlatformRectangle? bounds = PlatformServices.Current.Windows.GetWindowBounds(handle.ToInt64());
             return bounds is PlatformRectangle b ? new Rectangle(b.X, b.Y, b.Width, b.Height) : Rectangle.Empty;
+        }
+
+        /// <summary>A window by its title: an exact match first, then the first window whose title contains the text. IntPtr.Zero when none.</summary>
+        public static IntPtr FindWindowByTitle(string title)
+        {
+            if (string.IsNullOrEmpty(title))
+            {
+                return IntPtr.Zero;
+            }
+
+            IReadOnlyList<PlatformWindow> windows = PlatformServices.Current.Windows.GetWindows();
+            PlatformWindow window = windows.FirstOrDefault(x => x.Title == title) ??
+                windows.FirstOrDefault(x => x.Title.Contains(title, StringComparison.InvariantCultureIgnoreCase));
+            return window != null ? new IntPtr(window.Handle) : IntPtr.Zero;
+        }
+
+        /// <summary>Title, process and bounds of the window with keyboard focus, or null where the platform does not say.</summary>
+        public static WindowDetails GetActiveWindowDetails()
+        {
+            if (!PlatformServices.IsInitialized)
+            {
+                return null;
+            }
+
+            long handle = PlatformServices.Current.Windows.GetActiveWindowHandle();
+            return handle != 0 ? PlatformServices.Current.WindowManagement.GetDetails(handle) : null;
         }
 
         public static Rectangle GetActiveWindowRectangle()

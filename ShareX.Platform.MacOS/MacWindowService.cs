@@ -134,6 +134,8 @@ public sealed class MacWindowService : IWindowService
     public bool SetCursorPosition(PlatformPoint position) =>
         CoreGraphics.CGWarpMouseCursorPosition(new CoreGraphics.CGPoint { X = position.X, Y = position.Y }) == 0;
 
+    public bool RestoreWindow(long windowHandle) => ActivateWindow(windowHandle);
+
     /// <summary>macOS activates applications, not windows: this brings the window's application to the front.</summary>
     public bool ActivateWindow(long windowHandle)
     {

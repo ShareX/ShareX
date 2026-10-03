@@ -43,6 +43,18 @@ public interface IShellService
     /// Linux the shared-mime-info and mime.types databases. Callers keep their own table for the common types.
     /// </summary>
     string? GetMimeType(string extension);
+
+    /// <summary>Whether the desktop shows its icons, or null where the platform does not say (only Windows does).</summary>
+    bool? AreDesktopIconsVisible();
+
+    /// <summary>Shows or hides the desktop icons, for clean full screen captures. Returns false where the platform cannot.</summary>
+    bool SetDesktopIconsVisible(bool visible);
+
+    /// <summary>
+    /// The full path of an installed program by its executable name (for example "mspaint.exe" on Windows or "gimp" on Linux), or
+    /// null. Windows asks the registry's application lists; Linux and macOS search PATH.
+    /// </summary>
+    string? FindProgram(string executableName);
 }
 
 public enum ShellMenuTarget

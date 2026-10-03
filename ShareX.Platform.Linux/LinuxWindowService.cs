@@ -209,6 +209,9 @@ public sealed class LinuxWindowService : IWindowService
         }
     }
 
+    /// <summary>Activating a window also brings it back from minimised on X11, Hyprland and sway.</summary>
+    public bool RestoreWindow(long windowHandle) => ActivateWindow(windowHandle);
+
     public bool ActivateWindow(long windowHandle)
     {
         switch (ActiveBackend)

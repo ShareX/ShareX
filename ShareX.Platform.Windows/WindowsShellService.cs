@@ -39,6 +39,108 @@ public sealed class WindowsShellService : IShellService
 
     public bool OpenPath(string path) => Start(path);
 
+    public bool? AreDesktopIconsVisible()
+    {
+        IntPtr icons = GetDesktopListView();
+        return icons != IntPtr.Zero && Win32.IsWindowVisible(icons);
+    }
+
+    public bool SetDesktopIconsVisible(bool visible)
+    {
+        IntPtr icons = GetDesktopListView();
+
+        if (icons == IntPtr.Zero)
+        {
+            return false;
+        }
+
+        // ShowWindow returns the previous visibility, not success.
+        Win32.ShowWindow(icons, visible ? Win32.SW_SHOW : Win32.SW_HIDE);
+        return true;
+    }
+
+    /// <summary>The desktop's icon list view: under Progman, or under a WorkerW window once a wallpaper slideshow has run.</summary>
+    private static IntPtr GetDesktopListView()
+    {
+        IntPtr progman = Win32.FindWindow("Progman", null);
+        IntPtr defView = Win32.FindWindowEx(progman, IntPtr.Zero, "SHELLDLL_DefView", null);
+
+        if (defView == IntPtr.Zero)
+        {
+            IntPtr worker = IntPtr.Zero;
+
+            while ((worker = Win32.FindWindowEx(IntPtr.Zero, worker, "WorkerW", null)) != IntPtr.Zero)
+            {
+                defView = Win32.FindWindowEx(worker, IntPtr.Zero, "SHELLDLL_DefView", null);
+
+                if (defView != IntPtr.Zero)
+                {
+                    break;
+                }
+            }
+        }
+
+        return defView != IntPtr.Zero ? Win32.FindWindowEx(defView, IntPtr.Zero, "SysListView32", "FolderView") : IntPtr.Zero;
+    }
+
+    /// <summary>
+    /// Finds an installed program the way ShareX always has: the shell's application registrations
+    /// (HKCR\Applications\{name}\shell\open|edit\command), then the programs the user has run (the MuiCache).
+    /// </summary>
+    public string? FindProgram(string executableName)
+    {
+        foreach (string command in new[] { "open", "edit" })
+        {
+            if (Registry.GetValue($@"HKEY_CLASSES_ROOT\Applications\{executableName}\shell\{command}\command", null, null) is string value &&
+                ParseQuoted(value) is string path && System.IO.File.Exists(path))
+            {
+                return path;
+            }
+        }
+
+        using RegistryKey? programs = Registry.CurrentUser.OpenSubKey(@"Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache");
+
+        foreach (string name in programs?.GetValueNames() ?? Array.Empty<string>())
+        {
+            string programPath = name;
+
+            foreach (string suffix in new[] { ".ApplicationCompany", ".FriendlyAppName" })
+            {
+                if (programPath.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
+                {
+                    programPath = programPath[..^suffix.Length];
+                }
+            }
+
+            if (programPath.EndsWith(executableName, StringComparison.OrdinalIgnoreCase) && System.IO.File.Exists(programPath))
+            {
+                return programPath;
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>The text between the first pair of quotes, or the whole trimmed text when it is not quoted.</summary>
+    internal static string ParseQuoted(string text)
+    {
+        text = text.Trim();
+        int first = text.IndexOf('"');
+
+        if (first >= 0)
+        {
+            text = text[(first + 1)..];
+            int second = text.IndexOf('"');
+
+            if (second >= 0)
+            {
+                text = text[..second];
+            }
+        }
+
+        return text;
+    }
+
     public string? GetMimeType(string extension)
     {
         using RegistryKey? key = Registry.ClassesRoot.OpenSubKey(extension);

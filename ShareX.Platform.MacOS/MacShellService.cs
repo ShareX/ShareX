@@ -48,6 +48,13 @@ public sealed class MacShellService : IShellService
     public bool RevealInFileManager(string path) => Run("open", ["-R", path]);
 
     // macOS uniform type identifiers have no simple extension to MIME table; callers fall back to their own.
+    // Desktop icons belong to the file manager or desktop shell here, which offers no common switch.
+    public bool? AreDesktopIconsVisible() => null;
+
+    public bool SetDesktopIconsVisible(bool visible) => false;
+
+    public string? FindProgram(string executableName) => ShareX.Platform.Diagnostics.CommandRunner.FindOnPath(executableName);
+
     public string? GetMimeType(string extension) => null;
 
     private bool Run(string command, IReadOnlyList<string> arguments)

@@ -46,6 +46,13 @@ public sealed class LinuxShellService : IShellService
 
     public bool OpenPath(string path) => Open(path);
 
+    // Desktop icons belong to the file manager or desktop shell here, which offers no common switch.
+    public bool? AreDesktopIconsVisible() => null;
+
+    public bool SetDesktopIconsVisible(bool visible) => false;
+
+    public string? FindProgram(string executableName) => ShareX.Platform.Diagnostics.CommandRunner.FindOnPath(executableName);
+
     public string? GetMimeType(string extension) => MimeDatabase.Default.GetMimeType(extension);
 
     public bool RevealInFileManager(string path)

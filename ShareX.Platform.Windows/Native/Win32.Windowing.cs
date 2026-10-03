@@ -119,6 +119,9 @@ internal static unsafe partial class Win32
     [LibraryImport("user32.dll", EntryPoint = "SetWindowLongPtrW")]
     public static partial nint SetWindowLongPtr(IntPtr hwnd, int index, nint value);
 
+    [LibraryImport("user32.dll", EntryPoint = "FindWindowExW", StringMarshalling = StringMarshalling.Utf16)]
+    public static partial IntPtr FindWindowEx(IntPtr parent, IntPtr childAfter, string? className, string? windowName);
+
     [LibraryImport("user32.dll", EntryPoint = "FindWindowW", StringMarshalling = StringMarshalling.Utf16)]
     public static partial IntPtr FindWindow(string? className, string? windowName);
 

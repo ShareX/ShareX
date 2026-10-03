@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
@@ -83,9 +84,11 @@ namespace ShareX
             bool showDesktopIcons = false;
             bool showMainForm = false;
 
-            if (taskSettings.CaptureSettings.CaptureAutoHideDesktopIcons && !CaptureHelpers.IsActiveWindowFullscreen() && DesktopIconManager.AreDesktopIconsVisible())
+            IShellService shell = PlatformServices.Current.Shell;
+
+            if (taskSettings.CaptureSettings.CaptureAutoHideDesktopIcons && !CaptureHelpers.IsActiveWindowFullscreen() && shell.AreDesktopIconsVisible() == true)
             {
-                DesktopIconManager.SetDesktopIconsVisibility(false);
+                shell.SetDesktopIconsVisible(false);
                 showDesktopIcons = true;
                 wait = true;
             }
@@ -117,7 +120,7 @@ namespace ShareX
             {
                 if (showDesktopIcons)
                 {
-                    DesktopIconManager.SetDesktopIconsVisibility(true);
+                    shell.SetDesktopIconsVisible(true);
                 }
 
                 if (showMainForm)
@@ -164,13 +167,12 @@ namespace ShareX
         {
             TaskMetadata metadata = new TaskMetadata();
 
-            IntPtr handle = NativeMethods.GetForegroundWindow();
-            WindowInfo windowInfo = new WindowInfo(handle);
+            WindowDetails window = CaptureHelpers.GetActiveWindowDetails();
 
-            if ((ignoreProcess == null || !windowInfo.ProcessName.Equals(ignoreProcess, StringComparison.OrdinalIgnoreCase)) &&
-                (insideRect.IsEmpty || windowInfo.Rectangle.Contains(insideRect)))
+            if (window != null && (ignoreProcess == null || !string.Equals(window.ProcessName, ignoreProcess, StringComparison.OrdinalIgnoreCase)) &&
+                (insideRect.IsEmpty || new Rectangle(window.Bounds.X, window.Bounds.Y, window.Bounds.Width, window.Bounds.Height).Contains(insideRect)))
             {
-                metadata.UpdateInfo(windowInfo);
+                metadata.UpdateInfo(window);
             }
 
             return metadata;

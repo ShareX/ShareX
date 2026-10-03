@@ -166,4 +166,13 @@ public interface IScreenCaptureService
     IReadOnlyList<ScreenInfo> GetScreens();
 
     Task<ScreenCaptureResult> CaptureAsync(ScreenCaptureRequest request, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// The mouse cursor as an image (straight alpha) and its top left corner on the virtual desktop, for drawing it onto a capture
+    /// later. Null when it is hidden or the platform does not reveal it (Wayland).
+    /// </summary>
+    CursorCapture? CaptureCursor();
 }
+
+/// <param name="Position">Top left corner of <paramref name="Image"/> on the virtual desktop (the pointer position minus the hot spot).</param>
+public sealed record CursorCapture(PixelBuffer Image, PlatformPoint Position);

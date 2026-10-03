@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using ShareX.Platform;
 
 namespace ShareX.Tools;
@@ -37,17 +38,14 @@ public static class BorderlessWindowManager
             return false;
         }
 
-        // An exact title first, then any window whose title contains the text, as ShareX always searched.
-        IReadOnlyList<PlatformWindow> windows = PlatformServices.Current.Windows.GetWindows();
-        PlatformWindow? window = windows.FirstOrDefault(x => x.Title == windowTitle) ??
-            windows.FirstOrDefault(x => x.Title.Contains(windowTitle, StringComparison.InvariantCultureIgnoreCase));
+        IntPtr handle = CaptureHelpers.FindWindowByTitle(windowTitle);
 
-        if (window == null)
+        if (handle == IntPtr.Zero)
         {
             return false;
         }
 
-        ToggleBorderlessWindow(new IntPtr(window.Handle), useWorkingArea);
+        ToggleBorderlessWindow(handle, useWorkingArea);
         return true;
     }
 

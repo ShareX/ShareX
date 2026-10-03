@@ -153,6 +153,18 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
         }
     }
 
+    /// <summary>XFixes on X11. Wayland compositors draw the cursor themselves and do not give it to clients.</summary>
+    public CursorCapture? CaptureCursor()
+    {
+        if (ActiveBackend != Backend.X11)
+        {
+            return null;
+        }
+
+        using X11Display? display = X11Display.TryOpen();
+        return display?.GetCursorImage() is (PixelBuffer image, PlatformPoint position) ? new CursorCapture(image, position) : null;
+    }
+
     private ScreenCaptureRequest ToRegionRequest(ScreenCaptureRequest request)
     {
         if ((Features & ScreenCaptureFeatures.Window) == 0)

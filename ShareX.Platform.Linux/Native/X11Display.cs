@@ -280,6 +280,15 @@ internal sealed unsafe class X11Display : IDisposable
 
     private void DrawCursor(PixelBuffer buffer, PlatformRectangle area)
     {
+        if (GetCursorImage() is (PixelBuffer image, PlatformPoint position))
+        {
+            buffer.BlendFrom(image, position.X - area.X, position.Y - area.Y);
+        }
+    }
+
+    /// <summary>The cursor image (straight alpha) and its top left corner on the root window, through XFixes.</summary>
+    public (PixelBuffer Image, PlatformPoint Position)? GetCursorImage()
+    {
         X11.XFixesCursorImage* cursor;
 
         try
@@ -288,12 +297,12 @@ internal sealed unsafe class X11Display : IDisposable
         }
         catch (DllNotFoundException)
         {
-            return;
+            return null;
         }
 
         if (cursor == null)
         {
-            return;
+            return null;
         }
 
         try
@@ -315,7 +324,7 @@ internal sealed unsafe class X11Display : IDisposable
                 cursorImage.Pixels[o + 3] = a;
             }
 
-            buffer.BlendFrom(cursorImage, cursor->x - cursor->xhot - area.X, cursor->y - cursor->yhot - area.Y);
+            return (cursorImage, new PlatformPoint(cursor->x - cursor->xhot, cursor->y - cursor->yhot));
         }
         finally
         {
