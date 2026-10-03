@@ -121,8 +121,8 @@ Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (
 
 | ID | Task | Depends on | Status |
 | --- | --- | --- | --- |
-| M0 | Build plumbing: rename `Directory.build.props` and `Directory.build.targets` to `Directory.Build.*` (one commit, announced, lesson 14), set `EnableWindowsTargeting` off Windows, bring `.github/workflows/platform.yml`, and make `dotnet build ShareX.sln -c Release -p:Platform=x64` pass on Linux. | none | todo |
-| M1 | Bring `ShareX.Platform`, `.Windows`, `.Linux`, `.MacOS`, `ShareX.Platform.Tests` and `ShareX.ImageEffectsLib.Tests` from the first branch; add them to `ShareX.sln`; tests pass. | M0 | todo |
+| M0 | Build plumbing: rename `Directory.build.props` and `Directory.build.targets` to `Directory.Build.*` (one commit, announced, lesson 14), set `EnableWindowsTargeting` off Windows, bring `.github/workflows/platform.yml`, and make `dotnet build ShareX.sln -c Release -p:Platform=x64` pass on Linux. | none | in progress (2026-10-03) |
+| M1 | Bring `ShareX.Platform`, `.Windows`, `.Linux`, `.MacOS`, `ShareX.Platform.Tests` and `ShareX.ImageEffectsLib.Tests` from the first branch; add them to `ShareX.sln`; tests pass. | M0 | in progress (2026-10-03) |
 | M2 | Platform start up in `Program.cs`: `PlatformServices.Initialize` with the services for the running operating system, `Shutdown` on exit. | M1 | todo |
 | M3 | `HelpersLib` backend → services, then `net10.0` with CA1416 as an error: `Native/`, `CursorData`, `DWMManager`, `DesktopIconManager`, `TimerResolutionManager`, `RegistryHelpers`, `WindowsImageInterop`, `AuthenticodeSignatureVerifier`, `AvaloniaClipboard` and `DesktopScreen` branches, `InputManager`, `WindowsHotkeyHost`, printing back end, and the Windows members of `Helpers`, `FileHelpers`, `CaptureHelpers`, `ClipboardHelpers`, `Extensions`, `MimeTypes`. Handoffs for UI call sites. | M1 | todo |
 | M4 | `ScreenCaptureLib` backend → services and `net10.0`: re-apply first-branch commit `4a25a9e04` (`Screenshot` facade over `IScreenCaptureService`, snap targets, scrolling capture through `IInputService`, recording devices from the platform). The frame windows' `SetWindowShape`/`SetOverlayStyle` calls are handoffs to J. | M3 | todo |
@@ -199,3 +199,4 @@ One line per working session, newest at the bottom.
 
 - 2026-10-03, M: Created `cross-platform-v2` from `develop` `fd61635f2`. Added AGENTS.md, this tracker, `docs/cross-platform-learnings.md` and `docs/cross-platform.md`. No code changes yet.
 - 2026-10-03, M: Work split by preference: frontend and graphics to J, backend to M. M writes all platform contracts and implementations including Windows; J is the Windows lead and signs off every Windows change. Added first steps for each of you.
+- 2026-10-03, M: Claimed M0 and M1. M0 renames `Directory.build.props` and `Directory.build.targets` to `Directory.Build.*` at the repository root in its own commit; pull after it lands.
