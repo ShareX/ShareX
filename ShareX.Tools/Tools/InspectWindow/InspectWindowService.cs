@@ -24,10 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using SkiaSharp;
-using System.Runtime.InteropServices;
+using ShareX.Platform;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX.Tools;
 
@@ -56,99 +54,54 @@ public sealed class InspectWindowListItem : IDisposable
     public override string ToString() => Title;
 }
 
+/// <summary>Window lists, picking and icons for the inspect and borderless window tools, through the platform window services.</summary>
 public static class InspectWindowService
 {
-    private const uint GA_ROOT = 2;
-    private static readonly string[] IgnoredClasses = ["Progman", "Button"];
-
     public static IntPtr GetWindowAtPoint(int x, int y, bool topLevel)
     {
-        IntPtr handle = WindowFromPoint(new POINT(x, y));
-        return topLevel && handle != IntPtr.Zero ? GetAncestor(handle, GA_ROOT) : handle;
+        return new IntPtr(PlatformServices.Current.WindowManagement.GetWindowAt(new PlatformPoint(x, y), topLevel));
     }
 
     public static IReadOnlyList<InspectWindowListItem> GetVisibleWindows(IntPtr ignoredHandle)
     {
         List<InspectWindowListItem> windows = [];
 
-        NativeMethods.EnumWindows((handle, _) =>
+        foreach (PlatformWindow window in PlatformServices.Current.Windows.GetWindows())
         {
-            if (handle == ignoredHandle)
+            if (window.Handle == ignoredHandle.ToInt64() || window.IsMinimized || string.IsNullOrWhiteSpace(window.Title))
             {
-                return true;
+                continue;
             }
 
             try
             {
-                WindowInfo window = new(handle);
-                string title = window.Text;
-                string className = window.ClassName;
-                System.Drawing.Rectangle rectangle = window.Rectangle;
-
-                if (window.IsVisible && !window.IsCloaked && !string.IsNullOrWhiteSpace(title) &&
-                    rectangle.Width > 0 && rectangle.Height > 0 &&
-                    !IgnoredClasses.Contains(className, StringComparer.OrdinalIgnoreCase))
-                {
-                    windows.Add(new InspectWindowListItem(
-                        handle,
-                        title,
-                        TryGet(() => window.ProcessName),
-                        GetWindowIcon(window)));
-                }
+                windows.Add(new InspectWindowListItem(new IntPtr(window.Handle), window.Title, window.ProcessName ?? string.Empty,
+                    GetWindowIcon(new IntPtr(window.Handle))));
             }
             catch (Exception ex)
             {
                 ToolsDiagnostics.ReportWarning(nameof(InspectWindowService), "Failed to inspect a window while building the window list.", ex);
             }
-
-            return true;
-        }, IntPtr.Zero);
+        }
 
         return windows.OrderBy(x => x.Title, StringComparer.CurrentCultureIgnoreCase).ToArray();
     }
 
-    private static string TryGet(Func<string> valueFactory)
-    {
-        try
-        {
-            return valueFactory() ?? string.Empty;
-        }
-        catch
-        {
-            return string.Empty;
-        }
-    }
-
     public static AvaloniaBitmap? GetWindowIcon(IntPtr handle)
     {
-        return handle == IntPtr.Zero ? null : GetWindowIcon(new WindowInfo(handle));
-    }
+        if (handle == IntPtr.Zero)
+        {
+            return null;
+        }
 
-    private static AvaloniaBitmap? GetWindowIcon(WindowInfo window)
-    {
         try
         {
-            using System.Drawing.Icon? icon = window.Icon;
-            if (icon == null || icon.Width <= 0 || icon.Height <= 0)
-            {
-                return null;
-            }
-
-            using SKBitmap bitmap = WindowsImageInterop.FromIcon(icon.Handle);
-            using MemoryStream stream = new();
-            bitmap.Save(stream, ImageFormat.Png);
-            stream.Position = 0;
-            return new AvaloniaBitmap(stream);
+            byte[]? png = PlatformServices.Current.WindowManagement.GetIcon(handle.ToInt64());
+            return png != null ? new AvaloniaBitmap(new MemoryStream(png, writable: false)) : null;
         }
         catch
         {
             return null;
         }
     }
-
-    [DllImport("user32.dll")]
-    private static extern IntPtr WindowFromPoint(POINT point);
-
-    [DllImport("user32.dll")]
-    private static extern IntPtr GetAncestor(IntPtr handle, uint flags);
 }

@@ -24,38 +24,37 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using Windows.Globalization;
-using Windows.Graphics.Imaging;
-using Windows.Media.Ocr;
-using Windows.Storage.Streams;
+using ShareX.Platform;
 using Bitmap = SkiaSharp.SKBitmap;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX.Tools;
 
+/// <summary>OCR through <see cref="IOcrService"/>: Windows.Media.Ocr on Windows, Tesseract on Linux.</summary>
 public static class OCRHelper
 {
-    private const string SupportedVersion = "10.0.18362.0";
+    private static IOcrService Service => PlatformServices.Current.Ocr;
 
-    public static bool IsSupported => Helpers.OSVersion >= new Version(SupportedVersion);
+    public static bool IsSupported => Service.Support.IsSupported;
 
     public static OCRLanguageOption[] AvailableLanguages
     {
         get
         {
             ThrowIfNotSupported();
-            return OcrEngine.AvailableRecognizerLanguages
-                .Select(x => new OCRLanguageOption(x.DisplayName, x.LanguageTag))
+            return Service.GetLanguages()
+                .Select(x => new OCRLanguageOption(x.DisplayName, x.Tag))
                 .ToArray();
         }
     }
 
     public static void ThrowIfNotSupported()
     {
-        if (!IsSupported)
+        FeatureSupport support = Service.Support;
+
+        if (!support.IsSupported)
         {
-            throw new InvalidOperationException(
-                string.Format(Localization.Strings.OCRHelper_Requires_Windows_version, SupportedVersion));
+            throw new PlatformNotSupportedException(support.Reason);
         }
     }
 
@@ -65,44 +64,14 @@ public static class OCRHelper
         ThrowIfNotSupported();
         scaleFactor = Math.Max(scaleFactor, 1f);
 
-        return await Task.Run(async () =>
+        // Small text is recognised better after enlarging it.
+        byte[] png = await Task.Run(() =>
         {
             using Bitmap scaledBitmap = SkiaImageHelpers.ScaleImageFast(bitmap, scaleFactor);
-            return await OCRInternal(scaledBitmap, languageTag, singleLine);
+            using SkiaSharp.SKData data = scaledBitmap.Encode(ImageFormat.Png, 100);
+            return data.ToArray();
         });
-    }
 
-    private static async Task<string> OCRInternal(Bitmap bitmap, string languageTag, bool singleLine)
-    {
-        Language language = new(languageTag);
-        if (!OcrEngine.IsLanguageSupported(language))
-        {
-            throw new InvalidOperationException(string.Format(Localization.Strings.OCRHelper_Language_unavailable, language.DisplayName));
-        }
-
-        OcrEngine engine = OcrEngine.TryCreateFromLanguage(language);
-        using InMemoryRandomAccessStream stream = new();
-        bitmap.Save(stream.AsStream(), ImageFormat.Png);
-        stream.Seek(0);
-        BitmapDecoder decoder = await BitmapDecoder.CreateAsync(stream);
-        using SoftwareBitmap softwareBitmap = await decoder.GetSoftwareBitmapAsync();
-        OcrResult result = await engine.RecognizeAsync(softwareBitmap);
-
-        IEnumerable<string> lines;
-        if (language.LanguageTag.StartsWith("zh", StringComparison.OrdinalIgnoreCase) ||
-            language.LanguageTag.StartsWith("ja", StringComparison.OrdinalIgnoreCase))
-        {
-            lines = result.Lines.Select(line => string.Concat(line.Words.Select(word => word.Text)));
-        }
-        else if (language.LayoutDirection == LanguageLayoutDirection.Rtl)
-        {
-            lines = result.Lines.Select(line => string.Join(" ", line.Words.Reverse().Select(word => word.Text)));
-        }
-        else
-        {
-            lines = result.Lines.Select(line => line.Text);
-        }
-
-        return string.Join(singleLine ? " " : Environment.NewLine, lines);
+        return await Service.RecognizeAsync(png, languageTag, singleLine);
     }
 }

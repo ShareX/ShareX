@@ -26,6 +26,9 @@
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 
+using ShareX.HelpersLib;
+using ShareX.Platform;
+
 namespace ShareX.Tools;
 
 public static class MouseHighlighterManager
@@ -35,6 +38,16 @@ public static class MouseHighlighterManager
     private static RecordingSession? _recordingSession;
     private static MouseHighlighterWindow? _settingsWindow;
     private static volatile bool _shutdown;
+
+    /// <summary>Highlighting needs the mouse from every application and a click through overlay; Wayland allows neither.</summary>
+    public static FeatureSupport Support
+    {
+        get
+        {
+            FeatureSupport hook = PlatformServices.Current.Input.MouseHookSupport;
+            return hook.IsSupported ? PlatformServices.Current.Windows.OverlaySupport : hook;
+        }
+    }
 
     public static bool IsManuallyActive => _manualOptions != null;
     public static bool IsRecordingActive => _recordingSession != null;
@@ -106,6 +119,14 @@ public static class MouseHighlighterManager
     public static async Task<IDisposable> BeginRecordingAsync(MouseHighlighterOptions options)
     {
         AvaloniaBootstrapper.EnsureInitialized();
+
+        if (!Support.IsSupported)
+        {
+            // Record without highlighting rather than not at all.
+            DebugHelper.WriteLine("Mouse highlighter: " + Support.Reason);
+            return new NoHighlight();
+        }
+
         return await Dispatcher.UIThread.InvokeAsync(() =>
         {
             if (_shutdown) throw new InvalidOperationException("ShareX is closing.");
@@ -167,6 +188,13 @@ public static class MouseHighlighterManager
             _service.UpdateOptions(options);
         }
         StateChanged?.Invoke();
+    }
+
+    private sealed class NoHighlight : IDisposable
+    {
+        public void Dispose()
+        {
+        }
     }
 
     private sealed class RecordingSession(MouseHighlighterOptions options) : IDisposable

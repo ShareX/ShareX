@@ -24,39 +24,27 @@
 #endregion License Information (GPL v3)
 
 using Avalonia;
-using ShareX.HelpersLib;
+using ShareX.Platform;
 using SkiaSharp;
-using System.ComponentModel;
 using System.Drawing;
-using System.Runtime.InteropServices;
 
 namespace ShareX.Tools;
 
-// A native layered window gives both per-pixel alpha and reliable click-through
-// behavior without changing Avalonia's renderer or the application's DPI mode.
+/// <summary>Draws the highlights for one screen with Skia into the platform's click through overlay (IWindowService.CreateOverlay).</summary>
 internal sealed class MouseHighlighterOverlayWindow : IDisposable
 {
     private readonly MouseHighlighterService _service;
     private readonly Rectangle _screenBounds;
+    private readonly IScreenOverlay _overlay;
     private SKSurface? _surface;
-    private IntPtr _dc;
-    private IntPtr _bitmap;
-    private IntPtr _previousBitmap;
-    private int _bufferWidth;
-    private int _bufferHeight;
-    private bool _visible;
+    private OverlayBuffer _buffer;
 
     public MouseHighlighterOverlayWindow(MouseHighlighterService service, PixelRect bounds)
     {
         _service = service;
         _screenBounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height);
-        _window = new WindowsNativeWindow("ShareX - Mouse highlighter overlay", new Rectangle(bounds.X, bounds.Y, 1, 1),
-            WindowStyles.WS_EX_LAYERED | WindowStyles.WS_EX_TRANSPARENT | WindowStyles.WS_EX_TOOLWINDOW | WindowStyles.WS_EX_NOACTIVATE);
-        _window.MessageReceived += OnNativeMessage;
+        _overlay = PlatformServices.Current.Windows.CreateOverlay(new PlatformRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height));
     }
-
-    private readonly WindowsNativeWindow _window;
-    private IntPtr Handle => _window.Handle;
 
     public void Refresh()
     {
@@ -64,13 +52,21 @@ internal sealed class MouseHighlighterOverlayWindow : IDisposable
         Rectangle bounds = GetEffectBounds(options);
         if (bounds.Width <= 0 || bounds.Height <= 0)
         {
-            if (_visible) NativeMethods.ShowWindow(Handle, 0); // SW_HIDE
-            _visible = false;
+            _overlay.Hide();
             return;
         }
 
-        EnsureBuffer(bounds.Width, bounds.Height);
-        SKCanvas canvas = _surface!.Canvas;
+        OverlayBuffer buffer = _overlay.GetBuffer(bounds.Width, bounds.Height);
+        if (_surface == null || buffer != _buffer)
+        {
+            // The overlay reallocated its buffer; wrap the new memory.
+            _surface?.Dispose();
+            _buffer = buffer;
+            _surface = SKSurface.Create(new SKImageInfo(buffer.Stride / 4, buffer.Height, SKColorType.Bgra8888, SKAlphaType.Premul),
+                buffer.Pixels, buffer.Stride) ?? throw new InvalidOperationException("Could not create the mouse highlighter surface.");
+        }
+
+        SKCanvas canvas = _surface.Canvas;
         canvas.Clear(SKColors.Transparent);
         canvas.Save();
         canvas.Translate(-bounds.X, -bounds.Y);
@@ -78,20 +74,7 @@ internal sealed class MouseHighlighterOverlayWindow : IDisposable
         canvas.Restore();
         canvas.Flush();
 
-        POINT destination = new(bounds.X, bounds.Y);
-        POINT source = new(0, 0);
-        SIZE size = new(bounds.Width, bounds.Height);
-        BLENDFUNCTION blend = new() { SourceConstantAlpha = 255, AlphaFormat = NativeConstants.AC_SRC_ALPHA };
-        if (!UpdateLayeredWindow(Handle, IntPtr.Zero, ref destination, ref size, _dc, ref source, 0, ref blend, NativeConstants.ULW_ALPHA))
-        {
-            throw new Win32Exception(Marshal.GetLastWin32Error());
-        }
-        if (!_visible)
-        {
-            NativeMethods.SetWindowPos(Handle, new IntPtr(NativeConstants.HWND_TOPMOST), bounds.X, bounds.Y, bounds.Width, bounds.Height,
-                SetWindowPosFlags.SWP_NOACTIVATE | SetWindowPosFlags.SWP_SHOWWINDOW);
-            _visible = true;
-        }
+        _overlay.Present(new PlatformRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height));
     }
 
     private Rectangle GetEffectBounds(MouseHighlighterOptions options)
@@ -179,51 +162,10 @@ internal sealed class MouseHighlighterOverlayWindow : IDisposable
         Color = new SKColor(color.R, color.G, color.B, (byte)Math.Clamp(Math.Round(color.A * opacity), 0, 255))
     };
 
-    private void EnsureBuffer(int width, int height)
-    {
-        if (_surface != null && width <= _bufferWidth && height <= _bufferHeight &&
-            width >= _bufferWidth / 4 && height >= _bufferHeight / 4) return;
-        ReleaseBuffer();
-        // Reuse capacity as a ripple grows instead of allocating every frame.
-        _bufferWidth = (width + 63) / 64 * 64;
-        _bufferHeight = (height + 63) / 64 * 64;
-        _dc = NativeMethods.CreateCompatibleDC(IntPtr.Zero);
-        BITMAPINFOHEADER info = new(_bufferWidth, _bufferHeight, 32) { biHeight = -_bufferHeight };
-        _bitmap = NativeMethods.CreateDIBSection(_dc, ref info, 0, out IntPtr pixels, IntPtr.Zero, 0);
-        if (_dc == IntPtr.Zero || _bitmap == IntPtr.Zero || pixels == IntPtr.Zero)
-        {
-            ReleaseBuffer();
-            throw new InvalidOperationException("Could not allocate the mouse highlighter bitmap.");
-        }
-        _previousBitmap = NativeMethods.SelectObject(_dc, _bitmap);
-        _surface = SKSurface.Create(new SKImageInfo(_bufferWidth, _bufferHeight, SKColorType.Bgra8888, SKAlphaType.Premul), pixels, _bufferWidth * 4)
-            ?? throw new InvalidOperationException("Could not create the mouse highlighter surface.");
-    }
-
-    private void ReleaseBuffer()
+    public void Dispose()
     {
         _surface?.Dispose();
         _surface = null;
-        if (_previousBitmap != IntPtr.Zero) NativeMethods.SelectObject(_dc, _previousBitmap);
-        if (_bitmap != IntPtr.Zero) NativeMethods.DeleteObject(_bitmap);
-        if (_dc != IntPtr.Zero) NativeMethods.DeleteDC(_dc);
-        _previousBitmap = _bitmap = _dc = IntPtr.Zero;
+        _overlay.Dispose();
     }
-
-    private void OnNativeMessage(object? sender, NativeWindowMessageEventArgs message)
-    {
-        if (message.Message == 0x0084) { message.Result = new IntPtr(-1); message.Handled = true; } // HTTRANSPARENT
-        if (message.Message == 0x0021) { message.Result = new IntPtr(3); message.Handled = true; } // MA_NOACTIVATE
-    }
-
-    public void Dispose()
-    {
-        ReleaseBuffer();
-        _window.Dispose();
-    }
-
-    [DllImport("user32.dll", SetLastError = true)]
-    [return: MarshalAs(UnmanagedType.Bool)]
-    private static extern bool UpdateLayeredWindow(IntPtr window, IntPtr destinationDc, ref POINT destination,
-        ref SIZE size, IntPtr sourceDc, ref POINT source, uint colorKey, ref BLENDFUNCTION blend, uint flags);
 }

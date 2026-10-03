@@ -26,6 +26,7 @@
 using Avalonia.Controls;
 using Avalonia.Threading;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System.Diagnostics;
 using DrawingPoint = System.Drawing.Point;
 
@@ -40,14 +41,14 @@ internal sealed class MouseHighlight
     public bool Crosshairs { get; init; }
 }
 
-// Animation state stays on the Avalonia UI thread. The mouse hook has its own
-// message loop and only communicates through the nonblocking input buffer.
-internal sealed class MouseHighlighterService : IDisposable
+// Animation state stays on the Avalonia UI thread. The platform mouse hook runs on its own
+// thread and only communicates through the nonblocking input buffer.
+internal sealed class MouseHighlighterService : IDisposable, IGlobalMouseListener
 {
     private readonly List<MouseHighlighterOverlayWindow> _windows = [];
     private readonly List<MouseHighlight> _highlights = [];
     private readonly DispatcherTimer _timer;
-    private readonly MouseHighlighterMouseHook? _hook;
+    private readonly IDisposable? _hook;
     private readonly MouseHighlighterInputBuffer _input;
     private readonly Window _screenProbe = new();
     private readonly long _startTimestamp = Stopwatch.GetTimestamp();
@@ -60,6 +61,9 @@ internal sealed class MouseHighlighterService : IDisposable
 
     public MouseHighlighterService(MouseHighlighterOptions options)
     {
+        FeatureSupport support = MouseHighlighterManager.Support;
+        if (!support.IsSupported) throw new PlatformNotSupportedException(support.Reason);
+
         Options = options;
         options.Validate();
         CursorPosition = CaptureHelpers.GetCursorPosition();
@@ -68,7 +72,7 @@ internal sealed class MouseHighlighterService : IDisposable
         _timer.Tick += OnTick;
         try
         {
-            _hook = new MouseHighlighterMouseHook(_input);
+            _hook = PlatformServices.Current.Input.HookMouse(this);
             CreateOverlays();
             _screenProbe.Screens.Changed += OnScreensChanged;
             _timer.Start();
@@ -182,11 +186,6 @@ internal sealed class MouseHighlighterService : IDisposable
 
     private void OnTick(object? sender, EventArgs e)
     {
-        if (_hook?.Failure is Exception failure)
-        {
-            MouseHighlighterManager.StopOnError(this, failure);
-            return;
-        }
         ProcessPendingInput();
         double time = Time;
         _highlights.RemoveAll(highlight => highlight.Released.HasValue &&
@@ -205,6 +204,13 @@ internal sealed class MouseHighlighterService : IDisposable
         }
         catch (Exception ex) { MouseHighlighterManager.StopOnError(this, ex); }
     }
+
+    // Called on the hook thread.
+    void IGlobalMouseListener.OnMove(PlatformPoint position) => _input.SetPosition(new DrawingPoint(position.X, position.Y));
+
+    void IGlobalMouseListener.OnButton(GlobalMouseButtonEvent buttonEvent) =>
+        _input.PublishButton(new MouseHighlighterButtonEvent((MouseHighlightButton)buttonEvent.Button, buttonEvent.Pressed,
+            new DrawingPoint(buttonEvent.Position.X, buttonEvent.Position.Y), buttonEvent.Timestamp));
 
     public void Dispose()
     {
