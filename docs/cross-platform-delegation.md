@@ -13,15 +13,25 @@ Both develop and test on Linux. Only J can run Windows, so nothing on the Window
 
 **Start here:** the [first steps](#first-steps) section says what each of you does first.
 
+## Current priority: Windows and Linux first
+
+Both agents must focus on **Windows and Linux only**. The priority is porting the full **`ShareX` application project** to Linux while preserving v22 behaviour on Windows. Platform libraries or the standalone image editor running on Linux are useful progress, but do not complete the application port.
+
+**Do not work on the macOS port now.** Defer macOS implementations, UI adaptation, desktop testing, packaging and CI. A macOS port may be considered only after the Linux port is **100% complete for the agreed scope and stable enough for normal use**, demonstrated by the real application flows and verification listed below. Linux HDR support is excluded from this scope.
+
+Keep existing macOS code in place. Shared contract changes may receive only the minimum unsupported stubs or mechanical updates required to keep the solution compiling, without implementing macOS features. This rule overrides earlier three-platform wording in tasks, requests, status history and architecture documents. Ownership of deferred macOS files does not authorize working on the macOS port.
+
 ## Goal
 
-ShareX is cross-platform when all of these hold:
+The current Linux port is complete and ready for a stability review when all of these hold:
 
-1. The `ShareX` application (main window, tray, hotkeys, capture, upload, history, editor and tools) builds and runs on Windows, Linux and macOS. Shared projects target plain `net10.0`; Windows-only features come from `ShareX.Platform.Windows`.
+1. The `ShareX` application (main window, tray, hotkeys, capture, upload, history, editor and tools) builds and runs on Windows and Linux. Shared projects target plain `net10.0`; Windows-only features come from `ShareX.Platform.Windows`.
 2. No shared project contains P/Invoke, registry access, WinRT calls or `OperatingSystem.Is…()` branches (AGENTS.md, "Forbidden in shared code").
 3. Every Windows feature still works on Windows exactly as in v22, verified on Windows.
-4. On Linux (X11, and Wayland on Hyprland, sway, GNOME and KDE) and macOS, every feature works or is disabled with a reason that tells the user what to install or why it is not possible.
-5. CI builds and tests on all three operating systems. Linux has an install path (script, then a package).
+4. On Linux (X11, and Wayland on Hyprland, sway, GNOME and KDE), every feature in the agreed scope works or is disabled with a reason that tells the user what to install or why it is not possible. Real application flows, including capture, recording, clipboard, hotkeys, local test uploads, history, editor and tools, have been exercised on the supported desktops.
+5. Builds and every test project pass on Windows and Linux. Linux has an install path (script, then a package). Re-enable the paused branch workflows when the port is complete; macOS CI remains deferred.
+
+Completion also requires fixing known Linux issues that prevent normal use and recording the desktop verification and Windows sign-off in this tracker. macOS is a separate possible phase after this Linux milestone is 100% complete and stable, not a requirement of the current milestone.
 
 ## What the work is
 
@@ -29,10 +39,10 @@ Most of it is refactoring: `develop` is complete and correct on Windows, and eve
 
 The refactoring alone does not make ShareX run elsewhere. The rest is:
 
-1. **Linux and macOS implementations of every contract.** Most exist from the first branch and arrive in M1 (M).
+1. **Linux implementations of every contract.** Most exist from the first branch and arrive in M1 (M). macOS feature implementations are deferred; retain only contract compatibility as needed.
 2. **Features with no equivalent.** Wayland does not let applications list windows, move the pointer or watch global input. The backend reports `FeatureSupport.NotSupported` with a reason (M); the UI hides or disables the feature and shows the reason (J).
-3. **Gaps that need new code,** not a port: Wayland screen recording, audio sources, portal global shortcuts, macOS OCR and window management (M).
-4. **The UI on other desktops:** full-screen capture overlays, multi-monitor scaling, tray menus, fonts, emoji and cursors, theming and window behaviour on Hyprland, sway, GNOME, KDE and macOS (J).
+3. **Linux gaps that need new code,** not a port: Wayland screen recording, audio sources and portal global shortcuts (M).
+4. **The UI on Linux desktops:** full-screen capture overlays, multi-monitor scaling, tray menus, fonts, emoji and cursors, theming and window behaviour on Hyprland, sway, GNOME and KDE, with Windows regression checks (J).
 5. **Running and shipping:** start up choosing the platform, retargeting, packaging and CI (M), with both of you running the real application on Linux.
 
 ## Branches
@@ -91,21 +101,21 @@ A file that mixes UI and backend (for example a window whose code-behind calls a
 7. **Blocked?** Set `blocked: reason` and pick another task.
 8. **Status log.** One line per working session at the bottom: date, agent, what changed, files claimed or released.
 
-Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (needs the other agent or a human), `done (commit)`.
+Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `deferred: reason`, `review` (needs the other agent or a human), `done (commit)`.
 
 ### Changing a contract
 
 1. M adds the interface or member to `ShareX.Platform` and, in the same commit, a "not supported" implementation in every platform project (`UnsupportedServices.cs` where possible) and the test fakes, so the build stays green.
 2. If the contract changes what the UI can offer or show, M marks it `review` and J looks at it before it is used.
-3. M implements it on Linux and macOS and adds a W row for the Windows implementation, naming where the old Windows code lives. J implements it in `ShareX.Platform.Windows` and marks the row done; M then switches the shared call site and deletes the old code.
+3. M implements it on Linux and adds a W row for the Windows implementation, naming where the old Windows code lives. J implements it in `ShareX.Platform.Windows` and marks the row done; M then switches the shared call site and deletes the old code. macOS receives only the unsupported stubs or mechanical contract updates needed to compile during this phase.
 4. Changing or removing an existing member needs J's `review` first if UI code uses it.
 
 ## Order of work
 
 1. **Foundation (M0, M1, M2).** Build plumbing, the platform projects, and platform start up. About a day. Meanwhile J verifies the first branch's Windows code (J1) and starts on the image editor on Linux (J2), which already runs there.
-2. **Backend refactoring (M3 to M7)** and **UI on other desktops (J3 to J6), in parallel.** M moves operating system code behind services project by project, leaving wrappers and handoffs for UI call sites. J switches UI call sites, makes overlays and windows behave on each desktop, and shows unsupported features properly.
+2. **Backend refactoring (M3 to M7)** and **UI on Windows and Linux desktops (J3 to J6), in parallel.** M moves operating system code behind services project by project, leaving wrappers and handoffs for UI call sites. J switches UI call sites, makes overlays and windows behave on each supported desktop, and shows unsupported features properly.
 3. **Retarget.** Each library moves to `net10.0` as its operating system code is cleared, then the application (M8).
-4. **Run everywhere.** Linux and macOS gaps, packaging, and end-to-end runs by both of you on Linux and by J on Windows (M9 to M12, J1, J8).
+4. **Finish and stabilize Linux.** Close Linux gaps, package the application, and complete end-to-end runs by both of you on Linux and by J on Windows (M9, M11, M12, J1, J8). Do not begin M10 or other macOS work until the Linux milestone above is 100% complete and stable.
 
 ## First steps
 
@@ -119,7 +129,7 @@ Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (
 
 1. **J1, now.** On Windows, build the first branch (`git checkout cross-platform`, `dotnet build ShareX.sln -c Release -p:Platform=x64`) and work through the [Windows checklist](#j1-windows-verification-checklist). That is the Windows code M1 brings over, so bugs found now are fixed before it lands. File bug rows on `cross-platform-v2`.
 2. **Linux set-up, now.** Install the .NET 10 SDK and the tools on your Linux machine (on Arch: `sudo pacman -S --needed dotnet-sdk wl-clipboard grim slurp libnotify libsecret ffmpeg tesseract tesseract-data-eng`), and build `cross-platform-v2` there once M0 lands.
-3. **J2, now on Linux.** `ShareX.ImageEditor.App` already targets plain `net10.0`, so the image editor runs on Linux today: `dotnet run --project ShareX.ImageEditor.App -c Release -p:Platform=x64`. Make it right there: emoji and cursors off Windows (keep the Direct2D emoji and Win32 cursor renderers on Windows; elsewhere draw emoji with SkiaSharp from the system colour emoji font, Noto Color Emoji on Linux and Apple Color Emoji on macOS, and use the bundled cursors that are already the non-Windows fallback), fonts that do not exist on Linux (Segoe UI, Arial: choose fallbacks), image insert, the screen colour picker, and anything that looks wrong on Hyprland, GNOME or KDE. That is all J's code and needs nothing from M.
+3. **J2, now on Linux.** `ShareX.ImageEditor.App` already targets plain `net10.0`, so the image editor runs on Linux today: `dotnet run --project ShareX.ImageEditor.App -c Release -p:Platform=x64`. Make it right there: emoji and cursors on Linux (keep the Direct2D emoji and Win32 cursor renderers on Windows; draw emoji with SkiaSharp from the system colour emoji font, Noto Color Emoji on Linux, and use the bundled cursors as a fallback), fonts that do not exist on Linux (Segoe UI, Arial: choose fallbacks), image insert, the screen colour picker, and anything that looks wrong on Hyprland, GNOME or KDE. That is all J's code and needs nothing from M.
 
 ## Tasks: Agent M (backend)
 
@@ -128,15 +138,15 @@ Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (
 | M0 | Build plumbing: rename `Directory.build.props` and `Directory.build.targets` to `Directory.Build.*` (one commit, announced, lesson 14), set `EnableWindowsTargeting` off Windows, bring `.github/workflows/platform.yml`, and make `dotnet build ShareX.sln -c Release -p:Platform=x64` pass on Linux. | none | done (`423652e73`) |
 | M1 | Bring `ShareX.Platform`, `.Windows`, `.Linux`, `.MacOS`, `ShareX.Platform.Tests` and `ShareX.ImageEffectsLib.Tests` from the first branch; add them to `ShareX.sln`; tests pass. | M0 | done (`021fe6d39`) |
 | M2 | Platform start up in `Program.cs`: `PlatformServices.Initialize` with the services for the running operating system, `Shutdown` on exit. | M1 | in progress (2026-10-03) |
-| M3 | `HelpersLib` backend → services, then `net10.0` with CA1416 as an error. M adds the contracts, the Linux and macOS implementations and the portable façades (`WindowInfo`, print helpers and others keep their API over the services), and switches shared callers once J's Windows side is done (W rows). The Win32 code itself (`Native/`, `CursorData`, `DWMManager`, `DesktopIconManager`, `TimerResolutionManager`, `RegistryHelpers`, `WindowsImageInterop`, `InputManager`, `WindowsHotkeyHost`) moves to `ShareX.Platform.Windows` under J9. Handoffs for UI call sites. | M1, J9 | in progress (2026-10-03) |
+| M3 | `HelpersLib` backend → services, then `net10.0` with CA1416 as an error. M adds the contracts, Linux implementations, macOS unsupported stubs as needed and the portable façades (`WindowInfo`, print helpers and others keep their API over the services), and switches shared callers once J's Windows side is done (W rows). The Win32 code itself (`Native/`, `CursorData`, `DWMManager`, `DesktopIconManager`, `TimerResolutionManager`, `RegistryHelpers`, `WindowsImageInterop`, `InputManager`, `WindowsHotkeyHost`) moves to `ShareX.Platform.Windows` under J9. Handoffs for UI call sites. | M1, J9 | in progress (2026-10-03) |
 | M4 | `ScreenCaptureLib` backend → services and `net10.0`: re-apply first-branch commit `4a25a9e04` (`Screenshot` facade over `IScreenCaptureService`, snap targets, scrolling capture through `IInputService`, recording devices from the platform). The frame windows' `SetWindowShape`/`SetOverlayStyle` calls are handoffs to J. | M3 | in progress (2026-10-03) |
 | M5 | `Tools` backend → services and `net10.0`: OCR (`IOcrService`), mouse hook and overlay surface (`HookMouse`, `CreateOverlay`), inspect and borderless window services (`IWindowManagementService`), clipboard viewer data, ruler capture. Reuse the first branch's stash. | M3 | in progress (2026-10-03): OCR, mouse highlighter, inspect and borderless services done; retarget waits for HelpersLib, and the background remover needs a CPU ONNX Runtime off Windows (DirectML is Windows only) |
 | M6 | Application backend: hotkeys (`HotkeyManager` → `IHotkeyService`), startup, `SystemOptions` and `IntegrationHelpers` registry → `IStartupService`/`IShellIntegrationService`, capture helpers and `ScreenRecordManager` window calls → `IWindowService`, `TaskHelpers` operating system calls. `NativeMessagingHost` → `net10.0`. | M3 | in progress (2026-10-03) |
 | M7 | Retarget `HistoryLib`, `UploadersLib`, `ImageEffectsLib` and the image editor's operating system services (desktop wallpaper → `IDesktopWallpaperService`) to `net10.0`. | M3 | todo |
 | M8 | Retarget the `ShareX` application to `net10.0` plus `net10.0-windows10.0.22621.0` (Windows release, for WinRT features), choosing the platform at start up. | M3 to M7, J3 | todo |
 | M9 | Linux gaps: Wayland screen recording (portal ScreenCast and PipeWire, or wf-recorder/wl-screenrec on wlroots), PulseAudio/PipeWire audio for FFmpeg, X11 mouse hook and overlay surface, window icons on Wayland, portal global shortcuts. | M4, M5 | todo |
-| M10 | macOS: OCR with Vision, window management through the Accessibility API, mouse hook (CGEventTap) and overlay surface, recording on Apple silicon. Needs a Mac tester. | M4, M5 | todo |
-| M11 | Packaging and CI: build and test the real application on Linux and macOS in CI; Linux installer for the real application; then AppImage or Flatpak; keep `docs/cross-platform.md` current. | M8 | todo |
+| M10 | Possible later macOS port: OCR with Vision, window management through the Accessibility API, mouse hook (CGEventTap) and overlay surface, recording on Apple silicon. Needs a Mac tester. Do not start during the Windows/Linux phase. | Linux port 100% complete and stable; M4, M5 | deferred: Linux milestone must be complete and stable before macOS is considered |
+| M11 | Packaging and CI for Windows and Linux: build and test the real application; Linux installer for the real application; then AppImage or Flatpak; keep `docs/cross-platform.md` current. Keep branch workflows paused until the port is complete, then re-enable them. macOS packaging and CI are deferred with M10. | M8 | todo |
 | M12 | Decide with Jaex whether `ShareX.Desktop` (the first branch's host and `sharex` command line) and `ShareX.Destinations` come over, are folded into the application, or are dropped. | M8 | todo |
 | M13 | Serve J's requests, and keep the handoff log current. | requests | ongoing |
 
@@ -145,11 +155,11 @@ Status values: `todo`, `in progress (YYYY-MM-DD)`, `blocked: reason`, `review` (
 | ID | Task | Depends on | Status |
 | --- | --- | --- | --- |
 | J1 | **Verify on Windows** everything in `ShareX.Platform.Windows`, using the checklist below. Start now on the first branch; continue on `cross-platform-v2` for every change M makes. File bug rows. | none | in progress (2026-10-03) |
-| J2 | Image editor on Linux (runs today through `ShareX.ImageEditor.App`): emoji and cursors off Windows (Windows keeps its Direct2D and Win32 renderers; Linux and macOS draw emoji with SkiaSharp from the system colour emoji font and use the bundled cursors), font fallbacks for fonts Linux lacks, image insert, screen colour picker window, appearance on Hyprland, GNOME and KDE. | none | in progress (2026-10-03) |
+| J2 | Image editor on Linux (runs today through `ShareX.ImageEditor.App`): emoji and cursors on Linux (Windows keeps its Direct2D and Win32 renderers; Linux draws emoji with SkiaSharp from the system colour emoji font and uses the bundled cursors as a fallback), font fallbacks for fonts Linux lacks, image insert, screen colour picker window, appearance on Hyprland, GNOME and KDE. | none | in progress (2026-10-03) |
 | J3 | Application shell UI: tray through Avalonia `TrayIcon` and `DesktopServices.RegisterTrayIcon` (retire `WindowsTrayIcon` use in `TrayIconService`), retire what is left of `Forms/MainForm.cs`, main window behaviour on Linux desktops. | M2 | todo |
-| J4 | Capture overlays on every desktop: region capture, screen recording frame and tool bar, scrolling capture region window, mouse highlighter drawing, pin to screen, ruler. Full-screen placement, multi-monitor and mixed scaling on Hyprland, sway, GNOME, KDE and macOS. Switch their window-shape and overlay calls to the services (handoffs from M4, M5). | M4, M5 | in progress (2026-10-03) |
+| J4 | Capture overlays on Windows and Linux desktops: region capture, screen recording frame and tool bar, scrolling capture region window, mouse highlighter drawing, pin to screen, ruler. Full-screen placement, multi-monitor and mixed scaling on Windows, Hyprland, sway, GNOME and KDE. Switch their window-shape and overlay calls to the services (handoffs from M4, M5). macOS overlay work is deferred. | M4, M5 | in progress (2026-10-03) |
 | J5 | Unsupported features in the UI: wherever a service reports `NotSupported`, hide or disable the menu item, button or setting and show the reason as its tooltip (window capture and snapping on GNOME/KDE Wayland, scroll methods, mouse highlighter, inspect window, OCR without Tesseract, recording on Wayland until M9). | M3 to M6 | in progress (2026-10-03) |
-| J6 | Graphics on other platforms: tray and menu icons on light and dark Linux panels, theme and accent detection, DPI and fractional scaling, image formats and codecs. Keep existing Windows HDR behavior; Jaex excludes Linux HDR support from this port. | M2 | in progress (2026-10-03) |
+| J6 | Graphics on Windows and Linux: tray and menu icons on light and dark Linux panels, theme and accent detection, DPI and fractional scaling, image formats and codecs. Keep existing Windows HDR behavior; Jaex excludes Linux HDR support from this port. | M2 | in progress (2026-10-03) |
 | J7 | Switch UI call sites listed in the handoff log as they appear. | handoffs | ongoing: H1 to H5 done |
 | J9 | **Windows platform.** Own `ShareX.Platform.Windows`: work through the W rows, move develop's remaining Win32 code from `HelpersLib` (`Native/`, `NativeMethods*`, `WindowInfo` internals, `DWMManager`, `DesktopIconManager`, `TimerResolutionManager`, `RegistryHelpers`, `WindowsImageInterop`, `InputManager`, `WindowsHotkeyHost`, `CursorData`), `ScreenCaptureLib`, `Tools` and the application into it behind the existing services, and fix Windows bugs found in J1. | none | in progress (2026-10-03) |
 | J8 | End-to-end runs of the real application once M8 lands: on Windows (sign-off) and on Linux (with McoreD). File bug rows. | M8 | todo |
@@ -316,3 +326,4 @@ One line per working session, newest at the bottom.
 - 2026-10-03, M: Recording frame placement on Hyprland with XWayland zero scaling: new `IWindowService.GetOwnWindowPixelScale` (1 everywhere except Hyprland with `xwayland:force_zero_scaling`, where it is the monitor scale); `ScreenRecordManager` converts the region into the frame window's pixels and back (`CaptureHelpers.ScreenToOwnWindowPixels`). No J file changed for this.
 - 2026-10-03, M: Global hotkeys on Hyprland were silently broken: xdg-desktop-portal 1.19+ answers GlobalShortcuts with "An app id is required" unless an unsandboxed app first calls `org.freedesktop.host.portal.Registry.Register`. `DBusSession` now registers `sharex` (the desktop entry the installer writes) right after connecting; when the entry is missing the hotkey service reports that reason. Descriptions come from the task settings. Verified: `hyprctl globalshortcuts` lists ShareX's hotkeys and dispatching `sharex:sharex-2` captures the screen. Hyprland users bind keys themselves (`bind = , Print, global, sharex:sharex-2`), to be documented with packaging (M11).
 - 2026-10-03, M: Clipboard on Wayland: what ShareX copied through Avalonia's XWayland clipboard could not be read by Wayland applications (wl-paste returned nothing). New `IClipboardService.PreferredForWriting` (true only with wl-clipboard on Wayland); `ClipboardHelpers` then writes text, images and files with wl-copy. Windows, macOS and X11 keep the Avalonia path and its image options. Verified: uploaded URL pastes in Wayland apps. Upload to a local test server works end to end (custom uploader, multipart, `{json:url}`).
+- 2026-10-03, J: At Jaex's request, AGENTS.md and this tracker now prioritize the full ShareX application port to Linux while preserving Windows behaviour. Active work is Windows/Linux only; macOS implementations, UI, testing, packaging and CI are deferred until the agreed Linux scope is 100% complete and stable. M10 is deferred and active task/contract wording is aligned. Existing macOS code may receive only the minimum unsupported stubs or mechanical contract updates needed to compile. Linux HDR remains excluded; the workflow pause remains in place. This is a documentation change, with no code or file moves. Windows Release solution build: 0 warnings/errors; all four test projects pass (342 tests, 7 Unix-only skips).

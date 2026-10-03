@@ -2,11 +2,19 @@
 
 Rules for people and coding agents working in this repository.
 
-The `cross-platform-v2` branch turns ShareX from a Windows application into one codebase that runs on Windows, macOS and Linux. Before changing anything, read:
+The `cross-platform-v2` branch ports ShareX to Linux while preserving Windows support. macOS is a possible later phase. Before changing anything, read:
 
 - [docs/cross-platform-learnings.md](docs/cross-platform-learnings.md): what the first attempt taught, and the rules that follow from it.
 - [docs/cross-platform-delegation.md](docs/cross-platform-delegation.md): which agent owns which project, the task tracker and the request log.
 - [docs/cross-platform.md](docs/cross-platform.md): the target architecture and how to build.
+
+## Platform priorities: Linux first
+
+All agents must focus on **Windows and Linux only** during the current port. Prioritize porting the full **`ShareX` application project** to Linux, including its main window, tray, hotkeys, capture, upload, history, editor and tools. Keep Windows behaviour identical to v22 throughout the migration.
+
+**Do not work on the macOS port now.** macOS implementation, UI adaptation, desktop verification, packaging and CI work are deferred. Only after the Linux port is **100% complete for the agreed scope and stable enough for normal use**, with real application flows verified on the supported Linux desktops and Windows regressions checked, may a macOS port be considered. A successful build or a working standalone editor alone does not meet this milestone. Linux HDR support is excluded from the agreed scope.
+
+Existing macOS code may remain. When a shared contract changes, add only the minimum unsupported stubs or mechanical updates needed to keep the solution compiling; this does not authorize macOS feature work. This priority rule takes precedence over older three-platform task wording and target architecture descriptions.
 
 ## Start of every session
 
@@ -55,7 +63,7 @@ There is no `ShareX.HelpersLib.Windows`. Windows-only code goes into `ShareX.Pla
 
 1. Find the service in `ShareX.Platform/Services` that owns the area, or add a new `I…Service` and expose it on `IPlatformServices`. Contracts in `ShareX.Platform` are changed only by their owner (McoreD's agent, see the delegation file), who adds "not supported" stubs to every platform project in the same commit; others file a request. `ShareX.Platform.Windows` is written by Jaex's agent (the Windows lead): McoreD's agent adds a W row to the delegation file instead of writing Windows code, and switches shared code only after the Windows implementation is done.
 2. Model the result with portable types. Never leak `IntPtr` meaning, Win32 enums, X11 atoms or Cocoa objects through the interface.
-3. Implement it in **every** platform project. Where a platform cannot do it, return `FeatureSupport.NotSupported(reason)` with a user-facing reason; on Linux use `LinuxPackages` so the reason names the package and the install command for the user's distribution. `UnsupportedServices.cs` holds reusable "not available" implementations.
+3. Implement it on **Windows and Linux** during the current phase; keep macOS compatible with shared contracts using unsupported stubs only. Where a platform cannot do it, return `FeatureSupport.NotSupported(reason)` with a user-facing reason; on Linux use `LinuxPackages` so the reason names the package and the install command for the user's distribution. `UnsupportedServices.cs` holds reusable "not available" implementations.
 4. In shared code, read `Support` before offering the feature, and hide or disable the UI with the reason as its tooltip rather than failing at run time.
 5. Keep Windows behaviour identical to what it was. The Windows implementation is usually the code that used to live in the shared project, moved behind the interface by Jaex's agent, and it is not done until it has run on Windows.
 6. Add tests in `ShareX.Platform.Tests` for parsing and argument building so they run on every OS.
@@ -63,7 +71,7 @@ There is no `ShareX.HelpersLib.Windows`. Windows-only code goes into `ShareX.Pla
 ### Enforcement
 
 - Shared projects set `<WarningsAsErrors>$(WarningsAsErrors);CA1416</WarningsAsErrors>` once they target `net10.0`. Never suppress CA1416 with `#pragma`, `[SuppressMessage]` or `NoWarn` in shared code; move the code behind a platform service instead.
-- `dotnet build ShareX.sln -c Release -p:Platform=x64` must pass on Windows, Linux and macOS, and every test project must pass, before each push.
+- `dotnet build ShareX.sln -c Release -p:Platform=x64` must pass on Windows and Linux, and every test project must pass, before each push. macOS build and desktop verification are deferred with the macOS port.
 - The Windows application must keep opening and running from Visual Studio on Windows without extra steps.
 
 ### Migration debt on `cross-platform-v2` (remove, do not add to)
