@@ -945,3 +945,49 @@ public class HyprlandShortcutKeyBinderTests
             TimeSpan? timeout = null, System.Threading.CancellationToken cancellationToken = default) => throw new NotSupportedException();
     }
 }
+
+public class SwayHotkeyTests
+{
+    [Fact]
+    public void HotkeysBecomeSwayCombinations() =>
+        Assert.Equal("Ctrl+Shift+Print", ShareX.Platform.Linux.Desktop.SwayHotkeyService.ToCombination(new PlatformHotkey(0x2C, HotkeyModifiers.Control | HotkeyModifiers.Shift)));
+
+    [Fact]
+    public void ConfiguredBindsResolveVariablesAndAliases()
+    {
+        string config = System.Text.Json.JsonSerializer.Serialize(new { config = "set $mod Mod4\nbindsym $mod+Return exec foot\nbindsym --release Print exec grim\nbindsym Control+Alt+Delete exit\n" });
+
+        HashSet<string> combinations = ShareX.Platform.Linux.Desktop.SwayHotkeyService.GetConfiguredCombinations(config);
+
+        Assert.Contains("mod4+return", combinations);
+        Assert.Contains("print", combinations);
+        Assert.Contains(ShareX.Platform.Linux.Desktop.SwayHotkeyService.Normalize("Ctrl+Mod1+Delete"), combinations);
+        Assert.DoesNotContain(ShareX.Platform.Linux.Desktop.SwayHotkeyService.Normalize("Ctrl+Print"), combinations);
+    }
+
+    [Theory]
+    [InlineData("{\"change\":\"run\",\"binding\":{\"command\":\"nop sharex-3\"}}", 3)]
+    [InlineData("{\"change\":\"run\",\"binding\":{\"command\":\"exec foot\"}}", null)]
+    [InlineData("not json", null)]
+    public void BindingEventsNameTheHotkey(string line, int? id) =>
+        Assert.Equal(id, ShareX.Platform.Linux.Desktop.SwayHotkeyService.ParseBindingEvent(line));
+
+    [Theory]
+    [InlineData("[{\"success\": true}]", true)]
+    [InlineData("[{\"success\": false, \"error\": \"x\"}]", false)]
+    [InlineData(null, false)]
+    public void CommandResults(string? output, bool success) =>
+        Assert.Equal(success, ShareX.Platform.Linux.Desktop.SwayHotkeyService.IsSuccess(output));
+}
+
+public class LinuxDesktopKindTests
+{
+    [Theory]
+    [InlineData(DisplayServer.X11, DesktopEnvironment.Gnome, ShareX.Platform.Linux.Desktop.LinuxDesktopKind.X11)]
+    [InlineData(DisplayServer.Wayland, DesktopEnvironment.Hyprland, ShareX.Platform.Linux.Desktop.LinuxDesktopKind.Hyprland)]
+    [InlineData(DisplayServer.Wayland, DesktopEnvironment.Sway, ShareX.Platform.Linux.Desktop.LinuxDesktopKind.Sway)]
+    [InlineData(DisplayServer.Wayland, DesktopEnvironment.Kde, ShareX.Platform.Linux.Desktop.LinuxDesktopKind.Kde)]
+    [InlineData(DisplayServer.Wayland, DesktopEnvironment.Xfce, ShareX.Platform.Linux.Desktop.LinuxDesktopKind.OtherWayland)]
+    public void DesktopKindFollowsSession(DisplayServer server, DesktopEnvironment desktop, ShareX.Platform.Linux.Desktop.LinuxDesktopKind kind) =>
+        Assert.Equal(kind, ShareX.Platform.Linux.Desktop.LinuxDesktop.GetKind(new PlatformInfo(OperatingSystemKind.Linux, server, desktop, desktop.ToString(), false)));
+}

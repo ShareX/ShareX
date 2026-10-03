@@ -56,7 +56,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
         WindowManagement = new LinuxWindowManagementService(windows, runner);
         screenCapture = new Lazy<IScreenCaptureService>(() => new LinuxScreenCaptureService(info, runner, windows));
         ScreenRecording = new LinuxScreenRecordingService(info, runner, () => screenCapture.Value.GetScreens());
-        hotkeys = new Lazy<IHotkeyService>(() => CreateHotkeyService(info, describeHotkey));
+        Desktop = new LinuxDesktop(info);
+        hotkeys = new Lazy<IHotkeyService>(() => Desktop.CreateHotkeyService(runner, describeHotkey));
         Notifications = new FreedesktopNotificationService(info, runner);
         Shell = new LinuxShellService(runner);
         ShellIntegration = new LinuxShellIntegrationService(paths, runner);
@@ -72,6 +73,9 @@ public sealed class LinuxPlatformServices : IPlatformServices
     }
 
     public PlatformInfo Info { get; }
+
+    /// <summary>The desktop kind and the per-desktop strategies the services use.</summary>
+    public LinuxDesktop Desktop { get; }
 
     public IPathService Paths { get; }
 
@@ -123,25 +127,6 @@ public sealed class LinuxPlatformServices : IPlatformServices
     public IDesktopWallpaperService Wallpaper { get; }
 
     public IApplicationSessionService Session { get; } = new UnsupportedApplicationSessionService("Linux desktops restore applications through their own session settings.");
-
-    private static IHotkeyService CreateHotkeyService(PlatformInfo info, Func<int, string>? describeHotkey)
-    {
-        if (info.IsX11 && !info.IsSandboxed)
-        {
-            return new X11HotkeyService();
-        }
-
-        if (DBusSession.IsAvailable)
-        {
-            // Hyprland's portal registers shortcuts without keys; ShareX binds them at runtime.
-            IShortcutKeyBinder? binder = info.DesktopEnvironment == DesktopEnvironment.Hyprland
-                ? new HyprlandShortcutKeyBinder(CommandRunner.Default, DBusSession.ApplicationId)
-                : null;
-            return new PortalGlobalShortcutsService(describeHotkey, binder);
-        }
-
-        return new UnsupportedHotkeyService("Global hotkeys need an X11 session or the xdg-desktop-portal GlobalShortcuts interface.");
-    }
 
     public void Dispose()
     {

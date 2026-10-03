@@ -28,7 +28,7 @@ This document describes the **target** architecture. At the branch point (`devel
 | `IClipboardService` | Win32 clipboard | NSPasteboard | xclip or xsel | wl-clipboard (also used for copying, since Wayland apps cannot read the XWayland clipboard) |
 | `IScreenCaptureService` | GDI, HDR tone mapping, window and transparent window capture | `screencapture` (Screen Recording permission) | Xlib | grim on wlroots, otherwise the xdg-desktop-portal Screenshot interface |
 | `IScreenRecordingService` | FFmpeg gdigrab, ddagrab, DirectShow | FFmpeg avfoundation | FFmpeg x11grab | wf-recorder into FFmpeg on Hyprland and sway; not yet on GNOME and KDE (portal ScreenCast) |
-| `IHotkeyService` | RegisterHotKey | Carbon hot keys | XGrabKey | Portal GlobalShortcuts (needs the `sharex.desktop` entry); on Hyprland ShareX also binds the keys |
+| `IHotkeyService` | RegisterHotKey | Carbon hot keys | XGrabKey | Hyprland: portal GlobalShortcuts with keys bound by ShareX; sway: IPC binds; GNOME, KDE: portal GlobalShortcuts (needs the `sharex.desktop` entry) |
 | `IWindowService` | Win32 windows and child controls, cursor, overlays | CGWindowList | EWMH, XShape | Hyprland and sway IPC only |
 | `IWindowManagementService` | Inspect, top most, opacity, borderless | Not yet | EWMH | Hyprland and sway IPC only |
 | `IInputService` | SendInput, WM_VSCROLL, low-level mouse hook | Quartz events (Accessibility permission) | XTEST | Hyprland key shortcuts only |
@@ -44,6 +44,10 @@ This document describes the **target** architecture. At the branch point (`devel
 | `ITaskbarService` | ITaskbarList3 progress | Not yet | Unity launcher API (KDE, Dash to Dock, Plank) | Same as X11 |
 | `ISystemGraphicsService` | Not yet (W4: DirectWrite emoji, Win32 cursors) | Not supported | Cursor theme via libXcursor | Same as X11 |
 | `ISystemInfoService`, `ISystemPreferencesService` | OS name, elevation, wheel lines, small icon size, task bar theme | `sw_vers`, defaults | os-release, defaults | Same as X11 |
+
+## Linux desktops
+
+Linux differs between compositors as much as between operating systems, so `ShareX.Platform.Linux` is desktop aware as well. `Desktop/LinuxDesktop` classifies the session (X11, Hyprland, sway, GNOME, KDE, other Wayland) and decides which implementation a service uses there; services that differ between compositors ask it instead of checking the desktop themselves. Desktop-specific pieces live under `Desktop/`, for example `HyprlandShortcutKeyBinder` and `SwayHotkeyService`. Hotkeys are the first service chosen this way; window, capture and recording backends follow.
 
 ## Start up
 
