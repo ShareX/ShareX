@@ -73,7 +73,9 @@ internal static class ClipboardHelpersEx
             int bitCount = BinaryPrimitives.ReadUInt16LittleEndian(bytes[14..]);
             int compression = BinaryPrimitives.ReadInt32LittleEndian(bytes[16..]);
             uint colorCount = BinaryPrimitives.ReadUInt32LittleEndian(bytes[32..]);
-            int paletteSize = bitCount <= 8 ? checked((int)(colorCount == 0 ? 1u << bitCount : colorCount) * 4) : 0;
+            // True-color DIBs can also carry an optimal color table before the pixels.
+            uint paletteEntries = colorCount != 0 ? colorCount : bitCount <= 8 ? 1u << bitCount : 0;
+            int paletteSize = checked((int)paletteEntries * 4);
             int pixelOffset = checked(headerSize + paletteSize + (headerSize == 40 && compression == 3 ? 12 : headerSize == 40 && compression == 6 ? 16 : 0));
             int rowBytes = checked((width * bitCount + 31) / 32 * 4);
             if (width <= 0 || height <= 0 || pixelOffset > data.Length || (long)rowBytes * height > data.Length - pixelOffset) return null;
