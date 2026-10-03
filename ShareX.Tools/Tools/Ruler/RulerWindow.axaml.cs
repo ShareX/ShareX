@@ -30,6 +30,7 @@ using Avalonia.Input.Platform;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Platform;
 using ShareX.Tools.Controls;
 using ShareX.Tools.Ruler;
 
@@ -44,8 +45,6 @@ public partial class RulerWindow : Window
         AvaloniaXamlLoader.Load(this);
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         _overlay = this.FindControl<RulerOverlayControl>("RulerOverlay")!;
-
-        ConfigureOverlayAndCaptureScreen();
 
         KeyDown += OnKeyDown;
         AddHandler(PointerReleasedEvent, OnWindowPointerReleased);
@@ -65,7 +64,8 @@ public partial class RulerWindow : Window
         }
     }
 
-    private void ConfigureOverlayAndCaptureScreen()
+    /// <summary>Captures before showing the overlay, including when the platform needs an asynchronous permission prompt.</summary>
+    public async Task ShowRulerAsync(CancellationToken cancellationToken = default)
     {
         IReadOnlyList<Screen> screens = Screens.All;
         if (screens.Count == 0)
@@ -78,14 +78,16 @@ public partial class RulerWindow : Window
         int right = screens.Max(screen => screen.Bounds.Right);
         int bottom = screens.Max(screen => screen.Bounds.Bottom);
         PixelRect bounds = new(left, top, right - left, bottom - top);
-        double scaling = Screens.ScreenFromPoint(bounds.Position)?.Scaling ?? screens[0].Scaling;
-
-        ScreenPixelBuffer screenPixelBuffer = ScreenPixelBuffer.Capture(bounds);
+        ScreenPixelBuffer screenPixelBuffer = await ScreenPixelBuffer.CaptureAsync(
+            PlatformServices.Current.ScreenCapture, bounds, cancellationToken);
         _overlay.SetScreenPixelBuffer(screenPixelBuffer);
 
+        bounds = screenPixelBuffer.Bounds;
+        double scaling = Screens.ScreenFromPoint(bounds.Position)?.Scaling ?? screens[0].Scaling;
         Position = bounds.Position;
         Width = bounds.Width / scaling;
         Height = bounds.Height / scaling;
+        Show();
     }
 
     private async Task CopyMeasurementAsync()

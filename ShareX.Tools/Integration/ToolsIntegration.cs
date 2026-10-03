@@ -234,7 +234,25 @@ public static class ToolsIntegration
 
     public static void ShowRulerWindow()
     {
-        Show(() => new RulerWindow());
+        AvaloniaBootstrapper.EnsureInitialized();
+        Dispatcher.UIThread.Post(async () =>
+        {
+            RulerWindow window = new();
+            try
+            {
+                await window.ShowRulerAsync();
+            }
+            catch (OperationCanceledException)
+            {
+                window.Close();
+            }
+            catch (Exception exception)
+            {
+                window.Close();
+                ShareX.AvaloniaUI.MessageBox.Show(exception.Message, Localization.Strings.RulerWindow_ShareX_Ruler,
+                    ShareX.AvaloniaUI.MessageBoxButtons.OK, ShareX.AvaloniaUI.MessageBoxIcon.Error);
+            }
+        });
     }
 
     public static void ShowMouseHighlighterWindow(MouseHighlighterOptions options, Action? settingsChanged = null)

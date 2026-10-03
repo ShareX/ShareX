@@ -26,6 +26,7 @@
   <ItemGroup>
     <Using Include="ShareX.AvaloniaUI.Imaging" />
     <Using Include="ShareX.Tools.Infrastructure" />
+    <InternalsVisibleTo Include="ShareX.Tools.Tests" />
   </ItemGroup>
 
   <ItemGroup>

@@ -24,7 +24,8 @@
 #endregion License Information (GPL v3)
 
 using Avalonia;
-using ShareX.HelpersLib;
+using ShareX.Platform;
+using ShareX.Platform.Imaging;
 using SkiaSharp;
 
 using System.Runtime.InteropServices;
@@ -44,18 +45,80 @@ internal sealed class ScreenPixelBuffer
         _pixels = pixels;
     }
 
-    public static ScreenPixelBuffer Capture(PixelRect bounds)
+    public static async Task<ScreenPixelBuffer> CaptureAsync(IScreenCaptureService capture, PixelRect bounds,
+        CancellationToken cancellationToken = default)
     {
+        ArgumentNullException.ThrowIfNull(capture);
         if (bounds.Width <= 0 || bounds.Height <= 0)
         {
             throw new ArgumentOutOfRangeException(nameof(bounds));
         }
 
-        using SKBitmap bitmap = WindowsImageInterop.Capture(new DrawingRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height));
-        int[] pixels = new int[bitmap.Width * bitmap.Height];
-        for (int y = 0; y < bitmap.Height; y++)
-            Marshal.Copy(IntPtr.Add(bitmap.GetPixels(), y * bitmap.RowBytes), pixels, y * bitmap.Width, bitmap.Width);
-        return new ScreenPixelBuffer(bounds, pixels);
+        if (!capture.Support.IsSupported)
+        {
+            throw new PlatformNotSupportedException(capture.Support.Reason);
+        }
+
+        cancellationToken.ThrowIfCancellationRequested();
+        ScreenCaptureResult result = await capture.CaptureAsync(ScreenCaptureRequest.ForRegion(
+            new PlatformRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height)), cancellationToken).ConfigureAwait(false);
+        cancellationToken.ThrowIfCancellationRequested();
+        return FromCapture(result);
+    }
+
+    internal static ScreenPixelBuffer FromCapture(ScreenCaptureResult capture)
+    {
+        ArgumentNullException.ThrowIfNull(capture);
+        PlatformRectangle area = capture.Bounds;
+        if (area.IsEmpty)
+        {
+            throw new ArgumentException("The captured screen bounds are empty.", nameof(capture));
+        }
+
+        PixelBuffer image;
+        if (capture.Pixels is PixelBuffer pixels)
+        {
+            image = pixels;
+        }
+        else
+        {
+            using SKBitmap bitmap = SKBitmap.Decode(capture.Png)
+                ?? throw new InvalidOperationException("The captured image could not be decoded.");
+            using SKBitmap bgra = new(new SKImageInfo(bitmap.Width, bitmap.Height, SKColorType.Bgra8888, SKAlphaType.Unpremul));
+            using SKPixmap source = bitmap.PeekPixels();
+            if (!source.ReadPixels(bgra.Info, bgra.GetPixels(), bgra.RowBytes))
+            {
+                throw new InvalidOperationException("The captured image pixels could not be read.");
+            }
+
+            image = new PixelBuffer(bgra.Width, bgra.Height);
+            for (int y = 0; y < bgra.Height; y++)
+            {
+                Marshal.Copy(IntPtr.Add(bgra.GetPixels(), y * bgra.RowBytes), image.Pixels, y * image.Stride, image.Stride);
+            }
+        }
+
+        int[] samples = new int[checked(area.Width * area.Height)];
+        if (image.Width == area.Width && image.Height == area.Height)
+        {
+            Buffer.BlockCopy(image.Pixels, 0, samples, 0, checked(samples.Length * 4));
+        }
+        else
+        {
+            // Some compositors return a scaled image. Keep sampling in the desktop coordinate system,
+            // without interpolating colours across the edges the ruler needs to detect.
+            ReadOnlySpan<int> source = MemoryMarshal.Cast<byte, int>(image.Pixels);
+            for (int y = 0; y < area.Height; y++)
+            {
+                int sourceRow = (int)((long)y * image.Height / area.Height) * image.Width;
+                for (int x = 0; x < area.Width; x++)
+                {
+                    samples[y * area.Width + x] = source[sourceRow + (int)((long)x * image.Width / area.Width)];
+                }
+            }
+        }
+
+        return new ScreenPixelBuffer(new PixelRect(area.X, area.Y, area.Width, area.Height), samples);
     }
 
     public DrawingRectangle FindColorRun(PixelPoint point, bool horizontal, int tolerance)
@@ -110,17 +173,15 @@ internal sealed class ScreenPixelBuffer
         int topLeftColor = GetPixel(selection.Left, selection.Top);
         int bottomRightColor = GetPixel(selection.Right - 1, selection.Bottom - 1);
 
-        int left = FindFirstContentColumn(selection, topLeftColor, tolerance);
-        if (left < 0)
+        if (FindFirstContentColumn(selection, topLeftColor, tolerance) is not int left)
         {
             return selection;
         }
 
-        int top = FindFirstContentRow(selection, topLeftColor, tolerance);
-        int right = FindLastContentColumn(selection, bottomRightColor, tolerance);
-        int bottom = FindLastContentRow(selection, bottomRightColor, tolerance);
-
-        if (top < 0 || right < left || bottom < top)
+        if (FindFirstContentRow(selection, topLeftColor, tolerance) is not int top ||
+            FindLastContentColumn(selection, bottomRightColor, tolerance) is not int right ||
+            FindLastContentRow(selection, bottomRightColor, tolerance) is not int bottom ||
+            right < left || bottom < top)
         {
             return selection;
         }
@@ -151,7 +212,7 @@ internal sealed class ScreenPixelBuffer
         Math.Clamp(point.X, Bounds.X, Bounds.Right - 1),
         Math.Clamp(point.Y, Bounds.Y, Bounds.Bottom - 1));
 
-    private int FindFirstContentColumn(DrawingRectangle selection, int background, int tolerance)
+    private int? FindFirstContentColumn(DrawingRectangle selection, int background, int tolerance)
     {
         for (int x = selection.Left; x < selection.Right; x++)
         {
@@ -164,10 +225,10 @@ internal sealed class ScreenPixelBuffer
             }
         }
 
-        return -1;
+        return null;
     }
 
-    private int FindFirstContentRow(DrawingRectangle selection, int background, int tolerance)
+    private int? FindFirstContentRow(DrawingRectangle selection, int background, int tolerance)
     {
         for (int y = selection.Top; y < selection.Bottom; y++)
         {
@@ -180,10 +241,10 @@ internal sealed class ScreenPixelBuffer
             }
         }
 
-        return -1;
+        return null;
     }
 
-    private int FindLastContentColumn(DrawingRectangle selection, int background, int tolerance)
+    private int? FindLastContentColumn(DrawingRectangle selection, int background, int tolerance)
     {
         for (int x = selection.Right - 1; x >= selection.Left; x--)
         {
@@ -196,10 +257,10 @@ internal sealed class ScreenPixelBuffer
             }
         }
 
-        return -1;
+        return null;
     }
 
-    private int FindLastContentRow(DrawingRectangle selection, int background, int tolerance)
+    private int? FindLastContentRow(DrawingRectangle selection, int background, int tolerance)
     {
         for (int y = selection.Bottom - 1; y >= selection.Top; y--)
         {
@@ -212,7 +273,7 @@ internal sealed class ScreenPixelBuffer
             }
         }
 
-        return -1;
+        return null;
     }
 
     private int GetPixel(int screenX, int screenY)

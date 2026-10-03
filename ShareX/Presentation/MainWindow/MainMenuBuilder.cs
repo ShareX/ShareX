@@ -253,7 +253,8 @@ internal sealed class MainMenuBuilder
             Tool(nameof(Strings.MainMenuBuilder_ColorPicker), Strings.MainMenuBuilder_ColorPicker, LucideIcons.palette, () => TaskHelpers.ShowColorPickerDialog()),
             Tool(nameof(Strings.MainMenuBuilder_MouseHighlighter), Strings.MainMenuBuilder_MouseHighlighter, LucideIcons.mouse_pointer_click, () => TaskHelpers.OpenMouseHighlighter()),
             Tool(nameof(Strings.MainMenuBuilder_PinToScreenDialog), Strings.MainMenuBuilder_PinToScreenDialog, LucideIcons.pin, () => TaskHelpers.PinToScreen()),
-            Tool(nameof(Strings.MainMenuBuilder_Ruler), Strings.MainMenuBuilder_Ruler, LucideIcons.ruler, () => TaskHelpers.OpenRuler()),
+            Tool(nameof(Strings.MainMenuBuilder_Ruler), Strings.MainMenuBuilder_Ruler, LucideIcons.ruler, () => TaskHelpers.OpenRuler(),
+                PlatformServices.Current.ScreenCapture.Support),
             Tool(nameof(Strings.MainMenuBuilder_ScreenColorPicker), Strings.MainMenuBuilder_ScreenColorPicker, LucideIcons.pipette, () => TaskHelpers.OpenScreenColorPicker())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryImages,
@@ -590,8 +591,8 @@ internal sealed class MainMenuBuilder
     private static MainMenuEntry Item(string header, string icon, Func<Task> execute, bool isVisible = true) =>
         new(header, icon, execute, isVisible: isVisible);
 
-    private static MainMenuEntry Tool(string id, string header, string icon, Action execute) =>
-        new(header, icon, execute, id: id);
+    private static MainMenuEntry Tool(string id, string header, string icon, Action execute, FeatureSupport? support = null) =>
+        new(header, icon, execute, id: id, isEnabled: support?.IsSupported ?? true, toolTip: support?.Reason);
 
     private static MainMenuEntry Tool(string id, string header, string icon, Func<Task> execute) =>
         new(header, icon, execute, id: id);
