@@ -724,3 +724,13 @@ public class UnityLauncherTaskbarTests
         new UnityLauncherTaskbarService().SetProgressValue(5, 0);
     }
 }
+
+public class WindowDetailsTests
+{
+    [Fact]
+    public void ClientBoundsAreInClientCoordinates()
+    {
+        Assert.Equal(new PlatformRectangle(0, 0, 800, 600), LinuxWindowManagementService.ToClientCoordinates(new PlatformRectangle(-1920, 40, 800, 600)));
+        Assert.Null(LinuxWindowManagementService.ToClientCoordinates(null));
+    }
+}

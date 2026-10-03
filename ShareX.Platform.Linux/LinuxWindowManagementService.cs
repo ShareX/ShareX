@@ -162,7 +162,7 @@ public sealed class LinuxWindowManagementService : IWindowManagementService
         nuint[] opacity = display.GetLongProperty(handle, "_NET_WM_WINDOW_OPACITY", 1);
 
         return new WindowDetails(windowHandle, window.Title, className, window.ProcessName, GetProcessPath(window.ProcessId), window.ProcessId,
-            window.Bounds, display.GetWindowBounds(handle, includeFrame: false), states, [],
+            window.Bounds, ToClientCoordinates(display.GetWindowBounds(handle, includeFrame: false)), states, [],
             states.Contains("_NET_WM_STATE_ABOVE"), opacity.Length == 1 ? (byte)((uint)opacity[0] >> 24) : (byte)255);
     }
 
@@ -214,6 +214,10 @@ public sealed class LinuxWindowManagementService : IWindowManagementService
         return new WindowDetails(window.Handle, window.Title, className, window.ProcessName, GetProcessPath(window.ProcessId), window.ProcessId,
             window.Bounds, null, states, [], floating ? pinned : null, null);
     }
+
+    /// <summary>WindowDetails.ClientBounds is in the client area's own coordinates, like GetClientRect.</summary>
+    internal static PlatformRectangle? ToClientCoordinates(PlatformRectangle? client) =>
+        client is PlatformRectangle rectangle ? new PlatformRectangle(0, 0, rectangle.Width, rectangle.Height) : null;
 
     /// <summary>
     /// _NET_WM_ICON holds one or more images, each a width, a height and width * height ARGB values (one per C long). Picks the

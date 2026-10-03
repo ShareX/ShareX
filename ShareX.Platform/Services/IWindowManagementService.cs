@@ -32,6 +32,11 @@ namespace ShareX.Platform;
 /// <param name="ClassName">The Win32 window class, the X11 WM_CLASS or the Wayland app id.</param>
 /// <param name="Styles">Window style flags (Win32 WS_*) or window manager states (EWMH, Hyprland), by name.</param>
 /// <param name="ExtendedStyles">Win32 extended styles (WS_EX_*). Empty elsewhere.</param>
+/// <param name="Bounds">The window's frame in physical desktop coordinates.</param>
+/// <param name="ClientBounds">
+/// The client area in its own coordinates, as Win32 GetClientRect reports it: the origin is normally (0, 0) and only the size matters.
+/// For the client area on the desktop, as capture needs it, use <see cref="IWindowService.GetClientBounds"/>.
+/// </param>
 /// <param name="IsTopMost">Whether the window stays above others; null when it cannot be read or changed.</param>
 /// <param name="Opacity">0 to 255; null when it cannot be read or changed.</param>
 public sealed record WindowDetails(
