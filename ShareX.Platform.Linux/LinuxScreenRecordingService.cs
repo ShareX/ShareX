@@ -28,24 +28,31 @@ using ShareX.Platform.Linux.Native;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Linq;
 
 namespace ShareX.Platform.Linux;
 
-/// <summary>FFmpeg x11grab input for X11 sessions.</summary>
+/// <summary>FFmpeg x11grab on X11; wf-recorder feeding FFmpeg on Hyprland, sway and other wlroots compositors.</summary>
 /// <remarks>
-/// Wayland compositors do not allow x11grab to see native Wayland windows. Recording there needs the xdg-desktop-portal
-/// ScreenCast interface feeding a PipeWire stream, which is tracked as follow up work.
+/// GNOME and KDE on Wayland need the xdg-desktop-portal ScreenCast interface feeding a PipeWire stream, which is follow up work.
 /// </remarks>
 public sealed class LinuxScreenRecordingService : IScreenRecordingService
 {
+    public const string WfRecorderDevice = "wf-recorder";
+
     private readonly PlatformInfo info;
     private readonly ICommandRunner runner;
+    private readonly Func<IReadOnlyList<ScreenInfo>> getScreens;
 
-    public LinuxScreenRecordingService(PlatformInfo info, ICommandRunner runner)
+    public LinuxScreenRecordingService(PlatformInfo info, ICommandRunner runner, Func<IReadOnlyList<ScreenInfo>> getScreens)
     {
         this.info = info;
         this.runner = runner;
+        this.getScreens = getScreens;
     }
+
+    private LinuxDistribution Distribution => info.Distribution ?? LinuxDistribution.Unknown;
 
     public FeatureSupport Support
     {
@@ -53,22 +60,42 @@ public sealed class LinuxScreenRecordingService : IScreenRecordingService
         {
             if (!runner.Exists("ffmpeg"))
             {
-                return LinuxPackages.Missing(info.Distribution ?? LinuxDistribution.Unknown, LinuxTool.FFmpeg);
+                return LinuxPackages.Missing(Distribution, LinuxTool.FFmpeg);
             }
 
             if (info.IsWayland)
             {
-                return FeatureSupport.NotSupported("Screen recording on Wayland requires the xdg-desktop-portal ScreenCast interface, which is not implemented yet. Log in to an X11 session to record.");
+                if (!info.IsWlrootsCompositor)
+                {
+                    return FeatureSupport.NotSupported("Screen recording on GNOME and KDE Wayland needs the xdg-desktop-portal ScreenCast interface, which ShareX does not use yet. Log in to an X11 session to record.");
+                }
+
+                return runner.Exists(WfRecorderDevice) ? FeatureSupport.Supported : LinuxPackages.Missing(Distribution, LinuxTool.WfRecorder);
             }
 
             return info.IsX11 ? FeatureSupport.Supported : FeatureSupport.NotSupported("No graphical session was found.");
         }
     }
 
-    public IReadOnlyList<string> GetSupportedDevices() => info.IsX11 ? ["x11grab"] : Array.Empty<string>();
+    public IReadOnlyList<string> GetSupportedDevices()
+    {
+        if (info.IsWayland)
+        {
+            return info.IsWlrootsCompositor && runner.Exists(WfRecorderDevice) ? [WfRecorderDevice] : Array.Empty<string>();
+        }
+
+        return info.IsX11 ? ["x11grab"] : Array.Empty<string>();
+    }
 
     public FFmpegVideoInput CreateVideoInput(ScreenRecordingRequest request)
     {
+        if (info.IsWayland)
+        {
+            PlatformRectangle desktop = getScreens().Select(s => s.Bounds).Aggregate(PlatformRectangle.Empty, (a, b) => a.Union(b));
+            string directory = Environment.GetEnvironmentVariable("XDG_RUNTIME_DIR") is { Length: > 0 } runtime ? runtime : Path.GetTempPath();
+            return CreateWfRecorderInput(request, Path.Combine(directory, $"sharex-recording-{Guid.NewGuid():N}.mkv"), desktop);
+        }
+
         PlatformRectangle fallback = PlatformRectangle.Empty;
 
         if (request.Region.IsEmpty && request.Screen == null)
@@ -79,6 +106,19 @@ public sealed class LinuxScreenRecordingService : IScreenRecordingService
 
         return CreateX11GrabInput(request, Environment.GetEnvironmentVariable("DISPLAY") ?? ":0", fallback);
     }
+
+    /// <summary>The region is in layout coordinates, as grim and wf-recorder take it; the video has the monitor's pixels.</summary>
+    internal static FFmpegVideoInput CreateWfRecorderInput(ScreenRecordingRequest request, string pipePath, PlatformRectangle desktop)
+    {
+        PlatformRectangle region = request.GetEffectiveRegion(desktop);
+        WfRecorderSource source = new WfRecorderSource(pipePath, region, request.FrameRate);
+        string arguments = $"-thread_queue_size 1024 -f matroska -i \"{pipePath}\"";
+        // Encoders that need even sizes get them whatever the monitor scale makes of the region.
+        IReadOnlyList<string> filters = request.RequireEvenSize ? ["crop=trunc(iw/2)*2:trunc(ih/2)*2"] : Array.Empty<string>();
+        return new FFmpegVideoInput(WfRecorderDevice, arguments, filters) { Source = source };
+    }
+
+    public string GetDefaultFFmpegPath(string applicationDirectory) => UnixFFmpegLocator.Find(applicationDirectory, ["/usr/bin", "/usr/local/bin"]);
 
     internal static FFmpegVideoInput CreateX11GrabInput(ScreenRecordingRequest request, string display, PlatformRectangle fallback)
     {

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -134,7 +135,12 @@ namespace ShareX.ScreenCaptureLib
             {
                 IsRecording = true;
 
-                ffmpeg.Run(Options.GetFFmpegCommands());
+                string commands = Options.GetFFmpegCommands();
+
+                // On Wayland a helper such as wf-recorder produces the input FFmpeg reads.
+                using IScreenRecordingSource source = Options.TakeVideoSource();
+                source?.Start();
+                ffmpeg.Run(commands);
             }
 
             IsRecording = false;

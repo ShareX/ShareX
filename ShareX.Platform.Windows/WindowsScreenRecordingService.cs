@@ -131,4 +131,6 @@ public sealed class WindowsScreenRecordingService : IScreenRecordingService
         // Frames stay on the GPU. Software encoders need them downloaded.
         return new FFmpegVideoInput(DdaGrab, arguments, ["hwdownload", "format=bgra"]);
     }
+
+    public string GetDefaultFFmpegPath(string applicationDirectory) => System.IO.Path.Combine(applicationDirectory, "ffmpeg.exe");
 }

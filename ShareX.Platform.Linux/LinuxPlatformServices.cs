@@ -54,7 +54,7 @@ public sealed class LinuxPlatformServices : IPlatformServices
         Input = new LinuxInputService(info, runner);
         WindowManagement = new LinuxWindowManagementService(windows, runner);
         screenCapture = new Lazy<IScreenCaptureService>(() => new LinuxScreenCaptureService(info, runner, windows));
-        ScreenRecording = new LinuxScreenRecordingService(info, runner);
+        ScreenRecording = new LinuxScreenRecordingService(info, runner, () => screenCapture.Value.GetScreens());
         hotkeys = new Lazy<IHotkeyService>(() => CreateHotkeyService(info, describeHotkey));
         Notifications = new FreedesktopNotificationService(info, runner);
         Shell = new LinuxShellService(runner);

@@ -65,7 +65,20 @@ public static class ScreenRecordingRequestExtensions
 /// <param name="VideoFilters">Filters that must be applied to the input, for example a crop on macOS. Empty when none are needed.</param>
 public sealed record FFmpegVideoInput(string Device, string InputArguments, IReadOnlyList<string> VideoFilters)
 {
+    /// <summary>
+    /// A helper that produces the input FFmpeg reads, such as wf-recorder writing into a pipe on Wayland. Null when FFmpeg captures
+    /// the screen itself. The recorder starts it right before FFmpeg and disposes it when FFmpeg has finished.
+    /// </summary>
+    public IScreenRecordingSource? Source { get; init; }
+
     public override string ToString() => InputArguments;
+}
+
+/// <summary>A helper process that feeds the screen to FFmpeg.</summary>
+public interface IScreenRecordingSource : System.IDisposable
+{
+    /// <summary>Starts the helper. Called once, right before FFmpeg starts reading.</summary>
+    void Start();
 }
 
 /// <summary>Screen recording through FFmpeg: gdigrab/ddagrab on Windows, avfoundation on macOS, x11grab on Linux.</summary>
@@ -83,4 +96,10 @@ public interface IScreenRecordingService
     /// (the screen-capture-recorder DirectShow filter on Windows). Does nothing for every other device.
     /// </summary>
     void PrepareDevice(string device, ScreenRecordingRequest request);
+
+    /// <summary>
+    /// The FFmpeg program to use when the user has not chosen one: ffmpeg.exe next to ShareX on Windows (which ShareX downloads),
+    /// an ffmpeg next to ShareX or the one installed with the system on Linux and macOS.
+    /// </summary>
+    string GetDefaultFFmpegPath(string applicationDirectory);
 }

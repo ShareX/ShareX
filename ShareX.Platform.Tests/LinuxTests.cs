@@ -807,3 +807,37 @@ public class GrimRegionTests
     public void UnknownLayoutPassesThrough() =>
         Assert.Equal(new PlatformRectangle(-5, -5, 10, 10), LinuxScreenCaptureService.ClipToScreens(new PlatformRectangle(-5, -5, 10, 10), []));
 }
+
+public class WaylandRecordingTests
+{
+    [Fact]
+    public void WfRecorderFeedsFFmpegThroughThePipe()
+    {
+        ScreenRecordingRequest request = new ScreenRecordingRequest { Region = new PlatformRectangle(10, 20, 301, 201), FrameRate = 30 };
+
+        FFmpegVideoInput input = LinuxScreenRecordingService.CreateWfRecorderInput(request, "/run/user/1000/rec.mkv", new PlatformRectangle(0, 0, 3072, 1728));
+
+        Assert.Equal("wf-recorder", input.Device);
+        Assert.Equal("-thread_queue_size 1024 -f matroska -i \"/run/user/1000/rec.mkv\"", input.InputArguments);
+        Assert.Equal(["crop=trunc(iw/2)*2:trunc(ih/2)*2"], input.VideoFilters);
+        Assert.IsType<WfRecorderSource>(input.Source);
+    }
+
+    [Fact]
+    public void WfRecorderRecordsTheEvenRegionLosslessly()
+    {
+        IReadOnlyList<string> arguments = WfRecorderSource.CreateArguments("/tmp/p.mkv", new PlatformRectangle(10, 20, 300, 200), 30);
+
+        Assert.Equal(["-g", "10,20 300x200", "-r", "30", "-c", "libx264", "-p", "preset=ultrafast", "-p", "qp=0", "-x", "yuv444p",
+            "-m", "matroska", "-y", "-f", "/tmp/p.mkv"], arguments);
+    }
+
+    [Fact]
+    public void WholeDesktopWhenNoRegion()
+    {
+        FFmpegVideoInput input = LinuxScreenRecordingService.CreateWfRecorderInput(new ScreenRecordingRequest(), "/tmp/p.mkv", new PlatformRectangle(0, 0, 3072, 1728));
+
+        Assert.Contains("0,0 3072x1728", ((WfRecorderSource)input.Source!).ToString() + string.Join(" ", typeof(WfRecorderSource)
+            .GetField("arguments", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)!.GetValue(input.Source) as IReadOnlyList<string> ?? []));
+    }
+}

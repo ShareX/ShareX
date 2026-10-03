@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
 
 namespace ShareX.ScreenCaptureLib
@@ -75,7 +76,10 @@ namespace ShareX.ScreenCaptureLib
                     return FileHelpers.GetAbsolutePath(CLIPath);
                 }
 
-                return FileHelpers.GetAbsolutePath("ffmpeg.exe");
+                // ffmpeg.exe next to ShareX on Windows; on Linux and macOS also the system's ffmpeg.
+                return PlatformServices.IsInitialized
+                    ? PlatformServices.Current.ScreenRecording.GetDefaultFFmpegPath(AppDomain.CurrentDomain.BaseDirectory)
+                    : FileHelpers.GetAbsolutePath("ffmpeg.exe");
             }
         }
 

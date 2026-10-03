@@ -106,4 +106,7 @@ public sealed class MacScreenRecordingService : IScreenRecordingService
     }
 
     private static long Area(PlatformRectangle rectangle) => rectangle.IsEmpty ? 0 : (long)rectangle.Width * rectangle.Height;
+
+    public string GetDefaultFFmpegPath(string applicationDirectory) =>
+        UnixFFmpegLocator.Find(applicationDirectory, ["/opt/homebrew/bin", "/usr/local/bin", "/opt/local/bin"]);
 }

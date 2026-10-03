@@ -78,6 +78,16 @@ namespace ShareX.ScreenCaptureLib
             return commands.Trim();
         }
 
+        private IScreenRecordingSource pendingVideoSource;
+
+        /// <summary>The helper that feeds the last arguments built by <see cref="GetFFmpegArgs"/>, if the platform needs one. The caller owns it.</summary>
+        public IScreenRecordingSource TakeVideoSource()
+        {
+            IScreenRecordingSource source = pendingVideoSource;
+            pendingVideoSource = null;
+            return source;
+        }
+
         public string GetFFmpegArgs(bool isCustom = false)
         {
             if (IsRecording && !FFmpeg.IsVideoSourceSelected && !FFmpeg.IsAudioSourceSelected)
@@ -109,6 +119,8 @@ namespace ShareX.ScreenCaptureLib
                     });
 
                     args.Append(input.InputArguments).Append(' ');
+                    pendingVideoSource?.Dispose();
+                    pendingVideoSource = input.Source;
 
                     if (input.VideoFilters.Count > 0)
                     {

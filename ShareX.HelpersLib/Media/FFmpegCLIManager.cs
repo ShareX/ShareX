@@ -86,7 +86,9 @@ namespace ShareX.HelpersLib
 
         protected bool Run(string path, string args)
         {
-            if (!string.Equals(Path.GetExtension(path), ".exe", StringComparison.OrdinalIgnoreCase))
+            // Only run a program: ffmpeg.exe on Windows, an extensionless ffmpeg elsewhere. Not a script or a missing file.
+            string extension = Path.GetExtension(path);
+            if (!File.Exists(path) || (extension.Length > 0 && !string.Equals(extension, ".exe", StringComparison.OrdinalIgnoreCase)))
             {
                 return false;
             }
