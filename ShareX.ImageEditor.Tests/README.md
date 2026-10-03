@@ -17,3 +17,16 @@ dotnet test ShareX.ImageEditor.Tests -c Release -p:Platform=x64
 ```
 
 The font fixture test skips unless `SHAREX_TEST_EMOJI_FONT` is set. The contact-sheet test skips unless `SHAREX_TEST_GRAPHICS_OUTPUT` is set. No fonts are downloaded or installed by the tests.
+
+Windows application checks use the real Release build output:
+
+```powershell
+dotnet build ShareX.sln -c Release -p:Platform=x64
+$env:SHAREX_TEST_WINDOWS_APPLICATION_DIRECTORY = Join-Path (Get-Location) 'ShareX/bin/Release/win-x64'
+$env:SHAREX_TEST_WINDOWS_SDK_PLATFORM_ASSEMBLY = Join-Path (Get-Location) 'ShareX.Platform.Windows/bin/Release/net10.0-windows10.0.22621.0/win-x64/ShareX.Platform.Windows.dll'
+dotnet test ShareX.ImageEditor.Tests -c Release -p:Platform=x64
+```
+
+The artifact checks verify the application gets the Windows SDK platform assembly and use its native OCR service on generated text. The startup smoke test launches a temporary copy with synthetic portable settings, updates/uploads/hotkeys disabled, and `-silent -multi -portable -ExitShareX`. It verifies real application initialization, clean CLI shutdown, retained settings and closure of its empty SQLite history. The copy uses its own personal folder, skips file-type registration and sends no commands to a running ShareX instance. The test cleans up its process and files; no user images or settings are used. With `SHAREX_TEST_GRAPHICS_OUTPUT` set, it saves its own startup log as `windows-application-startup.log`.
+
+These checks skip off Windows or when the application fixture variables are unset. They do not replace Windows 10/11 desktop, capture, upload, tray interaction or editor workflow verification.
