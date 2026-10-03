@@ -80,7 +80,7 @@ public sealed class WindowsStartupService : IStartupService
     {
         string shortcutPath = GetShortcutPath(registration);
 
-        // Like ShortcutHelpers, leave an existing shortcut alone when the target to point at is missing.
+        // Leave an existing shortcut alone when its requested target is missing, as in v22.
         if (enabled && !File.Exists(registration.ExecutablePath))
         {
             return;

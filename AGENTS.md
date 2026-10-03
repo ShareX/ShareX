@@ -92,7 +92,7 @@ State at the branch point (`develop` `fd61635f2`). WinForms and GDI+ are already
 - [x] `ShareX.Platform*` projects and tests on this branch (brought from `cross-platform`).
 - [ ] `PlatformServices.Initialize` at application start up.
 - [ ] `net10.0-windows` targets: `HelpersLib`, `HistoryLib`, `UploadersLib`, `ImageEffectsLib`, `ScreenCaptureLib`, `NativeMessagingHost`, `Tools` and `ShareX` (`net10.0-windows10.0.22621.0`).
-- [ ] Remaining legacy tray transport, browser process-launch declarations and shortcut COM code in `HelpersLib` → `ShareX.Platform.Windows` behind services. Unused `WindowsImageInterop`, overlay rendering and native declarations have been removed; session handling now uses the platform service; the remaining callers await the R25–R27 migrations.
+- [ ] Remaining legacy tray transport and browser process-launch declarations in `HelpersLib` → `ShareX.Platform.Windows` behind services. Unused `WindowsImageInterop`, overlay rendering and native declarations have been removed; session handling now uses the platform service and duplicate shortcut COM code is removed; the remaining callers await the R25/R26 migrations.
 - [ ] Win32 interop in `ScreenCaptureLib` (GDI and HDR capture, transparent window capture, window lists, scrolling input, frame window regions) → services.
 - [ ] Win32 interop and WinRT in `Tools` (OCR, mouse highlighter, inspect and borderless window, ruler, clipboard viewer) → services.
 - [ ] Win32 calls and registry in the `ShareX` application (capture helpers, window menu, task metadata, notification and upload windows, startup and shell integration).
