@@ -27,6 +27,7 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
+using SkiaSharp;
 using System;
 using System.Threading.Tasks;
 using Bitmap = SkiaSharp.SKBitmap;
@@ -39,7 +40,7 @@ public static class ScrollingCaptureWindowIntegration
 
     public static Task StartStopAsync(
         ScrollingCaptureOptions options,
-        Action<Bitmap>? uploadRequested = null,
+        Action<SKBitmap>? uploadRequested = null,
         Action? playNotificationSound = null)
     {
         AvaloniaBootstrapper.EnsureInitialized();

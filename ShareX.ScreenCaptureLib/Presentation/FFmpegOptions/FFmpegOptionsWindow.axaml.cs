@@ -29,6 +29,7 @@ using Avalonia.Controls;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -380,16 +381,11 @@ public partial class FFmpegOptionsWindow : Window
             return;
         }
 
-        List<FFmpegCaptureDevice> videoSources =
-        [
-            FFmpegCaptureDevice.None,
-            FFmpegCaptureDevice.GDIGrab
-        ];
-
-        if (Helpers.IsWindows10OrGreater())
-        {
-            videoSources.Add(FFmpegCaptureDevice.DDAGrab);
-        }
+        // The screen devices this platform records with: gdigrab and ddagrab on Windows, x11grab on Linux, avfoundation on macOS.
+        List<FFmpegCaptureDevice> videoSources = [FFmpegCaptureDevice.None];
+        IReadOnlyList<string> platformDevices = PlatformServices.Current.ScreenRecording.GetSupportedDevices();
+        videoSources.AddRange(platformDevices.Select(FFmpegCaptureDevice.FromPlatformDevice));
+        string defaultVideoSource = platformDevices.Count > 0 ? platformDevices[0] : FFmpegCaptureDevice.None.Value;
 
         List<FFmpegCaptureDevice> audioSources = [FFmpegCaptureDevice.None];
 
@@ -406,7 +402,7 @@ public partial class FFmpegOptionsWindow : Window
         }
         else if (!videoSources.Any(x => EqualsSource(x, options.VideoSource)))
         {
-            options.VideoSource = FFmpegCaptureDevice.GDIGrab.Value;
+            options.VideoSource = defaultVideoSource;
         }
 
         if (selectRecorderDevices && audioSources.Any(x => EqualsSource(x, FFmpegCaptureDevice.VirtualAudioCapturer.Value)))
@@ -437,7 +433,8 @@ public partial class FFmpegOptionsWindow : Window
         }
         else
         {
-            int deviceCount = Math.Max(0, videoSources.Count - (Helpers.IsWindows10OrGreater() ? 3 : 2)) +
+            // Discovered devices only: not None and not the platform's screen devices.
+            int deviceCount = Math.Max(0, videoSources.Count - 1 - platformDevices.Count) +
                               Math.Max(0, audioSources.Count - 1);
             DeviceStatusTextBlock.Text = deviceCount switch
             {

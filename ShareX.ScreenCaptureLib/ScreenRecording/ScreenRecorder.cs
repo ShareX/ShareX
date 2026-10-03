@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -97,13 +97,10 @@ namespace ShareX.ScreenCaptureLib
 
         private int fps, delay, frameCount, previousProgress;
         private float durationSeconds;
-        private Screenshot screenshot;
         private Rectangle captureRectangle;
-        private ImageCache imgCache;
         private FFmpegCLIManager ffmpeg;
-        private bool stopRequested;
 
-        public ScreenRecorder(ScreenRecordOutput outputType, ScreenRecordingOptions options, Screenshot screenshot, Rectangle captureRectangle)
+        public ScreenRecorder(ScreenRecordOutput outputType, ScreenRecordingOptions options, Rectangle captureRectangle)
         {
             if (string.IsNullOrEmpty(options.OutputPath))
             {
@@ -118,22 +115,11 @@ namespace ShareX.ScreenCaptureLib
 
             Options = options;
 
-            switch (OutputType)
-            {
-                default:
-                case ScreenRecordOutput.FFmpeg:
-                    FileHelpers.CreateDirectoryFromFilePath(Options.OutputPath);
-                    ffmpeg = new FFmpegCLIManager(Options.FFmpeg.FFmpegPath);
-                    ffmpeg.ShowError = true;
-                    ffmpeg.EncodeStarted += OnRecordingStarted;
-                    ffmpeg.EncodeProgressChanged += OnEncodingProgressChanged;
-                    break;
-                case ScreenRecordOutput.GIF:
-                    imgCache = new HardDiskCache(Options);
-                    break;
-            }
-
-            this.screenshot = screenshot;
+            FileHelpers.CreateDirectoryFromFilePath(Options.OutputPath);
+            ffmpeg = new FFmpegCLIManager(Options.FFmpeg.FFmpegPath);
+            ffmpeg.ShowError = true;
+            ffmpeg.EncodeStarted += OnRecordingStarted;
+            ffmpeg.EncodeProgressChanged += OnEncodingProgressChanged;
         }
 
         private void UpdateInfo()
@@ -147,90 +133,18 @@ namespace ShareX.ScreenCaptureLib
             if (!IsRecording)
             {
                 IsRecording = true;
-                stopRequested = false;
 
-                if (OutputType == ScreenRecordOutput.FFmpeg)
-                {
-                    ffmpeg.Run(Options.GetFFmpegCommands());
-                }
-                else
-                {
-                    OnRecordingStarted();
-                    RecordUsingCache();
-                }
+                ffmpeg.Run(Options.GetFFmpegCommands());
             }
 
             IsRecording = false;
         }
 
-        private void RecordUsingCache()
-        {
-            try
-            {
-                for (int i = 0; !stopRequested && (frameCount == 0 || i < frameCount); i++)
-                {
-                    Stopwatch timer = Stopwatch.StartNew();
-
-                    Image img = screenshot.CaptureRectangle(CaptureRectangle);
-                    //DebugHelper.WriteLine("Screen capture: " + (int)timer.ElapsedMilliseconds);
-
-                    imgCache.AddImageAsync(img);
-
-                    if (!stopRequested && (frameCount == 0 || i + 1 < frameCount))
-                    {
-                        int sleepTime = delay - (int)timer.ElapsedMilliseconds;
-
-                        if (sleepTime > 0)
-                        {
-                            Thread.Sleep(sleepTime);
-                        }
-                        else if (sleepTime < 0)
-                        {
-                            // Need to handle FPS drops
-                        }
-                    }
-                }
-            }
-            finally
-            {
-                imgCache.Finish();
-            }
-        }
-
         public void StopRecording()
         {
-            stopRequested = true;
-
             if (ffmpeg != null)
             {
                 ffmpeg.Close();
-            }
-        }
-
-        public void SaveAsGIF(string path, GIFQuality quality)
-        {
-            if (imgCache != null && imgCache is HardDiskCache && !IsRecording)
-            {
-                FileHelpers.CreateDirectoryFromFilePath(path);
-
-                HardDiskCache hdCache = imgCache as HardDiskCache;
-
-                using (AnimatedGifCreator gifEncoder = new AnimatedGifCreator(path, delay))
-                {
-                    int i = 0;
-                    int count = hdCache.Count;
-
-                    foreach (Image img in hdCache.GetImageEnumerator())
-                    {
-                        i++;
-                        OnEncodingProgressChanged((int)((float)i / count * 100));
-
-                        using (img)
-                        {
-                            gifEncoder.AddFrame(img, quality);
-                        }
-                    }
-                }
             }
         }
 
@@ -316,11 +230,6 @@ namespace ShareX.ScreenCaptureLib
             if (ffmpeg != null)
             {
                 ffmpeg.Dispose();
-            }
-
-            if (imgCache != null)
-            {
-                imgCache.Dispose();
             }
         }
     }

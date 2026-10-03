@@ -25,14 +25,15 @@
 
 #nullable enable
 
-using ShareX.HelpersLib;
+using ShareX.Platform;
 using SkiaSharp;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 
+/// <param name="Window">The window under the selection, for the file name and history (title and process).</param>
 public sealed record AvaloniaRegionCaptureResult(
     SKBitmap Image,
     Rectangle ScreenRectangle,
-    WindowInfo? WindowInfo,
+    PlatformWindow? Window,
     bool ImageModified);

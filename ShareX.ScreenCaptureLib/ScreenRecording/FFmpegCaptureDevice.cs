@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -41,6 +41,14 @@ namespace ShareX.ScreenCaptureLib
         public static FFmpegCaptureDevice DDAGrab { get; } = new FFmpegCaptureDevice("ddagrab", "ddagrab (Desktop Duplication API)");
         public static FFmpegCaptureDevice ScreenCaptureRecorder { get; } = new FFmpegCaptureDevice("screen-capture-recorder", "dshow (screen-capture-recorder)");
         public static FFmpegCaptureDevice VirtualAudioCapturer { get; } = new FFmpegCaptureDevice("virtual-audio-capturer", "dshow (virtual-audio-capturer)");
+
+        /// <summary>A screen device named by IScreenRecordingService, with ShareX's title for the Windows ones.</summary>
+        public static FFmpegCaptureDevice FromPlatformDevice(string device)
+        {
+            if (device.Equals(GDIGrab.Value, System.StringComparison.OrdinalIgnoreCase)) return GDIGrab;
+            if (device.Equals(DDAGrab.Value, System.StringComparison.OrdinalIgnoreCase)) return DDAGrab;
+            return new FFmpegCaptureDevice(device, device);
+        }
 
         public override string ToString()
         {

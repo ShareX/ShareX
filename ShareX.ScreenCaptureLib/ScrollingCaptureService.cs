@@ -23,6 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
+using SkiaSharp;
 using System;
 using System.Threading.Tasks;
 using Bitmap = SkiaSharp.SKBitmap;
@@ -34,7 +37,7 @@ public sealed class ScrollingCaptureService : IDisposable
     private readonly ScrollingCaptureManager _manager;
 
     public ScrollingCaptureOptions Options { get; }
-    public Bitmap Result => _manager.Result;
+    public SKBitmap? Result => _manager.Result;
     public bool IsCapturing => _manager.IsCapturing;
 
     public ScrollingCaptureService(ScrollingCaptureOptions options)

@@ -106,9 +106,9 @@ namespace ShareX
                     AllowAnnotation = false;
                 }
 
-                if (result.WindowInfo != null)
+                if (result.Window != null)
                 {
-                    metadata.UpdateInfo(result.WindowInfo);
+                    metadata.UpdateInfo(result.Window);
                 }
 
                 return metadata;

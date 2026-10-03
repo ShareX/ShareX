@@ -31,12 +31,12 @@ using Avalonia.Input;
 using Avalonia.Media;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Platform;
+using SkiaSharp;
 using System;
 using System.IO;
 using System.Threading.Tasks;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
-using DrawingBitmap = SkiaSharp.SKBitmap;
-using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX.ScreenCaptureLib;
 
@@ -45,7 +45,7 @@ public partial class ScrollingCaptureWindow : Window
     private static readonly Cursor PanCursor = new(StandardCursorType.SizeAll);
 
     private readonly ScrollingCaptureService _service;
-    private readonly Action<DrawingBitmap>? _uploadRequested;
+    private readonly Action<SKBitmap>? _uploadRequested;
     private readonly Action? _playNotificationSound;
     private AvaloniaBitmap? _previewBitmap;
     private bool _captureOperation;
@@ -61,7 +61,7 @@ public partial class ScrollingCaptureWindow : Window
 
     public ScrollingCaptureWindow(
         ScrollingCaptureOptions options,
-        Action<DrawingBitmap>? uploadRequested,
+        Action<SKBitmap>? uploadRequested,
         Action? playNotificationSound)
     {
         _service = new ScrollingCaptureService(options);
@@ -127,6 +127,16 @@ public partial class ScrollingCaptureWindow : Window
 
     private async Task SelectWindowAsync()
     {
+        FeatureSupport scrollSupport = GetScrollSupport(_service.Options.ScrollMethod);
+
+        if (!scrollSupport.IsSupported)
+        {
+            // Say why instead of capturing a window that never scrolls.
+            SetStatus(ScrollingCaptureStatus.Failed);
+            StatusText.Text = scrollSupport.Reason;
+            return;
+        }
+
         _captureOperation = true;
         OptionsOverlay.IsVisible = false;
         WindowState = Avalonia.Controls.WindowState.Minimized;
@@ -229,16 +239,15 @@ public partial class ScrollingCaptureWindow : Window
         }
     }
 
-    private void LoadImage(DrawingBitmap? bitmap)
+    private void LoadImage(SKBitmap? bitmap)
     {
         if (bitmap == null)
         {
             return;
         }
 
-        using MemoryStream stream = new();
-        bitmap.Save(stream, ImageFormat.Png);
-        stream.Position = 0;
+        using SKData data = bitmap.Encode(SKEncodedImageFormat.Png, 100);
+        using MemoryStream stream = new(data.ToArray());
 
         AvaloniaBitmap preview = new(stream);
         _previewBitmap?.Dispose();
@@ -277,7 +286,7 @@ public partial class ScrollingCaptureWindow : Window
     {
         if (_service.Result != null)
         {
-            _uploadRequested?.Invoke((DrawingBitmap)_service.Result.Copy());
+            _uploadRequested?.Invoke(_service.Result.Copy());
         }
     }
 
@@ -338,8 +347,24 @@ public partial class ScrollingCaptureWindow : Window
 
     private void OnScrollMethodChanged(object? sender, SelectionChangedEventArgs e) => UpdateScrollAmountVisibility();
 
+    /// <summary>Whether this platform can scroll another window the way <paramref name="method"/> needs.</summary>
+    private static FeatureSupport GetScrollSupport(ScrollMethod method)
+    {
+        IInputService input = PlatformServices.Current.Input;
+
+        return method switch
+        {
+            ScrollMethod.MouseWheel => input.MouseWheelSupport,
+            ScrollMethod.ScrollMessage => input.WindowScrollSupport,
+            _ => input.KeyboardSupport
+        };
+    }
+
     private void UpdateScrollAmountVisibility()
     {
+        FeatureSupport support = GetScrollSupport((ScrollMethod)Math.Max(0, ScrollMethodInput.SelectedIndex));
+        ToolTip.SetTip(ScrollMethodInput, support.IsSupported ? null : support.Reason);
+
         bool isVisible = (ScrollMethod)ScrollMethodInput.SelectedIndex != ScrollMethod.PageDown;
         ScrollAmountLabel.IsVisible = isVisible;
         ScrollAmountInput.IsVisible = isVisible;

@@ -72,6 +72,15 @@ namespace ShareX
             Image = image;
         }
 
+        public void UpdateInfo(ShareX.Platform.PlatformWindow window)
+        {
+            if (window != null)
+            {
+                WindowTitle = window.Title;
+                ProcessName = window.ProcessName;
+            }
+        }
+
         public void UpdateInfo(WindowInfo windowInfo)
         {
             if (windowInfo != null)

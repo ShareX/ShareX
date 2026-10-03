@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -24,7 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -49,17 +51,11 @@ namespace ShareX.ScreenCaptureLib
         {
             string commands;
 
-            if (IsRecording && !string.IsNullOrEmpty(FFmpeg.VideoSource) &&
-                FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.ScreenCaptureRecorder.Value, StringComparison.OrdinalIgnoreCase))
+            if (IsRecording && !string.IsNullOrEmpty(FFmpeg.VideoSource))
             {
-                // https://github.com/rdp/screen-capture-recorder-to-video-windows-free
-                string registryPath = "Software\\screen-capture-recorder";
-                RegistryHelpers.CreateRegistry(registryPath, "start_x", CaptureArea.X);
-                RegistryHelpers.CreateRegistry(registryPath, "start_y", CaptureArea.Y);
-                RegistryHelpers.CreateRegistry(registryPath, "capture_width", CaptureArea.Width);
-                RegistryHelpers.CreateRegistry(registryPath, "capture_height", CaptureArea.Height);
-                RegistryHelpers.CreateRegistry(registryPath, "default_max_fps", 60);
-                RegistryHelpers.CreateRegistry(registryPath, "capture_mouse_default_1", DrawCursor ? 1 : 0);
+                // screen-capture-recorder (https://github.com/rdp/screen-capture-recorder-to-video-windows-free) reads its capture
+                // area from the registry; the platform service writes it. Other devices need no preparation.
+                PlatformServices.Current.ScreenRecording.PrepareDevice(FFmpeg.VideoSource, CreatePlatformRequest(CaptureArea));
             }
 
             if (!IsLossless && FFmpeg.UseCustomCommands && !string.IsNullOrEmpty(FFmpeg.CustomCommands))
@@ -95,7 +91,31 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsRecording)
             {
-                if (FFmpeg.IsVideoSourceSelected)
+                string platformDevice = FFmpeg.IsVideoSourceSelected ? GetPlatformScreenDevice(FFmpeg.VideoSource) : null;
+
+                if (platformDevice != null)
+                {
+                    // x11grab, avfoundation and other screen devices of the platform, built by the platform service.
+                    if (FFmpeg.IsAudioSourceSelected)
+                    {
+                        AppendInputDevice(args, "dshow", true);
+                        args.Append($"-i audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
+                    }
+
+                    FFmpegVideoInput input = PlatformServices.Current.ScreenRecording.CreateVideoInput(CreatePlatformRequest(CaptureArea) with
+                    {
+                        FrameRate = FPS,
+                        RequireEvenSize = FFmpeg.IsEvenSizeRequired
+                    });
+
+                    args.Append(input.InputArguments).Append(' ');
+
+                    if (input.VideoFilters.Count > 0)
+                    {
+                        args.Append($"-vf \"{string.Join(",", input.VideoFilters)}\" ");
+                    }
+                }
+                else if (FFmpeg.IsVideoSourceSelected)
                 {
                     if (FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.GDIGrab.Value, StringComparison.OrdinalIgnoreCase))
                     {
@@ -128,15 +148,18 @@ namespace ShareX.ScreenCaptureLib
                             args.Append($"-i audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
                         }
 
-                        DesktopScreen[] screens = DesktopScreen.AllScreens.OrderBy(x => !x.Primary).ToArray();
+                        Rectangle[] screens = PlatformServices.Current.ScreenCapture.GetScreens()
+                            .OrderBy(x => !x.IsPrimary)
+                            .Select(x => new Rectangle(x.Bounds.X, x.Bounds.Y, x.Bounds.Width, x.Bounds.Height))
+                            .ToArray();
                         int monitorIndex = 0;
-                        Rectangle captureArea = screens[0].Bounds;
+                        Rectangle captureArea = screens[0];
                         int maxIntersectionArea = 0;
 
                         for (int i = 0; i < screens.Length; i++)
                         {
-                            DesktopScreen screen = screens[i];
-                            Rectangle intersection = Rectangle.Intersect(screen.Bounds, CaptureArea);
+                            Rectangle screen = screens[i];
+                            Rectangle intersection = Rectangle.Intersect(screen, CaptureArea);
                             int intersectionArea = intersection.Width * intersection.Height;
 
                             if (intersectionArea > maxIntersectionArea)
@@ -144,7 +167,7 @@ namespace ShareX.ScreenCaptureLib
                                 maxIntersectionArea = intersectionArea;
 
                                 monitorIndex = i;
-                                captureArea = new Rectangle(intersection.X - screen.Bounds.X, intersection.Y - screen.Bounds.Y, intersection.Width, intersection.Height);
+                                captureArea = new Rectangle(intersection.X - screen.X, intersection.Y - screen.Y, intersection.Width, intersection.Height);
                             }
                         }
 
@@ -335,6 +358,38 @@ namespace ShareX.ScreenCaptureLib
             args.Append($"\"{output}\"");
 
             return args.ToString();
+        }
+
+        private ScreenRecordingRequest CreatePlatformRequest(Rectangle area) => new ScreenRecordingRequest
+        {
+            Region = new PlatformRectangle(area.X, area.Y, area.Width, area.Height),
+            FrameRate = FPS,
+            DrawCursor = DrawCursor
+        };
+
+        /// <summary>
+        /// The platform screen device to record with when <paramref name="videoSource"/> is not one of the Windows devices built
+        /// here: the source itself when the platform lists it (x11grab, avfoundation), or the platform's preferred device when the
+        /// settings name a Windows device this platform does not have (settings copied from Windows). Null for gdigrab, ddagrab and
+        /// DirectShow devices on Windows.
+        /// </summary>
+        internal static string GetPlatformScreenDevice(string videoSource)
+        {
+            if (!PlatformServices.IsInitialized)
+            {
+                return null;
+            }
+
+            IReadOnlyList<string> devices = PlatformServices.Current.ScreenRecording.GetSupportedDevices();
+            bool isWindowsScreenDevice = videoSource.Equals(FFmpegCaptureDevice.GDIGrab.Value, StringComparison.OrdinalIgnoreCase) ||
+                videoSource.Equals(FFmpegCaptureDevice.DDAGrab.Value, StringComparison.OrdinalIgnoreCase);
+
+            if (devices.Contains(videoSource, StringComparer.OrdinalIgnoreCase))
+            {
+                return isWindowsScreenDevice ? null : videoSource;
+            }
+
+            return isWindowsScreenDevice && devices.Count > 0 ? devices[0] : null;
         }
 
         private void AppendInputDevice(StringBuilder args, string inputDevice, bool audioSource)

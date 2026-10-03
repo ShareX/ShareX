@@ -137,7 +137,7 @@ namespace ShareX
                     if (selection != null)
                     {
                         captureRectangle = selection.Value.Rectangle;
-                        metadata.UpdateInfo(selection.Value.WindowInfo);
+                        metadata.UpdateInfo(selection.Value.Window);
                     }
                     break;
                 case ScreenRecordStartMethod.ActiveWindow:
@@ -284,11 +284,8 @@ namespace ShareX
                                 DrawCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor
                             };
 
-                            Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
-                            screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
-
                             screenRecorder?.Dispose();
-                            screenRecorder = new ScreenRecorder(ScreenRecordOutput.FFmpeg, options, screenshot, captureRectangle);
+                            screenRecorder = new ScreenRecorder(ScreenRecordOutput.FFmpeg, options, captureRectangle);
                             screenRecorder.RecordingStarted += ScreenRecorder_RecordingStarted;
                             screenRecorder.EncodingProgressChanged += ScreenRecorder_EncodingProgressChanged;
                             using (IDisposable highlighter = taskSettings.CaptureSettings.ScreenRecordMouseHighlighter

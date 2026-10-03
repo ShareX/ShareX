@@ -33,17 +33,14 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using ShareX.ScreenCaptureLib.Localization;
-using SkiaSharp;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Runtime.InteropServices;
 using System.Threading;
-using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingRectangle = System.Drawing.Rectangle;
+using SkiaSharp;
 
 namespace ShareX.ScreenCaptureLib;
 
@@ -57,12 +54,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private const int ActionButtonCount = 4;
     private const double ToolbarWidth = 461;
     private const double ToolbarHeight = 42;
-    private const int RegionOr = 2;
-    private const int RegionDiff = 4;
 
     private readonly int _captureWidth;
     private readonly int _captureHeight;
     private readonly DispatcherTimer _refreshTimer;
+    // Avalonia's tray icon: the notification area on Windows, the menu bar on macOS, StatusNotifierItem on Linux.
     private readonly NativeMenu _trayMenu;
     private readonly NativeMenuItem _trayStartItem;
     private readonly NativeMenuItem _trayPauseItem;
@@ -73,7 +69,6 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private volatile ScreenRecordingStatus _status;
     private volatile bool _disposed;
-    private readonly Dictionary<NativeMenuItem, string> _trayMenuIconKeys = new();
     private bool _dragging;
     private PixelPoint _dragPointerOrigin;
     private PixelPoint _dragWindowOrigin;
@@ -205,8 +200,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
         SetTrayMenuIcon(_trayAbortItem, LucideIcons.x);
 
         _trayMenu = new NativeMenu();
-        foreach (NativeMenuItem item in new[] { _trayStartItem, _trayPauseItem, _trayRestartItem, _trayAbortItem }) _trayMenu.Items.Add(item);
-        _trayMenu.NeedsUpdate += (_, _) => RefreshTrayMenuIcons();
+        _trayMenu.Items.Add(_trayStartItem);
+        _trayMenu.Items.Add(_trayPauseItem);
+        _trayMenu.Items.Add(_trayRestartItem);
+        _trayMenu.Items.Add(_trayAbortItem);
+        _trayMenu.Opening += (_, _) => RefreshTrayMenuIcons();
 
         _trayIcon = new TrayIcon
         {
@@ -214,7 +212,8 @@ public partial class ScreenRecordWindow : Window, IDisposable
             ToolTipText = "ShareX",
             IsVisible = false
         };
-        _trayIcon.Clicked += OnTrayIconMouseClick;
+        _trayIcon.Clicked += OnTrayIconClicked;
+        // A tray icon created at run time only appears once the application knows about it (#8875).
         _trayIconRegistration = DesktopServices.RegisterTrayIcon(_trayIcon);
 
         StartButton.Click += (_, _) => StartStopRecording();
@@ -354,7 +353,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             {
                 case ScreenRecordState.Waiting:
                     SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Waiting___);
-                    SetTrayIcon(LucideTrayIcon.CreateIconBytes(LucideIcons.video_off, DrawingColor.Gold));
+                    SetTrayIcon(LucideIcons.video_off, SKColors.Gold);
                     SetTrayMenuEnabled(false);
                     _trayIcon.IsVisible = true;
                     break;
@@ -380,7 +379,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                     Hide();
                     SetTrayMenuEnabled(false);
                     SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Encoding___);
-                    SetTrayIcon(LucideTrayIcon.CreateIconBytes(LucideIcons.file_video_camera));
+                    SetTrayIcon(LucideIcons.file_video_camera, GetTrayGlyphColor());
                     break;
             }
         });
@@ -397,30 +396,15 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 return;
             }
 
-            byte[] icon;
             if (progress >= 0)
             {
-                try
-                {
-                    icon = Helpers.GetProgressIconBytes(progress, DrawingColor.FromArgb(140, 0, 36));
-                }
-                catch (Exception ex)
-                {
-                    DebugHelper.WriteException(ex);
-                    progress = -1;
-                    if (_lastIconStatus == progress)
-                    {
-                        return;
-                    }
-                    icon = LucideTrayIcon.CreateIconBytes(LucideIcons.file_video_camera);
-                }
+                SetTrayIcon(TrayIconRenderer.CreateProgressWindowIcon(progress, new SKColor(140, 0, 36)));
             }
             else
             {
-                icon = LucideTrayIcon.CreateIconBytes(LucideIcons.file_video_camera);
+                SetTrayIcon(LucideIcons.file_video_camera, GetTrayGlyphColor());
             }
 
-            SetTrayIcon(icon);
             _lastIconStatus = progress;
         });
     }
@@ -452,7 +436,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         _disposed = true;
         _refreshTimer.Stop();
         _trayIcon.IsVisible = false;
-        _trayIcon.Clicked -= OnTrayIconMouseClick;
+        _trayIcon.Clicked -= OnTrayIconClicked;
         _trayIconRegistration.Dispose();
         DisposeTrayMenuIcons();
         RecordResetEvent.Dispose();
@@ -491,7 +475,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         {
             case ScreenRecordingStatus.Working:
                 SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_);
-                SetTrayIcon(LucideTrayIcon.CreateIconBytes(LucideIcons.video, DrawingColor.Red));
+                SetTrayIcon(LucideIcons.video, SKColors.Red);
                 StartText.Text = Strings.ScreenRecordForm_Stop;
                 StartIcon.Text = LucideIcons.square;
                 _trayStartItem.Header = Strings.ScreenRecordForm_Stop;
@@ -508,7 +492,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 SetTrayText("ShareX - " + (paused
                     ? Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_
                     : Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_));
-                SetTrayIcon(LucideTrayIcon.CreateIconBytes(LucideIcons.video_off, DrawingColor.Gold));
+                SetTrayIcon(LucideIcons.video_off, SKColors.Gold);
                 StartText.Text = paused ? Strings.ScreenRecordForm_Stop : Strings.ScreenRecordForm_Start;
                 StartIcon.Text = paused ? LucideIcons.square : LucideIcons.circle_play;
                 _trayStartItem.Header = StartText.Text;
@@ -524,7 +508,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 break;
 
             case ScreenRecordingStatus.Recording:
-                SetTrayIcon(LucideTrayIcon.CreateIconBytes(LucideIcons.video, DrawingColor.Red));
+                SetTrayIcon(LucideIcons.video, SKColors.Red);
                 StartText.Text = Strings.ScreenRecordForm_Stop;
                 StartIcon.Text = LucideIcons.square;
                 _trayStartItem.Header = Strings.ScreenRecordForm_Stop;
@@ -663,59 +647,21 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void ApplyToolWindowStyle()
     {
-        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-        if (handle == IntPtr.Zero)
-        {
-            return;
-        }
-
-        WindowInfo info = new(handle);
-        info.ExStyle |= WindowStyles.WS_EX_TOOLWINDOW;
+        FrameWindowShape.SetOverlayStyle(this, clickThrough: false);
     }
 
     private void ApplyNativeWindowRegion()
     {
-        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-        if (handle == IntPtr.Zero)
-        {
-            return;
-        }
-
         int frameWidth = _captureWidth + BorderPixels * 2;
         int frameHeight = _captureHeight + BorderPixels * 2;
         int toolbarTop = frameHeight + ToolbarGapPixels;
         int toolbarWidth = (int)Math.Ceiling(DisplayedToolbarWidth * _windowScaling);
         int toolbarHeight = (int)Math.Ceiling(ToolbarHeight * _windowScaling);
 
-        IntPtr windowRegion = CreateRectRgn(_frameLeftPixels, 0, _frameLeftPixels + frameWidth, frameHeight);
-        IntPtr apertureRegion = CreateRectRgn(
-            _frameLeftPixels + BorderPixels,
+        FrameWindowShape.Apply(this, FrameWindowShape.Create(
+            new PlatformRectangle(_frameLeftPixels, 0, frameWidth, frameHeight),
             BorderPixels,
-            _frameLeftPixels + frameWidth - BorderPixels,
-            frameHeight - BorderPixels);
-        IntPtr toolbarRegion = CreateRectRgn(
-            _toolbarLeftPixels,
-            toolbarTop,
-            _toolbarLeftPixels + toolbarWidth,
-            toolbarTop + toolbarHeight);
-
-        if (windowRegion == IntPtr.Zero || apertureRegion == IntPtr.Zero || toolbarRegion == IntPtr.Zero)
-        {
-            DeleteRegion(windowRegion);
-            DeleteRegion(apertureRegion);
-            DeleteRegion(toolbarRegion);
-            return;
-        }
-
-        CombineRgn(windowRegion, windowRegion, apertureRegion, RegionDiff);
-        CombineRgn(windowRegion, windowRegion, toolbarRegion, RegionOr);
-        DeleteObject(apertureRegion);
-        DeleteObject(toolbarRegion);
-
-        if (SetWindowRgn(handle, windowRegion, true) == 0)
-        {
-            DeleteObject(windowRegion);
-        }
+            new PlatformRectangle(_toolbarLeftPixels, toolbarTop, toolbarWidth, toolbarHeight)));
     }
 
     private void OnTimerPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -774,7 +720,10 @@ public partial class ScreenRecordWindow : Window, IDisposable
         e.Handled = true;
     }
 
-    private void OnTrayIconMouseClick(object? sender, EventArgs e) => RunOnUIThread(StartStopRecording);
+    private void OnTrayIconClicked(object? sender, EventArgs e)
+    {
+        RunOnUIThread(StartStopRecording);
+    }
 
     private void SetRecordingAccent(IBrush brush)
     {
@@ -782,31 +731,55 @@ public partial class ScreenRecordWindow : Window, IDisposable
         StatusIndicator.Background = brush;
     }
 
+    private void SetTrayText(string text)
+    {
+        _trayIcon.ToolTipText = text.Truncate(63);
+    }
+
+    private void SetTrayIcon(string glyph, SKColor color)
+    {
+        SetTrayIcon(TrayIconRenderer.CreateWindowIcon(glyph, color));
+    }
+
+    private void SetTrayIcon(WindowIcon icon)
+    {
+        _trayIcon.Icon = icon;
+    }
+
     private void SetTrayMenuEnabled(bool enabled)
     {
-        foreach (NativeMenuItem item in _trayMenu.Items)
-            item.IsEnabled = enabled && (!ReferenceEquals(item, _trayRestartItem) || Status is ScreenRecordingStatus.Recording or ScreenRecordingStatus.Paused);
+        foreach (NativeMenuItemBase item in _trayMenu.Items)
+        {
+            if (item is NativeMenuItem menuItem)
+            {
+                menuItem.IsEnabled = enabled;
+            }
+        }
     }
 
-    private void SetTrayText(string text) => _trayIcon.ToolTipText = text.Truncate(63);
+    private static SKColor GetThemeGlyphColor() => ThemeManager.IsDarkTheme ? SKColors.White : SKColors.Black;
 
-    private void SetTrayIcon(byte[] icon)
+    /// <summary>Contrasts with the task bar or panel the tray icon sits on, falling back to ShareX's theme.</summary>
+    private static SKColor GetTrayGlyphColor() => PlatformServices.Current.Preferences.SystemUsesLightTheme switch
     {
-        using MemoryStream stream = new(icon, false);
-        _trayIcon.Icon = new WindowIcon(stream);
-    }
+        true => SKColors.Black,
+        false => SKColors.White,
+        null => GetThemeGlyphColor()
+    };
 
-    private void SetTrayMenuIcon(NativeMenuItem item, string glyph)
+    private static void SetTrayMenuIcon(NativeMenuItem item, string glyph)
     {
-        DrawingColor color = ThemeManager.IsDarkTheme ? DrawingColor.White : DrawingColor.Black;
-        string cacheKey = $"{glyph}:{color.ToArgb()}";
-        if (_trayMenuIconKeys.TryGetValue(item, out string? existing) && existing == cacheKey) return;
-        using SKBitmap bitmap = LucideTrayIcon.CreateImage(glyph, color);
-        using MemoryStream stream = bitmap.GetStream();
-        AvaloniaBitmap replacement = new(stream);
-        AvaloniaBitmap? previous = item.Icon as AvaloniaBitmap;
-        item.Icon = replacement;
-        _trayMenuIconKeys[item] = cacheKey;
+        SKColor color = GetThemeGlyphColor();
+        string cacheKey = $"{glyph}:{color}";
+
+        if (item.CommandParameter as string == cacheKey && item.Icon != null)
+        {
+            return;
+        }
+
+        IDisposable? previous = item.Icon as IDisposable;
+        item.Icon = TrayIconRenderer.CreateMenuBitmap(glyph, color);
+        item.CommandParameter = cacheKey;
         previous?.Dispose();
     }
 
@@ -824,12 +797,14 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void DisposeTrayMenuIcons()
     {
-        foreach (NativeMenuItem item in _trayMenu.Items)
+        foreach (NativeMenuItemBase item in _trayMenu.Items)
         {
-            (item.Icon as IDisposable)?.Dispose();
-            item.Icon = null;
+            if (item is NativeMenuItem menuItem && menuItem.Icon is IDisposable icon)
+            {
+                menuItem.Icon = null;
+                icon.Dispose();
+            }
         }
-        _trayMenuIconKeys.Clear();
     }
 
     private void OnClosed(object? sender, EventArgs e)
@@ -846,24 +821,4 @@ public partial class ScreenRecordWindow : Window, IDisposable
     {
         Dispatcher.UIThread.Post(action);
     }
-
-    private static void DeleteRegion(IntPtr region)
-    {
-        if (region != IntPtr.Zero)
-        {
-            DeleteObject(region);
-        }
-    }
-
-    [DllImport("gdi32.dll")]
-    private static extern IntPtr CreateRectRgn(int left, int top, int right, int bottom);
-
-    [DllImport("gdi32.dll")]
-    private static extern int CombineRgn(IntPtr destination, IntPtr source1, IntPtr source2, int combineMode);
-
-    [DllImport("gdi32.dll")]
-    private static extern bool DeleteObject(IntPtr handle);
-
-    [DllImport("user32.dll")]
-    private static extern int SetWindowRgn(IntPtr windowHandle, IntPtr regionHandle, bool redraw);
 }

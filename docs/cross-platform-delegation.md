@@ -194,6 +194,8 @@ M adds a row when a backend API moved and J's UI files still call the old wrappe
 | ID | Old API (wrapper kept) | New API | Call sites in J's files | Status |
 | --- | --- | --- | --- | --- |
 | H1 | `AuthenticodeSignatureVerifier.IsTrusted` (HelpersLib) | `PlatformServices.Current.CodeSignature.IsTrusted` | `ShareX.HelpersLib/Presentation/UpdateChecker/DownloaderWindow.axaml.cs` | todo |
+| H2 | `WindowsList.GetVisibleWindowsList()` and `WindowInfo` (ScreenCaptureLib, HelpersLib) | `PlatformServices.Current.Windows.GetWindows()` (`PlatformWindow`); icons from `WindowManagement.GetIcon` once M5 brings it | `ShareX/Presentation/MainWindow/MainMenuBuilder.cs` (window menu) | todo |
+| H3 | `Screenshot.Capture…()` now return `SKBitmap?` (null when nothing could be captured) | handle null | `ShareX/Presentation/ApplicationSettings/ApplicationSettingsViewModel.cs` (print screen), `ShareX/Presentation/AutoCapture/AutoCaptureWindow.axaml.cs` (nullable warnings) | todo |
 
 ## Bugs
 
