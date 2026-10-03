@@ -170,6 +170,7 @@ Tick each item once it behaves as in v22 on Windows 10 and 11. File a bug row fo
 - [ ] Mouse highlighter (`WindowsMouseHook`, `WindowsScreenOverlay`)
 - [ ] Inspect window and borderless window (`WindowsWindowManagementService`)
 - [ ] Window menu lists the same windows as v22 (Progman excluded)
+- [ ] ShareX starts, runs and exits normally with the platform services initialised at start up (M2)
 
 ## Requests
 

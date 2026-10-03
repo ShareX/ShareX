@@ -40,6 +40,10 @@
     </ProjectReference>
     <ProjectReference Include="..\ShareX.ScreenCaptureLib\ShareX.ScreenCaptureLib.csproj" />
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
+    <ProjectReference Include="..\ShareX.Platform\ShareX.Platform.csproj" />
+    <ProjectReference Include="..\ShareX.Platform.Windows\ShareX.Platform.Windows.csproj" />
+    <ProjectReference Include="..\ShareX.Platform.Linux\ShareX.Platform.Linux.csproj" />
+    <ProjectReference Include="..\ShareX.Platform.MacOS\ShareX.Platform.MacOS.csproj" />
     <ProjectReference Include="..\ShareX.UploadersLib\ShareX.UploadersLib.csproj" />
   </ItemGroup>
   <ItemGroup>

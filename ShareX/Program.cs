@@ -28,6 +28,7 @@
 using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
+using ShareX.Platform;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -47,6 +48,20 @@ internal static class Program
     private static void Main(string[] args)
     {
         ApplicationDiagnostics.Initialize();
+        PlatformServices.Initialize(PlatformBootstrap.CreateForCurrentOS());
+
+        try
+        {
+            Start(args);
+        }
+        finally
+        {
+            PlatformServices.Shutdown();
+        }
+    }
+
+    private static void Start(string[] args)
+    {
         _startTimer = Stopwatch.StartNew();
         ApplicationCommandLine.Initialize(args);
 
