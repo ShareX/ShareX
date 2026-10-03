@@ -198,6 +198,7 @@ public sealed class InspectWindowTests
         public ISoundService Sounds => throw new NotImplementedException();
         public IDesktopWallpaperService Wallpaper => throw new NotImplementedException();
         public IApplicationSessionService Session => throw new NotImplementedException();
+        public ITrayService Tray => throw new NotImplementedException();
         public void Dispose() { }
     }
 

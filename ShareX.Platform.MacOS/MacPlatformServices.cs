@@ -121,6 +121,8 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public IApplicationSessionService Session { get; } = new UnsupportedApplicationSessionService("macOS restores applications through its own session settings.");
 
+    public ITrayService Tray { get; } = new UnsupportedTrayService();
+
     public void Dispose()
     {
         if (hotkeys.IsValueCreated)

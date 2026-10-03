@@ -32,8 +32,7 @@ namespace ShareX.Platform;
 /// ShareX.Platform.Windows, ShareX.Platform.MacOS and ShareX.Platform.Linux.
 /// </summary>
 /// <remarks>
-/// The system tray is not part of this interface because Avalonia's TrayIcon already covers NotifyIcon,
-/// NSStatusItem and StatusNotifierItem.
+/// The optional native tray transport preserves additional Windows gestures; other desktops use Avalonia's TrayIcon.
 /// </remarks>
 public interface IPlatformServices : IDisposable
 {
@@ -102,4 +101,7 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>Session end and restart registration.</summary>
     IApplicationSessionService Session { get; }
+
+    /// <summary>Native notification-area transport and gesture capabilities.</summary>
+    ITrayService Tray { get; }
 }

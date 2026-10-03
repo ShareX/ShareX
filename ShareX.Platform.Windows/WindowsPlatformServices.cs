@@ -121,6 +121,8 @@ public sealed class WindowsPlatformServices : IPlatformServices
 
     public IApplicationSessionService Session { get; } = new WindowsApplicationSessionService();
 
+    public ITrayService Tray { get; } = new WindowsTrayService();
+
     public void Dispose()
     {
         Session.Dispose();

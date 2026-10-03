@@ -128,6 +128,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
 
     public IApplicationSessionService Session { get; } = new UnsupportedApplicationSessionService("Linux desktops restore applications through their own session settings.");
 
+    public ITrayService Tray { get; } = new UnsupportedTrayService();
+
     public void Dispose()
     {
         if (hotkeys.IsValueCreated)

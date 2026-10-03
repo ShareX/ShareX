@@ -35,6 +35,8 @@ These checks skip off Windows or when the application fixture variables are unse
 
 Native Windows session checks create only their own hidden top-level windows on an STA thread. Direct messages to those windows verify synchronous restart-query registration, cancelled queries without save/close, confirmed session-end timing, exception routing, thread ownership and disposal without changing foreground focus. A native restart-settings round trip verifies `-silent`, Unicode arguments and zero flags, restoring the test process's previous restart registration afterwards. Nothing is broadcast and no user session is ended. These checks skip off Windows and do not replace interactive Windows 10/11 shutdown/update verification.
 
+Native Windows tray checks use generated transparent PNGs, owned hidden receiver windows and a fake shell notification callback. They verify all three buttons' press/release/double-click messages, native close requests and exception routing, system double-click timing, tooltip truncation, visibility/add/modify/delete ordering and recovery from a synthetic `TaskbarCreated` message or failed update. Native icon/window lifetime checks cover failed replacement, wrong-thread access, repeated cleanup and unchanged USER/GDI resource counts. They never add an icon to the actual notification area or restart Explorer. The Avalonia fallback capability check runs on every OS; the native checks skip off Windows. Real tray interaction, theme and display scaling still need desktop verification.
+
 Native Windows updater signature checks reject missing, malformed and unsigned fixtures. The trusted/tampered comparison uses an optional, already signed binary:
 
 ```powershell
