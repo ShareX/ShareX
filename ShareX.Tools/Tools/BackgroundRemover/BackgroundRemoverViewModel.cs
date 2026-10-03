@@ -27,6 +27,7 @@ using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Platform;
 using SkiaSharp;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -181,11 +182,11 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
         {
             Directory.CreateDirectory(ModelsFolder);
 
-            Process.Start(new ProcessStartInfo
+            if (!PlatformServices.Current.Shell.OpenPath(ModelsFolder))
             {
-                FileName = ModelsFolder,
-                UseShellExecute = true
-            });
+                ToolsDiagnostics.ReportWarning(nameof(BackgroundRemoverViewModel), "Failed to open models folder.");
+                return;
+            }
 
             RefreshModels();
         }
@@ -200,11 +201,10 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
     {
         try
         {
-            Process.Start(new ProcessStartInfo
+            if (!PlatformServices.Current.Shell.OpenUrl(BackgroundRemoverGuideUrl))
             {
-                FileName = BackgroundRemoverGuideUrl,
-                UseShellExecute = true
-            });
+                ToolsDiagnostics.ReportWarning(nameof(BackgroundRemoverViewModel), "Failed to open the background remover guide.");
+            }
         }
         catch (Exception ex)
         {
