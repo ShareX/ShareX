@@ -25,9 +25,9 @@
 
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
+using ShareX.Platform;
 using SkiaSharp;
 using System.Diagnostics;
-using Vortice.DXGI;
 
 namespace ShareX.Tools;
 
@@ -77,7 +77,7 @@ public sealed class BackgroundRemovalService : IDisposable
 {
     private static readonly float[] Mean = [0.485f, 0.456f, 0.406f];
     private static readonly float[] StandardDeviation = [0.229f, 0.224f, 0.225f];
-    private static readonly Lazy<DirectMLAdapter> PreferredDirectMLAdapter = new(FindPreferredDirectMLAdapter);
+    private static readonly Lazy<GpuAdapter?> PreferredDirectMLAdapter = new(() => PlatformServices.Current.SystemInfo.GetPreferredGpu());
     private readonly Lock _sessionLock = new();
     private SessionCacheKey? _sessionKey;
     private InferenceSession? _session;
@@ -152,7 +152,8 @@ public sealed class BackgroundRemovalService : IDisposable
 
     private static SessionCreationResult CreateDirectMLSession(string modelPath)
     {
-        DirectMLAdapter adapter = PreferredDirectMLAdapter.Value;
+        // DirectML is the only GPU provider ShareX ships; elsewhere the GPU option is not available and automatic mode uses the CPU.
+        GpuAdapter adapter = PreferredDirectMLAdapter.Value ?? throw new NotSupportedException("GPU background removal needs DirectML on Windows.");
         using SessionOptions sessionOptions = new()
         {
             EnableMemoryPattern = false,
@@ -160,7 +161,7 @@ public sealed class BackgroundRemovalService : IDisposable
             GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_ALL
         };
 
-        sessionOptions.AppendExecutionProvider_DML(adapter.DeviceId);
+        sessionOptions.AppendExecutionProvider_DML(adapter.Index);
         return new SessionCreationResult(new InferenceSession(modelPath, sessionOptions), adapter.Name);
     }
 
@@ -208,46 +209,6 @@ public sealed class BackgroundRemovalService : IDisposable
             phaseStopwatch.ElapsedMilliseconds);
     }
 
-    private static DirectMLAdapter FindPreferredDirectMLAdapter()
-    {
-        try
-        {
-            using IDXGIFactory1 factory = Vortice.DXGI.DXGI.CreateDXGIFactory1<IDXGIFactory1>();
-            DirectMLAdapter? preferredAdapter = null;
-            ulong largestDedicatedMemory = 0;
-
-            for (uint index = 0; ; index++)
-            {
-                if (factory.EnumAdapters1(index, out IDXGIAdapter1 adapter).Failure)
-                {
-                    break;
-                }
-
-                using (adapter)
-                {
-                    AdapterDescription1 description = adapter.Description1;
-                    if ((description.Flags & AdapterFlags.Software) != 0)
-                    {
-                        continue;
-                    }
-
-                    ulong dedicatedMemory = description.DedicatedVideoMemory;
-                    if (preferredAdapter == null || dedicatedMemory > largestDedicatedMemory)
-                    {
-                        preferredAdapter = new DirectMLAdapter((int)index, description.Description);
-                        largestDedicatedMemory = dedicatedMemory;
-                    }
-                }
-            }
-
-            return preferredAdapter ?? new DirectMLAdapter(0, "GPU 0");
-        }
-        catch
-        {
-            return new DirectMLAdapter(0, "GPU 0");
-        }
-    }
-
     public void Dispose()
     {
         lock (_sessionLock)
@@ -268,8 +229,6 @@ public sealed class BackgroundRemovalService : IDisposable
     private readonly record struct SessionLookupResult(InferenceSession Session, bool IsCached, string ExecutionDevice);
 
     private readonly record struct SessionCreationResult(InferenceSession Session, string ExecutionDevice);
-
-    private readonly record struct DirectMLAdapter(int DeviceId, string Name);
 
     private readonly record struct SessionCacheKey(
         string ModelPath,

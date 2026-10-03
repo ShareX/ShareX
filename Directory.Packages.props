@@ -7,6 +7,7 @@
     <PackageVersion Include="FluentFTP" Version="55.0.0" />
     <PackageVersion Include="Microsoft.Data.Sqlite" Version="11.0.0-rc.1.26425.128" />
     <PackageVersion Include="Microsoft.Data.Sqlite.Core" Version="11.0.0-rc.1.26425.128" />
+    <PackageVersion Include="Microsoft.ML.OnnxRuntime" Version="1.24.4" />
     <PackageVersion Include="Microsoft.ML.OnnxRuntime.DirectML" Version="1.24.4" />
     <PackageVersion Include="Microsoft.Win32.SystemEvents" Version="10.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />

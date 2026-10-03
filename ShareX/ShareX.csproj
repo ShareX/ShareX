@@ -1,11 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net10.0-windows10.0.22621.0</TargetFramework>
+    <!-- The Windows build keeps the Windows SDK target so ShareX.Platform.Windows brings its Windows Runtime features (OCR).
+         Elsewhere the application is plain net10.0 and reaches the operating system only through ShareX.Platform. -->
+    <TargetFramework Condition="$([MSBuild]::IsOSPlatform('Windows'))">net10.0-windows10.0.22621.0</TargetFramework>
+    <TargetFramework Condition="!$([MSBuild]::IsOSPlatform('Windows'))">net10.0</TargetFramework>
+    <WarningsAsErrors Condition="!$([MSBuild]::IsOSPlatform('Windows'))">$(WarningsAsErrors);CA1416</WarningsAsErrors>
     <OutputType>WinExe</OutputType>
     <ApplicationIcon>ShareX_Icon.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Description>Screen capture, file sharing and productivity tool</Description>
-    <SupportedOSPlatformVersion>10.0.22621.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::IsOSPlatform('Windows'))">10.0.22621.0</SupportedOSPlatformVersion>
     <CETCompat>false</CETCompat>
   </PropertyGroup>
   <ItemGroup>

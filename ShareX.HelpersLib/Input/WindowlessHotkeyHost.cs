@@ -1,0 +1,83 @@
+#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (c) 2007-2026 ShareX Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
+using System;
+
+namespace ShareX.HelpersLib;
+
+/// <summary>
+/// The application host where ShareX needs no native message window: hotkeys come from <see cref="HotkeyRegistrar"/>,
+/// the tray from Avalonia's TrayIcon, and there are no Windows session messages.
+/// </summary>
+public sealed class WindowlessHotkeyHost : IHotkeyHost
+{
+    public event HotkeyEventHandler HotkeyPress
+    {
+        add { }
+        remove { }
+    }
+
+    public event EventHandler Closed;
+
+    public event EventHandler<NativeWindowMessageEventArgs> NativeMessageReceived
+    {
+        add { }
+        remove { }
+    }
+
+    public IntPtr Handle => IntPtr.Zero;
+
+    public bool IsDisposed { get; private set; }
+
+    public int HotkeyRepeatLimit { get; set; }
+
+    public void Initialize()
+    {
+    }
+
+    /// <summary>Hotkeys are registered through <see cref="HotkeyRegistrar"/>.</summary>
+    public void RegisterHotkey(HotkeyInfo hotkeyInfo) => throw new NotSupportedException("Register hotkeys with HotkeyRegistrar.");
+
+    public bool UnregisterHotkey(HotkeyInfo hotkeyInfo) => false;
+
+    public void Close()
+    {
+        if (IsDisposed)
+        {
+            return;
+        }
+
+        try
+        {
+            Closed?.Invoke(this, EventArgs.Empty);
+        }
+        finally
+        {
+            IsDisposed = true;
+        }
+    }
+
+    public void Dispose() => Close();
+}

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using ShareX.Platform;
 using ShareX.Platform.Linux;
 using ShareX.Platform.MacOS;
@@ -56,5 +57,15 @@ internal static class PlatformBootstrap
         }
 
         throw new PlatformNotSupportedException("ShareX runs on Windows, macOS and Linux.");
+    }
+
+    /// <summary>
+    /// The application's message host. Windows keeps its hidden window for the notification area icon and session end messages;
+    /// elsewhere Avalonia's TrayIcon needs no host window.
+    /// </summary>
+    /// <remarks>Migration debt (J3, R15): goes away when the Windows tray and session messages move into ShareX.Platform.Windows.</remarks>
+    public static IHotkeyHost CreateApplicationHost()
+    {
+        return OperatingSystem.IsWindows() ? new WindowsHotkeyHost() : new WindowlessHotkeyHost();
     }
 }

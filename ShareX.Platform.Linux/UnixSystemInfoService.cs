@@ -53,6 +53,8 @@ public sealed class UnixSystemInfoService : ISystemInfoService
 
     public bool IsTabletMode => false;
 
+    public GpuAdapter? GetPreferredGpu() => null;
+
     private bool ReadAdministratorGroupMember()
     {
         try

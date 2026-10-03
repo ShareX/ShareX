@@ -39,4 +39,13 @@ public interface ISystemInfoService
 
     /// <summary>Windows tablet mode. Always false elsewhere.</summary>
     bool IsTabletMode { get; }
+
+    /// <summary>
+    /// The hardware GPU for machine learning (the background remover): the one with the most dedicated memory, numbered as DirectML
+    /// numbers adapters. Null where ShareX runs models on the CPU only (Linux and macOS).
+    /// </summary>
+    GpuAdapter? GetPreferredGpu();
 }
+
+/// <param name="Index">The adapter index DirectML expects.</param>
+public sealed record GpuAdapter(int Index, string Name);

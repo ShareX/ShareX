@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <!-- net10.0 once HelpersLib is portable (M3); the code here already uses only the platform services. -->
-    <TargetFramework>net10.0-windows</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- Portable project: OS specific code lives in ShareX.Platform.* behind IPlatformServices. -->

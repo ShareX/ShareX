@@ -28,6 +28,7 @@ using System;
 using System.Linq;
 using System.Runtime.Versioning;
 using System.Security.Principal;
+using Vortice.DXGI;
 
 namespace ShareX.Platform.Windows;
 
@@ -89,6 +90,49 @@ public sealed class WindowsSystemInfoService : ISystemInfoService
             {
                 return false;
             }
+        }
+    }
+
+    /// <summary>The non-software DXGI adapter with the most dedicated video memory, as the background remover has always chosen.</summary>
+    public GpuAdapter? GetPreferredGpu()
+    {
+        try
+        {
+            using IDXGIFactory1 factory = Vortice.DXGI.DXGI.CreateDXGIFactory1<IDXGIFactory1>();
+            GpuAdapter? preferredAdapter = null;
+            ulong largestDedicatedMemory = 0;
+
+            for (uint index = 0; ; index++)
+            {
+                if (factory.EnumAdapters1(index, out IDXGIAdapter1 adapter).Failure)
+                {
+                    break;
+                }
+
+                using (adapter)
+                {
+                    AdapterDescription1 description = adapter.Description1;
+
+                    if ((description.Flags & AdapterFlags.Software) != 0)
+                    {
+                        continue;
+                    }
+
+                    ulong dedicatedMemory = description.DedicatedVideoMemory;
+
+                    if (preferredAdapter == null || dedicatedMemory > largestDedicatedMemory)
+                    {
+                        preferredAdapter = new GpuAdapter((int)index, description.Description);
+                        largestDedicatedMemory = dedicatedMemory;
+                    }
+                }
+            }
+
+            return preferredAdapter ?? new GpuAdapter(0, "GPU 0");
+        }
+        catch
+        {
+            return new GpuAdapter(0, "GPU 0");
         }
     }
 }

@@ -50,6 +50,8 @@ public sealed class MacSystemInfoService : ISystemInfoService
 
     public bool IsTabletMode => false;
 
+    public GpuAdapter? GetPreferredGpu() => null;
+
     private string? Run(string command, string argument)
     {
         try
