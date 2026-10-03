@@ -16,15 +16,25 @@ desktop_file="$prefix/share/applications/sharex.desktop"
 icon_file="$prefix/share/icons/hicolor/256x256/apps/sharex.png"
 repo="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
+# The installed ShareX processes, found by executable because the sharex link changes their command line.
+running_pids() {
+  for pid in $(pgrep -i -x sharex 2>/dev/null); do
+    [ "$(readlink "/proc/$pid/exe" 2>/dev/null)" = "$app_dir/ShareX" ] && echo "$pid"
+  done
+  return 0
+}
+
 # ShareX saves its settings and closes when it receives SIGTERM.
 stop_running() {
-  if pkill -TERM -f "^$app_dir/ShareX( |$)" 2>/dev/null; then
-    for _ in $(seq 1 50); do
-      pgrep -f "^$app_dir/ShareX( |$)" >/dev/null || return 0
-      sleep 0.1
-    done
-    pkill -KILL -f "^$app_dir/ShareX( |$)" 2>/dev/null || true
-  fi
+  local pids
+  pids="$(running_pids)"
+  [ -n "$pids" ] || return 0
+  kill -TERM $pids 2>/dev/null || true
+  for _ in $(seq 1 50); do
+    [ -n "$(running_pids)" ] || return 0
+    sleep 0.1
+  done
+  kill -KILL $(running_pids) 2>/dev/null || true
 }
 
 case "${1:-}" in

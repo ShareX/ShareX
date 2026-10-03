@@ -80,6 +80,15 @@ namespace ShareX
 
             DebugHelper.WriteLine("Executing: " + job.GetLocalizedDescription());
 
+            // Hotkeys, the command line and workflows can start a task the menus show as unavailable on this desktop.
+            FeatureSupport support = TaskFeatureSupport.Get(job);
+            if (!support.IsSupported)
+            {
+                DebugHelper.WriteLine($"Not available here: {job}. {support.Reason}");
+                ShowNotificationTip(support.Reason ?? job.GetLocalizedDescription(), job.GetLocalizedDescription());
+                return;
+            }
+
             TaskSettings safeTaskSettings = TaskSettings.GetSafeTaskSettings(taskSettings);
 
             switch (job)

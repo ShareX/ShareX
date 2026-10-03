@@ -184,6 +184,8 @@ public static partial class SkiaImageHelpers
 
     public static SKBitmap LoadImage(string filePath)
     {
+        if (string.IsNullOrEmpty(filePath)) return null;
+
         try
         {
             using FileStream stream = File.OpenRead(filePath);
