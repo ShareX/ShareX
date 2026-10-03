@@ -33,22 +33,18 @@ using System.Runtime.ExceptionServices;
 
 namespace ShareX.HelpersLib;
 
-/// <summary>Windows global hotkeys and tray messages on Avalonia's UI thread.</summary>
+/// <summary>Windows tray and session end messages on Avalonia's UI thread. Hotkeys use <see cref="HotkeyRegistrar"/>.</summary>
 public sealed class WindowsHotkeyHost : IHotkeyHost
 {
     private readonly int threadId = Environment.CurrentManagedThreadId;
-    private readonly Stopwatch repeatLimitTimer = Stopwatch.StartNew();
-    private readonly HashSet<HotkeyInfo> registeredHotkeys = new();
     private WindowsNativeWindow window;
     private bool closing;
 
-    public event HotkeyEventHandler HotkeyPress;
     public event EventHandler Closed;
     public event EventHandler<NativeWindowMessageEventArgs> NativeMessageReceived;
 
     public IntPtr Handle => GetWindow().Handle;
     public bool IsDisposed { get; private set; }
-    public int HotkeyRepeatLimit { get; set; } = 1000;
 
     public WindowsHotkeyHost()
     {
@@ -73,70 +69,11 @@ public sealed class WindowsHotkeyHost : IHotkeyHost
 
     public void Initialize() => _ = Handle;
 
-    public void RegisterHotkey(HotkeyInfo hotkeyInfo)
-    {
-        VerifyAccess();
-        ObjectDisposedException.ThrowIf(IsDisposed || closing, this);
-        if (hotkeyInfo == null || hotkeyInfo.Status == HotkeyStatus.Registered) return;
-        if (!hotkeyInfo.IsValidHotkey)
-        {
-            hotkeyInfo.Status = HotkeyStatus.NotConfigured;
-            return;
-        }
-        IntPtr handle = Handle;
-        if (hotkeyInfo.ID == 0)
-        {
-            hotkeyInfo.ID = NativeMethods.GlobalAddAtom(Helpers.GetUniqueID());
-            if (hotkeyInfo.ID == 0)
-            {
-                DebugHelper.WriteLine("Unable to generate unique hotkey ID: " + hotkeyInfo);
-                hotkeyInfo.Status = HotkeyStatus.Failed;
-                return;
-            }
-        }
-        if (!NativeMethods.RegisterHotKey(handle, hotkeyInfo.ID, (uint)hotkeyInfo.ModifiersEnum, (uint)hotkeyInfo.KeyCode))
-        {
-            NativeMethods.GlobalDeleteAtom(hotkeyInfo.ID);
-            DebugHelper.WriteLine("Unable to register hotkey: " + hotkeyInfo);
-            hotkeyInfo.ID = 0;
-            hotkeyInfo.Status = HotkeyStatus.Failed;
-            return;
-        }
-        registeredHotkeys.Add(hotkeyInfo);
-        hotkeyInfo.Status = HotkeyStatus.Registered;
-    }
-
-    public bool UnregisterHotkey(HotkeyInfo hotkeyInfo)
-    {
-        VerifyAccess();
-        ObjectDisposedException.ThrowIf(IsDisposed, this);
-        if (hotkeyInfo == null) return false;
-        if (hotkeyInfo.ID > 0 && NativeMethods.UnregisterHotKey(Handle, hotkeyInfo.ID))
-        {
-            NativeMethods.GlobalDeleteAtom(hotkeyInfo.ID);
-            registeredHotkeys.Remove(hotkeyInfo);
-            hotkeyInfo.ID = 0;
-            hotkeyInfo.Status = HotkeyStatus.NotConfigured;
-            return true;
-        }
-        hotkeyInfo.Status = HotkeyStatus.Failed;
-        return false;
-    }
-
     private void OnNativeMessage(object sender, NativeWindowMessageEventArgs message)
     {
         try
         {
-            if (message.Message == (int)WindowsMessages.HOTKEY)
-            {
-                message.Handled = true;
-                if (CheckRepeatLimitTime())
-                {
-                    uint data = unchecked((uint)message.LParam.ToInt64());
-                    HotkeyPress?.Invoke((ushort)message.WParam.ToInt64(), (InputKey)(data >> 16), (Modifiers)(data & 0xffff));
-                }
-            }
-            else if (message.Message == (int)WindowsMessages.CLOSE)
+            if (message.Message == (int)WindowsMessages.CLOSE)
             {
                 message.Handled = true;
                 Close();
@@ -152,16 +89,6 @@ public sealed class WindowsHotkeyHost : IHotkeyHost
         }
     }
 
-    private bool CheckRepeatLimitTime()
-    {
-        if (HotkeyRepeatLimit > 0)
-        {
-            if (repeatLimitTimer.ElapsedMilliseconds < HotkeyRepeatLimit) return false;
-            repeatLimitTimer.Restart();
-        }
-        return true;
-    }
-
     public void Close()
     {
         VerifyAccess();
@@ -174,14 +101,6 @@ public sealed class WindowsHotkeyHost : IHotkeyHost
         }
         finally
         {
-            foreach (HotkeyInfo hotkey in registeredHotkeys.ToArray())
-            {
-                NativeMethods.UnregisterHotKey(window.Handle, hotkey.ID);
-                NativeMethods.GlobalDeleteAtom(hotkey.ID);
-                hotkey.ID = 0;
-                hotkey.Status = HotkeyStatus.NotConfigured;
-            }
-            registeredHotkeys.Clear();
             if (window != null)
             {
                 window.MessageReceived -= OnNativeMessage;

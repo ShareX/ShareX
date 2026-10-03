@@ -27,18 +27,13 @@ using System;
 
 namespace ShareX.HelpersLib;
 
-public delegate void HotkeyEventHandler(ushort id, InputKey key, Modifiers modifier);
-
+/// <summary>The application's native message host: the Windows notification area icon and session end messages. Hotkeys use <see cref="HotkeyRegistrar"/>.</summary>
 public interface IHotkeyHost : IDisposable
 {
-    event HotkeyEventHandler HotkeyPress;
     event EventHandler Closed;
     event EventHandler<NativeWindowMessageEventArgs> NativeMessageReceived;
     IntPtr Handle { get; }
     bool IsDisposed { get; }
-    int HotkeyRepeatLimit { get; set; }
-    void RegisterHotkey(HotkeyInfo hotkeyInfo);
-    bool UnregisterHotkey(HotkeyInfo hotkeyInfo);
     void Initialize();
     void Close();
 }

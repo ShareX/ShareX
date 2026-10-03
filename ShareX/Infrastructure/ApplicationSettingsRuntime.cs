@@ -79,7 +79,6 @@ internal static class ApplicationSettingsRuntime
         };
 
         TaskManager.RecentManager.MaxCount = settings.RecentTasksMaxCount;
-        _hotkeyHost?.ApplyHotkeySettings();
         _hotkeyHost?.UpdateTrayIcon();
 
         ApplicationState.UpdateManager.AllowAutoUpdate = !SystemOptions.DisableUpdateCheck && settings.AutoCheckUpdate;

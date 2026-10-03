@@ -33,12 +33,6 @@ namespace ShareX.HelpersLib;
 /// </summary>
 public sealed class WindowlessHotkeyHost : IHotkeyHost
 {
-    public event HotkeyEventHandler HotkeyPress
-    {
-        add { }
-        remove { }
-    }
-
     public event EventHandler Closed;
 
     public event EventHandler<NativeWindowMessageEventArgs> NativeMessageReceived
@@ -51,16 +45,9 @@ public sealed class WindowlessHotkeyHost : IHotkeyHost
 
     public bool IsDisposed { get; private set; }
 
-    public int HotkeyRepeatLimit { get; set; }
-
     public void Initialize()
     {
     }
-
-    /// <summary>Hotkeys are registered through <see cref="HotkeyRegistrar"/>.</summary>
-    public void RegisterHotkey(HotkeyInfo hotkeyInfo) => throw new NotSupportedException("Register hotkeys with HotkeyRegistrar.");
-
-    public bool UnregisterHotkey(HotkeyInfo hotkeyInfo) => false;
 
     public void Close()
     {

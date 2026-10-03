@@ -47,7 +47,6 @@ namespace ShareX
         public HotkeysToggledEventHandler HotkeysToggledTrigger;
 
         private readonly HotkeyRegistrar registrar;
-        private readonly IHotkeyHost hotkeyHost;
 
         /// <summary>Hotkeys through the platform's hotkey service, throttled by the "hotkey repeat limit" setting.</summary>
         public HotkeyManager()
@@ -55,14 +54,6 @@ namespace ShareX
             registrar = new HotkeyRegistrar(() => ApplicationState.Settings.HotkeyRepeatLimit);
             registrar.HotkeyPress += OnHotkeyPressed;
         }
-
-        /// <summary>Kept until MainForm stops passing its window (handoff H6). Only the host's Closed event is still used.</summary>
-        public HotkeyManager(IHotkeyHost host) : this()
-        {
-            hotkeyHost = host;
-            hotkeyHost.Closed += OnHostClosed;
-        }
-
         public FeatureSupport Support => registrar.Support;
 
         private void OnHotkeyPressed(ushort id)
@@ -77,15 +68,6 @@ namespace ShareX
                 }
             }
         }
-
-        private void OnHostClosed(object sender, EventArgs e)
-        {
-            if (!hotkeyHost.IsDisposed)
-            {
-                UnregisterAllHotkeys(false);
-            }
-        }
-
         public void UpdateHotkeys(List<HotkeySettings> hotkeys, bool showFailedHotkeys)
         {
             if (Hotkeys != null)
