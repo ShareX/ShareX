@@ -1,0 +1,85 @@
+name: Cross-platform
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - "ShareX*/**"
+      - "Directory.Build.*"
+      - "Directory.Packages.props"
+      - "ShareX.sln"
+      - ".github/workflows/platform.yml"
+  pull_request:
+    branches:
+      - "**"
+    paths:
+      - "ShareX*/**"
+      - "Directory.Build.*"
+      - "Directory.Packages.props"
+      - "ShareX.sln"
+      - ".github/workflows/platform.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      # Each platform project builds on every OS. The tests exercise parsing and argument generation, so they run everywhere too.
+      - name: Build platform projects
+        run: |
+          dotnet build ShareX.Platform.Linux/ShareX.Platform.Linux.csproj --configuration Release
+          dotnet build ShareX.Platform.MacOS/ShareX.Platform.MacOS.csproj --configuration Release
+          dotnet build ShareX.Platform.Windows/ShareX.Platform.Windows.csproj --configuration Release
+
+      - name: Test platform layer
+        run: dotnet test ShareX.Platform.Tests/ShareX.Platform.Tests.csproj --configuration Release --logger "console;verbosity=normal"
+
+      # The legacy preset tests need the Windows desktop runtime until ImageEffectsLib and HelpersLib target net10.0 (task M7).
+      - name: Test image effects
+        if: runner.os == 'Windows'
+        run: dotnet test ShareX.ImageEffectsLib.Tests/ShareX.ImageEffectsLib.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
+
+  build-solution:
+    name: Build solution (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      # Windows-only projects compile on any OS through EnableWindowsTargeting (set in Directory.Build.props). They cannot run off Windows yet.
+      - name: Build ShareX.sln
+        run: dotnet build ShareX.sln --configuration Release -p:Platform=x64

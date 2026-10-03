@@ -1,0 +1,77 @@
+﻿#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (c) 2007-2026 ShareX Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
+using System.Collections.Generic;
+
+namespace ShareX.Platform;
+
+/// <summary>Opening URLs and files, and showing files in Explorer, Finder or the Linux file manager.</summary>
+public interface IShellService
+{
+    bool OpenUrl(string url);
+
+    /// <summary>Opens a file or folder with its default application.</summary>
+    bool OpenPath(string path);
+
+    /// <summary>Opens the containing folder and selects the file where the file manager supports it.</summary>
+    bool RevealInFileManager(string path);
+
+    /// <summary>
+    /// The MIME type the system associates with a file extension such as ".png", or null. Windows reads the registry,
+    /// Linux the shared-mime-info and mime.types databases. Callers keep their own table for the common types.
+    /// </summary>
+    string? GetMimeType(string extension);
+}
+
+public enum ShellMenuTarget
+{
+    /// <summary>Any file and any folder.</summary>
+    FilesAndFolders,
+    /// <summary>Image files only.</summary>
+    Images
+}
+
+/// <summary>A context menu entry added to the file manager.</summary>
+/// <param name="Id">Stable identifier, for example "ShareX" or "ShareXImageEditor".</param>
+/// <param name="Label">Text shown in the menu, for example "Upload with ShareX".</param>
+/// <param name="ExecutablePath">Absolute path of the program to run.</param>
+/// <param name="Arguments">Arguments placed before the selected file path.</param>
+public sealed record ShellMenuEntry(string Id, string Label, string ExecutablePath, IReadOnlyList<string> Arguments, ShellMenuTarget Target)
+{
+    /// <summary>Icon path or theme icon name. Windows uses "executable,index".</summary>
+    public string? Icon { get; init; }
+}
+
+/// <summary>File manager integration: Explorer on Windows, Finder Services on macOS, Nautilus, Dolphin, Nemo and Thunar on Linux.</summary>
+public interface IShellIntegrationService
+{
+    FeatureSupport Support { get; }
+
+    bool IsRegistered(ShellMenuEntry entry);
+
+    void Register(ShellMenuEntry entry);
+
+    void Unregister(ShellMenuEntry entry);
+}

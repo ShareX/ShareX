@@ -7,6 +7,9 @@
     <Nullable>annotations</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <InternalsVisibleTo Include="ShareX.ImageEffectsLib.Tests" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Avalonia.Controls.ColorPicker" />
     <PackageReference Include="Avalonia.Desktop" />
