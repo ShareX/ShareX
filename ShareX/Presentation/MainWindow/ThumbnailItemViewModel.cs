@@ -31,6 +31,7 @@ using ShareX.AvaloniaUI.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -265,11 +266,13 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
 
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsVideoFile(filePath))
             {
-                using DrawingBitmap? shellThumbnail = NativeMethods.GetFileThumbnail(filePath, new System.Drawing.Size(width, height));
-
-                if (shellThumbnail != null)
+                IThumbnailService thumbnailService = PlatformServices.Current.Thumbnails;
+                byte[]? png = thumbnailService.Support.IsSupported ? thumbnailService.GetThumbnail(filePath, width, height) : null;
+                if (png != null)
                 {
-                    return BitmapConversionHelpers.CreatePreview(shellThumbnail, new Avalonia.PixelSize(width, height));
+                    using DrawingBitmap? shellThumbnail = DrawingBitmap.Decode(png);
+                    if (shellThumbnail != null)
+                        return BitmapConversionHelpers.CreatePreview(shellThumbnail, new Avalonia.PixelSize(width, height));
                 }
             }
         }
