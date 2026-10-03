@@ -32,7 +32,7 @@ using System.Threading.Tasks;
 namespace ShareX;
 
 /// <summary>
-/// Coordinates the Windows hotkey host and desktop notification-area icon.
+/// Coordinates the application host and desktop notification-area icon.
 /// Avalonia owns the application lifetime and all visible windows.
 /// </summary>
 internal sealed class MainForm
@@ -55,7 +55,8 @@ internal sealed class MainForm
 
     internal void ApplyHotkeySettings()
     {
-        _hotkeyHost.HotkeyRepeatLimit = ApplicationState.Settings.HotkeyRepeatLimit;
+        // Compatibility entry point for ApplicationSettingsRuntime. HotkeyRegistrar
+        // reads the current repeat limit directly from settings on every press.
     }
 
     internal void UpdateTrayIcon()
@@ -72,7 +73,7 @@ internal sealed class MainForm
 
         if (hotkeyManager == null)
         {
-            hotkeyManager = new HotkeyManager(_hotkeyHost);
+            hotkeyManager = new HotkeyManager();
             hotkeyManager.HotkeyTrigger += HandleHotkeys;
             ApplicationState.HotkeyManager = hotkeyManager;
         }
@@ -116,6 +117,7 @@ internal sealed class MainForm
 
     private void OnHostClosed(object? sender, EventArgs e)
     {
+        ApplicationState.HotkeyManager?.UnregisterAllHotkeys(false);
         TrayIconService.Dispose();
         ApplicationLifecycle.OnHotkeyHostClosed();
     }
