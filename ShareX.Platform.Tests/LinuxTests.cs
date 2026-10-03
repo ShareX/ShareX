@@ -841,3 +841,17 @@ public class WaylandRecordingTests
             .GetField("arguments", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)!.GetValue(input.Source) as IReadOnlyList<string> ?? []));
     }
 }
+
+public class HyprlandOptionTests
+{
+    [Theory]
+    [InlineData("{\"option\": \"xwayland:force_zero_scaling\", \"bool\": true, \"set\": true}", true)]
+    [InlineData("{\"option\": \"xwayland:force_zero_scaling\", \"int\": 0, \"set\": false}", false)]
+    [InlineData("{\"option\": \"xwayland:force_zero_scaling\", \"int\": 1}", true)]
+    [InlineData("{\"option\": \"x\"}", null)]
+    public void ReadsBooleanOption(string json, bool? expected)
+    {
+        using JsonDocument document = JsonDocument.Parse(json);
+        Assert.Equal(expected, LinuxWindowService.ParseHyprlandBoolOption(document.RootElement));
+    }
+}

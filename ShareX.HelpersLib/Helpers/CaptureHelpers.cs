@@ -92,6 +92,30 @@ namespace ShareX.HelpersLib
         }
 
         /// <summary>The pointer position, or Point.Empty where the platform does not reveal it (most Wayland compositors).</summary>
+        /// <summary>
+        /// Screen coordinates to the pixels ShareX's own windows are placed in. The same on Windows, macOS and X11; scaled on
+        /// Hyprland with XWayland zero scaling (see <see cref="IWindowService.GetOwnWindowPixelScale"/>).
+        /// </summary>
+        public static Rectangle ScreenToOwnWindowPixels(Rectangle rectangle)
+        {
+            double scale = GetOwnWindowPixelScale(rectangle.Location);
+            return scale == 1 ? rectangle : new Rectangle((int)Math.Round(rectangle.X * scale), (int)Math.Round(rectangle.Y * scale),
+                (int)Math.Round(rectangle.Width * scale), (int)Math.Round(rectangle.Height * scale));
+        }
+
+        public static Rectangle OwnWindowPixelsToScreen(Rectangle rectangle)
+        {
+            double scale = GetOwnWindowPixelScale(rectangle.Location);
+            return scale == 1 ? rectangle : new Rectangle((int)Math.Round(rectangle.X / scale), (int)Math.Round(rectangle.Y / scale),
+                (int)Math.Round(rectangle.Width / scale), (int)Math.Round(rectangle.Height / scale));
+        }
+
+        private static double GetOwnWindowPixelScale(Point point)
+        {
+            double scale = PlatformServices.IsInitialized ? PlatformServices.Current.Windows.GetOwnWindowPixelScale(new PlatformPoint(point.X, point.Y)) : 1;
+            return double.IsFinite(scale) && scale > 0 ? scale : 1;
+        }
+
         public static Point GetCursorPosition()
         {
             PlatformPoint? point = PlatformServices.IsInitialized ? PlatformServices.Current.Windows.GetCursorPosition() : null;

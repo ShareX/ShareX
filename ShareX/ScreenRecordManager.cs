@@ -184,7 +184,8 @@ namespace ShareX
 
             float duration = taskSettings.CaptureSettings.ScreenRecordFixedDuration ? taskSettings.CaptureSettings.ScreenRecordDuration : 0;
 
-            recordForm = new ScreenRecordWindow(captureRectangle)
+            // The window is placed in its own pixels; recording uses screen coordinates.
+            recordForm = new ScreenRecordWindow(CaptureHelpers.ScreenToOwnWindowPixels(captureRectangle))
             {
                 ActivateWindow = startMethod == ScreenRecordStartMethod.Region,
                 Duration = duration,
@@ -268,7 +269,7 @@ namespace ShareX
 
                             recordForm.ChangeState(ScreenRecordState.AfterStart);
 
-                            captureRectangle = recordForm.RecordingRegion;
+                            captureRectangle = CaptureHelpers.OwnWindowPixelsToScreen(recordForm.RecordingRegion);
 
                             ScreenRecordingOptions options = new ScreenRecordingOptions()
                             {

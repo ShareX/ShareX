@@ -153,6 +153,57 @@ public sealed class LinuxWindowService : IWindowService
         return SnapTarget.FromWindows(ActiveBackend == Backend.X11 ? windows : windows.Where(window => window.ProcessId != ownProcess), ignoredHandle);
     }
 
+    private bool? hyprlandZeroScaling;
+
+    public double GetOwnWindowPixelScale(PlatformPoint point)
+    {
+        if (ActiveBackend != Backend.Hyprland)
+        {
+            return 1;
+        }
+
+        hyprlandZeroScaling ??= ReadJson("hyprctl", ["getoption", "xwayland:force_zero_scaling", "-j"], ParseHyprlandBoolOption) ?? false;
+
+        if (hyprlandZeroScaling != true)
+        {
+            return 1;
+        }
+
+        IReadOnlyList<ScreenInfo> screens = ReadJson("hyprctl", ["monitors", "-j"], LinuxScreenCaptureService.ParseHyprlandMonitors) ?? [];
+        ScreenInfo? screen = screens.FirstOrDefault(s => s.Bounds.Contains(point)) ?? screens.FirstOrDefault(s => s.IsPrimary) ?? screens.FirstOrDefault();
+        return screen?.ScaleFactor ?? 1;
+    }
+
+    /// <summary>hyprctl getoption -j reports a boolean option as "bool": true, or "int": 1 on older versions.</summary>
+    internal static bool? ParseHyprlandBoolOption(JsonElement option)
+    {
+        if (option.TryGetProperty("bool", out JsonElement value) && value.ValueKind is JsonValueKind.True or JsonValueKind.False)
+        {
+            return value.GetBoolean();
+        }
+
+        return option.TryGetProperty("int", out value) && value.ValueKind == JsonValueKind.Number ? value.GetInt32() != 0 : null;
+    }
+
+    private T? ReadJson<T>(string command, IReadOnlyList<string> arguments, Func<JsonElement, T> parse)
+    {
+        try
+        {
+            CommandResult result = runner.RunAsync(command, arguments, timeout: TimeSpan.FromSeconds(5)).GetAwaiter().GetResult();
+
+            if (result.Success)
+            {
+                using JsonDocument document = JsonDocument.Parse(result.StandardOutput);
+                return parse(document.RootElement);
+            }
+        }
+        catch (Exception e) when (e is JsonException or TimeoutException or System.ComponentModel.Win32Exception or InvalidOperationException or KeyNotFoundException or FormatException)
+        {
+        }
+
+        return default;
+    }
+
     private IReadOnlyList<PlatformWindow> GetHyprlandVisibleWindows()
     {
         HashSet<int> workspaces = new HashSet<int>();

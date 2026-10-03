@@ -72,6 +72,8 @@ public sealed class UnsupportedWindowService(string reason) : IWindowService
 
     public PlatformRectangle? GetClientBounds(long windowHandle) => null;
 
+    public double GetOwnWindowPixelScale(PlatformPoint point) => 1;
+
     public PlatformPoint? GetCursorPosition() => null;
 
     public void ReleaseMouseCapture()

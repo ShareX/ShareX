@@ -171,6 +171,8 @@ public sealed class MacWindowService : IWindowService
         GetWindows().FirstOrDefault(window => window.Handle == windowHandle)?.Bounds;
 
     // CGWindowList reports whole windows only; macOS draws the title bar inside them.
+    public double GetOwnWindowPixelScale(PlatformPoint point) => 1;
+
     public PlatformRectangle? GetClientBounds(long windowHandle) => GetWindowBounds(windowHandle);
 
     public PlatformWindow? GetActiveWindow()

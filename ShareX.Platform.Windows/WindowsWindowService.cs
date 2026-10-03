@@ -161,6 +161,8 @@ public sealed unsafe class WindowsWindowService : IWindowService
         return bounds.IsEmpty ? null : bounds;
     }
 
+    public double GetOwnWindowPixelScale(PlatformPoint point) => 1;
+
     public PlatformRectangle? GetClientBounds(long windowHandle)
     {
         PlatformRectangle bounds = GetClientBounds((IntPtr)windowHandle);

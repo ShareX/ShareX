@@ -109,6 +109,13 @@ public interface IWindowService
     PlatformPoint? GetCursorPosition();
 
     /// <summary>
+    /// Pixels of ShareX's own windows per screen coordinate at <paramref name="point"/>. 1 on Windows, macOS, X11 and sway, where
+    /// window positions use screen coordinates. On Hyprland with xwayland:force_zero_scaling, ShareX's XWayland windows are placed
+    /// in device pixels while screen coordinates are layout coordinates, so it is the monitor's scale.
+    /// </summary>
+    double GetOwnWindowPixelScale(PlatformPoint point);
+
+    /// <summary>
     /// Releases the mouse capture another window of this process holds, so a newly opened window receives clicks straight away.
     /// Only Windows has application-held mouse capture; elsewhere this does nothing.
     /// </summary>
