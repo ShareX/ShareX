@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using SkiaSharp;
 using System;
 using System.Collections.Concurrent;
 using System.ComponentModel;
@@ -32,7 +31,7 @@ using System.Runtime.InteropServices;
 
 namespace ShareX.HelpersLib;
 
-/// <summary>Windows transport for native overlays; rendering is supplied by Skia.</summary>
+/// <summary>Hidden Windows message transport for the application host.</summary>
 public sealed class WindowsNativeWindow : IDisposable
 {
     private delegate IntPtr WindowProcedure(IntPtr window, uint message, IntPtr wParam, IntPtr lParam);
@@ -80,36 +79,6 @@ public sealed class WindowsNativeWindow : IDisposable
         return DefWindowProc(handle, message, wParam, lParam);
     }
 
-    public void SetBackground(Color color, Rectangle bounds)
-    {
-        using SKBitmap bitmap = SkiaImageHelpers.CreateBitmap(bounds.Width, bounds.Height);
-        bitmap.Erase(color.ToSKColor());
-        IntPtr dc = NativeMethods.CreateCompatibleDC(IntPtr.Zero);
-        IntPtr dib = IntPtr.Zero, previous = IntPtr.Zero;
-        try
-        {
-            BITMAPINFOHEADER info = new(bounds.Width, bounds.Height, 32) { biHeight = -bounds.Height };
-            dib = NativeMethods.CreateDIBSection(dc, ref info, 0, out IntPtr pixels, IntPtr.Zero, 0);
-            if (dc == IntPtr.Zero || dib == IntPtr.Zero || pixels == IntPtr.Zero)
-                throw new Win32Exception(Marshal.GetLastWin32Error());
-            previous = NativeMethods.SelectObject(dc, dib);
-            using SKPixmap source = bitmap.PeekPixels();
-            if (!source.ReadPixels(bitmap.Info, pixels, bounds.Width * 4))
-                throw new InvalidOperationException("Unable to transfer the capture background.");
-            POINT destination = new(bounds.X, bounds.Y), origin = new(0, 0);
-            SIZE size = new(bounds.Width, bounds.Height);
-            BLENDFUNCTION blend = new() { SourceConstantAlpha = 255, AlphaFormat = NativeConstants.AC_SRC_ALPHA };
-            if (!UpdateLayeredWindow(Handle, IntPtr.Zero, ref destination, ref size, dc, ref origin, 0, ref blend, NativeConstants.ULW_ALPHA))
-                throw new Win32Exception(Marshal.GetLastWin32Error());
-        }
-        finally
-        {
-            if (previous != IntPtr.Zero) NativeMethods.SelectObject(dc, previous);
-            if (dib != IntPtr.Zero) NativeMethods.DeleteObject(dib);
-            if (dc != IntPtr.Zero) NativeMethods.DeleteDC(dc);
-        }
-    }
-
     public void Dispose()
     {
         IntPtr handle = Handle;
@@ -141,8 +110,4 @@ public sealed class WindowsNativeWindow : IDisposable
     private static extern bool DestroyWindow(IntPtr window);
     [DllImport("user32.dll", CharSet = CharSet.Unicode)]
     private static extern IntPtr DefWindowProc(IntPtr window, uint message, IntPtr wParam, IntPtr lParam);
-    [DllImport("user32.dll", SetLastError = true)]
-    [return: MarshalAs(UnmanagedType.Bool)]
-    private static extern bool UpdateLayeredWindow(IntPtr window, IntPtr destinationDc, ref POINT destination,
-        ref SIZE size, IntPtr sourceDc, ref POINT source, uint colorKey, ref BLENDFUNCTION blend, uint flags);
 }
