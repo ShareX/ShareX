@@ -141,6 +141,20 @@ public sealed unsafe class WindowsWindowService : IWindowService
 
     public IScreenOverlay CreateOverlay(PlatformRectangle screenBounds) => new WindowsScreenOverlay(screenBounds);
 
+    public long GetActiveWindowHandle() => Win32.GetForegroundWindow().ToInt64();
+
+    public PlatformRectangle? GetWindowBounds(long windowHandle)
+    {
+        PlatformRectangle bounds = GetBounds((IntPtr)windowHandle);
+        return bounds.IsEmpty ? null : bounds;
+    }
+
+    public PlatformRectangle? GetClientBounds(long windowHandle)
+    {
+        PlatformRectangle bounds = GetClientBounds((IntPtr)windowHandle);
+        return bounds.IsEmpty ? null : bounds;
+    }
+
     public PlatformWindow? GetActiveWindow()
     {
         IntPtr hwnd = Win32.GetForegroundWindow();

@@ -174,6 +174,7 @@ Tick each item once it behaves as in v22 on Windows 10 and 11. File a bug row fo
 - [ ] Copy image: other applications paste PNG, the DIB fallback and the HTML `<img>` fragment (CF_HTML now built by `WindowsClipboardService.EncodeHtml`)
 - [ ] "Run as administrator" detection, Windows product name in the about and debug info, tablet mode (`WindowsSystemInfoService`)
 - [ ] Update installer signature check (`WindowsCodeSignatureService`, moved from `AuthenticodeSignatureVerifier`)
+- [ ] Window rectangle, client rectangle and "active window" recording area, cursor position and pixel colour (`WindowsWindowService.GetWindowBounds`, `GetClientBounds`, `GetActiveWindowHandle`; pixel colour now a one pixel GDI capture); "disable hotkeys and notifications while a full screen application runs"
 - [ ] MIME type of an unusual extension comes from the registry (`WindowsShellService.GetMimeType`); "Open folder" selects the file
 
 ## Requests

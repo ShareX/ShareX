@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Platform.Imaging;
+using ShareX.Platform;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -88,19 +90,20 @@ namespace ShareX.HelpersLib
             return new Rectangle(ClientToScreen(r.Location), r.Size);
         }
 
+        /// <summary>The pointer position, or Point.Empty where the platform does not reveal it (most Wayland compositors).</summary>
         public static Point GetCursorPosition()
         {
-            if (NativeMethods.GetCursorPos(out POINT point))
-            {
-                return (Point)point;
-            }
-
-            return Point.Empty;
+            PlatformPoint? point = PlatformServices.IsInitialized ? PlatformServices.Current.Windows.GetCursorPosition() : null;
+            return point is PlatformPoint p ? new Point(p.X, p.Y) : Point.Empty;
         }
 
+        /// <summary>Moves the pointer where the platform allows it; most Wayland compositors do not.</summary>
         public static void SetCursorPosition(int x, int y)
         {
-            NativeMethods.SetCursorPos(x, y);
+            if (PlatformServices.IsInitialized)
+            {
+                PlatformServices.Current.Windows.SetCursorPosition(new PlatformPoint(x, y));
+            }
         }
 
         public static void SetCursorPosition(Point position)
@@ -113,12 +116,22 @@ namespace ShareX.HelpersLib
             return GetPixelColor(GetCursorPosition());
         }
 
+        /// <summary>The colour of one screen pixel, read with a one pixel screen capture.</summary>
         public static Color GetPixelColor(int x, int y)
         {
-            IntPtr hdc = NativeMethods.GetDC(IntPtr.Zero);
-            uint pixel = NativeMethods.GetPixel(hdc, x, y);
-            NativeMethods.ReleaseDC(IntPtr.Zero, hdc);
-            return Color.FromArgb((int)(pixel & 0x000000FF), (int)(pixel & 0x0000FF00) >> 8, (int)(pixel & 0x00FF0000) >> 16);
+            try
+            {
+                ScreenCaptureResult result = PlatformServices.Current.ScreenCapture
+                    .CaptureAsync(ScreenCaptureRequest.ForRegion(new PlatformRectangle(x, y, 1, 1)))
+                    .GetAwaiter().GetResult();
+                PixelBuffer pixels = result.Pixels ?? PngCodec.Decode(result.Png);
+                return Color.FromArgb(pixels.Pixels[2], pixels.Pixels[1], pixels.Pixels[0]);
+            }
+            catch (Exception e) when (e is ArgumentException or InvalidOperationException or PlatformNotSupportedException)
+            {
+                // Outside every screen, or the platform cannot capture here.
+                return Color.Empty;
+            }
         }
 
         public static Color GetPixelColor(Point position)
@@ -287,59 +300,41 @@ namespace ShareX.HelpersLib
             return CreateRectangle(posOnClick, newPosition);
         }
 
+        /// <summary>The window's visible frame (on Windows without the invisible resize borders), or Rectangle.Empty.</summary>
         public static Rectangle GetWindowRectangle(IntPtr handle)
         {
-            Rectangle rect = Rectangle.Empty;
-
-            if (NativeMethods.IsDWMEnabled() && NativeMethods.GetExtendedFrameBounds(handle, out Rectangle tempRect))
-            {
-                rect = tempRect;
-            }
-
-            if (rect.IsEmpty)
-            {
-                rect = NativeMethods.GetWindowRect(handle);
-            }
-
-            if (!Helpers.IsWindows10OrGreater() && NativeMethods.IsZoomed(handle))
-            {
-                rect = NativeMethods.MaximizedWindowFix(handle, rect);
-            }
-
-            return rect;
+            PlatformRectangle? bounds = PlatformServices.Current.Windows.GetWindowBounds(handle.ToInt64());
+            return bounds is PlatformRectangle b ? new Rectangle(b.X, b.Y, b.Width, b.Height) : Rectangle.Empty;
         }
 
         public static Rectangle GetActiveWindowRectangle()
         {
-            IntPtr handle = NativeMethods.GetForegroundWindow();
-            return GetWindowRectangle(handle);
+            return GetWindowRectangle(new IntPtr(PlatformServices.Current.Windows.GetActiveWindowHandle()));
         }
 
         public static Rectangle GetActiveWindowClientRectangle()
         {
-            IntPtr handle = NativeMethods.GetForegroundWindow();
-            return NativeMethods.GetClientRect(handle);
+            IWindowService windows = PlatformServices.Current.Windows;
+            PlatformRectangle? bounds = windows.GetClientBounds(windows.GetActiveWindowHandle());
+            return bounds is PlatformRectangle b ? new Rectangle(b.X, b.Y, b.Width, b.Height) : Rectangle.Empty;
         }
 
+        /// <summary>
+        /// Whether the active window covers its whole screen (a game or a full screen video). The desktop itself never counts:
+        /// the platform does not report it as the active window.
+        /// </summary>
         public static bool IsActiveWindowFullscreen()
         {
-            IntPtr handle = NativeMethods.GetForegroundWindow();
+            PlatformWindow window = PlatformServices.IsInitialized ? PlatformServices.Current.Windows.GetActiveWindow() : null;
 
-            if (handle.ToInt32() > 0)
+            if (window == null)
             {
-                WindowInfo windowInfo = new WindowInfo(handle);
-                string className = windowInfo.ClassName;
-                string[] ignoreList = new string[] { "Progman", "WorkerW" };
-
-                if (ignoreList.All(ignore => !className.Equals(ignore, StringComparison.OrdinalIgnoreCase)))
-                {
-                    Rectangle windowRectangle = windowInfo.Rectangle;
-                    Rectangle monitorRectangle = DesktopScreen.FromRectangle(windowRectangle).Bounds;
-                    return windowRectangle.Contains(monitorRectangle);
-                }
+                return false;
             }
 
-            return false;
+            Rectangle windowRectangle = new Rectangle(window.Bounds.X, window.Bounds.Y, window.Bounds.Width, window.Bounds.Height);
+            Rectangle monitorRectangle = DesktopScreen.FromRectangle(windowRectangle).Bounds;
+            return windowRectangle.Contains(monitorRectangle);
         }
 
         public static Rectangle EvenRectangleSize(Rectangle rect)

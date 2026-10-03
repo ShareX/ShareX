@@ -163,6 +163,14 @@ public sealed class MacWindowService : IWindowService
 
     public IScreenOverlay CreateOverlay(PlatformRectangle screenBounds) => throw new PlatformNotSupportedException(OverlaySupport.Reason);
 
+    public long GetActiveWindowHandle() => GetActiveWindow()?.Handle ?? 0;
+
+    public PlatformRectangle? GetWindowBounds(long windowHandle) =>
+        GetWindows().FirstOrDefault(window => window.Handle == windowHandle)?.Bounds;
+
+    // CGWindowList reports whole windows only; macOS draws the title bar inside them.
+    public PlatformRectangle? GetClientBounds(long windowHandle) => GetWindowBounds(windowHandle);
+
     public PlatformWindow? GetActiveWindow()
     {
         int frontmostPid = ObjC.WithAutoreleasePool(() =>

@@ -88,6 +88,21 @@ public interface IWindowService
     PlatformWindow? GetActiveWindow();
 
     /// <summary>
+    /// The window with keyboard focus, unfiltered (unlike <see cref="GetActiveWindow"/>, it can be a tool window or untitled), or 0
+    /// where the platform does not say.
+    /// </summary>
+    long GetActiveWindowHandle();
+
+    /// <summary>
+    /// A window's visible bounds on the virtual desktop (without invisible resize borders), or null when the window is gone or
+    /// the platform cannot locate it.
+    /// </summary>
+    PlatformRectangle? GetWindowBounds(long windowHandle);
+
+    /// <summary>The bounds of a window's content area, without title bar and borders. Null where the platform does not know it.</summary>
+    PlatformRectangle? GetClientBounds(long windowHandle);
+
+    /// <summary>
     /// The mouse pointer on the virtual desktop, in the same coordinates as IScreenCaptureService.GetScreens, or null where the session does not reveal it
     /// (for example Wayland compositors other than Hyprland).
     /// </summary>

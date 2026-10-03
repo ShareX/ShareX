@@ -281,6 +281,31 @@ public sealed class LinuxWindowService : IWindowService
 
     public IScreenOverlay CreateOverlay(PlatformRectangle screenBounds) => throw new PlatformNotSupportedException(OverlaySupport.Reason);
 
+    public long GetActiveWindowHandle() => GetActiveWindow()?.Handle ?? 0;
+
+    public PlatformRectangle? GetWindowBounds(long windowHandle)
+    {
+        if (ActiveBackend == Backend.X11)
+        {
+            using X11Display? display = X11Display.TryOpen();
+            return display?.GetWindowBounds((nuint)windowHandle, includeFrame: true);
+        }
+
+        return GetWindows().FirstOrDefault(window => window.Handle == windowHandle)?.Bounds;
+    }
+
+    /// <summary>X11 knows the client window without the frame the window manager adds; compositors only report the whole window.</summary>
+    public PlatformRectangle? GetClientBounds(long windowHandle)
+    {
+        if (ActiveBackend == Backend.X11)
+        {
+            using X11Display? display = X11Display.TryOpen();
+            return display?.GetWindowBounds((nuint)windowHandle, includeFrame: false);
+        }
+
+        return GetWindowBounds(windowHandle);
+    }
+
     public PlatformWindow? GetActiveWindow()
     {
         switch (ActiveBackend)

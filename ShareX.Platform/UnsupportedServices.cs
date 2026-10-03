@@ -65,6 +65,12 @@ public sealed class UnsupportedWindowService(string reason) : IWindowService
 
     public PlatformWindow? GetActiveWindow() => null;
 
+    public long GetActiveWindowHandle() => 0;
+
+    public PlatformRectangle? GetWindowBounds(long windowHandle) => null;
+
+    public PlatformRectangle? GetClientBounds(long windowHandle) => null;
+
     public PlatformPoint? GetCursorPosition() => null;
 
     public void ReleaseMouseCapture()
