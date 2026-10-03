@@ -18,6 +18,14 @@ All agents must focus on **Windows and Linux only** during the current port. Pri
 
 Existing macOS code may remain. When a shared contract changes, add only the minimum unsupported stubs or mechanical updates needed to keep the solution compiling; this does not authorize macOS feature work. This priority rule takes precedence over older three-platform task wording and target architecture descriptions.
 
+## Linux dependencies: no extra installations
+
+**Microsoft .NET is the only additional runtime users may be required to install for the Linux port.** Libraries already included with ShareX, such as Avalonia and SkiaSharp, are allowed. Use those libraries and APIs provided by the existing Linux desktop; do not require users to install additional packages, command-line tools, native libraries, engines, fonts or services to enable a ShareX feature.
+
+**Do not port a feature to Linux if it requires such an external dependency.** OCR is an explicit example and remains Windows-only. These features are excluded from the agreed Linux scope. Report `FeatureSupport.NotSupported` with a clear user-facing reason, and respect it in both shared UI and task execution. Do not offer package-install commands, install dependencies automatically, or add a new bundled dependency to work around this rule.
+
+Audit implementations carried over from the first cross-platform attempt against this rule. Use an implementation based on already included libraries or existing desktop APIs where possible; otherwise retire the dependency-based Linux implementation and report the feature as unsupported. An optional helper must not become an installation requirement. This rule supersedes earlier Linux package recommendations and does not change Windows behaviour or dependencies.
+
 ## Start of every session
 
 The other agent pushes to the same branch, and a running session does not see its work. At the start of every session (and again before starting a new task):
@@ -41,9 +49,9 @@ The other agent pushes to the same branch, and a running session does not see it
 
 | Project | Holds | Must not hold |
 | --- | --- | --- |
-| `ShareX.Platform` | Interfaces (`I…Service`), shared models (`PlatformWindow`, `ScreenInfo`, `PlatformRectangle`, `PixelBuffer`, …), `PlatformServices`, platform detection, `FeatureSupport`, Linux package install hints, pure helpers such as `PngCodec`. | Any call into the operating system: P/Invoke, registry, D-Bus, process launches of OS tools, OS-specific types. |
+| `ShareX.Platform` | Interfaces (`I…Service`), shared models (`PlatformWindow`, `ScreenInfo`, `PlatformRectangle`, `PixelBuffer`, …), `PlatformServices`, platform detection, `FeatureSupport`, pure helpers such as `PngCodec`. | Any call into the operating system: P/Invoke, registry, D-Bus, process launches of OS tools, OS-specific types. |
 | `ShareX.Platform.Windows` | Every piece of Windows-only code: Win32 and COM P/Invoke, registry, DPAPI, GDI capture, DWM, shell and Explorer integration, WinRT (OCR), Windows-only features such as HDR and transparent window capture. | Public types other than the service implementations and the models they need. Keep the Win32 declarations `internal`. |
-| `ShareX.Platform.Linux` | X11, Wayland (xdg-desktop-portal, wlroots tools such as grim and slurp, Hyprland and sway IPC), D-Bus, freedesktop.org specifications (XDG directories, autostart, desktop entries, thumbnails, Secret Service). | Code that other platforms need. |
+| `ShareX.Platform.Linux` | Existing Linux desktop APIs: X11, Wayland portals and compositor IPC, D-Bus, freedesktop.org specifications (XDG directories, autostart, desktop entries, thumbnails, Secret Service), subject to the no-extra-installations rule above. | Code that other platforms need; feature implementations requiring additional external dependencies. |
 | `ShareX.Platform.MacOS` | AppKit, CoreGraphics, Carbon, Vision, Keychain, LaunchAgents. | Same as above. |
 | Everything else (`ShareX`, `HelpersLib`, `UploadersLib`, `HistoryLib`, `ScreenCaptureLib`, `ImageEffectsLib`, `Tools`, `ImageEditor`, `ShareX.Avalonia`, `NativeMessagingHost`) | Shared application code that targets plain `net10.0` and talks to the operating system only through `PlatformServices.Current`. | Anything in the "forbidden in shared code" list below. |
 
@@ -65,7 +73,7 @@ There is no `ShareX.HelpersLib.Windows`. Windows-only code goes into `ShareX.Pla
 
 1. Find the service in `ShareX.Platform/Services` that owns the area, or add a new `I…Service` and expose it on `IPlatformServices`. Contracts in `ShareX.Platform` are changed only by their owner (McoreD's agent, see the delegation file), who adds "not supported" stubs to every platform project in the same commit; others file a request. `ShareX.Platform.Windows` is written by Jaex's agent (the Windows lead): McoreD's agent adds a W row to the delegation file instead of writing Windows code, and switches shared code only after the Windows implementation is done.
 2. Model the result with portable types. Never leak `IntPtr` meaning, Win32 enums, X11 atoms or Cocoa objects through the interface.
-3. Implement it on **Windows and Linux** during the current phase, except features explicitly excluded above; keep macOS compatible with shared contracts using unsupported stubs only. Where a platform cannot do it, return `FeatureSupport.NotSupported(reason)` with a user-facing reason. For Linux features that become available by installing a package, use `LinuxPackages` so the reason names the package and the install command for the user's distribution. Do not suggest installing packages for excluded features. `UnsupportedServices.cs` holds reusable "not available" implementations.
+3. Implement it on **Windows and Linux** during the current phase, except features excluded by the scope or dependency rules above; keep macOS compatible with shared contracts using unsupported stubs only. Where a platform cannot do it, return `FeatureSupport.NotSupported(reason)` with a user-facing reason. Linux implementations must use already included libraries or existing desktop APIs without requiring extra installations; do not use `LinuxPackages` to recommend installing feature dependencies. `UnsupportedServices.cs` holds reusable "not available" implementations.
 4. In shared code, read `Support` before offering the feature, and hide or disable the UI with the reason as its tooltip rather than failing at run time.
 5. Keep Windows behaviour identical to what it was. The Windows implementation is usually the code that used to live in the shared project, moved behind the interface by Jaex's agent, and it is not done until it has run on Windows.
 6. Add tests in `ShareX.Platform.Tests` for parsing and argument building so they run on every OS.
