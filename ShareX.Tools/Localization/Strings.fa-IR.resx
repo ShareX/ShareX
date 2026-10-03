@@ -1573,12 +1573,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>هدف</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>زبان {0} برای OCR در این سیستم در دسترس نیست.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>تشخیص نوری نویسه‌ها فقط در نسخه {0} یا جدیدتر Windows در دسترس است.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

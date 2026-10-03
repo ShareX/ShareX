@@ -1573,12 +1573,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>יעד</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>השפה {0} אינה זמינה במערכת זו עבור OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>זיהוי תווים אופטי זמין רק ב-Windows גרסה {0} ואילך.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

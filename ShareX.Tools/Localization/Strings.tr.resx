@@ -1579,12 +1579,6 @@ Dosya yolu: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Hedef</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>{0} dili bu sistemde OCR için kullanılamıyor.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optik karakter tanıma yalnızca Windows {0} veya daha yeni sürümlerde kullanılabilir.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

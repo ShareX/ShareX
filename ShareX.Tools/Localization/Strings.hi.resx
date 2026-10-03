@@ -1579,12 +1579,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>लक्ष्य</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>OCR के लिए इस सिस्टम में {0} भाषा उपलब्ध नहीं है।</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>ऑप्टिकल वर्ण पहचान केवल Windows संस्करण {0} या नए में उपलब्ध है।</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

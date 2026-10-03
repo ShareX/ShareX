@@ -3915,24 +3915,6 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} language is not available in this system for OCR..
-        /// </summary>
-        public static string OCRHelper_Language_unavailable {
-            get {
-                return ResourceManager.GetString("OCRHelper_Language_unavailable", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Optical character recognition is only available with Windows version {0} or newer..
-        /// </summary>
-        public static string OCRHelper_Requires_Windows_version {
-            get {
-                return ResourceManager.GetString("OCRHelper_Requires_Windows_version", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Bing.
         /// </summary>
         public static string OCROptions_Bing {
@@ -5895,7 +5877,6 @@ namespace ShareX.Tools.Localization {
             }
         }
 
-
         /// <summary>
         ///   Select a video with a known, finite duration.
         /// </summary>
@@ -6022,7 +6003,6 @@ namespace ShareX.Tools.Localization {
             }
         }
 
-
         /// <summary>
         ///   Set start here
         /// </summary>
@@ -6049,8 +6029,6 @@ namespace ShareX.Tools.Localization {
                 return ResourceManager.GetString("VideoTrimmer_Reset", resourceCulture);
             }
         }
-
-
 
         /// <summary>
         ///   Video timeline and trim selection

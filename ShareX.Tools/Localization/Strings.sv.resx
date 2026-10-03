@@ -1579,12 +1579,6 @@ Filsökväg: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Mål</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Språket {0} är inte tillgängligt för OCR i det här systemet.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optisk teckenigenkänning är endast tillgänglig i Windows version {0} eller senare.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

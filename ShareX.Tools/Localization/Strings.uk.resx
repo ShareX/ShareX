@@ -1573,12 +1573,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Ціль</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Мова {0} недоступна в цій системі для OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Оптичне розпізнавання символів доступне лише у Windows версії {0} або новішої.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

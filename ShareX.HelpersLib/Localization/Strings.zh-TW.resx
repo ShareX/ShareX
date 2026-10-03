@@ -498,27 +498,6 @@
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>發生未預期的錯誤。</value>
   </data>
-  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
-    <value>複製</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
-    <value>剪下</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
-    <value>刪除</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
-    <value>貼上</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>重做</value>
-  </data>
-  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>全選</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
-    <value>復原</value>
-  </data>
   <data name="FFmpegCLIManager_Error_title" xml:space="preserve">
     <value>FFmpeg 錯誤</value>
   </data>
@@ -560,12 +539,6 @@
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>色調: {0:0.0}°，飽和度: {1:0.0}%，亮度: {2:0.0}%</value>
-  </data>
-  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
-    <value>選擇檔案</value>
-  </data>
-  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
-    <value>選擇資料夾</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>無法建立目錄。</value>

@@ -1573,12 +1573,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Target</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Bahasa {0} tidak tersedia di sistem ini untuk OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Pengenalan karakter optik hanya tersedia dengan Windows versi {0} atau lebih baru.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

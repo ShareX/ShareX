@@ -1573,12 +1573,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Đích</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Ngôn ngữ {0} không khả dụng cho OCR trên hệ thống này.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Nhận dạng ký tự quang học chỉ khả dụng với Windows phiên bản {0} trở lên.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

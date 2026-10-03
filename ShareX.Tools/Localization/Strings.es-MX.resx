@@ -1579,12 +1579,6 @@ Ruta del archivo: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Destino</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>El idioma {0} no está disponible en este sistema para OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>El reconocimiento óptico de caracteres solo está disponible en Windows versión {0} o posterior.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

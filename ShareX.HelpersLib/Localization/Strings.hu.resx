@@ -498,27 +498,6 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>Váratlan hiba történt.</value>
   </data>
-  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
-    <value>Másolás</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
-    <value>Kivágás</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
-    <value>Törlés</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
-    <value>Beillesztés</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>Újra</value>
-  </data>
-  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>Összes kijelölése</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
-    <value>Visszavonás</value>
-  </data>
   <data name="FFmpegCLIManager_Error_title" xml:space="preserve">
     <value>FFmpeg-hiba</value>
   </data>
@@ -560,12 +539,6 @@ Ennek ellenére szeretné futtatni?</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Színárnyalat: {0:0.0}°, Telítettség: {1:0.0}%, Fényerő: {2:0.0}%</value>
-  </data>
-  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
-    <value>Choose fájl</value>
-  </data>
-  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
-    <value>Choose mappa</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Nem sikerült a könyvtár létrehozása, kérlek ellenőrizd az elérési út beállításaid.</value>

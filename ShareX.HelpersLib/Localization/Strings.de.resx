@@ -498,27 +498,6 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>Ein unerwarteter Fehler ist aufgetreten.</value>
   </data>
-  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
-    <value>Kopieren</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
-    <value>Schneiden</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
-    <value>Löschen</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
-    <value>Einfügen</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>Wiederholen</value>
-  </data>
-  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>Alle auswählen</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
-    <value>Rückgängig</value>
-  </data>
   <data name="FFmpegCLIManager_Error_title" xml:space="preserve">
     <value>FFmpeg-Fehler</value>
   </data>
@@ -560,12 +539,6 @@ Möchten Sie es dennoch ausführen?</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Färbung: {0:0.0}°, Sättigung: {1:0.0}%, Helligkeit: {2:0.0}%</value>
-  </data>
-  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
-    <value>Datei auswählen</value>
-  </data>
-  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
-    <value>Ordner auswählen</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Konnte Verzeichnis nicht erstellen.</value>

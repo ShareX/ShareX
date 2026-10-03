@@ -1579,12 +1579,6 @@ Percorso file: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Destinazione</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>La lingua {0} non è disponibile per l’OCR in questo sistema.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Il riconoscimento ottico dei caratteri è disponibile solo con Windows versione {0} o successiva.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

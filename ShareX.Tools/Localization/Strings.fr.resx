@@ -1579,12 +1579,6 @@ Chemin du fichier : {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Cible</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>La langue {0} n’est pas disponible pour l’OCR sur ce système.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>La reconnaissance optique de caractères est uniquement disponible sous Windows version {0} ou ultérieure.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

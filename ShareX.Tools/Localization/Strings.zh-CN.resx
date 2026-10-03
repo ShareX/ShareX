@@ -1579,12 +1579,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>目标</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>此系统不提供 {0} 语言用于 OCR。</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>光学字符识别仅适用于 Windows {0} 或更高版本。</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

@@ -1573,12 +1573,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>เป้าหมาย</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>ภาษา {0} ไม่พร้อมใช้งานสำหรับ OCR ในระบบนี้</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>การรู้จำอักขระด้วยแสงพร้อมใช้งานเฉพาะใน Windows รุ่น {0} หรือใหม่กว่า</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

@@ -1579,12 +1579,6 @@ Dateipfad: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Ziel</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Die Sprache {0} ist auf diesem System nicht für OCR verfügbar.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Die optische Zeichenerkennung ist nur ab Windows-Version {0} verfügbar.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

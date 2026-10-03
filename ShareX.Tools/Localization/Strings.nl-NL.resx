@@ -1579,12 +1579,6 @@ Bestandspad: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Doel</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>De taal {0} is op dit systeem niet beschikbaar voor OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optische tekenherkenning is alleen beschikbaar vanaf Windows-versie {0}.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

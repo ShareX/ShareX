@@ -1579,12 +1579,6 @@ Filsti: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Mål</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Sproget {0} er ikke tilgængeligt til OCR på dette system.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optisk tekstgenkendelse er kun tilgængelig i Windows version {0} eller senere.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>

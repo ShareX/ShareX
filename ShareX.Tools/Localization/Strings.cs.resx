@@ -1579,12 +1579,6 @@ Cesta k souboru: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Cíl</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Jazyk {0} není v tomto systému pro OCR dostupný.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optické rozpoznávání znaků je dostupné pouze ve Windows verze {0} nebo novější.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
