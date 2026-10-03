@@ -197,3 +197,16 @@ public sealed class UnsupportedThumbnailService(string reason) : IThumbnailServi
 
     public byte[]? GetThumbnail(string path, int maxWidth, int maxHeight) => null;
 }
+
+public sealed class UnsupportedTaskbarService(string reason) : ITaskbarService
+{
+    public FeatureSupport Support { get; } = FeatureSupport.NotSupported(reason);
+
+    public void SetProgressValue(int value, int maximum)
+    {
+    }
+
+    public void SetProgressState(TaskbarProgressState state)
+    {
+    }
+}

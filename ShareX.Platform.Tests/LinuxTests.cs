@@ -702,3 +702,22 @@ public class LinuxParsingTests
         Assert.Equal("a &lt;b&gt; &amp; c", FreedesktopNotificationService.EscapeBody("a <b> & c"));
     }
 }
+
+public class UnityLauncherTaskbarTests
+{
+    [Fact]
+    public void PropertiesCarryProgressAndVisibility()
+    {
+        var properties = UnityLauncherTaskbarService.CreateProperties(0.5, true);
+
+        Assert.Equal(0.5, properties["progress"].GetDouble());
+        Assert.True(properties["progress-visible"].GetBool());
+    }
+
+    [Fact]
+    public void ZeroMaximumIsIgnored()
+    {
+        // Must not divide by zero or throw, with or without a session bus.
+        new UnityLauncherTaskbarService().SetProgressValue(5, 0);
+    }
+}

@@ -183,6 +183,7 @@ Tick each item once it behaves as in v22 on Windows 10 and 11. File a bug row fo
 - [ ] Region capture with "show cursor" draws the cursor in the right place (`WindowsScreenCaptureService.CaptureCursor`)
 - [ ] Integration settings: Explorer "Upload with ShareX" and "Edit with ShareX" entries, .sxcu and .sxie file types (open, icon), Chrome and Firefox extension hosts, Send to menu, start with Windows (Task Manager's "disabled" respected). Registry keys and command lines must match v22 exactly (`WindowsShellIntegrationService`, `WindowsStartupService`)
 - [ ] Administrator policies DisableUpdateCheck, DisableUpload, DisableLogging, PersonalPath from HKLM and HKCU\SOFTWARE\ShareX (`WindowsSystemPreferencesService.GetPolicy`)
+- [ ] Upload progress on the taskbar button, cleared when uploads finish; the "Show progress in taskbar" setting turns it off (`WindowsTaskbarService`)
 - [ ] MIME type of an unusual extension comes from the registry (`WindowsShellService.GetMimeType`); "Open folder" selects the file
 
 ## Requests
@@ -192,7 +193,7 @@ J asks for backend or platform capabilities here; M fills in the interface and s
 | ID | Need | Call sites | Interface | Status |
 | --- | --- | --- | --- | --- |
 | R1 | Printing: print dialog and printing an image or text (the preview window is J's UI) | print windows | | todo |
-| R2 | Taskbar progress and overlay | upload progress UI | | todo |
+| R2 | Taskbar progress and overlay | upload progress UI | `ITaskbarService` (`PlatformServices.Current.Taskbar`); `TaskbarManager` keeps its API on top. Develop never used overlay icons, so none were added | done |
 | R3 | Synthetic input beyond scrolling: typing text, key combinations | application actions | extend `IInputService` | todo |
 
 ## Handoffs
@@ -227,3 +228,4 @@ One line per working session, newest at the bottom.
 - 2026-10-03, M: M5 Tools backend pushed: OCR through `IOcrService` (WinRT on Windows, Tesseract on Linux), mouse highlighter hook and overlay through the platform (from the first branch's stash), inspect and borderless window services through `IWindowManagementService`. Handoffs H4 (inspect view model) and H5 (monitor test).
 - 2026-10-03, M: Note for J: M5 changed a J file without claiming it first: `ShareX.Tools/Tools/MouseHighlighter/MouseHighlighterOverlayWindow.cs` (drawing now targets the platform overlay surface, `IScreenOverlay`, instead of a WinForms layered window). The Skia drawing code is unchanged.
 - 2026-10-03, M: Claimed M6 (application backend files). Plan for M3's end: Win32 types that J's files still use (`WindowInfo`, `TaskbarManager`, print helpers, `LucideTrayIcon`) become portable façades with the same API over the platform services, so J's files keep building and work on Linux; the handoffs become clean-ups.
+- 2026-10-03, M: M6 steps pushed: startup, shell menus, file types, browser hosts, Send to and admin policies through the platform services (`b94ebc639`); taskbar progress through new `ITaskbarService` (R2 done; Linux uses the Unity launcher API, which KDE and Dash to Dock show). `TaskbarManager` is now a portable façade in `HelpersLib/TaskbarManager.cs`; J's settings view model needs no change. Two J1 checklist items added.

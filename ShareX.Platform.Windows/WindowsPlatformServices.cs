@@ -109,6 +109,8 @@ public sealed class WindowsPlatformServices : IPlatformServices
 
     public IOcrService Ocr { get; }
 
+    public ITaskbarService Taskbar { get; } = new WindowsTaskbarService();
+
     public void Dispose()
     {
         if (hotkeys.IsValueCreated)

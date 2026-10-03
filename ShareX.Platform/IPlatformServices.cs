@@ -84,4 +84,7 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>Text recognition in images.</summary>
     IOcrService Ocr { get; }
+
+    /// <summary>Progress on the taskbar button or dock icon.</summary>
+    ITaskbarService Taskbar { get; }
 }

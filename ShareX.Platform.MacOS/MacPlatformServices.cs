@@ -107,6 +107,8 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public IOcrService Ocr { get; } = new UnsupportedOcrService("Text recognition is not available on macOS yet.");
 
+    public ITaskbarService Taskbar { get; } = new UnsupportedTaskbarService("Dock icon progress is not available on macOS yet.");
+
     public void Dispose()
     {
         if (hotkeys.IsValueCreated)

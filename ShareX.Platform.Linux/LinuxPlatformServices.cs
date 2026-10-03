@@ -108,6 +108,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
 
     public IOcrService Ocr { get; }
 
+    public ITaskbarService Taskbar { get; } = new UnityLauncherTaskbarService();
+
     private static IHotkeyService CreateHotkeyService(PlatformInfo info, Func<int, string>? describeHotkey)
     {
         if (info.IsX11 && !info.IsSandboxed)
