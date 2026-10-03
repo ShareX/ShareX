@@ -999,6 +999,9 @@ Wilt u het toch uitvoeren?</value>
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>Voorbeeld...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>Afdrukken is niet beschikbaar in deze desktopomgeving.</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX - Afdrukopties</value>
   </data>

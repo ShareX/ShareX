@@ -999,6 +999,9 @@
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>Vista previa...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>La impresión no está disponible en este entorno de escritorio.</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX - Opciones de impresión</value>
   </data>

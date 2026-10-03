@@ -999,6 +999,9 @@ Chcete jej přesto spustit?</value>
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>Náhled...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>Tisk není v tomto desktopovém prostředí k dispozici.</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX – Možnosti tisku</value>
   </data>

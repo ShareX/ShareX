@@ -44,6 +44,9 @@ internal sealed class PrintPreviewWindow : Window
     private readonly TextBlock pageNumber = new() { VerticalAlignment = VerticalAlignment.Center };
     private readonly Button previous = new() { Content = "←" };
     private readonly Button next = new() { Content = "→" };
+    private readonly PrintWindowViewModel viewModel = new();
+    private readonly Button printButton = new() { Content = Localization.Strings.PrintForm_LoadSettings_Print };
+    private readonly Border printAvailability;
     private AvaloniaBitmap bitmap;
     private int page;
 
@@ -57,8 +60,13 @@ internal sealed class PrintPreviewWindow : Window
         MinHeight = 300;
         WindowStartupLocation = WindowStartupLocation.CenterOwner;
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        Button printButton = new() { Content = Localization.Strings.PrintForm_LoadSettings_Print };
-        printButton.Click += (_, _) => { if (print()) Close(); };
+        printAvailability = new Border { Background = Brushes.Transparent, Child = printButton };
+        printButton.Click += (_, _) =>
+        {
+            bool printed = false;
+            if (viewModel.TryPrint(() => printed = print()) && printed) Close();
+            else UpdatePrintingAvailability();
+        };
         Button close = new() { Content = Localization.Strings.OutputBoxWindow_Close };
         close.Click += (_, _) => Close();
         previous.Click += (_, _) => { if (page > 0) { page--; UpdatePage(); } };
@@ -67,7 +75,7 @@ internal sealed class PrintPreviewWindow : Window
         buttons.Children.Add(previous);
         buttons.Children.Add(pageNumber);
         buttons.Children.Add(next);
-        buttons.Children.Add(printButton);
+        buttons.Children.Add(printAvailability);
         buttons.Children.Add(close);
         DockPanel.SetDock(buttons, Dock.Top);
         DockPanel panel = new();
@@ -75,7 +83,15 @@ internal sealed class PrintPreviewWindow : Window
         panel.Children.Add(new Border { Background = Brushes.DimGray, Padding = new Thickness(12), Child = image });
         Content = panel;
         Closed += (_, _) => { image.Source = null; bitmap?.Dispose(); };
+        Opened += (_, _) => UpdatePrintingAvailability();
+        UpdatePrintingAvailability();
         UpdatePage();
+    }
+
+    private void UpdatePrintingAvailability()
+    {
+        printButton.IsEnabled = viewModel.CanPrint;
+        ToolTip.SetTip(printAvailability, viewModel.PrintingUnavailableReason);
     }
 
     private void UpdatePage()

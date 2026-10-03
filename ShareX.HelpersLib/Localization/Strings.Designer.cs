@@ -190,6 +190,10 @@ namespace ShareX.HelpersLib.Localization {
         public static string PrintWindow_Title {
             get { return ResourceManager.GetString("PrintWindow_Title", resourceCulture); }
         }
+
+        public static string PrintWindow_PrintingUnavailable {
+            get { return ResourceManager.GetString("PrintWindow_PrintingUnavailable", resourceCulture); }
+        }
         public static string PrintWindow_Heading {
             get { return ResourceManager.GetString("PrintWindow_Heading", resourceCulture); }
         }

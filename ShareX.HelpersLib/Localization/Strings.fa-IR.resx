@@ -999,6 +999,9 @@
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>پیش‌نمایش...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>چاپ در این محیط دسکتاپ در دسترس نیست.</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX - گزینه‌های چاپ</value>
   </data>

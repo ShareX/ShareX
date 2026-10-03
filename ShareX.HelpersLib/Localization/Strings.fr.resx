@@ -999,6 +999,9 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>Aperçu...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>L’impression n’est pas disponible dans cet environnement de bureau.</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX - Options d’impression</value>
   </data>

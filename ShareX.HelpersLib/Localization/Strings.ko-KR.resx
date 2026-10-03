@@ -999,6 +999,9 @@
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>미리 보기...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>이 데스크톱 환경에서는 인쇄를 사용할 수 없습니다.</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX - 인쇄 옵션</value>
   </data>

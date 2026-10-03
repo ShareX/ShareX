@@ -999,6 +999,9 @@
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>معاينة...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>الطباعة غير متاحة على سطح المكتب هذا.</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX - خيارات الطباعة</value>
   </data>

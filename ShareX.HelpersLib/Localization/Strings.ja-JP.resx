@@ -999,6 +999,9 @@
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>プレビュー...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>このデスクトップ環境では印刷を利用できません。</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX - 印刷オプション</value>
   </data>

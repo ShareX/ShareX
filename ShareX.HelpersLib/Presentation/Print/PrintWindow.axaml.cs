@@ -37,6 +37,7 @@ public partial class PrintWindow : Window
 {
     private PrintHelper? _printHelper;
     private PrintSettings _printSettings = new();
+    private PrintWindowViewModel _viewModel = new();
 
     public PrintWindow()
     {
@@ -46,7 +47,7 @@ public partial class PrintWindow : Window
         PrintButton.Content = Localization.Strings.PrintForm_LoadSettings_Print;
         CancelButton.Content = Localization.Strings.MyMessageBox_MyMessageBox_Cancel;
 
-        Opened += (_, _) => Activate();
+        Opened += (_, _) => { UpdatePrintingAvailability(); Activate(); };
         Closed += (_, _) => _printHelper?.Dispose();
     }
 
@@ -54,6 +55,7 @@ public partial class PrintWindow : Window
         : this()
     {
         _printSettings = settings;
+        _viewModel = new PrintWindowViewModel(previewOnly);
         _printHelper = new PrintHelper(image)
         {
             Settings = settings
@@ -65,7 +67,7 @@ public partial class PrintWindow : Window
         AllowEnlargeCheckBox.IsChecked = settings.AllowEnlargeImage;
         CenterImageCheckBox.IsChecked = settings.CenterImage;
 
-        PrintButton.IsEnabled = !previewOnly;
+        UpdatePrintingAvailability();
         PrintButton.Content = Localization.Strings.PrintForm_LoadSettings_Print +
             (settings.ShowPrintDialog ? "..." : string.Empty);
         CancelButton.Content = Localization.Strings.MyMessageBox_MyMessageBox_Cancel;
@@ -112,11 +114,20 @@ public partial class PrintWindow : Window
 
     private void OnPrintClick(object? sender, RoutedEventArgs e)
     {
-        if (_printHelper != null)
+        UpdatePrintingAvailability();
+        if (_printHelper != null && _viewModel.CanPrint)
         {
-            RunNativeDialog(() => _printHelper.Print());
-            Close();
+            bool started = false;
+            RunNativeDialog(() => started = _viewModel.TryPrint(() => _printHelper.Print()));
+            if (started) Close();
+            else UpdatePrintingAvailability();
         }
+    }
+
+    private void UpdatePrintingAvailability()
+    {
+        PrintButton.IsEnabled = _printHelper != null && _viewModel.CanPrint;
+        ToolTip.SetTip(PrintAvailabilitySurface, _printHelper == null ? null : _viewModel.PrintingUnavailableReason);
     }
 
     private void OnCancelClick(object? sender, RoutedEventArgs e) => Close();

@@ -999,6 +999,9 @@
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>ตัวอย่าง...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>ไม่สามารถพิมพ์ในสภาพแวดล้อมเดสก์ท็อปนี้ได้</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX - ตัวเลือกการพิมพ์</value>
   </data>

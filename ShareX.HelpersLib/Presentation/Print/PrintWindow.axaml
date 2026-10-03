@@ -120,11 +120,14 @@
                     Classes="compact"
                     Content="{x:Static localization:Strings.PrintWindow_Preview}"
                     Click="OnPreviewClick"/>
-            <Button x:Name="PrintButton"
+            <Border x:Name="PrintAvailabilitySurface"
                     Grid.Column="2"
-                    Classes="compact primary"
-                    IsDefault="True"
-                    Click="OnPrintClick"/>
+                    Background="Transparent">
+                <Button x:Name="PrintButton"
+                        Classes="compact primary"
+                        IsDefault="True"
+                        Click="OnPrintClick"/>
+            </Border>
             <Button x:Name="CancelButton"
                     Grid.Column="3"
                     Classes="compact"

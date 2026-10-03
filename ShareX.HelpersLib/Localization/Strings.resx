@@ -999,6 +999,9 @@ Do you still want to run it?</value>
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>Preview...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>Printing is not available on this desktop.</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX - Print options</value>
   </data>

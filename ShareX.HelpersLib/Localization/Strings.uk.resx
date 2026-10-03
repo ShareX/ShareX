@@ -999,6 +999,9 @@
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>Попередній перегляд...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>Друк недоступний у цьому середовищі стільниці.</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX — Параметри друку</value>
   </data>

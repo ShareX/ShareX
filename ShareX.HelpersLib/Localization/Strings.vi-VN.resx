@@ -999,6 +999,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="PrintWindow_Preview" xml:space="preserve">
     <value>Xem trước...</value>
   </data>
+  <data name="PrintWindow_PrintingUnavailable" xml:space="preserve">
+    <value>Không thể in trong môi trường máy tính để bàn này.</value>
+  </data>
   <data name="PrintWindow_Title" xml:space="preserve">
     <value>ShareX - Tùy chọn in</value>
   </data>
