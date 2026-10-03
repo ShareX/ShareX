@@ -109,10 +109,7 @@ echo "Start it from your application menu or run: sharex"
 if [ "${XDG_CURRENT_DESKTOP:-}" = "Hyprland" ]; then
   cat <<'HYPRLAND'
 
-Hyprland does not assign keys to global shortcuts by itself. After starting ShareX, list its hotkeys with
-  hyprctl globalshortcuts
-and bind the ones you want in your Hyprland configuration, for example:
-  bind = CTRL, Print, global, sharex:sharex-1
-In a Lua configuration, bind the key to hl.dsp.global("sharex:sharex-1").
+On Hyprland ShareX binds its hotkeys while it runs. Keys your configuration already uses (Print Screen in Omarchy) are
+reported as in use; pick other keys in ShareX's hotkey settings. "hyprctl binds" lists ShareX's binds.
 HYPRLAND
 fi

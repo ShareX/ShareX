@@ -28,7 +28,7 @@ This document describes the **target** architecture. At the branch point (`devel
 | `IClipboardService` | Win32 clipboard | NSPasteboard | xclip or xsel | wl-clipboard (also used for copying, since Wayland apps cannot read the XWayland clipboard) |
 | `IScreenCaptureService` | GDI, HDR tone mapping, window and transparent window capture | `screencapture` (Screen Recording permission) | Xlib | grim on wlroots, otherwise the xdg-desktop-portal Screenshot interface |
 | `IScreenRecordingService` | FFmpeg gdigrab, ddagrab, DirectShow | FFmpeg avfoundation | FFmpeg x11grab | wf-recorder into FFmpeg on Hyprland and sway; not yet on GNOME and KDE (portal ScreenCast) |
-| `IHotkeyService` | RegisterHotKey | Carbon hot keys | XGrabKey | Portal GlobalShortcuts (needs the `sharex.desktop` entry; Hyprland users bind the keys) |
+| `IHotkeyService` | RegisterHotKey | Carbon hot keys | XGrabKey | Portal GlobalShortcuts (needs the `sharex.desktop` entry); on Hyprland ShareX also binds the keys |
 | `IWindowService` | Win32 windows and child controls, cursor, overlays | CGWindowList | EWMH, XShape | Hyprland and sway IPC only |
 | `IWindowManagementService` | Inspect, top most, opacity, borderless | Not yet | EWMH | Hyprland and sway IPC only |
 | `IInputService` | SendInput, WM_VSCROLL, low-level mouse hook | Quartz events (Accessibility permission) | XTEST | Hyprland key shortcuts only |
@@ -77,4 +77,6 @@ Recommended packages: FFmpeg (recording), wl-clipboard (Wayland) or xclip (X11),
 
 ### Hyprland
 
-Hyprland's GlobalShortcuts portal registers ShareX's hotkeys but does not assign keys to them. `hyprctl globalshortcuts` lists them (`sharex:sharex-1`, ...); bind the ones you want, for example `bind = CTRL, Print, global, sharex:sharex-1`, or in a Lua configuration bind the key to `hl.dsp.global("sharex:sharex-1")`. With `xwayland:force_zero_scaling`, ShareX's windows use device pixels; the platform layer converts between them and Hyprland's layout coordinates.
+Hyprland's GlobalShortcuts portal registers ShareX's hotkeys but does not assign keys to them, so ShareX binds each hotkey's keys itself at run time (`hyprctl eval` with `hl.bind` on Lua configurations, `hyprctl keyword bind` on classic ones). Key combinations the configuration already uses, such as Omarchy's Print Screen, are left alone and reported as in use, like a hotkey another application holds on Windows; choose another key in ShareX's hotkey settings. The binds are not written to the configuration, are removed when ShareX exits and are added again after `hyprctl reload`. `hyprctl binds` lists them with "ShareX:" descriptions.
+
+With `xwayland:force_zero_scaling`, ShareX's windows use device pixels; the platform layer converts between them and Hyprland's layout coordinates.

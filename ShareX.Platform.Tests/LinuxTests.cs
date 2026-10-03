@@ -898,3 +898,50 @@ public class FeatureReasonTests
         Assert.Contains("controls", management.GetSupport(WindowManagementFeature.ChildControls).Reason);
     }
 }
+
+public class HyprlandShortcutKeyBinderTests
+{
+    [Fact]
+    public void HotkeysMapToHyprlandModifiersAndKeys()
+    {
+        Assert.True(ShareX.Platform.Linux.Desktop.HyprlandShortcutKeyBinder.TryGetKey(new PlatformHotkey(0x2C, HotkeyModifiers.Control | HotkeyModifiers.Shift), out int mask, out string key, out string combination));
+        Assert.Equal(5, mask);
+        Assert.Equal("Print", key);
+        Assert.Equal("CTRL + SHIFT + Print", combination);
+        Assert.Equal("CTRL SHIFT", ShareX.Platform.Linux.Desktop.HyprlandShortcutKeyBinder.ClassicModifiers(mask));
+    }
+
+    [Fact]
+    public void ParsesMainSubmapKeyBinds()
+    {
+        string json = "[{\"modmask\":0,\"key\":\"PRINT\",\"submap\":\"\",\"mouse\":false},{\"modmask\":64,\"key\":\"mouse:272\",\"submap\":\"\",\"mouse\":true},{\"modmask\":4,\"key\":\"RETURN\",\"submap\":\"capture\",\"mouse\":false}]";
+
+        Assert.Equal([(0, "PRINT")], ShareX.Platform.Linux.Desktop.HyprlandShortcutKeyBinder.ParseBinds(json));
+    }
+
+    [Fact]
+    public void KeysTheConfigurationUsesAreInUse()
+    {
+        BindsRunner runner = new BindsRunner("[{\"modmask\":0,\"key\":\"PRINT\",\"submap\":\"\"}]");
+        using ShareX.Platform.Linux.Desktop.HyprlandShortcutKeyBinder binder = new ShareX.Platform.Linux.Desktop.HyprlandShortcutKeyBinder(runner, "sharex");
+
+        Assert.True(binder.IsInUse(new PlatformHotkey(0x2C, HotkeyModifiers.None)));
+        Assert.False(binder.IsInUse(new PlatformHotkey(0x2C, HotkeyModifiers.Control)));
+    }
+
+    [Fact]
+    public void LuaStringsAreEscaped() =>
+        Assert.Equal("\"ShareX: \\\"x\\\" \\\\ y\"", ShareX.Platform.Linux.Desktop.HyprlandShortcutKeyBinder.Lua("ShareX: \"x\" \\ y"));
+
+    private sealed class BindsRunner(string binds) : Diagnostics.ICommandRunner
+    {
+        public bool Exists(string command) => true;
+
+        public System.Threading.Tasks.Task<Diagnostics.CommandResult> RunAsync(string command, IReadOnlyList<string> arguments, byte[]? standardInput = null,
+            TimeSpan? timeout = null, System.Threading.CancellationToken cancellationToken = default) =>
+            System.Threading.Tasks.Task.FromResult(new Diagnostics.CommandResult(0, System.Text.Encoding.UTF8.GetBytes(arguments.Count > 0 && arguments[0] == "binds" ? binds : "ok"), ""));
+
+        public System.Threading.Tasks.Task<int> RunForkingAsync(string command, IReadOnlyList<string> arguments, byte[]? standardInput = null,
+            TimeSpan? timeout = null, System.Threading.CancellationToken cancellationToken = default) => throw new NotSupportedException();
+    }
+}

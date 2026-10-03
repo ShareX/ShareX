@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Platform.Linux.Desktop;
 using ShareX.Platform.Linux.Native;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,7 @@ public sealed class PortalGlobalShortcutsService : IHotkeyService
     private readonly object syncRoot = new object();
     private readonly Dictionary<int, PlatformHotkey> hotkeys = new Dictionary<int, PlatformHotkey>();
     private readonly Func<int, string> describe;
+    private readonly IShortcutKeyBinder? keyBinder;
     private readonly SemaphoreSlim bindLock = new SemaphoreSlim(1, 1);
     private string? sessionHandle;
     private IDisposable? activatedSubscription;
@@ -57,9 +59,11 @@ public sealed class PortalGlobalShortcutsService : IHotkeyService
     private bool disposed;
 
     /// <param name="describe">Returns the description shown in the desktop's shortcut settings for a hotkey id, for example "Capture region".</param>
-    public PortalGlobalShortcutsService(Func<int, string>? describe = null)
+    /// <param name="keyBinder">Assigns the keys on desktops whose portal leaves that to the user (Hyprland).</param>
+    internal PortalGlobalShortcutsService(Func<int, string>? describe = null, IShortcutKeyBinder? keyBinder = null)
     {
         this.describe = describe ?? (id => $"ShareX hotkey {id}");
+        this.keyBinder = keyBinder;
         uint? version = null;
 
         try
@@ -101,6 +105,11 @@ public sealed class PortalGlobalShortcutsService : IHotkeyService
         if (XKeyMap.ToShortcutTrigger(hotkey) == null)
         {
             return HotkeyRegistrationStatus.UnsupportedKey;
+        }
+
+        if (keyBinder?.IsInUse(hotkey) == true)
+        {
+            return HotkeyRegistrationStatus.InUse;
         }
 
         lock (syncRoot)
@@ -183,6 +192,7 @@ public sealed class PortalGlobalShortcutsService : IHotkeyService
 
             if (shortcuts.Count == 0 || disposed)
             {
+                keyBinder?.Clear();
                 return;
             }
 
@@ -236,6 +246,18 @@ public sealed class PortalGlobalShortcutsService : IHotkeyService
                 throw new InvalidOperationException(bound.Cancelled
                     ? "The desktop's global shortcut dialog was dismissed."
                     : $"GlobalShortcuts.BindShortcuts failed with response {bound.Code}.");
+            }
+
+            if (keyBinder != null)
+            {
+                List<GlobalShortcut> keys;
+
+                lock (syncRoot)
+                {
+                    keys = hotkeys.Select(pair => new GlobalShortcut(IdPrefix + pair.Key.ToString(CultureInfo.InvariantCulture), pair.Value, describe(pair.Key))).ToList();
+                }
+
+                keyBinder.Apply(keys);
             }
         }
         finally
@@ -318,6 +340,7 @@ public sealed class PortalGlobalShortcutsService : IHotkeyService
 
         disposed = true;
         pendingBind?.Cancel();
+        keyBinder?.Dispose();
         activatedSubscription?.Dispose();
 
         try

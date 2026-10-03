@@ -25,6 +25,7 @@
 
 using ShareX.Platform.Diagnostics;
 using ShareX.Platform.Linux.DBus;
+using ShareX.Platform.Linux.Desktop;
 using System;
 using System.Runtime.Versioning;
 
@@ -132,7 +133,11 @@ public sealed class LinuxPlatformServices : IPlatformServices
 
         if (DBusSession.IsAvailable)
         {
-            return new PortalGlobalShortcutsService(describeHotkey);
+            // Hyprland's portal registers shortcuts without keys; ShareX binds them at runtime.
+            IShortcutKeyBinder? binder = info.DesktopEnvironment == DesktopEnvironment.Hyprland
+                ? new HyprlandShortcutKeyBinder(CommandRunner.Default, DBusSession.ApplicationId)
+                : null;
+            return new PortalGlobalShortcutsService(describeHotkey, binder);
         }
 
         return new UnsupportedHotkeyService("Global hotkeys need an X11 session or the xdg-desktop-portal GlobalShortcuts interface.");
