@@ -7,6 +7,7 @@ The `cross-platform-v2` branch ports ShareX to Linux while preserving Windows su
 - [docs/cross-platform-learnings.md](docs/cross-platform-learnings.md): what the first attempt taught, and the rules that follow from it.
 - [docs/cross-platform-delegation.md](docs/cross-platform-delegation.md): which agent owns which project, the task tracker and the request log.
 - [docs/cross-platform.md](docs/cross-platform.md): the target architecture and how to build.
+- [docs/cross-platform-roadmap.md](docs/cross-platform-roadmap.md): progress per operating system, the roadmap to 100%, the gates between phases and the commitments McoreD, Jaex and their agents have made.
 
 ## Platform priorities: Linux first
 
@@ -32,8 +33,10 @@ The other agent pushes to the same branch, and a running session does not see it
 
 1. `git pull` on `cross-platform-v2`.
 2. Read the newest entries of the **Status log** at the bottom of [docs/cross-platform-delegation.md](docs/cross-platform-delegation.md), and the **Handoffs**, **Requests** and **Bugs** rows addressed to you. Deal with those before starting new work.
-3. Check the task tables for what is `in progress` (yours to finish) and what you can claim next.
-4. Claim a task (set it to `in progress` and push) before writing code.
+3. Read [docs/cross-platform-roadmap.md](docs/cross-platform-roadmap.md): the gates, the open commitments addressed to you, and the progress estimates.
+4. Check the task tables for what is `in progress` (yours to finish) and what you can claim next.
+5. Claim a task (set it to `in progress` and push) before writing code.
+6. When your work changes a percentage, ticks a gate or verification item, or makes or keeps a commitment, update the roadmap in the same push and add a line to its change log.
 
 ## Branches
 
