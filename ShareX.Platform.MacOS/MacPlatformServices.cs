@@ -117,6 +117,8 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public ISoundService Sounds { get; }
 
+    public IDesktopWallpaperService Wallpaper { get; } = new UnsupportedDesktopWallpaperService("The desktop wallpaper is not available on macOS yet.");
+
     public void Dispose()
     {
         if (hotkeys.IsValueCreated)

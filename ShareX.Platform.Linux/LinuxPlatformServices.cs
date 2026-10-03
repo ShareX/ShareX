@@ -66,6 +66,7 @@ public sealed class LinuxPlatformServices : IPlatformServices
         SystemInfo = new UnixSystemInfoService(info, runner);
         Ocr = new TesseractOcrService(info, runner);
         Printing = new CupsPrintService(info, runner);
+        Wallpaper = new LinuxDesktopWallpaperService(runner);
         Sounds = new CommandLineSoundService(runner, ["pw-play", "paplay", "aplay"], LinuxPackages.Missing(info.Distribution ?? LinuxDistribution.Unknown, LinuxTool.PipeWire));
     }
 
@@ -117,6 +118,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
     public IPrintService Printing { get; }
 
     public ISoundService Sounds { get; }
+
+    public IDesktopWallpaperService Wallpaper { get; }
 
     private static IHotkeyService CreateHotkeyService(PlatformInfo info, Func<int, string>? describeHotkey)
     {

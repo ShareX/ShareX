@@ -855,3 +855,19 @@ public class HyprlandOptionTests
         Assert.Equal(expected, LinuxWindowService.ParseHyprlandBoolOption(document.RootElement));
     }
 }
+
+public class LinuxDesktopWallpaperTests
+{
+    [UnixFact]
+    public void LookupOnThisDesktopReturnsAnExistingFileOrNothing()
+    {
+        LinuxDesktopWallpaperService service = new LinuxDesktopWallpaperService(ShareX.Platform.Diagnostics.CommandRunner.Default);
+
+        DesktopWallpaper? wallpaper = service.Support.IsSupported ? service.GetWallpaper() : null;
+
+        if (wallpaper != null)
+        {
+            Assert.True(File.Exists(wallpaper.Path), wallpaper.Path);
+        }
+    }
+}

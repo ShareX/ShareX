@@ -96,4 +96,7 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>Notification sounds.</summary>
     ISoundService Sounds { get; }
+
+    /// <summary>The desktop wallpaper, for the image editor's background.</summary>
+    IDesktopWallpaperService Wallpaper { get; }
 }

@@ -117,6 +117,9 @@ public sealed class WindowsPlatformServices : IPlatformServices
 
     public ISoundService Sounds { get; } = new WindowsSoundService();
 
+    // Stub until W6: J moves the editor's SPI_GETDESKWALLPAPER lookup here.
+    public IDesktopWallpaperService Wallpaper { get; } = new UnsupportedDesktopWallpaperService("Not implemented on Windows yet.");
+
     public void Dispose()
     {
         ((WindowsSystemGraphicsService)Graphics).Dispose();

@@ -255,3 +255,16 @@ public sealed class UnsupportedSoundService(string reason) : ISoundService
     {
     }
 }
+
+public sealed class UnsupportedDesktopWallpaperService(string reason) : IDesktopWallpaperService
+{
+    public FeatureSupport Support { get; } = FeatureSupport.NotSupported(reason);
+
+    public bool RequiresPrewarm => false;
+
+    public DesktopWallpaper? GetWallpaper() => null;
+
+    public void Prewarm()
+    {
+    }
+}
