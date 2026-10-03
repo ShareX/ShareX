@@ -99,4 +99,7 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>The desktop wallpaper, for the image editor's background.</summary>
     IDesktopWallpaperService Wallpaper { get; }
+
+    /// <summary>Session end and restart registration.</summary>
+    IApplicationSessionService Session { get; }
 }

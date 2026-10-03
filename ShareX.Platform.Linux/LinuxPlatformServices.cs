@@ -121,6 +121,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
 
     public IDesktopWallpaperService Wallpaper { get; }
 
+    public IApplicationSessionService Session { get; } = new UnsupportedApplicationSessionService("Linux desktops restore applications through their own session settings.");
+
     private static IHotkeyService CreateHotkeyService(PlatformInfo info, Func<int, string>? describeHotkey)
     {
         if (info.IsX11 && !info.IsSandboxed)

@@ -63,6 +63,21 @@ public sealed class LinuxWindowService : IWindowService
 
     internal Backend ActiveBackend { get; }
 
+    /// <summary>
+    /// ShareX's windows are X11 windows (natively or under XWayland), so the EWMH urgency state works on every Linux desktop that
+    /// runs them; Hyprland, GNOME and KDE show urgent windows in their bars and borders.
+    /// </summary>
+    public bool RequestAttention(long windowHandle, int count)
+    {
+        if (windowHandle == 0)
+        {
+            return false;
+        }
+
+        using X11Display? display = X11Display.TryOpen();
+        return display != null && display.ChangeWmState((nuint)windowHandle, 1, "_NET_WM_STATE_DEMANDS_ATTENTION");
+    }
+
     public FeatureSupport Support { get; }
 
     internal static Backend SelectBackend(PlatformInfo info)

@@ -122,6 +122,12 @@ public interface IWindowService
     void ReleaseMouseCapture();
 
     /// <summary>
+    /// Draws the user's attention to one of ShareX's own windows without activating it: flashes its task bar button
+    /// <paramref name="count"/> times on Windows, marks it urgent on Linux. Returns false where the platform cannot.
+    /// </summary>
+    bool RequestAttention(long windowHandle, int count) => false;
+
+    /// <summary>
     /// Keeps the pointer inside the window (for single monitor region capture). Returns false where the platform does not let
     /// applications confine the pointer, which includes every Wayland compositor.
     /// </summary>

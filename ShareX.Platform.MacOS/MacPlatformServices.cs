@@ -119,6 +119,8 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public IDesktopWallpaperService Wallpaper { get; } = new UnsupportedDesktopWallpaperService("The desktop wallpaper is not available on macOS yet.");
 
+    public IApplicationSessionService Session { get; } = new UnsupportedApplicationSessionService("macOS restores applications through its own session settings.");
+
     public void Dispose()
     {
         if (hotkeys.IsValueCreated)
