@@ -2177,6 +2177,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Při zachytávání oken zachytit klientskou oblast</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Tato možnost zachycení není v tomto desktopovém prostředí k dispozici.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Zachycení nebo nahrání schránky:</value>
   </data>

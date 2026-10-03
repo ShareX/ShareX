@@ -2177,6 +2177,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Capturează zona client la capturarea ferestrelor</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Această opțiune de captură nu este disponibilă în acest mediu desktop.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Încărcare captură sau clipboard:</value>
   </data>

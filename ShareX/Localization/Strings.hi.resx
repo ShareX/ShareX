@@ -2177,6 +2177,9 @@
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>विंडो कैप्चर में क्लाइंट क्षेत्र कैप्चर करें</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>यह कैप्चर विकल्प इस डेस्कटॉप पर उपलब्ध नहीं है।</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>कैप्चर या क्लिपबोर्ड अपलोड:</value>
   </data>

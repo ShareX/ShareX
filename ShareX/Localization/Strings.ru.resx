@@ -2177,6 +2177,9 @@
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Захватывать клиентскую область при захвате окон</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Этот параметр захвата недоступен в этой среде рабочего стола.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Загрузка захвата или буфера обмена:</value>
   </data>

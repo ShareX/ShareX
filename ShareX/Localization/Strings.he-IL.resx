@@ -2177,6 +2177,9 @@
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>לכידת אזור הלקוח בלכידות חלון</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>אפשרות לכידה זו אינה זמינה בסביבת שולחן עבודה זו.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>העלאת לכידה או לוח:</value>
   </data>

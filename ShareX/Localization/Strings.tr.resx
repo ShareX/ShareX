@@ -2177,6 +2177,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Pencere yakalamalarında istemci alanını yakala</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Bu yakalama seçeneği bu masaüstü ortamında kullanılamıyor.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Yakalama veya pano yüklemesi:</value>
   </data>

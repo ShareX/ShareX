@@ -3006,6 +3006,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_CaptureWindowWithShadow", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_CaptureOptionUnavailable {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CaptureOptionUnavailable", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_SelectRegionWithEllipsis {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_SelectRegionWithEllipsis", resourceCulture);

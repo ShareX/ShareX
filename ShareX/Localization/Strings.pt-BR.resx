@@ -2177,6 +2177,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Capturar a área cliente nas capturas de janela</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Esta opção de captura não está disponível neste ambiente de desktop.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Envio de captura ou da área de transferência:</value>
   </data>

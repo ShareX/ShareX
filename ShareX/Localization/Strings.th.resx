@@ -2177,6 +2177,9 @@
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>จับภาพพื้นที่ไคลเอ็นต์สำหรับการจับภาพหน้าต่าง</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>ตัวเลือกการจับภาพนี้ไม่พร้อมใช้งานในสภาพแวดล้อมเดสก์ท็อปนี้</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>จับภาพ หรือ การอัปโหลดคลิปบอร์ด:</value>
   </data>

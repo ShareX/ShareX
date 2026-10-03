@@ -2177,6 +2177,9 @@
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Захоплювати клієнтську область під час захоплення вікон</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Цей параметр захоплення недоступний у цьому середовищі стільниці.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Завантаження захоплення або буфера обміну:</value>
   </data>

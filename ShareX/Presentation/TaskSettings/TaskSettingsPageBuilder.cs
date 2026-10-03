@@ -360,9 +360,12 @@ internal sealed class TaskSettingsPageBuilder
     private Control BuildCapturePage()
     {
         TaskSettingsCapture capture = _settings.CaptureSettings;
-        BoundValue<bool> transparent = new(capture.CaptureTransparent, value => capture.CaptureTransparent = value);
-        CheckBox shadow = Check(Strings.TaskSettingsWindow_CaptureWindowWithShadow, () => capture.CaptureShadow, value => capture.CaptureShadow = value);
-        NumericUpDown shadowOffset = Number(() => capture.CaptureShadowOffset, value => capture.CaptureShadowOffset = (int)value, 0, 1000);
+        BoundValue<bool> transparent = new(capture.CaptureTransparent,
+            SetIfCaptureSupported<bool>(ScreenCaptureFeatures.TransparentWindow, value => capture.CaptureTransparent = value));
+        CheckBox shadow = Check(Strings.TaskSettingsWindow_CaptureWindowWithShadow, () => capture.CaptureShadow,
+            SetIfCaptureSupported<bool>(ScreenCaptureFeatures.TransparentWindow, value => capture.CaptureShadow = value));
+        NumericUpDown shadowOffset = Number(() => capture.CaptureShadowOffset,
+            SetIfCaptureSupported<decimal>(ScreenCaptureFeatures.TransparentWindow, value => capture.CaptureShadowOffset = (int)value), 0, 1000);
         BindEnabled(shadow, transparent);
         BindEnabled(shadowOffset, transparent);
 
@@ -409,12 +412,16 @@ internal sealed class TaskSettingsPageBuilder
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Screenshots,
                 Check(Strings.TaskSettingsWindow_ShowCursorInScreenshots, () => capture.ShowCursor, value => capture.ShowCursor = value),
                 Row(Strings.TaskSettingsWindow_ScreenshotDelaySeconds, Number(() => capture.ScreenshotDelay, value => capture.ScreenshotDelay = value, 0, 60, 0.1m)),
-                Check(Strings.TaskSettingsWindow_CaptureWindowWithTransparency, transparent), shadow,
-                Row(Strings.TaskSettingsWindow_ShadowOffset, shadowOffset),
-                Check(Strings.TaskSettingsWindow_CaptureClientAreaForWindowCaptures, () => capture.CaptureClientArea, value => capture.CaptureClientArea = value),
-                Check(Strings.TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow, () => capture.CaptureAutoHideTaskbar, value => capture.CaptureAutoHideTaskbar = value),
+                WithCaptureSupport(Check(Strings.TaskSettingsWindow_CaptureWindowWithTransparency, transparent), ScreenCaptureFeatures.TransparentWindow),
+                WithCaptureSupport(shadow, ScreenCaptureFeatures.TransparentWindow),
+                WithCaptureSupport(Row(Strings.TaskSettingsWindow_ShadowOffset, shadowOffset), ScreenCaptureFeatures.TransparentWindow),
+                WithCaptureSupport(Check(Strings.TaskSettingsWindow_CaptureClientAreaForWindowCaptures, () => capture.CaptureClientArea,
+                    SetIfCaptureSupported<bool>(ScreenCaptureFeatures.WindowClientArea, value => capture.CaptureClientArea = value)), ScreenCaptureFeatures.WindowClientArea),
+                WithCaptureSupport(Check(Strings.TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow, () => capture.CaptureAutoHideTaskbar,
+                    SetIfCaptureSupported<bool>(ScreenCaptureFeatures.HideTaskbar, value => capture.CaptureAutoHideTaskbar = value)), ScreenCaptureFeatures.HideTaskbar),
                 Check(Strings.TaskSettingsWindow_AutomaticallyHideDesktopIcons, () => capture.CaptureAutoHideDesktopIcons, value => capture.CaptureAutoHideDesktopIcons = value),
-                Check(Strings.TaskSettingsWindow_HDRScreenshotColorCorrector, () => capture.HDRScreenshotColorCorrection, value => capture.HDRScreenshotColorCorrection = value)),
+                WithCaptureSupport(Check(Strings.TaskSettingsWindow_HDRScreenshotColorCorrector, () => capture.HDRScreenshotColorCorrection,
+                    SetIfCaptureSupported<bool>(ScreenCaptureFeatures.HdrToneMapping, value => capture.HDRScreenshotColorCorrection = value)), ScreenCaptureFeatures.HdrToneMapping)),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_PreconfiguredRegion, regionGrid, selectRegion),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_PreconfiguredWindow,
                 Row(Strings.TaskSettingsWindow_WindowTitle, Text(() => capture.CaptureCustomWindow, value => capture.CaptureCustomWindow = value))));
@@ -1772,6 +1779,19 @@ internal sealed class TaskSettingsPageBuilder
         ToolTip.SetTip(wrapper, support.Reason);
         return wrapper;
     }
+
+    private static Control WithCaptureSupport(Control control, ScreenCaptureFeatures feature)
+    {
+        FeatureSupport support = PlatformServices.Current.ScreenCapture.GetFeatureSupport(feature);
+        // Keep dependency policy in the platform audit; the UI must not recommend installing legacy helpers.
+        return WithSupport(control, support.IsSupported ? support :
+            FeatureSupport.NotSupported(Strings.TaskSettingsWindow_CaptureOptionUnavailable));
+    }
+
+    private static Action<T> SetIfCaptureSupported<T>(ScreenCaptureFeatures feature, Action<T> setter) => value =>
+    {
+        if (PlatformServices.Current.ScreenCapture.GetFeatureSupport(feature).IsSupported) setter(value);
+    };
 
     private async Task<string?> PickFolderAsync(string title)
     {

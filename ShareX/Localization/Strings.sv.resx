@@ -2177,6 +2177,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Ta bild av klientområdet vid fönsterbildtagning</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Det här fångstalternativet är inte tillgängligt i den här skrivbordsmiljön.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Bildtagning eller uppladdning av Urklipp:</value>
   </data>

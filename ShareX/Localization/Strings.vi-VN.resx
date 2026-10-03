@@ -2177,6 +2177,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Chụp vùng máy khách khi chụp cửa sổ</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Tùy chọn chụp này không khả dụng trong môi trường máy tính để bàn này.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Tải bản chụp hoặc bảng tạm lên:</value>
   </data>

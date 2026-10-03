@@ -2177,6 +2177,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Clientbereich bei Fensteraufnahmen erfassen</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Diese Aufnahmeoption ist in dieser Desktopumgebung nicht verfügbar.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Aufnahme- oder Zwischenablage-Upload:</value>
   </data>

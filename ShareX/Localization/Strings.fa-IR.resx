@@ -2177,6 +2177,9 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>ثبت ناحیه کارخواه در ثبت پنجره</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>این گزینهٔ تصویربرداری در این محیط دسکتاپ در دسترس نیست.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>بارگذاری ثبت یا کلیپ‌بورد:</value>
   </data>

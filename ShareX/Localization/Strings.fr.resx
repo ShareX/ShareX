@@ -2177,6 +2177,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Capturer la zone cliente lors des captures de fenêtre</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Cette option de capture n’est pas disponible dans cet environnement de bureau.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Envoi de capture ou du presse-papiers :</value>
   </data>

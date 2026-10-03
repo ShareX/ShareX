@@ -2177,6 +2177,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Tag billede af klientområdet ved vinduesoptagelse</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Denne optagelsesindstilling er ikke tilgængelig på dette skrivebord.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Optagelse eller upload af Udklipsholder:</value>
   </data>

@@ -2177,6 +2177,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Przechwyć obszar klienta podczas przechwytywania okna</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Ta opcja przechwytywania nie jest dostępna w tym środowisku graficznym.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Przesyłanie przechwycenia lub schowka:</value>
   </data>

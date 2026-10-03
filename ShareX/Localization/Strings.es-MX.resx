@@ -2177,6 +2177,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Capturar el área cliente en las capturas de ventana</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Esta opción de captura no está disponible en este entorno de escritorio.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Carga de captura o portapapeles:</value>
   </data>

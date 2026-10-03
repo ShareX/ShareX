@@ -2177,6 +2177,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>Tangkap area klien untuk tangkapan jendela</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>Opsi tangkapan ini tidak tersedia di lingkungan desktop ini.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>Unggahan tangkapan atau papan klip:</value>
   </data>

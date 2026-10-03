@@ -2177,6 +2177,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>창 캡처 시 클라이언트 영역 캡처</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>이 데스크톱 환경에서는 이 캡처 옵션을 사용할 수 없습니다.</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>캡처 또는 클립보드 업로드:</value>
   </data>

@@ -2177,6 +2177,9 @@
   <data name="TaskSettingsWindow_CaptureClientAreaForWindowCaptures" xml:space="preserve">
     <value>ウィンドウキャプチャでクライアント領域をキャプチャ</value>
   </data>
+  <data name="TaskSettingsWindow_CaptureOptionUnavailable" xml:space="preserve">
+    <value>このデスクトップ環境では、このキャプチャオプションを利用できません。</value>
+  </data>
   <data name="TaskSettingsWindow_CaptureOrClipboardUpload" xml:space="preserve">
     <value>キャプチャまたはクリップボードのアップロード:</value>
   </data>
