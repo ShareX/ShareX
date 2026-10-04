@@ -195,6 +195,14 @@ namespace ShareX
 
         public void ShowFailedHotkeys()
         {
+            // The box reports keys another program holds. Where the desktop offers no global hotkeys at all (GNOME before 48,
+            // for example) every key fails for the same reason, which the hotkey settings show; repeating it at each start helps no one.
+            if (!Support.IsSupported)
+            {
+                DebugHelper.WriteLine("Global hotkeys are not available: " + Support.Reason);
+                return;
+            }
+
             List<HotkeySettings> failedHotkeysList = Hotkeys.Where(x => x.HotkeyInfo.Status == HotkeyStatus.Failed).ToList();
 
             if (failedHotkeysList.Count > 0)

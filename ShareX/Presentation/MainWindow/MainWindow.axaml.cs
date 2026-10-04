@@ -2029,7 +2029,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnClosing(object? sender, WindowClosingEventArgs e)
     {
-        if (!_allowClose && ApplicationState.Settings.ShowTray)
+        if (!_allowClose && ApplicationState.IsTrayUsable)
         {
             e.Cancel = true;
             HideToTray();

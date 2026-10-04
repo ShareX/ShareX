@@ -158,7 +158,7 @@ internal static class Program
             initializeMainWindow: () =>
             {
                 bool showMainWindow = !(StartupOptions.SilentRun || ApplicationState.Settings.SilentRun) ||
-                    !ApplicationState.Settings.ShowTray;
+                    !ApplicationState.IsTrayUsable;
                 MainWindowIntegration.Initialize(hotkeyHost!.TrayIconService, showMainWindow);
                 ShareX.Tools.MouseHighlighterManager.ActivateOnStartup(
                     ApplicationState.DefaultTaskSettings.ToolsSettings.MouseHighlighterOptions);

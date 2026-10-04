@@ -113,6 +113,30 @@ internal static class DBusSession
         }
     }
 
+    /// <summary>Whether a service owns <paramref name="name"/> on the session bus. Waits at most two seconds.</summary>
+    public static bool NameHasOwner(string name)
+    {
+        if (!IsAvailable)
+        {
+            return false;
+        }
+
+        try
+        {
+            return RunSync(async () =>
+            {
+                DBusConnection bus = await GetConnectionAsync().ConfigureAwait(false);
+                MessageBuffer call = CreateMethodCall(bus, "org.freedesktop.DBus", "/org/freedesktop/DBus", "org.freedesktop.DBus", "NameHasOwner", "s",
+                    (ref MessageWriter writer) => writer.WriteString(name));
+                return await bus.CallMethodAsync(call, static (Message message, object? state) => message.GetBodyReader().ReadBool(), null).ConfigureAwait(false);
+            }, TimeSpan.FromSeconds(2));
+        }
+        catch (Exception e) when (IsExpectedFailure(e is AggregateException { InnerException: Exception inner } ? inner : e))
+        {
+            return false;
+        }
+    }
+
     public delegate void BodyWriter(ref MessageWriter writer);
 
     public static MessageBuffer CreateMethodCall(DBusConnection bus, string destination, string path, string @interface, string member,

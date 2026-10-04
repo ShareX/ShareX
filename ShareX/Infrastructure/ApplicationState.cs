@@ -26,6 +26,7 @@
 #nullable enable
 
 using ShareX.HistoryLib;
+using ShareX.Platform;
 using ShareX.UploadersLib;
 using System;
 
@@ -44,6 +45,12 @@ internal static class ApplicationState
     }
 
     internal static ApplicationConfig? SettingsOrNull => _settings;
+
+    /// <summary>
+    /// The tray icon is enabled and the desktop can show it. Where it cannot (GNOME without an AppIndicator extension), ShareX keeps
+    /// its window instead of starting or closing to an invisible tray.
+    /// </summary>
+    internal static bool IsTrayUsable => Settings.ShowTray && PlatformServices.Current.Tray.IconAreaSupport.IsSupported;
     internal static TaskSettings DefaultTaskSettings { get; set; } = null!;
 
     internal static UploadersConfig UploadersConfig

@@ -1156,3 +1156,18 @@ public class FileMediaSupportTests
         }
     }
 }
+
+public class TrayIconAreaTests
+{
+    [Fact]
+    public void IconArea_IsReportedOnceAndDefaultsToSupported()
+    {
+        int checks = 0;
+        UnsupportedTrayService gnome = new UnsupportedTrayService(() => { checks++; return FeatureSupport.NotSupported("No tray area."); });
+
+        Assert.False(gnome.IconAreaSupport.IsSupported);
+        Assert.False(gnome.IconAreaSupport.IsSupported);
+        Assert.Equal(1, checks);
+        Assert.True(new UnsupportedTrayService().IconAreaSupport.IsSupported);
+    }
+}

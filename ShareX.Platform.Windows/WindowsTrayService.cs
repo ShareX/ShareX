@@ -35,6 +35,7 @@ namespace ShareX.Platform.Windows;
 public sealed class WindowsTrayService : ITrayService
 {
     public FeatureSupport Support => FeatureSupport.Supported;
+    public FeatureSupport IconAreaSupport => FeatureSupport.Supported;
     public FeatureSupport MiddleClickSupport => FeatureSupport.Supported;
     public FeatureSupport RightButtonSupport => FeatureSupport.Supported;
     public ITraySession CreateSession(Action<Exception> onUnhandledException) => new WindowsTraySession(onUnhandledException);

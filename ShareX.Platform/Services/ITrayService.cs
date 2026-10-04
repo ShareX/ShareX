@@ -31,6 +31,12 @@ namespace ShareX.Platform;
 public interface ITrayService
 {
     FeatureSupport Support { get; }
+
+    /// <summary>
+    /// Whether the desktop shows tray icons at all. GNOME without an AppIndicator extension, and X11 window managers without a
+    /// StatusNotifier host, have nowhere to show one, so ShareX must keep a window reachable instead of hiding in the tray.
+    /// </summary>
+    FeatureSupport IconAreaSupport { get; }
     FeatureSupport MiddleClickSupport { get; }
     FeatureSupport RightButtonSupport { get; }
 
@@ -64,9 +70,12 @@ public interface ITraySession : IDisposable
 }
 
 /// <summary>Uses the existing Avalonia tray, whose click/menu APIs do not expose these native gestures.</summary>
-public sealed class UnsupportedTrayService : ITrayService
+public sealed class UnsupportedTrayService(Func<FeatureSupport>? iconArea = null) : ITrayService
 {
+    private readonly Lazy<FeatureSupport> iconAreaSupport = new(iconArea ?? (() => FeatureSupport.Supported));
+
     public FeatureSupport Support { get; } = FeatureSupport.NotSupported("Native tray transport is not available; ShareX uses the desktop tray.");
+    public FeatureSupport IconAreaSupport => iconAreaSupport.Value;
     public FeatureSupport MiddleClickSupport { get; } = FeatureSupport.NotSupported("The desktop tray does not expose middle-click events.");
     public FeatureSupport RightButtonSupport { get; } = FeatureSupport.NotSupported("The desktop tray does not expose separate right-button press and release events.");
     public ITraySession? CreateSession(Action<Exception> onUnhandledException) => null;
