@@ -63,7 +63,7 @@ Jaex and users test on their own setups and file B rows for anything they find: 
 M owns the platform, packaging and CI rows; J the UI rows. No Mac is available to the agents: CI's `macos-latest` runner builds and runs the tests, and McoreD, Jaex and users verify on real Macs.
 
 - [ ] Cross-platform workflow green on `macos-latest` for every push (M).
-- [ ] `ShareX.app` bundle: Info.plist with bundle id `com.getsharex.ShareX`, usage descriptions for Screen Recording, Accessibility and Input Monitoring, icon; `Scripts/package-macos.sh` makes a zip for Apple silicon and Intel (M).
+- [x] `ShareX.app` bundle: Info.plist with bundle id `com.getsharex.ShareX`, icon, document types; `Scripts/package-macos.sh` makes a zip for Apple silicon and Intel, signed ad hoc on macOS (M). CI packages and launches it on macos-latest.
 - [ ] Capture: full screen, region and window through CoreGraphics/`screencapture`, Screen Recording permission flow (M; services exist from the first attempt, need Mac verification).
 - [ ] Recording through FFmpeg's avfoundation input when FFmpeg is present (M; exists, needs verification).
 - [ ] Global hotkeys through Carbon RegisterEventHotKey (M; exists).

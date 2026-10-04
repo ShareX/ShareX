@@ -86,3 +86,48 @@ jobs:
       # Windows-only projects compile on any OS through EnableWindowsTargeting (set in Directory.Build.props). They cannot run off Windows yet.
       - name: Build ShareX.sln
         run: dotnet build ShareX.sln --configuration Release -p:Platform=x64
+
+  macos-app:
+    name: macOS app bundle and launch
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Package ShareX.app
+        run: Scripts/package-macos.sh arm64 "$RUNNER_TEMP/package"
+
+      # Starts the signed bundle with a clean home (welcome screen off, as for a returning user), waits for startup and closes it
+      # with SIGTERM, which must save the settings. Nothing is captured or uploaded.
+      - name: Launch ShareX.app
+        run: |
+          export HOME="$RUNNER_TEMP/home"
+          mkdir -p "$HOME/Documents/ShareX"
+          echo '{ "ShowStartScreen": false }' > "$HOME/Documents/ShareX/ApplicationConfig.json"
+          ditto -x -k "$RUNNER_TEMP"/package/ShareX-*-macos-arm64.zip "$RUNNER_TEMP/app"
+          codesign --verify --deep "$RUNNER_TEMP/app/ShareX.app"
+          "$RUNNER_TEMP/app/ShareX.app/Contents/MacOS/ShareX" -silent & pid=$!
+          log="$HOME/Documents/ShareX/Logs"
+          for i in $(seq 1 90); do
+            grep -qs "Startup time" "$log"/ShareX-Log-*.txt && break
+            sleep 1
+          done
+          kill -TERM "$pid"
+          wait "$pid" || true
+          cat "$log"/ShareX-Log-*.txt
+          grep -q "Startup time" "$log"/ShareX-Log-*.txt
+          grep -q "ShareX closed" "$log"/ShareX-Log-*.txt
+          ! grep -q "Unhandled exception" "$log"/ShareX-Log-*.txt
+
+      - name: Upload ShareX.app
+        uses: actions/upload-artifact@v4
+        with:
+          name: sharex-macos-arm64
+          path: ${{ runner.temp }}/package/*.zip
+          if-no-files-found: error
