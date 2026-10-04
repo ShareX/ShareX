@@ -188,6 +188,10 @@ public static partial class SkiaImageHelpers
 
         try
         {
+            // As in v22: anything that is not an existing image file (a recorded video, for example) quietly has no image.
+            filePath = FileHelpers.GetAbsolutePath(filePath);
+            if (string.IsNullOrEmpty(filePath) || !FileHelpers.IsImageFile(filePath) || !File.Exists(filePath)) return null;
+
             using FileStream stream = File.OpenRead(filePath);
             return Decode(stream, HelpersOptions.RotateImageByExifOrientationData);
         }
