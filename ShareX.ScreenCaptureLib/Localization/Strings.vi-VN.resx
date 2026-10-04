@@ -349,6 +349,9 @@
   <data name="FFmpegOptionsWindow_Quality" xml:space="preserve">
     <value>Chất lượng</value>
   </data>
+  <data name="FFmpegOptionsWindow_RecordingUnavailable" xml:space="preserve">
+    <value>Không thể quay màn hình trên môi trường máy tính để bàn này.</value>
+  </data>
   <data name="FFmpegOptionsWindow_Refresh_devices" xml:space="preserve">
     <value>Làm mới thiết bị</value>
   </data>

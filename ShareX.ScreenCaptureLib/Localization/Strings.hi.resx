@@ -349,6 +349,9 @@
   <data name="FFmpegOptionsWindow_Quality" xml:space="preserve">
     <value>गुणवत्ता</value>
   </data>
+  <data name="FFmpegOptionsWindow_RecordingUnavailable" xml:space="preserve">
+    <value>इस डेस्कटॉप पर स्क्रीन रिकॉर्डिंग उपलब्ध नहीं है।</value>
+  </data>
   <data name="FFmpegOptionsWindow_Refresh_devices" xml:space="preserve">
     <value>उपकरण ताज़ा करें</value>
   </data>

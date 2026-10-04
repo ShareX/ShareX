@@ -45,6 +45,7 @@ public partial class FFmpegOptionsWindow : Window
     private bool _settingsLoaded;
     private bool _updatingCommandPreview;
     private bool _closed;
+    private readonly FFmpegOptionsWindowViewModel _availability;
 
     public ScreenRecordingOptions Options { get; }
 
@@ -61,11 +62,13 @@ public partial class FFmpegOptionsWindow : Window
     public FFmpegOptionsWindow(ScreenRecordingOptions options)
     {
         Options = options ?? throw new ArgumentNullException(nameof(options));
+        _availability = new FFmpegOptionsWindowViewModel(Options.IsRecording);
 
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         PopulateLists();
         WireEvents();
+        RefreshAvailability();
 
 #if MicrosoftStore
         DownloadRecorderDevicesButton.IsVisible = false;
@@ -147,111 +150,106 @@ public partial class FFmpegOptionsWindow : Window
     {
         OptionsTabStrip.SelectionChanged += (_, _) => UpdateTabVisibility();
 
-        UseCustomPathCheckBox.IsCheckedChanged += (_, _) =>
+        UseCustomPathCheckBox.IsCheckedChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded) return;
             Options.FFmpeg.OverrideCLIPath = UseCustomPathCheckBox.IsChecked == true;
             UpdateUI();
-        };
-        FFmpegPathTextBox.TextChanged += (_, _) =>
+        });
+        FFmpegPathTextBox.TextChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded) return;
             Options.FFmpeg.CLIPath = FFmpegPathTextBox.Text ?? string.Empty;
-        };
+        });
         BrowseFFmpegButton.Click += async (_, _) => await BrowseForFFmpegAsync();
         RefreshDevicesButton.Click += async (_, _) => await RefreshSourcesAsync();
-        DownloadRecorderDevicesButton.Click += (_, _) => URLHelpers.OpenURL(RecorderDevicesUrl);
+        DownloadRecorderDevicesButton.Click += (_, _) => RunSupported(() => URLHelpers.OpenURL(RecorderDevicesUrl));
 
-        VideoSourceComboBox.SelectionChanged += (_, _) =>
+        VideoSourceComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded) return;
             Options.FFmpeg.VideoSource = (VideoSourceComboBox.SelectedItem as FFmpegCaptureDevice)?.Value ?? string.Empty;
             UpdateUI();
-        };
-        AudioSourceComboBox.SelectionChanged += (_, _) =>
+        });
+        AudioSourceComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded) return;
             Options.FFmpeg.AudioSource = (AudioSourceComboBox.SelectedItem as FFmpegCaptureDevice)?.Value ?? string.Empty;
             UpdateUI();
-        };
-        VideoCodecComboBox.SelectionChanged += (_, _) =>
+        });
+        VideoCodecComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded || VideoCodecComboBox.SelectedIndex < 0) return;
+            if (VideoCodecComboBox.SelectedIndex < 0) return;
             Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)VideoCodecComboBox.SelectedIndex;
             UpdateUI();
-        };
-        AudioCodecComboBox.SelectionChanged += (_, _) =>
+        });
+        AudioCodecComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded || AudioCodecComboBox.SelectedIndex < 0) return;
+            if (AudioCodecComboBox.SelectedIndex < 0) return;
             Options.FFmpeg.AudioCodec = (FFmpegAudioCodec)AudioCodecComboBox.SelectedIndex;
             UpdateUI();
-        };
+        });
 
-        X264PresetComboBox.SelectionChanged += (_, _) =>
+        X264PresetComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded || X264PresetComboBox.SelectedIndex < 0) return;
+            if (X264PresetComboBox.SelectedIndex < 0) return;
             Options.FFmpeg.x264_Preset = (FFmpegPreset)X264PresetComboBox.SelectedIndex;
             UpdateUI();
-        };
-        UseX264BitrateCheckBox.IsCheckedChanged += (_, _) =>
+        });
+        UseX264BitrateCheckBox.IsCheckedChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded) return;
             Options.FFmpeg.x264_Use_Bitrate = UseX264BitrateCheckBox.IsChecked == true;
             UpdateUI();
-        };
+        });
         X264CrfNumericUpDown.ValueChanged += (_, _) => SetNumeric(value => Options.FFmpeg.x264_CRF = value, X264CrfNumericUpDown);
         X264BitrateNumericUpDown.ValueChanged += (_, _) => SetNumeric(value => Options.FFmpeg.x264_Bitrate = value, X264BitrateNumericUpDown);
         VpxBitrateNumericUpDown.ValueChanged += (_, _) => SetNumeric(value => Options.FFmpeg.VPx_Bitrate = value, VpxBitrateNumericUpDown);
         XvidQualityNumericUpDown.ValueChanged += (_, _) => SetNumeric(value => Options.FFmpeg.XviD_QScale = value, XvidQualityNumericUpDown);
 
-        NvencPresetComboBox.SelectionChanged += (_, _) =>
+        NvencPresetComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded || NvencPresetComboBox.SelectedIndex < 0) return;
+            if (NvencPresetComboBox.SelectedIndex < 0) return;
             Options.FFmpeg.NVENC_Preset = (FFmpegNVENCPreset)NvencPresetComboBox.SelectedIndex;
             UpdateUI();
-        };
-        NvencTuneComboBox.SelectionChanged += (_, _) =>
+        });
+        NvencTuneComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded || NvencTuneComboBox.SelectedIndex < 0) return;
+            if (NvencTuneComboBox.SelectedIndex < 0) return;
             Options.FFmpeg.NVENC_Tune = (FFmpegNVENCTune)NvencTuneComboBox.SelectedIndex;
             UpdateUI();
-        };
+        });
         NvencBitrateNumericUpDown.ValueChanged += (_, _) => SetNumeric(value => Options.FFmpeg.NVENC_Bitrate = value, NvencBitrateNumericUpDown);
 
-        GifStatsModeComboBox.SelectionChanged += (_, _) =>
+        GifStatsModeComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded || GifStatsModeComboBox.SelectedIndex < 0) return;
+            if (GifStatsModeComboBox.SelectedIndex < 0) return;
             Options.FFmpeg.GIFStatsMode = (FFmpegPaletteGenStatsMode)GifStatsModeComboBox.SelectedIndex;
             UpdateUI();
-        };
-        GifDitherComboBox.SelectionChanged += (_, _) =>
+        });
+        GifDitherComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded || GifDitherComboBox.SelectedIndex < 0) return;
+            if (GifDitherComboBox.SelectedIndex < 0) return;
             Options.FFmpeg.GIFDither = (FFmpegPaletteUseDither)GifDitherComboBox.SelectedIndex;
             UpdateUI();
-        };
+        });
         GifBayerScaleNumericUpDown.ValueChanged += (_, _) => SetNumeric(value => Options.FFmpeg.GIFBayerScale = value, GifBayerScaleNumericUpDown);
 
-        AmfUsageComboBox.SelectionChanged += (_, _) =>
+        AmfUsageComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded || AmfUsageComboBox.SelectedIndex < 0) return;
+            if (AmfUsageComboBox.SelectedIndex < 0) return;
             Options.FFmpeg.AMF_Usage = (FFmpegAMFUsage)AmfUsageComboBox.SelectedIndex;
             UpdateUI();
-        };
-        AmfQualityComboBox.SelectionChanged += (_, _) =>
+        });
+        AmfQualityComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded || AmfQualityComboBox.SelectedIndex < 0) return;
+            if (AmfQualityComboBox.SelectedIndex < 0) return;
             Options.FFmpeg.AMF_Quality = (FFmpegAMFQuality)AmfQualityComboBox.SelectedIndex;
             UpdateUI();
-        };
+        });
         AmfBitrateNumericUpDown.ValueChanged += (_, _) => SetNumeric(value => Options.FFmpeg.AMF_Bitrate = value, AmfBitrateNumericUpDown);
 
-        QsvPresetComboBox.SelectionChanged += (_, _) =>
+        QsvPresetComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded || QsvPresetComboBox.SelectedIndex < 0) return;
+            if (QsvPresetComboBox.SelectedIndex < 0) return;
             Options.FFmpeg.QSV_Preset = (FFmpegQSVPreset)QsvPresetComboBox.SelectedIndex;
             UpdateUI();
-        };
+        });
         QsvBitrateNumericUpDown.ValueChanged += (_, _) => SetNumeric(value => Options.FFmpeg.QSV_Bitrate = value, QsvBitrateNumericUpDown);
 
         AacBitrateComboBox.SelectionChanged += (_, _) => SetSelectedNumber(value => Options.FFmpeg.AAC_Bitrate = value, AacBitrateComboBox);
@@ -259,15 +257,13 @@ public partial class FFmpegOptionsWindow : Window
         VorbisQualityComboBox.SelectionChanged += (_, _) => SetSelectedNumber(value => Options.FFmpeg.Vorbis_QScale = value, VorbisQualityComboBox);
         Mp3QualityComboBox.SelectionChanged += (_, _) => SetSelectedNumber(value => Options.FFmpeg.MP3_QScale = value, Mp3QualityComboBox);
 
-        UserArgumentsTextBox.TextChanged += (_, _) =>
+        UserArgumentsTextBox.TextChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded) return;
             Options.FFmpeg.UserArgs = UserArgumentsTextBox.Text ?? string.Empty;
             UpdateCommandPreview();
-        };
-        UseCustomCommandsCheckBox.IsCheckedChanged += (_, _) =>
+        });
+        UseCustomCommandsCheckBox.IsCheckedChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded) return;
 
             Options.FFmpeg.UseCustomCommands = UseCustomCommandsCheckBox.IsChecked == true;
             if (Options.FFmpeg.UseCustomCommands && string.IsNullOrWhiteSpace(Options.FFmpeg.CustomCommands))
@@ -276,14 +272,14 @@ public partial class FFmpegOptionsWindow : Window
             }
 
             UpdateUI();
-        };
-        CommandPreviewTextBox.TextChanged += (_, _) =>
+        });
+        CommandPreviewTextBox.TextChanged += (_, _) => UpdateOption(() =>
         {
-            if (!_settingsLoaded || _updatingCommandPreview || !Options.FFmpeg.UseCustomCommands) return;
+            if (_updatingCommandPreview || !Options.FFmpeg.UseCustomCommands) return;
             Options.FFmpeg.CustomCommands = CommandPreviewTextBox.Text ?? string.Empty;
-        };
+        });
 
-        ResetOptionsButton.Click += (_, _) => ShowResetConfirmation(true);
+        ResetOptionsButton.Click += (_, _) => RunSupported(() => ShowResetConfirmation(true));
         CancelResetButton.Click += (_, _) => ShowResetConfirmation(false);
         ConfirmResetButton.Click += async (_, _) => await ResetOptionsAsync();
     }
@@ -353,9 +349,19 @@ public partial class FFmpegOptionsWindow : Window
 
     private async Task RefreshSourcesAsync(bool selectRecorderDevices = false)
     {
+        if (_closed || !RefreshAvailability()) return;
         RefreshDevicesButton.IsEnabled = false;
         DeviceStatusTextBlock.Text = Localization.Strings.FFmpegOptionsWindow_Looking_for_devices;
 
+        bool applied = await _availability.TryReadAsync(ReadDevicesAsync, result =>
+        {
+            if (!_closed) ApplyDevices(result.Path, result.Devices, result.Error, selectRecorderDevices);
+        });
+        if (!applied && !_closed) RefreshAvailability();
+    }
+
+    private async Task<(string Path, DirectShowDevices? Devices, Exception? Error)> ReadDevicesAsync()
+    {
         DirectShowDevices? devices = null;
         Exception? discoveryError = null;
         string ffmpegPath = Options.FFmpeg.FFmpegPath;
@@ -364,6 +370,7 @@ public partial class FFmpegOptionsWindow : Window
         {
             await Task.Run(() =>
             {
+                if (_closed || !_availability.Support.IsSupported) return;
                 try
                 {
                     using FFmpegCLIManager ffmpeg = new(ffmpegPath);
@@ -376,11 +383,11 @@ public partial class FFmpegOptionsWindow : Window
             });
         }
 
-        if (_closed)
-        {
-            return;
-        }
+        return (ffmpegPath, devices, discoveryError);
+    }
 
+    private void ApplyDevices(string ffmpegPath, DirectShowDevices? devices, Exception? discoveryError, bool selectRecorderDevices)
+    {
         // The screen devices this platform records with: gdigrab and ddagrab on Windows, x11grab on Linux, avfoundation on macOS.
         List<FFmpegCaptureDevice> videoSources = [FFmpegCaptureDevice.None];
         IReadOnlyList<string> platformDevices = PlatformServices.Current.ScreenRecording.GetSupportedDevices();
@@ -450,6 +457,7 @@ public partial class FFmpegOptionsWindow : Window
 
     private async Task BrowseForFFmpegAsync()
     {
+        if (_closed || !RefreshAvailability()) return;
         IStorageFolder? startFolder = null;
         string? currentFolder = Path.GetDirectoryName(Options.FFmpeg.FFmpegPath);
 
@@ -463,6 +471,7 @@ public partial class FFmpegOptionsWindow : Window
             startFolder = await StorageProvider.TryGetFolderFromPathAsync(new Uri(currentFolder));
         }
 
+        if (_closed || !RefreshAvailability()) return;
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
             Title = Localization.Strings.FFmpegOptionsWindow_Browse_for_ffmpeg,
@@ -474,34 +483,39 @@ public partial class FFmpegOptionsWindow : Window
             ]
         });
 
-        if (files.Count == 0)
+        if (files.Count == 0 || _closed || !RefreshAvailability())
         {
             return;
         }
 
-        UseCustomPathCheckBox.IsChecked = true;
-        FFmpegPathTextBox.Text = files[0].Path.LocalPath;
-        Options.FFmpeg.OverrideCLIPath = true;
-        Options.FFmpeg.CLIPath = files[0].Path.LocalPath;
+        RunSupported(() =>
+        {
+            UseCustomPathCheckBox.IsChecked = true;
+            FFmpegPathTextBox.Text = files[0].Path.LocalPath;
+            Options.FFmpeg.OverrideCLIPath = true;
+            Options.FFmpeg.CLIPath = files[0].Path.LocalPath;
+        });
         await RefreshSourcesAsync();
     }
 
     private async Task ResetOptionsAsync()
     {
+        if (_closed || !RefreshAvailability()) return;
         bool overrideCliPath = Options.FFmpeg.OverrideCLIPath;
         string cliPath = Options.FFmpeg.CLIPath;
 
-        Options.FFmpeg = new FFmpegOptions
+        RunSupported(() => Options.FFmpeg = new FFmpegOptions
         {
             OverrideCLIPath = overrideCliPath,
             CLIPath = cliPath
-        };
+        });
 
         await LoadSettingsAsync();
     }
 
     private void UpdateUI()
     {
+        if (_closed || !RefreshAvailability()) return;
         FFmpegOptions ffmpeg = Options.FFmpeg;
 
         FFmpegPathTextBox.IsEnabled = ffmpeg.OverrideCLIPath;
@@ -546,6 +560,7 @@ public partial class FFmpegOptionsWindow : Window
 
     private void UpdateCommandPreview()
     {
+        if (_closed || !RefreshAvailability()) return;
         _updatingCommandPreview = true;
         CommandPreviewTextBox.Text = Options.FFmpeg.UseCustomCommands
             ? Options.FFmpeg.CustomCommands
@@ -560,8 +575,11 @@ public partial class FFmpegOptionsWindow : Window
             return;
         }
 
-        setter((int)(control.Value ?? 0));
-        UpdateCommandPreview();
+        RunSupported(() =>
+        {
+            setter((int)(control.Value ?? 0));
+            UpdateCommandPreview();
+        });
     }
 
     private void SetSelectedNumber(Action<int> setter, ComboBox control)
@@ -571,8 +589,30 @@ public partial class FFmpegOptionsWindow : Window
             return;
         }
 
-        setter(value);
-        UpdateCommandPreview();
+        RunSupported(() =>
+        {
+            setter(value);
+            UpdateCommandPreview();
+        });
+    }
+
+    private bool RefreshAvailability()
+    {
+        FeatureSupport support = _availability.Support;
+        OptionsContent.IsEnabled = support.IsSupported;
+        ToolTip.SetTip(AvailabilitySurface, support.IsSupported ? null : support.Reason);
+        if (!support.IsSupported) DeviceStatusTextBlock.Text = support.Reason;
+        return support.IsSupported;
+    }
+
+    private void RunSupported(Action action)
+    {
+        if (!_closed && !_availability.TryChange(action)) RefreshAvailability();
+    }
+
+    private void UpdateOption(Action action)
+    {
+        if (_settingsLoaded) RunSupported(action);
     }
 
     private static void SelectNumberOrDefault(ComboBox control, int value, int defaultValue)

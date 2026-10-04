@@ -349,6 +349,9 @@
   <data name="FFmpegOptionsWindow_Quality" xml:space="preserve">
     <value>Kvalita</value>
   </data>
+  <data name="FFmpegOptionsWindow_RecordingUnavailable" xml:space="preserve">
+    <value>V tomto prostředí plochy není nahrávání obrazovky k dispozici.</value>
+  </data>
   <data name="FFmpegOptionsWindow_Refresh_devices" xml:space="preserve">
     <value>Obnovit zařízení</value>
   </data>

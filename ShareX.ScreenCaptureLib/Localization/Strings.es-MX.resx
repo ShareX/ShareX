@@ -349,6 +349,9 @@
   <data name="FFmpegOptionsWindow_Quality" xml:space="preserve">
     <value>Calidad</value>
   </data>
+  <data name="FFmpegOptionsWindow_RecordingUnavailable" xml:space="preserve">
+    <value>La grabación de pantalla no está disponible en este escritorio.</value>
+  </data>
   <data name="FFmpegOptionsWindow_Refresh_devices" xml:space="preserve">
     <value>Actualizar dispositivos</value>
   </data>

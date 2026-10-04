@@ -41,6 +41,10 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string FFmpegOptionsWindow_Reset_encoding_options {
             get { return ResourceManager.GetString("FFmpegOptionsWindow_Reset_encoding_options", resourceCulture); }
         }
+        public static string FFmpegOptionsWindow_RecordingUnavailable {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_RecordingUnavailable", resourceCulture); }
+        }
+
         public static string FFmpegOptionsWindow_Reset_options {
             get { return ResourceManager.GetString("FFmpegOptionsWindow_Reset_options", resourceCulture); }
         }

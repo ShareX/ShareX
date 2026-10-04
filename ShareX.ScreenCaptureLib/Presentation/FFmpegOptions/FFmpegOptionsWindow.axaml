@@ -93,7 +93,8 @@
     </Window.Styles>
 
     <ThemeVariantScope>
-        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
+        <Border x:Name="AvailabilitySurface" Background="Transparent">
+        <Grid x:Name="OptionsContent" Background="{DynamicResource ShareX.Brush.Background.Main}"
               RowDefinitions="Auto,*">
             <Border Grid.Row="0"
                     Padding="20,18"
@@ -568,5 +569,6 @@
             </Grid>
 
         </Grid>
+        </Border>
     </ThemeVariantScope>
 </Window>

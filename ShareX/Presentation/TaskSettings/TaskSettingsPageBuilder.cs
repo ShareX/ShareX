@@ -482,36 +482,49 @@ internal sealed class TaskSettingsPageBuilder
     private Control BuildScreenRecorderPage()
     {
         TaskSettingsCapture capture = _settings.CaptureSettings;
-        BoundValue<bool> fixedDuration = new(capture.ScreenRecordFixedDuration, value => capture.ScreenRecordFixedDuration = value);
-        NumericUpDown duration = Number(() => (decimal)capture.ScreenRecordDuration, value => capture.ScreenRecordDuration = (float)value, 0, 86400, 0.1m);
+        BoundValue<bool> fixedDuration = new(capture.ScreenRecordFixedDuration, SetIfRecordingSupported<bool>(value => capture.ScreenRecordFixedDuration = value));
+        NumericUpDown duration = Number(() => RecordingSeconds(capture.ScreenRecordDuration, 86400),
+            SetIfRecordingSupported<decimal>(value => capture.ScreenRecordDuration = (float)value), 0, 86400, 0.1m);
         BindEnabled(duration, fixedDuration);
 
-        BoundValue<bool> autoStart = new(capture.ScreenRecordAutoStart, value => capture.ScreenRecordAutoStart = value);
-        NumericUpDown startDelay = Number(() => (decimal)capture.ScreenRecordStartDelay, value => capture.ScreenRecordStartDelay = (float)value, 0, 3600, 0.1m);
+        BoundValue<bool> autoStart = new(capture.ScreenRecordAutoStart, SetIfRecordingSupported<bool>(value => capture.ScreenRecordAutoStart = value));
+        NumericUpDown startDelay = Number(() => RecordingSeconds(capture.ScreenRecordStartDelay, 3600),
+            SetIfRecordingSupported<decimal>(value => capture.ScreenRecordStartDelay = (float)value), 0, 3600, 0.1m);
         BindEnabled(startDelay, autoStart);
 
         return Page("capture-screen-recorder", Strings.TaskSettingsWindow_ScreenRecorder, LucideIcons.video,
-            EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Recording,
-                Row(Strings.TaskSettingsWindow_ScreenRecordingFPS, Number(() => capture.ScreenRecordFPS, value => capture.ScreenRecordFPS = (int)value, 1, HelpersOptions.DevMode ? 300 : 60)),
-                Row(Strings.TaskSettingsWindow_GIFFPS, Number(() => capture.GIFFPS, value => capture.GIFFPS = (int)value, 1, HelpersOptions.DevMode ? 60 : 30)),
-                Check(Strings.TaskSettingsWindow_ShowCursorInRecording, () => capture.ScreenRecordShowCursor, value => capture.ScreenRecordShowCursor = value),
+            WithSupport(EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Recording,
+                Row(Strings.TaskSettingsWindow_ScreenRecordingFPS, Number(() => capture.ScreenRecordFPS, SetIfRecordingSupported<decimal>(value => capture.ScreenRecordFPS = (int)value), 1, HelpersOptions.DevMode ? 300 : 60)),
+                Row(Strings.TaskSettingsWindow_GIFFPS, Number(() => capture.GIFFPS, SetIfRecordingSupported<decimal>(value => capture.GIFFPS = (int)value), 1, HelpersOptions.DevMode ? 60 : 30)),
+                Check(Strings.TaskSettingsWindow_ShowCursorInRecording, () => capture.ScreenRecordShowCursor, SetIfRecordingSupported<bool>(value => capture.ScreenRecordShowCursor = value)),
                 WithSupport(Check(Strings.TaskSettingsWindow_HighlightMouseWhileRecording, () => capture.ScreenRecordMouseHighlighter,
-                    value => { if (MouseHighlighterWindowViewModel.CurrentSettingsSupport.IsSupported) capture.ScreenRecordMouseHighlighter = value; }),
+                    SetIfRecordingSupported<bool>(value => { if (MouseHighlighterWindowViewModel.CurrentSettingsSupport.IsSupported) capture.ScreenRecordMouseHighlighter = value; })),
                     MouseHighlighterWindowViewModel.CurrentSettingsSupport),
                 WithSupport(Button(Strings.TaskSettingsWindow_MouseHighlighterOptions, () => _window.NavigateToPage("tools-mouse-highlighter")),
                     MouseHighlighterWindowViewModel.CurrentSettingsSupport),
-                Check(Strings.TaskSettingsWindow_ShowRecordingTimer, () => capture.ScreenRecordShowTimer, value => capture.ScreenRecordShowTimer = value),
-                Check(Strings.TaskSettingsWindow_ShowRecordingButtonLabels, () => capture.ScreenRecordShowButtonLabels, value => capture.ScreenRecordShowButtonLabels = value),
+                Check(Strings.TaskSettingsWindow_ShowRecordingTimer, () => capture.ScreenRecordShowTimer, SetIfRecordingSupported<bool>(value => capture.ScreenRecordShowTimer = value)),
+                Check(Strings.TaskSettingsWindow_ShowRecordingButtonLabels, () => capture.ScreenRecordShowButtonLabels, SetIfRecordingSupported<bool>(value => capture.ScreenRecordShowButtonLabels = value)),
                 Check(Strings.TaskSettingsWindow_StartRecordingAfterADelay, autoStart), Row(Strings.TaskSettingsWindow_StartDelaySeconds, startDelay),
                 Check(Strings.TaskSettingsWindow_UseFixedDuration, fixedDuration), Row(Strings.TaskSettingsWindow_DurationSeconds, duration)),
-            EnabledCard(_captureOverride, Strings.TaskSettingsWindow_EncodingAndCapture,
-                Check(Strings.TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions, () => capture.ScreenRecordTwoPassEncoding, value => capture.ScreenRecordTwoPassEncoding = value),
-                Check(Strings.TaskSettingsWindow_AskForConfirmationWhenAborting, () => capture.ScreenRecordAskConfirmationOnAbort, value => capture.ScreenRecordAskConfirmationOnAbort = value),
-                Button(Strings.TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis, ShowScreenRecordingOptions)));
+                FFmpegOptionsWindowViewModel.CurrentRecordingSupport),
+            WithSupport(EnabledCard(_captureOverride, Strings.TaskSettingsWindow_EncodingAndCapture,
+                Check(Strings.TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions, () => capture.ScreenRecordTwoPassEncoding, SetIfRecordingSupported<bool>(value => capture.ScreenRecordTwoPassEncoding = value)),
+                Check(Strings.TaskSettingsWindow_AskForConfirmationWhenAborting, () => capture.ScreenRecordAskConfirmationOnAbort, SetIfRecordingSupported<bool>(value => capture.ScreenRecordAskConfirmationOnAbort = value)),
+                Button(Strings.TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis, ShowScreenRecordingOptions)),
+                FFmpegOptionsWindowViewModel.CurrentRecordingSupport));
     }
+
+    private static decimal RecordingSeconds(float value, float maximum) => float.IsFinite(value)
+        ? (decimal)Math.Clamp(value, 0, maximum) : 0;
+
+    private static Action<T> SetIfRecordingSupported<T>(Action<T> setter) => value =>
+    {
+        if (FFmpegOptionsWindowViewModel.CurrentRecordingSupport.IsSupported) setter(value);
+    };
 
     private async Task ShowScreenRecordingOptions()
     {
+        if (!FFmpegOptionsWindowViewModel.CurrentRecordingSupport.IsSupported) return;
         TaskSettingsCapture capture = _settings.CaptureSettings;
         ScreenRecordingOptions options = new()
         {
@@ -526,7 +539,7 @@ internal sealed class TaskSettingsPageBuilder
 
         FFmpegOptionsWindow window = new(options);
         await window.ShowDialog(_window);
-        capture.FFmpegOptions = window.Options.FFmpeg;
+        if (FFmpegOptionsWindowViewModel.CurrentRecordingSupport.IsSupported) capture.FFmpegOptions = window.Options.FFmpeg;
     }
 
     private Control BuildOcrPage()
