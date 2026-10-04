@@ -54,6 +54,18 @@ public sealed class MacSystemInfoService : ISystemInfoService
 
     public string GetSingleInstanceMutexName(string name) => @"Global\" + name + "-" + Environment.UserName;
 
+    public string GetSingleInstancePipeName(string name) => CreateShortPipePath(name, Native.LibC.getuid());
+
+    /// <summary>
+    /// /tmp/sharex-UID-HASH: short enough for the 104 character socket path limit, per user, stable for a name. .NET's pipes take a
+    /// rooted name as the socket path, and CurrentUserOnly checks the peer.
+    /// </summary>
+    internal static string CreateShortPipePath(string name, uint uid)
+    {
+        byte[] hash = System.Security.Cryptography.SHA256.HashData(System.Text.Encoding.UTF8.GetBytes(name));
+        return $"/tmp/sharex-{uid}-{Convert.ToHexString(hash, 0, 6).ToLowerInvariant()}";
+    }
+
     private string? Run(string command, string argument)
     {
         try

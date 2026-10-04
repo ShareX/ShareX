@@ -61,7 +61,8 @@ public sealed class MacPlatformServices : IPlatformServices
         ShellIntegration = new MacShellIntegrationService();
         Credentials = new KeychainCredentialService();
         Secrets = new KeyFileSecretProtectionService(System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "secret.key"));
-        Thumbnails = new UnsupportedThumbnailService("macOS file thumbnails need QuickLook, which the macOS build does not wrap yet.");
+        Thumbnails = new QuickLookThumbnailService(runner);
+        Wallpaper = new MacDesktopWallpaperService(runner, System.IO.Path.Combine(paths.GetCacheDirectory("ShareX"), "Wallpaper"));
         Preferences = new DefaultSystemPreferencesService("/Library/Application Support/ShareX/policy.json", System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "policy.json"));
         SystemInfo = new MacSystemInfoService(runner);
     }
@@ -104,12 +105,11 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public ISystemInfoService SystemInfo { get; }
 
-    /// <summary>Apple's Vision framework is not wired up yet.</summary>
     public ICodeSignatureService CodeSignature { get; } = new UnsupportedCodeSignatureService("Installer signatures are only checked on Windows.");
 
-    public IOcrService Ocr { get; } = new UnsupportedOcrService("Text recognition is not available on macOS yet.");
+    public IOcrService Ocr { get; } = new VisionOcrService();
 
-    public ITaskbarService Taskbar { get; } = new UnsupportedTaskbarService("Dock icon progress is not available on macOS yet.");
+    public ITaskbarService Taskbar { get; } = new DockProgressService();
 
     public ISystemGraphicsService Graphics { get; } = new UnsupportedSystemGraphicsService("Emoji and cursor images are drawn by ShareX on macOS.");
 
@@ -117,14 +117,13 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public ISoundService Sounds { get; }
 
-    public IDesktopWallpaperService Wallpaper { get; } = new UnsupportedDesktopWallpaperService("The desktop wallpaper is not available on macOS yet.");
+    public IDesktopWallpaperService Wallpaper { get; }
 
     public IApplicationSessionService Session { get; } = new UnsupportedApplicationSessionService("macOS restores applications through its own session settings.");
 
     public ITrayService Tray { get; } = new UnsupportedTrayService();
 
-    public IApplicationLaunchService ApplicationLaunch { get; } =
-        new UnsupportedApplicationLaunchService("Launching ShareX from the browser extension is not available on macOS.");
+    public IApplicationLaunchService ApplicationLaunch { get; } = new MacApplicationLaunchService();
 
     public void Dispose()
     {

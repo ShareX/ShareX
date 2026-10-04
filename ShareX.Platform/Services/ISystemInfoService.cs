@@ -52,6 +52,12 @@ public interface ISystemInfoService
     /// and unique to the user.
     /// </summary>
     string GetSingleInstanceMutexName(string name);
+
+    /// <summary>
+    /// The pipe the first instance listens on for arguments from later ones. On Unix it is a socket file; macOS's long temporary
+    /// folder would exceed the 104 character socket path limit, so macOS returns a short absolute path instead.
+    /// </summary>
+    string GetSingleInstancePipeName(string name);
 }
 
 /// <param name="Index">The adapter index DirectML expects.</param>

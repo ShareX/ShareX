@@ -57,6 +57,9 @@ public sealed class UnixSystemInfoService : ISystemInfoService
 
     public string GetSingleInstanceMutexName(string name) => @"Global\" + name + "-" + Environment.UserName;
 
+    // .NET puts the socket in /tmp here, well inside the 108 character limit.
+    public string GetSingleInstancePipeName(string name) => name;
+
     private bool ReadAdministratorGroupMember()
     {
         try

@@ -95,6 +95,8 @@ public sealed class WindowsSystemInfoService : ISystemInfoService
 
     public string GetSingleInstanceMutexName(string name) => name;
 
+    public string GetSingleInstancePipeName(string name) => name;
+
     /// <summary>The non-software DXGI adapter with the most dedicated video memory, as the background remover has always chosen.</summary>
     public GpuAdapter? GetPreferredGpu()
     {

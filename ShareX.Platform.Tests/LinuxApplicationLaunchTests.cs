@@ -96,15 +96,13 @@ public class LinuxApplicationLaunchTests
 
         try
         {
-            // $0 is "/bin/sh" (argv[0]), then the arguments as passed. The script reports its session id, its stdin target and
-            // whether SIGTERM is blocked or ignored, which the .NET runtime that started it may have set up.
+            // $0 is "/bin/sh" (argv[0]), then the arguments as passed. The script reports its session id and its stdin target.
             string script = """
                 out="$1"; shift
                 {
                   printf '%s\n' "$$"
                   cut -d' ' -f6 /proc/$$/stat
                   readlink /proc/$$/fd/0
-                  grep -E '^Sig(Blk|Ign):' /proc/$$/status
                   for a in "$@"; do printf '[%s]\n' "$a"; done
                 } > "$out.tmp" && mv "$out.tmp" "$out"
                 """;
@@ -119,15 +117,38 @@ public class LinuxApplicationLaunchTests
             // Session id equals the process id: setsid took effect.
             Assert.Equal(pid.ToString(), lines[1]);
             Assert.Equal("/dev/null", lines[2]);
-            // SIGTERM (bit 14) must be neither blocked nor ignored, so ShareX can still be closed normally. The shell itself blocks
-            // SIGCHLD, so the masks are not compared whole.
-            const ulong sigterm = 1UL << 14;
-            Assert.All(lines.Skip(3).Take(2), line => Assert.Equal(0UL, Convert.ToUInt64(line.Split('\t')[1], 16) & sigterm));
-            Assert.Equal(["[two words]", "[\"quoted\" $HOME `x`]", "[]"], lines.Skip(5));
+            Assert.Equal(["[two words]", "[\"quoted\" $HOME `x`]", "[]"], lines.Skip(3));
         }
         finally
         {
             Directory.Delete(directory, true);
+        }
+    }
+
+    /// <summary>
+    /// A program started directly (not a shell, which may block signals itself) has no blocked or ignored signals, so ShareX
+    /// can be closed normally, and leads its own session.
+    /// </summary>
+    [LinuxFact]
+    public void LaunchDetached_ChildHasDefaultSignalsAndOwnSession()
+    {
+        string output = Path.Combine(Path.GetTempPath(), "sharex-launch-status-" + Guid.NewGuid().ToString("N"));
+
+        try
+        {
+            int pid = service.LaunchDetached("/bin/cp", ["/proc/self/status", output]);
+            SpinWait.SpinUntil(() => File.Exists(output) && new FileInfo(output).Length > 0, TimeSpan.FromSeconds(10));
+            Thread.Sleep(100);
+            string[] status = File.ReadAllLines(output);
+            string Field(string name) => status.First(line => line.StartsWith(name + ":", StringComparison.Ordinal)).Split('\t')[1].Trim();
+
+            Assert.Equal(0UL, Convert.ToUInt64(Field("SigBlk"), 16));
+            Assert.Equal(0UL, Convert.ToUInt64(Field("SigIgn"), 16));
+            Assert.Equal(pid.ToString(), Field("NSsid").Split(' ', '\t')[0]);
+        }
+        finally
+        {
+            File.Delete(output);
         }
     }
 }

@@ -80,7 +80,7 @@ internal static class Program
         StartupOptions.MultiInstance = ApplicationCommandLine.IsCommandPresent("multi", "m");
 
         using (SingleInstanceManager singleInstanceManager = new(
-            PlatformServices.Current.SystemInfo.GetSingleInstanceMutexName(ApplicationInfo.MutexName), ApplicationInfo.PipeName,
+            PlatformServices.Current.SystemInfo.GetSingleInstanceMutexName(ApplicationInfo.MutexName), PlatformServices.Current.SystemInfo.GetSingleInstancePipeName(ApplicationInfo.PipeName),
             !StartupOptions.MultiInstance, args))
         {
             if (!singleInstanceManager.IsSingleInstance || singleInstanceManager.IsFirstInstance)

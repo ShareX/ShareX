@@ -30,7 +30,8 @@ internal static class FileTypeRegistration
     internal static void RegisterMissingExtensions()
     {
 #if !MicrosoftStore
-        if (StartupOptions.Portable)
+        // On macOS the app bundle declares its file types; there is nothing to register at run time.
+        if (StartupOptions.Portable || !Platform.PlatformServices.Current.ShellIntegration.FileAssociationSupport.IsSupported)
         {
             return;
         }

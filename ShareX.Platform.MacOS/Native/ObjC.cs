@@ -72,6 +72,9 @@ internal static unsafe partial class ObjC
     public static IntPtr Send(IntPtr receiver, string selector, IntPtr arg1, IntPtr arg2) =>
         ((delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, IntPtr>)msgSend)(receiver, Selector(selector), arg1, arg2);
 
+    public static IntPtr Send(IntPtr receiver, string selector, IntPtr arg1, IntPtr arg2, IntPtr arg3) =>
+        ((delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, IntPtr, IntPtr>)msgSend)(receiver, Selector(selector), arg1, arg2, arg3);
+
     public static bool SendBool(IntPtr receiver, string selector, IntPtr arg1, IntPtr arg2) =>
         ((delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, byte>)msgSend)(receiver, Selector(selector), arg1, arg2) != 0;
 
