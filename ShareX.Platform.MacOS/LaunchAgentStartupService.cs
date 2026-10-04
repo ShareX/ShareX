@@ -58,6 +58,8 @@ public sealed class LaunchAgentStartupService : IStartupService
 
     public FeatureSupport Support => FeatureSupport.Supported;
 
+    public bool WasStartedBySignIn => false;
+
     public static string GetLabel(StartupRegistration registration) => registration.BundleIdentifier ?? DefaultLabel;
 
     public string GetPlistPath(StartupRegistration registration) => Path.Combine(launchAgentsDirectory, GetLabel(registration) + ".plist");

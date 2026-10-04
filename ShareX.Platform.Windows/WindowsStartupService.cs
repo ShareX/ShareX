@@ -52,6 +52,10 @@ public sealed class WindowsStartupService : IStartupService
 
     public FeatureSupport Support => FeatureSupport.Supported;
 
+    // Startup folder shortcuts pass -silent. The packaged StartupTask activation check is W12 (J); until then the Store build
+    // keeps its own check in Program.
+    public bool WasStartedBySignIn => false;
+
     public string GetShortcutPath(StartupRegistration registration)
     {
         string name = registration.Name.EndsWith(".lnk", StringComparison.OrdinalIgnoreCase) ? registration.Name : registration.Name + ".lnk";

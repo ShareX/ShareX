@@ -48,6 +48,9 @@ public sealed class XdgAutostartService : IStartupService
 
     public FeatureSupport Support => FeatureSupport.Supported;
 
+    // XDG autostart runs the entry's command line; its -silent argument says it all.
+    public bool WasStartedBySignIn => false;
+
     public string GetEntryPath(StartupRegistration registration) => Path.Combine(autostartDirectory, registration.Name + ".desktop");
 
     public StartupRegistrationState GetState(StartupRegistration registration)

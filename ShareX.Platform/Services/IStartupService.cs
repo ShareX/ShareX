@@ -58,6 +58,12 @@ public interface IStartupService
 
     StartupRegistrationState GetState(StartupRegistration registration);
 
+    /// <summary>
+    /// Whether the operating system started this process because of the startup registration, for example a packaged (Microsoft
+    /// Store) StartupTask activation on Windows. False where the platform cannot tell; registrations pass "-silent" for those.
+    /// </summary>
+    bool WasStartedBySignIn { get; }
+
     /// <summary>Enables or disables launch at sign in. Throws when the platform refuses the change.</summary>
     void SetEnabled(StartupRegistration registration, bool enabled);
 }
