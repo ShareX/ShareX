@@ -70,12 +70,36 @@ public interface ITraySession : IDisposable
 }
 
 /// <summary>Uses the existing Avalonia tray, whose click/menu APIs do not expose these native gestures.</summary>
-public sealed class UnsupportedTrayService(Func<FeatureSupport>? iconArea = null) : ITrayService
+public sealed class UnsupportedTrayService(Func<FeatureSupport>? iconArea = null, Func<long>? clock = null) : ITrayService
 {
-    private readonly Lazy<FeatureSupport> iconAreaSupport = new(iconArea ?? (() => FeatureSupport.Supported));
+    /// <summary>A tray host can start or stop while ShareX runs (a panel restarting), so the answer is kept only briefly.</summary>
+    internal static readonly TimeSpan IconAreaRecheck = TimeSpan.FromSeconds(5);
+
+    private readonly Func<FeatureSupport> iconArea = iconArea ?? (() => FeatureSupport.Supported);
+    private readonly Func<long> clock = clock ?? (() => Environment.TickCount64);
+    private readonly object iconAreaLock = new();
+    private FeatureSupport? iconAreaSupport;
+    private long iconAreaCheckedAt;
 
     public FeatureSupport Support { get; } = FeatureSupport.NotSupported("Native tray transport is not available; ShareX uses the desktop tray.");
-    public FeatureSupport IconAreaSupport => iconAreaSupport.Value;
+    public FeatureSupport IconAreaSupport
+    {
+        get
+        {
+            lock (iconAreaLock)
+            {
+                long now = clock();
+
+                if (iconAreaSupport == null || now - iconAreaCheckedAt >= (long)IconAreaRecheck.TotalMilliseconds)
+                {
+                    iconAreaSupport = iconArea();
+                    iconAreaCheckedAt = now;
+                }
+
+                return iconAreaSupport;
+            }
+        }
+    }
     public FeatureSupport MiddleClickSupport { get; } = FeatureSupport.NotSupported("The desktop tray does not expose middle-click events.");
     public FeatureSupport RightButtonSupport { get; } = FeatureSupport.NotSupported("The desktop tray does not expose separate right-button press and release events.");
     public ITraySession? CreateSession(Action<Exception> onUnhandledException) => null;
