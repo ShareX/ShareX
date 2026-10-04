@@ -1,0 +1,87 @@
+{
+  "source_commit": "c00063b1a",
+  "host": "Fedora 44 KDE Plasma Wayland; Avalonia on XWayland; .NET 10.0.112",
+  "scope": "Actual full application, synthetic content only. Upload disabled during this resumed run.",
+  "files": [
+    {
+      "name": "original-synthetic.png",
+      "bytes": 4362,
+      "sha256": "aa264fcda3604c14a1d97cbdccac530d00bd89a4051f67f5381f9be773aaf770"
+    },
+    {
+      "name": "synthetic.png",
+      "bytes": 9539,
+      "sha256": "99d95aaadc8473ca4fac3709191dac8d34367ec465d16c32be1ef5f780f6214a"
+    },
+    {
+      "name": "clipboard-x11.png",
+      "bytes": 4687,
+      "sha256": "adaa7972e3e51d9553ec12123d577cfd0a4ce43aae3310d506760ca4adae9244"
+    },
+    {
+      "name": "clipboard-x11.json",
+      "bytes": 108,
+      "sha256": "704f6684c134b261685ff60293518d3b538e90193ca384dbd99773e2c94f55a6"
+    },
+    {
+      "name": "clipboard-wayland.png",
+      "bytes": 4687,
+      "sha256": "adaa7972e3e51d9553ec12123d577cfd0a4ce43aae3310d506760ca4adae9244"
+    },
+    {
+      "name": "clipboard-wayland.json",
+      "bytes": 115,
+      "sha256": "e270417ec2888ed2cb526271b90aa7d2de58beb657f88cc3bd4395e83df21673"
+    },
+    {
+      "name": "editor-save-verification.json",
+      "bytes": 291,
+      "sha256": "1cb595913da26afea81b44d82b0296d0a5d73d5038a7adc56aea5be192083114"
+    },
+    {
+      "name": "editor-open.png",
+      "bytes": 29427,
+      "sha256": "a87e8cec657d70f5faed2dbfeef94c51af64700615875a76c04242b270044aef"
+    },
+    {
+      "name": "editor-pasted.png",
+      "bytes": 35480,
+      "sha256": "da7c31399d84ee96809ef1e848c54dc05d0981204ec0351c342a674f923a512f"
+    },
+    {
+      "name": "editor-cut.png",
+      "bytes": 27362,
+      "sha256": "ce0a2770460666cb90ba5b90f73ab995821b40bb76a3b4a355469d07244c88bf"
+    },
+    {
+      "name": "editor-undo.png",
+      "bytes": 29112,
+      "sha256": "f2b1fab4ba062977229fe72cada70c22f7dce3ba00742f254517702162b0c752"
+    },
+    {
+      "name": "editor-redo.png",
+      "bytes": 27362,
+      "sha256": "ce0a2770460666cb90ba5b90f73ab995821b40bb76a3b4a355469d07244c88bf"
+    },
+    {
+      "name": "editor-cut-paste.png",
+      "bytes": 36573,
+      "sha256": "9b63813f5b5eadf002094069ef6a874f9bb2b69fe55418a5f0f6885334ef1bd0"
+    },
+    {
+      "name": "editor-saved.png",
+      "bytes": 36580,
+      "sha256": "b5337506477e5833fa6c54176ce09facae24b56f1d486c5d3c2dc178bbb38f23"
+    },
+    {
+      "name": "qr-open.png",
+      "bytes": 22050,
+      "sha256": "cb2db1c9b151355ee82188bb69a8153e7ca28047ea5f01652dbfeb91cbd594c5"
+    },
+    {
+      "name": "color-open.png",
+      "bytes": 42097,
+      "sha256": "b0708bc07f9f4167333ece2aacbc31d3877f90fd74da74807b04081828c9415b"
+    }
+  ]
+}
