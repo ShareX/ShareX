@@ -93,12 +93,23 @@ internal static class SingleInstanceCommandRouter
         try
         {
             Task readyTask;
+            bool startupDone;
             lock (SyncRoot)
             {
                 readyTask = _ready.Task;
+                startupDone = _hasBeenReady;
             }
 
-            await readyTask.WaitAsync(StartupTimeout);
+            // Until the first start completes (which can include a first-run welcome screen) arguments wait for it rather than
+            // being dropped; afterwards a pause (settings being reloaded) is short, so a stuck one is reported.
+            if (startupDone)
+            {
+                await readyTask.WaitAsync(StartupTimeout);
+            }
+            else
+            {
+                await readyTask;
+            }
             await RunOnUiThreadAsync(() => ApplicationCommandLine.ExecuteReceivedAsync(arguments));
         }
         catch (TimeoutException)

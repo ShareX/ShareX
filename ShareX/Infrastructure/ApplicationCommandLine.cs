@@ -46,6 +46,12 @@ internal static class ApplicationCommandLine
 
     internal static bool IsCommandPresent(params string[] commands) => Initial.IsCommandExist(commands);
 
+    /// <summary>Options that change how ShareX starts rather than asking it to do something.</summary>
+    private static readonly string[] StartupOptionNames = ["silent", "s", "multi", "m", "portable", "p", "sandbox", "NoHotkeys", "AutoClose", "task", "uninstall"];
+
+    /// <summary>Whether this start was asked to do something, such as a browser extension upload or a capture.</summary>
+    internal static bool HasStartupActions => HelpersLib.CLIManager.HasActions(Initial.Commands, StartupOptionNames);
+
     internal static bool TryHandleUninstall()
     {
         if (!IsCommandPresent("uninstall"))

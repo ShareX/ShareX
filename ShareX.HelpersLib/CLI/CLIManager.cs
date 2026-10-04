@@ -36,6 +36,13 @@ namespace ShareX.HelpersLib
         public List<CLICommand> Commands { get; private set; }
         public List<CLICommandAction> Actions { get; private set; }
 
+        /// <summary>
+        /// Whether the arguments ask for something to be done (a file or URL to upload, a job, an import), rather than only set
+        /// <paramref name="startupOptions"/> such as -silent.
+        /// </summary>
+        public static bool HasActions(IEnumerable<CLICommand> commands, IEnumerable<string> startupOptions) =>
+            commands != null && commands.Any(command => !command.IsCommand || !startupOptions.Any(option => command.CheckCommand(option)));
+
         public CLIManager()
         {
             Commands = new List<CLICommand>();

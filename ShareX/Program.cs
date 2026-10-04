@@ -139,12 +139,14 @@ internal static class Program
     {
         ImageEditorIntegration.Initialize();
 
-        if (ApplicationState.Settings.ShowStartScreen)
+        // A first start that was asked to do something (a browser extension upload, a capture) does it before the welcome screen,
+        // so the work is not held up or dropped; an interactive first start shows the welcome screen first, as before (R39).
+        bool startScreenPending = ApplicationState.Settings.ShowStartScreen;
+
+        if (startScreenPending && !ApplicationCommandLine.HasStartupActions)
         {
-            DebugHelper.WriteLine("Start screen opening.");
-            StartScreenWindow startScreen = new();
-            await startScreen.ShowAsync();
-            DebugHelper.WriteLine("Start screen closed.");
+            await ShowStartScreenAsync();
+            startScreenPending = false;
         }
 
         DebugHelper.WriteLine("Hotkey host init started.");
@@ -179,11 +181,24 @@ internal static class Program
             HotkeyManager.StartupWarnings.Release();
         }
 
+        if (startScreenPending)
+        {
+            await ShowStartScreenAsync();
+        }
+
         if (ApplicationState.Settings.ActionsToolbarRunAtStartup)
         {
             TaskHelpers.OpenActionsToolbar();
         }
 
         DebugHelper.WriteLine("Hotkey host init finished.");
+    }
+
+    private static async Task ShowStartScreenAsync()
+    {
+        DebugHelper.WriteLine("Start screen opening.");
+        StartScreenWindow startScreen = new();
+        await startScreen.ShowAsync();
+        DebugHelper.WriteLine("Start screen closed.");
     }
 }
