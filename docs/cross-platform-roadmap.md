@@ -5,7 +5,7 @@ The single place for **how far each operating system is**, **what is left to rea
 - Task details, requests (R), Windows work (W), handoffs (H) and bugs (B) stay in [cross-platform-delegation.md](cross-platform-delegation.md); this file refers to them by ID.
 - Rules stay in [AGENTS.md](../AGENTS.md); architecture in [cross-platform.md](cross-platform.md).
 
-Scope: Windows and Linux only; Linux HDR is excluded. Linux dependencies follow the reconciled rule in AGENTS.md (2026-10-04). Microsoft .NET is the only additional installation Linux users may be required to make. Already included libraries and existing desktop APIs are allowed; features requiring other installations must remain unsupported. R20/R22 must align carried-over backends, capability reasons and packaging with these rules before G1 can pass. macOS feature work remains deferred.
+Jaex's current scope is authoritative: Windows and Linux only; Linux HDR and OCR are excluded, and OCR remains Windows-only. Microsoft .NET is the only additional installation Linux users may be required to make. Already included libraries and existing desktop APIs are allowed; features requiring other installations must remain unsupported. R20/R22 must align carried-over backends, capability reasons and packaging with these rules before G1 can pass. macOS feature work remains deferred.
 
 ## How to keep this file current
 
@@ -20,8 +20,8 @@ As of 2026-10-04.
 
 | OS | Estimate | Basis |
 | --- | --- | --- |
-| Windows | **90%** | Estimate retained from M's initial roadmap. W5, W9 and the R24-R27 native migrations are implemented and covered by Windows fixtures; real isolated startup and loopback upload/history runs also pass. J1 Windows 10/11 desktop sign-off and full J8 flows remain unverified; intermittent history shutdown bug B24/R29 and native fixture cleanup issue B27 remain open. |
-| Linux | **80%** | Estimate retained from M's initial roadmap, pending the agreed-scope audit. M reports capture, overlays, recording, hotkeys, tray, clipboard, uploads, history, editor and tools on Hyprland; other desktop flows are unverified. Linux OCR/HDR are excluded. R20/R22 policy compliance, GNOME/KDE/sway/X11 verification, scrolling capture, mixed scaling, mouse highlighter/overlays, browser launch (R28), history shutdown (R29) and packaging remain outstanding. |
+| Windows | **90%** | Estimate retained from M's initial roadmap. W5, W9 and the R24-R27 native migrations are implemented and covered by Windows fixtures; real isolated startup and loopback upload/history runs also pass. J1 Windows 10/11 desktop sign-off and full J8 flows remain unverified; R29 fixes the B24 connection collision in code; R34 history shutdown drain guarantees and native fixture cleanup issue B27 remain open. |
+| Linux | **80%** | Estimate retained from M's initial roadmap, pending the agreed-scope audit. M reports capture, overlays, recording, hotkeys, tray, clipboard, uploads, history, editor and tools on Hyprland; other desktop flows are unverified. Linux OCR/HDR are excluded. R20/R22 policy compliance, GNOME/KDE/sway/X11 verification, scrolling capture, mixed scaling, mouse highlighter/overlays, R34 history shutdown drain guarantees and packaging remain outstanding. R28 browser launch is implemented and M verified it on Hyprland; other desktop flows remain unverified. |
 | macOS | **20%** | Shared contracts and the first attempt's macOS services exist (capture through `screencapture`, clipboard, hotkeys, login item, CUPS printing, sounds); many services are unsupported stubs and the application has never run on a Mac on this branch. Deferred by AGENTS.md until gate G1. |
 
 ### What 100% means
@@ -42,12 +42,12 @@ Supported Linux desktops: Hyprland, sway, GNOME (Wayland), KDE Plasma (Wayland) 
 When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS work, and McoreD and Jaex approve it.
 
 - [x] Application starts, runs and exits cleanly on Linux (settings saved on SIGTERM).
-- [ ] Recording verified on every supported Wayland desktop. Implementations exist (`13c86e2bc`); M reports Hyprland verification, while GNOME/KDE/sway desktop verification and the R22 core-guarantee audit remain outstanding.
-- [ ] R22: every Linux core flow works with .NET, included libraries and desktop APIs alone; optional programs only enable optional features or improve a working path; no install commands in reasons (M).
+- [ ] Recording verified on every supported Wayland desktop. Implementations exist (`13c86e2bc`); M reports Hyprland verification, while GNOME/KDE/sway desktop verification and R22 dependency compliance remain outstanding.
+- [ ] R20 Windows-only OCR and R22 no-extra-installations policy implemented in backends, capability reasons, execution guards and packaging.
 - [ ] Individual DirectShow device discovery and Windows recorder-device download/setup are guarded by capabilities: R32 (M contract, J Windows/UI).
 - [ ] Verification pass on GNOME, KDE, sway and an X11 session, at least in virtual machines (M runs flows, J checks UI). Hyprland done.
-- [x] Browser extension launches ShareX on Linux: R28 (M), after J's R26 contract work.
-- [x] Upload history writes are serialized and finished before exit: R29 (M).
+- [x] Browser extension launches ShareX on Linux: R28 (M), after J's R26 contract work; M verified cold/warm framed payloads on Hyprland (a516a5b5c), other desktop flows remain in the verification pass.
+- [ ] Upload history writes are serialized and finished before exit: R29 serialization is implemented (288f7a06f); R34 still needs a stable drain boundary and explicit handling of incomplete writes before disposal (M).
 - [ ] Unsupported mouse-highlighter automatic startup is skipped while retaining saved flags: R31 (M).
 - [ ] Scrolling capture on Wayland through the RemoteDesktop portal, or reported unsupported with a reason per desktop (M). B31 frontend selection/settings guards are complete; R33 backend delayed-input/cancellation checks and desktop verification remain open.
 - [ ] Mixed-scale multi-monitor capture and overlays (rest of R12; M backend, J overlays).
@@ -102,8 +102,8 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 | Date | Who | Commitment | Commit |
 | --- | --- | --- | --- |
 | 2026-10-04 | M | GNOME and KDE screen recording through the ScreenCast portal. | `13c86e2bc` |
-| 2026-10-04 | M | R28 (Linux application launch for the browser extension) and R29 (history write serialization). | `288f7a06f`, R28 commit |
-| 2026-10-04 | M | Linux dependency policy: McoreD's edit, then Jaex's edit, reconciled on 2026-10-04 (AGENTS.md, "Linux dependencies"). | `1db33b5b7` (superseded) |
+| 2026-10-04 | M | R28 Linux application launch and R29 connection serialization/normal queue flush. R34 full shutdown draining remains open. | `a516a5b5c`, `288f7a06f` |
+| 2026-10-04 | M | Historical policy edit; superseded by Jaex's explicit Windows-only OCR/no-extra-installations instructions and subsequent AGENTS.md corrections. | `1db33b5b7` (superseded) |
 
 ## Change log
 
@@ -121,3 +121,5 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, M: Linux dependency policy reconciled in AGENTS.md on McoreD's instruction. R20 cancelled; R22 reframed (core flows need only .NET and desktop APIs; optional features may use distribution programs). G1 policy item reworded.
 - 2026-10-04, M: R22 first slice: no install commands in reasons, Secret Service over D-Bus (no secret-tool), scale-correct portal crop and window capture, portal screenshot timeout. grim recognised as the wlroots desktops' own screenshot component.
 - 2026-10-04, J: B31/J5/J4 scrolling-capture frontend action, settings and selection lifetime guards are complete, with seven controlled async regressions and one reason translated in all 28 cultures. Support is rechecked after hiding/selection, close prevents later capture/restoration, busy state prevents competing actions, saved invalid/unavailable options stay intact, Stop remains available after support loss and completed-image actions remain usable. Auto-top checks its actual keyboard/window-scroll prerequisites. R33 still requires backend checks after its own delays and safe selector cancellation; no actual desktop scrolling verification is claimed. Final full Windows Release gate: 0 warnings/errors, 482 pass, 8 Unix-only skips; full translation validation passes. B24/B27 did not recur, and their original causes remain open. Estimates and Windows 10/11/Linux desktop gates remain unchanged; backend policy and other open requests remain outstanding, and macOS stays deferred.
+- 2026-10-04, J: Integrated M's R28/R29 code and Hyprland browser-launch report while rebasing B31, retaining both agents' history. Restored Jaex's direct Windows-only OCR and no-extra-installations scope after d60f56b5d reintroduced optional external programs/Linux OCR; R20 remains required and R22 retains M's claim with the authoritative scope. R29 connection serialization is retained, but source inspection found ignored incomplete flush results and an open queue admission boundary; R34 requests slow/late-write regression coverage and a complete drain before disposal, so the history G1 gate remains unchecked. Other desktop verification and estimates remain unchanged, and macOS stays deferred. Combined-source full Release verification follows before publishing.
+- 2026-10-04, J: Final combined-source full Windows Release build/all five test projects pass (0 errors, 492 pass, 9 Unix/Linux-only skips), including strict native/application/loopback-history checks. Fixed only the incoming failing absolute-path fixture under the documented one-line exception; R35 records related validation cases that reject the wrong field on Windows. The first combined build's M-owned xUnit1031 async warning is recorded with R34; the final incremental build reports 0 warnings without a suppression. Translation validation remains green with unchanged catalogs. R29 is reviewed with its slow/late draining gap explicit, while R28 code and M's Hyprland verification stay recorded. Windows-only OCR/no-extra-installations scope is restored; actual desktop gates, estimates and macOS deferral remain unchanged.
