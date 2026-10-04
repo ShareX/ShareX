@@ -75,6 +75,18 @@ internal static unsafe partial class ObjC
     public static IntPtr Send(IntPtr receiver, string selector, IntPtr arg1, IntPtr arg2, IntPtr arg3) =>
         ((delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, IntPtr, IntPtr>)msgSend)(receiver, Selector(selector), arg1, arg2, arg3);
 
+    /// <summary>-[NSWindow initWithContentRect:styleMask:backing:defer:].</summary>
+    public static IntPtr SendInitWithRect(IntPtr receiver, string selector, CoreGraphics.CGRect rect, nuint styleMask, nuint backing, bool defer) =>
+        ((delegate* unmanaged<IntPtr, IntPtr, CoreGraphics.CGRect, nuint, nuint, byte, IntPtr>)msgSend)(receiver, Selector(selector), rect, styleMask, backing, defer ? (byte)1 : (byte)0);
+
+    /// <summary>-[NSWindow setFrame:display:].</summary>
+    public static void SendRectBool(IntPtr receiver, string selector, CoreGraphics.CGRect rect, bool flag) =>
+        ((delegate* unmanaged<IntPtr, IntPtr, CoreGraphics.CGRect, byte, void>)msgSend)(receiver, Selector(selector), rect, flag ? (byte)1 : (byte)0);
+
+    /// <summary>Methods taking one BOOL, such as setOpaque: or setIgnoresMouseEvents:.</summary>
+    public static void SendBoolArg(IntPtr receiver, string selector, bool value) =>
+        ((delegate* unmanaged<IntPtr, IntPtr, byte, void>)msgSend)(receiver, Selector(selector), value ? (byte)1 : (byte)0);
+
     public static bool SendBool(IntPtr receiver, string selector, IntPtr arg1, IntPtr arg2) =>
         ((delegate* unmanaged<IntPtr, IntPtr, IntPtr, IntPtr, byte>)msgSend)(receiver, Selector(selector), arg1, arg2) != 0;
 

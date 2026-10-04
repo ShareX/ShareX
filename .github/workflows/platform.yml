@@ -23,6 +23,9 @@ jobs:
   test:
     name: Test (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
+    env:
+      # The test host must match the runner's CPU (macos-latest is Apple silicon).
+      TEST_PLATFORM: ${{ runner.arch == 'ARM64' && 'ARM64' || 'x64' }}
 
     strategy:
       fail-fast: false
@@ -55,13 +58,13 @@ jobs:
         run: dotnet test ShareX.ImageEditor.Tests/ShareX.ImageEditor.Tests.csproj --configuration Release --logger "console;verbosity=normal"
 
       - name: Test tool UI
-        run: dotnet test ShareX.Tools.Tests/ShareX.Tools.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
+        run: dotnet test ShareX.Tools.Tests/ShareX.Tools.Tests.csproj --configuration Release -p:Platform=${{ env.TEST_PLATFORM }} --logger "console;verbosity=normal"
 
       - name: Test history storage
-        run: dotnet test ShareX.HistoryLib.Tests/ShareX.HistoryLib.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
+        run: dotnet test ShareX.HistoryLib.Tests/ShareX.HistoryLib.Tests.csproj --configuration Release -p:Platform=${{ env.TEST_PLATFORM }} --logger "console;verbosity=normal"
 
       - name: Test image effects
-        run: dotnet test ShareX.ImageEffectsLib.Tests/ShareX.ImageEffectsLib.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
+        run: dotnet test ShareX.ImageEffectsLib.Tests/ShareX.ImageEffectsLib.Tests.csproj --configuration Release -p:Platform=${{ env.TEST_PLATFORM }} --logger "console;verbosity=normal"
 
   build-solution:
     name: Build solution (${{ matrix.os }})

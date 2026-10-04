@@ -62,7 +62,7 @@ M owns the platform, packaging and CI rows; J the UI rows. CI's `macos-latest` r
 - [ ] Capture, Screen Recording permission flow, FFmpeg avfoundation recording, Carbon hotkeys, clipboard and login item verified on a Mac (M; services exist).
 - [x] OCR through the Vision framework (M).
 - [x] Browser extension launch, QuickLook thumbnails, desktop wallpaper, Dock progress (M).
-- [ ] Mouse highlighter (pointer polling and a click-through overlay window) and window management through Accessibility, or reasons (M).
+- [x] Mouse highlighter backend: pointer polling and a click-through overlay window (M). Window management through Accessibility stays unsupported with a reason for now.
 - [ ] Menu bar icon, application menu, Command-based shortcuts and window chrome (J).
 - [ ] Real-Mac verification list ticked (McoreD, Jaex, users).
 

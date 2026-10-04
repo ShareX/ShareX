@@ -25,6 +25,8 @@
 
 using ShareX.Platform.Diagnostics;
 using ShareX.Platform.MacOS;
+using ShareX.Platform.MacOS.Native;
+using System.Collections.Concurrent;
 using System;
 using System.IO;
 using System.Linq;
@@ -128,5 +130,48 @@ public class MacServicesTests
         {
             File.Delete(output);
         }
+    }
+
+    [Fact]
+    public void Overlay_ConvertsTopLeftCoordinatesToCocoa()
+    {
+        CoreGraphics.CGRect rect = MacScreenOverlay.ToCocoa(new PlatformRectangle(100, 50, 200, 80), 900);
+
+        Assert.Equal(100, rect.X);
+        Assert.Equal(900 - 50 - 80, rect.Y);
+        Assert.Equal(200, rect.Width);
+        Assert.Equal(80, rect.Height);
+    }
+
+    [Fact]
+    public void MouseHook_ReportsButtonTransitions()
+    {
+        PlatformPoint at = new PlatformPoint(3, 4);
+        GlobalMouseButtonEvent[] changes = MacMouseHook.GetButtonChanges([false, false, true], [true, false, false], at, 9).ToArray();
+
+        Assert.Equal([new GlobalMouseButtonEvent(GlobalMouseButton.Primary, true, at, 9), new GlobalMouseButtonEvent(GlobalMouseButton.Secondary, false, at, 9)], changes);
+    }
+
+    private sealed class Listener : IGlobalMouseListener
+    {
+        public ConcurrentQueue<PlatformPoint> Moves { get; } = new();
+        public void OnMove(PlatformPoint position) => Moves.Enqueue(position);
+        public void OnButton(GlobalMouseButtonEvent buttonEvent) { }
+    }
+
+    [MacOSFact]
+    public void MouseHook_FollowsThePointer()
+    {
+        if (!OperatingSystem.IsMacOS()) return;
+        Listener listener = new Listener();
+
+        using (new MacMouseHook(listener))
+        {
+            Thread.Sleep(100);
+            CoreGraphics.CGWarpMouseCursorPosition(new CoreGraphics.CGPoint { X = 123, Y = 77 });
+            SpinWait.SpinUntil(() => listener.Moves.Contains(new PlatformPoint(123, 77)), TimeSpan.FromSeconds(3));
+        }
+
+        Assert.Contains(new PlatformPoint(123, 77), listener.Moves);
     }
 }

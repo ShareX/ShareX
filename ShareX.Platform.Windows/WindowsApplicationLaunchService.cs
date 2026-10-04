@@ -36,6 +36,9 @@ namespace ShareX.Platform.Windows;
 [SupportedOSPlatform("windows")]
 public sealed class WindowsApplicationLaunchService : IApplicationLaunchService
 {
+    private const uint CreateBreakawayFromJob = 0x01000000;
+    private const int ErrorAccessDenied = 5;
+
     public FeatureSupport Support => FeatureSupport.Supported;
 
     public string GetExecutablePath(string directory, string applicationName)
@@ -78,11 +81,20 @@ public sealed class WindowsApplicationLaunchService : IApplicationLaunchService
         }
 
         StartupInfo startup = new() { Size = (uint)Marshal.SizeOf<StartupInfo>() };
-        // Preserve native messaging's CREATE_BREAKAWAY_FROM_JOB, with default security and no handle inheritance.
-        if (!CreateProcess(executablePath, commandLine, IntPtr.Zero, IntPtr.Zero, false, 0x01000000,
-            IntPtr.Zero, null, ref startup, out ProcessInformation process))
+        // Preserve native messaging's CREATE_BREAKAWAY_FROM_JOB, with default security and no handle inheritance. A job that does
+        // not allow breakaway (JOB_OBJECT_LIMIT_BREAKAWAY_OK unset, as in CI runners) refuses it with ERROR_ACCESS_DENIED; then
+        // start the application inside the job rather than not at all (B27).
+        ProcessInformation process;
+        if (!CreateProcess(executablePath, new StringBuilder(commandLine.ToString()), IntPtr.Zero, IntPtr.Zero, false, CreateBreakawayFromJob,
+            IntPtr.Zero, null, ref startup, out process))
         {
-            throw new Win32Exception(Marshal.GetLastWin32Error());
+            int error = Marshal.GetLastWin32Error();
+
+            if (error != ErrorAccessDenied || !CreateProcess(executablePath, commandLine, IntPtr.Zero, IntPtr.Zero, false, 0,
+                IntPtr.Zero, null, ref startup, out process))
+            {
+                throw new Win32Exception(error != ErrorAccessDenied ? error : Marshal.GetLastWin32Error());
+            }
         }
 
         try

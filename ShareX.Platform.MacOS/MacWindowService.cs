@@ -159,11 +159,10 @@ public sealed class MacWindowService : IWindowService
 
     public bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas) => false;
 
-    // Overlays need an always on top, click through window with per pixel alpha placed at exact desktop coordinates, which
-    // Wayland compositors do not allow and which is not implemented for X11 and macOS yet.
-    public FeatureSupport OverlaySupport { get; } = FeatureSupport.NotSupported("Drawing over other applications is not available on this platform yet.");
+    // A borderless, click-through NSWindow above everything; AppKit allows it without a permission.
+    public FeatureSupport OverlaySupport => FeatureSupport.Supported;
 
-    public IScreenOverlay CreateOverlay(PlatformRectangle screenBounds) => throw new PlatformNotSupportedException(OverlaySupport.Reason);
+    public IScreenOverlay CreateOverlay(PlatformRectangle screenBounds) => new MacScreenOverlay(screenBounds);
 
     public long GetActiveWindowHandle() => GetActiveWindow()?.Handle ?? 0;
 
