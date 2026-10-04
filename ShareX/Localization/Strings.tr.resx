@@ -2032,6 +2032,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Açık kaynak • Linux için geliştirildi</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Açık kaynak • macOS için geliştirildi</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Bu seçenekleri istediğiniz zaman Uygulama ayarlarından değiştirebilirsiniz.</value>
   </data>

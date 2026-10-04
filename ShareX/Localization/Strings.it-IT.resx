@@ -2032,6 +2032,9 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Open source • Creato per Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Open source • Creato per macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Puoi modificare queste opzioni in qualsiasi momento nelle impostazioni dell'applicazione.</value>
   </data>

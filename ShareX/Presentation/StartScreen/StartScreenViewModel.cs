@@ -58,7 +58,9 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
     public string ShareFeature => Strings.MainMenuBuilder_Tools;
     public string PlatformNote => PlatformServices.Current.Info.IsLinux
         ? Strings.StartScreen_PlatformNoteLinux
-        : Strings.StartScreen_PlatformNote;
+        : PlatformServices.Current.Info.IsMacOS
+            ? Strings.StartScreen_PlatformNoteMacOS
+            : Strings.StartScreen_PlatformNote;
     public string PersonalizeTitle => Strings.StartScreen_PersonalizeTitle;
     public string PersonalizeSubtitle => Strings.StartScreen_PersonalizeSubtitle;
     public string SettingsNote => Strings.StartScreen_SettingsNote;

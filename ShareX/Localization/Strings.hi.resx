@@ -2032,6 +2032,9 @@
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>ओपन सोर्स • Linux के लिए निर्मित</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>ओपन सोर्स • macOS के लिए निर्मित</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>आप इन विकल्पों को एप्लिकेशन सेटिंग में कभी भी बदल सकते हैं।</value>
   </data>

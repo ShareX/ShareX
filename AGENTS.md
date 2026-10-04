@@ -17,6 +17,8 @@ All agents must focus on **Windows and Linux only** during the current port. Pri
 
 **OCR remains Windows-only.** Preserve the Windows.Media.Ocr implementation behind `IOcrService`. Do not implement or expose OCR on Linux or macOS, or add OCR package requirements there. Non-Windows OCR services must report `FeatureSupport.NotSupported` with a user-facing reason, and shared UI and task execution must respect that support value. This also applies to OCR backends carried over from the first cross-platform attempt.
 
+**Exception (McoreD, 2026-10-04):** McoreD directed M to complete the macOS implementation (M10) on `cross-platform-v2` ahead of G1. Jaex has not yet approved the macOS phase. It does not change the Linux-first priority for other work, the OCR rule below or the Windows ownership rule.
+
 Existing macOS code may remain. When a shared contract changes, add only the minimum unsupported stubs or mechanical updates needed to keep the solution compiling; this does not authorize macOS feature work. This priority rule takes precedence over older three-platform task wording and target architecture descriptions.
 
 ## Linux dependencies: no extra installations

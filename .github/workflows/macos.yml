@@ -1,0 +1,66 @@
+name: macOS
+
+# Builds, tests and packages ShareX.app for macOS on Apple silicon, then starts the packaged application. Started by hand
+# (Actions > macOS > Run workflow, or "gh workflow run macos.yml --ref cross-platform-v2") while the branch workflows stay paused
+# for the port, like the Linux workflow.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  macos:
+    name: Build, test, package and run
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Build ShareX.sln
+        run: dotnet build ShareX.sln --configuration Release -p:Platform=ARM64
+
+      - name: Test
+        run: |
+          for project in ShareX.Platform.Tests ShareX.HistoryLib.Tests ShareX.ImageEditor.Tests ShareX.ImageEffectsLib.Tests ShareX.Tools.Tests; do
+            dotnet test "$project/$project.csproj" --configuration Release -p:Platform=ARM64 --no-build --logger "console;verbosity=minimal"
+          done
+
+      - name: Package
+        run: |
+          Scripts/package-macos.sh arm64 "$RUNNER_TEMP/package"
+          ditto -x -k "$RUNNER_TEMP"/package/ShareX-*-macos-arm64.zip "$RUNNER_TEMP/app"
+          plutil -lint "$RUNNER_TEMP/app/ShareX.app/Contents/Info.plist"
+          codesign --verify --deep "$RUNNER_TEMP/app/ShareX.app"
+
+      # Starts the packaged application in a clean home and closes it with SIGTERM, which must save the settings. The settings skip
+      # the welcome screen, as for a returning user. No capture is taken: the runner cannot grant the Screen Recording permission.
+      - name: Run the application
+        run: |
+          export HOME="$RUNNER_TEMP/home"
+          mkdir -p "$HOME/Documents/ShareX"
+          echo '{ "ShowStartScreen": false }' > "$HOME/Documents/ShareX/ApplicationConfig.json"
+          "$RUNNER_TEMP/app/ShareX.app/Contents/MacOS/ShareX" -silent & pid=$!
+          for i in $(seq 1 60); do
+            ls "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt >/dev/null 2>&1 && grep -q "Startup time" "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt && break
+            sleep 1
+          done
+          kill -TERM "$pid"
+          wait "$pid" || true
+          cat "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt
+          grep -q "Startup time" "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt
+          test -s "$HOME/Documents/ShareX/ApplicationConfig.json"
+          ! grep -q "Unhandled exception" "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: sharex-macos-arm64
+          path: ${{ runner.temp }}/package/ShareX-*-macos-arm64.zip
+          if-no-files-found: error

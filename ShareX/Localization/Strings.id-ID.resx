@@ -2032,6 +2032,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Sumber terbuka • Dibuat untuk Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Sumber terbuka • Dibuat untuk macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Anda dapat mengubah opsi ini kapan saja di pengaturan aplikasi.</value>
   </data>

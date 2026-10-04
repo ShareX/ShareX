@@ -2032,6 +2032,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Otwarte źródło • Stworzone dla systemu Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Otwarte źródło • Stworzone dla systemu macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Te opcje możesz w każdej chwili zmienić w ustawieniach aplikacji.</value>
   </data>

@@ -2032,6 +2032,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Öppen källkod • Byggt för Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Öppen källkod • Byggt för macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan ändra dessa alternativ när som helst i programinställningarna.</value>
   </data>

@@ -5511,6 +5511,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("StartScreen_PlatformNoteLinux", resourceCulture);
             }
         }
+        public static string StartScreen_PlatformNoteMacOS {
+            get {
+                return ResourceManager.GetString("StartScreen_PlatformNoteMacOS", resourceCulture);
+            }
+        }
         public static string StartScreen_PersonalizeTitle {
             get {
                 return ResourceManager.GetString("StartScreen_PersonalizeTitle", resourceCulture);

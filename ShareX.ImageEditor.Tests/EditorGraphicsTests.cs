@@ -47,6 +47,15 @@ public sealed class EditorGraphicsTests
     [Fact] public void SavedFontNamesResolveToInstalledPortableFamilies() => VerifyFonts();
     [SystemColorEmojiFact] public void ColorEmojiPreviewsShapingAndCacheOwnership() => RunWithGraphicsApartment(VerifyEmoji);
     [Fact] public void AllBundledCursorImagesDecodeWithTransparency() => VerifyCursors();
+    [Fact]
+    public void UnsupportedGlyphsNeverUseLastResortOrUnassignedCodePoints()
+    {
+        foreach (string name in new[] { ".LastResort", "LastResort", "Last Resort", ".Last Resort", "lastresort" })
+            Require(SkiaEmojiBitmapRenderer.IsLastResort(name), $"{name} should be recognised as Apple's placeholder font");
+        foreach (string? name in new[] { null, "", "Apple Color Emoji", "Noto Color Emoji", "LastResortSans" })
+            Require(!SkiaEmojiBitmapRenderer.IsLastResort(name), $"{name} is not the placeholder font");
+        Require(RenderSkia("10ffff", 160) == null, "A noncharacter should not render with any installed font");
+    }
     [EmojiFixtureFact]
     public void SuppliedColorEmojiFontRendersLargeAndSmallGlyphs()
     {

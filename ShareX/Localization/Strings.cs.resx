@@ -2032,6 +2032,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Open source • Vytvořeno pro Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Open source • Vytvořeno pro macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Tyto možnosti můžete kdykoli změnit v nastavení aplikace.</value>
   </data>

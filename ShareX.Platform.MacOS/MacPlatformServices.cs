@@ -107,11 +107,12 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public ICodeSignatureService CodeSignature { get; } = new UnsupportedCodeSignatureService("Installer signatures are only checked on Windows.");
 
-    public IOcrService Ocr { get; } = new VisionOcrService();
+    // AGENTS.md keeps OCR Windows-only. VisionOcrService stays in the project for a later decision but is not offered.
+    public IOcrService Ocr { get; } = new UnsupportedOcrService("Text recognition (OCR) is available on Windows only.");
 
     public ITaskbarService Taskbar { get; } = new DockProgressService();
 
-    public ISystemGraphicsService Graphics { get; } = new UnsupportedSystemGraphicsService("Emoji and cursor images are drawn by ShareX on macOS.");
+    public ISystemGraphicsService Graphics { get; } = new AppKitGraphicsService();
 
     public IPrintService Printing { get; }
 

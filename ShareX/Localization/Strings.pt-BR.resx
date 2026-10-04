@@ -2032,6 +2032,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Código aberto • Feito para Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Código aberto • Feito para macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Você pode alterar essas opções a qualquer momento nas configurações do aplicativo.</value>
   </data>

@@ -96,6 +96,16 @@ internal static unsafe partial class ObjC
     public static bool SendBool(IntPtr receiver, string selector) =>
         ((delegate* unmanaged<IntPtr, IntPtr, byte>)msgSend)(receiver, Selector(selector)) != 0;
 
+    public static nint SendNInt(IntPtr receiver, string selector) =>
+        ((delegate* unmanaged<IntPtr, IntPtr, nint>)msgSend)(receiver, Selector(selector));
+
+    /// <summary>Methods returning NSPoint or NSSize. Two doubles come back in registers on both arm64 and x86-64, so no _stret variant.</summary>
+    public static CoreGraphics.CGPoint SendPoint(IntPtr receiver, string selector) =>
+        ((delegate* unmanaged<IntPtr, IntPtr, CoreGraphics.CGPoint>)msgSend)(receiver, Selector(selector));
+
+    /// <summary>Whether a class or object implements <paramref name="selector"/>, checked before calling a method that may be missing.</summary>
+    public static bool RespondsTo(IntPtr receiver, string selector) => SendBool(receiver, "respondsToSelector:", Selector(selector));
+
     public static int SendInt32(IntPtr receiver, string selector) =>
         ((delegate* unmanaged<IntPtr, IntPtr, int>)msgSend)(receiver, Selector(selector));
 

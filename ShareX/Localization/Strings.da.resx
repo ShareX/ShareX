@@ -2032,6 +2032,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Open source • Bygget til Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Open source • Bygget til macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan altid ændre disse indstillinger under programindstillinger.</value>
   </data>

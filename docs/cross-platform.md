@@ -26,23 +26,23 @@ This document describes the **target** architecture. At the branch point (`devel
 | `IPathService` | Known folders | `~/Library` | XDG base directories | XDG base directories |
 | `IStartupService` | Run registry key | LaunchAgent plist | XDG autostart `.desktop` | XDG autostart `.desktop` |
 | `IClipboardService` | Win32 clipboard | NSPasteboard | xclip or xsel | wl-clipboard (also used for copying, since Wayland apps cannot read the XWayland clipboard) |
-| `IScreenCaptureService` | GDI, HDR tone mapping, window and transparent window capture | `screencapture` (Screen Recording permission) | Xlib | grim on wlroots, otherwise the xdg-desktop-portal Screenshot interface |
+| `IScreenCaptureService` | GDI, HDR tone mapping, window and transparent window capture | `screencapture` (Screen Recording permission); cursor from NSCursor | Xlib | grim on wlroots, otherwise the xdg-desktop-portal Screenshot interface |
 | `IScreenRecordingService` | FFmpeg gdigrab, ddagrab, DirectShow | FFmpeg avfoundation | FFmpeg x11grab | wf-recorder into FFmpeg on Hyprland and sway; ScreenCast portal with GStreamer's PipeWire plugin on GNOME, KDE and others |
 | `IHotkeyService` | RegisterHotKey | Carbon hot keys | XGrabKey | Hyprland: portal GlobalShortcuts with keys bound by ShareX; sway: IPC binds; GNOME, KDE: portal GlobalShortcuts (needs the `sharex.desktop` entry) |
 | `IWindowService` | Win32 windows and child controls, cursor, overlays | CGWindowList | EWMH, XShape | Hyprland and sway IPC only |
-| `IWindowManagementService` | Inspect, top most, opacity, borderless | Not yet | EWMH | Hyprland and sway IPC only |
+| `IWindowManagementService` | Inspect, top most, opacity, borderless | Inspect (CGWindowList, NSRunningApplication); changing other windows not allowed by macOS | EWMH | Hyprland and sway IPC only |
 | `IInputService` | SendInput, WM_VSCROLL, low-level mouse hook | Quartz events (Accessibility permission) | XTEST | Hyprland key shortcuts only |
-| `IOcrService` | Windows.Media.Ocr | Not yet (Vision) | Tesseract | Tesseract |
-| `INotificationService` | ShareX notification window | ShareX notification window | org.freedesktop.Notifications or notify-send | Same as X11 |
+| `IOcrService` | Windows.Media.Ocr | Not supported (Windows only) | Tesseract | Tesseract |
+| `INotificationService` | ShareX notification window | Notification Center (`osascript`) | org.freedesktop.Notifications or notify-send | Same as X11 |
 | `IShellService` | ShellExecute and Explorer select | `open` and `open -R` | xdg-open and FileManager1 D-Bus | Same as X11 |
 | `IShellIntegrationService` | Explorer context menu keys under HKCU | Not supported | File manager `.desktop` actions | Same as X11 |
 | `ICredentialService` | Credential Manager | Keychain | Secret Service (secret-tool) | Same as X11 |
 | `ISecretProtectionService` | DPAPI | AES-GCM with an owner-only key file | AES-GCM with an owner-only key file | Same as X11 |
-| `IThumbnailService` | Explorer shell thumbnails | Not yet | freedesktop.org thumbnail cache | Same as X11 |
+| `IThumbnailService` | Explorer shell thumbnails | QuickLook (`qlmanage`) | freedesktop.org thumbnail cache | Same as X11 |
 | `IPrintService` | System.Drawing.Printing and the print dialog | CUPS `lp` | CUPS `lp` (no printer dialog) | Same as X11 |
 | `ISoundService` | PlaySound | afplay | pw-play, paplay or aplay | Same as X11 |
-| `ITaskbarService` | ITaskbarList3 progress | Not yet | Unity launcher API (KDE, Dash to Dock, Plank) | Same as X11 |
-| `ISystemGraphicsService` | Not yet (W4: DirectWrite emoji, Win32 cursors) | Not supported | Cursor theme via libXcursor | Same as X11 |
+| `ITaskbarService` | ITaskbarList3 progress | Dock badge | Unity launcher API (KDE, Dash to Dock, Plank) | Same as X11 |
+| `ISystemGraphicsService` | Not yet (W4: DirectWrite emoji, Win32 cursors) | NSCursor images; emoji drawn by ShareX | Cursor theme via libXcursor | Same as X11 |
 | `ISystemInfoService`, `ISystemPreferencesService` | OS name, elevation, wheel lines, small icon size, task bar theme | `sw_vers`, defaults | os-release, defaults | Same as X11 |
 
 ## Linux desktops

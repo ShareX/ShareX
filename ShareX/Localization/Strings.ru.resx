@@ -2032,6 +2032,9 @@
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Открытый исходный код • Создано для Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Открытый исходный код • Создано для macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Эти параметры можно изменить в любое время в настройках приложения.</value>
   </data>

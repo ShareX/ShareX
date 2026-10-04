@@ -2032,6 +2032,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Open Source • Für Linux entwickelt</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Open Source • Für macOS entwickelt</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Sie können diese Optionen jederzeit in den Anwendungseinstellungen ändern.</value>
   </data>

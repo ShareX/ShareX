@@ -2032,6 +2032,9 @@
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>קוד פתוח • נבנה עבור Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>קוד פתוח • נבנה עבור macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>ניתן לשנות אפשרויות אלה בכל עת בהגדרות היישום.</value>
   </data>

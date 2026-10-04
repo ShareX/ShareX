@@ -2032,6 +2032,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Mã nguồn mở • Được xây dựng cho Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Mã nguồn mở • Được xây dựng cho macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Bạn có thể thay đổi các tùy chọn này bất cứ lúc nào trong cài đặt ứng dụng.</value>
   </data>

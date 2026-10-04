@@ -107,7 +107,11 @@ public sealed class MacScreenRecordingService : IScreenRecordingService
 
     private static long Area(PlatformRectangle rectangle) => rectangle.IsEmpty ? 0 : (long)rectangle.Width * rectangle.Height;
 
-    public FeatureSupport GetFileMediaSupport(string ffmpegPath) => FeatureSupport.NotSupported("The video tools are not available on macOS yet.");
+    /// <summary>The video converter and thumbnailer only need FFmpeg, from ShareX's settings or the PATH, as on Linux.</summary>
+    public FeatureSupport GetFileMediaSupport(string ffmpegPath) =>
+        (!string.IsNullOrEmpty(ffmpegPath) && System.IO.File.Exists(ffmpegPath)) || runner.Exists("ffmpeg")
+            ? FeatureSupport.Supported
+            : FeatureSupport.RequiresTool("FFmpeg (brew install ffmpeg, or set its path in ShareX's FFmpeg options)");
 
     public FeatureSupport GetDeviceActionSupport(RecordingDeviceAction action) => FeatureSupport.NotSupported(action == RecordingDeviceAction.ListDirectShowDevices
         ? "DirectShow devices exist only on Windows."

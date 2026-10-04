@@ -140,8 +140,34 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
         }
     }
 
-    // screencapture can include the cursor in a capture (-C) but cannot hand it over on its own.
-    public CursorCapture? CaptureCursor() => null;
+    /// <summary>
+    /// The cursor shown on screen (NSCursor.currentSystemCursor, whichever application set it) at the resolution of the display under
+    /// the pointer. Its position is in points, like the screen bounds, and its image in that display's pixels.
+    /// </summary>
+    public CursorCapture? CaptureCursor()
+    {
+        PlatformPoint? pointer = windows?.GetCursorPosition();
+
+        if (pointer is not PlatformPoint location)
+        {
+            return null;
+        }
+
+        double scale = GetScreens().FirstOrDefault(screen => screen.Bounds.Contains(location))?.ScaleFactor ?? 1;
+
+        return ObjC.WithAutoreleasePool(() =>
+        {
+            IntPtr cursor = ObjC.Send(ObjC.GetClass("NSCursor"), "currentSystemCursor");
+
+            if (AppKitGraphicsService.ReadCursor(cursor, null, scale) is not { } image)
+            {
+                return null;
+            }
+
+            PlatformPoint hotspot = new PlatformPoint((int)Math.Round(image.Hotspot.X / scale), (int)Math.Round(image.Hotspot.Y / scale));
+            return new CursorCapture(image.Image, new PlatformPoint(location.X - hotspot.X, location.Y - hotspot.Y));
+        });
+    }
 
     internal static List<string> CreateArguments(ScreenCaptureRequest request, string file)
     {

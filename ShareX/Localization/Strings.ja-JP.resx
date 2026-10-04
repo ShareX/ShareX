@@ -2032,6 +2032,9 @@
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>オープンソース • Linux 向け</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>オープンソース • macOS 向け</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>これらのオプションは、アプリケーション設定でいつでも変更できます。</value>
   </data>

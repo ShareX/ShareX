@@ -2032,6 +2032,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Código abierto • Creado para Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Código abierto • Creado para macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Puedes cambiar estas opciones en cualquier momento en la configuración de la aplicación.</value>
   </data>

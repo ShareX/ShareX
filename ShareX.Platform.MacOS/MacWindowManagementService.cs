@@ -89,22 +89,11 @@ public sealed class MacWindowManagementService(IWindowService windows) : IWindow
         return url != IntPtr.Zero ? CoreFoundation.ToManagedString(ObjC.Send(url, "path")) : null;
     });
 
-    /// <summary>The application's icon as PNG: NSImage, through its TIFF form, re-encoded by NSBitmapImageRep.</summary>
+    /// <summary>The application's icon as PNG, from its largest representation.</summary>
     private static byte[]? GetApplicationIconPng(int pid) => ObjC.WithAutoreleasePool<byte[]?>(() =>
     {
         IntPtr application = ObjC.Send(ObjC.GetClass("NSRunningApplication"), "runningApplicationWithProcessIdentifier:", pid);
         IntPtr icon = application != IntPtr.Zero ? ObjC.Send(application, "icon") : IntPtr.Zero;
-        IntPtr tiff = icon != IntPtr.Zero ? ObjC.Send(icon, "TIFFRepresentation") : IntPtr.Zero;
-        IntPtr representation = tiff != IntPtr.Zero ? ObjC.Send(ObjC.GetClass("NSBitmapImageRep"), "imageRepWithData:", tiff) : IntPtr.Zero;
-
-        if (representation == IntPtr.Zero)
-        {
-            return null;
-        }
-
-        IntPtr properties = ObjC.Send(ObjC.GetClass("NSDictionary"), "dictionary");
-        // NSBitmapImageFileTypePNG
-        IntPtr png = ObjC.Send(representation, "representationUsingType:properties:", (IntPtr)4, properties);
-        return png != IntPtr.Zero ? CoreFoundation.ToArray(png) : null;
+        return AppKitImages.ToPng(AppKitImages.GetRepresentation(icon, null).Representation);
     });
 }

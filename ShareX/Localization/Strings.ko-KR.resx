@@ -2032,6 +2032,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>오픈 소스 • Linux용으로 제작</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>오픈 소스 • macOS용으로 제작</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>이 옵션은 언제든지 애플리케이션 설정에서 변경할 수 있습니다.</value>
   </data>

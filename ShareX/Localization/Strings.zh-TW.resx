@@ -2032,6 +2032,9 @@
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>開放原始碼 • 專為 Linux 打造</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>開放原始碼 • 專為 macOS 打造</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>你可以隨時在應用程式設定中變更這些選項。</value>
   </data>

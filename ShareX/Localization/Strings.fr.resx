@@ -2032,6 +2032,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Open source • Conçu pour Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Open source • Conçu pour macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Vous pouvez modifier ces options à tout moment dans les paramètres de l’application.</value>
   </data>

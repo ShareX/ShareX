@@ -25,6 +25,8 @@
 
 using SkiaSharp;
 using SkiaSharp.HarfBuzz;
+using System.Globalization;
+using System.Text;
 
 namespace ShareX.ImageEditor.Presentation.Emoji;
 
@@ -52,17 +54,25 @@ internal static class SkiaEmojiBitmapRenderer
             if (bitmap != null) return bitmap;
         }
 
+        // Unassigned code points and noncharacters have no emoji in any font.
+        Rune first = glyph.EnumerateRunes().First();
+        if (Rune.GetUnicodeCategory(first) == UnicodeCategory.OtherNotAssigned) return null;
+
         // Systems without a color font can still draw supported monochrome emoji.
-        using SKTypeface? fallback = SKFontManager.Default.MatchCharacter(glyph.EnumerateRunes().First().Value);
+        using SKTypeface? fallback = SKFontManager.Default.MatchCharacter(first.Value);
 
         // Apple's LastResort font has a placeholder for every code point; using it would turn an unsupported glyph into a box.
-        if (fallback == null || fallback.FamilyName.TrimStart('.').Equals("LastResort", StringComparison.OrdinalIgnoreCase))
+        if (fallback == null || IsLastResort(fallback.FamilyName))
         {
             return null;
         }
 
         return Render(glyph, canvasSize, fallback);
     }
+
+    /// <summary>macOS has named the font ".LastResort" and "Last Resort".</summary>
+    internal static bool IsLastResort(string? familyName) =>
+        familyName != null && familyName.TrimStart('.').Replace(" ", "", StringComparison.Ordinal).Equals("LastResort", StringComparison.OrdinalIgnoreCase);
 
     internal static SKBitmap? Render(string glyph, int canvasSize, SKTypeface typeface)
     {

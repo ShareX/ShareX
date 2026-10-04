@@ -2032,6 +2032,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Código aberto • Criado para Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Código aberto • Criado para macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Pode alterar estas opções a qualquer momento nas definições da aplicação.</value>
   </data>

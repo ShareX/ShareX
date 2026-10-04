@@ -2032,6 +2032,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="StartScreen_PlatformNoteLinux" xml:space="preserve">
     <value>Sursă deschisă • Creat pentru Linux</value>
   </data>
+  <data name="StartScreen_PlatformNoteMacOS" xml:space="preserve">
+    <value>Sursă deschisă • Creat pentru macOS</value>
+  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Puteți modifica oricând aceste opțiuni din setările aplicației.</value>
   </data>
