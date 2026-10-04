@@ -357,15 +357,25 @@ internal sealed class MainMenuBuilder
     private IReadOnlyList<MainMenuEntry> BuildAfterCaptureMenu()
     {
         AfterCaptureTasks value = ApplicationState.DefaultTaskSettings.AfterCaptureJob;
-        return GetAfterCaptureTaskMenuOptions(!SystemOptions.DisableUpload).Select(option => new MainMenuEntry(
-            option.Header,
-            option.Icon,
-            () => ApplicationState.DefaultTaskSettings.AfterCaptureJob = ApplicationState.DefaultTaskSettings.AfterCaptureJob.Swap(option.Task),
-            createChildren: option.Task == AfterCaptureTasks.AddImageEffects ? BuildImageEffectPresetMenu : null,
-            isChecked: value.HasFlag(option.Task),
-            toggleType: MainMenuToggleType.CheckBox,
-            staysOpenOnClick: true,
-            boldWhenChecked: true)).ToArray();
+        return GetAfterCaptureTaskMenuOptions(!SystemOptions.DisableUpload).Select(option =>
+        {
+            FeatureSupport support = TaskFeatureSupport.Get(option.Task);
+            return new MainMenuEntry(
+                option.Header,
+                option.Icon,
+                () =>
+                {
+                    if (TaskFeatureSupport.Get(option.Task).IsSupported)
+                        ApplicationState.DefaultTaskSettings.AfterCaptureJob = ApplicationState.DefaultTaskSettings.AfterCaptureJob.Swap(option.Task);
+                },
+                createChildren: option.Task == AfterCaptureTasks.AddImageEffects ? BuildImageEffectPresetMenu : null,
+                isChecked: value.HasFlag(option.Task),
+                isEnabled: support.IsSupported,
+                toolTip: support.Reason,
+                toggleType: MainMenuToggleType.CheckBox,
+                staysOpenOnClick: true,
+                boldWhenChecked: true);
+        }).ToArray();
     }
 
     internal static IReadOnlyList<(AfterCaptureTasks Task, string Header, string Icon)> GetAfterCaptureTaskMenuOptions(bool includeUploadTasks = true)

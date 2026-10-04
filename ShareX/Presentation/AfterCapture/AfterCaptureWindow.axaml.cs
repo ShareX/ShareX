@@ -32,6 +32,7 @@ using Avalonia.Media.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
+using ShareX.Platform;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -130,7 +131,8 @@ public partial class AfterCaptureWindow : Window
 
         return Helpers.GetEnums<AfterCaptureTasks>()
             .Where(task => !ignored.Contains(task))
-            .Select(task => new AfterCaptureTaskOption(task, task.GetLocalizedDescription(), selected.HasFlag(task)))
+            .Select(task => new AfterCaptureTaskOption(task, task.GetLocalizedDescription(), selected.HasFlag(task),
+                () => TaskFeatureSupport.Get(task)))
             .ToArray();
     }
 
@@ -275,15 +277,27 @@ public partial class AfterCaptureWindow : Window
 
 public sealed class AfterCaptureTaskOption
 {
+    private readonly Func<FeatureSupport>? _getSupport;
+    private bool _isChecked;
     public Enum Value { get; }
     public string Label { get; }
-    public bool IsChecked { get; set; }
+    public bool IsEnabled => _getSupport?.Invoke().IsSupported ?? true;
+    public string? SupportReason => _getSupport?.Invoke().Reason;
+    public bool IsChecked
+    {
+        get => _isChecked;
+        set
+        {
+            if (IsEnabled) _isChecked = value;
+        }
+    }
 
-    public AfterCaptureTaskOption(Enum value, string label, bool isChecked)
+    public AfterCaptureTaskOption(Enum value, string label, bool isChecked, Func<FeatureSupport>? getSupport = null)
     {
         Value = value;
         Label = label;
-        IsChecked = isChecked;
+        _isChecked = isChecked;
+        _getSupport = getSupport;
     }
 }
 

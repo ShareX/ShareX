@@ -32,6 +32,7 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -172,7 +173,7 @@ public partial class QuickTaskMenuEditorWindow : Window
             ? Strings.QuickTaskMenuEditorWindow_AddQuickTask
             : Strings.QuickTaskMenuEditorWindow_EditQuickTask;
         TaskNameBox.Text = task.Name ?? string.Empty;
-        _afterCaptureOptions = CreateFlagOptions(task.AfterCaptureTasks);
+        _afterCaptureOptions = CreateFlagOptions(task.AfterCaptureTasks, TaskFeatureSupport.Get);
         _afterUploadOptions = CreateFlagOptions(task.AfterUploadTasks);
         AfterCaptureTaskOptions.ItemsSource = _afterCaptureOptions;
         AfterUploadTaskOptions.ItemsSource = _afterUploadOptions;
@@ -186,7 +187,8 @@ public partial class QuickTaskMenuEditorWindow : Window
         }, DispatcherPriority.Input);
     }
 
-    private ObservableCollection<QuickTaskFlagItem> CreateFlagOptions<T>(T selected) where T : struct, Enum
+    private ObservableCollection<QuickTaskFlagItem> CreateFlagOptions<T>(T selected,
+        Func<T, FeatureSupport>? getSupport = null) where T : struct, Enum
     {
         long selectedValue = Convert.ToInt64(selected);
         ObservableCollection<QuickTaskFlagItem> items = [];
@@ -194,7 +196,8 @@ public partial class QuickTaskMenuEditorWindow : Window
         foreach (T value in Enum.GetValues<T>().Where(value => Convert.ToInt64(value) != 0))
         {
             long flag = Convert.ToInt64(value);
-            QuickTaskFlagItem item = new(flag, value.GetLocalizedDescription(), (selectedValue & flag) == flag);
+            QuickTaskFlagItem item = new(flag, value.GetLocalizedDescription(), (selectedValue & flag) == flag,
+                getSupport == null ? null : () => getSupport(value));
             item.Changed += UpdateEditorPreview;
             items.Add(item);
         }
@@ -332,16 +335,19 @@ public sealed class QuickTaskPresetItem : INotifyPropertyChanged
 public sealed class QuickTaskFlagItem : INotifyPropertyChanged
 {
     private bool _isChecked;
+    private readonly Func<FeatureSupport>? _getSupport;
 
     public long FlagValue { get; }
     public string Name { get; }
+    public bool IsEnabled => _getSupport?.Invoke().IsSupported ?? true;
+    public string? SupportReason => _getSupport?.Invoke().Reason;
 
     public bool IsChecked
     {
         get => _isChecked;
         set
         {
-            if (_isChecked == value)
+            if (!IsEnabled || _isChecked == value)
             {
                 return;
             }
@@ -352,11 +358,12 @@ public sealed class QuickTaskFlagItem : INotifyPropertyChanged
         }
     }
 
-    public QuickTaskFlagItem(long flagValue, string name, bool isChecked)
+    public QuickTaskFlagItem(long flagValue, string name, bool isChecked, Func<FeatureSupport>? getSupport = null)
     {
         FlagValue = flagValue;
         Name = name;
         _isChecked = isChecked;
+        _getSupport = getSupport;
     }
 
     public event Action? Changed;

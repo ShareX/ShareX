@@ -224,6 +224,9 @@
                                                     <DataTemplate x:DataType="local:QuickTaskFlagItem">
                                                         <CheckBox Classes="task-option"
                                                                   Content="{Binding Name}"
+                                                                  IsEnabled="{Binding IsEnabled}"
+                                                                  ToolTip.Tip="{Binding SupportReason}"
+                                                                  ToolTip.ShowOnDisabled="True"
                                                                   IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
                                                     </DataTemplate>
                                                 </ItemsControl.ItemTemplate>

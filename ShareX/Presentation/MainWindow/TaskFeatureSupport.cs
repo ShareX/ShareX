@@ -33,6 +33,13 @@ namespace ShareX;
 /// <summary>Capabilities used by task menus. Saved tasks stay intact when a platform cannot execute them.</summary>
 internal static class TaskFeatureSupport
 {
+    public static FeatureSupport Get(AfterCaptureTasks task) => task switch
+    {
+        AfterCaptureTasks.DoOCR => PlatformServices.Current.Ocr.Support,
+        AfterCaptureTasks.SendImageToPrinter => PlatformServices.Current.Printing.Support,
+        _ => FeatureSupport.Supported
+    };
+
     public static FeatureSupport Get(HotkeyType task) => Get(task, ApplicationState.DefaultTaskSettings);
 
     public static FeatureSupport Get(HotkeyType task, TaskSettings taskSettings) => task switch

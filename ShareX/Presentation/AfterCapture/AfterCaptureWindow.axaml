@@ -162,6 +162,9 @@
                                     <DataTemplate DataType="local:AfterCaptureTaskOption">
                                         <CheckBox Classes="task-option"
                                                   Content="{Binding Label}"
+                                                  IsEnabled="{Binding IsEnabled}"
+                                                  ToolTip.Tip="{Binding SupportReason}"
+                                                  ToolTip.ShowOnDisabled="True"
                                                   IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>

@@ -182,7 +182,8 @@ internal sealed class TaskSettingsPageBuilder
             () => _settings.AfterCaptureJob,
             value => _settings.AfterCaptureJob = value,
             MainMenuBuilder.GetAfterCaptureTaskMenuOptions(),
-            LucideIcons.image_up);
+            LucideIcons.image_up,
+            TaskFeatureSupport.Get);
         BindEnabled(afterCapture, afterCaptureOverride);
 
         Control afterUpload = TaskFlagsMenu(
@@ -1478,7 +1479,8 @@ internal sealed class TaskSettingsPageBuilder
         Func<T> getter,
         Action<T> setter,
         IReadOnlyList<(T Task, string Header, string Icon)> options,
-        string emptyIcon) where T : struct, Enum
+        string emptyIcon,
+        Func<T, FeatureSupport>? getSupport = null) where T : struct, Enum
     {
         IReadOnlyDictionary<T, (string Header, string Icon)> taskOptions = options
             .ToDictionary(option => option.Task, option => (option.Header, option.Icon));
@@ -1549,16 +1551,21 @@ internal sealed class TaskSettingsPageBuilder
 
             foreach ((T task, (string header, string icon)) in taskOptions)
             {
+                FeatureSupport support = getSupport?.Invoke(task) ?? FeatureSupport.Supported;
                 MenuItem item = new()
                 {
                     Header = header,
                     Icon = CreateAccentMenuIcon(icon),
                     ToggleType = MenuItemToggleType.CheckBox,
-                    IsChecked = HasFlag(selected, task)
+                    IsChecked = HasFlag(selected, task),
+                    IsEnabled = support.IsSupported
                 };
+                ToolTip.SetTip(item, support.IsSupported ? null : support.Reason);
+                ToolTip.SetShowOnDisabled(item, true);
                 item.Classes.Add("compact-menu-item");
                 item.Click += (_, _) =>
                 {
+                    if (getSupport?.Invoke(task).IsSupported == false) return;
                     T updated = ToggleFlag(getter(), task);
                     setter(updated);
                     if (HasFlag(updated, task))
