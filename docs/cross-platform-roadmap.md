@@ -5,7 +5,7 @@ The single place for **how far each operating system is**, **what is left to rea
 - Task details, requests (R), Windows work (W), handoffs (H) and bugs (B) stay in [cross-platform-delegation.md](cross-platform-delegation.md); this file refers to them by ID.
 - Rules stay in [AGENTS.md](../AGENTS.md); architecture in [cross-platform.md](cross-platform.md).
 
-Jaex's current scope is authoritative: Windows and Linux only; Linux HDR and OCR are excluded, and OCR remains Windows-only. Microsoft .NET is the only additional installation Linux users may be required to make. Already included libraries and existing desktop APIs are allowed; features requiring other installations must remain unsupported. R20/R22 must align carried-over backends, capability reasons and packaging with these rules before G1 can pass. macOS feature work remains deferred.
+Scope: Windows and Linux only; Linux HDR is excluded. Linux dependencies follow the reconciled rule in AGENTS.md (2026-10-04). Microsoft .NET is the only additional installation Linux users may be required to make. Already included libraries and existing desktop APIs are allowed; features requiring other installations must remain unsupported. R20/R22 must align carried-over backends, capability reasons and packaging with these rules before G1 can pass. macOS feature work remains deferred.
 
 ## How to keep this file current
 
@@ -42,8 +42,8 @@ Supported Linux desktops: Hyprland, sway, GNOME (Wayland), KDE Plasma (Wayland) 
 When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS work, and McoreD and Jaex approve it.
 
 - [x] Application starts, runs and exits cleanly on Linux (settings saved on SIGTERM).
-- [ ] Recording verified on every supported Wayland desktop. Implementations exist (`13c86e2bc`); M reports Hyprland verification, while GNOME/KDE/sway desktop verification and R22 dependency compliance remain outstanding.
-- [ ] R20 Windows-only OCR and R22 no-extra-installations policy implemented in backends, capability reasons, execution guards and packaging.
+- [ ] Recording verified on every supported Wayland desktop. Implementations exist (`13c86e2bc`); M reports Hyprland verification, while GNOME/KDE/sway desktop verification and the R22 core-guarantee audit remain outstanding.
+- [ ] R22: every Linux core flow works with .NET, included libraries and desktop APIs alone; optional programs only enable optional features or improve a working path; no install commands in reasons (M).
 - [ ] Individual DirectShow device discovery and Windows recorder-device download/setup are guarded by capabilities: R32 (M contract, J Windows/UI).
 - [ ] Verification pass on GNOME, KDE, sway and an X11 session, at least in virtual machines (M runs flows, J checks UI). Hyprland done.
 - [x] Browser extension launches ShareX on Linux: R28 (M), after J's R26 contract work.
@@ -103,7 +103,7 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 | --- | --- | --- | --- |
 | 2026-10-04 | M | GNOME and KDE screen recording through the ScreenCast portal. | `13c86e2bc` |
 | 2026-10-04 | M | R28 (Linux application launch for the browser extension) and R29 (history write serialization). | `288f7a06f`, R28 commit |
-| 2026-10-04 | M | Historical policy edit; superseded by Jaex's explicit Windows-only OCR/no-extra-installations instructions and subsequent AGENTS.md corrections. | `1db33b5b7` (superseded) |
+| 2026-10-04 | M | Linux dependency policy: McoreD's edit, then Jaex's edit, reconciled on 2026-10-04 (AGENTS.md, "Linux dependencies"). | `1db33b5b7` (superseded) |
 
 ## Change log
 
@@ -118,3 +118,4 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, J: B30/J5 recording task-settings and FFmpeg recording-mode availability/action guards are complete. Saved options remain intact when unsupported, async discovery/file-picker callbacks recheck support, and general conversion mode remains available independently of capture. Four proper synthetic regressions and a 28-culture reason pass. Full Windows Release gate: 0 warnings/errors, 475 pass, 8 Unix-only skips; full translation validation passes. Added R32 to G1 for per-device DirectShow/download capabilities so supported Linux recording cannot expose Windows dependency setup; overall guards do not close that contract/policy gap. Estimates and actual Windows 10/11/Linux desktop verification gates remain unchanged; other requests and B24/B27 causes stay open, and macOS stays deferred.
 - 2026-10-04, M: R29/B24 fixed: history writes are serialized and flushed before the database closes, with a new ShareX.HistoryLib.Tests project. G1 history item ticked.
 - 2026-10-04, M: R28 done: the browser extension host launches ShareX on Linux (cold and warm start verified with framed payloads on Hyprland). G1 browser item ticked; R28/R29 commitment kept.
+- 2026-10-04, M: Linux dependency policy reconciled in AGENTS.md on McoreD's instruction. R20 cancelled; R22 reframed (core flows need only .NET and desktop APIs; optional features may use distribution programs). G1 policy item reworded.
