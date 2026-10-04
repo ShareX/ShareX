@@ -205,7 +205,7 @@
                             </Grid>
 
                             <StackPanel Grid.Row="2" Spacing="8">
-                                <CheckBox x:Name="AutoScrollTopInput" Content="{x:Static localization:Strings.ScrollingCaptureWindow_Automatically_scroll_to_top}"/>
+                                <CheckBox x:Name="AutoScrollTopInput" IsCheckedChanged="OnOptionsAvailabilityChanged" Content="{x:Static localization:Strings.ScrollingCaptureWindow_Automatically_scroll_to_top}"/>
                                 <CheckBox x:Name="AutoIgnoreBottomEdgeInput" Content="{x:Static localization:Strings.ScrollingCaptureWindow_Auto_ignore_bottom_edge}"/>
                                 <CheckBox x:Name="ShowRegionInput" Content="{x:Static localization:Strings.ScrollingCaptureWindow_Show_capture_region}"/>
                                 <CheckBox x:Name="AutoUploadInput" Content="{x:Static localization:Strings.ScrollingCaptureWindow_Automatically_upload_save}"/>
@@ -216,7 +216,7 @@
                                         Spacing="8"
                                         HorizontalAlignment="Right">
                                 <Button Click="OnCancelOptionsClick" Content="{x:Static localization:Strings.ScrollingCaptureWindow_Cancel}"/>
-                                <Button Click="OnSaveOptionsClick" Content="{x:Static localization:Strings.ScrollingCaptureWindow_OK}"/>
+                                <Button x:Name="SaveOptionsButton" Click="OnSaveOptionsClick" Content="{x:Static localization:Strings.ScrollingCaptureWindow_OK}"/>
                             </StackPanel>
                         </Grid>
                     </ScrollViewer>

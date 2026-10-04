@@ -538,6 +538,9 @@
   <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
     <value>ShareX - Przechwytywanie przewijane</value>
   </data>
+  <data name="ScrollingCaptureWindow_Unavailable" xml:space="preserve">
+    <value>Przechwytywanie z przewijaniem z tymi opcjami jest niedostępne w tym środowisku pulpitu.</value>
+  </data>
   <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
     <value>Prześlij / Zapisz</value>
   </data>

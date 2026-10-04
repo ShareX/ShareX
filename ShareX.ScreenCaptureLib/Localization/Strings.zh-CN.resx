@@ -538,6 +538,9 @@
   <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
     <value>ShareX - 滚动捕获</value>
   </data>
+  <data name="ScrollingCaptureWindow_Unavailable" xml:space="preserve">
+    <value>此桌面环境不支持使用这些选项进行滚动截图。</value>
+  </data>
   <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
     <value>上传 / 保存</value>
   </data>

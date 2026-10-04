@@ -538,6 +538,9 @@
   <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
     <value>ShareX - Capture avec défilement</value>
   </data>
+  <data name="ScrollingCaptureWindow_Unavailable" xml:space="preserve">
+    <value>La capture avec défilement avec ces options est indisponible sur ce bureau.</value>
+  </data>
   <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
     <value>Téléverser / Enregistrer</value>
   </data>

@@ -538,6 +538,9 @@
   <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
     <value>ShareX - Tangkapan bergulir</value>
   </data>
+  <data name="ScrollingCaptureWindow_Unavailable" xml:space="preserve">
+    <value>Tangkapan bergulir dengan opsi ini tidak tersedia pada desktop ini.</value>
+  </data>
   <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
     <value>Unggah / Simpan</value>
   </data>

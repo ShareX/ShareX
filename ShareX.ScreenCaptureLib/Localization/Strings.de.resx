@@ -538,6 +538,9 @@
   <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
     <value>ShareX - Scrollaufnahme</value>
   </data>
+  <data name="ScrollingCaptureWindow_Unavailable" xml:space="preserve">
+    <value>Eine scrollende Aufnahme mit diesen Optionen ist in dieser Desktopumgebung nicht verfügbar.</value>
+  </data>
   <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
     <value>Hochladen / Speichern</value>
   </data>

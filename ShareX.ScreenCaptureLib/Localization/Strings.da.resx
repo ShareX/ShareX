@@ -542,6 +542,9 @@
   <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
     <value>ShareX – Rullende optagelse</value>
   </data>
+  <data name="ScrollingCaptureWindow_Unavailable" xml:space="preserve">
+    <value>Rulleoptagelse med disse indstillinger er ikke tilgængelig på dette skrivebord.</value>
+  </data>
   <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
     <value>Upload/gem</value>
   </data>

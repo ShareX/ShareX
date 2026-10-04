@@ -542,6 +542,9 @@
   <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
     <value>ShareX – Rullande bildtagning</value>
   </data>
+  <data name="ScrollingCaptureWindow_Unavailable" xml:space="preserve">
+    <value>Rullningsinspelning med dessa alternativ är inte tillgänglig i den här skrivbordsmiljön.</value>
+  </data>
   <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
     <value>Ladda upp/spara</value>
   </data>

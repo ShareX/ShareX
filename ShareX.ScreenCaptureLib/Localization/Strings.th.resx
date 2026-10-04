@@ -542,6 +542,9 @@
   <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
     <value>ShareX - จับภาพแบบเลื่อน</value>
   </data>
+  <data name="ScrollingCaptureWindow_Unavailable" xml:space="preserve">
+    <value>ไม่สามารถจับภาพแบบเลื่อนด้วยตัวเลือกเหล่านี้บนเดสก์ท็อปนี้ได้</value>
+  </data>
   <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
     <value>อัปโหลด / บันทึก</value>
   </data>

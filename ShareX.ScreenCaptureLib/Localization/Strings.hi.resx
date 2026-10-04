@@ -542,6 +542,9 @@
   <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
     <value>ShareX - स्क्रॉलिंग कैप्चर</value>
   </data>
+  <data name="ScrollingCaptureWindow_Unavailable" xml:space="preserve">
+    <value>इन विकल्पों के साथ स्क्रॉलिंग कैप्चर इस डेस्कटॉप पर उपलब्ध नहीं है।</value>
+  </data>
   <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
     <value>अपलोड / सहेजें</value>
   </data>

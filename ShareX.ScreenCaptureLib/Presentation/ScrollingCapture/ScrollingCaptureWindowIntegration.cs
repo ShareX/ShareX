@@ -27,6 +27,7 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
+using ShareX.Platform;
 using SkiaSharp;
 using System;
 using System.Threading.Tasks;
@@ -37,6 +38,10 @@ namespace ShareX.ScreenCaptureLib;
 public static class ScrollingCaptureWindowIntegration
 {
     private static ScrollingCaptureWindow? _window;
+
+    // The task/hotkey must still be able to stop an active capture after support is lost.
+    public static FeatureSupport CurrentToggleSupport => _window?.IsCapturing == true
+        ? FeatureSupport.Supported : ScrollingCaptureWindowViewModel.CurrentStartSupport;
 
     public static Task StartStopAsync(
         ScrollingCaptureOptions options,

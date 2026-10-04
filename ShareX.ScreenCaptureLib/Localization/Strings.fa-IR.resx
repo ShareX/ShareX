@@ -538,6 +538,9 @@
   <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
     <value>ShareX - ضبط پیمایشی</value>
   </data>
+  <data name="ScrollingCaptureWindow_Unavailable" xml:space="preserve">
+    <value>تصویربرداری پیمایشی با این گزینه‌ها در این محیط دسکتاپ در دسترس نیست.</value>
+  </data>
   <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
     <value>بارگذاری / ذخیره</value>
   </data>

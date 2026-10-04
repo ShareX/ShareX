@@ -49,7 +49,7 @@ When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS wo
 - [x] Browser extension launches ShareX on Linux: R28 (M), after J's R26 contract work.
 - [x] Upload history writes are serialized and finished before exit: R29 (M).
 - [ ] Unsupported mouse-highlighter automatic startup is skipped while retaining saved flags: R31 (M).
-- [ ] Scrolling capture on Wayland through the RemoteDesktop portal, or reported unsupported with a reason per desktop (M).
+- [ ] Scrolling capture on Wayland through the RemoteDesktop portal, or reported unsupported with a reason per desktop (M). B31 frontend selection/settings guards are complete; R33 backend delayed-input/cancellation checks and desktop verification remain open.
 - [ ] Mixed-scale multi-monitor capture and overlays (rest of R12; M backend, J overlays).
 - [ ] Mouse highlighter and overlays on X11; reported unsupported on Wayland (M hook and overlay surface, J drawing).
 - [ ] Linux feature verification list below is all ticked.
@@ -120,3 +120,4 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, M: R28 done: the browser extension host launches ShareX on Linux (cold and warm start verified with framed payloads on Hyprland). G1 browser item ticked; R28/R29 commitment kept.
 - 2026-10-04, M: Linux dependency policy reconciled in AGENTS.md on McoreD's instruction. R20 cancelled; R22 reframed (core flows need only .NET and desktop APIs; optional features may use distribution programs). G1 policy item reworded.
 - 2026-10-04, M: R22 first slice: no install commands in reasons, Secret Service over D-Bus (no secret-tool), scale-correct portal crop and window capture, portal screenshot timeout. grim recognised as the wlroots desktops' own screenshot component.
+- 2026-10-04, J: B31/J5/J4 scrolling-capture frontend action, settings and selection lifetime guards are complete, with seven controlled async regressions and one reason translated in all 28 cultures. Support is rechecked after hiding/selection, close prevents later capture/restoration, busy state prevents competing actions, saved invalid/unavailable options stay intact, Stop remains available after support loss and completed-image actions remain usable. Auto-top checks its actual keyboard/window-scroll prerequisites. R33 still requires backend checks after its own delays and safe selector cancellation; no actual desktop scrolling verification is claimed. Final full Windows Release gate: 0 warnings/errors, 482 pass, 8 Unix-only skips; full translation validation passes. B24/B27 did not recur, and their original causes remain open. Estimates and Windows 10/11/Linux desktop gates remain unchanged; backend policy and other open requests remain outstanding, and macOS stays deferred.

@@ -538,6 +538,9 @@
   <data name="ScrollingCaptureWindow_Title" xml:space="preserve">
     <value>ShareX - לכידה בגלילה</value>
   </data>
+  <data name="ScrollingCaptureWindow_Unavailable" xml:space="preserve">
+    <value>צילום בגלילה עם אפשרויות אלה אינו זמין בסביבת שולחן העבודה הזו.</value>
+  </data>
   <data name="ScrollingCaptureWindow_Upload_Save" xml:space="preserve">
     <value>העלאה / שמירה</value>
   </data>

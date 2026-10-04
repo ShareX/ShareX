@@ -25,6 +25,7 @@
 
 using ShareX.AvaloniaUI.Windows;
 using ShareX.Platform;
+using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
 
 namespace ShareX;
@@ -44,7 +45,7 @@ internal static class TaskFeatureSupport
         HotkeyType.ActiveWindow or HotkeyType.CustomWindow => Require(
             PlatformServices.Current.ScreenCapture.Support, PlatformServices.Current.Windows.Support),
 
-        HotkeyType.ScrollingCapture => ScrollingCapture,
+        HotkeyType.ScrollingCapture => ScrollingCaptureWindowIntegration.CurrentToggleSupport,
 
         HotkeyType.ScreenRecorder or HotkeyType.ScreenRecorderCustomRegion or HotkeyType.StartScreenRecorder or
         HotkeyType.ScreenRecorderGIF or HotkeyType.ScreenRecorderGIFCustomRegion or HotkeyType.StartScreenRecorderGIF => Require(
@@ -75,15 +76,4 @@ internal static class TaskFeatureSupport
         return FeatureSupport.Supported;
     }
 
-    private static FeatureSupport ScrollingCapture
-    {
-        get
-        {
-            IPlatformServices platform = PlatformServices.Current;
-            IInputService input = platform.Input;
-            FeatureSupport scroll = input.MouseWheelSupport.IsSupported || input.KeyboardSupport.IsSupported || input.WindowScrollSupport.IsSupported
-                ? FeatureSupport.Supported : input.MouseWheelSupport;
-            return Require(platform.ScreenCapture.Support, platform.Windows.Support, scroll);
-        }
-    }
 }

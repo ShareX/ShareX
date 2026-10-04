@@ -46,14 +46,17 @@ public partial class ScrollingCaptureWindow : Window
     private static readonly Cursor PanCursor = new(StandardCursorType.SizeAll);
 
     private readonly ScrollingCaptureService _service;
+    private readonly ScrollingCaptureWindowViewModel _viewModel;
     private readonly Action<SKBitmap>? _uploadRequested;
     private readonly Action? _playNotificationSound;
     private AvaloniaBitmap? _previewBitmap;
-    private bool _captureOperation;
+    private bool _serviceDisposed;
     private bool _closeRequested;
     private bool _isPanning;
     private Point _panStart;
     private Vector _panStartOffset;
+
+    public bool IsCapturing => !_viewModel.IsClosed && _service.IsCapturing;
 
     public ScrollingCaptureWindow()
         : this(new ScrollingCaptureOptions(), null, null)
@@ -66,6 +69,7 @@ public partial class ScrollingCaptureWindow : Window
         Action? playNotificationSound)
     {
         _service = new ScrollingCaptureService(options);
+        _viewModel = new ScrollingCaptureWindowViewModel();
         _uploadRequested = uploadRequested;
         _playNotificationSound = playNotificationSound;
 
@@ -73,12 +77,13 @@ public partial class ScrollingCaptureWindow : Window
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         ScrollMethodInput.ItemsSource = Helpers.GetEnums<ScrollMethod>().Select(method =>
         {
-            FeatureSupport support = GetScrollSupport(method);
+            FeatureSupport support = _viewModel.GetSupport(method);
             ComboBoxItem item = new() { Content = method.GetLocalizedDescription(), IsEnabled = support.IsSupported };
             ToolTip.SetTip(item, support.IsSupported ? null : support.Reason);
             ToolTip.SetShowOnDisabled(item, true);
             return item;
         }).ToArray();
+        RefreshCaptureControls();
         WindowState = Avalonia.Controls.WindowState.Minimized;
 
         Opened += OnOpened;
@@ -89,6 +94,8 @@ public partial class ScrollingCaptureWindow : Window
 
     public async Task StartStopAsync()
     {
+        if (_viewModel.IsClosed) return;
+
         if (_service.IsCapturing)
         {
             StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Stopping_capture;
@@ -96,7 +103,7 @@ public partial class ScrollingCaptureWindow : Window
             return;
         }
 
-        if (!_captureOperation)
+        if (!_viewModel.IsBusy)
         {
             await SelectWindowAsync();
         }
@@ -119,46 +126,44 @@ public partial class ScrollingCaptureWindow : Window
 
     private void OnClosing(object? sender, WindowClosingEventArgs e)
     {
-        if (_service.IsCapturing)
+        if (_viewModel.IsBusy || _service.IsCapturing)
         {
             _closeRequested = true;
-            _service.StopCapture();
+            if (_service.IsCapturing) _service.StopCapture();
+            else _viewModel.Close();
             e.Cancel = true;
         }
     }
 
     private void OnClosed(object? sender, EventArgs e)
     {
+        _viewModel.Close();
         _previewBitmap?.Dispose();
-        _service.Dispose();
+        _previewBitmap = null;
+        // A selector has no cancellation contract. Let it finish before disposing its service.
+        if (!_viewModel.IsBusy) DisposeService();
     }
 
     private async Task SelectWindowAsync()
     {
-        FeatureSupport scrollSupport = GetScrollSupport(_service.Options.ScrollMethod);
-
-        if (!scrollSupport.IsSupported)
-        {
-            // Say why instead of capturing a window that never scrolls.
-            SetStatus(ScrollingCaptureStatus.Failed);
-            StatusText.Text = scrollSupport.Reason;
-            RestoreAndActivate();
-            return;
-        }
-
-        _captureOperation = true;
-        OptionsOverlay.IsVisible = false;
-        WindowState = Avalonia.Controls.WindowState.Minimized;
-
         try
         {
-            await Task.Delay(250);
+            ScrollingCaptureWindowViewModel.StartResult result = await _viewModel.TryCaptureAsync(_service.Options,
+                () =>
+                {
+                    OptionsOverlay.IsVisible = false;
+                    WindowState = Avalonia.Controls.WindowState.Minimized;
+                    RefreshCaptureControls();
+                }, () => Task.Delay(250), _service.SelectWindowAsync, CaptureSelectedWindowAsync);
 
-            if (await _service.SelectWindowAsync())
+            if (_viewModel.IsClosed) return;
+            if (result == ScrollingCaptureWindowViewModel.StartResult.Unavailable)
             {
-                await CaptureSelectedWindowAsync();
+                SetStatus(ScrollingCaptureStatus.Failed);
+                StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Unavailable;
+                RestoreAndActivate();
             }
-            else
+            else if (result == ScrollingCaptureWindowViewModel.StartResult.Cancelled)
             {
                 StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Selection_cancelled;
                 RestoreAndActivate();
@@ -167,15 +172,28 @@ public partial class ScrollingCaptureWindow : Window
         catch (Exception ex)
         {
             DebugHelper.WriteException(ex);
-            StatusText.Text = ex.Message;
+            if (_viewModel.IsClosed) return;
             SetStatus(ScrollingCaptureStatus.Failed);
+            StatusText.Text = ex.Message;
             RestoreAndActivate();
             ex.ShowError();
         }
         finally
         {
-            _captureOperation = false;
+            if (_viewModel.IsClosed)
+            {
+                DisposeService();
+                if (_closeRequested) Close();
+            }
+            else RefreshCaptureControls();
         }
+    }
+
+    private void DisposeService()
+    {
+        if (_serviceDisposed) return;
+        _serviceDisposed = true;
+        _service.Dispose();
     }
 
     private async Task CaptureSelectedWindowAsync()
@@ -190,21 +208,25 @@ public partial class ScrollingCaptureWindow : Window
         try
         {
             ScrollingCaptureStatus status = await _service.StartCaptureAsync();
+            if (_viewModel.IsClosed) return;
             SetStatus(status);
             _playNotificationSound?.Invoke();
         }
         catch (Exception ex)
         {
             DebugHelper.WriteException(ex);
-            StatusText.Text = ex.Message;
+            if (_viewModel.IsClosed) return;
             SetStatus(ScrollingCaptureStatus.Failed);
+            StatusText.Text = ex.Message;
             ex.ShowError();
         }
         finally
         {
-            SetCaptureControlsEnabled(true);
-            LoadImage(_service.Result);
-            RestoreAndActivate();
+            if (!_viewModel.IsClosed)
+            {
+                LoadImage(_service.Result);
+                RestoreAndActivate();
+            }
         }
 
         if (_service.Options.AutoUpload)
@@ -220,10 +242,19 @@ public partial class ScrollingCaptureWindow : Window
 
     private void SetCaptureControlsEnabled(bool enabled)
     {
-        CaptureButton.IsEnabled = enabled && GetScrollSupport(_service.Options.ScrollMethod).IsSupported;
+        FeatureSupport support = _viewModel.GetSupport(_service.Options.ScrollMethod, _service.Options.AutoScrollTop);
+        CaptureButton.IsEnabled = enabled && support.IsSupported;
+        ToolTip.SetTip(CaptureButton, support.IsSupported ? null : support.Reason);
+        ToolTip.SetShowOnDisabled(CaptureButton, true);
         OptionsButton.IsEnabled = enabled;
         UploadButton.IsEnabled = enabled && _service.Result != null;
         CopyButton.IsEnabled = enabled && _service.Result != null;
+    }
+
+    private void RefreshCaptureControls()
+    {
+        if (_viewModel.IsClosed) return;
+        SetCaptureControlsEnabled(!_viewModel.IsBusy && !_service.IsCapturing);
     }
 
     private void SetStatus(ScrollingCaptureStatus status)
@@ -281,6 +312,7 @@ public partial class ScrollingCaptureWindow : Window
 
     private void RestoreAndActivate()
     {
+        if (_viewModel.IsClosed) return;
         WindowState = Avalonia.Controls.WindowState.Normal;
 
         if (!IsVisible)
@@ -293,7 +325,7 @@ public partial class ScrollingCaptureWindow : Window
 
     private void UploadResult()
     {
-        if (_service.Result != null)
+        if (!_viewModel.IsClosed && !_service.IsCapturing && _service.Result != null)
         {
             _uploadRequested?.Invoke(_service.Result.Copy());
         }
@@ -301,7 +333,7 @@ public partial class ScrollingCaptureWindow : Window
 
     private void CopyResult()
     {
-        if (_service.Result != null)
+        if (!_viewModel.IsClosed && !_service.IsCapturing && _service.Result != null)
         {
             ClipboardHelpers.CopyImage(_service.Result);
         }
@@ -317,6 +349,7 @@ public partial class ScrollingCaptureWindow : Window
 
     private void OnOptionsClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
+        if (_viewModel.IsClosed || _viewModel.IsBusy) return;
         LoadOptions();
         OptionsOverlay.IsVisible = true;
     }
@@ -328,16 +361,21 @@ public partial class ScrollingCaptureWindow : Window
 
     private void OnSaveOptionsClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        ScrollingCaptureOptions options = _service.Options;
-        options.StartDelay = Value(StartDelayInput);
-        options.AutoScrollTop = AutoScrollTopInput.IsChecked == true;
-        options.ScrollDelay = Value(ScrollDelayInput);
-        options.ScrollMethod = (ScrollMethod)Math.Max(0, ScrollMethodInput.SelectedIndex);
-        options.ScrollAmount = Value(ScrollAmountInput);
-        options.AutoUpload = AutoUploadInput.IsChecked == true;
-        options.ShowRegion = ShowRegionInput.IsChecked == true;
-        options.AutoIgnoreBottomEdge = AutoIgnoreBottomEdgeInput.IsChecked == true;
-        OptionsOverlay.IsVisible = false;
+        ScrollMethod method = (ScrollMethod)ScrollMethodInput.SelectedIndex;
+        bool autoScrollTop = AutoScrollTopInput.IsChecked == true;
+        if (_viewModel.TryChange(method, autoScrollTop, () =>
+        {
+            ScrollingCaptureOptions options = _service.Options;
+            options.StartDelay = Value(StartDelayInput);
+            options.AutoScrollTop = autoScrollTop;
+            options.ScrollDelay = Value(ScrollDelayInput);
+            options.ScrollMethod = method;
+            options.ScrollAmount = Value(ScrollAmountInput);
+            options.AutoUpload = AutoUploadInput.IsChecked == true;
+            options.ShowRegion = ShowRegionInput.IsChecked == true;
+            options.AutoIgnoreBottomEdge = AutoIgnoreBottomEdgeInput.IsChecked == true;
+        })) OptionsOverlay.IsVisible = false;
+        UpdateScrollAmountVisibility();
     }
 
     private void LoadOptions()
@@ -356,30 +394,32 @@ public partial class ScrollingCaptureWindow : Window
 
     private void OnScrollMethodChanged(object? sender, SelectionChangedEventArgs e) => UpdateScrollAmountVisibility();
 
-    /// <summary>Whether this platform can scroll another window the way <paramref name="method"/> needs.</summary>
-    private static FeatureSupport GetScrollSupport(ScrollMethod method)
-    {
-        FeatureSupport capture = PlatformServices.Current.ScreenCapture.Support;
-        if (!capture.IsSupported) return capture;
-        FeatureSupport windows = PlatformServices.Current.Windows.Support;
-        if (!windows.IsSupported) return windows;
-        IInputService input = PlatformServices.Current.Input;
-
-        return method switch
-        {
-            ScrollMethod.MouseWheel => input.MouseWheelSupport,
-            ScrollMethod.ScrollMessage => input.WindowScrollSupport,
-            _ => input.KeyboardSupport
-        };
-    }
+    private void OnOptionsAvailabilityChanged(object? sender, Avalonia.Interactivity.RoutedEventArgs e) => UpdateScrollAmountVisibility();
 
     private void UpdateScrollAmountVisibility()
     {
-        FeatureSupport support = GetScrollSupport((ScrollMethod)Math.Max(0, ScrollMethodInput.SelectedIndex));
+        if (_viewModel.IsClosed) return;
+        FeatureSupport support = _viewModel.GetSupport((ScrollMethod)ScrollMethodInput.SelectedIndex, AutoScrollTopInput.IsChecked == true);
         ToolTip.SetTip(ScrollMethodInput, support.IsSupported ? null : support.Reason);
-        ToolTip.SetTip(CaptureButton, support.IsSupported ? null : support.Reason);
-        ToolTip.SetShowOnDisabled(CaptureButton, true);
-        CaptureButton.IsEnabled = support.IsSupported && !_captureOperation && !_service.IsCapturing;
+        ToolTip.SetShowOnDisabled(ScrollMethodInput, true);
+        ToolTip.SetTip(SaveOptionsButton, support.IsSupported ? null : support.Reason);
+        ToolTip.SetShowOnDisabled(SaveOptionsButton, true);
+        SaveOptionsButton.IsEnabled = support.IsSupported && !_viewModel.IsBusy;
+        FeatureSupport autoTopSupport = _viewModel.AutoScrollTopSupport;
+        ToolTip.SetTip(AutoScrollTopInput, autoTopSupport.IsSupported ? null : autoTopSupport.Reason);
+        ToolTip.SetShowOnDisabled(AutoScrollTopInput, true);
+        // A saved unavailable flag can be turned off without losing it just by opening options.
+        AutoScrollTopInput.IsEnabled = !_viewModel.IsBusy && (autoTopSupport.IsSupported || AutoScrollTopInput.IsChecked == true);
+        if (ScrollMethodInput.ItemsSource is ComboBoxItem[] items)
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                FeatureSupport methodSupport = _viewModel.GetSupport((ScrollMethod)i);
+                items[i].IsEnabled = methodSupport.IsSupported;
+                ToolTip.SetTip(items[i], methodSupport.IsSupported ? null : methodSupport.Reason);
+            }
+        }
+        RefreshCaptureControls();
 
         bool isVisible = (ScrollMethod)ScrollMethodInput.SelectedIndex != ScrollMethod.PageDown;
         ScrollAmountLabel.IsVisible = isVisible;
