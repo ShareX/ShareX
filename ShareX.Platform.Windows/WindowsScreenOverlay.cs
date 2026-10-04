@@ -60,6 +60,7 @@ internal sealed unsafe partial class WindowsScreenOverlay : IScreenOverlay
     private int bufferWidth;
     private int bufferHeight;
     private bool visible;
+    private bool disposed;
 
     public WindowsScreenOverlay(PlatformRectangle screenBounds)
     {
@@ -75,6 +76,7 @@ internal sealed unsafe partial class WindowsScreenOverlay : IScreenOverlay
 
     public OverlayBuffer GetBuffer(int width, int height)
     {
+        ObjectDisposedException.ThrowIf(disposed, this);
         // Keep the buffer while it is large enough and not far too large, so a growing ripple does not allocate every frame.
         if (bitmap == IntPtr.Zero || width > bufferWidth || height > bufferHeight || width < bufferWidth / 4 || height < bufferHeight / 4)
         {
@@ -108,6 +110,7 @@ internal sealed unsafe partial class WindowsScreenOverlay : IScreenOverlay
 
     public void Present(PlatformRectangle area)
     {
+        ObjectDisposedException.ThrowIf(disposed, this);
         Win32.GdiFlush();
         Win32.POINT destination = new Win32.POINT { X = area.X, Y = area.Y };
         Win32.POINT source = default;
@@ -128,6 +131,7 @@ internal sealed unsafe partial class WindowsScreenOverlay : IScreenOverlay
 
     public void Hide()
     {
+        if (disposed) return;
         if (visible)
         {
             Win32.ShowWindow(handle, Win32.SW_HIDE);
@@ -137,6 +141,8 @@ internal sealed unsafe partial class WindowsScreenOverlay : IScreenOverlay
 
     public void Dispose()
     {
+        if (disposed) return;
+        disposed = true;
         ReleaseBuffer();
         Win32.DestroyWindow(handle);
     }

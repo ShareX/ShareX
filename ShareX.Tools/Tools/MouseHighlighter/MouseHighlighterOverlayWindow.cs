@@ -33,23 +33,32 @@ namespace ShareX.Tools;
 /// <summary>Draws the highlights for one screen with Skia into the platform's click through overlay (IWindowService.CreateOverlay).</summary>
 internal sealed class MouseHighlighterOverlayWindow : IDisposable
 {
-    private readonly MouseHighlighterService _service;
+    private readonly Func<MouseHighlighterFrame> _getFrame;
     private readonly Rectangle _screenBounds;
     private readonly IScreenOverlay _overlay;
     private SKSurface? _surface;
     private OverlayBuffer _buffer;
+    private bool _disposed;
 
     public MouseHighlighterOverlayWindow(MouseHighlighterService service, PixelRect bounds)
+        : this(new Rectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height),
+            PlatformServices.Current.Windows.CreateOverlay(new PlatformRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height)),
+            () => new MouseHighlighterFrame(service.Options, service.CursorPosition, service.Highlights, service.Time))
     {
-        _service = service;
-        _screenBounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height);
-        _overlay = PlatformServices.Current.Windows.CreateOverlay(new PlatformRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height));
+    }
+
+    internal MouseHighlighterOverlayWindow(Rectangle screenBounds, IScreenOverlay overlay, Func<MouseHighlighterFrame> getFrame)
+    {
+        _screenBounds = screenBounds;
+        _overlay = overlay;
+        _getFrame = getFrame;
     }
 
     public void Refresh()
     {
-        MouseHighlighterOptions options = _service.Options;
-        Rectangle bounds = GetEffectBounds(options);
+        if (_disposed) return;
+        MouseHighlighterFrame frame = _getFrame();
+        Rectangle bounds = MouseHighlighterRenderer.GetEffectBounds(_screenBounds, frame);
         if (bounds.Width <= 0 || bounds.Height <= 0)
         {
             _overlay.Hide();
@@ -70,102 +79,20 @@ internal sealed class MouseHighlighterOverlayWindow : IDisposable
         canvas.Clear(SKColors.Transparent);
         canvas.Save();
         canvas.Translate(-bounds.X, -bounds.Y);
-        Draw(canvas, options);
+        MouseHighlighterRenderer.Draw(canvas, frame);
         canvas.Restore();
         canvas.Flush();
 
         _overlay.Present(new PlatformRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height));
     }
 
-    private Rectangle GetEffectBounds(MouseHighlighterOptions options)
-    {
-        Rectangle bounds = Rectangle.Empty;
-        if (options.Mode == MouseHighlightMode.Circle && options.AlwaysColor.A > 0)
-        {
-            bounds = Rectangle.Intersect(Around(_service.CursorPosition, options.Radius + 2), _screenBounds);
-        }
-        foreach (MouseHighlight highlight in _service.Highlights)
-        {
-            Color color = options.GetColor(highlight.Button);
-            if (color.A == 0) continue;
-            int radius = options.Mode == MouseHighlightMode.Ripple ? options.RippleSize / 2 + 12 : options.Radius + 2;
-            Rectangle effect = Rectangle.Intersect(Around(highlight.Position, radius), _screenBounds);
-            if (effect.Width > 0 && effect.Height > 0)
-            {
-                bounds = bounds.Width <= 0 || bounds.Height <= 0 ? effect : Rectangle.Union(bounds, effect);
-            }
-        }
-        return Rectangle.Intersect(bounds, _screenBounds);
-    }
-
-    private static Rectangle Around(System.Drawing.Point center, int radius) =>
-        new(center.X - radius, center.Y - radius, radius * 2 + 1, radius * 2 + 1);
-
-    private void Draw(SKCanvas canvas, MouseHighlighterOptions options)
-    {
-        double time = _service.Time;
-        SKPoint cursor = new(_service.CursorPosition.X, _service.CursorPosition.Y);
-        if (options.Mode == MouseHighlightMode.Circle)
-        {
-            using SKPaint always = Paint(options.AlwaysColor);
-            canvas.DrawCircle(cursor, options.Radius, always);
-        }
-        foreach (MouseHighlight highlight in _service.Highlights)
-        {
-            Color color = options.GetColor(highlight.Button);
-            SKPoint center = new(highlight.Position.X, highlight.Position.Y);
-            if (options.Mode == MouseHighlightMode.Circle)
-            {
-                using SKPaint fill = Paint(color, FadeOpacity(highlight, options, time));
-                canvas.DrawCircle(center, options.Radius, fill);
-            }
-            else
-            {
-                double progress = Math.Clamp((time - highlight.Started) / options.RippleDuration, 0, 1);
-                double fade = highlight.Released.HasValue
-                    ? 1 - Math.Clamp((time - highlight.Released.Value) / options.RippleDuration, 0, 1) : 1;
-                float radius = (float)(options.RippleSize / 2d * (0.35 + 0.65 * progress));
-                using SKPaint ring = Paint(color, fade * options.RippleIntensity);
-                ring.Style = SKPaintStyle.Stroke;
-                ring.StrokeWidth = (float)(3 * options.RippleIntensity);
-                if (highlight.Crosshairs)
-                {
-                    float gap = radius * 0.4f;
-                    canvas.DrawLine(center.X - radius, center.Y, center.X - gap, center.Y, ring);
-                    canvas.DrawLine(center.X + gap, center.Y, center.X + radius, center.Y, ring);
-                    canvas.DrawLine(center.X, center.Y - radius, center.X, center.Y - gap, ring);
-                    canvas.DrawLine(center.X, center.Y + gap, center.X, center.Y + radius, ring);
-                }
-                else
-                {
-                    using SKPaint glow = Paint(color, fade * options.RippleIntensity * 0.3);
-                    using SKMaskFilter blur = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, 3);
-                    glow.MaskFilter = blur;
-                    canvas.DrawCircle(center, radius, glow);
-                    canvas.DrawCircle(center, radius, ring);
-                }
-            }
-        }
-    }
-
-    private static double FadeOpacity(MouseHighlight highlight, MouseHighlighterOptions options, double time)
-    {
-        if (!highlight.Released.HasValue) return 1;
-        double age = time - highlight.Released.Value - options.FadeDelay;
-        if (age < 0) return 1;
-        return options.FadeDuration == 0 ? 0 : Math.Clamp(1 - age / options.FadeDuration, 0, 1);
-    }
-
-    private static SKPaint Paint(Color color, double opacity = 1) => new()
-    {
-        IsAntialias = true,
-        Color = new SKColor(color.R, color.G, color.B, (byte)Math.Clamp(Math.Round(color.A * opacity), 0, 255))
-    };
-
     public void Dispose()
     {
+        if (_disposed) return;
+        _disposed = true;
         _surface?.Dispose();
         _surface = null;
+        _buffer = default;
         _overlay.Dispose();
     }
 }
