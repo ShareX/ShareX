@@ -47,7 +47,9 @@ public sealed unsafe class WindowsThumbnailService : IThumbnailService
         try
         {
             SHCreateItemFromParsingName(path, IntPtr.Zero, ShellItemImageFactory, out factory);
-            factory.GetImage(new SIZE { cx = maxWidth, cy = maxHeight }, 0 /* SIIGBF_RESIZETOFIT */, out bitmap);
+            // SIIGBF_THUMBNAILONLY: without it the shell returns the file type's icon when it has no thumbnail (Windows Server, files
+            // without a thumbnail handler), while callers expect null so they can decode the file themselves.
+            factory.GetImage(new SIZE { cx = maxWidth, cy = maxHeight }, 0x08 /* SIIGBF_RESIZETOFIT | SIIGBF_THUMBNAILONLY */, out bitmap);
 
             if (bitmap == IntPtr.Zero)
             {

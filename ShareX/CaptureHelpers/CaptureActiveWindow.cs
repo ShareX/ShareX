@@ -23,21 +23,22 @@
 
 #endregion License Information (GPL v3)
 
+using System.Threading.Tasks;
 namespace ShareX
 {
     public class CaptureActiveWindow : CaptureBase
     {
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
+        protected override async Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
         {
             TaskMetadata metadata = CreateMetadata();
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
             {
-                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowTransparent();
+                metadata.Image = await TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowTransparentAsync();
             }
             else
             {
-                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindow();
+                metadata.Image = await TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowAsync();
             }
 
             return metadata;

@@ -24,16 +24,17 @@
 #endregion License Information (GPL v3)
 
 using System.Drawing;
+using System.Threading.Tasks;
 
 namespace ShareX
 {
     public class CaptureCustomRegion : CaptureBase
     {
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
+        protected override async Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
         {
             Rectangle rect = taskSettings.CaptureSettings.CaptureCustomRegion;
             TaskMetadata metadata = CreateMetadata(rect);
-            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
+            metadata.Image = await TaskHelpers.GetScreenshot(taskSettings).CaptureRectangleAsync(rect);
             return metadata;
         }
     }
