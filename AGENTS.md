@@ -13,6 +13,8 @@ The `cross-platform-v2` branch ports ShareX to Linux and macOS while preserving 
 
 **McoreD and Jaex agree (2026-10-04):** Windows, Linux and macOS are all to reach 100%, with OCR and other features implemented through each system's own support. This section and the owner decision below reflect that agreement; agents follow them and do not restore earlier deferrals.
 
+**Superseded directions; do not restore them** (including from an agent's memory, an earlier conversation, an old commit or a merge conflict): OCR being Windows-only or excluded on Linux or macOS; "no extra installations" for Linux; R20 (removing Linux OCR) and the old R22 retirement audit; macOS work, packaging or CI being deferred; pausing the Cross-platform workflow on `cross-platform-v2`; Windows and Linux being below 100%. When resolving a conflict in this file or the trackers, keep this version. `ShareX.Platform.Tests/RepositoryRulesTests.cs` checks these rules, so a build that restores them fails its tests.
+
 Windows and Linux are complete (McoreD, 2026-10-04). **The macOS phase is open**: port the full `ShareX` application to macOS (Apple silicon and Intel, macOS 13 or later), including its main window, menu bar icon, hotkeys, capture, recording, upload, history, editor and tools.
 
 - **Keep Windows and Linux working.** Every change must keep their behaviour; Windows stays identical to v22. Field testing on GNOME, KDE, sway, X11 and Windows 10/11 continues, and its bug rows come before new macOS work.
