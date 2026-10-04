@@ -49,7 +49,7 @@
                         <Button Grid.Column="2"
                                 Content="{x:Static localization:Strings.VideoConverterWindow_Browse}"
                                 Command="{Binding BrowseInputCommand}"
-                                IsEnabled="{Binding IsIdle}"/>
+                                IsEnabled="{Binding CanEdit}"/>
                     </Grid>
                 </Border>
 
@@ -64,7 +64,7 @@
                                     <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_Video_encoder}"/>
                                     <ComboBox ItemsSource="{x:Static vm:VideoConverterViewModel.Codecs}"
                                               SelectedItem="{Binding SelectedCodec}"
-                                              IsEnabled="{Binding IsIdle}"
+                                              IsEnabled="{Binding CanEdit}"
                                               HorizontalAlignment="Stretch">
                                         <ComboBox.ItemTemplate>
                                             <DataTemplate x:DataType="vm:VideoConverterCodecItem">
@@ -78,7 +78,7 @@
                                     <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.VideoConverterWindow_Quality}"/>
                                     <CheckBox IsChecked="{Binding UseBitrate}"
                                               IsVisible="{Binding CanChooseRateControl}"
-                                              IsEnabled="{Binding IsIdle}"
+                                              IsEnabled="{Binding CanEdit}"
                                               Margin="0,0,0,10">
                                         <TextBlock Text="{x:Static localization:Strings.VideoConverterWindow_Use_a_target_bitrate}" FontWeight="Normal"/>
                                     </CheckBox>
@@ -93,7 +93,7 @@
                                                 Value="{Binding VideoQuality}"
                                                 TickFrequency="1"
                                                 IsSnapToTickEnabled="True"
-                                                IsEnabled="{Binding IsIdle}"/>
+                                                IsEnabled="{Binding CanEdit}"/>
                                         <Grid ColumnDefinitions="*,*">
                                             <TextBlock Grid.Column="0" Text="{x:Static localization:Strings.VideoConverterWindow_Higher_quality}" FontSize="12" FontWeight="Normal"/>
                                             <TextBlock Grid.Column="1" Text="{x:Static localization:Strings.VideoConverterWindow_Smaller_file}" FontSize="12" FontWeight="Normal" HorizontalAlignment="Right"/>
@@ -109,7 +109,7 @@
                                                            Increment="100"
                                                            FormatString="0"
                                                            Value="{Binding VideoBitrate}"
-                                                           IsEnabled="{Binding IsIdle}"/>
+                                                           IsEnabled="{Binding CanEdit}"/>
                                             <TextBlock Grid.Column="1" Text="{x:Static localization:Strings.VideoConverterWindow_kbps}" FontWeight="Normal" VerticalAlignment="Center"/>
                                         </Grid>
                                     </StackPanel>
@@ -127,10 +127,10 @@
                                     <TextBox Grid.Column="0"
                                              Text="{Binding OutputFolderPath}"
                                              PlaceholderText="{x:Static localization:Strings.VideoConverterWindow_Choose_an_output_folder}"
-                                             IsEnabled="{Binding IsIdle}"/>
+                                             IsEnabled="{Binding CanEdit}"/>
                                     <Button Grid.Column="1"
                                             Command="{Binding BrowseOutputFolderCommand}"
-                                            IsEnabled="{Binding IsIdle}">
+                                            IsEnabled="{Binding CanEdit}">
                                         <TextBlock Text="{x:Static theming:LucideIcons.folder_open}"
                                                    Classes="icon"/>
                                     </Button>
@@ -138,12 +138,12 @@
                                 <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_File_name}"/>
                                 <TextBox Text="{Binding OutputFileName}"
                                          PlaceholderText="{x:Static localization:Strings.VideoConverterWindow_video_output}"
-                                         IsEnabled="{Binding IsIdle}"
+                                         IsEnabled="{Binding CanEdit}"
                                          Margin="0,0,0,8"/>
                                 <TextBlock Classes="path-text"
                                            Text="{Binding OutputFilePath}"
                                            Margin="0,0,0,12"/>
-                                <CheckBox IsChecked="{Binding AutoOpenFolder}" IsEnabled="{Binding IsIdle}">
+                                <CheckBox IsChecked="{Binding AutoOpenFolder}" IsEnabled="{Binding CanEdit}">
                                     <TextBlock Text="{x:Static localization:Strings.VideoConverterWindow_Open_the_output_folder_when_finished}"
                                                FontWeight="Normal"
                                                TextWrapping="Wrap"/>
@@ -169,6 +169,7 @@
                                    VerticalAlignment="Center"/>
                         <Button Grid.Column="1"
                                 Command="{Binding StartEncodingCommand}"
+                                IsEnabled="{Binding CanEdit}"
                                 IsVisible="{Binding IsIdle}"
                                 VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
@@ -180,6 +181,7 @@
                         </Button>
                         <Button Grid.Column="1"
                                 Command="{Binding StopEncodingCommand}"
+                                IsEnabled="{Binding CanStop}"
                                 IsVisible="{Binding IsEncoding}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <TextBlock Text="{x:Static theming:LucideIcons.square_stop}"

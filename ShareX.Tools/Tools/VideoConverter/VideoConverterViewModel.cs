@@ -57,47 +57,22 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     private readonly VideoConverterOptions _options;
     private readonly VideoConversionHandler _conversionHandler;
     private CancellationTokenSource? _cancellationTokenSource;
+    private bool _closed;
 
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(OutputFilePath))]
-    [NotifyPropertyChangedFor(nameof(InputFileDisplay))]
     private string _inputFilePath;
-
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(OutputFilePath))]
     private string _outputFolderPath;
-
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(OutputFilePath))]
     private string _outputFileName;
-
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(OutputFilePath))]
-    [NotifyPropertyChangedFor(nameof(ShowsQualityControls))]
-    [NotifyPropertyChangedFor(nameof(CanChooseRateControl))]
-    [NotifyPropertyChangedFor(nameof(ShowsQualitySlider))]
-    [NotifyPropertyChangedFor(nameof(ShowsBitrate))]
-    [NotifyPropertyChangedFor(nameof(QualityMinimum))]
-    [NotifyPropertyChangedFor(nameof(QualityMaximum))]
     private VideoConverterCodecItem _selectedCodec;
-
-    [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(ShowsQualitySlider))]
-    [NotifyPropertyChangedFor(nameof(ShowsBitrate))]
     private bool _useBitrate;
-
-    [ObservableProperty]
     private double _videoQuality;
-
-    [ObservableProperty]
     private decimal _videoBitrate;
-
-    [ObservableProperty]
     private bool _autoOpenFolder;
 
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(IsIdle))]
     private bool _isEncoding;
+
+    [ObservableProperty]
+    private bool _isSelecting;
 
     [ObservableProperty]
     private double _progress;
@@ -133,7 +108,103 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     public Func<string, Task<string?>>? SelectInputFileRequested { get; set; }
     public Func<string, Task<string?>>? SelectOutputFolderRequested { get; set; }
 
-    public bool IsIdle => !IsEncoding;
+    public bool IsClosed => _closed;
+    public bool IsIdle => !_closed && !IsEncoding;
+    public bool CanEdit => IsIdle && !IsSelecting;
+    public bool CanStop => !_closed && IsEncoding && _cancellationTokenSource is { IsCancellationRequested: false };
+
+    public string InputFilePath
+    {
+        get => _inputFilePath;
+        set
+        {
+            if (CanEdit && SetProperty(ref _inputFilePath, value))
+            {
+                OnPropertyChanged(nameof(InputFileDisplay));
+                OnPropertyChanged(nameof(OutputFilePath));
+                SettingsValueChanged();
+            }
+        }
+    }
+
+    public string OutputFolderPath
+    {
+        get => _outputFolderPath;
+        set
+        {
+            if (CanEdit && SetProperty(ref _outputFolderPath, value))
+            {
+                OnPropertyChanged(nameof(OutputFilePath));
+                SettingsValueChanged();
+            }
+        }
+    }
+
+    public string OutputFileName
+    {
+        get => _outputFileName;
+        set
+        {
+            if (CanEdit && SetProperty(ref _outputFileName, value))
+            {
+                OnPropertyChanged(nameof(OutputFilePath));
+                SettingsValueChanged();
+            }
+        }
+    }
+
+    public VideoConverterCodecItem SelectedCodec
+    {
+        get => _selectedCodec;
+        set
+        {
+            if (CanEdit && value != null && SetProperty(ref _selectedCodec, value))
+            {
+                OnPropertyChanged(nameof(OutputFilePath));
+                OnPropertyChanged(nameof(ShowsQualityControls));
+                OnPropertyChanged(nameof(CanChooseRateControl));
+                OnPropertyChanged(nameof(ShowsQualitySlider));
+                OnPropertyChanged(nameof(ShowsBitrate));
+                OnPropertyChanged(nameof(QualityMinimum));
+                OnPropertyChanged(nameof(QualityMaximum));
+                VideoQuality = Math.Clamp(VideoQuality, QualityMinimum, QualityMaximum);
+                SettingsValueChanged();
+            }
+        }
+    }
+
+    public bool UseBitrate
+    {
+        get => _useBitrate;
+        set
+        {
+            if (CanEdit && SetProperty(ref _useBitrate, value))
+            {
+                OnPropertyChanged(nameof(ShowsQualitySlider));
+                OnPropertyChanged(nameof(ShowsBitrate));
+                SettingsValueChanged();
+            }
+        }
+    }
+
+    public double VideoQuality
+    {
+        get => _videoQuality;
+        set { if (CanEdit && SetProperty(ref _videoQuality, value)) SettingsValueChanged(); }
+    }
+
+    public decimal VideoBitrate
+    {
+        get => _videoBitrate;
+        set { if (CanEdit && SetProperty(ref _videoBitrate, value)) SettingsValueChanged(); }
+    }
+
+    public bool AutoOpenFolder
+    {
+        get => _autoOpenFolder;
+        set { if (CanEdit && SetProperty(ref _autoOpenFolder, value)) SettingsValueChanged(); }
+    }
+
     public string InputFileDisplay => string.IsNullOrWhiteSpace(InputFilePath) ? Localization.Strings.VideoConverterViewModel_No_file_selected : InputFilePath;
     public bool ShowsQualityControls => SelectedCodec.Codec is not (VideoConverterCodec.Gif or VideoConverterCodec.Webp or VideoConverterCodec.Apng);
     public bool CanChooseRateControl => SelectedCodec.Codec is VideoConverterCodec.X264 or VideoConverterCodec.X265 or VideoConverterCodec.Vp8
@@ -169,38 +240,66 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         }
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanEdit))]
     private async Task BrowseInputAsync()
     {
-        if (IsEncoding || SelectInputFileRequested == null)
+        Func<string, Task<string?>>? selectInput = SelectInputFileRequested;
+        if (!CanEdit || selectInput == null)
         {
             return;
         }
 
-        string? filePath = await SelectInputFileRequested(Localization.Strings.VideoConverterViewModel_Select_input_dialog);
-        if (!string.IsNullOrWhiteSpace(filePath))
+        IsSelecting = true;
+        try
         {
-            LoadInput(filePath);
+            if (_closed) return;
+            string? filePath = await selectInput(Localization.Strings.VideoConverterViewModel_Select_input_dialog);
+            if (!_closed && !string.IsNullOrWhiteSpace(filePath))
+            {
+                IsSelecting = false;
+                LoadInput(filePath);
+            }
+        }
+        catch (OperationCanceledException) { }
+        catch (Exception) when (_closed) { }
+        finally
+        {
+            IsSelecting = false;
         }
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanEdit))]
     private async Task BrowseOutputFolderAsync()
     {
-        if (IsEncoding || SelectOutputFolderRequested == null)
+        Func<string, Task<string?>>? selectOutput = SelectOutputFolderRequested;
+        if (!CanEdit || selectOutput == null)
         {
             return;
         }
 
-        string? folderPath = await SelectOutputFolderRequested(Localization.Strings.VideoConverterViewModel_Select_output_dialog);
-        if (!string.IsNullOrWhiteSpace(folderPath))
+        IsSelecting = true;
+        try
         {
-            OutputFolderPath = folderPath;
+            if (_closed) return;
+            string? folderPath = await selectOutput(Localization.Strings.VideoConverterViewModel_Select_output_dialog);
+            if (!_closed && !string.IsNullOrWhiteSpace(folderPath))
+            {
+                IsSelecting = false;
+                OutputFolderPath = folderPath;
+            }
+        }
+        catch (OperationCanceledException) { }
+        catch (Exception) when (_closed) { }
+        finally
+        {
+            IsSelecting = false;
         }
     }
 
     public void LoadInput(string filePath)
     {
+        if (!CanEdit) return;
+
         InputFilePath = filePath;
 
         if (string.IsNullOrWhiteSpace(OutputFolderPath))
@@ -216,10 +315,10 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         StatusText = string.Empty;
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanEdit))]
     private async Task StartEncodingAsync()
     {
-        if (IsEncoding)
+        if (!CanEdit)
         {
             return;
         }
@@ -243,26 +342,38 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         }
 
         PersistSettings();
+        using CancellationTokenSource cancellation = new();
+        _cancellationTokenSource = cancellation;
         IsEncoding = true;
-        Progress = 0;
-        StatusText = Localization.Strings.VideoConverterViewModel_Converting;
-        _cancellationTokenSource = new CancellationTokenSource();
-        IProgress<double> progress = new Progress<double>(value => Progress = Math.Clamp(value, 0, 100));
+        IProgress<double> progress = new Progress<double>(value =>
+        {
+            // Progress can already be queued when Stop, Close or the next job runs.
+            if (!_closed && IsEncoding && ReferenceEquals(_cancellationTokenSource, cancellation) &&
+                !cancellation.IsCancellationRequested)
+            {
+                Progress = Math.Clamp(value, 0, 100);
+            }
+        });
 
         try
         {
+            cancellation.Token.ThrowIfCancellationRequested();
+            Progress = 0;
+            StatusText = Localization.Strings.VideoConverterViewModel_Converting;
             VideoConversionRequest request = new(BuildArguments(), OutputFilePath, AutoOpenFolder);
-            VideoConversionResult result = await _conversionHandler(request, progress, _cancellationTokenSource.Token);
+            cancellation.Token.ThrowIfCancellationRequested();
+            VideoConversionResult result = await _conversionHandler(request, progress, cancellation.Token);
+            if (_closed) return;
 
-            if (result.Succeeded && !result.WasCancelled)
-            {
-                Progress = 100;
-                StatusText = string.Format(Localization.Strings.VideoConverterViewModel_Conversion_complete, OutputFilePath);
-            }
-            else if (result.WasCancelled)
+            if (cancellation.IsCancellationRequested || result.WasCancelled)
             {
                 Progress = 0;
                 StatusText = Localization.Strings.VideoConverterViewModel_Conversion_stopped;
+            }
+            else if (result.Succeeded)
+            {
+                Progress = 100;
+                StatusText = string.Format(Localization.Strings.VideoConverterViewModel_Conversion_complete, request.OutputFilePath);
             }
             else
             {
@@ -274,46 +385,50 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         }
         catch (OperationCanceledException)
         {
+            if (_closed) return;
             Progress = 0;
             StatusText = Localization.Strings.VideoConverterViewModel_Conversion_stopped;
         }
         catch (Exception ex)
         {
+            if (_closed) return;
             Progress = 0;
-            StatusText = string.Format(Localization.Strings.VideoConverterViewModel_Conversion_failed_message, ex.Message);
+            StatusText = cancellation.IsCancellationRequested
+                ? Localization.Strings.VideoConverterViewModel_Conversion_stopped
+                : string.Format(Localization.Strings.VideoConverterViewModel_Conversion_failed_message, ex.Message);
         }
         finally
         {
-            _cancellationTokenSource?.Dispose();
             _cancellationTokenSource = null;
             IsEncoding = false;
         }
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanStop))]
     private void StopEncoding()
     {
-        if (IsEncoding)
+        if (CanStop)
         {
             StatusText = Localization.Strings.VideoConverterViewModel_Stopping;
             _cancellationTokenSource?.Cancel();
+            NotifyActionState();
         }
     }
 
-    partial void OnInputFilePathChanged(string value) => SettingsValueChanged();
-    partial void OnOutputFolderPathChanged(string value) => SettingsValueChanged();
-    partial void OnOutputFileNameChanged(string value) => SettingsValueChanged();
+    partial void OnIsEncodingChanged(bool value) => NotifyActionState();
+    partial void OnIsSelectingChanged(bool value) => NotifyActionState();
 
-    partial void OnSelectedCodecChanged(VideoConverterCodecItem value)
+    private void NotifyActionState()
     {
-        VideoQuality = Math.Clamp(VideoQuality, QualityMinimum, QualityMaximum);
-        SettingsValueChanged();
+        OnPropertyChanged(nameof(IsIdle));
+        OnPropertyChanged(nameof(CanEdit));
+        OnPropertyChanged(nameof(CanStop));
+        BrowseInputCommand.NotifyCanExecuteChanged();
+        BrowseOutputFolderCommand.NotifyCanExecuteChanged();
+        StartEncodingCommand.NotifyCanExecuteChanged();
+        StopEncodingCommand.NotifyCanExecuteChanged();
     }
 
-    partial void OnUseBitrateChanged(bool value) => SettingsValueChanged();
-    partial void OnVideoQualityChanged(double value) => SettingsValueChanged();
-    partial void OnVideoBitrateChanged(decimal value) => SettingsValueChanged();
-    partial void OnAutoOpenFolderChanged(bool value) => SettingsValueChanged();
     private void SettingsValueChanged()
     {
         PersistSettings();
@@ -446,7 +561,11 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
     public void Dispose()
     {
+        if (_closed) return;
+        _closed = true;
+        OnPropertyChanged(nameof(IsClosed));
+        NotifyActionState();
+        // The active job keeps its token valid until its handler really completes.
         _cancellationTokenSource?.Cancel();
-        _cancellationTokenSource?.Dispose();
     }
 }

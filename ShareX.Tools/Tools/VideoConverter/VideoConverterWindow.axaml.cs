@@ -66,8 +66,10 @@ public partial class VideoConverterWindow : Window
 
     private async Task<string?> SelectInputFileAsync(string title)
     {
+        if (_viewModel.IsClosed) return null;
         IStorageFolder? suggestedStartLocation = await GetSuggestedFolderAsync(
             Path.GetDirectoryName(_viewModel.InputFilePath));
+        if (_viewModel.IsClosed) return null;
 
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
@@ -89,7 +91,9 @@ public partial class VideoConverterWindow : Window
 
     private async Task<string?> SelectOutputFolderAsync(string title)
     {
+        if (_viewModel.IsClosed) return null;
         IStorageFolder? suggestedStartLocation = await GetSuggestedFolderAsync(_viewModel.OutputFolderPath);
+        if (_viewModel.IsClosed) return null;
 
         IReadOnlyList<IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {
@@ -113,14 +117,14 @@ public partial class VideoConverterWindow : Window
 
     private void OnDragOver(object? sender, DragEventArgs e)
     {
-        e.DragEffects = _viewModel.IsIdle && e.DataTransfer.Formats.Contains(DataFormat.File)
+        e.DragEffects = _viewModel.CanEdit && e.DataTransfer.Formats.Contains(DataFormat.File)
             ? DragDropEffects.Copy
             : DragDropEffects.None;
     }
 
     private void OnDrop(object? sender, DragEventArgs e)
     {
-        if (!_viewModel.IsIdle)
+        if (!_viewModel.CanEdit)
         {
             return;
         }
