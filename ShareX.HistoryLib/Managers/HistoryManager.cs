@@ -77,6 +77,7 @@ namespace ShareX.HistoryLib
 
         private readonly object backgroundWritesLock = new object();
         private Task backgroundWrites = Task.CompletedTask;
+        private bool backgroundWritesClosed;
 
         /// <summary>
         /// Saves the item on a background thread, after any item queued before it, so uploads finishing together are written in
@@ -86,6 +87,12 @@ namespace ShareX.HistoryLib
         {
             lock (backgroundWritesLock)
             {
+                if (backgroundWritesClosed)
+                {
+                    DebugHelper.WriteLine("History is closing; the item was not saved: " + historyItem?.FileName);
+                    return Task.FromResult(false);
+                }
+
                 Task<bool> write = backgroundWrites.ContinueWith(_ => AppendHistoryItem(historyItem), CancellationToken.None,
                     TaskContinuationOptions.None, TaskScheduler.Default);
                 backgroundWrites = write;
@@ -103,6 +110,24 @@ namespace ShareX.HistoryLib
                 pending = backgroundWrites;
             }
 
+            return WaitForWrites(pending, timeout);
+        }
+
+        /// <summary>
+        /// Stops accepting background writes and returns the task that completes when every accepted write has finished. Nothing can
+        /// be queued behind it afterwards, so it is a stable point to wait for before closing the history.
+        /// </summary>
+        protected Task CloseBackgroundWrites()
+        {
+            lock (backgroundWritesLock)
+            {
+                backgroundWritesClosed = true;
+                return backgroundWrites;
+            }
+        }
+
+        protected static bool WaitForWrites(Task pending, TimeSpan timeout)
+        {
             try
             {
                 return pending.Wait(timeout);

@@ -28,6 +28,8 @@ using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ShareX.HistoryLib
 {
@@ -260,11 +262,40 @@ WHERE Id = @Id;";
             }
         }
 
-        /// <summary>Finishes the writes queued by <see cref="HistoryManager.AppendHistoryItemInBackground"/>, then closes the database.</summary>
+        /// <summary>How long closing waits for queued writes before it leaves the database to close after the last one.</summary>
+        internal TimeSpan CloseTimeout { get; set; } = TimeSpan.FromSeconds(10);
+
+        internal bool IsClosed
+        {
+            get
+            {
+                lock (connectionLock)
+                {
+                    return disposed;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Refuses new background writes, then waits for the accepted ones. If they are still running after <see cref="CloseTimeout"/>,
+        /// the database is not closed under them: it closes when the last one finishes, and the delay is logged.
+        /// </summary>
         public void Dispose()
         {
-            FlushBackgroundWrites(TimeSpan.FromSeconds(10));
+            Task pending = CloseBackgroundWrites();
 
+            if (!WaitForWrites(pending, CloseTimeout))
+            {
+                DebugHelper.WriteLine($"History writes are still running after {CloseTimeout.TotalSeconds:0} seconds; the history database closes when they finish.");
+                pending.ContinueWith(_ => CloseConnection(), CancellationToken.None, TaskContinuationOptions.None, TaskScheduler.Default);
+                return;
+            }
+
+            CloseConnection();
+        }
+
+        private void CloseConnection()
+        {
             lock (connectionLock)
             {
                 if (disposed)

@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -125,13 +126,81 @@ public class HistoryManagerSQLiteTests : IDisposable
     }
 
     [Fact]
-    public void WritesAfterCloseAreRefusedWithoutThrowing()
+    public async Task WritesAfterCloseAreRefusedWithoutThrowing()
     {
         HistoryManagerSQLite manager = new HistoryManagerSQLite(DatabasePath);
         manager.Dispose();
 
         Assert.False(manager.AppendHistoryItem(CreateItem(1)));
-        Assert.False(manager.AppendHistoryItemInBackground(CreateItem(2)).Result);
+        Assert.False(await manager.AppendHistoryItemInBackground(CreateItem(2)));
         manager.Dispose();
+    }
+
+    /// <summary>Holds every write until the test releases it, like a slow disk.</summary>
+    private sealed class SlowHistoryManager(string path) : HistoryManagerSQLite(path)
+    {
+        public ManualResetEventSlim Gate { get; } = new ManualResetEventSlim(false);
+        public ManualResetEventSlim Writing { get; } = new ManualResetEventSlim(false);
+
+        protected override bool Append(string dbPath, IEnumerable<HistoryItem> historyItems)
+        {
+            Writing.Set();
+            Gate.Wait(TimeSpan.FromSeconds(30));
+            return base.Append(dbPath, historyItems);
+        }
+    }
+
+    [Fact]
+    public async Task SlowWriteStillFinishesWhenCloseTimesOut()
+    {
+        SlowHistoryManager manager = new SlowHistoryManager(DatabasePath) { CloseTimeout = TimeSpan.FromMilliseconds(100) };
+        Task<bool> write = manager.AppendHistoryItemInBackground(CreateItem(1));
+        Assert.True(manager.Writing.Wait(TimeSpan.FromSeconds(10)));
+
+        // Returns after the timeout without closing the database under the running write.
+        manager.Dispose();
+        Assert.False(write.IsCompleted);
+
+        manager.Gate.Set();
+        Assert.True(await write.WaitAsync(TimeSpan.FromSeconds(10)));
+
+        HistoryManagerSQLite reopened = await ReopenWhenClosedAsync(manager);
+        Assert.Single(reopened.GetHistoryItems());
+        reopened.Dispose();
+    }
+
+    [Fact]
+    public async Task WritesQueuedWhileClosingAreRefusedAndAcceptedOnesKept()
+    {
+        SlowHistoryManager manager = new SlowHistoryManager(DatabasePath) { CloseTimeout = TimeSpan.FromSeconds(10) };
+        Task<bool> accepted = manager.AppendHistoryItemInBackground(CreateItem(1));
+        Assert.True(manager.Writing.Wait(TimeSpan.FromSeconds(10)));
+
+        Task closing = Task.Run(manager.Dispose);
+        // Let Dispose stop accepting work, then try to queue behind it.
+        await Task.Delay(200);
+        Task<bool> late = manager.AppendHistoryItemInBackground(CreateItem(2));
+
+        manager.Gate.Set();
+        await closing.WaitAsync(TimeSpan.FromSeconds(15));
+
+        Assert.True(await accepted);
+        Assert.False(await late);
+
+        HistoryManagerSQLite reopened = await ReopenWhenClosedAsync(manager);
+        Assert.Equal(["capture-1.png"], reopened.GetHistoryItems().Select(x => x.FileName));
+        reopened.Dispose();
+    }
+
+    /// <summary>Waits until a delayed close has released the database.</summary>
+    private async Task<HistoryManagerSQLite> ReopenWhenClosedAsync(HistoryManagerSQLite closing)
+    {
+        for (int i = 0; i < 100 && !closing.IsClosed; i++)
+        {
+            await Task.Delay(50);
+        }
+
+        Assert.True(closing.IsClosed);
+        return new HistoryManagerSQLite(DatabasePath);
     }
 }

@@ -23,4 +23,7 @@
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="ShareX.HistoryLib.Tests" />
+  </ItemGroup>
 </Project>
