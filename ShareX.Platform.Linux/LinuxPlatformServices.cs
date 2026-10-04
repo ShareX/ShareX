@@ -130,8 +130,7 @@ public sealed class LinuxPlatformServices : IPlatformServices
 
     public ITrayService Tray { get; } = new UnsupportedTrayService();
 
-    public IApplicationLaunchService ApplicationLaunch { get; } =
-        new UnsupportedApplicationLaunchService("Launching ShareX from the browser extension is not available on Linux yet.");
+    public IApplicationLaunchService ApplicationLaunch { get; } = new LinuxApplicationLaunchService();
 
     public void Dispose()
     {

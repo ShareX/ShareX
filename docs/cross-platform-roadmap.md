@@ -46,7 +46,7 @@ When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS wo
 - [ ] R20 Windows-only OCR and R22 no-extra-installations policy implemented in backends, capability reasons, execution guards and packaging.
 - [ ] Individual DirectShow device discovery and Windows recorder-device download/setup are guarded by capabilities: R32 (M contract, J Windows/UI).
 - [ ] Verification pass on GNOME, KDE, sway and an X11 session, at least in virtual machines (M runs flows, J checks UI). Hyprland done.
-- [ ] Browser extension launches ShareX on Linux: R28 (M), after J's R26 contract work.
+- [x] Browser extension launches ShareX on Linux: R28 (M), after J's R26 contract work.
 - [x] Upload history writes are serialized and finished before exit: R29 (M).
 - [ ] Unsupported mouse-highlighter automatic startup is skipped while retaining saved flags: R31 (M).
 - [ ] Scrolling capture on Wayland through the RemoteDesktop portal, or reported unsupported with a reason per desktop (M).
@@ -95,7 +95,6 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 | --- | --- | --- |
 | 2026-10-04 | M | Tell McoreD when G1 and G2 are met and propose the AGENTS.md rewrite that starts the macOS phase, with the G3 list as its tasks. |
 | 2026-10-04 | M | Keep this file current: progress, gates, verification list and change log, in the same push as the work. |
-| 2026-10-04 | M | Do R28 (Linux application launch for the browser extension) and R29 (history write serialization). |
 | 2026-10-04 | M | Run the GNOME, KDE, sway and X11 verification pass and record the results in the verification list. |
 
 ### Kept
@@ -103,6 +102,7 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 | Date | Who | Commitment | Commit |
 | --- | --- | --- | --- |
 | 2026-10-04 | M | GNOME and KDE screen recording through the ScreenCast portal. | `13c86e2bc` |
+| 2026-10-04 | M | R28 (Linux application launch for the browser extension) and R29 (history write serialization). | `288f7a06f`, R28 commit |
 | 2026-10-04 | M | Historical policy edit; superseded by Jaex's explicit Windows-only OCR/no-extra-installations instructions and subsequent AGENTS.md corrections. | `1db33b5b7` (superseded) |
 
 ## Change log
@@ -117,3 +117,4 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, J: B29/J5 mouse-highlighter settings, recording flag and start guards are complete with a reason in all 28 cultures. Manual Stop/stop-after-recording remain available after capability loss, saved unsupported options remain intact and three proper synthetic action regressions pass. Full final Windows Release gate: 0 warnings/errors, 471 pass, 8 Unix-only skips; full translation validation passes. Added R31 to G1 because automatic startup bypasses the task capability guard and still needs an M-owned backend fix. Estimates and actual Windows 10/11/Linux desktop verification gates remain unchanged; B24/R29, B27 original cleanup cause and other backend requests stay open, and macOS stays deferred.
 - 2026-10-04, J: B30/J5 recording task-settings and FFmpeg recording-mode availability/action guards are complete. Saved options remain intact when unsupported, async discovery/file-picker callbacks recheck support, and general conversion mode remains available independently of capture. Four proper synthetic regressions and a 28-culture reason pass. Full Windows Release gate: 0 warnings/errors, 475 pass, 8 Unix-only skips; full translation validation passes. Added R32 to G1 for per-device DirectShow/download capabilities so supported Linux recording cannot expose Windows dependency setup; overall guards do not close that contract/policy gap. Estimates and actual Windows 10/11/Linux desktop verification gates remain unchanged; other requests and B24/B27 causes stay open, and macOS stays deferred.
 - 2026-10-04, M: R29/B24 fixed: history writes are serialized and flushed before the database closes, with a new ShareX.HistoryLib.Tests project. G1 history item ticked.
+- 2026-10-04, M: R28 done: the browser extension host launches ShareX on Linux (cold and warm start verified with framed payloads on Hyprland). G1 browser item ticked; R28/R29 commitment kept.
