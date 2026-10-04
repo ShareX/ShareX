@@ -1,0 +1,62 @@
+{
+  "source": "88be147fc plus H15 TrayIconService UI patch",
+  "build": "dotnet build ShareX.sln -c Release -p:Platform=x64",
+  "warnings": 0,
+  "errors": 0,
+  "SHAREX_TEST_DESKTOP": "1",
+  "projects": [
+    {
+      "project": "ShareX.HistoryLib.Tests",
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "desktop_fixtures": []
+    },
+    {
+      "project": "ShareX.ImageEditor.Tests",
+      "passed": 178,
+      "failed": 0,
+      "skipped": 28,
+      "desktop_fixtures": [
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"early-dialog\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"cold\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"foreign-lifetime\")",
+          "outcome": "Passed"
+        }
+      ]
+    },
+    {
+      "project": "ShareX.ImageEffectsLib.Tests",
+      "passed": 65,
+      "failed": 0,
+      "skipped": 0,
+      "desktop_fixtures": []
+    },
+    {
+      "project": "ShareX.Platform.Tests",
+      "passed": 278,
+      "failed": 0,
+      "skipped": 37,
+      "desktop_fixtures": []
+    },
+    {
+      "project": "ShareX.Tools.Tests",
+      "passed": 104,
+      "failed": 0,
+      "skipped": 2,
+      "desktop_fixtures": []
+    }
+  ],
+  "totals": {
+    "passed": 633,
+    "failed": 0,
+    "skipped": 67
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "mode": "no-host",
+  "scope": "Real full ShareX app on KDE display, private synthetic D-Bus host only; no KDE service/config changes",
+  "events": [
+    {
+      "stage": "no_host_startup_visible",
+      "seconds": 1.408,
+      "host_available": false,
+      "app_alive": true,
+      "windows": [
+        {
+          "window": "0x2800012",
+          "map_state": 2,
+          "size": [
+            918,
+            684
+          ]
+        },
+        {
+          "window": "0x280000f",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        }
+      ]
+    }
+  ],
+  "shutdown_exit": 0,
+  "saved_settings": {
+    "ApplicationConfig.json": true,
+    "UploadersConfig.json": true,
+    "HotkeysConfig.json": true
+  }
+}

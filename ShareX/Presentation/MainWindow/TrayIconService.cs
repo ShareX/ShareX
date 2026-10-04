@@ -204,7 +204,7 @@ internal sealed class DesktopTrayIconService : ITrayIconService
     private sealed record TrayMenuNode(string Header, bool IsSeparator, bool IsEnabled, bool IsChecked, MainMenuToggleType ToggleType,
         Func<System.Threading.Tasks.Task>? ExecuteAsync, System.Collections.Generic.IReadOnlyList<TrayMenuNode>? Children);
 
-    /// <summary>Rebuilds the menu when anything shown in it changed, so an open menu is not replaced needlessly.</summary>
+    /// <summary>Keeps the main window reachable and rebuilds changed menus without replacing an unchanged open menu.</summary>
     private void RefreshNativeMenu()
     {
         if (_disposed || _avaloniaIcon?.Menu == null)
@@ -214,6 +214,12 @@ internal sealed class DesktopTrayIconService : ITrayIconService
 
         try
         {
+            if (!ApplicationLifecycle.IsClosing && MainWindowIntegration.IsInitialized &&
+                !MainWindowIntegration.IsVisible && !ApplicationState.IsTrayUsable)
+            {
+                MainWindowIntegration.Activate();
+            }
+
             System.Collections.Generic.IReadOnlyList<TrayMenuNode> nodes = Expand(new MainMenuBuilder(true).BuildTrayMenu());
             string signature = Describe(nodes);
 

@@ -1,0 +1,36 @@
+{
+  "source": "88be147fc plus H15 TrayIconService UI patch",
+  "method": "Actual application on KDE display with private synthetic D-Bus tray host; no KDE service or configuration changes",
+  "files": [
+    {
+      "name": "baseline-receipt.json",
+      "bytes": 1772,
+      "sha256": "3e03f99b089ca6fbe6f0927bf8d26b2aff56e5083a72cc3638cf3a25e81ef1df"
+    },
+    {
+      "name": "fixed-receipt.json",
+      "bytes": 3128,
+      "sha256": "0724f6ed48889120348765761085565281a046530f686a4e725a5960921450d5"
+    },
+    {
+      "name": "no-host-receipt.json",
+      "bytes": 760,
+      "sha256": "e976697b6aa197559398605c360a6e366920b1f69a7e97d086584092ec9ce3bd"
+    },
+    {
+      "name": "main-recovered.png",
+      "bytes": 56776,
+      "sha256": "e002a728abdd938f461d8fcd3401203ef4db3b474e93a03c54c96e90c2de805c"
+    },
+    {
+      "name": "main-no-host.png",
+      "bytes": 56776,
+      "sha256": "e002a728abdd938f461d8fcd3401203ef4db3b474e93a03c54c96e90c2de805c"
+    },
+    {
+      "name": "gate-results.json",
+      "bytes": 1564,
+      "sha256": "4d3c04787e85a4b4af0149625e9586b18f9a5d2b0adb36294b2e12fa3dddf9a2"
+    }
+  ]
+}

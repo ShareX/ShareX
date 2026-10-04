@@ -1,0 +1,160 @@
+{
+  "mode": "fixed",
+  "scope": "Real full ShareX app on KDE display, private synthetic D-Bus host only; no KDE service/config changes",
+  "events": [
+    {
+      "stage": "initial_silent",
+      "seconds": 2.317,
+      "host_available": true,
+      "app_alive": true,
+      "windows": [
+        {
+          "window": "0x280000f",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        },
+        {
+          "window": "0x2800012",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "host_released",
+      "seconds": 2.335,
+      "host_available": false,
+      "app_alive": true,
+      "windows": [
+        {
+          "window": "0x280000f",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        },
+        {
+          "window": "0x2800012",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "main_recovered",
+      "seconds": 11.007,
+      "host_available": false,
+      "app_alive": true,
+      "windows": [
+        {
+          "window": "0x2800012",
+          "map_state": 2,
+          "size": [
+            918,
+            684
+          ]
+        },
+        {
+          "window": "0x280000f",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "host_returned_window_stays_visible",
+      "seconds": 17.146,
+      "host_available": true,
+      "app_alive": true,
+      "windows": [
+        {
+          "window": "0x2800012",
+          "map_state": 2,
+          "size": [
+            918,
+            684
+          ]
+        },
+        {
+          "window": "0x280000f",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "close_to_tray_after_return",
+      "seconds": 18.197,
+      "host_available": true,
+      "app_alive": true,
+      "windows": [
+        {
+          "window": "0x2800012",
+          "map_state": 0,
+          "size": [
+            918,
+            684
+          ]
+        },
+        {
+          "window": "0x280000f",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "second_host_loss_recovered",
+      "seconds": 26.029,
+      "host_available": false,
+      "app_alive": true,
+      "windows": [
+        {
+          "window": "0x2800012",
+          "map_state": 2,
+          "size": [
+            900,
+            684
+          ]
+        },
+        {
+          "window": "0x280000f",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        }
+      ]
+    }
+  ],
+  "registered_items": [
+    "org.kde.StatusNotifierItem-16703-0/StatusNotifierItem"
+  ],
+  "recovery_seconds": 8.699,
+  "shutdown_exit": 0,
+  "saved_settings": {
+    "ApplicationConfig.json": true,
+    "UploadersConfig.json": true,
+    "HotkeysConfig.json": true
+  }
+}

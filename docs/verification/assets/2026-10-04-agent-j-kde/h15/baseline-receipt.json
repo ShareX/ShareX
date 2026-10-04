@@ -1,0 +1,88 @@
+{
+  "mode": "baseline",
+  "scope": "Real full ShareX app on KDE display, private synthetic D-Bus host only; no KDE service/config changes",
+  "events": [
+    {
+      "stage": "initial_silent",
+      "seconds": 2.316,
+      "host_available": true,
+      "app_alive": true,
+      "windows": [
+        {
+          "window": "0x280000f",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        },
+        {
+          "window": "0x2800012",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "host_released",
+      "seconds": 2.335,
+      "host_available": false,
+      "app_alive": true,
+      "windows": [
+        {
+          "window": "0x280000f",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        },
+        {
+          "window": "0x2800012",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "still_hidden_after_12_seconds",
+      "seconds": 14.454,
+      "host_available": false,
+      "app_alive": true,
+      "windows": [
+        {
+          "window": "0x280000f",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        },
+        {
+          "window": "0x2800012",
+          "map_state": 0,
+          "size": [
+            1438,
+            648
+          ]
+        }
+      ]
+    }
+  ],
+  "registered_items": [
+    "org.kde.StatusNotifierItem-15429-0/StatusNotifierItem"
+  ],
+  "recovery_seconds": null,
+  "shutdown_exit": 0,
+  "saved_settings": {
+    "ApplicationConfig.json": true,
+    "UploadersConfig.json": true,
+    "HotkeysConfig.json": true
+  }
+}
