@@ -75,6 +75,45 @@ namespace ShareX.HistoryLib
             return AppendHistoryItems(new HistoryItem[] { historyItem });
         }
 
+        private readonly object backgroundWritesLock = new object();
+        private Task backgroundWrites = Task.CompletedTask;
+
+        /// <summary>
+        /// Saves the item on a background thread, after any item queued before it, so uploads finishing together are written in
+        /// order and one at a time. <see cref="FlushBackgroundWrites"/> waits for them; closing the history does that first.
+        /// </summary>
+        public Task<bool> AppendHistoryItemInBackground(HistoryItem historyItem)
+        {
+            lock (backgroundWritesLock)
+            {
+                Task<bool> write = backgroundWrites.ContinueWith(_ => AppendHistoryItem(historyItem), CancellationToken.None,
+                    TaskContinuationOptions.None, TaskScheduler.Default);
+                backgroundWrites = write;
+                return write;
+            }
+        }
+
+        /// <summary>Waits for the queued background writes. Returns false when they did not finish within <paramref name="timeout"/>.</summary>
+        public bool FlushBackgroundWrites(TimeSpan timeout)
+        {
+            Task pending;
+
+            lock (backgroundWritesLock)
+            {
+                pending = backgroundWrites;
+            }
+
+            try
+            {
+                return pending.Wait(timeout);
+            }
+            catch (AggregateException e)
+            {
+                DebugHelper.WriteException(e);
+                return true;
+            }
+        }
+
         public bool AppendHistoryItems(IEnumerable<HistoryItem> historyItems)
         {
             try

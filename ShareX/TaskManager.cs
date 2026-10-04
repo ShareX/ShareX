@@ -406,20 +406,10 @@ namespace ShareX
             }
         }
 
+        /// <summary>Queued on the history manager, which finishes queued writes before the history is closed at exit.</summary>
         private static void AppendHistoryItemAsync(HistoryItem historyItem)
         {
-            Task.Run(() =>
-            {
-                try
-                {
-                    ApplicationState.HistoryManager.AppendHistoryItem(historyItem);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                    e.ShowError();
-                }
-            });
+            ApplicationState.HistoryManager?.AppendHistoryItemInBackground(historyItem);
         }
 
         public static void AddRecentTasksToMainWindow()

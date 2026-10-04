@@ -34,6 +34,10 @@ namespace ShareX.HistoryLib
     public class HistoryManagerSQLite : HistoryManager, IDisposable
     {
         private SqliteConnection connection;
+        // One connection serves the history window, uploads finishing in the background and shutdown; SQLite connections are not
+        // thread safe, and closing one during another thread's transaction failed with "cannot rollback - no transaction is active".
+        private readonly object connectionLock = new object();
+        private bool disposed;
 
         public HistoryManagerSQLite(string filePath) : base(filePath)
         {
@@ -86,6 +90,14 @@ CREATE TABLE IF NOT EXISTS History (
 
         internal override List<HistoryItem> Load(string dbPath)
         {
+            lock (connectionLock)
+            {
+                return disposed ? new List<HistoryItem>() : LoadCore(dbPath);
+            }
+        }
+
+        private List<HistoryItem> LoadCore(string dbPath)
+        {
             List<HistoryItem> items = new List<HistoryItem>();
 
             using (SqliteCommand cmd = new SqliteCommand("SELECT * FROM History;", connection))
@@ -116,6 +128,15 @@ CREATE TABLE IF NOT EXISTS History (
         }
 
         protected override bool Append(string dbPath, IEnumerable<HistoryItem> historyItems)
+        {
+            lock (connectionLock)
+            {
+                // A write that arrives after shutdown is reported as not saved instead of failing on a closed connection.
+                return !disposed && AppendCore(historyItems);
+            }
+        }
+
+        private bool AppendCore(IEnumerable<HistoryItem> historyItems)
         {
             using (SqliteTransaction transaction = connection.BeginTransaction())
             {
@@ -149,6 +170,17 @@ SELECT last_insert_rowid();";
         }
 
         public void Edit(HistoryItem item)
+        {
+            lock (connectionLock)
+            {
+                if (!disposed)
+                {
+                    EditCore(item);
+                }
+            }
+        }
+
+        private void EditCore(HistoryItem item)
         {
             using (SqliteTransaction transaction = connection.BeginTransaction())
             using (SqliteCommand cmd = connection.CreateCommand())
@@ -185,6 +217,17 @@ WHERE Id = @Id;";
 
         public void Delete(params HistoryItem[] items)
         {
+            lock (connectionLock)
+            {
+                if (!disposed)
+                {
+                    DeleteCore(items);
+                }
+            }
+        }
+
+        private void DeleteCore(HistoryItem[] items)
+        {
             if (items != null && items.Length > 0)
             {
                 using (SqliteTransaction transaction = connection.BeginTransaction())
@@ -217,13 +260,26 @@ WHERE Id = @Id;";
             }
         }
 
+        /// <summary>Finishes the writes queued by <see cref="HistoryManager.AppendHistoryItemInBackground"/>, then closes the database.</summary>
         public void Dispose()
         {
-            if (connection != null)
+            FlushBackgroundWrites(TimeSpan.FromSeconds(10));
+
+            lock (connectionLock)
             {
-                connection.Close();
-                connection.Dispose();
-                SqliteConnection.ClearPool(connection);
+                if (disposed)
+                {
+                    return;
+                }
+
+                disposed = true;
+
+                if (connection != null)
+                {
+                    connection.Close();
+                    connection.Dispose();
+                    SqliteConnection.ClearPool(connection);
+                }
             }
         }
     }
