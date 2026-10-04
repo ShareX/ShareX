@@ -1,0 +1,42 @@
+[
+  {
+    "path": "3.0.0.1.0.0.0.0.0.0.0.0.5",
+    "role": "menu item",
+    "name": "Copy image to clipboard",
+    "enabled": true,
+    "sensitive": true,
+    "checked": false,
+    "selected": false,
+    "children": 1
+  },
+  {
+    "path": "3.0.0.1.0.0.0.0.0.0.0.0.7",
+    "role": "menu item",
+    "name": "Print image",
+    "enabled": true,
+    "sensitive": true,
+    "checked": false,
+    "selected": false,
+    "children": 1
+  },
+  {
+    "path": "3.0.0.1.0.0.0.0.0.0.0.0.8",
+    "role": "menu item",
+    "name": "Save image to file",
+    "enabled": true,
+    "sensitive": true,
+    "checked": false,
+    "selected": false,
+    "children": 1
+  },
+  {
+    "path": "3.0.0.1.0.0.0.0.0.0.0.0.18",
+    "role": "menu item",
+    "name": "Recognize text (OCR)",
+    "enabled": false,
+    "sensitive": false,
+    "checked": true,
+    "selected": false,
+    "children": 1
+  }
+]

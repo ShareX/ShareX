@@ -1,0 +1,17 @@
+{
+  "tray_entry": {
+    "id": 13,
+    "path": "Enable hotkeys (The desktop does not know ShareX (Could not register app ID: App info not found for 'sharex'). Install ShareX's desktop entry, sharex.desktop, so global hotkeys can be granted.)",
+    "enabled": false
+  },
+  "disabled_tray_event": {
+    "exit": 0,
+    "stdout": "{'id': 13, 'path': \"Enable hotkeys (The desktop does not know ShareX (Could not register app ID: App info not found for 'sharex'). Install ShareX's desktop entry, sharex.desktop, so global hotkeys can be granted.)\", 'enabled': False}\n",
+    "stderr": ""
+  },
+  "disabled_accessibility_action": {
+    "exit": 1,
+    "stdout": "",
+    "stderr": "/home/jaex/.codex/sharex-agent-j/kde-20261004/atspi.py:41: DeprecationWarning: Atspi.Action.get_action_name is deprecated\n  print(json.dumps({'node':r,'actions':[action.get_action_name(i) for i in range(action.get_n_actions())],'result':action.do_action(0)}))\nTraceback (most recent call last):\n  File \"/home/jaex/.codex/sharex-agent-j/kde-20261004/atspi.py\", line 41, in <module>\n    print(json.dumps({'node':r,'actions':[action.get_action_name(i) for i in range(action.get_n_actions())],'result':action.do_action(0)}))\n                                                                                                                     ~~~~~~~~~~~~~~~~^^^\ngi.repository.GLib.GError: atspi_error: Element not enabled. (1)\n"
+  }
+}

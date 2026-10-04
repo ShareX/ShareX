@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia.Threading;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -40,6 +41,7 @@ public sealed class HotkeySettingsViewModel : INotifyPropertyChanged, IDisposabl
     private HotkeySettingsItem? _selectedItem;
     private HotkeySettingsItem? _capturingItem;
     private bool _areHotkeysDisabled;
+    private FeatureSupport _hotkeySupport = FeatureSupport.Supported;
     private bool _isResetConfirmationVisible;
     private bool _disposed;
 
@@ -80,8 +82,18 @@ public sealed class HotkeySettingsViewModel : INotifyPropertyChanged, IDisposabl
     public bool AreHotkeysDisabled
     {
         get => _areHotkeysDisabled;
-        private set => SetField(ref _areHotkeysDisabled, value);
+        private set
+        {
+            if (SetField(ref _areHotkeysDisabled, value))
+            {
+                OnPropertyChanged(nameof(ShowHotkeyStatus));
+            }
+        }
     }
+
+    public bool CanEnableHotkeys => _hotkeySupport.IsSupported;
+    public bool ShowHotkeyStatus => AreHotkeysDisabled || !CanEnableHotkeys;
+    public string? HotkeyUnavailableReason => CanEnableHotkeys ? null : _hotkeySupport.Reason;
 
     public bool IsResetConfirmationVisible
     {
@@ -234,6 +246,12 @@ public sealed class HotkeySettingsViewModel : INotifyPropertyChanged, IDisposabl
 
     public void EnableHotkeys()
     {
+        RefreshHotkeySupport();
+        if (!CanEnableHotkeys)
+        {
+            return;
+        }
+
         _service.EnableHotkeys();
         RefreshAll();
     }
@@ -257,6 +275,7 @@ public sealed class HotkeySettingsViewModel : INotifyPropertyChanged, IDisposabl
 
         SelectedItem = null;
         AreHotkeysDisabled = _service.AreHotkeysDisabled;
+        RefreshHotkeySupport();
         NotifyCollectionStateChanged();
     }
 
@@ -268,6 +287,15 @@ public sealed class HotkeySettingsViewModel : INotifyPropertyChanged, IDisposabl
         }
 
         AreHotkeysDisabled = _service.AreHotkeysDisabled;
+        RefreshHotkeySupport();
+    }
+
+    private void RefreshHotkeySupport()
+    {
+        _hotkeySupport = _service.HotkeySupport;
+        OnPropertyChanged(nameof(CanEnableHotkeys));
+        OnPropertyChanged(nameof(ShowHotkeyStatus));
+        OnPropertyChanged(nameof(HotkeyUnavailableReason));
     }
 
     private void OnServiceStateChanged(object? sender, EventArgs e)

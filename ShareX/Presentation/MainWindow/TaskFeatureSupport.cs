@@ -66,6 +66,9 @@ internal static class TaskFeatureSupport
             PlatformServices.Current.Windows.Support),
 
         HotkeyType.MouseHighlighter => MouseHighlighterWindowViewModel.CurrentToggleSupport,
+        HotkeyType.DisableHotkeys => ApplicationState.SettingsOrNull?.DisableHotkeys == false
+            ? FeatureSupport.Supported
+            : PlatformServices.Current.Hotkeys.Support,
         HotkeyType.VideoConverter or HotkeyType.VideoTrimmer or HotkeyType.VideoThumbnailer =>
             FileMediaFeatureSupport.Get((taskSettings.UseDefaultCaptureSettings ? ApplicationState.DefaultTaskSettings : taskSettings)
                 .CaptureSettings.FFmpegOptions.FFmpegPath),

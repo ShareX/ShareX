@@ -25,6 +25,7 @@
 
 using Avalonia.Threading;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,7 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
     public event EventHandler StateChanged;
 
     public bool AreHotkeysDisabled => InvokeOnMainThread(() => ApplicationState.Settings.DisableHotkeys);
+    public FeatureSupport HotkeySupport => PlatformServices.Current.Hotkeys.Support;
 
     public HotkeySettingsAvaloniaService(HotkeyManager manager, Action closed)
     {
@@ -209,7 +211,13 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
 
     public void EnableHotkeys()
     {
-        InvokeOnMainThread(() => TaskHelpers.ToggleHotkeys(false));
+        InvokeOnMainThread(() =>
+        {
+            if (HotkeySupport.IsSupported)
+            {
+                TaskHelpers.ToggleHotkeys(false);
+            }
+        });
     }
 
     private HotkeySettingsItem CreateItem(HotkeySettings settings)

@@ -98,7 +98,13 @@ internal sealed class MainMenuBuilder
             Item(Strings.MainMenuBuilder_HotkeySettings, LucideIcons.keyboard, () => Run(MainFormCommand.HotkeySettings)),
             Item(ApplicationState.Settings.DisableHotkeys ? Strings.MainMenuBuilder_EnableHotkeys : Strings.MainMenuBuilder_DisableHotkeys,
                 ApplicationState.Settings.DisableHotkeys ? LucideIcons.keyboard : LucideIcons.keyboard_off,
-                () => TaskHelpers.ToggleHotkeys()),
+                () =>
+                {
+                    if (TaskFeatureSupport.Get(HotkeyType.DisableHotkeys).IsSupported)
+                    {
+                        TaskHelpers.ToggleHotkeys();
+                    }
+                }, support: TaskFeatureSupport.Get(HotkeyType.DisableHotkeys)),
             Item(Strings.MainMenuBuilder_DestinationSettings, LucideIcons.cloud_cog, () => Run(MainFormCommand.DestinationSettings), uploadsEnabled),
             Item(Strings.MainMenuBuilder_CustomUploaderSettings, LucideIcons.cloud, () => Run(MainFormCommand.CustomUploaderSettings), uploadsEnabled),
             MainMenuEntry.Separator(),

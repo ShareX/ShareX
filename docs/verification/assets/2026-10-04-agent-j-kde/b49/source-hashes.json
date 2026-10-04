@@ -1,0 +1,10 @@
+{
+  "ShareX/Presentation/HotkeySettings/HotkeySettingsAvaloniaService.cs": "1a1e98bac6a0f8126fb3eaf220c0904d89cd22eb6bdae9d4b37188f9d699532e",
+  "ShareX/Presentation/HotkeySettings/HotkeySettingsIntegration.cs": "c6ad4dcd9f84d2e8b4b286205d47a5d6adee1847ee52c04862c1f7e228ee0d65",
+  "ShareX/Presentation/HotkeySettings/HotkeySettingsModels.cs": "fb18f9ceb44b7ed27173e78d2aa7739dce40284cb25b605c2ce39faa149e52d5",
+  "ShareX/Presentation/HotkeySettings/HotkeySettingsViewModel.cs": "e4deb7e2f0e6e71b8e091f351c921668f88e1fbcee9e21ef9874404b2577485e",
+  "ShareX/Presentation/HotkeySettings/HotkeySettingsWindow.axaml": "fe8056d21ecdbd61a3a6999b2c9faec557bdc99aa49bd55fec4d739837112f12",
+  "ShareX/Presentation/HotkeySettings/HotkeySettingsWindow.axaml.cs": "b5047c9508fec21e1fd5614af41d7c491c1d0e3421bfd2d5ee7da734ae4e263a",
+  "ShareX/Presentation/MainWindow/MainMenuBuilder.cs": "2e13275ee04d9fdedecb3770267b4cca9396676042ea24d190306ce3f609fbca",
+  "ShareX/Presentation/MainWindow/TaskFeatureSupport.cs": "92b3f85c5f633a0546079a18403d9295b20b0e9ff36ac9c73564326ede61c7bf"
+}

@@ -1,0 +1,72 @@
+{
+  "source": "0e586dd61 plus B49 presentation changes",
+  "build": "dotnet build ShareX.sln -c Release -p:Platform=x64",
+  "warnings": 0,
+  "errors": 0,
+  "test_environment": {
+    "SHAREX_TEST_DESKTOP": "1"
+  },
+  "projects": [
+    {
+      "project": "ShareX.HistoryLib.Tests",
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "desktop_cases": []
+    },
+    {
+      "project": "ShareX.ImageEditor.Tests",
+      "passed": 180,
+      "failed": 0,
+      "skipped": 28,
+      "desktop_cases": [
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"os-shutdown-message\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"cold\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"foreign-lifetime\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"early-dialog\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"os-shutdown-editor\")",
+          "outcome": "Passed"
+        }
+      ]
+    },
+    {
+      "project": "ShareX.ImageEffectsLib.Tests",
+      "passed": 65,
+      "failed": 0,
+      "skipped": 0,
+      "desktop_cases": []
+    },
+    {
+      "project": "ShareX.Platform.Tests",
+      "passed": 278,
+      "failed": 0,
+      "skipped": 37,
+      "desktop_cases": []
+    },
+    {
+      "project": "ShareX.Tools.Tests",
+      "passed": 104,
+      "failed": 0,
+      "skipped": 2,
+      "desktop_cases": []
+    }
+  ],
+  "totals": {
+    "passed": 635,
+    "failed": 0,
+    "skipped": 67
+  }
+}

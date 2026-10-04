@@ -1,0 +1,22 @@
+{
+  "baseline_source": "bf89c5ca5 (hotkey UI unchanged through d89561e00)",
+  "global_shortcuts_prerequisite": {
+    "desktop_info_found": false,
+    "global_shortcuts_version": 2,
+    "registration_error": "Could not register app ID: App info not found for 'sharex'"
+  },
+  "enable_button_before": [
+    {
+      "path": "1.1.3.0.0.0.0.1.0.2",
+      "role": "button",
+      "name": "Enable hotkeys",
+      "enabled": true,
+      "sensitive": true,
+      "checked": false,
+      "selected": false,
+      "children": 1
+    }
+  ],
+  "disable_hotkeys_after_click_and_normal_exit": false,
+  "saved_after_capture_flags": "DoOCR"
+}

@@ -26,6 +26,7 @@
 #nullable enable
 
 using ShareX.Localization;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -162,6 +163,7 @@ public interface IHotkeySettingsService : IDisposable
     event EventHandler? StateChanged;
 
     bool AreHotkeysDisabled { get; }
+    FeatureSupport HotkeySupport => FeatureSupport.Supported;
     IReadOnlyList<HotkeySettingsItem> GetItems();
     HotkeySettingsItem Add();
     HotkeySettingsItem Duplicate(HotkeySettingsItem item);

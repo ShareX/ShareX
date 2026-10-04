@@ -1,0 +1,32 @@
+[
+  {
+    "path": "1.1.3.0.0.0.0.1.0.1.0",
+    "role": "label",
+    "name": "Global hotkeys are currently disabled.",
+    "enabled": true,
+    "sensitive": true,
+    "checked": false,
+    "selected": false,
+    "children": 0
+  },
+  {
+    "path": "1.1.3.0.0.0.0.1.0.1.1",
+    "role": "label",
+    "name": "The desktop does not know ShareX (Could not register app ID: App info not found for 'sharex'). Install ShareX's desktop entry, sharex.desktop, so global hotkeys can be granted.",
+    "enabled": true,
+    "sensitive": true,
+    "checked": false,
+    "selected": false,
+    "children": 0
+  },
+  {
+    "path": "1.1.3.0.0.0.0.1.0.2",
+    "role": "button",
+    "name": "Enable hotkeys",
+    "enabled": false,
+    "sensitive": false,
+    "checked": false,
+    "selected": false,
+    "children": 1
+  }
+]

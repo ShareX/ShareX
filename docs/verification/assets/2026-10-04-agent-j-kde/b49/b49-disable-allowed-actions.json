@@ -1,0 +1,9 @@
+{
+  "tray_entry_before": {
+    "id": 13,
+    "path": "Disable hotkeys",
+    "enabled": true
+  },
+  "action_exit": 0,
+  "stdout": "{'id': 13, 'path': 'Disable hotkeys', 'enabled': True}\n"
+}

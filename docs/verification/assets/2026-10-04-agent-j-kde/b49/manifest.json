@@ -1,0 +1,74 @@
+{
+  "README.md": {
+    "bytes": 1138,
+    "sha256": "0da2a7921af7c2dac625c82661bb8c7bb0a64c1dcbde4bdee1f820e1a3b3eca6"
+  },
+  "after-capture-menu-tree.json": {
+    "bytes": 869,
+    "sha256": "f4cda70cff4e0cbe0d8d7a38185a67b0507a7be78e13efc5dbc90bf8df8c3622"
+  },
+  "b49-disable-allowed-actions.json": {
+    "bytes": 190,
+    "sha256": "5531681724335df2e90ab585899e9b3d0bad652e80acd6b16cfefb27cd18a77b"
+  },
+  "b49-disable-allowed-persistence.json": {
+    "bytes": 72,
+    "sha256": "a8d569ca5d02f7d03056d324270ea43d98f6ad5e936aef647f39f36914b390ae"
+  },
+  "b49-disabled-actions.json": {
+    "bytes": 1413,
+    "sha256": "3b60c6bbf44d2dfc8f81ed1b353c78af7fa4218373e5ce5de211833ec09e84d1"
+  },
+  "b49-disabled-persistence.json": {
+    "bytes": 72,
+    "sha256": "a8d569ca5d02f7d03056d324270ea43d98f6ad5e936aef647f39f36914b390ae"
+  },
+  "b49-final-disabled-tree.json": {
+    "bytes": 802,
+    "sha256": "87cc1b78cc448413879358fd845ea0b9e644fb3a6491fed9caab30328d4ce4ab"
+  },
+  "b49-final-disabled.png": {
+    "bytes": 30892,
+    "sha256": "22495672ea84a7a96f65ed153a360557cafaf92997c67a274016f1ef362e39fa"
+  },
+  "b49-retained-enabled-persistence.json": {
+    "bytes": 73,
+    "sha256": "8a5335fc571bd3adc5458885715f4d7662f3b740e676045d35e33ce4d8cc64ee"
+  },
+  "b49-retained-enabled-tree.json": {
+    "bytes": 369,
+    "sha256": "47b1b59d95cefac3fe7dd7883d6815d31ed182285e25eb3804968286a5c96886"
+  },
+  "b49-retained-enabled.png": {
+    "bytes": 25873,
+    "sha256": "9432d97b65238868722dcb676bf432520b68b2339d81aa0f955c798e132975db"
+  },
+  "clipboard-qr-wayland.json": {
+    "bytes": 115,
+    "sha256": "e61f0ba74f7ce797302a0ac4bcde6c33333f56dd3e5818bdd900be906eca64d1"
+  },
+  "clipboard-qr-wayland.png": {
+    "bytes": 2276,
+    "sha256": "1adc2f1b4bea5f813f2b3695cacf11d1c3cb325508af6b83a841d41f7aa1d253"
+  },
+  "gate-results.json": {
+    "bytes": 1956,
+    "sha256": "d0e26191ffbd4e24b349d8e031dfeb53d7cd4088302fe7b86b9fa6a73e074d07"
+  },
+  "hotkey-baseline-receipt.json": {
+    "bytes": 625,
+    "sha256": "942db6b6ecf1de57ebfe94941006af77a3c4b46e07a61401919a4e6fda4db6ba"
+  },
+  "hotkey-prerequisite.json": {
+    "bytes": 153,
+    "sha256": "0206581ab6cb58d95b7e47cbc3d61d1d663b744bc429118fc46ac79f364a91a1"
+  },
+  "hotkeys-after-enable.png": {
+    "bytes": 13793,
+    "sha256": "b56ab3c95599596f14c7d69c7b78286e9bdca50697022fffe682121b7a05714d"
+  },
+  "source-hashes.json": {
+    "bytes": 1070,
+    "sha256": "bb8e7a1d9110ba596185cf60245243a09eb08e54c1aff8d3345b787684c673a9"
+  }
+}

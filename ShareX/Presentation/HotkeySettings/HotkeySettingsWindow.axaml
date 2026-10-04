@@ -120,7 +120,7 @@
                 </Border>
 
                 <Border Grid.Row="1"
-                        IsVisible="{Binding AreHotkeysDisabled}"
+                        IsVisible="{Binding ShowHotkeyStatus}"
                         Background="{DynamicResource ShareX.Brush.Control.Background}"
                         BorderBrush="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
                         BorderThickness="1"
@@ -131,11 +131,20 @@
                                    Text="{x:Static theming:LucideIcons.triangle_alert}"
                                    Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
                                    FontSize="18"/>
-                        <TextBlock Grid.Column="1"
-                                   Text="{x:Static res:Strings.HotkeySettingsWindow_GlobalHotkeysAreCurrentlyDisabled}"
-                                   FontWeight="Normal"
-                                   VerticalAlignment="Center"/>
-                        <Button Grid.Column="2" Classes="compact" Click="OnEnableHotkeysClick" Content="{x:Static res:Strings.HotkeySettingsWindow_EnableHotkeys}"/>
+                        <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                            <TextBlock Text="{x:Static res:Strings.HotkeySettingsWindow_GlobalHotkeysAreCurrentlyDisabled}"
+                                       IsVisible="{Binding AreHotkeysDisabled}"
+                                       FontWeight="Normal"/>
+                            <TextBlock Text="{Binding HotkeyUnavailableReason}"
+                                       IsVisible="{Binding !CanEnableHotkeys}"
+                                       TextWrapping="Wrap"/>
+                        </StackPanel>
+                        <Button Grid.Column="2" Classes="compact" Click="OnEnableHotkeysClick"
+                                Content="{x:Static res:Strings.HotkeySettingsWindow_EnableHotkeys}"
+                                IsVisible="{Binding AreHotkeysDisabled}"
+                                IsEnabled="{Binding CanEnableHotkeys}"
+                                ToolTip.Tip="{Binding HotkeyUnavailableReason}"
+                                ToolTip.ShowOnDisabled="True"/>
                     </Grid>
                 </Border>
 
