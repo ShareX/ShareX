@@ -41,6 +41,12 @@ public interface ISystemInfoService
     bool IsTabletMode { get; }
 
     /// <summary>
+    /// Whether the usual keyboard has a Print Screen key, which ShareX's default hotkeys use. Mac keyboards do not, so macOS gets
+    /// defaults modelled on its own screenshot keys.
+    /// </summary>
+    bool KeyboardHasPrintScreen => true;
+
+    /// <summary>
     /// The hardware GPU for machine learning (the background remover): the one with the most dedicated memory, numbered as DirectML
     /// numbers adapters. Null where ShareX runs models on the CPU only (Linux and macOS).
     /// </summary>

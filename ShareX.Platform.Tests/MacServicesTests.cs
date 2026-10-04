@@ -174,4 +174,14 @@ public class MacServicesTests
 
         Assert.Contains(new PlatformPoint(123, 77), listener.Moves);
     }
+
+    [Fact]
+    public void Keyboard_MacsHaveNoPrintScreenKey()
+    {
+        ISystemInfoService mac = new MacSystemInfoService(new RecordingRunner());
+        ISystemInfoService linux = new ShareX.Platform.Linux.UnixSystemInfoService(new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.X11, DesktopEnvironment.Xfce, "XFCE", false), new RecordingRunner());
+
+        Assert.False(mac.KeyboardHasPrintScreen);
+        Assert.True(linux.KeyboardHasPrintScreen);
+    }
 }
