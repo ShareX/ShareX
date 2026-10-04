@@ -184,4 +184,54 @@ public class MacServicesTests
         Assert.False(mac.KeyboardHasPrintScreen);
         Assert.True(linux.KeyboardHasPrintScreen);
     }
+
+    [MacOSFact]
+    public void Clipboard_RoundTripsTextAndImage()
+    {
+        if (!OperatingSystem.IsMacOS()) return;
+        MacClipboardService clipboard = new MacClipboardService();
+        byte[] png = Convert.FromBase64String(TextImage);
+
+        Assert.True(clipboard.SetTextAsync("ShareX ✓ clipboard").GetAwaiter().GetResult());
+        Assert.Equal("ShareX ✓ clipboard", clipboard.GetTextAsync().GetAwaiter().GetResult());
+        Assert.True(clipboard.SetImageAsync(png).GetAwaiter().GetResult());
+        byte[]? image = clipboard.GetImageAsync().GetAwaiter().GetResult();
+        Assert.NotNull(image);
+        Assert.Equal(new byte[] { 0x89, 0x50, 0x4E, 0x47 }, image![..4]);
+    }
+
+    [MacOSFact]
+    public void Keychain_StoresReadsAndDeletes()
+    {
+        if (!OperatingSystem.IsMacOS()) return;
+        KeychainCredentialService keychain = new KeychainCredentialService();
+        string account = "test-" + Guid.NewGuid().ToString("N");
+
+        Assert.True(keychain.Support.IsSupported, keychain.Support.Reason);
+        Assert.True(keychain.StoreAsync("ShareX-test", account, "secret ✓").GetAwaiter().GetResult());
+        Assert.Equal("secret ✓", keychain.GetAsync("ShareX-test", account).GetAwaiter().GetResult());
+        Assert.True(keychain.DeleteAsync("ShareX-test", account).GetAwaiter().GetResult());
+        Assert.Null(keychain.GetAsync("ShareX-test", account).GetAwaiter().GetResult());
+    }
+
+    /// <summary>Screen capture needs the Screen Recording permission, which a CI runner may not grant; the result is reported either way.</summary>
+    [MacOSFact]
+    public void ScreenCapture_TakesTheScreenOrReportsThePermission()
+    {
+        if (!OperatingSystem.IsMacOS()) return;
+        MacScreenCaptureService capture = new MacScreenCaptureService(CommandRunner.Default);
+
+        Assert.NotEmpty(capture.GetScreens());
+
+        if (!capture.Support.IsSupported)
+        {
+            Assert.False(string.IsNullOrWhiteSpace(capture.Support.Reason));
+            Console.WriteLine("Screen capture not permitted on this runner: " + capture.Support.Reason);
+            return;
+        }
+
+        ScreenCaptureResult result = capture.CaptureAsync(new ScreenCaptureRequest { Mode = ScreenCaptureMode.FullScreen }).GetAwaiter().GetResult();
+        Assert.Equal(new byte[] { 0x89, 0x50, 0x4E, 0x47 }, result.Png[..4]);
+        Console.WriteLine($"Captured {result.Bounds.Width}x{result.Bounds.Height} with {result.Backend}");
+    }
 }
