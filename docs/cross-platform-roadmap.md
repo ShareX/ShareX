@@ -136,3 +136,5 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, J: Combined-source claim gate passes after R31/R33/R32: full Windows Release solution build 0 warnings/errors; all five proper test projects pass (497 pass, 10 Unix/Linux-only skips), with strict application/native/loopback-history fixtures enabled. W11/H11 and B32 claims/requests can be pushed before implementation. No actual desktop gate or estimate changes.
 
 - 2026-10-04, J: B33 claimed for R33 frontend alignment with conditional auto-top inputs and backend failure presentation. Retained M's new X11 code and actual rootful-Xwayland/Hyprland reports, including the need for window-manager/compositor verification. Current W11/H11 work takes priority before B32; history exit and actual desktop gates remain open, estimates unchanged.
+
+- 2026-10-04, J: Final claim gate after X11 integration passes: full Windows Release build 0 warnings/errors, all five test projects 499 pass / 12 Unix/Linux-only skips, strict application/native/local-history fixtures enabled. W11/H11, B33 and B32 are claimed before code; actual desktop gates and estimates remain unchanged.
