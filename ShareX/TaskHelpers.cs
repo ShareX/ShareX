@@ -1155,7 +1155,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (!CheckFFmpeg(taskSettings))
+            if (!CheckFileMediaTools(taskSettings))
             {
                 return;
             }
@@ -1169,7 +1169,7 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                if (!CheckFFmpeg(taskSettings))
+                if (!CheckFileMediaTools(taskSettings))
                 {
                     return;
                 }
@@ -1228,7 +1228,7 @@ namespace ShareX
         public static void OpenVideoTrimmer(TaskSettings taskSettings = null, string inputFilePath = null)
         {
             taskSettings ??= TaskSettings.GetDefaultTaskSettings();
-            if (CheckFFmpeg(taskSettings))
+            if (CheckFileMediaTools(taskSettings))
             {
                 ToolsIntegration.ShowVideoTrimmerWindow(
                     taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
@@ -1241,7 +1241,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (!CheckFFmpeg(taskSettings))
+            if (!CheckFileMediaTools(taskSettings))
             {
                 return;
             }
@@ -2157,6 +2157,24 @@ namespace ShareX
             {
                 ShowNotificationTip(disableHotkeys ? Strings.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Strings.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_);
             }
+        }
+
+        /// <summary>
+        /// For the file video tools: the platform must support them (R41), then the usual FFmpeg checks apply. Used by the menu, hotkey,
+        /// command line and file-open paths alike.
+        /// </summary>
+        public static bool CheckFileMediaTools(TaskSettings taskSettings)
+        {
+            FeatureSupport support = PlatformServices.Current.ScreenRecording.GetFileMediaSupport(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath);
+
+            if (!support.IsSupported)
+            {
+                DebugHelper.WriteLine("Video tools unavailable: " + support.Reason);
+                MessageBox.Show(support.Reason, "ShareX - " + Strings.FFmpegIsMissing, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return CheckFFmpeg(taskSettings);
         }
 
         public static bool CheckFFmpeg(TaskSettings taskSettings)

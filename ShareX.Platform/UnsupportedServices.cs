@@ -189,6 +189,8 @@ public sealed class UnsupportedScreenRecordingService(string reason) : IScreenRe
     public string GetDefaultFFmpegPath(string applicationDirectory) => System.IO.Path.Combine(applicationDirectory, "ffmpeg");
 
     public FeatureSupport GetDeviceActionSupport(RecordingDeviceAction action) => Support;
+
+    public FeatureSupport GetFileMediaSupport(string ffmpegPath) => Support;
 }
 
 public sealed class UnsupportedOcrService(string reason) : IOcrService

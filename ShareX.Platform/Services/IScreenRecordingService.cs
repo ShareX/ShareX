@@ -101,6 +101,12 @@ public interface IScreenRecordingService
     /// </summary>
     FeatureSupport GetDeviceActionSupport(RecordingDeviceAction action);
 
+    /// <summary>
+    /// Whether the file video tools (converter, trimmer, thumbnailer) can run with the FFmpeg at <paramref name="ffmpegPath"/>.
+    /// Independent of <see cref="Support"/>: they need no screen access. Windows offers to download a missing FFmpeg.
+    /// </summary>
+    FeatureSupport GetFileMediaSupport(string ffmpegPath);
+
     /// <summary>FFmpeg input devices usable on this platform, most preferred first.</summary>
     IReadOnlyList<string> GetSupportedDevices();
 

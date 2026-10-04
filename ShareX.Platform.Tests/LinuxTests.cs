@@ -1130,3 +1130,29 @@ public class LinuxDesktopIconsTests
         Assert.False(shell.SetDesktopIconsVisible(false));
     }
 }
+
+public class FileMediaSupportTests
+{
+    private static readonly PlatformInfo Gnome = new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.Wayland, DesktopEnvironment.Gnome, "GNOME", false);
+
+    [Fact]
+    public void VideoTools_FollowFFmpegNotRecordingSupport()
+    {
+        string chosen = Path.Combine(Path.GetTempPath(), "sharex-ffmpeg-" + Guid.NewGuid().ToString("N"));
+
+        Assert.True(new LinuxScreenRecordingService(Gnome, new RecordingRunner("ffmpeg"), () => []).GetFileMediaSupport("").IsSupported);
+        FeatureSupport missing = new LinuxScreenRecordingService(Gnome, new RecordingRunner(), () => []).GetFileMediaSupport(chosen);
+        Assert.False(missing.IsSupported);
+        Assert.Contains("ffmpeg", missing.Reason, StringComparison.OrdinalIgnoreCase);
+
+        File.WriteAllText(chosen, "");
+        try
+        {
+            Assert.True(new LinuxScreenRecordingService(Gnome, new RecordingRunner(), () => []).GetFileMediaSupport(chosen).IsSupported);
+        }
+        finally
+        {
+            File.Delete(chosen);
+        }
+    }
+}
