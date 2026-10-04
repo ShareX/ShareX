@@ -44,13 +44,13 @@ When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS wo
 - [x] Application starts, runs and exits cleanly on Linux (settings saved on SIGTERM).
 - [ ] Recording verified on every supported Wayland desktop. Implementations exist (`13c86e2bc`); M reports Hyprland verification, while GNOME/KDE/sway desktop verification and R22 dependency compliance remain outstanding.
 - [ ] R20 Windows-only OCR and R22 no-extra-installations policy implemented in backends, capability reasons, execution guards and packaging.
-- [ ] Individual DirectShow device discovery and Windows recorder-device download/setup are guarded by capabilities: R32 contract done (M); H11 UI switch and W11 review claimed (J, 2026-10-04).
+- [x] Individual DirectShow discovery and Windows recorder-device download are guarded by capabilities: R32 contract (M), W11 Windows parity review and H11 guarded UI (J, 2026-10-04), with eight new proper tests.
 - [ ] Verification pass on GNOME, KDE, sway and an X11 session, at least in virtual machines (M runs flows, J checks UI). Hyprland done.
 - [x] Browser extension launches ShareX on Linux: R28 (M), after J's R26 contract work; M verified cold/warm framed payloads on Hyprland (a516a5b5c), other desktop flows remain in the verification pass.
 - [ ] Upload history writes are serialized and finished before exit: R29 serialization and R34 sealed queue/deferred connection close are implemented; R38 still requires the application lifetime to await accepted writes through process exit.
 - [x] Unsupported mouse-highlighter automatic startup is skipped while retaining saved flags: R31 (M); controlled coverage added, actual desktop startup remains in the verification pass.
 - [ ] Expected desktop shortcut conflicts do not block startup browser/CLI actions while preserving interactive Windows warnings: R36 (M startup/policy, J presentation).
-- [ ] Scrolling capture support and failure reasons verified per desktop: B31 frontend and R33 backend guards are implemented; B33 claimed for J to align the UI with FailureReason and supported auto-top inputs. The per-desktop support table is in docs/cross-platform.md; actual desktop verification remains open.
+- [ ] Scrolling capture support and failure reasons verified per desktop: B31 frontend and R33 backend guards are implemented; B33 frontend alignment with FailureReason and supported auto-top inputs is complete, with four portable input-combination cases. The per-desktop support table is in docs/cross-platform.md; actual desktop verification remains open.
 - [ ] Mixed-scale multi-monitor capture and overlays (rest of R12; M backend, J overlays).
 - [ ] Mouse highlighter and overlays on X11; reported unsupported on Wayland (M hook and overlay surface, J drawing). M: hook and overlay done and tested on a real X server; drawing verification on a composited X11 desktop remains (VM).
 - [ ] Linux feature verification list below is all ticked.
@@ -139,3 +139,7 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 
 - 2026-10-04, J: Final claim gate after X11 integration passes: full Windows Release build 0 warnings/errors, all five test projects 499 pass / 12 Unix/Linux-only skips, strict application/native/local-history fixtures enabled. W11/H11, B33 and B32 are claimed before code; actual desktop gates and estimates remain unchanged.
 - 2026-10-04, M: Linux packaging (tar.gz + installer) and the manual Linux CI workflow; personal folder fix for homes without ~/Documents.
+
+- 2026-10-04, J: W11/H11 per-device FFmpeg capability UI and Windows parity review complete; guarded discovery/download, preserved unavailable saved source names/platform sources and late-result/busy/close checks covered by eight new proper tests. B33 aligns auto-top with R33 conditional inputs and presents FailureReason, with four portable input combinations covered; actual desktop scrolling remains open. Device-action G1 implementation item ticked; history process-exit, backend scope, startup/Store migration and actual Windows 10/11/Linux desktop gates remain open, estimates unchanged and macOS deferred. Full final gate follows before push.
+
+- 2026-10-04, J: Final W11/H11/B33 Windows Release gate: 0 warnings/errors, 511 pass / 12 Unix/Linux-only skips across all five proper test projects, including strict native/application/local-history checks. Resources unchanged. B32, backend policy/startup/Store/history-exit requests and actual desktop sign-off remain open; estimates unchanged.

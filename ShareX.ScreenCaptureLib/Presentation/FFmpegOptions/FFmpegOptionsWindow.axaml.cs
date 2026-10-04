@@ -46,6 +46,7 @@ public partial class FFmpegOptionsWindow : Window
     private bool _updatingCommandPreview;
     private bool _closed;
     private readonly FFmpegOptionsWindowViewModel _availability;
+    private readonly bool _allowDeviceDownload = true;
 
     public ScreenRecordingOptions Options { get; }
 
@@ -71,11 +72,12 @@ public partial class FFmpegOptionsWindow : Window
         RefreshAvailability();
 
 #if MicrosoftStore
+        _allowDeviceDownload = false;
         DownloadRecorderDevicesButton.IsVisible = false;
 #endif
 
         Opened += OnOpened;
-        Closed += (_, _) => _closed = true;
+        Closed += (_, _) => { _closed = true; _availability.Close(); };
     }
 
     private void PopulateLists()
@@ -160,8 +162,18 @@ public partial class FFmpegOptionsWindow : Window
             Options.FFmpeg.CLIPath = FFmpegPathTextBox.Text ?? string.Empty;
         });
         BrowseFFmpegButton.Click += async (_, _) => await BrowseForFFmpegAsync();
-        RefreshDevicesButton.Click += async (_, _) => await RefreshSourcesAsync();
-        DownloadRecorderDevicesButton.Click += (_, _) => RunSupported(() => URLHelpers.OpenURL(RecorderDevicesUrl));
+        RefreshDevicesButton.Click += async (_, _) =>
+        {
+            if (_availability.GetDeviceActionSupport(RecordingDeviceAction.ListDirectShowDevices).IsSupported)
+                await RefreshSourcesAsync();
+            else RefreshAvailability();
+        };
+        DownloadRecorderDevicesButton.Click += (_, _) =>
+        {
+            if (!_allowDeviceDownload) return;
+            if (!_availability.TryDeviceAction(RecordingDeviceAction.InstallRecorderDevices, () => URLHelpers.OpenURL(RecorderDevicesUrl)))
+                RefreshAvailability();
+        };
 
         VideoSourceComboBox.SelectionChanged += (_, _) => UpdateOption(() =>
         {
@@ -349,15 +361,23 @@ public partial class FFmpegOptionsWindow : Window
 
     private async Task RefreshSourcesAsync(bool selectRecorderDevices = false)
     {
-        if (_closed || !RefreshAvailability()) return;
+        if (_closed || _availability.IsReadingDevices || !RefreshAvailability()) return;
+        if (!_availability.GetDeviceActionSupport(RecordingDeviceAction.ListDirectShowDevices).IsSupported)
+        {
+            ApplyDevices(Options.FFmpeg.FFmpegPath, null, null, false);
+            return;
+        }
         RefreshDevicesButton.IsEnabled = false;
         DeviceStatusTextBlock.Text = Localization.Strings.FFmpegOptionsWindow_Looking_for_devices;
 
-        bool applied = await _availability.TryReadAsync(ReadDevicesAsync, result =>
+        bool applied = await _availability.TryReadDevicesAsync(ReadDevicesAsync, result =>
         {
             if (!_closed) ApplyDevices(result.Path, result.Devices, result.Error, selectRecorderDevices);
         });
-        if (!applied && !_closed) RefreshAvailability();
+        if (_closed) return;
+        if (!applied && _availability.Support.IsSupported)
+            ApplyDevices(Options.FFmpeg.FFmpegPath, null, null, false);
+        RefreshAvailability();
     }
 
     private async Task<(string Path, DirectShowDevices? Devices, Exception? Error)> ReadDevicesAsync()
@@ -370,7 +390,7 @@ public partial class FFmpegOptionsWindow : Window
         {
             await Task.Run(() =>
             {
-                if (_closed || !_availability.Support.IsSupported) return;
+                if (_closed || !_availability.GetDeviceActionSupport(RecordingDeviceAction.ListDirectShowDevices).IsSupported) return;
                 try
                 {
                     using FFmpegCLIManager ffmpeg = new(ffmpegPath);
@@ -388,7 +408,7 @@ public partial class FFmpegOptionsWindow : Window
 
     private void ApplyDevices(string ffmpegPath, DirectShowDevices? devices, Exception? discoveryError, bool selectRecorderDevices)
     {
-        // The screen devices this platform records with: gdigrab and ddagrab on Windows, x11grab on Linux, avfoundation on macOS.
+        // Screen devices come from the platform independently of DirectShow discovery.
         List<FFmpegCaptureDevice> videoSources = [FFmpegCaptureDevice.None];
         IReadOnlyList<string> platformDevices = PlatformServices.Current.ScreenRecording.GetSupportedDevices();
         videoSources.AddRange(platformDevices.Select(FFmpegCaptureDevice.FromPlatformDevice));
@@ -409,7 +429,7 @@ public partial class FFmpegOptionsWindow : Window
         }
         else if (!videoSources.Any(x => EqualsSource(x, options.VideoSource)))
         {
-            options.VideoSource = defaultVideoSource;
+            options.VideoSource = _availability.ResolveSelectedSource(videoSources, options.VideoSource, defaultVideoSource).Value;
         }
 
         if (selectRecorderDevices && audioSources.Any(x => EqualsSource(x, FFmpegCaptureDevice.VirtualAudioCapturer.Value)))
@@ -418,7 +438,7 @@ public partial class FFmpegOptionsWindow : Window
         }
         else if (!audioSources.Any(x => EqualsSource(x, options.AudioSource)))
         {
-            options.AudioSource = FFmpegCaptureDevice.None.Value;
+            options.AudioSource = _availability.ResolveSelectedSource(audioSources, options.AudioSource, FFmpegCaptureDevice.None.Value).Value;
         }
 
         bool wasLoaded = _settingsLoaded;
@@ -429,7 +449,12 @@ public partial class FFmpegOptionsWindow : Window
         AudioSourceComboBox.SelectedItem = audioSources.First(x => EqualsSource(x, options.AudioSource));
         _settingsLoaded = wasLoaded;
 
-        if (!File.Exists(ffmpegPath))
+        FeatureSupport discoverySupport = _availability.GetDeviceActionSupport(RecordingDeviceAction.ListDirectShowDevices);
+        if (!discoverySupport.IsSupported)
+        {
+            DeviceStatusTextBlock.Text = discoverySupport.Reason;
+        }
+        else if (!File.Exists(ffmpegPath))
         {
             DeviceStatusTextBlock.Text = string.Format(Localization.Strings.FFmpegOptionsWindow_FFmpeg_not_found, ffmpegPath);
         }
@@ -451,7 +476,6 @@ public partial class FFmpegOptionsWindow : Window
             };
         }
 
-        RefreshDevicesButton.IsEnabled = true;
         UpdateUI();
     }
 
@@ -601,6 +625,12 @@ public partial class FFmpegOptionsWindow : Window
         FeatureSupport support = _availability.Support;
         OptionsContent.IsEnabled = support.IsSupported;
         ToolTip.SetTip(AvailabilitySurface, support.IsSupported ? null : support.Reason);
+        FeatureSupport discovery = _availability.GetDeviceActionSupport(RecordingDeviceAction.ListDirectShowDevices);
+        FeatureSupport download = _availability.GetDeviceActionSupport(RecordingDeviceAction.InstallRecorderDevices);
+        RefreshDevicesButton.IsEnabled = !_availability.IsReadingDevices && discovery.IsSupported;
+        DownloadRecorderDevicesButton.IsEnabled = _allowDeviceDownload && download.IsSupported;
+        ToolTip.SetTip(RefreshDevicesSurface, discovery.IsSupported ? null : discovery.Reason);
+        ToolTip.SetTip(RecorderDevicesSurface, download.IsSupported ? null : download.Reason);
         if (!support.IsSupported) DeviceStatusTextBlock.Text = support.Reason;
         return support.IsSupported;
     }

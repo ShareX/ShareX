@@ -210,6 +210,8 @@ public partial class ScrollingCaptureWindow : Window
             ScrollingCaptureStatus status = await _service.StartCaptureAsync();
             if (_viewModel.IsClosed) return;
             SetStatus(status);
+            if (status == ScrollingCaptureStatus.Failed && !string.IsNullOrWhiteSpace(_service.FailureReason))
+                StatusText.Text = _service.FailureReason;
             _playNotificationSound?.Invoke();
         }
         catch (Exception ex)

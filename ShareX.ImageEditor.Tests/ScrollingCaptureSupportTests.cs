@@ -33,6 +33,24 @@ namespace ShareX.ImageEditor.Tests;
 
 public sealed class ScrollingCaptureSupportTests
 {
+    [Theory]
+    [InlineData(false, false, false)]
+    [InlineData(true, false, true)]
+    [InlineData(false, true, true)]
+    [InlineData(true, true, true)]
+    public void AutoTopMatchesTheBackendsOptionalInputs(bool keyboard, bool windowScroll, bool expected)
+    {
+        FeatureSupport support = ScrollingCaptureWindowViewModel.GetAutoScrollTopSupport(
+            keyboard ? FeatureSupport.Supported : FeatureSupport.NotSupported("No keyboard input."),
+            windowScroll ? FeatureSupport.Supported : FeatureSupport.NotSupported("No window scroll."));
+        ScrollingCaptureWindowViewModel viewModel = new(_ => FeatureSupport.Supported, () => support);
+        ScrollingCaptureOptions options = new() { AutoScrollTop = true, ScrollAmount = 2 };
+        Assert.Equal(expected, viewModel.GetSupport(ScrollMethod.MouseWheel, true).IsSupported);
+        Assert.Equal(expected, viewModel.TryChange(ScrollMethod.MouseWheel, true, () => options.ScrollAmount = 5));
+        Assert.Equal(expected ? 5 : 2, options.ScrollAmount);
+        Assert.True(options.AutoScrollTop);
+    }
+
     [Fact]
     public async Task UnavailableAndInvalidMethodsDoNotHideSelectCaptureOrChangeSavedOptions()
     {

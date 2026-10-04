@@ -126,8 +126,13 @@ public sealed class ScrollingCaptureWindowViewModel
     {
         if (!PlatformServices.IsInitialized) return Unavailable;
         IInputService input = PlatformServices.Current.Input;
-        // The existing manager sends both Home and a window-scroll message for auto-top.
-        return input.KeyboardSupport.IsSupported && input.WindowScrollSupport.IsSupported
+        return GetAutoScrollTopSupport(input.KeyboardSupport, input.WindowScrollSupport);
+    }
+
+    internal static FeatureSupport GetAutoScrollTopSupport(FeatureSupport keyboard, FeatureSupport windowScroll)
+    {
+        // The manager uses every available way to reach the top; Windows still uses both.
+        return keyboard.IsSupported || windowScroll.IsSupported
             ? FeatureSupport.Supported : Unavailable;
     }
 

@@ -27,6 +27,8 @@
 
 using ShareX.Platform;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ShareX.ScreenCaptureLib;
@@ -35,11 +37,17 @@ public sealed class FFmpegOptionsWindowViewModel
 {
     private readonly bool _isRecording;
     private readonly Func<FeatureSupport> _getSupport;
+    private readonly Func<RecordingDeviceAction, FeatureSupport> _getDeviceActionSupport;
 
-    public FFmpegOptionsWindowViewModel(bool isRecording, Func<FeatureSupport>? getSupport = null)
+    public bool IsClosed { get; private set; }
+    public bool IsReadingDevices { get; private set; }
+
+    public FFmpegOptionsWindowViewModel(bool isRecording, Func<FeatureSupport>? getSupport = null,
+        Func<RecordingDeviceAction, FeatureSupport>? getDeviceActionSupport = null)
     {
         _isRecording = isRecording;
         _getSupport = getSupport ?? GetRecordingSupport;
+        _getDeviceActionSupport = getDeviceActionSupport ?? GetCurrentDeviceActionSupport;
     }
 
     public static FeatureSupport CurrentRecordingSupport => ForRecording(GetRecordingSupport());
@@ -49,19 +57,66 @@ public sealed class FFmpegOptionsWindowViewModel
 
     public bool TryChange(Action change)
     {
-        if (!Support.IsSupported) return false;
+        if (IsClosed || !Support.IsSupported) return false;
         change();
         return true;
     }
 
     public async Task<bool> TryReadAsync<T>(Func<Task<T>> read, Action<T> apply)
     {
-        if (!Support.IsSupported) return false;
+        if (IsClosed || !Support.IsSupported) return false;
         T result = await read();
-        if (!Support.IsSupported) return false;
+        if (IsClosed || !Support.IsSupported) return false;
         apply(result);
         return true;
     }
+
+    public void Close() => IsClosed = true;
+
+    public FeatureSupport GetDeviceActionSupport(RecordingDeviceAction action) => Support.IsSupported
+        ? _getDeviceActionSupport(action) : Support;
+
+    public bool TryDeviceAction(RecordingDeviceAction action, Action run)
+    {
+        if (IsClosed || !GetDeviceActionSupport(action).IsSupported) return false;
+        run();
+        return true;
+    }
+
+    public async Task<bool> TryReadDevicesAsync<T>(Func<Task<T>> read, Action<T> apply)
+    {
+        if (IsClosed || IsReadingDevices || !GetDeviceActionSupport(RecordingDeviceAction.ListDirectShowDevices).IsSupported) return false;
+        IsReadingDevices = true;
+        try
+        {
+            T result = await read();
+            if (IsClosed || !GetDeviceActionSupport(RecordingDeviceAction.ListDirectShowDevices).IsSupported) return false;
+            apply(result);
+            return true;
+        }
+        finally
+        {
+            IsReadingDevices = false;
+        }
+    }
+
+    public FFmpegCaptureDevice ResolveSelectedSource(List<FFmpegCaptureDevice> sources, string savedSource, string defaultSource)
+    {
+        FFmpegCaptureDevice? source = sources.FirstOrDefault(x => string.Equals(x.Value, savedSource, StringComparison.OrdinalIgnoreCase));
+        if (source != null) return source;
+        // An unavailable enumeration cannot establish whether the saved device exists.
+        if (!GetDeviceActionSupport(RecordingDeviceAction.ListDirectShowDevices).IsSupported)
+        {
+            source = new FFmpegCaptureDevice(savedSource, savedSource);
+            sources.Add(source);
+            return source;
+        }
+        return sources.First(x => string.Equals(x.Value, defaultSource, StringComparison.OrdinalIgnoreCase));
+    }
+
+    private static FeatureSupport GetCurrentDeviceActionSupport(RecordingDeviceAction action) => PlatformServices.IsInitialized
+        ? PlatformServices.Current.ScreenRecording.GetDeviceActionSupport(action)
+        : FeatureSupport.NotSupported(Localization.Strings.FFmpegOptionsWindow_RecordingUnavailable);
 
     private static FeatureSupport GetRecordingSupport()
     {
