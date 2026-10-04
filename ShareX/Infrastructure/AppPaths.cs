@@ -42,7 +42,13 @@ internal static class AppPaths
         // From the platform: on Linux GetFolderPath(MyDocuments) is empty when ~/Documents does not exist yet, which would put the
         // personal folder in the working directory. The XDG service falls back to ~/Documents and the folder is created.
         Path.Combine(PlatformServices.Current.Paths.GetDocumentsDirectory(), ApplicationInfo.Name);
-    internal static readonly string PortablePersonalFolder = FileHelpers.GetAbsolutePath(ApplicationInfo.Name);
+    internal static readonly string PortablePersonalFolder = GetPortablePersonalFolder(FileHelpers.GetAbsolutePath(ApplicationInfo.Name));
+
+    /// <summary>
+    /// "ShareX" beside the executable, as on Windows. Where the executable itself is named ShareX (Linux and macOS have no .exe),
+    /// that name is taken by a file, so the folder is "ShareX-Personal" instead (B44).
+    /// </summary>
+    internal static string GetPortablePersonalFolder(string preferred) => File.Exists(preferred) ? preferred + "-Personal" : preferred;
     internal static readonly string PortableCheckFilePath = FileHelpers.GetAbsolutePath("Portable");
     internal static readonly string SteamInAppFilePath = FileHelpers.GetAbsolutePath("Steam");
 
