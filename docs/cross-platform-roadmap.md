@@ -72,20 +72,20 @@ Tick with the desktop and commit when verified. Hyprland results are from 2026-1
 
 | Flow | Hyprland | sway | GNOME | KDE | X11 |
 | --- | --- | --- | --- | --- | --- |
-| Full screen, region, active window capture | yes | | | | |
+| Full screen, region, active window capture | yes | | | | full screen, region yes (rootful Xwayland, 2026-10-04); active window needs a window manager |
 | Region overlay at 125% scaling, window snapping | yes | | | | |
-| Screen recording, GIF | yes (wf-recorder, portal) | | | | |
-| Hotkeys fire | yes | | | | |
+| Screen recording, GIF | yes (wf-recorder, portal) | | | | yes (x11grab) |
+| Hotkeys fire | yes | | | | yes (all five defaults incl. Print Screen) |
 | Tray icon and menu | yes (D-Bus checked) | | | | |
-| Clipboard: copy image, text, URL | yes (text, URL) | | | | |
-| Upload from clipboard, drag and drop, watch folders | | | | | |
-| Upload to a local test server, history | yes | | | | |
+| Clipboard: copy image, text, URL | yes (image/png seen by Wayland apps, text, URL) | | | | |
+| Upload from clipboard, drag and drop, watch folders | clipboard image and watch folder yes; drag and drop to check by hand | | | | |
+| Upload to a local test server, history | yes | | | | yes |
 | Image editor and tools (OCR excluded) | yes | | | | |
-| Start at login, file manager entries, file types | | | | | |
-| Secrets survive restart | | | | | |
-| Sounds, printing to a real printer | | | | | |
-| Background remover | | | | | |
-| Multi-monitor | | | | | |
+| Start at login, file manager entries, file types | yes (autostart entry launches -silent to tray; .sxcu opens with ShareX through GIO) | | | | |
+| Secrets survive restart | yes (key file 0600, decrypts in a new process) | | | | |
+| Sounds, printing to a real printer | sounds yes (pw-play); no printer configured on the test machine | | | | |
+| Background remover | yes (ONNX Runtime CPU, u2netp model: subject kept, background transparent) | | | | |
+| Multi-monitor | single monitor on the test machine | | | | |
 
 ## Commitments
 
@@ -126,3 +126,4 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, J: Integrated R22 first-slice source improvements (8cac48df6) during the final B31 rebase, retaining both agents' history and Jaex's authoritative Windows-only OCR/no-extra-installations rules. Final full Windows Release gate passes: 0 errors, one existing test analyzer warning tracked in R34, 485 pass / 10 Unix/Linux-only skips across all five test projects, including strict application/history/native fixtures. Test totals changed with M's retired install-command cases and new credential tests. Catalogs stay unchanged from full translation validation. Scope alignment, R34 history draining, other backend requests and actual desktop verification stay open; no estimates or desktop gate changed and macOS remains deferred.
 - 2026-10-04, M: R34, R31 and R33 done; G1 history, mouse-highlighter startup and scrolling-capture items ticked.
 - 2026-10-04, M: R32 contract (H11/W11 to J). X11 mouse hook and click-through overlay implemented and tested on a real X server; X11 application pass on rootful Xwayland (hotkeys, full screen, region, recording, upload).
+- 2026-10-04, M: Hyprland verification extended (clipboard image, clipboard upload, watch folder, autostart, file types, secrets, sounds, background remover); X11 column started on rootful Xwayland.
