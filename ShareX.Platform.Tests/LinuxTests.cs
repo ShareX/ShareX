@@ -1115,3 +1115,18 @@ public class X11MouseHookTests
         Assert.False(new LinuxWindowService(hyprland, new RecordingRunner()).OverlaySupport.IsSupported);
     }
 }
+
+public class LinuxDesktopIconsTests
+{
+    [Fact]
+    public void DesktopIcons_AreReportedUnsupportedAndNeverChanged()
+    {
+        RecordingRunner runner = new RecordingRunner();
+        LinuxShellService shell = new LinuxShellService(runner);
+
+        Assert.False(shell.DesktopIconsSupport.IsSupported);
+        Assert.False(string.IsNullOrWhiteSpace(shell.DesktopIconsSupport.Reason));
+        Assert.Null(shell.AreDesktopIconsVisible());
+        Assert.False(shell.SetDesktopIconsVisible(false));
+    }
+}

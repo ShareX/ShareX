@@ -44,6 +44,9 @@ public interface IShellService
     /// </summary>
     string? GetMimeType(string extension);
 
+    /// <summary>Whether <see cref="AreDesktopIconsVisible"/> and <see cref="SetDesktopIconsVisible"/> work, for hiding icons during capture.</summary>
+    FeatureSupport DesktopIconsSupport { get; }
+
     /// <summary>Whether the desktop shows its icons, or null where the platform does not say (only Windows does).</summary>
     bool? AreDesktopIconsVisible();
 

@@ -47,6 +47,8 @@ public sealed class LinuxShellService : IShellService
     public bool OpenPath(string path) => Open(path);
 
     // Desktop icons belong to the file manager or desktop shell here, which offers no common switch.
+    public FeatureSupport DesktopIconsSupport { get; } = FeatureSupport.NotSupported("Hiding desktop icons during capture is only available on Windows.");
+
     public bool? AreDesktopIconsVisible() => null;
 
     public bool SetDesktopIconsVisible(bool visible) => false;

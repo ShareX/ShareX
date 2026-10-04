@@ -86,7 +86,9 @@ namespace ShareX
 
             IShellService shell = PlatformServices.Current.Shell;
 
-            if (taskSettings.CaptureSettings.CaptureAutoHideDesktopIcons && !CaptureHelpers.IsActiveWindowFullscreen() && shell.AreDesktopIconsVisible() == true)
+            // A setting saved on Windows is kept but ignored where the desktop cannot hide its icons.
+            if (taskSettings.CaptureSettings.CaptureAutoHideDesktopIcons && shell.DesktopIconsSupport.IsSupported &&
+                !CaptureHelpers.IsActiveWindowFullscreen() && shell.AreDesktopIconsVisible() == true)
             {
                 shell.SetDesktopIconsVisible(false);
                 showDesktopIcons = true;

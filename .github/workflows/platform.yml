@@ -60,9 +60,7 @@ jobs:
       - name: Test editor graphics
         run: dotnet test ShareX.ImageEditor.Tests/ShareX.ImageEditor.Tests.csproj --configuration Release --logger "console;verbosity=normal"
 
-      # Tools still need the Windows desktop runtime until M5/M3 retarget them.
       - name: Test tool UI
-        if: runner.os == 'Windows'
         run: dotnet test ShareX.Tools.Tests/ShareX.Tools.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
 
       - name: Test image effects

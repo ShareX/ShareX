@@ -39,6 +39,9 @@ public sealed class WindowsShellService : IShellService
 
     public bool OpenPath(string path) => Start(path);
 
+    // Explorer's desktop list view, as in v22 (W13: J to confirm or report a reason when Explorer is not the shell).
+    public FeatureSupport DesktopIconsSupport => FeatureSupport.Supported;
+
     public bool? AreDesktopIconsVisible()
     {
         IntPtr icons = GetDesktopListView();

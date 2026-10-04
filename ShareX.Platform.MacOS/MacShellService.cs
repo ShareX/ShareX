@@ -49,6 +49,8 @@ public sealed class MacShellService : IShellService
 
     // macOS uniform type identifiers have no simple extension to MIME table; callers fall back to their own.
     // Desktop icons belong to the file manager or desktop shell here, which offers no common switch.
+    public FeatureSupport DesktopIconsSupport { get; } = FeatureSupport.NotSupported("Hiding desktop icons during capture is only available on Windows.");
+
     public bool? AreDesktopIconsVisible() => null;
 
     public bool SetDesktopIconsVisible(bool visible) => false;

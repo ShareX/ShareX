@@ -35,6 +35,7 @@ namespace ShareX.Tools.Tests;
 public sealed class InspectWindowTests
 {
     [WindowsInspectorFact]
+    [SupportedOSPlatform("windows")]
     public void InspectorUsesPortableDetailsAndClearsClosedWindows()
     {
         if (!OperatingSystem.IsWindows()) return;

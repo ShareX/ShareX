@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System.Runtime.Versioning;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using ShareX.Platform;
@@ -143,6 +144,7 @@ public sealed class MouseHighlighterDrawingTests
     }
 
     [WindowsMouseOverlayFact]
+    [SupportedOSPlatform("windows")]
     public void HiddenWindowsDibUsesTheSamePixelsAndRejectsUseAfterDisposal()
     {
         IScreenOverlay native = new WindowsWindowService().CreateOverlay(new PlatformRectangle(-100, -60, 20, 20));
