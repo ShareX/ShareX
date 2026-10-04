@@ -2,22 +2,21 @@
 
 Rules for people and coding agents working in this repository.
 
-The `cross-platform-v2` branch ports ShareX to Linux while preserving Windows support. macOS is a possible later phase. Before changing anything, read:
+The `cross-platform-v2` branch ports ShareX to Linux and macOS while preserving Windows support. Windows and Linux are complete (owner decision, 2026-10-04); the macOS phase is open. Before changing anything, read:
 
 - [docs/cross-platform-learnings.md](docs/cross-platform-learnings.md): what the first attempt taught, and the rules that follow from it.
 - [docs/cross-platform-delegation.md](docs/cross-platform-delegation.md): which agent owns which project, the task tracker and the request log.
 - [docs/cross-platform.md](docs/cross-platform.md): the target architecture and how to build.
 - [docs/cross-platform-roadmap.md](docs/cross-platform-roadmap.md): progress per operating system, the roadmap to 100%, the gates between phases and the commitments McoreD, Jaex and their agents have made.
 
-## Platform priorities: Linux first
+## Platform priorities: macOS phase
 
-All agents must focus on **Windows and Linux only** during the current port. Prioritize porting the full **`ShareX` application project** to Linux, including its main window, tray, hotkeys, capture, upload, history, editor and tools. Keep Windows behaviour identical to v22 throughout the migration.
+Windows and Linux are complete (McoreD, 2026-10-04). **The macOS phase is open**: port the full `ShareX` application to macOS (Apple silicon and Intel, macOS 13 or later), including its main window, menu bar icon, hotkeys, capture, recording, upload, history, editor and tools.
 
-**Do not work on the macOS port now.** macOS implementation, UI adaptation, desktop verification, packaging and CI work are deferred. Only after the Linux port is **100% complete for the agreed scope and stable enough for normal use**, with real application flows verified on the supported Linux desktops and Windows regressions checked, may a macOS port be considered. A successful build or a working standalone editor alone does not meet this milestone. Linux HDR support is excluded from the agreed scope.
-
-**OCR is in scope on Linux.** See the owner decision below.
-
-Existing macOS code may remain. When a shared contract changes, add only the minimum unsupported stubs or mechanical updates needed to keep the solution compiling; this does not authorize macOS feature work. This priority rule takes precedence over older three-platform task wording and target architecture descriptions.
+- **Keep Windows and Linux working.** Every change must keep their behaviour; Windows stays identical to v22. Field testing on GNOME, KDE, sway, X11 and Windows 10/11 continues, and its bug rows come before new macOS work.
+- **Ownership.** M (McoreD's agent) owns `ShareX.Platform.MacOS`, macOS packaging and CI, and shared contracts; J (Jaex's agent) owns the frontend, including macOS UI adaptation (menu bar, keyboard shortcuts with Command, window chrome). No one here has a Mac: macOS code is built and unit tested on the `macos-latest` CI runner, and McoreD, Jaex and users verify it on real Macs and file bug rows.
+- **macOS dependencies** follow the same principle as Linux: system frameworks and tools (AppKit, CoreGraphics, ScreenCaptureKit, Vision, QuickLook, `screencapture`, `afplay`) are used directly; optional programs such as FFmpeg are detected at run time; nothing is bundled or installed for parity. Permissions macOS asks for (Screen Recording, Accessibility, Input Monitoring) are requested at the moment a feature needs them, and the feature reports a reason until they are granted.
+- Linux HDR support stays excluded.
 
 ## Linux dependencies and OCR: owner decision (final)
 
@@ -25,7 +24,7 @@ Existing macOS code may remain. When a shared contract changes, add only the min
 
 1. **Core guarantee.** With only Microsoft .NET on a standard desktop session, ShareX starts and its core flows work: main window, tray, hotkeys where the desktop allows them, screenshot capture, clipboard, editor and tools, upload and history. Core flows use .NET, libraries ShareX already ships (Avalonia, SkiaSharp, ONNX Runtime, …) and the desktop's own APIs (X11, xdg-desktop-portal, PipeWire, D-Bus, compositor IPC, freedesktop.org specifications). A program the desktop's own portal runs counts as part of that desktop: Hyprland's and sway's screenshot portals run grim.
 2. **Optional features use the operating system's own support.** A feature with no desktop-API path may use a program or library the distribution provides, detected at run time: FFmpeg for recording and the video tools, Tesseract and its installed language data for OCR, CUPS for printing, sound players. This mirrors Windows, where recording uses an FFmpeg ShareX does not ship.
-3. **OCR is implemented on Linux** through the distribution's Tesseract (`TesseractOcrService`). Windows keeps Windows.Media.Ocr in `ShareX.Platform.Windows`. macOS stays unsupported for now.
+3. **OCR is implemented on Linux** through the distribution's Tesseract (`TesseractOcrService`). Windows keeps Windows.Media.Ocr in `ShareX.Platform.Windows`; macOS uses Apple's Vision framework (McoreD, 2026-10-04).
 4. **Never bundle, never install, never nag.** Do not bundle third-party engines, models, language data or tools to reach parity, never install anything or run package managers, and put no install commands in messages. When a part is missing, the feature reports `FeatureSupport.NotSupported` with a short reason that may name the missing package, and shared UI, hotkeys and CLI/task execution respect it.
 
 These rules do not change Windows behaviour or dependencies.
@@ -79,7 +78,7 @@ There is no `ShareX.HelpersLib.Windows`. Windows-only code goes into `ShareX.Pla
 
 1. Find the service in `ShareX.Platform/Services` that owns the area, or add a new `I…Service` and expose it on `IPlatformServices`. Contracts in `ShareX.Platform` are changed only by their owner (McoreD's agent, see the delegation file), who adds "not supported" stubs to every platform project in the same commit; others file a request. `ShareX.Platform.Windows` is written by Jaex's agent (the Windows lead): McoreD's agent adds a W row to the delegation file instead of writing Windows code, and switches shared code only after the Windows implementation is done.
 2. Model the result with portable types. Never leak `IntPtr` meaning, Win32 enums, X11 atoms or Cocoa objects through the interface.
-3. Implement it on **Windows and Linux** during the current phase, except features excluded by the scope rule above; keep macOS compatible with shared contracts using unsupported stubs only. Where a platform cannot do it, return `FeatureSupport.NotSupported(reason)` with a user-facing reason. Linux implementations follow the owner decision above: desktop APIs first, optional distribution programs detected at run time, nothing bundled or installed, no install commands in reasons. `UnsupportedServices.cs` holds reusable "not available" implementations.
+3. Implement it on **Windows, Linux and macOS**, except features excluded by the scope rule above. Where a platform cannot do it, return `FeatureSupport.NotSupported(reason)` with a user-facing reason. Linux implementations follow the owner decision above: desktop APIs first, optional distribution programs detected at run time, nothing bundled or installed, no install commands in reasons. `UnsupportedServices.cs` holds reusable "not available" implementations.
 4. In shared code, read `Support` before offering the feature, and hide or disable the UI with the reason as its tooltip rather than failing at run time.
 5. Keep Windows behaviour identical to what it was. The Windows implementation is usually the code that used to live in the shared project, moved behind the interface by Jaex's agent, and it is not done until it has run on Windows.
 6. Add tests in `ShareX.Platform.Tests` for parsing and argument building so they run on every OS.
@@ -87,7 +86,7 @@ There is no `ShareX.HelpersLib.Windows`. Windows-only code goes into `ShareX.Pla
 ### Enforcement
 
 - Shared projects set `<WarningsAsErrors>$(WarningsAsErrors);CA1416</WarningsAsErrors>` once they target `net10.0`. Never suppress CA1416 with `#pragma`, `[SuppressMessage]` or `NoWarn` in shared code; move the code behind a platform service instead.
-- `dotnet build ShareX.sln -c Release -p:Platform=x64` must pass on Windows and Linux, and every test project must pass, before each push. macOS build and desktop verification are deferred with the macOS port.
+- `dotnet build ShareX.sln -c Release -p:Platform=x64` must pass on Windows and Linux, and every test project must pass, before each push. The `Cross-platform` workflow builds and tests on Windows, Linux and macOS for every push to `cross-platform-v2`; keep it green.
 - The Windows application must keep opening and running from Visual Studio on Windows without extra steps.
 
 ### Migration debt on `cross-platform-v2` (remove, do not add to)

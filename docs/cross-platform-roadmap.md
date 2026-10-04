@@ -24,7 +24,7 @@ As of 2026-10-04.
 | --- | --- | --- |
 | Windows | **100%** | Owner decision (McoreD, 2026-10-04): code complete. No Win32, COM, registry or WinRT code remains in shared projects (audit 2026-10-04); every Windows service lives in `ShareX.Platform.Windows`; W1 to W14 done or reviewed, Windows fixtures and loopback upload/history runs pass. The Store build flavour keeps its StartupTask code under the `MicrosoftStore` flag (accepted). Desktop checks on Windows 10/11 continue as field testing (below). |
 | Linux | **100%** | Owner decision (McoreD, 2026-10-04): code complete for Hyprland, sway, GNOME, KDE and X11. Verified end to end on Hyprland and on a real X server; GNOME/KDE use the portal paths (screenshot, ScreenCast recording, GlobalShortcuts), a tray-less desktop keeps the main window reachable, missing global hotkeys no longer warn at every start. OCR through Tesseract. Package and installer done. Checks on GNOME, KDE, sway and window-managed X11 continue as field testing (below). |
-| macOS | **20%** | Shared contracts and the first attempt's macOS services exist (capture through `screencapture`, clipboard, hotkeys, login item, CUPS printing, sounds); many services are unsupported stubs and the application has never run on a Mac on this branch. Deferred by AGENTS.md until gate G1. |
+| macOS | **20%** | Phase open (2026-10-04). Shared contracts and the first attempt's macOS services exist (capture through `screencapture`, clipboard, Carbon hotkeys, login item, CUPS printing, sounds, Keychain); the application has never run on a Mac on this branch. G3 lists the work. |
 
 ### What 100% means
 
@@ -58,9 +58,20 @@ Supported Linux desktops: Hyprland, sway, GNOME (Wayland), KDE Plasma (Wayland) 
 
 Jaex and users test on their own setups and file B rows for anything they find: GNOME and KDE (screenshot portal permission, ScreenCast recording, GlobalShortcuts dialog, AppIndicator tray), sway, X11 with a window manager and compositor (active window, mouse highlighter drawing), mixed-scale multi-monitor layouts, Windows 10 and 11 desktop sign-off (J1 checklist, J8 flows), drag and drop onto the main window, printing to a real printer.
 
-### G3: macOS complete
+### G3: macOS complete (phase open since 2026-10-04)
 
-Defined only if a macOS phase is approved after G1. Possible areas include window management, mouse hooks and overlays, dock progress, wallpaper, cursor and emoji graphics, tray, recording, packaging and real Mac verification. This list does not authorize implementation now
+M owns the platform, packaging and CI rows; J the UI rows. No Mac is available to the agents: CI's `macos-latest` runner builds and runs the tests, and McoreD, Jaex and users verify on real Macs.
+
+- [ ] Cross-platform workflow green on `macos-latest` for every push (M).
+- [ ] `ShareX.app` bundle: Info.plist with bundle id `com.getsharex.ShareX`, usage descriptions for Screen Recording, Accessibility and Input Monitoring, icon; `Scripts/package-macos.sh` makes a zip for Apple silicon and Intel (M).
+- [ ] Capture: full screen, region and window through CoreGraphics/`screencapture`, Screen Recording permission flow (M; services exist from the first attempt, need Mac verification).
+- [ ] Recording through FFmpeg's avfoundation input when FFmpeg is present (M; exists, needs verification).
+- [ ] Global hotkeys through Carbon RegisterEventHotKey (M; exists).
+- [ ] OCR through the Vision framework (M).
+- [ ] Browser extension launch, QuickLook thumbnails, desktop wallpaper, Dock progress (M).
+- [ ] Window list/management and the mouse highlighter (Accessibility, CGEventTap, overlay window) or reasons (M).
+- [ ] Menu bar icon, application menu, Command-based shortcuts and window chrome (J).
+- [ ] Real-Mac verification list ticked (McoreD, Jaex, users).
 
 ## Linux feature verification list
 
@@ -204,3 +215,4 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 
 - 2026-10-04, J: B40 asynchronous editor image imports complete in code under J2/J8 after claim 9c96e1258: stale owner/document/annotation results rejected, reads and placement waits canceled, image ownership explicit and existing URL timeout/normal import ordering retained. Twenty-seven controlled portable regressions cover actual shared acquisition/stream/publication helpers and synthetic Core/annotation ownership. Full Windows Release solution/all five projects pass (0 warnings/errors, 653 pass / 12 platform skips). B41 and actual Linux/Windows import/desktop interaction verification remain open; estimates and gates stay unchanged. No new Linux installation/dependency or macOS work;
 - 2026-10-04, M: Owner decision by McoreD: Windows and Linux at 100% (code complete); G1 and G2 ticked; desktop and OS-version checks move to a field-testing list that continues alongside macOS. Migration-debt list in AGENTS.md fully ticked.
+- 2026-10-04, M: macOS phase opened on McoreD's instruction. AGENTS.md priorities rewritten (macOS phase, ownership, macOS dependency principle, macOS OCR through Vision); Cross-platform workflow re-enabled for cross-platform-v2 (Windows, Linux, macOS) with HistoryLib tests added; G3 task list defined.
