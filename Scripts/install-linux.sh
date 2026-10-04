@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # Builds ShareX and installs it for the current user (no root needed).
 #
-#   Scripts/install-linux.sh              build and install to ~/.local
-#   Scripts/install-linux.sh --uninstall  remove it again (settings and screenshots are kept)
+#   Scripts/install-linux.sh                    build and install to ~/.local
+#   Scripts/install-linux.sh --package DIR      build a self-contained sharex-linux-<cpu>.tar.gz into DIR
+#   ./install.sh                                inside an extracted package: install it (no SDK needed)
+#   Scripts/install-linux.sh --uninstall        remove it again (settings and screenshots are kept)
 #
-# Set PREFIX to install somewhere else than ~/.local. Needs the .NET 10 SDK to build; the installed copy is self-contained.
+# Set PREFIX to install somewhere else than ~/.local. Building needs the .NET 10 SDK; the installed copy is self-contained.
 # "Start ShareX when I log in" is a setting inside ShareX.
 set -euo pipefail
 
@@ -14,7 +16,11 @@ bin_link="$prefix/bin/sharex"
 # The portal looks ShareX up by this name (application id "sharex"); global hotkeys need it.
 desktop_file="$prefix/share/applications/sharex.desktop"
 icon_file="$prefix/share/icons/hicolor/256x256/apps/sharex.png"
-repo="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+repo="$(cd "$here/.." && pwd)"
+# An extracted package has the published application next to this script.
+packaged=false
+[ -x "$here/app/ShareX" ] && packaged=true
 
 # The installed ShareX processes, found by executable because the sharex link changes their command line.
 running_pids() {
@@ -47,6 +53,9 @@ case "${1:-}" in
     echo "ShareX removed. Settings and screenshots in ~/Documents/ShareX were kept."
     exit 0
     ;;
+  --package)
+    out="${2:?--package needs an output directory}"
+    ;;
   "") ;;
   *) echo "Unknown option '$1'" >&2; exit 2 ;;
 esac
@@ -57,23 +66,42 @@ case "$(uname -m)" in
   *) echo "Unsupported CPU: $(uname -m)" >&2; exit 1 ;;
 esac
 
-command -v dotnet >/dev/null || { echo "The .NET 10 SDK is required (https://dot.net)." >&2; exit 1; }
-
 staging="$(mktemp -d)"
 trap 'rm -rf "$staging"' EXIT
 
-echo "Building ShareX for $rid..."
-dotnet publish "$repo/ShareX/ShareX.csproj" -c Release -r "$rid" --self-contained true \
-  -p:Platform="$platform" -p:PublishTrimmed=false -p:DebugType=none -p:DebugSymbols=false -o "$staging/app" >"$staging/build.log" 2>&1 \
-  || { cat "$staging/build.log" >&2; exit 1; }
+if $packaged; then
+  source_app="$here/app"
+  icon_source="$here/sharex.png"
+else
+  command -v dotnet >/dev/null || { echo "The .NET 10 SDK is required (https://dot.net)." >&2; exit 1; }
+
+  echo "Building ShareX for $rid..."
+  dotnet publish "$repo/ShareX/ShareX.csproj" -c Release -r "$rid" --self-contained true \
+    -p:Platform="$platform" -p:PublishTrimmed=false -p:DebugType=none -p:DebugSymbols=false -o "$staging/app" >"$staging/build.log" 2>&1 \
+    || { cat "$staging/build.log" >&2; exit 1; }
+  source_app="$staging/app"
+  icon_source="$repo/ShareX.HelpersLib/Resources/ShareX_Logo.png"
+fi
+
+if [ -n "${out:-}" ]; then
+  name="sharex-$rid"
+  mkdir -p "$out" "$staging/$name"
+  cp -r "$source_app" "$staging/$name/app"
+  cp "$icon_source" "$staging/$name/sharex.png"
+  cp "${BASH_SOURCE[0]}" "$staging/$name/install.sh"
+  chmod +x "$staging/$name/install.sh"
+  tar -C "$staging" -czf "$out/$name.tar.gz" "$name"
+  echo "Package: $out/$name.tar.gz (extract it and run ./install.sh)"
+  exit 0
+fi
 
 stop_running
 mkdir -p "$prefix/lib/sharex" "$prefix/bin" "$(dirname "$desktop_file")" "$(dirname "$icon_file")"
 rm -rf "$app_dir"
-cp -r "$staging/app" "$app_dir"
+cp -r "$source_app" "$app_dir"
 chmod +x "$app_dir/ShareX"
 ln -sf "$app_dir/ShareX" "$bin_link"
-cp "$repo/ShareX.HelpersLib/Resources/ShareX_Logo.png" "$icon_file"
+cp "$icon_source" "$icon_file"
 
 cat >"$desktop_file" <<DESKTOP
 [Desktop Entry]

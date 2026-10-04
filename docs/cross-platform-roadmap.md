@@ -54,7 +54,7 @@ When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS wo
 - [ ] Mixed-scale multi-monitor capture and overlays (rest of R12; M backend, J overlays).
 - [ ] Mouse highlighter and overlays on X11; reported unsupported on Wayland (M hook and overlay surface, J drawing). M: hook and overlay done and tested on a real X server; drawing verification on a composited X11 desktop remains (VM).
 - [ ] Linux feature verification list below is all ticked.
-- [ ] Packaging decided and working (installer script done; AppImage or Flatpak), CI builds and runs the application on Linux (M11).
+- [x] Packaging decided and working: self-contained tar.gz with installer (Flatpak deferred, sandbox blocks capture paths); CI workflow builds, tests, packages and runs the app headless, started by hand while branch workflows are paused (M11).
 - [ ] No blocking Linux bugs open. B18 print guards are fixed in code (`J5`, 2026-10-04), with two portable regression tests and a reason translated in all 28 cultures; backend policy and desktop printing verification remain open.
 
 ### G2: Windows sign-off
@@ -138,3 +138,4 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, J: B33 claimed for R33 frontend alignment with conditional auto-top inputs and backend failure presentation. Retained M's new X11 code and actual rootful-Xwayland/Hyprland reports, including the need for window-manager/compositor verification. Current W11/H11 work takes priority before B32; history exit and actual desktop gates remain open, estimates unchanged.
 
 - 2026-10-04, J: Final claim gate after X11 integration passes: full Windows Release build 0 warnings/errors, all five test projects 499 pass / 12 Unix/Linux-only skips, strict application/native/local-history fixtures enabled. W11/H11, B33 and B32 are claimed before code; actual desktop gates and estimates remain unchanged.
+- 2026-10-04, M: Linux packaging (tar.gz + installer) and the manual Linux CI workflow; personal folder fix for homes without ~/Documents.

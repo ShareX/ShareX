@@ -1,0 +1,75 @@
+name: Linux
+
+# Builds, tests and packages ShareX for Linux, then runs the real application headless. Started by hand (Actions > Linux > Run
+# workflow, or "gh workflow run linux.yml --ref cross-platform-v2") while the branch workflows stay paused for the port.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux:
+    name: Build, test, package and run
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Build ShareX.sln
+        run: dotnet build ShareX.sln --configuration Release -p:Platform=x64
+
+      - name: Test
+        run: |
+          for project in ShareX.Platform.Tests ShareX.HistoryLib.Tests ShareX.ImageEditor.Tests ShareX.ImageEffectsLib.Tests ShareX.Tools.Tests; do
+            dotnet test "$project/$project.csproj" --configuration Release -p:Platform=x64 --no-build --logger "console;verbosity=minimal"
+          done
+
+      - name: Package
+        run: Scripts/install-linux.sh --package "$RUNNER_TEMP/package"
+
+      # Installs the package into a clean home, starts it on a virtual X server with its own D-Bus session, takes a full screen
+      # screenshot through the command line (default settings save it and copy it; nothing is uploaded) and closes it with
+      # SIGTERM, which must save the settings. The settings skip the welcome screen, as for a returning user: on a first run it
+      # waits for the user before command line work.
+      - name: Run the application
+        run: |
+          sudo apt-get update -q && sudo apt-get install -yq xvfb dbus-x11 >/dev/null
+          export HOME="$RUNNER_TEMP/home" PREFIX="$RUNNER_TEMP/home/.local"
+          mkdir -p "$HOME/Documents/ShareX"
+          echo '{ "ShowStartScreen": false }' > "$HOME/Documents/ShareX/ApplicationConfig.json"
+          tar -C "$RUNNER_TEMP" -xzf "$RUNNER_TEMP/package/sharex-linux-x64.tar.gz"
+          "$RUNNER_TEMP/sharex-linux-x64/install.sh"
+          xvfb-run -a -s "-screen 0 1280x800x24" dbus-run-session -- bash -euo pipefail -c '
+            sharex="$PREFIX/bin/sharex"
+            "$sharex" -silent & pid=$!
+            for i in $(seq 1 60); do
+              ls "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt >/dev/null 2>&1 && grep -q "Startup time" "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt && break
+              sleep 1
+            done
+            "$sharex" -PrintScreen
+            for i in $(seq 1 30); do
+              compgen -G "$HOME/Documents/ShareX/Screenshots/*/*" >/dev/null && break
+              sleep 1
+            done
+            kill -TERM "$pid"
+            wait "$pid" || true
+            cat "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt
+            compgen -G "$HOME/Documents/ShareX/Screenshots/*/*" >/dev/null || { echo "No screenshot was saved." >&2; exit 1; }
+            file "$HOME"/Documents/ShareX/Screenshots/*/*
+            test -s "$HOME/Documents/ShareX/ApplicationConfig.json"
+            ! grep -q "Unhandled exception" "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt
+          '
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: sharex-linux-x64
+          path: ${{ runner.temp }}/package/sharex-linux-x64.tar.gz
+          if-no-files-found: error

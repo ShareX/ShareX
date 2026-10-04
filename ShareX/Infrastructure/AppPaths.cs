@@ -26,6 +26,7 @@
 #nullable enable
 
 using ShareX.HelpersLib;
+using ShareX.Platform;
 using System;
 using System.IO;
 
@@ -38,7 +39,9 @@ internal static class AppPaths
     internal const string LogsFolderName = "Logs";
 
     internal static readonly string DefaultPersonalFolder =
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), ApplicationInfo.Name);
+        // From the platform: on Linux GetFolderPath(MyDocuments) is empty when ~/Documents does not exist yet, which would put the
+        // personal folder in the working directory. The XDG service falls back to ~/Documents and the folder is created.
+        Path.Combine(PlatformServices.Current.Paths.GetDocumentsDirectory(), ApplicationInfo.Name);
     internal static readonly string PortablePersonalFolder = FileHelpers.GetAbsolutePath(ApplicationInfo.Name);
     internal static readonly string PortableCheckFilePath = FileHelpers.GetAbsolutePath("Portable");
     internal static readonly string SteamInAppFilePath = FileHelpers.GetAbsolutePath("Steam");

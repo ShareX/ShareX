@@ -79,6 +79,10 @@ Scrolling capture needs a screenshot of the selected window and a way to scroll 
 
 On sway, GNOME and KDE scrolling capture is reported unsupported with the Wayland reason. The RemoteDesktop portal could provide input there later; it asks the user for permission each session.
 
+## Linux package
+
+`Scripts/install-linux.sh` builds and installs ShareX for the current user under `~/.local` (no root). `Scripts/install-linux.sh --package DIR` makes a self-contained `sharex-linux-x64.tar.gz` (or `-arm64`); users extract it and run `./install.sh`, which needs neither the .NET SDK nor root, and `./install.sh --uninstall` removes it while keeping settings and screenshots. Flatpak is deferred: its sandbox blocks the compositor IPC, X11 window access and grim that capture relies on. The manual `Linux` workflow builds, tests, packages and runs the installed application headless.
+
 ## Building
 
 .NET 10 SDK on every operating system.
