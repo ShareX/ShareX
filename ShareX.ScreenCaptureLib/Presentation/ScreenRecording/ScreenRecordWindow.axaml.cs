@@ -68,7 +68,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private readonly IDisposable _trayIconRegistration;
 
     private volatile ScreenRecordingStatus _status;
-    private volatile bool _disposed;
+    private readonly ScreenRecordWindowViewModel _lifetime = new();
     private bool _dragging;
     private PixelPoint _dragPointerOrigin;
     private PixelPoint _dragWindowOrigin;
@@ -100,6 +100,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         get => _activateWindow;
         set
         {
+            if (IsDisposed) return;
             _activateWindow = value;
             ShowActivated = value;
         }
@@ -107,13 +108,14 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     public float Duration { get; set; }
     public bool AskConfirmationOnAbort { get; set; }
-    public bool IsDisposed => _disposed;
+    public bool IsDisposed => _lifetime.IsClosed;
 
     public bool ShowRecordingTimer
     {
         get => _showRecordingTimer;
         set
         {
+            if (IsDisposed) return;
             if (_showRecordingTimer == value)
             {
                 return;
@@ -138,6 +140,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         get => _showRecordingButtonLabels;
         set
         {
+            if (IsDisposed) return;
             if (_showRecordingButtonLabels == value)
             {
                 return;
@@ -239,6 +242,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     public void StartStopRecording()
     {
+        if (IsDisposed) return;
         if (Status == ScreenRecordingStatus.Working)
         {
             AbortRecording();
@@ -251,38 +255,41 @@ public partial class ScreenRecordWindow : Window, IDisposable
         else if (Status == ScreenRecordingStatus.Paused)
         {
             Status = ScreenRecordingStatus.Stopped;
-            RecordResetEvent.Set();
+            _lifetime.TryRun(() => RecordResetEvent.Set());
         }
         else
         {
-            RecordResetEvent.Set();
+            _lifetime.TryRun(() => RecordResetEvent.Set());
         }
     }
 
     public void PauseResumeRecording()
     {
+        if (IsDisposed) return;
         if (Status == ScreenRecordingStatus.Recording)
         {
             Status = ScreenRecordingStatus.Paused;
-            RecordResetEvent.Reset();
+            _lifetime.TryRun(() => RecordResetEvent.Reset());
             OnStopRequested();
         }
         else
         {
-            RecordResetEvent.Set();
+            _lifetime.TryRun(() => RecordResetEvent.Set());
         }
     }
 
     public void AbortRecording()
     {
+        if (IsDisposed) return;
         ShowAbortConfirmation(false);
         Status = ScreenRecordingStatus.Aborted;
         OnStopRequested();
-        RecordResetEvent.Set();
+        _lifetime.TryRun(() => RecordResetEvent.Set());
     }
 
     public void RestartRecording()
     {
+        if (IsDisposed) return;
         if (Status is not (ScreenRecordingStatus.Recording or ScreenRecordingStatus.Paused))
         {
             return;
@@ -302,7 +309,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             OnStopRequested();
         }
 
-        RecordResetEvent.Set();
+        _lifetime.TryRun(() => RecordResetEvent.Set());
     }
 
     public bool ConsumeRestartRequest() => Interlocked.Exchange(ref _restartRequested, 0) != 0;
@@ -311,6 +318,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     public void StartCountdown(int milliseconds)
     {
+        if (IsDisposed) return;
         IsCountdown = true;
         Countdown = TimeSpan.FromMilliseconds(milliseconds);
         Timer.Start();
@@ -320,6 +328,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     public void StartRecordingTimer()
     {
+        if (IsDisposed) return;
         if (IsCountdown)
         {
             Timer.Reset();
@@ -340,6 +349,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     public void StopRecordingTimer()
     {
+        if (IsDisposed) return;
         Timer.Stop();
         _refreshTimer.Stop();
         UpdateTimer();
@@ -411,41 +421,31 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     public void InvokeSafe(Action action)
     {
-        if (_disposed)
+        _lifetime.Dispatch(callback =>
         {
-            return;
-        }
-
-        if (Dispatcher.UIThread.CheckAccess())
-        {
-            action();
-        }
-        else
-        {
-            Dispatcher.UIThread.InvokeAsync(action).GetAwaiter().GetResult();
-        }
+            if (Dispatcher.UIThread.CheckAccess()) callback();
+            else Dispatcher.UIThread.InvokeAsync(callback).GetAwaiter().GetResult();
+        }, action);
     }
 
     public void Dispose()
     {
-        if (_disposed)
-        {
-            return;
-        }
-
-        _disposed = true;
+        if (!_lifetime.TryClose()) return;
+        _dragging = false;
+        Timer.Stop();
         _refreshTimer.Stop();
         _trayIcon.IsVisible = false;
         _trayIcon.Clicked -= OnTrayIconClicked;
         _trayIconRegistration.Dispose();
         DisposeTrayMenuIcons();
+        _trayIcon.Dispose();
         RecordResetEvent.Dispose();
         GC.SuppressFinalize(this);
     }
 
     private void UpdateTimer()
     {
-        if (_disposed)
+        if (IsDisposed)
         {
             return;
         }
@@ -469,6 +469,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void UpdateUI()
     {
+        if (IsDisposed) return;
         ShowAbortConfirmation(false);
 
         switch (Status)
@@ -536,6 +537,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void RequestAbortRecording()
     {
+        if (IsDisposed) return;
         if (AskConfirmationOnAbort)
         {
             ShowAbortConfirmation(true);
@@ -548,6 +550,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void ShowAbortConfirmation(bool show)
     {
+        if (IsDisposed) return;
         RecorderControls.IsVisible = !show;
         AbortConfirmation.IsVisible = show;
         Toolbar.Width = DisplayedToolbarWidth;
@@ -561,11 +564,12 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void OnOpened(object? sender, EventArgs e)
     {
+        if (IsDisposed) return;
         double scaling = GetScreenScaling(Position);
         ConfigureGeometry(scaling);
         ApplyToolWindowStyle();
         ApplyNativeWindowRegion();
-        Dispatcher.UIThread.Post(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
+        RunOnUIThread(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
 
         if (ActivateWindow)
         {
@@ -575,7 +579,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void OnPositionChanged(object? sender, PixelPointEventArgs e)
     {
-        if (_disposed || _configuringGeometry)
+        if (IsDisposed || _configuringGeometry)
         {
             return;
         }
@@ -589,6 +593,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void ConfigureGeometry(double scaling)
     {
+        if (IsDisposed) return;
         _configuringGeometry = true;
 
         try
@@ -631,7 +636,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
             if (IsVisible)
             {
-                Dispatcher.UIThread.Post(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
+                RunOnUIThread(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
             }
         }
         finally
@@ -652,6 +657,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void ApplyNativeWindowRegion()
     {
+        if (IsDisposed) return;
         int frameWidth = _captureWidth + BorderPixels * 2;
         int frameHeight = _captureHeight + BorderPixels * 2;
         int toolbarTop = frameHeight + ToolbarGapPixels;
@@ -666,6 +672,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void OnTimerPointerPressed(object? sender, PointerPressedEventArgs e)
     {
+        if (IsDisposed) return;
         if (Status is not (ScreenRecordingStatus.Waiting or ScreenRecordingStatus.Paused) ||
             !e.GetCurrentPoint(TimerDragHandle).Properties.IsLeftButtonPressed)
         {
@@ -681,6 +688,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void OnTimerPointerMoved(object? sender, PointerEventArgs e)
     {
+        if (IsDisposed) return;
         if (!_dragging || e.Pointer.Captured != TimerDragHandle)
         {
             return;
@@ -711,6 +719,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void OnTimerPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
+        if (IsDisposed) return;
         if (e.Pointer.Captured == TimerDragHandle)
         {
             e.Pointer.Capture(null);
@@ -817,8 +826,13 @@ public partial class ScreenRecordWindow : Window, IDisposable
         Dispose();
     }
 
-    private static void RunOnUIThread(Action action)
+    private void RunOnUIThread(Action action)
     {
-        Dispatcher.UIThread.Post(action);
+        _lifetime.Dispatch(callback => Dispatcher.UIThread.Post(callback), action);
+    }
+
+    private void RunOnUIThread(Action action, DispatcherPriority priority)
+    {
+        _lifetime.Dispatch(callback => Dispatcher.UIThread.Post(callback, priority), action);
     }
 }
