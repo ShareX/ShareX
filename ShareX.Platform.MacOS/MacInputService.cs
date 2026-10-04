@@ -34,7 +34,13 @@ public sealed partial class MacInputService : IInputService
 {
     private const string PermissionReason = "Allow ShareX in System Settings > Privacy & Security > Accessibility.";
 
-    public FeatureSupport KeyboardSupport => IsTrusted() ? FeatureSupport.Supported : FeatureSupport.NotSupported(PermissionReason);
+    private static volatile bool permissionRequested;
+
+    /// <summary>
+    /// Supported until input was refused in this run: the first attempt shows macOS's Accessibility prompt, which a disabled option
+    /// could never reach.
+    /// </summary>
+    public FeatureSupport KeyboardSupport => IsTrusted() || !permissionRequested ? FeatureSupport.Supported : FeatureSupport.NotSupported(PermissionReason);
 
     public FeatureSupport MouseWheelSupport => KeyboardSupport;
 
@@ -69,6 +75,14 @@ public sealed partial class MacInputService : IInputService
             return false;
         }
 
+        // Quartz drops synthetic events silently without the permission, so ask for it instead of pretending to succeed.
+        if (!IsTrusted())
+        {
+            CoreFoundation.CFRelease(evt);
+            RequestTrust();
+            return false;
+        }
+
         try
         {
             CoreGraphics.CGEventPost(CoreGraphics.kCGHIDEventTap, evt);
@@ -92,7 +106,38 @@ public sealed partial class MacInputService : IInputService
         }
     }
 
+    /// <summary>Shows macOS's Accessibility prompt, once per run.</summary>
+    private static void RequestTrust()
+    {
+        if (permissionRequested)
+        {
+            return;
+        }
+
+        permissionRequested = true;
+
+        try
+        {
+            ObjC.WithAutoreleasePool(() =>
+            {
+                // kAXTrustedCheckOptionPrompt: true
+                IntPtr key = CoreFoundation.CreateString("AXTrustedCheckOptionPrompt");
+                IntPtr value = ObjC.Send(ObjC.GetClass("NSNumber"), "numberWithBool:", 1);
+                IntPtr options = ObjC.Send(ObjC.GetClass("NSDictionary"), "dictionaryWithObject:forKey:", value, key);
+                CoreFoundation.CFRelease(key);
+                return AXIsProcessTrustedWithOptions(options);
+            });
+        }
+        catch (EntryPointNotFoundException)
+        {
+        }
+    }
+
     [LibraryImport("/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices")]
     [return: MarshalAs(UnmanagedType.U1)]
     private static partial bool AXIsProcessTrusted();
+
+    [LibraryImport("/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices")]
+    [return: MarshalAs(UnmanagedType.U1)]
+    private static partial bool AXIsProcessTrustedWithOptions(IntPtr options);
 }

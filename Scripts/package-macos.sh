@@ -66,13 +66,43 @@ cat >"$app/Contents/Info.plist" <<PLIST
       <key>CFBundleTypeName</key><string>ShareX custom uploader</string>
       <key>CFBundleTypeRole</key><string>Viewer</string>
       <key>LSHandlerRank</key><string>Owner</string>
-      <key>CFBundleTypeExtensions</key><array><string>sxcu</string></array>
+      <key>LSItemContentTypes</key><array><string>com.getsharex.sxcu</string></array>
     </dict>
     <dict>
       <key>CFBundleTypeName</key><string>ShareX image effect</string>
       <key>CFBundleTypeRole</key><string>Viewer</string>
       <key>LSHandlerRank</key><string>Owner</string>
-      <key>CFBundleTypeExtensions</key><array><string>sxie</string></array>
+      <key>LSItemContentTypes</key><array><string>com.getsharex.sxie</string></array>
+    </dict>
+    <!-- Any file can be opened with ShareX (Open With, or dropped on the Dock icon) to upload it. -->
+    <dict>
+      <key>CFBundleTypeName</key><string>File to upload</string>
+      <key>CFBundleTypeRole</key><string>Viewer</string>
+      <key>LSHandlerRank</key><string>Alternate</string>
+      <key>LSItemContentTypes</key><array><string>public.item</string></array>
+    </dict>
+  </array>
+  <key>UTExportedTypeDeclarations</key>
+  <array>
+    <dict>
+      <key>UTTypeIdentifier</key><string>com.getsharex.sxcu</string>
+      <key>UTTypeDescription</key><string>ShareX custom uploader</string>
+      <key>UTTypeConformsTo</key><array><string>public.json</string></array>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key><array><string>sxcu</string></array>
+        <key>public.mime-type</key><array><string>application/x-sharex-custom-uploader</string></array>
+      </dict>
+    </dict>
+    <dict>
+      <key>UTTypeIdentifier</key><string>com.getsharex.sxie</string>
+      <key>UTTypeDescription</key><string>ShareX image effect</string>
+      <key>UTTypeConformsTo</key><array><string>public.data</string></array>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key><array><string>sxie</string></array>
+        <key>public.mime-type</key><array><string>application/x-sharex-image-effect</string></array>
+      </dict>
     </dict>
   </array>
 </dict>

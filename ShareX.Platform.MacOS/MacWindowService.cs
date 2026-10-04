@@ -154,8 +154,49 @@ public sealed class MacWindowService : IWindowService
         });
     }
 
-    // Avalonia's ShowInTaskbar and transparent windows cover this on macOS; AppKit has no input shape for a window.
-    public bool SetOverlayStyle(long windowHandle, bool clickThrough) => false;
+    /// <summary>
+    /// Keeps one of ShareX's own windows out of the Command+Tab and window cycling and, for click-through overlays, lets the mouse
+    /// reach the windows behind it. Avalonia's handle is the window's NSView (or the NSWindow itself), on the main thread.
+    /// </summary>
+    public bool SetOverlayStyle(long windowHandle, bool clickThrough) => ObjC.WithAutoreleasePool(() =>
+    {
+        IntPtr window = GetOwnNSWindow((IntPtr)windowHandle);
+
+        if (window == IntPtr.Zero)
+        {
+            return false;
+        }
+
+        // NSWindowCollectionBehaviorIgnoresCycle | NSWindowCollectionBehaviorFullScreenAuxiliary
+        nint behavior = ObjC.SendNInt(window, "collectionBehavior") | (1 << 6) | (1 << 8);
+        ObjC.Send(window, "setCollectionBehavior:", behavior);
+
+        // Only set when wanted: an explicit NO would also stop clicks passing through the window's transparent areas.
+        if (clickThrough)
+        {
+            ObjC.SendBoolArg(window, "setIgnoresMouseEvents:", true);
+        }
+
+        return true;
+    });
+
+    /// <summary>The NSWindow for an NSView or NSWindow pointer of this process, or zero.</summary>
+    private static IntPtr GetOwnNSWindow(IntPtr handle)
+    {
+        if (handle == IntPtr.Zero)
+        {
+            return IntPtr.Zero;
+        }
+
+        if (ObjC.SendBool(handle, "isKindOfClass:", ObjC.GetClass("NSWindow")))
+        {
+            return handle;
+        }
+
+        return ObjC.SendBool(handle, "isKindOfClass:", ObjC.GetClass("NSView")) ? ObjC.Send(handle, "window") : IntPtr.Zero;
+    }
+
+    // AppKit has no input shape for a window; the frame relies on its transparent background.
 
     public bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas) => false;
 

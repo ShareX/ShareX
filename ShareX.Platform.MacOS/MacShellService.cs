@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.Platform.Diagnostics;
+using ShareX.Platform.MacOS.Native;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -47,7 +48,6 @@ public sealed class MacShellService : IShellService
 
     public bool RevealInFileManager(string path) => Run("open", ["-R", path]);
 
-    // macOS uniform type identifiers have no simple extension to MIME table; callers fall back to their own.
     // Desktop icons belong to the file manager or desktop shell here, which offers no common switch.
     public FeatureSupport DesktopIconsSupport { get; } = FeatureSupport.NotSupported("Hiding desktop icons during capture is only available on Windows.");
 
@@ -57,7 +57,9 @@ public sealed class MacShellService : IShellService
 
     public string? FindProgram(string executableName) => ShareX.Platform.Diagnostics.CommandRunner.FindOnPath(executableName);
 
-    public string? GetMimeType(string extension) => null;
+    /// <summary>From the uniform type identifier macOS assigns the extension.</summary>
+    public string? GetMimeType(string extension) =>
+        string.IsNullOrWhiteSpace(extension) ? null : LaunchServices.GetMimeTypeForExtension(extension.TrimStart('.'));
 
     private bool Run(string command, IReadOnlyList<string> arguments)
     {

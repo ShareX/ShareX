@@ -34,8 +34,8 @@ This document describes the **target** architecture. At the branch point (`devel
 | `IInputService` | SendInput, WM_VSCROLL, low-level mouse hook | Quartz events (Accessibility permission) | XTEST | Hyprland key shortcuts only |
 | `IOcrService` | Windows.Media.Ocr | Not supported (Windows only) | Tesseract | Tesseract |
 | `INotificationService` | ShareX notification window | Notification Center (`osascript`) | org.freedesktop.Notifications or notify-send | Same as X11 |
-| `IShellService` | ShellExecute and Explorer select | `open` and `open -R` | xdg-open and FileManager1 D-Bus | Same as X11 |
-| `IShellIntegrationService` | Explorer context menu keys under HKCU | Not supported | File manager `.desktop` actions | Same as X11 |
+| `IShellService` | ShellExecute and Explorer select | `open` and `open -R`; MIME types from uniform type identifiers | xdg-open and FileManager1 D-Bus | Same as X11 |
+| `IShellIntegrationService` | Explorer context menu keys under HKCU | Finder Quick Actions in `~/Library/Services`; Launch Services default application for file types | File manager `.desktop` actions | Same as X11 |
 | `ICredentialService` | Credential Manager | Keychain | Secret Service (secret-tool) | Same as X11 |
 | `ISecretProtectionService` | DPAPI | AES-GCM with an owner-only key file | AES-GCM with an owner-only key file | Same as X11 |
 | `IThumbnailService` | Explorer shell thumbnails | QuickLook (`qlmanage`) | freedesktop.org thumbnail cache | Same as X11 |

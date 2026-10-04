@@ -59,7 +59,7 @@ public sealed class MacPlatformServices : IPlatformServices
         Input = new MacInputService();
         Notifications = new MacNotificationService(runner);
         Shell = new MacShellService(runner);
-        ShellIntegration = new MacShellIntegrationService();
+        ShellIntegration = new MacShellIntegrationService(runner);
         Credentials = new KeychainCredentialService();
         Secrets = new KeyFileSecretProtectionService(System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "secret.key"));
         Thumbnails = new QuickLookThumbnailService(runner);

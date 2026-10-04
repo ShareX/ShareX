@@ -55,13 +55,28 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
     /// <summary>screencapture -l captures a window by its CGWindowID, with its transparency and, unless -o is given, its shadow.</summary>
     public ScreenCaptureFeatures Features => ScreenCaptureFeatures.Window | ScreenCaptureFeatures.TransparentWindow;
 
+    private const string PermissionReason =
+        "Allow ShareX in System Settings > Privacy & Security > Screen & System Audio Recording, then restart ShareX.";
+
+    private volatile bool permissionRequested;
+
+    /// <summary>
+    /// Supported until ShareX has asked for the permission in this run and been refused: macOS cannot tell "not asked yet" from
+    /// "denied" without prompting, and the first capture is what shows the prompt.
+    /// </summary>
     public FeatureSupport Support => GetPermissionState() == PermissionState.Denied
-        ? FeatureSupport.NotSupported("Allow ShareX in System Settings > Privacy & Security > Screen & System Audio Recording.")
+        ? FeatureSupport.NotSupported(PermissionReason)
         : FeatureSupport.Supported;
 
-    public PermissionState GetPermissionState() => CoreGraphics.CGPreflightScreenCaptureAccess() ? PermissionState.Granted : PermissionState.Denied;
+    public PermissionState GetPermissionState() => CoreGraphics.CGPreflightScreenCaptureAccess() ? PermissionState.Granted :
+        permissionRequested ? PermissionState.Denied : PermissionState.Unknown;
 
-    public bool RequestPermission() => CoreGraphics.CGRequestScreenCaptureAccess();
+    /// <summary>Shows macOS's prompt the first time; afterwards it only reports the answer, which takes effect after a restart.</summary>
+    public bool RequestPermission()
+    {
+        permissionRequested = true;
+        return CoreGraphics.CGRequestScreenCaptureAccess();
+    }
 
     public unsafe IReadOnlyList<ScreenInfo> GetScreens()
     {
@@ -90,6 +105,12 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
 
     public async Task<ScreenCaptureResult> CaptureAsync(ScreenCaptureRequest request, CancellationToken cancellationToken = default)
     {
+        // Without the permission screencapture returns only the wallpaper and ShareX's own windows.
+        if (GetPermissionState() != PermissionState.Granted && !RequestPermission())
+        {
+            throw new PlatformNotSupportedException(PermissionReason);
+        }
+
         IReadOnlyList<ScreenInfo> screens = GetScreens();
 
         // screencapture only writes one display per file, so span several displays with a region.

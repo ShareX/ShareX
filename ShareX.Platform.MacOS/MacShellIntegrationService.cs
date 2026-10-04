@@ -23,17 +23,20 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Platform.Diagnostics;
+using ShareX.Platform.MacOS.Native;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Text;
 
 namespace ShareX.Platform.MacOS;
 
 /// <summary>
-/// Browser extension hosts on macOS. Context menu entries need a Finder extension and file types are declared in the app
-/// bundle's Info.plist, so those are not available to ShareX at run time.
+/// Finder integration on macOS: Quick Actions (Automator services in ~/Library/Services) for the context menu entries, Launch
+/// Services for the default application of ShareX's file types, and browser extension hosts.
 /// </summary>
 public sealed class MacShellIntegrationService : IShellIntegrationService
 {
@@ -41,35 +44,92 @@ public sealed class MacShellIntegrationService : IShellIntegrationService
         "Microsoft Edge", "Vivaldi"];
 
     private readonly string applicationSupport;
+    private readonly string servicesFolder;
+    private readonly ICommandRunner? runner;
 
-    public MacShellIntegrationService()
-        : this(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Library", "Application Support"))
+    public MacShellIntegrationService(ICommandRunner? runner = null)
+        : this(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Library"), runner)
     {
     }
 
-    public MacShellIntegrationService(string applicationSupport)
+    /// <param name="library">The user's Library folder; tests pass a temporary one.</param>
+    public MacShellIntegrationService(string library, ICommandRunner? runner = null)
     {
-        this.applicationSupport = applicationSupport;
+        applicationSupport = Path.Combine(library, "Application Support");
+        servicesFolder = Path.Combine(library, "Services");
+        this.runner = runner;
     }
 
-    public FeatureSupport Support { get; } =
-        FeatureSupport.NotSupported("Finder context menu entries need a Finder extension, which ShareX does not have yet.");
+    public FeatureSupport Support => FeatureSupport.Supported;
 
-    public bool IsRegistered(ShellMenuEntry entry) => false;
+    internal string GetQuickActionPath(ShellMenuEntry entry) => Path.Combine(servicesFolder, FinderQuickAction.GetBundleName(entry));
 
-    public void Register(ShellMenuEntry entry) => throw new PlatformNotSupportedException(Support.Reason);
+    public bool IsRegistered(ShellMenuEntry entry)
+    {
+        string document = Path.Combine(GetQuickActionPath(entry), "Contents", "document.wflow");
+        return File.Exists(document) && File.ReadAllText(document).Contains(SecurityElement.Escape(FinderQuickAction.CreateCommand(entry)), StringComparison.Ordinal);
+    }
+
+    public void Register(ShellMenuEntry entry)
+    {
+        string contents = Path.Combine(GetQuickActionPath(entry), "Contents");
+        Directory.CreateDirectory(contents);
+        File.WriteAllText(Path.Combine(contents, "Info.plist"), FinderQuickAction.CreateInfoPlist(entry), new UTF8Encoding(false));
+        File.WriteAllText(Path.Combine(contents, "document.wflow"), FinderQuickAction.CreateDocument(entry), new UTF8Encoding(false));
+        RefreshServices();
+    }
 
     public void Unregister(ShellMenuEntry entry)
     {
+        string path = GetQuickActionPath(entry);
+
+        if (Directory.Exists(path))
+        {
+            Directory.Delete(path, true);
+            RefreshServices();
+        }
     }
 
-    public FeatureSupport FileAssociationSupport { get; } =
-        FeatureSupport.NotSupported("On macOS the file types an application opens are declared in its app bundle.");
+    /// <summary>Asks the pasteboard server to reread the services, so Finder shows the change without logging out.</summary>
+    private void RefreshServices()
+    {
+        try
+        {
+            runner?.RunAsync("/System/Library/CoreServices/pbs", ["-update"], timeout: TimeSpan.FromSeconds(10)).GetAwaiter().GetResult();
+        }
+        catch (Exception e) when (e is TimeoutException or System.ComponentModel.Win32Exception)
+        {
+        }
+    }
 
-    public bool IsAssociated(FileAssociation association) => false;
+    /// <summary>ShareX.app declares its file types; Launch Services can then make it their default application.</summary>
+    public FeatureSupport FileAssociationSupport => LaunchServices.MainBundleIdentifier != null
+        ? FeatureSupport.Supported
+        : FeatureSupport.NotSupported("File types can only be associated when ShareX runs from ShareX.app.");
 
-    public void Associate(FileAssociation association) => throw new PlatformNotSupportedException(FileAssociationSupport.Reason);
+    public bool IsAssociated(FileAssociation association)
+    {
+        string? bundleId = LaunchServices.MainBundleIdentifier;
+        string? type = LaunchServices.GetTypeForExtension(association.Extension.TrimStart('.'));
+        return bundleId != null && type != null &&
+            string.Equals(LaunchServices.GetDefaultHandler(type), bundleId, StringComparison.OrdinalIgnoreCase);
+    }
 
+    public void Associate(FileAssociation association)
+    {
+        string bundleId = LaunchServices.MainBundleIdentifier ?? throw new PlatformNotSupportedException(FileAssociationSupport.Reason);
+        LaunchServices.RegisterMainBundle();
+        string type = LaunchServices.GetTypeForExtension(association.Extension.TrimStart('.')) ??
+            throw new InvalidOperationException($"macOS has no type for {association.Extension}.");
+
+        if (!LaunchServices.SetDefaultHandler(type, bundleId))
+        {
+            throw new InvalidOperationException($"macOS did not make ShareX the default application for {association.Extension}.");
+        }
+    }
+
+    // Launch Services keeps a default application per type and has no way to clear it; ShareX stays one of the type's applications
+    // as long as ShareX.app declares it, and the user picks another with Get Info > Open with.
     public void RemoveAssociation(FileAssociation association)
     {
     }

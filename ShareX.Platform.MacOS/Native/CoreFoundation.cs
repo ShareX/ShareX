@@ -31,7 +31,7 @@ namespace ShareX.Platform.MacOS.Native;
 /// <summary>CoreFoundation helpers. CF types are toll free bridged to their Foundation counterparts (CFStringRef is NSString*).</summary>
 internal static unsafe partial class CoreFoundation
 {
-    private const string Library = "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation";
+    public const string Library = "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation";
 
     public const int kCFNumberSInt32Type = 3;
     public const int kCFNumberSInt64Type = 4;

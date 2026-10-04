@@ -138,6 +138,7 @@ internal static class Program
     private static async Task StartApplicationAsync()
     {
         ImageEditorIntegration.Initialize();
+        ApplicationActivation.Install();
 
         MainForm? hotkeyHost = null;
         // Keep warnings behind welcome and all commands accepted during startup, including forwarded browser/CLI work.

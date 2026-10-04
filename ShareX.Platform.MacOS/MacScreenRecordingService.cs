@@ -45,7 +45,7 @@ public sealed class MacScreenRecordingService : IScreenRecordingService
 
     public FeatureSupport Support => runner.Exists("ffmpeg")
         ? FeatureSupport.Supported
-        : FeatureSupport.RequiresTool("FFmpeg (brew install ffmpeg, or let ShareX download it)");
+        : FeatureSupport.RequiresTool("FFmpeg (brew install ffmpeg, or set its path in ShareX's FFmpeg options)");
 
     public IReadOnlyList<string> GetSupportedDevices() => ["avfoundation"];
 
