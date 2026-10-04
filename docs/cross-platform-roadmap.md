@@ -24,7 +24,7 @@ As of 2026-10-04.
 | --- | --- | --- |
 | Windows | **100%** | McoreD and Jaex agree (2026-10-04): code complete. No Win32, COM, registry or WinRT code remains in shared projects; Windows services live in `ShareX.Platform.Windows`; Windows fixtures and loopback upload/history runs pass. Desktop checks on Windows 10/11 continue as field testing. |
 | Linux | **100%** | McoreD and Jaex agree (2026-10-04): code complete for Hyprland, sway, GNOME, KDE and X11; OCR through Tesseract; package and installer. Field testing continues (Jaex on KDE Wayland); its bug rows come first. |
-| macOS | **35%** | Phase open (2026-10-04). ShareX.app packages and launches on macos-latest; Vision OCR, browser launch, QuickLook thumbnails, wallpaper and Dock progress implemented; capture, Carbon hotkeys, clipboard, login item, Keychain from the first attempt. Remaining: mouse highlighter, window management, UI adaptation, real-Mac verification. |
+| macOS | **75%** | Platform layer complete: capture, recording (FFmpeg avfoundation), Carbon hotkeys with Mac default keys, clipboard, Keychain, login item, Vision OCR, browser launch, QuickLook thumbnails, wallpaper, Dock progress, mouse highlighter backend, window inspection. ShareX.app packages, launches and closes on macos-latest; OCR, launch, thumbnails, pointer tracking, clipboard and Keychain pass on a real Mac in CI. Remaining: macOS UI adaptation (J) and real-Mac verification of capture, recording and hotkeys with permissions granted (testers). |
 
 ### What 100% means
 
@@ -57,7 +57,7 @@ GNOME and KDE (screenshot portal permission, ScreenCast recording, GlobalShortcu
 
 M owns the platform, packaging and CI rows; J the UI rows. CI's `macos-latest` runner builds, tests, packages and launches the app; McoreD, Jaex and users verify on real Macs.
 
-- [ ] Cross-platform workflow green on `macos-latest` for every push (M).
+- [x] Cross-platform workflow green on Windows, Linux and macOS (first fully green run 37210187996, 2026-10-04) (M).
 - [x] `ShareX.app` bundle and `Scripts/package-macos.sh` (Info.plist, icon, document types, ad hoc signature on macOS); CI packages and launches it (M).
 - [ ] Capture, Screen Recording permission flow, FFmpeg avfoundation recording, Carbon hotkeys, clipboard and login item verified on a Mac (M; services exist).
 - [x] OCR through the Vision framework (M).
@@ -224,3 +224,4 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, J: B41 publication sync retains f5fa6dcc2 source/report and the new portable single-instance naming/association capability calls; repeat the full combined-source gate.
 - 2026-10-04, J: Actual Fedora 44 KDE Wayland verification now records full-app startup/settings/tray rendering, byte-identical synthetic loopback PNG upload, retained SQLite history/visible thumbnail, editor file-open/paste/downward expansion and clean AutoClose/SIGTERM. B45 early-dialog startup fixed and three proper actual-desktop child fixtures pass; Linux Release build 0 warnings/errors, five projects 629 pass / 62 skips including all eight History cases. B44 portable filename collision and B47/R46 UI-blocking synchronous capture are M-owned blockers, B46 after-capture capability UI fix remains claimed. Hotkey firing, native Wayland clipboard reception, cut/undo rendering, host-loss recovery and full tools/capture/recording/integration remain open. See verification/2026-10-04-agent-j-kde.md. Estimates stay 90%, broad desktop gates unchecked; user scope and automatic-workflow pause unchanged.
 - 2026-10-04, M: McoreD confirms full agreement with Jaex: Windows, Linux and macOS to 100%, OCR and other features through each system's own support. Rules, gates, macOS phase and CI restored after 33d42f51b; Jaex's KDE field-testing entries kept.
+- 2026-10-04, M: Cross-platform workflow fully green on Windows, Linux and macOS. macOS 35% -> 75%: mouse highlighter backend, window inspection, Mac default hotkeys, B42/B43/B27 fixed, macOS service tests on the macos-latest runner.
