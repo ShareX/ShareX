@@ -70,6 +70,8 @@ public static class AvaloniaBootstrapper
 {
     private static readonly object SyncRoot = new();
     private static ClassicDesktopStyleApplicationLifetime? _desktopLifetime;
+    private static Application? _earlyApplication;
+    private static ClassicDesktopStyleApplicationLifetime? _earlyDesktopLifetime;
     private static string[]? _args;
     private static int _shutdownStarted;
 
@@ -79,18 +81,20 @@ public static class AvaloniaBootstrapper
         ArgumentNullException.ThrowIfNull(startup);
         ArgumentNullException.ThrowIfNull(shutdown);
 
-        if (Application.Current != null || _desktopLifetime != null)
+        if (_desktopLifetime != null ||
+            (Application.Current != null &&
+             (!ReferenceEquals(Application.Current, _earlyApplication) ||
+              !ReferenceEquals(Application.Current.ApplicationLifetime, _earlyDesktopLifetime))))
         {
             throw new InvalidOperationException("Avalonia is already initialized.");
         }
 
+        if (_earlyApplication != null) Dispatcher.UIThread.VerifyAccess();
         Interlocked.Exchange(ref _shutdownStarted, 0);
 
-        ClassicDesktopStyleApplicationLifetime desktop = new()
-        {
-            Args = args,
-            ShutdownMode = ShutdownMode.OnExplicitShutdown
-        };
+        ClassicDesktopStyleApplicationLifetime desktop = _earlyDesktopLifetime ?? new();
+        desktop.Args = args;
+        desktop.ShutdownMode = ShutdownMode.OnExplicitShutdown;
         desktop.Startup += async (_, _) => await startup();
         desktop.Exit += (_, _) =>
         {
@@ -98,7 +102,17 @@ public static class AvaloniaBootstrapper
             shutdown();
         };
 
-        BuildAvaloniaApp().SetupWithLifetime(desktop);
+        if (_earlyApplication != null)
+        {
+            // Startup errors can show a dialog before Program starts the desktop lifetime. Avalonia's lifetime is immutable
+            // after setup, so EnsureInitialized prepares it and we attach the real startup/exit callbacks here.
+            _earlyApplication = null;
+            _earlyDesktopLifetime = null;
+        }
+        else
+        {
+            BuildAvaloniaApp().SetupWithLifetime(desktop);
+        }
         _desktopLifetime = desktop;
         _args = args;
     }
@@ -113,7 +127,7 @@ public static class AvaloniaBootstrapper
     }
 
     /// <summary>
-    /// Initializes Avalonia for a legacy host that owns its own application lifetime and message loop.
+    /// Initializes Avalonia with a prepared explicit desktop lifetime for dialogs whose host owns the message loop.
     /// The ShareX desktop application should use <see cref="Initialize"/> followed by <see cref="Run"/> instead.
     /// </summary>
     public static void EnsureInitialized()
@@ -127,7 +141,10 @@ public static class AvaloniaBootstrapper
         {
             if (Application.Current == null)
             {
-                BuildAvaloniaApp().SetupWithoutStarting();
+                ClassicDesktopStyleApplicationLifetime desktop = new() { ShutdownMode = ShutdownMode.OnExplicitShutdown };
+                BuildAvaloniaApp().SetupWithLifetime(desktop);
+                _earlyApplication = Application.Current;
+                _earlyDesktopLifetime = desktop;
                 ThemeManager.Refresh();
             }
         }
