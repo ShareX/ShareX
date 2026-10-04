@@ -33,6 +33,7 @@ namespace ShareX.Tools;
 public partial class PinToScreenStartupWindow : Window
 {
     private readonly PinToScreenStartupViewModel _viewModel;
+    private bool _windowClosed;
 
     public PinToScreenStartupWindow() : this(new PinToScreenServices
     {
@@ -51,19 +52,44 @@ public partial class PinToScreenStartupWindow : Window
         AvaloniaXamlLoader.Load(this);
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
 
-        _viewModel.RegionCaptureStarted = Hide;
+        _viewModel.RegionCaptureStarted = () =>
+        {
+            if (!_viewModel.IsClosed) Hide();
+        };
         _viewModel.RegionCaptureFinished = () =>
         {
-            if (IsVisible == false && _viewModel.HasError)
+            if (!_viewModel.IsClosed && IsVisible == false && _viewModel.HasError)
             {
                 Show();
             }
         };
         _viewModel.SourceSelected = source =>
         {
+            if (_viewModel.IsClosed) return;
             PinToScreenManager.Pin(source.ImageData, options, services.CopyImage, source.Location);
             services.ImagePinned?.Invoke();
             Close();
+        };
+        _viewModel.SelectionFinished = () =>
+        {
+            if (!_windowClosed && _viewModel.IsClosed && !_viewModel.IsBusy) Close();
+        };
+        Closing += (_, args) =>
+        {
+            if (!_viewModel.RequestClose())
+            {
+                args.Cancel = true;
+                Hide();
+            }
+        };
+        Closed += (_, _) =>
+        {
+            _windowClosed = true;
+            _viewModel.Dispose();
+            _viewModel.SourceSelected = null;
+            _viewModel.RegionCaptureStarted = null;
+            _viewModel.RegionCaptureFinished = null;
+            _viewModel.SelectionFinished = null;
         };
     }
 

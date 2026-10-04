@@ -167,6 +167,198 @@ public sealed class PinToScreenSourceSupportTests
             : Strings.PinToScreenStartupViewModel_No_region_selected, viewModel.ErrorMessage);
     }
 
+    [Theory]
+    [InlineData(0)]
+    [InlineData(1)]
+    [InlineData(2)]
+    public async Task ClosedChooserWaitsForTheActualSelectorAndRejectsAllLateSources(int sourceKind)
+    {
+        TaskCompletionSource<PinToScreenSource?> result = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        int selected = 0, restored = 0, finished = 0, calls = 0;
+        Task<PinToScreenSource?> Select() { calls++; return result.Task; }
+        using PinToScreenStartupViewModel viewModel = new(CreateServices(Select, Select, Select),
+            () => sourceKind == 0 ? FeatureSupport.Supported : FeatureSupport.NotSupported("No desktop capture."),
+            () => Task.CompletedTask);
+        viewModel.SourceSelected = _ => selected++;
+        viewModel.RegionCaptureFinished = () => restored++;
+        viewModel.SelectionFinished = () =>
+        {
+            finished++;
+            Assert.False(viewModel.IsBusy);
+            Assert.True(viewModel.RequestClose());
+        };
+        Task selection = sourceKind switch
+        {
+            0 => viewModel.CaptureRegionCommand.ExecuteAsync(null),
+            1 => viewModel.FromClipboardCommand.ExecuteAsync(null),
+            _ => viewModel.FromFileCommand.ExecuteAsync(null)
+        };
+        Assert.True(viewModel.IsBusy);
+        Assert.False(viewModel.RequestClose());
+        Assert.False(viewModel.RequestClose());
+        Assert.True(viewModel.IsClosed);
+        Assert.False(viewModel.IsIdle);
+        Assert.False(viewModel.CanCaptureRegion);
+        Assert.False(viewModel.CaptureRegionCommand.CanExecute(null));
+        Assert.False(viewModel.FromClipboardCommand.CanExecute(null));
+        Assert.False(viewModel.FromFileCommand.CanExecute(null));
+        await viewModel.CaptureRegionCommand.ExecuteAsync(null);
+        await viewModel.FromClipboardCommand.ExecuteAsync(null);
+        await viewModel.FromFileCommand.ExecuteAsync(null);
+        Assert.Equal(1, calls);
+        Assert.Equal(0, finished);
+        Assert.False(selection.IsCompleted);
+
+        result.SetResult(CreateSource());
+        await selection.WaitAsync(TimeSpan.FromSeconds(5));
+        Assert.Equal(0, selected);
+        Assert.Equal(0, restored);
+        Assert.Equal(1, finished);
+        Assert.False(viewModel.IsBusy);
+        Assert.False(viewModel.IsIdle);
+        Assert.True(viewModel.RequestClose());
+        Assert.False(viewModel.HasError);
+    }
+
+    [Fact]
+    public async Task CloseDuringHideWaitSkipsTheSelectorAndRestoration()
+    {
+        TaskCompletionSource hidden = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        int calls = 0, restored = 0, finished = 0;
+        using PinToScreenStartupViewModel viewModel = new(CreateServices(() =>
+        {
+            calls++;
+            return Task.FromResult<PinToScreenSource?>(CreateSource());
+        }), () => FeatureSupport.Supported, () => hidden.Task);
+        viewModel.SourceSelected = _ => Assert.Fail("A closed chooser cannot pin.");
+        viewModel.RegionCaptureFinished = () => restored++;
+        viewModel.SelectionFinished = () => { finished++; Assert.True(viewModel.RequestClose()); };
+        Task selection = viewModel.CaptureRegionCommand.ExecuteAsync(null);
+        Assert.False(viewModel.RequestClose());
+        Assert.True(viewModel.IsBusy);
+        Assert.False(selection.IsCompleted);
+        hidden.SetResult();
+        await selection.WaitAsync(TimeSpan.FromSeconds(5));
+        Assert.Equal(0, calls);
+        Assert.Equal(0, restored);
+        Assert.Equal(1, finished);
+        Assert.False(viewModel.HasError);
+    }
+
+    [Fact]
+    public async Task SupportLossDuringSelectionRejectsTheSourceButKeepsFileAndClipboardUsable()
+    {
+        TaskCompletionSource<PinToScreenSource?> result = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        FeatureSupport support = FeatureSupport.Supported;
+        int restored = 0, finished = 0;
+        List<PinToScreenSource> selected = [];
+        PinToScreenSource source = CreateSource();
+        using PinToScreenStartupViewModel viewModel = new(CreateServices(() => result.Task,
+            () => Task.FromResult<PinToScreenSource?>(source), () => Task.FromResult<PinToScreenSource?>(source)),
+            () => support, () => Task.CompletedTask);
+        viewModel.SourceSelected = selected.Add;
+        viewModel.RegionCaptureFinished = () => restored++;
+        viewModel.SelectionFinished = () => { Assert.False(viewModel.IsBusy); finished++; };
+        Task capture = viewModel.CaptureRegionCommand.ExecuteAsync(null);
+        support = FeatureSupport.NotSupported("Fixture permission withdrawn.");
+        result.SetResult(source);
+        await capture.WaitAsync(TimeSpan.FromSeconds(5));
+        Assert.Empty(selected);
+        Assert.Equal(Strings.PinToScreenStartupViewModel_CaptureUnavailable, viewModel.ErrorMessage);
+        Assert.Equal(1, restored);
+        Assert.Equal(1, finished);
+        Assert.True(viewModel.IsIdle);
+        Assert.False(viewModel.CanCaptureRegion);
+
+        await viewModel.FromClipboardCommand.ExecuteAsync(null);
+        await viewModel.FromFileCommand.ExecuteAsync(null);
+        Assert.Equal(new[] { source, source }, selected);
+        Assert.Equal(3, finished);
+        Assert.False(viewModel.HasError);
+    }
+
+    [Fact]
+    public async Task SuccessfulPinMayCloseReentrantlyAndCompletesBeforeTheWindowIsReleased()
+    {
+        PinToScreenSource source = CreateSource();
+        List<string> events = [];
+        using PinToScreenStartupViewModel viewModel = new(CreateServices(() => Task.FromResult<PinToScreenSource?>(source)),
+            () => FeatureSupport.Supported, () => Task.CompletedTask);
+        viewModel.RegionCaptureStarted = () => events.Add("hidden");
+        viewModel.SourceSelected = selected =>
+        {
+            Assert.Same(source, selected);
+            Assert.Equal(new System.Drawing.Point(-50, 75), selected.Location);
+            events.Add("pinned");
+            Assert.False(viewModel.RequestClose());
+        };
+        viewModel.RegionCaptureFinished = () => Assert.Fail("Successful close must not restore the chooser.");
+        viewModel.SelectionFinished = () =>
+        {
+            Assert.True(viewModel.RequestClose());
+            events.Add("closed");
+        };
+        await viewModel.CaptureRegionCommand.ExecuteAsync(null);
+        Assert.Equal(new[] { "hidden", "pinned", "closed" }, events);
+        Assert.True(viewModel.IsClosed);
+        Assert.False(viewModel.IsBusy);
+    }
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task ClosedChooserIgnoresLateEmptyResultsAndErrors(bool failure)
+    {
+        TaskCompletionSource<PinToScreenSource?> result = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        int restored = 0, finished = 0;
+        using PinToScreenStartupViewModel viewModel = new(CreateServices(() => result.Task),
+            () => FeatureSupport.Supported, () => Task.CompletedTask);
+        viewModel.RegionCaptureFinished = () => restored++;
+        viewModel.SelectionFinished = () => finished++;
+        Task selection = viewModel.CaptureRegionCommand.ExecuteAsync(null);
+        Assert.False(viewModel.RequestClose());
+        if (failure) result.SetException(new InvalidOperationException("Late selector failure."));
+        else result.SetResult(null);
+        await selection.WaitAsync(TimeSpan.FromSeconds(5));
+        Assert.False(viewModel.HasError);
+        Assert.Equal(0, restored);
+        Assert.Equal(1, finished);
+        Assert.True(viewModel.RequestClose());
+    }
+
+    [Fact]
+    public async Task IdleCloseRejectsCommandsWithoutReadingDisposedCapabilities()
+    {
+        int calls = 0;
+        bool disposed = false;
+        Task<PinToScreenSource?> Select() { calls++; return Task.FromResult<PinToScreenSource?>(CreateSource()); }
+        using PinToScreenStartupViewModel viewModel = new(CreateServices(Select, Select, Select),
+            () => disposed ? throw new ObjectDisposedException("Fixture platform") : FeatureSupport.Supported);
+        Assert.True(viewModel.RequestClose());
+        disposed = true;
+        viewModel.Dispose();
+        Assert.False(viewModel.CanCaptureRegion);
+        Assert.Null(viewModel.CaptureUnavailableReason);
+        await viewModel.CaptureRegionCommand.ExecuteAsync(null);
+        await viewModel.FromClipboardCommand.ExecuteAsync(null);
+        await viewModel.FromFileCommand.ExecuteAsync(null);
+        Assert.Equal(0, calls);
+    }
+
+    [Fact]
+    public async Task RestorationFailureStillReleasesTheSelectionOwner()
+    {
+        int finished = 0;
+        InvalidOperationException error = new("Fixture restoration failed.");
+        using PinToScreenStartupViewModel viewModel = new(CreateServices(() => Task.FromResult<PinToScreenSource?>(null)),
+            () => FeatureSupport.Supported, () => Task.CompletedTask);
+        viewModel.RegionCaptureFinished = () => throw error;
+        viewModel.SelectionFinished = () => { finished++; Assert.False(viewModel.IsBusy); };
+        Assert.Same(error, await Assert.ThrowsAsync<InvalidOperationException>(() => viewModel.CaptureRegionCommand.ExecuteAsync(null)));
+        Assert.Equal(1, finished);
+        Assert.True(viewModel.IsIdle);
+    }
+
     private static PinToScreenServices CreateServices(Func<Task<PinToScreenSource?>> capture,
         Func<Task<PinToScreenSource?>>? clipboard = null, Func<Task<PinToScreenSource?>>? file = null) => new()
     {

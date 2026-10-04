@@ -29,30 +29,35 @@ using ShareX.Platform;
 
 namespace ShareX.Tools;
 
-public sealed partial class PinToScreenStartupViewModel : ViewModelBase
+public sealed partial class PinToScreenStartupViewModel : ViewModelBase, IDisposable
 {
     private readonly PinToScreenServices _services;
     private readonly Func<FeatureSupport> _getCaptureSupport;
     private readonly Func<Task> _hideDelay;
+    private bool _closed;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsIdle))]
     [NotifyPropertyChangedFor(nameof(CanCaptureRegion))]
     [NotifyCanExecuteChangedFor(nameof(CaptureRegionCommand))]
+    [NotifyCanExecuteChangedFor(nameof(FromClipboardCommand))]
+    [NotifyCanExecuteChangedFor(nameof(FromFileCommand))]
     private bool _isBusy;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(HasError))]
     private string _errorMessage = string.Empty;
 
-    public bool IsIdle => !IsBusy;
+    public bool IsClosed => _closed;
+    public bool IsIdle => !_closed && !IsBusy;
     public bool CanCaptureRegion => IsIdle && _getCaptureSupport().IsSupported;
-    public string? CaptureUnavailableReason => _getCaptureSupport().IsSupported ? null :
+    public string? CaptureUnavailableReason => _closed || _getCaptureSupport().IsSupported ? null :
         Localization.Strings.PinToScreenStartupViewModel_CaptureUnavailable;
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
     public Action<PinToScreenSource>? SourceSelected { get; set; }
     public Action? RegionCaptureStarted { get; set; }
     public Action? RegionCaptureFinished { get; set; }
+    public Action? SelectionFinished { get; set; }
 
     public PinToScreenStartupViewModel(PinToScreenServices services, Func<FeatureSupport>? getCaptureSupport = null,
         Func<Task>? hideDelay = null)
@@ -68,15 +73,15 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
     private Task CaptureRegionAsync() => SelectAsync(_services.CaptureRegionAsync,
         Localization.Strings.PinToScreenStartupViewModel_No_region_selected, captureRegion: true);
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(IsIdle))]
     private Task FromClipboardAsync() => SelectAsync(_services.GetClipboardImageAsync, Localization.Strings.PinToScreenStartupViewModel_Clipboard_no_image);
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(IsIdle))]
     private Task FromFileAsync() => SelectAsync(_services.SelectImageFileAsync, Localization.Strings.PinToScreenStartupViewModel_No_image_selected);
 
     private async Task SelectAsync(Func<Task<PinToScreenSource?>> selector, string emptyMessage, bool captureRegion = false)
     {
-        if (IsBusy)
+        if (!IsIdle)
         {
             return;
         }
@@ -89,16 +94,19 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
         }
 
         IsBusy = true;
-        ErrorMessage = string.Empty;
         bool regionCaptureStarted = false;
 
         try
         {
+            if (_closed) return;
+            ErrorMessage = string.Empty;
             if (captureRegion)
             {
                 regionCaptureStarted = true;
                 RegionCaptureStarted?.Invoke();
+                if (_closed) return;
                 await _hideDelay();
+                if (_closed) return;
                 if (!_getCaptureSupport().IsSupported)
                 {
                     ErrorMessage = Localization.Strings.PinToScreenStartupViewModel_CaptureUnavailable;
@@ -107,6 +115,12 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
             }
 
             PinToScreenSource? source = await selector();
+            if (_closed) return;
+            if (captureRegion && !_getCaptureSupport().IsSupported)
+            {
+                ErrorMessage = Localization.Strings.PinToScreenStartupViewModel_CaptureUnavailable;
+                return;
+            }
             if (source == null || source.ImageData.Length == 0)
             {
                 ErrorMessage = emptyMessage;
@@ -117,17 +131,25 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
         }
         catch (Exception ex)
         {
+            if (_closed) return;
             ErrorMessage = string.Format(Localization.Strings.PinToScreenStartupViewModel_Unable_load_image, ex.Message);
             ToolsDiagnostics.ReportWarning(nameof(PinToScreenStartupViewModel), "Unable to select an image to pin.", ex);
         }
         finally
         {
             IsBusy = false;
-            if (regionCaptureStarted)
+            try
             {
-                RegionCaptureFinished?.Invoke();
+                if (!_closed && regionCaptureStarted)
+                {
+                    RegionCaptureFinished?.Invoke();
+                }
             }
-            NotifyCaptureAvailability();
+            finally
+            {
+                NotifyCaptureAvailability();
+                SelectionFinished?.Invoke();
+            }
         }
     }
 
@@ -136,5 +158,23 @@ public sealed partial class PinToScreenStartupViewModel : ViewModelBase
         OnPropertyChanged(nameof(CanCaptureRegion));
         OnPropertyChanged(nameof(CaptureUnavailableReason));
         CaptureRegionCommand.NotifyCanExecuteChanged();
+    }
+
+    /// <summary>Disables callbacks immediately; the window waits for a busy selector to finish before closing.</summary>
+    public bool RequestClose()
+    {
+        Dispose();
+        return !IsBusy;
+    }
+
+    public void Dispose()
+    {
+        if (_closed) return;
+        _closed = true;
+        OnPropertyChanged(nameof(IsClosed));
+        OnPropertyChanged(nameof(IsIdle));
+        NotifyCaptureAvailability();
+        FromClipboardCommand.NotifyCanExecuteChanged();
+        FromFileCommand.NotifyCanExecuteChanged();
     }
 }
