@@ -1,0 +1,9 @@
+{
+  "display": "wayland-0",
+  "mapped": true,
+  "active": true,
+  "expected": "#2A6C91",
+  "matches_expected": true,
+  "synthetic_format": "hex",
+  "text": "#2A6C91"
+}

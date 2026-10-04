@@ -1,0 +1,83 @@
+{
+  "source": "922bc0289",
+  "fixture": {
+    "display": "wayland-0",
+    "mapped": true,
+    "active": true,
+    "width": 1918,
+    "height": 972,
+    "quadrants_rgb": [
+      [
+        255,
+        0,
+        0
+      ],
+      [
+        0,
+        255,
+        0
+      ],
+      [
+        0,
+        0,
+        255
+      ],
+      [
+        255,
+        255,
+        0
+      ]
+    ]
+  },
+  "results": [
+    {
+      "route": "fullscreen",
+      "dimensions": [
+        1918,
+        972
+      ],
+      "sha256": "838fb4167771f6a4d2cc223a26cadfa4e32174e336f210c57f5f66dae3518f16",
+      "all_pixels_match_except_cursor": true,
+      "cursor_bounds": [
+        1673,
+        783,
+        1687,
+        805
+      ],
+      "show_cursor_saved_setting": false
+    },
+    {
+      "route": "monitor",
+      "dimensions": [
+        1918,
+        972
+      ],
+      "sha256": "838fb4167771f6a4d2cc223a26cadfa4e32174e336f210c57f5f66dae3518f16",
+      "all_pixels_match_except_cursor": true,
+      "cursor_bounds": [
+        1673,
+        783,
+        1687,
+        805
+      ],
+      "show_cursor_saved_setting": false
+    }
+  ],
+  "region": {
+    "window_rendered": true,
+    "input_attempts": [
+      "core XSendEvent pointer sequence",
+      "XTest pointer sequence"
+    ],
+    "selection_saved": false,
+    "escape_cancelled": true,
+    "coordinate_and_physical_input_verification": "open"
+  },
+  "upload_disabled": true,
+  "exit_code": 0,
+  "saved_settings_files": [
+    "ApplicationConfig.json",
+    "UploadersConfig.json",
+    "HotkeysConfig.json"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "source": "922bc0289",
+  "input": "clipboard-qr-wayland.png",
+  "input_sha256": "1adc2f1b4bea5f813f2b3695cacf11d1c3cb325508af6b83a841d41f7aa1d253",
+  "command": [
+    "./ShareX",
+    "-portable",
+    "-multi",
+    "-NoHotkeys",
+    "-QRCode",
+    "/home/jaex/.codex/sharex-agent-j/kde-20261004/flows/clipboard-qr-wayland.png"
+  ],
+  "decoded_text": "ShareX synthetic QR fixture 2026-10-04",
+  "native_accessibility": {
+    "node": {
+      "path": "1.1.3.0.0.0.1.0.0.1",
+      "role": "entry",
+      "name": "TextBox",
+      "enabled": true,
+      "sensitive": true,
+      "checked": false,
+      "selected": false,
+      "children": 1
+    },
+    "text": "ShareX synthetic QR fixture 2026-10-04"
+  },
+  "upload_disabled": true,
+  "scan_route": "existing file command to full app",
+  "exit_code": 0,
+  "saved_settings_files": [
+    "ApplicationConfig.json",
+    "UploadersConfig.json",
+    "HotkeysConfig.json"
+  ],
+  "recent_colors": [
+    "42, 108, 145"
+  ]
+}

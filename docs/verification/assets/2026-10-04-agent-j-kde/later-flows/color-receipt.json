@@ -1,0 +1,57 @@
+{
+  "source": "922bc0289",
+  "edit": {
+    "kind": "native AT-SPI EditableText",
+    "hex": "#2A6C91"
+  },
+  "fields": {
+    "hex": "#2A6C91",
+    "red": "42",
+    "green": "108",
+    "blue": "145",
+    "alpha": "255"
+  },
+  "copy": {
+    "kind": "native accessibility focus on Copy hexadecimal and Return to owned X11 popup",
+    "external_receiver": {
+      "display": "wayland-0",
+      "mapped": true,
+      "active": true,
+      "expected": "#2A6C91",
+      "matches_expected": true,
+      "synthetic_format": "hex",
+      "text": "#2A6C91"
+    }
+  },
+  "upload_disabled": true,
+  "exit_code": 0,
+  "saved_settings_files": [
+    "ApplicationConfig.json",
+    "UploadersConfig.json",
+    "HotkeysConfig.json"
+  ],
+  "recent_colors": [
+    "42, 108, 145"
+  ],
+  "restart": {
+    "source": "922bc0289",
+    "route": "existing -ColorPicker command, clipboard contains known synthetic hex",
+    "native_value": {
+      "node": {
+        "path": "1.1.3.0.0.0.0.1.0.0.0.1.1",
+        "role": "entry",
+        "name": "TextBox",
+        "enabled": true,
+        "sensitive": true,
+        "checked": false,
+        "selected": false,
+        "children": 1
+      },
+      "text": "#2A6C91"
+    },
+    "exit_code": 0,
+    "saved_recent_colors": [
+      "42, 108, 145"
+    ]
+  }
+}

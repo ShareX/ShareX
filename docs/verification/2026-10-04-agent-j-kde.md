@@ -80,3 +80,19 @@ The final full Release solution/all-five-project gate passes: 0 warnings/errors,
 ## B49 and later tool/settings verification
 
 [The B49 report](2026-10-04-b49-hotkey-enabling.md) records unsupported hotkey enabling guards, actual settings/tray persistence and allowed disabling, plus B46 custom-task menu and native Wayland QR-copy evidence. The final full Linux gate is 635 passed / 67 skipped / 0 failures with five actual-desktop cases, 0 build warnings/errors. Direct backend guarding (R49), actual hotkey firing and remaining tools/desktop flows remain open; estimates stay 90%.
+
+## Further QR, color and capture flows on 922bc0289
+
+The full app's existing `-QRCode <synthetic PNG>` command decoded the image previously received from QR Copy image back to `ShareX synthetic QR fixture 2026-10-04`. Actual accessibility Text and the visible tool agree. This verifies file decoding through the application, while native picker/save interactions remain open.
+
+In the actual color tool, native accessibility editing of Hex to `#2A6C91` updated Red/Green/Blue/Alpha to 42/108/145/255 and the preview. Copy hexadecimal was selected with accessibility focus and Return sent to the app's owned X11 popup; an active native Wayland GTK consumer received exactly `#2A6C91`. Earlier menu action attempts could not invoke it and are not evidence of a clipboard failure. Normal Exit saved the color in RecentColors, and the next full-app `-ColorPicker` run displayed the known clipboard color and the recent swatch. Both verified runs exited 0 and saved all three settings files.
+
+A native Wayland GTK fullscreen fixture covered the single 1918x972 desktop with red/green/blue/yellow quadrants. With the ShareX main window hidden to the actual KDE tray, real Fullscreen and Monitor commands captured current synthetic frames through the screenshot portal. Their PNG bytes are identical, SHA-256 `838fb4167771f6a4d2cc223a26cadfa4e32174e336f210c57f5f66dae3518f16`. Every pixel matches the generated quadrants except the cursor's 14x22 bounding box (1673,783)-(1687,805), which was visually confirmed as the ordinary cursor. No personal desktop content is in these images. This supersedes the earlier stale-frame limitation for those routes on this rebooted host.
+
+B50/R50 records the observed missing behavior: the cursor remains included despite saved ShowCursor=false. PortalCaptureBackend does not forward IncludeCursor, and Show cursor is still offered without a capability reason. M owns the backend/contract; J will guard the UI after its support handoff, preserving Windows and saved settings. No backend edit or compositor configuration workaround was made.
+
+The real region overlay renders the synthetic captured background and toolbar; Escape cancels without saving. Core XSendEvent and XTest pointer sequences did not finish selection, so actual physical input/coordinate correctness stays unverified. A later focus-release attempt hid the synthetic cover before asynchronous portal capture completed and was cancelled without exporting or retaining that frame; it supplies no verification evidence. The verified capture run exited 0 and saved all settings. The synthetic fixture processes were closed.
+
+[Receipts, app-only tool/region images, synthetic capture and manifest](assets/2026-10-04-agent-j-kde/later-flows/README.md) survive reboot. Upload remained disabled throughout. No package or desktop/compositor setting was changed. Production source is unchanged from the full B49 green gate; estimates and broad desktop gates stay unchanged.
+
+Before publishing these additional artifacts, repeated the full Release solution and all five test projects on unchanged 922bc0289 production with SHAREX_TEST_DESKTOP=1: 0 build warnings/errors, 635 passed / 67 skipped / 0 failures. The later-flows gate receipt and manifest retain this publication result.

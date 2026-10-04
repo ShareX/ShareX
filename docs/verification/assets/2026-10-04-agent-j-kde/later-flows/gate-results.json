@@ -1,0 +1,46 @@
+{
+  "source": "922bc0289 (production unchanged for further manual verification)",
+  "build": "dotnet build ShareX.sln -c Release -p:Platform=x64",
+  "warnings": 0,
+  "errors": 0,
+  "test_environment": {
+    "SHAREX_TEST_DESKTOP": "1"
+  },
+  "projects": [
+    {
+      "project": "ShareX.HistoryLib.Tests",
+      "passed": 8,
+      "skipped": 0,
+      "failed": 0
+    },
+    {
+      "project": "ShareX.ImageEditor.Tests",
+      "passed": 180,
+      "skipped": 28,
+      "failed": 0
+    },
+    {
+      "project": "ShareX.ImageEffectsLib.Tests",
+      "passed": 65,
+      "skipped": 0,
+      "failed": 0
+    },
+    {
+      "project": "ShareX.Platform.Tests",
+      "passed": 278,
+      "skipped": 37,
+      "failed": 0
+    },
+    {
+      "project": "ShareX.Tools.Tests",
+      "passed": 104,
+      "skipped": 2,
+      "failed": 0
+    }
+  ],
+  "totals": {
+    "passed": 635,
+    "failed": 0,
+    "skipped": 67
+  }
+}

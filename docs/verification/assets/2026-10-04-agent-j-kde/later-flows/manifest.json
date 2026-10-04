@@ -1,0 +1,46 @@
+{
+  "README.md": {
+    "bytes": 979,
+    "sha256": "d57a61f72a8a527d7c57585c1cba19ed345971d2686e43143856f2ca39ef381f"
+  },
+  "capture-fullscreen-synthetic.png": {
+    "bytes": 36582,
+    "sha256": "838fb4167771f6a4d2cc223a26cadfa4e32174e336f210c57f5f66dae3518f16"
+  },
+  "capture-post-reboot-receipt.json": {
+    "bytes": 1548,
+    "sha256": "62e11213702c251d3b34f14939a06901d3529f64bbb6ab7d7b47529a491d47fc"
+  },
+  "clipboard-text-color-hex.json": {
+    "bytes": 168,
+    "sha256": "95c3f926559b038569cc68540dc9c3fbfa31030f19ea4174236f2a18ec9fa2fc"
+  },
+  "color-edited-window.png": {
+    "bytes": 51418,
+    "sha256": "a6253db1de091d642cd8a14fbda78a18c92f1411ac4139f8aafa00628419ee0e"
+  },
+  "color-receipt.json": {
+    "bytes": 1275,
+    "sha256": "201b9c75f504efa6c11bfb1ebcbad359dd2b3be83b8ef1d9aec2c689818d3b34"
+  },
+  "color-restart-window.png": {
+    "bytes": 51706,
+    "sha256": "7ec0c2fdfca0c976dbfea4d5a60666355301c7e8c3e1bf31068f898feda2e0fd"
+  },
+  "gate-results.json": {
+    "bytes": 911,
+    "sha256": "8a1f0c75ee3ff3c7c2b3825cbcb17753881631cf94e716376229cfdc3f712204"
+  },
+  "qr-roundtrip-receipt.json": {
+    "bytes": 964,
+    "sha256": "a5868418b1ad9e9b44fc96a35e9b4d80eab0fdd69d0f088e39352d685a91c4e6"
+  },
+  "qr-roundtrip-window.png": {
+    "bytes": 22050,
+    "sha256": "cb2db1c9b151355ee82188bb69a8153e7ca28047ea5f01652dbfeb91cbd594c5"
+  },
+  "region-open-synthetic.png": {
+    "bytes": 25849,
+    "sha256": "162d9b0395a7d322414308fc86db27c6253f819df8a8f89b452dc636ae90d6c4"
+  }
+}
