@@ -61,7 +61,7 @@ When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS wo
 
 - [ ] J1 checklist ticked on Windows 10 and 11 (J).
 - [ ] J8 end-to-end runs of the real application (J, Jaex).
-- [ ] W5, W9 and the rest of J9 done; no Windows-only code left in shared projects (J). Microsoft Store startup WinRT/type aliases remain in shared code and require R37 (M contract/routing, J Windows implementation/UI).
+- [ ] W5, W9 and the rest of J9 done; no Windows-only code left in shared projects (J). Microsoft Store startup WinRT/type aliases remain in shared code; R37/W12/H12 are deferred by Jaex for now (2026-10-04). This item remains unchecked until the migration and verification are resumed and completed.
 
 ### G3: macOS complete
 
@@ -178,3 +178,5 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 
 - 2026-10-04, J: B39 mouse highlight renderer/native buffer verification and disposed surface guards complete in code. Six proper cases cover synthetic BGRA/alpha, clipping, fades/ripples/crosshairs, reuse/reallocation/clearing and ownership; the hidden native Windows DIB case executed with presentation intercepted. Full Windows Release gate: 0 warnings/errors, 570 pass / 12 Unix/Linux-only skips across all five test projects, strict native/application/local-history fixtures enabled. Actual Windows 10/11 hook/click-through/visible drawing and composited Linux desktop verification remain unverified, so J1/G1 desktop items stay unchecked and estimates unchanged. R21 portable Tools test target, backend scope/coordinates/startup/history-exit/Store and other requests remain open; macOS deferred.
 - 2026-10-04, M: Linux estimate 80% -> 90% (see the Linux row). Installed on McoreD's machine from the branch with Scripts/install-linux.sh (previous first-attempt install kept at ~/.local/lib/sharex.previous.20261004).
+
+- 2026-10-04, J: Jaex defers R37/W12/H12 Store startup migration for now. G2 J9 stays unchecked and the full goal remains incomplete. M supplied new W13/H13 and W14/H14 handoffs; J claims W13/H13 desktop-icon UI guards first. Estimates and actual desktop gates remain unchanged; R20/R22 still require alignment with Jaex's current dependency/OCR scope.
