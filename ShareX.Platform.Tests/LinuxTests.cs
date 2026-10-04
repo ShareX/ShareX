@@ -916,7 +916,19 @@ public class HyprlandShortcutKeyBinderTests
     {
         string json = "[{\"modmask\":0,\"key\":\"PRINT\",\"submap\":\"\",\"mouse\":false},{\"modmask\":64,\"key\":\"mouse:272\",\"submap\":\"\",\"mouse\":true},{\"modmask\":4,\"key\":\"RETURN\",\"submap\":\"capture\",\"mouse\":false}]";
 
-        Assert.Equal([(0, "PRINT")], ShareX.Platform.Linux.Desktop.HyprlandShortcutKeyBinder.ParseBinds(json));
+        Assert.Equal([new ShareX.Platform.Linux.Desktop.HyprlandShortcutKeyBinder.HyprlandBind(0, "PRINT", false)],
+            ShareX.Platform.Linux.Desktop.HyprlandShortcutKeyBinder.ParseBinds(json, "sharex"));
+    }
+
+    [Fact]
+    public void RecognisesBindsShareXLeftBehind()
+    {
+        string json = "[{\"modmask\":4,\"key\":\"Print\",\"dispatcher\":\"__lua\",\"arg\":\"287\",\"description\":\"ShareX: Capture region\"}," +
+            "{\"modmask\":0,\"key\":\"Print\",\"dispatcher\":\"exec\",\"arg\":\"omarchy-cmd-screenshot\",\"description\":\"Screenshot\"}," +
+            "{\"modmask\":1,\"key\":\"Print\",\"dispatcher\":\"global\",\"arg\":\"sharex:sharex-4\",\"description\":\"\"}]";
+
+        Assert.Equal([true, false, true], ShareX.Platform.Linux.Desktop.HyprlandShortcutKeyBinder.ParseBinds(json, "sharex").Select(b => b.IsShareX));
+        Assert.Equal("CTRL + SHIFT + Print", ShareX.Platform.Linux.Desktop.HyprlandShortcutKeyBinder.CombinationFor(5, "Print"));
     }
 
     [Fact]

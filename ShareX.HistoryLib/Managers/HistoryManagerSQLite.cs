@@ -278,7 +278,8 @@ WHERE Id = @Id;";
 
         /// <summary>
         /// Refuses new background writes, then waits for the accepted ones. If they are still running after <see cref="CloseTimeout"/>,
-        /// the database is not closed under them: it closes when the last one finishes, and the delay is logged.
+        /// the database is not closed under them: it closes when the last one finishes, the delay is logged, and process exit
+        /// waits for it (see <see cref="HistoryManager.FinishBeforeProcessExit"/>).
         /// </summary>
         public void Dispose()
         {
@@ -287,7 +288,9 @@ WHERE Id = @Id;";
             if (!WaitForWrites(pending, CloseTimeout))
             {
                 DebugHelper.WriteLine($"History writes are still running after {CloseTimeout.TotalSeconds:0} seconds; the history database closes when they finish.");
-                pending.ContinueWith(_ => CloseConnection(), CancellationToken.None, TaskContinuationOptions.None, TaskScheduler.Default);
+                Task closing = pending.ContinueWith(_ => CloseConnection(), CancellationToken.None, TaskContinuationOptions.None, TaskScheduler.Default);
+                // The application may be exiting now; the process waits for these writes instead of abandoning them.
+                FinishBeforeProcessExit(closing);
                 return;
             }
 

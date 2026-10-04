@@ -126,6 +126,47 @@ namespace ShareX.HistoryLib
             }
         }
 
+        private static readonly object exitWorkLock = new object();
+        private static readonly List<Task> exitWork = new List<Task>();
+        private static bool exitHooked;
+
+        /// <summary>How long the process waits at exit for history work that outlived closing the history.</summary>
+        internal static TimeSpan ProcessExitBudget { get; set; } = TimeSpan.FromMinutes(2);
+
+        /// <summary>
+        /// Keeps the process alive at exit until <paramref name="work"/> has finished (at most <see cref="ProcessExitBudget"/>),
+        /// so accepted history writes are not abandoned when the application closes while a write is slow.
+        /// </summary>
+        protected static void FinishBeforeProcessExit(Task work)
+        {
+            lock (exitWorkLock)
+            {
+                exitWork.RemoveAll(task => task.IsCompleted);
+                exitWork.Add(work);
+
+                if (!exitHooked)
+                {
+                    exitHooked = true;
+                    AppDomain.CurrentDomain.ProcessExit += (_, _) => WaitForExitWork();
+                }
+            }
+        }
+
+        private static void WaitForExitWork()
+        {
+            Task[] pending;
+
+            lock (exitWorkLock)
+            {
+                pending = exitWork.Where(task => !task.IsCompleted).ToArray();
+            }
+
+            if (pending.Length > 0 && !WaitForWrites(Task.WhenAll(pending), ProcessExitBudget))
+            {
+                DebugHelper.WriteLine($"History writes did not finish within {ProcessExitBudget.TotalSeconds:0} seconds of exit; the last items may be missing from the history.");
+            }
+        }
+
         protected static bool WaitForWrites(Task pending, TimeSpan timeout)
         {
             try

@@ -1,24 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <!-- A child process for HistoryLib.Tests: closes the history during a slow write and exits, to prove the write survives exit. -->
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
     <Platforms>AnyCPU;x64;ARM64</Platforms>
     <RuntimeIdentifier></RuntimeIdentifier>
     <WarningsAsErrors>$(WarningsAsErrors);CA1416</WarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" />
-    <PackageReference Include="xunit" />
-    <PackageReference Include="xunit.runner.visualstudio" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ShareX.HistoryLib\ShareX.HistoryLib.csproj" />
-    <!-- Built alongside and run as a child process by HistoryExitTests. -->
-    <ProjectReference Include="..\ShareX.HistoryLib.Tests.ExitProbe\ShareX.HistoryLib.Tests.ExitProbe.csproj" />
   </ItemGroup>
 </Project>

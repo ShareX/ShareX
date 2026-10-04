@@ -68,6 +68,12 @@ namespace ShareX
                 }
             }
         }
+        /// <summary>
+        /// Held by startup until its command line work is done, so a failed hotkey warning does not block automatic actions such as
+        /// a browser extension launch. The warning still appears afterwards.
+        /// </summary>
+        public static DeferredActionGate StartupWarnings { get; } = new DeferredActionGate();
+
         public void UpdateHotkeys(List<HotkeySettings> hotkeys, bool showFailedHotkeys)
         {
             if (Hotkeys != null)
@@ -81,7 +87,7 @@ namespace ShareX
 
             if (showFailedHotkeys)
             {
-                ShowFailedHotkeys();
+                StartupWarnings.Run(ShowFailedHotkeys);
             }
         }
 

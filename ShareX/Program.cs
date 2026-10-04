@@ -148,6 +148,8 @@ internal static class Program
         }
 
         DebugHelper.WriteLine("Hotkey host init started.");
+        // Hotkey failures found from here on are shown after the command line work below (R36).
+        HotkeyManager.StartupWarnings.Hold();
         MainForm hotkeyHost = new();
         ApplicationLifecycle.AttachHost(hotkeyHost);
         hotkeyHost.Initialize();
@@ -168,7 +170,14 @@ internal static class Program
         }
 
         DebugHelper.WriteLine("Startup time: {0} ms", _startTimer.ElapsedMilliseconds);
-        await ApplicationCommandLine.ExecuteInitialAsync();
+        try
+        {
+            await ApplicationCommandLine.ExecuteInitialAsync();
+        }
+        finally
+        {
+            HotkeyManager.StartupWarnings.Release();
+        }
 
         if (ApplicationState.Settings.ActionsToolbarRunAtStartup)
         {

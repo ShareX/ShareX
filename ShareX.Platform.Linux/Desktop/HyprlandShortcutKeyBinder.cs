@@ -77,8 +77,9 @@ internal sealed class HyprlandShortcutKeyBinder : IShortcutKeyBinder
             }
         }
 
+        // A bind ShareX made itself (left behind by an instance that could not clean up) does not block the key.
         string? json = Run("hyprctl", ["binds", "-j"]);
-        return json != null && ParseBinds(json).Any(x => x.Mask == mask && string.Equals(x.Key, key, StringComparison.OrdinalIgnoreCase));
+        return json != null && ParseBinds(json, applicationId).Any(x => !x.IsShareX && x.Mask == mask && string.Equals(x.Key, key, StringComparison.OrdinalIgnoreCase));
     }
 
     public void Apply(IReadOnlyList<GlobalShortcut> shortcuts)
@@ -86,6 +87,7 @@ internal sealed class HyprlandShortcutKeyBinder : IShortcutKeyBinder
         lock (syncRoot)
         {
             RemoveBinds();
+            RemoveStaleShareXBinds();
             applied = shortcuts.ToArray();
 
             foreach (GlobalShortcut shortcut in applied)
@@ -121,6 +123,44 @@ internal sealed class HyprlandShortcutKeyBinder : IShortcutKeyBinder
     {
         listening.Cancel();
         Clear();
+    }
+
+    /// <summary>
+    /// Removes binds an earlier ShareX made and could not remove (it was killed), so this instance can bind the same keys. Only
+    /// binds recognised as ShareX's are touched: the user's own binds stay.
+    /// </summary>
+    private void RemoveStaleShareXBinds()
+    {
+        string? json = Run("hyprctl", ["binds", "-j"]);
+
+        if (json == null)
+        {
+            return;
+        }
+
+        foreach (HyprlandBind bind in ParseBinds(json, applicationId).Where(x => x.IsShareX))
+        {
+            if (IsLuaConfiguration())
+            {
+                Eval($"hl.unbind({Lua(CombinationFor(bind.Mask, bind.Key))})");
+            }
+            else
+            {
+                Run("hyprctl", ["keyword", "unbind", $"{ClassicModifiers(bind.Mask)}, {bind.Key}"]);
+            }
+        }
+    }
+
+    /// <summary>The Lua combination text for a bind as hyprctl lists it, for example "CTRL + SHIFT + Print".</summary>
+    internal static string CombinationFor(int mask, string key)
+    {
+        List<string> parts = new List<string>();
+        if ((mask & SuperMask) != 0) parts.Add("SUPER");
+        if ((mask & ControlMask) != 0) parts.Add("CTRL");
+        if ((mask & AltMask) != 0) parts.Add("ALT");
+        if ((mask & ShiftMask) != 0) parts.Add("SHIFT");
+        parts.Add(key);
+        return string.Join(" + ", parts);
     }
 
     private void RemoveBinds()
@@ -232,9 +272,12 @@ internal sealed class HyprlandShortcutKeyBinder : IShortcutKeyBinder
     }
 
     /// <summary>The key binds in the main submap, from hyprctl binds -j.</summary>
-    internal static IReadOnlyList<(int Mask, string Key)> ParseBinds(string json)
+    /// <summary>A bind in the main submap. <see cref="IsShareX"/> marks binds ShareX made: described "ShareX: …" (Lua configurations) or a global shortcut of its application id (classic configurations).</summary>
+    internal readonly record struct HyprlandBind(int Mask, string Key, bool IsShareX);
+
+    internal static IReadOnlyList<HyprlandBind> ParseBinds(string json, string applicationId)
     {
-        List<(int, string)> binds = new List<(int, string)>();
+        List<HyprlandBind> binds = new List<HyprlandBind>();
 
         try
         {
@@ -254,10 +297,15 @@ internal sealed class HyprlandShortcutKeyBinder : IShortcutKeyBinder
 
                 string? key = bind.TryGetProperty("key", out JsonElement keyElement) ? keyElement.GetString() : null;
                 int mask = bind.TryGetProperty("modmask", out JsonElement maskElement) ? maskElement.GetInt32() : 0;
+                string description = bind.TryGetProperty("description", out JsonElement d) ? d.GetString() ?? "" : "";
+                string dispatcher = bind.TryGetProperty("dispatcher", out JsonElement di) ? di.GetString() ?? "" : "";
+                string argument = bind.TryGetProperty("arg", out JsonElement a) ? a.GetString() ?? "" : "";
+                bool isShareX = description.StartsWith("ShareX: ", StringComparison.Ordinal) ||
+                    (dispatcher == "global" && argument.StartsWith(applicationId + ":", StringComparison.Ordinal));
 
                 if (!string.IsNullOrEmpty(key))
                 {
-                    binds.Add((mask, key));
+                    binds.Add(new HyprlandBind(mask, key, isShareX));
                 }
             }
         }

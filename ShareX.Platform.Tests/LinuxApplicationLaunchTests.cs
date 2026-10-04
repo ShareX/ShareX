@@ -54,21 +54,37 @@ public class LinuxApplicationLaunchTests
         Assert.Equal(Path.Combine(Path.GetTempPath(), "ShareX"), service.GetExecutablePath(Path.GetTempPath(), "ShareX"));
     }
 
-    [Theory]
-    [InlineData("relative/dir", "ShareX")]
-    [InlineData("/opt/sharex", "../ShareX")]
-    [InlineData("/opt/sharex", "..")]
-    [InlineData("/opt/sharex", "")]
-    public void GetExecutablePath_RejectsUnsafeInput(string directory, string name)
+    [Fact]
+    public void GetExecutablePath_RejectsRelativeDirectory()
     {
-        Assert.ThrowsAny<ArgumentException>(() => service.GetExecutablePath(directory, name));
+        ArgumentException error = Assert.ThrowsAny<ArgumentException>(() => service.GetExecutablePath("relative/dir", "ShareX"));
+        Assert.Equal("directory", error.ParamName);
+    }
+
+    // The directory is valid and absolute on every host, so only the name can be what is rejected.
+    [Theory]
+    [InlineData("../ShareX")]
+    [InlineData("..")]
+    [InlineData("")]
+    public void GetExecutablePath_RejectsUnsafeName(string name)
+    {
+        ArgumentException error = Assert.ThrowsAny<ArgumentException>(() => service.GetExecutablePath(Path.GetTempPath(), name));
+        Assert.Equal("applicationName", error.ParamName);
     }
 
     [Fact]
-    public void LaunchDetached_RejectsRelativePathsAndNullCharacters()
+    public void LaunchDetached_RejectsRelativePath()
     {
-        Assert.Throws<ArgumentException>(() => service.LaunchDetached("sh", []));
-        Assert.Throws<ArgumentException>(() => service.LaunchDetached("/bin/sh", ["a\0b"]));
+        ArgumentException error = Assert.Throws<ArgumentException>(() => service.LaunchDetached("sh", []));
+        Assert.Equal("executablePath", error.ParamName);
+    }
+
+    [Fact]
+    public void LaunchDetached_RejectsNullCharacterInArgument()
+    {
+        string executable = Path.Combine(Path.GetTempPath(), "sharex-launch-validation");
+        ArgumentException error = Assert.Throws<ArgumentException>(() => service.LaunchDetached(executable, ["a\0b"]));
+        Assert.Equal("arguments", error.ParamName);
     }
 
     [LinuxFact]

@@ -25,5 +25,6 @@
   </ItemGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="ShareX.HistoryLib.Tests" />
+    <InternalsVisibleTo Include="ShareX.HistoryLib.Tests.ExitProbe" />
   </ItemGroup>
 </Project>
