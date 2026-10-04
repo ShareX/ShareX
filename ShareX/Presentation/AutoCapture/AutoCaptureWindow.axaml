@@ -22,84 +22,89 @@
     <ThemeVariantScope>
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}"
               RowDefinitions="*,Auto">
-            <Grid Margin="14" RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
-                <Border Grid.Row="0" Classes="tool-panel" Padding="14">
-                    <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
-                        <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
-                            <RadioButton x:Name="CustomRegionRadio"
-                                         GroupName="CaptureRegion"
-                                         Content="{x:Static res:Strings.AutoCaptureWindow_CustomRegion}"
-                                         IsChecked="True"
-                                         IsCheckedChanged="OnCustomRegionChanged"/>
-                            <RadioButton x:Name="FullscreenRadio"
-                                         Grid.Column="1"
-                                         GroupName="CaptureRegion"
-                                         Content="{x:Static res:Strings.AutoCaptureWindow_Fullscreen}"
-                                         IsCheckedChanged="OnFullscreenChanged"/>
-                        </Grid>
+            <Grid Margin="14" RowDefinitions="Auto,Auto" RowSpacing="12">
+                <Border x:Name="OptionsAvailabilitySurface" Grid.Row="0" Background="Transparent">
+                    <Grid x:Name="OptionsContent" RowDefinitions="Auto,Auto" RowSpacing="12">
+                        <Border Grid.Row="0" Classes="tool-panel" Padding="14">
+                            <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
+                                <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                                    <RadioButton x:Name="CustomRegionRadio"
+                                                 GroupName="CaptureRegion"
+                                                 Content="{x:Static res:Strings.AutoCaptureWindow_CustomRegion}"
+                                                 IsChecked="True"
+                                                 IsCheckedChanged="OnCustomRegionChanged"/>
+                                    <RadioButton x:Name="FullscreenRadio"
+                                                 Grid.Column="1"
+                                                 GroupName="CaptureRegion"
+                                                 Content="{x:Static res:Strings.AutoCaptureWindow_Fullscreen}"
+                                                 IsCheckedChanged="OnFullscreenChanged"/>
+                                </Grid>
 
-                        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="8">
-                            <Border Background="{DynamicResource ShareX.Brush.Control.Background}"
-                                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                                    BorderThickness="1"
-                                    CornerRadius="4"
-                                    Padding="9,7">
-                                <TextBlock x:Name="RegionText"
-                                           Text="{x:Static res:Strings.AutoCaptureWindow_NoRegion}"
-                                           FontWeight="Normal"
-                                           TextTrimming="CharacterEllipsis"
-                                           VerticalAlignment="Center"/>
-                            </Border>
-                            <Button x:Name="SelectRegionButton"
-                                    Grid.Column="1"
-                                    Click="OnSelectRegionClick">
-                                <StackPanel Orientation="Horizontal" Spacing="7">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan}"/>
-                                    <TextBlock Text="{x:Static res:Strings.AutoCaptureWindow_SelectRegion}"/>
+                                <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                    <Border Background="{DynamicResource ShareX.Brush.Control.Background}"
+                                            BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                            BorderThickness="1"
+                                            CornerRadius="4"
+                                            Padding="9,7">
+                                        <TextBlock x:Name="RegionText"
+                                                   Text="{x:Static res:Strings.AutoCaptureWindow_NoRegion}"
+                                                   FontWeight="Normal"
+                                                   TextTrimming="CharacterEllipsis"
+                                                   VerticalAlignment="Center"/>
+                                    </Border>
+                                    <Button x:Name="SelectRegionButton"
+                                            Grid.Column="1"
+                                            Click="OnSelectRegionClick">
+                                        <StackPanel Orientation="Horizontal" Spacing="7">
+                                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan}"/>
+                                            <TextBlock Text="{x:Static res:Strings.AutoCaptureWindow_SelectRegion}"/>
+                                        </StackPanel>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Row="1" Classes="tool-panel" Padding="14">
+                            <Grid RowDefinitions="Auto,Auto" RowSpacing="12">
+                                <Grid ColumnDefinitions="Auto,120,Auto" ColumnSpacing="8">
+                                    <TextBlock Classes="field-label" Text="{x:Static res:Strings.AutoCaptureWindow_RepeatTime}"/>
+                                    <NumericUpDown x:Name="RepeatTimeInput"
+                                                   Grid.Column="1"
+                                                   Minimum="1"
+                                                   Maximum="86400"
+                                                   Increment="0.1"
+                                                   FormatString="0.0"
+                                                   ValueChanged="OnRepeatTimeChanged"/>
+                                    <TextBlock Grid.Column="2" Classes="field-label" Text="{x:Static res:Strings.AutoCaptureWindow_Seconds}"/>
+                                </Grid>
+                                <StackPanel Grid.Row="1" Spacing="8">
+                                    <CheckBox x:Name="AutoMinimizeInput"
+                                              Content="{x:Static res:Strings.AutoCaptureWindow_AutoMinimize}"
+                                              IsCheckedChanged="OnAutoMinimizeChanged"/>
+                                    <CheckBox x:Name="WaitUploadsInput"
+                                              Content="{x:Static res:Strings.AutoCaptureWindow_WaitTasks}"
+                                              IsCheckedChanged="OnWaitUploadsChanged"/>
                                 </StackPanel>
-                            </Button>
-                        </Grid>
+                            </Grid>
+                        </Border>
+
                     </Grid>
                 </Border>
-
-                <Border Grid.Row="1" Classes="tool-panel" Padding="14">
-                    <Grid RowDefinitions="Auto,Auto" RowSpacing="12">
-                        <Grid ColumnDefinitions="Auto,120,Auto" ColumnSpacing="8">
-                            <TextBlock Classes="field-label" Text="{x:Static res:Strings.AutoCaptureWindow_RepeatTime}"/>
-                            <NumericUpDown x:Name="RepeatTimeInput"
-                                           Grid.Column="1"
-                                           Minimum="1"
-                                           Maximum="86400"
-                                           Increment="0.1"
-                                           FormatString="0.0"
-                                           ValueChanged="OnRepeatTimeChanged"/>
-                            <TextBlock Grid.Column="2" Classes="field-label" Text="{x:Static res:Strings.AutoCaptureWindow_Seconds}"/>
-                        </Grid>
-                        <StackPanel Grid.Row="1" Spacing="8">
-                            <CheckBox x:Name="AutoMinimizeInput"
-                                      Content="{x:Static res:Strings.AutoCaptureWindow_AutoMinimize}"
-                                      IsCheckedChanged="OnAutoMinimizeChanged"/>
-                            <CheckBox x:Name="WaitUploadsInput"
-                                      Content="{x:Static res:Strings.AutoCaptureWindow_WaitTasks}"
-                                      IsCheckedChanged="OnWaitUploadsChanged"/>
+                <Border x:Name="ExecuteAvailabilitySurface" Grid.Row="1" Background="Transparent">
+                    <Button x:Name="ExecuteButton"
+                            Width="240"
+                            Height="42"
+                            HorizontalAlignment="Center"
+                            IsEnabled="False"
+                            Click="OnExecuteClick">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock x:Name="ExecuteIcon"
+                                       Classes="icon"
+                                       Text="{x:Static theming:LucideIcons.play}"/>
+                            <TextBlock x:Name="ExecuteText" Text="{x:Static res:Strings.AutoCaptureWindow_Start}"/>
                         </StackPanel>
-                    </Grid>
+                    </Button>
                 </Border>
-
-                <Button x:Name="ExecuteButton"
-                        Grid.Row="2"
-                        Width="240"
-                        Height="42"
-                        HorizontalAlignment="Center"
-                        IsEnabled="False"
-                        Click="OnExecuteClick">
-                    <StackPanel Orientation="Horizontal" Spacing="8">
-                        <TextBlock x:Name="ExecuteIcon"
-                                   Classes="icon"
-                                   Text="{x:Static theming:LucideIcons.play}"/>
-                        <TextBlock x:Name="ExecuteText" Text="{x:Static res:Strings.AutoCaptureWindow_Start}"/>
-                    </StackPanel>
-                </Button>
             </Grid>
 
             <Border Grid.Row="1"

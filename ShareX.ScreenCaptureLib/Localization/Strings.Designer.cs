@@ -246,6 +246,9 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string ScrollingCaptureWindow_Select_scrollable_window {
             get { return ResourceManager.GetString("ScrollingCaptureWindow_Select_scrollable_window", resourceCulture); }
         }
+        public static string AutoCaptureWindow_CaptureUnavailable {
+            get { return ResourceManager.GetString("AutoCaptureWindow_CaptureUnavailable", resourceCulture); }
+        }
         public static string ScrollingCaptureWindow_Unavailable {
             get { return ResourceManager.GetString("ScrollingCaptureWindow_Unavailable", resourceCulture); }
         }

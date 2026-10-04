@@ -58,6 +58,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AutoCaptureWindow_CaptureUnavailable" xml:space="preserve">
+    <value>Capturarea ecranului nu este disponibilă pe acest desktop.</value>
+  </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Capturare regiune</value>
   </data>

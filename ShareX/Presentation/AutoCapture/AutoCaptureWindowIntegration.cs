@@ -26,6 +26,8 @@
 #nullable enable
 
 using Avalonia.Threading;
+using ShareX.Platform;
+using ShareX.ScreenCaptureLib;
 
 namespace ShareX;
 
@@ -34,6 +36,7 @@ public static class AutoCaptureWindowIntegration
     private static AutoCaptureWindow? _window;
 
     public static bool IsRunning => _window?.IsRunning == true;
+    public static FeatureSupport CurrentToggleSupport => IsRunning ? FeatureSupport.Supported : AutoCaptureWindowViewModel.CurrentCaptureSupport;
 
     public static void Show(TaskSettings taskSettings)
     {

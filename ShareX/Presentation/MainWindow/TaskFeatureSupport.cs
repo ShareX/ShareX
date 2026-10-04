@@ -36,8 +36,7 @@ internal static class TaskFeatureSupport
     public static FeatureSupport Get(HotkeyType task) => task switch
     {
         HotkeyType.PrintScreen or HotkeyType.ActiveMonitor or HotkeyType.RectangleRegion or
-        HotkeyType.CustomRegion or HotkeyType.LastRegion or HotkeyType.AutoCapture or
-        HotkeyType.StartAutoCapture or HotkeyType.Ruler or HotkeyType.PinToScreenFromScreen or
+        HotkeyType.CustomRegion or HotkeyType.LastRegion or HotkeyType.Ruler or HotkeyType.PinToScreenFromScreen or
         HotkeyType.QRCodeDecodeFromScreen or HotkeyType.QRCodeScanRegion => PlatformServices.Current.ScreenCapture.Support,
 
         HotkeyType.ScreenColorPicker => ScreenColorPickerAvailability.Support,
@@ -46,6 +45,8 @@ internal static class TaskFeatureSupport
             PlatformServices.Current.ScreenCapture.Support, PlatformServices.Current.Windows.Support),
 
         HotkeyType.ScrollingCapture => ScrollingCaptureWindowIntegration.CurrentToggleSupport,
+        HotkeyType.AutoCapture => AutoCaptureWindowIntegration.CurrentToggleSupport,
+        HotkeyType.StartAutoCapture => AutoCaptureWindowViewModel.CurrentCaptureSupport,
 
         HotkeyType.ScreenRecorder or HotkeyType.ScreenRecorderCustomRegion or HotkeyType.StartScreenRecorder or
         HotkeyType.ScreenRecorderGIF or HotkeyType.ScreenRecorderGIFCustomRegion or HotkeyType.StartScreenRecorderGIF => Require(

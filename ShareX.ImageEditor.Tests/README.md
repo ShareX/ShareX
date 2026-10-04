@@ -49,3 +49,5 @@ dotnet test ShareX.ImageEditor.Tests -c Release -p:Platform=x64
 ```
 
 The test copies the supplied binary into its own temporary directory, changes one DOS-header byte in a second copy, and verifies trust through `WindowsCodeSignatureService` with the updater's standard Windows revocation policy. Repeated checks confirm that the signed copy is trusted, the modified copy is rejected, source bytes stay unchanged and fixture files can be opened exclusively afterwards. No fixture is executed and no certificate or trust setting is installed or changed. These tests skip off Windows; the signed comparison also skips when its fixture variable is unset.
+
+Auto-capture, FFmpeg device-action and scrolling UI support regressions run in this project on every host. They inject capabilities and controlled asynchronous callbacks; auto-capture frames are generated one-pixel Skia bitmaps. They do not open selectors, capture the desktop, discover devices, download packages or upload data. Native Windows device-capability parity is separately gated to Windows.
