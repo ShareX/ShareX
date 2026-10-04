@@ -47,9 +47,10 @@ When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS wo
 - [ ] Individual DirectShow device discovery and Windows recorder-device download/setup are guarded by capabilities: R32 contract done (M); H11 UI switch and W11 review (J).
 - [ ] Verification pass on GNOME, KDE, sway and an X11 session, at least in virtual machines (M runs flows, J checks UI). Hyprland done.
 - [x] Browser extension launches ShareX on Linux: R28 (M), after J's R26 contract work; M verified cold/warm framed payloads on Hyprland (a516a5b5c), other desktop flows remain in the verification pass.
-- [x] Upload history writes are serialized and finished before exit: R29 (288f7a06f) and R34 stable drain boundary with deferred close (a20455db4).
-- [x] Unsupported mouse-highlighter automatic startup is skipped while retaining saved flags: R31 (M).
-- [x] Scrolling capture on Wayland reported unsupported with a reason per desktop (M): B31 frontend guards (J) and R33 backend rechecks/cancellation (M) done; per-desktop table in docs/cross-platform.md. The RemoteDesktop portal remains a possible later improvement.
+- [ ] Upload history writes are serialized and finished before exit: R29 serialization and R34 sealed queue/deferred connection close are implemented; R38 still requires the application lifetime to await accepted writes through process exit.
+- [x] Unsupported mouse-highlighter automatic startup is skipped while retaining saved flags: R31 (M); controlled coverage added, actual desktop startup remains in the verification pass.
+- [ ] Expected desktop shortcut conflicts do not block startup browser/CLI actions while preserving interactive Windows warnings: R36 (M startup/policy, J presentation).
+- [ ] Scrolling capture support and failure reasons verified per desktop: B31 frontend and R33 backend guards are implemented; J must align the UI with FailureReason and supported auto-top inputs. The per-desktop support table is in docs/cross-platform.md; actual desktop verification remains open.
 - [ ] Mixed-scale multi-monitor capture and overlays (rest of R12; M backend, J overlays).
 - [ ] Mouse highlighter and overlays on X11; reported unsupported on Wayland (M hook and overlay surface, J drawing). M: hook and overlay done and tested on a real X server; drawing verification on a composited X11 desktop remains (VM).
 - [ ] Linux feature verification list below is all ticked.
@@ -60,7 +61,7 @@ When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS wo
 
 - [ ] J1 checklist ticked on Windows 10 and 11 (J).
 - [ ] J8 end-to-end runs of the real application (J, Jaex).
-- [ ] W5, W9 and the rest of J9 done; no Windows-only code left in shared projects (J).
+- [ ] W5, W9 and the rest of J9 done; no Windows-only code left in shared projects (J). Microsoft Store startup WinRT/type aliases remain in shared code and require R37 (M contract/routing, J Windows implementation/UI).
 
 ### G3: macOS complete
 
@@ -127,3 +128,4 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, M: R34, R31 and R33 done; G1 history, mouse-highlighter startup and scrolling-capture items ticked.
 - 2026-10-04, M: R32 contract (H11/W11 to J). X11 mouse hook and click-through overlay implemented and tested on a real X server; X11 application pass on rootful Xwayland (hotkeys, full screen, region, recording, upload).
 - 2026-10-04, M: Hyprland verification extended (clipboard image, clipboard upload, watch folder, autostart, file types, secrets, sounds, background remover); X11 column started on rootful Xwayland.
+- 2026-10-04, J: Audited M's startup hotkey-warning report and the remaining J9 debt. R36 requests a coordinated startup/presentation policy; its current warning path matches the Windows baseline and has an explicit -NoHotkeys opt-out. R37 records Store-only WinRT calls/type aliases still hidden in shared Program/StartupManager/Enums and requests the contract/Windows handoff. G1 startup and G2 migration gates remain unchecked; estimates/desktop verification are unchanged. Claimed B32 auto-capture UI lifetime/support work with proper portable tests, preserving Windows timer behavior; no macOS work.
