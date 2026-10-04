@@ -160,6 +160,7 @@ internal static class Program
                 bool showMainWindow = !(StartupOptions.SilentRun || ApplicationState.Settings.SilentRun) ||
                     !ApplicationState.IsTrayUsable;
                 MainWindowIntegration.Initialize(hotkeyHost!.TrayIconService, showMainWindow);
+                ApplicationMenu.Install();
                 ShareX.Tools.MouseHighlighterManager.ActivateOnStartup(
                     ApplicationState.DefaultTaskSettings.ToolsSettings.MouseHighlighterOptions);
                 DebugHelper.WriteLine("Startup time: {0} ms", _startTimer.ElapsedMilliseconds);
