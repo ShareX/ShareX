@@ -23,4 +23,4 @@ Early startup dialogs previously initialized Avalonia without a lifetime; later 
 
 Release solution build: 0 warnings/errors. All five proper test projects, with `SHAREX_TEST_DESKTOP=1`: 629 passed / 62 platform or optional-fixture skips. The three new child-process fixtures ran on this KDE desktop, including a real synthetic early dialog/message loop followed by desktop startup and clean exit. All eight history storage/exit tests ran on Linux. No fresh Windows execution is claimed from this Linux host; Windows 10/11 parity and native desktop checks remain outstanding.
 
-The Linux/Windows estimates remain 90%; G1/G2 are not complete. Recording, hotkey firing, integration, mixed-scale/multi-monitor, capture-dependent tools, full clipboard/editor routes, and R20/R22 scope alignment remain open. Linux OCR/HDR and current macOS work are excluded by Jaex's instructions.
+Still to verify on KDE at the time of this run: recording, hotkey firing, integration, mixed-scale/multi-monitor, capture-dependent tools and full clipboard/editor routes. Linux HDR is excluded.

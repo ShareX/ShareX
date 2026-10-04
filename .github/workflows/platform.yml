@@ -2,9 +2,6 @@ name: Cross-platform
 
 on:
   push:
-    # Temporary while the Windows/Linux port is in progress.
-    branches-ignore:
-      - "cross-platform-v2"
     paths:
       - "ShareX*/**"
       - "Directory.Build.*"
@@ -12,8 +9,6 @@ on:
       - "ShareX.sln"
       - ".github/workflows/platform.yml"
   pull_request:
-    branches-ignore:
-      - "cross-platform-v2"
     paths:
       - "ShareX*/**"
       - "Directory.Build.*"
@@ -26,7 +21,6 @@ permissions:
 
 jobs:
   test:
-    if: github.head_ref != 'cross-platform-v2'
     name: Test (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
 
@@ -70,7 +64,6 @@ jobs:
         run: dotnet test ShareX.ImageEffectsLib.Tests/ShareX.ImageEffectsLib.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
 
   build-solution:
-    if: github.head_ref != 'cross-platform-v2'
     name: Build solution (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
 
@@ -95,8 +88,6 @@ jobs:
         run: dotnet build ShareX.sln --configuration Release -p:Platform=x64
 
   macos-app:
-    # macOS implementation and verification are deferred until Linux is complete and stable.
-    if: false
     name: macOS app bundle and launch
     runs-on: macos-latest
 
