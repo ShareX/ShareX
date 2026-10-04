@@ -26,6 +26,7 @@
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Windows;
+using ShareX.Platform;
 
 namespace ShareX.Tools.Integration;
 
@@ -261,9 +262,9 @@ public static class ToolsIntegration
     }
 
     public static void ShowVideoConverterWindow(VideoConverterOptions options, VideoConversionHandler handler,
-        string? inputFilePath = null)
+        string? inputFilePath = null, Func<FeatureSupport>? getSupport = null)
     {
-        Show(() => new VideoConverterWindow(options, handler, inputFilePath));
+        Show(() => new VideoConverterWindow(options, handler, inputFilePath, getSupport));
     }
 
     public static void ShowVideoTrimmerWindow(string ffmpegPath, string? inputFilePath = null,

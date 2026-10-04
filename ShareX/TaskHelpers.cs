@@ -81,7 +81,7 @@ namespace ShareX
             DebugHelper.WriteLine("Executing: " + job.GetLocalizedDescription());
 
             // Hotkeys, the command line and workflows can start a task the menus show as unavailable on this desktop.
-            FeatureSupport support = TaskFeatureSupport.Get(job);
+            FeatureSupport support = TaskFeatureSupport.Get(job, taskSettings ?? ApplicationState.DefaultTaskSettings);
             if (!support.IsSupported)
             {
                 DebugHelper.WriteLine($"Not available here: {job}. {support.Reason}");
@@ -1184,7 +1184,8 @@ namespace ShareX
             ToolsIntegration.ShowVideoConverterWindow(
                 taskSettings.ToolsSettingsReference.VideoConverterOptions,
                 (request, progress, cancellationToken) => RunVideoConversionAsync(ffmpegFilePath, request, progress, cancellationToken),
-                inputFilePath);
+                inputFilePath,
+                getSupport: () => FileMediaFeatureSupport.Get(ffmpegFilePath));
         }
 
         private static Task<VideoConversionResult> RunVideoConversionAsync(
@@ -1205,6 +1206,13 @@ namespace ShareX
 
                 ffmpeg.EncodeProgressChanged += percentage => progress.Report(percentage);
                 using CancellationTokenRegistration registration = cancellationToken.Register(ffmpeg.Close);
+                cancellationToken.ThrowIfCancellationRequested();
+                FeatureSupport support = FileMediaFeatureSupport.Get(ffmpegFilePath);
+                if (!support.IsSupported)
+                {
+                    return new VideoConversionResult(false, false, support.Reason);
+                }
+
                 bool succeeded = ffmpeg.Run(request.Arguments);
                 bool wasCancelled = cancellationToken.IsCancellationRequested || ffmpeg.StopRequested;
 
