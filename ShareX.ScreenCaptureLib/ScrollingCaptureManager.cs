@@ -25,21 +25,53 @@
 
 #nullable enable
 
+using ShareX.HelpersLib;
 using ShareX.Platform;
 using SkiaSharp;
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Threading;
 using System.Threading.Tasks;
 using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX.ScreenCaptureLib
 {
+    /// <summary>What scrolling capture needs from the desktop. Tests replace it; the default uses the platform services.</summary>
+    internal class ScrollingCaptureHost
+    {
+        public virtual FeatureSupport CaptureSupport => PlatformServices.Current.ScreenCapture.Support;
+        public virtual IInputService Input => PlatformServices.Current.Input;
+        public virtual void ActivateWindow(long handle) => PlatformServices.Current.Windows.ActivateWindow(handle);
+        public virtual Task<SKBitmap?> CaptureAsync(Rectangle rectangle) => new Screenshot { CaptureCursor = false }.CaptureRectangleAsync(rectangle);
+        public virtual Task<(Rectangle Rectangle, PlatformWindow? Window)?> SelectAsync() => RegionCaptureTasks.GetRectangleRegionAsync(new RegionCaptureOptions());
+        public virtual Task Delay(int milliseconds, CancellationToken cancellationToken) => Task.Delay(Math.Max(0, milliseconds), cancellationToken);
+
+        public virtual IDisposable? ShowRegion(Rectangle rectangle)
+        {
+            ScrollingCaptureRegionWindow window = new ScrollingCaptureRegionWindow(rectangle);
+            window.Show();
+            return new CloseOnDispose(window);
+        }
+
+        private sealed class CloseOnDispose(ScrollingCaptureRegionWindow window) : IDisposable
+        {
+            public void Dispose() => window.Close();
+        }
+    }
+
     internal class ScrollingCaptureManager : IDisposable
     {
         public ScrollingCaptureOptions Options { get; private set; }
         public SKBitmap? Result { get; private set; }
         public bool IsCapturing { get; private set; }
+
+        /// <summary>Why the last capture stopped early because the desktop no longer allowed it, or null.</summary>
+        public string? FailureReason { get; private set; }
+
+        private readonly ScrollingCaptureHost host;
+        private readonly CancellationTokenSource lifetime = new CancellationTokenSource();
+        private bool disposed;
 
         private SKBitmap? lastScreenshot;
         private SKBitmap? previousScreenshot;
@@ -49,14 +81,32 @@ namespace ShareX.ScreenCaptureLib
         private PlatformWindow? selectedWindow;
         private Rectangle selectedRectangle;
 
-        public ScrollingCaptureManager(ScrollingCaptureOptions options)
+        public ScrollingCaptureManager(ScrollingCaptureOptions options) : this(options, new ScrollingCaptureHost())
         {
-            Options = options;
         }
 
+        internal ScrollingCaptureManager(ScrollingCaptureOptions options, ScrollingCaptureHost host)
+        {
+            Options = options;
+            this.host = host;
+        }
+
+        /// <summary>Stops a running capture at its next step (delays end at once) and releases the images.</summary>
         public void Dispose()
         {
-            Reset();
+            if (disposed)
+            {
+                return;
+            }
+
+            disposed = true;
+            stopRequested = true;
+            lifetime.Cancel();
+
+            if (!IsCapturing)
+            {
+                Reset();
+            }
         }
 
         private void Reset(bool keepResult = false)
@@ -74,56 +124,96 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        /// <summary>The input a scroll method needs, so it is checked right before each use.</summary>
+        internal static FeatureSupport GetMethodSupport(IInputService input, ScrollMethod method) => method switch
+        {
+            ScrollMethod.MouseWheel => input.MouseWheelSupport,
+            ScrollMethod.DownArrow or ScrollMethod.PageDown => input.KeyboardSupport,
+            ScrollMethod.ScrollMessage => input.WindowScrollSupport,
+            _ => FeatureSupport.NotSupported("Unknown scroll method.")
+        };
+
+        /// <summary>Capture and the scroll method's input must both still work; the desktop can change while ShareX waits.</summary>
+        private bool CheckPrerequisites()
+        {
+            FeatureSupport capture = host.CaptureSupport;
+            FeatureSupport method = capture.IsSupported ? GetMethodSupport(host.Input, Options.ScrollMethod) : capture;
+
+            if (method.IsSupported)
+            {
+                return true;
+            }
+
+            FailureReason = method.Reason;
+            DebugHelper.WriteLine("Scrolling capture stopped: " + method.Reason);
+            return false;
+        }
+
         public async Task<ScrollingCaptureStatus> StartCapture()
         {
-            if (!IsCapturing && selectedWindow != null && !selectedRectangle.IsEmpty)
+            if (!disposed && !IsCapturing && selectedWindow != null && !selectedRectangle.IsEmpty)
             {
                 IsCapturing = true;
                 stopRequested = false;
                 status = ScrollingCaptureStatus.Failed;
+                FailureReason = null;
                 bestMatchCount = 0;
                 bestMatchIndex = 0;
                 bestIgnoreBottomOffset = 0;
                 Reset();
 
-                ScrollingCaptureRegionWindow? regionWindow = null;
-
-                if (Options.ShowRegion)
-                {
-                    regionWindow = new ScrollingCaptureRegionWindow(selectedRectangle);
-                    regionWindow.Show();
-                }
-
-                IWindowService windows = PlatformServices.Current.Windows;
-                IInputService input = PlatformServices.Current.Input;
+                CancellationToken cancellationToken = lifetime.Token;
+                IDisposable? regionWindow = Options.ShowRegion ? host.ShowRegion(selectedRectangle) : null;
 
                 try
                 {
-                    windows.ActivateWindow(selectedWindow.Handle);
+                    host.ActivateWindow(selectedWindow.Handle);
 
-                    await Task.Delay(Options.StartDelay);
+                    await host.Delay(Options.StartDelay, cancellationToken);
+
+                    if (!CheckPrerequisites())
+                    {
+                        return status;
+                    }
 
                     if (Options.AutoScrollTop)
                     {
-                        input.SendKeyPress(VirtualKeys.Home);
-                        input.ScrollWindow(selectedWindow.Handle, WindowScrollCommand.Top);
+                        // Send each way of reaching the top that this desktop allows; Windows allows both, as before.
+                        IInputService input = host.Input;
 
-                        await Task.Delay(Options.ScrollDelay);
+                        if (input.KeyboardSupport.IsSupported)
+                        {
+                            input.SendKeyPress(VirtualKeys.Home);
+                        }
+
+                        if (input.WindowScrollSupport.IsSupported)
+                        {
+                            input.ScrollWindow(selectedWindow.Handle, WindowScrollCommand.Top);
+                        }
+
+                        await host.Delay(Options.ScrollDelay, cancellationToken);
                     }
-
-                    Screenshot screenshot = new Screenshot()
-                    {
-                        CaptureCursor = false
-                    };
 
                     while (!stopRequested)
                     {
-                        lastScreenshot = await screenshot.CaptureRectangleAsync(selectedRectangle);
-
-                        if (CompareLastTwoImages())
+                        if (!CheckPrerequisites())
                         {
                             break;
                         }
+
+                        lastScreenshot = await host.CaptureAsync(selectedRectangle);
+
+                        if (stopRequested || CompareLastTwoImages())
+                        {
+                            break;
+                        }
+
+                        if (!CheckPrerequisites())
+                        {
+                            break;
+                        }
+
+                        IInputService input = host.Input;
 
                         switch (Options.ScrollMethod)
                         {
@@ -180,15 +270,20 @@ namespace ShareX.ScreenCaptureLib
 
                         if (delay > 0)
                         {
-                            await Task.Delay(delay);
+                            await host.Delay(delay, cancellationToken);
                         }
                     }
                 }
+                catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+                {
+                    // Disposed while waiting: stop quietly.
+                }
                 finally
                 {
-                    regionWindow?.Close();
+                    regionWindow?.Dispose();
 
-                    Reset(true);
+                    // A disposed manager keeps nothing; otherwise the result stays for the caller.
+                    Reset(!disposed);
                     IsCapturing = false;
                 }
             }
@@ -206,8 +301,10 @@ namespace ShareX.ScreenCaptureLib
 
         public async Task<bool> SelectWindowAsync()
         {
-            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(new RegionCaptureOptions());
-            if (selection == null)
+            var selection = await host.SelectAsync();
+
+            // The selector cannot be cancelled from here; if the capture was closed meanwhile, ignore what it returns.
+            if (selection == null || disposed)
             {
                 return false;
             }

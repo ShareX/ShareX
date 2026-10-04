@@ -92,6 +92,8 @@ public class LinuxApplicationLaunchTests
                   for a in "$@"; do printf '[%s]\n' "$a"; done
                 } > "$out.tmp" && mv "$out.tmp" "$out"
                 """;
+            // The source file may be checked out with CRLF line endings; the shell needs LF.
+            script = script.ReplaceLineEndings("\n");
             int pid = service.LaunchDetached("/bin/sh", ["-c", script, "/bin/sh", output, "two words", "\"quoted\" $HOME `x`", ""]);
 
             SpinWait.SpinUntil(() => File.Exists(output), TimeSpan.FromSeconds(10));

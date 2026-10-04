@@ -40,6 +40,9 @@ public sealed class ScrollingCaptureService : IDisposable
     public SKBitmap? Result => _manager.Result;
     public bool IsCapturing => _manager.IsCapturing;
 
+    /// <summary>Why the last capture stopped early because the desktop no longer allowed it, or null.</summary>
+    public string? FailureReason => _manager.FailureReason;
+
     public ScrollingCaptureService(ScrollingCaptureOptions options)
     {
         Options = options;

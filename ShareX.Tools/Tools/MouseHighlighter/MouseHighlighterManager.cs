@@ -85,9 +85,25 @@ public static class MouseHighlighterManager
         });
     }
 
-    public static void ActivateOnStartup(MouseHighlighterOptions options)
+    /// <summary>
+    /// Starts highlighting when the saved settings ask for it and this desktop supports it. On a desktop that does not (Wayland),
+    /// the saved flag is kept for when the settings are used on a supported one, and only the reason is logged.
+    /// </summary>
+    public static void ActivateOnStartup(MouseHighlighterOptions options) => ActivateOnStartup(options, () => Support, Toggle);
+
+    internal static bool ActivateOnStartup(MouseHighlighterOptions options, Func<FeatureSupport> support, Action<MouseHighlighterOptions> toggle)
     {
-        if (options.AutoActivate) Toggle(options);
+        if (!options.AutoActivate) return false;
+
+        FeatureSupport current = support();
+        if (!current.IsSupported)
+        {
+            DebugHelper.WriteLine("Mouse highlighter not started at startup: " + current.Reason);
+            return false;
+        }
+
+        toggle(options);
+        return true;
     }
 
     internal static void SetManualActive(bool active, MouseHighlighterOptions options)

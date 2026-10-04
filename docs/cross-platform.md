@@ -66,6 +66,19 @@ The services (`LinuxWindowService`, `LinuxScreenCaptureService`, `LinuxScreenRec
 
 `PlatformDetector` reads `/etc/os-release` into `LinuxDistribution` (family, immutable variants, package manager) and detects the display server and desktop environment. `LinuxPackages.Missing` names the distribution's package for a missing optional program in a feature's support reason; ShareX never shows install commands or installs anything (AGENTS.md, "Linux dependencies").
 
+## Scrolling capture per desktop
+
+Scrolling capture needs a screenshot of the selected window and a way to scroll it. Each scroll method checks its input support right before every step (R33), so a desktop that stops allowing input ends the capture with a reason instead of sending input blindly.
+
+| Desktop | Mouse wheel | Down arrow / Page Down | Scroll message |
+| --- | --- | --- | --- |
+| Windows | yes | yes | yes |
+| X11 (Xfce, Cinnamon, MATE, …) | yes (XTEST) | yes (XTEST) | no: only Windows lets one application drive another's scroll bars |
+| Hyprland | no | yes (compositor key shortcuts) | no |
+| sway, GNOME, KDE (Wayland) | no | no | no |
+
+On sway, GNOME and KDE scrolling capture is reported unsupported with the Wayland reason. The RemoteDesktop portal could provide input there later; it asks the user for permission each session.
+
 ## Building
 
 .NET 10 SDK on every operating system.

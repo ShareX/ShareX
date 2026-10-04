@@ -106,4 +106,28 @@ public sealed class MouseHighlighterSupportTests
         Assert.Same(error, Assert.Throws<InvalidOperationException>(() => viewModel.TryToggle(_ => throw error)));
         Assert.True(manuallyActive); // The backend retains responsibility for rolling its state back on failure.
     }
+
+    [Fact]
+    public void StartupSkipsUnsupportedDesktopAndKeepsSavedFlag()
+    {
+        MouseHighlighterOptions options = new() { AutoActivate = true };
+        int toggles = 0;
+
+        bool started = MouseHighlighterManager.ActivateOnStartup(options,
+            () => FeatureSupport.NotSupported("Wayland does not allow it."), _ => toggles++);
+
+        Assert.False(started);
+        Assert.Equal(0, toggles);
+        Assert.True(options.AutoActivate);
+    }
+
+    [Fact]
+    public void StartupActivatesWhenSupportedAndRequested()
+    {
+        int toggles = 0;
+
+        Assert.True(MouseHighlighterManager.ActivateOnStartup(new MouseHighlighterOptions { AutoActivate = true }, () => FeatureSupport.Supported, _ => toggles++));
+        Assert.False(MouseHighlighterManager.ActivateOnStartup(new MouseHighlighterOptions { AutoActivate = false }, () => FeatureSupport.Supported, _ => toggles++));
+        Assert.Equal(1, toggles);
+    }
 }
