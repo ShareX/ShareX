@@ -1,0 +1,38 @@
+[
+  {
+    "attempt": 1,
+    "publisher": {
+      "display": "wayland-0",
+      "mapped": true,
+      "active": true,
+      "mode": "text",
+      "readback_matches_synthetic": true
+    },
+    "preview_matches_expected": true,
+    "cancelled": true
+  },
+  {
+    "attempt": 2,
+    "publisher": {
+      "display": "wayland-0",
+      "mapped": true,
+      "active": true,
+      "mode": "text",
+      "readback_matches_synthetic": true
+    },
+    "preview_matches_expected": true,
+    "cancelled": true
+  },
+  {
+    "attempt": 3,
+    "publisher": {
+      "display": "wayland-0",
+      "mapped": true,
+      "active": true,
+      "mode": "text",
+      "readback_matches_synthetic": true
+    },
+    "preview_matches_expected": true,
+    "cancelled": true
+  }
+]

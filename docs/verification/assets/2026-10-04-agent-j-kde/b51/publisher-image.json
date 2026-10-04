@@ -1,0 +1,10 @@
+{
+  "display": "wayland-0",
+  "mapped": true,
+  "active": true,
+  "mode": "image",
+  "readback_dimensions": [
+    640,
+    400
+  ]
+}

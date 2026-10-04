@@ -1,0 +1,98 @@
+{
+  "build": {
+    "command": "dotnet build ShareX.sln -c Release -p:Platform=x64",
+    "warnings": 0,
+    "errors": 0
+  },
+  "environment": {
+    "SHAREX_TEST_DESKTOP": "1",
+    "SHAREX_TEST_APPLICATION_DIRECTORY": "ShareX/bin/Release/linux-x64"
+  },
+  "projects": [
+    {
+      "project": "ShareX.HistoryLib.Tests",
+      "passed": 8,
+      "skipped": 0,
+      "failed": 0,
+      "desktop_cases": []
+    },
+    {
+      "project": "ShareX.ImageEditor.Tests",
+      "passed": 186,
+      "skipped": 28,
+      "failed": 0,
+      "desktop_cases": [
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"early-dialog\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.ClipboardUploadPreviewTests.ActualDialogOwnsItsAsynchronousSnapshot(mode: \"late-error\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.ClipboardUploadPreviewTests.ActualDialogOwnsItsAsynchronousSnapshot(mode: \"close-during-bitmap\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.ClipboardUploadPreviewTests.ActualDialogOwnsItsAsynchronousSnapshot(mode: \"png-alpha\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.ClipboardUploadPreviewTests.ActualDialogOwnsItsAsynchronousSnapshot(mode: \"text\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.ClipboardUploadPreviewTests.ActualDialogOwnsItsAsynchronousSnapshot(mode: \"image-priority\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"os-shutdown-editor\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"cold\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"foreign-lifetime\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.ClipboardUploadPreviewTests.ActualDialogOwnsItsAsynchronousSnapshot(mode: \"close-before-transfer\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"os-shutdown-message\")",
+          "outcome": "Passed"
+        }
+      ]
+    },
+    {
+      "project": "ShareX.ImageEffectsLib.Tests",
+      "passed": 65,
+      "skipped": 0,
+      "failed": 0,
+      "desktop_cases": []
+    },
+    {
+      "project": "ShareX.Platform.Tests",
+      "passed": 278,
+      "skipped": 37,
+      "failed": 0,
+      "desktop_cases": []
+    },
+    {
+      "project": "ShareX.Tools.Tests",
+      "passed": 104,
+      "skipped": 2,
+      "failed": 0,
+      "desktop_cases": []
+    }
+  ],
+  "totals": {
+    "passed": 641,
+    "skipped": 67,
+    "failed": 0
+  }
+}

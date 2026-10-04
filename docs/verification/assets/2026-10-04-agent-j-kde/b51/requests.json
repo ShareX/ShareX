@@ -1,0 +1,65 @@
+[
+  {
+    "index": 1,
+    "path": "/upload",
+    "kind": "text",
+    "bytes": 51,
+    "sha256": "846e3d00a356e01026615e89884ec17f6fb331ae8308544aab9fe67e419b1968",
+    "matches_expected": true,
+    "file": "received-1.txt"
+  },
+  {
+    "index": 2,
+    "path": "/upload",
+    "kind": "image",
+    "bytes": 9413,
+    "sha256": "35638f8f7f1e3766f76d180fb17b1beb2f18a5e59f68de621d375827aed55b53",
+    "matches_expected": true,
+    "file": "received-2.png"
+  },
+  {
+    "index": 3,
+    "path": "/upload",
+    "kind": "text",
+    "bytes": 51,
+    "sha256": "846e3d00a356e01026615e89884ec17f6fb331ae8308544aab9fe67e419b1968",
+    "matches_expected": true,
+    "file": "received-3.txt"
+  },
+  {
+    "index": 4,
+    "path": "/upload",
+    "kind": "image",
+    "bytes": 8007,
+    "sha256": "4004e1a8269b847eb639e503a79dbd0d1eb8857b165611816123d507e799eaab",
+    "matches_expected": true,
+    "file": "received-4.png"
+  },
+  {
+    "index": 5,
+    "path": "/upload",
+    "kind": "text",
+    "bytes": 51,
+    "sha256": "846e3d00a356e01026615e89884ec17f6fb331ae8308544aab9fe67e419b1968",
+    "matches_expected": true,
+    "file": "received-5.txt"
+  },
+  {
+    "index": 6,
+    "path": "/upload",
+    "kind": "text",
+    "bytes": 51,
+    "sha256": "846e3d00a356e01026615e89884ec17f6fb331ae8308544aab9fe67e419b1968",
+    "matches_expected": true,
+    "file": "received-6.txt"
+  },
+  {
+    "index": 7,
+    "path": "/upload",
+    "kind": "image",
+    "bytes": 9413,
+    "sha256": "35638f8f7f1e3766f76d180fb17b1beb2f18a5e59f68de621d375827aed55b53",
+    "matches_expected": true,
+    "file": "received-7.png"
+  }
+]

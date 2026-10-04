@@ -27,13 +27,19 @@
 
 using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Input.Platform;
 using Avalonia.Interactivity;
+using Avalonia.Platform.Storage;
+using Avalonia.Threading;
 using Avalonia.Media.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
+using ShareX.Platform;
 using System;
 using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
@@ -45,6 +51,8 @@ public partial class ClipboardUploadWindow : Window
     private object? _clipboardContent;
     private Bitmap? _previewBitmap;
     private bool _keepClipboardContent;
+    private bool _loadStarted;
+    private bool _closed;
 
     public bool DontShowAgain => DontShowAgainCheckBox.IsChecked == true;
 
@@ -62,69 +70,96 @@ public partial class ClipboardUploadWindow : Window
         HeaderTitle.Text = Strings.ClipboardUploadWindow_ClipboardUpload;
         DontShowAgainCheckBox.IsVisible = showDontShowAgain;
 
-        UploadButton.IsEnabled = LoadClipboardContent();
+        UploadButton.IsEnabled = false;
+        ImagePreviewContainer.IsVisible = TextPreview.IsVisible = FilePreview.IsVisible = EmptyPreview.IsVisible = false;
+        Activated += (_, _) =>
+        {
+            if (_loadStarted || _closed) return;
+            _loadStarted = true;
+            // Read after native focus events have been processed, using this shown top level.
+            Dispatcher.UIThread.Post(async () =>
+            {
+                if (!_closed && Clipboard is { } clipboard)
+                    await LoadClipboardContentAsync(() => clipboard.TryGetDataAsync(),
+                        DataFormat.CreateBytesPlatformFormat(PlatformServices.Current.Clipboard.FormatNames.Png));
+            }, DispatcherPriority.Background);
+        };
 
         Opened += (_, _) => Activate();
         Closed += OnClosed;
     }
 
-    private bool LoadClipboardContent()
+    private async Task LoadClipboardContentAsync(Func<Task<IAsyncDataTransfer?>> read, DataFormat<byte[]> pngFormat)
     {
-        ImagePreviewContainer.IsVisible = false;
-        TextPreview.IsVisible = false;
-        FilePreview.IsVisible = false;
-        EmptyPreview.IsVisible = false;
-
-        if (ClipboardHelpers.ContainsImage())
+        try
         {
-            using DrawingBitmap? clipboardImage = ClipboardHelpers.GetImage();
-            if (clipboardImage != null)
+            using var transfer = await read();
+            if (_closed) return;
+            if (transfer != null)
             {
-                DrawingBitmap image = (DrawingBitmap)clipboardImage.Copy();
-                _clipboardContent = image;
-                _previewBitmap = CreatePreviewBitmap(image);
-                ImagePreview.Source = _previewBitmap;
-                ImagePreviewContainer.IsVisible = true;
-                ClipboardSummary.Text = string.Format(
-                    Strings.ClipboardUploadWindow_ImageSummary,
-                    image.Width,
-                    image.Height);
-                return true;
+                // Prefer the original PNG with the existing decoder before toolkit bitmap conversion.
+                byte[]? png = await transfer.TryGetValueAsync(pngFormat);
+                if (_closed) return;
+                DrawingBitmap? image = png is { Length: > 0 } ? SkiaImageHelpers.ByteArrayToBitmap(png) : null;
+                if (image == null)
+                {
+                    using Bitmap? bitmap = await transfer.TryGetBitmapAsync();
+                    if (_closed) return;
+                    if (bitmap != null)
+                    {
+                        using MemoryStream stream = new();
+                        bitmap.Save(stream, PngBitmapEncoderOptions.Default);
+                        image = SkiaImageHelpers.ByteArrayToBitmap(stream.ToArray());
+                    }
+                }
+                if (image != null)
+                {
+                    try
+                    {
+                        _previewBitmap = CreatePreviewBitmap(image);
+                        ImagePreview.Source = _previewBitmap;
+                        _clipboardContent = image;
+                    }
+                    catch { image.Dispose(); throw; }
+                    ImagePreviewContainer.IsVisible = true;
+                    ClipboardSummary.Text = string.Format(Strings.ClipboardUploadWindow_ImageSummary, image.Width, image.Height);
+                    UploadButton.IsEnabled = true;
+                    return;
+                }
+                string? text = await transfer.TryGetTextAsync();
+                if (_closed) return;
+                if (!string.IsNullOrEmpty(text))
+                {
+                    _clipboardContent = text;
+                    TextPreview.Text = text;
+                    TextPreview.IsVisible = true;
+                    ClipboardSummary.Text = string.Format(Strings.ClipboardUploadWindow_TextSummary, text.Length);
+                    UploadButton.IsEnabled = true;
+                    return;
+                }
+                var items = await transfer.TryGetFilesAsync();
+                if (_closed) return;
+                string[]? files = items?.Select(x => x.TryGetLocalPath()).Where(x => !string.IsNullOrEmpty(x)).Cast<string>().ToArray();
+                if (files is { Length: > 0 })
+                {
+                    _clipboardContent = files;
+                    FilePreview.ItemsSource = files;
+                    FilePreview.IsVisible = true;
+                    ClipboardSummary.Text = string.Format(Strings.ClipboardUploadWindow_FileSummary, files.Length);
+                    UploadButton.IsEnabled = true;
+                    return;
+                }
             }
         }
-        else if (ClipboardHelpers.ContainsText())
+        catch (Exception exception)
         {
-            string text = ClipboardHelpers.GetText();
-            if (!string.IsNullOrEmpty(text))
-            {
-                _clipboardContent = text;
-                TextPreview.Text = text;
-                TextPreview.IsVisible = true;
-                ClipboardSummary.Text = string.Format(
-                    Strings.ClipboardUploadWindow_TextSummary,
-                    text.Length);
-                return true;
-            }
+            if (_closed) return;
+            DebugHelper.WriteException(exception, "Unable to read clipboard for upload preview.");
         }
-        else if (ClipboardHelpers.ContainsFileDropList())
-        {
-            string[]? files = ClipboardHelpers.GetFileDropList();
-            if (files is { Length: > 0 })
-            {
-                _clipboardContent = files;
-                FilePreview.ItemsSource = files;
-                FilePreview.IsVisible = true;
-                ClipboardSummary.Text = string.Format(
-                    Strings.ClipboardUploadWindow_FileSummary,
-                    files.Length);
-                return true;
-            }
-        }
-
+        if (_closed) return;
         ClipboardSummary.Text = Strings.ClipboardUploadWindow_Empty;
         EmptyPreview.Text = ClipboardSummary.Text;
         EmptyPreview.IsVisible = true;
-        return false;
     }
 
     private static Bitmap CreatePreviewBitmap(DrawingBitmap image)
@@ -154,6 +189,7 @@ public partial class ClipboardUploadWindow : Window
 
     private void OnUploadClick(object? sender, RoutedEventArgs e)
     {
+        if (_closed || !UploadButton.IsEnabled || _clipboardContent == null) return;
         UploadClipboardContent();
         Close();
     }
@@ -172,6 +208,7 @@ public partial class ClipboardUploadWindow : Window
 
     private void OnClosed(object? sender, EventArgs e)
     {
+        _closed = true;
         _previewBitmap?.Dispose();
         _previewBitmap = null;
 

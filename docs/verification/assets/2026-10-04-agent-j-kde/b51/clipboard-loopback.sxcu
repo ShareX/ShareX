@@ -1,0 +1,9 @@
+{
+  "Name": "ShareX synthetic clipboard loopback",
+  "DestinationType": "ImageUploader, TextUploader, FileUploader",
+  "RequestMethod": "POST",
+  "RequestURL": "http://127.0.0.1:37929/upload",
+  "Body": "Binary",
+  "URL": "{json:url}",
+  "Version": "22.0.0"
+}

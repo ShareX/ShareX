@@ -1,0 +1,87 @@
+{
+  "source_claim": "ae994e3a6",
+  "private_profile": true,
+  "synthetic_inputs_only": true,
+  "local_endpoint": "http://127.0.0.1:37929/upload",
+  "native_wayland_text_preview_and_upload": true,
+  "native_wayland_image_preview_and_upload_pixels": true,
+  "x11_file_clipboard_preview_and_upload": true,
+  "history_rows_after_restart": [
+    {
+      "Id": 3,
+      "FileName": "W9DoKLGDhC.txt",
+      "Type": "Text",
+      "Host": "Custom text uploader",
+      "URL": "http://127.0.0.1:37929/result/1"
+    },
+    {
+      "Id": 4,
+      "FileName": "HoncLD4VV1.png",
+      "Type": "Image",
+      "Host": "Custom image uploader",
+      "URL": "http://127.0.0.1:37929/result/2"
+    },
+    {
+      "Id": 5,
+      "FileName": "qVXPDYgIhT.txt",
+      "Type": "Text",
+      "Host": "Custom text uploader",
+      "URL": "http://127.0.0.1:37929/result/3"
+    },
+    {
+      "Id": 6,
+      "FileName": "k8XS9CzgRL.png",
+      "Type": "Image",
+      "Host": "Custom image uploader",
+      "URL": "http://127.0.0.1:37929/result/4"
+    },
+    {
+      "Id": 7,
+      "FileName": "clipboard synthetic file.txt",
+      "Type": "Text",
+      "Host": "Custom text uploader",
+      "URL": "http://127.0.0.1:37929/result/5"
+    },
+    {
+      "Id": 8,
+      "FileName": "E3LLnCS9y1.txt",
+      "Type": "Text",
+      "Host": "Custom text uploader",
+      "URL": "http://127.0.0.1:37929/result/6"
+    },
+    {
+      "Id": 9,
+      "FileName": "6oYnYIrkhZ.png",
+      "Type": "Image",
+      "Host": "Custom image uploader",
+      "URL": "http://127.0.0.1:37929/result/7"
+    }
+  ],
+  "sqlite_integrity": "ok",
+  "normal_exits": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "custom_uploader_persisted": {
+    "Name": "ShareX synthetic clipboard loopback",
+    "Version": "22.0.0",
+    "RequestURL": "http://127.0.0.1:37929/upload"
+  },
+  "history_filter_screenshot_one_matching_row": true,
+  "atspi_virtual_containers_not_used_as_visible_row_count": true,
+  "desktop_configuration_changed": false,
+  "windows_desktop_verified_here": false,
+  "verification_input_sha256": {
+    "ShareX/Presentation/ClipboardUpload/ClipboardUploadWindow.axaml.cs": "90da207bd0f24d8e5223afba9ca20610ee45fefa1dd3d2bae99cb88d5339d927",
+    "ShareX.ImageEditor.Tests/ClipboardUploadPreviewTests.cs": "a5802d6336543c33c0591e68dabf6169a92adfdca82a1ef9ed0d6ac359ca233a",
+    "ShareX.ImageEditor.Tests/NativeProcessFixture.cs": "7ac61f61e67aa731594dc487146e7aa34a609c5475208b244b8760e2cd650b5a"
+  },
+  "application_binary_sha256": {
+    "manual_flows": "4251e7f77dc88f96ae0253811c05c2ce975d02af73a98f358152b63b43e39902",
+    "full_gate": "2cfc1369b02e852158afbd1a1b2924ea140d122e4f000aa2436c18b34d1da668"
+  }
+}

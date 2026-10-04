@@ -1,0 +1,116 @@
+{
+  "files": {
+    "baseline-wayland-text-second-tree.jsonl": {
+      "bytes": 37589,
+      "sha256": "e9a3cc068090785e077641907355adbb1cbb8867ee65435b0fadb1aabe4a0868"
+    },
+    "baseline-wayland-text-tree.jsonl": {
+      "bytes": 37691,
+      "sha256": "2b5657e27d1fe19c6fb274040ed4d635a5bf04ad5a76bf435f3e0f8dde358d36"
+    },
+    "clipboard synthetic file.txt": {
+      "bytes": 51,
+      "sha256": "846e3d00a356e01026615e89884ec17f6fb331ae8308544aab9fe67e419b1968"
+    },
+    "clipboard-file-publisher.py": {
+      "bytes": 2696,
+      "sha256": "e5339497d9e73904c25f72ab5e83c41a8cca8a09a8cccbe744b9445df170c093"
+    },
+    "clipboard-loopback.sxcu": {
+      "bytes": 260,
+      "sha256": "82d0ae06a5b232d395b43aca111b2ddcdd3ef91f23fd062558b691dd747638f9"
+    },
+    "clipboard-publisher.py": {
+      "bytes": 1411,
+      "sha256": "f6347015a58f503e07ddece12c7639288291a51860630ef54edf5b7145b3d617"
+    },
+    "empty-text-preview.png": {
+      "bytes": 20226,
+      "sha256": "90101e24dee9947b0f8050d91ba0b6097aa484ea1e79a8a7b188fac60cd484be"
+    },
+    "final-file-preview.png": {
+      "bytes": 23298,
+      "sha256": "0141a7ab4da46b428364a8d7c4d049762d89e0832fbd64919b9916fead5ae7c4"
+    },
+    "final-file-tree.jsonl": {
+      "bytes": 37935,
+      "sha256": "1c6ad08c0e4e5a7e0198dbf1b63f397399bb3d441a08b57c0a03cad1d4ee7734"
+    },
+    "final-history-tree.jsonl": {
+      "bytes": 55938,
+      "sha256": "77dd758e092343a37e60999832b81827f5fc4fda5c3ef7e2ee512f0a09fac873"
+    },
+    "final-history.png": {
+      "bytes": 69332,
+      "sha256": "d3f67874603c012786dbe65e9309aafe5a59771461761b8bda8dbfd8014f7e32"
+    },
+    "final-preview-text.json": {
+      "bytes": 226,
+      "sha256": "fc4c704774804afd16ba0fa83ed367bb276e5a66b38c92a0cf3b2cf86b448798"
+    },
+    "final-text-preview.png": {
+      "bytes": 21471,
+      "sha256": "910dfe031f6a70e43a605d294b9c84eed72d80ac0c652a45fed24f4453cefc99"
+    },
+    "final-text-tree.jsonl": {
+      "bytes": 39984,
+      "sha256": "64c31d742fa4489f02c6ab2218d032ea41d02c01052401ee291480f26f093719"
+    },
+    "final-wayland-image-preview.png": {
+      "bytes": 22525,
+      "sha256": "2649582b57e20f5197f08d5240c87d564774a6284cc80228a09f06e5adad0df8"
+    },
+    "final-wayland-image-tree.jsonl": {
+      "bytes": 36292,
+      "sha256": "076ddc34169d93dde88f4b9e017eb6a81aeac5013bb6f1fd209ed88e6778c67c"
+    },
+    "gate.json": {
+      "bytes": 3133,
+      "sha256": "d2f8c4d2d290c8546d84bd3eec26707ae9810000bc97e5b7a9ccaa492985a102"
+    },
+    "history-filtered.png": {
+      "bytes": 27600,
+      "sha256": "8ac29c94569e8503bb02228bc986b689085188c36edf9ae94778d2b8ea800d30"
+    },
+    "history.png": {
+      "bytes": 58073,
+      "sha256": "898d947380ce6dbb32745e56fe6ec43fbe99badd7d1f1eea2ec6954326cf94b4"
+    },
+    "local-upload-server.py": {
+      "bytes": 2054,
+      "sha256": "9faf2374ec95bbbd4c1a38d58e4f3d9f92757e9d4055e8901b61b767f32c00f2"
+    },
+    "publisher-image.json": {
+      "bytes": 133,
+      "sha256": "3b42b1432a6bb3b1cb4c69b55e8aaeeb669a097d47a703cdaf10234054c50d6e"
+    },
+    "publisher-text.json": {
+      "bytes": 121,
+      "sha256": "fe4160670c3d22c763671b14606bbaa1c93f2e79cf6abed82c475454fea25d04"
+    },
+    "receipt.json": {
+      "bytes": 2665,
+      "sha256": "63108985901ce9041899c348f78ce54f5191aa48df2e7e7e938068260b758752"
+    },
+    "received-6.txt": {
+      "bytes": 51,
+      "sha256": "846e3d00a356e01026615e89884ec17f6fb331ae8308544aab9fe67e419b1968"
+    },
+    "received-7.png": {
+      "bytes": 9413,
+      "sha256": "35638f8f7f1e3766f76d180fb17b1beb2f18a5e59f68de621d375827aed55b53"
+    },
+    "region-pointer-receipt.json": {
+      "bytes": 465,
+      "sha256": "54e3885d5e7764348a1513f95e53cbc9d6bc0798b509c63253c3e04c58d3a377"
+    },
+    "repeated-text-receipt.json": {
+      "bytes": 753,
+      "sha256": "e24e943ac0f8de789f4941db09d35c74c0d9e354904b9febff4da728d9f596ca"
+    },
+    "requests.json": {
+      "bytes": 1594,
+      "sha256": "82f25a2ac29b4cc660092a8869c674258e1b76b7f4c4abb05315e47c2b989328"
+    }
+  }
+}

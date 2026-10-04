@@ -37,6 +37,8 @@ internal static class NativeProcessFixture
 {
     public static int Main(string[] args)
     {
+        if (args.FirstOrDefault() == "--clipboard-upload-preview")
+            return ClipboardUploadPreviewTests.RunFixture(args.Skip(1).ToArray());
         if (args.FirstOrDefault() == "--avalonia-bootstrapper")
             return AvaloniaStartupLifetimeTests.RunFixture(args.Skip(1).ToArray());
         if (!OperatingSystem.IsWindows() || args.Length == 0) return 0;

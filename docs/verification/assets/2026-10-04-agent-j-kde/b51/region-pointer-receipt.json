@@ -1,0 +1,17 @@
+{
+  "source": "8b896099e",
+  "synthetic_cover_hidden_after_rendered_capture": true,
+  "native_window": "0x1a0003f",
+  "x11_input_focus": "0x1a0003f",
+  "requested_pointer_endpoint": [
+    1200,
+    700
+  ],
+  "xquerypointer_actual_endpoint": [
+    1674,
+    785
+  ],
+  "selection_saved": false,
+  "escape_cancelled": true,
+  "conclusion": "XTest did not move the actual pointer on this Wayland session; this attempt does not establish a ShareX selection failure"
+}
