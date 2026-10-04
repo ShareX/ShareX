@@ -51,7 +51,7 @@ public class LinuxApplicationLaunchTests
     [Fact]
     public void GetExecutablePath_HasNoExtension()
     {
-        Assert.Equal(Path.Combine("/opt/sharex", "ShareX"), service.GetExecutablePath("/opt/sharex", "ShareX"));
+        Assert.Equal(Path.Combine(Path.GetTempPath(), "ShareX"), service.GetExecutablePath(Path.GetTempPath(), "ShareX"));
     }
 
     [Theory]
