@@ -232,7 +232,12 @@ namespace ShareX
 
                         if (recordForm.Status == ScreenRecordingStatus.Paused || !taskSettings.CaptureSettings.ScreenRecordAutoStart)
                         {
-                            recordForm.RecordResetEvent.WaitOne();
+                            // The window owns the event and disposes it when it closes; a closed window ends the recording.
+                            if (OwnedWait.Wait(recordForm.RecordResetEvent, () => recordForm.IsDisposed) == OwnedWaitResult.OwnerClosed)
+                            {
+                                abortRequested = true;
+                                break;
+                            }
                         }
                         else
                         {
@@ -242,7 +247,11 @@ namespace ShareX
                             {
                                 recordForm.InvokeSafe(() => recordForm.StartCountdown(delay));
 
-                                recordForm.RecordResetEvent.WaitOne(delay);
+                                if (OwnedWait.Wait(recordForm.RecordResetEvent, () => recordForm.IsDisposed, delay) == OwnedWaitResult.OwnerClosed)
+                                {
+                                    abortRequested = true;
+                                    break;
+                                }
                             }
                         }
 
@@ -329,18 +338,22 @@ namespace ShareX
 
                 if (taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding && !abortRequested && screenRecorder != null && File.Exists(path))
                 {
-                    recordForm.ChangeState(ScreenRecordState.Encoding);
+                    recordForm?.ChangeState(ScreenRecordState.Encoding);
 
                     path = ProcessTwoPassEncoding(path, metadata, taskSettings);
                 }
 
-                if (recordForm != null)
+                // Drop the reference even when the window has already closed (InvokeSafe then skips the callback), and close it at
+                // most once.
+                ScreenRecordWindow window = recordForm;
+                recordForm = null;
+
+                if (window != null && !window.IsDisposed)
                 {
-                    recordForm.InvokeSafe(() =>
+                    window.InvokeSafe(() =>
                     {
-                        recordForm.Close();
-                        recordForm.Dispose();
-                        recordForm = null;
+                        window.Close();
+                        window.Dispose();
                     });
                 }
 
@@ -396,14 +409,15 @@ namespace ShareX
             });
         }
 
+        // FFmpeg can report after the window closed; late reports are ignored.
         private static void ScreenRecorder_RecordingStarted()
         {
-            recordForm.ChangeState(ScreenRecordState.AfterRecordingStart);
+            recordForm?.ChangeState(ScreenRecordState.AfterRecordingStart);
         }
 
         private static void ScreenRecorder_EncodingProgressChanged(int progress)
         {
-            recordForm.ChangeStateProgress(progress);
+            recordForm?.ChangeStateProgress(progress);
         }
 
         private static string ProcessTwoPassEncoding(string input, TaskMetadata metadata, TaskSettings taskSettings, bool deleteInputFile = true)
