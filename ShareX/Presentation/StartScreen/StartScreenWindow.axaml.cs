@@ -35,6 +35,7 @@ namespace ShareX;
 
 public partial class StartScreenWindow : Window
 {
+    private static StartScreenWindow? _current;
     private readonly StartScreenViewModel _viewModel;
 
     public StartScreenWindow()
@@ -54,9 +55,13 @@ public partial class StartScreenWindow : Window
     {
         TaskCompletionSource<bool> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
         Closed += (_, _) => completion.TrySetResult(true);
+        _current = this;
         Show();
         return completion.Task;
     }
+
+    internal static void ActivateCurrent() => _current?.Activate();
+    internal static void CloseCurrent() => _current?.Close();
 
     private void OnThemeChanged(object? sender, Avalonia.Styling.ThemeVariant theme) =>
         Avalonia.Threading.Dispatcher.UIThread.Post(() => RequestedThemeVariant = theme);
@@ -65,6 +70,7 @@ public partial class StartScreenWindow : Window
 
     private void OnClosed(object? sender, EventArgs e)
     {
+        if (ReferenceEquals(_current, this)) _current = null;
         ThemeManager.ThemeChanged -= OnThemeChanged;
         ApplicationState.Settings.ShowStartScreen = false;
         SettingManager.SaveApplicationConfigAsync();

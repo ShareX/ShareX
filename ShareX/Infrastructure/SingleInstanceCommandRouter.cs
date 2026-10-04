@@ -34,50 +34,31 @@ namespace ShareX;
 
 internal static class SingleInstanceCommandRouter
 {
-    private static readonly object SyncRoot = new();
-    private static TaskCompletionSource _ready = CreateSignal();
-    private static readonly TimeSpan StartupTimeout = TimeSpan.FromSeconds(5);
-    private static bool _hasBeenReady;
-    private static int _pauseCount;
+    private static readonly StartupCommandRouter Router = new(RunOnUiThreadAsync, OnStartupFinished);
 
-    internal static void MarkReady()
+    internal static bool IsClosing => Router.IsClosing;
+    internal static void MarkReady() => Router.MarkReady();
+    internal static bool Pause() => Router.Pause();
+    internal static void Resume() => Router.Resume();
+    internal static void CompleteStartup() => Router.CompleteStartup();
+    internal static void Close() => Router.Close();
+
+    private static void OnStartupFinished(bool closing) => _ = FinishStartupAsync(closing);
+
+    private static async Task FinishStartupAsync(bool closing)
     {
-        lock (SyncRoot)
+        try
         {
-            _hasBeenReady = true;
-            if (_pauseCount == 0)
+            await RunOnUiThreadAsync(() =>
             {
-                _ready.TrySetResult();
-            }
+                if (closing || ApplicationLifecycle.IsClosing) HotkeyManager.StartupWarnings.Discard();
+                else HotkeyManager.StartupWarnings.Release();
+                return Task.CompletedTask;
+            });
         }
-    }
-
-    internal static bool Pause()
-    {
-        lock (SyncRoot)
+        catch (Exception exception)
         {
-            if (!_hasBeenReady)
-            {
-                return false;
-            }
-
-            if (_pauseCount++ == 0)
-            {
-                _ready = CreateSignal();
-            }
-
-            return true;
-        }
-    }
-
-    internal static void Resume()
-    {
-        lock (SyncRoot)
-        {
-            if (_pauseCount > 0 && --_pauseCount == 0)
-            {
-                _ready.TrySetResult();
-            }
+            DebugHelper.WriteException(exception);
         }
     }
 
@@ -92,29 +73,11 @@ internal static class SingleInstanceCommandRouter
     {
         try
         {
-            Task readyTask;
-            bool startupDone;
-            lock (SyncRoot)
-            {
-                readyTask = _ready.Task;
-                startupDone = _hasBeenReady;
-            }
-
-            // Until the first start completes (which can include a first-run welcome screen) arguments wait for it rather than
-            // being dropped; afterwards a pause (settings being reloaded) is short, so a stuck one is reported.
-            if (startupDone)
-            {
-                await readyTask.WaitAsync(StartupTimeout);
-            }
-            else
-            {
-                await readyTask;
-            }
-            await RunOnUiThreadAsync(() => ApplicationCommandLine.ExecuteReceivedAsync(arguments));
+            await Router.RunAsync(() => ApplicationCommandLine.ExecuteReceivedAsync(arguments));
         }
         catch (TimeoutException)
         {
-            DebugHelper.WriteLine("Arguments were not processed because application startup did not complete within 5 seconds.");
+            DebugHelper.WriteLine("Arguments were not processed because settings reload did not complete within 5 seconds.");
         }
         catch (Exception exception)
         {
@@ -144,7 +107,4 @@ internal static class SingleInstanceCommandRouter
         });
         return completion.Task;
     }
-
-    private static TaskCompletionSource CreateSignal() =>
-        new(TaskCreationOptions.RunContinuationsAsynchronously);
 }

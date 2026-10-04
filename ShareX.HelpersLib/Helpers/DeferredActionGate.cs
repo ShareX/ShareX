@@ -37,13 +37,27 @@ namespace ShareX.HelpersLib
     {
         private readonly List<Action> queued = new List<Action>();
         private bool held;
+        private bool discarded;
 
         public bool IsHeld => held;
 
-        public void Hold() => held = true;
+        public void Hold()
+        {
+            discarded = false;
+            held = true;
+        }
+
+        /// <summary>Discards pending and future actions until the next hold, so shutdown cannot present late warnings.</summary>
+        public void Discard()
+        {
+            discarded = true;
+            held = false;
+            queued.Clear();
+        }
 
         public void Run(Action action)
         {
+            if (discarded) return;
             if (held)
             {
                 queued.Add(action);
@@ -63,6 +77,7 @@ namespace ShareX.HelpersLib
 
             foreach (Action action in actions)
             {
+                if (discarded) break;
                 action();
             }
         }

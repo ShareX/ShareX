@@ -46,7 +46,8 @@ internal static class ApplicationLifecycle
     private static bool _restartRequested;
     private static bool _restartAsAdmin;
 
-    internal static bool IsClosing => Volatile.Read(ref _exitStarted) != 0 || Volatile.Read(ref _closeSequenceStarted) != 0;
+    internal static bool IsClosing => Volatile.Read(ref _exitStarted) != 0 || Volatile.Read(ref _closeSequenceStarted) != 0 ||
+        SingleInstanceCommandRouter.IsClosing;
 
     internal static void AttachHost(MainForm hotkeyHost)
     {
@@ -56,6 +57,7 @@ internal static class ApplicationLifecycle
 
     internal static void OnAvaloniaStopped()
     {
+        SingleInstanceCommandRouter.Close();
         MainForm? hotkeyHost = _hotkeyHost;
         if (Volatile.Read(ref _hostClosed) == 0 && hotkeyHost is { IsDisposed: false })
         {
@@ -71,6 +73,7 @@ internal static class ApplicationLifecycle
         }
 
         Interlocked.Exchange(ref _exitStarted, 1);
+        SingleInstanceCommandRouter.Close();
         ShareX.Tools.MouseHighlighterManager.Shutdown();
         MainWindowIntegration.Close();
         TaskManager.StopAllTasks();
@@ -108,6 +111,7 @@ internal static class ApplicationLifecycle
             return;
         }
 
+        SingleInstanceCommandRouter.Close();
         DebugHelper.WriteLine("ShareX closing.");
         ApplicationState.WatchFolderManager?.Dispose();
         ApplicationState.WatchFolderManager = null;
@@ -158,6 +162,7 @@ internal static class ApplicationLifecycle
                 return;
             }
 
+            SingleInstanceCommandRouter.Close();
             if (_hotkeyHost is { IsDisposed: false } hotkeyHost)
             {
                 hotkeyHost.ExitApplication();

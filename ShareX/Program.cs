@@ -139,58 +139,42 @@ internal static class Program
     {
         ImageEditorIntegration.Initialize();
 
-        // A first start that was asked to do something (a browser extension upload, a capture) does it before the welcome screen,
-        // so the work is not held up or dropped; an interactive first start shows the welcome screen first, as before (R39).
-        bool startScreenPending = ApplicationState.Settings.ShowStartScreen;
-
-        if (startScreenPending && !ApplicationCommandLine.HasStartupActions)
-        {
-            await ShowStartScreenAsync();
-            startScreenPending = false;
-        }
-
-        DebugHelper.WriteLine("Hotkey host init started.");
-        // Hotkey failures found from here on are shown after the command line work below (R36).
+        MainForm? hotkeyHost = null;
+        // Keep warnings behind welcome and all commands accepted during startup, including forwarded browser/CLI work.
         HotkeyManager.StartupWarnings.Hold();
-        MainForm hotkeyHost = new();
-        ApplicationLifecycle.AttachHost(hotkeyHost);
-        hotkeyHost.Initialize();
-
-        await ApplicationSettingsRuntime.InitializeAsync(hotkeyHost);
-
-        bool showMainWindow = !(StartupOptions.SilentRun || ApplicationState.Settings.SilentRun) ||
-            !ApplicationState.Settings.ShowTray;
-        MainWindowIntegration.Initialize(hotkeyHost.TrayIconService, showMainWindow);
-        SingleInstanceCommandRouter.MarkReady();
-
-        ShareX.Tools.MouseHighlighterManager.ActivateOnStartup(
-            ApplicationState.DefaultTaskSettings.ToolsSettings.MouseHighlighterOptions);
-
-        if (showMainWindow)
-        {
-            MainWindowIntegration.Activate();
-        }
-
-        DebugHelper.WriteLine("Startup time: {0} ms", _startTimer.ElapsedMilliseconds);
-        try
-        {
-            await ApplicationCommandLine.ExecuteInitialAsync();
-        }
-        finally
-        {
-            HotkeyManager.StartupWarnings.Release();
-        }
-
-        if (startScreenPending)
-        {
-            await ShowStartScreenAsync();
-        }
-
-        if (ApplicationState.Settings.ActionsToolbarRunAtStartup)
-        {
-            TaskHelpers.OpenActionsToolbar();
-        }
-
+        await ApplicationStartupPresentation.RunAsync(
+            welcomePending: ApplicationState.Settings.ShowStartScreen,
+            hasInitialActions: ApplicationCommandLine.HasStartupActions,
+            initializeRuntimeAsync: async () =>
+            {
+                DebugHelper.WriteLine("Hotkey host init started.");
+                hotkeyHost = new MainForm();
+                ApplicationLifecycle.AttachHost(hotkeyHost);
+                hotkeyHost.Initialize();
+                MainWindowIntegration.Prepare(hotkeyHost.TrayIconService);
+                await ApplicationSettingsRuntime.InitializeAsync(hotkeyHost);
+            },
+            showWelcomeAsync: ShowStartScreenAsync,
+            initializeMainWindow: () =>
+            {
+                bool showMainWindow = !(StartupOptions.SilentRun || ApplicationState.Settings.SilentRun) ||
+                    !ApplicationState.Settings.ShowTray;
+                MainWindowIntegration.Initialize(hotkeyHost!.TrayIconService, showMainWindow);
+                ShareX.Tools.MouseHighlighterManager.ActivateOnStartup(
+                    ApplicationState.DefaultTaskSettings.ToolsSettings.MouseHighlighterOptions);
+                DebugHelper.WriteLine("Startup time: {0} ms", _startTimer.ElapsedMilliseconds);
+            },
+            markReady: SingleInstanceCommandRouter.MarkReady,
+            executeInitialAsync: ApplicationCommandLine.ExecuteInitialAsync,
+            finishPresentation: () =>
+            {
+                if (ApplicationState.Settings.ActionsToolbarRunAtStartup)
+                {
+                    TaskHelpers.OpenActionsToolbar();
+                }
+            },
+            isClosing: () => ApplicationLifecycle.IsClosing,
+            completeStartup: SingleInstanceCommandRouter.CompleteStartup);
         DebugHelper.WriteLine("Hotkey host init finished.");
     }
 

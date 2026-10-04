@@ -48,12 +48,29 @@ public static class MainWindowIntegration
     internal static ITrayIconService TrayIconService => _trayIconService ??
         throw new InvalidOperationException("The main window integration is not initialized.");
 
+    internal static void Prepare(ITrayIconService trayIconService)
+    {
+        RunOnUiThread(() =>
+        {
+            if (_trayIconService != null) _trayIconService.RightButtonUp -= ActivateWelcome;
+            _trayIconService = trayIconService;
+            if (_window == null) _trayIconService.RightButtonUp += ActivateWelcome;
+        });
+    }
+
+    private static void ActivateWelcome() => RunOnUiThread(() =>
+    {
+        if (!ApplicationLifecycle.IsClosing) StartScreenWindow.ActivateCurrent();
+    });
+
     internal static void Initialize(ITrayIconService trayIconService, bool show)
     {
         RunOnUiThread(() =>
         {
+            if (ApplicationLifecycle.IsClosing) return;
             if (_window == null)
             {
+                if (_trayIconService != null) _trayIconService.RightButtonUp -= ActivateWelcome;
                 _trayIconService = trayIconService;
                 MainWindow window = new MainWindow(trayIconService);
                 _window = window;
@@ -88,6 +105,8 @@ public static class MainWindowIntegration
     {
         RunOnUiThread(() =>
         {
+            if (ApplicationLifecycle.IsClosing) return;
+            if (_window == null) StartScreenWindow.ActivateCurrent();
             _window?.ShowAndActivate();
             _isVisible = _window?.IsVisible == true;
         });
@@ -106,6 +125,8 @@ public static class MainWindowIntegration
     {
         RunOnUiThread(() =>
         {
+            if (_trayIconService != null) _trayIconService.RightButtonUp -= ActivateWelcome;
+            StartScreenWindow.CloseCurrent();
             _window?.CloseFromHost();
             _isVisible = false;
         });
