@@ -163,8 +163,12 @@ namespace ShareX.HistoryLib
 
             if (pending.Length > 0 && !WaitForWrites(Task.WhenAll(pending), ProcessExitBudget))
             {
-                DebugHelper.WriteLine($"History writes did not finish within {ProcessExitBudget.TotalSeconds:0} seconds of exit; the last items may be missing from the history.");
+                DebugHelper.WriteLine($"History writes did not finish within {ProcessExitBudget.TotalSeconds:0.###} seconds of exit; the last items may be missing from the history.");
             }
+
+            // Program's final flush runs before ProcessExit. Keep diagnostics raised here synchronous through the logger,
+            // including a failed write reported by WaitForWrites, while retaining the user's logging settings.
+            DebugHelper.Flush();
         }
 
         protected static bool WaitForWrites(Task pending, TimeSpan timeout)

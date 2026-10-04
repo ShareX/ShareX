@@ -28,6 +28,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace ShareX.HistoryLib.Tests;
@@ -36,35 +37,17 @@ namespace ShareX.HistoryLib.Tests;
 public class HistoryExitTests
 {
     [Fact]
-    public void SlowWriteSurvivesProcessExitAfterCloseTimeout()
+    public async Task SlowWriteSurvivesProcessExitAfterCloseTimeout()
     {
         string directory = Path.Combine(Path.GetTempPath(), "sharex-history-exit-" + Guid.NewGuid().ToString("N"));
         Directory.CreateDirectory(directory);
         string database = Path.Combine(directory, "History.db");
-        string probe = Path.Combine(AppContext.BaseDirectory, "ShareX.HistoryLib.Tests.ExitProbe.dll");
-
         try
         {
-            ProcessStartInfo start = new ProcessStartInfo(Environment.ProcessPath!.EndsWith("dotnet", StringComparison.OrdinalIgnoreCase) ||
-                Environment.ProcessPath.EndsWith("dotnet.exe", StringComparison.OrdinalIgnoreCase) ? Environment.ProcessPath : "dotnet")
-            {
-                RedirectStandardOutput = true,
-                UseShellExecute = false
-            };
-            start.ArgumentList.Add(probe);
-            start.ArgumentList.Add(database);
-            start.ArgumentList.Add("2000");
-
-            Stopwatch timer = Stopwatch.StartNew();
-            using Process child = Process.Start(start)!;
-            string output = child.StandardOutput.ReadToEnd();
-            Assert.True(child.WaitForExit(TimeSpan.FromSeconds(60)));
-            timer.Stop();
-
-            Assert.Equal(0, child.ExitCode);
+            (string output, TimeSpan elapsed) = await RunProbeAsync(database, "2000");
             Assert.Contains("closed", output);
             // Main returned after the 200 ms close budget; the process stayed alive for the 2 s write.
-            Assert.True(timer.ElapsedMilliseconds >= 2000, $"exited after {timer.ElapsedMilliseconds} ms");
+            Assert.True(elapsed.TotalMilliseconds >= 2000, $"exited after {elapsed.TotalMilliseconds} ms");
 
             HistoryManagerSQLite reopened = new HistoryManagerSQLite(database);
             Assert.Equal(["exit-probe.png"], reopened.GetHistoryItems().Select(x => x.FileName));
@@ -75,5 +58,80 @@ public class HistoryExitTests
             SqliteConnection.ClearAllPools();
             Directory.Delete(directory, true);
         }
+    }
+
+    [Fact]
+    public async Task ProcessExitTimeoutPersistsItsDiagnosticAfterTheFinalFlush()
+    {
+        string directory = Path.Combine(Path.GetTempPath(), "sharex-history-exit-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(directory);
+        string database = Path.Combine(directory, "History.db");
+        string log = Path.Combine(directory, "exit.log");
+
+        try
+        {
+            // The accepted write never finishes, and the child flushes before returning from Main. Only ProcessExit can
+            // report its short injected budget; reading the file after real exit verifies that the diagnostic survived.
+            (string output, TimeSpan elapsed) = await RunProbeAsync(database, "-1", "100", log);
+            Assert.Contains("closed", output);
+            Assert.True(elapsed < TimeSpan.FromSeconds(10), $"exited after {elapsed.TotalMilliseconds} ms");
+            string diagnostic = File.ReadAllText(log);
+            Assert.Contains("exit-probe: logger barrier", diagnostic);
+            Assert.Contains("History writes did not finish within ", diagnostic);
+            Assert.Contains("seconds of exit; the last items may be missing from the history.", diagnostic);
+
+            using HistoryManagerSQLite reopened = new HistoryManagerSQLite(database);
+            Assert.Empty(reopened.GetHistoryItems());
+        }
+        finally
+        {
+            SqliteConnection.ClearAllPools();
+            Directory.Delete(directory, true);
+        }
+    }
+
+    private static async Task<(string Output, TimeSpan Elapsed)> RunProbeAsync(params string[] arguments)
+    {
+        string host = Environment.ProcessPath!;
+        ProcessStartInfo start = new ProcessStartInfo(host.EndsWith("dotnet", StringComparison.OrdinalIgnoreCase) ||
+            host.EndsWith("dotnet.exe", StringComparison.OrdinalIgnoreCase) ? host : "dotnet")
+        {
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true,
+            WindowStyle = ProcessWindowStyle.Hidden
+        };
+        start.ArgumentList.Add(Path.Combine(AppContext.BaseDirectory, "ShareX.HistoryLib.Tests.ExitProbe.dll"));
+        foreach (string argument in arguments) start.ArgumentList.Add(argument);
+
+        Stopwatch timer = Stopwatch.StartNew();
+        using Process child = Process.Start(start)!;
+        Task<string> output = child.StandardOutput.ReadToEndAsync();
+        Task<string> error = child.StandardError.ReadToEndAsync();
+        bool exited = false;
+        try
+        {
+            await child.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(10));
+            exited = true;
+        }
+        catch (TimeoutException)
+        {
+            // Terminate only this fixture's child, then report the original timeout with its bounded diagnostics.
+        }
+        finally
+        {
+            if (!child.HasExited)
+            {
+                child.Kill(entireProcessTree: true);
+                await child.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(5));
+            }
+        }
+        timer.Stop();
+        string[] diagnostics = await Task.WhenAll(output, error).WaitAsync(TimeSpan.FromSeconds(5));
+        string combined = string.Join(Environment.NewLine, diagnostics);
+        Assert.True(exited, "History exit child did not finish within 10 seconds." + Environment.NewLine + combined);
+        Assert.True(child.ExitCode == 0, $"Exit code: {child.ExitCode}" + Environment.NewLine + combined);
+        return (combined, timer.Elapsed);
     }
 }
