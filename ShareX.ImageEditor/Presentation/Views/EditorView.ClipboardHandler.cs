@@ -50,35 +50,33 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private async void OnCutRequested(object? sender, EventArgs e)
         {
-            if (_selectionController.SelectedShape?.Tag is Annotation annotation)
+            if (DataContext is not MainViewModel vm || !IsImageRequestCurrent(sender, vm) ||
+                _selectionController.SelectedShape is not { Tag: Annotation annotation } selected ||
+                this.FindControl<Canvas>("AnnotationCanvas") is not { } canvas || !canvas.Children.Contains(selected)) return;
+            using var operation = BeginImageOperation(vm);
+            try
             {
-                // Copy to internal clipboard
-                ReplaceClipboardAnnotation(annotation.Clone());
-
-                // Update clipboard status
-                _ = CheckClipboardStatus();
-
-                // Clear system clipboard to avoid ambiguity when pasting back
-
-                // Clear system clipboard to avoid ambiguity when pasting back
-                try
+                await EditorAnnotationCutController.CutAsync(_editorCore, annotation, operation, copy =>
                 {
-                    var topLevel = TopLevel.GetTopLevel(this);
-                    if (topLevel?.Clipboard != null)
+                    ReplaceClipboardAnnotation(copy);
+                    _ = CheckClipboardStatus();
+                }, _ =>
+                {
+                    if (selected is Image { Tag: ImageAnnotation } image)
                     {
-                        await topLevel.Clipboard.ClearAsync();
+                        (image.Source as IDisposable)?.Dispose();
+                        image.Source = null;
                     }
-                }
-                catch (Exception ex)
-                {
-                    EditorServices.ReportWarning(nameof(EditorView), "Failed to clear system clipboard during cut operation.", ex);
-                }
-
-                // Delete original using ViewModel command to ensure undo history is recorded
-                if (DataContext is MainViewModel vm)
-                {
-                    vm.DeleteSelectedCommand.Execute(null);
-                }
+                    canvas.Children.Remove(selected);
+                    if (ReferenceEquals(_selectionController.SelectedShape, selected)) _selectionController.ClearSelection();
+                    RefreshSpotlightOverlay();
+                    UpdateHasAnnotationsState();
+                }, () => TopLevel.GetTopLevel(this)?.Clipboard?.ClearAsync() ?? Task.CompletedTask,
+                    ex => EditorServices.ReportWarning(nameof(EditorView), "Failed to clear system clipboard during cut operation.", ex));
+            }
+            catch (Exception ex)
+            {
+                if (operation.IsCurrent) EditorServices.ReportWarning(nameof(EditorView), "Failed to cut annotation.", ex);
             }
         }
 
