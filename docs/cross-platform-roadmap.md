@@ -75,7 +75,7 @@ Tick with the desktop and commit when verified. Hyprland results are from 2026-1
 
 | Flow | Hyprland | sway | GNOME | KDE | X11 |
 | --- | --- | --- | --- | --- | --- |
-| Full screen, region, active window capture | yes | | | | full screen, region yes (rootful Xwayland, 2026-10-04); active window needs a window manager |
+| Full screen, region, active window capture | yes | | | partial (J, 2026-10-04: real portal fullscreen/monitor saves and region cancel/shutdown; stale KWin frames limit visual/coordinate verification) | full screen, region yes (rootful Xwayland, 2026-10-04); active window needs a window manager |
 | Region overlay at 125% scaling, window snapping | yes | | | | |
 | Screen recording, GIF | yes (wf-recorder, portal) | | | | yes (x11grab) |
 | Hotkeys fire | yes | | | | yes (all five defaults incl. Print Screen) |
@@ -229,3 +229,5 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, J: Actual Fedora 44 KDE Wayland verification now records full-app startup/settings/tray rendering, byte-identical synthetic loopback PNG upload, retained SQLite history/visible thumbnail, editor file-open/paste/downward expansion and clean AutoClose/SIGTERM. B45 early-dialog startup fixed and three proper actual-desktop child fixtures pass; Linux Release build 0 warnings/errors, five projects 629 pass / 62 skips including all eight History cases. B44 portable filename collision and B47/R46 UI-blocking synchronous capture are M-owned blockers, B46 after-capture capability UI fix remains claimed. Hotkey firing, native Wayland clipboard reception, cut/undo rendering, host-loss recovery and full tools/capture/recording/integration remain open. See verification/2026-10-04-agent-j-kde.md. Estimates stay 90%, broad desktop gates unchecked; user scope and automatic-workflow pause unchanged.
 
 - 2026-10-04, J: B46 after-capture capability UI complete; actual KDE tray OCR entry is disabled with its reason. Generated text/binary uploads also match the loopback server byte-for-byte and persist the correct history rows; tray Exit and AutoClose exit cleanly. Linux Release gate remains 0 warnings/errors, 629 pass / 62 skips with actual-desktop startup fixtures. The remaining dialogs, B44/R46 capture/startup backend blockers, R20/R22 scope alignment and broad Windows/Linux desktop gates remain open; estimates stay 90% and workflows paused.
+
+- 2026-10-04, J: M's R46 fix verified on actual KDE for fullscreen/monitor capture completion, responsive tray, Escape cancellation and SIGTERM exit 0 in 0.202 s with a region window pending. KWin shared-surface errors and stale closed-window content limit visual verification; no compositor configuration changed. Incoming B44 fix is ready for unrenamed portable launch verification. Broad gates/90% estimates and automatic workflow pause remain unchanged.

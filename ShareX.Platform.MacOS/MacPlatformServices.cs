@@ -55,6 +55,7 @@ public sealed class MacPlatformServices : IPlatformServices
         ScreenRecording = new MacScreenRecordingService(runner, screenCapture.GetScreens);
         hotkeys = new Lazy<IHotkeyService>(() => new CarbonHotkeyService());
         Windows = windows;
+        WindowManagement = new MacWindowManagementService(windows);
         Input = new MacInputService();
         Notifications = new MacNotificationService(runner);
         Shell = new MacShellService(runner);
@@ -86,8 +87,7 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public IInputService Input { get; }
 
-    public IWindowManagementService WindowManagement { get; } =
-        new UnsupportedWindowManagementService("Inspecting and changing other applications' windows is not available on macOS yet.");
+    public IWindowManagementService WindowManagement { get; }
 
     public INotificationService Notifications { get; }
 

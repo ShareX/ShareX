@@ -54,6 +54,8 @@ public sealed class MacSystemInfoService : ISystemInfoService
 
     public string GetSingleInstanceMutexName(string name) => @"Global\" + name + "-" + Environment.UserName;
 
+    public bool KeyboardHasPrintScreen => false;
+
     public string GetSingleInstancePipeName(string name) => CreateShortPipePath(name, Native.LibC.getuid());
 
     /// <summary>

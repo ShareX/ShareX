@@ -229,6 +229,20 @@ namespace ShareX
 
         public static List<HotkeySettings> GetDefaultHotkeyList()
         {
+            if (!PlatformServices.Current.SystemInfo.KeyboardHasPrintScreen)
+            {
+                // Mac keyboards have no Print Screen key: macOS's own capture keys with Option instead of Command, so they do not
+                // clash with the system (Command+Shift+3, 4 and 5).
+                return new List<HotkeySettings>
+                {
+                    new HotkeySettings(HotkeyType.RectangleRegion, InputKey.Alt | InputKey.Shift | InputKey.D4),
+                    new HotkeySettings(HotkeyType.PrintScreen, InputKey.Alt | InputKey.Shift | InputKey.D3),
+                    new HotkeySettings(HotkeyType.ActiveWindow, InputKey.Alt | InputKey.Shift | InputKey.D7),
+                    new HotkeySettings(HotkeyType.ScreenRecorder, InputKey.Alt | InputKey.Shift | InputKey.D5),
+                    new HotkeySettings(HotkeyType.ScreenRecorderGIF, InputKey.Alt | InputKey.Shift | InputKey.D6)
+                };
+            }
+
             return new List<HotkeySettings>
             {
                 new HotkeySettings(HotkeyType.RectangleRegion, InputKey.Control | InputKey.PrintScreen),

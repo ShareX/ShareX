@@ -25,6 +25,8 @@
 
 using ShareX.Platform.Diagnostics;
 using ShareX.Platform.MacOS;
+using ShareX.Platform.MacOS.Native;
+using System.Collections.Concurrent;
 using System;
 using System.IO;
 using System.Linq;
@@ -128,5 +130,149 @@ public class MacServicesTests
         {
             File.Delete(output);
         }
+    }
+
+    [Fact]
+    public void Overlay_ConvertsTopLeftCoordinatesToCocoa()
+    {
+        CoreGraphics.CGRect rect = MacScreenOverlay.ToCocoa(new PlatformRectangle(100, 50, 200, 80), 900);
+
+        Assert.Equal(100, rect.X);
+        Assert.Equal(900 - 50 - 80, rect.Y);
+        Assert.Equal(200, rect.Width);
+        Assert.Equal(80, rect.Height);
+    }
+
+    [Fact]
+    public void MouseHook_ReportsButtonTransitions()
+    {
+        PlatformPoint at = new PlatformPoint(3, 4);
+        GlobalMouseButtonEvent[] changes = MacMouseHook.GetButtonChanges([false, false, true], [true, false, false], at, 9).ToArray();
+
+        Assert.Equal([new GlobalMouseButtonEvent(GlobalMouseButton.Primary, true, at, 9), new GlobalMouseButtonEvent(GlobalMouseButton.Secondary, false, at, 9)], changes);
+    }
+
+    private sealed class Listener : IGlobalMouseListener
+    {
+        public ConcurrentQueue<PlatformPoint> Moves { get; } = new();
+        public void OnMove(PlatformPoint position) => Moves.Enqueue(position);
+        public void OnButton(GlobalMouseButtonEvent buttonEvent) { }
+    }
+
+    [MacOSFact]
+    public void MouseHook_FollowsThePointer()
+    {
+        if (!OperatingSystem.IsMacOS()) return;
+        Listener listener = new Listener();
+
+        using (new MacMouseHook(listener))
+        {
+            Thread.Sleep(100);
+            CoreGraphics.CGWarpMouseCursorPosition(new CoreGraphics.CGPoint { X = 123, Y = 77 });
+            SpinWait.SpinUntil(() => listener.Moves.Contains(new PlatformPoint(123, 77)), TimeSpan.FromSeconds(3));
+        }
+
+        Assert.Contains(new PlatformPoint(123, 77), listener.Moves);
+    }
+
+    [Fact]
+    public void Keyboard_MacsHaveNoPrintScreenKey()
+    {
+        ISystemInfoService mac = new MacSystemInfoService(new RecordingRunner());
+        ISystemInfoService linux = new ShareX.Platform.Linux.UnixSystemInfoService(new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.X11, DesktopEnvironment.Xfce, "XFCE", false), new RecordingRunner());
+
+        Assert.False(mac.KeyboardHasPrintScreen);
+        Assert.True(linux.KeyboardHasPrintScreen);
+    }
+
+    [MacOSFact]
+    public void Clipboard_RoundTripsTextAndImage()
+    {
+        if (!OperatingSystem.IsMacOS()) return;
+        MacClipboardService clipboard = new MacClipboardService();
+        byte[] png = Convert.FromBase64String(TextImage);
+
+        Assert.True(clipboard.SetTextAsync("ShareX ✓ clipboard").GetAwaiter().GetResult());
+        Assert.Equal("ShareX ✓ clipboard", clipboard.GetTextAsync().GetAwaiter().GetResult());
+        Assert.True(clipboard.SetImageAsync(png).GetAwaiter().GetResult());
+        byte[]? image = clipboard.GetImageAsync().GetAwaiter().GetResult();
+        Assert.NotNull(image);
+        Assert.Equal(new byte[] { 0x89, 0x50, 0x4E, 0x47 }, image![..4]);
+    }
+
+    [MacOSFact]
+    public void Keychain_StoresReadsAndDeletes()
+    {
+        if (!OperatingSystem.IsMacOS()) return;
+        KeychainCredentialService keychain = new KeychainCredentialService();
+        string account = "test-" + Guid.NewGuid().ToString("N");
+
+        Assert.True(keychain.Support.IsSupported, keychain.Support.Reason);
+        Assert.True(keychain.StoreAsync("ShareX-test", account, "secret ✓").GetAwaiter().GetResult());
+        Assert.Equal("secret ✓", keychain.GetAsync("ShareX-test", account).GetAwaiter().GetResult());
+        Assert.True(keychain.DeleteAsync("ShareX-test", account).GetAwaiter().GetResult());
+        Assert.Null(keychain.GetAsync("ShareX-test", account).GetAwaiter().GetResult());
+    }
+
+    /// <summary>Screen capture needs the Screen Recording permission, which a CI runner may not grant; the result is reported either way.</summary>
+    [MacOSFact]
+    public void ScreenCapture_TakesTheScreenOrReportsThePermission()
+    {
+        if (!OperatingSystem.IsMacOS()) return;
+        MacScreenCaptureService capture = new MacScreenCaptureService(CommandRunner.Default);
+
+        Assert.NotEmpty(capture.GetScreens());
+
+        if (!capture.Support.IsSupported)
+        {
+            Assert.False(string.IsNullOrWhiteSpace(capture.Support.Reason));
+            Console.WriteLine("Screen capture not permitted on this runner: " + capture.Support.Reason);
+            return;
+        }
+
+        ScreenCaptureResult result = capture.CaptureAsync(new ScreenCaptureRequest { Mode = ScreenCaptureMode.FullScreen }).GetAwaiter().GetResult();
+        Assert.Equal(new byte[] { 0x89, 0x50, 0x4E, 0x47 }, result.Png[..4]);
+        Console.WriteLine($"Captured {result.Bounds.Width}x{result.Bounds.Height} with {result.Backend}");
+    }
+
+    [Fact]
+    public void WindowManagement_ReportsWhatMacOSDoesNotAllow()
+    {
+        MacWindowManagementService service = new MacWindowManagementService(null!);
+
+        foreach (WindowManagementFeature feature in new[] { WindowManagementFeature.TopMost, WindowManagementFeature.Opacity, WindowManagementFeature.Borderless, WindowManagementFeature.ChildControls })
+        {
+            FeatureSupport support = service.GetSupport(feature);
+            Assert.False(support.IsSupported);
+            Assert.False(string.IsNullOrWhiteSpace(support.Reason));
+        }
+
+        Assert.False(service.SetTopMost(1, true));
+        Assert.False(service.ToggleBorderless(1, false));
+    }
+
+    [MacOSFact]
+    public void WindowManagement_InspectsARealWindow()
+    {
+        if (!OperatingSystem.IsMacOS()) return;
+        MacWindowService windows = new MacWindowService();
+        MacWindowManagementService service = new MacWindowManagementService(windows);
+        PlatformWindow? window = windows.GetWindows().FirstOrDefault(w => w.ProcessId != null && !w.Bounds.IsEmpty);
+
+        if (window == null)
+        {
+            Console.WriteLine("No application window on this runner to inspect.");
+            return;
+        }
+
+        WindowDetails? details = service.GetDetails(window.Handle);
+        Assert.NotNull(details);
+        Assert.Equal(window.ProcessId, details!.ProcessId);
+        Assert.True(details.ProcessPath == null || File.Exists(details.ProcessPath), details.ProcessPath);
+        PlatformPoint inside = new PlatformPoint(window.Bounds.X + window.Bounds.Width / 2, window.Bounds.Y + window.Bounds.Height / 2);
+        Assert.NotEqual(0, service.GetWindowAt(inside, true));
+        byte[]? icon = service.GetIcon(window.Handle);
+        Console.WriteLine($"Inspected {details.ProcessName} ({details.ProcessPath}); icon {(icon == null ? "none" : icon.Length + " bytes")}");
+        if (icon != null) Assert.Equal(new byte[] { 0x89, 0x50, 0x4E, 0x47 }, icon[..4]);
     }
 }

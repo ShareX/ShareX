@@ -60,6 +60,36 @@ internal static unsafe partial class CoreGraphics
     [LibraryImport(Library)]
     public static partial IntPtr CGEventCreate(IntPtr source);
 
+    public const int kCGEventSourceStateCombinedSessionState = 0;
+    public const uint kCGMouseButtonLeft = 0, kCGMouseButtonRight = 1, kCGMouseButtonCenter = 2;
+
+    /// <summary>Whether a mouse button is down right now. Needs no Accessibility or Input Monitoring permission.</summary>
+    [LibraryImport(Library)]
+    [return: MarshalAs(UnmanagedType.U1)]
+    public static partial bool CGEventSourceButtonState(int stateId, uint button);
+
+    public const uint kCGImageAlphaPremultipliedFirst = 2;
+    public const uint kCGBitmapByteOrder32Little = 2 << 12;
+
+    [LibraryImport(Library)]
+    public static partial IntPtr CGColorSpaceCreateDeviceRGB();
+
+    [LibraryImport(Library)]
+    public static partial void CGColorSpaceRelease(IntPtr space);
+
+    [LibraryImport(Library)]
+    public static partial IntPtr CGDataProviderCreateWithCFData(IntPtr data);
+
+    [LibraryImport(Library)]
+    public static partial void CGDataProviderRelease(IntPtr provider);
+
+    [LibraryImport(Library)]
+    public static partial IntPtr CGImageCreate(nuint width, nuint height, nuint bitsPerComponent, nuint bitsPerPixel, nuint bytesPerRow,
+        IntPtr space, uint bitmapInfo, IntPtr provider, IntPtr decode, [MarshalAs(UnmanagedType.U1)] bool shouldInterpolate, int intent);
+
+    [LibraryImport(Library)]
+    public static partial void CGImageRelease(IntPtr image);
+
     public const uint kCGHIDEventTap = 0;
     public const uint kCGScrollEventUnitLine = 1;
 

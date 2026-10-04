@@ -47,6 +47,11 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
+      # The test host must match the runner's CPU (macos-latest is Apple silicon).
+      - name: Pick test platform
+        shell: bash
+        run: echo "TEST_PLATFORM=$([ "$RUNNER_ARCH" = ARM64 ] && echo ARM64 || echo x64)" >> "$GITHUB_ENV"
+
       # Each platform project builds on every OS. Native Windows tests skip on other hosts.
       - name: Build platform projects
         run: |
@@ -61,13 +66,13 @@ jobs:
         run: dotnet test ShareX.ImageEditor.Tests/ShareX.ImageEditor.Tests.csproj --configuration Release --logger "console;verbosity=normal"
 
       - name: Test tool UI
-        run: dotnet test ShareX.Tools.Tests/ShareX.Tools.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
+        run: dotnet test ShareX.Tools.Tests/ShareX.Tools.Tests.csproj --configuration Release -p:Platform=${{ env.TEST_PLATFORM }} --logger "console;verbosity=normal"
 
       - name: Test history storage
-        run: dotnet test ShareX.HistoryLib.Tests/ShareX.HistoryLib.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
+        run: dotnet test ShareX.HistoryLib.Tests/ShareX.HistoryLib.Tests.csproj --configuration Release -p:Platform=${{ env.TEST_PLATFORM }} --logger "console;verbosity=normal"
 
       - name: Test image effects
-        run: dotnet test ShareX.ImageEffectsLib.Tests/ShareX.ImageEffectsLib.Tests.csproj --configuration Release -p:Platform=x64 --logger "console;verbosity=normal"
+        run: dotnet test ShareX.ImageEffectsLib.Tests/ShareX.ImageEffectsLib.Tests.csproj --configuration Release -p:Platform=${{ env.TEST_PLATFORM }} --logger "console;verbosity=normal"
 
   build-solution:
     if: github.head_ref != 'cross-platform-v2'

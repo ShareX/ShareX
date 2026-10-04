@@ -57,9 +57,10 @@ public sealed partial class MacInputService : IInputService
 
     public bool ScrollWindow(long windowHandle, WindowScrollCommand command) => false;
 
-    public FeatureSupport MouseHookSupport => FeatureSupport.NotSupported("Following the mouse across the desktop is not available on macOS yet.");
+    // Reads pointer and button state, which macOS allows without a permission.
+    public FeatureSupport MouseHookSupport => FeatureSupport.Supported;
 
-    public IDisposable HookMouse(IGlobalMouseListener listener) => throw new PlatformNotSupportedException(MouseHookSupport.Reason);
+    public IDisposable HookMouse(IGlobalMouseListener listener) => new MacMouseHook(listener);
 
     private static bool Post(IntPtr evt)
     {
