@@ -44,7 +44,7 @@ When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS wo
 - [x] Application starts, runs and exits cleanly on Linux (settings saved on SIGTERM).
 - [ ] Recording verified on every supported Wayland desktop. Implementations exist (`13c86e2bc`); M reports Hyprland verification, while GNOME/KDE/sway desktop verification and R22 dependency compliance remain outstanding.
 - [ ] R20 Windows-only OCR and R22 no-extra-installations policy implemented in backends, capability reasons, execution guards and packaging.
-- [ ] Individual DirectShow device discovery and Windows recorder-device download/setup are guarded by capabilities: R32 (M contract, J Windows/UI).
+- [ ] Individual DirectShow device discovery and Windows recorder-device download/setup are guarded by capabilities: R32 contract done (M); H11 UI switch and W11 review (J).
 - [ ] Verification pass on GNOME, KDE, sway and an X11 session, at least in virtual machines (M runs flows, J checks UI). Hyprland done.
 - [x] Browser extension launches ShareX on Linux: R28 (M), after J's R26 contract work; M verified cold/warm framed payloads on Hyprland (a516a5b5c), other desktop flows remain in the verification pass.
 - [x] Upload history writes are serialized and finished before exit: R29 (288f7a06f) and R34 stable drain boundary with deferred close (a20455db4).

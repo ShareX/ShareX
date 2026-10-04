@@ -1060,3 +1060,20 @@ public class PortalCaptureCropTests
         Assert.Equal(new PlatformRectangle(ex, ey, ew, eh), mapped);
     }
 }
+
+public class RecordingDeviceActionTests
+{
+    [Theory]
+    [InlineData(RecordingDeviceAction.ListDirectShowDevices)]
+    [InlineData(RecordingDeviceAction.InstallRecorderDevices)]
+    public void Linux_ReportsDirectShowActionsUnsupportedEvenWhenRecordingWorks(RecordingDeviceAction action)
+    {
+        PlatformInfo x11 = new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.X11, DesktopEnvironment.Xfce, "XFCE", false);
+        LinuxScreenRecordingService service = new LinuxScreenRecordingService(x11, new RecordingRunner("ffmpeg"), () => []);
+
+        Assert.True(service.Support.IsSupported);
+        FeatureSupport support = service.GetDeviceActionSupport(action);
+        Assert.False(support.IsSupported);
+        Assert.False(string.IsNullOrWhiteSpace(support.Reason));
+    }
+}

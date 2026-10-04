@@ -107,6 +107,10 @@ public sealed class MacScreenRecordingService : IScreenRecordingService
 
     private static long Area(PlatformRectangle rectangle) => rectangle.IsEmpty ? 0 : (long)rectangle.Width * rectangle.Height;
 
+    public FeatureSupport GetDeviceActionSupport(RecordingDeviceAction action) => FeatureSupport.NotSupported(action == RecordingDeviceAction.ListDirectShowDevices
+        ? "DirectShow devices exist only on Windows."
+        : "The screen-capture-recorder devices are DirectShow filters for Windows.");
+
     public string GetDefaultFFmpegPath(string applicationDirectory) =>
         UnixFFmpegLocator.Find(applicationDirectory, ["/opt/homebrew/bin", "/usr/local/bin", "/opt/local/bin"]);
 }

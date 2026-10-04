@@ -72,6 +72,10 @@ public sealed class LinuxScreenRecordingService : IScreenRecordingService
 
     public string GetDefaultFFmpegPath(string applicationDirectory) => UnixFFmpegLocator.Find(applicationDirectory, ["/usr/bin", "/usr/local/bin"]);
 
+    public FeatureSupport GetDeviceActionSupport(RecordingDeviceAction action) => FeatureSupport.NotSupported(action == RecordingDeviceAction.ListDirectShowDevices
+        ? "DirectShow devices exist only on Windows."
+        : "The screen-capture-recorder devices are DirectShow filters for Windows.");
+
     internal static FFmpegVideoInput CreateX11GrabInput(ScreenRecordingRequest request, string display, PlatformRectangle fallback)
     {
         PlatformRectangle region = request.GetEffectiveRegion(fallback);

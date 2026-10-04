@@ -133,4 +133,7 @@ public sealed class WindowsScreenRecordingService : IScreenRecordingService
     }
 
     public string GetDefaultFFmpegPath(string applicationDirectory) => System.IO.Path.Combine(applicationDirectory, "ffmpeg.exe");
+
+    // DirectShow and its recorder devices are Windows features; both stay available as in v22.
+    public FeatureSupport GetDeviceActionSupport(RecordingDeviceAction action) => FeatureSupport.Supported;
 }

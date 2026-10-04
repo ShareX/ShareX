@@ -74,6 +74,15 @@ public sealed record FFmpegVideoInput(string Device, string InputArguments, IRea
     public override string ToString() => InputArguments;
 }
 
+/// <summary>Device actions the recording settings offer besides recording itself.</summary>
+public enum RecordingDeviceAction
+{
+    /// <summary>Listing DirectShow video and audio sources through FFmpeg (-list_devices, dshow).</summary>
+    ListDirectShowDevices,
+    /// <summary>Downloading and setting up the screen-capture-recorder and virtual-audio-capturer DirectShow devices.</summary>
+    InstallRecorderDevices
+}
+
 /// <summary>A helper process that feeds the screen to FFmpeg.</summary>
 public interface IScreenRecordingSource : System.IDisposable
 {
@@ -85,6 +94,12 @@ public interface IScreenRecordingSource : System.IDisposable
 public interface IScreenRecordingService
 {
     FeatureSupport Support { get; }
+
+    /// <summary>
+    /// Whether a device action of the recording settings works here. Independent of <see cref="Support"/>: Linux can record
+    /// through its own devices while DirectShow, which only exists on Windows, is unsupported.
+    /// </summary>
+    FeatureSupport GetDeviceActionSupport(RecordingDeviceAction action);
 
     /// <summary>FFmpeg input devices usable on this platform, most preferred first.</summary>
     IReadOnlyList<string> GetSupportedDevices();
