@@ -54,7 +54,14 @@ internal static class SkiaEmojiBitmapRenderer
 
         // Systems without a color font can still draw supported monochrome emoji.
         using SKTypeface? fallback = SKFontManager.Default.MatchCharacter(glyph.EnumerateRunes().First().Value);
-        return fallback == null ? null : Render(glyph, canvasSize, fallback);
+
+        // Apple's LastResort font has a placeholder for every code point; using it would turn an unsupported glyph into a box.
+        if (fallback == null || fallback.FamilyName.TrimStart('.').Equals("LastResort", StringComparison.OrdinalIgnoreCase))
+        {
+            return null;
+        }
+
+        return Render(glyph, canvasSize, fallback);
     }
 
     internal static SKBitmap? Render(string glyph, int canvasSize, SKTypeface typeface)
