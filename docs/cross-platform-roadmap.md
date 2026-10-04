@@ -73,7 +73,7 @@ McoreD started this phase on 2026-10-04 ahead of G1 (M10); Jaex's approval is pe
 - [x] Tray through Avalonia's NSStatusItem; emoji drawn with Apple Color Emoji by SkiaSharp (B42 fixed in code).
 - [x] Packaging: `Scripts/package-macos.sh` builds a signed ad hoc ShareX.app zip for arm64 or x64.
 - [ ] CI: `.github/workflows/macos.yml` (manual) builds, tests, packages and starts the app; first run outstanding.
-- [ ] Real flows run on a Mac (capture, record, upload, history, editor, tools, hotkeys, tray, settings, start at login, integration), including Screen Recording and Accessibility permission prompts and Retina/mixed-scale displays.
+- [ ] Real flows run on a Mac, following [macos-test-procedure.md](macos-test-procedure.md) (capture, record, upload, history, editor, tools, hotkeys, tray, settings, start at login, integration), including Screen Recording and Accessibility permission prompts and Retina/mixed-scale displays.
 - [ ] Signing with a Developer ID and notarisation, so Gatekeeper opens the app without a right-click. Not wanted yet (McoreD, 2026-10-04); ad hoc signing is used meanwhile.
 
 ## Linux feature verification list
