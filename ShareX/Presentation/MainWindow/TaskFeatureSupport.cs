@@ -33,7 +33,9 @@ namespace ShareX;
 /// <summary>Capabilities used by task menus. Saved tasks stay intact when a platform cannot execute them.</summary>
 internal static class TaskFeatureSupport
 {
-    public static FeatureSupport Get(HotkeyType task) => task switch
+    public static FeatureSupport Get(HotkeyType task) => Get(task, ApplicationState.DefaultTaskSettings);
+
+    public static FeatureSupport Get(HotkeyType task, TaskSettings taskSettings) => task switch
     {
         HotkeyType.PrintScreen or HotkeyType.ActiveMonitor or HotkeyType.RectangleRegion or
         HotkeyType.CustomRegion or HotkeyType.LastRegion or HotkeyType.Ruler or HotkeyType.PinToScreenFromScreen or
@@ -57,6 +59,9 @@ internal static class TaskFeatureSupport
             PlatformServices.Current.Windows.Support),
 
         HotkeyType.MouseHighlighter => MouseHighlighterWindowViewModel.CurrentToggleSupport,
+        HotkeyType.VideoConverter or HotkeyType.VideoTrimmer or HotkeyType.VideoThumbnailer =>
+            FileMediaFeatureSupport.Get((taskSettings.UseDefaultCaptureSettings ? ApplicationState.DefaultTaskSettings : taskSettings)
+                .CaptureSettings.FFmpegOptions.FFmpegPath),
         HotkeyType.InspectWindow => PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.Inspect),
         HotkeyType.ActiveWindowTopMost => PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.TopMost),
         HotkeyType.BorderlessWindow or HotkeyType.ActiveWindowBorderless => PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.Borderless),

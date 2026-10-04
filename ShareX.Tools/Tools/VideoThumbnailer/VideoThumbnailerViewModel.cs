@@ -27,17 +27,21 @@ using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.HelpersLib;
+using ShareX.Platform;
 
 namespace ShareX.Tools;
 
 public sealed record VideoThumbnailOutputChoice(string Name, ThumbnailLocationType Value);
 public sealed record VideoThumbnailFormatChoice(string Name, EImageFormat Value);
 
-public sealed partial class VideoThumbnailerViewModel : ViewModelBase
+public sealed partial class VideoThumbnailerViewModel : ViewModelBase, IDisposable
 {
     private readonly string _ffmpegPath;
     private readonly VideoThumbnailOptions _options;
     private readonly Action<IReadOnlyList<VideoThumbnailInfo>>? _thumbnailsTaken;
+    private readonly Func<FeatureSupport> _getSupport;
+    private readonly Func<Task<IReadOnlyList<VideoThumbnailInfo>>>? _takeThumbnails;
+    private bool _closed;
 
     public IReadOnlyList<VideoThumbnailOutputChoice> OutputLocations { get; } =
     [
@@ -94,18 +98,31 @@ public sealed partial class VideoThumbnailerViewModel : ViewModelBase
     public Func<string?, Task<string?>>? SelectOutputFolderRequested { get; set; }
 
     public bool HasVideo => !string.IsNullOrWhiteSpace(VideoPath) && File.Exists(VideoPath);
-    public bool IsIdle => !IsBusy;
-    public bool CanStart => HasVideo && File.Exists(_ffmpegPath) && !IsBusy;
+    public FeatureSupport Support => FileMediaFeatureSupport.ForUI(_getSupport());
+    public string? SupportReason => _closed ? null : Support.Reason;
+    public bool IsIdle => !_closed && !IsBusy && Support.IsSupported;
+    public bool CanSelect => IsIdle;
+    public bool CanStart => HasVideo && File.Exists(_ffmpegPath) && IsIdle;
     public bool IsCustomOutput => SelectedOutputLocation.Value == ThumbnailLocationType.CustomFolder;
-    public bool CombinedOptionsEnabled => CombineScreenshots && !IsBusy;
+    public bool CombinedOptionsEnabled => CombineScreenshots && IsIdle;
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
 
     public VideoThumbnailerViewModel(string ffmpegPath, VideoThumbnailOptions options,
-        Action<IReadOnlyList<VideoThumbnailInfo>>? thumbnailsTaken = null)
+        Action<IReadOnlyList<VideoThumbnailInfo>>? thumbnailsTaken = null,
+        Func<FeatureSupport>? getSupport = null)
+        : this(ffmpegPath, options, thumbnailsTaken, getSupport, null)
+    {
+    }
+
+    internal VideoThumbnailerViewModel(string ffmpegPath, VideoThumbnailOptions options,
+        Action<IReadOnlyList<VideoThumbnailInfo>>? thumbnailsTaken, Func<FeatureSupport>? getSupport,
+        Func<Task<IReadOnlyList<VideoThumbnailInfo>>>? takeThumbnails)
     {
         _ffmpegPath = ffmpegPath;
         _options = options;
         _thumbnailsTaken = thumbnailsTaken;
+        _getSupport = getSupport ?? (() => FileMediaFeatureSupport.Get(ffmpegPath));
+        _takeThumbnails = takeThumbnails;
 
         _videoPath = options.LastVideoPath ?? string.Empty;
         _selectedOutputLocation = OutputLocations.First(x => x.Value == options.OutputLocation);
@@ -130,57 +147,60 @@ public sealed partial class VideoThumbnailerViewModel : ViewModelBase
 
     partial void OnVideoPathChanged(string value)
     {
+        if (!IsIdle) return;
         _options.LastVideoPath = value;
         ErrorMessage = string.Empty;
     }
 
     partial void OnSelectedOutputLocationChanged(VideoThumbnailOutputChoice value)
     {
+        if (!IsIdle) return;
         _options.OutputLocation = value.Value;
     }
 
-    partial void OnCustomOutputDirectoryChanged(string value) => _options.CustomOutputDirectory = value;
-    partial void OnSelectedImageFormatChanged(VideoThumbnailFormatChoice value) => _options.ImageFormat = value.Value;
-    partial void OnThumbnailCountChanged(decimal value) => _options.ThumbnailCount = Math.Max((int)value, 1);
-    partial void OnFilenameSuffixChanged(string value) => _options.FilenameSuffix = value;
-    partial void OnMaxThumbnailWidthChanged(decimal value) => _options.MaxThumbnailWidth = Math.Max((int)value, 0);
-    partial void OnRandomFrameChanged(bool value) => _options.RandomFrame = value;
-    partial void OnUploadThumbnailsChanged(bool value) => _options.UploadThumbnails = value;
-    partial void OnOpenDirectoryChanged(bool value) => _options.OpenDirectory = value;
-    partial void OnCombineScreenshotsChanged(bool value) => _options.CombineScreenshots = value;
-    partial void OnKeepScreenshotsChanged(bool value) => _options.KeepScreenshots = value;
-    partial void OnColumnCountChanged(decimal value) => _options.ColumnCount = Math.Max((int)value, 1);
-    partial void OnPaddingChanged(decimal value) => _options.Padding = Math.Max((int)value, 0);
-    partial void OnSpacingChanged(decimal value) => _options.Spacing = Math.Max((int)value, 0);
-    partial void OnAddVideoInfoChanged(bool value) => _options.AddVideoInfo = value;
-    partial void OnAddTimestampChanged(bool value) => _options.AddTimestamp = value;
-    partial void OnDrawShadowChanged(bool value) => _options.DrawShadow = value;
-    partial void OnDrawBorderChanged(bool value) => _options.DrawBorder = value;
+    partial void OnCustomOutputDirectoryChanged(string value) { if (IsIdle) _options.CustomOutputDirectory = value; }
+    partial void OnSelectedImageFormatChanged(VideoThumbnailFormatChoice value) { if (IsIdle) _options.ImageFormat = value.Value; }
+    partial void OnThumbnailCountChanged(decimal value) { if (IsIdle) _options.ThumbnailCount = Math.Max((int)value, 1); }
+    partial void OnFilenameSuffixChanged(string value) { if (IsIdle) _options.FilenameSuffix = value; }
+    partial void OnMaxThumbnailWidthChanged(decimal value) { if (IsIdle) _options.MaxThumbnailWidth = Math.Max((int)value, 0); }
+    partial void OnRandomFrameChanged(bool value) { if (IsIdle) _options.RandomFrame = value; }
+    partial void OnUploadThumbnailsChanged(bool value) { if (IsIdle) _options.UploadThumbnails = value; }
+    partial void OnOpenDirectoryChanged(bool value) { if (IsIdle) _options.OpenDirectory = value; }
+    partial void OnCombineScreenshotsChanged(bool value) { if (IsIdle) _options.CombineScreenshots = value; }
+    partial void OnKeepScreenshotsChanged(bool value) { if (IsIdle) _options.KeepScreenshots = value; }
+    partial void OnColumnCountChanged(decimal value) { if (IsIdle) _options.ColumnCount = Math.Max((int)value, 1); }
+    partial void OnPaddingChanged(decimal value) { if (IsIdle) _options.Padding = Math.Max((int)value, 0); }
+    partial void OnSpacingChanged(decimal value) { if (IsIdle) _options.Spacing = Math.Max((int)value, 0); }
+    partial void OnAddVideoInfoChanged(bool value) { if (IsIdle) _options.AddVideoInfo = value; }
+    partial void OnAddTimestampChanged(bool value) { if (IsIdle) _options.AddTimestamp = value; }
+    partial void OnDrawShadowChanged(bool value) { if (IsIdle) _options.DrawShadow = value; }
+    partial void OnDrawBorderChanged(bool value) { if (IsIdle) _options.DrawBorder = value; }
     partial void OnErrorMessageChanged(string value) => OnPropertyChanged(nameof(HasError));
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(IsIdle))]
     private async Task SelectVideoAsync()
     {
-        if (!IsBusy && SelectVideoRequested != null && await SelectVideoRequested() is { } filePath)
+        if (CheckSupport() && IsIdle && SelectVideoRequested != null &&
+            await SelectVideoRequested() is { } filePath && CheckSupport() && IsIdle)
         {
             VideoPath = filePath;
         }
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(IsIdle))]
     private async Task SelectOutputFolderAsync()
     {
-        if (!IsBusy && SelectOutputFolderRequested != null &&
-            await SelectOutputFolderRequested(CustomOutputDirectory) is { } folderPath)
+        if (CheckSupport() && IsIdle && SelectOutputFolderRequested != null &&
+            await SelectOutputFolderRequested(CustomOutputDirectory) is { } folderPath && CheckSupport() && IsIdle)
         {
             CustomOutputDirectory = folderPath;
         }
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanStart))]
     private async Task StartAsync()
     {
-        if (!CanStart)
+        if (!CheckSupport() || !CanStart)
         {
             return;
         }
@@ -192,11 +212,16 @@ public sealed partial class VideoThumbnailerViewModel : ViewModelBase
 
         try
         {
-            IReadOnlyList<VideoThumbnailInfo> thumbnails = await Task.Run(() =>
+            if (_closed || !CheckSupport()) return;
+            IReadOnlyList<VideoThumbnailInfo> thumbnails = _takeThumbnails != null
+                ? await _takeThumbnails()
+                : await Task.Run(() =>
             {
+                if (_closed || !Support.IsSupported) return (IReadOnlyList<VideoThumbnailInfo>)Array.Empty<VideoThumbnailInfo>();
                 VideoThumbnailer thumbnailer = new(_ffmpegPath, _options);
                 thumbnailer.ProgressChanged += (current, length) => Dispatcher.UIThread.Post(() =>
                 {
+                    if (_closed) return;
                     ProgressMaximum = Math.Max(length, 1);
                     ProgressValue = current;
                 });
@@ -207,13 +232,16 @@ public sealed partial class VideoThumbnailerViewModel : ViewModelBase
             {
                 _thumbnailsTaken?.Invoke(thumbnails);
             }
-            else
+            else if (!_closed)
             {
-                ErrorMessage = Localization.Strings.VideoThumbnailerViewModel_No_thumbnails;
+                ErrorMessage = Support.IsSupported
+                    ? Localization.Strings.VideoThumbnailerViewModel_No_thumbnails
+                    : SupportReason!;
             }
         }
         catch (Exception ex)
         {
+            if (_closed) return;
             ErrorMessage = ex.Message;
             ToolsDiagnostics.ReportWarning(nameof(VideoThumbnailerViewModel), "Failed to create video thumbnails.", ex);
         }
@@ -225,9 +253,40 @@ public sealed partial class VideoThumbnailerViewModel : ViewModelBase
 
     public void LoadVideo(string filePath)
     {
-        if (!IsBusy && !string.IsNullOrWhiteSpace(filePath))
+        if (CheckSupport() && IsIdle && !string.IsNullOrWhiteSpace(filePath))
         {
             VideoPath = filePath;
         }
+    }
+
+    partial void OnIsBusyChanged(bool value) => NotifySupport();
+
+    private bool CheckSupport()
+    {
+        if (_closed) return false;
+        FeatureSupport support = Support;
+        NotifySupport();
+        if (!support.IsSupported && !_closed) ErrorMessage = support.Reason!;
+        return support.IsSupported;
+    }
+
+    private void NotifySupport()
+    {
+        OnPropertyChanged(nameof(SupportReason));
+        OnPropertyChanged(nameof(IsIdle));
+        OnPropertyChanged(nameof(CanSelect));
+        OnPropertyChanged(nameof(CanStart));
+        OnPropertyChanged(nameof(CombinedOptionsEnabled));
+        SelectVideoCommand.NotifyCanExecuteChanged();
+        SelectOutputFolderCommand.NotifyCanExecuteChanged();
+        StartCommand.NotifyCanExecuteChanged();
+    }
+
+    public void Dispose()
+    {
+        if (_closed) return;
+        _closed = true;
+        NotifySupport();
+        // Accepted workers own their engine and output callback; only new commands and late UI updates end here.
     }
 }

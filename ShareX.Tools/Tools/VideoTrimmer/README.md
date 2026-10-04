@@ -2,6 +2,8 @@
 
 The tool uses the configured ShareX FFmpeg executable, with no player library or ffprobe requirement.
 
+File-media support is queried using that configured executable, independently of desktop recording. Unsupported browsing, editing and export are disabled with a translated reason. Picker results and each new duration/frame/export call recheck support; Cancel remains available for accepted work after support loss. Storage callbacks also check support after resolving the suggested folder. Controlled tests in `ShareX.Tools.Tests/FileMediaSupportTests.cs` cover unsupported input and export selection without launching an external engine. Linux dependency policy remains tracked in R22, and actual desktop verification is still required.
+
 Preview strategy:
 
 - Generate twelve evenly spaced stills using input-side seeks, one background job at a time. This avoids a complete decode of long recordings just to populate a filmstrip.

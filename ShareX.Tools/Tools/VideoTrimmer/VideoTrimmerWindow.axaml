@@ -9,7 +9,7 @@
         Background="{DynamicResource ShareX.Brush.Background.Main}"
         Width="900" Height="720" MinWidth="760" MinHeight="620"
         WindowStartupLocation="CenterScreen">
-    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" ToolTip.Tip="{Binding SupportReason}">
         <Grid Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
             <Border Classes="tool-panel">
                 <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">

@@ -284,9 +284,12 @@ internal sealed class MainMenuBuilder
         [
             Tool(nameof(Strings.MainMenuBuilder_AnimatedGifMaker), Strings.MainMenuBuilder_AnimatedGifMaker, LucideIcons.film, () => TaskHelpers.OpenAnimatedGifMaker()),
             Tool(nameof(Strings.MainMenuBuilder_AnimatedGifTrimmer), Strings.MainMenuBuilder_AnimatedGifTrimmer, LucideIcons.scissors_square, () => TaskHelpers.OpenAnimatedGifTrimmer()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoConverter), Strings.MainMenuBuilder_VideoConverter, LucideIcons.file_video, () => TaskHelpers.OpenVideoConverter()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoThumbnailer), Strings.MainMenuBuilder_VideoThumbnailer, LucideIcons.clapperboard, () => TaskHelpers.OpenVideoThumbnailer()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoTrimmer), Strings.MainMenuBuilder_VideoTrimmer, LucideIcons.scissors, () => TaskHelpers.OpenVideoTrimmer())
+            Tool(nameof(Strings.MainMenuBuilder_VideoConverter), Strings.MainMenuBuilder_VideoConverter, LucideIcons.file_video,
+                () => TaskHelpers.OpenVideoConverter(), TaskFeatureSupport.Get(HotkeyType.VideoConverter)),
+            Tool(nameof(Strings.MainMenuBuilder_VideoThumbnailer), Strings.MainMenuBuilder_VideoThumbnailer, LucideIcons.clapperboard,
+                () => TaskHelpers.OpenVideoThumbnailer(), TaskFeatureSupport.Get(HotkeyType.VideoThumbnailer)),
+            Tool(nameof(Strings.MainMenuBuilder_VideoTrimmer), Strings.MainMenuBuilder_VideoTrimmer, LucideIcons.scissors,
+                () => TaskHelpers.OpenVideoTrimmer(), TaskFeatureSupport.Get(HotkeyType.VideoTrimmer))
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryData,
         [
@@ -333,7 +336,7 @@ internal sealed class MainMenuBuilder
                 }
 
                 items.Add(Item(title, TaskHelpers.FindMenuLucideIcon(workflow.TaskSettings.Job),
-                    async () => await TaskHelpers.ExecuteJob(workflow.TaskSettings), support: TaskFeatureSupport.Get(workflow.TaskSettings.Job)));
+                    async () => await TaskHelpers.ExecuteJob(workflow.TaskSettings), support: TaskFeatureSupport.Get(workflow.TaskSettings.Job, workflow.TaskSettings)));
             }
         }
 

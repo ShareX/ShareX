@@ -1390,7 +1390,7 @@ internal sealed class TaskSettingsPageBuilder
     private static ComboBox EnumCombo<T>(Func<T> getter, Action<T> setter) where T : struct, Enum =>
         ObjectCombo(Enum.GetValues<T>(), getter, setter, value => ((Enum)(object)value).GetLocalizedDescription());
 
-    private static Button TaskMenu(Func<HotkeyType> getter, Action<HotkeyType> setter)
+    private Button TaskMenu(Func<HotkeyType> getter, Action<HotkeyType> setter)
     {
         TextBlock selectedIcon = CreateTaskMenuIcon(getter());
         TextBlock selectedTitle = new()
@@ -1432,7 +1432,7 @@ internal sealed class TaskSettingsPageBuilder
         {
             selectedIcon.Text = TaskHelpers.FindMenuLucideIcon(task);
             selectedTitle.Text = task.GetLocalizedDescription();
-            var support = TaskFeatureSupport.Get(task);
+            var support = TaskFeatureSupport.Get(task, _settings);
             ToolTip.SetTip(button, support.IsSupported ? null : support.Reason);
         }
 
@@ -1675,9 +1675,9 @@ internal sealed class TaskSettingsPageBuilder
     private static T ToggleFlag<T>(T value, T flag) where T : struct, Enum =>
         (T)Enum.ToObject(typeof(T), Convert.ToUInt64(value) ^ Convert.ToUInt64(flag));
 
-    private static MenuItem CreateTaskMenuItem(HotkeyType task, HotkeyType selectedTask, Action<HotkeyType> selectTask)
+    private MenuItem CreateTaskMenuItem(HotkeyType task, HotkeyType selectedTask, Action<HotkeyType> selectTask)
     {
-        var support = TaskFeatureSupport.Get(task);
+        var support = TaskFeatureSupport.Get(task, _settings);
         MenuItem item = new()
         {
             Header = task.GetLocalizedDescription(),

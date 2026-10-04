@@ -62,6 +62,7 @@ public partial class VideoTrimmerWindow : Window
 
     private async Task<string?> SelectInputAsync()
     {
+        if (!_viewModel.CanBrowse) return null;
         var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
             Title = Strings.VideoTrimmer_Open,
@@ -80,12 +81,15 @@ public partial class VideoTrimmerWindow : Window
 
     private async Task<string?> SelectOutputAsync(string suggestedName)
     {
+        if (!_viewModel.CanSelect) return null;
         string extension = Path.GetExtension(suggestedName);
+        IStorageFolder? suggestedFolder = await StorageProvider.TryGetFolderFromPathAsync(Path.GetDirectoryName(_viewModel.InputFilePath)!);
+        if (!_viewModel.CanSelect) return null;
         var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
             Title = Strings.VideoTrimmer_Export,
             SuggestedFileName = suggestedName,
-            SuggestedStartLocation = await StorageProvider.TryGetFolderFromPathAsync(Path.GetDirectoryName(_viewModel.InputFilePath)!),
+            SuggestedStartLocation = suggestedFolder,
             DefaultExtension = extension.TrimStart('.'),
             ShowOverwritePrompt = true,
             FileTypeChoices = [new FilePickerFileType(Strings.VideoTrimmer_VideoFiles) { Patterns = ["*" + extension] }]

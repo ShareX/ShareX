@@ -15,7 +15,7 @@
         MinHeight="580"
         WindowStartupLocation="CenterScreen">
 
-        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" ToolTip.Tip="{Binding SupportReason}">
             <Grid Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
                 <Border Grid.Row="0" Classes="tool-panel">
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
@@ -29,7 +29,7 @@
                     </Grid>
                 </Border>
 
-                <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="12">
+                <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="12" IsEnabled="{Binding IsIdle}">
                     <Grid Grid.Column="0" RowDefinitions="Auto,*" RowSpacing="12">
                         <Border Grid.Row="0" Classes="tool-panel">
                             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10">

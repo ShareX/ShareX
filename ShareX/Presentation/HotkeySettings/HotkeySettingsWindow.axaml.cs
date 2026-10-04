@@ -123,7 +123,8 @@ public partial class HotkeySettingsWindow : Window
 
     private MenuItem CreateTaskMenuItem(HotkeySettingsItem item, HotkeyTaskOption option)
     {
-        var support = TaskFeatureSupport.Get((HotkeyType)option.Value);
+        var support = TaskFeatureSupport.Get((HotkeyType)option.Value,
+            (item.Source as HotkeySettings)?.TaskSettings ?? ApplicationState.DefaultTaskSettings);
         MenuItem menuItem = new()
         {
             Header = option.Name,

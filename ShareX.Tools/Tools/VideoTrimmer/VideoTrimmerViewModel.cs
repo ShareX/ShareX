@@ -26,6 +26,7 @@
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.Platform;
 using ShareX.Tools.Localization;
 
 namespace ShareX.Tools;
@@ -35,6 +36,7 @@ public sealed record VideoTrimmerThumbnail(double Position, Bitmap Image);
 public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
 {
     private readonly VideoTrimmerService _service;
+    private readonly Func<FeatureSupport> _getSupport;
     private readonly Action? _playNotificationSound;
     private readonly CancellationTokenSource _lifetime = new();
     private readonly SemaphoreSlim _previewGate = new(1);
@@ -59,9 +61,11 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     [ObservableProperty] private bool _isExporting;
     [ObservableProperty] private double _progress;
 
-    public VideoTrimmerViewModel(string ffmpegPath, Action? playNotificationSound = null)
+    public VideoTrimmerViewModel(string ffmpegPath, Action? playNotificationSound = null,
+        Func<FeatureSupport>? getSupport = null)
     {
         _service = new(ffmpegPath);
+        _getSupport = getSupport ?? (() => FileMediaFeatureSupport.Get(ffmpegPath));
         _playNotificationSound = playNotificationSound;
     }
 
@@ -69,12 +73,15 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     public Func<string, Task<string?>>? SelectOutputRequested { get; set; }
     public Action<string>? ShowErrorRequested { get; set; }
     public IReadOnlyList<VideoTrimmerThumbnail> Thumbnails => _thumbnails;
+    public FeatureSupport Support => FileMediaFeatureSupport.ForUI(_getSupport());
+    public string? SupportReason => _disposed ? null : Support.Reason;
+    public bool CanSelect => !_disposed && Support.IsSupported;
     public bool HasVideo => Duration > 0;
-    public bool CanEdit => HasVideo && !IsExporting;
+    public bool CanEdit => CanSelect && HasVideo && !IsExporting;
     public bool CanTrim => CanEdit && (Start >= 0.001 || End <= Duration - 0.001);
-    public bool CanBrowse => !IsExporting;
+    public bool CanBrowse => CanSelect && !IsExporting;
     public bool IsWorking => IsLoading || IsExporting;
-    public bool CanUsePrimaryAction => IsExporting || CanTrim;
+    public bool CanUsePrimaryAction => !_disposed && (IsExporting || CanTrim);
     public bool HasOutput => !string.IsNullOrEmpty(OutputFilePath);
     public System.Windows.Input.ICommand PrimaryActionCommand => IsExporting ? CancelCommand : ExportCommand;
     public string PrimaryActionText => IsExporting ? Strings.VideoTrimmer_Cancel : Strings.VideoTrimmer_Export;
@@ -99,12 +106,14 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
 
     public void SetStartTime(string? text)
     {
+        if (!CanEdit) return;
         if (TryParseTime(text, out double seconds)) Start = seconds;
         OnPropertyChanged(nameof(StartTimeText));
     }
 
     public void SetEndTime(string? text)
     {
+        if (!CanEdit) return;
         if (TryParseTime(text, out double seconds)) End = seconds;
         OnPropertyChanged(nameof(EndTimeText));
     }
@@ -129,18 +138,18 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     [RelayCommand]
     private async Task BrowseAsync()
     {
-        if (!CanBrowse || SelectInputRequested == null) return;
+        if (!CheckSupport() || !CanBrowse || SelectInputRequested == null) return;
         try
         {
             string? file = await SelectInputRequested();
-            if (file != null && !_disposed) await LoadInputAsync(file);
+            if (file != null && !_disposed && CheckSupport()) await LoadInputAsync(file);
         }
         catch (Exception ex) { StatusText = ex.Message; }
     }
 
     public async Task LoadInputAsync(string file)
     {
-        if (!CanBrowse || _disposed) return;
+        if (!CheckSupport() || !CanBrowse) return;
         _loadCancellation?.Cancel();
         _seekCancellation?.Cancel();
         using CancellationTokenSource cancellation = CancellationTokenSource.CreateLinkedTokenSource(_lifetime.Token);
@@ -156,8 +165,10 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         try
         {
             if (!File.Exists(file)) throw new FileNotFoundException(Strings.VideoTrimmer_InvalidVideo);
+            if (!CheckSupport()) return;
             double duration = await _service.GetDurationAsync(file, token);
             token.ThrowIfCancellationRequested();
+            if (!CheckSupport()) return;
             Duration = duration;
             End = duration;
             Position = 0;
@@ -165,9 +176,11 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
             // One background worker builds the overview; a separate serialized worker refines seeks.
             for (int i = 0; i < 12; i++)
             {
+                if (!CheckSupport()) return;
                 double position = duration * i / 12;
                 byte[] bytes = await _service.GetFrameAsync(file, position, token);
                 token.ThrowIfCancellationRequested();
+                if (!CheckSupport()) return;
                 using MemoryStream stream = new(bytes);
                 Bitmap bitmap = new(stream);
                 _thumbnails.Add(new(position, bitmap));
@@ -205,11 +218,12 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         }
 
         OnPropertyChanged(nameof(PositionText));
-        if (HasVideo && !_disposed) _ = RefreshPreviewAsync();
+        if (HasVideo && CanSelect) _ = RefreshPreviewAsync();
     }
 
     private async Task RefreshPreviewAsync()
     {
+        if (!CanSelect || !CheckSupport()) return;
         _seekCancellation?.Cancel();
         using CancellationTokenSource cancellation = CancellationTokenSource.CreateLinkedTokenSource(_lifetime.Token);
         _seekCancellation = cancellation;
@@ -240,8 +254,10 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
             await _previewGate.WaitAsync(token);
             try
             {
+                if (!CheckSupport()) return;
                 byte[] bytes = await _service.GetFrameAsync(InputFilePath, target, token);
                 token.ThrowIfCancellationRequested();
+                if (!CheckSupport()) return;
                 using MemoryStream stream = new(bytes);
                 Bitmap bitmap = new(stream);
                 Preview = bitmap;
@@ -324,6 +340,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     [RelayCommand]
     private void Cancel()
     {
+        if (_disposed) return;
         _loadCancellation?.Cancel();
         _seekCancellation?.Cancel();
         _exportCancellation?.Cancel();
@@ -333,7 +350,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     [RelayCommand]
     private async Task ExportAsync()
     {
-        if (!CanTrim || SelectOutputRequested == null || _disposed) return;
+        if (!CheckSupport() || !CanTrim || SelectOutputRequested == null || _disposed) return;
         IsExporting = true;
         using CancellationTokenSource cancellation = CancellationTokenSource.CreateLinkedTokenSource(_lifetime.Token);
         _exportCancellation = cancellation;
@@ -341,13 +358,16 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         try
         {
             string extension = Precise ? ".mp4" : Path.GetExtension(InputFilePath);
+            if (!CheckSupport()) return;
             string? output = await SelectOutputRequested(Path.GetFileNameWithoutExtension(InputFilePath) + "-trimmed" + extension);
             if (output == null) return;
             cancellation.Token.ThrowIfCancellationRequested();
+            if (!CheckSupport()) return;
             _loadCancellation?.Cancel();
             _seekCancellation?.Cancel();
             Progress = 0;
             StatusText = Strings.VideoTrimmer_Exporting;
+            if (!CheckSupport()) return;
             await _service.TrimAsync(InputFilePath, output, Start, End, Duration, Precise,
                 new Progress<double>(value => { if (!cancellation.IsCancellationRequested && !_disposed) Progress = value; }), cancellation.Token);
             Progress = 100;
@@ -373,6 +393,20 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         }
 
         if (errorMessage != null && !_disposed) ShowErrorRequested?.Invoke(errorMessage);
+    }
+
+    private bool CheckSupport()
+    {
+        if (_disposed) return false;
+        FeatureSupport support = Support;
+        OnPropertyChanged(nameof(SupportReason));
+        OnPropertyChanged(nameof(CanSelect));
+        OnPropertyChanged(nameof(CanBrowse));
+        OnPropertyChanged(nameof(CanEdit));
+        OnPropertyChanged(nameof(CanTrim));
+        OnPropertyChanged(nameof(CanUsePrimaryAction));
+        if (!support.IsSupported && !_disposed) StatusText = support.Reason!;
+        return support.IsSupported;
     }
 
     private void ClearFrames()

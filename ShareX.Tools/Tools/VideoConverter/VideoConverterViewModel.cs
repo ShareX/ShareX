@@ -25,6 +25,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.Platform;
 using System.Text;
 
 namespace ShareX.Tools;
@@ -56,6 +57,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
     private readonly VideoConverterOptions _options;
     private readonly VideoConversionHandler _conversionHandler;
+    private readonly Func<FeatureSupport> _getSupport;
     private CancellationTokenSource? _cancellationTokenSource;
     private bool _closed;
 
@@ -83,10 +85,13 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     public VideoConverterViewModel(
         VideoConverterOptions options,
         VideoConversionHandler conversionHandler,
-        string? inputFilePath = null)
+        string? inputFilePath = null,
+        Func<FeatureSupport>? getSupport = null)
     {
         _options = options;
         _conversionHandler = conversionHandler;
+        // The host owns this opaque handler's engine and supplies its capability (R42 for the application host).
+        _getSupport = getSupport ?? (() => FeatureSupport.Supported);
         _inputFilePath = options.InputFilePath ?? string.Empty;
         _outputFolderPath = options.OutputFolderPath ?? string.Empty;
         _outputFileName = options.OutputFileName ?? string.Empty;
@@ -109,8 +114,11 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     public Func<string, Task<string?>>? SelectOutputFolderRequested { get; set; }
 
     public bool IsClosed => _closed;
+    public FeatureSupport Support => FileMediaFeatureSupport.ForUI(_getSupport());
+    public string? SupportReason => _closed ? null : Support.Reason;
     public bool IsIdle => !_closed && !IsEncoding;
-    public bool CanEdit => IsIdle && !IsSelecting;
+    public bool CanEdit => IsIdle && !IsSelecting && Support.IsSupported;
+    public bool CanSelect => IsIdle && Support.IsSupported;
     public bool CanStop => !_closed && IsEncoding && _cancellationTokenSource is { IsCancellationRequested: false };
 
     public string InputFilePath
@@ -244,7 +252,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     private async Task BrowseInputAsync()
     {
         Func<string, Task<string?>>? selectInput = SelectInputFileRequested;
-        if (!CanEdit || selectInput == null)
+        if (!CheckSupport() || !CanEdit || selectInput == null)
         {
             return;
         }
@@ -254,7 +262,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         {
             if (_closed) return;
             string? filePath = await selectInput(Localization.Strings.VideoConverterViewModel_Select_input_dialog);
-            if (!_closed && !string.IsNullOrWhiteSpace(filePath))
+            if (!_closed && CheckSupport() && !string.IsNullOrWhiteSpace(filePath))
             {
                 IsSelecting = false;
                 LoadInput(filePath);
@@ -272,7 +280,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     private async Task BrowseOutputFolderAsync()
     {
         Func<string, Task<string?>>? selectOutput = SelectOutputFolderRequested;
-        if (!CanEdit || selectOutput == null)
+        if (!CheckSupport() || !CanEdit || selectOutput == null)
         {
             return;
         }
@@ -282,7 +290,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         {
             if (_closed) return;
             string? folderPath = await selectOutput(Localization.Strings.VideoConverterViewModel_Select_output_dialog);
-            if (!_closed && !string.IsNullOrWhiteSpace(folderPath))
+            if (!_closed && CheckSupport() && !string.IsNullOrWhiteSpace(folderPath))
             {
                 IsSelecting = false;
                 OutputFolderPath = folderPath;
@@ -298,7 +306,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
     public void LoadInput(string filePath)
     {
-        if (!CanEdit) return;
+        if (!CheckSupport() || !CanEdit) return;
 
         InputFilePath = filePath;
 
@@ -318,7 +326,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     [RelayCommand(CanExecute = nameof(CanEdit))]
     private async Task StartEncodingAsync()
     {
-        if (!CanEdit)
+        if (!CheckSupport() || !CanEdit)
         {
             return;
         }
@@ -362,6 +370,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
             StatusText = Localization.Strings.VideoConverterViewModel_Converting;
             VideoConversionRequest request = new(BuildArguments(), OutputFilePath, AutoOpenFolder);
             cancellation.Token.ThrowIfCancellationRequested();
+            if (!CheckSupport()) return;
             VideoConversionResult result = await _conversionHandler(request, progress, cancellation.Token);
             if (_closed) return;
 
@@ -422,11 +431,22 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     {
         OnPropertyChanged(nameof(IsIdle));
         OnPropertyChanged(nameof(CanEdit));
+        OnPropertyChanged(nameof(CanSelect));
         OnPropertyChanged(nameof(CanStop));
         BrowseInputCommand.NotifyCanExecuteChanged();
         BrowseOutputFolderCommand.NotifyCanExecuteChanged();
         StartEncodingCommand.NotifyCanExecuteChanged();
         StopEncodingCommand.NotifyCanExecuteChanged();
+    }
+
+    private bool CheckSupport()
+    {
+        if (_closed) return false;
+        FeatureSupport support = Support;
+        OnPropertyChanged(nameof(SupportReason));
+        NotifyActionState();
+        if (!support.IsSupported && !_closed) StatusText = support.Reason!;
+        return support.IsSupported;
     }
 
     private void SettingsValueChanged()

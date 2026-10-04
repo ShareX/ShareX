@@ -28,6 +28,7 @@ using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Platform;
 
 namespace ShareX.Tools;
 
@@ -45,9 +46,10 @@ public partial class VideoConverterWindow : Window
     public VideoConverterWindow(
         VideoConverterOptions options,
         VideoConversionHandler conversionHandler,
-        string? inputFilePath = null)
+        string? inputFilePath = null,
+        Func<FeatureSupport>? getSupport = null)
     {
-        _viewModel = new VideoConverterViewModel(options, conversionHandler, inputFilePath);
+        _viewModel = new VideoConverterViewModel(options, conversionHandler, inputFilePath, getSupport);
         DataContext = _viewModel;
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
@@ -66,10 +68,10 @@ public partial class VideoConverterWindow : Window
 
     private async Task<string?> SelectInputFileAsync(string title)
     {
-        if (_viewModel.IsClosed) return null;
+        if (!_viewModel.CanSelect) return null;
         IStorageFolder? suggestedStartLocation = await GetSuggestedFolderAsync(
             Path.GetDirectoryName(_viewModel.InputFilePath));
-        if (_viewModel.IsClosed) return null;
+        if (!_viewModel.CanSelect) return null;
 
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
@@ -91,9 +93,9 @@ public partial class VideoConverterWindow : Window
 
     private async Task<string?> SelectOutputFolderAsync(string title)
     {
-        if (_viewModel.IsClosed) return null;
+        if (!_viewModel.CanSelect) return null;
         IStorageFolder? suggestedStartLocation = await GetSuggestedFolderAsync(_viewModel.OutputFolderPath);
-        if (_viewModel.IsClosed) return null;
+        if (!_viewModel.CanSelect) return null;
 
         IReadOnlyList<IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {

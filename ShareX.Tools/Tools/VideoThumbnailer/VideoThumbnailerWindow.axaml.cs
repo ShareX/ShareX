@@ -54,12 +54,14 @@ public partial class VideoThumbnailerWindow : Window
         DragDrop.SetAllowDrop(this, true);
         AddHandler(DragDrop.DragOverEvent, OnDragOver);
         AddHandler(DragDrop.DropEvent, OnDrop);
+        Closed += (_, _) => _viewModel.Dispose();
     }
 
     private void InitializeComponent() => AvaloniaXamlLoader.Load(this);
 
     private async Task<string?> SelectVideoAsync()
     {
+        if (!_viewModel.CanSelect) return null;
         IReadOnlyList<IStorageFile> files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
             Title = Localization.Strings.VideoThumbnailerWindow_Select_video_dialog,
@@ -79,11 +81,14 @@ public partial class VideoThumbnailerWindow : Window
 
     private async Task<string?> SelectOutputFolderAsync(string? currentFolder)
     {
+        if (!_viewModel.CanSelect) return null;
         IStorageFolder? startFolder = null;
         if (!string.IsNullOrWhiteSpace(currentFolder) && Directory.Exists(currentFolder))
         {
             startFolder = await StorageProvider.TryGetFolderFromPathAsync(currentFolder);
         }
+
+        if (!_viewModel.CanSelect) return null;
 
         IReadOnlyList<IStorageFolder> folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {
@@ -97,7 +102,7 @@ public partial class VideoThumbnailerWindow : Window
 
     private void OnDragOver(object? sender, DragEventArgs e)
     {
-        e.DragEffects = _viewModel.IsBusy || !e.DataTransfer.Formats.Contains(DataFormat.File)
+        e.DragEffects = !_viewModel.CanSelect || !e.DataTransfer.Formats.Contains(DataFormat.File)
             ? DragDropEffects.None
             : DragDropEffects.Copy;
     }
@@ -105,7 +110,7 @@ public partial class VideoThumbnailerWindow : Window
     private void OnDrop(object? sender, DragEventArgs e)
     {
         IStorageFile? file = e.DataTransfer.TryGetFiles()?.OfType<IStorageFile>().FirstOrDefault();
-        if (!_viewModel.IsBusy && file != null)
+        if (_viewModel.CanSelect && file != null)
         {
             _viewModel.LoadVideo(file.Path.LocalPath);
             e.Handled = true;

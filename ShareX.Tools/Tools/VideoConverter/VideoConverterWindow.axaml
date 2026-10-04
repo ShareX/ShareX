@@ -33,7 +33,7 @@
         </Style>
     </Window.Styles>
 
-        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}" ToolTip.Tip="{Binding SupportReason}">
             <Grid RowDefinitions="Auto,*,Auto" Margin="16" RowSpacing="12">
                 <Border Grid.Row="0" Classes="tool-panel" Padding="12">
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
