@@ -44,7 +44,7 @@ When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS wo
 - [x] Application starts, runs and exits cleanly on Linux (settings saved on SIGTERM).
 - [ ] Recording verified on every supported Wayland desktop. Implementations exist (`13c86e2bc`); M reports Hyprland verification, while GNOME/KDE/sway desktop verification and R22 dependency compliance remain outstanding.
 - [ ] R20 Windows-only OCR and R22 no-extra-installations policy implemented in backends, capability reasons, execution guards and packaging.
-- [ ] Individual DirectShow device discovery and Windows recorder-device download/setup are guarded by capabilities: R32 contract done (M); H11 UI switch and W11 review (J).
+- [ ] Individual DirectShow device discovery and Windows recorder-device download/setup are guarded by capabilities: R32 contract done (M); H11 UI switch and W11 review claimed (J, 2026-10-04).
 - [ ] Verification pass on GNOME, KDE, sway and an X11 session, at least in virtual machines (M runs flows, J checks UI). Hyprland done.
 - [x] Browser extension launches ShareX on Linux: R28 (M), after J's R26 contract work; M verified cold/warm framed payloads on Hyprland (a516a5b5c), other desktop flows remain in the verification pass.
 - [ ] Upload history writes are serialized and finished before exit: R29 serialization and R34 sealed queue/deferred connection close are implemented; R38 still requires the application lifetime to await accepted writes through process exit.
@@ -103,7 +103,7 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 | Date | Who | Commitment | Commit |
 | --- | --- | --- | --- |
 | 2026-10-04 | M | GNOME and KDE screen recording through the ScreenCast portal. | `13c86e2bc` |
-| 2026-10-04 | M | R28 Linux application launch and R29 connection serialization/normal queue flush. R34 full shutdown draining remains open. | `a516a5b5c`, `288f7a06f` |
+| 2026-10-04 | M | R28 Linux application launch and R29 connection serialization/normal queue flush. R34 sealed library draining is implemented; R38 application process-exit draining remains open. | `a516a5b5c`, `288f7a06f` |
 | 2026-10-04 | M | Historical policy edit; superseded by Jaex's explicit Windows-only OCR/no-extra-installations instructions and subsequent AGENTS.md corrections. | `1db33b5b7` (superseded) |
 
 ## Change log
@@ -130,3 +130,5 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, M: Hyprland verification extended (clipboard image, clipboard upload, watch folder, autostart, file types, secrets, sounds, background remover); X11 column started on rootful Xwayland.
 - 2026-10-04, J: Audited M's startup hotkey-warning report and the remaining J9 debt. R36 requests a coordinated startup/presentation policy; its current warning path matches the Windows baseline and has an explicit -NoHotkeys opt-out. R37 records Store-only WinRT calls/type aliases still hidden in shared Program/StartupManager/Enums and requests the contract/Windows handoff. G1 startup and G2 migration gates remain unchecked; estimates/desktop verification are unchanged. Claimed B32 auto-capture UI lifetime/support work with proper portable tests, preserving Windows timer behavior; no macOS work.
 - 2026-10-04, J: Integrated R34's sealed history queue, deferred connection disposal and two library regressions (a20455db4) before the B32 claim. Retained M's implementation; R38 records the remaining application lifetime gap because Dispose may return while its accepted background tasks are pending and shutdown does not await them. A live test process is insufficient to verify persistence through process exit. G1 history gate stays unchecked; no estimates/desktop gate changed.
+
+- 2026-10-04, J: Retained incoming R31 startup guards, R33 backend cancellation/input rechecks and R32 per-device contract. Claim W11/H11 before B32 code for Windows parity review and guarded FFmpeg device discovery/download UI with proper portable tests. R31 source coverage is complete, but actual desktop startup remains in the verification pass. R33 frontend alignment and desktop verification remain open. R34 improves connection lifetime without retaining the application process for deferred work, so the history gate remains unchecked under R38. Estimates and Windows 10/11/Linux desktop sign-off are unchanged; no macOS work.
