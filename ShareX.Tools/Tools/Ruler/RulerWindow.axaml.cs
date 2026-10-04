@@ -29,6 +29,7 @@ using Avalonia.Input;
 using Avalonia.Input.Platform;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform;
+using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.Platform;
 using ShareX.Tools.Controls;
@@ -39,6 +40,8 @@ namespace ShareX.Tools;
 public partial class RulerWindow : Window
 {
     private RulerOverlayControl _overlay = null!;
+    private PixelRect? _captureBounds;
+    private bool _closed;
 
     public RulerWindow()
     {
@@ -50,9 +53,13 @@ public partial class RulerWindow : Window
         AddHandler(PointerReleasedEvent, OnWindowPointerReleased);
         Opened += (_, _) =>
         {
+            if (_closed) return;
+            ApplyCaptureBounds();
             Activate();
             _overlay.Focus();
         };
+        ScalingChanged += (_, _) => Dispatcher.UIThread.Post(ApplyCaptureBounds, DispatcherPriority.Loaded);
+        Closed += (_, _) => _closed = true;
     }
 
     private void OnWindowPointerReleased(object? sender, PointerReleasedEventArgs e)
@@ -67,6 +74,7 @@ public partial class RulerWindow : Window
     /// <summary>Captures before showing the overlay, including when the platform needs an asynchronous permission prompt.</summary>
     public async Task ShowRulerAsync(CancellationToken cancellationToken = default)
     {
+        if (_closed) return;
         IReadOnlyList<Screen> screens = Screens.All;
         if (screens.Count == 0)
         {
@@ -80,14 +88,23 @@ public partial class RulerWindow : Window
         PixelRect bounds = new(left, top, right - left, bottom - top);
         ScreenPixelBuffer screenPixelBuffer = await ScreenPixelBuffer.CaptureAsync(
             PlatformServices.Current.ScreenCapture, bounds, cancellationToken);
+        if (_closed) return;
         _overlay.SetScreenPixelBuffer(screenPixelBuffer);
 
-        bounds = screenPixelBuffer.Bounds;
-        double scaling = Screens.ScreenFromPoint(bounds.Position)?.Scaling ?? screens[0].Scaling;
+        _captureBounds = screenPixelBuffer.Bounds;
+        ApplyCaptureBounds();
+        Show();
+    }
+
+    private void ApplyCaptureBounds()
+    {
+        if (_closed || _captureBounds is not PixelRect bounds) return;
+        double scaling = RenderScaling;
+        if (!double.IsFinite(scaling) || scaling <= 0) scaling = 1;
         Position = bounds.Position;
         Width = bounds.Width / scaling;
         Height = bounds.Height / scaling;
-        Show();
+        _overlay.InvalidateVisual();
     }
 
     private async Task CopyMeasurementAsync()
