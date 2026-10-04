@@ -72,18 +72,18 @@ public sealed class LinuxScreenCaptureService : IScreenCaptureService
 
     public FeatureSupport Support => ActiveBackend switch
     {
-        Backend.None when info.IsWlrootsCompositor => LinuxPackages.Missing(info.Distribution ?? LinuxDistribution.Unknown, LinuxTool.Grim),
+        Backend.None when info.IsWlrootsCompositor => LinuxPackages.Missing(info.Distribution ?? LinuxDistribution.Unknown, LinuxTool.XdgDesktopPortal, LinuxTool.Grim),
         Backend.None when info.DisplayServer == DisplayServer.None => FeatureSupport.NotSupported("No graphical session was found."),
         Backend.None => LinuxPackages.Missing(info.Distribution ?? LinuxDistribution.Unknown, LinuxTool.XdgDesktopPortal),
         _ => FeatureSupport.Supported
     };
 
     /// <summary>
-    /// Window capture works wherever ShareX can list windows and capture a region (X11, Hyprland, sway): it captures the window's
-    /// rectangle as it is on screen. Transparency, client area only and the other Windows extras are not available.
+    /// Window capture works wherever ShareX can list windows (X11, Hyprland, sway) and capture a region: it captures the window's
+    /// rectangle as it is on screen. Through the portal that is the window's part of a whole-desktop screenshot. Transparency, client area only and the other Windows extras are not available.
     /// </summary>
     public ScreenCaptureFeatures Features =>
-        windows != null && windows.Support.IsSupported && ActiveBackend is Backend.X11 or Backend.Grim ? ScreenCaptureFeatures.Window : ScreenCaptureFeatures.None;
+        windows != null && windows.Support.IsSupported && ActiveBackend != Backend.None ? ScreenCaptureFeatures.Window : ScreenCaptureFeatures.None;
 
     public FeatureSupport GetFeatureSupport(ScreenCaptureFeatures feature)
     {

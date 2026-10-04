@@ -23,58 +23,52 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.Platform.Diagnostics;
+using ShareX.Platform.Linux.DBus;
 using System;
-using System.Text;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace ShareX.Platform.Linux;
 
 /// <summary>
-/// Secrets through the freedesktop Secret Service (GNOME Keyring, KWallet 5.97+, KeePassXC) using libsecret's secret-tool.
+/// Secrets through the freedesktop Secret Service (GNOME Keyring, KWallet 5.97+, KeePassXC), spoken directly over D-Bus so
+/// no extra program is needed. Secrets stored earlier through secret-tool use the same attributes and are still found.
 /// </summary>
-/// <remarks>The secret is passed on standard input so it never appears in the process list.</remarks>
 public sealed class SecretServiceCredentialService : ICredentialService
 {
-    private readonly ICommandRunner runner;
-    private readonly LinuxDistribution distribution;
+    private readonly Lazy<bool> available = new Lazy<bool>(SecretService.IsAvailable);
 
-    public SecretServiceCredentialService(PlatformInfo info, ICommandRunner runner)
+    public FeatureSupport Support => available.Value
+        ? FeatureSupport.Supported
+        : FeatureSupport.NotSupported("No keyring service (such as GNOME Keyring or KWallet) is running in this session, so secrets cannot be stored securely.");
+
+    public Task<bool> StoreAsync(string service, string account, string secret, CancellationToken cancellationToken = default)
     {
-        this.runner = runner;
-        distribution = info.Distribution ?? LinuxDistribution.Unknown;
+        EnsureSupported();
+        return SecretService.StoreAsync($"{service}: {account}", Attributes(service, account), secret, cancellationToken);
     }
 
-    public FeatureSupport Support => runner.Exists("secret-tool") ? FeatureSupport.Supported : LinuxPackages.Missing(distribution, LinuxTool.SecretTool);
-
-    public async Task<bool> StoreAsync(string service, string account, string secret, CancellationToken cancellationToken = default)
+    public Task<string?> GetAsync(string service, string account, CancellationToken cancellationToken = default)
     {
-        CommandResult result = await RunAsync(["store", "--label", $"{service}: {account}", "service", service, "account", account],
-            Encoding.UTF8.GetBytes(secret), cancellationToken).ConfigureAwait(false);
-        return result.Success;
+        EnsureSupported();
+        return SecretService.GetAsync(Attributes(service, account), cancellationToken);
     }
 
-    public async Task<string?> GetAsync(string service, string account, CancellationToken cancellationToken = default)
+    public Task<bool> DeleteAsync(string service, string account, CancellationToken cancellationToken = default)
     {
-        CommandResult result = await RunAsync(["lookup", "service", service, "account", account], null, cancellationToken).ConfigureAwait(false);
-        return result.Success ? result.StandardOutputText : null;
+        EnsureSupported();
+        return SecretService.DeleteAsync(Attributes(service, account), cancellationToken);
     }
 
-    public async Task<bool> DeleteAsync(string service, string account, CancellationToken cancellationToken = default)
-    {
-        CommandResult result = await RunAsync(["clear", "service", service, "account", account], null, cancellationToken).ConfigureAwait(false);
-        return result.Success;
-    }
+    private static Dictionary<string, string> Attributes(string service, string account) =>
+        new Dictionary<string, string> { ["service"] = service, ["account"] = account };
 
-    private async Task<CommandResult> RunAsync(string[] arguments, byte[]? input, CancellationToken cancellationToken)
+    private void EnsureSupported()
     {
-        if (!runner.Exists("secret-tool"))
+        if (!Support.IsSupported)
         {
             throw new PlatformNotSupportedException(Support.Reason);
         }
-
-        // Unlocking the keyring can show a password prompt, so allow time for the user.
-        return await runner.RunAsync("secret-tool", arguments, input, TimeSpan.FromMinutes(2), cancellationToken).ConfigureAwait(false);
     }
 }

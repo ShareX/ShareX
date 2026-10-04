@@ -1041,3 +1041,22 @@ public class PortalRecordingTests
         Assert.Equal("fd=1", arguments[^1]);
     }
 }
+
+public class PortalCaptureCropTests
+{
+    [Theory]
+    // 125%: a 3840x2160 screenshot of a 3072x1728 layout.
+    [InlineData(0, 0, 3072, 1728, 100, 200, 400, 300, 3840, 2160, 125, 250, 500, 375)]
+    // Unscaled two-monitor layout starting left of zero.
+    [InlineData(-1920, 0, 3840, 1080, -1920, 0, 1920, 1080, 3840, 1080, 0, 0, 1920, 1080)]
+    // Partly outside the image is clipped.
+    [InlineData(0, 0, 1000, 1000, 900, 900, 200, 200, 2000, 2000, 1800, 1800, 200, 200)]
+    public void MapToPixels_ScalesFromLayoutToScreenshot(int lx, int ly, int lw, int lh, int ax, int ay, int aw, int ah, int pw, int ph,
+        int ex, int ey, int ew, int eh)
+    {
+        PlatformRectangle mapped = ShareX.Platform.Linux.Desktop.PortalCaptureBackend.MapToPixels(new PlatformRectangle(ax, ay, aw, ah),
+            new PlatformRectangle(lx, ly, lw, lh), new PlatformSize(pw, ph));
+
+        Assert.Equal(new PlatformRectangle(ex, ey, ew, eh), mapped);
+    }
+}

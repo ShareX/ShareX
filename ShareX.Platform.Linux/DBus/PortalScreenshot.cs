@@ -41,6 +41,23 @@ internal static class PortalScreenshot
     /// <param name="interactive">Let the user pick the area or window in the desktop's own dialog.</param>
     public static async Task<byte[]> CaptureAsync(bool interactive, CancellationToken cancellationToken)
     {
+        // A portal backend that never answers must not hold the capture forever. Allow for a first-use permission dialog, and
+        // longer when the user is picking an area.
+        using CancellationTokenSource timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        timeout.CancelAfter(interactive ? TimeSpan.FromMinutes(5) : TimeSpan.FromMinutes(1));
+
+        try
+        {
+            return await CaptureCoreAsync(interactive, timeout.Token).ConfigureAwait(false);
+        }
+        catch (OperationCanceledException) when (timeout.IsCancellationRequested && !cancellationToken.IsCancellationRequested)
+        {
+            throw new TimeoutException("The desktop's screenshot service did not answer.");
+        }
+    }
+
+    private static async Task<byte[]> CaptureCoreAsync(bool interactive, CancellationToken cancellationToken)
+    {
         PortalResponse response = await DBusSession.CallPortalRequestAsync((bus, token) =>
             DBusSession.CreateMethodCall(bus, DBusSession.PortalBusName, DBusSession.PortalObjectPath, Interface, "Screenshot", "sa{sv}",
                 (ref MessageWriter writer) =>

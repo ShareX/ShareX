@@ -61,7 +61,7 @@ public sealed class LinuxPlatformServices : IPlatformServices
         Notifications = new FreedesktopNotificationService(info, runner);
         Shell = new LinuxShellService(runner);
         ShellIntegration = new LinuxShellIntegrationService(paths, runner);
-        Credentials = new SecretServiceCredentialService(info, runner);
+        Credentials = new SecretServiceCredentialService();
         Secrets = new KeyFileSecretProtectionService(System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "secret.key"));
         Thumbnails = new FreedesktopThumbnailService(System.IO.Path.Combine(paths.CacheHome, "thumbnails"));
         Preferences = new DefaultSystemPreferencesService("/etc/sharex/policy.json", System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "policy.json"));

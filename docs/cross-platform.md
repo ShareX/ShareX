@@ -64,7 +64,7 @@ The services (`LinuxWindowService`, `LinuxScreenCaptureService`, `LinuxScreenRec
 
 ## Linux distribution awareness
 
-`PlatformDetector` reads `/etc/os-release` into `LinuxDistribution` (family, immutable variants, package manager) and detects the display server and desktop environment. `LinuxPackages.GetInstallCommand` turns missing tools into a copy and paste command for apt, dnf, rpm-ostree, pacman, zypper, nix, apk, emerge, xbps and eopkg.
+`PlatformDetector` reads `/etc/os-release` into `LinuxDistribution` (family, immutable variants, package manager) and detects the display server and desktop environment. `LinuxPackages.Missing` names the distribution's package for a missing optional program in a feature's support reason; ShareX never shows install commands or installs anything (AGENTS.md, "Linux dependencies").
 
 ## Building
 

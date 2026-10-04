@@ -151,16 +151,38 @@ internal sealed class PortalCaptureBackend : IScreenCaptureBackend
             return new ScreenCaptureResult(png, full, "xdg-desktop-portal");
         }
 
-        // The portal always returns the whole desktop, so crop for region and single screen requests.
-        PlatformRectangle area = LinuxScreenCaptureService.ResolveArea(request, screens, full);
-        PlatformRectangle crop = area.Intersect(full);
+        // The portal always returns the whole desktop in pixels, so crop for region, window and single screen requests.
+        PlatformRectangle layout = screens.Count > 0 ? screens.Select(s => s.Bounds).Aggregate((a, b) => a.Union(b)) : full;
+        PlatformRectangle area = LinuxScreenCaptureService.ResolveArea(request, screens, layout).Intersect(layout);
+        PlatformRectangle crop = MapToPixels(area, layout, size);
 
-        if (crop.IsEmpty || crop == full)
+        if (area.IsEmpty || crop.IsEmpty || crop == full)
         {
             return new ScreenCaptureResult(png, full, "xdg-desktop-portal");
         }
 
-        return new ScreenCaptureResult(PngCodec.Crop(png, crop), crop, "xdg-desktop-portal");
+        // Like grim, report the area in layout coordinates.
+        return new ScreenCaptureResult(PngCodec.Crop(png, crop), area, "xdg-desktop-portal");
+    }
+
+    /// <summary>
+    /// Maps an area in layout (logical) coordinates to pixels of a screenshot of the whole layout. A scaled desktop, for example
+    /// 3840x2160 pixels shown as 3072x1728 at 125%, gives a larger image than its layout. Assumes one scale for every monitor.
+    /// </summary>
+    internal static PlatformRectangle MapToPixels(PlatformRectangle area, PlatformRectangle layout, PlatformSize pixels)
+    {
+        if (layout.Width <= 0 || layout.Height <= 0)
+        {
+            return area;
+        }
+
+        double scaleX = pixels.Width / (double)layout.Width;
+        double scaleY = pixels.Height / (double)layout.Height;
+        int left = (int)Math.Round((area.X - layout.X) * scaleX);
+        int top = (int)Math.Round((area.Y - layout.Y) * scaleY);
+        int right = (int)Math.Round((area.X + area.Width - layout.X) * scaleX);
+        int bottom = (int)Math.Round((area.Y + area.Height - layout.Y) * scaleY);
+        return new PlatformRectangle(left, top, right - left, bottom - top).Intersect(new PlatformRectangle(0, 0, pixels.Width, pixels.Height));
     }
 
     public CursorCapture? CaptureCursor() => null;

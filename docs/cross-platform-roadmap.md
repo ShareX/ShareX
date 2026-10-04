@@ -119,3 +119,4 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-04, M: R29/B24 fixed: history writes are serialized and flushed before the database closes, with a new ShareX.HistoryLib.Tests project. G1 history item ticked.
 - 2026-10-04, M: R28 done: the browser extension host launches ShareX on Linux (cold and warm start verified with framed payloads on Hyprland). G1 browser item ticked; R28/R29 commitment kept.
 - 2026-10-04, M: Linux dependency policy reconciled in AGENTS.md on McoreD's instruction. R20 cancelled; R22 reframed (core flows need only .NET and desktop APIs; optional features may use distribution programs). G1 policy item reworded.
+- 2026-10-04, M: R22 first slice: no install commands in reasons, Secret Service over D-Bus (no secret-tool), scale-correct portal crop and window capture, portal screenshot timeout. grim recognised as the wlroots desktops' own screenshot component.

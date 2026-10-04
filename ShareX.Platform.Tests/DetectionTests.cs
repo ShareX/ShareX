@@ -176,28 +176,6 @@ public class LinuxDistributionTests
 public class LinuxPackagesTests
 {
     [Theory]
-    [InlineData("ID=ubuntu", "sudo apt install libnotify-bin wl-clipboard")]
-    [InlineData("ID=fedora", "sudo dnf install libnotify wl-clipboard")]
-    [InlineData("ID=fedora\nVARIANT_ID=kinoite", "rpm-ostree install libnotify wl-clipboard")]
-    [InlineData("ID=arch", "sudo pacman -S --needed libnotify wl-clipboard")]
-    [InlineData("ID=opensuse-tumbleweed", "sudo zypper install libnotify-tools wl-clipboard")]
-    [InlineData("ID=nixos", "nix-env -iA nixos.libnotify nixos.wl-clipboard")]
-    public void GetInstallCommand_UsesDistributionPackageManager(string osRelease, string expected)
-    {
-        LinuxDistribution distribution = LinuxDistribution.Parse(osRelease);
-
-        Assert.Equal(expected, LinuxPackages.GetInstallCommand(distribution, LinuxTool.Libnotify, LinuxTool.WlClipboard));
-    }
-
-    [Fact]
-    public void GetInstallCommand_ReturnsNullForUnknownDistribution()
-    {
-        Assert.Null(LinuxPackages.GetInstallCommand(LinuxDistribution.Unknown, LinuxTool.FFmpeg));
-    }
-
-    [Theory]
-    [InlineData(LinuxTool.SecretTool, LinuxDistributionFamily.Debian, "libsecret-tools")]
-    [InlineData(LinuxTool.SecretTool, LinuxDistributionFamily.Arch, "libsecret")]
     [InlineData(LinuxTool.FFmpeg, LinuxDistributionFamily.Fedora, "ffmpeg-free")]
     [InlineData(LinuxTool.FFmpeg, LinuxDistributionFamily.Debian, "ffmpeg")]
     [InlineData(LinuxTool.XdgUtils, LinuxDistributionFamily.Alpine, "xdg-utils")]
@@ -207,23 +185,11 @@ public class LinuxPackagesTests
     }
 
     [Fact]
-    public void Missing_NamesAlternativesAndSuggestsFirst()
+    public void Missing_NamesAlternativesWithoutInstallCommand()
     {
         FeatureSupport support = LinuxPackages.Missing(LinuxDistribution.Parse("ID=debian"), LinuxTool.WlClipboard, LinuxTool.Xclip);
 
         Assert.False(support.IsSupported);
-        Assert.Equal("Install wl-clipboard or xclip (sudo apt install wl-clipboard).", support.Reason);
-    }
-
-    [Fact]
-    public void RecommendedTools_DependOnSession()
-    {
-        PlatformInfo hyprland = new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.Wayland, DesktopEnvironment.Hyprland, "Hyprland", false);
-        PlatformInfo x11 = new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.X11, DesktopEnvironment.Xfce, "XFCE", false);
-
-        Assert.Contains(LinuxTool.Grim, LinuxPackages.RecommendedTools(hyprland));
-        Assert.Contains(LinuxTool.WlClipboard, LinuxPackages.RecommendedTools(hyprland));
-        Assert.Contains(LinuxTool.Xclip, LinuxPackages.RecommendedTools(x11));
-        Assert.DoesNotContain(LinuxTool.Grim, LinuxPackages.RecommendedTools(x11));
+        Assert.Equal("This needs wl-clipboard or xclip, which was not found on this system.", support.Reason);
     }
 }
