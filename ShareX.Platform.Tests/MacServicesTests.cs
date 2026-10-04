@@ -234,4 +234,45 @@ public class MacServicesTests
         Assert.Equal(new byte[] { 0x89, 0x50, 0x4E, 0x47 }, result.Png[..4]);
         Console.WriteLine($"Captured {result.Bounds.Width}x{result.Bounds.Height} with {result.Backend}");
     }
+
+    [Fact]
+    public void WindowManagement_ReportsWhatMacOSDoesNotAllow()
+    {
+        MacWindowManagementService service = new MacWindowManagementService(null!);
+
+        foreach (WindowManagementFeature feature in new[] { WindowManagementFeature.TopMost, WindowManagementFeature.Opacity, WindowManagementFeature.Borderless, WindowManagementFeature.ChildControls })
+        {
+            FeatureSupport support = service.GetSupport(feature);
+            Assert.False(support.IsSupported);
+            Assert.False(string.IsNullOrWhiteSpace(support.Reason));
+        }
+
+        Assert.False(service.SetTopMost(1, true));
+        Assert.False(service.ToggleBorderless(1, false));
+    }
+
+    [MacOSFact]
+    public void WindowManagement_InspectsARealWindow()
+    {
+        if (!OperatingSystem.IsMacOS()) return;
+        MacWindowService windows = new MacWindowService();
+        MacWindowManagementService service = new MacWindowManagementService(windows);
+        PlatformWindow? window = windows.GetWindows().FirstOrDefault(w => w.ProcessId != null && !w.Bounds.IsEmpty);
+
+        if (window == null)
+        {
+            Console.WriteLine("No application window on this runner to inspect.");
+            return;
+        }
+
+        WindowDetails? details = service.GetDetails(window.Handle);
+        Assert.NotNull(details);
+        Assert.Equal(window.ProcessId, details!.ProcessId);
+        Assert.True(details.ProcessPath == null || File.Exists(details.ProcessPath), details.ProcessPath);
+        PlatformPoint inside = new PlatformPoint(window.Bounds.X + window.Bounds.Width / 2, window.Bounds.Y + window.Bounds.Height / 2);
+        Assert.NotEqual(0, service.GetWindowAt(inside, true));
+        byte[]? icon = service.GetIcon(window.Handle);
+        Console.WriteLine($"Inspected {details.ProcessName} ({details.ProcessPath}); icon {(icon == null ? "none" : icon.Length + " bytes")}");
+        if (icon != null) Assert.Equal(new byte[] { 0x89, 0x50, 0x4E, 0x47 }, icon[..4]);
+    }
 }
