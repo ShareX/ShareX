@@ -28,6 +28,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
     public partial class MainViewModel : IDisposable
     {
         private bool _disposed;
+        internal bool IsDisposed => _disposed;
 
         /// <summary>Releases images owned by this view model. The attached editor core is borrowed.</summary>
         public void Dispose()

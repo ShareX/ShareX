@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -29,6 +29,7 @@ using Avalonia.Input.Platform;
 using Avalonia.Platform.Storage;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
+using ShareX.ImageEditor.Presentation.Controllers;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
 
@@ -113,46 +114,14 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private async void OnPasteRequested(object? sender, EventArgs e)
         {
-            var topLevel = TopLevel.GetTopLevel(this);
-            if (topLevel == null) return;
-            var clipboard = topLevel.Clipboard;
-
+            if (DataContext is not MainViewModel vm || !IsImageRequestCurrent(sender, vm)) return;
             try
             {
-                // Priority 1: Check system clipboard for images/files (external content)
-                // This allows users to copy from browser/explorer and paste even if they previously copied a shape
-                if (clipboard != null)
-                {
-                    // Check for files
-                    var files = await clipboard.TryGetFilesAsync();
-                    if (files != null && files.Any())
-                    {
-                        await PasteImageFromClipboard();
-                        return;
-                    }
-
-                    // Check for bitmap
-                    // Use TryGetBitmapAsync for reliable cross-format bitmap detection instead of
-                    // hardcoded format name strings which are platform-specific and may not match.
-                    var clipboardBitmap = await clipboard.TryGetBitmapAsync();
-                    if (clipboardBitmap != null)
-                    {
-                        (clipboardBitmap as IDisposable)?.Dispose();
-                        await PasteImageFromClipboard();
-                        return;
-                    }
-                }
-
-                // Priority 2: Internal shape clipboard
-                if (_clipboardAnnotation != null)
-                {
-                    PasteInternalShape();
-                    return;
-                }
+                await PasteImageFromClipboard();
             }
             catch (Exception ex)
             {
-                EditorServices.ReportWarning(nameof(EditorView), "Failed to handle paste request.", ex);
+                if (!_workspaceDisposed) EditorServices.ReportWarning(nameof(EditorView), "Failed to handle paste request.", ex);
             }
         }
 
@@ -218,120 +187,109 @@ namespace ShareX.ImageEditor.Presentation.Views
         /// </summary>
         private async Task PasteImageFromClipboard()
         {
-            var topLevel = TopLevel.GetTopLevel(this);
-            var clipboard = topLevel?.Clipboard;
-            if (clipboard == null) return;
-
-            try
+            if (DataContext is not MainViewModel vm || TopLevel.GetTopLevel(this) is not { } topLevel) return;
+            using var operation = BeginImageOperation(vm);
+            bool externalContent = false;
+            if (topLevel.Clipboard is { } clipboard)
             {
-                // Check for image file paths in clipboard (e.g. copied from Explorer)
-                var files = await clipboard.TryGetFilesAsync();
-                if (files != null)
+                try
                 {
-                    foreach (var file in files)
-                    {
-                        if (file is IStorageFile storageFile)
-                        {
-                            var ext = System.IO.Path.GetExtension(storageFile.Name)?.ToLowerInvariant();
-                            if (ext == ".png" || ext == ".jpg" || ext == ".jpeg" || ext == ".bmp" || ext == ".gif" || ext == ".webp" || ext == ".ico")
-                            {
-                                try
-                                {
-                                    using var stream = await storageFile.OpenReadAsync();
-                                    using var memStream = new System.IO.MemoryStream();
-                                    await stream.CopyToAsync(memStream);
-                                    memStream.Position = 0;
-                                    var skBitmap = SKBitmap.Decode(memStream);
-                                    if (skBitmap != null)
-                                    {
-                                        await InsertExternalImageAsync(skBitmap, storageFile.Path.LocalPath);
-                                        return;
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    EditorServices.ReportWarning(nameof(EditorView), $"Failed to decode clipboard image file '{storageFile.Name}'.", ex);
-                                }
-                            }
-                        }
-                    }
+                    await operation.RunOwnedAsync(_ => ReadClipboardImageAsync(clipboard, operation,
+                        markExternalContent: () => externalContent = true), image => InsertExternalImageAsync(image, operation));
                 }
-
-                // Try clipboard bitmap data (e.g. PrintScreen, copy from image app)
-                var clipboardBitmap = await clipboard.TryGetBitmapAsync();
-                if (clipboardBitmap != null)
+                catch (Exception ex)
                 {
-                    var skBitmap = BitmapConversionHelpers.ToSKBitmap(clipboardBitmap);
-                    if (skBitmap != null)
-                    {
-                        await InsertExternalImageAsync(skBitmap);
-                        return;
-                    }
+                    if (IsEditorContextCurrent(vm)) EditorServices.ReportWarning(nameof(EditorView), "Failed to paste image content from clipboard.", ex);
+                    return;
                 }
             }
-            catch (Exception ex)
-            {
-                EditorServices.ReportWarning(nameof(EditorView), "Failed to paste image content from clipboard.", ex);
-            }
+            if (operation.IsCurrent && !externalContent && _clipboardAnnotation != null) PasteInternalShape();
         }
 
-        /// <summary>
-        /// Checks if there is content on the system clipboard or internal clipboard
-        /// and updates the ViewModel's CanPaste property.
-        /// </summary>
-        private async Task CheckClipboardStatus()
+        private async Task<EditorImportedImage?> ReadClipboardImageAsync(IClipboard clipboard,
+            EditorImageOperationLifetime.Operation operation, bool filesFirst = true, bool filterFilesByExtension = true,
+            Action? markExternalContent = null)
         {
-            if (DataContext is not MainViewModel vm) return;
-
-            bool canPaste = false;
-
-            // 1. Check internal clipboard
-            if (_clipboardAnnotation != null)
+            async Task<EditorImportedImage?> ReadFilesAsync()
             {
-                canPaste = true;
-            }
-            // 2. Check system clipboard
-            else
-            {
-                var topLevel = TopLevel.GetTopLevel(this);
-                var clipboard = topLevel?.Clipboard;
-                if (clipboard != null)
+                if (!operation.IsCurrent) return null;
+                var files = (await clipboard.TryGetFilesAsync())?.ToList();
+                if (!operation.IsCurrent || files == null) return null;
+                if (files.Count > 0) markExternalContent?.Invoke();
+                foreach (var file in files.OfType<IStorageFile>())
                 {
+                    if (filterFilesByExtension && !IsImageFileName(file.Name)) continue;
                     try
                     {
-                        // Check for files
-                        var files = await clipboard.TryGetFilesAsync();
-                        if (files != null && files.Any())
-                        {
-                            canPaste = true;
-                        }
-                        else
-                        {
-                            // Use TryGetBitmapAsync for reliable cross-format bitmap detection.
-                            // Format name strings (e.g. "PNG", "Bitmap") are platform-specific and
-                            // unreliable; TryGetBitmapAsync handles all native image clipboard formats.
-                            var bitmap = await clipboard.TryGetBitmapAsync();
-                            if (bitmap != null)
-                            {
-                                (bitmap as IDisposable)?.Dispose();
-                                canPaste = true;
-                            }
-                        }
+                        EditorImportedImage? image = await ReadImageFileAsync(file, operation);
+                        if (image != null) return image;
                     }
                     catch (Exception ex)
                     {
-                        EditorServices.ReportWarning(nameof(EditorView), "Failed to query system clipboard formats.", ex);
+                        if (!operation.IsCurrent) return null;
+                        EditorServices.ReportWarning(nameof(EditorView), $"Failed to decode clipboard image file '{file.Name}'.", ex);
                     }
+                }
+                return null;
+            }
+
+            async Task<EditorImportedImage?> ReadBitmapAsync()
+            {
+                if (!operation.IsCurrent) return null;
+                var bitmap = await clipboard.TryGetBitmapAsync();
+                try
+                {
+                    if (!operation.IsCurrent || bitmap == null) return null;
+                    markExternalContent?.Invoke();
+                    SKBitmap? converted = BitmapConversionHelpers.ToSKBitmap(bitmap);
+                    return converted == null ? null : new EditorImportedImage(converted);
+                }
+                finally
+                {
+                    (bitmap as IDisposable)?.Dispose();
                 }
             }
 
-            vm.CanPaste = canPaste;
+            return filesFirst
+                ? await ReadFilesAsync() ?? await ReadBitmapAsync()
+                : await ReadBitmapAsync() ?? await ReadFilesAsync();
         }
 
-        /// <summary>
-        /// Duplicates the currently selected annotation with a deep copy.
-        /// The duplicate is offset by 20px and becomes the new selection.
-        /// </summary>
+        private static bool IsImageFileName(string name) => Path.GetExtension(name).ToLowerInvariant() is
+            ".png" or ".jpg" or ".jpeg" or ".bmp" or ".gif" or ".webp" or ".ico";
+
+        private int _clipboardStatusVersion;
+
+        /// <summary>Only the latest clipboard query for this editor owner may update CanPaste.</summary>
+        private async Task CheckClipboardStatus()
+        {
+            if (DataContext is not MainViewModel vm) return;
+            using var operation = BeginImageOperation(vm);
+            int version = ++_clipboardStatusVersion;
+            bool canPaste = _clipboardAnnotation != null;
+            if (!canPaste && operation.IsCurrent && TopLevel.GetTopLevel(this)?.Clipboard is { } clipboard)
+            {
+                try
+                {
+                    var files = await clipboard.TryGetFilesAsync();
+                    if (!operation.IsCurrent) return;
+                    canPaste = files?.Any() == true;
+                    if (!canPaste)
+                    {
+                        var bitmap = await clipboard.TryGetBitmapAsync();
+                        try { canPaste = bitmap != null; }
+                        finally { (bitmap as IDisposable)?.Dispose(); }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if (operation.IsCurrent) EditorServices.ReportWarning(nameof(EditorView), "Failed to query system clipboard formats.", ex);
+                }
+            }
+            if (operation.IsCurrent && version == _clipboardStatusVersion) vm.CanPaste = canPaste;
+        }
+
+        /// <summary>Duplicates the selected annotation with a deep copy and the existing 20px offset.</summary>
         private void DuplicateSelectedAnnotation()
         {
             var selectedControl = _selectionController.SelectedShape;

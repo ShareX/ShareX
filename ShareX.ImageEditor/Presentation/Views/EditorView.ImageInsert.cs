@@ -32,6 +32,7 @@ using Avalonia.Threading;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Localization;
+using ShareX.ImageEditor.Presentation.Controllers;
 using ShareX.ImageEditor.Presentation.Rendering;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using ShareX.Platform;
@@ -44,61 +45,66 @@ namespace ShareX.ImageEditor.Presentation.Views
     {
         private async void OnImageInsertionRequested(object? sender, EventArgs e)
         {
-            if (DataContext is not MainViewModel)
+            if (DataContext is not MainViewModel vm || !IsImageRequestCurrent(sender, vm)) return;
+            using var operation = BeginImageOperation(vm);
+            try
             {
-                return;
+                await operation.RunOwnedAsync(_ => PickImageBitmapAsync(Strings.EditorView_SelectImage, operation),
+                    image => InsertExternalImageAsync(image, operation));
             }
-
-            var pickedImage = await PickImageBitmapAsync(Strings.EditorView_SelectImage);
-            if (!pickedImage.HasValue)
+            catch (Exception ex)
             {
-                return;
+                if (IsEditorContextCurrent(vm)) EditorServices.ReportWarning(nameof(EditorView), "Failed to insert image.", ex);
             }
-
-            await InsertExternalImageAsync(pickedImage.Value.Bitmap, pickedImage.Value.SourceFilePath);
         }
 
         internal async Task<bool> ReplaceImageAnnotationFromFilePickerAsync(ImageAnnotation annotation, Image imageControl)
         {
+            if (DataContext is not MainViewModel vm) return false;
+            using var operation = _imageOperations.Begin(() => IsEditorContextCurrent(vm) &&
+                !annotation.IsDisposed && _editorCore.Annotations.Contains(annotation));
             try
             {
-                var pickedImage = await PickImageBitmapAsync(Strings.EditorView_SelectImage);
-                if (!pickedImage.HasValue)
+                return await operation.RunOwnedAsync(_ => PickImageBitmapAsync(Strings.EditorView_SelectImage, operation), image =>
                 {
-                    return false;
-                }
-
-                SKRect existingBounds = annotation.GetBounds();
-                float centerX = existingBounds.MidX;
-                float centerY = existingBounds.MidY;
-                float newWidth = pickedImage.Value.Bitmap.Width;
-                float newHeight = pickedImage.Value.Bitmap.Height;
-
-                annotation.StartPoint = new SKPoint(centerX - newWidth / 2f, centerY - newHeight / 2f);
-                annotation.EndPoint = new SKPoint(centerX + newWidth / 2f, centerY + newHeight / 2f);
-                annotation.ImagePath = pickedImage.Value.SourceFilePath ?? string.Empty;
-                annotation.SetImage(pickedImage.Value.Bitmap);
-                AnnotationVisualFactory.UpdateVisualControl(imageControl, annotation);
-
-                if (DataContext is MainViewModel vm)
-                {
+                    SKRect existingBounds = annotation.GetBounds();
+                    float newWidth = image.Bitmap.Width;
+                    float newHeight = image.Bitmap.Height;
+                    annotation.StartPoint = new SKPoint(existingBounds.MidX - newWidth / 2f, existingBounds.MidY - newHeight / 2f);
+                    annotation.EndPoint = new SKPoint(existingBounds.MidX + newWidth / 2f, existingBounds.MidY + newHeight / 2f);
+                    annotation.ImagePath = image.SourceFilePath ?? string.Empty;
+                    annotation.SetImage(image.TakeBitmap());
+                    AnnotationVisualFactory.UpdateVisualControl(imageControl, annotation);
                     vm.HasAnnotations = true;
                     vm.IsDirty = true;
-                }
-
-                return true;
+                    return Task.FromResult(true);
+                });
             }
             catch (Exception ex)
             {
-                EditorServices.ReportWarning(nameof(EditorView), "Failed to replace image annotation.", ex);
+                if (IsEditorContextCurrent(vm)) EditorServices.ReportWarning(nameof(EditorView), "Failed to replace image annotation.", ex);
                 return false;
             }
         }
 
-        private async Task<(SKBitmap Bitmap, string? SourceFilePath)?> PickImageBitmapAsync(string dialogTitle)
+        private bool IsEditorContextCurrent(MainViewModel vm) => !_workspaceDisposed && !vm.IsDisposed && ReferenceEquals(DataContext, vm);
+
+        private bool IsImageRequestCurrent(object? sender, MainViewModel vm) => IsEditorContextCurrent(vm) &&
+            (sender is not MainViewModel requestOwner || ReferenceEquals(requestOwner, vm));
+
+        private EditorImageOperationLifetime.Operation BeginImageOperation(MainViewModel vm) =>
+            _imageOperations.Begin(() => IsEditorContextCurrent(vm));
+
+        private void InvalidateImageOperations()
+        {
+            _imageOperations.Invalidate();
+            _cancelPendingImageInsertion?.Invoke();
+        }
+
+        private async Task<EditorImportedImage?> PickImageBitmapAsync(string dialogTitle, EditorImageOperationLifetime.Operation operation)
         {
             TopLevel? topLevel = TopLevel.GetTopLevel(this);
-            if (topLevel?.StorageProvider == null)
+            if (!operation.IsCurrent || topLevel?.StorageProvider == null)
             {
                 return null;
             }
@@ -110,58 +116,42 @@ namespace ShareX.ImageEditor.Presentation.Views
                 FileTypeFilter = [FilePickerFileTypes.ImageAll]
             });
 
-            if (files.Count == 0)
+            if (!operation.IsCurrent || files.Count == 0)
             {
                 return null;
             }
 
-            using var stream = await files[0].OpenReadAsync();
-            using var memStream = new MemoryStream();
-            await stream.CopyToAsync(memStream);
-            memStream.Position = 0;
-
-            SKBitmap? skBitmap = SKBitmap.Decode(memStream);
-            return skBitmap == null ? null : (skBitmap, files[0].TryGetLocalPath());
+            return await ReadImageFileAsync(files[0], operation);
         }
+
+        private static Task<EditorImportedImage?> ReadImageFileAsync(IStorageFile file, EditorImageOperationLifetime.Operation operation) =>
+            EditorImageFileReader.ReadAsync(file.OpenReadAsync, operation, file.TryGetLocalPath());
 
         private Action? _cancelPendingImageInsertion;
 
-        private async Task InsertExternalImageAsync(SKBitmap skBitmap, string? sourceFilePath = null)
+        private async Task<bool> InsertExternalImageAsync(EditorImportedImage image, EditorImageOperationLifetime.Operation operation)
         {
-            if (_workspaceDisposed)
-            {
-                skBitmap.Dispose();
-                return;
-            }
-
-            if (DataContext is not MainViewModel vm)
-            {
-                InsertImageAnnotation(skBitmap);
-                return;
-            }
+            if (!operation.IsCurrent || DataContext is not MainViewModel vm) return false;
 
             if (!vm.HasPreviewImage || _editorCore.SourceImage == null)
             {
-                LoadBitmapIntoEditor(vm, skBitmap, sourceFilePath);
-                return;
+                LoadBitmapIntoEditor(vm, image.TakeBitmap(), image.SourceFilePath);
+                return true;
             }
 
             InsertImagePlacement? placement = vm.Options.ShowInsertImageDialog && !_isWorkspaceHostMode
-                ? await ShowInsertImageDialogAsync(vm, skBitmap)
+                ? await ShowInsertImageDialogAsync(vm, image.Bitmap, operation)
                 : InsertImagePlacement.Center;
 
-            if (_workspaceDisposed || !placement.HasValue)
-            {
-                skBitmap.Dispose();
-                return;
-            }
+            if (!operation.IsCurrent || !placement.HasValue) return false;
 
-            await InsertImageWithPlacementAsync(skBitmap, placement.Value);
+            return await InsertImageWithPlacementAsync(image, placement.Value, operation);
         }
 
-        private Task<InsertImagePlacement?> ShowInsertImageDialogAsync(MainViewModel vm, SKBitmap skBitmap)
+        private Task<InsertImagePlacement?> ShowInsertImageDialogAsync(MainViewModel vm, SKBitmap skBitmap,
+            EditorImageOperationLifetime.Operation operation)
         {
-            if (_workspaceDisposed || vm.IsModalOpen)
+            if (!operation.IsCurrent || vm.IsModalOpen)
             {
                 return Task.FromResult<InsertImagePlacement?>(null);
             }
@@ -169,11 +159,11 @@ namespace ShareX.ImageEditor.Presentation.Views
             var completionSource = new TaskCompletionSource<InsertImagePlacement?>(TaskCreationOptions.RunContinuationsAsynchronously);
             PropertyChangedEventHandler? propertyChangedHandler = null;
 
-            void Complete(InsertImagePlacement? result)
+            bool Complete(InsertImagePlacement? result)
             {
                 if (!completionSource.TrySetResult(result))
                 {
-                    return;
+                    return false;
                 }
 
                 _cancelPendingImageInsertion = null;
@@ -182,6 +172,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 {
                     vm.PropertyChanged -= propertyChangedHandler;
                 }
+                return true;
             }
 
             propertyChangedHandler = (_, e) =>
@@ -200,13 +191,15 @@ namespace ShareX.ImageEditor.Presentation.Views
                 skBitmap.Height,
                 onSelect: placement =>
                 {
-                    Complete(placement);
+                    if (!operation.IsCurrent) { Complete(null); return; }
+                    if (!Complete(placement)) return;
                     vm.CloseModalCommand.Execute(null);
                     ResetModalContentPosition();
                 },
                 onCancel: () =>
                 {
-                    Complete(null);
+                    if (!operation.IsCurrent) { Complete(null); return; }
+                    if (!Complete(null)) return;
                     vm.CloseModalCommand.Execute(null);
                     ResetModalContentPosition();
                 });
@@ -228,8 +221,11 @@ namespace ShareX.ImageEditor.Presentation.Views
             return completionSource.Task;
         }
 
-        private async Task InsertImageWithPlacementAsync(SKBitmap skBitmap, InsertImagePlacement placement)
+        private async Task<bool> InsertImageWithPlacementAsync(EditorImportedImage image, InsertImagePlacement placement,
+            EditorImageOperationLifetime.Operation operation)
         {
+            if (!operation.IsCurrent) return false;
+            SKBitmap skBitmap = image.Bitmap;
             int canvasWidth = (int)Math.Round(_editorCore.CanvasSize.Width);
             int canvasHeight = (int)Math.Round(_editorCore.CanvasSize.Height);
             Point? position = null;
@@ -260,24 +256,22 @@ namespace ShareX.ImageEditor.Presentation.Views
                     break;
             }
 
-            if (waitForResizeSync)
-            {
-                await Dispatcher.UIThread.InvokeAsync(() => { }, DispatcherPriority.Background);
-            }
-
-            InsertImageAnnotationCore(skBitmap, position);
+            return await operation.PublishAfterAsync(image,
+                async () => { if (waitForResizeSync) await Dispatcher.UIThread.InvokeAsync(() => { }, DispatcherPriority.Background); },
+                ownedImage => InsertImageAnnotationCore(ownedImage.TakeBitmap(), position));
         }
 
-        private void InsertImageAnnotationCore(
+        private bool InsertImageAnnotationCore(
             SKBitmap skBitmap,
             Point? position = null,
             bool showNotification = true,
             bool selectAnnotation = true)
         {
             var canvas = this.FindControl<Canvas>("AnnotationCanvas");
-            if (canvas == null || DataContext is not MainViewModel vm)
+            if (_workspaceDisposed || canvas == null || DataContext is not MainViewModel vm || vm.IsDisposed)
             {
-                return;
+                skBitmap.Dispose();
+                return false;
             }
 
             double posX;
@@ -303,24 +297,39 @@ namespace ShareX.ImageEditor.Presentation.Views
             annotation.StartPoint = new SKPoint((float)posX, (float)posY);
             annotation.EndPoint = new SKPoint((float)(posX + skBitmap.Width), (float)(posY + skBitmap.Height));
 
-            Control? control = CreateControlForAnnotation(annotation);
-            if (control == null)
+            Control? control = null;
+            try
             {
-                return;
-            }
+                control = CreateControlForAnnotation(annotation);
+                if (control == null) return false;
+                canvas.Children.Add(control);
+                _editorCore.AddAnnotation(annotation);
+                vm.HasAnnotations = true;
+                if (selectAnnotation)
+                {
+                    vm.ActiveTool = EditorTool.Select;
+                    _selectionController.SetSelectedShape(control);
+                }
 
-            canvas.Children.Add(control);
-            _editorCore.AddAnnotation(annotation);
-            vm.HasAnnotations = true;
-            if (selectAnnotation)
-            {
-                vm.ActiveTool = EditorTool.Select;
-                _selectionController.SetSelectedShape(control);
+                if (showNotification) vm.ShowImageInsertedNotification();
+                return true;
             }
-
-            if (showNotification)
+            finally
             {
-                vm.ShowImageInsertedNotification();
+                // AddAnnotation may notify listeners after ownership has already moved to the core.
+                if (!_editorCore.Annotations.Contains(annotation))
+                {
+                    if (control != null)
+                    {
+                        canvas.Children.Remove(control);
+                        if (control is Image imageControl)
+                        {
+                            (imageControl.Source as IDisposable)?.Dispose();
+                            imageControl.Source = null;
+                        }
+                    }
+                    annotation.Dispose();
+                }
             }
         }
 
