@@ -70,7 +70,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         protected override void OnClosing(WindowClosingEventArgs e)
         {
-            if (_allowClose)
+            if (_allowClose || e.CloseReason == WindowCloseReason.OSShutdown)
             {
                 base.OnClosing(e);
                 return;

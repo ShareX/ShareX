@@ -131,7 +131,7 @@ public partial class ScrollingCaptureWindow : Window
             _closeRequested = true;
             if (_service.IsCapturing) _service.StopCapture();
             else _viewModel.Close();
-            e.Cancel = true;
+            e.Cancel = e.CloseReason != WindowCloseReason.OSShutdown;
         }
     }
 

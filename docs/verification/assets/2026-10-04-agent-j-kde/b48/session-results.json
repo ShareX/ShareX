@@ -1,0 +1,218 @@
+{
+  "date": "2026-10-04",
+  "claim": "b614349d8",
+  "desktop": "Fedora 44 KDE Plasma Wayland; Avalonia XWayland",
+  "method": "Private XSMP connection supplied only to a copied full ShareX fixture; no desktop shutdown",
+  "runs": [
+    {
+      "mode": "baseline-visible",
+      "scope": "Real copied ShareX app on KDE/XWayland; private XSMP server only; no desktop logout",
+      "events": [
+        {
+          "event": "registered",
+          "seconds": 0.229
+        },
+        {
+          "event": "shutdown_requested",
+          "seconds": 1.345,
+          "silent": false
+        },
+        {
+          "event": "interact_requested",
+          "seconds": 1.346
+        },
+        {
+          "event": "interact_done",
+          "seconds": 1.385,
+          "cancelled": true
+        },
+        {
+          "event": "process_exited",
+          "seconds": 1.701,
+          "exit_code": 0
+        }
+      ],
+      "exit_code": 0,
+      "settings_saved": {
+        "ApplicationConfig.json": true,
+        "UploadersConfig.json": true,
+        "HotkeysConfig.json": true
+      },
+      "closing_logged": true,
+      "assembly_sha256": {
+        "ShareX.dll": "f977e25f37190cdfa9c90f3b92b3fae5be601822aa9a3dede19d2024ff49938b",
+        "ShareX.Avalonia.dll": "cdd8ffe2eb5ff4c86e843a7ad756858a0c1aa38f0ad956f2101fb7837c0b3f87",
+        "ShareX.ImageEditor.dll": "a99679a8e7ad55c5991a8bf69a0f9f4f56e6b7c68bf088ee0772fc74f191fde3",
+        "ShareX.ScreenCaptureLib.dll": "f5b73b6205a43bdb5abab0991985d1bbd2f8432351b2f7d65c7bb4da182a70c1",
+        "ShareX.Tools.dll": "b5f38a21ea2e5205bad8941b5e00191577d2775355c218814e2ea6842f2c75f4"
+      }
+    },
+    {
+      "mode": "fixed-visible",
+      "scope": "Real copied ShareX app on KDE/XWayland; private XSMP server only; no desktop logout",
+      "events": [
+        {
+          "event": "registered",
+          "seconds": 0.215
+        },
+        {
+          "event": "shutdown_requested",
+          "seconds": 1.433,
+          "silent": false
+        },
+        {
+          "event": "interact_requested",
+          "seconds": 1.436
+        },
+        {
+          "event": "interact_done",
+          "seconds": 1.693,
+          "cancelled": false
+        },
+        {
+          "event": "save_done",
+          "seconds": 1.696,
+          "success": true
+        },
+        {
+          "event": "process_exited",
+          "seconds": 1.909,
+          "exit_code": 0
+        }
+      ],
+      "exit_code": 0,
+      "settings_saved": {
+        "ApplicationConfig.json": true,
+        "UploadersConfig.json": true,
+        "HotkeysConfig.json": true
+      },
+      "closing_logged": true,
+      "assembly_sha256": {
+        "ShareX.dll": "7dc91758319b664291e76027b806982cc94c7dc81f248942dde211bc1db1d42c",
+        "ShareX.Avalonia.dll": "3c0ff19cc9581e67cb9dc66145a3a964babca581446c90a7a217925cfa924965",
+        "ShareX.ImageEditor.dll": "073b5b4a5788f246ed9b08d1ea3bb9c2c1089d963aeb50c339ba84047e1beeb6",
+        "ShareX.ScreenCaptureLib.dll": "0d265e79254edbdf1d8df36ebe4a6c6bd01bbfd28d1b1df4385e17aa974d0a74",
+        "ShareX.Tools.dll": "331332c125b600d63af83e32bf0e5dcff4b7cef79e7b8051e57c5e33e8db6d26"
+      }
+    },
+    {
+      "mode": "fixed-hidden",
+      "scope": "Real copied ShareX app on KDE/XWayland; private XSMP server only; no desktop logout",
+      "events": [
+        {
+          "event": "registered",
+          "seconds": 0.199
+        },
+        {
+          "event": "shutdown_requested",
+          "seconds": 1.215,
+          "silent": true
+        },
+        {
+          "event": "interact_requested",
+          "seconds": 1.216
+        },
+        {
+          "event": "interact_done",
+          "seconds": 1.487,
+          "cancelled": false
+        },
+        {
+          "event": "save_done",
+          "seconds": 1.487,
+          "success": true
+        },
+        {
+          "event": "process_exited",
+          "seconds": 1.672,
+          "exit_code": 0
+        }
+      ],
+      "exit_code": 0,
+      "settings_saved": {
+        "ApplicationConfig.json": true,
+        "UploadersConfig.json": true,
+        "HotkeysConfig.json": true
+      },
+      "closing_logged": true,
+      "assembly_sha256": {
+        "ShareX.dll": "7dc91758319b664291e76027b806982cc94c7dc81f248942dde211bc1db1d42c",
+        "ShareX.Avalonia.dll": "3c0ff19cc9581e67cb9dc66145a3a964babca581446c90a7a217925cfa924965",
+        "ShareX.ImageEditor.dll": "073b5b4a5788f246ed9b08d1ea3bb9c2c1089d963aeb50c339ba84047e1beeb6",
+        "ShareX.ScreenCaptureLib.dll": "0d265e79254edbdf1d8df36ebe4a6c6bd01bbfd28d1b1df4385e17aa974d0a74",
+        "ShareX.Tools.dll": "331332c125b600d63af83e32bf0e5dcff4b7cef79e7b8051e57c5e33e8db6d26"
+      }
+    },
+    {
+      "mode": "fixed-close-to-tray",
+      "scope": "Real copied ShareX app on KDE/XWayland; private XSMP server only; no desktop logout",
+      "events": [
+        {
+          "event": "registered",
+          "seconds": 0.211
+        },
+        {
+          "event": "ordinary_close_kept_process_alive",
+          "seconds": 1.743
+        },
+        {
+          "event": "shutdown_requested",
+          "seconds": 1.743,
+          "silent": false
+        },
+        {
+          "event": "interact_requested",
+          "seconds": 1.744
+        },
+        {
+          "event": "interact_done",
+          "seconds": 1.768,
+          "cancelled": false
+        },
+        {
+          "event": "save_done",
+          "seconds": 1.768,
+          "success": true
+        },
+        {
+          "event": "process_exited",
+          "seconds": 1.923,
+          "exit_code": 0
+        }
+      ],
+      "exit_code": 0,
+      "settings_saved": {
+        "ApplicationConfig.json": true,
+        "UploadersConfig.json": true,
+        "HotkeysConfig.json": true
+      },
+      "closing_logged": true,
+      "assembly_sha256": {
+        "ShareX.dll": "7dc91758319b664291e76027b806982cc94c7dc81f248942dde211bc1db1d42c",
+        "ShareX.Avalonia.dll": "3c0ff19cc9581e67cb9dc66145a3a964babca581446c90a7a217925cfa924965",
+        "ShareX.ImageEditor.dll": "073b5b4a5788f246ed9b08d1ea3bb9c2c1089d963aeb50c339ba84047e1beeb6",
+        "ShareX.ScreenCaptureLib.dll": "0d265e79254edbdf1d8df36ebe4a6c6bd01bbfd28d1b1df4385e17aa974d0a74",
+        "ShareX.Tools.dll": "331332c125b600d63af83e32bf0e5dcff4b7cef79e7b8051e57c5e33e8db6d26"
+      }
+    }
+  ],
+  "build": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "tests": {
+    "passed": 635,
+    "skipped": 67,
+    "failed": 0
+  },
+  "baseline_child_regressions": {
+    "editor": {
+      "expected_exit_code": 1,
+      "diagnostic": "The window vetoed OS shutdown."
+    },
+    "message": {
+      "expected_exit_code": 1,
+      "diagnostic": "The window vetoed OS shutdown."
+    }
+  }
+}

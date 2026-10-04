@@ -28,7 +28,11 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
+using ShareX.ImageEditor.Integration;
+using ShareX.ImageEditor.Presentation.ViewModels;
+using ShareX.ImageEditor.Presentation.Views;
 using System.Diagnostics;
+using System.Reflection;
 using Xunit;
 
 namespace ShareX.ImageEditor.Tests;
@@ -39,6 +43,8 @@ public sealed class AvaloniaStartupLifetimeTests
     [InlineData("cold")]
     [InlineData("early-dialog")]
     [InlineData("foreign-lifetime")]
+    [InlineData("os-shutdown-editor")]
+    [InlineData("os-shutdown-message")]
     public async Task DesktopLifetimeStartsAndExitsOnce(string mode)
     {
         ProcessStartInfo info = new("dotnet")
@@ -110,19 +116,47 @@ public sealed class AvaloniaStartupLifetimeTests
             else
             {
                 int started = 0, exited = 0;
+                ShutdownRequestedEventArgs? sessionRequest = null;
                 AvaloniaBootstrapper.Initialize(["synthetic"], () =>
                 {
                     started++;
                     IClassicDesktopStyleApplicationLifetime desktop =
                         (IClassicDesktopStyleApplicationLifetime)Application.Current!.ApplicationLifetime!;
-                    Window window = new() { Title = "ShareX synthetic startup fixture", Width = 180, Height = 80 };
+                    Window window = mode switch
+                    {
+                        "os-shutdown-editor" => new EditorWindow(new ImageEditorOptions { ShowExitConfirmation = true }),
+                        "os-shutdown-message" => (Window)Activator.CreateInstance(
+                            typeof(ShareX.AvaloniaUI.MessageBox).Assembly.GetType("ShareX.AvaloniaUI.MessageBoxWindow", throwOnError: true)!,
+                            "Synthetic session shutdown", "ShareX shutdown fixture", ShareX.AvaloniaUI.MessageBoxButtons.YesNo,
+                            ShareX.AvaloniaUI.MessageBoxIcon.None, ShareX.AvaloniaUI.MessageBoxDefaultButton.Button1)!,
+                        _ => new Window { Title = "ShareX synthetic startup fixture", Width = 180, Height = 80 }
+                    };
                     desktop.MainWindow = window;
                     window.Show();
                     Dispatcher.UIThread.Post(() =>
                     {
+                        if (window.DataContext is MainViewModel editor) editor.IsDirty = true;
                         window.Close();
-                        AvaloniaBootstrapper.Shutdown();
-                        AvaloniaBootstrapper.Shutdown();
+                        if (mode.StartsWith("os-shutdown-", StringComparison.Ordinal))
+                        {
+                            if (!desktop.Windows.Contains(window))
+                                throw new InvalidOperationException("Ordinary close bypassed the window's confirmation.");
+                            if (window.DataContext is MainViewModel viewModel && !viewModel.IsModalOpen)
+                                throw new InvalidOperationException("Ordinary editor close did not ask for confirmation.");
+                            // Inject only this lifetime's platform request; never ask the real desktop to log out.
+                            sessionRequest = new ShutdownRequestedEventArgs();
+                            typeof(ShutdownRequestedEventArgs).GetProperty("IsOSShutdown",
+                                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)!.SetValue(sessionRequest, true);
+                            typeof(ClassicDesktopStyleApplicationLifetime).GetMethod("OnShutdownRequested",
+                                BindingFlags.Instance | BindingFlags.NonPublic)!.Invoke(desktop, [null, sessionRequest]);
+                            if (sessionRequest.Cancel || desktop.Windows.Count != 0)
+                                throw new InvalidOperationException("The window vetoed OS shutdown.");
+                        }
+                        else
+                        {
+                            AvaloniaBootstrapper.Shutdown();
+                            AvaloniaBootstrapper.Shutdown();
+                        }
                     });
                     return Task.CompletedTask;
                 }, () => exited++);
@@ -136,6 +170,8 @@ public sealed class AvaloniaStartupLifetimeTests
                 catch (InvalidOperationException exception) when (exception.Message == "Avalonia is already initialized.") { }
                 if (AvaloniaBootstrapper.Run() != 0 || started != 1 || exited != 1)
                     throw new InvalidOperationException($"Invalid lifetime: startup={started}, exit={exited}.");
+                if (mode.StartsWith("os-shutdown-", StringComparison.Ordinal) && sessionRequest == null)
+                    throw new InvalidOperationException("The session request did not run.");
             }
             Console.WriteLine("fixture passed: " + mode);
             return 0;

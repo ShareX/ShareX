@@ -76,7 +76,7 @@ public partial class PinToScreenStartupWindow : Window
         };
         Closing += (_, args) =>
         {
-            if (!_viewModel.RequestClose())
+            if (!_viewModel.RequestClose() && args.CloseReason != WindowCloseReason.OSShutdown)
             {
                 args.Cancel = true;
                 Hide();

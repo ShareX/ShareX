@@ -380,7 +380,7 @@ public partial class AutoCaptureWindow : Window
         _closePending = true;
         OptionsContent.IsEnabled = false;
         ExecuteButton.IsEnabled = false;
-        e.Cancel = true;
+        e.Cancel = e.CloseReason != WindowCloseReason.OSShutdown;
     }
 
     private void OnClosed(object? sender, EventArgs e)

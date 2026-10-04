@@ -2029,6 +2029,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnClosing(object? sender, WindowClosingEventArgs e)
     {
+        // Desktop session shutdown must close the window, even when ordinary closing hides it in the tray.
+        if (e.CloseReason == WindowCloseReason.OSShutdown)
+        {
+            _allowClose = true;
+        }
+
         if (!_allowClose && ApplicationState.IsTrayUsable)
         {
             e.Cancel = true;

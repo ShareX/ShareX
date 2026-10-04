@@ -304,7 +304,7 @@ internal partial class MessageBoxWindow : Window
             return;
         }
 
-        if (_cancelResult == DialogResult.None)
+        if (_cancelResult == DialogResult.None && e.CloseReason != WindowCloseReason.OSShutdown)
         {
             e.Cancel = true;
         }
