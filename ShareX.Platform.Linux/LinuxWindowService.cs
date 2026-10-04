@@ -54,9 +54,13 @@ public sealed class LinuxWindowService : IWindowService
     private readonly IDesktopWindowBackend backend;
     private readonly HashSet<long> clickThroughWindows = new HashSet<long>();
 
+    /// <summary>The session, for overlay support; null in tests that only supply a backend.</summary>
+    private readonly PlatformInfo? platform;
+
     public LinuxWindowService(PlatformInfo info, ICommandRunner runner)
         : this(new LinuxDesktop(info).CreateWindowBackend(runner))
     {
+        platform = info;
     }
 
     internal LinuxWindowService(IDesktopWindowBackend backend)
@@ -208,11 +212,33 @@ public sealed class LinuxWindowService : IWindowService
         return display != null && display.SetInputShape((nuint)windowHandle, visibleAreas);
     }
 
-    // Overlays need an always on top, click through window with per pixel alpha placed at exact desktop coordinates, which
-    // Wayland compositors do not allow and which is not implemented for X11 and macOS yet.
-    public FeatureSupport OverlaySupport { get; } = FeatureSupport.NotSupported("Drawing over other applications is not available on this platform yet.");
+    // Overlays need an always on top, click through window with per pixel alpha placed at exact desktop coordinates. X11 allows it
+    // when a compositing manager blends transparent windows; Wayland compositors do not let applications place such windows.
+    private Lazy<FeatureSupport>? overlaySupport;
 
-    public IScreenOverlay CreateOverlay(PlatformRectangle screenBounds) => throw new PlatformNotSupportedException(OverlaySupport.Reason);
+    public FeatureSupport OverlaySupport => (overlaySupport ??= new Lazy<FeatureSupport>(GetOverlaySupport)).Value;
+
+    private FeatureSupport GetOverlaySupport()
+    {
+        if (platform == null || !platform.IsX11 || platform.IsWayland || platform.IsSandboxed)
+        {
+            return FeatureSupport.NotSupported("Wayland does not let applications draw over other windows.");
+        }
+
+        using X11Display? display = X11Display.TryOpen();
+
+        if (display == null)
+        {
+            return FeatureSupport.NotSupported("No X server is available.");
+        }
+
+        return X11ScreenOverlay.HasCompositingManager(display)
+            ? FeatureSupport.Supported
+            : FeatureSupport.NotSupported("Drawing over other windows needs compositing. Turn it on in your window manager's settings.");
+    }
+
+    public IScreenOverlay CreateOverlay(PlatformRectangle screenBounds) =>
+        OverlaySupport.IsSupported ? new X11ScreenOverlay(screenBounds) : throw new PlatformNotSupportedException(OverlaySupport.Reason);
 
     public long GetActiveWindowHandle() => GetActiveWindow()?.Handle ?? 0;
 

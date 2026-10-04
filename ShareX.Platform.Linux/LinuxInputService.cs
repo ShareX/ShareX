@@ -109,9 +109,12 @@ public sealed class LinuxInputService : IInputService
 
     public bool ScrollWindow(long windowHandle, WindowScrollCommand command) => false;
 
-    public FeatureSupport MouseHookSupport => FeatureSupport.NotSupported(info.IsWayland ? "Wayland does not let applications see mouse input meant for other windows." : "Following the mouse across the desktop is not available on X11 yet.");
+    public FeatureSupport MouseHookSupport => info.IsX11 && !info.IsWayland && !info.IsSandboxed
+        ? FeatureSupport.Supported
+        : FeatureSupport.NotSupported(info.IsWayland ? "Wayland does not let applications see mouse input meant for other windows." : "Following the mouse needs an X11 or Windows desktop.");
 
-    public IDisposable HookMouse(IGlobalMouseListener listener) => throw new PlatformNotSupportedException(MouseHookSupport.Reason);
+    public IDisposable HookMouse(IGlobalMouseListener listener) =>
+        MouseHookSupport.IsSupported ? new X11MouseHook(listener) : throw new PlatformNotSupportedException(MouseHookSupport.Reason);
 
     private static bool WithXTest(Func<X11Display, bool> action)
     {

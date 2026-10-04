@@ -1077,3 +1077,29 @@ public class RecordingDeviceActionTests
         Assert.False(string.IsNullOrWhiteSpace(support.Reason));
     }
 }
+
+public class X11MouseHookTests
+{
+    [Fact]
+    public void GetButtonChanges_ReportsPressesAndReleasesPerButton()
+    {
+        const uint left = 1 << 8, middle = 1 << 9, right = 1 << 10;
+        PlatformPoint at = new PlatformPoint(5, 6);
+
+        GlobalMouseButtonEvent[] pressed = X11MouseHook.GetButtonChanges(0, left | right, at, 42).ToArray();
+        GlobalMouseButtonEvent[] released = X11MouseHook.GetButtonChanges(left | right, right | middle, at, 43).ToArray();
+
+        Assert.Equal([new GlobalMouseButtonEvent(GlobalMouseButton.Primary, true, at, 42), new GlobalMouseButtonEvent(GlobalMouseButton.Secondary, true, at, 42)], pressed);
+        Assert.Equal([new GlobalMouseButtonEvent(GlobalMouseButton.Primary, false, at, 43), new GlobalMouseButtonEvent(GlobalMouseButton.Middle, true, at, 43)], released);
+        Assert.Empty(X11MouseHook.GetButtonChanges(right, right | (1 << 0), at, 44));
+    }
+
+    [Fact]
+    public void Wayland_ReportsHookAndOverlayUnsupported()
+    {
+        PlatformInfo hyprland = new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.Wayland, DesktopEnvironment.Hyprland, "Hyprland", false);
+
+        Assert.False(new LinuxInputService(hyprland, new RecordingRunner()).MouseHookSupport.IsSupported);
+        Assert.False(new LinuxWindowService(hyprland, new RecordingRunner()).OverlaySupport.IsSupported);
+    }
+}
