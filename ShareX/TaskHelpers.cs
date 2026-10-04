@@ -1762,7 +1762,7 @@ namespace ShareX
         {
             using Bitmap bitmap = mode switch
             {
-                QRCodeScanMode.Screen => new Screenshot().CaptureFullscreen(),
+                QRCodeScanMode.Screen => await new Screenshot().CaptureFullscreenAsync(),
                 QRCodeScanMode.Region => await RegionCaptureTasks.GetRegionImageAsync(
                     TaskSettings.GetDefaultTaskSettings().CaptureSettings.RegionCaptureOptions),
                 QRCodeScanMode.ImageFile when !string.IsNullOrWhiteSpace(filePath) => SkiaImageHelpers.LoadImage(filePath),

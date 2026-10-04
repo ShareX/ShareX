@@ -25,16 +25,17 @@
 
 using ShareX.HelpersLib;
 using System.Drawing;
+using System.Threading.Tasks;
 
 namespace ShareX
 {
     public class CaptureFullscreen : CaptureBase
     {
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
+        protected override async Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
         {
             Rectangle rect = CaptureHelpers.GetScreenWorkingArea();
             TaskMetadata metadata = CreateMetadata(rect);
-            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
+            metadata.Image = await TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreenAsync();
             return metadata;
         }
     }

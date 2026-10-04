@@ -29,12 +29,13 @@ using System;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
+using System.Threading.Tasks;
 
 namespace ShareX
 {
     public class CaptureCustomWindow : CaptureWindow
     {
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
+        protected override async Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
         {
             string windowTitle = taskSettings.CaptureSettings.CaptureCustomWindow;
 
@@ -50,7 +51,7 @@ namespace ShareX
                 {
                     WindowHandle = hWnd;
 
-                    return base.Execute(taskSettings);
+                    return await base.ExecuteAsync(taskSettings);
                 }
             }
 

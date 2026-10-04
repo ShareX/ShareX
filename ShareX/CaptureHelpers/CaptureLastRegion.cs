@@ -38,19 +38,8 @@ namespace ShareX
                 return await ExecuteRegionCaptureAvaloniaAsync(taskSettings);
             }
 
-            return Execute(taskSettings);
-        }
-
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
-        {
-            if (!RegionCaptureIntegration.LastRegionRectangle.IsEmpty)
-            {
-                Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(
-                    RegionCaptureIntegration.LastRegionRectangle);
-                return new TaskMetadata(bmp);
-            }
-
-            return null;
+            Bitmap bmp = await TaskHelpers.GetScreenshot(taskSettings).CaptureRectangleAsync(RegionCaptureIntegration.LastRegionRectangle);
+            return new TaskMetadata(bmp);
         }
     }
 }

@@ -766,9 +766,10 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     public void ShowImagePrintSettings(Avalonia.Controls.Window owner)
     {
-        InvokeOnMainThread(() =>
+        InvokeOnMainThread(async () =>
         {
-            using Image? image = TaskHelpers.GetScreenshot().CaptureActiveMonitor();
+            // Awaited: a portal capture must not block the UI thread (R46).
+            using Image? image = await TaskHelpers.GetScreenshot().CaptureActiveMonitorAsync();
             if (image != null)
             {
                 PrintWindowIntegration.Show(image, Settings.PrintSettings, true, owner);

@@ -27,7 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.Platform;
 using System.Linq;
 using System;
-using System.Threading;
+using System.Threading.Tasks;
 
 namespace ShareX
 {
@@ -47,7 +47,7 @@ namespace ShareX
             AllowAutoHideForm = mainWindowHandle == IntPtr.Zero || WindowHandle != mainWindowHandle;
         }
 
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
+        protected override async Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
         {
             IWindowService windows = PlatformServices.Current.Windows;
             long handle = WindowHandle.ToInt64();
@@ -55,13 +55,13 @@ namespace ShareX
             if (windows.GetWindows().FirstOrDefault(x => x.Handle == handle)?.IsMinimized == true)
             {
                 windows.RestoreWindow(handle);
-                Thread.Sleep(250);
+                await Task.Delay(250);
             }
 
             if (windows.GetActiveWindowHandle() != handle)
             {
                 windows.ActivateWindow(handle);
-                Thread.Sleep(100);
+                await Task.Delay(100);
             }
 
             TaskMetadata metadata = new TaskMetadata();
@@ -69,11 +69,11 @@ namespace ShareX
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
             {
-                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureWindowTransparent(WindowHandle);
+                metadata.Image = await TaskHelpers.GetScreenshot(taskSettings).CaptureWindowTransparentAsync(WindowHandle);
             }
             else
             {
-                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureWindow(WindowHandle);
+                metadata.Image = await TaskHelpers.GetScreenshot(taskSettings).CaptureWindowAsync(WindowHandle);
             }
 
             return metadata;

@@ -53,12 +53,11 @@ namespace ShareX
             _ = CaptureAsync(taskSettings, autoHideForm);
         }
 
-        protected abstract TaskMetadata Execute(TaskSettings taskSettings);
-
-        protected virtual Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
-        {
-            return Task.FromResult(Execute(taskSettings));
-        }
+        /// <summary>
+        /// Takes the capture. Awaited on the UI thread: a portal screenshot (GNOME, KDE) answers over D-Bus while the dialog or the
+        /// tray keeps running, so blocking the UI thread here deadlocks (R46).
+        /// </summary>
+        protected abstract Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings);
 
         private async Task CaptureAsync(TaskSettings taskSettings, bool autoHideForm)
         {

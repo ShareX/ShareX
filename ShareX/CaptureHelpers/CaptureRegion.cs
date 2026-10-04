@@ -36,11 +36,6 @@ namespace ShareX
 {
     public class CaptureRegion : CaptureBase
     {
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
-        {
-            return null;
-        }
-
         protected override async Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
         {
             return await ExecuteRegionCaptureAvaloniaAsync(taskSettings);

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System.Drawing;
+using System.Threading.Tasks;
 
 namespace ShareX
 {
@@ -36,10 +37,10 @@ namespace ShareX
             MonitorRectangle = monitorRectangle;
         }
 
-        protected override TaskMetadata Execute(TaskSettings taskSettings)
+        protected override async Task<TaskMetadata> ExecuteAsync(TaskSettings taskSettings)
         {
             TaskMetadata metadata = CreateMetadata(MonitorRectangle);
-            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(MonitorRectangle);
+            metadata.Image = await TaskHelpers.GetScreenshot(taskSettings).CaptureRectangleAsync(MonitorRectangle);
             return metadata;
         }
     }
