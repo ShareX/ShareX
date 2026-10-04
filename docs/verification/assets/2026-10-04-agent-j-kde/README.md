@@ -11,3 +11,5 @@ These files come from the actual full ShareX application on Fedora 44 KDE Waylan
 - `manifest.json`: exact byte sizes and SHA-256 hashes of the retained files.
 
 All content is synthetic. No whole-desktop screenshot, personal file, user clipboard content or credential is retained here. The test source remains in the proper test projects; these data files preserve manual application evidence that was previously left in volatile `/tmp`.
+
+`gate-results.json` records the full five-project publication gate after the exact R47 policy-only deletion: 633 pass / 67 platform or optional skips / 0 failures, with the three actual KDE desktop startup cases enabled.

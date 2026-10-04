@@ -1,0 +1,139 @@
+{
+  "build": "dotnet build ShareX.sln -c Release -p:Platform=x64",
+  "warnings": 0,
+  "errors": 0,
+  "test_environment": {
+    "SHAREX_TEST_DESKTOP": "1"
+  },
+  "source": "d7e6eec24 plus exact R47 policy-test deletion; runtime unchanged",
+  "projects": [
+    {
+      "project": "ShareX.HistoryLib.Tests",
+      "counters": {
+        "total": "8",
+        "executed": "8",
+        "passed": "8",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "desktop_fixtures": []
+    },
+    {
+      "project": "ShareX.ImageEditor.Tests",
+      "counters": {
+        "total": "206",
+        "executed": "178",
+        "passed": "178",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "desktop_fixtures": [
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"cold\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"early-dialog\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "ShareX.ImageEditor.Tests.AvaloniaStartupLifetimeTests.DesktopLifetimeStartsAndExitsOnce(mode: \"foreign-lifetime\")",
+          "outcome": "Passed"
+        }
+      ]
+    },
+    {
+      "project": "ShareX.ImageEffectsLib.Tests",
+      "counters": {
+        "total": "65",
+        "executed": "65",
+        "passed": "65",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "desktop_fixtures": []
+    },
+    {
+      "project": "ShareX.Platform.Tests",
+      "counters": {
+        "total": "315",
+        "executed": "278",
+        "passed": "278",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "desktop_fixtures": []
+    },
+    {
+      "project": "ShareX.Tools.Tests",
+      "counters": {
+        "total": "106",
+        "executed": "104",
+        "passed": "104",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "desktop_fixtures": []
+    }
+  ],
+  "totals": {
+    "passed": 633,
+    "failed": 0,
+    "skipped": 67
+  }
+}
