@@ -43,6 +43,7 @@ public partial class ScrollingCaptureRegionWindow : Window
     private readonly int _frameWidth;
     private readonly int _frameHeight;
     private double _windowScaling = 1;
+    private bool _closed;
 
     public ScrollingCaptureRegionWindow()
         : this(new DrawingRectangle(0, 0, 640, 420))
@@ -61,6 +62,8 @@ public partial class ScrollingCaptureRegionWindow : Window
         ConfigureGeometry(1);
 
         Opened += OnOpened;
+        ScalingChanged += OnScalingChanged;
+        Closed += (_, _) => _closed = true;
     }
 
     private void InitializeComponent()
@@ -70,7 +73,8 @@ public partial class ScrollingCaptureRegionWindow : Window
 
     private void OnOpened(object? sender, EventArgs e)
     {
-        ConfigureGeometry(GetScreenScaling());
+        if (_closed) return;
+        ConfigureGeometry(RenderScaling);
         ApplyClickThroughToolWindowStyle();
         ApplyNativeFrameRegion();
         Dispatcher.UIThread.Post(ApplyNativeFrameRegion, DispatcherPriority.Loaded);
@@ -78,14 +82,18 @@ public partial class ScrollingCaptureRegionWindow : Window
 
     private void ConfigureGeometry(double scaling)
     {
-        _windowScaling = Math.Max(0.5, scaling);
-        Width = _frameWidth / _windowScaling;
-        Height = _frameHeight / _windowScaling;
+        if (_closed) return;
+        _windowScaling = FrameWindowShape.NormalizeScaling(scaling);
+        var size = FrameWindowShape.GetLogicalSize(_frameWidth, _frameHeight, _windowScaling);
+        Width = size.Width;
+        Height = size.Height;
     }
 
-    private double GetScreenScaling()
+    private void OnScalingChanged(object? sender, EventArgs e)
     {
-        return Screens.ScreenFromPoint(Position)?.Scaling ?? Screens.Primary?.Scaling ?? 1;
+        if (_closed) return;
+        ConfigureGeometry(RenderScaling);
+        Dispatcher.UIThread.Post(ApplyNativeFrameRegion, DispatcherPriority.Loaded);
     }
 
     private void ApplyClickThroughToolWindowStyle()
@@ -95,6 +103,7 @@ public partial class ScrollingCaptureRegionWindow : Window
 
     private void ApplyNativeFrameRegion()
     {
+        if (_closed) return;
         FrameWindowShape.Apply(this, FrameWindowShape.Create(new PlatformRectangle(0, 0, _frameWidth, _frameHeight), BorderPixels));
     }
 }
