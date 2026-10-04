@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -39,7 +39,7 @@ public sealed class WindowsShellService : IShellService
 
     public bool OpenPath(string path) => Start(path);
 
-    // Explorer's desktop list view, as in v22 (W13: J to confirm or report a reason when Explorer is not the shell).
+    // Preserve v22's Explorer desktop-list-view capability; an unavailable shell view makes the native operation return false.
     public FeatureSupport DesktopIconsSupport => FeatureSupport.Supported;
 
     public bool? AreDesktopIconsVisible()

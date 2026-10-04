@@ -423,7 +423,13 @@ internal sealed class TaskSettingsPageBuilder
                     SetIfCaptureSupported<bool>(ScreenCaptureFeatures.WindowClientArea, value => capture.CaptureClientArea = value)), ScreenCaptureFeatures.WindowClientArea),
                 WithCaptureSupport(Check(Strings.TaskSettingsWindow_HideTaskbarWhenItIntersectsACapturedWindow, () => capture.CaptureAutoHideTaskbar,
                     SetIfCaptureSupported<bool>(ScreenCaptureFeatures.HideTaskbar, value => capture.CaptureAutoHideTaskbar = value)), ScreenCaptureFeatures.HideTaskbar),
-                Check(Strings.TaskSettingsWindow_AutomaticallyHideDesktopIcons, () => capture.CaptureAutoHideDesktopIcons, value => capture.CaptureAutoHideDesktopIcons = value),
+                WithSupport(Check(Strings.TaskSettingsWindow_AutomaticallyHideDesktopIcons, () => capture.CaptureAutoHideDesktopIcons, value =>
+                {
+                    if (PlatformServices.Current.Shell.DesktopIconsSupport.IsSupported)
+                    {
+                        capture.CaptureAutoHideDesktopIcons = value;
+                    }
+                }), PlatformServices.Current.Shell.DesktopIconsSupport),
                 WithCaptureSupport(Check(Strings.TaskSettingsWindow_HDRScreenshotColorCorrector, () => capture.HDRScreenshotColorCorrection,
                     SetIfCaptureSupported<bool>(ScreenCaptureFeatures.HdrToneMapping, value => capture.HDRScreenshotColorCorrection = value)), ScreenCaptureFeatures.HdrToneMapping)),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_PreconfiguredRegion, regionGrid, selectRegion),
