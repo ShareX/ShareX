@@ -38,6 +38,9 @@ public sealed class ShareXAvaloniaApplication : Application
 {
     public override void Initialize()
     {
+        // The name macOS shows for the application menu and in the Dock.
+        Name = "ShareX";
+
         Uri baseUri = new Uri("avares://ShareX.Avalonia/");
         Resources.MergedDictionaries.Add(new ResourceInclude(baseUri)
         {
