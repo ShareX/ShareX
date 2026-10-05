@@ -77,7 +77,7 @@ internal static class PortalApplicationRegistration
         return false;
     }
 
-    internal static async Task<PortalRegistrationResult> RegisterAsync(Func<Task> register, bool hasSandboxIdentity)
+    internal static async Task<PortalRegistrationResult> RegisterAsync(Func<Task> register, bool hasSandboxIdentity, Action? prepareHostIdentity = null)
     {
         if (hasSandboxIdentity)
         {
@@ -86,6 +86,7 @@ internal static class PortalApplicationRegistration
 
         try
         {
+            prepareHostIdentity?.Invoke();
             await register().ConfigureAwait(false);
             return new PortalRegistrationResult(null, false);
         }

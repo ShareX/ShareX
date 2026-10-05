@@ -71,7 +71,7 @@ internal static class DBusSession
                 }
 
                 (DBusConnection created, string? error) = await CreateConnectionAsync(address,
-                    PortalApplicationRegistration.HasSandboxIdentity()).ConfigureAwait(false);
+                    PortalApplicationRegistration.HasSandboxIdentity(), PortalApplicationDesktopEntry.EnsureExists).ConfigureAwait(false);
                 RegistrationError = error;
                 Volatile.Write(ref connection, created);
             }
@@ -85,7 +85,7 @@ internal static class DBusSession
     }
 
     /// <summary>Opens a peer, registering host identity or leaving sandbox identity to the portal.</summary>
-    internal static async Task<(DBusConnection Connection, string? Error)> CreateConnectionAsync(string address, bool hasSandboxIdentity)
+    internal static async Task<(DBusConnection Connection, string? Error)> CreateConnectionAsync(string address, bool hasSandboxIdentity, Action? prepareHostIdentity = null)
     {
         DBusConnection created = new DBusConnection(address);
 
@@ -93,7 +93,7 @@ internal static class DBusSession
         {
             await created.ConnectAsync().ConfigureAwait(false);
             PortalRegistrationResult registration = await PortalApplicationRegistration.RegisterAsync(
-                () => RegisterApplicationAsync(created), hasSandboxIdentity).ConfigureAwait(false);
+                () => RegisterApplicationAsync(created), hasSandboxIdentity, prepareHostIdentity).ConfigureAwait(false);
 
             if (registration.UseNewConnection)
             {

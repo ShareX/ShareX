@@ -1,0 +1,42 @@
+{
+  "configuration": "Release",
+  "platform": "x64",
+  "build_warnings": 0,
+  "build_errors": 0,
+  "passed": 705,
+  "skipped": 70,
+  "failed": 0,
+  "desktop_fixtures_enabled": true,
+  "projects": [
+    {
+      "assembly": "ShareX.ImageEffectsLib.Tests.dll",
+      "passed": 65,
+      "skipped": 0,
+      "failed": 0
+    },
+    {
+      "assembly": "ShareX.Tools.Tests.dll",
+      "passed": 104,
+      "skipped": 2,
+      "failed": 0
+    },
+    {
+      "assembly": "ShareX.Platform.Tests.dll",
+      "passed": 341,
+      "skipped": 40,
+      "failed": 0
+    },
+    {
+      "assembly": "ShareX.HistoryLib.Tests.dll",
+      "passed": 8,
+      "skipped": 0,
+      "failed": 0
+    },
+    {
+      "assembly": "ShareX.ImageEditor.Tests.dll",
+      "passed": 187,
+      "skipped": 28,
+      "failed": 0
+    }
+  ]
+}

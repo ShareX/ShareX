@@ -60,6 +60,33 @@ public class PortalApplicationConnectionTests
     }
 
     [LinuxPortalFact]
+    public async Task NativeBuildPublishesItsDesktopIdentityBeforeThePortalLooksItUp()
+    {
+        string root = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "sharex-portal-host-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(root);
+        try
+        {
+            string executable = System.IO.Path.Combine(root, "ShareX");
+            File.WriteAllText(executable, "synthetic application");
+            string entry = System.IO.Path.Combine(root, "data", "applications", "sharex.desktop");
+            Assert.False(File.Exists(entry));
+            await WithPortal(null, false, async (portal, connection, error) =>
+            {
+                Assert.Null(error);
+                Assert.True(File.Exists(entry));
+                Assert.Equal(1, portal.RegistrationCalls);
+                Assert.Equal(connection.UniqueName, portal.RegisteredPeer);
+                Assert.Equal(1u, await ReadVersion(connection));
+            }, () => Assert.True(PortalApplicationDesktopEntry.EnsureExists(
+                System.IO.Path.Combine(root, "data"), root, executable, "")), entry);
+        }
+        finally
+        {
+            Directory.Delete(root, recursive: true);
+        }
+    }
+
+    [LinuxPortalFact]
     public async Task KnownSandboxCallsThePortalWithoutHostRegistration()
     {
         await WithPortal("Can't manually register a io.snapcraft application", hasSandboxIdentity: true,
@@ -99,7 +126,7 @@ public class PortalApplicationConnectionTests
     }
 
     private static async Task WithPortal(string? rejection, bool hasSandboxIdentity,
-        Func<Portal, DBusConnection, string?, Task> verify)
+        Func<Portal, DBusConnection, string?, Task> verify, Action? prepareHostIdentity = null, string? requiredDesktopEntry = null)
     {
         ProcessStartInfo start = new ProcessStartInfo("/usr/bin/dbus-daemon")
         {
@@ -118,10 +145,10 @@ public class PortalApplicationConnectionTests
             Assert.False(string.IsNullOrEmpty(address));
             using DBusConnection server = new DBusConnection(address);
             await server.ConnectAsync().AsTask().WaitAsync(TimeSpan.FromSeconds(5));
-            Portal portal = new Portal(server, rejection);
+            Portal portal = new Portal(server, rejection, requiredDesktopEntry);
             server.AddMethodHandler(portal);
             await server.RequestNameAsync(DBusSession.PortalBusName).WaitAsync(TimeSpan.FromSeconds(5));
-            (DBusConnection connection, string? error) = await DBusSession.CreateConnectionAsync(address, hasSandboxIdentity)
+            (DBusConnection connection, string? error) = await DBusSession.CreateConnectionAsync(address, hasSandboxIdentity, prepareHostIdentity)
                 .WaitAsync(TimeSpan.FromSeconds(5));
 
             using (connection)
@@ -154,7 +181,7 @@ public class PortalApplicationConnectionTests
             (ref MessageWriter writer) => writer.WriteString(peer)),
             static (Message message, object? _) => message.GetBodyReader().ReadBool(), null);
 
-    private sealed class Portal(DBusConnection connection, string? rejection) : IPathMethodHandler
+    private sealed class Portal(DBusConnection connection, string? rejection, string? requiredDesktopEntry) : IPathMethodHandler
     {
         public string Path => DBusSession.PortalObjectPath;
         public bool HandlesChildPaths => false;
@@ -175,7 +202,11 @@ public class PortalApplicationConnectionTests
                 Assert.Empty(reader.ReadDictionaryOfStringToVariantValue());
                 RegistrationCalls++;
 
-                if (rejection != null)
+                if (requiredDesktopEntry != null && !File.Exists(requiredDesktopEntry))
+                {
+                    context.ReplyError("org.freedesktop.portal.Error.Failed", "Could not register app ID: App info not found for 'sharex'");
+                }
+                else if (rejection != null)
                 {
                     context.ReplyError("org.freedesktop.portal.Error.Failed", rejection);
                 }

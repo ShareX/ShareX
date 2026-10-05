@@ -1,0 +1,20 @@
+{
+  "registry_version": "(<uint32 1>,)",
+  "baseline_exit": 1,
+  "baseline_error": "Error: GDBus.Error:org.freedesktop.portal.Error.Failed: Could not register app ID: App info not found for 'sharex'",
+  "patched_native_exit": 0,
+  "patched_native_output": "RegistrationError=<none>\nGlobalShortcutsVersion=2\nCreateSessionResponse=0",
+  "patched_native_error": "",
+  "desktop_entry": "[Desktop Entry]\nType=Application\nName=ShareX\nExec=/tmp/sharex-b53-real-portal/bin/x64/Release/net10.0/ShareX\nIcon=sharex\nTerminal=false\nNoDisplay=true\nX-ShareX-PortalIdentity=true\n",
+  "desktop_validate_exit": 0,
+  "desktop_validate_output": "",
+  "stale_exec_registration_exit": 1,
+  "stale_exec_registration_error": "Error: GDBus.Error:org.freedesktop.portal.Error.Failed: Could not register app ID: App info not found for 'sharex'",
+  "stale_identity_recovery_exit": 0,
+  "stale_identity_recovery_output": "RegistrationError=<none>\nGlobalShortcutsVersion=2\nCreateSessionResponse=0",
+  "stale_identity_recovery_error": "",
+  "patched_framework_exit": 0,
+  "patched_framework_output": "RegistrationError=<none>\nGlobalShortcutsVersion=2\nCreateSessionResponse=0",
+  "patched_framework_error": "",
+  "framework_desktop_entry": "[Desktop Entry]\nType=Application\nName=ShareX\nExec=/usr/lib64/dotnet/dotnet /tmp/sharex-b53-real-portal/bin/x64/Release/net10.0/ShareX.dll\nIcon=sharex\nTerminal=false\nNoDisplay=true\nX-ShareX-PortalIdentity=true\n"
+}
