@@ -2441,11 +2441,14 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Namnmönster</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>Inbyggd skärminspelare</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Videobithastighet (kbps):</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>Använd Windows inbyggda skärminspelare (H.264/AAC MP4)</value>
+    <value>Använd den inbyggda skärminspelaren</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Kräv maskinvarukodning av video</value>

@@ -2441,11 +2441,14 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>الگوهای نام</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>ضبط‌کنندهٔ داخلی صفحه</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>نرخ بیت ویدیو (کیلوبیت بر ثانیه):</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>استفاده از ضبط‌کنندهٔ صفحهٔ داخلی Windows ‏(H.264/AAC MP4)</value>
+    <value>استفاده از ضبط‌کنندهٔ داخلی صفحه</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>الزام رمزگذاری سخت‌افزاری ویدیو</value>

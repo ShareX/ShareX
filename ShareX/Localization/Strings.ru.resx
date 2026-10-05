@@ -2441,11 +2441,14 @@
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Шаблоны имён</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>Встроенная запись экрана</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Битрейт видео (кбит/с):</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>Использовать встроенную запись экрана Windows (H.264/AAC MP4)</value>
+    <value>Использовать встроенную запись экрана</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Требовать аппаратное кодирование видео</value>

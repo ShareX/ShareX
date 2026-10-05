@@ -2441,11 +2441,14 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>이름 패턴</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>내장 화면 녹화 기능</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>동영상 비트 전송률 (kbps):</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>Windows 기본 화면 녹화 기능 사용 (H.264/AAC MP4)</value>
+    <value>내장 화면 녹화 기능 사용</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>동영상 하드웨어 인코딩 필수</value>

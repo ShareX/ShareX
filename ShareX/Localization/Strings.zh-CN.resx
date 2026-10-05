@@ -2441,11 +2441,14 @@
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>名称模式</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>内置屏幕录制功能</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>视频比特率 (kbps)：</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>使用 Windows 内置屏幕录制功能 (H.264/AAC MP4)</value>
+    <value>使用内置屏幕录制功能</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>要求使用硬件视频编码</value>

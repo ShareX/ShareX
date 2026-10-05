@@ -2441,11 +2441,14 @@
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>תבניות שמות</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>מקליט המסך המובנה</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>קצב סיביות של וידאו (kbps):</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>שימוש במקליט המסך המובנה של Windows ‏(H.264/AAC MP4)</value>
+    <value>שימוש במקליט המסך המובנה</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>דרישת קידוד וידאו בחומרה</value>

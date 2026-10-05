@@ -2441,11 +2441,14 @@
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Шаблони назв</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>Вбудований запис екрана</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Бітрейт відео (кбіт/с):</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>Використовувати вбудований запис екрана Windows (H.264/AAC MP4)</value>
+    <value>Використовувати вбудований запис екрана</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Вимагати апаратне кодування відео</value>

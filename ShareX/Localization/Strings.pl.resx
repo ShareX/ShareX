@@ -2441,11 +2441,14 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Wzorce nazw</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>Wbudowany rejestrator ekranu</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Przepływność wideo (kbps):</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>Używaj wbudowanego rejestratora ekranu Windows (H.264/AAC MP4)</value>
+    <value>Używaj wbudowanego rejestratora ekranu</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Wymagaj sprzętowego kodowania wideo</value>

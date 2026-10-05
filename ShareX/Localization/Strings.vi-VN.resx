@@ -2441,11 +2441,14 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Mẫu tên</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>Trình ghi màn hình tích hợp</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Tốc độ bit video (kbps):</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>Dùng trình ghi màn hình tích hợp của Windows (H.264/AAC MP4)</value>
+    <value>Dùng trình ghi màn hình tích hợp</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Yêu cầu mã hóa video bằng phần cứng</value>

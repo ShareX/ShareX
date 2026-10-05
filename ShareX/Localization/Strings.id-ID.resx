@@ -2441,11 +2441,14 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Pola nama</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>Perekam layar bawaan</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Laju bit video (kbps):</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>Gunakan perekam layar bawaan Windows (H.264/AAC MP4)</value>
+    <value>Gunakan perekam layar bawaan</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Wajibkan pengodean video perangkat keras</value>

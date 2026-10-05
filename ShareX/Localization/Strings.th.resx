@@ -2441,11 +2441,14 @@
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>รูปแบบชื่อs</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>ตัวบันทึกหน้าจอในตัว</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>อัตราบิตวิดีโอ (kbps):</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>ใช้ตัวบันทึกหน้าจอที่มีใน Windows (H.264/AAC MP4)</value>
+    <value>ใช้ตัวบันทึกหน้าจอในตัว</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>กำหนดให้เข้ารหัสวิดีโอด้วยฮาร์ดแวร์</value>

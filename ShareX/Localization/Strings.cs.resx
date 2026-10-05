@@ -2441,11 +2441,14 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Vzory názvů</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>Vestavěný záznam obrazovky</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Datový tok videa (kbps):</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
-    <value>Použít vestavěný záznam obrazovky Windows (H.264/AAC MP4)</value>
+    <value>Použít vestavěný záznam obrazovky</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Vyžadovat hardwarové kódování videa</value>
