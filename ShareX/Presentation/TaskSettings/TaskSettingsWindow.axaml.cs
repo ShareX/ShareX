@@ -93,6 +93,8 @@ public partial class TaskSettingsWindow : Window
 
     internal void NavigateToPage(string pageId) => _viewModel?.SelectPage(pageId);
 
+    internal void RefreshSettingsSearch() => Navigation.RefreshFilter();
+
     private void SelectPage(string? pageId)
     {
         foreach ((string id, Control page) in _pages)

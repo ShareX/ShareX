@@ -292,10 +292,11 @@ internal sealed class TaskSettingsPageBuilder
         BindEnabled(autoJpegSize, autoJpeg);
         BindEnabled(autoQuality, autoJpeg);
 
-        return Page("image", Strings.TaskSettingsWindow_Image, LucideIcons.image,
-            OverrideCard(_imageOverride, Strings.TaskSettingsWindow_OverrideImageSettings),
-            EnabledCard(_imageOverride, Strings.TaskSettingsWindow_ImageQuality,
-                Row(Strings.TaskSettingsWindow_ImageFormat, EnumCombo(() => image.ImageFormat, value => image.ImageFormat = value)),
+        StackPanel pngOptions = new()
+        {
+            Spacing = 4,
+            Children =
+            {
                 Row(Strings.TaskSettingsWindow_PNGBitDepth, EnumCombo(() => image.ImagePNGBitDepth, value => image.ImagePNGBitDepth = value)),
                 Row(Strings.TaskSettingsWindow_PNGCompressionLevel,
                     ObjectCombo(Enumerable.Range(0, 10), () => Math.Clamp(image.ImagePNGCompressionLevel, 0, 9),
@@ -312,7 +313,14 @@ internal sealed class TaskSettingsPageBuilder
                         SKPngEncoderFilterFlags.Avg => Strings.TaskSettingsWindow_PNGFilterAverage,
                         SKPngEncoderFilterFlags.Paeth => Strings.TaskSettingsWindow_PNGFilterPaeth,
                         _ => Strings.TaskSettingsWindow_PNGFilterAutomatic
-                    })),
+                    }))
+            }
+        };
+        StackPanel jpegOptions = new()
+        {
+            Spacing = 4,
+            Children =
+            {
                 Row(Strings.TaskSettingsWindow_JPEGQuality, Number(() => image.ImageJPEGQuality, value => image.ImageJPEGQuality = (int)value, 0, 100)),
                 Row(Strings.TaskSettingsWindow_JPEGSubsampling, ObjectCombo(
                     new[] { SKJpegEncoderDownsample.Downsample420, SKJpegEncoderDownsample.Downsample422, SKJpegEncoderDownsample.Downsample444 },
@@ -321,12 +329,43 @@ internal sealed class TaskSettingsPageBuilder
                         SKJpegEncoderDownsample.Downsample422 => Strings.TaskSettingsWindow_JPEGSubsampling422,
                         SKJpegEncoderDownsample.Downsample444 => Strings.TaskSettingsWindow_JPEGSubsampling444,
                         _ => Strings.TaskSettingsWindow_JPEGSubsampling420
-                    }), Strings.TaskSettingsWindow_JPEGSubsamplingHint),
-                Row(Strings.TaskSettingsWindow_GIFQuality, EnumCombo(() => image.ImageGIFQuality, value => image.ImageGIFQuality = value)),
-                Row(Strings.TaskSettingsWindow_IfFileExists, EnumCombo(() => image.FileExistAction, value => image.FileExistAction = value))),
-            EnabledCard(_imageOverride, Strings.TaskSettingsWindow_AutomaticJPEG,
+                    }), Strings.TaskSettingsWindow_JPEGSubsamplingHint)
+            }
+        };
+        Control gifOptions = Row(Strings.TaskSettingsWindow_GIFQuality, EnumCombo(() => image.ImageGIFQuality, value => image.ImageGIFQuality = value));
+        Border automaticJpeg = new()
+        {
+            Child = EnabledCard(_imageOverride, Strings.TaskSettingsWindow_AutomaticJPEG,
                 Check(Strings.TaskSettingsWindow_UseJPEGIfImageSizeIsBiggerThanTheSpecifiedSize, autoJpeg),
-                Row(Strings.TaskSettingsWindow_SizeLimitKB, autoJpegSize), autoQuality));
+                Row(Strings.TaskSettingsWindow_SizeLimitKB, autoJpegSize), autoQuality)
+        };
+        SettingsSearch.SetIsAvailabilityContainer(pngOptions, true);
+        SettingsSearch.SetIsAvailabilityContainer(jpegOptions, true);
+        SettingsSearch.SetIsAvailabilityContainer(gifOptions, true);
+        SettingsSearch.SetIsAvailabilityContainer(automaticJpeg, true);
+
+        void UpdateEncoderVisibility(EImageFormat format)
+        {
+            pngOptions.IsVisible = format == EImageFormat.PNG;
+            jpegOptions.IsVisible = format == EImageFormat.JPEG;
+            gifOptions.IsVisible = format == EImageFormat.GIF;
+            automaticJpeg.IsVisible = format != EImageFormat.JPEG;
+        }
+
+        UpdateEncoderVisibility(Enum.IsDefined(image.ImageFormat) ? image.ImageFormat : EImageFormat.PNG);
+
+        return Page("image", Strings.TaskSettingsWindow_Image, LucideIcons.image,
+            OverrideCard(_imageOverride, Strings.TaskSettingsWindow_OverrideImageSettings),
+            EnabledCard(_imageOverride, Strings.TaskSettingsWindow_ImageQuality,
+                Row(Strings.TaskSettingsWindow_ImageFormat, EnumCombo(() => image.ImageFormat, value =>
+                {
+                    image.ImageFormat = value;
+                    UpdateEncoderVisibility(value);
+                    _window.RefreshSettingsSearch();
+                })),
+                pngOptions, jpegOptions, gifOptions,
+                Row(Strings.TaskSettingsWindow_IfFileExists, EnumCombo(() => image.FileExistAction, value => image.FileExistAction = value))),
+            automaticJpeg);
     }
 
     private Control BuildImageEffectsPage()
