@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using ShareX.ScreenRecordingLib.Native;
 using Windows.Graphics.Capture;
 using Windows.Graphics.DirectX;
+using Windows.Security.Authorization.AppCapabilityAccess;
 using WinRT;
 
 namespace ShareX.ScreenRecordingLib.Video;
@@ -110,6 +111,7 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         Height = processor.Height;
         try
         {
+            bool borderless = RequestBorderlessAccess();
             foreach (Target target in targets)
             {
                 Direct3D11CaptureFramePool pool = Direct3D11CaptureFramePool.CreateFreeThreaded(graphics.WinRTDevice,
@@ -120,11 +122,29 @@ internal sealed unsafe class GraphicsCapture : IDisposable
                 Source source = new() { Target = target, Pool = pool, Session = session, InitialWidth = target.Item.Size.Width, InitialHeight = target.Item.Size.Height };
                 sources.Add(source);
                 session.IsCursorCaptureEnabled = cursor;
+                if (borderless) session.IsBorderRequired = false;
                 source.ClosedHandler = (_, _) => Interlocked.Exchange(ref source.Closed, 1);
                 target.Item.Closed += source.ClosedHandler;
             }
         }
         catch { Dispose(); throw; }
+    }
+
+    private static bool RequestBorderlessAccess()
+    {
+        try
+        {
+            // Request access before creating sessions so Windows does not briefly show the border.
+            // This constructor runs on the recorder's MTA worker, keeping consent off the UI thread.
+            return GraphicsCaptureAccess.RequestAccessAsync(GraphicsCaptureAccessKind.Borderless)
+                .AsTask().GetAwaiter().GetResult() == AppCapabilityAccessStatus.Allowed;
+        }
+        catch (Exception ex) when (ex is COMException or UnauthorizedAccessException)
+        {
+            // Borderless access is optional; preserve recording when a host or policy disallows it.
+            System.Diagnostics.Debug.WriteLine($"Borderless screen capture is unavailable: {ex.Message}");
+            return false;
+        }
     }
 
     public void Start()
