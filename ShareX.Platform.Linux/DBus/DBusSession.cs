@@ -70,9 +70,9 @@ internal static class DBusSession
                     throw new PlatformNotSupportedException("No D-Bus session bus is available.");
                 }
 
-                DBusConnection created = new DBusConnection(address);
-                await created.ConnectAsync().ConfigureAwait(false);
-                await RegisterApplicationAsync(created).ConfigureAwait(false);
+                (DBusConnection created, string? error) = await CreateConnectionAsync(address,
+                    PortalApplicationRegistration.HasSandboxIdentity()).ConfigureAwait(false);
+                RegistrationError = error;
                 Volatile.Write(ref connection, created);
             }
 
@@ -84,33 +84,49 @@ internal static class DBusSession
         }
     }
 
+    /// <summary>Opens a peer, registering host identity or leaving sandbox identity to the portal.</summary>
+    internal static async Task<(DBusConnection Connection, string? Error)> CreateConnectionAsync(string address, bool hasSandboxIdentity)
+    {
+        DBusConnection created = new DBusConnection(address);
+
+        try
+        {
+            await created.ConnectAsync().ConfigureAwait(false);
+            PortalRegistrationResult registration = await PortalApplicationRegistration.RegisterAsync(
+                () => RegisterApplicationAsync(created), hasSandboxIdentity).ConfigureAwait(false);
+
+            if (registration.UseNewConnection)
+            {
+                // Some portals cache a failed Registry call. Use a fresh peer so the portal can
+                // identify the sandbox itself, without a rejected host identity on this connection.
+                created.Dispose();
+                created = new DBusConnection(address);
+                await created.ConnectAsync().ConfigureAwait(false);
+            }
+
+            return (created, registration.Error);
+        }
+        catch
+        {
+            created.Dispose();
+            throw;
+        }
+    }
+
     /// <summary>
     /// Applications that are not sandboxed tell xdg-desktop-portal 1.19+ who they are before their first portal call; GlobalShortcuts
     /// refuses to work without it ("An app id is required"). Older portals do not have the registry, which is fine.
     /// </summary>
-    private static async Task RegisterApplicationAsync(DBusConnection bus)
+    private static Task RegisterApplicationAsync(DBusConnection bus)
     {
-        try
-        {
-            MessageBuffer call = CreateMethodCall(bus, PortalBusName, PortalObjectPath, "org.freedesktop.host.portal.Registry", "Register", "sa{sv}",
-                (ref MessageWriter writer) =>
-                {
-                    writer.WriteString(ApplicationId);
-                    writer.WriteDictionary(new Dictionary<string, VariantValue>());
-                });
+        MessageBuffer call = CreateMethodCall(bus, PortalBusName, PortalObjectPath, "org.freedesktop.host.portal.Registry", "Register", "sa{sv}",
+            (ref MessageWriter writer) =>
+            {
+                writer.WriteString(ApplicationId);
+                writer.WriteDictionary(new Dictionary<string, VariantValue>());
+            });
 
-            await bus.CallMethodAsync(call).ConfigureAwait(false);
-            RegistrationError = null;
-        }
-        catch (DBusErrorReplyException e) when (e.ErrorName is "org.freedesktop.DBus.Error.UnknownMethod" or "org.freedesktop.DBus.Error.UnknownInterface" or "org.freedesktop.DBus.Error.ServiceUnknown")
-        {
-            RegistrationError = null;
-        }
-        catch (DBusErrorReplyException e)
-        {
-            // Usually "App info not found": the desktop entry is not installed.
-            RegistrationError = e.ErrorMessage;
-        }
+        return bus.CallMethodAsync(call);
     }
 
     /// <summary>Whether a service owns <paramref name="name"/> on the session bus. Waits at most two seconds.</summary>

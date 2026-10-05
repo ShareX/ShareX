@@ -1,0 +1,49 @@
+{
+  "build": {
+    "configuration": "Release",
+    "platform": "x64",
+    "warnings": 0,
+    "errors": 0
+  },
+  "tests": [
+    {
+      "project": "ShareX.Platform.Tests",
+      "failed": 0,
+      "passed": 323,
+      "skipped": 40,
+      "total": 363
+    },
+    {
+      "project": "ShareX.ImageEffectsLib.Tests",
+      "failed": 0,
+      "passed": 65,
+      "skipped": 0,
+      "total": 65
+    },
+    {
+      "project": "ShareX.ImageEditor.Tests",
+      "failed": 0,
+      "passed": 187,
+      "skipped": 28,
+      "total": 215
+    },
+    {
+      "project": "ShareX.Tools.Tests",
+      "failed": 0,
+      "passed": 104,
+      "skipped": 2,
+      "total": 106
+    },
+    {
+      "project": "ShareX.HistoryLib.Tests",
+      "failed": 0,
+      "passed": 8,
+      "skipped": 0,
+      "total": 8
+    }
+  ],
+  "desktop_fixtures": true,
+  "application_directory": "ShareX/bin/Release/linux-x64",
+  "physical_shortcut_firing_verified": false,
+  "publication_gate_repeated": true
+}
