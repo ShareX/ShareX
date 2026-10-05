@@ -2441,6 +2441,21 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Navnemønster</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>Videobithastighed (kbps):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>Brug den indbyggede skærmoptager i Windows (H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>Kræv hardwarekodning af video</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>Optag mikrofon</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>Optag systemlyd</value>
+  </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Nej</value>
   </data>

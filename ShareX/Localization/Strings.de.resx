@@ -2441,6 +2441,21 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Namensmuster</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>Bitrate des Videos (kbit/s):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>Integrierten Windows-Bildschirmrekorder verwenden (H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>Hardware-Videokodierung voraussetzen</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>Mikrofon aufnehmen</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>Systemaudio aufnehmen</value>
+  </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Nein</value>
   </data>

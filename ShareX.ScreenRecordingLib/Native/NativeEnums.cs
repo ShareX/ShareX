@@ -1,0 +1,32 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+namespace ShareX.ScreenRecordingLib.Native;
+
+internal enum COINIT : uint { COINIT_MULTITHREADED = 0 }
+internal enum CLSCTX : uint { CLSCTX_INPROC_SERVER = 1 }
+internal enum MONITOR_FROM_FLAGS : uint { MONITOR_DEFAULTTONEAREST = 2 }
+internal enum EDataFlow { eRender, eCapture }
+internal enum ERole { eConsole, eMultimedia, eCommunications }
+internal enum AUDCLNT_SHAREMODE { AUDCLNT_SHAREMODE_SHARED }
+internal enum D3D_DRIVER_TYPE { D3D_DRIVER_TYPE_UNKNOWN, D3D_DRIVER_TYPE_HARDWARE }
+internal enum D3D_FEATURE_LEVEL { D3D_FEATURE_LEVEL_11_0 = 0xb000, D3D_FEATURE_LEVEL_11_1 = 0xb100 }
+
+[Flags]
+internal enum D3D11_CREATE_DEVICE_FLAG : uint
+{
+    D3D11_CREATE_DEVICE_BGRA_SUPPORT = 0x20,
+    D3D11_CREATE_DEVICE_VIDEO_SUPPORT = 0x800
+}
+
+[Flags]
+internal enum D3D11_BIND_FLAG : uint
+{
+    D3D11_BIND_RENDER_TARGET = 0x20
+}
+
+internal enum DXGI_FORMAT { DXGI_FORMAT_B8G8R8A8_UNORM = 87, DXGI_FORMAT_NV12 = 103 }
+internal enum D3D11_USAGE { D3D11_USAGE_DEFAULT }
+internal enum D3D11_VIDEO_FRAME_FORMAT { D3D11_VIDEO_FRAME_FORMAT_PROGRESSIVE }
+internal enum D3D11_VIDEO_USAGE { D3D11_VIDEO_USAGE_PLAYBACK_NORMAL }
+internal enum D3D11_VPIV_DIMENSION { D3D11_VPIV_DIMENSION_TEXTURE2D = 1 }
+internal enum D3D11_VPOV_DIMENSION { D3D11_VPOV_DIMENSION_TEXTURE2D = 1 }
+internal enum VARENUM : ushort { VT_BOOL = 11, VT_UI4 = 19 }

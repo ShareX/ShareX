@@ -2441,6 +2441,21 @@
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>أنماط الأسماء</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>معدل بت الفيديو (كيلوبت/ثانية):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>استخدام مسجل الشاشة المدمج في Windows ‏(H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>اشتراط ترميز الفيديو بواسطة العتاد</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>تسجيل الميكروفون</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>تسجيل صوت النظام</value>
+  </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>لا</value>
   </data>

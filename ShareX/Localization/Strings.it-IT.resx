@@ -2441,6 +2441,21 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Modelli del nome</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>Bitrate video (kbps):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>Usa il registratore dello schermo integrato in Windows (H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>Richiedi la codifica video hardware</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>Registra il microfono</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>Registra l’audio di sistema</value>
+  </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>No</value>
   </data>

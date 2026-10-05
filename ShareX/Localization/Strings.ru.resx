@@ -2441,6 +2441,21 @@
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Шаблоны имён</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>Битрейт видео (кбит/с):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>Использовать встроенную запись экрана Windows (H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>Требовать аппаратное кодирование видео</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>Записывать микрофон</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>Записывать системный звук</value>
+  </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Нет</value>
   </data>

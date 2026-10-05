@@ -2441,6 +2441,21 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Modèles de nom</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>Débit vidéo (kbps) :</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>Utiliser l’enregistreur d’écran intégré de Windows (H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>Exiger l’encodage vidéo matériel</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>Enregistrer le microphone</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>Enregistrer le son du système</value>
+  </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Non</value>
   </data>

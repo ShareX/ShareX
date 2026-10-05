@@ -88,6 +88,9 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private bool _showRecordingButtonLabels = true;
 
     public event Action? StopRequested;
+    public event Action? PauseRequested;
+    public event Action? ResumeRequested;
+    public bool UseInProcessPause { get; set; }
 
     public ScreenRecordingStatus Status
     {
@@ -252,6 +255,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         else if (Status == ScreenRecordingStatus.Paused)
         {
             Status = ScreenRecordingStatus.Stopped;
+            if (UseInProcessPause) OnStopRequested();
             RecordResetEvent.Set();
         }
         else
@@ -266,7 +270,22 @@ public partial class ScreenRecordWindow : Window, IDisposable
         {
             Status = ScreenRecordingStatus.Paused;
             RecordResetEvent.Reset();
-            OnStopRequested();
+            if (UseInProcessPause)
+            {
+                PauseRequested?.Invoke();
+                StopRecordingTimer();
+                UpdateUI();
+            }
+            else OnStopRequested();
+        }
+        else if (Status == ScreenRecordingStatus.Paused && UseInProcessPause)
+        {
+            ResumeRequested?.Invoke();
+            Status = ScreenRecordingStatus.Recording;
+            Timer.Start();
+            _refreshTimer.Start();
+            UpdateTimer();
+            UpdateUI();
         }
         else
         {
@@ -289,7 +308,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             return;
         }
 
-        bool stopActiveRecording = Status == ScreenRecordingStatus.Recording;
+        bool stopActiveRecording = Status == ScreenRecordingStatus.Recording || (UseInProcessPause && Status == ScreenRecordingStatus.Paused);
 
         Interlocked.Exchange(ref _restartRequested, 1);
         Status = ScreenRecordingStatus.Waiting;

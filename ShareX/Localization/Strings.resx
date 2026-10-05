@@ -2972,4 +2972,19 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the upload feature.</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>Use built-in Windows screen recorder (H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>Record system audio</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>Record microphone</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>Require hardware video encoding</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>Video bitrate (kbps):</value>
+  </data>
 </root>

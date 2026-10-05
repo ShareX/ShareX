@@ -2441,6 +2441,21 @@
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>名稱模式</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>影片位元率 (kbps)：</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>使用 Windows 內建螢幕錄製功能 (H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>要求使用硬體影片編碼</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>錄製麥克風</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>錄製系統音訊</value>
+  </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>否</value>
   </data>

@@ -2441,6 +2441,21 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Ad desenleri</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>Video bit hızı (kbps):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>Windows'un yerleşik ekran kaydedicisini kullan (H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>Donanım video kodlamasını zorunlu tut</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>Mikrofonu kaydet</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>Sistem sesini kaydet</value>
+  </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Hayır</value>
   </data>

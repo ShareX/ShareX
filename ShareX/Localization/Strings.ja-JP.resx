@@ -2441,6 +2441,21 @@
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>名前パターン</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>動画のビットレート (kbps):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>Windows 内蔵の画面録画機能を使用する (H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>動画のハードウェアエンコードを必須にする</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>マイクを録音する</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>システム音声を録音する</value>
+  </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>いいえ</value>
   </data>

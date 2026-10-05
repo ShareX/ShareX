@@ -2441,6 +2441,21 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Padrões de nome</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>Taxa de bits do vídeo (kbps):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>Usar o gravador de ecrã integrado do Windows (H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>Exigir codificação de vídeo por hardware</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>Gravar microfone</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>Gravar áudio do sistema</value>
+  </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Não</value>
   </data>

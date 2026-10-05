@@ -400,6 +400,11 @@ namespace ShareX
         #region Capture / Screen recorder
 
         public FFmpegOptions FFmpegOptions = new FFmpegOptions();
+        public bool ScreenRecordUseNative = true;
+        public bool ScreenRecordSystemAudio = true;
+        public bool ScreenRecordMicrophone = false;
+        public bool ScreenRecordRequireHardwareEncoder = true;
+        public int ScreenRecordVideoBitrate = 8000; // kbps
         public int ScreenRecordFPS = 30;
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;

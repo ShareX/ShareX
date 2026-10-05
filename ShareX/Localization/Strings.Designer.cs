@@ -5544,5 +5544,10 @@ namespace ShareX.Localization {
 
         public static string MainMenuBuilder_AnimatedGifTrimmer => ResourceManager.GetString("MainMenuBuilder_AnimatedGifTrimmer", resourceCulture);
         public static string MainWindow_TrimAnimatedGif => ResourceManager.GetString("MainWindow_TrimAnimatedGif", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderEnabled => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderEnabled", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderSystemAudio => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderSystemAudio", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderMicrophone => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderMicrophone", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderHardware => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderHardware", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderBitrate => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderBitrate", resourceCulture);
     }
 }

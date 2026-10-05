@@ -2441,6 +2441,21 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>Névminták</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>Videó bitrátája (kbps):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>A Windows beépített képernyőrögzítőjének használata (H.264/AAC MP4)</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>Hardveres videókódolás megkövetelése</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>Mikrofon rögzítése</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>Rendszerhang rögzítése</value>
+  </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Nem</value>
   </data>
