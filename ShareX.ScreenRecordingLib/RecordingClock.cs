@@ -51,11 +51,12 @@ internal sealed class RecordingClock
         }
     }
 
-    public bool TryMap(long timestamp, out long relative)
+    public bool TryMap(long timestamp, out long relative, out long segment)
     {
         lock (sync)
         {
             relative = timestamp - origin - pausedTime;
+            segment = segmentStart;
             return started && !paused && !stopped && timestamp >= segmentStart;
         }
     }

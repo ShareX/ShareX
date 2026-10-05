@@ -14,6 +14,7 @@ internal sealed unsafe class WasapiCapture : IDisposable
         public required int Source;
         public required float Gain;
         public bool Started;
+        public long NextPacketTime;
         public void Dispose()
         {
             if (Started) Client.Pointer->Stop();
@@ -153,10 +154,12 @@ internal sealed unsafe class WasapiCapture : IDisposable
             try
             {
                 if ((flags & 1) != 0) mixer.MarkDiscontinuity();
-                long packetTime = (flags & 4) == 0 ? (long)timestamp : RecordingClock.Now - frames * TimeSpan.TicksPerSecond / AudioMixer.SampleRate;
+                long packetTime = (flags & 4) == 0 ? (long)timestamp : endpoint.NextPacketTime != 0 ? endpoint.NextPacketTime : RecordingClock.Now - frames * TimeSpan.TicksPerSecond / AudioMixer.SampleRate;
                 if ((flags & 4) != 0) mixer.MarkDiscontinuity();
-                if ((flags & 2) == 0) mixer.Write(endpoint.Source, packetTime, new ReadOnlySpan<float>(data, checked((int)frames * 2)), endpoint.Gain);
-                // Silent packets are represented by absent positions in the mixer.
+                endpoint.NextPacketTime = packetTime + frames * TimeSpan.TicksPerSecond / AudioMixer.SampleRate;
+                // Silent packets still advance the sample clock; their buffer pointer must not be read.
+                ReadOnlySpan<float> packet = (flags & 2) == 0 ? new(data, checked((int)frames * 2)) : ReadOnlySpan<float>.Empty;
+                mixer.Write(endpoint.Source, packetTime, checked((int)frames), packet, endpoint.Gain, (flags & 1) != 0);
             }
             finally { endpoint.Capture.Pointer->ReleaseBuffer(frames).ThrowOnFailure(); }
         }
