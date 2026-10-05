@@ -2450,6 +2450,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
     <value>Standardmikrofon</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice" xml:space="preserve">
+    <value>Standardausgabegerät</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Integrierten Bildschirmrekorder verwenden</value>
   </data>
@@ -2465,8 +2468,14 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>Systemaudio aufnehmen</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudioDevice" xml:space="preserve">
+    <value>Gerät für Systemaudio:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
     <value>Nicht verfügbares Mikrofon</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice" xml:space="preserve">
+    <value>Nicht verfügbares Ausgabegerät</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Nein</value>

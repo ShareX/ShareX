@@ -447,6 +447,7 @@ namespace ShareX
                     FramesPerSecond = settings.CaptureSettings.ScreenRecordFPS,
                     VideoBitrate = settings.CaptureSettings.ScreenRecordVideoBitrate * 1000,
                     CaptureSystemAudio = settings.CaptureSettings.ScreenRecordSystemAudio,
+                    SystemAudioDeviceId = settings.CaptureSettings.ScreenRecordSystemAudioDeviceId,
                     CaptureMicrophone = settings.CaptureSettings.ScreenRecordMicrophone,
                     MicrophoneDeviceId = settings.CaptureSettings.ScreenRecordMicrophoneDeviceId,
                     RequireHardwareEncoder = settings.CaptureSettings.ScreenRecordRequireHardwareEncoder,

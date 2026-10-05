@@ -2450,6 +2450,9 @@
   <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
     <value>डिफ़ॉल्ट माइक्रोफ़ोन</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice" xml:space="preserve">
+    <value>डिफ़ॉल्ट आउटपुट डिवाइस</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>अंतर्निहित स्क्रीन रिकॉर्डर का उपयोग करें</value>
   </data>
@@ -2465,8 +2468,14 @@
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>सिस्टम ऑडियो रिकॉर्ड करें</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudioDevice" xml:space="preserve">
+    <value>सिस्टम ऑडियो डिवाइस:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
     <value>अनुपलब्ध माइक्रोफ़ोन</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice" xml:space="preserve">
+    <value>अनुपलब्ध आउटपुट डिवाइस</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>नहीं</value>

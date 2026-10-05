@@ -2450,6 +2450,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
     <value>Micrô mặc định</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice" xml:space="preserve">
+    <value>Thiết bị đầu ra mặc định</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Dùng trình ghi màn hình tích hợp</value>
   </data>
@@ -2465,8 +2468,14 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>Ghi âm thanh hệ thống</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudioDevice" xml:space="preserve">
+    <value>Thiết bị âm thanh hệ thống:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
     <value>Micrô không khả dụng</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice" xml:space="preserve">
+    <value>Thiết bị đầu ra không khả dụng</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Không</value>

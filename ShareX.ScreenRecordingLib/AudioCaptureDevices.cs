@@ -4,13 +4,18 @@ using ShareX.ScreenRecordingLib.Native;
 
 namespace ShareX.ScreenRecordingLib;
 
-/// <summary>A Windows audio capture endpoint. Id can be passed to RecordingOptions.MicrophoneDeviceId.</summary>
+/// <summary>A Windows audio endpoint. Id can be passed to RecordingOptions.MicrophoneDeviceId or SystemAudioDeviceId.</summary>
 public sealed record AudioCaptureDevice(string Id, string Name);
 
 public static unsafe class AudioCaptureDevices
 {
     /// <summary>Lists active microphones and other audio input endpoints using the Windows MMDevice API.</summary>
-    public static IReadOnlyList<AudioCaptureDevice> GetMicrophones()
+    public static IReadOnlyList<AudioCaptureDevice> GetMicrophones() => GetDevices(EDataFlow.eCapture);
+
+    /// <summary>Lists active audio output endpoints that can be recorded using WASAPI loopback.</summary>
+    public static IReadOnlyList<AudioCaptureDevice> GetSystemAudioDevices() => GetDevices(EDataFlow.eRender);
+
+    private static IReadOnlyList<AudioCaptureDevice> GetDevices(EDataFlow flow)
     {
         HRESULT initialized = NativeMethods.CoInitializeEx(null, COINIT.COINIT_MULTITHREADED);
         // A UI thread may already be initialized as STA. Enumeration supports either apartment.
@@ -22,7 +27,7 @@ public static unsafe class AudioCaptureDevices
             NativeMethods.CoCreateInstance(&clsid, null, CLSCTX.CLSCTX_INPROC_SERVER, &iid, &rawEnumerator).ThrowOnFailure();
             using ComPtr<IMMDeviceEnumerator> enumerator = new((IMMDeviceEnumerator*)rawEnumerator);
             IMMDeviceCollection* rawCollection;
-            enumerator.Pointer->EnumAudioEndpoints(EDataFlow.eCapture, 1, &rawCollection).ThrowOnFailure(); // DEVICE_STATE_ACTIVE
+            enumerator.Pointer->EnumAudioEndpoints(flow, 1, &rawCollection).ThrowOnFailure(); // DEVICE_STATE_ACTIVE
             using ComPtr<IMMDeviceCollection> collection = new(rawCollection);
             uint count;
             collection.Pointer->GetCount(&count).ThrowOnFailure();

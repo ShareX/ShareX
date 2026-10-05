@@ -2981,6 +2981,15 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>Record system audio</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudioDevice" xml:space="preserve">
+    <value>System audio device:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice" xml:space="preserve">
+    <value>Default output device</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice" xml:space="preserve">
+    <value>Unavailable output device</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
     <value>Record microphone</value>
   </data>

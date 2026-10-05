@@ -2450,6 +2450,9 @@
   <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
     <value>מיקרופון ברירת המחדל</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice" xml:space="preserve">
+    <value>התקן הפלט המוגדר כברירת מחדל</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>שימוש במקליט המסך המובנה</value>
   </data>
@@ -2465,8 +2468,14 @@
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>הקלטת שמע המערכת</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudioDevice" xml:space="preserve">
+    <value>התקן שמע המערכת:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
     <value>מיקרופון לא זמין</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice" xml:space="preserve">
+    <value>התקן פלט לא זמין</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>לא</value>

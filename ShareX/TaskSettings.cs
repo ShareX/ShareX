@@ -402,6 +402,7 @@ namespace ShareX
         public FFmpegOptions FFmpegOptions = new FFmpegOptions();
         public bool ScreenRecordUseNative = true;
         public bool ScreenRecordSystemAudio = true;
+        public string ScreenRecordSystemAudioDeviceId = "";
         public bool ScreenRecordMicrophone = false;
         public string ScreenRecordMicrophoneDeviceId = "";
         public bool ScreenRecordRequireHardwareEncoder = true;
