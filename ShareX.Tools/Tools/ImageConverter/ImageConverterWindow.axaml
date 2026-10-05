@@ -90,15 +90,12 @@
                                                MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                                 </Grid>
                                 <StackPanel x:Name="PngOptionsPanel" Grid.Row="2" Spacing="8" IsVisible="{Binding IsPng}">
-                                    <Grid ColumnDefinitions="*,80" ColumnSpacing="10">
-                                        <TextBlock Classes="row-label" TextWrapping="Wrap"
-                                                   ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionHint}"
-                                                   Text="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionLevel}"/>
-                                        <NumericUpDown x:Name="PngCompressionLevelBox" Grid.Column="1"
-                                                       Minimum="0" Maximum="9" Increment="1"
-                                                       ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionHint}"
-                                                       Value="{Binding PngCompressionLevel, Mode=TwoWay}"/>
-                                    </Grid>
+                                    <TextBlock Classes="row-label" TextWrapping="Wrap"
+                                               ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionHint}"
+                                               Text="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionLevel}"/>
+                                    <ComboBox x:Name="PngCompressionLevelBox" ItemsSource="{Binding PngCompressionLevelOptions}"
+                                              ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionHint}"
+                                              SelectedItem="{Binding PngCompressionLevel, Mode=TwoWay}"/>
                                     <TextBlock Classes="row-label"
                                                Text="{x:Static localization:Strings.ImageConverterWindow_PNGFilter}"/>
                                     <ComboBox x:Name="PngFilterBox" ItemsSource="{Binding PngFilterOptions}"

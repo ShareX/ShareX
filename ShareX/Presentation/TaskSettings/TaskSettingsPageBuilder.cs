@@ -298,7 +298,8 @@ internal sealed class TaskSettingsPageBuilder
                 Row(Strings.TaskSettingsWindow_ImageFormat, EnumCombo(() => image.ImageFormat, value => image.ImageFormat = value)),
                 Row(Strings.TaskSettingsWindow_PNGBitDepth, EnumCombo(() => image.ImagePNGBitDepth, value => image.ImagePNGBitDepth = value)),
                 Row(Strings.TaskSettingsWindow_PNGCompressionLevel,
-                    Number(() => image.ImagePNGCompressionLevel, value => image.ImagePNGCompressionLevel = (int)value, 0, 9),
+                    ObjectCombo(Enumerable.Range(0, 10), () => Math.Clamp(image.ImagePNGCompressionLevel, 0, 9),
+                        value => image.ImagePNGCompressionLevel = value),
                     Strings.TaskSettingsWindow_PNGCompressionHint),
                 Row(Strings.TaskSettingsWindow_PNGFilter, ObjectCombo(
                     new[] { SKPngEncoderFilterFlags.AllFilters, SKPngEncoderFilterFlags.None, SKPngEncoderFilterFlags.Sub,

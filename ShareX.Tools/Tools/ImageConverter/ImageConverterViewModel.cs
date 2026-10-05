@@ -60,7 +60,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     private decimal _quality = 90;
 
     [ObservableProperty]
-    private decimal _pngCompressionLevel = 1;
+    private int _pngCompressionLevel = 1;
 
     [ObservableProperty]
     private int _selectedPngFilterIndex;
@@ -98,6 +98,8 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     public Func<Task<string?>>? SelectOutputFolderRequested { get; set; }
 
     public IReadOnlyList<string> OutputFormatOptions { get; } = ["PNG", "JPEG", "WebP"];
+
+    public IReadOnlyList<int> PngCompressionLevelOptions { get; } = Enumerable.Range(0, 10).ToArray();
 
     public IReadOnlyList<string> PngFilterOptions { get; } = [
         Localization.Strings.ImageConverterWindow_PNGFilterAutomatic,
@@ -248,7 +250,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     }
     partial void OnSelectedOutputFormatIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnQualityChanged(decimal value) => NotifyOptionsChanged();
-    partial void OnPngCompressionLevelChanged(decimal value) => NotifyOptionsChanged();
+    partial void OnPngCompressionLevelChanged(int value) => NotifyOptionsChanged();
     partial void OnSelectedPngFilterIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnSelectedJpegSubsamplingIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnBackgroundColorChanged(AvaloniaColor value) => NotifyOptionsChanged();
@@ -364,7 +366,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
 
     private SKPngEncoderOptions GetPngEncoderOptions() => new(
         PngFilters[Math.Clamp(SelectedPngFilterIndex, 0, PngFilters.Length - 1)],
-        (int)Math.Clamp(PngCompressionLevel, 0, 9));
+        Math.Clamp(PngCompressionLevel, 0, 9));
 
     private SKJpegEncoderDownsample GetJpegSubsampling() =>
         JpegSubsamplingModes[Math.Clamp(SelectedJpegSubsamplingIndex, 0, JpegSubsamplingModes.Length - 1)];
