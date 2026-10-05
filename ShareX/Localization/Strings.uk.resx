@@ -2447,6 +2447,9 @@
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Бітрейт відео (кбіт/с):</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>Типовий мікрофон</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Використовувати вбудований запис екрана</value>
   </data>
@@ -2456,8 +2459,14 @@
   <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
     <value>Записувати мікрофон</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>Мікрофон:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>Записувати системний звук</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>Недоступний мікрофон</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Ні</value>

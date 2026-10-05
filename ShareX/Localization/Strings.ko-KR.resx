@@ -2447,6 +2447,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>동영상 비트 전송률 (kbps):</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>기본 마이크</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>내장 화면 녹화 기능 사용</value>
   </data>
@@ -2456,8 +2459,14 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
     <value>마이크 녹음</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>마이크:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>시스템 오디오 녹음</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>사용할 수 없는 마이크</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>아니요</value>

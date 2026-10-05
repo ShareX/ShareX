@@ -2447,6 +2447,9 @@
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>動画のビットレート (kbps):</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>既定のマイク</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>内蔵の画面録画機能を使用する</value>
   </data>
@@ -2456,8 +2459,14 @@
   <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
     <value>マイクを録音する</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>マイク:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>システム音声を録音する</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>利用できないマイク</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>いいえ</value>

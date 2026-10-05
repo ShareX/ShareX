@@ -2984,6 +2984,15 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
     <value>Record microphone</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>Microphone:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>Default microphone</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>Unavailable microphone</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Require hardware video encoding</value>
   </data>

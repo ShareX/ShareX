@@ -121,3 +121,18 @@ internal struct VARIANT
     [FieldOffset(8)] public short boolVal;
     [FieldOffset(8)] public uint ulVal;
 }
+
+[StructLayout(LayoutKind.Sequential)]
+internal struct PROPERTYKEY(Guid formatId, uint propertyId)
+{
+    public Guid fmtid = formatId;
+    public uint pid = propertyId;
+}
+
+// PROPVARIANT is 24 bytes on x64 and ARM64. The string pointer begins after its 8-byte header.
+[StructLayout(LayoutKind.Explicit, Size = 24)]
+internal unsafe struct PROPVARIANT
+{
+    [FieldOffset(0)] public ushort vt;
+    [FieldOffset(8)] public char* pwszVal;
+}

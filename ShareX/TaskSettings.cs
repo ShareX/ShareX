@@ -403,6 +403,7 @@ namespace ShareX
         public bool ScreenRecordUseNative = true;
         public bool ScreenRecordSystemAudio = true;
         public bool ScreenRecordMicrophone = false;
+        public string ScreenRecordMicrophoneDeviceId = "";
         public bool ScreenRecordRequireHardwareEncoder = true;
         public int ScreenRecordVideoBitrate = 8000; // kbps
         public int ScreenRecordFPS = 30;

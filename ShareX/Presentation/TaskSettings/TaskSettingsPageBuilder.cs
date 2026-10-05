@@ -38,6 +38,7 @@ using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
+using ShareX.ScreenRecordingLib;
 using ShareX.Tools;
 using ShareX.UploadersLib;
 using SkiaSharp;
@@ -510,12 +511,16 @@ internal sealed class TaskSettingsPageBuilder
         TaskSettingsCapture capture = _settings.CaptureSettings;
         BoundValue<bool> native = new(capture.ScreenRecordUseNative, value => capture.ScreenRecordUseNative = value);
         Control systemAudio = Check(Strings.TaskSettingsWindow_NativeRecorderSystemAudio, () => capture.ScreenRecordSystemAudio, value => capture.ScreenRecordSystemAudio = value);
-        Control microphone = Check(Strings.TaskSettingsWindow_NativeRecorderMicrophone, () => capture.ScreenRecordMicrophone, value => capture.ScreenRecordMicrophone = value);
+        BoundValue<bool> recordMicrophone = new(capture.ScreenRecordMicrophone, value => capture.ScreenRecordMicrophone = value);
+        Control microphone = Check(Strings.TaskSettingsWindow_NativeRecorderMicrophone, recordMicrophone);
+        ComboBox microphones = MicrophoneCombo(capture);
+        BindEnabled(microphones, recordMicrophone);
+        Control microphoneDevice = Row(Strings.TaskSettingsWindow_NativeRecorderMicrophoneDevice, microphones);
         Control hardware = Check(Strings.TaskSettingsWindow_NativeRecorderHardware, () => capture.ScreenRecordRequireHardwareEncoder, value => capture.ScreenRecordRequireHardwareEncoder = value);
         Control bitrate = Row(Strings.TaskSettingsWindow_NativeRecorderBitrate, Number(() => capture.ScreenRecordVideoBitrate, value => capture.ScreenRecordVideoBitrate = (int)value, 100, 200000, 100));
         Control twoPass = Check(Strings.TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions, () => capture.ScreenRecordTwoPassEncoding, value => capture.ScreenRecordTwoPassEncoding = value);
         Control legacyOptions = Button(Strings.TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis, ShowScreenRecordingOptions);
-        foreach (Control control in new[] { systemAudio, microphone, hardware, bitrate }) BindEnabled(control, native);
+        foreach (Control control in new[] { systemAudio, microphone, microphoneDevice, hardware, bitrate }) BindEnabled(control, native);
         BindEnabled(twoPass, native, invert: true);
         // GIF tasks continue to use the existing FFmpeg options even when MP4 recording is native.
         BoundValue<bool> fixedDuration = new(capture.ScreenRecordFixedDuration, value => capture.ScreenRecordFixedDuration = value);
@@ -539,7 +544,7 @@ internal sealed class TaskSettingsPageBuilder
                 Check(Strings.TaskSettingsWindow_UseFixedDuration, fixedDuration), Row(Strings.TaskSettingsWindow_DurationSeconds, duration)),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_NativeRecorder,
                 Check(Strings.TaskSettingsWindow_NativeRecorderEnabled, native),
-                systemAudio, microphone, hardware, bitrate),
+                systemAudio, microphone, microphoneDevice, hardware, bitrate),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_EncodingAndCapture,
                 twoPass,
                 Check(Strings.TaskSettingsWindow_AskForConfirmationWhenAborting, () => capture.ScreenRecordAskConfirmationOnAbort, value => capture.ScreenRecordAskConfirmationOnAbort = value),
@@ -563,6 +568,53 @@ internal sealed class TaskSettingsPageBuilder
         FFmpegOptionsWindow window = new(options);
         await window.ShowDialog(_window);
         capture.FFmpegOptions = window.Options.FFmpeg;
+    }
+
+    private static ComboBox MicrophoneCombo(TaskSettingsCapture capture)
+    {
+        ComboBox combo = new();
+        combo.Classes.Add("form-control");
+        bool refreshing = false;
+
+        void Refresh()
+        {
+            List<AudioCaptureDevice> devices = [new("", Strings.TaskSettingsWindow_NativeRecorderDefaultMicrophone)];
+            try
+            {
+                devices.AddRange(AudioCaptureDevices.GetMicrophones().OrderBy(device => device.Name, StringComparer.CurrentCultureIgnoreCase));
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+
+            string selectedId = capture.ScreenRecordMicrophoneDeviceId ?? "";
+            AudioCaptureDevice? selected = devices.FirstOrDefault(device => device.Id == selectedId);
+            if (selected == null)
+            {
+                selected = new(selectedId, Strings.TaskSettingsWindow_NativeRecorderUnavailableMicrophone);
+                devices.Add(selected);
+            }
+
+            // Replacing ItemsSource can clear selection. Keep a disconnected device's saved ID intact.
+            refreshing = true;
+            try
+            {
+                ChoiceOption<AudioCaptureDevice>[] choices = devices.Select(device => new ChoiceOption<AudioCaptureDevice>(device, device.Name)).ToArray();
+                combo.ItemsSource = choices;
+                combo.SelectedItem = choices.First(choice => choice.Value.Id == selected.Id);
+            }
+            finally { refreshing = false; }
+        }
+
+        combo.SelectionChanged += (_, _) =>
+        {
+            if (!refreshing && combo.SelectedItem is ChoiceOption<AudioCaptureDevice> choice)
+                capture.ScreenRecordMicrophoneDeviceId = choice.Value.Id;
+        };
+        combo.DropDownOpened += (_, _) => Refresh();
+        Refresh();
+        return combo;
     }
 
     private Control BuildOcrPage()

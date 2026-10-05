@@ -2447,6 +2447,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Rata de biți video (kbps):</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>Microfon implicit</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Folosește înregistratorul de ecran integrat</value>
   </data>
@@ -2456,8 +2459,14 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
     <value>Înregistrează microfonul</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>Microfon:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>Înregistrează sunetul sistemului</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>Microfon indisponibil</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Nu</value>

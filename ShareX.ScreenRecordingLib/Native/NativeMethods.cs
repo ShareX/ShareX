@@ -12,6 +12,9 @@ internal static unsafe partial class NativeMethods
     public static extern void CoUninitialize();
 
     [DllImport("ole32.dll", ExactSpelling = true)]
+    public static extern HRESULT PropVariantClear(PROPVARIANT* value);
+
+    [DllImport("ole32.dll", ExactSpelling = true)]
     public static extern HRESULT CoCreateInstance(Guid* clsid, IUnknown* outer, CLSCTX context, Guid* iid, void** instance);
 
     [DllImport("d3d11.dll", ExactSpelling = true)]

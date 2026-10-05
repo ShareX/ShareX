@@ -7,6 +7,11 @@ namespace ShareX.ScreenRecordingLib.Native;
 internal unsafe struct IMMDeviceEnumerator
 {
     public void** Vtable;
+    public HRESULT EnumAudioEndpoints(EDataFlow flow, uint stateMask, IMMDeviceCollection** devices)
+    {
+        fixed (IMMDeviceEnumerator* self = &this)
+            return ((delegate* unmanaged[Stdcall]<IMMDeviceEnumerator*, EDataFlow, uint, IMMDeviceCollection**, HRESULT>)Vtable[3])(self, flow, stateMask, devices);
+    }
     public HRESULT GetDefaultAudioEndpoint(EDataFlow flow, ERole role, IMMDevice** device)
     {
         fixed (IMMDeviceEnumerator* self = &this)
@@ -27,6 +32,43 @@ internal unsafe struct IMMDevice
     {
         fixed (IMMDevice* self = &this)
             return ((delegate* unmanaged[Stdcall]<IMMDevice*, Guid*, CLSCTX, void*, void**, HRESULT>)Vtable[3])(self, iid, context, parameters, result);
+    }
+    public HRESULT OpenPropertyStore(uint access, IPropertyStore** properties)
+    {
+        fixed (IMMDevice* self = &this)
+            return ((delegate* unmanaged[Stdcall]<IMMDevice*, uint, IPropertyStore**, HRESULT>)Vtable[4])(self, access, properties);
+    }
+    public HRESULT GetId(char** id)
+    {
+        fixed (IMMDevice* self = &this)
+            return ((delegate* unmanaged[Stdcall]<IMMDevice*, char**, HRESULT>)Vtable[5])(self, id);
+    }
+}
+
+[Guid("0bd7a1be-7a1a-44db-8397-cc5392387b5e")]
+internal unsafe struct IMMDeviceCollection
+{
+    public void** Vtable;
+    public HRESULT GetCount(uint* count)
+    {
+        fixed (IMMDeviceCollection* self = &this)
+            return ((delegate* unmanaged[Stdcall]<IMMDeviceCollection*, uint*, HRESULT>)Vtable[3])(self, count);
+    }
+    public HRESULT Item(uint index, IMMDevice** device)
+    {
+        fixed (IMMDeviceCollection* self = &this)
+            return ((delegate* unmanaged[Stdcall]<IMMDeviceCollection*, uint, IMMDevice**, HRESULT>)Vtable[4])(self, index, device);
+    }
+}
+
+[Guid("886d8eeb-8cf2-4446-8d02-cdba1dbdcf99")]
+internal unsafe struct IPropertyStore
+{
+    public void** Vtable;
+    public HRESULT GetValue(PROPERTYKEY* key, PROPVARIANT* value)
+    {
+        fixed (IPropertyStore* self = &this)
+            return ((delegate* unmanaged[Stdcall]<IPropertyStore*, PROPERTYKEY*, PROPVARIANT*, HRESULT>)Vtable[5])(self, key, value);
     }
 }
 

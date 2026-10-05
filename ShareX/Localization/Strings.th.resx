@@ -2447,6 +2447,9 @@
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>อัตราบิตวิดีโอ (kbps):</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>ไมโครโฟนเริ่มต้น</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>ใช้ตัวบันทึกหน้าจอในตัว</value>
   </data>
@@ -2456,8 +2459,14 @@
   <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
     <value>บันทึกไมโครโฟน</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>ไมโครโฟน:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>บันทึกเสียงระบบ</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>ไมโครโฟนไม่พร้อมใช้งาน</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>ไม่</value>

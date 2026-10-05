@@ -2447,6 +2447,9 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Bitrate video (kbps):</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>Microfono predefinito</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Usa il registratore dello schermo integrato</value>
   </data>
@@ -2456,8 +2459,14 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
     <value>Registra il microfono</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>Microfono:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>Registra l’audio di sistema</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>Microfono non disponibile</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>No</value>

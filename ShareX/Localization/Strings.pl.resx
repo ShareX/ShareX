@@ -2447,6 +2447,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Przepływność wideo (kbps):</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>Domyślny mikrofon</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Używaj wbudowanego rejestratora ekranu</value>
   </data>
@@ -2456,8 +2459,14 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
     <value>Nagrywaj mikrofon</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>Mikrofon:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>Nagrywaj dźwięk systemowy</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>Niedostępny mikrofon</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Nie</value>

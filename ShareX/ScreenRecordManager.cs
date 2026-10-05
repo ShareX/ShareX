@@ -448,6 +448,7 @@ namespace ShareX
                     VideoBitrate = settings.CaptureSettings.ScreenRecordVideoBitrate * 1000,
                     CaptureSystemAudio = settings.CaptureSettings.ScreenRecordSystemAudio,
                     CaptureMicrophone = settings.CaptureSettings.ScreenRecordMicrophone,
+                    MicrophoneDeviceId = settings.CaptureSettings.ScreenRecordMicrophoneDeviceId,
                     RequireHardwareEncoder = settings.CaptureSettings.ScreenRecordRequireHardwareEncoder,
                     IncludeCursor = settings.CaptureSettings.ScreenRecordShowCursor,
                     Duration = settings.CaptureSettings.ScreenRecordFixedDuration ? TimeSpan.FromSeconds(settings.CaptureSettings.ScreenRecordDuration) : TimeSpan.Zero

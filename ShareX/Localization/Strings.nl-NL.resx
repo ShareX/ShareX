@@ -2447,6 +2447,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
     <value>Videobitsnelheid (kbps):</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>Standaardmicrofoon</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Ingebouwde schermrecorder gebruiken</value>
   </data>
@@ -2456,8 +2459,14 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
     <value>Microfoon opnemen</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>Microfoon:</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
     <value>Systeemaudio opnemen</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>Niet-beschikbare microfoon</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>Nee</value>
