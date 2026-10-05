@@ -489,7 +489,7 @@ namespace ShareX
         }
 
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
-            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default,
+            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Adaptive,
             SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420)
         {
             return SaveImageAsStream(img, imageFormat, pngBitDepth, jpegQuality, gifQuality,

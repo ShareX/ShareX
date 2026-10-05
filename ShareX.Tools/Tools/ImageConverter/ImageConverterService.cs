@@ -89,7 +89,7 @@ public static class ImageConverterService
     public static ImageConverterPreview CreatePreview(string filePath, ImageConverterOutputFormat format,
         int quality, SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
         SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
-        GIFQuality gifQuality = GIFQuality.Default)
+        GIFQuality gifQuality = GIFQuality.Adaptive)
     {
         using SKBitmap? source = LoadImage(filePath);
         if (source == null)
@@ -115,7 +115,7 @@ public static class ImageConverterService
     public static void Save(SKBitmap image, string filePath, ImageConverterOutputFormat format, int quality,
         SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
         SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
-        GIFQuality gifQuality = GIFQuality.Default)
+        GIFQuality gifQuality = GIFQuality.Adaptive)
     {
         using SKData data = Encode(image, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality);
         FileHelpers.CreateDirectoryFromFilePath(filePath);

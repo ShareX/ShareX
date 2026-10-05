@@ -71,7 +71,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     private int _selectedJpegSubsamplingIndex;
 
     [ObservableProperty]
-    private int _selectedGifQualityIndex;
+    private int _selectedGifQualityIndex = Array.IndexOf(GifQualities, GIFQuality.Adaptive);
 
     [ObservableProperty]
     private AvaloniaColor _backgroundColor = AvaloniaColor.FromRgb(255, 255, 255);

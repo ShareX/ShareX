@@ -47,7 +47,7 @@ namespace ShareX.HelpersLib
             Loop = loop;
         }
 
-        public void AddFrame(string path, GIFQuality quality = GIFQuality.Default)
+        public void AddFrame(string path, GIFQuality quality = GIFQuality.Adaptive)
         {
             using (SKBitmap bmp = SkiaImageHelpers.LoadImage(path))
             {
@@ -55,10 +55,10 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void AddFrame(SKBitmap bitmap, GIFQuality quality = GIFQuality.Default)
+        public void AddFrame(SKBitmap bitmap, GIFQuality quality = GIFQuality.Adaptive)
             => AddFrame(bitmap, Delay, quality);
 
-        public void AddFrame(SKBitmap bitmap, int delay, GIFQuality quality = GIFQuality.Default)
+        public void AddFrame(SKBitmap bitmap, int delay, GIFQuality quality = GIFQuality.Adaptive)
             => AddFrame(SkiaImageHelpers.Quantize(bitmap, quality), delay);
 
         public void AddFrame(IndexedImage image) => AddFrame(image, Delay);

@@ -161,7 +161,7 @@ public static partial class SkiaImageHelpers
         return stream;
     }
 
-    public static IndexedImage Quantize(SKBitmap bitmap, GIFQuality quality = GIFQuality.Default)
+    public static IndexedImage Quantize(SKBitmap bitmap, GIFQuality quality = GIFQuality.Adaptive)
     {
         if (quality == GIFQuality.Adaptive)
         {
@@ -274,7 +274,7 @@ public static partial class SkiaImageHelpers
 
     public static void Save(this SKBitmap bitmap, Stream stream, SKEncodedImageFormat format, int quality = 100)
     {
-        if (format == SKEncodedImageFormat.Gif) { SaveGIF(bitmap, stream, GIFQuality.Default); return; }
+        if (format == SKEncodedImageFormat.Gif) { SaveGIF(bitmap, stream, GIFQuality.Adaptive); return; }
         if (format == SKEncodedImageFormat.Bmp) { SaveBMP(bitmap, stream); return; }
         using SKImage image = SKImage.FromBitmap(bitmap);
         using SKData data = image.Encode(format, Math.Clamp(quality, 0, 100));

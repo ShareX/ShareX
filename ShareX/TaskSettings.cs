@@ -343,7 +343,7 @@ namespace ShareX
         public SKPngEncoderFilterFlags ImagePNGFilter = SKPngEncoderFilterFlags.AllFilters;
         public int ImageJPEGQuality = 90;
         public SKJpegEncoderDownsample ImageJPEGSubsampling = SKJpegEncoderDownsample.Downsample420;
-        public GIFQuality ImageGIFQuality = GIFQuality.Default;
+        public GIFQuality ImageGIFQuality = GIFQuality.Adaptive;
         public bool ImageAutoUseJPEG = true;
         public int ImageAutoUseJPEGSize = 2048;
         public bool ImageAutoJPEGQuality = false;
