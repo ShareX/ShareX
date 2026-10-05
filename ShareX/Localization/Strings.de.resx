@@ -2144,6 +2144,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>Bei Bildschirmaufnahme automatisch ausblenden</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP-Bittiefe:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>Stärke der Hintergrundabdunklung (%):</value>
   </data>

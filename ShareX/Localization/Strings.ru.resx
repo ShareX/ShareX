@@ -2144,6 +2144,9 @@
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>Автоматически скрывать при захвате экрана</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>Глубина цвета BMP:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>Степень затемнения фона (%):</value>
   </data>

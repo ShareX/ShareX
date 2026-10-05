@@ -2144,6 +2144,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>Ocultar automáticamente durante la captura de pantalla</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>Profundidad de bits BMP:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>Intensidad de oscurecimiento del fondo (%):</value>
   </data>

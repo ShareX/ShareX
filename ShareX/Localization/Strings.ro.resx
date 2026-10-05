@@ -2144,6 +2144,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>Ascunde automat la capturarea ecranului</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>Adâncime de biți BMP:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>Intensitatea întunecării fundalului (%):</value>
   </data>

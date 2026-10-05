@@ -2144,6 +2144,9 @@
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>屏幕捕获时自动隐藏</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP 位深度：</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>背景变暗强度（%）：</value>
   </data>

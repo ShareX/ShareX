@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>Початок</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>Автоматичне визначення</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 біт</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 біт</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>Пунктир</value>
   </data>

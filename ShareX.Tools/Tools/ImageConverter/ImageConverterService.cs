@@ -90,7 +90,8 @@ public static class ImageConverterService
     public static ImageConverterPreview CreatePreview(string filePath, ImageConverterOutputFormat format,
         int quality, SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
         SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
-        GIFQuality gifQuality = GIFQuality.Adaptive)
+        GIFQuality gifQuality = GIFQuality.Adaptive, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
+        BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24)
     {
         using SKBitmap? source = LoadImage(filePath);
         if (source == null)
@@ -100,7 +101,7 @@ public static class ImageConverterService
 
         SKSizeI previewSize = GetPreviewSize(new SKSizeI(source.Width, source.Height));
         using SKBitmap preview = CreatePreviewBitmap(source, previewSize);
-        using SKData data = Encode(preview, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality);
+        using SKData data = Encode(preview, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality, pngBitDepth, bmpBitDepth);
         return new ImageConverterPreview(data.ToArray(), source.Width, source.Height);
     }
 
@@ -117,9 +118,10 @@ public static class ImageConverterService
     public static void Save(SKBitmap image, string filePath, ImageConverterOutputFormat format, int quality,
         SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
         SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
-        GIFQuality gifQuality = GIFQuality.Adaptive)
+        GIFQuality gifQuality = GIFQuality.Adaptive, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
+        BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24)
     {
-        using SKData data = Encode(image, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality);
+        using SKData data = Encode(image, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality, pngBitDepth, bmpBitDepth);
         FileHelpers.CreateDirectoryFromFilePath(filePath);
         using FileStream stream = new(filePath, FileMode.Create, FileAccess.Write, FileShare.Read);
         data.SaveTo(stream);
@@ -127,8 +129,17 @@ public static class ImageConverterService
 
     private static SKData Encode(SKBitmap bitmap, ImageConverterOutputFormat format, int quality,
         SKColor backgroundColor, SKPngEncoderOptions? pngOptions, SKJpegEncoderDownsample jpegSubsampling,
-        GIFQuality gifQuality)
+        GIFQuality gifQuality, PNGBitDepth pngBitDepth, BMPBitDepth bmpBitDepth)
     {
+        if (format == ImageConverterOutputFormat.Png)
+        {
+            using SKBitmap? flattened = pngBitDepth == PNGBitDepth.Bit24 ? FlattenBackground(bitmap, backgroundColor) : null;
+            using MemoryStream stream = new();
+            SkiaImageHelpers.SavePNG(flattened ?? bitmap, stream, pngBitDepth, long.MaxValue,
+                pngOptions ?? new SKPngEncoderOptions(SKPngEncoderFilterFlags.AllFilters, 1));
+            return SKData.CreateCopy(stream.ToArray());
+        }
+
         if (format == ImageConverterOutputFormat.Gif)
         {
             using MemoryStream stream = SkiaImageHelpers.SaveGIF(bitmap, gifQuality);
@@ -137,27 +148,21 @@ public static class ImageConverterService
 
         if (format == ImageConverterOutputFormat.Bmp)
         {
-            using SKBitmap flattened = FlattenBackground(bitmap, backgroundColor);
+            using SKBitmap? flattened = bmpBitDepth == BMPBitDepth.Bit24 ? FlattenBackground(bitmap, backgroundColor) : null;
             using MemoryStream stream = new();
-            flattened.Save(stream, SKEncodedImageFormat.Bmp);
+            SkiaImageHelpers.SaveBMP(flattened ?? bitmap, stream, bmpBitDepth);
             return SKData.CreateCopy(stream.ToArray());
         }
 
         SKEncodedImageFormat encodedFormat = format switch
         {
-            ImageConverterOutputFormat.Png => SKEncodedImageFormat.Png,
             ImageConverterOutputFormat.Jpeg => SKEncodedImageFormat.Jpeg,
             ImageConverterOutputFormat.Webp => SKEncodedImageFormat.Webp,
             _ => throw new ArgumentOutOfRangeException(nameof(format))
         };
 
         SKData? data;
-        if (format == ImageConverterOutputFormat.Png)
-        {
-            using SKPixmap pixels = bitmap.PeekPixels();
-            data = pixels.Encode(pngOptions ?? new SKPngEncoderOptions(SKPngEncoderFilterFlags.AllFilters, 1));
-        }
-        else if (format == ImageConverterOutputFormat.Jpeg)
+        if (format == ImageConverterOutputFormat.Jpeg)
         {
             using SKBitmap flattened = FlattenBackground(bitmap, backgroundColor);
             using SKPixmap pixels = flattened.PeekPixels();

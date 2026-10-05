@@ -181,6 +181,8 @@ ShareX.HelpersLib|OutputBoxWindow_Title|35111740caa52dcbad5322be0104f4da4be82530
 ShareX.HelpersLib|PastebinExpiration_M10|d299ea16814ddf362b77471978022280d97ca1de310ec60bd50b27d8976ca3d3|fr
 ShareX.HelpersLib|PastebinExpiration_W1|27168bf32233c8fcdb27c5f2725e980d8fb0fc19b71eafed641f923a2e6eeabf|nl-NL
 ShareX.HelpersLib|PastebinPrivacy_Public|591935b15b1c88e2d5f6be0a054604fcf36f0585a6f51098fa3803826fff278c|fr,ro
+ShareX.HelpersLib|BMPBitDepth_Bit24|05866fc114d36dd038b86294fa2a3d5f8ff0b144b0878697af3774c698827328|da,de,es-MX,id-ID,it-IT,ja-JP,nl-NL,pt-BR,pt-PT,ro,tr,vi-VN
+ShareX.HelpersLib|BMPBitDepth_Bit32|4d5858ae0c310ca95f41d7637948d426ad3b8839b35f0676602c5979cef1b6ab|da,de,es-MX,id-ID,it-IT,ja-JP,nl-NL,pt-BR,pt-PT,tr,vi-VN
 ShareX.HelpersLib|PNGBitDepth_Bit24|05866fc114d36dd038b86294fa2a3d5f8ff0b144b0878697af3774c698827328|da,de,es-MX,id-ID,it-IT,ja-JP,nl-NL,pt-BR,pt-PT,ro,tr,vi-VN
 ShareX.HelpersLib|PNGBitDepth_Bit32|4d5858ae0c310ca95f41d7637948d426ad3b8839b35f0676602c5979cef1b6ab|da,de,es-MX,id-ID,it-IT,ja-JP,nl-NL,pt-BR,pt-PT,tr,vi-VN
 ShareX.HelpersLib|PrintWindow_Margin|fd72e15fb51b1938213584f4e4126fdeae37402555a9daaf6d1063d29ea8f92d|id-ID

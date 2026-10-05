@@ -90,6 +90,10 @@
                                                MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                                 </Grid>
                                 <StackPanel x:Name="PngOptionsPanel" Grid.Row="2" Spacing="8" IsVisible="{Binding IsPng}">
+                                    <TextBlock Classes="row-label"
+                                               Text="{x:Static localization:Strings.ImageConverterWindow_PNGBitDepth}"/>
+                                    <ComboBox x:Name="PngBitDepthBox" ItemsSource="{Binding PngBitDepthOptions}"
+                                              SelectedIndex="{Binding SelectedPngBitDepthIndex, Mode=TwoWay}"/>
                                     <TextBlock Classes="row-label" TextWrapping="Wrap"
                                                ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionHint}"
                                                Text="{x:Static localization:Strings.ImageConverterWindow_PNGCompressionLevel}"/>
@@ -100,6 +104,12 @@
                                                Text="{x:Static localization:Strings.ImageConverterWindow_PNGFilter}"/>
                                     <ComboBox x:Name="PngFilterBox" ItemsSource="{Binding PngFilterOptions}"
                                               SelectedIndex="{Binding SelectedPngFilterIndex, Mode=TwoWay}"/>
+                                </StackPanel>
+                                <StackPanel x:Name="BmpOptionsPanel" Grid.Row="2" Spacing="8" IsVisible="{Binding IsBmp}">
+                                    <TextBlock Classes="row-label"
+                                               Text="{x:Static localization:Strings.ImageConverterWindow_BMPBitDepth}"/>
+                                    <ComboBox x:Name="BmpBitDepthBox" ItemsSource="{Binding BmpBitDepthOptions}"
+                                              SelectedIndex="{Binding SelectedBmpBitDepthIndex, Mode=TwoWay}"/>
                                 </StackPanel>
                                 <StackPanel x:Name="GifOptionsPanel" Grid.Row="2" Spacing="8" IsVisible="{Binding IsGif}">
                                     <TextBlock Classes="row-label"

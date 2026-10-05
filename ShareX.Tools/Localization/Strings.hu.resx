@@ -913,6 +913,9 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>Nem sikerült a képet {0} formátumba kódolni.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP bitmélység:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Képek átalakítása</value>
   </data>
@@ -933,6 +936,9 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>A 4:4:4 több színrészletet őriz meg a szöveg és az éles szélek körül, de általában nagyobb fájlokat eredményez.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG bitmélység:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = nincs tömörítés, 1 = leggyorsabb, 9 = legkisebb fájlok. Minden szint veszteségmentes.</value>

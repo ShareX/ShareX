@@ -2144,6 +2144,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>Ocultar automaticamente durante a captura de tela</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>Profundidade de bits BMP:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>Intensidade de escurecimento do fundo (%):</value>
   </data>

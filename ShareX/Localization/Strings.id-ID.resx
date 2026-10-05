@@ -2144,6 +2144,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>Sembunyikan otomatis saat menangkap layar</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>Kedalaman bit BMP:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>Kekuatan peredupan latar belakang (%):</value>
   </data>

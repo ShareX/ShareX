@@ -917,6 +917,9 @@ Dateipfad: {0}</value>
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>Das Bild konnte nicht als {0} kodiert werden.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP-Bittiefe:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Bilder konvertieren</value>
   </data>
@@ -937,6 +940,9 @@ Dateipfad: {0}</value>
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 erhält mehr Farbdetails an Text und scharfen Kanten, erzeugt aber meist größere Dateien.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG-Bittiefe:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = keine Komprimierung, 1 = am schnellsten, 9 = kleinste Dateien. Alle Stufen sind verlustfrei.</value>

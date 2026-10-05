@@ -2144,6 +2144,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>Ekran yakalarken otomatik olarak gizle</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP bit derinliği:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>Arka plan karartma gücü (%):</value>
   </data>

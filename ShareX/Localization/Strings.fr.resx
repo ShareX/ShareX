@@ -2144,6 +2144,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>Masquer automatiquement lors d’une capture d’écran</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>Profondeur de bits BMP :</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>Intensité d’assombrissement de l’arrière-plan (%) :</value>
   </data>

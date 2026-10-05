@@ -2144,6 +2144,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>Automaticky skrýt při zachytávání obrazovky</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>Bitová hloubka BMP:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>Síla ztlumení pozadí (%):</value>
   </data>

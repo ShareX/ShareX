@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>بدء</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>اكتشاف تلقائي</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24-بت</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32-بت</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>شَرطة</value>
   </data>

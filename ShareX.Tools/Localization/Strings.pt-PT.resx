@@ -917,6 +917,9 @@ Caminho do ficheiro: {0}</value>
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>Não foi possível codificar a imagem como {0}.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>Profundidade de bits BMP:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Converter imagens</value>
   </data>
@@ -937,6 +940,9 @@ Caminho do ficheiro: {0}</value>
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 preserva mais detalhes de cor em torno do texto e dos contornos nítidos, mas geralmente produz ficheiros maiores.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>Profundidade de bits PNG:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = sem compressão, 1 = mais rápido, 9 = ficheiros menores. Todos os níveis são sem perdas.</value>

@@ -2144,6 +2144,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>Tự động ẩn khi chụp màn hình</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>Độ sâu bit BMP:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>Cường độ làm tối nền (%):</value>
   </data>

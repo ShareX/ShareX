@@ -2144,6 +2144,9 @@
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>הסתרה אוטומטית בעת לכידת מסך</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>עומק סיביות BMP:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>עוצמת עמעום הרקע (%):</value>
   </data>

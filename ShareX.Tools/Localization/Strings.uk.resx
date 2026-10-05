@@ -913,6 +913,9 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>Не вдалося закодувати зображення у форматі {0}.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>Глибина кольору BMP:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Перетворити зображення</value>
   </data>
@@ -933,6 +936,9 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 зберігає більше колірних деталей навколо тексту й чітких меж, але зазвичай створює файли більшого розміру.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>Глибина кольору PNG:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = без стиснення, 1 = найшвидше, 9 = найменші файли. Усі рівні забезпечують стиснення без втрат.</value>

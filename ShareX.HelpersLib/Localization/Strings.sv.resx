@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>Starta</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>Identifiera automatiskt</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 bitar</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 bitar</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>Streckad</value>
   </data>

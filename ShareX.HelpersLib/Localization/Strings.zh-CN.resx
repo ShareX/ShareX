@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>起点</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>自动检测</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 位</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 位</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>虚线</value>
   </data>

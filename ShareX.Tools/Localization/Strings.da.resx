@@ -917,6 +917,9 @@ Filsti: {0}</value>
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>Billedet kunne ikke kodes som {0}.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP-bitdybde:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Konvertér billeder</value>
   </data>
@@ -937,6 +940,9 @@ Filsti: {0}</value>
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 bevarer flere farvedetaljer omkring tekst og skarpe kanter, men giver normalt større filer.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG-bitdybde:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = ingen komprimering, 1 = hurtigst, 9 = mindste filer. Alle niveauer er tabsfrie.</value>

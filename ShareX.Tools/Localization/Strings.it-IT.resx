@@ -917,6 +917,9 @@ Percorso file: {0}</value>
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>Impossibile codificare l'immagine in formato {0}.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>Profondità colore BMP:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Converti immagini</value>
   </data>
@@ -937,6 +940,9 @@ Percorso file: {0}</value>
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 conserva più dettagli cromatici intorno al testo e ai bordi netti, ma in genere produce file più grandi.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>Profondità colore PNG:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = nessuna compressione, 1 = più veloce, 9 = file più piccoli. Tutti i livelli sono senza perdita.</value>

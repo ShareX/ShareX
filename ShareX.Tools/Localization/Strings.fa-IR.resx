@@ -913,6 +913,9 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>رمزگذاری تصویر با قالب {0} ناموفق بود.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>عمق بیت BMP:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>تبدیل تصاویر</value>
   </data>
@@ -933,6 +936,9 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 جزئیات رنگی بیشتری را در اطراف متن و لبه‌های تیز حفظ می‌کند، اما معمولاً فایل‌های بزرگ‌تری ایجاد می‌کند.</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>عمق بیت PNG:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = بدون فشرده‌سازی، 1 = سریع‌ترین، 9 = کوچک‌ترین فایل‌ها. همهٔ سطوح بدون افت کیفیت هستند.</value>

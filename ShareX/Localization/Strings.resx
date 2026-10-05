@@ -2516,6 +2516,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_OverrideUploadSettings" xml:space="preserve">
     <value>Override upload settings</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP bit depth:</value>
+  </data>
   <data name="TaskSettingsWindow_PNGBitDepth" xml:space="preserve">
     <value>PNG bit depth:</value>
   </data>

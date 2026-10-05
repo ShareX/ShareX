@@ -1021,6 +1021,15 @@ namespace ShareX.HelpersLib.Localization {
         public static string PastebinPrivacy_Unlisted {
             get { return ResourceManager.GetString("PastebinPrivacy_Unlisted", resourceCulture); }
         }
+        public static string BMPBitDepth_Automatic {
+            get { return ResourceManager.GetString("BMPBitDepth_Automatic", resourceCulture); }
+        }
+        public static string BMPBitDepth_Bit24 {
+            get { return ResourceManager.GetString("BMPBitDepth_Bit24", resourceCulture); }
+        }
+        public static string BMPBitDepth_Bit32 {
+            get { return ResourceManager.GetString("BMPBitDepth_Bit32", resourceCulture); }
+        }
         public static string PNGBitDepth_Automatic {
             get { return ResourceManager.GetString("PNGBitDepth_Automatic", resourceCulture); }
         }

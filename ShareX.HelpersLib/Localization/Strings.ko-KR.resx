@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>시작</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>자동 감지</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24비트</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32비트</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>파선</value>
   </data>

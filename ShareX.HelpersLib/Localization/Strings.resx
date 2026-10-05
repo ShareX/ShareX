@@ -939,6 +939,15 @@ Do you still want to run it?</value>
   <data name="OutputBoxWindow_Title" xml:space="preserve">
     <value>ShareX - {0}</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>Automatically detect</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 bit</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 bit</value>
+  </data>
   <data name="PNGBitDepth_Automatic" xml:space="preserve">
     <value>Automatically detect</value>
   </data>

@@ -420,7 +420,7 @@ namespace ShareX
             imageData.ImageStream = SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
                 taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
                 GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling,
-                autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
+                taskSettings.ImageSettings.ImageBMPBitDepth, autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
             imageData.ImageFormat = imageFormat;
 
             if (autoUseJPEG && (pngSizeLimitExceeded || imageData.ImageStream.Length > jpegSizeLimit))
@@ -474,7 +474,8 @@ namespace ShareX
         {
             return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
                 taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
-                GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling, long.MaxValue, out _);
+                GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling,
+                taskSettings.ImageSettings.ImageBMPBitDepth, long.MaxValue, out _);
         }
 
         private static SKPngEncoderOptions GetPNGEncoderOptions(TaskSettingsImage settings)
@@ -490,15 +491,16 @@ namespace ShareX
 
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
             int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Adaptive,
-            SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420)
+            SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
+            BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24)
         {
             return SaveImageAsStream(img, imageFormat, pngBitDepth, jpegQuality, gifQuality,
-                SKPngEncoderOptions.Default, jpegSubsampling, long.MaxValue, out _);
+                SKPngEncoderOptions.Default, jpegSubsampling, bmpBitDepth, long.MaxValue, out _);
         }
 
         private static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth,
             int jpegQuality, GIFQuality gifQuality, SKPngEncoderOptions pngOptions, SKJpegEncoderDownsample jpegSubsampling,
-            long pngSizeLimit, out bool pngSizeLimitExceeded)
+            BMPBitDepth bmpBitDepth, long pngSizeLimit, out bool pngSizeLimitExceeded)
         {
             MemoryStream ms = new MemoryStream();
             pngSizeLimitExceeded = false;
@@ -533,7 +535,7 @@ namespace ShareX
                         SkiaImageHelpers.SaveGIF(img, ms, gifQuality);
                         break;
                     case EImageFormat.BMP:
-                        img.Save(ms, ImageFormat.Bmp);
+                        SkiaImageHelpers.SaveBMP(img, ms, bmpBitDepth);
                         break;
                 }
             }

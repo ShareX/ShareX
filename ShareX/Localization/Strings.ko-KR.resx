@@ -2144,6 +2144,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>화면 캡처 시 자동으로 숨기기</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP 비트 깊이:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>배경 어둡기 강도(%):</value>
   </data>

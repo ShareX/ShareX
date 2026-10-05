@@ -917,6 +917,9 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>छवि को {0} प्रारूप में एन्कोड नहीं किया जा सका।</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP बिट गहराई:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>छवियाँ रूपांतरित करें</value>
   </data>
@@ -937,6 +940,9 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 पाठ और तीखे किनारों के आसपास रंग के अधिक विवरण सुरक्षित रखता है, लेकिन आम तौर पर बड़ी फ़ाइलें बनाता है।</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG बिट गहराई:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = कोई संपीड़न नहीं, 1 = सबसे तेज़, 9 = सबसे छोटी फ़ाइलें। सभी स्तरों पर गुणवत्ता बनी रहती है।</value>

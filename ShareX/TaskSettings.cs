@@ -339,6 +339,7 @@ namespace ShareX
 
         public EImageFormat ImageFormat = EImageFormat.PNG;
         public PNGBitDepth ImagePNGBitDepth = PNGBitDepth.Default;
+        public BMPBitDepth ImageBMPBitDepth = BMPBitDepth.Bit24;
         public int ImagePNGCompressionLevel = 1;
         public SKPngEncoderFilterFlags ImagePNGFilter = SKPngEncoderFilterFlags.AllFilters;
         public int ImageJPEGQuality = 90;

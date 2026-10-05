@@ -2510,6 +2510,20 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to PNG bit depth:.
+        /// </summary>
+        public static string ImageConverterWindow_PNGBitDepth {
+            get { return ResourceManager.GetString("ImageConverterWindow_PNGBitDepth", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to BMP bit depth:.
+        /// </summary>
+        public static string ImageConverterWindow_BMPBitDepth {
+            get { return ResourceManager.GetString("ImageConverterWindow_BMPBitDepth", resourceCulture); }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to PNG compression level:.
         /// </summary>
         public static string ImageConverterWindow_PNGCompressionLevel {

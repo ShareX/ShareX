@@ -83,6 +83,7 @@ $projects = @(
             'EDataType_'
             'FileDestination_'
             'FileExistAction_'
+            'BMPBitDepth_'
             'GIFQuality_'
             'HotkeyType_'
             'ImageDestination_'

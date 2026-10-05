@@ -282,14 +282,27 @@ public static partial class SkiaImageHelpers
         data.SaveTo(stream);
     }
 
-    private static void SaveBMP(SKBitmap bitmap, Stream stream)
+    public static void SaveBMP(SKBitmap bitmap, Stream stream, BMPBitDepth depth = BMPBitDepth.Bit24)
     {
-        int stride = checked((bitmap.Width * 3 + 3) / 4 * 4);
+        bool alpha = depth == BMPBitDepth.Bit32 || depth == BMPBitDepth.Automatic &&
+            bitmap.AlphaType != SKAlphaType.Opaque && IsImageTransparent(bitmap);
+        int bytesPerPixel = alpha ? 4 : 3;
+        int stride = checked((checked(bitmap.Width * bytesPerPixel) + 3) / 4 * 4);
+        int headerSize = alpha ? 108 : 40;
+        int pixelOffset = 14 + headerSize;
+        int pixelSize = checked(stride * bitmap.Height);
         using BinaryWriter writer = new(stream, System.Text.Encoding.UTF8, true);
-        writer.Write((ushort)0x4D42); writer.Write(checked(54 + stride * bitmap.Height));
-        writer.Write(0); writer.Write(54); writer.Write(40); writer.Write(bitmap.Width); writer.Write(bitmap.Height);
-        writer.Write((ushort)1); writer.Write((ushort)24); writer.Write(0); writer.Write(checked(stride * bitmap.Height));
+        writer.Write((ushort)0x4D42); writer.Write(checked(pixelOffset + pixelSize));
+        writer.Write(0); writer.Write(pixelOffset); writer.Write(headerSize); writer.Write(bitmap.Width); writer.Write(bitmap.Height);
+        writer.Write((ushort)1); writer.Write((ushort)(bytesPerPixel * 8)); writer.Write(alpha ? 3 : 0); writer.Write(pixelSize);
         writer.Write(3780); writer.Write(3780); writer.Write(0); writer.Write(0);
+        if (alpha)
+        {
+            // BITMAPV4HEADER declares the alpha mask so decoders preserve transparency.
+            writer.Write(0x00FF0000u); writer.Write(0x0000FF00u); writer.Write(0x000000FFu); writer.Write(0xFF000000u);
+            writer.Write(0x73524742u); // LCS_sRGB
+            writer.Write(new byte[48]); // Unused color endpoints and gamma values.
+        }
         using SkiaPixelBuffer pixels = new(bitmap, true, PixelAccess.ReadOnly);
         byte[] row = new byte[stride];
         for (int y = bitmap.Height - 1; y >= 0; y--)
@@ -297,7 +310,9 @@ public static partial class SkiaImageHelpers
             for (int x = 0; x < bitmap.Width; x++)
             {
                 ColorBgra color = pixels.GetPixel(x, y);
-                row[x * 3] = color.Blue; row[x * 3 + 1] = color.Green; row[x * 3 + 2] = color.Red;
+                int offset = x * bytesPerPixel;
+                row[offset] = color.Blue; row[offset + 1] = color.Green; row[offset + 2] = color.Red;
+                if (alpha) row[offset + 3] = color.Alpha;
             }
             writer.Write(row);
         }
@@ -394,7 +409,10 @@ public static partial class SkiaImageHelpers
         using SizeLimitedWStream output = new(stream, sizeLimit);
         bool encoded;
 
-        if (depth == PNGBitDepth.Bit24 || depth == PNGBitDepth.Automatic && !IsImageTransparent(bitmap))
+        bool opaqueOutput = depth == PNGBitDepth.Bit24 || depth == PNGBitDepth.Automatic &&
+            (bitmap.AlphaType == SKAlphaType.Opaque || !IsImageTransparent(bitmap));
+        if (opaqueOutput && (bitmap.AlphaType != SKAlphaType.Opaque ||
+            bitmap.ColorType is not (SKColorType.Bgra8888 or SKColorType.Rgba8888)))
         {
             using SKBitmap opaque = new(new SKImageInfo(bitmap.Width, bitmap.Height, SKColorType.Bgra8888, SKAlphaType.Opaque));
             using (SkiaPixelBuffer source = new(bitmap, true, PixelAccess.ReadOnly))
@@ -406,6 +424,16 @@ public static partial class SkiaImageHelpers
                 }
             }
             using SKPixmap pixels = opaque.PeekPixels();
+            encoded = pixels.Encode(output, options);
+        }
+        else if (depth == PNGBitDepth.Bit32)
+        {
+            using SKBitmap rgba = new(new SKImageInfo(bitmap.Width, bitmap.Height, SKColorType.Bgra8888,
+                SKAlphaType.Unpremul, bitmap.ColorSpace));
+            using SKPixmap source = bitmap.PeekPixels();
+            if (!source.ReadPixels(rgba.Info, rgba.GetPixels(), rgba.RowBytes))
+                throw new InvalidDataException("Unable to read image pixels.");
+            using SKPixmap pixels = rgba.PeekPixels();
             encoded = pixels.Encode(output, options);
         }
         else

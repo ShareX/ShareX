@@ -2144,6 +2144,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>Skjul automatisk ved skærmbilledeoptagelse</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP-bitdybde:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>Styrke for nedtoning af baggrund (%):</value>
   </data>

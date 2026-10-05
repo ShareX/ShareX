@@ -920,6 +920,12 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Image converter</value>
   </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG bit depth:</value>
+  </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP bit depth:</value>
+  </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = no compression, 1 = fastest, 9 = smallest files. All levels are lossless.</value>
   </data>

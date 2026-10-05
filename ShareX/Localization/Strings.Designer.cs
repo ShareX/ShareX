@@ -2817,6 +2817,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ImageFormat", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_BMPBitDepth {
+            get { return ResourceManager.GetString("TaskSettingsWindow_BMPBitDepth", resourceCulture); }
+        }
         public static string TaskSettingsWindow_PNGBitDepth {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_PNGBitDepth", resourceCulture);

@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>เริ่ม</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>โดยอัตโนมัติ ตรวจจับ</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 บิต</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 บิต</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>เส้นประ</value>
   </data>
