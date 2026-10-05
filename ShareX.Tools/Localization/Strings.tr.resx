@@ -971,6 +971,12 @@ Dosya yolu: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (üstteki piksel)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Sıkıştırma çabası:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Düşük değerler daha hızlı kodlama sağlar. Yüksek değerler daha küçük dosyalar üretir. Tüm değerler görüntü kalitesini korur.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Doldur</value>
   </data>

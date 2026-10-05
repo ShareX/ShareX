@@ -967,6 +967,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (הפיקסל מעל)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>מאמץ דחיסה:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>ערכים נמוכים מאפשרים קידוד מהיר יותר. ערכים גבוהים יוצרים קבצים קטנים יותר. כל הערכים שומרים על איכות התמונה.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>מילוי</value>
   </data>

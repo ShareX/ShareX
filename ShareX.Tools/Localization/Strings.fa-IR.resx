@@ -967,6 +967,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (پیکسل بالا)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>تلاش فشرده‌سازی:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>مقادیر کمتر، رمزگذاری را سریع‌تر می‌کنند. مقادیر بیشتر، فایل‌های کوچک‌تری تولید می‌کنند. همهٔ مقادیر کیفیت تصویر را حفظ می‌کنند.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>پر کردن</value>
   </data>

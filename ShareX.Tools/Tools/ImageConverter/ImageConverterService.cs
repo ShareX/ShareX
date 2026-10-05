@@ -91,7 +91,8 @@ public static class ImageConverterService
         int quality, SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
         SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
         GIFQuality gifQuality = GIFQuality.Adaptive, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
-        BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24)
+        BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24,
+        SKWebpEncoderCompression webpCompression = SKWebpEncoderCompression.Lossy)
     {
         using SKBitmap? source = LoadImage(filePath);
         if (source == null)
@@ -101,7 +102,8 @@ public static class ImageConverterService
 
         SKSizeI previewSize = GetPreviewSize(new SKSizeI(source.Width, source.Height));
         using SKBitmap preview = CreatePreviewBitmap(source, previewSize);
-        using SKData data = Encode(preview, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality, pngBitDepth, bmpBitDepth);
+        using SKData data = Encode(preview, format, quality, backgroundColor, pngOptions, jpegSubsampling,
+            gifQuality, pngBitDepth, bmpBitDepth, webpCompression);
         return new ImageConverterPreview(data.ToArray(), source.Width, source.Height);
     }
 
@@ -119,9 +121,11 @@ public static class ImageConverterService
         SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
         SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
         GIFQuality gifQuality = GIFQuality.Adaptive, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
-        BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24)
+        BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24,
+        SKWebpEncoderCompression webpCompression = SKWebpEncoderCompression.Lossy)
     {
-        using SKData data = Encode(image, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality, pngBitDepth, bmpBitDepth);
+        using SKData data = Encode(image, format, quality, backgroundColor, pngOptions, jpegSubsampling,
+            gifQuality, pngBitDepth, bmpBitDepth, webpCompression);
         FileHelpers.CreateDirectoryFromFilePath(filePath);
         using FileStream stream = new(filePath, FileMode.Create, FileAccess.Write, FileShare.Read);
         data.SaveTo(stream);
@@ -129,7 +133,7 @@ public static class ImageConverterService
 
     private static SKData Encode(SKBitmap bitmap, ImageConverterOutputFormat format, int quality,
         SKColor backgroundColor, SKPngEncoderOptions? pngOptions, SKJpegEncoderDownsample jpegSubsampling,
-        GIFQuality gifQuality, PNGBitDepth pngBitDepth, BMPBitDepth bmpBitDepth)
+        GIFQuality gifQuality, PNGBitDepth pngBitDepth, BMPBitDepth bmpBitDepth, SKWebpEncoderCompression webpCompression)
     {
         if (format == ImageConverterOutputFormat.Png)
         {
@@ -154,13 +158,6 @@ public static class ImageConverterService
             return SKData.CreateCopy(stream.ToArray());
         }
 
-        SKEncodedImageFormat encodedFormat = format switch
-        {
-            ImageConverterOutputFormat.Jpeg => SKEncodedImageFormat.Jpeg,
-            ImageConverterOutputFormat.Webp => SKEncodedImageFormat.Webp,
-            _ => throw new ArgumentOutOfRangeException(nameof(format))
-        };
-
         SKData? data;
         if (format == ImageConverterOutputFormat.Jpeg)
         {
@@ -168,10 +165,14 @@ public static class ImageConverterService
             using SKPixmap pixels = flattened.PeekPixels();
             data = pixels.Encode(SkiaImageHelpers.GetJPEGEncoderOptions(quality, jpegSubsampling));
         }
+        else if (format == ImageConverterOutputFormat.Webp)
+        {
+            using SKPixmap pixels = bitmap.PeekPixels();
+            data = pixels.Encode(new SKWebpEncoderOptions(webpCompression, Math.Clamp(quality, 0, 100)));
+        }
         else
         {
-            using SKImage image = SKImage.FromBitmap(bitmap);
-            data = image.Encode(encodedFormat, Math.Clamp(quality, 0, 100));
+            throw new ArgumentOutOfRangeException(nameof(format));
         }
 
         return data

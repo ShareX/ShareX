@@ -967,6 +967,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (пиксель сверху)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Усилия сжатия:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Меньшие значения ускоряют кодирование. Большие значения создают файлы меньшего размера. Все значения сохраняют качество изображения.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Заполнить</value>
   </data>

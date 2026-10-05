@@ -971,6 +971,12 @@ Bestandspad: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (pixel erboven)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Compressie-inspanning:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Lagere waarden zorgen voor snellere codering. Hogere waarden leveren kleinere bestanden op. Alle waarden behouden de beeldkwaliteit.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Vullen</value>
   </data>

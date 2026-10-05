@@ -967,6 +967,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (البكسل العلوي)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>جهد الضغط:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>القيم الأقل تجعل الترميز أسرع. القيم الأعلى تنتج ملفات أصغر. جميع القيم تحافظ على جودة الصورة.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>تعبئة</value>
   </data>

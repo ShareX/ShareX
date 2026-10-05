@@ -920,6 +920,12 @@
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Image converter</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Compression effort:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Lower values encode faster. Higher values produce smaller files. All values preserve image quality.</value>
+  </data>
   <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
     <value>PNG bit depth:</value>
   </data>

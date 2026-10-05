@@ -967,6 +967,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (piksel di atas)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Upaya kompresi:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Nilai yang lebih rendah mempercepat pengodean. Nilai yang lebih tinggi menghasilkan berkas yang lebih kecil. Semua nilai mempertahankan kualitas gambar.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Isi</value>
   </data>

@@ -967,6 +967,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (พิกเซลด้านบน)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>ความพยายามในการบีบอัด:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>ค่าที่ต่ำกว่าจะเข้ารหัสได้เร็วกว่า ค่าที่สูงกว่าจะสร้างไฟล์ที่เล็กกว่า ทุกค่ารักษาคุณภาพของภาพไว้</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>เติมเต็ม</value>
   </data>

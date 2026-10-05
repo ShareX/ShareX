@@ -971,6 +971,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up（上方像素）</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>压缩力度：</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>较低的值可加快编码速度。较高的值可生成更小的文件。所有值都会保持图像质量。</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>填充</value>
   </data>

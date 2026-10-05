@@ -84,8 +84,10 @@
                                 </Grid>
                                 <Grid Grid.Row="2" ColumnDefinitions="110,*,Auto" ColumnSpacing="10"
                                       IsVisible="{Binding HasQuality}">
-                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.VideoConverterWindow_Quality}"/>
-                                    <Slider Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Quality}"/>
+                                    <TextBlock x:Name="QualityLabel" Classes="row-label" TextWrapping="Wrap"
+                                               Text="{Binding QualityLabel}" ToolTip.Tip="{Binding QualityHint}"/>
+                                    <Slider x:Name="QualitySlider" Grid.Column="1" Minimum="0" Maximum="100"
+                                            Value="{Binding Quality}" ToolTip.Tip="{Binding QualityHint}"/>
                                     <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
                                                MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                                 </Grid>
@@ -125,6 +127,9 @@
                                               ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_JPEGSubsamplingHint}"
                                               SelectedIndex="{Binding SelectedJpegSubsamplingIndex, Mode=TwoWay}"/>
                                 </StackPanel>
+                                <CheckBox x:Name="WebpLosslessBox" Grid.Row="3" IsVisible="{Binding IsWebp}"
+                                          IsChecked="{Binding WebpLossless, Mode=TwoWay}"
+                                          Content="{x:Static localization:Strings.AnimatedGifTrimmer_Lossless}"/>
                                 <Grid Grid.Row="4" ColumnDefinitions="110,*" ColumnSpacing="10"
                                       IsVisible="{Binding HasBackgroundColor}">
                                     <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}"/>

@@ -971,6 +971,12 @@ Caminho do arquivo: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (pixel acima)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Esforço de compressão:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Valores mais baixos aceleram a codificação. Valores mais altos produzem arquivos menores. Todos os valores preservam a qualidade da imagem.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Preencher</value>
   </data>

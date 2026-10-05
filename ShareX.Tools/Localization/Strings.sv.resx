@@ -971,6 +971,12 @@ Filsökväg: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (bildpunkt ovanför)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Komprimeringsarbete:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Lägre värden ger snabbare kodning. Högre värden ger mindre filer. Alla värden bevarar bildkvaliteten.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Fyll</value>
   </data>

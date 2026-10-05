@@ -967,6 +967,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (위쪽 픽셀)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>압축 노력 수준:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>값이 낮을수록 인코딩이 빨라집니다. 값이 높을수록 파일 크기가 작아집니다. 모든 값에서 이미지 품질이 유지됩니다.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>채우기</value>
   </data>

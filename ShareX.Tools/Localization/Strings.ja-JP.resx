@@ -967,6 +967,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up（上のピクセル）</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>圧縮にかける処理量:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>値を低くするとエンコードが速くなります。値を高くするとファイルサイズが小さくなります。どの値でも画質は維持されます。</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>塗りつぶし</value>
   </data>

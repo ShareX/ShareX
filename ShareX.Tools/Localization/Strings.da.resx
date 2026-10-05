@@ -971,6 +971,12 @@ Filsti: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (pixel ovenfor)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Komprimeringsindsats:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Lavere værdier giver hurtigere kodning. Højere værdier giver mindre filer. Alle værdier bevarer billedkvaliteten.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Fyld</value>
   </data>

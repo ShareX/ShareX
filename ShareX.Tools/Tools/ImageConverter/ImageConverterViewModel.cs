@@ -58,12 +58,20 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     [NotifyPropertyChangedFor(nameof(IsPng))]
     [NotifyPropertyChangedFor(nameof(IsGif))]
     [NotifyPropertyChangedFor(nameof(IsBmp))]
+    [NotifyPropertyChangedFor(nameof(IsWebp))]
+    [NotifyPropertyChangedFor(nameof(QualityLabel))]
+    [NotifyPropertyChangedFor(nameof(QualityHint))]
     [NotifyPropertyChangedFor(nameof(HasQuality))]
     [NotifyPropertyChangedFor(nameof(HasBackgroundColor))]
     private int _selectedOutputFormatIndex;
 
     [ObservableProperty]
     private decimal _quality = 90;
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(QualityLabel))]
+    [NotifyPropertyChangedFor(nameof(QualityHint))]
+    private bool _webpLossless;
 
     [ObservableProperty]
     private int _pngCompressionLevel = 1;
@@ -144,7 +152,14 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     public bool IsPng => GetOutputFormat() == ImageConverterOutputFormat.Png;
     public bool IsGif => GetOutputFormat() == ImageConverterOutputFormat.Gif;
     public bool IsBmp => GetOutputFormat() == ImageConverterOutputFormat.Bmp;
+    public bool IsWebp => GetOutputFormat() == ImageConverterOutputFormat.Webp;
     public bool HasQuality => GetOutputFormat() is ImageConverterOutputFormat.Jpeg or ImageConverterOutputFormat.Webp;
+    public string QualityLabel => IsWebp && WebpLossless
+        ? Localization.Strings.ImageConverterWindow_WebPCompressionEffort
+        : Localization.Strings.VideoConverterWindow_Quality;
+    public string? QualityHint => IsWebp && WebpLossless
+        ? Localization.Strings.ImageConverterWindow_WebPCompressionEffortHint
+        : null;
     public bool HasBackgroundColor => IsJpeg || IsPng && GetPngBitDepth() != PNGBitDepth.Bit32 || IsBmp && GetBmpBitDepth() != BMPBitDepth.Bit32;
     public bool CanRemove => _selectedImages.Count > 0 || SelectedImage != null;
     public bool CanConvert => !IsBusy && HasImages && Directory.Exists(OutputFolderPath) &&
@@ -246,6 +261,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         GIFQuality gifQuality = GetGifQuality();
         PNGBitDepth pngBitDepth = GetPngBitDepth();
         BMPBitDepth bmpBitDepth = GetBmpBitDepth();
+        SKWebpEncoderCompression webpCompression = GetWebpCompression();
         string outputFolderPath = OutputFolderPath;
         string outputFileName = OutputFileName;
 
@@ -254,7 +270,8 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         try
         {
             List<string> outputFiles = await Task.Run(() => ConvertImages(imageFiles, format, quality,
-                backgroundColor, outputFolderPath, outputFileName, pngOptions, jpegSubsampling, gifQuality, pngBitDepth, bmpBitDepth));
+                backgroundColor, outputFolderPath, outputFileName, pngOptions, jpegSubsampling,
+                gifQuality, pngBitDepth, bmpBitDepth, webpCompression));
             if (outputFiles.Count > 0)
             {
                 FileHelpers.OpenFolderWithFile(outputFiles[0]);
@@ -279,6 +296,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     }
     partial void OnSelectedOutputFormatIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnQualityChanged(decimal value) => NotifyOptionsChanged();
+    partial void OnWebpLosslessChanged(bool value) => NotifyOptionsChanged();
     partial void OnPngCompressionLevelChanged(int value) => NotifyOptionsChanged();
     partial void OnSelectedPngFilterIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnSelectedPngBitDepthIndexChanged(int value) => NotifyOptionsChanged();
@@ -346,8 +364,10 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
             GIFQuality gifQuality = GetGifQuality();
             PNGBitDepth pngBitDepth = GetPngBitDepth();
             BMPBitDepth bmpBitDepth = GetBmpBitDepth();
+            SKWebpEncoderCompression webpCompression = GetWebpCompression();
             ImageConverterPreview result = await Task.Run(() =>
-                ImageConverterService.CreatePreview(filePath, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality, pngBitDepth, bmpBitDepth), cancellationToken);
+                ImageConverterService.CreatePreview(filePath, format, quality, backgroundColor, pngOptions, jpegSubsampling,
+                    gifQuality, pngBitDepth, bmpBitDepth, webpCompression), cancellationToken);
             cancellationToken.ThrowIfCancellationRequested();
 
             AvaloniaBitmap? preview = null;
@@ -415,10 +435,13 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     private BMPBitDepth GetBmpBitDepth() =>
         BmpBitDepths[Math.Clamp(SelectedBmpBitDepthIndex, 0, BmpBitDepths.Length - 1)];
 
+    private SKWebpEncoderCompression GetWebpCompression() =>
+        WebpLossless ? SKWebpEncoderCompression.Lossless : SKWebpEncoderCompression.Lossy;
+
     private static List<string> ConvertImages(IEnumerable<string> imageFiles,
         ImageConverterOutputFormat format, int quality, SKColor backgroundColor, string outputFolderPath,
         string outputFileName, SKPngEncoderOptions pngOptions, SKJpegEncoderDownsample jpegSubsampling,
-        GIFQuality gifQuality, PNGBitDepth pngBitDepth, BMPBitDepth bmpBitDepth)
+        GIFQuality gifQuality, PNGBitDepth pngBitDepth, BMPBitDepth bmpBitDepth, SKWebpEncoderCompression webpCompression)
     {
         List<string> outputFiles = [];
         string extension = ImageConverterService.GetFileExtension(format);
@@ -440,7 +463,8 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
             string outputPath = Path.Combine(outputFolderPath,
                 outputFileName.Replace("$filename", sourceName, StringComparison.Ordinal));
             outputPath = Path.ChangeExtension(outputPath, extension);
-            ImageConverterService.Save(source, outputPath, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality, pngBitDepth, bmpBitDepth);
+            ImageConverterService.Save(source, outputPath, format, quality, backgroundColor, pngOptions, jpegSubsampling,
+                gifQuality, pngBitDepth, bmpBitDepth, webpCompression);
             outputFiles.Add(outputPath);
         }
 

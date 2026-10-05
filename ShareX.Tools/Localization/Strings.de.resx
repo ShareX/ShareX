@@ -971,6 +971,12 @@ Dateipfad: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (oberes Pixel)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Komprimierungsaufwand:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Niedrigere Werte beschleunigen die Kodierung. Höhere Werte erzeugen kleinere Dateien. Alle Werte erhalten die Bildqualität.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Ausfüllen</value>
   </data>

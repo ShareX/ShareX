@@ -967,6 +967,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (felső képpont)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Tömörítési erőfeszítés:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Az alacsonyabb értékek gyorsabb kódolást eredményeznek. A magasabb értékek kisebb fájlokat hoznak létre. Minden érték megőrzi a képminőséget.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Kitöltés</value>
   </data>

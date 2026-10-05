@@ -967,6 +967,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (điểm ảnh phía trên)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Mức độ nỗ lực nén:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Giá trị thấp hơn giúp mã hóa nhanh hơn. Giá trị cao hơn tạo tệp nhỏ hơn. Mọi giá trị đều giữ nguyên chất lượng hình ảnh.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Lấp đầy</value>
   </data>

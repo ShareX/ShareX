@@ -2501,6 +2501,20 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Compression effort:.
+        /// </summary>
+        public static string ImageConverterWindow_WebPCompressionEffort {
+            get { return ResourceManager.GetString("ImageConverterWindow_WebPCompressionEffort", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Lower values encode faster. Higher values produce smaller files. All values preserve image quality..
+        /// </summary>
+        public static string ImageConverterWindow_WebPCompressionEffortHint {
+            get { return ResourceManager.GetString("ImageConverterWindow_WebPCompressionEffortHint", resourceCulture); }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to 0 = no compression, 1 = fastest, 9 = smallest files. All levels are lossless..
         /// </summary>
         public static string ImageConverterWindow_PNGCompressionHint {

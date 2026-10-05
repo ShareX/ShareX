@@ -971,6 +971,12 @@ Ruta del archivo: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (píxel superior)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Esfuerzo de compresión:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Los valores más bajos codifican más rápido. Los valores más altos producen archivos más pequeños. Todos los valores conservan la calidad de la imagen.</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Rellenar</value>
   </data>

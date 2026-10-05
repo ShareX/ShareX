@@ -971,6 +971,12 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (ऊपर का पिक्सेल)</value>
   </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>संपीड़न प्रयास:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>कम मानों पर एन्कोडिंग तेज़ होती है। अधिक मान छोटे आकार की फ़ाइलें बनाते हैं। सभी मान छवि की गुणवत्ता बनाए रखते हैं।</value>
+  </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>भरें</value>
   </data>
