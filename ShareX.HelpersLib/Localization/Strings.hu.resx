@@ -546,6 +546,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Fájlátnevezési hiba:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptív kvantáló, 256 szín</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizáló 16 szín</value>
   </data>

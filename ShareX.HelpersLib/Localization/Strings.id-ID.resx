@@ -546,6 +546,9 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Kesalahan saat mengganti nama berkas:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Kuantisasi adaptif 256 warna</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 warna</value>
   </data>

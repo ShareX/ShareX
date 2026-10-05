@@ -49,7 +49,8 @@ namespace ShareX.HelpersLib
         Default,
         Bit8,
         Bit4,
-        Grayscale
+        Grayscale,
+        Adaptive
     }
 
     public enum EImageFormat

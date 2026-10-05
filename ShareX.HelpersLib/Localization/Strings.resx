@@ -546,6 +546,9 @@ Do you still want to run it?</value>
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Rename file error:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptive quantizer 256 colors</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 colors</value>
   </data>

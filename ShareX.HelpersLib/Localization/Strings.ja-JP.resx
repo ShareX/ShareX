@@ -546,6 +546,9 @@
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>ファイル名の変更エラー:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>適応量子化 256色</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>オクトリー量子化 16色</value>
   </data>

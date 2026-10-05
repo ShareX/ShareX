@@ -546,6 +546,9 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Dosya yeniden adlandırma hatası:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Uyarlanabilir niceleyici, 256 renk</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>16 renk (Daha düşük boyut fakat kötü kalite)</value>
   </data>

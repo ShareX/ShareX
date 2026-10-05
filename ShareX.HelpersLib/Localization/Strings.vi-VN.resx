@@ -546,6 +546,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Lỗi đổi tên tệp:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Bộ lượng tử thích ứng 256 màu</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Bộ lượng tử octree 16 màu (4 bit)</value>
   </data>

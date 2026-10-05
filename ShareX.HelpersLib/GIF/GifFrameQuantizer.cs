@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -12,12 +12,14 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using SkiaSharp;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 
 
-namespace ShareX.Tools;
+namespace ShareX.HelpersLib;
 
 // Builds a frame-local adaptive palette from a bounded 5-bit RGB histogram. Palette index 255 is
 // reserved for GIF transparency, leaving the remaining 255 entries available for opaque colors.

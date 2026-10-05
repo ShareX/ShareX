@@ -172,8 +172,7 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
         {
             token.ThrowIfCancellationRequested();
             using SKBitmap frame = image.GetFrame(i);
-            IndexedImage quantized = GifFrameQuantizer.Quantize(frame);
-            creator.AddFrame(quantized, _delays[i] * 10);
+            creator.AddFrame(frame, _delays[i] * 10, GIFQuality.Adaptive);
             progress?.Report((i - firstFrame + 1d) / (endFrameExclusive - firstFrame) * 100);
         }
     }

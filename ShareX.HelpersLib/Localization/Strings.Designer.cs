@@ -670,6 +670,9 @@ namespace ShareX.HelpersLib.Localization {
         public static string FileExistAction_UniqueName {
             get { return ResourceManager.GetString("FileExistAction_UniqueName", resourceCulture); }
         }
+        public static string GIFQuality_Adaptive {
+            get { return ResourceManager.GetString("GIFQuality_Adaptive", resourceCulture); }
+        }
         public static string GIFQuality_Bit4 {
             get { return ResourceManager.GetString("GIFQuality_Bit4", resourceCulture); }
         }

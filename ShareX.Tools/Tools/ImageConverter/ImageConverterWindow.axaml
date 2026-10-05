@@ -101,6 +101,12 @@
                                     <ComboBox x:Name="PngFilterBox" ItemsSource="{Binding PngFilterOptions}"
                                               SelectedIndex="{Binding SelectedPngFilterIndex, Mode=TwoWay}"/>
                                 </StackPanel>
+                                <StackPanel x:Name="GifOptionsPanel" Grid.Row="2" Spacing="8" IsVisible="{Binding IsGif}">
+                                    <TextBlock Classes="row-label"
+                                               Text="{x:Static localization:Strings.VideoConverterWindow_Quality}"/>
+                                    <ComboBox x:Name="GifQualityBox" ItemsSource="{Binding GifQualityOptions}"
+                                              SelectedIndex="{Binding SelectedGifQualityIndex, Mode=TwoWay}"/>
+                                </StackPanel>
                                 <StackPanel x:Name="JpegSubsamplingPanel" Grid.Row="3" Spacing="8" IsVisible="{Binding IsJpeg}">
                                     <TextBlock Classes="row-label" TextWrapping="Wrap"
                                                ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_JPEGSubsamplingHint}"

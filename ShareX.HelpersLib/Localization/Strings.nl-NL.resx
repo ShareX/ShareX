@@ -546,6 +546,9 @@ Wilt u het toch uitvoeren?</value>
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Fout bij het wijzigen van de bestandsnaam:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptieve kwantisatie, 256 kleuren</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 kleuren</value>
   </data>

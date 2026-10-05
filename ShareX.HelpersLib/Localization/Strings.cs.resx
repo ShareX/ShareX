@@ -546,6 +546,9 @@ Chcete jej přesto spustit?</value>
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Chyba při přejmenování souboru:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptivní kvantizátor, 256 barev</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Kvantizátor Octree, 16 barev</value>
   </data>

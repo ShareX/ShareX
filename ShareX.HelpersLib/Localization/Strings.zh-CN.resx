@@ -546,6 +546,9 @@
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>重命名文件时出错:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>自适应量化 256 色</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>16 色（八叉树色彩量化）</value>
   </data>

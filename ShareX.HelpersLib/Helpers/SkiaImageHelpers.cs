@@ -163,6 +163,11 @@ public static partial class SkiaImageHelpers
 
     public static IndexedImage Quantize(SKBitmap bitmap, GIFQuality quality = GIFQuality.Default)
     {
+        if (quality == GIFQuality.Adaptive)
+        {
+            return GifFrameQuantizer.Quantize(bitmap);
+        }
+
         SkiaQuantizer quantizer = quality switch
         {
             GIFQuality.Grayscale => new SkiaGrayscaleQuantizer(),

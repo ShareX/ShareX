@@ -40,6 +40,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         SKPngEncoderFilterFlags.Avg, SKPngEncoderFilterFlags.Paeth];
     private static readonly SKJpegEncoderDownsample[] JpegSubsamplingModes = [SKJpegEncoderDownsample.Downsample420,
         SKJpegEncoderDownsample.Downsample422, SKJpegEncoderDownsample.Downsample444];
+    private static readonly GIFQuality[] GifQualities = Enum.GetValues<GIFQuality>();
     private readonly HashSet<string> _selectedImages = [];
     private CancellationTokenSource? _previewCancellationTokenSource;
     private int _previewVersion;
@@ -53,6 +54,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsJpeg))]
     [NotifyPropertyChangedFor(nameof(IsPng))]
+    [NotifyPropertyChangedFor(nameof(IsGif))]
     [NotifyPropertyChangedFor(nameof(HasQuality))]
     private int _selectedOutputFormatIndex;
 
@@ -67,6 +69,9 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
 
     [ObservableProperty]
     private int _selectedJpegSubsamplingIndex;
+
+    [ObservableProperty]
+    private int _selectedGifQualityIndex;
 
     [ObservableProperty]
     private AvaloniaColor _backgroundColor = AvaloniaColor.FromRgb(255, 255, 255);
@@ -97,7 +102,9 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     public Func<Task<IReadOnlyList<string>?>>? SelectFilesRequested { get; set; }
     public Func<Task<string?>>? SelectOutputFolderRequested { get; set; }
 
-    public IReadOnlyList<string> OutputFormatOptions { get; } = ["PNG", "JPEG", "WebP"];
+    public IReadOnlyList<string> OutputFormatOptions { get; } = ["PNG", "JPEG", "WebP", "GIF"];
+
+    public IReadOnlyList<string> GifQualityOptions { get; } = GifQualities.Select(value => value.GetLocalizedDescription()).ToArray();
 
     public IReadOnlyList<int> PngCompressionLevelOptions { get; } = Enumerable.Range(0, 10).ToArray();
 
@@ -119,6 +126,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     public bool HasMessage => !string.IsNullOrWhiteSpace(Message);
     public bool IsJpeg => GetOutputFormat() == ImageConverterOutputFormat.Jpeg;
     public bool IsPng => GetOutputFormat() == ImageConverterOutputFormat.Png;
+    public bool IsGif => GetOutputFormat() == ImageConverterOutputFormat.Gif;
     public bool HasQuality => GetOutputFormat() is ImageConverterOutputFormat.Jpeg or ImageConverterOutputFormat.Webp;
     public bool CanRemove => _selectedImages.Count > 0 || SelectedImage != null;
     public bool CanConvert => !IsBusy && HasImages && Directory.Exists(OutputFolderPath) &&
@@ -217,6 +225,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         SKColor backgroundColor = ToSKColor(BackgroundColor);
         SKPngEncoderOptions pngOptions = GetPngEncoderOptions();
         SKJpegEncoderDownsample jpegSubsampling = GetJpegSubsampling();
+        GIFQuality gifQuality = GetGifQuality();
         string outputFolderPath = OutputFolderPath;
         string outputFileName = OutputFileName;
 
@@ -225,7 +234,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         try
         {
             List<string> outputFiles = await Task.Run(() => ConvertImages(imageFiles, format, quality,
-                backgroundColor, outputFolderPath, outputFileName, pngOptions, jpegSubsampling));
+                backgroundColor, outputFolderPath, outputFileName, pngOptions, jpegSubsampling, gifQuality));
             if (outputFiles.Count > 0)
             {
                 FileHelpers.OpenFolderWithFile(outputFiles[0]);
@@ -253,6 +262,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     partial void OnPngCompressionLevelChanged(int value) => NotifyOptionsChanged();
     partial void OnSelectedPngFilterIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnSelectedJpegSubsamplingIndexChanged(int value) => NotifyOptionsChanged();
+    partial void OnSelectedGifQualityIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnBackgroundColorChanged(AvaloniaColor value) => NotifyOptionsChanged();
     partial void OnOutputFolderPathChanged(string value) => NotifyStateChanged();
     partial void OnOutputFileNameChanged(string value) => NotifyStateChanged();
@@ -311,8 +321,9 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
             SKColor backgroundColor = ToSKColor(BackgroundColor);
             SKPngEncoderOptions pngOptions = GetPngEncoderOptions();
             SKJpegEncoderDownsample jpegSubsampling = GetJpegSubsampling();
+            GIFQuality gifQuality = GetGifQuality();
             ImageConverterPreview result = await Task.Run(() =>
-                ImageConverterService.CreatePreview(filePath, format, quality, backgroundColor, pngOptions, jpegSubsampling), cancellationToken);
+                ImageConverterService.CreatePreview(filePath, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality), cancellationToken);
             cancellationToken.ThrowIfCancellationRequested();
 
             AvaloniaBitmap? preview = null;
@@ -371,9 +382,13 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     private SKJpegEncoderDownsample GetJpegSubsampling() =>
         JpegSubsamplingModes[Math.Clamp(SelectedJpegSubsamplingIndex, 0, JpegSubsamplingModes.Length - 1)];
 
+    private GIFQuality GetGifQuality() =>
+        GifQualities[Math.Clamp(SelectedGifQualityIndex, 0, GifQualities.Length - 1)];
+
     private static List<string> ConvertImages(IEnumerable<string> imageFiles,
         ImageConverterOutputFormat format, int quality, SKColor backgroundColor, string outputFolderPath,
-        string outputFileName, SKPngEncoderOptions pngOptions, SKJpegEncoderDownsample jpegSubsampling)
+        string outputFileName, SKPngEncoderOptions pngOptions, SKJpegEncoderDownsample jpegSubsampling,
+        GIFQuality gifQuality)
     {
         List<string> outputFiles = [];
         string extension = ImageConverterService.GetFileExtension(format);
@@ -395,7 +410,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
             string outputPath = Path.Combine(outputFolderPath,
                 outputFileName.Replace("$filename", sourceName, StringComparison.Ordinal));
             outputPath = Path.ChangeExtension(outputPath, extension);
-            ImageConverterService.Save(source, outputPath, format, quality, backgroundColor, pngOptions, jpegSubsampling);
+            ImageConverterService.Save(source, outputPath, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality);
             outputFiles.Add(outputPath);
         }
 

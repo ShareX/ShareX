@@ -32,7 +32,8 @@ public enum ImageConverterOutputFormat
 {
     Png,
     Jpeg,
-    Webp
+    Webp,
+    Gif
 }
 
 public readonly record struct ImageConverterPreview(byte[] Data, int Width, int Height);
@@ -87,7 +88,8 @@ public static class ImageConverterService
 
     public static ImageConverterPreview CreatePreview(string filePath, ImageConverterOutputFormat format,
         int quality, SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
-        SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420)
+        SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
+        GIFQuality gifQuality = GIFQuality.Default)
     {
         using SKBitmap? source = LoadImage(filePath);
         if (source == null)
@@ -97,7 +99,7 @@ public static class ImageConverterService
 
         SKSizeI previewSize = GetPreviewSize(new SKSizeI(source.Width, source.Height));
         using SKBitmap preview = CreatePreviewBitmap(source, previewSize);
-        using SKData data = Encode(preview, format, quality, backgroundColor, pngOptions, jpegSubsampling);
+        using SKData data = Encode(preview, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality);
         return new ImageConverterPreview(data.ToArray(), source.Width, source.Height);
     }
 
@@ -106,22 +108,31 @@ public static class ImageConverterService
         ImageConverterOutputFormat.Png => "png",
         ImageConverterOutputFormat.Jpeg => "jpg",
         ImageConverterOutputFormat.Webp => "webp",
+        ImageConverterOutputFormat.Gif => "gif",
         _ => throw new ArgumentOutOfRangeException(nameof(format))
     };
 
     public static void Save(SKBitmap image, string filePath, ImageConverterOutputFormat format, int quality,
         SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
-        SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420)
+        SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
+        GIFQuality gifQuality = GIFQuality.Default)
     {
-        using SKData data = Encode(image, format, quality, backgroundColor, pngOptions, jpegSubsampling);
+        using SKData data = Encode(image, format, quality, backgroundColor, pngOptions, jpegSubsampling, gifQuality);
         FileHelpers.CreateDirectoryFromFilePath(filePath);
         using FileStream stream = new(filePath, FileMode.Create, FileAccess.Write, FileShare.Read);
         data.SaveTo(stream);
     }
 
     private static SKData Encode(SKBitmap bitmap, ImageConverterOutputFormat format, int quality,
-        SKColor backgroundColor, SKPngEncoderOptions? pngOptions, SKJpegEncoderDownsample jpegSubsampling)
+        SKColor backgroundColor, SKPngEncoderOptions? pngOptions, SKJpegEncoderDownsample jpegSubsampling,
+        GIFQuality gifQuality)
     {
+        if (format == ImageConverterOutputFormat.Gif)
+        {
+            using MemoryStream stream = SkiaImageHelpers.SaveGIF(bitmap, gifQuality);
+            return SKData.CreateCopy(stream.ToArray());
+        }
+
         SKEncodedImageFormat encodedFormat = format switch
         {
             ImageConverterOutputFormat.Png => SKEncodedImageFormat.Png,
