@@ -56,6 +56,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     [NotifyPropertyChangedFor(nameof(IsPng))]
     [NotifyPropertyChangedFor(nameof(IsGif))]
     [NotifyPropertyChangedFor(nameof(HasQuality))]
+    [NotifyPropertyChangedFor(nameof(HasBackgroundColor))]
     private int _selectedOutputFormatIndex;
 
     [ObservableProperty]
@@ -102,7 +103,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     public Func<Task<IReadOnlyList<string>?>>? SelectFilesRequested { get; set; }
     public Func<Task<string?>>? SelectOutputFolderRequested { get; set; }
 
-    public IReadOnlyList<string> OutputFormatOptions { get; } = ["PNG", "JPEG", "WebP", "GIF"];
+    public IReadOnlyList<string> OutputFormatOptions { get; } = ["PNG", "JPEG", "WebP", "GIF", "BMP"];
 
     public IReadOnlyList<string> GifQualityOptions { get; } = GifQualities.Select(value => value.GetLocalizedDescription()).ToArray();
 
@@ -128,6 +129,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     public bool IsPng => GetOutputFormat() == ImageConverterOutputFormat.Png;
     public bool IsGif => GetOutputFormat() == ImageConverterOutputFormat.Gif;
     public bool HasQuality => GetOutputFormat() is ImageConverterOutputFormat.Jpeg or ImageConverterOutputFormat.Webp;
+    public bool HasBackgroundColor => GetOutputFormat() is ImageConverterOutputFormat.Jpeg or ImageConverterOutputFormat.Bmp;
     public bool CanRemove => _selectedImages.Count > 0 || SelectedImage != null;
     public bool CanConvert => !IsBusy && HasImages && Directory.Exists(OutputFolderPath) &&
         !string.IsNullOrWhiteSpace(OutputFileName);

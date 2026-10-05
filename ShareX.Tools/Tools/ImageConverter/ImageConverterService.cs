@@ -33,7 +33,8 @@ public enum ImageConverterOutputFormat
     Png,
     Jpeg,
     Webp,
-    Gif
+    Gif,
+    Bmp
 }
 
 public readonly record struct ImageConverterPreview(byte[] Data, int Width, int Height);
@@ -109,6 +110,7 @@ public static class ImageConverterService
         ImageConverterOutputFormat.Jpeg => "jpg",
         ImageConverterOutputFormat.Webp => "webp",
         ImageConverterOutputFormat.Gif => "gif",
+        ImageConverterOutputFormat.Bmp => "bmp",
         _ => throw new ArgumentOutOfRangeException(nameof(format))
     };
 
@@ -130,6 +132,14 @@ public static class ImageConverterService
         if (format == ImageConverterOutputFormat.Gif)
         {
             using MemoryStream stream = SkiaImageHelpers.SaveGIF(bitmap, gifQuality);
+            return SKData.CreateCopy(stream.ToArray());
+        }
+
+        if (format == ImageConverterOutputFormat.Bmp)
+        {
+            using SKBitmap flattened = FlattenBackground(bitmap, backgroundColor);
+            using MemoryStream stream = new();
+            flattened.Save(stream, SKEncodedImageFormat.Bmp);
             return SKData.CreateCopy(stream.ToArray());
         }
 

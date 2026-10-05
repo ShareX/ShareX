@@ -116,7 +116,7 @@
                                               SelectedIndex="{Binding SelectedJpegSubsamplingIndex, Mode=TwoWay}"/>
                                 </StackPanel>
                                 <Grid Grid.Row="4" ColumnDefinitions="110,*" ColumnSpacing="10"
-                                      IsVisible="{Binding IsJpeg}">
+                                      IsVisible="{Binding HasBackgroundColor}">
                                     <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}"/>
                                     <cp:ColorPicker Grid.Column="1"
                                                     Color="{Binding BackgroundColor, Mode=TwoWay}"
