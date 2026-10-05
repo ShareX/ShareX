@@ -56,6 +56,15 @@ public sealed class MacSystemInfoService : ISystemInfoService
 
     public bool KeyboardHasPrintScreen => false;
 
+    public string? GetModifierKeyName(HotkeyModifiers modifier) => modifier switch
+    {
+        HotkeyModifiers.Control => "⌃",
+        HotkeyModifiers.Alt => "⌥",
+        HotkeyModifiers.Shift => "⇧",
+        HotkeyModifiers.Super => "⌘",
+        _ => null
+    };
+
     public string GetSingleInstancePipeName(string name) => CreateShortPipePath(name, Native.LibC.getuid());
 
     /// <summary>

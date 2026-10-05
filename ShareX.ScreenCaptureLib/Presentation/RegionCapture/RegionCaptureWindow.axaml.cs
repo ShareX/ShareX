@@ -487,6 +487,9 @@ public partial class RegionCaptureWindow : Window
                 ActivateRegionTool();
             }
 
+            // After a global hotkey another application is in front; on macOS the overlay only gets the keyboard (Esc to cancel)
+            // once ShareX itself is active.
+            PlatformServices.Current.Windows.ActivateOwnApplication();
             Activate();
             Focus();
             _regionInputSurface.Focus();

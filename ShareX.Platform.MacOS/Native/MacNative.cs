@@ -119,6 +119,20 @@ internal static unsafe partial class CoreGraphics
     public static partial nuint CGDisplayPixelsWide(uint display);
 
     [LibraryImport(Library)]
+    public static partial IntPtr CGDisplayCopyDisplayMode(uint display);
+
+    /// <summary>The mode's width in pixels of the backing store (twice the point width on Retina).</summary>
+    [LibraryImport(Library)]
+    public static partial nuint CGDisplayModeGetPixelWidth(IntPtr mode);
+
+    /// <summary>The mode's width in points.</summary>
+    [LibraryImport(Library)]
+    public static partial nuint CGDisplayModeGetWidth(IntPtr mode);
+
+    [LibraryImport(Library)]
+    public static partial void CGDisplayModeRelease(IntPtr mode);
+
+    [LibraryImport(Library)]
     public static partial IntPtr CGWindowListCopyWindowInfo(uint option, uint relativeToWindow);
 
     [LibraryImport(Library)]

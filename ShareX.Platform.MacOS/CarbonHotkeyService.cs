@@ -57,6 +57,21 @@ public sealed unsafe class CarbonHotkeyService : IHotkeyService
 
     public event EventHandler<HotkeyPressedEventArgs>? HotkeyPressed;
 
+    private IReadOnlySet<(uint KeyCode, uint CarbonModifiers)>? systemShortcuts;
+    private long systemShortcutsReadAt;
+
+    /// <summary>The system's enabled shortcuts, read again after a few seconds so changes in System Settings are noticed.</summary>
+    private IReadOnlySet<(uint KeyCode, uint CarbonModifiers)> GetSystemShortcuts()
+    {
+        if (systemShortcuts == null || Environment.TickCount64 - systemShortcutsReadAt > 5000)
+        {
+            systemShortcuts = MacSymbolicHotkeys.Load(ShareX.Platform.Diagnostics.CommandRunner.Default);
+            systemShortcutsReadAt = Environment.TickCount64;
+        }
+
+        return systemShortcuts;
+    }
+
     public HotkeyRegistrationStatus Register(int id, PlatformHotkey hotkey)
     {
         if (!Support.IsSupported)
@@ -70,6 +85,12 @@ public sealed unsafe class CarbonHotkeyService : IHotkeyService
         }
 
         Unregister(id);
+
+        // Carbon accepts macOS's own shortcuts (Command+Shift+3) without an error, and then both would fire.
+        if (GetSystemShortcuts().Contains((keyCode, MacKeyMap.ToCarbonModifiers(hotkey.Modifiers))))
+        {
+            return HotkeyRegistrationStatus.InUse;
+        }
 
         Carbon.EventHotKeyID hotKeyId = new Carbon.EventHotKeyID { signature = Signature, id = (uint)id };
         int status = Carbon.RegisterEventHotKey(keyCode, MacKeyMap.ToCarbonModifiers(hotkey.Modifiers), hotKeyId,

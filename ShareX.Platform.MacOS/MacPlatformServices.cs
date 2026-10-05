@@ -107,8 +107,7 @@ public sealed class MacPlatformServices : IPlatformServices
 
     public ICodeSignatureService CodeSignature { get; } = new UnsupportedCodeSignatureService("Installer signatures are only checked on Windows.");
 
-    // AGENTS.md keeps OCR Windows-only. VisionOcrService stays in the project for a later decision but is not offered.
-    public IOcrService Ocr { get; } = new UnsupportedOcrService("Text recognition (OCR) is available on Windows only.");
+    public IOcrService Ocr { get; } = new VisionOcrService();
 
     public ITaskbarService Taskbar { get; } = new DockProgressService();
 

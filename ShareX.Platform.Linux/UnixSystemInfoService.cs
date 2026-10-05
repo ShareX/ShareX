@@ -60,6 +60,8 @@ public sealed class UnixSystemInfoService : ISystemInfoService
     // .NET puts the socket in /tmp here, well inside the 108 character limit.
     public string GetSingleInstancePipeName(string name) => name;
 
+    public string? GetModifierKeyName(HotkeyModifiers modifier) => modifier == HotkeyModifiers.Super ? "Super" : null;
+
     private bool ReadAdministratorGroupMember()
     {
         try

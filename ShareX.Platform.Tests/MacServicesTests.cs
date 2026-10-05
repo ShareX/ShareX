@@ -275,4 +275,51 @@ public class MacServicesTests
         Console.WriteLine($"Inspected {details.ProcessName} ({details.ProcessPath}); icon {(icon == null ? "none" : icon.Length + " bytes")}");
         if (icon != null) Assert.Equal(new byte[] { 0x89, 0x50, 0x4E, 0x47 }, icon[..4]);
     }
+
+    private const uint Cmd = 1 << 8, Shift = 1 << 9, Option = 1 << 11, Control = 1 << 12;
+
+    [Fact]
+    public void SystemShortcuts_DefaultScreenshotKeysCountWithoutPreferences()
+    {
+        var shortcuts = MacSymbolicHotkeys.Parse(null);
+
+        Assert.Contains((20u, Cmd | Shift), shortcuts);           // Command+Shift+3
+        Assert.Contains((21u, Cmd | Shift | Control), shortcuts); // Control+Command+Shift+4
+        Assert.Contains((23u, Cmd | Shift), shortcuts);           // Command+Shift+5
+        Assert.DoesNotContain((21u, Option | Shift), shortcuts);  // ShareX's default region key
+    }
+
+    [Fact]
+    public void SystemShortcuts_FollowTheUsersPreferences()
+    {
+        string plist = """
+            <?xml version="1.0" encoding="UTF-8"?>
+            <plist version="1.0"><dict>
+              <key>AppleSymbolicHotKeys</key>
+              <dict>
+                <key>28</key><dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>51</integer><integer>20</integer><integer>1179648</integer></array><key>type</key><string>standard</string></dict></dict>
+                <key>30</key><dict><key>enabled</key><true/><key>value</key><dict><key>parameters</key><array><integer>65535</integer><integer>22</integer><integer>786432</integer></array><key>type</key><string>standard</string></dict></dict>
+              </dict>
+            </dict></plist>
+            """;
+
+        var shortcuts = MacSymbolicHotkeys.Parse(plist);
+
+        Assert.DoesNotContain((20u, Cmd | Shift), shortcuts);    // turned off by the user
+        Assert.Contains((22u, Option | Control), shortcuts);      // id 30 moved to Control+Option+6
+        Assert.DoesNotContain((21u, Cmd | Shift), shortcuts);    // its old key is free
+        Assert.Contains((23u, Cmd | Shift), shortcuts);           // untouched default
+    }
+
+    [Fact]
+    public void ModifierNames_UseTheSystemsSymbols()
+    {
+        ISystemInfoService mac = new MacSystemInfoService(new RecordingRunner());
+        ISystemInfoService linux = new ShareX.Platform.Linux.UnixSystemInfoService(new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.X11, DesktopEnvironment.Xfce, "XFCE", false), new RecordingRunner());
+
+        Assert.Equal("⌘", mac.GetModifierKeyName(HotkeyModifiers.Super));
+        Assert.Equal("⌥", mac.GetModifierKeyName(HotkeyModifiers.Alt));
+        Assert.Equal("Super", linux.GetModifierKeyName(HotkeyModifiers.Super));
+        Assert.Null(linux.GetModifierKeyName(HotkeyModifiers.Control));
+    }
 }

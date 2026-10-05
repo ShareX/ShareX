@@ -164,6 +164,15 @@ public interface IWindowService
     /// </summary>
     bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas);
 
+    /// <summary>
+    /// Makes ShareX the active application, so its newest window receives the keyboard. Needed on macOS, where a window activated
+    /// while another application is in front (after a global hotkey) is not given key events. Elsewhere activating the window is
+    /// enough and this does nothing. Call from the UI thread.
+    /// </summary>
+    void ActivateOwnApplication()
+    {
+    }
+
     /// <summary>Whether <see cref="CreateOverlay"/> works.</summary>
     FeatureSupport OverlaySupport { get; }
 

@@ -64,4 +64,13 @@
   <ItemGroup>
     <RuntimeHostConfigurationOption Include="System.Globalization.UseNls" Value="true" />
   </ItemGroup>
+  <!-- The browser extension host copies its files next to ShareX when it builds, but publishing only picks up some of them; without
+       ShareX_NativeMessagingHost.dll the packaged host cannot start. Publish the whole set. -->
+  <Target Name="PublishNativeMessagingHost" AfterTargets="Publish">
+    <ItemGroup>
+      <NativeMessagingHostPublishFiles Include="$(OutDir)ShareX_NativeMessagingHost*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(NativeMessagingHostPublishFiles)" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="true" />
+    <Error Condition="!Exists('$(PublishDir)ShareX_NativeMessagingHost.dll')" Text="ShareX_NativeMessagingHost.dll was not published." />
+  </Target>
 </Project>

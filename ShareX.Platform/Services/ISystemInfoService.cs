@@ -47,6 +47,12 @@ public interface ISystemInfoService
     bool KeyboardHasPrintScreen => true;
 
     /// <summary>
+    /// How this system's keyboard names a modifier in shortcut labels, or null for ShareX's translated defaults (Ctrl, Shift, Alt,
+    /// Win). macOS uses its symbols (⌃ ⌥ ⇧ ⌘); Linux calls the Windows key Super.
+    /// </summary>
+    string? GetModifierKeyName(HotkeyModifiers modifier) => null;
+
+    /// <summary>
     /// The hardware GPU for machine learning (the background remover): the one with the most dedicated memory, numbered as DirectML
     /// numbers adapters. Null where ShareX runs models on the CPU only (Linux and macOS).
     /// </summary>

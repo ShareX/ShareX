@@ -23,29 +23,28 @@
 
 #endregion License Information (GPL v3)
 
-#nullable enable
+using Avalonia.Controls;
+using Avalonia.Input;
 
-using ShareX.Localization;
-using AppMenu = ShareX.AvaloniaUI.Integration.ApplicationMenu;
+namespace ShareX.AvaloniaUI.Integration;
 
-namespace ShareX;
-
-/// <summary>Labels and actions for the macOS application menu, which ShareX.Avalonia creates when Avalonia initializes.</summary>
-internal static class ApplicationMenu
+/// <summary>
+/// The application menu macOS shows next to the Apple menu. Avalonia reads it when the application initializes, so it is created
+/// there; the application sets the translated labels and actions later. Avalonia adds the standard Services, Hide and Quit items.
+/// Other systems show no application-level menu.
+/// </summary>
+public static class ApplicationMenu
 {
-    private static bool installed;
+    public static NativeMenuItem About { get; } = new NativeMenuItem("About ShareX");
 
-    internal static void Install()
+    public static NativeMenuItem Settings { get; } = new NativeMenuItem("Settings…") { Gesture = new KeyGesture(Key.OemComma, KeyModifiers.Meta) };
+
+    internal static NativeMenu Create()
     {
-        if (installed)
-        {
-            return;
-        }
-
-        installed = true;
-        AppMenu.About.Header = Strings.MainMenuBuilder_About;
-        AppMenu.About.Click += (_, _) => AboutWindowIntegration.Show();
-        AppMenu.Settings.Header = Strings.MainMenuBuilder_ApplicationSettings;
-        AppMenu.Settings.Click += (_, _) => ApplicationSettingsIntegration.Show();
+        NativeMenu menu = new NativeMenu();
+        menu.Items.Add(About);
+        menu.Items.Add(new NativeMenuItemSeparator());
+        menu.Items.Add(Settings);
+        return menu;
     }
 }

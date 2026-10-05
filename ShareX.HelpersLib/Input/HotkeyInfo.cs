@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.Platform;
 using System.Text;
 
 namespace ShareX.HelpersLib
@@ -84,28 +85,32 @@ namespace ShareX.HelpersLib
             ID = id;
         }
 
+        /// <summary>The system's name for a modifier (⌘ on macOS, Super on Linux), or ShareX's translated default.</summary>
+        private static string ModifierName(HotkeyModifiers modifier, string fallback) =>
+            (PlatformServices.IsInitialized ? PlatformServices.Current.SystemInfo.GetModifierKeyName(modifier) : null) ?? fallback;
+
         public override string ToString()
         {
             string text = "";
 
             if (Control)
             {
-                text += Localization.Strings.HotkeyInfo_Ctrl + " + ";
+                text += ModifierName(HotkeyModifiers.Control, Localization.Strings.HotkeyInfo_Ctrl) + " + ";
             }
 
             if (Shift)
             {
-                text += Localization.Strings.HotkeyInfo_Shift + " + ";
+                text += ModifierName(HotkeyModifiers.Shift, Localization.Strings.HotkeyInfo_Shift) + " + ";
             }
 
             if (Alt)
             {
-                text += Localization.Strings.HotkeyInfo_Alt + " + ";
+                text += ModifierName(HotkeyModifiers.Alt, Localization.Strings.HotkeyInfo_Alt) + " + ";
             }
 
             if (Win)
             {
-                text += Localization.Strings.HotkeyInfo_Win + " + ";
+                text += ModifierName(HotkeyModifiers.Super, Localization.Strings.HotkeyInfo_Win) + " + ";
             }
 
             if (IsOnlyModifiers)

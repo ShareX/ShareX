@@ -51,6 +51,10 @@ namespace ShareX
                 ? CaptureHelpers.GetActiveScreenBounds()
                 : CaptureHelpers.GetScreenBounds();
 
+            // Sample the cursor first: taking the screenshot can take a moment (screencapture on macOS), and by then the user may
+            // already be dragging, which would put the cursor at the start of the selection instead of where it was.
+            CursorCapture cursor = taskSettings.CaptureSettings.ShowCursor ? PlatformServices.Current.ScreenCapture.CaptureCursor() : null;
+
             SKBitmap frozenScreenshot = activeMonitorMode
                 ? await screenshot.CaptureActiveMonitorAsync()
                 : await screenshot.CaptureFullscreenAsync();
@@ -70,7 +74,7 @@ namespace ShareX
             Point cursorPosition = Point.Empty;
 
             // The cursor is drawn by the region capture editor so it can be moved or removed. Wayland does not reveal it.
-            if (taskSettings.CaptureSettings.ShowCursor && PlatformServices.Current.ScreenCapture.CaptureCursor() is CursorCapture cursor)
+            if (cursor != null)
             {
                 cursorBitmap = PlatformImageConverter.ToSKBitmap(cursor.Image);
                 cursorPosition = new Point(cursor.Position.X - screenBounds.X, cursor.Position.Y - screenBounds.Y);

@@ -93,7 +93,7 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
         for (int i = 0; i < count; i++)
         {
             CoreGraphics.CGRect bounds = CoreGraphics.CGDisplayBounds(displays[i]);
-            double scale = bounds.Width > 0 ? CoreGraphics.CGDisplayPixelsWide(displays[i]) / bounds.Width : 1;
+            double scale = GetBackingScale(displays[i]);
             PlatformRectangle rectangle = bounds.ToRectangle();
             // screencapture -D numbers displays from 1 in CGGetActiveDisplayList order.
             string id = (i + 1).ToString(CultureInfo.InvariantCulture);
@@ -102,6 +102,32 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
 
         return screens;
     }
+
+    /// <summary>
+    /// Pixels per point of a display: the current mode's backing width over its point width. CGDisplayPixelsWide reports points on
+    /// Retina displays, which made the factor 1 and cropped recordings in points from a pixel stream.
+    /// </summary>
+    internal static double GetBackingScale(uint display)
+    {
+        IntPtr mode = CoreGraphics.CGDisplayCopyDisplayMode(display);
+
+        if (mode == IntPtr.Zero)
+        {
+            return 1;
+        }
+
+        try
+        {
+            return ComputeScale(CoreGraphics.CGDisplayModeGetPixelWidth(mode), CoreGraphics.CGDisplayModeGetWidth(mode));
+        }
+        finally
+        {
+            CoreGraphics.CGDisplayModeRelease(mode);
+        }
+    }
+
+    internal static double ComputeScale(nuint pixelWidth, nuint pointWidth) =>
+        pixelWidth > 0 && pointWidth > 0 ? Math.Max(1, (double)pixelWidth / pointWidth) : 1;
 
     public async Task<ScreenCaptureResult> CaptureAsync(ScreenCaptureRequest request, CancellationToken cancellationToken = default)
     {

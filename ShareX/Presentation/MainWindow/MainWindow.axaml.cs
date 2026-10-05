@@ -2029,8 +2029,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnClosing(object? sender, WindowClosingEventArgs e)
     {
-        // Desktop session shutdown must close the window, even when ordinary closing hides it in the tray.
-        if (e.CloseReason == WindowCloseReason.OSShutdown)
+        // Desktop session shutdown and an application quit (Command+Q or the Dock's Quit on macOS, which ask the application
+        // lifetime to shut down) must close the window, even when ordinary closing hides it in the tray.
+        if (e.CloseReason is WindowCloseReason.OSShutdown or WindowCloseReason.ApplicationShutdown)
         {
             _allowClose = true;
         }

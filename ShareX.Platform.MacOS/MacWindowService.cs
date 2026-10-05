@@ -137,6 +137,14 @@ public sealed class MacWindowService : IWindowService
     public bool RestoreWindow(long windowHandle) => ActivateWindow(windowHandle);
 
     /// <summary>macOS activates applications, not windows: this brings the window's application to the front.</summary>
+    public void ActivateOwnApplication() => ObjC.WithAutoreleasePool(() =>
+    {
+        // activateIgnoringOtherApps: still works on macOS 14 and later, where -activate replaces it.
+        IntPtr application = ObjC.Send(ObjC.GetClass("NSApplication"), "sharedApplication");
+        ObjC.SendBoolArg(application, "activateIgnoringOtherApps:", true);
+        return true;
+    });
+
     public bool ActivateWindow(long windowHandle)
     {
         int? processId = GetWindows().FirstOrDefault(window => window.Handle == windowHandle)?.ProcessId;

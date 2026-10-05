@@ -1,5 +1,7 @@
 # Cross-platform delegation and tracker (v2)
 
+> **Historical record.** This tracker coordinated the two agents during the port. The ownership, claim, request and handoff rules it describes no longer apply (AGENTS.md, 2026-10-06); its rows and log remain as history. Open work is listed in [cross-platform-roadmap.md](cross-platform-roadmap.md).
+
 Two developers, each with a coding agent, make ShareX cross-platform together on one branch, `cross-platform-v2`. This file says who owns what, how the two avoid getting in each other's way, and where every task stands. Both agents read it, together with [AGENTS.md](../AGENTS.md) and [the learnings](cross-platform-learnings.md), before starting work, and update it in the same commit as the work.
 
 Work is split by what each developer likes to do: Jaex takes frontend and graphics, McoreD takes backend.
