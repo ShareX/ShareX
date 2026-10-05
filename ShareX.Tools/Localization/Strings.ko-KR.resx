@@ -916,8 +916,14 @@
   <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
     <value>BMP 비트 깊이:</value>
   </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>배경색:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>이미지 변환</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>파일 이름 템플릿:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>이미지 변환기</value>
@@ -936,6 +942,9 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4는 텍스트와 선명한 가장자리 주변의 색상 디테일을 더 많이 보존하지만, 일반적으로 파일 크기가 더 커집니다.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>출력 형식:</value>
   </data>
   <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
     <value>PNG 비트 깊이:</value>
@@ -967,11 +976,17 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (위쪽 픽셀)</value>
   </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>품질:</value>
+  </data>
   <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
     <value>압축 노력 수준:</value>
   </data>
   <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
     <value>값이 낮을수록 인코딩이 빨라집니다. 값이 높을수록 파일 크기가 작아집니다. 모든 값에서 이미지 품질이 유지됩니다.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>무손실:</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>채우기</value>

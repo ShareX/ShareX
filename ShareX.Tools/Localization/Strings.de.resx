@@ -920,8 +920,14 @@ Dateipfad: {0}</value>
   <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
     <value>BMP-Bittiefe:</value>
   </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Hintergrundfarbe:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Bilder konvertieren</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Dateinamensvorlage:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Bildkonverter</value>
@@ -940,6 +946,9 @@ Dateipfad: {0}</value>
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 erhält mehr Farbdetails an Text und scharfen Kanten, erzeugt aber meist größere Dateien.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Ausgabeformat:</value>
   </data>
   <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
     <value>PNG-Bittiefe:</value>
@@ -971,11 +980,17 @@ Dateipfad: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (oberes Pixel)</value>
   </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Qualität:</value>
+  </data>
   <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
     <value>Komprimierungsaufwand:</value>
   </data>
   <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
     <value>Niedrigere Werte beschleunigen die Kodierung. Höhere Werte erzeugen kleinere Dateien. Alle Werte erhalten die Bildqualität.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Verlustfrei:</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Ausfüllen</value>

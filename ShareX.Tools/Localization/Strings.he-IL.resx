@@ -916,8 +916,14 @@
   <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
     <value>עומק סיביות BMP:</value>
   </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>צבע רקע:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>המרת תמונות</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>תבנית שם קובץ:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>ממיר תמונות</value>
@@ -936,6 +942,9 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 שומר על יותר פרטי צבע סביב טקסט וקצוות חדים, אך בדרך כלל יוצר קבצים גדולים יותר.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>תבנית פלט:</value>
   </data>
   <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
     <value>עומק סיביות PNG:</value>
@@ -967,11 +976,17 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (הפיקסל מעל)</value>
   </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>איכות:</value>
+  </data>
   <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
     <value>מאמץ דחיסה:</value>
   </data>
   <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
     <value>ערכים נמוכים מאפשרים קידוד מהיר יותר. ערכים גבוהים יוצרים קבצים קטנים יותר. כל הערכים שומרים על איכות התמונה.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>ללא אובדן:</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>מילוי</value>

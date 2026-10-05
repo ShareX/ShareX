@@ -916,8 +916,14 @@
   <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
     <value>Adâncime de biți BMP:</value>
   </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Culoarea fundalului:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Convertește imaginile</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Șablon nume fișier:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Convertor de imagini</value>
@@ -936,6 +942,9 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 păstrează mai multe detalii de culoare în jurul textului și al marginilor clare, dar produce de obicei fișiere mai mari.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Formatul rezultatului:</value>
   </data>
   <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
     <value>Adâncime de biți PNG:</value>
@@ -967,11 +976,17 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (pixelul de deasupra)</value>
   </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Calitate:</value>
+  </data>
   <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
     <value>Efort de compresie:</value>
   </data>
   <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
     <value>Valorile mai mici accelerează codificarea. Valorile mai mari produc fișiere mai mici. Toate valorile păstrează calitatea imaginii.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Fără pierderi:</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Umplere</value>

@@ -916,8 +916,14 @@
   <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
     <value>Độ sâu bit BMP:</value>
   </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Màu nền:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Chuyển đổi hình ảnh</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Mẫu tên tệp:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Trình chuyển đổi hình ảnh</value>
@@ -936,6 +942,9 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 giữ lại nhiều chi tiết màu hơn quanh văn bản và các cạnh sắc nét, nhưng thường tạo ra tệp lớn hơn.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Định dạng đầu ra:</value>
   </data>
   <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
     <value>Độ sâu bit PNG:</value>
@@ -967,11 +976,17 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (điểm ảnh phía trên)</value>
   </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Chất lượng:</value>
+  </data>
   <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
     <value>Mức độ nỗ lực nén:</value>
   </data>
   <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
     <value>Giá trị thấp hơn giúp mã hóa nhanh hơn. Giá trị cao hơn tạo tệp nhỏ hơn. Mọi giá trị đều giữ nguyên chất lượng hình ảnh.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Không mất dữ liệu:</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Lấp đầy</value>

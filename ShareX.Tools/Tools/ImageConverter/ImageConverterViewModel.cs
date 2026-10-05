@@ -156,7 +156,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     public bool HasQuality => GetOutputFormat() is ImageConverterOutputFormat.Jpeg or ImageConverterOutputFormat.Webp;
     public string QualityLabel => IsWebp && WebpLossless
         ? Localization.Strings.ImageConverterWindow_WebPCompressionEffort
-        : Localization.Strings.VideoConverterWindow_Quality;
+        : Localization.Strings.ImageConverterWindow_Quality;
     public string? QualityHint => IsWebp && WebpLossless
         ? Localization.Strings.ImageConverterWindow_WebPCompressionEffortHint
         : null;

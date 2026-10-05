@@ -920,8 +920,14 @@ Dosya yolu: {0}</value>
   <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
     <value>BMP bit derinliği:</value>
   </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Arka plan rengi:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Görselleri dönüştür</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Dosya adı şablonu:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Görsel dönüştürücü</value>
@@ -940,6 +946,9 @@ Dosya yolu: {0}</value>
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4, metin ve keskin kenarlar çevresinde daha fazla renk ayrıntısını korur, ancak genellikle daha büyük dosyalar oluşturur.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Çıktı biçimi:</value>
   </data>
   <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
     <value>PNG bit derinliği:</value>
@@ -971,11 +980,17 @@ Dosya yolu: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (üstteki piksel)</value>
   </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Kalite:</value>
+  </data>
   <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
     <value>Sıkıştırma çabası:</value>
   </data>
   <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
     <value>Düşük değerler daha hızlı kodlama sağlar. Yüksek değerler daha küçük dosyalar üretir. Tüm değerler görüntü kalitesini korur.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Kayıpsız:</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Doldur</value>

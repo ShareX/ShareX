@@ -77,7 +77,7 @@
                                 <TextBlock Grid.Row="0" Classes="section-heading"
                                            Text="{x:Static localization:Strings.ImageThumbnailerWindow_Output}"/>
                                 <Grid Grid.Row="1" ColumnDefinitions="110,*" ColumnSpacing="10">
-                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.DirectoryIndexerWindow_Output_format}"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageConverterWindow_OutputFormat}"/>
                                     <ComboBox Grid.Column="1"
                                               ItemsSource="{Binding OutputFormatOptions}"
                                               SelectedIndex="{Binding SelectedOutputFormatIndex}"/>
@@ -115,7 +115,7 @@
                                 </StackPanel>
                                 <StackPanel x:Name="GifOptionsPanel" Grid.Row="2" Spacing="8" IsVisible="{Binding IsGif}">
                                     <TextBlock Classes="row-label"
-                                               Text="{x:Static localization:Strings.VideoConverterWindow_Quality}"/>
+                                               Text="{x:Static localization:Strings.ImageConverterWindow_Quality}"/>
                                     <ComboBox x:Name="GifQualityBox" ItemsSource="{Binding GifQualityOptions}"
                                               SelectedIndex="{Binding SelectedGifQualityIndex, Mode=TwoWay}"/>
                                 </StackPanel>
@@ -129,16 +129,16 @@
                                 </StackPanel>
                                 <CheckBox x:Name="WebpLosslessBox" Grid.Row="3" IsVisible="{Binding IsWebp}"
                                           IsChecked="{Binding WebpLossless, Mode=TwoWay}"
-                                          Content="{x:Static localization:Strings.AnimatedGifTrimmer_Lossless}"/>
+                                          Content="{x:Static localization:Strings.ImageConverterWindow_WebPLossless}"/>
                                 <Grid Grid.Row="4" ColumnDefinitions="110,*" ColumnSpacing="10"
                                       IsVisible="{Binding HasBackgroundColor}">
-                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.PinToScreenOptionsWindow_Background_color}"/>
+                                    <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageConverterWindow_BackgroundColor}"/>
                                     <cp:ColorPicker Grid.Column="1"
                                                     Color="{Binding BackgroundColor, Mode=TwoWay}"
                                                     IsAlphaEnabled="False" IsAlphaVisible="False"/>
                                 </Grid>
                                 <TextBlock Grid.Row="5" Classes="row-label"
-                                           Text="{x:Static localization:Strings.ImageThumbnailerWindow_File_name_template}"/>
+                                           Text="{x:Static localization:Strings.ImageConverterWindow_FileNameTemplate}"/>
                                 <TextBox Grid.Row="6" Text="{Binding OutputFileName}"/>
                             </Grid>
                         </Border>

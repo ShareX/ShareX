@@ -920,8 +920,14 @@
   <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
     <value>BMP 位元深度：</value>
   </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>背景色彩：</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>轉換影像</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>檔案名範本：</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>影像轉換器</value>
@@ -940,6 +946,9 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 能保留文字與銳利邊緣周圍的更多色彩細節，但通常會產生較大的檔案。</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>輸出格式：</value>
   </data>
   <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
     <value>PNG 位元深度：</value>
@@ -971,11 +980,17 @@
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up（上方像素）</value>
   </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>品質：</value>
+  </data>
   <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
     <value>壓縮力度：</value>
   </data>
   <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
     <value>較低的值可加快編碼速度。較高的值可產生更小的檔案。所有值都會保持影像品質。</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>無損：</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>填滿</value>

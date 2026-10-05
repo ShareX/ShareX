@@ -920,8 +920,14 @@ Caminho do ficheiro: {0}</value>
   <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
     <value>Profundidade de bits BMP:</value>
   </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Cor de fundo:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Converter imagens</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Modelo de nome de ficheiro:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Conversor de imagens</value>
@@ -940,6 +946,9 @@ Caminho do ficheiro: {0}</value>
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 preserva mais detalhes de cor em torno do texto e dos contornos nítidos, mas geralmente produz ficheiros maiores.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Formato de saída:</value>
   </data>
   <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
     <value>Profundidade de bits PNG:</value>
@@ -971,11 +980,17 @@ Caminho do ficheiro: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (píxel acima)</value>
   </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Qualidade:</value>
+  </data>
   <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
     <value>Esforço de compressão:</value>
   </data>
   <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
     <value>Valores mais baixos aceleram a codificação. Valores mais altos produzem ficheiros mais pequenos. Todos os valores preservam a qualidade da imagem.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Sem perdas:</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Preencher</value>

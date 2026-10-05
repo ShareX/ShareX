@@ -920,8 +920,14 @@ Cesta k souboru: {0}</value>
   <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
     <value>Bitová hloubka BMP:</value>
   </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Barva pozadí:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Převést obrázky</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Šablona názvu souboru:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Převodník obrázků</value>
@@ -940,6 +946,9 @@ Cesta k souboru: {0}</value>
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 zachovává více barevných detailů kolem textu a ostrých hran, ale obvykle vytváří větší soubory.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Výstupní formát:</value>
   </data>
   <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
     <value>Bitová hloubka PNG:</value>
@@ -971,11 +980,17 @@ Cesta k souboru: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (pixel nahoře)</value>
   </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Kvalita:</value>
+  </data>
   <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
     <value>Úsilí při kompresi:</value>
   </data>
   <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
     <value>Nižší hodnoty zrychlují kódování. Vyšší hodnoty vytvářejí menší soubory. Všechny hodnoty zachovávají kvalitu obrazu.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Bezeztrátový:</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Vyplnit</value>

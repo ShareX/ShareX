@@ -920,8 +920,14 @@ Ruta del archivo: {0}</value>
   <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
     <value>Profundidad de bits BMP:</value>
   </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Color de fondo:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Convertir imágenes</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Plantilla de nombre de archivo:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Convertidor de imágenes</value>
@@ -940,6 +946,9 @@ Ruta del archivo: {0}</value>
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 conserva más detalles de color alrededor del texto y los bordes definidos, pero suele generar archivos más grandes.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Formato de salida:</value>
   </data>
   <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
     <value>Profundidad de bits PNG:</value>
@@ -971,11 +980,17 @@ Ruta del archivo: {0}</value>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (píxel superior)</value>
   </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Calidad:</value>
+  </data>
   <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
     <value>Esfuerzo de compresión:</value>
   </data>
   <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
     <value>Los valores más bajos codifican más rápido. Los valores más altos producen archivos más pequeños. Todos los valores conservan la calidad de la imagen.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Sin pérdida:</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Rellenar</value>

@@ -2501,6 +2501,41 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Output format:.
+        /// </summary>
+        public static string ImageConverterWindow_OutputFormat {
+            get { return ResourceManager.GetString("ImageConverterWindow_OutputFormat", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Quality:.
+        /// </summary>
+        public static string ImageConverterWindow_Quality {
+            get { return ResourceManager.GetString("ImageConverterWindow_Quality", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Background color:.
+        /// </summary>
+        public static string ImageConverterWindow_BackgroundColor {
+            get { return ResourceManager.GetString("ImageConverterWindow_BackgroundColor", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to File name template:.
+        /// </summary>
+        public static string ImageConverterWindow_FileNameTemplate {
+            get { return ResourceManager.GetString("ImageConverterWindow_FileNameTemplate", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Lossless:.
+        /// </summary>
+        public static string ImageConverterWindow_WebPLossless {
+            get { return ResourceManager.GetString("ImageConverterWindow_WebPLossless", resourceCulture); }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Compression effort:.
         /// </summary>
         public static string ImageConverterWindow_WebPCompressionEffort {
