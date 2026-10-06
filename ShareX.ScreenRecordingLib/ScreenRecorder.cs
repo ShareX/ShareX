@@ -3,6 +3,7 @@ using ShareX.ScreenRecordingLib.Audio;
 using ShareX.ScreenRecordingLib.Encoding;
 using ShareX.ScreenRecordingLib.Video;
 using ShareX.ScreenRecordingLib.Native;
+using Vortice.MediaFoundation;
 
 namespace ShareX.ScreenRecordingLib;
 
@@ -92,7 +93,7 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
         {
             NativeMethods.CoInitializeEx(null, COINIT.COINIT_MULTITHREADED).ThrowOnFailure();
             com = true;
-            NativeMethods.MFStartup(0x00020070, 0).ThrowOnFailure();
+            MediaFactory.MFStartup(true).CheckError();
             mediaFoundation = true;
             List<GraphicsCapture.Target> targets = GraphicsCapture.GetTargets(options, out int width, out int height);
             Directory.CreateDirectory(Path.GetDirectoryName(options.OutputPath)!);
@@ -166,7 +167,7 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
                         try { processor.Convert(slot!.View, (uint)nextFrame); }
                         catch { textures.Return(slot!); throw; }
                         using var sample = textures.CreateSample(slot!);
-                        writer.WriteVideo(sample.Pointer, timestamp, end - timestamp, discontinuity);
+                        writer.WriteVideo(sample, timestamp, end - timestamp, discontinuity);
                         written++;
                         duration = end;
                         discontinuity = false;
@@ -203,7 +204,7 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
         {
             clock.Stop();
             Volatile.Write(ref recording, 0);
-            if (mediaFoundation) NativeMethods.MFShutdown();
+            if (mediaFoundation) MediaFactory.MFShutdown();
             if (com) NativeMethods.CoUninitialize();
         }
     }

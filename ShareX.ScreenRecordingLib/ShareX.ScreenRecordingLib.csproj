@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Description>Windows-native GPU screen recording and WASAPI audio capture</Description>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Vortice.Direct3D11" />
+    <PackageReference Include="Vortice.MediaFoundation" />
+  </ItemGroup>
 </Project>

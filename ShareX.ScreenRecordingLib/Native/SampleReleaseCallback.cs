@@ -1,79 +1,61 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-using System.Runtime.CompilerServices;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
+using SharpGen.Runtime;
+using Vortice.MediaFoundation;
+
 namespace ShareX.ScreenRecordingLib.Native;
 
-/// <summary>A small native IMFAsyncCallback CCW. Native references root the callback until the sample is released.</summary>
-internal sealed unsafe class SampleReleaseCallback : IDisposable
+/// <summary>Media Foundation notifies the pool after releasing the tracked GPU sample.</summary>
+internal sealed class SampleReleaseCallback : ComObject, IMFAsyncCallback
 {
-    private struct CallbackData { public void** Vtable; public int References; public nint ActionHandle; }
-    private static readonly void** vtable = CreateVtable();
-    private nint pointer;
-    public IMFAsyncCallback* Pointer => (IMFAsyncCallback*)pointer;
+    private readonly NativeCallback callback;
 
-    public SampleReleaseCallback(Action action)
+    public SampleReleaseCallback(Action released) : this(new NativeCallback(released)) { }
+
+    private SampleReleaseCallback(NativeCallback callback)
+        : base(Marshal.GetComInterfaceForObject(callback, typeof(INativeAsyncCallback)))
     {
-        CallbackData* data = (CallbackData*)NativeMemory.AllocZeroed((nuint)sizeof(CallbackData));
-        data->Vtable = vtable;
-        data->References = 1;
-        data->ActionHandle = GCHandle.ToIntPtr(GCHandle.Alloc(action));
-        pointer = (nint)data;
+        this.callback = callback;
     }
 
-    private static void** CreateVtable()
+    public Result GetParameters(out AsyncCallbackFlags flags, out int queue)
     {
-        void** table = (void**)NativeMemory.Alloc((nuint)(5 * sizeof(nint)));
-        table[0] = (delegate* unmanaged[Stdcall]<CallbackData*, Guid*, void**, int>)&QueryInterface;
-        table[1] = (delegate* unmanaged[Stdcall]<CallbackData*, uint>)&AddRef;
-        table[2] = (delegate* unmanaged[Stdcall]<CallbackData*, uint>)&Release;
-        table[3] = (delegate* unmanaged[Stdcall]<CallbackData*, uint*, uint*, int>)&GetParameters;
-        table[4] = (delegate* unmanaged[Stdcall]<CallbackData*, nint, int>)&Invoke;
-        return table;
+        flags = AsyncCallbackFlags.None;
+        queue = 0;
+        return new(unchecked((int)0x80004001)); // E_NOTIMPL: use the default MF work queue.
     }
 
-    [UnmanagedCallersOnly(CallConvs = [typeof(CallConvStdcall)])]
-    private static int QueryInterface(CallbackData* self, Guid* iid, void** result)
+    public Result Invoke(IMFAsyncResult result) => new(callback.Invoke(result.NativePointer));
+
+    // A CLR COM callable wrapper roots the callback until its last native reference is released.
+    // SharpGen's CallbackBase uses a weak handle, which is insufficient for queued callbacks
+    // surviving pool disposal on a failed recording.
+    [ComVisible(true)]
+    [ClassInterface(ClassInterfaceType.None)]
+    private sealed class NativeCallback(Action released) : INativeAsyncCallback
     {
-        *result = null;
-        if (*iid != typeof(IMFAsyncCallback).GUID && *iid != new Guid("00000000-0000-0000-c000-000000000046")) return unchecked((int)0x80004002);
-        *result = self;
-        Interlocked.Increment(ref self->References);
-        return 0;
+        public int GetParameters(out uint flags, out uint queue)
+        {
+            flags = queue = 0;
+            return unchecked((int)0x80004001);
+        }
+
+        public int Invoke(nint result)
+        {
+            try { released(); return 0; }
+            catch (Exception ex) { return Marshal.GetHRForException(ex); }
+        }
     }
+}
 
-    [UnmanagedCallersOnly(CallConvs = [typeof(CallConvStdcall)])]
-    private static uint AddRef(CallbackData* self) => (uint)Interlocked.Increment(ref self->References);
-
-    [UnmanagedCallersOnly(CallConvs = [typeof(CallConvStdcall)])]
-    private static uint Release(CallbackData* self) => ReleaseReference(self);
-
-    private static uint ReleaseReference(CallbackData* self)
-    {
-        int remaining = Interlocked.Decrement(ref self->References);
-        if (remaining == 0) { GCHandle.FromIntPtr(self->ActionHandle).Free(); NativeMemory.Free(self); }
-        return (uint)remaining;
-    }
-
-    [UnmanagedCallersOnly(CallConvs = [typeof(CallConvStdcall)])]
-    private static int GetParameters(CallbackData* self, uint* flags, uint* queue)
-    {
-        *flags = *queue = 0;
-        return unchecked((int)0x80004001); // E_NOTIMPL: use the default MF work queue.
-    }
-
-    [UnmanagedCallersOnly(CallConvs = [typeof(CallConvStdcall)])]
-    private static int Invoke(CallbackData* self, nint result)
-    {
-        try { ((Action)GCHandle.FromIntPtr(self->ActionHandle).Target!)(); return 0; }
-        catch (Exception ex) { return Marshal.GetHRForException(ex); }
-    }
-
-    public void Dispose()
-    {
-        nint previous = Interlocked.Exchange(ref pointer, 0);
-        if (previous != 0) ReleaseReference((CallbackData*)previous);
-        GC.SuppressFinalize(this);
-    }
-
-    ~SampleReleaseCallback() => Dispose();
+[ComVisible(true)]
+[Guid("a27003cf-2354-4f2a-8d6a-ab7cff15437e")]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+[EditorBrowsable(EditorBrowsableState.Never)]
+// CLR COM marshaling requires a public interface; this is not part of the recorder's managed API.
+public interface INativeAsyncCallback
+{
+    [PreserveSig] int GetParameters(out uint flags, out uint queue);
+    [PreserveSig] int Invoke(nint result);
 }

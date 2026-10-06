@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 using ShareX.ScreenRecordingLib.Native;
+using SharpGen.Runtime;
+using Vortice.MediaFoundation;
 
 namespace ShareX.ScreenRecordingLib.Audio;
 
@@ -44,22 +46,24 @@ internal sealed unsafe class WasapiCapture : IDisposable
 
     public void Start() => start.Set();
 
-    private Endpoint Open(ComPtr<IMMDeviceEnumerator> enumerator, bool loopback, string? id, float gain)
+    private Endpoint Open(IMMDeviceEnumerator enumerator, bool loopback, string? id, float gain)
     {
-        IMMDevice* rawDevice;
+        IMMDevice device;
         if (string.IsNullOrWhiteSpace(id))
         {
-            HRESULT result = enumerator.Pointer->GetDefaultAudioEndpoint(loopback ? EDataFlow.eRender : EDataFlow.eCapture,
-                loopback ? ERole.eMultimedia : ERole.eCommunications, &rawDevice);
-            if (!loopback && result.Failed)
-                result = enumerator.Pointer->GetDefaultAudioEndpoint(EDataFlow.eCapture, ERole.eMultimedia, &rawDevice);
-            if (result.Failed)
-                throw new InvalidOperationException(loopback ? "Windows has no available default system audio output device." : "Windows has no available default microphone. Connect or enable a microphone, or turn off microphone recording.", System.Runtime.InteropServices.Marshal.GetExceptionForHR(result));
+            try
+            {
+                try { device = enumerator.GetDefaultAudioEndpoint(loopback ? DataFlow.Render : DataFlow.Capture, loopback ? Role.Multimedia : Role.Communications); }
+                catch (SharpGenException) when (!loopback) { device = enumerator.GetDefaultAudioEndpoint(DataFlow.Capture, Role.Multimedia); }
+            }
+            catch (SharpGenException ex)
+            {
+                throw new InvalidOperationException(loopback ? "Windows has no available default system audio output device." : "Windows has no available default microphone. Connect or enable a microphone, or turn off microphone recording.", ex);
+            }
         }
-        else
-            fixed (char* chars = id) enumerator.Pointer->GetDevice(chars, &rawDevice).ThrowOnFailure();
-        using ComPtr<IMMDevice> device = new(rawDevice);
-        ComPtr<IAudioClient3> client = ActivateClient(device);
+        else device = enumerator.GetDevice(id);
+        using IMMDevice ownedDevice = device;
+        ComPtr<IAudioClient3> client = ActivateClient(ownedDevice);
         AutoResetEvent ready = new(false);
         try
         {
@@ -82,7 +86,7 @@ internal sealed unsafe class WasapiCapture : IDisposable
                         // Failed initialization can leave a client partially initialized. Retry on a
                         // fresh client so default-period Windows resampling also works for mono/44.1 kHz microphones.
                         client.Dispose();
-                        client = ActivateClient(device);
+                        client = ActivateClient(ownedDevice);
                     }
                 }
             }
@@ -97,11 +101,10 @@ internal sealed unsafe class WasapiCapture : IDisposable
         catch { ready.Dispose(); client.Dispose(); throw; }
     }
 
-    private static ComPtr<IAudioClient3> ActivateClient(ComPtr<IMMDevice> device)
+    private static ComPtr<IAudioClient3> ActivateClient(IMMDevice device)
     {
         Guid iid = typeof(IAudioClient3).GUID;
-        void* rawClient;
-        device.Pointer->Activate(&iid, CLSCTX.CLSCTX_INPROC_SERVER, null, &rawClient).ThrowOnFailure();
+        device.Activate(iid, 1, null, out nint rawClient).CheckError(); // CLSCTX_INPROC_SERVER
         return new((IAudioClient3*)rawClient);
     }
 
@@ -116,10 +119,7 @@ internal sealed unsafe class WasapiCapture : IDisposable
             com = true;
             uint taskIndex = 0;
             mmcss = NativeMethods.AvSetMmThreadCharacteristics("Audio", ref taskIndex);
-            Guid clsid = new("bcde0395-e52f-467c-8e3d-c4579291692e"), iid = typeof(IMMDeviceEnumerator).GUID;
-            void* rawEnumerator;
-            NativeMethods.CoCreateInstance(&clsid, null, CLSCTX.CLSCTX_INPROC_SERVER, &iid, &rawEnumerator).ThrowOnFailure();
-            using ComPtr<IMMDeviceEnumerator> enumerator = new((IMMDeviceEnumerator*)rawEnumerator);
+            using IMMDeviceEnumerator enumerator = new();
             if (options.CaptureSystemAudio) endpoints.Add(Open(enumerator, true, options.SystemAudioDeviceId, options.SystemAudioGain));
             if (options.CaptureMicrophone) endpoints.Add(Open(enumerator, false, options.MicrophoneDeviceId, options.MicrophoneGain));
             prepared.TrySetResult();

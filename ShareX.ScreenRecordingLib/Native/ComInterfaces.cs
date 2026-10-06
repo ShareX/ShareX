@@ -20,7 +20,6 @@ internal unsafe struct IUnknown
             return ((delegate* unmanaged[Stdcall]<IUnknown*, uint>)Vtable[2])(self);
     }
 }
-
 [Guid("3628e81b-3cac-4c60-b7f4-23ce0e0c3356")]
 internal unsafe struct IGraphicsCaptureItemInterop
 {
@@ -34,16 +33,5 @@ internal unsafe struct IGraphicsCaptureItemInterop
     {
         fixed (IGraphicsCaptureItemInterop* self = &this)
             return ((delegate* unmanaged[Stdcall]<IGraphicsCaptureItemInterop*, nint, Guid*, void**, HRESULT>)Vtable[4])(self, monitor, iid, result);
-    }
-}
-
-[Guid("a9b3d012-3df2-4ee3-b8d1-8695f457d3c1")]
-internal unsafe struct IDirect3DDxgiInterfaceAccess
-{
-    public void** Vtable;
-    public HRESULT GetInterface(Guid* iid, void** result)
-    {
-        fixed (IDirect3DDxgiInterfaceAccess* self = &this)
-            return ((delegate* unmanaged[Stdcall]<IDirect3DDxgiInterfaceAccess*, Guid*, void**, HRESULT>)Vtable[3])(self, iid, result);
     }
 }

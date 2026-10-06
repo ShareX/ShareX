@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using ShareX.ScreenRecordingLib.Native;
+using Vortice.Direct3D11;
+using Box = Vortice.Mathematics.Box;
 using Windows.Graphics.Capture;
 using Windows.Graphics.DirectX;
 using Windows.Security.Authorization.AppCapabilityAccess;
@@ -186,16 +188,16 @@ internal sealed unsafe class GraphicsCapture : IDisposable
                 int copyHeight = Math.Min(crop.Height, latest.ContentSize.Height - crop.Y);
                 if (copyWidth <= 0 || copyHeight <= 0) continue;
                 using var surface = MarshalInterface<Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface>.CreateMarshaler(latest.Surface);
-                using ComPtr<IDirect3DDxgiInterfaceAccess> access = ComPtr<IUnknown>.Query<IDirect3DDxgiInterfaceAccess>(surface.ThisPtr);
-                Guid iid = typeof(ID3D11Texture2D).GUID;
-                void* rawTexture;
-                access.Pointer->GetInterface(&iid, &rawTexture).ThrowOnFailure();
-                using ComPtr<ID3D11Texture2D> texture = new((ID3D11Texture2D*)rawTexture);
+                Guid iid = typeof(IDirect3DDxgiInterfaceAccess).GUID;
+                void* rawAccess;
+                ((IUnknown*)surface.ThisPtr)->QueryInterface(&iid, &rawAccess).ThrowOnFailure();
+                using IDirect3DDxgiInterfaceAccess access = new((nint)rawAccess);
+                using ID3D11Texture2D texture = access.GetInterface<ID3D11Texture2D>();
                 // Clear padding outside the source (odd dimensions are cropped to even NV12 dimensions).
                 if (sources.Count == 1 && source.Target.Source.Location == Point.Empty) processor.Clear();
-                D3D11_BOX box = new() { left = (uint)crop.X, top = (uint)crop.Y, right = (uint)(crop.X + copyWidth), bottom = (uint)(crop.Y + copyHeight), back = 1 };
-                graphics.Context.Pointer->CopySubresourceRegion((ID3D11Resource*)processor.Canvas.Pointer, 0,
-                    (uint)source.Target.Destination.X, (uint)source.Target.Destination.Y, 0, (ID3D11Resource*)texture.Pointer, 0, &box);
+                Box box = new(crop.X, crop.Y, 0, crop.X + copyWidth, crop.Y + copyHeight, 1);
+                graphics.Context.CopySubresourceRegion(processor.Canvas, 0,
+                    (uint)source.Target.Destination.X, (uint)source.Target.Destination.Y, 0, texture, 0, box);
                 source.HasFrame = true;
                 LatestTimestamp = Math.Max(LatestTimestamp, latest.SystemRelativeTime.Ticks);
             }

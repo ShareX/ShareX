@@ -1,16 +1,19 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 using System.Collections.Concurrent;
 using ShareX.ScreenRecordingLib.Native;
+using Vortice.Direct3D11;
+using Vortice.DXGI;
+using Vortice.MediaFoundation;
 
 namespace ShareX.ScreenRecordingLib.Video;
 
 /// <summary>Textures are returned by IMFTrackedSample only after the encoder releases the sample.</summary>
-internal sealed unsafe class VideoTexturePool : IDisposable
+internal sealed class VideoTexturePool : IDisposable
 {
     internal sealed class Slot : IDisposable
     {
-        public required ComPtr<ID3D11Texture2D> Texture;
-        public required ComPtr<ID3D11VideoProcessorOutputView> View;
+        public required ID3D11Texture2D Texture;
+        public required ID3D11VideoProcessorOutputView View;
         public required SampleReleaseCallback Callback;
         public void Dispose() { Callback.Dispose(); View.Dispose(); Texture.Dispose(); }
     }
@@ -19,15 +22,15 @@ internal sealed unsafe class VideoTexturePool : IDisposable
     private readonly ConcurrentQueue<Slot> available = new();
     private int disposed;
 
-    public VideoTexturePool(GraphicsDevice graphics, GpuVideoProcessor processor, D3D11_BIND_FLAG encoderBindFlags)
+    public VideoTexturePool(GraphicsDevice graphics, GpuVideoProcessor processor, BindFlags encoderBindFlags)
     {
         try
         {
             for (int i = 0; i < 8; i++)
             {
-                ComPtr<ID3D11Texture2D> texture = graphics.CreateTexture(processor.Width, processor.Height,
-                    DXGI_FORMAT.DXGI_FORMAT_NV12, encoderBindFlags | D3D11_BIND_FLAG.D3D11_BIND_RENDER_TARGET);
-                ComPtr<ID3D11VideoProcessorOutputView> view;
+                ID3D11Texture2D texture = graphics.CreateTexture(processor.Width, processor.Height,
+                    Format.NV12, encoderBindFlags | BindFlags.RenderTarget);
+                ID3D11VideoProcessorOutputView view;
                 try { view = processor.CreateOutputView(texture); }
                 catch { texture.Dispose(); throw; }
                 Slot slot = new() { Texture = texture, View = view, Callback = null! };
@@ -41,22 +44,18 @@ internal sealed unsafe class VideoTexturePool : IDisposable
     public bool TryRent(out Slot? slot) => available.TryDequeue(out slot);
     public void Return(Slot slot) { if (Volatile.Read(ref disposed) == 0) available.Enqueue(slot); }
 
-    public ComPtr<IMFSample> CreateSample(Slot slot)
+    public IMFSample CreateSample(Slot slot)
     {
-        IMFSample* rawSample;
-        NativeMethods.MFCreateVideoSampleFromSurface(null, &rawSample).ThrowOnFailure();
-        ComPtr<IMFSample> sample = new(rawSample);
+        MediaFactory.MFCreateVideoSampleFromSurface(null!, out IMFSample sample).CheckError();
         bool allocatorSet = false;
         try
         {
-            Guid iid = typeof(ID3D11Texture2D).GUID;
-            IMFMediaBuffer* rawBuffer;
-            NativeMethods.MFCreateDXGISurfaceBuffer(&iid, (IUnknown*)slot.Texture.Pointer, 0, false, &rawBuffer).ThrowOnFailure();
-            using ComPtr<IMFMediaBuffer> buffer = new(rawBuffer);
-            buffer.Pointer->SetCurrentLength((uint)(slot.TextureSize())).ThrowOnFailure();
-            sample.Pointer->AddBuffer(buffer.Pointer).ThrowOnFailure();
-            using ComPtr<IMFTrackedSample> tracked = sample.Query<IMFTrackedSample>();
-            tracked.Pointer->SetAllocator(slot.Callback.Pointer, null).ThrowOnFailure();
+            using IMFMediaBuffer buffer = MediaFactory.MFCreateDXGISurfaceBuffer(typeof(ID3D11Texture2D).GUID, slot.Texture, 0, false);
+            Texture2DDescription desc = slot.Texture.Description;
+            buffer.CurrentLength = checked((int)(desc.Width * desc.Height * 3 / 2));
+            sample.AddBuffer(buffer);
+            using IMFTrackedSample tracked = sample.QueryInterface<IMFTrackedSample>();
+            tracked.SetAllocator(slot.Callback, null!);
             allocatorSet = true;
             return sample;
         }
@@ -67,17 +66,6 @@ internal sealed unsafe class VideoTexturePool : IDisposable
     {
         Interlocked.Exchange(ref disposed, 1);
         foreach (Slot slot in slots) slot.Dispose();
-        slots.Clear();
-        available.Clear();
-    }
-}
-
-internal static unsafe class VideoTextureSlotExtensions
-{
-    public static int TextureSize(this VideoTexturePool.Slot slot)
-    {
-        D3D11_TEXTURE2D_DESC desc;
-        slot.Texture.Pointer->GetDesc(&desc);
-        return checked((int)(desc.Width * desc.Height * 3 / 2));
+        slots.Clear(); available.Clear();
     }
 }
