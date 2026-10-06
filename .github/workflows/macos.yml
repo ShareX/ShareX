@@ -1,8 +1,8 @@
 name: macOS
 
 # Builds, tests and packages ShareX.app for macOS on Apple silicon, then starts the packaged application. Started by hand
-# (Actions > macOS > Run workflow, or "gh workflow run macos.yml --ref cross-platform-v2") while the branch workflows stay paused
-# for the port, like the Linux workflow.
+# (Actions > macOS > Run workflow, or "gh workflow run macos.yml --ref cross-platform-v2"). The Cross-platform workflow does the
+# same on every push for both architectures and signs with Developer ID when the secrets are set.
 on:
   workflow_dispatch:
 
@@ -62,5 +62,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sharex-macos-arm64
-          path: ${{ runner.temp }}/package/ShareX-*-macos-arm64.zip
+          path: |
+            ${{ runner.temp }}/package/ShareX-*-macos-arm64.zip
+            ${{ runner.temp }}/package/ShareX-*-macos-arm64.dmg
           if-no-files-found: error

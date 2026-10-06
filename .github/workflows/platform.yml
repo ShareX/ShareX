@@ -7,6 +7,8 @@ on:
       - "Directory.Build.*"
       - "Directory.Packages.props"
       - "ShareX.sln"
+      - "Scripts/package-macos.sh"
+      - "Scripts/macos/**"
       - ".github/workflows/platform.yml"
   pull_request:
     paths:
@@ -14,6 +16,8 @@ on:
       - "Directory.Build.*"
       - "Directory.Packages.props"
       - "ShareX.sln"
+      - "Scripts/package-macos.sh"
+      - "Scripts/macos/**"
       - ".github/workflows/platform.yml"
 
 permissions:
@@ -93,10 +97,19 @@ jobs:
         run: dotnet build ShareX.sln --configuration Release -p:Platform=x64
 
   macos-app:
-    # macOS implementation and verification are deferred until Linux is complete and stable.
-    if: false
-    name: macOS app bundle and launch
-    runs-on: macos-latest
+    name: macOS app (${{ matrix.arch }})
+    runs-on: ${{ matrix.runner }}
+    env:
+      HAS_SIGNING_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE != '' }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: arm64
+            runner: macos-latest
+          - arch: x64
+            runner: macos-15-intel
 
     steps:
       - name: Checkout
@@ -107,18 +120,51 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
-      - name: Package ShareX.app
-        run: Scripts/package-macos.sh arm64 "$RUNNER_TEMP/package"
+      # A release build is signed with Developer ID and notarized when the repository has these secrets: MACOS_CERTIFICATE (the
+      # Developer ID Application .p12, base64), MACOS_CERTIFICATE_PASSWORD, MACOS_SIGN_IDENTITY, and MACOS_NOTARY_KEY (an App
+      # Store Connect API key .p8, base64), MACOS_NOTARY_KEY_ID, MACOS_NOTARY_ISSUER. Without them the bundle is signed ad hoc.
+      - name: Import signing certificate
+        env:
+          MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
+          MACOS_CERTIFICATE_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+          MACOS_SIGN_IDENTITY: ${{ secrets.MACOS_SIGN_IDENTITY }}
+          MACOS_NOTARY_KEY: ${{ secrets.MACOS_NOTARY_KEY }}
+          MACOS_NOTARY_KEY_ID: ${{ secrets.MACOS_NOTARY_KEY_ID }}
+          MACOS_NOTARY_ISSUER: ${{ secrets.MACOS_NOTARY_ISSUER }}
+        if: env.HAS_SIGNING_CERTIFICATE == 'true'
+        run: |
+          keychain="$RUNNER_TEMP/signing.keychain-db"
+          password="$(uuidgen)"
+          echo "$MACOS_CERTIFICATE" | base64 --decode > "$RUNNER_TEMP/certificate.p12"
+          security create-keychain -p "$password" "$keychain"
+          security set-keychain-settings -lut 3600 "$keychain"
+          security unlock-keychain -p "$password" "$keychain"
+          security import "$RUNNER_TEMP/certificate.p12" -k "$keychain" -P "$MACOS_CERTIFICATE_PASSWORD" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple: -k "$password" "$keychain"
+          security list-keychains -d user -s "$keychain" $(security list-keychains -d user | tr -d '"')
+          rm "$RUNNER_TEMP/certificate.p12"
+          echo "MACOS_SIGN_IDENTITY=$MACOS_SIGN_IDENTITY" >> "$GITHUB_ENV"
+          if [ -n "$MACOS_NOTARY_KEY" ]; then
+            echo "$MACOS_NOTARY_KEY" | base64 --decode > "$RUNNER_TEMP/notary.p8"
+            { echo "MACOS_NOTARY_KEY=$RUNNER_TEMP/notary.p8"; echo "MACOS_NOTARY_KEY_ID=$MACOS_NOTARY_KEY_ID"; echo "MACOS_NOTARY_ISSUER=$MACOS_NOTARY_ISSUER"; } >> "$GITHUB_ENV"
+          fi
 
-      # Starts the signed bundle with a clean home (welcome screen off, as for a returning user), waits for startup and closes it
-      # with SIGTERM, which must save the settings. Nothing is captured or uploaded.
+      - name: Package ShareX.app
+        run: |
+          Scripts/package-macos.sh ${{ matrix.arch }} "$RUNNER_TEMP/package"
+          ditto -x -k "$RUNNER_TEMP"/package/ShareX-*-macos-${{ matrix.arch }}.zip "$RUNNER_TEMP/app"
+          plutil -lint "$RUNNER_TEMP/app/ShareX.app/Contents/Info.plist"
+          codesign --verify --strict --deep "$RUNNER_TEMP/app/ShareX.app"
+          hdiutil verify "$RUNNER_TEMP"/package/ShareX-*-macos-${{ matrix.arch }}.dmg
+          if [ -n "${MACOS_NOTARY_KEY:-}" ]; then spctl --assess --type execute --verbose "$RUNNER_TEMP/app/ShareX.app"; fi
+
+      # Starts the bundle with a clean home (welcome screen off, as for a returning user), waits for startup and closes it with
+      # SIGTERM, which must save the settings. Nothing is captured or uploaded.
       - name: Launch ShareX.app
         run: |
           export HOME="$RUNNER_TEMP/home"
           mkdir -p "$HOME/Documents/ShareX"
           echo '{ "ShowStartScreen": false }' > "$HOME/Documents/ShareX/ApplicationConfig.json"
-          ditto -x -k "$RUNNER_TEMP"/package/ShareX-*-macos-arm64.zip "$RUNNER_TEMP/app"
-          codesign --verify --deep "$RUNNER_TEMP/app/ShareX.app"
           "$RUNNER_TEMP/app/ShareX.app/Contents/MacOS/ShareX" -silent & pid=$!
           log="$HOME/Documents/ShareX/Logs"
           for i in $(seq 1 90); do
@@ -132,9 +178,17 @@ jobs:
           grep -q "ShareX closed" "$log"/ShareX-Log-*.txt
           ! grep -q "Unhandled exception" "$log"/ShareX-Log-*.txt
 
-      - name: Upload ShareX.app
+      - name: Upload packages
         uses: actions/upload-artifact@v4
         with:
-          name: sharex-macos-arm64
-          path: ${{ runner.temp }}/package/*.zip
+          name: sharex-macos-${{ matrix.arch }}
+          path: |
+            ${{ runner.temp }}/package/*.zip
+            ${{ runner.temp }}/package/*.dmg
           if-no-files-found: error
+
+      - name: Remove signing keychain
+        if: always()
+        run: |
+          [ -f "$RUNNER_TEMP/signing.keychain-db" ] && security delete-keychain "$RUNNER_TEMP/signing.keychain-db" || true
+          rm -f "$RUNNER_TEMP/notary.p8"

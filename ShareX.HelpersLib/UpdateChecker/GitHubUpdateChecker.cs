@@ -38,6 +38,9 @@ namespace ShareX.HelpersLib
         public bool IncludePreRelease { get; set; }
         public bool IsPreRelease { get; protected set; }
 
+        // The end of the release file name of this system's package, when it is not Windows' setup or portable zip. Opened in the browser.
+        public string PackageSuffix { get; set; }
+
         private const string APIURL = "https://api.github.com";
 
         private string ReleasesURL => $"{APIURL}/repos/{Owner}/{Repo}/releases";
@@ -150,7 +153,11 @@ namespace ShareX.HelpersLib
 
                 GitHubAsset asset = null;
 
-                if (isPortable)
+                if (!string.IsNullOrEmpty(PackageSuffix))
+                {
+                    asset = FindAsset(release, PackageSuffix);
+                }
+                else if (isPortable)
                 {
                     if (RuntimeInformation.OSArchitecture == Architecture.Arm64)
                     {

@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
-# Builds ShareX.app for macOS and zips it.
+# Builds ShareX.app for macOS and packages it as a zip and, on a Mac, a disk image.
 #
 #   Scripts/package-macos.sh [arm64|x64] [OUTPUT_DIR]     default: arm64 into ./artifacts
 #
-# Needs the .NET 10 SDK. Runs on macOS or Linux; on macOS the bundle is signed ad hoc with codesign, which Apple silicon requires
-# before it runs any arm64 program. A bundle built elsewhere must be signed on a Mac first:
-#   codesign --force --deep --sign - ShareX.app
+# Needs the .NET 10 SDK. Runs on macOS or Linux. On a Mac the bundle is signed with codesign: ad hoc by default, which Apple
+# silicon requires before it runs any arm64 program, or for release with a Developer ID and the hardened runtime when
+# MACOS_SIGN_IDENTITY is set (for example "Developer ID Application: ShareX Team (TEAMID)", already in the keychain).
+# A signed build is notarized and stapled when one of these is set as well:
+#   MACOS_NOTARY_PROFILE                                   a notarytool keychain profile (xcrun notarytool store-credentials)
+#   MACOS_NOTARY_KEY, MACOS_NOTARY_KEY_ID, MACOS_NOTARY_ISSUER   an App Store Connect API key (.p8 path), its id and issuer
+# A bundle built off a Mac must be signed on one first:  codesign --force --deep --sign - ShareX.app
 # Users install by moving ShareX.app to /Applications. ShareX asks for Screen Recording permission the first time it captures.
 set -euo pipefail
 
@@ -109,20 +113,65 @@ cat >"$app/Contents/Info.plist" <<PLIST
 </plist>
 PLIST
 
-if command -v codesign >/dev/null; then
+notarize() {
+  if [ -n "${MACOS_NOTARY_PROFILE:-}" ]; then
+    xcrun notarytool submit "$1" --keychain-profile "$MACOS_NOTARY_PROFILE" --wait
+  else
+    xcrun notarytool submit "$1" --key "$MACOS_NOTARY_KEY" --key-id "$MACOS_NOTARY_KEY_ID" --issuer "$MACOS_NOTARY_ISSUER" --wait
+  fi
+}
+can_notarize() { [ -n "${MACOS_NOTARY_PROFILE:-}" ] || [ -n "${MACOS_NOTARY_KEY:-}" ]; }
+
+if ! command -v codesign >/dev/null; then
+  signed="NOT signed: run 'codesign --force --deep --sign - ShareX.app' on a Mac before it will start on Apple silicon"
+elif [ -n "${MACOS_SIGN_IDENTITY:-}" ]; then
+  # Inside out, as Apple asks (--deep is not used for release signing): every Mach-O file (native libraries, the browser host,
+  # .NET's createdump), then the bundle, whose main executable gets the entitlements.
+  entitlements="$repo/Scripts/macos/ShareX.entitlements"
+  find "$app/Contents/MacOS" -type f ! -path "$app/Contents/MacOS/ShareX" -print0 | while IFS= read -r -d '' file; do
+    if file -b "$file" | grep -q '^Mach-O'; then
+      codesign --force --timestamp --options runtime --entitlements "$entitlements" --sign "$MACOS_SIGN_IDENTITY" "$file"
+    fi
+  done
+  codesign --force --timestamp --options runtime --entitlements "$entitlements" --sign "$MACOS_SIGN_IDENTITY" "$app"
+  codesign --verify --strict --deep "$app"
+  signed="signed by $MACOS_SIGN_IDENTITY"
+  if can_notarize; then
+    (cd "$staging" && ditto -c -k --keepParent ShareX.app notarize.zip)
+    notarize "$staging/notarize.zip"
+    xcrun stapler staple "$app"
+    signed="$signed, notarized"
+  fi
+else
   codesign --force --deep --sign - "$app"
   signed="signed ad hoc"
-else
-  signed="NOT signed: run 'codesign --force --deep --sign - ShareX.app' on a Mac before it will start on Apple silicon"
 fi
 
 mkdir -p "$out"
-zip_path="$(cd "$out" && pwd)/ShareX-$version-macos-$arch.zip"
+out="$(cd "$out" && pwd)"
+zip_path="$out/ShareX-$version-macos-$arch.zip"
 rm -f "$zip_path"
 if command -v ditto >/dev/null; then
   ditto -c -k --keepParent "$app" "$zip_path"
 else
   (cd "$staging" && zip -qry "$zip_path" ShareX.app)
 fi
-
 echo "Package: $zip_path ($signed)"
+
+# The disk image opens to ShareX.app beside a link to /Applications to drag it onto.
+if command -v hdiutil >/dev/null; then
+  dmg_path="$out/ShareX-$version-macos-$arch.dmg"
+  mkdir "$staging/dmg"
+  cp -R "$app" "$staging/dmg/"
+  ln -s /Applications "$staging/dmg/Applications"
+  rm -f "$dmg_path"
+  hdiutil create -quiet -volname "ShareX $version" -srcfolder "$staging/dmg" -fs HFS+ -format UDZO "$dmg_path"
+  if [ -n "${MACOS_SIGN_IDENTITY:-}" ]; then
+    codesign --force --timestamp --sign "$MACOS_SIGN_IDENTITY" "$dmg_path"
+    if can_notarize; then
+      notarize "$dmg_path"
+      xcrun stapler staple "$dmg_path"
+    fi
+  fi
+  echo "Disk image: $dmg_path ($signed)"
+fi

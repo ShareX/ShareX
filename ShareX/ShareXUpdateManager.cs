@@ -37,6 +37,8 @@ namespace ShareX
         private static bool OpensReleasePage => StartupOptions.Portable ||
             (PlatformServices.IsInitialized && !PlatformServices.Current.CodeSignature.Support.IsSupported);
 
+        private static string PackageSuffix => PlatformServices.IsInitialized ? PlatformServices.Current.SystemInfo.UpdatePackageSuffix : null;
+
         public override GitHubUpdateChecker CreateUpdateChecker()
         {
             if (UpdateChannel == UpdateChannel.Dev)
@@ -45,6 +47,7 @@ namespace ShareX
                 {
                     IsDev = true,
                     IsPortable = OpensReleasePage,
+                    PackageSuffix = PackageSuffix,
                     IgnoreRevision = true
                 };
             }
@@ -53,6 +56,7 @@ namespace ShareX
                 return new GitHubUpdateChecker("ShareX", "ShareX")
                 {
                     IsPortable = OpensReleasePage,
+                    PackageSuffix = PackageSuffix,
                     IncludePreRelease = UpdateChannel == UpdateChannel.PreRelease,
                     IgnoreRevision = true
                 };

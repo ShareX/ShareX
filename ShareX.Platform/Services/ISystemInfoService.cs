@@ -50,6 +50,12 @@ public interface ISystemInfoService
     bool CanRestartElevated => false;
 
     /// <summary>
+    /// The end of the file name of this system's ShareX package among a release's files ("macos-arm64.dmg", "linux-x64.tar.gz"),
+    /// which the update checker links to. Null on Windows, which uses ShareX's setup and portable files.
+    /// </summary>
+    string? UpdatePackageSuffix => null;
+
+    /// <summary>
     /// How this system's keyboard names a modifier in shortcut labels, or null for ShareX's translated defaults (Ctrl, Shift, Alt,
     /// Win). macOS uses its symbols (⌃ ⌥ ⇧ ⌘); Linux calls the Windows key Super.
     /// </summary>

@@ -185,6 +185,17 @@ public class MacServicesTests
         Assert.True(linux.KeyboardHasPrintScreen);
     }
 
+    [Fact]
+    public void Updates_LinkToEachSystemsPackage()
+    {
+        ISystemInfoService mac = new MacSystemInfoService(new RecordingRunner());
+        ISystemInfoService linux = new ShareX.Platform.Linux.UnixSystemInfoService(new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.X11, DesktopEnvironment.Xfce, "XFCE", false), new RecordingRunner());
+        string arch = System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture == System.Runtime.InteropServices.Architecture.Arm64 ? "arm64" : "x64";
+
+        Assert.Equal($"macos-{arch}.dmg", mac.UpdatePackageSuffix);
+        Assert.Equal($"linux-{arch}.tar.gz", linux.UpdatePackageSuffix);
+    }
+
     [MacOSFact]
     public void Clipboard_RoundTripsTextAndImage()
     {

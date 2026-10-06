@@ -14,9 +14,9 @@ Uploads go only to a local server (AGENTS.md: never send real data to third-part
    Scripts/package-macos.sh arm64
    ```
 
-   Use `x64` on an Intel Mac. The zip is written to `artifacts/ShareX-<version>-macos-<arch>.zip`.
-2. Unzip it and move **ShareX.app** to **Applications**.
-3. If the zip was downloaded or copied from another machine, macOS may say *"ShareX is damaged and can't be opened"*. Gatekeeper says this about quarantined downloads that are not signed with a Developer ID. To fix it:
+   Use `x64` on an Intel Mac. The zip and the disk image are written to `artifacts/ShareX-<version>-macos-<arch>.zip` and `.dmg`. A build from the Cross-platform workflow's artifacts (`sharex-macos-arm64` or `-x64`) can be used instead.
+2. Open the disk image (or unzip the zip) and drag **ShareX.app** to **Applications**.
+3. A Developer ID signed and notarized build opens directly. If an unsigned build was downloaded or copied from another machine, macOS may say *"ShareX is damaged and can't be opened"*. Gatekeeper says this about quarantined downloads that are not signed with a Developer ID. To fix it:
    1. Open Terminal.
    2. Type `xattr -cr ` (with a space at the end) but do not press Enter yet.
    3. Drag **ShareX.app** from Finder into the Terminal window. This pastes its full path.

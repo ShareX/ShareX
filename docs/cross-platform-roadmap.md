@@ -22,7 +22,7 @@ As of 2026-10-04.
 | --- | --- | --- |
 | Windows | **90%** | Estimate retained from M's initial roadmap. W5, W9 and the R24-R27 native migrations are implemented and covered by Windows fixtures; real isolated startup and loopback upload/history runs also pass. J1 Windows 10/11 desktop sign-off and full J8 flows remain unverified; R29 fixes the B24 connection collision in code. R38's child-process regression now proves successful slow-write persistence through normal exit; R44 timeout diagnostics now persist through real process exit, with bounded child fixtures and successful-drain coverage. R43 received startup routing/shutdown is implemented and covered by portable flow/router tests plus real isolated first-start ExitShareX; visible welcome/tray/language interaction and native fixture cleanup issue B27 remain open. |
 | Linux | **90%** | M, 2026-10-04: Hyprland verified end to end (capture, region, window, recording, hotkeys, tray, clipboard incl. images, uploads, history, watch folders, autostart, file types, secrets, sounds, background remover, browser extension launch); X11 backends verified on a real X server (hotkeys, capture, x11grab recording, mouse hook, click-through overlay). Done today: R28 to R41 requests for M, scrolling capture reported per desktop, packaging (tar.gz + installer) and a manual Linux CI workflow, personal folder fix. Remaining: GNOME/KDE/sway and window-managed X11 verification (need VMs), mixed-scale multi-monitor, R20/R22 alignment with Jaex's authoritative scope, actual desktop verification of the completed H11/H13/H14/B32/B33 frontend changes. |
-| macOS | **85%** | Real-Mac test (2026-10-05, docs/macos-test-procedure.md) passed capture, region, window, Retina, upload, history, editor, tools, hotkeys, Finder actions, settings and tray exit. Fixed after it: browser host missing from the package (F3, also on Linux), Retina recording crop (F2), Esc in the region overlay (F1, app activation), application menu (F5) and Cmd+Q/Dock Quit (F6), system shortcut conflicts and Command symbols (F4), cursor position in region captures (F8); Vision OCR offered again. Remaining low items F7, F9 to F13, then a rerun on a Mac. |
+| macOS | **95%** | Real-Mac test (2026-10-05, docs/macos-test-procedure.md) passed capture, region, window, Retina, upload, history, editor, tools, hotkeys, Finder actions, settings and tray exit. Every finding is fixed in code (F1 to F8, F10 to F13; F9 is v22 behaviour). Release packaging: Developer ID signing with the hardened runtime, notarization and a disk image (`Scripts/package-macos.sh`), arm64 and x64 built and launched in CI, updates link to the macOS disk image. Remaining: a rerun on a Mac and the Apple signing secrets. |
 
 ### What 100% means
 
@@ -65,14 +65,16 @@ When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS wo
 
 ### G3: macOS complete
 
-McoreD started this phase on 2026-10-04 ahead of G1 (M10); Jaex's approval is pending. OCR remains Windows-only.
+Started 2026-10-04. OCR uses the Vision framework.
 
 - [x] Every contract implemented or reporting a user-facing reason (Finder Quick Actions, Launch Services file types, open-file/Dock activation, permission prompts and click-through overlays added in the second round): capture (screencapture), recording (FFmpeg avfoundation), window list and inspection, mouse hook (CGEventSource polling), overlay (NSWindow), Carbon hotkeys, synthetic input, clipboard, Keychain, LaunchAgent startup, Dock progress, wallpaper, notifications, QuickLook thumbnails, CUPS printing, sounds, browser host, AppKit cursors and cursor capture, FFmpeg video tools. Platform limits (changing other applications' windows, Finder menus, Send to, desktop icons, DirectShow) report reasons.
 - [x] Tray through Avalonia's NSStatusItem; emoji drawn with Apple Color Emoji by SkiaSharp (B42 fixed in code).
-- [x] Packaging: `Scripts/package-macos.sh` builds a signed ad hoc ShareX.app zip for arm64 or x64.
-- [ ] CI: `.github/workflows/macos.yml` (manual) builds, tests, packages and starts the app; first run outstanding.
+- [x] Packaging: `Scripts/package-macos.sh` builds ShareX.app as a zip and a disk image for arm64 or x64, signed ad hoc or with a Developer ID.
+- [x] CI: the Cross-platform workflow packages and starts ShareX.app for arm64 and x64 on every push; `macos.yml` does the same by hand.
+- [x] Updates: the update checker links to the release's `macos-<arch>.dmg`.
 - [ ] Real flows run on a Mac, following [macos-test-procedure.md](macos-test-procedure.md) (capture, record, upload, history, editor, tools, hotkeys, tray, settings, start at login, integration), including Screen Recording and Accessibility permission prompts and Retina/mixed-scale displays.
-- [ ] Signing with a Developer ID and notarisation, so Gatekeeper opens the app without a right-click. Not wanted yet (McoreD, 2026-10-04); ad hoc signing is used meanwhile.
+- [x] Signing with a Developer ID, the hardened runtime (`Scripts/macos/ShareX.entitlements`) and notarisation, so Gatekeeper opens the app; used when the signing secrets are set.
+- [ ] Signing secrets added to the repository (see docs/cross-platform.md, macOS release).
 
 ## Linux feature verification list
 
@@ -274,3 +276,4 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 
 - 2026-10-05, J: B53 native Fedora KDE portal identity completed after claim a571f239f, preserving installed/customized desktop entries and B52 sandbox behavior. Real Fedora portal missing-entry rejection reproduced, native/.NET-host registration and GlobalShortcuts v2 session creation/close verified, with stale generated-identity recovery. Update only the KDE hotkey cell to precise partial evidence; actual user permission/physical firing and broad gates remain open. Full Linux Release 0 warnings/errors, five projects 705 pass / 70 skips, eighteen new regressions; Debug rebuilt. No user desktop configuration change, fresh Windows sign-off, macOS work or percentage change.
 - 2026-10-06, M: AGENTS.md reduced to architecture, scope and Git rules (coordination guardrails removed at McoreD's request); delegation tracker marked historical; Vision OCR restored on macOS; Cross-platform workflow re-enabled for the branch. macOS test report F1 to F6 and F8 fixed in code.
+- 2026-10-07, M: macOS release packaging: Developer ID signing with hardened runtime entitlements, notarization and stapling, disk image; the macOS app job runs again (arm64 and x64); updates on macOS and Linux link to their own package. macOS 95%; a Mac rerun and the signing secrets remain.

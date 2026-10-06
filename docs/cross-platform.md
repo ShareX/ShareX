@@ -83,6 +83,18 @@ On sway, GNOME and KDE scrolling capture is reported unsupported with the Waylan
 
 `Scripts/install-linux.sh` builds and installs ShareX for the current user under `~/.local` (no root). `Scripts/install-linux.sh --package DIR` makes a self-contained `sharex-linux-x64.tar.gz` (or `-arm64`); users extract it and run `./install.sh`, which needs neither the .NET SDK nor root, and `./install.sh --uninstall` removes it while keeping settings and screenshots. Flatpak is deferred: its sandbox blocks the compositor IPC, X11 window access and grim that capture relies on. The manual `Linux` workflow builds, tests, packages and runs the installed application headless.
 
+## macOS release
+
+`Scripts/package-macos.sh arm64|x64 [DIR]` builds `ShareX-<version>-macos-<arch>.zip` and, on a Mac, `ShareX-<version>-macos-<arch>.dmg` (ShareX.app beside a link to Applications). Without signing settings the bundle is signed ad hoc, which runs locally but which Gatekeeper rejects after a download. For a release the script signs every Mach-O file with a Developer ID and the hardened runtime, using `Scripts/macos/ShareX.entitlements` (JIT and unsigned executable memory for .NET, library validation off for its native libraries, microphone, Apple Events), then notarizes and staples the app and the disk image:
+
+| Variable | Value |
+| --- | --- |
+| `MACOS_SIGN_IDENTITY` | `Developer ID Application: <name> (<team id>)`, in the keychain |
+| `MACOS_NOTARY_PROFILE` | a `xcrun notarytool store-credentials` profile, or instead: |
+| `MACOS_NOTARY_KEY`, `MACOS_NOTARY_KEY_ID`, `MACOS_NOTARY_ISSUER` | an App Store Connect API key (.p8 path), its key id and issuer id |
+
+The Cross-platform workflow packages and starts the app for arm64 (`macos-latest`) and x64 (`macos-15-intel`) on every push and uploads both files. It signs and notarizes when the repository has the secrets `MACOS_CERTIFICATE` (the Developer ID Application certificate and key exported as .p12, base64), `MACOS_CERTIFICATE_PASSWORD`, `MACOS_SIGN_IDENTITY`, `MACOS_NOTARY_KEY` (the .p8, base64), `MACOS_NOTARY_KEY_ID` and `MACOS_NOTARY_ISSUER`, and then checks the result with `spctl`. Release the `.dmg` files: the update checker on macOS looks for `macos-arm64.dmg` or `macos-x64.dmg` in the release and opens its download link.
+
 ## Building
 
 .NET 10 SDK on every operating system.

@@ -45,6 +45,9 @@ public sealed class UnixSystemInfoService : ISystemInfoService
         administratorGroupMember = new Lazy<bool>(ReadAdministratorGroupMember);
     }
 
+    // Scripts/install-linux.sh --package names the archive sharex-linux-<arch>.tar.gz.
+    public string? UpdatePackageSuffix => $"linux-{(System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture == System.Runtime.InteropServices.Architecture.Arm64 ? "arm64" : "x64")}.tar.gz";
+
     public string OperatingSystemName => info.Distribution?.PrettyName is { Length: > 0 } name ? name : System.Runtime.InteropServices.RuntimeInformation.OSDescription;
 
     public bool IsElevated => Environment.IsPrivilegedProcess;
