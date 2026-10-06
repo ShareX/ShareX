@@ -105,7 +105,7 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
             using MediaFoundationWriter writer = new(graphics, options, width, height);
             Encoder = writer.Encoder;
             using VideoTexturePool textures = new(graphics, processor, writer.EncoderBindFlags);
-            using GraphicsCapture capture = new(graphics, processor, targets, options.IncludeCursor);
+            using GraphicsCapture capture = new(graphics, processor, targets, options.IncludeCursor, options.FramesPerSecond);
             AudioMixer mixer = new(clock);
             using WasapiCapture? audio = options.HasAudio ? new(options, mixer) : null;
             prepared.TrySetResult();

@@ -35,3 +35,17 @@ internal unsafe struct IGraphicsCaptureItemInterop
             return ((delegate* unmanaged[Stdcall]<IGraphicsCaptureItemInterop*, nint, Guid*, void**, HRESULT>)Vtable[4])(self, monitor, iid, result);
     }
 }
+
+// Windows 11 24H2 adds capture pacing independently of the session's original interface.
+// Declare it here so the library can retain its Windows 11 22H2 SDK/runtime baseline.
+[Guid("67c0ea62-1f85-5061-925a-239be0ac09cb")]
+internal unsafe struct IGraphicsCaptureSession5
+{
+    public void** Vtable;
+    public HRESULT SetMinUpdateInterval(long duration)
+    {
+        fixed (IGraphicsCaptureSession5* self = &this)
+            // IInspectable occupies slots 0-5; the getter is slot 6 and the setter is slot 7.
+            return ((delegate* unmanaged[Stdcall]<IGraphicsCaptureSession5*, long, HRESULT>)Vtable[7])(self, duration);
+    }
+}

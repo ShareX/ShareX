@@ -105,7 +105,7 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         finally { NativeMethods.WindowsDeleteString(className); }
     }
 
-    public GraphicsCapture(GraphicsDevice graphics, GpuVideoProcessor processor, List<Target> targets, bool cursor)
+    public GraphicsCapture(GraphicsDevice graphics, GpuVideoProcessor processor, List<Target> targets, bool cursor, int fps)
     {
         this.graphics = graphics;
         this.processor = processor;
@@ -123,6 +123,7 @@ internal sealed unsafe class GraphicsCapture : IDisposable
                 catch { pool.Dispose(); throw; }
                 Source source = new() { Target = target, Pool = pool, Session = session, InitialWidth = target.Item.Size.Width, InitialHeight = target.Item.Size.Height };
                 sources.Add(source);
+                ConfigureCaptureInterval(session, fps);
                 session.IsCursorCaptureEnabled = cursor;
                 if (borderless) session.IsBorderRequired = false;
                 source.ClosedHandler = (_, _) => Interlocked.Exchange(ref source.Closed, 1);
@@ -130,6 +131,19 @@ internal sealed unsafe class GraphicsCapture : IDisposable
             }
         }
         catch { Dispose(); throw; }
+    }
+
+    private static void ConfigureCaptureInterval(GraphicsCaptureSession session, int fps)
+    {
+        using var marshaler = MarshalInspectable<GraphicsCaptureSession>.CreateMarshaler(session);
+        Guid iid = typeof(IGraphicsCaptureSession5).GUID;
+        void* rawSession;
+        HRESULT result = ((IUnknown*)marshaler.ThisPtr)->QueryInterface(&iid, &rawSession);
+        if (result.Value == unchecked((int)0x80004002)) return; // E_NOINTERFACE: older Windows uses its existing capture cadence.
+        result.ThrowOnFailure();
+        using ComPtr<IGraphicsCaptureSession5> extended = new((IGraphicsCaptureSession5*)rawSession);
+        // Newer Windows can otherwise throttle WGC to 60 FPS even on a high-refresh display.
+        extended.Pointer->SetMinUpdateInterval(TimeSpan.TicksPerSecond / fps).ThrowOnFailure();
     }
 
     private static bool RequestBorderlessAccess()
