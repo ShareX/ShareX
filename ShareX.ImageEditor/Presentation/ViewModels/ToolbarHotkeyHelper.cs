@@ -23,12 +23,20 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia;
 using Avalonia.Input;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels;
 
 internal static class ToolbarHotkeyHelper
 {
+    /// <summary>
+    /// The platform's command modifier: Command on macOS, Control elsewhere (from Avalonia's hotkey configuration). "Ctrl" in a
+    /// saved shortcut means this key, so the same settings read naturally on every system.
+    /// </summary>
+    public static KeyModifiers CommandModifier =>
+        Application.Current?.PlatformSettings?.HotkeyConfiguration.CommandModifiers ?? KeyModifiers.Control;
+
     public static bool TryParse(string? hotkey, out Key key, out KeyModifiers modifiers)
     {
         key = Key.None;
@@ -51,7 +59,7 @@ internal static class ToolbarHotkeyHelper
             {
                 case "CTRL":
                 case "CONTROL":
-                    modifiers |= KeyModifiers.Control;
+                    modifiers |= CommandModifier;
                     break;
                 case "SHIFT":
                     modifiers |= KeyModifiers.Shift;
@@ -89,7 +97,7 @@ internal static class ToolbarHotkeyHelper
     {
         List<string> parts = new();
 
-        if (modifiers.HasFlag(KeyModifiers.Control))
+        if (modifiers.HasFlag(CommandModifier))
         {
             parts.Add("Ctrl");
         }
@@ -104,7 +112,7 @@ internal static class ToolbarHotkeyHelper
             parts.Add("Alt");
         }
 
-        if (modifiers.HasFlag(KeyModifiers.Meta))
+        if (modifiers.HasFlag(KeyModifiers.Meta) && CommandModifier != KeyModifiers.Meta)
         {
             parts.Add("Meta");
         }

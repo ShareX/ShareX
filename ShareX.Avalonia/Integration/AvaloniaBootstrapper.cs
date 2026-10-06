@@ -26,6 +26,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Input;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Themes.Fluent;
 using Avalonia.Threading;
@@ -41,6 +42,18 @@ public sealed class ShareXAvaloniaApplication : Application
         // The name macOS shows for the application menu and in the Dock, and the menu itself (read once, at initialization).
         Name = "ShareX";
         NativeMenu.SetMenu(this, ApplicationMenu.Create());
+
+        // Menu shortcuts written as "Ctrl+…" show and work with the platform's command key (Command on macOS); their key
+        // handlers use the same modifier.
+        MenuItem.InputGestureProperty.Changed.AddClassHandler<MenuItem>((item, _) =>
+        {
+            KeyModifiers command = PlatformSettings?.HotkeyConfiguration.CommandModifiers ?? KeyModifiers.Control;
+
+            if (command != KeyModifiers.Control && item.InputGesture is { } gesture && gesture.KeyModifiers.HasFlag(KeyModifiers.Control))
+            {
+                item.InputGesture = new KeyGesture(gesture.Key, (gesture.KeyModifiers & ~KeyModifiers.Control) | command);
+            }
+        });
 
         Uri baseUri = new Uri("avares://ShareX.Avalonia/");
         Resources.MergedDictionaries.Add(new ResourceInclude(baseUri)

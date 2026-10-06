@@ -39,3 +39,15 @@ public sealed class UnixFactAttribute : FactAttribute
         }
     }
 }
+
+/// <summary>The data-driven form of <see cref="UnixFactAttribute"/>.</summary>
+public sealed class UnixTheoryAttribute : TheoryAttribute
+{
+    public UnixTheoryAttribute()
+    {
+        if (OperatingSystem.IsWindows())
+        {
+            Skip = "Uses Unix paths.";
+        }
+    }
+}

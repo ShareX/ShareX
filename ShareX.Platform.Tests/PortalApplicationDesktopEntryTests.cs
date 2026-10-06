@@ -35,7 +35,7 @@ namespace ShareX.Platform.Tests;
 
 public class PortalApplicationDesktopEntryTests
 {
-    [Fact]
+    [UnixFact]
     public void NativeBuildGetsAHiddenCompleteIdentityWithoutChangingOtherDesktopFiles()
     {
         WithDirectory(root =>
@@ -57,7 +57,7 @@ public class PortalApplicationDesktopEntryTests
         });
     }
 
-    [Fact]
+    [UnixFact]
     public void FrameworkDependentBuildIncludesItsAssemblyInTheExecCommand()
     {
         WithDirectory(root =>
@@ -71,7 +71,7 @@ public class PortalApplicationDesktopEntryTests
         });
     }
 
-    [Fact]
+    [UnixFact]
     public void ExecHasBothDesktopValueAndArgumentEscaping()
     {
         WithDirectory(root =>
@@ -87,7 +87,7 @@ public class PortalApplicationDesktopEntryTests
         });
     }
 
-    [Theory]
+    [UnixTheory]
     [InlineData(false)]
     [InlineData(true)]
     public void ExistingUserAndSystemEntriesAreRetainedByteForByte(bool systemEntry)
@@ -106,7 +106,7 @@ public class PortalApplicationDesktopEntryTests
         });
     }
 
-    [Fact]
+    [UnixFact]
     public void LaterSystemSearchDirectoriesAreChecked()
     {
         WithDirectory(root =>
@@ -121,7 +121,7 @@ public class PortalApplicationDesktopEntryTests
         });
     }
 
-    [Fact]
+    [UnixFact]
     public void RepeatedPreparationDoesNotRewriteTheEntry()
     {
         WithDirectory(root =>
@@ -138,7 +138,7 @@ public class PortalApplicationDesktopEntryTests
         });
     }
 
-    [Fact]
+    [UnixFact]
     public void GeneratedIdentityFollowsTheCurrentBuildAfterThePreviousExecutableIsRemoved()
     {
         WithDirectory(root =>
@@ -156,7 +156,7 @@ public class PortalApplicationDesktopEntryTests
         });
     }
 
-    [Theory]
+    [UnixTheory]
     [InlineData("Name=ShareX", "Name=My ShareX")]
     [InlineData("NoDisplay=true", "NoDisplay=false")]
     public void CustomizedGeneratedIdentityIsNotReplaced(string before, string after)
@@ -174,7 +174,7 @@ public class PortalApplicationDesktopEntryTests
         });
     }
 
-    [Theory]
+    [UnixTheory]
     [InlineData("relative")]
     [InlineData(null)]
     [InlineData("")]
@@ -188,7 +188,7 @@ public class PortalApplicationDesktopEntryTests
         });
     }
 
-    [Fact]
+    [UnixFact]
     public void MissingManagedAssemblyDoesNotPublishADotnetOnlyIdentity()
     {
         WithDirectory(root =>
@@ -200,7 +200,7 @@ public class PortalApplicationDesktopEntryTests
         });
     }
 
-    [Fact]
+    [UnixFact]
     public void UnwritableIdentityLocationRemainsUnavailableAndDoesNotThrow()
     {
         WithDirectory(root =>
@@ -212,7 +212,7 @@ public class PortalApplicationDesktopEntryTests
         });
     }
 
-    [Fact]
+    [UnixFact]
     public async Task SandboxRegistrationDoesNotPrepareAHostDesktopIdentity()
     {
         bool prepared = false;
@@ -222,7 +222,7 @@ public class PortalApplicationDesktopEntryTests
         Assert.Null(result.Error);
     }
 
-    [Fact]
+    [UnixFact]
     public async Task DesktopIdentityIsReadyBeforeHostRegistration()
     {
         bool prepared = false;

@@ -164,6 +164,13 @@ public sealed class MacShellIntegrationService : IShellIntegrationService
         foreach (string path in GetBrowserHostManifestPaths(host).Where(File.Exists))
         {
             File.Delete(path);
+
+            // Do not leave an empty NativeMessagingHosts folder behind that ShareX created.
+            string folder = Path.GetDirectoryName(path)!;
+            if (Directory.Exists(folder) && !Directory.EnumerateFileSystemEntries(folder).Any())
+            {
+                Directory.Delete(folder);
+            }
         }
     }
 

@@ -46,6 +46,9 @@ public interface ISystemInfoService
     /// </summary>
     bool KeyboardHasPrintScreen => true;
 
+    /// <summary>Whether ShareX can restart itself with administrator rights (Windows UAC). The menu entry is hidden elsewhere.</summary>
+    bool CanRestartElevated => false;
+
     /// <summary>
     /// How this system's keyboard names a modifier in shortcut labels, or null for ShareX's translated defaults (Ctrl, Shift, Alt,
     /// Win). macOS uses its symbols (⌃ ⌥ ⇧ ⌘); Linux calls the Windows key Super.

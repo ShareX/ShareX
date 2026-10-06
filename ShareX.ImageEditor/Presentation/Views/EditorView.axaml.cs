@@ -1355,7 +1355,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                         e.Handled = true;
                     }
                 }
-                else if (e.KeyModifiers.HasFlag(KeyModifiers.Control | KeyModifiers.Shift))
+                else if (e.KeyModifiers.HasFlag(ToolbarHotkeyHelper.CommandModifier | KeyModifiers.Shift))
                 {
                     if (vm.TrySelectToolForToolbarHotkey(e.Key, e.KeyModifiers))
                     {
@@ -1384,7 +1384,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                         case Key.S: vm.SaveAsCommand.Execute(null); e.Handled = true; break;
                     }
                 }
-                else if (e.KeyModifiers.HasFlag(KeyModifiers.Control) && !e.KeyModifiers.HasFlag(KeyModifiers.Shift))
+                else if (e.KeyModifiers.HasFlag(ToolbarHotkeyHelper.CommandModifier) && !e.KeyModifiers.HasFlag(KeyModifiers.Shift))
                 {
                     if (vm.TrySelectToolForToolbarHotkey(e.Key, e.KeyModifiers))
                     {

@@ -97,6 +97,8 @@ public sealed class WindowsSystemInfoService : ISystemInfoService
 
     public string GetSingleInstancePipeName(string name) => name;
 
+    public bool CanRestartElevated => true;
+
     /// <summary>The non-software DXGI adapter with the most dedicated video memory, as the background remover has always chosen.</summary>
     public GpuAdapter? GetPreferredGpu()
     {

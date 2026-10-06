@@ -211,7 +211,12 @@ public partial class ScrollingCaptureWindow : Window
             if (_viewModel.IsClosed) return;
             SetStatus(status);
             if (status == ScrollingCaptureStatus.Failed && !string.IsNullOrWhiteSpace(_service.FailureReason))
+            {
+                // For example a missing Accessibility permission on macOS: say so, not only in the status line.
                 StatusText.Text = _service.FailureReason;
+                RestoreAndActivate();
+                ShareX.AvaloniaUI.MessageBox.Show(this, _service.FailureReason, "ShareX", ShareX.AvaloniaUI.MessageBoxButtons.OK, ShareX.AvaloniaUI.MessageBoxIcon.Warning);
+            }
             _playNotificationSound?.Invoke();
         }
         catch (Exception ex)
@@ -322,6 +327,8 @@ public partial class ScrollingCaptureWindow : Window
             Show();
         }
 
+        // On macOS the window only comes to the front when ShareX itself is active.
+        PlatformServices.Current.Windows.ActivateOwnApplication();
         Activate();
     }
 

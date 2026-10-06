@@ -473,6 +473,11 @@ public partial class HistoryWindow : Window
         catch (OperationCanceledException)
         {
         }
+        catch (System.Net.Http.HttpRequestException ex) when (!localFile)
+        {
+            // An uploaded file's URL need not serve an image (or anything): no preview, one line in the log.
+            DebugHelper.WriteLine($"History preview unavailable for {imageSource}: {ex.Message}");
+        }
         catch (Exception ex)
         {
             DebugHelper.WriteException(ex);
