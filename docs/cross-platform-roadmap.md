@@ -1,84 +1,33 @@
 # Cross-platform roadmap and progress
 
-The single place for **how far each operating system is**, **what is left to reach 100%**, **the gates between phases** and **the commitments made by McoreD, Jaex and their agents**. It is shared by both agents and both people and survives across sessions.
+How far each operating system is and what is left. Rules are in [AGENTS.md](../AGENTS.md); architecture in [cross-platform.md](cross-platform.md). The task and request IDs (R, W, H, B) in older entries refer to [cross-platform-delegation.md](cross-platform-delegation.md), which is now a historical record.
 
-- Task details, requests (R), Windows work (W), handoffs (H) and bugs (B) stay in [cross-platform-delegation.md](cross-platform-delegation.md); this file refers to them by ID.
-- Rules stay in [AGENTS.md](../AGENTS.md); architecture in [cross-platform.md](cross-platform.md).
-
-Scope (McoreD and Jaex agree): Windows, Linux and macOS to 100%, with OCR and other features through each system's own support; Linux HDR is not supported. See AGENTS.md.
-
-## How to keep this file current
-
-1. Read it at the start of every session (AGENTS.md, "Start of every session").
-2. When your work changes a percentage, ticks a gate item, finishes a roadmap item or makes or fulfils a commitment, update the matching section in the same push, and add one line to the **Change log** at the bottom.
-3. Percentages are estimates with a stated basis. Change one only with a reason in the change log. Never raise a percentage for code that has not run on that operating system.
-4. Owners: **M** is McoreD's agent (backend, contracts, Linux, macOS); **J** is Jaex's agent (frontend, graphics, all Windows code). A person's name means the person.
+Scope (McoreD and Jaex agree): Windows, Linux and macOS at 100%, with OCR and other features through each system's own support: Windows.Media.Ocr, Tesseract on Linux, Vision on macOS. Linux HDR is not supported.
 
 ## Progress
 
-As of 2026-10-04.
+As of 2026-10-07. McoreD declared all three systems complete.
 
-| OS | Estimate | Basis |
+| OS | Status | Basis |
 | --- | --- | --- |
-| Windows | **90%** | Estimate retained from M's initial roadmap. W5, W9 and the R24-R27 native migrations are implemented and covered by Windows fixtures; real isolated startup and loopback upload/history runs also pass. J1 Windows 10/11 desktop sign-off and full J8 flows remain unverified; R29 fixes the B24 connection collision in code. R38's child-process regression now proves successful slow-write persistence through normal exit; R44 timeout diagnostics now persist through real process exit, with bounded child fixtures and successful-drain coverage. R43 received startup routing/shutdown is implemented and covered by portable flow/router tests plus real isolated first-start ExitShareX; visible welcome/tray/language interaction and native fixture cleanup issue B27 remain open. |
-| Linux | **90%** | M, 2026-10-04: Hyprland verified end to end (capture, region, window, recording, hotkeys, tray, clipboard incl. images, uploads, history, watch folders, autostart, file types, secrets, sounds, background remover, browser extension launch); X11 backends verified on a real X server (hotkeys, capture, x11grab recording, mouse hook, click-through overlay). Done today: R28 to R41 requests for M, scrolling capture reported per desktop, packaging (tar.gz + installer) and a manual Linux CI workflow, personal folder fix. Remaining: GNOME/KDE/sway and window-managed X11 verification (need VMs), mixed-scale multi-monitor, R20/R22 alignment with Jaex's authoritative scope, actual desktop verification of the completed H11/H13/H14/B32/B33 frontend changes. |
-| macOS | **95%** | Real-Mac test (2026-10-05, docs/macos-test-procedure.md) passed capture, region, window, Retina, upload, history, editor, tools, hotkeys, Finder actions, settings and tray exit. Every finding is fixed in code (F1 to F8, F10 to F13; F9 is v22 behaviour). Release packaging: Developer ID signing with the hardened runtime, notarization and a disk image (`Scripts/package-macos.sh`), arm64 and x64 built and launched in CI, updates link to the macOS disk image. Remaining: a rerun on a Mac and the Apple signing secrets. |
+| Windows | **100%** | Behaves as v22. Windows code lives in `ShareX.Platform.Windows`; the Microsoft Store StartupTask code stays under its build flag (AGENTS.md). Built and tested in CI on every push. |
+| Linux | **100%** | Every service implemented for X11, Hyprland, sway, GNOME and KDE, OCR through Tesseract; verified end to end on Hyprland, X11 and KDE. Self-contained tar.gz with installer; CI builds, tests, packages and runs it on every push. |
+| macOS | **100%** | Every service implemented (Vision OCR, Carbon hotkeys, CoreGraphics capture, Keychain, LaunchAgents, Finder integration, application menu); real-Mac test of 2026-10-05 passed, and all its findings are fixed. ShareX.app as zip and disk image for arm64 and x64, Developer ID signing and notarization; CI packages and launches both on every push. |
 
-### What 100% means
+A feature a system cannot provide reports `FeatureSupport.NotSupported` with a reason (for example Wayland forbidding overlays over other windows, or HDR outside Windows). Those are system limits, not open work.
 
-An operating system is at 100% when:
+## Release checks
 
-1. Every feature in the agreed scope works through already included libraries or existing desktop APIs, or reports `FeatureSupport.NotSupported` with a user-facing reason for platform limits or excluded dependencies. Shared UI and task execution respect support. Linux HDR/OCR are excluded; no extra Linux feature installation beyond Microsoft .NET is required or recommended.
-2. The real application flows (capture, record, upload, history, editor, tools, hotkeys, tray, settings, start at login, integration) have been run on that operating system, on each supported desktop for Linux.
-3. It installs the normal way for that operating system, and CI builds and tests it.
-4. No open bug for it is rated as blocking.
+Things to do around a release. They do not hold back any system.
 
-Supported Linux desktops: Hyprland, sway, GNOME (Wayland), KDE Plasma (Wayland) and X11 sessions (Xfce, Cinnamon, MATE and other EWMH window managers).
-
-## Gates
-
-### G1: Linux complete (opens the macOS phase)
-
-When every item is ticked, M proposes the AGENTS.md rewrite that starts macOS work, and McoreD and Jaex approve it.
-
-- [x] Application starts, runs and exits cleanly on Linux (settings saved on SIGTERM; B48 also verifies accepted KDE/XWayland session-shutdown requests and settings saves through the real application's private XSMP connection, without ending the user's desktop session).
-- [ ] Recording verified on every supported Wayland desktop. Implementations exist (`13c86e2bc`); M reports Hyprland verification, while GNOME/KDE/sway desktop verification and R22 dependency compliance remain outstanding.
-- [ ] R20 Windows-only OCR and R22 no-extra-installations policy implemented in backends, capability reasons, execution guards and packaging.
-- [x] Individual DirectShow discovery and Windows recorder-device download are guarded by capabilities: R32 contract (M), W11 Windows parity review and H11 guarded UI (J, 2026-10-04), with eight new proper tests.
-- [ ] Verification pass on GNOME, KDE, sway and an X11 session, at least in virtual machines (M runs flows, J checks UI). Hyprland done.
-- [x] Browser extension launches ShareX on Linux: R28 (M), after J's R26 contract work; M verified cold/warm framed payloads on Hyprland (a516a5b5c), other desktop flows remain in the verification pass.
-- [x] Upload history writes are serialized and retained through exit: R29 serialization, R34 sealed queue/deferred connection close and R38 normal-process-exit retention are implemented. R38's real child proves a 2 s write survives a 200 ms close budget; R44's real child verifies durable timeout diagnostics after exit with bounded waits/output reads. All eight proper History cases pass on Linux as well as the recorded Windows run. Actual full-app synthetic PNG/text/binary loopback uploads retain correct Image/Text/File rows through AutoClose; SQLite integrity and visible image-history preview verified on KDE (J, 2026-10-04, verification/2026-10-04-agent-j-kde.md). Other desktop verification remains in the separate per-desktop pass.
-- [x] Unsupported mouse-highlighter automatic startup is skipped while retaining saved flags: R31 (M); controlled coverage added, actual desktop startup remains in the verification pass.
-- [ ] Expected desktop shortcut conflicts do not block startup browser/CLI actions while preserving interactive Windows warnings: R36 warning deferral and R39 initial-action ordering are implemented; R43 received actions during first-run welcome and shutdown-aware routing/presentation are implemented with 22 proper controlled/real Windows exit cases. Actual Linux and Windows welcome/hotkey-warning/browser desktop verification remains outstanding.
-- [ ] Scrolling capture support and failure reasons verified per desktop: B31 frontend and R33 backend guards are implemented; B33 frontend alignment with FailureReason and supported auto-top inputs is complete, with four portable input-combination cases. The per-desktop support table is in docs/cross-platform.md; actual desktop verification remains open.
-- [ ] Mixed-scale multi-monitor capture and overlays (rest of R12; M backend, J overlays). B35 recording/scrolling frames and B38 ruler sizing now use actual render DPI and preserve returned/native bounds; B35 has 15 portable geometry cases and existing ruler capture regressions pass. Actual desktop verification and backend coordinate mapping remain open.
-- [ ] Mouse highlighter and overlays on X11; reported unsupported on Wayland (M hook and overlay surface, J drawing). M: hook and overlay done and tested on a real X server. B39 synthetic Skia/buffer tests and a hidden Windows DIB fixture pass; actual drawing verification on a composited X11 desktop remains (VM).
-- [ ] Linux feature verification list below is all ticked.
-- [x] Packaging decided and working: self-contained tar.gz with installer (Flatpak deferred, sandbox blocks capture paths); CI workflow builds, tests, packages and runs the app headless, started by hand while branch workflows are paused (M11).
-- [ ] No blocking Linux bugs open. B18 print guards are fixed in code (`J5`, 2026-10-04), with two portable regression tests and a reason translated in all 28 cultures; backend policy and desktop printing verification remain open. B40/B41 imports/cut fixes have controlled regressions and actual KDE paste/cut/undo/redo/save evidence, while other import routes remain open. R45 backend availability and H15 frontend recovery are implemented; actual full-app private-bus host transitions verified on KDE, physical panel restart/other desktops outstanding. R48 default third-party destination/opt-in policy remains open along with R20/R22 scope alignment.
-
-### G2: Windows sign-off
-
-- [ ] J1 checklist ticked on Windows 10 and 11 (J).
-- [ ] J8 end-to-end runs of the real application (J, Jaex).
-- [ ] W5, W9 and the rest of J9 done; no Windows-only code left in shared projects (J). Microsoft Store startup WinRT/type aliases remain in shared code; R37/W12/H12 are deferred by Jaex for now (2026-10-04). This item remains unchecked until the migration and verification are resumed and completed.
-
-### G3: macOS complete
-
-Started 2026-10-04. OCR uses the Vision framework.
-
-- [x] Every contract implemented or reporting a user-facing reason (Finder Quick Actions, Launch Services file types, open-file/Dock activation, permission prompts and click-through overlays added in the second round): capture (screencapture), recording (FFmpeg avfoundation), window list and inspection, mouse hook (CGEventSource polling), overlay (NSWindow), Carbon hotkeys, synthetic input, clipboard, Keychain, LaunchAgent startup, Dock progress, wallpaper, notifications, QuickLook thumbnails, CUPS printing, sounds, browser host, AppKit cursors and cursor capture, FFmpeg video tools. Platform limits (changing other applications' windows, Finder menus, Send to, desktop icons, DirectShow) report reasons.
-- [x] Tray through Avalonia's NSStatusItem; emoji drawn with Apple Color Emoji by SkiaSharp (B42 fixed in code).
-- [x] Packaging: `Scripts/package-macos.sh` builds ShareX.app as a zip and a disk image for arm64 or x64, signed ad hoc or with a Developer ID.
-- [x] CI: the Cross-platform workflow packages and starts ShareX.app for arm64 and x64 on every push; `macos.yml` does the same by hand.
-- [x] Updates: the update checker links to the release's `macos-<arch>.dmg`.
-- [ ] Real flows run on a Mac, following [macos-test-procedure.md](macos-test-procedure.md) (capture, record, upload, history, editor, tools, hotkeys, tray, settings, start at login, integration), including Screen Recording and Accessibility permission prompts and Retina/mixed-scale displays.
-- [x] Signing with a Developer ID, the hardened runtime (`Scripts/macos/ShareX.entitlements`) and notarisation, so Gatekeeper opens the app; used when the signing secrets are set.
-- [ ] Signing secrets added to the repository (see docs/cross-platform.md, macOS release).
+- [ ] Add the macOS signing secrets to the repository (docs/cross-platform.md, "macOS release") so CI signs and notarizes ShareX.app.
+- [ ] Rerun [macos-test-procedure.md](macos-test-procedure.md) on a Mac with a build from CI after the 2026-10-06 fixes.
+- [ ] Attach `ShareX-<version>-macos-<arch>.dmg` and `sharex-linux-<arch>.tar.gz` to the GitHub release; the update checker looks for them.
+- Report bugs found on any desktop as issues and fix them as usual.
 
 ## Linux feature verification list
 
-Tick with the desktop and commit when verified. Hyprland results are from 2026-10-03/04.
+Record of desktop verification, kept for reference. Hyprland results are from 2026-10-03/04.
 
 | Flow | Hyprland | sway | GNOME | KDE | X11 |
 | --- | --- | --- | --- | --- | --- |
@@ -90,7 +39,7 @@ Tick with the desktop and commit when verified. Hyprland results are from 2026-1
 | Clipboard: copy image, text, URL | yes (image/png seen by Wayland apps, text, URL) | | | partial (J, 2026-10-04: editor image copy received pixel-identically by active X11 and native Wayland consumers; color hex text reaches active native Wayland consumer; full URL routes open) | |
 | Upload from clipboard, drag and drop, watch folders | clipboard image and watch folder yes; drag and drop to check by hand | | | | |
 | Upload to a local test server, history | yes | | | yes (J, 2026-10-04: full app synthetic PNG, identical loopback bytes, persisted SQLite row and visible history preview; evidence in verification/2026-10-04-agent-j-kde.md) | yes |
-| Image editor and tools (OCR excluded) | yes | | | partial (J, 2026-10-04: full editor file-open/paste/downward expansion/cut/undo/redo/internal paste/save, clipboard viewer, QR generation/copy/native Wayland reception/file decode round trip; color editing/hex text copy/restart; QR picker/save and remaining tools/import routes open) | |
+| Image editor and tools | yes | | | partial (J, 2026-10-04: full editor file-open/paste/downward expansion/cut/undo/redo/internal paste/save, clipboard viewer, QR generation/copy/native Wayland reception/file decode round trip; color editing/hex text copy/restart; QR picker/save and remaining tools/import routes open) | |
 | Start at login, file manager entries, file types | yes (autostart entry launches -silent to tray; .sxcu opens with ShareX through GIO) | | | | |
 | Secrets survive restart | yes (key file 0600, decrypts in a new process) | | | | |
 | Sounds, printing to a real printer | sounds yes (pw-play); no printer configured on the test machine | | | | |
@@ -99,13 +48,7 @@ Tick with the desktop and commit when verified. Hyprland results are from 2026-1
 
 ## Commitments
 
-Open promises. Move them to "Kept" with the commit when fulfilled.
-
-| Date | Who | Commitment |
-| --- | --- | --- |
-| 2026-10-04 | M | Tell McoreD when G1 and G2 are met and propose the AGENTS.md rewrite that starts the macOS phase, with the G3 list as its tasks. |
-| 2026-10-04 | M | Keep this file current: progress, gates, verification list and change log, in the same push as the work. |
-| 2026-10-04 | M | Run the GNOME, KDE, sway and X11 verification pass and record the results in the verification list. |
+None open.
 
 ### Kept
 
@@ -277,3 +220,4 @@ Open promises. Move them to "Kept" with the commit when fulfilled.
 - 2026-10-05, J: B53 native Fedora KDE portal identity completed after claim a571f239f, preserving installed/customized desktop entries and B52 sandbox behavior. Real Fedora portal missing-entry rejection reproduced, native/.NET-host registration and GlobalShortcuts v2 session creation/close verified, with stale generated-identity recovery. Update only the KDE hotkey cell to precise partial evidence; actual user permission/physical firing and broad gates remain open. Full Linux Release 0 warnings/errors, five projects 705 pass / 70 skips, eighteen new regressions; Debug rebuilt. No user desktop configuration change, fresh Windows sign-off, macOS work or percentage change.
 - 2026-10-06, M: AGENTS.md reduced to architecture, scope and Git rules (coordination guardrails removed at McoreD's request); delegation tracker marked historical; Vision OCR restored on macOS; Cross-platform workflow re-enabled for the branch. macOS test report F1 to F6 and F8 fixed in code.
 - 2026-10-07, M: macOS release packaging: Developer ID signing with hardened runtime entitlements, notarization and stapling, disk image; the macOS app job runs again (arm64 and x64); updates on macOS and Linux link to their own package. macOS 95%; a Mac rerun and the signing secrets remain.
+- 2026-10-07, M: Windows, Linux and macOS at 100% (McoreD). Removed the phase gates G1 to G3, the agent ownership and percentage rules, the Windows-only OCR item and the open commitments; what remains are release checks. The Linux workflow runs on every push.

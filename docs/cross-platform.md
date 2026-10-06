@@ -1,6 +1,6 @@
 # Cross-platform architecture
 
-ShareX moves operating system specific code behind a platform abstraction layer so the same application runs on Windows, macOS and Linux. Requirements are tracked in [#8867](https://github.com/ShareX/ShareX/issues/8867). Work happens on `cross-platform-v2`; who does what is in [cross-platform-delegation.md](cross-platform-delegation.md), and why things are done this way is in [cross-platform-learnings.md](cross-platform-learnings.md).
+ShareX moves operating system specific code behind a platform abstraction layer so the same application runs on Windows, macOS and Linux. Requirements are tracked in [#8867](https://github.com/ShareX/ShareX/issues/8867). Work happens on `cross-platform-v2`; progress is in [cross-platform-roadmap.md](cross-platform-roadmap.md), and why things are done this way is in [cross-platform-learnings.md](cross-platform-learnings.md).
 
 This document describes the **target** architecture. At the branch point (`develop` `fd61635f2`) WinForms and GDI+ are already gone, the platform projects are not on this branch yet (task M1), and the libraries still target `net10.0-windows`. The migration debt list in [AGENTS.md](../AGENTS.md) tracks the gap.
 
@@ -81,7 +81,7 @@ On sway, GNOME and KDE scrolling capture is reported unsupported with the Waylan
 
 ## Linux package
 
-`Scripts/install-linux.sh` builds and installs ShareX for the current user under `~/.local` (no root). `Scripts/install-linux.sh --package DIR` makes a self-contained `sharex-linux-x64.tar.gz` (or `-arm64`); users extract it and run `./install.sh`, which needs neither the .NET SDK nor root, and `./install.sh --uninstall` removes it while keeping settings and screenshots. Flatpak is deferred: its sandbox blocks the compositor IPC, X11 window access and grim that capture relies on. The manual `Linux` workflow builds, tests, packages and runs the installed application headless.
+`Scripts/install-linux.sh` builds and installs ShareX for the current user under `~/.local` (no root). `Scripts/install-linux.sh --package DIR` makes a self-contained `sharex-linux-x64.tar.gz` (or `-arm64`); users extract it and run `./install.sh`, which needs neither the .NET SDK nor root, and `./install.sh --uninstall` removes it while keeping settings and screenshots. Flatpak is deferred: its sandbox blocks the compositor IPC, X11 window access and grim that capture relies on. The `Linux` workflow builds, tests, packages and runs the installed application headless on every push.
 
 ## macOS release
 

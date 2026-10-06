@@ -1,8 +1,24 @@
 name: Linux
 
-# Builds, tests and packages ShareX for Linux, then runs the real application headless. Started by hand (Actions > Linux > Run
-# workflow, or "gh workflow run linux.yml --ref cross-platform-v2") while the branch workflows stay paused for the port.
+# Builds, tests and packages ShareX for Linux, then runs the real application headless. Runs on every push and pull request
+# that touches the application or the Linux packaging, and by hand (Actions > Linux > Run workflow).
 on:
+  push:
+    paths:
+      - "ShareX*/**"
+      - "Directory.Build.*"
+      - "Directory.Packages.props"
+      - "ShareX.sln"
+      - "Scripts/install-linux.sh"
+      - ".github/workflows/linux.yml"
+  pull_request:
+    paths:
+      - "ShareX*/**"
+      - "Directory.Build.*"
+      - "Directory.Packages.props"
+      - "ShareX.sln"
+      - "Scripts/install-linux.sh"
+      - ".github/workflows/linux.yml"
   workflow_dispatch:
 
 permissions:
