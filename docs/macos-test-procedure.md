@@ -1,6 +1,6 @@
 # macOS test procedure
 
-A manual pass of the real ShareX application on a Mac, in the order the steps depend on each other. It closes the "Real flows run on a Mac" item of gate G3 in [cross-platform-roadmap.md](cross-platform-roadmap.md).
+A manual pass of the real ShareX application on a Mac, in the order the steps depend on each other. It is a release check in [cross-platform-roadmap.md](cross-platform-roadmap.md). After a first pass, use [macos-retest-procedure.md](macos-retest-procedure.md) to check fixes.
 
 Record each result as **pass**, **fail** (with what happened) or **skipped**. When something fails, keep the log: `~/Documents/ShareX/Logs/ShareX-Log-<date>.txt`.
 
@@ -83,7 +83,7 @@ Check each image in the editor or the screenshots folder.
 
 1. Open a capture in the image editor. Add a rectangle, arrow, text, an emoji sticker and a cursor annotation. Undo, redo and save.
 2. Tools: colour picker (screen colour sampling), ruler, pin to screen, QR code, image combiner, video converter (needs FFmpeg) and scrolling capture. Scrolling capture asks for the **Accessibility** permission the first time; allow it, restart ShareX and try again.
-3. OCR must show as unavailable with "available on Windows only".
+3. OCR (Tools > OCR) recognises the text in a selected region through Apple's Vision framework.
 
 ## 7. Hotkeys
 
@@ -121,4 +121,4 @@ Check each image in the editor or the screenshots folder.
 ## 12. Finish
 
 1. Quit ShareX with Command+Q. The log ends without "Unhandled exception".
-2. Report results and logs in the project thread. When everything passes, tick "Real flows run on a Mac" in gate G3 of the roadmap.
+2. Report results and logs in the project thread. When everything passes, tick the Mac rerun in the roadmap's release checks.

@@ -21,7 +21,7 @@ A feature a system cannot provide reports `FeatureSupport.NotSupported` with a r
 Things to do around a release. They do not hold back any system.
 
 - [ ] Add the macOS signing secrets to the repository (docs/cross-platform.md, "macOS release") so CI signs and notarizes ShareX.app.
-- [ ] Rerun [macos-test-procedure.md](macos-test-procedure.md) on a Mac with a build from CI after the 2026-10-06 fixes.
+- [ ] Rerun on a Mac with a build from CI after the 2026-10-06 fixes: [macos-retest-procedure.md](macos-retest-procedure.md).
 - [ ] Attach `ShareX-<version>-macos-<arch>.dmg` and `sharex-linux-<arch>.tar.gz` to the GitHub release; the update checker looks for them.
 - Report bugs found on any desktop as issues and fix them as usual.
 
