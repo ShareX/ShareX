@@ -469,7 +469,6 @@ namespace ShareX
                     // Initialize the GPU, codecs and audio endpoints before manual start or the countdown.
                     // Prepare does not start video or audio capture.
                     await nativeRecorder.PrepareAsync();
-                    LogNativeCamera(nativeRecorder);
                     if (!settings.CaptureSettings.ScreenRecordAutoStart)
                     {
                         recordForm.RecordResetEvent.WaitOne();
@@ -493,7 +492,6 @@ namespace ShareX
                         nativeRecorder = new NativeScreenRecorder(options with { Region = recordForm.RecordingRegion });
                         nativeRecorder.Diagnostic += message => DebugHelper.WriteLine("Native recorder: " + message);
                         await nativeRecorder.PrepareAsync();
-                        LogNativeCamera(nativeRecorder);
                     }
                     recordForm.ChangeState(ScreenRecordState.AfterStart);
                     using (IDisposable highlighter = settings.CaptureSettings.ScreenRecordMouseHighlighter
@@ -542,13 +540,6 @@ namespace ShareX
         private static void ScreenRecorder_RecordingStarted()
         {
             recordForm.ChangeState(ScreenRecordState.AfterRecordingStart);
-        }
-
-        private static void LogNativeCamera(NativeScreenRecorder recorder)
-        {
-            if (recorder.Camera is { } camera)
-                DebugHelper.WriteLine("Native recorder camera: {0}, {1}x{2}, {3:0.##} FPS, {4}.",
-                    camera.Name, camera.Width, camera.Height, camera.FramesPerSecond, camera.PixelFormat);
         }
 
         private static void ScreenRecorder_EncodingProgressChanged(int progress)

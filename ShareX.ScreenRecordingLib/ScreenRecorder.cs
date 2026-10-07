@@ -26,7 +26,7 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
     public Task<RecordingResult> Completion => completed.Task;
     public VideoEncoderInfo? Encoder { get; private set; }
     public CameraCaptureInfo? Camera { get; private set; }
-    /// <summary>Camera capture diagnostics, including nonfatal errors; screen and audio recording continue.</summary>
+    /// <summary>Nonfatal camera errors; screen and audio recording continue.</summary>
     public event Action<string>? Diagnostic;
     public bool IsRecording => Volatile.Read(ref recording) != 0;
     public bool IsPaused => clock.IsPaused;
@@ -134,7 +134,7 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
             Volatile.Write(ref recording, 1);
             long nextFrame = 0, written = 0, dropped = 0, audioFrame = 0;
             bool discontinuity = false;
-            bool cameraDisabled = false, cameraInputReported = false;
+            bool cameraDisabled = false;
             long nextCameraFrame = 0, lastCameraFrame = 0;
             short[] audioBlock = new short[480 * 2]; // 10 ms, 48 kHz stereo
             using FrameTimer timer = new();
@@ -204,15 +204,7 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
                                 camera.Dispose();
                             }
                         }
-                        try
-                        {
-                            processor.Convert(slot!.View, (uint)nextFrame, cameraOverlay);
-                            if (cameraOverlay?.HasFrame == true && !cameraInputReported)
-                            {
-                                ReportDiagnostic($"Camera overlay active. Input: {(cameraOverlay.UsedCpuUpload ? "camera-only CPU upload" : "D3D11 surface")}; composition: {(processor.SupportsCameraComposition ? "D3D11 multiple streams" : "D3D11 texture copies")}; overlay: {cameraOverlay.Bounds.Width}x{cameraOverlay.Bounds.Height}.");
-                                cameraInputReported = true;
-                            }
-                        }
+                        try { processor.Convert(slot!.View, (uint)nextFrame, cameraOverlay); }
                         catch { textures.Return(slot!); throw; }
                         using var sample = textures.CreateSample(slot!);
                         writer.WriteVideo(sample, timestamp, end - timestamp, discontinuity);

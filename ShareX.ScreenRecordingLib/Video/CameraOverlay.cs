@@ -29,7 +29,6 @@ internal sealed unsafe class CameraOverlay : IDisposable
     public ID3D11Texture2D Texture { get; private set; } = null!;
     public Rectangle Bounds { get; }
     public bool HasFrame { get; private set; }
-    public bool UsedCpuUpload { get; private set; }
 
     public CameraOverlay(GraphicsDevice graphics, CameraCaptureInfo info, Guid subtype, int stride, uint matrix, uint range,
         RecordingOptions options, int recordingWidth, int recordingHeight)
@@ -165,7 +164,6 @@ internal sealed unsafe class CameraOverlay : IDisposable
         }
         fixed (byte* bytes = uploadBytes)
             graphics.Context.UpdateSubresource(upload, 0, null, (nint)bytes, (uint)rowBytes, 0);
-        UsedCpuUpload = true;
     }
 
     private void CopyRows(nint top, int pitch)

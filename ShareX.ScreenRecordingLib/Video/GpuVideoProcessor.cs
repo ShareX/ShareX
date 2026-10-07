@@ -20,7 +20,7 @@ internal sealed class GpuVideoProcessor : IDisposable
     private readonly VideoProcessorStream[] streams;
     private ID3D11VideoProcessorInputView? cameraInput, compositeInput;
     private ID3D11Texture2D? composite;
-    public bool SupportsCameraComposition { get; private set; }
+    private bool supportsCameraComposition;
     public ID3D11Texture2D Canvas { get; private set; } = null!;
     public int Width { get; }
     public int Height { get; }
@@ -46,8 +46,8 @@ internal sealed class GpuVideoProcessor : IDisposable
             if ((enumerator.CheckVideoProcessorFormat(Format.NV12) & VideoProcessorFormatSupport.Output) == 0)
                 throw new NotSupportedException("The GPU cannot produce NV12 video surfaces.");
             processor = videoDevice.CreateVideoProcessor(enumerator, 0);
-            SupportsCameraComposition = enumerator.VideoProcessorCaps.MaxInputStreams >= 2 && enumerator.VideoProcessorCaps.MaxStreamStates >= 2;
-            streams = new VideoProcessorStream[SupportsCameraComposition ? 2 : 1];
+            supportsCameraComposition = enumerator.VideoProcessorCaps.MaxInputStreams >= 2 && enumerator.VideoProcessorCaps.MaxStreamStates >= 2;
+            streams = new VideoProcessorStream[supportsCameraComposition ? 2 : 1];
             Canvas = graphics.CreateTexture(width, height, Format.B8G8R8A8_UNorm, BindFlags.RenderTarget);
             canvasView = graphics.Device.CreateRenderTargetView(Canvas);
             Clear();
@@ -78,7 +78,7 @@ internal sealed class GpuVideoProcessor : IDisposable
         if (streams.Length > 1) streams[1].Enable = false;
         if (camera?.HasFrame == true)
         {
-            if (SupportsCameraComposition)
+            if (supportsCameraComposition)
             {
                 try
                 {
@@ -101,7 +101,7 @@ internal sealed class GpuVideoProcessor : IDisposable
                 {
                     // Some drivers report multiple streams but reject a smaller overlay surface.
                     // Retry with GPU texture copies, then retain that path for the rest of the session.
-                    SupportsCameraComposition = false;
+                    supportsCameraComposition = false;
                     cameraInput?.Dispose(); cameraInput = null;
                     streams[1].Enable = false;
                 }
