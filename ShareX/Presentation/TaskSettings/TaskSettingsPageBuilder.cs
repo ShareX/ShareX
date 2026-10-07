@@ -528,6 +528,43 @@ internal sealed class TaskSettingsPageBuilder
         NumericUpDown bitrateControl = Number(() => capture.ScreenRecordVideoBitrate, value => capture.ScreenRecordVideoBitrate = (int)value, 100, 200000, 100);
         bitrateControl.Width = 160;
         Control bitrate = Row(Strings.TaskSettingsWindow_NativeRecorderBitrate, bitrateControl);
+        BoundValue<bool> recordCamera = new(capture.ScreenRecordCamera, value => capture.ScreenRecordCamera = value);
+        Control cameraEnabled = Check(Strings.TaskSettingsWindow_NativeRecorderCamera_Enabled, recordCamera);
+        ComboBox cameras = CaptureDeviceCombo(() => CameraCaptureDevices.GetCameras().Select(device => (device.Id, device.Name)).ToArray(),
+            () => capture.ScreenRecordCameraDeviceId, value => capture.ScreenRecordCameraDeviceId = value,
+            Strings.TaskSettingsWindow_NativeRecorderCamera_DefaultDevice, Strings.TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice,
+            Strings.TaskSettingsWindow_NativeRecorderCamera_NoDevices);
+        Control cameraDevice = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Device, cameras);
+        Control cameraResolution = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Resolution,
+            ObjectCombo(Enum.GetValues<CameraCaptureResolution>(), () => capture.ScreenRecordCameraResolution,
+                value => capture.ScreenRecordCameraResolution = value, value => value switch
+                {
+                    CameraCaptureResolution.Size640x480 => "640 × 480",
+                    CameraCaptureResolution.Size1920x1080 => "1920 × 1080",
+                    _ => "1280 × 720"
+                }));
+        Control cameraFps = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_FPS,
+            Number(() => capture.ScreenRecordCameraFPS, value => capture.ScreenRecordCameraFPS = (int)value, 1, 60));
+        Control cameraPosition = Row(Strings.TaskSettingsWindow_Placement,
+            ObjectCombo(Enum.GetValues<CameraOverlayPosition>(), () => capture.ScreenRecordCameraPosition,
+                value => capture.ScreenRecordCameraPosition = value, value => value switch
+                {
+                    CameraOverlayPosition.TopLeft => Strings.ApplicationSettingsWindow_TopLeft,
+                    CameraOverlayPosition.TopRight => Strings.ApplicationSettingsWindow_TopRight,
+                    CameraOverlayPosition.BottomLeft => Strings.ApplicationSettingsWindow_BottomLeft,
+                    _ => Strings.ApplicationSettingsWindow_BottomRight
+                }));
+        Control cameraWidth = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Width,
+            Number(() => capture.ScreenRecordCameraWidthPercent, value => capture.ScreenRecordCameraWidthPercent = (int)value, 5, 50));
+        Control cameraMargin = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Margin,
+            Number(() => capture.ScreenRecordCameraMargin, value => capture.ScreenRecordCameraMargin = (int)value, 0, 1000));
+        Control[] cameraControls = [cameraDevice, cameraResolution, cameraFps, cameraPosition, cameraWidth, cameraMargin];
+        foreach (Control control in cameraControls) BindEnabled(control, recordCamera);
+        StackPanel cameraContent = new() { Spacing = 4 };
+        cameraContent.Children.Add(cameraEnabled);
+        foreach (Control control in cameraControls) cameraContent.Children.Add(control);
+        BindEnabled(cameraContent, native);
+        Control cameraPanel = EnabledCard(_captureOverride, Strings.TaskSettingsWindow_NativeRecorderCamera, cameraContent);
         Control twoPass = Check(Strings.TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions, () => capture.ScreenRecordTwoPassEncoding, value => capture.ScreenRecordTwoPassEncoding = value);
         Control legacyOptions = Button(Strings.TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis, ShowScreenRecordingOptions);
         foreach (Control control in new[] { systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate }) BindEnabled(control, native);
@@ -545,6 +582,7 @@ internal sealed class TaskSettingsPageBuilder
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_NativeRecorder,
                 Check(Strings.TaskSettingsWindow_NativeRecorderEnabled, native),
                 systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate),
+            cameraPanel,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Recording,
                 Row(Strings.TaskSettingsWindow_ScreenRecordingFPS, Number(() => capture.ScreenRecordFPS, value => capture.ScreenRecordFPS = (int)value, 1, 120)),
                 Row(Strings.TaskSettingsWindow_GIFFPS, Number(() => capture.GIFFPS, value => capture.GIFFPS = (int)value, 1, HelpersOptions.DevMode ? 60 : 30)),
@@ -582,6 +620,11 @@ internal sealed class TaskSettingsPageBuilder
 
     private static ComboBox AudioDeviceCombo(Func<IReadOnlyList<AudioCaptureDevice>> getDevices,
         Func<string> getSelectedId, Action<string> setSelectedId, string defaultLabel, string unavailableLabel)
+        => CaptureDeviceCombo(() => getDevices().Select(device => (device.Id, device.Name)).ToArray(),
+            getSelectedId, setSelectedId, defaultLabel, unavailableLabel);
+
+    private static ComboBox CaptureDeviceCombo(Func<IReadOnlyList<(string Id, string Name)>> getDevices,
+        Func<string> getSelectedId, Action<string> setSelectedId, string defaultLabel, string unavailableLabel, string? emptyLabel = null)
     {
         ComboBox combo = new();
         combo.Classes.Add("form-control");
@@ -589,10 +632,12 @@ internal sealed class TaskSettingsPageBuilder
 
         void Refresh()
         {
-            List<AudioCaptureDevice> devices = [new("", defaultLabel)];
+            List<(string Id, string Name)> devices = [("", defaultLabel)];
             try
             {
-                devices.AddRange(getDevices().OrderBy(device => device.Name, StringComparer.CurrentCultureIgnoreCase));
+                var available = getDevices();
+                devices.AddRange(available.OrderBy(device => device.Name, StringComparer.CurrentCultureIgnoreCase));
+                if (available.Count == 0 && emptyLabel != null) devices[0] = ("", emptyLabel);
             }
             catch (Exception ex)
             {
@@ -600,28 +645,26 @@ internal sealed class TaskSettingsPageBuilder
             }
 
             string selectedId = getSelectedId() ?? "";
-            AudioCaptureDevice? selected = devices.FirstOrDefault(device => device.Id == selectedId);
-            if (selected == null)
+            if (!devices.Any(device => device.Id == selectedId))
             {
-                selected = new(selectedId, unavailableLabel);
-                devices.Add(selected);
+                devices.Add((selectedId, unavailableLabel));
             }
 
             // Replacing ItemsSource can clear selection. Keep a disconnected device's saved ID intact.
             refreshing = true;
             try
             {
-                ChoiceOption<AudioCaptureDevice>[] choices = devices.Select(device => new ChoiceOption<AudioCaptureDevice>(device, device.Name)).ToArray();
+                ChoiceOption<string>[] choices = devices.Select(device => new ChoiceOption<string>(device.Id, device.Name)).ToArray();
                 combo.ItemsSource = choices;
-                combo.SelectedItem = choices.First(choice => choice.Value.Id == selected.Id);
+                combo.SelectedItem = choices.First(choice => choice.Value == selectedId);
             }
             finally { refreshing = false; }
         }
 
         combo.SelectionChanged += (_, _) =>
         {
-            if (!refreshing && combo.SelectedItem is ChoiceOption<AudioCaptureDevice> choice)
-                setSelectedId(choice.Value.Id);
+            if (!refreshing && combo.SelectedItem is ChoiceOption<string> choice)
+                setSelectedId(choice.Value);
         };
         combo.DropDownOpened += (_, _) => Refresh();
         Refresh();

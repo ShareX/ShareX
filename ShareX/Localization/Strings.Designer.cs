@@ -5556,5 +5556,15 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_NativeRecorderUnavailableMicrophone => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderUnavailableMicrophone", resourceCulture);
         public static string TaskSettingsWindow_NativeRecorderHardware => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderHardware", resourceCulture);
         public static string TaskSettingsWindow_NativeRecorderBitrate => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderBitrate", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Enabled => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Enabled", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Device => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Device", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_DefaultDevice => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_DefaultDevice", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_NoDevices => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_NoDevices", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Resolution => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Resolution", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_FPS => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_FPS", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Width => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Width", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Margin => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Margin", resourceCulture);
     }
 }

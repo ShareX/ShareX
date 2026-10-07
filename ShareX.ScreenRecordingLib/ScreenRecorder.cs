@@ -25,6 +25,9 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
 
     public Task<RecordingResult> Completion => completed.Task;
     public VideoEncoderInfo? Encoder { get; private set; }
+    public CameraCaptureInfo? Camera { get; private set; }
+    /// <summary>Camera capture diagnostics, including nonfatal errors; screen and audio recording continue.</summary>
+    public event Action<string>? Diagnostic;
     public bool IsRecording => Volatile.Read(ref recording) != 0;
     public bool IsPaused => clock.IsPaused;
     public TimeSpan Elapsed => TimeSpan.FromTicks(clock.Elapsed);
@@ -106,10 +109,15 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
             Encoder = writer.Encoder;
             using VideoTexturePool textures = new(graphics, processor, writer.EncoderBindFlags);
             using GraphicsCapture capture = new(graphics, processor, targets, options.IncludeCursor, options.FramesPerSecond);
+            using CameraCapture? camera = options.CaptureCamera ? new(graphics, options) : null;
+            Camera = camera?.Info;
+            using CameraOverlay? cameraOverlay = camera == null ? null : new(graphics, camera.Info, camera.Subtype,
+                camera.Stride, camera.YuvMatrix, camera.NominalRange, options, width, height);
             AudioMixer mixer = new(clock);
             using WasapiCapture? audio = options.HasAudio ? new(options, mixer) : null;
             prepared.TrySetResult();
             if (WaitHandle.WaitAny([stop, begin]) == 0) throw new OperationCanceledException("Recording stopped before capture began.");
+            camera?.Start();
             audio?.Start();
             capture.Start();
             long waitStart = RecordingClock.Now;
@@ -126,6 +134,8 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
             Volatile.Write(ref recording, 1);
             long nextFrame = 0, written = 0, dropped = 0, audioFrame = 0;
             bool discontinuity = false;
+            bool cameraDisabled = false, cameraInputReported = false;
+            long nextCameraFrame = 0, lastCameraFrame = 0;
             short[] audioBlock = new short[480 * 2]; // 10 ms, 48 kHz stereo
             using FrameTimer timer = new();
             WaitHandle[] waits = [stop, changed, timer];
@@ -164,7 +174,45 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
                     long end = (nextFrame + 1) * TimeSpan.TicksPerSecond / options.FramesPerSecond;
                     if (textures.TryRent(out VideoTexturePool.Slot? slot))
                     {
-                        try { processor.Convert(slot!.View, (uint)nextFrame); }
+                        if (camera != null && !cameraDisabled)
+                        {
+                            try
+                            {
+                                if (camera.Failure is Exception cameraFailure) throw cameraFailure;
+                                // The camera has its own cadence. At high screen FPS, reuse its existing tile.
+                                if (elapsed >= nextCameraFrame)
+                                {
+                                    IMFSample? cameraFrame = camera.TakeLatestFrame();
+                                    if (cameraFrame != null)
+                                    {
+                                        cameraOverlay!.Update(cameraFrame);
+                                        lastCameraFrame = elapsed;
+                                    }
+                                    // Align to media-clock slots so a late update does not keep
+                                    // pushing the camera deadline onto the following screen frame.
+                                    long nextCameraSlot = elapsed * options.CameraFramesPerSecond / TimeSpan.TicksPerSecond + 1;
+                                    nextCameraFrame = (nextCameraSlot * TimeSpan.TicksPerSecond + options.CameraFramesPerSecond - 1) / options.CameraFramesPerSecond;
+                                }
+                                if (elapsed - lastCameraFrame > TimeSpan.FromSeconds(10).Ticks)
+                                    throw new TimeoutException("The camera did not deliver a new frame for ten seconds.");
+                            }
+                            catch (Exception ex)
+                            {
+                                cameraDisabled = true;
+                                cameraOverlay!.Disable();
+                                ReportDiagnostic($"Camera overlay disabled; screen and audio recording continue. {ex}");
+                                camera.Dispose();
+                            }
+                        }
+                        try
+                        {
+                            processor.Convert(slot!.View, (uint)nextFrame, cameraOverlay);
+                            if (cameraOverlay?.HasFrame == true && !cameraInputReported)
+                            {
+                                ReportDiagnostic($"Camera overlay active. Input: {(cameraOverlay.UsedCpuUpload ? "camera-only CPU upload" : "D3D11 surface")}; composition: {(processor.SupportsCameraComposition ? "D3D11 multiple streams" : "D3D11 texture copies")}; overlay: {cameraOverlay.Bounds.Width}x{cameraOverlay.Bounds.Height}.");
+                                cameraInputReported = true;
+                            }
+                        }
                         catch { textures.Return(slot!); throw; }
                         using var sample = textures.CreateSample(slot!);
                         writer.WriteVideo(sample, timestamp, end - timestamp, discontinuity);
@@ -207,6 +255,12 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
             if (mediaFoundation) MediaFactory.MFShutdown();
             if (com) NativeMethods.CoUninitialize();
         }
+    }
+
+    private void ReportDiagnostic(string message)
+    {
+        try { Diagnostic?.Invoke(message); }
+        catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex); }
     }
 
     private static void WriteAudioUntil(MediaFoundationWriter writer, AudioMixer mixer, short[] block,

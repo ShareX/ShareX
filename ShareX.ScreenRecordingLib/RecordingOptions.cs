@@ -20,6 +20,17 @@ public sealed record RecordingOptions
     public string? SystemAudioDeviceId { get; init; }
     /// <summary>WASAPI endpoint ID; null selects the default communications capture endpoint.</summary>
     public string? MicrophoneDeviceId { get; init; }
+    public bool CaptureCamera { get; init; }
+    /// <summary>Camera symbolic link; null selects the first available camera.</summary>
+    public string? CameraDeviceId { get; init; }
+    /// <summary>Preferred camera mode; the closest supported resolution/rate is negotiated.</summary>
+    public CameraCaptureResolution CameraResolution { get; init; } = CameraCaptureResolution.Size1280x720;
+    public int CameraFramesPerSecond { get; init; } = 30;
+    public CameraOverlayPosition CameraPosition { get; init; } = CameraOverlayPosition.BottomRight;
+    /// <summary>Overlay width as a percentage of the recording, fitted to preserve camera aspect ratio.</summary>
+    public int CameraWidthPercent { get; init; } = 20;
+    /// <summary>Distance from the recording's corner in physical pixels, clamped to fit.</summary>
+    public int CameraMargin { get; init; } = 16;
     public float SystemAudioGain { get; init; } = 1;
     public float MicrophoneGain { get; init; } = 1;
     /// <summary>Reject a software video encoder rather than silently increasing CPU usage.</summary>
@@ -39,6 +50,11 @@ public sealed record RecordingOptions
         if (VideoBitrate is < 100_000 or > 200_000_000) throw new ArgumentOutOfRangeException(nameof(VideoBitrate));
         if (AudioBitrate is not (96_000 or 128_000 or 160_000 or 192_000)) throw new ArgumentOutOfRangeException(nameof(AudioBitrate));
         if (Duration < TimeSpan.Zero) throw new ArgumentOutOfRangeException(nameof(Duration));
+        if (!Enum.IsDefined(CameraResolution)) throw new ArgumentOutOfRangeException(nameof(CameraResolution));
+        if (!Enum.IsDefined(CameraPosition)) throw new ArgumentOutOfRangeException(nameof(CameraPosition));
+        if (CameraFramesPerSecond is < 1 or > 60) throw new ArgumentOutOfRangeException(nameof(CameraFramesPerSecond));
+        if (CameraWidthPercent is < 5 or > 50) throw new ArgumentOutOfRangeException(nameof(CameraWidthPercent));
+        if (CameraMargin is < 0 or > 1000) throw new ArgumentOutOfRangeException(nameof(CameraMargin));
         if (!float.IsFinite(SystemAudioGain) || SystemAudioGain is < 0 or > 4) throw new ArgumentOutOfRangeException(nameof(SystemAudioGain));
         if (!float.IsFinite(MicrophoneGain) || MicrophoneGain is < 0 or > 4) throw new ArgumentOutOfRangeException(nameof(MicrophoneGain));
     }

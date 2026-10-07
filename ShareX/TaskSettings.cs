@@ -405,6 +405,13 @@ namespace ShareX
         public string ScreenRecordSystemAudioDeviceId = "";
         public bool ScreenRecordMicrophone = false;
         public string ScreenRecordMicrophoneDeviceId = "";
+        public bool ScreenRecordCamera = false;
+        public string ScreenRecordCameraDeviceId = "";
+        public ShareX.ScreenRecordingLib.CameraCaptureResolution ScreenRecordCameraResolution = ShareX.ScreenRecordingLib.CameraCaptureResolution.Size1280x720;
+        public int ScreenRecordCameraFPS = 30;
+        public ShareX.ScreenRecordingLib.CameraOverlayPosition ScreenRecordCameraPosition = ShareX.ScreenRecordingLib.CameraOverlayPosition.BottomRight;
+        public int ScreenRecordCameraWidthPercent = 20;
+        public int ScreenRecordCameraMargin = 16;
         public bool ScreenRecordRequireHardwareEncoder = true;
         public int ScreenRecordVideoBitrate = 8000; // kbps
         public int ScreenRecordFPS = 30;
