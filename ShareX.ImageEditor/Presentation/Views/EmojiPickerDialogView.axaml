@@ -29,6 +29,8 @@
             CornerRadius="4"
             Width="760"
             Height="640"
+            MaxWidth="{Binding #Root.MaxWidth}"
+            MaxHeight="{Binding #Root.MaxHeight}"
             BoxShadow="0 6 18 0 #40000000">
         <Grid RowDefinitions="Auto,*">
             <Grid Grid.Row="0"

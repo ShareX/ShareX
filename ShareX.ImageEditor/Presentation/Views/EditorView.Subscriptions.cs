@@ -105,6 +105,11 @@ namespace ShareX.ImageEditor.Presentation.Views
             _parentWindow.KeyDown -= OnKeyDown;
             _parentWindow.KeyUp -= OnKeyUp;
             _parentWindow.Activated -= OnWindowActivated;
+            _parentWindow.PositionChanged -= OnEditorWindowPositionChanged;
+            if (_parentWindow.Screens is { } screens)
+            {
+                screens.Changed -= OnEditorScreensChanged;
+            }
             _parentWindow = null;
         }
 

@@ -64,7 +64,8 @@
             <views:InsertImageDialogView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:EmojiPickerDialogViewModel}" x:DataType="vm:EmojiPickerDialogViewModel">
-            <views:EmojiPickerDialogView />
+            <views:EmojiPickerDialogView MaxWidth="{Binding MaxWidth, RelativeSource={RelativeSource AncestorType=ContentControl}}"
+                                         MaxHeight="{Binding MaxHeight, RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:StartScreenDialogViewModel}" x:DataType="vm:StartScreenDialogViewModel">
             <views:StartScreenDialogView />

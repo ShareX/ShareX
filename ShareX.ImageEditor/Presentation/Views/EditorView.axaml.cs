@@ -243,6 +243,7 @@ namespace ShareX.ImageEditor.Presentation.Views
         {
             UpdateDpiScaleFromTopLevel();
             RequestOverlayCanvasLayoutUpdate();
+            UpdateEmojiPickerPosition();
         }
 
         /// <summary>
@@ -506,6 +507,11 @@ namespace ShareX.ImageEditor.Presentation.Views
                 _parentWindow.KeyDown += OnKeyDown;
                 _parentWindow.KeyUp += OnKeyUp;
                 _parentWindow.Activated += OnWindowActivated;
+                _parentWindow.PositionChanged += OnEditorWindowPositionChanged;
+                if (_parentWindow.Screens is { } screens)
+                {
+                    screens.Changed += OnEditorScreensChanged;
+                }
             }
 
             // Give the editor initial focus
@@ -653,7 +659,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 else if (e.PropertyName == nameof(MainViewModel.ModalContent) &&
                     vm.ModalContent is EmojiPickerDialogViewModel)
                 {
-                    ResetModalContentPosition();
+                    PositionEmojiPickerOnActiveMonitor();
                 }
                 else if (e.PropertyName == nameof(MainViewModel.IsModalOpen) && !vm.IsModalOpen)
                 {

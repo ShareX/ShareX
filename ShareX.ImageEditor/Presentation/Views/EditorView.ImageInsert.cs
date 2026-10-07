@@ -373,10 +373,13 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void ResetModalContentPosition()
         {
+            _emojiPickerScreen = null;
             ContentControl? modalHost = this.FindControl<ContentControl>("ModalContentHost");
             if (modalHost != null)
             {
                 modalHost.RenderTransform = null;
+                modalHost.ClearValue(MaxWidthProperty);
+                modalHost.ClearValue(MaxHeightProperty);
             }
         }
 
