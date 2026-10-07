@@ -2450,6 +2450,9 @@
   <data name="TaskSettingsWindow_NativeRecorderCamera" xml:space="preserve">
     <value>ภาพซ้อนจากกล้อง</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Circle" xml:space="preserve">
+    <value>วงกลม</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_DefaultDevice" xml:space="preserve">
     <value>กล้องตัวแรกที่พร้อมใช้งาน</value>
   </data>
@@ -2468,8 +2471,14 @@
   <data name="TaskSettingsWindow_NativeRecorderCamera_NoDevices" xml:space="preserve">
     <value>ไม่พบกล้อง</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Rectangle" xml:space="preserve">
+    <value>สี่เหลี่ยมผืนผ้า</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_Resolution" xml:space="preserve">
     <value>ความละเอียดในการจับภาพ:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Shape" xml:space="preserve">
+    <value>รูปร่าง:</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice" xml:space="preserve">
     <value>กล้องไม่พร้อมใช้งาน</value>

@@ -2450,6 +2450,9 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_NativeRecorderCamera" xml:space="preserve">
     <value>هم‌پوشانی دوربین</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Circle" xml:space="preserve">
+    <value>دایره</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_DefaultDevice" xml:space="preserve">
     <value>اولین دوربین در دسترس</value>
   </data>
@@ -2468,8 +2471,14 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_NativeRecorderCamera_NoDevices" xml:space="preserve">
     <value>هیچ دوربینی شناسایی نشد</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Rectangle" xml:space="preserve">
+    <value>مستطیل</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_Resolution" xml:space="preserve">
     <value>وضوح ضبط:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Shape" xml:space="preserve">
+    <value>شکل:</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice" xml:space="preserve">
     <value>دوربین در دسترس نیست</value>

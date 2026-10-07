@@ -556,9 +556,13 @@ internal sealed class TaskSettingsPageBuilder
                 }));
         Control cameraWidth = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Width,
             Number(() => capture.ScreenRecordCameraWidthPercent, value => capture.ScreenRecordCameraWidthPercent = (int)value, 5, 50));
+        Control cameraShape = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Shape,
+            ObjectCombo(Enum.GetValues<CameraOverlayShape>(), () => capture.ScreenRecordCameraShape,
+                value => capture.ScreenRecordCameraShape = value, value => value == CameraOverlayShape.Circle
+                    ? Strings.TaskSettingsWindow_NativeRecorderCamera_Circle : Strings.TaskSettingsWindow_NativeRecorderCamera_Rectangle));
         Control cameraMargin = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Margin,
             Number(() => capture.ScreenRecordCameraMargin, value => capture.ScreenRecordCameraMargin = (int)value, 0, 1000));
-        Control[] cameraControls = [cameraDevice, cameraResolution, cameraFps, cameraPosition, cameraWidth, cameraMargin];
+        Control[] cameraControls = [cameraDevice, cameraResolution, cameraFps, cameraShape, cameraPosition, cameraWidth, cameraMargin];
         foreach (Control control in cameraControls) BindEnabled(control, recordCamera);
         StackPanel cameraContent = new() { Spacing = 4 };
         cameraContent.Children.Add(cameraEnabled);

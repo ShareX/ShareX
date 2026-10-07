@@ -2450,6 +2450,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_NativeRecorderCamera" xml:space="preserve">
     <value>Kamera átfedése</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Circle" xml:space="preserve">
+    <value>Kör</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_DefaultDevice" xml:space="preserve">
     <value>Első elérhető kamera</value>
   </data>
@@ -2468,8 +2471,14 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_NativeRecorderCamera_NoDevices" xml:space="preserve">
     <value>Nem található kamera</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Rectangle" xml:space="preserve">
+    <value>Téglalap</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_Resolution" xml:space="preserve">
     <value>Rögzítési felbontás:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Shape" xml:space="preserve">
+    <value>Alakzat:</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice" xml:space="preserve">
     <value>A kamera nem érhető el</value>

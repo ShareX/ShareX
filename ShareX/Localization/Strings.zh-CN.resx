@@ -2450,6 +2450,9 @@
   <data name="TaskSettingsWindow_NativeRecorderCamera" xml:space="preserve">
     <value>摄像头叠加</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Circle" xml:space="preserve">
+    <value>圆形</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_DefaultDevice" xml:space="preserve">
     <value>第一个可用摄像头</value>
   </data>
@@ -2468,8 +2471,14 @@
   <data name="TaskSettingsWindow_NativeRecorderCamera_NoDevices" xml:space="preserve">
     <value>未检测到摄像头</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Rectangle" xml:space="preserve">
+    <value>矩形</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_Resolution" xml:space="preserve">
     <value>捕获分辨率：</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Shape" xml:space="preserve">
+    <value>形状:</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice" xml:space="preserve">
     <value>摄像头不可用</value>

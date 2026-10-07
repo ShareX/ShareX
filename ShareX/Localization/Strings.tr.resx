@@ -2450,6 +2450,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_NativeRecorderCamera" xml:space="preserve">
     <value>Kamera katmanı</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Circle" xml:space="preserve">
+    <value>Daire</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_DefaultDevice" xml:space="preserve">
     <value>İlk kullanılabilir kamera</value>
   </data>
@@ -2468,8 +2471,14 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_NativeRecorderCamera_NoDevices" xml:space="preserve">
     <value>Kamera algılanmadı</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Rectangle" xml:space="preserve">
+    <value>Dikdörtgen</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_Resolution" xml:space="preserve">
     <value>Yakalama çözünürlüğü:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Shape" xml:space="preserve">
+    <value>Şekil:</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice" xml:space="preserve">
     <value>Kamera kullanılamıyor</value>

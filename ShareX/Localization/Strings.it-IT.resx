@@ -2450,6 +2450,9 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_NativeRecorderCamera" xml:space="preserve">
     <value>Sovrapposizione della videocamera</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Circle" xml:space="preserve">
+    <value>Cerchio</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_DefaultDevice" xml:space="preserve">
     <value>Prima videocamera disponibile</value>
   </data>
@@ -2468,8 +2471,14 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_NativeRecorderCamera_NoDevices" xml:space="preserve">
     <value>Nessuna videocamera rilevata</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Rectangle" xml:space="preserve">
+    <value>Rettangolo</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_Resolution" xml:space="preserve">
     <value>Risoluzione di acquisizione:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Shape" xml:space="preserve">
+    <value>Forma:</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice" xml:space="preserve">
     <value>Videocamera non disponibile</value>

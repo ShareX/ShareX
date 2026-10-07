@@ -21,6 +21,7 @@ internal sealed unsafe class CameraOverlay : IDisposable
     private ID3D11VideoProcessorEnumerator enumerator = null!;
     private ID3D11VideoProcessor processor = null!;
     private ID3D11VideoProcessorOutputView output = null!;
+    private CameraCircleShader? circleShader;
     private ID3D11Texture2D? upload;
     private byte[]? uploadBytes;
     private IMFSample? retainedSample;
@@ -55,7 +56,9 @@ internal sealed unsafe class CameraOverlay : IDisposable
                 (enumerator.CheckVideoProcessorFormat(Format.B8G8R8A8_UNorm) & VideoProcessorFormatSupport.Output) == 0)
                 throw new NotSupportedException($"The GPU cannot process the camera's {info.PixelFormat} format.");
             processor = videoDevice.CreateVideoProcessor(enumerator, 0);
-            Texture = graphics.CreateTexture(Bounds.Width, Bounds.Height, Format.B8G8R8A8_UNorm, BindFlags.RenderTarget);
+            bool circular = options.CameraShape == CameraOverlayShape.Circle;
+            Texture = graphics.CreateTexture(Bounds.Width, Bounds.Height, Format.B8G8R8A8_UNorm,
+                BindFlags.RenderTarget | (circular ? BindFlags.ShaderResource : BindFlags.None));
             output = videoDevice.CreateVideoProcessorOutputView(Texture, enumerator,
                 new VideoProcessorOutputViewDescription { ViewDimension = VideoProcessorOutputViewDimension.Texture2D });
             videoContext.VideoProcessorSetStreamFrameFormat(processor, 0, VideoFrameFormat.Progressive);
@@ -65,10 +68,22 @@ internal sealed unsafe class CameraOverlay : IDisposable
                 new VideoProcessorColorSpace { RGB_Range = 0, YCbCr_Matrix = matrix == 1 ? 1u : 0u, Nominal_Range = range == 1 ? 2u : 1u });
             videoContext.VideoProcessorSetOutputColorSpace(processor, new VideoProcessorColorSpace { RGB_Range = 0, Nominal_Range = 2 });
             videoContext.VideoProcessorSetOutputAlphaFillMode(processor, VideoProcessorAlphaFillMode.Opaque, 0);
-            videoContext.VideoProcessorSetStreamSourceRect(processor, 0, true, new RawRect(0, 0, info.Width, info.Height));
+            RawRect source = new(0, 0, info.Width, info.Height);
+            if (circular)
+            {
+                int side = Math.Min(info.Width, info.Height);
+                // Align subsampled camera formats to their chroma grid.
+                if (format is Format.NV12 or Format.YUY2) side &= ~1;
+                int left = (info.Width - side) / 2, top = (info.Height - side) / 2;
+                if (format is Format.NV12 or Format.YUY2) left &= ~1;
+                if (format == Format.NV12) top &= ~1;
+                source = new(left, top, left + side, top + side);
+            }
+            videoContext.VideoProcessorSetStreamSourceRect(processor, 0, true, source);
             RawRect destination = new(0, 0, Bounds.Width, Bounds.Height);
             videoContext.VideoProcessorSetStreamDestRect(processor, 0, true, destination);
             videoContext.VideoProcessorSetOutputTargetRect(processor, true, destination);
+            if (circular) circleShader = new(graphics, Texture);
         }
         catch { Dispose(); throw; }
     }
@@ -78,16 +93,22 @@ internal sealed unsafe class CameraOverlay : IDisposable
         int margin = Math.Min(options.CameraMargin, Math.Max(0, Math.Min(width, height) / 2 - 1));
         int availableWidth = width - margin * 2, availableHeight = height - margin * 2;
         int tileWidth = Math.Clamp(width * options.CameraWidthPercent / 100, 2, availableWidth);
-        int tileHeight = Math.Max(2, (int)((long)tileWidth * info.Height / info.Width));
+        bool circular = options.CameraShape == CameraOverlayShape.Circle;
+        int tileHeight = circular ? tileWidth : Math.Max(2, (int)((long)tileWidth * info.Height / info.Width));
         if (tileHeight > availableHeight)
         {
             tileHeight = availableHeight;
-            tileWidth = Math.Clamp((int)((long)tileHeight * info.Width / info.Height), 2, availableWidth);
+            tileWidth = circular ? tileHeight : Math.Clamp((int)((long)tileHeight * info.Width / info.Height), 2, availableWidth);
         }
         int x = options.CameraPosition is CameraOverlayPosition.TopRight or CameraOverlayPosition.BottomRight ? width - margin - tileWidth : margin;
         int y = options.CameraPosition is CameraOverlayPosition.BottomLeft or CameraOverlayPosition.BottomRight ? height - margin - tileHeight : margin;
         return new(x, y, tileWidth, tileHeight);
     }
+
+    // The circle is blended into a camera-sized copy of the screen. Its opaque corners
+    // work with both video-processor composition and the GPU-copy fallback.
+    public ID3D11Texture2D GetCompositionTexture(ID3D11Texture2D canvas) =>
+        circleShader?.Compose(canvas, Bounds) ?? Texture;
 
     // Takes ownership of the sample. Retain it until the next GPU operation so native camera
     // buffers are not returned while we are still submitting their video-processing commands.
@@ -187,7 +208,7 @@ internal sealed unsafe class CameraOverlay : IDisposable
     public void Dispose()
     {
         retainedSample?.Dispose(); retainedSample = null;
-        output?.Dispose(); Texture?.Dispose(); upload?.Dispose(); processor?.Dispose();
+        circleShader?.Dispose(); output?.Dispose(); Texture?.Dispose(); upload?.Dispose(); processor?.Dispose();
         enumerator?.Dispose(); videoContext?.Dispose(); videoDevice?.Dispose();
     }
 }

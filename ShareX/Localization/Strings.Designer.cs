@@ -5566,5 +5566,8 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_NativeRecorderCamera_FPS => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_FPS", resourceCulture);
         public static string TaskSettingsWindow_NativeRecorderCamera_Width => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Width", resourceCulture);
         public static string TaskSettingsWindow_NativeRecorderCamera_Margin => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Margin", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Shape => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Shape", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Rectangle => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Rectangle", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Circle => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Circle", resourceCulture);
     }
 }

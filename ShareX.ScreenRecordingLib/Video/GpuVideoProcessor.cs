@@ -78,13 +78,14 @@ internal sealed class GpuVideoProcessor : IDisposable
         if (streams.Length > 1) streams[1].Enable = false;
         if (camera?.HasFrame == true)
         {
+            ID3D11Texture2D overlayTexture = camera.GetCompositionTexture(Canvas);
             if (supportsCameraComposition)
             {
                 try
                 {
                     if (cameraInput == null)
                     {
-                        cameraInput = videoDevice.CreateVideoProcessorInputView(camera.Texture, enumerator,
+                        cameraInput = videoDevice.CreateVideoProcessorInputView(overlayTexture, enumerator,
                             new VideoProcessorInputViewDescription { ViewDimension = VideoProcessorInputViewDimension.Texture2D });
                         videoContext.VideoProcessorSetStreamFrameFormat(processor, 1, VideoFrameFormat.Progressive);
                         videoContext.VideoProcessorSetStreamAutoProcessingMode(processor, 1, false);
@@ -115,10 +116,17 @@ internal sealed class GpuVideoProcessor : IDisposable
                     new VideoProcessorInputViewDescription { ViewDimension = VideoProcessorInputViewDimension.Texture2D });
             }
             graphics.Context.CopyResource(composite, Canvas);
-            graphics.Context.CopySubresourceRegion(composite, 0, (uint)camera.Bounds.X, (uint)camera.Bounds.Y, 0, camera.Texture, 0);
+            graphics.Context.CopySubresourceRegion(composite, 0, (uint)camera.Bounds.X, (uint)camera.Bounds.Y, 0, overlayTexture, 0);
             streams[0].InputSurface = compositeInput!;
         }
-        // Keep the original single-stream path when the overlay is disabled or has no frame yet.
+        else if (composite != null)
+        {
+            // Keep the fallback input surface stable after camera loss. Some drivers retain
+            // the previous output when switching back to an unchanged screen canvas.
+            graphics.Context.CopyResource(composite, Canvas);
+            streams[0].InputSurface = compositeInput!;
+        }
+        // Convert the selected screen/composite surface through the same single-stream path.
         videoContext.VideoProcessorBlt(processor, output, frameNumber, 1, streams).CheckError();
     }
 

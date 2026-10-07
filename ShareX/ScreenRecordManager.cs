@@ -455,6 +455,7 @@ namespace ShareX
                     CameraResolution = settings.CaptureSettings.ScreenRecordCameraResolution,
                     CameraFramesPerSecond = settings.CaptureSettings.ScreenRecordCameraFPS,
                     CameraPosition = settings.CaptureSettings.ScreenRecordCameraPosition,
+                    CameraShape = settings.CaptureSettings.ScreenRecordCameraShape,
                     CameraWidthPercent = settings.CaptureSettings.ScreenRecordCameraWidthPercent,
                     CameraMargin = settings.CaptureSettings.ScreenRecordCameraMargin,
                     RequireHardwareEncoder = settings.CaptureSettings.ScreenRecordRequireHardwareEncoder,

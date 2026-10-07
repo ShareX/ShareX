@@ -27,7 +27,9 @@ public sealed record RecordingOptions
     public CameraCaptureResolution CameraResolution { get; init; } = CameraCaptureResolution.Size1280x720;
     public int CameraFramesPerSecond { get; init; } = 30;
     public CameraOverlayPosition CameraPosition { get; init; } = CameraOverlayPosition.BottomRight;
-    /// <summary>Overlay width as a percentage of the recording, fitted to preserve camera aspect ratio.</summary>
+    /// <summary>Circles use a centered square crop; rectangles preserve the full camera image.</summary>
+    public CameraOverlayShape CameraShape { get; init; } = CameraOverlayShape.Rectangle;
+    /// <summary>Overlay width as a percentage of the recording, fitted to the selected shape.</summary>
     public int CameraWidthPercent { get; init; } = 20;
     /// <summary>Distance from the recording's corner in physical pixels, clamped to fit.</summary>
     public int CameraMargin { get; init; } = 16;
@@ -52,6 +54,7 @@ public sealed record RecordingOptions
         if (Duration < TimeSpan.Zero) throw new ArgumentOutOfRangeException(nameof(Duration));
         if (!Enum.IsDefined(CameraResolution)) throw new ArgumentOutOfRangeException(nameof(CameraResolution));
         if (!Enum.IsDefined(CameraPosition)) throw new ArgumentOutOfRangeException(nameof(CameraPosition));
+        if (!Enum.IsDefined(CameraShape)) throw new ArgumentOutOfRangeException(nameof(CameraShape));
         if (CameraFramesPerSecond is < 1 or > 60) throw new ArgumentOutOfRangeException(nameof(CameraFramesPerSecond));
         if (CameraWidthPercent is < 5 or > 50) throw new ArgumentOutOfRangeException(nameof(CameraWidthPercent));
         if (CameraMargin is < 0 or > 1000) throw new ArgumentOutOfRangeException(nameof(CameraMargin));

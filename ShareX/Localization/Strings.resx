@@ -3038,4 +3038,13 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="TaskSettingsWindow_NativeRecorderCamera_Margin" xml:space="preserve">
     <value>Margin (pixels):</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Shape" xml:space="preserve">
+    <value>Shape:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Rectangle" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Circle" xml:space="preserve">
+    <value>Circle</value>
+  </data>
 </root>
