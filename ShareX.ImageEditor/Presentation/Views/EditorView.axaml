@@ -567,11 +567,6 @@
                                     </Border>
                                 </Border>
                             </Border>
-
-                            <!-- Isolated visual host for the optional Konami-code shader animation. -->
-                            <easterEggs:ShaderEasterEggOverlay x:Name="EasterEggOverlay"
-                                                                  IsVisible="False"
-                                                                  IsHitTestVisible="False"/>
                         </Grid>
                     </LayoutTransformControl>
                 </ScrollViewer>
@@ -714,5 +709,11 @@
                                 VerticalAlignment="Center"/>
             </Grid>
         </Border>
+
+        <!-- Post-process the entire live editor, independently of image zoom and export. -->
+        <easterEggs:ShaderEasterEggOverlay x:Name="EasterEggOverlay"
+                                          ZIndex="1000"
+                                          IsVisible="False"
+                                          IsHitTestVisible="False"/>
     </Grid>
 </UserControl>

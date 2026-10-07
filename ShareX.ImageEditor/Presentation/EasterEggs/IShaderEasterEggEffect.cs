@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,15 +23,19 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia;
+using SkiaSharp;
+
 namespace ShareX.ImageEditor.Presentation.EasterEggs;
 
 /// <summary>
-/// Describes a replaceable shader animation. Playback, input detection and editor integration
-/// deliberately live outside effect implementations.
+/// Describes a persistent display effect and its corresponding pointer transformation.
 /// </summary>
 internal interface IShaderEasterEggEffect
 {
     string ShaderSource { get; }
 
-    TimeSpan Duration { get; }
+    void UpdateUniforms(SKRuntimeEffectUniforms uniforms, Size bounds);
+
+    Point MapToSource(Point position, Size bounds);
 }

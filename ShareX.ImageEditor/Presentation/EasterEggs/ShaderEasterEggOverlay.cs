@@ -35,8 +35,8 @@ using System.Numerics;
 namespace ShareX.ImageEditor.Presentation.EasterEggs;
 
 /// <summary>
-/// Composition-thread shader host. Rendering leases Avalonia's Skia canvas so a GPU-backed
-/// renderer executes runtime effects on the GPU without touching the editor's raster surface.
+/// Post-processes the live editor on the composition thread. The source is a snapshot of the
+/// current render surface, which stays on the GPU when Avalonia uses a GPU-backed renderer.
 /// </summary>
 internal sealed class ShaderEasterEggOverlay : Control, IDisposable
 {
@@ -44,60 +44,48 @@ internal sealed class ShaderEasterEggOverlay : Control, IDisposable
     {
         Start,
         Stop,
-        UpdateBounds,
-        Dispose
+        UpdateBounds
     }
 
     private readonly record struct ShaderPayload(
         HandlerCommand Command,
-        string? ShaderSource = null,
-        byte[]? EncodedSource = null,
-        TimeSpan Duration = default,
+        IShaderEasterEggEffect? Effect = null,
         Size Bounds = default);
 
     private CompositionCustomVisual? _customVisual;
-    private ShaderPayload? _pendingStart;
+    private IShaderEasterEggEffect? _activeEffect;
+    private ShaderEasterEggPointerMapper? _pointerMapper;
     private Size _lastSentBounds;
 
-    public bool Start(IShaderEasterEggEffect effect, SKBitmap snapshot)
+    public bool Start(IShaderEasterEggEffect effect)
     {
         ArgumentNullException.ThrowIfNull(effect);
-        ArgumentNullException.ThrowIfNull(snapshot);
-
-        try
+        if (_customVisual == null)
         {
-            using SKImage image = SKImage.FromBitmap(snapshot);
-            using SKData? encoded = image.Encode(SKEncodedImageFormat.Png, 100);
-            if (encoded == null)
-            {
-                return false;
-            }
-
-            var payload = new ShaderPayload(
-                HandlerCommand.Start,
-                effect.ShaderSource,
-                encoded.ToArray(),
-                effect.Duration,
-                Bounds.Size);
-
-            _pendingStart = payload;
-            _customVisual?.SendHandlerMessage(payload);
-            return true;
-        }
-        catch (Exception ex)
-        {
-            Debug.WriteLine($"Unable to prepare image editor easter-egg source: {ex}");
             return false;
         }
-        finally
+
+        // Validate before changing input coordinates or covering the editor. Compilation on
+        // the composition thread also owns the runtime effect's eventual disposal.
+        using SKRuntimeEffect? validation = SKRuntimeEffect.CreateShader(effect.ShaderSource, out string errors);
+        if (validation == null)
         {
-            snapshot.Dispose();
+            Debug.WriteLine($"Unable to compile image editor easter-egg shader: {errors}");
+            return false;
         }
+
+        _activeEffect = effect;
+        _pointerMapper?.Dispose();
+        _pointerMapper = new ShaderEasterEggPointerMapper(this, effect);
+        _customVisual.SendHandlerMessage(new ShaderPayload(HandlerCommand.Start, effect, Bounds.Size));
+        return true;
     }
 
     public void Stop()
     {
-        _pendingStart = null;
+        _activeEffect = null;
+        _pointerMapper?.Dispose();
+        _pointerMapper = null;
         _customVisual?.SendHandlerMessage(new ShaderPayload(HandlerCommand.Stop));
     }
 
@@ -105,34 +93,29 @@ internal sealed class ShaderEasterEggOverlay : Control, IDisposable
     {
         base.OnAttachedToVisualTree(e);
 
-        CompositionVisual? elementVisual = ElementComposition.GetElementVisual(this);
-        Compositor? compositor = elementVisual?.Compositor;
+        Compositor? compositor = ElementComposition.GetElementVisual(this)?.Compositor;
         if (compositor == null)
         {
             return;
         }
 
         _customVisual = compositor.CreateCustomVisual(new ShaderCompositionHandler());
-        _customVisual.Size = new Vector2((float)Bounds.Width, (float)Bounds.Height);
         ElementComposition.SetElementChildVisual(this, _customVisual);
         LayoutUpdated += OnLayoutUpdated;
 
         _lastSentBounds = default;
         SendBounds();
-        if (_pendingStart is ShaderPayload payload)
+        if (_activeEffect != null)
         {
-            _customVisual.SendHandlerMessage(payload);
+            Start(_activeEffect);
         }
     }
 
     protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)
     {
         LayoutUpdated -= OnLayoutUpdated;
-        if (_customVisual != null)
-        {
-            _customVisual.SendHandlerMessage(new ShaderPayload(HandlerCommand.Dispose));
-        }
-
+        Stop();
+        ElementComposition.SetElementChildVisual(this, null);
         _customVisual = null;
         base.OnDetachedFromVisualTree(e);
     }
@@ -144,44 +127,30 @@ internal sealed class ShaderEasterEggOverlay : Control, IDisposable
 
     private void SendBounds()
     {
-        if (_customVisual == null || Bounds.Width <= 0 || Bounds.Height <= 0)
-        {
-            return;
-        }
-
-        if (_lastSentBounds == Bounds.Size)
+        if (_customVisual == null || Bounds.Width <= 0 || Bounds.Height <= 0 ||
+            _lastSentBounds == Bounds.Size)
         {
             return;
         }
 
         _lastSentBounds = Bounds.Size;
         _customVisual.Size = new Vector2((float)Bounds.Width, (float)Bounds.Height);
-        _customVisual.SendHandlerMessage(new ShaderPayload(
-            HandlerCommand.UpdateBounds,
-            Bounds: Bounds.Size));
+        _customVisual.SendHandlerMessage(new ShaderPayload(HandlerCommand.UpdateBounds, Bounds: Bounds.Size));
     }
 
     public void Dispose()
     {
         Stop();
-        if (_customVisual != null)
-        {
-            _customVisual.SendHandlerMessage(new ShaderPayload(HandlerCommand.Dispose));
-        }
     }
 
     private sealed class ShaderCompositionHandler : CompositionCustomVisualHandler
     {
-        private readonly object _syncRoot = new();
-
+        private IShaderEasterEggEffect? _definition;
         private SKRuntimeEffect? _effect;
         private SKRuntimeEffectUniforms? _uniforms;
         private SKRuntimeEffectChildren? _children;
-        private SKBitmap? _sourceBitmap;
-        private SKImage? _sourceImage;
-        private SKShader? _sourceShader;
+        private SKPaint? _paint;
         private Size _bounds;
-        private TimeSpan _duration;
         private TimeSpan _startedAt;
         private bool _running;
 
@@ -192,152 +161,137 @@ internal sealed class ShaderEasterEggOverlay : Control, IDisposable
                 return;
             }
 
-            lock (_syncRoot)
+            switch (payload.Command)
             {
-                switch (payload.Command)
-                {
-                    case HandlerCommand.Start:
-                        Start(payload);
-                        break;
-                    case HandlerCommand.Stop:
-                        _running = false;
-                        ReleaseResources();
-                        break;
-                    case HandlerCommand.UpdateBounds:
-                        _bounds = payload.Bounds;
-                        break;
-                    case HandlerCommand.Dispose:
-                        _running = false;
-                        ReleaseResources();
-                        break;
-                }
+                case HandlerCommand.Start:
+                    Start(payload);
+                    break;
+                case HandlerCommand.Stop:
+                    ReleaseResources();
+                    Invalidate();
+                    break;
+                case HandlerCommand.UpdateBounds:
+                    _bounds = payload.Bounds;
+                    Invalidate();
+                    break;
             }
         }
 
         public override void OnAnimationFrameUpdate()
         {
-            if (!_running)
+            if (_running)
             {
-                return;
+                // Invalidate the whole editor so the surface always contains fresh underlying
+                // content, even when only the CRT animation changed since the last frame.
+                Invalidate();
+                RegisterForNextAnimationFrameUpdate();
             }
-
-            Invalidate();
-            RegisterForNextAnimationFrameUpdate();
         }
 
         public override void OnRender(ImmediateDrawingContext context)
         {
-            lock (_syncRoot)
+            if (!_running || _effect == null || _uniforms == null || _children == null || _paint == null ||
+                _definition == null || _bounds.Width <= 0 || _bounds.Height <= 0)
             {
-                if (!_running || _effect == null || _uniforms == null ||
-                    _children == null || _sourceBitmap == null)
+                return;
+            }
+
+            ISkiaSharpApiLeaseFeature? leaseFeature = context.TryGetFeature<ISkiaSharpApiLeaseFeature>();
+            if (leaseFeature == null)
+            {
+                return;
+            }
+
+            using (context.PushClip(new Rect(_bounds)))
+            using (ISkiaSharpApiLease lease = leaseFeature.Lease())
+            {
+                SKSurface? surface = lease.SkSurface;
+                if (surface == null)
                 {
                     return;
                 }
 
-                ISkiaSharpApiLeaseFeature? leaseFeature =
-                    context.TryGetFeature<ISkiaSharpApiLeaseFeature>();
-                if (leaseFeature == null)
+                SKCanvas canvas = lease.SkCanvas;
+                SKMatrix sourceMatrix = canvas.TotalMatrix;
+                SKRect deviceBounds = sourceMatrix.MapRect(SKRect.Create((float)_bounds.Width, (float)_bounds.Height));
+                SKRectI sourceRect = new((int)Math.Floor(deviceBounds.Left), (int)Math.Floor(deviceBounds.Top),
+                    (int)Math.Ceiling(deviceBounds.Right), (int)Math.Ceiling(deviceBounds.Bottom));
+                sourceRect.Intersect(canvas.DeviceClipBounds);
+                if (sourceRect.Width <= 0 || sourceRect.Height <= 0)
                 {
                     return;
                 }
 
-                Size bounds = _bounds.Width > 0 && _bounds.Height > 0
-                    ? _bounds
-                    : new Size(_sourceBitmap.Width, _sourceBitmap.Height);
-                double scaleX = bounds.Width / _sourceBitmap.Width;
-                double scaleY = bounds.Height / _sourceBitmap.Height;
-
-                using (context.PushClip(new Rect(bounds)))
-                using (context.PushPostTransform(Matrix.CreateScale(scaleX, scaleY)))
-                using (ISkiaSharpApiLease lease = leaseFeature.Lease())
+                // Capture before drawing ourselves. Cropping avoids retaining a whole window's
+                // texture when the editor is hosted in a smaller workspace.
+                using SKImage sourceImage = surface.Snapshot(sourceRect);
+                sourceMatrix.TransX -= sourceRect.Left;
+                sourceMatrix.TransY -= sourceRect.Top;
+                if (!sourceMatrix.TryInvert(out SKMatrix imageToLocal))
                 {
-                    Draw(lease.SkCanvas);
+                    return;
                 }
+
+                using SKShader sourceShader = SKShader.CreateImage(sourceImage,
+                    SKShaderTileMode.Clamp, SKShaderTileMode.Clamp,
+                    new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.None), imageToLocal);
+                _children["source"] = sourceShader;
+
+                double elapsed = Math.Max(0, (CompositionNow - _startedAt).TotalSeconds);
+                _uniforms["resolution"] = new SKPoint((float)_bounds.Width, (float)_bounds.Height);
+                _uniforms["pixelSize"] = new SKPoint(
+                    (float)(_bounds.Width / deviceBounds.Width),
+                    (float)(_bounds.Height / deviceBounds.Height));
+                _uniforms["time"] = (float)(elapsed % 3600);
+                _uniforms["powerOn"] = (float)Math.Clamp(elapsed / 0.65, 0, 1);
+                _definition.UpdateUniforms(_uniforms, _bounds);
+
+                using SKShader shader = _effect.ToShader(_uniforms, _children);
+                _paint.Shader = shader;
+                _paint.Color = SKColors.White.WithAlpha((byte)Math.Round(lease.CurrentOpacity * 255));
+                canvas.DrawRect(0, 0, (float)_bounds.Width, (float)_bounds.Height, _paint);
+                // Do not retain frame textures in the reusable paint/children objects.
+                _paint.Shader = null;
+                _children["source"] = null;
             }
         }
 
         private void Start(ShaderPayload payload)
         {
             ReleaseResources();
-            if (string.IsNullOrWhiteSpace(payload.ShaderSource) || payload.EncodedSource == null)
+            if (payload.Effect == null)
             {
                 return;
             }
 
-            _effect = SKRuntimeEffect.CreateShader(payload.ShaderSource, out string errors);
+            _effect = SKRuntimeEffect.CreateShader(payload.Effect.ShaderSource, out string errors);
             if (_effect == null)
             {
                 Debug.WriteLine($"Unable to compile image editor easter-egg shader: {errors}");
                 return;
             }
 
-            _sourceBitmap = SKBitmap.Decode(payload.EncodedSource);
-            if (_sourceBitmap == null)
-            {
-                Debug.WriteLine("Unable to decode image editor easter-egg source image.");
-                ReleaseResources();
-                return;
-            }
-
-            _sourceImage = SKImage.FromBitmap(_sourceBitmap);
-            _sourceShader = SKShader.CreateImage(
-                _sourceImage,
-                SKShaderTileMode.Clamp,
-                SKShaderTileMode.Clamp,
-                new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.None));
+            _definition = payload.Effect;
             _uniforms = new SKRuntimeEffectUniforms(_effect);
             _children = new SKRuntimeEffectChildren(_effect);
-            _children["source"] = _sourceShader;
+            _paint = new SKPaint { IsAntialias = false };
             _bounds = payload.Bounds;
-            _duration = payload.Duration;
             _startedAt = CompositionNow;
             _running = true;
+            Invalidate();
             RegisterForNextAnimationFrameUpdate();
-        }
-
-        private void Draw(SKCanvas canvas)
-        {
-            if (_effect == null || _uniforms == null || _children == null ||
-                _sourceBitmap == null)
-            {
-                return;
-            }
-
-            float elapsed = (float)(CompositionNow - _startedAt).TotalSeconds;
-            float duration = Math.Max((float)_duration.TotalSeconds, float.Epsilon);
-            float progress = Math.Clamp(elapsed / duration, 0f, 1f);
-            if (progress >= 1f)
-            {
-                _running = false;
-                return;
-            }
-
-            _uniforms["resolution"] = new SKPoint(_sourceBitmap.Width, _sourceBitmap.Height);
-            _uniforms["time"] = elapsed;
-            _uniforms["progress"] = progress;
-
-            using SKShader shader = _effect.ToShader(_uniforms, _children);
-            using var paint = new SKPaint
-            {
-                Shader = shader,
-                IsAntialias = false
-            };
-            canvas.DrawRect(0, 0, _sourceBitmap.Width, _sourceBitmap.Height, paint);
         }
 
         private void ReleaseResources()
         {
+            _running = false;
+            _definition = null;
+            _paint?.Dispose();
+            _paint = null;
             _children?.Dispose();
             _children = null;
             _uniforms?.Dispose();
             _uniforms = null;
-            _sourceShader?.Dispose();
-            _sourceShader = null;
-            _sourceImage?.Dispose();
-            _sourceImage = null;
-            _sourceBitmap?.Dispose();
-            _sourceBitmap = null;
             _effect?.Dispose();
             _effect = null;
         }

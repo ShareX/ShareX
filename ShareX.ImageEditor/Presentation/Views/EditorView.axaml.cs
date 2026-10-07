@@ -1055,7 +1055,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             DetachParentWindow();
             DetachViewModel();
             UnhookAnnotationToolbarEvents();
-            StopEasterEggs();
+            DisposeEasterEggs();
             _selectionController.RequestUpdateEffect -= OnRequestUpdateEffect;
             ClearEffectPreviewCache();
             this.FindControl<SpotlightOverlayControl>("SpotlightOverlayControl")?.Dispose();
