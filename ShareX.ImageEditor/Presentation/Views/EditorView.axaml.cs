@@ -653,7 +653,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 else if (e.PropertyName == nameof(MainViewModel.ModalContent) &&
                     vm.ModalContent is EmojiPickerDialogViewModel)
                 {
-                    PositionModalOnCursorScreen();
+                    ResetModalContentPosition();
                 }
                 else if (e.PropertyName == nameof(MainViewModel.IsModalOpen) && !vm.IsModalOpen)
                 {
