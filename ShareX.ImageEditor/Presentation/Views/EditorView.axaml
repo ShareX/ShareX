@@ -14,7 +14,8 @@
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
              x:Class="ShareX.ImageEditor.Presentation.Views.EditorView"
              x:DataType="vm:MainViewModel"
-             Focusable="True">
+             Focusable="True"
+             FocusAdorner="{x:Null}">
 
     <UserControl.Styles>
         <Style Selector="Border.gradient-preview-half">
