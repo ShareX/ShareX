@@ -715,7 +715,8 @@ foreach ($project in $projects)
             }
         }
 
-        if ($project.Name -eq 'ShareX.ScreenCaptureLib')
+        if ($project.Name -eq 'ShareX.ScreenCaptureLib' -and
+            (Test-Path -LiteralPath (Join-Path $projectDirectory 'Forms') -PathType Container))
         {
             $formDirectory = Join-Path $projectDirectory 'Forms'
             $defaultFormFiles = @(
