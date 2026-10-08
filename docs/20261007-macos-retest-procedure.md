@@ -1,6 +1,6 @@
 # macOS retest procedure (round 2)
 
-A second pass on a Mac after the fixes for the round 1 report, `macos-test-report-2026-10-05.md` (findings F1 to F13). It checks each fix, runs the steps that could not be run last time, and tries the new release packaging and Vision OCR. The full procedure stays in [20261004-macos-test-procedure.md](20261004-macos-test-procedure.md); this file refers to its steps by number.
+A second pass on a Mac after the fixes for the round 1 report, `20261005-macos-test-report.md` (findings F1 to F13). It checks each fix, runs the steps that could not be run last time, and tries the new release packaging and Vision OCR. The full procedure stays in [20261004-macos-test-procedure.md](20261004-macos-test-procedure.md); this file refers to its steps by number.
 
 Use the same report format as last time: a stable ID per finding, severity, step, evidence and suspected cause. Results are **pass**, **fail**, **partial** or **skipped**. New findings continue the numbering from **F14**. Keep the log when something fails: `~/Documents/ShareX/Logs/ShareX-Log-<date>.txt`.
 
@@ -157,7 +157,7 @@ If an Intel Mac is available, repeat sections 1 and 2 with the `x64` build there
 
 ## 5. Report
 
-1. Write the report like `macos-test-report-2026-10-05.md`, with a front matter block (commit, build source: CI artifact or local, machine, displays, UI language, tester), a summary table and results by step. Name it `macos-test-report-<date>.md`.
+1. Write the report like `20261005-macos-test-report.md`, with a front matter block (commit, build source: CI artifact or local, machine, displays, UI language, tester), a summary table and results by step. Name it `<yyyymmdd>-macos-retest-report.md`.
 2. For each F1 to F13, give the round 2 result in one line: **fixed**, **still fails** (with evidence) or **not checked**.
 3. List what was done by hand and what was done with synthetic events.
 4. Describe the state left on the Mac: settings changed, Accessibility and Screen Recording grants, login items, Finder workflows, browser manifests.
