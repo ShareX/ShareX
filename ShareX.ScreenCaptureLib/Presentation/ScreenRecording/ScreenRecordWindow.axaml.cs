@@ -25,6 +25,7 @@
 
 #nullable enable
 
+using ShareX.AvaloniaUI.Windows;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -632,7 +633,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         }
     }
 
-    private double GetRenderScaling() => FrameWindowShape.NormalizeScaling(RenderScaling);
+    private double GetRenderScaling() => WindowScaling.GetPositionScaling(RenderScaling);
 
     private void OnScalingChanged(object? sender, EventArgs e)
     {

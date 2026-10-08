@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.AvaloniaUI.Windows;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -79,8 +80,8 @@ public partial class InspectWindowPickerOverlay : Window
 
         Point position = e.GetPosition(this);
         PixelPoint screenPoint = new(
-            Position.X + (int)Math.Round(position.X * RenderScaling),
-            Position.Y + (int)Math.Round(position.Y * RenderScaling));
+            Position.X + (int)Math.Round(position.X * WindowScaling.GetPositionScaling(RenderScaling)),
+            Position.Y + (int)Math.Round(position.Y * WindowScaling.GetPositionScaling(RenderScaling)));
         TargetPicked?.Invoke(this, screenPoint);
         e.Handled = true;
     }

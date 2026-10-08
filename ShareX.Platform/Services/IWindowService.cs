@@ -116,6 +116,37 @@ public interface IWindowService
     double GetOwnWindowPixelScale(PlatformPoint point);
 
     /// <summary>
+    /// Whether Avalonia places ShareX's windows in logical units (points) instead of device pixels. True on macOS, where window
+    /// positions and screen coordinates are points while a Retina window renders at a scaling of 2. Code that converts screen
+    /// coordinates into window sizes then must not divide by the render scaling.
+    /// </summary>
+    bool PositionsWindowsInPoints => false;
+
+    /// <summary>
+    /// Whether ShareX should use the system's own crosshair and hand pointers instead of its cursor images. True on macOS, which
+    /// shows a custom pointer image at one image pixel per point, so ShareX's images would be too large or blurry on Retina.
+    /// </summary>
+    bool PrefersSystemCursors => false;
+
+    /// <summary>
+    /// Whether a full-screen window moves to a separate space with its own transitions (macOS). ShareX's borderless viewers then
+    /// cover the screen as a normal window instead, so Esc reaches them and closing them returns to the previous space.
+    /// </summary>
+    bool FullScreenUsesSeparateSpace => false;
+
+    /// <summary>
+    /// Whether ShareX hides a window it gets out of the way during a capture instead of minimizing it. True on macOS, where a
+    /// window shown minimized animates into the Dock and can stay unpainted when it is restored.
+    /// </summary>
+    bool HidesInsteadOfMinimizing => false;
+
+    /// <summary>
+    /// Puts one of ShareX's full-screen overlays (region capture) exactly over <paramref name="screenBounds"/>, above the menu bar
+    /// and the Dock. False where the window manager already does this for a top-most window of that size (Windows, X11).
+    /// </summary>
+    bool CoverScreen(long windowHandle, PlatformRectangle screenBounds) => false;
+
+    /// <summary>
     /// Releases the mouse capture another window of this process holds, so a newly opened window receives clicks straight away.
     /// Only Windows has application-held mouse capture; elsewhere this does nothing.
     /// </summary>

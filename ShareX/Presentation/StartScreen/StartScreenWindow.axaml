@@ -201,7 +201,7 @@
                                 <ToggleSwitch Grid.Column="2"
                                               VerticalAlignment="Center"
                                               IsEnabled="{Binding StartWithWindowsEnabled}"
-                                              ToolTip.Tip="{Binding StartupUnsupportedReason}"
+                                              ToolTip.ShowOnDisabled="True" ToolTip.Tip="{Binding StartupUnsupportedReason}"
                                               IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
                             </Grid>
                         </Border>

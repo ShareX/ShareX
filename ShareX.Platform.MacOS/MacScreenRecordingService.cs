@@ -43,9 +43,18 @@ public sealed class MacScreenRecordingService : IScreenRecordingService
         this.getScreens = getScreens;
     }
 
-    public FeatureSupport Support => runner.Exists("ffmpeg")
+    // Homebrew on Apple silicon and Intel, and MacPorts. Applications started from the Dock or Finder do not have these on PATH.
+    private static readonly string[] ToolDirectories = ["/opt/homebrew/bin", "/usr/local/bin", "/opt/local/bin"];
+
+    public FeatureSupport Support => GetSupport(null);
+
+    public FeatureSupport GetSupport(string? ffmpegPath) => HasFFmpeg(ffmpegPath)
         ? FeatureSupport.Supported
         : FeatureSupport.RequiresTool("FFmpeg (brew install ffmpeg, or set its path in ShareX's FFmpeg options)");
+
+    private bool HasFFmpeg(string? ffmpegPath) =>
+        (!string.IsNullOrEmpty(ffmpegPath) && System.IO.File.Exists(ffmpegPath)) || runner.Exists("ffmpeg") ||
+        ToolDirectories.Any(directory => System.IO.File.Exists(System.IO.Path.Combine(directory, "ffmpeg")));
 
     public IReadOnlyList<string> GetSupportedDevices() => ["avfoundation"];
 
@@ -109,7 +118,7 @@ public sealed class MacScreenRecordingService : IScreenRecordingService
 
     /// <summary>The video converter and thumbnailer only need FFmpeg, from ShareX's settings or the PATH, as on Linux.</summary>
     public FeatureSupport GetFileMediaSupport(string ffmpegPath) =>
-        (!string.IsNullOrEmpty(ffmpegPath) && System.IO.File.Exists(ffmpegPath)) || runner.Exists("ffmpeg")
+        HasFFmpeg(ffmpegPath)
             ? FeatureSupport.Supported
             : FeatureSupport.RequiresTool("FFmpeg (brew install ffmpeg, or set its path in ShareX's FFmpeg options)");
 
@@ -118,5 +127,5 @@ public sealed class MacScreenRecordingService : IScreenRecordingService
         : "The screen-capture-recorder devices are DirectShow filters for Windows.");
 
     public string GetDefaultFFmpegPath(string applicationDirectory) =>
-        UnixFFmpegLocator.Find(applicationDirectory, ["/opt/homebrew/bin", "/usr/local/bin", "/opt/local/bin"]);
+        UnixFFmpegLocator.Find(applicationDirectory, ToolDirectories);
 }

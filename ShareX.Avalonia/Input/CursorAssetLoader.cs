@@ -28,6 +28,7 @@ using Avalonia.Input;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using ShareX.AvaloniaUI.Imaging;
+using ShareX.Platform;
 
 namespace ShareX.AvaloniaUI.Input
 {
@@ -75,6 +76,11 @@ namespace ShareX.AvaloniaUI.Input
 
         public static Cursor GetCursor(CustomCursorKind cursorKind, double renderScaling = 1.0)
         {
+            if (PlatformServices.IsInitialized && PlatformServices.Current.Windows.PrefersSystemCursors)
+            {
+                return GetFallbackCursor(cursorKind);
+            }
+
             return TryLoadCursor(cursorKind, renderScaling)?.Cursor ?? GetFallbackCursor(cursorKind);
         }
 

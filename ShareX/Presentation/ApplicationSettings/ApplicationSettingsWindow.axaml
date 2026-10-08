@@ -268,18 +268,18 @@
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
                                     <TextBlock Classes="section-title" Text="{Binding SystemIntegrationTitle}"/>
-                                    <CheckBox Classes="setting" Content="{Binding StartWithWindowsText}" IsEnabled="{Binding StartWithWindowsEnabled}" ToolTip.Tip="{Binding StartupUnsupportedReason}" IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{Binding UploadContextMenuText}" IsEnabled="{Binding ShellIntegrationSupported}" ToolTip.Tip="{Binding ShellIntegrationUnsupportedReason}" IsChecked="{Binding ShellContextMenu, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{Binding EditContextMenuText}" IsEnabled="{Binding ShellIntegrationSupported}" ToolTip.Tip="{Binding ShellIntegrationUnsupportedReason}" IsChecked="{Binding EditWithShareX, Mode=TwoWay}"/>
-                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowShareXInSendToMenu}" IsEnabled="{Binding SendToSupported}" ToolTip.Tip="{Binding SendToUnsupportedReason}" IsChecked="{Binding SendToMenu, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{Binding StartWithWindowsText}" IsEnabled="{Binding StartWithWindowsEnabled}" ToolTip.ShowOnDisabled="True" ToolTip.Tip="{Binding StartupUnsupportedReason}" IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{Binding UploadContextMenuText}" IsEnabled="{Binding ShellIntegrationSupported}" ToolTip.ShowOnDisabled="True" ToolTip.Tip="{Binding ShellIntegrationUnsupportedReason}" IsChecked="{Binding ShellContextMenu, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{Binding EditContextMenuText}" IsEnabled="{Binding ShellIntegrationSupported}" ToolTip.ShowOnDisabled="True" ToolTip.Tip="{Binding ShellIntegrationUnsupportedReason}" IsChecked="{Binding EditWithShareX, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowShareXInSendToMenu}" IsEnabled="{Binding SendToSupported}" ToolTip.ShowOnDisabled="True" ToolTip.Tip="{Binding SendToUnsupportedReason}" IsChecked="{Binding SendToMenu, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
                             <StackPanel controls:SettingsSearch.IsAvailabilityContainer="True" IsVisible="{Binding WindowsIntegrationVisible}">
                                 <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ChromeExtension}"/>
-                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableChromeExtensionSupport}" IsEnabled="{Binding BrowserHostSupported}" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" IsChecked="{Binding ChromeExtensionSupport, Mode=TwoWay}"/>
-                                        <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXChromeExtension}" IsEnabled="{Binding ChromeExtensionInstallEnabled}" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" Click="OnOpenChromeExtensionClick"/>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableChromeExtensionSupport}" IsEnabled="{Binding BrowserHostSupported}" ToolTip.ShowOnDisabled="True" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" IsChecked="{Binding ChromeExtensionSupport, Mode=TwoWay}"/>
+                                        <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXChromeExtension}" IsEnabled="{Binding ChromeExtensionInstallEnabled}" ToolTip.ShowOnDisabled="True" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" Click="OnOpenChromeExtensionClick"/>
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
@@ -287,8 +287,8 @@
                                 <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                     <StackPanel Spacing="4">
                                         <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_FirefoxAddon}"/>
-                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableFirefoxAddonSupport}" IsEnabled="{Binding BrowserHostSupported}" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" IsChecked="{Binding FirefoxAddonSupport, Mode=TwoWay}"/>
-                                        <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXFirefoxAddon}" IsEnabled="{Binding FirefoxAddonInstallEnabled}" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" Click="OnOpenFirefoxAddonClick"/>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_EnableFirefoxAddonSupport}" IsEnabled="{Binding BrowserHostSupported}" ToolTip.ShowOnDisabled="True" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" IsChecked="{Binding FirefoxAddonSupport, Mode=TwoWay}"/>
+                                        <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_InstallShareXFirefoxAddon}" IsEnabled="{Binding FirefoxAddonInstallEnabled}" ToolTip.ShowOnDisabled="True" ToolTip.Tip="{Binding BrowserHostUnsupportedReason}" Click="OnOpenFirefoxAddonClick"/>
                                     </StackPanel>
                                 </Border>
                             </StackPanel>

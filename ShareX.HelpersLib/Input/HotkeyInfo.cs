@@ -92,25 +92,26 @@ namespace ShareX.HelpersLib
         public override string ToString()
         {
             string text = "";
+            HotkeyModifiers[] order = PlatformServices.IsInitialized ? PlatformServices.Current.SystemInfo.ModifierDisplayOrder
+                : [HotkeyModifiers.Control, HotkeyModifiers.Shift, HotkeyModifiers.Alt, HotkeyModifiers.Super];
 
-            if (Control)
+            foreach (HotkeyModifiers modifier in order)
             {
-                text += ModifierName(HotkeyModifiers.Control, Localization.Strings.HotkeyInfo_Ctrl) + " + ";
-            }
-
-            if (Shift)
-            {
-                text += ModifierName(HotkeyModifiers.Shift, Localization.Strings.HotkeyInfo_Shift) + " + ";
-            }
-
-            if (Alt)
-            {
-                text += ModifierName(HotkeyModifiers.Alt, Localization.Strings.HotkeyInfo_Alt) + " + ";
-            }
-
-            if (Win)
-            {
-                text += ModifierName(HotkeyModifiers.Super, Localization.Strings.HotkeyInfo_Win) + " + ";
+                switch (modifier)
+                {
+                    case HotkeyModifiers.Control when Control:
+                        text += ModifierName(HotkeyModifiers.Control, Localization.Strings.HotkeyInfo_Ctrl) + " + ";
+                        break;
+                    case HotkeyModifiers.Shift when Shift:
+                        text += ModifierName(HotkeyModifiers.Shift, Localization.Strings.HotkeyInfo_Shift) + " + ";
+                        break;
+                    case HotkeyModifiers.Alt when Alt:
+                        text += ModifierName(HotkeyModifiers.Alt, Localization.Strings.HotkeyInfo_Alt) + " + ";
+                        break;
+                    case HotkeyModifiers.Super when Win:
+                        text += ModifierName(HotkeyModifiers.Super, Localization.Strings.HotkeyInfo_Win) + " + ";
+                        break;
+                }
             }
 
             if (IsOnlyModifiers)

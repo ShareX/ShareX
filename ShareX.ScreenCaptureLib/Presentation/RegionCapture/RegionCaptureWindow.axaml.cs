@@ -474,6 +474,7 @@ public partial class RegionCaptureWindow : Window
             }
 
             ApplyPixelSize();
+            CoverScreen();
             UpdatePixelTransforms();
             _editorWorkspace.ConfigureForFullscreenWorkspace();
             _editorWorkspace.LoadWorkspaceImage(_request.Screenshot);
@@ -1677,8 +1678,24 @@ public partial class RegionCaptureWindow : Window
         // Win32 selects the DPI of the monitor at the virtual desktop origin. Reassigning
         // Position after the window spans multiple monitors can make MonitorFromWindow
         // select a different monitor and silently change Avalonia's internal scale.
-        Position = new PixelPoint((int)Math.Round(_request.ScreenBounds.X * _pixelsPerScreenX), (int)Math.Round(_request.ScreenBounds.Y * _pixelsPerScreenY));
+        // On macOS windows are placed in points, the units of ScreenBounds, not in the screenshot's pixels.
+        Position = PlatformServices.IsInitialized && PlatformServices.Current.Windows.PositionsWindowsInPoints
+            ? new PixelPoint(_request.ScreenBounds.X, _request.ScreenBounds.Y)
+            : new PixelPoint((int)Math.Round(_request.ScreenBounds.X * _pixelsPerScreenX), (int)Math.Round(_request.ScreenBounds.Y * _pixelsPerScreenY));
         ApplyPixelSize();
+    }
+
+    /// <summary>
+    /// Where the system keeps ordinary windows below its menu bar (macOS, notably under a MacBook's notch), the overlay would show
+    /// the frozen screenshot shifted down by the menu bar's height and select areas that much too high.
+    /// </summary>
+    private void CoverScreen()
+    {
+        if (_request != null && PlatformServices.IsInitialized && TryGetPlatformHandle()?.Handle is IntPtr handle && handle != IntPtr.Zero)
+        {
+            DrawingRectangle bounds = _request.ScreenBounds;
+            PlatformServices.Current.Windows.CoverScreen(handle, new PlatformRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height));
+        }
     }
 
     private void ApplyPixelSize()

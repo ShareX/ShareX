@@ -76,9 +76,16 @@ public class MacGraphicsTests
 
             Assert.True(none.GetFileMediaSupport(ffmpeg).IsSupported);
             Assert.True(onPath.GetFileMediaSupport("").IsSupported);
+            // Recording counts the configured FFmpeg too: started from the Dock, ShareX does not have Homebrew on its PATH.
+            Assert.True(none.GetSupport(ffmpeg).IsSupported);
+            Assert.True(onPath.Support.IsSupported);
+
+            // A Mac (or runner) with Homebrew's FFmpeg always has one.
+            bool homebrew = new[] { "/opt/homebrew/bin", "/usr/local/bin", "/opt/local/bin" }.Any(d => File.Exists(Path.Combine(d, "ffmpeg")));
             FeatureSupport missing = none.GetFileMediaSupport(Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N")));
-            Assert.False(missing.IsSupported);
-            Assert.Contains("FFmpeg", missing.Reason);
+            Assert.Equal(homebrew, missing.IsSupported);
+            Assert.Equal(homebrew, none.GetSupport(null).IsSupported);
+            if (!homebrew) Assert.Contains("FFmpeg", missing.Reason);
         }
         finally
         {

@@ -57,6 +57,12 @@ public enum WindowScrollCommand
 /// <summary>Synthetic keyboard and mouse input, used by scrolling capture to scroll the window being captured.</summary>
 public interface IInputService
 {
+    /// <summary>
+    /// Asks the system for permission to send input, before a scrolling capture starts, so its prompt is not answered in the middle
+    /// of a capture. False when input is not allowed yet; the reason is then in <see cref="KeyboardSupport"/>.
+    /// </summary>
+    bool RequestPermission() => true;
+
     /// <summary>Whether <see cref="SendKeyPress"/> works in this session.</summary>
     FeatureSupport KeyboardSupport { get; }
 

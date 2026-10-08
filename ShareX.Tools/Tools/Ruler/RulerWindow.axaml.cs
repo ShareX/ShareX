@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.AvaloniaUI.Windows;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -99,8 +100,7 @@ public partial class RulerWindow : Window
     private void ApplyCaptureBounds()
     {
         if (_closed || _captureBounds is not PixelRect bounds) return;
-        double scaling = RenderScaling;
-        if (!double.IsFinite(scaling) || scaling <= 0) scaling = 1;
+        double scaling = WindowScaling.GetPositionScaling(RenderScaling);
         Position = bounds.Position;
         Width = bounds.Width / scaling;
         Height = bounds.Height / scaling;

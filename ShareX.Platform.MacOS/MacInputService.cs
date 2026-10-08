@@ -32,7 +32,7 @@ namespace ShareX.Platform.MacOS;
 /// <summary>Synthetic input through Quartz events, which macOS only delivers once ShareX has the Accessibility permission.</summary>
 public sealed partial class MacInputService : IInputService
 {
-    private const string PermissionReason = "Allow ShareX in System Settings > Privacy & Security > Accessibility.";
+    private const string PermissionReason = "Scrolling capture needs the Accessibility permission to scroll other applications, and ShareX does not have it. Allow ShareX in System Settings > Privacy & Security > Accessibility, then start the capture again.";
 
     private static volatile bool permissionRequested;
 
@@ -43,6 +43,17 @@ public sealed partial class MacInputService : IInputService
     public FeatureSupport KeyboardSupport => IsTrusted() || !permissionRequested ? FeatureSupport.Supported : FeatureSupport.NotSupported(PermissionReason);
 
     public FeatureSupport MouseWheelSupport => KeyboardSupport;
+
+    public bool RequestPermission()
+    {
+        if (IsTrusted())
+        {
+            return true;
+        }
+
+        RequestTrust();
+        return false;
+    }
 
     public FeatureSupport WindowScrollSupport { get; } =
         FeatureSupport.NotSupported("Only Windows lets one application drive another application's scroll bars. Use the mouse wheel or a key instead.");

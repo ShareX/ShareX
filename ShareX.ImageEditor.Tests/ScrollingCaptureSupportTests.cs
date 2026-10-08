@@ -62,7 +62,7 @@ public sealed class ScrollingCaptureSupportTests
         });
         ScrollingCaptureOptions options = new() { StartDelay = 777, ScrollMethod = ScrollMethod.ScrollMessage, AutoUpload = true };
 
-        Assert.Equal(Strings.ScrollingCaptureWindow_Unavailable, viewModel.GetSupport(options.ScrollMethod).Reason);
+        Assert.Equal("Install a legacy scroll helper.", viewModel.GetSupport(options.ScrollMethod).Reason);
         Assert.False(viewModel.TryChange(options.ScrollMethod, false, () => { options.StartDelay = 1; actions++; }));
         Assert.Equal(StartResult.Unavailable, await viewModel.TryCaptureAsync(options,
             () => actions++, () => { actions++; return Task.CompletedTask; },

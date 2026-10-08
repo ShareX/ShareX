@@ -186,6 +186,43 @@ public class MacServicesTests
     }
 
     [Fact]
+    public void MacWindows_UsePointsSystemCursorsAndNoSeparateSpaces()
+    {
+        IWindowService mac = new MacWindowService();
+        IWindowService other = new UnsupportedWindowService("none");
+
+        Assert.True(mac.PositionsWindowsInPoints);
+        Assert.True(mac.PrefersSystemCursors);
+        Assert.True(mac.FullScreenUsesSeparateSpace);
+        Assert.True(mac.HidesInsteadOfMinimizing);
+        Assert.False(other.PositionsWindowsInPoints);
+        Assert.False(other.PrefersSystemCursors);
+        Assert.False(other.FullScreenUsesSeparateSpace);
+        Assert.False(other.HidesInsteadOfMinimizing);
+        Assert.False(other.CoverScreen(0, new PlatformRectangle(0, 0, 10, 10)));
+    }
+
+    [Fact]
+    public void Shortcuts_ListModifiersInEachSystemsOrder()
+    {
+        ISystemInfoService mac = new MacSystemInfoService(new RecordingRunner());
+        ISystemInfoService linux = new ShareX.Platform.Linux.UnixSystemInfoService(new PlatformInfo(OperatingSystemKind.Linux, DisplayServer.X11, DesktopEnvironment.Xfce, "XFCE", false), new RecordingRunner());
+
+        Assert.Equal([HotkeyModifiers.Control, HotkeyModifiers.Alt, HotkeyModifiers.Shift, HotkeyModifiers.Super], mac.ModifierDisplayOrder);
+        Assert.Equal([HotkeyModifiers.Control, HotkeyModifiers.Shift, HotkeyModifiers.Alt, HotkeyModifiers.Super], linux.ModifierDisplayOrder);
+    }
+
+    [Fact]
+    public void Tray_ReportsSeparateClicksOnMacOS()
+    {
+        ITrayService tray = new MacTrayService();
+
+        Assert.True(tray.Support.IsSupported);
+        Assert.True(tray.RightButtonSupport.IsSupported);
+        Assert.True(tray.MiddleClickSupport.IsSupported);
+    }
+
+    [Fact]
     public void Updates_LinkToEachSystemsPackage()
     {
         ISystemInfoService mac = new MacSystemInfoService(new RecordingRunner());

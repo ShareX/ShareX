@@ -84,7 +84,15 @@ public partial class ScrollingCaptureWindow : Window
             return item;
         }).ToArray();
         RefreshCaptureControls();
-        WindowState = Avalonia.Controls.WindowState.Minimized;
+        if (HidesInsteadOfMinimizing)
+        {
+            // Shown invisible, then hidden while the region is selected (see GetOutOfTheWay).
+            Opacity = 0;
+        }
+        else
+        {
+            WindowState = Avalonia.Controls.WindowState.Minimized;
+        }
 
         Opened += OnOpened;
         Activated += OnActivated;
@@ -144,15 +152,39 @@ public partial class ScrollingCaptureWindow : Window
         if (!_viewModel.IsBusy) DisposeService();
     }
 
+    private static bool HidesInsteadOfMinimizing => PlatformServices.IsInitialized && PlatformServices.Current.Windows.HidesInsteadOfMinimizing;
+
+    private void GetOutOfTheWay()
+    {
+        if (HidesInsteadOfMinimizing)
+        {
+            Hide();
+        }
+        else
+        {
+            WindowState = Avalonia.Controls.WindowState.Minimized;
+        }
+    }
+
     private async Task SelectWindowAsync()
     {
+        // Ask for the input permission (macOS Accessibility) first, so its prompt is not answered in the middle of a capture.
+        if (PlatformServices.IsInitialized && !PlatformServices.Current.Input.RequestPermission())
+        {
+            SetStatus(ScrollingCaptureStatus.Failed);
+            StatusText.Text = GetUnavailableReason();
+            RestoreAndActivate();
+            RefreshCaptureControls();
+            return;
+        }
+
         try
         {
             ScrollingCaptureWindowViewModel.StartResult result = await _viewModel.TryCaptureAsync(_service.Options,
                 () =>
                 {
                     OptionsOverlay.IsVisible = false;
-                    WindowState = Avalonia.Controls.WindowState.Minimized;
+                    GetOutOfTheWay();
                     RefreshCaptureControls();
                 }, () => Task.Delay(250), _service.SelectWindowAsync, CaptureSelectedWindowAsync);
 
@@ -160,7 +192,7 @@ public partial class ScrollingCaptureWindow : Window
             if (result == ScrollingCaptureWindowViewModel.StartResult.Unavailable)
             {
                 SetStatus(ScrollingCaptureStatus.Failed);
-                StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Unavailable;
+                StatusText.Text = GetUnavailableReason();
                 RestoreAndActivate();
             }
             else if (result == ScrollingCaptureWindowViewModel.StartResult.Cancelled)
@@ -317,9 +349,14 @@ public partial class ScrollingCaptureWindow : Window
         CopyButton.IsEnabled = false;
     }
 
+    private string GetUnavailableReason() =>
+        _viewModel.GetSupport(_service.Options.ScrollMethod, _service.Options.AutoScrollTop).Reason is { Length: > 0 } reason
+            ? reason : Localization.Strings.ScrollingCaptureWindow_Unavailable;
+
     private void RestoreAndActivate()
     {
         if (_viewModel.IsClosed) return;
+        Opacity = 1;
         WindowState = Avalonia.Controls.WindowState.Normal;
 
         if (!IsVisible)

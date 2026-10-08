@@ -96,6 +96,12 @@ public interface IScreenRecordingService
     FeatureSupport Support { get; }
 
     /// <summary>
+    /// <see cref="Support"/> with the FFmpeg that ShareX's settings point to, where FFmpeg is the only requirement (macOS). A
+    /// program started from the Dock or Finder has a short PATH, so a configured or Homebrew FFmpeg must count.
+    /// </summary>
+    FeatureSupport GetSupport(string ffmpegPath) => Support;
+
+    /// <summary>
     /// Whether a device action of the recording settings works here. Independent of <see cref="Support"/>: Linux can record
     /// through its own devices while DirectShow, which only exists on Windows, is unsupported.
     /// </summary>

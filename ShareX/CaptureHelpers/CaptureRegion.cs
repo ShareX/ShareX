@@ -77,7 +77,11 @@ namespace ShareX
             if (cursor != null)
             {
                 cursorBitmap = PlatformImageConverter.ToSKBitmap(cursor.Image);
-                cursorPosition = new Point(cursor.Position.X - screenBounds.X, cursor.Position.Y - screenBounds.Y);
+                // Screen coordinates to screenshot pixels: on a Retina Mac the screen is in points and the screenshot has two pixels each.
+                double pixelsPerX = screenBounds.Width > 0 ? frozenScreenshot.Width / (double)screenBounds.Width : 1;
+                double pixelsPerY = screenBounds.Height > 0 ? frozenScreenshot.Height / (double)screenBounds.Height : 1;
+                cursorPosition = new Point((int)System.Math.Round((cursor.Position.X - screenBounds.X) * pixelsPerX),
+                    (int)System.Math.Round((cursor.Position.Y - screenBounds.Y) * pixelsPerY));
             }
 
             AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest

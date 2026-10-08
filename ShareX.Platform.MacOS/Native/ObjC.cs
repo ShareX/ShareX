@@ -62,6 +62,22 @@ internal static unsafe partial class ObjC
 
     public static IntPtr Selector(string name) => sel_registerName(name);
 
+    /// <summary>objc_msgSend, for signatures without a helper here; cast it to the method's exact signature.</summary>
+    public static IntPtr MsgSend => msgSend;
+
+    [LibraryImport(LibObjC, EntryPoint = "objc_lookUpClass", StringMarshalling = StringMarshalling.Utf8)]
+    public static partial IntPtr LookUpClass(string name);
+
+    [LibraryImport(LibObjC, EntryPoint = "objc_allocateClassPair", StringMarshalling = StringMarshalling.Utf8)]
+    public static partial IntPtr AllocateClassPair(IntPtr superclass, string name, nuint extraBytes = 0);
+
+    [LibraryImport(LibObjC, EntryPoint = "objc_registerClassPair")]
+    public static partial void RegisterClassPair(IntPtr cls);
+
+    [LibraryImport(LibObjC, EntryPoint = "class_addMethod", StringMarshalling = StringMarshalling.Utf8)]
+    [return: MarshalAs(UnmanagedType.U1)]
+    public static partial bool AddMethod(IntPtr cls, IntPtr selector, IntPtr implementation, string types);
+
     // objc_msgSend must be called through a pointer cast to the exact signature of each method.
     public static IntPtr Send(IntPtr receiver, string selector) =>
         ((delegate* unmanaged<IntPtr, IntPtr, IntPtr>)msgSend)(receiver, Selector(selector));

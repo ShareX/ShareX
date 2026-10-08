@@ -133,6 +133,24 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     public bool CanUseResult => !IsBusy && !string.IsNullOrWhiteSpace(ResultText);
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
     public bool HasLanguages => Languages.Count > 0;
+
+    /// <summary>
+    /// The saved language when this engine has it; otherwise the system's language, then any variant of the saved one, then the
+    /// first. Engines name languages differently ("en" on Windows, "en-US" in Vision and "eng" in Tesseract's packs vary), so an
+    /// inexact saved tag must not fall through to whatever sorts first (German on a French Mac).
+    /// </summary>
+    internal static OCRLanguageOption? SelectLanguage(IReadOnlyList<OCRLanguageOption> languages, string? saved, string? systemCulture)
+    {
+        static string BaseOf(string? tag) => (tag ?? string.Empty).Split('-', '_')[0];
+
+        return languages.FirstOrDefault(x => x.LanguageTag.Equals(saved, StringComparison.OrdinalIgnoreCase))
+            ?? languages.FirstOrDefault(x => x.LanguageTag.Equals(systemCulture, StringComparison.OrdinalIgnoreCase))
+            ?? (string.IsNullOrEmpty(BaseOf(systemCulture)) ? null
+                : languages.FirstOrDefault(x => BaseOf(x.LanguageTag).Equals(BaseOf(systemCulture), StringComparison.OrdinalIgnoreCase)))
+            ?? (string.IsNullOrEmpty(BaseOf(saved)) ? null
+                : languages.FirstOrDefault(x => BaseOf(x.LanguageTag).Equals(BaseOf(saved), StringComparison.OrdinalIgnoreCase)))
+            ?? languages.FirstOrDefault();
+    }
     public bool HasServices => ServiceLinks.Count > 0;
     public bool HasEditingService => EditingServiceLink != null;
     public string Result => ResultText.Trim();
@@ -156,8 +174,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
             Languages.Add(language);
         }
 
-        _selectedLanguage = Languages.FirstOrDefault(x => x.LanguageTag.Equals(options.Language, StringComparison.OrdinalIgnoreCase))
-            ?? Languages.FirstOrDefault();
+        _selectedLanguage = SelectLanguage(Languages, options.Language, System.Globalization.CultureInfo.CurrentUICulture.Name);
         _scaleFactor = (decimal)Math.Clamp(options.ScaleFactor, 1f, 4f);
         _singleLine = options.SingleLine;
         _autoCopy = options.AutoCopy;

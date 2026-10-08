@@ -67,8 +67,11 @@ namespace ShareX.HelpersLib
             catch (Exception e)
             {
                 DebugHelper.WriteException(e, "GitHub update check failed.");
+                Status = UpdateStatus.UpdateCheckFailed;
+                return;
             }
 
+            DebugHelper.WriteLine("GitHub update check failed: the latest release has no version tag or no file for this system.");
             Status = UpdateStatus.UpdateCheckFailed;
         }
 
@@ -156,6 +159,16 @@ namespace ShareX.HelpersLib
                 if (!string.IsNullOrEmpty(PackageSuffix))
                 {
                     asset = FindAsset(release, PackageSuffix);
+
+                    if (asset == null && !string.IsNullOrEmpty(release.html_url))
+                    {
+                        // No package for this system in the release: still compare versions and link to the release page.
+                        DebugHelper.WriteLine($"Release {release.tag_name} has no file ending with {PackageSuffix}; linking to its page.");
+                        FileName = null;
+                        DownloadURL = release.html_url;
+                        IsPreRelease = release.prerelease;
+                        return true;
+                    }
                 }
                 else if (isPortable)
                 {

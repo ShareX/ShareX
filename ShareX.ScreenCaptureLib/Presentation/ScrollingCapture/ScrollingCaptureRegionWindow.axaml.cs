@@ -25,6 +25,7 @@
 
 #nullable enable
 
+using ShareX.AvaloniaUI.Windows;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
@@ -74,7 +75,7 @@ public partial class ScrollingCaptureRegionWindow : Window
     private void OnOpened(object? sender, EventArgs e)
     {
         if (_closed) return;
-        ConfigureGeometry(RenderScaling);
+        ConfigureGeometry(WindowScaling.GetPositionScaling(RenderScaling));
         ApplyClickThroughToolWindowStyle();
         ApplyNativeFrameRegion();
         Dispatcher.UIThread.Post(ApplyNativeFrameRegion, DispatcherPriority.Loaded);
@@ -92,7 +93,7 @@ public partial class ScrollingCaptureRegionWindow : Window
     private void OnScalingChanged(object? sender, EventArgs e)
     {
         if (_closed) return;
-        ConfigureGeometry(RenderScaling);
+        ConfigureGeometry(WindowScaling.GetPositionScaling(RenderScaling));
         Dispatcher.UIThread.Post(ApplyNativeFrameRegion, DispatcherPriority.Loaded);
     }
 

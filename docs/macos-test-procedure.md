@@ -30,6 +30,8 @@ Uploads go only to a local server (AGENTS.md: never send real data to third-part
 4. **Quit and restart ShareX.** macOS only applies the permission on the next launch.
 5. Repeat the full screen capture. It must show other applications' windows, not just the wallpaper.
 
+An ad hoc signed build gets a new signature every time it is built, so after installing a new build macOS may keep refusing until ShareX is removed from the Screen Recording list (the minus button), added again and ShareX restarted. A Developer ID signed build keeps its permission across updates.
+
 ## 3. Capture
 
 Check each image in the editor or the screenshots folder.

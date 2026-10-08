@@ -61,6 +61,9 @@ public interface ISystemInfoService
     /// </summary>
     string? GetModifierKeyName(HotkeyModifiers modifier) => null;
 
+    /// <summary>The order modifiers are listed in shortcut labels: Ctrl, Shift, Alt, Win as in ShareX; macOS lists ⌃ ⌥ ⇧ ⌘.</summary>
+    HotkeyModifiers[] ModifierDisplayOrder => [HotkeyModifiers.Control, HotkeyModifiers.Shift, HotkeyModifiers.Alt, HotkeyModifiers.Super];
+
     /// <summary>
     /// The hardware GPU for machine learning (the background remover): the one with the most dedicated memory, numbered as DirectML
     /// numbers adapters. Null where ShareX runs models on the CPU only (Linux and macOS).

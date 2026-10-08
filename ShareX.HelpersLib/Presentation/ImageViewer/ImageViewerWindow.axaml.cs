@@ -33,6 +33,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -89,6 +90,21 @@ public partial class ImageViewerWindow : Window
         System.Drawing.Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
         WindowStartupLocation = WindowStartupLocation.Manual;
         Position = new PixelPoint(activeScreen.X, activeScreen.Y);
+        if (PlatformServices.IsInitialized && PlatformServices.Current.Windows.FullScreenUsesSeparateSpace)
+        {
+            // The window covers the active screen instead (its bounds are in points there, as are window sizes).
+            WindowState = Avalonia.Controls.WindowState.Normal;
+            Width = activeScreen.Width;
+            Height = activeScreen.Height;
+            Opened += (_, _) =>
+            {
+                if (TryGetPlatformHandle()?.Handle is IntPtr handle && handle != IntPtr.Zero)
+                {
+                    PlatformServices.Current.Windows.CoverScreen(handle,
+                        new PlatformRectangle(activeScreen.X, activeScreen.Y, activeScreen.Width, activeScreen.Height));
+                }
+            };
+        }
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Title = Localization.Strings.ImageViewerWindow_Title;
         KeyDown += OnKeyDown;

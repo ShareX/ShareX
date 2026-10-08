@@ -42,6 +42,9 @@ internal static class TaskFeatureSupport
 
     public static FeatureSupport Get(HotkeyType task) => Get(task, ApplicationState.DefaultTaskSettings);
 
+    private static FeatureSupport GetRecordingSupport(TaskSettings taskSettings) => PlatformServices.Current.ScreenRecording.GetSupport(
+        (taskSettings.UseDefaultCaptureSettings ? ApplicationState.DefaultTaskSettings : taskSettings).CaptureSettings.FFmpegOptions.FFmpegPath);
+
     public static FeatureSupport Get(HotkeyType task, TaskSettings taskSettings) => task switch
     {
         HotkeyType.PrintScreen or HotkeyType.ActiveMonitor or HotkeyType.RectangleRegion or
@@ -59,10 +62,10 @@ internal static class TaskFeatureSupport
 
         HotkeyType.ScreenRecorder or HotkeyType.ScreenRecorderCustomRegion or HotkeyType.StartScreenRecorder or
         HotkeyType.ScreenRecorderGIF or HotkeyType.ScreenRecorderGIFCustomRegion or HotkeyType.StartScreenRecorderGIF => Require(
-            PlatformServices.Current.ScreenRecording.Support, PlatformServices.Current.ScreenCapture.Support),
+            GetRecordingSupport(taskSettings), PlatformServices.Current.ScreenCapture.Support),
 
         HotkeyType.ScreenRecorderActiveWindow or HotkeyType.ScreenRecorderGIFActiveWindow => Require(
-            PlatformServices.Current.ScreenRecording.Support, PlatformServices.Current.ScreenCapture.Support,
+            GetRecordingSupport(taskSettings), PlatformServices.Current.ScreenCapture.Support,
             PlatformServices.Current.Windows.Support),
 
         HotkeyType.MouseHighlighter => MouseHighlighterWindowViewModel.CurrentToggleSupport,

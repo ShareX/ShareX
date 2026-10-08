@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.AvaloniaUI.Windows;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -150,7 +151,7 @@ public partial class PinToScreenWindow : Window
         if (keepCenter && previousSize.Width > 0 && previousSize.Height > 0)
         {
             Position = PinToScreenGeometry.KeepCenter(previousPosition, previousSize,
-                new Avalonia.Size(width, height), RenderScaling);
+                new Avalonia.Size(width, height), WindowScaling.GetPositionScaling(RenderScaling));
         }
 
         _scaleText.Text = $"{_imageScale}%";

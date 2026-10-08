@@ -52,11 +52,14 @@ public sealed class ScrollingCaptureWindowViewModel
     {
         get
         {
+            FeatureSupport? first = null;
             foreach (ScrollMethod method in Enum.GetValues<ScrollMethod>())
             {
-                if (GetCurrentMethodSupport(method).IsSupported) return FeatureSupport.Supported;
+                FeatureSupport support = GetCurrentMethodSupport(method);
+                if (support.IsSupported) return FeatureSupport.Supported;
+                first ??= support;
             }
-            return Unavailable;
+            return Normalize(first ?? Unavailable);
         }
     }
 
@@ -136,6 +139,8 @@ public sealed class ScrollingCaptureWindowViewModel
             ? FeatureSupport.Supported : Unavailable;
     }
 
-    private static FeatureSupport Normalize(FeatureSupport support) => support.IsSupported ? FeatureSupport.Supported : Unavailable;
+    // The system's own reason says what is missing (for example the Accessibility permission on macOS); the generic text is the fallback.
+    private static FeatureSupport Normalize(FeatureSupport support) => support.IsSupported ? FeatureSupport.Supported
+        : string.IsNullOrWhiteSpace(support.Reason) ? Unavailable : support;
     private static FeatureSupport Unavailable => FeatureSupport.NotSupported(Localization.Strings.ScrollingCaptureWindow_Unavailable);
 }

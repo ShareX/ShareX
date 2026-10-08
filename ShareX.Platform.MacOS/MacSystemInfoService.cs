@@ -59,6 +59,8 @@ public sealed class MacSystemInfoService : ISystemInfoService
     // Scripts/package-macos.sh names the disk image ShareX-<version>-macos-<arch>.dmg.
     public string? UpdatePackageSuffix => $"macos-{(System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture == System.Runtime.InteropServices.Architecture.Arm64 ? "arm64" : "x64")}.dmg";
 
+    public HotkeyModifiers[] ModifierDisplayOrder => [HotkeyModifiers.Control, HotkeyModifiers.Alt, HotkeyModifiers.Shift, HotkeyModifiers.Super];
+
     public string? GetModifierKeyName(HotkeyModifiers modifier) => modifier switch
     {
         HotkeyModifiers.Control => "⌃",

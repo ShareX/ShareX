@@ -179,6 +179,9 @@ public sealed class MacWindowService : IWindowService
         nint behavior = ObjC.SendNInt(window, "collectionBehavior") | (1 << 6) | (1 << 8);
         ObjC.Send(window, "setCollectionBehavior:", behavior);
 
+        // NSWindowSharingNone: frames and tool bars stay out of screenshots and recordings.
+        ObjC.Send(window, "setSharingType:", IntPtr.Zero);
+
         // Only set when wanted: an explicit NO would also stop clicks passing through the window's transparent areas.
         if (clickThrough)
         {
@@ -220,6 +223,35 @@ public sealed class MacWindowService : IWindowService
 
     // CGWindowList reports whole windows only; macOS draws the title bar inside them.
     public double GetOwnWindowPixelScale(PlatformPoint point) => 1;
+
+    public bool PositionsWindowsInPoints => true;
+
+    public bool PrefersSystemCursors => true;
+
+    public bool FullScreenUsesSeparateSpace => true;
+
+    public bool HidesInsteadOfMinimizing => true;
+
+    // NSStatusWindowLevel: above the Dock (20) and the menu bar (24), below Avalonia's pop-up menus (101).
+    private const nint OverlayWindowLevel = 25;
+
+    /// <summary>
+    /// AppKit keeps ordinary windows below the menu bar (and the notch on MacBooks with one), so the region overlay would start
+    /// 24 to 37 points lower than the frozen screenshot it shows. At status level the frame set here is kept as is.
+    /// </summary>
+    public bool CoverScreen(long windowHandle, PlatformRectangle screenBounds) => ObjC.WithAutoreleasePool(() =>
+    {
+        IntPtr window = GetOwnNSWindow((IntPtr)windowHandle);
+
+        if (window == IntPtr.Zero)
+        {
+            return false;
+        }
+
+        ObjC.Send(window, "setLevel:", OverlayWindowLevel);
+        ObjC.SendRectBool(window, "setFrame:display:", MacScreenOverlay.ToCocoa(screenBounds), true);
+        return true;
+    });
 
     public PlatformRectangle? GetClientBounds(long windowHandle) => GetWindowBounds(windowHandle);
 
