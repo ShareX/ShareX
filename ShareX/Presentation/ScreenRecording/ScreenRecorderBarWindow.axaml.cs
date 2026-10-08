@@ -47,7 +47,7 @@ internal partial class ScreenRecorderBarWindow : Window
         RecordingRegion = region;
         CaptureWindow = window;
         _recordButton = ActionButton(Strings.ScreenRecorderBar_Record, LucideIcons.circle, RequestRecord, toolbar: true);
-        _recordButton.Classes.Add("accent");
+        _recordButton.Classes.Add("recorder-record");
 
         AddSource(Strings.ScreenRecorderBar_SystemAudio, LucideIcons.volume_2,
             () => Capture.ScreenRecordSystemAudio, value => Capture.ScreenRecordSystemAudio = value,
@@ -135,8 +135,8 @@ internal partial class ScreenRecorderBarWindow : Window
 
     private void BuildBar()
     {
-        BarRows.Children.Clear();
-        WrapPanel actions = new() { Orientation = Orientation.Horizontal };
+        Toolbar.Children.Clear();
+        StackPanel actions = new() { Orientation = Orientation.Horizontal };
         Border grip = new()
         {
             Width = 24, Height = 36, Background = Brushes.Transparent,
@@ -147,11 +147,15 @@ internal partial class ScreenRecorderBarWindow : Window
             if (e.GetCurrentPoint(grip).Properties.IsLeftButtonPressed) BeginMoveDrag(e);
         };
         actions.Children.Add(grip);
+        // Rebuild toolbar content when its labels change, keeping the active settings panel open.
+        if (_recordButton.Parent is Panel oldParent) oldParent.Children.Remove(_recordButton);
+        _recordButton.Content = ButtonContent(Strings.ScreenRecorderBar_Record, LucideIcons.circle, toolbar: true);
+        actions.Children.Add(_recordButton);
+        actions.Children.Add(ActionButton(Strings.TaskSettingsWindow_Cancel, LucideIcons.x, Cancel, toolbar: true));
         actions.Children.Add(ActionButton(Strings.ScreenRecorderBar_Area, LucideIcons.scan,
             () => ShowPanel("area", Strings.ScreenRecorderBar_Area, BuildAreaPanel), toolbar: true));
-        actions.Children.Add(ActionButton(Strings.ScreenRecorderBar_Options, LucideIcons.settings_2,
-            () => ShowPanel("options", Strings.ScreenRecorderBar_Options, BuildOptionsPanel), toolbar: true));
-        WrapPanel inputs = new();
+        Toolbar.Children.Add(actions);
+        StackPanel inputs = new() { Orientation = Orientation.Horizontal };
         foreach (Source source in _sources)
         {
             if (source.Control.Parent is Panel oldInputs) oldInputs.Children.Remove(source.Control);
@@ -163,19 +167,18 @@ internal partial class ScreenRecorderBarWindow : Window
         inputs.Children.Add(SplitControl(Strings.MouseHighlighter, LucideIcons.mouse_pointer_click,
             Capture.ScreenRecordMouseHighlighter, value => Capture.ScreenRecordMouseHighlighter = value,
             () => ShowPanel("highlighter", Strings.MouseHighlighter, BuildHighlighterPanel)));
-        // Rebuild toolbar content when its labels change, keeping the active settings panel open.
-        if (_recordButton.Parent is Panel oldParent) oldParent.Children.Remove(_recordButton);
-        _recordButton.Content = ButtonContent(Strings.ScreenRecorderBar_Record, LucideIcons.circle, toolbar: true);
-        StackPanel recordingActions = new() { Orientation = Orientation.Horizontal, VerticalAlignment = VerticalAlignment.Top };
-        recordingActions.Children.Add(ActionButton(Strings.TaskSettingsWindow_Cancel, LucideIcons.x, Cancel, toolbar: true));
-        recordingActions.Children.Add(_recordButton);
-        Grid header = new() { ColumnDefinitions = new("*,Auto") };
-        header.Children.Add(actions);
-        Grid.SetColumn(recordingActions, 1);
-        header.Children.Add(recordingActions);
-        BarRows.Children.Add(header);
-        BarRows.Children.Add(inputs);
-        UpdateSummary();
+        // Keep the action buttons visible when long labels or a small work area require scrolling the sources.
+        ScrollViewer sources = new()
+        {
+            Content = inputs, HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
+            VerticalScrollBarVisibility = ScrollBarVisibility.Disabled
+        };
+        Grid.SetColumn(sources, 1);
+        Toolbar.Children.Add(sources);
+        Button options = ActionButton(Strings.ScreenRecorderBar_Options, LucideIcons.settings_2,
+            () => ShowPanel("options", Strings.ScreenRecorderBar_Options, BuildOptionsPanel), toolbar: true);
+        Grid.SetColumn(options, 2);
+        Toolbar.Children.Add(options);
         ValidateSources();
         Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
     }
@@ -326,7 +329,7 @@ internal partial class ScreenRecorderBarWindow : Window
     {
         StackPanel recording = new() { Spacing = 10, Margin = new Thickness(0, 8) };
         recording.Children.Add(Row(Strings.TaskSettingsWindow_ScreenRecordingFPS,
-            Number(Capture.ScreenRecordFPS, 1, 120, 1, value => { Capture.ScreenRecordFPS = (int)value; UpdateSummary(); })));
+            Number(Capture.ScreenRecordFPS, 1, 120, 1, value => Capture.ScreenRecordFPS = (int)value)));
         recording.Children.Add(Row(Strings.TaskSettingsWindow_NativeRecorderBitrate,
             Number(Capture.ScreenRecordVideoBitrate, 100, 200000, 100, value => Capture.ScreenRecordVideoBitrate = (int)value)));
         recording.Children.Add(Row(Strings.TaskSettingsWindow_StartDelaySeconds,
@@ -412,7 +415,6 @@ internal partial class ScreenRecorderBarWindow : Window
         _regionWindow?.Close();
         _regionWindow = null;
         if (IsVisible) ShowRegion();
-        UpdateSummary();
         ClosePanel();
     }
 
@@ -442,8 +444,6 @@ internal partial class ScreenRecorderBarWindow : Window
         Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
     }
 
-    private void UpdateSummary() => Summary.Text = string.Format(Strings.ScreenRecorderBar_Summary, RecordingRegion.Width, RecordingRegion.Height, Capture.ScreenRecordFPS);
-
     private void ShowError(string message)
     {
         ErrorMessage.Text = message;
@@ -471,7 +471,7 @@ internal partial class ScreenRecorderBarWindow : Window
         PixelRect work = screen.WorkingArea;
         double scaling = screen.Scaling;
         MaxWidth = Math.Max(280, work.Width / scaling - 16);
-        PanelScroll.MaxHeight = Math.Max(100, work.Height / scaling - BarRows.Bounds.Height - 130);
+        PanelScroll.MaxHeight = Math.Max(100, work.Height / scaling - Toolbar.Bounds.Height - 110);
         int width = (int)Math.Ceiling(Bounds.Width * scaling);
         int height = (int)Math.Ceiling(Bounds.Height * scaling);
         PixelPoint clamped = new(Math.Clamp(Position.X, work.X, Math.Max(work.X, work.Right - width)),

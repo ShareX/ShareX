@@ -2013,9 +2013,6 @@ Jalankan ShareX sebagai administrator untuk mengubah jalur folder pribadi.</valu
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Tampilkan bilah sebelum merekam</value>
   </data>
-  <data name="ScreenRecorderBar_Summary" xml:space="preserve">
-    <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
-  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Audio sistem</value>
   </data>

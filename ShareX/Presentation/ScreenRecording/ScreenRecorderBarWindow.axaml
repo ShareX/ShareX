@@ -10,8 +10,14 @@
         SizeToContent="WidthAndHeight"
         TransparencyLevelHint="Transparent"
         Background="Transparent">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Recorder.Record.Background" Color="#B8323F"/>
+        <SolidColorBrush x:Key="Recorder.Record.Hover" Color="#CA3E4B"/>
+        <SolidColorBrush x:Key="Recorder.Record.Pressed" Color="#A02935"/>
+    </Window.Resources>
     <Window.Styles>
         <Style Selector="Button.recorder-setup, ToggleButton.recorder-setup">
+            <Setter Property="Height" Value="36"/>
             <Setter Property="MinHeight" Value="36"/>
             <Setter Property="Padding" Value="10,6"/>
             <Setter Property="Margin" Value="0"/>
@@ -22,6 +28,31 @@
         <Style Selector="Button.recorder-arrow">
             <Setter Property="MinWidth" Value="30"/>
             <Setter Property="Padding" Value="6"/>
+        </Style>
+        <Style Selector="Button.recorder-record">
+            <Setter Property="Background" Value="{StaticResource Recorder.Record.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Recorder.Record.Background}"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Button.recorder-record TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Button.recorder-record /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource Recorder.Record.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Recorder.Record.Background}"/>
+        </Style>
+        <Style Selector="Button.recorder-record:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource Recorder.Record.Hover}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Recorder.Record.Hover}"/>
+        </Style>
+        <Style Selector="Button.recorder-record:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource Recorder.Record.Pressed}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Recorder.Record.Pressed}"/>
+        </Style>
+        <Style Selector="Button.recorder-record:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource Recorder.Record.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Recorder.Record.Background}"/>
+            <Setter Property="Opacity" Value="0.35"/>
         </Style>
         <Style Selector="Button.recorder-close">
             <Setter Property="Width" Value="28"/>
@@ -51,8 +82,7 @@
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1">
             <StackPanel Spacing="6">
-                <StackPanel x:Name="BarRows" Spacing="6"/>
-                <TextBlock x:Name="Summary" Margin="30,0,4,0" Opacity="0.75" FontSize="11" TextWrapping="Wrap"/>
+                <Grid x:Name="Toolbar" ColumnDefinitions="Auto,*,Auto"/>
                 <TextBlock x:Name="ErrorMessage" IsVisible="False" TextWrapping="Wrap" MaxWidth="550"/>
                 <Border x:Name="SettingsPanel" IsVisible="False" Padding="12" CornerRadius="6"
                         Background="{DynamicResource ShareX.Brush.Background.Panel}"

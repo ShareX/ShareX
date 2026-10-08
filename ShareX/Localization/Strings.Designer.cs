@@ -49,7 +49,6 @@ namespace ShareX.Localization {
         public static string ScreenRecorderBar_Bar => ResourceManager.GetString("ScreenRecorderBar_Bar", resourceCulture);
         public static string ScreenRecorderBar_HardwareHint => ResourceManager.GetString("ScreenRecorderBar_HardwareHint", resourceCulture);
         public static string ScreenRecorderBar_SelectArea => ResourceManager.GetString("ScreenRecorderBar_SelectArea", resourceCulture);
-        public static string ScreenRecorderBar_Summary => ResourceManager.GetString("ScreenRecorderBar_Summary", resourceCulture);
         public static string ScreenRecorderBar_TargetUnavailable => ResourceManager.GetString("ScreenRecorderBar_TargetUnavailable", resourceCulture);
         public static string ScreenRecorderBar_Screen => ResourceManager.GetString("ScreenRecorderBar_Screen", resourceCulture);
 

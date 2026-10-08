@@ -2013,9 +2013,6 @@
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>录制前显示录制栏</value>
   </data>
-  <data name="ScreenRecorderBar_Summary" xml:space="preserve">
-    <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
-  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>系统音频</value>
   </data>

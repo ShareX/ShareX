@@ -665,4 +665,3 @@ ShareX|ScreenRecorderBar_Microphone|186352a881d0550e2da1f74e5c317770702bc2a0f9c3
 ShareX|ScreenRecorderBar_Options|d0db8b5e364b6989e4b8f38a2b3846b87d99a51c1592ebf35d21cc66405a8e39|fr
 ShareX|ScreenRecorderBar_Overlay|2af93aeb435dff6322f51a7be60ec25c3ea7b6bee86d3177324aa96a232e9710|nl-NL
 ShareX|ScreenRecorderBar_SystemAudio|c14d8013d802d47e23bdcf2b828c2b1c10f7434314683a9a88b5d6e6c2eeec81|de
-ShareX|ScreenRecorderBar_Summary|4943958edfd5845130b2a84a1834d29cc82eb0838359690b4d007d93768c6c3f|ar-YE,cs,da,de,es,es-MX,fa-IR,fr,he-IL,hi,hu,id-ID,it-IT,ja-JP,ko-KR,nl-NL,pl,pt-BR,pt-PT,ro,ru,sv,th,tr,uk,vi-VN,zh-CN,zh-TW

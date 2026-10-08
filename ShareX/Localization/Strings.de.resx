@@ -2013,9 +2013,6 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Aufnahmeleiste vor der Aufnahme anzeigen</value>
   </data>
-  <data name="ScreenRecorderBar_Summary" xml:space="preserve">
-    <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
-  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Systemaudio</value>
   </data>

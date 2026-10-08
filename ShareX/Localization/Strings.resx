@@ -3098,9 +3098,6 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
     <value>Select another area...</value>
   </data>
-  <data name="ScreenRecorderBar_Summary" xml:space="preserve">
-    <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>The selected recording window is no longer available.</value>
   </data>

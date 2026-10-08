@@ -2013,9 +2013,6 @@ Esegui ShareX come amministratore per cambiare il percorso della cartella person
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Mostra la barra prima della registrazione</value>
   </data>
-  <data name="ScreenRecorderBar_Summary" xml:space="preserve">
-    <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
-  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Audio di sistema</value>
   </data>
