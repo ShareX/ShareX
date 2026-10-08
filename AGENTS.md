@@ -4,7 +4,7 @@ Rules for people and coding agents working in this repository.
 
 The `cross-platform-v2` branch makes ShareX run on Windows, Linux and macOS. Windows, Linux and macOS are complete. McoreD and Jaex agree on the goal: all three systems at 100%, with features such as OCR implemented through each system's own support.
 
-Useful background: [docs/cross-platform.md](docs/cross-platform.md) (architecture, building, per-desktop notes), [docs/cross-platform-learnings.md](docs/cross-platform-learnings.md), [docs/cross-platform-roadmap.md](docs/cross-platform-roadmap.md) (progress and open work), [docs/macos-test-procedure.md](docs/macos-test-procedure.md).
+Useful background: [docs/cross-platform.md](docs/cross-platform.md) (architecture, building, per-desktop notes), [docs/cross-platform-learnings.md](docs/cross-platform-learnings.md), [docs/cross-platform-roadmap.md](docs/cross-platform-roadmap.md) (progress and open work), [docs/20261004-macos-test-procedure.md](docs/20261004-macos-test-procedure.md).
 
 ## Scope
 

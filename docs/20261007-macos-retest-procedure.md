@@ -1,6 +1,6 @@
 # macOS retest procedure (round 2)
 
-A second pass on a Mac after the fixes for the round 1 report, `macos-test-report-2026-10-05.md` (findings F1 to F13). It checks each fix, runs the steps that could not be run last time, and tries the new release packaging and Vision OCR. The full procedure stays in [macos-test-procedure.md](macos-test-procedure.md); this file refers to its steps by number.
+A second pass on a Mac after the fixes for the round 1 report, `macos-test-report-2026-10-05.md` (findings F1 to F13). It checks each fix, runs the steps that could not be run last time, and tries the new release packaging and Vision OCR. The full procedure stays in [20261004-macos-test-procedure.md](20261004-macos-test-procedure.md); this file refers to its steps by number.
 
 Use the same report format as last time: a stable ID per finding, severity, step, evidence and suspected cause. Results are **pass**, **fail**, **partial** or **skipped**. New findings continue the numbering from **F14**. Keep the log when something fails: `~/Documents/ShareX/Logs/ShareX-Log-<date>.txt`.
 

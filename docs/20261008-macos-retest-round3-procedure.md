@@ -2,7 +2,7 @@
 
 A short, focused pass after the fixes for the round 2 report (`macos-retest-report-2026-10-07.md`, commit `30d18dbd0`). Only the areas that changed are tested. Same report format, IDs and result words as round 2 (**fixed**, **still fails**, **partial**, **not checked**); new findings continue from **F25**. Tag every check `[by hand]` or `[injected]`. Most checks here are about where things appear on screen, so do them **by hand** where possible.
 
-Uploads only to the local test server (`127.0.0.1:8000`, step 5 of [macos-test-procedure.md](macos-test-procedure.md)).
+Uploads only to the local test server (`127.0.0.1:8000`, step 5 of [20261004-macos-test-procedure.md](20261004-macos-test-procedure.md)).
 
 ## 0. Install
 

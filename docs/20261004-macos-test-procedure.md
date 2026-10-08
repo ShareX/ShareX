@@ -1,6 +1,6 @@
 # macOS test procedure
 
-A manual pass of the real ShareX application on a Mac, in the order the steps depend on each other. It is a release check in [cross-platform-roadmap.md](cross-platform-roadmap.md). After a first pass, use [macos-retest-procedure.md](macos-retest-procedure.md) to check fixes.
+A manual pass of the real ShareX application on a Mac, in the order the steps depend on each other. It is a release check in [cross-platform-roadmap.md](cross-platform-roadmap.md). After a first pass, use [20261007-macos-retest-procedure.md](20261007-macos-retest-procedure.md) to check fixes.
 
 Record each result as **pass**, **fail** (with what happened) or **skipped**. When something fails, keep the log: `~/Documents/ShareX/Logs/ShareX-Log-<date>.txt`.
 
