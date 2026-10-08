@@ -2013,6 +2013,9 @@ Kör ShareX som administratör för att ändra sökvägen till den personliga ma
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Visa inspelningsfältet före inspelning</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>Alternativ för {0}</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Systemljud</value>
   </data>

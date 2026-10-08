@@ -2013,6 +2013,9 @@ Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Opnamebalk tonen vóór het opnemen</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>Opties voor {0}</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Systeemaudio</value>
   </data>

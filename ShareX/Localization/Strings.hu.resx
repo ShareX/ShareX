@@ -2013,6 +2013,9 @@ Kérlek futtasd a ShareX-et adminisztrátori jogosultságokkal a személyes mapp
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Felvételi sáv megjelenítése a felvétel előtt</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>{0} beállításai</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Rendszerhang</value>
   </data>

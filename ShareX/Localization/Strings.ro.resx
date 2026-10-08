@@ -2013,6 +2013,9 @@ Vă rugăm să rulați ShareX ca administrator pentru a schimba calea folderului
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Afișează bara înainte de înregistrare</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>Opțiuni pentru {0}</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Sunetul sistemului</value>
   </data>

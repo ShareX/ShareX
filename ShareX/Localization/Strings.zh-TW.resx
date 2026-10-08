@@ -2013,6 +2013,9 @@
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>錄製前顯示錄製列</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>{0}選項</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>系統音訊</value>
   </data>

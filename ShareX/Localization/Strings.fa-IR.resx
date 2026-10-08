@@ -2013,6 +2013,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>نمایش نوار ضبط پیش از ضبط</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>گزینه‌های {0}</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>صدای سیستم</value>
   </data>

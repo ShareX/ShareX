@@ -2013,6 +2013,9 @@
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>रिकॉर्डिंग से पहले रिकॉर्डर बार दिखाएँ</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>{0} विकल्प</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>सिस्टम ऑडियो</value>
   </data>

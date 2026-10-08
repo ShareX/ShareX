@@ -2013,6 +2013,9 @@ Vui lòng chạy ShareX dưới quyền administrator để thay đổi thư m�
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Hiện thanh ghi trước khi ghi</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>Tùy chọn {0}</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Âm thanh hệ thống</value>
   </data>

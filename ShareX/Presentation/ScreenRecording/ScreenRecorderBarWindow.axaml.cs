@@ -233,7 +233,7 @@ internal partial class ScreenRecorderBarWindow : Window
         source.Toggle.Content = ButtonContent(source.Label, source.Icon, source.Enabled(), toolbar: true);
         string name = source.Selected() == "" ? source.ResolvedDefault ?? source.UnavailableLabel
             : source.Devices.FirstOrDefault(device => device.Id == source.Selected())?.Name ?? source.UnavailableLabel;
-        ToolTip.SetTip(source.Toggle, $"{source.Label}: {name}");
+        ToolTip.SetTip(source.Toggle, $"{source.Label}:{Environment.NewLine}{name}");
     }
 
     private bool ValidateSources()
@@ -504,7 +504,7 @@ internal partial class ScreenRecorderBarWindow : Window
         ToggleButton toggle = ToggleControl(label, icon, enabled, changed);
         toggle.CornerRadius = new(5, 0, 0, 5);
         toggle.Margin = new Thickness(0);
-        Button arrow = ActionButton(label + " " + Strings.ScreenRecorderBar_Options, LucideIcons.chevron_down, open, iconOnly: true);
+        Button arrow = ActionButton(string.Format(Strings.ScreenRecorderBar_SourceOptions, label), LucideIcons.chevron_down, open, iconOnly: true);
         arrow.CornerRadius = new(0, 5, 5, 0);
         arrow.Margin = new Thickness(0);
         arrow.Classes.Add("recorder-arrow");

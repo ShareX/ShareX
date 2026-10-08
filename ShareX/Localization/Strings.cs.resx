@@ -2013,6 +2013,9 @@ Chcete-li změnit cestu k osobní složce, spusťte ShareX jako správce.</value
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Zobrazit panel před nahráváním</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>Možnosti: {0}</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Systémový zvuk</value>
   </data>

@@ -2013,6 +2013,9 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Kayıttan önce kayıt çubuğunu göster</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>{0} seçenekleri</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Sistem sesi</value>
   </data>

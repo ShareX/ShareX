@@ -2013,6 +2013,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Mostrar la barra antes de grabar</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>Opciones de {0}</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Audio del sistema</value>
   </data>

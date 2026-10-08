@@ -2013,6 +2013,9 @@ Proszę uruchomić ShareX jako administrator, aby zmienić ścieżkę folderu os
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Pokaż pasek przed nagrywaniem</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>Opcje: {0}</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Dźwięk systemowy</value>
   </data>

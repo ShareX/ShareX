@@ -2013,6 +2013,9 @@ Veuillez exécuter ShareX en tant qu'administrateur pour changer le chemin du do
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Afficher la barre avant l’enregistrement</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>Options de {0}</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Audio système</value>
   </data>

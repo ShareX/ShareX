@@ -3068,6 +3068,10 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="ScreenRecorderBar_Options" xml:space="preserve">
     <value>Options</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>{0} options</value>
+    <comment>Tooltip and accessible name for a source options arrow. {0} is the localized source name (system audio, microphone, camera, or mouse highlighter).</comment>
+  </data>
   <data name="ScreenRecorderBar_Record" xml:space="preserve">
     <value>Record</value>
   </data>

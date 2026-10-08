@@ -2013,6 +2013,9 @@ Kør ShareX som administrator for at ændre stien til den personlige mappe.</val
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Vis optagelseslinjen før optagelse</value>
   </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>Indstillinger for {0}</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Systemlyd</value>
   </data>
