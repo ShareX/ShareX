@@ -23,6 +23,28 @@
             <Setter Property="MinWidth" Value="30"/>
             <Setter Property="Padding" Value="6"/>
         </Style>
+        <Style Selector="Button.recorder-close">
+            <Setter Property="Width" Value="28"/>
+            <Setter Property="MinWidth" Value="28"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="MinHeight" Value="28"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="Button.recorder-close /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="Button.recorder-close:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="Button.recorder-close:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
+        </Style>
     </Window.Styles>
     <ThemeVariantScope>
         <Border Padding="8" CornerRadius="8"
@@ -38,7 +60,7 @@
                     <StackPanel Spacing="8">
                         <Grid ColumnDefinitions="*,Auto">
                             <TextBlock x:Name="PanelTitle" FontWeight="SemiBold" VerticalAlignment="Center"/>
-                            <Button x:Name="ClosePanelButton" Grid.Column="1" Content="×" Padding="6,0" MinHeight="24"/>
+                            <Button x:Name="ClosePanelButton" Grid.Column="1" Classes="recorder-close"/>
                         </Grid>
                         <ScrollViewer x:Name="PanelScroll" HorizontalScrollBarVisibility="Disabled">
                             <ContentControl x:Name="PanelContent"/>

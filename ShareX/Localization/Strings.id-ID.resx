@@ -1971,9 +1971,6 @@ Jalankan ShareX sebagai administrator untuk mengubah jalur folder pribadi.</valu
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Kamera</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Batalkan persiapan</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Pengambilan</value>
   </data>
@@ -2016,26 +2013,17 @@ Jalankan ShareX sebagai administrator untuk mengubah jalur folder pribadi.</valu
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Tampilkan bilah sebelum merekam</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Tampilkan kontrol kursor pada bilah perekaman</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Audio sistem</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Merekam suara yang diputar melalui perangkat keluaran yang dipilih.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Jendela yang dipilih untuk direkam tidak lagi tersedia.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Volume rekaman (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Menyesuaikan volume dalam rekaman.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Jeda tangkapan layar: {0}d</value>

@@ -1971,9 +1971,6 @@ Esegui ShareX come amministratore per cambiare il percorso della cartella person
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Fotocamera</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Annulla configurazione</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Acquisizione</value>
   </data>
@@ -2016,26 +2013,17 @@ Esegui ShareX come amministratore per cambiare il percorso della cartella person
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Mostra la barra prima della registrazione</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Mostra i controlli del cursore sulla barra di registrazione</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Audio di sistema</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Registra l’audio riprodotto tramite il dispositivo di uscita selezionato.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>La finestra selezionata per la registrazione non è più disponibile.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Volume di registrazione (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Regola il volume nella registrazione.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Schermoshot delay: {0}s</value>

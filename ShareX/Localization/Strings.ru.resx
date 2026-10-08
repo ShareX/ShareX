@@ -1971,9 +1971,6 @@
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Камера</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Отменить подготовку</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Захват</value>
   </data>
@@ -2016,26 +2013,17 @@
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Показывать панель перед записью</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Показывать элементы управления курсором на панели записи</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Системный звук</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Записывает звук, воспроизводимый через выбранное устройство вывода.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Выбранное для записи окно больше недоступно.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Громкость записи (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Регулирует громкость в записи.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Задержка скриншота: {0} с</value>

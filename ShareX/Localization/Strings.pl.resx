@@ -1971,9 +1971,6 @@ Proszę uruchomić ShareX jako administrator, aby zmienić ścieżkę folderu os
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Kamera</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Anuluj konfigurację</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Przechwytywanie</value>
   </data>
@@ -2016,26 +2013,17 @@ Proszę uruchomić ShareX jako administrator, aby zmienić ścieżkę folderu os
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Pokaż pasek przed nagrywaniem</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Pokaż sterowanie kursorem na pasku nagrywania</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Dźwięk systemowy</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Nagrywa dźwięk odtwarzany przez wybrane urządzenie wyjściowe.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Wybrane okno do nagrywania nie jest już dostępne.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Głośność nagrania (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Dostosowuje głośność w nagraniu.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Opóźnienie zrzutu ekranu: {0}s</value>

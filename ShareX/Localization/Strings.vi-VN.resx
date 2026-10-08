@@ -1971,9 +1971,6 @@ Vui lòng chạy ShareX dưới quyền administrator để thay đổi thư m�
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Máy ảnh</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Hủy thiết lập</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Thu hình</value>
   </data>
@@ -2016,26 +2013,17 @@ Vui lòng chạy ShareX dưới quyền administrator để thay đổi thư m�
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Hiện thanh ghi trước khi ghi</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Hiện điều khiển con trỏ trên thanh ghi</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Âm thanh hệ thống</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Ghi âm thanh phát qua thiết bị đầu ra đã chọn.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Cửa sổ đã chọn để ghi không còn khả dụng.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Âm lượng bản ghi (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Điều chỉnh âm lượng trong bản ghi.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Thời gian trễ chụp ảnh màn hình: {0} giây</value>

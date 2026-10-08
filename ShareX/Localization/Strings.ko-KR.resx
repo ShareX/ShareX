@@ -1971,9 +1971,6 @@
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>카메라</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>설정 취소</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>캡처</value>
   </data>
@@ -2016,26 +2013,17 @@
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>녹화 전에 녹화 바 표시</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>녹화 바에 커서 컨트롤 표시</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>시스템 오디오</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>선택한 출력 장치에서 재생되는 소리를 녹음합니다.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>녹화 대상으로 선택한 창을 더 이상 사용할 수 없습니다.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>녹음 볼륨 (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>녹음의 볼륨을 조정합니다.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>스크린샷 delay: {0}s</value>

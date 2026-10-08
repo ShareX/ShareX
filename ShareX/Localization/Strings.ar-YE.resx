@@ -1971,9 +1971,6 @@
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>الكاميرا</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>إلغاء الإعداد</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>التقاط</value>
   </data>
@@ -2016,26 +2013,17 @@
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>إظهار شريط التسجيل قبل التسجيل</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>إظهار عناصر تحكم المؤشر في شريط التسجيل</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>صوت النظام</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>يسجل الصوت الذي يُشغّل عبر جهاز الإخراج المحدد.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>لم تعد النافذة المحددة للتسجيل متاحة.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>مستوى صوت التسجيل (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>يضبط مستوى الصوت في التسجيل.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>تأخير لقطة الشاشة: {0} ثوان</value>

@@ -1971,9 +1971,6 @@ Kör ShareX som administratör för att ändra sökvägen till den personliga ma
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Kamera</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Avbryt inställning</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Inspelning</value>
   </data>
@@ -2016,26 +2013,17 @@ Kör ShareX som administratör för att ändra sökvägen till den personliga ma
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Visa inspelningsfältet före inspelning</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Visa markörkontroller i inspelningsfältet</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Systemljud</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Spelar in ljud som spelas upp via den valda utmatningsenheten.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Det valda inspelningsfönstret är inte längre tillgängligt.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Inspelningsvolym (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Justerar volymen i inspelningen.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Fördröjning av skärmbild: {0} s</value>

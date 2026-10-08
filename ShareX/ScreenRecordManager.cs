@@ -200,14 +200,15 @@ namespace ShareX
                 try
                 {
                     configurationBar = new ScreenRecorderBarWindow(taskSettings, captureRectangle, captureWindow);
-                    if (!await configurationBar.ShowSetupAsync())
+                    bool record = await configurationBar.ShowSetupAsync();
+                    configurationBar.Commit(taskSettings);
+                    SettingManager.SaveApplicationConfigAsync();
+                    SettingManager.SaveHotkeysConfigAsync();
+                    if (!record)
                     {
                         IsRecording = false;
                         return;
                     }
-                    configurationBar.Commit(taskSettings);
-                    SettingManager.SaveApplicationConfigAsync();
-                    SettingManager.SaveHotkeysConfigAsync();
                     captureRectangle = configurationBar.RecordingRegion;
                     captureWindow = configurationBar.CaptureWindow;
                     if (configurationBar.TargetChanged)

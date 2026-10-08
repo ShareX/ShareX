@@ -1971,9 +1971,6 @@
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Камера</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Скасувати підготовку</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Захоплення</value>
   </data>
@@ -2016,26 +2013,17 @@
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Показувати панель перед записом</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Показувати елементи керування курсором на панелі запису</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Системний звук</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Записує звук, відтворюваний через вибраний пристрій виведення.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Вибране для запису вікно більше недоступне.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Гучність запису (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Регулює гучність у записі.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Затримка для знімка: {0}с</value>

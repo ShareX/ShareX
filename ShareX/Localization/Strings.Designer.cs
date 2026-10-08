@@ -33,7 +33,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_MouseHighlighterOptions => ResourceManager.GetString("TaskSettingsWindow_MouseHighlighterOptions", resourceCulture);
 
         public static string ScreenRecorderBar_ShowBeforeRecording => ResourceManager.GetString("ScreenRecorderBar_ShowBeforeRecording", resourceCulture);
-        public static string ScreenRecorderBar_ShowPointerControls => ResourceManager.GetString("ScreenRecorderBar_ShowPointerControls", resourceCulture);
         public static string ScreenRecorderBar_Area => ResourceManager.GetString("ScreenRecorderBar_Area", resourceCulture);
         public static string ScreenRecorderBar_SystemAudio => ResourceManager.GetString("ScreenRecorderBar_SystemAudio", resourceCulture);
         public static string ScreenRecorderBar_Microphone => ResourceManager.GetString("ScreenRecorderBar_Microphone", resourceCulture);
@@ -44,15 +43,12 @@ namespace ShareX.Localization {
         public static string ScreenRecorderBar_On => ResourceManager.GetString("ScreenRecorderBar_On", resourceCulture);
         public static string ScreenRecorderBar_Off => ResourceManager.GetString("ScreenRecorderBar_Off", resourceCulture);
         public static string ScreenRecorderBar_Volume => ResourceManager.GetString("ScreenRecorderBar_Volume", resourceCulture);
-        public static string ScreenRecorderBar_VolumeHint => ResourceManager.GetString("ScreenRecorderBar_VolumeHint", resourceCulture);
-        public static string ScreenRecorderBar_SystemAudioHint => ResourceManager.GetString("ScreenRecorderBar_SystemAudioHint", resourceCulture);
         public static string ScreenRecorderBar_LayoutPreview => ResourceManager.GetString("ScreenRecorderBar_LayoutPreview", resourceCulture);
         public static string ScreenRecorderBar_Overlay => ResourceManager.GetString("ScreenRecorderBar_Overlay", resourceCulture);
         public static string ScreenRecorderBar_Capture => ResourceManager.GetString("ScreenRecorderBar_Capture", resourceCulture);
         public static string ScreenRecorderBar_Bar => ResourceManager.GetString("ScreenRecorderBar_Bar", resourceCulture);
         public static string ScreenRecorderBar_HardwareHint => ResourceManager.GetString("ScreenRecorderBar_HardwareHint", resourceCulture);
         public static string ScreenRecorderBar_SelectArea => ResourceManager.GetString("ScreenRecorderBar_SelectArea", resourceCulture);
-        public static string ScreenRecorderBar_CancelSetup => ResourceManager.GetString("ScreenRecorderBar_CancelSetup", resourceCulture);
         public static string ScreenRecorderBar_Summary => ResourceManager.GetString("ScreenRecorderBar_Summary", resourceCulture);
         public static string ScreenRecorderBar_TargetUnavailable => ResourceManager.GetString("ScreenRecorderBar_TargetUnavailable", resourceCulture);
         public static string ScreenRecorderBar_Screen => ResourceManager.GetString("ScreenRecorderBar_Screen", resourceCulture);

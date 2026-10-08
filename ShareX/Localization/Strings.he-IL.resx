@@ -1971,9 +1971,6 @@
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>מצלמה</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>ביטול ההכנה</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>לכידה</value>
   </data>
@@ -2016,26 +2013,17 @@
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>הצגת סרגל ההקלטה לפני ההקלטה</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>הצגת פקדי הסמן בסרגל ההקלטה</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>שמע המערכת</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>הקלטת השמע המושמע דרך התקן הפלט שנבחר.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>החלון שנבחר להקלטה אינו זמין עוד.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>עוצמת הקול בהקלטה (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>התאמת עוצמת הקול בהקלטה.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>השהייה בצילום מסך: {0} שניות</value>

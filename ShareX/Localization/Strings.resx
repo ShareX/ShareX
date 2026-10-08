@@ -3050,9 +3050,6 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Show recorder bar before recording</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Show cursor controls on the recorder bar</value>
-  </data>
   <data name="ScreenRecorderBar_Area" xml:space="preserve">
     <value>Area</value>
   </data>
@@ -3083,12 +3080,6 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Recording volume (%)</value>
   </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Adjusts the volume in the recording.</value>
-  </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Records sound played through the selected output device.</value>
-  </data>
   <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
     <value>Layout preview</value>
   </data>
@@ -3106,9 +3097,6 @@ You can later disable it from "After capture tasks" menu.</value>
   </data>
   <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
     <value>Select another area...</value>
-  </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Cancel setup</value>
   </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>

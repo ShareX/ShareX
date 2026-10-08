@@ -1971,9 +1971,6 @@
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>カメラ</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>設定をキャンセル</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>キャプチャ</value>
   </data>
@@ -2016,26 +2013,17 @@
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>録画前に録画バーを表示</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>録画バーにカーソルの操作ボタンを表示</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>システム音声</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>選択した出力デバイスで再生される音声を録音します。</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>録画対象として選択したウィンドウは利用できなくなりました。</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>録音音量 (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>録音する音量を調整します。</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>スクリーンショットを{0}秒後に起動する</value>

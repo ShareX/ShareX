@@ -1971,9 +1971,6 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Kamera</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Hazırlığı iptal et</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Yakalama</value>
   </data>
@@ -2016,26 +2013,17 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Kayıttan önce kayıt çubuğunu göster</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Kayıt çubuğunda imleç denetimlerini göster</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Sistem sesi</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Seçilen çıkış aygıtından çalınan sesi kaydeder.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Kayıt için seçilen pencere artık kullanılamıyor.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Kayıt ses düzeyi (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Kayıttaki ses düzeyini ayarlar.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Ekran görüntüsü gecikmesi: {0}sn</value>

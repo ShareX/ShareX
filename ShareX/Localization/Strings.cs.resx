@@ -1971,9 +1971,6 @@ Chcete-li změnit cestu k osobní složce, spusťte ShareX jako správce.</value
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Kamera</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Zrušit přípravu</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Zachycení</value>
   </data>
@@ -2016,26 +2013,17 @@ Chcete-li změnit cestu k osobní složce, spusťte ShareX jako správce.</value
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Zobrazit panel před nahráváním</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Zobrazit ovládání kurzoru na panelu</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Systémový zvuk</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Nahrává zvuk přehrávaný přes vybrané výstupní zařízení.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Vybrané nahrávané okno již není dostupné.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Hlasitost nahrávky (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Upravuje hlasitost v nahrávce.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Prodleva snímku obrazovky: {0} s</value>

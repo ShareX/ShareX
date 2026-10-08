@@ -1971,9 +1971,6 @@ Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Camera</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Instellen annuleren</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Vastleggen</value>
   </data>
@@ -2016,26 +2013,17 @@ Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Opnamebalk tonen vóór het opnemen</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Cursorbediening tonen op de opnamebalk</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Systeemaudio</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Neemt geluid op dat via het geselecteerde uitvoerapparaat wordt afgespeeld.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Het geselecteerde opnamevenster is niet meer beschikbaar.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Opnamevolume (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Past het volume in de opname aan.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Schermshot vertraging: {0}s</value>

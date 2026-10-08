@@ -1971,9 +1971,6 @@ Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta pers
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Cámara</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Cancelar configuración</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Captura</value>
   </data>
@@ -2016,26 +2013,17 @@ Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta pers
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Mostrar la barra antes de grabar</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Mostrar controles del cursor en la barra de grabación</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Audio del sistema</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Graba el sonido reproducido a través del dispositivo de salida seleccionado.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>La ventana seleccionada para grabar ya no está disponible.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Volumen de grabación (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Ajusta el volumen de la grabación.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Captura de pantalla delay: {0}s</value>

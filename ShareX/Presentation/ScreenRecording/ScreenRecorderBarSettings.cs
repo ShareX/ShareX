@@ -4,7 +4,7 @@ using ShareX.Tools;
 
 namespace ShareX;
 
-/// <summary>Setup edits are committed together before the native recorder creates its immutable options.</summary>
+/// <summary>Setup edits are saved together when the bar closes, including when recording is canceled.</summary>
 internal sealed class ScreenRecorderBarSettings
 {
     public TaskSettingsCapture Capture { get; }
@@ -35,7 +35,6 @@ internal sealed class ScreenRecorderBarSettings
     private void ApplyCapture(TaskSettingsCapture target)
     {
         target.ScreenRecordShowBar = Capture.ScreenRecordShowBar;
-        target.ScreenRecordBarShowPointer = Capture.ScreenRecordBarShowPointer;
         target.ScreenRecordSystemAudio = Capture.ScreenRecordSystemAudio;
         target.ScreenRecordSystemAudioDeviceId = Capture.ScreenRecordSystemAudioDeviceId;
         target.ScreenRecordSystemAudioGain = Capture.ScreenRecordSystemAudioGain;

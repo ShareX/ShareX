@@ -1971,9 +1971,6 @@ Vă rugăm să rulați ShareX ca administrator pentru a schimba calea folderului
   <data name="ScreenRecorderBar_Camera" xml:space="preserve">
     <value>Cameră</value>
   </data>
-  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
-    <value>Anulează configurarea</value>
-  </data>
   <data name="ScreenRecorderBar_Capture" xml:space="preserve">
     <value>Captură</value>
   </data>
@@ -2016,26 +2013,17 @@ Vă rugăm să rulați ShareX ca administrator pentru a schimba calea folderului
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Afișează bara înainte de înregistrare</value>
   </data>
-  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
-    <value>Afișează comenzile cursorului pe bara de înregistrare</value>
-  </data>
   <data name="ScreenRecorderBar_Summary" xml:space="preserve">
     <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
   </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Sunetul sistemului</value>
   </data>
-  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
-    <value>Înregistrează sunetul redat prin dispozitivul de ieșire selectat.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Fereastra selectată pentru înregistrare nu mai este disponibilă.</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Volumul înregistrării (%)</value>
-  </data>
-  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
-    <value>Ajustează volumul în înregistrare.</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Întârzierea capturii: {0}s</value>

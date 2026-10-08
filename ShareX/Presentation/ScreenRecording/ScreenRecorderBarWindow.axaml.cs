@@ -17,7 +17,6 @@ using ShareX.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using DrawingRectangle = System.Drawing.Rectangle;
 
@@ -47,7 +46,7 @@ internal partial class ScreenRecorderBarWindow : Window
         _draft = new(settings);
         RecordingRegion = region;
         CaptureWindow = window;
-        _recordButton = ActionButton(Strings.ScreenRecorderBar_Record, LucideIcons.circle, RequestRecord);
+        _recordButton = ActionButton(Strings.ScreenRecorderBar_Record, LucideIcons.circle, RequestRecord, toolbar: true);
         _recordButton.Classes.Add("accent");
 
         AddSource(Strings.ScreenRecorderBar_SystemAudio, LucideIcons.volume_2,
@@ -69,6 +68,7 @@ internal partial class ScreenRecorderBarWindow : Window
             Strings.TaskSettingsWindow_NativeRecorderCamera_DefaultDevice, Strings.TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice);
 
         BuildBar();
+        ClosePanelButton.Content = Glyph(LucideIcons.x);
         ToolTip.SetTip(ClosePanelButton, Strings.ActionsToolbarWindow_Close);
         AutomationProperties.SetName(ClosePanelButton, Strings.ActionsToolbarWindow_Close);
         ClosePanelButton.Click += (_, _) => ClosePanel();
@@ -86,8 +86,6 @@ internal partial class ScreenRecorderBarWindow : Window
             {
                 WindowInfo info = new(handle);
                 info.ExStyle |= WindowStyles.WS_EX_TOOLWINDOW;
-                if (!NativeMethods.SetWindowDisplayAffinity(handle, 0x11))
-                    DebugHelper.WriteLine("Could not exclude the recorder setup bar from capture. Win32 error: {0}", Marshal.GetLastWin32Error());
             }
             ShowRegion();
             PositionNearRegion();
@@ -149,30 +147,34 @@ internal partial class ScreenRecorderBarWindow : Window
             if (e.GetCurrentPoint(grip).Properties.IsLeftButtonPressed) BeginMoveDrag(e);
         };
         actions.Children.Add(grip);
-        actions.Children.Add(ActionButton(Strings.ScreenRecorderBar_Area, LucideIcons.scan, () => ShowPanel("area", Strings.ScreenRecorderBar_Area, BuildAreaPanel)));
-        WrapPanel inputs = Capture.ScreenRecordBarShowPointer ? new() : actions;
+        actions.Children.Add(ActionButton(Strings.ScreenRecorderBar_Area, LucideIcons.scan,
+            () => ShowPanel("area", Strings.ScreenRecorderBar_Area, BuildAreaPanel), toolbar: true));
+        actions.Children.Add(ActionButton(Strings.ScreenRecorderBar_Options, LucideIcons.settings_2,
+            () => ShowPanel("options", Strings.ScreenRecorderBar_Options, BuildOptionsPanel), toolbar: true));
+        WrapPanel inputs = new();
         foreach (Source source in _sources)
         {
             if (source.Control.Parent is Panel oldInputs) oldInputs.Children.Remove(source.Control);
+            UpdateSource(source);
             inputs.Children.Add(source.Control);
         }
-        if (Capture.ScreenRecordBarShowPointer)
-        {
-            inputs.Children.Add(SplitControl(Strings.ScreenRecorderBar_Cursor, LucideIcons.mouse_pointer_2,
-                Capture.ScreenRecordShowCursor, value => { Capture.ScreenRecordShowCursor = value; BuildBar(); },
-                () => ShowPanel("pointer", Strings.ScreenRecorderBar_Cursor, BuildPointerPanel)));
-        }
-        actions.Children.Add(ActionButton(Strings.ScreenRecorderBar_Options, LucideIcons.settings_2,
-            () => ShowPanel("options", Strings.ScreenRecorderBar_Options, BuildOptionsPanel)));
-        // Record is reparented when the user changes the optional two-row layout.
+        inputs.Children.Add(ToggleControl(Strings.ScreenRecorderBar_Cursor, LucideIcons.mouse_pointer_2,
+            Capture.ScreenRecordShowCursor, value => Capture.ScreenRecordShowCursor = value));
+        inputs.Children.Add(SplitControl(Strings.MouseHighlighter, LucideIcons.mouse_pointer_click,
+            Capture.ScreenRecordMouseHighlighter, value => Capture.ScreenRecordMouseHighlighter = value,
+            () => ShowPanel("highlighter", Strings.MouseHighlighter, BuildHighlighterPanel)));
+        // Rebuild toolbar content when its labels change, keeping the active settings panel open.
         if (_recordButton.Parent is Panel oldParent) oldParent.Children.Remove(_recordButton);
+        _recordButton.Content = ButtonContent(Strings.ScreenRecorderBar_Record, LucideIcons.circle, toolbar: true);
+        StackPanel recordingActions = new() { Orientation = Orientation.Horizontal, VerticalAlignment = VerticalAlignment.Top };
+        recordingActions.Children.Add(ActionButton(Strings.TaskSettingsWindow_Cancel, LucideIcons.x, Cancel, toolbar: true));
+        recordingActions.Children.Add(_recordButton);
         Grid header = new() { ColumnDefinitions = new("*,Auto") };
         header.Children.Add(actions);
-        Grid.SetColumn(_recordButton, 1);
-        _recordButton.VerticalAlignment = VerticalAlignment.Top;
-        header.Children.Add(_recordButton);
+        Grid.SetColumn(recordingActions, 1);
+        header.Children.Add(recordingActions);
         BarRows.Children.Add(header);
-        if (inputs != actions) BarRows.Children.Add(inputs);
+        BarRows.Children.Add(inputs);
         UpdateSummary();
         ValidateSources();
         Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
@@ -218,7 +220,7 @@ internal partial class ScreenRecorderBarWindow : Window
     {
         source.Toggle.IsChecked = source.Enabled();
         source.Toggle.IsEnabled = source.Enabled() || source.Available;
-        source.Toggle.Content = ButtonContent(source.Label, source.Icon, source.Enabled());
+        source.Toggle.Content = ButtonContent(source.Label, source.Icon, source.Enabled(), toolbar: true);
         string name = source.Selected() == "" ? source.ResolvedDefault ?? source.UnavailableLabel
             : source.Devices.FirstOrDefault(device => device.Id == source.Selected())?.Name ?? source.UnavailableLabel;
         ToolTip.SetTip(source.Toggle, $"{source.Label}: {name}");
@@ -272,11 +274,8 @@ internal partial class ScreenRecorderBarWindow : Window
         else
         {
             bool system = ReferenceEquals(source, _sources[0]);
-            if (system) panel.Children.Add(Hint(Strings.ScreenRecorderBar_SystemAudioHint));
-            panel.Children.Add(Row(Strings.ScreenRecorderBar_Volume,
-                Number((decimal)((system ? Capture.ScreenRecordSystemAudioGain : Capture.ScreenRecordMicrophoneGain) * 100), 0, 400, 5,
-                    value => { if (system) Capture.ScreenRecordSystemAudioGain = (float)value / 100; else Capture.ScreenRecordMicrophoneGain = (float)value / 100; })));
-            panel.Children.Add(Hint(Strings.ScreenRecorderBar_VolumeHint));
+            panel.Children.Add(VolumeControl(system ? Capture.ScreenRecordSystemAudioGain : Capture.ScreenRecordMicrophoneGain,
+                value => { if (system) Capture.ScreenRecordSystemAudioGain = value; else Capture.ScreenRecordMicrophoneGain = value; }));
         }
         return panel;
     }
@@ -318,21 +317,10 @@ internal partial class ScreenRecorderBarWindow : Window
         return Tabs((Strings.ScreenRecorderBar_Overlay, overlay), (Strings.ScreenRecorderBar_Capture, capture));
     }
 
-    private Control BuildPointerPanel()
+    private Control BuildHighlighterPanel() => new MouseHighlighterSettingsControl(_draft.MouseHighlighter)
     {
-        StackPanel panel = new() { Spacing = 10, Margin = new Thickness(0, 8) };
-        panel.Children.Add(Check(Strings.TaskSettingsWindow_ShowCursorInRecording, Capture.ScreenRecordShowCursor,
-            value => { Capture.ScreenRecordShowCursor = value; BuildBar(); }));
-        panel.Children.Add(Check(Strings.TaskSettingsWindow_HighlightMouseWhileRecording, Capture.ScreenRecordMouseHighlighter,
-            value => Capture.ScreenRecordMouseHighlighter = value));
-        panel.Children.Add(new Expander
-        {
-            Header = Strings.TaskSettingsWindow_MouseHighlighterOptions,
-            Content = new MouseHighlighterSettingsControl(_draft.MouseHighlighter),
-            HorizontalAlignment = HorizontalAlignment.Stretch
-        });
-        return panel;
-    }
+        Margin = new Thickness(0, 8), HorizontalAlignment = HorizontalAlignment.Stretch
+    };
 
     private Control BuildOptionsPanel()
     {
@@ -355,12 +343,10 @@ internal partial class ScreenRecorderBarWindow : Window
         recording.Children.Add(new Expander { Header = Strings.ApplicationSettingsWindow_Advanced, Content = hardware });
         StackPanel bar = new() { Spacing = 10, Margin = new Thickness(0, 8) };
         bar.Children.Add(Check(Strings.ScreenRecorderBar_ShowBeforeRecording, Capture.ScreenRecordShowBar, value => Capture.ScreenRecordShowBar = value));
-        bar.Children.Add(Check(Strings.ScreenRecorderBar_ShowPointerControls, Capture.ScreenRecordBarShowPointer,
-            value => { Capture.ScreenRecordBarShowPointer = value; BuildBar(); }));
         bar.Children.Add(Check(Strings.TaskSettingsWindow_ShowRecordingTimer, Capture.ScreenRecordShowTimer, value => Capture.ScreenRecordShowTimer = value));
-        bar.Children.Add(Check(Strings.TaskSettingsWindow_ShowRecordingButtonLabels, Capture.ScreenRecordShowButtonLabels, value => Capture.ScreenRecordShowButtonLabels = value));
-        bar.Children.Add(ActionButton(Strings.ScreenRecorderBar_CancelSetup, LucideIcons.x, Cancel));
-        return Tabs((Strings.ScreenRecorderBar_Cursor, BuildPointerPanel()), (Strings.TaskSettingsWindow_Recording, recording), (Strings.ScreenRecorderBar_Bar, bar));
+        bar.Children.Add(Check(Strings.TaskSettingsWindow_ShowRecordingButtonLabels, Capture.ScreenRecordShowButtonLabels,
+            value => { Capture.ScreenRecordShowButtonLabels = value; BuildBar(); }));
+        return Tabs((Strings.TaskSettingsWindow_Recording, recording), (Strings.ScreenRecorderBar_Bar, bar));
     }
 
     private Control BuildAreaPanel()
@@ -436,9 +422,6 @@ internal partial class ScreenRecorderBarWindow : Window
         _regionWindow ??= new ScrollingCaptureRegionWindow(RecordingRegion) { Title = Title };
         _regionWindow.FindControl<RecordingRegionBorder>("RegionBorder")!.AccentBrush = Brushes.Goldenrod;
         _regionWindow.Show();
-        IntPtr handle = _regionWindow.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-        if (handle != IntPtr.Zero && !NativeMethods.SetWindowDisplayAffinity(handle, 0x11))
-            DebugHelper.WriteLine("Could not exclude the setup capture frame. Win32 error: {0}", Marshal.GetLastWin32Error());
     }
 
     private void ShowPanel(string id, string title, Func<Control> build)
@@ -496,13 +479,12 @@ internal partial class ScreenRecorderBarWindow : Window
         if (clamped != Position) Position = clamped;
     }
 
-    private static Control SplitControl(string label, string icon, bool enabled, Action<bool> changed, Action open)
+    private Control SplitControl(string label, string icon, bool enabled, Action<bool> changed, Action open)
     {
         StackPanel group = new() { Orientation = Orientation.Horizontal, Margin = new Thickness(3, 2) };
-        ToggleButton toggle = new() { Content = ButtonContent(label, icon, enabled), IsChecked = enabled, CornerRadius = new(5, 0, 0, 5) };
-        toggle.Classes.Add("recorder-setup");
-        AutomationProperties.SetName(toggle, label);
-        toggle.Click += (_, _) => changed(toggle.IsChecked == true);
+        ToggleButton toggle = ToggleControl(label, icon, enabled, changed);
+        toggle.CornerRadius = new(5, 0, 0, 5);
+        toggle.Margin = new Thickness(0);
         Button arrow = ActionButton(label + " " + Strings.ScreenRecorderBar_Options, LucideIcons.chevron_down, open, iconOnly: true);
         arrow.CornerRadius = new(0, 5, 5, 0);
         arrow.Margin = new Thickness(0);
@@ -512,9 +494,26 @@ internal partial class ScreenRecorderBarWindow : Window
         return group;
     }
 
-    private static Button ActionButton(string label, string icon, Action action, bool iconOnly = false)
+    private ToggleButton ToggleControl(string label, string icon, bool enabled, Action<bool> changed)
     {
-        Button button = new() { Content = iconOnly ? Glyph(icon) : ButtonContent(label, icon), Margin = new Thickness(3, 2) };
+        ToggleButton toggle = new()
+        {
+            Content = ButtonContent(label, icon, enabled, toolbar: true), IsChecked = enabled, Margin = new Thickness(3, 2)
+        };
+        toggle.Classes.Add("recorder-setup");
+        ToolTip.SetTip(toggle, label);
+        AutomationProperties.SetName(toggle, label);
+        toggle.Click += (_, _) =>
+        {
+            changed(toggle.IsChecked == true);
+            toggle.Content = ButtonContent(label, icon, toggle.IsChecked == true, toolbar: true);
+        };
+        return toggle;
+    }
+
+    private Button ActionButton(string label, string icon, Action action, bool iconOnly = false, bool toolbar = false)
+    {
+        Button button = new() { Content = iconOnly ? Glyph(icon) : ButtonContent(label, icon, toolbar: toolbar), Margin = new Thickness(3, 2) };
         button.Classes.Add("recorder-setup");
         ToolTip.SetTip(button, label);
         AutomationProperties.SetName(button, label);
@@ -522,10 +521,11 @@ internal partial class ScreenRecorderBarWindow : Window
         return button;
     }
 
-    private static Control ButtonContent(string label, string icon, bool? enabled = null)
+    private Control ButtonContent(string label, string icon, bool? enabled = null, bool toolbar = false)
     {
         StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 6 };
         content.Children.Add(Glyph(icon));
+        if (toolbar && !Capture.ScreenRecordShowButtonLabels) return content;
         content.Children.Add(new TextBlock { Text = label, VerticalAlignment = VerticalAlignment.Center });
         if (enabled != null) content.Children.Add(new TextBlock
         {
@@ -543,6 +543,29 @@ internal partial class ScreenRecorderBarWindow : Window
     }
 
     private static TextBlock Hint(string text) => new() { Text = text, TextWrapping = TextWrapping.Wrap, FontSize = 12, Opacity = 0.75 };
+
+    private static Control VolumeControl(float gain, Action<float> changed)
+    {
+        StackPanel panel = new() { Spacing = 4 };
+        TextBlock percentage = new() { HorizontalAlignment = HorizontalAlignment.Right };
+        Slider volume = new()
+        {
+            Minimum = 0, Maximum = 400, TickFrequency = 5, IsSnapToTickEnabled = true,
+            SmallChange = 5, LargeChange = 25, Value = Math.Clamp(gain * 100, 0, 400),
+            HorizontalAlignment = HorizontalAlignment.Stretch
+        };
+        AutomationProperties.SetName(volume, Strings.ScreenRecorderBar_Volume);
+        void Update()
+        {
+            percentage.Text = $"{volume.Value:0}%";
+            changed((float)volume.Value / 100);
+        }
+        volume.ValueChanged += (_, _) => Update();
+        percentage.Text = $"{volume.Value:0}%";
+        panel.Children.Add(Row(Strings.ScreenRecorderBar_Volume, percentage));
+        panel.Children.Add(volume);
+        return panel;
+    }
 
     private static CheckBox Check(string text, bool value, Action<bool> changed)
     {
