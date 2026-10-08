@@ -78,7 +78,7 @@
         </Style>
     </Window.Styles>
     <ThemeVariantScope>
-        <Border Padding="8" CornerRadius="8"
+        <Border Padding="4" CornerRadius="8"
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1">
             <StackPanel Spacing="6">
