@@ -150,8 +150,15 @@ internal partial class ScreenRecorderBarWindow : Window
         // Rebuild toolbar content when its labels change, keeping the active settings panel open.
         if (_recordButton.Parent is Panel oldParent) oldParent.Children.Remove(_recordButton);
         _recordButton.Content = ButtonContent(Strings.ScreenRecorderBar_Record, LucideIcons.circle, toolbar: true);
-        actions.Children.Add(_recordButton);
-        actions.Children.Add(ActionButton(Strings.TaskSettingsWindow_Cancel, LucideIcons.x, Cancel, toolbar: true));
+        StackPanel recordingActions = new() { Orientation = Orientation.Horizontal, Margin = new Thickness(3, 2) };
+        _recordButton.Margin = new Thickness(0);
+        _recordButton.CornerRadius = new(4, 0, 0, 4);
+        Button cancel = ActionButton(Strings.TaskSettingsWindow_Cancel, LucideIcons.x, Cancel, toolbar: true);
+        cancel.Margin = new Thickness(0);
+        cancel.CornerRadius = new(0, 4, 4, 0);
+        recordingActions.Children.Add(_recordButton);
+        recordingActions.Children.Add(cancel);
+        actions.Children.Add(recordingActions);
         actions.Children.Add(ActionButton(Strings.ScreenRecorderBar_Area, LucideIcons.scan,
             () => ShowPanel("area", Strings.ScreenRecorderBar_Area, BuildAreaPanel), toolbar: true));
         Toolbar.Children.Add(actions);
