@@ -401,10 +401,14 @@ namespace ShareX
 
         public FFmpegOptions FFmpegOptions = new FFmpegOptions();
         public bool ScreenRecordUseNative = true;
+        public bool ScreenRecordShowBar = false;
+        public bool ScreenRecordBarShowPointer = false;
         public bool ScreenRecordSystemAudio = true;
         public string ScreenRecordSystemAudioDeviceId = "";
+        public float ScreenRecordSystemAudioGain = 1f;
         public bool ScreenRecordMicrophone = false;
         public string ScreenRecordMicrophoneDeviceId = "";
+        public float ScreenRecordMicrophoneGain = 1f;
         public bool ScreenRecordCamera = false;
         public string ScreenRecordCameraDeviceId = "";
         public ShareX.ScreenRecordingLib.CameraCaptureResolution ScreenRecordCameraResolution = ShareX.ScreenRecordingLib.CameraCaptureResolution.Size1280x720;

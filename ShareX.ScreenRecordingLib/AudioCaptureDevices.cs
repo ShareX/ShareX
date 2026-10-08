@@ -17,6 +17,30 @@ public static unsafe class AudioCaptureDevices
     /// <summary>Lists active audio output endpoints that can be recorded using WASAPI loopback.</summary>
     public static IReadOnlyList<AudioCaptureDevice> GetSystemAudioDevices() => GetDevices(DataFlow.Render);
 
+    /// <summary>Resolves the default endpoint using the same roles as WASAPI recording, without opening a stream.</summary>
+    public static AudioCaptureDevice? GetDefaultSystemAudioDevice() => GetDefaultDevice(DataFlow.Render);
+
+    public static AudioCaptureDevice? GetDefaultMicrophone() => GetDefaultDevice(DataFlow.Capture);
+
+    private static AudioCaptureDevice? GetDefaultDevice(DataFlow flow)
+    {
+        HRESULT initialized = NativeMethods.CoInitializeEx(null, COINIT.COINIT_MULTITHREADED);
+        if (initialized.Value != unchecked((int)0x80010106)) initialized.ThrowOnFailure();
+        try
+        {
+            using IMMDeviceEnumerator enumerator = new();
+            IMMDevice endpoint;
+            try { endpoint = enumerator.GetDefaultAudioEndpoint(flow, flow == DataFlow.Render ? Role.Multimedia : Role.Communications); }
+            catch (SharpGenException) when (flow == DataFlow.Capture)
+            {
+                endpoint = enumerator.GetDefaultAudioEndpoint(flow, Role.Multimedia);
+            }
+            using (endpoint) return new(endpoint.Id, endpoint.FriendlyName);
+        }
+        catch (Exception ex) when (ex is COMException or SharpGenException) { return null; }
+        finally { if (initialized.Succeeded) NativeMethods.CoUninitialize(); }
+    }
+
     private static IReadOnlyList<AudioCaptureDevice> GetDevices(DataFlow flow)
     {
         HRESULT initialized = NativeMethods.CoInitializeEx(null, COINIT.COINIT_MULTITHREADED);

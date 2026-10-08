@@ -42,6 +42,10 @@ namespace ShareX.HelpersLib
     {
         #region user32.dll
 
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SetWindowDisplayAffinity(IntPtr windowHandle, uint affinity);
+
         [DllImport("user32.dll")]
         public static extern bool AnimateWindow(IntPtr hwnd, int time, AnimateWindowFlags flags);
 
