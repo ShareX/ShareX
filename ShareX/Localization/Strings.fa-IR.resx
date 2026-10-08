@@ -1962,6 +1962,81 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>صفحه رنگ picker</value>
   </data>
+  <data name="ScreenRecorderBar_Area" xml:space="preserve">
+    <value>ناحیه</value>
+  </data>
+  <data name="ScreenRecorderBar_Bar" xml:space="preserve">
+    <value>نوار</value>
+  </data>
+  <data name="ScreenRecorderBar_Camera" xml:space="preserve">
+    <value>دوربین</value>
+  </data>
+  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
+    <value>لغو آماده‌سازی</value>
+  </data>
+  <data name="ScreenRecorderBar_Capture" xml:space="preserve">
+    <value>ضبط تصویر</value>
+  </data>
+  <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
+    <value>نشانگر</value>
+  </data>
+  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
+    <value>اگر رمزگذار سخت‌افزاری ویدیو در دسترس نباشد، ضبط با خطا متوقف می‌شود.</value>
+  </data>
+  <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
+    <value>پیش‌نمایش چیدمان</value>
+  </data>
+  <data name="ScreenRecorderBar_Microphone" xml:space="preserve">
+    <value>میکروفون</value>
+  </data>
+  <data name="ScreenRecorderBar_Off" xml:space="preserve">
+    <value>خاموش</value>
+  </data>
+  <data name="ScreenRecorderBar_On" xml:space="preserve">
+    <value>روشن</value>
+  </data>
+  <data name="ScreenRecorderBar_Options" xml:space="preserve">
+    <value>گزینه‌ها</value>
+  </data>
+  <data name="ScreenRecorderBar_Overlay" xml:space="preserve">
+    <value>هم‌پوشانی</value>
+  </data>
+  <data name="ScreenRecorderBar_Record" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
+    <value>تازه‌سازی دستگاه‌ها</value>
+  </data>
+  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
+    <value>نمایشگر {0}</value>
+  </data>
+  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
+    <value>انتخاب ناحیه‌ای دیگر...</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
+    <value>نمایش نوار ضبط پیش از ضبط</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
+    <value>نمایش کنترل‌های نشانگر در نوار ضبط</value>
+  </data>
+  <data name="ScreenRecorderBar_Summary" xml:space="preserve">
+    <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
+    <value>صدای سیستم</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
+    <value>صدای پخش‌شده از دستگاه خروجی انتخاب‌شده را ضبط می‌کند.</value>
+  </data>
+  <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
+    <value>پنجرهٔ انتخاب‌شده برای ضبط دیگر در دسترس نیست.</value>
+  </data>
+  <data name="ScreenRecorderBar_Volume" xml:space="preserve">
+    <value>بلندی صدای ضبط (%)</value>
+  </data>
+  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
+    <value>بلندی صدا را در ضبط تنظیم می‌کند.</value>
+  </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>تاخیر ضبط: {0} ثانیه</value>
   </data>

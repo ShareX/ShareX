@@ -1962,6 +1962,81 @@
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>屏幕拾色器</value>
   </data>
+  <data name="ScreenRecorderBar_Area" xml:space="preserve">
+    <value>区域</value>
+  </data>
+  <data name="ScreenRecorderBar_Bar" xml:space="preserve">
+    <value>工具栏</value>
+  </data>
+  <data name="ScreenRecorderBar_Camera" xml:space="preserve">
+    <value>摄像头</value>
+  </data>
+  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
+    <value>取消设置</value>
+  </data>
+  <data name="ScreenRecorderBar_Capture" xml:space="preserve">
+    <value>采集</value>
+  </data>
+  <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
+    <value>光标</value>
+  </data>
+  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
+    <value>如果没有可用的硬件视频编码器，录制会停止并报错。</value>
+  </data>
+  <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
+    <value>布局预览</value>
+  </data>
+  <data name="ScreenRecorderBar_Microphone" xml:space="preserve">
+    <value>麦克风</value>
+  </data>
+  <data name="ScreenRecorderBar_Off" xml:space="preserve">
+    <value>关</value>
+  </data>
+  <data name="ScreenRecorderBar_On" xml:space="preserve">
+    <value>开</value>
+  </data>
+  <data name="ScreenRecorderBar_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="ScreenRecorderBar_Overlay" xml:space="preserve">
+    <value>叠加</value>
+  </data>
+  <data name="ScreenRecorderBar_Record" xml:space="preserve">
+    <value>录制</value>
+  </data>
+  <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
+    <value>刷新设备</value>
+  </data>
+  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
+    <value>屏幕 {0}</value>
+  </data>
+  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
+    <value>选择其他区域...</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
+    <value>录制前显示录制栏</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
+    <value>在录制栏上显示光标控件</value>
+  </data>
+  <data name="ScreenRecorderBar_Summary" xml:space="preserve">
+    <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
+    <value>系统音频</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
+    <value>录制通过所选输出设备播放的声音。</value>
+  </data>
+  <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
+    <value>所选录制窗口已不可用。</value>
+  </data>
+  <data name="ScreenRecorderBar_Volume" xml:space="preserve">
+    <value>录制音量 (%)</value>
+  </data>
+  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
+    <value>调整录制中的音量。</value>
+  </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>截图倒计时：{0} 秒</value>
   </data>

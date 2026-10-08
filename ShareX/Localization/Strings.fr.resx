@@ -1962,6 +1962,81 @@ Veuillez exécuter ShareX en tant qu'administrateur pour changer le chemin du do
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Sélecteur de couleurs de l'écran</value>
   </data>
+  <data name="ScreenRecorderBar_Area" xml:space="preserve">
+    <value>Zone</value>
+  </data>
+  <data name="ScreenRecorderBar_Bar" xml:space="preserve">
+    <value>Barre</value>
+  </data>
+  <data name="ScreenRecorderBar_Camera" xml:space="preserve">
+    <value>Caméra</value>
+  </data>
+  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
+    <value>Annuler la préparation</value>
+  </data>
+  <data name="ScreenRecorderBar_Capture" xml:space="preserve">
+    <value>Capture</value>
+  </data>
+  <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
+    <value>Curseur</value>
+  </data>
+  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
+    <value>L’enregistrement s’arrête avec une erreur si aucun encodeur vidéo matériel n’est disponible.</value>
+  </data>
+  <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
+    <value>Aperçu de la disposition</value>
+  </data>
+  <data name="ScreenRecorderBar_Microphone" xml:space="preserve">
+    <value>Microphone</value>
+  </data>
+  <data name="ScreenRecorderBar_Off" xml:space="preserve">
+    <value>Désactivé</value>
+  </data>
+  <data name="ScreenRecorderBar_On" xml:space="preserve">
+    <value>Activé</value>
+  </data>
+  <data name="ScreenRecorderBar_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="ScreenRecorderBar_Overlay" xml:space="preserve">
+    <value>Superposition</value>
+  </data>
+  <data name="ScreenRecorderBar_Record" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
+    <value>Actualiser les périphériques</value>
+  </data>
+  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
+    <value>Écran {0}</value>
+  </data>
+  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
+    <value>Sélectionner une autre zone...</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
+    <value>Afficher la barre avant l’enregistrement</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
+    <value>Afficher les commandes du curseur dans la barre d’enregistrement</value>
+  </data>
+  <data name="ScreenRecorderBar_Summary" xml:space="preserve">
+    <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
+    <value>Audio système</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
+    <value>Enregistre le son diffusé par le périphérique de sortie sélectionné.</value>
+  </data>
+  <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
+    <value>La fenêtre sélectionnée pour l’enregistrement n’est plus disponible.</value>
+  </data>
+  <data name="ScreenRecorderBar_Volume" xml:space="preserve">
+    <value>Volume d’enregistrement (%)</value>
+  </data>
+  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
+    <value>Ajuste le volume dans l’enregistrement.</value>
+  </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Délai de capture d'écran : {0} s</value>
   </data>

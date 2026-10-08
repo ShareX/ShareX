@@ -1962,6 +1962,81 @@
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>منتقي الألوان</value>
   </data>
+  <data name="ScreenRecorderBar_Area" xml:space="preserve">
+    <value>المنطقة</value>
+  </data>
+  <data name="ScreenRecorderBar_Bar" xml:space="preserve">
+    <value>الشريط</value>
+  </data>
+  <data name="ScreenRecorderBar_Camera" xml:space="preserve">
+    <value>الكاميرا</value>
+  </data>
+  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
+    <value>إلغاء الإعداد</value>
+  </data>
+  <data name="ScreenRecorderBar_Capture" xml:space="preserve">
+    <value>التقاط</value>
+  </data>
+  <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
+    <value>المؤشر</value>
+  </data>
+  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
+    <value>يتوقف التسجيل مع ظهور خطأ إذا لم يتوفر مُرمّز فيديو عتادي.</value>
+  </data>
+  <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
+    <value>معاينة التخطيط</value>
+  </data>
+  <data name="ScreenRecorderBar_Microphone" xml:space="preserve">
+    <value>الميكروفون</value>
+  </data>
+  <data name="ScreenRecorderBar_Off" xml:space="preserve">
+    <value>متوقف</value>
+  </data>
+  <data name="ScreenRecorderBar_On" xml:space="preserve">
+    <value>مفعّل</value>
+  </data>
+  <data name="ScreenRecorderBar_Options" xml:space="preserve">
+    <value>الخيارات</value>
+  </data>
+  <data name="ScreenRecorderBar_Overlay" xml:space="preserve">
+    <value>تراكب</value>
+  </data>
+  <data name="ScreenRecorderBar_Record" xml:space="preserve">
+    <value>تسجيل</value>
+  </data>
+  <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
+    <value>تحديث الأجهزة</value>
+  </data>
+  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
+    <value>الشاشة {0}</value>
+  </data>
+  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
+    <value>تحديد منطقة أخرى...</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
+    <value>إظهار شريط التسجيل قبل التسجيل</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
+    <value>إظهار عناصر تحكم المؤشر في شريط التسجيل</value>
+  </data>
+  <data name="ScreenRecorderBar_Summary" xml:space="preserve">
+    <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
+    <value>صوت النظام</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
+    <value>يسجل الصوت الذي يُشغّل عبر جهاز الإخراج المحدد.</value>
+  </data>
+  <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
+    <value>لم تعد النافذة المحددة للتسجيل متاحة.</value>
+  </data>
+  <data name="ScreenRecorderBar_Volume" xml:space="preserve">
+    <value>مستوى صوت التسجيل (%)</value>
+  </data>
+  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
+    <value>يضبط مستوى الصوت في التسجيل.</value>
+  </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>تأخير لقطة الشاشة: {0} ثوان</value>
   </data>

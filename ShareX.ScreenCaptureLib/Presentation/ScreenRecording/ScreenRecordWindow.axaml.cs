@@ -91,6 +91,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     public event Action? PauseRequested;
     public event Action? ResumeRequested;
     public bool UseInProcessPause { get; set; }
+    public bool ExcludeFromCapture { get; set; }
 
     public ScreenRecordingStatus Status
     {
@@ -690,6 +691,10 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
         WindowInfo info = new(handle);
         info.ExStyle |= WindowStyles.WS_EX_TOOLWINDOW;
+        if (ExcludeFromCapture && !NativeMethods.SetWindowDisplayAffinity(handle, 0x11)) // WDA_EXCLUDEFROMCAPTURE
+        {
+            DebugHelper.WriteLine("Could not exclude the recording controls from capture. Win32 error: {0}", Marshal.GetLastWin32Error());
+        }
     }
 
     private void ApplyNativeWindowRegion()

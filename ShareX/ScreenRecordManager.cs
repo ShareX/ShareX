@@ -46,12 +46,17 @@ namespace ShareX
         private static ScreenRecorder screenRecorder;
         private static NativeScreenRecorder nativeRecorder;
         private static ScreenRecordWindow recordForm;
+        private static ScreenRecorderBarWindow configurationBar;
 
         public static async void StartStopRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings)
         {
             if (IsRecording)
             {
-                if (recordForm != null && !recordForm.IsDisposed)
+                if (configurationBar != null)
+                {
+                    configurationBar.RequestRecord();
+                }
+                else if (recordForm != null && !recordForm.IsDisposed)
                 {
                     recordForm.StartStopRecording();
                 }
@@ -64,6 +69,7 @@ namespace ShareX
 
         public static void StopRecording()
         {
+            configurationBar?.Cancel();
             nativeRecorder?.RequestStop();
             if (IsRecording && screenRecorder != null)
             {
@@ -81,6 +87,7 @@ namespace ShareX
 
         public static void AbortRecording()
         {
+            configurationBar?.Cancel();
             if (IsRecording && recordForm != null && !recordForm.IsDisposed)
             {
                 recordForm.AbortRecording();
@@ -185,9 +192,46 @@ namespace ShareX
                 return;
             }
 
-            ApplicationState.Settings.ScreenRecordRegion = captureRectangle;
-
             IsRecording = true;
+
+            bool startedFromBar = useNative && taskSettings.CaptureSettings.ScreenRecordShowBar;
+            if (startedFromBar)
+            {
+                try
+                {
+                    configurationBar = new ScreenRecorderBarWindow(taskSettings, captureRectangle, captureWindow);
+                    if (!await configurationBar.ShowSetupAsync())
+                    {
+                        IsRecording = false;
+                        return;
+                    }
+                    configurationBar.Commit(taskSettings);
+                    SettingManager.SaveApplicationConfigAsync();
+                    SettingManager.SaveHotkeysConfigAsync();
+                    captureRectangle = configurationBar.RecordingRegion;
+                    captureWindow = configurationBar.CaptureWindow;
+                    if (configurationBar.TargetChanged)
+                    {
+                        metadata = new TaskMetadata();
+                        metadata.UpdateInfo(configurationBar.TargetInfo);
+                    }
+                    fps = taskSettings.CaptureSettings.ScreenRecordFPS;
+                }
+                catch (Exception ex)
+                {
+                    IsRecording = false;
+                    DebugHelper.WriteException(ex);
+                    MessageBox.Show(ex.Message, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                finally
+                {
+                    configurationBar?.Cancel();
+                    configurationBar = null;
+                }
+            }
+
+            ApplicationState.Settings.ScreenRecordRegion = captureRectangle;
 
             string path = "";
             string concatPath = "";
@@ -205,6 +249,7 @@ namespace ShareX
                 ShowRecordingButtonLabels = taskSettings.CaptureSettings.ScreenRecordShowButtonLabels
             };
             recordForm.UseInProcessPause = useNative;
+            recordForm.ExcludeFromCapture = useNative;
             recordForm.PauseRequested += () => nativeRecorder?.Pause();
             recordForm.ResumeRequested += () => nativeRecorder?.Resume();
 
@@ -245,7 +290,7 @@ namespace ShareX
 
                     if (useNative && !abortRequested)
                     {
-                        abortRequested = await RecordNativeAsync(path, captureWindow, taskSettings, replaceNativeOutput);
+                        abortRequested = await RecordNativeAsync(path, captureWindow, taskSettings, replaceNativeOutput, startedFromBar);
                     }
 
                     while (!useNative && !abortRequested && (recordForm.Status == ScreenRecordingStatus.Waiting || recordForm.Status == ScreenRecordingStatus.Paused))
@@ -431,7 +476,7 @@ namespace ShareX
             });
         }
 
-        private static async Task<bool> RecordNativeAsync(string path, IntPtr captureWindow, TaskSettings settings, bool replaceExisting)
+        private static async Task<bool> RecordNativeAsync(string path, IntPtr captureWindow, TaskSettings settings, bool replaceExisting, bool startedFromBar)
         {
             // HandleExistsFile has already applied the user's overwrite policy. Commit a completed
             // recording afterward so aborts, restarts and startup errors preserve an existing file.
@@ -448,8 +493,10 @@ namespace ShareX
                     VideoBitrate = settings.CaptureSettings.ScreenRecordVideoBitrate * 1000,
                     CaptureSystemAudio = settings.CaptureSettings.ScreenRecordSystemAudio,
                     SystemAudioDeviceId = settings.CaptureSettings.ScreenRecordSystemAudioDeviceId,
+                    SystemAudioGain = settings.CaptureSettings.ScreenRecordSystemAudioGain,
                     CaptureMicrophone = settings.CaptureSettings.ScreenRecordMicrophone,
                     MicrophoneDeviceId = settings.CaptureSettings.ScreenRecordMicrophoneDeviceId,
+                    MicrophoneGain = settings.CaptureSettings.ScreenRecordMicrophoneGain,
                     CaptureCamera = settings.CaptureSettings.ScreenRecordCamera,
                     CameraDeviceId = settings.CaptureSettings.ScreenRecordCameraDeviceId,
                     CameraResolution = settings.CaptureSettings.ScreenRecordCameraResolution,
@@ -470,7 +517,7 @@ namespace ShareX
                     // Initialize the GPU, codecs and audio endpoints before manual start or the countdown.
                     // Prepare does not start video or audio capture.
                     await nativeRecorder.PrepareAsync();
-                    if (!settings.CaptureSettings.ScreenRecordAutoStart)
+                    if (!startedFromBar && !settings.CaptureSettings.ScreenRecordAutoStart)
                     {
                         recordForm.RecordResetEvent.WaitOne();
                     }
@@ -496,7 +543,7 @@ namespace ShareX
                     }
                     recordForm.ChangeState(ScreenRecordState.AfterStart);
                     using (IDisposable highlighter = settings.CaptureSettings.ScreenRecordMouseHighlighter
-                        ? await MouseHighlighterManager.BeginRecordingAsync(settings.ToolsSettingsReference.MouseHighlighterOptions) : null)
+                        ? await MouseHighlighterManager.BeginRecordingAsync(settings.ToolsSettings.MouseHighlighterOptions) : null)
                     {
                         await nativeRecorder.StartAsync();
                         if (recordForm.Status == ScreenRecordingStatus.Aborted || recordForm.Status == ScreenRecordingStatus.Stopped || recordForm.RestartRequested)

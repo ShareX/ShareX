@@ -1962,6 +1962,81 @@
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>หน้าจอ ตัวเลือกสี</value>
   </data>
+  <data name="ScreenRecorderBar_Area" xml:space="preserve">
+    <value>พื้นที่</value>
+  </data>
+  <data name="ScreenRecorderBar_Bar" xml:space="preserve">
+    <value>แถบ</value>
+  </data>
+  <data name="ScreenRecorderBar_Camera" xml:space="preserve">
+    <value>กล้อง</value>
+  </data>
+  <data name="ScreenRecorderBar_CancelSetup" xml:space="preserve">
+    <value>ยกเลิกการตั้งค่า</value>
+  </data>
+  <data name="ScreenRecorderBar_Capture" xml:space="preserve">
+    <value>การจับภาพ</value>
+  </data>
+  <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
+    <value>เคอร์เซอร์</value>
+  </data>
+  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
+    <value>การบันทึกจะหยุดพร้อมข้อผิดพลาดหากไม่มีตัวเข้ารหัสวิดีโอแบบฮาร์ดแวร์</value>
+  </data>
+  <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
+    <value>ตัวอย่างการจัดวาง</value>
+  </data>
+  <data name="ScreenRecorderBar_Microphone" xml:space="preserve">
+    <value>ไมโครโฟน</value>
+  </data>
+  <data name="ScreenRecorderBar_Off" xml:space="preserve">
+    <value>ปิด</value>
+  </data>
+  <data name="ScreenRecorderBar_On" xml:space="preserve">
+    <value>เปิด</value>
+  </data>
+  <data name="ScreenRecorderBar_Options" xml:space="preserve">
+    <value>ตัวเลือก</value>
+  </data>
+  <data name="ScreenRecorderBar_Overlay" xml:space="preserve">
+    <value>ภาพซ้อน</value>
+  </data>
+  <data name="ScreenRecorderBar_Record" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
+    <value>รีเฟรช อุปกรณ์</value>
+  </data>
+  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
+    <value>หน้าจอ {0}</value>
+  </data>
+  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
+    <value>เลือกพื้นที่อื่น...</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
+    <value>แสดงแถบบันทึกก่อนเริ่มบันทึก</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowPointerControls" xml:space="preserve">
+    <value>แสดงตัวควบคุมเคอร์เซอร์บนแถบบันทึก</value>
+  </data>
+  <data name="ScreenRecorderBar_Summary" xml:space="preserve">
+    <value>{0} × {1} · {2} FPS · H.264 / AAC</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
+    <value>เสียงระบบ</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudioHint" xml:space="preserve">
+    <value>บันทึกเสียงที่เล่นผ่านอุปกรณ์เอาต์พุตที่เลือก</value>
+  </data>
+  <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
+    <value>หน้าต่างที่เลือกสำหรับบันทึกไม่พร้อมใช้งานแล้ว</value>
+  </data>
+  <data name="ScreenRecorderBar_Volume" xml:space="preserve">
+    <value>ระดับเสียงในบันทึก (%)</value>
+  </data>
+  <data name="ScreenRecorderBar_VolumeHint" xml:space="preserve">
+    <value>ปรับระดับเสียงในบันทึก</value>
+  </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>ภาพหน้าจอ หน่วงเวลา: {0}s</value>
   </data>

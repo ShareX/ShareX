@@ -524,6 +524,8 @@ internal sealed class TaskSettingsPageBuilder
             Strings.TaskSettingsWindow_NativeRecorderDefaultMicrophone, Strings.TaskSettingsWindow_NativeRecorderUnavailableMicrophone);
         BindEnabled(microphones, recordMicrophone);
         Control microphoneDevice = Row(Strings.TaskSettingsWindow_NativeRecorderMicrophoneDevice, microphones);
+        Control showBar = Check(Strings.ScreenRecorderBar_ShowBeforeRecording, () => capture.ScreenRecordShowBar, value => capture.ScreenRecordShowBar = value);
+        BindEnabled(showBar, native);
         Control hardware = Check(Strings.TaskSettingsWindow_NativeRecorderHardware, () => capture.ScreenRecordRequireHardwareEncoder, value => capture.ScreenRecordRequireHardwareEncoder = value);
         NumericUpDown bitrateControl = Number(() => capture.ScreenRecordVideoBitrate, value => capture.ScreenRecordVideoBitrate = (int)value, 100, 200000, 100);
         bitrateControl.Width = 160;
@@ -585,7 +587,7 @@ internal sealed class TaskSettingsPageBuilder
         return Page("capture-screen-recorder", Strings.TaskSettingsWindow_ScreenRecorder, LucideIcons.video,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_NativeRecorder,
                 Check(Strings.TaskSettingsWindow_NativeRecorderEnabled, native),
-                systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate),
+                showBar, systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate),
             cameraPanel,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Recording,
                 Row(Strings.TaskSettingsWindow_ScreenRecordingFPS, Number(() => capture.ScreenRecordFPS, value => capture.ScreenRecordFPS = (int)value, 1, 120)),
