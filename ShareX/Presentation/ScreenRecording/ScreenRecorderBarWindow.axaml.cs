@@ -88,7 +88,7 @@ internal partial class ScreenRecorderBarWindow : Window
                 info.ExStyle |= WindowStyles.WS_EX_TOOLWINDOW;
             }
             ShowRegion();
-            PositionNearRegion();
+            Dispatcher.UIThread.Post(PositionNearRegion, DispatcherPriority.Loaded);
         };
         PositionChanged += (_, _) => Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
         Closed += (_, _) =>
@@ -423,6 +423,7 @@ internal partial class ScreenRecorderBarWindow : Window
         _regionWindow = null;
         if (IsVisible) ShowRegion();
         ClosePanel();
+        Dispatcher.UIThread.Post(PositionNearRegion, DispatcherPriority.Loaded);
     }
 
     private void ShowRegion()
@@ -459,14 +460,25 @@ internal partial class ScreenRecorderBarWindow : Window
 
     private void PositionNearRegion()
     {
+        if (_closed || !IsVisible) return;
         var screen = Screens.ScreenFromBounds(new PixelRect(RecordingRegion.X, RecordingRegion.Y, RecordingRegion.Width, RecordingRegion.Height)) ?? Screens.Primary;
         if (screen == null) return;
+        PixelRect work = screen.WorkingArea;
         double scaling = screen.Scaling;
         int width = (int)Math.Ceiling(Bounds.Width * scaling);
         int height = (int)Math.Ceiling(Bounds.Height * scaling);
-        int top = RecordingRegion.Bottom + 8;
-        if (top + height > screen.WorkingArea.Bottom) top = RecordingRegion.Top - height - 8;
-        Position = new PixelPoint(RecordingRegion.Left + (RecordingRegion.Width - width) / 2, top);
+        int gap = (int)Math.Ceiling(8 * scaling);
+        int top = RecordingRegion.Bottom + gap;
+        if (top + height > work.Bottom)
+        {
+            top = RecordingRegion.Top - height - gap;
+            // Full-screen and very tall regions have no room outside either edge.
+            if (top < work.Y) top = work.Bottom - height - gap;
+        }
+        int left = Math.Max(RecordingRegion.Left, work.X);
+        int right = Math.Min(RecordingRegion.Right, work.Right);
+        if (right <= left) { left = work.X; right = work.Right; }
+        Position = new PixelPoint(left + (right - left - width) / 2, top);
         ClampToScreen();
     }
 
