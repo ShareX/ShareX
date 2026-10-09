@@ -2858,9 +2858,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Retraso de inicio (segundos):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Iniciar la grabación después de un retraso</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Tarea</value>
   </data>

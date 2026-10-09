@@ -2858,9 +2858,6 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Ritardo iniziale (secondi):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Avvia registrazione dopo un ritardo</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Attività</value>
   </data>

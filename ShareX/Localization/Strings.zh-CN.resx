@@ -2858,9 +2858,6 @@
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>开始延迟（秒）：</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>延迟后开始录制</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>任务</value>
   </data>

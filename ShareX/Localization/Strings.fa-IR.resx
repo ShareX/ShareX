@@ -2858,9 +2858,6 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>تأخیر شروع (ثانیه):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>شروع ضبط پس از تأخیر</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>وظیفه</value>
   </data>

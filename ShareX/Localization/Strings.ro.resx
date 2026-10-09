@@ -2858,9 +2858,6 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Întârziere pornire (secunde):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Pornește înregistrarea după o întârziere</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Sarcină</value>
   </data>

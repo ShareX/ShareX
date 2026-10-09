@@ -2858,9 +2858,6 @@
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Затримка запуску (секунди):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Починати запис після затримки</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Завдання</value>
   </data>

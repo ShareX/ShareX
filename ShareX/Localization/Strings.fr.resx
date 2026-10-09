@@ -2858,9 +2858,6 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Délai de démarrage (secondes) :</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Démarrer l’enregistrement après un délai</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Tâche</value>
   </data>

@@ -2858,9 +2858,6 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Startfördröjning (sekunder):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Starta inspelningen efter en fördröjning</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Uppgift</value>
   </data>

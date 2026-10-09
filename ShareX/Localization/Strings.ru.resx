@@ -2858,9 +2858,6 @@
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Задержка запуска (секунды):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Начинать запись после задержки</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Задача</value>
   </data>

@@ -290,14 +290,14 @@ namespace ShareX
 
                     if (useNative && !abortRequested)
                     {
-                        abortRequested = await RecordNativeAsync(path, captureWindow, taskSettings, replaceNativeOutput, startedFromBar);
+                        abortRequested = await RecordNativeAsync(path, captureWindow, taskSettings, replaceNativeOutput);
                     }
 
                     while (!useNative && !abortRequested && (recordForm.Status == ScreenRecordingStatus.Waiting || recordForm.Status == ScreenRecordingStatus.Paused))
                     {
                         recordForm.ChangeState(ScreenRecordState.BeforeStart);
 
-                        if (recordForm.Status == ScreenRecordingStatus.Paused || !taskSettings.CaptureSettings.ScreenRecordAutoStart)
+                        if (recordForm.Status == ScreenRecordingStatus.Paused)
                         {
                             recordForm.RecordResetEvent.WaitOne();
                         }
@@ -476,7 +476,7 @@ namespace ShareX
             });
         }
 
-        private static async Task<bool> RecordNativeAsync(string path, IntPtr captureWindow, TaskSettings settings, bool replaceExisting, bool startedFromBar)
+        private static async Task<bool> RecordNativeAsync(string path, IntPtr captureWindow, TaskSettings settings, bool replaceExisting)
         {
             // HandleExistsFile has already applied the user's overwrite policy. Commit a completed
             // recording afterward so aborts, restarts and startup errors preserve an existing file.
@@ -514,21 +514,14 @@ namespace ShareX
                 try
                 {
                     recordForm.ChangeState(ScreenRecordState.BeforeStart);
-                    // Initialize the GPU, codecs and audio endpoints before manual start or the countdown.
+                    // Initialize the GPU, codecs and audio endpoints before the countdown.
                     // Prepare does not start video or audio capture.
                     await nativeRecorder.PrepareAsync();
-                    if (!startedFromBar && !settings.CaptureSettings.ScreenRecordAutoStart)
+                    int delay = (int)(settings.CaptureSettings.ScreenRecordStartDelay * 1000);
+                    if (delay > 0)
                     {
-                        recordForm.RecordResetEvent.WaitOne();
-                    }
-                    else
-                    {
-                        int delay = (int)(settings.CaptureSettings.ScreenRecordStartDelay * 1000);
-                        if (delay > 0)
-                        {
-                            recordForm.InvokeSafe(() => recordForm.StartCountdown(delay));
-                            recordForm.RecordResetEvent.WaitOne(delay);
-                        }
+                        recordForm.InvokeSafe(() => recordForm.StartCountdown(delay));
+                        recordForm.RecordResetEvent.WaitOne(delay);
                     }
                     recordForm.ConsumeRestartRequest();
                     if (recordForm.Status == ScreenRecordingStatus.Aborted) return true;

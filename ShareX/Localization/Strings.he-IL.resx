@@ -2858,9 +2858,6 @@
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>השהיית התחלה (שניות):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>התחלת הקלטה לאחר השהיה</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>משימה</value>
   </data>

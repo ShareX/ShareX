@@ -2858,9 +2858,6 @@
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>आरंभ विलंब (सेकंड):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>विलंब के बाद रिकॉर्डिंग आरंभ करें</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>कार्य</value>
   </data>

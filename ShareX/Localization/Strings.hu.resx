@@ -2858,9 +2858,6 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Indítási késleltetés (másodperc):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Felvétel indítása késleltetés után</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Feladat</value>
   </data>

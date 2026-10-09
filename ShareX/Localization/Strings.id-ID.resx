@@ -2858,9 +2858,6 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Jeda mulai (detik):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Mulai merekam setelah jeda</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Tugas</value>
   </data>

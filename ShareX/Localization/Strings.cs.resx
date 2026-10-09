@@ -2858,9 +2858,6 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Prodleva spuštění (sekundy):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Spustit nahrávání po prodlevě</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Úloha</value>
   </data>

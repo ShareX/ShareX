@@ -3169,11 +3169,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ShowRecordingButtonLabels", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_StartRecordingAfterADelay {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_StartRecordingAfterADelay", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_StartDelaySeconds {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_StartDelaySeconds", resourceCulture);

@@ -424,7 +424,6 @@ namespace ShareX
         public bool ScreenRecordMouseHighlighter = false;
         public bool ScreenRecordShowTimer = true;
         public bool ScreenRecordShowButtonLabels = false;
-        public bool ScreenRecordAutoStart = true;
         public float ScreenRecordStartDelay = 0f;
         public bool ScreenRecordFixedDuration = false;
         public float ScreenRecordDuration = 3f;

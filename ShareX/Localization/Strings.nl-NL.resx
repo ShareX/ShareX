@@ -2858,9 +2858,6 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Startvertraging (seconden):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Opname na een vertraging starten</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Taak</value>
   </data>

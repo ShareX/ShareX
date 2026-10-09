@@ -2858,9 +2858,6 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>시작 지연 시간(초):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>지연 후 녹화 시작</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>작업</value>
   </data>

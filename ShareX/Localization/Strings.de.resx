@@ -2858,9 +2858,6 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Startverzögerung (Sekunden):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Aufnahme nach einer Verzögerung starten</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Aufgabe</value>
   </data>

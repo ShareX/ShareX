@@ -2858,9 +2858,6 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Độ trễ bắt đầu (giây):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Bắt đầu ghi sau một khoảng trễ</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Tác vụ</value>
   </data>

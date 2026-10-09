@@ -2858,9 +2858,6 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Başlangıç gecikmesi (saniye):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Kaydı gecikmeden sonra başlat</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Görev</value>
   </data>

@@ -2858,9 +2858,6 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Opóźnienie rozpoczęcia (sekundy):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Rozpocznij nagrywanie po opóźnieniu</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Zadanie</value>
   </data>

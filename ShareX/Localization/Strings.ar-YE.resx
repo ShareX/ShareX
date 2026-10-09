@@ -2858,9 +2858,6 @@
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>تأخير البدء (بالثواني):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>بدء التسجيل بعد تأخير</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>المهمة</value>
   </data>

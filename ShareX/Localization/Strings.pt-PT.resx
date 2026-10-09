@@ -2858,9 +2858,6 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>Atraso inicial (segundos):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>Iniciar gravação após um atraso</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>Tarefa</value>
   </data>

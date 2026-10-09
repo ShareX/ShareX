@@ -2858,9 +2858,6 @@
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>เริ่ม หน่วงเวลา (วินาที):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>เริ่มบันทึกหลังจากหน่วงเวลา</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>งาน</value>
   </data>
