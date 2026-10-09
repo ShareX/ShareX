@@ -1638,7 +1638,7 @@
     <value>ממיר וידאו</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>נגן וידאו</value>
+    <value>נגן וידאו...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>וידאו תמונה ממוזערת</value>

@@ -1638,7 +1638,7 @@ Please select a different hotkey or quit the conflicting application and reبا�
     <value>مبدل ویدئو</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>پخش‌کنندهٔ ویدیو</value>
+    <value>پخش‌کنندهٔ ویدیو...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>خلاصه کننده ویدئو</value>

@@ -1638,7 +1638,7 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
     <value>Convertidor de vídeo</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>Reproductor de vídeo</value>
+    <value>Reproductor de vídeo...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Video miniaturaer</value>

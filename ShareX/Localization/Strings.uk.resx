@@ -1638,7 +1638,7 @@
     <value>Конвертер відео</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>Відеопрогравач</value>
+    <value>Відеопрогравач...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Генератор мініатюр відео</value>

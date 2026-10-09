@@ -1638,7 +1638,7 @@
     <value>비디오 변환기</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>동영상 플레이어</value>
+    <value>동영상 플레이어...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>비디오 섬네일 생성기</value>

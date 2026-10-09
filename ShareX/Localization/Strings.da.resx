@@ -1638,7 +1638,7 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
     <value>Videokonvertering...</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>Videoafspiller</value>
+    <value>Videoafspiller...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Videominiaturegenerator...</value>

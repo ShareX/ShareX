@@ -1638,7 +1638,7 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
     <value>Převodník videa...</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>Přehrávač videa</value>
+    <value>Přehrávač videa...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Generátor miniatur videa...</value>

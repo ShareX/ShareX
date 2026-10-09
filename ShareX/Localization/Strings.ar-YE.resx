@@ -1638,7 +1638,7 @@
     <value>محوّل صيغ الفيديو</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>مشغل الفيديو</value>
+    <value>مشغل الفيديو...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>صانع مصغرات الفيديو</value>

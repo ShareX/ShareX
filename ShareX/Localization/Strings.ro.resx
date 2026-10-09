@@ -1638,7 +1638,7 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
     <value>Convertor video</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>Player video</value>
+    <value>Player video...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Miniaturizator video</value>

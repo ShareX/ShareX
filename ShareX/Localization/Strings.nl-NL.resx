@@ -1638,7 +1638,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Videoconverter</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>Videospeler</value>
+    <value>Videospeler...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Video miniaturen</value>

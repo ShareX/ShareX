@@ -1638,7 +1638,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Convertitore video</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>Lettore video</value>
+    <value>Lettore video...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Generatore Miniature Video</value>

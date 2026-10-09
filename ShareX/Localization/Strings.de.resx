@@ -1638,7 +1638,7 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
     <value>Videokonvertierer</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>Videoplayer</value>
+    <value>Videoplayer...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Video-Thumbnailer</value>

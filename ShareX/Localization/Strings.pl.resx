@@ -1638,7 +1638,7 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
     <value>Konwerter wideo</value>
   </data>
   <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
-    <value>Odtwarzacz wideo</value>
+    <value>Odtwarzacz wideo...</value>
   </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Generator miniatur wideo</value>
