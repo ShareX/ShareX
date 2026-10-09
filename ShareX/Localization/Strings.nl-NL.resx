@@ -2013,6 +2013,24 @@ Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Het geselecteerde opnamevenster is niet meer beschikbaar.</value>
   </data>
+  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
+    <value>1 seconde</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
+    <value>2 seconden</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
+    <value>3 seconden</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
+    <value>4 seconden</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
+    <value>5 seconden</value>
+  </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Opnamevolume (%)</value>
   </data>

@@ -2013,6 +2013,24 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Das ausgewählte Aufnahmefenster ist nicht mehr verfügbar.</value>
   </data>
+  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
+    <value>1 Sekunde</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
+    <value>2 Sekunden</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
+    <value>3 Sekunden</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
+    <value>4 Sekunden</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
+    <value>5 Sekunden</value>
+  </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Aufnahmelautstärke (%)</value>
   </data>

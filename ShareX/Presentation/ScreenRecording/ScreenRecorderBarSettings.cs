@@ -57,6 +57,7 @@ internal sealed class ScreenRecorderBarSettings
         target.ScreenRecordShowTimer = Capture.ScreenRecordShowTimer;
         target.ScreenRecordShowButtonLabels = Capture.ScreenRecordShowButtonLabels;
         target.ScreenRecordStartDelay = Capture.ScreenRecordStartDelay;
+        target.ScreenRecordLastStartDelay = Capture.ScreenRecordLastStartDelay;
         target.ScreenRecordFixedDuration = Capture.ScreenRecordFixedDuration;
         target.ScreenRecordDuration = Capture.ScreenRecordDuration;
     }

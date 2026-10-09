@@ -2013,6 +2013,24 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>La ventana seleccionada para grabar ya no está disponible.</value>
   </data>
+  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
+    <value>Temporizador</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
+    <value>1 segundo</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
+    <value>2 segundos</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
+    <value>3 segundos</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
+    <value>4 segundos</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
+    <value>5 segundos</value>
+  </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Volumen de grabación (%)</value>
   </data>

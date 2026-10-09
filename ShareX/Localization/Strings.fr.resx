@@ -2013,6 +2013,24 @@ Veuillez exécuter ShareX en tant qu'administrateur pour changer le chemin du do
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>La fenêtre sélectionnée pour l’enregistrement n’est plus disponible.</value>
   </data>
+  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
+    <value>Minuteur</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
+    <value>1 seconde</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
+    <value>2 secondes</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
+    <value>3 secondes</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
+    <value>4 secondes</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
+    <value>5 secondes</value>
+  </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Volume d’enregistrement (%)</value>
   </data>

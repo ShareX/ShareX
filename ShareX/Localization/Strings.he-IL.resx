@@ -2013,6 +2013,24 @@
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>החלון שנבחר להקלטה אינו זמין עוד.</value>
   </data>
+  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
+    <value>טיימר</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
+    <value>1 שנייה</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
+    <value>2 שניות</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
+    <value>3 שניות</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
+    <value>4 שניות</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
+    <value>5 שניות</value>
+  </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>עוצמת הקול בהקלטה (%)</value>
   </data>

@@ -2013,6 +2013,24 @@ Proszę uruchomić ShareX jako administrator, aby zmienić ścieżkę folderu os
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Wybrane okno do nagrywania nie jest już dostępne.</value>
   </data>
+  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
+    <value>Minutnik</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
+    <value>1 sekunda</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
+    <value>2 sekundy</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
+    <value>3 sekundy</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
+    <value>4 sekundy</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
+    <value>5 sekund</value>
+  </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Głośność nagrania (%)</value>
   </data>

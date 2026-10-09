@@ -2013,6 +2013,24 @@
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>所選錄製視窗已無法使用。</value>
   </data>
+  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
+    <value>倒數計時</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
+    <value>1秒</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
+    <value>2秒</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
+    <value>3秒</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
+    <value>4秒</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
+    <value>5秒</value>
+  </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>錄製音量 (%)</value>
   </data>

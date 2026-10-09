@@ -2013,6 +2013,24 @@
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>रिकॉर्डिंग के लिए चुनी गई विंडो अब उपलब्ध नहीं है।</value>
   </data>
+  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
+    <value>टाइमर</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
+    <value>1 सेकंड</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
+    <value>2 सेकंड</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
+    <value>3 सेकंड</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
+    <value>4 सेकंड</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
+    <value>5 सेकंड</value>
+  </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>रिकॉर्डिंग की आवाज़ (%)</value>
   </data>

@@ -2013,6 +2013,24 @@ Vă rugăm să rulați ShareX ca administrator pentru a schimba calea folderului
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Fereastra selectată pentru înregistrare nu mai este disponibilă.</value>
   </data>
+  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
+    <value>Temporizator</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
+    <value>1 secundă</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
+    <value>2 secunde</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
+    <value>3 secunde</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
+    <value>4 secunde</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
+    <value>5 secunde</value>
+  </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Volumul înregistrării (%)</value>
   </data>

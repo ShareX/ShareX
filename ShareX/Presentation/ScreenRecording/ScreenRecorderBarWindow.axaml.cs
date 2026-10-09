@@ -28,6 +28,8 @@ internal partial class ScreenRecorderBarWindow : Window
     private readonly List<Source> _sources = [];
     private readonly TaskCompletionSource<bool> _completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private readonly Button _recordButton;
+    private ToggleButton _timerToggle = null!;
+    private NumericUpDown? _startDelayControl;
     private ScrollingCaptureRegionWindow? _regionWindow;
     private string? _activePanel;
     private bool _closed;
@@ -148,6 +150,13 @@ internal partial class ScreenRecorderBarWindow : Window
         if (_recordButton.Parent is Panel oldParent) oldParent.Children.Remove(_recordButton);
         _recordButton.Content = ButtonContent(Strings.ScreenRecorderBar_Record, LucideIcons.circle, toolbar: true);
         actions.Children.Add(_recordButton);
+        StackPanel timer = (StackPanel)SplitControl(Strings.ScreenRecorderBar_Timer, LucideIcons.timer,
+            Capture.ScreenRecordStartDelay > 0,
+            value => SetStartDelay(value ? Math.Clamp(Capture.ScreenRecordLastStartDelay, 0.1f, 3600) : 0),
+            ShowTimerMenu);
+        _timerToggle = (ToggleButton)timer.Children[0];
+        UpdateTimer();
+        actions.Children.Add(timer);
         Toolbar.Children.Add(actions);
         StackPanel inputs = new() { Orientation = Orientation.Horizontal };
         foreach (Source source in _sources)
@@ -182,6 +191,57 @@ internal partial class ScreenRecorderBarWindow : Window
         ValidateSources();
         Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
     }
+
+    private void ShowTimerMenu(Control target)
+    {
+        ClosePanel();
+        float selected = Capture.ScreenRecordStartDelay > 0 ? Capture.ScreenRecordStartDelay : Capture.ScreenRecordLastStartDelay;
+        List<MenuItem> items = [];
+        for (int seconds = 1; seconds <= 5; seconds++)
+        {
+            int delay = seconds;
+            MenuItem item = new()
+            {
+                Header = TimerDelayLabel(delay), ToggleType = MenuItemToggleType.Radio,
+                IsChecked = selected == delay
+            };
+            item.Click += (_, _) =>
+            {
+                Capture.ScreenRecordLastStartDelay = delay;
+                if (Capture.ScreenRecordStartDelay > 0) SetStartDelay(delay);
+            };
+            items.Add(item);
+        }
+        ContextMenu menu = new() { ItemsSource = items, Placement = PlacementMode.BottomEdgeAlignedLeft };
+        menu.Open(target);
+    }
+
+    private void SetStartDelay(float delay)
+    {
+        Capture.SetScreenRecordStartDelay(delay);
+        UpdateTimer();
+    }
+
+    private void UpdateTimer()
+    {
+        bool enabled = Capture.ScreenRecordStartDelay > 0;
+        _timerToggle.IsChecked = enabled;
+        _timerToggle.Content = ButtonContent(Strings.ScreenRecorderBar_Timer, LucideIcons.timer, enabled, toolbar: true);
+        ToolTip.SetTip(_timerToggle, $"{Strings.ScreenRecorderBar_Timer}:{Environment.NewLine}" +
+            (enabled ? TimerDelayLabel(Capture.ScreenRecordStartDelay) : Strings.ScreenRecorderBar_Off));
+        if (_startDelayControl != null && _startDelayControl.Value != (decimal)Capture.ScreenRecordStartDelay)
+            _startDelayControl.Value = (decimal)Capture.ScreenRecordStartDelay;
+    }
+
+    private static string TimerDelayLabel(float delay) => delay switch
+    {
+        1 => Strings.ScreenRecorderBar_Timer_1Second,
+        2 => Strings.ScreenRecorderBar_Timer_2Seconds,
+        3 => Strings.ScreenRecorderBar_Timer_3Seconds,
+        4 => Strings.ScreenRecorderBar_Timer_4Seconds,
+        5 => Strings.ScreenRecorderBar_Timer_5Seconds,
+        _ => $"{Strings.TaskSettingsWindow_StartDelaySeconds} {delay:0.##}"
+    };
 
     private void AddSource(string label, string icon, Func<bool> enabled, Action<bool> setEnabled,
         Func<string> selected, Action<string> setSelected, Func<DeviceChoice[]> enumerate,
@@ -332,8 +392,8 @@ internal partial class ScreenRecorderBarWindow : Window
             Number(Capture.ScreenRecordFPS, 1, 120, 1, value => Capture.ScreenRecordFPS = (int)value)));
         recording.Children.Add(Row(Strings.TaskSettingsWindow_NativeRecorderBitrate,
             Number(Capture.ScreenRecordVideoBitrate, 100, 200000, 100, value => Capture.ScreenRecordVideoBitrate = (int)value)));
-        recording.Children.Add(Row(Strings.TaskSettingsWindow_StartDelaySeconds,
-            Number((decimal)Capture.ScreenRecordStartDelay, 0, 3600, 0.1m, value => Capture.ScreenRecordStartDelay = (float)value)));
+        _startDelayControl = Number((decimal)Capture.ScreenRecordStartDelay, 0, 3600, 0.1m, value => SetStartDelay((float)value));
+        recording.Children.Add(Row(Strings.TaskSettingsWindow_StartDelaySeconds, _startDelayControl));
         NumericUpDown duration = Number((decimal)Capture.ScreenRecordDuration, 0.1m, 86400, 0.1m, value => Capture.ScreenRecordDuration = (float)value);
         duration.IsEnabled = Capture.ScreenRecordFixedDuration;
         recording.Children.Add(Check(Strings.TaskSettingsWindow_UseFixedDuration, Capture.ScreenRecordFixedDuration,
@@ -372,6 +432,7 @@ internal partial class ScreenRecorderBarWindow : Window
     {
         if (_activePanel == id && SettingsPanel.IsVisible) { ClosePanel(); return; }
         _activePanel = id;
+        _startDelayControl = null;
         PanelTitle.Text = title;
         PanelContent.Content = build();
         SettingsPanel.IsVisible = true;
@@ -382,6 +443,7 @@ internal partial class ScreenRecorderBarWindow : Window
     {
         SettingsPanel.IsVisible = false;
         PanelContent.Content = null;
+        _startDelayControl = null;
         _activePanel = null;
         Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
     }
@@ -428,13 +490,17 @@ internal partial class ScreenRecorderBarWindow : Window
         if (clamped != Position) Position = clamped;
     }
 
-    private Control SplitControl(string label, string icon, bool enabled, Action<bool> changed, Action open)
+    private Control SplitControl(string label, string icon, bool enabled, Action<bool> changed, Action open) =>
+        SplitControl(label, icon, enabled, changed, _ => open());
+
+    private Control SplitControl(string label, string icon, bool enabled, Action<bool> changed, Action<Control> open)
     {
         StackPanel group = new() { Orientation = Orientation.Horizontal, Margin = new Thickness(3, 2) };
         ToggleButton toggle = ToggleControl(label, icon, enabled, changed);
         toggle.CornerRadius = new(5, 0, 0, 5);
         toggle.Margin = new Thickness(0);
-        Button arrow = ActionButton(string.Format(Strings.ScreenRecorderBar_SourceOptions, label), LucideIcons.chevron_down, open, iconOnly: true);
+        Button arrow = ActionButton(string.Format(Strings.ScreenRecorderBar_SourceOptions, label), LucideIcons.chevron_down,
+            () => open(group), iconOnly: true);
         arrow.CornerRadius = new(0, 5, 5, 0);
         arrow.Margin = new Thickness(0);
         arrow.Classes.Add("recorder-arrow");

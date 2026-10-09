@@ -2013,6 +2013,24 @@ Chcete-li změnit cestu k osobní složce, spusťte ShareX jako správce.</value
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Vybrané nahrávané okno již není dostupné.</value>
   </data>
+  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
+    <value>Časovač</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
+    <value>1 sekunda</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
+    <value>2 sekundy</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
+    <value>3 sekundy</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
+    <value>4 sekundy</value>
+  </data>
+  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
+    <value>5 sekund</value>
+  </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Hlasitost nahrávky (%)</value>
   </data>
