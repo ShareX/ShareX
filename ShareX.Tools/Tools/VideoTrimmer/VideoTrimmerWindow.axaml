@@ -27,7 +27,15 @@
 
             <Border Grid.Row="1" Classes="tool-panel">
                 <Grid RowDefinitions="*,Auto,Auto,Auto,Auto,Auto" RowSpacing="8">
-                    <Border Background="Black" CornerRadius="4" ClipToBounds="True">
+                    <Border Classes="video-preview" Classes.has-video="{Binding HasVideo}" CornerRadius="4" ClipToBounds="True">
+                        <Border.Styles>
+                            <Style Selector="Border.video-preview">
+                                <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Main}"/>
+                            </Style>
+                            <Style Selector="Border.video-preview.has-video">
+                                <Setter Property="Background" Value="Black"/>
+                            </Style>
+                        </Border.Styles>
                         <Grid>
                             <local:WindowsMediaPlayer x:Name="Player" IsVisible="{Binding HasVideo}"
                                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
