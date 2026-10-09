@@ -29,9 +29,11 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
     private int _generation;
     private double _duration;
     private double _videoAspectRatio;
+    private PixelSize _videoRenderSize;
     private double? _pendingSeek;
     private int _pendingSteps;
     private bool _seeking, _stepping, _playWhenReady, _mediaFoundationStarted, _disposed;
+    private bool _videoUpdateQueued;
 
     public event Action<double>? PositionChanged;
     public event Action<bool>? IsPlayingChanged;
@@ -57,7 +59,7 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         if (!OperatingSystem.IsWindows() || parent.HandleDescriptor != "HWND")
             return base.CreateNativeControlCore(parent);
 
-        // SS_BLACKRECT keeps the surface black before the first frame and after unloading.
+        // Painting is handled by WindowProcedure so the static control cannot paint over the video.
         _window = CreateWindowEx(0, "STATIC", string.Empty, 0x56000004,
             0, 0, 1, 1, parent.Handle, 0, 0, 0); // WS_CHILD | WS_VISIBLE | WS_CLIPCHILDREN | WS_CLIPSIBLINGS
         if (_window == 0) throw new Win32Exception(Marshal.GetLastWin32Error());
@@ -237,6 +239,7 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
                 _duration = duration;
                 _engine.GetNativeVideoSize(out int width, out int height);
                 UpdateVideoRectangle();
+                QueueVideoUpdate();
                 _loadCompletion?.TrySetResult(new(duration, width, height));
                 PublishPosition();
                 break;
@@ -302,16 +305,55 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         if (_engine == null || _window == 0 || !GetClientRect(_window, out RawRect rectangle)) return;
         int width = rectangle.Right, height = rectangle.Bottom;
         if (width <= 0 || height <= 0) return;
+        if (_videoRenderSize.Width == width && _videoRenderSize.Height == height) return;
         // Avalonia already fits the host to the video. Refitting the rounded HWND size can leave
         // a one-pixel strip outside the destination rectangle after resizing or DPI changes.
         _engine.UpdateVideoStream(null, rectangle, new Vortice.Mathematics.ColorBgra(0, 0, 0, 255));
+        _videoRenderSize = new PixelSize(width, height);
+    }
+
+    private void QueueVideoUpdate()
+    {
+        if (_videoUpdateQueued || _engine == null || _duration <= 0 || _disposed) return;
+        _videoUpdateQueued = true;
+        // Avalonia resizes the child before moving/resizing its native holder. Wait for both to finish,
+        // and avoid reentering Media Foundation from messages sent while it updates the video window.
+        Dispatcher.UIThread.Post(() =>
+        {
+            try
+            {
+                if (_disposed || _engine == null || _duration <= 0) return;
+                TryOperation(() =>
+                {
+                    UpdateVideoRectangle();
+                    // Null parameters repaint the latest frame even when the size is unchanged or paused.
+                    _engine!.UpdateVideoStream(null, null, null);
+                });
+            }
+            finally { _videoUpdateQueued = false; }
+        }, DispatcherPriority.Background);
     }
 
     private nint WindowProcedure(nint window, uint message, nuint wParam, nint lParam, nuint id, nuint data)
     {
+        if (message == 0x0014) return 1; // WM_ERASEBKGND: WM_PAINT owns the background.
+        if (message == 0x000F) // WM_PAINT
+        {
+            nint dc = BeginPaint(window, out PaintStruct paint);
+            try
+            {
+                if (_engine == null || _duration <= 0)
+                    FillRect(dc, ref paint.Rectangle, GetStockObject(4)); // BLACK_BRUSH
+                else
+                    QueueVideoUpdate();
+            }
+            finally { EndPaint(window, ref paint); }
+            return 0;
+        }
+
         nint result = DefSubclassProc(window, message, wParam, lParam);
         // Resize coordinates are physical pixels, including when the window moves between DPI settings.
-        if (message is 0x0005 or 0x000F) TryOperation(UpdateVideoRectangle); // WM_SIZE / WM_PAINT
+        if (message is 0x0005 or 0x0018 or 0x0047) QueueVideoUpdate(); // WM_SIZE / WM_SHOWWINDOW / WM_WINDOWPOSCHANGED
         return result;
     }
 
@@ -325,6 +367,7 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         _pendingSteps = 0;
         _duration = 0;
         _videoAspectRatio = 0;
+        _videoRenderSize = default;
         InvalidateMeasure();
         _seeking = _stepping = _playWhenReady = false;
         if (_engine != null)
@@ -356,6 +399,26 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
     [UnmanagedFunctionPointer(CallingConvention.Winapi)]
     private delegate nint WindowSubclass(nint window, uint message, nuint wParam, nint lParam, nuint id, nuint data);
 
+    [StructLayout(LayoutKind.Sequential)]
+    private unsafe struct PaintStruct
+    {
+        public nint DeviceContext;
+        public int Erase;
+        public RawRect Rectangle;
+        public int Restore;
+        public int IncUpdate;
+        public fixed byte Reserved[32];
+    }
+
+    [DllImport("user32.dll")]
+    private static extern nint BeginPaint(nint window, out PaintStruct paint);
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool EndPaint(nint window, ref PaintStruct paint);
+    [DllImport("user32.dll")]
+    private static extern int FillRect(nint dc, ref RawRect rectangle, nint brush);
+    [DllImport("gdi32.dll")]
+    private static extern nint GetStockObject(int objectType);
     [DllImport("user32.dll", EntryPoint = "CreateWindowExW", CharSet = CharSet.Unicode, SetLastError = true)]
     private static extern nint CreateWindowEx(uint extendedStyle, string className, string title, uint style,
         int x, int y, int width, int height, nint parent, nint menu, nint instance, nint parameter);
