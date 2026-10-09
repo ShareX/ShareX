@@ -1637,6 +1637,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>Video converter...</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>Video player</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Video thumbnailer...</value>
   </data>

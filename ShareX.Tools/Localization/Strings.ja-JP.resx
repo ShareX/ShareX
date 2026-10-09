@@ -2143,6 +2143,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>全画面表示を終了</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>全画面</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>動画を読み込み中...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>ミュート</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>再生位置</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - 動画プレーヤー</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>ミュート解除</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>再生音量</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>カスタム フォルダー</value>
   </data>

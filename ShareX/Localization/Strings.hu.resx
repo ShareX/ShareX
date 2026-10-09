@@ -1637,6 +1637,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>Videókonvertáló</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>Videolejátszó</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Videó miniatűrer</value>
   </data>

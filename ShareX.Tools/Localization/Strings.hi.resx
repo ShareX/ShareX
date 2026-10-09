@@ -2149,6 +2149,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>वीडियो-आउटपुट</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>पूर्ण स्क्रीन से बाहर निकलें</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>पूर्ण स्क्रीन</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>वीडियो लोड हो रहा है...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>आवाज़ बंद करें</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>प्लेबैक की स्थिति</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - वीडियो प्लेयर</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>आवाज़ चालू करें</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>प्लेबैक की आवाज़</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>अनुकूलित फ़ोल्डर</value>
   </data>

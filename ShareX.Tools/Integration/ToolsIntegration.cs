@@ -248,6 +248,11 @@ public static class ToolsIntegration
         Show(() => new VideoConverterWindow(options, handler, inputFilePath));
     }
 
+    public static void ShowVideoPlayerWindow(string? inputFilePath = null)
+    {
+        Show(() => new VideoPlayerWindow(inputFilePath));
+    }
+
     public static void ShowVideoTrimmerWindow(string ffmpegPath, string? inputFilePath = null,
         Action? playNotificationSound = null, Func<string?>? resolveFFmpegPath = null)
     {

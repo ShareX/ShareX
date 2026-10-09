@@ -6207,5 +6207,13 @@ namespace ShareX.Tools.Localization {
         public static string AnimatedGifTrimmer_DependentFrame => ResourceManager.GetString("AnimatedGifTrimmer_DependentFrame", resourceCulture);
         public static string AnimatedGifTrimmer_UnsupportedGif => ResourceManager.GetString("AnimatedGifTrimmer_UnsupportedGif", resourceCulture);
         public static string VideoTrimmer_AllFiles => ResourceManager.GetString("VideoTrimmer_AllFiles", resourceCulture);
+        public static string VideoPlayer_Title => ResourceManager.GetString("VideoPlayer_Title", resourceCulture);
+        public static string VideoPlayer_Loading => ResourceManager.GetString("VideoPlayer_Loading", resourceCulture);
+        public static string VideoPlayer_Fullscreen => ResourceManager.GetString("VideoPlayer_Fullscreen", resourceCulture);
+        public static string VideoPlayer_ExitFullscreen => ResourceManager.GetString("VideoPlayer_ExitFullscreen", resourceCulture);
+        public static string VideoPlayer_Mute => ResourceManager.GetString("VideoPlayer_Mute", resourceCulture);
+        public static string VideoPlayer_Unmute => ResourceManager.GetString("VideoPlayer_Unmute", resourceCulture);
+        public static string VideoPlayer_Seek => ResourceManager.GetString("VideoPlayer_Seek", resourceCulture);
+        public static string VideoPlayer_Volume => ResourceManager.GetString("VideoPlayer_Volume", resourceCulture);
     }
 }

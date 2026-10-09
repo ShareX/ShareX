@@ -1637,6 +1637,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>Video dönüştürücü...</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>Video oynatıcı</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Video küçük resim oluşturucu...</value>
   </data>

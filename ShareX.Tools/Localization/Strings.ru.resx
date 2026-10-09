@@ -2143,6 +2143,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>Выйти из полноэкранного режима</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>Весь экран</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>Загрузка видео...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>Выключить звук</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>Позиция воспроизведения</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - Видеоплеер</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>Включить звук</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>Громкость воспроизведения</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>Пользовательская папка</value>
   </data>

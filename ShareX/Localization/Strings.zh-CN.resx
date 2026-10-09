@@ -1637,6 +1637,9 @@
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>视频转换器</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>视频播放器</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>视频缩略图</value>
   </data>

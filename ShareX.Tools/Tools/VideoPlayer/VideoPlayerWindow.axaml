@@ -1,0 +1,115 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:ShareX.Tools"
+        xmlns:loc="using:ShareX.Tools.Localization"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        x:Class="ShareX.Tools.VideoPlayerWindow"
+        x:DataType="local:VideoPlayerViewModel"
+        Title="{Binding WindowTitle}"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        Width="960" Height="600" MinWidth="540" MinHeight="320"
+        WindowStartupLocation="CenterScreen">
+    <Border x:Name="VideoViewport" Classes="video-viewport" Classes.has-video="{Binding HasVideo}">
+        <Border.Styles>
+            <Style Selector="Border.video-viewport">
+                <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Main}"/>
+            </Style>
+            <Style Selector="Border.video-viewport.has-video">
+                <Setter Property="Background" Value="Black"/>
+            </Style>
+        </Border.Styles>
+        <Grid>
+            <local:WindowsMediaPlayer x:Name="Player" IsVisible="{Binding HasVideo}"
+                                      HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <StackPanel IsVisible="{Binding !HasVideo}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Spacing="16" Margin="32,32,32,100" MaxWidth="640">
+                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.film}" FontSize="40" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding StatusText}" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Normal"/>
+                <ProgressBar IsVisible="{Binding IsLoading}" IsIndeterminate="True" Height="4" Width="160"/>
+            </StackPanel>
+
+            <!-- A native popup can draw above the child HWND used by Media Foundation. -->
+            <Popup x:Name="ControlsPopup" PlacementTarget="{Binding #VideoViewport}"
+                   Placement="AnchorAndGravity" PlacementAnchor="Bottom" PlacementGravity="Top"
+                   PlacementConstraintAdjustment="None"
+                   ShouldUseOverlayLayer="False" IsLightDismissEnabled="False" Topmost="False">
+                <Border x:Name="PlaybackControls" Background="#60000000" CornerRadius="8" Padding="10,6">
+                    <Border.Styles>
+                        <Style Selector="TextBlock">
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="Normal"/>
+                        </Style>
+                        <Style Selector="Button.player-button">
+                            <Setter Property="Width" Value="36"/>
+                            <Setter Property="Height" Value="36"/>
+                            <Setter Property="Padding" Value="0"/>
+                            <Setter Property="CornerRadius" Value="5"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Style>
+                        <Style Selector="Button.player-button /template/ ContentPresenter#PART_ContentPresenter">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Style>
+                        <Style Selector="Button.player-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                            <Setter Property="Background" Value="#30FFFFFF"/>
+                        </Style>
+                        <Style Selector="Button.player-button:pressed /template/ ContentPresenter#PART_ContentPresenter">
+                            <Setter Property="Background" Value="#55FFFFFF"/>
+                        </Style>
+                        <Style Selector="Button.player-button:disabled /template/ ContentPresenter#PART_ContentPresenter">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Opacity" Value="0.35"/>
+                        </Style>
+                    </Border.Styles>
+                    <Grid RowDefinitions="Auto,Auto" RowSpacing="2">
+                        <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto,Auto,Auto,*,Auto,Auto,Auto" ColumnSpacing="4">
+                            <Button x:Name="OpenButton" Classes="player-button" Command="{Binding BrowseCommand}"
+                                    ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_Open}"
+                                    AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_Open}">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/>
+                            </Button>
+                            <Button Grid.Column="1" Classes="player-button" Command="{Binding StepBackwardCommand}" IsEnabled="{Binding HasVideo}"
+                                    ToolTip.Tip="{x:Static loc:Strings.AnimatedGifTrimmer_PreviousFrame}"
+                                    AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_PreviousFrame}">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.step_back}"/>
+                            </Button>
+                            <Button x:Name="PlayButton" Grid.Column="2" Classes="player-button" Command="{Binding TogglePlayCommand}" IsEnabled="{Binding HasVideo}"
+                                    ToolTip.Tip="{Binding PlayActionText}" AutomationProperties.Name="{Binding PlayActionText}">
+                                <Grid>
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.play}" IsVisible="{Binding !IsPlaying}"/>
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pause}" IsVisible="{Binding IsPlaying}"/>
+                                </Grid>
+                            </Button>
+                            <Button Grid.Column="3" Classes="player-button" Command="{Binding StepForwardCommand}" IsEnabled="{Binding HasVideo}"
+                                    ToolTip.Tip="{x:Static loc:Strings.AnimatedGifTrimmer_NextFrame}"
+                                    AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_NextFrame}">
+                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.step_forward}"/>
+                            </Button>
+                            <TextBlock Grid.Column="4" Text="{Binding TimeText}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0"/>
+                            <Button Grid.Column="5" Classes="player-button" Command="{Binding ToggleMuteCommand}"
+                                    ToolTip.Tip="{Binding MuteActionText}" AutomationProperties.Name="{Binding MuteActionText}">
+                                <Grid>
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.volume_2}" IsVisible="{Binding !SoundOff}"/>
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.volume_x}" IsVisible="{Binding SoundOff}"/>
+                                </Grid>
+                            </Button>
+                            <Slider Grid.Column="6" Width="70" Minimum="0" Maximum="1" Value="{Binding Volume, Mode=TwoWay}"
+                                    VerticalAlignment="Center" ToolTip.Tip="{x:Static loc:Strings.VideoPlayer_Volume}"
+                                    AutomationProperties.Name="{x:Static loc:Strings.VideoPlayer_Volume}"/>
+                            <Button x:Name="FullscreenButton" Grid.Column="7" Classes="player-button" Click="OnFullscreenClick"
+                                    ToolTip.Tip="{x:Static loc:Strings.VideoPlayer_Fullscreen}"
+                                    AutomationProperties.Name="{x:Static loc:Strings.VideoPlayer_Fullscreen}">
+                                <TextBlock x:Name="FullscreenIcon" Classes="icon" Text="{x:Static theming:LucideIcons.maximize}"/>
+                            </Button>
+                        </Grid>
+                        <Slider x:Name="SeekSlider" Minimum="0" Maximum="{Binding Duration}"
+                                Value="{Binding Position, Mode=TwoWay}" IsEnabled="{Binding HasVideo}" Height="40"
+                                AutomationProperties.Name="{x:Static loc:Strings.VideoPlayer_Seek}"/>
+                    </Grid>
+                </Border>
+            </Popup>
+        </Grid>
+    </Border>
+</Window>

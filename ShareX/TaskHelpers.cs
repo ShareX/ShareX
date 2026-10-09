@@ -1217,6 +1217,11 @@ namespace ShareX
             }, cancellationToken);
         }
 
+        public static void OpenVideoPlayer(string inputFilePath = null)
+        {
+            ToolsIntegration.ShowVideoPlayerWindow(inputFilePath);
+        }
+
         public static void OpenVideoTrimmer(TaskSettings taskSettings = null, string inputFilePath = null)
         {
             taskSettings ??= TaskSettings.GetDefaultTaskSettings();

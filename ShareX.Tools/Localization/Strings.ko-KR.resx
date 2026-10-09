@@ -2143,6 +2143,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>전체 화면 종료</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>전체 화면</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>동영상 불러오는 중...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>음소거</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>재생 위치</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - 동영상 플레이어</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>음소거 해제</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>재생 볼륨</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>사용자 지정 폴더</value>
   </data>

@@ -2143,6 +2143,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>Вийти з повноекранного режиму</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>Увесь екран</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>Завантаження відео...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>Вимкнути звук</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>Позиція відтворення</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - Відеопрогравач</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>Увімкнути звук</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>Гучність відтворення</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>Користувацька папка</value>
   </data>

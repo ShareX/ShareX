@@ -1637,6 +1637,9 @@
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>動画の変換</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>動画プレーヤー</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>動画のサムネイル作成</value>
   </data>

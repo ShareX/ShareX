@@ -59,10 +59,38 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
     private int _pendingSteps;
     private bool _seeking, _stepping, _playWhenReady, _mediaFoundationStarted, _disposed;
     private bool _videoUpdateQueued;
+    private double _volume = 1;
+    private bool _isMuted;
 
     public event Action<double>? PositionChanged;
     public event Action<bool>? IsPlayingChanged;
     public event Action<Exception>? PlaybackFailed;
+
+    /// <summary>Includes a play request waiting for a pending seek or frame step to finish.</summary>
+    public bool IsPlaybackRequested => _playWhenReady;
+
+    public double Volume
+    {
+        get => _volume;
+        set
+        {
+            Dispatcher.UIThread.VerifyAccess();
+            if (!double.IsFinite(value)) return;
+            _volume = Math.Clamp(value, 0, 1);
+            if (_engine != null) TryOperation(() => _engine.Volume = _volume);
+        }
+    }
+
+    public bool IsMuted
+    {
+        get => _isMuted;
+        set
+        {
+            Dispatcher.UIThread.VerifyAccess();
+            _isMuted = value;
+            if (_engine != null) TryOperation(() => _engine.Muted = _isMuted);
+        }
+    }
 
     public WindowsMediaPlayer()
     {
@@ -140,6 +168,8 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
             _engine = _mediaEngine.QueryInterface<IMFMediaEngineEx>();
             _engine.AutoPlay = false;
             _engine.Preload = MediaEnginePreload.Automatic;
+            _engine.Volume = _volume;
+            _engine.Muted = _isMuted;
             UpdateVideoRectangle();
             // The Windows URL resolver also accepts local paths, without URI escaping of '#' or Unicode names.
             _engine.SetSource(Path.GetFullPath(path));
@@ -290,6 +320,7 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
             case MediaEngineEvent.Ended:
                 if (_engine!.IsPaused || _engine.IsEnded)
                 {
+                    if (_engine.IsEnded && !_seeking && _pendingSeek == null) _playWhenReady = false;
                     _positionTimer.Stop();
                     IsPlayingChanged?.Invoke(false);
                     PublishPosition();

@@ -2149,6 +2149,30 @@ Caminho do ficheiro: {0}</value>
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>Sair do ecrã inteiro</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>Ecrã inteiro</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>A carregar vídeo...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>Silenciar</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>Posição de reprodução</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - Reprodutor de vídeo</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>Ativar som</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>Volume de reprodução</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>Pasta personalizada</value>
   </data>

@@ -1637,6 +1637,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>Conversor de video</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>Reproductor de video</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Generador de miniaturas de video</value>
   </data>

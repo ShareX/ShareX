@@ -2143,6 +2143,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>Keluar dari layar penuh</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>Layar penuh</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>Memuat video...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>Bisukan</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>Posisi pemutaran</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - Pemutar video</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>Aktifkan suara</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>Volume pemutaran</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>Folder kustom</value>
   </data>

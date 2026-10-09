@@ -1637,6 +1637,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>Videokonvertering...</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>Videoafspiller</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Videominiaturegenerator...</value>
   </data>

@@ -2149,6 +2149,30 @@ Dateipfad: {0}</value>
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>Vollbild verlassen</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>Vollbild</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>Video wird geladen...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>Stummschalten</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>Wiedergabeposition</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - Videoplayer</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>Ton einschalten</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>Wiedergabelautstärke</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>Benutzerdefinierter Ordner</value>
   </data>

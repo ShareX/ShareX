@@ -1637,6 +1637,9 @@
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>वीडियो रूपांतरक...</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>वीडियो प्लेयर</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>वीडियो थंबनेल निर्माता...</value>
   </data>

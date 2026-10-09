@@ -2143,6 +2143,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>วิดีโอ-ผลลัพธ์</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>ออกจากโหมดเต็มหน้าจอ</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>เต็มหน้าจอ</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>กำลังโหลดวิดีโอ...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>ปิดเสียง</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>ตำแหน่งการเล่น</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - เครื่องเล่นวิดีโอ</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>เปิดเสียง</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>ระดับเสียงการเล่น</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>กำหนดเอง โฟลเดอร์</value>
   </data>

@@ -2149,6 +2149,30 @@ Ruta del archivo: {0}</value>
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>Salir de pantalla completa</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>Pantalla completa</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>Cargando vídeo...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>Silenciar</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>Posición de reproducción</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - Reproductor de vídeo</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>Activar sonido</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>Volumen de reproducción</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>Carpeta personalizada</value>
   </data>

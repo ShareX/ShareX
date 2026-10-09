@@ -2149,6 +2149,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>退出全屏</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>全屏</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>正在加载视频...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>静音</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>播放位置</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - 视频播放器</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>取消静音</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>播放音量</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>自定义文件夹</value>
   </data>

@@ -1637,6 +1637,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>Convertisseur vidéo</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>Lecteur vidéo</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Générateur de miniatures de vidéo</value>
   </data>

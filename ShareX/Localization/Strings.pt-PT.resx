@@ -1637,6 +1637,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>Conversor de vídeo</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>Reprodutor de vídeo</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>Conversor de vídeo para miniatura</value>
   </data>
