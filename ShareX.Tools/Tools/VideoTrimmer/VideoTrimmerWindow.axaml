@@ -27,9 +27,10 @@
 
             <Border Grid.Row="1" Classes="tool-panel">
                 <Grid RowDefinitions="*,Auto,Auto,Auto,Auto,Auto" RowSpacing="8">
-                    <Border Background="{DynamicResource ShareX.Brush.Background.Main}" CornerRadius="4" ClipToBounds="True">
+                    <Border Background="Black" CornerRadius="4" ClipToBounds="True">
                         <Grid>
-                            <local:WindowsMediaPlayer x:Name="Player" IsVisible="{Binding HasVideo}"/>
+                            <local:WindowsMediaPlayer x:Name="Player" IsVisible="{Binding HasVideo}"
+                                                      HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <StackPanel IsVisible="{Binding !HasVideo}" Spacing="12"
                                         HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.film}"

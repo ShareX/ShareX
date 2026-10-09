@@ -1,3 +1,4 @@
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Platform;
 using Avalonia.Threading;
@@ -42,6 +43,13 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         _windowProcedure = WindowProcedure;
         _positionTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(33) };
         _positionTimer.Tick += (_, _) => PublishPosition();
+    }
+
+    protected override Size MeasureOverride(Size availableSize)
+    {
+        if (_videoAspectRatio <= 0) return base.MeasureOverride(availableSize);
+        double width = Math.Min(availableSize.Width, availableSize.Height * _videoAspectRatio);
+        return double.IsFinite(width) ? new Size(width, width / _videoAspectRatio) : base.MeasureOverride(availableSize);
     }
 
     protected override IPlatformHandle CreateNativeControlCore(IPlatformHandle parent)
@@ -219,6 +227,7 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
                 if (!_engine!.HasVideo()) throw new InvalidOperationException(Localization.Strings.VideoTrimmer_InvalidVideo);
                 _engine.GetVideoAspectRatio(out int numerator, out int denominator);
                 _videoAspectRatio = numerator > 0 && denominator > 0 ? (double)numerator / denominator : 0;
+                InvalidateMeasure();
                 UpdateVideoRectangle();
                 break;
             case MediaEngineEvent.CanPlay:
@@ -321,6 +330,7 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         _pendingSteps = 0;
         _duration = 0;
         _videoAspectRatio = 0;
+        InvalidateMeasure();
         _seeking = _stepping = _playWhenReady = false;
         if (_engine != null)
         {

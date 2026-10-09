@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-using System.Drawing;
 using ShareX.ScreenRecordingLib.Audio;
 using ShareX.ScreenRecordingLib.Encoding;
-using ShareX.ScreenRecordingLib.Video;
 using ShareX.ScreenRecordingLib.Native;
+using ShareX.ScreenRecordingLib.Video;
+using System.Drawing;
 using Vortice.MediaFoundation;
 
 namespace ShareX.ScreenRecordingLib;

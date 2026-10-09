@@ -31,11 +31,11 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
-using NativeScreenRecorder = ShareX.ScreenRecordingLib.ScreenRecorder;
-using NativeRecordingOptions = ShareX.ScreenRecordingLib.RecordingOptions;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
+using NativeRecordingOptions = ShareX.ScreenRecordingLib.RecordingOptions;
+using NativeScreenRecorder = ShareX.ScreenRecordingLib.ScreenRecorder;
 
 namespace ShareX
 {

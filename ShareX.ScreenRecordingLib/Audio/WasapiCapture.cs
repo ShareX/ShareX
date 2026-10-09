@@ -68,8 +68,16 @@ internal sealed unsafe class WasapiCapture : IDisposable
         try
         {
             // Ask Windows to perform channel mapping and high-quality resampling. No managed resampler or codec DLL.
-            WAVEFORMATEX format = new() { wFormatTag = 3, nChannels = 2, nSamplesPerSec = 48_000,
-                nAvgBytesPerSec = 384_000, nBlockAlign = 8, wBitsPerSample = 32, cbSize = 0 };
+            WAVEFORMATEX format = new()
+            {
+                wFormatTag = 3,
+                nChannels = 2,
+                nSamplesPerSec = 48_000,
+                nAvgBytesPerSec = 384_000,
+                nBlockAlign = 8,
+                wBitsPerSample = 32,
+                cbSize = 0
+            };
             const uint eventCallback = 0x00040000, loopbackFlag = 0x00020000, autoConvert = 0x80000000, srcQuality = 0x08000000;
             uint flags = eventCallback | autoConvert | srcQuality | (loopback ? loopbackFlag : 0);
             bool initialized = false;

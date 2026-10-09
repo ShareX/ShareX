@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-using System.ComponentModel;
 using Microsoft.Win32.SafeHandles;
+using System.ComponentModel;
 namespace ShareX.ScreenRecordingLib.Native;
 
 /// <summary>Windows 11 high-resolution deadlines without changing system-wide timer resolution.</summary>

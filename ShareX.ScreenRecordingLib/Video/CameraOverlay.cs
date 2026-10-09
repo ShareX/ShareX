@@ -3,7 +3,6 @@ using System.Drawing;
 using Vortice;
 using Vortice.Direct3D11;
 using Vortice.DXGI;
-using Vortice.Mathematics;
 using Vortice.MediaFoundation;
 
 namespace ShareX.ScreenRecordingLib.Video;
@@ -48,9 +47,13 @@ internal sealed unsafe class CameraOverlay : IDisposable
             enumerator = videoDevice.CreateVideoProcessorEnumerator(new VideoProcessorContentDescription
             {
                 InputFrameFormat = VideoFrameFormat.Progressive,
-                InputFrameRate = new((uint)options.CameraFramesPerSecond, 1), OutputFrameRate = new((uint)options.CameraFramesPerSecond, 1),
-                InputWidth = (uint)info.Width, InputHeight = (uint)info.Height,
-                OutputWidth = (uint)Bounds.Width, OutputHeight = (uint)Bounds.Height, Usage = VideoUsage.PlaybackNormal
+                InputFrameRate = new((uint)options.CameraFramesPerSecond, 1),
+                OutputFrameRate = new((uint)options.CameraFramesPerSecond, 1),
+                InputWidth = (uint)info.Width,
+                InputHeight = (uint)info.Height,
+                OutputWidth = (uint)Bounds.Width,
+                OutputHeight = (uint)Bounds.Height,
+                Usage = VideoUsage.PlaybackNormal
             });
             if ((enumerator.CheckVideoProcessorFormat(format) & VideoProcessorFormatSupport.Input) == 0 ||
                 (enumerator.CheckVideoProcessorFormat(Format.B8G8R8A8_UNorm) & VideoProcessorFormatSupport.Output) == 0)

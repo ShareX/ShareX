@@ -1,14 +1,14 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
+using ShareX.ScreenRecordingLib.Native;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using ShareX.ScreenRecordingLib.Native;
 using Vortice.Direct3D11;
-using Box = Vortice.Mathematics.Box;
 using Windows.Graphics.Capture;
 using Windows.Graphics.DirectX;
 using Windows.Security.Authorization.AppCapabilityAccess;
 using WinRT;
+using Box = Vortice.Mathematics.Box;
 
 namespace ShareX.ScreenRecordingLib.Video;
 

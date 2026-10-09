@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-using System.Runtime.InteropServices;
 using ShareX.ScreenRecordingLib.Native;
 using Vortice.MediaFoundation;
 

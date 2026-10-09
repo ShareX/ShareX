@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-using SharpGen.Runtime;
 using ShareX.ScreenRecordingLib.Native;
 using ShareX.ScreenRecordingLib.Video;
+using SharpGen.Runtime;
 using Vortice.Direct3D11;
 using Vortice.MediaFoundation;
 

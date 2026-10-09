@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-using System.Runtime.InteropServices;
 using ShareX.ScreenRecordingLib.Native;
+using System.Runtime.InteropServices;
 using Vortice.Direct3D;
 using Vortice.Direct3D11;
 using Vortice.DXGI;
@@ -60,8 +60,13 @@ internal sealed unsafe class GraphicsDevice : IDisposable
     public ID3D11Texture2D CreateTexture(int width, int height, Format format, BindFlags bindFlags) =>
         Device.CreateTexture2D(new Texture2DDescription
         {
-            Width = (uint)width, Height = (uint)height, MipLevels = 1, ArraySize = 1,
-            Format = format, SampleDescription = new(1, 0), Usage = ResourceUsage.Default,
+            Width = (uint)width,
+            Height = (uint)height,
+            MipLevels = 1,
+            ArraySize = 1,
+            Format = format,
+            SampleDescription = new(1, 0),
+            Usage = ResourceUsage.Default,
             BindFlags = bindFlags
         });
 

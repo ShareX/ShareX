@@ -37,9 +37,12 @@ internal sealed class GpuVideoProcessor : IDisposable
             VideoProcessorContentDescription desc = new()
             {
                 InputFrameFormat = VideoFrameFormat.Progressive,
-                InputFrameRate = new((uint)fps, 1), OutputFrameRate = new((uint)fps, 1),
-                InputWidth = (uint)width, InputHeight = (uint)height,
-                OutputWidth = (uint)width, OutputHeight = (uint)height,
+                InputFrameRate = new((uint)fps, 1),
+                OutputFrameRate = new((uint)fps, 1),
+                InputWidth = (uint)width,
+                InputHeight = (uint)height,
+                OutputWidth = (uint)width,
+                OutputHeight = (uint)height,
                 Usage = VideoUsage.PlaybackNormal
             };
             enumerator = videoDevice.CreateVideoProcessorEnumerator(desc);

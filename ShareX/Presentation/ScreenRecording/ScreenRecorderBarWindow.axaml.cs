@@ -137,8 +137,11 @@ internal partial class ScreenRecorderBarWindow : Window
         StackPanel actions = new() { Orientation = Orientation.Horizontal };
         Border grip = new()
         {
-            Width = 24, Height = 36, Background = Brushes.Transparent,
-            Cursor = new Cursor(StandardCursorType.SizeAll), Child = Glyph(LucideIcons.grip_vertical)
+            Width = 24,
+            Height = 36,
+            Background = Brushes.Transparent,
+            Cursor = new Cursor(StandardCursorType.SizeAll),
+            Child = Glyph(LucideIcons.grip_vertical)
         };
         grip.PointerPressed += (_, e) =>
         {
@@ -172,7 +175,8 @@ internal partial class ScreenRecorderBarWindow : Window
         // Keep the action buttons visible when long labels or a small work area require scrolling the sources.
         ScrollViewer sources = new()
         {
-            Content = inputs, HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
+            Content = inputs,
+            HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
             VerticalScrollBarVisibility = ScrollBarVisibility.Disabled
         };
         Grid.SetColumn(sources, 1);
@@ -200,7 +204,8 @@ internal partial class ScreenRecorderBarWindow : Window
             int delay = seconds;
             MenuItem item = new()
             {
-                Header = StartDelayLabel(delay), ToggleType = MenuItemToggleType.Radio,
+                Header = StartDelayLabel(delay),
+                ToggleType = MenuItemToggleType.Radio,
                 IsChecked = Capture.ScreenRecordStartDelay == delay
             };
             item.Click += (_, _) => SetStartDelay(delay);
@@ -374,7 +379,8 @@ internal partial class ScreenRecorderBarWindow : Window
 
     private Control BuildHighlighterPanel() => new MouseHighlighterSettingsControl(_draft.MouseHighlighter)
     {
-        Margin = new Thickness(0, 8), HorizontalAlignment = HorizontalAlignment.Stretch
+        Margin = new Thickness(0, 8),
+        HorizontalAlignment = HorizontalAlignment.Stretch
     };
 
     private Control BuildOptionsPanel()
@@ -496,7 +502,9 @@ internal partial class ScreenRecorderBarWindow : Window
     {
         ToggleButton toggle = new()
         {
-            Content = ButtonContent(label, icon, enabled, toolbar: true), IsChecked = enabled, Margin = new Thickness(3, 2)
+            Content = ButtonContent(label, icon, enabled, toolbar: true),
+            IsChecked = enabled,
+            Margin = new Thickness(3, 2)
         };
         toggle.Classes.Add("recorder-setup");
         ToolTip.SetTip(toggle, label);
@@ -528,7 +536,9 @@ internal partial class ScreenRecorderBarWindow : Window
         if (enabled != null) content.Children.Add(new TextBlock
         {
             Text = enabled.Value ? Strings.ScreenRecorderBar_On : Strings.ScreenRecorderBar_Off,
-            FontSize = 11, Opacity = 0.8, VerticalAlignment = VerticalAlignment.Center
+            FontSize = 11,
+            Opacity = 0.8,
+            VerticalAlignment = VerticalAlignment.Center
         });
         return content;
     }
@@ -544,7 +554,8 @@ internal partial class ScreenRecorderBarWindow : Window
 
     private static TextBlock TwoLineToolTip(string title, string detail) => new()
     {
-        Text = $"{title}{Environment.NewLine}{detail}", TextAlignment = TextAlignment.Center
+        Text = $"{title}{Environment.NewLine}{detail}",
+        TextAlignment = TextAlignment.Center
     };
 
     private static Control VolumeControl(float gain, Action<float> changed)
@@ -553,8 +564,13 @@ internal partial class ScreenRecorderBarWindow : Window
         TextBlock percentage = new() { HorizontalAlignment = HorizontalAlignment.Right };
         Slider volume = new()
         {
-            Minimum = 0, Maximum = 400, TickFrequency = 5, IsSnapToTickEnabled = true,
-            SmallChange = 5, LargeChange = 25, Value = Math.Clamp(gain * 100, 0, 400),
+            Minimum = 0,
+            Maximum = 400,
+            TickFrequency = 5,
+            IsSnapToTickEnabled = true,
+            SmallChange = 5,
+            LargeChange = 25,
+            Value = Math.Clamp(gain * 100, 0, 400),
             HorizontalAlignment = HorizontalAlignment.Stretch
         };
         AutomationProperties.SetName(volume, Strings.ScreenRecorderBar_Volume);

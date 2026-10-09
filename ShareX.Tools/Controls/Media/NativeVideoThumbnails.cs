@@ -1,7 +1,6 @@
 using Avalonia;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
-using SharpGen.Runtime;
 using System.Runtime.InteropServices;
 using Vortice.MediaFoundation;
 
