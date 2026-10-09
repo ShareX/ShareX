@@ -304,11 +304,23 @@
   <data name="FFmpegOptionsWindow_No_devices_found" xml:space="preserve">
     <value>Пристрої DirectShow не знайдено. Захоплення робочого стола готове.</value>
   </data>
+  <data name="FFmpegOptionsWindow_None" xml:space="preserve">
+    <value>Немає</value>
+  </data>
   <data name="FFmpegOptionsWindow_One_device_found" xml:space="preserve">
     <value>Знайдено пристроїв DirectShow: {0}.</value>
   </data>
+  <data name="FFmpegOptionsWindow_Palette_diff" xml:space="preserve">
+    <value>Лише змінені ділянки</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_full" xml:space="preserve">
+    <value>Увесь кадр</value>
+  </data>
   <data name="FFmpegOptionsWindow_Palette_mode" xml:space="preserve">
     <value>Режим палітри</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_single" xml:space="preserve">
+    <value>Кожен кадр окремо</value>
   </data>
   <data name="FFmpegOptionsWindow_Path_to_ffmpeg" xml:space="preserve">
     <value>Шлях до ffmpeg.exe</value>
@@ -369,6 +381,12 @@
   </data>
   <data name="FFmpegOptionsWindow_Slow_presets_warning" xml:space="preserve">
     <value>Повільні передустановки можуть спричинити пропуск кадрів під час запису екрана. Рекомендовано «fast» або швидше.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_DDA" xml:space="preserve">
+    <value>Захоплення робочого стола (Desktop Duplication API)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_GDI" xml:space="preserve">
+    <value>Захоплення робочого стола (GDI)</value>
   </data>
   <data name="FFmpegOptionsWindow_Sources" xml:space="preserve">
     <value>Джерела</value>

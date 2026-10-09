@@ -304,11 +304,23 @@
   <data name="FFmpegOptionsWindow_No_devices_found" xml:space="preserve">
     <value>DirectShow aygıtı bulunamadı. Masaüstü yakalama hazır.</value>
   </data>
+  <data name="FFmpegOptionsWindow_None" xml:space="preserve">
+    <value>Hiçbiri</value>
+  </data>
   <data name="FFmpegOptionsWindow_One_device_found" xml:space="preserve">
     <value>{0} DirectShow aygıtı bulundu.</value>
   </data>
+  <data name="FFmpegOptionsWindow_Palette_diff" xml:space="preserve">
+    <value>Yalnızca değişen bölgeler</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_full" xml:space="preserve">
+    <value>Karenin tamamı</value>
+  </data>
   <data name="FFmpegOptionsWindow_Palette_mode" xml:space="preserve">
     <value>Palet modu</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_single" xml:space="preserve">
+    <value>Her kare ayrı ayrı</value>
   </data>
   <data name="FFmpegOptionsWindow_Path_to_ffmpeg" xml:space="preserve">
     <value>ffmpeg.exe yolu</value>
@@ -369,6 +381,12 @@
   </data>
   <data name="FFmpegOptionsWindow_Slow_presets_warning" xml:space="preserve">
     <value>Yavaş ön ayarlar ekran kaydı sırasında karelerin atlanmasına neden olabilir. „fast“ veya daha hızlısı önerilir.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_DDA" xml:space="preserve">
+    <value>Masaüstü yakalama (Desktop Duplication API)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_GDI" xml:space="preserve">
+    <value>Masaüstü yakalama (GDI)</value>
   </data>
   <data name="FFmpegOptionsWindow_Sources" xml:space="preserve">
     <value>Kaynaklar</value>

@@ -304,11 +304,23 @@
   <data name="FFmpegOptionsWindow_No_devices_found" xml:space="preserve">
     <value>Nem található DirectShow-eszköz. Az asztal rögzítése kész.</value>
   </data>
+  <data name="FFmpegOptionsWindow_None" xml:space="preserve">
+    <value>Nincs</value>
+  </data>
   <data name="FFmpegOptionsWindow_One_device_found" xml:space="preserve">
     <value>{0} DirectShow-eszköz található.</value>
   </data>
+  <data name="FFmpegOptionsWindow_Palette_diff" xml:space="preserve">
+    <value>Csak a megváltozott területek</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_full" xml:space="preserve">
+    <value>Teljes képkocka</value>
+  </data>
   <data name="FFmpegOptionsWindow_Palette_mode" xml:space="preserve">
     <value>Palettamód</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_single" xml:space="preserve">
+    <value>Minden képkocka külön</value>
   </data>
   <data name="FFmpegOptionsWindow_Path_to_ffmpeg" xml:space="preserve">
     <value>Az ffmpeg.exe elérési útja</value>
@@ -369,6 +381,12 @@
   </data>
   <data name="FFmpegOptionsWindow_Slow_presets_warning" xml:space="preserve">
     <value>A lassú előbeállítások képkockák kihagyását okozhatják képernyőfelvétel közben. A „fast” vagy gyorsabb ajánlott.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_DDA" xml:space="preserve">
+    <value>Asztal rögzítése (Desktop Duplication API)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_GDI" xml:space="preserve">
+    <value>Asztal rögzítése (GDI)</value>
   </data>
   <data name="FFmpegOptionsWindow_Sources" xml:space="preserve">
     <value>Források</value>

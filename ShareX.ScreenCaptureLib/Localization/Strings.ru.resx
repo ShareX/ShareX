@@ -304,11 +304,23 @@
   <data name="FFmpegOptionsWindow_No_devices_found" xml:space="preserve">
     <value>Устройства DirectShow не найдены. Захват рабочего стола готов.</value>
   </data>
+  <data name="FFmpegOptionsWindow_None" xml:space="preserve">
+    <value>Не выбрано</value>
+  </data>
   <data name="FFmpegOptionsWindow_One_device_found" xml:space="preserve">
     <value>Найдено устройств DirectShow: {0}.</value>
   </data>
+  <data name="FFmpegOptionsWindow_Palette_diff" xml:space="preserve">
+    <value>Только изменённые области</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_full" xml:space="preserve">
+    <value>Весь кадр</value>
+  </data>
   <data name="FFmpegOptionsWindow_Palette_mode" xml:space="preserve">
     <value>Режим палитры</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_single" xml:space="preserve">
+    <value>Каждый кадр отдельно</value>
   </data>
   <data name="FFmpegOptionsWindow_Path_to_ffmpeg" xml:space="preserve">
     <value>Путь к ffmpeg.exe</value>
@@ -369,6 +381,12 @@
   </data>
   <data name="FFmpegOptionsWindow_Slow_presets_warning" xml:space="preserve">
     <value>Медленные предустановки могут приводить к пропуску кадров при записи экрана. Рекомендуется «fast» или быстрее.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_DDA" xml:space="preserve">
+    <value>Захват рабочего стола (Desktop Duplication API)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_GDI" xml:space="preserve">
+    <value>Захват рабочего стола (GDI)</value>
   </data>
   <data name="FFmpegOptionsWindow_Sources" xml:space="preserve">
     <value>Источники</value>

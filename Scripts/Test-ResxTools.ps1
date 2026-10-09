@@ -181,6 +181,14 @@ $typedCatalog.Nodes['Widget_Message'].SetAttribute('type', 'System.String')
 [IO.File]::WriteAllBytes($typedPath, (Format-TranslationResource $typedCatalog.Document))
 Assert-Rejected $invalid 'not a string'
 
+# Reviewed technical names remain valid in cultures that normally require another script.
+$approvals = Get-TranslationApprovals $repositoryDirectory
+$codecKey = 'FFmpegOptionsWindow_Codec_H264_Intel_Quick_Sync'
+$codecName = 'H.264 Intel Quick Sync'
+Assert (-not (Get-TranslationProblem $codecName $codecName 'ShareX.ScreenCaptureLib' $codecKey 'ja-JP' $approvals)) 'Approved technical names should not require localized script'
+Assert ((Get-TranslationProblem $codecName $codecName 'ShareX.ScreenCaptureLib' 'Unapproved_Codec' 'ja-JP' $approvals) -match 'English-equivalent') 'Unapproved technical names must still fail'
+Assert ((Get-TranslationProblem $codecName 'Other English phrase' 'ShareX.ScreenCaptureLib' $codecKey 'ja-JP' $approvals) -match 'localized script') 'Approval must not exempt a different English-only value'
+
 # The shared serializer should produce exactly the established repository format.
 $realPath = Join-Path $repositoryDirectory 'ShareX.Tools/Localization/Strings.tr.resx'
 $formatted = Format-TranslationResource (Read-TranslationResource $realPath).Document

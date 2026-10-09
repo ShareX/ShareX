@@ -2245,6 +2245,9 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>वीडियो फ़ाइलें</value>
   </data>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>सभी फ़ाइलें (*.*)</value>
+  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
   </data>

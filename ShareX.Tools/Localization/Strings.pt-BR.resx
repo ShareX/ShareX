@@ -2245,6 +2245,9 @@ Caminho do arquivo: {0}</value>
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Arquivos de vídeo</value>
   </data>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>Todos os arquivos (*.*)</value>
+  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>

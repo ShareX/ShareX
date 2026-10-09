@@ -120,6 +120,7 @@ function Get-TranslationProblem(
         {
             return 'English-equivalent value needs a reviewed allowlist entry'
         }
+        return $null
     }
     $scripts = @{
         'ar-YE' = '[\u0600-\u06FF]'; 'fa-IR' = '[\u0600-\u06FF]'; 'he-IL' = '[\u0590-\u05FF]'

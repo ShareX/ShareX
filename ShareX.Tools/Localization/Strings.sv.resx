@@ -2245,6 +2245,9 @@ Filsökväg: {0}</value>
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Videofiler</value>
   </data>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>Alla filer (*.*)</value>
+  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Avbryt</value>
   </data>

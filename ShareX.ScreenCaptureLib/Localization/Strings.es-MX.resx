@@ -304,11 +304,23 @@
   <data name="FFmpegOptionsWindow_No_devices_found" xml:space="preserve">
     <value>No se encontraron dispositivos DirectShow. La captura del escritorio está lista.</value>
   </data>
+  <data name="FFmpegOptionsWindow_None" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
   <data name="FFmpegOptionsWindow_One_device_found" xml:space="preserve">
     <value>Se encontró {0} dispositivo DirectShow.</value>
   </data>
+  <data name="FFmpegOptionsWindow_Palette_diff" xml:space="preserve">
+    <value>Solo las regiones modificadas</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_full" xml:space="preserve">
+    <value>Fotograma completo</value>
+  </data>
   <data name="FFmpegOptionsWindow_Palette_mode" xml:space="preserve">
     <value>Modo de paleta</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_single" xml:space="preserve">
+    <value>Cada fotograma por separado</value>
   </data>
   <data name="FFmpegOptionsWindow_Path_to_ffmpeg" xml:space="preserve">
     <value>Ruta a ffmpeg.exe</value>
@@ -369,6 +381,12 @@
   </data>
   <data name="FFmpegOptionsWindow_Slow_presets_warning" xml:space="preserve">
     <value>Los preajustes lentos pueden provocar cuadros perdidos durante la grabación de pantalla. Se recomienda «fast» o uno más rápido.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_DDA" xml:space="preserve">
+    <value>Captura del escritorio (Desktop Duplication API)</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_GDI" xml:space="preserve">
+    <value>Captura del escritorio (GDI)</value>
   </data>
   <data name="FFmpegOptionsWindow_Sources" xml:space="preserve">
     <value>Fuentes</value>

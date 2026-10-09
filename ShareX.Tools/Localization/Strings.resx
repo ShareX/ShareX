@@ -2240,6 +2240,10 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Video files</value>
   </data>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>All files (*.*)</value>
+    <comment>All-files filter in the video and animated GIF trimmer file pickers.</comment>
+  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>

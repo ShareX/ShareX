@@ -73,7 +73,7 @@ public partial class VideoTrimmerWindow : Window
                 {
                     Patterns = ["*.mp4", "*.mkv", "*.webm", "*.mov", "*.avi", "*.m4v", "*.wmv", "*.ts", "*.mts", "*.m2ts"]
                 },
-                FilePickerFileTypes.All
+                new FilePickerFileType(Strings.VideoTrimmer_AllFiles) { Patterns = ["*"] }
             ]
         });
         return files.FirstOrDefault()?.TryGetLocalPath();

@@ -2245,6 +2245,9 @@ Dosya yolu: {0}</value>
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Video dosyaları</value>
   </data>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>Tüm dosyalar (*.*)</value>
+  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>İptal</value>
   </data>

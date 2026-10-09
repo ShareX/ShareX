@@ -304,11 +304,27 @@
   <data name="FFmpegOptionsWindow_No_devices_found" xml:space="preserve">
     <value>No DirectShow devices found. Desktop capture is ready.</value>
   </data>
+  <data name="FFmpegOptionsWindow_None" xml:space="preserve">
+    <value>None</value>
+    <comment>Choice for no audio/video capture source or no GIF dithering.</comment>
+  </data>
   <data name="FFmpegOptionsWindow_One_device_found" xml:space="preserve">
     <value>{0} DirectShow device found.</value>
   </data>
+  <data name="FFmpegOptionsWindow_Palette_diff" xml:space="preserve">
+    <value>Changed regions only</value>
+    <comment>GIF palette statistics mode: analyze only regions that differ from the previous frame (FFmpeg stats_mode=diff).</comment>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_full" xml:space="preserve">
+    <value>Full frame</value>
+    <comment>GIF palette statistics mode: analyze the entire frame (FFmpeg stats_mode=full).</comment>
+  </data>
   <data name="FFmpegOptionsWindow_Palette_mode" xml:space="preserve">
     <value>Palette mode</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Palette_single" xml:space="preserve">
+    <value>Each frame separately</value>
+    <comment>GIF palette statistics mode: create a new histogram for each frame (FFmpeg stats_mode=single).</comment>
   </data>
   <data name="FFmpegOptionsWindow_Path_to_ffmpeg" xml:space="preserve">
     <value>Path to ffmpeg.exe</value>
@@ -369,6 +385,14 @@
   </data>
   <data name="FFmpegOptionsWindow_Slow_presets_warning" xml:space="preserve">
     <value>Slow presets can cause dropped frames during screen recording. Fast or faster is recommended.</value>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_DDA" xml:space="preserve">
+    <value>Desktop capture (Desktop Duplication API)</value>
+    <comment>Desktop capture using the Windows Desktop Duplication API. Preserve the API name; translate the surrounding label.</comment>
+  </data>
+  <data name="FFmpegOptionsWindow_Source_GDI" xml:space="preserve">
+    <value>Desktop capture (GDI)</value>
+    <comment>Desktop capture using the Windows Graphics Device Interface. Keep GDI unchanged.</comment>
   </data>
   <data name="FFmpegOptionsWindow_Sources" xml:space="preserve">
     <value>Sources</value>

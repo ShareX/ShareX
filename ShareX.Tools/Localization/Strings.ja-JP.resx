@@ -2239,6 +2239,9 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>動画ファイル</value>
   </data>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>すべてのファイル (*.*)</value>
+  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>キャンセル</value>
   </data>

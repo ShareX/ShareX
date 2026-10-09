@@ -91,7 +91,12 @@ public partial class FFmpegOptionsWindow : Window
             Localization.Strings.FFmpegOptionsWindow_Preset_very_slow,
             Localization.Strings.FFmpegOptionsWindow_Preset_placebo
         };
-        GifStatsModeComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegPaletteGenStatsMode>();
+        GifStatsModeComboBox.ItemsSource = new[]
+        {
+            Localization.Strings.FFmpegOptionsWindow_Palette_full,
+            Localization.Strings.FFmpegOptionsWindow_Palette_diff,
+            Localization.Strings.FFmpegOptionsWindow_Palette_single
+        };
         NvencPresetComboBox.ItemsSource = new[]
         {
             Localization.Strings.FFmpegOptionsWindow_NVENC_fastest_lowest_quality,
@@ -109,7 +114,8 @@ public partial class FFmpegOptionsWindow : Window
             Localization.Strings.FFmpegOptionsWindow_NVENC_ultra_low_latency,
             Localization.Strings.FFmpegOptionsWindow_NVENC_lossless
         };
-        GifDitherComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegPaletteUseDither>();
+        GifDitherComboBox.ItemsSource = Enum.GetValues<FFmpegPaletteUseDither>()
+            .Select(dither => dither == FFmpegPaletteUseDither.none ? Localization.Strings.FFmpegOptionsWindow_None : dither.ToString()).ToArray();
         AmfUsageComboBox.ItemsSource = new[]
         {
             Localization.Strings.FFmpegOptionsWindow_AMF_generic_transcoding,
@@ -380,18 +386,19 @@ public partial class FFmpegOptionsWindow : Window
             return;
         }
 
+        FFmpegCaptureDevice noSource = new(FFmpegCaptureDevice.None.Value, Localization.Strings.FFmpegOptionsWindow_None);
         List<FFmpegCaptureDevice> videoSources =
         [
-            FFmpegCaptureDevice.None,
-            FFmpegCaptureDevice.GDIGrab
+            noSource,
+            new(FFmpegCaptureDevice.GDIGrab.Value, Localization.Strings.FFmpegOptionsWindow_Source_GDI)
         ];
 
         if (Helpers.IsWindows10OrGreater())
         {
-            videoSources.Add(FFmpegCaptureDevice.DDAGrab);
+            videoSources.Add(new(FFmpegCaptureDevice.DDAGrab.Value, Localization.Strings.FFmpegOptionsWindow_Source_DDA));
         }
 
-        List<FFmpegCaptureDevice> audioSources = [FFmpegCaptureDevice.None];
+        List<FFmpegCaptureDevice> audioSources = [noSource];
 
         if (devices != null)
         {

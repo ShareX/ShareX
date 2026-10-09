@@ -509,5 +509,23 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string FFmpegOptionsWindow_Codec_video_encoding {
             get { return ResourceManager.GetString("FFmpegOptionsWindow_Codec_video_encoding", resourceCulture); }
         }
+        public static string FFmpegOptionsWindow_Palette_full {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Palette_full", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Palette_diff {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Palette_diff", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Palette_single {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Palette_single", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_None {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_None", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Source_GDI {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Source_GDI", resourceCulture); }
+        }
+        public static string FFmpegOptionsWindow_Source_DDA {
+            get { return ResourceManager.GetString("FFmpegOptionsWindow_Source_DDA", resourceCulture); }
+        }
     }
 }
