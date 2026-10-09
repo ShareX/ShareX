@@ -29,7 +29,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
-
 namespace ShareX.HelpersLib;
 
 // Builds a frame-local adaptive palette from a bounded 5-bit RGB histogram. Palette index 255 is

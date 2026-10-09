@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// SPDX-License-Identifier: GPL-3.0-or-later
 namespace ShareX.ScreenRecordingLib.Native;
 
 /// <summary>Owns exactly one native COM reference. Native API types never escape the library.</summary>

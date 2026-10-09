@@ -79,7 +79,6 @@ namespace ShareX.UploadersLib.Localization
 
         public static string BrowserProtocol_sftp => ResourceManager.GetString("BrowserProtocol_sftp", resourceCulture) ?? string.Empty;
 
-
         public static string Common_API_key_is_missing => ResourceManager.GetString("Common_API_key_is_missing", resourceCulture) ?? string.Empty;
 
         public static string Common_Error => ResourceManager.GetString("Common_Error", resourceCulture) ?? string.Empty;
@@ -677,7 +676,6 @@ namespace ShareX.UploadersLib.Localization
         public static string ImgurThumbnailType_Small_Square => ResourceManager.GetString("ImgurThumbnailType_Small_Square", resourceCulture) ?? string.Empty;
 
         public static string ImgurThumbnailType_Small_Thumbnail => ResourceManager.GetString("ImgurThumbnailType_Small_Thumbnail", resourceCulture) ?? string.Empty;
-
 
         public static string Lambda_Upload_failed_check_API_key => ResourceManager.GetString("Lambda_Upload_failed_check_API_key", resourceCulture) ?? string.Empty;
 

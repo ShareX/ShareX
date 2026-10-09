@@ -28,7 +28,6 @@ using SkiaSharp;
 using System.ComponentModel;
 using System.Drawing;
 
-
 namespace ShareX.ImageEffectsLib
 {
     [Description("Image")]

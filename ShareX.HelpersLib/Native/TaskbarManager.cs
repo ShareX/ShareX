@@ -187,7 +187,6 @@ namespace ShareX.HelpersLib
             SetProgressValue(MainWindowHandle, currentValue, maximumValue);
         }
 
-
         private static void SetProgressState(IntPtr hwnd, TaskbarProgressBarStatus state)
         {
             if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)

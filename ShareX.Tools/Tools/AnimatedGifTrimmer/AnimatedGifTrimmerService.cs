@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.Tools.Localization;
 using SkiaSharp;
 
-
 namespace ShareX.Tools;
 
 /// <summary>A GIF's cut points are frame boundaries; all times are stored as GIF centiseconds.</summary>

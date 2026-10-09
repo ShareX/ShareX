@@ -5931,7 +5931,6 @@ namespace ShareX.Tools.Localization {
             }
         }
 
-
         /// <summary>
         ///   Select a video with a known, finite duration.
         /// </summary>
@@ -6058,7 +6057,6 @@ namespace ShareX.Tools.Localization {
             }
         }
 
-
         /// <summary>
         ///   Set start here
         /// </summary>
@@ -6085,8 +6083,6 @@ namespace ShareX.Tools.Localization {
                 return ResourceManager.GetString("VideoTrimmer_Reset", resourceCulture);
             }
         }
-
-
 
         /// <summary>
         ///   Video timeline and trim selection

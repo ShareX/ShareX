@@ -1451,7 +1451,6 @@ namespace ShareX
         private static SKBitmap CopyBitmapForEditor(Bitmap bitmap) => bitmap.Copy();
         private static SKBitmap CopyBitmap(SKBitmap bitmap) => bitmap.Copy();
 
-
         private static void CopyImageOnUiThread(Bitmap bmp)
         {
             InvokeOnUiThread(() => ClipboardHelpers.CopyImage(bmp));

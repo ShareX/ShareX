@@ -77,7 +77,6 @@ public sealed class GaussianBlurImageEffect : ImageEffectBase
             blurCanvas.DrawBitmap(expanded, 0, 0, blurPaint);
         }
 
-
         SKBitmap result = new SKBitmap(source.Width, source.Height, source.ColorType, source.AlphaType);
         using (SKCanvas resultCanvas = new SKCanvas(result))
         {

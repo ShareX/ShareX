@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// SPDX-License-Identifier: GPL-3.0-or-later
 using ShareX.ScreenRecordingLib.Audio;
 using ShareX.ScreenRecordingLib.Encoding;
 using ShareX.ScreenRecordingLib.Native;

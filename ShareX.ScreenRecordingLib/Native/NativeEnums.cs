@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// SPDX-License-Identifier: GPL-3.0-or-later
 namespace ShareX.ScreenRecordingLib.Native;
 
 internal enum COINIT : uint { COINIT_MULTITHREADED = 0 }

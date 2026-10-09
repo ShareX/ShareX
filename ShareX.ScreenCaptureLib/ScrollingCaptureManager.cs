@@ -328,8 +328,6 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-
-
             bool bestGuess = false;
 
             if (matchCount == 0 && bestMatchCount > 0)
@@ -358,7 +356,6 @@ namespace ShareX.ScreenCaptureLib
                     using (SKCanvas g = new(newResult))
                     using (SKPaint paint = new() { BlendMode = SKBlendMode.Src })
                     {
-
 
                         g.DrawImage(result, SKRect.Create(0, 0, result.Width, result.Height - ignoreBottomOffset),
                             SKRect.Create(0, 0, result.Width, result.Height - ignoreBottomOffset), paint);
