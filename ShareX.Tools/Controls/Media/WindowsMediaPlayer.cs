@@ -61,10 +61,12 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
     private bool _videoUpdateQueued;
     private double _volume = 1;
     private bool _isMuted;
+    private bool _leftButtonPressed;
 
     public event Action<double>? PositionChanged;
     public event Action<bool>? IsPlayingChanged;
     public event Action<Exception>? PlaybackFailed;
+    public event Action? VideoClicked;
 
     /// <summary>Includes a play request waiting for a pending seek or frame step to finish.</summary>
     public bool IsPlaybackRequested => _playWhenReady;
@@ -392,6 +394,30 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
 
     private nint WindowProcedure(nint window, uint message, nuint wParam, nint lParam, nuint id, nuint data)
     {
+        if (message == 0x0084 && VideoClicked != null && _duration > 0) return 1; // WM_NCHITTEST: HTCLIENT
+        if ((message is 0x0201 or 0x0203) && VideoClicked != null && _duration > 0) // WM_LBUTTONDOWN / WM_LBUTTONDBLCLK
+        {
+            _leftButtonPressed = true;
+            SetCapture(window);
+        }
+        else if (message == 0x0202 && _leftButtonPressed) // WM_LBUTTONUP
+        {
+            _leftButtonPressed = false;
+            if (GetCapture() == window) ReleaseCapture();
+            int x = (short)(lParam.ToInt64() & 0xFFFF);
+            int y = (short)((lParam.ToInt64() >> 16) & 0xFFFF);
+            if (GetClientRect(window, out RawRect bounds) && x >= 0 && y >= 0 && x < bounds.Right && y < bounds.Bottom)
+            {
+                int generation = _generation;
+                // Playback operations must run after the native input message has finished.
+                Dispatcher.UIThread.Post(() =>
+                {
+                    if (!_disposed && generation == _generation && _duration > 0) VideoClicked?.Invoke();
+                });
+            }
+        }
+        else if (message is 0x001F or 0x0215) _leftButtonPressed = false; // WM_CANCELMODE / WM_CAPTURECHANGED
+
         if (message == 0x0014) return 1; // WM_ERASEBKGND: WM_PAINT owns the background.
         if (message == 0x000F) // WM_PAINT
         {
@@ -416,6 +442,8 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
     private void CloseMedia()
     {
         _generation++;
+        _leftButtonPressed = false;
+        if (_window != 0 && GetCapture() == _window) ReleaseCapture();
         _positionTimer.Stop();
         _loadCompletion?.TrySetCanceled();
         _loadCompletion = null;
@@ -484,6 +512,13 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool GetClientRect(nint window, out RawRect rectangle);
+    [DllImport("user32.dll")]
+    private static extern nint SetCapture(nint window);
+    [DllImport("user32.dll")]
+    private static extern nint GetCapture();
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool ReleaseCapture();
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool InvalidateRect(nint window, nint rectangle, [MarshalAs(UnmanagedType.Bool)] bool erase);

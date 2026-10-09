@@ -43,6 +43,7 @@ namespace ShareX.Tools;
 public partial class VideoPlayerWindow : Window
 {
     private readonly VideoPlayerViewModel _viewModel;
+    private readonly WindowsMediaPlayer _player;
     private readonly Popup _controlsPopup;
     private readonly Border _controls;
     private readonly Border _viewport;
@@ -57,7 +58,9 @@ public partial class VideoPlayerWindow : Window
     public VideoPlayerWindow(string? inputFilePath)
     {
         AvaloniaXamlLoader.Load(this);
-        _viewModel = new(this.FindControl<WindowsMediaPlayer>("Player")!);
+        _player = this.FindControl<WindowsMediaPlayer>("Player")!;
+        _viewModel = new(_player);
+        _player.VideoClicked += OnVideoClicked;
         DataContext = _viewModel;
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         _controlsPopup = this.FindControl<Popup>("ControlsPopup")!;
@@ -106,9 +109,17 @@ public partial class VideoPlayerWindow : Window
             _closed = true;
             _controlsTimer.Stop();
             _controlsPopup.IsOpen = false;
+            _player.VideoClicked -= OnVideoClicked;
             _viewModel.PropertyChanged -= OnPlaybackPropertyChanged;
             _viewModel.Dispose();
         };
+    }
+
+    private void OnVideoClicked()
+    {
+        _keyboardNavigation = false;
+        _viewModel.TogglePlay();
+        ShowControls();
     }
 
     private void PositionControls()
