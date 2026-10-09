@@ -78,24 +78,24 @@
         </Style>
     </Window.Styles>
     <ThemeVariantScope>
-        <Border x:Name="BarBorder" Padding="2" CornerRadius="8"
+        <Border Padding="2" CornerRadius="8"
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1">
-            <StackPanel x:Name="BarContent" Spacing="6">
+            <StackPanel Spacing="6">
                 <Grid x:Name="Toolbar" ColumnDefinitions="Auto,*,Auto,Auto"/>
                 <TextBlock x:Name="ErrorMessage" IsVisible="False" TextWrapping="Wrap" MaxWidth="550"/>
                 <Border x:Name="SettingsPanel" IsVisible="False" Padding="12" CornerRadius="6"
                         Background="{DynamicResource ShareX.Brush.Background.Panel}"
                         BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1">
-                    <Grid RowDefinitions="Auto,*" RowSpacing="8">
+                    <StackPanel Spacing="8">
                         <Grid ColumnDefinitions="*,Auto">
                             <TextBlock x:Name="PanelTitle" FontWeight="SemiBold" VerticalAlignment="Center"/>
                             <Button x:Name="ClosePanelButton" Grid.Column="1" Classes="recorder-close"/>
                         </Grid>
-                        <ScrollViewer x:Name="PanelScroll" Grid.Row="1" HorizontalScrollBarVisibility="Disabled">
+                        <ScrollViewer x:Name="PanelScroll" HorizontalScrollBarVisibility="Disabled">
                             <ContentControl x:Name="PanelContent"/>
                         </ScrollViewer>
-                    </Grid>
+                    </StackPanel>
                 </Border>
             </StackPanel>
         </Border>

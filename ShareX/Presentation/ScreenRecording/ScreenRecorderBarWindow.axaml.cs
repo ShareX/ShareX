@@ -88,7 +88,6 @@ internal partial class ScreenRecorderBarWindow : Window
             Dispatcher.UIThread.Post(PositionNearRegion, DispatcherPriority.Loaded);
         };
         PositionChanged += (_, _) => Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
-        SizeChanged += (_, _) => Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
         Closed += (_, _) =>
         {
             _closed = true;
@@ -375,8 +374,6 @@ internal partial class ScreenRecorderBarWindow : Window
         _activePanel = id;
         PanelTitle.Text = title;
         PanelContent.Content = build();
-        // Apply the available space before the window grows to fit the panel.
-        ClampToScreen();
         SettingsPanel.IsVisible = true;
         Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
     }
@@ -393,13 +390,7 @@ internal partial class ScreenRecorderBarWindow : Window
     {
         ErrorMessage.Text = message;
         ErrorMessage.IsVisible = true;
-        Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
     }
-
-    private double BarHeight => BarBorder.Padding.Top + BarBorder.Padding.Bottom +
-        BarBorder.BorderThickness.Top + BarBorder.BorderThickness.Bottom +
-        Math.Max(Toolbar.Bounds.Height, Toolbar.DesiredSize.Height) +
-        (ErrorMessage.IsVisible ? BarContent.Spacing + ErrorMessage.DesiredSize.Height : 0);
 
     private void PositionNearRegion()
     {
@@ -409,7 +400,7 @@ internal partial class ScreenRecorderBarWindow : Window
         PixelRect work = screen.WorkingArea;
         double scaling = screen.Scaling;
         int width = (int)Math.Ceiling(Bounds.Width * scaling);
-        int height = (int)Math.Ceiling(BarHeight * scaling);
+        int height = (int)Math.Ceiling(Bounds.Height * scaling);
         int gap = (int)Math.Ceiling(8 * scaling);
         int top = RecordingRegion.Top - height - gap;
         // Regions at the screen's top edge keep the bar just inside that edge.
@@ -429,15 +420,12 @@ internal partial class ScreenRecorderBarWindow : Window
         PixelRect work = screen.WorkingArea;
         double scaling = screen.Scaling;
         MaxWidth = Math.Max(280, work.Width / scaling - 16);
+        PanelScroll.MaxHeight = Math.Max(100, work.Height / scaling - Toolbar.Bounds.Height - 110);
         int width = (int)Math.Ceiling(Bounds.Width * scaling);
-        // Clamp the bar itself, independently of the expanding settings panel.
-        int height = (int)Math.Ceiling(BarHeight * scaling);
+        int height = (int)Math.Ceiling(Bounds.Height * scaling);
         PixelPoint clamped = new(Math.Clamp(Position.X, work.X, Math.Max(work.X, work.Right - width)),
             Math.Clamp(Position.Y, work.Y, Math.Max(work.Y, work.Bottom - height)));
         if (clamped != Position) Position = clamped;
-        SettingsPanel.MaxHeight = Math.Max(0, (work.Bottom - Position.Y) / scaling - BarHeight - BarContent.Spacing - 8);
-        // Keep panels within the bar's width so opening one does not move it sideways.
-        if (Toolbar.DesiredSize.Width > 0) SettingsPanel.MaxWidth = Toolbar.DesiredSize.Width;
     }
 
     private Control SplitControl(string label, string icon, bool enabled, Action<bool> changed, Action open)
