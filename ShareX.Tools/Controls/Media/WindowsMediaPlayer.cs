@@ -302,13 +302,8 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         if (_engine == null || _window == 0 || !GetClientRect(_window, out RawRect rectangle)) return;
         int width = rectangle.Right, height = rectangle.Bottom;
         if (width <= 0 || height <= 0) return;
-        if (_videoAspectRatio > 0)
-        {
-            int videoWidth = Math.Min(width, Math.Max(1, (int)Math.Round(height * _videoAspectRatio)));
-            int videoHeight = Math.Min(height, Math.Max(1, (int)Math.Round(width / _videoAspectRatio)));
-            int left = (width - videoWidth) / 2, top = (height - videoHeight) / 2;
-            rectangle = new RawRect(left, top, left + videoWidth, top + videoHeight);
-        }
+        // Avalonia already fits the host to the video. Refitting the rounded HWND size can leave
+        // a one-pixel strip outside the destination rectangle after resizing or DPI changes.
         _engine.UpdateVideoStream(null, rectangle, new Vortice.Mathematics.ColorBgra(0, 0, 0, 255));
     }
 
