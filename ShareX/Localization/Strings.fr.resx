@@ -1836,7 +1836,7 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
     <value>URL de la miniature</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Découper un GIF animé</value>
+    <value>Découper un GIF animé...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Découper la vidéo...</value>

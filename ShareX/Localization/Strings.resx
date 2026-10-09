@@ -1836,7 +1836,7 @@ Please select a different hotkey or quit the conflicting application and reopen 
     <value>Thumbnail URL</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Trim animated GIF</value>
+    <value>Trim animated GIF...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Trim video...</value>

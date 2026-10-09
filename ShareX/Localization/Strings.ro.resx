@@ -1836,7 +1836,7 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
     <value>URL miniatură</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Decupează GIF animat</value>
+    <value>Decupează GIF animat...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Decupează videoclipul...</value>

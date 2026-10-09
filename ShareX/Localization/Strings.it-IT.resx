@@ -1836,7 +1836,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Miniatura URL</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Taglia GIF animata</value>
+    <value>Taglia GIF animata...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Taglia video...</value>

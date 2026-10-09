@@ -1836,7 +1836,7 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
     <value>URL da miniatura</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Aparar GIF animado</value>
+    <value>Aparar GIF animado...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Cortar vídeo...</value>

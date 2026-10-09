@@ -1836,7 +1836,7 @@
     <value>URL-адреса мініатюри</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Обрізати анімований GIF</value>
+    <value>Обрізати анімований GIF...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Обрізати відео...</value>

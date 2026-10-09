@@ -1836,7 +1836,7 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
     <value>Miniatyr-URL</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Trimma animerad GIF</value>
+    <value>Trimma animerad GIF...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Trimma video...</value>

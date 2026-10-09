@@ -1836,7 +1836,7 @@
     <value>缩略图网址</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>裁剪动态 GIF</value>
+    <value>裁剪动态 GIF...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>剪辑视频...</value>

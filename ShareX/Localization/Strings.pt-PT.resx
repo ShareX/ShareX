@@ -1836,7 +1836,7 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
     <value>Miniatura URL</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Cortar GIF animado</value>
+    <value>Cortar GIF animado...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Cortar vídeo...</value>

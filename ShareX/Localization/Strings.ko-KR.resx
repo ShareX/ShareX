@@ -1836,7 +1836,7 @@
     <value>썸네일 URL</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>애니메이션 GIF 자르기</value>
+    <value>애니메이션 GIF 자르기...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>동영상 자르기...</value>

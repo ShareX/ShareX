@@ -1836,7 +1836,7 @@
     <value>عنوان URL للصورة المصغرة</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>قص صورة GIF متحركة</value>
+    <value>قص صورة GIF متحركة...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>قص الفيديو...</value>

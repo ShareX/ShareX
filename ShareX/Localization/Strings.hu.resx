@@ -1836,7 +1836,7 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
     <value>Miniatűr URL</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Animált GIF vágása</value>
+    <value>Animált GIF vágása...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Videó vágása...</value>

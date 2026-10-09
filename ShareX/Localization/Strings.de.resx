@@ -1836,7 +1836,7 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
     <value>Thumbnail-URL</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Animiertes GIF zuschneiden</value>
+    <value>Animiertes GIF zuschneiden...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Video zuschneiden...</value>

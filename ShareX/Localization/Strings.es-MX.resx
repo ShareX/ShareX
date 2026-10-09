@@ -1836,7 +1836,7 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
     <value>URL de miniatura</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Recortar GIF animado</value>
+    <value>Recortar GIF animado...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Recortar video...</value>

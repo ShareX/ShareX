@@ -1836,7 +1836,7 @@
     <value>थंबनेल URL</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>एनिमेटेड GIF ट्रिम करें</value>
+    <value>एनिमेटेड GIF ट्रिम करें...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>वीडियो ट्रिम करें...</value>

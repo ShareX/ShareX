@@ -1836,7 +1836,7 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
     <value>URL thumbnail</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Pangkas GIF animasi</value>
+    <value>Pangkas GIF animasi...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Potong video...</value>

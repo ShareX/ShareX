@@ -1836,7 +1836,7 @@
     <value>Ссылка на миниатюру</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>Обрезать анимированный GIF</value>
+    <value>Обрезать анимированный GIF...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>Обрезать видео...</value>

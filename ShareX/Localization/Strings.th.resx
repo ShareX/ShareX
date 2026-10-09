@@ -1836,7 +1836,7 @@
     <value>URL ภาพขนาดย่อ</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>ตัด GIF แบบเคลื่อนไหว</value>
+    <value>ตัด GIF แบบเคลื่อนไหว...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>ตัดวิดีโอ...</value>
