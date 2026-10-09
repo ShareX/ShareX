@@ -1974,9 +1974,6 @@ Kérlek futtasd a ShareX-et adminisztrátori jogosultságokkal a személyes mapp
   <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
     <value>Kurzor</value>
   </data>
-  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
-    <value>A felvétel hibával leáll, ha nem érhető el hardveres videokódoló.</value>
-  </data>
   <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
     <value>Elrendezés előnézete</value>
   </data>
@@ -2007,29 +2004,29 @@ Kérlek futtasd a ShareX-et adminisztrátori jogosultságokkal a személyes mapp
   <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
     <value>{0} beállításai</value>
   </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>Indítási késleltetés</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1 másodperc</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2 másodperc</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3 másodperc</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4 másodperc</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5 másodperc</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Rendszerhang</value>
   </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>A felvételhez kiválasztott ablak már nem érhető el.</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
-    <value>Időzítő</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
-    <value>1 másodperc</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
-    <value>2 másodperc</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
-    <value>3 másodperc</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
-    <value>4 másodperc</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
-    <value>5 másodperc</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Felvételi hangerő (%)</value>

@@ -1974,9 +1974,6 @@ Kør ShareX som administrator for at ændre stien til den personlige mappe.</val
   <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
     <value>Markør</value>
   </data>
-  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
-    <value>Optagelsen stopper med en fejl, hvis en hardwarevideoencoder ikke er tilgængelig.</value>
-  </data>
   <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
     <value>Forhåndsvisning af layout</value>
   </data>
@@ -2007,29 +2004,29 @@ Kør ShareX som administrator for at ændre stien til den personlige mappe.</val
   <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
     <value>Indstillinger for {0}</value>
   </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>Startforsinkelse</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1 sekund</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2 sekunder</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3 sekunder</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4 sekunder</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5 sekunder</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Systemlyd</value>
   </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Det valgte optagelsesvindue er ikke længere tilgængeligt.</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
-    <value>Timer</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
-    <value>1 sekund</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
-    <value>2 sekunder</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
-    <value>3 sekunder</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
-    <value>4 sekunder</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
-    <value>5 sekunder</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Optagelseslydstyrke (%)</value>

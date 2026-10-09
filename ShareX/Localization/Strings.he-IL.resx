@@ -1974,9 +1974,6 @@
   <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
     <value>סמן</value>
   </data>
-  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
-    <value>ההקלטה נעצרת עם שגיאה אם אין מקודד וידאו בחומרה זמין.</value>
-  </data>
   <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
     <value>תצוגה מקדימה של הפריסה</value>
   </data>
@@ -2007,29 +2004,29 @@
   <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
     <value>אפשרויות של {0}</value>
   </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>השהיית התחלה</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1 שנייה</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2 שניות</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3 שניות</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4 שניות</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5 שניות</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>שמע המערכת</value>
   </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>החלון שנבחר להקלטה אינו זמין עוד.</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
-    <value>טיימר</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
-    <value>1 שנייה</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
-    <value>2 שניות</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
-    <value>3 שניות</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
-    <value>4 שניות</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
-    <value>5 שניות</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>עוצמת הקול בהקלטה (%)</value>

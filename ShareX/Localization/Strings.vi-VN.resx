@@ -1974,9 +1974,6 @@ Vui lòng chạy ShareX dưới quyền administrator để thay đổi thư m�
   <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
     <value>Con trỏ</value>
   </data>
-  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
-    <value>Quá trình ghi dừng với lỗi nếu không có bộ mã hóa video phần cứng.</value>
-  </data>
   <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
     <value>Xem trước bố cục</value>
   </data>
@@ -2007,29 +2004,29 @@ Vui lòng chạy ShareX dưới quyền administrator để thay đổi thư m�
   <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
     <value>Tùy chọn {0}</value>
   </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>Độ trễ khi bắt đầu</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1 giây</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2 giây</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3 giây</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4 giây</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5 giây</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Âm thanh hệ thống</value>
   </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Cửa sổ đã chọn để ghi không còn khả dụng.</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
-    <value>Hẹn giờ</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
-    <value>1 giây</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
-    <value>2 giây</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
-    <value>3 giây</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
-    <value>4 giây</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
-    <value>5 giây</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Âm lượng bản ghi (%)</value>

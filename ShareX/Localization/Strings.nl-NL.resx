@@ -1974,9 +1974,6 @@ Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
   <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
     <value>Cursor</value>
   </data>
-  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
-    <value>De opname stopt met een fout als er geen hardwarevideo-encoder beschikbaar is.</value>
-  </data>
   <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
     <value>Voorbeeld van indeling</value>
   </data>
@@ -2007,29 +2004,29 @@ Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
   <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
     <value>Opties voor {0}</value>
   </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>Startvertraging</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1 seconde</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2 seconden</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3 seconden</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4 seconden</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5 seconden</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Systeemaudio</value>
   </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Het geselecteerde opnamevenster is niet meer beschikbaar.</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
-    <value>Timer</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
-    <value>1 seconde</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
-    <value>2 seconden</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
-    <value>3 seconden</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
-    <value>4 seconden</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
-    <value>5 seconden</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Opnamevolume (%)</value>

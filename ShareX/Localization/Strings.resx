@@ -3093,32 +3093,29 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Bar</value>
   </data>
-  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
-    <value>Recording stops with an error if a hardware video encoder is unavailable.</value>
-  </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>The selected recording window is no longer available.</value>
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Refresh devices</value>
   </data>
-  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
-    <value>Timer</value>
-    <comment>Recorder bar button that turns the delay before recording on or off, rather than the elapsed recording timer.</comment>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>Start delay</value>
+    <comment>Recorder bar button that enables the countdown before recording.</comment>
   </data>
-  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
     <value>1 second</value>
   </data>
-  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
     <value>2 seconds</value>
   </data>
-  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
     <value>3 seconds</value>
   </data>
-  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
     <value>4 seconds</value>
   </data>
-  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
     <value>5 seconds</value>
   </data>
 </root>

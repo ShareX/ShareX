@@ -1974,9 +1974,6 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
   <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
     <value>Cursor</value>
   </data>
-  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
-    <value>Die Aufnahme wird mit einem Fehler beendet, wenn kein Hardware-Videoencoder verfügbar ist.</value>
-  </data>
   <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
     <value>Layoutvorschau</value>
   </data>
@@ -2007,29 +2004,29 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
   <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
     <value>{0}-Optionen</value>
   </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>Startverzögerung</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1 Sekunde</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2 Sekunden</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3 Sekunden</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4 Sekunden</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5 Sekunden</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Systemaudio</value>
   </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Das ausgewählte Aufnahmefenster ist nicht mehr verfügbar.</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
-    <value>Timer</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
-    <value>1 Sekunde</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
-    <value>2 Sekunden</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
-    <value>3 Sekunden</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
-    <value>4 Sekunden</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
-    <value>5 Sekunden</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Aufnahmelautstärke (%)</value>

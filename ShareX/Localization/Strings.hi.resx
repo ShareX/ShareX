@@ -1974,9 +1974,6 @@
   <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
     <value>कर्सर</value>
   </data>
-  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
-    <value>हार्डवेयर वीडियो एनकोडर उपलब्ध न होने पर रिकॉर्डिंग त्रुटि के साथ रुक जाती है।</value>
-  </data>
   <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
     <value>लेआउट का पूर्वावलोकन</value>
   </data>
@@ -2007,29 +2004,29 @@
   <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
     <value>{0} विकल्प</value>
   </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>प्रारंभ में विलंब</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1 सेकंड</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2 सेकंड</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3 सेकंड</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4 सेकंड</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5 सेकंड</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>सिस्टम ऑडियो</value>
   </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>रिकॉर्डिंग के लिए चुनी गई विंडो अब उपलब्ध नहीं है।</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
-    <value>टाइमर</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
-    <value>1 सेकंड</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
-    <value>2 सेकंड</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
-    <value>3 सेकंड</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
-    <value>4 सेकंड</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
-    <value>5 सेकंड</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>रिकॉर्डिंग की आवाज़ (%)</value>

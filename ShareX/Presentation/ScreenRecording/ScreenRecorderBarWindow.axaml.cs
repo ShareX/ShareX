@@ -28,8 +28,7 @@ internal partial class ScreenRecorderBarWindow : Window
     private readonly List<Source> _sources = [];
     private readonly TaskCompletionSource<bool> _completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private readonly Button _recordButton;
-    private ToggleButton _timerToggle = null!;
-    private NumericUpDown? _startDelayControl;
+    private ToggleButton _startDelayToggle = null!;
     private ScrollingCaptureRegionWindow? _regionWindow;
     private string? _activePanel;
     private bool _closed;
@@ -150,13 +149,13 @@ internal partial class ScreenRecorderBarWindow : Window
         if (_recordButton.Parent is Panel oldParent) oldParent.Children.Remove(_recordButton);
         _recordButton.Content = ButtonContent(Strings.ScreenRecorderBar_Record, LucideIcons.circle, toolbar: true);
         actions.Children.Add(_recordButton);
-        StackPanel timer = (StackPanel)SplitControl(Strings.ScreenRecorderBar_Timer, LucideIcons.timer,
+        StackPanel startDelay = (StackPanel)SplitControl(Strings.ScreenRecorderBar_StartDelay, LucideIcons.timer,
             Capture.ScreenRecordStartDelayEnabled,
-            value => { Capture.ScreenRecordStartDelayEnabled = value; UpdateTimer(); },
-            ShowTimerMenu);
-        _timerToggle = (ToggleButton)timer.Children[0];
-        UpdateTimer();
-        actions.Children.Add(timer);
+            value => { Capture.ScreenRecordStartDelayEnabled = value; UpdateStartDelay(); },
+            ShowStartDelayMenu);
+        _startDelayToggle = (ToggleButton)startDelay.Children[0];
+        UpdateStartDelay();
+        actions.Children.Add(startDelay);
         Toolbar.Children.Add(actions);
         StackPanel inputs = new() { Orientation = Orientation.Horizontal };
         foreach (Source source in _sources)
@@ -178,7 +177,7 @@ internal partial class ScreenRecorderBarWindow : Window
         };
         Grid.SetColumn(sources, 1);
         Toolbar.Children.Add(sources);
-        Button options = ActionButton(Strings.ScreenRecorderBar_Options, LucideIcons.settings_2,
+        Button options = ActionButton(Strings.ScreenRecorderBar_Options, LucideIcons.settings,
             () => ShowPanel("options", Strings.ScreenRecorderBar_Options, BuildOptionsPanel), toolbar: true);
         Grid.SetColumn(options, 2);
         Toolbar.Children.Add(options);
@@ -192,7 +191,7 @@ internal partial class ScreenRecorderBarWindow : Window
         Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
     }
 
-    private void ShowTimerMenu(Control target)
+    private void ShowStartDelayMenu(Control target)
     {
         ClosePanel();
         List<MenuItem> items = [];
@@ -201,7 +200,7 @@ internal partial class ScreenRecorderBarWindow : Window
             int delay = seconds;
             MenuItem item = new()
             {
-                Header = TimerDelayLabel(delay), ToggleType = MenuItemToggleType.Radio,
+                Header = StartDelayLabel(delay), ToggleType = MenuItemToggleType.Radio,
                 IsChecked = Capture.ScreenRecordStartDelay == delay
             };
             item.Click += (_, _) => SetStartDelay(delay);
@@ -214,27 +213,25 @@ internal partial class ScreenRecorderBarWindow : Window
     private void SetStartDelay(float delay)
     {
         Capture.ScreenRecordStartDelay = delay;
-        UpdateTimer();
+        UpdateStartDelay();
     }
 
-    private void UpdateTimer()
+    private void UpdateStartDelay()
     {
         bool enabled = Capture.ScreenRecordStartDelayEnabled;
-        _timerToggle.IsChecked = enabled;
-        _timerToggle.Content = ButtonContent(Strings.ScreenRecorderBar_Timer, LucideIcons.timer, enabled, toolbar: true);
-        ToolTip.SetTip(_timerToggle, TwoLineToolTip(Strings.ScreenRecorderBar_Timer,
-            enabled ? TimerDelayLabel(Capture.ScreenRecordStartDelay) : Strings.ScreenRecorderBar_Off));
-        if (_startDelayControl != null && _startDelayControl.Value != (decimal)Capture.ScreenRecordStartDelay)
-            _startDelayControl.Value = (decimal)Capture.ScreenRecordStartDelay;
+        _startDelayToggle.IsChecked = enabled;
+        _startDelayToggle.Content = ButtonContent(Strings.ScreenRecorderBar_StartDelay, LucideIcons.timer, enabled, toolbar: true);
+        ToolTip.SetTip(_startDelayToggle, TwoLineToolTip(Strings.ScreenRecorderBar_StartDelay,
+            enabled ? StartDelayLabel(Capture.ScreenRecordStartDelay) : Strings.ScreenRecorderBar_Off));
     }
 
-    private static string TimerDelayLabel(float delay) => delay switch
+    private static string StartDelayLabel(float delay) => delay switch
     {
-        1 => Strings.ScreenRecorderBar_Timer_1Second,
-        2 => Strings.ScreenRecorderBar_Timer_2Seconds,
-        3 => Strings.ScreenRecorderBar_Timer_3Seconds,
-        4 => Strings.ScreenRecorderBar_Timer_4Seconds,
-        5 => Strings.ScreenRecorderBar_Timer_5Seconds,
+        1 => Strings.ScreenRecorderBar_StartDelay_1Second,
+        2 => Strings.ScreenRecorderBar_StartDelay_2Seconds,
+        3 => Strings.ScreenRecorderBar_StartDelay_3Seconds,
+        4 => Strings.ScreenRecorderBar_StartDelay_4Seconds,
+        5 => Strings.ScreenRecorderBar_StartDelay_5Seconds,
         _ => $"{delay:0.##} {Strings.AutoCaptureWindow_Seconds}"
     };
 
@@ -387,18 +384,11 @@ internal partial class ScreenRecorderBarWindow : Window
             Number(Capture.ScreenRecordFPS, 1, 120, 1, value => Capture.ScreenRecordFPS = (int)value)));
         recording.Children.Add(Row(Strings.TaskSettingsWindow_NativeRecorderBitrate,
             Number(Capture.ScreenRecordVideoBitrate, 100, 200000, 100, value => Capture.ScreenRecordVideoBitrate = (int)value)));
-        _startDelayControl = Number((decimal)Capture.ScreenRecordStartDelay, 0, 3600, 0.1m, value => SetStartDelay((float)value));
-        recording.Children.Add(Row(Strings.TaskSettingsWindow_StartDelaySeconds, _startDelayControl));
         NumericUpDown duration = Number((decimal)Capture.ScreenRecordDuration, 0.1m, 86400, 0.1m, value => Capture.ScreenRecordDuration = (float)value);
         duration.IsEnabled = Capture.ScreenRecordFixedDuration;
         recording.Children.Add(Check(Strings.TaskSettingsWindow_UseFixedDuration, Capture.ScreenRecordFixedDuration,
             value => { Capture.ScreenRecordFixedDuration = value; duration.IsEnabled = value; }));
         recording.Children.Add(Row(Strings.TaskSettingsWindow_DurationSeconds, duration));
-        StackPanel hardware = new() { Spacing = 8 };
-        hardware.Children.Add(Check(Strings.TaskSettingsWindow_NativeRecorderHardware, Capture.ScreenRecordRequireHardwareEncoder,
-            value => Capture.ScreenRecordRequireHardwareEncoder = value));
-        hardware.Children.Add(Hint(Strings.ScreenRecorderBar_HardwareHint));
-        recording.Children.Add(new Expander { Header = Strings.ApplicationSettingsWindow_Advanced, Content = hardware });
         StackPanel bar = new() { Spacing = 10, Margin = new Thickness(0, 8) };
         bar.Children.Add(Check(Strings.ScreenRecorderBar_ShowBeforeRecording, Capture.ScreenRecordShowBar, value => Capture.ScreenRecordShowBar = value));
         bar.Children.Add(Check(Strings.TaskSettingsWindow_ShowRecordingTimer, Capture.ScreenRecordShowTimer, value => Capture.ScreenRecordShowTimer = value));
@@ -427,7 +417,6 @@ internal partial class ScreenRecorderBarWindow : Window
     {
         if (_activePanel == id && SettingsPanel.IsVisible) { ClosePanel(); return; }
         _activePanel = id;
-        _startDelayControl = null;
         PanelTitle.Text = title;
         PanelContent.Content = build();
         SettingsPanel.IsVisible = true;
@@ -438,7 +427,6 @@ internal partial class ScreenRecorderBarWindow : Window
     {
         SettingsPanel.IsVisible = false;
         PanelContent.Content = null;
-        _startDelayControl = null;
         _activePanel = null;
         Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
     }

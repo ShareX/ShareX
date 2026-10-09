@@ -1974,9 +1974,6 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
   <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
     <value>İmleç</value>
   </data>
-  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
-    <value>Donanım video kodlayıcısı kullanılamıyorsa kayıt hatayla durur.</value>
-  </data>
   <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
     <value>Yerleşim önizlemesi</value>
   </data>
@@ -2007,29 +2004,29 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
   <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
     <value>{0} seçenekleri</value>
   </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>Başlangıç gecikmesi</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1 saniye</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2 saniye</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3 saniye</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4 saniye</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5 saniye</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Sistem sesi</value>
   </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Kayıt için seçilen pencere artık kullanılamıyor.</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
-    <value>Zamanlayıcı</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
-    <value>1 saniye</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
-    <value>2 saniye</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
-    <value>3 saniye</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
-    <value>4 saniye</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
-    <value>5 saniye</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Kayıt ses düzeyi (%)</value>

@@ -1974,9 +1974,6 @@ Proszę uruchomić ShareX jako administrator, aby zmienić ścieżkę folderu os
   <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
     <value>Kursor</value>
   </data>
-  <data name="ScreenRecorderBar_HardwareHint" xml:space="preserve">
-    <value>Nagrywanie kończy się błędem, jeśli sprzętowy koder wideo jest niedostępny.</value>
-  </data>
   <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
     <value>Podgląd układu</value>
   </data>
@@ -2007,29 +2004,29 @@ Proszę uruchomić ShareX jako administrator, aby zmienić ścieżkę folderu os
   <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
     <value>Opcje: {0}</value>
   </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>Opóźnienie rozpoczęcia</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1 sekunda</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2 sekundy</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3 sekundy</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4 sekundy</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5 sekund</value>
+  </data>
   <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
     <value>Dźwięk systemowy</value>
   </data>
   <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
     <value>Wybrane okno do nagrywania nie jest już dostępne.</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer" xml:space="preserve">
-    <value>Minutnik</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_1Second" xml:space="preserve">
-    <value>1 sekunda</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_2Seconds" xml:space="preserve">
-    <value>2 sekundy</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_3Seconds" xml:space="preserve">
-    <value>3 sekundy</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_4Seconds" xml:space="preserve">
-    <value>4 sekundy</value>
-  </data>
-  <data name="ScreenRecorderBar_Timer_5Seconds" xml:space="preserve">
-    <value>5 sekund</value>
   </data>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Głośność nagrania (%)</value>
