@@ -2819,6 +2819,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Use fixed duration</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>Use start delay</value>
+  </data>
   <data name="TaskSettingsWindow_UseJPEGIfImageSizeIsBiggerThanTheSpecifiedSize" xml:space="preserve">
     <value>Use JPEG if image size is bigger than the specified size</value>
   </data>

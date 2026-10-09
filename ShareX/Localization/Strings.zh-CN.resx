@@ -2978,6 +2978,9 @@
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>使用方形放大镜</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>使用开始延迟</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — 包含子文件夹：{2}</value>
   </data>

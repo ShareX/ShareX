@@ -2978,6 +2978,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>Kare büyüteç kullan</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>Başlangıç gecikmesini kullan</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — Alt klasörleri dahil et: {2}</value>
   </data>

@@ -2978,6 +2978,9 @@
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>वर्गाकार आवर्धक उपयोग करें</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>प्रारंभ में विलंब का उपयोग करें</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} - {1} - उपफ़ोल्डर शामिल करें: {2}</value>
   </data>

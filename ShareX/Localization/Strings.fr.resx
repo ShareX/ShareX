@@ -2978,6 +2978,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>Utiliser une loupe carrée</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>Utiliser un délai avant le démarrage</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — Inclure les sous-dossiers : {2}</value>
   </data>

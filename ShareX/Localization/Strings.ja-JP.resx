@@ -2978,6 +2978,9 @@
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>正方形の拡大鏡を使用</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>開始遅延を使用する</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — サブフォルダーを含める: {2}</value>
   </data>

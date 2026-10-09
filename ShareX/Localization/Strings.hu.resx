@@ -2978,6 +2978,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>Négyzetes nagyító használata</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>Indítási késleltetés használata</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — Almappákkal együtt: {2}</value>
   </data>

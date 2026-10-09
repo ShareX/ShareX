@@ -2978,6 +2978,9 @@
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>ใช้ สี่เหลี่ยมจัตุรัส แว่นขยาย</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>ใช้การหน่วงเวลาก่อนเริ่ม</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — รวมโฟลเดอร์ย่อย: {2}</value>
   </data>

@@ -2978,6 +2978,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>Dùng kính lúp hình vuông</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>Sử dụng độ trễ khi bắt đầu</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — Bao gồm thư mục con: {2}</value>
   </data>

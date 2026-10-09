@@ -2978,6 +2978,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>Użyj kwadratowej lupy</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>Użyj opóźnienia rozpoczęcia</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — Uwzględnij podfoldery: {2}</value>
   </data>

@@ -2978,6 +2978,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>Gunakan kaca pembesar persegi</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>Gunakan penundaan mulai</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — Sertakan subfolder: {2}</value>
   </data>

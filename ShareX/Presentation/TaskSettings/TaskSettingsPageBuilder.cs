@@ -580,7 +580,9 @@ internal sealed class TaskSettingsPageBuilder
         NumericUpDown duration = Number(() => (decimal)capture.ScreenRecordDuration, value => capture.ScreenRecordDuration = (float)value, 0, 86400, 0.1m);
         BindEnabled(duration, fixedDuration);
 
+        BoundValue<bool> startDelayEnabled = new(capture.ScreenRecordStartDelayEnabled, value => capture.ScreenRecordStartDelayEnabled = value);
         NumericUpDown startDelay = Number(() => (decimal)capture.ScreenRecordStartDelay, value => capture.ScreenRecordStartDelay = (float)value, 0, 3600, 0.1m);
+        BindEnabled(startDelay, startDelayEnabled);
 
         return Page("capture-screen-recorder", Strings.TaskSettingsWindow_ScreenRecorder, LucideIcons.video,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_NativeRecorder,
@@ -595,7 +597,7 @@ internal sealed class TaskSettingsPageBuilder
                 Button(Strings.TaskSettingsWindow_MouseHighlighterOptions, () => _window.NavigateToPage("tools-mouse-highlighter")),
                 Check(Strings.TaskSettingsWindow_ShowRecordingTimer, () => capture.ScreenRecordShowTimer, value => capture.ScreenRecordShowTimer = value),
                 Check(Strings.TaskSettingsWindow_ShowRecordingButtonLabels, () => capture.ScreenRecordShowButtonLabels, value => capture.ScreenRecordShowButtonLabels = value),
-                Row(Strings.TaskSettingsWindow_StartDelaySeconds, startDelay),
+                Check(Strings.TaskSettingsWindow_UseStartDelay, startDelayEnabled), Row(Strings.TaskSettingsWindow_StartDelaySeconds, startDelay),
                 Check(Strings.TaskSettingsWindow_UseFixedDuration, fixedDuration), Row(Strings.TaskSettingsWindow_DurationSeconds, duration)),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_EncodingAndCapture,
                 twoPass,

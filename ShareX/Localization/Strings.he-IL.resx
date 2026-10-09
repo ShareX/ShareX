@@ -2978,6 +2978,9 @@
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>שימוש בזכוכית מגדלת מרובעת</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>שימוש בהשהיית התחלה</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — הכללת תיקיות משנה: {2}</value>
   </data>

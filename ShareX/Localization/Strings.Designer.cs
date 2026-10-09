@@ -3174,6 +3174,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_StartDelaySeconds", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_UseStartDelay {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseStartDelay", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_UseFixedDuration {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_UseFixedDuration", resourceCulture);

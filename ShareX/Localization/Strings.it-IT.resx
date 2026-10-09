@@ -2978,6 +2978,9 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>Usa lente quadrata</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>Usa un ritardo di avvio</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — Includi sottocartelle: {2}</value>
   </data>

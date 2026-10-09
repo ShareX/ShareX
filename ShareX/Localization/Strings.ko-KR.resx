@@ -2978,6 +2978,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>정사각형 돋보기 사용</value>
   </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>시작 지연 사용</value>
+  </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — 하위 폴더 포함: {2}</value>
   </data>
