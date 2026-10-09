@@ -507,27 +507,6 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>Terjadi kesalahan yang tidak terduga.</value>
   </data>
-  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
-    <value>Salin</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
-    <value>Potong</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
-    <value>Hapus</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
-    <value>Tempel</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>Ulangi</value>
-  </data>
-  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>Pilih Semua</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
-    <value>Urungkan</value>
-  </data>
   <data name="FFmpegCLIManager_Error_title" xml:space="preserve">
     <value>Kesalahan FFmpeg</value>
   </data>
@@ -572,12 +551,6 @@ Apakah Anda tetap ingin menjalankannya?</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Rona: {0:0.0}°, Kejenuhan: {1:0.0}%, Kecerahan: {2:0.0}%</value>
-  </data>
-  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
-    <value>Pilih file</value>
-  </data>
-  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
-    <value>Pilih folder</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Tidak dapat membuat direktori.</value>

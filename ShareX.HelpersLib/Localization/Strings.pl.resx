@@ -507,27 +507,6 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>Wystąpił nieoczekiwany błąd.</value>
   </data>
-  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
-    <value>Kopiuj</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
-    <value>Wytnij</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
-    <value>Usuń</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
-    <value>Wklej</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>Ponów</value>
-  </data>
-  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>Wybierz wszystko</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
-    <value>Cofnij</value>
-  </data>
   <data name="FFmpegCLIManager_Error_title" xml:space="preserve">
     <value>Błąd FFmpeg</value>
   </data>
@@ -572,12 +551,6 @@ Czy mimo to chcesz go uruchomić?</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Barwa: {0:0.0}°, Nasycenie: {1:0.0}%, Jasność: {2:0.0}%</value>
-  </data>
-  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
-    <value>Wybierz plik</value>
-  </data>
-  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
-    <value>Wybierz folder</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Nie udało się utworzyć katalogu.</value>

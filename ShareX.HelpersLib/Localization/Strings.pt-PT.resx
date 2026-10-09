@@ -507,27 +507,6 @@ Ainda assim, pretende executá-lo?</value>
   <data name="ErrorWindow_Unexpected_error" xml:space="preserve">
     <value>Ocorreu um erro inesperado.</value>
   </data>
-  <data name="Extensions_AddContextMenu_Copy" xml:space="preserve">
-    <value>Copiar</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
-    <value>Recortar</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
-    <value>Apagar</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
-    <value>Colar</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
-    <value>Refazer</value>
-  </data>
-  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
-    <value>Seleccionar tudo</value>
-  </data>
-  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
-    <value>Refazer</value>
-  </data>
   <data name="FFmpegCLIManager_Error_title" xml:space="preserve">
     <value>Erro do FFmpeg</value>
   </data>
@@ -572,12 +551,6 @@ Ainda assim, pretende executá-lo?</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Matiz: {0:0.0}°, Saturação: {1:0.0}%, Brilho: {2:0.0}%</value>
-  </data>
-  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
-    <value>Escolher ficheiro</value>
-  </data>
-  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
-    <value>Escolher caminho</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Não foi possível criar o caminho da pasta.</value>
