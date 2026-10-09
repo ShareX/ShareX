@@ -31,6 +31,7 @@ using SharpGen.Runtime;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using Vortice;
+using Vortice.DXGI;
 using Vortice.MediaFoundation;
 
 namespace ShareX.Tools;
@@ -38,23 +39,25 @@ namespace ShareX.Tools;
 public sealed record VideoPlaybackInfo(double Duration, int Width, int Height);
 
 /// <summary>
-/// A Windows Media Foundation player. Windows decodes, presents and synchronizes video and audio
-/// in a child HWND; playback never copies frames through managed memory or starts another process.
+/// A Windows Media Foundation player. Windows decodes and synchronizes video and audio.
+/// GPU frame presentation in a child HWND is controlled here so pause stops the picture immediately.
+/// Playback never copies frames through managed memory or starts another process.
 /// All public operations and events run on the Avalonia UI thread.
 /// </summary>
 public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
 {
     private readonly DispatcherTimer _positionTimer;
+    private readonly DispatcherTimer _videoTimer;
     private readonly WindowSubclass _windowProcedure;
     private TaskCompletionSource<nint> _windowReady = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private TaskCompletionSource<VideoPlaybackInfo>? _loadCompletion;
     private IMFMediaEngine? _mediaEngine;
     private IMFMediaEngineEx? _engine;
+    private WindowsVideoPresenter? _presenter;
     private nint _window;
     private int _generation;
     private double _duration;
     private double _videoAspectRatio;
-    private PixelSize _videoRenderSize;
     private double? _pendingSeek;
     private int _pendingSteps;
     private bool _seeking, _stepping, _playWhenReady, _mediaFoundationStarted, _disposed;
@@ -100,6 +103,8 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         _windowProcedure = WindowProcedure;
         _positionTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(33) };
         _positionTimer.Tick += (_, _) => PublishPosition();
+        _videoTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(1000.0 / 60) };
+        _videoTimer.Tick += (_, _) => TryOperation(() => PresentVideo(false));
     }
 
     protected override Size MeasureOverride(Size availableSize)
@@ -161,8 +166,10 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
             MediaFactory.MFStartup(true).CheckError();
             _mediaFoundationStarted = true;
             _loadCompletion = new(TaskCreationOptions.RunContinuationsAsynchronously);
-            using IMFAttributes attributes = MediaFactory.MFCreateAttributes(1);
-            attributes.Set(MediaEngineAttributeKeys.PlaybackHwnd.Guid, (ulong)window).CheckError();
+            _presenter = new WindowsVideoPresenter(window);
+            using IMFAttributes attributes = MediaFactory.MFCreateAttributes(2);
+            attributes.Set(MediaEngineAttributeKeys.DxgiManager.Guid, _presenter.DeviceManager).CheckError();
+            attributes.Set(MediaEngineAttributeKeys.VideoOutputFormat.Guid, (uint)Format.B8G8R8A8_UNorm).CheckError();
             using IMFMediaEngineClassFactory factory = new();
             _mediaEngine = factory.CreateInstance(MediaEngineCreateFlags.None, attributes,
                 (mediaEvent, parameter1, parameter2) => OnMediaEvent(generation, mediaEvent, parameter1, parameter2));
@@ -172,7 +179,6 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
             _engine.Preload = MediaEnginePreload.Automatic;
             _engine.Volume = _volume;
             _engine.Muted = _isMuted;
-            UpdateVideoRectangle();
             // The Windows URL resolver also accepts local paths, without URI escaping of '#' or Unicode names.
             _engine.SetSource(Path.GetFullPath(path));
             _engine.Load();
@@ -216,6 +222,8 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         Dispatcher.UIThread.VerifyAccess();
         _playWhenReady = false;
         _positionTimer.Stop();
+        // Stop presenting before the engine's asynchronous pause drains its playback queues.
+        if (!_seeking && !_stepping) _videoTimer.Stop();
         if (_engine != null) TryOperation(() => _engine.Pause());
         IsPlayingChanged?.Invoke(false);
     }
@@ -238,6 +246,7 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
             {
                 _pendingSeek = null;
                 _seeking = true;
+                _videoTimer.Start();
                 // Normal seeks decode to the requested time; Approximate seeks only choose a keyframe.
                 _engine.SetCurrentTimeEx(target, MediaEngineSeekMode.Normal);
             }
@@ -246,10 +255,12 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
                 bool forward = _pendingSteps > 0;
                 _pendingSteps += forward ? -1 : 1;
                 _stepping = true;
+                _videoTimer.Start();
                 _engine.FrameStep(forward);
             }
             else if (_playWhenReady)
             {
+                _videoTimer.Start();
                 _engine.Play();
             }
         });
@@ -287,7 +298,6 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
                 _engine.GetVideoAspectRatio(out int numerator, out int denominator);
                 _videoAspectRatio = numerator > 0 && denominator > 0 ? (double)numerator / denominator : 0;
                 InvalidateMeasure();
-                UpdateVideoRectangle();
                 break;
             case MediaEngineEvent.CanPlay:
                 double duration = _engine!.Duration;
@@ -295,19 +305,22 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
                     throw new InvalidOperationException(Localization.Strings.VideoTrimmer_InvalidVideo);
                 _duration = duration;
                 _engine.GetNativeVideoSize(out int width, out int height);
-                UpdateVideoRectangle();
                 QueueVideoUpdate();
                 _loadCompletion?.TrySetResult(new(duration, width, height));
                 PublishPosition();
                 break;
             case MediaEngineEvent.Seeked:
                 _seeking = false;
+                PresentVideo(true);
                 RunPendingOperation();
+                if (!_playWhenReady && !_seeking && !_stepping) _videoTimer.Stop();
                 PublishPosition();
                 break;
             case MediaEngineEvent.FrameStepCompleted:
                 _stepping = false;
+                PresentVideo(true);
                 RunPendingOperation();
+                if (!_playWhenReady && !_seeking && !_stepping) _videoTimer.Stop();
                 PublishPosition();
                 break;
             case MediaEngineEvent.Playing:
@@ -315,6 +328,7 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
                 if (_playWhenReady && !_engine!.IsPaused)
                 {
                     _positionTimer.Start();
+                    _videoTimer.Start();
                     IsPlayingChanged?.Invoke(true);
                 }
                 break;
@@ -324,6 +338,7 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
                 {
                     if (_engine.IsEnded && !_seeking && _pendingSeek == null) _playWhenReady = false;
                     _positionTimer.Stop();
+                    if (!_playWhenReady && !_seeking && !_stepping) _videoTimer.Stop();
                     IsPlayingChanged?.Invoke(false);
                     PublishPosition();
                 }
@@ -358,16 +373,10 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         }
     }
 
-    private void UpdateVideoRectangle()
+    private void PresentVideo(bool repaint)
     {
-        if (_engine == null || _window == 0 || !GetClientRect(_window, out RawRect rectangle)) return;
-        int width = rectangle.Right, height = rectangle.Bottom;
-        if (width <= 0 || height <= 0) return;
-        if (_videoRenderSize.Width == width && _videoRenderSize.Height == height) return;
-        // Avalonia already fits the host to the video. Refitting the rounded HWND size can leave
-        // a one-pixel strip outside the destination rectangle after resizing or DPI changes.
-        _engine.UpdateVideoStream(null, rectangle, new Vortice.Mathematics.ColorBgra(0, 0, 0, 255));
-        _videoRenderSize = new PixelSize(width, height);
+        if (_engine == null || _presenter == null || _duration <= 0 || _window == 0 || !GetClientRect(_window, out RawRect rectangle)) return;
+        _presenter.Present(_engine, rectangle, repaint);
     }
 
     private void QueueVideoUpdate()
@@ -375,18 +384,13 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         if (_videoUpdateQueued || _engine == null || _duration <= 0 || _disposed) return;
         _videoUpdateQueued = true;
         // Avalonia resizes the child before moving/resizing its native holder. Wait for both to finish,
-        // and avoid reentering Media Foundation from messages sent while it updates the video window.
+        // and avoid reentering DXGI or Media Foundation from their own window messages.
         Dispatcher.UIThread.Post(() =>
         {
             try
             {
                 if (_disposed || _engine == null || _duration <= 0) return;
-                TryOperation(() =>
-                {
-                    UpdateVideoRectangle();
-                    // Null parameters repaint the latest frame even when the size is unchanged or paused.
-                    _engine!.UpdateVideoStream(null, null, null);
-                });
+                TryOperation(() => PresentVideo(true));
             }
             finally { _videoUpdateQueued = false; }
         }, DispatcherPriority.Background);
@@ -445,13 +449,13 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         _leftButtonPressed = false;
         if (_window != 0 && GetCapture() == _window) ReleaseCapture();
         _positionTimer.Stop();
+        _videoTimer.Stop();
         _loadCompletion?.TrySetCanceled();
         _loadCompletion = null;
         _pendingSeek = null;
         _pendingSteps = 0;
         _duration = 0;
         _videoAspectRatio = 0;
-        _videoRenderSize = default;
         InvalidateMeasure();
         _seeking = _stepping = _playWhenReady = false;
         if (_engine != null)
@@ -462,6 +466,8 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         }
         _mediaEngine?.Dispose();
         _mediaEngine = null;
+        _presenter?.Dispose();
+        _presenter = null;
         if (_mediaFoundationStarted)
         {
             MediaFactory.MFShutdown();

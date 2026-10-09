@@ -15,6 +15,7 @@
     <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="Microsoft.ML.OnnxRuntime.DirectML" />
     <PackageReference Include="SkiaSharp" />
+    <PackageReference Include="Vortice.Direct3D11" />
     <PackageReference Include="Vortice.DXGI" VersionOverride="3.8.3" />
     <PackageReference Include="Vortice.MediaFoundation" />
   </ItemGroup>
