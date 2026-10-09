@@ -401,7 +401,7 @@ namespace ShareX
 
         public FFmpegOptions FFmpegOptions = new FFmpegOptions();
         public bool ScreenRecordUseNative = true;
-        public bool ScreenRecordShowBar = false;
+        public bool ScreenRecordShowBar = true;
         public bool ScreenRecordSystemAudio = true;
         public string ScreenRecordSystemAudioDeviceId = "";
         public float ScreenRecordSystemAudioGain = 1f;
@@ -415,15 +415,15 @@ namespace ShareX
         public ShareX.ScreenRecordingLib.CameraOverlayPosition ScreenRecordCameraPosition = ShareX.ScreenRecordingLib.CameraOverlayPosition.BottomRight;
         public ShareX.ScreenRecordingLib.CameraOverlayShape ScreenRecordCameraShape = ShareX.ScreenRecordingLib.CameraOverlayShape.Rectangle;
         public int ScreenRecordCameraWidthPercent = 20;
-        public int ScreenRecordCameraMargin = 16;
+        public int ScreenRecordCameraMargin = 20;
         public bool ScreenRecordRequireHardwareEncoder = true;
-        public int ScreenRecordVideoBitrate = 8000; // kbps
+        public int ScreenRecordVideoBitrate = 10000; // kbps
         public int ScreenRecordFPS = 30;
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;
         public bool ScreenRecordMouseHighlighter = false;
         public bool ScreenRecordShowTimer = true;
-        public bool ScreenRecordShowButtonLabels = true;
+        public bool ScreenRecordShowButtonLabels = false;
         public bool ScreenRecordAutoStart = true;
         public float ScreenRecordStartDelay = 0f;
         public bool ScreenRecordFixedDuration = false;
