@@ -1962,9 +1962,6 @@ Jalankan ShareX sebagai administrator untuk mengubah jalur folder pribadi.</valu
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Pemilih warna layar</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Area</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Bilah</value>
   </data>
@@ -2003,12 +2000,6 @@ Jalankan ShareX sebagai administrator untuk mengubah jalur folder pribadi.</valu
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Segarkan perangkat</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Layar {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Pilih area lain...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Tampilkan bilah sebelum merekam</value>

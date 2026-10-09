@@ -1962,9 +1962,6 @@ Vă rugăm să rulați ShareX ca administrator pentru a schimba calea folderului
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Selector de culori de pe ecran</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Zonă</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Bară</value>
   </data>
@@ -2003,12 +2000,6 @@ Vă rugăm să rulați ShareX ca administrator pentru a schimba calea folderului
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Reîmprospătați dispozitivele</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Ecranul {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Selectează altă zonă...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Afișează bara înainte de înregistrare</value>

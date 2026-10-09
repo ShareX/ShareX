@@ -1962,9 +1962,6 @@ Vui lòng chạy ShareX dưới quyền administrator để thay đổi thư m�
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Bộ chọn màu màn hình</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Vùng</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Thanh</value>
   </data>
@@ -2003,12 +2000,6 @@ Vui lòng chạy ShareX dưới quyền administrator để thay đổi thư m�
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Làm mới thiết bị</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Màn hình {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Chọn vùng khác...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Hiện thanh ghi trước khi ghi</value>

@@ -1962,9 +1962,6 @@
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>屏幕拾色器</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>区域</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>工具栏</value>
   </data>
@@ -2003,12 +2000,6 @@
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>刷新设备</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>屏幕 {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>选择其他区域...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>录制前显示录制栏</value>

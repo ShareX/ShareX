@@ -1962,9 +1962,6 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Bildschirm-Farbwähler</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Bereich</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Leiste</value>
   </data>
@@ -2003,12 +2000,6 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Geräte aktualisieren</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Bildschirm {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Anderen Bereich auswählen...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Aufnahmeleiste vor der Aufnahme anzeigen</value>

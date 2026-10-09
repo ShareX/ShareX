@@ -1962,9 +1962,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Selector de colores de pantalla</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Área</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Barra</value>
   </data>
@@ -2003,12 +2000,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Actualizar dispositivos</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Pantalla {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Seleccionar otra área...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Mostrar la barra antes de grabar</value>

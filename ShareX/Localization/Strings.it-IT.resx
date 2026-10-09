@@ -1962,9 +1962,6 @@ Esegui ShareX come amministratore per cambiare il percorso della cartella person
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Schermo colore picker</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Area</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Barra</value>
   </data>
@@ -2003,12 +2000,6 @@ Esegui ShareX come amministratore per cambiare il percorso della cartella person
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Aggiorna dispositivi</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Schermo {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Seleziona un’altra area...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Mostra la barra prima della registrazione</value>

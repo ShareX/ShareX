@@ -33,7 +33,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_MouseHighlighterOptions => ResourceManager.GetString("TaskSettingsWindow_MouseHighlighterOptions", resourceCulture);
 
         public static string ScreenRecorderBar_ShowBeforeRecording => ResourceManager.GetString("ScreenRecorderBar_ShowBeforeRecording", resourceCulture);
-        public static string ScreenRecorderBar_Area => ResourceManager.GetString("ScreenRecorderBar_Area", resourceCulture);
         public static string ScreenRecorderBar_SystemAudio => ResourceManager.GetString("ScreenRecorderBar_SystemAudio", resourceCulture);
         public static string ScreenRecorderBar_Microphone => ResourceManager.GetString("ScreenRecorderBar_Microphone", resourceCulture);
         public static string ScreenRecorderBar_Camera => ResourceManager.GetString("ScreenRecorderBar_Camera", resourceCulture);
@@ -49,9 +48,7 @@ namespace ShareX.Localization {
         public static string ScreenRecorderBar_Capture => ResourceManager.GetString("ScreenRecorderBar_Capture", resourceCulture);
         public static string ScreenRecorderBar_Bar => ResourceManager.GetString("ScreenRecorderBar_Bar", resourceCulture);
         public static string ScreenRecorderBar_HardwareHint => ResourceManager.GetString("ScreenRecorderBar_HardwareHint", resourceCulture);
-        public static string ScreenRecorderBar_SelectArea => ResourceManager.GetString("ScreenRecorderBar_SelectArea", resourceCulture);
         public static string ScreenRecorderBar_TargetUnavailable => ResourceManager.GetString("ScreenRecorderBar_TargetUnavailable", resourceCulture);
-        public static string ScreenRecorderBar_Screen => ResourceManager.GetString("ScreenRecorderBar_Screen", resourceCulture);
 
         private static global::System.Resources.ResourceManager resourceMan;
         public static string ScreenRecorderBar_RefreshDevices => ResourceManager.GetString("ScreenRecorderBar_RefreshDevices", resourceCulture);

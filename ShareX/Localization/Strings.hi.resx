@@ -1962,9 +1962,6 @@
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>स्क्रीन रंग चयनकर्ता</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>क्षेत्र</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>बार</value>
   </data>
@@ -2003,12 +2000,6 @@
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>उपकरण ताज़ा करें</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>स्क्रीन {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>दूसरा क्षेत्र चुनें...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>रिकॉर्डिंग से पहले रिकॉर्डर बार दिखाएँ</value>

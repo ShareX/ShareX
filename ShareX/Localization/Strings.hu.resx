@@ -1962,9 +1962,6 @@ Kérlek futtasd a ShareX-et adminisztrátori jogosultságokkal a személyes mapp
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Képernyő szín picker</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Terület</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Sáv</value>
   </data>
@@ -2003,12 +2000,6 @@ Kérlek futtasd a ShareX-et adminisztrátori jogosultságokkal a személyes mapp
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Eszközök frissítése</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Képernyő {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Másik terület kiválasztása...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Felvételi sáv megjelenítése a felvétel előtt</value>

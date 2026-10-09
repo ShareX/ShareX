@@ -1962,9 +1962,6 @@ Proszę uruchomić ShareX jako administrator, aby zmienić ścieżkę folderu os
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Selektor kolorów ekranu</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Obszar</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Pasek</value>
   </data>
@@ -2003,12 +2000,6 @@ Proszę uruchomić ShareX jako administrator, aby zmienić ścieżkę folderu os
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Odśwież urządzenia</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Ekran {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Wybierz inny obszar...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Pokaż pasek przed nagrywaniem</value>

@@ -211,11 +211,6 @@ namespace ShareX
                     }
                     captureRectangle = configurationBar.RecordingRegion;
                     captureWindow = configurationBar.CaptureWindow;
-                    if (configurationBar.TargetChanged)
-                    {
-                        metadata = new TaskMetadata();
-                        metadata.UpdateInfo(configurationBar.TargetInfo);
-                    }
                     fps = taskSettings.CaptureSettings.ScreenRecordFPS;
                 }
                 catch (Exception ex)

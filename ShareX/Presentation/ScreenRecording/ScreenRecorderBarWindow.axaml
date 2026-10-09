@@ -82,7 +82,7 @@
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1">
             <StackPanel Spacing="6">
-                <Grid x:Name="Toolbar" ColumnDefinitions="Auto,*,Auto"/>
+                <Grid x:Name="Toolbar" ColumnDefinitions="Auto,*,Auto,Auto"/>
                 <TextBlock x:Name="ErrorMessage" IsVisible="False" TextWrapping="Wrap" MaxWidth="550"/>
                 <Border x:Name="SettingsPanel" IsVisible="False" Padding="12" CornerRadius="6"
                         Background="{DynamicResource ShareX.Brush.Background.Panel}"

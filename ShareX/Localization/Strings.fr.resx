@@ -1962,9 +1962,6 @@ Veuillez exécuter ShareX en tant qu'administrateur pour changer le chemin du do
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Sélecteur de couleurs de l'écran</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Zone</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Barre</value>
   </data>
@@ -2003,12 +2000,6 @@ Veuillez exécuter ShareX en tant qu'administrateur pour changer le chemin du do
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Actualiser les périphériques</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Écran {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Sélectionner une autre zone...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Afficher la barre avant l’enregistrement</value>

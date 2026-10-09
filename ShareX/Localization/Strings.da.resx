@@ -1962,9 +1962,6 @@ Kør ShareX som administrator for at ændre stien til den personlige mappe.</val
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Skærmfarvevælger</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Område</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Værktøjslinje</value>
   </data>
@@ -2003,12 +2000,6 @@ Kør ShareX som administrator for at ændre stien til den personlige mappe.</val
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Opdater enheder</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Skærm {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Vælg et andet område...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Vis optagelseslinjen før optagelse</value>

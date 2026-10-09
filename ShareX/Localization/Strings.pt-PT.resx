@@ -1962,9 +1962,6 @@ Por favor execute o ShareX como administrador para mudar o caminho da pasta.</va
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Seletor de cor do ecrã</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Área</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Barra</value>
   </data>
@@ -2003,12 +2000,6 @@ Por favor execute o ShareX como administrador para mudar o caminho da pasta.</va
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Atualizar dispositivos</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Ecrã {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Selecionar outra área...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Mostrar a barra antes de gravar</value>

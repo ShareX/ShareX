@@ -1962,9 +1962,6 @@ Kör ShareX som administratör för att ändra sökvägen till den personliga ma
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Skärmfärgväljare</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Område</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Verktygsfält</value>
   </data>
@@ -2003,12 +2000,6 @@ Kör ShareX som administratör för att ändra sökvägen till den personliga ma
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Uppdatera enheter</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Skärm {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Välj ett annat område...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Visa inspelningsfältet före inspelning</value>

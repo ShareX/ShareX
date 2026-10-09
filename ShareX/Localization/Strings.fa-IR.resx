@@ -1962,9 +1962,6 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>صفحه رنگ picker</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>ناحیه</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>نوار</value>
   </data>
@@ -2003,12 +2000,6 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>تازه‌سازی دستگاه‌ها</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>نمایشگر {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>انتخاب ناحیه‌ای دیگر...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>نمایش نوار ضبط پیش از ضبط</value>

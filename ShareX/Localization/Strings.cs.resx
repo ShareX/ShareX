@@ -1962,9 +1962,6 @@ Chcete-li změnit cestu k osobní složce, spusťte ShareX jako správce.</value
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Výběr barvy z obrazovky</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Oblast</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Panel</value>
   </data>
@@ -2003,12 +2000,6 @@ Chcete-li změnit cestu k osobní složce, spusťte ShareX jako správce.</value
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Obnovit zařízení</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Obrazovka {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Vybrat jinou oblast...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Zobrazit panel před nahráváním</value>

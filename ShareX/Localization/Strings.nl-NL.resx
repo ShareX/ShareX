@@ -1962,9 +1962,6 @@ Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>Scherm kleur picker</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>Gebied</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>Balk</value>
   </data>
@@ -2003,12 +2000,6 @@ Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>Apparaten vernieuwen</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>Scherm {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>Ander gebied selecteren...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>Opnamebalk tonen vóór het opnemen</value>

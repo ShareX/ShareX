@@ -30,13 +30,10 @@ internal partial class ScreenRecorderBarWindow : Window
     private readonly Button _recordButton;
     private ScrollingCaptureRegionWindow? _regionWindow;
     private string? _activePanel;
-    private bool _selectingArea;
     private bool _closed;
 
     public DrawingRectangle RecordingRegion { get; private set; }
-    public IntPtr CaptureWindow { get; private set; }
-    public WindowInfo? TargetInfo { get; private set; }
-    public bool TargetChanged { get; private set; }
+    public IntPtr CaptureWindow { get; }
     private TaskSettingsCapture Capture => _draft.Capture;
 
     public ScreenRecorderBarWindow(TaskSettings settings, DrawingRectangle region, IntPtr window)
@@ -110,7 +107,7 @@ internal partial class ScreenRecorderBarWindow : Window
 
     public void RequestRecord()
     {
-        if (_closed || _selectingArea) return;
+        if (_closed) return;
         foreach (Source source in _sources) RefreshSource(source);
         if (!ValidateSources()) return;
         if (CaptureWindow != IntPtr.Zero)
@@ -150,17 +147,7 @@ internal partial class ScreenRecorderBarWindow : Window
         // Rebuild toolbar content when its labels change, keeping the active settings panel open.
         if (_recordButton.Parent is Panel oldParent) oldParent.Children.Remove(_recordButton);
         _recordButton.Content = ButtonContent(Strings.ScreenRecorderBar_Record, LucideIcons.circle, toolbar: true);
-        StackPanel recordingActions = new() { Orientation = Orientation.Horizontal, Margin = new Thickness(3, 2) };
-        _recordButton.Margin = new Thickness(0);
-        _recordButton.CornerRadius = new(4, 0, 0, 4);
-        Button cancel = ActionButton(Strings.TaskSettingsWindow_Cancel, LucideIcons.x, Cancel, toolbar: true);
-        cancel.Margin = new Thickness(0);
-        cancel.CornerRadius = new(0, 4, 4, 0);
-        recordingActions.Children.Add(_recordButton);
-        recordingActions.Children.Add(cancel);
-        actions.Children.Add(recordingActions);
-        actions.Children.Add(ActionButton(Strings.ScreenRecorderBar_Area, LucideIcons.scan,
-            () => ShowPanel("area", Strings.ScreenRecorderBar_Area, BuildAreaPanel), toolbar: true));
+        actions.Children.Add(_recordButton);
         Toolbar.Children.Add(actions);
         StackPanel inputs = new() { Orientation = Orientation.Horizontal };
         foreach (Source source in _sources)
@@ -186,6 +173,12 @@ internal partial class ScreenRecorderBarWindow : Window
             () => ShowPanel("options", Strings.ScreenRecorderBar_Options, BuildOptionsPanel), toolbar: true);
         Grid.SetColumn(options, 2);
         Toolbar.Children.Add(options);
+        Button cancel = ActionButton(Strings.TaskSettingsWindow_Cancel, LucideIcons.x, Cancel, iconOnly: true);
+        cancel.Classes.Remove("recorder-setup");
+        cancel.Classes.Add("recorder-close");
+        cancel.VerticalAlignment = VerticalAlignment.Center;
+        Grid.SetColumn(cancel, 3);
+        Toolbar.Children.Add(cancel);
         ValidateSources();
         Dispatcher.UIThread.Post(ClampToScreen, DispatcherPriority.Loaded);
     }
@@ -241,7 +234,7 @@ internal partial class ScreenRecorderBarWindow : Window
         Source? missing = _sources.FirstOrDefault(source => source.Enabled() && !source.Available);
         ErrorMessage.IsVisible = missing != null;
         ErrorMessage.Text = missing?.UnavailableLabel;
-        _recordButton.IsEnabled = missing == null && !_selectingArea;
+        _recordButton.IsEnabled = missing == null;
         return missing == null;
     }
 
@@ -359,76 +352,9 @@ internal partial class ScreenRecorderBarWindow : Window
         return Tabs((Strings.TaskSettingsWindow_Recording, recording), (Strings.ScreenRecorderBar_Bar, bar));
     }
 
-    private Control BuildAreaPanel()
-    {
-        StackPanel panel = new() { Spacing = 8 };
-        panel.Children.Add(ActionButton(Strings.ScreenRecorderBar_SelectArea, LucideIcons.scan, async () => await SelectAreaAsync()));
-        int index = 0;
-        foreach (DesktopScreen screen in DesktopScreen.AllScreens)
-        {
-            string title = string.Format(Strings.ScreenRecorderBar_Screen, ++index);
-            panel.Children.Add(ActionButton($"{title} ({screen.Bounds.Width} × {screen.Bounds.Height})", LucideIcons.monitor,
-                () => SelectTarget(screen.Bounds, IntPtr.Zero, null)));
-        }
-        List<WindowInfo> windows = [];
-        NativeMethods.EnumWindows((handle, _) =>
-        {
-            WindowInfo info = new(handle);
-            if (handle != TryGetPlatformHandle()?.Handle && handle != _regionWindow?.TryGetPlatformHandle()?.Handle &&
-                info.IsVisible && !info.IsMinimized && !info.IsCloaked && !string.IsNullOrWhiteSpace(info.Text) && info.Rectangle.IsValid()) windows.Add(info);
-            return true;
-        }, IntPtr.Zero);
-        if (windows.Count > 0)
-        {
-            panel.Children.Add(Row(Strings.MainMenuBuilder_Window, Choice(windows.ToArray(), null,
-                window => SelectTarget(window.Rectangle, window.Handle, window), window => window.Text)));
-        }
-        return panel;
-    }
-
-    private async Task SelectAreaAsync()
-    {
-        _selectingArea = true;
-        _recordButton.IsEnabled = false;
-        ClosePanel();
-        _regionWindow?.Hide();
-        Hide();
-        try
-        {
-            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(Capture.RegionCaptureOptions);
-            if (!_closed && selection != null) SelectTarget(selection.Value.Rectangle, IntPtr.Zero, selection.Value.WindowInfo);
-        }
-        catch (Exception ex) { DebugHelper.WriteException(ex); }
-        finally
-        {
-            _selectingArea = false;
-            if (!_closed)
-            {
-                Show();
-                ShowRegion();
-                ValidateSources();
-            }
-        }
-    }
-
-    private void SelectTarget(DrawingRectangle rectangle, IntPtr window, WindowInfo? info)
-    {
-        rectangle = CaptureHelpers.EvenRectangleSize(DrawingRectangle.Intersect(rectangle, CaptureHelpers.GetScreenBounds()));
-        if (!rectangle.IsValid()) return;
-        RecordingRegion = rectangle;
-        CaptureWindow = window;
-        TargetInfo = info;
-        TargetChanged = true;
-        _regionWindow?.Close();
-        _regionWindow = null;
-        if (IsVisible) ShowRegion();
-        ClosePanel();
-        Dispatcher.UIThread.Post(PositionNearRegion, DispatcherPriority.Loaded);
-    }
-
     private void ShowRegion()
     {
-        if (_closed || _selectingArea) return;
+        if (_closed) return;
         _regionWindow ??= new ScrollingCaptureRegionWindow(RecordingRegion) { Title = Title };
         _regionWindow.FindControl<RecordingRegionBorder>("RegionBorder")!.AccentBrush = Brushes.Goldenrod;
         _regionWindow.Show();

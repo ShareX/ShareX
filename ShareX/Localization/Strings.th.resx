@@ -1962,9 +1962,6 @@
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>หน้าจอ ตัวเลือกสี</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>พื้นที่</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>แถบ</value>
   </data>
@@ -2003,12 +2000,6 @@
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>รีเฟรช อุปกรณ์</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>หน้าจอ {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>เลือกพื้นที่อื่น...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>แสดงแถบบันทึกก่อนเริ่มบันทึก</value>

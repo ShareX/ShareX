@@ -1962,9 +1962,6 @@
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>螢幕檢色器</value>
   </data>
-  <data name="ScreenRecorderBar_Area" xml:space="preserve">
-    <value>區域</value>
-  </data>
   <data name="ScreenRecorderBar_Bar" xml:space="preserve">
     <value>工具列</value>
   </data>
@@ -2003,12 +2000,6 @@
   </data>
   <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
     <value>重新整理裝置</value>
-  </data>
-  <data name="ScreenRecorderBar_Screen" xml:space="preserve">
-    <value>螢幕 {0}</value>
-  </data>
-  <data name="ScreenRecorderBar_SelectArea" xml:space="preserve">
-    <value>選擇其他區域...</value>
   </data>
   <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
     <value>錄製前顯示錄製列</value>
