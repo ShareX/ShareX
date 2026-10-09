@@ -303,7 +303,8 @@ namespace ShareX
                         }
                         else
                         {
-                            int delay = (int)(taskSettings.CaptureSettings.ScreenRecordStartDelay * 1000);
+                            int delay = taskSettings.CaptureSettings.ScreenRecordStartDelayEnabled
+                                ? (int)(taskSettings.CaptureSettings.ScreenRecordStartDelay * 1000) : 0;
 
                             if (delay > 0)
                             {
@@ -517,7 +518,8 @@ namespace ShareX
                     // Initialize the GPU, codecs and audio endpoints before the countdown.
                     // Prepare does not start video or audio capture.
                     await nativeRecorder.PrepareAsync();
-                    int delay = (int)(settings.CaptureSettings.ScreenRecordStartDelay * 1000);
+                    int delay = settings.CaptureSettings.ScreenRecordStartDelayEnabled
+                        ? (int)(settings.CaptureSettings.ScreenRecordStartDelay * 1000) : 0;
                     if (delay > 0)
                     {
                         recordForm.InvokeSafe(() => recordForm.StartCountdown(delay));

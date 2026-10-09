@@ -424,20 +424,12 @@ namespace ShareX
         public bool ScreenRecordMouseHighlighter = false;
         public bool ScreenRecordShowTimer = true;
         public bool ScreenRecordShowButtonLabels = false;
-        public float ScreenRecordStartDelay = 0f;
-        public float ScreenRecordLastStartDelay = 3f;
+        public bool ScreenRecordStartDelayEnabled = false;
+        public float ScreenRecordStartDelay = 3f;
         public bool ScreenRecordFixedDuration = false;
         public float ScreenRecordDuration = 3f;
         public bool ScreenRecordTwoPassEncoding = false;
         public bool ScreenRecordAskConfirmationOnAbort = false;
-
-        public void SetScreenRecordStartDelay(float delay)
-        {
-            // Remember the duration so the recorder bar can turn the countdown back on.
-            if (delay > 0) ScreenRecordLastStartDelay = delay;
-            else if (ScreenRecordStartDelay > 0) ScreenRecordLastStartDelay = ScreenRecordStartDelay;
-            ScreenRecordStartDelay = delay;
-        }
 
         #endregion Capture / Screen recorder
 

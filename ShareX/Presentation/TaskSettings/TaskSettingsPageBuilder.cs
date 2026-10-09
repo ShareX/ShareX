@@ -580,7 +580,7 @@ internal sealed class TaskSettingsPageBuilder
         NumericUpDown duration = Number(() => (decimal)capture.ScreenRecordDuration, value => capture.ScreenRecordDuration = (float)value, 0, 86400, 0.1m);
         BindEnabled(duration, fixedDuration);
 
-        NumericUpDown startDelay = Number(() => (decimal)capture.ScreenRecordStartDelay, value => capture.SetScreenRecordStartDelay((float)value), 0, 3600, 0.1m);
+        NumericUpDown startDelay = Number(() => (decimal)capture.ScreenRecordStartDelay, value => capture.ScreenRecordStartDelay = (float)value, 0, 3600, 0.1m);
 
         return Page("capture-screen-recorder", Strings.TaskSettingsWindow_ScreenRecorder, LucideIcons.video,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_NativeRecorder,

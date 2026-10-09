@@ -151,8 +151,8 @@ internal partial class ScreenRecorderBarWindow : Window
         _recordButton.Content = ButtonContent(Strings.ScreenRecorderBar_Record, LucideIcons.circle, toolbar: true);
         actions.Children.Add(_recordButton);
         StackPanel timer = (StackPanel)SplitControl(Strings.ScreenRecorderBar_Timer, LucideIcons.timer,
-            Capture.ScreenRecordStartDelay > 0,
-            value => SetStartDelay(value ? Math.Clamp(Capture.ScreenRecordLastStartDelay, 0.1f, 3600) : 0),
+            Capture.ScreenRecordStartDelayEnabled,
+            value => { Capture.ScreenRecordStartDelayEnabled = value; UpdateTimer(); },
             ShowTimerMenu);
         _timerToggle = (ToggleButton)timer.Children[0];
         UpdateTimer();
@@ -195,7 +195,6 @@ internal partial class ScreenRecorderBarWindow : Window
     private void ShowTimerMenu(Control target)
     {
         ClosePanel();
-        float selected = Capture.ScreenRecordStartDelay > 0 ? Capture.ScreenRecordStartDelay : Capture.ScreenRecordLastStartDelay;
         List<MenuItem> items = [];
         for (int seconds = 1; seconds <= 5; seconds++)
         {
@@ -203,13 +202,9 @@ internal partial class ScreenRecorderBarWindow : Window
             MenuItem item = new()
             {
                 Header = TimerDelayLabel(delay), ToggleType = MenuItemToggleType.Radio,
-                IsChecked = selected == delay
+                IsChecked = Capture.ScreenRecordStartDelay == delay
             };
-            item.Click += (_, _) =>
-            {
-                Capture.ScreenRecordLastStartDelay = delay;
-                if (Capture.ScreenRecordStartDelay > 0) SetStartDelay(delay);
-            };
+            item.Click += (_, _) => SetStartDelay(delay);
             items.Add(item);
         }
         ContextMenu menu = new() { ItemsSource = items, Placement = PlacementMode.BottomEdgeAlignedLeft };
@@ -218,13 +213,13 @@ internal partial class ScreenRecorderBarWindow : Window
 
     private void SetStartDelay(float delay)
     {
-        Capture.SetScreenRecordStartDelay(delay);
+        Capture.ScreenRecordStartDelay = delay;
         UpdateTimer();
     }
 
     private void UpdateTimer()
     {
-        bool enabled = Capture.ScreenRecordStartDelay > 0;
+        bool enabled = Capture.ScreenRecordStartDelayEnabled;
         _timerToggle.IsChecked = enabled;
         _timerToggle.Content = ButtonContent(Strings.ScreenRecorderBar_Timer, LucideIcons.timer, enabled, toolbar: true);
         ToolTip.SetTip(_timerToggle, $"{Strings.ScreenRecorderBar_Timer}:{Environment.NewLine}" +
