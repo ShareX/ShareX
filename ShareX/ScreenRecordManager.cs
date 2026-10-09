@@ -247,7 +247,11 @@ namespace ShareX
             recordForm.UseInProcessPause = useNative;
             recordForm.ExcludeFromCapture = useNative;
             recordForm.PauseRequested += () => nativeRecorder?.Pause();
-            recordForm.ResumeRequested += () => nativeRecorder?.Resume();
+            recordForm.ResumeRequested += () =>
+            {
+                if (captureWindow == IntPtr.Zero) nativeRecorder?.Resume(recordForm.RecordingRegion);
+                else nativeRecorder?.Resume();
+            };
 
             recordForm.StopRequested += StopRecording;
             recordForm.Show();

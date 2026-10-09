@@ -30,6 +30,8 @@ internal sealed unsafe class GraphicsCapture : IDisposable
 
     private readonly GraphicsDevice graphics;
     private readonly GpuVideoProcessor processor;
+    private readonly bool cursor, borderless;
+    private readonly int fps;
     private readonly List<Source> sources = new();
     public int Width { get; }
     public int Height { get; }
@@ -109,28 +111,49 @@ internal sealed unsafe class GraphicsCapture : IDisposable
     {
         this.graphics = graphics;
         this.processor = processor;
+        this.cursor = cursor;
+        this.fps = fps;
         Width = processor.Width;
         Height = processor.Height;
         try
         {
-            bool borderless = RequestBorderlessAccess();
-            foreach (Target target in targets)
-            {
-                Direct3D11CaptureFramePool pool = Direct3D11CaptureFramePool.CreateFreeThreaded(graphics.WinRTDevice,
-                    DirectXPixelFormat.B8G8R8A8UIntNormalized, 2, target.Item.Size);
-                GraphicsCaptureSession session;
-                try { session = pool.CreateCaptureSession(target.Item); }
-                catch { pool.Dispose(); throw; }
-                Source source = new() { Target = target, Pool = pool, Session = session, InitialWidth = target.Item.Size.Width, InitialHeight = target.Item.Size.Height };
-                sources.Add(source);
-                ConfigureCaptureInterval(session, fps);
-                session.IsCursorCaptureEnabled = cursor;
-                if (borderless) session.IsBorderRequired = false;
-                source.ClosedHandler = (_, _) => Interlocked.Exchange(ref source.Closed, 1);
-                target.Item.Closed += source.ClosedHandler;
-            }
+            borderless = RequestBorderlessAccess();
+            CreateSources(targets);
         }
         catch { Dispose(); throw; }
+    }
+
+    private void CreateSources(List<Target> targets)
+    {
+        foreach (Target target in targets)
+        {
+            Direct3D11CaptureFramePool pool = Direct3D11CaptureFramePool.CreateFreeThreaded(graphics.WinRTDevice,
+                DirectXPixelFormat.B8G8R8A8UIntNormalized, 2, target.Item.Size);
+            GraphicsCaptureSession session;
+            try { session = pool.CreateCaptureSession(target.Item); }
+            catch { pool.Dispose(); throw; }
+            Source source = new() { Target = target, Pool = pool, Session = session, InitialWidth = target.Item.Size.Width, InitialHeight = target.Item.Size.Height };
+            sources.Add(source);
+            ConfigureCaptureInterval(session, fps);
+            session.IsCursorCaptureEnabled = cursor;
+            if (borderless) session.IsBorderRequired = false;
+            source.ClosedHandler = (_, _) => Interlocked.Exchange(ref source.Closed, 1);
+            target.Item.Closed += source.ClosedHandler;
+        }
+    }
+
+    /// <summary>Called on the recording worker while media time is paused.</summary>
+    public void Retarget(List<Target> targets)
+    {
+        DisposeSources();
+        processor.Clear();
+        LatestTimestamp = 0;
+        try
+        {
+            CreateSources(targets);
+            Start();
+        }
+        catch { DisposeSources(); throw; }
     }
 
     private static void ConfigureCaptureInterval(GraphicsCaptureSession session, int fps)
@@ -219,7 +242,7 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         }
     }
 
-    public void Dispose()
+    private void DisposeSources()
     {
         foreach (Source source in sources)
         {
@@ -227,4 +250,6 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         }
         sources.Clear();
     }
+
+    public void Dispose() => DisposeSources();
 }

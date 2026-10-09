@@ -68,7 +68,7 @@ WASAPI captures 48 kHz stereo float samples using Windows' high-quality sample-r
 
 WGC SystemRelativeTime, WASAPI QPCPosition and the recorder's performance counter share the system QPC epoch. WASAPI already reports its QPC position in 100 ns units, as documented by [GetBuffer](https://learn.microsoft.com/en-us/windows/win32/api/audioclient/nf-audioclient-iaudiocaptureclient-getbuffer). The first packet anchors each audio stream to video. Subsequent packets preserve sample continuity, including across silent packets; independent timestamp rounding must not insert gaps or overwrite neighboring samples. A two-frame timestamp deadband ignores small QPC variations, and smooth rate correction follows slower endpoint clock drift. A 32-tap windowed-sinc interpolator preserves high-frequency content during correction, with 16 samples (333 microseconds) of lookahead across packet boundaries. Integer sample positions bypass the filter and retain the original samples exactly. Resume and real capture discontinuities establish a new anchor. Audio output waits 50 ms for arriving packets without shifting their media timestamps. Late samples are discarded; missing samples are silence. Timestamp-error packets continue from the preceding packet's estimated end where possible and are counted as discontinuities.
 
-The first captured frame establishes the media epoch. Video timestamps are integer-rational frame slots; audio timestamps are derived from sample indices. Pausing freezes media time while capture buffers continue to drain. Resume subtracts elapsed pause time and rejects old audio packets. MP4 finalization occurs after stopping/draining audio and delivering the final PCM block. No segment concatenation or second encoding pass is needed.
+The first captured frame establishes the media epoch. Video timestamps are integer-rational frame slots; audio timestamps are derived from sample indices. Pausing freezes media time while capture buffers continue to drain. Resume subtracts elapsed pause time and rejects old audio packets. Moving a desktop recording region while paused recreates its WGC capture sessions on the recording worker, including the intersections with any newly covered displays. Media time resumes after all sources deliver their first frame at the new position; the GPU device, fixed output dimensions, encoder, camera, audio streams and MP4 writer remain alive. MP4 finalization occurs after stopping/draining audio and delivering the final PCM block. No segment concatenation or second encoding pass is needed.
 
 ## Camera overlay
 
@@ -103,6 +103,8 @@ await recorder.PrepareAsync(); // initializes resources; does not start capture
 Console.WriteLine(recorder.Encoder);
 await recorder.StartAsync();   // completes after the first encoded frame
 // recorder.Pause(); recorder.Resume();
+// Or resume a desktop recording at new coordinates, retaining the original size:
+// recorder.Resume(new System.Drawing.Rectangle(200, 100, 1920, 1080));
 RecordingResult result = await recorder.StopAsync(); // drains and finalizes MP4
 // For fixed duration, set Duration and await recorder.Completion instead.
 ```

@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
+using System.Drawing;
 using ShareX.ScreenRecordingLib.Audio;
 using ShareX.ScreenRecordingLib.Encoding;
 using ShareX.ScreenRecordingLib.Video;
@@ -20,7 +21,8 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
     private readonly TaskCompletionSource started = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private readonly TaskCompletionSource<RecordingResult> completed = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private Thread? worker;
-    private bool startRequested, disposed;
+    private bool startRequested, disposed, resumeRequested;
+    private Rectangle? resumeRegion;
     private int recording;
 
     public Task<RecordingResult> Completion => completed.Task;
@@ -70,8 +72,39 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
         await started.Task.WaitAsync(cancellationToken).ConfigureAwait(false);
     }
 
-    public void Pause() { lock (sync) { if (!disposed) { clock.Pause(); changed.Set(); } } }
-    public void Resume() { lock (sync) { if (!disposed) { clock.Resume(); changed.Set(); } } }
+    public void Pause()
+    {
+        lock (sync)
+        {
+            if (disposed) return;
+            resumeRequested = false;
+            resumeRegion = null;
+            clock.Pause();
+            changed.Set();
+        }
+    }
+
+    public void Resume() => RequestResume(null);
+
+    /// <summary>Resume desktop capture at a new position, keeping the recording's output dimensions.</summary>
+    public void Resume(Rectangle region)
+    {
+        if (options.WindowHandle != 0) throw new InvalidOperationException("Window capture follows its target window rather than a desktop region.");
+        if ((region.Width & ~1) != (options.Region.Width & ~1) || (region.Height & ~1) != (options.Region.Height & ~1))
+            throw new ArgumentException("Moving the recording region cannot change its output dimensions.", nameof(region));
+        RequestResume(region);
+    }
+
+    private void RequestResume(Rectangle? region)
+    {
+        lock (sync)
+        {
+            if (disposed || !clock.IsPaused) return;
+            resumeRegion = region;
+            resumeRequested = true;
+            changed.Set();
+        }
+    }
 
     /// <summary>Nonblocking stop request, safe from a UI thread. Await StopAsync or Completion to finalize MP4.</summary>
     public void RequestStop()
@@ -140,19 +173,46 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
             using FrameTimer timer = new();
             WaitHandle[] waits = [stop, changed, timer];
             long duration = 0;
+            Rectangle currentRegion = options.Region;
+            long resumeWaitStart = 0;
             while (!stop.WaitOne(0))
             {
                 if (capture.HasEnded) break;
                 if (audio?.Failure is Exception audioFailure) throw new IOException("Windows audio capture failed (the endpoint may have changed or been disconnected).", audioFailure);
                 if (clock.IsPaused)
                 {
+                    Rectangle? requestedRegion;
+                    lock (sync) requestedRegion = resumeRequested ? resumeRegion : null;
+                    if (requestedRegion is Rectangle region && region != currentRegion)
+                    {
+                        // Only the capture sessions change. Keep the GPU, encoder, camera, audio and
+                        // media timeline alive, including when the region moves onto another display.
+                        List<GraphicsCapture.Target> movedTargets = GraphicsCapture.GetTargets(options with { Region = region }, out _, out _);
+                        capture.Retarget(movedTargets);
+                        currentRegion = region;
+                        resumeWaitStart = RecordingClock.Now;
+                    }
                     // Drain WGC so resume never displays frames retained during the pause.
                     capture.Update();
                     if (capture.HasEnded) break;
+                    if (!capture.HasFrame && RecordingClock.Now - resumeWaitStart > TimeSpan.FromSeconds(10).Ticks)
+                        throw new TimeoutException("Windows did not deliver a frame for the moved recording region.");
                     WriteAudioUntil(writer, mixer, audioBlock, ref audioFrame, clock.Elapsed, options.HasAudio);
+                    lock (sync)
+                    {
+                        // Keep media time paused until the new region has a frame. A later pause or
+                        // resume request supersedes this one without briefly recording an old target.
+                        if (resumeRequested && resumeRegion == requestedRegion && capture.HasFrame)
+                        {
+                            clock.Resume();
+                            resumeRequested = false;
+                            resumeRegion = null;
+                        }
+                    }
+                    discontinuity = true;
+                    if (!clock.IsPaused) continue;
                     timer.Arm(TimeSpan.FromMilliseconds(20).Ticks);
                     if (WaitHandle.WaitAny(waits) == 0) break;
-                    discontinuity = true;
                     continue;
                 }
                 long elapsed = clock.Elapsed;
