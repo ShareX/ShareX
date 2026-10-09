@@ -222,8 +222,8 @@ internal partial class ScreenRecorderBarWindow : Window
         bool enabled = Capture.ScreenRecordStartDelayEnabled;
         _timerToggle.IsChecked = enabled;
         _timerToggle.Content = ButtonContent(Strings.ScreenRecorderBar_Timer, LucideIcons.timer, enabled, toolbar: true);
-        ToolTip.SetTip(_timerToggle, $"{Strings.ScreenRecorderBar_Timer}:{Environment.NewLine}" +
-            (enabled ? TimerDelayLabel(Capture.ScreenRecordStartDelay) : Strings.ScreenRecorderBar_Off));
+        ToolTip.SetTip(_timerToggle, TwoLineToolTip(Strings.ScreenRecorderBar_Timer,
+            enabled ? TimerDelayLabel(Capture.ScreenRecordStartDelay) : Strings.ScreenRecorderBar_Off));
         if (_startDelayControl != null && _startDelayControl.Value != (decimal)Capture.ScreenRecordStartDelay)
             _startDelayControl.Value = (decimal)Capture.ScreenRecordStartDelay;
     }
@@ -235,7 +235,7 @@ internal partial class ScreenRecorderBarWindow : Window
         3 => Strings.ScreenRecorderBar_Timer_3Seconds,
         4 => Strings.ScreenRecorderBar_Timer_4Seconds,
         5 => Strings.ScreenRecorderBar_Timer_5Seconds,
-        _ => $"{Strings.TaskSettingsWindow_StartDelaySeconds} {delay:0.##}"
+        _ => $"{delay:0.##} {Strings.AutoCaptureWindow_Seconds}"
     };
 
     private void AddSource(string label, string icon, Func<bool> enabled, Action<bool> setEnabled,
@@ -281,7 +281,7 @@ internal partial class ScreenRecorderBarWindow : Window
         source.Toggle.Content = ButtonContent(source.Label, source.Icon, source.Enabled(), toolbar: true);
         string name = source.Selected() == "" ? source.ResolvedDefault ?? source.UnavailableLabel
             : source.Devices.FirstOrDefault(device => device.Id == source.Selected())?.Name ?? source.UnavailableLabel;
-        ToolTip.SetTip(source.Toggle, $"{source.Label}:{Environment.NewLine}{name}");
+        ToolTip.SetTip(source.Toggle, TwoLineToolTip(source.Label, name));
     }
 
     private bool ValidateSources()
@@ -553,6 +553,11 @@ internal partial class ScreenRecorderBarWindow : Window
     }
 
     private static TextBlock Hint(string text) => new() { Text = text, TextWrapping = TextWrapping.Wrap, FontSize = 12, Opacity = 0.75 };
+
+    private static TextBlock TwoLineToolTip(string title, string detail) => new()
+    {
+        Text = $"{title}{Environment.NewLine}{detail}", TextAlignment = TextAlignment.Center
+    };
 
     private static Control VolumeControl(float gain, Action<float> changed)
     {
