@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-
 namespace ShareX.Steam
 {
     internal static class Program
