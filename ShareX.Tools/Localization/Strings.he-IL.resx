@@ -2239,9 +2239,6 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>קובצי סרטונים</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>תצוגה מקורבת מהמטמון • מתחדדת בעת עצירה</value>
-  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>ביטול</value>
   </data>
@@ -2269,9 +2266,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>שומר את הווידאו החתוך…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>תצוגה מקדימה ליד {0} • ללא השמעת שמע</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>בחר וידאו בעל משך ידוע וסופי.</value>
   </data>
@@ -2281,23 +2275,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>ללא אובדן</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>אין תמונת תצוגה מקדימה זמינה במיקום זה.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>פתיחת וידאו…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>השתמש בסיומת {0} עבור מצב ייצוא זה.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows לא הצליח להפעיל את הסרטון הזה. יש לוודא ש־Windows תומך בפורמט שלו ושמותקנים רכיבי המדיה של Windows. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>קידוד מחדש</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>מקודד מחדש ל-H.264 / AAC MP4 לקבלת נקודות חיתוך מדויקות.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>תצוגה מקדימה של תמונה קפואה • ללא השמעת שמע</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>איפוס הבחירה</value>

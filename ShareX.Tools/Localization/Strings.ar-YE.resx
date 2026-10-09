@@ -2239,9 +2239,6 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>ملفات الفيديو</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>معاينة تقريبية من ذاكرة التخزين المؤقت • تتحسن عند التوقف</value>
-  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>إلغاء</value>
   </data>
@@ -2269,9 +2266,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>جارٍ حفظ الفيديو المقصوص…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>معاينة بالقرب من {0} • بدون تشغيل الصوت</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>حدد فيديو ذا مدة معروفة ومحدودة.</value>
   </data>
@@ -2281,23 +2275,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>بلا فقدان</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>لا يتوفر إطار معاينة في هذا الموضع.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>فتح فيديو…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>استخدم الامتداد {0} لوضع التصدير هذا.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>تعذّر على Windows تشغيل هذا الفيديو. تأكد من أن Windows يدعم تنسيقه وأن مكونات الوسائط في Windows مثبتة. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>إعادة ترميز</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>يعيد الترميز إلى H.264 / AAC MP4 للحصول على نقاط قص دقيقة.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>معاينة إطار ثابت • بدون تشغيل الصوت</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>إعادة تعيين التحديد</value>

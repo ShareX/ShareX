@@ -2245,9 +2245,6 @@ Dosya yolu: {0}</value>
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Video dosyaları</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Yaklaşık önbellek önizlemesi • durakladığınızda netleştirilir</value>
-  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>İptal</value>
   </data>
@@ -2275,9 +2272,6 @@ Dosya yolu: {0}</value>
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Kırpılmış video kaydediliyor…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>{0} civarında önizleme • ses oynatılmaz</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Süresi bilinen ve sonlu bir video seçin.</value>
   </data>
@@ -2287,23 +2281,20 @@ Dosya yolu: {0}</value>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Kayıpsız</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>Bu konumda önizleme karesi yok.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Video aç…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Bu dışa aktarma modu için {0} uzantısını kullanın.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows bu videoyu oynatamadı. Windows'un videonun biçimini desteklediğini ve Windows medya bileşenlerinin yüklü olduğunu kontrol edin. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Yeniden kodla</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Tam kesim noktaları için H.264 / AAC MP4 olarak yeniden kodlar.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Sabit kare önizlemesi • ses oynatılmaz</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Seçimi sıfırla</value>

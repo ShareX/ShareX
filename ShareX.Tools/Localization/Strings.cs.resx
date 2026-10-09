@@ -2245,9 +2245,6 @@ Cesta k souboru: {0}</value>
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Soubory videa</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Přibližný náhled z mezipaměti • po pozastavení se zpřesní</value>
-  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Zrušit</value>
   </data>
@@ -2275,9 +2272,6 @@ Cesta k souboru: {0}</value>
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Ukládání oříznutého videa…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Náhled poblíž {0} • bez přehrávání zvuku</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Vyberte video se známou konečnou délkou.</value>
   </data>
@@ -2287,23 +2281,20 @@ Cesta k souboru: {0}</value>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Bezeztrátový</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>Na této pozici není k dispozici žádný náhledový snímek.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Otevřít video…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Pro tento režim exportu použijte příponu {0}.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows nemohl přehrát toto video. Ověřte, že Windows podporuje jeho formát a že jsou nainstalovány mediální součásti Windows. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Překódování</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Překóduje do H.264 / AAC MP4 pro přesné body střihu.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Náhled statického snímku • bez přehrávání zvuku</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Obnovit výběr</value>

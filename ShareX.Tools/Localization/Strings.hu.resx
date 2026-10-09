@@ -2239,9 +2239,6 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Videófájlok</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Hozzávetőleges gyorsítótárazott előnézet • megálláskor pontosodik</value>
-  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Mégse</value>
   </data>
@@ -2269,9 +2266,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Vágott videó mentése…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Előnézet {0} közelében • nincs hanglejátszás</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Válasszon ismert, véges hosszúságú videót.</value>
   </data>
@@ -2281,23 +2275,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Veszteségmentes</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>Ezen a helyen nem érhető el előnézeti képkocka.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Videó megnyitása…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Ehhez az exportálási módhoz a(z) {0} kiterjesztést használja.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>A Windows nem tudta lejátszani ezt a videót. Ellenőrizze, hogy a Windows támogatja-e a formátumát, és telepítve vannak-e a Windows médiakomponensei. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Újrakódolás</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>H.264 / AAC MP4 formátumba kódol újra a pontos vágási pontokért.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Állóképes előnézet • nincs hanglejátszás</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Kijelölés visszaállítása</value>

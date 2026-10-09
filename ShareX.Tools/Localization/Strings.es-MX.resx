@@ -2245,9 +2245,6 @@ Ruta del archivo: {0}</value>
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Archivos de video</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Vista previa aproximada en caché • se ajusta al pausar</value>
-  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
@@ -2275,9 +2272,6 @@ Ruta del archivo: {0}</value>
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Guardando video recortado…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Vista previa cerca de {0} • sin reproducción de audio</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Selecciona un video con una duración conocida y finita.</value>
   </data>
@@ -2287,23 +2281,20 @@ Ruta del archivo: {0}</value>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Sin pérdida</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>No hay una imagen de vista previa disponible en esta posición.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Abrir video…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Usa la extensión {0} para este modo de exportación.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows no pudo reproducir este video. Comprueba que Windows admite su formato y que los componentes multimedia de Windows están instalados. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Recodificar</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Vuelve a codificar a H.264 / AAC MP4 para obtener puntos de corte exactos.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Vista previa de imagen fija • sin reproducción de audio</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Restablecer selección</value>

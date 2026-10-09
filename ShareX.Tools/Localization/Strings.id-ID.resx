@@ -2239,9 +2239,6 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>File video</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Pratinjau cache perkiraan • diperjelas saat Anda berhenti</value>
-  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Batal</value>
   </data>
@@ -2269,9 +2266,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Menyimpan video yang dipotong…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Pratinjau di sekitar {0} • tanpa pemutaran audio</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Pilih video dengan durasi terbatas yang diketahui.</value>
   </data>
@@ -2281,23 +2275,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Tanpa kehilangan</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>Tidak ada bingkai pratinjau pada posisi ini.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Buka video…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Gunakan ekstensi {0} untuk mode ekspor ini.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows tidak dapat memutar video ini. Pastikan Windows mendukung formatnya dan komponen media Windows telah terpasang. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Kode ulang</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Mengodekan ulang ke H.264 / AAC MP4 untuk titik potong yang tepat.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Pratinjau bingkai diam • tanpa pemutaran audio</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Atur ulang pilihan</value>

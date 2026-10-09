@@ -249,9 +249,9 @@ public static class ToolsIntegration
     }
 
     public static void ShowVideoTrimmerWindow(string ffmpegPath, string? inputFilePath = null,
-        Action? playNotificationSound = null)
+        Action? playNotificationSound = null, Func<string?>? resolveFFmpegPath = null)
     {
-        Show(() => new VideoTrimmerWindow(ffmpegPath, inputFilePath, playNotificationSound));
+        Show(() => new VideoTrimmerWindow(ffmpegPath, inputFilePath, playNotificationSound, resolveFFmpegPath));
     }
 
     public static void ShowVideoThumbnailerWindow(string ffmpegPath, VideoThumbnailOptions options,

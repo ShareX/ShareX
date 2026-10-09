@@ -2239,9 +2239,6 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Pliki wideo</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Przybliżony podgląd z pamięci podręcznej • dopracowywany po zatrzymaniu</value>
-  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Anuluj</value>
   </data>
@@ -2269,9 +2266,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Zapisywanie przyciętego wideo…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Podgląd w pobliżu {0} • bez odtwarzania dźwięku</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Wybierz wideo o znanym, skończonym czasie trwania.</value>
   </data>
@@ -2281,23 +2275,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Bezstratny</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>W tej pozycji nie ma dostępnej klatki podglądu.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Otwórz wideo…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Użyj rozszerzenia {0} dla tego trybu eksportu.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows nie mógł odtworzyć tego filmu. Sprawdź, czy Windows obsługuje jego format i czy są zainstalowane składniki multimedialne Windows. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Ponowne kodowanie</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Ponownie koduje do H.264 / AAC MP4, aby uzyskać dokładne punkty cięcia.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Podgląd nieruchomej klatki • bez odtwarzania dźwięku</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Resetuj zaznaczenie</value>

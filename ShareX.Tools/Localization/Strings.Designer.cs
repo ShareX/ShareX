@@ -5923,33 +5923,6 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Still-frame preview • no audio playback
-        /// </summary>
-        public static string VideoTrimmer_PreviewHint {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_PreviewHint", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Approximate cached preview • refining when you pause
-        /// </summary>
-        public static string VideoTrimmer_CachedPreview {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_CachedPreview", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Preview near {0} • no audio playback
-        /// </summary>
-        public static string VideoTrimmer_FrameAt {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_FrameAt", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Preparing timeline previews…
         /// </summary>
         public static string VideoTrimmer_Loading {
@@ -5965,15 +5938,6 @@ namespace ShareX.Tools.Localization {
         public static string VideoTrimmer_InvalidVideo {
             get {
                 return ResourceManager.GetString("VideoTrimmer_InvalidVideo", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   No preview frame was available at this position.
-        /// </summary>
-        public static string VideoTrimmer_NoFrame {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_NoFrame", resourceCulture);
             }
         }
 
@@ -6019,6 +5983,15 @@ namespace ShareX.Tools.Localization {
         public static string VideoTrimmer_CopyHint {
             get {
                 return ResourceManager.GetString("VideoTrimmer_CopyHint", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Windows could not play this video. Check that Windows supports its format and that the Windows media components are installed. {0}
+        /// </summary>
+        public static string VideoTrimmer_PlaybackError {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_PlaybackError", resourceCulture);
             }
         }
 

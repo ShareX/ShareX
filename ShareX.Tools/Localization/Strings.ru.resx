@@ -2239,9 +2239,6 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Видеофайлы</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Приблизительный предпросмотр из кэша • уточняется после паузы</value>
-  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Отмена</value>
   </data>
@@ -2269,9 +2266,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Сохранение обрезанного видео…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Предпросмотр около {0} • без воспроизведения звука</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Выберите видео с известной конечной длительностью.</value>
   </data>
@@ -2281,23 +2275,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Без потерь</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>В этой позиции нет доступного кадра предпросмотра.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Открыть видео…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Используйте расширение {0} для этого режима экспорта.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows не удалось воспроизвести это видео. Убедитесь, что Windows поддерживает его формат и что установлены мультимедийные компоненты Windows. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Перекодирование</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Перекодирует в H.264 / AAC MP4 для точных точек обрезки.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Предпросмотр неподвижного кадра • без воспроизведения звука</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Сбросить выделение</value>

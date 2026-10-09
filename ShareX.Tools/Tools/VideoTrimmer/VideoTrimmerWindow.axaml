@@ -26,11 +26,10 @@
             </Border>
 
             <Border Grid.Row="1" Classes="tool-panel">
-                <Grid RowDefinitions="*,Auto,Auto,Auto,Auto" RowSpacing="8">
+                <Grid RowDefinitions="*,Auto,Auto,Auto,Auto,Auto" RowSpacing="8">
                     <Border Background="{DynamicResource ShareX.Brush.Background.Main}" CornerRadius="4" ClipToBounds="True">
                         <Grid>
-                            <Image Source="{Binding Preview}" Stretch="Uniform"
-                                   RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                            <local:WindowsMediaPlayer x:Name="Player" IsVisible="{Binding HasVideo}"/>
                             <StackPanel IsVisible="{Binding !HasVideo}" Spacing="12"
                                         HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.film}"
@@ -41,12 +40,35 @@
                     </Border>
 
                     <Grid Grid.Row="1" Margin="0,4,0,0">
-                        <StackPanel Orientation="Horizontal" Spacing="6" HorizontalAlignment="Center">
-                            <TextBlock Text="{Binding PositionText}" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Text}"/>
-                            <TextBlock Text="/" FontWeight="Normal"/>
-                            <TextBlock Text="{Binding DurationText}" FontWeight="Normal"/>
+                        <StackPanel Orientation="Horizontal" Spacing="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <Button Command="{Binding StepBackwardCommand}" IsEnabled="{Binding CanEdit}" Width="40"
+                                        ToolTip.Tip="{x:Static loc:Strings.AnimatedGifTrimmer_PreviousFrame}"
+                                        AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_PreviousFrame}">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.step_back}"/>
+                                </Button>
+                                <Button Command="{Binding TogglePlayCommand}" IsEnabled="{Binding CanEdit}" Width="40"
+                                        ToolTip.Tip="{Binding PlayActionText}" AutomationProperties.Name="{Binding PlayActionText}">
+                                    <Grid>
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.play}" IsVisible="{Binding !IsPlaying}"/>
+                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pause}" IsVisible="{Binding IsPlaying}"/>
+                                    </Grid>
+                                </Button>
+                                <Button Command="{Binding StepForwardCommand}" IsEnabled="{Binding CanEdit}" Width="40"
+                                        ToolTip.Tip="{x:Static loc:Strings.AnimatedGifTrimmer_NextFrame}"
+                                        AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_NextFrame}">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.step_forward}"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding PositionText}" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Text}"/>
+                                <TextBlock Text="/" FontWeight="Normal"/>
+                                <TextBlock Text="{Binding DurationText}" FontWeight="Normal"/>
+                            </StackPanel>
                         </StackPanel>
                     </Grid>
+                    <TextBlock Grid.Row="5" Text="{Binding StatusText}" IsVisible="{Binding HasStatus}"
+                               FontWeight="Normal" TextWrapping="Wrap"/>
 
                     <local:VideoTrimmerTimeline Grid.Row="2" Height="72" IsEnabled="{Binding CanEdit}"
                                                Accent="{DynamicResource ShareX.Brush.Accent}"

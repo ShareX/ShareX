@@ -1220,13 +1220,11 @@ namespace ShareX
         public static void OpenVideoTrimmer(TaskSettings taskSettings = null, string inputFilePath = null)
         {
             taskSettings ??= TaskSettings.GetDefaultTaskSettings();
-            if (CheckFFmpeg(taskSettings))
-            {
-                ToolsIntegration.ShowVideoTrimmerWindow(
-                    taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
-                    inputFilePath,
-                    () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
-            }
+            ToolsIntegration.ShowVideoTrimmerWindow(
+                taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
+                inputFilePath,
+                () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings),
+                () => CheckFFmpeg(taskSettings) ? taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath : null);
         }
 
         public static void OpenVideoThumbnailer(TaskSettings taskSettings = null)

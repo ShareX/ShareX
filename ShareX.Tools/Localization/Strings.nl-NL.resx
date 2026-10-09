@@ -2245,9 +2245,6 @@ Bestandspad: {0}</value>
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Videobestanden</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Geschat voorbeeld uit cache • wordt verfijnd wanneer u pauzeert</value>
-  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Annuleren</value>
   </data>
@@ -2275,9 +2272,6 @@ Bestandspad: {0}</value>
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Bijgesneden video opslaan…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Voorbeeld rond {0} • geen audioweergave</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Selecteer een video met een bekende, eindige duur.</value>
   </data>
@@ -2287,23 +2281,20 @@ Bestandspad: {0}</value>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Verliesvrij</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>Op deze positie is geen voorbeeldframe beschikbaar.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Video openen…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Gebruik de extensie {0} voor deze exportmodus.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows kon deze video niet afspelen. Controleer of Windows de indeling ondersteunt en of de Windows-mediaonderdelen zijn geïnstalleerd. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Opnieuw coderen</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Codeert opnieuw naar H.264 / AAC MP4 voor exacte knippunten.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Voorbeeld van stilstaand beeld • geen audioweergave</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Selectie herstellen</value>

@@ -95,7 +95,7 @@ public sealed class VideoTrimmerTimeline : Control
                 double cropWidth = Math.Min(bitmap.Size.Width, bitmap.Size.Height * cellWidth / TrackHeight);
                 double cropHeight = Math.Min(bitmap.Size.Height, bitmap.Size.Width * TrackHeight / cellWidth);
                 Rect source = new((bitmap.Size.Width - cropWidth) / 2, (bitmap.Size.Height - cropHeight) / 2, cropWidth, cropHeight);
-                context.DrawImage(bitmap, source, new Rect(Inset + i * cellWidth, TrackTop, cellWidth, TrackHeight));
+                context.DrawImage(bitmap, source, new Rect(X(model.Thumbnails[i].Position), TrackTop, cellWidth, TrackHeight));
             }
 
             IBrush shade = new SolidColorBrush(Color.FromArgb(180, 0, 0, 0));
@@ -176,6 +176,9 @@ public sealed class VideoTrimmerTimeline : Control
             case Key.End: model.Position = model.End; break;
             case Key.I: model.SetStartCommand.Execute(null); break;
             case Key.O: model.SetEndCommand.Execute(null); break;
+            case Key.Space: model.TogglePlayCommand.Execute(null); break;
+            case Key.OemComma: model.StepBackwardCommand.Execute(null); break;
+            case Key.OemPeriod: model.StepForwardCommand.Execute(null); break;
             default: return;
         }
         e.Handled = true;

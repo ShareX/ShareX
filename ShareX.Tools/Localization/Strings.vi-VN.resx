@@ -2239,9 +2239,6 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Tệp video</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Bản xem trước gần đúng từ bộ nhớ đệm • được tinh chỉnh khi bạn dừng</value>
-  </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Hủy</value>
   </data>
@@ -2269,9 +2266,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Đang lưu video đã cắt…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Xem trước gần {0} • không phát âm thanh</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Chọn video có thời lượng xác định và hữu hạn.</value>
   </data>
@@ -2281,23 +2275,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Không mất dữ liệu</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>Không có khung hình xem trước tại vị trí này.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Mở video…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Dùng phần mở rộng {0} cho chế độ xuất này.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows không thể phát video này. Hãy kiểm tra xem Windows có hỗ trợ định dạng của video và các thành phần đa phương tiện của Windows đã được cài đặt hay chưa. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Mã hóa lại</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Mã hóa lại thành H.264 / AAC MP4 để có điểm cắt chính xác.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Xem trước khung hình tĩnh • không phát âm thanh</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Đặt lại vùng chọn</value>

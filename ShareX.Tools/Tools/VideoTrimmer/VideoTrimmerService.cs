@@ -27,50 +27,14 @@ using ShareX.Tools.Localization;
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace ShareX.Tools;
 
-/// <summary>Small, cancellable FFmpeg jobs. No player, ffprobe, or persistent media files are required.</summary>
+/// <summary>Cancellable FFmpeg exports. Preview, metadata and playback use Windows Media Foundation.</summary>
 internal sealed class VideoTrimmerService(string ffmpegPath)
 {
+    public string FFmpegPath { get; set; } = ffmpegPath;
     internal static string Timestamp(double seconds) => seconds.ToString("0.######", CultureInfo.InvariantCulture);
-
-    public async Task<double> GetDurationAsync(string input, CancellationToken token)
-    {
-        var result = await RunAsync(["-i", input], token, allowFailure: true);
-        Match match = Regex.Match(result.Log, @"Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)", RegexOptions.CultureInvariant);
-        if (!match.Success || !Regex.IsMatch(result.Log, @"Stream #.*Video:"))
-        {
-            throw new InvalidOperationException(Strings.VideoTrimmer_InvalidVideo);
-        }
-
-        double duration = double.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture) * 3600 +
-            double.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture) * 60 +
-            double.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture);
-        if (!double.IsFinite(duration) || duration <= 0)
-        {
-            throw new InvalidOperationException(Strings.VideoTrimmer_InvalidVideo);
-        }
-
-        return duration;
-    }
-
-    public async Task<byte[]> GetFrameAsync(string input, double position, CancellationToken token)
-    {
-        var result = await RunAsync([
-            "-v", "error", "-ss", Timestamp(position), "-threads", "2", "-i", input,
-            "-map", "0:V:0", "-frames:v", "1", "-an", "-sn",
-            "-vf", "scale=640:360:force_original_aspect_ratio=decrease,pad=640:360:(ow-iw)/2:(oh-ih)/2,setsar=1",
-            "-threads", "1", "-c:v", "bmp", "-f", "image2pipe", "pipe:1"
-        ], token);
-        if (result.Data.Length == 0)
-        {
-            throw new InvalidOperationException(Strings.VideoTrimmer_NoFrame);
-        }
-
-        return result.Data;
-    }
 
     internal static string[] BuildTrimArguments(string input, string output, double start, double end, bool precise)
     {
@@ -128,12 +92,12 @@ internal sealed class VideoTrimmerService(string ffmpegPath)
         }
     }
 
-    private async Task<(byte[] Data, string Log)> RunAsync(IEnumerable<string> arguments, CancellationToken token,
-        bool allowFailure = false, IProgress<double>? progress = null, double duration = 0)
+    private async Task RunAsync(IEnumerable<string> arguments, CancellationToken token,
+        IProgress<double> progress, double duration)
     {
         token.ThrowIfCancellationRequested();
         using Process process = new();
-        process.StartInfo = new ProcessStartInfo(ffmpegPath)
+        process.StartInfo = new ProcessStartInfo(FFmpegPath)
         {
             UseShellExecute = false,
             CreateNoWindow = true,
@@ -162,15 +126,8 @@ internal sealed class VideoTrimmerService(string ffmpegPath)
             }
         }
 
-        using MemoryStream data = new();
         async Task ReadOutputAsync()
         {
-            if (progress == null)
-            {
-                await process.StandardOutput.BaseStream.CopyToAsync(data);
-                return;
-            }
-
             while (await process.StandardOutput.ReadLineAsync() is { } line)
             {
                 if (line.StartsWith("out_time_us=", StringComparison.Ordinal) &&
@@ -183,11 +140,10 @@ internal sealed class VideoTrimmerService(string ffmpegPath)
 
         await Task.WhenAll(ReadErrorsAsync(), ReadOutputAsync(), process.WaitForExitAsync());
         token.ThrowIfCancellationRequested();
-        if (!allowFailure && process.ExitCode != 0)
+        if (process.ExitCode != 0)
         {
             throw new InvalidOperationException(log.ToString().Trim());
         }
 
-        return (data.ToArray(), log.ToString());
     }
 }
