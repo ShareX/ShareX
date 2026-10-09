@@ -64,31 +64,55 @@ Advanced users can create custom uploaders for services that are not built in. S
 
 ShareX includes many utilities that support everyday desktop work:
 
-* Color picker
-* Screen color picker
-* Ruler
-* Pin to screen
-* Image editor
-* Image beautifier
-* Image effects
-* Image viewer
-* Background remover
-* Image comparer
-* Image combiner
-* Image splitter
-* Image thumbnailer
-* Video converter
-* Video thumbnailer
-* Analyze image
-* OCR for recognizing text in images
-* QR code
-* Hash checker
-* Metadata viewer
-* Directory indexer
-* Clipboard viewer
-* Borderless window
-* Inspect window
-* Monitor test
+### Screen & color
+
+* [Color picker](https://getsharex.com/docs/color-picker)
+* [Mouse highlighter](https://getsharex.com/docs/mouse-highlighter)
+* [Pin to screen](https://getsharex.com/docs/pin-to-screen)
+* [Ruler](https://getsharex.com/docs/ruler)
+* [Screen color picker](https://getsharex.com/docs/screen-color-picker)
+
+### Images
+
+* [Background remover](https://getsharex.com/docs/background-remover)
+* [Icon converter](https://getsharex.com/docs/icon-converter)
+* [Image beautifier](https://getsharex.com/docs/image-beautifier)
+* [Image combiner](https://getsharex.com/docs/image-combiner)
+* [Image comparer](https://getsharex.com/docs/image-comparer)
+* [Image converter](https://getsharex.com/docs/image-converter)
+* [Image editor](https://getsharex.com/docs/image-editor)
+* [Image effects](https://getsharex.com/docs/image-effects)
+* [Image resizer](https://getsharex.com/docs/image-resizer)
+* [Image splitter](https://getsharex.com/docs/image-splitter)
+* [Image thumbnailer](https://getsharex.com/docs/image-thumbnailer)
+* [Image viewer](https://getsharex.com/docs/image-viewer)
+* [Image watermark](https://getsharex.com/docs/image-watermark)
+
+### Video
+
+* [Animated GIF maker](https://getsharex.com/docs/animated-gif-maker)
+* [Animated GIF trimmer](https://getsharex.com/docs/animated-gif-trimmer)
+* [Video converter](https://getsharex.com/docs/video-converter)
+* [Video thumbnailer](https://getsharex.com/docs/video-thumbnailer)
+* [Video trimmer](https://getsharex.com/docs/video-trimmer)
+
+### Data & text
+
+* [Analyze image](https://getsharex.com/docs/analyze-image)
+* [Hash checker](https://getsharex.com/docs/hash-checker)
+* [Index folder](https://getsharex.com/docs/index-folder)
+* [Metadata](https://getsharex.com/docs/metadata)
+* [OCR](https://getsharex.com/docs/ocr)
+* [QR code](https://getsharex.com/docs/qr-code)
+* [Remote storage browser](https://getsharex.com/docs/remote-storage-browser)
+
+### System
+
+* [Borderless window](https://getsharex.com/docs/borderless-window)
+* [Clipboard viewer](https://getsharex.com/docs/clipboard-viewer)
+* [Inspect window](https://getsharex.com/docs/inspect-window)
+* [Monitor test](https://getsharex.com/docs/monitor-test)
+* [Network monitor](https://getsharex.com/docs/network-monitor)
 
 These tools make ShareX useful beyond screenshots. It can help inspect images, prepare assets, extract information, verify files and speed up repetitive tasks.
 
