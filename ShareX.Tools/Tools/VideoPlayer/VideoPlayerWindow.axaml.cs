@@ -124,7 +124,7 @@ public partial class VideoPlayerWindow : Window
 
     private void PositionControls()
     {
-        _controls.Width = Math.Max(0, Math.Min(680, _viewport.Bounds.Width - 24));
+        _controls.Width = Math.Max(0, Math.Min(500, _viewport.Bounds.Width - 24));
         // The nonempty anchor strip ends 12 pixels above the bottom of the viewport.
         _controlsPopup.PlacementRect = new Rect(0, Math.Max(0, _viewport.Bounds.Height - 13), _viewport.Bounds.Width, 1);
     }

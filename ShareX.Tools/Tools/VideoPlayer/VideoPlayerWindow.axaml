@@ -33,17 +33,17 @@
                    Placement="AnchorAndGravity" PlacementAnchor="Bottom" PlacementGravity="Top"
                    PlacementConstraintAdjustment="None"
                    ShouldUseOverlayLayer="False" IsLightDismissEnabled="False" Topmost="False">
-                <Border x:Name="PlaybackControls" Background="#60000000" CornerRadius="8" Padding="10,6">
+                <Border x:Name="PlaybackControls" Background="#80000000" CornerRadius="6" Padding="8,4">
                     <Border.Styles>
                         <Style Selector="TextBlock">
                             <Setter Property="Foreground" Value="White"/>
                             <Setter Property="FontWeight" Value="Normal"/>
                         </Style>
                         <Style Selector="Button.player-button">
-                            <Setter Property="Width" Value="36"/>
-                            <Setter Property="Height" Value="36"/>
+                            <Setter Property="Width" Value="32"/>
+                            <Setter Property="Height" Value="32"/>
                             <Setter Property="Padding" Value="0"/>
-                            <Setter Property="CornerRadius" Value="5"/>
+                            <Setter Property="CornerRadius" Value="4"/>
                             <Setter Property="Foreground" Value="White"/>
                             <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="BorderThickness" Value="0"/>
@@ -64,7 +64,7 @@
                         </Style>
                     </Border.Styles>
                     <Grid RowDefinitions="Auto,Auto" RowSpacing="2">
-                        <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto,Auto,Auto,*,Auto,Auto,Auto" ColumnSpacing="4">
+                        <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto,Auto,Auto,*,Auto,Auto,Auto" ColumnSpacing="2">
                             <Button x:Name="OpenButton" Classes="player-button" Command="{Binding BrowseCommand}"
                                     ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_Open}"
                                     AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_Open}">
@@ -87,7 +87,7 @@
                                     AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_NextFrame}">
                                 <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.step_forward}"/>
                             </Button>
-                            <TextBlock Grid.Column="4" Text="{Binding TimeText}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0"/>
+                            <TextBlock Grid.Column="4" Text="{Binding TimeText}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="6,0"/>
                             <Button Grid.Column="5" Classes="player-button" Command="{Binding ToggleMuteCommand}"
                                     ToolTip.Tip="{Binding MuteActionText}" AutomationProperties.Name="{Binding MuteActionText}">
                                 <Grid>
@@ -95,9 +95,14 @@
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.volume_x}" IsVisible="{Binding SoundOff}"/>
                                 </Grid>
                             </Button>
-                            <Slider Grid.Column="6" Width="70" Minimum="0" Maximum="1" Value="{Binding Volume, Mode=TwoWay}"
+                            <Slider Grid.Column="6" Width="60" Height="36" MinHeight="36" Minimum="0" Maximum="1" Value="{Binding Volume, Mode=TwoWay}"
                                     VerticalAlignment="Center" ToolTip.Tip="{x:Static loc:Strings.VideoPlayer_Volume}"
-                                    AutomationProperties.Name="{x:Static loc:Strings.VideoPlayer_Volume}"/>
+                                    AutomationProperties.Name="{x:Static loc:Strings.VideoPlayer_Volume}">
+                                <Slider.Resources>
+                                    <GridLength x:Key="SliderPreContentMargin">*</GridLength>
+                                    <GridLength x:Key="SliderPostContentMargin">*</GridLength>
+                                </Slider.Resources>
+                            </Slider>
                             <Button x:Name="FullscreenButton" Grid.Column="7" Classes="player-button" Click="OnFullscreenClick"
                                     ToolTip.Tip="{x:Static loc:Strings.VideoPlayer_Fullscreen}"
                                     AutomationProperties.Name="{x:Static loc:Strings.VideoPlayer_Fullscreen}">
@@ -105,8 +110,14 @@
                             </Button>
                         </Grid>
                         <Slider x:Name="SeekSlider" Minimum="0" Maximum="{Binding Duration}"
-                                Value="{Binding Position, Mode=TwoWay}" IsEnabled="{Binding HasVideo}" Height="40"
-                                AutomationProperties.Name="{x:Static loc:Strings.VideoPlayer_Seek}"/>
+                                Value="{Binding Position, Mode=TwoWay}" IsEnabled="{Binding HasVideo}" Height="30" MinHeight="30" Padding="5,0"
+                                AutomationProperties.Name="{x:Static loc:Strings.VideoPlayer_Seek}">
+                            <Slider.Resources>
+                                <x:Double x:Key="SliderHorizontalHeight">28</x:Double>
+                                <GridLength x:Key="SliderPreContentMargin">*</GridLength>
+                                <GridLength x:Key="SliderPostContentMargin">*</GridLength>
+                            </Slider.Resources>
+                        </Slider>
                     </Grid>
                 </Border>
             </Popup>
