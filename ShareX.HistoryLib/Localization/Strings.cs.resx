@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>Nahoře</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>Oříznout animovaný GIF...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>Oříznout video...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>Typ</value>
   </data>

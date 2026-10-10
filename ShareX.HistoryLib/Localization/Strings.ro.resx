@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>Sus</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>Decupează GIF animat...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>Decupează videoclipul...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>Tip</value>
   </data>

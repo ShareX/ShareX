@@ -878,6 +878,8 @@ namespace ShareX
                 {
                     UploadFile = filePath => UploadManager.UploadFile(filePath),
                     EditImage = filePath => AnnotateImageFromFile(filePath),
+                    TrimVideo = filePath => OpenVideoTrimmer(inputFilePath: filePath),
+                    TrimAnimatedGif = filePath => OpenAnimatedGifTrimmer(filePath),
                     PinToScreen = filePath => PinToScreen(filePath),
                     AnalyzeImage = filePath => AnalyzeImage(filePath),
                     ShowImage = filePath => OpenImageViewer(filePath),
@@ -893,6 +895,8 @@ namespace ShareX
                 {
                     UploadFile = filePath => UploadManager.UploadFile(filePath),
                     EditImage = filePath => AnnotateImageFromFile(filePath),
+                    TrimVideo = filePath => OpenVideoTrimmer(inputFilePath: filePath),
+                    TrimAnimatedGif = filePath => OpenAnimatedGifTrimmer(filePath),
                     PinToScreen = filePath => PinToScreen(filePath),
                     AnalyzeImage = filePath => AnalyzeImage(filePath),
                     ShowImage = filePath => OpenImageViewer(filePath),

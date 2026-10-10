@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>Зверху</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>Обрізати анімований GIF...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>Обрізати відео...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>Тип</value>
   </data>

@@ -34,6 +34,8 @@ public sealed class HistoryWindowServices
 {
     public Action<string>? UploadFile { get; init; }
     public Action<string>? EditImage { get; init; }
+    public Action<string>? TrimVideo { get; init; }
+    public Action<string>? TrimAnimatedGif { get; init; }
     public Action<string>? PinToScreen { get; init; }
     public Action<string>? AnalyzeImage { get; init; }
     public Action<string>? ShowImage { get; init; }

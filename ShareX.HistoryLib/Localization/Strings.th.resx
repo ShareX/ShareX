@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>ด้านบน</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>ตัด GIF แบบเคลื่อนไหว...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>ตัดวิดีโอ...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>ชนิด</value>
   </data>

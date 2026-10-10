@@ -615,6 +615,10 @@ public partial class HistoryWindow : Window
         PreviewMenu.IsEnabled = single && imageFile;
         UploadMenu.IsEnabled = single && file && _services.UploadFile != null;
         EditImageMenu.IsEnabled = single && imageFile && _services.EditImage != null;
+        TrimVideoMenu.IsVisible = single && file && FileHelpers.IsVideoFile(item.FilePath) && _services.TrimVideo != null;
+        TrimAnimatedGifMenu.IsVisible = single && file &&
+            string.Equals(Path.GetExtension(item.FilePath), ".gif", StringComparison.OrdinalIgnoreCase) &&
+            _services.TrimAnimatedGif != null;
         PinMenu.IsEnabled = single && imageFile && _services.PinToScreen != null;
         AnalyzeMenu.IsEnabled = single && imageFile && _services.AnalyzeImage != null;
     }
@@ -1068,6 +1072,19 @@ public partial class HistoryWindow : Window
 
     private void OnUploadFileClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.UploadFile, false);
     private void OnEditImageClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.EditImage, true);
+    private void OnTrimVideoClick(object? sender, RoutedEventArgs e)
+    {
+        HistoryItem[] items = GetSelectedItems();
+        if (items.Length == 1 && File.Exists(items[0].FilePath) && FileHelpers.IsVideoFile(items[0].FilePath))
+            _services.TrimVideo?.Invoke(items[0].FilePath);
+    }
+    private void OnTrimAnimatedGifClick(object? sender, RoutedEventArgs e)
+    {
+        HistoryItem[] items = GetSelectedItems();
+        if (items.Length == 1 && File.Exists(items[0].FilePath) &&
+            string.Equals(Path.GetExtension(items[0].FilePath), ".gif", StringComparison.OrdinalIgnoreCase))
+            _services.TrimAnimatedGif?.Invoke(items[0].FilePath);
+    }
     private void OnPinToScreenClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.PinToScreen, true);
     private void OnAnalyzeImageClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.AnalyzeImage, true);
     private void InvokeFileService(Action<string>? action, bool imageOnly)

@@ -725,6 +725,16 @@ namespace ShareX.HistoryLib.Localization {
                 return ResourceManager.GetString("ImageHistoryWindow_ConfirmOpenFileFormat", resourceCulture);
             }
         }
+        public static string HistoryWindows_TrimVideo {
+            get {
+                return ResourceManager.GetString("HistoryWindows_TrimVideo", resourceCulture);
+            }
+        }
+        public static string HistoryWindows_TrimAnimatedGif {
+            get {
+                return ResourceManager.GetString("HistoryWindows_TrimAnimatedGif", resourceCulture);
+            }
+        }
     }
 }
 

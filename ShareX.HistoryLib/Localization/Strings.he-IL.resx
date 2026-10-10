@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>למעלה</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>חיתוך GIF מונפש...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>חיתוך וידאו...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>סוג</value>
   </data>

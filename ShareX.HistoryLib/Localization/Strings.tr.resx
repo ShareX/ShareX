@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>Üst</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>Animasyonlu GIF'i kırp...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>Videoyu kırp...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>Tür</value>
   </data>

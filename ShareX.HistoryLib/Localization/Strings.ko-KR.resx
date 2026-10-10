@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>위쪽</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>애니메이션 GIF 자르기...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>동영상 자르기...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>유형</value>
   </data>

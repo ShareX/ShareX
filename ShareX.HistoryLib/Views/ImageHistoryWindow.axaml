@@ -205,7 +205,7 @@
                                                     </StackPanel>
 
                                                     <Border.ContextMenu>
-                                                        <ContextMenu>
+                                                        <ContextMenu Opening="OnThumbnailContextMenuOpening">
                                                             <MenuItem Header="{x:Static localization:Strings.HistoryWindows_Open_image}" Click="OnShowImageClick" InputGesture="Enter">
                                                                 <MenuItem.Icon>
                                                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}"/>
@@ -292,6 +292,16 @@
                                                             <MenuItem Header="{x:Static localization:Strings.HistoryWindows_Edit_image}" Click="OnEditImageClick" InputGesture="Ctrl+E">
                                                                 <MenuItem.Icon>
                                                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.wand_sparkles}"/>
+                                                                </MenuItem.Icon>
+                                                            </MenuItem>
+                                                            <MenuItem x:Name="TrimVideoMenu" Header="{x:Static localization:Strings.HistoryWindows_TrimVideo}" Click="OnTrimVideoClick" IsVisible="False">
+                                                                <MenuItem.Icon>
+                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scissors}"/>
+                                                                </MenuItem.Icon>
+                                                            </MenuItem>
+                                                            <MenuItem x:Name="TrimAnimatedGifMenu" Header="{x:Static localization:Strings.HistoryWindows_TrimAnimatedGif}" Click="OnTrimAnimatedGifClick" IsVisible="False">
+                                                                <MenuItem.Icon>
+                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scissors}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem Header="{x:Static localization:Strings.HistoryWindows_Pin_to_screen}" Click="OnPinToScreenClick" InputGesture="Ctrl+P">

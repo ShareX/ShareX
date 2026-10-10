@@ -261,6 +261,16 @@
                                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.wand_sparkles}"/>
                                                 </MenuItem.Icon>
                                             </MenuItem>
+                                            <MenuItem x:Name="TrimVideoMenu" Header="{x:Static localization:Strings.HistoryWindows_TrimVideo}" Click="OnTrimVideoClick" IsVisible="False">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scissors}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <MenuItem x:Name="TrimAnimatedGifMenu" Header="{x:Static localization:Strings.HistoryWindows_TrimAnimatedGif}" Click="OnTrimAnimatedGifClick" IsVisible="False">
+                                                <MenuItem.Icon>
+                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scissors}"/>
+                                                </MenuItem.Icon>
+                                            </MenuItem>
                                             <MenuItem x:Name="PinMenu" Header="{x:Static localization:Strings.HistoryWindows_Pin_to_screen}" Click="OnPinToScreenClick" InputGesture="Ctrl+P">
                                                 <MenuItem.Icon>
                                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pin}"/>

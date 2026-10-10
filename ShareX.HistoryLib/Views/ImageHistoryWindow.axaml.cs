@@ -38,6 +38,7 @@ using ShareX.HistoryLib.Localization;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -544,6 +545,24 @@ public partial class ImageHistoryWindow : Window
     private HistoryItem[] GetSelectedItems() => _loadedEntries.Where(entry => entry.IsSelected).Select(entry => entry.Item).ToArray();
     private HistoryItem? GetPrimaryItem() => GetSelectedItems().FirstOrDefault();
 
+    private void OnThumbnailContextMenuOpening(object? sender, CancelEventArgs e)
+    {
+        if (sender is not ContextMenu menu) return;
+
+        HistoryItem[] selected = GetSelectedItems();
+        string? filePath = selected.Length == 1 ? selected[0].FilePath : null;
+        bool file = File.Exists(filePath);
+        foreach (MenuItem menuItem in menu.Items.OfType<MenuItem>())
+        {
+            if (menuItem.Name == "TrimVideoMenu")
+                menuItem.IsVisible = file && FileHelpers.IsVideoFile(filePath) && _services.TrimVideo != null;
+            else if (menuItem.Name == "TrimAnimatedGifMenu")
+                menuItem.IsVisible = file &&
+                    string.Equals(Path.GetExtension(filePath), ".gif", StringComparison.OrdinalIgnoreCase) &&
+                    _services.TrimAnimatedGif != null;
+        }
+    }
+
     private void OnFavoritesClick(object? sender, RoutedEventArgs e)
     {
         _settings.Favorites = !_settings.Favorites;
@@ -975,6 +994,19 @@ public partial class ImageHistoryWindow : Window
 
     private void OnUploadFileClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.UploadFile, false);
     private void OnEditImageClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.EditImage, true);
+    private void OnTrimVideoClick(object? sender, RoutedEventArgs e)
+    {
+        HistoryItem[] items = GetSelectedItems();
+        if (items.Length == 1 && File.Exists(items[0].FilePath) && FileHelpers.IsVideoFile(items[0].FilePath))
+            _services.TrimVideo?.Invoke(items[0].FilePath);
+    }
+    private void OnTrimAnimatedGifClick(object? sender, RoutedEventArgs e)
+    {
+        HistoryItem[] items = GetSelectedItems();
+        if (items.Length == 1 && File.Exists(items[0].FilePath) &&
+            string.Equals(Path.GetExtension(items[0].FilePath), ".gif", StringComparison.OrdinalIgnoreCase))
+            _services.TrimAnimatedGif?.Invoke(items[0].FilePath);
+    }
     private void OnPinToScreenClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.PinToScreen, true);
     private void OnAnalyzeImageClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.AnalyzeImage, true);
 

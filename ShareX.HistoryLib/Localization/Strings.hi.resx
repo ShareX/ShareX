@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>ऊपर</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>एनिमेटेड GIF ट्रिम करें...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>वीडियो ट्रिम करें...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>प्रकार</value>
   </data>

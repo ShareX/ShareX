@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>Atas</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>Pangkas GIF animasi...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>Potong video...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>Jenis</value>
   </data>

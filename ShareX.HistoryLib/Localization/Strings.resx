@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>Top</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>Trim animated GIF...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>Trim video...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>Type</value>
   </data>

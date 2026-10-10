@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>Boven</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>Geanimeerde GIF bijsnijden...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>Video bijsnijden...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>Type</value>
   </data>

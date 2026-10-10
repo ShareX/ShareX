@@ -354,6 +354,12 @@
   <data name="HistoryWindows_Top" xml:space="preserve">
     <value>顶部</value>
   </data>
+  <data name="HistoryWindows_TrimAnimatedGif" xml:space="preserve">
+    <value>裁剪动态 GIF...</value>
+  </data>
+  <data name="HistoryWindows_TrimVideo" xml:space="preserve">
+    <value>剪辑视频...</value>
+  </data>
   <data name="HistoryWindows_Type" xml:space="preserve">
     <value>类型</value>
   </data>
