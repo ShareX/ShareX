@@ -33,6 +33,7 @@ using System.Runtime.InteropServices;
 using Vortice;
 using Vortice.DXGI;
 using Vortice.MediaFoundation;
+using MediaResultCode = Vortice.MediaFoundation.ResultCode;
 
 namespace ShareX.Tools;
 
@@ -54,6 +55,7 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
     private IMFMediaEngine? _mediaEngine;
     private IMFMediaEngineEx? _engine;
     private WindowsVideoPresenter? _presenter;
+    private WindowsVideoOnlySource? _videoOnlySource;
     private nint _window;
     private int _generation;
     private double _duration;
@@ -163,32 +165,63 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
             ObjectDisposedException.ThrowIf(_disposed, this);
             if (generation != _generation) throw new OperationCanceledException();
 
-            MediaFactory.MFStartup(true).CheckError();
-            _mediaFoundationStarted = true;
-            _loadCompletion = new(TaskCreationOptions.RunContinuationsAsynchronously);
-            _presenter = new WindowsVideoPresenter(window);
-            using IMFAttributes attributes = MediaFactory.MFCreateAttributes(2);
-            attributes.Set(MediaEngineAttributeKeys.DxgiManager.Guid, _presenter.DeviceManager).CheckError();
-            attributes.Set(MediaEngineAttributeKeys.VideoOutputFormat.Guid, (uint)Format.B8G8R8A8_UNorm).CheckError();
-            using IMFMediaEngineClassFactory factory = new();
-            _mediaEngine = factory.CreateInstance(MediaEngineCreateFlags.None, attributes,
-                (mediaEvent, parameter1, parameter2) => OnMediaEvent(generation, mediaEvent, parameter1, parameter2));
-            // The base wrapper owns the managed COM notification callback; retain it through shutdown.
-            _engine = _mediaEngine.QueryInterface<IMFMediaEngineEx>();
-            _engine.AutoPlay = false;
-            _engine.Preload = MediaEnginePreload.Automatic;
-            _engine.Volume = _volume;
-            _engine.Muted = _isMuted;
-            // The Windows URL resolver also accepts local paths, without URI escaping of '#' or Unicode names.
-            _engine.SetSource(Path.GetFullPath(path));
-            _engine.Load();
-            return await _loadCompletion.Task.WaitAsync(token);
+            string fullPath = Path.GetFullPath(path);
+            try
+            {
+                CreateMediaEngine(window, fullPath, generation);
+                return await _loadCompletion!.Task.WaitAsync(token);
+            }
+            catch (Exception ex) when (!token.IsCancellationRequested && generation == _generation &&
+                (ex.HResult == MediaResultCode.TopoCodecNotFound.Code || ex.HResult == MediaResultCode.Invalidmediatype.Code))
+            {
+                // A missing audio decoder must not prevent a supported video stream from opening.
+                CloseMedia();
+                generation = _generation;
+            }
+
+            // Resolve on a worker: large files must not block the UI. The source owns its MF lifetime
+            // while a canceled/replaced load is waiting for resolution to finish.
+            WindowsVideoOnlySource source = await Task.Run(() => new WindowsVideoOnlySource(fullPath), token);
+            try
+            {
+                token.ThrowIfCancellationRequested();
+                ObjectDisposedException.ThrowIf(_disposed, this);
+                if (generation != _generation) throw new OperationCanceledException();
+                _videoOnlySource = source;
+            }
+            catch { source.Dispose(); throw; }
+            CreateMediaEngine(window, fullPath, generation);
+            return await _loadCompletion!.Task.WaitAsync(token);
         }
         catch
         {
             if (generation == _generation) CloseMedia();
             throw;
         }
+    }
+
+    private void CreateMediaEngine(nint window, string path, int generation)
+    {
+        MediaFactory.MFStartup(true).CheckError();
+        _mediaFoundationStarted = true;
+        _loadCompletion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        _presenter = new WindowsVideoPresenter(window);
+        using IMFAttributes attributes = MediaFactory.MFCreateAttributes(3);
+        attributes.Set(MediaEngineAttributeKeys.DxgiManager.Guid, _presenter.DeviceManager).CheckError();
+        attributes.Set(MediaEngineAttributeKeys.VideoOutputFormat.Guid, (uint)Format.B8G8R8A8_UNorm).CheckError();
+        if (_videoOnlySource != null) attributes.Set(MediaEngineAttributeKeys.Extension.Guid, _videoOnlySource.Extension).CheckError();
+        using IMFMediaEngineClassFactory factory = new();
+        _mediaEngine = factory.CreateInstance(MediaEngineCreateFlags.None, attributes,
+            (mediaEvent, parameter1, parameter2) => OnMediaEvent(generation, mediaEvent, parameter1, parameter2));
+        // The base wrapper owns the managed COM notification callback; retain it through shutdown.
+        _engine = _mediaEngine.QueryInterface<IMFMediaEngineEx>();
+        _engine.AutoPlay = false;
+        _engine.Preload = MediaEnginePreload.Automatic;
+        _engine.Volume = _volume;
+        _engine.Muted = _isMuted;
+        // The Windows URL resolver also accepts local paths, without URI escaping of '#' or Unicode names.
+        _engine.SetSource(path);
+        _engine.Load();
     }
 
     public void Unload()
@@ -283,7 +316,7 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         {
             Dispatcher.UIThread.Post(() =>
             {
-                if (generation != _generation || _engine == null || _disposed) return;
+                if (generation != _generation || _engine == null || _disposed || _loadCompletion?.Task.IsFaulted == true) return;
                 TryOperation(() => HandleMediaEvent(mediaEvent, parameter2));
             });
         }
@@ -367,9 +400,13 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         {
             TaskCompletionSource<VideoPlaybackInfo>? load = _loadCompletion;
             bool loading = load is { Task.IsCompleted: false };
-            if (loading) load!.TrySetException(ex);
+            if (loading)
+            {
+                load!.TrySetException(ex);
+                return; // LoadAsync owns cleanup and can retry without the unsupported audio stream.
+            }
             CloseMedia();
-            if (!loading) PlaybackFailed?.Invoke(ex);
+            PlaybackFailed?.Invoke(ex);
         }
     }
 
@@ -466,6 +503,8 @@ public sealed class WindowsMediaPlayer : NativeControlHost, IDisposable
         }
         _mediaEngine?.Dispose();
         _mediaEngine = null;
+        _videoOnlySource?.Dispose();
+        _videoOnlySource = null;
         _presenter?.Dispose();
         _presenter = null;
         if (_mediaFoundationStarted)
