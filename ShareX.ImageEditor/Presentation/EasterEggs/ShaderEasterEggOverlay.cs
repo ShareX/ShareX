@@ -54,7 +54,6 @@ internal sealed class ShaderEasterEggOverlay : Control, IDisposable
 
     private CompositionCustomVisual? _customVisual;
     private IShaderEasterEggEffect? _activeEffect;
-    private ShaderEasterEggPointerMapper? _pointerMapper;
     private Size _lastSentBounds;
 
     public bool Start(IShaderEasterEggEffect effect)
@@ -65,8 +64,8 @@ internal sealed class ShaderEasterEggOverlay : Control, IDisposable
             return false;
         }
 
-        // Validate before changing input coordinates or covering the editor. Compilation on
-        // the composition thread also owns the runtime effect's eventual disposal.
+        // Validate before covering the editor. The composition thread compiles its own
+        // runtime effect and owns its eventual disposal.
         using SKRuntimeEffect? validation = SKRuntimeEffect.CreateShader(effect.ShaderSource, out string errors);
         if (validation == null)
         {
@@ -75,8 +74,6 @@ internal sealed class ShaderEasterEggOverlay : Control, IDisposable
         }
 
         _activeEffect = effect;
-        _pointerMapper?.Dispose();
-        _pointerMapper = new ShaderEasterEggPointerMapper(this, effect);
         _customVisual.SendHandlerMessage(new ShaderPayload(HandlerCommand.Start, effect, Bounds.Size));
         return true;
     }
@@ -84,8 +81,6 @@ internal sealed class ShaderEasterEggOverlay : Control, IDisposable
     public void Stop()
     {
         _activeEffect = null;
-        _pointerMapper?.Dispose();
-        _pointerMapper = null;
         _customVisual?.SendHandlerMessage(new ShaderPayload(HandlerCommand.Stop));
     }
 

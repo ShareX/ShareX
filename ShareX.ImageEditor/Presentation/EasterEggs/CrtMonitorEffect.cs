@@ -30,7 +30,7 @@ namespace ShareX.ImageEditor.Presentation.EasterEggs;
 
 /// <summary>
 /// A full-window color CRT with a curved glass face, finite electron-beam width and
-/// phosphor mask. Display geometry is shared with input mapping; the image itself is untouched.
+/// phosphor mask. The visual distortion leaves pointer input and the image itself untouched.
 /// </summary>
 internal sealed class CrtMonitorEffect : IShaderEasterEggEffect
 {
@@ -39,20 +39,6 @@ internal sealed class CrtMonitorEffect : IShaderEasterEggEffect
     public void UpdateUniforms(SKRuntimeEffectUniforms uniforms, Size bounds)
     {
         uniforms["curvature"] = Curvature;
-    }
-
-    public Point MapToSource(Point position, Size bounds)
-    {
-        double halfWidth = Math.Max(bounds.Width * 0.5, 1);
-        double halfHeight = Math.Max(bounds.Height * 0.5, 1);
-        double px = position.X - bounds.Width * 0.5;
-        double py = position.Y - bounds.Height * 0.5;
-
-        double x = px / halfWidth;
-        double y = py / halfHeight;
-        double bulge = 1 - Curvature * Math.Max(1 - x * x, 0) * Math.Max(1 - y * y, 0);
-        return new Point((x * bulge * 0.5 + 0.5) * bounds.Width,
-            (y * bulge * 0.5 + 0.5) * bounds.Height);
     }
 
     public string ShaderSource => """
@@ -107,8 +93,7 @@ internal sealed class CrtMonitorEffect : IShaderEasterEggEffect
             float aa = max(pixelSize.x, pixelSize.y);
 
             float2 q = p / halfScreen;
-            // Edge-preserving barrel distortion keeps controls accessible along window edges.
-            // This is the same mapping used for pointer input in MapToSource.
+            // Edge-preserving barrel distortion keeps controls visible along window edges.
             float bulge = 1.0 - curvature * (1.0 - q.x * q.x) * (1.0 - q.y * q.y);
             float2 uv = q * bulge * 0.5 + 0.5;
             float2 samplePosition = uv * resolution;

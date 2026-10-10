@@ -29,13 +29,11 @@ using SkiaSharp;
 namespace ShareX.ImageEditor.Presentation.EasterEggs;
 
 /// <summary>
-/// Describes a persistent display effect and its corresponding pointer transformation.
+/// Describes a persistent display effect.
 /// </summary>
 internal interface IShaderEasterEggEffect
 {
     string ShaderSource { get; }
 
     void UpdateUniforms(SKRuntimeEffectUniforms uniforms, Size bounds);
-
-    Point MapToSource(Point position, Size bounds);
 }
