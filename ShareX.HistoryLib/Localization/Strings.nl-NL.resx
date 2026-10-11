@@ -319,7 +319,7 @@
     <value>Verkorte URL</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>Alleen afbeeldingsbestanden tonen</value>
+    <value>Alleen afbeeldings- en videobestanden tonen</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>Afbeeldingsvoorbeeld tonen</value>

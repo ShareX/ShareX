@@ -319,7 +319,7 @@
     <value>Короткая ссылка</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>Показывать только файлы изображений</value>
+    <value>Показывать только файлы изображений и видео</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>Показывать предпросмотр изображения</value>

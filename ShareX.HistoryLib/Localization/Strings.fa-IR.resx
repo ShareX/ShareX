@@ -319,7 +319,7 @@
     <value>URL کوتاه‌شده</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>فقط فایل‌های تصویری نمایش داده شوند</value>
+    <value>فقط فایل‌های تصویری و ویدیویی نمایش داده شوند</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>نمایش پیش‌نمایش تصویر</value>

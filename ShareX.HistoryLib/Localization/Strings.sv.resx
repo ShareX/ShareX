@@ -319,7 +319,7 @@
     <value>Förkortad URL</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>Visa endast bildfiler</value>
+    <value>Visa endast bild- och videofiler</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>Visa bildförhandsgranskning</value>

@@ -319,7 +319,7 @@
     <value>URL scurtat</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>Afișează numai fișiere imagine</value>
+    <value>Afișează numai fișiere imagine și video</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>Afișează previzualizarea imaginii</value>

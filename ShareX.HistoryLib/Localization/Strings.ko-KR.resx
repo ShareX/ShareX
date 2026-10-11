@@ -319,7 +319,7 @@
     <value>단축 URL</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>이미지 파일만 표시</value>
+    <value>이미지 및 동영상 파일만 표시</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>이미지 미리 보기 표시</value>

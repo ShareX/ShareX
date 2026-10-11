@@ -319,7 +319,7 @@
     <value>URL raccourci</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>Afficher uniquement les fichiers image</value>
+    <value>Afficher uniquement les fichiers image et vidéo</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>Afficher l’aperçu de l’image</value>

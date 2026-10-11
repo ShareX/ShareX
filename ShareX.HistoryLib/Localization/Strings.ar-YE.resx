@@ -319,7 +319,7 @@
     <value>عنوان URL المختصر</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>إظهار ملفات الصور فقط</value>
+    <value>إظهار ملفات الصور والفيديو فقط</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>إظهار معاينة الصورة</value>

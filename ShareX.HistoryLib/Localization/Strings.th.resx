@@ -319,7 +319,7 @@
     <value>URL แบบย่อ</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>แสดง ไฟล์รูปภาพ เท่านั้น</value>
+    <value>แสดงเฉพาะไฟล์รูปภาพและวิดีโอ</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>แสดง ตัวอย่างรูปภาพ</value>

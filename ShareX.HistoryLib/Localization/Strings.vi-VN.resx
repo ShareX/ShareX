@@ -319,7 +319,7 @@
     <value>URL rút gọn</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>Chỉ hiển thị tệp ảnh</value>
+    <value>Chỉ hiển thị tệp ảnh và video</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>Hiển thị bản xem trước ảnh</value>

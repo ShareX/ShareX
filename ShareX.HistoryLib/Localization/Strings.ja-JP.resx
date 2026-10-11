@@ -319,7 +319,7 @@
     <value>短縮URL</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>画像ファイルのみ表示</value>
+    <value>画像と動画のファイルのみ表示</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>画像プレビューを表示</value>

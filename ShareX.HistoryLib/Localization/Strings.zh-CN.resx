@@ -319,7 +319,7 @@
     <value>短网址</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>仅显示图像文件</value>
+    <value>仅显示图像和视频文件</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>显示图像预览</value>

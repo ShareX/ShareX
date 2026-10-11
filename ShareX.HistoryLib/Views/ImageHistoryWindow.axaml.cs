@@ -265,7 +265,7 @@ public partial class ImageHistoryWindow : Window
         int version = Interlocked.Increment(ref _filterVersion);
         string search = SearchTextBox.Text?.Trim() ?? string.Empty;
         bool favorites = _settings.Favorites;
-        bool imageOnly = _settings.ImageOnly;
+        bool mediaOnly = _settings.ImageOnly;
         bool filterMissing = _settings.FilterMissingFiles;
         List<HistoryItem> source = _allHistoryItems;
 
@@ -293,7 +293,7 @@ public partial class ImageHistoryWindow : Window
                     HistoryItem item = source[i];
                     if (string.IsNullOrWhiteSpace(item.FilePath)) continue;
                     if (favorites && !item.Favorite) continue;
-                    if (imageOnly && !FileHelpers.IsImageFile(item.FilePath)) continue;
+                    if (mediaOnly && !FileHelpers.IsImageFile(item.FilePath) && !FileHelpers.IsVideoFile(item.FilePath)) continue;
                     if (filterMissing && !File.Exists(item.FilePath)) continue;
                     if (regex != null && !regex.IsMatch(item.FileName ?? string.Empty) &&
                         !(item.Tags?.Values.Any(value => !string.IsNullOrEmpty(value) && regex.IsMatch(value)) == true)) continue;
@@ -537,7 +537,7 @@ public partial class ImageHistoryWindow : Window
         bool wasDragging = _dragStarted;
         _dragPointerPressed = null;
 
-        if (wasPressed && !wasDragging && !_suppressThumbnailClickAction) ShowSelectedImage();
+        if (wasPressed && !wasDragging && !_suppressThumbnailClickAction) OpenSelectedItem();
     }
 
     private void OnThumbnailDoubleTapped(object? sender, TappedEventArgs e) => OpenSelectedItem();

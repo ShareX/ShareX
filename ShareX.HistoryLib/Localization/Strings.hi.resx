@@ -319,7 +319,7 @@
     <value>संक्षिप्त URL</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>केवल छवि फ़ाइलें दिखाएँ</value>
+    <value>केवल छवि और वीडियो फ़ाइलें दिखाएँ</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>छवि पूर्वावलोकन दिखाएँ</value>

@@ -319,7 +319,7 @@
     <value>縮網址</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>僅顯示圖片檔案</value>
+    <value>僅顯示圖片和影片檔案</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>顯示圖片預覽</value>

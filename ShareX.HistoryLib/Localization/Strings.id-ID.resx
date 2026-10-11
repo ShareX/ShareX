@@ -319,7 +319,7 @@
     <value>URL yang dipersingkat</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>Tampilkan file gambar saja</value>
+    <value>Tampilkan file gambar dan video saja</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>Tampilkan pratinjau gambar</value>

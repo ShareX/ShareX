@@ -319,7 +319,7 @@
     <value>URL acortada</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>Mostrar solo archivos de imagen</value>
+    <value>Mostrar solo archivos de imagen y video</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>Mostrar vista previa de imagen</value>

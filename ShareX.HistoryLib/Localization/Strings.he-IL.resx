@@ -319,7 +319,7 @@
     <value>קישור מקוצר</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>הצג קובצי תמונה בלבד</value>
+    <value>הצג קובצי תמונה ווידאו בלבד</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>הצג תצוגה מקדימה של תמונה</value>

@@ -319,7 +319,7 @@
     <value>Kısaltılmış adres</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>Yalnızca görüntü dosyalarını göster</value>
+    <value>Yalnızca görüntü ve video dosyalarını göster</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>Görüntü önizlemesini göster</value>

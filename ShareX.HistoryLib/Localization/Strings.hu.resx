@@ -319,7 +319,7 @@
     <value>Rövidített URL</value>
   </data>
   <data name="HistoryWindows_Show_image_files_only" xml:space="preserve">
-    <value>Csak képfájlok megjelenítése</value>
+    <value>Csak kép- és videófájlok megjelenítése</value>
   </data>
   <data name="HistoryWindows_Show_image_preview" xml:space="preserve">
     <value>Kép-előnézet megjelenítése</value>
