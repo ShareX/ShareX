@@ -240,7 +240,7 @@
                                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.list_x}"/>
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="{x:Static localization:Strings.HistoryWindows_Delete_file_and_history_item}" Click="OnDeleteFileClick" InputGesture="Shift+Delete">
+                                            <MenuItem x:Name="DeleteFileMenu" Header="{x:Static localization:Strings.HistoryWindows_Delete_file_and_history_item}" Click="OnDeleteFileClick" InputGesture="Shift+Delete">
                                                 <MenuItem.Icon>
                                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_x}"/>
                                                 </MenuItem.Icon>

@@ -550,17 +550,13 @@ public partial class ImageHistoryWindow : Window
         if (sender is not ContextMenu menu) return;
 
         HistoryItem[] selected = GetSelectedItems();
-        string? filePath = selected.Length == 1 ? selected[0].FilePath : null;
-        bool file = File.Exists(filePath);
-        foreach (MenuItem menuItem in menu.Items.OfType<MenuItem>())
+        if (selected.Length == 0)
         {
-            if (menuItem.Name == "TrimVideoMenu")
-                menuItem.IsVisible = file && FileHelpers.IsVideoFile(filePath) && _services.TrimVideo != null;
-            else if (menuItem.Name == "TrimAnimatedGifMenu")
-                menuItem.IsVisible = file &&
-                    string.Equals(Path.GetExtension(filePath), ".gif", StringComparison.OrdinalIgnoreCase) &&
-                    _services.TrimAnimatedGif != null;
+            e.Cancel = true;
+            return;
         }
+
+        HistoryContextMenuHelpers.UpdateVisibility(menu, selected, _services);
     }
 
     private void OnFavoritesClick(object? sender, RoutedEventArgs e)
@@ -958,19 +954,20 @@ public partial class ImageHistoryWindow : Window
     private void OnCopyFileNameWithExtensionClick(object? sender, RoutedEventArgs e) => CopyValues(item => Path.GetFileName(item.FilePath));
     private void OnCopyFolderClick(object? sender, RoutedEventArgs e) => CopyValues(item => Path.GetDirectoryName(item.FilePath));
     private void OnCopyHtmlLinkClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"<a href=\"{item.URL}\">{item.URL}</a>", HasUrl);
-    private void OnCopyHtmlImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"<img src=\"{item.URL}\"/>", HasUrl);
+    private void OnCopyHtmlImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"<img src=\"{item.URL}\"/>", HasImageUrl);
     private void OnCopyHtmlLinkedImageClick(object? sender, RoutedEventArgs e) =>
         CopyValues(item => $"<a href=\"{item.URL}\"><img src=\"{item.ThumbnailURL}\"/></a>", HasLinkedImage);
     private void OnCopyForumLinkClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"[url]{item.URL}[/url]", HasUrl);
-    private void OnCopyForumImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"[img]{item.URL}[/img]", HasUrl);
+    private void OnCopyForumImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"[img]{item.URL}[/img]", HasImageUrl);
     private void OnCopyForumLinkedImageClick(object? sender, RoutedEventArgs e) =>
         CopyValues(item => $"[url={item.URL}][img]{item.ThumbnailURL}[/img][/url]", HasLinkedImage);
     private void OnCopyMarkdownLinkClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"[{item.FileName}]({item.URL})", HasUrl);
-    private void OnCopyMarkdownImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"![{item.FileName}]({item.URL})", HasUrl);
+    private void OnCopyMarkdownImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"![{item.FileName}]({item.URL})", HasImageUrl);
     private void OnCopyMarkdownLinkedImageClick(object? sender, RoutedEventArgs e) =>
         CopyValues(item => $"[![{item.FileName}]({item.ThumbnailURL})]({item.URL})", HasLinkedImage);
     private static bool HasUrl(HistoryItem item) => !string.IsNullOrWhiteSpace(item.URL);
-    private static bool HasLinkedImage(HistoryItem item) => HasUrl(item) && !string.IsNullOrWhiteSpace(item.ThumbnailURL);
+    private static bool HasImageUrl(HistoryItem item) => HasUrl(item) && FileHelpers.IsImageFile(item.URL);
+    private static bool HasLinkedImage(HistoryItem item) => HasImageUrl(item) && !string.IsNullOrWhiteSpace(item.ThumbnailURL);
 
     private void OnCopyFileClick(object? sender, RoutedEventArgs e)
     {
