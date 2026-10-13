@@ -43,6 +43,7 @@ public partial class ScrollingCaptureRegionWindow : Window
 
     private readonly int _frameWidth;
     private readonly int _frameHeight;
+    private readonly PixelPoint _initialPosition;
     private double _windowScaling = 1;
 
     public ScrollingCaptureRegionWindow()
@@ -54,11 +55,12 @@ public partial class ScrollingCaptureRegionWindow : Window
     {
         _frameWidth = regionRectangle.Width + BorderPixels * 2;
         _frameHeight = regionRectangle.Height + BorderPixels * 2;
-
-        InitializeComponent();
-        Position = new PixelPoint(
+        _initialPosition = new PixelPoint(
             regionRectangle.X - BorderPixels,
             regionRectangle.Y - BorderPixels);
+
+        InitializeComponent();
+        Position = _initialPosition;
         ConfigureGeometry(1);
 
         Opened += OnOpened;
@@ -72,6 +74,7 @@ public partial class ScrollingCaptureRegionWindow : Window
     private void OnOpened(object? sender, EventArgs e)
     {
         ConfigureGeometry(GetScreenScaling());
+        Helpers.EnsureWindowPosition(this, _initialPosition.X, _initialPosition.Y);
         ApplyClickThroughToolWindowStyle();
         ApplyNativeFrameRegion();
         Dispatcher.UIThread.Post(ApplyNativeFrameRegion, DispatcherPriority.Loaded);
@@ -86,7 +89,7 @@ public partial class ScrollingCaptureRegionWindow : Window
 
     private double GetScreenScaling()
     {
-        return Screens.ScreenFromPoint(Position)?.Scaling ?? Screens.Primary?.Scaling ?? 1;
+        return Screens.ScreenFromPoint(_initialPosition)?.Scaling ?? Screens.Primary?.Scaling ?? 1;
     }
 
     private void ApplyClickThroughToolWindowStyle()

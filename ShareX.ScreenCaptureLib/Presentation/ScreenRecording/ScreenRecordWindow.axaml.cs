@@ -62,6 +62,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private readonly int _captureWidth;
     private readonly int _captureHeight;
+    private readonly PixelPoint _initialPosition;
     private readonly DispatcherTimer _refreshTimer;
     private readonly NativeMenu _trayMenu;
     private readonly NativeMenuItem _trayStartItem;
@@ -186,10 +187,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
     {
         _captureWidth = regionRectangle.Width;
         _captureHeight = regionRectangle.Height;
+        _initialPosition = new PixelPoint(regionRectangle.X - BorderPixels, regionRectangle.Y - BorderPixels);
 
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        Position = new PixelPoint(regionRectangle.X - BorderPixels, regionRectangle.Y - BorderPixels);
+        Position = _initialPosition;
 
         _refreshTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(50) };
         _refreshTimer.Tick += (_, _) => UpdateTimer();
@@ -597,8 +599,9 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void OnOpened(object? sender, EventArgs e)
     {
-        double scaling = GetScreenScaling(Position);
+        double scaling = GetScreenScaling(_initialPosition);
         ConfigureGeometry(scaling);
+        Helpers.EnsureWindowPosition(this, _initialPosition.X - _frameLeftPixels, _initialPosition.Y);
         ApplyToolWindowStyle();
         ApplyNativeWindowRegion();
         Dispatcher.UIThread.Post(ApplyNativeWindowRegion, DispatcherPriority.Loaded);

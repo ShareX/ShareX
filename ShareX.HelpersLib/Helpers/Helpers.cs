@@ -916,6 +916,24 @@ namespace ShareX.HelpersLib
             return Task.WhenAll(tasks);
         }
 
+        public static void EnsureWindowPosition(Avalonia.Controls.Window window, int x, int y)
+        {
+            IntPtr handle = window.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+            if (!OperatingSystem.IsWindows() || handle == IntPtr.Zero)
+            {
+                return;
+            }
+
+            Rectangle bounds = NativeMethods.GetWindowRect(handle);
+            if (bounds.X != x || bounds.Y != y)
+            {
+                // Avalonia's Win32 resizing can shift a window by a monitor's work-area inset.
+                // Move in screen coordinates without reassigning Position and changing its cached DPI scale.
+                NativeMethods.SetWindowPos(handle, IntPtr.Zero, x, y, 0, 0,
+                    SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOZORDER | SetWindowPosFlags.SWP_NOACTIVATE);
+            }
+        }
+
         public static void LockCursorToWindow(Avalonia.Controls.Window window)
         {
             window.Activated += (sender, e) =>

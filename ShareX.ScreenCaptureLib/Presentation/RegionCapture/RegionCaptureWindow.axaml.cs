@@ -460,6 +460,7 @@ public partial class RegionCaptureWindow : Window
             }
 
             ApplyPixelSize();
+            Helpers.EnsureWindowPosition(this, _request.ScreenBounds.X, _request.ScreenBounds.Y);
             UpdatePixelTransforms();
             _editorWorkspace.ConfigureForFullscreenWorkspace();
             _editorWorkspace.LoadWorkspaceImage(_request.Screenshot);
