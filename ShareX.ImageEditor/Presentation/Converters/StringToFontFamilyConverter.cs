@@ -25,6 +25,7 @@
 
 using Avalonia.Data.Converters;
 using Avalonia.Media;
+using ShareX.ImageEditor.Presentation.Helpers;
 using System.Globalization;
 
 namespace ShareX.ImageEditor.Presentation.Converters
@@ -47,7 +48,9 @@ namespace ShareX.ImageEditor.Presentation.Converters
                 fontFamilyName = DefaultFontFamilyName;
             }
 
-            return new FontFamily(fontFamilyName);
+            return FontFamilyHelper.TryCreateFontFamily(fontFamilyName, out var fontFamily)
+                ? fontFamily
+                : new FontFamily(DefaultFontFamilyName);
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
