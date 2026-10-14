@@ -1675,26 +1675,7 @@ public class EditorInputController
 
         textBox.LostFocus += OnCreationLostFocus;
 
-        textBox.KeyDown += (s, args) =>
-        {
-            if (args.Key == Key.Enter && args.KeyModifiers.HasFlag(KeyModifiers.Control))
-            {
-                args.Handled = true;
-                int caretIndex = textBox.CaretIndex;
-                string currentText = textBox.Text ?? string.Empty;
-                textBox.Text = currentText.Substring(0, caretIndex) + "\n" + currentText.Substring(caretIndex);
-                textBox.CaretIndex = caretIndex + 1;
-            }
-        };
-
-        textBox.KeyUp += (s, args) =>
-        {
-            if ((args.Key == Key.Enter && !args.KeyModifiers.HasFlag(KeyModifiers.Control)) || args.Key == Key.Escape)
-            {
-                args.Handled = true;
-                _view.Focus();
-            }
-        };
+        AnnotationTextEditorHelper.AttachKeyHandlers(textBox, () => _view.Focus());
 
         canvas.Children.Add(textBox);
 

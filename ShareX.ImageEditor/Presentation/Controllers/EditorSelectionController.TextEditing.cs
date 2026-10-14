@@ -29,6 +29,7 @@ using Avalonia.Input;
 using Avalonia.Media;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Presentation.Controls;
+using ShareX.ImageEditor.Presentation.Helpers;
 using ShareX.ImageEditor.Presentation.Rendering;
 using SkiaSharp;
 
@@ -105,60 +106,12 @@ public partial class EditorSelectionController
             }
         };
 
-        textBox.KeyDown += (s, args) => HandleTextEditorKeyDown(textBox, args);
-
-        textBox.KeyUp += (s, args) => HandleTextEditorKeyUp(args);
+        AnnotationTextEditorHelper.AttachKeyHandlers(textBox, () => _view.Focus());
 
         overlay.Children.Add(textBox); // Add to OverlayCanvas
         _balloonTextEditor = textBox;
         textBox.Focus();
         textBox.CaretIndex = textBox.Text?.Length ?? 0; // Place caret at end
-
-        // Attach extended handlers for live update if needed, or rely on LostFocus
-        AttachTextBoxEditHandlers(textBox);
-    }
-
-    private void AttachTextBoxEditHandlers(TextBox tb)
-    {
-        EventHandler<FocusChangedEventArgs>? lostFocusHandler = null;
-        EventHandler<KeyEventArgs>? keyDownHandler = null;
-        EventHandler<KeyEventArgs>? keyUpHandler = null;
-
-        lostFocusHandler = (s, args) =>
-        {
-            if (lostFocusHandler != null) tb.LostFocus -= lostFocusHandler;
-            if (keyDownHandler != null) tb.KeyDown -= keyDownHandler;
-            if (keyUpHandler != null) tb.KeyUp -= keyUpHandler;
-
-            tb.IsHitTestVisible = false;
-
-            if (tb.Tag is Annotation annotation)
-            {
-                // Sync Text
-                if (annotation is TextAnnotation textAnn)
-                {
-                    textAnn.Text = tb.Text ?? string.Empty;
-
-                    // Sync Bounds
-                    var textBoxRect = GetLogicalRect(tb);
-                    textAnn.EndPoint = new SKPoint(
-                        (float)(textBoxRect.Left + textBoxRect.Width),
-                        (float)(textBoxRect.Top + textBoxRect.Height)
-                    );
-
-                    UpdateSelectionHandles();
-                    UpdateHoverOutline();
-                }
-            }
-        };
-
-        keyDownHandler = (s, args) => HandleTextEditorKeyDown(tb, args);
-
-        keyUpHandler = (s, args) => HandleTextEditorKeyUp(args);
-
-        tb.LostFocus += lostFocusHandler;
-        tb.KeyDown += keyDownHandler;
-        tb.KeyUp += keyUpHandler;
     }
 
     public void UpdateActiveTextEditorProperties()
@@ -215,14 +168,10 @@ public partial class EditorSelectionController
         textBox.Height = Math.Max(20, annotationBounds.Height);
 
         EventHandler<FocusChangedEventArgs>? lostFocusHandler = null;
-        EventHandler<KeyEventArgs>? keyDownHandler = null;
-        EventHandler<KeyEventArgs>? keyUpHandler = null;
 
         void CompleteEditing()
         {
             if (lostFocusHandler != null) textBox.LostFocus -= lostFocusHandler;
-            if (keyDownHandler != null) textBox.KeyDown -= keyDownHandler;
-            if (keyUpHandler != null) textBox.KeyUp -= keyUpHandler;
 
             annotation.Text = textBox.Text ?? string.Empty;
 
@@ -243,38 +192,13 @@ public partial class EditorSelectionController
 
         lostFocusHandler = (s, args) => CompleteEditing();
 
-        keyDownHandler = (s, args) => HandleTextEditorKeyDown(textBox, args);
-
-        keyUpHandler = (s, args) => HandleTextEditorKeyUp(args);
-
         textBox.LostFocus += lostFocusHandler;
-        textBox.KeyDown += keyDownHandler;
-        textBox.KeyUp += keyUpHandler;
+        AnnotationTextEditorHelper.AttachKeyHandlers(textBox, () => _view.Focus());
 
         overlay.Children.Add(textBox);
         textBox.Focus();
         textBox.CaretIndex = textBox.Text?.Length ?? 0;
         textBox.SelectionStart = textBox.CaretIndex;
         textBox.SelectionEnd = textBox.CaretIndex;
-    }
-
-    private static void HandleTextEditorKeyDown(TextBox textBox, KeyEventArgs args)
-    {
-        if (args.Key == Key.Enter && args.KeyModifiers.HasFlag(KeyModifiers.Control))
-        {
-            args.Handled = true;
-            int caretIndex = textBox.CaretIndex;
-            textBox.Text = (textBox.Text ?? string.Empty).Insert(caretIndex, "\n");
-            textBox.CaretIndex = caretIndex + 1;
-        }
-    }
-
-    private void HandleTextEditorKeyUp(KeyEventArgs args)
-    {
-        if ((args.Key == Key.Enter && !args.KeyModifiers.HasFlag(KeyModifiers.Control)) || args.Key == Key.Escape)
-        {
-            args.Handled = true;
-            _view.Focus();
-        }
     }
 }
