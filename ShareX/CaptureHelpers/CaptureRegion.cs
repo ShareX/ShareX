@@ -71,7 +71,7 @@ namespace ShareX
                 CursorData cursorData = new CursorData();
                 if (cursorData.IsVisible)
                 {
-                    using Bitmap cursor = cursorData.ToBitmap();
+                    using Bitmap cursor = cursorData.ToBitmap(frozenScreenshot, screenBounds.Location);
                     cursorBitmap = cursor.Copy();
                     cursorPosition = new Point(
                         cursorData.DrawPosition.X - screenBounds.X,

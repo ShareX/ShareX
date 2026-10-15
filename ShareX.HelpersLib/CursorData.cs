@@ -139,12 +139,15 @@ namespace ShareX.HelpersLib
         public void DrawCursor(SKBitmap image, Point offset)
         {
             if (!IsVisible) return;
-            using SKBitmap cursor = ToBitmap();
+            using SKBitmap cursor = ToBitmap(image, offset);
             using SKCanvas canvas = new(image);
             Point position = new(DrawPosition.X - offset.X, DrawPosition.Y - offset.Y);
             canvas.DrawBitmap(cursor, position.X, position.Y);
         }
 
         public SKBitmap ToBitmap() => WindowsImageInterop.FromIcon(Handle, Size);
+
+        public SKBitmap ToBitmap(SKBitmap background, Point offset) => WindowsImageInterop.FromIcon(Handle, Size, background,
+            new Point(DrawPosition.X - offset.X, DrawPosition.Y - offset.Y));
     }
 }

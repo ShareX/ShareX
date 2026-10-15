@@ -92,7 +92,7 @@ public static class WindowsImageInterop
         finally { NativeMethods.ReleaseDC(window, source); }
     }
 
-    private static unsafe SKBitmap DrawNative(Size size, SKColor background, Action<IntPtr> draw)
+    private static unsafe SKBitmap DrawNative(Size size, SKColor background, Action<IntPtr> draw, Action<SKCanvas> drawBackground = null)
     {
         IntPtr dc = NativeMethods.CreateCompatibleDC(IntPtr.Zero);
         if (dc == IntPtr.Zero) throw new Win32Exception();
@@ -107,12 +107,18 @@ public static class WindowsImageInterop
             if (!surface.InstallPixels(new SKImageInfo(size.Width, size.Height, SKColorType.Bgra8888, SKAlphaType.Unpremul), pixels, size.Width * 4))
                 throw new InvalidOperationException("Unable to access Windows image pixels.");
             surface.Erase(background);
+            if (drawBackground != null)
+            {
+                using SKCanvas canvas = new(surface);
+                drawBackground(canvas);
+                canvas.Flush();
+            }
             draw(dc);
             GdiFlush();
-            surface.NotifyPixelsChanged();
-            SKBitmap result = surface.Copy();
-            SetOpaque(result);
-            return result;
+            // GDI mask operations can clear alpha. Restore it before Skia copies
+            // the pixels, otherwise transparent RGB values are discarded.
+            SetOpaque(surface);
+            return surface.Copy();
         }
         finally
         {
@@ -122,7 +128,7 @@ public static class WindowsImageInterop
         }
     }
 
-    public static SKBitmap FromIcon(IntPtr icon, Size size = default)
+    public static SKBitmap FromIcon(IntPtr icon, Size size = default, SKBitmap background = null, Point position = default)
     {
         if (icon == IntPtr.Zero) return null;
         if (size.IsEmpty && NativeMethods.GetIconInfo(icon, out IconInfo info))
@@ -142,6 +148,8 @@ public static class WindowsImageInterop
         Action<IntPtr> draw = dc => NativeMethods.DrawIconEx(dc, 0, 0, icon, size.Width, size.Height, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
         using SKBitmap black = DrawNative(size, SKColors.Black, draw);
         using SKBitmap white = DrawNative(size, SKColors.White, draw);
+        using SKBitmap composited = background == null ? null : DrawNative(size, SKColors.Black, draw,
+            canvas => canvas.DrawBitmap(background, -position.X, -position.Y));
         SKBitmap result = SkiaImageHelpers.CreateBitmap(size.Width, size.Height);
         using SkiaPixelBuffer dark = new(black, true, PixelAccess.ReadOnly);
         using SkiaPixelBuffer light = new(white, true, PixelAccess.ReadOnly);
@@ -149,6 +157,13 @@ public static class WindowsImageInterop
         for (int index = 0; index < output.PixelCount; index++)
         {
             ColorBgra d = dark.GetPixel(index), l = light.GetPixel(index);
+            if (l.Red < d.Red || l.Green < d.Green || l.Blue < d.Blue)
+            {
+                // XOR cursor pixels depend on the destination and cannot be represented by alpha alone.
+                SKColor color = composited?.GetPixel(index % size.Width, index / size.Width) ?? SKColors.Black;
+                output.SetPixel(index, new ColorBgra(color.Blue, color.Green, color.Red));
+                continue;
+            }
             int alpha = 255 - Math.Clamp(Math.Max(l.Red - d.Red, Math.Max(l.Green - d.Green, l.Blue - d.Blue)), 0, 255);
             if (alpha == 0) continue;
             output.SetPixel(index, new ColorBgra((byte)Math.Min(255, d.Blue * 255 / alpha),
