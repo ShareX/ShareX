@@ -356,10 +356,9 @@ namespace ShareX.ScreenCaptureLib
                     using (SKCanvas g = new(newResult))
                     using (SKPaint paint = new() { BlendMode = SKBlendMode.Src })
                     {
-
-                        g.DrawImage(result, SKRect.Create(0, 0, result.Width, result.Height - ignoreBottomOffset),
+                        g.DrawBitmap(result, SKRect.Create(0, 0, result.Width, result.Height - ignoreBottomOffset),
                             SKRect.Create(0, 0, result.Width, result.Height - ignoreBottomOffset), paint);
-                        g.DrawImage(currentImage, SKRect.Create(0, matchIndex + 1, currentImage.Width, matchHeight),
+                        g.DrawBitmap(currentImage, SKRect.Create(0, matchIndex + 1, currentImage.Width, matchHeight),
                             SKRect.Create(0, result.Height - ignoreBottomOffset, currentImage.Width, matchHeight), paint);
                     }
 
