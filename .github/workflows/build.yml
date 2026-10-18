@@ -41,7 +41,7 @@ jobs:
     env:
       SOLUTION_FILE_PATH: ShareX.sln
       ASSEMBLY_INFO_PATH: Directory.build.props
-      FFMPEG_VERSION: "8.1"
+      FFMPEG_VERSION: "9.0"
 
     outputs:
       APP_VERSION: ${{ env.APP_VERSION }}
@@ -99,7 +99,8 @@ jobs:
         run: |
           $archivePath = Join-Path $env:RUNNER_TEMP "ffmpeg.zip"
           $extractPath = Join-Path $env:RUNNER_TEMP "ffmpeg"
-          $downloadUrl = "https://github.com/ShareX/FFmpeg/releases/download/v${{ env.FFMPEG_VERSION }}/ffmpeg-${{ env.FFMPEG_VERSION }}-win-${{ env.PLATFORM }}.zip"
+          $ffmpegPlatform = if ("${{ matrix.platform }}" -eq "ARM64") { "winarm64" } else { "win64" }
+          $downloadUrl = "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n${{ env.FFMPEG_VERSION }}-latest-$ffmpegPlatform-gpl-${{ env.FFMPEG_VERSION }}.zip"
           Invoke-WebRequest -Uri $downloadUrl -OutFile $archivePath
           Expand-Archive -Path $archivePath -DestinationPath $extractPath -Force
           $ffmpegPath = Get-ChildItem -Path $extractPath -Filter "ffmpeg.exe" -Recurse -File | Select-Object -First 1
