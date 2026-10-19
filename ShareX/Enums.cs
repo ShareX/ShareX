@@ -239,6 +239,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         ScrollingCapture,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
+        ManualScrollingCapture,
+        [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         AutoCapture,
         [Category(EnumExtensions.HotkeyType_Category_ScreenCapture)]
         StartAutoCapture,

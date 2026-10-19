@@ -135,6 +135,7 @@ internal sealed class MainMenuBuilder
             Item(Strings.MainMenuBuilder_ScreenRecordingGif, AppIcons.Film,
                 () => TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region)),
             Item(Strings.MainMenuBuilder_ScrollingCapture, AppIcons.ScrollingCapture, async () => await TaskHelpers.OpenScrollingCapture()),
+            Item(Strings.MainMenuBuilder_ManualScrollingCapture, AppIcons.Mouse, async () => await TaskHelpers.OpenManualScrollingCapture()),
             Item(Strings.MainMenuBuilder_AutoCapture, AppIcons.AutoCapture, () => TaskHelpers.OpenAutoCapture()),
             MainMenuEntry.Separator(),
             new MainMenuEntry(Strings.MainMenuBuilder_ShowCursor, AppIcons.Pointer,

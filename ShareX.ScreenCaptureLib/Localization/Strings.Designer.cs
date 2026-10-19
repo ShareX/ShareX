@@ -536,5 +536,26 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string RegionCaptureWindow_FreehandRegion {
             get { return ResourceManager.GetString("RegionCaptureWindow_FreehandRegion", resourceCulture); }
         }
+        public static string ManualScrollingCaptureWindow_Title {
+            get { return ResourceManager.GetString("ManualScrollingCaptureWindow_Title", resourceCulture); }
+        }
+        public static string ManualScrollingCaptureWindow_ScrollDown {
+            get { return ResourceManager.GetString("ManualScrollingCaptureWindow_ScrollDown", resourceCulture); }
+        }
+        public static string ManualScrollingCaptureWindow_Captured {
+            get { return ResourceManager.GetString("ManualScrollingCaptureWindow_Captured", resourceCulture); }
+        }
+        public static string ManualScrollingCaptureWindow_LostTrack {
+            get { return ResourceManager.GetString("ManualScrollingCaptureWindow_LostTrack", resourceCulture); }
+        }
+        public static string ManualScrollingCaptureWindow_MaxHeight {
+            get { return ResourceManager.GetString("ManualScrollingCaptureWindow_MaxHeight", resourceCulture); }
+        }
+        public static string ManualScrollingCaptureWindow_Finish {
+            get { return ResourceManager.GetString("ManualScrollingCaptureWindow_Finish", resourceCulture); }
+        }
+        public static string ManualScrollingCaptureWindow_Cancel {
+            get { return ResourceManager.GetString("ManualScrollingCaptureWindow_Cancel", resourceCulture); }
+        }
     }
 }

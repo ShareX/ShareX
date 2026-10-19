@@ -1643,6 +1643,9 @@
   <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
     <value>พื้นที่ล่าสุด</value>
   </data>
+  <data name="MainMenuBuilder_ManualScrollingCapture" xml:space="preserve">
+    <value>การจับภาพแบบเลื่อนด้วยตนเอง...</value>
+  </data>
   <data name="MainMenuBuilder_Metadata" xml:space="preserve">
     <value>ข้อมูลเมตา...</value>
   </data>

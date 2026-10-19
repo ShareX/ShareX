@@ -726,6 +726,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Chụp vùng lần trước</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>Bắt đầu/kết thúc chụp cuộn thủ công</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>Siêu dữ liệu</value>
   </data>

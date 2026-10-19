@@ -1643,6 +1643,9 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
     <value>Última región</value>
   </data>
+  <data name="MainMenuBuilder_ManualScrollingCapture" xml:space="preserve">
+    <value>Captura con desplazamiento manual...</value>
+  </data>
   <data name="MainMenuBuilder_Metadata" xml:space="preserve">
     <value>Metadatos</value>
   </data>

@@ -726,6 +726,9 @@
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>截图上次区域</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>开始/完成手动滚动捕获</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>元数据</value>
   </data>

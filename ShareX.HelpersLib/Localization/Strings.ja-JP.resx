@@ -726,6 +726,9 @@
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>最近使用した領域をキャプチャー</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>手動スクロール キャプチャの開始/終了</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>メタデータ</value>
   </data>

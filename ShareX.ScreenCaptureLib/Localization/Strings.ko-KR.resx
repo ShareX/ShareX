@@ -427,6 +427,27 @@
   <data name="FFmpegOptionsWindow_Video_source" xml:space="preserve">
     <value>비디오 소스</value>
   </data>
+  <data name="ManualScrollingCaptureWindow_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Captured" xml:space="preserve">
+    <value>{0:N0} px 캡처됨</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Finish" xml:space="preserve">
+    <value>완료</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_LostTrack" xml:space="preserve">
+    <value>위치를 놓쳤습니다. 멈춘 곳으로 다시 스크롤하세요</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_MaxHeight" xml:space="preserve">
+    <value>최대 높이에 도달했습니다</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_ScrollDown" xml:space="preserve">
+    <value>천천히 아래로 스크롤하세요</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Title" xml:space="preserve">
+    <value>수동 스크롤 캡처</value>
+  </data>
   <data name="Pause" xml:space="preserve">
     <value>일시 중지</value>
   </data>

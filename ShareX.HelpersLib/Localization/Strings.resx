@@ -726,6 +726,9 @@ Do you still want to run it?</value>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Capture last region</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>Start/Finish manual scrolling capture</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>Metadata</value>
   </data>

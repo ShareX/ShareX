@@ -726,6 +726,9 @@
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>จับภาพ ล่าสุด พื้นที่</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>เริ่ม/เสร็จสิ้นการจับภาพแบบเลื่อนด้วยตนเอง</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>ข้อมูลเมตา</value>
   </data>

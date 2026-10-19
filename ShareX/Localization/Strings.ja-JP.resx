@@ -1643,6 +1643,9 @@
   <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
     <value>最後の領域</value>
   </data>
+  <data name="MainMenuBuilder_ManualScrollingCapture" xml:space="preserve">
+    <value>手動スクロール キャプチャ...</value>
+  </data>
   <data name="MainMenuBuilder_Metadata" xml:space="preserve">
     <value>メタデータ</value>
   </data>

@@ -1643,6 +1643,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
     <value>Utolsó terület</value>
   </data>
+  <data name="MainMenuBuilder_ManualScrollingCapture" xml:space="preserve">
+    <value>Kézi görgetéses rögzítés...</value>
+  </data>
   <data name="MainMenuBuilder_Metadata" xml:space="preserve">
     <value>Metaadatok</value>
   </data>

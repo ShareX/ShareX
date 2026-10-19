@@ -1643,6 +1643,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
     <value>Ostatni region</value>
   </data>
+  <data name="MainMenuBuilder_ManualScrollingCapture" xml:space="preserve">
+    <value>Ręczne przechwytywanie przewijania...</value>
+  </data>
   <data name="MainMenuBuilder_Metadata" xml:space="preserve">
     <value>Metadane</value>
   </data>

@@ -427,6 +427,27 @@
   <data name="FFmpegOptionsWindow_Video_source" xml:space="preserve">
     <value>Zdroj videa</value>
   </data>
+  <data name="ManualScrollingCaptureWindow_Cancel" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Captured" xml:space="preserve">
+    <value>Zachyceno {0:N0} px</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Finish" xml:space="preserve">
+    <value>Dokončit</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_LostTrack" xml:space="preserve">
+    <value>Pozice ztracena, posuňte zpět tam, kde jste přestali</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_MaxHeight" xml:space="preserve">
+    <value>Dosažena maximální výška</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_ScrollDown" xml:space="preserve">
+    <value>Posouvejte pomalu dolů</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Title" xml:space="preserve">
+    <value>Ruční posouvající se snímek</value>
+  </data>
   <data name="Pause" xml:space="preserve">
     <value>Pozastavit</value>
   </data>

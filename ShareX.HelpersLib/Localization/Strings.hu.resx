@@ -726,6 +726,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Legutóbbi régió képlopás</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>Kézi görgetéses rögzítés indítása/befejezése</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>Metaadatok</value>
   </data>

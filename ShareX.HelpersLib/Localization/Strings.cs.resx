@@ -726,6 +726,9 @@ Chcete jej přesto spustit?</value>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Zachytit poslední oblast</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>Spustit/dokončit ruční posouvající se snímek</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>Metadata</value>
   </data>

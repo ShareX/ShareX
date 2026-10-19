@@ -1643,6 +1643,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
     <value>Ultima regione</value>
   </data>
+  <data name="MainMenuBuilder_ManualScrollingCapture" xml:space="preserve">
+    <value>Acquisizione a scorrimento manuale...</value>
+  </data>
   <data name="MainMenuBuilder_Metadata" xml:space="preserve">
     <value>Metadati</value>
   </data>

@@ -1643,6 +1643,9 @@
   <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
     <value>Остання область</value>
   </data>
+  <data name="MainMenuBuilder_ManualScrollingCapture" xml:space="preserve">
+    <value>Ручне захоплення з прокручуванням...</value>
+  </data>
   <data name="MainMenuBuilder_Metadata" xml:space="preserve">
     <value>Метадані</value>
   </data>

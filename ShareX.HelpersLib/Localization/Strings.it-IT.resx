@@ -726,6 +726,9 @@ Vuoi eseguirlo comunque?</value>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Cattura Ultima Regione</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>Avvia/termina acquisizione a scorrimento manuale</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>Metadati</value>
   </data>
