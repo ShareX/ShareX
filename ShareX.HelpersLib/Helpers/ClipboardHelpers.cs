@@ -71,20 +71,22 @@ namespace ShareX.HelpersLib
             {
                 using MemoryStream png = new();
                 img.Save(png, ImageFormat.Png);
-                byte[] dib;
-                if (HelpersOptions.UseAlternativeClipboardCopyImage && !HelpersOptions.DefaultCopyImageFillBackground)
-                    dib = ClipboardHelpersEx.ConvertToDib(img);
-                else
-                {
-                    using Bitmap opaque = SkiaImageHelpers.FillBackground(img, Color.White);
-                    using MemoryStream bmp = new();
-                    opaque.Save(bmp, ImageFormat.Bmp);
-                    dib = bmp.ToArray()[14..];
-                }
-                return AvaloniaClipboard.SetImage(png.ToArray(), dib,
+                return AvaloniaClipboard.SetImage(png.ToArray(), OperatingSystem.IsWindows() ? CreateDib(img) : null,
                     string.IsNullOrEmpty(fileName) ? null : OperatingSystem.IsWindows() ? GenerateHTMLFragment($"<img src=\"{fileName}\"/>") : $"<img src=\"{fileName}\"/>");
             }
             catch (Exception e) { DebugHelper.WriteException(e, "Clipboard copy image failed."); return false; }
+        }
+
+        // CF_DIB without the BITMAPFILEHEADER. The default is an opaque 24 bpp bottom-up DIB,
+        // which is what Office and Windows clipboard history expect.
+        private static byte[] CreateDib(Image img)
+        {
+            if (HelpersOptions.UseAlternativeClipboardCopyImage && !HelpersOptions.DefaultCopyImageFillBackground)
+                return ClipboardHelpersEx.ConvertToDib(img);
+            using Bitmap opaque = SkiaImageHelpers.FillBackground(img, Color.White);
+            using MemoryStream bmp = new();
+            opaque.Save(bmp, ImageFormat.Bmp);
+            return bmp.ToArray()[14..];
         }
 
         public static bool CopyFile(string path)

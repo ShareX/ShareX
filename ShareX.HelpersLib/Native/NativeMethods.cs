@@ -313,6 +313,24 @@ namespace ShareX.HelpersLib
         [DllImport("user32.dll")]
         public static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
 
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool OpenClipboard(IntPtr hWndNewOwner);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool CloseClipboard();
+
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool EmptyClipboard();
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr SetClipboardData(uint uFormat, IntPtr hMem);
+
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern uint RegisterClipboardFormat(string lpszFormat);
+
         #endregion user32.dll
 
         #region kernel32.dll
@@ -338,6 +356,19 @@ namespace ShareX.HelpersLib
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
         public static extern ushort GlobalDeleteAtom(ushort nAtom);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern IntPtr GlobalAlloc(uint uFlags, UIntPtr dwBytes);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern IntPtr GlobalLock(IntPtr hMem);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool GlobalUnlock(IntPtr hMem);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern IntPtr GlobalFree(IntPtr hMem);
 
         [DllImport("kernel32.dll")]
         public static extern IntPtr GetModuleHandle(string lpModuleName);

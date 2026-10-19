@@ -70,7 +70,12 @@ internal static class AvaloniaClipboard
 
     public static bool SetImage(byte[] png, byte[] dib, string html) => DesktopServices.Run(async () =>
     {
-        OwnedImageTransfer owned = CreateImageTransfer(png, dib, html);
+        if (OperatingSystem.IsWindows())
+        {
+            WindowsClipboard.SetImage(DesktopServices.GetWindow().TryGetPlatformHandle()?.Handle ?? IntPtr.Zero, png, dib, html);
+            return true;
+        }
+        OwnedImageTransfer owned = CreateImageTransfer(png, html);
         try { await Clipboard.SetDataAsync(owned); }
         catch { owned.Dispose(); throw; }
         // Ownership has passed to Avalonia even if persisting the clipboard fails.
@@ -78,7 +83,7 @@ internal static class AvaloniaClipboard
         return true;
     });
 
-    private static OwnedImageTransfer CreateImageTransfer(byte[] png, byte[] dib, string html)
+    private static OwnedImageTransfer CreateImageTransfer(byte[] png, string html)
     {
         using MemoryStream stream = new(png, writable: false);
         AvaloniaBitmap bitmap = new(stream);
@@ -87,11 +92,9 @@ internal static class AvaloniaClipboard
         {
             DataTransferItem item = new();
             item.SetBitmap(bitmap);
-            item.Set(DataFormat.CreateBytesPlatformFormat(OperatingSystem.IsWindows() ? "PNG" : "image/png"), png);
-            if (OperatingSystem.IsWindows())
-                item.Set(DataFormat.CreateBytesPlatformFormat("CF_DIB"), dib);
+            item.Set(DataFormat.CreateBytesPlatformFormat("image/png"), png);
             if (!string.IsNullOrEmpty(html))
-                item.Set(DataFormat.CreateStringPlatformFormat(OperatingSystem.IsWindows() ? ClipboardDataFormats.Html : "text/html"), html);
+                item.Set(DataFormat.CreateStringPlatformFormat("text/html"), html);
             transfer.Add(item);
             return new OwnedImageTransfer(transfer, bitmap);
         }
