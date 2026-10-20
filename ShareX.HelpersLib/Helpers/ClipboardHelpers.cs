@@ -71,10 +71,16 @@ namespace ShareX.HelpersLib
             {
                 using MemoryStream png = new();
                 img.Save(png, ImageFormat.Png);
-                return AvaloniaClipboard.SetImage(png.ToArray(), OperatingSystem.IsWindows() ? CreateDib(img) : null,
-                    string.IsNullOrEmpty(fileName) ? null : OperatingSystem.IsWindows() ? GenerateHTMLFragment($"<img src=\"{fileName}\"/>") : $"<img src=\"{fileName}\"/>");
+                return AvaloniaClipboard.SetImage(png.ToArray(), OperatingSystem.IsWindows() ? CreateDib(img) : null, CreateImageHtml(fileName));
             }
             catch (Exception e) { DebugHelper.WriteException(e, "Clipboard copy image failed."); return false; }
+        }
+
+        private static string CreateImageHtml(string fileName)
+        {
+            if (!HelpersOptions.UseAlternativeClipboardCopyImage || string.IsNullOrEmpty(fileName)) return null;
+            string html = $"<img src=\"{fileName}\"/>";
+            return OperatingSystem.IsWindows() ? GenerateHTMLFragment(html) : html;
         }
 
         // CF_DIB without the BITMAPFILEHEADER. The default is an opaque 24 bpp bottom-up DIB,
