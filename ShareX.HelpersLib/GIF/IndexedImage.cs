@@ -64,18 +64,21 @@ public sealed class IndexedImage
         writer.Write((byte)0x70); writer.Write((byte)0); writer.Write((byte)0);
     }
 
-    internal void WriteFrame(Stream stream, int delay)
+    internal void WriteFrame(Stream stream, int delay, int left = 0, int top = 0, bool restoreBackground = true)
     {
         ValidateGifSize();
+        if (left < 0 || top < 0 || left > ushort.MaxValue - Width || top > ushort.MaxValue - Height)
+            throw new ArgumentOutOfRangeException(nameof(left), "GIF frame offsets must fit within 65535 pixels.");
         int transparent = Array.FindIndex(Palette, color => color.A < 128);
         int bits = 1;
         while ((1 << bits) < Palette.Length) bits++;
         using BinaryWriter writer = new(stream, Encoding.ASCII, true);
         writer.Write((byte)0x21); writer.Write((byte)0xF9); writer.Write((byte)4);
-        writer.Write((byte)(8 | (transparent >= 0 ? 1 : 0))); // Restore background after this complete frame.
+        // Partial updates retain the composed canvas instead of clearing it before the next frame.
+        writer.Write((byte)((restoreBackground ? 8 : 4) | (transparent >= 0 ? 1 : 0)));
         writer.Write((ushort)Math.Clamp(delay / 10, 0, ushort.MaxValue));
         writer.Write((byte)Math.Max(0, transparent)); writer.Write((byte)0);
-        writer.Write((byte)0x2C); writer.Write((ushort)0); writer.Write((ushort)0);
+        writer.Write((byte)0x2C); writer.Write((ushort)left); writer.Write((ushort)top);
         writer.Write((ushort)Width); writer.Write((ushort)Height); writer.Write((byte)(0x80 | (bits - 1)));
         for (int index = 0; index < (1 << bits); index++)
         {

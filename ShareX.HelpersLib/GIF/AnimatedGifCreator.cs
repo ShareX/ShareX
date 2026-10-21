@@ -64,6 +64,10 @@ namespace ShareX.HelpersLib
         public void AddFrame(IndexedImage image) => AddFrame(image, Delay);
 
         public void AddFrame(IndexedImage image, int delay)
+            => AddFrame(image, delay, 0, 0);
+
+        /// <summary>Adds a frame at an offset. Disable background restoration to preserve the canvas between partial updates.</summary>
+        public void AddFrame(IndexedImage image, int delay, int left, int top, bool restoreBackground = true)
         {
             if (stream == null)
             {
@@ -71,7 +75,7 @@ namespace ShareX.HelpersLib
                 image.WriteHeader(stream);
                 if (Loop) stream.Write(CreateApplicationExtensionBlock(Repeat));
             }
-            image.WriteFrame(stream, delay);
+            image.WriteFrame(stream, delay, left, top, restoreBackground);
             FrameCount++;
         }
 

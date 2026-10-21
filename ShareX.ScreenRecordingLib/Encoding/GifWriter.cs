@@ -28,6 +28,7 @@ using ShareX.ScreenRecordingLib.Video;
 using SkiaSharp;
 using System.Buffers;
 using System.Collections.Concurrent;
+using System.Drawing;
 using System.IO.Compression;
 using Vortice.Direct3D11;
 using Vortice.DXGI;
@@ -156,25 +157,29 @@ internal sealed unsafe class GifWriter : IDisposable
         }
         cache.Position = 0;
         using AnimatedGifCreator creator = new(outputPath, 0);
+        IndexedImage? previous = null;
         IndexedImage? pending = null;
+        Point offset = Point.Empty;
         long writtenCentiseconds = 0;
         for (long index = 0; index < frameCount; index++)
         {
             if (aborted()) throw new OperationCanceledException("GIF encoding aborted.");
             long timestamp = ReadFrame(reader, bitmap);
             IndexedImage image = quantizer.Quantize(bitmap);
-            // All frames share a palette. Keep identical GIF pixels on screen by extending
-            // the pending frame's delay, including source colors that quantize identically.
-            if (pending == null) pending = image;
-            else if (!pending.Pixels.AsSpan().SequenceEqual(image.Pixels))
+            // Shared palette indices identify all changed pixels, including restored background.
+            // Skip duplicate frames and encode the rectangle containing the changes.
+            Rectangle bounds = previous == null ? new(0, 0, image.Width, image.Height) : GetChangedBounds(previous, image);
+            if (!bounds.IsEmpty)
             {
-                WriteFrame(creator, pending, timestamp, ref writtenCentiseconds);
-                pending = image;
+                if (pending != null) WriteFrame(creator, pending, offset, timestamp, ref writtenCentiseconds);
+                pending = CropFrame(image, bounds);
+                offset = bounds.Location;
             }
+            previous = image;
             if (index + 1 < frameCount) ReportProgress(20 + (int)((index + 1) * 80 / frameCount));
         }
         if (aborted()) throw new OperationCanceledException("GIF encoding aborted.");
-        if (pending != null) WriteFrame(creator, pending, duration, ref writtenCentiseconds);
+        if (pending != null) WriteFrame(creator, pending, offset, duration, ref writtenCentiseconds);
         ReportProgress(100);
         if (aborted()) throw new OperationCanceledException("GIF encoding aborted.");
     }
@@ -199,7 +204,41 @@ internal sealed unsafe class GifWriter : IDisposable
         return timestamp;
     }
 
-    private static void WriteFrame(AnimatedGifCreator creator, IndexedImage image, long until, ref long writtenCentiseconds)
+    private static Rectangle GetChangedBounds(IndexedImage previous, IndexedImage image)
+    {
+        int left = image.Width, top = image.Height, right = -1, bottom = -1;
+        for (int y = 0; y < image.Height; y++)
+        {
+            ReadOnlySpan<byte> current = image.Pixels.AsSpan(y * image.Width, image.Width);
+            ReadOnlySpan<byte> before = previous.Pixels.AsSpan(y * image.Width, image.Width);
+            int first = current.CommonPrefixLength(before);
+            if (first == image.Width) continue;
+            // Only search for a new right edge when pixels beyond the known edge differ.
+            // Span comparisons skip unchanged rows and margins using vectorized operations.
+            if (!current[(right + 1)..].SequenceEqual(before[(right + 1)..]))
+            {
+                int last = image.Width - 1;
+                while (last > first && current[last] == before[last]) last--;
+                right = last;
+            }
+            left = Math.Min(left, first);
+            top = Math.Min(top, y);
+            bottom = y;
+        }
+        return bottom < 0 ? Rectangle.Empty : Rectangle.FromLTRB(left, top, right + 1, bottom + 1);
+    }
+
+    private static IndexedImage CropFrame(IndexedImage image, Rectangle bounds)
+    {
+        if (bounds.Width == image.Width && bounds.Height == image.Height) return image;
+        byte[] pixels = new byte[checked(bounds.Width * bounds.Height)];
+        for (int y = 0; y < bounds.Height; y++)
+            image.Pixels.AsSpan((bounds.Y + y) * image.Width + bounds.X, bounds.Width)
+                .CopyTo(pixels.AsSpan(y * bounds.Width, bounds.Width));
+        return new(bounds.Width, bounds.Height, pixels, image.Palette);
+    }
+
+    private static void WriteFrame(AnimatedGifCreator creator, IndexedImage image, Point offset, long until, ref long writtenCentiseconds)
     {
         // Round cumulative timestamps to avoid drift at rates such as 15 FPS, preserving dropped slots.
         const long ticksPerCentisecond = TimeSpan.TicksPerMillisecond * 10;
@@ -207,7 +246,7 @@ internal sealed unsafe class GifWriter : IDisposable
         while (writtenCentiseconds < end)
         {
             int delay = (int)Math.Min(end - writtenCentiseconds, ushort.MaxValue);
-            creator.AddFrame(image, delay * 10);
+            creator.AddFrame(image, delay * 10, offset.X, offset.Y, restoreBackground: false);
             writtenCentiseconds += delay;
         }
     }
