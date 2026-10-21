@@ -139,35 +139,54 @@ internal sealed unsafe class GifWriter : IDisposable
         cache.Position = 0;
         using BinaryReader reader = new(cache, System.Text.Encoding.UTF8, true);
         using SKBitmap bitmap = new(imageInfo);
-        using AnimatedGifCreator creator = new(outputPath, 0);
-        long writtenCentiseconds = 0;
+        AdaptiveGifQuantizer quantizer = new();
         int previousProgress = 0;
+        void ReportProgress(int percent)
+        {
+            if (percent != previousProgress) { progress(percent); previousProgress = percent; }
+        }
+        // Analyze the lossless cache once to build a stable palette for the whole recording.
+        // Palette construction and nearest-color caches can then be reused for every frame.
         for (long index = 0; index < frameCount; index++)
         {
             if (aborted()) throw new OperationCanceledException("GIF encoding aborted.");
-            reader.ReadInt64(); // Timestamp of this frame; the next timestamp determines its duration.
-            int compressedLength = checked((int)reader.ReadInt64());
-            byte[] compressed = ArrayPool<byte>.Shared.Rent(compressedLength);
-            try
-            {
-                cache.ReadExactly(compressed.AsSpan(0, compressedLength));
-                using MemoryStream input = new(compressed, 0, compressedLength, false);
-                using DeflateStream decompressor = new(input, CompressionMode.Decompress);
-                decompressor.ReadExactly(new Span<byte>((void*)bitmap.GetPixels(), frameBytes));
-            }
-            finally { ArrayPool<byte>.Shared.Return(compressed); }
-            // Captured windows can contain unused alpha bytes. Screen recordings are fully opaque.
-            Span<uint> pixels = new((void*)bitmap.GetPixels(), frameBytes / 4);
-            for (int pixel = 0; pixel < pixels.Length; pixel++) pixels[pixel] |= 0xFF000000;
-            bitmap.NotifyPixelsChanged();
-            IndexedImage image = SkiaImageHelpers.Quantize(bitmap, GIFQuality.Adaptive);
+            ReadFrame(reader, bitmap);
+            quantizer.AddFrame(bitmap);
+            ReportProgress((int)((index + 1) * 20 / frameCount));
+        }
+        cache.Position = 0;
+        using AnimatedGifCreator creator = new(outputPath, 0);
+        long writtenCentiseconds = 0;
+        for (long index = 0; index < frameCount; index++)
+        {
+            if (aborted()) throw new OperationCanceledException("GIF encoding aborted.");
+            ReadFrame(reader, bitmap);
+            IndexedImage image = quantizer.Quantize(bitmap);
             long next = index + 1 < frameCount ? reader.ReadInt64() : duration;
             if (index + 1 < frameCount) cache.Position -= sizeof(long);
             WriteFrame(creator, image, next, ref writtenCentiseconds);
-            int percent = (int)((index + 1) * 100 / frameCount);
-            if (percent != previousProgress) { progress(percent); previousProgress = percent; }
+            ReportProgress(20 + (int)((index + 1) * 80 / frameCount));
         }
         if (aborted()) throw new OperationCanceledException("GIF encoding aborted.");
+    }
+
+    private void ReadFrame(BinaryReader reader, SKBitmap bitmap)
+    {
+        reader.ReadInt64(); // Timestamp of this frame; the next timestamp determines its duration.
+        int compressedLength = checked((int)reader.ReadInt64());
+        byte[] compressed = ArrayPool<byte>.Shared.Rent(compressedLength);
+        try
+        {
+            cache.ReadExactly(compressed.AsSpan(0, compressedLength));
+            using MemoryStream input = new(compressed, 0, compressedLength, false);
+            using DeflateStream decompressor = new(input, CompressionMode.Decompress);
+            decompressor.ReadExactly(new Span<byte>((void*)bitmap.GetPixels(), frameBytes));
+        }
+        finally { ArrayPool<byte>.Shared.Return(compressed); }
+        // Captured windows can contain unused alpha bytes. Screen recordings are fully opaque.
+        Span<uint> pixels = new((void*)bitmap.GetPixels(), frameBytes / 4);
+        for (int pixel = 0; pixel < pixels.Length; pixel++) pixels[pixel] |= 0xFF000000;
+        bitmap.NotifyPixelsChanged();
     }
 
     private static void WriteFrame(AnimatedGifCreator creator, IndexedImage image, long until, ref long writtenCentiseconds)

@@ -165,7 +165,7 @@ public static partial class SkiaImageHelpers
     {
         if (quality == GIFQuality.Adaptive)
         {
-            return GifFrameQuantizer.Quantize(bitmap);
+            return new AdaptiveGifQuantizer().Quantize(bitmap);
         }
 
         SkiaQuantizer quantizer = quality switch

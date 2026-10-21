@@ -24,10 +24,9 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Collections.Generic;
+using System.Buffers;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
 
 namespace ShareX.HelpersLib;
@@ -104,42 +103,52 @@ public sealed class IndexedImage
     private static byte[] Compress(byte[] pixels, int minimumCodeSize)
     {
         using MemoryStream output = new();
-        Dictionary<int, int> dictionary = new();
-        int clear = 1 << minimumCodeSize, end = clear + 1;
-        int next = end + 1, size = minimumCodeSize + 1;
-        uint buffer = 0; int bufferedBits = 0;
-        void WriteCode(int code)
+        // A prefix code is at most 12 bits and the next pixel is 8 bits. Direct lookup avoids
+        // hashing every pixel. Generation tags reset the dictionary without clearing 4 MB.
+        int[] dictionary = ArrayPool<int>.Shared.Rent(1 << 20);
+        Array.Clear(dictionary, 0, 1 << 20);
+        try
         {
-            buffer |= (uint)code << bufferedBits;
-            bufferedBits += size;
-            while (bufferedBits >= 8)
+            int clear = 1 << minimumCodeSize, end = clear + 1;
+            int next = end + 1, size = minimumCodeSize + 1;
+            int generation = 1 << 12;
+            uint buffer = 0; int bufferedBits = 0;
+            void WriteCode(int code)
             {
-                output.WriteByte((byte)buffer); buffer >>= 8; bufferedBits -= 8;
+                buffer |= (uint)code << bufferedBits;
+                bufferedBits += size;
+                while (bufferedBits >= 8)
+                {
+                    output.WriteByte((byte)buffer); buffer >>= 8; bufferedBits -= 8;
+                }
             }
-        }
-        WriteCode(clear);
-        int prefix = pixels[0];
-        foreach (byte pixel in pixels.Skip(1))
-        {
-            int key = (prefix << 8) | pixel;
-            if (dictionary.TryGetValue(key, out int code)) { prefix = code; continue; }
+            WriteCode(clear);
+            int prefix = pixels[0];
+            for (int index = 1; index < pixels.Length; index++)
+            {
+                byte pixel = pixels[index];
+                int key = (prefix << 8) | pixel;
+                int entry = dictionary[key];
+                if ((entry & ~4095) == generation) { prefix = entry & 4095; continue; }
+                WriteCode(prefix);
+                if (next < 4096)
+                {
+                    dictionary[key] = generation | next++;
+                    // The decoder creates an entry one emitted code later than the encoder.
+                    if (next > (1 << size) && size < 12) size++;
+                }
+                else
+                {
+                    WriteCode(clear); generation += 1 << 12; next = end + 1; size = minimumCodeSize + 1;
+                }
+                prefix = pixel;
+            }
             WriteCode(prefix);
-            if (next < 4096)
-            {
-                dictionary.Add(key, next++);
-                // The decoder creates an entry one emitted code later than the encoder.
-                if (next > (1 << size) && size < 12) size++;
-            }
-            else
-            {
-                WriteCode(clear); dictionary.Clear(); next = end + 1; size = minimumCodeSize + 1;
-            }
-            prefix = pixel;
+            if (next == (1 << size) && size < 12) size++;
+            WriteCode(end);
+            if (bufferedBits > 0) output.WriteByte((byte)buffer);
+            return output.ToArray();
         }
-        WriteCode(prefix);
-        if (next == (1 << size) && size < 12) size++;
-        WriteCode(end);
-        if (bufferedBits > 0) output.WriteByte((byte)buffer);
-        return output.ToArray();
+        finally { ArrayPool<int>.Shared.Return(dictionary); }
     }
 }
