@@ -138,7 +138,7 @@ namespace ShareX
 
             if (taskSettings.GeneralSettings.ToastWindowAutoHide)
             {
-                NotificationWindow.CloseActiveWindow();
+                await NotificationWindow.CloseActiveWindowAsync();
             }
 
             Rectangle captureRectangle = Rectangle.Empty;

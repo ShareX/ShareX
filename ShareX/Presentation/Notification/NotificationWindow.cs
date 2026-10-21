@@ -41,6 +41,7 @@ using ShareX.Localization;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingContentAlignment = ShareX.HelpersLib.ImageContentAlignment;
@@ -129,14 +130,14 @@ public partial class NotificationWindow : Window
         });
     }
 
-    public static void CloseActiveWindow()
+    public static async Task CloseActiveWindowAsync()
     {
         if (Application.Current == null)
         {
             return;
         }
 
-        Dispatcher.UIThread.Post(() => _instance?.Close());
+        await Dispatcher.UIThread.InvokeAsync(() => _instance?.Close());
     }
 
     public void LoadConfig(NotificationWindowConfig config)
