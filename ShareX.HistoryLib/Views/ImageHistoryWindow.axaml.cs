@@ -88,6 +88,7 @@ public partial class ImageHistoryWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         ThumbnailRows.ItemsSource = _rows;
+        ThumbnailRows.AddHandler(KeyDownEvent, OnWindowKeyDown, RoutingStrategies.Tunnel);
         _filterTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(220) };
         _filterTimer.Tick += OnFilterTimerTick;
     }
@@ -910,8 +911,8 @@ public partial class ImageHistoryWindow : Window
             if (ReferenceEquals(_filteredHistoryItems[i], item)) selectedIndex = files.Count;
             files.Add(path);
         }
-        if (_services.ShowImages != null) _services.ShowImages(files, selectedIndex);
-        else _services.ShowImage?.Invoke(item.FilePath);
+        if (_services.ShowImages != null) _services.ShowImages(files, selectedIndex, this);
+        else _services.ShowImage?.Invoke(item.FilePath, this);
     }
 
     private void OnOpenFileClick(object? sender, RoutedEventArgs e)

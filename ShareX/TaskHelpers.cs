@@ -882,9 +882,8 @@ namespace ShareX
                     TrimAnimatedGif = filePath => OpenAnimatedGifTrimmer(filePath),
                     PinToScreen = filePath => PinToScreen(filePath),
                     AnalyzeImage = filePath => AnalyzeImage(filePath),
-                    ShowImage = filePath => OpenImageViewer(filePath),
-                    ShowImages = (filePaths, selectedIndex) =>
-                        ImageViewerWindowIntegration.ShowImage(filePaths, selectedIndex)
+                    ShowImage = ImageViewerWindowIntegration.ShowImage,
+                    ShowImages = ImageViewerWindowIntegration.ShowImage
                 });
         }
 
@@ -899,9 +898,8 @@ namespace ShareX
                     TrimAnimatedGif = filePath => OpenAnimatedGifTrimmer(filePath),
                     PinToScreen = filePath => PinToScreen(filePath),
                     AnalyzeImage = filePath => AnalyzeImage(filePath),
-                    ShowImage = filePath => OpenImageViewer(filePath),
-                    ShowImages = (filePaths, selectedIndex) =>
-                        ImageViewerWindowIntegration.ShowImage(filePaths, selectedIndex)
+                    ShowImage = ImageViewerWindowIntegration.ShowImage,
+                    ShowImages = ImageViewerWindowIntegration.ShowImage
                 });
         }
 
