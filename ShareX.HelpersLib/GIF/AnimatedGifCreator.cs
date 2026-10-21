@@ -25,6 +25,7 @@
 
 using SkiaSharp;
 using System;
+using System.Drawing;
 using System.IO;
 
 namespace ShareX.HelpersLib
@@ -36,8 +37,11 @@ namespace ShareX.HelpersLib
         public int Repeat { get; private set; }
         public bool Loop { get; private set; }
         public int FrameCount { get; private set; }
+        /// <summary>Store the first frame's palette globally and reuse it for matching frames.</summary>
+        public bool UseGlobalPalette { get; init; }
 
         private FileStream stream;
+        private Color[] globalPalette;
 
         public AnimatedGifCreator(string filePath, int delay, int repeat = 0, bool loop = true)
         {
@@ -68,15 +72,28 @@ namespace ShareX.HelpersLib
 
         /// <summary>Adds a frame at an offset. Disable background restoration to preserve the canvas between partial updates.</summary>
         public void AddFrame(IndexedImage image, int delay, int left, int top, bool restoreBackground = true)
+            => AddFrame(image, delay, left, top, restoreBackground, null);
+
+        /// <summary>Overrides this frame's transparent index without changing the shared palette's colors.</summary>
+        public void AddFrame(IndexedImage image, int delay, int left, int top, bool restoreBackground, int? transparentIndex)
         {
             if (stream == null)
             {
+                globalPalette = UseGlobalPalette ? (Color[])image.Palette.Clone() : null;
                 stream = new FileStream(FilePath, FileMode.Create, FileAccess.Write, FileShare.Read);
-                image.WriteHeader(stream);
+                image.WriteHeader(stream, UseGlobalPalette);
                 if (Loop) stream.Write(CreateApplicationExtensionBlock(Repeat));
             }
-            image.WriteFrame(stream, delay, left, top, restoreBackground);
+            image.WriteFrame(stream, delay, left, top, restoreBackground, MatchesGlobalPalette(image.Palette), transparentIndex);
             FrameCount++;
+        }
+
+        private bool MatchesGlobalPalette(Color[] palette)
+        {
+            if (globalPalette == null || palette.Length != globalPalette.Length) return false;
+            for (int index = 0; index < palette.Length; index++)
+                if ((palette[index].ToArgb() & 0xFFFFFF) != (globalPalette[index].ToArgb() & 0xFFFFFF)) return false;
+            return true;
         }
 
         private void Finish()

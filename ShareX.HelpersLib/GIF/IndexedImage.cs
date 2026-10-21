@@ -55,23 +55,27 @@ public sealed class IndexedImage
         stream.WriteByte(0x3B);
     }
 
-    internal void WriteHeader(Stream stream)
+    internal void WriteHeader(Stream stream, bool writePalette = false)
     {
         ValidateGifSize();
         using BinaryWriter writer = new(stream, Encoding.ASCII, true);
         writer.Write(Encoding.ASCII.GetBytes("GIF89a"));
         writer.Write((ushort)Width); writer.Write((ushort)Height);
-        writer.Write((byte)0x70); writer.Write((byte)0); writer.Write((byte)0);
+        int bits = GetPaletteBits();
+        writer.Write((byte)(0x70 | (writePalette ? 0x80 | (bits - 1) : 0)));
+        writer.Write((byte)0); writer.Write((byte)0);
+        if (writePalette) WritePalette(writer, bits);
     }
 
-    internal void WriteFrame(Stream stream, int delay, int left = 0, int top = 0, bool restoreBackground = true)
+    internal void WriteFrame(Stream stream, int delay, int left = 0, int top = 0, bool restoreBackground = true,
+        bool useGlobalPalette = false, int? transparentIndex = null)
     {
         ValidateGifSize();
         if (left < 0 || top < 0 || left > ushort.MaxValue - Width || top > ushort.MaxValue - Height)
             throw new ArgumentOutOfRangeException(nameof(left), "GIF frame offsets must fit within 65535 pixels.");
-        int transparent = Array.FindIndex(Palette, color => color.A < 128);
-        int bits = 1;
-        while ((1 << bits) < Palette.Length) bits++;
+        int transparent = transparentIndex ?? Array.FindIndex(Palette, color => color.A < 128);
+        if (transparent < -1 || transparent >= Palette.Length) throw new ArgumentOutOfRangeException(nameof(transparentIndex));
+        int bits = GetPaletteBits();
         using BinaryWriter writer = new(stream, Encoding.ASCII, true);
         writer.Write((byte)0x21); writer.Write((byte)0xF9); writer.Write((byte)4);
         // Partial updates retain the composed canvas instead of clearing it before the next frame.
@@ -79,12 +83,9 @@ public sealed class IndexedImage
         writer.Write((ushort)Math.Clamp(delay / 10, 0, ushort.MaxValue));
         writer.Write((byte)Math.Max(0, transparent)); writer.Write((byte)0);
         writer.Write((byte)0x2C); writer.Write((ushort)left); writer.Write((ushort)top);
-        writer.Write((ushort)Width); writer.Write((ushort)Height); writer.Write((byte)(0x80 | (bits - 1)));
-        for (int index = 0; index < (1 << bits); index++)
-        {
-            Color color = index < Palette.Length ? Palette[index] : Color.Black;
-            writer.Write(color.R); writer.Write(color.G); writer.Write(color.B);
-        }
+        writer.Write((ushort)Width); writer.Write((ushort)Height);
+        writer.Write((byte)(useGlobalPalette ? 0 : 0x80 | (bits - 1)));
+        if (!useGlobalPalette) WritePalette(writer, bits);
         int minimumCodeSize = Math.Max(2, bits);
         writer.Write((byte)minimumCodeSize);
         byte[] data = Compress(Pixels, minimumCodeSize);
@@ -94,6 +95,22 @@ public sealed class IndexedImage
             writer.Write((byte)count); writer.Write(data, offset, count);
         }
         writer.Write((byte)0);
+    }
+
+    private int GetPaletteBits()
+    {
+        int bits = 1;
+        while ((1 << bits) < Palette.Length) bits++;
+        return bits;
+    }
+
+    private void WritePalette(BinaryWriter writer, int bits)
+    {
+        for (int index = 0; index < (1 << bits); index++)
+        {
+            Color color = index < Palette.Length ? Palette[index] : Color.Black;
+            writer.Write(color.R); writer.Write(color.G); writer.Write(color.B);
+        }
     }
 
     private void ValidateGifSize()

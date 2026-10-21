@@ -156,10 +156,11 @@ internal sealed unsafe class GifWriter : IDisposable
             ReportProgress((int)((index + 1) * 20 / frameCount));
         }
         cache.Position = 0;
-        using AnimatedGifCreator creator = new(outputPath, 0);
+        using AnimatedGifCreator creator = new(outputPath, 0) { UseGlobalPalette = true };
         IndexedImage? previous = null;
         IndexedImage? pending = null;
         Point offset = Point.Empty;
+        int transparentIndex = -1;
         long writtenCentiseconds = 0;
         for (long index = 0; index < frameCount; index++)
         {
@@ -171,15 +172,15 @@ internal sealed unsafe class GifWriter : IDisposable
             Rectangle bounds = previous == null ? new(0, 0, image.Width, image.Height) : GetChangedBounds(previous, image);
             if (!bounds.IsEmpty)
             {
-                if (pending != null) WriteFrame(creator, pending, offset, timestamp, ref writtenCentiseconds);
-                pending = CropFrame(image, bounds);
+                if (pending != null) WriteFrame(creator, pending, offset, transparentIndex, timestamp, ref writtenCentiseconds);
+                pending = CropFrame(image, previous, bounds, out transparentIndex);
                 offset = bounds.Location;
             }
             previous = image;
             if (index + 1 < frameCount) ReportProgress(20 + (int)((index + 1) * 80 / frameCount));
         }
         if (aborted()) throw new OperationCanceledException("GIF encoding aborted.");
-        if (pending != null) WriteFrame(creator, pending, offset, duration, ref writtenCentiseconds);
+        if (pending != null) WriteFrame(creator, pending, offset, transparentIndex, duration, ref writtenCentiseconds);
         ReportProgress(100);
         if (aborted()) throw new OperationCanceledException("GIF encoding aborted.");
     }
@@ -228,8 +229,43 @@ internal sealed unsafe class GifWriter : IDisposable
         return bottom < 0 ? Rectangle.Empty : Rectangle.FromLTRB(left, top, right + 1, bottom + 1);
     }
 
-    private static IndexedImage CropFrame(IndexedImage image, Rectangle bounds)
+    private static IndexedImage CropFrame(IndexedImage image, IndexedImage? previous, Rectangle bounds, out int transparentIndex)
     {
+        transparentIndex = -1;
+        if (previous != null)
+        {
+            Span<bool> usedColors = stackalloc bool[256];
+            usedColors.Clear();
+            int usedColorCount = 0;
+            bool hasUnchangedPixels = false;
+            for (int y = bounds.Top; y < bounds.Bottom && usedColorCount < image.Palette.Length; y++)
+            {
+                int start = y * image.Width + bounds.Left;
+                for (int x = 0; x < bounds.Width; x++)
+                {
+                    byte color = image.Pixels[start + x];
+                    if (color == previous.Pixels[start + x]) hasUnchangedPixels = true;
+                    else if (!usedColors[color]) { usedColors[color] = true; usedColorCount++; }
+                }
+            }
+            // Transparency is per frame. Borrow a palette index unused by changed pixels;
+            // never remove a color or make pixels restoring old content transparent.
+            if (hasUnchangedPixels && usedColorCount < image.Palette.Length)
+                for (int color = 0; color < image.Palette.Length; color++)
+                    if (!usedColors[color]) { transparentIndex = color; break; }
+        }
+        if (transparentIndex >= 0)
+        {
+            byte[] patch = new byte[checked(bounds.Width * bounds.Height)];
+            for (int y = 0; y < bounds.Height; y++)
+            {
+                int source = (bounds.Y + y) * image.Width + bounds.X, destination = y * bounds.Width;
+                for (int x = 0; x < bounds.Width; x++)
+                    patch[destination + x] = image.Pixels[source + x] == previous!.Pixels[source + x]
+                        ? (byte)transparentIndex : image.Pixels[source + x];
+            }
+            return new(bounds.Width, bounds.Height, patch, image.Palette);
+        }
         if (bounds.Width == image.Width && bounds.Height == image.Height) return image;
         byte[] pixels = new byte[checked(bounds.Width * bounds.Height)];
         for (int y = 0; y < bounds.Height; y++)
@@ -238,7 +274,8 @@ internal sealed unsafe class GifWriter : IDisposable
         return new(bounds.Width, bounds.Height, pixels, image.Palette);
     }
 
-    private static void WriteFrame(AnimatedGifCreator creator, IndexedImage image, Point offset, long until, ref long writtenCentiseconds)
+    private static void WriteFrame(AnimatedGifCreator creator, IndexedImage image, Point offset, int transparentIndex,
+        long until, ref long writtenCentiseconds)
     {
         // Round cumulative timestamps to avoid drift at rates such as 15 FPS, preserving dropped slots.
         const long ticksPerCentisecond = TimeSpan.TicksPerMillisecond * 10;
@@ -246,7 +283,7 @@ internal sealed unsafe class GifWriter : IDisposable
         while (writtenCentiseconds < end)
         {
             int delay = (int)Math.Min(end - writtenCentiseconds, ushort.MaxValue);
-            creator.AddFrame(image, delay * 10, offset.X, offset.Y, restoreBackground: false);
+            creator.AddFrame(image, delay * 10, offset.X, offset.Y, restoreBackground: false, transparentIndex: transparentIndex);
             writtenCentiseconds += delay;
         }
     }
