@@ -156,23 +156,32 @@ internal sealed unsafe class GifWriter : IDisposable
         }
         cache.Position = 0;
         using AnimatedGifCreator creator = new(outputPath, 0);
+        IndexedImage? pending = null;
         long writtenCentiseconds = 0;
         for (long index = 0; index < frameCount; index++)
         {
             if (aborted()) throw new OperationCanceledException("GIF encoding aborted.");
-            ReadFrame(reader, bitmap);
+            long timestamp = ReadFrame(reader, bitmap);
             IndexedImage image = quantizer.Quantize(bitmap);
-            long next = index + 1 < frameCount ? reader.ReadInt64() : duration;
-            if (index + 1 < frameCount) cache.Position -= sizeof(long);
-            WriteFrame(creator, image, next, ref writtenCentiseconds);
-            ReportProgress(20 + (int)((index + 1) * 80 / frameCount));
+            // All frames share a palette. Keep identical GIF pixels on screen by extending
+            // the pending frame's delay, including source colors that quantize identically.
+            if (pending == null) pending = image;
+            else if (!pending.Pixels.AsSpan().SequenceEqual(image.Pixels))
+            {
+                WriteFrame(creator, pending, timestamp, ref writtenCentiseconds);
+                pending = image;
+            }
+            if (index + 1 < frameCount) ReportProgress(20 + (int)((index + 1) * 80 / frameCount));
         }
+        if (aborted()) throw new OperationCanceledException("GIF encoding aborted.");
+        if (pending != null) WriteFrame(creator, pending, duration, ref writtenCentiseconds);
+        ReportProgress(100);
         if (aborted()) throw new OperationCanceledException("GIF encoding aborted.");
     }
 
-    private void ReadFrame(BinaryReader reader, SKBitmap bitmap)
+    private long ReadFrame(BinaryReader reader, SKBitmap bitmap)
     {
-        reader.ReadInt64(); // Timestamp of this frame; the next timestamp determines its duration.
+        long timestamp = reader.ReadInt64();
         int compressedLength = checked((int)reader.ReadInt64());
         byte[] compressed = ArrayPool<byte>.Shared.Rent(compressedLength);
         try
@@ -187,6 +196,7 @@ internal sealed unsafe class GifWriter : IDisposable
         Span<uint> pixels = new((void*)bitmap.GetPixels(), frameBytes / 4);
         for (int pixel = 0; pixel < pixels.Length; pixel++) pixels[pixel] |= 0xFF000000;
         bitmap.NotifyPixelsChanged();
+        return timestamp;
     }
 
     private static void WriteFrame(AnimatedGifCreator creator, IndexedImage image, long until, ref long writtenCentiseconds)
