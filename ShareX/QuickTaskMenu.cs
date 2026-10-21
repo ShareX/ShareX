@@ -34,6 +34,7 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
 using System;
+using System.Linq;
 
 namespace ShareX;
 
@@ -66,7 +67,8 @@ public sealed class QuickTaskMenu
             {
                 if (taskInfo.IsValid)
                 {
-                    MenuItem item = CreateActionItem(menu, taskInfo.ToString(), null,
+                    string icon = MainMenuBuilder.GetAfterCaptureTaskIcon(taskInfo.AfterCaptureTasks.GetFlags().FirstOrDefault());
+                    MenuItem item = CreateActionItem(menu, taskInfo.ToString(), icon,
                         () => OnTaskInfoSelected(taskInfo));
                     menu.Items.Add(item);
                 }
@@ -121,6 +123,7 @@ public sealed class QuickTaskMenu
     private static MenuItem CreateActionItem(ContextMenu menu, string header, string? icon, Action? action)
     {
         MenuItem item = new() { Header = header };
+        item.Classes.Add("compact-menu-item");
 
         if (!string.IsNullOrEmpty(icon))
         {

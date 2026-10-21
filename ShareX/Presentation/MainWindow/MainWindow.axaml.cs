@@ -1778,6 +1778,13 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnWindowKeyDown(object? sender, KeyEventArgs e)
     {
+        if (e.Key == Key.Escape)
+        {
+            Close();
+            e.Handled = true;
+            return;
+        }
+
         _uploadInfoManager.UpdateSelectedItems(GetSelectedItems().Select(x => x.Task));
         bool control = e.KeyModifiers.HasFlag(KeyModifiers.Control);
         bool shift = e.KeyModifiers.HasFlag(KeyModifiers.Shift);

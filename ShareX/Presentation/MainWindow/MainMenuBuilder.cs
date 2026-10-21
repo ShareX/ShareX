@@ -415,7 +415,7 @@ internal sealed class MainMenuBuilder
             .Select(task => (task, task.GetLocalizedDescription(), GetAfterUploadTaskIcon(task)))
             .ToArray();
 
-    private static string GetAfterCaptureTaskIcon(AfterCaptureTasks task) => task switch
+    internal static string GetAfterCaptureTaskIcon(AfterCaptureTasks task) => task switch
     {
         AfterCaptureTasks.ShowQuickTaskMenu => LucideIcons.menu,
         AfterCaptureTasks.ShowAfterCaptureWindow => LucideIcons.app_window,
