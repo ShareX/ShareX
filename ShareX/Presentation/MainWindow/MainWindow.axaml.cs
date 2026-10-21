@@ -1452,7 +1452,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                             .Cast<string>().ToArray();
                         ImageViewerWindowIntegration.ShowImage(
                             images,
-                            Math.Max(0, Array.IndexOf(images, filePath)));
+                            Math.Max(0, Array.IndexOf(images, filePath)),
+                            this);
                     }
                     else
                     {
@@ -1463,7 +1464,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             case ThumbnailViewClickAction.OpenImageViewer:
                 if (File.Exists(filePath) && FileHelpers.IsImageFile(filePath))
                 {
-                    ImageViewerWindowIntegration.ShowImage(filePath);
+                    ImageViewerWindowIntegration.ShowImage(filePath, this);
                 }
                 break;
             case ThumbnailViewClickAction.OpenFile:

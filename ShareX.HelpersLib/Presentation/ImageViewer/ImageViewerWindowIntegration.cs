@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using System;
@@ -40,18 +41,18 @@ public static class ImageViewerWindowIntegration
 {
     public static void ShowImage() => ShowWindow(() => new ImageViewerWindow());
 
-    public static void ShowImage(string? filePath)
+    public static void ShowImage(string? filePath, Window? owner = null)
     {
         if (string.IsNullOrWhiteSpace(filePath))
         {
-            ShowImage();
+            ShowWindow(() => new ImageViewerWindow(), owner);
             return;
         }
 
-        ShowWindow(() => new ImageViewerWindow(filePath));
+        ShowWindow(() => new ImageViewerWindow(filePath), owner);
     }
 
-    public static void ShowImage(IReadOnlyList<string> filePaths, int selectedIndex = 0)
+    public static void ShowImage(IReadOnlyList<string> filePaths, int selectedIndex = 0, Window? owner = null)
     {
         if (filePaths.Count > 0)
         {
@@ -61,7 +62,7 @@ public static class ImageViewerWindowIntegration
                 files[index] = filePaths[index];
             }
 
-            ShowWindow(() => new ImageViewerWindow(files, selectedIndex));
+            ShowWindow(() => new ImageViewerWindow(files, selectedIndex), owner);
         }
     }
 
@@ -115,11 +116,13 @@ public static class ImageViewerWindowIntegration
                 Window window = windowFactory();
                 if (owner is { IsVisible: true } visibleOwner)
                 {
+                    IInputElement? focusedElement = visibleOwner.FocusManager?.GetFocusedElement();
                     window.Closed += (_, _) => Dispatcher.UIThread.Post(() =>
                     {
                         if (visibleOwner.IsVisible)
                         {
                             visibleOwner.Activate();
+                            focusedElement?.Focus();
                         }
                     }, DispatcherPriority.Input);
 
