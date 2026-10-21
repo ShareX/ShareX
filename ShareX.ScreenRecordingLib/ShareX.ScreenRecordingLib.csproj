@@ -12,4 +12,7 @@
     <PackageReference Include="Vortice.Direct3D11" />
     <PackageReference Include="Vortice.MediaFoundation" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
+  </ItemGroup>
 </Project>

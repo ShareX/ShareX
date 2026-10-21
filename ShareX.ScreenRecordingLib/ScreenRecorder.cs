@@ -47,13 +47,15 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
     private Thread? worker;
     private bool startRequested, disposed, resumeRequested;
     private Rectangle? resumeRegion;
-    private int recording;
+    private int recording, aborted;
 
     public Task<RecordingResult> Completion => completed.Task;
     public VideoEncoderInfo? Encoder { get; private set; }
     public CameraCaptureInfo? Camera { get; private set; }
     /// <summary>Nonfatal camera errors; screen and audio recording continue.</summary>
     public event Action<string>? Diagnostic;
+    /// <summary>GIF encoding progress after capture has stopped, from 0 to 100.</summary>
+    public event Action<int>? EncodingProgressChanged;
     public bool IsRecording => Volatile.Read(ref recording) != 0;
     public bool IsPaused => clock.IsPaused;
     public TimeSpan Elapsed => TimeSpan.FromTicks(clock.Elapsed);
@@ -114,7 +116,8 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
     public void Resume(Rectangle region)
     {
         if (options.WindowHandle != 0) throw new InvalidOperationException("Window capture follows its target window rather than a desktop region.");
-        if ((region.Width & ~1) != (options.Region.Width & ~1) || (region.Height & ~1) != (options.Region.Height & ~1))
+        int sizeMask = options.IsGif ? -1 : ~1;
+        if ((region.Width & sizeMask) != (options.Region.Width & sizeMask) || (region.Height & sizeMask) != (options.Region.Height & sizeMask))
             throw new ArgumentException("Moving the recording region cannot change its output dimensions.", nameof(region));
         RequestResume(region);
     }
@@ -130,10 +133,17 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
         }
     }
 
-    /// <summary>Nonblocking stop request, safe from a UI thread. Await StopAsync or Completion to finalize MP4.</summary>
+    /// <summary>Nonblocking stop request, safe from a UI thread. Await StopAsync or Completion to finalize the output.</summary>
     public void RequestStop()
     {
         lock (sync) { if (!disposed) stop.Set(); }
+    }
+
+    /// <summary>Discard this recording and cancel any pending GIF encoding.</summary>
+    public void RequestAbort()
+    {
+        Interlocked.Exchange(ref aborted, 1);
+        RequestStop();
     }
 
     public Task<RecordingResult> StopAsync()
@@ -153,18 +163,22 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
         {
             NativeMethods.CoInitializeEx(null, COINIT.COINIT_MULTITHREADED).ThrowOnFailure();
             com = true;
-            MediaFactory.MFStartup(true).CheckError();
-            mediaFoundation = true;
+            if (!options.IsGif || options.CaptureCamera)
+            {
+                MediaFactory.MFStartup(true).CheckError();
+                mediaFoundation = true;
+            }
             List<GraphicsCapture.Target> targets = GraphicsCapture.GetTargets(options, out int width, out int height);
             Directory.CreateDirectory(Path.GetDirectoryName(options.OutputPath)!);
             // Reserve the name atomically. Never overwrite or delete a pre-existing user file.
             using (new FileStream(options.OutputPath, FileMode.CreateNew, FileAccess.Write, FileShare.None)) { }
             ownsOutput = true;
             using GraphicsDevice graphics = new(targets[0].Monitor);
-            using GpuVideoProcessor processor = new(graphics, width, height, options.FramesPerSecond);
-            using MediaFoundationWriter writer = new(graphics, options, width, height);
-            Encoder = writer.Encoder;
-            using VideoTexturePool textures = new(graphics, processor, writer.EncoderBindFlags);
+            using GpuVideoProcessor processor = new(graphics, width, height, options.FramesPerSecond, !options.IsGif);
+            using MediaFoundationWriter? writer = options.IsGif ? null : new(graphics, options, width, height);
+            using GifWriter? gifWriter = options.IsGif ? new(graphics, options, width, height) : null;
+            Encoder = writer?.Encoder ?? GifWriter.Encoder;
+            using VideoTexturePool? textures = writer == null ? null : new(graphics, processor, writer.EncoderBindFlags);
             using GraphicsCapture capture = new(graphics, processor, targets, options.IncludeCursor, options.FramesPerSecond);
             using CameraCapture? camera = options.CaptureCamera ? new(graphics, options) : null;
             Camera = camera?.Info;
@@ -256,7 +270,8 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
                     long timestamp = nextFrame * TimeSpan.TicksPerSecond / options.FramesPerSecond;
                     if (capture.HasEnded) break;
                     long end = (nextFrame + 1) * TimeSpan.TicksPerSecond / options.FramesPerSecond;
-                    if (textures.TryRent(out VideoTexturePool.Slot? slot))
+                    VideoTexturePool.Slot? slot = null;
+                    if (textures == null || textures.TryRent(out slot))
                     {
                         if (camera != null && !cameraDisabled)
                         {
@@ -288,10 +303,22 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
                                 camera.Dispose();
                             }
                         }
-                        try { processor.Convert(slot!.View, (uint)nextFrame, cameraOverlay); }
-                        catch { textures.Return(slot!); throw; }
-                        using var sample = textures.CreateSample(slot!);
-                        writer.WriteVideo(sample, timestamp, end - timestamp, discontinuity);
+                        if (gifWriter != null)
+                        {
+                            if (!gifWriter.TryWriteVideo(processor.GetBgraFrame(cameraOverlay), timestamp))
+                            {
+                                dropped++;
+                                nextFrame++;
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            try { processor.Convert(slot!.View, (uint)nextFrame, cameraOverlay); }
+                            catch { textures!.Return(slot!); throw; }
+                            using var sample = textures!.CreateSample(slot!);
+                            writer!.WriteVideo(sample, timestamp, end - timestamp, discontinuity);
+                        }
                         written++;
                         duration = end;
                         discontinuity = false;
@@ -309,11 +336,19 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
             // Stop and drain capture before writing the final audio blocks and finalizing the container.
             audio?.Dispose();
             clock.Stop();
+            Volatile.Write(ref recording, 0);
             duration = Math.Max(duration, options.Duration > TimeSpan.Zero ? Math.Min(clock.Elapsed, options.Duration.Ticks) : clock.Elapsed);
+            if (Volatile.Read(ref aborted) != 0) throw new OperationCanceledException("Recording aborted.");
             WriteAudioUntil(writer, mixer, audioBlock, ref audioFrame, duration, options.HasAudio, true);
             if (written == 0) throw new IOException("No video frames were accepted by the encoder.");
-            writer.Finish();
-            completed.TrySetResult(new(options.OutputPath, TimeSpan.FromTicks(duration), written, dropped, mixer.Discontinuities, writer.Encoder));
+            writer?.Finish();
+            if (gifWriter != null)
+            {
+                capture.Dispose();
+                camera?.Dispose();
+                gifWriter.Finish(duration, ReportEncodingProgress, () => Volatile.Read(ref aborted) != 0);
+            }
+            completed.TrySetResult(new(options.OutputPath, TimeSpan.FromTicks(duration), written, dropped, mixer.Discontinuities, Encoder));
         }
         catch (Exception ex)
         {
@@ -339,10 +374,16 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
         catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex); }
     }
 
-    private static void WriteAudioUntil(MediaFoundationWriter writer, AudioMixer mixer, short[] block,
+    private void ReportEncodingProgress(int progress)
+    {
+        try { EncodingProgressChanged?.Invoke(progress); }
+        catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex); }
+    }
+
+    private static void WriteAudioUntil(MediaFoundationWriter? writer, AudioMixer mixer, short[] block,
         ref long firstFrame, long until, bool enabled, bool partial = false)
     {
-        if (!enabled) return;
+        if (!enabled || writer == null) return;
         long endFrame = (long)((Int128)until * AudioMixer.SampleRate / TimeSpan.TicksPerSecond);
         while (firstFrame + block.Length / 2 <= endFrame || (partial && firstFrame < endFrame))
         {

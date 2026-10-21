@@ -70,15 +70,15 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         {
             if (!NativeMethods.IsWindow(options.WindowHandle)) throw new ArgumentException("The capture window no longer exists.");
             GraphicsCaptureItem item = CreateItem(options.WindowHandle, true);
-            width = item.Size.Width & ~1;
-            height = item.Size.Height & ~1;
+            width = options.IsGif ? item.Size.Width : item.Size.Width & ~1;
+            height = options.IsGif ? item.Size.Height : item.Size.Height & ~1;
             if (width < 2 || height < 2) throw new ArgumentException("The window has no capturable content.");
             nint monitor = NativeMethods.MonitorFromWindow(options.WindowHandle, MONITOR_FROM_FLAGS.MONITOR_DEFAULTTONEAREST);
             return [new(item, new Rectangle(0, 0, width, height), Point.Empty, monitor, options.WindowHandle)];
         }
 
-        width = options.Region.Width & ~1;
-        height = options.Region.Height & ~1;
+        width = options.IsGif ? options.Region.Width : options.Region.Width & ~1;
+        height = options.IsGif ? options.Region.Height : options.Region.Height & ~1;
         if (width > 16384 || height > 16384) throw new ArgumentException("The capture region exceeds D3D11 texture limits.");
         Rectangle region = new(options.Region.Location, new Size(width, height));
         List<(nint Monitor, Rectangle Bounds)> monitors = new();

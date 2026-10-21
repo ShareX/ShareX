@@ -575,7 +575,7 @@ internal sealed class TaskSettingsPageBuilder
         Control legacyOptions = Button(Strings.TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis, ShowScreenRecordingOptions);
         foreach (Control control in new[] { systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate }) BindEnabled(control, native);
         BindEnabled(twoPass, native, invert: true);
-        // GIF tasks continue to use the existing FFmpeg options even when MP4 recording is native.
+        BindEnabled(legacyOptions, native, invert: true);
         BoundValue<bool> fixedDuration = new(capture.ScreenRecordFixedDuration, value => capture.ScreenRecordFixedDuration = value);
         NumericUpDown duration = Number(() => (decimal)capture.ScreenRecordDuration, value => capture.ScreenRecordDuration = (float)value, 0, 86400, 0.1m);
         BindEnabled(duration, fixedDuration);

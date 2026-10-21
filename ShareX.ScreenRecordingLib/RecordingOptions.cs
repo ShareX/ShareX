@@ -27,9 +27,10 @@ using System.Drawing;
 
 namespace ShareX.ScreenRecordingLib;
 
-/// <summary>Native H.264/AAC MP4 recording. Coordinates are physical desktop pixels.</summary>
+/// <summary>Native H.264/AAC MP4 or adaptive GIF recording. Coordinates are physical desktop pixels.</summary>
 public sealed record RecordingOptions
 {
+    /// <summary>The .mp4 or .gif extension selects the output format.</summary>
     public required string OutputPath { get; init; }
     public Rectangle Region { get; init; }
     /// <summary>When nonzero, capture this window (including when occluded) instead of Region.</summary>
@@ -59,22 +60,24 @@ public sealed record RecordingOptions
     public int CameraMargin { get; init; } = 16;
     public float SystemAudioGain { get; init; } = 1;
     public float MicrophoneGain { get; init; } = 1;
-    /// <summary>Reject a software video encoder rather than silently increasing CPU usage.</summary>
+    /// <summary>For MP4, reject a software video encoder rather than silently increasing CPU usage.</summary>
     public bool RequireHardwareEncoder { get; init; } = true;
     public TimeSpan Duration { get; init; }
 
-    internal bool HasAudio => CaptureSystemAudio || CaptureMicrophone;
+    internal bool IsGif => Path.GetExtension(OutputPath).Equals(".gif", StringComparison.OrdinalIgnoreCase);
+    internal bool HasAudio => !IsGif && (CaptureSystemAudio || CaptureMicrophone);
 
     internal void Validate()
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(OutputPath);
-        if (!Path.GetExtension(OutputPath).Equals(".mp4", StringComparison.OrdinalIgnoreCase))
-            throw new ArgumentException("Native recording writes H.264/AAC MP4 files.", nameof(OutputPath));
+        if (!IsGif && !Path.GetExtension(OutputPath).Equals(".mp4", StringComparison.OrdinalIgnoreCase))
+            throw new ArgumentException("Native recording writes H.264/AAC MP4 or adaptive GIF files.", nameof(OutputPath));
         if (WindowHandle == 0 && (Region.Width < 2 || Region.Height < 2))
             throw new ArgumentException("Select a window or a region of at least 2 × 2 pixels.", nameof(Region));
         if (FramesPerSecond is < 1 or > 240) throw new ArgumentOutOfRangeException(nameof(FramesPerSecond));
-        if (VideoBitrate is < 100_000 or > 200_000_000) throw new ArgumentOutOfRangeException(nameof(VideoBitrate));
-        if (AudioBitrate is not (96_000 or 128_000 or 160_000 or 192_000)) throw new ArgumentOutOfRangeException(nameof(AudioBitrate));
+        if (IsGif && FramesPerSecond > 100) throw new ArgumentOutOfRangeException(nameof(FramesPerSecond), "GIF frames have a minimum duration of 10 ms.");
+        if (!IsGif && VideoBitrate is < 100_000 or > 200_000_000) throw new ArgumentOutOfRangeException(nameof(VideoBitrate));
+        if (!IsGif && AudioBitrate is not (96_000 or 128_000 or 160_000 or 192_000)) throw new ArgumentOutOfRangeException(nameof(AudioBitrate));
         if (Duration < TimeSpan.Zero) throw new ArgumentOutOfRangeException(nameof(Duration));
         if (!Enum.IsDefined(CameraResolution)) throw new ArgumentOutOfRangeException(nameof(CameraResolution));
         if (!Enum.IsDefined(CameraPosition)) throw new ArgumentOutOfRangeException(nameof(CameraPosition));

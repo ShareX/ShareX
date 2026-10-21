@@ -31,7 +31,7 @@ using Vortice.Mathematics;
 
 namespace ShareX.ScreenRecordingLib.Video;
 
-/// <summary>Crops/composes BGRA surfaces and converts to limited-range BT.709 NV12 on the GPU.</summary>
+/// <summary>Crops/composes BGRA surfaces, optionally converting to limited-range BT.709 NV12 on the GPU.</summary>
 internal sealed class GpuVideoProcessor : IDisposable
 {
     private readonly GraphicsDevice graphics;
@@ -41,7 +41,7 @@ internal sealed class GpuVideoProcessor : IDisposable
     private ID3D11VideoProcessor processor = null!;
     private ID3D11VideoProcessorInputView input = null!;
     private ID3D11RenderTargetView canvasView = null!;
-    private readonly VideoProcessorStream[] streams;
+    private readonly VideoProcessorStream[] streams = [];
     private ID3D11VideoProcessorInputView? cameraInput, compositeInput;
     private ID3D11Texture2D? composite;
     private bool supportsCameraComposition;
@@ -49,13 +49,18 @@ internal sealed class GpuVideoProcessor : IDisposable
     public int Width { get; }
     public int Height { get; }
 
-    public GpuVideoProcessor(GraphicsDevice graphics, int width, int height, int fps)
+    public GpuVideoProcessor(GraphicsDevice graphics, int width, int height, int fps, bool convertToNv12 = true)
     {
         this.graphics = graphics;
         Width = width;
         Height = height;
         try
         {
+            Canvas = graphics.CreateTexture(width, height, Format.B8G8R8A8_UNorm, BindFlags.RenderTarget);
+            canvasView = graphics.Device.CreateRenderTargetView(Canvas);
+            Clear();
+            // GIF reads the original BGRA pixels without requiring NV12 or a video encoder.
+            if (!convertToNv12) return;
             videoDevice = graphics.Device.QueryInterface<ID3D11VideoDevice>();
             videoContext = graphics.Context.QueryInterface<ID3D11VideoContext>();
             VideoProcessorContentDescription desc = new()
@@ -75,9 +80,6 @@ internal sealed class GpuVideoProcessor : IDisposable
             processor = videoDevice.CreateVideoProcessor(enumerator, 0);
             supportsCameraComposition = enumerator.VideoProcessorCaps.MaxInputStreams >= 2 && enumerator.VideoProcessorCaps.MaxStreamStates >= 2;
             streams = new VideoProcessorStream[supportsCameraComposition ? 2 : 1];
-            Canvas = graphics.CreateTexture(width, height, Format.B8G8R8A8_UNorm, BindFlags.RenderTarget);
-            canvasView = graphics.Device.CreateRenderTargetView(Canvas);
-            Clear();
             input = videoDevice.CreateVideoProcessorInputView(Canvas, enumerator,
                 new VideoProcessorInputViewDescription { ViewDimension = VideoProcessorInputViewDimension.Texture2D });
             streams[0] = new() { Enable = true, InputSurface = input };
@@ -98,6 +100,16 @@ internal sealed class GpuVideoProcessor : IDisposable
     public ID3D11VideoProcessorOutputView CreateOutputView(ID3D11Texture2D texture) =>
         videoDevice.CreateVideoProcessorOutputView(texture, enumerator,
             new VideoProcessorOutputViewDescription { ViewDimension = VideoProcessorOutputViewDimension.Texture2D });
+
+    public ID3D11Texture2D GetBgraFrame(CameraOverlay? camera)
+    {
+        if (camera?.HasFrame != true) return Canvas;
+        composite ??= graphics.CreateTexture(Width, Height, Format.B8G8R8A8_UNorm, BindFlags.RenderTarget);
+        ID3D11Texture2D overlay = camera.GetCompositionTexture(Canvas);
+        graphics.Context.CopyResource(composite, Canvas);
+        graphics.Context.CopySubresourceRegion(composite, 0, (uint)camera.Bounds.X, (uint)camera.Bounds.Y, 0, overlay, 0);
+        return composite;
+    }
 
     public void Convert(ID3D11VideoProcessorOutputView output, uint frameNumber, CameraOverlay? camera = null)
     {

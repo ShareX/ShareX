@@ -76,6 +76,7 @@ internal sealed class ScreenRecorderBarSettings
         target.ScreenRecordRequireHardwareEncoder = Capture.ScreenRecordRequireHardwareEncoder;
         target.ScreenRecordVideoBitrate = Capture.ScreenRecordVideoBitrate;
         target.ScreenRecordFPS = Capture.ScreenRecordFPS;
+        target.GIFFPS = Capture.GIFFPS;
         target.ScreenRecordShowCursor = Capture.ScreenRecordShowCursor;
         target.ScreenRecordMouseHighlighter = Capture.ScreenRecordMouseHighlighter;
         target.ScreenRecordShowTimer = Capture.ScreenRecordShowTimer;

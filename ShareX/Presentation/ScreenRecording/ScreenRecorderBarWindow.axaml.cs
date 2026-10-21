@@ -49,7 +49,9 @@ namespace ShareX;
 internal partial class ScreenRecorderBarWindow : Window
 {
     private readonly ScreenRecorderBarSettings _draft;
+    private readonly bool _gif;
     private readonly List<Source> _sources = [];
+    private readonly Source _cameraSource;
     private readonly TaskCompletionSource<bool> _completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private readonly Button _recordButton;
     private ToggleButton _startDelayToggle = null!;
@@ -61,29 +63,33 @@ internal partial class ScreenRecorderBarWindow : Window
     public IntPtr CaptureWindow { get; }
     private TaskSettingsCapture Capture => _draft.Capture;
 
-    public ScreenRecorderBarWindow(TaskSettings settings, DrawingRectangle region, IntPtr window)
+    public ScreenRecorderBarWindow(TaskSettings settings, DrawingRectangle region, IntPtr window, bool gif = false)
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         _draft = new(settings);
+        _gif = gif;
         RecordingRegion = region;
         CaptureWindow = window;
         _recordButton = ActionButton(Strings.ScreenRecorderBar_Record, LucideIcons.circle, RequestRecord, toolbar: true);
         _recordButton.Classes.Add("recorder-record");
 
-        AddSource(Strings.ScreenRecorderBar_SystemAudio, LucideIcons.volume_2,
-            () => Capture.ScreenRecordSystemAudio, value => Capture.ScreenRecordSystemAudio = value,
-            () => Capture.ScreenRecordSystemAudioDeviceId, value => Capture.ScreenRecordSystemAudioDeviceId = value,
-            () => AudioCaptureDevices.GetSystemAudioDevices().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(),
-            () => AudioCaptureDevices.GetDefaultSystemAudioDevice()?.Name,
-            Strings.TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice, Strings.TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice);
-        AddSource(Strings.ScreenRecorderBar_Microphone, LucideIcons.mic,
-            () => Capture.ScreenRecordMicrophone, value => Capture.ScreenRecordMicrophone = value,
-            () => Capture.ScreenRecordMicrophoneDeviceId, value => Capture.ScreenRecordMicrophoneDeviceId = value,
-            () => AudioCaptureDevices.GetMicrophones().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(),
-            () => AudioCaptureDevices.GetDefaultMicrophone()?.Name,
-            Strings.TaskSettingsWindow_NativeRecorderDefaultMicrophone, Strings.TaskSettingsWindow_NativeRecorderUnavailableMicrophone);
-        AddSource(Strings.ScreenRecorderBar_Camera, LucideIcons.video,
+        if (!gif)
+        {
+            AddSource(Strings.ScreenRecorderBar_SystemAudio, LucideIcons.volume_2,
+                () => Capture.ScreenRecordSystemAudio, value => Capture.ScreenRecordSystemAudio = value,
+                () => Capture.ScreenRecordSystemAudioDeviceId, value => Capture.ScreenRecordSystemAudioDeviceId = value,
+                () => AudioCaptureDevices.GetSystemAudioDevices().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(),
+                () => AudioCaptureDevices.GetDefaultSystemAudioDevice()?.Name,
+                Strings.TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice, Strings.TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice);
+            AddSource(Strings.ScreenRecorderBar_Microphone, LucideIcons.mic,
+                () => Capture.ScreenRecordMicrophone, value => Capture.ScreenRecordMicrophone = value,
+                () => Capture.ScreenRecordMicrophoneDeviceId, value => Capture.ScreenRecordMicrophoneDeviceId = value,
+                () => AudioCaptureDevices.GetMicrophones().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(),
+                () => AudioCaptureDevices.GetDefaultMicrophone()?.Name,
+                Strings.TaskSettingsWindow_NativeRecorderDefaultMicrophone, Strings.TaskSettingsWindow_NativeRecorderUnavailableMicrophone);
+        }
+        _cameraSource = AddSource(Strings.ScreenRecorderBar_Camera, LucideIcons.video,
             () => Capture.ScreenRecordCamera, value => Capture.ScreenRecordCamera = value,
             () => Capture.ScreenRecordCameraDeviceId, value => Capture.ScreenRecordCameraDeviceId = value,
             () => CameraCaptureDevices.GetCameras().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(), null,
@@ -144,7 +150,7 @@ internal partial class ScreenRecorderBarWindow : Window
                 return;
             }
             // The window may have moved or resized while its settings were being edited.
-            RecordingRegion = CaptureHelpers.EvenRectangleSize(target.Rectangle);
+            RecordingRegion = _gif ? target.Rectangle : CaptureHelpers.EvenRectangleSize(target.Rectangle);
         }
         _completion.TrySetResult(true);
         Close();
@@ -264,7 +270,7 @@ internal partial class ScreenRecorderBarWindow : Window
         _ => $"{delay:0.##} {Strings.AutoCaptureWindow_Seconds}"
     };
 
-    private void AddSource(string label, string icon, Func<bool> enabled, Action<bool> setEnabled,
+    private Source AddSource(string label, string icon, Func<bool> enabled, Action<bool> setEnabled,
         Func<string> selected, Action<string> setSelected, Func<DeviceChoice[]> enumerate,
         Func<string?>? defaultName, string defaultLabel, string unavailableLabel)
     {
@@ -279,6 +285,7 @@ internal partial class ScreenRecorderBarWindow : Window
         source.Toggle = (ToggleButton)((StackPanel)source.Control).Children[0];
         _sources.Add(source);
         RefreshSource(source);
+        return source;
     }
 
     private void RefreshSource(Source source)
@@ -328,7 +335,7 @@ internal partial class ScreenRecorderBarWindow : Window
         {
             RefreshSource(source);
             string defaultLabel = source.ResolvedDefault == null
-                ? ReferenceEquals(source, _sources[2]) ? Strings.TaskSettingsWindow_NativeRecorderCamera_NoDevices : $"{source.DefaultLabel} ({source.UnavailableLabel})"
+                ? ReferenceEquals(source, _cameraSource) ? Strings.TaskSettingsWindow_NativeRecorderCamera_NoDevices : $"{source.DefaultLabel} ({source.UnavailableLabel})"
                 : $"{source.DefaultLabel} ({source.ResolvedDefault})";
             List<DeviceChoice> choices = [new("", defaultLabel)];
             choices.AddRange(source.Devices.OrderBy(device => device.Name, StringComparer.CurrentCultureIgnoreCase));
@@ -354,7 +361,7 @@ internal partial class ScreenRecorderBarWindow : Window
         Grid.SetColumn(refresh, 1);
         deviceRow.Children.Add(refresh);
         panel.Children.Add(deviceRow);
-        if (ReferenceEquals(source, _sources[2])) panel.Children.Add(BuildCameraPanel());
+        if (ReferenceEquals(source, _cameraSource)) panel.Children.Add(BuildCameraPanel());
         else
         {
             bool system = ReferenceEquals(source, _sources[0]);
@@ -410,10 +417,18 @@ internal partial class ScreenRecorderBarWindow : Window
     private Control BuildOptionsPanel()
     {
         StackPanel recording = new() { Spacing = 10, Margin = new Thickness(0, 8) };
-        recording.Children.Add(Row(Strings.TaskSettingsWindow_ScreenRecordingFPS,
-            Number(Capture.ScreenRecordFPS, 1, 120, 1, value => Capture.ScreenRecordFPS = (int)value)));
-        recording.Children.Add(Row(Strings.TaskSettingsWindow_NativeRecorderBitrate,
-            Number(Capture.ScreenRecordVideoBitrate, 100, 200000, 100, value => Capture.ScreenRecordVideoBitrate = (int)value)));
+        if (_gif)
+        {
+            recording.Children.Add(Row(Strings.TaskSettingsWindow_GIFFPS,
+                Number(Capture.GIFFPS, 1, HelpersOptions.DevMode ? 60 : 30, 1, value => Capture.GIFFPS = (int)value)));
+        }
+        else
+        {
+            recording.Children.Add(Row(Strings.TaskSettingsWindow_ScreenRecordingFPS,
+                Number(Capture.ScreenRecordFPS, 1, 120, 1, value => Capture.ScreenRecordFPS = (int)value)));
+            recording.Children.Add(Row(Strings.TaskSettingsWindow_NativeRecorderBitrate,
+                Number(Capture.ScreenRecordVideoBitrate, 100, 200000, 100, value => Capture.ScreenRecordVideoBitrate = (int)value)));
+        }
         NumericUpDown duration = Number((decimal)Capture.ScreenRecordDuration, 0.1m, 86400, 0.1m, value => Capture.ScreenRecordDuration = (float)value);
         duration.IsEnabled = Capture.ScreenRecordFixedDuration;
         recording.Children.Add(Check(Strings.TaskSettingsWindow_UseFixedDuration, Capture.ScreenRecordFixedDuration,
