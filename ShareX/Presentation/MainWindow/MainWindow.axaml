@@ -240,7 +240,9 @@
             </ScrollViewer>
         </Border>
 
-        <Grid Grid.Column="1"
+        <Grid x:Name="ThumbnailPanel"
+              Grid.Column="1"
+              Focusable="True"
               PointerPressed="OnMainContentPointerPressed"
               PointerReleased="OnMainContentPointerReleased">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">

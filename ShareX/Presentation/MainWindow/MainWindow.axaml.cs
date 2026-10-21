@@ -1216,6 +1216,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (point.Properties.PointerUpdateKind == PointerUpdateKind.RightButtonPressed)
         {
             CloseActiveContextMenu();
+            ThumbnailPanel.Focus(NavigationMethod.Pointer, e.KeyModifiers);
 
             if (!item.IsSelected)
             {
@@ -1230,6 +1231,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             return;
         }
+
+        ThumbnailPanel.Focus(NavigationMethod.Pointer, e.KeyModifiers);
 
         bool isControlPressed = e.KeyModifiers.HasFlag(KeyModifiers.Control);
         bool isShiftPressed = e.KeyModifiers.HasFlag(KeyModifiers.Shift);
@@ -1740,6 +1743,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (pointerUpdateKind == PointerUpdateKind.LeftButtonPressed)
         {
+            ThumbnailPanel.Focus(NavigationMethod.Pointer, e.KeyModifiers);
             ClearSelection();
             _selectionAnchor = null;
             e.Handled = true;
@@ -1752,6 +1756,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
 
         CloseActiveContextMenu();
+        ThumbnailPanel.Focus(NavigationMethod.Pointer, e.KeyModifiers);
         e.Handled = true;
     }
 
