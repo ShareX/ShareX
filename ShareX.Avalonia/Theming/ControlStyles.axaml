@@ -937,7 +937,8 @@
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
     </Style>
 
-    <Style Selector="ContextMenu MenuItem:pointerover TextBlock">
+    <Style Selector="ContextMenu MenuItem:pointerover > TextBlock,
+                     ContextMenu MenuItem:pointerover /template/ TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
     </Style>
 
