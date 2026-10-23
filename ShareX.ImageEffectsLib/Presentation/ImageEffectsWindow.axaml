@@ -86,6 +86,7 @@
                         Cursor="Hand" PointerPressed="OnPreviewPointerPressed">
                     <Grid>
                         <Image Source="{Binding Preview}" Stretch="Uniform" StretchDirection="DownOnly"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"
                                RenderOptions.BitmapInterpolationMode="HighQuality"/>
                         <ProgressBar IsIndeterminate="True" Height="4" VerticalAlignment="Top" IsVisible="{Binding IsBusy}"/>
                         <Border Padding="8,4" Margin="8" HorizontalAlignment="Right" VerticalAlignment="Bottom"
