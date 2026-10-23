@@ -251,6 +251,16 @@ public static partial class SkiaImageHelpers
     public static void DrawImage(this SKCanvas canvas, SKBitmap bitmap, SKRect source, SKRect destination,
         SKPaint paint = null)
     {
+        if (source.Width == destination.Width && source.Height == destination.Height &&
+            canvas.TotalMatrix.IsIdentity &&
+            source.Left == MathF.Truncate(source.Left) && source.Top == MathF.Truncate(source.Top) &&
+            destination.Left == MathF.Truncate(destination.Left) && destination.Top == MathF.Truncate(destination.Top))
+        {
+            // Mitchell sampling blends neighboring pixels even at the original size.
+            canvas.DrawBitmap(bitmap, source, destination, paint);
+            return;
+        }
+
         using SKImage image = SKImage.FromBitmap(bitmap);
         canvas.DrawImage(image, source, destination, HighQualitySampling, paint);
     }
