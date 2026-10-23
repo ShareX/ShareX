@@ -25,6 +25,7 @@
                 <Image x:Name="PreviewImage"
                        Source="{Binding CurrentImage}"
                        RenderTransformOrigin="0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
                        Stretch="Uniform"
                        StretchDirection="DownOnly"/>
             </Border>
