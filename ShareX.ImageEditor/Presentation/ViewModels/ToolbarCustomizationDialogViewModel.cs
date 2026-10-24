@@ -35,16 +35,19 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
 {
     private readonly Action<IReadOnlyList<ToolbarCustomizationItemViewModel>> _onSave;
     private readonly Action _onCancel;
+    private readonly Func<IReadOnlyList<ToolbarCustomizationItemViewModel>> _createDefaultItems;
     private string _validationMessage = "";
     private ToolbarCustomizationItemViewModel? _selectedItem;
 
     public ToolbarCustomizationDialogViewModel(
         IEnumerable<ToolbarCustomizationItemViewModel> sourceItems,
         Action<IReadOnlyList<ToolbarCustomizationItemViewModel>> onSave,
-        Action onCancel)
+        Action onCancel,
+        Func<IReadOnlyList<ToolbarCustomizationItemViewModel>>? createDefaultItems = null)
     {
         _onSave = onSave;
         _onCancel = onCancel;
+        _createDefaultItems = createDefaultItems ?? ToolbarCustomizationItemViewModel.CreateDefaultItems;
         Items = new ObservableCollection<ToolbarCustomizationItemViewModel>(sourceItems.Select(item => item.Clone()));
         Items.CollectionChanged += OnItemsCollectionChanged;
 
@@ -134,7 +137,7 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
 
         Items.Clear();
 
-        foreach (ToolbarCustomizationItemViewModel item in ToolbarCustomizationItemViewModel.CreateDefaultItems())
+        foreach (ToolbarCustomizationItemViewModel item in _createDefaultItems())
         {
             Items.Add(item);
         }

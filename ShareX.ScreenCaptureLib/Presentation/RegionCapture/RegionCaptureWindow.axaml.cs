@@ -336,10 +336,9 @@ public partial class RegionCaptureWindow : Window
             ShowStartScreen = false,
             UseContinueWorkflow = false
         };
-        _viewModel.SetHostToolbarFilter(item =>
-            _request.EnableAnnotations &&
-            item.Tool.HasValue &&
-            item.Tool.Value is not EditorTool.Crop and not EditorTool.CutOut);
+        _viewModel.SetHostToolbarItems(_request.EnableAnnotations
+            ? RegionCaptureToolbar.CreateItems(_request.RegionCaptureOptions.ToolbarItems)
+            : []);
         _viewModel.PropertyChanged += OnViewModelPropertyChanged;
         _viewModel.ToolSelectionRequested += OnAnnotationToolSelected;
 

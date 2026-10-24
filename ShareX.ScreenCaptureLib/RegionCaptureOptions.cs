@@ -23,6 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ImageEditor.Integration;
+using System.Collections.Generic;
+
 namespace ShareX.ScreenCaptureLib
 {
     public class RegionCaptureOptions
@@ -42,6 +45,7 @@ namespace ShareX.ScreenCaptureLib
         public bool DetectControls = true;
         public bool ActiveMonitorMode = false;
         public int BackgroundDimStrength = 20;
+        public List<ImageEditorToolbarItemOptions> ToolbarItems = new List<ImageEditorToolbarItemOptions>();
 
         public RegionCaptureAction RegionCaptureActionRightClick = RegionCaptureAction.RemoveShapeCancelCapture;
         public RegionCaptureAction RegionCaptureActionMiddleClick = RegionCaptureAction.SwapToolType;

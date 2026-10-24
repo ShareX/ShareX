@@ -36,6 +36,8 @@ using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using ShareX.ImageEditor.Presentation.Views;
 using ShareX.Localization;
+using ShareX.ScreenCaptureLib;
+using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -107,24 +109,43 @@ public partial class TaskSettingsWindow : Window
     {
         ImageEditorIntegration.Initialize();
 
-        ToolbarCustomizationDialogView view = new();
-        view.DataContext = new ToolbarCustomizationDialogViewModel(
-            ToolbarCustomizationItemViewModel.CreateFromOptions(options.ToolbarItems),
-            items =>
-            {
-                options.ToolbarItems = items.Select(item => item.ToOptions()).ToList();
-                HideImageEditorToolbarEditor();
-            },
-            HideImageEditorToolbarEditor);
-
-        ImageEditorToolbarEditor.Content = view;
-        ImageEditorToolbarEditorOverlay.IsVisible = true;
+        ShowToolbarEditor(ToolbarCustomizationItemViewModel.CreateFromOptions(options.ToolbarItems),
+            items => options.ToolbarItems = items);
     }
 
-    private void HideImageEditorToolbarEditor()
+    internal void ShowRegionCaptureToolbarEditor(RegionCaptureOptions options)
     {
-        ImageEditorToolbarEditorOverlay.IsVisible = false;
-        ImageEditorToolbarEditor.Content = null;
+        ImageEditorIntegration.Initialize();
+
+        ShowToolbarEditor(RegionCaptureToolbar.CreateItems(options.ToolbarItems),
+            items => options.ToolbarItems = items,
+            () => RegionCaptureToolbar.CreateItems());
+    }
+
+    private void ShowToolbarEditor(
+        IReadOnlyList<ToolbarCustomizationItemViewModel> sourceItems,
+        Action<List<ImageEditorToolbarItemOptions>> saved,
+        Func<IReadOnlyList<ToolbarCustomizationItemViewModel>>? createDefaultItems = null)
+    {
+        ToolbarCustomizationDialogView view = new();
+        view.DataContext = new ToolbarCustomizationDialogViewModel(
+            sourceItems,
+            items =>
+            {
+                saved(items.Select(item => item.ToOptions()).ToList());
+                HideToolbarEditor();
+            },
+            HideToolbarEditor,
+            createDefaultItems);
+
+        ToolbarEditor.Content = view;
+        ToolbarEditorOverlay.IsVisible = true;
+    }
+
+    private void HideToolbarEditor()
+    {
+        ToolbarEditorOverlay.IsVisible = false;
+        ToolbarEditor.Content = null;
     }
 
     internal void ShowActionEditor(ExternalProgram? action, Action<ExternalProgram> saved)
@@ -231,9 +252,9 @@ public partial class TaskSettingsWindow : Window
             return;
         }
 
-        if (ImageEditorToolbarEditorOverlay.IsVisible)
+        if (ToolbarEditorOverlay.IsVisible)
         {
-            HideImageEditorToolbarEditor();
+            HideToolbarEditor();
             e.Handled = true;
         }
         else if (NotificationButtonsEditorOverlay.IsVisible)

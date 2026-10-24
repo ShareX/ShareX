@@ -139,11 +139,11 @@
                 <Grid x:Name="SettingsPages" Grid.Column="1"/>
             </Grid>
 
-            <Border x:Name="ImageEditorToolbarEditorOverlay"
+            <Border x:Name="ToolbarEditorOverlay"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
-                <ContentControl x:Name="ImageEditorToolbarEditor"
+                <ContentControl x:Name="ToolbarEditor"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"/>
             </Border>

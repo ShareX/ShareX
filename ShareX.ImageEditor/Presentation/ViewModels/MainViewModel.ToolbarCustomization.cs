@@ -84,20 +84,11 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         }
 
         /// <summary>
-        /// Applies a host-specific toolbar filter without persisting it to user settings.
-        /// Hosts such as region capture can expose the shared annotation tools while
-        /// excluding image-mutating editor commands whose coordinate semantics do not apply.
+        /// Applies a host-specific toolbar layout without changing the image editor's toolbar settings.
         /// </summary>
-        public void SetHostToolbarFilter(Func<ToolbarCustomizationItemViewModel, bool>? predicate)
+        public void SetHostToolbarItems(IEnumerable<ToolbarCustomizationItemViewModel> items)
         {
-            foreach (ToolbarCustomizationItemViewModel item in _toolbarItems)
-            {
-                item.IsVisible = predicate?.Invoke(item) ?? true;
-            }
-
-            RefreshVisibleToolbarItems();
-            OnPropertyChanged(nameof(ToolbarItems));
-            OnPropertyChanged(nameof(VisibleToolbarItems));
+            ApplyToolbarCustomizationItems(items, persist: false);
         }
 
         /// <summary>Lets an embedding host display its own mutually-exclusive tool mode.</summary>
