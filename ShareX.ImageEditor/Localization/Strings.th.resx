@@ -1395,6 +1395,9 @@
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>เบลอ</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>โคลน</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>ครอบตัด</value>
   </data>

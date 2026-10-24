@@ -1395,6 +1395,9 @@ Schowek nie zawiera obrazu.</value>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Rozmycie</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Klonuj</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Przytnij</value>
   </data>

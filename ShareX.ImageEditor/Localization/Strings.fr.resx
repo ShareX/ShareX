@@ -1395,6 +1395,9 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Flou</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Cloner</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Rogner</value>
   </data>

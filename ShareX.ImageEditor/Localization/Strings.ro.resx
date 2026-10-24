@@ -1395,6 +1395,9 @@ Clipboardul nu conține nicio imagine.</value>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Estompare</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Clonează</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Decupare</value>
   </data>

@@ -755,6 +755,11 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("ToolbarCustomizationItemViewModel_Image", resourceCulture);
             }
         }
+        public static string ToolbarCustomizationItemViewModel_Clone {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationItemViewModel_Clone", resourceCulture);
+            }
+        }
         public static string ToolbarCustomizationItemViewModel_Emoji {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationItemViewModel_Emoji", resourceCulture);

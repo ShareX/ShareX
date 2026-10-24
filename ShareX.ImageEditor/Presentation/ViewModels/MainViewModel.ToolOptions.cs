@@ -1046,6 +1046,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     EditorTool.Crop => Strings.ToolbarCustomizationItemViewModel_Crop,
                     EditorTool.CutOut => Strings.ToolbarCustomizationItemViewModel_CutOut,
                     EditorTool.Image => Strings.ToolbarCustomizationItemViewModel_Image,
+                    EditorTool.Clone => Strings.ToolbarCustomizationItemViewModel_Clone,
                     _ => Strings.ToolbarCustomizationItemViewModel_Select
                 };
             }

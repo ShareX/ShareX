@@ -1395,6 +1395,9 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Unschärfe</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Klonen</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Zuschneiden</value>
   </data>

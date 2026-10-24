@@ -1395,6 +1395,9 @@
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>טשטוש</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>שכפול</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>חיתוך</value>
   </data>

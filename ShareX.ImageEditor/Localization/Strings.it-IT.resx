@@ -1395,6 +1395,9 @@ Gli appunti non contengono un’immagine.</value>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Sfocatura</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Clona</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Ritaglia</value>
   </data>

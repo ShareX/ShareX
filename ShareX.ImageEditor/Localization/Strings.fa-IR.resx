@@ -1395,6 +1395,9 @@
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>تاری</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>تکثیر</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>برش</value>
   </data>

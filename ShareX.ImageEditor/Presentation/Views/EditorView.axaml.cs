@@ -629,6 +629,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 else if (e.PropertyName == nameof(MainViewModel.ActiveTool))
                 {
                     _editorCore.ActiveTool = vm.ActiveTool;
+                    _inputController.CancelClone();
 
                     if (vm.ActiveTool == EditorTool.Crop)
                     {
@@ -1033,7 +1034,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 }
             }
 
-            if (_inputController.CancelCrop())
+            if (_inputController.CancelClone() || _inputController.CancelCrop())
             {
                 return true;
             }
@@ -1510,7 +1511,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 switch (e.Key)
                 {
                     case Key.Escape:
-                        if (_inputController.CancelCrop())
+                        if (_inputController.CancelClone() || _inputController.CancelCrop())
                         {
                             e.Handled = true;
                         }
@@ -1555,6 +1556,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void OnDeselectRequested(object? sender, EventArgs e)
         {
+            _inputController.CancelClone();
             _inputController.CancelCrop();
             _selectionController.ClearSelection();
         }

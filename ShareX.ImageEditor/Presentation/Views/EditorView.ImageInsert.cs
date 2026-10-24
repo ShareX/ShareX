@@ -268,11 +268,41 @@ namespace ShareX.ImageEditor.Presentation.Views
             InsertImageAnnotationCore(skBitmap, position);
         }
 
+        internal void CloneRegion(Rect sourceRectangle)
+        {
+            SKBitmap? sourceImage = _editorCore.SourceImage;
+            if (sourceImage == null)
+            {
+                return;
+            }
+
+            Rect clipped = sourceRectangle.Intersect(new Rect(0, 0, sourceImage.Width, sourceImage.Height));
+            if (clipped.Width <= 0 || clipped.Height <= 0)
+            {
+                return;
+            }
+
+            int left = (int)Math.Floor(clipped.Left);
+            int top = (int)Math.Floor(clipped.Top);
+            int right = (int)Math.Ceiling(clipped.Right);
+            int bottom = (int)Math.Ceiling(clipped.Bottom);
+            using SKBitmap region = new();
+            if (sourceImage.ExtractSubset(region, new SKRectI(left, top, right, bottom)))
+            {
+                SKBitmap? bitmap = region.Copy();
+                if (bitmap != null)
+                {
+                    InsertImageAnnotationCore(bitmap, new Point(left, top), showNotification: false, toolType: EditorTool.Clone);
+                }
+            }
+        }
+
         private void InsertImageAnnotationCore(
             SKBitmap skBitmap,
             Point? position = null,
             bool showNotification = true,
-            bool selectAnnotation = true)
+            bool selectAnnotation = true,
+            EditorTool toolType = EditorTool.Image)
         {
             var canvas = this.FindControl<Canvas>("AnnotationCanvas");
             if (canvas == null || DataContext is not MainViewModel vm)
@@ -298,7 +328,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 posY = visibleCanvasCenter.Y - skBitmap.Height / 2.0;
             }
 
-            var annotation = new ImageAnnotation();
+            var annotation = new ImageAnnotation { ToolType = toolType };
             annotation.SetImage(skBitmap);
             annotation.StartPoint = new SKPoint((float)posX, (float)posY);
             annotation.EndPoint = new SKPoint((float)(posX + skBitmap.Width), (float)(posY + skBitmap.Height));
@@ -314,7 +344,10 @@ namespace ShareX.ImageEditor.Presentation.Views
             vm.HasAnnotations = true;
             if (selectAnnotation)
             {
-                vm.ActiveTool = EditorTool.Select;
+                if (toolType != EditorTool.Clone)
+                {
+                    vm.ActiveTool = EditorTool.Select;
+                }
                 _selectionController.SetSelectedShape(control);
             }
 

@@ -1395,6 +1395,9 @@
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>धुंधला</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>क्लोन</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>काट-छाँट</value>
   </data>

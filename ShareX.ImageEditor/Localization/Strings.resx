@@ -1395,6 +1395,10 @@ Clipboard does not contain an image.</value>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Blur</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Clone</value>
+    <comment>Tool that duplicates underlying image pixels in a selected rectangle as a movable image annotation.</comment>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Crop</value>
   </data>

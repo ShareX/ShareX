@@ -49,6 +49,7 @@ namespace ShareX.ImageEditor.Presentation.Theming
         public const string ToolCrop = LucideIcons.crop;
         public const string ToolCutOut = LucideIcons.scissors;
         public const string ToolImage = LucideIcons.image;
+        public const string ToolClone = LucideIcons.copy;
         public const string ToolEmoji = LucideIcons.smile;
 
         public const string ActionUndo = LucideIcons.undo_2;
@@ -116,6 +117,7 @@ namespace ShareX.ImageEditor.Presentation.Theming
             EditorTool.Crop => ToolCrop,
             EditorTool.CutOut => ToolCutOut,
             EditorTool.Image => ToolImage,
+            EditorTool.Clone => ToolClone,
             EditorTool.Emoji => ToolEmoji,
             _ => ToolSelect
         };

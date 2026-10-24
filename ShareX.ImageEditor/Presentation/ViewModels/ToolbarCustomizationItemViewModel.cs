@@ -58,6 +58,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         CreateToolDefinition(EditorTool.SpeechBalloon, Strings.ToolbarCustomizationItemViewModel_SpeechBalloon, EditorIcons.ToolSpeechBalloon, "O"),
         CreateToolDefinition(EditorTool.Step, Strings.ToolbarCustomizationItemViewModel_Step, EditorIcons.ToolStep, "N"),
         CreateToolDefinition(EditorTool.Image, Strings.ToolbarCustomizationItemViewModel_Image, EditorIcons.ToolImage, "I"),
+        CreateToolDefinition(EditorTool.Clone, Strings.ToolbarCustomizationItemViewModel_Clone, EditorIcons.ToolClone, "D"),
         CreateToolDefinition(EditorTool.Emoji, Strings.ToolbarCustomizationItemViewModel_Emoji, EditorIcons.ToolEmoji, "J"),
         CreateToolDefinition(EditorTool.Cursor, Strings.ToolbarCustomizationItemViewModel_Cursor, EditorIcons.ToolCursor, "K"),
         CreateToolDefinition(EditorTool.Highlight, Strings.ToolbarCustomizationItemViewModel_Highlight, EditorIcons.ToolHighlight, "H"),
@@ -234,9 +235,18 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
             }
         }
 
-        foreach (ToolbarItemDefinition missingDefinition in ItemDefinitions.Where(definition => !usedToolIds.Contains(definition.Id)))
+        for (int i = 0; i < ItemDefinitions.Count; i++)
         {
-            items.Add(CreateItem(missingDefinition));
+            ToolbarItemDefinition definition = ItemDefinitions[i];
+            if (usedToolIds.Contains(definition.Id))
+            {
+                continue;
+            }
+
+            int previousIndex = i > 0
+                ? items.FindIndex(item => item.Id == ItemDefinitions[i - 1].Id)
+                : -1;
+            items.Insert(previousIndex + 1, CreateItem(definition));
         }
 
         return items.Count > 0 ? items : CreateDefaultItems();

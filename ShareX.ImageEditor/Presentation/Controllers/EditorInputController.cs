@@ -139,7 +139,7 @@ public class EditorInputController
             return;
         }
 
-        if (_isDrawing && props.IsRightButtonPressed && (vm.ActiveTool == EditorTool.Crop || vm.ActiveTool == EditorTool.CutOut))
+        if (_isDrawing && props.IsRightButtonPressed && vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut or EditorTool.Clone)
         {
             CancelActiveRegionDrawing(canvas);
             e.Pointer.Capture(null);
@@ -277,7 +277,7 @@ public class EditorInputController
         // ISSUE-019 fix: Dead code removed - redo stack cleared by EditorCore
 
         var point = e.GetPosition(canvas);
-        if (vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut or EditorTool.SmartEraser)
+        if (vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut or EditorTool.SmartEraser or EditorTool.Clone)
         {
             point = ClampPointToCanvasBounds(canvas, point);
         }
@@ -343,6 +343,19 @@ public class EditorInputController
 
         switch (vm.ActiveTool)
         {
+            case EditorTool.Clone:
+                _currentShape = new global::Avalonia.Controls.Shapes.Rectangle
+                {
+                    Name = "CloneOverlay",
+                    Fill = new SolidColorBrush(Color.FromArgb(40, 0, 120, 215)),
+                    Stroke = Brushes.DodgerBlue,
+                    StrokeThickness = 1,
+                    StrokeDashArray = new global::Avalonia.Collections.AvaloniaList<double> { 5, 3 },
+                    Width = 0,
+                    Height = 0,
+                    IsHitTestVisible = false
+                };
+                break;
             case EditorTool.Rectangle:
                 var rectAnnotation = new RectangleAnnotation { StrokeColor = vm.SelectedColor, StrokeWidth = vm.StrokeWidth, BorderStyle = vm.SelectedBorderStyle, FillColor = vm.FillColor, CornerRadius = vm.CornerRadius, StartPoint = ToSKPoint(_startPoint), EndPoint = ToSKPoint(_startPoint) };
                 ApplyShadowOptions(rectAnnotation, vm);
@@ -611,9 +624,9 @@ public class EditorInputController
 
         // Region-based tools cannot operate outside the image bitmap.
         var vm = ViewModel;
-        if (vm != null && vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut or EditorTool.SmartEraser)
+        if (vm != null && vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut or EditorTool.SmartEraser or EditorTool.Clone)
         {
-            if (vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut)
+            if (vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut or EditorTool.Clone)
             {
                 // Allow cancelling selection by right-clicking while holding left button
                 var props = e.GetCurrentPoint(canvas).Properties;
@@ -909,6 +922,11 @@ public class EditorInputController
                     PerformCutOut(canvas);
                     return;
                 }
+                else if (vm.ActiveTool == EditorTool.Clone)
+                {
+                    PerformClone(canvas);
+                    return;
+                }
                 else if (_currentShape != null)
                 {
                     if (_currentShape is global::Avalonia.Controls.Shapes.Rectangle smartEraserRectangle &&
@@ -1026,7 +1044,7 @@ public class EditorInputController
                 rect.Width = 0;
                 rect.Height = 0;
             }
-            else if (rect.Name == "CutOutOverlay") { canvas.Children.Remove(rect); }
+            else if (rect.Name is "CutOutOverlay" or "CloneOverlay") { canvas.Children.Remove(rect); }
         }
         _currentShape = null;
         _cutOutDirection = null;
@@ -1111,6 +1129,17 @@ public class EditorInputController
             cropOverlay.Width = 0;
             cropOverlay.Height = 0;
         }
+        return true;
+    }
+
+    public bool CancelClone()
+    {
+        if (_currentShape?.Name != "CloneOverlay" || _view.FindControl<Canvas>("AnnotationCanvas") is not { } canvas)
+        {
+            return false;
+        }
+
+        CancelActiveRegionDrawing(canvas);
         return true;
     }
 
@@ -1279,7 +1308,8 @@ public class EditorInputController
     {
         return (shape is global::Avalonia.Controls.Shapes.Rectangle rectangle
                 && rectangle.Name != "CropOverlay"
-                && rectangle.Name != "CutOutOverlay")
+                && rectangle.Name != "CutOutOverlay"
+                && rectangle.Name != "CloneOverlay")
             || shape is global::Avalonia.Controls.Shapes.Ellipse
             or SpeechBalloonControl
             or SpotlightControl
@@ -1520,6 +1550,22 @@ public class EditorInputController
             }
             canvas.Children.Remove(cutOverlay);
             _currentShape = null;
+        }
+    }
+
+    private void PerformClone(Canvas canvas)
+    {
+        Control? overlay = _currentShape;
+        _currentShape = null;
+        if (overlay == null)
+        {
+            return;
+        }
+
+        canvas.Children.Remove(overlay);
+        if (overlay.Width >= MinShapeSize && overlay.Height >= MinShapeSize)
+        {
+            _view.CloneRegion(new Rect(Canvas.GetLeft(overlay), Canvas.GetTop(overlay), overlay.Width, overlay.Height));
         }
     }
 
