@@ -437,4 +437,139 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>item ini</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>sekitar {0} per hari</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>sekitar {0} per minggu</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>{0} dari {1} aktif</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>Siang</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>Semua</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>Semua tahun</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>Sebelum riwayat Anda dimulai</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>Hari tersibuk</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>tersibuk pada {0}</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>tersibuk {0}</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>Dihitung sejak {0} · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>Hari dalam seminggu</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0} hari</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>Tujuan</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>Malam</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>Setiap hari</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>Jenis file</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>Gambar</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>Sedikit</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>terpanjang {0}, hingga {1}</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>terpanjang sejauh ini</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>Banyak</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>Pagi</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>Dini hari</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>Belum ada data</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>Belum ada yang bisa dihitung. Tangkapan dan unggahan akan muncul di sini setelah disimpan ke riwayat.</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>tidak ada pada waktu ini minggu lalu</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>minggu lalu juga tidak ada</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>belum ada</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0} hari</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>Lainnya</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>File lainnya</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>Setahun terakhir</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>Rekaman</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>Segarkan</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>Statistik</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>Beruntun</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>Minggu ini</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>Waktu dalam sehari</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - Statistik</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>Hari ini</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>Aplikasi yang paling sering ditangkap</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>Jumlah</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>Jumlah: {0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>dibanding waktu yang sama minggu lalu</value>
+  </data>
 </root>

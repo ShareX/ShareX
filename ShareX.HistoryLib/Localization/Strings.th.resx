@@ -437,4 +437,139 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>รายการนี้</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>ประมาณ {0} ต่อวัน</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>ประมาณ {0} ต่อสัปดาห์</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>ใช้งาน {0} จาก {1}</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>บ่าย</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>ทั้งหมด</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>ทุกปี</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>ก่อนเริ่มมีประวัติ</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>วันที่ใช้งานมากที่สุด</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>มากที่สุด: {0}</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>มากที่สุด: {0}</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>นับตั้งแต่ {0} · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>วันในสัปดาห์</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0} วัน</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>ปลายทาง</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>เย็น</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>ทุกวัน</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>ประเภทไฟล์</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>รูปภาพ</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>น้อย</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>ยาวที่สุด {0} ถึง {1}</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>ยาวที่สุดเท่าที่เคยมี</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>มาก</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>เช้า</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>กลางคืน</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>ยังไม่มีข้อมูล</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>ยังไม่มีอะไรให้นับ การจับภาพและการอัปโหลดจะแสดงที่นี่เมื่อบันทึกลงในประวัติแล้ว</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>ช่วงเดียวกันสัปดาห์ที่แล้วไม่มี</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>สัปดาห์ที่แล้วก็ไม่มี</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>ยังไม่มี</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0} วัน</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>อื่น ๆ</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>ไฟล์อื่น ๆ</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>ปีที่ผ่านมา</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>การบันทึกหน้าจอ</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>รีเฟรช</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>สถิติ</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>วันต่อเนื่อง</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>สัปดาห์นี้</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>ช่วงเวลาของวัน</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - สถิติ</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>วันนี้</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>แอปที่จับภาพบ่อยที่สุด</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>รวม</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>รวม: {0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>เทียบกับช่วงเดียวกันสัปดาห์ที่แล้ว</value>
+  </data>
 </root>

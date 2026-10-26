@@ -437,4 +437,139 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>questo elemento</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>circa {0} al giorno</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>circa {0} a settimana</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>{0} attivi su {1}</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>Pomeriggio</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>Tutti</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>Tutti gli anni</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>Prima dell'inizio della cronologia</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>Giorno più attivo</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>più attivo di {0}</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>picco: {0}</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>Conteggio dal {0} · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>Giorno della settimana</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0} giorni</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>Destinazioni</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>Sera</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>Ogni giorno</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>Tipi di file</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>Immagini</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>Meno</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>record di {0}, fino al {1}</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>il tuo record</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>Più</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>Mattina</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>Notte</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>Ancora nessun dato</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>Ancora niente da contare. Le catture e i caricamenti compaiono qui una volta salvati nella cronologia.</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>nessuno a quest'ora la settimana scorsa</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>nessuno neanche la settimana scorsa</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>ancora niente</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0} giorno</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>Altro</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>Altri file</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>Ultimo anno</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>Registrazioni</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>Statistiche</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>Serie</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>Questa settimana</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>Ora del giorno</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - Statistiche</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>Oggi</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>App più catturate</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>Totale</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>Totale: {0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>rispetto alla stessa ora della settimana scorsa</value>
+  </data>
 </root>

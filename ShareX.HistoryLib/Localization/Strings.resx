@@ -437,4 +437,184 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>this item</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>about {0} a day</value>
+    <comment>Average rate under the total. {0} is a number such as 26 or 2.5.</comment>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>about {0} a week</value>
+    <comment>Average rate under the total, for less than one a day. {0} is a number.</comment>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>{0} of {1} active</value>
+    <comment>Calendar heading note. {0} is a count of days with history items, {1} is a day count such as "365 days".</comment>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>Afternoon</value>
+    <comment>Part of the day, 12:00-18:00.</comment>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>All</value>
+    <comment>Chart filter showing every kind of item.</comment>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>All years</value>
+    <comment>Calendar range option showing every year.</comment>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>Before your history began</value>
+    <comment>Calendar tooltip for a day before the first history item.</comment>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>Busiest day</value>
+    <comment>Stat tile title: the day with the most history items.</comment>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>busiest on {0}</value>
+    <comment>Day of the week heading note. {0} is a day name such as Tuesday.</comment>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>busiest {0}</value>
+    <comment>Time of day heading note. {0} is an hour range such as 22:00-23:00.</comment>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>Counting since {0} · {1}</value>
+    <comment>Stats subtitle. {0} is the date of the first history item, {1} is a day count such as "4,097 days".</comment>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>Day of the week</value>
+    <comment>Stats section heading.</comment>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0} days</value>
+    <comment>Day count for any number other than one. {0} is a number.</comment>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>Destinations</value>
+    <comment>Stats section heading: the upload services items were sent to.</comment>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>Evening</value>
+    <comment>Part of the day, 18:00-24:00.</comment>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>Every day</value>
+    <comment>Stats section heading for the calendar of daily activity.</comment>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>File types</value>
+    <comment>Stats section heading: file extensions such as PNG or MP4.</comment>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>Images</value>
+    <comment>Kind of history item: screenshots and other images.</comment>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>Less</value>
+    <comment>Calendar legend, at the end with the faintest color.</comment>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>longest {0}, to {1}</value>
+    <comment>Streak tile note. {0} is a number of days, {1} is the date the longest streak ended.</comment>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>your longest yet</value>
+    <comment>Streak tile note when the current streak is the longest one.</comment>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>More</value>
+    <comment>Calendar legend, at the end with the strongest color.</comment>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>Morning</value>
+    <comment>Part of the day, 06:00-12:00.</comment>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>Night</value>
+    <comment>Part of the day, 00:00-06:00.</comment>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>No data yet</value>
+    <comment>Shown in a stats list that has nothing to show.</comment>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>Nothing to count yet. Captures and uploads show up here once they are saved to history.</value>
+    <comment>Shown in place of the stats when the history is empty.</comment>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>none by now last week</value>
+    <comment>This week tile note when last week had nothing by the same time.</comment>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>none last week either</value>
+    <comment>This week tile note when this week and last week both have nothing.</comment>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>nothing yet</value>
+    <comment>Tile note or tooltip line for a period with no history items.</comment>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0} day</value>
+    <comment>Day count for exactly one day. {0} is the number 1.</comment>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>Other</value>
+    <comment>List row combining every entry past the top few.</comment>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>Other files</value>
+    <comment>Kind of history item: anything that isn't an image or a recording, such as text or uploaded files.</comment>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>Past year</value>
+    <comment>Calendar range option showing the last twelve months.</comment>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>Recordings</value>
+    <comment>Kind of history item: screen recordings, videos and GIFs.</comment>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>Refresh</value>
+    <comment>Button that counts the history again.</comment>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>Stats</value>
+    <comment>Stats window heading.</comment>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>Streak</value>
+    <comment>Stat tile title: days in a row with at least one history item.</comment>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>This week</value>
+    <comment>Stat tile title.</comment>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>Time of day</value>
+    <comment>Stats section heading for the chart by hour.</comment>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - Stats</value>
+    <comment>Stats window title.</comment>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>Today</value>
+    <comment>Stat tile title.</comment>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>Top apps captured</value>
+    <comment>Stats section heading: the apps captured most often.</comment>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>Total</value>
+    <comment>Title of the card with the total number of history items.</comment>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>Total: {0}</value>
+    <comment>Tooltip line. {0} is a number.</comment>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>vs same time last week</value>
+    <comment>This week tile note after a percentage change such as "64%".</comment>
+  </data>
 </root>

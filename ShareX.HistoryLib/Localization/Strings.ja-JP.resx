@@ -437,4 +437,139 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>この項目</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>1日あたり約{0}</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>1週間あたり約{0}</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>{1}中{0}日アクティブ</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>午後</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>すべて</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>すべての年</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>履歴の開始前</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>最も多い日</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>{0}が最多</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>{0}が最多</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>{0}から集計 · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>曜日</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0}日</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>アップロード先</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>夜</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>毎日</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>ファイルの種類</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>少ない</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>最長{0}（{1}まで）</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>過去最長</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>多い</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>午前</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>深夜</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>まだデータがありません</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>まだ集計するものがありません。キャプチャやアップロードは履歴に保存されるとここに表示されます。</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>先週の同時刻までは0件</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>先週も0件</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>まだありません</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0}日</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>その他</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>その他のファイル</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>過去1年</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>録画</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>統計</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>連続日数</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>今週</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>時間帯</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - 統計</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>今日</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>よくキャプチャーしたアプリ</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>合計</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>合計: {0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>先週の同時刻比</value>
+  </data>
 </root>

@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 
@@ -30,6 +32,8 @@ namespace ShareX.HistoryLib;
 
 public static class HistoryIntegration
 {
+    private static StatsWindow? _statsWindow;
+
     public static void ShowHistoryWindow(HistoryManagerSQLite historyManager, HistorySettings settings,
         HistoryWindowServices services)
     {
@@ -42,5 +46,22 @@ public static class HistoryIntegration
     {
         AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() => new ImageHistoryWindow(historyManager, settings, services).Show());
+    }
+
+    public static void ShowStatsWindow(HistoryManagerSQLite historyManager)
+    {
+        AvaloniaBootstrapper.EnsureInitialized();
+        Dispatcher.UIThread.Post(() =>
+        {
+            if (_statsWindow != null)
+            {
+                _statsWindow.Activate();
+                return;
+            }
+
+            _statsWindow = new StatsWindow(historyManager);
+            _statsWindow.Closed += (_, _) => _statsWindow = null;
+            _statsWindow.Show();
+        });
     }
 }

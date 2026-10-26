@@ -887,6 +887,11 @@ namespace ShareX
                 });
         }
 
+        public static void OpenStats()
+        {
+            HistoryIntegration.ShowStatsWindow(ApplicationState.HistoryManager);
+        }
+
         public static void OpenImageHistory()
         {
             HistoryIntegration.ShowImageHistoryWindow(ApplicationState.HistoryManager, ApplicationState.Settings.ImageHistorySettings,

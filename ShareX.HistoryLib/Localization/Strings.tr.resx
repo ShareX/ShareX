@@ -437,4 +437,139 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>bu öğeyi</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>günde yaklaşık {0}</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>haftada yaklaşık {0}</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>{1} içinde {0} aktif</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>Öğleden sonra</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>Tümü</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>Tüm yıllar</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>Geçmişiniz başlamadan önce</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>En yoğun gün</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>en yoğun gün: {0}</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>en yoğun saat: {0}</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>{0} tarihinden beri · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>Haftanın günü</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0} gün</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>Hedefler</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>Akşam</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>Her gün</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>Dosya türleri</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>Resimler</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>Az</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>en uzun {0}, {1} tarihine kadar</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>şimdiye kadarki en uzun</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>Çok</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>Sabah</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>Gece</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>Henüz veri yok</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>Henüz sayılacak bir şey yok. Yakalamalar ve yüklemeler geçmişe kaydedildikten sonra burada görünür.</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>geçen hafta bu saatte hiç yoktu</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>geçen hafta da hiç yoktu</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>henüz yok</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0} gün</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>Diğer dosyalar</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>Son bir yıl</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>Kayıtlar</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>İstatistikler</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>Seri</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>Bu hafta</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>Günün saati</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - İstatistikler</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>Bugün</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>En çok yakalanan uygulamalar</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>Toplam</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>Toplam: {0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>geçen haftanın aynı saatine göre</value>
+  </data>
 </root>

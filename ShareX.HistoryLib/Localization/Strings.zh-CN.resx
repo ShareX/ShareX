@@ -437,4 +437,139 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>此项目</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>约每天 {0} 个</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>约每周 {0} 个</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>{1}中有 {0} 天活跃</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>下午</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>所有年份</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>历史记录开始之前</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>最忙的一天</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>{0}最忙</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>{0} 最忙</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>自 {0} 起统计 · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>星期</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0} 天</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>目标</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>晚上</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>每日</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>文件类型</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>图像</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>少</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>最长 {0}，截至 {1}</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>迄今最长</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>多</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>上午</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>凌晨</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>暂无数据</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>暂无可统计的内容。截图和上传保存到历史记录后会显示在这里。</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>上周同期为零</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>上周也没有</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>暂无</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0} 天</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>其它</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>其它文件</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>过去一年</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>录制</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>统计</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>连续天数</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>本周</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>时段</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - 统计</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>今天</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>最常截图的应用</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>总计</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>总计：{0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>对比上周同期</value>
+  </data>
 </root>

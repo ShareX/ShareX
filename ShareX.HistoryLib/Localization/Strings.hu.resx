@@ -437,4 +437,139 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>ezt az elemet</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>kb. napi {0}</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>kb. heti {0}</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>{1} közül {0} aktív</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>Délután</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>Mind</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>Minden év</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>Az előzmények kezdete előtt</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>Legaktívabb nap</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>legaktívabb: {0}</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>csúcsidő: {0}</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>Számlálás kezdete: {0} · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>A hét napja</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0} nap</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>Célhelyek</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>Este</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>Minden nap</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>Fájltípusok</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>Képek</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>Kevesebb</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>leghosszabb: {0}, vége: {1}</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>az eddigi leghosszabb</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>Több</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>Délelőtt</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>Éjszaka</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>Még nincs adat</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>Még nincs mit számolni. A rögzítések és feltöltések itt jelennek meg, miután bekerültek az előzményekbe.</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>múlt héten ilyenkor még semmi</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>múlt héten sem volt</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>még semmi</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0} nap</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>Egyéb</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>Egyéb fájlok</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>Elmúlt év</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>Felvételek</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>Frissítés</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>Statisztika</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>Sorozat</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>Ezen a héten</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>Napszak</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - Statisztika</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>Ma</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>Leggyakrabban rögzített alkalmazások</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>Összesen</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>Összesen: {0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>a múlt hét azonos időpontjához képest</value>
+  </data>
 </root>
