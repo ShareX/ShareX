@@ -62,7 +62,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
         public event EventHandler<string>? FontFamilyChanged;
 
         private string _searchQuery = string.Empty;
-        private bool _isEscapePressed;
+        private bool _escapeKeyDownHandled;
 
         public FontFamilyPickerDropdown()
         {
@@ -82,6 +82,16 @@ namespace ShareX.ImageEditor.Presentation.Controls
             }
         }
 
+        protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+        {
+            base.OnPropertyChanged(change);
+
+            if (change.Property == FontFamilyOptionsProperty)
+            {
+                UpdateNoResultsText();
+            }
+        }
+
         private void OnPopupOpened(object? sender, EventArgs e)
         {
             UpdateActiveStates();
@@ -91,7 +101,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
         private void OnPopupClosed(object? sender, EventArgs e)
         {
-            _isEscapePressed = false;
+            _escapeKeyDownHandled = false;
 
             var searchBox = this.FindControl<TextBox>("SearchBox");
             if (searchBox != null)
@@ -157,16 +167,21 @@ namespace ShareX.ImageEditor.Presentation.Controls
                 }
             }
 
-            var noResultsText = this.FindControl<TextBlock>("NoResultsText");
-            if (noResultsText != null)
-            {
-                noResultsText.IsVisible = GetFirstSearchMatch() == null;
-            }
+            UpdateNoResultsText();
 
             var scrollViewer = this.FindControl<ScrollViewer>("FontFamilyScrollViewer");
             if (scrollViewer != null)
             {
                 scrollViewer.Offset = default;
+            }
+        }
+
+        private void UpdateNoResultsText()
+        {
+            var noResultsText = this.FindControl<TextBlock>("NoResultsText");
+            if (noResultsText != null)
+            {
+                noResultsText.IsVisible = GetFirstSearchMatch() == null;
             }
         }
 
@@ -190,6 +205,9 @@ namespace ShareX.ImageEditor.Presentation.Controls
         // Handled on the popup content rather than the search box, so keys from a focused font button are covered too.
         private void OnPopupKeyDown(object? sender, KeyEventArgs e)
         {
+            // Any other key down, such as one an IME processed, breaks the pairing with the next Escape key up.
+            _escapeKeyDownHandled = false;
+
             if (e.KeyModifiers != KeyModifiers.None)
             {
                 return;
@@ -208,14 +226,22 @@ namespace ShareX.ImageEditor.Presentation.Controls
             else if (e.Key == Key.Escape)
             {
                 // Escape is acted on in OnPopupKeyUp, because the editor and region capture close on its key up.
-                _isEscapePressed = true;
+                _escapeKeyDownHandled = true;
                 e.Handled = true;
             }
         }
 
         private void OnPopupKeyUp(object? sender, KeyEventArgs e)
         {
-            if (e.Key != Key.Escape || e.KeyModifiers != KeyModifiers.None)
+            if (e.Key != Key.Escape)
+            {
+                return;
+            }
+
+            bool escapeKeyDownHandled = _escapeKeyDownHandled;
+            _escapeKeyDownHandled = false;
+
+            if (e.KeyModifiers != KeyModifiers.None)
             {
                 return;
             }
@@ -223,12 +249,10 @@ namespace ShareX.ImageEditor.Presentation.Controls
             e.Handled = true;
 
             // An IME consumes the Escape key down that cancels its composition but still sends the key up.
-            if (!_isEscapePressed)
+            if (!escapeKeyDownHandled)
             {
                 return;
             }
-
-            _isEscapePressed = false;
 
             var searchBox = this.FindControl<TextBox>("SearchBox");
             if (searchBox != null && !string.IsNullOrEmpty(searchBox.Text))
