@@ -1149,6 +1149,12 @@ Schowek nie zawiera obrazu.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Spróbuj użyć innego słowa kluczowego.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Brak pasujących czcionek</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Szukaj czcionek...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Wstaw obraz poniżej</value>
   </data>

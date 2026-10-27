@@ -1149,6 +1149,12 @@ Panoda görüntü yok.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Farklı bir anahtar kelime deneyin.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Eşleşen yazı tipi yok</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Yazı tiplerinde ara...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Resmi alta ekle</value>
   </data>

@@ -315,6 +315,16 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("AnnotationToolbar_Fontfamily", resourceCulture);
             }
         }
+        public static string FontFamilyPickerDropdown_SearchfontsEllipsis {
+            get {
+                return ResourceManager.GetString("FontFamilyPickerDropdown_SearchfontsEllipsis", resourceCulture);
+            }
+        }
+        public static string FontFamilyPickerDropdown_Nomatchingfonts {
+            get {
+                return ResourceManager.GetString("FontFamilyPickerDropdown_Nomatchingfonts", resourceCulture);
+            }
+        }
         public static string AnnotationToolbar_Fontsize {
             get {
                 return ResourceManager.GetString("AnnotationToolbar_Fontsize", resourceCulture);
