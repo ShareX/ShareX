@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Zatím není co počítat. Snímky a nahrané soubory se zde zobrazí, jakmile budou uloženy do historie.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>minulý týden do této doby nic</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>v předchozích 7 dnech nic</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>ani minulý týden nic</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>ani v předchozích 7 dnech nic</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>zatím nic</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Ostatní soubory</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Posledních 7 dní</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Poslední rok</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Série</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Tento týden</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Denní doba</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Celkem: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>oproti stejné době minulý týden</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>oproti předchozím 7 dnům</value>
   </data>
 </root>

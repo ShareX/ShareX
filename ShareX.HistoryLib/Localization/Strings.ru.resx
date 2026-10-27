@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Пока нечего считать. Снимки и загрузки появятся здесь после сохранения в истории.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>на прошлой неделе к этому времени — ни одного</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>за предыдущие 7 дней — ни одного</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>на прошлой неделе тоже ни одного</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>за предыдущие 7 дней тоже ни одного</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>пока ничего</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Другие файлы</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Последние 7 дней</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Последний год</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Серия</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Эта неделя</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Время суток</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Всего: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>к тому же времени прошлой недели</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>к предыдущим 7 дням</value>
   </data>
 </root>

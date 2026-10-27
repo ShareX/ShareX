@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Nie ma jeszcze czego liczyć. Zrzuty i przesłane pliki pojawią się tutaj, gdy zostaną zapisane w historii.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>tydzień temu o tej porze: brak</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>w poprzednich 7 dniach: brak</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>w zeszłym tygodniu też brak</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>w poprzednich 7 dniach też brak</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>jeszcze nic</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Inne pliki</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Ostatnie 7 dni</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Ostatni rok</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Seria</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Ten tydzień</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Pora dnia</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Łącznie: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>wzgl. tej samej pory tydzień temu</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>wzgl. poprzednich 7 dni</value>
   </data>
 </root>

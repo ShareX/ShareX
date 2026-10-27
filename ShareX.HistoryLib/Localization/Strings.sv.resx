@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Inget att räkna än. Skärmbilder och uppladdningar visas här när de har sparats i historiken.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>inga vid samma tid förra veckan</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>inga de 7 dagarna innan</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>inga förra veckan heller</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>inga de 7 dagarna innan heller</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>inget än</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Övriga filer</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Senaste 7 dagarna</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Senaste året</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Svit</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Den här veckan</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Tid på dygnet</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Totalt: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>mot samma tid förra veckan</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>mot de 7 dagarna innan</value>
   </data>
 </root>

@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Nog niets te tellen. Vastleggingen en uploads verschijnen hier zodra ze in de geschiedenis zijn opgeslagen.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>vorige week rond deze tijd geen</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>de 7 dagen ervoor geen</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>vorige week ook geen</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>de 7 dagen ervoor ook geen</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>nog niets</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Overige bestanden</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Afgelopen 7 dagen</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Afgelopen jaar</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Reeks</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Deze week</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Tijd van de dag</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Totaal: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>t.o.v. vorige week rond deze tijd</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>t.o.v. de 7 dagen ervoor</value>
   </data>
 </root>

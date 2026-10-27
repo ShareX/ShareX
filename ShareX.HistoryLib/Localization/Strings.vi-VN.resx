@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Chưa có gì để đếm. Các ảnh chụp và lượt tải lên sẽ hiển thị ở đây khi được lưu vào lịch sử.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>giờ này tuần trước chưa có</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>7 ngày trước đó chưa có</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>tuần trước cũng không có</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>7 ngày trước đó cũng không có</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>chưa có gì</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Tệp khác</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>7 ngày qua</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Năm qua</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Chuỗi ngày</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Tuần này</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Thời điểm trong ngày</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Tổng: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>so với cùng thời điểm tuần trước</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>so với 7 ngày trước đó</value>
   </data>
 </root>

@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Noch nichts zu zählen. Aufnahmen und Uploads erscheinen hier, sobald sie im Verlauf gespeichert sind.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>letzte Woche um diese Zeit noch keine</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>in den 7 Tagen davor keine</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>letzte Woche auch keine</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>in den 7 Tagen davor auch keine</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>noch nichts</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Andere Dateien</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Letzte 7 Tage</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Letzte 12 Monate</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Serie</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Diese Woche</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Tageszeit</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Gesamt: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>ggü. Vorwoche zur selben Zeit</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>ggü. den 7 Tagen davor</value>
   </data>
 </root>

@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>अभी गिनने के लिए कुछ नहीं है। कैप्चर और अपलोड इतिहास में सहेजे जाने के बाद यहाँ दिखाई देंगे।</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>पिछले सप्ताह इस समय तक कोई नहीं</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>उससे पहले के 7 दिनों में कोई नहीं</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>पिछले सप्ताह भी कोई नहीं</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>उससे पहले के 7 दिनों में भी कोई नहीं</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>अभी कुछ नहीं</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>अन्य फ़ाइलें</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>पिछले 7 दिन</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>पिछला वर्ष</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>लगातार दिन</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>इस सप्ताह</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>दिन का समय</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>कुल: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>पिछले सप्ताह इसी समय की तुलना में</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>उससे पहले के 7 दिनों की तुलना में</value>
   </data>
 </root>

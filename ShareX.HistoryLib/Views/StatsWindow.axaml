@@ -216,7 +216,7 @@
                             </Border>
                             <Border Grid.Column="1" Classes="section-card">
                                 <StackPanel>
-                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_ThisWeek}"/>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_Past7Days}"/>
                                     <TextBlock x:Name="WeekText" Classes="stat-value"/>
                                     <Grid ColumnDefinitions="Auto,*" ColumnSpacing="5">
                                         <TextBlock x:Name="WeekChangeText" Classes="hint" FontWeight="SemiBold"/>

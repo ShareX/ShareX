@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Поки нічого рахувати. Знімки та завантаження з’являться тут, щойно їх буде збережено в історії.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>минулого тижня на цей час нічого</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>за попередні 7 днів нічого</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>минулого тижня теж нічого</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>за попередні 7 днів теж нічого</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>поки нічого</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Інші файли</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Останні 7 днів</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Останній рік</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Серія</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Цей тиждень</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Час доби</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Усього: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>порівняно з тим же часом минулого тижня</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>порівняно з попередніми 7 днями</value>
   </data>
 </root>

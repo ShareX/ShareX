@@ -204,7 +204,7 @@ public partial class StatsWindow : Window
         TodayText.Text = StatsFormat.Number(stats.TodayTally.Total);
         SetNote(TodayNoteText, GetTallySummary(stats.TodayTally));
 
-        WeekText.Text = StatsFormat.Number(stats.ThisWeek);
+        WeekText.Text = StatsFormat.Number(stats.Past7Days);
         UpdateWeekChange();
 
         StreakText.Text = StatsFormat.Days(stats.Streak);
@@ -232,21 +232,21 @@ public partial class StatsWindow : Window
             return;
         }
 
-        if (_stats.LastWeekSoFar == 0)
+        if (_stats.Previous7Days == 0)
         {
             WeekChangeText.Text = string.Empty;
             WeekChangeText.IsVisible = false;
-            SetNote(WeekNoteText, _stats.ThisWeek == 0 ? Strings.StatsWindow_NoneLastWeekEither : Strings.StatsWindow_NoneByNowLastWeek);
+            SetNote(WeekNoteText, _stats.Past7Days == 0 ? Strings.StatsWindow_NonePrevious7DaysEither : Strings.StatsWindow_NoneInPrevious7Days);
             return;
         }
 
-        double change = (_stats.ThisWeek - _stats.LastWeekSoFar) * 100.0 / _stats.LastWeekSoFar;
+        double change = (_stats.Past7Days - _stats.Previous7Days) * 100.0 / _stats.Previous7Days;
         bool up = change >= 0;
         WeekChangeText.IsVisible = true;
         WeekChangeText.Text = (up ? "▲ " : "▼ ") + Math.Abs(change).ToString("0", CultureInfo.CurrentCulture) + "%";
         WeekChangeText.Classes.Set("change-up", up);
         WeekChangeText.Classes.Set("change-down", !up);
-        SetNote(WeekNoteText, Strings.StatsWindow_VsSameTimeLastWeek);
+        SetNote(WeekNoteText, Strings.StatsWindow_VsPrevious7Days);
     }
 
     private void ShowCalendarSpans(HistoryStats stats)

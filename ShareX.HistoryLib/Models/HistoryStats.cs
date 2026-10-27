@@ -100,9 +100,9 @@ public sealed class HistoryStats
     public IReadOnlyList<HistoryStatsEntry> FileTypes { get; private set; } = [];
 
     public HistoryStatsTally TodayTally { get; private set; }
-    /// <summary>From the start of this week to today, and the same days of the week before.</summary>
-    public int ThisWeek { get; private set; }
-    public int LastWeekSoFar { get; private set; }
+    /// <summary>From exactly 7 days ago up to now, and the 7 days before that.</summary>
+    public int Past7Days { get; private set; }
+    public int Previous7Days { get; private set; }
     /// <summary>Days in a row with an item, up to today, or yesterday while today has none yet.</summary>
     public int Streak { get; private set; }
     public int LongestStreak { get; private set; }
@@ -124,6 +124,8 @@ public sealed class HistoryStats
         Dictionary<string, int> apps = new(StringComparer.OrdinalIgnoreCase);
         Dictionary<string, int> destinations = new(StringComparer.OrdinalIgnoreCase);
         Dictionary<string, int> fileTypes = new(StringComparer.OrdinalIgnoreCase);
+        DateTime weekAgo = now.AddDays(-7);
+        DateTime twoWeeksAgo = now.AddDays(-14);
 
         foreach (HistoryItem item in historyItems)
         {
@@ -142,6 +144,18 @@ public sealed class HistoryStats
             stats.Daily.TryGetValue(day, out HistoryStatsTally dayTally);
             dayTally.Add(kind);
             stats.Daily[day] = dayTally;
+
+            if (item.DateTime <= now)
+            {
+                if (item.DateTime > weekAgo)
+                {
+                    stats.Past7Days++;
+                }
+                else if (item.DateTime > twoWeeksAgo)
+                {
+                    stats.Previous7Days++;
+                }
+            }
 
             Increment(apps, item.TagsProcessName);
             Increment(destinations, item.Host);
@@ -204,10 +218,6 @@ public sealed class HistoryStats
     {
         TodayTally = GetDay(Today);
 
-        DateTime weekStart = GetWeekStart(Today);
-        ThisWeek = SumDays(weekStart, Today);
-        LastWeekSoFar = SumDays(weekStart.AddDays(-7), Today.AddDays(-7));
-
         DateTime day = TodayTally.Total > 0 ? Today : Today.AddDays(-1);
         while (GetDay(day).Total > 0)
         {
@@ -241,18 +251,6 @@ public sealed class HistoryStats
                 BusiestDay = pair.Key;
             }
         }
-    }
-
-    private int SumDays(DateTime from, DateTime to)
-    {
-        int sum = 0;
-
-        for (DateTime day = from; day <= to; day = day.AddDays(1))
-        {
-            sum += GetDay(day).Total;
-        }
-
-        return sum;
     }
 
     private static string? GetFileType(HistoryItem item)

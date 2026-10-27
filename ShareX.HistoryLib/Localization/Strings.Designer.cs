@@ -865,14 +865,14 @@ namespace ShareX.HistoryLib.Localization {
                 return ResourceManager.GetString("StatsWindow_NoHistory", resourceCulture);
             }
         }
-        public static string StatsWindow_NoneByNowLastWeek {
+        public static string StatsWindow_NoneInPrevious7Days {
             get {
-                return ResourceManager.GetString("StatsWindow_NoneByNowLastWeek", resourceCulture);
+                return ResourceManager.GetString("StatsWindow_NoneInPrevious7Days", resourceCulture);
             }
         }
-        public static string StatsWindow_NoneLastWeekEither {
+        public static string StatsWindow_NonePrevious7DaysEither {
             get {
-                return ResourceManager.GetString("StatsWindow_NoneLastWeekEither", resourceCulture);
+                return ResourceManager.GetString("StatsWindow_NonePrevious7DaysEither", resourceCulture);
             }
         }
         public static string StatsWindow_NothingYet {
@@ -893,6 +893,11 @@ namespace ShareX.HistoryLib.Localization {
         public static string StatsWindow_OtherFiles {
             get {
                 return ResourceManager.GetString("StatsWindow_OtherFiles", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Past7Days {
+            get {
+                return ResourceManager.GetString("StatsWindow_Past7Days", resourceCulture);
             }
         }
         public static string StatsWindow_PastYear {
@@ -930,11 +935,6 @@ namespace ShareX.HistoryLib.Localization {
                 return ResourceManager.GetString("StatsWindow_Streak", resourceCulture);
             }
         }
-        public static string StatsWindow_ThisWeek {
-            get {
-                return ResourceManager.GetString("StatsWindow_ThisWeek", resourceCulture);
-            }
-        }
         public static string StatsWindow_TimeOfDay {
             get {
                 return ResourceManager.GetString("StatsWindow_TimeOfDay", resourceCulture);
@@ -965,9 +965,9 @@ namespace ShareX.HistoryLib.Localization {
                 return ResourceManager.GetString("StatsWindow_TotalCount", resourceCulture);
             }
         }
-        public static string StatsWindow_VsSameTimeLastWeek {
+        public static string StatsWindow_VsPrevious7Days {
             get {
-                return ResourceManager.GetString("StatsWindow_VsSameTimeLastWeek", resourceCulture);
+                return ResourceManager.GetString("StatsWindow_VsPrevious7Days", resourceCulture);
             }
         }
     }

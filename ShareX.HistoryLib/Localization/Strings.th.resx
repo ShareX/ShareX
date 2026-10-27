@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>ยังไม่มีอะไรให้นับ การจับภาพและการอัปโหลดจะแสดงที่นี่เมื่อบันทึกลงในประวัติแล้ว</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>ช่วงเดียวกันสัปดาห์ที่แล้วไม่มี</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>7 วันก่อนหน้าไม่มี</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>สัปดาห์ที่แล้วก็ไม่มี</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>7 วันก่อนหน้าก็ไม่มี</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>ยังไม่มี</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>ไฟล์อื่น ๆ</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>7 วันที่ผ่านมา</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>ปีที่ผ่านมา</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>วันต่อเนื่อง</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>สัปดาห์นี้</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>ช่วงเวลาของวัน</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>รวม: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>เทียบกับช่วงเดียวกันสัปดาห์ที่แล้ว</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>เทียบกับ 7 วันก่อนหน้า</value>
   </data>
 </root>

@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Încă nu e nimic de numărat. Capturile și încărcările apar aici după ce sunt salvate în istoric.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>nimic până la ora asta săptămâna trecută</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>nimic în cele 7 zile anterioare</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>nimic nici săptămâna trecută</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>nimic nici în cele 7 zile anterioare</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>încă nimic</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Alte fișiere</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Ultimele 7 zile</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Ultimul an</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Serie</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Săptămâna aceasta</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Ora din zi</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Total: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>față de aceeași oră săptămâna trecută</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>față de cele 7 zile anterioare</value>
   </data>
 </root>

@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Ancora niente da contare. Le catture e i caricamenti compaiono qui una volta salvati nella cronologia.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>nessuno a quest'ora la settimana scorsa</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>nessuno nei 7 giorni precedenti</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>nessuno neanche la settimana scorsa</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>nessuno neanche nei 7 giorni precedenti</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>ancora niente</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Altri file</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Ultimi 7 giorni</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Ultimo anno</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Serie</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Questa settimana</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Ora del giorno</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Totale: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>rispetto alla stessa ora della settimana scorsa</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>rispetto ai 7 giorni precedenti</value>
   </data>
 </root>
