@@ -57,6 +57,9 @@
             <Setter Property="ColumnSpacing" Value="10"/>
             <Setter Property="Margin" Value="0,0,0,10"/>
         </Style>
+        <Style Selector="Grid.section-header TextBlock.section-title">
+            <Setter Property="Margin" Value="0"/>
+        </Style>
         <Style Selector="TextBlock.stat-value">
             <Setter Property="FontSize" Value="26"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
@@ -240,16 +243,18 @@
                         <!-- Every day -->
                         <Border Classes="section-card">
                             <StackPanel>
-                                <Grid Classes="section-header" ColumnDefinitions="Auto,*,Auto,Auto">
-                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_EveryDay}"/>
-                                    <TextBlock x:Name="CalendarNoteText" Grid.Column="1" Classes="hint"/>
-                                    <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                                <Grid Classes="section-header" ColumnDefinitions="*,Auto,Auto">
+                                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" VerticalAlignment="Top">
+                                        <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_EveryDay}"/>
+                                        <TextBlock x:Name="CalendarNoteText" Grid.Column="1" Classes="hint"/>
+                                    </Grid>
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
                                         <TextBlock Classes="hint" FontSize="11" Text="{x:Static localization:Strings.StatsWindow_Less}"/>
                                         <history:StatsSwatch IsRamp="True"/>
                                         <TextBlock Classes="hint" FontSize="11" Text="{x:Static localization:Strings.StatsWindow_More}"/>
                                     </StackPanel>
                                     <ComboBox x:Name="SpanComboBox"
-                                              Grid.Column="3"
+                                              Grid.Column="2"
                                               Classes="form-control"
                                               VerticalAlignment="Center"
                                               SelectionChanged="OnSpanSelectionChanged"/>
@@ -261,10 +266,12 @@
                         <!-- Time of day -->
                         <Border Classes="section-card">
                             <StackPanel>
-                                <Grid Classes="section-header" ColumnDefinitions="Auto,*,Auto">
-                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_TimeOfDay}"/>
-                                    <TextBlock x:Name="HoursNoteText" Grid.Column="1" Classes="hint"/>
-                                    <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                                <Grid Classes="section-header" ColumnDefinitions="*,Auto">
+                                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" VerticalAlignment="Top">
+                                        <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_TimeOfDay}"/>
+                                        <TextBlock x:Name="HoursNoteText" Grid.Column="1" Classes="hint"/>
+                                    </Grid>
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
                                         <Button x:Name="FilterAllButton"
                                                 Classes="filter-button active"
                                                 Tag="{x:Static history:HistoryStatsFilter.All}"
