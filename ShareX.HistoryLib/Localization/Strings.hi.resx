@@ -437,4 +437,145 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>यह आइटम</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>लगभग {0} प्रति दिन</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>लगभग {0} प्रति सप्ताह</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>{1} में से {0} सक्रिय</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>दोपहर</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>सभी</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>सभी वर्ष</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>आपका इतिहास शुरू होने से पहले</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>सबसे व्यस्त दिन</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>{0} को सबसे व्यस्त</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>सबसे व्यस्त {0}</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>{0} से गिनती · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>सप्ताह का दिन</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0} दिन</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>गंतव्य</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>शाम</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>हर दिन</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>फ़ाइल प्रकार</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>छवियाँ</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>कम</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>सबसे लंबी {0}, {1} तक</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>अब तक की सबसे लंबी</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>अधिक</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>सुबह</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>रात</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>अभी कोई डेटा नहीं</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>अभी गिनने के लिए कुछ नहीं है। कैप्चर और अपलोड इतिहास में सहेजे जाने के बाद यहाँ दिखाई देंगे।</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>पिछले सप्ताह इस समय तक कोई नहीं</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>पिछले सप्ताह भी कोई नहीं</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>अभी कुछ नहीं</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0} दिन</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>अन्य</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>अन्य फ़ाइलें</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>पिछला वर्ष</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>रिकॉर्डिंग</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>ताज़ा करें</value>
+  </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>साझा करें</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>इन आँकड़ों का चित्र लें और उस पर चित्र लेने के बाद के कार्य चलाएँ।</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>आँकड़े</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>लगातार दिन</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>इस सप्ताह</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>दिन का समय</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - आँकड़े</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>आज</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>सबसे ज़्यादा कैप्चर किए गए ऐप्स</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>कुल</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>कुल: {0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>पिछले सप्ताह इसी समय की तुलना में</value>
+  </data>
 </root>

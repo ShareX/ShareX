@@ -735,6 +735,241 @@ namespace ShareX.HistoryLib.Localization {
                 return ResourceManager.GetString("HistoryWindows_TrimAnimatedGif", resourceCulture);
             }
         }
+        public static string StatsWindow_AboutADay {
+            get {
+                return ResourceManager.GetString("StatsWindow_AboutADay", resourceCulture);
+            }
+        }
+        public static string StatsWindow_AboutAWeek {
+            get {
+                return ResourceManager.GetString("StatsWindow_AboutAWeek", resourceCulture);
+            }
+        }
+        public static string StatsWindow_ActiveDays {
+            get {
+                return ResourceManager.GetString("StatsWindow_ActiveDays", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Afternoon {
+            get {
+                return ResourceManager.GetString("StatsWindow_Afternoon", resourceCulture);
+            }
+        }
+        public static string StatsWindow_All {
+            get {
+                return ResourceManager.GetString("StatsWindow_All", resourceCulture);
+            }
+        }
+        public static string StatsWindow_AllYears {
+            get {
+                return ResourceManager.GetString("StatsWindow_AllYears", resourceCulture);
+            }
+        }
+        public static string StatsWindow_BeforeHistory {
+            get {
+                return ResourceManager.GetString("StatsWindow_BeforeHistory", resourceCulture);
+            }
+        }
+        public static string StatsWindow_BusiestDay {
+            get {
+                return ResourceManager.GetString("StatsWindow_BusiestDay", resourceCulture);
+            }
+        }
+        public static string StatsWindow_BusiestOn {
+            get {
+                return ResourceManager.GetString("StatsWindow_BusiestOn", resourceCulture);
+            }
+        }
+        public static string StatsWindow_BusiestTime {
+            get {
+                return ResourceManager.GetString("StatsWindow_BusiestTime", resourceCulture);
+            }
+        }
+        public static string StatsWindow_CountingSince {
+            get {
+                return ResourceManager.GetString("StatsWindow_CountingSince", resourceCulture);
+            }
+        }
+        public static string StatsWindow_DayOfWeek {
+            get {
+                return ResourceManager.GetString("StatsWindow_DayOfWeek", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Days {
+            get {
+                return ResourceManager.GetString("StatsWindow_Days", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Destinations {
+            get {
+                return ResourceManager.GetString("StatsWindow_Destinations", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Evening {
+            get {
+                return ResourceManager.GetString("StatsWindow_Evening", resourceCulture);
+            }
+        }
+        public static string StatsWindow_EveryDay {
+            get {
+                return ResourceManager.GetString("StatsWindow_EveryDay", resourceCulture);
+            }
+        }
+        public static string StatsWindow_FileTypes {
+            get {
+                return ResourceManager.GetString("StatsWindow_FileTypes", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Images {
+            get {
+                return ResourceManager.GetString("StatsWindow_Images", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Less {
+            get {
+                return ResourceManager.GetString("StatsWindow_Less", resourceCulture);
+            }
+        }
+        public static string StatsWindow_LongestStreak {
+            get {
+                return ResourceManager.GetString("StatsWindow_LongestStreak", resourceCulture);
+            }
+        }
+        public static string StatsWindow_LongestYet {
+            get {
+                return ResourceManager.GetString("StatsWindow_LongestYet", resourceCulture);
+            }
+        }
+        public static string StatsWindow_More {
+            get {
+                return ResourceManager.GetString("StatsWindow_More", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Morning {
+            get {
+                return ResourceManager.GetString("StatsWindow_Morning", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Night {
+            get {
+                return ResourceManager.GetString("StatsWindow_Night", resourceCulture);
+            }
+        }
+        public static string StatsWindow_NoData {
+            get {
+                return ResourceManager.GetString("StatsWindow_NoData", resourceCulture);
+            }
+        }
+        public static string StatsWindow_NoHistory {
+            get {
+                return ResourceManager.GetString("StatsWindow_NoHistory", resourceCulture);
+            }
+        }
+        public static string StatsWindow_NoneByNowLastWeek {
+            get {
+                return ResourceManager.GetString("StatsWindow_NoneByNowLastWeek", resourceCulture);
+            }
+        }
+        public static string StatsWindow_NoneLastWeekEither {
+            get {
+                return ResourceManager.GetString("StatsWindow_NoneLastWeekEither", resourceCulture);
+            }
+        }
+        public static string StatsWindow_NothingYet {
+            get {
+                return ResourceManager.GetString("StatsWindow_NothingYet", resourceCulture);
+            }
+        }
+        public static string StatsWindow_OneDay {
+            get {
+                return ResourceManager.GetString("StatsWindow_OneDay", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Other {
+            get {
+                return ResourceManager.GetString("StatsWindow_Other", resourceCulture);
+            }
+        }
+        public static string StatsWindow_OtherFiles {
+            get {
+                return ResourceManager.GetString("StatsWindow_OtherFiles", resourceCulture);
+            }
+        }
+        public static string StatsWindow_PastYear {
+            get {
+                return ResourceManager.GetString("StatsWindow_PastYear", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Recordings {
+            get {
+                return ResourceManager.GetString("StatsWindow_Recordings", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Refresh {
+            get {
+                return ResourceManager.GetString("StatsWindow_Refresh", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Share {
+            get {
+                return ResourceManager.GetString("StatsWindow_Share", resourceCulture);
+            }
+        }
+        public static string StatsWindow_ShareToolTip {
+            get {
+                return ResourceManager.GetString("StatsWindow_ShareToolTip", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Stats {
+            get {
+                return ResourceManager.GetString("StatsWindow_Stats", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Streak {
+            get {
+                return ResourceManager.GetString("StatsWindow_Streak", resourceCulture);
+            }
+        }
+        public static string StatsWindow_ThisWeek {
+            get {
+                return ResourceManager.GetString("StatsWindow_ThisWeek", resourceCulture);
+            }
+        }
+        public static string StatsWindow_TimeOfDay {
+            get {
+                return ResourceManager.GetString("StatsWindow_TimeOfDay", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Title {
+            get {
+                return ResourceManager.GetString("StatsWindow_Title", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Today {
+            get {
+                return ResourceManager.GetString("StatsWindow_Today", resourceCulture);
+            }
+        }
+        public static string StatsWindow_TopApps {
+            get {
+                return ResourceManager.GetString("StatsWindow_TopApps", resourceCulture);
+            }
+        }
+        public static string StatsWindow_Total {
+            get {
+                return ResourceManager.GetString("StatsWindow_Total", resourceCulture);
+            }
+        }
+        public static string StatsWindow_TotalCount {
+            get {
+                return ResourceManager.GetString("StatsWindow_TotalCount", resourceCulture);
+            }
+        }
+        public static string StatsWindow_VsSameTimeLastWeek {
+            get {
+                return ResourceManager.GetString("StatsWindow_VsSameTimeLastWeek", resourceCulture);
+            }
+        }
     }
 }
 

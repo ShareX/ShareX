@@ -437,4 +437,145 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>הפריט הזה</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>כ-{0} ביום</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>כ-{0} בשבוע</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>{0} מתוך {1} פעילים</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>אחר הצהריים</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>הכול</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>כל השנים</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>לפני שההיסטוריה שלך התחילה</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>היום העמוס ביותר</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>העמוס ביותר: {0}</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>שעת שיא: {0}</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>נספר מאז {0} · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>יום בשבוע</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0} ימים</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>יעדים</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>ערב</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>כל יום</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>סוגי קבצים</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>תמונות</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>פחות</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>השיא: {0}, עד {1}</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>הארוך ביותר שלך עד כה</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>יותר</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>בוקר</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>לילה</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>אין עדיין נתונים</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>אין עדיין מה לספור. צילומי מסך והעלאות יופיעו כאן לאחר שיישמרו בהיסטוריה.</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>אין עד לשעה זו בשבוע שעבר</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>גם בשבוע שעבר לא היו</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>עדיין אין</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0} יום</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>אחרים</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>קבצים אחרים</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>השנה האחרונה</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>הקלטות</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>רענן</value>
+  </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>שיתוף</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>צלם תמונה של הנתונים האלה והפעל עליה את המשימות לאחר לכידה.</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>סטטיסטיקה</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>רצף</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>השבוע</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>שעה ביום</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - סטטיסטיקה</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>היום</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>היישומים שצולמו הכי הרבה</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>סה״כ</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>סה״כ: {0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>לעומת אותו זמן בשבוע שעבר</value>
+  </data>
 </root>

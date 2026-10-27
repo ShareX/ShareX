@@ -1580,6 +1580,9 @@
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>显示 ShareX</value>
   </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>统计...</value>
+  </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>任务设置</value>
   </data>

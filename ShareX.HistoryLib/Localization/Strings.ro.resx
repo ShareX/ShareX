@@ -437,4 +437,145 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>acest element</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>cam {0} pe zi</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>cam {0} pe săptămână</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>{0} din {1} active</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>După-amiază</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>Toate</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>Toți anii</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>Înainte de începutul istoricului</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>Cea mai activă zi</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>cel mai activ: {0}</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>cel mai activ: {0}</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>Contorizare din {0} · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>Ziua săptămânii</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0} zile</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>Destinații</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>Seară</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>Fiecare zi</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>Tipuri de fișiere</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>Imagini</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>Mai puțin</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>cea mai lungă: {0}, până pe {1}</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>cea mai lungă de până acum</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>Mai mult</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>Dimineață</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>Noapte</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>Încă nu există date</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>Încă nu e nimic de numărat. Capturile și încărcările apar aici după ce sunt salvate în istoric.</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>nimic până la ora asta săptămâna trecută</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>nimic nici săptămâna trecută</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>încă nimic</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0} zi</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>Altele</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>Alte fișiere</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>Ultimul an</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>Înregistrări</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>Reîmprospătează</value>
+  </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>Partajează</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>Creează o imagine a acestor statistici și rulează pe ea sarcinile după captură.</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>Statistici</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>Serie</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>Săptămâna aceasta</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>Ora din zi</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - Statistici</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>Astăzi</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>Aplicațiile capturate cel mai des</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>Total: {0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>față de aceeași oră săptămâna trecută</value>
+  </data>
 </root>

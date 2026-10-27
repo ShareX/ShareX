@@ -338,7 +338,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         foreach (MainNavigationSection section in _navigationMenuBuilder.BuildNavigation().Where(x => x.IsVisible))
         {
-            if (index is 4 or 7 or 12 or 15)
+            if (index is 4 or 7 or 12 or 16)
             {
                 NavigationPanel.Children.Add(new Separator { Margin = new Thickness(5, 2) });
             }

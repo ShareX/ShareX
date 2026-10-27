@@ -437,4 +437,145 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>этот элемент</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>около {0} в день</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>около {0} в неделю</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>активных: {0} из {1}</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>День</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>Все годы</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>До начала истории</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>Самый активный день</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>чаще всего: {0}</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>чаще всего: {0}</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>Учёт с {0} · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>День недели</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0} дн.</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>Назначения</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>Вечер</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>Каждый день</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>Типы файлов</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>Изображения</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>Меньше</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>рекорд: {0}, до {1}</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>ваш рекорд</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>Больше</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>Утро</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>Ночь</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>Пока нет данных</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>Пока нечего считать. Снимки и загрузки появятся здесь после сохранения в истории.</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>на прошлой неделе к этому времени — ни одного</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>на прошлой неделе тоже ни одного</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>пока ничего</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0} день</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>Другие</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>Другие файлы</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>Последний год</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>Записи</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>Поделиться</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>Сделать снимок этой статистики и выполнить для него задачи после захвата.</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>Серия</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>Эта неделя</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>Время суток</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX — Статистика</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>Сегодня</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>Чаще всего захватываемые приложения</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>Всего</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>Всего: {0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>к тому же времени прошлой недели</value>
+  </data>
 </root>

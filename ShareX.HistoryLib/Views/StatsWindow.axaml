@@ -1,0 +1,338 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.HistoryLib.Localization"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:history="using:ShareX.HistoryLib"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="1060"
+        d:DesignHeight="900"
+        x:Class="ShareX.HistoryLib.StatsWindow"
+        Title="{x:Static localization:Strings.StatsWindow_Title}"
+        Width="1060"
+        Height="900"
+        MinWidth="720"
+        MinHeight="480"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Grid.page-title">
+            <Setter Property="Margin" Value="0,0,0,14"/>
+        </Style>
+        <Style Selector="TextBlock.page-title-text">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.page-title-icon">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.section-title">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="Margin" Value="0,4,0,3"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.hint">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Border.section-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="Grid.section-header">
+            <Setter Property="ColumnSpacing" Value="10"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="MinHeight" Value="32"/>
+        </Style>
+        <Style Selector="TextBlock.stat-value">
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+        </Style>
+        <Style Selector="TextBlock.legend-text">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.change-up">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Status.Success}"/>
+        </Style>
+        <Style Selector="TextBlock.change-down">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Status.Error}"/>
+        </Style>
+        <Style Selector="Button.filter-button">
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="Padding" Value="12,4"/>
+        </Style>
+        <Style Selector="ComboBox.form-control">
+            <Setter Property="MinWidth" Value="140"/>
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="Padding" Value="8,4"/>
+        </Style>
+        <Style Selector="TextBlock.row-label">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.row-label.peak">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style Selector="TextBlock.row-value">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="TextAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Border.stats-row">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Padding" Value="4,0"/>
+            <Setter Property="Height" Value="26"/>
+        </Style>
+        <Style Selector="Border.stats-row:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+    </Window.Styles>
+
+    <Window.DataTemplates>
+        <DataTemplate DataType="history:StatsRow">
+            <Border Classes="stats-row" ToolTip.Tip="{Binding ToolTip}">
+                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10">
+                    <TextBlock Classes="row-label"
+                               Classes.peak="{Binding IsPeak}"
+                               Width="{Binding LabelWidth}"
+                               Text="{Binding Label}"/>
+                    <history:StatsMeter Grid.Column="1"
+                                        Fraction="{Binding Fraction}"
+                                        IsPeak="{Binding IsPeak}"
+                                        VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="2"
+                               Classes="row-value"
+                               MinWidth="44"
+                               Text="{Binding Value}"/>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Window.DataTemplates>
+
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <Border x:Name="SnapshotPanel" Background="{DynamicResource ShareX.Brush.Background.Main}" Padding="28,24,28,32">
+                <StackPanel>
+                    <Grid Classes="page-title" ColumnDefinitions="Auto,Auto,*,Auto" ColumnSpacing="9">
+                        <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.chart_column}"/>
+                        <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static localization:Strings.StatsWindow_Stats}"/>
+                        <TextBlock x:Name="SubtitleText" Grid.Column="2" Classes="hint" Margin="6,4,0,0"/>
+                        <StackPanel x:Name="ActionsPanel" Grid.Column="3" Orientation="Horizontal" Spacing="6">
+                            <Button x:Name="ShareButton"
+                                    Click="OnShareClick"
+                                    IsEnabled="False"
+                                    ToolTip.Tip="{x:Static localization:Strings.StatsWindow_ShareToolTip}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.share_2}"/>
+                                    <TextBlock Text="{x:Static localization:Strings.StatsWindow_Share}"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="RefreshButton" Click="OnRefreshClick">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.refresh_cw}"/>
+                                    <TextBlock Text="{x:Static localization:Strings.StatsWindow_Refresh}"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+
+                    <Border x:Name="StatusPanel" Classes="section-card" Padding="24">
+                        <TextBlock x:Name="StatusText"
+                                   Classes="hint"
+                                   HorizontalAlignment="Center"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   TextTrimming="None"
+                                   Text="{x:Static localization:Strings.HistoryWindow_CalculatingStatistics}"/>
+                    </Border>
+
+                    <StackPanel x:Name="ContentPanel" IsVisible="False">
+                        <!-- Total -->
+                        <Border Classes="section-card">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="32">
+                                <StackPanel>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_Total}"/>
+                                    <TextBlock x:Name="TotalText" Classes="stat-value" FontSize="32"/>
+                                    <TextBlock x:Name="RateText" Classes="hint"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Spacing="12" VerticalAlignment="Center">
+                                    <history:StatsSplitBar x:Name="SplitBar"/>
+                                    <WrapPanel Orientation="Horizontal" ItemSpacing="22" LineSpacing="4">
+                                        <StackPanel Orientation="Horizontal" Spacing="7">
+                                            <history:StatsSwatch Kind="Image"/>
+                                            <TextBlock Classes="legend-text" Text="{x:Static localization:Strings.StatsWindow_Images}"/>
+                                            <TextBlock x:Name="ImagesCountText" Classes="legend-text" FontWeight="SemiBold"/>
+                                            <TextBlock x:Name="ImagesShareText" Classes="hint"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Spacing="7">
+                                            <history:StatsSwatch Kind="Recording"/>
+                                            <TextBlock Classes="legend-text" Text="{x:Static localization:Strings.StatsWindow_Recordings}"/>
+                                            <TextBlock x:Name="RecordingsCountText" Classes="legend-text" FontWeight="SemiBold"/>
+                                            <TextBlock x:Name="RecordingsShareText" Classes="hint"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Spacing="7">
+                                            <history:StatsSwatch Kind="Other"/>
+                                            <TextBlock Classes="legend-text" Text="{x:Static localization:Strings.StatsWindow_OtherFiles}"/>
+                                            <TextBlock x:Name="OtherCountText" Classes="legend-text" FontWeight="SemiBold"/>
+                                            <TextBlock x:Name="OtherShareText" Classes="hint"/>
+                                        </StackPanel>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+
+                        <!-- Highlights -->
+                        <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="8">
+                            <Border Grid.Column="0" Classes="section-card">
+                                <StackPanel>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_Today}"/>
+                                    <TextBlock x:Name="TodayText" Classes="stat-value"/>
+                                    <TextBlock x:Name="TodayNoteText" Classes="hint"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Column="1" Classes="section-card">
+                                <StackPanel>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_ThisWeek}"/>
+                                    <TextBlock x:Name="WeekText" Classes="stat-value"/>
+                                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="5">
+                                        <TextBlock x:Name="WeekChangeText" Classes="hint" FontWeight="SemiBold"/>
+                                        <TextBlock x:Name="WeekNoteText" Grid.Column="1" Classes="hint"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Column="2" Classes="section-card">
+                                <StackPanel>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_Streak}"/>
+                                    <TextBlock x:Name="StreakText" Classes="stat-value"/>
+                                    <TextBlock x:Name="StreakNoteText" Classes="hint"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Column="3" Classes="section-card">
+                                <StackPanel>
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_BusiestDay}"/>
+                                    <TextBlock x:Name="BusiestDayText" Classes="stat-value"/>
+                                    <TextBlock x:Name="BusiestDayNoteText" Classes="hint"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+
+                        <!-- Every day -->
+                        <Border Classes="section-card">
+                            <StackPanel>
+                                <Grid Classes="section-header" ColumnDefinitions="Auto,*,Auto,Auto">
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_EveryDay}"/>
+                                    <TextBlock x:Name="CalendarNoteText" Grid.Column="1" Classes="hint"/>
+                                    <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                                        <TextBlock Classes="hint" FontSize="11" Text="{x:Static localization:Strings.StatsWindow_Less}"/>
+                                        <history:StatsSwatch IsRamp="True"/>
+                                        <TextBlock Classes="hint" FontSize="11" Text="{x:Static localization:Strings.StatsWindow_More}"/>
+                                    </StackPanel>
+                                    <ComboBox x:Name="SpanComboBox"
+                                              Grid.Column="3"
+                                              Classes="form-control"
+                                              VerticalAlignment="Center"
+                                              SelectionChanged="OnSpanSelectionChanged"/>
+                                </Grid>
+                                <history:StatsCalendar x:Name="Calendar"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Time of day -->
+                        <Border Classes="section-card">
+                            <StackPanel>
+                                <Grid Classes="section-header" ColumnDefinitions="Auto,*,Auto">
+                                    <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_TimeOfDay}"/>
+                                    <TextBlock x:Name="HoursNoteText" Grid.Column="1" Classes="hint"/>
+                                    <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                                        <Button x:Name="FilterAllButton"
+                                                Classes="filter-button active"
+                                                Tag="{x:Static history:HistoryStatsFilter.All}"
+                                                Click="OnHourFilterClick"
+                                                Content="{x:Static localization:Strings.StatsWindow_All}"/>
+                                        <Button x:Name="FilterImagesButton"
+                                                Classes="filter-button"
+                                                Tag="{x:Static history:HistoryStatsFilter.Images}"
+                                                Click="OnHourFilterClick"
+                                                Content="{x:Static localization:Strings.StatsWindow_Images}"/>
+                                        <Button x:Name="FilterRecordingsButton"
+                                                Classes="filter-button"
+                                                Tag="{x:Static history:HistoryStatsFilter.Recordings}"
+                                                Click="OnHourFilterClick"
+                                                Content="{x:Static localization:Strings.StatsWindow_Recordings}"/>
+                                    </StackPanel>
+                                </Grid>
+                                <history:StatsHourChart x:Name="HourChart" Height="230"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Breakdowns -->
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                            <Border Classes="section-card">
+                                <StackPanel>
+                                    <Grid Classes="section-header" ColumnDefinitions="Auto,*">
+                                        <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_DayOfWeek}"/>
+                                        <TextBlock x:Name="WeekdaysNoteText" Grid.Column="1" Classes="hint"/>
+                                    </Grid>
+                                    <ItemsControl x:Name="WeekdaysList"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Column="1" Classes="section-card">
+                                <StackPanel>
+                                    <Grid Classes="section-header" ColumnDefinitions="Auto,*">
+                                        <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_TopApps}"/>
+                                    </Grid>
+                                    <ItemsControl x:Name="AppsList"/>
+                                    <TextBlock x:Name="AppsEmptyText" Classes="hint" Text="{x:Static localization:Strings.StatsWindow_NoData}"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                            <Border Classes="section-card">
+                                <StackPanel>
+                                    <Grid Classes="section-header" ColumnDefinitions="Auto,*">
+                                        <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_Destinations}"/>
+                                    </Grid>
+                                    <ItemsControl x:Name="DestinationsList"/>
+                                    <TextBlock x:Name="DestinationsEmptyText" Classes="hint" Text="{x:Static localization:Strings.StatsWindow_NoData}"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Grid.Column="1" Classes="section-card">
+                                <StackPanel>
+                                    <Grid Classes="section-header" ColumnDefinitions="Auto,*">
+                                        <TextBlock Classes="section-title" Text="{x:Static localization:Strings.StatsWindow_FileTypes}"/>
+                                    </Grid>
+                                    <ItemsControl x:Name="FileTypesList"/>
+                                    <TextBlock x:Name="FileTypesEmptyText" Classes="hint" Text="{x:Static localization:Strings.StatsWindow_NoData}"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+    </Grid>
+</Window>

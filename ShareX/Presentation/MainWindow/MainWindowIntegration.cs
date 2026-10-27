@@ -166,6 +166,9 @@ public static class MainWindowIntegration
             case MainFormCommand.History:
                 TaskHelpers.OpenHistory();
                 break;
+            case MainFormCommand.Stats:
+                TaskHelpers.OpenStats();
+                break;
             case MainFormCommand.ImageHistory:
                 TaskHelpers.OpenImageHistory();
                 break;

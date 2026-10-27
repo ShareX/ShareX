@@ -437,4 +437,145 @@
   <data name="ImageHistoryWindow_ThisItem" xml:space="preserve">
     <value>이 항목</value>
   </data>
+  <data name="StatsWindow_AboutADay" xml:space="preserve">
+    <value>하루 약 {0}개</value>
+  </data>
+  <data name="StatsWindow_AboutAWeek" xml:space="preserve">
+    <value>주당 약 {0}개</value>
+  </data>
+  <data name="StatsWindow_ActiveDays" xml:space="preserve">
+    <value>{1} 중 {0}일 활동</value>
+  </data>
+  <data name="StatsWindow_Afternoon" xml:space="preserve">
+    <value>오후</value>
+  </data>
+  <data name="StatsWindow_All" xml:space="preserve">
+    <value>전체</value>
+  </data>
+  <data name="StatsWindow_AllYears" xml:space="preserve">
+    <value>모든 연도</value>
+  </data>
+  <data name="StatsWindow_BeforeHistory" xml:space="preserve">
+    <value>기록이 시작되기 전</value>
+  </data>
+  <data name="StatsWindow_BusiestDay" xml:space="preserve">
+    <value>가장 바쁜 날</value>
+  </data>
+  <data name="StatsWindow_BusiestOn" xml:space="preserve">
+    <value>{0}에 가장 많음</value>
+  </data>
+  <data name="StatsWindow_BusiestTime" xml:space="preserve">
+    <value>{0}에 가장 많음</value>
+  </data>
+  <data name="StatsWindow_CountingSince" xml:space="preserve">
+    <value>{0}부터 집계 · {1}</value>
+  </data>
+  <data name="StatsWindow_DayOfWeek" xml:space="preserve">
+    <value>요일별</value>
+  </data>
+  <data name="StatsWindow_Days" xml:space="preserve">
+    <value>{0}일</value>
+  </data>
+  <data name="StatsWindow_Destinations" xml:space="preserve">
+    <value>대상</value>
+  </data>
+  <data name="StatsWindow_Evening" xml:space="preserve">
+    <value>저녁</value>
+  </data>
+  <data name="StatsWindow_EveryDay" xml:space="preserve">
+    <value>매일</value>
+  </data>
+  <data name="StatsWindow_FileTypes" xml:space="preserve">
+    <value>파일 형식</value>
+  </data>
+  <data name="StatsWindow_Images" xml:space="preserve">
+    <value>이미지</value>
+  </data>
+  <data name="StatsWindow_Less" xml:space="preserve">
+    <value>적음</value>
+  </data>
+  <data name="StatsWindow_LongestStreak" xml:space="preserve">
+    <value>최장 {0}, {1}까지</value>
+  </data>
+  <data name="StatsWindow_LongestYet" xml:space="preserve">
+    <value>역대 최장 기록</value>
+  </data>
+  <data name="StatsWindow_More" xml:space="preserve">
+    <value>많음</value>
+  </data>
+  <data name="StatsWindow_Morning" xml:space="preserve">
+    <value>오전</value>
+  </data>
+  <data name="StatsWindow_Night" xml:space="preserve">
+    <value>새벽</value>
+  </data>
+  <data name="StatsWindow_NoData" xml:space="preserve">
+    <value>아직 데이터 없음</value>
+  </data>
+  <data name="StatsWindow_NoHistory" xml:space="preserve">
+    <value>아직 집계할 항목이 없습니다. 캡처와 업로드가 기록에 저장되면 여기에 표시됩니다.</value>
+  </data>
+  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
+    <value>지난주 이맘때는 없음</value>
+  </data>
+  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
+    <value>지난주에도 없음</value>
+  </data>
+  <data name="StatsWindow_NothingYet" xml:space="preserve">
+    <value>아직 없음</value>
+  </data>
+  <data name="StatsWindow_OneDay" xml:space="preserve">
+    <value>{0}일</value>
+  </data>
+  <data name="StatsWindow_Other" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="StatsWindow_OtherFiles" xml:space="preserve">
+    <value>기타 파일</value>
+  </data>
+  <data name="StatsWindow_PastYear" xml:space="preserve">
+    <value>지난 1년</value>
+  </data>
+  <data name="StatsWindow_Recordings" xml:space="preserve">
+    <value>녹화</value>
+  </data>
+  <data name="StatsWindow_Refresh" xml:space="preserve">
+    <value>새로 고침</value>
+  </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>공유</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>이 통계를 이미지로 만들고 캡처 후 작업을 실행합니다.</value>
+  </data>
+  <data name="StatsWindow_Stats" xml:space="preserve">
+    <value>통계</value>
+  </data>
+  <data name="StatsWindow_Streak" xml:space="preserve">
+    <value>연속 기록</value>
+  </data>
+  <data name="StatsWindow_ThisWeek" xml:space="preserve">
+    <value>이번 주</value>
+  </data>
+  <data name="StatsWindow_TimeOfDay" xml:space="preserve">
+    <value>시간대</value>
+  </data>
+  <data name="StatsWindow_Title" xml:space="preserve">
+    <value>ShareX - 통계</value>
+  </data>
+  <data name="StatsWindow_Today" xml:space="preserve">
+    <value>오늘</value>
+  </data>
+  <data name="StatsWindow_TopApps" xml:space="preserve">
+    <value>가장 많이 촬영한 앱</value>
+  </data>
+  <data name="StatsWindow_Total" xml:space="preserve">
+    <value>총계</value>
+  </data>
+  <data name="StatsWindow_TotalCount" xml:space="preserve">
+    <value>총계: {0}</value>
+  </data>
+  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
+    <value>지난주 같은 시점 대비</value>
+  </data>
 </root>
