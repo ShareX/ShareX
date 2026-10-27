@@ -141,6 +141,12 @@
                         <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static localization:Strings.StatsWindow_Stats}"/>
                         <TextBlock x:Name="SubtitleText" Grid.Column="2" Classes="hint" Margin="6,4,0,0"/>
                         <StackPanel x:Name="ActionsPanel" Grid.Column="3" Orientation="Horizontal" Spacing="6">
+                            <Button x:Name="RefreshButton" Click="OnRefreshClick">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.refresh_cw}"/>
+                                    <TextBlock Text="{x:Static localization:Strings.StatsWindow_Refresh}"/>
+                                </StackPanel>
+                            </Button>
                             <Button x:Name="ShareButton"
                                     Click="OnShareClick"
                                     IsEnabled="False"
@@ -148,12 +154,6 @@
                                 <StackPanel Orientation="Horizontal" Spacing="8">
                                     <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.share_2}"/>
                                     <TextBlock Text="{x:Static localization:Strings.StatsWindow_Share}"/>
-                                </StackPanel>
-                            </Button>
-                            <Button x:Name="RefreshButton" Click="OnRefreshClick">
-                                <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.refresh_cw}"/>
-                                    <TextBlock Text="{x:Static localization:Strings.StatsWindow_Refresh}"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
