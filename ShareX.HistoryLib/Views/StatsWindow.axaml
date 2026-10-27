@@ -51,7 +51,6 @@
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="CornerRadius" Value="6"/>
             <Setter Property="Padding" Value="12"/>
-            <Setter Property="Margin" Value="0,0,0,8"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
         <Style Selector="Grid.section-header">
@@ -134,7 +133,7 @@
 
     <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-            <Border x:Name="SnapshotPanel" Background="{DynamicResource ShareX.Brush.Background.Main}" Padding="28,24,28,32">
+            <Border x:Name="SnapshotPanel" Background="{DynamicResource ShareX.Brush.Background.Main}" Padding="24">
                 <StackPanel>
                     <Grid Classes="page-title" ColumnDefinitions="Auto,Auto,*,Auto" ColumnSpacing="9">
                         <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.chart_column}"/>
@@ -169,7 +168,7 @@
                                    Text="{x:Static localization:Strings.HistoryWindow_CalculatingStatistics}"/>
                     </Border>
 
-                    <StackPanel x:Name="ContentPanel" IsVisible="False">
+                    <StackPanel x:Name="ContentPanel" IsVisible="False" Spacing="8">
                         <!-- Total -->
                         <Border Classes="section-card">
                             <Grid ColumnDefinitions="Auto,*" ColumnSpacing="32">
