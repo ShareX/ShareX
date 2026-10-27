@@ -887,12 +887,6 @@ namespace ShareX
                 });
         }
 
-        public static void OpenStats()
-        {
-            HistoryIntegration.ShowStatsWindow(ApplicationState.HistoryManager,
-                image => UploadManager.RunImageTask(new TaskMetadata(image) { ProcessName = "ShareX" }, TaskSettings.GetDefaultTaskSettings()));
-        }
-
         public static void OpenImageHistory()
         {
             HistoryIntegration.ShowImageHistoryWindow(ApplicationState.HistoryManager, ApplicationState.Settings.ImageHistorySettings,
@@ -907,6 +901,12 @@ namespace ShareX
                     ShowImage = ImageViewerWindowIntegration.ShowImage,
                     ShowImages = ImageViewerWindowIntegration.ShowImage
                 });
+        }
+
+        public static void OpenStats()
+        {
+            HistoryIntegration.ShowStatsWindow(ApplicationState.HistoryManager,
+                image => UploadManager.RunImageTask(new TaskMetadata(image) { ProcessName = "ShareX" }, TaskSettings.GetDefaultTaskSettings()));
         }
 
         public static void OpenDebugLog()
