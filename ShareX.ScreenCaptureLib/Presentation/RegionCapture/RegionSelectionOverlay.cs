@@ -148,7 +148,8 @@ public sealed class RegionSelectionOverlay : Control
 
     /// <summary>
     /// When enabled, a hovered window or control is only outlined and stays dimmed, including while a
-    /// press on it is pending; only the selection being dragged or adjusted is shown undimmed.
+    /// press on it is pending; only a non-pending selection is shown undimmed, whether it is being
+    /// dragged or has been released.
     /// </summary>
     public bool DimHoverRectangle
     {
