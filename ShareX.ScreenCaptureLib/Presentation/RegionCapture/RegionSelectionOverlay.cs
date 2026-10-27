@@ -50,7 +50,7 @@ public sealed class RegionSelectionOverlay : Control
     private Point _cursorPosition;
     private byte _dimAlpha = 51;
     private IBrush _dimBrush = new SolidColorBrush(Color.FromArgb(51, 0, 0, 0));
-    private bool _dimHoverRectangle;
+    private bool _dimAllExceptSelection;
     private bool _isSelectionPending;
 
     static RegionSelectionOverlay()
@@ -151,14 +151,14 @@ public sealed class RegionSelectionOverlay : Control
     /// press on it is pending; only a non-pending selection is shown undimmed, whether it is being
     /// dragged or has been released.
     /// </summary>
-    public bool DimHoverRectangle
+    public bool DimAllExceptSelection
     {
-        get => _dimHoverRectangle;
+        get => _dimAllExceptSelection;
         set
         {
-            if (_dimHoverRectangle != value)
+            if (_dimAllExceptSelection != value)
             {
-                _dimHoverRectangle = value;
+                _dimAllExceptSelection = value;
                 InvalidateVisual();
             }
         }
@@ -192,7 +192,7 @@ public sealed class RegionSelectionOverlay : Control
 
         if (DimAlpha > 0)
         {
-            Rect undimmed = DimHoverRectangle && (IsSelectionPending || !IsValid(SelectionRectangle)) ? default : active;
+            Rect undimmed = DimAllExceptSelection && (IsSelectionPending || !IsValid(SelectionRectangle)) ? default : active;
 
             if (IsValid(undimmed))
             {
