@@ -27,6 +27,8 @@
 
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
+using SkiaSharp;
+using System;
 
 namespace ShareX.HistoryLib;
 
@@ -48,7 +50,7 @@ public static class HistoryIntegration
         Dispatcher.UIThread.Post(() => new ImageHistoryWindow(historyManager, settings, services).Show());
     }
 
-    public static void ShowStatsWindow(HistoryManagerSQLite historyManager)
+    public static void ShowStatsWindow(HistoryManagerSQLite historyManager, Action<SKBitmap>? shareImage = null)
     {
         AvaloniaBootstrapper.EnsureInitialized();
         Dispatcher.UIThread.Post(() =>
@@ -59,7 +61,7 @@ public static class HistoryIntegration
                 return;
             }
 
-            _statsWindow = new StatsWindow(historyManager);
+            _statsWindow = new StatsWindow(historyManager, shareImage);
             _statsWindow.Closed += (_, _) => _statsWindow = null;
             _statsWindow.Show();
         });

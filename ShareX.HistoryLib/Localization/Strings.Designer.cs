@@ -910,6 +910,16 @@ namespace ShareX.HistoryLib.Localization {
                 return ResourceManager.GetString("StatsWindow_Refresh", resourceCulture);
             }
         }
+        public static string StatsWindow_Share {
+            get {
+                return ResourceManager.GetString("StatsWindow_Share", resourceCulture);
+            }
+        }
+        public static string StatsWindow_ShareToolTip {
+            get {
+                return ResourceManager.GetString("StatsWindow_ShareToolTip", resourceCulture);
+            }
+        }
         public static string StatsWindow_Stats {
             get {
                 return ResourceManager.GetString("StatsWindow_Stats", resourceCulture);

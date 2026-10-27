@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>Frissítés</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>Megosztás</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>Kép készítése erről a statisztikáról, és a rögzítés utáni feladatok futtatása rajta.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>Statisztika</value>
   </data>

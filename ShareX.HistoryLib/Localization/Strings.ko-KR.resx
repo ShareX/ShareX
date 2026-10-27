@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>새로 고침</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>공유</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>이 통계를 이미지로 만들고 캡처 후 작업을 실행합니다.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>통계</value>
   </data>

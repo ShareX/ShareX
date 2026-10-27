@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>更新</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>共有</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>この統計の画像を作成し、キャプチャ後のタスクを実行します。</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>統計</value>
   </data>

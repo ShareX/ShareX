@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>ताज़ा करें</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>साझा करें</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>इन आँकड़ों का चित्र लें और उस पर चित्र लेने के बाद के कार्य चलाएँ।</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>आँकड़े</value>
   </data>

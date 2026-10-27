@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>Odśwież</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>Udostępnij</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>Utwórz obraz tych statystyk i uruchom na nim zadania po przechwyceniu.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>Statystyki</value>
   </data>

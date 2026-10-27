@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>Uppdatera</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>Dela</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>Ta en bild av statistiken och kör dina uppgifter efter bildtagning på den.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>Statistik</value>
   </data>

@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>רענן</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>שיתוף</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>צלם תמונה של הנתונים האלה והפעל עליה את המשימות לאחר לכידה.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>סטטיסטיקה</value>
   </data>

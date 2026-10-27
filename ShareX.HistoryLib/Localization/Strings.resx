@@ -577,6 +577,14 @@
     <value>Refresh</value>
     <comment>Button that counts the history again.</comment>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>Share</value>
+    <comment>Button that takes a picture of the stats page and runs the after capture tasks on it.</comment>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>Take a picture of these stats and run your after capture tasks on it.</value>
+    <comment>Tooltip of the Share button.</comment>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>Stats</value>
     <comment>Stats window heading.</comment>

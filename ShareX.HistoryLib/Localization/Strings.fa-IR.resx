@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>تازه‌سازی</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>اشتراک‌گذاری</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>از این آمار تصویری بگیرید و وظایف پس از ضبط را روی آن اجرا کنید.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>آمار</value>
   </data>

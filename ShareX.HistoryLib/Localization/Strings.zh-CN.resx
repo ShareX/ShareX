@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>刷新</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>分享</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>将这些统计生成图片，并对其运行捕获后任务。</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>统计</value>
   </data>

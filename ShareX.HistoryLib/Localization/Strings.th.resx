@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>รีเฟรช</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>แชร์</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>สร้างภาพของสถิตินี้และเรียกใช้งานหลังจับภาพกับภาพนั้น</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>สถิติ</value>
   </data>

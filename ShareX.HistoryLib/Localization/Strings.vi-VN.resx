@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>Làm mới</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>Chia sẻ</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>Chụp ảnh thống kê này và chạy các tác vụ sau khi chụp trên ảnh đó.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>Thống kê</value>
   </data>

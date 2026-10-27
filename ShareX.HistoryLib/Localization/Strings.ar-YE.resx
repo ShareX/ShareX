@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>تحديث</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>مشاركة</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>التقط صورة لهذه الإحصائيات وشغّل عليها مهام ما بعد الالتقاط.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>الإحصاءات</value>
   </data>

@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>Obnovit</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>Sdílet</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>Pořídit obrázek těchto statistik a spustit na něm úlohy po zachycení.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>Statistiky</value>
   </data>

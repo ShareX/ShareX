@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>Actualiser</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>Partager</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>Prendre une image de ces statistiques et lui appliquer vos tâches après capture.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>Statistiques</value>
   </data>

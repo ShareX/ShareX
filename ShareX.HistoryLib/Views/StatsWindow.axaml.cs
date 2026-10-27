@@ -25,11 +25,15 @@
 
 #nullable enable
 
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Media.Imaging;
+using ShareX.AvaloniaUI.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib.Localization;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -43,6 +47,7 @@ public sealed record StatsRow(string Label, double LabelWidth, double Fraction, 
 public partial class StatsWindow : Window
 {
     private readonly HistoryManagerSQLite _historyManager;
+    private readonly Action<SKBitmap>? _shareImage;
     private readonly List<int> _spans = [];
     private HistoryStats? _stats;
     private HistoryStatsFilter _hourFilter = HistoryStatsFilter.All;
@@ -56,9 +61,11 @@ public partial class StatsWindow : Window
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
     }
 
-    public StatsWindow(HistoryManagerSQLite historyManager) : this()
+    public StatsWindow(HistoryManagerSQLite historyManager, Action<SKBitmap>? shareImage) : this()
     {
         _historyManager = historyManager;
+        _shareImage = shareImage;
+        ShareButton.IsVisible = shareImage != null;
         Opened += OnOpened;
     }
 
@@ -69,6 +76,48 @@ public partial class StatsWindow : Window
     }
 
     private async void OnRefreshClick(object? sender, RoutedEventArgs e) => await RefreshAsync();
+
+    private void OnShareClick(object? sender, RoutedEventArgs e)
+    {
+        if (_shareImage == null)
+        {
+            return;
+        }
+
+        SKBitmap image;
+
+        try
+        {
+            image = RenderSnapshot();
+        }
+        catch (Exception ex)
+        {
+            DebugHelper.WriteException(ex);
+            return;
+        }
+
+        _shareImage(image);
+    }
+
+    /// <summary>Draws the whole page, including what is scrolled out of view, without the buttons in the title.</summary>
+    private SKBitmap RenderSnapshot()
+    {
+        double scaling = RenderScaling;
+        PixelSize pixelSize = PixelSize.FromSize(SnapshotPanel.Bounds.Size, scaling);
+        double previousOpacity = ActionsPanel.Opacity;
+        ActionsPanel.Opacity = 0;
+
+        try
+        {
+            using RenderTargetBitmap bitmap = new(pixelSize, new Vector(96 * scaling, 96 * scaling));
+            bitmap.Render(SnapshotPanel);
+            return BitmapConversionHelpers.ToSKBitmap(bitmap);
+        }
+        finally
+        {
+            ActionsPanel.Opacity = previousOpacity;
+        }
+    }
 
     private async Task RefreshAsync()
     {
@@ -97,6 +146,7 @@ public partial class StatsWindow : Window
         {
             DebugHelper.WriteException(ex);
             ContentPanel.IsVisible = false;
+            ShareButton.IsEnabled = false;
             StatusPanel.IsVisible = true;
             StatusText.Text = ex.Message;
         }
@@ -115,6 +165,7 @@ public partial class StatsWindow : Window
         StatusPanel.IsVisible = !hasItems;
         StatusText.Text = Strings.StatsWindow_NoHistory;
         ContentPanel.IsVisible = hasItems;
+        ShareButton.IsEnabled = hasItems;
         SubtitleText.Text = stats.FirstDay is DateTime first
             ? string.Format(Strings.StatsWindow_CountingSince, StatsFormat.Date(first), StatsFormat.Days(stats.DaysCounted))
             : string.Empty;

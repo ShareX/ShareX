@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>Vernieuwen</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>Delen</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>Maak een afbeelding van deze statistieken en voer je taken na vastleggen erop uit.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>Statistieken</value>
   </data>

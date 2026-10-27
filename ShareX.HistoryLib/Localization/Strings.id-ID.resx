@@ -542,6 +542,12 @@
   <data name="StatsWindow_Refresh" xml:space="preserve">
     <value>Segarkan</value>
   </data>
+  <data name="StatsWindow_Share" xml:space="preserve">
+    <value>Bagikan</value>
+  </data>
+  <data name="StatsWindow_ShareToolTip" xml:space="preserve">
+    <value>Ambil gambar statistik ini dan jalankan tugas setelah penangkapan padanya.</value>
+  </data>
   <data name="StatsWindow_Stats" xml:space="preserve">
     <value>Statistik</value>
   </data>
