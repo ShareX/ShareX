@@ -50,6 +50,8 @@ public sealed class RegionSelectionOverlay : Control
     private Point _cursorPosition;
     private byte _dimAlpha = 51;
     private IBrush _dimBrush = new SolidColorBrush(Color.FromArgb(51, 0, 0, 0));
+    private bool _dimHoverRectangle;
+    private bool _isSelectionPending;
 
     static RegionSelectionOverlay()
     {
@@ -144,6 +146,40 @@ public sealed class RegionSelectionOverlay : Control
         }
     }
 
+    /// <summary>
+    /// When enabled, a hovered window or control is only outlined and stays dimmed, including while a
+    /// press on it is pending; only the selection being dragged or adjusted is shown undimmed.
+    /// </summary>
+    public bool DimHoverRectangle
+    {
+        get => _dimHoverRectangle;
+        set
+        {
+            if (_dimHoverRectangle != value)
+            {
+                _dimHoverRectangle = value;
+                InvalidateVisual();
+            }
+        }
+    }
+
+    /// <summary>
+    /// True while a press has picked the hovered window as the selection but the user has not yet
+    /// released or started dragging a new region.
+    /// </summary>
+    public bool IsSelectionPending
+    {
+        get => _isSelectionPending;
+        set
+        {
+            if (_isSelectionPending != value)
+            {
+                _isSelectionPending = value;
+                InvalidateVisual();
+            }
+        }
+    }
+
     public Rect ActiveRectangle => IsValid(SelectionRectangle) ? SelectionRectangle : HoverRectangle;
 
     public override void Render(DrawingContext context)
@@ -155,9 +191,11 @@ public sealed class RegionSelectionOverlay : Control
 
         if (DimAlpha > 0)
         {
-            if (IsValid(active))
+            Rect undimmed = DimHoverRectangle && (IsSelectionPending || !IsValid(SelectionRectangle)) ? default : active;
+
+            if (IsValid(undimmed))
             {
-                DrawDimmedOutside(context, surface, active, _dimBrush);
+                DrawDimmedOutside(context, surface, undimmed, _dimBrush);
             }
             else
             {

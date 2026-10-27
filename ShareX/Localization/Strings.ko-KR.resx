@@ -2309,6 +2309,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>창 영역 감지</value>
   </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>현재 선택 영역을 제외한 모든 영역 어둡게 하기</value>
+  </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>전체 화면에서 알림 비활성화</value>
   </data>

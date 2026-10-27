@@ -2309,6 +2309,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Phát hiện vùng cửa sổ</value>
   </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>Làm tối tất cả trừ vùng chọn hiện tại</value>
+  </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Tắt thông báo khi ở chế độ toàn màn hình</value>
   </data>

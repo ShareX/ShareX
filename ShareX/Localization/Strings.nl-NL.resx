@@ -2309,6 +2309,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Venstergebieden detecteren</value>
   </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>Alles verduisteren behalve de huidige selectie</value>
+  </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Meldingen uitschakelen bij volledig scherm</value>
   </data>
