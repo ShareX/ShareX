@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="using:ShareX.ImageEditor.Presentation.Converters"
              xmlns:theming="using:ShareX.ImageEditor.Presentation.Theming"
+             xmlns:res="using:ShareX.ImageEditor.Localization"
              mc:Ignorable="d" d:DesignWidth="240" d:DesignHeight="40"
              x:Class="ShareX.ImageEditor.Presentation.Controls.FontFamilyPickerDropdown"
              x:Name="FontFamilyPickerDropdownRoot">
@@ -46,38 +47,62 @@
                IsLightDismissEnabled="True"
                VerticalOffset="4">
             <Border Classes="popup-border popup-surface"
-                    Classes.open="{Binding #FontFamilyPopup.IsOpen}">
-                <ScrollViewer MaxHeight="360"
-                              HorizontalScrollBarVisibility="Disabled"
-                              VerticalScrollBarVisibility="Auto">
-                    <ItemsControl ItemsSource="{Binding FontFamilyOptions, ElementName=FontFamilyPickerDropdownRoot}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Vertical"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Button MinWidth="180"
-                                        Height="32"
-                                        Padding="8,0"
-                                        Classes="picker-button"
-                                        Click="OnFontFamilySelected"
-                                        CommandParameter="{Binding .}"
-                                        HorizontalContentAlignment="Stretch"
-                                        VerticalContentAlignment="Center"
-                                        ToolTip.Tip="{Binding .}">
-                                    <TextBlock Text="{Binding .}"
-                                               FontFamily="{Binding ., Converter={StaticResource StringToFontFamilyConverter}}"
-                                               FontSize="14"
-                                               Foreground="{DynamicResource ShareX.Brush.Text}"
-                                               TextTrimming="CharacterEllipsis"
-                                               VerticalAlignment="Center"/>
-                                </Button>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
+                    Classes.open="{Binding #FontFamilyPopup.IsOpen}"
+                    Width="260">
+                <Grid RowDefinitions="Auto,*">
+                    <TextBox x:Name="SearchBox"
+                             Grid.Row="0"
+                             Classes="effect-search"
+                             PlaceholderText="{x:Static res:Strings.FontFamilyPickerDropdown_SearchfontsEllipsis}"
+                             Margin="0,0,0,4"
+                             CornerRadius="4"
+                             TextChanged="OnSearchTextChanged"
+                             KeyDown="OnSearchKeyDown"
+                             KeyUp="OnSearchKeyUp"/>
+
+                    <TextBlock x:Name="NoResultsText"
+                               Grid.Row="1"
+                               Text="{x:Static res:Strings.FontFamilyPickerDropdown_Nomatchingfonts}"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               FontSize="12"
+                               Margin="8,6"
+                               IsVisible="False"/>
+
+                    <ScrollViewer x:Name="FontFamilyScrollViewer"
+                                  Grid.Row="1"
+                                  MaxHeight="360"
+                                  HorizontalScrollBarVisibility="Disabled"
+                                  VerticalScrollBarVisibility="Auto">
+                        <ItemsControl x:Name="FontFamilyItems"
+                                      ItemsSource="{Binding FontFamilyOptions, ElementName=FontFamilyPickerDropdownRoot}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Vertical"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Button Height="32"
+                                            Padding="8,0"
+                                            Classes="picker-button"
+                                            Click="OnFontFamilySelected"
+                                            CommandParameter="{Binding .}"
+                                            HorizontalAlignment="Stretch"
+                                            HorizontalContentAlignment="Stretch"
+                                            VerticalContentAlignment="Center"
+                                            ToolTip.Tip="{Binding .}">
+                                        <TextBlock Text="{Binding .}"
+                                                   FontFamily="{Binding ., Converter={StaticResource StringToFontFamilyConverter}}"
+                                                   FontSize="14"
+                                                   Foreground="{DynamicResource ShareX.Brush.Text}"
+                                                   TextTrimming="CharacterEllipsis"
+                                                   VerticalAlignment="Center"/>
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
             </Border>
         </Popup>
     </Grid>

@@ -1149,6 +1149,12 @@ Clipboardul nu conține nicio imagine.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Încercați alt cuvânt cheie.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Niciun font corespunzător</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Căutare fonturi...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Inserare imagine dedesubt</value>
   </data>
