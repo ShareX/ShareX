@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Henüz sayılacak bir şey yok. Yakalamalar ve yüklemeler geçmişe kaydedildikten sonra burada görünür.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>geçen hafta bu saatte hiç yoktu</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>önceki 7 günde hiç yoktu</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>geçen hafta da hiç yoktu</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>önceki 7 günde de hiç yoktu</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>henüz yok</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Diğer dosyalar</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Son 7 gün</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Son bir yıl</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Seri</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Bu hafta</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Günün saati</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Toplam: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>geçen haftanın aynı saatine göre</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>önceki 7 güne göre</value>
   </data>
 </root>

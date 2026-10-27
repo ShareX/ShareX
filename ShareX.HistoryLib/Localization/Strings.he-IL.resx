@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>אין עדיין מה לספור. צילומי מסך והעלאות יופיעו כאן לאחר שיישמרו בהיסטוריה.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>אין עד לשעה זו בשבוע שעבר</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>אין ב-7 הימים שלפני כן</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>גם בשבוע שעבר לא היו</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>גם ב-7 הימים שלפני כן לא היו</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>עדיין אין</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>קבצים אחרים</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>7 הימים האחרונים</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>השנה האחרונה</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>רצף</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>השבוע</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>שעה ביום</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>סה״כ: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>לעומת אותו זמן בשבוע שעבר</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>לעומת 7 הימים שלפני כן</value>
   </data>
 </root>

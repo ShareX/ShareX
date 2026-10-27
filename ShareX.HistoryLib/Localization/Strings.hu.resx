@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Még nincs mit számolni. A rögzítések és feltöltések itt jelennek meg, miután bekerültek az előzményekbe.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>múlt héten ilyenkor még semmi</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>az előző 7 napban semmi</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>múlt héten sem volt</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>az előző 7 napban sem volt</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>még semmi</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Egyéb fájlok</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Elmúlt 7 nap</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Elmúlt év</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Sorozat</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Ezen a héten</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Napszak</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>Összesen: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>a múlt hét azonos időpontjához képest</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>az előző 7 naphoz képest</value>
   </data>
 </root>

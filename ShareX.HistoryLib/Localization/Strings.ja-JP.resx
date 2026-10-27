@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>まだ集計するものがありません。キャプチャやアップロードは履歴に保存されるとここに表示されます。</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>先週の同時刻までは0件</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>前の7日間は0件</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>先週も0件</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>前の7日間も0件</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>まだありません</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>その他のファイル</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>過去7日間</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>過去1年</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>連続日数</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>今週</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>時間帯</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>合計: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>先週の同時刻比</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>前の7日間比</value>
   </data>
 </root>

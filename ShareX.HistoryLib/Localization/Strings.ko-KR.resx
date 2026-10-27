@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>아직 집계할 항목이 없습니다. 캡처와 업로드가 기록에 저장되면 여기에 표시됩니다.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>지난주 이맘때는 없음</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>이전 7일에는 없음</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>지난주에도 없음</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>이전 7일에도 없음</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>아직 없음</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>기타 파일</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>최근 7일</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>지난 1년</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>연속 기록</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>이번 주</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>시간대</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>총계: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>지난주 같은 시점 대비</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>이전 7일 대비</value>
   </data>
 </root>

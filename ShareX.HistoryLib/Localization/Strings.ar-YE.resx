@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>لا يوجد ما يُحصى بعد. ستظهر اللقطات وعمليات الرفع هنا بمجرد حفظها في السجل.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>لا شيء حتى هذا الوقت الأسبوع الماضي</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>لا شيء في الأيام السبعة السابقة</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>ولا شيء الأسبوع الماضي أيضًا</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>ولا شيء في الأيام السبعة السابقة أيضًا</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>لا شيء بعد</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>ملفات أخرى</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>آخر 7 أيام</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>آخر 12 شهرًا</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>أيام متتالية</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>هذا الأسبوع</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>أوقات اليوم</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>الإجمالي: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>مقارنةً بالوقت نفسه الأسبوع الماضي</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>مقارنةً بالأيام السبعة السابقة</value>
   </data>
 </root>

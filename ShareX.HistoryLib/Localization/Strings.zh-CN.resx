@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>暂无可统计的内容。截图和上传保存到历史记录后会显示在这里。</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>上周同期为零</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>前7天为零</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>上周也没有</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>前7天也没有</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>暂无</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>其它文件</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>过去7天</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>过去一年</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>连续天数</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>本周</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>时段</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>总计：{0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>对比上周同期</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>对比前7天</value>
   </data>
 </root>

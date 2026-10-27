@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>هنوز چیزی برای شمارش نیست. عکس‌ها، ضبط‌ها و آپلودها پس از ذخیره در تاریخچه اینجا نمایش داده می‌شوند.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>هفته پیش تا این زمان هیچ</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>در هفت روز قبل از آن هیچ</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>هفته پیش هم هیچ</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>در هفت روز قبل از آن هم هیچ</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>هنوز هیچ</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>سایر فایل‌ها</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>هفت روز گذشته</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>یک سال گذشته</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>روزهای پیاپی</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>این هفته</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>ساعت روز</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>مجموع: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>نسبت به همین زمان هفته پیش</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>نسبت به هفت روز قبل از آن</value>
   </data>
 </root>

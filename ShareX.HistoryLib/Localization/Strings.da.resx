@@ -515,11 +515,11 @@
   <data name="StatsWindow_NoHistory" xml:space="preserve">
     <value>Intet at tælle endnu. Skærmbilleder, optagelser og uploads vises her, når de er gemt i historikken.</value>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>ingen på samme tid sidste uge</value>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>ingen de forrige 7 dage</value>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>heller ingen sidste uge</value>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>heller ingen de forrige 7 dage</value>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>intet endnu</value>
@@ -532,6 +532,9 @@
   </data>
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Andre filer</value>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Seneste 7 dage</value>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Seneste år</value>
@@ -554,9 +557,6 @@
   <data name="StatsWindow_Streak" xml:space="preserve">
     <value>Stime</value>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>Denne uge</value>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Tidspunkt på dagen</value>
   </data>
@@ -575,7 +575,7 @@
   <data name="StatsWindow_TotalCount" xml:space="preserve">
     <value>I alt: {0}</value>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>ift. samme tid sidste uge</value>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>ift. de forrige 7 dage</value>
   </data>
 </root>

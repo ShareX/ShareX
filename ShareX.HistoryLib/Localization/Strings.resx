@@ -541,13 +541,13 @@
     <value>Nothing to count yet. Captures and uploads show up here once they are saved to history.</value>
     <comment>Shown in place of the stats when the history is empty.</comment>
   </data>
-  <data name="StatsWindow_NoneByNowLastWeek" xml:space="preserve">
-    <value>none by now last week</value>
-    <comment>This week tile note when last week had nothing by the same time.</comment>
+  <data name="StatsWindow_NoneInPrevious7Days" xml:space="preserve">
+    <value>none in the 7 days before</value>
+    <comment>Past 7 days tile note when the 7 days before had nothing.</comment>
   </data>
-  <data name="StatsWindow_NoneLastWeekEither" xml:space="preserve">
-    <value>none last week either</value>
-    <comment>This week tile note when this week and last week both have nothing.</comment>
+  <data name="StatsWindow_NonePrevious7DaysEither" xml:space="preserve">
+    <value>none the 7 days before either</value>
+    <comment>Past 7 days tile note when the past 7 days and the 7 days before both have nothing.</comment>
   </data>
   <data name="StatsWindow_NothingYet" xml:space="preserve">
     <value>nothing yet</value>
@@ -564,6 +564,10 @@
   <data name="StatsWindow_OtherFiles" xml:space="preserve">
     <value>Other files</value>
     <comment>Kind of history item: anything that isn't an image or a recording, such as text or uploaded files.</comment>
+  </data>
+  <data name="StatsWindow_Past7Days" xml:space="preserve">
+    <value>Past 7 days</value>
+    <comment>Stat tile title. Counts items from exactly 7 days ago up to now.</comment>
   </data>
   <data name="StatsWindow_PastYear" xml:space="preserve">
     <value>Past year</value>
@@ -593,10 +597,6 @@
     <value>Streak</value>
     <comment>Stat tile title: days in a row with at least one history item.</comment>
   </data>
-  <data name="StatsWindow_ThisWeek" xml:space="preserve">
-    <value>This week</value>
-    <comment>Stat tile title.</comment>
-  </data>
   <data name="StatsWindow_TimeOfDay" xml:space="preserve">
     <value>Time of day</value>
     <comment>Stats section heading for the chart by hour.</comment>
@@ -621,8 +621,8 @@
     <value>Total: {0}</value>
     <comment>Tooltip line. {0} is a number.</comment>
   </data>
-  <data name="StatsWindow_VsSameTimeLastWeek" xml:space="preserve">
-    <value>vs same time last week</value>
-    <comment>This week tile note after a percentage change such as "64%".</comment>
+  <data name="StatsWindow_VsPrevious7Days" xml:space="preserve">
+    <value>vs previous 7 days</value>
+    <comment>Past 7 days tile note after a percentage change such as "64%".</comment>
   </data>
 </root>
