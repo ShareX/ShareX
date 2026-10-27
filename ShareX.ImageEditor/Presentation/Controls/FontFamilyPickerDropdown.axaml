@@ -48,7 +48,9 @@
                VerticalOffset="4">
             <Border Classes="popup-border popup-surface"
                     Classes.open="{Binding #FontFamilyPopup.IsOpen}"
-                    Width="260">
+                    Width="260"
+                    KeyDown="OnPopupKeyDown"
+                    KeyUp="OnPopupKeyUp">
                 <Grid RowDefinitions="Auto,*">
                     <TextBox x:Name="SearchBox"
                              Grid.Row="0"
@@ -56,9 +58,7 @@
                              PlaceholderText="{x:Static res:Strings.FontFamilyPickerDropdown_SearchfontsEllipsis}"
                              Margin="0,0,0,4"
                              CornerRadius="4"
-                             TextChanged="OnSearchTextChanged"
-                             KeyDown="OnSearchKeyDown"
-                             KeyUp="OnSearchKeyUp"/>
+                             TextChanged="OnSearchTextChanged"/>
 
                     <TextBlock x:Name="NoResultsText"
                                Grid.Row="1"
