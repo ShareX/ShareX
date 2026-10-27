@@ -35,8 +35,8 @@
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
-            <Setter Property="Margin" Value="0,4,0,3"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,0,3"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
         </Style>
         <Style Selector="TextBlock.hint">
             <Setter Property="FontSize" Value="12"/>
@@ -56,7 +56,6 @@
         <Style Selector="Grid.section-header">
             <Setter Property="ColumnSpacing" Value="10"/>
             <Setter Property="Margin" Value="0,0,0,10"/>
-            <Setter Property="MinHeight" Value="32"/>
         </Style>
         <Style Selector="TextBlock.stat-value">
             <Setter Property="FontSize" Value="26"/>
