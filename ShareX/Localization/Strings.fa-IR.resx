@@ -2309,6 +2309,9 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>شناسایی ناحیه‌های پنجره</value>
   </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>تیره کردن همه‌چیز به‌جز انتخاب فعلی</value>
+  </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>غیرفعال کردن اعلان‌ها در حالت تمام‌صفحه</value>
   </data>

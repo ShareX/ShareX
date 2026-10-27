@@ -351,6 +351,7 @@ public partial class RegionCaptureWindow : Window
         _regionInputSurface.Width = _imageWidth;
         _regionInputSurface.Height = _imageHeight;
         _regionOverlay.DimAlpha = GetDimAlpha(_request.RegionCaptureOptions);
+        _regionOverlay.DimAllExceptSelection = _request.RegionCaptureOptions.DimAllExceptSelection;
         _regionOverlay.ShowCenterCrosshair = _request.RegionCaptureOptions.ShowCenterCrosshair;
         _regionOverlay.ShowCursorCrosshair = _request.RegionCaptureOptions.ShowScreenCrosshair;
         _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(GetInitialScaling());
@@ -587,7 +588,7 @@ public partial class RegionCaptureWindow : Window
         }
 
         _regionToolActive = false;
-        _interaction = RegionInteraction.None;
+        SetInteraction(RegionInteraction.None);
         _regionInputSurface.IsVisible = false;
         _regionInputSurface.IsHitTestVisible = false;
         _regionOverlay.IsVisible = false;
@@ -665,22 +666,22 @@ public partial class RegionCaptureWindow : Window
 
         if (_resizeNode.HasValue)
         {
-            _interaction = RegionInteraction.Resizing;
+            SetInteraction(RegionInteraction.Resizing);
         }
         else if (HasValidSelection() && _regionOverlay.SelectionRectangle.Contains(point))
         {
-            _interaction = RegionInteraction.Moving;
+            SetInteraction(RegionInteraction.Moving);
         }
         else if (RegionSelectionOverlay.IsValid(_regionOverlay.HoverRectangle))
         {
             SetSelection(_regionOverlay.HoverRectangle, _hoverCandidate);
             _interactionStartRectangle = _regionOverlay.SelectionRectangle;
-            _interaction = RegionInteraction.PendingHover;
+            SetInteraction(RegionInteraction.PendingHover);
         }
         else
         {
             SetSelection(default, null);
-            _interaction = RegionInteraction.Creating;
+            SetInteraction(RegionInteraction.Creating);
         }
 
         if (_interaction is RegionInteraction.Creating or RegionInteraction.PendingHover)
@@ -729,7 +730,7 @@ public partial class RegionCaptureWindow : Window
             case RegionInteraction.PendingHover:
                 if (Distance(_pressPoint, point) >= 4)
                 {
-                    _interaction = RegionInteraction.Creating;
+                    SetInteraction(RegionInteraction.Creating);
                     _selectedCandidate = null;
                     SetSelection(default, null);
                     UpdateSelectionDuringCreation(point, e.KeyModifiers);
@@ -787,7 +788,7 @@ public partial class RegionCaptureWindow : Window
         }
 
         e.Pointer.Capture(null);
-        _interaction = RegionInteraction.None;
+        SetInteraction(RegionInteraction.None);
         _resizeNode = null;
         _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(Math.Max(1, RenderScaling));
         ResetCreationModifiers();
@@ -1113,9 +1114,15 @@ public partial class RegionCaptureWindow : Window
         UpdateSelectionInfo();
     }
 
+    private void SetInteraction(RegionInteraction interaction)
+    {
+        _interaction = interaction;
+        _regionOverlay.IsSelectionPending = interaction == RegionInteraction.PendingHover;
+    }
+
     private void ClearSelection()
     {
-        _interaction = RegionInteraction.None;
+        SetInteraction(RegionInteraction.None);
         ResetCreationModifiers();
         _selectedCandidate = null;
         _regionOverlay.SelectionRectangle = default;

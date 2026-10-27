@@ -2309,6 +2309,9 @@
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>זיהוי אזורי חלון</value>
   </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>עמעום הכול מלבד הבחירה הנוכחית</value>
+  </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>השבתת התראות במסך מלא</value>
   </data>

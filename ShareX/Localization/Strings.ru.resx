@@ -2309,6 +2309,9 @@
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Обнаруживать области окон</value>
   </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>Затемнять всё, кроме текущего выделения</value>
+  </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Отключить уведомления в полноэкранном режиме</value>
   </data>

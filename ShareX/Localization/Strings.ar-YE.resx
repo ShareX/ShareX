@@ -2309,6 +2309,9 @@
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>اكتشاف مناطق النوافذ</value>
   </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>تعتيم الكل باستثناء التحديد الحالي</value>
+  </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>تعطيل الإشعارات في وضع ملء الشاشة</value>
   </data>

@@ -2309,6 +2309,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Identifiera fönsterområden</value>
   </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>Tona ned allt utom den aktuella markeringen</value>
+  </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Inaktivera popupaviseringar i helskärmsläge</value>
   </data>

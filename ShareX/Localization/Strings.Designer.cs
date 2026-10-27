@@ -3088,6 +3088,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_BackgroundDimStrengthPercent", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_DimAllExceptCurrentSelection {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_DimAllExceptCurrentSelection", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_RightClick {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_RightClick", resourceCulture);
