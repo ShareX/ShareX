@@ -187,7 +187,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
         private string? GetFirstSearchMatch()
         {
-            return FontFamilyOptions.FirstOrDefault(fontFamily => MatchesSearch(fontFamily, _searchQuery));
+            return FontFamilyOptions?.FirstOrDefault(fontFamily => MatchesSearch(fontFamily, _searchQuery));
         }
 
         private static bool MatchesSearch(string fontFamily, string query)
@@ -205,7 +205,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
         // Handled on the popup content rather than the search box, so keys from a focused font button are covered too.
         private void OnPopupKeyDown(object? sender, KeyEventArgs e)
         {
-            // Any other key down, such as one an IME processed, breaks the pairing with the next Escape key up.
+            // A key down that reaches the popup content, such as one an IME processed, breaks the pairing with the next Escape key up.
             _escapeKeyDownHandled = false;
 
             if (e.KeyModifiers != KeyModifiers.None)
