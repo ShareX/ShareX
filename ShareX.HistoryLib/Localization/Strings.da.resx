@@ -495,7 +495,7 @@
     <value>Mindre</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>længste {0}, til {1}</value>
+    <value>længste {0} til {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>din længste til dato</value>

@@ -495,7 +495,7 @@
     <value>Sedikit</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>terpanjang {0}, hingga {1}</value>
+    <value>terpanjang {0} hingga {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>terpanjang sejauh ini</value>

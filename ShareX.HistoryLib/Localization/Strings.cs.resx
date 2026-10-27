@@ -495,7 +495,7 @@
     <value>Méně</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>nejdelší {0}, do {1}</value>
+    <value>nejdelší {0} do {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>zatím nejdelší</value>

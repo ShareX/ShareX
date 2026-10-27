@@ -495,7 +495,7 @@
     <value>Меньше</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>рекорд: {0}, до {1}</value>
+    <value>рекорд: {0} до {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>ваш рекорд</value>

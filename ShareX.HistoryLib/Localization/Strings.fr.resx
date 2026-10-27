@@ -495,7 +495,7 @@
     <value>Moins</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>record de {0}, jusqu’au {1}</value>
+    <value>record de {0} jusqu’au {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>votre record</value>

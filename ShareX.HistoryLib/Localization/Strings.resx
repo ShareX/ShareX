@@ -514,7 +514,7 @@
     <comment>Calendar legend, at the end with the faintest color.</comment>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>longest {0}, to {1}</value>
+    <value>longest {0} to {1}</value>
     <comment>Streak tile note. {0} is a number of days, {1} is the date the longest streak ended.</comment>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">

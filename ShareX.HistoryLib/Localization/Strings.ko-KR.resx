@@ -495,7 +495,7 @@
     <value>적음</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>최장 {0}, {1}까지</value>
+    <value>최장 {0} {1}까지</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>역대 최장 기록</value>

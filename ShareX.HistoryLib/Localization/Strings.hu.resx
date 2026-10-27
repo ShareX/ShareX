@@ -495,7 +495,7 @@
     <value>Kevesebb</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>leghosszabb: {0}, vége: {1}</value>
+    <value>leghosszabb: {0} vége: {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>az eddigi leghosszabb</value>

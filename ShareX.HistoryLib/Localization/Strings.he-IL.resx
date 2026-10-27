@@ -495,7 +495,7 @@
     <value>פחות</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>השיא: {0}, עד {1}</value>
+    <value>השיא: {0} עד {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>הארוך ביותר שלך עד כה</value>

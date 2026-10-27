@@ -495,7 +495,7 @@
     <value>أقل</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>الأطول {0}، حتى {1}</value>
+    <value>الأطول {0} حتى {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>الأطول حتى الآن</value>

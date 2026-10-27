@@ -495,7 +495,7 @@
     <value>کمتر</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>طولانی‌ترین {0}، تا {1}</value>
+    <value>طولانی‌ترین {0} تا {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>طولانی‌ترین تا کنون</value>

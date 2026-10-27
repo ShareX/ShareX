@@ -495,7 +495,7 @@
     <value>少</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>最長 {0}，截至 {1}</value>
+    <value>最長 {0} 截至 {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>迄今最長</value>

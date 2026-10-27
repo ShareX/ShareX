@@ -495,7 +495,7 @@
     <value>Az</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>en uzun {0}, {1} tarihine kadar</value>
+    <value>en uzun {0} {1} tarihine kadar</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>şimdiye kadarki en uzun</value>

@@ -495,7 +495,7 @@
     <value>Mai puțin</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>cea mai lungă: {0}, până pe {1}</value>
+    <value>cea mai lungă: {0} până pe {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>cea mai lungă de până acum</value>

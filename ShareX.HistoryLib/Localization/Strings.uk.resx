@@ -495,7 +495,7 @@
     <value>Менше</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>найдовша {0}, до {1}</value>
+    <value>найдовша {0} до {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>ваша найдовша</value>

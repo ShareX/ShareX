@@ -495,7 +495,7 @@
     <value>Ít</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>dài nhất {0}, đến {1}</value>
+    <value>dài nhất {0} đến {1}</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>dài nhất từ trước đến nay</value>

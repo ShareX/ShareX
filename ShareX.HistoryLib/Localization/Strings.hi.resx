@@ -495,7 +495,7 @@
     <value>कम</value>
   </data>
   <data name="StatsWindow_LongestStreak" xml:space="preserve">
-    <value>सबसे लंबी {0}, {1} तक</value>
+    <value>सबसे लंबी {0} {1} तक</value>
   </data>
   <data name="StatsWindow_LongestYet" xml:space="preserve">
     <value>अब तक की सबसे लंबी</value>
