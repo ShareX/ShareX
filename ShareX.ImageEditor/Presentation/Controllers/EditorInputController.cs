@@ -302,14 +302,7 @@ public class EditorInputController
 
         if (vm.ActiveTool == EditorTool.Crop)
         {
-            if (IsQuickCropEnabled)
-            {
-                BeginQuickCrop();
-            }
-            else if (!_cropActive)
-            {
-                ActivateCropToFullImage();
-            }
+            BeginCrop();
             return;
         }
 
@@ -746,7 +739,7 @@ public class EditorInputController
                 if (currentPoint.Y < _startPoint.Y) cropTop = _startPoint.Y - cropHeight;
             }
 
-            UpdateQuickCropPreview(new Rect(cropLeft, cropTop, cropWidth, cropHeight));
+            UpdateCropPreview(new Rect(cropLeft, cropTop, cropWidth, cropHeight));
             return;
         }
 
@@ -1143,40 +1136,7 @@ public class EditorInputController
         return true;
     }
 
-    /// <summary>
-    /// Shows the crop overlay at full image bounds with 8 handles so the user can drag them inwards immediately.
-    /// Uses auto-crop detection to suggest an initial crop rectangle when possible.
-    /// Call when the user selects the Crop tool.
-    /// </summary>
-    public void ActivateCropToFullImage()
-    {
-        var canvas = _view.FindControl<Canvas>("AnnotationCanvas");
-        var overlayCanvas = _view.FindControl<Canvas>("OverlayCanvas");
-        var cropOverlay = _view.FindControl<global::Avalonia.Controls.Shapes.Rectangle>("CropOverlay");
-        if (canvas == null || overlayCanvas == null || cropOverlay == null) return;
-
-        double w = canvas.Bounds.Width;
-        double h = canvas.Bounds.Height;
-        if (w <= 0 || h <= 0) return;
-
-        var cropRect = CropAnnotation.GetAutoCropBounds(_view.EditorCore?.SourceImage, new Size(w, h));
-        cropOverlay.Fill = Brushes.Transparent;
-        cropOverlay.Stroke = Brushes.White;
-        cropOverlay.StrokeThickness = 1;
-        cropOverlay.StrokeDashArray = new global::Avalonia.Collections.AvaloniaList<double>();
-        cropOverlay.SetValue(Panel.ZIndexProperty, CropOverlayZIndex);
-        cropOverlay.IsVisible = true;
-        Canvas.SetLeft(cropOverlay, ToOverlayCoordinate(cropRect.Left));
-        Canvas.SetTop(cropOverlay, ToOverlayCoordinate(cropRect.Top));
-        cropOverlay.Width = cropRect.Width;
-        cropOverlay.Height = cropRect.Height;
-        _cropActive = true;
-        _cropAdorner.Attach(overlayCanvas);
-        UpdateCropAdorners(overlayCanvas, cropRect);
-        ShowCropHandles(overlayCanvas, cropRect);
-    }
-
-    private void BeginQuickCrop()
+    private void BeginCrop()
     {
         var cropOverlay = _view.FindControl<global::Avalonia.Controls.Shapes.Rectangle>("CropOverlay");
         if (cropOverlay == null) return;
@@ -1196,10 +1156,6 @@ public class EditorInputController
         _currentShape = cropOverlay;
     }
 
-    /// <summary>
-    /// Computes the auto-crop rectangle by detecting content bounds from the source image.
-    /// Falls back to full image bounds if auto-crop finds no meaningful region.
-    /// </summary>
     private void ShowCropHandles(Canvas overlay, Rect cropRect)
     {
         HideCropHandles(overlay);
@@ -1461,7 +1417,7 @@ public class EditorInputController
         }
     }
 
-    private void UpdateQuickCropPreview(Rect newRect)
+    private void UpdateCropPreview(Rect newRect)
     {
         var cropOverlay = _view.FindControl<global::Avalonia.Controls.Shapes.Rectangle>("CropOverlay");
         if (cropOverlay == null) return;
