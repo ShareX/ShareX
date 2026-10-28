@@ -18,6 +18,22 @@
              FocusAdorner="{x:Null}">
 
     <UserControl.Styles>
+        <Style Selector="Button.crop-confirm-button">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Popup}"/>
+
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Popup}"/>
+            </Style>
+
+            <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+            </Style>
+
+            <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Popup}"/>
+            </Style>
+        </Style>
+
         <Style Selector="Border.gradient-preview-half">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>

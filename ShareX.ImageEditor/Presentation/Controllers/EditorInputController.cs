@@ -1216,6 +1216,7 @@ public class EditorInputController
 
         var button = new Button
         {
+            Classes = { "crop-confirm-button" },
             Content = Strings.EditorView_Crop,
             Padding = new Thickness(16, 6),
             Cursor = new Cursor(StandardCursorType.Hand),
