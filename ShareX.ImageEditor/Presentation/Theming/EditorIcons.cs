@@ -30,32 +30,34 @@ namespace ShareX.ImageEditor.Presentation.Theming
 {
     public static class EditorIcons
     {
-        public const string ToolSelect = LucideIcons.mouse_pointer_2;
-        public const string ToolRectangle = LucideIcons.square;
-        public const string ToolEllipse = LucideIcons.circle;
-        public const string ToolLine = LucideIcons.minus;
-        public const string ToolArrow = LucideIcons.arrow_right;
-        public const string ToolFreehand = LucideIcons.pencil;
-        public const string ToolHighlight = LucideIcons.highlighter;
-        public const string ToolText = LucideIcons.type;
-        public const string ToolSpeechBalloon = LucideIcons.message_square;
-        public const string ToolStep = LucideIcons.hash;
-        public const string ToolCursor = LucideIcons.mouse_pointer;
-        public const string ToolBlur = LucideIcons.droplet;
-        public const string ToolPixelate = LucideIcons.grid_2x2;
-        public const string ToolMagnify = LucideIcons.search;
-        public const string ToolSpotlight = LucideIcons.lightbulb;
-        public const string ToolSmartEraser = LucideIcons.eraser;
-        public const string ToolCrop = LucideIcons.crop;
-        public const string ToolCutOut = LucideIcons.scissors;
-        public const string ToolImage = LucideIcons.image;
-        public const string ToolClone = LucideIcons.copy;
-        public const string ToolEmoji = LucideIcons.smile;
+        public const string ToolSelect = ShareXIcons.tool_select;
+        public const string ToolRectangle = ShareXIcons.tool_rectangle;
+        public const string ToolEllipse = ShareXIcons.tool_ellipse;
+        public const string ToolLine = ShareXIcons.tool_line;
+        public const string ToolArrow = ShareXIcons.tool_arrow;
+        public const string ToolFreehand = ShareXIcons.tool_freehand;
+        public const string ToolHighlight = ShareXIcons.tool_highlight;
+        public const string ToolText = ShareXIcons.tool_text;
+        public const string ToolSpeechBalloon = ShareXIcons.tool_speech_balloon;
+        public const string ToolStep = ShareXIcons.tool_step;
+        public const string ToolCursor = ShareXIcons.tool_cursor;
+        public const string ToolBlur = ShareXIcons.tool_blur;
+        public const string ToolPixelate = ShareXIcons.tool_pixelate;
+        public const string ToolMagnify = ShareXIcons.tool_magnify;
+        public const string ToolSpotlight = ShareXIcons.tool_spotlight;
+        public const string ToolSmartEraser = ShareXIcons.tool_smart_eraser;
+        public const string ToolCrop = ShareXIcons.tool_crop;
+        public const string ToolCutOut = ShareXIcons.tool_cut_out;
+        public const string ToolImage = ShareXIcons.tool_image;
+        public const string ToolClone = ShareXIcons.tool_clone;
+        public const string ToolEmoji = ShareXIcons.tool_emoji;
+        public const string ToolEmojiSunglasses = ShareXIcons.tool_emoji_sunglasses;
 
         public const string ActionUndo = LucideIcons.undo_2;
         public const string ActionRedo = LucideIcons.redo_2;
         public const string ActionDelete = LucideIcons.trash_2;
         public const string ActionClearAll = LucideIcons.brush_cleaning;
+        public const string ActionCut = LucideIcons.scissors;
         public const string ActionCopy = LucideIcons.clipboard;
         public const string ActionPaste = LucideIcons.clipboard_paste;
         public const string ActionDuplicate = LucideIcons.copy_plus;
