@@ -30,7 +30,4 @@
     <Using Include="ShareX.PhotoEditor.Core.TextAlignment" Alias="TextAlignment" />
   </ItemGroup>
 
-  <ItemGroup>
-    <InternalsVisibleTo Include="ShareX.PhotoEditor.Tests" />
-  </ItemGroup>
 </Project>
