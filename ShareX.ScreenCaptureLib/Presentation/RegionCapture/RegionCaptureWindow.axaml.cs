@@ -224,7 +224,9 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        if (_regionToolActive && e.Key == Key.Enter && HasValidSelection())
+        if (e.Key == Key.Enter && HasValidSelection() && !e.Handled &&
+            _viewModel?.IsModalOpen != true && e.Source is not TextBox &&
+            FocusManager?.GetFocusedElement() is not TextBox)
         {
             e.Handled = true;
             Complete(_regionOverlay.SelectionRectangle);
@@ -564,6 +566,7 @@ public partial class RegionCaptureWindow : Window
         _regionInputSurface.IsVisible = true;
         _regionInputSurface.IsHitTestVisible = true;
         _regionOverlay.IsVisible = true;
+        _regionOverlay.ShowCursorCrosshair = _request?.RegionCaptureOptions.ShowScreenCrosshair == true;
         SetRegionResizeNodesVisible(_request?.RegionCaptureOptions.QuickCapture == false && HasValidSelection());
         _regionToolButton.Classes.Set("active", true);
         _viewModel?.SetHostToolbarToolsActive(false);
@@ -589,9 +592,11 @@ public partial class RegionCaptureWindow : Window
 
         _regionToolActive = false;
         SetInteraction(RegionInteraction.None);
-        _regionInputSurface.IsVisible = false;
+        bool showSelection = !_request.RegionCaptureOptions.QuickCapture && HasValidSelection();
+        _regionInputSurface.IsVisible = showSelection;
         _regionInputSurface.IsHitTestVisible = false;
-        _regionOverlay.IsVisible = false;
+        _regionOverlay.IsVisible = showSelection;
+        _regionOverlay.ShowCursorCrosshair = false;
         SetRegionResizeNodesVisible(false);
         _regionOverlay.HoverRectangle = default;
         _hoverCandidate = null;
