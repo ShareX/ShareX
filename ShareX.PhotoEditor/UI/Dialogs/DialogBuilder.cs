@@ -127,8 +127,9 @@ public static class DialogBuilder
     {
         Slider slider = new() { Minimum = min, Maximum = max, Value = value, MinWidth = 180, VerticalAlignment = VerticalAlignment.Center };
         NumericUpDown box = Number(min, max, value, step, format);
-        box.Width = 90;
-        box.MinWidth = 90;
+        box.Width = 72;
+        box.ShowButtonSpinner = false;
+        box.MinWidth = 60;
         bool syncing = false;
         slider.ValueChanged += (_, e) =>
         {

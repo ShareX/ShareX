@@ -73,7 +73,15 @@ public sealed class HistoryPanel : EditorPanel
         History history = doc.History;
         foreach (HistoryEntry snapshot in history.Snapshots) _list.Children.Add(CreateRow(doc, snapshot, -1, true));
         if (history.Snapshots.Count > 0) _list.Children.Add(new Border { Height = 1, Background = Brushes.Gray, Margin = new Thickness(0, 2) });
-        for (int i = 0; i < history.Entries.Count; i++) _list.Children.Add(CreateRow(doc, history.Entries[i], i, false));
+        Control? current = null;
+        for (int i = 0; i < history.Entries.Count; i++)
+        {
+            Control row = CreateRow(doc, history.Entries[i], i, false);
+            if (i == history.Index) current = row;
+            _list.Children.Add(row);
+        }
+        // Keep the current state visible, like the reference panel.
+        if (current != null) Avalonia.Threading.Dispatcher.UIThread.Post(() => current.BringIntoView(), Avalonia.Threading.DispatcherPriority.Background);
     }
 
     private Control CreateRow(PhotoDocument doc, HistoryEntry entry, int index, bool snapshot)
