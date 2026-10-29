@@ -348,6 +348,48 @@ public sealed class BrushStroke : IDisposable
         return mask;
     }
 
+    /// <summary>Returns the stroke coverage as a mask in target coordinates.</summary>
+    public PixelSurface GetLocalCoverageMask(byte threshold = 0)
+    {
+        PixelSurface mask = PixelSurface.CreateMask(Target.Width, Target.Height);
+        if (_coverage == null) return mask;
+        Span<byte> span = mask.GetSpan();
+        for (int y = 0; y < Target.Height; y++)
+        {
+            for (int x = 0; x < Target.Width; x++)
+            {
+                int c = _coverage[y * Target.Width + x] >> 8;
+                if (c > threshold) span[y * mask.RowBytes + x] = threshold > 0 ? (byte)255 : (byte)c;
+            }
+        }
+        return mask;
+    }
+
+    /// <summary>Creates a bitmap of the target as it was before the stroke (color targets in accumulate mode).</summary>
+    public unsafe SKBitmap CreateBaseBitmap()
+    {
+        SKBitmap bitmap = ImageOps.CreateBitmap(Target.Width, Target.Height);
+        if (_baseColor == null) return bitmap;
+        uint* p = (uint*)bitmap.GetPixels();
+        int stride = bitmap.RowBytes / 4;
+        for (int y = 0; y < Target.Height; y++)
+            for (int x = 0; x < Target.Width; x++)
+                p[y * stride + x] = _baseColor[y * Target.Width + x];
+        return bitmap;
+    }
+
+    /// <summary>Restores the pre-stroke pixels inside an area (target coordinates).</summary>
+    public unsafe void RestoreBase(SKRectI area)
+    {
+        if (_baseColor == null) return;
+        area.Intersect(new SKRectI(0, 0, Target.Width, Target.Height));
+        uint* p = (uint*)Target.Bitmap.GetPixels();
+        int stride = Target.RowBytes / 4;
+        for (int y = area.Top; y < area.Bottom; y++)
+            for (int x = area.Left; x < area.Right; x++)
+                p[y * stride + x] = _baseColor[y * Target.Width + x];
+    }
+
     /// <summary>Original pixel before the stroke started (accumulate mode only).</summary>
     public uint BasePixel(int x, int y) => _baseColor != null && x >= 0 && y >= 0 && x < Target.Width && y < Target.Height ? _baseColor[y * Target.Width + x] : 0;
 

@@ -263,6 +263,9 @@ public sealed class PhotoDocument : IDisposable
         NotifyStructureChanged();
     }
 
+    /// <summary>Sets the selection during an interactive edit without emptiness checks or notifications.</summary>
+    public void SetSelectionLive(PixelSurface? selection) => Selection = selection;
+
     public bool HasSelection => Selection != null;
 
     /// <summary>Returns the selection coverage (0..1) at a document position. With no selection everything is selected.</summary>
