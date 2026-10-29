@@ -63,5 +63,8 @@ public static partial class EditorCommands
         return null;
     }
 
-    public static IReadOnlyList<MenuNode> MainMenu { get; } = BuildMenu();
+    private static IReadOnlyList<MenuNode>? _mainMenu;
+
+    // Built lazily: static fields of the other partial files are not initialized in a defined order.
+    public static IReadOnlyList<MenuNode> MainMenu => _mainMenu ??= BuildMenu();
 }

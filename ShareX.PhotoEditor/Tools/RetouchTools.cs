@@ -283,7 +283,7 @@ public sealed class RedEyeTool : ToolBase
         {
             // Find the red blob around the click.
             float radius = Math.Max(12, Math.Min(Doc.Width, Doc.Height) * 0.04f);
-            rect = FindRedRegion(layer, input.DocPixel, (int)radius) ?? SKRect.Create(_start.X - radius, _start.Y - radius, radius * 2, radius * 2);
+            rect = FindRedRegion(layer, new SKPointI((int)_start.X, (int)_start.Y), (int)radius) ??SKRect.Create(_start.X - radius, _start.Y - radius, radius * 2, radius * 2);
         }
         layer.EnsureCovers(Doc.Bounds);
         PixelSurface surface = layer.GetWritableSurface();
