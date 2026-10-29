@@ -8,6 +8,7 @@
              xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
              xmlns:theming="clr-namespace:ShareX.ImageEditor.Presentation.Theming;assembly=ShareX.ImageEditor"
              xmlns:icons="clr-namespace:ShareX.AvaloniaUI.Theming;assembly=ShareX.Avalonia"
+             xmlns:iconControls="clr-namespace:ShareX.AvaloniaUI.Controls;assembly=ShareX.Avalonia"
              x:Class="ShareX.ImageEditor.Presentation.Controls.AnnotationToolbar"
              x:Name="AnnotationToolbarRoot"
              x:DataType="abstractions:IAnnotationToolbarAdapter">
@@ -17,6 +18,13 @@
             <converters:EqualsConverter x:Key="EqualsConverter"/>
         </ResourceDictionary>
     </UserControl.Resources>
+
+    <UserControl.Styles>
+        <Style Selector="Button.toolbar-button">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Padding" Value="6"/>
+        </Style>
+    </UserControl.Styles>
 
     <StackPanel Orientation="Vertical" Spacing="0">
         <Border Padding="4"
@@ -53,7 +61,8 @@
                                                        Text="{Binding Icon}"
                                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                        FontWeight="Normal"
-                                                       FontSize="18"
+                                                       FontSize="24"
+                                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
                                                        VerticalAlignment="Center"/>
                                             <Border Grid.Column="1"/>
                                             <TextBlock Grid.Column="2"
@@ -122,7 +131,9 @@
                                             PointerPressed="OnToolbarItemPointerPressed"
                                             IsVisible="{Binding IsRegularButton}"
                                             ToolTip.Tip="{Binding ToolTip}"
-                                            Content="{Binding Icon}"/>
+                                            AutomationProperties.Name="{Binding ToolTip}">
+                                        <iconControls:IconPresenter Icon="{Binding Icon}"/>
+                                    </Button>
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -176,15 +187,11 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             ToolTip.Tip="{Binding ActiveToolName}">
-                        <TextBlock Text="{Binding ActiveToolIcon}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                   FontSize="18"
-                                   FontWeight="Normal"
-                                   Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   TextAlignment="Center"
-                                   Width="24"/>
+                        <iconControls:IconPresenter Icon="{Binding ActiveToolIcon}"
+                                                    FontSize="24"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Center"/>
                     </Border>
 
                     <controls:ColorPickerDropdown x:Name="StrokeColorPicker"
@@ -308,15 +315,11 @@
                                     HorizontalAlignment="Center"
                                     IsVisible="{Binding ShowSpotlightBlur}"
                                     ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Bluramount}">
-                            <TextBlock Text="{x:Static theming:EditorIcons.ToolBlur}"
-                                                FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                FontSize="18"
-                                                FontWeight="Normal"
-                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                VerticalAlignment="Center"
-                                                HorizontalAlignment="Center"
-                                                TextAlignment="Center"
-                                                Width="24"/>
+                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ToolBlur}"
+                                                        FontSize="24"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        VerticalAlignment="Center"
+                                                        HorizontalAlignment="Center"/>
                     </Border>
 
                     <controls:StrengthSlider x:Name="SpotlightBlurSlider"
@@ -331,7 +334,9 @@
                             Click="OnEffectEllipseClick"
                             IsVisible="{Binding ShowEffectEllipse}"
                             ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggleellipseshape}"
-                            Content="{x:Static theming:EditorIcons.ToggleEllipseShape}"/>
+                            AutomationProperties.Name="{x:Static res:Strings.AnnotationToolbar_Toggleellipseshape}">
+                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ToggleEllipseShape}"/>
+                    </Button>
                     <Button Classes="toolbar-button"
                             Classes.active="{Binding SpeechBalloonTail}"
                             Click="OnSpeechBalloonTailClick"

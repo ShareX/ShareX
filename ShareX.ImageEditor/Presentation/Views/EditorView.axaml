@@ -10,6 +10,7 @@
              xmlns:editorTheming="using:ShareX.ImageEditor.Presentation.Theming"
              xmlns:helpers="using:ShareX.ImageEditor.Presentation.Rendering"
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
+             xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
              xmlns:easterEggs="using:ShareX.ImageEditor.Presentation.EasterEggs"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
              x:Class="ShareX.ImageEditor.Presentation.Views.EditorView"
@@ -135,7 +136,7 @@
 
             <MenuItem Header="{x:Static res:Strings.EditorView_Cut}" Command="{Binding CutAnnotationCommand}" InputGesture="Ctrl+X">
                 <MenuItem.Icon>
-                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ToolCutOut}"/>
+                    <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static editorTheming:EditorIcons.ActionCut}"/>
                 </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="{x:Static res:Strings.EditorView_Copy}" Command="{Binding CopyAnnotationCommand}" InputGesture="Ctrl+Shift+C">
@@ -653,13 +654,12 @@
                     PointerExited="OnNotificationPointerExited"
                     PointerPressed="OnNotificationPointerPressed">
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                    <TextBlock Grid.Column="0"
-                               Text="{Binding NotificationIcon}"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"
-                               FontSize="18"
-                               VerticalAlignment="Center"
-                               IsVisible="{Binding HasNotificationIcon}"/>
+                    <iconControls:IconPresenter Grid.Column="0"
+                                                Icon="{Binding NotificationIcon}"
+                                                FontSize="18"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                VerticalAlignment="Center"
+                                                IsVisible="{Binding HasNotificationIcon}"/>
                     <TextBlock Grid.Column="1"
                                Text="{Binding NotificationMessage}"
                                TextWrapping="Wrap"
