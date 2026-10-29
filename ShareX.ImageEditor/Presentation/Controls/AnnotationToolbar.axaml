@@ -21,7 +21,7 @@
 
     <UserControl.Styles>
         <Style Selector="Button.toolbar-button">
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="22"/>
             <Setter Property="Padding" Value="6"/>
         </Style>
     </UserControl.Styles>
