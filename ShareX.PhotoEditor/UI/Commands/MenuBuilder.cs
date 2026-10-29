@@ -61,21 +61,27 @@ public static class MenuBuilder
         {
             foreach (MenuNode child in node.Children) parent.Items.Add(CreateItem(editor, child));
         }
+        int staticCount = parent.Items.Count;
         if (node.Dynamic != null)
         {
             parent.Items.Add(new MenuItem { Header = "(empty)", IsEnabled = false });
         }
-        parent.SubmenuOpened += (_, _) => RefreshItems(editor, parent, node);
+        parent.SubmenuOpened += (_, e) =>
+        {
+            // SubmenuOpened bubbles up from nested submenus; only refresh when this menu itself opens,
+            // otherwise rebuilding the items would close the submenu that was just opened.
+            if (!ReferenceEquals(e.Source, parent)) return;
+            RefreshItems(editor, parent, node, staticCount);
+        };
         return parent;
     }
 
-    /// <summary>Updates enabled/checked state and rebuilds dynamic submenus when a menu opens.</summary>
-    private static void RefreshItems(PhotoEditorWindow editor, MenuItem parent, MenuNode node)
+    /// <summary>Updates enabled/checked state and rebuilds the dynamic part of a submenu when it opens.</summary>
+    private static void RefreshItems(PhotoEditorWindow editor, MenuItem parent, MenuNode node, int staticCount)
     {
         if (node.Dynamic != null)
         {
-            parent.Items.Clear();
-            foreach (MenuNode child in node.Children ?? []) parent.Items.Add(CreateItem(editor, child));
+            while (parent.Items.Count > staticCount) parent.Items.RemoveAt(parent.Items.Count - 1);
             List<MenuNode> dynamic = node.Dynamic(editor).ToList();
             if (dynamic.Count == 0) parent.Items.Add(new MenuItem { Header = "(empty)", IsEnabled = false });
             foreach (MenuNode child in dynamic) parent.Items.Add(CreateItem(editor, child));
