@@ -33,6 +33,7 @@
     <ProjectReference Include="..\ShareX.Tools\ShareX.Tools.csproj" />
     <ProjectReference Include="..\ShareX.HistoryLib\ShareX.HistoryLib.csproj" />
     <ProjectReference Include="..\ShareX.ImageEditor\ShareX.ImageEditor.csproj" />
+    <ProjectReference Include="..\ShareX.PhotoEditor\ShareX.PhotoEditor.csproj" />
     <ProjectReference Include="..\ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj" />
     <ProjectReference Include="..\ShareX.NativeMessagingHost\ShareX.NativeMessagingHost.csproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

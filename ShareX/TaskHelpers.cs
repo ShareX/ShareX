@@ -29,6 +29,7 @@ using ShareX.AvaloniaUI.Windows;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.ImageEditor.Integration;
+using ShareX.PhotoEditor.Integration;
 using ShareX.ImageEffectsLib;
 using ShareX.Localization;
 using ShareX.Properties;
@@ -237,6 +238,9 @@ namespace ShareX
                     {
                         OpenImageEditor(safeTaskSettings);
                     }
+                    break;
+                case HotkeyType.PhotoEditor:
+                    OpenPhotoEditor(filePath, safeTaskSettings);
                     break;
                 case HotkeyType.ImageBeautifier:
                     if (!string.IsNullOrEmpty(filePath))
@@ -1497,6 +1501,35 @@ namespace ShareX
             }
         }
 
+        public static void OpenPhotoEditor(string filePath = null, TaskSettings taskSettings = null)
+        {
+            OpenPhotoEditor(string.IsNullOrEmpty(filePath) ? null : [filePath], null, taskSettings);
+        }
+
+        public static void OpenPhotoEditor(IEnumerable<string> filePaths, Bitmap image, TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            PhotoEditorServices services = new PhotoEditorServices
+            {
+                SettingsFilePath = StartupOptions.Sandbox ? null : Path.Combine(AppPaths.PersonalFolder, "PhotoEditor.json"),
+                DefaultFolder = GetScreenshotsFolder(taskSettings),
+                UploadImage = skBitmap => UploadImageOnUiThread(skBitmap.Copy(), taskSettings),
+                CopyImage = skBitmap => CopyImageOnUiThread(skBitmap),
+                PinImage = skBitmap => PinToScreen(skBitmap.Copy(), taskSettings),
+                PrintImage = skBitmap => PrintImageOnUiThread(skBitmap.Copy()),
+                RunImageTask = (skBitmap, path) =>
+                {
+                    Bitmap copy = skBitmap.Copy();
+                    InvokeOnUiThread(() => UploadManager.RunImageTask(copy, taskSettings));
+                },
+                CaptureRegion = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions),
+                CaptureFullscreen = () => Task.FromResult(GetScreenshot(taskSettings).CaptureFullscreen())
+            };
+
+            PhotoEditorIntegration.Show(services, filePaths, image, image != null ? "Screenshot" : null);
+        }
+
         public static void OpenImageBeautifier(TaskSettings taskSettings = null)
         {
             string filePath = SkiaImageHelpers.OpenImageFileDialog();
@@ -2311,6 +2344,7 @@ namespace ShareX
                 HotkeyType.PinToScreenFromFile => LucideIcons.file_image,
                 HotkeyType.PinToScreenCloseAll => LucideIcons.pin_off,
                 HotkeyType.ImageEditor => LucideIcons.image,
+                HotkeyType.PhotoEditor => LucideIcons.layers,
                 HotkeyType.ImageBeautifier => LucideIcons.sparkles,
                 HotkeyType.ImageEffects => LucideIcons.wand_sparkles,
                 HotkeyType.ImageViewer => LucideIcons.eye,

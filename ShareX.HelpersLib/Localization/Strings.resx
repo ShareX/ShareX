@@ -693,6 +693,9 @@ Do you still want to run it?</value>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>Image editor</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Photo editor</value>
+  </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Image effects</value>
   </data>

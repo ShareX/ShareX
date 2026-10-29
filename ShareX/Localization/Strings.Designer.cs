@@ -422,6 +422,15 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("MainMenuBuilder_ImageEditor", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Photo editor....
+        /// </summary>
+        public static string MainMenuBuilder_PhotoEditor {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_PhotoEditor", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Image effects....
