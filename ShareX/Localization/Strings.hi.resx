@@ -1580,6 +1580,9 @@
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>ShareX दिखाएँ</value>
   </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>आँकड़े...</value>
+  </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>कार्य सेटिंग...</value>
   </data>
@@ -2305,6 +2308,9 @@
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>विंडो क्षेत्र पहचानें</value>
+  </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>वर्तमान चयन को छोड़कर सब कुछ मंद करें</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>पूर्ण स्क्रीन में टोस्ट सूचनाएँ अक्षम करें</value>

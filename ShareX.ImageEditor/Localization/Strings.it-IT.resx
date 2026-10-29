@@ -1149,6 +1149,12 @@ Gli appunti non contengono un’immagine.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Prova una parola chiave diversa.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Nessun carattere corrispondente</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Cerca caratteri...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Inserisci immagine sotto</value>
   </data>

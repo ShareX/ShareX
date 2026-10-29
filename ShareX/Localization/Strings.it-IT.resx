@@ -1580,6 +1580,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>Mostra ShareX</value>
   </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Statistiche...</value>
+  </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Impostazioni Operazione</value>
   </data>
@@ -2305,6 +2308,9 @@ Do you want to abort the active registrazione schermo?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Rileva regioni delle finestre</value>
+  </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>Oscura tutto tranne la selezione corrente</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Disattiva notifiche a comparsa a schermo intero</value>

@@ -1149,6 +1149,12 @@
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>別のキーワードを試してください。</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>一致するフォントがありません</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>フォントを検索...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>画像を下に挿入</value>
   </data>

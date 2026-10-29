@@ -45,6 +45,7 @@ namespace ShareX.ScreenCaptureLib
         public bool DetectControls = true;
         public bool ActiveMonitorMode = false;
         public int BackgroundDimStrength = 20;
+        public bool DimAllExceptSelection = false;
         public List<ImageEditorToolbarItemOptions> ToolbarItems = new List<ImageEditorToolbarItemOptions>();
 
         public RegionCaptureAction RegionCaptureActionRightClick = RegionCaptureAction.RemoveShapeCancelCapture;

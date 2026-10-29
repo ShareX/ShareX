@@ -1580,6 +1580,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>ShareX anzeigen</value>
   </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Statistik...</value>
+  </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Aufgabeneinstellungen</value>
   </data>
@@ -2305,6 +2308,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Fensterbereiche erkennen</value>
+  </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>Alles außer der aktuellen Auswahl abdunkeln</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Toast-Benachrichtigungen im Vollbildmodus deaktivieren</value>

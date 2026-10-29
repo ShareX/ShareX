@@ -1149,6 +1149,12 @@ Schránka neobsahuje obrázek.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Zkuste jiné klíčové slovo.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Žádná odpovídající písma</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Hledat písma...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Vložit obrázek dolů</value>
   </data>

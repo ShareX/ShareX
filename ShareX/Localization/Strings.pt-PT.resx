@@ -1580,6 +1580,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>Mostrar ShareX</value>
   </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Estatísticas...</value>
+  </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Configuração de tarefas</value>
   </data>
@@ -2305,6 +2308,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Detectar regiões de janela</value>
+  </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>Escurecer tudo, exceto a seleção atual</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Desativar notificações em tela cheia</value>

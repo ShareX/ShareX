@@ -1580,6 +1580,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>Tampilkan ShareX</value>
   </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Statistik...</value>
+  </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Pengaturan tugas</value>
   </data>
@@ -2305,6 +2308,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Deteksi wilayah jendela</value>
+  </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>Redupkan semua kecuali pemilihan saat ini</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Nonaktifkan notifikasi saat layar penuh</value>

@@ -1580,6 +1580,9 @@
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>Показати ShareX</value>
   </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Статистика...</value>
+  </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Налаштування завдань</value>
   </data>
@@ -2305,6 +2308,9 @@
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Виявляти області вікон</value>
+  </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>Затемнювати все, крім поточного виділення</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Вимкнути сповіщення в повноекранному режимі</value>

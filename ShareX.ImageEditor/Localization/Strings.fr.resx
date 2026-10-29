@@ -1149,6 +1149,12 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Essayez un autre mot-clé.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Aucune police correspondante</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Rechercher des polices...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Insérer l’image en dessous</value>
   </data>

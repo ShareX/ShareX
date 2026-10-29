@@ -1580,6 +1580,9 @@
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>إظهار ShareX</value>
   </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>الإحصاءات...</value>
+  </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>إعدادات المهمة</value>
   </data>
@@ -2305,6 +2308,9 @@
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>اكتشاف مناطق النوافذ</value>
+  </data>
+  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
+    <value>تعتيم الكل باستثناء التحديد الحالي</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>تعطيل الإشعارات في وضع ملء الشاشة</value>

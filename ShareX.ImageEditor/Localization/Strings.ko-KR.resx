@@ -1149,6 +1149,12 @@
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>다른 키워드를 사용해 보세요.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>일치하는 글꼴이 없습니다</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>글꼴 검색...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>아래에 이미지 삽입</value>
   </data>

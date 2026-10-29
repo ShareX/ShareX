@@ -1149,6 +1149,12 @@ Udklipsholder indeholder intet billede.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Prøv et andet søgeord.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Ingen matchende skrifttyper</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Søg efter skrifttyper...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Indsæt billedet nedenfor</value>
   </data>

@@ -35,6 +35,7 @@ internal enum MainFormCommand
     ScreenshotsFolder,
     History,
     ImageHistory,
+    Stats,
     DebugLog,
     TestImageUpload,
     TestTextUpload,

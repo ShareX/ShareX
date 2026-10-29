@@ -1,0 +1,7 @@
+interface:
+  display_name: "Merge External PR"
+  short_description: "Review an external GitHub PR and merge it locally"
+  default_prompt: "Use $merge-external-pr with the supplied GitHub PR URL to review all incoming changes for security concerns and, if the review passes, merge locally with --no-ff and the PR title."
+
+policy:
+  allow_implicit_invocation: true
