@@ -61,6 +61,9 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
         public event EventHandler<string>? FontFamilyChanged;
 
+        private string _searchQuery = string.Empty;
+        private bool _escapeKeyDownHandled;
+
         public FontFamilyPickerDropdown()
         {
             AvaloniaXamlLoader.Load(this);
@@ -70,6 +73,22 @@ namespace ShareX.ImageEditor.Presentation.Controls
             {
                 popup.Opened += OnPopupOpened;
                 popup.Closed += OnPopupClosed;
+            }
+
+            var itemsControl = this.FindControl<ItemsControl>("FontFamilyItems");
+            if (itemsControl != null)
+            {
+                itemsControl.ContainerPrepared += OnFontFamilyContainerPrepared;
+            }
+        }
+
+        protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+        {
+            base.OnPropertyChanged(change);
+
+            if (change.Property == FontFamilyOptionsProperty)
+            {
+                UpdateNoResultsText();
             }
         }
 
@@ -82,6 +101,8 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
         private void OnPopupClosed(object? sender, EventArgs e)
         {
+            _escapeKeyDownHandled = false;
+
             var searchBox = this.FindControl<TextBox>("SearchBox");
             if (searchBox != null)
             {
@@ -89,7 +110,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
             }
         }
 
-        private IEnumerable<(ContentPresenter Presenter, Button Button, string FontFamily)> GetFontFamilyItems()
+        private IEnumerable<(Button Button, string FontFamily)> GetFontFamilyItems()
         {
             var itemsControl = this.FindControl<ItemsControl>("FontFamilyItems");
             if (itemsControl == null)
@@ -99,16 +120,16 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
             foreach (var item in itemsControl.GetRealizedContainers())
             {
-                if (item is ContentPresenter { Child: Button { CommandParameter: string fontFamily } button } presenter)
+                if (item is ContentPresenter { Child: Button { CommandParameter: string fontFamily } button })
                 {
-                    yield return (presenter, button, fontFamily);
+                    yield return (button, fontFamily);
                 }
             }
         }
 
         private void UpdateActiveStates()
         {
-            foreach (var (_, button, fontFamily) in GetFontFamilyItems())
+            foreach (var (button, fontFamily) in GetFontFamilyItems())
             {
                 if (string.Equals(fontFamily, SelectedFontFamily, StringComparison.Ordinal))
                 {
@@ -121,29 +142,52 @@ namespace ShareX.ImageEditor.Presentation.Controls
             }
         }
 
+        private void OnFontFamilyContainerPrepared(object? sender, ContainerPreparedEventArgs e)
+        {
+            // Containers created after a search, e.g. for a new FontFamilyOptions list, need the filter too.
+            if (sender is ItemsControl itemsControl && itemsControl.ItemFromContainer(e.Container) is string fontFamily)
+            {
+                e.Container.IsVisible = MatchesSearch(fontFamily, _searchQuery);
+            }
+        }
+
         private void ApplySearchFilter()
         {
-            string query = this.FindControl<TextBox>("SearchBox")?.Text?.Trim() ?? string.Empty;
-            bool hasMatch = false;
+            _searchQuery = this.FindControl<TextBox>("SearchBox")?.Text?.Trim() ?? string.Empty;
 
-            foreach (var (presenter, _, fontFamily) in GetFontFamilyItems())
+            var itemsControl = this.FindControl<ItemsControl>("FontFamilyItems");
+            if (itemsControl != null)
             {
-                bool isMatch = MatchesSearch(fontFamily, query);
-                presenter.IsVisible = isMatch;
-                hasMatch |= isMatch;
+                foreach (var container in itemsControl.GetRealizedContainers())
+                {
+                    if (itemsControl.ItemFromContainer(container) is string fontFamily)
+                    {
+                        container.IsVisible = MatchesSearch(fontFamily, _searchQuery);
+                    }
+                }
             }
 
-            var noResultsText = this.FindControl<TextBlock>("NoResultsText");
-            if (noResultsText != null)
-            {
-                noResultsText.IsVisible = !hasMatch;
-            }
+            UpdateNoResultsText();
 
             var scrollViewer = this.FindControl<ScrollViewer>("FontFamilyScrollViewer");
             if (scrollViewer != null)
             {
                 scrollViewer.Offset = default;
             }
+        }
+
+        private void UpdateNoResultsText()
+        {
+            var noResultsText = this.FindControl<TextBlock>("NoResultsText");
+            if (noResultsText != null)
+            {
+                noResultsText.IsVisible = GetFirstSearchMatch() == null;
+            }
+        }
+
+        private string? GetFirstSearchMatch()
+        {
+            return FontFamilyOptions?.FirstOrDefault(fontFamily => MatchesSearch(fontFamily, _searchQuery));
         }
 
         private static bool MatchesSearch(string fontFamily, string query)
@@ -158,8 +202,12 @@ namespace ShareX.ImageEditor.Presentation.Controls
             ApplySearchFilter();
         }
 
-        private void OnSearchKeyDown(object? sender, KeyEventArgs e)
+        // Handled on the popup content rather than the search box, so keys from a focused font button are covered too.
+        private void OnPopupKeyDown(object? sender, KeyEventArgs e)
         {
+            // A key down that reaches the popup content, such as one an IME processed, breaks the pairing with the next Escape key up.
+            _escapeKeyDownHandled = false;
+
             if (e.KeyModifiers != KeyModifiers.None)
             {
                 return;
@@ -167,32 +215,47 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
             if (e.Key == Key.Enter)
             {
-                foreach (var (presenter, _, fontFamily) in GetFontFamilyItems())
+                string? fontFamily = GetFirstSearchMatch();
+                if (fontFamily != null)
                 {
-                    if (presenter.IsVisible)
-                    {
-                        SelectFontFamily(fontFamily);
-                        break;
-                    }
+                    SelectFontFamily(fontFamily);
                 }
 
                 e.Handled = true;
             }
             else if (e.Key == Key.Escape)
             {
-                // Escape is acted on in OnSearchKeyUp, because the editor and region capture close on its key up.
+                // Escape is acted on in OnPopupKeyUp, because the editor and region capture close on its key up.
+                _escapeKeyDownHandled = true;
                 e.Handled = true;
             }
         }
 
-        private void OnSearchKeyUp(object? sender, KeyEventArgs e)
+        private void OnPopupKeyUp(object? sender, KeyEventArgs e)
         {
-            if (e.Key != Key.Escape || e.KeyModifiers != KeyModifiers.None)
+            if (e.Key != Key.Escape)
             {
                 return;
             }
 
-            if (sender is TextBox { Text.Length: > 0 } searchBox)
+            bool escapeKeyDownHandled = _escapeKeyDownHandled;
+            _escapeKeyDownHandled = false;
+
+            if (e.KeyModifiers != KeyModifiers.None)
+            {
+                return;
+            }
+
+            e.Handled = true;
+
+            // An IME consumes the Escape key down that cancels its composition but still sends the key up.
+            if (!escapeKeyDownHandled)
+            {
+                return;
+            }
+
+            var searchBox = this.FindControl<TextBox>("SearchBox");
+            if (searchBox != null && !string.IsNullOrEmpty(searchBox.Text))
             {
                 searchBox.Text = string.Empty;
             }
@@ -204,8 +267,6 @@ namespace ShareX.ImageEditor.Presentation.Controls
                     popup.IsOpen = false;
                 }
             }
-
-            e.Handled = true;
         }
 
         private void OnDropdownButtonClick(object? sender, RoutedEventArgs e)
