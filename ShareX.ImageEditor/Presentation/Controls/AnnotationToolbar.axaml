@@ -62,7 +62,6 @@
                                                        FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                                                        FontWeight="Normal"
                                                        FontSize="24"
-                                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
                                                        VerticalAlignment="Center"/>
                                             <Border Grid.Column="1"/>
                                             <TextBlock Grid.Column="2"
