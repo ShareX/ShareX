@@ -40,6 +40,12 @@ public static class ColorMath
         b = MathF.Min(1, (p & 0xFF) / 255f / a);
     }
 
+    public static (float r, float g, float b) Unpack3(uint p)
+    {
+        Unpack(p, out float r, out float g, out float b, out _);
+        return (r, g, b);
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static uint PackUnpremul(float r, float g, float b, float a)
     {
