@@ -86,6 +86,8 @@ public sealed class EditorSettings
 
     public bool ToolbarVisible { get; set; } = true;
 
+    public bool ToolbarTwoColumns { get; set; }
+
     public bool OptionsVisible { get; set; } = true;
 
     private static readonly JsonSerializerOptions JsonOptions = new()

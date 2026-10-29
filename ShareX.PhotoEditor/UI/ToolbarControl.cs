@@ -40,8 +40,11 @@ public sealed class ToolbarControl : UserControl
 {
     private static readonly IBrush ActiveBrush = new SolidColorBrush(Color.FromArgb(110, 62, 131, 242));
     private readonly PhotoEditorWindow _editor;
-    private readonly StackPanel _tools = new() { Spacing = 1 };
+    private const double SingleColumnWidth = 44;
+    private const double TwoColumnWidth = 80;
+    private readonly WrapPanel _tools = new() { Orientation = Orientation.Horizontal, ItemWidth = 36, ItemHeight = 37, HorizontalAlignment = HorizontalAlignment.Center };
     private readonly Dictionary<ToolGroup, Button> _buttons = [];
+    private readonly Button _columnsToggle;
     private Border? _foreground;
     private Border? _background;
     private Button? _quickMask;
@@ -49,8 +52,10 @@ public sealed class ToolbarControl : UserControl
     public ToolbarControl(PhotoEditorWindow editor)
     {
         _editor = editor;
-        Width = 44;
-        StackPanel root = new() { Spacing = 6, Margin = new Thickness(4, 6) };
+        _columnsToggle = new Button { Padding = new Thickness(4, 1), HorizontalAlignment = HorizontalAlignment.Stretch, HorizontalContentAlignment = HorizontalAlignment.Center, Background = Brushes.Transparent };
+        _columnsToggle.Click += (_, _) => ToggleColumns();
+        StackPanel root = new() { Spacing = 6, Margin = new Thickness(4, 2, 4, 6) };
+        root.Children.Add(_columnsToggle);
         root.Children.Add(_tools);
         root.Children.Add(new Border { Height = 1, Background = new SolidColorBrush(Color.FromArgb(70, 128, 128, 128)) });
         root.Children.Add(BuildColorWidget());
@@ -59,8 +64,26 @@ public sealed class ToolbarControl : UserControl
         root.Children.Add(SmallButton("screen-mode", "Change Screen Mode (F)", () => _editor.CycleScreenMode()));
         root.Children.Add(SmallButton("edit-toolbar", "Edit Toolbar...", () => _ = ToolbarCustomizeDialog.ShowAsync(_editor)));
         Content = new ScrollViewer { Content = root, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
+        ApplyColumns();
         Rebuild();
         _editor.Tools.ActiveChanged += RefreshActive;
+    }
+
+    /// <summary>Switches between the single-column and two-column toolbar layouts.</summary>
+    public void ToggleColumns()
+    {
+        _editor.Settings.ToolbarTwoColumns = !_editor.Settings.ToolbarTwoColumns;
+        ApplyColumns();
+    }
+
+    private void ApplyColumns()
+    {
+        bool two = _editor.Settings.ToolbarTwoColumns;
+        // The wrap panel lays tools out in one or two columns depending on the available width.
+        Width = two ? TwoColumnWidth : SingleColumnWidth;
+        _tools.Width = two ? 72 : 36;
+        _columnsToggle.Content = ToolIcons.Create(two ? "toolbar-collapse" : "toolbar-expand", 12);
+        ToolTip.SetTip(_columnsToggle, two ? "Single column toolbar" : "Two column toolbar");
     }
 
     private Button SmallButton(string icon, string tip, Action click)

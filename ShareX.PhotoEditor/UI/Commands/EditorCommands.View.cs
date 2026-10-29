@@ -146,6 +146,7 @@ public static partial class EditorCommands
                 w => w.Panels.TogglePanel(captured), null, w => w.Panels.IsPanelVisible(captured));
         }
         R("window.tools", "Tools", null, w => { w.Settings.ToolbarVisible = !w.Settings.ToolbarVisible; w.ApplyVisibility(); }, null, w => w.Settings.ToolbarVisible);
+        R("window.toolsTwoColumns", "Two Column Toolbar", null, w => w.ToggleToolbarColumns(), null, w => w.Settings.ToolbarTwoColumns);
         R("window.options", "Options", null, w => { w.Settings.OptionsVisible = !w.Settings.OptionsVisible; w.ApplyVisibility(); }, null, w => w.Settings.OptionsVisible);
         R("window.dock", "Panels", null, w => { w.Settings.RightDockVisible = !w.Settings.RightDockVisible; w.ApplyVisibility(); }, null, w => w.Settings.RightDockVisible);
         R("window.workspace.reset", "Reset Essentials", null, w =>
@@ -252,7 +253,7 @@ public static partial class EditorCommands
                 Header = "_Window",
                 Children = new[] { MenuNode.Sub("Workspace", C("window.workspace.reset"), C("window.workspace.save")), S }
                     .Concat(PanelIds.Select(p => C($"window.panel.{p.Id}")))
-                    .Concat([S, C("window.options"), C("window.tools"), C("window.dock"), S, C("window.nextDocument"), C("window.previousDocument"), S]).ToList(),
+                    .Concat([S, C("window.options"), C("window.tools"), C("window.toolsTwoColumns"), C("window.dock"), S, C("window.nextDocument"), C("window.previousDocument"), S]).ToList(),
                 Dynamic = w => w.Views.Select(v => new MenuNode { Header = v.Document.DisplayName, Action = win => win.ActivateView(v) })
             },
             MenuNode.Sub("_Help", C("help.tool"), C("help.shortcuts"), S, C("help.about"))

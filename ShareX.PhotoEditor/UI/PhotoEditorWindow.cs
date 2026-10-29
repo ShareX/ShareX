@@ -785,6 +785,8 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         _vRuler.IsVisible = Settings.ShowRulers;
     }
 
+    public void ToggleToolbarColumns() => _toolbar.ToggleColumns();
+
     public void RebuildToolbar()
     {
         Tools.ApplyLayout(Settings);

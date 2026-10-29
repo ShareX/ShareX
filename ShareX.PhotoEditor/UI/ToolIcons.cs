@@ -156,6 +156,8 @@ public static class ToolIcons
         ["edit-toolbar"] = ["F:M6 12 a1.5 1.5 0 1 0 0.01 0 Z", "F:M12 12 a1.5 1.5 0 1 0 0.01 0 Z", "F:M18 12 a1.5 1.5 0 1 0 0.01 0 Z"],
         ["chevron-down"] = ["M6 9 L12 15 L18 9"],
         ["chevron-right"] = ["M9 6 L15 12 L9 18"],
+        ["toolbar-expand"] = ["M5 7 L10 12 L5 17 M13 7 L18 12 L13 17"],
+        ["toolbar-collapse"] = ["M11 7 L6 12 L11 17 M19 7 L14 12 L19 17"],
         ["plus"] = ["M12 5 V19 M5 12 H19"],
         ["snapshot"] = ["M4 7 H8 L10 5 H14 L16 7 H20 V19 H4 Z", "M12 10 a3 3 0 1 0 0.01 0 Z"],
         ["new-document"] = ["M6 3 H14 L18 7 V21 H6 Z", "M14 3 V7 H18"],
