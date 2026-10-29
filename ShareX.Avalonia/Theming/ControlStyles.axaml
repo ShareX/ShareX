@@ -1,6 +1,5 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="using:ShareX.AvaloniaUI.Controls">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--
         Application-wide style entry point.
         Keep reusable selectors and style classes here so views stay focused on layout and behavior.
@@ -147,18 +146,6 @@
         <Setter Property="FontFamily" Value="{DynamicResource ShareX.FontFamily.Icon}"/>
         <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="FontSize" Value="18"/>
-
-        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
-        </Style>
-
-        <Style Selector="^ controls|IconPresenter">
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
-        </Style>
-
-        <Style Selector="^.active controls|IconPresenter">
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
     </Style>
 
     <Style Selector="Button.ratio-button">
