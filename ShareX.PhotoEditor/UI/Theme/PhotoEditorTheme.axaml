@@ -240,6 +240,8 @@
     <!-- Numeric fields: compact, no spinner by default -->
     <Style Selector="NumericUpDown">
         <Setter Property="ShowButtonSpinner" Value="False"/>
+        <Setter Property="TextAlignment" Value="Left"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="MinWidth" Value="0"/>
         <Setter Property="MinHeight" Value="22"/>
         <Setter Property="Height" Value="NaN"/>

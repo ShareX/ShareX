@@ -129,7 +129,6 @@ public sealed class ColorPickerControl : UserControl
         {
             while (fields.RowDefinitions.Count <= row) fields.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
             box.Width = 48;
-            box.HorizontalContentAlignment = HorizontalAlignment.Right;
             TextBlock caption = new() { Text = label, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 4, 0) };
             TextBlock suffix = new() { Text = unit, Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center };
             Grid.SetRow(caption, row); Grid.SetColumn(caption, column);

@@ -75,8 +75,7 @@ public sealed class OptionsBuilder
             FormatString = format,
             Width = width,
             ShowButtonSpinner = false,
-            VerticalAlignment = VerticalAlignment.Center,
-            HorizontalContentAlignment = HorizontalAlignment.Right
+            VerticalAlignment = VerticalAlignment.Center
         };
         if (tooltip != null) ToolTip.SetTip(box, tooltip);
         box.ValueChanged += (_, e) =>
@@ -109,7 +108,7 @@ public sealed class OptionsBuilder
                 e.Pointer.Capture(null);
             };
         }
-        // Suffix sits tight against the field so "100" and "%" read as one value.
+        // Suffix sits tight against the field.
         StackPanel field = new() { Orientation = Orientation.Horizontal, Spacing = 2, VerticalAlignment = VerticalAlignment.Center };
         field.Children.Add(box);
         if (suffix != null) field.Children.Add(new TextBlock { Text = suffix, Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center });

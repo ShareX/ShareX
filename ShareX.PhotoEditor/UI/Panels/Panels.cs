@@ -181,7 +181,7 @@ public sealed class ColorPanel : EditorPanel
     private bool _editBackground;
     private bool _updating;
 
-    private static NumericUpDown Channel() => new() { Minimum = 0, Maximum = 255, Increment = 1, FormatString = "0", Width = 40, ShowButtonSpinner = false, HorizontalContentAlignment = HorizontalAlignment.Right };
+    private static NumericUpDown Channel() => new() { Minimum = 0, Maximum = 255, Increment = 1, FormatString = "0", Width = 40, ShowButtonSpinner = false };
 
     public ColorPanel(PhotoEditorWindow editor) : base(editor)
     {

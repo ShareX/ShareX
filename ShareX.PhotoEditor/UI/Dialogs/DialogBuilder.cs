@@ -119,8 +119,7 @@ public static class DialogBuilder
             Increment = (decimal)increment,
             FormatString = format,
             Width = 90,
-            HorizontalAlignment = HorizontalAlignment.Left,
-            HorizontalContentAlignment = HorizontalAlignment.Right
+            HorizontalAlignment = HorizontalAlignment.Left
         };
     }
 
@@ -130,7 +129,6 @@ public static class DialogBuilder
         Slider slider = new() { Minimum = min, Maximum = max, Value = value, MinWidth = 100, Margin = new Thickness(6, 0, 0, 0), VerticalAlignment = VerticalAlignment.Center };
         NumericUpDown box = Number(min, max, value, step, format);
         box.VerticalAlignment = VerticalAlignment.Center;
-        box.HorizontalContentAlignment = HorizontalAlignment.Right;
         box.Width = 58;
         box.ShowButtonSpinner = false;
         box.MinWidth = 0;

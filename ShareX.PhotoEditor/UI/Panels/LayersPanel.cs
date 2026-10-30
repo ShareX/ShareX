@@ -49,7 +49,7 @@ public sealed class LayersPanel : EditorPanel
     private bool _dragging;
     private (Layer Target, int Position)? _drop;
 
-    private static NumericUpDown DialogsNumber() => new() { Minimum = 0, Maximum = 100, Increment = 1, FormatString = "0", Width = 42, ShowButtonSpinner = false, HorizontalContentAlignment = HorizontalAlignment.Right };
+    private static NumericUpDown DialogsNumber() => new() { Minimum = 0, Maximum = 100, Increment = 1, FormatString = "0", Width = 42, ShowButtonSpinner = false };
 
     public LayersPanel(PhotoEditorWindow editor) : base(editor)
     {
