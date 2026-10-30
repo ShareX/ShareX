@@ -228,6 +228,13 @@
         <Style Selector="^ /template/ TextPresenter">
             <Setter Property="TextElement.Foreground" Value="{DynamicResource PE.Brush.Text}"/>
         </Style>
+        <Style Selector="^:disabled">
+            <Setter Property="Opacity" Value="0.45"/>
+        </Style>
+        <Style Selector="^:disabled /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.FieldBorder}"/>
+        </Style>
     </Style>
 
     <!-- Numeric fields: compact, no spinner by default -->

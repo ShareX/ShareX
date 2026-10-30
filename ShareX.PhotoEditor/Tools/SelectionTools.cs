@@ -236,9 +236,10 @@ public sealed class MarqueeTool : SelectionToolBase
     {
         BuildCommonOptions(options, true, _ellipse);
         options.Separator();
-        options.EnumCombo("Style:", () => Style, v => Style = v, 110);
-        options.Number("W:", 1, 30000, () => FixedWidth, v => FixedWidth = (float)v, "0", null, 1, 64);
-        options.Number("H:", 1, 30000, () => FixedHeight, v => FixedHeight = (float)v, "0", null, 1, 64);
+        options.EnumCombo("Style:", () => Style, v => { Style = v; Host.RefreshOptions(); }, 110);
+        bool fixedStyle = Style != MarqueeStyle.Normal;
+        options.Number("W:", 1, 30000, () => FixedWidth, v => FixedWidth = (float)v, "0", null, 1, 64).IsEnabled = fixedStyle;
+        options.Number("H:", 1, 30000, () => FixedHeight, v => FixedHeight = (float)v, "0", null, 1, 64).IsEnabled = fixedStyle;
         options.Separator();
         options.Button("Select and Mask...", () => UI.Commands.EditorCommands.SelectAndMask(Host), "Refine the selection edge");
     }
