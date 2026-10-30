@@ -118,7 +118,9 @@ public static class DialogBuilder
             Value = (decimal)Math.Clamp(value, min, max),
             Increment = (decimal)increment,
             FormatString = format,
-            MinWidth = 110
+            Width = 90,
+            HorizontalAlignment = HorizontalAlignment.Left,
+            HorizontalContentAlignment = HorizontalAlignment.Right
         };
     }
 

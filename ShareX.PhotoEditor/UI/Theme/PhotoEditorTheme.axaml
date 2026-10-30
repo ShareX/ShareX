@@ -434,9 +434,8 @@
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
         <Style Selector="^ /template/ Path#PART_ChevronPath">
-            <Setter Property="Width" Value="5"/>
-            <Setter Property="Height" Value="9"/>
-            <Setter Property="Margin" Value="12,0,0,0"/>
+            <Setter Property="RenderTransform" Value="scale(0.55)"/>
+            <Setter Property="Opacity" Value="0.85"/>
         </Style>
         <Style Selector="^ /template/ TextBlock#PART_InputGestureText">
             <Setter Property="Foreground" Value="{DynamicResource PE.Brush.TextDim}"/>
