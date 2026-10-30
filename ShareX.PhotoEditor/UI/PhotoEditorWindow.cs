@@ -138,7 +138,8 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         canvasGrid.Children.Add(_hRuler);
         canvasGrid.Children.Add(_vRuler);
         canvasGrid.Children.Add(canvasStack);
-        _startScreen = new StartScreen(this);
+        // Starts hidden so the first ApplyVisibility refreshes the recent files.
+        _startScreen = new StartScreen(this) { IsVisible = false };
         Grid.SetRowSpan(_startScreen, 2);
         Grid.SetColumnSpan(_startScreen, 2);
         canvasGrid.Children.Add(_startScreen);
