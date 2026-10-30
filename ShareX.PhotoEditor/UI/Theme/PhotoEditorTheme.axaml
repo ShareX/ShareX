@@ -246,7 +246,7 @@
         <Setter Property="MinHeight" Value="22"/>
         <Setter Property="Height" Value="NaN"/>
         <Setter Property="FontSize" Value="12"/>
-        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Padding" Value="3,0"/>
         <Setter Property="CornerRadius" Value="2"/>
         <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.FieldBorder}"/>
@@ -353,11 +353,11 @@
         </Style>
         <Style Selector="^:checked /template/ Path#CheckGlyph">
             <Setter Property="Fill" Value="#1E1E1E"/>
-            <Setter Property="Width" Value="9"/>
+            <Setter Property="Width" Value="12"/>
         </Style>
         <Style Selector="^ /template/ Viewbox">
-            <Setter Property="Width" Value="9"/>
-            <Setter Property="Height" Value="9"/>
+            <Setter Property="Width" Value="16"/>
+            <Setter Property="Height" Value="16"/>
         </Style>
     </Style>
     <Style Selector="RadioButton">
@@ -379,18 +379,16 @@
                            Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}"
                            Value="{TemplateBinding Value, Mode=TwoWay}" IsDirectionReversed="{TemplateBinding IsDirectionReversed}">
                         <Track.DecreaseButton>
-                            <RepeatButton Name="PART_DecreaseButton" Focusable="False" Background="{TemplateBinding Foreground}">
+                            <RepeatButton Name="PART_DecreaseButton" Focusable="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                 <RepeatButton.Template>
                                     <ControlTemplate>
-                                        <Grid Background="Transparent">
-                                            <Border Height="2" CornerRadius="1" Margin="6,0,0,0" VerticalAlignment="Center" Background="{TemplateBinding Background}"/>
-                                        </Grid>
+                                        <Grid Background="Transparent"/>
                                     </ControlTemplate>
                                 </RepeatButton.Template>
                             </RepeatButton>
                         </Track.DecreaseButton>
                         <Track.IncreaseButton>
-                            <RepeatButton Name="PART_IncreaseButton" Focusable="False">
+                            <RepeatButton Name="PART_IncreaseButton" Focusable="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                 <RepeatButton.Template>
                                     <ControlTemplate>
                                         <Grid Background="Transparent"/>
