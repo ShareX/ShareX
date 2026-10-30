@@ -431,7 +431,7 @@ public static class ToolbarCustomizeDialog
                     {
                         Content = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Children = { ToolIcons.Create(tool.Id, 16), new TextBlock { Text = tool.Name.Replace(" Tool", string.Empty), FontSize = 11 } } },
                         Margin = new Thickness(1),
-                        Background = isSelected ? new SolidColorBrush(Color.FromArgb(110, 62, 131, 242)) : Brushes.Transparent
+                        Background = isSelected ? new SolidColorBrush(Color.FromRgb(0x4B, 0x4B, 0x4B)) : Brushes.Transparent
                     };
                     b.Click += (_, _) => { selected = (gi, ii); Build(); };
                     row.Children.Add(b);

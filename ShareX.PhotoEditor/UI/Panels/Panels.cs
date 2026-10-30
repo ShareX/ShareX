@@ -37,7 +37,7 @@ namespace ShareX.PhotoEditor.UI.Panels;
 
 public sealed class HistoryPanel : EditorPanel
 {
-    private static readonly IBrush SelectedBrush = new SolidColorBrush(Color.FromArgb(110, 62, 131, 242));
+    private static readonly IBrush SelectedBrush = new SolidColorBrush(Color.FromRgb(0x4B, 0x4B, 0x4B));
     private readonly StackPanel _list = new();
 
     public HistoryPanel(PhotoEditorWindow editor) : base(editor)
@@ -65,6 +65,26 @@ public sealed class HistoryPanel : EditorPanel
 
     public override string Title => "History";
 
+    /// <summary>Picks an icon for a history state from the name of the operation.</summary>
+    private static string HistoryIcon(string name)
+    {
+        string n = name.ToLowerInvariant();
+        if (n.Contains("open") || n.Contains("new document") || n.Contains("duplicate image")) return "new-document";
+        if (n.Contains("brush") || n.Contains("pencil") || n.Contains("paint") || n.Contains("stamp") || n.Contains("healing") || n.Contains("smudge") || n.Contains("blur") || n.Contains("dodge") || n.Contains("burn") || n.Contains("sponge")) return "brush";
+        if (n.Contains("eras")) return "eraser";
+        if (n.Contains("select") || n.Contains("marquee") || n.Contains("lasso") || n.Contains("wand") || n.Contains("deselect")) return "rectangularmarquee";
+        if (n.Contains("type") || n.Contains("text")) return "horizontaltype";
+        if (n.Contains("move") || n.Contains("nudge") || n.Contains("align")) return "move";
+        if (n.Contains("crop") || n.Contains("trim")) return "crop";
+        if (n.Contains("transform") || n.Contains("rotate") || n.Contains("flip") || n.Contains("scale")) return "freetransform";
+        if (n.Contains("gradient")) return "gradient";
+        if (n.Contains("fill") || n.Contains("bucket")) return "paintbucket";
+        if (n.Contains("layer") || n.Contains("merge") || n.Contains("flatten") || n.Contains("group")) return "new-layer";
+        if (n.Contains("shape") || n.Contains("rectangle") || n.Contains("ellipse") || n.Contains("polygon")) return "rectangle";
+        if (n.Contains("path") || n.Contains("pen") || n.Contains("anchor")) return "pen";
+        return "adjust";
+    }
+
     public override void Refresh()
     {
         _list.Children.Clear();
@@ -87,23 +107,43 @@ public sealed class HistoryPanel : EditorPanel
     private Control CreateRow(PhotoDocument doc, HistoryEntry entry, int index, bool snapshot)
     {
         History history = doc.History;
-        RadioButton source = new() { IsChecked = history.Source == entry, GroupName = "historySource", VerticalAlignment = VerticalAlignment.Center };
-        ToolTip.SetTip(source, "Sets the source for the history brush");
-        source.IsCheckedChanged += (_, _) =>
+        // Left column: the history brush source marker, like the reference panel.
+        bool isSource = history.Source == entry;
+        Border source = new()
         {
-            if (source.IsChecked == true) history.Source = entry;
+            Width = 22,
+            Height = 22,
+            Background = Brushes.Transparent,
+            Child = isSource ? ToolIcons.Create("historybrush", 14) : null,
+            Cursor = new Cursor(StandardCursorType.Hand),
+            BorderBrush = new SolidColorBrush(Color.FromRgb(0x28, 0x28, 0x28)),
+            BorderThickness = new Thickness(0, 0, 1, 0)
+        };
+        ToolTip.SetTip(source, "Set the source for the history brush");
+        source.PointerPressed += (_, e) =>
+        {
+            history.Source = entry;
+            e.Handled = true;
+            Refresh();
         };
         TextBlock name = Text(entry.Name);
-        if (!snapshot && index > history.Index) name.Opacity = 0.45;
+        name.Margin = new Thickness(4, 0, 0, 0);
+        bool future = !snapshot && index > history.Index;
+        if (future) name.Opacity = 0.45;
+        Control icon = snapshot ? ToolIcons.Create("snapshot", 16) : ToolIcons.Create(HistoryIcon(entry.Name), 14);
+        icon.Opacity = future ? 0.45 : 0.85;
+        StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 6, VerticalAlignment = VerticalAlignment.Center };
+        content.Children.Add(source);
+        content.Children.Add(icon);
+        content.Children.Add(name);
         Border row = new()
         {
-            Padding = new Thickness(4, 2),
+            Height = snapshot ? 30 : 24,
             Background = !snapshot && index == history.Index ? SelectedBrush : Brushes.Transparent,
-            Child = Row(source, snapshot ? ToolIcons.Create("snapshot", 14) : ToolIcons.Create("brush-tip", 8), name)
+            Child = content
         };
         row.PointerPressed += (_, e) =>
         {
-            if (e.Source is RadioButton) return;
             if (snapshot) history.RestoreSnapshot(entry);
             else history.JumpTo(index);
             Editor.AfterHistoryChange();
@@ -129,57 +169,122 @@ public sealed class HistoryPanel : EditorPanel
 
 public sealed class ColorPanel : EditorPanel
 {
-    private readonly Slider _r = Slider255(), _g = Slider255(), _b = Slider255(), _h = new() { Minimum = 0, Maximum = 360 }, _s = Slider100(), _v = Slider100();
-    private readonly TextBox _hex = new() { Width = 80 };
-    private readonly Border _fg = new() { Width = 28, Height = 28, BorderBrush = Brushes.White, BorderThickness = new Thickness(1) };
-    private readonly Border _bg = new() { Width = 28, Height = 28, BorderBrush = Brushes.Gray, BorderThickness = new Thickness(1) };
-    private readonly Border _ramp = new() { Height = 24, Cursor = new Cursor(StandardCursorType.Cross) };
+    private readonly Border _fg = new() { Width = 26, Height = 26, BorderThickness = new Thickness(1), Cursor = new Cursor(StandardCursorType.Hand) };
+    private readonly Border _bg = new() { Width = 26, Height = 26, BorderThickness = new Thickness(1), Cursor = new Cursor(StandardCursorType.Hand) };
+    private readonly Border _field = new() { ClipToBounds = true };
+    private readonly Canvas _fieldMarker = new() { IsHitTestVisible = false };
+    private readonly Border _hue = new() { Width = 14 };
+    private readonly Canvas _hueMarker = new() { IsHitTestVisible = false };
+    private readonly TextBox _hex = new() { Width = 64 };
+    private readonly NumericUpDown _r = Channel(), _g = Channel(), _b = Channel();
+    private float _h, _s, _v;
     private bool _editBackground;
     private bool _updating;
 
-    private static Slider Slider255() => new() { Minimum = 0, Maximum = 255 };
-    private static Slider Slider100() => new() { Minimum = 0, Maximum = 100 };
+    private static NumericUpDown Channel() => new() { Minimum = 0, Maximum = 255, Increment = 1, FormatString = "0", Width = 40, ShowButtonSpinner = false, HorizontalContentAlignment = HorizontalAlignment.Right };
 
     public ColorPanel(PhotoEditorWindow editor) : base(editor)
     {
-        _fg.PointerPressed += (_, _) => { _editBackground = false; Refresh(); };
-        _bg.PointerPressed += (_, _) => { _editBackground = true; Refresh(); };
-        _fg.DoubleTapped += async (_, _) => { SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Foreground, "Foreground Color", Editor); if (c is SKColor col) Editor.Foreground = col; };
-        _bg.DoubleTapped += async (_, _) => { SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Background, "Background Color", Editor); if (c is SKColor col) Editor.Background = col; };
-        foreach (Slider s in new[] { _r, _g, _b }) s.ValueChanged += (_, _) => FromRgb();
-        foreach (Slider s in new[] { _h, _s, _v }) s.ValueChanged += (_, _) => FromHsv();
-        _hex.LostFocus += (_, _) => FromHex();
-        _hex.KeyDown += (_, e) => { if (e.Key == Key.Enter) FromHex(); };
+        _fg.PointerPressed += async (_, e) =>
+        {
+            if (e.ClickCount >= 2)
+            {
+                SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Foreground, "Foreground Color", Editor);
+                if (c is SKColor col) Editor.Foreground = col;
+                return;
+            }
+            _editBackground = false;
+            Refresh();
+        };
+        _bg.PointerPressed += async (_, e) =>
+        {
+            if (e.ClickCount >= 2)
+            {
+                SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Background, "Background Color", Editor);
+                if (c is SKColor col) Editor.Background = col;
+                return;
+            }
+            _editBackground = true;
+            Refresh();
+        };
+        ToolTip.SetTip(_fg, "Foreground color. Double-click opens the Color Picker.");
+        ToolTip.SetTip(_bg, "Background color. Double-click opens the Color Picker.");
 
-        LinearGradientBrush spectrum = new() { StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative), EndPoint = new RelativePoint(1, 0, RelativeUnit.Relative) };
+        // Saturation/brightness field: hue fill with white and black gradient overlays.
+        Grid field = new() { Cursor = new Cursor(StandardCursorType.Cross), MinHeight = 90, ClipToBounds = true };
+        field.Children.Add(_field);
+        field.Children.Add(new Border
+        {
+            IsHitTestVisible = false,
+            Background = new LinearGradientBrush
+            {
+                StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative),
+                EndPoint = new RelativePoint(1, 0, RelativeUnit.Relative),
+                GradientStops = { new Avalonia.Media.GradientStop(Colors.White, 0), new Avalonia.Media.GradientStop(Color.FromArgb(0, 255, 255, 255), 1) }
+            }
+        });
+        field.Children.Add(new Border
+        {
+            IsHitTestVisible = false,
+            Background = new LinearGradientBrush
+            {
+                StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative),
+                EndPoint = new RelativePoint(0, 1, RelativeUnit.Relative),
+                GradientStops = { new Avalonia.Media.GradientStop(Color.FromArgb(0, 0, 0, 0), 0), new Avalonia.Media.GradientStop(Colors.Black, 1) }
+            }
+        });
+        field.Children.Add(_fieldMarker);
+        field.PointerPressed += (_, e) => { e.Pointer.Capture(field); PickField(e.GetPosition(field), field.Bounds.Size); };
+        field.PointerMoved += (_, e) => { if (e.GetCurrentPoint(field).Properties.IsLeftButtonPressed) PickField(e.GetPosition(field), field.Bounds.Size); };
+        field.SizeChanged += (_, _) => PlaceMarkers();
+
+        LinearGradientBrush spectrum = new() { StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative), EndPoint = new RelativePoint(0, 1, RelativeUnit.Relative) };
         for (int i = 0; i <= 6; i++)
         {
-            SKColor c = ColorMath.FromHsv(i * 60, 1, 1);
+            SKColor c = ColorMath.FromHsv(360 - i * 60, 1, 1);
             spectrum.GradientStops.Add(new Avalonia.Media.GradientStop(Color.FromRgb(c.Red, c.Green, c.Blue), i / 6.0));
         }
-        _ramp.Background = spectrum;
-        _ramp.PointerPressed += (_, e) => PickRamp(e.GetPosition(_ramp));
-        _ramp.PointerMoved += (_, e) => { if (e.GetCurrentPoint(_ramp).Properties.IsLeftButtonPressed) PickRamp(e.GetPosition(_ramp)); };
+        _hue.Background = spectrum;
+        Grid hue = new() { Width = 14, Cursor = new Cursor(StandardCursorType.SizeNorthSouth) };
+        hue.Children.Add(_hue);
+        hue.Children.Add(_hueMarker);
+        hue.PointerPressed += (_, e) => { e.Pointer.Capture(hue); PickHue(e.GetPosition(hue).Y, hue.Bounds.Height); };
+        hue.PointerMoved += (_, e) => { if (e.GetCurrentPoint(hue).Properties.IsLeftButtonPressed) PickHue(e.GetPosition(hue).Y, hue.Bounds.Height); };
 
-        Grid grid = DialogBuilder.Form();
-        DialogBuilder.AddRow(grid, "R", _r);
-        DialogBuilder.AddRow(grid, "G", _g);
-        DialogBuilder.AddRow(grid, "B", _b);
-        DialogBuilder.AddRow(grid, "H", _h);
-        DialogBuilder.AddRow(grid, "S", _s);
-        DialogBuilder.AddRow(grid, "B", _v);
-        DialogBuilder.AddRow(grid, "#", _hex);
-        Canvas swatches = new() { Width = 48, Height = 44 };
-        Canvas.SetLeft(_bg, 18);
-        Canvas.SetTop(_bg, 14);
+        Canvas swatches = new() { Width = 40, Height = 40, VerticalAlignment = VerticalAlignment.Top };
+        Canvas.SetLeft(_bg, 13);
+        Canvas.SetTop(_bg, 13);
         swatches.Children.Add(_bg);
         swatches.Children.Add(_fg);
-        StackPanel root = new() { Spacing = 6, Margin = new Thickness(8) };
-        root.Children.Add(Row(swatches, Text("Click a swatch to edit it; double-click opens the Color Picker.", 11)));
-        root.Children.Add(grid);
-        root.Children.Add(_ramp);
-        Content = new ScrollViewer { Content = root };
+
+        Grid picker = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto"), ColumnSpacing = 8 };
+        Grid.SetColumn(field, 1);
+        Grid.SetColumn(hue, 2);
+        picker.Children.Add(swatches);
+        picker.Children.Add(field);
+        picker.Children.Add(hue);
+
+        foreach (NumericUpDown box in new[] { _r, _g, _b }) box.ValueChanged += (_, _) => FromRgb();
+        _hex.LostFocus += (_, _) => FromHex();
+        _hex.KeyDown += (_, e) => { if (e.Key == Key.Enter) FromHex(); };
+        StackPanel values = new() { Orientation = Orientation.Horizontal, Spacing = 4, Margin = new Thickness(44, 6, 0, 0) };
+        values.Children.Add(Dim("R"));
+        values.Children.Add(_r);
+        values.Children.Add(Dim("G"));
+        values.Children.Add(_g);
+        values.Children.Add(Dim("B"));
+        values.Children.Add(_b);
+        values.Children.Add(Dim("#"));
+        values.Children.Add(_hex);
+
+        DockPanel root = new() { Margin = new Thickness(8, 8, 10, 6) };
+        DockPanel.SetDock(values, Dock.Bottom);
+        root.Children.Add(values);
+        root.Children.Add(picker);
+        Content = root;
     }
+
+    private static TextBlock Dim(string text) => new() { Text = text, Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(4, 0, 0, 0) };
 
     public override string Id => "color";
 
@@ -193,22 +298,23 @@ public sealed class ColorPanel : EditorPanel
         else Editor.Foreground = color;
     }
 
-    private void PickRamp(Point p)
+    private void PickField(Point p, Size size)
     {
-        float hue = (float)Math.Clamp(p.X / Math.Max(1, _ramp.Bounds.Width), 0, 1) * 360;
-        Set(ColorMath.FromHsv(hue, 1, 1));
+        _s = (float)Math.Clamp(p.X / Math.Max(1, size.Width), 0, 1);
+        _v = (float)Math.Clamp(1 - p.Y / Math.Max(1, size.Height), 0, 1);
+        Set(ColorMath.FromHsv(_h, _s, _v));
+    }
+
+    private void PickHue(double y, double height)
+    {
+        _h = (float)Math.Clamp(360 - y / Math.Max(1, height) * 360, 0, 359.9);
+        Set(ColorMath.FromHsv(_h, _s, _v));
     }
 
     private void FromRgb()
     {
         if (_updating) return;
-        Set(new SKColor((byte)_r.Value, (byte)_g.Value, (byte)_b.Value));
-    }
-
-    private void FromHsv()
-    {
-        if (_updating) return;
-        Set(ColorMath.FromHsv((float)_h.Value, (float)_s.Value / 100, (float)_v.Value / 100));
+        Set(new SKColor((byte)(_r.Value ?? 0), (byte)(_g.Value ?? 0), (byte)(_b.Value ?? 0)));
     }
 
     private void FromHex()
@@ -216,18 +322,47 @@ public sealed class ColorPanel : EditorPanel
         if (!_updating && ColorMath.TryParseHex(_hex.Text, out SKColor c)) Set(c);
     }
 
+    private void PlaceMarkers()
+    {
+        Size field = _field.Bounds.Size;
+        _fieldMarker.Children.Clear();
+        Avalonia.Controls.Shapes.Ellipse ring = new() { Width = 10, Height = 10, Stroke = _v > 0.55f && _s < 0.5f ? Brushes.Black : Brushes.White, StrokeThickness = 1.5 };
+        Canvas.SetLeft(ring, _s * field.Width - 5);
+        Canvas.SetTop(ring, (1 - _v) * field.Height - 5);
+        _fieldMarker.Children.Add(ring);
+        _hueMarker.Children.Clear();
+        double y = (1 - _h / 360) * _hue.Bounds.Height;
+        Avalonia.Controls.Shapes.Path left = new() { Data = Geometry.Parse("M0,0 L4,3 L0,6 Z"), Fill = Brushes.White };
+        Canvas.SetLeft(left, -4);
+        Canvas.SetTop(left, y - 3);
+        Avalonia.Controls.Shapes.Path right = new() { Data = Geometry.Parse("M4,0 L0,3 L4,6 Z"), Fill = Brushes.White };
+        Canvas.SetLeft(right, 14);
+        Canvas.SetTop(right, y - 3);
+        _hueMarker.Children.Add(left);
+        _hueMarker.Children.Add(right);
+    }
+
     public override void Refresh()
     {
         _updating = true;
         SKColor c = Current;
-        _fg.Background = DialogBuilder.ToBrush(Editor.Foreground);
-        _bg.Background = DialogBuilder.ToBrush(Editor.Background);
-        _fg.BorderBrush = _editBackground ? Brushes.Gray : Brushes.White;
-        _bg.BorderBrush = _editBackground ? Brushes.White : Brushes.Gray;
-        _r.Value = c.Red; _g.Value = c.Green; _b.Value = c.Blue;
+        _fg.Background = DialogBuilder.ToBrush(Editor.Foreground.WithAlpha(255));
+        _bg.Background = DialogBuilder.ToBrush(Editor.Background.WithAlpha(255));
+        IBrush active = new SolidColorBrush(Color.FromRgb(0xE0, 0xE0, 0xE0)), inactive = new SolidColorBrush(Color.FromRgb(0x70, 0x70, 0x70));
+        _fg.BorderBrush = _editBackground ? inactive : active;
+        _bg.BorderBrush = _editBackground ? active : inactive;
+        _bg.ZIndex = _editBackground ? 1 : 0;
         ColorMath.RgbToHsv(c.Red / 255f, c.Green / 255f, c.Blue / 255f, out float h, out float s, out float v);
-        _h.Value = h; _s.Value = s * 100; _v.Value = v * 100;
+        if (s > 0.001f && v > 0.001f) _h = h;
+        _s = s;
+        _v = v;
+        SKColor pure = ColorMath.FromHsv(_h, 1, 1);
+        _field.Background = new SolidColorBrush(Color.FromRgb(pure.Red, pure.Green, pure.Blue));
+        _r.Value = c.Red;
+        _g.Value = c.Green;
+        _b.Value = c.Blue;
         if (!_hex.IsFocused) _hex.Text = ColorMath.ToHex(c);
+        PlaceMarkers();
         _updating = false;
     }
 }
@@ -291,18 +426,40 @@ public sealed class AdjustmentsPanel : EditorPanel
 {
     public AdjustmentsPanel(PhotoEditorWindow editor) : base(editor)
     {
-        WrapPanel wrap = new() { Margin = new Thickness(6) };
-        foreach (AdjustmentKind kind in Enum.GetValues<AdjustmentKind>())
+        // Icon grid of adjustment presets, grouped like the reference panel.
+        AdjustmentKind[][] rows =
+        [
+            [AdjustmentKind.BrightnessContrast, AdjustmentKind.Levels, AdjustmentKind.Curves, AdjustmentKind.Exposure],
+            [AdjustmentKind.Vibrance, AdjustmentKind.HueSaturation, AdjustmentKind.ColorBalance, AdjustmentKind.BlackAndWhite, AdjustmentKind.PhotoFilter, AdjustmentKind.ChannelMixer],
+            [AdjustmentKind.Invert, AdjustmentKind.Posterize, AdjustmentKind.Threshold, AdjustmentKind.GradientMap, AdjustmentKind.SelectiveColor, AdjustmentKind.Desaturate]
+        ];
+        TextBlock hint = new() { Text = "Add an adjustment", Margin = new Thickness(10, 8, 10, 4), Classes = { "dim" } };
+        StackPanel root = new() { Spacing = 2 };
+        root.Children.Add(hint);
+        foreach (AdjustmentKind[] row in rows)
         {
-            Button button = new() { Content = Text(AdjustmentSettings.GetName(kind), 11), Margin = new Thickness(2), Padding = new Thickness(6, 3) };
-            ToolTip.SetTip(button, $"Add a {AdjustmentSettings.GetName(kind)} adjustment layer");
-            AdjustmentKind captured = kind;
-            button.Click += (_, _) => EditorCommands.NewAdjustmentLayer(Editor, captured);
-            wrap.Children.Add(button);
+            StackPanel line = new() { Orientation = Orientation.Horizontal, Spacing = 2, Margin = new Thickness(8, 0) };
+            foreach (AdjustmentKind kind in row)
+            {
+                Button button = new()
+                {
+                    Classes = { "icon" },
+                    Content = ToolIcons.Create("adj-" + kind.ToString().ToLowerInvariant(), 18),
+                    Width = 30,
+                    Height = 30,
+                    Padding = new Thickness(0),
+                    HorizontalContentAlignment = HorizontalAlignment.Center
+                };
+                string name = AdjustmentSettings.GetName(kind);
+                button.PointerEntered += (_, _) => hint.Text = name;
+                button.PointerExited += (_, _) => hint.Text = "Add an adjustment";
+                ToolTip.SetTip(button, $"Create a new {name} adjustment layer");
+                AdjustmentKind captured = kind;
+                button.Click += (_, _) => EditorCommands.NewAdjustmentLayer(Editor, captured);
+                line.Children.Add(button);
+            }
+            root.Children.Add(line);
         }
-        StackPanel root = new();
-        root.Children.Add(new TextBlock { Text = "Add an adjustment", Margin = new Thickness(8, 6, 8, 0), FontWeight = FontWeight.SemiBold });
-        root.Children.Add(wrap);
         Content = new ScrollViewer { Content = root };
     }
 
@@ -317,7 +474,7 @@ public sealed class AdjustmentsPanel : EditorPanel
 
 public sealed class ChannelsPanel : EditorPanel
 {
-    private static readonly IBrush SelectedBrush = new SolidColorBrush(Color.FromArgb(110, 62, 131, 242));
+    private static readonly IBrush SelectedBrush = new SolidColorBrush(Color.FromRgb(0x4B, 0x4B, 0x4B));
     private readonly StackPanel _list = new();
 
     public ChannelsPanel(PhotoEditorWindow editor) : base(editor)
@@ -334,6 +491,29 @@ public sealed class ChannelsPanel : EditorPanel
         Content = root;
     }
 
+    /// <summary>Grayscale thumbnail of one color channel (or the composite).</summary>
+    private static unsafe SKBitmap ChannelThumbnail(SKBitmap source, ChannelView view)
+    {
+        SKBitmap result = ImageOps.CreateBitmap(source.Width, source.Height);
+        uint* s = (uint*)source.GetPixels(), d = (uint*)result.GetPixels();
+        int stride = source.RowBytes / 4;
+        for (int y = 0; y < source.Height; y++)
+        {
+            for (int x = 0; x < source.Width; x++)
+            {
+                uint p = s[y * stride + x];
+                if (view == ChannelView.Composite)
+                {
+                    d[y * stride + x] = p | 0xFF000000u;
+                    continue;
+                }
+                uint v = view switch { ChannelView.Red => (p >> 16) & 0xFF, ChannelView.Green => (p >> 8) & 0xFF, _ => p & 0xFF };
+                d[y * stride + x] = 0xFF000000u | (v << 16) | (v << 8) | v;
+            }
+        }
+        return result;
+    }
+
     public override string Id => "channels";
 
     public override string Title => "Channels";
@@ -344,10 +524,27 @@ public sealed class ChannelsPanel : EditorPanel
         PhotoDocument? doc = Doc;
         if (doc == null) return;
         (ChannelView View, string Name, string Key)[] colorChannels = [(ChannelView.Composite, "RGB", "Ctrl+2"), (ChannelView.Red, "Red", "Ctrl+3"), (ChannelView.Green, "Green", "Ctrl+4"), (ChannelView.Blue, "Blue", "Ctrl+5")];
+        Editor.View?.Update(true);
+        SKBitmap? composite = Editor.View?.Composite;
+        using SKBitmap? small = composite != null ? ImageOps.Resize(composite, Math.Max(1, (int)(30f * composite.Width / Math.Max(composite.Width, composite.Height))), Math.Max(1, (int)(30f * composite.Height / Math.Max(composite.Width, composite.Height))), ResampleMethod.Bilinear) : null;
         foreach (var (view, name, key) in colorChannels)
         {
-            bool selected = doc.ActiveChannel == null && doc.ChannelView == view;
-            Border row = new() { Padding = new Thickness(6, 4), Background = selected ? SelectedBrush : Brushes.Transparent, Child = Row(ToolIcons.Create("eye", 14), Text(name), Text(key, 10)) };
+            // In composite view every color channel is active, like the reference panel.
+            bool selected = doc.ActiveChannel == null && (doc.ChannelView == view || doc.ChannelView == ChannelView.Composite);
+            Grid content = new() { ColumnDefinitions = new ColumnDefinitions("28,Auto,*,Auto") };
+            Border eye = new() { Width = 28, BorderBrush = new SolidColorBrush(Color.FromRgb(0x24, 0x24, 0x24)), BorderThickness = new Thickness(0, 0, 1, 0), Child = doc.ChannelView == view || doc.ChannelView == ChannelView.Composite ? ToolIcons.Create("eye", 15) : null };
+            content.Children.Add(eye);
+            Control thumb = small != null ? new Border { Width = 32, Height = 32, BorderBrush = new SolidColorBrush(Color.FromRgb(0x1A, 0x1A, 0x1A)), BorderThickness = new Thickness(1), Margin = new Thickness(6, 0, 0, 0), Child = new Image { Source = BitmapHelper.ToAvalonia(ChannelThumbnail(small, view)) } } : new Border();
+            Grid.SetColumn(thumb, 1);
+            content.Children.Add(thumb);
+            TextBlock label = Text(name);
+            label.Margin = new Thickness(8, 0, 0, 0);
+            Grid.SetColumn(label, 2);
+            content.Children.Add(label);
+            TextBlock shortcut = new() { Text = key, Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 10, 0) };
+            Grid.SetColumn(shortcut, 3);
+            content.Children.Add(shortcut);
+            Border row = new() { Height = 38, Background = selected ? SelectedBrush : Brushes.Transparent, BorderBrush = new SolidColorBrush(Color.FromRgb(0x24, 0x24, 0x24)), BorderThickness = new Thickness(0, 0, 0, 1), Child = content };
             row.PointerPressed += (_, _) =>
             {
                 doc.ActiveChannel = null;
@@ -393,7 +590,7 @@ public sealed class ChannelsPanel : EditorPanel
 
 public sealed class PathsPanel : EditorPanel
 {
-    private static readonly IBrush SelectedBrush = new SolidColorBrush(Color.FromArgb(110, 62, 131, 242));
+    private static readonly IBrush SelectedBrush = new SolidColorBrush(Color.FromRgb(0x4B, 0x4B, 0x4B));
     private readonly StackPanel _list = new();
 
     public PathsPanel(PhotoEditorWindow editor) : base(editor)
@@ -566,6 +763,7 @@ public sealed class NavigatorPanel : EditorPanel
         _host.Children.Add(_overlay);
         _host.PointerPressed += (_, e) => PanTo(e.GetPosition(_image));
         _host.PointerMoved += (_, e) => { if (e.GetCurrentPoint(_host).Properties.IsLeftButtonPressed) PanTo(e.GetPosition(_image)); };
+        _image.SizeChanged += (_, _) => UpdateRect();
         _zoom.ValueChanged += (_, e) =>
         {
             if (_updating || Editor.View == null) return;

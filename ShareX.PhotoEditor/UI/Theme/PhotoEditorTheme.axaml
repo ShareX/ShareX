@@ -1,0 +1,529 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--
+        Photo editor theme: a dense, dark professional-editor look.
+        Applied to the Photo editor window and its dialogs only, so the rest of ShareX keeps its own styling.
+    -->
+    <Styles.Resources>
+        <Color x:Key="PE.Color.Chrome">#323232</Color>
+        <Color x:Key="PE.Color.Deep">#262626</Color>
+        <Color x:Key="PE.Color.Gutter">#1E1E1E</Color>
+        <Color x:Key="PE.Color.Pasteboard">#282828</Color>
+        <Color x:Key="PE.Color.Field">#262626</Color>
+        <Color x:Key="PE.Color.FieldBorder">#454545</Color>
+        <Color x:Key="PE.Color.Hover">#3E3E3E</Color>
+        <Color x:Key="PE.Color.Pressed">#474747</Color>
+        <Color x:Key="PE.Color.Selected">#535353</Color>
+        <Color x:Key="PE.Color.RowSelected">#4B4B4B</Color>
+        <Color x:Key="PE.Color.Divider">#474747</Color>
+        <Color x:Key="PE.Color.Text">#D9D9D9</Color>
+        <Color x:Key="PE.Color.TextDim">#A3A3A3</Color>
+        <Color x:Key="PE.Color.TextDisabled">#6F6F6F</Color>
+        <Color x:Key="PE.Color.Accent">#1473E6</Color>
+        <Color x:Key="PE.Color.AccentHover">#0D66D0</Color>
+        <Color x:Key="PE.Color.Menu">#2F2F2F</Color>
+
+        <SolidColorBrush x:Key="PE.Brush.Chrome" Color="{StaticResource PE.Color.Chrome}"/>
+        <SolidColorBrush x:Key="PE.Brush.Deep" Color="{StaticResource PE.Color.Deep}"/>
+        <SolidColorBrush x:Key="PE.Brush.Gutter" Color="{StaticResource PE.Color.Gutter}"/>
+        <SolidColorBrush x:Key="PE.Brush.Pasteboard" Color="{StaticResource PE.Color.Pasteboard}"/>
+        <SolidColorBrush x:Key="PE.Brush.Field" Color="{StaticResource PE.Color.Field}"/>
+        <SolidColorBrush x:Key="PE.Brush.FieldBorder" Color="{StaticResource PE.Color.FieldBorder}"/>
+        <SolidColorBrush x:Key="PE.Brush.Hover" Color="{StaticResource PE.Color.Hover}"/>
+        <SolidColorBrush x:Key="PE.Brush.Pressed" Color="{StaticResource PE.Color.Pressed}"/>
+        <SolidColorBrush x:Key="PE.Brush.Selected" Color="{StaticResource PE.Color.Selected}"/>
+        <SolidColorBrush x:Key="PE.Brush.RowSelected" Color="{StaticResource PE.Color.RowSelected}"/>
+        <SolidColorBrush x:Key="PE.Brush.Divider" Color="{StaticResource PE.Color.Divider}"/>
+        <SolidColorBrush x:Key="PE.Brush.Text" Color="{StaticResource PE.Color.Text}"/>
+        <SolidColorBrush x:Key="PE.Brush.TextDim" Color="{StaticResource PE.Color.TextDim}"/>
+        <SolidColorBrush x:Key="PE.Brush.TextDisabled" Color="{StaticResource PE.Color.TextDisabled}"/>
+        <SolidColorBrush x:Key="PE.Brush.Accent" Color="{StaticResource PE.Color.Accent}"/>
+        <SolidColorBrush x:Key="PE.Brush.AccentHover" Color="{StaticResource PE.Color.AccentHover}"/>
+        <SolidColorBrush x:Key="PE.Brush.Menu" Color="{StaticResource PE.Color.Menu}"/>
+
+        <!-- Re-point shared ShareX and Fluent resources so reused controls follow the editor palette. -->
+        <SolidColorBrush x:Key="ShareX.Brush.Text" Color="{StaticResource PE.Color.Text}"/>
+        <SolidColorBrush x:Key="ShareX.Brush.Text.Secondary" Color="{StaticResource PE.Color.Text}"/>
+        <SolidColorBrush x:Key="ShareX.Brush.Background.Main" Color="{StaticResource PE.Color.Chrome}"/>
+        <SolidColorBrush x:Key="ShareX.Brush.Background.Panel" Color="{StaticResource PE.Color.Chrome}"/>
+        <SolidColorBrush x:Key="ShareX.Brush.Background.Toolbar" Color="{StaticResource PE.Color.Chrome}"/>
+        <SolidColorBrush x:Key="ShareX.Brush.Background.Popup" Color="{StaticResource PE.Color.Menu}"/>
+        <SolidColorBrush x:Key="ShareX.Brush.Background.Menu" Color="{StaticResource PE.Color.Menu}"/>
+        <SolidColorBrush x:Key="ShareX.Brush.Border" Color="{StaticResource PE.Color.Gutter}"/>
+        <SolidColorBrush x:Key="ShareX.Brush.Control.Background" Color="{StaticResource PE.Color.Field}"/>
+        <SolidColorBrush x:Key="ShareX.Brush.Control.Background.Hover" Color="{StaticResource PE.Color.Hover}"/>
+        <SolidColorBrush x:Key="ShareX.Brush.Separator" Color="{StaticResource PE.Color.Divider}"/>
+        <SolidColorBrush x:Key="MenuFlyoutPresenterBackground" Color="{StaticResource PE.Color.Menu}"/>
+        <SolidColorBrush x:Key="MenuFlyoutPresenterBorderBrush" Color="{StaticResource PE.Color.Gutter}"/>
+        <SolidColorBrush x:Key="FlyoutPresenterBackground" Color="{StaticResource PE.Color.Menu}"/>
+        <SolidColorBrush x:Key="ComboBoxDropDownBackground" Color="{StaticResource PE.Color.Menu}"/>
+        <SolidColorBrush x:Key="ToolTipBackground" Color="#F2F2F2"/>
+        <SolidColorBrush x:Key="ToolTipForeground" Color="#1E1E1E"/>
+        <Thickness x:Key="MenuFlyoutPresenterThemePadding">0,4</Thickness>
+        <Thickness x:Key="ComboBoxDropdownContentMargin">0,4</Thickness>
+        <x:Double x:Key="ToolTipContentThemeFontSize">12</x:Double>
+        <FontFamily x:Key="PE.Font">Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter</FontFamily>
+    </Styles.Resources>
+
+    <!-- Typography -->
+    <Style Selector="TextBlock">
+        <Setter Property="FontFamily" Value="{DynamicResource PE.Font}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
+    </Style>
+    <Style Selector="TextBlock.dim">
+        <Setter Property="Foreground" Value="{DynamicResource PE.Brush.TextDim}"/>
+    </Style>
+    <Style Selector="TextBlock.header">
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="#EDEDED"/>
+    </Style>
+    <Style Selector="AccessText">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+
+    <!-- Buttons: flat text buttons with a thin outline, like the reference options bar -->
+    <Style Selector="Button">
+        <Setter Property="Height" Value="NaN"/>
+        <Setter Property="MinHeight" Value="24"/>
+        <Setter Property="Padding" Value="10,2"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="#5E5E5E"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Arrow"/>
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="#5E5E5E"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Hover}"/>
+            <Setter Property="BorderBrush" Value="#7A7A7A"/>
+        </Style>
+        <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Pressed}"/>
+        </Style>
+        <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Opacity" Value="0.4"/>
+        </Style>
+    </Style>
+
+    <!-- Icon buttons: no outline, square hover -->
+    <Style Selector="Button.icon">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="MinHeight" Value="0"/>
+        <Setter Property="CornerRadius" Value="3"/>
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Hover}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="^.checked /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Selected}"/>
+        </Style>
+    </Style>
+
+    <!-- Toolbar tool buttons -->
+    <Style Selector="Button.tool">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="MinHeight" Value="0"/>
+        <Setter Property="Width" Value="32"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="CornerRadius" Value="3"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Hover}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="^.checked /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Selected}"/>
+        </Style>
+    </Style>
+
+    <!-- Primary (blue, pill) and secondary (outlined pill) dialog buttons -->
+    <Style Selector="Button.primary, Button.secondary">
+        <Setter Property="MinHeight" Value="30"/>
+        <Setter Property="MinWidth" Value="76"/>
+        <Setter Property="Padding" Value="16,3"/>
+        <Setter Property="CornerRadius" Value="15"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="Button.primary">
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Accent}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.Accent}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.Accent}"/>
+        </Style>
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.AccentHover}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.AccentHover}"/>
+        </Style>
+        <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#0A5BBF"/>
+        </Style>
+        <Style Selector="^ TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+    </Style>
+    <Style Selector="Button.secondary">
+        <Setter Property="BorderBrush" Value="#8F8F8F"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderBrush" Value="#8F8F8F"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderBrush" Value="#C8C8C8"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        <Style Selector="^ TextBlock">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+    </Style>
+
+    <!-- Text fields -->
+    <Style Selector="TextBox">
+        <Setter Property="MinWidth" Value="0"/>
+        <Setter Property="MinHeight" Value="22"/>
+        <Setter Property="Padding" Value="5,1"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.FieldBorder}"/>
+        <Setter Property="SelectionBrush" Value="{DynamicResource PE.Brush.Accent}"/>
+        <Setter Property="CaretBrush" Value="{DynamicResource PE.Brush.Text}"/>
+        <Style Selector="^ /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.FieldBorder}"/>
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="MinHeight" Value="22"/>
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
+            <Setter Property="BorderBrush" Value="#5C5C5C"/>
+        </Style>
+        <Style Selector="^:focus /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.Accent}"/>
+        </Style>
+        <Style Selector="^ /template/ TextPresenter">
+            <Setter Property="TextElement.Foreground" Value="{DynamicResource PE.Brush.Text}"/>
+        </Style>
+    </Style>
+
+    <!-- Numeric fields: compact, no spinner by default -->
+    <Style Selector="NumericUpDown">
+        <Setter Property="ShowButtonSpinner" Value="False"/>
+        <Setter Property="MinWidth" Value="0"/>
+        <Setter Property="MinHeight" Value="22"/>
+        <Setter Property="Height" Value="NaN"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.FieldBorder}"/>
+        <Style Selector="^ /template/ TextBox">
+            <Setter Property="MinWidth" Value="0"/>
+            <Setter Property="MinHeight" Value="22"/>
+            <Setter Property="Height" Value="NaN"/>
+            <Setter Property="Padding" Value="5,1"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style Selector="^ /template/ TextBox /template/ Border#PART_BorderElement">
+            <Setter Property="MinHeight" Value="22"/>
+        </Style>
+        <Style Selector="^ /template/ ButtonSpinner">
+            <Setter Property="MinHeight" Value="22"/>
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.FieldBorder}"/>
+            <Setter Property="CornerRadius" Value="2"/>
+        </Style>
+        <Style Selector="^ /template/ ButtonSpinner > Button">
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="Padding" Value="2,0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+    </Style>
+
+    <!-- Combo boxes -->
+    <Style Selector="ComboBox">
+        <Setter Property="MinHeight" Value="22"/>
+        <Setter Property="Height" Value="NaN"/>
+        <Setter Property="Padding" Value="6,0,4,0"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.FieldBorder}"/>
+        <Setter Property="MaxDropDownHeight" Value="420"/>
+        <Style Selector="^ /template/ Border#Background">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.FieldBorder}"/>
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="MinHeight" Value="22"/>
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#Background">
+            <Setter Property="Background" Value="#2C2C2C"/>
+            <Setter Property="BorderBrush" Value="#5C5C5C"/>
+        </Style>
+        <Style Selector="^ /template/ PathIcon#DropDownGlyph">
+            <Setter Property="Width" Value="8"/>
+            <Setter Property="Height" Value="8"/>
+            <Setter Property="Margin" Value="0,0,6,0"/>
+            <Setter Property="Foreground" Value="{DynamicResource PE.Brush.TextDim}"/>
+        </Style>
+        <Style Selector="^ /template/ Border#PopupBorder">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Menu}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.Gutter}"/>
+            <Setter Property="CornerRadius" Value="3"/>
+            <Setter Property="Padding" Value="0,3"/>
+        </Style>
+    </Style>
+    <Style Selector="ComboBoxItem">
+        <Setter Property="MinHeight" Value="22"/>
+        <Setter Property="Padding" Value="10,2"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Accent}"/>
+        </Style>
+        <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Pressed}"/>
+        </Style>
+        <Style Selector="^:selected:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Accent}"/>
+        </Style>
+        <Style Selector="^:pointerover TextBlock, ^:selected TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Style>
+
+    <!-- Check boxes and radio buttons -->
+    <Style Selector="CheckBox">
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Padding" Value="6,0,0,0"/>
+        <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
+        <Style Selector="^ /template/ Grid#RootGrid > Grid">
+            <Setter Property="Height" Value="20"/>
+        </Style>
+        <Style Selector="^ /template/ Border#NormalRectangle">
+            <Setter Property="Width" Value="14"/>
+            <Setter Property="Height" Value="14"/>
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
+            <Setter Property="BorderBrush" Value="#8A8A8A"/>
+        </Style>
+        <Style Selector="^:not(:pointerover) /template/ Border#NormalRectangle">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
+            <Setter Property="BorderBrush" Value="#8A8A8A"/>
+        </Style>
+        <Style Selector="^:checked /template/ Border#NormalRectangle">
+            <Setter Property="Background" Value="#D9D9D9"/>
+            <Setter Property="BorderBrush" Value="#D9D9D9"/>
+        </Style>
+        <Style Selector="^:checked /template/ Path#CheckGlyph">
+            <Setter Property="Fill" Value="#1E1E1E"/>
+            <Setter Property="Width" Value="9"/>
+        </Style>
+        <Style Selector="^ /template/ Viewbox">
+            <Setter Property="Width" Value="9"/>
+            <Setter Property="Height" Value="9"/>
+        </Style>
+    </Style>
+    <Style Selector="RadioButton">
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Padding" Value="4,0,0,0"/>
+    </Style>
+
+    <!-- Sliders: thin track, small round thumb -->
+    <Style Selector="Slider:horizontal">
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="Foreground" Value="#B3B3B3"/>
+        <Setter Property="Background" Value="#5A5A5A"/>
+        <Style Selector="^ /template/ Thumb">
+            <Setter Property="Width" Value="12"/>
+            <Setter Property="Height" Value="12"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Background" Value="#E6E6E6"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton, ^ /template/ RepeatButton#PART_IncreaseButton">
+            <Setter Property="Height" Value="2"/>
+            <Setter Property="CornerRadius" Value="1"/>
+        </Style>
+        <Style Selector="^ /template/ Grid#SliderContainer">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+    </Style>
+
+    <!-- Menus -->
+    <Style Selector="Menu">
+        <Setter Property="Height" Value="26"/>
+        <Setter Property="Padding" Value="4,0"/>
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Chrome}"/>
+    </Style>
+    <Style Selector="Menu > MenuItem">
+        <Setter Property="Padding" Value="9,3"/>
+        <Setter Property="MinHeight" Value="0"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="CornerRadius" Value="3"/>
+        <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
+        <Style Selector="^:pointerover /template/ Border#PART_LayoutRoot, ^:open /template/ Border#PART_LayoutRoot">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Hover}"/>
+        </Style>
+    </Style>
+    <Style Selector="MenuItem">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
+    </Style>
+    <Style Selector="MenuItem MenuItem, ContextMenu MenuItem, MenuFlyoutPresenter MenuItem">
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="MinHeight" Value="24"/>
+        <Setter Property="Padding" Value="10,0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
+        <Style Selector="^ /template/ Path#PART_ChevronPath">
+            <Setter Property="Width" Value="5"/>
+            <Setter Property="Height" Value="9"/>
+            <Setter Property="Margin" Value="12,0,0,0"/>
+        </Style>
+        <Style Selector="^ /template/ TextBlock#PART_InputGestureText">
+            <Setter Property="Foreground" Value="{DynamicResource PE.Brush.TextDim}"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Margin" Value="28,0,0,0"/>
+        </Style>
+        <Style Selector="^:pointerover /template/ Border#PART_LayoutRoot">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Accent}"/>
+        </Style>
+        <Style Selector="^:pointerover">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="^:pointerover TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="^:pointerover /template/ TextBlock#PART_InputGestureText">
+            <Setter Property="Foreground" Value="#E8F1FF"/>
+        </Style>
+        <Style Selector="^:disabled">
+            <Setter Property="Foreground" Value="{DynamicResource PE.Brush.TextDisabled}"/>
+        </Style>
+        <Style Selector="^:disabled TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource PE.Brush.TextDisabled}"/>
+        </Style>
+    </Style>
+    <Style Selector="MenuFlyoutPresenter, ContextMenu">
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Menu}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.Gutter}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="3"/>
+        <Setter Property="Padding" Value="0,4"/>
+    </Style>
+    <Style Selector="MenuItem Separator, ContextMenu Separator, MenuFlyoutPresenter Separator">
+        <Setter Property="Margin" Value="0,3"/>
+        <Setter Property="Height" Value="1"/>
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Divider}"/>
+    </Style>
+    <Style Selector="FlyoutPresenter">
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Menu}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.Gutter}"/>
+        <Setter Property="CornerRadius" Value="3"/>
+        <Setter Property="Padding" Value="8"/>
+    </Style>
+
+    <!-- Tooltips: light, compact -->
+    <Style Selector="ToolTip">
+        <Setter Property="Background" Value="#F2F2F2"/>
+        <Setter Property="Foreground" Value="#1E1E1E"/>
+        <Setter Property="BorderBrush" Value="#9A9A9A"/>
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="Padding" Value="7,4"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="MaxWidth" Value="360"/>
+    </Style>
+    <Style Selector="ToolTip TextBlock">
+        <Setter Property="Foreground" Value="#1E1E1E"/>
+    </Style>
+
+    <!-- Lists and scroll bars -->
+    <Style Selector="ListBox">
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Deep}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.FieldBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+    <Style Selector="ListBoxItem">
+        <Setter Property="MinHeight" Value="22"/>
+        <Setter Property="Padding" Value="8,2"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Hover}"/>
+        </Style>
+        <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.RowSelected}"/>
+        </Style>
+    </Style>
+    <Style Selector="ScrollBar">
+        <Setter Property="AllowAutoHide" Value="True"/>
+    </Style>
+    <Style Selector="ScrollBar:vertical">
+        <Setter Property="Width" Value="10"/>
+    </Style>
+    <Style Selector="ScrollBar:horizontal">
+        <Setter Property="Height" Value="10"/>
+    </Style>
+
+    <!-- Expanders (layer style sections) -->
+    <Style Selector="Expander">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="8,4"/>
+        <Style Selector="^ /template/ ToggleButton#ExpanderHeader">
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="Padding" Value="6,0"/>
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Deep}"/>
+        </Style>
+    </Style>
+
+    <!-- Grid splitters stay dark -->
+    <Style Selector="GridSplitter">
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Gutter}"/>
+    </Style>
+
+    <!-- Separators used inside bars -->
+    <Style Selector="Border.vsep">
+        <Setter Property="Width" Value="1"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Margin" Value="6,0"/>
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Divider}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="Border.hsep">
+        <Setter Property="Height" Value="1"/>
+        <Setter Property="Margin" Value="4,4"/>
+        <Setter Property="Background" Value="{DynamicResource PE.Brush.Divider}"/>
+    </Style>
+</Styles>

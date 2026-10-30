@@ -25,6 +25,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
@@ -41,7 +42,7 @@ public sealed class OptionsBuilder
     public OptionsBuilder(IEditorHost host)
     {
         _host = host;
-        Root = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 6, VerticalAlignment = VerticalAlignment.Center };
+        Root = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, VerticalAlignment = VerticalAlignment.Center };
     }
 
     public StackPanel Root { get; }
@@ -50,22 +51,21 @@ public sealed class OptionsBuilder
 
     public TextBlock Label(string text, string? tooltip = null)
     {
-        TextBlock block = new() { Text = text, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(2, 0, 0, 0) };
+        TextBlock block = new() { Text = text, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(4, 0, 0, 0) };
         if (tooltip != null) ToolTip.SetTip(block, tooltip);
         Add(block);
         return block;
     }
 
-    public void Separator()
-    {
-        Add(new Border { Width = 1, Height = 22, Margin = new Thickness(4, 0), Background = new SolidColorBrush(Color.FromArgb(80, 128, 128, 128)) });
-    }
+    public void Separator() => Add(new Border { Classes = { "vsep" } });
 
-    /// <summary>Numeric field with a scrubby label: drag the label horizontally to change the value.</summary>
-    public NumericUpDown Number(string label, double min, double max, Func<double> get, Action<double> set, string format = "0", string? suffix = null, double increment = 1, double width = 78, string? tooltip = null)
+    /// <summary>
+    /// Numeric field with a scrubby label (drag horizontally to change the value) and, for bounded ranges,
+    /// a small dropdown slider like the reference options bar.
+    /// </summary>
+    public NumericUpDown Number(string label, double min, double max, Func<double> get, Action<double> set, string format = "0", string? suffix = null, double increment = 1, double width = 50, string? tooltip = null)
     {
-        TextBlock caption = Label(label, tooltip);
-        caption.Cursor = new Cursor(StandardCursorType.SizeWestEast);
+        TextBlock? caption = string.IsNullOrEmpty(label) ? null : Label(label, tooltip);
         NumericUpDown box = new()
         {
             Minimum = (decimal)min,
@@ -75,43 +75,60 @@ public sealed class OptionsBuilder
             FormatString = format,
             Width = width,
             ShowButtonSpinner = false,
-            VerticalAlignment = VerticalAlignment.Center
+            VerticalAlignment = VerticalAlignment.Center,
+            HorizontalContentAlignment = HorizontalAlignment.Right
         };
         if (tooltip != null) ToolTip.SetTip(box, tooltip);
         box.ValueChanged += (_, e) =>
         {
             if (e.NewValue is decimal value) set((double)value);
         };
-        Point? dragStart = null;
-        double startValue = 0;
-        caption.PointerPressed += (_, e) =>
+        if (caption != null)
         {
-            dragStart = e.GetPosition(caption);
-            startValue = (double)(box.Value ?? 0);
-            e.Pointer.Capture(caption);
-            e.Handled = true;
-        };
-        caption.PointerMoved += (_, e) =>
+            caption.Cursor = new Cursor(StandardCursorType.SizeWestEast);
+            Point? dragStart = null;
+            double startValue = 0;
+            caption.PointerPressed += (_, e) =>
+            {
+                dragStart = e.GetPosition(caption);
+                startValue = (double)(box.Value ?? 0);
+                e.Pointer.Capture(caption);
+                e.Handled = true;
+            };
+            caption.PointerMoved += (_, e) =>
+            {
+                if (dragStart is not Point start) return;
+                double dx = e.GetPosition(caption).X - start.X;
+                double step = (max - min) > 200 ? 1 : increment;
+                if (e.KeyModifiers.HasFlag(KeyModifiers.Shift)) step *= 10;
+                box.Value = (decimal)Math.Clamp(startValue + Math.Round(dx / 2) * step, min, max);
+            };
+            caption.PointerReleased += (_, e) =>
+            {
+                dragStart = null;
+                e.Pointer.Capture(null);
+            };
+        }
+        // Suffix sits tight against the field so "100" and "%" read as one value.
+        StackPanel field = new() { Orientation = Orientation.Horizontal, Spacing = 2, VerticalAlignment = VerticalAlignment.Center };
+        field.Children.Add(box);
+        if (suffix != null) field.Children.Add(new TextBlock { Text = suffix, Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center });
+        if (max - min <= 5000)
         {
-            if (dragStart is not Point start) return;
-            double dx = e.GetPosition(caption).X - start.X;
-            double step = (max - min) > 200 ? 1 : increment;
-            if (e.KeyModifiers.HasFlag(KeyModifiers.Shift)) step *= 10;
-            box.Value = (decimal)Math.Clamp(startValue + Math.Round(dx / 2) * step, min, max);
-        };
-        caption.PointerReleased += (_, e) =>
-        {
-            dragStart = null;
-            e.Pointer.Capture(null);
-        };
-        Add(box);
-        if (suffix != null) Label(suffix);
+            Slider slider = new() { Minimum = min, Maximum = Math.Min(max, min + 5000), Value = (double)(box.Value ?? 0), Width = 180 };
+            slider.ValueChanged += (_, e) => box.Value = (decimal)Math.Round(e.NewValue / increment) * (decimal)increment;
+            box.ValueChanged += (_, e) => { if (e.NewValue is decimal v && Math.Abs(slider.Value - (double)v) > 1e-6) slider.Value = (double)v; };
+            Button drop = new() { Classes = { "icon" }, Content = ToolIcons.Create("chevron-down", 9), Padding = new Thickness(2, 4), VerticalAlignment = VerticalAlignment.Center };
+            drop.Flyout = new Flyout { Content = slider, Placement = PlacementMode.BottomEdgeAlignedRight };
+            field.Children.Add(drop);
+        }
+        Add(field);
         return box;
     }
 
     /// <summary>Percentage option backed by a 0..1 value.</summary>
     public NumericUpDown Percent(string label, Func<float> get, Action<float> set, string? tooltip = null) =>
-        Number(label, 0, 100, () => get() * 100, v => set((float)(v / 100)), "0", "%", 1, 64, tooltip);
+        Number(label, 0, 100, () => get() * 100, v => set((float)(v / 100)), "0", "%", 1, 40, tooltip);
 
     public ComboBox Combo<T>(string? label, IEnumerable<(string Text, T Value)> items, Func<T> get, Action<T> set, double width = 120, string? tooltip = null)
     {
@@ -137,11 +154,11 @@ public sealed class OptionsBuilder
         string.Concat(text.Select((c, i) => i > 0 && char.IsUpper(c) && !char.IsUpper(text[i - 1]) ? " " + c : c.ToString()));
 
     public ComboBox BlendMode(Func<LayerBlendMode> get, Action<LayerBlendMode> set, bool paintModes = true) =>
-        Combo("Mode:", (paintModes ? BlendModes.PaintModes : BlendModes.LayerModes).Select(m => (BlendModes.GetName(m), m)), get, set, 130);
+        Combo("Mode:", (paintModes ? BlendModes.PaintModes : BlendModes.LayerModes).Select(m => (BlendModes.GetName(m), m)), get, set, 120);
 
     public CheckBox Check(string text, Func<bool> get, Action<bool> set, string? tooltip = null)
     {
-        CheckBox box = new() { Content = text, IsChecked = get(), VerticalAlignment = VerticalAlignment.Center };
+        CheckBox box = new() { Content = text, IsChecked = get(), VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(4, 0, 0, 0) };
         box.IsCheckedChanged += (_, _) => set(box.IsChecked == true);
         if (tooltip != null) ToolTip.SetTip(box, tooltip);
         Add(box);
@@ -150,7 +167,7 @@ public sealed class OptionsBuilder
 
     public Button Button(string text, Action click, string? tooltip = null)
     {
-        Button button = new() { Content = text, VerticalAlignment = VerticalAlignment.Center, Padding = new Thickness(8, 3) };
+        Button button = new() { Content = text, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(2, 0) };
         button.Click += (_, _) => click();
         if (tooltip != null) ToolTip.SetTip(button, tooltip);
         Add(button);
@@ -161,11 +178,15 @@ public sealed class OptionsBuilder
     {
         Button button = new()
         {
+            Classes = { "icon" },
             Content = ToolIcons.Create(iconKey, 16),
-            Padding = new Thickness(4),
-            VerticalAlignment = VerticalAlignment.Center,
-            Background = active ? new SolidColorBrush(Color.FromArgb(90, 62, 131, 242)) : Brushes.Transparent
+            Width = 26,
+            Height = 24,
+            Padding = new Thickness(0),
+            HorizontalContentAlignment = HorizontalAlignment.Center,
+            VerticalAlignment = VerticalAlignment.Center
         };
+        button.Classes.Set("checked", active);
         ToolTip.SetTip(button, tooltip);
         button.Click += (_, _) => click();
         Add(button);
@@ -183,7 +204,7 @@ public sealed class OptionsBuilder
 
     public Button ColorButton(string tooltip, Func<SKColor> get, Action<SKColor> set, bool allowNone = false, Func<bool>? isNone = null, Action? setNone = null)
     {
-        Border swatch = new() { Width = 26, Height = 16, BorderBrush = Brushes.Gray, BorderThickness = new Thickness(1) };
+        Border swatch = new() { Width = 20, Height = 20, BorderBrush = new SolidColorBrush(Color.FromRgb(0x9A, 0x9A, 0x9A)), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(2) };
         void Refresh()
         {
             SKColor c = get();
@@ -192,12 +213,12 @@ public sealed class OptionsBuilder
                 {
                     StartPoint = new RelativePoint(0, 1, RelativeUnit.Relative),
                     EndPoint = new RelativePoint(1, 0, RelativeUnit.Relative),
-                    GradientStops = { new Avalonia.Media.GradientStop(Colors.White, 0.45), new Avalonia.Media.GradientStop(Colors.Red, 0.5), new Avalonia.Media.GradientStop(Colors.White, 0.55) }
+                    GradientStops = { new Avalonia.Media.GradientStop(Colors.White, 0.44), new Avalonia.Media.GradientStop(Color.FromRgb(0xE0, 0x30, 0x30), 0.5), new Avalonia.Media.GradientStop(Colors.White, 0.56) }
                 }
                 : new SolidColorBrush(Color.FromArgb(c.Alpha, c.Red, c.Green, c.Blue));
         }
         Refresh();
-        Button button = new() { Content = swatch, Padding = new Thickness(3), VerticalAlignment = VerticalAlignment.Center };
+        Button button = new() { Classes = { "icon" }, Content = swatch, Padding = new Thickness(2), VerticalAlignment = VerticalAlignment.Center };
         ToolTip.SetTip(button, tooltip);
         button.Click += async (_, _) =>
         {
@@ -222,12 +243,11 @@ public sealed class OptionsBuilder
     /// <summary>New / Add / Subtract / Intersect selection mode buttons.</summary>
     public void SelectionMode(Func<SelectionMode> get, Action<SelectionMode> set)
     {
-        StackPanel group = new() { Orientation = Orientation.Horizontal, Spacing = 1 };
+        StackPanel group = new() { Orientation = Orientation.Horizontal, Spacing = 0, VerticalAlignment = VerticalAlignment.Center };
         List<(Button Button, SelectionMode Mode)> buttons = [];
         void Refresh()
         {
-            foreach (var (button, mode) in buttons)
-                button.Background = mode == get() ? new SolidColorBrush(Color.FromArgb(90, 62, 131, 242)) : Brushes.Transparent;
+            foreach (var (button, mode) in buttons) button.Classes.Set("checked", mode == get());
         }
         foreach (var (mode, icon, tip) in new[]
         {
@@ -237,7 +257,7 @@ public sealed class OptionsBuilder
             (Imaging.SelectionMode.Intersect, "sel-int", "Intersect with selection (Shift+Alt)")
         })
         {
-            Button button = new() { Content = ToolIcons.Create(icon, 16), Padding = new Thickness(3) };
+            Button button = new() { Classes = { "icon" }, Content = ToolIcons.Create(icon, 16), Width = 26, Height = 24, Padding = new Thickness(0), HorizontalContentAlignment = HorizontalAlignment.Center };
             ToolTip.SetTip(button, tip);
             SelectionMode captured = mode;
             button.Click += (_, _) => { set(captured); Refresh(); };
@@ -248,56 +268,85 @@ public sealed class OptionsBuilder
         Add(group);
     }
 
-    /// <summary>Brush preset picker with size and hardness, shown as a dropdown.</summary>
+    /// <summary>Draws a small preview of a brush tip (soft or hard round, square, sampled).</summary>
+    public static Control TipPreview(BrushPreset preset, double size)
+    {
+        double hardness = Math.Clamp(preset.Hardness, 0, 1);
+        IBrush fill = preset.Shape == BrushTipShape.Sampled
+            ? new SolidColorBrush(Color.FromRgb(0xC8, 0xC8, 0xC8))
+            : new RadialGradientBrush
+            {
+                GradientStops =
+                {
+                    new Avalonia.Media.GradientStop(Color.FromRgb(0xE6, 0xE6, 0xE6), 0),
+                    new Avalonia.Media.GradientStop(Color.FromRgb(0xE6, 0xE6, 0xE6), hardness * 0.95),
+                    new Avalonia.Media.GradientStop(Color.FromArgb(0, 0xE6, 0xE6, 0xE6), 1)
+                }
+            };
+        double diameter = Math.Clamp(size * (0.45 + Math.Min(preset.Size, 100) / 180.0), 6, size);
+        Border tip = new()
+        {
+            Width = diameter,
+            Height = diameter * Math.Clamp(preset.Roundness, 0.2, 1),
+            Background = fill,
+            CornerRadius = preset.Shape == BrushTipShape.Square ? new CornerRadius(1) : new CornerRadius(diameter / 2),
+            RenderTransform = new RotateTransform(-preset.Angle),
+            HorizontalAlignment = HorizontalAlignment.Center,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        return new Border { Width = size, Height = size, Child = tip };
+    }
+
+    /// <summary>Brush preset picker with size, hardness and preset tips, shown as a dropdown.</summary>
     public void BrushPicker(Func<BrushPreset> get, Action<BrushPreset> set, Func<float> getSize, Action<float> setSize)
     {
-        TextBlock sizeText = new() { Text = $"{getSize():0}", VerticalAlignment = VerticalAlignment.Center, MinWidth = 24 };
-        StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 4 };
-        content.Children.Add(ToolIcons.Create("brush-tip", 16));
-        content.Children.Add(sizeText);
-        Button button = new() { Content = content, Padding = new Thickness(4, 2), VerticalAlignment = VerticalAlignment.Center };
-        ToolTip.SetTip(button, "Brush preset picker");
+        TextBlock sizeText = new() { Text = $"{getSize():0}", VerticalAlignment = VerticalAlignment.Center, FontSize = 11 };
+        ContentControl tipHost = new() { Content = TipPreview(get(), 18) };
+        StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 2 };
+        StackPanel tipStack = new() { Spacing = -2 };
+        tipStack.Children.Add(tipHost);
+        tipStack.Children.Add(sizeText);
+        content.Children.Add(tipStack);
+        content.Children.Add(ToolIcons.Create("chevron-down", 9));
+        Button button = new() { Classes = { "icon" }, Content = content, Padding = new Thickness(4, 0), Height = 30, VerticalAlignment = VerticalAlignment.Center };
+        ToolTip.SetTip(button, "Click to open the Brush Preset picker");
 
-        StackPanel panel = new() { Spacing = 6, Margin = new Thickness(8), Width = 240 };
-        Slider sizeSlider = new() { Minimum = 1, Maximum = 2500, Value = getSize() };
-        TextBlock sizeLabel = new() { Text = $"Size: {getSize():0} px" };
-        Slider hardSlider = new() { Minimum = 0, Maximum = 100, Value = get().Hardness * 100 };
-        TextBlock hardLabel = new() { Text = $"Hardness: {get().Hardness * 100:0}%" };
-        sizeSlider.ValueChanged += (_, e) =>
+        StackPanel panel = new() { Spacing = 8, Width = 270 };
+        Grid form = DialogBuilder.Form();
+        DialogBuilder.AddRow(form, "Size:", DialogBuilder.SliderNumber(1, 2500, getSize(), v =>
         {
-            float v = (float)Math.Round(e.NewValue);
-            setSize(v);
-            sizeLabel.Text = $"Size: {v:0} px";
+            setSize((float)v);
             sizeText.Text = $"{v:0}";
             _host.InvalidateOverlay();
-        };
-        hardSlider.ValueChanged += (_, e) =>
+        }));
+        DialogBuilder.AddRow(form, "Hardness:", DialogBuilder.SliderNumber(0, 100, get().Hardness * 100, v =>
         {
-            get().Hardness = (float)(e.NewValue / 100);
-            hardLabel.Text = $"Hardness: {e.NewValue:0}%";
-        };
-        panel.Children.Add(sizeLabel);
-        panel.Children.Add(sizeSlider);
-        panel.Children.Add(hardLabel);
-        panel.Children.Add(hardSlider);
-        ListBox presets = new() { MaxHeight = 220 };
+            get().Hardness = (float)(v / 100);
+            tipHost.Content = TipPreview(get(), 18);
+        }));
+        panel.Children.Add(form);
+        panel.Children.Add(new Border { Classes = { "hsep" }, Margin = new Thickness(0) });
+        WrapPanel presets = new() { ItemWidth = 52, ItemHeight = 52 };
         foreach (BrushPreset preset in _host.BrushPresets)
         {
-            presets.Items.Add(new ListBoxItem { Content = $"{preset.Name}  ({preset.Size:0})", Tag = preset });
-        }
-        presets.SelectionChanged += (_, _) =>
-        {
-            if (presets.SelectedItem is ListBoxItem { Tag: BrushPreset preset })
+            StackPanel cell = new() { Spacing = 0 };
+            cell.Children.Add(TipPreview(preset, 30));
+            cell.Children.Add(new TextBlock { Text = $"{preset.Size:0}", FontSize = 10, HorizontalAlignment = HorizontalAlignment.Center, Classes = { "dim" } });
+            Button presetButton = new() { Classes = { "icon" }, Content = cell, Width = 50, Height = 50, HorizontalContentAlignment = HorizontalAlignment.Center };
+            ToolTip.SetTip(presetButton, preset.Name);
+            presetButton.Click += (_, _) =>
             {
-                BrushPreset copy = preset.Clone();
-                set(copy);
+                set(preset.Clone());
                 setSize(preset.Size);
-                sizeSlider.Value = preset.Size;
-                hardSlider.Value = preset.Hardness * 100;
-            }
-        };
-        panel.Children.Add(presets);
-        button.Flyout = new Flyout { Content = panel, Placement = PlacementMode.Bottom };
+                sizeText.Text = $"{preset.Size:0}";
+                tipHost.Content = TipPreview(preset, 18);
+                button.Flyout?.Hide();
+                _host.RefreshOptions();
+            };
+            presets.Children.Add(presetButton);
+        }
+        panel.Children.Add(new ScrollViewer { Content = presets, MaxHeight = 240 });
+        button.Flyout = new Flyout { Content = panel, Placement = PlacementMode.BottomEdgeAlignedLeft };
         Add(button);
     }
 }

@@ -55,12 +55,12 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
     private DocumentView? _view;
     private SKColor _foreground = SKColors.Black;
     private SKColor _background = SKColors.White;
-    private readonly Border _optionsHost = new() { Padding = new Thickness(6, 4), MinHeight = 38 };
+    private readonly Border _optionsHost = new() { Padding = new Thickness(6, 3), Height = 38 };
     private readonly StackPanel _tabs = new() { Orientation = Orientation.Horizontal };
-    private readonly TextBlock _status = new() { VerticalAlignment = VerticalAlignment.Center, TextTrimming = TextTrimming.CharacterEllipsis };
-    private readonly TextBlock _docInfo = new() { VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(12, 0) };
-    private readonly TextBlock _cursorInfo = new() { VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(12, 0), MinWidth = 120 };
-    private readonly TextBox _zoomBox = new() { Width = 64, MinHeight = 22, Padding = new Thickness(4, 1), FontSize = 11 };
+    private readonly TextBlock _status = new() { VerticalAlignment = VerticalAlignment.Center, TextTrimming = TextTrimming.CharacterEllipsis, FontSize = 11, Classes = { "dim" } };
+    private readonly TextBlock _docInfo = new() { VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(10, 0), FontSize = 11, Classes = { "dim" } };
+    private readonly TextBlock _cursorInfo = new() { VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(10, 0), MinWidth = 110, FontSize = 11, Classes = { "dim" } };
+    private readonly TextBox _zoomBox = new() { Width = 54, MinHeight = 18, Height = 18, Padding = new Thickness(4, 0), FontSize = 11, VerticalContentAlignment = VerticalAlignment.Center, BorderThickness = new Thickness(0), Background = Brushes.Transparent };
     private readonly Canvas _overlayLayer = new();
     private readonly Border _busy;
     private readonly TextBlock _busyText = new() { Foreground = Brushes.White, FontSize = 14 };
@@ -103,8 +103,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         MinWidth = 900;
         MinHeight = 600;
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
-        RequestedThemeVariant = ThemeManager.GetCurrentTheme();
-        this.Bind(BackgroundProperty, this.GetResourceObservable("ShareX.Brush.Background.Main"));
+        ShareX.PhotoEditor.UI.Theme.PhotoEditorTheme.Apply(this);
 
         Tools = new ToolManager(this);
         Tools.ApplyLayout(Settings);
@@ -124,7 +123,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
 
         // Canvas area with rulers.
         Grid canvasGrid = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*"), RowDefinitions = new RowDefinitions("Auto,*") };
-        Border corner = new() { Width = 18, Height = 18, Background = new SolidColorBrush(Color.FromRgb(0x30, 0x30, 0x30)) };
+        Border corner = new() { Width = 18, Height = 18, Background = new SolidColorBrush(Color.FromRgb(0x2C, 0x2C, 0x2C)) };
         Grid.SetColumn(_hRuler, 1);
         Grid.SetRow(_vRuler, 1);
         Grid canvasStack = new();
@@ -137,20 +136,18 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         canvasGrid.Children.Add(_vRuler);
         canvasGrid.Children.Add(canvasStack);
 
-        _tabHost = new Border { Child = new ScrollViewer { Content = _tabs, HorizontalScrollBarVisibility = ScrollBarVisibility.Auto, VerticalScrollBarVisibility = ScrollBarVisibility.Disabled }, MinHeight = 28 };
-        _tabHost.Bind(Border.BackgroundProperty, _tabHost.GetResourceObservable("ShareX.Brush.Background.Toolbar"));
+        _tabHost = new Border { Child = new ScrollViewer { Content = _tabs, HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden, VerticalScrollBarVisibility = ScrollBarVisibility.Disabled }, Height = 28, Background = new SolidColorBrush(Color.FromRgb(0x26, 0x26, 0x26)) };
         DockPanel center = new();
         DockPanel.SetDock(_tabHost, Dock.Top);
         center.Children.Add(_tabHost);
         center.Children.Add(canvasGrid);
 
-        _toolbarHost = new Border { Child = _toolbar, BorderThickness = new Thickness(0, 0, 1, 0) };
+        _toolbarHost = new Border { Child = _toolbar, Margin = new Thickness(0, 0, 2, 0) };
         _toolbarHost.Bind(Border.BackgroundProperty, _toolbarHost.GetResourceObservable("ShareX.Brush.Background.Toolbar"));
-        _toolbarHost.Bind(Border.BorderBrushProperty, _toolbarHost.GetResourceObservable("ShareX.Brush.Border"));
 
         _dockColumn = new ColumnDefinition(new GridLength(Math.Clamp(Settings.RightDockWidth, 220, 600))) { MinWidth = 200 };
         _layout = new Grid { ColumnDefinitions = new ColumnDefinitions { new(GridLength.Auto), new(GridLength.Star), new(GridLength.Auto), _dockColumn } };
-        _dockSplitter = new GridSplitter { Width = 4, ResizeDirection = GridResizeDirection.Columns, Background = new SolidColorBrush(Color.FromArgb(80, 0, 0, 0)) };
+        _dockSplitter = new GridSplitter { Width = 2, ResizeDirection = GridResizeDirection.Columns, Background = new SolidColorBrush(Color.FromRgb(0x1E, 0x1E, 0x1E)) };
         Grid.SetColumn(center, 1);
         Grid.SetColumn(_dockSplitter, 2);
         Grid.SetColumn(_dock, 3);
@@ -160,8 +157,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         _layout.Children.Add(_dock);
 
         _optionsHost.Bind(Border.BackgroundProperty, _optionsHost.GetResourceObservable("ShareX.Brush.Background.Toolbar"));
-        _optionsHost.BorderThickness = new Thickness(0, 1, 0, 1);
-        _optionsHost.Bind(Border.BorderBrushProperty, _optionsHost.GetResourceObservable("ShareX.Brush.Border"));
+        _optionsHost.Margin = new Thickness(0, 0, 0, 2);
 
         _zoomBox.KeyDown += (_, e) =>
         {
@@ -173,7 +169,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
             }
             Canvas.Focus();
         };
-        DockPanel statusBar = new() { Height = 26, Margin = new Thickness(6, 0) };
+        DockPanel statusBar = new() { Height = 22, Margin = new Thickness(4, 0) };
         StackPanel left = new() { Orientation = Orientation.Horizontal, Spacing = 4 };
         left.Children.Add(_zoomBox);
         left.Children.Add(_docInfo);
@@ -181,11 +177,10 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         DockPanel.SetDock(left, Dock.Left);
         statusBar.Children.Add(left);
         statusBar.Children.Add(_status);
-        Border statusHost = new() { Child = statusBar, BorderThickness = new Thickness(0, 1, 0, 0) };
+        Border statusHost = new() { Child = statusBar, Margin = new Thickness(0, 2, 0, 0) };
         statusHost.Bind(Border.BackgroundProperty, statusHost.GetResourceObservable("ShareX.Brush.Background.Toolbar"));
-        statusHost.Bind(Border.BorderBrushProperty, statusHost.GetResourceObservable("ShareX.Brush.Border"));
 
-        DockPanel root = new();
+        DockPanel root = new() { Background = new SolidColorBrush(Color.FromRgb(0x1E, 0x1E, 0x1E)) };
         DockPanel.SetDock(_menu, Dock.Top);
         DockPanel.SetDock(_optionsHost, Dock.Top);
         DockPanel.SetDock(statusHost, Dock.Bottom);
@@ -339,26 +334,49 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         foreach (DocumentView view in _views)
         {
             bool active = view == _view;
-            string zoom = $"{view.Zoom * 100:0.#}%";
-            Button close = new() { Content = "✕", Padding = new Thickness(4, 0), FontSize = 10, Background = Brushes.Transparent };
             DocumentView captured = view;
+            PhotoDocument doc = view.Document;
+            string layer = doc.ActiveLayer?.Name ?? "Background";
+            string mode = doc.EditingMask && doc.ActiveLayer?.Mask != null ? "Layer Mask/8" : doc.QuickMask ? "Quick Mask/8" : "RGB/8";
+            string text = $"{doc.DisplayName.TrimEnd('*')} @ {view.Zoom * 100:0.#}% ({layer}, {mode}){(doc.IsDirty ? " *" : string.Empty)}";
+
+            Button close = new() { Classes = { "icon" }, Content = ToolIcons.Create("close", 9), Padding = new Thickness(3), Width = 16, Height = 16, VerticalAlignment = VerticalAlignment.Center, Opacity = active ? 1 : 0.6 };
+            ToolTip.SetTip(close, "Close");
             close.Click += async (_, e) =>
             {
                 e.Handled = true;
                 await CloseViewAsync(captured);
             };
-            StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 6 };
-            content.Children.Add(new TextBlock { Text = $"{view.Document.DisplayName} @ {zoom}", VerticalAlignment = VerticalAlignment.Center, FontSize = 12 });
-            content.Children.Add(close);
-            Button tab = new()
+            StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 8, VerticalAlignment = VerticalAlignment.Center };
+            content.Children.Add(new TextBlock
             {
-                Content = content,
-                Padding = new Thickness(10, 3),
-                CornerRadius = new CornerRadius(4, 4, 0, 0),
-                Background = active ? new SolidColorBrush(Color.FromArgb(60, 255, 255, 255)) : Brushes.Transparent,
-                FontWeight = active ? FontWeight.SemiBold : FontWeight.Normal
+                Text = text,
+                VerticalAlignment = VerticalAlignment.Center,
+                Foreground = active ? Brushes.White : new SolidColorBrush(Color.FromRgb(0x9E, 0x9E, 0x9E))
+            });
+            content.Children.Add(close);
+            // Document tabs: the active tab joins the canvas area, inactive tabs sit on the darker strip.
+            Border tab = new()
+            {
+                Child = content,
+                Padding = new Thickness(12, 0, 6, 0),
+                Height = 28,
+                Margin = new Thickness(0, 0, 1, 0),
+                Background = active ? new SolidColorBrush(Color.FromRgb(0x32, 0x32, 0x32)) : new SolidColorBrush(Color.FromRgb(0x2A, 0x2A, 0x2A)),
+                BorderBrush = active ? OverlayContext.AccentBrush : Brushes.Transparent,
+                BorderThickness = new Thickness(0, active ? 2 : 0, 0, 0),
+                Cursor = new Cursor(StandardCursorType.Hand)
             };
-            tab.Click += (_, _) => ActivateView(captured);
+            ToolTip.SetTip(tab, doc.FilePath ?? doc.Title);
+            tab.PointerPressed += (_, e) =>
+            {
+                if (e.GetCurrentPoint(tab).Properties.IsMiddleButtonPressed)
+                {
+                    _ = CloseViewAsync(captured);
+                    return;
+                }
+                ActivateView(captured);
+            };
             _tabs.Children.Add(tab);
         }
     }
@@ -423,9 +441,28 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
     public void RefreshOptions()
     {
         OptionsBuilder builder = new(this);
-        StackPanel left = new() { Orientation = Orientation.Horizontal, Spacing = 8 };
-        left.Children.Add(ToolIcons.Create(Tools.Active.Id, 22));
-        left.Children.Add(new Border { Width = 1, Height = 22, Background = new SolidColorBrush(Color.FromArgb(80, 128, 128, 128)) });
+        StackPanel left = new() { Orientation = Orientation.Horizontal, Spacing = 4, VerticalAlignment = VerticalAlignment.Center };
+        // Tool preset button: the active tool's icon with a dropdown listing the other tools of its group.
+        StackPanel presetContent = new() { Orientation = Orientation.Horizontal, Spacing = 3 };
+        presetContent.Children.Add(ToolIcons.Create(Tools.Active.Id, 20));
+        presetContent.Children.Add(ToolIcons.Create("chevron-down", 9));
+        Button preset = new() { Classes = { "icon" }, Content = presetContent, Padding = new Thickness(5, 3), VerticalAlignment = VerticalAlignment.Center };
+        ToolTip.SetTip(preset, Tools.Active.Name);
+        ToolGroup? group = Tools.FindGroup(Tools.Active);
+        if (group != null && group.Tools.Count > 1)
+        {
+            MenuFlyout flyout = new();
+            foreach (ToolBase tool in group.Tools)
+            {
+                MenuItem item = new() { Header = tool.Name, Icon = ToolIcons.Create(tool.Id, 16) };
+                ToolBase captured = tool;
+                item.Click += (_, _) => Tools.Select(captured);
+                flyout.Items.Add(item);
+            }
+            preset.Flyout = flyout;
+        }
+        left.Children.Add(preset);
+        left.Children.Add(new Border { Classes = { "vsep" } });
         try
         {
             Tools.Active.BuildOptions(builder);
@@ -435,7 +472,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
             builder.Label("Options unavailable: " + ex.Message);
         }
         left.Children.Add(builder.Root);
-        _optionsHost.Child = new ScrollViewer { Content = left, HorizontalScrollBarVisibility = ScrollBarVisibility.Auto, VerticalScrollBarVisibility = ScrollBarVisibility.Disabled };
+        _optionsHost.Child = new ScrollViewer { Content = left, HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden, VerticalScrollBarVisibility = ScrollBarVisibility.Disabled };
         _dock.Get("brushes")?.Refresh();
     }
 

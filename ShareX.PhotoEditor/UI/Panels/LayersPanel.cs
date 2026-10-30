@@ -36,12 +36,12 @@ namespace ShareX.PhotoEditor.UI.Panels;
 /// <summary>Layers panel: visibility, thumbnails, masks, selection, renaming, drag-and-drop ordering and layer options.</summary>
 public sealed class LayersPanel : EditorPanel
 {
-    private static readonly IBrush SelectedBrush = new SolidColorBrush(Color.FromArgb(110, 62, 131, 242));
+    private static readonly IBrush SelectedBrush = new SolidColorBrush(Color.FromRgb(0x4B, 0x4B, 0x4B));
     private readonly StackPanel _list = new();
-    private readonly ComboBox _blend = new() { Width = 130 };
+    private readonly ComboBox _blend = new() { MinWidth = 110, HorizontalAlignment = HorizontalAlignment.Stretch };
     private readonly NumericUpDown _opacity = DialogsNumber();
     private readonly NumericUpDown _fill = DialogsNumber();
-    private readonly StackPanel _locks = new() { Orientation = Orientation.Horizontal, Spacing = 2 };
+    private readonly StackPanel _locks = new() { Orientation = Orientation.Horizontal, Spacing = 0 };
     private readonly Border _dropIndicator = new() { Height = 2, Background = new SolidColorBrush(Color.FromRgb(0x3E, 0x83, 0xF2)), IsVisible = false, IsHitTestVisible = false };
     private bool _updating;
     private Layer? _dragLayer;
@@ -49,7 +49,7 @@ public sealed class LayersPanel : EditorPanel
     private bool _dragging;
     private (Layer Target, int Position)? _drop;
 
-    private static NumericUpDown DialogsNumber() => new() { Minimum = 0, Maximum = 100, Increment = 1, FormatString = "0", Width = 64, ShowButtonSpinner = false };
+    private static NumericUpDown DialogsNumber() => new() { Minimum = 0, Maximum = 100, Increment = 1, FormatString = "0", Width = 42, ShowButtonSpinner = false, HorizontalContentAlignment = HorizontalAlignment.Right };
 
     public LayersPanel(PhotoEditorWindow editor) : base(editor)
     {
@@ -74,11 +74,34 @@ public sealed class LayersPanel : EditorPanel
             Editor.Commit("Fill Opacity Change");
         };
 
-        StackPanel header = new() { Spacing = 4, Margin = new Thickness(4) };
-        header.Children.Add(Row(_blend, Text("Opacity:"), _opacity));
-        header.Children.Add(Row(Text("Lock:"), _locks, Text("Fill:"), _fill));
+        StackPanel header = new() { Spacing = 5, Margin = new Thickness(8, 6, 8, 6) };
+        Grid blendRow = new() { ColumnDefinitions = new ColumnDefinitions("*,Auto,Auto,Auto"), ColumnSpacing = 4 };
+        TextBlock opacityLabel = Text("Opacity:");
+        TextBlock opacityUnit = new() { Text = "%", Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center };
+        Grid.SetColumn(opacityLabel, 1);
+        Grid.SetColumn(_opacity, 2);
+        Grid.SetColumn(opacityUnit, 3);
+        blendRow.Children.Add(_blend);
+        blendRow.Children.Add(opacityLabel);
+        blendRow.Children.Add(_opacity);
+        blendRow.Children.Add(opacityUnit);
+        header.Children.Add(blendRow);
+        Grid lockRow = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto,Auto,Auto"), ColumnSpacing = 4 };
+        TextBlock lockLabel = Text("Lock:");
+        TextBlock fillLabel = Text("Fill:");
+        TextBlock fillUnit = new() { Text = "%", Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center };
+        Grid.SetColumn(_locks, 1);
+        Grid.SetColumn(fillLabel, 2);
+        Grid.SetColumn(_fill, 3);
+        Grid.SetColumn(fillUnit, 4);
+        lockRow.Children.Add(lockLabel);
+        lockRow.Children.Add(_locks);
+        lockRow.Children.Add(fillLabel);
+        lockRow.Children.Add(_fill);
+        lockRow.Children.Add(fillUnit);
+        header.Children.Add(lockRow);
 
-        StackPanel footer = new() { Orientation = Orientation.Horizontal, Spacing = 2, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(4) };
+        StackPanel footer = new() { Orientation = Orientation.Horizontal, Spacing = 2, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(4, 2) };
         footer.Children.Add(IconButton("link", "Link layers (select multiple layers with Ctrl-click)", () => { }));
         footer.Children.Add(IconButton("fx", "Add a layer style", () => _ = EditorCommands.LayerStyle(Editor)));
         footer.Children.Add(IconButton("mask", "Add layer mask (Alt: hide all)", () => EditorCommands.AddMask(Editor, Doc?.Selection != null ? MaskMode.RevealSelection : MaskMode.RevealAll)));
@@ -94,11 +117,13 @@ public sealed class LayersPanel : EditorPanel
         listHost.Children.Add(new Canvas { IsHitTestVisible = false, Children = { _dropIndicator } });
 
         DockPanel root = new();
-        DockPanel.SetDock(header, Dock.Top);
-        DockPanel.SetDock(footer, Dock.Bottom);
-        root.Children.Add(header);
-        root.Children.Add(footer);
-        root.Children.Add(new ScrollViewer { Content = listHost, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled });
+        Border headerHost = new() { Child = header, BorderBrush = new SolidColorBrush(Color.FromRgb(0x28, 0x28, 0x28)), BorderThickness = new Thickness(0, 0, 0, 1) };
+        Border footerHost = new() { Child = footer, BorderBrush = new SolidColorBrush(Color.FromRgb(0x28, 0x28, 0x28)), BorderThickness = new Thickness(0, 1, 0, 0) };
+        DockPanel.SetDock(headerHost, Dock.Top);
+        DockPanel.SetDock(footerHost, Dock.Bottom);
+        root.Children.Add(headerHost);
+        root.Children.Add(footerHost);
+        root.Children.Add(new ScrollViewer { Content = listHost, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Background = new SolidColorBrush(Color.FromRgb(0x2B, 0x2B, 0x2B)) });
         Content = root;
     }
 
@@ -106,14 +131,18 @@ public sealed class LayersPanel : EditorPanel
 
     public override string Title => "Layers";
 
-    private Button LockButton(string tip, bool active, Action toggle, string glyph)
+    private Button LockButton(string tip, bool active, Action toggle, string icon)
     {
         Button button = new()
         {
-            Content = new TextBlock { Text = glyph, FontSize = 11 },
-            Padding = new Thickness(4, 1),
-            Background = active ? SelectedBrush : Brushes.Transparent
+            Classes = { "icon" },
+            Content = ToolIcons.Create(icon, 14),
+            Width = 24,
+            Height = 22,
+            Padding = new Thickness(0),
+            HorizontalContentAlignment = HorizontalAlignment.Center
         };
+        button.Classes.Set("checked", active);
         ToolTip.SetTip(button, tip);
         button.Click += (_, _) =>
         {
@@ -136,10 +165,10 @@ public sealed class LayersPanel : EditorPanel
             _blend.SelectedItem = _blend.Items.OfType<ComboBoxItem>().FirstOrDefault(i => (LayerBlendMode)i.Tag! == active.BlendMode);
             _opacity.Value = (decimal)Math.Round(active.Opacity * 100);
             _fill.Value = (decimal)Math.Round(active.FillOpacity * 100);
-            _locks.Children.Add(LockButton("Lock transparent pixels", active.LockTransparency, () => active.LockTransparency = !active.LockTransparency, "▦"));
-            _locks.Children.Add(LockButton("Lock image pixels", active.LockPixels, () => active.LockPixels = !active.LockPixels, "✎"));
-            _locks.Children.Add(LockButton("Lock position", active.LockPosition, () => active.LockPosition = !active.LockPosition, "✥"));
-            _locks.Children.Add(LockButton("Lock all", active.LockAll, () => active.LockAll = !active.LockAll, "🔒"));
+            _locks.Children.Add(LockButton("Lock transparent pixels", active.LockTransparency, () => active.LockTransparency = !active.LockTransparency, "lock-transparency"));
+            _locks.Children.Add(LockButton("Lock image pixels", active.LockPixels, () => active.LockPixels = !active.LockPixels, "lock-pixels"));
+            _locks.Children.Add(LockButton("Lock position", active.LockPosition, () => active.LockPosition = !active.LockPosition, "lock-position"));
+            _locks.Children.Add(LockButton("Lock all", active.LockAll, () => active.LockAll = !active.LockAll, "lock"));
         }
         if (doc != null)
         {
@@ -153,25 +182,29 @@ public sealed class LayersPanel : EditorPanel
         bool selected = layer == doc.ActiveLayer || doc.SelectedLayerIds.Contains(layer.Id);
         Border row = new()
         {
-            Padding = new Thickness(2),
+            Height = 38,
             Background = selected ? SelectedBrush : Brushes.Transparent,
-            BorderBrush = new SolidColorBrush(Color.FromArgb(40, 128, 128, 128)),
+            BorderBrush = new SolidColorBrush(Color.FromRgb(0x24, 0x24, 0x24)),
             BorderThickness = new Thickness(0, 0, 0, 1),
             Tag = layer
         };
-        StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 4 };
+        Grid content = new() { ColumnDefinitions = new ColumnDefinitions("28,Auto,*,Auto") };
 
-        Button eye = new()
+        // Visibility column, separated from the layer content like the reference panel.
+        Border eye = new()
         {
-            Content = layer.Visible ? ToolIcons.Create("eye", 14) : new Border { Width = 14, Height = 14 },
-            Padding = new Thickness(2),
+            Width = 28,
             Background = Brushes.Transparent,
-            VerticalAlignment = VerticalAlignment.Center
+            BorderBrush = new SolidColorBrush(Color.FromRgb(0x24, 0x24, 0x24)),
+            BorderThickness = new Thickness(0, 0, 1, 0),
+            Child = layer.Visible ? ToolIcons.Create("eye", 15) : null,
+            Cursor = new Cursor(StandardCursorType.Hand)
         };
         ToolTip.SetTip(eye, "Toggle visibility (Alt-click shows only this layer)");
-        eye.Click += (_, _) =>
+        eye.PointerPressed += (_, e) =>
         {
-            if (Editor.LastModifiers.HasFlag(KeyModifiers.Alt))
+            e.Handled = true;
+            if (e.KeyModifiers.HasFlag(KeyModifiers.Alt))
             {
                 List<Layer> siblings = doc.AllLayers.Where(l => l.Parent == layer.Parent && l != layer).ToList();
                 bool solo = siblings.All(l => !l.Visible) && layer.Visible;
@@ -185,28 +218,40 @@ public sealed class LayersPanel : EditorPanel
             Editor.Commit(layer.Visible ? "Show Layer" : "Hide Layer");
         };
         content.Children.Add(eye);
-        content.Children.Add(new Border { Width = depth * 14 });
 
-        if (layer.IsClipped) content.Children.Add(Text("↳"));
+        StackPanel thumbs = new() { Orientation = Orientation.Horizontal, Spacing = 4, Margin = new Thickness(6 + depth * 16, 0, 0, 0), VerticalAlignment = VerticalAlignment.Center };
+        Grid.SetColumn(thumbs, 1);
+        if (layer.IsClipped) thumbs.Children.Add(ToolIcons.Create("clip-arrow", 12));
         if (layer is GroupLayer group)
         {
-            Button expander = new() { Content = ToolIcons.Create(group.Expanded ? "chevron-down" : "chevron-right", 12), Padding = new Thickness(1), Background = Brushes.Transparent };
+            Button expander = new() { Classes = { "icon" }, Content = ToolIcons.Create(group.Expanded ? "chevron-down" : "chevron-right", 10), Padding = new Thickness(2), VerticalAlignment = VerticalAlignment.Center };
             expander.Click += (_, _) =>
             {
                 group.Expanded = !group.Expanded;
                 Refresh();
             };
-            content.Children.Add(expander);
+            thumbs.Children.Add(expander);
         }
 
+        bool editingMask = doc.EditingMask && layer == doc.ActiveLayer;
+        IBrush frame = new SolidColorBrush(Color.FromRgb(0x1A, 0x1A, 0x1A));
+        Control thumbContent = layer switch
+        {
+            GroupLayer g => ToolIcons.Create(g.IsArtboard ? "artboard" : "folder", 20),
+            TextLayer => ToolIcons.Create("horizontaltype", 18),
+            AdjustmentLayer => ToolIcons.Create("adjust", 18),
+            _ => CreateThumbnail(doc, layer)
+        };
+        bool iconThumb = layer is GroupLayer or TextLayer or AdjustmentLayer;
         Border thumbnail = new()
         {
-            Width = 36,
-            Height = 36,
-            BorderThickness = new Thickness(doc.EditingMask && layer == doc.ActiveLayer ? 0 : 1),
-            BorderBrush = Brushes.Gray,
-            Child = layer is GroupLayer ? ToolIcons.Create(((GroupLayer)layer).IsArtboard ? "artboard" : "folder", 22) : CreateThumbnail(doc, layer),
-            Cursor = new Cursor(StandardCursorType.Hand)
+            Width = iconThumb ? 26 : 32,
+            Height = iconThumb ? 26 : 32,
+            BorderThickness = new Thickness(iconThumb ? 0 : 1),
+            BorderBrush = selected && !editingMask ? Brushes.White : frame,
+            Child = thumbContent,
+            Cursor = new Cursor(StandardCursorType.Hand),
+            VerticalAlignment = VerticalAlignment.Center
         };
         ToolTip.SetTip(thumbnail, "Ctrl-click loads the layer transparency as a selection");
         thumbnail.PointerPressed += (_, e) =>
@@ -219,18 +264,20 @@ public sealed class LayersPanel : EditorPanel
             }
             doc.EditingMask = false;
         };
-        content.Children.Add(thumbnail);
+        thumbs.Children.Add(thumbnail);
 
         if (layer.Mask != null)
         {
+            thumbs.Children.Add(ToolIcons.Create("link", 10));
             Border mask = new()
             {
-                Width = 36,
-                Height = 36,
-                BorderThickness = new Thickness(doc.EditingMask && layer == doc.ActiveLayer ? 2 : 1),
-                BorderBrush = doc.EditingMask && layer == doc.ActiveLayer ? Brushes.White : Brushes.Gray,
+                Width = 32,
+                Height = 32,
+                BorderThickness = new Thickness(1),
+                BorderBrush = editingMask ? Brushes.White : frame,
                 Opacity = layer.MaskEnabled ? 1 : 0.4,
-                Child = new Image { Source = BitmapHelper.ToAvalonia(BitmapHelper.MaskThumbnail(layer.Mask, 34)) }
+                Child = new Image { Source = BitmapHelper.ToAvalonia(BitmapHelper.MaskThumbnail(layer.Mask, 30)) },
+                VerticalAlignment = VerticalAlignment.Center
             };
             ToolTip.SetTip(mask, "Click to edit the mask, Shift-click to disable it, Ctrl-click to load it as a selection");
             mask.PointerPressed += (_, e) =>
@@ -253,22 +300,29 @@ public sealed class LayersPanel : EditorPanel
                 }
                 e.Handled = true;
             };
-            content.Children.Add(mask);
+            thumbs.Children.Add(mask);
         }
+        content.Children.Add(thumbs);
 
         TextBlock name = new()
         {
             Text = layer.Name,
             VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(8, 0, 4, 0),
             FontStyle = layer.IsBackground ? FontStyle.Italic : FontStyle.Normal,
+            Foreground = selected ? Brushes.White : new SolidColorBrush(Color.FromRgb(0xD0, 0xD0, 0xD0)),
             Opacity = layer.IsEffectivelyVisible ? 1 : 0.55,
-            TextTrimming = TextTrimming.CharacterEllipsis,
-            MaxWidth = 140
+            TextTrimming = TextTrimming.CharacterEllipsis
         };
+        Grid.SetColumn(name, 2);
         content.Children.Add(name);
-        string badges = (layer.Style?.HasAny == true ? " fx" : string.Empty) + (layer.LockAll || layer.LockPixels || layer.LockPosition || layer.LockTransparency ? " 🔒" : string.Empty)
-            + (layer is SmartObjectLayer ? " ◰" : string.Empty) + (layer is TextLayer ? " T" : string.Empty);
-        if (badges.Length > 0) content.Children.Add(Text(badges, 11));
+
+        StackPanel badges = new() { Orientation = Orientation.Horizontal, Spacing = 6, Margin = new Thickness(0, 0, 10, 0), VerticalAlignment = VerticalAlignment.Center };
+        if (layer.Style?.HasAny == true) badges.Children.Add(ToolIcons.Create("fx", 13));
+        if (layer is SmartObjectLayer) badges.Children.Add(ToolIcons.Create("smart-object", 13));
+        if (layer.LockAll || layer.LockPixels || layer.LockPosition || layer.LockTransparency) badges.Children.Add(ToolIcons.Create("lock", 12));
+        Grid.SetColumn(badges, 3);
+        content.Children.Add(badges);
         row.Child = content;
 
         row.PointerPressed += (_, e) =>

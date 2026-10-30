@@ -45,10 +45,10 @@ public static class DialogBuilder
             CanResize = height != null,
             WindowStartupLocation = WindowStartupLocation.CenterOwner,
             ShowInTaskbar = false,
-            RequestedThemeVariant = ThemeManager.GetCurrentTheme()
+            ShowActivated = true
         };
         if (height is double h) window.Height = h;
-        window.Bind(Window.BackgroundProperty, window.GetResourceObservable("ShareX.Brush.Background.Main"));
+        ShareX.PhotoEditor.UI.Theme.PhotoEditorTheme.Apply(window);
         return window;
     }
 
@@ -57,8 +57,8 @@ public static class DialogBuilder
     {
         Window window = CreateWindow(title, width);
         bool result = false;
-        Button ok = new() { Content = okText, IsDefault = true, MinWidth = 80, HorizontalContentAlignment = HorizontalAlignment.Center };
-        Button cancel = new() { Content = "Cancel", IsCancel = true, MinWidth = 80, HorizontalContentAlignment = HorizontalAlignment.Center };
+        Button ok = new() { Classes = { "primary" }, Content = okText, IsDefault = true, MinWidth = 80, HorizontalContentAlignment = HorizontalAlignment.Center };
+        Button cancel = new() { Classes = { "secondary" }, Content = "Cancel", IsCancel = true, MinWidth = 80, HorizontalContentAlignment = HorizontalAlignment.Center };
         ok.Click += (_, _) =>
         {
             if (validate != null && !validate()) return;
@@ -186,7 +186,7 @@ public static class DialogBuilder
     public static async Task ShowMessageAsync(Window owner, string title, string text)
     {
         Window window = CreateWindow(title, 440);
-        Button ok = new() { Content = "OK", IsDefault = true, IsCancel = true, MinWidth = 80, HorizontalAlignment = HorizontalAlignment.Right };
+        Button ok = new() { Classes = { "primary" }, Content = "OK", IsDefault = true, IsCancel = true, MinWidth = 80, HorizontalAlignment = HorizontalAlignment.Right };
         ok.Click += (_, _) => window.Close();
         StackPanel panel = new() { Margin = new Thickness(16), Spacing = 12 };
         panel.Children.Add(new TextBlock { Text = text, TextWrapping = TextWrapping.Wrap });
@@ -200,9 +200,9 @@ public static class DialogBuilder
         Window window = CreateWindow(title, 460);
         bool? result = null;
         StackPanel buttons = new() { Orientation = Orientation.Horizontal, Spacing = 8, HorizontalAlignment = HorizontalAlignment.Right };
-        Button yesButton = new() { Content = yes, IsDefault = true, MinWidth = 80 };
-        Button noButton = new() { Content = no, MinWidth = 80 };
-        Button cancelButton = new() { Content = "Cancel", IsCancel = true, MinWidth = 80 };
+        Button yesButton = new() { Classes = { "primary" }, Content = yes, IsDefault = true, MinWidth = 80 };
+        Button noButton = new() { Classes = { "secondary" }, Content = no, MinWidth = 80 };
+        Button cancelButton = new() { Classes = { "secondary" }, Content = "Cancel", IsCancel = true, MinWidth = 80 };
         yesButton.Click += (_, _) => { result = true; window.Close(); };
         noButton.Click += (_, _) => { result = false; window.Close(); };
         cancelButton.Click += (_, _) => window.Close();

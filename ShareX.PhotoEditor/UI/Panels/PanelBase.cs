@@ -53,7 +53,7 @@ public abstract class EditorPanel : UserControl
 
     protected static Button IconButton(string icon, string tip, Action click, double size = 16)
     {
-        Button button = new() { Content = ToolIcons.Create(icon, size), Padding = new Thickness(4), Background = Brushes.Transparent };
+        Button button = new() { Classes = { "icon" }, Content = ToolIcons.Create(icon, size), Padding = new Thickness(5), Width = 28, Height = 26, HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center };
         ToolTip.SetTip(button, tip);
         button.Click += (_, _) => click();
         return button;

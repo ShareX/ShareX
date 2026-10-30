@@ -25,6 +25,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
 
@@ -43,10 +44,10 @@ public sealed class PanelDock : UserControl
 
     public static List<PanelGroupLayout> DefaultLayout() =>
     [
-        new() { Panels = ["color", "swatches"], Selected = "color", Height = 0.9 },
-        new() { Panels = ["properties", "adjustments", "brushes"], Selected = "properties", Height = 1.3 },
+        new() { Panels = ["color", "swatches"], Selected = "color", Height = 1.05 },
+        new() { Panels = ["properties", "adjustments", "brushes"], Selected = "properties", Height = 1.25 },
         new() { Panels = ["layers", "channels", "paths"], Selected = "layers", Height = 1.6 },
-        new() { Panels = ["history", "navigator", "info"], Selected = "history", Height = 1 }
+        new() { Panels = ["history", "navigator", "info"], Selected = "history", Height = 0.9 }
     ];
 
     public PanelDock(PhotoEditorWindow editor, IEnumerable<EditorPanel> panels)
@@ -165,7 +166,7 @@ public sealed class PanelDock : UserControl
             if (i < _layout.Count - 1)
             {
                 _grid.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
-                GridSplitter splitter = new() { Height = 4, ResizeDirection = GridResizeDirection.Rows, Background = new SolidColorBrush(Color.FromArgb(60, 0, 0, 0)) };
+                GridSplitter splitter = new() { Height = 2, ResizeDirection = GridResizeDirection.Rows, Background = new SolidColorBrush(Color.FromRgb(0x1E, 0x1E, 0x1E)) };
                 Grid.SetRow(splitter, i * 2 + 1);
                 _grid.Children.Add(splitter);
             }
@@ -176,25 +177,63 @@ public sealed class PanelDock : UserControl
         }
     }
 
+    private ContextMenu CreatePanelMenu(PanelGroupLayout group, string id)
+    {
+        ContextMenu menu = new();
+        foreach (PanelGroupLayout other in _layout.Where(g => g != group))
+        {
+            MenuItem move = new() { Header = $"Move to Group with {string.Join(", ", other.Panels.Select(p => _panels.GetValueOrDefault(p)?.Title))}" };
+            PanelGroupLayout target = other;
+            move.Click += (_, _) => MovePanel(id, target);
+            menu.Items.Add(move);
+        }
+        MenuItem newGroup = new() { Header = "Move to New Group" };
+        newGroup.Click += (_, _) => MovePanel(id, null);
+        MenuItem collapse = new() { Header = group.Collapsed ? "Expand Panel Group" : "Collapse Panel Group" };
+        collapse.Click += (_, _) => { group.Collapsed = !group.Collapsed; Rebuild(); };
+        MenuItem close = new() { Header = "Close" };
+        close.Click += (_, _) => ClosePanel(id);
+        MenuItem closeGroup = new() { Header = "Close Tab Group" };
+        closeGroup.Click += (_, _) => { foreach (string p in group.Panels.ToList()) ClosePanel(p); };
+        if (menu.Items.Count > 0) menu.Items.Add(new Separator());
+        menu.Items.Add(newGroup);
+        menu.Items.Add(collapse);
+        menu.Items.Add(new Separator());
+        menu.Items.Add(close);
+        menu.Items.Add(closeGroup);
+        return menu;
+    }
+
     private Control BuildGroup(PanelGroupLayout group)
     {
+        IBrush strip = new SolidColorBrush(Color.FromRgb(0x28, 0x28, 0x28));
+        IBrush chrome = new SolidColorBrush(Color.FromRgb(0x32, 0x32, 0x32));
         StackPanel tabs = new() { Orientation = Orientation.Horizontal };
         foreach (string id in group.Panels)
         {
             if (!_panels.TryGetValue(id, out EditorPanel? panel)) continue;
-            bool selected = id == group.Selected;
-            Button tab = new()
+            bool selected = id == group.Selected && !group.Collapsed;
+            // Tabs: the active tab blends into the panel body, inactive tabs are dim text on the strip.
+            Border tab = new()
             {
-                Content = panel.Title,
-                Padding = new Thickness(8, 3),
-                FontSize = 12,
-                FontWeight = selected ? FontWeight.SemiBold : FontWeight.Normal,
-                Background = selected ? new SolidColorBrush(Color.FromArgb(50, 255, 255, 255)) : Brushes.Transparent,
-                CornerRadius = new CornerRadius(3, 3, 0, 0)
+                Padding = new Thickness(10, 0),
+                Height = 26,
+                Background = selected ? chrome : Brushes.Transparent,
+                Cursor = new Cursor(StandardCursorType.Hand),
+                Child = new TextBlock
+                {
+                    Text = panel.Title,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Foreground = selected ? Brushes.White : new SolidColorBrush(Color.FromRgb(0x9E, 0x9E, 0x9E)),
+                    FontWeight = selected ? FontWeight.SemiBold : FontWeight.Normal
+                }
             };
-            tab.Click += (_, _) =>
+            tab.PointerEntered += (_, _) => { if (!selected) tab.Background = new SolidColorBrush(Color.FromRgb(0x2E, 0x2E, 0x2E)); };
+            tab.PointerExited += (_, _) => { if (!selected) tab.Background = Brushes.Transparent; };
+            tab.PointerPressed += (_, e) =>
             {
-                if (group.Selected == id) group.Collapsed = !group.Collapsed;
+                if (e.GetCurrentPoint(tab).Properties.IsRightButtonPressed) return;
+                if (e.ClickCount >= 2 || group.Selected == id && !group.Collapsed) group.Collapsed = !group.Collapsed;
                 else
                 {
                     group.Selected = id;
@@ -202,35 +241,26 @@ public sealed class PanelDock : UserControl
                 }
                 Rebuild();
             };
-            ContextMenu menu = new();
-            foreach (PanelGroupLayout other in _layout.Where(g => g != group))
-            {
-                MenuItem move = new() { Header = $"Move to Group with {string.Join(", ", other.Panels.Select(p => _panels.GetValueOrDefault(p)?.Title))}" };
-                PanelGroupLayout target = other;
-                move.Click += (_, _) => MovePanel(id, target);
-                menu.Items.Add(move);
-            }
-            MenuItem newGroup = new() { Header = "Move to New Group" };
-            newGroup.Click += (_, _) => MovePanel(id, null);
-            MenuItem close = new() { Header = "Close" };
-            close.Click += (_, _) => ClosePanel(id);
-            MenuItem collapse = new() { Header = group.Collapsed ? "Expand Group" : "Collapse Group" };
-            collapse.Click += (_, _) => { group.Collapsed = !group.Collapsed; Rebuild(); };
-            menu.Items.Add(new Separator());
-            menu.Items.Add(newGroup);
-            menu.Items.Add(collapse);
-            menu.Items.Add(close);
-            tab.ContextMenu = menu;
+            tab.ContextMenu = CreatePanelMenu(group, id);
             tabs.Children.Add(tab);
         }
-        Border header = new()
+        Button menuButton = new()
         {
-            Child = tabs,
-            Background = new SolidColorBrush(Color.FromArgb(40, 0, 0, 0)),
-            BorderBrush = new SolidColorBrush(Color.FromArgb(60, 0, 0, 0)),
-            BorderThickness = new Thickness(0, 0, 0, 1)
+            Classes = { "icon" },
+            Content = new TextBlock { Text = "≡", FontSize = 15, Margin = new Thickness(0, -3, 0, 0), Foreground = new SolidColorBrush(Color.FromRgb(0xB0, 0xB0, 0xB0)) },
+            Padding = new Thickness(6, 0),
+            Height = 22,
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(0, 0, 4, 0)
         };
-        DockPanel dock = new();
+        ToolTip.SetTip(menuButton, "Panel menu");
+        if (group.Selected != null) menuButton.Click += (_, _) => CreatePanelMenu(group, group.Selected).Open(menuButton);
+        DockPanel headerContent = new();
+        DockPanel.SetDock(menuButton, Dock.Right);
+        headerContent.Children.Add(menuButton);
+        headerContent.Children.Add(tabs);
+        Border header = new() { Child = headerContent, Background = strip, Height = 26 };
+        DockPanel dock = new() { Background = chrome };
         DockPanel.SetDock(header, Dock.Top);
         dock.Children.Add(header);
         if (!group.Collapsed && group.Selected != null && _panels.TryGetValue(group.Selected, out EditorPanel? content))
