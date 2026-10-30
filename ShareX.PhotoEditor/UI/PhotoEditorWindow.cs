@@ -100,7 +100,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         BrushPresets = BrushPreset.CreateDefaults();
         if (Settings.Swatches.Count == 0) Settings.Swatches.AddRange(SwatchesPanel.DefaultSwatches);
 
-        Title = "ShareX - Photo editor";
+        Title = "ShareX - Photo editor (Beta)";
         Width = 1500;
         Height = 920;
         MinWidth = 900;
@@ -402,7 +402,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
 
     private void UpdateTitle()
     {
-        Title = Document != null ? $"{Document.DisplayName} - Photo editor - ShareX" : "ShareX - Photo editor";
+        Title = Document != null ? $"{Document.DisplayName} - Photo editor (Beta) - ShareX" : "ShareX - Photo editor (Beta)";
     }
 
     // ------------------------------------------------------------------ IEditorHost
