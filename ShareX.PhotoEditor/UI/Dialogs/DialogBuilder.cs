@@ -125,11 +125,13 @@ public static class DialogBuilder
     /// <summary>Slider with a synchronized number box.</summary>
     public static Control SliderNumber(double min, double max, double value, Action<double> changed, double step = 1, string format = "0")
     {
-        Slider slider = new() { Minimum = min, Maximum = max, Value = value, MinWidth = 180, VerticalAlignment = VerticalAlignment.Center };
+        Slider slider = new() { Minimum = min, Maximum = max, Value = value, MinWidth = 100, Margin = new Thickness(6, 0, 0, 0), VerticalAlignment = VerticalAlignment.Center };
         NumericUpDown box = Number(min, max, value, step, format);
-        box.Width = 72;
+        box.VerticalAlignment = VerticalAlignment.Center;
+        box.HorizontalContentAlignment = HorizontalAlignment.Right;
+        box.Width = 58;
         box.ShowButtonSpinner = false;
-        box.MinWidth = 60;
+        box.MinWidth = 0;
         bool syncing = false;
         slider.ValueChanged += (_, e) =>
         {

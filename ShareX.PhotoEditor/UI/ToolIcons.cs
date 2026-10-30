@@ -185,7 +185,10 @@ public static class ToolIcons
         ["new-document"] = ["M6 3 H14 L18 7 V21 H6 Z", "M14 3 V7 H18"],
         ["selection"] = ["M4 4 H8 M10 4 H14 M16 4 H20 V8 M20 10 V14 M20 16 V20 H16 M14 20 H10 M8 20 H4 V16 M4 14 V10 M4 8 V4"],
         ["path-fill"] = ["F:M5 5 H19 V19 H5 Z"],
-        ["path-stroke"] = ["M5 5 H19 V19 H5 Z"]
+        ["path-stroke"] = ["M5 5 H19 V19 H5 Z"],
+        ["clipboard"] = ["M8 5 H6 V21 H18 V5 H16", "M9 3 H15 V7 H9 Z"],
+        ["capture-region"] = ["M3 8 V3 H8 M16 3 H21 V8 M21 16 V21 H16 M8 21 H3 V16", "M8 9 H16 V15 H8 Z"],
+        ["capture-screen"] = ["M3 4 H21 V16 H3 Z", "M9 20 H15 M12 16 V20"]
     };
 
     public static string KeyFor(ToolId id) => id.ToString().ToLowerInvariant();

@@ -271,12 +271,6 @@ public static class LayerStyleDialog
             };
             return button;
         }
-        Expander Section(string title, bool enabled, Action<bool> setEnabled, Grid content)
-        {
-            CheckBox check = new() { Content = title, IsChecked = enabled };
-            check.IsCheckedChanged += (_, _) => { setEnabled(check.IsChecked == true); Changed(); };
-            return new Expander { Header = check, Content = content, IsExpanded = enabled, HorizontalAlignment = HorizontalAlignment.Stretch };
-        }
 
         Grid blending = DialogBuilder.Form();
         DialogBuilder.AddRow(blending, "Blend Mode:", DialogBuilder.Combo(BlendModes.LayerModes.Select(m => (BlendModes.GetName(m), m)), layer.BlendMode, v => { layer.BlendMode = v; Changed(); }));
@@ -311,15 +305,64 @@ public static class LayerStyleDialog
         DialogBuilder.AddRow(overlay, "Color:", ColorButton(() => style.OverlayColor, c => style.OverlayColor = c, "Overlay Color"));
         DialogBuilder.AddRow(overlay, "Opacity:", DialogBuilder.SliderNumber(0, 100, style.OverlayOpacity * 100, v => { style.OverlayOpacity = (float)v / 100; Changed(); }));
 
-        StackPanel content = new() { Spacing = 6 };
-        content.Children.Add(new TextBlock { Text = "Blending Options", FontWeight = FontWeight.SemiBold });
-        content.Children.Add(blending);
-        content.Children.Add(Section("Stroke", style.Stroke, v => style.Stroke = v, stroke));
-        content.Children.Add(Section("Inner Shadow", style.InnerShadow, v => style.InnerShadow = v, inner));
-        content.Children.Add(Section("Color Overlay", style.ColorOverlay, v => style.ColorOverlay = v, overlay));
-        content.Children.Add(Section("Outer Glow", style.OuterGlow, v => style.OuterGlow = v, glow));
-        content.Children.Add(Section("Drop Shadow", style.DropShadow, v => style.DropShadow = v, shadow));
-        return await DialogBuilder.ShowAsync(owner, "Layer Style", new ScrollViewer { Content = content, MaxHeight = 620 }, 500);
+        // Reference-style layout: a list of styles with enable checkboxes on the left, settings on the right.
+        (string Title, Func<bool>? Get, Action<bool>? Set, Grid Body)[] sections =
+        [
+            ("Blending Options", null, null, blending),
+            ("Stroke", () => style.Stroke, v => style.Stroke = v, stroke),
+            ("Inner Shadow", () => style.InnerShadow, v => style.InnerShadow = v, inner),
+            ("Color Overlay", () => style.ColorOverlay, v => style.ColorOverlay = v, overlay),
+            ("Outer Glow", () => style.OuterGlow, v => style.OuterGlow = v, glow),
+            ("Drop Shadow", () => style.DropShadow, v => style.DropShadow = v, shadow)
+        ];
+        TextBlock detailTitle = new() { Classes = { "header" }, FontSize = 13, Margin = new Thickness(0, 0, 0, 10) };
+        ContentControl detail = new();
+        StackPanel list = new() { Spacing = 0 };
+        List<Border> rows = [];
+        void Select(int index)
+        {
+            for (int i = 0; i < rows.Count; i++) rows[i].Background = i == index ? new SolidColorBrush(Color.FromRgb(0x4B, 0x4B, 0x4B)) : Brushes.Transparent;
+            detailTitle.Text = sections[index].Title;
+            detail.Content = sections[index].Body;
+        }
+        for (int i = 0; i < sections.Length; i++)
+        {
+            int index = i;
+            var section = sections[i];
+            Control label;
+            if (section.Get != null)
+            {
+                CheckBox check = new() { Content = section.Title, IsChecked = section.Get() };
+                check.IsCheckedChanged += (_, _) => { section.Set!(check.IsChecked == true); Changed(); Select(index); };
+                label = check;
+            }
+            else
+            {
+                label = new TextBlock { Text = section.Title, FontWeight = FontWeight.SemiBold, Margin = new Thickness(4, 0, 0, 0), VerticalAlignment = VerticalAlignment.Center };
+            }
+            Border row = new() { Child = label, Height = 30, Padding = new Thickness(8, 0), Cursor = new Cursor(StandardCursorType.Hand) };
+            row.PointerPressed += (_, _) => Select(index);
+            rows.Add(row);
+            list.Children.Add(row);
+        }
+        Border sidebar = new()
+        {
+            Width = 180,
+            Background = new SolidColorBrush(Color.FromRgb(0x28, 0x28, 0x28)),
+            BorderBrush = new SolidColorBrush(Color.FromRgb(0x1E, 0x1E, 0x1E)),
+            BorderThickness = new Thickness(1),
+            Child = list,
+            Padding = new Thickness(0, 4)
+        };
+        StackPanel detailPanel = new() { Margin = new Thickness(16, 4, 4, 4), MinWidth = 380 };
+        detailPanel.Children.Add(detailTitle);
+        detailPanel.Children.Add(detail);
+        Grid layout = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*"), MinHeight = 340 };
+        Grid.SetColumn(detailPanel, 1);
+        layout.Children.Add(sidebar);
+        layout.Children.Add(detailPanel);
+        Select(0);
+        return await DialogBuilder.ShowAsync(owner, "Layer Style", layout, 640);
     }
 }
 

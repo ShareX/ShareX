@@ -175,7 +175,7 @@ public sealed class TypeTool : ToolBase
         options.Combo(null, [("Regular", (false, false)), ("Bold", (true, false)), ("Italic", (false, true)), ("Bold Italic", (true, true))],
             () => (current.Bold, current.Italic), v => Change(t => { t.Bold = v.Item1; t.Italic = v.Item2; }, "Set Font Style"), 100);
         options.Number("Size:", 1, 1296, () => current.FontSize, v => Change(t => t.FontSize = (float)v, "Set Font Size"), "0.#", "px", 1, 64);
-        options.EnumCombo("aa", () => current.AntiAlias, v => Change(t => t.AntiAlias = v, "Set Anti-alias"), 80);
+        options.EnumCombo("aa", () => current.AntiAlias, v => Change(t => t.AntiAlias = v, "Set Anti-alias"), 92);
         options.Separator();
         options.IconButton("align-text-left", "Left align text", () => Change(t => t.Alignment = TextAlignment.Left, "Align Text"), current.Alignment == TextAlignment.Left);
         options.IconButton("align-text-center", "Center text", () => Change(t => t.Alignment = TextAlignment.Center, "Align Text"), current.Alignment == TextAlignment.Center);

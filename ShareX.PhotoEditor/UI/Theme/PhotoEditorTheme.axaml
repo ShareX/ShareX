@@ -357,25 +357,52 @@
         <Setter Property="Padding" Value="4,0,0,0"/>
     </Style>
 
-    <!-- Sliders: thin track, small round thumb -->
+    <!-- Sliders: compact custom template with a thin track and a small round thumb -->
     <Style Selector="Slider:horizontal">
-        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="MinHeight" Value="18"/>
         <Setter Property="Foreground" Value="#B3B3B3"/>
         <Setter Property="Background" Value="#5A5A5A"/>
-        <Style Selector="^ /template/ Thumb">
-            <Setter Property="Width" Value="12"/>
-            <Setter Property="Height" Value="12"/>
-            <Setter Property="CornerRadius" Value="6"/>
-            <Setter Property="Background" Value="#E6E6E6"/>
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
-        <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton, ^ /template/ RepeatButton#PART_IncreaseButton">
-            <Setter Property="Height" Value="2"/>
-            <Setter Property="CornerRadius" Value="1"/>
-        </Style>
-        <Style Selector="^ /template/ Grid#SliderContainer">
-            <Setter Property="Background" Value="Transparent"/>
-        </Style>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid Name="SliderContainer" Background="Transparent" MinHeight="18">
+                    <Border Height="2" CornerRadius="1" Margin="6,0" VerticalAlignment="Center" Background="{TemplateBinding Background}"/>
+                    <Track Name="PART_Track" Orientation="Horizontal"
+                           Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}"
+                           Value="{TemplateBinding Value, Mode=TwoWay}" IsDirectionReversed="{TemplateBinding IsDirectionReversed}">
+                        <Track.DecreaseButton>
+                            <RepeatButton Name="PART_DecreaseButton" Focusable="False" Background="{TemplateBinding Foreground}">
+                                <RepeatButton.Template>
+                                    <ControlTemplate>
+                                        <Grid Background="Transparent">
+                                            <Border Height="2" CornerRadius="1" Margin="6,0,0,0" VerticalAlignment="Center" Background="{TemplateBinding Background}"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </RepeatButton.Template>
+                            </RepeatButton>
+                        </Track.DecreaseButton>
+                        <Track.IncreaseButton>
+                            <RepeatButton Name="PART_IncreaseButton" Focusable="False">
+                                <RepeatButton.Template>
+                                    <ControlTemplate>
+                                        <Grid Background="Transparent"/>
+                                    </ControlTemplate>
+                                </RepeatButton.Template>
+                            </RepeatButton>
+                        </Track.IncreaseButton>
+                        <Thumb Name="thumb" Width="12" Height="12">
+                            <Thumb.Template>
+                                <ControlTemplate>
+                                    <Border Background="#E6E6E6" CornerRadius="6" BorderBrush="#262626" BorderThickness="1"/>
+                                </ControlTemplate>
+                            </Thumb.Template>
+                        </Thumb>
+                    </Track>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="Slider:horizontal:disabled">
+        <Setter Property="Opacity" Value="0.4"/>
     </Style>
 
     <!-- Menus -->

@@ -123,25 +123,51 @@ public sealed class ColorPickerControl : UserControl
         _alpha = new Slider { Minimum = 0, Maximum = 100, Width = 160 };
         _alpha.ValueChanged += (_, e) => { if (!_updating) { _a = (float)e.NewValue / 100; Refresh(); } };
 
-        Grid fields = DialogBuilder.Form();
-        fields.ColumnSpacing = 6;
-        void Row(string label, Control control) => DialogBuilder.AddRow(fields, label, control);
-        Row("H:", Unit(_hBox, "°"));
-        Row("S:", Unit(_sBox, "%"));
-        Row("B:", Unit(_vBox, "%"));
-        Row("R:", _r);
-        Row("G:", _g);
-        Row("B:", _b);
-        Row("HSL S:", Unit(_hslS, "%"));
-        Row("HSL L:", Unit(_lBox, "%"));
-        Row("Alpha:", Unit(_aBox, "%"));
-        Row("#", _hex);
+        // Two aligned field columns: HSB and RGB on the left, HSL and alpha on the right.
+        Grid fields = new() { ColumnDefinitions = new ColumnDefinitions("Auto,Auto,14,22,Auto,Auto,Auto"), RowSpacing = 6, ColumnSpacing = 4 };
+        void Field(int row, int column, string label, NumericUpDown box, string unit)
+        {
+            while (fields.RowDefinitions.Count <= row) fields.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+            box.Width = 48;
+            box.HorizontalContentAlignment = HorizontalAlignment.Right;
+            TextBlock caption = new() { Text = label, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 4, 0) };
+            TextBlock suffix = new() { Text = unit, Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center };
+            Grid.SetRow(caption, row); Grid.SetColumn(caption, column);
+            Grid.SetRow(box, row); Grid.SetColumn(box, column + 1);
+            Grid.SetRow(suffix, row); Grid.SetColumn(suffix, column + 2);
+            fields.Children.Add(caption);
+            fields.Children.Add(box);
+            fields.Children.Add(suffix);
+        }
+        Field(0, 0, "H:", _hBox, "°");
+        Field(1, 0, "S:", _sBox, "%");
+        Field(2, 0, "B:", _vBox, "%");
+        Field(4, 0, "R:", _r, string.Empty);
+        Field(5, 0, "G:", _g, string.Empty);
+        Field(6, 0, "B:", _b, string.Empty);
+        Field(0, 4, "A:", _aBox, "%");
+        Field(4, 4, "S:", _hslS, "%");
+        Field(5, 4, "L:", _lBox, "%");
+        fields.RowDefinitions.Add(new RowDefinition(new GridLength(8)));
+        fields.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
+        TextBlock hash = new() { Text = "#", VerticalAlignment = VerticalAlignment.Center };
+        Grid.SetRow(hash, 8);
+        Grid.SetRow(_hex, 8);
+        Grid.SetColumn(_hex, 1);
+        Grid.SetColumnSpan(_hex, 4);
+        _hex.Width = 80;
+        _hex.HorizontalAlignment = HorizontalAlignment.Left;
+        fields.Children.Add(hash);
+        fields.Children.Add(_hex);
+        TextBlock hslHeader = new() { Text = "HSL", Classes = { "dim" }, FontSize = 10, VerticalAlignment = VerticalAlignment.Bottom };
+        Grid.SetRow(hslHeader, 3);
+        Grid.SetColumn(hslHeader, 4);
+        fields.Children.Add(hslHeader);
 
-        StackPanel swatches = new() { Spacing = 0 };
-        swatches.Children.Add(new TextBlock { Text = "new", HorizontalAlignment = HorizontalAlignment.Center, FontSize = 11 });
-        swatches.Children.Add(_newSwatch);
-        swatches.Children.Add(currentSwatch);
-        swatches.Children.Add(new TextBlock { Text = "current", HorizontalAlignment = HorizontalAlignment.Center, FontSize = 11 });
+        StackPanel swatches = new() { Spacing = 0, HorizontalAlignment = HorizontalAlignment.Left };
+        swatches.Children.Add(new TextBlock { Text = "new", HorizontalAlignment = HorizontalAlignment.Center, FontSize = 11, Classes = { "dim" } });
+        swatches.Children.Add(new Border { BorderBrush = new SolidColorBrush(Avalonia.Media.Color.FromRgb(0x1A, 0x1A, 0x1A)), BorderThickness = new Thickness(1), Child = new StackPanel { Children = { _newSwatch, currentSwatch } } });
+        swatches.Children.Add(new TextBlock { Text = "current", HorizontalAlignment = HorizontalAlignment.Center, FontSize = 11, Classes = { "dim" } });
 
         StackPanel right = new() { Spacing = 10 };
         right.Children.Add(swatches);

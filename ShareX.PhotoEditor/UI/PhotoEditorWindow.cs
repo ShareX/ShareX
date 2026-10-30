@@ -75,6 +75,8 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
     private readonly Border _tabHost;
     private readonly RulerControl _hRuler;
     private readonly RulerControl _vRuler;
+    private readonly Border _rulerCorner;
+    private readonly StartScreen _startScreen;
     private readonly DispatcherTimer _statusTimer;
     private TextBox? _textEditor;
     private TextLayer? _editingText;
@@ -123,7 +125,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
 
         // Canvas area with rulers.
         Grid canvasGrid = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*"), RowDefinitions = new RowDefinitions("Auto,*") };
-        Border corner = new() { Width = 18, Height = 18, Background = new SolidColorBrush(Color.FromRgb(0x2C, 0x2C, 0x2C)) };
+        _rulerCorner = new Border { Width = 18, Height = 18, Background = new SolidColorBrush(Color.FromRgb(0x2C, 0x2C, 0x2C)) };
         Grid.SetColumn(_hRuler, 1);
         Grid.SetRow(_vRuler, 1);
         Grid canvasStack = new();
@@ -131,10 +133,14 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         canvasStack.Children.Add(_overlayLayer);
         Grid.SetRow(canvasStack, 1);
         Grid.SetColumn(canvasStack, 1);
-        canvasGrid.Children.Add(corner);
+        canvasGrid.Children.Add(_rulerCorner);
         canvasGrid.Children.Add(_hRuler);
         canvasGrid.Children.Add(_vRuler);
         canvasGrid.Children.Add(canvasStack);
+        _startScreen = new StartScreen(this);
+        Grid.SetRowSpan(_startScreen, 2);
+        Grid.SetColumnSpan(_startScreen, 2);
+        canvasGrid.Children.Add(_startScreen);
 
         _tabHost = new Border { Child = new ScrollViewer { Content = _tabs, HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden, VerticalScrollBarVisibility = ScrollBarVisibility.Disabled }, Height = 28, Background = new SolidColorBrush(Color.FromRgb(0x26, 0x26, 0x26)) };
         DockPanel center = new();
@@ -303,6 +309,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         RefreshOptions();
         InvalidateCanvas();
         UpdateTitle();
+        ApplyVisibility();
     }
 
     public async Task<bool> CloseViewAsync(DocumentView view)
@@ -321,7 +328,17 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         if (_view == view)
         {
             _view = null;
-            ActivateView(_views.Count > 0 ? _views[Math.Clamp(index, 0, _views.Count - 1)] : null);
+            DocumentView? next = _views.Count > 0 ? _views[Math.Clamp(index, 0, _views.Count - 1)] : null;
+            if (next != null) ActivateView(next);
+            else
+            {
+                // No documents left: clear panels, options and status like an empty workspace.
+                RefreshPanels();
+                RefreshOptions();
+                RefreshStatus();
+                ApplyVisibility();
+                UpdateTitle();
+            }
         }
         RefreshTabs();
         InvalidateCanvas();
@@ -818,8 +835,12 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
         _dockColumn.Width = _dock.IsVisible ? new GridLength(Math.Clamp(Settings.RightDockWidth, 220, 600)) : new GridLength(0);
         _dockColumn.MinWidth = _dock.IsVisible ? 200 : 0;
         _tabHost.IsVisible = _screenMode == ScreenMode.Standard;
-        _hRuler.IsVisible = Settings.ShowRulers;
-        _vRuler.IsVisible = Settings.ShowRulers;
+        _hRuler.IsVisible = Settings.ShowRulers && _view != null;
+        _vRuler.IsVisible = Settings.ShowRulers && _view != null;
+        _rulerCorner.IsVisible = _hRuler.IsVisible;
+        bool showStart = _view == null;
+        if (showStart && !_startScreen.IsVisible) _startScreen.Refresh();
+        _startScreen.IsVisible = showStart;
     }
 
     public void ToggleToolbarColumns() => _toolbar.ToggleColumns();
