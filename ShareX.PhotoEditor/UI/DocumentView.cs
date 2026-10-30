@@ -57,6 +57,9 @@ public sealed class DocumentView : IDisposable
 
     public Size Viewport { get; set; } = new(800, 600);
 
+    /// <summary>Device pixels per layout unit of the window showing this view.</summary>
+    public double RenderScaling { get; set; } = 1;
+
     public double AntsPhase { get; set; }
 
     /// <summary>Flattened image of all visible layers at document size.</summary>
@@ -66,11 +69,28 @@ public sealed class DocumentView : IDisposable
 
     public bool NeedsFit { get; set; } = true;
 
-    public Matrix DocToScreenMatrix =>
-        Matrix.CreateTranslation(-Document.Width / 2.0, -Document.Height / 2.0) *
-        Matrix.CreateScale(Zoom, Zoom) *
-        Matrix.CreateRotation(Rotation * Math.PI / 180) *
-        Matrix.CreateTranslation(Viewport.Width / 2 + Pan.X, Viewport.Height / 2 + Pan.Y);
+    public Matrix DocToScreenMatrix
+    {
+        get
+        {
+            Matrix matrix = Matrix.CreateTranslation(-Document.Width / 2.0, -Document.Height / 2.0) *
+                Matrix.CreateScale(Zoom, Zoom) *
+                Matrix.CreateRotation(Rotation * Math.PI / 180) *
+                Matrix.CreateTranslation(Viewport.Width / 2 + Pan.X, Viewport.Height / 2 + Pan.Y);
+            return Rotation % 90 == 0 ? SnapToPixels(matrix) : matrix;
+        }
+    }
+
+    /// <summary>Puts the document edges on device pixels. Edges between pixels get antialiased, letting the transparency checker show through as a faint line.</summary>
+    private Matrix SnapToPixels(Matrix matrix)
+    {
+        double Snap(double value) => Math.Floor(value * RenderScaling + 0.5) / RenderScaling;
+
+        Rect bounds = new Rect(0, 0, Document.Width, Document.Height).TransformToAABB(matrix);
+        double left = Snap(bounds.Left), top = Snap(bounds.Top);
+        double width = Math.Max(Snap(bounds.Right) - left, 1 / RenderScaling), height = Math.Max(Snap(bounds.Bottom) - top, 1 / RenderScaling);
+        return matrix * Matrix.CreateTranslation(-bounds.Left, -bounds.Top) * Matrix.CreateScale(width / bounds.Width, height / bounds.Height) * Matrix.CreateTranslation(left, top);
+    }
 
     public Point DocToScreen(SKPoint p) => new Point(p.X, p.Y).Transform(DocToScreenMatrix);
 

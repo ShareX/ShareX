@@ -80,11 +80,17 @@ public sealed class CanvasView : Control
         }
     }
 
+    private void UpdateViewport(DocumentView view, Size size)
+    {
+        view.Viewport = size;
+        view.RenderScaling = TopLevel.GetTopLevel(this)?.RenderScaling ?? 1;
+    }
+
     protected override Size ArrangeOverride(Size finalSize)
     {
         if (_editor.View is DocumentView view)
         {
-            view.Viewport = finalSize;
+            UpdateViewport(view, finalSize);
             if (view.NeedsFit) view.FitOnScreen();
         }
         return base.ArrangeOverride(finalSize);
@@ -128,7 +134,7 @@ public sealed class CanvasView : Control
             context.DrawText(hint, new Point((Bounds.Width - hint.Width) / 2, (Bounds.Height - hint.Height) / 2));
             return;
         }
-        view.Viewport = Bounds.Size;
+        UpdateViewport(view, Bounds.Size);
         view.Update(true);
         PhotoDocument doc = view.Document;
         Rect docRect = new(0, 0, doc.Width, doc.Height);
