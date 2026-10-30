@@ -1,0 +1,7 @@
+interface:
+  display_name: "ShareX Changelog"
+  short_description: "Write the changelog for a new ShareX version"
+  default_prompt: "Use $sharex-changelog to write the changelog section for the new ShareX version from the commits since the latest version tag."
+
+policy:
+  allow_implicit_invocation: true
