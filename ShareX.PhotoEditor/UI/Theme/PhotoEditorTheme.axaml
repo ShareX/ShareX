@@ -246,7 +246,7 @@
         <Setter Property="MinHeight" Value="22"/>
         <Setter Property="Height" Value="NaN"/>
         <Setter Property="FontSize" Value="12"/>
-        <Setter Property="Padding" Value="3,0"/>
+        <Setter Property="Padding" Value="6,0"/>
         <Setter Property="CornerRadius" Value="2"/>
         <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource PE.Brush.FieldBorder}"/>

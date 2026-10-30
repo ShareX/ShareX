@@ -87,6 +87,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
     private ScreenMode _screenMode;
     private bool _panelsHidden;
     private bool _closingConfirmed;
+    private double _tabZoom;
 
     public PhotoEditorWindow(PhotoEditorServices services)
     {
@@ -347,6 +348,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
 
     private void RefreshTabs()
     {
+        _tabZoom = _view?.Zoom ?? 0;
         _tabs.Children.Clear();
         foreach (DocumentView view in _views)
         {
@@ -714,6 +716,7 @@ public sealed class PhotoEditorWindow : Window, IEditorHost
             return;
         }
         if (!_zoomBox.IsFocused) _zoomBox.Text = $"{View.Zoom * 100:0.##}%";
+        if (View.Zoom != _tabZoom) RefreshTabs();
         PhotoDocument doc = View.Document;
         double megabytes = doc.AllLayers.OfType<RasterLayer>().Sum(l => (double)l.Surface.Width * l.Surface.Height * 4) / 1024 / 1024;
         _docInfo.Text = $"{doc.Width} × {doc.Height} px ({doc.Resolution:0} ppi)   Doc: {megabytes:0.0}M" + (View.Rotation != 0 ? $"   View: {View.Rotation:0}°" : string.Empty);

@@ -84,15 +84,17 @@ public sealed class CanvasView : Control
     {
         view.Viewport = size;
         view.RenderScaling = TopLevel.GetTopLevel(this)?.RenderScaling ?? 1;
+        if (view.NeedsFit && size.Width > 0 && size.Height > 0)
+        {
+            view.FitInitial();
+            // This runs during layout or render, so the zoom readouts update afterwards.
+            Dispatcher.UIThread.Post(_editor.InvalidateOverlay);
+        }
     }
 
     protected override Size ArrangeOverride(Size finalSize)
     {
-        if (_editor.View is DocumentView view)
-        {
-            UpdateViewport(view, finalSize);
-            if (view.NeedsFit) view.FitOnScreen();
-        }
+        if (_editor.View is DocumentView view) UpdateViewport(view, finalSize);
         return base.ArrangeOverride(finalSize);
     }
 

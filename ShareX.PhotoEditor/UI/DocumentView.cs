@@ -207,6 +207,13 @@ public sealed class DocumentView : IDisposable
         NeedsFit = false;
     }
 
+    /// <summary>First view of a document: large images shrink to fit the viewport, smaller ones stay at 100%.</summary>
+    public void FitInitial()
+    {
+        FitOnScreen();
+        Zoom = Math.Min(Zoom, 1);
+    }
+
     public void FillScreen()
     {
         double zoom = Math.Max(Viewport.Width / Document.Width, Viewport.Height / Document.Height);
