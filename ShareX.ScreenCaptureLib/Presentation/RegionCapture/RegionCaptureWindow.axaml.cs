@@ -1186,20 +1186,20 @@ public partial class RegionCaptureWindow : Window
     {
         if (!constrainToSquare)
         {
-            return RegionSelectionOverlay.NormalizeAndClamp(first, second, bounds);
+            return RegionSelectionOverlay.CreatePixelRectangle(first, second, bounds);
         }
 
         double deltaX = second.X - first.X;
         double deltaY = second.Y - first.Y;
         double side = Math.Max(Math.Abs(deltaX), Math.Abs(deltaY));
-        double availableWidth = deltaX < 0 ? first.X : bounds.Width - first.X;
-        double availableHeight = deltaY < 0 ? first.Y : bounds.Height - first.Y;
+        double availableWidth = deltaX < 0 ? first.X : bounds.Width - 1 - first.X;
+        double availableHeight = deltaY < 0 ? first.Y : bounds.Height - 1 - first.Y;
         side = Math.Max(0, Math.Min(side, Math.Min(availableWidth, availableHeight)));
 
         Point constrained = new(
             first.X + (deltaX < 0 ? -side : side),
             first.Y + (deltaY < 0 ? -side : side));
-        return RegionSelectionOverlay.NormalizeAndClamp(first, constrained, bounds);
+        return RegionSelectionOverlay.CreatePixelRectangle(first, constrained, bounds);
     }
 
     private void ResetCreationModifiers()
