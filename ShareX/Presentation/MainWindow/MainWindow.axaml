@@ -149,7 +149,8 @@
                         <Image Width="20"
                                Height="20"
                                Source="{Binding TitleBarIcon}"
-                               Stretch="Uniform"/>
+                               Stretch="Uniform"
+                               RenderOptions.BitmapInterpolationMode="HighQuality"/>
                         <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=Window}}"
                                    Foreground="{DynamicResource ShareX.Brush.Text}"
                                    FontSize="13"
