@@ -65,13 +65,12 @@ public sealed class WindowsTrayIcon : IDisposable
 
     public void SetIcon(byte[] bytes)
     {
-        using SKBitmap bitmap = SkiaImageHelpers.ByteArrayToBitmap(bytes);
+        int size = NativeMethods.GetSystemMetrics(SystemMetric.SM_CXSMICON);
+        using SKBitmap bitmap = SkiaImageHelpers.DecodeIcon(bytes, size);
         using MemoryStream stream = new();
         bitmap.Save(stream, SKEncodedImageFormat.Png);
         byte[] png = stream.ToArray();
-        IntPtr replacement = CreateIconFromResourceEx(png, (uint)png.Length, true, 0x30000,
-            NativeMethods.GetSystemMetrics(SystemMetric.SM_CXSMICON),
-            NativeMethods.GetSystemMetrics(SystemMetric.SM_CYSMICON), 0);
+        IntPtr replacement = CreateIconFromResourceEx(png, (uint)png.Length, true, 0x30000, size, size, 0);
         if (replacement == IntPtr.Zero) throw new Win32Exception();
         IntPtr previous = icon;
         icon = replacement;

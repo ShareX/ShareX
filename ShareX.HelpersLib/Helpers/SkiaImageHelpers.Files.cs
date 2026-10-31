@@ -207,4 +207,42 @@ public static partial class SkiaImageHelpers
         }
         return stream.ToArray();
     }
+
+    /// <summary>
+    /// Decodes the smallest ICO frame that covers <paramref name="size"/> and scales it to exactly that size.
+    /// The general decoder always returns the largest frame, which loses detail when shrunk to icon sizes.
+    /// </summary>
+    public static SKBitmap DecodeIcon(byte[] icon, int size)
+    {
+        const int headerSize = 6, entrySize = 16;
+
+        int bestEntry = -1, bestWidth = 0;
+        int count = BitConverter.ToUInt16(icon, 4);
+
+        for (int i = 0; i < count; i++)
+        {
+            int entry = headerSize + i * entrySize;
+            int width = icon[entry] == 0 ? 256 : icon[entry];
+
+            if (width >= size ? bestWidth < size || width < bestWidth : width > bestWidth)
+            {
+                bestEntry = entry;
+                bestWidth = width;
+            }
+        }
+
+        if (bestEntry < 0) throw new InvalidDataException("The icon has no frames.");
+
+        // Skia can't pick a frame by exact size, so hand it a copy of the icon containing only the chosen one.
+        int length = BitConverter.ToInt32(icon, bestEntry + 8);
+        int offset = BitConverter.ToInt32(icon, bestEntry + 12);
+        byte[] frame = new byte[headerSize + entrySize + length];
+        icon.AsSpan(0, headerSize).CopyTo(frame);
+        icon.AsSpan(bestEntry, entrySize).CopyTo(frame.AsSpan(headerSize));
+        icon.AsSpan(offset, length).CopyTo(frame.AsSpan(headerSize + entrySize));
+        BitConverter.TryWriteBytes(frame.AsSpan(4), (ushort)1);
+        BitConverter.TryWriteBytes(frame.AsSpan(headerSize + 12), headerSize + entrySize);
+
+        return ResizeImage(ByteArrayToBitmap(frame), size, size);
+    }
 }
