@@ -84,7 +84,7 @@ public sealed class ColorPickerControl : UserControl
     private (PickMode, float, bool)? _fieldKey;
     private (PickMode, float, float, bool)? _stripKey;
 
-    public ColorPickerControl(SKColor initial, SKColor current)
+    public ColorPickerControl(SKColor initial, SKColor current, params Control[] actions)
     {
         Grid fieldHost = new() { Width = FieldSize, Height = FieldSize, ClipToBounds = true, Background = Brushes.Transparent, Cursor = new Cursor(StandardCursorType.Cross) };
         Canvas fieldOverlay = new() { IsHitTestVisible = false };
@@ -172,7 +172,7 @@ public sealed class ColorPickerControl : UserControl
         left.Children.Add(opacity);
 
         StackPanel right = new() { Spacing = 12 };
-        right.Children.Add(BuildPreview(current));
+        right.Children.Add(BuildPreview(current, actions));
         right.Children.Add(BuildFields());
 
         StackPanel root = new() { Orientation = Orientation.Horizontal, Spacing = 20 };
@@ -196,7 +196,7 @@ public sealed class ColorPickerControl : UserControl
         return box;
     }
 
-    private Control BuildPreview(SKColor current)
+    private Control BuildPreview(SKColor current, Control[] actions)
     {
         Border currentSwatch = new() { Width = 70, Height = 34, Background = DialogBuilder.ToBrush(current), Cursor = new Cursor(StandardCursorType.Hand) };
         ToolTip.SetTip(currentSwatch, "Click to restore the current color");
@@ -223,9 +223,14 @@ public sealed class ColorPickerControl : UserControl
         _webWarning.Children.Add(ToolIcons.Create("web-color", 16));
         _webWarning.Children.Add(_webSwatch);
 
-        StackPanel preview = new() { Orientation = Orientation.Horizontal, Spacing = 8 };
+        StackPanel actionPanel = new() { Spacing = 8, VerticalAlignment = VerticalAlignment.Top, Margin = new Thickness(12, 0, 0, 0) };
+        foreach (Control action in actions) actionPanel.Children.Add(action);
+        Grid.SetColumn(_webWarning, 1);
+        Grid.SetColumn(actionPanel, 3);
+        Grid preview = new() { ColumnDefinitions = new ColumnDefinitions("Auto,Auto,*,Auto"), ColumnSpacing = 8 };
         preview.Children.Add(swatches);
         preview.Children.Add(_webWarning);
+        preview.Children.Add(actionPanel);
         return preview;
     }
 
@@ -552,22 +557,19 @@ public static class ColorPickerDialog
 {
     public static async Task<SKColor?> ShowAsync(Window owner, SKColor initial, string title, IEditorHost? host = null)
     {
-        ColorPickerControl picker = new(initial, initial);
-        Button reset = new() { Classes = { "secondary" }, Content = "Reset" };
+        Button reset = ActionButton("Reset");
+        Button add = ActionButton("Add to Swatches");
+        add.IsVisible = host != null;
+        ColorPickerControl picker = new(initial, initial, reset, add);
         reset.Click += (_, _) => picker.SetColor(initial);
-        List<Control> buttons = [];
-        if (host != null)
+        add.Click += (_, _) =>
         {
-            Button add = new() { Classes = { "secondary" }, Content = "Add to Swatches" };
-            add.Click += (_, _) =>
-            {
-                host.Settings.Swatches.Add("#" + ColorMath.ToHex(picker.Color));
-                host.RefreshPanels();
-            };
-            buttons.Add(add);
-        }
-        buttons.Add(reset);
-        bool ok = await DialogBuilder.ShowAsync(owner, title.Length > 0 ? $"Color Picker ({title})" : "Color Picker", picker, DialogBuilder.AutoWidth, "OK", null, buttons);
+            host?.Settings.Swatches.Add("#" + ColorMath.ToHex(picker.Color));
+            host?.RefreshPanels();
+        };
+        bool ok = await DialogBuilder.ShowAsync(owner, title.Length > 0 ? $"Color Picker ({title})" : "Color Picker", picker, DialogBuilder.AutoWidth);
         return ok ? picker.Color : null;
     }
+
+    private static Button ActionButton(string text) => new() { Classes = { "secondary" }, Content = text, HorizontalAlignment = HorizontalAlignment.Stretch };
 }
