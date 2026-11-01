@@ -1700,6 +1700,9 @@
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>تعديل الصورة</value>
   </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>تعديل في محرر الصور...</value>
+  </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ملف</value>
   </data>

@@ -1700,6 +1700,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Bewerken afbeelding</value>
   </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Bewerken in foto-editor...</value>
+  </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Bestand</value>
   </data>

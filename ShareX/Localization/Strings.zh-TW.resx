@@ -1700,6 +1700,9 @@
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>編輯圖片</value>
   </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>在相片編輯器中編輯...</value>
+  </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>檔案</value>
   </data>

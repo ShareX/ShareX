@@ -1700,6 +1700,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Redigera bild...</value>
   </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Redigera i fotoredigeraren...</value>
+  </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Fil</value>
   </data>

@@ -1700,6 +1700,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Editar imagen</value>
   </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Editar en el editor de fotos...</value>
+  </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Archivo</value>
   </data>

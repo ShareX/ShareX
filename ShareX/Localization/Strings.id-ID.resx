@@ -1700,6 +1700,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Edit gambar</value>
   </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Edit di editor foto...</value>
+  </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>File</value>
   </data>

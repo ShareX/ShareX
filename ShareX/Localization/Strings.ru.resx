@@ -1700,6 +1700,9 @@
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Редактировать изображение</value>
   </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Редактировать в фоторедакторе...</value>
+  </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Файл</value>
   </data>

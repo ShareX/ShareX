@@ -1700,6 +1700,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Szerkesztés kép</value>
   </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Szerkesztés a fotószerkesztőben...</value>
+  </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Fájl</value>
   </data>

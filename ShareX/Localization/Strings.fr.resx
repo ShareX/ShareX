@@ -1700,6 +1700,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Modifier l’image</value>
   </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Modifier dans l’éditeur de photos...</value>
+  </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Fichier</value>
   </data>

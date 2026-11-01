@@ -1700,6 +1700,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Chỉnh sửa hình ảnh</value>
   </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Chỉnh sửa trong trình chỉnh sửa ảnh...</value>
+  </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Tệp</value>
   </data>
