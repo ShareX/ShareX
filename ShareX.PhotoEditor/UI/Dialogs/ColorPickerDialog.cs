@@ -550,8 +550,6 @@ public sealed class ColorPickerControl : UserControl
 
 public static class ColorPickerDialog
 {
-    private const double DialogWidth = 610;
-
     public static async Task<SKColor?> ShowAsync(Window owner, SKColor initial, string title, IEditorHost? host = null)
     {
         ColorPickerControl picker = new(initial, initial);
@@ -569,7 +567,7 @@ public static class ColorPickerDialog
             buttons.Add(add);
         }
         buttons.Add(reset);
-        bool ok = await DialogBuilder.ShowAsync(owner, title.Length > 0 ? $"Color Picker ({title})" : "Color Picker", picker, DialogWidth, "OK", null, buttons);
+        bool ok = await DialogBuilder.ShowAsync(owner, title.Length > 0 ? $"Color Picker ({title})" : "Color Picker", picker, DialogBuilder.AutoWidth, "OK", null, buttons);
         return ok ? picker.Color : null;
     }
 }

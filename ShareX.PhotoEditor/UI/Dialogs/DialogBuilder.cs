@@ -34,13 +34,16 @@ namespace ShareX.PhotoEditor.UI.Dialogs;
 /// <summary>Builds simple themed modal dialogs in code.</summary>
 public static class DialogBuilder
 {
+    /// <summary>Pass as a dialog width to size the dialog to its content.</summary>
+    public const double AutoWidth = double.NaN;
+
     public static Window CreateWindow(string title, double width, double? height = null)
     {
         Window window = new()
         {
             Title = title,
             Width = width,
-            SizeToContent = height == null ? SizeToContent.Height : SizeToContent.Manual,
+            SizeToContent = height != null ? SizeToContent.Manual : double.IsNaN(width) ? SizeToContent.WidthAndHeight : SizeToContent.Height,
             CanResize = height != null,
             WindowStartupLocation = WindowStartupLocation.CenterOwner,
             ShowInTaskbar = false,
