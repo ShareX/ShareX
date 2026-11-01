@@ -51,7 +51,7 @@ public sealed class ToolbarControl : UserControl
     public ToolbarControl(PhotoEditorWindow editor)
     {
         _editor = editor;
-        _columnsToggle = new Button { Classes = { "icon" }, Padding = new Thickness(0, 2), HorizontalAlignment = HorizontalAlignment.Stretch, HorizontalContentAlignment = HorizontalAlignment.Center };
+        _columnsToggle = new Button { Classes = { "icon" }, Padding = new Thickness(6, 2), HorizontalAlignment = HorizontalAlignment.Stretch, HorizontalContentAlignment = HorizontalAlignment.Left };
         _columnsToggle.Click += (_, _) => ToggleColumns();
 
         StackPanel root = new() { Spacing = 0, Margin = new Thickness(0, 0, 0, 6) };
@@ -64,7 +64,7 @@ public sealed class ToolbarControl : UserControl
         _quickMask = SmallButton("quick-mask", "Edit in Quick Mask Mode (Q)", () => Commands.EditorCommands.ToggleQuickMask(_editor));
         root.Children.Add(_quickMask);
         root.Children.Add(SmallButton("screen-mode", "Change Screen Mode (F)", () => _editor.CycleScreenMode()));
-        Content = new ScrollViewer { Content = root, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
+        Content = new ScrollViewer { Content = root, VerticalScrollBarVisibility = ScrollBarVisibility.Hidden, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
         ApplyColumns();
         Rebuild();
         _editor.Tools.ActiveChanged += RefreshActive;
