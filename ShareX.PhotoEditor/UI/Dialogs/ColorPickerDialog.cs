@@ -553,12 +553,12 @@ public static class ColorPickerDialog
     public static async Task<SKColor?> ShowAsync(Window owner, SKColor initial, string title, IEditorHost? host = null)
     {
         ColorPickerControl picker = new(initial, initial);
-        Button reset = new() { Content = "Reset" };
+        Button reset = new() { Classes = { "secondary" }, Content = "Reset" };
         reset.Click += (_, _) => picker.SetColor(initial);
         List<Control> buttons = [];
         if (host != null)
         {
-            Button add = new() { Content = "Add to Swatches" };
+            Button add = new() { Classes = { "secondary" }, Content = "Add to Swatches" };
             add.Click += (_, _) =>
             {
                 host.Settings.Swatches.Add("#" + ColorMath.ToHex(picker.Color));
