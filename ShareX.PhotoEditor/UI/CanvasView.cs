@@ -555,6 +555,8 @@ public sealed class RulerControl : Control
         _horizontal = horizontal;
         if (horizontal) Height = 18;
         else Width = 18;
+        // Labels and the pointer marker can extend past the ruler ends; keep them off the corner and the tab strip.
+        ClipToBounds = true;
         Cursor = new Cursor(horizontal ? StandardCursorType.SizeNorthSouth : StandardCursorType.SizeWestEast);
     }
 
