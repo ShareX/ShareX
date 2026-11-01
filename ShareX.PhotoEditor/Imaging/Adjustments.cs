@@ -37,16 +37,16 @@ public enum AdjustmentKind
     BlackAndWhite,
     PhotoFilter,
     ChannelMixer,
+    ColorLookup,
     Invert,
     Posterize,
     Threshold,
     GradientMap,
     SelectiveColor,
+    HdrToning,
     Desaturate,
-    ColorLookup,
-    ReplaceColor,
     MatchColor,
-    HdrToning
+    ReplaceColor
 }
 
 /// <summary>Serializable parameters for an adjustment; used by adjustment layers, dialogs and the adjustment brush.</summary>
