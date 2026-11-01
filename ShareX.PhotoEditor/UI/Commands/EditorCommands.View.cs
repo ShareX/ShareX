@@ -205,7 +205,7 @@ public static partial class EditorCommands
                     A(AdjustmentKind.BrightnessContrast), A(AdjustmentKind.Levels), A(AdjustmentKind.Curves), A(AdjustmentKind.Exposure), S,
                     A(AdjustmentKind.Vibrance), A(AdjustmentKind.HueSaturation), A(AdjustmentKind.ColorBalance), A(AdjustmentKind.BlackAndWhite), A(AdjustmentKind.PhotoFilter), A(AdjustmentKind.ChannelMixer), A(AdjustmentKind.ColorLookup), S,
                     A(AdjustmentKind.Invert), A(AdjustmentKind.Posterize), A(AdjustmentKind.Threshold), A(AdjustmentKind.GradientMap), A(AdjustmentKind.SelectiveColor), S,
-                    C("image.adjust.shadowsHighlights"), S,
+                    C("image.adjust.shadowsHighlights"), A(AdjustmentKind.HdrToning), S,
                     A(AdjustmentKind.Desaturate), A(AdjustmentKind.MatchColor), A(AdjustmentKind.ReplaceColor), C("image.adjust.equalize")), S,
                 C("image.autoTone"), C("image.autoContrast"), C("image.autoColor"), S,
                 C("image.imageSize"), C("image.canvasSize"),

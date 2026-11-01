@@ -168,9 +168,9 @@ public static class ColorMath
         b = FromLinear(0.0556434f * x - 0.2040259f * y + 1.0572252f * z);
     }
 
-    private static float ToLinear(float c) => c <= 0.04045f ? c / 12.92f : MathF.Pow((c + 0.055f) / 1.055f, 2.4f);
+    public static float ToLinear(float c) => c <= 0.04045f ? c / 12.92f : MathF.Pow((c + 0.055f) / 1.055f, 2.4f);
 
-    private static float FromLinear(float c)
+    public static float FromLinear(float c)
     {
         c = Math.Clamp(c, 0, 1);
         return c <= 0.0031308f ? c * 12.92f : 1.055f * MathF.Pow(c, 1 / 2.4f) - 0.055f;

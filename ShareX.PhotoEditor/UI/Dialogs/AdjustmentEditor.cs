@@ -157,6 +157,9 @@ public static class AdjustmentEditor
             case AdjustmentKind.MatchColor:
                 root.Children.Add(new MatchColorEditor(s, changed, histogramSource, host));
                 break;
+            case AdjustmentKind.HdrToning:
+                root.Children.Add(new HdrToningEditor(s, changed, histogramSource));
+                break;
             case AdjustmentKind.Posterize:
                 Slider("Levels:", "levels", 2, 255, 4);
                 break;

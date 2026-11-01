@@ -35,7 +35,7 @@ public static partial class EditorCommands
         (AdjustmentKind.BrightnessContrast, null), (AdjustmentKind.Levels, "Ctrl+L"), (AdjustmentKind.Curves, "Ctrl+M"), (AdjustmentKind.Exposure, null),
         (AdjustmentKind.Vibrance, null), (AdjustmentKind.HueSaturation, "Ctrl+U"), (AdjustmentKind.ColorBalance, "Ctrl+B"), (AdjustmentKind.BlackAndWhite, "Ctrl+Shift+Alt+B"),
         (AdjustmentKind.PhotoFilter, null), (AdjustmentKind.ChannelMixer, null), (AdjustmentKind.ColorLookup, null), (AdjustmentKind.Invert, "Ctrl+I"), (AdjustmentKind.Posterize, null),
-        (AdjustmentKind.Threshold, null), (AdjustmentKind.GradientMap, null), (AdjustmentKind.SelectiveColor, null), (AdjustmentKind.Desaturate, "Ctrl+Shift+U"), (AdjustmentKind.MatchColor, null), (AdjustmentKind.ReplaceColor, null)
+        (AdjustmentKind.Threshold, null), (AdjustmentKind.GradientMap, null), (AdjustmentKind.SelectiveColor, null), (AdjustmentKind.HdrToning, null), (AdjustmentKind.Desaturate, "Ctrl+Shift+U"), (AdjustmentKind.MatchColor, null), (AdjustmentKind.ReplaceColor, null)
     ];
 
     /// <summary>Adjustment layer kinds, grouped as in the New Adjustment Layer menu and the Adjustments panel.</summary>

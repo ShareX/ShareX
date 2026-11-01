@@ -45,7 +45,8 @@ public enum AdjustmentKind
     Desaturate,
     ColorLookup,
     ReplaceColor,
-    MatchColor
+    MatchColor,
+    HdrToning
 }
 
 /// <summary>Serializable parameters for an adjustment; used by adjustment layers, dialogs and the adjustment brush.</summary>
@@ -54,7 +55,7 @@ public sealed class AdjustmentSettings
     public AdjustmentSettings(AdjustmentKind kind)
     {
         Kind = kind;
-        if (kind == AdjustmentKind.Curves)
+        if (kind is AdjustmentKind.Curves or AdjustmentKind.HdrToning)
         {
             for (int i = 0; i < 4; i++) Curves[i] = [new SKPoint(0, 0), new SKPoint(255, 255)];
         }
@@ -73,6 +74,7 @@ public sealed class AdjustmentSettings
             Values["density"] = 25;
             Values["preserve"] = 1;
         }
+        if (kind == AdjustmentKind.HdrToning) Imaging.HdrToning.ApplyPreset(this, 0);
         if (kind == AdjustmentKind.ReplaceColor) Values["fuzziness"] = 40;
         if (kind == AdjustmentKind.MatchColor)
         {
@@ -138,6 +140,7 @@ public sealed class AdjustmentSettings
         AdjustmentKind.PhotoFilter => "Photo Filter",
         AdjustmentKind.ChannelMixer => "Channel Mixer",
         AdjustmentKind.ColorLookup => "Color Lookup",
+        AdjustmentKind.HdrToning => "HDR Toning",
         AdjustmentKind.MatchColor => "Match Color",
         AdjustmentKind.ReplaceColor => "Replace Color",
         AdjustmentKind.GradientMap => "Gradient Map",
@@ -153,12 +156,23 @@ public static class Adjustments
     /// Applies an adjustment to an area of the bitmap. The optional weight function returns 0..1 per bitmap pixel
     /// to blend the adjusted result with the original (used for masks, selections and opacity).
     /// </summary>
-    public static unsafe void Apply(AdjustmentSettings settings, SKBitmap bitmap, SKRectI area, Func<int, int, float>? weight = null)
+    public static void Apply(AdjustmentSettings settings, SKBitmap bitmap, SKRectI area, Func<int, int, float>? weight = null)
+    {
+        if (settings.Kind == AdjustmentKind.HdrToning)
+        {
+            area.Intersect(new SKRectI(0, 0, bitmap.Width, bitmap.Height));
+            if (!area.IsEmpty) Imaging.HdrToning.Apply(settings, bitmap, area, weight);
+            return;
+        }
+        Apply(CreateFunction(settings), bitmap, area, weight);
+    }
+
+    /// <summary>Applies a per-pixel function to an area of the bitmap, blended by the optional weight.</summary>
+    public static unsafe void Apply(PixelFunction function, SKBitmap bitmap, SKRectI area, Func<int, int, float>? weight = null)
     {
         area.Intersect(new SKRectI(0, 0, bitmap.Width, bitmap.Height));
         if (area.IsEmpty) return;
 
-        PixelFunction function = CreateFunction(settings);
         uint* pixels = (uint*)bitmap.GetPixels();
         int stride = bitmap.RowBytes / 4;
         int left = area.Left, right = area.Right;
