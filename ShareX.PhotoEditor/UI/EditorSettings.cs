@@ -94,6 +94,10 @@ public sealed class EditorSettings
 
     public bool OptionsVisible { get; set; } = true;
 
+    public bool RememberWindowState { get; set; } = true;
+
+    public ShareX.HelpersLib.WindowState WindowState { get; set; } = new();
+
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
         WriteIndented = true,
@@ -125,6 +129,7 @@ public sealed class EditorSettings
         Toolbar ??= [];
         HiddenTools ??= [];
         Panels ??= [];
+        WindowState ??= new();
         Panels.RemoveAll(p => p == null);
         foreach (PanelGroupLayout panel in Panels) panel.Panels ??= [];
         foreach (ToolbarGroupLayout group in Toolbar) group.Tools ??= [];

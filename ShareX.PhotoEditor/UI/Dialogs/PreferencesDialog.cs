@@ -47,12 +47,15 @@ public static class PreferencesDialog
         DialogBuilder.AddRow(form, "Grid Subdivisions:", DialogBuilder.SliderNumber(1, 100, subdivisions, v => subdivisions = (int)v));
         TextBox guide = new() { Text = guideColor };
         DialogBuilder.AddRow(form, "Guide Color (hex):", guide);
+        CheckBox rememberWindow = new() { Content = "Remember window size and position", IsChecked = s.RememberWindowState };
+        DialogBuilder.AddFull(form, rememberWindow);
         if (!await DialogBuilder.ShowAsync(owner, "Preferences", form, 460)) return;
         s.HistoryStates = history;
         s.CheckerSize = checker;
         s.GridSpacing = grid;
         s.GridSubdivisions = subdivisions;
         s.DefaultResample = resample;
+        s.RememberWindowState = rememberWindow.IsChecked == true;
         if (ColorMath.TryParseHex(guide.Text, out _)) s.GuideColor = guide.Text!;
         foreach (DocumentView view in owner.Views) view.Document.History.MaxStates = history;
         owner.SaveSettings();

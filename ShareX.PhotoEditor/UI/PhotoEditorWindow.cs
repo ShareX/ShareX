@@ -105,6 +105,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         MinWidth = 900;
         MinHeight = 600;
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        ApplySavedWindowState();
         ShareX.PhotoEditor.UI.Theme.PhotoEditorTheme.Apply(this);
 
         Tools = new ToolManager(this);
@@ -223,6 +224,9 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         RefreshTabs();
         RefreshStatus();
         Closing += OnClosing;
+        Opened += (_, _) => _windowPlacementApplied = true;
+        Resized += (_, _) => QueueWindowPlacementSave();
+        PositionChanged += (_, _) => QueueWindowPlacementSave();
     }
 
     public PhotoEditorServices Services { get; }

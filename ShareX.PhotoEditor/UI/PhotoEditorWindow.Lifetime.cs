@@ -23,12 +23,14 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Platform.Storage;
+using Avalonia.Threading;
 using ShareX.PhotoEditor.Integration;
 using ShareX.PhotoEditor.Tools;
 using ShareX.PhotoEditor.UI.Commands;
@@ -75,6 +77,9 @@ public sealed partial class PhotoEditorWindow
         return file?.TryGetLocalPath();
     }
 
+    private bool _windowPlacementApplied;
+    private bool _windowPlacementSavePending;
+
     // ------------------------------------------------------------------ closing
 
     private async void OnClosing(object? sender, WindowClosingEventArgs e)
@@ -109,8 +114,58 @@ public sealed partial class PhotoEditorWindow
         _views.Clear();
     }
 
+    private void ApplySavedWindowState()
+    {
+        if (!Settings.RememberWindowState) return;
+        ShareX.HelpersLib.WindowState saved = Settings.WindowState;
+        if (!saved.Size.IsEmpty)
+        {
+            Width = saved.Size.Width;
+            Height = saved.Size.Height;
+        }
+        if (!saved.Location.IsEmpty)
+        {
+            PixelPoint position = new(saved.Location.X, saved.Location.Y);
+            if (Screens.ScreenFromPoint(position) != null)
+            {
+                WindowStartupLocation = WindowStartupLocation.Manual;
+                Position = position;
+            }
+        }
+        if (saved.IsMaximized) WindowState = WindowState.Maximized;
+    }
+
+    private void QueueWindowPlacementSave()
+    {
+        if (!_windowPlacementApplied || _windowPlacementSavePending) return;
+        _windowPlacementSavePending = true;
+        // Maximizing moves the window before its state changes, so wait for the state to settle.
+        Dispatcher.UIThread.Post(() =>
+        {
+            _windowPlacementSavePending = false;
+            SaveNormalWindowPlacement();
+        }, DispatcherPriority.Background);
+    }
+
+    /// <summary>Remembers the size and position to restore to; a maximized window keeps the ones from before it was maximized.</summary>
+    private void SaveNormalWindowPlacement()
+    {
+        if (!Settings.RememberWindowState || WindowState != WindowState.Normal || !IsVisible || Bounds.Width <= 0 || Bounds.Height <= 0) return;
+        Settings.WindowState.Size = new System.Drawing.Size((int)Math.Round(Bounds.Width), (int)Math.Round(Bounds.Height));
+        Settings.WindowState.Location = new System.Drawing.Point(Position.X, Position.Y);
+    }
+
+    private void SaveWindowState()
+    {
+        if (!Settings.RememberWindowState) return;
+        SaveNormalWindowPlacement();
+        // Full screen and minimized keep the last remembered state.
+        if (WindowState is WindowState.Normal or WindowState.Maximized) Settings.WindowState.IsMaximized = WindowState == WindowState.Maximized;
+    }
+
     public void SaveSettings()
     {
+        SaveWindowState();
         _dock.SaveLayout();
         if (_dockColumn.ActualWidth > 0) Settings.RightDockWidth = _dockColumn.ActualWidth;
         Settings.Save(Services.SettingsFilePath);
