@@ -364,9 +364,16 @@
         </Style>
     </Style>
     <Style Selector="RadioButton">
-        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="Height" Value="22"/>
         <Setter Property="FontSize" Value="12"/>
-        <Setter Property="Padding" Value="4,0,0,0"/>
+        <Setter Property="Padding" Value="2,0,0,0"/>
+        <!-- The Fluent template fixes these sizes, so center its 32 high glyph area and scale the glyphs. -->
+        <Style Selector="^ /template/ Border#RootBorder > Grid > Grid">
+            <Setter Property="Margin" Value="0,-5"/>
+        </Style>
+        <Style Selector="^ /template/ Ellipse">
+            <Setter Property="RenderTransform" Value="scale(0.7)"/>
+        </Style>
     </Style>
 
     <!-- Sliders: compact custom template with a thin track and a small round thumb -->
@@ -385,7 +392,7 @@
                             <RepeatButton Name="PART_DecreaseButton" Focusable="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                 <RepeatButton.Template>
                                     <ControlTemplate>
-                                        <Grid Background="Transparent"/>
+                                        <Border Background="Transparent"/>
                                     </ControlTemplate>
                                 </RepeatButton.Template>
                             </RepeatButton>
@@ -394,7 +401,7 @@
                             <RepeatButton Name="PART_IncreaseButton" Focusable="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                 <RepeatButton.Template>
                                     <ControlTemplate>
-                                        <Grid Background="Transparent"/>
+                                        <Border Background="Transparent"/>
                                     </ControlTemplate>
                                 </RepeatButton.Template>
                             </RepeatButton>

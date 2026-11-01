@@ -25,289 +25,551 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Shapes;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using ShareX.PhotoEditor.Tools;
+using ShareX.PhotoEditor.UI.Panels;
 
 namespace ShareX.PhotoEditor.UI.Dialogs;
 
-/// <summary>Color picker with a saturation/brightness field, hue strip, alpha and HEX, RGB, HSB and HSL fields.</summary>
+/// <summary>
+/// Color picker with a two-dimensional field and a strip. The selected HSB, RGB or Lab component runs along the strip and the
+/// other two span the field. Also shows CMYK and HEX values, a web-safe warning and opacity.
+/// </summary>
 public sealed class ColorPickerControl : UserControl
 {
+    private const int FieldSize = 256;
+    private const int StripWidth = 20;
+    private const int StripArrowWidth = 7;
+    private const int FieldMarkerSize = 12;
+    private const float LabAxisOffset = 128;
+    private const float LabAxisRange = 255;
+    private const int WebSteps = 5;
+
+    private enum PickMode
+    {
+        Hue,
+        Saturation,
+        Brightness,
+        Red,
+        Green,
+        Blue,
+        LabL,
+        LabA,
+        LabB
+    }
+
+    private readonly Image _field = new() { Stretch = Stretch.None, IsHitTestVisible = false };
+    private readonly Image _strip = new() { Stretch = Stretch.None, IsHitTestVisible = false };
+    private readonly Ellipse _fieldMarker = new() { Width = FieldMarkerSize, Height = FieldMarkerSize, StrokeThickness = 1.5, IsHitTestVisible = false };
+    private readonly Polygon _stripArrowLeft = StripArrow(new Point(0, 0), new Point(StripArrowWidth, 5), new Point(0, 10));
+    private readonly Polygon _stripArrowRight = StripArrow(new Point(StripArrowWidth, 0), new Point(0, 5), new Point(StripArrowWidth, 10));
+    private readonly Border _newSwatch = new() { Width = 70, Height = 34 };
+    private readonly Border _webSwatch = new() { Width = 14, Height = 14, BorderBrush = Brushes.Gray, BorderThickness = new Thickness(1), Cursor = new Cursor(StandardCursorType.Hand) };
+    private readonly StackPanel _webWarning = new() { Spacing = 3, VerticalAlignment = VerticalAlignment.Center };
+    private readonly TextBox _hex = new() { Width = 80, HorizontalAlignment = HorizontalAlignment.Left };
+    private readonly Slider _alpha = new() { Minimum = 0, Maximum = 100, VerticalAlignment = VerticalAlignment.Center };
+    private readonly NumericUpDown _hBox, _sBox, _vBox, _rBox, _gBox, _bBox, _labLBox, _labABox, _labBBox, _cBox, _mBox, _yBox, _kBox, _aBox;
     private float _h, _s, _v, _a = 1;
-    private readonly Border _field;
-    private readonly Canvas _fieldMarker;
-    private readonly Border _hueStrip;
-    private readonly Border _hueMarker;
-    private readonly Slider _alpha;
-    private readonly Border _newSwatch;
-    private readonly TextBox _hex;
-    private readonly NumericUpDown _r, _g, _b, _hBox, _sBox, _vBox, _lBox, _hslS, _aBox;
+    private PickMode _mode = PickMode.Hue;
+    private bool _webOnly;
     private bool _updating;
+
+    /// <summary>The pointer position while picking, so rounding and gamut clipping do not make the markers jump.</summary>
+    private (float Strip, float X, float Y)? _picked;
+
+    private (PickMode, float, bool)? _fieldKey;
+    private (PickMode, float, float, bool)? _stripKey;
 
     public ColorPickerControl(SKColor initial, SKColor current)
     {
-        _field = new Border { Width = 256, Height = 256, ClipToBounds = true, Cursor = new Cursor(StandardCursorType.Cross) };
-        _fieldMarker = new Canvas { IsHitTestVisible = false };
-        Grid fieldHost = new() { Width = 256, Height = 256 };
-        Border white = new()
-        {
-            Background = new LinearGradientBrush
-            {
-                StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative),
-                EndPoint = new RelativePoint(1, 0, RelativeUnit.Relative),
-                GradientStops = { new Avalonia.Media.GradientStop(Colors.White, 0), new Avalonia.Media.GradientStop(Avalonia.Media.Color.FromArgb(0, 255, 255, 255), 1) }
-            },
-            IsHitTestVisible = false
-        };
-        Border black = new()
-        {
-            Background = new LinearGradientBrush
-            {
-                StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative),
-                EndPoint = new RelativePoint(0, 1, RelativeUnit.Relative),
-                GradientStops = { new Avalonia.Media.GradientStop(Avalonia.Media.Color.FromArgb(0, 0, 0, 0), 0), new Avalonia.Media.GradientStop(Colors.Black, 1) }
-            },
-            IsHitTestVisible = false
-        };
+        Grid fieldHost = new() { Width = FieldSize, Height = FieldSize, ClipToBounds = true, Background = Brushes.Transparent, Cursor = new Cursor(StandardCursorType.Cross) };
+        Canvas fieldOverlay = new() { IsHitTestVisible = false };
+        fieldOverlay.Children.Add(_fieldMarker);
         fieldHost.Children.Add(_field);
-        fieldHost.Children.Add(white);
-        fieldHost.Children.Add(black);
-        fieldHost.Children.Add(_fieldMarker);
-        // Overlays are not hit-testable, so route pointer input through the host grid.
-        fieldHost.PointerPressed += (_, e) => { e.Pointer.Capture(fieldHost); PickField(e.GetPosition(fieldHost)); };
-        fieldHost.PointerMoved += (_, e) => { if (e.GetCurrentPoint(fieldHost).Properties.IsLeftButtonPressed) PickField(e.GetPosition(fieldHost)); };
-
-        LinearGradientBrush spectrum = new() { StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative), EndPoint = new RelativePoint(0, 1, RelativeUnit.Relative) };
-        for (int i = 0; i <= 6; i++)
+        fieldHost.Children.Add(fieldOverlay);
+        fieldHost.PointerPressed += (_, e) =>
         {
-            SKColor c = ColorMath.FromHsv(360 - i * 60, 1, 1);
-            spectrum.GradientStops.Add(new Avalonia.Media.GradientStop(Avalonia.Media.Color.FromRgb(c.Red, c.Green, c.Blue), i / 6.0));
-        }
-        _hueStrip = new Border { Width = 22, Height = 256, Background = spectrum, Cursor = new Cursor(StandardCursorType.SizeNorthSouth) };
-        _hueMarker = new Border { Height = 4, Width = 26, BorderBrush = Brushes.White, BorderThickness = new Thickness(1), Background = Brushes.Transparent, IsHitTestVisible = false };
-        Canvas hueHost = new() { Width = 26, Height = 256 };
-        Canvas.SetLeft(_hueStrip, 2);
-        hueHost.Children.Add(_hueStrip);
-        hueHost.Children.Add(_hueMarker);
-        hueHost.PointerPressed += (_, e) => { e.Pointer.Capture(hueHost); PickHue(e.GetPosition(hueHost).Y); };
-        hueHost.PointerMoved += (_, e) => { if (e.GetCurrentPoint(hueHost).Properties.IsLeftButtonPressed) PickHue(e.GetPosition(hueHost).Y); };
+            e.Pointer.Capture(fieldHost);
+            PickField(e.GetPosition(fieldHost));
+        };
+        fieldHost.PointerMoved += (_, e) =>
+        {
+            if (e.GetCurrentPoint(fieldHost).Properties.IsLeftButtonPressed) PickField(e.GetPosition(fieldHost));
+        };
 
-        _newSwatch = new Border { Width = 70, Height = 34 };
-        Border currentSwatch = new() { Width = 70, Height = 34, Background = DialogBuilder.ToBrush(current), Cursor = new Cursor(StandardCursorType.Hand) };
-        ToolTip.SetTip(currentSwatch, "Click to restore the current color");
-        currentSwatch.PointerPressed += (_, _) => SetColor(current);
+        Canvas stripHost = new() { Width = StripWidth + StripArrowWidth * 2, Height = FieldSize, Background = Brushes.Transparent, Cursor = new Cursor(StandardCursorType.SizeNorthSouth) };
+        Canvas.SetLeft(_strip, StripArrowWidth);
+        Canvas.SetLeft(_stripArrowRight, StripArrowWidth + StripWidth);
+        stripHost.Children.Add(_strip);
+        stripHost.Children.Add(_stripArrowLeft);
+        stripHost.Children.Add(_stripArrowRight);
+        stripHost.PointerPressed += (_, e) =>
+        {
+            e.Pointer.Capture(stripHost);
+            PickStrip(e.GetPosition(stripHost).Y);
+        };
+        stripHost.PointerMoved += (_, e) =>
+        {
+            if (e.GetCurrentPoint(stripHost).Properties.IsLeftButtonPressed) PickStrip(e.GetPosition(stripHost).Y);
+        };
 
-        _hex = new TextBox { Width = 90 };
+        _hBox = Box(0, 360, v => { _h = (float)v; AfterBoxEdit(); });
+        _sBox = Box(0, 100, v => { _s = (float)v / 100; AfterBoxEdit(); });
+        _vBox = Box(0, 100, v => { _v = (float)v / 100; AfterBoxEdit(); });
+        _rBox = Box(0, 255, _ => FromRgbBoxes());
+        _gBox = Box(0, 255, _ => FromRgbBoxes());
+        _bBox = Box(0, 255, _ => FromRgbBoxes());
+        _labLBox = Box(0, 100, _ => FromLabBoxes());
+        _labABox = Box(-128, 127, _ => FromLabBoxes());
+        _labBBox = Box(-128, 127, _ => FromLabBoxes());
+        _cBox = Box(0, 100, _ => FromCmykBoxes());
+        _mBox = Box(0, 100, _ => FromCmykBoxes());
+        _yBox = Box(0, 100, _ => FromCmykBoxes());
+        _kBox = Box(0, 100, _ => FromCmykBoxes());
+        _aBox = Box(0, 100, v => { _a = (float)v / 100; Refresh(); });
+        _alpha.ValueChanged += (_, e) =>
+        {
+            if (_updating) return;
+            _a = (float)e.NewValue / 100;
+            Refresh();
+        };
         _hex.LostFocus += (_, _) => ApplyHex();
-        _hex.KeyDown += (_, e) => { if (e.Key == Key.Enter) ApplyHex(); };
-
-        NumericUpDown Box(double max, Action<double> set)
+        _hex.KeyDown += (_, e) =>
         {
-            NumericUpDown box = DialogBuilder.Number(0, max, 0);
-            box.Width = 72;
-            box.MinWidth = 72;
-            box.ValueChanged += (_, e) => { if (!_updating && e.NewValue is decimal d) set((double)d); };
-            return box;
-        }
-        _hBox = Box(360, v => { _h = (float)v; Refresh(); });
-        _sBox = Box(100, v => { _s = (float)v / 100; Refresh(); });
-        _vBox = Box(100, v => { _v = (float)v / 100; Refresh(); });
-        _r = Box(255, _ => FromRgbBoxes());
-        _g = Box(255, _ => FromRgbBoxes());
-        _b = Box(255, _ => FromRgbBoxes());
-        _hslS = Box(100, _ => FromHslBoxes());
-        _lBox = Box(100, _ => FromHslBoxes());
-        _aBox = Box(100, v => { _a = (float)v / 100; Refresh(); });
-        _alpha = new Slider { Minimum = 0, Maximum = 100, Width = 160 };
-        _alpha.ValueChanged += (_, e) => { if (!_updating) { _a = (float)e.NewValue / 100; Refresh(); } };
+            if (e.Key == Key.Enter) ApplyHex();
+        };
 
-        // Two aligned field columns: HSB and RGB on the left, HSL and alpha on the right.
-        Grid fields = new() { ColumnDefinitions = new ColumnDefinitions("Auto,Auto,14,22,Auto,Auto,Auto"), RowSpacing = 6, ColumnSpacing = 4 };
-        void Field(int row, int column, string label, NumericUpDown box, string unit)
+        CheckBox webOnly = new() { Content = "Only Web Colors" };
+        webOnly.IsCheckedChanged += (_, _) =>
         {
-            while (fields.RowDefinitions.Count <= row) fields.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
-            box.Width = 48;
-            TextBlock caption = new() { Text = label, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 4, 0) };
-            TextBlock suffix = new() { Text = unit, Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center };
-            Grid.SetRow(caption, row); Grid.SetColumn(caption, column);
-            Grid.SetRow(box, row); Grid.SetColumn(box, column + 1);
-            Grid.SetRow(suffix, row); Grid.SetColumn(suffix, column + 2);
-            fields.Children.Add(caption);
-            fields.Children.Add(box);
-            fields.Children.Add(suffix);
-        }
-        Field(0, 0, "H:", _hBox, "°");
-        Field(1, 0, "S:", _sBox, "%");
-        Field(2, 0, "B:", _vBox, "%");
-        Field(4, 0, "R:", _r, string.Empty);
-        Field(5, 0, "G:", _g, string.Empty);
-        Field(6, 0, "B:", _b, string.Empty);
-        Field(0, 4, "A:", _aBox, "%");
-        Field(4, 4, "S:", _hslS, "%");
-        Field(5, 4, "L:", _lBox, "%");
-        fields.RowDefinitions.Add(new RowDefinition(new GridLength(8)));
-        fields.RowDefinitions.Add(new RowDefinition(GridLength.Auto));
-        TextBlock hash = new() { Text = "#", VerticalAlignment = VerticalAlignment.Center };
-        Grid.SetRow(hash, 8);
-        Grid.SetRow(_hex, 8);
-        Grid.SetColumn(_hex, 1);
-        Grid.SetColumnSpan(_hex, 4);
-        _hex.Width = 80;
-        _hex.HorizontalAlignment = HorizontalAlignment.Left;
-        fields.Children.Add(hash);
-        fields.Children.Add(_hex);
-        TextBlock hslHeader = new() { Text = "HSL", Classes = { "dim" }, FontSize = 10, VerticalAlignment = VerticalAlignment.Bottom };
-        Grid.SetRow(hslHeader, 3);
-        Grid.SetColumn(hslHeader, 4);
-        fields.Children.Add(hslHeader);
+            _webOnly = webOnly.IsChecked == true;
+            _picked = null;
+            SnapToWeb();
+            Refresh();
+        };
+        Grid opacity = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto,Auto"), ColumnSpacing = 6 };
+        TextBlock opacityLabel = new() { Text = "Opacity:", VerticalAlignment = VerticalAlignment.Center };
+        TextBlock opacityUnit = new() { Text = "%", VerticalAlignment = VerticalAlignment.Center };
+        _aBox.Width = 48;
+        Grid.SetColumn(_alpha, 1);
+        Grid.SetColumn(_aBox, 2);
+        Grid.SetColumn(opacityUnit, 3);
+        opacity.Children.Add(opacityLabel);
+        opacity.Children.Add(_alpha);
+        opacity.Children.Add(_aBox);
+        opacity.Children.Add(opacityUnit);
 
-        StackPanel swatches = new() { Spacing = 0, HorizontalAlignment = HorizontalAlignment.Left };
-        swatches.Children.Add(new TextBlock { Text = "new", HorizontalAlignment = HorizontalAlignment.Center, FontSize = 11, Classes = { "dim" } });
-        swatches.Children.Add(new Border { BorderBrush = new SolidColorBrush(Avalonia.Media.Color.FromRgb(0x1A, 0x1A, 0x1A)), BorderThickness = new Thickness(1), Child = new StackPanel { Children = { _newSwatch, currentSwatch } } });
-        swatches.Children.Add(new TextBlock { Text = "current", HorizontalAlignment = HorizontalAlignment.Center, FontSize = 11, Classes = { "dim" } });
-
-        StackPanel right = new() { Spacing = 10 };
-        right.Children.Add(swatches);
-        right.Children.Add(fields);
-
-        StackPanel alphaRow = new() { Orientation = Orientation.Horizontal, Spacing = 8 };
-        alphaRow.Children.Add(new TextBlock { Text = "Opacity", VerticalAlignment = VerticalAlignment.Center });
-        alphaRow.Children.Add(_alpha);
-
+        StackPanel pickers = new() { Orientation = Orientation.Horizontal, Spacing = 4 };
+        pickers.Children.Add(new Border { BorderBrush = new SolidColorBrush(Avalonia.Media.Color.FromRgb(0x1A, 0x1A, 0x1A)), BorderThickness = new Thickness(1), Child = fieldHost });
+        pickers.Children.Add(stripHost);
         StackPanel left = new() { Spacing = 8 };
-        StackPanel pickers = new() { Orientation = Orientation.Horizontal, Spacing = 10 };
-        pickers.Children.Add(fieldHost);
-        pickers.Children.Add(hueHost);
         left.Children.Add(pickers);
-        left.Children.Add(alphaRow);
+        left.Children.Add(webOnly);
+        left.Children.Add(opacity);
 
-        StackPanel root = new() { Orientation = Orientation.Horizontal, Spacing = 16 };
+        StackPanel right = new() { Spacing = 12 };
+        right.Children.Add(BuildPreview(current));
+        right.Children.Add(BuildFields());
+
+        StackPanel root = new() { Orientation = Orientation.Horizontal, Spacing = 20 };
         root.Children.Add(left);
         root.Children.Add(right);
         Content = root;
         SetColor(initial);
     }
 
-    private static Control Unit(Control box, string unit)
+    private static Polygon StripArrow(params Point[] points) => new() { Points = points, Fill = Brushes.White, IsHitTestVisible = false };
+
+    private NumericUpDown Box(double minimum, double maximum, Action<double> set)
     {
-        StackPanel panel = new() { Orientation = Orientation.Horizontal, Spacing = 4 };
-        panel.Children.Add(box);
-        panel.Children.Add(new TextBlock { Text = unit, VerticalAlignment = VerticalAlignment.Center });
-        return panel;
+        NumericUpDown box = DialogBuilder.Number(minimum, maximum, 0);
+        box.Width = 48;
+        box.MinWidth = 48;
+        box.ValueChanged += (_, e) =>
+        {
+            if (!_updating && e.NewValue is decimal value) set((double)value);
+        };
+        return box;
     }
 
-    public SKColor Color
+    private Control BuildPreview(SKColor current)
     {
-        get
+        Border currentSwatch = new() { Width = 70, Height = 34, Background = DialogBuilder.ToBrush(current), Cursor = new Cursor(StandardCursorType.Hand) };
+        ToolTip.SetTip(currentSwatch, "Click to restore the current color");
+        currentSwatch.PointerPressed += (_, _) => SetColor(current);
+
+        StackPanel swatches = new() { HorizontalAlignment = HorizontalAlignment.Left };
+        swatches.Children.Add(new TextBlock { Text = "new", HorizontalAlignment = HorizontalAlignment.Center, Classes = { "dim" } });
+        swatches.Children.Add(new Border
         {
-            SKColor c = ColorMath.FromHsv(_h, _s, _v);
-            return c.WithAlpha((byte)MathF.Round(_a * 255));
-        }
+            BorderBrush = new SolidColorBrush(Avalonia.Media.Color.FromRgb(0x1A, 0x1A, 0x1A)),
+            BorderThickness = new Thickness(1),
+            Child = new StackPanel { Children = { _newSwatch, currentSwatch } }
+        });
+        swatches.Children.Add(new TextBlock { Text = "current", HorizontalAlignment = HorizontalAlignment.Center, Classes = { "dim" } });
+
+        ToolTip.SetTip(_webWarning, "Not a web color. Click the swatch to use the nearest one.");
+        _webSwatch.PointerPressed += (_, _) =>
+        {
+            _picked = null;
+            SKColor web = NearestWebColor(Color);
+            SetRgb(web.Red / 255f, web.Green / 255f, web.Blue / 255f);
+            Refresh();
+        };
+        _webWarning.Children.Add(ToolIcons.Create("web-color", 16));
+        _webWarning.Children.Add(_webSwatch);
+
+        StackPanel preview = new() { Orientation = Orientation.Horizontal, Spacing = 8 };
+        preview.Children.Add(swatches);
+        preview.Children.Add(_webWarning);
+        return preview;
     }
+
+    private Control BuildFields()
+    {
+        Grid fields = new()
+        {
+            ColumnDefinitions = new ColumnDefinitions("Auto,Auto,18,12,Auto,Auto,Auto"),
+            RowDefinitions = new RowDefinitions("Auto,Auto,Auto,8,Auto,Auto,Auto,Auto"),
+            RowSpacing = 4,
+            ColumnSpacing = 3
+        };
+
+        void Add(Control control, int row, int column, int span = 1)
+        {
+            Grid.SetRow(control, row);
+            Grid.SetColumn(control, column);
+            Grid.SetColumnSpan(control, span);
+            fields.Children.Add(control);
+        }
+        void Unit(string text, int row, int column) => Add(new TextBlock { Text = text, VerticalAlignment = VerticalAlignment.Center }, row, column);
+        void ModeField(string label, PickMode mode, NumericUpDown box, string unit, int row, int column)
+        {
+            RadioButton radio = new() { Content = label, GroupName = "ColorPickerMode", IsChecked = mode == _mode, MinWidth = 0, VerticalAlignment = VerticalAlignment.Center };
+            radio.IsCheckedChanged += (_, _) =>
+            {
+                if (radio.IsChecked != true) return;
+                _mode = mode;
+                _picked = null;
+                Refresh();
+            };
+            Add(radio, row, column);
+            Add(box, row, column + 1);
+            Unit(unit, row, column + 2);
+        }
+        void InkField(string label, NumericUpDown box, int row)
+        {
+            Add(new TextBlock { Text = label, VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(0, 0, 4, 0) }, row, 4);
+            Add(box, row, 5);
+            Unit("%", row, 6);
+        }
+
+        ModeField("H:", PickMode.Hue, _hBox, "°", 0, 0);
+        ModeField("S:", PickMode.Saturation, _sBox, "%", 1, 0);
+        ModeField("B:", PickMode.Brightness, _vBox, "%", 2, 0);
+        ModeField("R:", PickMode.Red, _rBox, string.Empty, 4, 0);
+        ModeField("G:", PickMode.Green, _gBox, string.Empty, 5, 0);
+        ModeField("B:", PickMode.Blue, _bBox, string.Empty, 6, 0);
+        ModeField("L:", PickMode.LabL, _labLBox, string.Empty, 0, 4);
+        ModeField("a:", PickMode.LabA, _labABox, string.Empty, 1, 4);
+        ModeField("b:", PickMode.LabB, _labBBox, string.Empty, 2, 4);
+        InkField("C:", _cBox, 4);
+        InkField("M:", _mBox, 5);
+        InkField("Y:", _yBox, 6);
+        InkField("K:", _kBox, 7);
+        Add(new TextBlock { Text = "#", VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(0, 0, 4, 0) }, 7, 0);
+        Add(_hex, 7, 1, 3);
+        return fields;
+    }
+
+    public SKColor Color => ColorMath.FromHsv(_h, _s, _v).WithAlpha((byte)MathF.Round(_a * 255));
 
     public event Action<SKColor>? ColorChanged;
 
     public void SetColor(SKColor color)
     {
-        ColorMath.RgbToHsv(color.Red / 255f, color.Green / 255f, color.Blue / 255f, out float h, out float s, out float v);
-        if (s > 0.001f) _h = h;
-        _s = s;
-        _v = v;
+        _picked = null;
+        SetRgb(color.Red / 255f, color.Green / 255f, color.Blue / 255f);
         _a = color.Alpha / 255f;
+        SnapToWeb();
         Refresh();
+    }
+
+    /// <summary>Stores a color, keeping the hue and saturation that black, white and grays cannot express.</summary>
+    private void SetRgb(float r, float g, float b)
+    {
+        ColorMath.RgbToHsv(r, g, b, out float h, out float s, out float v);
+        if (s > 0.001f) _h = h;
+        if (v > 0.001f) _s = s;
+        _v = v;
+    }
+
+    private void SnapToWeb()
+    {
+        if (!_webOnly) return;
+        SKColor web = NearestWebColor(Color);
+        SetRgb(web.Red / 255f, web.Green / 255f, web.Blue / 255f);
+    }
+
+    private static float SnapChannel(float value) => MathF.Round(value * WebSteps) / WebSteps;
+
+    private static SKColor NearestWebColor(SKColor c)
+    {
+        static byte Snap(byte channel) => (byte)(MathF.Round(channel / 255f * WebSteps) * 255 / WebSteps);
+        return new SKColor(Snap(c.Red), Snap(c.Green), Snap(c.Blue), c.Alpha);
+    }
+
+    /// <summary>The color at a strip position and field position, all in 0..1 with Y pointing up.</summary>
+    private (float R, float G, float B) ColorAt(float strip, float x, float y)
+    {
+        float r, g, b;
+        switch (_mode)
+        {
+            case PickMode.Hue:
+                ColorMath.HsvToRgb(strip * 360, x, y, out r, out g, out b);
+                break;
+            case PickMode.Saturation:
+                ColorMath.HsvToRgb(x * 360, strip, y, out r, out g, out b);
+                break;
+            case PickMode.Brightness:
+                ColorMath.HsvToRgb(x * 360, y, strip, out r, out g, out b);
+                break;
+            case PickMode.Red:
+                (r, g, b) = (strip, y, x);
+                break;
+            case PickMode.Green:
+                (r, g, b) = (y, strip, x);
+                break;
+            case PickMode.Blue:
+                (r, g, b) = (x, y, strip);
+                break;
+            case PickMode.LabL:
+                ColorMath.LabToRgb(strip * 100, LabAxis(x), LabAxis(y), out r, out g, out b);
+                break;
+            case PickMode.LabA:
+                ColorMath.LabToRgb(y * 100, LabAxis(strip), LabAxis(x), out r, out g, out b);
+                break;
+            default:
+                ColorMath.LabToRgb(y * 100, LabAxis(x), LabAxis(strip), out r, out g, out b);
+                break;
+        }
+        return _webOnly ? (SnapChannel(r), SnapChannel(g), SnapChannel(b)) : (r, g, b);
+    }
+
+    private static float LabAxis(float position) => position * LabAxisRange - LabAxisOffset;
+
+    private static float LabPosition(float value) => (value + LabAxisOffset) / LabAxisRange;
+
+    /// <summary>The inverse of <see cref="ColorAt"/> for the current color.</summary>
+    private (float Strip, float X, float Y) CurrentPosition()
+    {
+        if (_picked is { } picked) return picked;
+        SKColor c = Color;
+        float r = c.Red / 255f, g = c.Green / 255f, b = c.Blue / 255f;
+        ColorMath.RgbToLab(r, g, b, out float labL, out float labA, out float labB);
+        return _mode switch
+        {
+            PickMode.Hue => (_h / 360, _s, _v),
+            PickMode.Saturation => (_s, _h / 360, _v),
+            PickMode.Brightness => (_v, _h / 360, _s),
+            PickMode.Red => (r, b, g),
+            PickMode.Green => (g, b, r),
+            PickMode.Blue => (b, r, g),
+            PickMode.LabL => (labL / 100, LabPosition(labA), LabPosition(labB)),
+            PickMode.LabA => (LabPosition(labA), LabPosition(labB), labL / 100),
+            _ => (LabPosition(labB), LabPosition(labA), labL / 100)
+        };
     }
 
     private void PickField(Point p)
     {
-        _s = (float)Math.Clamp(p.X / 256, 0, 1);
-        _v = (float)Math.Clamp(1 - p.Y / 256, 0, 1);
+        float x = (float)Math.Clamp(p.X / (FieldSize - 1), 0, 1);
+        float y = (float)Math.Clamp(1 - p.Y / (FieldSize - 1), 0, 1);
+        ApplyPicked((CurrentPosition().Strip, x, y));
+    }
+
+    private void PickStrip(double y)
+    {
+        (_, float fieldX, float fieldY) = CurrentPosition();
+        ApplyPicked(((float)Math.Clamp(1 - y / (FieldSize - 1), 0, 1), fieldX, fieldY));
+    }
+
+    private void ApplyPicked((float Strip, float X, float Y) position)
+    {
+        _picked = position;
+        (float strip, float x, float y) = position;
+        if (_webOnly || _mode > PickMode.Brightness)
+        {
+            (float r, float g, float b) = ColorAt(strip, x, y);
+            SetRgb(r, g, b);
+        }
+        else
+        {
+            // Hue, saturation and brightness are stored as they are, so hue survives on black and gray.
+            (_h, _s, _v) = _mode switch
+            {
+                PickMode.Hue => (strip * 360, x, y),
+                PickMode.Saturation => (x * 360, strip, y),
+                _ => (x * 360, y, strip)
+            };
+        }
         Refresh();
     }
 
-    private void PickHue(double y)
+    private void AfterBoxEdit()
     {
-        _h = (float)Math.Clamp(360 - y / 256 * 360, 0, 359.99);
+        _picked = null;
+        SnapToWeb();
         Refresh();
+    }
+
+    private void FromRgbBoxes()
+    {
+        SetRgb((float)(_rBox.Value ?? 0) / 255, (float)(_gBox.Value ?? 0) / 255, (float)(_bBox.Value ?? 0) / 255);
+        AfterBoxEdit();
+    }
+
+    private void FromLabBoxes()
+    {
+        ColorMath.LabToRgb((float)(_labLBox.Value ?? 0), (float)(_labABox.Value ?? 0), (float)(_labBBox.Value ?? 0), out float r, out float g, out float b);
+        SetRgb(r, g, b);
+        _picked = null;
+        SnapToWeb();
+        // The typed values stay as entered; most Lab values have no exact RGB color.
+        Refresh(_labLBox, _labABox, _labBBox);
+    }
+
+    private void FromCmykBoxes()
+    {
+        float keep = 1 - (float)(_kBox.Value ?? 0) / 100;
+        SetRgb((1 - (float)(_cBox.Value ?? 0) / 100) * keep, (1 - (float)(_mBox.Value ?? 0) / 100) * keep, (1 - (float)(_yBox.Value ?? 0) / 100) * keep);
+        _picked = null;
+        SnapToWeb();
+        // The typed values stay as entered; many ink combinations give the same RGB color.
+        Refresh(_cBox, _mBox, _yBox, _kBox);
     }
 
     private void ApplyHex()
     {
         if (_updating) return;
-        if (ColorMath.TryParseHex(_hex.Text, out SKColor parsed)) SetColor(parsed.WithAlpha((byte)(_a * 255)));
+        if (ColorMath.TryParseHex(_hex.Text, out SKColor parsed)) SetColor(parsed.WithAlpha(Color.Alpha));
     }
 
-    private void FromRgbBoxes()
-    {
-        SKColor c = new((byte)(_r.Value ?? 0), (byte)(_g.Value ?? 0), (byte)(_b.Value ?? 0), (byte)(_a * 255));
-        SetColor(c);
-    }
-
-    private void FromHslBoxes()
-    {
-        ColorMath.HslToRgb(_h, (float)(_hslS.Value ?? 0) / 100, (float)(_lBox.Value ?? 0) / 100, out float r, out float g, out float b);
-        ColorMath.RgbToHsv(r, g, b, out _, out _s, out _v);
-        Refresh();
-    }
-
-    private void Refresh()
+    private void Refresh(params NumericUpDown[] keep)
     {
         _updating = true;
-        SKColor hue = ColorMath.FromHsv(_h, 1, 1);
-        _field.Background = new SolidColorBrush(Avalonia.Media.Color.FromRgb(hue.Red, hue.Green, hue.Blue));
-        _fieldMarker.Children.Clear();
-        Avalonia.Controls.Shapes.Ellipse marker = new() { Width = 12, Height = 12, Stroke = _v > 0.5f ? Brushes.Black : Brushes.White, StrokeThickness = 1.5 };
-        Canvas.SetLeft(marker, _s * 256 - 6);
-        Canvas.SetTop(marker, (1 - _v) * 256 - 6);
-        _fieldMarker.Children.Add(marker);
-        Canvas.SetTop(_hueMarker, (1 - _h / 360) * 256 - 2);
         SKColor c = Color;
+        (float strip, float x, float y) = CurrentPosition();
+        RenderField(strip);
+        RenderStrip(x, y);
+
+        Canvas.SetLeft(_fieldMarker, x * (FieldSize - 1) - FieldMarkerSize / 2.0);
+        Canvas.SetTop(_fieldMarker, (1 - y) * (FieldSize - 1) - FieldMarkerSize / 2.0);
+        _fieldMarker.Stroke = ColorMath.Luminance(c) > 0.6f ? Brushes.Black : Brushes.White;
+        double stripTop = (1 - strip) * (FieldSize - 1) - 5;
+        Canvas.SetTop(_stripArrowLeft, stripTop);
+        Canvas.SetTop(_stripArrowRight, stripTop);
+
         _newSwatch.Background = DialogBuilder.ToBrush(c);
-        _hBox.Value = (decimal)Math.Round(_h);
-        _sBox.Value = (decimal)Math.Round(_s * 100);
-        _vBox.Value = (decimal)Math.Round(_v * 100);
-        _r.Value = c.Red;
-        _g.Value = c.Green;
-        _b.Value = c.Blue;
-        ColorMath.RgbToHsl(c.Red / 255f, c.Green / 255f, c.Blue / 255f, out _, out float hs, out float hl);
-        _hslS.Value = (decimal)Math.Round(hs * 100);
-        _lBox.Value = (decimal)Math.Round(hl * 100);
-        _aBox.Value = (decimal)Math.Round(_a * 100);
+        SKColor web = NearestWebColor(c);
+        _webWarning.IsVisible = web != c;
+        _webSwatch.Background = DialogBuilder.ToBrush(web.WithAlpha(255));
+
+        void Show(NumericUpDown box, double value)
+        {
+            if (!keep.Contains(box)) box.Value = (decimal)Math.Round(value);
+        }
+        float r = c.Red / 255f, g = c.Green / 255f, b = c.Blue / 255f;
+        Show(_hBox, _h);
+        Show(_sBox, _s * 100);
+        Show(_vBox, _v * 100);
+        Show(_rBox, c.Red);
+        Show(_gBox, c.Green);
+        Show(_bBox, c.Blue);
+        ColorMath.RgbToLab(r, g, b, out float labL, out float labA, out float labB);
+        Show(_labLBox, labL);
+        Show(_labABox, Math.Clamp(labA, -128, 127));
+        Show(_labBBox, Math.Clamp(labB, -128, 127));
+        float black = 1 - MathF.Max(r, MathF.Max(g, b));
+        float ink = black < 1 ? 1 - black : 1;
+        Show(_cBox, (ink - r) / ink * 100 * (black < 1 ? 1 : 0));
+        Show(_mBox, (ink - g) / ink * 100 * (black < 1 ? 1 : 0));
+        Show(_yBox, (ink - b) / ink * 100 * (black < 1 ? 1 : 0));
+        Show(_kBox, black * 100);
+        Show(_aBox, _a * 100);
         _alpha.Value = _a * 100;
-        if (!_hex.IsFocused) _hex.Text = ColorMath.ToHex(c, c.Alpha < 255);
+        if (!_hex.IsFocused) _hex.Text = ColorMath.ToHex(c, c.Alpha < 255).ToLowerInvariant();
         _updating = false;
         ColorChanged?.Invoke(c);
+    }
+
+    private void RenderField(float strip)
+    {
+        (PickMode, float, bool) key = (_mode, strip, _webOnly);
+        if (_fieldKey == key) return;
+        _fieldKey = key;
+        Show(_field, FieldSize, (px, py) => ColorAt(strip, px / (FieldSize - 1f), 1 - py / (FieldSize - 1f)));
+    }
+
+    private void RenderStrip(float x, float y)
+    {
+        // The hue strip is always the full spectrum.
+        bool hue = _mode == PickMode.Hue;
+        (PickMode, float, float, bool) key = (_mode, hue ? 0 : x, hue ? 0 : y, _webOnly);
+        if (_stripKey == key) return;
+        _stripKey = key;
+        Show(_strip, StripWidth, (_, py) =>
+        {
+            float position = 1 - py / (FieldSize - 1f);
+            return hue ? ColorAt(position, 1, 1) : ColorAt(position, x, y);
+        });
+    }
+
+    private static unsafe void Show(Image image, int width, Func<int, int, (float R, float G, float B)> colorAt)
+    {
+        using SKBitmap bitmap = ImageOps.CreateBitmap(width, FieldSize);
+        uint* pixels = (uint*)bitmap.GetPixels();
+        int stride = bitmap.RowBytes / 4;
+        Parallel.For(0, FieldSize, y =>
+        {
+            for (int x = 0; x < width; x++)
+            {
+                (float r, float g, float b) = colorAt(x, y);
+                pixels[y * stride + x] = ColorMath.PackUnpremul(r, g, b, 1);
+            }
+        });
+        WriteableBitmap? previous = image.Source as WriteableBitmap;
+        image.Source = BitmapHelper.ToAvalonia(bitmap);
+        previous?.Dispose();
     }
 }
 
 public static class ColorPickerDialog
 {
+    private const double DialogWidth = 610;
+
     public static async Task<SKColor?> ShowAsync(Window owner, SKColor initial, string title, IEditorHost? host = null)
     {
         ColorPickerControl picker = new(initial, initial);
-        StackPanel content = new() { Spacing = 10 };
-        content.Children.Add(picker);
+        Button reset = new() { Content = "Reset" };
+        reset.Click += (_, _) => picker.SetColor(initial);
+        List<Control> buttons = [];
         if (host != null)
         {
-            // Swatches from the editor make it quick to reuse colors.
-            WrapPanel swatches = new() { MaxWidth = 560 };
-            foreach (string hex in host.Settings.Swatches.Take(40))
+            Button add = new() { Content = "Add to Swatches" };
+            add.Click += (_, _) =>
             {
-                if (!ColorMath.TryParseHex(hex, out SKColor color)) continue;
-                Border swatch = new() { Width = 16, Height = 16, Margin = new Thickness(1), Background = DialogBuilder.ToBrush(color), Cursor = new Cursor(StandardCursorType.Hand) };
-                swatch.PointerPressed += (_, _) => picker.SetColor(color);
-                swatches.Children.Add(swatch);
-            }
-            content.Children.Add(swatches);
+                host.Settings.Swatches.Add("#" + ColorMath.ToHex(picker.Color));
+                host.RefreshPanels();
+            };
+            buttons.Add(add);
         }
-        Button add = new() { Content = "Add to Swatches" };
-        add.Click += (_, _) =>
-        {
-            host?.Settings.Swatches.Add("#" + ColorMath.ToHex(picker.Color));
-            host?.RefreshPanels();
-        };
-        bool ok = await DialogBuilder.ShowAsync(owner, title.Length > 0 ? $"Color Picker ({title})" : "Color Picker", content, 600, "OK", null, host != null ? [add] : null);
+        buttons.Add(reset);
+        bool ok = await DialogBuilder.ShowAsync(owner, title.Length > 0 ? $"Color Picker ({title})" : "Color Picker", picker, DialogWidth, "OK", null, buttons);
         return ok ? picker.Color : null;
     }
 }
