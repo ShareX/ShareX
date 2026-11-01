@@ -93,7 +93,6 @@ public sealed class StartScreen : Border
         Grid layout = new()
         {
             ColumnDefinitions = new ColumnDefinitions("Auto,48,*"),
-            MaxWidth = 860,
             Margin = new Thickness(48, 56),
             VerticalAlignment = VerticalAlignment.Top
         };
