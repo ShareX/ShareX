@@ -174,6 +174,7 @@ public static class ToolIcons
         ["adj-gradientmap"] = ["M3 7 H21 V17 H3 Z", "F:M3 7 H9 V17 H3 Z", "M12 7 V17"],
         ["adj-selectivecolor"] = ["M12 3 a9 9 0 1 0 0.01 0 Z", "M12 8 a4 4 0 1 0 0.01 0 Z", "F:M12 11 a1 1 0 1 0 0.01 0 Z"],
         ["adj-desaturate"] = ["M12 3 a9 9 0 1 0 0.01 0 Z", "M5 19 L19 5"],
+        ["adj-colorlookup"] = ["M4 4 H20 V20 H4 Z", "M4 9.3 H20 M4 14.6 H20 M9.3 4 V20 M14.6 4 V20"],
         ["clip-arrow"] = ["M6 4 V14 H18", "M15 11 L18 14 L15 17"],
         ["smart-object"] = ["M4 4 H20 V20 H4 Z", "M14 14 H20 V20 H14 Z"],
         ["lock-transparency"] = ["M4 4 H20 V20 H4 Z", "F:M4 4 H12 V12 H4 Z", "F:M12 12 H20 V20 H12 Z"],

@@ -148,6 +148,9 @@ public static class AdjustmentEditor
                 Check("Monochrome", "monochrome");
                 break;
             }
+            case AdjustmentKind.ColorLookup:
+                root.Children.Add(ColorLookupEditor.Build(s, changed));
+                break;
             case AdjustmentKind.Posterize:
                 Slider("Levels:", "levels", 2, 255, 4);
                 break;

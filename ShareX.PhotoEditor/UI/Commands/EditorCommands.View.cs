@@ -203,7 +203,7 @@ public static partial class EditorCommands
                 MenuNode.Sub("Mode", C("image.mode.grayscale")), S,
                 MenuNode.Sub("Adjustments",
                     A(AdjustmentKind.BrightnessContrast), A(AdjustmentKind.Levels), A(AdjustmentKind.Curves), A(AdjustmentKind.Exposure), S,
-                    A(AdjustmentKind.Vibrance), A(AdjustmentKind.HueSaturation), A(AdjustmentKind.ColorBalance), A(AdjustmentKind.BlackAndWhite), A(AdjustmentKind.PhotoFilter), A(AdjustmentKind.ChannelMixer), S,
+                    A(AdjustmentKind.Vibrance), A(AdjustmentKind.HueSaturation), A(AdjustmentKind.ColorBalance), A(AdjustmentKind.BlackAndWhite), A(AdjustmentKind.PhotoFilter), A(AdjustmentKind.ChannelMixer), A(AdjustmentKind.ColorLookup), S,
                     A(AdjustmentKind.Invert), A(AdjustmentKind.Posterize), A(AdjustmentKind.Threshold), A(AdjustmentKind.GradientMap), A(AdjustmentKind.SelectiveColor), S,
                     C("image.adjust.shadowsHighlights"), S,
                     A(AdjustmentKind.Desaturate), C("image.adjust.equalize")), S,

@@ -40,7 +40,7 @@ public sealed class AdjustmentsPanel : EditorPanel
         root.Children.Add(hint);
         foreach (AdjustmentKind[] row in EditorCommands.AdjustmentLayerGroups)
         {
-            StackPanel line = new() { Orientation = Orientation.Horizontal, Spacing = 2, Margin = new Thickness(8, 0) };
+            WrapPanel line = new() { Orientation = Orientation.Horizontal, ItemSpacing = 2, LineSpacing = 2, Margin = new Thickness(8, 0) };
             foreach (AdjustmentKind kind in row)
             {
                 Button button = new()

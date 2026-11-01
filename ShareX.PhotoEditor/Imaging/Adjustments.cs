@@ -42,7 +42,8 @@ public enum AdjustmentKind
     Threshold,
     GradientMap,
     SelectiveColor,
-    Desaturate
+    Desaturate,
+    ColorLookup
 }
 
 /// <summary>Serializable parameters for an adjustment; used by adjustment layers, dialogs and the adjustment brush.</summary>
@@ -96,6 +97,9 @@ public sealed class AdjustmentSettings
 
     public GradientDefinition? Gradient { get; set; }
 
+    /// <summary>Lookup table of a Color Lookup adjustment.</summary>
+    public ColorLut? Lut { get; set; }
+
     public float Get(string key, float defaultValue = 0) => Values.TryGetValue(key, out float value) ? value : defaultValue;
 
     public void Set(string key, float value) => Values[key] = value;
@@ -105,7 +109,8 @@ public sealed class AdjustmentSettings
         Values = new Dictionary<string, float>(Values),
         Curves = Curves.Select(c => c?.ToList() ?? []).ToArray(),
         Color = Color,
-        Gradient = Gradient?.Clone()
+        Gradient = Gradient?.Clone(),
+        Lut = Lut
     };
 
     public static string GetName(AdjustmentKind kind) => kind switch
@@ -116,6 +121,7 @@ public sealed class AdjustmentSettings
         AdjustmentKind.BlackAndWhite => "Black & White",
         AdjustmentKind.PhotoFilter => "Photo Filter",
         AdjustmentKind.ChannelMixer => "Channel Mixer",
+        AdjustmentKind.ColorLookup => "Color Lookup",
         AdjustmentKind.GradientMap => "Gradient Map",
         AdjustmentKind.SelectiveColor => "Selective Color",
         _ => kind.ToString()
@@ -431,6 +437,12 @@ public static class Adjustments
                     float l = ColorMath.Luminance(r, g, b);
                     r = g = b = l;
                 };
+            case AdjustmentKind.ColorLookup:
+            {
+                ColorLut? lut = s.Lut;
+                if (lut == null) goto default;
+                return (ref float r, ref float g, ref float b) => lut.Sample(ref r, ref g, ref b);
+            }
             default:
                 return (ref float r, ref float g, ref float b) => { };
         }

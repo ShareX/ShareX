@@ -106,7 +106,7 @@ public static class SmartFilterFactory
     {
         AdjustmentSettings snapshot = settings.Clone();
         SmartFilterRecipe recipe = new() { Kind = AdjustmentKind, Id = snapshot.Kind.ToString(), Adjustment = snapshot };
-        string key = $"{snapshot.Kind}:{string.Join(",", snapshot.Values.OrderBy(v => v.Key).Select(v => v.Key + v.Value))}#{index}";
+        string key = $"{snapshot.Kind}:{string.Join(",", snapshot.Values.OrderBy(v => v.Key).Select(v => v.Key + v.Value))}:{snapshot.Lut?.Name}#{index}";
         return new SmartFilter(name, key, AdjustmentFunc(snapshot)) { Recipe = recipe };
     }
 

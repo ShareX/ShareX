@@ -34,7 +34,7 @@ public static partial class EditorCommands
     [
         (AdjustmentKind.BrightnessContrast, null), (AdjustmentKind.Levels, "Ctrl+L"), (AdjustmentKind.Curves, "Ctrl+M"), (AdjustmentKind.Exposure, null),
         (AdjustmentKind.Vibrance, null), (AdjustmentKind.HueSaturation, "Ctrl+U"), (AdjustmentKind.ColorBalance, "Ctrl+B"), (AdjustmentKind.BlackAndWhite, "Ctrl+Shift+Alt+B"),
-        (AdjustmentKind.PhotoFilter, null), (AdjustmentKind.ChannelMixer, null), (AdjustmentKind.Invert, "Ctrl+I"), (AdjustmentKind.Posterize, null),
+        (AdjustmentKind.PhotoFilter, null), (AdjustmentKind.ChannelMixer, null), (AdjustmentKind.ColorLookup, null), (AdjustmentKind.Invert, "Ctrl+I"), (AdjustmentKind.Posterize, null),
         (AdjustmentKind.Threshold, null), (AdjustmentKind.GradientMap, null), (AdjustmentKind.SelectiveColor, null), (AdjustmentKind.Desaturate, "Ctrl+Shift+U")
     ];
 
@@ -42,7 +42,7 @@ public static partial class EditorCommands
     public static readonly AdjustmentKind[][] AdjustmentLayerGroups =
     [
         [AdjustmentKind.BrightnessContrast, AdjustmentKind.Levels, AdjustmentKind.Curves, AdjustmentKind.Exposure],
-        [AdjustmentKind.Vibrance, AdjustmentKind.HueSaturation, AdjustmentKind.ColorBalance, AdjustmentKind.BlackAndWhite, AdjustmentKind.PhotoFilter, AdjustmentKind.ChannelMixer],
+        [AdjustmentKind.Vibrance, AdjustmentKind.HueSaturation, AdjustmentKind.ColorBalance, AdjustmentKind.BlackAndWhite, AdjustmentKind.PhotoFilter, AdjustmentKind.ChannelMixer, AdjustmentKind.ColorLookup],
         [AdjustmentKind.Invert, AdjustmentKind.Posterize, AdjustmentKind.Threshold, AdjustmentKind.GradientMap, AdjustmentKind.SelectiveColor, AdjustmentKind.Desaturate]
     ];
 
