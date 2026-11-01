@@ -394,7 +394,7 @@ public sealed class LayersPanel : EditorPanel
     /// <summary>Lock indicator of a layer row; clicking it on the background layer converts it to a normal layer.</summary>
     private Border CreateLockBadge(PhotoDocument doc, Layer layer)
     {
-        Border badge = new() { Background = Brushes.Transparent, Child = ToolIcons.Create("lock", 20) };
+        Border badge = new() { Background = Brushes.Transparent, Child = ToolIcons.Create("lock", 18) };
         ToolTip.SetTip(badge, layer.LockAll ? "Indicates layer is fully locked" : "Indicates layer is partially locked");
         if (layer is RasterLayer { IsBackground: true })
         {
