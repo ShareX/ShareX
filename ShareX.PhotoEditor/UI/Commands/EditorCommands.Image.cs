@@ -38,6 +38,14 @@ public static partial class EditorCommands
         (AdjustmentKind.Threshold, null), (AdjustmentKind.GradientMap, null), (AdjustmentKind.SelectiveColor, null), (AdjustmentKind.Desaturate, "Ctrl+Shift+U")
     ];
 
+    /// <summary>Adjustment layer kinds, grouped as in the New Adjustment Layer menu and the Adjustments panel.</summary>
+    public static readonly AdjustmentKind[][] AdjustmentLayerGroups =
+    [
+        [AdjustmentKind.BrightnessContrast, AdjustmentKind.Levels, AdjustmentKind.Curves, AdjustmentKind.Exposure],
+        [AdjustmentKind.Vibrance, AdjustmentKind.HueSaturation, AdjustmentKind.ColorBalance, AdjustmentKind.BlackAndWhite, AdjustmentKind.PhotoFilter, AdjustmentKind.ChannelMixer],
+        [AdjustmentKind.Invert, AdjustmentKind.Posterize, AdjustmentKind.Threshold, AdjustmentKind.GradientMap, AdjustmentKind.SelectiveColor, AdjustmentKind.Desaturate]
+    ];
+
     private static void RegisterImage()
     {
         R("image.mode.grayscale", "Grayscale", null, w => ApplyAdjustmentDirect(w, new AdjustmentSettings(AdjustmentKind.Desaturate), "Grayscale"), HasDoc);

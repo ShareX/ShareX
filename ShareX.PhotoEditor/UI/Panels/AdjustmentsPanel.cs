@@ -34,17 +34,11 @@ public sealed class AdjustmentsPanel : EditorPanel
 {
     public AdjustmentsPanel(PhotoEditorWindow editor) : base(editor)
     {
-        // Icon grid of adjustment presets, grouped like the reference panel.
-        AdjustmentKind[][] rows =
-        [
-            [AdjustmentKind.BrightnessContrast, AdjustmentKind.Levels, AdjustmentKind.Curves, AdjustmentKind.Exposure],
-            [AdjustmentKind.Vibrance, AdjustmentKind.HueSaturation, AdjustmentKind.ColorBalance, AdjustmentKind.BlackAndWhite, AdjustmentKind.PhotoFilter, AdjustmentKind.ChannelMixer],
-            [AdjustmentKind.Invert, AdjustmentKind.Posterize, AdjustmentKind.Threshold, AdjustmentKind.GradientMap, AdjustmentKind.SelectiveColor, AdjustmentKind.Desaturate]
-        ];
+        // Icon rows match the groups of the New Adjustment Layer menu.
         TextBlock hint = new() { Text = "Add an adjustment", Margin = new Thickness(10, 8, 10, 4), Classes = { "dim" } };
         StackPanel root = new() { Spacing = 2 };
         root.Children.Add(hint);
-        foreach (AdjustmentKind[] row in rows)
+        foreach (AdjustmentKind[] row in EditorCommands.AdjustmentLayerGroups)
         {
             StackPanel line = new() { Orientation = Orientation.Horizontal, Spacing = 2, Margin = new Thickness(8, 0) };
             foreach (AdjustmentKind kind in row)

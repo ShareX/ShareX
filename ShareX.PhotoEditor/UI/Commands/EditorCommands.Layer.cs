@@ -53,8 +53,7 @@ public static partial class EditorCommands
         R("layer.fill.solid", "Solid Color...", null, w => _ = NewFillLayerAsync(w, FillKind.SolidColor), HasDoc);
         R("layer.fill.gradient", "Gradient...", null, w => _ = NewFillLayerAsync(w, FillKind.Gradient), HasDoc);
         R("layer.fill.pattern", "Pattern...", null, w => _ = NewFillLayerAsync(w, FillKind.Pattern), HasDoc);
-        foreach (AdjustmentKind kind in Enum.GetValues<AdjustmentKind>())
-        {
+        foreach (AdjustmentKind kind in AdjustmentLayerGroups.SelectMany(group => group))        {
             AdjustmentKind captured = kind;
             R($"layer.adjust.{kind}", AdjustmentSettings.GetName(kind) + "...", null, w => NewAdjustmentLayer(w, captured), HasDoc);
         }
@@ -319,12 +318,16 @@ public static partial class EditorCommands
             flyout.Items.Add(item);
         }
         flyout.Items.Add(new Separator());
-        foreach (AdjustmentKind kind in Enum.GetValues<AdjustmentKind>())
+        foreach (AdjustmentKind[] group in AdjustmentLayerGroups)
         {
-            MenuItem item = new() { Header = AdjustmentSettings.GetName(kind) + "..." };
-            AdjustmentKind captured = kind;
-            item.Click += (_, _) => NewAdjustmentLayer(w, captured);
-            flyout.Items.Add(item);
+            if (flyout.Items.Count > 4) flyout.Items.Add(new Separator());
+            foreach (AdjustmentKind kind in group)
+            {
+                MenuItem item = new() { Header = AdjustmentSettings.GetName(kind) + "..." };
+                AdjustmentKind captured = kind;
+                item.Click += (_, _) => NewAdjustmentLayer(w, captured);
+                flyout.Items.Add(item);
+            }
         }
         return flyout;
     }

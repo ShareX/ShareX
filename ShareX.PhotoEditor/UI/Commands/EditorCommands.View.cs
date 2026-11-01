@@ -177,6 +177,7 @@ public static partial class EditorCommands
     {
         MenuNode C(string id) => MenuNode.Cmd(id);
         MenuNode S = MenuNode.Separator;
+        MenuNode A(AdjustmentKind kind) => C($"image.adjust.{kind}");
         return
         [
             MenuNode.Sub("_File",
@@ -200,7 +201,12 @@ public static partial class EditorCommands
                 C("edit.toolbar"), C("edit.shortcuts"), C("edit.preferences")),
             MenuNode.Sub("_Image",
                 MenuNode.Sub("Mode", C("image.mode.grayscale")), S,
-                MenuNode.Sub("Adjustments", AdjustmentMenu.Select(a => C($"image.adjust.{a.Kind}")).Append(S).Append(C("image.adjust.shadowsHighlights")).Append(C("image.adjust.equalize")).ToArray()), S,
+                MenuNode.Sub("Adjustments",
+                    A(AdjustmentKind.BrightnessContrast), A(AdjustmentKind.Levels), A(AdjustmentKind.Curves), A(AdjustmentKind.Exposure), S,
+                    A(AdjustmentKind.Vibrance), A(AdjustmentKind.HueSaturation), A(AdjustmentKind.ColorBalance), A(AdjustmentKind.BlackAndWhite), A(AdjustmentKind.PhotoFilter), A(AdjustmentKind.ChannelMixer), S,
+                    A(AdjustmentKind.Invert), A(AdjustmentKind.Posterize), A(AdjustmentKind.Threshold), A(AdjustmentKind.GradientMap), A(AdjustmentKind.SelectiveColor), S,
+                    C("image.adjust.shadowsHighlights"), S,
+                    A(AdjustmentKind.Desaturate), C("image.adjust.equalize")), S,
                 C("image.autoTone"), C("image.autoContrast"), C("image.autoColor"), S,
                 C("image.imageSize"), C("image.canvasSize"),
                 MenuNode.Sub("Image Rotation", C("image.rotate180"), C("image.rotate90cw"), C("image.rotate90ccw"), C("image.rotateArbitrary"), S, C("image.flipH"), C("image.flipV")),
@@ -210,7 +216,7 @@ public static partial class EditorCommands
                 C("layer.duplicate"), C("layer.delete"), C("layer.rename"), S,
                 MenuNode.Sub("Layer Style", C("layer.style"), S, C("layer.style.copy"), C("layer.style.paste"), C("layer.style.clear"), C("layer.rasterizeStyle")),
                 MenuNode.Sub("New Fill Layer", C("layer.fill.solid"), C("layer.fill.gradient"), C("layer.fill.pattern")),
-                MenuNode.Sub("New Adjustment Layer", Enum.GetValues<AdjustmentKind>().Select(k => C($"layer.adjust.{k}")).ToArray()), S,
+                MenuNode.Sub("New Adjustment Layer", AdjustmentLayerGroups.SelectMany((group, i) => (i == 0 ? [] : new[] { S }).Concat(group.Select(k => C($"layer.adjust.{k}")))).ToArray()), S,
                 MenuNode.Sub("Layer Mask", C("layer.mask.revealAll"), C("layer.mask.hideAll"), C("layer.mask.revealSelection"), C("layer.mask.hideSelection"), C("layer.mask.fromTransparency"), S,
                     C("layer.mask.delete"), C("layer.mask.apply"), S, C("layer.mask.toggle"), C("layer.mask.edit")),
                 C("layer.clip"), S,
