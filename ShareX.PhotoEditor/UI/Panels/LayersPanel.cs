@@ -344,7 +344,7 @@ public sealed class LayersPanel : EditorPanel
         if (layer.LinkId != 0) badges.Children.Add(ToolIcons.Create("link", 12));
         if (layer.Style?.HasAny == true) badges.Children.Add(ToolIcons.Create("fx", 13));
         if (layer is SmartObjectLayer) badges.Children.Add(ToolIcons.Create("smart-object", 13));
-        if (layer.LockAll || layer.LockPixels || layer.LockPosition || layer.LockTransparency) badges.Children.Add(ToolIcons.Create("lock", 12));
+        if (layer.LockAll || layer.LockPixels || layer.LockPosition || layer.LockTransparency) badges.Children.Add(CreateLockBadge(doc, layer));
         Grid.SetColumn(badges, 3);
         content.Children.Add(badges);
         row.Child = content;
@@ -389,6 +389,25 @@ public sealed class LayersPanel : EditorPanel
             _dropIndicator.IsVisible = false;
         };
         return row;
+    }
+
+    /// <summary>Lock indicator of a layer row; clicking it on the background layer converts it to a normal layer.</summary>
+    private Border CreateLockBadge(PhotoDocument doc, Layer layer)
+    {
+        Border badge = new() { Background = Brushes.Transparent, Child = ToolIcons.Create("lock", 20) };
+        ToolTip.SetTip(badge, layer.LockAll ? "Indicates layer is fully locked" : "Indicates layer is partially locked");
+        if (layer is RasterLayer { IsBackground: true })
+        {
+            badge.Cursor = new Cursor(StandardCursorType.Hand);
+            badge.PointerPressed += (_, e) =>
+            {
+                if (!e.GetCurrentPoint(badge).Properties.IsLeftButtonPressed) return;
+                e.Handled = true;
+                SelectLayer(doc, layer, KeyModifiers.None);
+                Editor.Execute("layer.fromBackground");
+            };
+        }
+        return badge;
     }
 
     private static Avalonia.Media.Imaging.Bitmap MaskThumbnail(PixelSurface mask)
