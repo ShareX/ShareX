@@ -159,17 +159,22 @@ public static class FloodFill
             for (int x = 0; x < width; x++)
             {
                 ColorMath.Unpack(pixels[y * stride + x], out float r, out float g, out float b, out _);
-                float best = float.MaxValue;
-                foreach (SKColor s in samples)
-                {
-                    float dr = r * 255 - s.Red, dg = g * 255 - s.Green, db = b * 255 - s.Blue;
-                    float d = MathF.Sqrt((dr * dr + dg * dg + db * db) / 3);
-                    if (d < best) best = d;
-                }
-                float coverage = Math.Clamp(1 - best / range, 0, 1);
-                m[y * maskStride + x] = (byte)(coverage * 255);
+                m[y * maskStride + x] = (byte)(ColorCoverage(r, g, b, samples, range) * 255);
             }
         });
         return mask;
+    }
+
+    /// <summary>How closely a color matches the nearest sample: 1 for a match, falling to 0 at the given distance in 0..255 steps.</summary>
+    public static float ColorCoverage(float r, float g, float b, IReadOnlyList<SKColor> samples, float range)
+    {
+        float best = float.MaxValue;
+        foreach (SKColor s in samples)
+        {
+            float dr = r * 255 - s.Red, dg = g * 255 - s.Green, db = b * 255 - s.Blue;
+            float d = MathF.Sqrt((dr * dr + dg * dg + db * db) / 3);
+            if (d < best) best = d;
+        }
+        return Math.Clamp(1 - best / range, 0, 1);
     }
 }

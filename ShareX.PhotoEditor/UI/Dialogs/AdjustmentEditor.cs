@@ -151,6 +151,9 @@ public static class AdjustmentEditor
             case AdjustmentKind.ColorLookup:
                 root.Children.Add(ColorLookupEditor.Build(s, changed));
                 break;
+            case AdjustmentKind.ReplaceColor:
+                root.Children.Add(new ReplaceColorEditor(s, changed, histogramSource, host));
+                break;
             case AdjustmentKind.Posterize:
                 Slider("Levels:", "levels", 2, 255, 4);
                 break;

@@ -43,7 +43,8 @@ public enum AdjustmentKind
     GradientMap,
     SelectiveColor,
     Desaturate,
-    ColorLookup
+    ColorLookup,
+    ReplaceColor
 }
 
 /// <summary>Serializable parameters for an adjustment; used by adjustment layers, dialogs and the adjustment brush.</summary>
@@ -71,6 +72,7 @@ public sealed class AdjustmentSettings
             Values["density"] = 25;
             Values["preserve"] = 1;
         }
+        if (kind == AdjustmentKind.ReplaceColor) Values["fuzziness"] = 40;
         if (kind == AdjustmentKind.Posterize) Values["levels"] = 4;
         if (kind == AdjustmentKind.Threshold) Values["level"] = 128;
         if (kind == AdjustmentKind.ColorBalance) Values["preserve"] = 1;
@@ -100,6 +102,12 @@ public sealed class AdjustmentSettings
     /// <summary>Lookup table of a Color Lookup adjustment.</summary>
     public ColorLut? Lut { get; set; }
 
+    /// <summary>Colors Replace Color acts on.</summary>
+    public List<SKColor> SampleColors { get; set; } = [];
+
+    /// <summary>Colors Replace Color leaves out of the sampled range.</summary>
+    public List<SKColor> ExcludedColors { get; set; } = [];
+
     public float Get(string key, float defaultValue = 0) => Values.TryGetValue(key, out float value) ? value : defaultValue;
 
     public void Set(string key, float value) => Values[key] = value;
@@ -110,7 +118,9 @@ public sealed class AdjustmentSettings
         Curves = Curves.Select(c => c?.ToList() ?? []).ToArray(),
         Color = Color,
         Gradient = Gradient?.Clone(),
-        Lut = Lut
+        Lut = Lut,
+        SampleColors = [.. SampleColors],
+        ExcludedColors = [.. ExcludedColors]
     };
 
     public static string GetName(AdjustmentKind kind) => kind switch
@@ -122,6 +132,7 @@ public sealed class AdjustmentSettings
         AdjustmentKind.PhotoFilter => "Photo Filter",
         AdjustmentKind.ChannelMixer => "Channel Mixer",
         AdjustmentKind.ColorLookup => "Color Lookup",
+        AdjustmentKind.ReplaceColor => "Replace Color",
         AdjustmentKind.GradientMap => "Gradient Map",
         AdjustmentKind.SelectiveColor => "Selective Color",
         _ => kind.ToString()
@@ -252,20 +263,13 @@ public static class Adjustments
                 bool colorize = s.Get("colorize") > 0;
                 return (ref float r, ref float g, ref float b) =>
                 {
-                    ColorMath.RgbToHsl(r, g, b, out float h, out float sat, out float l);
-                    if (colorize)
+                    if (!colorize)
                     {
-                        h = hue < 0 ? hue + 360 : hue;
-                        sat = Math.Clamp(0.25f + saturation * 0.75f, 0, 1);
+                        ShiftHsl(ref r, ref g, ref b, hue, saturation, lightness);
+                        return;
                     }
-                    else
-                    {
-                        h += hue;
-                        sat = saturation >= 0 ? sat + (1 - sat) * saturation * sat * 2f : sat * (1 + saturation);
-                        sat = Math.Clamp(sat, 0, 1);
-                    }
-                    l = lightness >= 0 ? l + (1 - l) * lightness : l * (1 + lightness);
-                    ColorMath.HslToRgb(h, sat, l, out r, out g, out b);
+                    ColorMath.RgbToHsl(r, g, b, out _, out _, out float l);
+                    ColorMath.HslToRgb(hue < 0 ? hue + 360 : hue, Math.Clamp(0.25f + saturation * 0.75f, 0, 1), ShiftLightness(l, lightness), out r, out g, out b);
                 };
             }
             case AdjustmentKind.ColorBalance:
@@ -443,9 +447,45 @@ public static class Adjustments
                 if (lut == null) goto default;
                 return (ref float r, ref float g, ref float b) => lut.Sample(ref r, ref g, ref b);
             }
+            case AdjustmentKind.ReplaceColor:
+            {
+                float hue = s.Get("hue");
+                float saturation = s.Get("saturation") / 100f;
+                float lightness = s.Get("lightness") / 100f;
+                float range = Math.Max(1, s.Get("fuzziness", 40));
+                SKColor[] samples = s.SampleColors.ToArray();
+                SKColor[] excluded = s.ExcludedColors.ToArray();
+                return (ref float r, ref float g, ref float b) =>
+                {
+                    float coverage = ReplaceCoverage(r, g, b, samples, excluded, range);
+                    if (coverage <= 0) return;
+                    float r0 = r, g0 = g, b0 = b;
+                    ShiftHsl(ref r, ref g, ref b, hue, saturation, lightness);
+                    r = r0 + (r - r0) * coverage;
+                    g = g0 + (g - g0) * coverage;
+                    b = b0 + (b - b0) * coverage;
+                };
+            }
             default:
                 return (ref float r, ref float g, ref float b) => { };
         }
+    }
+
+    /// <summary>Shifts a color by a hue angle and by saturation and lightness amounts in -1..1.</summary>
+    public static void ShiftHsl(ref float r, ref float g, ref float b, float hue, float saturation, float lightness)
+    {
+        ColorMath.RgbToHsl(r, g, b, out float h, out float sat, out float l);
+        sat = saturation >= 0 ? sat + (1 - sat) * saturation * sat * 2f : sat * (1 + saturation);
+        ColorMath.HslToRgb(h + hue, Math.Clamp(sat, 0, 1), ShiftLightness(l, lightness), out r, out g, out b);
+    }
+
+    private static float ShiftLightness(float l, float amount) => amount >= 0 ? l + (1 - l) * amount : l * (1 + amount);
+
+    /// <summary>How strongly Replace Color affects a color, 0..1.</summary>
+    public static float ReplaceCoverage(float r, float g, float b, IReadOnlyList<SKColor> samples, IReadOnlyList<SKColor> excluded, float range)
+    {
+        float coverage = FloodFill.ColorCoverage(r, g, b, samples, range);
+        return excluded.Count == 0 ? coverage : coverage * (1 - FloodFill.ColorCoverage(r, g, b, excluded, range));
     }
 
     private static PixelFunction LutFunction(float[] rl, float[] gl, float[] bl) => (ref float r, ref float g, ref float b) =>
