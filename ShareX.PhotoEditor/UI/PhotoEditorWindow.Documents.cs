@@ -155,6 +155,6 @@ public sealed partial class PhotoEditorWindow
 
     private void UpdateTitle()
     {
-        Title = Document != null ? $"{Document.DisplayName} - Photo editor (Beta) - ShareX" : "ShareX - Photo editor (Beta)";
+        Title = Document != null ? $"{Document.DisplayName} - Photo editor - ShareX" : "ShareX - Photo editor";
     }
 }

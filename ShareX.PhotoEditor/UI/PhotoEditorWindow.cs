@@ -99,7 +99,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         BrushPresets = BrushPreset.CreateDefaults();
         if (Settings.Swatches.Count == 0) Settings.Swatches.AddRange(SwatchesPanel.DefaultSwatches);
 
-        Title = "ShareX - Photo editor (Beta)";
+        Title = "ShareX - Photo editor";
         Width = 1500;
         Height = 920;
         MinWidth = 900;
