@@ -44,7 +44,8 @@ public enum AdjustmentKind
     SelectiveColor,
     Desaturate,
     ColorLookup,
-    ReplaceColor
+    ReplaceColor,
+    MatchColor
 }
 
 /// <summary>Serializable parameters for an adjustment; used by adjustment layers, dialogs and the adjustment brush.</summary>
@@ -73,6 +74,11 @@ public sealed class AdjustmentSettings
             Values["preserve"] = 1;
         }
         if (kind == AdjustmentKind.ReplaceColor) Values["fuzziness"] = 40;
+        if (kind == AdjustmentKind.MatchColor)
+        {
+            Values["luminance"] = 100;
+            Values["intensity"] = 100;
+        }
         if (kind == AdjustmentKind.Posterize) Values["levels"] = 4;
         if (kind == AdjustmentKind.Threshold) Values["level"] = 128;
         if (kind == AdjustmentKind.ColorBalance) Values["preserve"] = 1;
@@ -132,6 +138,7 @@ public sealed class AdjustmentSettings
         AdjustmentKind.PhotoFilter => "Photo Filter",
         AdjustmentKind.ChannelMixer => "Channel Mixer",
         AdjustmentKind.ColorLookup => "Color Lookup",
+        AdjustmentKind.MatchColor => "Match Color",
         AdjustmentKind.ReplaceColor => "Replace Color",
         AdjustmentKind.GradientMap => "Gradient Map",
         AdjustmentKind.SelectiveColor => "Selective Color",
@@ -466,6 +473,8 @@ public static class Adjustments
                     b = b0 + (b - b0) * coverage;
                 };
             }
+            case AdjustmentKind.MatchColor:
+                return ColorMatch.CreateFunction(s);
             default:
                 return (ref float r, ref float g, ref float b) => { };
         }

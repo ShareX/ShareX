@@ -206,7 +206,7 @@ public static partial class EditorCommands
                     A(AdjustmentKind.Vibrance), A(AdjustmentKind.HueSaturation), A(AdjustmentKind.ColorBalance), A(AdjustmentKind.BlackAndWhite), A(AdjustmentKind.PhotoFilter), A(AdjustmentKind.ChannelMixer), A(AdjustmentKind.ColorLookup), S,
                     A(AdjustmentKind.Invert), A(AdjustmentKind.Posterize), A(AdjustmentKind.Threshold), A(AdjustmentKind.GradientMap), A(AdjustmentKind.SelectiveColor), S,
                     C("image.adjust.shadowsHighlights"), S,
-                    A(AdjustmentKind.Desaturate), A(AdjustmentKind.ReplaceColor), C("image.adjust.equalize")), S,
+                    A(AdjustmentKind.Desaturate), A(AdjustmentKind.MatchColor), A(AdjustmentKind.ReplaceColor), C("image.adjust.equalize")), S,
                 C("image.autoTone"), C("image.autoContrast"), C("image.autoColor"), S,
                 C("image.imageSize"), C("image.canvasSize"),
                 MenuNode.Sub("Image Rotation", C("image.rotate180"), C("image.rotate90cw"), C("image.rotate90ccw"), C("image.rotateArbitrary"), S, C("image.flipH"), C("image.flipV")),

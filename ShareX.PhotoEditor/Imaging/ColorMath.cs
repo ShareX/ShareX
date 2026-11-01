@@ -144,6 +144,42 @@ public static class ColorMath
         return new SKColor((byte)MathF.Round(r * 255), (byte)MathF.Round(g * 255), (byte)MathF.Round(b * 255), alpha);
     }
 
+    /// <summary>Converts sRGB in 0..1 to CIE Lab (D65) with L in 0..100.</summary>
+    public static void RgbToLab(float r, float g, float b, out float labL, out float labA, out float labB)
+    {
+        float lr = ToLinear(r), lg = ToLinear(g), lb = ToLinear(b);
+        float fx = LabForward((0.4124564f * lr + 0.3575761f * lg + 0.1804375f * lb) / 0.95047f);
+        float fy = LabForward(0.2126729f * lr + 0.7151522f * lg + 0.0721750f * lb);
+        float fz = LabForward((0.0193339f * lr + 0.1191920f * lg + 0.9503041f * lb) / 1.08883f);
+        labL = 116 * fy - 16;
+        labA = 500 * (fx - fy);
+        labB = 200 * (fy - fz);
+    }
+
+    /// <summary>Converts CIE Lab (D65) to sRGB in 0..1, clamping colors outside the gamut.</summary>
+    public static void LabToRgb(float labL, float labA, float labB, out float r, out float g, out float b)
+    {
+        float fy = (labL + 16) / 116;
+        float x = LabInverse(fy + labA / 500) * 0.95047f;
+        float y = LabInverse(fy);
+        float z = LabInverse(fy - labB / 200) * 1.08883f;
+        r = FromLinear(3.2404542f * x - 1.5371385f * y - 0.4985314f * z);
+        g = FromLinear(-0.9692660f * x + 1.8760108f * y + 0.0415560f * z);
+        b = FromLinear(0.0556434f * x - 0.2040259f * y + 1.0572252f * z);
+    }
+
+    private static float ToLinear(float c) => c <= 0.04045f ? c / 12.92f : MathF.Pow((c + 0.055f) / 1.055f, 2.4f);
+
+    private static float FromLinear(float c)
+    {
+        c = Math.Clamp(c, 0, 1);
+        return c <= 0.0031308f ? c * 12.92f : 1.055f * MathF.Pow(c, 1 / 2.4f) - 0.055f;
+    }
+
+    private static float LabForward(float t) => t > 0.008856f ? MathF.Cbrt(t) : 7.787f * t + 16f / 116;
+
+    private static float LabInverse(float t) => t * t * t > 0.008856f ? t * t * t : (t - 16f / 116) / 7.787f;
+
     public static string ToHex(SKColor c, bool includeAlpha = false) =>
         includeAlpha ? $"{c.Red:X2}{c.Green:X2}{c.Blue:X2}{c.Alpha:X2}" : $"{c.Red:X2}{c.Green:X2}{c.Blue:X2}";
 
