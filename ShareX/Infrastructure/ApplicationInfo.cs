@@ -50,7 +50,7 @@ internal static class ApplicationInfo
         ShareXBuild.Unknown;
 #endif
 
-    internal const bool Dev = true;
+    internal const bool Dev = false;
 
     internal static string VersionText
     {
