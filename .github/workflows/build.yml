@@ -75,6 +75,18 @@ jobs:
           echo $version
           echo "APP_VERSION=$version" >> $env:GITHUB_ENV
 
+      - name: Disable Dev flag
+        if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/v')
+        run: |
+          $path = "ShareX\Infrastructure\ApplicationInfo.cs"
+          $content = [System.IO.File]::ReadAllText($path)
+          $pattern = 'internal const bool Dev = (true|false);'
+          if (-not [regex]::IsMatch($content, $pattern)) {
+            throw "Dev flag was not found in $path."
+          }
+          $content = [regex]::Replace($content, $pattern, 'internal const bool Dev = false;')
+          [System.IO.File]::WriteAllText($path, $content, [System.Text.UTF8Encoding]::new($false))
+
       - name: Create API keys file
         env:
           API_KEYS: ${{ secrets.API_KEYS }}
