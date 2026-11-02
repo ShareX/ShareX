@@ -1247,7 +1247,7 @@ public partial class RegionCaptureWindow : Window
 
             double scale = Math.Max(1, RenderScaling);
             Point pointer = new Point(imagePoint.X / scale, imagePoint.Y / scale);
-            PositionPanelNearPointer(_magnifierPanel, pointer, 18);
+            PositionPanelNearPointer(_magnifierPanel, pointer, 18, GetMonitorBounds(imagePoint));
             _magnifierPanel.InvalidateVisual();
         }
         else
@@ -1420,19 +1420,58 @@ public partial class RegionCaptureWindow : Window
         _selectionInfoPanel.IsVisible = true;
 
         double scale = Math.Max(1, RenderScaling);
-        Point anchor = new Point(selection.Left / scale, selection.Bottom / scale);
-        double x = Math.Clamp(anchor.X, 0, Math.Max(0, Bounds.Width - 100));
-        double y = anchor.Y + 8;
-        if (y + 36 > Bounds.Height)
+        double panelWidth = _selectionInfoPanel.Bounds.Width > 0 ? _selectionInfoPanel.Bounds.Width : 100;
+        double panelHeight = _selectionInfoPanel.Bounds.Height > 0 ? _selectionInfoPanel.Bounds.Height : 36;
+        double left = selection.Left / scale;
+
+        // Prefer below the selection, on the monitor containing its bottom-left corner.
+        Rect area = GetMonitorBounds(new Point(selection.Left, Math.Max(selection.Top, selection.Bottom - 1)));
+        double y = selection.Bottom / scale + 8;
+        if (y + panelHeight > area.Bottom)
         {
-            y = Math.Max(0, selection.Top / scale - 36);
+            // Otherwise place it above the selection, on the monitor containing its top-left corner.
+            area = GetMonitorBounds(new Point(selection.Left, selection.Top));
+            y = selection.Top / scale - panelHeight;
         }
+
+        double x = Math.Clamp(left, area.Left, Math.Max(area.Left, area.Right - panelWidth));
+        y = Math.Clamp(y, area.Top, Math.Max(area.Top, area.Bottom - panelHeight));
 
         AvaloniaCanvas.SetLeft(_selectionInfoPanel, x);
         AvaloniaCanvas.SetTop(_selectionInfoPanel, y);
     }
 
-    private void PositionPanelNearPointer(Control panel, Point pointer, double offset)
+    /// <summary>
+    /// Returns the bounds, in window coordinates (DIPs), of the monitor containing the given image point.
+    /// Falls back to the whole window when the point is not on any monitor.
+    /// </summary>
+    private Rect GetMonitorBounds(Point imagePoint)
+    {
+        Rect windowBounds = new Rect(Bounds.Size);
+        if (_request == null)
+        {
+            return windowBounds;
+        }
+
+        PixelPoint desktopPoint = new PixelPoint(
+            _request.ScreenBounds.X + (int)Math.Floor(imagePoint.X),
+            _request.ScreenBounds.Y + (int)Math.Floor(imagePoint.Y));
+        Screen? screen = Screens.ScreenFromPoint(desktopPoint);
+        if (screen == null)
+        {
+            return windowBounds;
+        }
+
+        double scale = Math.Max(1, RenderScaling);
+        Rect monitorBounds = new Rect(
+            (screen.Bounds.X - _request.ScreenBounds.X) / scale,
+            (screen.Bounds.Y - _request.ScreenBounds.Y) / scale,
+            screen.Bounds.Width / scale,
+            screen.Bounds.Height / scale).Intersect(windowBounds);
+        return monitorBounds.Width > 0 && monitorBounds.Height > 0 ? monitorBounds : windowBounds;
+    }
+
+    private void PositionPanelNearPointer(Control panel, Point pointer, double offset, Rect area)
     {
         bool isMagnifierPanel = ReferenceEquals(panel, _magnifierPanel);
         double fallbackWidth = isMagnifierPanel ? _magnifierView.Width : 170;
@@ -1442,18 +1481,18 @@ public partial class RegionCaptureWindow : Window
         double x = pointer.X + offset;
         double y = pointer.Y + offset;
 
-        if (x + width > Bounds.Width)
+        if (x + width > area.Right)
         {
             x = pointer.X - width - offset;
         }
 
-        if (y + height > Bounds.Height)
+        if (y + height > area.Bottom)
         {
             y = pointer.Y - height - offset;
         }
 
-        double targetX = Math.Clamp(x, 0, Math.Max(0, Bounds.Width - width));
-        double targetY = Math.Clamp(y, 0, Math.Max(0, Bounds.Height - height));
+        double targetX = Math.Clamp(x, area.Left, Math.Max(area.Left, area.Right - width));
+        double targetY = Math.Clamp(y, area.Top, Math.Max(area.Top, area.Bottom - height));
 
         if (isMagnifierPanel)
         {
