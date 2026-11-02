@@ -1655,9 +1655,18 @@ public partial class RegionCaptureWindow : Window
             return _selectedCandidate.WindowInfo;
         }
 
+        // Prefer the window under the cursor (the clicked window), because the selection center can be covered by another window.
         DrawingPoint point = new DrawingPoint(
-            selectedRectangle.Left + selectedRectangle.Width / 2,
-            selectedRectangle.Top + selectedRectangle.Height / 2);
+            _request!.ScreenBounds.X + (int)_lastPointerPoint.X,
+            _request.ScreenBounds.Y + (int)_lastPointerPoint.Y);
+
+        if (!selectedRectangle.Contains(point))
+        {
+            point = new DrawingPoint(
+                selectedRectangle.Left + selectedRectangle.Width / 2,
+                selectedRectangle.Top + selectedRectangle.Height / 2);
+        }
+
         return _windows.FirstOrDefault(window => window.IsWindow && window.Rectangle.Contains(point))?.WindowInfo;
     }
 
