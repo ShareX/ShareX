@@ -753,6 +753,9 @@
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Pause ضبط صفحه</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>ویرایشگر عکاسی</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>سنجاق به صفحه</value>
   </data>

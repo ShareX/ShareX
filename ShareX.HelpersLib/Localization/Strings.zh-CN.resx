@@ -753,6 +753,9 @@
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>暂停屏幕录制</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>照片编辑器</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>固定到屏幕</value>
   </data>

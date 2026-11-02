@@ -1532,6 +1532,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>खोलें</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>फ़ोटो संपादक...</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>स्क्रीन पर पिन करें...</value>
   </data>

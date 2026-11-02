@@ -1532,6 +1532,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Öffnen</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Fotoeditor</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>An Bildschirm anheften</value>
   </data>

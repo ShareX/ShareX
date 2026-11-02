@@ -1532,6 +1532,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>فتح</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>محرر الصور الفوتوغرافية</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>تثيبت على الشاشة</value>
   </data>

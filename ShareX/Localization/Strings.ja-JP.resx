@@ -1532,6 +1532,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>開く</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>フォトエディター</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>最前面に固定</value>
   </data>

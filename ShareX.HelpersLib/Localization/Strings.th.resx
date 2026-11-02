@@ -753,6 +753,9 @@
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>หยุดบันทึกหน้าจอชั่วคราว</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>ตัวแก้ไขภาพถ่าย</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>ปักหมุดบนหน้าจอ</value>
   </data>

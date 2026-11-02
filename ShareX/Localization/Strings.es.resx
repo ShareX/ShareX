@@ -1532,6 +1532,9 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Abrir</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Editor de fotos</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Anclar a la pantalla</value>
   </data>

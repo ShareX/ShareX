@@ -1475,9 +1475,6 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
     <value>Image editor...</value>
   </data>
-  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
-    <value>Photo editor...</value>
-  </data>
   <data name="MainMenuBuilder_ImageEffects" xml:space="preserve">
     <value>Image effects...</value>
   </data>
@@ -1534,6 +1531,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Open</value>
+  </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Photo editor...</value>
   </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Pin to screen...</value>

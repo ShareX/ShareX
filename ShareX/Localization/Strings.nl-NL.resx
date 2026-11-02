@@ -1532,6 +1532,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Openen</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Foto-editor</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Pin to scherm</value>
   </data>

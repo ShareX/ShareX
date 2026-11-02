@@ -1532,6 +1532,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Megnyitás</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Fotószerkesztő</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Pin to képernyő</value>
   </data>

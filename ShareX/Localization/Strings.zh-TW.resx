@@ -1532,6 +1532,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>開啟</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>相片編輯器</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>釘選至螢幕</value>
   </data>

@@ -753,6 +753,9 @@
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Pause grabación de pantalla</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Editor de fotos</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Anclar a la pantalla</value>
   </data>

@@ -1532,6 +1532,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Åbn</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Fotoredigering...</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Fastgør på skærmen...</value>
   </data>

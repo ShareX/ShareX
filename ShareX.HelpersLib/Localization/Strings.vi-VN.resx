@@ -753,6 +753,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Tạm dừng ghi màn hình</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Trình chỉnh sửa ảnh chụp</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Ghim vào màn hình</value>
   </data>

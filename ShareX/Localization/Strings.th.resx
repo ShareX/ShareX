@@ -1532,6 +1532,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>เปิด</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>ตัวแก้ไขภาพถ่าย...</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>ปักหมุดบนหน้าจอ...</value>
   </data>
