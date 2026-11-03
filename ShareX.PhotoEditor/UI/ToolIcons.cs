@@ -150,8 +150,6 @@ public static class ToolIcons
         ["list-view"] = ["M4 6 H20", "M4 12 H20", "M4 18 H20"],
         ["new-layer"] = ["M5 5 H17 V17 H5 Z", "M8 8 H20 V20 H8"],
         ["trash"] = ["M4 6 H20 M9 6 V3 H15 V6 M6 6 L7 21 H17 L18 6", "M10 10 V17 M14 10 V17"],
-        ["swap"] = ["M6 4 H16 C18 4 20 6 20 8 V14", "M17 11 L20 14 L23 11", "M4 6 L6 4 L4 2"],
-        ["default-colors"] = ["F:M3 3 H11 V11 H3 Z", "M8 8 H16 V16 H8 Z"],
         ["quick-mask"] = ["M4 4 H20 V20 H4 Z", "F:M12 8 a4 4 0 1 0 0.01 0 Z"],
         ["screen-mode"] = ["M3 5 H21 V17 H3 Z", "M8 21 H16 M12 17 V21"],
         ["edit-toolbar"] = ["F:M6 12 a1.5 1.5 0 1 0 0.01 0 Z", "F:M12 12 a1.5 1.5 0 1 0 0.01 0 Z", "F:M18 12 a1.5 1.5 0 1 0 0.01 0 Z"],
