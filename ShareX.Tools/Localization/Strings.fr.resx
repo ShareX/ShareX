@@ -990,7 +990,7 @@ Chemin du fichier : {0}</value>
     <value>Les valeurs faibles accélèrent l’encodage. Les valeurs élevées produisent des fichiers plus petits. Toutes les valeurs préservent la qualité de l’image.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Sans perte :</value>
+    <value>Sans perte</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Remplir</value>

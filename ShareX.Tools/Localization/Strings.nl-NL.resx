@@ -990,7 +990,7 @@ Bestandspad: {0}</value>
     <value>Lagere waarden zorgen voor snellere codering. Hogere waarden leveren kleinere bestanden op. Alle waarden behouden de beeldkwaliteit.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Verliesvrij:</value>
+    <value>Verliesvrij</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Vullen</value>

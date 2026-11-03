@@ -990,7 +990,7 @@ Dateipfad: {0}</value>
     <value>Niedrigere Werte beschleunigen die Kodierung. Höhere Werte erzeugen kleinere Dateien. Alle Werte erhalten die Bildqualität.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Verlustfrei:</value>
+    <value>Verlustfrei</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Ausfüllen</value>

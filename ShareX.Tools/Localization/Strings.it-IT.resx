@@ -990,7 +990,7 @@ Percorso file: {0}</value>
     <value>I valori più bassi velocizzano la codifica. I valori più alti producono file più piccoli. Tutti i valori preservano la qualità dell’immagine.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Senza perdita:</value>
+    <value>Senza perdita</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Riempi</value>

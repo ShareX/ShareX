@@ -990,7 +990,7 @@ Filsökväg: {0}</value>
     <value>Lägre värden ger snabbare kodning. Högre värden ger mindre filer. Alla värden bevarar bildkvaliteten.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Förlustfri:</value>
+    <value>Förlustfri</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Fyll</value>

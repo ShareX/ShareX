@@ -987,7 +987,7 @@
     <value>Lower values encode faster. Higher values produce smaller files. All values preserve image quality.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Lossless:</value>
+    <value>Lossless</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Fill</value>

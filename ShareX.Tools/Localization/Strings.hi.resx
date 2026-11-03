@@ -990,7 +990,7 @@
     <value>कम मानों पर एन्कोडिंग तेज़ होती है। अधिक मान छोटे आकार की फ़ाइलें बनाते हैं। सभी मान छवि की गुणवत्ता बनाए रखते हैं।</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>हानिरहित:</value>
+    <value>हानिरहित</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>भरें</value>

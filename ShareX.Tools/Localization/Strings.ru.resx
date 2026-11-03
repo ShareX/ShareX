@@ -986,7 +986,7 @@
     <value>Меньшие значения ускоряют кодирование. Большие значения создают файлы меньшего размера. Все значения сохраняют качество изображения.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Без потерь:</value>
+    <value>Без потерь</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Заполнить</value>

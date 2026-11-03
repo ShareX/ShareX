@@ -986,7 +986,7 @@
     <value>値を低くするとエンコードが速くなります。値を高くするとファイルサイズが小さくなります。どの値でも画質は維持されます。</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>ロスレス:</value>
+    <value>ロスレス</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>塗りつぶし</value>

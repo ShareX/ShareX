@@ -986,7 +986,7 @@
     <value>القيم الأقل تجعل الترميز أسرع. القيم الأعلى تنتج ملفات أصغر. جميع القيم تحافظ على جودة الصورة.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>بلا فقدان:</value>
+    <value>بلا فقدان</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>تعبئة</value>

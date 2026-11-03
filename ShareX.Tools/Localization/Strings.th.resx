@@ -986,7 +986,7 @@
     <value>ค่าที่ต่ำกว่าจะเข้ารหัสได้เร็วกว่า ค่าที่สูงกว่าจะสร้างไฟล์ที่เล็กกว่า ทุกค่ารักษาคุณภาพของภาพไว้</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>ไม่สูญเสียคุณภาพ:</value>
+    <value>ไม่สูญเสียคุณภาพ</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>เติมเต็ม</value>
