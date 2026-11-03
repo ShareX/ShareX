@@ -3106,9 +3106,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_BackgroundDimStrengthPercent", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_DimAllExceptCurrentSelection {
+        public static string TaskSettingsWindow_DimHoveredWindowsAndControls {
             get {
-                return ResourceManager.GetString("TaskSettingsWindow_DimAllExceptCurrentSelection", resourceCulture);
+                return ResourceManager.GetString("TaskSettingsWindow_DimHoveredWindowsAndControls", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_RightClick {
