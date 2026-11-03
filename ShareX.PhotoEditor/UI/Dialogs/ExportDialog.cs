@@ -82,7 +82,7 @@ public static class ExportDialog
             UpdateOptions();
         }));
         lossless.IsCheckedChanged += (_, _) => UpdateOptions();
-        DialogBuilder.AddRow(losslessSection, string.Empty, lossless);
+        DialogBuilder.AddFull(losslessSection, lossless);
         DialogBuilder.AddRow(qualitySection, "Quality:", DialogBuilder.SliderNumber(1, 100, quality, v => quality = (int)v));
         DialogBuilder.AddRow(sizeSection, "Width (px):", width);
         DialogBuilder.AddRow(sizeSection, "Height (px):", height);
