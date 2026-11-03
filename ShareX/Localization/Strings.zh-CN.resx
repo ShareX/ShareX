@@ -2315,8 +2315,8 @@
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>检测窗口区域</value>
   </data>
-  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
-    <value>使当前选择以外的区域全部变暗</value>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>使光标下的窗口和控件变暗</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>全屏时禁用通知</value>

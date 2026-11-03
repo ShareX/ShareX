@@ -2315,8 +2315,8 @@
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>ตรวจจับพื้นที่หน้าต่าง</value>
   </data>
-  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
-    <value>หรี่ทุกส่วนยกเว้นการเลือกปัจจุบัน</value>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>หรี่หน้าต่างและตัวควบคุมที่อยู่ใต้เคอร์เซอร์</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>ปิดการแจ้งเตือนแบบป๊อปอัปเมื่อเต็มหน้าจอ</value>
