@@ -55,28 +55,38 @@ public static class ExportDialog
             width.Value = Math.Max(1, Math.Round(h * doc.Width / doc.Height));
             updating = false;
         };
-        Grid form = DialogBuilder.Form();
-        List<Control> qualityRow = [];
-        CheckBox lossless = new() { Content = "Lossless", IsVisible = false };
+        // Each optional row is its own grid so a hidden row collapses completely instead of leaving row spacing behind.
+        StackPanel form = new() { Spacing = 8 };
+        Grid.SetIsSharedSizeScope(form, true);
+        Grid AddSection()
+        {
+            Grid section = DialogBuilder.Form();
+            section.ColumnDefinitions[0].SharedSizeGroup = "Label";
+            form.Children.Add(section);
+            return section;
+        }
+        Grid formatSection = AddSection();
+        Grid losslessSection = AddSection();
+        Grid qualitySection = AddSection();
+        Grid sizeSection = AddSection();
+        CheckBox lossless = new() { Content = "Lossless" };
         void UpdateOptions()
         {
-            lossless.IsVisible = extension == ".webp";
+            losslessSection.IsVisible = extension == ".webp";
             // Only lossy encoding has a quality setting.
-            bool showQuality = extension == ".jpg" || (extension == ".webp" && lossless.IsChecked != true);
-            foreach (Control control in qualityRow) control.IsVisible = showQuality;
+            qualitySection.IsVisible = extension == ".jpg" || (extension == ".webp" && lossless.IsChecked != true);
         }
-        DialogBuilder.AddRow(form, "Format:", DialogBuilder.Combo([("PNG", ".png"), ("JPEG", ".jpg"), ("WebP", ".webp"), ("GIF", ".gif"), ("BMP", ".bmp"), ("TIFF", ".tif")], extension, v =>
+        DialogBuilder.AddRow(formatSection, "Format:", DialogBuilder.Combo([("PNG", ".png"), ("JPEG", ".jpg"), ("WebP", ".webp"), ("GIF", ".gif"), ("BMP", ".bmp"), ("TIFF", ".tif")], extension, v =>
         {
             extension = v;
             UpdateOptions();
         }));
         lossless.IsCheckedChanged += (_, _) => UpdateOptions();
-        DialogBuilder.AddRow(form, string.Empty, lossless);
-        DialogBuilder.AddRow(form, "Quality:", DialogBuilder.SliderNumber(1, 100, quality, v => quality = (int)v));
-        qualityRow.AddRange(form.Children.TakeLast(2).Cast<Control>());
+        DialogBuilder.AddRow(losslessSection, string.Empty, lossless);
+        DialogBuilder.AddRow(qualitySection, "Quality:", DialogBuilder.SliderNumber(1, 100, quality, v => quality = (int)v));
+        DialogBuilder.AddRow(sizeSection, "Width (px):", width);
+        DialogBuilder.AddRow(sizeSection, "Height (px):", height);
         UpdateOptions();
-        DialogBuilder.AddRow(form, "Width (px):", width);
-        DialogBuilder.AddRow(form, "Height (px):", height);
         if (!await DialogBuilder.ShowAsync(owner, "Export As", form, 420, "Export...")) return null;
         return new Result(extension, quality, (int)(width.Value ?? doc.Width), (int)(height.Value ?? doc.Height), extension == ".webp" && lossless.IsChecked == true);
     }
