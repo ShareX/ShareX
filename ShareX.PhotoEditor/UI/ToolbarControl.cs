@@ -59,9 +59,7 @@ public sealed class ToolbarControl : UserControl
         StackPanel root = new() { Spacing = 0, Margin = new Thickness(0, 0, 0, 6) };
         root.Children.Add(new Border { Child = _columnsToggle, Padding = new Thickness(2, 1), Margin = new Thickness(0, 0, 0, 4) });
         root.Children.Add(_sections);
-        root.Children.Add(Separator());
         root.Children.Add(SmallButton("edit-toolbar", "Edit Toolbar...", () => _ = ToolbarCustomizeDialog.ShowAsync(_editor)));
-        root.Children.Add(Separator());
         root.Children.Add(BuildColorWidget());
         _quickMask = SmallButton("quick-mask", "Edit in Quick Mask Mode (Q)", () => Commands.EditorCommands.ToggleQuickMask(_editor));
         root.Children.Add(_quickMask);
