@@ -224,6 +224,11 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         RefreshTabs();
         RefreshStatus();
         Closing += OnClosing;
+        Closed += (_, _) =>
+        {
+            _statusTimer.Stop();
+            Canvas.StopTimers();
+        };
         Opened += (_, _) => _windowPlacementApplied = true;
         Resized += (_, _) => QueueWindowPlacementSave();
         PositionChanged += (_, _) => QueueWindowPlacementSave();

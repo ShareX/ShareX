@@ -71,6 +71,8 @@ public sealed class CanvasView : Control
         DragDrop.SetAllowDrop(this, true);
     }
 
+    public void StopTimers() => _antsTimer.Stop();
+
     /// <summary>Guide being dragged out of a ruler, in document coordinates.</summary>
     public Guide? PendingGuide { get; set; }
 

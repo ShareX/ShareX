@@ -111,6 +111,8 @@ public sealed partial class PhotoEditorWindow
             return;
         }
         SaveSettings();
+        // Timers and queued callbacks can still run after closing, so the active view must not point at disposed documents.
+        _view = null;
         foreach (DocumentView view in _views.ToList())
         {
             view.Dispose();

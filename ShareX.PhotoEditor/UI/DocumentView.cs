@@ -229,7 +229,10 @@ public sealed class DocumentView : IDisposable
 
     public void Dispose()
     {
+        // Cleared so late readers see no image instead of calling into a freed native bitmap.
         Composite?.Dispose();
+        Composite = null;
         Display?.Dispose();
+        Display = null;
     }
 }
