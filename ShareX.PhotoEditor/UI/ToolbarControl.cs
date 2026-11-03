@@ -135,7 +135,8 @@ public sealed class ToolbarControl : UserControl
         int section = -1;
         foreach (ToolGroup group in _editor.Tools.Groups)
         {
-            int groupSection = SectionOf(group);
+            // Two columns flow continuously so a section with an odd tool count leaves no empty cell; one column keeps section gaps.
+            int groupSection = two ? 0 : SectionOf(group);
             if (panel == null || groupSection != section)
             {
                 if (panel != null) _sections.Children.Add(Separator());
