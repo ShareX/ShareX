@@ -129,6 +129,40 @@
         </Style>
     </Style>
 
+    <!-- Window caption buttons in the custom title bar -->
+    <Style Selector="Button.caption">
+        <Setter Property="Width" Value="46"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="MinHeight" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="^ Path">
+            <Setter Property="Stroke" Value="{DynamicResource PE.Brush.Text}"/>
+        </Style>
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Hover}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PE.Brush.Pressed}"/>
+        </Style>
+        <Style Selector="^.close:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#C42B1C"/>
+        </Style>
+        <Style Selector="^.close:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#A51D12"/>
+        </Style>
+        <Style Selector="^.close:pointerover Path">
+            <Setter Property="Stroke" Value="White"/>
+        </Style>
+    </Style>
+
     <!-- Toolbar tool buttons -->
     <Style Selector="Button.tool">
         <Setter Property="BorderThickness" Value="0"/>

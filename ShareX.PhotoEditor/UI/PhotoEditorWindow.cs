@@ -63,7 +63,6 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
     private readonly Border _busy;
     private readonly TextBlock _busyText = new() { Foreground = Brushes.White, FontSize = 14 };
     private readonly ProgressBar _busyProgress = new() { Width = 260, Minimum = 0, Maximum = 1 };
-    private readonly Menu _menu;
     private readonly ToolbarControl _toolbar;
     private readonly PanelDock _dock;
     private readonly Grid _layout;
@@ -122,7 +121,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
             new LayersPanel(this), new HistoryPanel(this), new ColorPanel(this), new SwatchesPanel(this), new PropertiesPanel(this),
             new AdjustmentsPanel(this), new ChannelsPanel(this), new PathsPanel(this), new BrushesPanel(this), new NavigatorPanel(this), new InfoPanel(this)
         ]);
-        _menu = MenuBuilder.Build(this);
+        _titleBar = CreateTitleBar();
 
         // Canvas area with rulers.
         Grid canvasGrid = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*"), RowDefinitions = new RowDefinitions("Auto,*") };
@@ -189,10 +188,10 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         statusHost.Bind(Border.BackgroundProperty, statusHost.GetResourceObservable("ShareX.Brush.Background.Toolbar"));
 
         DockPanel root = new() { Background = new SolidColorBrush(Color.FromRgb(0x1E, 0x1E, 0x1E)) };
-        DockPanel.SetDock(_menu, Dock.Top);
+        DockPanel.SetDock(_titleBar, Dock.Top);
         DockPanel.SetDock(_optionsHost, Dock.Top);
         DockPanel.SetDock(statusHost, Dock.Bottom);
-        root.Children.Add(_menu);
+        root.Children.Add(_titleBar);
         root.Children.Add(_optionsHost);
         root.Children.Add(statusHost);
         root.Children.Add(_layout);
@@ -619,7 +618,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
     public void ApplyVisibility()
     {
         bool panels = !_panelsHidden && _screenMode != ScreenMode.Full;
-        _menu.IsVisible = _screenMode != ScreenMode.Full;
+        _titleBar.IsVisible = _screenMode != ScreenMode.Full;
         _toolbarHost.IsVisible = panels && Settings.ToolbarVisible;
         _optionsHost.IsVisible = panels && Settings.OptionsVisible;
         _dock.IsVisible = panels && Settings.RightDockVisible;
@@ -641,16 +640,5 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
     {
         Tools.ApplyLayout(Settings);
         _toolbar.Rebuild();
-    }
-
-    public void RebuildMenu()
-    {
-        if (Content is Grid shell && shell.Children[0] is DockPanel root)
-        {
-            int index = root.Children.IndexOf(_menu);
-            Menu menu = MenuBuilder.Build(this);
-            DockPanel.SetDock(menu, Avalonia.Controls.Dock.Top);
-            root.Children[index] = menu;
-        }
     }
 }
