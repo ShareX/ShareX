@@ -26,6 +26,8 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Controls.Shapes;
+using Path = Avalonia.Controls.Shapes.Path;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
@@ -83,7 +85,7 @@ public sealed class ToolbarControl : UserControl
     private void ApplyColumns()
     {
         bool two = _editor.Settings.ToolbarTwoColumns;
-        Width = two ? ButtonWidth * 2 + 8 : ButtonWidth + 6;
+        Width = two ? ButtonWidth * 2 + 8 : Math.Max(ButtonWidth + 6, ColorWidgetWidth + 2);
         _columnsToggle.Content = ToolIcons.Create(two ? "toolbar-collapse" : "toolbar-expand", 11);
         ToolTip.SetTip(_columnsToggle, two ? "Collapse to a single column" : "Expand to two columns");
     }
@@ -237,49 +239,104 @@ public sealed class ToolbarControl : UserControl
         RefreshColors();
     }
 
+    /// <summary>Width of the foreground/background color widget; the single-column toolbar is sized to fit it.</summary>
+    private const double ColorWidgetWidth = 46;
+
+    private static readonly IBrush SwatchOutline = new SolidColorBrush(Color.FromRgb(0x18, 0x18, 0x18));
+
+    /// <summary>Foreground and background swatches laid out on a pixel grid: overlapping 26 px swatches with a dark outline
+    /// and white ring, the switch arrow at the top right and the default colors icon at the bottom left.</summary>
     private Control BuildColorWidget()
     {
-        IBrush outline = new SolidColorBrush(Color.FromRgb(0x1A, 0x1A, 0x1A));
-        _foreground = new Border { Width = 20, Height = 20, BorderBrush = outline, BorderThickness = new Thickness(1), Cursor = new Cursor(StandardCursorType.Hand) };
-        _background = new Border { Width = 20, Height = 20, BorderBrush = outline, BorderThickness = new Thickness(1), Cursor = new Cursor(StandardCursorType.Hand) };
-        // A light inner ring makes dark swatches readable on the dark chrome.
-        Border foregroundRing = new() { Child = _foreground, BorderBrush = new SolidColorBrush(Color.FromRgb(0xD0, 0xD0, 0xD0)), BorderThickness = new Thickness(1) };
-        Border backgroundRing = new() { Child = _background, BorderBrush = new SolidColorBrush(Color.FromRgb(0xD0, 0xD0, 0xD0)), BorderThickness = new Thickness(1) };
-        ToolTip.SetTip(foregroundRing, "Set foreground color");
-        ToolTip.SetTip(backgroundRing, "Set background color");
-        foregroundRing.PointerPressed += async (_, _) =>
+        Border backgroundSwatch = CreateSwatch(out _background, "Set background color");
+        Border foregroundSwatch = CreateSwatch(out _foreground, "Set foreground color");
+        foregroundSwatch.PointerPressed += async (_, _) =>
         {
             SKColor? c = await ColorPickerDialog.ShowAsync(_editor, _editor.Foreground, "Foreground Color", _editor);
             if (c is SKColor color) _editor.Foreground = color;
         };
-        backgroundRing.PointerPressed += async (_, _) =>
+        backgroundSwatch.PointerPressed += async (_, _) =>
         {
             SKColor? c = await ColorPickerDialog.ShowAsync(_editor, _editor.Background, "Background Color", _editor);
             if (c is SKColor color) _editor.Background = color;
         };
-        Canvas canvas = new() { Width = 34, Height = 36, HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(0, 2, 0, 4) };
-        Canvas.SetLeft(backgroundRing, 12);
-        Canvas.SetTop(backgroundRing, 14);
-        Canvas.SetLeft(foregroundRing, 2);
-        Canvas.SetTop(foregroundRing, 4);
-        canvas.Children.Add(backgroundRing);
-        canvas.Children.Add(foregroundRing);
+        Canvas canvas = new() { Width = ColorWidgetWidth, Height = 45, HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(0, 4, 0, 4) };
+        Place(canvas, backgroundSwatch, 17, 17);
+        Place(canvas, foregroundSwatch, 2, 1);
 
-        Button swap = new() { Classes = { "icon" }, Content = ToolIcons.Create("swap", 9), Padding = new Thickness(1), Width = 12, Height = 12 };
-        ToolTip.SetTip(swap, "Switch Foreground and Background Colors (X)");
-        swap.Click += (_, _) => Commands.EditorCommands.SwapColors(_editor);
-        Canvas.SetLeft(swap, 23);
-        Canvas.SetTop(swap, 0);
-        canvas.Children.Add(swap);
-
-        Button reset = new() { Classes = { "icon" }, Content = ToolIcons.Create("default-colors", 9), Padding = new Thickness(1), Width = 12, Height = 12 };
-        ToolTip.SetTip(reset, "Default Foreground and Background Colors (D)");
-        reset.Click += (_, _) => Commands.EditorCommands.ResetColors(_editor);
-        Canvas.SetLeft(reset, 0);
-        Canvas.SetTop(reset, 26);
-        canvas.Children.Add(reset);
+        Button swap = CreateWidgetButton(CreateSwapIcon(), "Switch Foreground and Background Colors (X)", () => Commands.EditorCommands.SwapColors(_editor));
+        Place(canvas, swap, 35, 0);
+        Button reset = CreateWidgetButton(CreateDefaultColorsIcon(), "Default Foreground and Background Colors (D)", () => Commands.EditorCommands.ResetColors(_editor));
+        Place(canvas, reset, 0, 33);
         RefreshColors();
         return canvas;
+    }
+
+    private static void Place(Canvas canvas, Control control, double left, double top)
+    {
+        Canvas.SetLeft(control, left);
+        Canvas.SetTop(control, top);
+        canvas.Children.Add(control);
+    }
+
+    private static Border CreateSwatch(out Border color, string tip)
+    {
+        color = new Border { Width = 22, Height = 22 };
+        Border swatch = new()
+        {
+            BorderBrush = SwatchOutline,
+            BorderThickness = new Thickness(1),
+            Child = new Border { BorderBrush = Brushes.White, BorderThickness = new Thickness(1), Child = color },
+            Cursor = new Cursor(StandardCursorType.Hand)
+        };
+        ToolTip.SetTip(swatch, tip);
+        return swatch;
+    }
+
+    private static Button CreateWidgetButton(Control icon, string tip, Action click)
+    {
+        Button button = new() { Classes = { "swatch-icon" }, Content = icon, Padding = new Thickness(0), Width = icon.Width, Height = icon.Height };
+        ToolTip.SetTip(button, tip);
+        button.Click += (_, _) => click();
+        return button;
+    }
+
+    /// <summary>Curved arrow with heads on both ends, drawn on an 11 px grid.</summary>
+    private static Control CreateSwapIcon()
+    {
+        Canvas icon = new() { Width = 11, Height = 11 };
+        void Add(string data, bool stroked)
+        {
+            Path path = new() { Data = Geometry.Parse(data), StrokeThickness = stroked ? 1.8 : 0 };
+            path.Bind(stroked ? Shape.StrokeProperty : Shape.FillProperty, path.GetResourceObservable("ShareX.Brush.Text"));
+            icon.Children.Add(path);
+        }
+        Add("M-0.4 3 L3 -0.2 L3 6.2 Z", false);
+        Add("M4.8 8 L11.2 8 L8 11.4 Z", false);
+        Add("M2.5 3 H5 Q8 3 8 6 V8.5", true);
+        return icon;
+    }
+
+    /// <summary>Miniature black-over-white swatch pair sharing one outline, drawn on a 12 px grid.</summary>
+    private static Control CreateDefaultColorsIcon()
+    {
+        Canvas icon = new() { Width = 12, Height = 12 };
+        IBrush outline = new SolidColorBrush(Color.FromRgb(0xB6, 0xB6, 0xB6));
+        void Rect(double x, double y, double size, IBrush fill)
+        {
+            Rectangle rect = new() { Width = size, Height = size, Fill = fill };
+            Canvas.SetLeft(rect, x);
+            Canvas.SetTop(rect, y);
+            icon.Children.Add(rect);
+        }
+        // Outlines of both squares, then their interiors, so the outline only follows the combined shape.
+        Rect(0, 0, 9, outline);
+        Rect(3, 3, 9, outline);
+        Rect(1, 1, 7, Brushes.Black);
+        Rect(4, 4, 7, Brushes.Black);
+        Rect(5, 5, 5, Brushes.White);
+        Rect(1, 1, 7, Brushes.Black);
+        return icon;
     }
 
     public void RefreshColors()

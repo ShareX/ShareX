@@ -129,6 +129,18 @@
         </Style>
     </Style>
 
+    <!-- Switch and default color buttons next to the toolbar swatches: just the glyph, no chrome -->
+    <Style Selector="Button.swatch-icon">
+        <Setter Property="MinHeight" Value="0"/>
+        <Setter Property="MinWidth" Value="0"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter, ^:pointerover /template/ ContentPresenter#PART_ContentPresenter, ^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+    </Style>
+
     <!-- Window caption buttons in the custom title bar -->
     <Style Selector="Button.caption">
         <Setter Property="Width" Value="46"/>
