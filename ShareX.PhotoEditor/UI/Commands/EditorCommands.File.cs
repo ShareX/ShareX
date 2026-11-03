@@ -283,7 +283,7 @@ public static partial class EditorCommands
         if (options.Width != doc.Width || options.Height != doc.Height) output = ImageOps.Resize(flat, options.Width, options.Height, ResampleMethod.Bicubic);
         try
         {
-            ImageIO.SaveBitmap(output, path, options.Quality);
+            ImageIO.SaveBitmap(output, path, options.Quality, options.Lossless);
             w.SetStatus($"Exported {path}");
         }
         catch (Exception ex)

@@ -32,7 +32,7 @@ namespace ShareX.PhotoEditor.UI.Dialogs;
 
 public static class ExportDialog
 {
-    public sealed record Result(string Extension, int Quality, int Width, int Height);
+    public sealed record Result(string Extension, int Quality, int Width, int Height, bool Lossless);
 
     public static async Task<Result?> ShowAsync(Window owner, PhotoDocument doc)
     {
@@ -57,18 +57,27 @@ public static class ExportDialog
         };
         Grid form = DialogBuilder.Form();
         List<Control> qualityRow = [];
+        CheckBox lossless = new() { Content = "Lossless", IsVisible = false };
+        void UpdateOptions()
+        {
+            lossless.IsVisible = extension == ".webp";
+            // Only lossy encoding has a quality setting.
+            bool showQuality = extension == ".jpg" || (extension == ".webp" && lossless.IsChecked != true);
+            foreach (Control control in qualityRow) control.IsVisible = showQuality;
+        }
         DialogBuilder.AddRow(form, "Format:", DialogBuilder.Combo([("PNG", ".png"), ("JPEG", ".jpg"), ("WebP", ".webp"), ("GIF", ".gif"), ("BMP", ".bmp"), ("TIFF", ".tif")], extension, v =>
         {
             extension = v;
-            // Only lossy formats have a quality setting.
-            foreach (Control control in qualityRow) control.IsVisible = extension is ".jpg" or ".webp";
+            UpdateOptions();
         }));
+        lossless.IsCheckedChanged += (_, _) => UpdateOptions();
+        DialogBuilder.AddRow(form, string.Empty, lossless);
         DialogBuilder.AddRow(form, "Quality:", DialogBuilder.SliderNumber(1, 100, quality, v => quality = (int)v));
         qualityRow.AddRange(form.Children.TakeLast(2).Cast<Control>());
-        foreach (Control control in qualityRow) control.IsVisible = false;
+        UpdateOptions();
         DialogBuilder.AddRow(form, "Width (px):", width);
         DialogBuilder.AddRow(form, "Height (px):", height);
         if (!await DialogBuilder.ShowAsync(owner, "Export As", form, 420, "Export...")) return null;
-        return new Result(extension, quality, (int)(width.Value ?? doc.Width), (int)(height.Value ?? doc.Height));
+        return new Result(extension, quality, (int)(width.Value ?? doc.Width), (int)(height.Value ?? doc.Height), extension == ".webp" && lossless.IsChecked == true);
     }
 }

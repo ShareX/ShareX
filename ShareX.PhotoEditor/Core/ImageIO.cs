@@ -164,7 +164,8 @@ public static class ImageIO
         SaveBitmap(flat, path, quality);
     }
 
-    public static void SaveBitmap(SKBitmap bitmap, string path, int quality = 90)
+    /// <param name="lossless">Encodes WebP losslessly; <paramref name="quality"/> is then ignored.</param>
+    public static void SaveBitmap(SKBitmap bitmap, string path, int quality = 90, bool lossless = false)
     {
         string extension = Path.GetExtension(path).ToLowerInvariant();
         string temp = path + ".tmp";
@@ -177,6 +178,14 @@ public static class ImageIO
                     case ".jpg" or ".jpeg" or ".jpe" or ".jfif":
                         // JPEG has no alpha: composite onto white first.
                         using (SKBitmap opaque = FlattenOnto(bitmap, SKColors.White)) opaque.Save(stream, SKEncodedImageFormat.Jpeg, quality);
+                        break;
+                    case ".webp" when lossless:
+                        {
+                            // For lossless WebP the quality value sets compression effort, not image quality.
+                            using SKPixmap pixmap = bitmap.PeekPixels();
+                            using SKData data = pixmap.Encode(new SKWebpEncoderOptions(SKWebpEncoderCompression.Lossless, 75));
+                            data.SaveTo(stream);
+                        }
                         break;
                     case ".webp":
                         bitmap.Save(stream, SKEncodedImageFormat.Webp, quality);
