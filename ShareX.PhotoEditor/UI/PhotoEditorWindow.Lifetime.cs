@@ -65,14 +65,19 @@ public sealed partial class PhotoEditorWindow
             Services.DefaultFolder != null ? await StorageProvider.TryGetFolderFromPathAsync(Services.DefaultFolder) : null;
         IEnumerable<FileFormatInfo> formats = ImageIO.Formats.Where(f => f.CanSave);
         if (!projectFirst) formats = formats.OrderBy(f => f.Extensions[0] == ImageIO.ProjectExtension);
+        List<(FileFormatInfo Format, FilePickerFileType Type)> choices = formats.Select(f => (f, new FilePickerFileType(f.Name) { Patterns = f.Extensions.Select(x => "*" + x).ToArray() })).ToList();
+        // Preselect the file type matching the suggested name, otherwise the dialog falls back to the first type and replaces the extension.
+        string extension = Path.GetExtension(suggestedName);
+        FilePickerFileType? suggestedType = choices.FirstOrDefault(c => c.Format.Extensions.Contains(extension, StringComparer.OrdinalIgnoreCase)).Type;
         IStorageFile? file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
             Title = title,
             SuggestedFileName = suggestedName,
             SuggestedStartLocation = start,
-            DefaultExtension = projectFirst ? ImageIO.ProjectExtension : ".png",
+            DefaultExtension = suggestedType != null ? extension : projectFirst ? ImageIO.ProjectExtension : ".png",
+            SuggestedFileType = suggestedType,
             ShowOverwritePrompt = true,
-            FileTypeChoices = formats.Select(f => new FilePickerFileType(f.Name) { Patterns = f.Extensions.Select(x => "*" + x).ToArray() }).ToList()
+            FileTypeChoices = choices.Select(c => c.Type).ToList()
         });
         return file?.TryGetLocalPath();
     }
