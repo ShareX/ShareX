@@ -27,6 +27,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace ShareX;
@@ -47,7 +48,7 @@ internal sealed class MainForm
         _hotkeyHost.NativeMessageReceived += OnNativeMessage;
         _hotkeyHost.Closed += OnHostClosed;
 
-        ShareXResources.UseWhiteIcon = ApplicationState.Settings.UseWhiteShareXIcon;
+        ApplyIconSetting();
         TrayIconService = new DesktopTrayIconService(_hotkeyHost, ShareXResources.IconBytes, ApplicationInfo.TitleShort, ApplicationState.Settings.ShowTray);
     }
 
@@ -60,8 +61,15 @@ internal sealed class MainForm
 
     internal void UpdateTrayIcon()
     {
-        ShareXResources.UseWhiteIcon = ApplicationState.Settings.UseWhiteShareXIcon;
+        ApplyIconSetting();
         TrayIconService.SetIcon(ShareXResources.IconBytes);
+    }
+
+    private static void ApplyIconSetting()
+    {
+        ShareXResources.UseWhiteIcon = ApplicationState.Settings.UseWhiteShareXIcon;
+        using MemoryStream stream = new(ShareXResources.IconBytes, writable: false);
+        Avalonia.Application.Current!.Resources["ShareX.WindowIcon"] = new Avalonia.Controls.WindowIcon(stream);
     }
 
     internal async Task UpdateHotkeysAsync()

@@ -1532,6 +1532,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Відкрити</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Фоторедактор</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Закріпити на екрані</value>
   </data>
@@ -1699,6 +1702,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Редагувати зображення</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Редагувати у фоторедакторі...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Файл</value>

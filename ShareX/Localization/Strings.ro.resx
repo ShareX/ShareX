@@ -1532,6 +1532,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Deschide</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Editor foto</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Fixează pe ecran</value>
   </data>
@@ -1699,6 +1702,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Editați imaginea</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Editați în editorul foto...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Fișier</value>

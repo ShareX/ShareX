@@ -753,6 +753,9 @@
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>स्क्रीन रिकॉर्डिंग रोकें</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>फ़ोटो संपादक</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>स्क्रीन पर पिन करें</value>
   </data>

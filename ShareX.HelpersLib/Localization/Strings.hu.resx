@@ -753,6 +753,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Szünet képernyőfelvétel</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Fotószerkesztő</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Pin to képernyő</value>
   </data>

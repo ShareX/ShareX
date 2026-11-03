@@ -25,6 +25,8 @@
 
 using Avalonia.Input;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.ImageEditor.Core.Annotations;
+using ShareX.ImageEditor.Presentation.Theming;
 using System.Collections.ObjectModel;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
@@ -34,6 +36,9 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private readonly ObservableCollection<ToolbarCustomizationItemViewModel> _toolbarItems = new();
         private readonly ObservableCollection<ToolbarCustomizationItemViewModel> _visibleToolbarItems = new();
         private bool _hostToolbarToolsActive = true;
+
+        // One editor in ten shows sunglasses for the emoji tool.
+        private readonly string _emojiToolIcon = Random.Shared.Next(10) == 0 ? EditorIcons.ToolEmojiSunglasses : EditorIcons.ToolEmoji;
 
         public ReadOnlyObservableCollection<ToolbarCustomizationItemViewModel> ToolbarItems { get; private set; } = null!;
         public ReadOnlyObservableCollection<ToolbarCustomizationItemViewModel> VisibleToolbarItems { get; private set; } = null!;
@@ -134,6 +139,11 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
             foreach (ToolbarCustomizationItemViewModel item in items.Select(item => item.Clone()))
             {
+                if (item.Tool == EditorTool.Emoji)
+                {
+                    item.Icon = _emojiToolIcon;
+                }
+
                 _toolbarItems.Add(item);
             }
 

@@ -1532,6 +1532,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>פתח</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>עורך צילומים</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>הצמד למסך</value>
   </data>
@@ -1699,6 +1702,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>ערוך תמונה</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>ערוך בעורך התמונות...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>קובץ</value>

@@ -1532,6 +1532,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Otevřít</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Editor fotografií...</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Připnout na obrazovku...</value>
   </data>
@@ -1699,6 +1702,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Upravit obrázek...</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Upravit v editoru fotografií...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Soubor</value>

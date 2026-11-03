@@ -1007,7 +1007,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     tool = _selectedAnnotation.ToolType;
                 }
 
-                return EditorIcons.ForTool(tool);
+                return tool == EditorTool.Emoji ? _emojiToolIcon : EditorIcons.ForTool(tool);
             }
         }
 

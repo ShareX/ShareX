@@ -290,13 +290,29 @@ public sealed class RegionSelectionOverlay : Control
         }
     }
 
-    internal static Rect NormalizeAndClamp(Point first, Point second, Size bounds)
+    /// <summary>
+    /// Creates the rectangle spanning two pointer positions. Each position addresses a whole pixel and
+    /// both of those pixels are part of the result, so the first to the last pixel of a 1920x1080
+    /// surface is 1920x1080 rather than 1919x1079.
+    /// </summary>
+    internal static Rect CreatePixelRectangle(Point first, Point second, Size bounds)
     {
-        double left = Math.Clamp(Math.Min(first.X, second.X), 0, bounds.Width);
-        double top = Math.Clamp(Math.Min(first.Y, second.Y), 0, bounds.Height);
-        double right = Math.Clamp(Math.Max(first.X, second.X), 0, bounds.Width);
-        double bottom = Math.Clamp(Math.Max(first.Y, second.Y), 0, bounds.Height);
-        return new Rect(left, top, Math.Max(0, right - left), Math.Max(0, bottom - top));
+        double firstX = GetPixel(first.X, bounds.Width);
+        double firstY = GetPixel(first.Y, bounds.Height);
+        double secondX = GetPixel(second.X, bounds.Width);
+        double secondY = GetPixel(second.Y, bounds.Height);
+        return new Rect(
+            Math.Min(firstX, secondX),
+            Math.Min(firstY, secondY),
+            Math.Abs(secondX - firstX) + 1,
+            Math.Abs(secondY - firstY) + 1);
+    }
+
+    // Positions are whole physical pixels but pick up floating point noise from the DPI transform,
+    // so round them instead of flooring.
+    private static double GetPixel(double position, double size)
+    {
+        return Math.Clamp(Math.Round(position), 0, Math.Max(0, size - 1));
     }
 
     internal static Rect Intersect(Rect rectangle, Rect bounds)

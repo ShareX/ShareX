@@ -422,6 +422,15 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("MainMenuBuilder_ImageEditor", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Photo editor....
+        /// </summary>
+        public static string MainMenuBuilder_PhotoEditor {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_PhotoEditor", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Image effects....
@@ -1076,6 +1085,15 @@ namespace ShareX.Localization {
         public static string MainWindow_EditImage {
             get {
                 return ResourceManager.GetString("MainWindow_EditImage", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Edit in Photo editor....
+        /// </summary>
+        public static string MainWindow_EditImageInPhotoEditor {
+            get {
+                return ResourceManager.GetString("MainWindow_EditImageInPhotoEditor", resourceCulture);
             }
         }
 

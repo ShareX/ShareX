@@ -753,6 +753,9 @@ Vil du stadig køre den?</value>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Sæt på pause skærmoptagelse</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Fotoredigering</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Fastgør på skærmen</value>
   </data>

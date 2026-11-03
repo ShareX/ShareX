@@ -1532,6 +1532,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Ouvrir</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Éditeur de photos</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Epingler à l'écran</value>
   </data>
@@ -1699,6 +1702,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Modifier l’image</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Modifier dans l’éditeur de photos...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Fichier</value>

@@ -753,6 +753,9 @@ Vuoi eseguirlo comunque?</value>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Pause registrazione schermo</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Editor di foto</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Fissa allo schermo</value>
   </data>

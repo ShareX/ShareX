@@ -1532,6 +1532,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>فتح</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>محرر الصور الفوتوغرافية</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>تثيبت على الشاشة</value>
   </data>
@@ -1699,6 +1702,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>تعديل الصورة</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>تعديل في محرر الصور...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ملف</value>

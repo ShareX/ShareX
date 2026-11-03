@@ -11,6 +11,9 @@
     </Styles.Resources>
 
     <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
+    <Style Selector=":is(Window)">
+        <Setter Property="Icon" Value="{DynamicResource ShareX.WindowIcon}"/>
+    </Style>
     <!-- Base typography -->
     <Style Selector="TextBlock">
         <Setter Property="FontFamily" Value="{DynamicResource ShareX.FontFamily.Default}"/>

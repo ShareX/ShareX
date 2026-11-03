@@ -1532,6 +1532,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Mở</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Trình chỉnh sửa ảnh chụp</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Ghim vào màn hình</value>
   </data>
@@ -1699,6 +1702,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Chỉnh sửa hình ảnh</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Chỉnh sửa trong trình chỉnh sửa ảnh...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Tệp</value>

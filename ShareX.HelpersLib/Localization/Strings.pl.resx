@@ -753,6 +753,9 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Wstrzymaj nagrywanie ekranu</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Edytor zdjęć</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Przypnij do ekranu</value>
   </data>

@@ -1532,6 +1532,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Apri</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Editor di foto</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Fissa allo schermo</value>
   </data>
@@ -1699,6 +1702,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Modifica immagine</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Modifica nell'editor di foto...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>File</value>

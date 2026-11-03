@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
              xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+             xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
              mc:Ignorable="d"
              d:DesignWidth="720"
              d:DesignHeight="620"
@@ -125,13 +126,11 @@
                                                   ColumnSpacing="10"
                                                   VerticalAlignment="Center"
                                                   Margin="0,0,10,0">
-                                                <TextBlock Text="{Binding Icon}"
-                                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                           FontWeight="Normal"
-                                                           FontSize="18"
-                                                           Foreground="{DynamicResource ShareX.Brush.Text}"
-                                                           HorizontalAlignment="Center"
-                                                           VerticalAlignment="Center"/>
+                                                <iconControls:IconPresenter Icon="{Binding Icon}"
+                                                                            FontSize="18"
+                                                                            Foreground="{DynamicResource ShareX.Brush.Text}"
+                                                                            HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"/>
                                                 <TextBlock Grid.Column="1"
                                                            Text="{Binding Name}"
                                                            Foreground="{DynamicResource ShareX.Brush.Text}"

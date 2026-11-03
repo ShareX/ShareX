@@ -1532,6 +1532,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>打开</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>照片编辑器</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>固定到屏幕</value>
   </data>
@@ -1699,6 +1702,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>编辑图像</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>在照片编辑器中编辑...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>文件</value>

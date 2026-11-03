@@ -753,6 +753,9 @@ Do you still want to run it?</value>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Pause screen recording</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Photo editor</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Pin to screen</value>
   </data>

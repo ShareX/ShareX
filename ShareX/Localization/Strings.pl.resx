@@ -1532,6 +1532,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Otwórz</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Edytor zdjęć</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Przypnij do ekranu</value>
   </data>
@@ -1699,6 +1702,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Edytuj obraz</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Edytuj w edytorze zdjęć...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Plik</value>

@@ -753,6 +753,9 @@
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>إيقاف تسجيل الشاشة مؤقتًا</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>محرر الصور الفوتوغرافية</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>تثيبت على الشاشة</value>
   </data>

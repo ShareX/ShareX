@@ -753,6 +753,9 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Ekran kaydını duraklat</value>
   </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Fotoğraf düzenleyici</value>
+  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Ekrana sabitle</value>
   </data>

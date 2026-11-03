@@ -1532,6 +1532,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>เปิด</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>ตัวแก้ไขภาพถ่าย...</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>ปักหมุดบนหน้าจอ...</value>
   </data>
@@ -1699,6 +1702,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>แก้ไข รูปภาพ...</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>แก้ไขในตัวแก้ไขรูปภาพ...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ไฟล์</value>

@@ -113,7 +113,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
     public bool IsHotkeyEditable { get; }
     public bool IsVisibilityEditable { get; }
     public string Name { get; }
-    public string Icon { get; }
+    public string Icon { get; internal set; }
 
     public bool IsVisible
     {
