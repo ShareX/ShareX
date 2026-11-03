@@ -72,7 +72,8 @@ public sealed class ToolbarControl : UserControl
         _editor.Tools.ActiveChanged += RefreshActive;
     }
 
-    private static Border Separator() => new() { Classes = { "hsep" }, Margin = new Thickness(6, 4) };
+    /// <summary>Blank gap between toolbar sections; the toolbar uses spacing instead of divider lines.</summary>
+    private static Control Separator() => new Border { Height = 9 };
 
     /// <summary>Switches between the single-column and two-column toolbar layouts.</summary>
     public void ToggleColumns()
