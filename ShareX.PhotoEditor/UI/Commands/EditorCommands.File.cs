@@ -58,8 +58,24 @@ public static partial class EditorCommands
         R("file.exit", "Exit", "Ctrl+Q", w => w.Close());
     }
 
-    private static IEnumerable<MenuNode> RecentFiles(PhotoEditorWindow w) =>
-        w.Settings.RecentFiles.Where(File.Exists).Take(15).Select(path => new MenuNode { Header = Path.GetFileName(path) + "   " + Path.GetDirectoryName(path), Action = win => OpenFile(win, path) });
+    private static IEnumerable<MenuNode> RecentFiles(PhotoEditorWindow w)
+    {
+        List<MenuNode> items = w.Settings.RecentFiles.Where(File.Exists).Take(15)
+            .Select(path => new MenuNode { Header = Path.GetFileName(path) + "   " + Path.GetDirectoryName(path), Action = win => OpenFile(win, path) }).ToList();
+        if (items.Count > 0)
+        {
+            items.Add(MenuNode.Separator);
+            items.Add(new MenuNode { Header = "Clear Recent File List", Action = ClearRecentFiles });
+        }
+        return items;
+    }
+
+    public static void ClearRecentFiles(PhotoEditorWindow w)
+    {
+        w.Settings.RecentFiles.Clear();
+        w.SaveSettings();
+        w.RefreshStartScreen();
+    }
 
     public static async Task NewDocumentAsync(PhotoEditorWindow w)
     {

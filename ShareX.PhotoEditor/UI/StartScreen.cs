@@ -63,12 +63,7 @@ public sealed class StartScreen : Border
 
         _clearButton.Content = ToolIcons.Create("trash", 16);
         ToolTip.SetTip(_clearButton, "Clear recent files");
-        _clearButton.Click += (_, _) =>
-        {
-            _editor.Settings.RecentFiles.Clear();
-            _editor.SaveSettings();
-            Refresh();
-        };
+        _clearButton.Click += (_, _) => Commands.EditorCommands.ClearRecentFiles(_editor);
         _viewModeButton.Click += (_, _) =>
         {
             _editor.Settings.RecentTiles = !_editor.Settings.RecentTiles;

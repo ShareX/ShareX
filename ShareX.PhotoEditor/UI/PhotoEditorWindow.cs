@@ -634,6 +634,11 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         _startScreen.IsVisible = showStart;
     }
 
+    public void RefreshStartScreen()
+    {
+        if (_startScreen.IsVisible) _startScreen.Refresh();
+    }
+
     public void ToggleToolbarColumns() => _toolbar.ToggleColumns();
 
     public void RebuildToolbar()
