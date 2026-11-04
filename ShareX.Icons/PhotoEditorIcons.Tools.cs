@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX.PhotoEditor.UI;
+namespace ShareX.Icons;
 
-public static partial class ToolIcons
+public static partial class PhotoEditorIcons
 {
     // Shared parts. Strokes are 1 px, so straight lines sit on .5 coordinates to cover whole pixels.
     private const string BrushHandle = "F:M17.5 1 L19 2.5 L11.5 10.5 L9.5 8.5 Z";

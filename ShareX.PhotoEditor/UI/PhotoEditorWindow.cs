@@ -357,8 +357,8 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         StackPanel left = new() { Orientation = Orientation.Horizontal, Spacing = 4, VerticalAlignment = VerticalAlignment.Center };
         // Tool preset button: the active tool's icon with a dropdown listing the other tools of its group.
         StackPanel presetContent = new() { Orientation = Orientation.Horizontal, Spacing = 3 };
-        presetContent.Children.Add(ToolIcons.Create(Tools.Active.Id, 20));
-        presetContent.Children.Add(ToolIcons.Create("chevron-down", 10));
+        presetContent.Children.Add(PhotoEditorIcons.Create(Tools.Active.Id.ToString(), 20));
+        presetContent.Children.Add(PhotoEditorIcons.Create("chevron-down", 10));
         Button preset = new() { Classes = { "icon" }, Content = presetContent, Padding = new Thickness(5, 3), VerticalAlignment = VerticalAlignment.Center };
         ToolTip.SetTip(preset, Tools.Active.Name);
         ToolGroup? group = Tools.FindGroup(Tools.Active);
@@ -367,7 +367,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
             MenuFlyout flyout = new();
             foreach (ToolBase tool in group.Tools)
             {
-                MenuItem item = new() { Header = tool.Name, Icon = ToolIcons.Create(tool.Id, 16) };
+                MenuItem item = new() { Header = tool.Name, Icon = PhotoEditorIcons.Create(tool.Id.ToString(), 16) };
                 ToolBase captured = tool;
                 item.Click += (_, _) => Tools.Select(captured);
                 flyout.Items.Add(item);

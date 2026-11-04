@@ -27,11 +27,11 @@ using Avalonia;
 using Avalonia.Media;
 using Avalonia.Media.Immutable;
 
-namespace ShareX.AvaloniaUI.Theming;
+namespace ShareX.Icons;
 
 /// <summary>
 /// ShareX's own vector icons, for concepts the generic Lucide glyphs don't draw well (the image editor
-/// tools). The constants go anywhere an icon string goes; <see cref="Controls.IconPresenter"/> draws them.
+/// tools). The constants go anywhere an icon string goes; ShareX.Avalonia's IconPresenter draws them.
 /// </summary>
 /// <remarks>
 /// Icons are drawn like Lucide so they sit next to its glyphs: a 24x24 grid, SVG path data, 2px strokes
@@ -66,14 +66,14 @@ public static class ShareXIcons
     public const string tool_step = "sharex:tool-step";
     public const string tool_text = "sharex:tool-text";
 
-    internal const double GridSize = 24;
+    public const double GridSize = 24;
 
     private static readonly IBrush HighlighterInk = new ImmutableSolidColorBrush(Color.FromRgb(0xFF, 0xD6, 0x0A));
 
     private static Dictionary<string, Shape[]>? _icons;
 
     /// <summary>Returns the shapes of a ShareX icon, or null if <paramref name="icon"/> is a font glyph.</summary>
-    internal static Shape[]? GetShapes(string? icon)
+    public static Shape[]? GetShapes(string? icon)
     {
         if (icon == null || !icon.StartsWith("sharex:", StringComparison.Ordinal))
         {
@@ -211,7 +211,7 @@ public static class ShareXIcons
         new(geometry, filled: true, outline, dashes: null, opacity, brush);
 
     /// <summary>A geometry filled and/or stroked in one color: the Foreground unless the shape has its own brush.</summary>
-    internal sealed class Shape(Geometry geometry, bool filled, double strokeWidth, double[]? dashes, double opacity, IBrush? brush)
+    public sealed class Shape(Geometry geometry, bool filled, double strokeWidth, double[]? dashes, double opacity, IBrush? brush)
     {
         // Avalonia dash lengths are multiples of the stroke width; SVG's are absolute.
         private readonly IDashStyle? _dashStyle = dashes == null ? null : new ImmutableDashStyle(dashes.Select(length => length / strokeWidth), 0);

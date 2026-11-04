@@ -61,7 +61,7 @@ public sealed class StartScreen : Border
         if (editor.Services.CaptureRegion != null) actions.Children.Add(LinkButton("capture-region", Strings.StartScreen_NewFromScreenshotRegion, "file.newFromRegion"));
         if (editor.Services.CaptureFullscreen != null) actions.Children.Add(LinkButton("capture-screen", Strings.EditorCommands_NewFromScreenshotFullScreen, "file.newFromScreen"));
 
-        _clearButton.Content = ToolIcons.Create("trash", 16);
+        _clearButton.Content = PhotoEditorIcons.Create("trash", 16);
         ToolTip.SetTip(_clearButton, Strings.StartScreen_ClearRecentFiles);
         _clearButton.Click += (_, _) => Commands.EditorCommands.ClearRecentFiles(_editor);
         _viewModeButton.Click += (_, _) =>
@@ -108,7 +108,7 @@ public sealed class StartScreen : Border
         _recentEmpty.IsVisible = files.Count == 0;
         _clearButton.IsEnabled = _editor.Settings.RecentFiles.Count > 0;
 
-        _viewModeButton.Content = ToolIcons.Create(tiles ? "list-view" : "tile-view", 16);
+        _viewModeButton.Content = PhotoEditorIcons.Create(tiles ? "list-view" : "tile-view", 16);
         ToolTip.SetTip(_viewModeButton, tiles ? Strings.StartScreen_ShowAsListTip : Strings.StartScreen_ShowAsTilesTip);
     }
 
@@ -132,7 +132,7 @@ public sealed class StartScreen : Border
     {
         // Grid instead of a horizontal StackPanel so the label gets a finite width and can wrap.
         Grid content = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*"), ColumnSpacing = 8 };
-        content.Children.Add(ToolIcons.Create(icon, 16));
+        content.Children.Add(PhotoEditorIcons.Create(icon, 16));
         TextBlock label = new() { Text = text, TextWrapping = TextWrapping.Wrap, VerticalAlignment = VerticalAlignment.Center };
         Grid.SetColumn(label, 1);
         content.Children.Add(label);

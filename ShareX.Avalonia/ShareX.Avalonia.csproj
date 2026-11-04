@@ -26,6 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ShareX.Icons\ShareX.Icons.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Localization\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>

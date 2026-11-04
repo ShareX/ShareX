@@ -56,7 +56,7 @@ public static class ToolbarCustomizeDialog
                     bool isSelected = selected == (gi, ii);
                     Button b = new()
                     {
-                        Content = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Children = { ToolIcons.Create(tool.Id, 16), new TextBlock { Text = tool.Name.Replace(" Tool", string.Empty), FontSize = 11 } } },
+                        Content = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Children = { PhotoEditorIcons.Create(tool.Id.ToString(), 16), new TextBlock { Text = tool.Name.Replace(" Tool", string.Empty), FontSize = 11 } } },
                         Margin = new Thickness(1),
                         Background = isSelected ? new SolidColorBrush(Color.FromRgb(0x4B, 0x4B, 0x4B)) : Brushes.Transparent
                     };
@@ -68,7 +68,7 @@ public static class ToolbarCustomizeDialog
             foreach (ToolId id in hidden)
             {
                 ToolId captured = id;
-                Button b = new() { Content = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Children = { ToolIcons.Create(id, 16), new TextBlock { Text = owner.Tools.Get(id).Name, FontSize = 11 } } }, Margin = new Thickness(1) };
+                Button b = new() { Content = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Children = { PhotoEditorIcons.Create(id.ToString(), 16), new TextBlock { Text = owner.Tools.Get(id).Name, FontSize = 11 } } }, Margin = new Thickness(1) };
                 ToolTip.SetTip(b, Strings.ToolbarCustomizeDialog_RestoreTip);
                 b.Click += (_, _) =>
                 {

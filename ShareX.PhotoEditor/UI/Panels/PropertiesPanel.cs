@@ -268,7 +268,7 @@ public sealed class PropertiesPanel : EditorPanel
             {
                 CheckBox enabled = new() { Content = filter.Name, IsChecked = filter.Enabled };
                 enabled.IsCheckedChanged += (_, _) => { filter.Enabled = enabled.IsChecked == true; Editor.Commit(Strings.PropertiesPanel_ToggleSmartFilter); };
-                Button remove = new() { Classes = { "icon" }, Content = ToolIcons.Create("close", 10), Padding = new Thickness(5), VerticalAlignment = VerticalAlignment.Center };
+                Button remove = new() { Classes = { "icon" }, Content = PhotoEditorIcons.Create("close", 10), Padding = new Thickness(5), VerticalAlignment = VerticalAlignment.Center };
                 ToolTip.SetTip(remove, Strings.PropertiesPanel_DeleteSmartFilterTip);
                 remove.Click += (_, _) => { smart.Filters.Remove(filter); Editor.Commit(Strings.PropertiesPanel_DeleteSmartFilter); Refresh(); };
                 _root.Children.Add(Row(enabled, remove));

@@ -38,6 +38,7 @@
     <Using Include="ShareX.PhotoEditor.Core" />
     <Using Include="ShareX.PhotoEditor.Imaging" />
     <Using Include="ShareX.PhotoEditor.Localization" />
+    <Using Include="ShareX.Icons" />
     <Using Include="ShareX.PhotoEditor.Imaging.SelectionMode" Alias="SelectionMode" />
     <Using Include="ShareX.PhotoEditor.Core.GradientStop" Alias="GradientStop" />
     <Using Include="ShareX.PhotoEditor.Core.TextAlignment" Alias="TextAlignment" />

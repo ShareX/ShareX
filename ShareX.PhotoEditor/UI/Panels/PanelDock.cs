@@ -247,7 +247,7 @@ public sealed class PanelDock : UserControl
         Button menuButton = new()
         {
             Classes = { "icon" },
-            Content = ToolIcons.Create("panel-menu", 12),
+            Content = PhotoEditorIcons.Create("panel-menu", 12),
             Padding = new Thickness(6, 0),
             Height = 22,
             VerticalAlignment = VerticalAlignment.Center,

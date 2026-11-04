@@ -84,7 +84,7 @@ public sealed class InfoPanel : EditorPanel
         }
         if (icon != null)
         {
-            Control image = ToolIcons.Create(icon, 16);
+            Control image = PhotoEditorIcons.Create(icon, 16);
             image.VerticalAlignment = VerticalAlignment.Top;
             image.Margin = new Thickness(0, 1, 0, 0);
             image.Opacity = 0.8;

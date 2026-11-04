@@ -128,7 +128,7 @@ public sealed partial class PhotoEditorWindow
             string mode = doc.EditingMask && doc.ActiveLayer?.Mask != null ? Strings.PhotoEditorWindow_ModeLayerMask : doc.QuickMask ? Strings.PhotoEditorWindow_ModeQuickMask : "RGB/8";
             string text = $"{doc.DisplayName.TrimEnd('*')} @ {view.Zoom * 100:0.#}% ({layer}, {mode}){(doc.IsDirty ? " *" : string.Empty)}";
 
-            Button close = new() { Classes = { "icon" }, Content = ToolIcons.Create("close", 10), Padding = new Thickness(3), Width = 16, Height = 16, VerticalAlignment = VerticalAlignment.Center, Opacity = active ? 1 : 0.6 };
+            Button close = new() { Classes = { "icon" }, Content = PhotoEditorIcons.Create("close", 10), Padding = new Thickness(3), Width = 16, Height = 16, VerticalAlignment = VerticalAlignment.Center, Opacity = active ? 1 : 0.6 };
             ToolTip.SetTip(close, Strings.EditorCommands_Close);
             close.Click += async (_, e) =>
             {

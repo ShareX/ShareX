@@ -85,7 +85,7 @@ public sealed class ToolbarControl : UserControl
     {
         bool two = _editor.Settings.ToolbarTwoColumns;
         Width = two ? ButtonWidth * 2 + 8 : Math.Max(ButtonWidth + 6, ColorWidgetWidth + 2);
-        _columnsToggle.Content = ToolIcons.Create(two ? "toolbar-collapse" : "toolbar-expand", 12);
+        _columnsToggle.Content = PhotoEditorIcons.Create(two ? "toolbar-collapse" : "toolbar-expand", 12);
         ToolTip.SetTip(_columnsToggle, two ? Strings.ToolbarControl_CollapseTip : Strings.ToolbarControl_ExpandTip);
     }
 
@@ -94,7 +94,7 @@ public sealed class ToolbarControl : UserControl
         Button button = new()
         {
             Classes = { "tool" },
-            Content = ToolIcons.Create(icon, 20),
+            Content = PhotoEditorIcons.Create(icon, 20),
             HorizontalAlignment = HorizontalAlignment.Center,
             Width = ButtonWidth - 2,
             Height = 28
@@ -150,7 +150,7 @@ public sealed class ToolbarControl : UserControl
     private Button CreateToolButton(ToolGroup group)
     {
         Grid content = new() { Width = 32, Height = 29 };
-        content.Children.Add(new ContentControl { Content = ToolIcons.Create(group.Current.Id, 20), HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center });
+        content.Children.Add(new ContentControl { Content = PhotoEditorIcons.Create(group.Current.Id.ToString(), 20), HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center });
         if (group.Tools.Count > 1)
         {
             // Small corner triangle marks tools that have a flyout.
@@ -209,7 +209,7 @@ public sealed class ToolbarControl : UserControl
             bool current = tool == group.Current;
             Grid header = new() { ColumnDefinitions = new ColumnDefinitions("10,22,*,Auto"), MinWidth = 220 };
             if (current) header.Children.Add(new Border { Width = 5, Height = 5, CornerRadius = new CornerRadius(3), Background = Brushes.White, VerticalAlignment = VerticalAlignment.Center });
-            Control icon = ToolIcons.Create(tool.Id, 16);
+            Control icon = PhotoEditorIcons.Create(tool.Id.ToString(), 16);
             Grid.SetColumn(icon, 1);
             TextBlock name = new() { Text = tool.Name, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(6, 0, 16, 0) };
             Grid.SetColumn(name, 2);
@@ -233,7 +233,7 @@ public sealed class ToolbarControl : UserControl
             button.Classes.Set("checked", group.Tools.Contains(_editor.Tools.Active));
             if (button.Content is Grid grid && grid.Children[0] is ContentControl icon)
             {
-                icon.Content = ToolIcons.Create(group.Current.Id, 20);
+                icon.Content = PhotoEditorIcons.Create(group.Current.Id.ToString(), 20);
             }
             UpdateTip(button, group.Current);
         }

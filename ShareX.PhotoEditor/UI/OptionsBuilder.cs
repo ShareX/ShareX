@@ -116,7 +116,7 @@ public sealed class OptionsBuilder
             Slider slider = new() { Minimum = min, Maximum = Math.Min(max, min + 5000), Value = (double)(box.Value ?? 0), Width = 180 };
             slider.ValueChanged += (_, e) => box.Value = (decimal)Math.Round(e.NewValue / increment) * (decimal)increment;
             box.ValueChanged += (_, e) => { if (e.NewValue is decimal v && Math.Abs(slider.Value - (double)v) > 1e-6) slider.Value = (double)v; };
-            Button drop = new() { Classes = { "icon" }, Content = ToolIcons.Create("chevron-down", 10), Padding = new Thickness(2, 4), VerticalAlignment = VerticalAlignment.Center };
+            Button drop = new() { Classes = { "icon" }, Content = PhotoEditorIcons.Create("chevron-down", 10), Padding = new Thickness(2, 4), VerticalAlignment = VerticalAlignment.Center };
             drop.Flyout = new Flyout { Content = slider, Placement = PlacementMode.BottomEdgeAlignedRight };
             field.Children.Add(drop);
         }
@@ -177,7 +177,7 @@ public sealed class OptionsBuilder
         Button button = new()
         {
             Classes = { "icon" },
-            Content = ToolIcons.Create(iconKey, 16),
+            Content = PhotoEditorIcons.Create(iconKey, 16),
             Width = 26,
             Height = 24,
             Padding = new Thickness(0),
@@ -255,7 +255,7 @@ public sealed class OptionsBuilder
             (Imaging.SelectionMode.Intersect, "sel-int", Strings.OptionsBuilder_IntersectWithSelectionTip)
         })
         {
-            Button button = new() { Classes = { "icon" }, Content = ToolIcons.Create(icon, 16), Width = 26, Height = 24, Padding = new Thickness(0), HorizontalContentAlignment = HorizontalAlignment.Center };
+            Button button = new() { Classes = { "icon" }, Content = PhotoEditorIcons.Create(icon, 16), Width = 26, Height = 24, Padding = new Thickness(0), HorizontalContentAlignment = HorizontalAlignment.Center };
             ToolTip.SetTip(button, tip);
             SelectionMode captured = mode;
             button.Click += (_, _) => { set(captured); Refresh(); };
@@ -305,7 +305,7 @@ public sealed class OptionsBuilder
         tipStack.Children.Add(tipHost);
         tipStack.Children.Add(sizeText);
         content.Children.Add(tipStack);
-        content.Children.Add(ToolIcons.Create("chevron-down", 10));
+        content.Children.Add(PhotoEditorIcons.Create("chevron-down", 10));
         Button button = new() { Classes = { "icon" }, Content = content, Padding = new Thickness(4, 0), Height = 30, VerticalAlignment = VerticalAlignment.Center };
         ToolTip.SetTip(button, Strings.OptionsBuilder_BrushPresetPickerTip);
 

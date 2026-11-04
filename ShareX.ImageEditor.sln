@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.ImageEditor.App", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Avalonia", "ShareX.Avalonia\ShareX.Avalonia.csproj", "{C9B147C0-480C-45C7-B414-9773184CCC79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareX.Icons", "ShareX.Icons\ShareX.Icons.csproj", "{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -69,6 +71,22 @@ Global
 		{C9B147C0-480C-45C7-B414-9773184CCC79}.Release|Any CPU.Build.0 = Release|x64
 		{C9B147C0-480C-45C7-B414-9773184CCC79}.Release|x86.ActiveCfg = Release|x64
 		{C9B147C0-480C-45C7-B414-9773184CCC79}.Release|x86.Build.0 = Release|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Debug|ARM64.Build.0 = Debug|ARM64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Debug|x64.ActiveCfg = Debug|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Debug|x64.Build.0 = Debug|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Debug|Any CPU.Build.0 = Debug|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Debug|x86.ActiveCfg = Debug|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Debug|x86.Build.0 = Debug|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Release|ARM64.ActiveCfg = Release|ARM64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Release|ARM64.Build.0 = Release|ARM64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Release|x64.ActiveCfg = Release|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Release|x64.Build.0 = Release|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Release|Any CPU.ActiveCfg = Release|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Release|Any CPU.Build.0 = Release|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Release|x86.ActiveCfg = Release|x64
+		{4EB25DBB-1C17-4AED-9CD5-CAF4CA597355}.Release|x86.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

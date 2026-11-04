@@ -26,17 +26,16 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Shapes;
 using Avalonia.Media;
-using ShareX.PhotoEditor.Tools;
 
-namespace ShareX.PhotoEditor.UI;
+namespace ShareX.Icons;
 
 /// <summary>
 /// Original line-art icons for the Photo editor. Each set is drawn on the pixel grid it is shown at (tools 20 px in
-/// ToolIcons.Tools.cs, interface icons 16 px, badges and chevrons 12 or 10 px) with 1 px strokes on pixel centers,
+/// PhotoEditorIcons.Tools.cs, interface icons 16 px, badges and chevrons 12 or 10 px) with 1 px strokes on pixel centers,
 /// so icons are sharp at their native size. Parts starting with "F:" are filled, "H:" are half-tone fills,
 /// "D:" are dashed strokes and the rest are solid strokes.
 /// </summary>
-public static partial class ToolIcons
+public static partial class PhotoEditorIcons
 {
     private const string LayerBrushHandle = "F:M13.5 1 L15 2.5 L9 8.5 L7.5 7 Z";
     private const string LayerBrushTip = "F:M6.5 8 L8 9.5 C8 12.5 5.5 15 1 15 C1 11.5 3 8 6.5 8 Z";
@@ -141,10 +140,6 @@ public static partial class ToolIcons
         ["chevron-right"] = ["M3 1 L7 5 L3 9"],
         ["close"] = ["M1.5 1.5 L8.5 8.5 M8.5 1.5 L1.5 8.5"]
     };
-
-    public static string KeyFor(ToolId id) => id.ToString().ToLowerInvariant();
-
-    public static Control Create(ToolId id, double size = 20) => Create(KeyFor(id), size);
 
     public static Control Create(string key, double size = 20)
     {
