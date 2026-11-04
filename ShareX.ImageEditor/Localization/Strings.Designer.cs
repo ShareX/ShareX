@@ -315,6 +315,16 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("AnnotationToolbar_Fontfamily", resourceCulture);
             }
         }
+        public static string FontFamilyPickerDropdown_SearchfontsEllipsis {
+            get {
+                return ResourceManager.GetString("FontFamilyPickerDropdown_SearchfontsEllipsis", resourceCulture);
+            }
+        }
+        public static string FontFamilyPickerDropdown_Nomatchingfonts {
+            get {
+                return ResourceManager.GetString("FontFamilyPickerDropdown_Nomatchingfonts", resourceCulture);
+            }
+        }
         public static string AnnotationToolbar_Fontsize {
             get {
                 return ResourceManager.GetString("AnnotationToolbar_Fontsize", resourceCulture);
@@ -753,6 +763,11 @@ namespace ShareX.ImageEditor.Localization {
         public static string ToolbarCustomizationItemViewModel_Image {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationItemViewModel_Image", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationItemViewModel_Clone {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationItemViewModel_Clone", resourceCulture);
             }
         }
         public static string ToolbarCustomizationItemViewModel_Emoji {

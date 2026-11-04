@@ -920,8 +920,17 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>छवि को {0} प्रारूप में एन्कोड नहीं किया जा सका।</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP बिट गहराई:</value>
+  </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>पृष्ठभूमि रंग:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>छवियाँ रूपांतरित करें</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>फ़ाइल नाम टेम्पलेट:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>छवि रूपांतरक</value>
@@ -940,6 +949,12 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 पाठ और तीखे किनारों के आसपास रंग के अधिक विवरण सुरक्षित रखता है, लेकिन आम तौर पर बड़ी फ़ाइलें बनाता है।</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>आउटपुट प्रारूप:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG बिट गहराई:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = कोई संपीड़न नहीं, 1 = सबसे तेज़, 9 = सबसे छोटी फ़ाइलें। सभी स्तरों पर गुणवत्ता बनी रहती है।</value>
@@ -967,6 +982,18 @@
   </data>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (ऊपर का पिक्सेल)</value>
+  </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>गुणवत्ता:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>संपीड़न प्रयास:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>कम मानों पर एन्कोडिंग तेज़ होती है। अधिक मान छोटे आकार की फ़ाइलें बनाते हैं। सभी मान छवि की गुणवत्ता बनाए रखते हैं।</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>हानिरहित</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>भरें</value>
@@ -2128,6 +2155,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>वीडियो-आउटपुट</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>पूर्ण स्क्रीन से बाहर निकलें</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>पूर्ण स्क्रीन</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>वीडियो लोड हो रहा है...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>आवाज़ बंद करें</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>प्लेबैक की स्थिति</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - वीडियो प्लेयर</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>आवाज़ चालू करें</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>प्लेबैक की आवाज़</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>अनुकूलित फ़ोल्डर</value>
   </data>
@@ -2224,8 +2275,8 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>वीडियो फ़ाइलें</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>अनुमानित कैश पूर्वावलोकन • रुकने पर सटीक किया जाता है</value>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>सभी फ़ाइलें (*.*)</value>
   </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
@@ -2254,9 +2305,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>ट्रिम किया गया वीडियो सहेजा जा रहा है…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>{0} के पास पूर्वावलोकन • ऑडियो प्लेबैक नहीं</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>ज्ञात और सीमित अवधि वाला वीडियो चुनें।</value>
   </data>
@@ -2266,23 +2314,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>हानिरहित</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>इस स्थान पर कोई पूर्वावलोकन फ़्रेम उपलब्ध नहीं है।</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>वीडियो खोलें…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>इस निर्यात मोड के लिए {0} एक्सटेंशन का उपयोग करें।</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows इस वीडियो को नहीं चला सका। जाँचें कि Windows इसके प्रारूप का समर्थन करता है और Windows के मीडिया घटक स्थापित हैं। {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>दोबारा एन्कोड</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>सटीक कट बिंदुओं के लिए H.264 / AAC MP4 में दोबारा एन्कोड करता है।</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>स्थिर फ़्रेम पूर्वावलोकन • ऑडियो प्लेबैक नहीं</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>चयन रीसेट करें</value>

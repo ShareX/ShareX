@@ -916,8 +916,17 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>לא ניתן לקודד את התמונה בפורמט {0}.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>עומק סיביות BMP:</value>
+  </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>צבע רקע:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>המרת תמונות</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>תבנית שם קובץ:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>ממיר תמונות</value>
@@ -936,6 +945,12 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 שומר על יותר פרטי צבע סביב טקסט וקצוות חדים, אך בדרך כלל יוצר קבצים גדולים יותר.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>תבנית פלט:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>עומק סיביות PNG:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = ללא דחיסה, 1 = המהיר ביותר, 9 = הקבצים הקטנים ביותר. כל הרמות ללא אובדן איכות.</value>
@@ -963,6 +978,18 @@
   </data>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (הפיקסל מעל)</value>
+  </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>איכות:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>מאמץ דחיסה:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>ערכים נמוכים מאפשרים קידוד מהיר יותר. ערכים גבוהים יוצרים קבצים קטנים יותר. כל הערכים שומרים על איכות התמונה.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>ללא אובדן</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>מילוי</value>
@@ -2122,6 +2149,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>יציאה ממסך מלא</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>מסך מלא</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>טוען וידאו...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>השתקה</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>מיקום ההפעלה</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - נגן וידאו</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>ביטול השתקה</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>עוצמת השמע</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>תיקייה מותאמת אישית</value>
   </data>
@@ -2218,8 +2269,8 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>קובצי סרטונים</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>תצוגה מקורבת מהמטמון • מתחדדת בעת עצירה</value>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>כל הקבצים (*.*)</value>
   </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>ביטול</value>
@@ -2248,9 +2299,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>שומר את הווידאו החתוך…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>תצוגה מקדימה ליד {0} • ללא השמעת שמע</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>בחר וידאו בעל משך ידוע וסופי.</value>
   </data>
@@ -2260,23 +2308,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>ללא אובדן</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>אין תמונת תצוגה מקדימה זמינה במיקום זה.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>פתיחת וידאו…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>השתמש בסיומת {0} עבור מצב ייצוא זה.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows לא הצליח להפעיל את הסרטון הזה. יש לוודא ש־Windows תומך בפורמט שלו ושמותקנים רכיבי המדיה של Windows. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>קידוד מחדש</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>מקודד מחדש ל-H.264 / AAC MP4 לקבלת נקודות חיתוך מדויקות.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>תצוגה מקדימה של תמונה קפואה • ללא השמעת שמע</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>איפוס הבחירה</value>

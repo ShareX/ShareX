@@ -398,6 +398,15 @@ namespace ShareX
             }
         }
 
+        public void EditImageInPhotoEditor()
+        {
+            if (IsItemSelected)
+            {
+                string[] imageFiles = SelectedItems.Where(x => x.IsImageFile).Select(x => x.Info.FilePath).ToArray();
+                if (imageFiles.Length > 0) TaskHelpers.OpenPhotoEditor(imageFiles, null);
+            }
+        }
+
         public void BeautifyImage()
         {
             if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageBeautifier(SelectedItem.Info.FilePath);

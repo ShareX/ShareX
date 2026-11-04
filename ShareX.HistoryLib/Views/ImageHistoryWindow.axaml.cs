@@ -38,6 +38,7 @@ using ShareX.HistoryLib.Localization;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -87,6 +88,7 @@ public partial class ImageHistoryWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         ThumbnailRows.ItemsSource = _rows;
+        ThumbnailRows.AddHandler(KeyDownEvent, OnWindowKeyDown, RoutingStrategies.Tunnel);
         _filterTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(220) };
         _filterTimer.Tick += OnFilterTimerTick;
     }
@@ -264,7 +266,7 @@ public partial class ImageHistoryWindow : Window
         int version = Interlocked.Increment(ref _filterVersion);
         string search = SearchTextBox.Text?.Trim() ?? string.Empty;
         bool favorites = _settings.Favorites;
-        bool imageOnly = _settings.ImageOnly;
+        bool mediaOnly = _settings.ImageOnly;
         bool filterMissing = _settings.FilterMissingFiles;
         List<HistoryItem> source = _allHistoryItems;
 
@@ -292,7 +294,7 @@ public partial class ImageHistoryWindow : Window
                     HistoryItem item = source[i];
                     if (string.IsNullOrWhiteSpace(item.FilePath)) continue;
                     if (favorites && !item.Favorite) continue;
-                    if (imageOnly && !FileHelpers.IsImageFile(item.FilePath)) continue;
+                    if (mediaOnly && !FileHelpers.IsImageFile(item.FilePath) && !FileHelpers.IsVideoFile(item.FilePath)) continue;
                     if (filterMissing && !File.Exists(item.FilePath)) continue;
                     if (regex != null && !regex.IsMatch(item.FileName ?? string.Empty) &&
                         !(item.Tags?.Values.Any(value => !string.IsNullOrEmpty(value) && regex.IsMatch(value)) == true)) continue;
@@ -536,13 +538,27 @@ public partial class ImageHistoryWindow : Window
         bool wasDragging = _dragStarted;
         _dragPointerPressed = null;
 
-        if (wasPressed && !wasDragging && !_suppressThumbnailClickAction) ShowSelectedImage();
+        if (wasPressed && !wasDragging && !_suppressThumbnailClickAction) OpenSelectedItem();
     }
 
     private void OnThumbnailDoubleTapped(object? sender, TappedEventArgs e) => OpenSelectedItem();
 
     private HistoryItem[] GetSelectedItems() => _loadedEntries.Where(entry => entry.IsSelected).Select(entry => entry.Item).ToArray();
     private HistoryItem? GetPrimaryItem() => GetSelectedItems().FirstOrDefault();
+
+    private void OnThumbnailContextMenuOpening(object? sender, CancelEventArgs e)
+    {
+        if (sender is not ContextMenu menu) return;
+
+        HistoryItem[] selected = GetSelectedItems();
+        if (selected.Length == 0)
+        {
+            e.Cancel = true;
+            return;
+        }
+
+        HistoryContextMenuHelpers.UpdateVisibility(menu, selected, _services);
+    }
 
     private void OnFavoritesClick(object? sender, RoutedEventArgs e)
     {
@@ -895,8 +911,8 @@ public partial class ImageHistoryWindow : Window
             if (ReferenceEquals(_filteredHistoryItems[i], item)) selectedIndex = files.Count;
             files.Add(path);
         }
-        if (_services.ShowImages != null) _services.ShowImages(files, selectedIndex);
-        else _services.ShowImage?.Invoke(item.FilePath);
+        if (_services.ShowImages != null) _services.ShowImages(files, selectedIndex, this);
+        else _services.ShowImage?.Invoke(item.FilePath, this);
     }
 
     private void OnOpenFileClick(object? sender, RoutedEventArgs e)
@@ -939,19 +955,20 @@ public partial class ImageHistoryWindow : Window
     private void OnCopyFileNameWithExtensionClick(object? sender, RoutedEventArgs e) => CopyValues(item => Path.GetFileName(item.FilePath));
     private void OnCopyFolderClick(object? sender, RoutedEventArgs e) => CopyValues(item => Path.GetDirectoryName(item.FilePath));
     private void OnCopyHtmlLinkClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"<a href=\"{item.URL}\">{item.URL}</a>", HasUrl);
-    private void OnCopyHtmlImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"<img src=\"{item.URL}\"/>", HasUrl);
+    private void OnCopyHtmlImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"<img src=\"{item.URL}\"/>", HasImageUrl);
     private void OnCopyHtmlLinkedImageClick(object? sender, RoutedEventArgs e) =>
         CopyValues(item => $"<a href=\"{item.URL}\"><img src=\"{item.ThumbnailURL}\"/></a>", HasLinkedImage);
     private void OnCopyForumLinkClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"[url]{item.URL}[/url]", HasUrl);
-    private void OnCopyForumImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"[img]{item.URL}[/img]", HasUrl);
+    private void OnCopyForumImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"[img]{item.URL}[/img]", HasImageUrl);
     private void OnCopyForumLinkedImageClick(object? sender, RoutedEventArgs e) =>
         CopyValues(item => $"[url={item.URL}][img]{item.ThumbnailURL}[/img][/url]", HasLinkedImage);
     private void OnCopyMarkdownLinkClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"[{item.FileName}]({item.URL})", HasUrl);
-    private void OnCopyMarkdownImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"![{item.FileName}]({item.URL})", HasUrl);
+    private void OnCopyMarkdownImageClick(object? sender, RoutedEventArgs e) => CopyValues(item => $"![{item.FileName}]({item.URL})", HasImageUrl);
     private void OnCopyMarkdownLinkedImageClick(object? sender, RoutedEventArgs e) =>
         CopyValues(item => $"[![{item.FileName}]({item.ThumbnailURL})]({item.URL})", HasLinkedImage);
     private static bool HasUrl(HistoryItem item) => !string.IsNullOrWhiteSpace(item.URL);
-    private static bool HasLinkedImage(HistoryItem item) => HasUrl(item) && !string.IsNullOrWhiteSpace(item.ThumbnailURL);
+    private static bool HasImageUrl(HistoryItem item) => HasUrl(item) && FileHelpers.IsImageFile(item.URL);
+    private static bool HasLinkedImage(HistoryItem item) => HasImageUrl(item) && !string.IsNullOrWhiteSpace(item.ThumbnailURL);
 
     private void OnCopyFileClick(object? sender, RoutedEventArgs e)
     {
@@ -975,6 +992,19 @@ public partial class ImageHistoryWindow : Window
 
     private void OnUploadFileClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.UploadFile, false);
     private void OnEditImageClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.EditImage, true);
+    private void OnTrimVideoClick(object? sender, RoutedEventArgs e)
+    {
+        HistoryItem[] items = GetSelectedItems();
+        if (items.Length == 1 && File.Exists(items[0].FilePath) && FileHelpers.IsVideoFile(items[0].FilePath))
+            _services.TrimVideo?.Invoke(items[0].FilePath);
+    }
+    private void OnTrimAnimatedGifClick(object? sender, RoutedEventArgs e)
+    {
+        HistoryItem[] items = GetSelectedItems();
+        if (items.Length == 1 && File.Exists(items[0].FilePath) &&
+            string.Equals(Path.GetExtension(items[0].FilePath), ".gif", StringComparison.OrdinalIgnoreCase))
+            _services.TrimAnimatedGif?.Invoke(items[0].FilePath);
+    }
     private void OnPinToScreenClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.PinToScreen, true);
     private void OnAnalyzeImageClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.AnalyzeImage, true);
 

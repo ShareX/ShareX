@@ -24,42 +24,33 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Input;
-using SkiaSharp;
 
 namespace ShareX.ImageEditor.Presentation.EasterEggs;
 
 internal sealed class EditorEasterEggController : IDisposable
 {
     private readonly KonamiCodeDetector _detector = new();
-    private readonly Func<SKBitmap?> _snapshotProvider;
     private readonly ShaderEasterEggPlayer _player;
     private readonly Action? _activated;
 
     public EditorEasterEggController(
         ShaderEasterEggOverlay overlay,
-        Func<SKBitmap?> snapshotProvider,
         IShaderEasterEggEffect effect,
         Action? activated = null)
     {
-        _snapshotProvider = snapshotProvider;
         _player = new ShaderEasterEggPlayer(overlay, effect);
         _activated = activated;
     }
 
     /// <summary>
-    /// Returns true only when the editor should suppress normal handling: while playback is
-    /// active, when Escape cancels playback, or for the final key that activates the effect.
+    /// Suppresses only the final activation key. Once enabled, the display effect stays active
+    /// while normal editor shortcuts (including Escape) continue to work.
     /// </summary>
     public bool HandleKeyDown(Key key, KeyModifiers modifiers)
     {
         if (_player.IsPlaying)
         {
-            if (key == Key.Escape && modifiers == KeyModifiers.None)
-            {
-                _player.Stop();
-            }
-
-            return true;
+            return false;
         }
 
         if (modifiers != KeyModifiers.None)
@@ -73,8 +64,7 @@ internal sealed class EditorEasterEggController : IDisposable
             return false;
         }
 
-        SKBitmap? snapshot = _snapshotProvider();
-        if (snapshot == null || !_player.Play(snapshot))
+        if (!_player.Play())
         {
             return false;
         }

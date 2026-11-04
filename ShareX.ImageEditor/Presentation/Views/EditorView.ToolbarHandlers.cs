@@ -186,7 +186,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             if (DataContext is MainViewModel vm)
             {
                 vm.SelectedFontFamily = fontFamily;
-                ApplySelectedFontFamily(fontFamily);
+                ApplySelectedFontFamily(vm.SelectedFontFamily);
             }
         }
 

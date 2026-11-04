@@ -634,6 +634,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>エクスプローラのコンテキストメニューに「ShareXで画像編集」を表示</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>エクスプローラのコンテキストメニューに「ShareX フォトエディターで編集」を表示</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>大きなファイルの警告しきい値（MB）</value>
   </data>
@@ -1340,6 +1343,9 @@
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>ShareX で画像編集</value>
   </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>ShareX フォトエディターで編集</value>
+  </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>ShareX でアップロード</value>
   </data>
@@ -1544,6 +1550,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>開く</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>フォトエディター</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>最前面に固定</value>
   </data>
@@ -1591,6 +1600,9 @@
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>ShareX を表示</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>統計...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>タスクの設定</value>
@@ -1649,6 +1661,9 @@
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>動画の変換</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>動画プレーヤー...</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>動画のサムネイル作成</value>
   </data>
@@ -1705,6 +1720,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>画像エディタで編集</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>フォトエディターで編集...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ファイル</value>
@@ -1848,7 +1866,7 @@
     <value>サムネイルURL</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>アニメーションGIFをトリミング</value>
+    <value>アニメーションGIFをトリミング...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>動画をトリミング...</value>
@@ -1973,6 +1991,75 @@
   </data>
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>スクリーン カラーピッカー</value>
+  </data>
+  <data name="ScreenRecorderBar_Bar" xml:space="preserve">
+    <value>バー</value>
+  </data>
+  <data name="ScreenRecorderBar_Camera" xml:space="preserve">
+    <value>カメラ</value>
+  </data>
+  <data name="ScreenRecorderBar_Capture" xml:space="preserve">
+    <value>キャプチャ</value>
+  </data>
+  <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
+    <value>カーソル</value>
+  </data>
+  <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
+    <value>レイアウトのプレビュー</value>
+  </data>
+  <data name="ScreenRecorderBar_Microphone" xml:space="preserve">
+    <value>マイク</value>
+  </data>
+  <data name="ScreenRecorderBar_Off" xml:space="preserve">
+    <value>オフ</value>
+  </data>
+  <data name="ScreenRecorderBar_On" xml:space="preserve">
+    <value>オン</value>
+  </data>
+  <data name="ScreenRecorderBar_Options" xml:space="preserve">
+    <value>オプション</value>
+  </data>
+  <data name="ScreenRecorderBar_Overlay" xml:space="preserve">
+    <value>オーバーレイ</value>
+  </data>
+  <data name="ScreenRecorderBar_Record" xml:space="preserve">
+    <value>録画</value>
+  </data>
+  <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
+    <value>デバイスを更新</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
+    <value>録画前に録画バーを表示</value>
+  </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>{0}のオプション</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>開始遅延</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1 秒</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2 秒</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3 秒</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4 秒</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5 秒</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
+    <value>システム音声</value>
+  </data>
+  <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
+    <value>録画対象として選択したウィンドウは利用できなくなりました。</value>
+  </data>
+  <data name="ScreenRecorderBar_Volume" xml:space="preserve">
+    <value>録音音量 (%)</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>スクリーンショットを{0}秒後に起動する</value>
@@ -2162,6 +2249,9 @@
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>画面キャプチャ時に自動的に非表示</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP ビット深度:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>背景の暗さ（%）:</value>
   </data>
@@ -2251,6 +2341,9 @@
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>ウィンドウ範囲を検出</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>カーソル下のウィンドウとコントロールを暗くする</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>全画面表示時に通知を無効化</value>
@@ -2458,6 +2551,81 @@
   </data>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>名前パターン</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>内蔵の画面録画機能</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>動画のビットレート (kbps):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera" xml:space="preserve">
+    <value>カメラのオーバーレイ</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Circle" xml:space="preserve">
+    <value>円</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_DefaultDevice" xml:space="preserve">
+    <value>最初に利用可能なカメラ</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Device" xml:space="preserve">
+    <value>カメラ:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Enabled" xml:space="preserve">
+    <value>カメラのオーバーレイを表示</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_FPS" xml:space="preserve">
+    <value>カメラの FPS:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Margin" xml:space="preserve">
+    <value>余白 (ピクセル):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_NoDevices" xml:space="preserve">
+    <value>カメラが検出されませんでした</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Rectangle" xml:space="preserve">
+    <value>長方形</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Resolution" xml:space="preserve">
+    <value>キャプチャ解像度:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Shape" xml:space="preserve">
+    <value>形状:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice" xml:space="preserve">
+    <value>カメラを利用できません</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Width" xml:space="preserve">
+    <value>幅 (録画の %):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>既定のマイク</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice" xml:space="preserve">
+    <value>既定の出力デバイス</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>内蔵の画面録画機能を使用する</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>動画のハードウェアエンコードを必須にする</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>マイクを録音する</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>マイク:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>システム音声を録音する</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudioDevice" xml:space="preserve">
+    <value>システム音声デバイス:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>利用できないマイク</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice" xml:space="preserve">
+    <value>利用できない出力デバイス</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>いいえ</value>
@@ -2750,9 +2918,6 @@
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>開始遅延（秒）:</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>遅延後に録画を開始</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>タスク</value>
   </data>
@@ -2854,6 +3019,9 @@
   </data>
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>正方形の拡大鏡を使用</value>
+  </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>開始遅延を使用する</value>
   </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — サブフォルダーを含める: {2}</value>

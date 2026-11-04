@@ -634,6 +634,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows 탐색기의 컨택스트 메뉴에 "ShareX로 편집"버튼 표시</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Windows 탐색기의 컨택스트 메뉴에 "ShareX 사진 편집기에서 편집" 버튼 표시</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>대용량 파일 경고 기준(MB)</value>
   </data>
@@ -1340,6 +1343,9 @@
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>ShareX로 편집하기</value>
   </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>ShareX 사진 편집기에서 편집</value>
+  </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>ShareX로 업로드</value>
   </data>
@@ -1544,6 +1550,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>열기</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>사진 편집기</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>화면에 고정</value>
   </data>
@@ -1591,6 +1600,9 @@
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>ShareX 표시</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>통계...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>작업 설정</value>
@@ -1649,6 +1661,9 @@
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>비디오 변환기</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>동영상 플레이어...</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>비디오 섬네일 생성기</value>
   </data>
@@ -1705,6 +1720,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>편집 이미지</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>사진 편집기에서 편집...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>파일</value>
@@ -1848,7 +1866,7 @@
     <value>썸네일 URL</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>애니메이션 GIF 자르기</value>
+    <value>애니메이션 GIF 자르기...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>동영상 자르기...</value>
@@ -1973,6 +1991,75 @@
   </data>
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>화면 색상 picker</value>
+  </data>
+  <data name="ScreenRecorderBar_Bar" xml:space="preserve">
+    <value>바</value>
+  </data>
+  <data name="ScreenRecorderBar_Camera" xml:space="preserve">
+    <value>카메라</value>
+  </data>
+  <data name="ScreenRecorderBar_Capture" xml:space="preserve">
+    <value>캡처</value>
+  </data>
+  <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
+    <value>커서</value>
+  </data>
+  <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
+    <value>레이아웃 미리 보기</value>
+  </data>
+  <data name="ScreenRecorderBar_Microphone" xml:space="preserve">
+    <value>마이크</value>
+  </data>
+  <data name="ScreenRecorderBar_Off" xml:space="preserve">
+    <value>꺼짐</value>
+  </data>
+  <data name="ScreenRecorderBar_On" xml:space="preserve">
+    <value>켜짐</value>
+  </data>
+  <data name="ScreenRecorderBar_Options" xml:space="preserve">
+    <value>옵션</value>
+  </data>
+  <data name="ScreenRecorderBar_Overlay" xml:space="preserve">
+    <value>오버레이</value>
+  </data>
+  <data name="ScreenRecorderBar_Record" xml:space="preserve">
+    <value>녹화</value>
+  </data>
+  <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
+    <value>장치 새로 고침</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
+    <value>녹화 전에 녹화 바 표시</value>
+  </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>{0} 옵션</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>시작 지연</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1초</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2초</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3초</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4초</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5초</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
+    <value>시스템 오디오</value>
+  </data>
+  <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
+    <value>녹화 대상으로 선택한 창을 더 이상 사용할 수 없습니다.</value>
+  </data>
+  <data name="ScreenRecorderBar_Volume" xml:space="preserve">
+    <value>녹음 볼륨 (%)</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>스크린샷 delay: {0}s</value>
@@ -2162,6 +2249,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>화면 캡처 시 자동으로 숨기기</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP 비트 깊이:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>배경 어둡기 강도(%):</value>
   </data>
@@ -2251,6 +2341,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>창 영역 감지</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>커서 아래의 창과 컨트롤 어둡게 하기</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>전체 화면에서 알림 비활성화</value>
@@ -2458,6 +2551,81 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>이름 패턴</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>내장 화면 녹화 기능</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>동영상 비트 전송률 (kbps):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera" xml:space="preserve">
+    <value>카메라 오버레이</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Circle" xml:space="preserve">
+    <value>원</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_DefaultDevice" xml:space="preserve">
+    <value>사용 가능한 첫 번째 카메라</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Device" xml:space="preserve">
+    <value>카메라:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Enabled" xml:space="preserve">
+    <value>카메라 오버레이 표시</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_FPS" xml:space="preserve">
+    <value>카메라 FPS:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Margin" xml:space="preserve">
+    <value>여백 (픽셀):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_NoDevices" xml:space="preserve">
+    <value>감지된 카메라 없음</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Rectangle" xml:space="preserve">
+    <value>사각형</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Resolution" xml:space="preserve">
+    <value>캡처 해상도:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Shape" xml:space="preserve">
+    <value>모양:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice" xml:space="preserve">
+    <value>카메라를 사용할 수 없음</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Width" xml:space="preserve">
+    <value>너비 (녹화의 %):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>기본 마이크</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice" xml:space="preserve">
+    <value>기본 출력 장치</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>내장 화면 녹화 기능 사용</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>동영상 하드웨어 인코딩 필수</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>마이크 녹음</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>마이크:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>시스템 오디오 녹음</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudioDevice" xml:space="preserve">
+    <value>시스템 오디오 장치:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>사용할 수 없는 마이크</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice" xml:space="preserve">
+    <value>사용할 수 없는 출력 장치</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>아니요</value>
@@ -2750,9 +2918,6 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>시작 지연 시간(초):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>지연 후 녹화 시작</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>작업</value>
   </data>
@@ -2854,6 +3019,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>정사각형 돋보기 사용</value>
+  </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>시작 지연 사용</value>
   </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — 하위 폴더 포함: {2}</value>

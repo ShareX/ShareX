@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>Inicio</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>Detectar automáticamente</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 bit</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 bit</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>Guión</value>
   </data>
@@ -525,6 +534,9 @@
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Error al cambiar el nombre del archivo:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Cuantificador adaptativo de 256 colores</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Cuantificador Octree de 16 colores</value>
   </data>
@@ -740,6 +752,9 @@
   </data>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Pausar grabacióñ de pantalla</value>
+  </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Editor de fotos</value>
   </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Fijar a pantalla</value>

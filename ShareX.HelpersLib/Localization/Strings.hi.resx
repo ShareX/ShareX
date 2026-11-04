@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>आरंभ करें</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>स्वतः पहचानें</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 बिट</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 बिट</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>डैश</value>
   </data>
@@ -525,6 +534,9 @@
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>फ़ाइल का नाम बदलने में त्रुटि:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>अनुकूली क्वांटाइज़र, 256 रंग</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>ऑक्ट्री क्वांटाइज़र 16 रंग</value>
   </data>
@@ -740,6 +752,9 @@
   </data>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>स्क्रीन रिकॉर्डिंग रोकें</value>
+  </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>फ़ोटो संपादक</value>
   </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>स्क्रीन पर पिन करें</value>

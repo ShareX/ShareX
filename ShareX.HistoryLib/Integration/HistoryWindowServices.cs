@@ -25,6 +25,7 @@
 
 #nullable enable
 
+using Avalonia.Controls;
 using System;
 using System.Collections.Generic;
 
@@ -34,8 +35,10 @@ public sealed class HistoryWindowServices
 {
     public Action<string>? UploadFile { get; init; }
     public Action<string>? EditImage { get; init; }
+    public Action<string>? TrimVideo { get; init; }
+    public Action<string>? TrimAnimatedGif { get; init; }
     public Action<string>? PinToScreen { get; init; }
     public Action<string>? AnalyzeImage { get; init; }
-    public Action<string>? ShowImage { get; init; }
-    public Action<IReadOnlyList<string>, int>? ShowImages { get; init; }
+    public Action<string, Window>? ShowImage { get; init; }
+    public Action<IReadOnlyList<string>, int, Window>? ShowImages { get; init; }
 }

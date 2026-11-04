@@ -23,10 +23,13 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia;
 using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.Platform;
+using ShareX.Platform.Imaging;
 using ShareX.Tools.Localization;
 
 namespace ShareX.Tools;
@@ -36,22 +39,28 @@ public sealed record VideoTrimmerThumbnail(double Position, Bitmap Image);
 public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
 {
     private readonly VideoTrimmerService _service;
+    // Null in tests and where the system has no video playback.
+    private readonly VideoView? _player;
+    private readonly Func<string?>? _resolveFFmpegPath;
     private readonly Func<FeatureSupport> _getSupport;
     private readonly Action? _playNotificationSound;
     private readonly CancellationTokenSource _lifetime = new();
-    private readonly SemaphoreSlim _previewGate = new(1);
     private readonly List<VideoTrimmerThumbnail> _thumbnails = [];
+    // Without the system's video playback (Linux, macOS), FFmpeg decodes still frames for the preview.
+    private readonly SemaphoreSlim _previewGate = new(1);
     private readonly LinkedList<(long Key, Bitmap Image)> _frames = [];
-    private CancellationTokenSource? _loadCancellation;
     private CancellationTokenSource? _seekCancellation;
+    private CancellationTokenSource? _loadCancellation;
     private CancellationTokenSource? _exportCancellation;
     private bool _disposed;
+    private bool _updatingPlaybackPosition;
 
     [ObservableProperty] private string _inputFilePath = string.Empty;
     [ObservableProperty] private double _duration;
     [ObservableProperty] private double _position;
     [ObservableProperty] private double _start;
     [ObservableProperty] private double _end;
+    [ObservableProperty] private bool _isPlaying;
     [ObservableProperty] private Bitmap? _preview;
     [ObservableProperty] private string _previewText = Strings.VideoTrimmer_PreviewHint;
     [ObservableProperty] private string _statusText = Strings.VideoTrimmer_ChooseVideo;
@@ -61,23 +70,40 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     [ObservableProperty] private bool _isExporting;
     [ObservableProperty] private double _progress;
 
-    public VideoTrimmerViewModel(string ffmpegPath, Action? playNotificationSound = null,
-        Func<FeatureSupport>? getSupport = null)
+    public VideoTrimmerViewModel(string ffmpegPath, VideoView? player = null, Action? playNotificationSound = null,
+        Func<string?>? resolveFFmpegPath = null, Func<FeatureSupport>? getSupport = null, bool? nativePlayback = null)
     {
         _service = new(ffmpegPath);
-        _getSupport = getSupport ?? (() => FileMediaFeatureSupport.Get(ffmpegPath));
+        _player = player;
+        _resolveFFmpegPath = resolveFFmpegPath;
+        UsesNativePlayback = player != null && (nativePlayback ?? VideoView.IsSupported);
+        // Native playback opens videos without FFmpeg, which is needed only to export. FFmpeg previews need it to load.
+        _getSupport = getSupport ?? (() => UsesNativePlayback ? FeatureSupport.Supported : FileMediaFeatureSupport.Get(ffmpegPath));
         _playNotificationSound = playNotificationSound;
+        if (_player != null)
+        {
+            _player.PositionChanged += UpdatePlaybackPosition;
+            _player.IsPlayingChanged += UpdatePlaybackState;
+            _player.PlaybackFailed += HandlePlaybackFailure;
+        }
     }
 
     public Func<Task<string?>>? SelectInputRequested { get; set; }
     public Func<string, Task<string?>>? SelectOutputRequested { get; set; }
     public Action<string>? ShowErrorRequested { get; set; }
     public IReadOnlyList<VideoTrimmerThumbnail> Thumbnails => _thumbnails;
+    public bool HasVideo => Duration > 0;
+    public bool HasStatus => !string.IsNullOrEmpty(StatusText);
+    public string PlayActionText => IsPlaying ? Strings.AnimatedGifTrimmer_Pause : Strings.AnimatedGifTrimmer_Play;
+    /// <summary>True when the system plays the video (Windows); otherwise FFmpeg shows still frames and there is no playback.</summary>
+    public bool UsesNativePlayback { get; }
+    public bool ShowsFramePreview => HasVideo && !UsesNativePlayback;
+    public bool ShowsPlayer => HasVideo && UsesNativePlayback;
     public FeatureSupport Support => FileMediaFeatureSupport.ForUI(_getSupport());
     public string? SupportReason => _disposed ? null : Support.Reason;
     public bool CanSelect => !_disposed && Support.IsSupported;
-    public bool HasVideo => Duration > 0;
     public bool CanEdit => CanSelect && HasVideo && !IsExporting;
+    public bool CanPlay => CanEdit && UsesNativePlayback;
     public bool CanTrim => CanEdit && (Start >= 0.001 || End <= Duration - 0.001);
     public bool CanBrowse => CanSelect && !IsExporting;
     public bool IsWorking => IsLoading || IsExporting;
@@ -152,12 +178,13 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         if (!CheckSupport() || !CanBrowse) return;
         _loadCancellation?.Cancel();
         _seekCancellation?.Cancel();
+        if (UsesNativePlayback) _player!.Unload();
         using CancellationTokenSource cancellation = CancellationTokenSource.CreateLinkedTokenSource(_lifetime.Token);
         _loadCancellation = cancellation;
         CancellationToken token = cancellation.Token;
         Duration = 0;
         Position = Start = End = 0;
-        ClearFrames();
+        ClearThumbnails();
         InputFilePath = file;
         OutputFilePath = string.Empty;
         IsLoading = true;
@@ -165,31 +192,36 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         try
         {
             if (!File.Exists(file)) throw new FileNotFoundException(Strings.VideoTrimmer_InvalidVideo);
-            if (!CheckSupport()) return;
-            double duration = await _service.GetDurationAsync(file, token);
-            token.ThrowIfCancellationRequested();
-            if (!CheckSupport()) return;
-            Duration = duration;
-            End = duration;
-            Position = 0;
-            // A fixed number of sparse input seeks bounds work even for hours-long recordings.
-            // One background worker builds the overview; a separate serialized worker refines seeks.
-            for (int i = 0; i < 12; i++)
+            if (!UsesNativePlayback)
             {
-                if (!CheckSupport()) return;
-                double position = duration * i / 12;
-                byte[] bytes = await _service.GetFrameAsync(file, position, token);
+                await LoadFramePreviewAsync(file, token);
+                return;
+            }
+            VideoPlaybackInfo info = await _player!.LoadAsync(file, token);
+            token.ThrowIfCancellationRequested();
+            _updatingPlaybackPosition = true;
+            try
+            {
+                Duration = info.Duration;
+                End = info.Duration;
+                Position = 0;
+            }
+            finally { _updatingPlaybackPosition = false; }
+            // The filmstrip has its own persistent decoder. Building it cannot move the playback cursor.
+            // Thumbnail failures are nonfatal; native playback may support formats the reader cannot convert.
+            try
+            {
+                IReadOnlyList<VideoThumbnail> thumbnails = await PlatformServices.Current.VideoPlayback.CreateThumbnailsAsync(file, info.Duration, 12, token);
                 token.ThrowIfCancellationRequested();
-                if (!CheckSupport()) return;
-                using MemoryStream stream = new(bytes);
-                Bitmap bitmap = new(stream);
-                _thumbnails.Add(new(position, bitmap));
+                if (_disposed) return;
+                _thumbnails.AddRange(thumbnails.Select(thumbnail => new VideoTrimmerThumbnail(thumbnail.Position, ToBitmap(thumbnail.Image))));
                 OnPropertyChanged(nameof(Thumbnails));
-                if (Preview == null)
-                {
-                    Preview = bitmap;
-                    PreviewText = Strings.VideoTrimmer_CachedPreview;
-                }
+            }
+            catch (OperationCanceledException) { throw; }
+            catch (Exception ex)
+            {
+                token.ThrowIfCancellationRequested();
+                System.Diagnostics.Debug.WriteLine(ex);
             }
 
             StatusText = string.Empty;
@@ -197,7 +229,11 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         catch (OperationCanceledException) { }
         catch (Exception ex)
         {
-            if (!token.IsCancellationRequested) StatusText = ex.Message;
+            if (!token.IsCancellationRequested)
+            {
+                StatusText = string.Format(Strings.VideoTrimmer_PlaybackError, ex.Message);
+                ShowErrorRequested?.Invoke(StatusText);
+            }
         }
         finally
         {
@@ -218,7 +254,41 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         }
 
         OnPropertyChanged(nameof(PositionText));
-        if (HasVideo && CanSelect) _ = RefreshPreviewAsync();
+        if (!HasVideo || _disposed || _updatingPlaybackPosition) return;
+        if (UsesNativePlayback) _player!.Seek(value);
+        else if (CanSelect) _ = RefreshPreviewAsync();
+    }
+
+    /// <summary>Duration and a filmstrip through FFmpeg, for systems without video playback.</summary>
+    private async Task LoadFramePreviewAsync(string file, CancellationToken token)
+    {
+        if (!CheckSupport()) return;
+        double duration = await _service.GetDurationAsync(file, token);
+        token.ThrowIfCancellationRequested();
+        if (!CheckSupport()) return;
+        Duration = duration;
+        End = duration;
+        Position = 0;
+        // A fixed number of sparse input seeks bounds work even for hours-long recordings.
+        for (int i = 0; i < 12; i++)
+        {
+            if (!CheckSupport()) return;
+            double position = duration * i / 12;
+            byte[] bytes = await _service.GetFrameAsync(file, position, token);
+            token.ThrowIfCancellationRequested();
+            if (!CheckSupport()) return;
+            using MemoryStream stream = new(bytes);
+            Bitmap bitmap = new(stream);
+            _thumbnails.Add(new(position, bitmap));
+            OnPropertyChanged(nameof(Thumbnails));
+            if (Preview == null)
+            {
+                Preview = bitmap;
+                PreviewText = Strings.VideoTrimmer_CachedPreview;
+            }
+        }
+
+        StatusText = string.Empty;
     }
 
     private async Task RefreshPreviewAsync()
@@ -282,6 +352,58 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         }
     }
 
+    private static unsafe Bitmap ToBitmap(PixelBuffer image)
+    {
+        fixed (byte* pixels = image.Pixels)
+        {
+            return new Bitmap(PixelFormat.Bgra8888, AlphaFormat.Unpremul, (IntPtr)pixels, new PixelSize(image.Width, image.Height),
+                new Vector(96, 96), image.Stride);
+        }
+    }
+
+    private void UpdatePlaybackPosition(double position)
+    {
+        if (_disposed || !HasVideo) return;
+        bool reachedEnd = IsPlaying && position >= End;
+        if (reachedEnd) _player!.Pause();
+        _updatingPlaybackPosition = true;
+        try
+        {
+            Position = reachedEnd ? End : position;
+        }
+        finally { _updatingPlaybackPosition = false; }
+        if (reachedEnd) _player!.Seek(End);
+    }
+
+    private void UpdatePlaybackState(bool playing) => IsPlaying = playing;
+
+    private void HandlePlaybackFailure(Exception error)
+    {
+        if (_disposed) return;
+        _loadCancellation?.Cancel();
+        Duration = 0;
+        ClearThumbnails();
+        StatusText = string.Format(Strings.VideoTrimmer_PlaybackError, error.Message);
+        ShowErrorRequested?.Invoke(StatusText);
+    }
+
+    [RelayCommand]
+    private void TogglePlay()
+    {
+        if (!CanPlay) return;
+        if (IsPlaying) _player!.Pause();
+        else
+        {
+            if (Position < Start || Position >= End - 0.001) Position = Start;
+            _player!.Play();
+        }
+    }
+
+    [RelayCommand] private void StepBackward() { if (CanPlay) _player!.StepFrame(false); }
+    [RelayCommand] private void StepForward() { if (CanPlay) _player!.StepFrame(true); }
+    partial void OnIsPlayingChanged(bool value) => OnPropertyChanged(nameof(PlayActionText));
+    partial void OnStatusTextChanged(string value) => OnPropertyChanged(nameof(HasStatus));
+
     partial void OnStartChanged(double value)
     {
         double clamped = double.IsFinite(value) ? Math.Clamp(value, 0, Math.Max(0, End - MinimumSelection)) : 0;
@@ -310,6 +432,9 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     partial void OnDurationChanged(double value)
     {
         OnPropertyChanged(nameof(HasVideo));
+        OnPropertyChanged(nameof(ShowsFramePreview));
+        OnPropertyChanged(nameof(ShowsPlayer));
+        OnPropertyChanged(nameof(CanPlay));
         OnPropertyChanged(nameof(CanEdit));
         OnPropertyChanged(nameof(CanTrim));
         OnPropertyChanged(nameof(CanUsePrimaryAction));
@@ -324,7 +449,9 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     partial void OnIsLoadingChanged(bool value) => OnPropertyChanged(nameof(IsWorking));
     partial void OnIsExportingChanged(bool value)
     {
+        if (value && UsesNativePlayback) _player!.Pause();
         OnPropertyChanged(nameof(CanEdit));
+        OnPropertyChanged(nameof(CanPlay));
         OnPropertyChanged(nameof(CanTrim));
         OnPropertyChanged(nameof(CanBrowse));
         OnPropertyChanged(nameof(IsWorking));
@@ -340,9 +467,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     [RelayCommand]
     private void Cancel()
     {
-        if (_disposed) return;
         _loadCancellation?.Cancel();
-        _seekCancellation?.Cancel();
         _exportCancellation?.Cancel();
         if (!IsExporting) StatusText = Strings.VideoTrimmer_Cancelled;
     }
@@ -357,14 +482,19 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         string? errorMessage = null;
         try
         {
+            // Playback can open without FFmpeg installed. Resolve/download the configured executable only for export.
+            if (_resolveFFmpegPath != null)
+            {
+                string? ffmpegPath = _resolveFFmpegPath();
+                if (string.IsNullOrEmpty(ffmpegPath)) return;
+                _service.FFmpegPath = ffmpegPath;
+            }
             string extension = Precise ? ".mp4" : Path.GetExtension(InputFilePath);
             if (!CheckSupport()) return;
             string? output = await SelectOutputRequested(Path.GetFileNameWithoutExtension(InputFilePath) + "-trimmed" + extension);
-            if (output == null) return;
+            if (output == null || !CheckSupport()) return;
             cancellation.Token.ThrowIfCancellationRequested();
-            if (!CheckSupport()) return;
             _loadCancellation?.Cancel();
-            _seekCancellation?.Cancel();
             Progress = 0;
             StatusText = Strings.VideoTrimmer_Exporting;
             if (!CheckSupport()) return;
@@ -403,21 +533,22 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         OnPropertyChanged(nameof(CanSelect));
         OnPropertyChanged(nameof(CanBrowse));
         OnPropertyChanged(nameof(CanEdit));
+        OnPropertyChanged(nameof(CanPlay));
         OnPropertyChanged(nameof(CanTrim));
         OnPropertyChanged(nameof(CanUsePrimaryAction));
         if (!support.IsSupported && !_disposed) StatusText = support.Reason!;
         return support.IsSupported;
     }
 
-    private void ClearFrames()
+    private void ClearThumbnails()
     {
         Preview = null;
+        PreviewText = Strings.VideoTrimmer_PreviewHint;
         foreach (var thumbnail in _thumbnails) thumbnail.Image.Dispose();
         _thumbnails.Clear();
         foreach (var frame in _frames) frame.Image.Dispose();
         _frames.Clear();
         OnPropertyChanged(nameof(Thumbnails));
-        PreviewText = Strings.VideoTrimmer_PreviewHint;
     }
 
     public void Dispose()
@@ -426,6 +557,14 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         _disposed = true;
         _lifetime.Cancel();
         _lifetime.Dispose();
-        ClearFrames();
+        OnPropertyChanged(nameof(SupportReason));
+        if (_player != null)
+        {
+            _player.PositionChanged -= UpdatePlaybackPosition;
+            _player.IsPlayingChanged -= UpdatePlaybackState;
+            _player.PlaybackFailed -= HandlePlaybackFailure;
+            _player.Dispose();
+        }
+        ClearThumbnails();
     }
 }

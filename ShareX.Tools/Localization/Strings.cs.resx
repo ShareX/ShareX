@@ -920,8 +920,17 @@ Cesta k souboru: {0}</value>
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>Obrázek se nepodařilo zakódovat do formátu {0}.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>Bitová hloubka BMP:</value>
+  </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Barva pozadí:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Převést obrázky</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Šablona názvu souboru:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Převodník obrázků</value>
@@ -940,6 +949,12 @@ Cesta k souboru: {0}</value>
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 zachovává více barevných detailů kolem textu a ostrých hran, ale obvykle vytváří větší soubory.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Výstupní formát:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>Bitová hloubka PNG:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = bez komprese, 1 = nejrychlejší, 9 = nejmenší soubory. Všechny úrovně jsou bezeztrátové.</value>
@@ -967,6 +982,18 @@ Cesta k souboru: {0}</value>
   </data>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (pixel nahoře)</value>
+  </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Kvalita:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Úsilí při kompresi:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Nižší hodnoty zrychlují kódování. Vyšší hodnoty vytvářejí menší soubory. Všechny hodnoty zachovávají kvalitu obrazu.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Bezeztrátový</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Vyplnit</value>
@@ -2128,6 +2155,30 @@ Cesta k souboru: {0}</value>
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>vystup-videa</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>Ukončit režim celé obrazovky</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>Celá obrazovka</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>Načítání videa...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>Ztlumit</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>Pozice přehrávání</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - Přehrávač videa</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>Zapnout zvuk</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>Hlasitost přehrávání</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>Vlastní složka</value>
   </data>
@@ -2224,8 +2275,8 @@ Cesta k souboru: {0}</value>
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Soubory videa</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Přibližný náhled z mezipaměti • po pozastavení se zpřesní</value>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>Všechny soubory (*.*)</value>
   </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Zrušit</value>
@@ -2254,9 +2305,6 @@ Cesta k souboru: {0}</value>
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Ukládání oříznutého videa…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Náhled poblíž {0} • bez přehrávání zvuku</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Vyberte video se známou konečnou délkou.</value>
   </data>
@@ -2266,23 +2314,20 @@ Cesta k souboru: {0}</value>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Bezeztrátový</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>Na této pozici není k dispozici žádný náhledový snímek.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Otevřít video…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Pro tento režim exportu použijte příponu {0}.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows nemohl přehrát toto video. Ověřte, že Windows podporuje jeho formát a že jsou nainstalovány mediální součásti Windows. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Překódování</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Překóduje do H.264 / AAC MP4 pro přesné body střihu.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Náhled statického snímku • bez přehrávání zvuku</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Obnovit výběr</value>

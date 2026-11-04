@@ -1155,6 +1155,12 @@ Udklipsholder indeholder intet billede.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Prøv et andet søgeord.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Ingen matchende skrifttyper</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Søg efter skrifttyper...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Indsæt billedet nedenfor</value>
   </data>
@@ -1400,6 +1406,9 @@ Udklipsholder indeholder intet billede.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Sløring</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Klon</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Beskær</value>

@@ -43,6 +43,7 @@ public partial class ScrollingCaptureRegionWindow : Window
 
     private readonly int _frameWidth;
     private readonly int _frameHeight;
+    private readonly PixelPoint _initialPosition;
     private double _windowScaling = 1;
     private bool _closed;
 
@@ -55,11 +56,12 @@ public partial class ScrollingCaptureRegionWindow : Window
     {
         _frameWidth = regionRectangle.Width + BorderPixels * 2;
         _frameHeight = regionRectangle.Height + BorderPixels * 2;
-
-        InitializeComponent();
-        Position = new PixelPoint(
+        _initialPosition = new PixelPoint(
             regionRectangle.X - BorderPixels,
             regionRectangle.Y - BorderPixels);
+
+        InitializeComponent();
+        Position = _initialPosition;
         ConfigureGeometry(1);
 
         Opened += OnOpened;
@@ -75,7 +77,8 @@ public partial class ScrollingCaptureRegionWindow : Window
     private void OnOpened(object? sender, EventArgs e)
     {
         if (_closed) return;
-        ConfigureGeometry(WindowScaling.GetPositionScaling(RenderScaling));
+        ConfigureGeometry(GetScreenScaling());
+        Helpers.EnsureWindowPosition(this, _initialPosition.X, _initialPosition.Y);
         ApplyClickThroughToolWindowStyle();
         ApplyNativeFrameRegion();
         Dispatcher.UIThread.Post(ApplyNativeFrameRegion, DispatcherPriority.Loaded);
@@ -93,8 +96,18 @@ public partial class ScrollingCaptureRegionWindow : Window
     private void OnScalingChanged(object? sender, EventArgs e)
     {
         if (_closed) return;
-        ConfigureGeometry(WindowScaling.GetPositionScaling(RenderScaling));
+        ConfigureGeometry(GetScreenScaling());
         Dispatcher.UIThread.Post(ApplyNativeFrameRegion, DispatcherPriority.Loaded);
+    }
+
+    /// <summary>
+    /// The scale of the screen the frame starts on (ShareX #8894), in window position units: device pixels per point on Windows
+    /// and Linux, 1 on macOS where windows are placed in points.
+    /// </summary>
+    private double GetScreenScaling()
+    {
+        double scaling = Screens.ScreenFromPoint(_initialPosition)?.Scaling ?? Screens.Primary?.Scaling ?? 1;
+        return WindowScaling.GetPositionScaling(scaling);
     }
 
     private void ApplyClickThroughToolWindowStyle()

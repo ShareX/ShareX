@@ -50,7 +50,6 @@ namespace ShareX
                 Helpers.SetDefaultUICulture(currentCulture);
                 DebugHelper.WriteLine("Language changed to: " + currentCulture.DisplayName);
 
-
                 return true;
             }
 

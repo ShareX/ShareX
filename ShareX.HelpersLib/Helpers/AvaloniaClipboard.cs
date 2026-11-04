@@ -71,6 +71,8 @@ internal static class AvaloniaClipboard
 
     public static bool SetImage(byte[] png, byte[] dib, string html) => DesktopServices.Run(async () =>
     {
+        // Windows writes the bitmap formats itself; Avalonia's synthesized ones render wrongly in Office and clipboard history.
+        if (PlatformServices.Current.Clipboard.SetImageWithFormats(png, dib, html)) return true;
         OwnedImageTransfer owned = CreateImageTransfer(png, dib, html);
         try { await Clipboard.SetDataAsync(owned); }
         catch { owned.Dispose(); throw; }

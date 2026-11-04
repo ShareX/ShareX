@@ -1155,6 +1155,12 @@ Het klembord bevat geen afbeelding.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Probeer een ander trefwoord.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Geen overeenkomende lettertypen</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Lettertypen zoeken...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Afbeelding onderaan invoegen</value>
   </data>
@@ -1400,6 +1406,9 @@ Het klembord bevat geen afbeelding.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Vervagen</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Klonen</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Bijsnijden</value>

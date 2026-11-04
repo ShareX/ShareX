@@ -101,8 +101,7 @@ public static class AnimatedGifMakerService
     private static void AddFrame(AnimatedGifCreator creator, SKBitmap source, Size canvasSize)
     {
         using SKBitmap frame = ImageResizerService.Resize(source, canvasSize.Width, canvasSize.Height, ImageResizeMode.Fit);
-        IndexedImage quantizedFrame = GifFrameQuantizer.Quantize(frame);
-        creator.AddFrame(quantizedFrame);
+        creator.AddFrame(frame, GIFQuality.Adaptive);
     }
 
     private static SKBitmap LoadImage(string imageFile)

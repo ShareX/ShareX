@@ -187,6 +187,24 @@ public sealed unsafe class WindowsWindowService : IWindowService
 
     public double GetOwnWindowPixelScale(PlatformPoint point) => 1;
 
+    // hWndInsertAfter places the window after (below) the given one in the z-order.
+    public bool PlaceBelow(long windowHandle, long aboveWindowHandle) =>
+        windowHandle != 0 && aboveWindowHandle != 0 && Win32.SetWindowPos((IntPtr)windowHandle, (IntPtr)aboveWindowHandle, 0, 0, 0, 0,
+            Win32.SWP_NOMOVE | Win32.SWP_NOSIZE | Win32.SWP_NOACTIVATE);
+
+    public bool ExcludeFromCapture(long windowHandle) =>
+        windowHandle != 0 && Win32.SetWindowDisplayAffinity((IntPtr)windowHandle, Win32.WDA_EXCLUDEFROMCAPTURE);
+
+    public void EnsureWindowPosition(long windowHandle, PlatformPoint position)
+    {
+        if (windowHandle != 0 && Win32.GetWindowRect((IntPtr)windowHandle, out Win32.RECT rect) && (rect.Left != position.X || rect.Top != position.Y))
+        {
+            // Move in screen coordinates without resizing, reordering or activating (ShareX #8894).
+            Win32.SetWindowPos((IntPtr)windowHandle, IntPtr.Zero, position.X, position.Y, 0, 0,
+                Win32.SWP_NOSIZE | Win32.SWP_NOZORDER | Win32.SWP_NOACTIVATE);
+        }
+    }
+
     public PlatformRectangle? GetClientBounds(long windowHandle)
     {
         PlatformRectangle bounds = GetClientBounds((IntPtr)windowHandle);

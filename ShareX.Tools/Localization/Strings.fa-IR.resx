@@ -916,8 +916,17 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>رمزگذاری تصویر با قالب {0} ناموفق بود.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>عمق بیت BMP:</value>
+  </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>رنگ پس‌زمینه:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>تبدیل تصاویر</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>الگوی نام فایل:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>مبدل تصویر</value>
@@ -936,6 +945,12 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 جزئیات رنگی بیشتری را در اطراف متن و لبه‌های تیز حفظ می‌کند، اما معمولاً فایل‌های بزرگ‌تری ایجاد می‌کند.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>قالب خروجی:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>عمق بیت PNG:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = بدون فشرده‌سازی، 1 = سریع‌ترین، 9 = کوچک‌ترین فایل‌ها. همهٔ سطوح بدون افت کیفیت هستند.</value>
@@ -963,6 +978,18 @@
   </data>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (پیکسل بالا)</value>
+  </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>کیفیت:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>تلاش فشرده‌سازی:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>مقادیر کمتر، رمزگذاری را سریع‌تر می‌کنند. مقادیر بیشتر، فایل‌های کوچک‌تری تولید می‌کنند. همهٔ مقادیر کیفیت تصویر را حفظ می‌کنند.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>بدون افت کیفیت</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>پر کردن</value>
@@ -2122,6 +2149,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>خروج از حالت تمام‌صفحه</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>تمام‌صفحه</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>در حال بارگذاری ویدیو...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>بی‌صدا کردن</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>موقعیت پخش</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - پخش‌کنندهٔ ویدیو</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>فعال کردن صدا</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>میزان صدای پخش</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>پوشه سفارشی</value>
   </data>
@@ -2218,8 +2269,8 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>فایل‌های ویدئویی</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>پیش‌نمایش تقریبی ذخیره‌شده • هنگام مکث دقیق‌تر می‌شود</value>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>همه پرونده‌ها (*.*)</value>
   </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>لغو</value>
@@ -2248,9 +2299,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>در حال ذخیره ویدئوی برش‌خورده…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>پیش‌نمایش نزدیک {0} • بدون پخش صدا</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>ویدئویی با مدت‌زمان مشخص و محدود انتخاب کنید.</value>
   </data>
@@ -2260,23 +2308,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>بدون افت کیفیت</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>در این موقعیت قاب پیش‌نمایشی موجود نیست.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>باز کردن ویدئو…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>برای این حالت خروجی از پسوند {0} استفاده کنید.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows نتوانست این ویدیو را پخش کند. بررسی کنید که Windows از قالب آن پشتیبانی می‌کند و مؤلفه‌های رسانه‌ای Windows نصب شده‌اند. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>کدگذاری مجدد</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>برای نقاط برش دقیق، به H.264 / AAC MP4 کدگذاری مجدد می‌کند.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>پیش‌نمایش قاب ثابت • بدون پخش صدا</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>بازنشانی انتخاب</value>

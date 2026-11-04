@@ -25,6 +25,7 @@
 
 using Avalonia.Data.Converters;
 using Avalonia.Media;
+using ShareX.ImageEditor.Presentation.Helpers;
 using System.Globalization;
 
 namespace ShareX.ImageEditor.Presentation.Converters
@@ -47,7 +48,10 @@ namespace ShareX.ImageEditor.Presentation.Converters
                 fontFamilyName = DefaultFontFamilyName;
             }
 
-            return new FontFamily(FontFamilyResolver.Resolve(fontFamilyName));
+            // Map Windows family names to this system's equivalents, then check the result exists.
+            return FontFamilyHelper.TryCreateFontFamily(FontFamilyResolver.Resolve(fontFamilyName), out var fontFamily)
+                ? fontFamily
+                : new FontFamily(DefaultFontFamilyName);
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

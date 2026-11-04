@@ -83,7 +83,7 @@
     <value>Datei in Zwischenablage kopieren</value>
   </data>
   <data name="AfterCaptureTasks_CopyFolderPathToClipboard" xml:space="preserve">
-    <value>Ordnerpfad in die Zwischenablage kopieren</value>
+    <value>Ordnerpfad in Zwischenablage kopieren</value>
   </data>
   <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
     <value>Bild in Zwischenablage kopieren</value>
@@ -101,13 +101,13 @@
     <value>An Bildschirm anheften</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
-    <value>Bild zu Datei speichern</value>
+    <value>Bild in Datei speichern</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>Bild zu Datei speichern als...</value>
+    <value>Bild in Datei speichern als...</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
-    <value>Thumbnailbild zu Datei speichern</value>
+    <value>Thumbnail in Datei speichern</value>
   </data>
   <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
     <value>QR-Code scannen</value>
@@ -165,6 +165,15 @@
   </data>
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>Start</value>
+  </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 Bit</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 Bit</value>
   </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>Strich</value>
@@ -525,6 +534,9 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Fehler beim Umbenennen der Datei:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptiver Quantisierer, 256 Farben</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>16 Farben</value>
   </data>
@@ -740,6 +752,9 @@ Möchten Sie es dennoch ausführen?</value>
   </data>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Bildschirmaufnahme pausieren</value>
+  </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Fotoeditor</value>
   </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>An Bildschirm anheften</value>

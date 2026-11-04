@@ -1155,6 +1155,12 @@ A vágólap nem tartalmaz képet.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Próbáljon másik kulcsszót.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Nincs egyező betűtípus</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Betűtípusok keresése...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Kép beszúrása alulra</value>
   </data>
@@ -1400,6 +1406,9 @@ A vágólap nem tartalmaz képet.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Elmosás</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Klónozás</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Körülvágás</value>

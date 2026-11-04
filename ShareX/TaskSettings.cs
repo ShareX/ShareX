@@ -339,11 +339,12 @@ namespace ShareX
 
         public EImageFormat ImageFormat = EImageFormat.PNG;
         public PNGBitDepth ImagePNGBitDepth = PNGBitDepth.Default;
+        public BMPBitDepth ImageBMPBitDepth = BMPBitDepth.Bit24;
         public int ImagePNGCompressionLevel = 1;
         public SKPngEncoderFilterFlags ImagePNGFilter = SKPngEncoderFilterFlags.AllFilters;
         public int ImageJPEGQuality = 90;
         public SKJpegEncoderDownsample ImageJPEGSubsampling = SKJpegEncoderDownsample.Downsample420;
-        public GIFQuality ImageGIFQuality = GIFQuality.Default;
+        public GIFQuality ImageGIFQuality = GIFQuality.Adaptive;
         public bool ImageAutoUseJPEG = true;
         public int ImageAutoUseJPEGSize = 2048;
         public bool ImageAutoJPEGQuality = false;
@@ -399,14 +400,32 @@ namespace ShareX
         #region Capture / Screen recorder
 
         public FFmpegOptions FFmpegOptions = new FFmpegOptions();
+        public bool ScreenRecordUseNative = true;
+        public bool ScreenRecordShowBar = true;
+        public bool ScreenRecordSystemAudio = true;
+        public string ScreenRecordSystemAudioDeviceId = "";
+        public float ScreenRecordSystemAudioGain = 1f;
+        public bool ScreenRecordMicrophone = false;
+        public string ScreenRecordMicrophoneDeviceId = "";
+        public float ScreenRecordMicrophoneGain = 1f;
+        public bool ScreenRecordCamera = false;
+        public string ScreenRecordCameraDeviceId = "";
+        public ShareX.Platform.CameraCaptureResolution ScreenRecordCameraResolution = ShareX.Platform.CameraCaptureResolution.Size1280x720;
+        public int ScreenRecordCameraFPS = 30;
+        public ShareX.Platform.CameraOverlayPosition ScreenRecordCameraPosition = ShareX.Platform.CameraOverlayPosition.BottomRight;
+        public ShareX.Platform.CameraOverlayShape ScreenRecordCameraShape = ShareX.Platform.CameraOverlayShape.Rectangle;
+        public int ScreenRecordCameraWidthPercent = 20;
+        public int ScreenRecordCameraMargin = 20;
+        public bool ScreenRecordRequireHardwareEncoder = true;
+        public int ScreenRecordVideoBitrate = 10000; // kbps
         public int ScreenRecordFPS = 30;
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;
         public bool ScreenRecordMouseHighlighter = false;
         public bool ScreenRecordShowTimer = true;
-        public bool ScreenRecordShowButtonLabels = true;
-        public bool ScreenRecordAutoStart = true;
-        public float ScreenRecordStartDelay = 0f;
+        public bool ScreenRecordShowButtonLabels = false;
+        public bool ScreenRecordStartDelayEnabled = false;
+        public float ScreenRecordStartDelay = 3f;
         public bool ScreenRecordFixedDuration = false;
         public float ScreenRecordDuration = 3f;
         public bool ScreenRecordTwoPassEncoding = false;

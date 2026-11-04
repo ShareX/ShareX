@@ -1155,6 +1155,12 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Versuchen Sie es mit einem anderen Suchbegriff.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Keine passenden Schriftarten</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Schriftarten suchen...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Bild unten einfügen</value>
   </data>
@@ -1400,6 +1406,9 @@ Die Zwischenablage enthält kein Bild.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Unschärfe</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Klonen</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Zuschneiden</value>

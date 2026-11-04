@@ -31,9 +31,12 @@ using System.Text.RegularExpressions;
 
 namespace ShareX.Tools;
 
-/// <summary>Small, cancellable FFmpeg jobs. No player, ffprobe, or persistent media files are required.</summary>
+/// <summary>Small, cancellable FFmpeg jobs: exports, and the duration and still frames where the system cannot play videos.</summary>
 internal sealed class VideoTrimmerService(string ffmpegPath)
 {
+    /// <summary>Resolved when exporting, since native playback opens videos without FFmpeg.</summary>
+    public string FFmpegPath { get; set; } = ffmpegPath;
+
     internal static string Timestamp(double seconds) => seconds.ToString("0.######", CultureInfo.InvariantCulture);
 
     public async Task<double> GetDurationAsync(string input, CancellationToken token)
@@ -133,7 +136,7 @@ internal sealed class VideoTrimmerService(string ffmpegPath)
     {
         token.ThrowIfCancellationRequested();
         using Process process = new();
-        process.StartInfo = new ProcessStartInfo(ffmpegPath)
+        process.StartInfo = new ProcessStartInfo(FFmpegPath)
         {
             UseShellExecute = false,
             CreateNoWindow = true,

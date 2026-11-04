@@ -97,7 +97,12 @@ public partial class FFmpegOptionsWindow : Window
             Localization.Strings.FFmpegOptionsWindow_Preset_very_slow,
             Localization.Strings.FFmpegOptionsWindow_Preset_placebo
         };
-        GifStatsModeComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegPaletteGenStatsMode>();
+        GifStatsModeComboBox.ItemsSource = new[]
+        {
+            Localization.Strings.FFmpegOptionsWindow_Palette_full,
+            Localization.Strings.FFmpegOptionsWindow_Palette_diff,
+            Localization.Strings.FFmpegOptionsWindow_Palette_single
+        };
         NvencPresetComboBox.ItemsSource = new[]
         {
             Localization.Strings.FFmpegOptionsWindow_NVENC_fastest_lowest_quality,
@@ -115,7 +120,8 @@ public partial class FFmpegOptionsWindow : Window
             Localization.Strings.FFmpegOptionsWindow_NVENC_ultra_low_latency,
             Localization.Strings.FFmpegOptionsWindow_NVENC_lossless
         };
-        GifDitherComboBox.ItemsSource = Helpers.GetEnumDescriptions<FFmpegPaletteUseDither>();
+        GifDitherComboBox.ItemsSource = Enum.GetValues<FFmpegPaletteUseDither>()
+            .Select(dither => dither == FFmpegPaletteUseDither.none ? Localization.Strings.FFmpegOptionsWindow_None : dither.ToString()).ToArray();
         AmfUsageComboBox.ItemsSource = new[]
         {
             Localization.Strings.FFmpegOptionsWindow_AMF_generic_transcoding,
@@ -406,15 +412,25 @@ public partial class FFmpegOptionsWindow : Window
         return (ffmpegPath, devices, discoveryError);
     }
 
+    private static FFmpegCaptureDevice LocalizeSource(string device)
+    {
+        FFmpegCaptureDevice source = FFmpegCaptureDevice.FromPlatformDevice(device);
+        if (source == FFmpegCaptureDevice.GDIGrab) return new(source.Value, Localization.Strings.FFmpegOptionsWindow_Source_GDI);
+        if (source == FFmpegCaptureDevice.DDAGrab) return new(source.Value, Localization.Strings.FFmpegOptionsWindow_Source_DDA);
+        return source;
+    }
+
     private void ApplyDevices(string ffmpegPath, DirectShowDevices? devices, Exception? discoveryError, bool selectRecorderDevices)
     {
+        FFmpegCaptureDevice noSource = new(FFmpegCaptureDevice.None.Value, Localization.Strings.FFmpegOptionsWindow_None);
+
         // Screen devices come from the platform independently of DirectShow discovery.
-        List<FFmpegCaptureDevice> videoSources = [FFmpegCaptureDevice.None];
+        List<FFmpegCaptureDevice> videoSources = [noSource];
         IReadOnlyList<string> platformDevices = PlatformServices.Current.ScreenRecording.GetSupportedDevices();
-        videoSources.AddRange(platformDevices.Select(FFmpegCaptureDevice.FromPlatformDevice));
+        videoSources.AddRange(platformDevices.Select(LocalizeSource));
         string defaultVideoSource = platformDevices.Count > 0 ? platformDevices[0] : FFmpegCaptureDevice.None.Value;
 
-        List<FFmpegCaptureDevice> audioSources = [FFmpegCaptureDevice.None];
+        List<FFmpegCaptureDevice> audioSources = [noSource];
 
         if (devices != null)
         {

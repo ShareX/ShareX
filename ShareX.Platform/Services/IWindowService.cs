@@ -147,6 +147,24 @@ public interface IWindowService
     bool CoverScreen(long windowHandle, PlatformRectangle screenBounds) => false;
 
     /// <summary>
+    /// Moves one of ShareX's own windows so its top-left corner is at <paramref name="position"/> if it is not there already. On
+    /// Windows, Avalonia's resizing can shift a window by a monitor's work-area inset; moving it natively keeps Avalonia's cached
+    /// DPI scale. Does nothing elsewhere.
+    /// </summary>
+    void EnsureWindowPosition(long windowHandle, PlatformPoint position)
+    {
+    }
+
+    /// <summary>
+    /// Keeps one of ShareX's own windows (recording controls) out of screenshots and recordings: WDA_EXCLUDEFROMCAPTURE on
+    /// Windows 10 2004 and later, NSWindowSharingNone on macOS. False where the system offers no such setting.
+    /// </summary>
+    bool ExcludeFromCapture(long windowHandle) => false;
+
+    /// <summary>Puts one of ShareX's windows directly below another of its windows, without moving or activating either.</summary>
+    bool PlaceBelow(long windowHandle, long aboveWindowHandle) => false;
+
+    /// <summary>
     /// Releases the mouse capture another window of this process holds, so a newly opened window receives clicks straight away.
     /// Only Windows has application-held mouse capture; elsewhere this does nothing.
     /// </summary>

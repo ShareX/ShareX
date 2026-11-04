@@ -32,7 +32,9 @@ public enum ImageConverterOutputFormat
 {
     Png,
     Jpeg,
-    Webp
+    Webp,
+    Gif,
+    Bmp
 }
 
 public readonly record struct ImageConverterPreview(byte[] Data, int Width, int Height);
@@ -87,7 +89,10 @@ public static class ImageConverterService
 
     public static ImageConverterPreview CreatePreview(string filePath, ImageConverterOutputFormat format,
         int quality, SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
-        SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420)
+        SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
+        GIFQuality gifQuality = GIFQuality.Adaptive, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
+        BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24,
+        SKWebpEncoderCompression webpCompression = SKWebpEncoderCompression.Lossy)
     {
         using SKBitmap? source = LoadImage(filePath);
         if (source == null)
@@ -97,7 +102,8 @@ public static class ImageConverterService
 
         SKSizeI previewSize = GetPreviewSize(new SKSizeI(source.Width, source.Height));
         using SKBitmap preview = CreatePreviewBitmap(source, previewSize);
-        using SKData data = Encode(preview, format, quality, backgroundColor, pngOptions, jpegSubsampling);
+        using SKData data = Encode(preview, format, quality, backgroundColor, pngOptions, jpegSubsampling,
+            gifQuality, pngBitDepth, bmpBitDepth, webpCompression);
         return new ImageConverterPreview(data.ToArray(), source.Width, source.Height);
     }
 
@@ -106,46 +112,67 @@ public static class ImageConverterService
         ImageConverterOutputFormat.Png => "png",
         ImageConverterOutputFormat.Jpeg => "jpg",
         ImageConverterOutputFormat.Webp => "webp",
+        ImageConverterOutputFormat.Gif => "gif",
+        ImageConverterOutputFormat.Bmp => "bmp",
         _ => throw new ArgumentOutOfRangeException(nameof(format))
     };
 
     public static void Save(SKBitmap image, string filePath, ImageConverterOutputFormat format, int quality,
         SKColor backgroundColor, SKPngEncoderOptions? pngOptions = null,
-        SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420)
+        SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
+        GIFQuality gifQuality = GIFQuality.Adaptive, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
+        BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24,
+        SKWebpEncoderCompression webpCompression = SKWebpEncoderCompression.Lossy)
     {
-        using SKData data = Encode(image, format, quality, backgroundColor, pngOptions, jpegSubsampling);
+        using SKData data = Encode(image, format, quality, backgroundColor, pngOptions, jpegSubsampling,
+            gifQuality, pngBitDepth, bmpBitDepth, webpCompression);
         FileHelpers.CreateDirectoryFromFilePath(filePath);
         using FileStream stream = new(filePath, FileMode.Create, FileAccess.Write, FileShare.Read);
         data.SaveTo(stream);
     }
 
     private static SKData Encode(SKBitmap bitmap, ImageConverterOutputFormat format, int quality,
-        SKColor backgroundColor, SKPngEncoderOptions? pngOptions, SKJpegEncoderDownsample jpegSubsampling)
+        SKColor backgroundColor, SKPngEncoderOptions? pngOptions, SKJpegEncoderDownsample jpegSubsampling,
+        GIFQuality gifQuality, PNGBitDepth pngBitDepth, BMPBitDepth bmpBitDepth, SKWebpEncoderCompression webpCompression)
     {
-        SKEncodedImageFormat encodedFormat = format switch
-        {
-            ImageConverterOutputFormat.Png => SKEncodedImageFormat.Png,
-            ImageConverterOutputFormat.Jpeg => SKEncodedImageFormat.Jpeg,
-            ImageConverterOutputFormat.Webp => SKEncodedImageFormat.Webp,
-            _ => throw new ArgumentOutOfRangeException(nameof(format))
-        };
-
-        SKData? data;
         if (format == ImageConverterOutputFormat.Png)
         {
-            using SKPixmap pixels = bitmap.PeekPixels();
-            data = pixels.Encode(pngOptions ?? new SKPngEncoderOptions(SKPngEncoderFilterFlags.AllFilters, 1));
+            using SKBitmap? flattened = pngBitDepth == PNGBitDepth.Bit24 ? FlattenBackground(bitmap, backgroundColor) : null;
+            using MemoryStream stream = new();
+            SkiaImageHelpers.SavePNG(flattened ?? bitmap, stream, pngBitDepth, long.MaxValue,
+                pngOptions ?? new SKPngEncoderOptions(SKPngEncoderFilterFlags.AllFilters, 1));
+            return SKData.CreateCopy(stream.ToArray());
         }
-        else if (format == ImageConverterOutputFormat.Jpeg)
+
+        if (format == ImageConverterOutputFormat.Gif)
+        {
+            using MemoryStream stream = SkiaImageHelpers.SaveGIF(bitmap, gifQuality);
+            return SKData.CreateCopy(stream.ToArray());
+        }
+
+        if (format == ImageConverterOutputFormat.Bmp)
+        {
+            using SKBitmap? flattened = bmpBitDepth == BMPBitDepth.Bit24 ? FlattenBackground(bitmap, backgroundColor) : null;
+            using MemoryStream stream = new();
+            SkiaImageHelpers.SaveBMP(flattened ?? bitmap, stream, bmpBitDepth);
+            return SKData.CreateCopy(stream.ToArray());
+        }
+
+        SKData? data;
+        if (format == ImageConverterOutputFormat.Jpeg)
         {
             using SKBitmap flattened = FlattenBackground(bitmap, backgroundColor);
             using SKPixmap pixels = flattened.PeekPixels();
             data = pixels.Encode(SkiaImageHelpers.GetJPEGEncoderOptions(quality, jpegSubsampling));
         }
+        else if (format == ImageConverterOutputFormat.Webp)
+        {
+            using SKPixmap pixels = bitmap.PeekPixels();
+            data = pixels.Encode(new SKWebpEncoderOptions(webpCompression, Math.Clamp(quality, 0, 100)));
+        }
         else
         {
-            using SKImage image = SKImage.FromBitmap(bitmap);
-            data = image.Encode(encodedFormat, Math.Clamp(quality, 0, 100));
+            throw new ArgumentOutOfRangeException(nameof(format));
         }
 
         return data

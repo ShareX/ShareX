@@ -83,7 +83,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     internal ObservableCollection<ThumbnailItemViewModel> ThumbnailItems { get; } = new();
     internal ObservableCollection<HotkeyTipViewModel> HotkeyTips { get; } = new();
-    public AvaloniaBitmap TitleBarIcon { get; }
+    public AvaloniaBitmap? TitleBarIcon { get; private set; }
     public bool IsEmpty => ThumbnailItems.Count == 0;
     public bool IsWindowMaximized => WindowState == Avalonia.Controls.WindowState.Maximized;
     public bool IsDarkTheme => ThemeManager.IsDarkTheme;
@@ -104,8 +104,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Title = ApplicationInfo.Title;
-        Icon = CreateWindowIcon();
-        TitleBarIcon = CreateTitleBarIcon();
+        UpdateTitleBarIcon();
         DataContext = this;
 
         _trayIconService.RightButtonDown += OnTrayIconRightButtonDown;
@@ -338,7 +337,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         foreach (MainNavigationSection section in _navigationMenuBuilder.BuildNavigation().Where(x => x.IsVisible))
         {
-            if (index is 4 or 7 or 12 or 15)
+            if (index is 4 or 7 or 12 or 16)
             {
                 NavigationPanel.Children.Add(new Separator { Margin = new Thickness(5, 2) });
             }
@@ -1220,6 +1219,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (point.Properties.PointerUpdateKind == PointerUpdateKind.RightButtonPressed)
         {
             CloseActiveContextMenu();
+            ThumbnailPanel.Focus(NavigationMethod.Pointer, e.KeyModifiers);
 
             if (!item.IsSelected)
             {
@@ -1234,6 +1234,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             return;
         }
+
+        ThumbnailPanel.Focus(NavigationMethod.Pointer, e.KeyModifiers);
 
         bool isControlPressed = e.KeyModifiers.HasFlag(KeyModifiers.Control);
         bool isShiftPressed = e.KeyModifiers.HasFlag(KeyModifiers.Shift);
@@ -1456,7 +1458,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                             .Cast<string>().ToArray();
                         ImageViewerWindowIntegration.ShowImage(
                             images,
-                            Math.Max(0, Array.IndexOf(images, filePath)));
+                            Math.Max(0, Array.IndexOf(images, filePath)),
+                            this);
                     }
                     else
                     {
@@ -1467,7 +1470,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             case ThumbnailViewClickAction.OpenImageViewer:
                 if (File.Exists(filePath) && FileHelpers.IsImageFile(filePath))
                 {
-                    ImageViewerWindowIntegration.ShowImage(filePath);
+                    ImageViewerWindowIntegration.ShowImage(filePath, this);
                 }
                 break;
             case ThumbnailViewClickAction.OpenFile:
@@ -1513,6 +1516,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Item(Strings.MainWindow_EditImage, LucideIcons.image, _uploadInfoManager.EditImage,
                 hasSelection && !isWorking && selected!.IsImageFile,
                 new KeyGesture(Key.E, KeyModifiers.Control)),
+            Item(Strings.MainWindow_EditImageInPhotoEditor, LucideIcons.layers, _uploadInfoManager.EditImageInPhotoEditor,
+                hasSelection && !isWorking && statuses.Any(x => x.IsImageFile)),
             Item(Strings.MainWindow_ResizeImage, LucideIcons.maximize_2, _uploadInfoManager.ResizeImages,
                 hasSelection && !isWorking && statuses.Any(x => x.IsImageFile)),
             Item(Strings.MainWindow_TrimVideo, LucideIcons.scissors, _uploadInfoManager.TrimVideo,
@@ -1743,6 +1748,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (pointerUpdateKind == PointerUpdateKind.LeftButtonPressed)
         {
+            ThumbnailPanel.Focus(NavigationMethod.Pointer, e.KeyModifiers);
             ClearSelection();
             _selectionAnchor = null;
             e.Handled = true;
@@ -1755,6 +1761,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
 
         CloseActiveContextMenu();
+        ThumbnailPanel.Focus(NavigationMethod.Pointer, e.KeyModifiers);
         e.Handled = true;
     }
 
@@ -1782,6 +1789,13 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnWindowKeyDown(object? sender, KeyEventArgs e)
     {
+        if (e.Key == Key.Escape)
+        {
+            Close();
+            e.Handled = true;
+            return;
+        }
+
         _uploadInfoManager.UpdateSelectedItems(GetSelectedItems().Select(x => x.Task));
         bool control = e.KeyModifiers.HasFlag(KeyModifiers.Control);
         bool shift = e.KeyModifiers.HasFlag(KeyModifiers.Shift);
@@ -2082,7 +2096,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         _trayIconService.RightButtonDown -= OnTrayIconRightButtonDown;
         _trayIconService.RightButtonUp -= OnTrayIconRightButtonUp;
         _trayIconService.Visible = false;
-        TitleBarIcon.Dispose();
+        TitleBarIcon?.Dispose();
 
         foreach (ThumbnailItemViewModel item in ThumbnailItems)
         {
@@ -2121,19 +2135,17 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ApplicationState.Settings.MainFormSize = new DrawingSize((int)Math.Round(ClientSize.Width), (int)Math.Round(ClientSize.Height));
     }
 
-    private static WindowIcon CreateWindowIcon()
-    {
-        using MemoryStream stream = new(ShareXResources.IconBytes, writable: false);
-        return new WindowIcon(stream);
-    }
-
-    private static AvaloniaBitmap CreateTitleBarIcon()
+    private void UpdateTitleBarIcon()
     {
         using DrawingBitmap bitmap = SkiaImageHelpers.ByteArrayToBitmap(ShareXResources.IconBytes);
         using MemoryStream stream = new();
         bitmap.Save(stream, SkiaSharp.SKEncodedImageFormat.Png);
         stream.Position = 0;
-        return new AvaloniaBitmap(stream);
+
+        AvaloniaBitmap? previous = TitleBarIcon;
+        TitleBarIcon = new AvaloniaBitmap(stream);
+        OnPropertyChanged(nameof(TitleBarIcon));
+        previous?.Dispose();
     }
 
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
@@ -2143,6 +2155,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (change.Property == WindowStateProperty)
         {
             OnPropertyChanged(nameof(IsWindowMaximized));
+        }
+        else if (change.Property == IconProperty)
+        {
+            UpdateTitleBarIcon();
         }
     }
 

@@ -1,0 +1,103 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:res="using:ShareX.Localization"
+        x:Class="ShareX.ScreenRecorderBarWindow"
+        Title="{x:Static res:Strings.TaskSettingsWindow_NativeRecorder}"
+        WindowDecorations="None"
+        CanResize="False"
+        ShowInTaskbar="False"
+        Topmost="True"
+        SizeToContent="WidthAndHeight"
+        TransparencyLevelHint="Transparent"
+        Background="Transparent">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Recorder.Record.Background" Color="#B8323F"/>
+        <SolidColorBrush x:Key="Recorder.Record.Hover" Color="#CA3E4B"/>
+        <SolidColorBrush x:Key="Recorder.Record.Pressed" Color="#A02935"/>
+    </Window.Resources>
+    <Window.Styles>
+        <Style Selector="Button.recorder-setup, ToggleButton.recorder-setup">
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="MinHeight" Value="36"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+        <Style Selector="ToggleButton.recorder-setup:checked">
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        </Style>
+        <Style Selector="Button.recorder-arrow">
+            <Setter Property="MinWidth" Value="30"/>
+            <Setter Property="Padding" Value="6"/>
+        </Style>
+        <Style Selector="Button.recorder-record">
+            <Setter Property="Background" Value="{StaticResource Recorder.Record.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Recorder.Record.Background}"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Button.recorder-record TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Button.recorder-record /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource Recorder.Record.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Recorder.Record.Background}"/>
+        </Style>
+        <Style Selector="Button.recorder-record:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource Recorder.Record.Hover}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Recorder.Record.Hover}"/>
+        </Style>
+        <Style Selector="Button.recorder-record:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource Recorder.Record.Pressed}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Recorder.Record.Pressed}"/>
+        </Style>
+        <Style Selector="Button.recorder-record:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource Recorder.Record.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Recorder.Record.Background}"/>
+            <Setter Property="Opacity" Value="0.35"/>
+        </Style>
+        <Style Selector="Button.recorder-close">
+            <Setter Property="Width" Value="28"/>
+            <Setter Property="MinWidth" Value="28"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="MinHeight" Value="28"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="Button.recorder-close /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="Button.recorder-close:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="Button.recorder-close:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
+        </Style>
+    </Window.Styles>
+    <ThemeVariantScope>
+        <Border Padding="2" CornerRadius="8"
+                Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1">
+            <StackPanel Spacing="6">
+                <Grid x:Name="Toolbar" ColumnDefinitions="Auto,*,Auto,Auto"/>
+                <TextBlock x:Name="ErrorMessage" IsVisible="False" TextWrapping="Wrap" MaxWidth="550"/>
+                <Border x:Name="SettingsPanel" IsVisible="False" Padding="12" CornerRadius="6"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="1">
+                    <StackPanel Spacing="8">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <TextBlock x:Name="PanelTitle" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                            <Button x:Name="ClosePanelButton" Grid.Column="1" Classes="recorder-close"/>
+                        </Grid>
+                        <ScrollViewer x:Name="PanelScroll" HorizontalScrollBarVisibility="Disabled">
+                            <ContentControl x:Name="PanelContent"/>
+                        </ScrollViewer>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+    </ThemeVariantScope>
+</Window>

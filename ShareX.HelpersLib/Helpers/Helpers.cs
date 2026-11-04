@@ -857,6 +857,16 @@ namespace ShareX.HelpersLib
             return Task.WhenAll(tasks);
         }
 
+        /// <summary>Puts a window's top-left corner at a screen position, correcting a shift the toolkit can introduce (Windows).</summary>
+        public static void EnsureWindowPosition(Avalonia.Controls.Window window, int x, int y)
+        {
+            IntPtr handle = window.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+            if (handle != IntPtr.Zero && PlatformServices.IsInitialized)
+            {
+                PlatformServices.Current.Windows.EnsureWindowPosition(handle, new PlatformPoint(x, y));
+            }
+        }
+
         /// <summary>Keeps the pointer inside the window while it is active, where the platform allows it (Windows).</summary>
         public static void LockCursorToWindow(Avalonia.Controls.Window window)
         {

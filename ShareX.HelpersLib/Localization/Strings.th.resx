@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>เริ่ม</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>โดยอัตโนมัติ ตรวจจับ</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 บิต</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 บิต</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>เส้นประ</value>
   </data>
@@ -525,6 +534,9 @@
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>เปลี่ยนชื่อ ไฟล์ ข้อผิดพลาด:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>ตัวควอนไทซ์แบบปรับตัว 256 สี</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 สี</value>
   </data>
@@ -740,6 +752,9 @@
   </data>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>หยุดบันทึกหน้าจอชั่วคราว</value>
+  </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>ตัวแก้ไขภาพถ่าย</value>
   </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>ปักหมุดบนหน้าจอ</value>

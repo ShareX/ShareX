@@ -28,6 +28,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Localization;
+using ShareX.ImageEditor.Presentation.Helpers;
 using System.Reflection;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
@@ -1006,7 +1007,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     tool = _selectedAnnotation.ToolType;
                 }
 
-                return EditorIcons.ForTool(tool);
+                return tool == EditorTool.Emoji ? _emojiToolIcon : EditorIcons.ForTool(tool);
             }
         }
 
@@ -1045,6 +1046,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     EditorTool.Crop => Strings.ToolbarCustomizationItemViewModel_Crop,
                     EditorTool.CutOut => Strings.ToolbarCustomizationItemViewModel_CutOut,
                     EditorTool.Image => Strings.ToolbarCustomizationItemViewModel_Image,
+                    EditorTool.Clone => Strings.ToolbarCustomizationItemViewModel_Clone,
                     _ => Strings.ToolbarCustomizationItemViewModel_Select
                 };
             }
@@ -1280,6 +1282,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     .Select(fontFamily => fontFamily.Name)
                     .Where(fontFamily => !string.IsNullOrWhiteSpace(fontFamily))
                     .Distinct(StringComparer.OrdinalIgnoreCase)
+                    .Where(fontFamily => FontFamilyHelper.TryCreateFontFamily(fontFamily, out _))
                     .OrderBy(fontFamily => fontFamily, StringComparer.CurrentCultureIgnoreCase)
                     .ToArray();
 
@@ -1378,7 +1381,9 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         private static string NormalizeFontFamily(string? fontFamily)
         {
-            return string.IsNullOrWhiteSpace(fontFamily) ? DefaultAnnotationFontFamily : fontFamily;
+            return !string.IsNullOrWhiteSpace(fontFamily) && FontFamilyHelper.TryCreateFontFamily(fontFamily, out _)
+                ? fontFamily
+                : DefaultAnnotationFontFamily;
         }
 
         private static ArrowStyle NormalizeArrowStyle(ArrowStyle arrowStyle)

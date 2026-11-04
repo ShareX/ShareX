@@ -65,6 +65,9 @@ public interface ITraySession : IDisposable
     string ToolTipText { get; set; }
     TimeSpan DoubleClickTime { get; }
 
+    /// <summary>The icon size in pixels the system draws, so the closest frame of a multi-size icon is used (32 when unknown).</summary>
+    int IconSize => 32;
+
     /// <summary>Replaces the icon using an encoded PNG. The session owns and releases its native icon resource.</summary>
     void SetIcon(byte[] png);
 }

@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>Starta</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>Identifiera automatiskt</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 bitar</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 bitar</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>Streckad</value>
   </data>
@@ -525,6 +534,9 @@ Vill du ändå köra det?</value>
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Fel när filen skulle byta namn:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptiv kvantiserare, 256 färger</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree-kvantiserare, 16 färger</value>
   </data>
@@ -740,6 +752,9 @@ Vill du ändå köra det?</value>
   </data>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Pausa skärminspelning</value>
+  </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Fotoredigerare</value>
   </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Fäst på skärmen</value>

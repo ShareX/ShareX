@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Avalonia.Threading;
-using SkiaSharp;
 using System.Diagnostics;
 
 namespace ShareX.ImageEditor.Presentation.EasterEggs;
@@ -33,39 +31,33 @@ internal sealed class ShaderEasterEggPlayer : IDisposable
 {
     private readonly ShaderEasterEggOverlay _overlay;
     private readonly IShaderEasterEggEffect _effectDefinition;
-    private readonly DispatcherTimer _timer;
     private bool _isPlaying;
 
     public ShaderEasterEggPlayer(ShaderEasterEggOverlay overlay, IShaderEasterEggEffect effectDefinition)
     {
         _overlay = overlay;
         _effectDefinition = effectDefinition;
-        _timer = new DispatcherTimer(DispatcherPriority.Render)
-        {
-            Interval = effectDefinition.Duration
-        };
-        _timer.Tick += OnTimerTick;
     }
 
     public bool IsPlaying => _isPlaying;
 
-    public bool Play(SKBitmap snapshot)
+    public bool Play()
     {
-        ArgumentNullException.ThrowIfNull(snapshot);
-        Stop();
+        if (_isPlaying)
+        {
+            return true;
+        }
 
         try
         {
             _overlay.IsVisible = true;
-            _overlay.IsHitTestVisible = true;
-            if (!_overlay.Start(_effectDefinition, snapshot))
+            if (!_overlay.Start(_effectDefinition))
             {
                 Stop();
                 return false;
             }
 
             _isPlaying = true;
-            _timer.Start();
             return true;
         }
         catch (Exception ex)
@@ -78,22 +70,15 @@ internal sealed class ShaderEasterEggPlayer : IDisposable
 
     public void Stop()
     {
-        _timer.Stop();
         _isPlaying = false;
         _overlay.Stop();
         _overlay.IsVisible = false;
         _overlay.IsHitTestVisible = false;
     }
 
-    private void OnTimerTick(object? sender, EventArgs e)
-    {
-        Stop();
-    }
-
     public void Dispose()
     {
         Stop();
-        _timer.Tick -= OnTimerTick;
         _overlay.Dispose();
     }
 }

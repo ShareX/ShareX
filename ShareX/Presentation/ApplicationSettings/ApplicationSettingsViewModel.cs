@@ -63,6 +63,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     private string _startWithWindowsText = string.Empty;
     private bool _shellContextMenu;
     private bool _editWithShareX;
+    private bool _editWithShareXPhotoEditor;
     private bool _sendToMenu;
     private bool _chromeExtensionSupport;
     private bool _firefoxAddonSupport;
@@ -169,6 +170,9 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public string EditContextMenuText => PlatformServices.Current.Info.IsWindows
         ? Strings.ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu
         : Strings.ApplicationSettingsWindow_ShowEditInFileManager;
+    public string EditPhotoEditorContextMenuText => PlatformServices.Current.Info.IsWindows
+        ? Strings.ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu
+        : Strings.ApplicationSettingsWindow_ShowPhotoEditorInFileManager;
     public bool ShellIntegrationSupported => PlatformServices.Current.ShellIntegration.Support.IsSupported;
     public string? ShellIntegrationUnsupportedReason => PlatformServices.Current.ShellIntegration.Support.Reason;
     public bool SendToSupported => PlatformServices.Current.ShellIntegration.SendToSupport.IsSupported;
@@ -401,6 +405,18 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             if (SetField(ref _editWithShareX, value))
             {
                 InvokeOnMainThread(() => IntegrationHelpers.CreateEditShellContextMenuButton(value));
+            }
+        }
+    }
+
+    public bool EditWithShareXPhotoEditor
+    {
+        get => _editWithShareXPhotoEditor;
+        set
+        {
+            if (SetField(ref _editWithShareXPhotoEditor, value))
+            {
+                InvokeOnMainThread(() => IntegrationHelpers.CreatePhotoEditorShellContextMenuButton(value));
             }
         }
     }
@@ -941,6 +957,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 #if !MicrosoftStore
         _shellContextMenu = IntegrationHelpers.CheckShellContextMenuButton();
         _editWithShareX = IntegrationHelpers.CheckEditShellContextMenuButton();
+        _editWithShareXPhotoEditor = IntegrationHelpers.CheckPhotoEditorShellContextMenuButton();
         _sendToMenu = IntegrationHelpers.CheckSendToMenuButton();
         _chromeExtensionSupport = IntegrationHelpers.CheckChromeExtensionSupport();
         _firefoxAddonSupport = IntegrationHelpers.CheckFirefoxAddonSupport();

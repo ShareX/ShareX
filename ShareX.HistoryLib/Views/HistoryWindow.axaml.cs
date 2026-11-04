@@ -88,6 +88,7 @@ public partial class HistoryWindow : Window
             RoutingStrategies.Bubble, handledEventsToo: true);
         HistoryList.AddHandler(PointerReleasedEvent, OnHistoryPointerReleased,
             RoutingStrategies.Bubble, handledEventsToo: true);
+        HistoryList.AddHandler(KeyDownEvent, OnHistoryListKeyDown, RoutingStrategies.Tunnel);
         _filterTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(220) };
         _filterTimer.Tick += OnFilterTimerTick;
     }
@@ -565,6 +566,8 @@ public partial class HistoryWindow : Window
 
     private void OnHistoryContextMenuOpening(object? sender, CancelEventArgs e)
     {
+        if (sender is not ContextMenu menu) return;
+
         HistoryItem[] selected = GetSelectedItems();
         if (selected.Length == 0)
         {
@@ -572,56 +575,10 @@ public partial class HistoryWindow : Window
             return;
         }
 
-        HistoryItem item = selected[0];
-        bool single = selected.Length == 1;
-        bool url = !string.IsNullOrWhiteSpace(item.URL);
-        bool shortUrl = !string.IsNullOrWhiteSpace(item.ShortenedURL);
-        bool thumbnailUrl = !string.IsNullOrWhiteSpace(item.ThumbnailURL);
-        bool deletionUrl = !string.IsNullOrWhiteSpace(item.DeletionURL);
-        bool validPath = !string.IsNullOrWhiteSpace(item.FilePath) && Path.HasExtension(item.FilePath);
-        bool file = validPath && File.Exists(item.FilePath);
-        bool imageFile = file && FileHelpers.IsImageFile(item.FilePath);
-        bool textFile = file && FileHelpers.IsTextFile(item.FilePath);
-
-        OpenMenu.IsEnabled = single;
-        OpenUrlMenu.IsEnabled = single && url;
-        OpenShortUrlMenu.IsEnabled = single && shortUrl;
-        OpenThumbnailUrlMenu.IsEnabled = single && thumbnailUrl;
-        OpenDeletionUrlMenu.IsEnabled = single && deletionUrl;
-        OpenFileMenu.IsEnabled = single && file;
-        OpenFolderMenu.IsEnabled = single && file;
-        CopyMenu.IsEnabled = true;
-        CopyUrlMenu.IsEnabled = !single || url;
-        CopyShortUrlMenu.IsEnabled = !single || shortUrl;
-        CopyThumbnailUrlMenu.IsEnabled = !single || thumbnailUrl;
-        CopyDeletionUrlMenu.IsEnabled = !single || deletionUrl;
-        CopyFileMenu.IsEnabled = !single || file;
-        CopyImageMenu.IsEnabled = single && imageFile;
-        CopyTextMenu.IsEnabled = single && textFile;
-        CopyFilePathMenu.IsEnabled = !single || validPath;
-        CopyFileNameMenu.IsEnabled = !single || validPath;
-        CopyFileNameExtensionMenu.IsEnabled = !single || validPath;
-        CopyFolderMenu.IsEnabled = !single || validPath;
-        CopyHtmlLinkMenu.IsEnabled = !single || url;
-        CopyHtmlImageMenu.IsEnabled = !single || (url && FileHelpers.IsImageFile(item.URL));
-        CopyHtmlLinkedImageMenu.IsEnabled = !single || (url && FileHelpers.IsImageFile(item.URL) && thumbnailUrl);
-        CopyForumLinkMenu.IsEnabled = CopyHtmlLinkMenu.IsEnabled;
-        CopyForumImageMenu.IsEnabled = CopyHtmlImageMenu.IsEnabled;
-        CopyForumLinkedImageMenu.IsEnabled = CopyHtmlLinkedImageMenu.IsEnabled;
-        CopyMarkdownLinkMenu.IsEnabled = CopyHtmlLinkMenu.IsEnabled;
-        CopyMarkdownImageMenu.IsEnabled = CopyHtmlImageMenu.IsEnabled;
-        CopyMarkdownLinkedImageMenu.IsEnabled = CopyHtmlLinkedImageMenu.IsEnabled;
-        FavoriteMenu.Header = item.Favorite
+        HistoryContextMenuHelpers.UpdateVisibility(menu, selected, _services);
+        FavoriteMenu.Header = selected[0].Favorite
             ? Strings.HistoryWindow_Unfavorite
             : Strings.HistoryWindows_Favorite;
-        TagMenu.IsEnabled = single;
-        EditMenu.IsEnabled = single;
-        RenameMenu.IsEnabled = single && validPath;
-        PreviewMenu.IsEnabled = single && imageFile;
-        UploadMenu.IsEnabled = single && file && _services.UploadFile != null;
-        EditImageMenu.IsEnabled = single && imageFile && _services.EditImage != null;
-        PinMenu.IsEnabled = single && imageFile && _services.PinToScreen != null;
-        AnalyzeMenu.IsEnabled = single && imageFile && _services.AnalyzeImage != null;
     }
 
     private void OnAdvancedClick(object? sender, RoutedEventArgs e)
@@ -1041,7 +998,7 @@ public partial class HistoryWindow : Window
         if (item != null && File.Exists(item.FilePath) && FileHelpers.IsTextFile(item.FilePath)) ClipboardHelpers.CopyTextFromFile(item.FilePath);
     }
 
-    private void OnCopyFilePathClick(object? sender, RoutedEventArgs e) => CopyValues(item => item.FilePath, item => !string.IsNullOrWhiteSpace(item.FilePath) && Path.HasExtension(item.FilePath));
+    private void OnCopyFilePathClick(object? sender, RoutedEventArgs e) => CopyValues(item => item.FilePath, item => !string.IsNullOrWhiteSpace(item.FilePath));
     private void OnCopyFileNameClick(object? sender, RoutedEventArgs e) => CopyValues(item => Path.GetFileNameWithoutExtension(item.FilePath), item => !string.IsNullOrWhiteSpace(item.FilePath));
     private void OnCopyFileNameWithExtensionClick(object? sender, RoutedEventArgs e) => CopyValues(item => Path.GetFileName(item.FilePath), item => !string.IsNullOrWhiteSpace(item.FilePath));
     private void OnCopyFolderClick(object? sender, RoutedEventArgs e) => CopyValues(item => Path.GetDirectoryName(item.FilePath), item => !string.IsNullOrWhiteSpace(item.FilePath));
@@ -1067,12 +1024,25 @@ public partial class HistoryWindow : Window
             if (ReferenceEquals(_filteredHistoryItems[i], item)) selectedIndex = files.Count;
             files.Add(path);
         }
-        if (_services.ShowImages != null) _services.ShowImages(files, selectedIndex);
-        else _services.ShowImage?.Invoke(item.FilePath);
+        if (_services.ShowImages != null) _services.ShowImages(files, selectedIndex, this);
+        else _services.ShowImage?.Invoke(item.FilePath, this);
     }
 
     private void OnUploadFileClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.UploadFile, false);
     private void OnEditImageClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.EditImage, true);
+    private void OnTrimVideoClick(object? sender, RoutedEventArgs e)
+    {
+        HistoryItem[] items = GetSelectedItems();
+        if (items.Length == 1 && File.Exists(items[0].FilePath) && FileHelpers.IsVideoFile(items[0].FilePath))
+            _services.TrimVideo?.Invoke(items[0].FilePath);
+    }
+    private void OnTrimAnimatedGifClick(object? sender, RoutedEventArgs e)
+    {
+        HistoryItem[] items = GetSelectedItems();
+        if (items.Length == 1 && File.Exists(items[0].FilePath) &&
+            string.Equals(Path.GetExtension(items[0].FilePath), ".gif", StringComparison.OrdinalIgnoreCase))
+            _services.TrimAnimatedGif?.Invoke(items[0].FilePath);
+    }
     private void OnPinToScreenClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.PinToScreen, true);
     private void OnAnalyzeImageClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.AnalyzeImage, true);
     private void InvokeFileService(Action<string>? action, bool imageOnly)

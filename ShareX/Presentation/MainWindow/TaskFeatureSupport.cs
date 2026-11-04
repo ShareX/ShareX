@@ -72,6 +72,8 @@ internal static class TaskFeatureSupport
         HotkeyType.DisableHotkeys => ApplicationState.SettingsOrNull?.DisableHotkeys == false
             ? FeatureSupport.Supported
             : PlatformServices.Current.Hotkeys.Support,
+        // The trimmer plays videos through the system without FFmpeg (Windows); elsewhere it previews with FFmpeg.
+        HotkeyType.VideoTrimmer when PlatformServices.Current.VideoPlayback.Support.IsSupported => FeatureSupport.Supported,
         HotkeyType.VideoConverter or HotkeyType.VideoTrimmer or HotkeyType.VideoThumbnailer =>
             FileMediaFeatureSupport.Get((taskSettings.UseDefaultCaptureSettings ? ApplicationState.DefaultTaskSettings : taskSettings)
                 .CaptureSettings.FFmpegOptions.FFmpegPath),

@@ -298,13 +298,15 @@ internal sealed class TaskSettingsPageBuilder
         BindEnabled(autoJpegSize, autoJpeg);
         BindEnabled(autoQuality, autoJpeg);
 
-        return Page("image", Strings.TaskSettingsWindow_Image, LucideIcons.image,
-            OverrideCard(_imageOverride, Strings.TaskSettingsWindow_OverrideImageSettings),
-            EnabledCard(_imageOverride, Strings.TaskSettingsWindow_ImageQuality,
-                Row(Strings.TaskSettingsWindow_ImageFormat, EnumCombo(() => image.ImageFormat, value => image.ImageFormat = value)),
+        StackPanel pngOptions = new()
+        {
+            Spacing = 4,
+            Children =
+            {
                 Row(Strings.TaskSettingsWindow_PNGBitDepth, EnumCombo(() => image.ImagePNGBitDepth, value => image.ImagePNGBitDepth = value)),
                 Row(Strings.TaskSettingsWindow_PNGCompressionLevel,
-                    Number(() => image.ImagePNGCompressionLevel, value => image.ImagePNGCompressionLevel = (int)value, 0, 9),
+                    ObjectCombo(Enumerable.Range(0, 10), () => Math.Clamp(image.ImagePNGCompressionLevel, 0, 9),
+                        value => image.ImagePNGCompressionLevel = value),
                     Strings.TaskSettingsWindow_PNGCompressionHint),
                 Row(Strings.TaskSettingsWindow_PNGFilter, ObjectCombo(
                     new[] { SKPngEncoderFilterFlags.AllFilters, SKPngEncoderFilterFlags.None, SKPngEncoderFilterFlags.Sub,
@@ -317,7 +319,14 @@ internal sealed class TaskSettingsPageBuilder
                         SKPngEncoderFilterFlags.Avg => Strings.TaskSettingsWindow_PNGFilterAverage,
                         SKPngEncoderFilterFlags.Paeth => Strings.TaskSettingsWindow_PNGFilterPaeth,
                         _ => Strings.TaskSettingsWindow_PNGFilterAutomatic
-                    })),
+                    }))
+            }
+        };
+        StackPanel jpegOptions = new()
+        {
+            Spacing = 4,
+            Children =
+            {
                 Row(Strings.TaskSettingsWindow_JPEGQuality, Number(() => image.ImageJPEGQuality, value => image.ImageJPEGQuality = (int)value, 0, 100)),
                 Row(Strings.TaskSettingsWindow_JPEGSubsampling, ObjectCombo(
                     new[] { SKJpegEncoderDownsample.Downsample420, SKJpegEncoderDownsample.Downsample422, SKJpegEncoderDownsample.Downsample444 },
@@ -326,12 +335,46 @@ internal sealed class TaskSettingsPageBuilder
                         SKJpegEncoderDownsample.Downsample422 => Strings.TaskSettingsWindow_JPEGSubsampling422,
                         SKJpegEncoderDownsample.Downsample444 => Strings.TaskSettingsWindow_JPEGSubsampling444,
                         _ => Strings.TaskSettingsWindow_JPEGSubsampling420
-                    }), Strings.TaskSettingsWindow_JPEGSubsamplingHint),
-                Row(Strings.TaskSettingsWindow_GIFQuality, EnumCombo(() => image.ImageGIFQuality, value => image.ImageGIFQuality = value)),
-                Row(Strings.TaskSettingsWindow_IfFileExists, EnumCombo(() => image.FileExistAction, value => image.FileExistAction = value))),
-            EnabledCard(_imageOverride, Strings.TaskSettingsWindow_AutomaticJPEG,
+                    }), Strings.TaskSettingsWindow_JPEGSubsamplingHint)
+            }
+        };
+        Control gifOptions = Row(Strings.TaskSettingsWindow_GIFQuality, EnumCombo(() => image.ImageGIFQuality, value => image.ImageGIFQuality = value));
+        Control bmpOptions = Row(Strings.TaskSettingsWindow_BMPBitDepth, EnumCombo(() => image.ImageBMPBitDepth, value => image.ImageBMPBitDepth = value));
+        Border automaticJpeg = new()
+        {
+            Child = EnabledCard(_imageOverride, Strings.TaskSettingsWindow_AutomaticJPEG,
                 Check(Strings.TaskSettingsWindow_UseJPEGIfImageSizeIsBiggerThanTheSpecifiedSize, autoJpeg),
-                Row(Strings.TaskSettingsWindow_SizeLimitKB, autoJpegSize), autoQuality));
+                Row(Strings.TaskSettingsWindow_SizeLimitKB, autoJpegSize), autoQuality)
+        };
+        SettingsSearch.SetIsAvailabilityContainer(pngOptions, true);
+        SettingsSearch.SetIsAvailabilityContainer(jpegOptions, true);
+        SettingsSearch.SetIsAvailabilityContainer(gifOptions, true);
+        SettingsSearch.SetIsAvailabilityContainer(bmpOptions, true);
+        SettingsSearch.SetIsAvailabilityContainer(automaticJpeg, true);
+
+        void UpdateEncoderVisibility(EImageFormat format)
+        {
+            pngOptions.IsVisible = format == EImageFormat.PNG;
+            jpegOptions.IsVisible = format == EImageFormat.JPEG;
+            gifOptions.IsVisible = format == EImageFormat.GIF;
+            bmpOptions.IsVisible = format == EImageFormat.BMP;
+            automaticJpeg.IsVisible = format != EImageFormat.JPEG;
+        }
+
+        UpdateEncoderVisibility(Enum.IsDefined(image.ImageFormat) ? image.ImageFormat : EImageFormat.PNG);
+
+        return Page("image", Strings.TaskSettingsWindow_Image, LucideIcons.image,
+            OverrideCard(_imageOverride, Strings.TaskSettingsWindow_OverrideImageSettings),
+            EnabledCard(_imageOverride, Strings.TaskSettingsWindow_ImageQuality,
+                Row(Strings.TaskSettingsWindow_ImageFormat, EnumCombo(() => image.ImageFormat, value =>
+                {
+                    image.ImageFormat = value;
+                    UpdateEncoderVisibility(value);
+                    _window.RefreshSettingsSearch();
+                })),
+                pngOptions, jpegOptions, gifOptions, bmpOptions,
+                Row(Strings.TaskSettingsWindow_IfFileExists, EnumCombo(() => image.FileExistAction, value => image.FileExistAction = value))),
+            automaticJpeg);
     }
 
     private Control BuildImageEffectsPage()
@@ -440,7 +483,7 @@ internal sealed class TaskSettingsPageBuilder
 
     private Control BuildRegionCapturePage()
     {
-        RegionCaptureOptions options = _settings.CaptureSettings.RegionCaptureOptions;
+        RegionCaptureOptions options = _captureSettings.RegionCaptureOptions;
         IPlatformServices platform = PlatformServices.Current;
         FeatureSupport windowSupport = platform.Windows.Support;
         FeatureSupport controlSupport = TaskFeatureSupport.Require(windowSupport,
@@ -470,7 +513,9 @@ internal sealed class TaskSettingsPageBuilder
                 WithSupport(Check(Strings.TaskSettingsWindow_DetectWindowRegions, detectWindows), windowSupport),
                 WithSupport(detectControls, controlSupport),
                 Check(Strings.TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor, () => options.ActiveMonitorMode, value => options.ActiveMonitorMode = value),
-                Row(Strings.TaskSettingsWindow_BackgroundDimStrengthPercent, Number(() => options.BackgroundDimStrength, value => options.BackgroundDimStrength = (int)value, 0, 100))),
+                Row(Strings.TaskSettingsWindow_BackgroundDimStrengthPercent, Number(() => options.BackgroundDimStrength, value => options.BackgroundDimStrength = (int)value, 0, 100)),
+                Check(Strings.TaskSettingsWindow_DimHoveredWindowsAndControls, () => options.DimAllExceptSelection, value => options.DimAllExceptSelection = value),
+                Button(Strings.TaskSettingsWindow_CustomizeToolbarWithEllipsis, () => _window.ShowRegionCaptureToolbarEditor(options))),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_MouseActions,
                 Row(Strings.TaskSettingsWindow_RightClick, EnumCombo(() => options.RegionCaptureActionRightClick, value => options.RegionCaptureActionRightClick = value)),
                 Row(Strings.TaskSettingsWindow_MiddleClick, EnumCombo(() => options.RegionCaptureActionMiddleClick, value => options.RegionCaptureActionMiddleClick = value)),
@@ -489,19 +534,92 @@ internal sealed class TaskSettingsPageBuilder
     private Control BuildScreenRecorderPage()
     {
         TaskSettingsCapture capture = _settings.CaptureSettings;
-        BoundValue<bool> fixedDuration = new(capture.ScreenRecordFixedDuration, SetIfRecordingSupported<bool>(value => capture.ScreenRecordFixedDuration = value));
-        NumericUpDown duration = Number(() => RecordingSeconds(capture.ScreenRecordDuration, 86400),
-            SetIfRecordingSupported<decimal>(value => capture.ScreenRecordDuration = (float)value), 0, 86400, 0.1m);
+        BoundValue<bool> native = new(capture.ScreenRecordUseNative, value => capture.ScreenRecordUseNative = value);
+        BoundValue<bool> recordSystemAudio = new(capture.ScreenRecordSystemAudio, value => capture.ScreenRecordSystemAudio = value);
+        Control systemAudio = Check(Strings.TaskSettingsWindow_NativeRecorderSystemAudio, recordSystemAudio);
+        ComboBox systemAudioDevices = AudioDeviceCombo(PlatformServices.Current.NativeScreenRecorder.GetSystemAudioDevices,
+            () => capture.ScreenRecordSystemAudioDeviceId, value => capture.ScreenRecordSystemAudioDeviceId = value,
+            Strings.TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice, Strings.TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice);
+        BindEnabled(systemAudioDevices, recordSystemAudio);
+        Control systemAudioDevice = Row(Strings.TaskSettingsWindow_NativeRecorderSystemAudioDevice, systemAudioDevices);
+        BoundValue<bool> recordMicrophone = new(capture.ScreenRecordMicrophone, value => capture.ScreenRecordMicrophone = value);
+        Control microphone = Check(Strings.TaskSettingsWindow_NativeRecorderMicrophone, recordMicrophone);
+        ComboBox microphones = AudioDeviceCombo(PlatformServices.Current.NativeScreenRecorder.GetMicrophones,
+            () => capture.ScreenRecordMicrophoneDeviceId, value => capture.ScreenRecordMicrophoneDeviceId = value,
+            Strings.TaskSettingsWindow_NativeRecorderDefaultMicrophone, Strings.TaskSettingsWindow_NativeRecorderUnavailableMicrophone);
+        BindEnabled(microphones, recordMicrophone);
+        Control microphoneDevice = Row(Strings.TaskSettingsWindow_NativeRecorderMicrophoneDevice, microphones);
+        Control showBar = Check(Strings.ScreenRecorderBar_ShowBeforeRecording, () => capture.ScreenRecordShowBar, value => capture.ScreenRecordShowBar = value);
+        BindEnabled(showBar, native);
+        Control hardware = Check(Strings.TaskSettingsWindow_NativeRecorderHardware, () => capture.ScreenRecordRequireHardwareEncoder, value => capture.ScreenRecordRequireHardwareEncoder = value);
+        NumericUpDown bitrateControl = Number(() => capture.ScreenRecordVideoBitrate, value => capture.ScreenRecordVideoBitrate = (int)value, 100, 200000, 100);
+        bitrateControl.Width = 160;
+        Control bitrate = Row(Strings.TaskSettingsWindow_NativeRecorderBitrate, bitrateControl);
+        BoundValue<bool> recordCamera = new(capture.ScreenRecordCamera, value => capture.ScreenRecordCamera = value);
+        Control cameraEnabled = Check(Strings.TaskSettingsWindow_NativeRecorderCamera_Enabled, recordCamera);
+        ComboBox cameras = CaptureDeviceCombo(() => PlatformServices.Current.NativeScreenRecorder.GetCameras().Select(device => (device.Id, device.Name)).ToArray(),
+            () => capture.ScreenRecordCameraDeviceId, value => capture.ScreenRecordCameraDeviceId = value,
+            Strings.TaskSettingsWindow_NativeRecorderCamera_DefaultDevice, Strings.TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice,
+            Strings.TaskSettingsWindow_NativeRecorderCamera_NoDevices);
+        Control cameraDevice = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Device, cameras);
+        Control cameraResolution = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Resolution,
+            ObjectCombo(Enum.GetValues<CameraCaptureResolution>(), () => capture.ScreenRecordCameraResolution,
+                value => capture.ScreenRecordCameraResolution = value, value => value switch
+                {
+                    CameraCaptureResolution.Size640x480 => "640 × 480",
+                    CameraCaptureResolution.Size1920x1080 => "1920 × 1080",
+                    _ => "1280 × 720"
+                }));
+        Control cameraFps = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_FPS,
+            Number(() => capture.ScreenRecordCameraFPS, value => capture.ScreenRecordCameraFPS = (int)value, 1, 60));
+        Control cameraPosition = Row(Strings.TaskSettingsWindow_Placement,
+            ObjectCombo(Enum.GetValues<CameraOverlayPosition>(), () => capture.ScreenRecordCameraPosition,
+                value => capture.ScreenRecordCameraPosition = value, value => value switch
+                {
+                    CameraOverlayPosition.TopLeft => Strings.ApplicationSettingsWindow_TopLeft,
+                    CameraOverlayPosition.TopRight => Strings.ApplicationSettingsWindow_TopRight,
+                    CameraOverlayPosition.BottomLeft => Strings.ApplicationSettingsWindow_BottomLeft,
+                    _ => Strings.ApplicationSettingsWindow_BottomRight
+                }));
+        Control cameraWidth = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Width,
+            Number(() => capture.ScreenRecordCameraWidthPercent, value => capture.ScreenRecordCameraWidthPercent = (int)value, 5, 50));
+        Control cameraShape = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Shape,
+            ObjectCombo(Enum.GetValues<CameraOverlayShape>(), () => capture.ScreenRecordCameraShape,
+                value => capture.ScreenRecordCameraShape = value, value => value == CameraOverlayShape.Circle
+                    ? Strings.TaskSettingsWindow_NativeRecorderCamera_Circle : Strings.TaskSettingsWindow_NativeRecorderCamera_Rectangle));
+        Control cameraMargin = Row(Strings.TaskSettingsWindow_NativeRecorderCamera_Margin,
+            Number(() => capture.ScreenRecordCameraMargin, value => capture.ScreenRecordCameraMargin = (int)value, 0, 1000));
+        Control[] cameraControls = [cameraDevice, cameraResolution, cameraFps, cameraShape, cameraPosition, cameraWidth, cameraMargin];
+        foreach (Control control in cameraControls) BindEnabled(control, recordCamera);
+        StackPanel cameraContent = new() { Spacing = 4 };
+        cameraContent.Children.Add(cameraEnabled);
+        foreach (Control control in cameraControls) cameraContent.Children.Add(control);
+        BindEnabled(cameraContent, native);
+        Control cameraPanel = EnabledCard(_captureOverride, Strings.TaskSettingsWindow_NativeRecorderCamera, cameraContent);
+        Control twoPass = Check(Strings.TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions, () => capture.ScreenRecordTwoPassEncoding, value => capture.ScreenRecordTwoPassEncoding = value);
+        Control legacyOptions = Button(Strings.TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis, ShowScreenRecordingOptions);
+        foreach (Control control in new[] { systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate }) BindEnabled(control, native);
+        BindEnabled(twoPass, native, invert: true);
+        BindEnabled(legacyOptions, native, invert: true);
+        BoundValue<bool> fixedDuration = new(capture.ScreenRecordFixedDuration, value => capture.ScreenRecordFixedDuration = value);
+        NumericUpDown duration = Number(() => (decimal)capture.ScreenRecordDuration, value => capture.ScreenRecordDuration = (float)value, 0, 86400, 0.1m);
         BindEnabled(duration, fixedDuration);
 
-        BoundValue<bool> autoStart = new(capture.ScreenRecordAutoStart, SetIfRecordingSupported<bool>(value => capture.ScreenRecordAutoStart = value));
-        NumericUpDown startDelay = Number(() => RecordingSeconds(capture.ScreenRecordStartDelay, 3600),
-            SetIfRecordingSupported<decimal>(value => capture.ScreenRecordStartDelay = (float)value), 0, 3600, 0.1m);
-        BindEnabled(startDelay, autoStart);
+        BoundValue<bool> startDelayEnabled = new(capture.ScreenRecordStartDelayEnabled, value => capture.ScreenRecordStartDelayEnabled = value);
+        NumericUpDown startDelay = Number(() => (decimal)capture.ScreenRecordStartDelay, value => capture.ScreenRecordStartDelay = (float)value, 0, 3600, 0.1m);
+        BindEnabled(startDelay, startDelayEnabled);
+
+        // ShareX's own recorder exists on Windows 11 22H2 and later; elsewhere its settings stay saved but disabled, and FFmpeg records.
+        FeatureSupport nativeSupport = PlatformServices.Current.NativeScreenRecorder.Support;
+        FeatureSupport recordingSupport = FFmpegOptionsWindowViewModel.CurrentRecordingSupport;
 
         return Page("capture-screen-recorder", Strings.TaskSettingsWindow_ScreenRecorder, LucideIcons.video,
+            WithSupport(EnabledCard(_captureOverride, Strings.TaskSettingsWindow_NativeRecorder,
+                Check(Strings.TaskSettingsWindow_NativeRecorderEnabled, native),
+                showBar, systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate), nativeSupport),
+            WithSupport(cameraPanel, nativeSupport),
             WithSupport(EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Recording,
-                Row(Strings.TaskSettingsWindow_ScreenRecordingFPS, Number(() => capture.ScreenRecordFPS, SetIfRecordingSupported<decimal>(value => capture.ScreenRecordFPS = (int)value), 1, HelpersOptions.DevMode ? 300 : 60)),
+                Row(Strings.TaskSettingsWindow_ScreenRecordingFPS, Number(() => capture.ScreenRecordFPS, SetIfRecordingSupported<decimal>(value => capture.ScreenRecordFPS = (int)value), 1, 120)),
                 Row(Strings.TaskSettingsWindow_GIFFPS, Number(() => capture.GIFFPS, SetIfRecordingSupported<decimal>(value => capture.GIFFPS = (int)value), 1, HelpersOptions.DevMode ? 60 : 30)),
                 Check(Strings.TaskSettingsWindow_ShowCursorInRecording, () => capture.ScreenRecordShowCursor, SetIfRecordingSupported<bool>(value => capture.ScreenRecordShowCursor = value)),
                 WithSupport(Check(Strings.TaskSettingsWindow_HighlightMouseWhileRecording, () => capture.ScreenRecordMouseHighlighter,
@@ -511,14 +629,14 @@ internal sealed class TaskSettingsPageBuilder
                     MouseHighlighterWindowViewModel.CurrentSettingsSupport),
                 Check(Strings.TaskSettingsWindow_ShowRecordingTimer, () => capture.ScreenRecordShowTimer, SetIfRecordingSupported<bool>(value => capture.ScreenRecordShowTimer = value)),
                 Check(Strings.TaskSettingsWindow_ShowRecordingButtonLabels, () => capture.ScreenRecordShowButtonLabels, SetIfRecordingSupported<bool>(value => capture.ScreenRecordShowButtonLabels = value)),
-                Check(Strings.TaskSettingsWindow_StartRecordingAfterADelay, autoStart), Row(Strings.TaskSettingsWindow_StartDelaySeconds, startDelay),
+                Check(Strings.TaskSettingsWindow_UseStartDelay, startDelayEnabled), Row(Strings.TaskSettingsWindow_StartDelaySeconds, startDelay),
                 Check(Strings.TaskSettingsWindow_UseFixedDuration, fixedDuration), Row(Strings.TaskSettingsWindow_DurationSeconds, duration)),
-                FFmpegOptionsWindowViewModel.CurrentRecordingSupport),
+                recordingSupport),
             WithSupport(EnabledCard(_captureOverride, Strings.TaskSettingsWindow_EncodingAndCapture,
-                Check(Strings.TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions, () => capture.ScreenRecordTwoPassEncoding, SetIfRecordingSupported<bool>(value => capture.ScreenRecordTwoPassEncoding = value)),
+                twoPass,
                 Check(Strings.TaskSettingsWindow_AskForConfirmationWhenAborting, () => capture.ScreenRecordAskConfirmationOnAbort, SetIfRecordingSupported<bool>(value => capture.ScreenRecordAskConfirmationOnAbort = value)),
-                Button(Strings.TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis, ShowScreenRecordingOptions)),
-                FFmpegOptionsWindowViewModel.CurrentRecordingSupport));
+                legacyOptions),
+                recordingSupport));
     }
 
     private static decimal RecordingSeconds(float value, float maximum) => float.IsFinite(value)
@@ -547,6 +665,59 @@ internal sealed class TaskSettingsPageBuilder
         FFmpegOptionsWindow window = new(options);
         await window.ShowDialog(_window);
         if (FFmpegOptionsWindowViewModel.CurrentRecordingSupport.IsSupported) capture.FFmpegOptions = window.Options.FFmpeg;
+    }
+
+    private static ComboBox AudioDeviceCombo(Func<IReadOnlyList<CaptureDevice>> getDevices,
+        Func<string> getSelectedId, Action<string> setSelectedId, string defaultLabel, string unavailableLabel)
+        => CaptureDeviceCombo(() => getDevices().Select(device => (device.Id, device.Name)).ToArray(),
+            getSelectedId, setSelectedId, defaultLabel, unavailableLabel);
+
+    private static ComboBox CaptureDeviceCombo(Func<IReadOnlyList<(string Id, string Name)>> getDevices,
+        Func<string> getSelectedId, Action<string> setSelectedId, string defaultLabel, string unavailableLabel, string? emptyLabel = null)
+    {
+        ComboBox combo = new();
+        combo.Classes.Add("form-control");
+        bool refreshing = false;
+
+        void Refresh()
+        {
+            List<(string Id, string Name)> devices = [("", defaultLabel)];
+            try
+            {
+                var available = getDevices();
+                devices.AddRange(available.OrderBy(device => device.Name, StringComparer.CurrentCultureIgnoreCase));
+                if (available.Count == 0 && emptyLabel != null) devices[0] = ("", emptyLabel);
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
+
+            string selectedId = getSelectedId() ?? "";
+            if (!devices.Any(device => device.Id == selectedId))
+            {
+                devices.Add((selectedId, unavailableLabel));
+            }
+
+            // Replacing ItemsSource can clear selection. Keep a disconnected device's saved ID intact.
+            refreshing = true;
+            try
+            {
+                ChoiceOption<string>[] choices = devices.Select(device => new ChoiceOption<string>(device.Id, device.Name)).ToArray();
+                combo.ItemsSource = choices;
+                combo.SelectedItem = choices.First(choice => choice.Value == selectedId);
+            }
+            finally { refreshing = false; }
+        }
+
+        combo.SelectionChanged += (_, _) =>
+        {
+            if (!refreshing && combo.SelectedItem is ChoiceOption<string> choice)
+                setSelectedId(choice.Value);
+        };
+        combo.DropDownOpened += (_, _) => Refresh();
+        Refresh();
+        return combo;
     }
 
     private Control BuildOcrPage()

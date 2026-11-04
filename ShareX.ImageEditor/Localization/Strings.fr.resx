@@ -1155,6 +1155,12 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Essayez un autre mot-clé.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Aucune police correspondante</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Rechercher des polices...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Insérer l’image en dessous</value>
   </data>
@@ -1400,6 +1406,9 @@ Le presse-papiers ne contient aucune image.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Flou</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Cloner</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Rogner</value>

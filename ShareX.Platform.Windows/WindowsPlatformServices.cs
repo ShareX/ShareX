@@ -60,13 +60,26 @@ public sealed class WindowsPlatformServices : IPlatformServices
         Preferences = new WindowsSystemPreferencesService();
         SystemInfo = new WindowsSystemInfoService();
 #if WINDOWS10_0_17763_0_OR_GREATER
+        // Capture intervals and borderless capture need Windows 11 2022; earlier versions record with FFmpeg.
+        VideoPlayback = new Media.WindowsVideoPlaybackService();
+        NativeScreenRecorder = OperatingSystem.IsWindowsVersionAtLeast(10, 0, 22621)
+            ? new WindowsNativeScreenRecorderService()
+            : new UnsupportedNativeScreenRecorderService("ShareX's own screen recorder needs Windows 11 version 22H2 or later.");
         Ocr = OperatingSystem.IsWindowsVersionAtLeast(10, 0, 18362)
             ? new WindowsOcrService()
             : new UnsupportedOcrService("Text recognition needs Windows 10 version 1903 or later.");
 #else
         Ocr = new UnsupportedOcrService("Text recognition uses the Windows Runtime, which this build of ShareX was compiled without.");
+        NativeScreenRecorder = new UnsupportedNativeScreenRecorderService("ShareX's own screen recorder uses the Windows Runtime, which this build of ShareX was compiled without.");
+        VideoPlayback = new UnsupportedVideoPlaybackService("Video playback uses Media Foundation, which this build of ShareX was compiled without.");
 #endif
     }
+
+    public INativeScreenRecorderService NativeScreenRecorder { get; }
+
+    public IVideoPlaybackService VideoPlayback { get; }
+
+    public IImageCodecService ImageCodecs { get; } = new WindowsImageCodecService();
 
     public PlatformInfo Info { get; }
 

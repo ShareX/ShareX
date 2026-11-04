@@ -634,6 +634,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>شیرایکس را در راست کلیک منوی ویرایش با ویندوز اکسپلورر اضافه کن</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>دکمه «ویرایش در ویرایشگر عکس ShareX» را در منوی راست‌کلیک ویندوز اکسپلورر نمایش بده</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>آستانه هشدار فایل بزرگ (مگابایت)</value>
   </data>
@@ -1340,6 +1343,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>ویرایش با ShareX ...</value>
   </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>ویرایش در ویرایشگر عکس ShareX</value>
+  </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>آپلود با ShareX</value>
   </data>
@@ -1544,6 +1550,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>باز کردن</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>ویرایشگر عکاسی</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>سنجاق به صفحه</value>
   </data>
@@ -1591,6 +1600,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>نمایش ShareX</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>آمار...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>تنظیمات وظیفه</value>
@@ -1649,6 +1661,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_VideoConverter" xml:space="preserve">
     <value>مبدل ویدئو</value>
   </data>
+  <data name="MainMenuBuilder_VideoPlayer" xml:space="preserve">
+    <value>پخش‌کنندهٔ ویدیو...</value>
+  </data>
   <data name="MainMenuBuilder_VideoThumbnailer" xml:space="preserve">
     <value>خلاصه کننده ویدئو</value>
   </data>
@@ -1705,6 +1720,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>ویرایش تصویر</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>ویرایش در ویرایشگر عکس...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>فایل</value>
@@ -1848,7 +1866,7 @@ Please select a different hotkey or quit the conflicting application and reبا�
     <value>بندانگشتی URL</value>
   </data>
   <data name="MainWindow_TrimAnimatedGif" xml:space="preserve">
-    <value>برش GIF متحرک</value>
+    <value>برش GIF متحرک...</value>
   </data>
   <data name="MainWindow_TrimVideo" xml:space="preserve">
     <value>برش ویدئو...</value>
@@ -1973,6 +1991,75 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="ScreenColorPicker" xml:space="preserve">
     <value>صفحه رنگ picker</value>
+  </data>
+  <data name="ScreenRecorderBar_Bar" xml:space="preserve">
+    <value>نوار</value>
+  </data>
+  <data name="ScreenRecorderBar_Camera" xml:space="preserve">
+    <value>دوربین</value>
+  </data>
+  <data name="ScreenRecorderBar_Capture" xml:space="preserve">
+    <value>ضبط تصویر</value>
+  </data>
+  <data name="ScreenRecorderBar_Cursor" xml:space="preserve">
+    <value>نشانگر</value>
+  </data>
+  <data name="ScreenRecorderBar_LayoutPreview" xml:space="preserve">
+    <value>پیش‌نمایش چیدمان</value>
+  </data>
+  <data name="ScreenRecorderBar_Microphone" xml:space="preserve">
+    <value>میکروفون</value>
+  </data>
+  <data name="ScreenRecorderBar_Off" xml:space="preserve">
+    <value>خاموش</value>
+  </data>
+  <data name="ScreenRecorderBar_On" xml:space="preserve">
+    <value>روشن</value>
+  </data>
+  <data name="ScreenRecorderBar_Options" xml:space="preserve">
+    <value>گزینه‌ها</value>
+  </data>
+  <data name="ScreenRecorderBar_Overlay" xml:space="preserve">
+    <value>هم‌پوشانی</value>
+  </data>
+  <data name="ScreenRecorderBar_Record" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="ScreenRecorderBar_RefreshDevices" xml:space="preserve">
+    <value>تازه‌سازی دستگاه‌ها</value>
+  </data>
+  <data name="ScreenRecorderBar_ShowBeforeRecording" xml:space="preserve">
+    <value>نمایش نوار ضبط پیش از ضبط</value>
+  </data>
+  <data name="ScreenRecorderBar_SourceOptions" xml:space="preserve">
+    <value>گزینه‌های {0}</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay" xml:space="preserve">
+    <value>تأخیر شروع</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_1Second" xml:space="preserve">
+    <value>1 ثانیه</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_2Seconds" xml:space="preserve">
+    <value>2 ثانیه</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_3Seconds" xml:space="preserve">
+    <value>3 ثانیه</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_4Seconds" xml:space="preserve">
+    <value>4 ثانیه</value>
+  </data>
+  <data name="ScreenRecorderBar_StartDelay_5Seconds" xml:space="preserve">
+    <value>5 ثانیه</value>
+  </data>
+  <data name="ScreenRecorderBar_SystemAudio" xml:space="preserve">
+    <value>صدای سیستم</value>
+  </data>
+  <data name="ScreenRecorderBar_TargetUnavailable" xml:space="preserve">
+    <value>پنجرهٔ انتخاب‌شده برای ضبط دیگر در دسترس نیست.</value>
+  </data>
+  <data name="ScreenRecorderBar_Volume" xml:space="preserve">
+    <value>بلندی صدای ضبط (%)</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>تاخیر ضبط: {0} ثانیه</value>
@@ -2162,6 +2249,9 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_AutomaticallyHideOnScreenCapture" xml:space="preserve">
     <value>پنهان‌سازی خودکار هنگام ثبت صفحه</value>
   </data>
+  <data name="TaskSettingsWindow_BMPBitDepth" xml:space="preserve">
+    <value>عمق بیت BMP:</value>
+  </data>
   <data name="TaskSettingsWindow_BackgroundDimStrengthPercent" xml:space="preserve">
     <value>شدت تیرگی پس‌زمینه (%):</value>
   </data>
@@ -2251,6 +2341,9 @@ Do you want to abort the active ضبط صفحه?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>شناسایی ناحیه‌های پنجره</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>تیره کردن پنجره‌ها و کنترل‌های زیر نشانگر</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>غیرفعال کردن اعلان‌ها در حالت تمام‌صفحه</value>
@@ -2458,6 +2551,81 @@ Do you want to abort the active ضبط صفحه?</value>
   </data>
   <data name="TaskSettingsWindow_NamePatterns" xml:space="preserve">
     <value>الگوهای نام</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorder" xml:space="preserve">
+    <value>ضبط‌کنندهٔ داخلی صفحه</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderBitrate" xml:space="preserve">
+    <value>نرخ بیت ویدیو (کیلوبیت بر ثانیه):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera" xml:space="preserve">
+    <value>هم‌پوشانی دوربین</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Circle" xml:space="preserve">
+    <value>دایره</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_DefaultDevice" xml:space="preserve">
+    <value>اولین دوربین در دسترس</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Device" xml:space="preserve">
+    <value>دوربین:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Enabled" xml:space="preserve">
+    <value>نمایش هم‌پوشانی دوربین</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_FPS" xml:space="preserve">
+    <value>نرخ فریم دوربین:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Margin" xml:space="preserve">
+    <value>حاشیه (پیکسل):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_NoDevices" xml:space="preserve">
+    <value>هیچ دوربینی شناسایی نشد</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Rectangle" xml:space="preserve">
+    <value>مستطیل</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Resolution" xml:space="preserve">
+    <value>وضوح ضبط:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Shape" xml:space="preserve">
+    <value>شکل:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice" xml:space="preserve">
+    <value>دوربین در دسترس نیست</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderCamera_Width" xml:space="preserve">
+    <value>عرض (% از ضبط):</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultMicrophone" xml:space="preserve">
+    <value>میکروفون پیش‌فرض</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice" xml:space="preserve">
+    <value>دستگاه خروجی پیش‌فرض</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
+    <value>استفاده از ضبط‌کنندهٔ داخلی صفحه</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
+    <value>الزام رمزگذاری سخت‌افزاری ویدیو</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophone" xml:space="preserve">
+    <value>ضبط میکروفون</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderMicrophoneDevice" xml:space="preserve">
+    <value>میکروفون:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudio" xml:space="preserve">
+    <value>ضبط صدای سیستم</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderSystemAudioDevice" xml:space="preserve">
+    <value>دستگاه صدای سیستم:</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableMicrophone" xml:space="preserve">
+    <value>میکروفون در دسترس نیست</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice" xml:space="preserve">
+    <value>دستگاه خروجی در دسترس نیست</value>
   </data>
   <data name="TaskSettingsWindow_No" xml:space="preserve">
     <value>خیر</value>
@@ -2750,9 +2918,6 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_StartDelaySeconds" xml:space="preserve">
     <value>تأخیر شروع (ثانیه):</value>
   </data>
-  <data name="TaskSettingsWindow_StartRecordingAfterADelay" xml:space="preserve">
-    <value>شروع ضبط پس از تأخیر</value>
-  </data>
   <data name="TaskSettingsWindow_Task" xml:space="preserve">
     <value>وظیفه</value>
   </data>
@@ -2854,6 +3019,9 @@ Do you want to abort the active ضبط صفحه?</value>
   </data>
   <data name="TaskSettingsWindow_UseSquareMagnifier" xml:space="preserve">
     <value>استفاده از ذره‌بین مربعی</value>
+  </data>
+  <data name="TaskSettingsWindow_UseStartDelay" xml:space="preserve">
+    <value>استفاده از تأخیر شروع</value>
   </data>
   <data name="TaskSettingsWindow_WatchFolderSummary" xml:space="preserve">
     <value>{0} — {1} — شامل زیرپوشه‌ها: {2}</value>

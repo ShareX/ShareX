@@ -916,8 +916,17 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>Không thể mã hóa ảnh sang định dạng {0}.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>Độ sâu bit BMP:</value>
+  </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Màu nền:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Chuyển đổi hình ảnh</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Mẫu tên tệp:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Trình chuyển đổi hình ảnh</value>
@@ -936,6 +945,12 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 giữ lại nhiều chi tiết màu hơn quanh văn bản và các cạnh sắc nét, nhưng thường tạo ra tệp lớn hơn.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Định dạng đầu ra:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>Độ sâu bit PNG:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = không nén, 1 = nhanh nhất, 9 = tệp nhỏ nhất. Tất cả các mức đều không mất chất lượng.</value>
@@ -963,6 +978,18 @@
   </data>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (điểm ảnh phía trên)</value>
+  </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Chất lượng:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Mức độ nỗ lực nén:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Giá trị thấp hơn giúp mã hóa nhanh hơn. Giá trị cao hơn tạo tệp nhỏ hơn. Mọi giá trị đều giữ nguyên chất lượng hình ảnh.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Không mất dữ liệu</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Lấp đầy</value>
@@ -2122,6 +2149,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>Thoát toàn màn hình</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>Toàn màn hình</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>Đang tải video...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>Tắt tiếng</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>Vị trí phát</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - Trình phát video</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>Bật tiếng</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>Âm lượng phát</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>Thư mục tùy chỉnh</value>
   </data>
@@ -2218,8 +2269,8 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Tệp video</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Bản xem trước gần đúng từ bộ nhớ đệm • được tinh chỉnh khi bạn dừng</value>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>Tất cả tệp (*.*)</value>
   </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Hủy</value>
@@ -2248,9 +2299,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Đang lưu video đã cắt…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Xem trước gần {0} • không phát âm thanh</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Chọn video có thời lượng xác định và hữu hạn.</value>
   </data>
@@ -2260,23 +2308,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Không mất dữ liệu</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>Không có khung hình xem trước tại vị trí này.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Mở video…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Dùng phần mở rộng {0} cho chế độ xuất này.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows không thể phát video này. Hãy kiểm tra xem Windows có hỗ trợ định dạng của video và các thành phần đa phương tiện của Windows đã được cài đặt hay chưa. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Mã hóa lại</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Mã hóa lại thành H.264 / AAC MP4 để có điểm cắt chính xác.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Xem trước khung hình tĩnh • không phát âm thanh</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Đặt lại vùng chọn</value>

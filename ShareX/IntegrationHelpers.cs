@@ -53,8 +53,14 @@ namespace ShareX
         private static ShellMenuEntry UploadMenuEntry => new ShellMenuEntry(ShellExtMenuName, ShellExtDesc, ApplicationPath,
             Array.Empty<string>(), ShellMenuTarget.FilesAndFolders);
 
+        private static readonly string ShellExtPhotoEditorName = "ShareXPhotoEditor";
+        private static readonly string ShellExtPhotoEditorDesc = Strings.IntegrationHelpers_EditWithShareXPhotoEditor;
+
         private static ShellMenuEntry EditMenuEntry => new ShellMenuEntry(ShellExtEditName, ShellExtEditDesc, ApplicationPath,
             ["-ImageEditor"], ShellMenuTarget.Images);
+
+        private static ShellMenuEntry PhotoEditorMenuEntry => new ShellMenuEntry(ShellExtPhotoEditorName, ShellExtPhotoEditorDesc, ApplicationPath,
+            ["-PhotoEditor"], ShellMenuTarget.Images);
 
         private static FileAssociation CustomUploaderAssociation => new FileAssociation(".sxcu", "ShareX.sxcu", "ShareX custom uploader",
             "application/x-sharex-custom-uploader", ApplicationPath, ["-CustomUploader"])
@@ -162,6 +168,25 @@ namespace ShareX
         private static void UnregisterEditShellContextMenuButton()
         {
             PlatformServices.Current.ShellIntegration.Unregister(EditMenuEntry);
+        }
+
+        public static bool CheckPhotoEditorShellContextMenuButton() => Check(() => ShellIntegration.IsRegistered(PhotoEditorMenuEntry));
+
+        public static void CreatePhotoEditorShellContextMenuButton(bool create)
+        {
+            try
+            {
+                ShellIntegration.Unregister(PhotoEditorMenuEntry);
+
+                if (create)
+                {
+                    ShellIntegration.Register(PhotoEditorMenuEntry);
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
         }
 
         public static bool CheckCustomUploaderExtension() => Check(() => ShellIntegration.IsAssociated(CustomUploaderAssociation));
@@ -272,6 +297,7 @@ namespace ShareX
             StartupManager.State = StartupState.Disabled;
             CreateShellContextMenuButton(false);
             CreateEditShellContextMenuButton(false);
+            CreatePhotoEditorShellContextMenuButton(false);
             CreateCustomUploaderExtension(false);
             CreateImageEffectExtension(false);
             CreateSendToMenuButton(false);

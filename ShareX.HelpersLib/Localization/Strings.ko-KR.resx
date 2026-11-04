@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>시작</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>자동 감지</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24비트</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32비트</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>파선</value>
   </data>
@@ -525,6 +534,9 @@
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>파일 이름 변경 오류:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>적응형 양자화 256색</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>16색 팔진트리 양자화</value>
   </data>
@@ -740,6 +752,9 @@
   </data>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Pause 화면 녹화</value>
+  </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>사진 편집기</value>
   </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>화면에 고정</value>

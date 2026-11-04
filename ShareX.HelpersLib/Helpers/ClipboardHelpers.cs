@@ -86,20 +86,29 @@ namespace ShareX.HelpersLib
                 img.Save(png, ImageFormat.Png);
                 IClipboardService platform = PlatformClipboardForWriting;
                 if (platform != null) return Run(x => x.SetImageAsync(png.ToArray()), platform);
-                byte[] dib;
-                if (HelpersOptions.UseAlternativeClipboardCopyImage && !HelpersOptions.DefaultCopyImageFillBackground)
-                    dib = ClipboardHelpersEx.ConvertToDib(img);
-                else
-                {
-                    using Bitmap opaque = SkiaImageHelpers.FillBackground(img, Color.White);
-                    using MemoryStream bmp = new();
-                    opaque.Save(bmp, ImageFormat.Bmp);
-                    dib = bmp.ToArray()[14..];
-                }
-                return AvaloniaClipboard.SetImage(png.ToArray(), dib,
-                    string.IsNullOrEmpty(fileName) ? null : PlatformServices.Current.Clipboard.EncodeHtml($"<img src=\"{fileName}\"/>"));
+                return AvaloniaClipboard.SetImage(png.ToArray(), PlatformServices.Current.Clipboard.FormatNames.Dib != null ? CreateDib(img) : null,
+                    CreateImageHtml(fileName));
             }
             catch (Exception e) { DebugHelper.WriteException(e, "Clipboard copy image failed."); return false; }
+        }
+
+        private static string CreateImageHtml(string fileName)
+        {
+            if (!HelpersOptions.UseAlternativeClipboardCopyImage || string.IsNullOrEmpty(fileName)) return null;
+            string html = $"<img src=\"{fileName}\"/>";
+            return PlatformServices.Current.Clipboard.EncodeHtml(html);
+        }
+
+        // CF_DIB without the BITMAPFILEHEADER. The default is an opaque 24 bpp bottom-up DIB,
+        // which is what Office and Windows clipboard history expect.
+        private static byte[] CreateDib(Image img)
+        {
+            if (HelpersOptions.UseAlternativeClipboardCopyImage && !HelpersOptions.DefaultCopyImageFillBackground)
+                return ClipboardHelpersEx.ConvertToDib(img);
+            using Bitmap opaque = SkiaImageHelpers.FillBackground(img, Color.White);
+            using MemoryStream bmp = new();
+            opaque.Save(bmp, ImageFormat.Bmp);
+            return bmp.ToArray()[14..];
         }
 
         public static bool CopyFile(string path)

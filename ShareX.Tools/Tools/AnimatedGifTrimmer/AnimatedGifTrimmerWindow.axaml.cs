@@ -72,7 +72,7 @@ public partial class AnimatedGifTrimmerWindow : Window
                 {
                     Patterns = ["*.gif"]
                 },
-                FilePickerFileTypes.All
+                new FilePickerFileType(Strings.VideoTrimmer_AllFiles) { Patterns = ["*"] }
             ]
         });
         return files.FirstOrDefault()?.TryGetLocalPath();

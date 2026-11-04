@@ -573,11 +573,19 @@ internal static unsafe class HdrScreenCapture
                         Math.Abs(destinationPixel[1] - referencePixel[1]) <= SdrReferenceTolerance &&
                         Math.Abs(destinationPixel[2] - referencePixel[2]) <= SdrReferenceTolerance;
 
-                    if (extendedRange || !legacyCaptureMatchesSdr)
+                    if (extendedRange)
                     {
                         destinationPixel[0] = toneMappedPixel[0];
                         destinationPixel[1] = toneMappedPixel[1];
                         destinationPixel[2] = toneMappedPixel[2];
+                        destinationPixel[3] = 255;
+                    }
+                    else if (!legacyCaptureMatchesSdr)
+                    {
+                        // SDR content from HDR-aware apps must use the white-level-adjusted reference (ShareX #8895).
+                        destinationPixel[0] = referencePixel[0];
+                        destinationPixel[1] = referencePixel[1];
+                        destinationPixel[2] = referencePixel[2];
                         destinationPixel[3] = 255;
                     }
                 }

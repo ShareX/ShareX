@@ -132,7 +132,9 @@ internal sealed class DesktopTrayIconService : ITrayIconService
         if (_nativeIcon != null)
         {
             // Keep the existing Skia decode/PNG normalization, with native resource ownership in the platform.
-            using SKBitmap bitmap = SkiaImageHelpers.ByteArrayToBitmap(bytes);
+            // The ICO frame closest to the size the tray draws, not the largest scaled down, which looks jagged (#8932).
+            bool ico = bytes.Length > 6 && bytes[0] == 0 && bytes[1] == 0 && bytes[2] == 1 && bytes[3] == 0;
+            using SKBitmap bitmap = ico ? SkiaImageHelpers.DecodeIcon(bytes, _nativeIcon.IconSize) : SkiaImageHelpers.ByteArrayToBitmap(bytes);
             using MemoryStream stream = new();
             bitmap.Save(stream, SKEncodedImageFormat.Png);
             _nativeIcon.SetIcon(stream.ToArray());

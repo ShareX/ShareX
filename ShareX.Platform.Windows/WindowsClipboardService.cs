@@ -38,6 +38,7 @@ namespace ShareX.Platform.Windows;
 public sealed unsafe class WindowsClipboardService : IClipboardService
 {
     private static readonly uint PngFormat = Win32.RegisterClipboardFormat("PNG");
+    private static readonly uint HtmlFormat = Win32.RegisterClipboardFormat("HTML Format");
 
     public FeatureSupport Support => FeatureSupport.Supported;
 
@@ -74,6 +75,11 @@ public sealed unsafe class WindowsClipboardService : IClipboardService
         byte[] dib = CreateDib(PngCodec.Decode(png));
         return Task.FromResult(Write(() => SetData(PngFormat, png) & SetData(Win32.CF_DIB, dib)));
     }
+
+    public bool SetImageWithFormats(byte[] png, byte[]? dib, string? html) => Write(() =>
+        // A bottom-up CF_DIB of our own lets Windows synthesize CF_BITMAP and CF_DIBV5, as System.Windows.Forms.Clipboard did.
+        (dib == null || SetData(Win32.CF_DIB, dib)) & SetData(PngFormat, png) &
+        (string.IsNullOrEmpty(html) || SetData(HtmlFormat, System.Text.Encoding.UTF8.GetBytes(html + "\0"))));
 
     public Task<byte[]?> GetImageAsync(CancellationToken cancellationToken = default) => Task.FromResult(Read<byte[]?>(() =>
     {

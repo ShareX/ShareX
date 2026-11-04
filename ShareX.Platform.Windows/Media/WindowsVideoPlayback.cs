@@ -1,0 +1,585 @@
+#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (c) 2007-2026 ShareX Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
+#if WINDOWS10_0_17763_0_OR_GREATER
+using SharpGen.Runtime;
+using System;
+using System.ComponentModel;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
+using Vortice;
+using Vortice.DXGI;
+using Vortice.MediaFoundation;
+using MediaResultCode = Vortice.MediaFoundation.ResultCode;
+
+namespace ShareX.Platform.Windows.Media;
+
+/// <summary>
+/// A Windows Media Foundation player. Windows decodes and synchronizes video and audio.
+/// GPU frame presentation in a child HWND is controlled here so pause stops the picture immediately.
+/// Playback never copies frames through managed memory or starts another process.
+/// All public operations and events run on the UI thread that created it: its timers are the child window's WM_TIMER messages,
+/// and work from Media Foundation callbacks is posted to that thread's synchronization context.
+/// </summary>
+internal sealed class WindowsVideoPlayback : IVideoPlayback
+{
+    private const nuint PositionTimer = 1, VideoTimer = 2;
+    private const uint PositionInterval = 33, VideoInterval = 16;
+
+    private readonly SynchronizationContext _context;
+    private readonly int _threadId = Environment.CurrentManagedThreadId;
+    private readonly WindowSubclass _windowProcedure;
+    private TaskCompletionSource<VideoPlaybackInfo>? _loadCompletion;
+    private IMFMediaEngine? _mediaEngine;
+    private IMFMediaEngineEx? _engine;
+    private WindowsVideoPresenter? _presenter;
+    private WindowsVideoOnlySource? _videoOnlySource;
+    private nint _window;
+    private int _generation;
+    private double _duration;
+    private double _videoAspectRatio;
+    private double? _pendingSeek;
+    private int _pendingSteps;
+    private bool _seeking, _stepping, _playWhenReady, _mediaFoundationStarted, _disposed;
+    private bool _videoUpdateQueued;
+    private double _volume = 1;
+    private bool _isMuted;
+    private bool _leftButtonPressed;
+
+    public long Handle => _window;
+    public string HandleDescriptor => "HWND";
+    public double AspectRatio => _videoAspectRatio;
+
+    public event Action? AspectRatioChanged;
+    public event Action<double>? PositionChanged;
+    public event Action<bool>? IsPlayingChanged;
+    public event Action<Exception>? PlaybackFailed;
+    public event Action? VideoClicked;
+
+    /// <summary>Includes a play request waiting for a pending seek or frame step to finish.</summary>
+    public bool IsPlaybackRequested => _playWhenReady;
+
+    public double Volume
+    {
+        get => _volume;
+        set
+        {
+            VerifyAccess();
+            if (!double.IsFinite(value)) return;
+            _volume = Math.Clamp(value, 0, 1);
+            if (_engine != null) TryOperation(() => _engine.Volume = _volume);
+        }
+    }
+
+    public bool IsMuted
+    {
+        get => _isMuted;
+        set
+        {
+            VerifyAccess();
+            _isMuted = value;
+            if (_engine != null) TryOperation(() => _engine.Muted = _isMuted);
+        }
+    }
+
+    public WindowsVideoPlayback(nint parent, SynchronizationContext context)
+    {
+        _context = context;
+        _windowProcedure = WindowProcedure;
+        // Painting is handled by WindowProcedure so the static control cannot paint over the video.
+        _window = CreateWindowEx(0, "STATIC", string.Empty, 0x56000004,
+            0, 0, 1, 1, parent, 0, 0, 0); // WS_CHILD | WS_VISIBLE | WS_CLIPCHILDREN | WS_CLIPSIBLINGS
+        if (_window == 0) throw new Win32Exception(Marshal.GetLastWin32Error());
+        if (!SetWindowSubclass(_window, _windowProcedure, 1, 0))
+        {
+            DestroyWindow(_window);
+            _window = 0;
+            throw new Win32Exception();
+        }
+    }
+
+    private void VerifyAccess()
+    {
+        if (Environment.CurrentManagedThreadId != _threadId) throw new InvalidOperationException("The video player is used from another thread.");
+    }
+
+    private void Post(Action action) => _context.Post(_ => action(), null);
+
+    private void StartTimer(nuint id)
+    {
+        if (_window != 0) SetTimer(_window, id, id == PositionTimer ? PositionInterval : VideoInterval, 0);
+    }
+
+    private void StopTimer(nuint id)
+    {
+        if (_window != 0) KillTimer(_window, id);
+    }
+
+    public async Task<VideoPlaybackInfo> LoadAsync(string path, CancellationToken token = default)
+    {
+        VerifyAccess();
+        ObjectDisposedException.ThrowIf(_disposed, this);
+        CloseMedia();
+        int generation = _generation;
+        try
+        {
+            nint window = _window;
+            token.ThrowIfCancellationRequested();
+            ObjectDisposedException.ThrowIf(_disposed, this);
+            if (generation != _generation) throw new OperationCanceledException();
+
+            string fullPath = Path.GetFullPath(path);
+            try
+            {
+                CreateMediaEngine(window, fullPath, generation);
+                return await _loadCompletion!.Task.WaitAsync(token);
+            }
+            catch (Exception ex) when (!token.IsCancellationRequested && generation == _generation &&
+                (ex.HResult == MediaResultCode.TopoCodecNotFound.Code || ex.HResult == MediaResultCode.Invalidmediatype.Code))
+            {
+                // A missing audio decoder must not prevent a supported video stream from opening.
+                CloseMedia();
+                generation = _generation;
+            }
+
+            // Resolve on a worker: large files must not block the UI. The source owns its MF lifetime
+            // while a canceled/replaced load is waiting for resolution to finish.
+            WindowsVideoOnlySource source = await Task.Run(() => new WindowsVideoOnlySource(fullPath), token);
+            try
+            {
+                token.ThrowIfCancellationRequested();
+                ObjectDisposedException.ThrowIf(_disposed, this);
+                if (generation != _generation) throw new OperationCanceledException();
+                _videoOnlySource = source;
+            }
+            catch { source.Dispose(); throw; }
+            CreateMediaEngine(window, fullPath, generation);
+            return await _loadCompletion!.Task.WaitAsync(token);
+        }
+        catch
+        {
+            if (generation == _generation) CloseMedia();
+            throw;
+        }
+    }
+
+    private void CreateMediaEngine(nint window, string path, int generation)
+    {
+        MediaFactory.MFStartup(true).CheckError();
+        _mediaFoundationStarted = true;
+        _loadCompletion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        _presenter = new WindowsVideoPresenter(window);
+        using IMFAttributes attributes = MediaFactory.MFCreateAttributes(3);
+        attributes.Set(MediaEngineAttributeKeys.DxgiManager.Guid, _presenter.DeviceManager).CheckError();
+        attributes.Set(MediaEngineAttributeKeys.VideoOutputFormat.Guid, (uint)Format.B8G8R8A8_UNorm).CheckError();
+        if (_videoOnlySource != null) attributes.Set(MediaEngineAttributeKeys.Extension.Guid, _videoOnlySource.Extension).CheckError();
+        using IMFMediaEngineClassFactory factory = new();
+        _mediaEngine = factory.CreateInstance(MediaEngineCreateFlags.None, attributes,
+            (mediaEvent, parameter1, parameter2) => OnMediaEvent(generation, mediaEvent, parameter1, parameter2));
+        // The base wrapper owns the managed COM notification callback; retain it through shutdown.
+        _engine = _mediaEngine.QueryInterface<IMFMediaEngineEx>();
+        _engine.AutoPlay = false;
+        _engine.Preload = MediaEnginePreload.Automatic;
+        _engine.Volume = _volume;
+        _engine.Muted = _isMuted;
+        // The Windows URL resolver also accepts local paths, without URI escaping of '#' or Unicode names.
+        _engine.SetSource(path);
+        _engine.Load();
+    }
+
+    public void Unload()
+    {
+        VerifyAccess();
+        CloseMedia();
+    }
+
+    public void Seek(double seconds)
+    {
+        VerifyAccess();
+        if (_engine == null || _duration <= 0 || !double.IsFinite(seconds)) return;
+        Pause();
+        _pendingSteps = 0;
+        // Seeking exactly to EOF has no video frame. Keep the final frame available when paused.
+        _pendingSeek = Math.Clamp(seconds, 0, Math.Max(0, _duration - 0.000001));
+        RunPendingOperation();
+    }
+
+    public void Play()
+    {
+        VerifyAccess();
+        if (_engine == null || _duration <= 0) return;
+        if (_engine.IsEnded && !_seeking && _pendingSeek == null) Seek(0);
+        _playWhenReady = true;
+        RunPendingOperation();
+    }
+
+    public void Pause()
+    {
+        VerifyAccess();
+        _playWhenReady = false;
+        StopTimer(PositionTimer);
+        // Stop presenting before the engine's asynchronous pause drains its playback queues.
+        if (!_seeking && !_stepping) StopTimer(VideoTimer);
+        if (_engine != null) TryOperation(() => _engine.Pause());
+        IsPlayingChanged?.Invoke(false);
+    }
+
+    public void StepFrame(bool forward)
+    {
+        VerifyAccess();
+        if (_engine == null || _duration <= 0) return;
+        Pause();
+        _pendingSteps = Math.Clamp(_pendingSteps + (forward ? 1 : -1), -60, 60);
+        RunPendingOperation();
+    }
+
+    private void RunPendingOperation()
+    {
+        if (_engine == null || _seeking || _stepping) return;
+        TryOperation(() =>
+        {
+            if (_pendingSeek is double target)
+            {
+                _pendingSeek = null;
+                _seeking = true;
+                StartTimer(VideoTimer);
+                // Normal seeks decode to the requested time; Approximate seeks only choose a keyframe.
+                _engine.SetCurrentTimeEx(target, MediaEngineSeekMode.Normal);
+            }
+            else if (_pendingSteps != 0)
+            {
+                bool forward = _pendingSteps > 0;
+                _pendingSteps += forward ? -1 : 1;
+                _stepping = true;
+                StartTimer(VideoTimer);
+                _engine.FrameStep(forward);
+            }
+            else if (_playWhenReady)
+            {
+                StartTimer(VideoTimer);
+                _engine.Play();
+            }
+        });
+    }
+
+    private void OnMediaEvent(int generation, MediaEngineEvent mediaEvent, nuint parameter1, int parameter2)
+    {
+        // Media Foundation holds its own lock in this callback. Never call the engine here.
+        // NOTIFYSTABLESTATE is the sole event requiring a synchronous response.
+        if (mediaEvent == MediaEngineEvent.NotifyStableState)
+        {
+            SetEvent((nint)parameter1);
+            return;
+        }
+
+        if (mediaEvent is MediaEngineEvent.CanPlay or MediaEngineEvent.LoadedMetadata or
+            MediaEngineEvent.Error or MediaEngineEvent.StreamRenderingError or MediaEngineEvent.ResourceLost or
+            MediaEngineEvent.Seeked or MediaEngineEvent.FrameStepCompleted or
+            MediaEngineEvent.Playing or MediaEngineEvent.Pause or MediaEngineEvent.Ended)
+        {
+            Post(() =>
+            {
+                if (generation != _generation || _engine == null || _disposed || _loadCompletion?.Task.IsFaulted == true) return;
+                TryOperation(() => HandleMediaEvent(mediaEvent, parameter2));
+            });
+        }
+    }
+
+    private void HandleMediaEvent(MediaEngineEvent mediaEvent, int errorCode)
+    {
+        switch (mediaEvent)
+        {
+            case MediaEngineEvent.LoadedMetadata:
+                if (!_engine!.HasVideo()) throw new InvalidDataException("The file has no playable video.");
+                _engine.GetVideoAspectRatio(out int numerator, out int denominator);
+                _videoAspectRatio = numerator > 0 && denominator > 0 ? (double)numerator / denominator : 0;
+                AspectRatioChanged?.Invoke();
+                break;
+            case MediaEngineEvent.CanPlay:
+                double duration = _engine!.Duration;
+                if (!_engine.HasVideo() || !double.IsFinite(duration) || duration <= 0)
+                    throw new InvalidDataException("The file has no playable video.");
+                _duration = duration;
+                _engine.GetNativeVideoSize(out int width, out int height);
+                QueueVideoUpdate();
+                _loadCompletion?.TrySetResult(new(duration, width, height));
+                PublishPosition();
+                break;
+            case MediaEngineEvent.Seeked:
+                _seeking = false;
+                PresentVideo(true);
+                RunPendingOperation();
+                if (!_playWhenReady && !_seeking && !_stepping) StopTimer(VideoTimer);
+                PublishPosition();
+                break;
+            case MediaEngineEvent.FrameStepCompleted:
+                _stepping = false;
+                PresentVideo(true);
+                RunPendingOperation();
+                if (!_playWhenReady && !_seeking && !_stepping) StopTimer(VideoTimer);
+                PublishPosition();
+                break;
+            case MediaEngineEvent.Playing:
+                // Events already queued before a pause or a new seek can arrive afterward.
+                if (_playWhenReady && !_engine!.IsPaused)
+                {
+                    StartTimer(PositionTimer);
+                    StartTimer(VideoTimer);
+                    IsPlayingChanged?.Invoke(true);
+                }
+                break;
+            case MediaEngineEvent.Pause:
+            case MediaEngineEvent.Ended:
+                if (_engine!.IsPaused || _engine.IsEnded)
+                {
+                    if (_engine.IsEnded && !_seeking && _pendingSeek == null) _playWhenReady = false;
+                    StopTimer(PositionTimer);
+                    if (!_playWhenReady && !_seeking && !_stepping) StopTimer(VideoTimer);
+                    IsPlayingChanged?.Invoke(false);
+                    PublishPosition();
+                }
+                break;
+            case MediaEngineEvent.Error:
+            case MediaEngineEvent.StreamRenderingError:
+            case MediaEngineEvent.ResourceLost:
+                throw Marshal.GetExceptionForHR(errorCode) ?? new InvalidDataException("The file has no playable video.");
+        }
+    }
+
+    private void PublishPosition()
+    {
+        if (_engine == null || _duration <= 0 || _seeking || _stepping || _pendingSeek != null) return;
+        TryOperation(() =>
+        {
+            double position = _engine.CurrentTime;
+            if (double.IsFinite(position)) PositionChanged?.Invoke(Math.Clamp(position, 0, _duration));
+        });
+    }
+
+    private void TryOperation(Action operation)
+    {
+        try { operation(); }
+        catch (Exception ex)
+        {
+            TaskCompletionSource<VideoPlaybackInfo>? load = _loadCompletion;
+            bool loading = load is { Task.IsCompleted: false };
+            if (loading)
+            {
+                load!.TrySetException(ex);
+                return; // LoadAsync owns cleanup and can retry without the unsupported audio stream.
+            }
+            CloseMedia();
+            PlaybackFailed?.Invoke(ex);
+        }
+    }
+
+    private void PresentVideo(bool repaint)
+    {
+        if (_engine == null || _presenter == null || _duration <= 0 || _window == 0 || !GetClientRect(_window, out RawRect rectangle)) return;
+        _presenter.Present(_engine, rectangle, repaint);
+    }
+
+    private void QueueVideoUpdate()
+    {
+        if (_videoUpdateQueued || _engine == null || _duration <= 0 || _disposed) return;
+        _videoUpdateQueued = true;
+        // The UI toolkit resizes the child before moving/resizing its native holder. Wait for both to finish,
+        // and avoid reentering DXGI or Media Foundation from their own window messages.
+        Post(() =>
+        {
+            try
+            {
+                if (_disposed || _engine == null || _duration <= 0) return;
+                TryOperation(() => PresentVideo(true));
+            }
+            finally { _videoUpdateQueued = false; }
+        });
+    }
+
+    private nint WindowProcedure(nint window, uint message, nuint wParam, nint lParam, nuint id, nuint data)
+    {
+        if (message == 0x0084 && VideoClicked != null && _duration > 0) return 1; // WM_NCHITTEST: HTCLIENT
+        if ((message is 0x0201 or 0x0203) && VideoClicked != null && _duration > 0) // WM_LBUTTONDOWN / WM_LBUTTONDBLCLK
+        {
+            _leftButtonPressed = true;
+            SetCapture(window);
+        }
+        else if (message == 0x0202 && _leftButtonPressed) // WM_LBUTTONUP
+        {
+            _leftButtonPressed = false;
+            if (GetCapture() == window) ReleaseCapture();
+            int x = (short)(lParam.ToInt64() & 0xFFFF);
+            int y = (short)((lParam.ToInt64() >> 16) & 0xFFFF);
+            if (GetClientRect(window, out RawRect bounds) && x >= 0 && y >= 0 && x < bounds.Right && y < bounds.Bottom)
+            {
+                int generation = _generation;
+                // Playback operations must run after the native input message has finished.
+                Post(() =>
+                {
+                    if (!_disposed && generation == _generation && _duration > 0) VideoClicked?.Invoke();
+                });
+            }
+        }
+        else if (message is 0x001F or 0x0215) _leftButtonPressed = false; // WM_CANCELMODE / WM_CAPTURECHANGED
+
+        if (message == 0x0113) // WM_TIMER
+        {
+            if (wParam == PositionTimer) PublishPosition();
+            else if (wParam == VideoTimer) TryOperation(() => PresentVideo(false));
+            return 0;
+        }
+        if (message == 0x0014) return 1; // WM_ERASEBKGND: WM_PAINT owns the background.
+        if (message == 0x000F) // WM_PAINT
+        {
+            nint dc = BeginPaint(window, out PaintStruct paint);
+            try
+            {
+                if (_engine == null || _duration <= 0)
+                    FillRect(dc, ref paint.Rectangle, GetStockObject(4)); // BLACK_BRUSH
+                else
+                    QueueVideoUpdate();
+            }
+            finally { EndPaint(window, ref paint); }
+            return 0;
+        }
+
+        nint result = DefSubclassProc(window, message, wParam, lParam);
+        // Resize coordinates are physical pixels, including when the window moves between DPI settings.
+        if (message is 0x0005 or 0x0018 or 0x0047) QueueVideoUpdate(); // WM_SIZE / WM_SHOWWINDOW / WM_WINDOWPOSCHANGED
+        return result;
+    }
+
+    private void CloseMedia()
+    {
+        _generation++;
+        _leftButtonPressed = false;
+        if (_window != 0 && GetCapture() == _window) ReleaseCapture();
+        StopTimer(PositionTimer);
+        StopTimer(VideoTimer);
+        _loadCompletion?.TrySetCanceled();
+        _loadCompletion = null;
+        _pendingSeek = null;
+        _pendingSteps = 0;
+        _duration = 0;
+        _videoAspectRatio = 0;
+        AspectRatioChanged?.Invoke();
+        _seeking = _stepping = _playWhenReady = false;
+        if (_engine != null)
+        {
+            try { _engine.Shutdown(); }
+            catch (SharpGenException ex) { System.Diagnostics.Debug.WriteLine(ex); }
+            finally { _engine.Dispose(); _engine = null; }
+        }
+        _mediaEngine?.Dispose();
+        _mediaEngine = null;
+        _videoOnlySource?.Dispose();
+        _videoOnlySource = null;
+        _presenter?.Dispose();
+        _presenter = null;
+        if (_mediaFoundationStarted)
+        {
+            MediaFactory.MFShutdown();
+            _mediaFoundationStarted = false;
+        }
+        IsPlayingChanged?.Invoke(false);
+        if (_window != 0) InvalidateRect(_window, 0, true);
+    }
+
+    public void Dispose()
+    {
+        VerifyAccess();
+        if (_disposed) return;
+        _disposed = true;
+        CloseMedia();
+        if (_window != 0)
+        {
+            RemoveWindowSubclass(_window, _windowProcedure, 1);
+            DestroyWindow(_window);
+            _window = 0;
+        }
+    }
+
+    [UnmanagedFunctionPointer(CallingConvention.Winapi)]
+    private delegate nint WindowSubclass(nint window, uint message, nuint wParam, nint lParam, nuint id, nuint data);
+
+    [StructLayout(LayoutKind.Sequential)]
+    private unsafe struct PaintStruct
+    {
+        public nint DeviceContext;
+        public int Erase;
+        public RawRect Rectangle;
+        public int Restore;
+        public int IncUpdate;
+        public fixed byte Reserved[32];
+    }
+
+    [DllImport("user32.dll")]
+    private static extern nint BeginPaint(nint window, out PaintStruct paint);
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool EndPaint(nint window, ref PaintStruct paint);
+    [DllImport("user32.dll")]
+    private static extern int FillRect(nint dc, ref RawRect rectangle, nint brush);
+    [DllImport("gdi32.dll")]
+    private static extern nint GetStockObject(int objectType);
+    [DllImport("user32.dll", EntryPoint = "CreateWindowExW", CharSet = CharSet.Unicode, SetLastError = true)]
+    private static extern nint CreateWindowEx(uint extendedStyle, string className, string title, uint style,
+        int x, int y, int width, int height, nint parent, nint menu, nint instance, nint parameter);
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool DestroyWindow(nint window);
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool GetClientRect(nint window, out RawRect rectangle);
+    [DllImport("user32.dll")]
+    private static extern nint SetCapture(nint window);
+    [DllImport("user32.dll")]
+    private static extern nint GetCapture();
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool ReleaseCapture();
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool InvalidateRect(nint window, nint rectangle, [MarshalAs(UnmanagedType.Bool)] bool erase);
+    [DllImport("comctl32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool SetWindowSubclass(nint window, WindowSubclass procedure, nuint id, nuint data);
+    [DllImport("comctl32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool RemoveWindowSubclass(nint window, WindowSubclass procedure, nuint id);
+    [DllImport("comctl32.dll")]
+    private static extern nint DefSubclassProc(nint window, uint message, nuint wParam, nint lParam);
+    [DllImport("kernel32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool SetEvent(nint handle);
+    [DllImport("user32.dll")]
+    private static extern nuint SetTimer(nint window, nuint id, uint elapse, nint timerProc);
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool KillTimer(nint window, nuint id);
+}
+#endif

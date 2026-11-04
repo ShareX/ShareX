@@ -2153,8 +2153,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-
-
         public static ImageSamplingMode GetInterpolationMode(ImageInterpolationMode interpolationMode)
         {
             switch (interpolationMode)

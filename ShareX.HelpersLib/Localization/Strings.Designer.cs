@@ -653,6 +653,9 @@ namespace ShareX.HelpersLib.Localization {
         public static string FileExistAction_UniqueName {
             get { return ResourceManager.GetString("FileExistAction_UniqueName", resourceCulture); }
         }
+        public static string GIFQuality_Adaptive {
+            get { return ResourceManager.GetString("GIFQuality_Adaptive", resourceCulture); }
+        }
         public static string GIFQuality_Bit4 {
             get { return ResourceManager.GetString("GIFQuality_Bit4", resourceCulture); }
         }
@@ -772,6 +775,9 @@ namespace ShareX.HelpersLib.Localization {
         }
         public static string HotkeyType_ImageEditor {
             get { return ResourceManager.GetString("HotkeyType_ImageEditor", resourceCulture); }
+        }
+        public static string HotkeyType_PhotoEditor {
+            get { return ResourceManager.GetString("HotkeyType_PhotoEditor", resourceCulture); }
         }
         public static string HotkeyType_ImageEffects {
             get { return ResourceManager.GetString("HotkeyType_ImageEffects", resourceCulture); }
@@ -994,6 +1000,15 @@ namespace ShareX.HelpersLib.Localization {
         }
         public static string PastebinPrivacy_Unlisted {
             get { return ResourceManager.GetString("PastebinPrivacy_Unlisted", resourceCulture); }
+        }
+        public static string BMPBitDepth_Automatic {
+            get { return ResourceManager.GetString("BMPBitDepth_Automatic", resourceCulture); }
+        }
+        public static string BMPBitDepth_Bit24 {
+            get { return ResourceManager.GetString("BMPBitDepth_Bit24", resourceCulture); }
+        }
+        public static string BMPBitDepth_Bit32 {
+            get { return ResourceManager.GetString("BMPBitDepth_Bit32", resourceCulture); }
         }
         public static string PNGBitDepth_Automatic {
             get { return ResourceManager.GetString("PNGBitDepth_Automatic", resourceCulture); }

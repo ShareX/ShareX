@@ -1155,6 +1155,12 @@ A área de transferência não contém uma imagem.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Tente outra palavra-chave.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Nenhum tipo de letra correspondente</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Pesquisar tipos de letra...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Inserir imagem abaixo</value>
   </data>
@@ -1400,6 +1406,9 @@ A área de transferência não contém uma imagem.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Desfoque</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Clonar</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Recortar</value>

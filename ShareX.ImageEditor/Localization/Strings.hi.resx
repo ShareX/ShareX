@@ -1155,6 +1155,12 @@
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>कोई अन्य कीवर्ड आज़माएँ।</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>कोई मेल खाता फ़ॉन्ट नहीं</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>फ़ॉन्ट खोजें...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>छवि को नीचे सम्मिलित करें</value>
   </data>
@@ -1400,6 +1406,9 @@
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>धुंधला</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>क्लोन</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>काट-छाँट</value>

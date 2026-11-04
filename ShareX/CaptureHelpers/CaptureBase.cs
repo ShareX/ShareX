@@ -45,11 +45,6 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.GeneralSettings.ToastWindowAutoHide)
-            {
-                NotificationWindow.CloseActiveWindow();
-            }
-
             _ = CaptureAsync(taskSettings, autoHideForm);
         }
 
@@ -82,6 +77,11 @@ namespace ShareX
             bool wait = false;
             bool showDesktopIcons = false;
             bool showMainForm = false;
+
+            if (taskSettings.GeneralSettings.ToastWindowAutoHide)
+            {
+                await NotificationWindow.CloseActiveWindowAsync();
+            }
 
             IShellService shell = PlatformServices.Current.Shell;
 

@@ -916,8 +916,17 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>Imaginea nu a putut fi codificată în formatul {0}.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>Adâncime de biți BMP:</value>
+  </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Culoarea fundalului:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Convertește imaginile</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Șablon nume fișier:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Convertor de imagini</value>
@@ -936,6 +945,12 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 păstrează mai multe detalii de culoare în jurul textului și al marginilor clare, dar produce de obicei fișiere mai mari.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Formatul rezultatului:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>Adâncime de biți PNG:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = fără compresie, 1 = cel mai rapid, 9 = cele mai mici fișiere. Toate nivelurile sunt fără pierderi.</value>
@@ -963,6 +978,18 @@
   </data>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (pixelul de deasupra)</value>
+  </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Calitate:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Efort de compresie:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Valorile mai mici accelerează codificarea. Valorile mai mari produc fișiere mai mici. Toate valorile păstrează calitatea imaginii.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Fără pierderi</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Umplere</value>
@@ -2122,6 +2149,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>Ieșire din ecran complet</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>Ecran complet</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>Se încarcă videoclipul...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>Dezactivează sunetul</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>Poziția redării</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - Player video</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>Activează sunetul</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>Volumul redării</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>Dosar personalizat</value>
   </data>
@@ -2218,8 +2269,8 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Fișiere video</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Previzualizare aproximativă din cache • se rafinează când faci pauză</value>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>Toate fișierele (*.*)</value>
   </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Anulează</value>
@@ -2248,9 +2299,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Se salvează videoclipul decupat…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Previzualizare în apropiere de {0} • fără redare audio</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Selectează un videoclip cu durată cunoscută și finită.</value>
   </data>
@@ -2260,23 +2308,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Fără pierderi</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>Nu este disponibil niciun cadru de previzualizare la această poziție.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Deschide videoclipul…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Folosește extensia {0} pentru acest mod de export.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows nu a putut reda acest videoclip. Verificați dacă Windows acceptă formatul acestuia și dacă sunt instalate componentele media Windows. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Recodificare</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Recodifică în H.264 / AAC MP4 pentru puncte de tăiere exacte.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Previzualizare cadru static • fără redare audio</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Resetează selecția</value>

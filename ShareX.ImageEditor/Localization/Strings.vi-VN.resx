@@ -1155,6 +1155,12 @@ Bảng nhớ tạm không chứa ảnh.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Hãy thử từ khóa khác.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Không có phông chữ phù hợp</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Tìm kiếm phông chữ...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Chèn hình ảnh bên dưới</value>
   </data>
@@ -1400,6 +1406,9 @@ Bảng nhớ tạm không chứa ảnh.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Làm mờ</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Nhân bản</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Cắt xén</value>

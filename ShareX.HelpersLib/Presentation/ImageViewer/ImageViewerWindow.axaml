@@ -25,6 +25,7 @@
                 <Image x:Name="PreviewImage"
                        Source="{Binding CurrentImage}"
                        RenderTransformOrigin="0,0"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
                        Stretch="Uniform"
                        StretchDirection="DownOnly"/>
             </Border>
@@ -41,6 +42,7 @@
             <Button Width="72"
                     Height="96"
                     Margin="20"
+                    Focusable="False"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     IsVisible="{Binding CanNavigateLeft}"
@@ -54,6 +56,7 @@
             <Button Width="72"
                     Height="96"
                     Margin="20"
+                    Focusable="False"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
                     IsVisible="{Binding CanNavigateRight}"

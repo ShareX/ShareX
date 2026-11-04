@@ -227,5 +227,4 @@ public static class ImageWatermarkService
             Math.Max(1, (int)Math.Round(source.Height * scale)));
     }
 
-
 }

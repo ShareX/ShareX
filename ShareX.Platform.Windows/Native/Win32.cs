@@ -324,6 +324,12 @@ internal static unsafe partial class Win32
     [return: MarshalAs(UnmanagedType.Bool)]
     public static partial bool GetWindowRect(IntPtr hwnd, out RECT rect);
 
+    public const uint WDA_EXCLUDEFROMCAPTURE = 0x11;
+
+    [LibraryImport("user32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool SetWindowDisplayAffinity(IntPtr hwnd, uint affinity);
+
     [LibraryImport("user32.dll")]
     public static partial uint GetWindowThreadProcessId(IntPtr hwnd, out uint processId);
 

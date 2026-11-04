@@ -83,4 +83,12 @@ public interface IClipboardService
     /// on Windows, macOS and X11, where the toolkit's clipboard works and keeps ShareX's extra image formats.
     /// </summary>
     bool PreferredForWriting { get; }
+
+    /// <summary>
+    /// Puts an image on the clipboard with ShareX's extra formats through the system's own clipboard API: PNG, the DIB that Office
+    /// and Windows clipboard history read, and HTML (already encoded with <see cref="EncodeHtml"/>). False where the UI toolkit's
+    /// clipboard writes these instead (Linux, macOS). On Windows the toolkit would synthesize the bitmap formats from a
+    /// premultiplied top-down bitmap, which those applications render wrongly.
+    /// </summary>
+    bool SetImageWithFormats(byte[] png, byte[]? dib, string? html) => false;
 }

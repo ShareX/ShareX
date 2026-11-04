@@ -1155,6 +1155,12 @@ Schránka neobsahuje obrázek.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Zkuste jiné klíčové slovo.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>Žádná odpovídající písma</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Hledat písma...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Vložit obrázek dolů</value>
   </data>
@@ -1400,6 +1406,9 @@ Schránka neobsahuje obrázek.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Rozmazání</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Klonovat</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Oříznutí</value>

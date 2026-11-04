@@ -79,7 +79,6 @@ public sealed class UnsharpMaskImageEffect : ImageEffectBase
             dstPixels[i] = new SKColor(r, g, bch, o.Alpha);
         }
 
-
         return new SKBitmap(source.Width, source.Height, source.ColorType, source.AlphaType)
         {
             Pixels = dstPixels

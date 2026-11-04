@@ -226,6 +226,24 @@ public sealed class MacWindowService : IWindowService
 
     public bool PositionsWindowsInPoints => true;
 
+    public bool PlaceBelow(long windowHandle, long aboveWindowHandle) => ObjC.WithAutoreleasePool(() =>
+    {
+        IntPtr window = GetOwnNSWindow((IntPtr)windowHandle), above = GetOwnNSWindow((IntPtr)aboveWindowHandle);
+        if (window == IntPtr.Zero || above == IntPtr.Zero) return false;
+        // -[NSWindow orderWindow:NSWindowBelow relativeTo:windowNumber]
+        ObjC.Send(window, "orderWindow:relativeTo:", -1, ObjC.SendNInt(above, "windowNumber"));
+        return true;
+    });
+
+    public bool ExcludeFromCapture(long windowHandle) => ObjC.WithAutoreleasePool(() =>
+    {
+        IntPtr window = GetOwnNSWindow((IntPtr)windowHandle);
+        if (window == IntPtr.Zero) return false;
+        // NSWindowSharingNone
+        ObjC.Send(window, "setSharingType:", IntPtr.Zero);
+        return true;
+    });
+
     public bool PrefersSystemCursors => true;
 
     public bool FullScreenUsesSeparateSpace => true;

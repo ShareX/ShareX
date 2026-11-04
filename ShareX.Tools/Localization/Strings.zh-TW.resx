@@ -920,8 +920,17 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>無法將影像編碼為 {0} 格式。</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP 位元深度：</value>
+  </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>背景色彩：</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>轉換影像</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>檔案名範本：</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>影像轉換器</value>
@@ -940,6 +949,12 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 能保留文字與銳利邊緣周圍的更多色彩細節，但通常會產生較大的檔案。</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>輸出格式：</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG 位元深度：</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = 不壓縮，1 = 最快，9 = 檔案最小。所有級別均為無損。</value>
@@ -967,6 +982,18 @@
   </data>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up（上方像素）</value>
+  </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>品質：</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>壓縮力度：</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>較低的值可加快編碼速度。較高的值可產生更小的檔案。所有值都會保持影像品質。</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>無損</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>填滿</value>
@@ -2128,6 +2155,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>結束全螢幕</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>全螢幕</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>正在載入影片...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>靜音</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>播放位置</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - 影片播放器</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>取消靜音</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>播放音量</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>自訂資料夾</value>
   </data>
@@ -2224,8 +2275,8 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>影片檔案</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>快取的概略預覽 • 暫停後將精確顯示</value>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>所有檔案 (*.*)</value>
   </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>取消</value>
@@ -2254,9 +2305,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>正在儲存剪輯後的影片…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>{0} 附近的預覽 • 不播放音訊</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>請選擇時長已知且有限的影片。</value>
   </data>
@@ -2266,23 +2314,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>無損</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>此位置沒有可用的預覽影格。</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>開啟影片…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>此匯出模式請使用 {0} 副檔名。</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows 無法播放此影片。請確認 Windows 支援其格式，且已安裝 Windows 媒體元件。{0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>重新編碼</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>重新編碼為 H.264 / AAC MP4，以獲得精確的剪切點。</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>靜態影格預覽 • 不播放音訊</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>重設選取範圍</value>

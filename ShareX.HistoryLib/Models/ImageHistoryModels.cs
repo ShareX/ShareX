@@ -26,9 +26,11 @@
 #nullable enable
 
 using Avalonia;
-using Avalonia.Platform;
+using ShareX.AvaloniaUI.Imaging;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Platform;
+using SkiaSharp;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -77,6 +79,9 @@ public sealed class ImageHistoryEntry : INotifyPropertyChanged, IDisposable
     public bool IsFavorite => Item.Favorite;
     public bool HasThumbnail => Thumbnail != null;
     public bool ShowPlaceholder => Thumbnail == null;
+    public bool IsVideo => FileHelpers.IsVideoFile(Item.FilePath);
+    public bool ShowPlayIcon => HasThumbnail && IsVideo;
+    public string PlaceholderIcon => IsVideo ? LucideIcons.file_video : LucideIcons.image;
 
     public AvaloniaBitmap? Thumbnail
     {
@@ -89,6 +94,7 @@ public sealed class ImageHistoryEntry : INotifyPropertyChanged, IDisposable
             OnPropertyChanged();
             OnPropertyChanged(nameof(HasThumbnail));
             OnPropertyChanged(nameof(ShowPlaceholder));
+            OnPropertyChanged(nameof(ShowPlayIcon));
         }
     }
 
@@ -181,6 +187,9 @@ public sealed class ImageHistoryEntry : INotifyPropertyChanged, IDisposable
     {
         OnPropertyChanged(nameof(FileName));
         OnPropertyChanged(nameof(IsFavorite));
+        OnPropertyChanged(nameof(IsVideo));
+        OnPropertyChanged(nameof(ShowPlayIcon));
+        OnPropertyChanged(nameof(PlaceholderIcon));
     }
 
     public void Dispose()
@@ -238,8 +247,8 @@ public sealed class ImageHistoryThumbnailLoader : IDisposable
             if (png != null)
             {
                 if (token.IsCancellationRequested) return null;
-                using MemoryStream pngStream = new MemoryStream(png, false);
-                return new AvaloniaBitmap(pngStream);
+                using SKBitmap? decoded = SKBitmap.Decode(png);
+                return decoded != null ? BitmapConversionHelpers.CreatePreview(decoded, new PixelSize(width, height)) : null;
             }
         }
         catch (OperationCanceledException)
@@ -251,7 +260,7 @@ public sealed class ImageHistoryThumbnailLoader : IDisposable
             DebugHelper.WriteException(ex);
         }
 
-        if (token.IsCancellationRequested) return null;
+        if (token.IsCancellationRequested || FileHelpers.IsVideoFile(filePath)) return null;
         using FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
         AvaloniaBitmap thumbnail = AvaloniaBitmap.DecodeToWidth(stream, width);
         if (token.IsCancellationRequested)

@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>Indítás</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>Automatikusally detect</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 bites</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 bites</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>Szaggatott</value>
   </data>
@@ -525,6 +534,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Fájlátnevezési hiba:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptív kvantáló, 256 szín</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizáló 16 szín</value>
   </data>
@@ -740,6 +752,9 @@ Ennek ellenére szeretné futtatni?</value>
   </data>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Szünet képernyőfelvétel</value>
+  </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Fotószerkesztő</value>
   </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Pin to képernyő</value>

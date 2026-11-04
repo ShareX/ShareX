@@ -96,6 +96,13 @@ internal static class FrameWindowShape
         }
     }
 
+    /// <summary>Keeps a window out of screenshots and recordings, where the system allows it.</summary>
+    public static bool ExcludeFromCapture(Window window)
+    {
+        long handle = GetHandle(window);
+        return handle != 0 && PlatformServices.Current.Windows.ExcludeFromCapture(handle);
+    }
+
     private static long GetHandle(Window window) => window.TryGetPlatformHandle()?.Handle.ToInt64() ?? 0;
 }
 

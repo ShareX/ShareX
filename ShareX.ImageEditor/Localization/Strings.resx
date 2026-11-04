@@ -1155,6 +1155,14 @@ Clipboard does not contain an image.</value>
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>Try a different keyword.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>No matching fonts</value>
+    <comment>Shown in the font family dropdown of the annotation toolbar when no installed font matches the search text.</comment>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>Search fonts...</value>
+    <comment>Placeholder of the search box at the top of the font family dropdown in the annotation toolbar.</comment>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Insert image below</value>
   </data>
@@ -1400,6 +1408,10 @@ Clipboard does not contain an image.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Blur</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>Clone</value>
+    <comment>Tool that duplicates underlying image pixels in a selected rectangle as a movable image annotation.</comment>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>Crop</value>

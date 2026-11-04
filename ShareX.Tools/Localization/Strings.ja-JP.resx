@@ -916,8 +916,17 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>画像を {0} 形式でエンコードできませんでした。</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP ビット深度:</value>
+  </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>背景色:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>画像を変換</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>ファイル名テンプレート:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>画像変換</value>
@@ -936,6 +945,12 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 は文字や鮮明な輪郭の周囲の色の詳細をより多く保持しますが、通常はファイルサイズが大きくなります。</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>出力形式:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG ビット深度:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = 圧縮なし、1 = 最速、9 = 最小ファイルサイズ。すべてのレベルで画質は劣化しません。</value>
@@ -963,6 +978,18 @@
   </data>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up（上のピクセル）</value>
+  </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>品質:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>圧縮にかける処理量:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>値を低くするとエンコードが速くなります。値を高くするとファイルサイズが小さくなります。どの値でも画質は維持されます。</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>ロスレス</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>塗りつぶし</value>
@@ -2122,6 +2149,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>全画面表示を終了</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>全画面</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>動画を読み込み中...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>ミュート</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>再生位置</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - 動画プレーヤー</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>ミュート解除</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>再生音量</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>カスタム フォルダー</value>
   </data>
@@ -2218,8 +2269,8 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>動画ファイル</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>キャッシュによる概算プレビュー • 停止すると調整されます</value>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>すべてのファイル (*.*)</value>
   </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>キャンセル</value>
@@ -2248,9 +2299,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>トリミングした動画を保存中…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>{0} 付近のプレビュー • 音声再生なし</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>長さが判明している有効な動画を選択してください。</value>
   </data>
@@ -2260,23 +2308,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>ロスレス</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>この位置ではプレビューフレームを取得できませんでした。</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>動画を開く…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>このエクスポートモードでは拡張子 {0} を使用してください。</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>Windows でこの動画を再生できませんでした。Windows がこの形式をサポートしていることと、Windows のメディアコンポーネントがインストールされていることを確認してください。{0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>再エンコード</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>正確な切り取り位置のため H.264 / AAC MP4 に再エンコードします。</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>静止画プレビュー • 音声再生なし</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>選択範囲をリセット</value>

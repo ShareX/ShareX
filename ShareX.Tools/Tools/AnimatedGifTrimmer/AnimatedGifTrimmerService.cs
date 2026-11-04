@@ -8,6 +8,17 @@
     modify it under the terms of the GNU General Public License
     as published by the Free Software Foundation; either version 2
     of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
 */
 
 #endregion License Information (GPL v3)
@@ -15,7 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.Tools.Localization;
 using SkiaSharp;
-
 
 namespace ShareX.Tools;
 
@@ -172,8 +182,7 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
         {
             token.ThrowIfCancellationRequested();
             using SKBitmap frame = image.GetFrame(i);
-            IndexedImage quantized = GifFrameQuantizer.Quantize(frame);
-            creator.AddFrame(quantized, _delays[i] * 10);
+            creator.AddFrame(frame, _delays[i] * 10, GIFQuality.Adaptive);
             progress?.Report((i - firstFrame + 1d) / (endFrameExclusive - firstFrame) * 100);
         }
     }

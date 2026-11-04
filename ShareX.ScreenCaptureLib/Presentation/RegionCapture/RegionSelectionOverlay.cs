@@ -50,6 +50,8 @@ public sealed class RegionSelectionOverlay : Control
     private Point _cursorPosition;
     private byte _dimAlpha = 51;
     private IBrush _dimBrush = new SolidColorBrush(Color.FromArgb(51, 0, 0, 0));
+    private bool _dimAllExceptSelection;
+    private bool _isSelectionPending;
 
     static RegionSelectionOverlay()
     {
@@ -144,6 +146,41 @@ public sealed class RegionSelectionOverlay : Control
         }
     }
 
+    /// <summary>
+    /// When enabled, a hovered window or control is only outlined and stays dimmed, including while a
+    /// press on it is pending; only a non-pending selection is shown undimmed, whether it is being
+    /// dragged or has been released.
+    /// </summary>
+    public bool DimAllExceptSelection
+    {
+        get => _dimAllExceptSelection;
+        set
+        {
+            if (_dimAllExceptSelection != value)
+            {
+                _dimAllExceptSelection = value;
+                InvalidateVisual();
+            }
+        }
+    }
+
+    /// <summary>
+    /// True while a press has picked the hovered window as the selection but the user has not yet
+    /// released or started dragging a new region.
+    /// </summary>
+    public bool IsSelectionPending
+    {
+        get => _isSelectionPending;
+        set
+        {
+            if (_isSelectionPending != value)
+            {
+                _isSelectionPending = value;
+                InvalidateVisual();
+            }
+        }
+    }
+
     public Rect ActiveRectangle => IsValid(SelectionRectangle) ? SelectionRectangle : HoverRectangle;
 
     public override void Render(DrawingContext context)
@@ -155,9 +192,11 @@ public sealed class RegionSelectionOverlay : Control
 
         if (DimAlpha > 0)
         {
-            if (IsValid(active))
+            Rect undimmed = DimAllExceptSelection && (IsSelectionPending || !IsValid(SelectionRectangle)) ? default : active;
+
+            if (IsValid(undimmed))
             {
-                DrawDimmedOutside(context, surface, active, _dimBrush);
+                DrawDimmedOutside(context, surface, undimmed, _dimBrush);
             }
             else
             {
@@ -251,13 +290,29 @@ public sealed class RegionSelectionOverlay : Control
         }
     }
 
-    internal static Rect NormalizeAndClamp(Point first, Point second, Size bounds)
+    /// <summary>
+    /// Creates the rectangle spanning two pointer positions. Each position addresses a whole pixel and
+    /// both of those pixels are part of the result, so the first to the last pixel of a 1920x1080
+    /// surface is 1920x1080 rather than 1919x1079.
+    /// </summary>
+    internal static Rect CreatePixelRectangle(Point first, Point second, Size bounds)
     {
-        double left = Math.Clamp(Math.Min(first.X, second.X), 0, bounds.Width);
-        double top = Math.Clamp(Math.Min(first.Y, second.Y), 0, bounds.Height);
-        double right = Math.Clamp(Math.Max(first.X, second.X), 0, bounds.Width);
-        double bottom = Math.Clamp(Math.Max(first.Y, second.Y), 0, bounds.Height);
-        return new Rect(left, top, Math.Max(0, right - left), Math.Max(0, bottom - top));
+        double firstX = GetPixel(first.X, bounds.Width);
+        double firstY = GetPixel(first.Y, bounds.Height);
+        double secondX = GetPixel(second.X, bounds.Width);
+        double secondY = GetPixel(second.Y, bounds.Height);
+        return new Rect(
+            Math.Min(firstX, secondX),
+            Math.Min(firstY, secondY),
+            Math.Abs(secondX - firstX) + 1,
+            Math.Abs(secondY - firstY) + 1);
+    }
+
+    // Positions are whole physical pixels but pick up floating point noise from the DPI transform,
+    // so round them instead of flooring.
+    private static double GetPixel(double position, double size)
+    {
+        return Math.Clamp(Math.Round(position), 0, Math.Max(0, size - 1));
     }
 
     internal static Rect Intersect(Rect rectangle, Rect bounds)

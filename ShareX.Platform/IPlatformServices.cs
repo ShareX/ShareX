@@ -48,6 +48,24 @@ public interface IPlatformServices : IDisposable
 
     IScreenRecordingService ScreenRecording { get; }
 
+    /// <summary>ShareX's own recorder without FFmpeg (Windows). Unsupported elsewhere, where recording uses FFmpeg.</summary>
+    INativeScreenRecorderService NativeScreenRecorder => UnsupportedNativeScreenRecorder;
+
+    /// <summary>TIFF and other formats SkiaSharp lacks, through the system's codecs (GDI+ on Windows).</summary>
+    IImageCodecService ImageCodecs => UnsupportedImageCodecs;
+
+    private static readonly IImageCodecService UnsupportedImageCodecs =
+        new UnsupportedImageCodecService("TIFF images need the Windows image codecs.");
+
+    /// <summary>Embedded video playback (Windows Media Foundation). Unsupported elsewhere for now.</summary>
+    IVideoPlaybackService VideoPlayback => UnsupportedVideoPlayback;
+
+    private static readonly IVideoPlaybackService UnsupportedVideoPlayback =
+        new UnsupportedVideoPlaybackService("Embedded video playback uses Windows Media Foundation.");
+
+    private static readonly INativeScreenRecorderService UnsupportedNativeScreenRecorder =
+        new UnsupportedNativeScreenRecorderService("ShareX's own screen recorder uses Windows Graphics Capture and Media Foundation; this system records with FFmpeg.");
+
     IHotkeyService Hotkeys { get; }
 
     IWindowService Windows { get; }

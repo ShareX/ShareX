@@ -920,8 +920,17 @@ Caminho do ficheiro: {0}</value>
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>Não foi possível codificar a imagem como {0}.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>Profundidade de bits BMP:</value>
+  </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Cor de fundo:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Converter imagens</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Modelo de nome de ficheiro:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Conversor de imagens</value>
@@ -940,6 +949,12 @@ Caminho do ficheiro: {0}</value>
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>4:4:4 preserva mais detalhes de cor em torno do texto e dos contornos nítidos, mas geralmente produz ficheiros maiores.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Formato de saída:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>Profundidade de bits PNG:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = sem compressão, 1 = mais rápido, 9 = ficheiros menores. Todos os níveis são sem perdas.</value>
@@ -967,6 +982,18 @@ Caminho do ficheiro: {0}</value>
   </data>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (píxel acima)</value>
+  </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Qualidade:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Esforço de compressão:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Valores mais baixos aceleram a codificação. Valores mais altos produzem ficheiros mais pequenos. Todos os valores preservam a qualidade da imagem.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Sem perdas</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Preencher</value>
@@ -2128,6 +2155,30 @@ Caminho do ficheiro: {0}</value>
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>Sair do ecrã inteiro</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>Ecrã inteiro</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>A carregar vídeo...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>Silenciar</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>Posição de reprodução</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - Reprodutor de vídeo</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>Ativar som</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>Volume de reprodução</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>Pasta personalizada</value>
   </data>
@@ -2224,8 +2275,8 @@ Caminho do ficheiro: {0}</value>
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Ficheiros de vídeo</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Pré-visualização aproximada em cache • aperfeiçoada quando pausa</value>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>Todos os ficheiros (*.*)</value>
   </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Cancelar</value>
@@ -2254,9 +2305,6 @@ Caminho do ficheiro: {0}</value>
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>A guardar vídeo cortado…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Pré-visualização perto de {0} • sem reprodução de áudio</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Selecione um vídeo com duração conhecida e finita.</value>
   </data>
@@ -2266,23 +2314,20 @@ Caminho do ficheiro: {0}</value>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Sem perdas</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>Não está disponível nenhuma imagem de pré-visualização nesta posição.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Abrir vídeo…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Utilize a extensão {0} para este modo de exportação.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>O Windows não conseguiu reproduzir este vídeo. Verifique se o Windows suporta o formato e se os componentes multimédia do Windows estão instalados. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Recodificar</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>Recodifica para H.264 / AAC MP4 para obter pontos de corte exatos.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Pré-visualização de imagem fixa • sem reprodução de áudio</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Repor seleção</value>

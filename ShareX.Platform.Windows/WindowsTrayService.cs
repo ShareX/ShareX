@@ -86,6 +86,9 @@ internal sealed class WindowsTraySession : ITraySession
         }
     }
 
+    // SM_CXSMICON: the notification area draws small icons (ShareX #8932).
+    public int IconSize => Win32.GetSystemMetrics(49);
+
     public void SetIcon(byte[] png)
     {
         VerifyAccess();

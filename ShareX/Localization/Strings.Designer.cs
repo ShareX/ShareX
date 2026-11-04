@@ -32,7 +32,25 @@ namespace ShareX.Localization {
 
         public static string TaskSettingsWindow_MouseHighlighterOptions => ResourceManager.GetString("TaskSettingsWindow_MouseHighlighterOptions", resourceCulture);
 
+        public static string ScreenRecorderBar_ShowBeforeRecording => ResourceManager.GetString("ScreenRecorderBar_ShowBeforeRecording", resourceCulture);
+        public static string ScreenRecorderBar_SystemAudio => ResourceManager.GetString("ScreenRecorderBar_SystemAudio", resourceCulture);
+        public static string ScreenRecorderBar_Microphone => ResourceManager.GetString("ScreenRecorderBar_Microphone", resourceCulture);
+        public static string ScreenRecorderBar_Camera => ResourceManager.GetString("ScreenRecorderBar_Camera", resourceCulture);
+        public static string ScreenRecorderBar_Cursor => ResourceManager.GetString("ScreenRecorderBar_Cursor", resourceCulture);
+        public static string ScreenRecorderBar_Options => ResourceManager.GetString("ScreenRecorderBar_Options", resourceCulture);
+        public static string ScreenRecorderBar_SourceOptions => ResourceManager.GetString("ScreenRecorderBar_SourceOptions", resourceCulture);
+        public static string ScreenRecorderBar_Record => ResourceManager.GetString("ScreenRecorderBar_Record", resourceCulture);
+        public static string ScreenRecorderBar_On => ResourceManager.GetString("ScreenRecorderBar_On", resourceCulture);
+        public static string ScreenRecorderBar_Off => ResourceManager.GetString("ScreenRecorderBar_Off", resourceCulture);
+        public static string ScreenRecorderBar_Volume => ResourceManager.GetString("ScreenRecorderBar_Volume", resourceCulture);
+        public static string ScreenRecorderBar_LayoutPreview => ResourceManager.GetString("ScreenRecorderBar_LayoutPreview", resourceCulture);
+        public static string ScreenRecorderBar_Overlay => ResourceManager.GetString("ScreenRecorderBar_Overlay", resourceCulture);
+        public static string ScreenRecorderBar_Capture => ResourceManager.GetString("ScreenRecorderBar_Capture", resourceCulture);
+        public static string ScreenRecorderBar_Bar => ResourceManager.GetString("ScreenRecorderBar_Bar", resourceCulture);
+        public static string ScreenRecorderBar_TargetUnavailable => ResourceManager.GetString("ScreenRecorderBar_TargetUnavailable", resourceCulture);
+
         private static global::System.Resources.ResourceManager resourceMan;
+        public static string ScreenRecorderBar_RefreshDevices => ResourceManager.GetString("ScreenRecorderBar_RefreshDevices", resourceCulture);
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
@@ -402,6 +420,15 @@ namespace ShareX.Localization {
         public static string MainMenuBuilder_ImageEditor {
             get {
                 return ResourceManager.GetString("MainMenuBuilder_ImageEditor", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Photo editor....
+        /// </summary>
+        public static string MainMenuBuilder_PhotoEditor {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_PhotoEditor", resourceCulture);
             }
         }
         
@@ -1062,6 +1089,15 @@ namespace ShareX.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Edit in Photo editor....
+        /// </summary>
+        public static string MainWindow_EditImageInPhotoEditor {
+            get {
+                return ResourceManager.GetString("MainWindow_EditImageInPhotoEditor", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Resize image....
         /// </summary>
         public static string MainWindow_ResizeImage {
@@ -1666,6 +1702,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("ApplicationSettingsWindow_ShowEditInFileManager", resourceCulture);
             }
         }
+        public static string ApplicationSettingsWindow_ShowPhotoEditorInFileManager {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowPhotoEditorInFileManager", resourceCulture);
+            }
+        }
         public static string ApplicationSettingsWindow_Windows {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_Windows", resourceCulture);
@@ -1679,6 +1720,11 @@ namespace ShareX.Localization {
         public static string ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu", resourceCulture);
             }
         }
         public static string ApplicationSettingsWindow_ShowShareXInSendToMenu {
@@ -2841,6 +2887,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ImageFormat", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_BMPBitDepth {
+            get { return ResourceManager.GetString("TaskSettingsWindow_BMPBitDepth", resourceCulture); }
+        }
         public static string TaskSettingsWindow_PNGBitDepth {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_PNGBitDepth", resourceCulture);
@@ -3096,6 +3145,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_BackgroundDimStrengthPercent", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_DimHoveredWindowsAndControls {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_DimHoveredWindowsAndControls", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_RightClick {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_RightClick", resourceCulture);
@@ -3176,14 +3230,14 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ShowRecordingButtonLabels", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_StartRecordingAfterADelay {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_StartRecordingAfterADelay", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_StartDelaySeconds {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_StartDelaySeconds", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_UseStartDelay {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseStartDelay", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_UseFixedDuration {
@@ -5276,6 +5330,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("IntegrationHelpers_EditWithShareX", resourceCulture);
             }
         }
+        public static string IntegrationHelpers_EditWithShareXPhotoEditor {
+            get {
+                return ResourceManager.GetString("IntegrationHelpers_EditWithShareXPhotoEditor", resourceCulture);
+            }
+        }
         public static string ClipboardDoesNotContainAnImage {
             get {
                 return ResourceManager.GetString("ClipboardDoesNotContainAnImage", resourceCulture);
@@ -5585,5 +5644,38 @@ namespace ShareX.Localization {
 
         public static string MainMenuBuilder_AnimatedGifTrimmer => ResourceManager.GetString("MainMenuBuilder_AnimatedGifTrimmer", resourceCulture);
         public static string MainWindow_TrimAnimatedGif => ResourceManager.GetString("MainWindow_TrimAnimatedGif", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderEnabled => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderEnabled", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorder => ResourceManager.GetString("TaskSettingsWindow_NativeRecorder", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderSystemAudio => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderSystemAudio", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderSystemAudioDevice => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderSystemAudioDevice", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderMicrophone => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderMicrophone", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderMicrophoneDevice => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderMicrophoneDevice", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderDefaultMicrophone => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderDefaultMicrophone", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderUnavailableMicrophone => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderUnavailableMicrophone", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderHardware => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderHardware", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderBitrate => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderBitrate", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Enabled => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Enabled", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Device => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Device", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_DefaultDevice => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_DefaultDevice", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_NoDevices => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_NoDevices", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Resolution => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Resolution", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_FPS => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_FPS", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Width => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Width", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Margin => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Margin", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Shape => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Shape", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Rectangle => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Rectangle", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderCamera_Circle => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderCamera_Circle", resourceCulture);
+        public static string ScreenRecorderBar_StartDelay => ResourceManager.GetString("ScreenRecorderBar_StartDelay", resourceCulture);
+        public static string ScreenRecorderBar_StartDelay_1Second => ResourceManager.GetString("ScreenRecorderBar_StartDelay_1Second", resourceCulture);
+        public static string ScreenRecorderBar_StartDelay_2Seconds => ResourceManager.GetString("ScreenRecorderBar_StartDelay_2Seconds", resourceCulture);
+        public static string ScreenRecorderBar_StartDelay_3Seconds => ResourceManager.GetString("ScreenRecorderBar_StartDelay_3Seconds", resourceCulture);
+        public static string ScreenRecorderBar_StartDelay_4Seconds => ResourceManager.GetString("ScreenRecorderBar_StartDelay_4Seconds", resourceCulture);
+        public static string ScreenRecorderBar_StartDelay_5Seconds => ResourceManager.GetString("ScreenRecorderBar_StartDelay_5Seconds", resourceCulture);
+        public static string MainMenuBuilder_VideoPlayer => ResourceManager.GetString("MainMenuBuilder_VideoPlayer", resourceCulture);
+        public static string MainMenuBuilder_Stats => ResourceManager.GetString("MainMenuBuilder_Stats", resourceCulture);
     }
 }

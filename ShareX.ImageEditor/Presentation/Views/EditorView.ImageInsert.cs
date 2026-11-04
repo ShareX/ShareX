@@ -261,11 +261,41 @@ namespace ShareX.ImageEditor.Presentation.Views
                 ownedImage => InsertImageAnnotationCore(ownedImage.TakeBitmap(), position));
         }
 
+        internal void CloneRegion(Rect sourceRectangle)
+        {
+            SKBitmap? sourceImage = _editorCore.SourceImage;
+            if (sourceImage == null)
+            {
+                return;
+            }
+
+            Rect clipped = sourceRectangle.Intersect(new Rect(0, 0, sourceImage.Width, sourceImage.Height));
+            if (clipped.Width <= 0 || clipped.Height <= 0)
+            {
+                return;
+            }
+
+            int left = (int)Math.Floor(clipped.Left);
+            int top = (int)Math.Floor(clipped.Top);
+            int right = (int)Math.Ceiling(clipped.Right);
+            int bottom = (int)Math.Ceiling(clipped.Bottom);
+            using SKBitmap region = new();
+            if (sourceImage.ExtractSubset(region, new SKRectI(left, top, right, bottom)))
+            {
+                SKBitmap? bitmap = region.Copy();
+                if (bitmap != null)
+                {
+                    InsertImageAnnotationCore(bitmap, new Point(left, top), showNotification: false, toolType: EditorTool.Clone);
+                }
+            }
+        }
+
         private bool InsertImageAnnotationCore(
             SKBitmap skBitmap,
             Point? position = null,
             bool showNotification = true,
-            bool selectAnnotation = true)
+            bool selectAnnotation = true,
+            EditorTool toolType = EditorTool.Image)
         {
             var canvas = this.FindControl<Canvas>("AnnotationCanvas");
             if (_workspaceDisposed || canvas == null || DataContext is not MainViewModel vm || vm.IsDisposed)
@@ -292,7 +322,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 posY = visibleCanvasCenter.Y - skBitmap.Height / 2.0;
             }
 
-            var annotation = new ImageAnnotation();
+            var annotation = new ImageAnnotation { ToolType = toolType };
             annotation.SetImage(skBitmap);
             annotation.StartPoint = new SKPoint((float)posX, (float)posY);
             annotation.EndPoint = new SKPoint((float)(posX + skBitmap.Width), (float)(posY + skBitmap.Height));
@@ -307,7 +337,11 @@ namespace ShareX.ImageEditor.Presentation.Views
                 vm.HasAnnotations = true;
                 if (selectAnnotation)
                 {
-                    vm.ActiveTool = EditorTool.Select;
+                    // The clone tool stays active so several regions can be cloned in a row.
+                    if (toolType != EditorTool.Clone)
+                    {
+                        vm.ActiveTool = EditorTool.Select;
+                    }
                     _selectionController.SetSelectedShape(control);
                 }
 
@@ -382,10 +416,13 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void ResetModalContentPosition()
         {
+            _emojiPickerScreen = null;
             ContentControl? modalHost = this.FindControl<ContentControl>("ModalContentHost");
             if (modalHost != null)
             {
                 modalHost.RenderTransform = null;
+                modalHost.ClearValue(MaxWidthProperty);
+                modalHost.ClearValue(MaxHeightProperty);
             }
         }
 

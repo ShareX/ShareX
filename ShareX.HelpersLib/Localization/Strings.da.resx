@@ -166,6 +166,15 @@
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>Start</value>
   </data>
+  <data name="BMPBitDepth_Automatic" xml:space="preserve">
+    <value>Registrér automatisk</value>
+  </data>
+  <data name="BMPBitDepth_Bit24" xml:space="preserve">
+    <value>24 bit</value>
+  </data>
+  <data name="BMPBitDepth_Bit32" xml:space="preserve">
+    <value>32 bit</value>
+  </data>
   <data name="BorderStyle_Dash" xml:space="preserve">
     <value>Stiplet</value>
   </data>
@@ -525,6 +534,9 @@ Vil du stadig køre den?</value>
   <data name="FileHelpers_Rename_file_error" xml:space="preserve">
     <value>Fejl ved omdøbning af fil:</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptiv kvantisering, 256 farver</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree-kvantisering, 16 farver</value>
   </data>
@@ -740,6 +752,9 @@ Vil du stadig køre den?</value>
   </data>
   <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
     <value>Sæt på pause skærmoptagelse</value>
+  </data>
+  <data name="HotkeyType_PhotoEditor" xml:space="preserve">
+    <value>Fotoredigering</value>
   </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Fastgør på skærmen</value>

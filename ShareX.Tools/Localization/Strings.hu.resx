@@ -916,8 +916,17 @@
   <data name="ImageConverterService_Failed_to_encode_image" xml:space="preserve">
     <value>Nem sikerült a képet {0} formátumba kódolni.</value>
   </data>
+  <data name="ImageConverterWindow_BMPBitDepth" xml:space="preserve">
+    <value>BMP bitmélység:</value>
+  </data>
+  <data name="ImageConverterWindow_BackgroundColor" xml:space="preserve">
+    <value>Háttérszín:</value>
+  </data>
   <data name="ImageConverterWindow_Convert_images" xml:space="preserve">
     <value>Képek átalakítása</value>
+  </data>
+  <data name="ImageConverterWindow_FileNameTemplate" xml:space="preserve">
+    <value>Fájlnévsablon:</value>
   </data>
   <data name="ImageConverterWindow_Image_converter" xml:space="preserve">
     <value>Képkonvertáló</value>
@@ -936,6 +945,12 @@
   </data>
   <data name="ImageConverterWindow_JPEGSubsamplingHint" xml:space="preserve">
     <value>A 4:4:4 több színrészletet őriz meg a szöveg és az éles szélek körül, de általában nagyobb fájlokat eredményez.</value>
+  </data>
+  <data name="ImageConverterWindow_OutputFormat" xml:space="preserve">
+    <value>Kimeneti formátum:</value>
+  </data>
+  <data name="ImageConverterWindow_PNGBitDepth" xml:space="preserve">
+    <value>PNG bitmélység:</value>
   </data>
   <data name="ImageConverterWindow_PNGCompressionHint" xml:space="preserve">
     <value>0 = nincs tömörítés, 1 = leggyorsabb, 9 = legkisebb fájlok. Minden szint veszteségmentes.</value>
@@ -963,6 +978,18 @@
   </data>
   <data name="ImageConverterWindow_PNGFilterUp" xml:space="preserve">
     <value>Up (felső képpont)</value>
+  </data>
+  <data name="ImageConverterWindow_Quality" xml:space="preserve">
+    <value>Minőség:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Tömörítési erőfeszítés:</value>
+  </data>
+  <data name="ImageConverterWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Az alacsonyabb értékek gyorsabb kódolást eredményeznek. A magasabb értékek kisebb fájlokat hoznak létre. Minden érték megőrzi a képminőséget.</value>
+  </data>
+  <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
+    <value>Veszteségmentes</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Kitöltés</value>
@@ -2122,6 +2149,30 @@
   <data name="VideoConverterWindow_video_output" xml:space="preserve">
     <value>video-output</value>
   </data>
+  <data name="VideoPlayer_ExitFullscreen" xml:space="preserve">
+    <value>Kilépés a teljes képernyőből</value>
+  </data>
+  <data name="VideoPlayer_Fullscreen" xml:space="preserve">
+    <value>Teljes képernyő</value>
+  </data>
+  <data name="VideoPlayer_Loading" xml:space="preserve">
+    <value>Videó betöltése...</value>
+  </data>
+  <data name="VideoPlayer_Mute" xml:space="preserve">
+    <value>Némítás</value>
+  </data>
+  <data name="VideoPlayer_Seek" xml:space="preserve">
+    <value>Lejátszási pozíció</value>
+  </data>
+  <data name="VideoPlayer_Title" xml:space="preserve">
+    <value>ShareX - Videolejátszó</value>
+  </data>
+  <data name="VideoPlayer_Unmute" xml:space="preserve">
+    <value>Hang visszakapcsolása</value>
+  </data>
+  <data name="VideoPlayer_Volume" xml:space="preserve">
+    <value>Lejátszási hangerő</value>
+  </data>
   <data name="VideoThumbnailerViewModel_Custom_folder" xml:space="preserve">
     <value>Egyéni mappa</value>
   </data>
@@ -2218,8 +2269,8 @@
   <data name="VideoThumbnailerWindow_Video_files" xml:space="preserve">
     <value>Videófájlok</value>
   </data>
-  <data name="VideoTrimmer_CachedPreview" xml:space="preserve">
-    <value>Hozzávetőleges gyorsítótárazott előnézet • megálláskor pontosodik</value>
+  <data name="VideoTrimmer_AllFiles" xml:space="preserve">
+    <value>Minden fájl (*.*)</value>
   </data>
   <data name="VideoTrimmer_Cancel" xml:space="preserve">
     <value>Mégse</value>
@@ -2248,9 +2299,6 @@
   <data name="VideoTrimmer_Exporting" xml:space="preserve">
     <value>Vágott videó mentése…</value>
   </data>
-  <data name="VideoTrimmer_FrameAt" xml:space="preserve">
-    <value>Előnézet {0} közelében • nincs hanglejátszás</value>
-  </data>
   <data name="VideoTrimmer_InvalidVideo" xml:space="preserve">
     <value>Válasszon ismert, véges hosszúságú videót.</value>
   </data>
@@ -2260,23 +2308,20 @@
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Veszteségmentes</value>
   </data>
-  <data name="VideoTrimmer_NoFrame" xml:space="preserve">
-    <value>Ezen a helyen nem érhető el előnézeti képkocka.</value>
-  </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Videó megnyitása…</value>
   </data>
   <data name="VideoTrimmer_OutputExtension" xml:space="preserve">
     <value>Ehhez az exportálási módhoz a(z) {0} kiterjesztést használja.</value>
   </data>
+  <data name="VideoTrimmer_PlaybackError" xml:space="preserve">
+    <value>A Windows nem tudta lejátszani ezt a videót. Ellenőrizze, hogy a Windows támogatja-e a formátumát, és telepítve vannak-e a Windows médiakomponensei. {0}</value>
+  </data>
   <data name="VideoTrimmer_Precise" xml:space="preserve">
     <value>Újrakódolás</value>
   </data>
   <data name="VideoTrimmer_PreciseHint" xml:space="preserve">
     <value>H.264 / AAC MP4 formátumba kódol újra a pontos vágási pontokért.</value>
-  </data>
-  <data name="VideoTrimmer_PreviewHint" xml:space="preserve">
-    <value>Állóképes előnézet • nincs hanglejátszás</value>
   </data>
   <data name="VideoTrimmer_Reset" xml:space="preserve">
     <value>Kijelölés visszaállítása</value>

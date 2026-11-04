@@ -2503,12 +2503,75 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Output format:.
+        /// </summary>
+        public static string ImageConverterWindow_OutputFormat {
+            get { return ResourceManager.GetString("ImageConverterWindow_OutputFormat", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Quality:.
+        /// </summary>
+        public static string ImageConverterWindow_Quality {
+            get { return ResourceManager.GetString("ImageConverterWindow_Quality", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Background color:.
+        /// </summary>
+        public static string ImageConverterWindow_BackgroundColor {
+            get { return ResourceManager.GetString("ImageConverterWindow_BackgroundColor", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to File name template:.
+        /// </summary>
+        public static string ImageConverterWindow_FileNameTemplate {
+            get { return ResourceManager.GetString("ImageConverterWindow_FileNameTemplate", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Lossless.
+        /// </summary>
+        public static string ImageConverterWindow_WebPLossless {
+            get { return ResourceManager.GetString("ImageConverterWindow_WebPLossless", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Compression effort:.
+        /// </summary>
+        public static string ImageConverterWindow_WebPCompressionEffort {
+            get { return ResourceManager.GetString("ImageConverterWindow_WebPCompressionEffort", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Lower values encode faster. Higher values produce smaller files. All values preserve image quality..
+        /// </summary>
+        public static string ImageConverterWindow_WebPCompressionEffortHint {
+            get { return ResourceManager.GetString("ImageConverterWindow_WebPCompressionEffortHint", resourceCulture); }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to 0 = no compression, 1 = fastest, 9 = smallest files. All levels are lossless..
         /// </summary>
         public static string ImageConverterWindow_PNGCompressionHint {
             get {
                 return ResourceManager.GetString("ImageConverterWindow_PNGCompressionHint", resourceCulture);
             }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to PNG bit depth:.
+        /// </summary>
+        public static string ImageConverterWindow_PNGBitDepth {
+            get { return ResourceManager.GetString("ImageConverterWindow_PNGBitDepth", resourceCulture); }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to BMP bit depth:.
+        /// </summary>
+        public static string ImageConverterWindow_BMPBitDepth {
+            get { return ResourceManager.GetString("ImageConverterWindow_BMPBitDepth", resourceCulture); }
         }
 
         /// <summary>
@@ -5870,33 +5933,6 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Still-frame preview • no audio playback
-        /// </summary>
-        public static string VideoTrimmer_PreviewHint {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_PreviewHint", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Approximate cached preview • refining when you pause
-        /// </summary>
-        public static string VideoTrimmer_CachedPreview {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_CachedPreview", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Preview near {0} • no audio playback
-        /// </summary>
-        public static string VideoTrimmer_FrameAt {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_FrameAt", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Preparing timeline previews…
         /// </summary>
         public static string VideoTrimmer_Loading {
@@ -5911,15 +5947,6 @@ namespace ShareX.Tools.Localization {
         public static string VideoTrimmer_InvalidVideo {
             get {
                 return ResourceManager.GetString("VideoTrimmer_InvalidVideo", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   No preview frame was available at this position.
-        /// </summary>
-        public static string VideoTrimmer_NoFrame {
-            get {
-                return ResourceManager.GetString("VideoTrimmer_NoFrame", resourceCulture);
             }
         }
 
@@ -5965,6 +5992,15 @@ namespace ShareX.Tools.Localization {
         public static string VideoTrimmer_CopyHint {
             get {
                 return ResourceManager.GetString("VideoTrimmer_CopyHint", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Windows could not play this video. Check that Windows supports its format and that the Windows media components are installed. {0}
+        /// </summary>
+        public static string VideoTrimmer_PlaybackError {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_PlaybackError", resourceCulture);
             }
         }
 
@@ -6180,5 +6216,50 @@ namespace ShareX.Tools.Localization {
         public static string AnimatedGifTrimmer_OutputExtension => ResourceManager.GetString("AnimatedGifTrimmer_OutputExtension", resourceCulture);
         public static string AnimatedGifTrimmer_DependentFrame => ResourceManager.GetString("AnimatedGifTrimmer_DependentFrame", resourceCulture);
         public static string AnimatedGifTrimmer_UnsupportedGif => ResourceManager.GetString("AnimatedGifTrimmer_UnsupportedGif", resourceCulture);
+        public static string VideoTrimmer_AllFiles => ResourceManager.GetString("VideoTrimmer_AllFiles", resourceCulture);
+        public static string VideoPlayer_Title => ResourceManager.GetString("VideoPlayer_Title", resourceCulture);
+        public static string VideoPlayer_Loading => ResourceManager.GetString("VideoPlayer_Loading", resourceCulture);
+        public static string VideoPlayer_Fullscreen => ResourceManager.GetString("VideoPlayer_Fullscreen", resourceCulture);
+        public static string VideoPlayer_ExitFullscreen => ResourceManager.GetString("VideoPlayer_ExitFullscreen", resourceCulture);
+        public static string VideoPlayer_Mute => ResourceManager.GetString("VideoPlayer_Mute", resourceCulture);
+        public static string VideoPlayer_Unmute => ResourceManager.GetString("VideoPlayer_Unmute", resourceCulture);
+        public static string VideoPlayer_Seek => ResourceManager.GetString("VideoPlayer_Seek", resourceCulture);
+        public static string VideoPlayer_Volume => ResourceManager.GetString("VideoPlayer_Volume", resourceCulture);
+
+        /// <summary>
+        ///   Still-frame preview • no audio playback
+        /// </summary>
+        public static string VideoTrimmer_PreviewHint {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_PreviewHint", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Approximate cached preview • refining when you pause
+        /// </summary>
+        public static string VideoTrimmer_CachedPreview {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_CachedPreview", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Preview near {0} • no audio playback
+        /// </summary>
+        public static string VideoTrimmer_FrameAt {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_FrameAt", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   No preview frame was available at this position.
+        /// </summary>
+        public static string VideoTrimmer_NoFrame {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_NoFrame", resourceCulture);
+            }
+        }
     }
 }

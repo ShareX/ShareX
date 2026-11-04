@@ -5,6 +5,7 @@
         xmlns:capture="using:ShareX.ScreenCaptureLib.Presentation.RegionCapture"
         xmlns:localization="using:ShareX.ScreenCaptureLib.Localization"
         xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
         x:Class="ShareX.ScreenCaptureLib.Presentation.RegionCapture.RegionCaptureWindow"
         WindowDecorations="None"
         CanResize="False"
@@ -125,7 +126,9 @@
                                 Classes="toolbar-button active"
                                 Click="OnRegionToolClick"
                                 ToolTip.Tip="{x:Static localization:Strings.RegionCaptureWindow_RectangleRegionTab}"
-                                Content="{x:Static theming:LucideIcons.scan}"/>
+                                AutomationProperties.Name="{x:Static localization:Strings.RegionCaptureWindow_RectangleRegionTab}">
+                            <iconControls:IconPresenter Icon="{x:Static theming:ShareXIcons.tool_region}"/>
+                        </Button>
                     </editorControls:AnnotationToolbar.MainToolbarLeadingContent>
                 </editorControls:AnnotationToolbar>
             </Grid>

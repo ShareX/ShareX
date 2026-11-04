@@ -42,7 +42,7 @@ jobs:
     env:
       SOLUTION_FILE_PATH: ShareX.sln
       ASSEMBLY_INFO_PATH: Directory.build.props
-      FFMPEG_VERSION: "8.1"
+      FFMPEG_VERSION: "9.0"
 
     outputs:
       APP_VERSION: ${{ env.APP_VERSION }}
@@ -76,6 +76,18 @@ jobs:
           echo $version
           echo "APP_VERSION=$version" >> $env:GITHUB_ENV
 
+      - name: Disable Dev flag
+        if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/v')
+        run: |
+          $path = "ShareX\Infrastructure\ApplicationInfo.cs"
+          $content = [System.IO.File]::ReadAllText($path)
+          $pattern = 'internal const bool Dev = (true|false);'
+          if (-not [regex]::IsMatch($content, $pattern)) {
+            throw "Dev flag was not found in $path."
+          }
+          $content = [regex]::Replace($content, $pattern, 'internal const bool Dev = false;')
+          [System.IO.File]::WriteAllText($path, $content, [System.Text.UTF8Encoding]::new($false))
+
       - name: Create API keys file
         env:
           API_KEYS: ${{ secrets.API_KEYS }}
@@ -100,7 +112,8 @@ jobs:
         run: |
           $archivePath = Join-Path $env:RUNNER_TEMP "ffmpeg.zip"
           $extractPath = Join-Path $env:RUNNER_TEMP "ffmpeg"
-          $downloadUrl = "https://github.com/ShareX/FFmpeg/releases/download/v${{ env.FFMPEG_VERSION }}/ffmpeg-${{ env.FFMPEG_VERSION }}-win-${{ env.PLATFORM }}.zip"
+          $ffmpegPlatform = if ("${{ matrix.platform }}" -eq "ARM64") { "winarm64" } else { "win64" }
+          $downloadUrl = "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n${{ env.FFMPEG_VERSION }}-latest-$ffmpegPlatform-gpl-${{ env.FFMPEG_VERSION }}.zip"
           Invoke-WebRequest -Uri $downloadUrl -OutFile $archivePath
           Expand-Archive -Path $archivePath -DestinationPath $extractPath -Force
           $ffmpegPath = Get-ChildItem -Path $extractPath -Filter "ffmpeg.exe" -Recurse -File | Select-Object -First 1

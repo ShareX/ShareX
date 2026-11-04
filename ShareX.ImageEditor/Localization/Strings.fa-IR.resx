@@ -1155,6 +1155,12 @@
   <data name="EmojiPickerDialogView_TryDifferentKeyword" xml:space="preserve">
     <value>کلیدواژه دیگری را امتحان کنید.</value>
   </data>
+  <data name="FontFamilyPickerDropdown_Nomatchingfonts" xml:space="preserve">
+    <value>هیچ قلم منطبقی یافت نشد</value>
+  </data>
+  <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
+    <value>جستجوی قلم‌ها...</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>درج تصویر در پایین</value>
   </data>
@@ -1400,6 +1406,9 @@
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>تاری</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
+    <value>تکثیر</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Crop" xml:space="preserve">
     <value>برش</value>

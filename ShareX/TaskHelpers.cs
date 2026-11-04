@@ -29,6 +29,7 @@ using ShareX.AvaloniaUI.Windows;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.ImageEditor.Integration;
+using ShareX.PhotoEditor.Integration;
 using ShareX.ImageEffectsLib;
 using ShareX.Localization;
 using ShareX.Platform;
@@ -248,6 +249,9 @@ namespace ShareX
                         OpenImageEditor(safeTaskSettings);
                     }
                     break;
+                case HotkeyType.PhotoEditor:
+                    OpenPhotoEditor(filePath, safeTaskSettings);
+                    break;
                 case HotkeyType.ImageBeautifier:
                     if (!string.IsNullOrEmpty(filePath))
                     {
@@ -430,7 +434,7 @@ namespace ShareX
             imageData.ImageStream = SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
                 taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
                 GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling,
-                autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
+                taskSettings.ImageSettings.ImageBMPBitDepth, autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
             imageData.ImageFormat = imageFormat;
 
             if (autoUseJPEG && (pngSizeLimitExceeded || imageData.ImageStream.Length > jpegSizeLimit))
@@ -484,7 +488,8 @@ namespace ShareX
         {
             return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
                 taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
-                GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling, long.MaxValue, out _);
+                GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling,
+                taskSettings.ImageSettings.ImageBMPBitDepth, long.MaxValue, out _);
         }
 
         private static SKPngEncoderOptions GetPNGEncoderOptions(TaskSettingsImage settings)
@@ -499,16 +504,17 @@ namespace ShareX
         }
 
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
-            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default,
-            SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420)
+            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Adaptive,
+            SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
+            BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24)
         {
             return SaveImageAsStream(img, imageFormat, pngBitDepth, jpegQuality, gifQuality,
-                SKPngEncoderOptions.Default, jpegSubsampling, long.MaxValue, out _);
+                SKPngEncoderOptions.Default, jpegSubsampling, bmpBitDepth, long.MaxValue, out _);
         }
 
         private static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth,
             int jpegQuality, GIFQuality gifQuality, SKPngEncoderOptions pngOptions, SKJpegEncoderDownsample jpegSubsampling,
-            long pngSizeLimit, out bool pngSizeLimitExceeded)
+            BMPBitDepth bmpBitDepth, long pngSizeLimit, out bool pngSizeLimitExceeded)
         {
             MemoryStream ms = new MemoryStream();
             pngSizeLimitExceeded = false;
@@ -543,7 +549,7 @@ namespace ShareX
                         SkiaImageHelpers.SaveGIF(img, ms, gifQuality);
                         break;
                     case EImageFormat.BMP:
-                        img.Save(ms, ImageFormat.Bmp);
+                        SkiaImageHelpers.SaveBMP(img, ms, bmpBitDepth);
                         break;
                 }
             }
@@ -886,11 +892,12 @@ namespace ShareX
                 {
                     UploadFile = filePath => UploadManager.UploadFile(filePath),
                     EditImage = filePath => AnnotateImageFromFile(filePath),
+                    TrimVideo = filePath => OpenVideoTrimmer(inputFilePath: filePath),
+                    TrimAnimatedGif = filePath => OpenAnimatedGifTrimmer(filePath),
                     PinToScreen = filePath => PinToScreen(filePath),
                     AnalyzeImage = filePath => AnalyzeImage(filePath),
-                    ShowImage = filePath => OpenImageViewer(filePath),
-                    ShowImages = (filePaths, selectedIndex) =>
-                        ImageViewerWindowIntegration.ShowImage(filePaths, selectedIndex)
+                    ShowImage = ImageViewerWindowIntegration.ShowImage,
+                    ShowImages = ImageViewerWindowIntegration.ShowImage
                 });
         }
 
@@ -901,12 +908,19 @@ namespace ShareX
                 {
                     UploadFile = filePath => UploadManager.UploadFile(filePath),
                     EditImage = filePath => AnnotateImageFromFile(filePath),
+                    TrimVideo = filePath => OpenVideoTrimmer(inputFilePath: filePath),
+                    TrimAnimatedGif = filePath => OpenAnimatedGifTrimmer(filePath),
                     PinToScreen = filePath => PinToScreen(filePath),
                     AnalyzeImage = filePath => AnalyzeImage(filePath),
-                    ShowImage = filePath => OpenImageViewer(filePath),
-                    ShowImages = (filePaths, selectedIndex) =>
-                        ImageViewerWindowIntegration.ShowImage(filePaths, selectedIndex)
+                    ShowImage = ImageViewerWindowIntegration.ShowImage,
+                    ShowImages = ImageViewerWindowIntegration.ShowImage
                 });
+        }
+
+        public static void OpenStats()
+        {
+            HistoryIntegration.ShowStatsWindow(ApplicationState.HistoryManager,
+                image => UploadManager.RunImageTask(new TaskMetadata(image) { ProcessName = "ShareX" }, TaskSettings.GetDefaultTaskSettings()));
         }
 
         public static void OpenDebugLog()
@@ -1233,15 +1247,22 @@ namespace ShareX
             }, cancellationToken);
         }
 
+        public static void OpenVideoPlayer(string inputFilePath = null)
+        {
+            ToolsIntegration.ShowVideoPlayerWindow(inputFilePath);
+        }
+
         public static void OpenVideoTrimmer(TaskSettings taskSettings = null, string inputFilePath = null)
         {
             taskSettings ??= TaskSettings.GetDefaultTaskSettings();
-            if (CheckFileMediaTools(taskSettings))
+            // The system's video playback opens videos without FFmpeg, which is then resolved only to export.
+            if (PlatformServices.Current.VideoPlayback.Support.IsSupported || CheckFileMediaTools(taskSettings))
             {
                 ToolsIntegration.ShowVideoTrimmerWindow(
                     taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
                     inputFilePath,
-                    () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
+                    () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings),
+                    () => CheckFFmpeg(taskSettings) ? taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath : null);
             }
         }
 
@@ -1469,7 +1490,6 @@ namespace ShareX
         private static SKBitmap CopyBitmapForEditor(Bitmap bitmap) => bitmap.Copy();
         private static SKBitmap CopyBitmap(SKBitmap bitmap) => bitmap.Copy();
 
-
         private static void CopyImageOnUiThread(Bitmap bmp)
         {
             InvokeOnUiThread(() => ClipboardHelpers.CopyImage(bmp));
@@ -1501,6 +1521,35 @@ namespace ShareX
             {
                 Dispatcher.UIThread.Invoke(action);
             }
+        }
+
+        public static void OpenPhotoEditor(string filePath = null, TaskSettings taskSettings = null)
+        {
+            OpenPhotoEditor(string.IsNullOrEmpty(filePath) ? null : [filePath], null, taskSettings);
+        }
+
+        public static void OpenPhotoEditor(IEnumerable<string> filePaths, Bitmap image, TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            PhotoEditorServices services = new PhotoEditorServices
+            {
+                SettingsFilePath = StartupOptions.Sandbox ? null : Path.Combine(AppPaths.PersonalFolder, "PhotoEditor.json"),
+                DefaultFolder = GetScreenshotsFolder(taskSettings),
+                UploadImage = skBitmap => UploadImageOnUiThread(skBitmap.Copy(), taskSettings),
+                CopyImage = skBitmap => CopyImageOnUiThread(skBitmap),
+                PinImage = skBitmap => PinToScreen(skBitmap.Copy(), taskSettings),
+                PrintImage = skBitmap => PrintImageOnUiThread(skBitmap.Copy()),
+                RunImageTask = (skBitmap, path) =>
+                {
+                    Bitmap copy = skBitmap.Copy();
+                    InvokeOnUiThread(() => UploadManager.RunImageTask(copy, taskSettings));
+                },
+                CaptureRegion = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions),
+                CaptureFullscreen = () => Task.FromResult(GetScreenshot(taskSettings).CaptureFullscreen())
+            };
+
+            PhotoEditorIntegration.Show(services, filePaths, image, image != null ? "Screenshot" : null);
         }
 
         public static void OpenImageBeautifier(TaskSettings taskSettings = null)
@@ -2335,6 +2384,7 @@ namespace ShareX
                 HotkeyType.PinToScreenFromFile => LucideIcons.file_image,
                 HotkeyType.PinToScreenCloseAll => LucideIcons.pin_off,
                 HotkeyType.ImageEditor => LucideIcons.image,
+                HotkeyType.PhotoEditor => LucideIcons.layers,
                 HotkeyType.ImageBeautifier => LucideIcons.sparkles,
                 HotkeyType.ImageEffects => LucideIcons.wand_sparkles,
                 HotkeyType.ImageViewer => LucideIcons.eye,
