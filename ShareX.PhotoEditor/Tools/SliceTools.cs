@@ -41,9 +41,9 @@ public sealed class SliceTool : ToolBase
 
     public override ToolId Id => ToolId.Slice;
 
-    public override string Name => "Slice Tool";
+    public override string Name => Strings.SliceTools_SliceTool;
 
-    public override string Hint => "Drag to create a slice. Use File > Export > Save Slices to export them.";
+    public override string Hint => Strings.SliceTools_SliceHint;
 
     public float FixedWidth { get; set; }
 
@@ -79,7 +79,7 @@ public sealed class SliceTool : ToolBase
         Host.InvalidateOverlay();
         if (rect.Width < 2 || rect.Height < 2) return;
         Doc.Slices.Add(new SliceItem { Bounds = rect, Name = $"{Path.GetFileNameWithoutExtension(Doc.DisplayName.TrimEnd('*'))}_{Doc.Slices.Count + 1:00}" });
-        PushHistory("Slice");
+        PushHistory(Strings.SliceTools_Slice);
     }
 
     public override void DrawOverlay(OverlayContext context)
@@ -91,9 +91,9 @@ public sealed class SliceTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Number("Fixed W:", 0, 30000, () => FixedWidth, v => FixedWidth = (float)v, "0", "px");
-        options.Number("H:", 0, 30000, () => FixedHeight, v => FixedHeight = (float)v, "0", "px");
-        options.Button("Slices From Guides", () =>
+        options.Number(Strings.SliceTools_FixedWColon, 0, 30000, () => FixedWidth, v => FixedWidth = (float)v, "0", "px");
+        options.Number(Strings.CropTools_HColon, 0, 30000, () => FixedHeight, v => FixedHeight = (float)v, "0", "px");
+        options.Button(Strings.SliceTools_SlicesFromGuides, () =>
         {
             if (Doc == null) return;
             List<float> xs = Doc.Guides.Where(g => !g.Horizontal).Select(g => g.Position).Append(0).Append(Doc.Width).Distinct().OrderBy(x => x).ToList();
@@ -102,14 +102,14 @@ public sealed class SliceTool : ToolBase
             for (int r = 0; r < ys.Count - 1; r++)
                 for (int c = 0; c < xs.Count - 1; c++)
                     Doc.Slices.Add(new SliceItem { Bounds = new SKRectI((int)xs[c], (int)ys[r], (int)xs[c + 1], (int)ys[r + 1]), Name = $"slice_{r + 1:00}_{c + 1:00}" });
-            PushHistory("Slices From Guides");
+            PushHistory(Strings.SliceTools_SlicesFromGuides);
             Host.InvalidateOverlay();
         });
-        options.Button("Clear Slices", () =>
+        options.Button(Strings.SliceTools_ClearSlices, () =>
         {
             if (Doc == null) return;
             Doc.Slices.Clear();
-            PushHistory("Clear Slices");
+            PushHistory(Strings.SliceTools_ClearSlices);
             Host.InvalidateOverlay();
         });
     }
@@ -128,9 +128,9 @@ public sealed class SliceSelectTool : ToolBase
 
     public override ToolId Id => ToolId.SliceSelect;
 
-    public override string Name => "Slice Select Tool";
+    public override string Name => Strings.SliceTools_SliceSelectTool;
 
-    public override string Hint => "Click to select a slice, drag to move or resize it. Delete removes it, double-click renames it.";
+    public override string Hint => Strings.SliceTools_SliceSelectHint;
 
     public override ToolCursor Cursor => ToolCursor.Arrow;
 
@@ -160,11 +160,11 @@ public sealed class SliceSelectTool : ToolBase
         if (_selected == null) return;
         if (input.ClickCount >= 2)
         {
-            string? name = await Host.PromptTextAsync("Slice Options", "Name:", _selected.Name);
+            string? name = await Host.PromptTextAsync(Strings.SliceTools_SliceOptions, Strings.EditorCommands_NameColon, _selected.Name);
             if (name != null)
             {
                 _selected.Name = name;
-                PushHistory("Edit Slice Options");
+                PushHistory(Strings.SliceTools_EditSliceOptions);
             }
             return;
         }
@@ -192,7 +192,7 @@ public sealed class SliceSelectTool : ToolBase
 
     public override void PointerUp(ToolInput input)
     {
-        if (_handle >= 0 && _selected != null && _selected.Bounds != _startBounds) PushHistory("Edit Slice");
+        if (_handle >= 0 && _selected != null && _selected.Bounds != _startBounds) PushHistory(Strings.SliceTools_EditSlice);
         _handle = -1;
     }
 
@@ -202,7 +202,7 @@ public sealed class SliceSelectTool : ToolBase
         {
             Doc.Slices.Remove(_selected);
             _selected = null;
-            PushHistory("Delete Slice");
+            PushHistory(Strings.SliceTools_DeleteSlice);
             Host.RefreshOptions();
             Host.InvalidateOverlay();
             return true;
@@ -222,16 +222,16 @@ public sealed class SliceSelectTool : ToolBase
     {
         if (_selected is not SliceItem slice)
         {
-            options.Label("No slice selected");
+            options.Label(Strings.SliceTools_NoSliceSelected);
             return;
         }
         // The options bar can outlive the selection, so the handlers work on the slice they were built for.
-        options.Text("Name:", () => slice.Name, v => slice.Name = v, 160);
+        options.Text(Strings.EditorCommands_NameColon, () => slice.Name, v => slice.Name = v, 160);
         options.Text("URL:", () => slice.Url, v => slice.Url = v, 160);
-        options.Button("Divide...", async () =>
+        options.Button(Strings.SliceTools_DivideEllipsis, async () =>
         {
             if (Doc == null || _selected == null) return;
-            string? text = await Host.PromptTextAsync("Divide Slice", "Rows x Columns (for example 2x3):", "2x2");
+            string? text = await Host.PromptTextAsync(Strings.SliceTools_DivideSlice, Strings.SliceTools_RowsColumnsPrompt, "2x2");
             if (text == null) return;
             string[] parts = text.ToLowerInvariant().Split('x');
             if (parts.Length != 2 || !int.TryParse(parts[0], out int rows) || !int.TryParse(parts[1], out int cols) || rows < 1 || cols < 1) return;
@@ -245,7 +245,7 @@ public sealed class SliceSelectTool : ToolBase
                         Name = $"{_selected.Name}_{r + 1}_{c + 1}"
                     });
             _selected = null;
-            PushHistory("Divide Slice");
+            PushHistory(Strings.SliceTools_DivideSlice);
             Host.RefreshOptions();
             Host.InvalidateOverlay();
         });

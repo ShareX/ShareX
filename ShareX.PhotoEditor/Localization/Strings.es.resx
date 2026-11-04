@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>Intensidad</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Autor:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Autor: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Borrar todo</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Borrar recuento</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Borrar notas</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Grupo de recuento {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Haga clic para colocar marcadores de recuento numerados. Arrastre para mover, Alt+clic para quitar.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Recuento: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Herramienta Recuento</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Eliminar recuento</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Eliminar nota</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Editar nota</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Grupo:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Color del grupo</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Tamaño de etiqueta:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Tamaño de marcador:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Mover recuento</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Mover nota</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Crear un grupo de recuento nuevo</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Nota</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Color de la nota</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Haga clic para añadir una nota. Haga clic en una nota para editarla, arrástrela para moverla, Alt+clic para eliminarla.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Herramienta Nota</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Añadir mesa de trabajo</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Mesa de trabajo {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Fondo de la mesa de trabajo</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Arrastre en un lienzo vacío para crear una mesa de trabajo. Arrastre el título de una mesa de trabajo para moverla con su contenido.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Mover mesa de trabajo</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Herramienta Mesa de trabajo</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Nueva mesa de trabajo</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (teléfono)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (cuadrado)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (tableta)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Mejorar borde</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Lazo</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Varita mágica</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Haga clic para seleccionar colores similares. Mayús añade, Alt resta.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Herramienta Varita mágica</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Selección de objetos</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Trace un rectángulo o lazo alrededor de un objeto para seleccionarlo.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Herramienta Selección de objetos</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Selección rápida</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Pinte sobre una zona para seleccionarla; la selección crece hasta encontrar los bordes. Alt resta.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Herramienta Selección rápida</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Seleccionando objeto...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Pincel de selección</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Pinte para añadir a la selección. Alt (o el modo Restar) quita de ella.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Herramienta Pincel de selección</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>Detrás</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>Luz intensa</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Activar efectos de acumulación de estilo aerógrafo</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>«{0}» no puede pintar en una máscara de capa.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Pintura aplicada por toque</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Cobertura máxima de pintura por trazo (teclas 0-9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Tamaño por presión</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Suavizado:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Pincel de ajuste</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Pinte un ajuste local. Cada trazo edita la máscara de una capa de ajuste. Alt borra el ajuste.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>Pincel de {0}</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Herramienta Pincel de ajuste</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Ajuste:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Cantidad:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Borrado automático</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Pinte con el color frontal. Mayús+clic traza una línea recta. [ ] cambian el tamaño.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Herramienta Pincel</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Limpiar tras cada trazo</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Sustituye los colores similares al color muestreado por el color frontal.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Herramienta Sustitución de color</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Carga:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Cargar color (frontal)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Mezcla:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Mezcla la pintura cargada con los colores del lienzo como pintura real.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Herramienta Pincel mezclador</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Capa nueva por trazo</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Pinte líneas duras y sin suavizado con el color frontal.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Herramienta Lápiz</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Muestreo:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Humedad:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>Ángulo</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>Selector de color ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Arrastre para definir el área de recorte; arrastre fuera de ella para girarla. Intro confirma, Esc cancela.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>An: {0:0} px  Al: {1:0} px  Ángulo: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Herramienta Recortar</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Eliminar píxeles recortados</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>Al:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Proporción original</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Recorte con perspectiva</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Trace un cuadro de recorte y arrastre sus esquinas para ajustarlas a la perspectiva de un objeto. Intro recorta y endereza.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Herramienta Recorte con perspectiva</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Proporción</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Proporción:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (cuadrado)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Regla de los tercios</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Mostrar cuadrícula</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Intercambiar anchura y altura</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>An:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>Cancelar</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>Una vez</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Forma personalizada</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Elipse</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Línea</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Polígono</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Rectángulo</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Triángulo</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>Trazado</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>Sombras</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Borra los píxeles que coinciden con el color bajo el centro del pincel (zona interactiva).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Herramienta Borrador de fondos</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>No contiguo</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Borrar a la historia</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Borra hasta la transparencia, o hasta el color de fondo en capas bloqueadas. Alt borra a la historia.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Herramienta Borrador</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Límites:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Proteger color frontal</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>Exportar...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>Conservar transparencia</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Tramado</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Editar...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Degradado:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Arrastre para trazar un degradado. Mayús limita el ángulo a 45 grados.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Ángulo: {0:0.0}°  Distancia: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Herramienta Degradado</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>Degradado {0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Borrador mágico</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Haga clic para borrar hasta la transparencia los píxeles de color similar.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Herramienta Borrador mágico</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Bote de pintura</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Haga clic para rellenar los píxeles de color similar con el color frontal o un motivo.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Herramienta Bote de pintura</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Transparencia</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>Añadir ruido</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>Onda</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Vaciar marco</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Borrar contenido del marco</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Marco elíptico</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Marco {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Arrastre para crear un marcador de posición de marco. Coloque o pegue una imagen para rellenar el marco activo.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Herramienta Marco</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Colocar un archivo de imagen en el marco activo</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Marco rectangular</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>Añadir parada</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>Surrealista</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Área:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Pinta trazos estilizados muestreados de la fuente de historia.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Herramienta Pincel de historia del arte</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>No se pudo usar el pincel de historia porque el estado de historia no tiene el mismo tamaño de lienzo.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Repinta píxeles desde el estado de historia seleccionado como fuente en el panel Historia.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Herramienta Pincel de historia</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Defina primero una fuente de historia en el panel Historia.</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>Eliminar instantánea</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>Remuestrear:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Frecuencia:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Arrastre para trazar una selección a mano alzada. Suelte para cerrarla.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Herramienta Lazo</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Lazo magnético</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Haga clic para empezar y siga un borde. Haga clic para añadir anclajes, doble clic o Intro para cerrar, Retroceso quita un anclaje.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Herramienta Lazo magnético</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Lazo poligonal</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Haga clic para añadir puntos. Doble clic, Intro o clic en el punto inicial para cerrar. Retroceso quita el último punto.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Herramienta Lazo poligonal</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>Fondo</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>Alternar visibilidad (Alt+clic muestra solo esta capa)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Marco elíptico</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Herramienta Marco elíptico</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Arrastre para seleccionar. Mayús restringe, Alt dibuja desde el centro. Arrastre dentro de una selección para moverla.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Marco rectangular</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Herramienta Marco rectangular</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Perfeccionar el borde de la selección</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Haga clic para seleccionar una columna de 1 píxel.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Herramienta Marco de columna única</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Haga clic para seleccionar una fila de 1 píxel.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Herramienta Marco de fila única</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Estilo:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>Intensidad de color:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(vacío)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Encajar en pantalla</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Arrastre para desplazar la vista. Mantenga pulsada la barra espaciadora con cualquier herramienta para usar temporalmente la herramienta Mano. Doble clic para encajar en pantalla.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Herramienta Mano</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Restaurar vista</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Arrastre para girar la vista del lienzo sin cambiar los píxeles. Mayús ajusta a 15 grados. Esc o Restaurar vista la restablece.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Herramienta Rotar vista</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Ángulo de rotación:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Zoom por arrastre</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Haga clic para acercar, Alt+clic para alejar. Arrastre a izquierda/derecha para el zoom por arrastre, o trace un rectángulo si está desactivado.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Acercar</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Alejar</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Herramienta Zoom</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>Negro</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>Menú del panel</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Añadir punto de ancla</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Haga clic en un segmento de trazado para añadir un punto de ancla.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Herramienta Añadir punto de ancla</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Combinar</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Fusionar componentes de trazado superpuestos</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Convertir punto</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Haga clic en un punto suave para convertirlo en esquina; arrastre un punto de esquina para sacar manejadores. Arrastre un manejador para romperlo.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Herramienta Convertir punto</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Eliminar punto de ancla</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Haga clic en un punto de ancla para eliminarlo.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Herramienta Eliminar punto de ancla</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Haga clic o arrastre un marco para seleccionar puntos de ancla; arrastre puntos o manejadores para remodelar. Alt arrastra un manejador de forma independiente.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Herramienta Selección directa</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Arrastrar ancla</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Intersecar</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Mover trazado</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Desplazar ancla</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Haga clic en un componente de trazado para seleccionarlo y arrástrelo para moverlo. Alt+arrastrar duplica, Supr elimina.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Herramienta Selección de trazado</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Restar los componentes posteriores del primero</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>Trazado de trabajo</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>Contornear el trazado con el pincel</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Añadir/eliminar automáticamente</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Cerrar trazado</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Pluma de curvatura</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Haga clic para colocar puntos; la curva fluye suavemente por ellos. Haga clic en el primer punto para cerrar, Intro o Esc para terminar.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Herramienta Pluma de curvatura</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Ajuste de curva:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Pluma de forma libre</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Arrastre para trazar a mano alzada; se ajusta con curvas suaves. Magnético se ajusta a los bordes.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Herramienta Pluma de forma libre</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Magnético</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Crear:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Máscara</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Pluma</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Haga clic para añadir puntos de esquina y arrastre para añadir puntos suaves. Haga clic en el primer punto para cerrar. Ctrl edita puntos, Alt los convierte.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Herramienta Pluma</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Banda elástica</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Selección...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>Sin título-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>Veta de madera</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Mover según el contenido</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Mover según el contenido...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Herramienta Mover según el contenido</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Cantidad de oscurecimiento:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Destino</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Trace una selección (o use cualquier herramienta de selección) y arrastre la selección.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Extender</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Mover</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Parche</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Parche:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Herramienta Parche</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Tamaño de pupila:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Ojos rojos</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Haga clic en un ojo rojo (o arrastre alrededor) para eliminar el reflejo rojo.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Herramienta Pincel de ojos rojos</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Origen</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Estructura:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Arrastre para medir distancia y ángulo. Arrastre un extremo para ajustarlo.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Herramienta Regla</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Girar la capa activa para que la línea de la regla quede nivelada</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Usar escala de medida</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Borrar muestras de color</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Muestra de color</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Haga clic para colocar hasta 10 muestras de color (se muestran en el panel Información). Arrastre para mover, Alt+clic para eliminar.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Herramienta Muestra de color</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Capa actual</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Eliminar muestra de color</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Haga clic para tomar una muestra del color frontal. Alt+clic toma una muestra del color de fondo.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Herramienta Cuentagotas</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Se permite un máximo de 10 muestras de color.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Mover muestra de color</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Muestra:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Mostrar anillo de muestreo</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Mover selección</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Flecha</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Marca de verificación</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Nube</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Cruz</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Corona</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Herramienta Forma personalizada</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Gota</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Herramienta Elipse</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Flecha final</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Color de relleno (clic derecho para ninguno)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Engranaje</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Corazón</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Longitud: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Rayo</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Arrastre para trazar una línea. Mayús la limita a 45 grados.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Herramienta Línea</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Operación de trazado:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Herramienta Polígono</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Rompecabezas</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Herramienta Rectángulo</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Forma:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Arrastre para trazar la forma. Mayús conserva las proporciones, Alt dibuja desde el centro.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Lados:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Bocadillo</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Estrella</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Proporción de estrella:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Flecha inicial</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Color del trazo (clic derecho para ninguno)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Herramienta Triángulo</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Grosor:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>Buscar comandos</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>Usar valores predeterminados</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Borrar sectores</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Eliminar sector</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Dividir...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Dividir sector</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Editar sector</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Editar opciones de sector</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>An. fija:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Ningún sector seleccionado</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Filas x columnas (por ejemplo, 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Arrastre para crear un sector. Use Archivo &gt; Exportar &gt; Guardar sectores para exportarlos.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Opciones de sector</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Haga clic para seleccionar un sector y arrástrelo para moverlo o cambiar su tamaño. Supr lo elimina, doble clic le cambia el nombre.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Herramienta Seleccionar sector</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Herramienta Sector</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Sectores a partir de guías</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Alineado</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Origen de clonación: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Herramienta Tampón de clonar</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Corrigiendo...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Herramienta Pincel corrector</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Impresionista</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>No se pudo usar el tampón de clonar porque no se ha definido el área que se va a clonar (Alt+clic para definir un punto de origen).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Pinte con el motivo seleccionado.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Herramienta Tampón de motivo</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Pinte sobre los elementos molestos para quitarlos. La zona se reconstruye a partir de su entorno.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Herramienta Quitar</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Quitando...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Herramienta Pincel corrector puntual</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Pinte sobre manchas e imperfecciones para corregirlas automáticamente.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Tipo:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>Borrar archivos recientes</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>Restaurar</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Pinte para suavizar bordes y detalles.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Herramienta Desenfocar</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Pinte para oscurecer zonas. Alt aclara.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Herramienta Subexponer</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Pinte para aclarar zonas. Alt oscurece.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Herramienta Sobreexponer</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Pintura con los dedos</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Proteger detalles</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Proteger tonos</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Rango:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Saturar</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Pinte para aumentar el contraste local y enfocar los detalles.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Herramienta Enfocar</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Arrastre para extender la pintura. Pintura con los dedos empieza con el color frontal.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Herramienta Dedo</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Pinte para saturar o desaturar los colores.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Herramienta Esponja</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>No se pudo usar «{0}» porque la capa de destino está oculta.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>No se pudo usar «{0}» porque la capa está bloqueada.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>No se pudo usar «{0}» porque la capa de destino no es una capa de píxeles. Rasterice primero la capa (Capa &gt; Rasterizar).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>Contraer a una sola columna</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>Personalizar barra de herramientas</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Suavizado</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Contiguo</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Flujo:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Muestra de punto</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Muestrear todas las capas</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>Promedio de {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Tamaño de muestra:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>An: {0:0} px  Al: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Tolerancia:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Alinear bordes inferiores</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Alinear centros horizontales</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Alinear bordes izquierdos</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Alinear bordes derechos</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Alinear bordes superiores</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Alinear centros verticales</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Selección automática:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Un clic selecciona la capa superior bajo el puntero (temporalmente con Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Cancelar transformación (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>No se pudo transformar porque la capa está vacía.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>No se pudo transformar porque la capa está bloqueada o no tiene contenido.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>No se pudo transformar la selección porque la capa está bloqueada.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Confirmar transformación (Intro)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Eliminar guía</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Flotante</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Selección flotante</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Arrastre los manejadores para escalar (Mayús: proporcional, Alt: desde el centro), fuera para girar, Ctrl+arrastrar una esquina para distorsionar, Ctrl+arrastrar un borde para sesgar. Intro confirma, Esc cancela.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Interpolación:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>No se pudo completar la solicitud porque la capa está bloqueada.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Mover guía</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Arrastre para mover la capa o los píxeles seleccionados. Alt+arrastrar duplica, Mayús restringe. Las flechas desplazan.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Herramienta Mover</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Desplazar</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Mostrar controles de transformación</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Use Edición &gt; Transformación libre (Ctrl+T) para transformar la capa o selección activa.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Todo mayúsculas</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Negrita cursiva</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Cancelar edición actual (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Centrar texto</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Confirmar edición actual (Ctrl+Intro)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Negrita falsa</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Cursiva falsa</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Haga clic para añadir texto de punto, arrastre para añadir texto de párrafo, haga clic en un texto existente para editarlo. Ctrl+Intro confirma, Esc cancela.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Herramienta Máscara de texto horizontal</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Herramienta Texto horizontal</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Alinear texto a la izquierda</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Haga clic para escribir; al confirmar se crea una selección con la forma del texto.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Alinear texto a la derecha</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Establecer suavizado</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Establecer estilo de fuente</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Tachado</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Color del texto</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Cambiar orientación del texto</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Máscara de texto</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Herramienta Máscara de texto vertical</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Herramienta Texto vertical</value>
   </data>
 </root>

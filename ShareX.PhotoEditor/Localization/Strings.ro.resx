@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>Intensitate</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Autor:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Autor: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Golește tot</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Golește numărătoarea</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Golește notele</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Grup de numărare {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Faceți clic pentru a plasa marcaje de numărare numerotate. Trageți pentru a muta, Alt+clic pentru a elimina.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Număr: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Instrument Numărare</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Șterge numărătoarea</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Șterge nota</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Editează nota</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Grup:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Culoarea grupului</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Dimensiune etichetă:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Dimensiune marcaj:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Mută numărătoarea</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Mută nota</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Creează un grup de numărare nou</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Notă</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Culoarea notei</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Faceți clic pentru a adăuga o notă. Faceți clic pe o notă pentru a o edita, trageți pentru a o muta, Alt+clic pentru a o șterge.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Instrument Notă</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Adaugă o planșetă nouă</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Planșeta {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Fundalul planșetei</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Trageți pe pânza goală pentru a crea o planșetă. Trageți titlul unei planșete pentru a o muta împreună cu conținutul ei.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Mută planșeta</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Instrument Planșetă</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Planșetă nouă</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (telefon)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (pătrat)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (tabletă)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Adaugă</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Îmbunătățește marginea</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Lasou</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Baghetă magică</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Faceți clic pentru a selecta culori similare. Shift adaugă, Alt scade.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Instrument Baghetă magică</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Selecție de obiect</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Trageți un dreptunghi sau un lasou în jurul unui obiect pentru a-l selecta.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Instrument Selecție de obiect</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Selecție rapidă</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Pictați peste o zonă pentru a o selecta; selecția se extinde până la margini. Alt scade.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Instrument Selecție rapidă</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Se selectează obiectul...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Pensulă de selecție</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Pictați pentru a adăuga la selecție. Alt (sau modul Scădere) elimină din ea.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă de selecție</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>În spate</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>Lumină vie</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Activează efecte de acumulare de tip aerograf</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>Instrumentul „{0}” nu poate picta pe o mască de strat.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Vopsea aplicată pe fiecare atingere</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Acoperirea maximă a vopselei pe tușă (tastele 0-9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Dimensiune după presiune</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Netezire:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Pensulă de ajustare</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Pictează o ajustare locală. Fiecare tușă editează masca unui strat de ajustare. Alt șterge ajustarea.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>Pensulă {0}</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă de ajustare</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Ajustare:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Cantitate:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Ștergere automată</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Pictează cu culoarea de prim-plan. Shift+clic trasează o linie dreaptă. [ ] schimbă dimensiunea.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Instrument Pensulă</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Curăță după fiecare tușă</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Înlocuiește culorile similare cu culoarea eșantionată cu culoarea de prim-plan.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Instrument Înlocuire culoare</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Încărcare:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Culoare încărcată (prim-plan)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Amestec:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Amestecă vopseaua încărcată cu culorile pânzei, ca vopseaua reală.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă de amestec</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Strat nou pentru fiecare tușă</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Pictează linii cu margini dure, fără anti-aliere, cu culoarea de prim-plan.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Instrument Creion</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Eșantionare:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Umezeală:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>Unghi</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>Selector de culori ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Trageți pentru a defini zona de decupare; trageți în afara ei pentru a roti. Enter confirmă, Esc anulează.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>L: {0:0} px  Î: {1:0} px  Unghi: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Instrument Decupare</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Șterge pixelii decupați</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>Î:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Raport original</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Decupare în perspectivă</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Trageți pentru a crea o casetă de decupare, apoi trageți colțurile ei pentru a se potrivi cu perspectiva unui obiect. Enter decupează și îndreaptă.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Instrument Decupare în perspectivă</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Raport</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Raport:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (pătrat)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Regula treimilor</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Afișează grila</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Inversează lățimea și înălțimea</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>L:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>Anulare</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>O dată</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Formă personalizată</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Elipsă</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Linie</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Poligon</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Dreptunghi</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Triunghi</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>Traseu</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>Umbre</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Șterge pixelii care se potrivesc cu culoarea de sub centrul pensulei (punctul fierbinte).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Instrument Radieră de fundal</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Discontinuu</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Șterge până la istoric</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Șterge până la transparență sau până la culoarea de fundal pe straturile blocate. Alt șterge până la istoric.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Instrument Radieră</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Limite:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Protejează culoarea de prim-plan</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>Export...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>Păstrați transparența</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Dither</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Editează...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Degradeu:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Trageți pentru a desena un degradeu. Shift limitează unghiul la 45 de grade.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Unghi: {0:0.0}°  Distanță: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Instrument Degradeu</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>Degradeu {0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Radieră magică</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Faceți clic pentru a șterge până la transparență pixelii de culoare similară.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Instrument Radieră magică</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Găleată de vopsea</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Faceți clic pentru a umple pixelii de culoare similară cu culoarea de prim-plan sau cu un model.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Instrument Găleată de vopsea</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Transparență</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>Adăugare zgomot</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>Undă</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Golește cadrul</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Golește conținutul cadrului</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Cadru eliptic</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Cadrul {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Trageți pentru a crea un substituent de cadru. Plasați sau lipiți o imagine pentru a umple cadrul activ.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Instrument Cadru</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Plasează un fișier imagine în cadrul activ</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Cadru dreptunghiular</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>Adăugați un punct de culoare</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>Suprarealist</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Zonă:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Pictează tușe stilizate eșantionate din sursa de istoric.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă istoric artistic</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Nu s-a putut folosi Pensula istoric deoarece starea din istoric nu are aceeași dimensiune a pânzei.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Pictează înapoi pixelii din starea de istoric selectată ca sursă în panoul Istoric.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă istoric</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Setați mai întâi o sursă de istoric în panoul Istoric.</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>Ștergeți instantaneul</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>Reeșantionare:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Frecvență:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Trageți pentru a desena o selecție liberă. Eliberați pentru a o închide.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Instrument Lasou</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Lasou magnetic</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Faceți clic pentru a începe, apoi deplasați-vă de-a lungul unei margini. Clic adaugă ancore, dublu clic sau Enter închide, Backspace elimină o ancoră.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Instrument Lasou magnetic</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Lasou poligonal</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Faceți clic pentru a adăuga puncte. Dublu clic, Enter sau clic pe punctul de start închide. Backspace elimină ultimul punct.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Instrument Lasou poligonal</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>Fundal</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>Comutați vizibilitatea (Alt+clic afișează doar acest strat)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Marcaj eliptic</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Instrument Marcaj eliptic</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Trageți pentru a selecta. Shift limitează, Alt desenează din centru. Trageți în interiorul unei selecții pentru a o muta.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Marcaj dreptunghiular</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Instrument Marcaj dreptunghiular</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Rafinează marginea selecției</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Faceți clic pentru a selecta o coloană de 1 pixel.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Instrument Marcaj coloană unică</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Faceți clic pentru a selecta un rând de 1 pixel.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Instrument Marcaj rând unic</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Stil:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>Intensitatea culorii:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(gol)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Potrivire pe ecran</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Trageți pentru a derula vizualizarea. Țineți apăsat Space cu orice instrument pentru a folosi temporar instrumentul Mână. Dublu clic pentru potrivire pe ecran.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Instrument Mână</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Resetează vizualizarea</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Trageți pentru a roti vizualizarea pânzei fără a modifica pixelii. Shift fixează la 15 grade. Esc sau Resetează vizualizarea o restabilește.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Instrument Rotire vizualizare</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Unghi de rotire:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Zoom prin glisare</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Clic pentru mărire, Alt+clic pentru micșorare. Trageți stânga/dreapta pentru zoom prin glisare sau trageți un dreptunghi când acesta este dezactivat.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Mărește</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Micșorează</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Instrument Zoom</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>Negru</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>Meniul panoului</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Adaugă punct de ancorare</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Faceți clic pe un segment de traseu pentru a adăuga un punct de ancorare.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Instrument Adăugare punct de ancorare</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Combină</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Unește componentele de traseu suprapuse</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Convertește punctul</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Faceți clic pe un punct neted pentru a-l transforma în colț; trageți un punct de colț pentru a scoate mânere netede. Trageți un mâner pentru a-l rupe.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Instrument Convertire punct</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Șterge punctul de ancorare</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Faceți clic pe un punct de ancorare pentru a-l șterge.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Instrument Ștergere punct de ancorare</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Faceți clic sau trageți un marcaj pentru a selecta puncte de ancorare; trageți punctele sau mânerele pentru a remodela. Alt trage un mâner independent.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Instrument Selecție directă</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Trage ancora</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Exclude</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Intersectează</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Mută traseul</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Deplasează ancora</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Faceți clic pe o componentă de traseu pentru a o selecta, trageți pentru a o muta. Alt+tragere duplică, Delete elimină.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Instrument Selecție traseu</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Scade componentele ulterioare din prima</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>Traseu de lucru</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>Conturați traseul cu pensula</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Adăugare/ștergere automată</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Închide traseul</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Peniță de curbură</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Faceți clic pentru a plasa puncte; curba trece lin prin ele. Clic pe primul punct închide, Enter sau Esc finalizează.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Instrument Peniță de curbură</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Ajustare curbă:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Peniță liberă</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Trageți pentru a desena un traseu liber; acesta este aproximat cu curbe netede. Magnetic se aliniază la margini.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Instrument Peniță liberă</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Magnetic</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Creează:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Mască</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Peniță</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Clic adaugă puncte de colț, tragerea adaugă puncte netede. Clic pe primul punct închide. Ctrl editează punctele, Alt le convertește.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Instrument Peniță</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Bandă elastică</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Selecție...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>Fără titlu-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>Fibra lemnului</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Mutare conștientă de conținut</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Mutare conștientă de conținut...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Instrument Mutare conștientă de conținut</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Cantitate de întunecare:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Destinație</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Desenați o selecție (sau folosiți orice instrument de selecție), apoi trageți selecția.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Extinde</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Mută</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Petic</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Petic:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Instrument Petic</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Dimensiunea pupilei:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Ochi roșii</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Faceți clic pe un ochi roșu (sau trageți în jurul lui) pentru a elimina reflexia roșie.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Instrument Ochi roșii</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Sursă</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Structură:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Trageți pentru a măsura distanța și unghiul. Trageți un capăt pentru a-l ajusta.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Instrument Riglă</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Rotește stratul activ astfel încât linia riglei să devină orizontală</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Folosește scara de măsurare</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Golește eșantionatoarele de culoare</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Eșantionator de culoare</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Faceți clic pentru a plasa până la 10 eșantionatoare de culoare (afișate în panoul Informații). Trageți pentru a muta, Alt+clic pentru a șterge.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Instrument Eșantionator de culoare</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Stratul curent</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Șterge eșantionatorul de culoare</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Faceți clic pentru a eșantiona culoarea de prim-plan. Alt+clic eșantionează culoarea de fundal.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Instrument Pipetă</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Sunt permise cel mult 10 eșantionatoare de culoare.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Mută eșantionatorul de culoare</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Eșantion:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Afișează inelul de eșantionare</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Mută selecția</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Săgeată</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Bifă</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Nor</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Cruce</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Coroană</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Instrument Formă personalizată</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Picătură</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Instrument Elipsă</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Săgeată la final</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Culoare de umplere (clic dreapta pentru niciuna)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Roată dințată</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Inimă</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Lungime: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Fulger</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Trageți pentru a desena o linie. Shift limitează la 45 de grade.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Instrument Linie</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Operație traseu:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Instrument Poligon</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Puzzle</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Instrument Dreptunghi</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Formă:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Trageți pentru a desena forma. Shift păstrează proporțiile, Alt desenează din centru.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Laturi:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Bulă de dialog</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Stea</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Raportul stelei:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Săgeată la început</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Culoare contur (clic dreapta pentru niciuna)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Instrument Triunghi</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Grosime:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>Căutați comenzi</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>Folosiți valorile implicite</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Golește feliile</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Șterge felia</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Împarte...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Împarte felia</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Editează felia</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Editează opțiunile feliei</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>L fixă:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Nicio felie selectată</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Rânduri x coloane (de exemplu 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Felie</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Trageți pentru a crea o felie. Folosiți Fișier &gt; Export &gt; Salvează feliile pentru a le exporta.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Opțiuni felie</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Faceți clic pentru a selecta o felie, trageți pentru a o muta sau redimensiona. Delete o elimină, dublu clic o redenumește.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Instrument Selectare felie</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Instrument Felie</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Felii din ghidaje</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Aliniat</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Sursă de clonare: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Instrument Ștampilă de clonare</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Se corectează...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă de corectare</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Impresionist</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Nu s-a putut folosi instrumentul Ștampilă de clonare deoarece zona de clonat nu a fost definită (Alt+clic pentru a defini un punct sursă).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Pictează cu modelul selectat.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Instrument Ștampilă de model</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Pictați peste elementele deranjante pentru a le elimina. Zona este reconstruită din împrejurimi.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Instrument Eliminare</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Se elimină...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă de corectare punctuală</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Pictați peste pete și imperfecțiuni pentru a le corecta automat.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Tip:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>Goliți fișierele recente</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>Restaurare</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Pictați pentru a înmuia marginile și detaliile.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Instrument Estompare</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Pictați pentru a întuneca zonele. Alt luminează.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Instrument Ardere</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Pictați pentru a lumina zonele. Alt întunecă.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Instrument Atenuare</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Pictură cu degetul</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Protejează detaliile</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Protejează tonurile</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Interval:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Saturează</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Pictați pentru a crește contrastul local și a clarifica detaliile.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Instrument Clarificare</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Trageți pentru a întinde vopseaua. Pictura cu degetul începe cu culoarea de prim-plan.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Instrument Întindere</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Pictați pentru a satura sau desatura culorile.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Instrument Burete</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>Nu s-a putut folosi „{0}” deoarece stratul țintă este ascuns.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>Nu s-a putut folosi „{0}” deoarece stratul este blocat.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>Nu s-a putut folosi „{0}” deoarece stratul țintă nu este un strat de pixeli. Rasterizați mai întâi stratul (Strat &gt; Rasterizare).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>Restrângeți la o singură coloană</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>Personalizare bară de instrumente</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Anti-aliere</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Confirmă</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Contiguu</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Flux:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Eșantion punctual</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Eșantionează toate straturile</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>Medie {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Dimensiune eșantion:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>L: {0:0} px  Î: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Toleranță:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Aliniază marginile de jos</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Aliniază centrele pe orizontală</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Aliniază marginile din stânga</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Aliniază marginile din dreapta</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Aliniază marginile de sus</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Aliniază centrele pe verticală</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Selecție automată:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Clic selectează stratul cel mai de sus de sub cursor (temporar cu Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Anulează transformarea (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Nu s-a putut transforma deoarece stratul este gol.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Nu s-a putut transforma deoarece stratul este blocat sau nu are conținut.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Nu s-a putut transforma selecția deoarece stratul este blocat.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Confirmă transformarea (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Șterge ghidajul</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Flotant</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Selecție flotantă</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Trageți mânerele pentru a scala (Shift: proporțional, Alt: din centru), în afară pentru a roti, Ctrl+tragere pe un colț pentru a distorsiona, Ctrl+tragere pe o margine pentru a înclina. Enter confirmă, Esc anulează.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Grup</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Interpolare:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Nu s-a putut finaliza solicitarea deoarece stratul este blocat.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Mută ghidajul</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Trageți pentru a muta stratul sau pixelii selectați. Alt+tragere duplică, Shift limitează. Tastele săgeți deplasează.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Instrument Mutare</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Deplasare</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Afișează controalele de transformare</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Folosiți Editare &gt; Transformare liberă (Ctrl+T) pentru a transforma stratul activ sau selecția.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Numai majuscule</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Aldin cursiv</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Anulează editările curente (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Centrează textul</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Confirmă editările curente (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Aldin simulat</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Cursiv simulat</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Clic adaugă text punctual, tragerea adaugă text de paragraf, clic pe un text existent îl editează. Ctrl+Enter confirmă, Esc anulează.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Instrument Mască de text orizontal</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Instrument Text orizontal</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Aliniază textul la stânga</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Faceți clic pentru a tasta; la confirmare se creează o selecție în forma textului.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Aliniază textul la dreapta</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Setează anti-alierea</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Setează stilul fontului</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Tăiat</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Culoare text</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Comută orientarea textului</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Mască de text</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Instrument Mască de text vertical</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Instrument Text vertical</value>
   </data>
 </root>

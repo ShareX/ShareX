@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>Kecerahan warna</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Penulis:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Penulis: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Bersihkan semua</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Bersihkan hitungan</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Bersihkan catatan</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Grup hitungan {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Klik untuk menempatkan penanda hitungan bernomor. Seret untuk memindahkan, Alt+klik untuk menghapus.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Jumlah: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Alat Hitung</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Hapus hitungan</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Hapus catatan</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Edit catatan</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Grup:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Warna grup</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Ukuran label:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Ukuran penanda:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Pindahkan hitungan</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Pindahkan catatan</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Buat grup hitungan baru</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Catatan</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Warna catatan</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Klik untuk menambahkan catatan. Klik catatan untuk mengeditnya, seret untuk memindahkannya, Alt+klik untuk menghapusnya.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Alat Catatan</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Tambahkan artboard baru</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Artboard {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Latar artboard</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Seret di kanvas kosong untuk membuat artboard. Seret judul artboard untuk memindahkannya beserta isinya.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Pindahkan artboard</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Alat Artboard</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Artboard baru</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (Ponsel)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (Persegi)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (Tablet)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Tambah</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Perjelas tepi</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Laso</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Tongkat ajaib</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Klik untuk memilih warna yang mirip. Shift menambah, Alt mengurangi.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Alat Tongkat ajaib</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Pemilihan objek</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Seret persegi panjang atau laso di sekitar objek untuk memilihnya.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Alat Pemilihan objek</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Pemilihan cepat</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Lukis di atas area untuk memilihnya; pilihan meluas hingga menemukan tepi. Alt mengurangi.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Alat Pemilihan cepat</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Memilih objek...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Kuas pilihan</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Lukis untuk menambah ke pilihan. Alt (atau mode Kurangi) menghapus dari pilihan.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Alat Kuas pilihan</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>Di belakang</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>Cahaya terang</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Aktifkan efek penumpukan bergaya airbrush</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>{0} tidak dapat melukis pada masker lapisan.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Cat yang diterapkan per sentuhan</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Cakupan cat maksimum per goresan (tombol 0-9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Ukuran sesuai tekanan</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Penghalusan:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Kuas penyesuaian</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Melukis penyesuaian lokal. Setiap goresan mengedit masker lapisan penyesuaian. Alt menghapus penyesuaian.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>Kuas {0}</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Alat Kuas penyesuaian</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Penyesuaian:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Jumlah:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Hapus otomatis</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Melukis dengan warna latar depan. Shift+klik menggambar garis lurus. [ ] mengubah ukuran.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Alat Kuas</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Bersihkan setelah setiap goresan</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Mengganti warna yang mirip dengan warna sampel dengan warna latar depan.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Alat Penggantian warna</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Muatan:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Warna muatan (latar depan)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Campuran:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Mencampur cat yang dimuat dengan warna kanvas seperti cat sungguhan.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Alat Kuas pencampur</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Lapisan baru per goresan</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Melukis garis bertepi tajam tanpa anti-alias dengan warna latar depan.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Alat Pensil</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Pengambilan sampel:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Basah:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>Sudut</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>Pemilih warna ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Seret untuk menentukan area pangkas; seret di luarnya untuk memutar. Enter menerapkan, Esc membatalkan.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>L: {0:0} px  T: {1:0} px  Sudut: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Alat Pangkas</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Hapus piksel yang dipangkas</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>T:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Rasio asli</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Pangkas perspektif</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Seret untuk membuat kotak pangkas, lalu seret sudut-sudutnya agar sesuai dengan perspektif objek. Enter memangkas dan meluruskan.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Alat Pangkas perspektif</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Rasio</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Rasio:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (Persegi)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Aturan sepertiga</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Tampilkan kisi</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Tukar lebar dan tinggi</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>L:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>Batal</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>Sekali</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Bentuk kustom</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Elips</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Garis</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Poligon</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Persegi panjang</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Segitiga</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>Jalur</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>Bayangan</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Menghapus piksel yang cocok dengan warna di bawah pusat kuas (titik panas).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Alat Penghapus latar</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Tidak bersebelahan</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Hapus ke riwayat</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Menghapus menjadi transparan, atau menjadi warna latar pada lapisan terkunci. Alt menghapus ke riwayat.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Alat Penghapus</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Batas:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Lindungi warna latar depan</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>Ekspor pengaturan...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>Pertahankan transparansi</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Dither</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Gradien:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Seret untuk menggambar gradien. Shift membatasi sudut ke 45 derajat.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Sudut: {0:0.0}°  Jarak: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Alat Gradien</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>Gradien {0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Penghapus ajaib</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Klik untuk menghapus piksel berwarna serupa menjadi transparan.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Alat Penghapus ajaib</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Ember cat</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Klik untuk mengisi piksel berwarna serupa dengan warna latar depan atau pola.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Alat Ember cat</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Transparansi</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>Tambahkan derau</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>Gelombang</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Kosongkan bingkai</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Kosongkan isi bingkai</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Bingkai elips</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Bingkai {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Seret untuk membuat tempat bingkai. Tempatkan atau tempel gambar untuk mengisi bingkai aktif.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Alat Bingkai</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Tempatkan file gambar ke dalam bingkai aktif</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Bingkai persegi panjang</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>Tambahkan titik warna</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>Surealis</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Area:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Melukis goresan bergaya yang diambil dari sumber riwayat.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Alat Kuas riwayat seni</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Tidak dapat menggunakan Kuas riwayat karena status riwayat tidak memiliki ukuran kanvas yang sama.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Melukis kembali piksel dari status riwayat yang dipilih sebagai sumber di panel Riwayat.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Alat Kuas riwayat</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Atur sumber riwayat di panel Riwayat terlebih dahulu.</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>Hapus cuplikan</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>Sampel ulang:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Frekuensi:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Seret untuk menggambar pilihan bebas. Lepaskan untuk menutupnya.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Alat Laso</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Laso magnetis</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Klik untuk memulai, lalu gerakkan di sepanjang tepi. Klik untuk menambah jangkar, klik ganda atau Enter untuk menutup, Backspace menghapus jangkar.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Alat Laso magnetis</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Laso poligonal</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Klik untuk menambah titik. Klik ganda, Enter, atau klik titik awal untuk menutup. Backspace menghapus titik terakhir.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Alat Laso poligonal</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>Latar belakang</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>Alihkan visibilitas (Alt+klik hanya menampilkan lapisan ini)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Bingkai pilih elips</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Alat Bingkai pilih elips</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Seret untuk memilih. Shift membatasi, Alt menggambar dari tengah. Seret di dalam pilihan untuk memindahkannya.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Bingkai pilih persegi panjang</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Alat Bingkai pilih persegi panjang</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Perhalus tepi pilihan</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Klik untuk memilih kolom selebar 1 piksel.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Alat Bingkai pilih kolom tunggal</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Klik untuk memilih baris setinggi 1 piksel.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Alat Bingkai pilih baris tunggal</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Gaya:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>Intensitas warna:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(kosong)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Sesuaikan layar</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Seret untuk menggulir tampilan. Tahan Spasi dengan alat apa pun untuk menggunakan alat Tangan sementara. Klik ganda untuk menyesuaikan ke layar.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Alat Tangan</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Atur ulang tampilan</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Seret untuk memutar tampilan kanvas tanpa mengubah piksel. Shift menjepret ke 15 derajat. Esc atau Atur ulang tampilan mengembalikannya.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Alat Putar tampilan</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Sudut putar:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Zoom geser</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Klik untuk memperbesar, Alt+klik untuk memperkecil. Seret ke kiri/kanan untuk zoom geser, atau seret persegi panjang saat zoom geser nonaktif.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Perbesar</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Perkecil</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Alat Zoom</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>Hitam</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>Menu panel</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Tambah titik jangkar</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Klik segmen jalur untuk menambah titik jangkar.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Alat Tambah titik jangkar</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Gabungkan</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Gabungkan komponen jalur yang tumpang tindih</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Konversi titik</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Klik titik halus untuk menjadikannya sudut; seret titik sudut untuk menarik keluar pegangan halus. Seret pegangan untuk mematahkannya.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Alat Konversi titik</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Hapus titik jangkar</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Klik titik jangkar untuk menghapusnya.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Alat Hapus titik jangkar</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Klik atau seret bingkai pilih untuk memilih titik jangkar; seret titik atau pegangan untuk membentuk ulang. Alt menyeret pegangan secara terpisah.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Alat Pemilihan langsung</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Seret jangkar</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Kecualikan</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Irisan</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Pindahkan jalur</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Geser jangkar</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Klik komponen jalur untuk memilihnya, seret untuk memindahkannya. Alt+seret menduplikasi, Delete menghapus.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Alat Pemilihan jalur</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Kurangi komponen berikutnya dari yang pertama</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>Jalur kerja</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>Gores jalur dengan kuas</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Tambah/hapus otomatis</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Tutup jalur</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Pena lengkung</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Klik untuk menempatkan titik; kurva mengalir mulus melaluinya. Klik titik pertama untuk menutup, Enter atau Esc untuk menyelesaikan.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Alat Pena lengkung</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Kecocokan kurva:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Pena bebas</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Seret untuk menggambar jalur secara bebas; jalur dicocokkan dengan kurva halus. Magnetis menjepret ke tepi.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Alat Pena bebas</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Magnetis</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Buat:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Masker</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Pena</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Klik untuk menambah titik sudut, seret untuk menambah titik halus. Klik titik pertama untuk menutup. Ctrl mengedit titik, Alt mengonversinya.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Alat Pena</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Pita karet</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Pilihan...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>Tanpa judul-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>Serat kayu</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Pindah sadar konten</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Pindah sadar konten...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Alat Pindah sadar konten</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Jumlah penggelapan:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Tujuan</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Gambar pilihan (atau gunakan alat pemilihan apa pun), lalu seret pilihan tersebut.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Perluas</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Pindahkan</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Tambal</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Tambal:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Alat Tambal</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Ukuran pupil:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Mata merah</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Klik mata merah (atau seret di sekitarnya) untuk menghilangkan pantulan merah.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Alat Mata merah</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Sumber</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Struktur:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Seret untuk mengukur jarak dan sudut. Seret titik ujung untuk menyesuaikannya.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Alat Penggaris</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Putar lapisan aktif agar garis penggaris menjadi datar</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Gunakan skala pengukuran</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Bersihkan pengambil sampel warna</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Pengambil sampel warna</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Klik untuk menempatkan hingga 10 pengambil sampel warna (ditampilkan di panel Info). Seret untuk memindahkan, Alt+klik untuk menghapus.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Alat Pengambil sampel warna</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Lapisan saat ini</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Hapus pengambil sampel warna</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Klik untuk mengambil sampel warna latar depan. Alt+klik mengambil sampel warna latar.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Alat Pipet</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Maksimal 10 pengambil sampel warna diperbolehkan.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Pindahkan pengambil sampel warna</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Sampel:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Tampilkan cincin sampel</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Pindahkan pilihan</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Panah</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Tanda centang</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Awan</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Silang</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Mahkota</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Alat Bentuk kustom</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Tetesan</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Alat Elips</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Panah akhir</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Warna isian (klik kanan untuk tanpa warna)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Roda gigi</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Hati</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Panjang: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Petir</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Seret untuk menggambar garis. Shift membatasi ke 45 derajat.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Alat Garis</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Operasi jalur:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Alat Poligon</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Puzzle</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Alat Persegi panjang</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Bentuk:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Seret untuk menggambar bentuk. Shift mempertahankan proporsi, Alt menggambar dari tengah.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Sisi:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Balon ucapan</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Bintang</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Rasio bintang:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Panah awal</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Warna garis tepi (klik kanan untuk tanpa warna)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Alat Segitiga</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Ketebalan:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>Cari perintah</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>Gunakan bawaan</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Bersihkan irisan</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Hapus irisan</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Bagi...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Bagi irisan</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Edit irisan</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Edit opsi irisan</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>L tetap:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Tidak ada irisan yang dipilih</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Baris x kolom (misalnya 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Irisan</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Seret untuk membuat irisan. Gunakan File &gt; Ekspor &gt; Simpan irisan untuk mengekspornya.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Opsi irisan</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Klik untuk memilih irisan, seret untuk memindahkan atau mengubah ukurannya. Delete menghapusnya, klik ganda mengganti namanya.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Alat Pilih irisan</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Alat Irisan</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Irisan dari garis bantu</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Selaras</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Sumber klon: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Alat Stempel klon</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Memulihkan...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Alat Kuas pemulihan</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Impresionis</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Tidak dapat menggunakan alat Stempel klon karena area yang akan diklon belum ditentukan (Alt+klik untuk menentukan titik sumber).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Melukis dengan pola yang dipilih.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Alat Stempel pola</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Lukis di atas gangguan untuk menghapusnya. Area direkonstruksi dari sekelilingnya.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Alat Hapus</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Menghapus...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Alat Kuas pemulihan titik</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Lukis di atas bintik dan noda untuk memulihkannya secara otomatis.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Jenis:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>Hapus file terbaru</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>Pulihkan</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Lukis untuk melembutkan tepi dan detail.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Alat Buram</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Lukis untuk menggelapkan area. Alt mencerahkan.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Alat Burn</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Lukis untuk mencerahkan area. Alt menggelapkan.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Alat Dodge</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Lukis jari</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Lindungi detail</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Lindungi nada</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Rentang:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Jenuhkan</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Lukis untuk meningkatkan kontras lokal dan mempertajam detail.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Alat Pertajam</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Seret untuk mengoleskan cat. Lukis jari dimulai dengan warna latar depan.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Alat Oles</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Lukis untuk menjenuhkan atau mengurangi kejenuhan warna.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Alat Spons</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>Tidak dapat menggunakan {0} karena lapisan target tersembunyi.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>Tidak dapat menggunakan {0} karena lapisan terkunci.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>Tidak dapat menggunakan {0} karena lapisan target bukan lapisan piksel. Rasterisasi lapisan terlebih dahulu (Lapisan &gt; Rasterisasi).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>Ciutkan menjadi satu kolom</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>Sesuaikan Bilah Alat</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Anti-alias</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Terapkan</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Bersebelahan</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Aliran:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Sampel titik</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Ambil sampel semua lapisan</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>Rata-rata {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Ukuran sampel:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>L: {0:0} px  T: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Toleransi:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Ratakan tepi bawah</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Ratakan pusat horizontal</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Ratakan tepi kiri</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Ratakan tepi kanan</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Ratakan tepi atas</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Ratakan pusat vertikal</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Pilih otomatis:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Klik memilih lapisan teratas di bawah penunjuk (Ctrl untuk sementara)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Batalkan transformasi (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Tidak dapat mentransformasi karena lapisan kosong.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Tidak dapat mentransformasi karena lapisan terkunci atau tidak memiliki isi.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Tidak dapat mentransformasi pilihan karena lapisan terkunci.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Terapkan transformasi (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Hapus garis bantu</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Mengambang</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Pilihan mengambang</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Seret pegangan untuk menskalakan (Shift: proporsional, Alt: dari tengah), di luar untuk memutar, Ctrl+seret sudut untuk mendistorsi, Ctrl+seret tepi untuk memiringkan. Enter menerapkan, Esc membatalkan.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Grup</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Interpolasi:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Tidak dapat menyelesaikan permintaan karena lapisan terkunci.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Pindahkan garis bantu</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Seret untuk memindahkan lapisan atau piksel yang dipilih. Alt+seret menduplikasi, Shift membatasi. Tombol panah menggeser.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Alat Pindah</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Geser</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Tampilkan kontrol transformasi</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Gunakan Edit &gt; Transformasi bebas (Ctrl+T) untuk mentransformasi lapisan aktif atau pilihan.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Semua kapital</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Tebal miring</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Batalkan pengeditan saat ini (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Tengahkan teks</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Terapkan pengeditan saat ini (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Tebal semu</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Miring semu</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Klik untuk menambah teks titik, seret untuk menambah teks paragraf, klik teks yang ada untuk mengeditnya. Ctrl+Enter menerapkan, Esc membatalkan.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Alat Masker teks horizontal</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Alat Teks horizontal</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Rata kiri teks</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Klik untuk mengetik; saat diterapkan, pilihan dibuat dalam bentuk teks.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Reguler</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Rata kanan teks</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Atur anti-alias</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Atur gaya font</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Coret</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Warna teks</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Alihkan orientasi teks</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Masker teks</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Alat Masker teks vertikal</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Alat Teks vertikal</value>
   </data>
 </root>

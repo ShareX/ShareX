@@ -241,15 +241,15 @@ public abstract class ToolBase
         }
         if (Doc?.ActiveLayer is RasterLayer locked && !locked.CanEditPixels)
         {
-            Host.ShowMessage("Could not use the " + Name + " because the layer is locked.");
+            Host.ShowMessage(string.Format(Strings.ToolBase_CannotUseLocked, Name));
         }
         else if (Doc?.ActiveLayer is RasterLayer hidden && !hidden.IsEffectivelyVisible)
         {
-            Host.ShowMessage("Could not use the " + Name + " because the target layer is hidden.");
+            Host.ShowMessage(string.Format(Strings.ToolBase_CannotUseHidden, Name));
         }
         else if (Doc?.ActiveLayer != null)
         {
-            Host.ShowMessage("Could not use the " + Name + " because the target layer is not a pixel layer. Rasterize the layer first (Layer > Rasterize).");
+            Host.ShowMessage(string.Format(Strings.ToolBase_CannotUseNotPixelLayer, Name));
         }
         return false;
     }

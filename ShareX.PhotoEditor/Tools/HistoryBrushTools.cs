@@ -35,20 +35,20 @@ public sealed class HistoryBrushTool : BrushToolBase
 
     public override ToolId Id => ToolId.HistoryBrush;
 
-    public override string Name => "History Brush Tool";
+    public override string Name => Strings.HistoryBrushTools_HistoryBrushTool;
 
-    public override string Hint => "Paint pixels back from the history state selected as the source in the History panel.";
+    public override string Hint => Strings.HistoryBrushTools_HistoryBrushHint;
 
     protected override bool CanStart(ToolInput input)
     {
         if (Doc?.History.Source == null)
         {
-            Host.ShowMessage("Set a history source in the History panel first.");
+            Host.ShowMessage(Strings.HistoryBrushTools_SetSourceFirst);
             return false;
         }
         if (Doc.History.Source.State.Width != Doc.Width || Doc.History.Source.State.Height != Doc.Height)
         {
-            Host.ShowMessage("Could not use the History Brush because the history state does not have the same canvas size.");
+            Host.ShowMessage(Strings.HistoryBrushTools_CanvasSizeMismatch);
             return false;
         }
         return true;
@@ -90,9 +90,9 @@ public sealed class ArtHistoryBrushTool : BrushToolBase
 
     public override ToolId Id => ToolId.ArtHistoryBrush;
 
-    public override string Name => "Art History Brush Tool";
+    public override string Name => Strings.HistoryBrushTools_ArtHistoryBrushTool;
 
-    public override string Hint => "Paint stylized strokes sampled from the history source.";
+    public override string Hint => Strings.HistoryBrushTools_ArtHistoryBrushHint;
 
     public ArtStyle Style { get; set; } = ArtStyle.TightShort;
 
@@ -108,7 +108,7 @@ public sealed class ArtHistoryBrushTool : BrushToolBase
     {
         if (Doc?.History.Source == null)
         {
-            Host.ShowMessage("Set a history source in the History panel first.");
+            Host.ShowMessage(Strings.HistoryBrushTools_SetSourceFirst);
             return false;
         }
         return true;
@@ -168,9 +168,9 @@ public sealed class ArtHistoryBrushTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.Percent("Opacity:", () => Opacity, v => Opacity = v);
-        options.EnumCombo("Style:", () => Style, v => Style = v, 120);
-        options.Number("Area:", 1, 500, () => Area, v => Area = (float)v, "0", "px");
-        options.Number("Tolerance:", 0, 100, () => Tolerance, v => Tolerance = (int)v, "0", "%");
+        options.Percent(Strings.EditorCommands_OpacityColon, () => Opacity, v => Opacity = v);
+        options.EnumCombo(Strings.MarqueeTools_StyleColon, () => Style, v => Style = v, 120);
+        options.Number(Strings.HistoryBrushTools_AreaColon, 1, 500, () => Area, v => Area = (float)v, "0", "px");
+        options.Number(Strings.Tools_ToleranceColon, 0, 100, () => Tolerance, v => Tolerance = (int)v, "0", "%");
     }
 }

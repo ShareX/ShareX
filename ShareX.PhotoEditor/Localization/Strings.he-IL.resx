@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>חיוניות צבע</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>מחבר:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>מחבר: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>נקה הכול</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>נקה ספירה</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>נקה הערות</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>קבוצת ספירה {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>לחץ כדי למקם סמני ספירה ממוספרים. גרור כדי להזיז, Alt+לחיצה כדי להסיר.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>ספירה: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>כלי ספירה</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>מחק ספירה</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>מחק הערה</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>ערוך הערה</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>קבוצה:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>צבע הקבוצה</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>גודל תווית:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>גודל סמן:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>הזז ספירה</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>הזז הערה</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>צור קבוצת ספירה חדשה</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>הערה</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>צבע ההערה</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>לחץ כדי להוסיף הערה. לחץ על הערה כדי לערוך אותה, גרור כדי להזיז אותה, Alt+לחיצה כדי למחוק אותה.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>כלי הערה</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>הוסף משטח עבודה חדש</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>משטח עבודה {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>רקע משטח העבודה</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>גרור על בד ריק כדי ליצור משטח עבודה. גרור את כותרת משטח העבודה כדי להזיז אותו יחד עם תוכנו.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>הזז משטח עבודה</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>כלי משטח עבודה</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>משטח עבודה חדש</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (טלפון)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (ריבוע)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (טאבלט)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>הוסף</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>שפר קצוות</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>לאסו</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>מטה קסם</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>לחץ כדי לבחור צבעים דומים. Shift מוסיף, Alt מחסיר.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>כלי מטה קסם</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>בחירת אובייקט</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>גרור מלבן או לאסו סביב אובייקט כדי לבחור אותו.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>כלי בחירת אובייקט</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>בחירה מהירה</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>צבע על אזור כדי לבחור אותו; הבחירה מתרחבת עד למציאת הקצוות. Alt מחסיר.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>כלי בחירה מהירה</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>בוחר אובייקט...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>מברשת בחירה</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>צבע כדי להוסיף לבחירה. Alt (או מצב חיסור) מסיר ממנה.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>כלי מברשת בחירה</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>מאחור</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>אור חי</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>הפעל אפקטי הצטברות בסגנון מרסס</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>{0} לא יכול לצבוע על מסכת שכבה.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>צבע המוחל בכל נגיעה</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>כיסוי צבע מרבי למשיכה (מקשי 0-9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>גודל לפי לחץ</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>החלקה:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>מברשת התאמה</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>צובע התאמה מקומית. כל משיכה עורכת את המסכה של שכבת התאמה. Alt מוחק את ההתאמה.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>מברשת {0}</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>כלי מברשת התאמה</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>התאמה:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>כמות:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>מחיקה אוטומטית</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>צובע בצבע החזית. Shift+לחיצה משרטט קו ישר. [ ] משנים את הגודל.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>כלי מברשת</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>נקה אחרי כל משיכה</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>מחליף צבעים הדומים לצבע שנדגם בצבע החזית.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>כלי החלפת צבע</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>טעינה:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>צבע טעינה (חזית)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>ערבוב:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>מערבב את הצבע הטעון עם צבעי הבד כמו צבע אמיתי.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>כלי מברשת ערבוב</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>שכבה חדשה לכל משיכה</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>צובע קווים חדים ללא החלקת קצוות בצבע החזית.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>כלי עיפרון</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>דגימה:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>רטיבות:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>זווית</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>בוחר צבעים ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>גרור כדי להגדיר את אזור החיתוך; גרור מחוץ לו כדי לסובב. Enter מאשר, Esc מבטל.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>ר: {0:0} px  ג: {1:0} px  זווית: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>כלי חיתוך</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>מחק פיקסלים שנחתכו</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>ג:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>יחס מקורי</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>חיתוך פרספקטיבה</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>גרור כדי ליצור תיבת חיתוך, ואז גרור את פינותיה כך שיתאימו לפרספקטיבה של אובייקט. Enter חותך ומיישר.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>כלי חיתוך פרספקטיבה</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>יחס</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>יחס:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (ריבוע)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>כלל השלישים</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>הצג רשת</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>החלף בין רוחב לגובה</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>ר:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>ביטול</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>פעם אחת</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>צורה מותאמת אישית</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>אליפסה</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>קו</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>מצולע</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>מלבן</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>משולש</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>נתיב</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>צללים</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>מוחק פיקסלים התואמים לצבע שמתחת למרכז המברשת (הנקודה החמה).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>כלי מחק רקע</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>לא רציף</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>מחק להיסטוריה</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>מוחק לשקיפות, או לצבע הרקע בשכבות נעולות. Alt מוחק להיסטוריה.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>כלי מחק</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>גבולות:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>הגן על צבע החזית</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>ייצוא...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>שמור על שקיפות</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>דיתור</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>ערוך...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>מעבר צבע:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>גרור כדי לשרטט מעבר צבע. Shift מגביל את הזווית ל-45 מעלות.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>זווית: {0:0.0}°  מרחק: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>כלי מעבר צבע</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>מעבר צבע {0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>מחק קסם</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>לחץ כדי למחוק לשקיפות פיקסלים בצבע דומה.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>כלי מחק קסם</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>דלי צבע</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>לחץ כדי למלא פיקסלים בצבע דומה בצבע החזית או בדוגמה.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>כלי דלי צבע</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>שקיפות</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>הוסף רעש</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>גל</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>נקה מסגרת</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>נקה את תוכן המסגרת</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>מסגרת אליפטית</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>מסגרת {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>גרור כדי ליצור מציין מקום למסגרת. מקם או הדבק תמונה כדי למלא את המסגרת הפעילה.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>כלי מסגרת</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>מקם קובץ תמונה במסגרת הפעילה</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>מסגרת מלבנית</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>הוסף עצירה</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>סוריאליסטי</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>אזור:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>צובע משיכות מסוגננות שנדגמו ממקור ההיסטוריה.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>כלי מברשת היסטוריה אמנותית</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>לא ניתן היה להשתמש במברשת ההיסטוריה כי למצב ההיסטוריה אין אותו גודל בד.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>צובע בחזרה פיקסלים ממצב ההיסטוריה שנבחר כמקור בחלונית ההיסטוריה.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>כלי מברשת היסטוריה</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>הגדר תחילה מקור היסטוריה בחלונית ההיסטוריה.</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>מחק תמונת מצב</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>דגום מחדש:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>תדירות:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>גרור כדי לשרטט בחירה חופשית. שחרר כדי לסגור אותה.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>כלי לאסו</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>לאסו מגנטי</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>לחץ כדי להתחיל, ואז נוע לאורך קצה. לחץ כדי להוסיף עוגנים, לחיצה כפולה או Enter כדי לסגור, Backspace מסיר עוגן.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>כלי לאסו מגנטי</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>לאסו מצולע</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>לחץ כדי להוסיף נקודות. לחיצה כפולה, Enter או לחיצה על נקודת ההתחלה סוגרים. Backspace מסיר את הנקודה האחרונה.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>כלי לאסו מצולע</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>רקע</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>החלף נראות (Alt+לחיצה מציגה רק שכבה זו)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>סימון אליפטי</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>כלי סימון אליפטי</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>גרור כדי לבחור. Shift מגביל, Alt משרטט מהמרכז. גרור בתוך בחירה כדי להזיז אותה.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>סימון מלבני</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>כלי סימון מלבני</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>עדן את קצה הבחירה</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>לחץ כדי לבחור עמודה ברוחב פיקסל אחד.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>כלי סימון עמודה יחידה</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>לחץ כדי לבחור שורה בגובה פיקסל אחד.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>כלי סימון שורה יחידה</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>סגנון:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>עוצמת צבע:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(ריק)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>התאם למסך</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>גרור כדי לגלול את התצוגה. החזק את מקש הרווח עם כל כלי כדי להשתמש בכלי היד באופן זמני. לחיצה כפולה מתאימה למסך.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>כלי יד</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>אפס תצוגה</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>גרור כדי לסובב את תצוגת הבד מבלי לשנות פיקסלים. Shift נצמד ל-15 מעלות. Esc או 'אפס תצוגה' משחזרים אותה.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>כלי סיבוב תצוגה</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>זווית סיבוב:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>זום בגרירה</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>לחץ כדי להגדיל, Alt+לחיצה כדי להקטין. גרור שמאלה/ימינה לזום בגרירה, או גרור מלבן כשזום בגרירה כבוי.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>הגדל</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>הקטן</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>כלי זום</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>שחור</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>תפריט חלונית</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>הוסף נקודת עוגן</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>לחץ על מקטע נתיב כדי להוסיף נקודת עוגן.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>כלי הוספת נקודת עוגן</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>שלב</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>מזג רכיבי נתיב חופפים</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>המר נקודה</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>לחץ על נקודה חלקה כדי להפוך אותה לפינה; גרור נקודת פינה כדי למשוך החוצה ידיות חלקות. גרור ידית כדי לשבור אותה.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>כלי המרת נקודה</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>מחק נקודת עוגן</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>לחץ על נקודת עוגן כדי למחוק אותה.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>כלי מחיקת נקודת עוגן</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>לחץ או גרור סימון כדי לבחור נקודות עוגן; גרור נקודות או ידיות כדי לשנות צורה. Alt גורר ידית באופן עצמאי.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>כלי בחירה ישירה</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>גרור עוגן</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>אל תכלול</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>חיתוך משותף</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>הזז נתיב</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>הזז עוגן מעט</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>לחץ על רכיב נתיב כדי לבחור אותו, גרור כדי להזיז אותו. Alt+גרירה משכפלת, Delete מסיר.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>כלי בחירת נתיב</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>החסר את הרכיבים הבאים מהרכיב הראשון</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>נתיב עבודה</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>הוסף קו מתאר לנתיב באמצעות מברשת</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>הוספה/מחיקה אוטומטית</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>סגור נתיב</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>עט עקומה</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>לחץ כדי למקם נקודות; העקומה זורמת דרכן בצורה חלקה. לחץ על הנקודה הראשונה כדי לסגור, Enter או Esc כדי לסיים.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>כלי עט עקומה</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>התאמת עקומה:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>עט חופשי</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>גרור כדי לשרטט נתיב ביד חופשית; הוא מותאם בעקומות חלקות. מגנטי נצמד לקצוות.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>כלי עט חופשי</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>מגנטי</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>צור:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>מסכה</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>עט</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>לחץ כדי להוסיף נקודות פינה, גרור כדי להוסיף נקודות חלקות. לחץ על הנקודה הראשונה כדי לסגור. Ctrl עורך נקודות, Alt ממיר אותן.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>כלי עט</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>גומייה</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>בחירה...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>ללא שם-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>עורקי עץ</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>הזזה מודעת תוכן</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>הזזה מודעת תוכן...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>כלי הזזה מודעת תוכן</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>כמות ההכהיה:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>יעד</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>שרטט בחירה (או השתמש בכל כלי בחירה), ואז גרור את הבחירה.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>הרחב</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>הזז</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>טלאי</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>טלאי:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>כלי טלאי</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>גודל האישון:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>עיניים אדומות</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>לחץ על עין אדומה (או גרור סביבה) כדי להסיר את ההשתקפות האדומה.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>כלי עיניים אדומות</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>מקור</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>מבנה:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>גרור כדי למדוד מרחק וזווית. גרור נקודת קצה כדי לכוונן אותה.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>כלי סרגל</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>סובב את השכבה הפעילה כך שקו הסרגל יהיה מאוזן</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>השתמש בקנה מידה למדידה</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>נקה דוגמי צבע</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>דוגם צבע</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>לחץ כדי למקם עד 10 דוגמי צבע (מוצגים בחלונית המידע). גרור כדי להזיז, Alt+לחיצה כדי למחוק.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>כלי דוגם צבע</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>השכבה הנוכחית</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>מחק דוגם צבע</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>לחץ כדי לדגום את צבע החזית. Alt+לחיצה דוגמת את צבע הרקע.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>כלי טפטפת</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>מותרים 10 דוגמי צבע לכל היותר.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>הזז דוגם צבע</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>דגימה:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>הצג טבעת דגימה</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>הזז בחירה</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>חץ</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>סימן וי</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>ענן</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>צלב</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>כתר</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>כלי צורה מותאמת אישית</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>טיפה</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>כלי אליפסה</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>חץ סיום</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>צבע מילוי (לחיצה ימנית לללא)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>גלגל שיניים</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>לב</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>אורך: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>ברק</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>גרור כדי לשרטט קו. Shift מגביל ל-45 מעלות.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>כלי קו</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>פעולת נתיב:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>כלי מצולע</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>פאזל</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>כלי מלבן</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>צורה:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>גרור כדי לשרטט את הצורה. Shift שומר על פרופורציות, Alt משרטט מהמרכז.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>צלעות:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>בועת דיבור</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>כוכב</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>יחס כוכב:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>חץ התחלה</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>צבע קו מתאר (לחיצה ימנית לללא)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>כלי משולש</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>עובי:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>חפש פקודות</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>השתמש בברירות המחדל</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>נקה פרוסות</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>מחק פרוסה</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>חלק...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>חלק פרוסה</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>ערוך פרוסה</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>ערוך אפשרויות פרוסה</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>ר קבוע:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>לא נבחרה פרוסה</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>שורות x עמודות (לדוגמה 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>פרוסה</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>גרור כדי ליצור פרוסה. השתמש בקובץ &gt; ייצוא &gt; שמור פרוסות כדי לייצא אותן.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>אפשרויות פרוסה</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>לחץ כדי לבחור פרוסה, גרור כדי להזיז או לשנות את גודלה. Delete מסיר אותה, לחיצה כפולה משנה את שמה.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>כלי בחירת פרוסה</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>כלי פרוסה</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>פרוסות מקווי עזר</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>מיושר</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>מקור שכפול: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>כלי חותמת שכפול</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>מתקן...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>כלי מברשת תיקון</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>אימפרסיוניסטי</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>לא ניתן היה להשתמש בכלי חותמת השכפול כי האזור לשכפול לא הוגדר (Alt+לחיצה כדי להגדיר נקודת מקור).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>צובע בדוגמה שנבחרה.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>כלי חותמת דוגמה</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>צבע על פריטים מסיחים כדי להסיר אותם. האזור משוחזר מסביבתו.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>כלי הסרה</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>מסיר...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>כלי מברשת תיקון נקודתי</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>צבע על כתמים ופגמים כדי לתקן אותם באופן אוטומטי.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>סוג:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>נקה קבצים אחרונים</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>שחזר</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>צבע כדי לרכך קצוות ופרטים.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>כלי טשטוש</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>צבע כדי להכהות אזורים. Alt מבהיר.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>כלי צריבה</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>צבע כדי להבהיר אזורים. Alt מכהה.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>כלי הבהרה</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>ציור באצבע</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>הגן על פרטים</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>הגן על גוונים</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>טווח:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>הגבר רוויה</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>צבע כדי להגביר ניגודיות מקומית ולחדד פרטים.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>כלי חידוד</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>גרור כדי למרוח צבע. ציור באצבע מתחיל בצבע החזית.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>כלי מריחה</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>צבע כדי להגביר או להפחית את רוויית הצבעים.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>כלי ספוג</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>לא ניתן היה להשתמש ב{0} כי שכבת היעד מוסתרת.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>לא ניתן היה להשתמש ב{0} כי השכבה נעולה.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>לא ניתן היה להשתמש ב{0} כי שכבת היעד אינה שכבת פיקסלים. המר תחילה את השכבה לרסטר (שכבה &gt; המר לרסטר).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>כווץ לעמודה אחת</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>התאמה אישית של סרגל הכלים</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>החלקת קצוות</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>אשר</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>רציף</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>זרימה:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>דגימת נקודה</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>דגום את כל השכבות</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>ממוצע {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>גודל דגימה:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>ר: {0:0} px  ג: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>סובלנות:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>יישר קצוות תחתונים</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>יישר מרכזים אופקיים</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>יישר קצוות שמאליים</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>יישר קצוות ימניים</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>יישר קצוות עליונים</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>יישר מרכזים אנכיים</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>בחירה אוטומטית:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>לחיצה בוחרת את השכבה העליונה ביותר מתחת לסמן (Ctrl באופן זמני)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>בטל טרנספורמציה (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>לא ניתן היה לבצע טרנספורמציה כי השכבה ריקה.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>לא ניתן היה לבצע טרנספורמציה כי השכבה נעולה או שאין בה תוכן.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>לא ניתן היה לבצע טרנספורמציה לבחירה כי השכבה נעולה.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>אשר טרנספורמציה (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>מחק קו עזר</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>צף</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>בחירה צפה</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>גרור ידיות כדי לשנות קנה מידה (Shift: באופן יחסי, Alt: מהמרכז), מחוץ להן כדי לסובב, Ctrl+גרירה של פינה כדי לעוות, Ctrl+גרירה של קצה כדי להטות. Enter מאשר, Esc מבטל.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>קבוצה</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>אינטרפולציה:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>לא ניתן היה להשלים את הבקשה כי השכבה נעולה.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>הזז קו עזר</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>גרור כדי להזיז את השכבה או את הפיקסלים שנבחרו. Alt+גרירה משכפלת, Shift מגביל. מקשי החצים מזיזים מעט.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>כלי הזזה</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>הזזה מעט</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>הצג פקדי טרנספורמציה</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>השתמש בעריכה &gt; טרנספורמציה חופשית (Ctrl+T) כדי לבצע טרנספורמציה לשכבה הפעילה או לבחירה.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>אותיות רישיות בלבד</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>מודגש נטוי</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>בטל את העריכות הנוכחיות (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>מרכז טקסט</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>אשר את העריכות הנוכחיות (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>הדגשה מדומה</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>הטיה מדומה</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>לחץ כדי להוסיף טקסט נקודתי, גרור כדי להוסיף טקסט פסקה, לחץ על טקסט קיים כדי לערוך אותו. Ctrl+Enter מאשר, Esc מבטל.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>כלי מסכת טקסט אופקי</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>כלי טקסט אופקי</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>יישר טקסט לשמאל</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>לחץ כדי להקליד; באישור נוצרת בחירה בצורת הטקסט.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>רגיל</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>יישר טקסט לימין</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>הגדר החלקת קצוות</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>הגדר סגנון גופן</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>קו חוצה</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>צבע טקסט</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>החלף כיוון טקסט</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>מסכת טקסט</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>כלי מסכת טקסט אנכי</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>כלי טקסט אנכי</value>
   </data>
 </root>

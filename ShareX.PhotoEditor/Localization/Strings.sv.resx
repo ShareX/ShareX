@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>Lyster</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Författare:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Författare: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Rensa allt</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Rensa räkning</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Rensa anteckningar</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Räkningsgrupp {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Klicka för att placera numrerade räknemarkörer. Dra för att flytta, Alt-klicka för att ta bort.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Antal: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Räkneverktyg</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Ta bort räkning</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Ta bort anteckning</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Redigera anteckning</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Grupp:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Gruppfärg</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Etikettstorlek:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Markörstorlek:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Flytta räkning</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Flytta anteckning</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Skapa en ny räkningsgrupp</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Anteckning</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Anteckningsfärg</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Klicka för att lägga till en anteckning. Klicka på en anteckning för att redigera den, dra för att flytta den, Alt-klicka för att ta bort den.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Anteckningsverktyg</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Lägg till ny rityta</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Rityta {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Bakgrund för ritytan</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Dra på en tom arbetsyta för att skapa en rityta. Dra i en ritytas titel för att flytta den med innehållet.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Flytta rityta</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Ritytsverktyg</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Ny rityta</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (telefon)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (kvadrat)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (surfplatta)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Lägg till</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Förbättra kant</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Lasso</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Trollstav</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Klicka för att markera liknande färger. Skift lägger till, Alt subtraherar.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Trollstavsverktyg</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Objektmarkering</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Dra en rektangel eller lasso runt ett objekt för att markera det.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Objektmarkeringsverktyg</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Snabbval</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Måla över ett område för att markera det; markeringen växer ut till kanterna. Alt subtraherar.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Snabbvalsverktyg</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Markerar objekt...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Markeringspensel</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Måla för att lägga till i markeringen. Alt (eller läget Subtrahera) tar bort från den.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Markeringspenselverktyg</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>Bakom</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>Starkt ljus</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Aktivera uppbyggnadseffekter i airbrushstil</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>”{0}” kan inte måla på en lagermask.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Färg som läggs på per klick</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Maximal färgtäckning per drag (tangenterna 0–9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Storlek efter tryck</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Utjämning:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Justeringspensel</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Måla en lokal justering. Varje drag redigerar masken för ett justeringslager. Alt raderar justeringen.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>{0}-pensel</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Justeringspenselverktyg</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Justering:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Mängd:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Radera automatiskt</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Måla med förgrundsfärgen. Skift-klick ritar en rak linje. [ ] ändrar storleken.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Penselverktyg</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Rengör efter varje drag</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Ersätter färger som liknar den samplade färgen med förgrundsfärgen.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Färgersättningsverktyg</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Ladda:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Ladda färg (förgrund)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Blanda:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Blandar den laddade färgen med arbetsytans färger som riktig färg.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Blandningspenselverktyg</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Nytt lager per drag</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Måla skarpa linjer utan kantutjämning med förgrundsfärgen.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Pennverktyg</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Sampling:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Våt:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>Vinkel</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>Färgväljare ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Dra för att ange beskärningsområdet; dra utanför det för att rotera. Retur bekräftar, Esc avbryter.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>B: {0:0} px  H: {1:0} px  Vinkel: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Beskärningsverktyg</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Ta bort beskurna pixlar</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>H:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Ursprunglig proportion</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Perspektivbeskärning</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Dra en beskärningsram och dra sedan dess hörn så att de följer ett objekts perspektiv. Retur beskär och rätar upp.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Perspektivbeskärningsverktyg</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Proportion</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Proportion:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (kvadrat)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Tredjedelsregeln</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Visa rutnät</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Växla bredd och höjd</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>B:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>Avbryt</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>En gång</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Egen form</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Ellips</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Polygon</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Rektangel</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Triangel</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>Bana</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>Skuggor</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Raderar pixlar som matchar färgen under penselns mitt (hotspot).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Bakgrundsraderingsverktyg</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Ej angränsande</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Radera till historik</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Raderar till genomskinlighet, eller till bakgrundsfärgen på låsta lager. Alt raderar till historik.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Radergummiverktyg</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Gränser:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Skydda förgrundsfärg</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>Exportera...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>Bevara genomskinlighet</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Gitter</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Redigera...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Övertoning:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Dra för att rita en övertoning. Skift begränsar vinkeln till 45 grader.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Vinkel: {0:0.0}°  Avstånd: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Övertoningsverktyg</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>{0} övertoning</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Magiskt radergummi</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Klicka för att radera pixlar med liknande färg till genomskinlighet.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Magiskt radergummi-verktyg</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Färgpyts</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Klicka för att fylla pixlar med liknande färg med förgrundsfärgen eller ett mönster.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Färgpytsverktyg</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Genomskinlighet</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>Lägg till brus</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>Våg</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Töm ram</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Rensa raminnehåll</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Elliptisk ram</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Ram {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Dra för att skapa en platshållarram. Placera eller klistra in en bild för att fylla den aktiva ramen.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Ramverktyg</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Placera en bildfil i den aktiva ramen</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Rektangulär ram</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>Lägg till stopp</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>Surrealistisk</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Område:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Målar stiliserade drag samplade från historikkällan.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Konsthistorikpenselverktyg</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Historikpenseln kan inte användas eftersom historikläget inte har samma storlek på arbetsytan.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Målar tillbaka pixlar från det historikläge som valts som källa i panelen Historik.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Historikpenselverktyg</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Ange först en historikkälla i panelen Historik.</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>Ta bort ögonblicksbild</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>Omsampling:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Frekvens:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Dra för att rita en frihandsmarkering. Släpp för att stänga den.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Lassoverktyg</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Magnetiskt lasso</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Klicka för att börja och följ sedan en kant. Klicka för att lägga till ankare, dubbelklicka eller tryck Retur för att stänga, Backsteg tar bort ett ankare.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Magnetiskt lasso-verktyg</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Polygonlasso</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Klicka för att lägga till punkter. Dubbelklicka, tryck Retur eller klicka på startpunkten för att stänga. Backsteg tar bort den sista punkten.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Polygonlassoverktyg</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>Bakgrund</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>Växla synlighet (Alt-klick visar endast detta lager)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Ellipsmarkering</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Ellipsmarkeringsverktyg</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Dra för att markera. Skift begränsar, Alt ritar från mitten. Dra inuti en markering för att flytta den.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Rektangelmarkering</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Rektangelmarkeringsverktyg</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Förfina markeringskanten</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Klicka för att markera en kolumn på 1 pixel.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Markeringsverktyg för enstaka kolumn</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Klicka för att markera en rad på 1 pixel.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Markeringsverktyg för enstaka rad</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Stil:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>Färgintensitet:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(tomt)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Anpassa till skärmen</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Dra för att rulla vyn. Håll ned blanksteg med valfritt verktyg för att tillfälligt använda handverktyget. Dubbelklicka för att anpassa till skärmen.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Handverktyg</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Återställ vy</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Dra för att rotera arbetsytans vy utan att ändra pixlar. Skift fäster vid 15 grader. Esc eller Återställ vy återställer den.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Verktyg för vyrotation</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Rotationsvinkel:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Dynamisk zoom</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Klicka för att zooma in, Alt-klicka för att zooma ut. Dra åt vänster/höger för dynamisk zoom, eller dra en rektangel när dynamisk zoom är avstängd.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Zooma in</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Zooma ut</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Zoomverktyg</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>Svart</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>Panelmeny</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Lägg till ankarpunkt</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Klicka på ett bansegment för att lägga till en ankarpunkt.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Verktyg för att lägga till ankarpunkt</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Kombinera</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Slå samman överlappande bankomponenter</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Konvertera punkt</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Klicka på en jämn punkt för att göra den till ett hörn; dra en hörnpunkt för att dra ut jämna handtag. Dra ett handtag för att bryta det.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Verktyg för att konvertera punkt</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Ta bort ankarpunkt</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Klicka på en ankarpunkt för att ta bort den.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Verktyg för att ta bort ankarpunkt</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Klicka eller dra en markeringsram för att markera ankarpunkter; dra punkter eller handtag för att omforma. Alt drar ett handtag oberoende.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Direktmarkeringsverktyg</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Dra ankare</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Uteslut</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Överlappa</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Flytta bana</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Knuffa ankare</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Klicka på en bankomponent för att markera den, dra för att flytta den. Alt-dra duplicerar, Delete tar bort.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Banmarkeringsverktyg</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Subtrahera senare komponenter från den första</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>Arbetsbana</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>Linjera bana med pensel</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Lägg till/ta bort automatiskt</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Stäng bana</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Krökningspenna</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Klicka för att placera punkter; kurvan flyter jämnt genom dem. Klicka på den första punkten för att stänga, Retur eller Esc för att avsluta.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Krökningspennverktyg</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Kurvanpassning:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Frihandspenna</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Dra för att rita en bana på fri hand; den anpassas med jämna kurvor. Magnetisk fäster mot kanter.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Frihandspennverktyg</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Magnetisk</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Skapa:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Mask</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Penna</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Klicka för att lägga till hörnpunkter, dra för att lägga till jämna punkter. Klicka på den första punkten för att stänga. Ctrl redigerar punkter, Alt konverterar dem.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Ritstiftsverktyg</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Gummiband</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Markering...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>Namnlös-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>Träådring</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Innehållsmedveten flyttning</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Innehållsmedveten flyttning...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Verktyg för innehållsmedveten flyttning</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Mörkningsmängd:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Mål</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Rita en markering (eller använd valfritt markeringsverktyg) och dra sedan markeringen.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Utöka</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Flytta</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Lappa</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Lappa:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Lappverktyg</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Pupillstorlek:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Röda ögon</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Klicka på ett rött öga (eller dra runt det) för att ta bort den röda reflexen.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Röda ögon-verktyg</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Källa</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Struktur:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Dra för att mäta avstånd och vinkel. Dra en slutpunkt för att justera den.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Linjalverktyg</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Rotera det aktiva lagret så att linjalens linje blir vågrät</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Använd mätskala</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Rensa färgprover</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Färgprov</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Klicka för att placera upp till 10 färgprover (visas i panelen Information). Dra för att flytta, Alt-klicka för att ta bort.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Färgprovsverktyg</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Aktuellt lager</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Ta bort färgprov</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Klicka för att hämta förgrundsfärgen. Alt-klicka hämtar bakgrundsfärgen.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Pipettverktyg</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Högst 10 färgprover tillåts.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Flytta färgprov</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Sampla:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Visa samplingsring</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Flytta markering</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Pil</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Bock</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Moln</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Kors</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Krona</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Verktyg för egen form</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Droppe</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Ellipsverktyg</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Slutpil</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Fyllningsfärg (högerklicka för ingen)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Kugghjul</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Hjärta</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Längd: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Blixt</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Dra för att rita en linje. Skift begränsar till 45 grader.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Linjeverktyg</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Banåtgärd:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Polygonverktyg</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Pussel</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Rektangelverktyg</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Form:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Dra för att rita formen. Skift behåller proportionerna, Alt ritar från mitten.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Sidor:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Pratbubbla</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Stjärna</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Stjärnproportion:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Startpil</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Linjefärg (högerklicka för ingen)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Triangelverktyg</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Tjocklek:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>Sök efter kommandon</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>Använd standardvärden</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Rensa segment</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Ta bort segment</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Dela...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Dela segment</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Redigera segment</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Redigera segmentalternativ</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>Fast B:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Inget segment markerat</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Rader x kolumner (till exempel 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Segment</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Dra för att skapa ett segment. Använd Arkiv &gt; Exportera &gt; Spara segment för att exportera dem.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Segmentalternativ</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Klicka för att markera ett segment, dra för att flytta det eller ändra storlek. Delete tar bort det, dubbelklick byter namn.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Segmentmarkeringsverktyg</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Segmentverktyg</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Segment från stödlinjer</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Justerad</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Klonkälla: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Klonstämpelverktyg</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Reparerar...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Lagningspenselverktyg</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Impressionistisk</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Klonstämpeln kan inte användas eftersom området som ska klonas inte har angetts (Alt-klicka för att ange en källpunkt).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Måla med det markerade mönstret.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Mönsterstämpelverktyg</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Måla över störande element för att ta bort dem. Området återskapas från omgivningen.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Borttagningsverktyg</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Tar bort...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Punktlagningspenselverktyg</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Måla över fläckar och skavanker för att laga dem automatiskt.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Typ:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>Rensa senaste filer</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>Återställ</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Måla för att mjuka upp kanter och detaljer.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Oskärpeverktyg</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Måla för att göra områden mörkare. Alt gör ljusare.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Efterbelysningsverktyg</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Måla för att göra områden ljusare. Alt gör mörkare.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Skuggningsverktyg</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Fingermålning</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Skydda detaljer</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Skydda toner</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Område:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Mätta</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Måla för att öka den lokala kontrasten och skärpa detaljer.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Skärpeverktyg</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Dra för att smeta ut färg. Fingermålning börjar med förgrundsfärgen.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Smetverktyg</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Måla för att mätta eller minska mättnaden i färger.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Svampverktyg</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>”{0}” kan inte användas eftersom mållagret är dolt.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>”{0}” kan inte användas eftersom lagret är låst.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>”{0}” kan inte användas eftersom mållagret inte är ett pixellager. Rastrera lagret först (Lager &gt; Rastrera).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>Komprimera till en kolumn</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>Anpassa verktygsfält</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Kantutjämning</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Bekräfta</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Angränsande</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Flöde:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Punktsampling</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Sampla alla lager</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>Medelvärde {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Samplingsstorlek:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>B: {0:0} px  H: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Tolerans:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Justera nederkanter</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Justera vågräta mittpunkter</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Justera vänsterkanter</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Justera högerkanter</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Justera överkanter</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Justera lodräta mittpunkter</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Välj automatiskt:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Ett klick markerar det översta lagret under pekaren (tillfälligt med Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Avbryt omformning (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Det gick inte att omforma eftersom lagret är tomt.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Det gick inte att omforma eftersom lagret är låst eller saknar innehåll.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Det gick inte att omforma markeringen eftersom lagret är låst.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Bekräfta omformning (Retur)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Ta bort stödlinje</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Flytande</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Flytande markering</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Dra i handtagen för att skala (Skift: proportionellt, Alt: från mitten), utanför för att rotera, Ctrl-dra ett hörn för att förvränga, Ctrl-dra en kant för att snedställa. Retur bekräftar, Esc avbryter.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Grupp</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Interpolering:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Det gick inte att slutföra begäran eftersom lagret är låst.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Flytta stödlinje</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Dra för att flytta lagret eller markerade pixlar. Alt-dra duplicerar, Skift begränsar. Piltangenterna knuffar.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Flyttverktyg</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Knuffa</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Visa omformningskontroller</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Använd Redigera &gt; Fri omformning (Ctrl+T) för att omforma det aktiva lagret eller markeringen.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Alla versaler</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Fet kursiv</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Avbryt aktuella ändringar (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Centrera text</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Bekräfta aktuella ändringar (Ctrl+Retur)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Falsk fetstil</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Falsk kursiv</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Klicka för att lägga till punkttext, dra för att lägga till stycketext, klicka på befintlig text för att redigera den. Ctrl+Retur bekräftar, Esc avbryter.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Vågrät textmaskverktyg</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Vågrät textverktyg</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Vänsterjustera text</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Klicka för att skriva; när du bekräftar skapas en markering i textens form.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Högerjustera text</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Ange kantutjämning</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Ange teckensnittsstil</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Genomstruken</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Textfärg</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Växla textriktning</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Textmask</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Lodrät textmaskverktyg</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Lodrät textverktyg</value>
   </data>
 </root>

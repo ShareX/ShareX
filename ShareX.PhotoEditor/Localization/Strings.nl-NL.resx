@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>Levendigheid</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Auteur:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Auteur: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Alles wissen</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Telling wissen</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Notities wissen</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Telgroep {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Klik om genummerde telmarkeringen te plaatsen. Sleep om te verplaatsen, Alt-klik om te verwijderen.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Aantal: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Gereedschap Telling</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Telling verwijderen</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Notitie verwijderen</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Notitie bewerken</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Groep:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Groepskleur</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Labelgrootte:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Markeringsgrootte:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Telling verplaatsen</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Notitie verplaatsen</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Een nieuwe telgroep maken</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Notitie</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Notitiekleur</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Klik om een notitie toe te voegen. Klik op een notitie om deze te bewerken, sleep om te verplaatsen, Alt-klik om te verwijderen.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Gereedschap Notitie</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Nieuw tekengebied toevoegen</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Tekengebied {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Achtergrond van tekengebied</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Sleep op een leeg canvas om een tekengebied te maken. Sleep de titel van een tekengebied om het met de inhoud te verplaatsen.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Tekengebied verplaatsen</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Gereedschap Tekengebied</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Nieuw tekengebied</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (telefoon)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (vierkant)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (tablet)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Rand verbeteren</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Lasso</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Toverstaf</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Klik om vergelijkbare kleuren te selecteren. Shift voegt toe, Alt trekt af.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Gereedschap Toverstaf</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Objectselectie</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Sleep een rechthoek of lasso rond een object om het te selecteren.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Gereedschap Objectselectie</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Snelle selectie</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Schilder over een gebied om het te selecteren; de selectie groeit tot de randen. Alt trekt af.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Gereedschap Snelle selectie</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Object selecteren...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Selectiepenseel</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Schilder om aan de selectie toe te voegen. Alt (of de modus Aftrekken) verwijdert eruit.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Gereedschap Selectiepenseel</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>Achter</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>Levendig licht</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Opbouweffecten in airbrushstijl inschakelen</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>"{0}" kan niet op een laagmasker schilderen.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Verf die per tik wordt aangebracht</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Maximale verfdekking per streek (toetsen 0-9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Grootte door druk</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Vloeiend maken:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Aanpassingspenseel</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Schilder een lokale aanpassing. Elke streek bewerkt het masker van een aanpassingslaag. Alt wist de aanpassing.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>{0}-penseel</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Gereedschap Aanpassingspenseel</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Aanpassing:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Hoeveelheid:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Automatisch wissen</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Schilder met de voorgrondkleur. Shift-klik tekent een rechte lijn. [ ] wijzigen de grootte.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Gereedschap Penseel</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Na elke streek reinigen</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Vervangt kleuren die op de opgenomen kleur lijken door de voorgrondkleur.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Gereedschap Kleur vervangen</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Laden:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Kleur laden (voorgrond)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Mengen:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Mengt de geladen verf met de kleuren van het canvas, net als echte verf.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Gereedschap Mengpenseel</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Nieuwe laag per streek</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Schilder harde lijnen zonder anti-aliasing met de voorgrondkleur.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Gereedschap Potlood</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Monster:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Nat:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>Hoek</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>Kleurkiezer ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Sleep om het uitsnijgebied te bepalen; sleep erbuiten om het te roteren. Enter bevestigt, Esc annuleert.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>B: {0:0} px  H: {1:0} px  Hoek: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Gereedschap Uitsnijden</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Uitgesneden pixels verwijderen</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>H:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Oorspronkelijke verhouding</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Perspectief uitsnijden</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Teken een uitsnijkader en sleep de hoeken naar het perspectief van een object. Enter snijdt uit en zet recht.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Gereedschap Perspectief uitsnijden</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Verhouding</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Verhouding:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (vierkant)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Regel van derden</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Raster weergeven</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Breedte en hoogte verwisselen</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>B:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>Annuleren</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>Eenmaal</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Aangepaste vorm</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Ellips</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Lijn</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Veelhoek</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Rechthoek</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Driehoek</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>Pad</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>Schaduwen</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Wist pixels die overeenkomen met de kleur onder het midden van het penseel (hotspot).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Gereedschap Achtergrondgum</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Niet-aangrenzend</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Wissen naar historie</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Wist tot transparantie of tot de achtergrondkleur op vergrendelde lagen. Alt wist naar historie.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Gereedschap Gum</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Grenzen:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Voorgrondkleur beschermen</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>Exporteren...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>Transparantie behouden</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Dither</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Bewerken...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Verloop:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Sleep om een verloop te tekenen. Shift beperkt de hoek tot 45 graden.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Hoek: {0:0.0}°  Afstand: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Gereedschap Verloop</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>{0} verloop</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Toverdoos-gum</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Klik om pixels met een vergelijkbare kleur transparant te wissen.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Gereedschap Toverdoos-gum</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Emmer</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Klik om pixels met een vergelijkbare kleur te vullen met de voorgrondkleur of een patroon.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Gereedschap Emmer</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Transparantie</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>Ruis toevoegen</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>Golf</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Kader leegmaken</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Kaderinhoud wissen</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Elliptisch kader</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Kader {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Sleep om een tijdelijk kader te maken. Plaats of plak een afbeelding om het actieve kader te vullen.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Gereedschap Kader</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Een afbeeldingsbestand in het actieve kader plaatsen</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Rechthoekig kader</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>Kleurpunt toevoegen</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>Surrealistisch</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Gebied:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Schildert gestileerde streken die worden opgenomen uit de historiebron.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Gereedschap Penseel voor tekenhistorie</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Kan het historiepenseel niet gebruiken, omdat de historiestaat niet dezelfde canvasgrootte heeft.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Schildert pixels terug uit de historiestaat die in het deelvenster Historie als bron is gekozen.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Gereedschap Historiepenseel</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Stel eerst een historiebron in in het deelvenster Historie.</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>Momentopname verwijderen</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>Nieuwe pixels berekenen:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Frequentie:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Sleep om een selectie uit de vrije hand te tekenen. Laat los om te sluiten.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Gereedschap Lasso</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Magnetische lasso</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Klik om te beginnen en volg een rand. Klik om ankers toe te voegen, dubbelklik of Enter om te sluiten, Backspace verwijdert een anker.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Gereedschap Magnetische lasso</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Veelhoeklasso</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Klik om punten toe te voegen. Dubbelklik, Enter of klik op het beginpunt om te sluiten. Backspace verwijdert het laatste punt.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Gereedschap Veelhoeklasso</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>Achtergrond</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>Zichtbaarheid wisselen (Alt-klik toont alleen deze laag)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Ovaal selectiekader</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Gereedschap Ovaal selectiekader</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Sleep om te selecteren. Shift beperkt, Alt tekent vanuit het midden. Sleep binnen een selectie om deze te verplaatsen.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Rechthoekig selectiekader</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Gereedschap Rechthoekig selectiekader</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>De selectierand verfijnen</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Klik om een kolom van 1 pixel te selecteren.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Gereedschap Selectiekader enkele kolom</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Klik om een rij van 1 pixel te selecteren.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Gereedschap Selectiekader enkele rij</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Stijl:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>Kleurintensiteit:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(leeg)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Passend in scherm</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Sleep om de weergave te verschuiven. Houd met elk gereedschap de spatiebalk ingedrukt om tijdelijk het handje te gebruiken. Dubbelklik om passend te maken.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Gereedschap Handje</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Weergave herstellen</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Sleep om de canvasweergave te roteren zonder pixels te wijzigen. Shift springt per 15 graden. Esc of Weergave herstellen zet deze terug.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Gereedschap Weergave roteren</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Rotatiehoek:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Dynamisch zoomen</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Klik om in te zoomen, Alt-klik om uit te zoomen. Sleep naar links/rechts voor dynamisch zoomen, of teken een rechthoek als dit uit staat.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Inzoomen</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Uitzoomen</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Gereedschap Zoomen</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>Zwart</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>Deelvenstermenu</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Ankerpunt toevoegen</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Klik op een padsegment om een ankerpunt toe te voegen.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Gereedschap Ankerpunt toevoegen</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Combineren</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Overlappende padcomponenten samenvoegen</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Punt omzetten</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Klik op een vloeiend punt om er een hoekpunt van te maken; sleep aan een hoekpunt om grepen uit te trekken. Sleep aan een greep om deze te breken.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Gereedschap Punt omzetten</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Ankerpunt verwijderen</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Klik op een ankerpunt om het te verwijderen.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Gereedschap Ankerpunt verwijderen</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Klik of sleep een kader om ankerpunten te selecteren; sleep punten of grepen om de vorm te wijzigen. Alt sleept een greep onafhankelijk.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Gereedschap Direct selecteren</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Anker slepen</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Uitsluiten</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Doorsnede</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Pad verplaatsen</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Anker verschuiven</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Klik op een padcomponent om deze te selecteren en sleep om te verplaatsen. Alt-slepen dupliceert, Delete verwijdert.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Gereedschap Padselectie</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Latere componenten van de eerste aftrekken</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>Werkpad</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>Lijn langs pad met penseel</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Automatisch toevoegen/verwijderen</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Pad sluiten</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Krommingspen</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Klik om punten te plaatsen; de curve loopt er vloeiend doorheen. Klik op het eerste punt om te sluiten, Enter of Esc om te voltooien.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Gereedschap Krommingspen</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Curvepassing:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Pen voor vrije vorm</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Sleep om een pad uit de vrije hand te tekenen; het wordt met vloeiende curven benaderd. Magnetisch klikt vast aan randen.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Gereedschap Pen voor vrije vorm</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Magnetisch</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Maken:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Masker</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Pen</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Klik om hoekpunten toe te voegen, sleep om vloeiende punten toe te voegen. Klik op het eerste punt om te sluiten. Ctrl bewerkt punten, Alt zet ze om.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Gereedschap Pen</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Elastiek</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Selectie...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>Naamloos-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>Houtnerf</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Verplaatsen op basis van inhoud</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Verplaatsen op basis van inhoud...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Gereedschap Verplaatsen op basis van inhoud</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Mate van verdonkering:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Doel</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Teken een selectie (of gebruik een selectiegereedschap) en sleep de selectie.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Uitbreiden</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Verplaatsen</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Repareren</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Repareren:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Gereedschap Repareren</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Pupilgrootte:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Rode ogen</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Klik op een rood oog (of sleep eromheen) om de rode reflectie te verwijderen.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Gereedschap Rode ogen</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Bron</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Structuur:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Sleep om afstand en hoek te meten. Sleep een eindpunt om het aan te passen.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Gereedschap Liniaal</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>De actieve laag roteren zodat de liniaallijn waterpas wordt</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Meetschaal gebruiken</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Kleurmonsters wissen</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Kleurmonster</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Klik om maximaal 10 kleurmonsters te plaatsen (weergegeven in het deelvenster Informatie). Sleep om te verplaatsen, Alt-klik om te verwijderen.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Gereedschap Kleurmonster</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Huidige laag</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Kleurmonster verwijderen</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Klik om de voorgrondkleur op te nemen. Alt-klik neemt de achtergrondkleur op.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Gereedschap Pipet</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Er zijn maximaal 10 kleurmonsters toegestaan.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Kleurmonster verplaatsen</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Monster:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Monsterring weergeven</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Selectie verplaatsen</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Pijl</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Vinkje</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Wolk</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Kruis</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Kroon</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Gereedschap Aangepaste vorm</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Druppel</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Gereedschap Ovaal</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Eindpijl</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Vulkleur (rechtsklik voor geen)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Tandwiel</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Hart</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Lengte: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Bliksem</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Sleep om een lijn te tekenen. Shift beperkt tot 45 graden.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Gereedschap Lijn</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Padbewerking:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Gereedschap Veelhoek</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Puzzel</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Gereedschap Rechthoek</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Vorm:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Sleep om de vorm te tekenen. Shift behoudt de verhoudingen, Alt tekent vanuit het midden.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Zijden:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Tekstballon</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Ster</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Sterverhouding:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Beginpijl</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Lijnkleur (rechtsklik voor geen)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Gereedschap Driehoek</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Dikte:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>Opdrachten zoeken</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>Standaardwaarden gebruiken</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Segmenten wissen</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Segment verwijderen</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Verdelen...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Segment verdelen</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Segment bewerken</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Segmentopties bewerken</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>Vaste B:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Geen segment geselecteerd</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Rijen x kolommen (bijvoorbeeld 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Segment</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Sleep om een segment te maken. Gebruik Bestand &gt; Exporteren &gt; Segmenten opslaan om ze te exporteren.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Segmentopties</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Klik om een segment te selecteren, sleep om het te verplaatsen of het formaat te wijzigen. Delete verwijdert het, dubbelklik wijzigt de naam.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Gereedschap Segment selecteren</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Gereedschap Segment</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Segmenten van hulplijnen</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Uitgelijnd</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Kloonbron: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Gereedschap Kloonstempel</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Herstellen...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Gereedschap Herstelpenseel</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Impressionistisch</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Kan de kloonstempel niet gebruiken, omdat het te klonen gebied niet is bepaald (Alt-klik om een bronpunt te bepalen).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Schilder met het geselecteerde patroon.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Gereedschap Patroonstempel</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Schilder over storende elementen om ze te verwijderen. Het gebied wordt uit de omgeving opgebouwd.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Gereedschap Verwijderen</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Verwijderen...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Gereedschap Snel herstelpenseel</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Schilder over vlekken en onvolkomenheden om ze automatisch te herstellen.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Type:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>Recente bestanden wissen</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>Herstellen</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Schilder om randen en details te verzachten.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Gereedschap Vervagen</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Schilder om gebieden donkerder te maken. Alt maakt lichter.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Gereedschap Doordrukken</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Schilder om gebieden lichter te maken. Alt maakt donkerder.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Gereedschap Tegenhouden</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Vingerverf</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Detail beschermen</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Tinten beschermen</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Bereik:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Verzadigen</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Schilder om het lokale contrast te verhogen en details te verscherpen.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Gereedschap Verscherpen</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Sleep om verf uit te smeren. Vingerverf begint met de voorgrondkleur.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Gereedschap Natte vinger</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Schilder om kleuren te verzadigen of de verzadiging te verminderen.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Gereedschap Spons</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>Kan "{0}" niet gebruiken, omdat de doellaag verborgen is.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>Kan "{0}" niet gebruiken, omdat de laag is vergrendeld.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>Kan "{0}" niet gebruiken, omdat de doellaag geen pixellaag is. Rasteriseer de laag eerst (Laag &gt; Rasteriseren).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>Samenvouwen tot één kolom</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>Werkbalk aanpassen</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Anti-aliasing</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Bevestigen</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Aangrenzend</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Stroom:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Puntmonster</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Alle lagen samplen</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>Gemiddelde van {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Monstergrootte:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>B: {0:0} px  H: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Tolerantie:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Onderranden uitlijnen</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Horizontale middelpunten uitlijnen</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Linkerranden uitlijnen</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Rechterranden uitlijnen</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Bovenranden uitlijnen</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Verticale middelpunten uitlijnen</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Automatisch selecteren:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Een klik selecteert de bovenste laag onder de aanwijzer (tijdelijk met Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Transformatie annuleren (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Kan niet transformeren, omdat de laag leeg is.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Kan niet transformeren, omdat de laag is vergrendeld of geen inhoud heeft.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Kan de selectie niet transformeren, omdat de laag is vergrendeld.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Transformatie bevestigen (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Hulplijn verwijderen</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Zwevend</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Zwevende selectie</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Sleep grepen om te schalen (Shift: proportioneel, Alt: vanuit het midden), erbuiten om te roteren, Ctrl-sleep een hoek om te vervormen, Ctrl-sleep een rand om te schuintrekken. Enter bevestigt, Esc annuleert.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Groep</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Interpolatie:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Kan de aanvraag niet voltooien, omdat de laag is vergrendeld.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Hulplijn verplaatsen</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Sleep om de laag of geselecteerde pixels te verplaatsen. Alt-slepen dupliceert, Shift beperkt. Pijltoetsen verschuiven.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Gereedschap Verplaatsen</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Verschuiven</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Transformatiebedieningselementen weergeven</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Gebruik Bewerken &gt; Vrije transformatie (Ctrl+T) om de actieve laag of selectie te transformeren.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Alle hoofdletters</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Vet cursief</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Huidige bewerkingen annuleren (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Tekst centreren</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Huidige bewerkingen bevestigen (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Nepvet</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Nepcursief</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Klik om punttekst toe te voegen, sleep om alineatekst toe te voegen, klik op bestaande tekst om deze te bewerken. Ctrl+Enter bevestigt, Esc annuleert.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Gereedschap Horizontaal tekstmasker</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Gereedschap Horizontale tekst</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Tekst links uitlijnen</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Klik om te typen; bij bevestigen wordt een selectie in de vorm van de tekst gemaakt.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Normaal</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Tekst rechts uitlijnen</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Anti-aliasing instellen</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Tekenstijl instellen</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Doorhalen</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Tekstkleur</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Tekstrichting wisselen</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Tekstmasker</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Gereedschap Verticaal tekstmasker</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Gereedschap Verticale tekst</value>
   </data>
 </root>

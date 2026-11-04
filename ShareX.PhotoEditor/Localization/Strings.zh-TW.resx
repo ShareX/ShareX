@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>自然飽和度</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>作者：</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>作者：{0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>全部清除</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>清除計數</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>清除註解</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>計數群組 {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>按一下以放置編號的計數標記。拖曳以移動，按住 Alt 按一下以移除。</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>計數：{0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>計數工具</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>刪除計數</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>刪除註解</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>編輯註解</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>群組：</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>群組顏色</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>標籤大小：</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>標記大小：</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>移動計數</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>移動註解</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>建立新的計數群組</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>註解</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>註解顏色</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>按一下以新增註解。按一下註解可編輯，拖曳可移動，按住 Alt 按一下可刪除。</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>註解工具</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>新增工作區域</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>工作區域 {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>工作區域背景</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>在空白畫布上拖曳以建立工作區域。拖曳工作區域的標題可將其連同內容一起移動。</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>移動工作區域</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>工作區域工具</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>新工作區域</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844（手機）</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080（正方形）</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180（平板電腦）</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>增強邊緣</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>套索</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>魔術棒</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>按一下以選取相似顏色。Shift 增加，Alt 減去。</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>魔術棒工具</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>物件選取</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>在物件周圍拖曳出矩形或套索以選取物件。</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>物件選取工具</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>快速選取</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>在區域上塗抹以選取；選取範圍會擴展以尋找邊緣。Alt 減去。</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>快速選取工具</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>正在選取物件...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>選取範圍筆刷</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>塗抹以增加至選取範圍。Alt（或減去模式）從選取範圍中移除。</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>選取範圍筆刷工具</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>背後</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>強烈光源</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>啟用噴槍式累積效果</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>{0}無法在圖層遮色片上繪畫。</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>每次點按套用的顏料</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>每筆畫最大顏料覆蓋率（0-9 鍵）</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>壓力控制大小</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>平滑化：</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>調整筆刷</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>繪製局部調整。每一筆畫都會編輯調整圖層的遮色片。Alt 擦除調整。</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>{0}筆刷</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>調整筆刷工具</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>調整：</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>總量：</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>自動擦除</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>使用前景色繪畫。按住 Shift 按一下可繪製直線。[ ] 變更大小。</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>筆刷工具</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>每一筆畫後清除</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>將與取樣顏色相似的顏色取代為前景色。</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>顏色取代工具</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>載入：</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>載入顏色（前景）</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>混合：</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>像真實顏料一樣將載入的顏料與畫布顏色混合。</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>混合器筆刷工具</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>每一筆畫建立新圖層</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>使用前景色繪製硬邊、無消除鋸齒的線條。</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>鉛筆工具</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>取樣：</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>潮濕：</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>角度</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>檢色器 ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>拖曳以定義裁切區域；在區域外拖曳可旋轉。Enter 確認，Esc 取消。</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>寬：{0:0} px  高：{1:0} px  角度：{2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>裁切工具</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>刪除裁切的像素</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>高：</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>原始比例</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>透視裁切</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>拖曳以建立裁切框，然後拖曳其角落以符合物件的透視。Enter 裁切並拉直。</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>透視裁切工具</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>比例</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>比例：</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1（正方形）</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>三分法</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>顯示格點</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>交換寬度和高度</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>寬：</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>取消</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>一次</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>自訂形狀</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>橢圓</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>直線</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>多邊形</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>矩形</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>三角形</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>路徑</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>陰影</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>擦除與筆刷中心（熱點）下方顏色相符的像素。</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>背景橡皮擦工具</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>不連續</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>擦除至步驟記錄</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>擦除為透明，在鎖定的圖層上則擦除為背景色。Alt 擦除至步驟記錄。</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>橡皮擦工具</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>限制：</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>保護前景色</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>匯出...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>保留透明度</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>混色</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>編輯...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>漸層：</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>拖曳以繪製漸層。Shift 將角度限制為 45 度。</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>角度：{0:0.0}°  距離：{1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>漸層工具</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>{0}漸層</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>魔術橡皮擦</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>按一下以將顏色相似的像素擦除為透明。</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>魔術橡皮擦工具</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>油漆桶</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>按一下以使用前景色或圖樣填滿顏色相似的像素。</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>油漆桶工具</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>透明度</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>增加雜訊</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>波浪</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>清除框架</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>清除框架內容</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>橢圓框架</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>框架 {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>拖曳以建立框架預留位置。置入或貼上影像以填滿作用中的框架。</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>框架工具</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>將影像檔案置入作用中的框架</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>矩形框架</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>增加色標</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>超現實</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>區域：</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>使用從步驟記錄來源取樣的風格化筆觸繪畫。</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>藝術步驟記錄筆刷工具</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>無法使用步驟記錄筆刷，因為步驟記錄狀態的畫布尺寸不同。</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>從在步驟記錄面板中選為來源的步驟記錄狀態繪回像素。</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>步驟記錄筆刷工具</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>請先在步驟記錄面板中設定步驟記錄來源。</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>刪除快照</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>重新取樣：</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>頻率：</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>拖曳以繪製手繪選取範圍。放開即可封閉。</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>套索工具</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>磁性套索</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>按一下開始，然後沿著邊緣移動。按一下新增錨點，按兩下或按 Enter 封閉，Backspace 移除錨點。</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>磁性套索工具</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>多邊形套索</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>按一下以新增點。按兩下、按 Enter 或按一下起點以封閉。Backspace 移除最後一個點。</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>多邊形套索工具</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>背景</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>切換可見度 (按住 Alt 並按一下僅顯示此圖層)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>橢圓選取畫面</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>橢圓選取畫面工具</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>拖曳以選取。Shift 限制，Alt 從中心繪製。在選取範圍內拖曳可移動選取範圍。</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>矩形選取畫面</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>矩形選取畫面工具</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>調整選取範圍邊緣</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>按一下以選取 1 像素寬的欄。</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>單欄選取畫面工具</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>按一下以選取 1 像素高的列。</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>單列選取畫面工具</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>樣式：</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>顏色強度：</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(空白)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>符合螢幕</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>拖曳以捲動檢視。使用任何工具時按住空白鍵可暫時使用手形工具。按兩下以符合螢幕。</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>手形工具</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>重設檢視</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>拖曳以旋轉畫布檢視而不變更像素。Shift 以 15 度為單位對齊。Esc 或重設檢視可還原。</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>旋轉檢視工具</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>旋轉角度：</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>拖曳縮放</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>按一下放大，按住 Alt 按一下縮小。左右拖曳進行拖曳縮放，關閉拖曳縮放時可拖曳出矩形。</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>放大</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>縮小</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>縮放顯示工具</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>黑色</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>面板選單</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>增加錨點</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>按一下路徑區段以增加錨點。</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>增加錨點工具</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>結合</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>合併重疊的路徑元件</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>轉換錨點</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>按一下平滑點使其成為轉角點；拖曳轉角點可拉出平滑把手。拖曳把手可將其斷開。</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>轉換錨點工具</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>刪除錨點</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>按一下錨點以將其刪除。</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>刪除錨點工具</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>按一下或拖曳選取畫面以選取錨點；拖曳點或把手以改變形狀。Alt 獨立拖曳把手。</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>直接選取工具</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>拖曳錨點</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>排除</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>交集</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>移動路徑</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>微移錨點</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>按一下路徑元件以選取，拖曳以移動。按住 Alt 拖曳可複製，Delete 移除。</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>路徑選取工具</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>從第一個元件中減去後續元件</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>工作路徑</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>以筆刷筆畫路徑</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>自動增加/刪除</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>封閉路徑</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>曲線筆</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>按一下以放置點；曲線會平滑地穿過這些點。按一下第一個點以封閉，按 Enter 或 Esc 完成。</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>曲線筆工具</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>曲線符合：</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>創意筆</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>拖曳以手繪路徑；路徑會以平滑曲線符合。磁性會貼齊邊緣。</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>創意筆工具</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>磁性</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>製作：</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>遮色片</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>鋼筆</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>按一下以新增轉角點，拖曳以新增平滑點。按一下第一個點以封閉。Ctrl 編輯點，Alt 轉換點。</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>鋼筆工具</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>橡皮筋</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>選取範圍...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>未命名-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>木紋</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>內容感知移動</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>內容感知移動...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>內容感知移動工具</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>變暗量：</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>目的地</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>繪製選取範圍（或使用任何選取工具），然後拖曳選取範圍。</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>延伸</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>移動</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>修補</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>修補：</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>修補工具</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>瞳孔大小：</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>紅眼</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>按一下紅眼（或在其周圍拖曳）以去除紅色反光。</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>紅眼工具</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>來源</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>結構：</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>拖曳以測量距離和角度。拖曳端點可進行調整。</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>尺標工具</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>旋轉作用中的圖層，使尺標線變為水平</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>使用測量比例</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>清除顏色取樣器</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>顏色取樣器</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>按一下以放置最多 10 個顏色取樣器（顯示在資訊面板中）。拖曳以移動，按住 Alt 按一下以刪除。</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>顏色取樣器工具</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>目前圖層</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>刪除顏色取樣器</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>按一下以取樣前景色。按住 Alt 按一下取樣背景色。</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>滴管工具</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>最多允許 10 個顏色取樣器。</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>移動顏色取樣器</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>樣本：</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>顯示取樣環</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>移動選取範圍</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>箭頭</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>勾號</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>雲朵</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>十字</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>皇冠</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>自訂形狀工具</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>水滴</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>橢圓工具</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>終點箭頭</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>填色（按右鍵設為無）</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>齒輪</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>愛心</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>長度：{0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>閃電</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>拖曳以繪製線條。Shift 限制為 45 度。</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>線條工具</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>路徑操作：</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>多邊形工具</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>拼圖</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>矩形工具</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>形狀:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>拖曳以繪製形狀。Shift 保持比例，Alt 從中心繪製。</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>邊數：</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>對話框</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>星形</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>星形比例：</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>起點箭頭</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>筆畫顏色（按右鍵設為無）</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>三角形工具</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>粗細：</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>搜尋命令</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>使用預設值</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>清除切片</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>刪除切片</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>分割...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>分割切片</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>編輯切片</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>編輯切片選項</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>固定寬度：</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>未選取切片</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>列 x 欄（例如 2x3）：</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>切片</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>拖曳以建立切片。使用「檔案 &gt; 轉存 &gt; 儲存切片」來轉存切片。</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>切片選項</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>按一下以選取切片，拖曳以移動或調整大小。Delete 移除，按兩下重新命名。</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>切片選取工具</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>切片工具</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>從參考線建立切片</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>對齊</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>仿製來源：{0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>仿製印章工具</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>正在修復...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>修復筆刷工具</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>印象派</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>無法使用仿製印章工具，因為尚未定義要仿製的區域（按住 Alt 按一下以定義來源點）。</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>使用選取的圖樣繪畫。</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>圖樣印章工具</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>在干擾物上塗抹以將其移除。該區域會根據周圍內容重建。</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>移除工具</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>正在移除...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>汙點修復筆刷工具</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>在斑點和瑕疵上塗抹以自動修復。</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>類型：</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>清除最近使用的檔案</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>還原</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>塗抹以柔化邊緣和細節。</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>模糊工具</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>塗抹以加深區域。Alt 加亮。</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>加深工具</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>塗抹以加亮區域。Alt 加深。</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>加亮工具</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>手指繪畫</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>保護細節</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>保護色調</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>範圍：</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>飽和</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>塗抹以增加局部對比並銳利化細節。</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>銳利化工具</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>拖曳以塗抹顏料。手指繪畫以前景色開始。</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>指尖工具</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>塗抹以增加或降低顏色飽和度。</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>海綿工具</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>無法使用{0}，因為目標圖層已隱藏。</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>無法使用{0}，因為圖層已鎖定。</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>無法使用{0}，因為目標圖層不是像素圖層。請先點陣化圖層（圖層 &gt; 點陣化）。</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>收合為單欄</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>自訂工具列</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>消除鋸齒</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>連續</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>流量：</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>單點取樣</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>取樣所有圖層</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>{0} x {0} 平均</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>取樣大小：</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>寬：{0:0} px  高：{1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>容許度：</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>底部邊緣對齊</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>水平居中對齊</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>左側邊緣對齊</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>右側邊緣對齊</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>頂部邊緣對齊</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>垂直居中對齊</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>自動選取：</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>按一下會選取指標下方最上層的圖層（暫時按 Ctrl）</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>取消變形 (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>無法變形，因為圖層是空的。</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>無法變形，因為圖層已鎖定或沒有內容。</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>無法變形選取範圍，因為圖層已鎖定。</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>確認變形 (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>刪除參考線</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>浮動</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>浮動選取範圍</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>拖曳把手以縮放（Shift：等比例，Alt：從中心），在外部拖曳以旋轉，按住 Ctrl 拖曳角落以扭曲，按住 Ctrl 拖曳邊緣以傾斜。Enter 確認，Esc 取消。</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>群組</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>內插補點：</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>無法完成要求，因為圖層已鎖定。</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>移動參考線</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>拖曳以移動圖層或選取的像素。按住 Alt 拖曳可複製，Shift 限制。方向鍵微移。</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>移動工具</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>微移</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>顯示變形控制項</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>使用「編輯 &gt; 任意變形」(Ctrl+T) 來變形作用中的圖層或選取範圍。</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>全部大寫</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>粗斜體</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>取消目前的編輯 (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>文字置中</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>確認目前的編輯 (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>仿粗體</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>仿斜體</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>按一下以新增點文字，拖曳以新增段落文字，按一下現有文字以編輯。Ctrl+Enter 確認，Esc 取消。</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>水平文字遮色片工具</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>水平文字工具</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>文字靠左對齊</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>按一下以輸入；確認後會建立文字形狀的選取範圍。</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>標準</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>文字靠右對齊</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>設定消除鋸齒</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>設定字體樣式</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>刪除線</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>文字色彩</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>切換文字方向</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>文字遮色片</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>垂直文字遮色片工具</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>垂直文字工具</value>
   </data>
 </root>

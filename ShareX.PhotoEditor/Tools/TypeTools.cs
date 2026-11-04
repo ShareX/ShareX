@@ -52,11 +52,11 @@ public sealed class TypeTool : ToolBase
         _ => ToolId.VerticalTypeMask
     };
 
-    public override string Name => (_vertical ? "Vertical " : "Horizontal ") + (_mask ? "Type Mask Tool" : "Type Tool");
+    public override string Name => _mask ? (_vertical ? Strings.TypeTools_VerticalTypeMaskTool : Strings.TypeTools_HorizontalTypeMaskTool) : (_vertical ? Strings.TypeTools_VerticalTypeTool : Strings.TypeTools_HorizontalTypeTool);
 
     public override string Hint => _mask
-        ? "Click to type; committing creates a selection in the shape of the text."
-        : "Click to add point text, drag to add paragraph text, click existing text to edit it. Ctrl+Enter commits, Esc cancels.";
+        ? Strings.TypeTools_MaskHint
+        : Strings.TypeTools_Hint;
 
     public override ToolCursor Cursor => ToolCursor.Text;
 
@@ -107,7 +107,7 @@ public sealed class TypeTool : ToolBase
         if (!_dragging || Doc == null) return;
         _dragging = false;
         SKRect box = DragRect(_start, _current, false, false);
-        TextLayer layer = new(_mask ? "Type Mask" : Strings.LayerNames_NewTypeLayer);
+        TextLayer layer = new(_mask ? Strings.TypeTools_TypeMask : Strings.LayerNames_NewTypeLayer);
         Settings.CopyTextPropertiesTo(layer);
         layer.Text = string.Empty;
         layer.Color = Host.Foreground;
@@ -140,7 +140,7 @@ public sealed class TypeTool : ToolBase
             PixelSurface mask = MaskOps.FromPath(path, Doc.Width, Doc.Height, layer.AntiAlias != TextAntiAlias.None);
             Doc.RemoveLayer(layer);
             Doc.SetSelection(MaskOps.Combine(Doc.Selection, mask, SelectionMode.Replace));
-            PushHistory("Type Mask");
+            PushHistory(Strings.TypeTools_TypeMask);
         }
         else
         {
@@ -175,30 +175,30 @@ public sealed class TypeTool : ToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         TextLayer current = Doc?.ActiveLayer as TextLayer ?? Settings;
-        options.IconButton("type-orientation", "Toggle text orientation", () => Change(t => t.Vertical = !t.Vertical, "Change Text Orientation"));
-        options.Combo(null, FontFamilies.Select(f => (f, f)), () => current.FontFamily, v => Change(t => t.FontFamily = v, "Set Font"), 170);
-        options.Combo(null, [("Regular", (false, false)), ("Bold", (true, false)), ("Italic", (false, true)), ("Bold Italic", (true, true))],
-            () => (current.Bold, current.Italic), v => Change(t => { t.Bold = v.Item1; t.Italic = v.Item2; }, "Set Font Style"), 100);
-        options.Number("Size:", 1, 1296, () => current.FontSize, v => Change(t => t.FontSize = (float)v, "Set Font Size"), "0.#", "px", 1, 64);
-        options.EnumCombo("aa", () => current.AntiAlias, v => Change(t => t.AntiAlias = v, "Set Anti-alias"), 92);
+        options.IconButton("type-orientation", Strings.TypeTools_ToggleOrientationTip, () => Change(t => t.Vertical = !t.Vertical, Strings.EditorCommands_ChangeTextOrientation));
+        options.Combo(null, FontFamilies.Select(f => (f, f)), () => current.FontFamily, v => Change(t => t.FontFamily = v, Strings.PropertiesPanel_SetFont), 170);
+        options.Combo(null, [(Strings.TypeTools_Regular, (false, false)), (Strings.PropertiesPanel_Bold, (true, false)), (Strings.PropertiesPanel_Italic, (false, true)), (Strings.TypeTools_BoldItalic, (true, true))],
+            () => (current.Bold, current.Italic), v => Change(t => { t.Bold = v.Item1; t.Italic = v.Item2; }, Strings.TypeTools_SetFontStyle), 100);
+        options.Number(Strings.PropertiesPanel_SizeColon, 1, 1296, () => current.FontSize, v => Change(t => t.FontSize = (float)v, Strings.EditorCommands_SetFontSize), "0.#", "px", 1, 64);
+        options.EnumCombo("aa", () => current.AntiAlias, v => Change(t => t.AntiAlias = v, Strings.TypeTools_SetAntiAlias), 92);
         options.Separator();
-        options.IconButton("align-text-left", "Left align text", () => Change(t => t.Alignment = TextAlignment.Left, "Align Text"), current.Alignment == TextAlignment.Left);
-        options.IconButton("align-text-center", "Center text", () => Change(t => t.Alignment = TextAlignment.Center, "Align Text"), current.Alignment == TextAlignment.Center);
-        options.IconButton("align-text-right", "Right align text", () => Change(t => t.Alignment = TextAlignment.Right, "Align Text"), current.Alignment == TextAlignment.Right);
-        if (!_mask) options.ColorButton("Text color", () => current.Color, c => { Host.Foreground = c; Change(t => t.Color = c, "Set Text Color"); });
+        options.IconButton("align-text-left", Strings.TypeTools_LeftAlignTip, () => Change(t => t.Alignment = TextAlignment.Left, Strings.PropertiesPanel_AlignText), current.Alignment == TextAlignment.Left);
+        options.IconButton("align-text-center", Strings.TypeTools_CenterTip, () => Change(t => t.Alignment = TextAlignment.Center, Strings.PropertiesPanel_AlignText), current.Alignment == TextAlignment.Center);
+        options.IconButton("align-text-right", Strings.TypeTools_RightAlignTip, () => Change(t => t.Alignment = TextAlignment.Right, Strings.PropertiesPanel_AlignText), current.Alignment == TextAlignment.Right);
+        if (!_mask) options.ColorButton(Strings.TypeTools_TextColorTip, () => current.Color, c => { Host.Foreground = c; Change(t => t.Color = c, Strings.PropertiesPanel_SetTextColor); });
         options.Separator();
-        options.Number("Tracking:", -1000, 10000, () => current.Tracking, v => Change(t => t.Tracking = (float)v, "Set Tracking"), "0", null, 10, 60);
-        options.Number("Leading:", 0.5, 5, () => current.Leading, v => Change(t => t.Leading = (float)v, "Set Leading"), "0.00", null, 0.05, 56);
-        options.IconButton("faux-bold", "Faux Bold", () => Change(t => t.FauxBold = !t.FauxBold, "Faux Bold"), current.FauxBold);
-        options.IconButton("faux-italic", "Faux Italic", () => Change(t => t.FauxItalic = !t.FauxItalic, "Faux Italic"), current.FauxItalic);
-        options.IconButton("underline", "Underline", () => Change(t => t.Underline = !t.Underline, "Underline"), current.Underline);
-        options.IconButton("strikethrough", "Strikethrough", () => Change(t => t.Strikethrough = !t.Strikethrough, "Strikethrough"), current.Strikethrough);
-        options.IconButton("all-caps", "All Caps", () => Change(t => t.AllCaps = !t.AllCaps, "All Caps"), current.AllCaps);
+        options.Number(Strings.PropertiesPanel_TrackingColon, -1000, 10000, () => current.Tracking, v => Change(t => t.Tracking = (float)v, Strings.PropertiesPanel_SetTracking), "0", null, 10, 60);
+        options.Number(Strings.PropertiesPanel_LeadingColon, 0.5, 5, () => current.Leading, v => Change(t => t.Leading = (float)v, Strings.PropertiesPanel_SetLeading), "0.00", null, 0.05, 56);
+        options.IconButton("faux-bold", Strings.TypeTools_FauxBold, () => Change(t => t.FauxBold = !t.FauxBold, Strings.TypeTools_FauxBold), current.FauxBold);
+        options.IconButton("faux-italic", Strings.TypeTools_FauxItalic, () => Change(t => t.FauxItalic = !t.FauxItalic, Strings.TypeTools_FauxItalic), current.FauxItalic);
+        options.IconButton("underline", Strings.PropertiesPanel_Underline, () => Change(t => t.Underline = !t.Underline, Strings.PropertiesPanel_Underline), current.Underline);
+        options.IconButton("strikethrough", Strings.TypeTools_Strikethrough, () => Change(t => t.Strikethrough = !t.Strikethrough, Strings.TypeTools_Strikethrough), current.Strikethrough);
+        options.IconButton("all-caps", Strings.TypeTools_AllCaps, () => Change(t => t.AllCaps = !t.AllCaps, Strings.TypeTools_AllCaps), current.AllCaps);
         if (Host.IsTextEditing)
         {
             options.Separator();
-            options.Button("Cancel", () => Host.EndTextEditing(false), "Cancel current edits (Esc)");
-            options.Button("Commit", () => Host.EndTextEditing(true), "Commit current edits (Ctrl+Enter)");
+            options.Button(Strings.DialogBuilder_Cancel, () => Host.EndTextEditing(false), Strings.TypeTools_CancelTip);
+            options.Button(Strings.Tools_Commit, () => Host.EndTextEditing(true), Strings.TypeTools_CommitTip);
         }
     }
 }

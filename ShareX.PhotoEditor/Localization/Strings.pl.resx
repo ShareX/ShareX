@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>Jaskrawość</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Autor:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Autor: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Wyczyść wszystko</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Wyczyść liczenie</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Wyczyść notatki</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Grupa liczenia {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Kliknij, aby umieścić numerowane znaczniki liczenia. Przeciągnij, aby przenieść, Alt+klik, aby usunąć.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Liczba: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Narzędzie Liczenie</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Usuń liczenie</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Usuń notatkę</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Edytuj notatkę</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Grupa:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Kolor grupy</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Rozmiar etykiety:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Rozmiar znacznika:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Przenieś liczenie</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Przenieś notatkę</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Utwórz nową grupę liczenia</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Notatka</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Kolor notatki</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Kliknij, aby dodać notatkę. Kliknij notatkę, aby ją edytować, przeciągnij, aby przenieść, Alt+klik, aby usunąć.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Narzędzie Notatka</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Dodaj nowy obszar kompozycji</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Obszar kompozycji {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Tło obszaru kompozycji</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Przeciągnij na pustym obszarze, aby utworzyć obszar kompozycji. Przeciągnij tytuł obszaru kompozycji, aby przenieść go wraz z zawartością.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Przenieś obszar kompozycji</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Narzędzie Obszar kompozycji</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Nowy obszar kompozycji</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (telefon)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (kwadrat)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (tablet)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Popraw krawędź</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Lasso</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Różdżka</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Kliknij, aby zaznaczyć podobne kolory. Shift dodaje, Alt odejmuje.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Narzędzie Różdżka</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Zaznaczanie obiektu</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Narysuj prostokąt lub lasso wokół obiektu, aby go zaznaczyć.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Narzędzie Zaznaczanie obiektu</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Szybkie zaznaczanie</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Maluj po obszarze, aby go zaznaczyć; zaznaczenie rośnie do krawędzi. Alt odejmuje.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Narzędzie Szybkie zaznaczanie</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Zaznaczanie obiektu...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Pędzel zaznaczania</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Maluj, aby dodać do zaznaczenia. Alt (lub tryb Odejmij) usuwa z zaznaczenia.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Narzędzie Pędzel zaznaczania</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>Pod spodem</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>Światło jaskrawe</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Włącz efekty narastania w stylu aerografu</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>„{0}” nie może malować na masce warstwy.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Farba nakładana na jedno dotknięcie</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Maksymalne krycie farby na pociągnięcie (klawisze 0-9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Rozmiar od nacisku</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Wygładzanie:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Pędzel korekty</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Maluj lokalną korektę. Każde pociągnięcie edytuje maskę warstwy dopasowania. Alt wymazuje korektę.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>Pędzel: {0}</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Narzędzie Pędzel korekty</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Korekta:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Wartość:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Automatyczne wymazywanie</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Maluj kolorem narzędzia. Shift+klik rysuje linię prostą. [ ] zmieniają rozmiar.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Narzędzie Pędzel</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Czyść po każdym pociągnięciu</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Zastępuje kolory podobne do próbki kolorem narzędzia.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Narzędzie Zastępowanie kolorów</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Załaduj:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Załaduj kolor (narzędzia)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Mieszaj:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Miesza załadowaną farbę z kolorami obszaru roboczego jak prawdziwa farba.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Narzędzie Pędzel mieszający</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Nowa warstwa na pociągnięcie</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Maluj twarde linie bez wygładzania kolorem narzędzia.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Narzędzie Ołówek</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Próbkowanie:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Wilgotność:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>Kąt</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>Próbnik kolorów ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Przeciągnij, aby określić obszar kadrowania; przeciągnij poza nim, aby obrócić. Enter zatwierdza, Esc anuluje.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>Szer.: {0:0} px  Wys.: {1:0} px  Kąt: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Narzędzie Kadrowanie</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Usuń wykadrowane piksele</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>Wys.:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Oryginalne proporcje</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Kadrowanie perspektywiczne</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Narysuj ramkę kadrowania, a następnie przeciągnij jej narożniki, aby dopasować perspektywę obiektu. Enter kadruje i prostuje.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Narzędzie Kadrowanie perspektywiczne</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Proporcje</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Proporcje:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (kwadrat)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Zasada trójpodziału</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Pokaż siatkę</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Zamień szerokość i wysokość</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>Szer.:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>Anuluj</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>Jednorazowe</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Kształt własny</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Elipsa</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Linia</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Wielokąt</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Prostokąt</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Trójkąt</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>Ścieżka</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>Cienie</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Wymazuje piksele pasujące do koloru pod środkiem pędzla (punkt aktywny).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Narzędzie Gumka tła</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Nieciągłe</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Wymaż do historii</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Wymazuje do przezroczystości lub do koloru tła na zablokowanych warstwach. Alt wymazuje do historii.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Narzędzie Gumka</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Ograniczenia:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Chroń kolor narzędzia</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>Eksportuj...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>Zachowaj przezroczystość</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Rozpraszanie</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Edytuj...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Gradient:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Przeciągnij, aby narysować gradient. Shift ogranicza kąt do 45 stopni.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Kąt: {0:0.0}°  Odległość: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Narzędzie Gradient</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>Gradient: {0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Magiczna gumka</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Kliknij, aby wymazać do przezroczystości piksele o podobnym kolorze.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Narzędzie Magiczna gumka</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Wiadro z farbą</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Kliknij, aby wypełnić piksele o podobnym kolorze kolorem narzędzia lub wzorkiem.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Narzędzie Wiadro z farbą</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Przezroczystość</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>Dodaj szum</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>Fala</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Wyczyść ramkę</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Wyczyść zawartość ramki</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Ramka eliptyczna</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Ramka {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Przeciągnij, aby utworzyć symbol zastępczy ramki. Umieść lub wklej obraz, aby wypełnić aktywną ramkę.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Narzędzie Ramka</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Umieść plik obrazu w aktywnej ramce</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Ramka prostokątna</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>Dodaj punkt koloru</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>Surrealistyczny</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Obszar:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Maluje stylizowane pociągnięcia próbkowane ze źródła historii.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Narzędzie Artystyczny pędzel historii</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Nie można użyć pędzla historii, ponieważ stan historii ma inny rozmiar obszaru roboczego.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Odtwarza piksele ze stanu historii wybranego jako źródło w panelu Historia.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Narzędzie Pędzel historii</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Najpierw ustaw źródło historii w panelu Historia.</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>Usuń migawkę</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>Ponowne próbkowanie:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Częstotliwość:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Przeciągnij, aby narysować zaznaczenie odręczne. Zwolnij, aby je zamknąć.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Narzędzie Lasso</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Lasso magnetyczne</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Kliknij, aby rozpocząć, a następnie prowadź wzdłuż krawędzi. Kliknij, aby dodać punkty, kliknij dwukrotnie lub naciśnij Enter, aby zamknąć, Backspace usuwa punkt.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Narzędzie Lasso magnetyczne</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Lasso wielokątne</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Kliknij, aby dodać punkty. Kliknij dwukrotnie, naciśnij Enter lub kliknij punkt początkowy, aby zamknąć. Backspace usuwa ostatni punkt.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Narzędzie Lasso wielokątne</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>Tło</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>Przełącz widoczność (Alt+klik pokazuje tylko tę warstwę)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Zaznaczanie eliptyczne</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Narzędzie Zaznaczanie eliptyczne</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Przeciągnij, aby zaznaczyć. Shift ogranicza, Alt rysuje od środka. Przeciągnij wewnątrz zaznaczenia, aby je przenieść.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Zaznaczanie prostokątne</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Narzędzie Zaznaczanie prostokątne</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Popraw krawędź zaznaczenia</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Kliknij, aby zaznaczyć kolumnę o szerokości 1 piksela.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Narzędzie Zaznaczanie pojedynczej kolumny</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Kliknij, aby zaznaczyć wiersz o wysokości 1 piksela.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Narzędzie Zaznaczanie pojedynczego wiersza</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Styl:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>Intensywność koloru:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(puste)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Dopasuj do ekranu</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Przeciągnij, aby przewinąć widok. Przytrzymaj spację przy dowolnym narzędziu, aby tymczasowo użyć narzędzia Rączka. Kliknij dwukrotnie, aby dopasować do ekranu.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Narzędzie Rączka</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Resetuj widok</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Przeciągnij, aby obrócić widok obszaru roboczego bez zmiany pikseli. Shift przyciąga co 15 stopni. Esc lub Resetuj widok przywraca go.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Narzędzie Obracanie widoku</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Kąt obrotu:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Płynne powiększanie</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Kliknij, aby powiększyć, Alt+klik, aby pomniejszyć. Przeciągnij w lewo/prawo, aby płynnie powiększać, lub narysuj prostokąt, gdy ta opcja jest wyłączona.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Powiększ</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Pomniejsz</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Narzędzie Lupka</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>Czarny</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>Menu panelu</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Dodaj punkt kontrolny</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Kliknij segment ścieżki, aby dodać punkt kontrolny.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Narzędzie Dodaj punkt kontrolny</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Połącz</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Scal nakładające się składniki ścieżki</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Konwertuj punkt</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Kliknij punkt gładki, aby zmienić go w narożny; przeciągnij punkt narożny, aby wyciągnąć uchwyty. Przeciągnij uchwyt, aby go przełamać.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Narzędzie Konwertuj punkt</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Usuń punkt kontrolny</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Kliknij punkt kontrolny, aby go usunąć.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Narzędzie Usuń punkt kontrolny</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Kliknij lub przeciągnij ramkę, aby zaznaczyć punkty kontrolne; przeciągaj punkty lub uchwyty, aby zmienić kształt. Alt przeciąga uchwyt niezależnie.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Narzędzie Zaznaczanie bezpośrednie</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Przeciągnij punkt</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Wyklucz</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Przetnij</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Przenieś ścieżkę</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Przesuń punkt</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Kliknij składnik ścieżki, aby go zaznaczyć, przeciągnij, aby przenieść. Alt+przeciągnięcie powiela, Delete usuwa.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Narzędzie Zaznaczanie ścieżek</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Odejmij późniejsze składniki od pierwszego</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>Ścieżka robocza</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>Obrysuj ścieżkę pędzlem</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Automatyczne dodawanie/usuwanie</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Zamknij ścieżkę</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Pióro krzywizny</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Kliknij, aby umieścić punkty; krzywa płynnie przez nie przechodzi. Kliknij pierwszy punkt, aby zamknąć, Enter lub Esc, aby zakończyć.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Narzędzie Pióro krzywizny</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Dopasowanie krzywej:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Pióro dowolne</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Przeciągnij, aby narysować ścieżkę odręcznie; zostanie dopasowana gładkimi krzywymi. Magnetyczne przyciąga do krawędzi.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Narzędzie Pióro dowolne</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Magnetyczne</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Utwórz:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Maska</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Pióro</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Kliknij, aby dodać punkty narożne, przeciągnij, aby dodać punkty gładkie. Kliknij pierwszy punkt, aby zamknąć. Ctrl edytuje punkty, Alt je konwertuje.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Narzędzie Pióro</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Gumka recepturka</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Zaznaczenie...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>Bez tytułu-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>Słoje drewna</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Przesunięcie z uwzględnieniem zawartości</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Przesunięcie z uwzględnieniem zawartości...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Narzędzie Przesunięcie z uwzględnieniem zawartości</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Stopień przyciemnienia:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Miejsce docelowe</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Utwórz zaznaczenie (lub użyj dowolnego narzędzia zaznaczania), a następnie przeciągnij zaznaczenie.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Rozszerz</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Przesuń</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Łatka</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Łatka:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Narzędzie Łatka</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Rozmiar źrenicy:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Czerwone oczy</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Kliknij czerwone oko (lub przeciągnij wokół niego), aby usunąć czerwony odblask.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Narzędzie Czerwone oczy</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Źródło</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Struktura:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Przeciągnij, aby zmierzyć odległość i kąt. Przeciągnij punkt końcowy, aby go dopasować.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Narzędzie Miarka</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Obróć aktywną warstwę, aby linia miarki była pozioma</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Użyj skali pomiaru</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Wyczyść próbniki kolorów</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Próbnik kolorów</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Kliknij, aby umieścić maksymalnie 10 próbników kolorów (widocznych w panelu Informacje). Przeciągnij, aby przenieść, Alt+klik, aby usunąć.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Narzędzie Próbnik kolorów</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Bieżąca warstwa</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Usuń próbnik kolorów</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Kliknij, aby pobrać kolor narzędzia. Alt+klik pobiera kolor tła.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Narzędzie Kroplomierz</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Dozwolonych jest maksymalnie 10 próbników kolorów.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Przenieś próbnik kolorów</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Próbka:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Pokaż pierścień próbkowania</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Przenieś zaznaczenie</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Strzałka</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Znacznik wyboru</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Chmura</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Krzyż</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Korona</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Narzędzie Kształt własny</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Kropla</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Narzędzie Elipsa</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Strzałka na końcu</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Kolor wypełnienia (prawy przycisk dla braku)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Koło zębate</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Serce</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Długość: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Błyskawica</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Przeciągnij, aby narysować linię. Shift ogranicza do 45 stopni.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Narzędzie Linia</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Operacja na ścieżce:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Narzędzie Wielokąt</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Puzzel</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Narzędzie Prostokąt</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Kształt:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Przeciągnij, aby narysować kształt. Shift zachowuje proporcje, Alt rysuje od środka.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Boki:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Dymek</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Gwiazda</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Współczynnik gwiazdy:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Strzałka na początku</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Kolor obrysu (prawy przycisk dla braku)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Narzędzie Trójkąt</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Grubość:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>Szukaj poleceń</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>Użyj domyślnych</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Wyczyść plasterki</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Usuń plasterek</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Podziel...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Podziel plasterek</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Edytuj plasterek</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Edytuj opcje plasterka</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>Stała szer.:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Nie zaznaczono plasterka</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Wiersze x kolumny (na przykład 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Plasterek</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Przeciągnij, aby utworzyć plasterek. Użyj polecenia Plik &gt; Eksportuj &gt; Zapisz plasterki, aby je wyeksportować.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Opcje plasterka</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Kliknij, aby zaznaczyć plasterek, przeciągnij, aby go przenieść lub zmienić rozmiar. Delete go usuwa, dwukrotne kliknięcie zmienia nazwę.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Narzędzie Zaznaczanie plasterków</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Narzędzie Plasterek</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Plasterki z linii pomocniczych</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Wyrównany</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Źródło klonowania: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Narzędzie Stempel</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Naprawianie...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Narzędzie Pędzel korygujący</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Impresjonistyczny</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Nie można użyć stempla, ponieważ nie określono obszaru do sklonowania (Alt+klik określa punkt źródłowy).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Maluj zaznaczonym wzorkiem.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Narzędzie Stempel z wzorkiem</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Maluj po rozpraszających elementach, aby je usunąć. Obszar jest odtwarzany na podstawie otoczenia.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Narzędzie Usuwanie</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Usuwanie...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Narzędzie Punktowy pędzel korygujący</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Maluj po plamach i niedoskonałościach, aby automatycznie je naprawić.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Typ:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>Wyczyść ostatnie pliki</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>Przywróć</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Maluj, aby zmiękczyć krawędzie i szczegóły.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Narzędzie Rozmywanie</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Maluj, aby przyciemnić obszary. Alt rozjaśnia.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Narzędzie Ściemnianie</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Maluj, aby rozjaśnić obszary. Alt przyciemnia.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Narzędzie Rozjaśnianie</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Malowanie palcem</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Chroń szczegóły</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Chroń tony</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Zakres:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Nasyć</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Maluj, aby zwiększyć kontrast lokalny i wyostrzyć szczegóły.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Narzędzie Wyostrzanie</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Przeciągnij, aby rozmazać farbę. Malowanie palcem zaczyna się od koloru narzędzia.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Narzędzie Smużenie</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Maluj, aby nasycić lub zmniejszyć nasycenie kolorów.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Narzędzie Gąbka</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>Nie można użyć „{0}”, ponieważ warstwa docelowa jest ukryta.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>Nie można użyć „{0}”, ponieważ warstwa jest zablokowana.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>Nie można użyć „{0}”, ponieważ warstwa docelowa nie jest warstwą pikseli. Najpierw zrasteryzuj warstwę (Warstwa &gt; Rasteryzuj).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>Zwiń do jednej kolumny</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>Dostosuj pasek narzędzi</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Wygładzanie</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Zatwierdź</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Ciągłe</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Przepływ:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Próbka punktowa</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Próbkuj wszystkie warstwy</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>Średnia {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Wielkość próbki:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>Szer.: {0:0} px  Wys.: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Tolerancja:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Wyrównaj krawędzie dolne</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Wyrównaj środki w poziomie</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Wyrównaj krawędzie lewe</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Wyrównaj krawędzie prawe</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Wyrównaj krawędzie górne</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Wyrównaj środki w pionie</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Automatyczne zaznaczanie:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Kliknięcie zaznacza najwyższą warstwę pod wskaźnikiem (tymczasowo z Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Anuluj przekształcenie (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Nie można przekształcić, ponieważ warstwa jest pusta.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Nie można przekształcić, ponieważ warstwa jest zablokowana lub nie ma zawartości.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Nie można przekształcić zaznaczenia, ponieważ warstwa jest zablokowana.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Zatwierdź przekształcenie (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Usuń linię pomocniczą</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Pływający</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Pływające zaznaczenie</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Przeciągaj uchwyty, aby skalować (Shift: proporcjonalnie, Alt: od środka), poza nimi, aby obracać, Ctrl+przeciągnięcie narożnika zniekształca, Ctrl+przeciągnięcie krawędzi pochyla. Enter zatwierdza, Esc anuluje.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Grupa</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Interpolacja:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Nie można zrealizować żądania, ponieważ warstwa jest zablokowana.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Przenieś linię pomocniczą</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Przeciągnij, aby przenieść warstwę lub zaznaczone piksele. Alt+przeciągnięcie powiela, Shift ogranicza. Klawisze strzałek przesuwają.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Narzędzie Przesunięcie</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Przesunięcie</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Pokaż elementy sterujące przekształcania</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Użyj polecenia Edycja &gt; Przekształcanie swobodne (Ctrl+T), aby przekształcić aktywną warstwę lub zaznaczenie.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Wszystkie wersaliki</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Pogrubiona kursywa</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Anuluj bieżące zmiany (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Wyśrodkuj tekst</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Zatwierdź bieżące zmiany (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Sztuczne pogrubienie</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Sztuczna kursywa</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Kliknij, aby dodać tekst punktowy, przeciągnij, aby dodać tekst akapitowy, kliknij istniejący tekst, aby go edytować. Ctrl+Enter zatwierdza, Esc anuluje.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Narzędzie Maska tekstu poziomego</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Narzędzie Tekst poziomy</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Wyrównaj tekst do lewej</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Kliknij, aby pisać; zatwierdzenie tworzy zaznaczenie w kształcie tekstu.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Zwykły</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Wyrównaj tekst do prawej</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Ustaw wygładzanie</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Ustaw styl czcionki</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Przekreślenie</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Kolor tekstu</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Przełącz orientację tekstu</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Maska tekstu</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Narzędzie Maska tekstu pionowego</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Narzędzie Tekst pionowy</value>
   </data>
 </root>

@@ -44,9 +44,9 @@ public sealed class MarqueeTool : SelectionToolBase
 
     public override ToolId Id => _ellipse ? ToolId.EllipticalMarquee : ToolId.RectangularMarquee;
 
-    public override string Name => _ellipse ? "Elliptical Marquee Tool" : "Rectangular Marquee Tool";
+    public override string Name => _ellipse ? Strings.MarqueeTools_EllipticalMarqueeTool : Strings.MarqueeTools_RectangularMarqueeTool;
 
-    public override string Hint => "Drag to select. Shift constrains, Alt draws from the center. Drag inside a selection to move it.";
+    public override string Hint => Strings.MarqueeTools_Hint;
 
     public MarqueeStyle Style { get; set; }
 
@@ -77,7 +77,7 @@ public sealed class MarqueeTool : SelectionToolBase
         _current = Style == MarqueeStyle.FixedSize ? input.Doc : input.Doc;
         Host.InvalidateOverlay();
         SKRect r = GetRect();
-        Host.SetStatus($"W: {r.Width:0} px  H: {r.Height:0} px");
+        Host.SetStatus(string.Format(Strings.Tools_SizeInfo, r.Width, r.Height));
     }
 
     private SKRect GetRect()
@@ -120,7 +120,7 @@ public sealed class MarqueeTool : SelectionToolBase
         else path.AddRect(rect);
         bool aa = AntiAlias;
         if (!_ellipse) AntiAlias = false;
-        ApplyPath(path, _mode, _ellipse ? "Elliptical Marquee" : "Rectangular Marquee");
+        ApplyPath(path, _mode, _ellipse ? Strings.MarqueeTools_EllipticalMarquee : Strings.MarqueeTools_RectangularMarquee);
         AntiAlias = aa;
     }
 
@@ -136,12 +136,12 @@ public sealed class MarqueeTool : SelectionToolBase
     {
         BuildCommonOptions(options, true, _ellipse);
         options.Separator();
-        options.EnumCombo("Style:", () => Style, v => { Style = v; Host.RefreshOptions(); }, 110);
+        options.EnumCombo(Strings.MarqueeTools_StyleColon, () => Style, v => { Style = v; Host.RefreshOptions(); }, 110);
         bool fixedStyle = Style != MarqueeStyle.Normal;
-        options.Number("W:", 1, 30000, () => FixedWidth, v => FixedWidth = (float)v, "0", null, 1, 64).IsEnabled = fixedStyle;
-        options.Number("H:", 1, 30000, () => FixedHeight, v => FixedHeight = (float)v, "0", null, 1, 64).IsEnabled = fixedStyle;
+        options.Number(Strings.CropTools_WColon, 1, 30000, () => FixedWidth, v => FixedWidth = (float)v, "0", null, 1, 64).IsEnabled = fixedStyle;
+        options.Number(Strings.CropTools_HColon, 1, 30000, () => FixedHeight, v => FixedHeight = (float)v, "0", null, 1, 64).IsEnabled = fixedStyle;
         options.Separator();
-        options.Button("Select and Mask...", () => UI.Commands.EditorCommands.SelectAndMask(Host), "Refine the selection edge");
+        options.Button(Strings.EditorCommands_SelectAndMaskEllipsis, () => UI.Commands.EditorCommands.SelectAndMask(Host), Strings.MarqueeTools_RefineEdgeTip);
     }
 }
 
@@ -158,9 +158,9 @@ public sealed class SingleLineMarqueeTool : SelectionToolBase
 
     public override ToolId Id => _row ? ToolId.SingleRowMarquee : ToolId.SingleColumnMarquee;
 
-    public override string Name => _row ? "Single Row Marquee Tool" : "Single Column Marquee Tool";
+    public override string Name => _row ? Strings.MarqueeTools_SingleRowMarqueeTool : Strings.MarqueeTools_SingleColumnMarqueeTool;
 
-    public override string Hint => "Click to select a 1 pixel " + (_row ? "row" : "column") + ".";
+    public override string Hint => _row ? Strings.MarqueeTools_SingleRowHint : Strings.MarqueeTools_SingleColumnHint;
 
     public override void PointerDown(ToolInput input)
     {

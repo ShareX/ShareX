@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>ความสดใส</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>ผู้เขียน:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>ผู้เขียน: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>ล้างทั้งหมด</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>ล้างการนับ</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>ล้างบันทึก</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>กลุ่มการนับ {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>คลิกเพื่อวางเครื่องหมายนับแบบมีหมายเลข ลากเพื่อย้าย Alt+คลิกเพื่อลบออก</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>จำนวน: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>เครื่องมือนับ</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>ลบการนับ</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>ลบบันทึก</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>แก้ไขบันทึก</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>กลุ่ม:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>สีของกลุ่ม</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>ขนาดป้ายกำกับ:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>ขนาดเครื่องหมาย:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>ย้ายการนับ</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>ย้ายบันทึก</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>สร้างกลุ่มการนับใหม่</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>สีของบันทึก</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>คลิกเพื่อเพิ่มบันทึก คลิกบันทึกเพื่อแก้ไข ลากเพื่อย้าย Alt+คลิกเพื่อลบ</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>เครื่องมือบันทึก</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>เพิ่มอาร์ตบอร์ดใหม่</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>อาร์ตบอร์ด {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>พื้นหลังอาร์ตบอร์ด</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>ลากบนผืนผ้าใบว่างเพื่อสร้างอาร์ตบอร์ด ลากชื่ออาร์ตบอร์ดเพื่อย้ายพร้อมกับเนื้อหา</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>ย้ายอาร์ตบอร์ด</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>เครื่องมืออาร์ตบอร์ด</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>อาร์ตบอร์ดใหม่</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (โทรศัพท์)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (สี่เหลี่ยมจัตุรัส)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (แท็บเล็ต)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>เพิ่ม</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>ปรับปรุงขอบ</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>บ่วงบาศ</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>ไม้กายสิทธิ์</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>คลิกเพื่อเลือกสีที่คล้ายกัน Shift เพิ่ม Alt ลบออก</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>เครื่องมือไม้กายสิทธิ์</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>การเลือกวัตถุ</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>ลากสี่เหลี่ยมหรือบ่วงบาศรอบวัตถุเพื่อเลือก</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>เครื่องมือเลือกวัตถุ</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>การเลือกด่วน</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>ระบายทับพื้นที่เพื่อเลือก การเลือกจะขยายออกจนพบขอบ Alt ลบออก</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>เครื่องมือเลือกด่วน</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>กำลังเลือกวัตถุ...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>แปรงเลือก</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>ระบายเพื่อเพิ่มในส่วนที่เลือก Alt (หรือโหมดลบออก) จะนำออกจากส่วนที่เลือก</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงเลือก</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>ด้านหลัง</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>แสงสด</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>เปิดใช้เอฟเฟกต์การสะสมสีแบบแอร์บรัช</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>{0}ไม่สามารถระบายบนมาสก์เลเยอร์ได้</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>ปริมาณสีที่ใช้ต่อการแตะแต่ละครั้ง</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>การปกคลุมของสีสูงสุดต่อเส้น (ปุ่ม 0-9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>ขนาดตามแรงกด</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>การทำให้เรียบ:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>แปรงปรับแต่ง</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>ระบายการปรับแต่งเฉพาะที่ แต่ละเส้นจะแก้ไขมาสก์ของเลเยอร์ปรับแต่ง Alt ลบการปรับแต่ง</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>แปรง{0}</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงปรับแต่ง</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>การปรับแต่ง:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>ปริมาณ:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>ลบอัตโนมัติ</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>ระบายด้วยสีพื้นหน้า Shift+คลิกเพื่อวาดเส้นตรง [ ] เปลี่ยนขนาด</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรง</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>ทำความสะอาดหลังแต่ละเส้น</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>แทนที่สีที่คล้ายกับสีตัวอย่างด้วยสีพื้นหน้า</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>เครื่องมือแทนที่สี</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>โหลด:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>สีที่โหลด (พื้นหน้า)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>ผสม:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>ผสมสีที่โหลดกับสีบนผืนผ้าใบเหมือนสีจริง</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงผสม</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>เลเยอร์ใหม่ต่อเส้น</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>ระบายเส้นขอบคมแบบไม่ลบรอยหยักด้วยสีพื้นหน้า</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>เครื่องมือดินสอ</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>การสุ่มตัวอย่าง:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>ความเปียก:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>มุม</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>ตัวเลือกสี ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>ลากเพื่อกำหนดพื้นที่ครอบตัด ลากด้านนอกเพื่อหมุน Enter ยืนยัน Esc ยกเลิก</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>ก: {0:0} px  ส: {1:0} px  มุม: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>เครื่องมือครอบตัด</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>ลบพิกเซลที่ถูกครอบตัด</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>ส:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>อัตราส่วนเดิม</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>ครอบตัดแบบเปอร์สเปกทีฟ</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>ลากเพื่อสร้างกรอบครอบตัด แล้วลากมุมให้ตรงกับเปอร์สเปกทีฟของวัตถุ Enter ครอบตัดและปรับให้ตรง</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>เครื่องมือครอบตัดแบบเปอร์สเปกทีฟ</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>อัตราส่วน</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>อัตราส่วน:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (สี่เหลี่ยมจัตุรัส)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>กฎสามส่วน</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>แสดงเส้นตาราง</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>สลับความกว้างและความสูง</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>ก:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>ยกเลิก</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>ครั้งเดียว</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>รูปร่างกำหนดเอง</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>วงรี</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>เส้น</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>รูปหลายเหลี่ยม</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>สี่เหลี่ยมผืนผ้า</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>สามเหลี่ยม</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>เส้นทาง</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>ส่วนมืด</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>ลบพิกเซลที่ตรงกับสีใต้จุดกึ่งกลางแปรง (ฮอตสปอต)</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>เครื่องมือยางลบพื้นหลัง</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>ไม่ต่อเนื่อง</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>ลบกลับสู่ประวัติ</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>ลบจนโปร่งใส หรือเป็นสีพื้นหลังบนเลเยอร์ที่ล็อก Alt ลบกลับสู่ประวัติ</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>เครื่องมือยางลบ</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>ขีดจำกัด:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>ป้องกันสีพื้นหน้า</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>ส่งออก...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>รักษาความโปร่งใส</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>ดิเธอร์</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>แก้ไข...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>ไล่ระดับสี:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>ลากเพื่อวาดการไล่ระดับสี Shift จำกัดมุมที่ 45 องศา</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>มุม: {0:0.0}°  ระยะทาง: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>เครื่องมือไล่ระดับสี</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>ไล่ระดับสีแบบ{0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>ยางลบวิเศษ</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>คลิกเพื่อลบพิกเซลที่มีสีคล้ายกันจนโปร่งใส</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>เครื่องมือยางลบวิเศษ</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>ถังสี</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>คลิกเพื่อเติมพิกเซลที่มีสีคล้ายกันด้วยสีพื้นหน้าหรือลวดลาย</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>เครื่องมือถังสี</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>ความโปร่งใส</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>เพิ่มนอยส์</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>คลื่น</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>ล้างกรอบ</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>ล้างเนื้อหาในกรอบ</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>กรอบวงรี</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>กรอบ {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>ลากเพื่อสร้างตัวยึดตำแหน่งกรอบ วางหรือแปะภาพเพื่อเติมกรอบที่ใช้งานอยู่</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>เครื่องมือกรอบ</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>วางไฟล์ภาพลงในกรอบที่ใช้งานอยู่</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>กรอบสี่เหลี่ยม</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>เพิ่มจุดหยุด</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>เหนือจริง</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>พื้นที่:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>ระบายเส้นแบบมีสไตล์ที่สุ่มตัวอย่างจากแหล่งประวัติ</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงประวัติศิลป์</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>ไม่สามารถใช้แปรงประวัติได้ เนื่องจากสถานะประวัติมีขนาดผืนผ้าใบไม่เท่ากัน</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>ระบายพิกเซลกลับจากสถานะประวัติที่เลือกเป็นแหล่งในแผงประวัติ</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงประวัติ</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>กำหนดแหล่งประวัติในแผงประวัติก่อน</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>ลบสแนปช็อต</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>สุ่มตัวอย่างใหม่:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>ความถี่:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>ลากเพื่อวาดส่วนที่เลือกแบบอิสระ ปล่อยเพื่อปิด</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>เครื่องมือบ่วงบาศ</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>บ่วงบาศแม่เหล็ก</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>คลิกเพื่อเริ่ม แล้วเลื่อนไปตามขอบ คลิกเพื่อเพิ่มจุดยึด ดับเบิลคลิกหรือ Enter เพื่อปิด Backspace ลบจุดยึด</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>เครื่องมือบ่วงบาศแม่เหล็ก</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>บ่วงบาศหลายเหลี่ยม</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>คลิกเพื่อเพิ่มจุด ดับเบิลคลิก Enter หรือคลิกจุดเริ่มต้นเพื่อปิด Backspace ลบจุดสุดท้าย</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>เครื่องมือบ่วงบาศหลายเหลี่ยม</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>พื้นหลัง</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>สลับการมองเห็น (Alt+คลิกเพื่อแสดงเฉพาะเลเยอร์นี้)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>กรอบเลือกวงรี</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>เครื่องมือกรอบเลือกวงรี</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>ลากเพื่อเลือก Shift จำกัด Alt วาดจากจุดกึ่งกลาง ลากภายในส่วนที่เลือกเพื่อย้าย</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>กรอบเลือกสี่เหลี่ยม</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>เครื่องมือกรอบเลือกสี่เหลี่ยม</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>ปรับขอบของส่วนที่เลือก</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>คลิกเพื่อเลือกคอลัมน์ขนาด 1 พิกเซล</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>เครื่องมือกรอบเลือกคอลัมน์เดียว</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>คลิกเพื่อเลือกแถวขนาด 1 พิกเซล</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>เครื่องมือกรอบเลือกแถวเดียว</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>สไตล์:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>ความเข้มของสี:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(ว่าง)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>พอดีหน้าจอ</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>ลากเพื่อเลื่อนมุมมอง กด Space ค้างไว้ขณะใช้เครื่องมือใดก็ได้เพื่อใช้เครื่องมือมือชั่วคราว ดับเบิลคลิกเพื่อให้พอดีหน้าจอ</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>เครื่องมือมือ</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>รีเซ็ตมุมมอง</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>ลากเพื่อหมุนมุมมองผืนผ้าใบโดยไม่เปลี่ยนพิกเซล Shift สแนปทีละ 15 องศา Esc หรือรีเซ็ตมุมมองเพื่อคืนค่า</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>เครื่องมือหมุนมุมมอง</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>มุมการหมุน:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>ซูมแบบลาก</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>คลิกเพื่อซูมเข้า Alt+คลิกเพื่อซูมออก ลากซ้าย/ขวาเพื่อซูมแบบลาก หรือลากสี่เหลี่ยมเมื่อปิดซูมแบบลาก</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>ซูมเข้า</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>ซูมออก</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>เครื่องมือซูม</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>ดำ</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>เมนูแผง</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>เพิ่มจุดยึด</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>คลิกส่วนของเส้นพาธเพื่อเพิ่มจุดยึด</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>เครื่องมือเพิ่มจุดยึด</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>รวม</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>ผสานส่วนประกอบพาธที่ซ้อนทับกัน</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>แปลงจุด</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>คลิกจุดโค้งเพื่อเปลี่ยนเป็นมุม ลากจุดมุมเพื่อดึงจุดจับโค้งออกมา ลากจุดจับเพื่อแยก</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>เครื่องมือแปลงจุด</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>ลบจุดยึด</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>คลิกจุดยึดเพื่อลบ</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>เครื่องมือลบจุดยึด</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>คลิกหรือลากกรอบเลือกเพื่อเลือกจุดยึด ลากจุดหรือจุดจับเพื่อปรับรูปร่าง Alt ลากจุดจับแยกอิสระ</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>เครื่องมือเลือกโดยตรง</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>ลากจุดยึด</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>ยกเว้น</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>ตัดกัน</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>ย้ายพาธ</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>ขยับจุดยึด</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>คลิกส่วนประกอบพาธเพื่อเลือก ลากเพื่อย้าย Alt+ลากเพื่อทำซ้ำ Delete เพื่อลบ</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>เครื่องมือเลือกพาธ</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>ลบส่วนประกอบถัดไปออกจากส่วนประกอบแรก</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>เส้นทางทำงาน</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>วาดเส้นขอบเส้นทางด้วยแปรง</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>เพิ่ม/ลบอัตโนมัติ</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>ปิดพาธ</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>ปากกาส่วนโค้ง</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>คลิกเพื่อวางจุด เส้นโค้งจะไหลผ่านจุดอย่างราบรื่น คลิกจุดแรกเพื่อปิด Enter หรือ Esc เพื่อเสร็จสิ้น</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>เครื่องมือปากกาส่วนโค้ง</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>ความพอดีของเส้นโค้ง:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>ปากกาอิสระ</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>ลากเพื่อวาดพาธแบบอิสระ ระบบจะปรับให้เป็นเส้นโค้งเรียบ แม่เหล็กจะสแนปกับขอบ</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>เครื่องมือปากกาอิสระ</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>แม่เหล็ก</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>สร้าง:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>มาสก์</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>ปากกา</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>คลิกเพื่อเพิ่มจุดมุม ลากเพื่อเพิ่มจุดโค้ง คลิกจุดแรกเพื่อปิด Ctrl แก้ไขจุด Alt แปลงจุด</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>เครื่องมือปากกา</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>ยางยืด</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>ส่วนที่เลือก...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>ไม่มีชื่อ-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>ลายไม้</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>ย้ายแบบรับรู้เนื้อหา</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>ย้ายแบบรับรู้เนื้อหา...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>เครื่องมือย้ายแบบรับรู้เนื้อหา</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>ปริมาณการทำให้มืด:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>ปลายทาง</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>วาดส่วนที่เลือก (หรือใช้เครื่องมือเลือกใดก็ได้) แล้วลากส่วนที่เลือก</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>ขยาย</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>ย้าย</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>แพตช์</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>แพตช์:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>เครื่องมือแพตช์</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>ขนาดรูม่านตา:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>ตาแดง</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>คลิกที่ตาแดง (หรือลากรอบ) เพื่อลบแสงสะท้อนสีแดง</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>เครื่องมือแก้ตาแดง</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>แหล่ง</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>โครงสร้าง:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>ลากเพื่อวัดระยะทางและมุม ลากจุดปลายเพื่อปรับ</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>เครื่องมือไม้บรรทัด</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>หมุนเลเยอร์ที่ใช้งานอยู่เพื่อให้เส้นไม้บรรทัดอยู่ในแนวระดับ</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>ใช้มาตราส่วนการวัด</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>ล้างตัวสุ่มตัวอย่างสี</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>ตัวสุ่มตัวอย่างสี</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>คลิกเพื่อวางตัวสุ่มตัวอย่างสีได้สูงสุด 10 ตัว (แสดงในแผงข้อมูล) ลากเพื่อย้าย Alt+คลิกเพื่อลบ</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>เครื่องมือสุ่มตัวอย่างสี</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>เลเยอร์ปัจจุบัน</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>ลบตัวสุ่มตัวอย่างสี</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>คลิกเพื่อสุ่มตัวอย่างสีพื้นหน้า Alt+คลิกเพื่อสุ่มตัวอย่างสีพื้นหลัง</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>เครื่องมือดูดสี</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>อนุญาตตัวสุ่มตัวอย่างสีได้สูงสุด 10 ตัว</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>ย้ายตัวสุ่มตัวอย่างสี</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>ตัวอย่าง:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>แสดงวงแหวนสุ่มตัวอย่าง</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>ย้ายส่วนที่เลือก</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>ลูกศร</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>เครื่องหมายถูก</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>เมฆ</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>กากบาท</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>มงกุฎ</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>เครื่องมือรูปร่างกำหนดเอง</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>หยดน้ำ</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>เครื่องมือวงรี</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>ลูกศรปลาย</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>สีเติม (คลิกขวาเพื่อไม่มี)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>เฟือง</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>หัวใจ</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>ความยาว: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>สายฟ้า</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>ลากเพื่อวาดเส้น Shift จำกัดที่ 45 องศา</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>เครื่องมือเส้น</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>การดำเนินการพาธ:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>เครื่องมือรูปหลายเหลี่ยม</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>จิ๊กซอว์</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>เครื่องมือสี่เหลี่ยม</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>รูปร่าง:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>ลากเพื่อวาดรูปร่าง Shift รักษาสัดส่วน Alt วาดจากจุดกึ่งกลาง</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>จำนวนด้าน:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>กล่องคำพูด</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>ดาว</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>อัตราส่วนดาว:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>ลูกศรต้น</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>สีเส้นขอบ (คลิกขวาเพื่อไม่มี)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>เครื่องมือสามเหลี่ยม</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>ความหนา:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>ค้นหาคำสั่ง</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>ใช้ค่าเริ่มต้น</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>ล้างชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>ลบชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>แบ่ง...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>แบ่งชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>แก้ไขชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>แก้ไขตัวเลือกชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>ก คงที่:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>ไม่ได้เลือกชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>แถว x คอลัมน์ (เช่น 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>ชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>ลากเพื่อสร้างชิ้นส่วน ใช้ ไฟล์ &gt; ส่งออก &gt; บันทึกชิ้นส่วน เพื่อส่งออก</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>ตัวเลือกชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>คลิกเพื่อเลือกชิ้นส่วน ลากเพื่อย้ายหรือปรับขนาด Delete เพื่อลบ ดับเบิลคลิกเพื่อเปลี่ยนชื่อ</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>เครื่องมือเลือกชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>เครื่องมือชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>ชิ้นส่วนจากเส้นไกด์</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>จัดแนว</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>แหล่งโคลน: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>เครื่องมือตราประทับโคลน</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>กำลังซ่อมแซม...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงซ่อมแซม</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>อิมเพรสชันนิสม์</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>ไม่สามารถใช้เครื่องมือตราประทับโคลนได้ เนื่องจากยังไม่ได้กำหนดพื้นที่ที่จะโคลน (Alt+คลิกเพื่อกำหนดจุดแหล่ง)</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>ระบายด้วยลวดลายที่เลือก</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>เครื่องมือตราประทับลวดลาย</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>ระบายทับสิ่งรบกวนเพื่อลบออก พื้นที่จะถูกสร้างขึ้นใหม่จากบริเวณรอบข้าง</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>เครื่องมือลบออก</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>กำลังลบออก...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงซ่อมแซมจุด</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>ระบายทับจุดและตำหนิเพื่อซ่อมแซมโดยอัตโนมัติ</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>ประเภท:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>ล้างไฟล์ล่าสุด</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>คืนค่า</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>ระบายเพื่อทำให้ขอบและรายละเอียดนุ่มนวลขึ้น</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>เครื่องมือเบลอ</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>ระบายเพื่อทำให้พื้นที่มืดลง Alt ทำให้สว่างขึ้น</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>เครื่องมือเบิร์น</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>ระบายเพื่อทำให้พื้นที่สว่างขึ้น Alt ทำให้มืดลง</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>เครื่องมือดอดจ์</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>การระบายด้วยนิ้ว</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>ป้องกันรายละเอียด</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>ป้องกันโทนสี</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>ช่วง:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>เพิ่มความอิ่มตัว</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>ระบายเพื่อเพิ่มคอนทราสต์เฉพาะที่และทำให้รายละเอียดคมชัด</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>เครื่องมือเพิ่มความคมชัด</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>ลากเพื่อป้ายสี การระบายด้วยนิ้วจะเริ่มด้วยสีพื้นหน้า</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>เครื่องมือป้าย</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>ระบายเพื่อเพิ่มหรือลดความอิ่มตัวของสี</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>เครื่องมือฟองน้ำ</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>ไม่สามารถใช้{0}ได้ เนื่องจากเลเยอร์เป้าหมายถูกซ่อนอยู่</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>ไม่สามารถใช้{0}ได้ เนื่องจากเลเยอร์ถูกล็อก</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>ไม่สามารถใช้{0}ได้ เนื่องจากเลเยอร์เป้าหมายไม่ใช่เลเยอร์พิกเซล แรสเตอร์ไรซ์เลเยอร์ก่อน (เลเยอร์ &gt; แรสเตอร์ไรซ์)</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>ยุบเป็นคอลัมน์เดียว</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>ปรับแต่ง แถบเครื่องมือ</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>ลบรอยหยัก</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>ยืนยัน</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>ต่อเนื่อง</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>การไหล:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>ตัวอย่างจุดเดียว</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>สุ่มตัวอย่างทุกเลเยอร์</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>ค่าเฉลี่ย {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>ขนาดตัวอย่าง:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>ก: {0:0} px  ส: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>ความคลาดเคลื่อน:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>จัดขอบล่าง</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>จัดกึ่งกลางแนวนอน</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>จัดขอบซ้าย</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>จัดขอบขวา</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>จัดขอบบน</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>จัดกึ่งกลางแนวตั้ง</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>เลือกอัตโนมัติ:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>คลิกเพื่อเลือกเลเยอร์บนสุดใต้ตัวชี้ (Ctrl ชั่วคราว)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>ยกเลิกการแปลง (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>ไม่สามารถแปลงได้ เนื่องจากเลเยอร์ว่างเปล่า</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>ไม่สามารถแปลงได้ เนื่องจากเลเยอร์ถูกล็อกหรือไม่มีเนื้อหา</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>ไม่สามารถแปลงส่วนที่เลือกได้ เนื่องจากเลเยอร์ถูกล็อก</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>ยืนยันการแปลง (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>ลบเส้นไกด์</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>ลอย</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>ส่วนที่เลือกแบบลอย</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>ลากจุดจับเพื่อปรับขนาด (Shift: ตามสัดส่วน, Alt: จากจุดกึ่งกลาง) ลากด้านนอกเพื่อหมุน Ctrl+ลากมุมเพื่อบิดเบือน Ctrl+ลากขอบเพื่อเอียง Enter ยืนยัน Esc ยกเลิก</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>กลุ่ม</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>การประมาณค่า:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการตามคำขอได้ เนื่องจากเลเยอร์ถูกล็อก</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>ย้ายเส้นไกด์</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>ลากเพื่อย้ายเลเยอร์หรือพิกเซลที่เลือก Alt+ลากเพื่อทำซ้ำ Shift จำกัด ปุ่มลูกศรขยับ</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>เครื่องมือย้าย</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>ขยับ</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>แสดงตัวควบคุมการแปลง</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>ใช้ แก้ไข &gt; แปลงอิสระ (Ctrl+T) เพื่อแปลงเลเยอร์ที่ใช้งานอยู่หรือส่วนที่เลือก</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>ตัวพิมพ์ใหญ่ทั้งหมด</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>ตัวหนาเอียง</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>ยกเลิกการแก้ไขปัจจุบัน (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>จัดข้อความกึ่งกลาง</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>ยืนยันการแก้ไขปัจจุบัน (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>ตัวหนาจำลอง</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>ตัวเอียงจำลอง</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>คลิกเพื่อเพิ่มข้อความแบบจุด ลากเพื่อเพิ่มข้อความแบบย่อหน้า คลิกข้อความที่มีอยู่เพื่อแก้ไข Ctrl+Enter ยืนยัน Esc ยกเลิก</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>เครื่องมือมาสก์ข้อความแนวนอน</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>เครื่องมือข้อความแนวนอน</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>จัดข้อความชิดซ้าย</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>คลิกเพื่อพิมพ์ เมื่อยืนยันจะสร้างส่วนที่เลือกเป็นรูปข้อความ</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>ปกติ</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>จัดข้อความชิดขวา</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>ตั้งค่าการลบรอยหยัก</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>ตั้งค่าสไตล์ฟอนต์</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>ขีดทับ</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>สีข้อความ</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>สลับการวางแนวข้อความ</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>มาสก์ข้อความ</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>เครื่องมือมาสก์ข้อความแนวตั้ง</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>เครื่องมือข้อความแนวตั้ง</value>
   </data>
 </root>

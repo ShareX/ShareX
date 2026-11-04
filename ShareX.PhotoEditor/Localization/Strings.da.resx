@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>Lyster</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Forfatter:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Forfatter: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Ryd alt</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Ryd optælling</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Ryd noter</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Optællingsgruppe {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Klik for at placere nummererede optællingsmarkører. Træk for at flytte, Alt-klik for at fjerne.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Antal: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Optællingsværktøj</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Slet optælling</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Slet note</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Rediger note</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Gruppe:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Gruppefarve</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Etiketstørrelse:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Markørstørrelse:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Flyt optælling</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Flyt note</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Opret en ny optællingsgruppe</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Notefarve</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Klik for at tilføje en note. Klik på en note for at redigere den, træk for at flytte den, Alt-klik for at slette den.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Noteværktøj</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Tilføj nyt tegnebræt</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Tegnebræt {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Baggrund for tegnebræt</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Træk på et tomt lærred for at oprette et tegnebræt. Træk i titlen på et tegnebræt for at flytte det med indholdet.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Flyt tegnebræt</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Tegnebrætværktøj</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Nyt tegnebræt</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (telefon)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (kvadrat)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (tablet)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Tilføj</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Forbedr kant</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Lasso</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Tryllestav</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Klik for at markere lignende farver. Skift tilføjer, Alt subtraherer.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Tryllestavværktøj</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Objektmarkering</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Træk et rektangel eller en lasso omkring et objekt for at markere det.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Objektmarkeringsværktøj</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Hurtigmarkering</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Mal over et område for at markere det; markeringen vokser ud til kanterne. Alt subtraherer.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Hurtigmarkeringsværktøj</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Markerer objekt...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Markeringspensel</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Mal for at føje til markeringen. Alt (eller tilstanden Subtraher) fjerner fra den.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Markeringspenselværktøj</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>Bagved</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>Kraftigt lys</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Aktivér opbygningseffekter i airbrushstil</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>"{0}" kan ikke male på en lagmaske.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Maling påført pr. dup</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Maksimal maledækning pr. strøg (tasterne 0-9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Størrelse efter tryk</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Udjævning:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Justeringspensel</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Mal en lokal justering. Hvert strøg redigerer masken på et justeringslag. Alt sletter justeringen.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>{0}-pensel</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Justeringspenselværktøj</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Justering:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Mængde:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Automatisk sletning</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Mal med forgrundsfarven. Skift-klik tegner en lige linje. [ ] ændrer størrelsen.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Penselværktøj</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Rens efter hvert strøg</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Erstatter farver, der ligner prøvefarven, med forgrundsfarven.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Farveerstatningsværktøj</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Indlæs:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Indlæs farve (forgrund)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Bland:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Blander den indlæste maling med lærredets farver som ægte maling.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Blandepenselværktøj</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Nyt lag pr. strøg</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Mal skarpe linjer uden udglatning med forgrundsfarven.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Blyantværktøj</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Prøve:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Våd:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>Vinkel</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>Farvevælger ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Træk for at angive beskæringsområdet; træk uden for det for at rotere. Enter bekræfter, Esc annullerer.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>B: {0:0} px  H: {1:0} px  Vinkel: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Beskæringsværktøj</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Slet beskårne pixel</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>H:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Oprindeligt forhold</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Perspektivbeskæring</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Træk en beskæringsboks, og træk derefter dens hjørner, så de passer til et objekts perspektiv. Enter beskærer og retter op.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Perspektivbeskæringsværktøj</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Proportion</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Forhold:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (kvadrat)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Tredjedelsreglen</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Vis gitter</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Byt om på bredde og højde</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>B:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>Annuller</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>Én gang</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Brugerdefineret form</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Ellips</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Polygon</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Rektangel</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Trekant</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>Sti</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>Skygger</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Sletter pixel, der svarer til farven under penslens midte (hotspot).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Baggrundsviskelæderværktøj</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Ikke sammenhængende</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Slet til historik</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Sletter til gennemsigtighed eller til baggrundsfarven på låste lag. Alt sletter til historik.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Viskelæderværktøj</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Grænser:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Beskyt forgrundsfarve</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>Eksportér...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>Bevar gennemsigtighed</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Dither</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Rediger...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Forløb:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Træk for at tegne et forløb. Skift begrænser vinklen til 45 grader.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Vinkel: {0:0.0}°  Afstand: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Forløbsværktøj</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>{0} forløb</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Magisk viskelæder</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Klik for at slette pixel med lignende farve til gennemsigtighed.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Magisk viskelæder-værktøj</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Malerspand</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Klik for at udfylde pixel med lignende farve med forgrundsfarven eller et mønster.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Malerspandværktøj</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Gennemsigtighed</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>Tilføj støj</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>Våg</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Tøm ramme</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Ryd rammeindhold</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Elliptisk ramme</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Ramme {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Træk for at oprette en pladsholderramme. Placer eller indsæt et billede for at udfylde den aktive ramme.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Rammeværktøj</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Placer en billedfil i den aktive ramme</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Rektangulær ramme</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>Tilføj stop</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>Surrealistisk</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Område:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Maler stiliserede strøg ud fra historikkilden.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Kunsthistorikpenselværktøj</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Historikpenslen kan ikke bruges, fordi historiktilstanden ikke har samme lærredsstørrelse.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Maler pixel tilbage fra den historiktilstand, der er valgt som kilde i panelet Historik.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Historikpenselværktøj</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Angiv først en historikkilde i panelet Historik.</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>Slet snapshot</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>Ny sampling:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Frekvens:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Træk for at tegne en frihåndsmarkering. Slip for at lukke den.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Lassoværktøj</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Magnetisk lasso</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Klik for at starte, og følg derefter en kant. Klik for at tilføje ankre, dobbeltklik eller Enter for at lukke, Backspace fjerner et anker.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Magnetisk lasso-værktøj</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Polygonlasso</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Klik for at tilføje punkter. Dobbeltklik, Enter eller klik på startpunktet for at lukke. Backspace fjerner det sidste punkt.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Polygonlassoværktøj</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>Baggrund</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>Slå synlighed til/fra (Alt-klik viser kun dette lag)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Elliptisk markering</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Elliptisk markeringsværktøj</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Træk for at markere. Skift begrænser, Alt tegner fra midten. Træk inden for en markering for at flytte den.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Rektangulær markering</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Rektangulært markeringsværktøj</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Forfin markeringskanten</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Klik for at markere en kolonne på 1 pixel.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Markeringsværktøj til enkelt kolonne</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Klik for at markere en række på 1 pixel.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Markeringsværktøj til enkelt række</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Typografi:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>Farveintensitet:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(tomt)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Tilpas til skærm</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Træk for at rulle visningen. Hold mellemrumstasten nede med et vilkårligt værktøj for midlertidigt at bruge Hånd-værktøjet. Dobbeltklik for at tilpasse til skærmen.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Håndværktøj</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Nulstil visning</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Træk for at rotere lærredsvisningen uden at ændre pixel. Skift fastgør ved 15 grader. Esc eller Nulstil visning gendanner den.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Værktøj til visningsrotation</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Rotationsvinkel:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Glidende zoom</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Klik for at zoome ind, Alt-klik for at zoome ud. Træk til venstre/højre for glidende zoom, eller træk et rektangel, når glidende zoom er slået fra.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Zoom ind</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Zoom ud</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Zoomværktøj</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>Sort</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>Panelmenu</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Tilføj ankerpunkt</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Klik på et stisegment for at tilføje et ankerpunkt.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Værktøj til tilføjelse af ankerpunkt</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Kombiner</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Flet overlappende stikomponenter</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Konverter punkt</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Klik på et glat punkt for at gøre det til et hjørne; træk et hjørnepunkt for at trække glatte håndtag ud. Træk et håndtag for at bryde det.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Værktøj til konvertering af punkt</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Slet ankerpunkt</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Klik på et ankerpunkt for at slette det.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Værktøj til sletning af ankerpunkt</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Klik eller træk en markering for at vælge ankerpunkter; træk punkter eller håndtag for at omforme. Alt trækker et håndtag uafhængigt.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Direkte markeringsværktøj</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Træk anker</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Udelad</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Fællesmængde</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Flyt sti</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Skub anker</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Klik på en stikomponent for at vælge den, træk for at flytte den. Alt-træk dublerer, Delete fjerner.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Stimarkeringsværktøj</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Subtraher senere komponenter fra den første</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>Arbejdssti</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>Tegn streg langs sti med pensel</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Automatisk tilføj/slet</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Luk sti</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Krumningspen</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Klik for at placere punkter; kurven løber glat gennem dem. Klik på det første punkt for at lukke, Enter eller Esc for at afslutte.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Krumningspenværktøj</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Kurvetilpasning:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Frihåndspen</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Træk for at tegne en sti på frihånd; den tilpasses med glatte kurver. Magnetisk fastgøres til kanter.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Frihåndspenværktøj</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Magnetisk</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Opret:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Maske</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Pen</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Klik for at tilføje hjørnepunkter, træk for at tilføje glatte punkter. Klik på det første punkt for at lukke. Ctrl redigerer punkter, Alt konverterer dem.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Penværktøj</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Gummibånd</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Markering...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>Unavngivet-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>Træåre</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Indholdsbaseret flytning</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Indholdsbaseret flytning...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Værktøj til indholdsbaseret flytning</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Mørkningsmængde:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Destination</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Tegn en markering (eller brug et markeringsværktøj), og træk derefter markeringen.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Udvid</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Flyt</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Lap</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Lap:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Lapværktøj</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Pupilstørrelse:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Røde øjne</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Klik på et rødt øje (eller træk rundt om det) for at fjerne den røde refleks.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Røde øjne-værktøj</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Kilde</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Struktur:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Træk for at måle afstand og vinkel. Træk et slutpunkt for at justere det.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Linealværktøj</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Roter det aktive lag, så linealens linje bliver vandret</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Brug måleskala</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Ryd farveprøver</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Farveprøvetager</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Klik for at placere op til 10 farveprøvetagere (vises i panelet Oplysninger). Træk for at flytte, Alt-klik for at slette.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Farveprøveværktøj</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Aktuelt lag</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Slet farveprøvetager</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Klik for at tage en prøve af forgrundsfarven. Alt-klik tager en prøve af baggrundsfarven.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Pipetteværktøj</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Der er højst tilladt 10 farveprøvetagere.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Flyt farveprøvetager</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Prøve:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Vis prøvering</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Flyt markering</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Pil</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Flueben</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Sky</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Kryds</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Krone</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Værktøj til brugerdefineret form</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Dråbe</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Ellipseværktøj</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Slutpil</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Udfyldningsfarve (højreklik for ingen)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Tandhjul</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Hjerte</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Længde: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Lyn</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Træk for at tegne en linje. Skift begrænser til 45 grader.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Linjeværktøj</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Stihandling:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Polygonværktøj</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Puslespil</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Rektangelværktøj</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Form:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Træk for at tegne formen. Skift bevarer proportionerne, Alt tegner fra midten.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Sider:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Taleboble</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Stjerne</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Stjerneforhold:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Startpil</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Stregfarve (højreklik for ingen)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Trekantværktøj</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Tykkelse:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>Søg efter kommandoer</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>Brug standarder</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Ryd udsnit</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Slet udsnit</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Opdel...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Opdel udsnit</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Rediger udsnit</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Rediger udsnitsindstillinger</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>Fast B:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Intet udsnit valgt</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Rækker x kolonner (f.eks. 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Udsnit</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Træk for at oprette et udsnit. Brug Filer &gt; Eksporter &gt; Gem udsnit for at eksportere dem.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Udsnitsindstillinger</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Klik for at vælge et udsnit, træk for at flytte det eller ændre størrelsen. Delete fjerner det, dobbeltklik omdøber det.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Udsnitsmarkeringsværktøj</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Udsnitsværktøj</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Udsnit fra hjælpelinjer</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Justeret</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Kloningskilde: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Klonestempelværktøj</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Reparerer...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Reparationspenselværktøj</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Impressionistisk</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Klonestemplet kan ikke bruges, fordi det område, der skal klones, ikke er angivet (Alt-klik for at angive et kildepunkt).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Mal med det valgte mønster.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Mønsterstempelværktøj</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Mal over forstyrrende elementer for at fjerne dem. Området genskabes ud fra omgivelserne.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Fjernelsesværktøj</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Fjerner...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Pletreparationspenselværktøj</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Mal over pletter og skavanker for at reparere dem automatisk.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Type:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>Ryd seneste filer</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>Gendan</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Mal for at blødgøre kanter og detaljer.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Sløringsværktøj</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Mal for at gøre områder mørkere. Alt gør lysere.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Brændeværktøj</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Mal for at gøre områder lysere. Alt gør mørkere.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Udvaskningsværktøj</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Fingermaling</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Beskyt detaljer</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Beskyt toner</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Område:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Mæt</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Mal for at øge den lokale kontrast og gøre detaljer skarpere.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Skarphedsværktøj</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Træk for at udtvære maling. Fingermaling starter med forgrundsfarven.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Udtværingsværktøj</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Mal for at mætte farver eller fjerne mætning.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Svampeværktøj</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>"{0}" kan ikke bruges, fordi mållaget er skjult.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>"{0}" kan ikke bruges, fordi laget er låst.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>"{0}" kan ikke bruges, fordi mållaget ikke er et pixellag. Rasteriser først laget (Lag &gt; Rasteriser).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>Skjul til en enkelt kolonne</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>Tilpas værktøjslinje</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Udglatning</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Bekræft</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Sammenhængende</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Flow:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Punktprøve</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Prøv alle lag</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>Gennemsnit af {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Prøvestørrelse:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>B: {0:0} px  H: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Tolerance:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Juster nederste kanter</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Juster vandrette midter</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Juster venstre kanter</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Juster højre kanter</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Juster øverste kanter</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Juster lodrette midter</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Automatisk markering:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Et klik markerer det øverste lag under markøren (midlertidigt med Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Annuller transformering (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Kan ikke transformere, fordi laget er tomt.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Kan ikke transformere, fordi laget er låst eller ikke har noget indhold.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Kan ikke transformere markeringen, fordi laget er låst.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Bekræft transformering (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Slet hjælpelinje</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Svævende</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Svævende markering</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Træk i håndtagene for at skalere (Skift: proportionalt, Alt: fra midten), uden for dem for at rotere, Ctrl-træk et hjørne for at forvrænge, Ctrl-træk en kant for at skæve. Enter bekræfter, Esc annullerer.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Gruppe</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Interpolation:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Anmodningen kunne ikke fuldføres, fordi laget er låst.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Flyt hjælpelinje</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Træk for at flytte laget eller de markerede pixel. Alt-træk dublerer, Skift begrænser. Piletasterne skubber.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Flytteværktøj</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Skub</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Vis transformeringskontroller</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Brug Rediger &gt; Fri transformering (Ctrl+T) for at transformere det aktive lag eller den aktive markering.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Alle versaler</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Fed kursiv</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Annuller aktuelle redigeringer (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Centrer tekst</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Bekræft aktuelle redigeringer (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Falsk fed</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Falsk kursiv</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Klik for at tilføje punkttekst, træk for at tilføje afsnitstekst, klik på eksisterende tekst for at redigere den. Ctrl+Enter bekræfter, Esc annullerer.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Vandret tekstmaskeværktøj</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Vandret tekstværktøj</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Venstrejuster tekst</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Klik for at skrive; bekræftelse opretter en markering i tekstens form.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Højrejuster tekst</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Angiv udglatning</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Angiv skrifttypografi</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Gennemstreget</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Tekstfarve</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Skift tekstretning</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Tekstmaske</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Lodret tekstmaskeværktøj</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Lodret tekstværktøj</value>
   </data>
 </root>

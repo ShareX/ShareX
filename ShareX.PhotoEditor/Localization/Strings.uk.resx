@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>Барвистість</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Автор:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Автор: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Очистити все</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Очистити підрахунок</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Очистити нотатки</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Група підрахунку {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Клацніть, щоб поставити нумеровані мітки підрахунку. Перетягніть для переміщення, Alt+клацання для видалення.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Кількість: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Інструмент «Лічильник»</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Видалити мітку підрахунку</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Видалити нотатку</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Редагувати нотатку</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Група:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Колір групи</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Розмір підпису:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Розмір мітки:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Перемістити мітку підрахунку</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Перемістити нотатку</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Створити нову групу підрахунку</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Нотатка</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Колір нотатки</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Клацніть, щоб додати нотатку. Клацніть нотатку для редагування, перетягніть для переміщення, Alt+клацання для видалення.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Інструмент «Нотатка»</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Додати нову монтажну область</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Монтажна область {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Фон монтажної області</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Перетягніть на порожньому полотні, щоб створити монтажну область. Перетягніть заголовок монтажної області, щоб перемістити її разом із вмістом.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Перемістити монтажну область</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Інструмент «Монтажна область»</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Нова монтажна область</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (телефон)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (квадрат)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (планшет)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Покращити край</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Ласо</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Чарівна паличка</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Клацніть, щоб виділити схожі кольори. Shift додає, Alt віднімає.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Інструмент «Чарівна паличка»</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Виділення об’єкта</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Обведіть об’єкт прямокутником або ласо, щоб виділити його.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Інструмент «Виділення об’єкта»</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Швидке виділення</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Проведіть по області, щоб виділити її; виділення розширюється до країв. Alt віднімає.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Інструмент «Швидке виділення»</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Виділення об’єкта...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Пензель виділення</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Малюйте, щоб додати до виділення. Alt (або режим «Відняти») прибирає з нього.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Інструмент «Пензель виділення»</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>Позаду</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>Яскраве світло</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Увімкнути ефекти накопичення в стилі аерографа</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>«{0}» не може малювати на масці шару.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Фарба, що наноситься за один мазок</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Максимальне покриття фарбою за штрих (клавіші 0–9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Розмір від натиску</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Згладжування:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Коригувальний пензель</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Малюйте локальну корекцію. Кожен штрих змінює маску коригувального шару. Alt стирає корекцію.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>Пензель «{0}»</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Інструмент «Коригувальний пензель»</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Корекція:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Ефект:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Автостирання</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Малюйте основним кольором. Shift+клацання проводить пряму лінію. [ ] змінюють розмір.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Інструмент «Пензель»</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Очищати після кожного штриха</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Замінює кольори, схожі на зразок, основним кольором.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Інструмент «Заміна кольору»</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Завантаження:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Завантажити колір (основний)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Змішування:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Змішує завантажену фарбу з кольорами полотна, як справжня фарба.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Інструмент «Змішувальний пензель»</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Новий шар для кожного штриха</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Малюйте жорсткі незгладжені лінії основним кольором.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Інструмент «Олівець»</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Зразок:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Вологість:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>Кут</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>Палітра кольорів ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Перетягніть, щоб задати область кадрування; перетягніть ззовні, щоб повернути. Enter застосовує, Esc скасовує.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>Ш: {0:0} пкс  В: {1:0} пкс  Кут: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Інструмент «Кадрування»</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Видалити обрізані пікселі</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>В:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Початкові пропорції</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Кадрування перспективи</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Створіть рамку кадрування й перетягніть її кути за перспективою об’єкта. Enter кадрує та вирівнює.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Інструмент «Кадрування перспективи»</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Співвідношення</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Співвідношення:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (квадрат)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Правило третин</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Показати сітку</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Поміняти місцями ширину й висоту</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>Ш:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>Скасувати</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>Одноразово</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Довільна фігура</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Еліпс</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Лінія</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Багатокутник</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Прямокутник</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Трикутник</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>Контур</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>Тіні</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Стирає пікселі, що збігаються з кольором під центром пензля (точкою проби).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Інструмент «Фонова гумка»</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Несуміжні</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Стирати до історії</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Стирає до прозорості або до кольору фону на заблокованих шарах. Alt стирає до історії.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Інструмент «Гумка»</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Обмеження:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Захистити основний колір</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>Експорт...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>Зберегти прозорість</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Дизеринг</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Редагувати...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Градієнт:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Перетягніть, щоб намалювати градієнт. Shift обмежує кут кроком 45 градусів.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Кут: {0:0.0}°  Відстань: {1:0.0} пкс</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Інструмент «Градієнт»</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>Градієнт: {0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Чарівна гумка</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Клацніть, щоб стерти до прозорості пікселі схожого кольору.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Інструмент «Чарівна гумка»</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Заливка</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Клацніть, щоб залити пікселі схожого кольору основним кольором або візерунком.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Інструмент «Заливка»</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Прозорість</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>Додати шум</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>Хвиля</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Очистити рамку</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Очистити вміст рамки</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Еліптична рамка</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Рамка {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Перетягніть, щоб створити заповнювач-рамку. Розмістіть або вставте зображення, щоб заповнити активну рамку.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Інструмент «Рамка»</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Розмістити файл зображення в активній рамці</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Прямокутна рамка</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>Додати контрольну точку</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>Сюрреалістичний</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Область:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Малює стилізовані мазки за зразком джерела історії.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Інструмент «Архівний художній пензель»</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Не вдалося використати архівний пензель, оскільки розмір полотна в стані історії відрізняється.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Відновлює пікселі зі стану історії, вибраного джерелом на панелі «Історія».</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Інструмент «Архівний пензель»</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Спочатку задайте джерело історії на панелі «Історія».</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>Видалити знімок</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>Повторна дискретизація:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Частота:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Перетягніть, щоб намалювати виділення від руки. Відпустіть, щоб замкнути його.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Інструмент «Ласо»</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Магнітне ласо</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Клацніть для початку й ведіть уздовж краю. Клацання додає опорні точки, подвійне клацання або Enter замикає, Backspace видаляє точку.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Інструмент «Магнітне ласо»</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Прямолінійне ласо</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Клацніть, щоб додати точки. Подвійне клацання, Enter або клацання початкової точки замикає. Backspace видаляє останню точку.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Інструмент «Прямолінійне ласо»</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>Тло</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>Перемкнути видимість (Alt+клацання показує лише цей шар)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Овальна область</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Інструмент «Овальна область»</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Перетягніть для виділення. Shift обмежує, Alt малює від центру. Перетягніть усередині виділення, щоб перемістити його.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Прямокутна область</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Інструмент «Прямокутна область»</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Уточнити край виділення</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Клацніть, щоб виділити стовпець шириною 1 піксель.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Інструмент «Область (вертикальний рядок)»</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Клацніть, щоб виділити рядок висотою 1 піксель.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Інструмент «Область (горизонтальний рядок)»</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Стиль:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>Інтенсивність кольору:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(порожньо)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Припасувати до екрана</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Перетягніть, щоб прокрутити вигляд. Утримуйте пробіл із будь-яким інструментом, щоб тимчасово використати «Руку». Подвійне клацання припасовує до екрана.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Інструмент «Рука»</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Скинути вигляд</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Перетягніть, щоб повернути вигляд полотна без зміни пікселів. Shift прив’язує кроком 15 градусів. Esc або «Скинути вигляд» відновлює його.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Інструмент «Обертання вигляду»</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Кут обертання:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Масштаб перетягуванням</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Клацніть для збільшення, Alt+клацання для зменшення. Перетягуйте ліворуч/праворуч для масштабування або намалюйте прямокутник, якщо цю функцію вимкнено.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Збільшити</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Зменшити</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Інструмент «Масштаб»</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>Чорний</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>Меню панелі</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Додати опорну точку</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Клацніть сегмент контуру, щоб додати опорну точку.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Інструмент «Додати опорну точку»</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Об’єднати</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Об’єднати компоненти контуру, що перекриваються</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Перетворити точку</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Клацніть гладку точку, щоб зробити її кутовою; перетягніть кутову точку, щоб витягнути маркери. Перетягніть маркер, щоб зламати його.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Інструмент «Перетворити точку»</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Видалити опорну точку</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Клацніть опорну точку, щоб видалити її.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Інструмент «Видалити опорну точку»</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Клацніть або обведіть рамкою опорні точки для вибору; перетягуйте точки чи маркери для зміни форми. Alt перетягує маркер незалежно.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Інструмент «Пряме виділення»</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Перетягнути опорну точку</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Виключити</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Перетнути</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Перемістити контур</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Зсунути опорну точку</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Клацніть компонент контуру, щоб вибрати його, і перетягніть для переміщення. Alt+перетягування дублює, Delete видаляє.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Інструмент «Виділення контуру»</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Відняти наступні компоненти від першого</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>Робочий контур</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>Обвести контур пензлем</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Автододавання/видалення</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Замкнути контур</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Перо кривизни</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Клацайте, щоб ставити точки; крива плавно проходить через них. Клацніть першу точку для замикання, Enter або Esc для завершення.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Інструмент «Перо кривизни»</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Апроксимація:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Довільне перо</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Перетягніть, щоб намалювати контур від руки; його буде апроксимовано гладкими кривими. «Магнітне» прив’язує до країв.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Інструмент «Довільне перо»</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Магнітне</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Створити:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Маска</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Перо</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Клацніть, щоб додати кутові точки, перетягніть для гладких. Клацніть першу точку для замикання. Ctrl редагує точки, Alt перетворює їх.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Інструмент «Перо»</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Гумова стрічка</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Виділення...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>Без назви-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>Текстура деревини</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Переміщення з урахуванням вмісту</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Переміщення з урахуванням вмісту...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Інструмент «Переміщення з урахуванням вмісту»</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Рівень затемнення:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Призначення</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Створіть виділення (або скористайтеся будь-яким інструментом виділення), а потім перетягніть його.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Розширення</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Переміщення</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Латка</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Латка:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Інструмент «Латка»</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Розмір зіниці:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Червоні очі</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Клацніть червоне око (або обведіть його), щоб усунути червоний відблиск.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Інструмент «Червоні очі»</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Джерело</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Структура:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Перетягніть, щоб виміряти відстань і кут. Перетягніть кінцеву точку, щоб змінити її.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Інструмент «Лінійка»</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Повернути активний шар так, щоб лінія лінійки стала горизонтальною</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Використовувати шкалу вимірювань</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Очистити колірні еталони</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Колірний еталон</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Клацніть, щоб поставити до 10 колірних еталонів (показуються на панелі «Інформація»). Перетягніть для переміщення, Alt+клацання для видалення.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Інструмент «Колірний еталон»</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Поточний шар</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Видалити колірний еталон</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Клацніть, щоб узяти зразок основного кольору. Alt+клацання бере зразок кольору фону.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Інструмент «Піпетка»</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Дозволено не більше 10 колірних еталонів.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Перемістити колірний еталон</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Зразок:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Показувати кільце проби</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Перемістити виділення</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Стрілка</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Позначка</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Хмара</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Хрест</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Корона</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Інструмент «Довільна фігура»</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Крапля</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Інструмент «Еліпс»</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Стрілка в кінці</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Колір заливки (правий клік — без кольору)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Шестерня</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Серце</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Довжина: {0:0.0} пкс</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Блискавка</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Перетягніть, щоб намалювати лінію. Shift обмежує кроком 45 градусів.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Інструмент «Лінія»</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Операція з контуром:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Інструмент «Багатокутник»</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Пазл</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Інструмент «Прямокутник»</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Форма:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Перетягніть, щоб намалювати фігуру. Shift зберігає пропорції, Alt малює від центру.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Сторони:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Хмаринка з текстом</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Зірка</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Співвідношення променів:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Стрілка на початку</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Колір обведення (правий клік — без кольору)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Інструмент «Трикутник»</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Товщина:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>Пошук команд</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>Використати типові</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Очистити фрагменти</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Видалити фрагмент</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Поділити...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Поділити фрагмент</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Редагувати фрагмент</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Редагувати параметри фрагмента</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>Фікс. Ш:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Фрагмент не вибрано</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Рядки x стовпці (наприклад, 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Фрагмент</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Перетягніть, щоб створити фрагмент. Експортуйте їх через «Файл &gt; Експорт &gt; Зберегти фрагменти».</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Параметри фрагмента</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Клацніть, щоб вибрати фрагмент, перетягніть для переміщення або зміни розміру. Delete видаляє, подвійне клацання перейменовує.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Інструмент «Вибір фрагмента»</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Інструмент «Фрагмент»</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Фрагменти за напрямними</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Вирівнювання</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Джерело клонування: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Інструмент «Штамп»</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Відновлення...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Інструмент «Відновлювальний пензель»</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Імпресіонізм</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Не вдалося використати штамп, оскільки область для клонування не задано (Alt+клацання задає точку джерела).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Малюйте вибраним візерунком.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Інструмент «Візерунковий штамп»</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Проведіть по зайвих елементах, щоб видалити їх. Область відновлюється за оточенням.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Інструмент «Видалення»</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Видалення...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Інструмент «Точковий відновлювальний пензель»</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Проведіть по плямах і дефектах, щоб автоматично їх усунути.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Тип:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>Очистити останні файли</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>Відновити</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Малюйте, щоб пом’якшити краї та деталі.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Інструмент «Розмиття»</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Малюйте, щоб затемнити області. Alt освітлює.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Інструмент «Затемнення»</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Малюйте, щоб освітлити області. Alt затемнює.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Інструмент «Освітлення»</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Малювання пальцем</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Захистити деталі</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Захистити тони</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Діапазон:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Підвищити насиченість</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Малюйте, щоб підвищити локальний контраст і різкість деталей.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Інструмент «Різкість»</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Перетягніть, щоб розмазати фарбу. «Малювання пальцем» починає з основного кольору.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Інструмент «Палець»</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Малюйте, щоб підвищити або знизити насиченість кольорів.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Інструмент «Губка»</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>Не вдалося використати «{0}», оскільки цільовий шар приховано.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>Не вдалося використати «{0}», оскільки шар заблоковано.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>Не вдалося використати «{0}», оскільки цільовий шар не є піксельним. Спочатку растеризуйте шар (Шар &gt; Растеризувати).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>Згорнути в один стовпець</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>Налаштувати панель інструментів</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Згладжування</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Застосувати</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Суміжні</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Потік:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Точковий зразок</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Зразок з усіх шарів</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>Середнє {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Розмір зразка:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>Ш: {0:0} пкс  В: {1:0} пкс</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Допуск:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Вирівняти нижні краї</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Вирівняти центри по горизонталі</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Вирівняти ліві краї</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Вирівняти праві краї</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Вирівняти верхні краї</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Вирівняти центри по вертикалі</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Автовибір:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Клацання вибирає найвищий шар під вказівником (тимчасово з Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Скасувати трансформування (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Не вдалося трансформувати, оскільки шар порожній.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Не вдалося трансформувати, оскільки шар заблоковано або він порожній.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Не вдалося трансформувати виділення, оскільки шар заблоковано.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Застосувати трансформування (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Видалити напрямну</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Плаваючий</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Плаваюче виділення</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Перетягуйте маркери для масштабування (Shift: пропорційно, Alt: від центру), ззовні для повороту, Ctrl+перетягування кута для спотворення, Ctrl+перетягування сторони для нахилу. Enter застосовує, Esc скасовує.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Група</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Інтерполяція:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Не вдалося виконати запит, оскільки шар заблоковано.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Перемістити напрямну</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Перетягніть, щоб перемістити шар або виділені пікселі. Alt+перетягування дублює, Shift обмежує. Стрілки зсувають.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Інструмент «Переміщення»</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Зсув</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Показувати елементи трансформування</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Скористайтеся «Редагування &gt; Вільне трансформування» (Ctrl+T), щоб трансформувати активний шар або виділення.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Усі великі</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Жирний курсив</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Скасувати поточні зміни (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Вирівняти текст по центру</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Застосувати поточні зміни (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Псевдожирний</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Псевдокурсив</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Клацніть, щоб додати точковий текст, перетягніть для тексту абзацу, клацніть наявний текст для редагування. Ctrl+Enter застосовує, Esc скасовує.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Інструмент «Горизонтальна текстова маска»</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Інструмент «Горизонтальний текст»</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Вирівняти текст ліворуч</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Клацніть, щоб ввести текст; під час застосування створюється виділення у формі тексту.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Звичайний</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Вирівняти текст праворуч</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Задати згладжування</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Задати накреслення</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Закреслений</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Колір тексту</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Перемкнути орієнтацію тексту</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Текстова маска</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Інструмент «Вертикальна текстова маска»</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Інструмент «Вертикальний текст»</value>
   </data>
 </root>

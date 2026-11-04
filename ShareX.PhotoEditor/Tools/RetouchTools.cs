@@ -41,7 +41,7 @@ public abstract class SelectionDragToolBase : ToolBase
     {
     }
 
-    public override string Hint => "Draw a selection (or use any selection tool), then drag the selection.";
+    public override string Hint => Strings.RetouchTools_DragSelectionHint;
 
     public override void PointerDown(ToolInput input)
     {
@@ -87,7 +87,7 @@ public abstract class SelectionDragToolBase : ToolBase
                 PixelSurface mask = MaskOps.FromPath(path, Doc.Width, Doc.Height);
                 SelectionMode mode = input.Shift ? SelectionMode.Add : input.Alt ? SelectionMode.Subtract : SelectionMode.Replace;
                 Doc.SetSelection(MaskOps.Combine(Doc.Selection, mask, mode));
-                PushHistory("Lasso");
+                PushHistory(Strings.AutoSelectionTools_Lasso);
             }
             Host.InvalidateCanvas();
             return;
@@ -137,7 +137,7 @@ public sealed class PatchTool : SelectionDragToolBase
 
     public override ToolId Id => ToolId.Patch;
 
-    public override string Name => "Patch Tool";
+    public override string Name => Strings.RetouchTools_PatchTool;
 
     public bool DestinationMode { get; set; }
 
@@ -166,7 +166,7 @@ public sealed class PatchTool : SelectionDragToolBase
             else PoissonBlend.Blend(bitmap, source, mask);
             doc.SetSelection(MaskOps.Transform(doc.Selection!, SKMatrix.CreateTranslation(dx, dy), doc.Width, doc.Height, false));
         }
-        PushHistory("Patch");
+        PushHistory(Strings.RetouchTools_Patch);
         Host.InvalidateCanvas();
     }
 
@@ -184,8 +184,8 @@ public sealed class PatchTool : SelectionDragToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Combo("Patch:", [("Source", false), ("Destination", true)], () => DestinationMode, v => DestinationMode = v, 110);
-        options.Check("Transparent", () => Transparent, v => Transparent = v);
+        options.Combo(Strings.RetouchTools_PatchColon, [(Strings.RetouchTools_Source, false), (Strings.RetouchTools_Destination, true)], () => DestinationMode, v => DestinationMode = v, 110);
+        options.Check(Strings.NewDocumentDialog_Transparent, () => Transparent, v => Transparent = v);
     }
 }
 
@@ -197,7 +197,7 @@ public sealed class ContentAwareMoveTool : SelectionDragToolBase
 
     public override ToolId Id => ToolId.ContentAwareMove;
 
-    public override string Name => "Content-Aware Move Tool";
+    public override string Name => Strings.RetouchTools_ContentAwareMoveTool;
 
     public bool Extend { get; set; }
 
@@ -213,7 +213,7 @@ public sealed class ContentAwareMoveTool : SelectionDragToolBase
         PixelSurface originalMask = ToLayerSpace(doc.Selection!, layer);
         PixelSurface movedMask = ToLayerSpace(doc.Selection!, layer, dx, dy);
         int patch = Math.Clamp(Structure - 1, 2, 6);
-        await Host.RunBusyAsync("Content-Aware Move...", progress => Task.Run(() =>
+        await Host.RunBusyAsync(Strings.RetouchTools_ContentAwareMoveEllipsis, progress => Task.Run(() =>
         {
             if (!Extend)
             {
@@ -227,14 +227,14 @@ public sealed class ContentAwareMoveTool : SelectionDragToolBase
         originalMask.Dispose();
         movedMask.Dispose();
         doc.SetSelection(MaskOps.Transform(doc.Selection!, SKMatrix.CreateTranslation(dx, dy), doc.Width, doc.Height, false));
-        PushHistory("Content-Aware Move");
+        PushHistory(Strings.RetouchTools_ContentAwareMove);
         Host.InvalidateCanvas();
     }
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Combo("Mode:", [("Move", false), ("Extend", true)], () => Extend, v => Extend = v, 100);
-        options.Number("Structure:", 1, 7, () => Structure, v => Structure = (int)v);
+        options.Combo(Strings.EditorCommands_ModeColon, [(Strings.RetouchTools_Move, false), (Strings.RetouchTools_Extend, true)], () => Extend, v => Extend = v, 100);
+        options.Number(Strings.RetouchTools_StructureColon, 1, 7, () => Structure, v => Structure = (int)v);
     }
 }
 
@@ -250,9 +250,9 @@ public sealed class RedEyeTool : ToolBase
 
     public override ToolId Id => ToolId.RedEye;
 
-    public override string Name => "Red Eye Tool";
+    public override string Name => Strings.RetouchTools_RedEyeTool;
 
-    public override string Hint => "Click on a red eye (or drag around it) to remove the red reflection.";
+    public override string Hint => Strings.RetouchTools_RedEyeHint;
 
     public float PupilSize { get; set; } = 50;
 
@@ -290,7 +290,7 @@ public sealed class RedEyeTool : ToolBase
         SKRectI area = SKRectI.Round(rect);
         area.Inflate(2, 2);
         SmartSelection.RemoveRedEye(surface.Bitmap, layer.Offset, area, PupilSize, Darken);
-        PushHistory("Red Eye");
+        PushHistory(Strings.RetouchTools_RedEye);
         Host.InvalidateCanvas(area);
     }
 
@@ -323,7 +323,7 @@ public sealed class RedEyeTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Number("Pupil Size:", 1, 100, () => PupilSize, v => PupilSize = (float)v, "0", "%");
-        options.Number("Darken Amount:", 1, 100, () => Darken, v => Darken = (float)v, "0", "%");
+        options.Number(Strings.RetouchTools_PupilSizeColon, 1, 100, () => PupilSize, v => PupilSize = (float)v, "0", "%");
+        options.Number(Strings.RetouchTools_DarkenAmountColon, 1, 100, () => Darken, v => Darken = (float)v, "0", "%");
     }
 }

@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>생동감</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>작성자:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>작성자: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>모두 지우기</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>카운트 지우기</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>메모 지우기</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>카운트 그룹 {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>클릭하여 번호가 매겨진 카운트 표시를 배치합니다. 드래그하여 이동하고, Alt+클릭하여 제거합니다.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>개수: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>카운트 도구</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>카운트 삭제</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>메모 삭제</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>메모 편집</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>그룹:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>그룹 색상</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>레이블 크기:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>표시 크기:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>카운트 이동</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>메모 이동</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>새 카운트 그룹 만들기</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>메모</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>메모 색상</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>클릭하여 메모를 추가합니다. 메모를 클릭하여 편집하고, 드래그하여 이동하고, Alt+클릭하여 삭제합니다.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>메모 도구</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>새 대지 추가</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>대지 {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>대지 배경</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>빈 캔버스에서 드래그하여 대지를 만듭니다. 대지 제목을 드래그하면 내용과 함께 이동합니다.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>대지 이동</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>대지 도구</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>새 대지</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (휴대폰)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (정사각형)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (태블릿)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>가장자리 향상</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>올가미</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>자동 선택</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>클릭하여 비슷한 색상을 선택합니다. Shift는 추가, Alt는 빼기입니다.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>자동 선택 도구</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>개체 선택</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>개체 주위에 사각형 또는 올가미를 드래그하여 선택합니다.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>개체 선택 도구</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>빠른 선택</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>영역 위를 칠하여 선택합니다. 선택 영역이 가장자리를 찾아 확장됩니다. Alt는 빼기입니다.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>빠른 선택 도구</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>개체 선택 중...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>선택 브러시</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>칠하여 선택 영역에 추가합니다. Alt(또는 빼기 모드)는 선택 영역에서 제거합니다.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>선택 브러시 도구</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>배경</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>선명한 라이트</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>에어브러시 스타일 누적 효과 사용</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>{0}는 레이어 마스크에 칠할 수 없습니다.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>한 번 찍을 때 적용되는 물감 양</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>획당 최대 물감 적용 범위 (0-9 키)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>압력에 따른 크기</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>매끄럽게 하기:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>조정 브러시</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>국부 조정을 칠합니다. 각 획은 조정 레이어의 마스크를 편집합니다. Alt는 조정을 지웁니다.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>{0} 브러시</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>조정 브러시 도구</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>조정:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>양:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>자동 지우기</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>전경색으로 칠합니다. Shift+클릭하면 직선을 그립니다. [ ]로 크기를 변경합니다.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>브러시 도구</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>획마다 정리</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>샘플링한 색상과 비슷한 색상을 전경색으로 바꿉니다.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>색상 대체 도구</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>불러오기:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>불러올 색상 (전경)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>혼합:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>불러온 물감을 실제 물감처럼 캔버스 색상과 혼합합니다.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>혼합 브러시 도구</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>획마다 새 레이어</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>전경색으로 앤티 앨리어싱 없는 선명한 가장자리의 선을 칠합니다.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>연필 도구</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>샘플링:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>젖은 정도:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>각도</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>색상 피커({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>드래그하여 자르기 영역을 정의합니다. 영역 밖에서 드래그하면 회전합니다. Enter는 적용, Esc는 취소입니다.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>W: {0:0} px  H: {1:0} px  각도: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>자르기 도구</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>자른 픽셀 삭제</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>H:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>원본 비율</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>원근 자르기</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>드래그하여 자르기 상자를 만든 다음, 모서리를 드래그하여 개체의 원근에 맞춥니다. Enter는 자르고 똑바르게 합니다.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>원근 자르기 도구</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>비율</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>비율:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (정사각형)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>삼분할 법칙</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>격자 표시</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>너비와 높이 바꾸기</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>W:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>취소</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>한 번</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>사용자 정의 모양</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>타원</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>선</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>다각형</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>사각형</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>삼각형</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>패스</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>어두운 영역</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>브러시 중심(핫스폿) 아래의 색상과 일치하는 픽셀을 지웁니다.</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>배경 지우개 도구</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>불연속</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>작업 내역으로 지우기</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>투명하게 지우거나 잠긴 레이어에서는 배경색으로 지웁니다. Alt는 작업 내역으로 지웁니다.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>지우개 도구</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>제한:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>전경색 보호</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>내보내기...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>투명도 유지</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>디더</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>편집...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>그레이디언트:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>드래그하여 그레이디언트를 그립니다. Shift는 각도를 45도로 제한합니다.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>각도: {0:0.0}°  거리: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>그레이디언트 도구</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>{0} 그레이디언트</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>자동 지우개</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>클릭하여 비슷한 색상의 픽셀을 투명하게 지웁니다.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>자동 지우개 도구</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>페인트 통</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>클릭하여 비슷한 색상의 픽셀을 전경색이나 패턴으로 채웁니다.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>페인트 통 도구</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>투명도</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>노이즈 추가</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>물결</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>프레임 지우기</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>프레임 내용 지우기</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>타원 프레임</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>프레임 {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>드래그하여 프레임 자리 표시자를 만듭니다. 이미지를 가져오거나 붙여 넣어 활성 프레임을 채웁니다.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>프레임 도구</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>이미지 파일을 활성 프레임에 가져오기</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>사각형 프레임</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>정지점 추가</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>초현실적</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>영역:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>작업 내역 소스에서 샘플링한 양식화된 획을 칠합니다.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>미술 작업 내역 브러시 도구</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>작업 내역 상태의 캔버스 크기가 다르기 때문에 작업 내역 브러시를 사용할 수 없습니다.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>작업 내역 패널에서 소스로 선택한 작업 내역 상태의 픽셀을 다시 칠합니다.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>작업 내역 브러시 도구</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>먼저 작업 내역 패널에서 작업 내역 소스를 설정하십시오.</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>스냅숏 삭제</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>리샘플링:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>빈도:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>드래그하여 자유롭게 선택 영역을 그립니다. 놓으면 닫힙니다.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>올가미 도구</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>자석 올가미</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>클릭하여 시작한 다음 가장자리를 따라 이동합니다. 클릭하여 기준점을 추가하고, 두 번 클릭하거나 Enter를 눌러 닫으며, Backspace는 기준점을 제거합니다.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>자석 올가미 도구</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>다각형 올가미</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>클릭하여 점을 추가합니다. 두 번 클릭, Enter 또는 시작점을 클릭하여 닫습니다. Backspace는 마지막 점을 제거합니다.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>다각형 올가미 도구</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>배경</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>표시 전환(Alt+클릭하면 이 레이어만 표시)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>원형 선택 윤곽</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>원형 선택 윤곽 도구</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>드래그하여 선택합니다. Shift는 제한, Alt는 중심에서 그립니다. 선택 영역 안에서 드래그하면 이동합니다.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>사각형 선택 윤곽</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>사각형 선택 윤곽 도구</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>선택 영역 가장자리 다듬기</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>클릭하여 1픽셀 열을 선택합니다.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>단일 열 선택 윤곽 도구</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>클릭하여 1픽셀 행을 선택합니다.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>단일 행 선택 윤곽 도구</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>스타일:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>색상 강도:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(비어 있음)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>화면 맞추기</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>드래그하여 보기를 스크롤합니다. 아무 도구에서나 Space를 누르고 있으면 손 도구를 일시적으로 사용합니다. 두 번 클릭하면 화면에 맞춥니다.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>손 도구</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>보기 재설정</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>픽셀을 변경하지 않고 드래그하여 캔버스 보기를 회전합니다. Shift는 15도 단위로 맞춥니다. Esc 또는 보기 재설정으로 복원합니다.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>보기 회전 도구</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>회전 각도:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>스크러비 확대/축소</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>클릭하여 확대하고, Alt+클릭하여 축소합니다. 왼쪽/오른쪽으로 드래그하면 스크러비 확대/축소, 해제된 경우 사각형을 드래그합니다.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>확대</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>축소</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>돋보기 도구</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>검정</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>패널 메뉴</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>기준점 추가</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>패스 세그먼트를 클릭하여 기준점을 추가합니다.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>기준점 추가 도구</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>결합</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>겹치는 패스 구성 요소 병합</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>기준점 변환</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>매끄러운 점을 클릭하면 모퉁이가 됩니다. 모퉁이 점을 드래그하면 매끄러운 핸들이 나옵니다. 핸들을 드래그하면 끊어집니다.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>기준점 변환 도구</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>기준점 삭제</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>기준점을 클릭하여 삭제합니다.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>기준점 삭제 도구</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>클릭하거나 선택 윤곽을 드래그하여 기준점을 선택합니다. 점이나 핸들을 드래그하여 모양을 변경합니다. Alt는 핸들을 독립적으로 드래그합니다.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>직접 선택 도구</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>기준점 드래그</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>제외</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>교차</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>패스 이동</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>기준점 미세 이동</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>패스 구성 요소를 클릭하여 선택하고, 드래그하여 이동합니다. Alt+드래그는 복제, Delete는 제거입니다.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>패스 선택 도구</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>첫 번째 구성 요소에서 이후 구성 요소 빼기</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>작업 패스</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>브러시로 패스 획 적용</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>자동 추가/삭제</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>패스 닫기</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>곡률 펜</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>클릭하여 점을 배치합니다. 곡선이 점을 매끄럽게 통과합니다. 첫 번째 점을 클릭하면 닫히고, Enter 또는 Esc로 마칩니다.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>곡률 펜 도구</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>곡선 맞춤:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>자유 형태 펜</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>드래그하여 자유롭게 패스를 그립니다. 매끄러운 곡선으로 맞춰집니다. 자석은 가장자리에 물립니다.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>자유 형태 펜 도구</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>자석</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>만들기:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>마스크</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>펜</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>클릭하여 모퉁이 점을, 드래그하여 매끄러운 점을 추가합니다. 첫 번째 점을 클릭하면 닫힙니다. Ctrl은 점을 편집하고, Alt는 변환합니다.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>펜 도구</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>고무 밴드</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>선택 영역...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>제목 없음-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>나뭇결</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>내용 인식 이동</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>내용 인식 이동...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>내용 인식 이동 도구</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>어둡게 하는 양:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>대상</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>선택 영역을 그린(또는 아무 선택 도구를 사용한) 다음 선택 영역을 드래그합니다.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>확장</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>이동</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>패치</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>패치:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>패치 도구</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>눈동자 크기:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>적목 현상</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>빨간 눈을 클릭(또는 주위를 드래그)하여 빨간 반사를 제거합니다.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>적목 현상 도구</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>소스</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>구조:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>드래그하여 거리와 각도를 측정합니다. 끝점을 드래그하여 조정합니다.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>눈금자 도구</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>눈금자 선이 수평이 되도록 활성 레이어 회전</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>측정 비율 사용</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>색상 샘플러 지우기</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>색상 샘플러</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>클릭하여 최대 10개의 색상 샘플러를 배치합니다(정보 패널에 표시). 드래그하여 이동하고, Alt+클릭하여 삭제합니다.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>색상 샘플러 도구</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>현재 레이어</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>색상 샘플러 삭제</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>클릭하여 전경색을 샘플링합니다. Alt+클릭하면 배경색을 샘플링합니다.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>스포이드 도구</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>색상 샘플러는 최대 10개까지 허용됩니다.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>색상 샘플러 이동</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>샘플:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>샘플링 링 표시</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>선택 영역 이동</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>화살표</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>체크 표시</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>구름</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>십자</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>왕관</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>사용자 정의 모양 도구</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>물방울</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>타원 도구</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>끝 화살표</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>칠 색상 (오른쪽 클릭하면 없음)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>톱니바퀴</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>하트</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>길이: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>번개</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>드래그하여 선을 그립니다. Shift는 45도로 제한합니다.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>선 도구</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>패스 작업:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>다각형 도구</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>퍼즐</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>사각형 도구</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>모양:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>드래그하여 모양을 그립니다. Shift는 비율을 유지하고, Alt는 중심에서 그립니다.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>면:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>말풍선</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>별</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>별 비율:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>시작 화살표</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>획 색상 (오른쪽 클릭하면 없음)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>삼각형 도구</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>두께:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>명령 검색</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>기본값 사용</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>분할 영역 지우기</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>분할 영역 삭제</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>나누기...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>분할 영역 나누기</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>분할 영역 편집</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>분할 영역 옵션 편집</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>고정 W:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>선택한 분할 영역 없음</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>행 x 열 (예: 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>분할 영역</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>드래그하여 분할 영역을 만듭니다. 내보내려면 파일 &gt; 내보내기 &gt; 분할 영역 저장을 사용합니다.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>분할 영역 옵션</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>클릭하여 분할 영역을 선택하고, 드래그하여 이동하거나 크기를 조정합니다. Delete는 제거, 두 번 클릭은 이름 바꾸기입니다.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>분할 영역 선택 도구</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>분할 영역 도구</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>안내선에서 분할 영역 만들기</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>정렬</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>복제 소스: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>복제 도장 도구</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>복구 중...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>복구 브러시 도구</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>인상주의</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>복제할 영역이 정의되지 않았기 때문에 복제 도장 도구를 사용할 수 없습니다(Alt+클릭하여 소스 지점을 정의하십시오).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>선택한 패턴으로 칠합니다.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>패턴 도장 도구</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>방해 요소 위를 칠하여 제거합니다. 영역은 주변에서 재구성됩니다.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>제거 도구</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>제거 중...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>스폿 복구 브러시 도구</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>점과 잡티 위를 칠하여 자동으로 복구합니다.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>유형:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>최근 파일 지우기</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>이전 크기로 복원</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>칠하여 가장자리와 세부 묘사를 부드럽게 합니다.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>흐림 효과 도구</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>칠하여 영역을 어둡게 합니다. Alt는 밝게 합니다.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>번 도구</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>칠하여 영역을 밝게 합니다. Alt는 어둡게 합니다.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>닷지 도구</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>손가락 페인팅</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>세부 묘사 보호</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>톤 보호</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>범위:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>채도 증가</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>칠하여 국부 대비를 높이고 세부 묘사를 선명하게 합니다.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>선명 효과 도구</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>드래그하여 물감을 문지릅니다. 손가락 페인팅은 전경색으로 시작합니다.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>손가락 도구</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>칠하여 색상의 채도를 높이거나 낮춥니다.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>스펀지 도구</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>대상 레이어가 숨겨져 있기 때문에 {0}를 사용할 수 없습니다.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>레이어가 잠겨 있기 때문에 {0}를 사용할 수 없습니다.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>대상 레이어가 픽셀 레이어가 아니기 때문에 {0}를 사용할 수 없습니다. 먼저 레이어를 래스터화하십시오(레이어 &gt; 래스터화).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>한 열로 축소</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>도구 모음 사용자 지정</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>앤티 앨리어스</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>적용</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>인접</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>흐름:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>포인트 샘플</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>모든 레이어 샘플링</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>{0} x {0} 평균</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>샘플 크기:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>W: {0:0} px  H: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>허용치:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>아래쪽 가장자리 정렬</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>수평 중앙 정렬</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>왼쪽 가장자리 정렬</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>오른쪽 가장자리 정렬</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>위쪽 가장자리 정렬</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>수직 중앙 정렬</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>자동 선택:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>클릭하면 포인터 아래의 가장 위 레이어를 선택합니다 (Ctrl로 일시 적용)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>변형 취소 (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>레이어가 비어 있기 때문에 변형할 수 없습니다.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>레이어가 잠겨 있거나 내용이 없기 때문에 변형할 수 없습니다.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>레이어가 잠겨 있기 때문에 선택 영역을 변형할 수 없습니다.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>변형 적용 (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>안내선 삭제</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>부동</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>부동 선택 영역</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>핸들을 드래그하여 크기를 조절하고(Shift: 비율 유지, Alt: 중심에서), 바깥쪽을 드래그하여 회전하며, 모서리를 Ctrl+드래그하여 왜곡하고, 가장자리를 Ctrl+드래그하여 기울입니다. Enter는 적용, Esc는 취소입니다.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>그룹</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>보간:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>레이어가 잠겨 있기 때문에 요청을 완료할 수 없습니다.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>안내선 이동</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>드래그하여 레이어나 선택한 픽셀을 이동합니다. Alt+드래그는 복제, Shift는 제한입니다. 화살표 키로 미세 이동합니다.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>이동 도구</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>미세 이동</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>변형 컨트롤 표시</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>활성 레이어나 선택 영역을 변형하려면 편집 &gt; 자유 변형(Ctrl+T)을 사용하십시오.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>모두 대문자</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>굵은 기울임꼴</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>현재 편집 취소 (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>텍스트 가운데 정렬</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>현재 편집 적용 (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>가짜 굵게</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>가짜 기울임꼴</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>클릭하여 점 텍스트를, 드래그하여 단락 텍스트를 추가하고, 기존 텍스트를 클릭하여 편집합니다. Ctrl+Enter는 적용, Esc는 취소입니다.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>수평 문자 마스크 도구</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>수평 문자 도구</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>텍스트 왼쪽 정렬</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>클릭하여 입력합니다. 적용하면 텍스트 모양으로 선택 영역이 만들어집니다.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>보통</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>텍스트 오른쪽 정렬</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>앤티 앨리어스 설정</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>글꼴 스타일 설정</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>취소선</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>텍스트 색</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>텍스트 방향 전환</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>문자 마스크</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>세로 문자 마스크 도구</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>세로 문자 도구</value>
   </data>
 </root>

@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>रंग जीवंतता</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>लेखक:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>लेखक: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>सभी साफ़ करें</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>गिनती साफ़ करें</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>नोट साफ़ करें</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>गिनती समूह {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>क्रमांकित गिनती चिह्न रखने के लिए क्लिक करें। ले जाने के लिए खींचें, हटाने के लिए Alt+क्लिक करें।</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>गिनती: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>गिनती टूल</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>गिनती हटाएँ</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>नोट हटाएँ</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>नोट संपादित करें</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>समूह:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>समूह का रंग</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>लेबल का आकार:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>चिह्न का आकार:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>गिनती ले जाएँ</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>नोट ले जाएँ</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>नया गिनती समूह बनाएँ</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>नोट</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>नोट का रंग</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>नोट जोड़ने के लिए क्लिक करें। संपादित करने के लिए नोट पर क्लिक करें, ले जाने के लिए खींचें, हटाने के लिए Alt+क्लिक करें।</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>नोट टूल</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>नया आर्टबोर्ड जोड़ें</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>आर्टबोर्ड {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>आर्टबोर्ड पृष्ठभूमि</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>आर्टबोर्ड बनाने के लिए खाली कैनवास पर खींचें। किसी आर्टबोर्ड को उसकी सामग्री के साथ ले जाने के लिए उसका शीर्षक खींचें।</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>आर्टबोर्ड ले जाएँ</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>आर्टबोर्ड टूल</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>नया आर्टबोर्ड</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (फ़ोन)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (वर्ग)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (टैबलेट)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>जोड़ें</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>किनारा बेहतर करें</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>लैसो</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>मैजिक वैंड</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>समान रंग चुनने के लिए क्लिक करें। Shift जोड़ता है, Alt घटाता है।</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>मैजिक वैंड टूल</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>ऑब्जेक्ट चयन</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>किसी ऑब्जेक्ट को चुनने के लिए उसके चारों ओर आयत या लैसो खींचें।</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>ऑब्जेक्ट चयन टूल</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>त्वरित चयन</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>किसी क्षेत्र को चुनने के लिए उस पर पेंट करें; चयन किनारे खोजने तक बढ़ता है। Alt घटाता है।</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>त्वरित चयन टूल</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>ऑब्जेक्ट चुना जा रहा है...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>चयन ब्रश</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>चयन में जोड़ने के लिए पेंट करें। Alt (या घटाएँ मोड) उसमें से हटाता है।</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>चयन ब्रश टूल</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>पीछे</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>जीवंत प्रकाश</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>एयरब्रश-शैली के बिल्ड-अप प्रभाव सक्षम करें</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>{0} लेयर मास्क पर पेंट नहीं कर सकता।</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>प्रति स्पर्श लगाया गया पेंट</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>प्रति स्ट्रोक अधिकतम पेंट कवरेज (0-9 कुंजियाँ)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>दबाव के अनुसार आकार</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>स्मूदिंग:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>समायोजन ब्रश</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>स्थानीय समायोजन पेंट करता है। प्रत्येक स्ट्रोक एक समायोजन लेयर का मास्क संपादित करता है। Alt समायोजन मिटाता है।</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>{0} ब्रश</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>समायोजन ब्रश टूल</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>समायोजन:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>मात्रा:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>स्वतः मिटाएँ</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>अग्रभूमि रंग से पेंट करें। Shift+क्लिक सीधी रेखा खींचता है। [ ] आकार बदलते हैं।</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>ब्रश टूल</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>प्रत्येक स्ट्रोक के बाद साफ़ करें</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>नमूना लिए गए रंग से मिलते-जुलते रंगों को अग्रभूमि रंग से बदलता है।</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>रंग प्रतिस्थापन टूल</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>लोड:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>लोड रंग (अग्रभूमि)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>मिश्रण:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>लोड किए गए पेंट को असली पेंट की तरह कैनवास के रंगों के साथ मिलाता है।</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>मिक्सर ब्रश टूल</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>प्रति स्ट्रोक नई लेयर</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>अग्रभूमि रंग से कठोर किनारों वाली, बिना एंटी-एलियास वाली रेखाएँ पेंट करता है।</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>पेंसिल टूल</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>नमूनाकरण:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>गीलापन:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>कोण</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>रंग पिकर ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>क्रॉप क्षेत्र निर्धारित करने के लिए खींचें; घुमाने के लिए उसके बाहर खींचें। Enter पुष्टि करता है, Esc रद्द करता है।</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>चौ: {0:0} px  ऊँ: {1:0} px  कोण: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>क्रॉप टूल</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>क्रॉप किए गए पिक्सेल हटाएँ</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>ऊँ:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>मूल अनुपात</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>पर्सपेक्टिव क्रॉप</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>क्रॉप बॉक्स बनाने के लिए खींचें, फिर किसी ऑब्जेक्ट के पर्सपेक्टिव से मिलाने के लिए उसके कोने खींचें। Enter क्रॉप करता है और सीधा करता है।</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>पर्सपेक्टिव क्रॉप टूल</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>अनुपात</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>अनुपात:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (वर्ग)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>तिहाई का नियम</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>ग्रिड दिखाएँ</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>चौड़ाई और ऊँचाई अदला-बदली करें</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>चौ:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>एक बार</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>कस्टम आकृति</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>दीर्घवृत्त</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>रेखा</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>बहुभुज</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>आयत</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>त्रिभुज</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>पथ</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>छाया</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>ब्रश केंद्र (हॉट स्पॉट) के नीचे के रंग से मेल खाने वाले पिक्सेल मिटाता है।</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>पृष्ठभूमि इरेज़र टूल</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>असंलग्न</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>इतिहास तक मिटाएँ</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>पारदर्शिता तक मिटाता है, या लॉक की गई लेयर पर पृष्ठभूमि रंग तक। Alt इतिहास तक मिटाता है।</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>इरेज़र टूल</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>सीमाएँ:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>अग्रभूमि रंग सुरक्षित रखें</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>निर्यात करें...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>पारदर्शिता सुरक्षित रखें</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>डिथर</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>संपादित करें...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>ग्रेडिएंट:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>ग्रेडिएंट बनाने के लिए खींचें। Shift कोण को 45 डिग्री तक सीमित करता है।</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>कोण: {0:0.0}°  दूरी: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>ग्रेडिएंट टूल</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>{0} ग्रेडिएंट</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>मैजिक इरेज़र</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>समान रंग वाले पिक्सेल को पारदर्शिता तक मिटाने के लिए क्लिक करें।</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>मैजिक इरेज़र टूल</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>पेंट बकेट</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>समान रंग वाले पिक्सेल को अग्रभूमि रंग या पैटर्न से भरने के लिए क्लिक करें।</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>पेंट बकेट टूल</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>पारदर्शिता</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>नॉइज़ जोड़ें</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>लहर</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>फ़्रेम साफ़ करें</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>फ़्रेम सामग्री साफ़ करें</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>दीर्घवृत्ताकार फ़्रेम</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>फ़्रेम {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>फ़्रेम प्लेसहोल्डर बनाने के लिए खींचें। सक्रिय फ़्रेम भरने के लिए कोई छवि रखें या चिपकाएँ।</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>फ़्रेम टूल</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>सक्रिय फ़्रेम में छवि फ़ाइल रखें</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>आयताकार फ़्रेम</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>स्टॉप जोड़ें</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>अतियथार्थवादी</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>क्षेत्र:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>इतिहास स्रोत से नमूना लिए गए शैलीबद्ध स्ट्रोक पेंट करता है।</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>आर्ट हिस्ट्री ब्रश टूल</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>हिस्ट्री ब्रश का उपयोग नहीं किया जा सका क्योंकि इतिहास स्थिति का कैनवास आकार समान नहीं है।</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>इतिहास पैनल में स्रोत के रूप में चुनी गई इतिहास स्थिति से पिक्सेल वापस पेंट करता है।</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>हिस्ट्री ब्रश टूल</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>पहले इतिहास पैनल में इतिहास स्रोत सेट करें।</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>स्नैपशॉट हटाएँ</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>रीसैंपल:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>आवृत्ति:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>मुक्तहस्त चयन बनाने के लिए खींचें। बंद करने के लिए छोड़ें।</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>लैसो टूल</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>चुंबकीय लैसो</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>शुरू करने के लिए क्लिक करें, फिर किसी किनारे के साथ चलें। एंकर जोड़ने के लिए क्लिक करें, बंद करने के लिए डबल-क्लिक या Enter करें, Backspace एक एंकर हटाता है।</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>चुंबकीय लैसो टूल</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>बहुभुज लैसो</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>बिंदु जोड़ने के लिए क्लिक करें। बंद करने के लिए डबल-क्लिक, Enter या आरंभ बिंदु पर क्लिक करें। Backspace अंतिम बिंदु हटाता है।</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>बहुभुज लैसो टूल</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>पृष्ठभूमि</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>दृश्यता टॉगल करें (Alt-क्लिक केवल यह लेयर दिखाता है)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>दीर्घवृत्ताकार मार्की</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>दीर्घवृत्ताकार मार्की टूल</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>चुनने के लिए खींचें। Shift सीमित करता है, Alt केंद्र से बनाता है। किसी चयन को ले जाने के लिए उसके अंदर खींचें।</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>आयताकार मार्की</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>आयताकार मार्की टूल</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>चयन किनारा परिष्कृत करें</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>1 पिक्सेल का कॉलम चुनने के लिए क्लिक करें।</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>एकल कॉलम मार्की टूल</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>1 पिक्सेल की पंक्ति चुनने के लिए क्लिक करें।</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>एकल पंक्ति मार्की टूल</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>शैली:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>रंग तीव्रता:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(खाली)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>स्क्रीन में फ़िट करें</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>दृश्य स्क्रॉल करने के लिए खींचें। किसी भी टूल के साथ अस्थायी रूप से हैंड टूल का उपयोग करने के लिए Space दबाए रखें। स्क्रीन में फ़िट करने के लिए डबल-क्लिक करें।</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>हैंड टूल</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>दृश्य रीसेट करें</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>पिक्सेल बदले बिना कैनवास दृश्य घुमाने के लिए खींचें। Shift 15 डिग्री पर स्नैप करता है। Esc या दृश्य रीसेट करें इसे पुनर्स्थापित करता है।</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>दृश्य घुमाएँ टूल</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>घुमाव कोण:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>स्क्रबी ज़ूम</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>ज़ूम इन के लिए क्लिक करें, ज़ूम आउट के लिए Alt+क्लिक करें। स्क्रबी ज़ूम के लिए बाएँ/दाएँ खींचें, या स्क्रबी ज़ूम बंद होने पर आयत खींचें।</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>ज़ूम इन</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>ज़ूम आउट</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>ज़ूम टूल</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>काला</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>पैनल मेनू</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>एंकर पॉइंट जोड़ें</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>एंकर पॉइंट जोड़ने के लिए पाथ खंड पर क्लिक करें।</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>एंकर पॉइंट जोड़ें टूल</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>संयोजित करें</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>ओवरलैप होने वाले पाथ घटकों को मर्ज करें</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>पॉइंट बदलें</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>किसी स्मूथ पॉइंट को कोना बनाने के लिए उस पर क्लिक करें; स्मूथ हैंडल निकालने के लिए कोना पॉइंट खींचें। किसी हैंडल को तोड़ने के लिए उसे खींचें।</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>पॉइंट बदलें टूल</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>एंकर पॉइंट हटाएँ</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>किसी एंकर पॉइंट को हटाने के लिए उस पर क्लिक करें।</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>एंकर पॉइंट हटाएँ टूल</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>एंकर पॉइंट चुनने के लिए क्लिक करें या मार्की खींचें; आकार बदलने के लिए पॉइंट या हैंडल खींचें। Alt किसी हैंडल को स्वतंत्र रूप से खींचता है।</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>प्रत्यक्ष चयन टूल</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>एंकर खींचें</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>बाहर करें</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>प्रतिच्छेद</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>पाथ ले जाएँ</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>एंकर खिसकाएँ</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>किसी पाथ घटक को चुनने के लिए उस पर क्लिक करें, ले जाने के लिए खींचें। Alt+खींचना डुप्लिकेट करता है, Delete हटाता है।</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>पाथ चयन टूल</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>पहले घटक से बाद के घटकों को घटाएँ</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>कार्य पथ</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>ब्रश से पथ पर स्ट्रोक लगाएँ</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>स्वतः जोड़ें/हटाएँ</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>पाथ बंद करें</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>कर्वेचर पेन</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>पॉइंट रखने के लिए क्लिक करें; वक्र उनसे होकर सहजता से गुज़रता है। बंद करने के लिए पहले पॉइंट पर क्लिक करें, समाप्त करने के लिए Enter या Esc दबाएँ।</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>कर्वेचर पेन टूल</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>वक्र फ़िट:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>फ़्रीफ़ॉर्म पेन</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>मुक्तहस्त पाथ बनाने के लिए खींचें; इसे स्मूथ वक्रों से फ़िट किया जाता है। चुंबकीय किनारों पर स्नैप करता है।</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>फ़्रीफ़ॉर्म पेन टूल</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>चुंबकीय</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>बनाएँ:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>मास्क</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>पेन</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>कोना पॉइंट जोड़ने के लिए क्लिक करें, स्मूथ पॉइंट जोड़ने के लिए खींचें। बंद करने के लिए पहले पॉइंट पर क्लिक करें। Ctrl पॉइंट संपादित करता है, Alt उन्हें बदलता है।</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>पेन टूल</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>रबर बैंड</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>चयन...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>शीर्षकहीन-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>लकड़ी की धारियाँ</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>सामग्री-जागरूक स्थानांतरण</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>सामग्री-जागरूक स्थानांतरण...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>सामग्री-जागरूक स्थानांतरण टूल</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>गहरा करने की मात्रा:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>गंतव्य</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>एक चयन बनाएँ (या किसी भी चयन टूल का उपयोग करें), फिर चयन को खींचें।</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>विस्तार करें</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>ले जाएँ</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>पैच</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>पैच:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>पैच टूल</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>पुतली का आकार:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>लाल आँख</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>लाल प्रतिबिंब हटाने के लिए लाल आँख पर क्लिक करें (या उसके चारों ओर खींचें)।</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>लाल आँख टूल</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>स्रोत</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>संरचना:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>दूरी और कोण मापने के लिए खींचें। समायोजित करने के लिए किसी अंतिम बिंदु को खींचें।</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>रूलर टूल</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>सक्रिय लेयर को घुमाएँ ताकि रूलर रेखा समतल हो जाए</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>माप स्केल का उपयोग करें</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>रंग सैंपलर साफ़ करें</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>रंग सैंपलर</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>अधिकतम 10 रंग सैंपलर रखने के लिए क्लिक करें (जानकारी पैनल में दिखाए जाते हैं)। ले जाने के लिए खींचें, हटाने के लिए Alt+क्लिक करें।</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>रंग सैंपलर टूल</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>वर्तमान लेयर</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>रंग सैंपलर हटाएँ</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>अग्रभूमि रंग का नमूना लेने के लिए क्लिक करें। Alt+क्लिक पृष्ठभूमि रंग का नमूना लेता है।</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>आईड्रॉपर टूल</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>अधिकतम 10 रंग सैंपलर की अनुमति है।</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>रंग सैंपलर ले जाएँ</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>नमूना:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>नमूना रिंग दिखाएँ</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>चयन ले जाएँ</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>तीर</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>सही का निशान</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>बादल</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>क्रॉस</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>मुकुट</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>कस्टम आकृति टूल</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>बूँद</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>दीर्घवृत्त टूल</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>अंत तीर</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>भराव रंग (कोई नहीं के लिए राइट-क्लिक करें)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>गियर</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>दिल</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>लंबाई: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>बिजली</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>रेखा बनाने के लिए खींचें। Shift 45 डिग्री तक सीमित करता है।</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>रेखा टूल</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>पाथ संचालन:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>बहुभुज टूल</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>पहेली</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>आयत टूल</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>आकार:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>आकृति बनाने के लिए खींचें। Shift अनुपात बनाए रखता है, Alt केंद्र से बनाता है।</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>भुजाएँ:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>वाक् बुलबुला</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>तारा</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>तारा अनुपात:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>आरंभ तीर</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>स्ट्रोक रंग (कोई नहीं के लिए राइट-क्लिक करें)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>त्रिभुज टूल</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>मोटाई:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>कमांड खोजें</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>डिफ़ॉल्ट का उपयोग करें</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>स्लाइस साफ़ करें</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>स्लाइस हटाएँ</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>विभाजित करें...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>स्लाइस विभाजित करें</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>स्लाइस संपादित करें</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>स्लाइस विकल्प संपादित करें</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>निश्चित चौ:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>कोई स्लाइस चयनित नहीं है</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>पंक्तियाँ x कॉलम (उदाहरण के लिए 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>स्लाइस</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>स्लाइस बनाने के लिए खींचें। उन्हें निर्यात करने के लिए फ़ाइल &gt; निर्यात &gt; स्लाइस सहेजें का उपयोग करें।</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>स्लाइस विकल्प</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>स्लाइस चुनने के लिए क्लिक करें, ले जाने या आकार बदलने के लिए खींचें। Delete इसे हटाता है, डबल-क्लिक इसका नाम बदलता है।</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>स्लाइस चयन टूल</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>स्लाइस टूल</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>गाइड से स्लाइस</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>संरेखित</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>क्लोन स्रोत: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>क्लोन स्टैम्प टूल</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>सुधार किया जा रहा है...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>हीलिंग ब्रश टूल</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>प्रभाववादी</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>क्लोन स्टैम्प टूल का उपयोग नहीं किया जा सका क्योंकि क्लोन करने का क्षेत्र निर्धारित नहीं किया गया है (स्रोत बिंदु निर्धारित करने के लिए Alt+क्लिक करें)।</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>चयनित पैटर्न से पेंट करता है।</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>पैटर्न स्टैम्प टूल</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>ध्यान भटकाने वाली चीज़ों को हटाने के लिए उन पर पेंट करें। क्षेत्र को उसके आसपास से पुनर्निर्मित किया जाता है।</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>हटाएँ टूल</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>हटाया जा रहा है...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>स्पॉट हीलिंग ब्रश टूल</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>धब्बों और दागों को स्वचालित रूप से ठीक करने के लिए उन पर पेंट करें।</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>प्रकार:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>हाल की फ़ाइलें साफ़ करें</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>पुनर्स्थापित करें</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>किनारों और विवरणों को नरम करने के लिए पेंट करें।</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>ब्लर टूल</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>क्षेत्रों को गहरा करने के लिए पेंट करें। Alt हल्का करता है।</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>बर्न टूल</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>क्षेत्रों को हल्का करने के लिए पेंट करें। Alt गहरा करता है।</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>डॉज टूल</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>उँगली से पेंटिंग</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>विवरण सुरक्षित रखें</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>टोन सुरक्षित रखें</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>श्रेणी:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>संतृप्त करें</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>स्थानीय कंट्रास्ट बढ़ाने और विवरणों को तीक्ष्ण करने के लिए पेंट करें।</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>शार्पन टूल</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>पेंट फैलाने के लिए खींचें। उँगली से पेंटिंग अग्रभूमि रंग से शुरू होती है।</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>स्मज टूल</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>रंगों को संतृप्त या असंतृप्त करने के लिए पेंट करें।</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>स्पंज टूल</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>{0} का उपयोग नहीं किया जा सका क्योंकि लक्ष्य लेयर छिपी हुई है।</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>{0} का उपयोग नहीं किया जा सका क्योंकि लेयर लॉक है।</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>{0} का उपयोग नहीं किया जा सका क्योंकि लक्ष्य लेयर पिक्सेल लेयर नहीं है। पहले लेयर को रास्टराइज़ करें (लेयर &gt; रास्टराइज़)।</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>एक कॉलम में संक्षिप्त करें</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>टूलबार अनुकूलित करें</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>एंटी-एलियास</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>पुष्टि करें</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>संलग्न</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>प्रवाह:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>बिंदु नमूना</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>सभी लेयर का नमूना लें</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>{0} x {0} औसत</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>नमूना आकार:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>चौ: {0:0} px  ऊँ: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>सहनशीलता:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>निचले किनारे संरेखित करें</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>क्षैतिज केंद्र संरेखित करें</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>बाएँ किनारे संरेखित करें</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>दाएँ किनारे संरेखित करें</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>ऊपरी किनारे संरेखित करें</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>लंबवत केंद्र संरेखित करें</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>स्वतः चयन:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>क्लिक करने पर पॉइंटर के नीचे की सबसे ऊपरी लेयर चुनी जाती है (अस्थायी रूप से Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>रूपांतरण रद्द करें (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>रूपांतरित नहीं किया जा सका क्योंकि लेयर खाली है।</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>रूपांतरित नहीं किया जा सका क्योंकि लेयर लॉक है या उसमें कोई सामग्री नहीं है।</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>चयन को रूपांतरित नहीं किया जा सका क्योंकि लेयर लॉक है।</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>रूपांतरण की पुष्टि करें (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>गाइड हटाएँ</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>तैरता हुआ</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>तैरता हुआ चयन</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>स्केल करने के लिए हैंडल खींचें (Shift: आनुपातिक, Alt: केंद्र से), घुमाने के लिए बाहर खींचें, विकृत करने के लिए कोने को Ctrl+खींचें, तिरछा करने के लिए किनारे को Ctrl+खींचें। Enter पुष्टि करता है, Esc रद्द करता है।</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>समूह</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>इंटरपोलेशन:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>अनुरोध पूरा नहीं किया जा सका क्योंकि लेयर लॉक है।</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>गाइड ले जाएँ</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>लेयर या चयनित पिक्सेल ले जाने के लिए खींचें। Alt+खींचना डुप्लिकेट करता है, Shift सीमित करता है। तीर कुंजियाँ खिसकाती हैं।</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>मूव टूल</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>खिसकाएँ</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>रूपांतरण नियंत्रण दिखाएँ</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>सक्रिय लेयर या चयन को रूपांतरित करने के लिए संपादन &gt; मुक्त रूपांतरण (Ctrl+T) का उपयोग करें।</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>सभी बड़े अक्षर</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>बोल्ड इटैलिक</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>वर्तमान संपादन रद्द करें (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>टेक्स्ट केंद्र में करें</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>वर्तमान संपादन की पुष्टि करें (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>नकली बोल्ड</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>नकली इटैलिक</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>पॉइंट टेक्स्ट जोड़ने के लिए क्लिक करें, अनुच्छेद टेक्स्ट जोड़ने के लिए खींचें, संपादित करने के लिए मौजूदा टेक्स्ट पर क्लिक करें। Ctrl+Enter पुष्टि करता है, Esc रद्द करता है।</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>क्षैतिज टाइप मास्क टूल</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>क्षैतिज टाइप टूल</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>टेक्स्ट बाएँ संरेखित करें</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>टाइप करने के लिए क्लिक करें; पुष्टि करने पर टेक्स्ट के आकार में चयन बनता है।</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>सामान्य</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>टेक्स्ट दाएँ संरेखित करें</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>एंटी-एलियास सेट करें</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>फ़ॉन्ट शैली सेट करें</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>स्ट्राइकथ्रू</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>पाठ का रंग</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>टेक्स्ट अभिविन्यास टॉगल करें</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>टाइप मास्क</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>लंबवत टाइप मास्क टूल</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>लंबवत टाइप टूल</value>
   </data>
 </root>

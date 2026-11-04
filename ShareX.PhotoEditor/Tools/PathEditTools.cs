@@ -44,16 +44,16 @@ public sealed class AnchorPointTool : PathToolBase
 
     public override string Name => _id switch
     {
-        ToolId.AddAnchorPoint => "Add Anchor Point Tool",
-        ToolId.DeleteAnchorPoint => "Delete Anchor Point Tool",
-        _ => "Convert Point Tool"
+        ToolId.AddAnchorPoint => Strings.PathEditTools_AddAnchorPointTool,
+        ToolId.DeleteAnchorPoint => Strings.PathEditTools_DeleteAnchorPointTool,
+        _ => Strings.PathEditTools_ConvertPointTool
     };
 
     public override string Hint => _id switch
     {
-        ToolId.AddAnchorPoint => "Click a path segment to add an anchor point.",
-        ToolId.DeleteAnchorPoint => "Click an anchor point to delete it.",
-        _ => "Click a smooth point to make it a corner; drag a corner point to pull out smooth handles. Drag a handle to break it."
+        ToolId.AddAnchorPoint => Strings.PathEditTools_AddAnchorPointHint,
+        ToolId.DeleteAnchorPoint => Strings.PathEditTools_DeleteAnchorPointHint,
+        _ => Strings.PathEditTools_ConvertPointHint
     };
 
     public override void PointerDown(ToolInput input)
@@ -67,7 +67,7 @@ public sealed class AnchorPointTool : PathToolBase
                 {
                     path.InsertAnchor(sub, segment, t);
                     PathChanged();
-                    PushHistory("Add Anchor Point");
+                    PushHistory(Strings.PathEditTools_AddAnchorPoint);
                 }
                 break;
             case ToolId.DeleteAnchorPoint:
@@ -76,7 +76,7 @@ public sealed class AnchorPointTool : PathToolBase
                     deleteSub.Anchors.RemoveAt(index);
                     if (deleteSub.Anchors.Count < 2) path.SubPaths.Remove(deleteSub);
                     PathChanged();
-                    PushHistory("Delete Anchor Point");
+                    PushHistory(Strings.PathEditTools_DeleteAnchorPoint);
                 }
                 break;
             default:
@@ -93,7 +93,7 @@ public sealed class AnchorPointTool : PathToolBase
                         anchor.In = anchor.Out = anchor.Point;
                         anchor.Smooth = false;
                         PathChanged();
-                        PushHistory("Convert Point");
+                        PushHistory(Strings.PathEditTools_ConvertPoint);
                     }
                     else
                     {
@@ -131,7 +131,7 @@ public sealed class AnchorPointTool : PathToolBase
         if (_changed)
         {
             _changed = false;
-            PushHistory("Convert Point");
+            PushHistory(Strings.PathEditTools_ConvertPoint);
         }
     }
 }
@@ -149,9 +149,9 @@ public sealed class PathSelectionTool : PathToolBase
 
     public override ToolId Id => ToolId.PathSelection;
 
-    public override string Name => "Path Selection Tool";
+    public override string Name => Strings.PathEditTools_PathSelectionTool;
 
-    public override string Hint => "Click a path component to select it, drag to move it. Alt-drag duplicates, Delete removes.";
+    public override string Hint => Strings.PathEditTools_PathSelectionHint;
 
     public override ToolCursor Cursor => ToolCursor.Arrow;
 
@@ -205,7 +205,7 @@ public sealed class PathSelectionTool : PathToolBase
         if (_moved)
         {
             _moved = false;
-            PushHistory("Move Path");
+            PushHistory(Strings.PathEditTools_MovePath);
         }
     }
 
@@ -219,7 +219,7 @@ public sealed class PathSelectionTool : PathToolBase
                 path.SubPaths.RemoveAll(_selected.Contains);
                 _selected.Clear();
                 PathChanged();
-                PushHistory("Delete Path");
+                PushHistory(Strings.EditorCommands_DeletePath);
                 return true;
             }
         }
@@ -238,10 +238,10 @@ public sealed class PathSelectionTool : PathToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Button("Combine", () => Combine(SKPathOp.Union), "Merge overlapping path components");
-        options.Button("Subtract", () => Combine(SKPathOp.Difference), "Subtract later components from the first");
-        options.Button("Intersect", () => Combine(SKPathOp.Intersect));
-        options.Button("Exclude", () => Combine(SKPathOp.Xor));
+        options.Button(Strings.PathEditTools_Combine, () => Combine(SKPathOp.Union), Strings.PathEditTools_CombineTip);
+        options.Button(Strings.BlendModes_Subtract, () => Combine(SKPathOp.Difference), Strings.PathEditTools_SubtractTip);
+        options.Button(Strings.PathEditTools_Intersect, () => Combine(SKPathOp.Intersect));
+        options.Button(Strings.PathEditTools_Exclude, () => Combine(SKPathOp.Xor));
         PenTool.PathOperationButtons(options, Host);
     }
 
@@ -273,7 +273,7 @@ public sealed class PathSelectionTool : PathToolBase
         path.FillType = merged.FillType;
         _selected.Clear();
         PathChanged();
-        PushHistory("Combine Shapes");
+        PushHistory(Strings.Enum_PathCombine_Combine);
     }
 }
 
@@ -292,9 +292,9 @@ public sealed class DirectSelectionTool : PathToolBase
 
     public override ToolId Id => ToolId.DirectSelection;
 
-    public override string Name => "Direct Selection Tool";
+    public override string Name => Strings.PathEditTools_DirectSelectionTool;
 
-    public override string Hint => "Click or drag a marquee to select anchor points; drag points or handles to reshape. Alt drags a handle independently.";
+    public override string Hint => Strings.PathEditTools_DirectSelectionHint;
 
     public override ToolCursor Cursor => ToolCursor.Arrow;
 
@@ -405,7 +405,7 @@ public sealed class DirectSelectionTool : PathToolBase
         if (_moved)
         {
             _moved = false;
-            PushHistory("Drag Anchor");
+            PushHistory(Strings.PathEditTools_DragAnchor);
         }
     }
 
@@ -418,7 +418,7 @@ public sealed class DirectSelectionTool : PathToolBase
             path.SubPaths.RemoveAll(s => s.Anchors.Count < 2);
             _selected.Clear();
             PathChanged();
-            PushHistory("Delete Anchor Point");
+            PushHistory(Strings.PathEditTools_DeleteAnchorPoint);
             return true;
         }
         float step = modifiers.HasFlag(KeyModifiers.Shift) ? 10 : 1;
@@ -427,7 +427,7 @@ public sealed class DirectSelectionTool : PathToolBase
         {
             foreach (var (anchor, part) in _selected) MovePart(anchor, part, (part == 0 ? anchor.Point : part == 1 ? anchor.In : anchor.Out) + delta, false);
             PathChanged();
-            PushHistory("Nudge Anchor");
+            PushHistory(Strings.PathEditTools_NudgeAnchor);
             return true;
         }
         return base.KeyDown(key, modifiers);

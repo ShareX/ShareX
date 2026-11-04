@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>Canlılık</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Yazar:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Yazar: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Tümünü temizle</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Sayımı temizle</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Notları temizle</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Sayım grubu {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Numaralı sayım işaretleri yerleştirmek için tıklayın. Taşımak için sürükleyin, kaldırmak için Alt ile tıklayın.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Sayı: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Sayım aracı</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Sayımı sil</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Notu sil</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Notu düzenle</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Grup:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Grup rengi</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Etiket boyutu:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>İşaret boyutu:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Sayımı taşı</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Notu taşı</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Yeni bir sayım grubu oluştur</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Not</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Not rengi</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Not eklemek için tıklayın. Düzenlemek için nota tıklayın, taşımak için sürükleyin, silmek için Alt ile tıklayın.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Not aracı</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Yeni çalışma yüzeyi ekle</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Çalışma yüzeyi {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Çalışma yüzeyi arka planı</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Çalışma yüzeyi oluşturmak için boş tuval üzerinde sürükleyin. Bir çalışma yüzeyini içeriğiyle birlikte taşımak için başlığını sürükleyin.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Çalışma yüzeyini taşı</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Çalışma yüzeyi aracı</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Yeni çalışma yüzeyi</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (Telefon)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (Kare)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (Tablet)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Kenarı iyileştir</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Kement</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Sihirli değnek</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Benzer renkleri seçmek için tıklayın. Shift ekler, Alt çıkarır.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Sihirli değnek aracı</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Nesne seçimi</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Seçmek için bir nesnenin çevresine dikdörtgen veya kement sürükleyin.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Nesne seçimi aracı</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Hızlı seçim</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Seçmek için bir alanın üzerine boyayın; seçim kenarları bulmak için genişler. Alt çıkarır.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Hızlı seçim aracı</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Nesne seçiliyor...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Seçim fırçası</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Seçime eklemek için boyayın. Alt (veya Çıkar modu) seçimden kaldırır.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Seçim fırçası aracı</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>Arkada</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>Canlı ışık</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Püskürtme tarzı birikme efektlerini etkinleştir</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>“{0}” bir katman maskesi üzerine boyayamaz.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Her dokunuşta uygulanan boya</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Fırça darbesi başına en yüksek boya kaplaması (0-9 tuşları)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Basınca göre boyut</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Yumuşatma:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Ayarlama fırçası</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Yerel bir ayarlama boyar. Her darbe bir ayarlama katmanının maskesini düzenler. Alt ayarlamayı siler.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>{0} fırçası</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Ayarlama fırçası aracı</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Ayarlama:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Miktar:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Otomatik silme</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Ön plan rengiyle boyar. Shift ile tıklama düz bir çizgi çizer. [ ] boyutu değiştirir.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Fırça aracı</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Her darbeden sonra temizle</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Örneklenen renge benzer renkleri ön plan rengiyle değiştirir.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Renk değiştirme aracı</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Yükleme:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Yükleme rengi (ön plan)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Karışım:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Yüklenen boyayı gerçek boya gibi tuval renkleriyle karıştırır.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Karıştırıcı fırça aracı</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Her darbe için yeni katman</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Ön plan rengiyle sert kenarlı, kenar yumuşatmasız çizgiler boyar.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Kalem aracı</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Örnekleme:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Islaklık:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>Açı</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>Renk seçici ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Kırpma alanını belirlemek için sürükleyin; döndürmek için dışında sürükleyin. Enter onaylar, Esc iptal eder.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>G: {0:0} px  Y: {1:0} px  Açı: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Kırpma aracı</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Kırpılan pikselleri sil</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>Y:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Özgün oran</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Perspektif kırpma</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Bir kırpma kutusu oluşturmak için sürükleyin, ardından köşelerini bir nesnenin perspektifine uyacak şekilde sürükleyin. Enter kırpar ve düzeltir.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Perspektif kırpma aracı</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Oran</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Oran:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (Kare)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Üçler kuralı</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Izgarayı göster</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Genişlik ve yüksekliği değiştir</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>G:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>İptal</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>Bir kez</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Özel şekil</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Elips</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Çizgi</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Çokgen</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Dikdörtgen</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Üçgen</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>Yol</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>Gölgeler</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Fırça merkezinin (sıcak nokta) altındaki renkle eşleşen pikselleri siler.</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Arka plan silgisi aracı</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Bitişik olmayan</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Geçmişe kadar sil</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Saydamlığa kadar siler, kilitli katmanlarda ise arka plan rengine kadar. Alt geçmişe kadar siler.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Silgi aracı</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Sınırlar:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Ön plan rengini koru</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>Dışa aktar...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>Saydamlığı koru</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Titreme</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Düzenle...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Degrade:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Degrade çizmek için sürükleyin. Shift açıyı 45 dereceyle sınırlar.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Açı: {0:0.0}°  Mesafe: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Degrade aracı</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>{0} degrade</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Sihirli silgi</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Benzer renkli pikselleri saydam olacak şekilde silmek için tıklayın.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Sihirli silgi aracı</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Boya kovası</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Benzer renkli pikselleri ön plan rengiyle veya bir desenle doldurmak için tıklayın.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Boya kovası aracı</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Saydamlık</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>Gürültü ekle</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>Dalga</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Çerçeveyi temizle</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Çerçeve içeriğini temizle</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Eliptik çerçeve</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Çerçeve {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Bir çerçeve yer tutucusu oluşturmak için sürükleyin. Etkin çerçeveyi doldurmak için bir görüntü yerleştirin veya yapıştırın.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Çerçeve aracı</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Etkin çerçeveye bir görüntü dosyası yerleştir</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Dikdörtgen çerçeve</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>Durak ekle</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>Gerçeküstü</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Alan:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Geçmiş kaynağından örneklenen stilize darbeler boyar.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Sanat geçmişi fırçası aracı</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Geçmiş durumu aynı tuval boyutuna sahip olmadığından Geçmiş fırçası kullanılamadı.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Geçmiş panelinde kaynak olarak seçilen geçmiş durumundan pikselleri geri boyar.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Geçmiş fırçası aracı</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Önce Geçmiş panelinde bir geçmiş kaynağı ayarlayın.</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>Anlık görüntüyü sil</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>Yeniden örnekle:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Sıklık:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Serbest bir seçim çizmek için sürükleyin. Kapatmak için bırakın.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Kement aracı</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Manyetik kement</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Başlamak için tıklayın, ardından bir kenar boyunca ilerleyin. Bağlantı noktası eklemek için tıklayın, kapatmak için çift tıklayın veya Enter'a basın, Backspace bir bağlantı noktasını kaldırır.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Manyetik kement aracı</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Çokgen kement</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Nokta eklemek için tıklayın. Kapatmak için çift tıklayın, Enter'a basın veya başlangıç noktasına tıklayın. Backspace son noktayı kaldırır.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Çokgen kement aracı</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>Arka plan</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>Görünürlüğü değiştir (Alt+tıklama yalnızca bu katmanı gösterir)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Eliptik seçim çerçevesi</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Eliptik seçim çerçevesi aracı</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Seçmek için sürükleyin. Shift sınırlar, Alt merkezden çizer. Taşımak için bir seçimin içinde sürükleyin.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Dikdörtgen seçim çerçevesi</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Dikdörtgen seçim çerçevesi aracı</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Seçim kenarını iyileştir</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>1 piksellik bir sütun seçmek için tıklayın.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Tek sütun seçim çerçevesi aracı</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>1 piksellik bir satır seçmek için tıklayın.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Tek satır seçim çerçevesi aracı</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Stil:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>Renk yoğunluğu:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(boş)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Ekrana sığdır</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Görünümü kaydırmak için sürükleyin. El aracını geçici olarak kullanmak için herhangi bir araçla Boşluk tuşunu basılı tutun. Ekrana sığdırmak için çift tıklayın.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>El aracı</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Görünümü sıfırla</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Pikselleri değiştirmeden tuval görünümünü döndürmek için sürükleyin. Shift 15 derecelik adımlara yaslar. Esc veya Görünümü sıfırla geri yükler.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Görünümü döndürme aracı</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Döndürme açısı:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Kaydırmalı yakınlaştırma</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Yakınlaştırmak için tıklayın, uzaklaştırmak için Alt ile tıklayın. Kaydırmalı yakınlaştırma için sola/sağa sürükleyin veya bu kapalıyken bir dikdörtgen sürükleyin.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Yakınlaştır</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Uzaklaştır</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Yakınlaştırma aracı</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>Siyah</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>Panel menüsü</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Bağlantı noktası ekle</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Bağlantı noktası eklemek için bir yol parçasına tıklayın.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Bağlantı noktası ekleme aracı</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Birleştir</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Çakışan yol bileşenlerini birleştir</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Noktayı dönüştür</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Köşeye dönüştürmek için düzgün bir noktaya tıklayın; düzgün tutamaçlar çekmek için bir köşe noktasını sürükleyin. Kırmak için bir tutamacı sürükleyin.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Nokta dönüştürme aracı</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Bağlantı noktasını sil</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Silmek için bir bağlantı noktasına tıklayın.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Bağlantı noktası silme aracı</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Bağlantı noktalarını seçmek için tıklayın veya bir seçim çerçevesi sürükleyin; yeniden şekillendirmek için noktaları veya tutamaçları sürükleyin. Alt bir tutamacı bağımsız olarak sürükler.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Doğrudan seçim aracı</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Bağlantı noktasını sürükle</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Hariç tut</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Kesiştir</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Yolu taşı</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Bağlantı noktasını kaydır</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Seçmek için bir yol bileşenine tıklayın, taşımak için sürükleyin. Alt ile sürükleme çoğaltır, Delete kaldırır.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Yol seçimi aracı</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Sonraki bileşenleri ilkinden çıkar</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>Çalışma yolu</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>Yola fırçayla kontur uygula</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Otomatik ekle/sil</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Yolu kapat</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Eğrilik kalemi</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Nokta yerleştirmek için tıklayın; eğri bunların içinden düzgünce akar. Kapatmak için ilk noktaya tıklayın, bitirmek için Enter veya Esc'ye basın.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Eğrilik kalemi aracı</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Eğri uydurma:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Serbest kalem</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Serbest bir yol çizmek için sürükleyin; düzgün eğrilerle uydurulur. Manyetik kenarlara yaslanır.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Serbest kalem aracı</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Manyetik</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Oluştur:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Maske</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Kalem</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Köşe noktaları eklemek için tıklayın, düzgün noktalar eklemek için sürükleyin. Kapatmak için ilk noktaya tıklayın. Ctrl noktaları düzenler, Alt dönüştürür.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Kalem aracı</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Lastik bant</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Seçim...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>Adsız-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>Ahşap damarı</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>İçeriğe duyarlı taşıma</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>İçeriğe duyarlı taşıma...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>İçeriğe duyarlı taşıma aracı</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Koyulaştırma miktarı:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Hedef</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Bir seçim çizin (veya herhangi bir seçim aracını kullanın), ardından seçimi sürükleyin.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Genişlet</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Taşı</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Yama</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Yama:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Yama aracı</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Göz bebeği boyutu:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Kırmızı göz</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Kırmızı yansımayı gidermek için kırmızı bir göze tıklayın (veya çevresinde sürükleyin).</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Kırmızı göz aracı</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Kaynak</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Yapı:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Mesafe ve açı ölçmek için sürükleyin. Ayarlamak için bir uç noktayı sürükleyin.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Cetvel aracı</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Etkin katmanı cetvel çizgisi yatay olacak şekilde döndür</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Ölçüm ölçeğini kullan</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Renk örnekleyicilerini temizle</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Renk örnekleyici</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>En fazla 10 renk örnekleyici yerleştirmek için tıklayın (Bilgi panelinde gösterilir). Taşımak için sürükleyin, silmek için Alt ile tıklayın.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Renk örnekleyici aracı</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Geçerli katman</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Renk örnekleyiciyi sil</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Ön plan rengini örneklemek için tıklayın. Alt ile tıklama arka plan rengini örnekler.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Damlalık aracı</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>En fazla 10 renk örnekleyiciye izin verilir.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Renk örnekleyiciyi taşı</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Örnek:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Örnekleme halkasını göster</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Seçimi taşı</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Onay işareti</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Bulut</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Çarpı</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Taç</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Özel şekil aracı</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Damla</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Elips aracı</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Bitiş oku</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Dolgu rengi (yok için sağ tıklayın)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Dişli</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Kalp</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Uzunluk: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Şimşek</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Çizgi çizmek için sürükleyin. Shift 45 dereceyle sınırlar.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Çizgi aracı</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Yol işlemi:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Çokgen aracı</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Yapboz</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Dikdörtgen aracı</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Şekil:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Şekli çizmek için sürükleyin. Shift oranları korur, Alt merkezden çizer.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Kenarlar:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Konuşma balonu</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Yıldız</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Yıldız oranı:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Başlangıç oku</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Kontur rengi (yok için sağ tıklayın)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Üçgen aracı</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Kalınlık:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>Komut ara</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>Varsayılanları kullan</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Dilimleri temizle</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Dilimi sil</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Böl...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Dilimi böl</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Dilimi düzenle</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Dilim seçeneklerini düzenle</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>Sabit G:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Seçili dilim yok</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Satır x sütun (örneğin 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Dilim</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Dilim oluşturmak için sürükleyin. Dışa aktarmak için Dosya &gt; Dışa aktar &gt; Dilimleri kaydet komutunu kullanın.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Dilim seçenekleri</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Bir dilimi seçmek için tıklayın, taşımak veya yeniden boyutlandırmak için sürükleyin. Delete kaldırır, çift tıklama yeniden adlandırır.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Dilim seçme aracı</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Dilim aracı</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Kılavuzlardan dilimler</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Hizalı</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Klon kaynağı: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Klon damgası aracı</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>İyileştiriliyor...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>İyileştirme fırçası aracı</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>İzlenimci</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Klonlanacak alan tanımlanmadığından Klon damgası aracı kullanılamadı (kaynak noktası tanımlamak için Alt ile tıklayın).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Seçili desenle boyar.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Desen damgası aracı</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Dikkat dağıtan öğeleri kaldırmak için üzerlerine boyayın. Alan çevresinden yeniden oluşturulur.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Kaldırma aracı</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Kaldırılıyor...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Nokta iyileştirme fırçası aracı</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Lekeleri ve kusurları otomatik olarak iyileştirmek için üzerlerine boyayın.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Tür:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>Son dosyaları temizle</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>Geri yükle</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Kenarları ve ayrıntıları yumuşatmak için boyayın.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Bulanıklaştırma aracı</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Alanları koyulaştırmak için boyayın. Alt açar.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Yakma aracı</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Alanları açmak için boyayın. Alt koyulaştırır.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Soldurma aracı</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Parmakla boyama</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Ayrıntıyı koru</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Tonları koru</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Aralık:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Doygunlaştır</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Yerel kontrastı artırmak ve ayrıntıları keskinleştirmek için boyayın.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Keskinleştirme aracı</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Boyayı yaymak için sürükleyin. Parmakla boyama ön plan rengiyle başlar.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Yayma aracı</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Renkleri doygunlaştırmak veya doygunluğunu azaltmak için boyayın.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Sünger aracı</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>Hedef katman gizli olduğundan “{0}” kullanılamadı.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>Katman kilitli olduğundan “{0}” kullanılamadı.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>Hedef katman bir piksel katmanı olmadığından “{0}” kullanılamadı. Önce katmanı rasterleştirin (Katman &gt; Rasterleştir).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>Tek sütuna daralt</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>Araç Çubuğunu Özelleştir</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Kenar yumuşatma</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Onayla</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Bitişik</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Akış:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Nokta örneği</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Tüm katmanları örnekle</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>{0} x {0} ortalama</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Örnek boyutu:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>G: {0:0} px  Y: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Tolerans:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Alt kenarları hizala</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Yatay merkezleri hizala</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Sol kenarları hizala</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Sağ kenarları hizala</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Üst kenarları hizala</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Dikey merkezleri hizala</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Otomatik seç:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Tıklama, imlecin altındaki en üstteki katmanı seçer (geçici olarak Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Dönüştürmeyi iptal et (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Katman boş olduğundan dönüştürülemedi.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Katman kilitli olduğundan veya içeriği olmadığından dönüştürülemedi.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Katman kilitli olduğundan seçim dönüştürülemedi.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Dönüştürmeyi onayla (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Kılavuzu sil</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Kayan</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Kayan seçim</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Ölçeklemek için tutamaçları sürükleyin (Shift: orantılı, Alt: merkezden), döndürmek için dışarıda sürükleyin, bozmak için bir köşeyi Ctrl ile sürükleyin, eğmek için bir kenarı Ctrl ile sürükleyin. Enter onaylar, Esc iptal eder.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Grup</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Ara değerleme:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Katman kilitli olduğundan istek tamamlanamadı.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Kılavuzu taşı</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Katmanı veya seçili pikselleri taşımak için sürükleyin. Alt ile sürükleme çoğaltır, Shift sınırlar. Ok tuşları kaydırır.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Taşıma aracı</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Kaydır</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Dönüştürme denetimlerini göster</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Etkin katmanı veya seçimi dönüştürmek için Düzen &gt; Serbest dönüştürme (Ctrl+T) komutunu kullanın.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Tümü büyük harf</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Kalın italik</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Geçerli düzenlemeleri iptal et (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Metni ortala</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Geçerli düzenlemeleri onayla (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Sahte kalın</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Sahte italik</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Nokta metni eklemek için tıklayın, paragraf metni eklemek için sürükleyin, düzenlemek için mevcut metne tıklayın. Ctrl+Enter onaylar, Esc iptal eder.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Yatay yazı maskesi aracı</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Yatay yazı aracı</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Metni sola hizala</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Yazmak için tıklayın; onaylandığında metnin şeklinde bir seçim oluşturulur.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Metni sağa hizala</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Kenar yumuşatmayı ayarla</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Yazı tipi stilini ayarla</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Üstü çizili</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Metin rengi</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Metin yönünü değiştir</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Yazı maskesi</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Dikey yazı maskesi aracı</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Dikey yazı aracı</value>
   </data>
 </root>

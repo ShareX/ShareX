@@ -55,7 +55,7 @@ public sealed class TransformTool : ToolBase
     private SKPoint _dragStart;
     private bool _active;
     private ToolBase? _returnTo;
-    private string _historyName = "Free Transform";
+    private string _historyName = Strings.EditorCommands_FreeTransform;
 
     public TransformTool(IEditorHost host) : base(host)
     {
@@ -63,9 +63,9 @@ public sealed class TransformTool : ToolBase
 
     public override ToolId Id => ToolId.FreeTransform;
 
-    public override string Name => "Free Transform";
+    public override string Name => Strings.EditorCommands_FreeTransform;
 
-    public override string Hint => "Drag handles to scale (Shift: proportional, Alt: from center), outside to rotate, Ctrl-drag a corner to distort, Ctrl-drag an edge to skew. Enter commits, Esc cancels.";
+    public override string Hint => Strings.TransformTools_FreeTransformHint;
 
     public override ToolCursor Cursor => ToolCursor.Arrow;
 
@@ -90,24 +90,24 @@ public sealed class TransformTool : ToolBase
     }
 
     /// <summary>Starts a transform of the active layer (or selection). Returns false if nothing can be transformed.</summary>
-    public bool Begin(TransformMode mode, string historyName = "Free Transform")
+    public bool Begin(TransformMode mode, string? historyName = null)
     {
         PhotoDocument? doc = Doc;
         if (doc?.ActiveLayer is not Layer layer) return false;
         if (!layer.CanMove || layer is AdjustmentLayer or FillLayer)
         {
-            Host.ShowMessage("Could not transform because the layer is locked or has no content.");
+            Host.ShowMessage(Strings.TransformTools_CannotTransformLocked);
             return false;
         }
         ForcedMode = mode;
-        _historyName = historyName;
+        _historyName = historyName ?? Strings.EditorCommands_FreeTransform;
         _floatingBase = null;
 
         if (layer is RasterLayer raster && doc.Selection != null)
         {
             if (!raster.CanEditPixels)
             {
-                Host.ShowMessage("Could not transform the selection because the layer is locked.");
+                Host.ShowMessage(Strings.TransformTools_CannotTransformSelection);
                 return false;
             }
             // Lift the selected pixels onto a temporary floating layer.
@@ -124,7 +124,7 @@ public sealed class TransformTool : ToolBase
             {
                 LayerOps.EraseMasked(doc, raster, doc.Selection, 1);
             }
-            RasterLayer floatLayer = new("Floating Selection", new PixelSurface(floating), new SKPointI(bounds.Left, bounds.Top))
+            RasterLayer floatLayer = new(Strings.TransformTools_FloatingSelection, new PixelSurface(floating), new SKPointI(bounds.Left, bounds.Top))
             {
                 BlendMode = raster.BlendMode
             };
@@ -137,7 +137,7 @@ public sealed class TransformTool : ToolBase
         if (layer is SmartObjectLayer smart) _source = SKRect.Create(smart.Source.Width, smart.Source.Height);
         if (_source.IsEmpty || _source.Width < 1 || _source.Height < 1)
         {
-            Host.ShowMessage("Could not transform because the layer is empty.");
+            Host.ShowMessage(Strings.TransformTools_CannotTransformEmpty);
             Cancel();
             return false;
         }
@@ -428,7 +428,7 @@ public sealed class TransformTool : ToolBase
     {
         if (!_active)
         {
-            options.Label("Use Edit > Free Transform (Ctrl+T) to transform the active layer or selection.");
+            options.Label(Strings.TransformTools_UseFreeTransform);
             return;
         }
         SKPoint center = Center(_quad);
@@ -443,13 +443,13 @@ public sealed class TransformTool : ToolBase
         }
         options.Number("X:", -100000, 100000, () => center.X, v => Rebuild((float)v, center.Y, width, height, angle), "0.0", "px", 1, 80);
         options.Number("Y:", -100000, 100000, () => center.Y, v => Rebuild(center.X, (float)v, width, height, angle), "0.0", "px", 1, 80);
-        options.Number("W:", -10000, 10000, () => width / _source.Width * 100, v => Rebuild(center.X, center.Y, (float)v / 100 * _source.Width, height, angle), "0.00", "%", 1, 72);
-        options.Number("H:", -10000, 10000, () => height / _source.Height * 100, v => Rebuild(center.X, center.Y, width, (float)v / 100 * _source.Height, angle), "0.00", "%", 1, 72);
-        options.Number("Angle:", -180, 180, () => angle, v => Rebuild(center.X, center.Y, width, height, (float)v), "0.00", "°", 1, 72);
-        options.EnumCombo("Interpolation:", () => Interpolation, v => Interpolation = v, 140);
+        options.Number(Strings.CropTools_WColon, -10000, 10000, () => width / _source.Width * 100, v => Rebuild(center.X, center.Y, (float)v / 100 * _source.Width, height, angle), "0.00", "%", 1, 72);
+        options.Number(Strings.CropTools_HColon, -10000, 10000, () => height / _source.Height * 100, v => Rebuild(center.X, center.Y, width, (float)v / 100 * _source.Height, angle), "0.00", "%", 1, 72);
+        options.Number(Strings.LayerStyleDialog_AngleColon, -180, 180, () => angle, v => Rebuild(center.X, center.Y, width, height, (float)v), "0.00", "°", 1, 72);
+        options.EnumCombo(Strings.TransformTools_InterpolationColon, () => Interpolation, v => Interpolation = v, 140);
         options.Separator();
-        options.Button("Cancel", Cancel, "Cancel transform (Esc)");
-        options.Button("Commit", Commit, "Commit transform (Enter)");
+        options.Button(Strings.DialogBuilder_Cancel, Cancel, Strings.TransformTools_CancelTip);
+        options.Button(Strings.Tools_Commit, Commit, Strings.TransformTools_CommitTip);
     }
 }
 
@@ -470,9 +470,9 @@ public sealed class MoveTool : ToolBase
 
     public override ToolId Id => ToolId.Move;
 
-    public override string Name => "Move Tool";
+    public override string Name => Strings.TransformTools_MoveTool;
 
-    public override string Hint => "Drag to move the layer or selected pixels. Alt-drag duplicates, Shift constrains. Arrow keys nudge.";
+    public override string Hint => Strings.TransformTools_MoveHint;
 
     public override ToolCursor Cursor => ToolCursor.Move;
 
@@ -527,7 +527,7 @@ public sealed class MoveTool : ToolBase
         if (layer == null) return;
         if (!layer.CanMove)
         {
-            Host.ShowMessage("Could not complete the request because the layer is locked.");
+            Host.ShowMessage(Strings.TransformTools_LayerLocked);
             return;
         }
 
@@ -550,7 +550,7 @@ public sealed class MoveTool : ToolBase
                 foreach (Layer original in targets)
                 {
                     Layer copy = original.Duplicate();
-                    copy.Name = original.Name + " copy";
+                    copy.Name = string.Format(Strings.LayerNames_Copy, original.Name);
                     doc.AddLayer(copy, original);
                     copies.Add(copy);
                     if (original == layer) activeCopy = copy;
@@ -586,7 +586,7 @@ public sealed class MoveTool : ToolBase
                 LayerOps.EraseMasked(doc, raster, doc.Selection, 1);
             }
         }
-        _floating = new RasterLayer("Floating", new PixelSurface(pixels), new SKPointI(bounds.Left, bounds.Top));
+        _floating = new RasterLayer(Strings.TransformTools_Floating, new PixelSurface(pixels), new SKPointI(bounds.Left, bounds.Top));
         _floatingSource = raster;
         _selectionAtStart = doc.Selection;
         doc.AddLayer(_floating, raster);
@@ -667,7 +667,7 @@ public sealed class MoveTool : ToolBase
             bool outside = g.Position < 0 || g.Position > (g.Horizontal ? Doc.Height : Doc.Width);
             if (outside) Doc.Guides.RemoveAt(_guideIndex);
             _guideIndex = -1;
-            PushHistory(outside ? "Delete Guide" : "Move Guide");
+            PushHistory(outside ? Strings.TransformTools_DeleteGuide : Strings.TransformTools_MoveGuide);
             Host.InvalidateOverlay();
             return;
         }
@@ -689,7 +689,7 @@ public sealed class MoveTool : ToolBase
             Host.InvalidateCanvas();
         }
         _layers.Clear();
-        if (_applied != default || input.Alt) PushHistory("Move");
+        if (_applied != default || input.Alt) PushHistory(Strings.RetouchTools_Move);
     }
 
     public override bool KeyDown(Key key, KeyModifiers modifiers)
@@ -722,7 +722,7 @@ public sealed class MoveTool : ToolBase
             List<Layer> targets = Doc.GetMoveTargets().Where(l => l.CanMove).ToList();
             if (targets.Count == 0) targets.Add(layer);
             foreach (Layer target in targets) target.Translate(delta.X, delta.Y);
-            PushHistory("Nudge");
+            PushHistory(Strings.TransformTools_Nudge);
         }
         Host.InvalidateCanvas();
         return true;
@@ -740,18 +740,18 @@ public sealed class MoveTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Check("Auto-Select:", () => AutoSelect, v => AutoSelect = v, "Click selects the topmost layer under the pointer (Ctrl temporarily)");
-        options.Combo(null, [("Layer", false), ("Group", true)], () => AutoSelectGroups, v => AutoSelectGroups = v, 80);
-        options.Check("Show Transform Controls", () => ShowTransformControls, v => { ShowTransformControls = v; Host.InvalidateOverlay(); });
+        options.Check(Strings.TransformTools_AutoSelectColon, () => AutoSelect, v => AutoSelect = v, Strings.TransformTools_AutoSelectTip);
+        options.Combo(null, [(Strings.LayerNames_NewTypeLayer, false), (Strings.TransformTools_Group, true)], () => AutoSelectGroups, v => AutoSelectGroups = v, 80);
+        options.Check(Strings.TransformTools_ShowTransformControls, () => ShowTransformControls, v => { ShowTransformControls = v; Host.InvalidateOverlay(); });
         options.Separator();
         foreach (var (icon, tip, align) in new (string, string, LayerAlignment)[]
         {
-            ("align-left", "Align left edges", LayerAlignment.Left),
-            ("align-hcenter", "Align horizontal centers", LayerAlignment.HorizontalCenter),
-            ("align-right", "Align right edges", LayerAlignment.Right),
-            ("align-top", "Align top edges", LayerAlignment.Top),
-            ("align-vcenter", "Align vertical centers", LayerAlignment.VerticalCenter),
-            ("align-bottom", "Align bottom edges", LayerAlignment.Bottom)
+            ("align-left", Strings.TransformTools_AlignLeftTip, LayerAlignment.Left),
+            ("align-hcenter", Strings.TransformTools_AlignHCenterTip, LayerAlignment.HorizontalCenter),
+            ("align-right", Strings.TransformTools_AlignRightTip, LayerAlignment.Right),
+            ("align-top", Strings.TransformTools_AlignTopTip, LayerAlignment.Top),
+            ("align-vcenter", Strings.TransformTools_AlignVCenterTip, LayerAlignment.VerticalCenter),
+            ("align-bottom", Strings.TransformTools_AlignBottomTip, LayerAlignment.Bottom)
         })
         {
             LayerAlignment captured = align;

@@ -470,6 +470,251 @@ namespace ShareX.PhotoEditor.Localization {
                 return ResourceManager.GetString("AdjustmentsPanel_CreateAdjustmentLayerTip", resourceCulture);
             }
         }
+        public static string AnnotationTools_AuthorColon {
+            get {
+                return ResourceManager.GetString("AnnotationTools_AuthorColon", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_AuthorLabel {
+            get {
+                return ResourceManager.GetString("AnnotationTools_AuthorLabel", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_ClearAll {
+            get {
+                return ResourceManager.GetString("AnnotationTools_ClearAll", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_ClearCount {
+            get {
+                return ResourceManager.GetString("AnnotationTools_ClearCount", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_ClearNotes {
+            get {
+                return ResourceManager.GetString("AnnotationTools_ClearNotes", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_CountGroupNumber {
+            get {
+                return ResourceManager.GetString("AnnotationTools_CountGroupNumber", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_CountHint {
+            get {
+                return ResourceManager.GetString("AnnotationTools_CountHint", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_CountLabel {
+            get {
+                return ResourceManager.GetString("AnnotationTools_CountLabel", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_CountTool {
+            get {
+                return ResourceManager.GetString("AnnotationTools_CountTool", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_DeleteCount {
+            get {
+                return ResourceManager.GetString("AnnotationTools_DeleteCount", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_DeleteNote {
+            get {
+                return ResourceManager.GetString("AnnotationTools_DeleteNote", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_EditNote {
+            get {
+                return ResourceManager.GetString("AnnotationTools_EditNote", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_GroupColon {
+            get {
+                return ResourceManager.GetString("AnnotationTools_GroupColon", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_GroupColorTip {
+            get {
+                return ResourceManager.GetString("AnnotationTools_GroupColorTip", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_LabelSizeColon {
+            get {
+                return ResourceManager.GetString("AnnotationTools_LabelSizeColon", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_MarkerSizeColon {
+            get {
+                return ResourceManager.GetString("AnnotationTools_MarkerSizeColon", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_MoveCount {
+            get {
+                return ResourceManager.GetString("AnnotationTools_MoveCount", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_MoveNote {
+            get {
+                return ResourceManager.GetString("AnnotationTools_MoveNote", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_NewCountGroupTip {
+            get {
+                return ResourceManager.GetString("AnnotationTools_NewCountGroupTip", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_Note {
+            get {
+                return ResourceManager.GetString("AnnotationTools_Note", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_NoteColorTip {
+            get {
+                return ResourceManager.GetString("AnnotationTools_NoteColorTip", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_NoteHint {
+            get {
+                return ResourceManager.GetString("AnnotationTools_NoteHint", resourceCulture);
+            }
+        }
+        public static string AnnotationTools_NoteTool {
+            get {
+                return ResourceManager.GetString("AnnotationTools_NoteTool", resourceCulture);
+            }
+        }
+        public static string ArtboardTool_AddNewArtboard {
+            get {
+                return ResourceManager.GetString("ArtboardTool_AddNewArtboard", resourceCulture);
+            }
+        }
+        public static string ArtboardTool_ArtboardNumber {
+            get {
+                return ResourceManager.GetString("ArtboardTool_ArtboardNumber", resourceCulture);
+            }
+        }
+        public static string ArtboardTool_BackgroundTip {
+            get {
+                return ResourceManager.GetString("ArtboardTool_BackgroundTip", resourceCulture);
+            }
+        }
+        public static string ArtboardTool_Hint {
+            get {
+                return ResourceManager.GetString("ArtboardTool_Hint", resourceCulture);
+            }
+        }
+        public static string ArtboardTool_MoveArtboard {
+            get {
+                return ResourceManager.GetString("ArtboardTool_MoveArtboard", resourceCulture);
+            }
+        }
+        public static string ArtboardTool_Name {
+            get {
+                return ResourceManager.GetString("ArtboardTool_Name", resourceCulture);
+            }
+        }
+        public static string ArtboardTool_NewArtboard {
+            get {
+                return ResourceManager.GetString("ArtboardTool_NewArtboard", resourceCulture);
+            }
+        }
+        public static string ArtboardTool_SizePhone {
+            get {
+                return ResourceManager.GetString("ArtboardTool_SizePhone", resourceCulture);
+            }
+        }
+        public static string ArtboardTool_SizeSquare {
+            get {
+                return ResourceManager.GetString("ArtboardTool_SizeSquare", resourceCulture);
+            }
+        }
+        public static string ArtboardTool_SizeTablet {
+            get {
+                return ResourceManager.GetString("ArtboardTool_SizeTablet", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_Add {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_Add", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_EnhanceEdge {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_EnhanceEdge", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_Lasso {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_Lasso", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_MagicWand {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_MagicWand", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_MagicWandHint {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_MagicWandHint", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_MagicWandTool {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_MagicWandTool", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_ObjectSelection {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_ObjectSelection", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_ObjectSelectionHint {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_ObjectSelectionHint", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_ObjectSelectionTool {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_ObjectSelectionTool", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_QuickSelection {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_QuickSelection", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_QuickSelectionHint {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_QuickSelectionHint", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_QuickSelectionTool {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_QuickSelectionTool", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_SelectingObject {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_SelectingObject", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_SelectionBrush {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_SelectionBrush", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_SelectionBrushHint {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_SelectionBrushHint", resourceCulture);
+            }
+        }
+        public static string AutoSelectionTools_SelectionBrushTool {
+            get {
+                return ResourceManager.GetString("AutoSelectionTools_SelectionBrushTool", resourceCulture);
+            }
+        }
         public static string BlendModes_Behind {
             get {
                 return ResourceManager.GetString("BlendModes_Behind", resourceCulture);
@@ -680,6 +925,146 @@ namespace ShareX.PhotoEditor.Localization {
                 return ResourceManager.GetString("BrushesPanel_SquareTip", resourceCulture);
             }
         }
+        public static string BrushToolBase_AirbrushTip {
+            get {
+                return ResourceManager.GetString("BrushToolBase_AirbrushTip", resourceCulture);
+            }
+        }
+        public static string BrushToolBase_CannotPaintOnMask {
+            get {
+                return ResourceManager.GetString("BrushToolBase_CannotPaintOnMask", resourceCulture);
+            }
+        }
+        public static string BrushToolBase_FlowTip {
+            get {
+                return ResourceManager.GetString("BrushToolBase_FlowTip", resourceCulture);
+            }
+        }
+        public static string BrushToolBase_OpacityTip {
+            get {
+                return ResourceManager.GetString("BrushToolBase_OpacityTip", resourceCulture);
+            }
+        }
+        public static string BrushToolBase_PressureSize {
+            get {
+                return ResourceManager.GetString("BrushToolBase_PressureSize", resourceCulture);
+            }
+        }
+        public static string BrushToolBase_SmoothingColon {
+            get {
+                return ResourceManager.GetString("BrushToolBase_SmoothingColon", resourceCulture);
+            }
+        }
+        public static string BrushTools_AdjustmentBrush {
+            get {
+                return ResourceManager.GetString("BrushTools_AdjustmentBrush", resourceCulture);
+            }
+        }
+        public static string BrushTools_AdjustmentBrushHint {
+            get {
+                return ResourceManager.GetString("BrushTools_AdjustmentBrushHint", resourceCulture);
+            }
+        }
+        public static string BrushTools_AdjustmentBrushLayerName {
+            get {
+                return ResourceManager.GetString("BrushTools_AdjustmentBrushLayerName", resourceCulture);
+            }
+        }
+        public static string BrushTools_AdjustmentBrushTool {
+            get {
+                return ResourceManager.GetString("BrushTools_AdjustmentBrushTool", resourceCulture);
+            }
+        }
+        public static string BrushTools_AdjustmentColon {
+            get {
+                return ResourceManager.GetString("BrushTools_AdjustmentColon", resourceCulture);
+            }
+        }
+        public static string BrushTools_AmountColon {
+            get {
+                return ResourceManager.GetString("BrushTools_AmountColon", resourceCulture);
+            }
+        }
+        public static string BrushTools_AutoErase {
+            get {
+                return ResourceManager.GetString("BrushTools_AutoErase", resourceCulture);
+            }
+        }
+        public static string BrushTools_BrushHint {
+            get {
+                return ResourceManager.GetString("BrushTools_BrushHint", resourceCulture);
+            }
+        }
+        public static string BrushTools_BrushTool {
+            get {
+                return ResourceManager.GetString("BrushTools_BrushTool", resourceCulture);
+            }
+        }
+        public static string BrushTools_CleanAfterStroke {
+            get {
+                return ResourceManager.GetString("BrushTools_CleanAfterStroke", resourceCulture);
+            }
+        }
+        public static string BrushTools_ColorReplacementHint {
+            get {
+                return ResourceManager.GetString("BrushTools_ColorReplacementHint", resourceCulture);
+            }
+        }
+        public static string BrushTools_ColorReplacementTool {
+            get {
+                return ResourceManager.GetString("BrushTools_ColorReplacementTool", resourceCulture);
+            }
+        }
+        public static string BrushTools_LoadColon {
+            get {
+                return ResourceManager.GetString("BrushTools_LoadColon", resourceCulture);
+            }
+        }
+        public static string BrushTools_LoadColorTip {
+            get {
+                return ResourceManager.GetString("BrushTools_LoadColorTip", resourceCulture);
+            }
+        }
+        public static string BrushTools_MixColon {
+            get {
+                return ResourceManager.GetString("BrushTools_MixColon", resourceCulture);
+            }
+        }
+        public static string BrushTools_MixerBrushHint {
+            get {
+                return ResourceManager.GetString("BrushTools_MixerBrushHint", resourceCulture);
+            }
+        }
+        public static string BrushTools_MixerBrushTool {
+            get {
+                return ResourceManager.GetString("BrushTools_MixerBrushTool", resourceCulture);
+            }
+        }
+        public static string BrushTools_NewLayerPerStroke {
+            get {
+                return ResourceManager.GetString("BrushTools_NewLayerPerStroke", resourceCulture);
+            }
+        }
+        public static string BrushTools_PencilHint {
+            get {
+                return ResourceManager.GetString("BrushTools_PencilHint", resourceCulture);
+            }
+        }
+        public static string BrushTools_PencilTool {
+            get {
+                return ResourceManager.GetString("BrushTools_PencilTool", resourceCulture);
+            }
+        }
+        public static string BrushTools_SamplingColon {
+            get {
+                return ResourceManager.GetString("BrushTools_SamplingColon", resourceCulture);
+            }
+        }
+        public static string BrushTools_WetColon {
+            get {
+                return ResourceManager.GetString("BrushTools_WetColon", resourceCulture);
+            }
+        }
         public static string CanvasSizeDialog_AnchorColon {
             get {
                 return ResourceManager.GetString("CanvasSizeDialog_AnchorColon", resourceCulture);
@@ -858,6 +1243,86 @@ namespace ShareX.PhotoEditor.Localization {
         public static string ColorPickerDialog_TitleWith {
             get {
                 return ResourceManager.GetString("ColorPickerDialog_TitleWith", resourceCulture);
+            }
+        }
+        public static string CropTools_CropHint {
+            get {
+                return ResourceManager.GetString("CropTools_CropHint", resourceCulture);
+            }
+        }
+        public static string CropTools_CropInfo {
+            get {
+                return ResourceManager.GetString("CropTools_CropInfo", resourceCulture);
+            }
+        }
+        public static string CropTools_CropTool {
+            get {
+                return ResourceManager.GetString("CropTools_CropTool", resourceCulture);
+            }
+        }
+        public static string CropTools_DeleteCroppedPixels {
+            get {
+                return ResourceManager.GetString("CropTools_DeleteCroppedPixels", resourceCulture);
+            }
+        }
+        public static string CropTools_HColon {
+            get {
+                return ResourceManager.GetString("CropTools_HColon", resourceCulture);
+            }
+        }
+        public static string CropTools_OriginalRatio {
+            get {
+                return ResourceManager.GetString("CropTools_OriginalRatio", resourceCulture);
+            }
+        }
+        public static string CropTools_PerspectiveCrop {
+            get {
+                return ResourceManager.GetString("CropTools_PerspectiveCrop", resourceCulture);
+            }
+        }
+        public static string CropTools_PerspectiveCropHint {
+            get {
+                return ResourceManager.GetString("CropTools_PerspectiveCropHint", resourceCulture);
+            }
+        }
+        public static string CropTools_PerspectiveCropTool {
+            get {
+                return ResourceManager.GetString("CropTools_PerspectiveCropTool", resourceCulture);
+            }
+        }
+        public static string CropTools_Ratio {
+            get {
+                return ResourceManager.GetString("CropTools_Ratio", resourceCulture);
+            }
+        }
+        public static string CropTools_RatioColon {
+            get {
+                return ResourceManager.GetString("CropTools_RatioColon", resourceCulture);
+            }
+        }
+        public static string CropTools_RatioSquare {
+            get {
+                return ResourceManager.GetString("CropTools_RatioSquare", resourceCulture);
+            }
+        }
+        public static string CropTools_RuleOfThirds {
+            get {
+                return ResourceManager.GetString("CropTools_RuleOfThirds", resourceCulture);
+            }
+        }
+        public static string CropTools_ShowGrid {
+            get {
+                return ResourceManager.GetString("CropTools_ShowGrid", resourceCulture);
+            }
+        }
+        public static string CropTools_SwapTip {
+            get {
+                return ResourceManager.GetString("CropTools_SwapTip", resourceCulture);
+            }
+        }
+        public static string CropTools_WColon {
+            get {
+                return ResourceManager.GetString("CropTools_WColon", resourceCulture);
             }
         }
         public static string DialogBuilder_Cancel {
@@ -3275,6 +3740,36 @@ namespace ShareX.PhotoEditor.Localization {
                 return ResourceManager.GetString("Enum_Sampling_Once", resourceCulture);
             }
         }
+        public static string Enum_ShapeKind_Custom {
+            get {
+                return ResourceManager.GetString("Enum_ShapeKind_Custom", resourceCulture);
+            }
+        }
+        public static string Enum_ShapeKind_Ellipse {
+            get {
+                return ResourceManager.GetString("Enum_ShapeKind_Ellipse", resourceCulture);
+            }
+        }
+        public static string Enum_ShapeKind_Line {
+            get {
+                return ResourceManager.GetString("Enum_ShapeKind_Line", resourceCulture);
+            }
+        }
+        public static string Enum_ShapeKind_Polygon {
+            get {
+                return ResourceManager.GetString("Enum_ShapeKind_Polygon", resourceCulture);
+            }
+        }
+        public static string Enum_ShapeKind_Rectangle {
+            get {
+                return ResourceManager.GetString("Enum_ShapeKind_Rectangle", resourceCulture);
+            }
+        }
+        public static string Enum_ShapeKind_Triangle {
+            get {
+                return ResourceManager.GetString("Enum_ShapeKind_Triangle", resourceCulture);
+            }
+        }
         public static string Enum_ShapeToolMode_Path {
             get {
                 return ResourceManager.GetString("Enum_ShapeToolMode_Path", resourceCulture);
@@ -3365,6 +3860,46 @@ namespace ShareX.PhotoEditor.Localization {
                 return ResourceManager.GetString("Enum_ToneRange_Shadows", resourceCulture);
             }
         }
+        public static string EraserTools_BackgroundEraserHint {
+            get {
+                return ResourceManager.GetString("EraserTools_BackgroundEraserHint", resourceCulture);
+            }
+        }
+        public static string EraserTools_BackgroundEraserTool {
+            get {
+                return ResourceManager.GetString("EraserTools_BackgroundEraserTool", resourceCulture);
+            }
+        }
+        public static string EraserTools_Discontiguous {
+            get {
+                return ResourceManager.GetString("EraserTools_Discontiguous", resourceCulture);
+            }
+        }
+        public static string EraserTools_EraserHint {
+            get {
+                return ResourceManager.GetString("EraserTools_EraserHint", resourceCulture);
+            }
+        }
+        public static string EraserTools_EraserTool {
+            get {
+                return ResourceManager.GetString("EraserTools_EraserTool", resourceCulture);
+            }
+        }
+        public static string EraserTools_EraseToHistory {
+            get {
+                return ResourceManager.GetString("EraserTools_EraseToHistory", resourceCulture);
+            }
+        }
+        public static string EraserTools_LimitsColon {
+            get {
+                return ResourceManager.GetString("EraserTools_LimitsColon", resourceCulture);
+            }
+        }
+        public static string EraserTools_ProtectForeground {
+            get {
+                return ResourceManager.GetString("EraserTools_ProtectForeground", resourceCulture);
+            }
+        }
         public static string ExportDialog_ExportEllipsis {
             get {
                 return ResourceManager.GetString("ExportDialog_ExportEllipsis", resourceCulture);
@@ -3418,6 +3953,76 @@ namespace ShareX.PhotoEditor.Localization {
         public static string FillDialog_PreserveTransparency {
             get {
                 return ResourceManager.GetString("FillDialog_PreserveTransparency", resourceCulture);
+            }
+        }
+        public static string FillTools_Dither {
+            get {
+                return ResourceManager.GetString("FillTools_Dither", resourceCulture);
+            }
+        }
+        public static string FillTools_EditEllipsis {
+            get {
+                return ResourceManager.GetString("FillTools_EditEllipsis", resourceCulture);
+            }
+        }
+        public static string FillTools_GradientColon {
+            get {
+                return ResourceManager.GetString("FillTools_GradientColon", resourceCulture);
+            }
+        }
+        public static string FillTools_GradientHint {
+            get {
+                return ResourceManager.GetString("FillTools_GradientHint", resourceCulture);
+            }
+        }
+        public static string FillTools_GradientInfo {
+            get {
+                return ResourceManager.GetString("FillTools_GradientInfo", resourceCulture);
+            }
+        }
+        public static string FillTools_GradientTool {
+            get {
+                return ResourceManager.GetString("FillTools_GradientTool", resourceCulture);
+            }
+        }
+        public static string FillTools_GradientTypeTip {
+            get {
+                return ResourceManager.GetString("FillTools_GradientTypeTip", resourceCulture);
+            }
+        }
+        public static string FillTools_MagicEraser {
+            get {
+                return ResourceManager.GetString("FillTools_MagicEraser", resourceCulture);
+            }
+        }
+        public static string FillTools_MagicEraserHint {
+            get {
+                return ResourceManager.GetString("FillTools_MagicEraserHint", resourceCulture);
+            }
+        }
+        public static string FillTools_MagicEraserTool {
+            get {
+                return ResourceManager.GetString("FillTools_MagicEraserTool", resourceCulture);
+            }
+        }
+        public static string FillTools_PaintBucket {
+            get {
+                return ResourceManager.GetString("FillTools_PaintBucket", resourceCulture);
+            }
+        }
+        public static string FillTools_PaintBucketHint {
+            get {
+                return ResourceManager.GetString("FillTools_PaintBucketHint", resourceCulture);
+            }
+        }
+        public static string FillTools_PaintBucketTool {
+            get {
+                return ResourceManager.GetString("FillTools_PaintBucketTool", resourceCulture);
+            }
+        }
+        public static string FillTools_Transparency {
+            get {
+                return ResourceManager.GetString("FillTools_Transparency", resourceCulture);
             }
         }
         public static string Filters_AddNoise {
@@ -3840,6 +4445,46 @@ namespace ShareX.PhotoEditor.Localization {
                 return ResourceManager.GetString("Filters_Wave", resourceCulture);
             }
         }
+        public static string FrameTool_ClearFrame {
+            get {
+                return ResourceManager.GetString("FrameTool_ClearFrame", resourceCulture);
+            }
+        }
+        public static string FrameTool_ClearFrameContent {
+            get {
+                return ResourceManager.GetString("FrameTool_ClearFrameContent", resourceCulture);
+            }
+        }
+        public static string FrameTool_EllipticalTip {
+            get {
+                return ResourceManager.GetString("FrameTool_EllipticalTip", resourceCulture);
+            }
+        }
+        public static string FrameTool_FrameNumber {
+            get {
+                return ResourceManager.GetString("FrameTool_FrameNumber", resourceCulture);
+            }
+        }
+        public static string FrameTool_Hint {
+            get {
+                return ResourceManager.GetString("FrameTool_Hint", resourceCulture);
+            }
+        }
+        public static string FrameTool_Name {
+            get {
+                return ResourceManager.GetString("FrameTool_Name", resourceCulture);
+            }
+        }
+        public static string FrameTool_PlaceImageTip {
+            get {
+                return ResourceManager.GetString("FrameTool_PlaceImageTip", resourceCulture);
+            }
+        }
+        public static string FrameTool_RectangularTip {
+            get {
+                return ResourceManager.GetString("FrameTool_RectangularTip", resourceCulture);
+            }
+        }
         public static string GradientEditorDialog_AddStop {
             get {
                 return ResourceManager.GetString("GradientEditorDialog_AddStop", resourceCulture);
@@ -3995,6 +4640,41 @@ namespace ShareX.PhotoEditor.Localization {
                 return ResourceManager.GetString("History_SnapshotNumber", resourceCulture);
             }
         }
+        public static string HistoryBrushTools_AreaColon {
+            get {
+                return ResourceManager.GetString("HistoryBrushTools_AreaColon", resourceCulture);
+            }
+        }
+        public static string HistoryBrushTools_ArtHistoryBrushHint {
+            get {
+                return ResourceManager.GetString("HistoryBrushTools_ArtHistoryBrushHint", resourceCulture);
+            }
+        }
+        public static string HistoryBrushTools_ArtHistoryBrushTool {
+            get {
+                return ResourceManager.GetString("HistoryBrushTools_ArtHistoryBrushTool", resourceCulture);
+            }
+        }
+        public static string HistoryBrushTools_CanvasSizeMismatch {
+            get {
+                return ResourceManager.GetString("HistoryBrushTools_CanvasSizeMismatch", resourceCulture);
+            }
+        }
+        public static string HistoryBrushTools_HistoryBrushHint {
+            get {
+                return ResourceManager.GetString("HistoryBrushTools_HistoryBrushHint", resourceCulture);
+            }
+        }
+        public static string HistoryBrushTools_HistoryBrushTool {
+            get {
+                return ResourceManager.GetString("HistoryBrushTools_HistoryBrushTool", resourceCulture);
+            }
+        }
+        public static string HistoryBrushTools_SetSourceFirst {
+            get {
+                return ResourceManager.GetString("HistoryBrushTools_SetSourceFirst", resourceCulture);
+            }
+        }
         public static string HistoryPanel_DeleteSnapshot {
             get {
                 return ResourceManager.GetString("HistoryPanel_DeleteSnapshot", resourceCulture);
@@ -4083,6 +4763,51 @@ namespace ShareX.PhotoEditor.Localization {
         public static string ImageSizeDialog_ResampleColon {
             get {
                 return ResourceManager.GetString("ImageSizeDialog_ResampleColon", resourceCulture);
+            }
+        }
+        public static string LassoTools_FrequencyColon {
+            get {
+                return ResourceManager.GetString("LassoTools_FrequencyColon", resourceCulture);
+            }
+        }
+        public static string LassoTools_LassoHint {
+            get {
+                return ResourceManager.GetString("LassoTools_LassoHint", resourceCulture);
+            }
+        }
+        public static string LassoTools_LassoTool {
+            get {
+                return ResourceManager.GetString("LassoTools_LassoTool", resourceCulture);
+            }
+        }
+        public static string LassoTools_MagneticLasso {
+            get {
+                return ResourceManager.GetString("LassoTools_MagneticLasso", resourceCulture);
+            }
+        }
+        public static string LassoTools_MagneticLassoHint {
+            get {
+                return ResourceManager.GetString("LassoTools_MagneticLassoHint", resourceCulture);
+            }
+        }
+        public static string LassoTools_MagneticLassoTool {
+            get {
+                return ResourceManager.GetString("LassoTools_MagneticLassoTool", resourceCulture);
+            }
+        }
+        public static string LassoTools_PolygonalLasso {
+            get {
+                return ResourceManager.GetString("LassoTools_PolygonalLasso", resourceCulture);
+            }
+        }
+        public static string LassoTools_PolygonalLassoHint {
+            get {
+                return ResourceManager.GetString("LassoTools_PolygonalLassoHint", resourceCulture);
+            }
+        }
+        public static string LassoTools_PolygonalLassoTool {
+            get {
+                return ResourceManager.GetString("LassoTools_PolygonalLassoTool", resourceCulture);
             }
         }
         public static string LayerNames_Background {
@@ -4310,6 +5035,61 @@ namespace ShareX.PhotoEditor.Localization {
                 return ResourceManager.GetString("LayerStyleDialog_ShadowColor", resourceCulture);
             }
         }
+        public static string MarqueeTools_EllipticalMarquee {
+            get {
+                return ResourceManager.GetString("MarqueeTools_EllipticalMarquee", resourceCulture);
+            }
+        }
+        public static string MarqueeTools_EllipticalMarqueeTool {
+            get {
+                return ResourceManager.GetString("MarqueeTools_EllipticalMarqueeTool", resourceCulture);
+            }
+        }
+        public static string MarqueeTools_Hint {
+            get {
+                return ResourceManager.GetString("MarqueeTools_Hint", resourceCulture);
+            }
+        }
+        public static string MarqueeTools_RectangularMarquee {
+            get {
+                return ResourceManager.GetString("MarqueeTools_RectangularMarquee", resourceCulture);
+            }
+        }
+        public static string MarqueeTools_RectangularMarqueeTool {
+            get {
+                return ResourceManager.GetString("MarqueeTools_RectangularMarqueeTool", resourceCulture);
+            }
+        }
+        public static string MarqueeTools_RefineEdgeTip {
+            get {
+                return ResourceManager.GetString("MarqueeTools_RefineEdgeTip", resourceCulture);
+            }
+        }
+        public static string MarqueeTools_SingleColumnHint {
+            get {
+                return ResourceManager.GetString("MarqueeTools_SingleColumnHint", resourceCulture);
+            }
+        }
+        public static string MarqueeTools_SingleColumnMarqueeTool {
+            get {
+                return ResourceManager.GetString("MarqueeTools_SingleColumnMarqueeTool", resourceCulture);
+            }
+        }
+        public static string MarqueeTools_SingleRowHint {
+            get {
+                return ResourceManager.GetString("MarqueeTools_SingleRowHint", resourceCulture);
+            }
+        }
+        public static string MarqueeTools_SingleRowMarqueeTool {
+            get {
+                return ResourceManager.GetString("MarqueeTools_SingleRowMarqueeTool", resourceCulture);
+            }
+        }
+        public static string MarqueeTools_StyleColon {
+            get {
+                return ResourceManager.GetString("MarqueeTools_StyleColon", resourceCulture);
+            }
+        }
         public static string MatchColorEditor_ColorIntensityColon {
             get {
                 return ResourceManager.GetString("MatchColorEditor_ColorIntensityColon", resourceCulture);
@@ -4368,6 +5148,66 @@ namespace ShareX.PhotoEditor.Localization {
         public static string MenuBuilder_Empty {
             get {
                 return ResourceManager.GetString("MenuBuilder_Empty", resourceCulture);
+            }
+        }
+        public static string NavigationTools_FitScreen {
+            get {
+                return ResourceManager.GetString("NavigationTools_FitScreen", resourceCulture);
+            }
+        }
+        public static string NavigationTools_HandHint {
+            get {
+                return ResourceManager.GetString("NavigationTools_HandHint", resourceCulture);
+            }
+        }
+        public static string NavigationTools_HandTool {
+            get {
+                return ResourceManager.GetString("NavigationTools_HandTool", resourceCulture);
+            }
+        }
+        public static string NavigationTools_ResetView {
+            get {
+                return ResourceManager.GetString("NavigationTools_ResetView", resourceCulture);
+            }
+        }
+        public static string NavigationTools_RotateViewHint {
+            get {
+                return ResourceManager.GetString("NavigationTools_RotateViewHint", resourceCulture);
+            }
+        }
+        public static string NavigationTools_RotateViewTool {
+            get {
+                return ResourceManager.GetString("NavigationTools_RotateViewTool", resourceCulture);
+            }
+        }
+        public static string NavigationTools_RotationAngleColon {
+            get {
+                return ResourceManager.GetString("NavigationTools_RotationAngleColon", resourceCulture);
+            }
+        }
+        public static string NavigationTools_ScrubbyZoom {
+            get {
+                return ResourceManager.GetString("NavigationTools_ScrubbyZoom", resourceCulture);
+            }
+        }
+        public static string NavigationTools_ZoomHint {
+            get {
+                return ResourceManager.GetString("NavigationTools_ZoomHint", resourceCulture);
+            }
+        }
+        public static string NavigationTools_ZoomInTip {
+            get {
+                return ResourceManager.GetString("NavigationTools_ZoomInTip", resourceCulture);
+            }
+        }
+        public static string NavigationTools_ZoomOutTip {
+            get {
+                return ResourceManager.GetString("NavigationTools_ZoomOutTip", resourceCulture);
+            }
+        }
+        public static string NavigationTools_ZoomTool {
+            get {
+                return ResourceManager.GetString("NavigationTools_ZoomTool", resourceCulture);
             }
         }
         public static string NewDocumentDialog_Black {
@@ -4500,6 +5340,111 @@ namespace ShareX.PhotoEditor.Localization {
                 return ResourceManager.GetString("PanelDock_PanelMenuTip", resourceCulture);
             }
         }
+        public static string PathEditTools_AddAnchorPoint {
+            get {
+                return ResourceManager.GetString("PathEditTools_AddAnchorPoint", resourceCulture);
+            }
+        }
+        public static string PathEditTools_AddAnchorPointHint {
+            get {
+                return ResourceManager.GetString("PathEditTools_AddAnchorPointHint", resourceCulture);
+            }
+        }
+        public static string PathEditTools_AddAnchorPointTool {
+            get {
+                return ResourceManager.GetString("PathEditTools_AddAnchorPointTool", resourceCulture);
+            }
+        }
+        public static string PathEditTools_Combine {
+            get {
+                return ResourceManager.GetString("PathEditTools_Combine", resourceCulture);
+            }
+        }
+        public static string PathEditTools_CombineTip {
+            get {
+                return ResourceManager.GetString("PathEditTools_CombineTip", resourceCulture);
+            }
+        }
+        public static string PathEditTools_ConvertPoint {
+            get {
+                return ResourceManager.GetString("PathEditTools_ConvertPoint", resourceCulture);
+            }
+        }
+        public static string PathEditTools_ConvertPointHint {
+            get {
+                return ResourceManager.GetString("PathEditTools_ConvertPointHint", resourceCulture);
+            }
+        }
+        public static string PathEditTools_ConvertPointTool {
+            get {
+                return ResourceManager.GetString("PathEditTools_ConvertPointTool", resourceCulture);
+            }
+        }
+        public static string PathEditTools_DeleteAnchorPoint {
+            get {
+                return ResourceManager.GetString("PathEditTools_DeleteAnchorPoint", resourceCulture);
+            }
+        }
+        public static string PathEditTools_DeleteAnchorPointHint {
+            get {
+                return ResourceManager.GetString("PathEditTools_DeleteAnchorPointHint", resourceCulture);
+            }
+        }
+        public static string PathEditTools_DeleteAnchorPointTool {
+            get {
+                return ResourceManager.GetString("PathEditTools_DeleteAnchorPointTool", resourceCulture);
+            }
+        }
+        public static string PathEditTools_DirectSelectionHint {
+            get {
+                return ResourceManager.GetString("PathEditTools_DirectSelectionHint", resourceCulture);
+            }
+        }
+        public static string PathEditTools_DirectSelectionTool {
+            get {
+                return ResourceManager.GetString("PathEditTools_DirectSelectionTool", resourceCulture);
+            }
+        }
+        public static string PathEditTools_DragAnchor {
+            get {
+                return ResourceManager.GetString("PathEditTools_DragAnchor", resourceCulture);
+            }
+        }
+        public static string PathEditTools_Exclude {
+            get {
+                return ResourceManager.GetString("PathEditTools_Exclude", resourceCulture);
+            }
+        }
+        public static string PathEditTools_Intersect {
+            get {
+                return ResourceManager.GetString("PathEditTools_Intersect", resourceCulture);
+            }
+        }
+        public static string PathEditTools_MovePath {
+            get {
+                return ResourceManager.GetString("PathEditTools_MovePath", resourceCulture);
+            }
+        }
+        public static string PathEditTools_NudgeAnchor {
+            get {
+                return ResourceManager.GetString("PathEditTools_NudgeAnchor", resourceCulture);
+            }
+        }
+        public static string PathEditTools_PathSelectionHint {
+            get {
+                return ResourceManager.GetString("PathEditTools_PathSelectionHint", resourceCulture);
+            }
+        }
+        public static string PathEditTools_PathSelectionTool {
+            get {
+                return ResourceManager.GetString("PathEditTools_PathSelectionTool", resourceCulture);
+            }
+        }
+        public static string PathEditTools_SubtractTip {
+            get {
+                return ResourceManager.GetString("PathEditTools_SubtractTip", resourceCulture);
+            }
+        }
         public static string PathNames_WorkPath {
             get {
                 return ResourceManager.GetString("PathNames_WorkPath", resourceCulture);
@@ -4553,6 +5498,91 @@ namespace ShareX.PhotoEditor.Localization {
         public static string PathsPanel_StrokePathTip {
             get {
                 return ResourceManager.GetString("PathsPanel_StrokePathTip", resourceCulture);
+            }
+        }
+        public static string PenTools_AutoAddDelete {
+            get {
+                return ResourceManager.GetString("PenTools_AutoAddDelete", resourceCulture);
+            }
+        }
+        public static string PenTools_ClosePath {
+            get {
+                return ResourceManager.GetString("PenTools_ClosePath", resourceCulture);
+            }
+        }
+        public static string PenTools_CurvaturePen {
+            get {
+                return ResourceManager.GetString("PenTools_CurvaturePen", resourceCulture);
+            }
+        }
+        public static string PenTools_CurvaturePenHint {
+            get {
+                return ResourceManager.GetString("PenTools_CurvaturePenHint", resourceCulture);
+            }
+        }
+        public static string PenTools_CurvaturePenTool {
+            get {
+                return ResourceManager.GetString("PenTools_CurvaturePenTool", resourceCulture);
+            }
+        }
+        public static string PenTools_CurveFitColon {
+            get {
+                return ResourceManager.GetString("PenTools_CurveFitColon", resourceCulture);
+            }
+        }
+        public static string PenTools_FreeformPen {
+            get {
+                return ResourceManager.GetString("PenTools_FreeformPen", resourceCulture);
+            }
+        }
+        public static string PenTools_FreeformPenHint {
+            get {
+                return ResourceManager.GetString("PenTools_FreeformPenHint", resourceCulture);
+            }
+        }
+        public static string PenTools_FreeformPenTool {
+            get {
+                return ResourceManager.GetString("PenTools_FreeformPenTool", resourceCulture);
+            }
+        }
+        public static string PenTools_Magnetic {
+            get {
+                return ResourceManager.GetString("PenTools_Magnetic", resourceCulture);
+            }
+        }
+        public static string PenTools_MakeColon {
+            get {
+                return ResourceManager.GetString("PenTools_MakeColon", resourceCulture);
+            }
+        }
+        public static string PenTools_Mask {
+            get {
+                return ResourceManager.GetString("PenTools_Mask", resourceCulture);
+            }
+        }
+        public static string PenTools_Pen {
+            get {
+                return ResourceManager.GetString("PenTools_Pen", resourceCulture);
+            }
+        }
+        public static string PenTools_PenHint {
+            get {
+                return ResourceManager.GetString("PenTools_PenHint", resourceCulture);
+            }
+        }
+        public static string PenTools_PenTool {
+            get {
+                return ResourceManager.GetString("PenTools_PenTool", resourceCulture);
+            }
+        }
+        public static string PenTools_RubberBand {
+            get {
+                return ResourceManager.GetString("PenTools_RubberBand", resourceCulture);
+            }
+        }
+        public static string PenTools_SelectionEllipsis {
+            get {
+                return ResourceManager.GetString("PenTools_SelectionEllipsis", resourceCulture);
             }
         }
         public static string PhotoDocument_UntitledNumber {
@@ -5165,6 +6195,326 @@ namespace ShareX.PhotoEditor.Localization {
                 return ResourceManager.GetString("Resources_WoodGrain", resourceCulture);
             }
         }
+        public static string RetouchTools_ContentAwareMove {
+            get {
+                return ResourceManager.GetString("RetouchTools_ContentAwareMove", resourceCulture);
+            }
+        }
+        public static string RetouchTools_ContentAwareMoveEllipsis {
+            get {
+                return ResourceManager.GetString("RetouchTools_ContentAwareMoveEllipsis", resourceCulture);
+            }
+        }
+        public static string RetouchTools_ContentAwareMoveTool {
+            get {
+                return ResourceManager.GetString("RetouchTools_ContentAwareMoveTool", resourceCulture);
+            }
+        }
+        public static string RetouchTools_DarkenAmountColon {
+            get {
+                return ResourceManager.GetString("RetouchTools_DarkenAmountColon", resourceCulture);
+            }
+        }
+        public static string RetouchTools_Destination {
+            get {
+                return ResourceManager.GetString("RetouchTools_Destination", resourceCulture);
+            }
+        }
+        public static string RetouchTools_DragSelectionHint {
+            get {
+                return ResourceManager.GetString("RetouchTools_DragSelectionHint", resourceCulture);
+            }
+        }
+        public static string RetouchTools_Extend {
+            get {
+                return ResourceManager.GetString("RetouchTools_Extend", resourceCulture);
+            }
+        }
+        public static string RetouchTools_Move {
+            get {
+                return ResourceManager.GetString("RetouchTools_Move", resourceCulture);
+            }
+        }
+        public static string RetouchTools_Patch {
+            get {
+                return ResourceManager.GetString("RetouchTools_Patch", resourceCulture);
+            }
+        }
+        public static string RetouchTools_PatchColon {
+            get {
+                return ResourceManager.GetString("RetouchTools_PatchColon", resourceCulture);
+            }
+        }
+        public static string RetouchTools_PatchTool {
+            get {
+                return ResourceManager.GetString("RetouchTools_PatchTool", resourceCulture);
+            }
+        }
+        public static string RetouchTools_PupilSizeColon {
+            get {
+                return ResourceManager.GetString("RetouchTools_PupilSizeColon", resourceCulture);
+            }
+        }
+        public static string RetouchTools_RedEye {
+            get {
+                return ResourceManager.GetString("RetouchTools_RedEye", resourceCulture);
+            }
+        }
+        public static string RetouchTools_RedEyeHint {
+            get {
+                return ResourceManager.GetString("RetouchTools_RedEyeHint", resourceCulture);
+            }
+        }
+        public static string RetouchTools_RedEyeTool {
+            get {
+                return ResourceManager.GetString("RetouchTools_RedEyeTool", resourceCulture);
+            }
+        }
+        public static string RetouchTools_Source {
+            get {
+                return ResourceManager.GetString("RetouchTools_Source", resourceCulture);
+            }
+        }
+        public static string RetouchTools_StructureColon {
+            get {
+                return ResourceManager.GetString("RetouchTools_StructureColon", resourceCulture);
+            }
+        }
+        public static string RulerTool_Hint {
+            get {
+                return ResourceManager.GetString("RulerTool_Hint", resourceCulture);
+            }
+        }
+        public static string RulerTool_Name {
+            get {
+                return ResourceManager.GetString("RulerTool_Name", resourceCulture);
+            }
+        }
+        public static string RulerTool_StraightenTip {
+            get {
+                return ResourceManager.GetString("RulerTool_StraightenTip", resourceCulture);
+            }
+        }
+        public static string RulerTool_UseMeasurementScale {
+            get {
+                return ResourceManager.GetString("RulerTool_UseMeasurementScale", resourceCulture);
+            }
+        }
+        public static string SamplingTools_ClearColorSamplers {
+            get {
+                return ResourceManager.GetString("SamplingTools_ClearColorSamplers", resourceCulture);
+            }
+        }
+        public static string SamplingTools_ColorSampler {
+            get {
+                return ResourceManager.GetString("SamplingTools_ColorSampler", resourceCulture);
+            }
+        }
+        public static string SamplingTools_ColorSamplerHint {
+            get {
+                return ResourceManager.GetString("SamplingTools_ColorSamplerHint", resourceCulture);
+            }
+        }
+        public static string SamplingTools_ColorSamplerTool {
+            get {
+                return ResourceManager.GetString("SamplingTools_ColorSamplerTool", resourceCulture);
+            }
+        }
+        public static string SamplingTools_CurrentLayer {
+            get {
+                return ResourceManager.GetString("SamplingTools_CurrentLayer", resourceCulture);
+            }
+        }
+        public static string SamplingTools_DeleteColorSampler {
+            get {
+                return ResourceManager.GetString("SamplingTools_DeleteColorSampler", resourceCulture);
+            }
+        }
+        public static string SamplingTools_EyedropperHint {
+            get {
+                return ResourceManager.GetString("SamplingTools_EyedropperHint", resourceCulture);
+            }
+        }
+        public static string SamplingTools_EyedropperTool {
+            get {
+                return ResourceManager.GetString("SamplingTools_EyedropperTool", resourceCulture);
+            }
+        }
+        public static string SamplingTools_MaxSamplers {
+            get {
+                return ResourceManager.GetString("SamplingTools_MaxSamplers", resourceCulture);
+            }
+        }
+        public static string SamplingTools_MoveColorSampler {
+            get {
+                return ResourceManager.GetString("SamplingTools_MoveColorSampler", resourceCulture);
+            }
+        }
+        public static string SamplingTools_SampleColon {
+            get {
+                return ResourceManager.GetString("SamplingTools_SampleColon", resourceCulture);
+            }
+        }
+        public static string SamplingTools_ShowSamplingRing {
+            get {
+                return ResourceManager.GetString("SamplingTools_ShowSamplingRing", resourceCulture);
+            }
+        }
+        public static string SelectionToolBase_MoveSelection {
+            get {
+                return ResourceManager.GetString("SelectionToolBase_MoveSelection", resourceCulture);
+            }
+        }
+        public static string ShapeTools_Arrow {
+            get {
+                return ResourceManager.GetString("ShapeTools_Arrow", resourceCulture);
+            }
+        }
+        public static string ShapeTools_CheckMark {
+            get {
+                return ResourceManager.GetString("ShapeTools_CheckMark", resourceCulture);
+            }
+        }
+        public static string ShapeTools_Cloud {
+            get {
+                return ResourceManager.GetString("ShapeTools_Cloud", resourceCulture);
+            }
+        }
+        public static string ShapeTools_Cross {
+            get {
+                return ResourceManager.GetString("ShapeTools_Cross", resourceCulture);
+            }
+        }
+        public static string ShapeTools_Crown {
+            get {
+                return ResourceManager.GetString("ShapeTools_Crown", resourceCulture);
+            }
+        }
+        public static string ShapeTools_CustomShapeTool {
+            get {
+                return ResourceManager.GetString("ShapeTools_CustomShapeTool", resourceCulture);
+            }
+        }
+        public static string ShapeTools_Droplet {
+            get {
+                return ResourceManager.GetString("ShapeTools_Droplet", resourceCulture);
+            }
+        }
+        public static string ShapeTools_EllipseTool {
+            get {
+                return ResourceManager.GetString("ShapeTools_EllipseTool", resourceCulture);
+            }
+        }
+        public static string ShapeTools_EndArrow {
+            get {
+                return ResourceManager.GetString("ShapeTools_EndArrow", resourceCulture);
+            }
+        }
+        public static string ShapeTools_FillColorTip {
+            get {
+                return ResourceManager.GetString("ShapeTools_FillColorTip", resourceCulture);
+            }
+        }
+        public static string ShapeTools_Gear {
+            get {
+                return ResourceManager.GetString("ShapeTools_Gear", resourceCulture);
+            }
+        }
+        public static string ShapeTools_Heart {
+            get {
+                return ResourceManager.GetString("ShapeTools_Heart", resourceCulture);
+            }
+        }
+        public static string ShapeTools_LengthInfo {
+            get {
+                return ResourceManager.GetString("ShapeTools_LengthInfo", resourceCulture);
+            }
+        }
+        public static string ShapeTools_Lightning {
+            get {
+                return ResourceManager.GetString("ShapeTools_Lightning", resourceCulture);
+            }
+        }
+        public static string ShapeTools_LineHint {
+            get {
+                return ResourceManager.GetString("ShapeTools_LineHint", resourceCulture);
+            }
+        }
+        public static string ShapeTools_LineTool {
+            get {
+                return ResourceManager.GetString("ShapeTools_LineTool", resourceCulture);
+            }
+        }
+        public static string ShapeTools_PathOpColon {
+            get {
+                return ResourceManager.GetString("ShapeTools_PathOpColon", resourceCulture);
+            }
+        }
+        public static string ShapeTools_PolygonTool {
+            get {
+                return ResourceManager.GetString("ShapeTools_PolygonTool", resourceCulture);
+            }
+        }
+        public static string ShapeTools_Puzzle {
+            get {
+                return ResourceManager.GetString("ShapeTools_Puzzle", resourceCulture);
+            }
+        }
+        public static string ShapeTools_RectangleTool {
+            get {
+                return ResourceManager.GetString("ShapeTools_RectangleTool", resourceCulture);
+            }
+        }
+        public static string ShapeTools_ShapeColon {
+            get {
+                return ResourceManager.GetString("ShapeTools_ShapeColon", resourceCulture);
+            }
+        }
+        public static string ShapeTools_ShapeHint {
+            get {
+                return ResourceManager.GetString("ShapeTools_ShapeHint", resourceCulture);
+            }
+        }
+        public static string ShapeTools_SidesColon {
+            get {
+                return ResourceManager.GetString("ShapeTools_SidesColon", resourceCulture);
+            }
+        }
+        public static string ShapeTools_SpeechBubble {
+            get {
+                return ResourceManager.GetString("ShapeTools_SpeechBubble", resourceCulture);
+            }
+        }
+        public static string ShapeTools_Star {
+            get {
+                return ResourceManager.GetString("ShapeTools_Star", resourceCulture);
+            }
+        }
+        public static string ShapeTools_StarRatioColon {
+            get {
+                return ResourceManager.GetString("ShapeTools_StarRatioColon", resourceCulture);
+            }
+        }
+        public static string ShapeTools_StartArrow {
+            get {
+                return ResourceManager.GetString("ShapeTools_StartArrow", resourceCulture);
+            }
+        }
+        public static string ShapeTools_StrokeColorTip {
+            get {
+                return ResourceManager.GetString("ShapeTools_StrokeColorTip", resourceCulture);
+            }
+        }
+        public static string ShapeTools_TriangleTool {
+            get {
+                return ResourceManager.GetString("ShapeTools_TriangleTool", resourceCulture);
+            }
+        }
+        public static string ShapeTools_WeightColon {
+            get {
+                return ResourceManager.GetString("ShapeTools_WeightColon", resourceCulture);
+            }
+        }
         public static string ShortcutsDialog_SearchCommands {
             get {
                 return ResourceManager.GetString("ShortcutsDialog_SearchCommands", resourceCulture);
@@ -5178,6 +6528,161 @@ namespace ShareX.PhotoEditor.Localization {
         public static string ShortcutsDialog_UseDefaults {
             get {
                 return ResourceManager.GetString("ShortcutsDialog_UseDefaults", resourceCulture);
+            }
+        }
+        public static string SliceTools_ClearSlices {
+            get {
+                return ResourceManager.GetString("SliceTools_ClearSlices", resourceCulture);
+            }
+        }
+        public static string SliceTools_DeleteSlice {
+            get {
+                return ResourceManager.GetString("SliceTools_DeleteSlice", resourceCulture);
+            }
+        }
+        public static string SliceTools_DivideEllipsis {
+            get {
+                return ResourceManager.GetString("SliceTools_DivideEllipsis", resourceCulture);
+            }
+        }
+        public static string SliceTools_DivideSlice {
+            get {
+                return ResourceManager.GetString("SliceTools_DivideSlice", resourceCulture);
+            }
+        }
+        public static string SliceTools_EditSlice {
+            get {
+                return ResourceManager.GetString("SliceTools_EditSlice", resourceCulture);
+            }
+        }
+        public static string SliceTools_EditSliceOptions {
+            get {
+                return ResourceManager.GetString("SliceTools_EditSliceOptions", resourceCulture);
+            }
+        }
+        public static string SliceTools_FixedWColon {
+            get {
+                return ResourceManager.GetString("SliceTools_FixedWColon", resourceCulture);
+            }
+        }
+        public static string SliceTools_NoSliceSelected {
+            get {
+                return ResourceManager.GetString("SliceTools_NoSliceSelected", resourceCulture);
+            }
+        }
+        public static string SliceTools_RowsColumnsPrompt {
+            get {
+                return ResourceManager.GetString("SliceTools_RowsColumnsPrompt", resourceCulture);
+            }
+        }
+        public static string SliceTools_Slice {
+            get {
+                return ResourceManager.GetString("SliceTools_Slice", resourceCulture);
+            }
+        }
+        public static string SliceTools_SliceHint {
+            get {
+                return ResourceManager.GetString("SliceTools_SliceHint", resourceCulture);
+            }
+        }
+        public static string SliceTools_SliceOptions {
+            get {
+                return ResourceManager.GetString("SliceTools_SliceOptions", resourceCulture);
+            }
+        }
+        public static string SliceTools_SliceSelectHint {
+            get {
+                return ResourceManager.GetString("SliceTools_SliceSelectHint", resourceCulture);
+            }
+        }
+        public static string SliceTools_SliceSelectTool {
+            get {
+                return ResourceManager.GetString("SliceTools_SliceSelectTool", resourceCulture);
+            }
+        }
+        public static string SliceTools_SlicesFromGuides {
+            get {
+                return ResourceManager.GetString("SliceTools_SlicesFromGuides", resourceCulture);
+            }
+        }
+        public static string SliceTools_SliceTool {
+            get {
+                return ResourceManager.GetString("SliceTools_SliceTool", resourceCulture);
+            }
+        }
+        public static string StampTools_Aligned {
+            get {
+                return ResourceManager.GetString("StampTools_Aligned", resourceCulture);
+            }
+        }
+        public static string StampTools_CloneSourceInfo {
+            get {
+                return ResourceManager.GetString("StampTools_CloneSourceInfo", resourceCulture);
+            }
+        }
+        public static string StampTools_CloneStampTool {
+            get {
+                return ResourceManager.GetString("StampTools_CloneStampTool", resourceCulture);
+            }
+        }
+        public static string StampTools_Healing {
+            get {
+                return ResourceManager.GetString("StampTools_Healing", resourceCulture);
+            }
+        }
+        public static string StampTools_HealingBrushTool {
+            get {
+                return ResourceManager.GetString("StampTools_HealingBrushTool", resourceCulture);
+            }
+        }
+        public static string StampTools_Impressionist {
+            get {
+                return ResourceManager.GetString("StampTools_Impressionist", resourceCulture);
+            }
+        }
+        public static string StampTools_NoCloneSource {
+            get {
+                return ResourceManager.GetString("StampTools_NoCloneSource", resourceCulture);
+            }
+        }
+        public static string StampTools_PatternStampHint {
+            get {
+                return ResourceManager.GetString("StampTools_PatternStampHint", resourceCulture);
+            }
+        }
+        public static string StampTools_PatternStampTool {
+            get {
+                return ResourceManager.GetString("StampTools_PatternStampTool", resourceCulture);
+            }
+        }
+        public static string StampTools_RemoveHint {
+            get {
+                return ResourceManager.GetString("StampTools_RemoveHint", resourceCulture);
+            }
+        }
+        public static string StampTools_RemoveTool {
+            get {
+                return ResourceManager.GetString("StampTools_RemoveTool", resourceCulture);
+            }
+        }
+        public static string StampTools_Removing {
+            get {
+                return ResourceManager.GetString("StampTools_Removing", resourceCulture);
+            }
+        }
+        public static string StampTools_SpotHealingBrushTool {
+            get {
+                return ResourceManager.GetString("StampTools_SpotHealingBrushTool", resourceCulture);
+            }
+        }
+        public static string StampTools_SpotHealingHint {
+            get {
+                return ResourceManager.GetString("StampTools_SpotHealingHint", resourceCulture);
+            }
+        }
+        public static string StampTools_TypeColon {
+            get {
+                return ResourceManager.GetString("StampTools_TypeColon", resourceCulture);
             }
         }
         public static string StartScreen_ClearRecentFiles {
@@ -5248,6 +6753,91 @@ namespace ShareX.PhotoEditor.Localization {
         public static string TitleBar_Restore {
             get {
                 return ResourceManager.GetString("TitleBar_Restore", resourceCulture);
+            }
+        }
+        public static string ToningTools_BlurHint {
+            get {
+                return ResourceManager.GetString("ToningTools_BlurHint", resourceCulture);
+            }
+        }
+        public static string ToningTools_BlurTool {
+            get {
+                return ResourceManager.GetString("ToningTools_BlurTool", resourceCulture);
+            }
+        }
+        public static string ToningTools_BurnHint {
+            get {
+                return ResourceManager.GetString("ToningTools_BurnHint", resourceCulture);
+            }
+        }
+        public static string ToningTools_BurnTool {
+            get {
+                return ResourceManager.GetString("ToningTools_BurnTool", resourceCulture);
+            }
+        }
+        public static string ToningTools_DodgeHint {
+            get {
+                return ResourceManager.GetString("ToningTools_DodgeHint", resourceCulture);
+            }
+        }
+        public static string ToningTools_DodgeTool {
+            get {
+                return ResourceManager.GetString("ToningTools_DodgeTool", resourceCulture);
+            }
+        }
+        public static string ToningTools_FingerPainting {
+            get {
+                return ResourceManager.GetString("ToningTools_FingerPainting", resourceCulture);
+            }
+        }
+        public static string ToningTools_ProtectDetail {
+            get {
+                return ResourceManager.GetString("ToningTools_ProtectDetail", resourceCulture);
+            }
+        }
+        public static string ToningTools_ProtectTones {
+            get {
+                return ResourceManager.GetString("ToningTools_ProtectTones", resourceCulture);
+            }
+        }
+        public static string ToningTools_RangeColon {
+            get {
+                return ResourceManager.GetString("ToningTools_RangeColon", resourceCulture);
+            }
+        }
+        public static string ToningTools_Saturate {
+            get {
+                return ResourceManager.GetString("ToningTools_Saturate", resourceCulture);
+            }
+        }
+        public static string ToningTools_SharpenHint {
+            get {
+                return ResourceManager.GetString("ToningTools_SharpenHint", resourceCulture);
+            }
+        }
+        public static string ToningTools_SharpenTool {
+            get {
+                return ResourceManager.GetString("ToningTools_SharpenTool", resourceCulture);
+            }
+        }
+        public static string ToningTools_SmudgeHint {
+            get {
+                return ResourceManager.GetString("ToningTools_SmudgeHint", resourceCulture);
+            }
+        }
+        public static string ToningTools_SmudgeTool {
+            get {
+                return ResourceManager.GetString("ToningTools_SmudgeTool", resourceCulture);
+            }
+        }
+        public static string ToningTools_SpongeHint {
+            get {
+                return ResourceManager.GetString("ToningTools_SpongeHint", resourceCulture);
+            }
+        }
+        public static string ToningTools_SpongeTool {
+            get {
+                return ResourceManager.GetString("ToningTools_SpongeTool", resourceCulture);
             }
         }
         public static string ToolbarControl_CollapseTip {
@@ -5353,6 +6943,311 @@ namespace ShareX.PhotoEditor.Localization {
         public static string ToolbarCustomizeDialog_Title {
             get {
                 return ResourceManager.GetString("ToolbarCustomizeDialog_Title", resourceCulture);
+            }
+        }
+        public static string ToolBase_CannotUseHidden {
+            get {
+                return ResourceManager.GetString("ToolBase_CannotUseHidden", resourceCulture);
+            }
+        }
+        public static string ToolBase_CannotUseLocked {
+            get {
+                return ResourceManager.GetString("ToolBase_CannotUseLocked", resourceCulture);
+            }
+        }
+        public static string ToolBase_CannotUseNotPixelLayer {
+            get {
+                return ResourceManager.GetString("ToolBase_CannotUseNotPixelLayer", resourceCulture);
+            }
+        }
+        public static string Tools_AntiAlias {
+            get {
+                return ResourceManager.GetString("Tools_AntiAlias", resourceCulture);
+            }
+        }
+        public static string Tools_Commit {
+            get {
+                return ResourceManager.GetString("Tools_Commit", resourceCulture);
+            }
+        }
+        public static string Tools_Contiguous {
+            get {
+                return ResourceManager.GetString("Tools_Contiguous", resourceCulture);
+            }
+        }
+        public static string Tools_FlowColon {
+            get {
+                return ResourceManager.GetString("Tools_FlowColon", resourceCulture);
+            }
+        }
+        public static string Tools_PointSample {
+            get {
+                return ResourceManager.GetString("Tools_PointSample", resourceCulture);
+            }
+        }
+        public static string Tools_SampleAllLayers {
+            get {
+                return ResourceManager.GetString("Tools_SampleAllLayers", resourceCulture);
+            }
+        }
+        public static string Tools_SampleAverage {
+            get {
+                return ResourceManager.GetString("Tools_SampleAverage", resourceCulture);
+            }
+        }
+        public static string Tools_SampleSizeColon {
+            get {
+                return ResourceManager.GetString("Tools_SampleSizeColon", resourceCulture);
+            }
+        }
+        public static string Tools_SizeInfo {
+            get {
+                return ResourceManager.GetString("Tools_SizeInfo", resourceCulture);
+            }
+        }
+        public static string Tools_ToleranceColon {
+            get {
+                return ResourceManager.GetString("Tools_ToleranceColon", resourceCulture);
+            }
+        }
+        public static string TransformTools_AlignBottomTip {
+            get {
+                return ResourceManager.GetString("TransformTools_AlignBottomTip", resourceCulture);
+            }
+        }
+        public static string TransformTools_AlignHCenterTip {
+            get {
+                return ResourceManager.GetString("TransformTools_AlignHCenterTip", resourceCulture);
+            }
+        }
+        public static string TransformTools_AlignLeftTip {
+            get {
+                return ResourceManager.GetString("TransformTools_AlignLeftTip", resourceCulture);
+            }
+        }
+        public static string TransformTools_AlignRightTip {
+            get {
+                return ResourceManager.GetString("TransformTools_AlignRightTip", resourceCulture);
+            }
+        }
+        public static string TransformTools_AlignTopTip {
+            get {
+                return ResourceManager.GetString("TransformTools_AlignTopTip", resourceCulture);
+            }
+        }
+        public static string TransformTools_AlignVCenterTip {
+            get {
+                return ResourceManager.GetString("TransformTools_AlignVCenterTip", resourceCulture);
+            }
+        }
+        public static string TransformTools_AutoSelectColon {
+            get {
+                return ResourceManager.GetString("TransformTools_AutoSelectColon", resourceCulture);
+            }
+        }
+        public static string TransformTools_AutoSelectTip {
+            get {
+                return ResourceManager.GetString("TransformTools_AutoSelectTip", resourceCulture);
+            }
+        }
+        public static string TransformTools_CancelTip {
+            get {
+                return ResourceManager.GetString("TransformTools_CancelTip", resourceCulture);
+            }
+        }
+        public static string TransformTools_CannotTransformEmpty {
+            get {
+                return ResourceManager.GetString("TransformTools_CannotTransformEmpty", resourceCulture);
+            }
+        }
+        public static string TransformTools_CannotTransformLocked {
+            get {
+                return ResourceManager.GetString("TransformTools_CannotTransformLocked", resourceCulture);
+            }
+        }
+        public static string TransformTools_CannotTransformSelection {
+            get {
+                return ResourceManager.GetString("TransformTools_CannotTransformSelection", resourceCulture);
+            }
+        }
+        public static string TransformTools_CommitTip {
+            get {
+                return ResourceManager.GetString("TransformTools_CommitTip", resourceCulture);
+            }
+        }
+        public static string TransformTools_DeleteGuide {
+            get {
+                return ResourceManager.GetString("TransformTools_DeleteGuide", resourceCulture);
+            }
+        }
+        public static string TransformTools_Floating {
+            get {
+                return ResourceManager.GetString("TransformTools_Floating", resourceCulture);
+            }
+        }
+        public static string TransformTools_FloatingSelection {
+            get {
+                return ResourceManager.GetString("TransformTools_FloatingSelection", resourceCulture);
+            }
+        }
+        public static string TransformTools_FreeTransformHint {
+            get {
+                return ResourceManager.GetString("TransformTools_FreeTransformHint", resourceCulture);
+            }
+        }
+        public static string TransformTools_Group {
+            get {
+                return ResourceManager.GetString("TransformTools_Group", resourceCulture);
+            }
+        }
+        public static string TransformTools_InterpolationColon {
+            get {
+                return ResourceManager.GetString("TransformTools_InterpolationColon", resourceCulture);
+            }
+        }
+        public static string TransformTools_LayerLocked {
+            get {
+                return ResourceManager.GetString("TransformTools_LayerLocked", resourceCulture);
+            }
+        }
+        public static string TransformTools_MoveGuide {
+            get {
+                return ResourceManager.GetString("TransformTools_MoveGuide", resourceCulture);
+            }
+        }
+        public static string TransformTools_MoveHint {
+            get {
+                return ResourceManager.GetString("TransformTools_MoveHint", resourceCulture);
+            }
+        }
+        public static string TransformTools_MoveTool {
+            get {
+                return ResourceManager.GetString("TransformTools_MoveTool", resourceCulture);
+            }
+        }
+        public static string TransformTools_Nudge {
+            get {
+                return ResourceManager.GetString("TransformTools_Nudge", resourceCulture);
+            }
+        }
+        public static string TransformTools_ShowTransformControls {
+            get {
+                return ResourceManager.GetString("TransformTools_ShowTransformControls", resourceCulture);
+            }
+        }
+        public static string TransformTools_UseFreeTransform {
+            get {
+                return ResourceManager.GetString("TransformTools_UseFreeTransform", resourceCulture);
+            }
+        }
+        public static string TypeTools_AllCaps {
+            get {
+                return ResourceManager.GetString("TypeTools_AllCaps", resourceCulture);
+            }
+        }
+        public static string TypeTools_BoldItalic {
+            get {
+                return ResourceManager.GetString("TypeTools_BoldItalic", resourceCulture);
+            }
+        }
+        public static string TypeTools_CancelTip {
+            get {
+                return ResourceManager.GetString("TypeTools_CancelTip", resourceCulture);
+            }
+        }
+        public static string TypeTools_CenterTip {
+            get {
+                return ResourceManager.GetString("TypeTools_CenterTip", resourceCulture);
+            }
+        }
+        public static string TypeTools_CommitTip {
+            get {
+                return ResourceManager.GetString("TypeTools_CommitTip", resourceCulture);
+            }
+        }
+        public static string TypeTools_FauxBold {
+            get {
+                return ResourceManager.GetString("TypeTools_FauxBold", resourceCulture);
+            }
+        }
+        public static string TypeTools_FauxItalic {
+            get {
+                return ResourceManager.GetString("TypeTools_FauxItalic", resourceCulture);
+            }
+        }
+        public static string TypeTools_Hint {
+            get {
+                return ResourceManager.GetString("TypeTools_Hint", resourceCulture);
+            }
+        }
+        public static string TypeTools_HorizontalTypeMaskTool {
+            get {
+                return ResourceManager.GetString("TypeTools_HorizontalTypeMaskTool", resourceCulture);
+            }
+        }
+        public static string TypeTools_HorizontalTypeTool {
+            get {
+                return ResourceManager.GetString("TypeTools_HorizontalTypeTool", resourceCulture);
+            }
+        }
+        public static string TypeTools_LeftAlignTip {
+            get {
+                return ResourceManager.GetString("TypeTools_LeftAlignTip", resourceCulture);
+            }
+        }
+        public static string TypeTools_MaskHint {
+            get {
+                return ResourceManager.GetString("TypeTools_MaskHint", resourceCulture);
+            }
+        }
+        public static string TypeTools_Regular {
+            get {
+                return ResourceManager.GetString("TypeTools_Regular", resourceCulture);
+            }
+        }
+        public static string TypeTools_RightAlignTip {
+            get {
+                return ResourceManager.GetString("TypeTools_RightAlignTip", resourceCulture);
+            }
+        }
+        public static string TypeTools_SetAntiAlias {
+            get {
+                return ResourceManager.GetString("TypeTools_SetAntiAlias", resourceCulture);
+            }
+        }
+        public static string TypeTools_SetFontStyle {
+            get {
+                return ResourceManager.GetString("TypeTools_SetFontStyle", resourceCulture);
+            }
+        }
+        public static string TypeTools_Strikethrough {
+            get {
+                return ResourceManager.GetString("TypeTools_Strikethrough", resourceCulture);
+            }
+        }
+        public static string TypeTools_TextColorTip {
+            get {
+                return ResourceManager.GetString("TypeTools_TextColorTip", resourceCulture);
+            }
+        }
+        public static string TypeTools_ToggleOrientationTip {
+            get {
+                return ResourceManager.GetString("TypeTools_ToggleOrientationTip", resourceCulture);
+            }
+        }
+        public static string TypeTools_TypeMask {
+            get {
+                return ResourceManager.GetString("TypeTools_TypeMask", resourceCulture);
+            }
+        }
+        public static string TypeTools_VerticalTypeMaskTool {
+            get {
+                return ResourceManager.GetString("TypeTools_VerticalTypeMaskTool", resourceCulture);
+            }
+        }
+        public static string TypeTools_VerticalTypeTool {
+            get {
+                return ResourceManager.GetString("TypeTools_VerticalTypeTool", resourceCulture);
             }
         }
     }

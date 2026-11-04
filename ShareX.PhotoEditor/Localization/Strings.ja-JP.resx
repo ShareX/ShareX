@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>自然な彩度</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>作成者:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>作成者: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>すべてクリア</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>カウントをクリア</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>注釈をクリア</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>カウントグループ {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>クリックして番号付きのカウントマーカーを配置します。ドラッグで移動、Alt+クリックで削除します。</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>カウント: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>カウントツール</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>カウントを削除</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>注釈を削除</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>注釈を編集</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>グループ:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>グループの色</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>ラベルのサイズ:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>マーカーのサイズ:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>カウントを移動</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>注釈を移動</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>新しいカウントグループを作成</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>注釈</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>注釈の色</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>クリックして注釈を追加します。注釈をクリックで編集、ドラッグで移動、Alt+クリックで削除します。</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>注釈ツール</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>新規アートボードを追加</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>アートボード {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>アートボードの背景</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>空のカンバス上をドラッグしてアートボードを作成します。アートボードのタイトルをドラッグすると、内容ごと移動します。</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>アートボードを移動</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>アートボードツール</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>新規アートボード</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (スマートフォン)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (正方形)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (タブレット)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>エッジを強調</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>なげなわ</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>自動選択</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>クリックして類似色を選択します。Shift で追加、Alt で削除します。</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>自動選択ツール</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>オブジェクト選択</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>オブジェクトの周囲に長方形またはなげなわをドラッグして選択します。</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>オブジェクト選択ツール</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>クイック選択</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>領域をペイントして選択します。選択範囲はエッジを検出して広がります。Alt で削除します。</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>クイック選択ツール</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>オブジェクトを選択中...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>選択ブラシ</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>ペイントして選択範囲に追加します。Alt (または削除モード) で選択範囲から削除します。</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>選択ブラシツール</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>背面</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>ビビッドライト</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>エアブラシ風のビルドアップ効果を有効にする</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>{0}ではレイヤーマスクにペイントできません。</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>1 回のタッチで適用される絵の具の量</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>1 ストロークあたりの最大塗布量 (0～9 キー)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>筆圧でサイズを変更</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>滑らかさ:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>補正ブラシ</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>部分的な補正をペイントします。各ストロークは補正レイヤーのマスクを編集します。Alt で補正を消去します。</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>{0}ブラシ</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>補正ブラシツール</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>補正:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>量:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>自動消去</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>描画色でペイントします。Shift+クリックで直線を描きます。[ ] でサイズを変更します。</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>ブラシツール</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>ストロークごとにクリーン</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>サンプリングした色に類似した色を描画色に置き換えます。</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>色の置き換えツール</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>補充量:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>補充色 (描画色)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>混合:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>補充した絵の具をカンバスの色と本物の絵の具のように混ぜ合わせます。</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>混合ブラシツール</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>ストロークごとに新規レイヤー</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>描画色でアンチエイリアスなしの硬いエッジの線をペイントします。</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>鉛筆ツール</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>サンプリング:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>湿り気:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>角度</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>カラーピッカー ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>ドラッグして切り抜き範囲を指定します。範囲の外側をドラッグすると回転します。Enter で確定、Esc でキャンセルします。</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>幅: {0:0} px  高さ: {1:0} px  角度: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>切り抜きツール</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>切り抜いたピクセルを削除</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>高さ:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>元の比率</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>遠近法の切り抜き</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>ドラッグして切り抜きボックスを作成し、四隅をドラッグしてオブジェクトの遠近に合わせます。Enter で切り抜いて補正します。</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>遠近法の切り抜きツール</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>比率</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>比率:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (正方形)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>三分割法</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>グリッドを表示</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>幅と高さを入れ替え</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>幅:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>キャンセル</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>1 回</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>カスタムシェイプ</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>楕円</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>線</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>多角形</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>長方形</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>三角形</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>パス</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>シャドウ</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>ブラシの中心 (ホットスポット) の下の色に一致するピクセルを消去します。</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>背景消しゴムツール</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>隣接されていない</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>ヒストリーに消去</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>透明に消去します。ロックされたレイヤーでは背景色で消去します。Alt でヒストリーに消去します。</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>消しゴムツール</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>制限:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>描画色を保護</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>エクスポート...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>透明部分の保持</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>ディザ</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>編集...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>グラデーション:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>ドラッグしてグラデーションを描きます。Shift で角度を 45 度単位に制限します。</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>角度: {0:0.0}°  距離: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>グラデーションツール</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>{0}グラデーション</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>マジック消しゴム</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>クリックして類似色のピクセルを透明に消去します。</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>マジック消しゴムツール</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>塗りつぶし</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>クリックして類似色のピクセルを描画色またはパターンで塗りつぶします。</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>塗りつぶしツール</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>透明</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>ノイズを加える</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>波</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>フレームをクリア</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>フレームの内容をクリア</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>楕円形フレーム</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>フレーム {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>ドラッグしてフレームのプレースホルダーを作成します。画像を配置または貼り付けてアクティブなフレームを埋めます。</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>フレームツール</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>画像ファイルをアクティブなフレームに配置</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>長方形フレーム</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>分岐点を追加</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>超現実的</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>範囲:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>ヒストリーソースからサンプリングした様式化されたストロークでペイントします。</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>アートヒストリーブラシツール</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>ヒストリー状態のカンバスサイズが異なるため、ヒストリーブラシを使用できませんでした。</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>ヒストリーパネルでソースとして選択したヒストリー状態からピクセルをペイントして戻します。</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>ヒストリーブラシツール</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>先にヒストリーパネルでヒストリーソースを設定してください。</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>スナップショットを削除</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>再サンプル:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>頻度:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>ドラッグしてフリーハンドで選択範囲を描きます。離すと閉じます。</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>なげなわツール</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>マグネット選択</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>クリックして開始し、エッジに沿って移動します。クリックでアンカーを追加、ダブルクリックまたは Enter で閉じ、Backspace でアンカーを削除します。</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>マグネット選択ツール</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>多角形選択</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>クリックしてポイントを追加します。ダブルクリック、Enter、または開始点をクリックして閉じます。Backspace で最後のポイントを削除します。</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>多角形選択ツール</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>背景</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>表示を切り替え (Alt+クリックでこのレイヤーのみ表示)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>楕円形選択</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>楕円形選択ツール</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>ドラッグして選択します。Shift で制限、Alt で中心から描きます。選択範囲内をドラッグすると移動します。</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>長方形選択</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>長方形選択ツール</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>選択範囲のエッジを調整</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>クリックして 1 ピクセルの列を選択します。</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>一列選択ツール</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>クリックして 1 ピクセルの行を選択します。</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>一行選択ツール</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>スタイル:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>カラーの強さ:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(空)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>画面サイズに合わせる</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>ドラッグして表示をスクロールします。任意のツールで Space キーを押している間、手のひらツールを一時的に使用できます。ダブルクリックで画面に合わせます。</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>手のひらツール</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>表示をリセット</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>ドラッグしてピクセルを変更せずにカンバスの表示を回転します。Shift で 15 度単位にスナップします。Esc または表示をリセットで元に戻します。</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>回転ビューツール</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>回転角度:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>スクラブズーム</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>クリックでズームイン、Alt+クリックでズームアウトします。左右にドラッグするとスクラブズーム、オフの場合は長方形をドラッグします。</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>ズームイン</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>ズームアウト</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>ズームツール</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>ブラック</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>パネルメニュー</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>アンカーポイントを追加</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>パスのセグメントをクリックしてアンカーポイントを追加します。</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>アンカーポイントの追加ツール</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>結合</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>重なり合うパスコンポーネントを結合</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>アンカーポイントの切り替え</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>スムーズポイントをクリックするとコーナーになります。コーナーポイントをドラッグするとスムーズハンドルを引き出します。ハンドルをドラッグすると分割します。</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>アンカーポイントの切り替えツール</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>アンカーポイントを削除</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>アンカーポイントをクリックして削除します。</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>アンカーポイントの削除ツール</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>クリックまたは選択範囲をドラッグしてアンカーポイントを選択します。ポイントやハンドルをドラッグして形状を変更します。Alt でハンドルを個別にドラッグします。</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>パス選択ツール (ダイレクト)</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>アンカーをドラッグ</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>中マド</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>交差</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>パスを移動</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>アンカーを微調整</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>パスコンポーネントをクリックして選択、ドラッグして移動します。Alt+ドラッグで複製、Delete で削除します。</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>パスコンポーネント選択ツール</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>最初のコンポーネントから後のコンポーネントを型抜き</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>作業用パス</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>ブラシでパスの境界線を描く</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>自動追加・削除</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>パスを閉じる</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>曲線ペン</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>クリックしてポイントを配置します。曲線はポイントを滑らかに通ります。最初のポイントをクリックで閉じ、Enter または Esc で終了します。</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>曲線ペンツール</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>カーブフィット:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>フリーフォームペン</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>ドラッグしてフリーハンドでパスを描きます。滑らかな曲線で近似されます。マグネットはエッジにスナップします。</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>フリーフォームペンツール</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>マグネット</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>作成:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>マスク</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>ペン</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>クリックでコーナーポイント、ドラッグでスムーズポイントを追加します。最初のポイントをクリックで閉じます。Ctrl でポイントを編集、Alt で切り替えます。</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>ペンツール</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>ラバーバンド</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>選択範囲...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>名称未設定-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>木目</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>コンテンツに応じた移動</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>コンテンツに応じた移動...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>コンテンツに応じた移動ツール</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>暗くする量:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>複製先</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>選択範囲を描き (または任意の選択ツールを使用し)、選択範囲をドラッグします。</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>拡張</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>移動</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>パッチ</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>パッチ:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>パッチツール</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>瞳の大きさ:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>赤目</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>赤目をクリック (または周囲をドラッグ) して赤い反射を除去します。</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>赤目修正ツール</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>ソース</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>構造:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>ドラッグして距離と角度を測定します。端点をドラッグして調整します。</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>ものさしツール</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>ものさしの線が水平になるようにアクティブなレイヤーを回転</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>計測スケールを使用</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>カラーサンプラーをクリア</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>カラーサンプラー</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>クリックして最大 10 個のカラーサンプラーを配置します (情報パネルに表示)。ドラッグで移動、Alt+クリックで削除します。</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>カラーサンプラーツール</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>現在のレイヤー</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>カラーサンプラーを削除</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>クリックして描画色をサンプリングします。Alt+クリックで背景色をサンプリングします。</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>スポイトツール</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>カラーサンプラーは最大 10 個までです。</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>カラーサンプラーを移動</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>サンプル:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>サンプリングリングを表示</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>選択範囲を移動</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>矢印</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>チェックマーク</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>雲</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>十字</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>王冠</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>カスタムシェイプツール</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>しずく</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>楕円形ツール</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>終点の矢印</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>塗りの色 (右クリックでなし)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>歯車</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>ハート</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>長さ: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>稲妻</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>ドラッグして線を描きます。Shift で 45 度単位に制限します。</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>ラインツール</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>パス操作:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>多角形ツール</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>パズル</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>長方形ツール</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>形状:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>ドラッグしてシェイプを描きます。Shift で縦横比を保持、Alt で中心から描きます。</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>角数:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>吹き出し</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>星</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>星の比率:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>始点の矢印</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>線の色 (右クリックでなし)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>三角形ツール</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>太さ:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>コマンドを検索</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>初期設定を使用</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>スライスをクリア</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>スライスを削除</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>分割...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>スライスを分割</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>スライスを編集</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>スライスオプションを編集</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>固定幅:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>スライスが選択されていません</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>行 x 列 (例: 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>スライス</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>ドラッグしてスライスを作成します。書き出すには、ファイル &gt; 書き出し &gt; スライスを保存 を使用します。</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>スライスオプション</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>クリックでスライスを選択、ドラッグで移動またはサイズ変更します。Delete で削除、ダブルクリックで名前を変更します。</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>スライス選択ツール</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>スライスツール</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>ガイドからスライス</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>調整あり</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>コピー元: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>コピースタンプツール</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>修復中...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>修復ブラシツール</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>印象派</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>コピーする範囲が定義されていないため、コピースタンプツールを使用できませんでした (Alt+クリックでソースポイントを定義してください)。</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>選択したパターンでペイントします。</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>パターンスタンプツール</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>邪魔なものの上をペイントして削除します。範囲は周囲から再構築されます。</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>削除ツール</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>削除中...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>スポット修復ブラシツール</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>しみや傷の上をペイントして自動的に修復します。</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>種類:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>最近使用したファイルをクリア</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>元のサイズに戻す</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>ペイントしてエッジやディテールをぼかします。</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>ぼかしツール</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>ペイントして領域を暗くします。Alt で明るくします。</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>焼き込みツール</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>ペイントして領域を明るくします。Alt で暗くします。</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>覆い焼きツール</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>フィンガーペイント</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>ディテールを保護</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>トーンを保護</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>範囲:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>彩度を上げる</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>ペイントして部分的なコントラストを上げ、ディテールをシャープにします。</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>シャープツール</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>ドラッグして絵の具をこすり広げます。フィンガーペイントは描画色から始めます。</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>指先ツール</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>ペイントして色の彩度を上げたり下げたりします。</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>スポンジツール</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>ターゲットレイヤーが非表示のため、{0}を使用できませんでした。</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>レイヤーがロックされているため、{0}を使用できませんでした。</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>ターゲットレイヤーがピクセルレイヤーではないため、{0}を使用できませんでした。先にレイヤーをラスタライズしてください (レイヤー &gt; ラスタライズ)。</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>1 列に折りたたむ</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>ツールバーをカスタマイズ</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>アンチエイリアス</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>隣接</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>流量:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>指定したピクセル</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>全レイヤーを対象</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>{0} x {0} ピクセルの平均</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>サンプル範囲:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>幅: {0:0} px  高さ: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>許容値:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>下端揃え</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>水平方向中央揃え</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>左端揃え</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>右端揃え</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>上端揃え</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>垂直方向中央揃え</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>自動選択:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>クリックでポインター下の最前面のレイヤーを選択 (Ctrl で一時的に)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>変形をキャンセル (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>レイヤーが空のため、変形できませんでした。</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>レイヤーがロックされているか内容がないため、変形できませんでした。</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>レイヤーがロックされているため、選択範囲を変形できませんでした。</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>変形を確定 (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>ガイドを削除</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>フローティング</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>フローティング選択範囲</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>ハンドルをドラッグで拡大・縮小 (Shift: 縦横比固定、Alt: 中心から)、外側で回転、角を Ctrl+ドラッグで自由な形に、辺を Ctrl+ドラッグで斜めに変形します。Enter で確定、Esc でキャンセルします。</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>グループ</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>補間方法:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>レイヤーがロックされているため、要求を完了できませんでした。</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>ガイドを移動</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>ドラッグしてレイヤーまたは選択したピクセルを移動します。Alt+ドラッグで複製、Shift で制限します。矢印キーで微調整します。</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>移動ツール</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>微調整</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>バウンディングボックスを表示</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>アクティブなレイヤーまたは選択範囲を変形するには、編集 &gt; 自由変形 (Ctrl+T) を使用します。</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>オールキャップス</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>太字斜体</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>現在の編集をキャンセル (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>テキストの中央揃え</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>現在の編集を確定 (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>疑似ボールド</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>疑似斜体</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>クリックでポイントテキスト、ドラッグで段落テキストを追加し、既存のテキストをクリックで編集します。Ctrl+Enter で確定、Esc でキャンセルします。</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>横書き文字マスクツール</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>横書き文字ツール</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>テキストの左揃え</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>クリックして入力します。確定すると、テキストの形状で選択範囲が作成されます。</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>標準</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>テキストの右揃え</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>アンチエイリアスを設定</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>フォントスタイルを設定</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>取り消し線</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>文字色</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>テキストの方向を切り替え</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>文字マスク</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>縦書き文字マスクツール</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>縦書き文字ツール</value>
   </data>
 </root>

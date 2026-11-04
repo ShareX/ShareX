@@ -276,6 +276,153 @@
   <data name="Adjustments_Vibrance" xml:space="preserve">
     <value>Độ rực</value>
   </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Tác giả:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Tác giả: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Xóa tất cả</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Xóa hết dấu đếm</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Xóa hết ghi chú</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Nhóm đếm {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Bấm để đặt các dấu đếm được đánh số. Kéo để di chuyển, Alt+bấm để loại bỏ.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Số lượng: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Công cụ Đếm</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Xóa dấu đếm</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Xóa ghi chú</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Sửa ghi chú</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Nhóm:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Màu nhóm</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Cỡ nhãn:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Cỡ dấu:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Di chuyển dấu đếm</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Di chuyển ghi chú</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Tạo nhóm đếm mới</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Ghi chú</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Màu ghi chú</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Bấm để thêm ghi chú. Bấm vào ghi chú để sửa, kéo để di chuyển, Alt+bấm để xóa.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Công cụ Ghi chú</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Thêm bảng vẽ mới</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Bảng vẽ {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Nền bảng vẽ</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Kéo trên vùng vẽ trống để tạo bảng vẽ. Kéo tiêu đề của bảng vẽ để di chuyển nó cùng nội dung.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Di chuyển bảng vẽ</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Công cụ Bảng vẽ</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Bảng vẽ mới</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (Điện thoại)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (Vuông)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (Máy tính bảng)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Tăng cường cạnh</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Lasso</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Đũa thần</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Bấm để chọn các màu tương tự. Shift thêm, Alt trừ.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Công cụ Đũa thần</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Chọn đối tượng</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Kéo hình chữ nhật hoặc lasso quanh một đối tượng để chọn nó.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Công cụ Chọn đối tượng</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Chọn nhanh</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Tô lên một vùng để chọn nó; vùng chọn mở rộng đến các cạnh. Alt trừ.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Công cụ Chọn nhanh</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Đang chọn đối tượng...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Cọ chọn</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Tô để thêm vào vùng chọn. Alt (hoặc chế độ Trừ) loại bỏ khỏi vùng chọn.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Công cụ Cọ chọn</value>
+  </data>
   <data name="BlendModes_Behind" xml:space="preserve">
     <value>Phía sau</value>
   </data>
@@ -365,6 +512,90 @@
   </data>
   <data name="BlendModes_VividLight" xml:space="preserve">
     <value>Ánh sáng rực</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Bật hiệu ứng tích tụ kiểu phun sơn</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>{0} không thể tô lên mặt nạ lớp.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Lượng sơn mỗi lần chấm</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Độ phủ sơn tối đa mỗi nét (phím 0-9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Cỡ theo lực nhấn</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Làm mượt:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Cọ điều chỉnh</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Tô điều chỉnh cục bộ. Mỗi nét sửa mặt nạ của một lớp điều chỉnh. Alt xóa điều chỉnh.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>Cọ {0}</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Công cụ Cọ điều chỉnh</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Điều chỉnh:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Mức độ:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Tự động xóa</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Tô bằng màu tiền cảnh. Shift+bấm vẽ đường thẳng. [ ] đổi kích thước.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Công cụ Cọ</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Làm sạch sau mỗi nét</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Thay các màu tương tự màu lấy mẫu bằng màu tiền cảnh.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Công cụ Thay màu</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Nạp:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Màu nạp (tiền cảnh)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Trộn:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Trộn sơn đã nạp với màu trên vùng vẽ như sơn thật.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Công cụ Cọ trộn</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Lớp mới cho mỗi nét</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Tô các đường viền cứng, không khử răng cưa bằng màu tiền cảnh.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Công cụ Bút chì</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Lấy mẫu:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Độ ướt:</value>
   </data>
   <data name="BrushesPanel_Angle" xml:space="preserve">
     <value>Góc</value>
@@ -509,6 +740,54 @@
   </data>
   <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
     <value>Bộ chọn màu ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Kéo để xác định vùng cắt; kéo bên ngoài để xoay. Enter xác nhận, Esc hủy.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>R: {0:0} px  C: {1:0} px  Góc: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Công cụ Cắt</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Xóa các điểm ảnh bị cắt</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>C:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Tỷ lệ gốc</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Cắt phối cảnh</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Kéo để tạo khung cắt, sau đó kéo các góc của nó cho khớp với phối cảnh của đối tượng. Enter cắt và làm thẳng.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Công cụ Cắt phối cảnh</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Tỷ lệ</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Tỷ lệ:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (Vuông)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Quy tắc một phần ba</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Hiện lưới</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Hoán đổi chiều rộng và chiều cao</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>R:</value>
   </data>
   <data name="DialogBuilder_Cancel" xml:space="preserve">
     <value>Hủy</value>
@@ -1959,6 +2238,24 @@
   <data name="Enum_Sampling_Once" xml:space="preserve">
     <value>Một lần</value>
   </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Hình tùy chỉnh</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Hình elip</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Đường thẳng</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Đa giác</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Hình chữ nhật</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Tam giác</value>
+  </data>
   <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
     <value>Đường dẫn</value>
   </data>
@@ -2013,6 +2310,30 @@
   <data name="Enum_ToneRange_Shadows" xml:space="preserve">
     <value>Vùng tối</value>
   </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Xóa các điểm ảnh trùng màu dưới tâm cọ (điểm nóng).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Công cụ Tẩy nền</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Không liền kề</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Xóa về lịch sử</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Xóa thành trong suốt, hoặc thành màu nền trên các lớp bị khóa. Alt xóa về lịch sử.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Công cụ Tẩy</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Giới hạn:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Bảo vệ màu tiền cảnh</value>
+  </data>
   <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
     <value>Xuất ra các cài đặt...</value>
   </data>
@@ -2045,6 +2366,48 @@
   </data>
   <data name="FillDialog_PreserveTransparency" xml:space="preserve">
     <value>Giữ nguyên độ trong suốt</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Hòa sắc</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Sửa...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Dải màu:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Kéo để vẽ dải màu. Shift giới hạn góc theo 45 độ.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Góc: {0:0.0}°  Khoảng cách: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Công cụ Dải màu</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>Dải màu {0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Tẩy thần</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Bấm để xóa các điểm ảnh có màu tương tự thành trong suốt.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Công cụ Tẩy thần</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Thùng sơn</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Bấm để tô các điểm ảnh có màu tương tự bằng màu tiền cảnh hoặc một mẫu họa tiết.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Công cụ Thùng sơn</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Độ trong suốt</value>
   </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>Thêm nhiễu</value>
@@ -2298,6 +2661,30 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>Sóng</value>
   </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Làm trống khung</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Xóa nội dung khung</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Khung elip</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Khung {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Kéo để tạo khung giữ chỗ. Đặt hoặc dán ảnh để lấp đầy khung đang hoạt động.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Công cụ Khung</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Đặt tệp ảnh vào khung đang hoạt động</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Khung chữ nhật</value>
+  </data>
   <data name="GradientEditorDialog_AddStop" xml:space="preserve">
     <value>Thêm điểm dừng</value>
   </data>
@@ -2388,6 +2775,27 @@
   <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
     <value>Siêu thực</value>
   </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Vùng:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Tô các nét cách điệu lấy mẫu từ nguồn lịch sử.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Công cụ Cọ lịch sử nghệ thuật</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Không thể dùng Cọ lịch sử vì trạng thái lịch sử không có cùng kích thước vùng vẽ.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Tô lại các điểm ảnh từ trạng thái lịch sử được chọn làm nguồn trong bảng Lịch sử.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Công cụ Cọ lịch sử</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Hãy đặt nguồn lịch sử trong bảng Lịch sử trước.</value>
+  </data>
   <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
     <value>Xóa ảnh nhanh</value>
   </data>
@@ -2444,6 +2852,33 @@
   </data>
   <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
     <value>Lấy mẫu lại:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Tần suất:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Kéo để vẽ vùng chọn tự do. Thả ra để đóng vùng chọn.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Công cụ Lasso</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Lasso từ tính</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Bấm để bắt đầu, sau đó di chuyển dọc theo một cạnh. Bấm để thêm điểm neo, bấm đúp hoặc Enter để đóng, Backspace xóa một điểm neo.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Công cụ Lasso từ tính</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Lasso đa giác</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Bấm để thêm điểm. Bấm đúp, Enter hoặc bấm vào điểm bắt đầu để đóng. Backspace xóa điểm cuối cùng.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Công cụ Lasso đa giác</value>
   </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>Nền</value>
@@ -2580,6 +3015,39 @@
   <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
     <value>Bật/tắt hiển thị (Alt+nhấp chỉ hiện lớp này)</value>
   </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Khung chọn elip</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Công cụ Khung chọn elip</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Kéo để chọn. Shift giới hạn, Alt vẽ từ tâm. Kéo bên trong vùng chọn để di chuyển nó.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Khung chọn chữ nhật</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Công cụ Khung chọn chữ nhật</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Tinh chỉnh cạnh vùng chọn</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Bấm để chọn một cột rộng 1 điểm ảnh.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Công cụ Khung chọn một cột</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Bấm để chọn một hàng cao 1 điểm ảnh.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Công cụ Khung chọn một hàng</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Kiểu:</value>
+  </data>
   <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
     <value>Cường độ màu:</value>
   </data>
@@ -2615,6 +3083,42 @@
   </data>
   <data name="MenuBuilder_Empty" xml:space="preserve">
     <value>(trống)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Vừa màn hình</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Kéo để cuộn khung nhìn. Giữ Space khi dùng bất kỳ công cụ nào để tạm dùng công cụ Bàn tay. Bấm đúp để vừa màn hình.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Công cụ Bàn tay</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Đặt lại khung nhìn</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Kéo để xoay khung nhìn vùng vẽ mà không thay đổi điểm ảnh. Shift bắt theo 15 độ. Esc hoặc Đặt lại khung nhìn sẽ khôi phục.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Công cụ Xoay khung nhìn</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Góc xoay:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Thu phóng kéo</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Bấm để phóng to, Alt+bấm để thu nhỏ. Kéo sang trái/phải để thu phóng kéo, hoặc kéo hình chữ nhật khi tắt thu phóng kéo.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Phóng to</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Thu nhỏ</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Công cụ Thu phóng</value>
   </data>
   <data name="NewDocumentDialog_Black" xml:space="preserve">
     <value>Đen</value>
@@ -2694,6 +3198,69 @@
   <data name="PanelDock_PanelMenuTip" xml:space="preserve">
     <value>Menu bảng điều khiển</value>
   </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Thêm điểm neo</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Bấm vào một đoạn đường dẫn để thêm điểm neo.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Công cụ Thêm điểm neo</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Kết hợp</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Hợp nhất các thành phần đường dẫn chồng nhau</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Chuyển đổi điểm</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Bấm vào điểm mượt để biến nó thành góc; kéo một điểm góc để kéo ra các tay cầm mượt. Kéo tay cầm để bẻ gãy nó.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Công cụ Chuyển đổi điểm</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Xóa điểm neo</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Bấm vào điểm neo để xóa nó.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Công cụ Xóa điểm neo</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Bấm hoặc kéo khung chọn để chọn các điểm neo; kéo điểm hoặc tay cầm để tạo lại hình dạng. Alt kéo tay cầm độc lập.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Công cụ Chọn trực tiếp</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Kéo điểm neo</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Loại trừ</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Giao nhau</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Di chuyển đường dẫn</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Nhích điểm neo</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Bấm vào một thành phần đường dẫn để chọn, kéo để di chuyển. Alt+kéo nhân bản, Delete loại bỏ.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Công cụ Chọn đường dẫn</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Trừ các thành phần sau khỏi thành phần đầu tiên</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>Đường dẫn làm việc</value>
   </data>
@@ -2726,6 +3293,57 @@
   </data>
   <data name="PathsPanel_StrokePathTip" xml:space="preserve">
     <value>Vẽ viền đường dẫn bằng cọ</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Tự động thêm/xóa</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Đóng đường dẫn</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Bút cong</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Bấm để đặt điểm; đường cong đi mượt qua các điểm. Bấm vào điểm đầu tiên để đóng, Enter hoặc Esc để kết thúc.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Công cụ Bút cong</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Khớp đường cong:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Bút tự do</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Kéo để vẽ đường dẫn tự do; nó được khớp bằng các đường cong mượt. Từ tính bắt dính vào cạnh.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Công cụ Bút tự do</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Từ tính</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Tạo:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Mặt nạ</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Bút</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Bấm để thêm điểm góc, kéo để thêm điểm mượt. Bấm vào điểm đầu tiên để đóng. Ctrl sửa điểm, Alt chuyển đổi chúng.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Công cụ Bút</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Dây chun</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Vùng chọn...</value>
   </data>
   <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
     <value>Không tên-{0}</value>
@@ -3093,6 +3711,198 @@
   <data name="Resources_WoodGrain" xml:space="preserve">
     <value>Vân gỗ</value>
   </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Di chuyển nhận biết nội dung</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Di chuyển nhận biết nội dung...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Công cụ Di chuyển nhận biết nội dung</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Mức làm tối:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Đích</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Vẽ vùng chọn (hoặc dùng bất kỳ công cụ chọn nào), sau đó kéo vùng chọn.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Mở rộng</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Di chuyển</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Vá</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Vá:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Công cụ Vá</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Cỡ đồng tử:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Mắt đỏ</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Bấm vào mắt đỏ (hoặc kéo quanh nó) để loại bỏ phản xạ đỏ.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Công cụ Mắt đỏ</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Nguồn</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Cấu trúc:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Kéo để đo khoảng cách và góc. Kéo một điểm cuối để điều chỉnh.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Công cụ Thước</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Xoay lớp đang hoạt động để đường thước nằm ngang</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Dùng tỷ lệ đo</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Xóa hết các điểm lấy mẫu màu</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Điểm lấy mẫu màu</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Bấm để đặt tối đa 10 điểm lấy mẫu màu (hiển thị trong bảng Thông tin). Kéo để di chuyển, Alt+bấm để xóa.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Công cụ Lấy mẫu màu</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Lớp hiện tại</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Xóa điểm lấy mẫu màu</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Bấm để lấy mẫu màu tiền cảnh. Alt+bấm lấy mẫu màu nền.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Công cụ Ống hút màu</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Chỉ cho phép tối đa 10 điểm lấy mẫu màu.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Di chuyển điểm lấy mẫu màu</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Mẫu:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Hiện vòng lấy mẫu</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Di chuyển vùng chọn</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Mũi tên</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Dấu tích</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Đám mây</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Chữ thập</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Vương miện</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Công cụ Hình tùy chỉnh</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Giọt nước</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Công cụ Elip</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Mũi tên cuối</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Màu tô (bấm chuột phải để bỏ)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Bánh răng</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Trái tim</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Chiều dài: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Tia sét</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Kéo để vẽ đường thẳng. Shift giới hạn theo 45 độ.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Công cụ Đường thẳng</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Phép toán đường dẫn:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Công cụ Đa giác</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Ghép hình</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Công cụ Hình chữ nhật</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Hình dạng:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Kéo để vẽ hình. Shift giữ tỷ lệ, Alt vẽ từ tâm.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Số cạnh:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Bong bóng thoại</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Ngôi sao</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Tỷ lệ ngôi sao:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Mũi tên đầu</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Màu nét (bấm chuột phải để bỏ)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Công cụ Tam giác</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Độ dày:</value>
+  </data>
   <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
     <value>Tìm lệnh</value>
   </data>
@@ -3101,6 +3911,99 @@
   </data>
   <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
     <value>Dùng mặc định</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Xóa hết các lát cắt</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Xóa lát cắt</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Chia...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Chia lát cắt</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Sửa lát cắt</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Sửa tùy chọn lát cắt</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>R cố định:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Chưa chọn lát cắt nào</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Hàng x cột (ví dụ 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Lát cắt</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Kéo để tạo lát cắt. Dùng Tệp &gt; Xuất &gt; Lưu các lát cắt để xuất chúng.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Tùy chọn lát cắt</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Bấm để chọn lát cắt, kéo để di chuyển hoặc đổi kích thước. Delete loại bỏ, bấm đúp để đổi tên.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Công cụ Chọn lát cắt</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Công cụ Lát cắt</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Lát cắt từ đường gióng</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Căn chỉnh</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Nguồn nhân bản: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Công cụ Tem nhân bản</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Đang chữa lành...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Công cụ Cọ chữa lành</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Ấn tượng</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Không thể dùng công cụ Tem nhân bản vì chưa xác định vùng cần nhân bản (Alt+bấm để xác định điểm nguồn).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Tô bằng mẫu họa tiết đã chọn.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Công cụ Tem họa tiết</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Tô lên các chi tiết gây xao nhãng để loại bỏ chúng. Vùng được tái tạo từ xung quanh.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Công cụ Loại bỏ</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Đang loại bỏ...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Công cụ Cọ chữa lành điểm</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Tô lên các đốm và khuyết điểm để tự động chữa lành chúng.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Loại:</value>
   </data>
   <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
     <value>Xóa tệp gần đây</value>
@@ -3143,6 +4046,66 @@
   </data>
   <data name="TitleBar_Restore" xml:space="preserve">
     <value>Khôi phục</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Tô để làm mềm các cạnh và chi tiết.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Công cụ Làm mờ</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Tô để làm tối các vùng. Alt làm sáng.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Công cụ Làm cháy</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Tô để làm sáng các vùng. Alt làm tối.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Công cụ Làm sáng</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Vẽ bằng ngón tay</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Bảo vệ chi tiết</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Bảo vệ tông màu</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Phạm vi:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Tăng bão hòa</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Tô để tăng độ tương phản cục bộ và làm sắc nét chi tiết.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Công cụ Làm sắc nét</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Kéo để làm nhòe sơn. Vẽ bằng ngón tay bắt đầu với màu tiền cảnh.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Công cụ Làm nhòe</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Tô để tăng hoặc giảm độ bão hòa màu.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Công cụ Bọt biển</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>Không thể dùng {0} vì lớp đích đang bị ẩn.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>Không thể dùng {0} vì lớp đang bị khóa.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>Không thể dùng {0} vì lớp đích không phải là lớp điểm ảnh. Hãy raster hóa lớp trước (Lớp &gt; Raster hóa).</value>
   </data>
   <data name="ToolbarControl_CollapseTip" xml:space="preserve">
     <value>Thu gọn thành một cột</value>
@@ -3206,5 +4169,179 @@
   </data>
   <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
     <value>Tùy chỉnh Thanh công cụ</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Khử răng cưa</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Liền kề</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Lưu lượng:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Mẫu điểm</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Lấy mẫu tất cả các lớp</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>Trung bình {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Cỡ mẫu:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>R: {0:0} px  C: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Dung sai:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Căn các cạnh dưới</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Căn tâm theo chiều ngang</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Căn các cạnh trái</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Căn các cạnh phải</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Căn các cạnh trên</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Căn tâm theo chiều dọc</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Tự động chọn:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Bấm để chọn lớp trên cùng dưới con trỏ (tạm thời bằng Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Hủy biến đổi (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Không thể biến đổi vì lớp trống.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Không thể biến đổi vì lớp bị khóa hoặc không có nội dung.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Không thể biến đổi vùng chọn vì lớp bị khóa.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Xác nhận biến đổi (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Xóa đường gióng</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Nổi</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Vùng chọn nổi</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Kéo tay cầm để co giãn (Shift: theo tỷ lệ, Alt: từ tâm), kéo bên ngoài để xoay, Ctrl+kéo một góc để bóp méo, Ctrl+kéo một cạnh để nghiêng. Enter xác nhận, Esc hủy.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Nhóm</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Nội suy:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Không thể hoàn tất yêu cầu vì lớp bị khóa.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Di chuyển đường gióng</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Kéo để di chuyển lớp hoặc các điểm ảnh đã chọn. Alt+kéo nhân bản, Shift giới hạn. Phím mũi tên nhích.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Công cụ Di chuyển</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Nhích</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Hiện điều khiển biến đổi</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Dùng Sửa &gt; Biến đổi tự do (Ctrl+T) để biến đổi lớp đang hoạt động hoặc vùng chọn.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Viết hoa toàn bộ</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Đậm nghiêng</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Hủy các chỉnh sửa hiện tại (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Căn giữa văn bản</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Xác nhận các chỉnh sửa hiện tại (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Đậm giả</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Nghiêng giả</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Bấm để thêm văn bản điểm, kéo để thêm văn bản đoạn, bấm vào văn bản có sẵn để sửa. Ctrl+Enter xác nhận, Esc hủy.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Công cụ Mặt nạ chữ ngang</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Công cụ Chữ ngang</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Căn trái văn bản</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Bấm để gõ; khi xác nhận sẽ tạo vùng chọn theo hình dạng của văn bản.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Thường</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Căn phải văn bản</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Đặt khử răng cưa</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Đặt kiểu phông chữ</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Gạch ngang</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Màu chữ</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Chuyển hướng văn bản</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Mặt nạ chữ</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Công cụ Mặt nạ chữ dọc</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Công cụ Chữ dọc</value>
   </data>
 </root>

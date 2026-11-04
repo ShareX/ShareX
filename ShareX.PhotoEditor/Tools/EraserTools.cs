@@ -44,9 +44,9 @@ public sealed class EraserTool : BrushToolBase
 
     public override ToolId Id => ToolId.Eraser;
 
-    public override string Name => "Eraser Tool";
+    public override string Name => Strings.EraserTools_EraserTool;
 
-    public override string Hint => "Erase to transparency, or to the background color on locked layers. Alt erases to history.";
+    public override string Hint => Strings.EraserTools_EraserHint;
 
     public EraserMode EraseMode { get; set; }
 
@@ -99,11 +99,11 @@ public sealed class EraserTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.EnumCombo("Mode:", () => EraseMode, v => EraseMode = v, 90);
-        options.Percent("Opacity:", () => Opacity, v => Opacity = v);
-        options.Percent("Flow:", () => Flow, v => Flow = v);
-        options.Percent("Smoothing:", () => Smoothing, v => Smoothing = v);
-        options.Check("Erase to History", () => EraseToHistory, v => EraseToHistory = v);
+        options.EnumCombo(Strings.EditorCommands_ModeColon, () => EraseMode, v => EraseMode = v, 90);
+        options.Percent(Strings.EditorCommands_OpacityColon, () => Opacity, v => Opacity = v);
+        options.Percent(Strings.Tools_FlowColon, () => Flow, v => Flow = v);
+        options.Percent(Strings.BrushToolBase_SmoothingColon, () => Smoothing, v => Smoothing = v);
+        options.Check(Strings.EraserTools_EraseToHistory, () => EraseToHistory, v => EraseToHistory = v);
     }
 }
 
@@ -120,9 +120,9 @@ public sealed class BackgroundEraserTool : BrushToolBase
 
     public override ToolId Id => ToolId.BackgroundEraser;
 
-    public override string Name => "Background Eraser Tool";
+    public override string Name => Strings.EraserTools_BackgroundEraserTool;
 
-    public override string Hint => "Erase pixels that match the color under the brush center (hot spot).";
+    public override string Hint => Strings.EraserTools_BackgroundEraserHint;
 
     public Sampling SampleMode { get; set; }
 
@@ -144,7 +144,7 @@ public sealed class BackgroundEraserTool : BrushToolBase
             layer.IsBackground = false;
             layer.LockTransparency = false;
             layer.LockPosition = false;
-            layer.Name = "Layer 0";
+            layer.Name = Strings.LayerNames_Layer0;
             Host.RefreshPanels();
         }
         return true;
@@ -172,9 +172,9 @@ public sealed class BackgroundEraserTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.EnumCombo("Sampling:", () => SampleMode, v => SampleMode = v, 140);
-        options.Combo("Limits:", [("Contiguous", true), ("Discontiguous", false)], () => Contiguous, v => Contiguous = v, 110);
-        options.Number("Tolerance:", 0, 100, () => Tolerance, v => Tolerance = (int)v, "0", "%");
-        options.Check("Protect Foreground Color", () => ProtectForeground, v => ProtectForeground = v);
+        options.EnumCombo(Strings.BrushTools_SamplingColon, () => SampleMode, v => SampleMode = v, 140);
+        options.Combo(Strings.EraserTools_LimitsColon, [(Strings.Tools_Contiguous, true), (Strings.EraserTools_Discontiguous, false)], () => Contiguous, v => Contiguous = v, 110);
+        options.Number(Strings.Tools_ToleranceColon, 0, 100, () => Tolerance, v => Tolerance = (int)v, "0", "%");
+        options.Check(Strings.EraserTools_ProtectForeground, () => ProtectForeground, v => ProtectForeground = v);
     }
 }
