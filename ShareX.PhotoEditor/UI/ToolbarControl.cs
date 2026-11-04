@@ -94,7 +94,7 @@ public sealed class ToolbarControl : UserControl
         Button button = new()
         {
             Classes = { "tool" },
-            Content = ToolIcons.Create(icon, 17),
+            Content = ToolIcons.Create(icon, 20),
             HorizontalAlignment = HorizontalAlignment.Center,
             Width = ButtonWidth - 2,
             Height = 28
@@ -150,7 +150,7 @@ public sealed class ToolbarControl : UserControl
     private Button CreateToolButton(ToolGroup group)
     {
         Grid content = new() { Width = 32, Height = 29 };
-        content.Children.Add(new ContentControl { Content = ToolIcons.Create(group.Current.Id, 18), HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center });
+        content.Children.Add(new ContentControl { Content = ToolIcons.Create(group.Current.Id, 20), HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center });
         if (group.Tools.Count > 1)
         {
             // Small corner triangle marks tools that have a flyout.
@@ -232,7 +232,7 @@ public sealed class ToolbarControl : UserControl
             button.Classes.Set("checked", group.Tools.Contains(_editor.Tools.Active));
             if (button.Content is Grid grid && grid.Children[0] is ContentControl icon)
             {
-                icon.Content = ToolIcons.Create(group.Current.Id, 18);
+                icon.Content = ToolIcons.Create(group.Current.Id, 20);
             }
             UpdateTip(button, group.Current);
         }
