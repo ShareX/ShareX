@@ -57,9 +57,9 @@ public static partial class EditorCommands
     {
         PhotoDocument? doc = w.Document;
         if (doc?.ActiveLayer is RasterLayer raster && raster.CanEditPixels) return raster;
-        if (doc?.ActiveLayer is RasterLayer) w.ShowMessage($"Could not {action} because the layer is locked.");
-        else if (doc?.ActiveLayer != null) w.ShowMessage($"Could not {action} because the active layer is not a pixel layer. Rasterize it first (Layer > Rasterize).");
-        else w.ShowMessage($"Could not {action} because there is no active layer.");
+        if (doc?.ActiveLayer is RasterLayer) w.ShowMessage(string.Format(Strings.EditorCommands_CannotActionLayerLocked, action));
+        else if (doc?.ActiveLayer != null) w.ShowMessage(string.Format(Strings.EditorCommands_CannotActionNotPixelLayer, action));
+        else w.ShowMessage(string.Format(Strings.EditorCommands_CannotActionNoActiveLayer, action));
         return null;
     }
 

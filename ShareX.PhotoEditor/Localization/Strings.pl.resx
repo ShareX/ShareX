@@ -1,0 +1,1575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EditorCommands_90Clockwise" xml:space="preserve">
+    <value>90° w prawo</value>
+  </data>
+  <data name="EditorCommands_90CounterClockwise" xml:space="preserve">
+    <value>90° w lewo</value>
+  </data>
+  <data name="EditorCommands_ActionApplyAdjustment" xml:space="preserve">
+    <value>zastosować korekty</value>
+  </data>
+  <data name="EditorCommands_ActionChangeCanvasSize" xml:space="preserve">
+    <value>zmienić rozmiaru obszaru roboczego</value>
+  </data>
+  <data name="EditorCommands_ActionClear" xml:space="preserve">
+    <value>wyczyścić</value>
+  </data>
+  <data name="EditorCommands_ActionCropImage" xml:space="preserve">
+    <value>wykadrować obrazu</value>
+  </data>
+  <data name="EditorCommands_ActionEqualize" xml:space="preserve">
+    <value>wyrównać</value>
+  </data>
+  <data name="EditorCommands_ActionFill" xml:space="preserve">
+    <value>wypełnić</value>
+  </data>
+  <data name="EditorCommands_ActionFillPath" xml:space="preserve">
+    <value>wypełnić ścieżki</value>
+  </data>
+  <data name="EditorCommands_ActionFlipCanvas" xml:space="preserve">
+    <value>odbić obszaru roboczego</value>
+  </data>
+  <data name="EditorCommands_ActionResizeImage" xml:space="preserve">
+    <value>zmienić rozmiaru obrazu</value>
+  </data>
+  <data name="EditorCommands_ActionRevealAll" xml:space="preserve">
+    <value>pokazać wszystkiego</value>
+  </data>
+  <data name="EditorCommands_ActionRotateCanvas" xml:space="preserve">
+    <value>obrócić obszaru roboczego</value>
+  </data>
+  <data name="EditorCommands_ActionRunFilter" xml:space="preserve">
+    <value>zastosować filtra</value>
+  </data>
+  <data name="EditorCommands_ActionStroke" xml:space="preserve">
+    <value>obrysować</value>
+  </data>
+  <data name="EditorCommands_ActionStrokePath" xml:space="preserve">
+    <value>obrysować ścieżki</value>
+  </data>
+  <data name="EditorCommands_ActionTrimImage" xml:space="preserve">
+    <value>przyciąć obrazu</value>
+  </data>
+  <data name="EditorCommands_AddLayerMask" xml:space="preserve">
+    <value>Dodaj maskę warstwy</value>
+  </data>
+  <data name="EditorCommands_AddVectorMask" xml:space="preserve">
+    <value>Dodaj maskę wektorową</value>
+  </data>
+  <data name="EditorCommands_Adjustments" xml:space="preserve">
+    <value>Korekty</value>
+  </data>
+  <data name="EditorCommands_Again" xml:space="preserve">
+    <value>Ponownie</value>
+  </data>
+  <data name="EditorCommands_Align" xml:space="preserve">
+    <value>Wyrównaj</value>
+  </data>
+  <data name="EditorCommands_All" xml:space="preserve">
+    <value>Wszystko</value>
+  </data>
+  <data name="EditorCommands_AllLayers" xml:space="preserve">
+    <value>Wszystkie warstwy</value>
+  </data>
+  <data name="EditorCommands_AlphaNumber" xml:space="preserve">
+    <value>Alfa {0}</value>
+  </data>
+  <data name="EditorCommands_AngleDegreesColon" xml:space="preserve">
+    <value>Kąt (°):</value>
+  </data>
+  <data name="EditorCommands_AntiAlias" xml:space="preserve">
+    <value>Wygładzanie</value>
+  </data>
+  <data name="EditorCommands_Apply" xml:space="preserve">
+    <value>Zastosuj</value>
+  </data>
+  <data name="EditorCommands_ApplyLayerMask" xml:space="preserve">
+    <value>Zastosuj maskę warstwy</value>
+  </data>
+  <data name="EditorCommands_ArbitraryEllipsis" xml:space="preserve">
+    <value>Dowolnie...</value>
+  </data>
+  <data name="EditorCommands_Arrange" xml:space="preserve">
+    <value>Ułóż</value>
+  </data>
+  <data name="EditorCommands_ArrangeLayer" xml:space="preserve">
+    <value>Ułóż warstwę</value>
+  </data>
+  <data name="EditorCommands_AutoColor" xml:space="preserve">
+    <value>Kolor automatyczny</value>
+  </data>
+  <data name="EditorCommands_AutoContrast" xml:space="preserve">
+    <value>Kontrast automatyczny</value>
+  </data>
+  <data name="EditorCommands_AutoTone" xml:space="preserve">
+    <value>Ton automatyczny</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveMask" xml:space="preserve">
+    <value>Warstwa tła nie może mieć maski. Najpierw przekształć ją w warstwę.</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveStyles" xml:space="preserve">
+    <value>Warstwa tła nie może mieć stylów warstwy. Najpierw przekształć ją w warstwę (Warstwa &gt; Nowa &gt; Warstwa z tła).</value>
+  </data>
+  <data name="EditorCommands_BackgroundFromLayer" xml:space="preserve">
+    <value>Tło z warstwy</value>
+  </data>
+  <data name="EditorCommands_BasedOnColon" xml:space="preserve">
+    <value>Na podstawie:</value>
+  </data>
+  <data name="EditorCommands_Blue" xml:space="preserve">
+    <value>Niebieski</value>
+  </data>
+  <data name="EditorCommands_Blues" xml:space="preserve">
+    <value>Niebieskie</value>
+  </data>
+  <data name="EditorCommands_Border" xml:space="preserve">
+    <value>Obramowanie</value>
+  </data>
+  <data name="EditorCommands_BorderEllipsis" xml:space="preserve">
+    <value>Obramowanie...</value>
+  </data>
+  <data name="EditorCommands_BottomEdges" xml:space="preserve">
+    <value>Krawędzie dolne</value>
+  </data>
+  <data name="EditorCommands_BottomRightPixelColor" xml:space="preserve">
+    <value>Kolor piksela w prawym dolnym rogu</value>
+  </data>
+  <data name="EditorCommands_BringForward" xml:space="preserve">
+    <value>Przesuń do przodu</value>
+  </data>
+  <data name="EditorCommands_BringToFront" xml:space="preserve">
+    <value>Przesuń na wierzch</value>
+  </data>
+  <data name="EditorCommands_BrushName" xml:space="preserve">
+    <value>Nazwa pędzla</value>
+  </data>
+  <data name="EditorCommands_Brushes" xml:space="preserve">
+    <value>Pędzle</value>
+  </data>
+  <data name="EditorCommands_CannotActionLayerLocked" xml:space="preserve">
+    <value>Nie można {0}, ponieważ warstwa jest zablokowana.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNoActiveLayer" xml:space="preserve">
+    <value>Nie można {0}, ponieważ nie ma aktywnej warstwy.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNotPixelLayer" xml:space="preserve">
+    <value>Nie można {0}, ponieważ aktywna warstwa nie jest warstwą pikseli. Najpierw ją zrasteryzuj (Warstwa &gt; Rasteryzuj).</value>
+  </data>
+  <data name="EditorCommands_CannotConvertEmptyToSmartObject" xml:space="preserve">
+    <value>Nie można przekształcić w obiekt inteligentny, ponieważ warstwa jest pusta.</value>
+  </data>
+  <data name="EditorCommands_CannotCutLockedLayer" xml:space="preserve">
+    <value>Nie można wyciąć, ponieważ warstwa jest zablokowana.</value>
+  </data>
+  <data name="EditorCommands_CannotFade" xml:space="preserve">
+    <value>Ostatniej operacji nie można stonować.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNoLayerBelow" xml:space="preserve">
+    <value>Nie można scalić w dół, ponieważ pod spodem nie ma warstwy.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNotPixelLayer" xml:space="preserve">
+    <value>Nie można scalić w dół, ponieważ warstwa pod spodem nie jest warstwą pikseli.</value>
+  </data>
+  <data name="EditorCommands_CanvasSize" xml:space="preserve">
+    <value>Rozmiar obszaru roboczego</value>
+  </data>
+  <data name="EditorCommands_CanvasSizeEllipsis" xml:space="preserve">
+    <value>Rozmiar obszaru roboczego...</value>
+  </data>
+  <data name="EditorCommands_Center" xml:space="preserve">
+    <value>Środek</value>
+  </data>
+  <data name="EditorCommands_ChangeTextOrientation" xml:space="preserve">
+    <value>Zmień orientację tekstu</value>
+  </data>
+  <data name="EditorCommands_Channel" xml:space="preserve">
+    <value>Kanał</value>
+  </data>
+  <data name="EditorCommands_Channels" xml:space="preserve">
+    <value>Kanały</value>
+  </data>
+  <data name="EditorCommands_Clear" xml:space="preserve">
+    <value>Wyczyść</value>
+  </data>
+  <data name="EditorCommands_ClearGuides" xml:space="preserve">
+    <value>Usuń linie pomocnicze</value>
+  </data>
+  <data name="EditorCommands_ClearLayerStyle" xml:space="preserve">
+    <value>Usuń styl warstwy</value>
+  </data>
+  <data name="EditorCommands_ClearRecentFileList" xml:space="preserve">
+    <value>Wyczyść listę ostatnich plików</value>
+  </data>
+  <data name="EditorCommands_Clipboard" xml:space="preserve">
+    <value>Schowek</value>
+  </data>
+  <data name="EditorCommands_ClipboardHasNoImage" xml:space="preserve">
+    <value>Schowek nie zawiera obrazu.</value>
+  </data>
+  <data name="EditorCommands_Clockwise" xml:space="preserve">
+    <value>W prawo</value>
+  </data>
+  <data name="EditorCommands_Close" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="EditorCommands_CloseAll" xml:space="preserve">
+    <value>Zamknij wszystko</value>
+  </data>
+  <data name="EditorCommands_Color" xml:space="preserve">
+    <value>Kolor</value>
+  </data>
+  <data name="EditorCommands_ColorColon" xml:space="preserve">
+    <value>Kolor:</value>
+  </data>
+  <data name="EditorCommands_ColorFill" xml:space="preserve">
+    <value>Wypełnienie kolorem</value>
+  </data>
+  <data name="EditorCommands_ColorRange" xml:space="preserve">
+    <value>Zakres kolorów</value>
+  </data>
+  <data name="EditorCommands_ColorRangeEllipsis" xml:space="preserve">
+    <value>Zakres kolorów...</value>
+  </data>
+  <data name="EditorCommands_ColorRangeTip" xml:space="preserve">
+    <value>Wskazówka: najpierw pobierz kolor kroplomierzem; zostanie użyty jako kolor narzędzia.</value>
+  </data>
+  <data name="EditorCommands_ColumnsColon" xml:space="preserve">
+    <value>Kolumny:</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFill" xml:space="preserve">
+    <value>Wypełnienie z uwzględnieniem zawartości</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFillEllipsis" xml:space="preserve">
+    <value>Wypełnienie z uwzględnieniem zawartości...</value>
+  </data>
+  <data name="EditorCommands_Contract" xml:space="preserve">
+    <value>Zwęź</value>
+  </data>
+  <data name="EditorCommands_ContractByPxColon" xml:space="preserve">
+    <value>Zwęź o (px):</value>
+  </data>
+  <data name="EditorCommands_ContractEllipsis" xml:space="preserve">
+    <value>Zwęź...</value>
+  </data>
+  <data name="EditorCommands_ContrastColon" xml:space="preserve">
+    <value>Kontrast:</value>
+  </data>
+  <data name="EditorCommands_ConvertForSmartFilters" xml:space="preserve">
+    <value>Konwertuj na filtry inteligentne</value>
+  </data>
+  <data name="EditorCommands_ConvertToShape" xml:space="preserve">
+    <value>Konwertuj na kształt</value>
+  </data>
+  <data name="EditorCommands_ConvertToSmartObject" xml:space="preserve">
+    <value>Konwertuj na obiekt inteligentny</value>
+  </data>
+  <data name="EditorCommands_Copy" xml:space="preserve">
+    <value>Kopiuj</value>
+  </data>
+  <data name="EditorCommands_CopyLayerStyle" xml:space="preserve">
+    <value>Kopiuj styl warstwy</value>
+  </data>
+  <data name="EditorCommands_CopyMerged" xml:space="preserve">
+    <value>Kopiuj scalone</value>
+  </data>
+  <data name="EditorCommands_CouldNotActionReason" xml:space="preserve">
+    <value>Nie można {0}: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotCreateDocument" xml:space="preserve">
+    <value>Nie można utworzyć dokumentu: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExport" xml:space="preserve">
+    <value>Nie można wyeksportować: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExportLayers" xml:space="preserve">
+    <value>Nie można wyeksportować warstw: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotPlaceUnsupported" xml:space="preserve">
+    <value>Nie można umieścić „{0}”, ponieważ format pliku nie jest obsługiwany.</value>
+  </data>
+  <data name="EditorCommands_CouldNotRevert" xml:space="preserve">
+    <value>Nie można przywrócić: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSave" xml:space="preserve">
+    <value>Nie można zapisać: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveFile" xml:space="preserve">
+    <value>Nie można zapisać „{0}”: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveSlices" xml:space="preserve">
+    <value>Nie można zapisać plasterków: {0}</value>
+  </data>
+  <data name="EditorCommands_Count" xml:space="preserve">
+    <value>Liczenie</value>
+  </data>
+  <data name="EditorCommands_CounterClockwise" xml:space="preserve">
+    <value>W lewo</value>
+  </data>
+  <data name="EditorCommands_CreateClippingMask" xml:space="preserve">
+    <value>Utwórz maskę przycinającą</value>
+  </data>
+  <data name="EditorCommands_CreateWorkPath" xml:space="preserve">
+    <value>Utwórz ścieżkę roboczą</value>
+  </data>
+  <data name="EditorCommands_Crop" xml:space="preserve">
+    <value>Przytnij</value>
+  </data>
+  <data name="EditorCommands_Cut" xml:space="preserve">
+    <value>Wytnij</value>
+  </data>
+  <data name="EditorCommands_CycleScreenMode" xml:space="preserve">
+    <value>Przełącz tryb ekranu</value>
+  </data>
+  <data name="EditorCommands_DecreaseFontSize" xml:space="preserve">
+    <value>Zmniejsz rozmiar czcionki</value>
+  </data>
+  <data name="EditorCommands_DefaultColors" xml:space="preserve">
+    <value>Domyślne kolory narzędzia i tła</value>
+  </data>
+  <data name="EditorCommands_DefineBrushPresetEllipsis" xml:space="preserve">
+    <value>Zdefiniuj ustawienie predefiniowane pędzla...</value>
+  </data>
+  <data name="EditorCommands_DefineCustomShapeEllipsis" xml:space="preserve">
+    <value>Zdefiniuj kształt własny...</value>
+  </data>
+  <data name="EditorCommands_DefinePatternEllipsis" xml:space="preserve">
+    <value>Zdefiniuj wzorek...</value>
+  </data>
+  <data name="EditorCommands_Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="EditorCommands_DeleteChannel" xml:space="preserve">
+    <value>Usuń kanał</value>
+  </data>
+  <data name="EditorCommands_DeleteLayer" xml:space="preserve">
+    <value>Usuń warstwę</value>
+  </data>
+  <data name="EditorCommands_DeleteLayerMask" xml:space="preserve">
+    <value>Usuń maskę warstwy</value>
+  </data>
+  <data name="EditorCommands_DeleteLayers" xml:space="preserve">
+    <value>Usuń warstwy</value>
+  </data>
+  <data name="EditorCommands_DeletePath" xml:space="preserve">
+    <value>Usuń ścieżkę</value>
+  </data>
+  <data name="EditorCommands_Deselect" xml:space="preserve">
+    <value>Usuń zaznaczenie</value>
+  </data>
+  <data name="EditorCommands_DirectionColon" xml:space="preserve">
+    <value>Kierunek:</value>
+  </data>
+  <data name="EditorCommands_Disable" xml:space="preserve">
+    <value>Wyłącz</value>
+  </data>
+  <data name="EditorCommands_DisableLayerMask" xml:space="preserve">
+    <value>Wyłącz maskę warstwy</value>
+  </data>
+  <data name="EditorCommands_Distort" xml:space="preserve">
+    <value>Zniekształć</value>
+  </data>
+  <data name="EditorCommands_DocumentBounds" xml:space="preserve">
+    <value>Granice dokumentu</value>
+  </data>
+  <data name="EditorCommands_DuplicateEllipsis" xml:space="preserve">
+    <value>Powiel...</value>
+  </data>
+  <data name="EditorCommands_DuplicateImage" xml:space="preserve">
+    <value>Powiel obraz</value>
+  </data>
+  <data name="EditorCommands_DuplicateLayer" xml:space="preserve">
+    <value>Powiel warstwę</value>
+  </data>
+  <data name="EditorCommands_EditInQuickMaskMode" xml:space="preserve">
+    <value>Edytuj w trybie szybkiej maski</value>
+  </data>
+  <data name="EditorCommands_EditMask" xml:space="preserve">
+    <value>Edytuj maskę</value>
+  </data>
+  <data name="EditorCommands_EffectNotAvailable" xml:space="preserve">
+    <value>Ten efekt jest niedostępny.</value>
+  </data>
+  <data name="EditorCommands_EffectsLibrary" xml:space="preserve">
+    <value>Biblioteka efektów</value>
+  </data>
+  <data name="EditorCommands_EnableLayerMask" xml:space="preserve">
+    <value>Włącz maskę warstwy</value>
+  </data>
+  <data name="EditorCommands_EnterQuickMask" xml:space="preserve">
+    <value>Włącz szybką maskę</value>
+  </data>
+  <data name="EditorCommands_Equalize" xml:space="preserve">
+    <value>Wyrównaj</value>
+  </data>
+  <data name="EditorCommands_Exit" xml:space="preserve">
+    <value>Zakończ</value>
+  </data>
+  <data name="EditorCommands_ExitQuickMask" xml:space="preserve">
+    <value>Wyłącz szybką maskę</value>
+  </data>
+  <data name="EditorCommands_Expand" xml:space="preserve">
+    <value>Rozszerz</value>
+  </data>
+  <data name="EditorCommands_ExpandByPxColon" xml:space="preserve">
+    <value>Rozszerz o (px):</value>
+  </data>
+  <data name="EditorCommands_ExpandEllipsis" xml:space="preserve">
+    <value>Rozszerz...</value>
+  </data>
+  <data name="EditorCommands_Export" xml:space="preserve">
+    <value>Eksportuj</value>
+  </data>
+  <data name="EditorCommands_ExportAs" xml:space="preserve">
+    <value>Eksportuj jako</value>
+  </data>
+  <data name="EditorCommands_ExportAsEllipsis" xml:space="preserve">
+    <value>Eksportuj jako...</value>
+  </data>
+  <data name="EditorCommands_ExportedLayersTo" xml:space="preserve">
+    <value>Wyeksportowano warstwy ({0}) do {1}</value>
+  </data>
+  <data name="EditorCommands_ExportedPath" xml:space="preserve">
+    <value>Wyeksportowano {0}</value>
+  </data>
+  <data name="EditorCommands_Extras" xml:space="preserve">
+    <value>Dodatki</value>
+  </data>
+  <data name="EditorCommands_Fade" xml:space="preserve">
+    <value>Stonuj</value>
+  </data>
+  <data name="EditorCommands_FadeEllipsis" xml:space="preserve">
+    <value>Stonuj...</value>
+  </data>
+  <data name="EditorCommands_FadeName" xml:space="preserve">
+    <value>Stonuj: {0}</value>
+  </data>
+  <data name="EditorCommands_Feather" xml:space="preserve">
+    <value>Wtapianie</value>
+  </data>
+  <data name="EditorCommands_FeatherColon" xml:space="preserve">
+    <value>Wtapianie:</value>
+  </data>
+  <data name="EditorCommands_FeatherEllipsis" xml:space="preserve">
+    <value>Wtapianie...</value>
+  </data>
+  <data name="EditorCommands_FeatherRadiusPxColon" xml:space="preserve">
+    <value>Promień wtapiania (px):</value>
+  </data>
+  <data name="EditorCommands_Fill" xml:space="preserve">
+    <value>Wypełnij</value>
+  </data>
+  <data name="EditorCommands_FillEllipsis" xml:space="preserve">
+    <value>Wypełnij...</value>
+  </data>
+  <data name="EditorCommands_FillPath" xml:space="preserve">
+    <value>Wypełnij ścieżkę</value>
+  </data>
+  <data name="EditorCommands_FillScreen" xml:space="preserve">
+    <value>Wypełnij ekran</value>
+  </data>
+  <data name="EditorCommands_FillWithBackground" xml:space="preserve">
+    <value>Wypełnij kolorem tła</value>
+  </data>
+  <data name="EditorCommands_FillWithForeground" xml:space="preserve">
+    <value>Wypełnij kolorem narzędzia</value>
+  </data>
+  <data name="EditorCommands_FitOnScreen" xml:space="preserve">
+    <value>Dopasuj do ekranu</value>
+  </data>
+  <data name="EditorCommands_Flatten" xml:space="preserve">
+    <value>Spłaszcz</value>
+  </data>
+  <data name="EditorCommands_FlattenImage" xml:space="preserve">
+    <value>Spłaszcz obraz</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasHorizontal" xml:space="preserve">
+    <value>Odbij obszar roboczy w poziomie</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasVertical" xml:space="preserve">
+    <value>Odbij obszar roboczy w pionie</value>
+  </data>
+  <data name="EditorCommands_FlipHorizontal" xml:space="preserve">
+    <value>Odbij w poziomie</value>
+  </data>
+  <data name="EditorCommands_FlipVertical" xml:space="preserve">
+    <value>Odbij w pionie</value>
+  </data>
+  <data name="EditorCommands_FormatDoesNotSupportLayers" xml:space="preserve">
+    <value>„{0}” nie obsługuje warstw. Zapisać spłaszczoną kopię w tym formacie czy zapisać jako projekt ShareX Photo Editor, aby zachować warstwy?</value>
+  </data>
+  <data name="EditorCommands_FreeTransform" xml:space="preserve">
+    <value>Przekształcanie swobodne</value>
+  </data>
+  <data name="EditorCommands_FromTransparency" xml:space="preserve">
+    <value>Z przezroczystości</value>
+  </data>
+  <data name="EditorCommands_FuzzinessColon" xml:space="preserve">
+    <value>Tolerancja:</value>
+  </data>
+  <data name="EditorCommands_GradientEllipsis" xml:space="preserve">
+    <value>Gradient...</value>
+  </data>
+  <data name="EditorCommands_GradientFill" xml:space="preserve">
+    <value>Wypełnienie gradientem</value>
+  </data>
+  <data name="EditorCommands_Grayscale" xml:space="preserve">
+    <value>Skala szarości</value>
+  </data>
+  <data name="EditorCommands_Green" xml:space="preserve">
+    <value>Zielony</value>
+  </data>
+  <data name="EditorCommands_Greens" xml:space="preserve">
+    <value>Zielone</value>
+  </data>
+  <data name="EditorCommands_Grid" xml:space="preserve">
+    <value>Siatka</value>
+  </data>
+  <data name="EditorCommands_GroupLayers" xml:space="preserve">
+    <value>Grupuj warstwy</value>
+  </data>
+  <data name="EditorCommands_GroupNumber" xml:space="preserve">
+    <value>Grupa {0}</value>
+  </data>
+  <data name="EditorCommands_Grow" xml:space="preserve">
+    <value>Powiększ zaznaczenie</value>
+  </data>
+  <data name="EditorCommands_Guides" xml:space="preserve">
+    <value>Linie pomocnicze</value>
+  </data>
+  <data name="EditorCommands_GutterPxColon" xml:space="preserve">
+    <value>Odstęp (px):</value>
+  </data>
+  <data name="EditorCommands_HeightPercentColon" xml:space="preserve">
+    <value>Wysokość (%):</value>
+  </data>
+  <data name="EditorCommands_HideAll" xml:space="preserve">
+    <value>Ukryj wszystko</value>
+  </data>
+  <data name="EditorCommands_HideLayers" xml:space="preserve">
+    <value>Ukryj warstwy</value>
+  </data>
+  <data name="EditorCommands_HideSelection" xml:space="preserve">
+    <value>Ukryj zaznaczenie</value>
+  </data>
+  <data name="EditorCommands_Highlights" xml:space="preserve">
+    <value>Światła</value>
+  </data>
+  <data name="EditorCommands_History" xml:space="preserve">
+    <value>Historia</value>
+  </data>
+  <data name="EditorCommands_Horizontal" xml:space="preserve">
+    <value>Poziomo</value>
+  </data>
+  <data name="EditorCommands_HorizontalCenters" xml:space="preserve">
+    <value>Środki w poziomie</value>
+  </data>
+  <data name="EditorCommands_ImageOptions" xml:space="preserve">
+    <value>Opcje obrazu</value>
+  </data>
+  <data name="EditorCommands_ImageRotation" xml:space="preserve">
+    <value>Obrót obrazu</value>
+  </data>
+  <data name="EditorCommands_ImageSize" xml:space="preserve">
+    <value>Rozmiar obrazu</value>
+  </data>
+  <data name="EditorCommands_ImageSizeEllipsis" xml:space="preserve">
+    <value>Rozmiar obrazu...</value>
+  </data>
+  <data name="EditorCommands_IncreaseFontSize" xml:space="preserve">
+    <value>Zwiększ rozmiar czcionki</value>
+  </data>
+  <data name="EditorCommands_Info" xml:space="preserve">
+    <value>Informacje</value>
+  </data>
+  <data name="EditorCommands_Inside" xml:space="preserve">
+    <value>Wewnątrz</value>
+  </data>
+  <data name="EditorCommands_Inverse" xml:space="preserve">
+    <value>Odwróć</value>
+  </data>
+  <data name="EditorCommands_KeyboardShortcutsEllipsis" xml:space="preserve">
+    <value>Skróty klawiaturowe...</value>
+  </data>
+  <data name="EditorCommands_LastFilter" xml:space="preserve">
+    <value>Ostatni filtr</value>
+  </data>
+  <data name="EditorCommands_LayerFromBackground" xml:space="preserve">
+    <value>Warstwa z tła</value>
+  </data>
+  <data name="EditorCommands_LayerMask" xml:space="preserve">
+    <value>Maska warstwy</value>
+  </data>
+  <data name="EditorCommands_LayerNumber" xml:space="preserve">
+    <value>Warstwa {0}</value>
+  </data>
+  <data name="EditorCommands_LayerProperties" xml:space="preserve">
+    <value>Właściwości warstwy</value>
+  </data>
+  <data name="EditorCommands_LayerStyle" xml:space="preserve">
+    <value>Styl warstwy</value>
+  </data>
+  <data name="EditorCommands_LayerStyleEllipsis" xml:space="preserve">
+    <value>Styl warstwy...</value>
+  </data>
+  <data name="EditorCommands_LayerViaCopy" xml:space="preserve">
+    <value>Warstwa przez kopiowanie</value>
+  </data>
+  <data name="EditorCommands_LayerViaCut" xml:space="preserve">
+    <value>Warstwa przez wycięcie</value>
+  </data>
+  <data name="EditorCommands_Layers" xml:space="preserve">
+    <value>Warstwy</value>
+  </data>
+  <data name="EditorCommands_LayersToFiles" xml:space="preserve">
+    <value>Warstwy do plików</value>
+  </data>
+  <data name="EditorCommands_LayersToFilesEllipsis" xml:space="preserve">
+    <value>Warstwy do plików...</value>
+  </data>
+  <data name="EditorCommands_LeftEdges" xml:space="preserve">
+    <value>Krawędzie lewe</value>
+  </data>
+  <data name="EditorCommands_LinkLayers" xml:space="preserve">
+    <value>Połącz warstwy</value>
+  </data>
+  <data name="EditorCommands_LinkUnlinkLayers" xml:space="preserve">
+    <value>Połącz/rozłącz warstwy</value>
+  </data>
+  <data name="EditorCommands_LoadSelection" xml:space="preserve">
+    <value>Wczytaj zaznaczenie</value>
+  </data>
+  <data name="EditorCommands_LoadSelectionEllipsis" xml:space="preserve">
+    <value>Wczytaj zaznaczenie...</value>
+  </data>
+  <data name="EditorCommands_LocationColon" xml:space="preserve">
+    <value>Położenie:</value>
+  </data>
+  <data name="EditorCommands_LockAll" xml:space="preserve">
+    <value>Zablokuj wszystko</value>
+  </data>
+  <data name="EditorCommands_LockGuides" xml:space="preserve">
+    <value>Zablokuj linie pomocnicze</value>
+  </data>
+  <data name="EditorCommands_LockLayer" xml:space="preserve">
+    <value>Zablokuj warstwę</value>
+  </data>
+  <data name="EditorCommands_MakeSelection" xml:space="preserve">
+    <value>Utwórz zaznaczenie</value>
+  </data>
+  <data name="EditorCommands_MakeSelectionFirst" xml:space="preserve">
+    <value>Najpierw utwórz zaznaczenie.</value>
+  </data>
+  <data name="EditorCommands_MakeWorkPath" xml:space="preserve">
+    <value>Utwórz ścieżkę roboczą</value>
+  </data>
+  <data name="EditorCommands_MarginPxColon" xml:space="preserve">
+    <value>Margines (px):</value>
+  </data>
+  <data name="EditorCommands_MenuEdit" xml:space="preserve">
+    <value>_Edycja</value>
+  </data>
+  <data name="EditorCommands_MenuFile" xml:space="preserve">
+    <value>_Plik</value>
+  </data>
+  <data name="EditorCommands_MenuFilter" xml:space="preserve">
+    <value>_Filtr</value>
+  </data>
+  <data name="EditorCommands_MenuImage" xml:space="preserve">
+    <value>_Obraz</value>
+  </data>
+  <data name="EditorCommands_MenuLayer" xml:space="preserve">
+    <value>_Warstwa</value>
+  </data>
+  <data name="EditorCommands_MenuSelect" xml:space="preserve">
+    <value>_Zaznacz</value>
+  </data>
+  <data name="EditorCommands_MenuType" xml:space="preserve">
+    <value>_Tekst</value>
+  </data>
+  <data name="EditorCommands_MenuView" xml:space="preserve">
+    <value>_Widok</value>
+  </data>
+  <data name="EditorCommands_MenuWindow" xml:space="preserve">
+    <value>O_kno</value>
+  </data>
+  <data name="EditorCommands_MergeDown" xml:space="preserve">
+    <value>Scal w dół</value>
+  </data>
+  <data name="EditorCommands_MergeGroup" xml:space="preserve">
+    <value>Scal grupę</value>
+  </data>
+  <data name="EditorCommands_MergeVisible" xml:space="preserve">
+    <value>Scal widoczne</value>
+  </data>
+  <data name="EditorCommands_Merged" xml:space="preserve">
+    <value>Scalone</value>
+  </data>
+  <data name="EditorCommands_Midtones" xml:space="preserve">
+    <value>Półtony</value>
+  </data>
+  <data name="EditorCommands_Mode" xml:space="preserve">
+    <value>Tryb</value>
+  </data>
+  <data name="EditorCommands_ModeColon" xml:space="preserve">
+    <value>Tryb:</value>
+  </data>
+  <data name="EditorCommands_Modify" xml:space="preserve">
+    <value>Zmień</value>
+  </data>
+  <data name="EditorCommands_ModifySelectionTitle" xml:space="preserve">
+    <value>Zaznaczenie: {0}</value>
+  </data>
+  <data name="EditorCommands_MoveLayer" xml:space="preserve">
+    <value>Przesuń warstwę</value>
+  </data>
+  <data name="EditorCommands_NameColon" xml:space="preserve">
+    <value>Nazwa:</value>
+  </data>
+  <data name="EditorCommands_Navigator" xml:space="preserve">
+    <value>Nawigator</value>
+  </data>
+  <data name="EditorCommands_New" xml:space="preserve">
+    <value>Nowa</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayer" xml:space="preserve">
+    <value>Nowa warstwa dopasowania</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayerHistory" xml:space="preserve">
+    <value>Nowa warstwa: {0}</value>
+  </data>
+  <data name="EditorCommands_NewChannel" xml:space="preserve">
+    <value>Nowy kanał</value>
+  </data>
+  <data name="EditorCommands_NewEllipsis" xml:space="preserve">
+    <value>Nowy...</value>
+  </data>
+  <data name="EditorCommands_NewFillLayer" xml:space="preserve">
+    <value>Nowa warstwa wypełnienia</value>
+  </data>
+  <data name="EditorCommands_NewFromClipboard" xml:space="preserve">
+    <value>Nowy ze schowka</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nowy ze zrzutu ekranu (pełny ekran)</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nowy ze zrzutu ekranu (obszar)...</value>
+  </data>
+  <data name="EditorCommands_NewGroup" xml:space="preserve">
+    <value>Nowa grupa</value>
+  </data>
+  <data name="EditorCommands_NewGuide" xml:space="preserve">
+    <value>Nowa linia pomocnicza</value>
+  </data>
+  <data name="EditorCommands_NewGuideEllipsis" xml:space="preserve">
+    <value>Nowa linia pomocnicza...</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayout" xml:space="preserve">
+    <value>Nowy układ linii pomocniczych</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayoutEllipsis" xml:space="preserve">
+    <value>Nowy układ linii pomocniczych...</value>
+  </data>
+  <data name="EditorCommands_NewGuidesFromShape" xml:space="preserve">
+    <value>Nowe linie pomocnicze z kształtu</value>
+  </data>
+  <data name="EditorCommands_NewLayer" xml:space="preserve">
+    <value>Nowa warstwa</value>
+  </data>
+  <data name="EditorCommands_NewLayerEllipsis" xml:space="preserve">
+    <value>Nowa warstwa...</value>
+  </data>
+  <data name="EditorCommands_NewPath" xml:space="preserve">
+    <value>Nowa ścieżka</value>
+  </data>
+  <data name="EditorCommands_NewShapeLayer" xml:space="preserve">
+    <value>Nowa warstwa kształtu</value>
+  </data>
+  <data name="EditorCommands_NextDocument" xml:space="preserve">
+    <value>Następny dokument</value>
+  </data>
+  <data name="EditorCommands_NoPathForSelection" xml:space="preserve">
+    <value>Nie ma ścieżki do wczytania jako zaznaczenie.</value>
+  </data>
+  <data name="EditorCommands_NoSavedSelections" xml:space="preserve">
+    <value>Brak zapisanych zaznaczeń (kanałów alfa).</value>
+  </data>
+  <data name="EditorCommands_Notes" xml:space="preserve">
+    <value>Notatki</value>
+  </data>
+  <data name="EditorCommands_OffsetXColon" xml:space="preserve">
+    <value>Przesunięcie X:</value>
+  </data>
+  <data name="EditorCommands_OffsetYColon" xml:space="preserve">
+    <value>Przesunięcie Y:</value>
+  </data>
+  <data name="EditorCommands_OpacityColon" xml:space="preserve">
+    <value>Krycie:</value>
+  </data>
+  <data name="EditorCommands_Open" xml:space="preserve">
+    <value>Otwórz</value>
+  </data>
+  <data name="EditorCommands_OpenEllipsis" xml:space="preserve">
+    <value>Otwórz...</value>
+  </data>
+  <data name="EditorCommands_OpenRecent" xml:space="preserve">
+    <value>Otwórz ostatnie</value>
+  </data>
+  <data name="EditorCommands_Options" xml:space="preserve">
+    <value>Opcje</value>
+  </data>
+  <data name="EditorCommands_Orientation" xml:space="preserve">
+    <value>Orientacja</value>
+  </data>
+  <data name="EditorCommands_OrientationColon" xml:space="preserve">
+    <value>Orientacja:</value>
+  </data>
+  <data name="EditorCommands_Outside" xml:space="preserve">
+    <value>Na zewnątrz</value>
+  </data>
+  <data name="EditorCommands_Panels" xml:space="preserve">
+    <value>Panele</value>
+  </data>
+  <data name="EditorCommands_Paste" xml:space="preserve">
+    <value>Wklej</value>
+  </data>
+  <data name="EditorCommands_PasteAsNewDocument" xml:space="preserve">
+    <value>Wklej jako nowy dokument</value>
+  </data>
+  <data name="EditorCommands_PasteInPlace" xml:space="preserve">
+    <value>Wklej w miejscu</value>
+  </data>
+  <data name="EditorCommands_PasteInto" xml:space="preserve">
+    <value>Wklej do</value>
+  </data>
+  <data name="EditorCommands_PasteLayerStyle" xml:space="preserve">
+    <value>Wklej styl warstwy</value>
+  </data>
+  <data name="EditorCommands_PasteSpecial" xml:space="preserve">
+    <value>Wklej specjalnie</value>
+  </data>
+  <data name="EditorCommands_Pasted" xml:space="preserve">
+    <value>Wklejone</value>
+  </data>
+  <data name="EditorCommands_PathNumber" xml:space="preserve">
+    <value>Ścieżka {0}</value>
+  </data>
+  <data name="EditorCommands_Paths" xml:space="preserve">
+    <value>Ścieżki</value>
+  </data>
+  <data name="EditorCommands_Pattern" xml:space="preserve">
+    <value>Wzorek</value>
+  </data>
+  <data name="EditorCommands_PatternEllipsis" xml:space="preserve">
+    <value>Wzorek...</value>
+  </data>
+  <data name="EditorCommands_PatternFill" xml:space="preserve">
+    <value>Wypełnienie wzorkiem</value>
+  </data>
+  <data name="EditorCommands_PatternName" xml:space="preserve">
+    <value>Nazwa wzorka</value>
+  </data>
+  <data name="EditorCommands_PatternNumber" xml:space="preserve">
+    <value>Wzorek {0}</value>
+  </data>
+  <data name="EditorCommands_Perspective" xml:space="preserve">
+    <value>Perspektywa</value>
+  </data>
+  <data name="EditorCommands_PinToScreen" xml:space="preserve">
+    <value>Przypnij do ekranu</value>
+  </data>
+  <data name="EditorCommands_PixelGrid" xml:space="preserve">
+    <value>Siatka pikseli</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbedded" xml:space="preserve">
+    <value>Umieść osadzone</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbeddedEllipsis" xml:space="preserve">
+    <value>Umieść osadzone...</value>
+  </data>
+  <data name="EditorCommands_PlaceImageIntoFrame" xml:space="preserve">
+    <value>Umieść obraz w ramce</value>
+  </data>
+  <data name="EditorCommands_PlaceIntoFrame" xml:space="preserve">
+    <value>Umieść w ramce</value>
+  </data>
+  <data name="EditorCommands_PositionPxColon" xml:space="preserve">
+    <value>Położenie (px):</value>
+  </data>
+  <data name="EditorCommands_PreferencesEllipsis" xml:space="preserve">
+    <value>Preferencje...</value>
+  </data>
+  <data name="EditorCommands_Preview" xml:space="preserve">
+    <value>Podgląd</value>
+  </data>
+  <data name="EditorCommands_PreviousDocument" xml:space="preserve">
+    <value>Poprzedni dokument</value>
+  </data>
+  <data name="EditorCommands_PrintEllipsis" xml:space="preserve">
+    <value>Drukuj...</value>
+  </data>
+  <data name="EditorCommands_Properties" xml:space="preserve">
+    <value>Właściwości</value>
+  </data>
+  <data name="EditorCommands_Purge" xml:space="preserve">
+    <value>Wyczyść pamięć</value>
+  </data>
+  <data name="EditorCommands_PurgeClipboard" xml:space="preserve">
+    <value>Wyczyść schowek</value>
+  </data>
+  <data name="EditorCommands_PurgeHistories" xml:space="preserve">
+    <value>Wyczyść historie</value>
+  </data>
+  <data name="EditorCommands_QualityColon" xml:space="preserve">
+    <value>Jakość:</value>
+  </data>
+  <data name="EditorCommands_QuickExportAsPng" xml:space="preserve">
+    <value>Szybki eksport jako PNG</value>
+  </data>
+  <data name="EditorCommands_Rasterize" xml:space="preserve">
+    <value>Rasteryzuj</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayer" xml:space="preserve">
+    <value>Rasteryzuj warstwę</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayerStyle" xml:space="preserve">
+    <value>Rasteryzuj styl warstwy</value>
+  </data>
+  <data name="EditorCommands_RasterizeTypeLayer" xml:space="preserve">
+    <value>Rasteryzuj warstwę tekstową</value>
+  </data>
+  <data name="EditorCommands_Red" xml:space="preserve">
+    <value>Czerwony</value>
+  </data>
+  <data name="EditorCommands_Redo" xml:space="preserve">
+    <value>Ponów</value>
+  </data>
+  <data name="EditorCommands_Reds" xml:space="preserve">
+    <value>Czerwone</value>
+  </data>
+  <data name="EditorCommands_ReleaseClippingMask" xml:space="preserve">
+    <value>Zwolnij maskę przycinającą</value>
+  </data>
+  <data name="EditorCommands_RenameLayer" xml:space="preserve">
+    <value>Zmień nazwę warstwy</value>
+  </data>
+  <data name="EditorCommands_RenameLayerEllipsis" xml:space="preserve">
+    <value>Zmień nazwę warstwy...</value>
+  </data>
+  <data name="EditorCommands_Reselect" xml:space="preserve">
+    <value>Zaznacz ponownie</value>
+  </data>
+  <data name="EditorCommands_ResetEssentials" xml:space="preserve">
+    <value>Resetuj Podstawy</value>
+  </data>
+  <data name="EditorCommands_ResetViewRotation" xml:space="preserve">
+    <value>Resetuj obrót widoku</value>
+  </data>
+  <data name="EditorCommands_RevealAll" xml:space="preserve">
+    <value>Pokaż wszystko</value>
+  </data>
+  <data name="EditorCommands_RevealSelection" xml:space="preserve">
+    <value>Pokaż zaznaczenie</value>
+  </data>
+  <data name="EditorCommands_Revert" xml:space="preserve">
+    <value>Przywróć</value>
+  </data>
+  <data name="EditorCommands_RightEdges" xml:space="preserve">
+    <value>Krawędzie prawe</value>
+  </data>
+  <data name="EditorCommands_Rotate" xml:space="preserve">
+    <value>Obrót</value>
+  </data>
+  <data name="EditorCommands_Rotate180" xml:space="preserve">
+    <value>Obróć o 180°</value>
+  </data>
+  <data name="EditorCommands_Rotate90Clockwise" xml:space="preserve">
+    <value>Obróć o 90° w prawo</value>
+  </data>
+  <data name="EditorCommands_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Obróć o 90° w lewo</value>
+  </data>
+  <data name="EditorCommands_RotateCanvas" xml:space="preserve">
+    <value>Obróć obszar roboczy</value>
+  </data>
+  <data name="EditorCommands_RotateCanvasDegrees" xml:space="preserve">
+    <value>Obróć obszar roboczy o {0}°</value>
+  </data>
+  <data name="EditorCommands_RotateDegrees" xml:space="preserve">
+    <value>Obróć o {0}°</value>
+  </data>
+  <data name="EditorCommands_RowsColon" xml:space="preserve">
+    <value>Wiersze:</value>
+  </data>
+  <data name="EditorCommands_Rulers" xml:space="preserve">
+    <value>Linijki</value>
+  </data>
+  <data name="EditorCommands_SampleRadiusPxColon" xml:space="preserve">
+    <value>Promień próbkowania (px):</value>
+  </data>
+  <data name="EditorCommands_SampledBrushNumber" xml:space="preserve">
+    <value>Próbkowany pędzel {0}</value>
+  </data>
+  <data name="EditorCommands_SampledColorsForeground" xml:space="preserve">
+    <value>Próbkowane kolory (narzędzia)</value>
+  </data>
+  <data name="EditorCommands_Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="EditorCommands_SaveACopy" xml:space="preserve">
+    <value>Zapisz kopię</value>
+  </data>
+  <data name="EditorCommands_SaveACopyEllipsis" xml:space="preserve">
+    <value>Zapisz kopię...</value>
+  </data>
+  <data name="EditorCommands_SaveAs" xml:space="preserve">
+    <value>Zapisz jako</value>
+  </data>
+  <data name="EditorCommands_SaveAsEllipsis" xml:space="preserve">
+    <value>Zapisz jako...</value>
+  </data>
+  <data name="EditorCommands_SaveAsProject" xml:space="preserve">
+    <value>Zapisz jako projekt</value>
+  </data>
+  <data name="EditorCommands_SaveSelection" xml:space="preserve">
+    <value>Zapisz zaznaczenie</value>
+  </data>
+  <data name="EditorCommands_SaveSelectionEllipsis" xml:space="preserve">
+    <value>Zapisz zaznaczenie...</value>
+  </data>
+  <data name="EditorCommands_SaveSlices" xml:space="preserve">
+    <value>Zapisz plasterki</value>
+  </data>
+  <data name="EditorCommands_SaveSlicesEllipsis" xml:space="preserve">
+    <value>Zapisz plasterki...</value>
+  </data>
+  <data name="EditorCommands_SaveWorkspace" xml:space="preserve">
+    <value>Zapisz obszar roboczy</value>
+  </data>
+  <data name="EditorCommands_SavedCopyTo" xml:space="preserve">
+    <value>Zapisano kopię w {0}</value>
+  </data>
+  <data name="EditorCommands_SavedPath" xml:space="preserve">
+    <value>Zapisano {0}</value>
+  </data>
+  <data name="EditorCommands_SavedSlicesTo" xml:space="preserve">
+    <value>Zapisano plasterki ({0}) w {1}</value>
+  </data>
+  <data name="EditorCommands_Scale" xml:space="preserve">
+    <value>Skalowanie</value>
+  </data>
+  <data name="EditorCommands_Screenshot" xml:space="preserve">
+    <value>Zrzut ekranu</value>
+  </data>
+  <data name="EditorCommands_SelectAll" xml:space="preserve">
+    <value>Zaznacz wszystko</value>
+  </data>
+  <data name="EditorCommands_SelectAndMask" xml:space="preserve">
+    <value>Zaznacz i maskuj</value>
+  </data>
+  <data name="EditorCommands_SelectAndMaskEllipsis" xml:space="preserve">
+    <value>Zaznacz i maskuj...</value>
+  </data>
+  <data name="EditorCommands_SelectColon" xml:space="preserve">
+    <value>Zaznacz:</value>
+  </data>
+  <data name="EditorCommands_SelectFrameLayerFirst" xml:space="preserve">
+    <value>Najpierw zaznacz warstwę ramki (narysuj ją narzędziem Ramka).</value>
+  </data>
+  <data name="EditorCommands_SelectLayersToLink" xml:space="preserve">
+    <value>Zaznacz co najmniej dwie warstwy (Ctrl+klik w panelu Warstwy), aby je połączyć.</value>
+  </data>
+  <data name="EditorCommands_SelectNextLayer" xml:space="preserve">
+    <value>Zaznacz następną warstwę</value>
+  </data>
+  <data name="EditorCommands_SelectPatternTileFirst" xml:space="preserve">
+    <value>Najpierw utwórz prostokątne zaznaczenie kafelka wzorka.</value>
+  </data>
+  <data name="EditorCommands_SelectPreviousLayer" xml:space="preserve">
+    <value>Zaznacz poprzednią warstwę</value>
+  </data>
+  <data name="EditorCommands_SelectSubject" xml:space="preserve">
+    <value>Zaznacz obiekt</value>
+  </data>
+  <data name="EditorCommands_SelectingSubject" xml:space="preserve">
+    <value>Zaznaczanie obiektu...</value>
+  </data>
+  <data name="EditorCommands_SelectionEdges" xml:space="preserve">
+    <value>Krawędzie zaznaczenia</value>
+  </data>
+  <data name="EditorCommands_SendBackward" xml:space="preserve">
+    <value>Przesuń do tyłu</value>
+  </data>
+  <data name="EditorCommands_SendToBack" xml:space="preserve">
+    <value>Przesuń na spód</value>
+  </data>
+  <data name="EditorCommands_SendToShareX" xml:space="preserve">
+    <value>Wyślij do ShareX (zadania po przechwyceniu)</value>
+  </data>
+  <data name="EditorCommands_SetFontSize" xml:space="preserve">
+    <value>Ustaw rozmiar czcionki</value>
+  </data>
+  <data name="EditorCommands_Shadows" xml:space="preserve">
+    <value>Cienie</value>
+  </data>
+  <data name="EditorCommands_ShadowsHighlightsEllipsis" xml:space="preserve">
+    <value>Cienie/światła...</value>
+  </data>
+  <data name="EditorCommands_ShapeName" xml:space="preserve">
+    <value>Nazwa kształtu</value>
+  </data>
+  <data name="EditorCommands_ShapeNumber" xml:space="preserve">
+    <value>Kształt {0}</value>
+  </data>
+  <data name="EditorCommands_ShareWithShareX" xml:space="preserve">
+    <value>Udostępnij przez ShareX</value>
+  </data>
+  <data name="EditorCommands_Show" xml:space="preserve">
+    <value>Pokaż</value>
+  </data>
+  <data name="EditorCommands_Similar" xml:space="preserve">
+    <value>Podobne</value>
+  </data>
+  <data name="EditorCommands_Skew" xml:space="preserve">
+    <value>Pochylenie</value>
+  </data>
+  <data name="EditorCommands_SkinTones" xml:space="preserve">
+    <value>Odcienie skóry</value>
+  </data>
+  <data name="EditorCommands_Slices" xml:space="preserve">
+    <value>Plasterki</value>
+  </data>
+  <data name="EditorCommands_SmartFilterHistory" xml:space="preserve">
+    <value>{0} (filtr inteligentny)</value>
+  </data>
+  <data name="EditorCommands_SmartObjects" xml:space="preserve">
+    <value>Obiekty inteligentne</value>
+  </data>
+  <data name="EditorCommands_Smooth" xml:space="preserve">
+    <value>Wygładzenie</value>
+  </data>
+  <data name="EditorCommands_SmoothColon" xml:space="preserve">
+    <value>Wygładzenie:</value>
+  </data>
+  <data name="EditorCommands_SmoothEllipsis" xml:space="preserve">
+    <value>Wygładź...</value>
+  </data>
+  <data name="EditorCommands_Snap" xml:space="preserve">
+    <value>Przyciągaj</value>
+  </data>
+  <data name="EditorCommands_SnapTo" xml:space="preserve">
+    <value>Przyciągaj do</value>
+  </data>
+  <data name="EditorCommands_SolidColor" xml:space="preserve">
+    <value>Jednolity kolor</value>
+  </data>
+  <data name="EditorCommands_SolidColorEllipsis" xml:space="preserve">
+    <value>Jednolity kolor...</value>
+  </data>
+  <data name="EditorCommands_StampVisible" xml:space="preserve">
+    <value>Stempluj widoczne</value>
+  </data>
+  <data name="EditorCommands_StepBackward" xml:space="preserve">
+    <value>Krok wstecz</value>
+  </data>
+  <data name="EditorCommands_StepForward" xml:space="preserve">
+    <value>Krok naprzód</value>
+  </data>
+  <data name="EditorCommands_StraightenLayer" xml:space="preserve">
+    <value>Wyprostuj warstwę</value>
+  </data>
+  <data name="EditorCommands_Stroke" xml:space="preserve">
+    <value>Obrysuj</value>
+  </data>
+  <data name="EditorCommands_StrokeColor" xml:space="preserve">
+    <value>Kolor obrysu</value>
+  </data>
+  <data name="EditorCommands_StrokeEllipsis" xml:space="preserve">
+    <value>Obrysuj...</value>
+  </data>
+  <data name="EditorCommands_StrokePath" xml:space="preserve">
+    <value>Obrysuj ścieżkę</value>
+  </data>
+  <data name="EditorCommands_Subject" xml:space="preserve">
+    <value>Obiekt</value>
+  </data>
+  <data name="EditorCommands_Swatches" xml:space="preserve">
+    <value>Próbki</value>
+  </data>
+  <data name="EditorCommands_SwitchColors" xml:space="preserve">
+    <value>Zamień kolory narzędzia i tła</value>
+  </data>
+  <data name="EditorCommands_ToolbarEllipsis" xml:space="preserve">
+    <value>Pasek narzędzi...</value>
+  </data>
+  <data name="EditorCommands_Tools" xml:space="preserve">
+    <value>Narzędzia</value>
+  </data>
+  <data name="EditorCommands_TopEdges" xml:space="preserve">
+    <value>Krawędzie górne</value>
+  </data>
+  <data name="EditorCommands_TopLeftPixelColor" xml:space="preserve">
+    <value>Kolor piksela w lewym górnym rogu</value>
+  </data>
+  <data name="EditorCommands_Transform" xml:space="preserve">
+    <value>Przekształć</value>
+  </data>
+  <data name="EditorCommands_TransformSelection" xml:space="preserve">
+    <value>Przekształć zaznaczenie</value>
+  </data>
+  <data name="EditorCommands_TransformSelectionEllipsis" xml:space="preserve">
+    <value>Przekształć zaznaczenie...</value>
+  </data>
+  <data name="EditorCommands_TransparentPixels" xml:space="preserve">
+    <value>Przezroczyste piksele</value>
+  </data>
+  <data name="EditorCommands_Trim" xml:space="preserve">
+    <value>Przytnij</value>
+  </data>
+  <data name="EditorCommands_TrimEllipsis" xml:space="preserve">
+    <value>Przytnij...</value>
+  </data>
+  <data name="EditorCommands_TwoColumnToolbar" xml:space="preserve">
+    <value>Pasek narzędzi w dwóch kolumnach</value>
+  </data>
+  <data name="EditorCommands_Undo" xml:space="preserve">
+    <value>Cofnij</value>
+  </data>
+  <data name="EditorCommands_UngroupLayers" xml:space="preserve">
+    <value>Rozgrupuj warstwy</value>
+  </data>
+  <data name="EditorCommands_UnlinkLayers" xml:space="preserve">
+    <value>Rozłącz warstwy</value>
+  </data>
+  <data name="EditorCommands_UploadWithShareX" xml:space="preserve">
+    <value>Prześlij za pomocą ShareX</value>
+  </data>
+  <data name="EditorCommands_Vertical" xml:space="preserve">
+    <value>Pionowo</value>
+  </data>
+  <data name="EditorCommands_VerticalCenters" xml:space="preserve">
+    <value>Środki w pionie</value>
+  </data>
+  <data name="EditorCommands_WidthColon" xml:space="preserve">
+    <value>Szerokość:</value>
+  </data>
+  <data name="EditorCommands_WidthPercentColon" xml:space="preserve">
+    <value>Szerokość (%):</value>
+  </data>
+  <data name="EditorCommands_WidthPxColon" xml:space="preserve">
+    <value>Szerokość (px):</value>
+  </data>
+  <data name="EditorCommands_Workspace" xml:space="preserve">
+    <value>Obszar roboczy</value>
+  </data>
+  <data name="EditorCommands_WorkspaceSaved" xml:space="preserve">
+    <value>Zapisano obszar roboczy.</value>
+  </data>
+  <data name="EditorCommands_ZoomIn" xml:space="preserve">
+    <value>Powiększ</value>
+  </data>
+  <data name="EditorCommands_ZoomOut" xml:space="preserve">
+    <value>Pomniejsz</value>
+  </data>
+  <data name="Filters_AddNoise" xml:space="preserve">
+    <value>Dodaj szum</value>
+  </data>
+  <data name="Filters_Average" xml:space="preserve">
+    <value>Uśrednij</value>
+  </data>
+  <data name="Filters_Blur" xml:space="preserve">
+    <value>Rozmycie</value>
+  </data>
+  <data name="Filters_BlurMore" xml:space="preserve">
+    <value>Rozmyj bardziej</value>
+  </data>
+  <data name="Filters_BoxBlur" xml:space="preserve">
+    <value>Rozmycie prostokątne</value>
+  </data>
+  <data name="Filters_CategoryBlur" xml:space="preserve">
+    <value>Rozmycie</value>
+  </data>
+  <data name="Filters_CategoryDistort" xml:space="preserve">
+    <value>Zniekształć</value>
+  </data>
+  <data name="Filters_CategoryNoise" xml:space="preserve">
+    <value>Szum</value>
+  </data>
+  <data name="Filters_CategoryOther" xml:space="preserve">
+    <value>Inne</value>
+  </data>
+  <data name="Filters_CategoryPixelate" xml:space="preserve">
+    <value>Pikselizacja</value>
+  </data>
+  <data name="Filters_CategoryRender" xml:space="preserve">
+    <value>Renderowanie</value>
+  </data>
+  <data name="Filters_CategorySharpen" xml:space="preserve">
+    <value>Wyostrzenie</value>
+  </data>
+  <data name="Filters_CategoryStylize" xml:space="preserve">
+    <value>Stylizacja</value>
+  </data>
+  <data name="Filters_Clouds" xml:space="preserve">
+    <value>Chmury</value>
+  </data>
+  <data name="Filters_Crystallize" xml:space="preserve">
+    <value>Krystalizacja</value>
+  </data>
+  <data name="Filters_Despeckle" xml:space="preserve">
+    <value>Usuń plamki</value>
+  </data>
+  <data name="Filters_DifferenceClouds" xml:space="preserve">
+    <value>Chmury różnicowe</value>
+  </data>
+  <data name="Filters_Diffuse" xml:space="preserve">
+    <value>Rozpraszanie</value>
+  </data>
+  <data name="Filters_DustScratches" xml:space="preserve">
+    <value>Kurz i rysy</value>
+  </data>
+  <data name="Filters_Emboss" xml:space="preserve">
+    <value>Wytłoczenie</value>
+  </data>
+  <data name="Filters_Facet" xml:space="preserve">
+    <value>Fasetki</value>
+  </data>
+  <data name="Filters_Fibers" xml:space="preserve">
+    <value>Włókna</value>
+  </data>
+  <data name="Filters_FindEdges" xml:space="preserve">
+    <value>Znajdź krawędzie</value>
+  </data>
+  <data name="Filters_GaussianBlur" xml:space="preserve">
+    <value>Rozmycie gaussowskie</value>
+  </data>
+  <data name="Filters_HighPass" xml:space="preserve">
+    <value>Górnoprzepustowy</value>
+  </data>
+  <data name="Filters_LightingVignette" xml:space="preserve">
+    <value>Winieta oświetlenia</value>
+  </data>
+  <data name="Filters_Maximum" xml:space="preserve">
+    <value>Maksimum</value>
+  </data>
+  <data name="Filters_Median" xml:space="preserve">
+    <value>Mediana</value>
+  </data>
+  <data name="Filters_Minimum" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="Filters_Mosaic" xml:space="preserve">
+    <value>Mozaika</value>
+  </data>
+  <data name="Filters_MotionBlur" xml:space="preserve">
+    <value>Rozmycie ruchu</value>
+  </data>
+  <data name="Filters_Offset" xml:space="preserve">
+    <value>Przesunięcie</value>
+  </data>
+  <data name="Filters_OilPaint" xml:space="preserve">
+    <value>Obraz olejny</value>
+  </data>
+  <data name="Filters_OptionGaussian" xml:space="preserve">
+    <value>Gaussowski</value>
+  </data>
+  <data name="Filters_OptionLarge" xml:space="preserve">
+    <value>Duży</value>
+  </data>
+  <data name="Filters_OptionMedium" xml:space="preserve">
+    <value>Średnio</value>
+  </data>
+  <data name="Filters_OptionOff" xml:space="preserve">
+    <value>Wył.</value>
+  </data>
+  <data name="Filters_OptionOn" xml:space="preserve">
+    <value>Wł.</value>
+  </data>
+  <data name="Filters_OptionPolarToRectangular" xml:space="preserve">
+    <value>Biegunowe na prostokątne</value>
+  </data>
+  <data name="Filters_OptionRectangularToPolar" xml:space="preserve">
+    <value>Prostokątne na biegunowe</value>
+  </data>
+  <data name="Filters_OptionSmall" xml:space="preserve">
+    <value>Mały</value>
+  </data>
+  <data name="Filters_OptionSpin" xml:space="preserve">
+    <value>Obrót</value>
+  </data>
+  <data name="Filters_OptionUniform" xml:space="preserve">
+    <value>Jednolity</value>
+  </data>
+  <data name="Filters_OptionZoom" xml:space="preserve">
+    <value>Powiększenie</value>
+  </data>
+  <data name="Filters_ParamAmount" xml:space="preserve">
+    <value>Wartość</value>
+  </data>
+  <data name="Filters_ParamAmplitude" xml:space="preserve">
+    <value>Amplituda</value>
+  </data>
+  <data name="Filters_ParamAngle" xml:space="preserve">
+    <value>Kąt</value>
+  </data>
+  <data name="Filters_ParamCellSize" xml:space="preserve">
+    <value>Rozmiar komórki</value>
+  </data>
+  <data name="Filters_ParamDistance" xml:space="preserve">
+    <value>Odległość</value>
+  </data>
+  <data name="Filters_ParamDistribution" xml:space="preserve">
+    <value>Rozkład</value>
+  </data>
+  <data name="Filters_ParamHeight" xml:space="preserve">
+    <value>Wysokość</value>
+  </data>
+  <data name="Filters_ParamHorizontal" xml:space="preserve">
+    <value>Poziomo</value>
+  </data>
+  <data name="Filters_ParamLevels" xml:space="preserve">
+    <value>Poziomy</value>
+  </data>
+  <data name="Filters_ParamMaximumOffsetPercent" xml:space="preserve">
+    <value>Maksymalne przesunięcie %</value>
+  </data>
+  <data name="Filters_ParamMethod" xml:space="preserve">
+    <value>Metoda</value>
+  </data>
+  <data name="Filters_ParamMode" xml:space="preserve">
+    <value>Tryb</value>
+  </data>
+  <data name="Filters_ParamMonochromatic" xml:space="preserve">
+    <value>Monochromatyczny</value>
+  </data>
+  <data name="Filters_ParamNumberOfTiles" xml:space="preserve">
+    <value>Liczba kafelków</value>
+  </data>
+  <data name="Filters_ParamPreserveDetails" xml:space="preserve">
+    <value>Zachowaj szczegóły</value>
+  </data>
+  <data name="Filters_ParamRadius" xml:space="preserve">
+    <value>Promień</value>
+  </data>
+  <data name="Filters_ParamReduceNoise" xml:space="preserve">
+    <value>Redukuj szum</value>
+  </data>
+  <data name="Filters_ParamSize" xml:space="preserve">
+    <value>Rozmiar:</value>
+  </data>
+  <data name="Filters_ParamStrength" xml:space="preserve">
+    <value>Siła</value>
+  </data>
+  <data name="Filters_ParamThreshold" xml:space="preserve">
+    <value>Próg</value>
+  </data>
+  <data name="Filters_ParamVariance" xml:space="preserve">
+    <value>Wariancja</value>
+  </data>
+  <data name="Filters_ParamVertical" xml:space="preserve">
+    <value>Pionowo</value>
+  </data>
+  <data name="Filters_ParamWavelength" xml:space="preserve">
+    <value>Długość fali</value>
+  </data>
+  <data name="Filters_Pinch" xml:space="preserve">
+    <value>Szczypanie</value>
+  </data>
+  <data name="Filters_Pointillize" xml:space="preserve">
+    <value>Puentylizacja</value>
+  </data>
+  <data name="Filters_PolarCoordinates" xml:space="preserve">
+    <value>Współrzędne biegunowe</value>
+  </data>
+  <data name="Filters_RadialBlur" xml:space="preserve">
+    <value>Rozmycie radialne</value>
+  </data>
+  <data name="Filters_ReduceNoise" xml:space="preserve">
+    <value>Redukuj szum</value>
+  </data>
+  <data name="Filters_Ripple" xml:space="preserve">
+    <value>Tętnienie</value>
+  </data>
+  <data name="Filters_Sharpen" xml:space="preserve">
+    <value>Wyostrzenie</value>
+  </data>
+  <data name="Filters_SharpenEdges" xml:space="preserve">
+    <value>Wyostrz krawędzie</value>
+  </data>
+  <data name="Filters_SharpenMore" xml:space="preserve">
+    <value>Wyostrz bardziej</value>
+  </data>
+  <data name="Filters_SmartSharpen" xml:space="preserve">
+    <value>Inteligentne wyostrzanie</value>
+  </data>
+  <data name="Filters_Solarize" xml:space="preserve">
+    <value>Solaryzacja</value>
+  </data>
+  <data name="Filters_Spherize" xml:space="preserve">
+    <value>Sferyzacja</value>
+  </data>
+  <data name="Filters_SurfaceBlur" xml:space="preserve">
+    <value>Rozmycie powierzchniowe</value>
+  </data>
+  <data name="Filters_Tiles" xml:space="preserve">
+    <value>Kafelki</value>
+  </data>
+  <data name="Filters_Twirl" xml:space="preserve">
+    <value>Zawirowanie</value>
+  </data>
+  <data name="Filters_UnsharpMask" xml:space="preserve">
+    <value>Maska wyostrzająca</value>
+  </data>
+  <data name="Filters_Wave" xml:space="preserve">
+    <value>Fala</value>
+  </data>
+  <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
+    <value>Nie można otworzyć „{0}”: {1}</value>
+  </data>
+  <data name="ImageIO_FileDoesNotExist" xml:space="preserve">
+    <value>Plik nie istnieje.</value>
+  </data>
+  <data name="ImageIO_InvalidProject" xml:space="preserve">
+    <value>Nie można otworzyć „{0}”, ponieważ nie jest to prawidłowy projekt ShareX Photo Editor lub plik jest uszkodzony.</value>
+  </data>
+  <data name="ImageIO_ProjectFormat" xml:space="preserve">
+    <value>Projekt ShareX Photo Editor</value>
+  </data>
+  <data name="ImageIO_TiffRequiresWindows" xml:space="preserve">
+    <value>Eksport do TIFF wymaga systemu Windows.</value>
+  </data>
+  <data name="ImageIO_UnsupportedImage" xml:space="preserve">
+    <value>Nie można otworzyć „{0}”, ponieważ nie jest to obsługiwany obraz lub plik jest uszkodzony.</value>
+  </data>
+  <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
+    <value>Kodowanie WebP nie powiodło się.</value>
+  </data>
+  <data name="LayerNames_Background" xml:space="preserve">
+    <value>Tło</value>
+  </data>
+  <data name="LayerNames_Copy" xml:space="preserve">
+    <value>{0} kopia</value>
+  </data>
+  <data name="LayerNames_Layer0" xml:space="preserve">
+    <value>Warstwa 0</value>
+  </data>
+  <data name="PathNames_WorkPath" xml:space="preserve">
+    <value>Ścieżka robocza</value>
+  </data>
+  <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
+    <value>Projekt został utworzony w nowszej wersji edytora zdjęć.</value>
+  </data>
+</root>

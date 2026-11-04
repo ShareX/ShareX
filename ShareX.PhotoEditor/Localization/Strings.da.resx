@@ -1,0 +1,1575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EditorCommands_90Clockwise" xml:space="preserve">
+    <value>90° med uret</value>
+  </data>
+  <data name="EditorCommands_90CounterClockwise" xml:space="preserve">
+    <value>90° mod uret</value>
+  </data>
+  <data name="EditorCommands_ActionApplyAdjustment" xml:space="preserve">
+    <value>anvende justeringen</value>
+  </data>
+  <data name="EditorCommands_ActionChangeCanvasSize" xml:space="preserve">
+    <value>ændre lærredsstørrelsen</value>
+  </data>
+  <data name="EditorCommands_ActionClear" xml:space="preserve">
+    <value>rydde</value>
+  </data>
+  <data name="EditorCommands_ActionCropImage" xml:space="preserve">
+    <value>beskære billedet</value>
+  </data>
+  <data name="EditorCommands_ActionEqualize" xml:space="preserve">
+    <value>udligne</value>
+  </data>
+  <data name="EditorCommands_ActionFill" xml:space="preserve">
+    <value>udfylde</value>
+  </data>
+  <data name="EditorCommands_ActionFillPath" xml:space="preserve">
+    <value>udfylde stien</value>
+  </data>
+  <data name="EditorCommands_ActionFlipCanvas" xml:space="preserve">
+    <value>spejlvende lærredet</value>
+  </data>
+  <data name="EditorCommands_ActionResizeImage" xml:space="preserve">
+    <value>ændre billedstørrelsen</value>
+  </data>
+  <data name="EditorCommands_ActionRevealAll" xml:space="preserve">
+    <value>vise alt</value>
+  </data>
+  <data name="EditorCommands_ActionRotateCanvas" xml:space="preserve">
+    <value>rotere lærredet</value>
+  </data>
+  <data name="EditorCommands_ActionRunFilter" xml:space="preserve">
+    <value>anvende filteret</value>
+  </data>
+  <data name="EditorCommands_ActionStroke" xml:space="preserve">
+    <value>tegne en streg</value>
+  </data>
+  <data name="EditorCommands_ActionStrokePath" xml:space="preserve">
+    <value>tegne en streg langs stien</value>
+  </data>
+  <data name="EditorCommands_ActionTrimImage" xml:space="preserve">
+    <value>beskære billedkanterne</value>
+  </data>
+  <data name="EditorCommands_AddLayerMask" xml:space="preserve">
+    <value>Tilføj lagmaske</value>
+  </data>
+  <data name="EditorCommands_AddVectorMask" xml:space="preserve">
+    <value>Tilføj vektormaske</value>
+  </data>
+  <data name="EditorCommands_Adjustments" xml:space="preserve">
+    <value>Justeringer</value>
+  </data>
+  <data name="EditorCommands_Again" xml:space="preserve">
+    <value>Igen</value>
+  </data>
+  <data name="EditorCommands_Align" xml:space="preserve">
+    <value>Juster</value>
+  </data>
+  <data name="EditorCommands_All" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="EditorCommands_AllLayers" xml:space="preserve">
+    <value>Alle lag</value>
+  </data>
+  <data name="EditorCommands_AlphaNumber" xml:space="preserve">
+    <value>Alfa {0}</value>
+  </data>
+  <data name="EditorCommands_AngleDegreesColon" xml:space="preserve">
+    <value>Vinkel (°):</value>
+  </data>
+  <data name="EditorCommands_AntiAlias" xml:space="preserve">
+    <value>Udglatning</value>
+  </data>
+  <data name="EditorCommands_Apply" xml:space="preserve">
+    <value>Anvend</value>
+  </data>
+  <data name="EditorCommands_ApplyLayerMask" xml:space="preserve">
+    <value>Anvend lagmaske</value>
+  </data>
+  <data name="EditorCommands_ArbitraryEllipsis" xml:space="preserve">
+    <value>Vilkårlig...</value>
+  </data>
+  <data name="EditorCommands_Arrange" xml:space="preserve">
+    <value>Arranger</value>
+  </data>
+  <data name="EditorCommands_ArrangeLayer" xml:space="preserve">
+    <value>Arranger lag</value>
+  </data>
+  <data name="EditorCommands_AutoColor" xml:space="preserve">
+    <value>Automatisk farve</value>
+  </data>
+  <data name="EditorCommands_AutoContrast" xml:space="preserve">
+    <value>Automatisk kontrast</value>
+  </data>
+  <data name="EditorCommands_AutoTone" xml:space="preserve">
+    <value>Automatisk tone</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveMask" xml:space="preserve">
+    <value>Baggrundslaget kan ikke have en maske. Konverter det først til et lag.</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveStyles" xml:space="preserve">
+    <value>Baggrundslaget kan ikke have lagtypografier. Konverter det først til et lag (Lag &gt; Nyt &gt; Lag fra baggrund).</value>
+  </data>
+  <data name="EditorCommands_BackgroundFromLayer" xml:space="preserve">
+    <value>Baggrund fra lag</value>
+  </data>
+  <data name="EditorCommands_BasedOnColon" xml:space="preserve">
+    <value>Baseret på:</value>
+  </data>
+  <data name="EditorCommands_Blue" xml:space="preserve">
+    <value>Blå</value>
+  </data>
+  <data name="EditorCommands_Blues" xml:space="preserve">
+    <value>Blå toner</value>
+  </data>
+  <data name="EditorCommands_Border" xml:space="preserve">
+    <value>Kant</value>
+  </data>
+  <data name="EditorCommands_BorderEllipsis" xml:space="preserve">
+    <value>Kant...</value>
+  </data>
+  <data name="EditorCommands_BottomEdges" xml:space="preserve">
+    <value>Nederste kanter</value>
+  </data>
+  <data name="EditorCommands_BottomRightPixelColor" xml:space="preserve">
+    <value>Farve på pixel nederst til højre</value>
+  </data>
+  <data name="EditorCommands_BringForward" xml:space="preserve">
+    <value>Flyt fremad</value>
+  </data>
+  <data name="EditorCommands_BringToFront" xml:space="preserve">
+    <value>Flyt forrest</value>
+  </data>
+  <data name="EditorCommands_BrushName" xml:space="preserve">
+    <value>Penselnavn</value>
+  </data>
+  <data name="EditorCommands_Brushes" xml:space="preserve">
+    <value>Pensler</value>
+  </data>
+  <data name="EditorCommands_CannotActionLayerLocked" xml:space="preserve">
+    <value>Kan ikke {0}, fordi laget er låst.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNoActiveLayer" xml:space="preserve">
+    <value>Kan ikke {0}, fordi der ikke er noget aktivt lag.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNotPixelLayer" xml:space="preserve">
+    <value>Kan ikke {0}, fordi det aktive lag ikke er et pixellag. Rasteriser det først (Lag &gt; Rasteriser).</value>
+  </data>
+  <data name="EditorCommands_CannotConvertEmptyToSmartObject" xml:space="preserve">
+    <value>Kan ikke konvertere til et smart objekt, fordi laget er tomt.</value>
+  </data>
+  <data name="EditorCommands_CannotCutLockedLayer" xml:space="preserve">
+    <value>Kan ikke klippe, fordi laget er låst.</value>
+  </data>
+  <data name="EditorCommands_CannotFade" xml:space="preserve">
+    <value>Den sidste handling kan ikke tones ud.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNoLayerBelow" xml:space="preserve">
+    <value>Kan ikke flette ned, fordi der ikke er noget lag nedenunder.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNotPixelLayer" xml:space="preserve">
+    <value>Kan ikke flette ned, fordi laget nedenunder ikke er et pixellag.</value>
+  </data>
+  <data name="EditorCommands_CanvasSize" xml:space="preserve">
+    <value>Lærredsstørrelse</value>
+  </data>
+  <data name="EditorCommands_CanvasSizeEllipsis" xml:space="preserve">
+    <value>Lærredsstørrelse...</value>
+  </data>
+  <data name="EditorCommands_Center" xml:space="preserve">
+    <value>Centreret</value>
+  </data>
+  <data name="EditorCommands_ChangeTextOrientation" xml:space="preserve">
+    <value>Skift tekstretning</value>
+  </data>
+  <data name="EditorCommands_Channel" xml:space="preserve">
+    <value>Kanal</value>
+  </data>
+  <data name="EditorCommands_Channels" xml:space="preserve">
+    <value>Kanaler</value>
+  </data>
+  <data name="EditorCommands_Clear" xml:space="preserve">
+    <value>Ryd</value>
+  </data>
+  <data name="EditorCommands_ClearGuides" xml:space="preserve">
+    <value>Ryd hjælpelinjer</value>
+  </data>
+  <data name="EditorCommands_ClearLayerStyle" xml:space="preserve">
+    <value>Ryd lagtypografi</value>
+  </data>
+  <data name="EditorCommands_ClearRecentFileList" xml:space="preserve">
+    <value>Ryd listen over seneste filer</value>
+  </data>
+  <data name="EditorCommands_Clipboard" xml:space="preserve">
+    <value>Udklipsholder</value>
+  </data>
+  <data name="EditorCommands_ClipboardHasNoImage" xml:space="preserve">
+    <value>Udklipsholder indeholder intet billede.</value>
+  </data>
+  <data name="EditorCommands_Clockwise" xml:space="preserve">
+    <value>Med uret</value>
+  </data>
+  <data name="EditorCommands_Close" xml:space="preserve">
+    <value>Luk</value>
+  </data>
+  <data name="EditorCommands_CloseAll" xml:space="preserve">
+    <value>Luk alle</value>
+  </data>
+  <data name="EditorCommands_Color" xml:space="preserve">
+    <value>Farve</value>
+  </data>
+  <data name="EditorCommands_ColorColon" xml:space="preserve">
+    <value>Farve:</value>
+  </data>
+  <data name="EditorCommands_ColorFill" xml:space="preserve">
+    <value>Farveudfyldning</value>
+  </data>
+  <data name="EditorCommands_ColorRange" xml:space="preserve">
+    <value>Farveområde</value>
+  </data>
+  <data name="EditorCommands_ColorRangeEllipsis" xml:space="preserve">
+    <value>Farveområde...</value>
+  </data>
+  <data name="EditorCommands_ColorRangeTip" xml:space="preserve">
+    <value>Tip: Tag først en farveprøve med pipetten; den bruges som forgrundsfarve.</value>
+  </data>
+  <data name="EditorCommands_ColumnsColon" xml:space="preserve">
+    <value>Kolonner:</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFill" xml:space="preserve">
+    <value>Indholdsbaseret udfyldning</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFillEllipsis" xml:space="preserve">
+    <value>Indholdsbaseret udfyldning...</value>
+  </data>
+  <data name="EditorCommands_Contract" xml:space="preserve">
+    <value>Formindsk</value>
+  </data>
+  <data name="EditorCommands_ContractByPxColon" xml:space="preserve">
+    <value>Formindsk med (px):</value>
+  </data>
+  <data name="EditorCommands_ContractEllipsis" xml:space="preserve">
+    <value>Formindsk...</value>
+  </data>
+  <data name="EditorCommands_ContrastColon" xml:space="preserve">
+    <value>Kontrast:</value>
+  </data>
+  <data name="EditorCommands_ConvertForSmartFilters" xml:space="preserve">
+    <value>Konverter til smarte filtre</value>
+  </data>
+  <data name="EditorCommands_ConvertToShape" xml:space="preserve">
+    <value>Konverter til form</value>
+  </data>
+  <data name="EditorCommands_ConvertToSmartObject" xml:space="preserve">
+    <value>Konverter til smart objekt</value>
+  </data>
+  <data name="EditorCommands_Copy" xml:space="preserve">
+    <value>Kopiér</value>
+  </data>
+  <data name="EditorCommands_CopyLayerStyle" xml:space="preserve">
+    <value>Kopier lagtypografi</value>
+  </data>
+  <data name="EditorCommands_CopyMerged" xml:space="preserve">
+    <value>Kopier flettet</value>
+  </data>
+  <data name="EditorCommands_CouldNotActionReason" xml:space="preserve">
+    <value>Kan ikke {0}: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotCreateDocument" xml:space="preserve">
+    <value>Dokumentet kunne ikke oprettes: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExport" xml:space="preserve">
+    <value>Kunne ikke eksportere: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExportLayers" xml:space="preserve">
+    <value>Lagene kunne ikke eksporteres: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotPlaceUnsupported" xml:space="preserve">
+    <value>"{0}" kunne ikke placeres, fordi filformatet ikke understøttes.</value>
+  </data>
+  <data name="EditorCommands_CouldNotRevert" xml:space="preserve">
+    <value>Kunne ikke vende tilbage: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSave" xml:space="preserve">
+    <value>Kunne ikke gemme: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveFile" xml:space="preserve">
+    <value>"{0}" kunne ikke gemmes: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveSlices" xml:space="preserve">
+    <value>Udsnittene kunne ikke gemmes: {0}</value>
+  </data>
+  <data name="EditorCommands_Count" xml:space="preserve">
+    <value>Optælling</value>
+  </data>
+  <data name="EditorCommands_CounterClockwise" xml:space="preserve">
+    <value>Mod uret</value>
+  </data>
+  <data name="EditorCommands_CreateClippingMask" xml:space="preserve">
+    <value>Opret beskæringsmaske</value>
+  </data>
+  <data name="EditorCommands_CreateWorkPath" xml:space="preserve">
+    <value>Opret arbejdssti</value>
+  </data>
+  <data name="EditorCommands_Crop" xml:space="preserve">
+    <value>Beskær</value>
+  </data>
+  <data name="EditorCommands_Cut" xml:space="preserve">
+    <value>Klip</value>
+  </data>
+  <data name="EditorCommands_CycleScreenMode" xml:space="preserve">
+    <value>Skift skærmtilstand</value>
+  </data>
+  <data name="EditorCommands_DecreaseFontSize" xml:space="preserve">
+    <value>Formindsk skriftstørrelse</value>
+  </data>
+  <data name="EditorCommands_DefaultColors" xml:space="preserve">
+    <value>Standardforgrunds- og baggrundsfarver</value>
+  </data>
+  <data name="EditorCommands_DefineBrushPresetEllipsis" xml:space="preserve">
+    <value>Definer penselforudindstilling...</value>
+  </data>
+  <data name="EditorCommands_DefineCustomShapeEllipsis" xml:space="preserve">
+    <value>Definer brugerdefineret form...</value>
+  </data>
+  <data name="EditorCommands_DefinePatternEllipsis" xml:space="preserve">
+    <value>Definer mønster...</value>
+  </data>
+  <data name="EditorCommands_Delete" xml:space="preserve">
+    <value>Fjern</value>
+  </data>
+  <data name="EditorCommands_DeleteChannel" xml:space="preserve">
+    <value>Slet kanal</value>
+  </data>
+  <data name="EditorCommands_DeleteLayer" xml:space="preserve">
+    <value>Slet lag</value>
+  </data>
+  <data name="EditorCommands_DeleteLayerMask" xml:space="preserve">
+    <value>Slet lagmaske</value>
+  </data>
+  <data name="EditorCommands_DeleteLayers" xml:space="preserve">
+    <value>Slet lag</value>
+  </data>
+  <data name="EditorCommands_DeletePath" xml:space="preserve">
+    <value>Slet sti</value>
+  </data>
+  <data name="EditorCommands_Deselect" xml:space="preserve">
+    <value>Fravælg</value>
+  </data>
+  <data name="EditorCommands_DirectionColon" xml:space="preserve">
+    <value>Retning:</value>
+  </data>
+  <data name="EditorCommands_Disable" xml:space="preserve">
+    <value>Deaktiver</value>
+  </data>
+  <data name="EditorCommands_DisableLayerMask" xml:space="preserve">
+    <value>Deaktiver lagmaske</value>
+  </data>
+  <data name="EditorCommands_Distort" xml:space="preserve">
+    <value>Forvræng</value>
+  </data>
+  <data name="EditorCommands_DocumentBounds" xml:space="preserve">
+    <value>Dokumentgrænser</value>
+  </data>
+  <data name="EditorCommands_DuplicateEllipsis" xml:space="preserve">
+    <value>Dupliker...</value>
+  </data>
+  <data name="EditorCommands_DuplicateImage" xml:space="preserve">
+    <value>Dupliker billede</value>
+  </data>
+  <data name="EditorCommands_DuplicateLayer" xml:space="preserve">
+    <value>Dupliker lag</value>
+  </data>
+  <data name="EditorCommands_EditInQuickMaskMode" xml:space="preserve">
+    <value>Rediger i hurtigmasketilstand</value>
+  </data>
+  <data name="EditorCommands_EditMask" xml:space="preserve">
+    <value>Rediger maske</value>
+  </data>
+  <data name="EditorCommands_EffectNotAvailable" xml:space="preserve">
+    <value>Denne effekt er ikke tilgængelig.</value>
+  </data>
+  <data name="EditorCommands_EffectsLibrary" xml:space="preserve">
+    <value>Effektbibliotek</value>
+  </data>
+  <data name="EditorCommands_EnableLayerMask" xml:space="preserve">
+    <value>Aktivér lagmaske</value>
+  </data>
+  <data name="EditorCommands_EnterQuickMask" xml:space="preserve">
+    <value>Aktivér hurtigmaske</value>
+  </data>
+  <data name="EditorCommands_Equalize" xml:space="preserve">
+    <value>Udlign</value>
+  </data>
+  <data name="EditorCommands_Exit" xml:space="preserve">
+    <value>Afslut</value>
+  </data>
+  <data name="EditorCommands_ExitQuickMask" xml:space="preserve">
+    <value>Afslut hurtigmaske</value>
+  </data>
+  <data name="EditorCommands_Expand" xml:space="preserve">
+    <value>Udvid</value>
+  </data>
+  <data name="EditorCommands_ExpandByPxColon" xml:space="preserve">
+    <value>Udvid med (px):</value>
+  </data>
+  <data name="EditorCommands_ExpandEllipsis" xml:space="preserve">
+    <value>Udvid...</value>
+  </data>
+  <data name="EditorCommands_Export" xml:space="preserve">
+    <value>Eksporter</value>
+  </data>
+  <data name="EditorCommands_ExportAs" xml:space="preserve">
+    <value>Eksporter som</value>
+  </data>
+  <data name="EditorCommands_ExportAsEllipsis" xml:space="preserve">
+    <value>Eksporter som...</value>
+  </data>
+  <data name="EditorCommands_ExportedLayersTo" xml:space="preserve">
+    <value>{0} lag eksporteret til {1}</value>
+  </data>
+  <data name="EditorCommands_ExportedPath" xml:space="preserve">
+    <value>Eksporterede {0}</value>
+  </data>
+  <data name="EditorCommands_Extras" xml:space="preserve">
+    <value>Ekstra</value>
+  </data>
+  <data name="EditorCommands_Fade" xml:space="preserve">
+    <value>Ton ud</value>
+  </data>
+  <data name="EditorCommands_FadeEllipsis" xml:space="preserve">
+    <value>Ton ud...</value>
+  </data>
+  <data name="EditorCommands_FadeName" xml:space="preserve">
+    <value>Ton ud: {0}</value>
+  </data>
+  <data name="EditorCommands_Feather" xml:space="preserve">
+    <value>Blød kant</value>
+  </data>
+  <data name="EditorCommands_FeatherColon" xml:space="preserve">
+    <value>Blød kant:</value>
+  </data>
+  <data name="EditorCommands_FeatherEllipsis" xml:space="preserve">
+    <value>Blød kant...</value>
+  </data>
+  <data name="EditorCommands_FeatherRadiusPxColon" xml:space="preserve">
+    <value>Radius for blød kant (px):</value>
+  </data>
+  <data name="EditorCommands_Fill" xml:space="preserve">
+    <value>Udfyld</value>
+  </data>
+  <data name="EditorCommands_FillEllipsis" xml:space="preserve">
+    <value>Udfyld...</value>
+  </data>
+  <data name="EditorCommands_FillPath" xml:space="preserve">
+    <value>Udfyld sti</value>
+  </data>
+  <data name="EditorCommands_FillScreen" xml:space="preserve">
+    <value>Udfyld skærm</value>
+  </data>
+  <data name="EditorCommands_FillWithBackground" xml:space="preserve">
+    <value>Udfyld med baggrundsfarve</value>
+  </data>
+  <data name="EditorCommands_FillWithForeground" xml:space="preserve">
+    <value>Udfyld med forgrundsfarve</value>
+  </data>
+  <data name="EditorCommands_FitOnScreen" xml:space="preserve">
+    <value>Tilpas til skærm</value>
+  </data>
+  <data name="EditorCommands_Flatten" xml:space="preserve">
+    <value>Platta ut</value>
+  </data>
+  <data name="EditorCommands_FlattenImage" xml:space="preserve">
+    <value>Gør billedet fladt</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasHorizontal" xml:space="preserve">
+    <value>Spejlvend lærred vandret</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasVertical" xml:space="preserve">
+    <value>Spejlvend lærred lodret</value>
+  </data>
+  <data name="EditorCommands_FlipHorizontal" xml:space="preserve">
+    <value>Spejlvend vandret</value>
+  </data>
+  <data name="EditorCommands_FlipVertical" xml:space="preserve">
+    <value>Spejlvend lodret</value>
+  </data>
+  <data name="EditorCommands_FormatDoesNotSupportLayers" xml:space="preserve">
+    <value>"{0}" understøtter ikke lag. Vil du gemme en flad kopi i dette format eller gemme som et ShareX Photo Editor-projekt for at bevare lagene?</value>
+  </data>
+  <data name="EditorCommands_FreeTransform" xml:space="preserve">
+    <value>Fri transformering</value>
+  </data>
+  <data name="EditorCommands_FromTransparency" xml:space="preserve">
+    <value>Fra gennemsigtighed</value>
+  </data>
+  <data name="EditorCommands_FuzzinessColon" xml:space="preserve">
+    <value>Tolerance:</value>
+  </data>
+  <data name="EditorCommands_GradientEllipsis" xml:space="preserve">
+    <value>Forløb...</value>
+  </data>
+  <data name="EditorCommands_GradientFill" xml:space="preserve">
+    <value>Forløbsudfyldning</value>
+  </data>
+  <data name="EditorCommands_Grayscale" xml:space="preserve">
+    <value>Gråtoner</value>
+  </data>
+  <data name="EditorCommands_Green" xml:space="preserve">
+    <value>Grøn</value>
+  </data>
+  <data name="EditorCommands_Greens" xml:space="preserve">
+    <value>Grønne toner</value>
+  </data>
+  <data name="EditorCommands_Grid" xml:space="preserve">
+    <value>Gitter</value>
+  </data>
+  <data name="EditorCommands_GroupLayers" xml:space="preserve">
+    <value>Gruppér lag</value>
+  </data>
+  <data name="EditorCommands_GroupNumber" xml:space="preserve">
+    <value>Gruppe {0}</value>
+  </data>
+  <data name="EditorCommands_Grow" xml:space="preserve">
+    <value>Forøg</value>
+  </data>
+  <data name="EditorCommands_Guides" xml:space="preserve">
+    <value>Hjælpelinjer</value>
+  </data>
+  <data name="EditorCommands_GutterPxColon" xml:space="preserve">
+    <value>Mellemrum (px):</value>
+  </data>
+  <data name="EditorCommands_HeightPercentColon" xml:space="preserve">
+    <value>Højde (%):</value>
+  </data>
+  <data name="EditorCommands_HideAll" xml:space="preserve">
+    <value>Skjul alt</value>
+  </data>
+  <data name="EditorCommands_HideLayers" xml:space="preserve">
+    <value>Skjul lag</value>
+  </data>
+  <data name="EditorCommands_HideSelection" xml:space="preserve">
+    <value>Skjul markering</value>
+  </data>
+  <data name="EditorCommands_Highlights" xml:space="preserve">
+    <value>Højlys</value>
+  </data>
+  <data name="EditorCommands_History" xml:space="preserve">
+    <value>Historik</value>
+  </data>
+  <data name="EditorCommands_Horizontal" xml:space="preserve">
+    <value>Vandret</value>
+  </data>
+  <data name="EditorCommands_HorizontalCenters" xml:space="preserve">
+    <value>Vandrette midter</value>
+  </data>
+  <data name="EditorCommands_ImageOptions" xml:space="preserve">
+    <value>Billedindstillinger</value>
+  </data>
+  <data name="EditorCommands_ImageRotation" xml:space="preserve">
+    <value>Billedrotation</value>
+  </data>
+  <data name="EditorCommands_ImageSize" xml:space="preserve">
+    <value>Billedstørrelse</value>
+  </data>
+  <data name="EditorCommands_ImageSizeEllipsis" xml:space="preserve">
+    <value>Billedstørrelse...</value>
+  </data>
+  <data name="EditorCommands_IncreaseFontSize" xml:space="preserve">
+    <value>Forøg skriftstørrelse</value>
+  </data>
+  <data name="EditorCommands_Info" xml:space="preserve">
+    <value>Oplysninger</value>
+  </data>
+  <data name="EditorCommands_Inside" xml:space="preserve">
+    <value>Inde i</value>
+  </data>
+  <data name="EditorCommands_Inverse" xml:space="preserve">
+    <value>Omvendt</value>
+  </data>
+  <data name="EditorCommands_KeyboardShortcutsEllipsis" xml:space="preserve">
+    <value>Tastaturgenveje...</value>
+  </data>
+  <data name="EditorCommands_LastFilter" xml:space="preserve">
+    <value>Sidste filter</value>
+  </data>
+  <data name="EditorCommands_LayerFromBackground" xml:space="preserve">
+    <value>Lag fra baggrund</value>
+  </data>
+  <data name="EditorCommands_LayerMask" xml:space="preserve">
+    <value>Lagmaske</value>
+  </data>
+  <data name="EditorCommands_LayerNumber" xml:space="preserve">
+    <value>Lag {0}</value>
+  </data>
+  <data name="EditorCommands_LayerProperties" xml:space="preserve">
+    <value>Lagegenskaber</value>
+  </data>
+  <data name="EditorCommands_LayerStyle" xml:space="preserve">
+    <value>Lagtypografi</value>
+  </data>
+  <data name="EditorCommands_LayerStyleEllipsis" xml:space="preserve">
+    <value>Lagtypografi...</value>
+  </data>
+  <data name="EditorCommands_LayerViaCopy" xml:space="preserve">
+    <value>Lag via kopi</value>
+  </data>
+  <data name="EditorCommands_LayerViaCut" xml:space="preserve">
+    <value>Lag via klip</value>
+  </data>
+  <data name="EditorCommands_Layers" xml:space="preserve">
+    <value>Lag</value>
+  </data>
+  <data name="EditorCommands_LayersToFiles" xml:space="preserve">
+    <value>Lag til filer</value>
+  </data>
+  <data name="EditorCommands_LayersToFilesEllipsis" xml:space="preserve">
+    <value>Lag til filer...</value>
+  </data>
+  <data name="EditorCommands_LeftEdges" xml:space="preserve">
+    <value>Venstre kanter</value>
+  </data>
+  <data name="EditorCommands_LinkLayers" xml:space="preserve">
+    <value>Sammenkæd lag</value>
+  </data>
+  <data name="EditorCommands_LinkUnlinkLayers" xml:space="preserve">
+    <value>Sammenkæd/fjern sammenkædning af lag</value>
+  </data>
+  <data name="EditorCommands_LoadSelection" xml:space="preserve">
+    <value>Indlæs markering</value>
+  </data>
+  <data name="EditorCommands_LoadSelectionEllipsis" xml:space="preserve">
+    <value>Indlæs markering...</value>
+  </data>
+  <data name="EditorCommands_LocationColon" xml:space="preserve">
+    <value>Placering:</value>
+  </data>
+  <data name="EditorCommands_LockAll" xml:space="preserve">
+    <value>Lås alt</value>
+  </data>
+  <data name="EditorCommands_LockGuides" xml:space="preserve">
+    <value>Lås hjælpelinjer</value>
+  </data>
+  <data name="EditorCommands_LockLayer" xml:space="preserve">
+    <value>Lås lag</value>
+  </data>
+  <data name="EditorCommands_MakeSelection" xml:space="preserve">
+    <value>Opret markering</value>
+  </data>
+  <data name="EditorCommands_MakeSelectionFirst" xml:space="preserve">
+    <value>Foretag først en markering.</value>
+  </data>
+  <data name="EditorCommands_MakeWorkPath" xml:space="preserve">
+    <value>Opret arbejdssti</value>
+  </data>
+  <data name="EditorCommands_MarginPxColon" xml:space="preserve">
+    <value>Margen (px):</value>
+  </data>
+  <data name="EditorCommands_MenuEdit" xml:space="preserve">
+    <value>_Rediger</value>
+  </data>
+  <data name="EditorCommands_MenuFile" xml:space="preserve">
+    <value>_Filer</value>
+  </data>
+  <data name="EditorCommands_MenuFilter" xml:space="preserve">
+    <value>_Filter</value>
+  </data>
+  <data name="EditorCommands_MenuImage" xml:space="preserve">
+    <value>_Billede</value>
+  </data>
+  <data name="EditorCommands_MenuLayer" xml:space="preserve">
+    <value>_Lag</value>
+  </data>
+  <data name="EditorCommands_MenuSelect" xml:space="preserve">
+    <value>_Marker</value>
+  </data>
+  <data name="EditorCommands_MenuType" xml:space="preserve">
+    <value>_Tekst</value>
+  </data>
+  <data name="EditorCommands_MenuView" xml:space="preserve">
+    <value>_Vis</value>
+  </data>
+  <data name="EditorCommands_MenuWindow" xml:space="preserve">
+    <value>Vin_due</value>
+  </data>
+  <data name="EditorCommands_MergeDown" xml:space="preserve">
+    <value>Flet ned</value>
+  </data>
+  <data name="EditorCommands_MergeGroup" xml:space="preserve">
+    <value>Flet gruppe</value>
+  </data>
+  <data name="EditorCommands_MergeVisible" xml:space="preserve">
+    <value>Flet synlige</value>
+  </data>
+  <data name="EditorCommands_Merged" xml:space="preserve">
+    <value>Flettet</value>
+  </data>
+  <data name="EditorCommands_Midtones" xml:space="preserve">
+    <value>Mellemtoner</value>
+  </data>
+  <data name="EditorCommands_Mode" xml:space="preserve">
+    <value>Tilstand</value>
+  </data>
+  <data name="EditorCommands_ModeColon" xml:space="preserve">
+    <value>Tilstand:</value>
+  </data>
+  <data name="EditorCommands_Modify" xml:space="preserve">
+    <value>Rediger</value>
+  </data>
+  <data name="EditorCommands_ModifySelectionTitle" xml:space="preserve">
+    <value>Markering: {0}</value>
+  </data>
+  <data name="EditorCommands_MoveLayer" xml:space="preserve">
+    <value>Flyt lag</value>
+  </data>
+  <data name="EditorCommands_NameColon" xml:space="preserve">
+    <value>Navn:</value>
+  </data>
+  <data name="EditorCommands_Navigator" xml:space="preserve">
+    <value>Navigator</value>
+  </data>
+  <data name="EditorCommands_New" xml:space="preserve">
+    <value>Ny</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayer" xml:space="preserve">
+    <value>Nyt justeringslag</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayerHistory" xml:space="preserve">
+    <value>Nyt lag: {0}</value>
+  </data>
+  <data name="EditorCommands_NewChannel" xml:space="preserve">
+    <value>Ny kanal</value>
+  </data>
+  <data name="EditorCommands_NewEllipsis" xml:space="preserve">
+    <value>Ny...</value>
+  </data>
+  <data name="EditorCommands_NewFillLayer" xml:space="preserve">
+    <value>Nyt udfyldningslag</value>
+  </data>
+  <data name="EditorCommands_NewFromClipboard" xml:space="preserve">
+    <value>Ny fra udklipsholder</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Ny fra skærmbillede (fuld skærm)</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Ny fra skærmbillede (område)...</value>
+  </data>
+  <data name="EditorCommands_NewGroup" xml:space="preserve">
+    <value>Ny gruppe</value>
+  </data>
+  <data name="EditorCommands_NewGuide" xml:space="preserve">
+    <value>Ny hjælpelinje</value>
+  </data>
+  <data name="EditorCommands_NewGuideEllipsis" xml:space="preserve">
+    <value>Ny hjælpelinje...</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayout" xml:space="preserve">
+    <value>Nyt hjælpelinjelayout</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayoutEllipsis" xml:space="preserve">
+    <value>Nyt hjælpelinjelayout...</value>
+  </data>
+  <data name="EditorCommands_NewGuidesFromShape" xml:space="preserve">
+    <value>Nye hjælpelinjer fra form</value>
+  </data>
+  <data name="EditorCommands_NewLayer" xml:space="preserve">
+    <value>Nyt lag</value>
+  </data>
+  <data name="EditorCommands_NewLayerEllipsis" xml:space="preserve">
+    <value>Nyt lag...</value>
+  </data>
+  <data name="EditorCommands_NewPath" xml:space="preserve">
+    <value>Ny sti</value>
+  </data>
+  <data name="EditorCommands_NewShapeLayer" xml:space="preserve">
+    <value>Nyt formlag</value>
+  </data>
+  <data name="EditorCommands_NextDocument" xml:space="preserve">
+    <value>Næste dokument</value>
+  </data>
+  <data name="EditorCommands_NoPathForSelection" xml:space="preserve">
+    <value>Der er ingen sti, der kan indlæses som markering.</value>
+  </data>
+  <data name="EditorCommands_NoSavedSelections" xml:space="preserve">
+    <value>Der er ingen gemte markeringer (alfakanaler).</value>
+  </data>
+  <data name="EditorCommands_Notes" xml:space="preserve">
+    <value>Noter</value>
+  </data>
+  <data name="EditorCommands_OffsetXColon" xml:space="preserve">
+    <value>Forskydning X:</value>
+  </data>
+  <data name="EditorCommands_OffsetYColon" xml:space="preserve">
+    <value>Forskydning Y:</value>
+  </data>
+  <data name="EditorCommands_OpacityColon" xml:space="preserve">
+    <value>Uigennemsigtighed:</value>
+  </data>
+  <data name="EditorCommands_Open" xml:space="preserve">
+    <value>Åbn</value>
+  </data>
+  <data name="EditorCommands_OpenEllipsis" xml:space="preserve">
+    <value>Åbn...</value>
+  </data>
+  <data name="EditorCommands_OpenRecent" xml:space="preserve">
+    <value>Åbn seneste</value>
+  </data>
+  <data name="EditorCommands_Options" xml:space="preserve">
+    <value>Indstillinger</value>
+  </data>
+  <data name="EditorCommands_Orientation" xml:space="preserve">
+    <value>Orientering</value>
+  </data>
+  <data name="EditorCommands_OrientationColon" xml:space="preserve">
+    <value>Retning:</value>
+  </data>
+  <data name="EditorCommands_Outside" xml:space="preserve">
+    <value>Uden for</value>
+  </data>
+  <data name="EditorCommands_Panels" xml:space="preserve">
+    <value>Paneler</value>
+  </data>
+  <data name="EditorCommands_Paste" xml:space="preserve">
+    <value>Indsæt</value>
+  </data>
+  <data name="EditorCommands_PasteAsNewDocument" xml:space="preserve">
+    <value>Indsæt som nyt dokument</value>
+  </data>
+  <data name="EditorCommands_PasteInPlace" xml:space="preserve">
+    <value>Indsæt på stedet</value>
+  </data>
+  <data name="EditorCommands_PasteInto" xml:space="preserve">
+    <value>Indsæt i</value>
+  </data>
+  <data name="EditorCommands_PasteLayerStyle" xml:space="preserve">
+    <value>Indsæt lagtypografi</value>
+  </data>
+  <data name="EditorCommands_PasteSpecial" xml:space="preserve">
+    <value>Indsæt speciel</value>
+  </data>
+  <data name="EditorCommands_Pasted" xml:space="preserve">
+    <value>Indsat</value>
+  </data>
+  <data name="EditorCommands_PathNumber" xml:space="preserve">
+    <value>Sti {0}</value>
+  </data>
+  <data name="EditorCommands_Paths" xml:space="preserve">
+    <value>Stier</value>
+  </data>
+  <data name="EditorCommands_Pattern" xml:space="preserve">
+    <value>Mønster</value>
+  </data>
+  <data name="EditorCommands_PatternEllipsis" xml:space="preserve">
+    <value>Mønster...</value>
+  </data>
+  <data name="EditorCommands_PatternFill" xml:space="preserve">
+    <value>Mønsterudfyldning</value>
+  </data>
+  <data name="EditorCommands_PatternName" xml:space="preserve">
+    <value>Mønsternavn</value>
+  </data>
+  <data name="EditorCommands_PatternNumber" xml:space="preserve">
+    <value>Mønster {0}</value>
+  </data>
+  <data name="EditorCommands_Perspective" xml:space="preserve">
+    <value>Perspektiv</value>
+  </data>
+  <data name="EditorCommands_PinToScreen" xml:space="preserve">
+    <value>Fastgør til skærm</value>
+  </data>
+  <data name="EditorCommands_PixelGrid" xml:space="preserve">
+    <value>Pixelgitter</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbedded" xml:space="preserve">
+    <value>Placer indlejret</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbeddedEllipsis" xml:space="preserve">
+    <value>Placer indlejret...</value>
+  </data>
+  <data name="EditorCommands_PlaceImageIntoFrame" xml:space="preserve">
+    <value>Placer billede i ramme</value>
+  </data>
+  <data name="EditorCommands_PlaceIntoFrame" xml:space="preserve">
+    <value>Placer i ramme</value>
+  </data>
+  <data name="EditorCommands_PositionPxColon" xml:space="preserve">
+    <value>Placering (px):</value>
+  </data>
+  <data name="EditorCommands_PreferencesEllipsis" xml:space="preserve">
+    <value>Indstillinger...</value>
+  </data>
+  <data name="EditorCommands_Preview" xml:space="preserve">
+    <value>Forhåndsvisning</value>
+  </data>
+  <data name="EditorCommands_PreviousDocument" xml:space="preserve">
+    <value>Forrige dokument</value>
+  </data>
+  <data name="EditorCommands_PrintEllipsis" xml:space="preserve">
+    <value>Udskriv...</value>
+  </data>
+  <data name="EditorCommands_Properties" xml:space="preserve">
+    <value>Egenskaber</value>
+  </data>
+  <data name="EditorCommands_Purge" xml:space="preserve">
+    <value>Tøm</value>
+  </data>
+  <data name="EditorCommands_PurgeClipboard" xml:space="preserve">
+    <value>Tøm udklipsholder</value>
+  </data>
+  <data name="EditorCommands_PurgeHistories" xml:space="preserve">
+    <value>Tøm historikker</value>
+  </data>
+  <data name="EditorCommands_QualityColon" xml:space="preserve">
+    <value>Kvalitet:</value>
+  </data>
+  <data name="EditorCommands_QuickExportAsPng" xml:space="preserve">
+    <value>Hurtig eksport som PNG</value>
+  </data>
+  <data name="EditorCommands_Rasterize" xml:space="preserve">
+    <value>Rasteriser</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayer" xml:space="preserve">
+    <value>Rasteriser lag</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayerStyle" xml:space="preserve">
+    <value>Rasteriser lagtypografi</value>
+  </data>
+  <data name="EditorCommands_RasterizeTypeLayer" xml:space="preserve">
+    <value>Rasteriser tekstlag</value>
+  </data>
+  <data name="EditorCommands_Red" xml:space="preserve">
+    <value>Rød</value>
+  </data>
+  <data name="EditorCommands_Redo" xml:space="preserve">
+    <value>Annuller fortryd</value>
+  </data>
+  <data name="EditorCommands_Reds" xml:space="preserve">
+    <value>Røde toner</value>
+  </data>
+  <data name="EditorCommands_ReleaseClippingMask" xml:space="preserve">
+    <value>Frigør beskæringsmaske</value>
+  </data>
+  <data name="EditorCommands_RenameLayer" xml:space="preserve">
+    <value>Omdøb lag</value>
+  </data>
+  <data name="EditorCommands_RenameLayerEllipsis" xml:space="preserve">
+    <value>Omdøb lag...</value>
+  </data>
+  <data name="EditorCommands_Reselect" xml:space="preserve">
+    <value>Marker igen</value>
+  </data>
+  <data name="EditorCommands_ResetEssentials" xml:space="preserve">
+    <value>Nulstil Grundlæggende</value>
+  </data>
+  <data name="EditorCommands_ResetViewRotation" xml:space="preserve">
+    <value>Nulstil visningsrotation</value>
+  </data>
+  <data name="EditorCommands_RevealAll" xml:space="preserve">
+    <value>Vis alt</value>
+  </data>
+  <data name="EditorCommands_RevealSelection" xml:space="preserve">
+    <value>Vis markering</value>
+  </data>
+  <data name="EditorCommands_Revert" xml:space="preserve">
+    <value>Vend tilbage</value>
+  </data>
+  <data name="EditorCommands_RightEdges" xml:space="preserve">
+    <value>Højre kanter</value>
+  </data>
+  <data name="EditorCommands_Rotate" xml:space="preserve">
+    <value>Rotér</value>
+  </data>
+  <data name="EditorCommands_Rotate180" xml:space="preserve">
+    <value>Rotér 180°</value>
+  </data>
+  <data name="EditorCommands_Rotate90Clockwise" xml:space="preserve">
+    <value>Roter 90° med uret</value>
+  </data>
+  <data name="EditorCommands_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Roter 90° mod uret</value>
+  </data>
+  <data name="EditorCommands_RotateCanvas" xml:space="preserve">
+    <value>Roter lærred</value>
+  </data>
+  <data name="EditorCommands_RotateCanvasDegrees" xml:space="preserve">
+    <value>Roter lærred {0}°</value>
+  </data>
+  <data name="EditorCommands_RotateDegrees" xml:space="preserve">
+    <value>Roter {0}°</value>
+  </data>
+  <data name="EditorCommands_RowsColon" xml:space="preserve">
+    <value>Rækker:</value>
+  </data>
+  <data name="EditorCommands_Rulers" xml:space="preserve">
+    <value>Linealer</value>
+  </data>
+  <data name="EditorCommands_SampleRadiusPxColon" xml:space="preserve">
+    <value>Prøveradius (px):</value>
+  </data>
+  <data name="EditorCommands_SampledBrushNumber" xml:space="preserve">
+    <value>Prøvepensel {0}</value>
+  </data>
+  <data name="EditorCommands_SampledColorsForeground" xml:space="preserve">
+    <value>Farveprøver (forgrund)</value>
+  </data>
+  <data name="EditorCommands_Save" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="EditorCommands_SaveACopy" xml:space="preserve">
+    <value>Gem en kopi</value>
+  </data>
+  <data name="EditorCommands_SaveACopyEllipsis" xml:space="preserve">
+    <value>Gem en kopi...</value>
+  </data>
+  <data name="EditorCommands_SaveAs" xml:space="preserve">
+    <value>Gem som</value>
+  </data>
+  <data name="EditorCommands_SaveAsEllipsis" xml:space="preserve">
+    <value>Gem som...</value>
+  </data>
+  <data name="EditorCommands_SaveAsProject" xml:space="preserve">
+    <value>Gem som projekt</value>
+  </data>
+  <data name="EditorCommands_SaveSelection" xml:space="preserve">
+    <value>Gem markering</value>
+  </data>
+  <data name="EditorCommands_SaveSelectionEllipsis" xml:space="preserve">
+    <value>Gem markering...</value>
+  </data>
+  <data name="EditorCommands_SaveSlices" xml:space="preserve">
+    <value>Gem udsnit</value>
+  </data>
+  <data name="EditorCommands_SaveSlicesEllipsis" xml:space="preserve">
+    <value>Gem udsnit...</value>
+  </data>
+  <data name="EditorCommands_SaveWorkspace" xml:space="preserve">
+    <value>Gem arbejdsområde</value>
+  </data>
+  <data name="EditorCommands_SavedCopyTo" xml:space="preserve">
+    <value>Kopi gemt i {0}</value>
+  </data>
+  <data name="EditorCommands_SavedPath" xml:space="preserve">
+    <value>Gemte {0}</value>
+  </data>
+  <data name="EditorCommands_SavedSlicesTo" xml:space="preserve">
+    <value>{0} udsnit gemt i {1}</value>
+  </data>
+  <data name="EditorCommands_Scale" xml:space="preserve">
+    <value>Skalér</value>
+  </data>
+  <data name="EditorCommands_Screenshot" xml:space="preserve">
+    <value>Skærmbillede</value>
+  </data>
+  <data name="EditorCommands_SelectAll" xml:space="preserve">
+    <value>Marker alt</value>
+  </data>
+  <data name="EditorCommands_SelectAndMask" xml:space="preserve">
+    <value>Marker og masker</value>
+  </data>
+  <data name="EditorCommands_SelectAndMaskEllipsis" xml:space="preserve">
+    <value>Marker og masker...</value>
+  </data>
+  <data name="EditorCommands_SelectColon" xml:space="preserve">
+    <value>Marker:</value>
+  </data>
+  <data name="EditorCommands_SelectFrameLayerFirst" xml:space="preserve">
+    <value>Vælg først et rammelag (tegn et med værktøjet Ramme).</value>
+  </data>
+  <data name="EditorCommands_SelectLayersToLink" xml:space="preserve">
+    <value>Vælg to eller flere lag (Ctrl-klik i panelet Lag) for at sammenkæde dem.</value>
+  </data>
+  <data name="EditorCommands_SelectNextLayer" xml:space="preserve">
+    <value>Vælg næste lag</value>
+  </data>
+  <data name="EditorCommands_SelectPatternTileFirst" xml:space="preserve">
+    <value>Foretag først en rektangulær markering af mønsterfeltet.</value>
+  </data>
+  <data name="EditorCommands_SelectPreviousLayer" xml:space="preserve">
+    <value>Vælg forrige lag</value>
+  </data>
+  <data name="EditorCommands_SelectSubject" xml:space="preserve">
+    <value>Marker motiv</value>
+  </data>
+  <data name="EditorCommands_SelectingSubject" xml:space="preserve">
+    <value>Markerer motiv...</value>
+  </data>
+  <data name="EditorCommands_SelectionEdges" xml:space="preserve">
+    <value>Markeringskanter</value>
+  </data>
+  <data name="EditorCommands_SendBackward" xml:space="preserve">
+    <value>Flyt bagud</value>
+  </data>
+  <data name="EditorCommands_SendToBack" xml:space="preserve">
+    <value>Flyt bagerst</value>
+  </data>
+  <data name="EditorCommands_SendToShareX" xml:space="preserve">
+    <value>Send til ShareX (opgaver efter optagelse)</value>
+  </data>
+  <data name="EditorCommands_SetFontSize" xml:space="preserve">
+    <value>Angiv skriftstørrelse</value>
+  </data>
+  <data name="EditorCommands_Shadows" xml:space="preserve">
+    <value>Skygger</value>
+  </data>
+  <data name="EditorCommands_ShadowsHighlightsEllipsis" xml:space="preserve">
+    <value>Skygger/højlys...</value>
+  </data>
+  <data name="EditorCommands_ShapeName" xml:space="preserve">
+    <value>Formnavn</value>
+  </data>
+  <data name="EditorCommands_ShapeNumber" xml:space="preserve">
+    <value>Form {0}</value>
+  </data>
+  <data name="EditorCommands_ShareWithShareX" xml:space="preserve">
+    <value>Del med ShareX</value>
+  </data>
+  <data name="EditorCommands_Show" xml:space="preserve">
+    <value>Vis</value>
+  </data>
+  <data name="EditorCommands_Similar" xml:space="preserve">
+    <value>Lignende</value>
+  </data>
+  <data name="EditorCommands_Skew" xml:space="preserve">
+    <value>Forskydning</value>
+  </data>
+  <data name="EditorCommands_SkinTones" xml:space="preserve">
+    <value>Hudtoner</value>
+  </data>
+  <data name="EditorCommands_Slices" xml:space="preserve">
+    <value>Udsnit</value>
+  </data>
+  <data name="EditorCommands_SmartFilterHistory" xml:space="preserve">
+    <value>{0} (smart filter)</value>
+  </data>
+  <data name="EditorCommands_SmartObjects" xml:space="preserve">
+    <value>Smarte objekter</value>
+  </data>
+  <data name="EditorCommands_Smooth" xml:space="preserve">
+    <value>Udjævn</value>
+  </data>
+  <data name="EditorCommands_SmoothColon" xml:space="preserve">
+    <value>Udjævn:</value>
+  </data>
+  <data name="EditorCommands_SmoothEllipsis" xml:space="preserve">
+    <value>Udjævn...</value>
+  </data>
+  <data name="EditorCommands_Snap" xml:space="preserve">
+    <value>Fastgør</value>
+  </data>
+  <data name="EditorCommands_SnapTo" xml:space="preserve">
+    <value>Fastgør til</value>
+  </data>
+  <data name="EditorCommands_SolidColor" xml:space="preserve">
+    <value>Ensfarvet</value>
+  </data>
+  <data name="EditorCommands_SolidColorEllipsis" xml:space="preserve">
+    <value>Ensfarvet...</value>
+  </data>
+  <data name="EditorCommands_StampVisible" xml:space="preserve">
+    <value>Stempl synlige</value>
+  </data>
+  <data name="EditorCommands_StepBackward" xml:space="preserve">
+    <value>Et trin tilbage</value>
+  </data>
+  <data name="EditorCommands_StepForward" xml:space="preserve">
+    <value>Et trin frem</value>
+  </data>
+  <data name="EditorCommands_StraightenLayer" xml:space="preserve">
+    <value>Ret lag ud</value>
+  </data>
+  <data name="EditorCommands_Stroke" xml:space="preserve">
+    <value>Streg</value>
+  </data>
+  <data name="EditorCommands_StrokeColor" xml:space="preserve">
+    <value>Stregfarve</value>
+  </data>
+  <data name="EditorCommands_StrokeEllipsis" xml:space="preserve">
+    <value>Streg...</value>
+  </data>
+  <data name="EditorCommands_StrokePath" xml:space="preserve">
+    <value>Streg langs sti</value>
+  </data>
+  <data name="EditorCommands_Subject" xml:space="preserve">
+    <value>Motiv</value>
+  </data>
+  <data name="EditorCommands_Swatches" xml:space="preserve">
+    <value>Farveprøver</value>
+  </data>
+  <data name="EditorCommands_SwitchColors" xml:space="preserve">
+    <value>Byt om på forgrunds- og baggrundsfarve</value>
+  </data>
+  <data name="EditorCommands_ToolbarEllipsis" xml:space="preserve">
+    <value>Værktøjslinje...</value>
+  </data>
+  <data name="EditorCommands_Tools" xml:space="preserve">
+    <value>Værktøjer</value>
+  </data>
+  <data name="EditorCommands_TopEdges" xml:space="preserve">
+    <value>Øverste kanter</value>
+  </data>
+  <data name="EditorCommands_TopLeftPixelColor" xml:space="preserve">
+    <value>Farve på pixel øverst til venstre</value>
+  </data>
+  <data name="EditorCommands_Transform" xml:space="preserve">
+    <value>Transformer</value>
+  </data>
+  <data name="EditorCommands_TransformSelection" xml:space="preserve">
+    <value>Transformer markering</value>
+  </data>
+  <data name="EditorCommands_TransformSelectionEllipsis" xml:space="preserve">
+    <value>Transformer markering...</value>
+  </data>
+  <data name="EditorCommands_TransparentPixels" xml:space="preserve">
+    <value>Gennemsigtige pixel</value>
+  </data>
+  <data name="EditorCommands_Trim" xml:space="preserve">
+    <value>Beskær kanter</value>
+  </data>
+  <data name="EditorCommands_TrimEllipsis" xml:space="preserve">
+    <value>Beskær kanter...</value>
+  </data>
+  <data name="EditorCommands_TwoColumnToolbar" xml:space="preserve">
+    <value>Værktøjslinje med to kolonner</value>
+  </data>
+  <data name="EditorCommands_Undo" xml:space="preserve">
+    <value>Fortryd</value>
+  </data>
+  <data name="EditorCommands_UngroupLayers" xml:space="preserve">
+    <value>Opdel lag</value>
+  </data>
+  <data name="EditorCommands_UnlinkLayers" xml:space="preserve">
+    <value>Fjern sammenkædning af lag</value>
+  </data>
+  <data name="EditorCommands_UploadWithShareX" xml:space="preserve">
+    <value>Upload med ShareX</value>
+  </data>
+  <data name="EditorCommands_Vertical" xml:space="preserve">
+    <value>Lodret</value>
+  </data>
+  <data name="EditorCommands_VerticalCenters" xml:space="preserve">
+    <value>Lodrette midter</value>
+  </data>
+  <data name="EditorCommands_WidthColon" xml:space="preserve">
+    <value>Bredde:</value>
+  </data>
+  <data name="EditorCommands_WidthPercentColon" xml:space="preserve">
+    <value>Bredde (%):</value>
+  </data>
+  <data name="EditorCommands_WidthPxColon" xml:space="preserve">
+    <value>Bredde (px):</value>
+  </data>
+  <data name="EditorCommands_Workspace" xml:space="preserve">
+    <value>Arbejdsområde</value>
+  </data>
+  <data name="EditorCommands_WorkspaceSaved" xml:space="preserve">
+    <value>Arbejdsområdet er gemt.</value>
+  </data>
+  <data name="EditorCommands_ZoomIn" xml:space="preserve">
+    <value>Zoom ind</value>
+  </data>
+  <data name="EditorCommands_ZoomOut" xml:space="preserve">
+    <value>Zoom ud</value>
+  </data>
+  <data name="Filters_AddNoise" xml:space="preserve">
+    <value>Tilføj støj</value>
+  </data>
+  <data name="Filters_Average" xml:space="preserve">
+    <value>Gennemsnit</value>
+  </data>
+  <data name="Filters_Blur" xml:space="preserve">
+    <value>Sløring</value>
+  </data>
+  <data name="Filters_BlurMore" xml:space="preserve">
+    <value>Mere sløring</value>
+  </data>
+  <data name="Filters_BoxBlur" xml:space="preserve">
+    <value>Kassesløring</value>
+  </data>
+  <data name="Filters_CategoryBlur" xml:space="preserve">
+    <value>Sløring</value>
+  </data>
+  <data name="Filters_CategoryDistort" xml:space="preserve">
+    <value>Forvræng</value>
+  </data>
+  <data name="Filters_CategoryNoise" xml:space="preserve">
+    <value>Støj</value>
+  </data>
+  <data name="Filters_CategoryOther" xml:space="preserve">
+    <value>Andet</value>
+  </data>
+  <data name="Filters_CategoryPixelate" xml:space="preserve">
+    <value>Pixelér</value>
+  </data>
+  <data name="Filters_CategoryRender" xml:space="preserve">
+    <value>Gengiv</value>
+  </data>
+  <data name="Filters_CategorySharpen" xml:space="preserve">
+    <value>Skarphed</value>
+  </data>
+  <data name="Filters_CategoryStylize" xml:space="preserve">
+    <value>Stiliser</value>
+  </data>
+  <data name="Filters_Clouds" xml:space="preserve">
+    <value>Skyer</value>
+  </data>
+  <data name="Filters_Crystallize" xml:space="preserve">
+    <value>Krystalliser</value>
+  </data>
+  <data name="Filters_Despeckle" xml:space="preserve">
+    <value>Fjern pletter</value>
+  </data>
+  <data name="Filters_DifferenceClouds" xml:space="preserve">
+    <value>Differensskyer</value>
+  </data>
+  <data name="Filters_Diffuse" xml:space="preserve">
+    <value>Diffus</value>
+  </data>
+  <data name="Filters_DustScratches" xml:space="preserve">
+    <value>Støv og ridser</value>
+  </data>
+  <data name="Filters_Emboss" xml:space="preserve">
+    <value>Relief</value>
+  </data>
+  <data name="Filters_Facet" xml:space="preserve">
+    <value>Facetter</value>
+  </data>
+  <data name="Filters_Fibers" xml:space="preserve">
+    <value>Fibre</value>
+  </data>
+  <data name="Filters_FindEdges" xml:space="preserve">
+    <value>Find kanter</value>
+  </data>
+  <data name="Filters_GaussianBlur" xml:space="preserve">
+    <value>Gaussisk sløring</value>
+  </data>
+  <data name="Filters_HighPass" xml:space="preserve">
+    <value>Højpas</value>
+  </data>
+  <data name="Filters_LightingVignette" xml:space="preserve">
+    <value>Lysvignet</value>
+  </data>
+  <data name="Filters_Maximum" xml:space="preserve">
+    <value>Maksimum</value>
+  </data>
+  <data name="Filters_Median" xml:space="preserve">
+    <value>Median</value>
+  </data>
+  <data name="Filters_Minimum" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="Filters_Mosaic" xml:space="preserve">
+    <value>Mosaik</value>
+  </data>
+  <data name="Filters_MotionBlur" xml:space="preserve">
+    <value>Bevægelsessløring</value>
+  </data>
+  <data name="Filters_Offset" xml:space="preserve">
+    <value>Forskydning</value>
+  </data>
+  <data name="Filters_OilPaint" xml:space="preserve">
+    <value>Oliemaling</value>
+  </data>
+  <data name="Filters_OptionGaussian" xml:space="preserve">
+    <value>Gaussisk</value>
+  </data>
+  <data name="Filters_OptionLarge" xml:space="preserve">
+    <value>Stor</value>
+  </data>
+  <data name="Filters_OptionMedium" xml:space="preserve">
+    <value>Mellem</value>
+  </data>
+  <data name="Filters_OptionOff" xml:space="preserve">
+    <value>Fra</value>
+  </data>
+  <data name="Filters_OptionOn" xml:space="preserve">
+    <value>Til</value>
+  </data>
+  <data name="Filters_OptionPolarToRectangular" xml:space="preserve">
+    <value>Polær til rektangulær</value>
+  </data>
+  <data name="Filters_OptionRectangularToPolar" xml:space="preserve">
+    <value>Rektangulær til polær</value>
+  </data>
+  <data name="Filters_OptionSmall" xml:space="preserve">
+    <value>Lille</value>
+  </data>
+  <data name="Filters_OptionSpin" xml:space="preserve">
+    <value>Drej</value>
+  </data>
+  <data name="Filters_OptionUniform" xml:space="preserve">
+    <value>Ensartet</value>
+  </data>
+  <data name="Filters_OptionZoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="Filters_ParamAmount" xml:space="preserve">
+    <value>Mængde</value>
+  </data>
+  <data name="Filters_ParamAmplitude" xml:space="preserve">
+    <value>Amplitude</value>
+  </data>
+  <data name="Filters_ParamAngle" xml:space="preserve">
+    <value>Vinkel</value>
+  </data>
+  <data name="Filters_ParamCellSize" xml:space="preserve">
+    <value>Cellestørrelse</value>
+  </data>
+  <data name="Filters_ParamDistance" xml:space="preserve">
+    <value>Afstand</value>
+  </data>
+  <data name="Filters_ParamDistribution" xml:space="preserve">
+    <value>Fordeling</value>
+  </data>
+  <data name="Filters_ParamHeight" xml:space="preserve">
+    <value>Højde</value>
+  </data>
+  <data name="Filters_ParamHorizontal" xml:space="preserve">
+    <value>Vandret</value>
+  </data>
+  <data name="Filters_ParamLevels" xml:space="preserve">
+    <value>Niveauer</value>
+  </data>
+  <data name="Filters_ParamMaximumOffsetPercent" xml:space="preserve">
+    <value>Maksimal forskydning %</value>
+  </data>
+  <data name="Filters_ParamMethod" xml:space="preserve">
+    <value>Metode</value>
+  </data>
+  <data name="Filters_ParamMode" xml:space="preserve">
+    <value>Tilstand</value>
+  </data>
+  <data name="Filters_ParamMonochromatic" xml:space="preserve">
+    <value>Monokromatisk</value>
+  </data>
+  <data name="Filters_ParamNumberOfTiles" xml:space="preserve">
+    <value>Antal felter</value>
+  </data>
+  <data name="Filters_ParamPreserveDetails" xml:space="preserve">
+    <value>Bevar detaljer</value>
+  </data>
+  <data name="Filters_ParamRadius" xml:space="preserve">
+    <value>Radius</value>
+  </data>
+  <data name="Filters_ParamReduceNoise" xml:space="preserve">
+    <value>Reducer støj</value>
+  </data>
+  <data name="Filters_ParamSize" xml:space="preserve">
+    <value>Størrelse</value>
+  </data>
+  <data name="Filters_ParamStrength" xml:space="preserve">
+    <value>Styrke</value>
+  </data>
+  <data name="Filters_ParamThreshold" xml:space="preserve">
+    <value>Tærskelværdi</value>
+  </data>
+  <data name="Filters_ParamVariance" xml:space="preserve">
+    <value>Varians</value>
+  </data>
+  <data name="Filters_ParamVertical" xml:space="preserve">
+    <value>Lodret</value>
+  </data>
+  <data name="Filters_ParamWavelength" xml:space="preserve">
+    <value>Bølgelængde</value>
+  </data>
+  <data name="Filters_Pinch" xml:space="preserve">
+    <value>Knib</value>
+  </data>
+  <data name="Filters_Pointillize" xml:space="preserve">
+    <value>Pointilliser</value>
+  </data>
+  <data name="Filters_PolarCoordinates" xml:space="preserve">
+    <value>Polære koordinater</value>
+  </data>
+  <data name="Filters_RadialBlur" xml:space="preserve">
+    <value>Radial sløring</value>
+  </data>
+  <data name="Filters_ReduceNoise" xml:space="preserve">
+    <value>Reducer støj</value>
+  </data>
+  <data name="Filters_Ripple" xml:space="preserve">
+    <value>Bølge</value>
+  </data>
+  <data name="Filters_Sharpen" xml:space="preserve">
+    <value>Skarphed</value>
+  </data>
+  <data name="Filters_SharpenEdges" xml:space="preserve">
+    <value>Gør kanter skarpere</value>
+  </data>
+  <data name="Filters_SharpenMore" xml:space="preserve">
+    <value>Gør mere skarp</value>
+  </data>
+  <data name="Filters_SmartSharpen" xml:space="preserve">
+    <value>Smart skarphed</value>
+  </data>
+  <data name="Filters_Solarize" xml:space="preserve">
+    <value>Solarisering</value>
+  </data>
+  <data name="Filters_Spherize" xml:space="preserve">
+    <value>Kugle</value>
+  </data>
+  <data name="Filters_SurfaceBlur" xml:space="preserve">
+    <value>Overfladesløring</value>
+  </data>
+  <data name="Filters_Tiles" xml:space="preserve">
+    <value>Felter</value>
+  </data>
+  <data name="Filters_Twirl" xml:space="preserve">
+    <value>Virvel</value>
+  </data>
+  <data name="Filters_UnsharpMask" xml:space="preserve">
+    <value>Uskarp maske</value>
+  </data>
+  <data name="Filters_Wave" xml:space="preserve">
+    <value>Våg</value>
+  </data>
+  <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
+    <value>"{0}" kunne ikke åbnes: {1}</value>
+  </data>
+  <data name="ImageIO_FileDoesNotExist" xml:space="preserve">
+    <value>Filen findes ikke.</value>
+  </data>
+  <data name="ImageIO_InvalidProject" xml:space="preserve">
+    <value>"{0}" kunne ikke åbnes, fordi det ikke er et gyldigt ShareX Photo Editor-projekt, eller filen er beskadiget.</value>
+  </data>
+  <data name="ImageIO_ProjectFormat" xml:space="preserve">
+    <value>ShareX Photo Editor-projekt</value>
+  </data>
+  <data name="ImageIO_TiffRequiresWindows" xml:space="preserve">
+    <value>TIFF-eksport kræver Windows.</value>
+  </data>
+  <data name="ImageIO_UnsupportedImage" xml:space="preserve">
+    <value>"{0}" kunne ikke åbnes, fordi det ikke er et understøttet billede, eller filen er beskadiget.</value>
+  </data>
+  <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
+    <value>WebP-kodning mislykkedes.</value>
+  </data>
+  <data name="LayerNames_Background" xml:space="preserve">
+    <value>Baggrund</value>
+  </data>
+  <data name="LayerNames_Copy" xml:space="preserve">
+    <value>{0} kopi</value>
+  </data>
+  <data name="LayerNames_Layer0" xml:space="preserve">
+    <value>Lag 0</value>
+  </data>
+  <data name="PathNames_WorkPath" xml:space="preserve">
+    <value>Arbejdssti</value>
+  </data>
+  <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
+    <value>Projektet blev oprettet med en nyere version af fotoeditoren.</value>
+  </data>
+</root>

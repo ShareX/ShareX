@@ -99,7 +99,7 @@ public static class SmartFilterFactory
             Foreground = context.Foreground,
             Background = context.Background
         };
-        return new SmartFilter(filter.Name, filter.Key(values) + "#" + index, FilterFunc(filter, values, context)) { Recipe = recipe };
+        return new SmartFilter(filter.DisplayName, filter.Key(values) + "#" + index, FilterFunc(filter, values, context)) { Recipe = recipe };
     }
 
     public static SmartFilter CreateAdjustment(string name, AdjustmentSettings settings, int index)

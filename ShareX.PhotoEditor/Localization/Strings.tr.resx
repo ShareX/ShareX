@@ -1,0 +1,1575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EditorCommands_90Clockwise" xml:space="preserve">
+    <value>Saat yönünde 90°</value>
+  </data>
+  <data name="EditorCommands_90CounterClockwise" xml:space="preserve">
+    <value>Saat yönünün tersine 90°</value>
+  </data>
+  <data name="EditorCommands_ActionApplyAdjustment" xml:space="preserve">
+    <value>Ayarlama uygulama</value>
+  </data>
+  <data name="EditorCommands_ActionChangeCanvasSize" xml:space="preserve">
+    <value>Tuval boyutunu değiştirme</value>
+  </data>
+  <data name="EditorCommands_ActionClear" xml:space="preserve">
+    <value>Temizleme</value>
+  </data>
+  <data name="EditorCommands_ActionCropImage" xml:space="preserve">
+    <value>Görüntüyü kırpma</value>
+  </data>
+  <data name="EditorCommands_ActionEqualize" xml:space="preserve">
+    <value>Eşitleme</value>
+  </data>
+  <data name="EditorCommands_ActionFill" xml:space="preserve">
+    <value>Doldurma</value>
+  </data>
+  <data name="EditorCommands_ActionFillPath" xml:space="preserve">
+    <value>Yolu doldurma</value>
+  </data>
+  <data name="EditorCommands_ActionFlipCanvas" xml:space="preserve">
+    <value>Tuvali çevirme</value>
+  </data>
+  <data name="EditorCommands_ActionResizeImage" xml:space="preserve">
+    <value>Görüntüyü yeniden boyutlandırma</value>
+  </data>
+  <data name="EditorCommands_ActionRevealAll" xml:space="preserve">
+    <value>Tümünü gösterme</value>
+  </data>
+  <data name="EditorCommands_ActionRotateCanvas" xml:space="preserve">
+    <value>Tuvali döndürme</value>
+  </data>
+  <data name="EditorCommands_ActionRunFilter" xml:space="preserve">
+    <value>Filtre uygulama</value>
+  </data>
+  <data name="EditorCommands_ActionStroke" xml:space="preserve">
+    <value>Kontur uygulama</value>
+  </data>
+  <data name="EditorCommands_ActionStrokePath" xml:space="preserve">
+    <value>Yola kontur uygulama</value>
+  </data>
+  <data name="EditorCommands_ActionTrimImage" xml:space="preserve">
+    <value>Görüntü kenarlarını kırpma</value>
+  </data>
+  <data name="EditorCommands_AddLayerMask" xml:space="preserve">
+    <value>Katman maskesi ekle</value>
+  </data>
+  <data name="EditorCommands_AddVectorMask" xml:space="preserve">
+    <value>Vektör maskesi ekle</value>
+  </data>
+  <data name="EditorCommands_Adjustments" xml:space="preserve">
+    <value>Ayarlamalar</value>
+  </data>
+  <data name="EditorCommands_Again" xml:space="preserve">
+    <value>Yeniden</value>
+  </data>
+  <data name="EditorCommands_Align" xml:space="preserve">
+    <value>Hizala</value>
+  </data>
+  <data name="EditorCommands_All" xml:space="preserve">
+    <value>Tümü</value>
+  </data>
+  <data name="EditorCommands_AllLayers" xml:space="preserve">
+    <value>Tüm katmanlar</value>
+  </data>
+  <data name="EditorCommands_AlphaNumber" xml:space="preserve">
+    <value>Alfa {0}</value>
+  </data>
+  <data name="EditorCommands_AngleDegreesColon" xml:space="preserve">
+    <value>Açı (°):</value>
+  </data>
+  <data name="EditorCommands_AntiAlias" xml:space="preserve">
+    <value>Kenar yumuşatma</value>
+  </data>
+  <data name="EditorCommands_Apply" xml:space="preserve">
+    <value>Uygula</value>
+  </data>
+  <data name="EditorCommands_ApplyLayerMask" xml:space="preserve">
+    <value>Katman maskesini uygula</value>
+  </data>
+  <data name="EditorCommands_ArbitraryEllipsis" xml:space="preserve">
+    <value>İsteğe bağlı...</value>
+  </data>
+  <data name="EditorCommands_Arrange" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="EditorCommands_ArrangeLayer" xml:space="preserve">
+    <value>Katmanı düzenle</value>
+  </data>
+  <data name="EditorCommands_AutoColor" xml:space="preserve">
+    <value>Otomatik renk</value>
+  </data>
+  <data name="EditorCommands_AutoContrast" xml:space="preserve">
+    <value>Otomatik kontrast</value>
+  </data>
+  <data name="EditorCommands_AutoTone" xml:space="preserve">
+    <value>Otomatik ton</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveMask" xml:space="preserve">
+    <value>Arka plan katmanında maske olamaz. Önce onu bir katmana dönüştürün.</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveStyles" xml:space="preserve">
+    <value>Arka plan katmanında katman stilleri olamaz. Önce onu bir katmana dönüştürün (Katman &gt; Yeni &gt; Arka plandan katman).</value>
+  </data>
+  <data name="EditorCommands_BackgroundFromLayer" xml:space="preserve">
+    <value>Katmandan arka plan</value>
+  </data>
+  <data name="EditorCommands_BasedOnColon" xml:space="preserve">
+    <value>Temel:</value>
+  </data>
+  <data name="EditorCommands_Blue" xml:space="preserve">
+    <value>Mavi</value>
+  </data>
+  <data name="EditorCommands_Blues" xml:space="preserve">
+    <value>Maviler</value>
+  </data>
+  <data name="EditorCommands_Border" xml:space="preserve">
+    <value>Kenarlık</value>
+  </data>
+  <data name="EditorCommands_BorderEllipsis" xml:space="preserve">
+    <value>Kenarlık...</value>
+  </data>
+  <data name="EditorCommands_BottomEdges" xml:space="preserve">
+    <value>Alt kenarlar</value>
+  </data>
+  <data name="EditorCommands_BottomRightPixelColor" xml:space="preserve">
+    <value>Sağ alt pikselin rengi</value>
+  </data>
+  <data name="EditorCommands_BringForward" xml:space="preserve">
+    <value>Öne getir</value>
+  </data>
+  <data name="EditorCommands_BringToFront" xml:space="preserve">
+    <value>En öne getir</value>
+  </data>
+  <data name="EditorCommands_BrushName" xml:space="preserve">
+    <value>Fırça adı</value>
+  </data>
+  <data name="EditorCommands_Brushes" xml:space="preserve">
+    <value>Fırçalar</value>
+  </data>
+  <data name="EditorCommands_CannotActionLayerLocked" xml:space="preserve">
+    <value>{0} işlemi yapılamadı çünkü katman kilitli.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNoActiveLayer" xml:space="preserve">
+    <value>{0} işlemi yapılamadı çünkü etkin katman yok.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNotPixelLayer" xml:space="preserve">
+    <value>{0} işlemi yapılamadı çünkü etkin katman bir piksel katmanı değil. Önce rasterleştirin (Katman &gt; Rasterleştir).</value>
+  </data>
+  <data name="EditorCommands_CannotConvertEmptyToSmartObject" xml:space="preserve">
+    <value>Katman boş olduğu için akıllı nesneye dönüştürülemedi.</value>
+  </data>
+  <data name="EditorCommands_CannotCutLockedLayer" xml:space="preserve">
+    <value>Katman kilitli olduğu için kesilemedi.</value>
+  </data>
+  <data name="EditorCommands_CannotFade" xml:space="preserve">
+    <value>Son işlem soldurulamaz.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNoLayerBelow" xml:space="preserve">
+    <value>Altta katman olmadığı için aşağı birleştirilemedi.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNotPixelLayer" xml:space="preserve">
+    <value>Alttaki katman bir piksel katmanı olmadığı için aşağı birleştirilemedi.</value>
+  </data>
+  <data name="EditorCommands_CanvasSize" xml:space="preserve">
+    <value>Tuval boyutu</value>
+  </data>
+  <data name="EditorCommands_CanvasSizeEllipsis" xml:space="preserve">
+    <value>Tuval boyutu...</value>
+  </data>
+  <data name="EditorCommands_Center" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="EditorCommands_ChangeTextOrientation" xml:space="preserve">
+    <value>Metin yönünü değiştir</value>
+  </data>
+  <data name="EditorCommands_Channel" xml:space="preserve">
+    <value>Kanal</value>
+  </data>
+  <data name="EditorCommands_Channels" xml:space="preserve">
+    <value>Kanallar</value>
+  </data>
+  <data name="EditorCommands_Clear" xml:space="preserve">
+    <value>Temizle</value>
+  </data>
+  <data name="EditorCommands_ClearGuides" xml:space="preserve">
+    <value>Kılavuzları temizle</value>
+  </data>
+  <data name="EditorCommands_ClearLayerStyle" xml:space="preserve">
+    <value>Katman stilini temizle</value>
+  </data>
+  <data name="EditorCommands_ClearRecentFileList" xml:space="preserve">
+    <value>Son dosyalar listesini temizle</value>
+  </data>
+  <data name="EditorCommands_Clipboard" xml:space="preserve">
+    <value>Pano</value>
+  </data>
+  <data name="EditorCommands_ClipboardHasNoImage" xml:space="preserve">
+    <value>Panoda görüntü yok.</value>
+  </data>
+  <data name="EditorCommands_Clockwise" xml:space="preserve">
+    <value>Saat yönünde</value>
+  </data>
+  <data name="EditorCommands_Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="EditorCommands_CloseAll" xml:space="preserve">
+    <value>Tümünü kapat</value>
+  </data>
+  <data name="EditorCommands_Color" xml:space="preserve">
+    <value>Renk</value>
+  </data>
+  <data name="EditorCommands_ColorColon" xml:space="preserve">
+    <value>Renk:</value>
+  </data>
+  <data name="EditorCommands_ColorFill" xml:space="preserve">
+    <value>Renk dolgusu</value>
+  </data>
+  <data name="EditorCommands_ColorRange" xml:space="preserve">
+    <value>Renk aralığı</value>
+  </data>
+  <data name="EditorCommands_ColorRangeEllipsis" xml:space="preserve">
+    <value>Renk aralığı...</value>
+  </data>
+  <data name="EditorCommands_ColorRangeTip" xml:space="preserve">
+    <value>İpucu: önce damlalıkla bir renk örnekleyin; ön plan rengi olarak kullanılır.</value>
+  </data>
+  <data name="EditorCommands_ColumnsColon" xml:space="preserve">
+    <value>Sütunlar:</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFill" xml:space="preserve">
+    <value>İçeriğe duyarlı dolgu</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFillEllipsis" xml:space="preserve">
+    <value>İçeriğe duyarlı dolgu...</value>
+  </data>
+  <data name="EditorCommands_Contract" xml:space="preserve">
+    <value>Daralt</value>
+  </data>
+  <data name="EditorCommands_ContractByPxColon" xml:space="preserve">
+    <value>Daraltma miktarı (px):</value>
+  </data>
+  <data name="EditorCommands_ContractEllipsis" xml:space="preserve">
+    <value>Daralt...</value>
+  </data>
+  <data name="EditorCommands_ContrastColon" xml:space="preserve">
+    <value>Kontrast:</value>
+  </data>
+  <data name="EditorCommands_ConvertForSmartFilters" xml:space="preserve">
+    <value>Akıllı filtreler için dönüştür</value>
+  </data>
+  <data name="EditorCommands_ConvertToShape" xml:space="preserve">
+    <value>Şekle dönüştür</value>
+  </data>
+  <data name="EditorCommands_ConvertToSmartObject" xml:space="preserve">
+    <value>Akıllı nesneye dönüştür</value>
+  </data>
+  <data name="EditorCommands_Copy" xml:space="preserve">
+    <value>Kopyala</value>
+  </data>
+  <data name="EditorCommands_CopyLayerStyle" xml:space="preserve">
+    <value>Katman stilini kopyala</value>
+  </data>
+  <data name="EditorCommands_CopyMerged" xml:space="preserve">
+    <value>Birleştirilmiş kopyala</value>
+  </data>
+  <data name="EditorCommands_CouldNotActionReason" xml:space="preserve">
+    <value>{0} işlemi yapılamadı: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotCreateDocument" xml:space="preserve">
+    <value>Belge oluşturulamadı: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExport" xml:space="preserve">
+    <value>Dışa aktarılamadı: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExportLayers" xml:space="preserve">
+    <value>Katmanlar dışa aktarılamadı: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotPlaceUnsupported" xml:space="preserve">
+    <value>"{0}" yerleştirilemedi çünkü dosya biçimi desteklenmiyor.</value>
+  </data>
+  <data name="EditorCommands_CouldNotRevert" xml:space="preserve">
+    <value>Geri döndürülemedi: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSave" xml:space="preserve">
+    <value>Kaydedilemedi: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveFile" xml:space="preserve">
+    <value>"{0}" kaydedilemedi: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveSlices" xml:space="preserve">
+    <value>Dilimler kaydedilemedi: {0}</value>
+  </data>
+  <data name="EditorCommands_Count" xml:space="preserve">
+    <value>Sayım</value>
+  </data>
+  <data name="EditorCommands_CounterClockwise" xml:space="preserve">
+    <value>Saat yönünün tersine</value>
+  </data>
+  <data name="EditorCommands_CreateClippingMask" xml:space="preserve">
+    <value>Kırpma maskesi oluştur</value>
+  </data>
+  <data name="EditorCommands_CreateWorkPath" xml:space="preserve">
+    <value>Çalışma yolu oluştur</value>
+  </data>
+  <data name="EditorCommands_Crop" xml:space="preserve">
+    <value>Kırp</value>
+  </data>
+  <data name="EditorCommands_Cut" xml:space="preserve">
+    <value>Kes</value>
+  </data>
+  <data name="EditorCommands_CycleScreenMode" xml:space="preserve">
+    <value>Ekran modunu değiştir</value>
+  </data>
+  <data name="EditorCommands_DecreaseFontSize" xml:space="preserve">
+    <value>Yazı tipi boyutunu küçült</value>
+  </data>
+  <data name="EditorCommands_DefaultColors" xml:space="preserve">
+    <value>Varsayılan ön plan ve arka plan renkleri</value>
+  </data>
+  <data name="EditorCommands_DefineBrushPresetEllipsis" xml:space="preserve">
+    <value>Fırça ön ayarı tanımla...</value>
+  </data>
+  <data name="EditorCommands_DefineCustomShapeEllipsis" xml:space="preserve">
+    <value>Özel şekil tanımla...</value>
+  </data>
+  <data name="EditorCommands_DefinePatternEllipsis" xml:space="preserve">
+    <value>Desen tanımla...</value>
+  </data>
+  <data name="EditorCommands_Delete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="EditorCommands_DeleteChannel" xml:space="preserve">
+    <value>Kanalı sil</value>
+  </data>
+  <data name="EditorCommands_DeleteLayer" xml:space="preserve">
+    <value>Katmanı sil</value>
+  </data>
+  <data name="EditorCommands_DeleteLayerMask" xml:space="preserve">
+    <value>Katman maskesini sil</value>
+  </data>
+  <data name="EditorCommands_DeleteLayers" xml:space="preserve">
+    <value>Katmanları sil</value>
+  </data>
+  <data name="EditorCommands_DeletePath" xml:space="preserve">
+    <value>Yolu sil</value>
+  </data>
+  <data name="EditorCommands_Deselect" xml:space="preserve">
+    <value>Seçimi kaldır</value>
+  </data>
+  <data name="EditorCommands_DirectionColon" xml:space="preserve">
+    <value>Yön:</value>
+  </data>
+  <data name="EditorCommands_Disable" xml:space="preserve">
+    <value>Devre dışı bırak</value>
+  </data>
+  <data name="EditorCommands_DisableLayerMask" xml:space="preserve">
+    <value>Katman maskesini devre dışı bırak</value>
+  </data>
+  <data name="EditorCommands_Distort" xml:space="preserve">
+    <value>Bozulma</value>
+  </data>
+  <data name="EditorCommands_DocumentBounds" xml:space="preserve">
+    <value>Belge sınırları</value>
+  </data>
+  <data name="EditorCommands_DuplicateEllipsis" xml:space="preserve">
+    <value>Çoğalt...</value>
+  </data>
+  <data name="EditorCommands_DuplicateImage" xml:space="preserve">
+    <value>Görüntüyü çoğalt</value>
+  </data>
+  <data name="EditorCommands_DuplicateLayer" xml:space="preserve">
+    <value>Katmanı çoğalt</value>
+  </data>
+  <data name="EditorCommands_EditInQuickMaskMode" xml:space="preserve">
+    <value>Hızlı maske modunda düzenle</value>
+  </data>
+  <data name="EditorCommands_EditMask" xml:space="preserve">
+    <value>Maskeyi düzenle</value>
+  </data>
+  <data name="EditorCommands_EffectNotAvailable" xml:space="preserve">
+    <value>Bu efekt kullanılamıyor.</value>
+  </data>
+  <data name="EditorCommands_EffectsLibrary" xml:space="preserve">
+    <value>Efekt kitaplığı</value>
+  </data>
+  <data name="EditorCommands_EnableLayerMask" xml:space="preserve">
+    <value>Katman maskesini etkinleştir</value>
+  </data>
+  <data name="EditorCommands_EnterQuickMask" xml:space="preserve">
+    <value>Hızlı maskeye gir</value>
+  </data>
+  <data name="EditorCommands_Equalize" xml:space="preserve">
+    <value>Eşitle</value>
+  </data>
+  <data name="EditorCommands_Exit" xml:space="preserve">
+    <value>Çıkış</value>
+  </data>
+  <data name="EditorCommands_ExitQuickMask" xml:space="preserve">
+    <value>Hızlı maskeden çık</value>
+  </data>
+  <data name="EditorCommands_Expand" xml:space="preserve">
+    <value>Genişlet</value>
+  </data>
+  <data name="EditorCommands_ExpandByPxColon" xml:space="preserve">
+    <value>Genişletme miktarı (px):</value>
+  </data>
+  <data name="EditorCommands_ExpandEllipsis" xml:space="preserve">
+    <value>Genişlet...</value>
+  </data>
+  <data name="EditorCommands_Export" xml:space="preserve">
+    <value>Dışa aktar</value>
+  </data>
+  <data name="EditorCommands_ExportAs" xml:space="preserve">
+    <value>Farklı dışa aktar</value>
+  </data>
+  <data name="EditorCommands_ExportAsEllipsis" xml:space="preserve">
+    <value>Farklı dışa aktar...</value>
+  </data>
+  <data name="EditorCommands_ExportedLayersTo" xml:space="preserve">
+    <value>{0} katman {1} konumuna aktarıldı</value>
+  </data>
+  <data name="EditorCommands_ExportedPath" xml:space="preserve">
+    <value>{0} dışa aktarıldı</value>
+  </data>
+  <data name="EditorCommands_Extras" xml:space="preserve">
+    <value>Ekstralar</value>
+  </data>
+  <data name="EditorCommands_Fade" xml:space="preserve">
+    <value>Soldur</value>
+  </data>
+  <data name="EditorCommands_FadeEllipsis" xml:space="preserve">
+    <value>Soldur...</value>
+  </data>
+  <data name="EditorCommands_FadeName" xml:space="preserve">
+    <value>Soldur: {0}</value>
+  </data>
+  <data name="EditorCommands_Feather" xml:space="preserve">
+    <value>Yumuşak kenar</value>
+  </data>
+  <data name="EditorCommands_FeatherColon" xml:space="preserve">
+    <value>Yumuşak kenar:</value>
+  </data>
+  <data name="EditorCommands_FeatherEllipsis" xml:space="preserve">
+    <value>Yumuşak kenar...</value>
+  </data>
+  <data name="EditorCommands_FeatherRadiusPxColon" xml:space="preserve">
+    <value>Yumuşak kenar yarıçapı (px):</value>
+  </data>
+  <data name="EditorCommands_Fill" xml:space="preserve">
+    <value>Doldur</value>
+  </data>
+  <data name="EditorCommands_FillEllipsis" xml:space="preserve">
+    <value>Doldur...</value>
+  </data>
+  <data name="EditorCommands_FillPath" xml:space="preserve">
+    <value>Yolu doldur</value>
+  </data>
+  <data name="EditorCommands_FillScreen" xml:space="preserve">
+    <value>Ekranı doldur</value>
+  </data>
+  <data name="EditorCommands_FillWithBackground" xml:space="preserve">
+    <value>Arka plan rengiyle doldur</value>
+  </data>
+  <data name="EditorCommands_FillWithForeground" xml:space="preserve">
+    <value>Ön plan rengiyle doldur</value>
+  </data>
+  <data name="EditorCommands_FitOnScreen" xml:space="preserve">
+    <value>Ekrana sığdır</value>
+  </data>
+  <data name="EditorCommands_Flatten" xml:space="preserve">
+    <value>Düzleştir</value>
+  </data>
+  <data name="EditorCommands_FlattenImage" xml:space="preserve">
+    <value>Görüntüyü düzleştir</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasHorizontal" xml:space="preserve">
+    <value>Tuvali yatay çevir</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasVertical" xml:space="preserve">
+    <value>Tuvali dikey çevir</value>
+  </data>
+  <data name="EditorCommands_FlipHorizontal" xml:space="preserve">
+    <value>Yatay çevir</value>
+  </data>
+  <data name="EditorCommands_FlipVertical" xml:space="preserve">
+    <value>Dikey çevir</value>
+  </data>
+  <data name="EditorCommands_FormatDoesNotSupportLayers" xml:space="preserve">
+    <value>"{0}" katmanları desteklemiyor. Bu biçimde düzleştirilmiş bir kopya mı kaydedilsin, yoksa katmanları korumak için ShareX Photo Editor projesi olarak mı kaydedilsin?</value>
+  </data>
+  <data name="EditorCommands_FreeTransform" xml:space="preserve">
+    <value>Serbest dönüştürme</value>
+  </data>
+  <data name="EditorCommands_FromTransparency" xml:space="preserve">
+    <value>Saydamlıktan</value>
+  </data>
+  <data name="EditorCommands_FuzzinessColon" xml:space="preserve">
+    <value>Bulanıklık:</value>
+  </data>
+  <data name="EditorCommands_GradientEllipsis" xml:space="preserve">
+    <value>Degrade...</value>
+  </data>
+  <data name="EditorCommands_GradientFill" xml:space="preserve">
+    <value>Degrade dolgusu</value>
+  </data>
+  <data name="EditorCommands_Grayscale" xml:space="preserve">
+    <value>Gri tonlama</value>
+  </data>
+  <data name="EditorCommands_Green" xml:space="preserve">
+    <value>Yeşil</value>
+  </data>
+  <data name="EditorCommands_Greens" xml:space="preserve">
+    <value>Yeşiller</value>
+  </data>
+  <data name="EditorCommands_Grid" xml:space="preserve">
+    <value>Izgara</value>
+  </data>
+  <data name="EditorCommands_GroupLayers" xml:space="preserve">
+    <value>Katmanları grupla</value>
+  </data>
+  <data name="EditorCommands_GroupNumber" xml:space="preserve">
+    <value>Grup {0}</value>
+  </data>
+  <data name="EditorCommands_Grow" xml:space="preserve">
+    <value>Büyüt</value>
+  </data>
+  <data name="EditorCommands_Guides" xml:space="preserve">
+    <value>Kılavuzlar</value>
+  </data>
+  <data name="EditorCommands_GutterPxColon" xml:space="preserve">
+    <value>Oluk (px):</value>
+  </data>
+  <data name="EditorCommands_HeightPercentColon" xml:space="preserve">
+    <value>Yükseklik (%):</value>
+  </data>
+  <data name="EditorCommands_HideAll" xml:space="preserve">
+    <value>Tümünü gizle</value>
+  </data>
+  <data name="EditorCommands_HideLayers" xml:space="preserve">
+    <value>Katmanları gizle</value>
+  </data>
+  <data name="EditorCommands_HideSelection" xml:space="preserve">
+    <value>Seçimi gizle</value>
+  </data>
+  <data name="EditorCommands_Highlights" xml:space="preserve">
+    <value>Vurgular</value>
+  </data>
+  <data name="EditorCommands_History" xml:space="preserve">
+    <value>Geçmiş</value>
+  </data>
+  <data name="EditorCommands_Horizontal" xml:space="preserve">
+    <value>Yatay</value>
+  </data>
+  <data name="EditorCommands_HorizontalCenters" xml:space="preserve">
+    <value>Yatay merkezler</value>
+  </data>
+  <data name="EditorCommands_ImageOptions" xml:space="preserve">
+    <value>Görüntü seçenekleri</value>
+  </data>
+  <data name="EditorCommands_ImageRotation" xml:space="preserve">
+    <value>Görüntü döndürme</value>
+  </data>
+  <data name="EditorCommands_ImageSize" xml:space="preserve">
+    <value>Görüntü boyutu</value>
+  </data>
+  <data name="EditorCommands_ImageSizeEllipsis" xml:space="preserve">
+    <value>Görüntü boyutu...</value>
+  </data>
+  <data name="EditorCommands_IncreaseFontSize" xml:space="preserve">
+    <value>Yazı tipi boyutunu büyüt</value>
+  </data>
+  <data name="EditorCommands_Info" xml:space="preserve">
+    <value>Bilgi</value>
+  </data>
+  <data name="EditorCommands_Inside" xml:space="preserve">
+    <value>İçeride</value>
+  </data>
+  <data name="EditorCommands_Inverse" xml:space="preserve">
+    <value>Ters çevir</value>
+  </data>
+  <data name="EditorCommands_KeyboardShortcutsEllipsis" xml:space="preserve">
+    <value>Klavye kısayolları...</value>
+  </data>
+  <data name="EditorCommands_LastFilter" xml:space="preserve">
+    <value>Son filtre</value>
+  </data>
+  <data name="EditorCommands_LayerFromBackground" xml:space="preserve">
+    <value>Arka plandan katman</value>
+  </data>
+  <data name="EditorCommands_LayerMask" xml:space="preserve">
+    <value>Katman maskesi</value>
+  </data>
+  <data name="EditorCommands_LayerNumber" xml:space="preserve">
+    <value>Katman {0}</value>
+  </data>
+  <data name="EditorCommands_LayerProperties" xml:space="preserve">
+    <value>Katman özellikleri</value>
+  </data>
+  <data name="EditorCommands_LayerStyle" xml:space="preserve">
+    <value>Katman stili</value>
+  </data>
+  <data name="EditorCommands_LayerStyleEllipsis" xml:space="preserve">
+    <value>Katman stili...</value>
+  </data>
+  <data name="EditorCommands_LayerViaCopy" xml:space="preserve">
+    <value>Kopyalayarak katman</value>
+  </data>
+  <data name="EditorCommands_LayerViaCut" xml:space="preserve">
+    <value>Keserek katman</value>
+  </data>
+  <data name="EditorCommands_Layers" xml:space="preserve">
+    <value>Katmanlar</value>
+  </data>
+  <data name="EditorCommands_LayersToFiles" xml:space="preserve">
+    <value>Katmanları dosyalara</value>
+  </data>
+  <data name="EditorCommands_LayersToFilesEllipsis" xml:space="preserve">
+    <value>Katmanları dosyalara...</value>
+  </data>
+  <data name="EditorCommands_LeftEdges" xml:space="preserve">
+    <value>Sol kenarlar</value>
+  </data>
+  <data name="EditorCommands_LinkLayers" xml:space="preserve">
+    <value>Katmanları bağla</value>
+  </data>
+  <data name="EditorCommands_LinkUnlinkLayers" xml:space="preserve">
+    <value>Katmanları bağla/bağlantıyı kaldır</value>
+  </data>
+  <data name="EditorCommands_LoadSelection" xml:space="preserve">
+    <value>Seçimi yükle</value>
+  </data>
+  <data name="EditorCommands_LoadSelectionEllipsis" xml:space="preserve">
+    <value>Seçimi yükle...</value>
+  </data>
+  <data name="EditorCommands_LocationColon" xml:space="preserve">
+    <value>Konum:</value>
+  </data>
+  <data name="EditorCommands_LockAll" xml:space="preserve">
+    <value>Tümünü kilitle</value>
+  </data>
+  <data name="EditorCommands_LockGuides" xml:space="preserve">
+    <value>Kılavuzları kilitle</value>
+  </data>
+  <data name="EditorCommands_LockLayer" xml:space="preserve">
+    <value>Katmanı kilitle</value>
+  </data>
+  <data name="EditorCommands_MakeSelection" xml:space="preserve">
+    <value>Seçim oluştur</value>
+  </data>
+  <data name="EditorCommands_MakeSelectionFirst" xml:space="preserve">
+    <value>Önce bir seçim yapın.</value>
+  </data>
+  <data name="EditorCommands_MakeWorkPath" xml:space="preserve">
+    <value>Çalışma yolu oluştur</value>
+  </data>
+  <data name="EditorCommands_MarginPxColon" xml:space="preserve">
+    <value>Kenar boşluğu (px):</value>
+  </data>
+  <data name="EditorCommands_MenuEdit" xml:space="preserve">
+    <value>_Düzen</value>
+  </data>
+  <data name="EditorCommands_MenuFile" xml:space="preserve">
+    <value>_Dosya</value>
+  </data>
+  <data name="EditorCommands_MenuFilter" xml:space="preserve">
+    <value>_Filtre</value>
+  </data>
+  <data name="EditorCommands_MenuImage" xml:space="preserve">
+    <value>_Görüntü</value>
+  </data>
+  <data name="EditorCommands_MenuLayer" xml:space="preserve">
+    <value>_Katman</value>
+  </data>
+  <data name="EditorCommands_MenuSelect" xml:space="preserve">
+    <value>_Seç</value>
+  </data>
+  <data name="EditorCommands_MenuType" xml:space="preserve">
+    <value>_Metin</value>
+  </data>
+  <data name="EditorCommands_MenuView" xml:space="preserve">
+    <value>Gö_rünüm</value>
+  </data>
+  <data name="EditorCommands_MenuWindow" xml:space="preserve">
+    <value>_Pencere</value>
+  </data>
+  <data name="EditorCommands_MergeDown" xml:space="preserve">
+    <value>Aşağı birleştir</value>
+  </data>
+  <data name="EditorCommands_MergeGroup" xml:space="preserve">
+    <value>Grubu birleştir</value>
+  </data>
+  <data name="EditorCommands_MergeVisible" xml:space="preserve">
+    <value>Görünenleri birleştir</value>
+  </data>
+  <data name="EditorCommands_Merged" xml:space="preserve">
+    <value>Birleştirilmiş</value>
+  </data>
+  <data name="EditorCommands_Midtones" xml:space="preserve">
+    <value>Orta tonlar</value>
+  </data>
+  <data name="EditorCommands_Mode" xml:space="preserve">
+    <value>Mod</value>
+  </data>
+  <data name="EditorCommands_ModeColon" xml:space="preserve">
+    <value>Mod:</value>
+  </data>
+  <data name="EditorCommands_Modify" xml:space="preserve">
+    <value>Değiştir</value>
+  </data>
+  <data name="EditorCommands_ModifySelectionTitle" xml:space="preserve">
+    <value>Seçim: {0}</value>
+  </data>
+  <data name="EditorCommands_MoveLayer" xml:space="preserve">
+    <value>Katmanı taşı</value>
+  </data>
+  <data name="EditorCommands_NameColon" xml:space="preserve">
+    <value>Ad:</value>
+  </data>
+  <data name="EditorCommands_Navigator" xml:space="preserve">
+    <value>Gezgin</value>
+  </data>
+  <data name="EditorCommands_New" xml:space="preserve">
+    <value>Yeni</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayer" xml:space="preserve">
+    <value>Yeni ayarlama katmanı</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayerHistory" xml:space="preserve">
+    <value>Yeni {0} katmanı</value>
+  </data>
+  <data name="EditorCommands_NewChannel" xml:space="preserve">
+    <value>Yeni kanal</value>
+  </data>
+  <data name="EditorCommands_NewEllipsis" xml:space="preserve">
+    <value>Yeni...</value>
+  </data>
+  <data name="EditorCommands_NewFillLayer" xml:space="preserve">
+    <value>Yeni dolgu katmanı</value>
+  </data>
+  <data name="EditorCommands_NewFromClipboard" xml:space="preserve">
+    <value>Panodan yeni</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Ekran görüntüsünden yeni (tam ekran)</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Ekran görüntüsünden yeni (bölge)...</value>
+  </data>
+  <data name="EditorCommands_NewGroup" xml:space="preserve">
+    <value>Yeni grup</value>
+  </data>
+  <data name="EditorCommands_NewGuide" xml:space="preserve">
+    <value>Yeni kılavuz</value>
+  </data>
+  <data name="EditorCommands_NewGuideEllipsis" xml:space="preserve">
+    <value>Yeni kılavuz...</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayout" xml:space="preserve">
+    <value>Yeni kılavuz düzeni</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayoutEllipsis" xml:space="preserve">
+    <value>Yeni kılavuz düzeni...</value>
+  </data>
+  <data name="EditorCommands_NewGuidesFromShape" xml:space="preserve">
+    <value>Şekilden yeni kılavuzlar</value>
+  </data>
+  <data name="EditorCommands_NewLayer" xml:space="preserve">
+    <value>Yeni katman</value>
+  </data>
+  <data name="EditorCommands_NewLayerEllipsis" xml:space="preserve">
+    <value>Yeni katman...</value>
+  </data>
+  <data name="EditorCommands_NewPath" xml:space="preserve">
+    <value>Yeni yol</value>
+  </data>
+  <data name="EditorCommands_NewShapeLayer" xml:space="preserve">
+    <value>Yeni şekil katmanı</value>
+  </data>
+  <data name="EditorCommands_NextDocument" xml:space="preserve">
+    <value>Sonraki belge</value>
+  </data>
+  <data name="EditorCommands_NoPathForSelection" xml:space="preserve">
+    <value>Seçim olarak yüklenecek yol yok.</value>
+  </data>
+  <data name="EditorCommands_NoSavedSelections" xml:space="preserve">
+    <value>Kaydedilmiş seçim yok (alfa kanalları).</value>
+  </data>
+  <data name="EditorCommands_Notes" xml:space="preserve">
+    <value>Notlar</value>
+  </data>
+  <data name="EditorCommands_OffsetXColon" xml:space="preserve">
+    <value>X kaydırma:</value>
+  </data>
+  <data name="EditorCommands_OffsetYColon" xml:space="preserve">
+    <value>Y kaydırma:</value>
+  </data>
+  <data name="EditorCommands_OpacityColon" xml:space="preserve">
+    <value>Opaklık:</value>
+  </data>
+  <data name="EditorCommands_Open" xml:space="preserve">
+    <value>Aç</value>
+  </data>
+  <data name="EditorCommands_OpenEllipsis" xml:space="preserve">
+    <value>Aç...</value>
+  </data>
+  <data name="EditorCommands_OpenRecent" xml:space="preserve">
+    <value>Son kullanılanları aç</value>
+  </data>
+  <data name="EditorCommands_Options" xml:space="preserve">
+    <value>Seçenekler</value>
+  </data>
+  <data name="EditorCommands_Orientation" xml:space="preserve">
+    <value>Yön</value>
+  </data>
+  <data name="EditorCommands_OrientationColon" xml:space="preserve">
+    <value>Yönlendirme:</value>
+  </data>
+  <data name="EditorCommands_Outside" xml:space="preserve">
+    <value>Dışarıda</value>
+  </data>
+  <data name="EditorCommands_Panels" xml:space="preserve">
+    <value>Paneller</value>
+  </data>
+  <data name="EditorCommands_Paste" xml:space="preserve">
+    <value>Yapıştır</value>
+  </data>
+  <data name="EditorCommands_PasteAsNewDocument" xml:space="preserve">
+    <value>Yeni belge olarak yapıştır</value>
+  </data>
+  <data name="EditorCommands_PasteInPlace" xml:space="preserve">
+    <value>Yerine yapıştır</value>
+  </data>
+  <data name="EditorCommands_PasteInto" xml:space="preserve">
+    <value>İçine yapıştır</value>
+  </data>
+  <data name="EditorCommands_PasteLayerStyle" xml:space="preserve">
+    <value>Katman stilini yapıştır</value>
+  </data>
+  <data name="EditorCommands_PasteSpecial" xml:space="preserve">
+    <value>Özel yapıştır</value>
+  </data>
+  <data name="EditorCommands_Pasted" xml:space="preserve">
+    <value>Yapıştırıldı</value>
+  </data>
+  <data name="EditorCommands_PathNumber" xml:space="preserve">
+    <value>Yol {0}</value>
+  </data>
+  <data name="EditorCommands_Paths" xml:space="preserve">
+    <value>Yollar</value>
+  </data>
+  <data name="EditorCommands_Pattern" xml:space="preserve">
+    <value>Desen</value>
+  </data>
+  <data name="EditorCommands_PatternEllipsis" xml:space="preserve">
+    <value>Desen...</value>
+  </data>
+  <data name="EditorCommands_PatternFill" xml:space="preserve">
+    <value>Desen dolgusu</value>
+  </data>
+  <data name="EditorCommands_PatternName" xml:space="preserve">
+    <value>Desen adı</value>
+  </data>
+  <data name="EditorCommands_PatternNumber" xml:space="preserve">
+    <value>Desen {0}</value>
+  </data>
+  <data name="EditorCommands_Perspective" xml:space="preserve">
+    <value>Perspektif</value>
+  </data>
+  <data name="EditorCommands_PinToScreen" xml:space="preserve">
+    <value>Ekrana sabitle</value>
+  </data>
+  <data name="EditorCommands_PixelGrid" xml:space="preserve">
+    <value>Piksel ızgarası</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbedded" xml:space="preserve">
+    <value>Gömülü yerleştir</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbeddedEllipsis" xml:space="preserve">
+    <value>Gömülü yerleştir...</value>
+  </data>
+  <data name="EditorCommands_PlaceImageIntoFrame" xml:space="preserve">
+    <value>Görüntüyü çerçeveye yerleştir</value>
+  </data>
+  <data name="EditorCommands_PlaceIntoFrame" xml:space="preserve">
+    <value>Çerçeveye yerleştir</value>
+  </data>
+  <data name="EditorCommands_PositionPxColon" xml:space="preserve">
+    <value>Konum (px):</value>
+  </data>
+  <data name="EditorCommands_PreferencesEllipsis" xml:space="preserve">
+    <value>Tercihler...</value>
+  </data>
+  <data name="EditorCommands_Preview" xml:space="preserve">
+    <value>Önizleme</value>
+  </data>
+  <data name="EditorCommands_PreviousDocument" xml:space="preserve">
+    <value>Önceki belge</value>
+  </data>
+  <data name="EditorCommands_PrintEllipsis" xml:space="preserve">
+    <value>Yazdır...</value>
+  </data>
+  <data name="EditorCommands_Properties" xml:space="preserve">
+    <value>Özellikler</value>
+  </data>
+  <data name="EditorCommands_Purge" xml:space="preserve">
+    <value>Boşalt</value>
+  </data>
+  <data name="EditorCommands_PurgeClipboard" xml:space="preserve">
+    <value>Panoyu boşalt</value>
+  </data>
+  <data name="EditorCommands_PurgeHistories" xml:space="preserve">
+    <value>Geçmişleri boşalt</value>
+  </data>
+  <data name="EditorCommands_QualityColon" xml:space="preserve">
+    <value>Kalite:</value>
+  </data>
+  <data name="EditorCommands_QuickExportAsPng" xml:space="preserve">
+    <value>PNG olarak hızlı dışa aktar</value>
+  </data>
+  <data name="EditorCommands_Rasterize" xml:space="preserve">
+    <value>Rasterleştir</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayer" xml:space="preserve">
+    <value>Katmanı rasterleştir</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayerStyle" xml:space="preserve">
+    <value>Katman stilini rasterleştir</value>
+  </data>
+  <data name="EditorCommands_RasterizeTypeLayer" xml:space="preserve">
+    <value>Metin katmanını rasterleştir</value>
+  </data>
+  <data name="EditorCommands_Red" xml:space="preserve">
+    <value>Kırmızı</value>
+  </data>
+  <data name="EditorCommands_Redo" xml:space="preserve">
+    <value>Yeniden yap</value>
+  </data>
+  <data name="EditorCommands_Reds" xml:space="preserve">
+    <value>Kırmızılar</value>
+  </data>
+  <data name="EditorCommands_ReleaseClippingMask" xml:space="preserve">
+    <value>Kırpma maskesini serbest bırak</value>
+  </data>
+  <data name="EditorCommands_RenameLayer" xml:space="preserve">
+    <value>Katmanı yeniden adlandır</value>
+  </data>
+  <data name="EditorCommands_RenameLayerEllipsis" xml:space="preserve">
+    <value>Katmanı yeniden adlandır...</value>
+  </data>
+  <data name="EditorCommands_Reselect" xml:space="preserve">
+    <value>Yeniden seç</value>
+  </data>
+  <data name="EditorCommands_ResetEssentials" xml:space="preserve">
+    <value>Temel öğeleri sıfırla</value>
+  </data>
+  <data name="EditorCommands_ResetViewRotation" xml:space="preserve">
+    <value>Görünüm döndürmeyi sıfırla</value>
+  </data>
+  <data name="EditorCommands_RevealAll" xml:space="preserve">
+    <value>Tümünü göster</value>
+  </data>
+  <data name="EditorCommands_RevealSelection" xml:space="preserve">
+    <value>Seçimi göster</value>
+  </data>
+  <data name="EditorCommands_Revert" xml:space="preserve">
+    <value>Geri döndür</value>
+  </data>
+  <data name="EditorCommands_RightEdges" xml:space="preserve">
+    <value>Sağ kenarlar</value>
+  </data>
+  <data name="EditorCommands_Rotate" xml:space="preserve">
+    <value>Döndür</value>
+  </data>
+  <data name="EditorCommands_Rotate180" xml:space="preserve">
+    <value>180° döndür</value>
+  </data>
+  <data name="EditorCommands_Rotate90Clockwise" xml:space="preserve">
+    <value>Saat yönünde 90° döndür</value>
+  </data>
+  <data name="EditorCommands_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Saat yönünün tersine 90° döndür</value>
+  </data>
+  <data name="EditorCommands_RotateCanvas" xml:space="preserve">
+    <value>Tuvali döndür</value>
+  </data>
+  <data name="EditorCommands_RotateCanvasDegrees" xml:space="preserve">
+    <value>Tuvali {0}° döndür</value>
+  </data>
+  <data name="EditorCommands_RotateDegrees" xml:space="preserve">
+    <value>{0}° döndür</value>
+  </data>
+  <data name="EditorCommands_RowsColon" xml:space="preserve">
+    <value>Satırlar:</value>
+  </data>
+  <data name="EditorCommands_Rulers" xml:space="preserve">
+    <value>Cetveller</value>
+  </data>
+  <data name="EditorCommands_SampleRadiusPxColon" xml:space="preserve">
+    <value>Örnekleme yarıçapı (px):</value>
+  </data>
+  <data name="EditorCommands_SampledBrushNumber" xml:space="preserve">
+    <value>Örneklenmiş fırça {0}</value>
+  </data>
+  <data name="EditorCommands_SampledColorsForeground" xml:space="preserve">
+    <value>Örneklenmiş renkler (ön plan)</value>
+  </data>
+  <data name="EditorCommands_Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="EditorCommands_SaveACopy" xml:space="preserve">
+    <value>Kopyasını kaydet</value>
+  </data>
+  <data name="EditorCommands_SaveACopyEllipsis" xml:space="preserve">
+    <value>Kopyasını kaydet...</value>
+  </data>
+  <data name="EditorCommands_SaveAs" xml:space="preserve">
+    <value>Farklı kaydet</value>
+  </data>
+  <data name="EditorCommands_SaveAsEllipsis" xml:space="preserve">
+    <value>Farklı kaydet...</value>
+  </data>
+  <data name="EditorCommands_SaveAsProject" xml:space="preserve">
+    <value>Proje olarak kaydet</value>
+  </data>
+  <data name="EditorCommands_SaveSelection" xml:space="preserve">
+    <value>Seçimi kaydet</value>
+  </data>
+  <data name="EditorCommands_SaveSelectionEllipsis" xml:space="preserve">
+    <value>Seçimi kaydet...</value>
+  </data>
+  <data name="EditorCommands_SaveSlices" xml:space="preserve">
+    <value>Dilimleri kaydet</value>
+  </data>
+  <data name="EditorCommands_SaveSlicesEllipsis" xml:space="preserve">
+    <value>Dilimleri kaydet...</value>
+  </data>
+  <data name="EditorCommands_SaveWorkspace" xml:space="preserve">
+    <value>Çalışma alanını kaydet</value>
+  </data>
+  <data name="EditorCommands_SavedCopyTo" xml:space="preserve">
+    <value>Kopya {0} konumuna kaydedildi</value>
+  </data>
+  <data name="EditorCommands_SavedPath" xml:space="preserve">
+    <value>{0} kaydedildi</value>
+  </data>
+  <data name="EditorCommands_SavedSlicesTo" xml:space="preserve">
+    <value>{0} dilim {1} konumuna kaydedildi</value>
+  </data>
+  <data name="EditorCommands_Scale" xml:space="preserve">
+    <value>Ölçekle</value>
+  </data>
+  <data name="EditorCommands_Screenshot" xml:space="preserve">
+    <value>Ekran görüntüsü</value>
+  </data>
+  <data name="EditorCommands_SelectAll" xml:space="preserve">
+    <value>Tümünü seç</value>
+  </data>
+  <data name="EditorCommands_SelectAndMask" xml:space="preserve">
+    <value>Seç ve maskele</value>
+  </data>
+  <data name="EditorCommands_SelectAndMaskEllipsis" xml:space="preserve">
+    <value>Seç ve maskele...</value>
+  </data>
+  <data name="EditorCommands_SelectColon" xml:space="preserve">
+    <value>Seç:</value>
+  </data>
+  <data name="EditorCommands_SelectFrameLayerFirst" xml:space="preserve">
+    <value>Önce bir çerçeve katmanı seçin (Çerçeve aracıyla bir tane çizin).</value>
+  </data>
+  <data name="EditorCommands_SelectLayersToLink" xml:space="preserve">
+    <value>Bağlamak için iki veya daha fazla katman seçin (Katmanlar panelinde Ctrl+tıklama).</value>
+  </data>
+  <data name="EditorCommands_SelectNextLayer" xml:space="preserve">
+    <value>Sonraki katmanı seç</value>
+  </data>
+  <data name="EditorCommands_SelectPatternTileFirst" xml:space="preserve">
+    <value>Önce desen döşemesinin dikdörtgen bir seçimini yapın.</value>
+  </data>
+  <data name="EditorCommands_SelectPreviousLayer" xml:space="preserve">
+    <value>Önceki katmanı seç</value>
+  </data>
+  <data name="EditorCommands_SelectSubject" xml:space="preserve">
+    <value>Konuyu seç</value>
+  </data>
+  <data name="EditorCommands_SelectingSubject" xml:space="preserve">
+    <value>Konu seçiliyor...</value>
+  </data>
+  <data name="EditorCommands_SelectionEdges" xml:space="preserve">
+    <value>Seçim kenarları</value>
+  </data>
+  <data name="EditorCommands_SendBackward" xml:space="preserve">
+    <value>Geri gönder</value>
+  </data>
+  <data name="EditorCommands_SendToBack" xml:space="preserve">
+    <value>En arkaya gönder</value>
+  </data>
+  <data name="EditorCommands_SendToShareX" xml:space="preserve">
+    <value>ShareX'e gönder (yakalama sonrası görevler)</value>
+  </data>
+  <data name="EditorCommands_SetFontSize" xml:space="preserve">
+    <value>Yazı tipi boyutunu ayarla</value>
+  </data>
+  <data name="EditorCommands_Shadows" xml:space="preserve">
+    <value>Gölgeler</value>
+  </data>
+  <data name="EditorCommands_ShadowsHighlightsEllipsis" xml:space="preserve">
+    <value>Gölgeler/Vurgular...</value>
+  </data>
+  <data name="EditorCommands_ShapeName" xml:space="preserve">
+    <value>Şekil adı</value>
+  </data>
+  <data name="EditorCommands_ShapeNumber" xml:space="preserve">
+    <value>Şekil {0}</value>
+  </data>
+  <data name="EditorCommands_ShareWithShareX" xml:space="preserve">
+    <value>ShareX ile paylaş</value>
+  </data>
+  <data name="EditorCommands_Show" xml:space="preserve">
+    <value>Göster</value>
+  </data>
+  <data name="EditorCommands_Similar" xml:space="preserve">
+    <value>Benzer</value>
+  </data>
+  <data name="EditorCommands_Skew" xml:space="preserve">
+    <value>Eğ</value>
+  </data>
+  <data name="EditorCommands_SkinTones" xml:space="preserve">
+    <value>Ten tonları</value>
+  </data>
+  <data name="EditorCommands_Slices" xml:space="preserve">
+    <value>Dilimler</value>
+  </data>
+  <data name="EditorCommands_SmartFilterHistory" xml:space="preserve">
+    <value>{0} (akıllı filtre)</value>
+  </data>
+  <data name="EditorCommands_SmartObjects" xml:space="preserve">
+    <value>Akıllı nesneler</value>
+  </data>
+  <data name="EditorCommands_Smooth" xml:space="preserve">
+    <value>Yumuşat</value>
+  </data>
+  <data name="EditorCommands_SmoothColon" xml:space="preserve">
+    <value>Yumuşat:</value>
+  </data>
+  <data name="EditorCommands_SmoothEllipsis" xml:space="preserve">
+    <value>Yumuşat...</value>
+  </data>
+  <data name="EditorCommands_Snap" xml:space="preserve">
+    <value>Yapıştır</value>
+  </data>
+  <data name="EditorCommands_SnapTo" xml:space="preserve">
+    <value>Şuna yapıştır</value>
+  </data>
+  <data name="EditorCommands_SolidColor" xml:space="preserve">
+    <value>Düz renk</value>
+  </data>
+  <data name="EditorCommands_SolidColorEllipsis" xml:space="preserve">
+    <value>Düz renk...</value>
+  </data>
+  <data name="EditorCommands_StampVisible" xml:space="preserve">
+    <value>Görünenleri damgala</value>
+  </data>
+  <data name="EditorCommands_StepBackward" xml:space="preserve">
+    <value>Bir adım geri</value>
+  </data>
+  <data name="EditorCommands_StepForward" xml:space="preserve">
+    <value>Bir adım ileri</value>
+  </data>
+  <data name="EditorCommands_StraightenLayer" xml:space="preserve">
+    <value>Katmanı düzelt</value>
+  </data>
+  <data name="EditorCommands_Stroke" xml:space="preserve">
+    <value>Kontur</value>
+  </data>
+  <data name="EditorCommands_StrokeColor" xml:space="preserve">
+    <value>Kontur rengi</value>
+  </data>
+  <data name="EditorCommands_StrokeEllipsis" xml:space="preserve">
+    <value>Kontur...</value>
+  </data>
+  <data name="EditorCommands_StrokePath" xml:space="preserve">
+    <value>Yola kontur uygula</value>
+  </data>
+  <data name="EditorCommands_Subject" xml:space="preserve">
+    <value>Konu</value>
+  </data>
+  <data name="EditorCommands_Swatches" xml:space="preserve">
+    <value>Renk örnekleri</value>
+  </data>
+  <data name="EditorCommands_SwitchColors" xml:space="preserve">
+    <value>Ön plan ve arka plan renklerini değiştir</value>
+  </data>
+  <data name="EditorCommands_ToolbarEllipsis" xml:space="preserve">
+    <value>Araç çubuğu...</value>
+  </data>
+  <data name="EditorCommands_Tools" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="EditorCommands_TopEdges" xml:space="preserve">
+    <value>Üst kenarlar</value>
+  </data>
+  <data name="EditorCommands_TopLeftPixelColor" xml:space="preserve">
+    <value>Sol üst pikselin rengi</value>
+  </data>
+  <data name="EditorCommands_Transform" xml:space="preserve">
+    <value>Dönüştür</value>
+  </data>
+  <data name="EditorCommands_TransformSelection" xml:space="preserve">
+    <value>Seçimi dönüştür</value>
+  </data>
+  <data name="EditorCommands_TransformSelectionEllipsis" xml:space="preserve">
+    <value>Seçimi dönüştür...</value>
+  </data>
+  <data name="EditorCommands_TransparentPixels" xml:space="preserve">
+    <value>Saydam pikseller</value>
+  </data>
+  <data name="EditorCommands_Trim" xml:space="preserve">
+    <value>Kenarları kırp</value>
+  </data>
+  <data name="EditorCommands_TrimEllipsis" xml:space="preserve">
+    <value>Kenarları kırp...</value>
+  </data>
+  <data name="EditorCommands_TwoColumnToolbar" xml:space="preserve">
+    <value>İki sütunlu araç çubuğu</value>
+  </data>
+  <data name="EditorCommands_Undo" xml:space="preserve">
+    <value>Geri al</value>
+  </data>
+  <data name="EditorCommands_UngroupLayers" xml:space="preserve">
+    <value>Katman grubunu çöz</value>
+  </data>
+  <data name="EditorCommands_UnlinkLayers" xml:space="preserve">
+    <value>Katman bağlantısını kaldır</value>
+  </data>
+  <data name="EditorCommands_UploadWithShareX" xml:space="preserve">
+    <value>ShareX ile yükle</value>
+  </data>
+  <data name="EditorCommands_Vertical" xml:space="preserve">
+    <value>Dikey</value>
+  </data>
+  <data name="EditorCommands_VerticalCenters" xml:space="preserve">
+    <value>Dikey merkezler</value>
+  </data>
+  <data name="EditorCommands_WidthColon" xml:space="preserve">
+    <value>Genişlik:</value>
+  </data>
+  <data name="EditorCommands_WidthPercentColon" xml:space="preserve">
+    <value>Genişlik (%):</value>
+  </data>
+  <data name="EditorCommands_WidthPxColon" xml:space="preserve">
+    <value>Genişlik (px):</value>
+  </data>
+  <data name="EditorCommands_Workspace" xml:space="preserve">
+    <value>Çalışma alanı</value>
+  </data>
+  <data name="EditorCommands_WorkspaceSaved" xml:space="preserve">
+    <value>Çalışma alanı kaydedildi.</value>
+  </data>
+  <data name="EditorCommands_ZoomIn" xml:space="preserve">
+    <value>Yakınlaştır</value>
+  </data>
+  <data name="EditorCommands_ZoomOut" xml:space="preserve">
+    <value>Uzaklaştır</value>
+  </data>
+  <data name="Filters_AddNoise" xml:space="preserve">
+    <value>Gürültü ekle</value>
+  </data>
+  <data name="Filters_Average" xml:space="preserve">
+    <value>Ortalama</value>
+  </data>
+  <data name="Filters_Blur" xml:space="preserve">
+    <value>Bulanıklaştır</value>
+  </data>
+  <data name="Filters_BlurMore" xml:space="preserve">
+    <value>Daha fazla bulanıklaştır</value>
+  </data>
+  <data name="Filters_BoxBlur" xml:space="preserve">
+    <value>Kutu bulanıklaştırma</value>
+  </data>
+  <data name="Filters_CategoryBlur" xml:space="preserve">
+    <value>Bulanıklaştır</value>
+  </data>
+  <data name="Filters_CategoryDistort" xml:space="preserve">
+    <value>Bozulma</value>
+  </data>
+  <data name="Filters_CategoryNoise" xml:space="preserve">
+    <value>Gürültü</value>
+  </data>
+  <data name="Filters_CategoryOther" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="Filters_CategoryPixelate" xml:space="preserve">
+    <value>Pikselleştir</value>
+  </data>
+  <data name="Filters_CategoryRender" xml:space="preserve">
+    <value>Oluşturma</value>
+  </data>
+  <data name="Filters_CategorySharpen" xml:space="preserve">
+    <value>Keskinleştir</value>
+  </data>
+  <data name="Filters_CategoryStylize" xml:space="preserve">
+    <value>Stilize</value>
+  </data>
+  <data name="Filters_Clouds" xml:space="preserve">
+    <value>Bulutlar</value>
+  </data>
+  <data name="Filters_Crystallize" xml:space="preserve">
+    <value>Kristalize</value>
+  </data>
+  <data name="Filters_Despeckle" xml:space="preserve">
+    <value>Benek temizle</value>
+  </data>
+  <data name="Filters_DifferenceClouds" xml:space="preserve">
+    <value>Fark bulutları</value>
+  </data>
+  <data name="Filters_Diffuse" xml:space="preserve">
+    <value>Dağıt</value>
+  </data>
+  <data name="Filters_DustScratches" xml:space="preserve">
+    <value>Toz ve çizikler</value>
+  </data>
+  <data name="Filters_Emboss" xml:space="preserve">
+    <value>Kabartma</value>
+  </data>
+  <data name="Filters_Facet" xml:space="preserve">
+    <value>Faset</value>
+  </data>
+  <data name="Filters_Fibers" xml:space="preserve">
+    <value>Lifler</value>
+  </data>
+  <data name="Filters_FindEdges" xml:space="preserve">
+    <value>Kenarları bul</value>
+  </data>
+  <data name="Filters_GaussianBlur" xml:space="preserve">
+    <value>Gauss bulanıklaştırma</value>
+  </data>
+  <data name="Filters_HighPass" xml:space="preserve">
+    <value>Yüksek geçiş</value>
+  </data>
+  <data name="Filters_LightingVignette" xml:space="preserve">
+    <value>Aydınlatma vinyeti</value>
+  </data>
+  <data name="Filters_Maximum" xml:space="preserve">
+    <value>Maksimum</value>
+  </data>
+  <data name="Filters_Median" xml:space="preserve">
+    <value>Medyan</value>
+  </data>
+  <data name="Filters_Minimum" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="Filters_Mosaic" xml:space="preserve">
+    <value>Mozaik</value>
+  </data>
+  <data name="Filters_MotionBlur" xml:space="preserve">
+    <value>Hareket bulanıklığı</value>
+  </data>
+  <data name="Filters_Offset" xml:space="preserve">
+    <value>Uzaklık</value>
+  </data>
+  <data name="Filters_OilPaint" xml:space="preserve">
+    <value>Yağlı boya</value>
+  </data>
+  <data name="Filters_OptionGaussian" xml:space="preserve">
+    <value>Gauss</value>
+  </data>
+  <data name="Filters_OptionLarge" xml:space="preserve">
+    <value>Büyük</value>
+  </data>
+  <data name="Filters_OptionMedium" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="Filters_OptionOff" xml:space="preserve">
+    <value>Kapalı</value>
+  </data>
+  <data name="Filters_OptionOn" xml:space="preserve">
+    <value>Açık</value>
+  </data>
+  <data name="Filters_OptionPolarToRectangular" xml:space="preserve">
+    <value>Kutupsaldan dikdörtgene</value>
+  </data>
+  <data name="Filters_OptionRectangularToPolar" xml:space="preserve">
+    <value>Dikdörtgenden kutupsala</value>
+  </data>
+  <data name="Filters_OptionSmall" xml:space="preserve">
+    <value>Küçük</value>
+  </data>
+  <data name="Filters_OptionSpin" xml:space="preserve">
+    <value>Dönme</value>
+  </data>
+  <data name="Filters_OptionUniform" xml:space="preserve">
+    <value>Tekdüze</value>
+  </data>
+  <data name="Filters_OptionZoom" xml:space="preserve">
+    <value>Yakınlaştırma</value>
+  </data>
+  <data name="Filters_ParamAmount" xml:space="preserve">
+    <value>Miktar</value>
+  </data>
+  <data name="Filters_ParamAmplitude" xml:space="preserve">
+    <value>Genlik</value>
+  </data>
+  <data name="Filters_ParamAngle" xml:space="preserve">
+    <value>Açı</value>
+  </data>
+  <data name="Filters_ParamCellSize" xml:space="preserve">
+    <value>Hücre boyutu</value>
+  </data>
+  <data name="Filters_ParamDistance" xml:space="preserve">
+    <value>Uzaklık</value>
+  </data>
+  <data name="Filters_ParamDistribution" xml:space="preserve">
+    <value>Dağılım</value>
+  </data>
+  <data name="Filters_ParamHeight" xml:space="preserve">
+    <value>Yükseklik</value>
+  </data>
+  <data name="Filters_ParamHorizontal" xml:space="preserve">
+    <value>Yatay</value>
+  </data>
+  <data name="Filters_ParamLevels" xml:space="preserve">
+    <value>Düzeyler</value>
+  </data>
+  <data name="Filters_ParamMaximumOffsetPercent" xml:space="preserve">
+    <value>Azami kaydırma %</value>
+  </data>
+  <data name="Filters_ParamMethod" xml:space="preserve">
+    <value>Yöntem</value>
+  </data>
+  <data name="Filters_ParamMode" xml:space="preserve">
+    <value>Mod</value>
+  </data>
+  <data name="Filters_ParamMonochromatic" xml:space="preserve">
+    <value>Tek renkli</value>
+  </data>
+  <data name="Filters_ParamNumberOfTiles" xml:space="preserve">
+    <value>Döşeme sayısı</value>
+  </data>
+  <data name="Filters_ParamPreserveDetails" xml:space="preserve">
+    <value>Ayrıntıları koru</value>
+  </data>
+  <data name="Filters_ParamRadius" xml:space="preserve">
+    <value>Yarıçap</value>
+  </data>
+  <data name="Filters_ParamReduceNoise" xml:space="preserve">
+    <value>Gürültüyü azalt</value>
+  </data>
+  <data name="Filters_ParamSize" xml:space="preserve">
+    <value>Boyut:</value>
+  </data>
+  <data name="Filters_ParamStrength" xml:space="preserve">
+    <value>Güç</value>
+  </data>
+  <data name="Filters_ParamThreshold" xml:space="preserve">
+    <value>Eşik</value>
+  </data>
+  <data name="Filters_ParamVariance" xml:space="preserve">
+    <value>Varyans</value>
+  </data>
+  <data name="Filters_ParamVertical" xml:space="preserve">
+    <value>Dikey</value>
+  </data>
+  <data name="Filters_ParamWavelength" xml:space="preserve">
+    <value>Dalga boyu</value>
+  </data>
+  <data name="Filters_Pinch" xml:space="preserve">
+    <value>Sıkıştır</value>
+  </data>
+  <data name="Filters_Pointillize" xml:space="preserve">
+    <value>Noktacılık</value>
+  </data>
+  <data name="Filters_PolarCoordinates" xml:space="preserve">
+    <value>Kutupsal koordinatlar</value>
+  </data>
+  <data name="Filters_RadialBlur" xml:space="preserve">
+    <value>Radyal bulanıklık</value>
+  </data>
+  <data name="Filters_ReduceNoise" xml:space="preserve">
+    <value>Gürültü azaltma</value>
+  </data>
+  <data name="Filters_Ripple" xml:space="preserve">
+    <value>Dalgalanma</value>
+  </data>
+  <data name="Filters_Sharpen" xml:space="preserve">
+    <value>Keskinleştir</value>
+  </data>
+  <data name="Filters_SharpenEdges" xml:space="preserve">
+    <value>Kenarları keskinleştir</value>
+  </data>
+  <data name="Filters_SharpenMore" xml:space="preserve">
+    <value>Daha fazla keskinleştir</value>
+  </data>
+  <data name="Filters_SmartSharpen" xml:space="preserve">
+    <value>Akıllı keskinleştirme</value>
+  </data>
+  <data name="Filters_Solarize" xml:space="preserve">
+    <value>Solarizasyon</value>
+  </data>
+  <data name="Filters_Spherize" xml:space="preserve">
+    <value>Küreselleştir</value>
+  </data>
+  <data name="Filters_SurfaceBlur" xml:space="preserve">
+    <value>Yüzey bulanıklığı</value>
+  </data>
+  <data name="Filters_Tiles" xml:space="preserve">
+    <value>Döşemeler</value>
+  </data>
+  <data name="Filters_Twirl" xml:space="preserve">
+    <value>Burgu</value>
+  </data>
+  <data name="Filters_UnsharpMask" xml:space="preserve">
+    <value>Keskinliği azaltma maskesi</value>
+  </data>
+  <data name="Filters_Wave" xml:space="preserve">
+    <value>Dalga</value>
+  </data>
+  <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
+    <value>"{0}" açılamadı: {1}</value>
+  </data>
+  <data name="ImageIO_FileDoesNotExist" xml:space="preserve">
+    <value>Dosya mevcut değil.</value>
+  </data>
+  <data name="ImageIO_InvalidProject" xml:space="preserve">
+    <value>"{0}" açılamadı çünkü geçerli bir ShareX Photo Editor projesi değil veya dosya hasarlı.</value>
+  </data>
+  <data name="ImageIO_ProjectFormat" xml:space="preserve">
+    <value>ShareX Photo Editor projesi</value>
+  </data>
+  <data name="ImageIO_TiffRequiresWindows" xml:space="preserve">
+    <value>TIFF dışa aktarımı Windows gerektirir.</value>
+  </data>
+  <data name="ImageIO_UnsupportedImage" xml:space="preserve">
+    <value>"{0}" açılamadı çünkü desteklenen bir görüntü değil veya dosya hasarlı.</value>
+  </data>
+  <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
+    <value>WebP kodlaması başarısız oldu.</value>
+  </data>
+  <data name="LayerNames_Background" xml:space="preserve">
+    <value>Arka plan</value>
+  </data>
+  <data name="LayerNames_Copy" xml:space="preserve">
+    <value>{0} kopya</value>
+  </data>
+  <data name="LayerNames_Layer0" xml:space="preserve">
+    <value>Katman 0</value>
+  </data>
+  <data name="PathNames_WorkPath" xml:space="preserve">
+    <value>Çalışma yolu</value>
+  </data>
+  <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
+    <value>Proje, fotoğraf düzenleyicinin daha yeni bir sürümüyle oluşturulmuş.</value>
+  </data>
+</root>

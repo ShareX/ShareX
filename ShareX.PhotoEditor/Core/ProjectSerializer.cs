@@ -332,7 +332,7 @@ public static class ProjectSerializer
         {
             dto = JsonSerializer.Deserialize<DocumentDto>(stream, Options) ?? throw new InvalidDataException("The project file is damaged.");
         }
-        if (dto.Version > FormatVersion) throw new InvalidDataException("The project was created by a newer version of the Photo editor.");
+        if (dto.Version > FormatVersion) throw new DocumentOpenException(Strings.ProjectSerializer_NewerVersion);
 
         SKBitmap ReadPng(string name)
         {
@@ -385,7 +385,7 @@ public static class ProjectSerializer
                     layer = new FillLayer(d.Name)
                     {
                         FillKind = d.FillKind, Color = d.Color ?? SKColors.Gray, Gradient = d.Gradient ?? GradientDefinition.CreateDefault(SKColors.Black, SKColors.White),
-                        Pattern = d.Pattern != null ? new PatternDefinition(d.PatternName ?? "Pattern", ReadPng(d.Pattern)) : null,
+                        Pattern = d.Pattern != null ? new PatternDefinition(d.PatternName ?? Strings.EditorCommands_Pattern, ReadPng(d.Pattern)) : null,
                         PatternScale = d.PatternScale
                     };
                     break;
