@@ -67,6 +67,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
         Preferences = new DefaultSystemPreferencesService("/etc/sharex/policy.json", System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "policy.json"));
         SystemInfo = new UnixSystemInfoService(info, runner);
         Ocr = new TesseractOcrService(info, runner);
+        // ShareX's windows are X11 or XWayland; the player is an X11 child window.
+        VideoPlayback = new Media.GStreamerVideoPlaybackService(() => !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DISPLAY")));
         Printing = new CupsPrintService(info, runner);
         Wallpaper = new LinuxDesktopWallpaperService(runner);
         Sounds = new CommandLineSoundService(runner, ["pw-play", "paplay", "aplay"], LinuxPackages.Missing(info.Distribution ?? LinuxDistribution.Unknown, LinuxTool.PipeWire));
@@ -115,6 +117,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
     public ICodeSignatureService CodeSignature { get; } = new UnsupportedCodeSignatureService("Updates on Linux come from your package manager, which checks signatures itself.");
 
     public IOcrService Ocr { get; }
+
+    public IVideoPlaybackService VideoPlayback { get; }
 
     public ITaskbarService Taskbar { get; } = new UnityLauncherTaskbarService();
 

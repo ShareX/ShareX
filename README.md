@@ -144,7 +144,7 @@ CI (`.github/workflows/platform.yml`, `linux.yml`) builds and tests on all three
 
 What is left before a cross-platform release:
 
-1. Keep `develop` merged in. Done on 4 November 2026 for v22.0.0, v22.1.0, the Photo Editor, the native Windows recorder and the video player; their Windows-only parts are behind platform services. Linux and macOS still lack embedded video playback (the trimmer previews frames with FFmpeg), the native recorder (they record with FFmpeg) and Photo Editor TIFF.
+1. Keep `develop` merged in. Done on 4 November 2026 for v22.0.0, v22.1.0, the Photo Editor, the native Windows recorder and the video player; their Windows-only parts are behind platform services. Linux plays videos in the video player and trimmer through the distribution's GStreamer; macOS still previews frames with FFmpeg. Linux and macOS record with FFmpeg rather than the native recorder, and have no Photo Editor TIFF yet.
 2. Third round of macOS testing: [docs/20261008-macos-retest-round3-procedure.md](docs/20261008-macos-retest-round3-procedure.md).
 3. Apple Developer ID certificate and notarization key as repository secrets, so CI signs and notarizes `ShareX.app`.
 4. Desktop checks still open on Linux: sway and GNOME end-to-end flows (see the verification list in the roadmap).

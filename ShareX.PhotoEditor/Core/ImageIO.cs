@@ -173,8 +173,9 @@ public static class ImageIO
                     case ".webp" when lossless:
                         {
                             // For lossless WebP the quality value sets compression effort, not image quality.
-                            using SKPixmap pixmap = bitmap.PeekPixels();
-                            using SKData data = pixmap.Encode(new SKWebpEncoderOptions(SKWebpEncoderCompression.Lossless, 75));
+                            using SKPixmap pixmap = bitmap.PeekPixels() ?? throw new InvalidOperationException("The image has no pixels to encode.");
+                            using SKData data = pixmap.Encode(new SKWebpEncoderOptions(SKWebpEncoderCompression.Lossless, 75))
+                                ?? throw new InvalidOperationException("WebP encoding failed.");
                             data.SaveTo(stream);
                         }
                         break;
