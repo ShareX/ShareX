@@ -117,7 +117,7 @@ public sealed partial class PhotoEditorWindow
             SaveSettings();
             return;
         }
-        if (_views.Any(v => v.Document.IsDirty))
+        if (_views.Any(v => v.Document.IsDirty && v.Document != TaskDocument))
         {
             e.Cancel = true;
             foreach (DocumentView view in _views.ToList())
@@ -133,6 +133,7 @@ public sealed partial class PhotoEditorWindow
         _view = null;
         foreach (DocumentView view in _views.ToList())
         {
+            CaptureTaskResult(view);
             view.Dispose();
             view.Document.Dispose();
         }

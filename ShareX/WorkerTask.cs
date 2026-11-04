@@ -598,7 +598,13 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.OpenInPhotoEditor))
             {
-                TaskHelpers.OpenPhotoEditor(null, Image, Info.TaskSettings);
+                Bitmap editedImage = TaskHelpers.OpenPhotoEditorTask(Image, Info.TaskSettings);
+
+                if (editedImage != null)
+                {
+                    Image.Dispose();
+                    Image = editedImage;
+                }
             }
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))

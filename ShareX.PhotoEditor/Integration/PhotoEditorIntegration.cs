@@ -60,4 +60,31 @@ public static class PhotoEditorIntegration
             }
         });
     }
+
+    /// <summary>
+    /// Opens the image in its own Photo editor window and blocks until that window closes.
+    /// Returns the edited image, or null if it could not be produced. Must not be called from the UI thread.
+    /// </summary>
+    public static SKBitmap? ShowTaskDialog(PhotoEditorServices services, SKBitmap image, string? imageTitle = null)
+    {
+        AvaloniaBootstrapper.EnsureInitialized();
+        SKBitmap copy = image.Copy();
+        TaskCompletionSource<SKBitmap?> tcs = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        Dispatcher.UIThread.Post(() =>
+        {
+            try
+            {
+                PhotoEditorWindow window = new(services);
+                window.Closed += (_, _) => tcs.TrySetResult(window.TaskResult);
+                window.Show();
+                using (copy) EditorCommands.OpenBitmap(window, copy, imageTitle ?? Strings.EditorCommands_Screenshot);
+                window.TaskDocument = window.Document;
+            }
+            catch (Exception ex)
+            {
+                tcs.TrySetException(ex);
+            }
+        });
+        return tcs.Task.GetAwaiter().GetResult();
+    }
 }

@@ -1510,7 +1510,18 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            PhotoEditorServices services = new PhotoEditorServices
+            PhotoEditorIntegration.Show(CreatePhotoEditorServices(taskSettings), filePaths, image, image != null ? "Screenshot" : null);
+        }
+
+        // Blocks until the Photo editor window closes and returns the edited image.
+        public static Bitmap OpenPhotoEditorTask(Bitmap image, TaskSettings taskSettings)
+        {
+            return PhotoEditorIntegration.ShowTaskDialog(CreatePhotoEditorServices(taskSettings), image, "Screenshot");
+        }
+
+        private static PhotoEditorServices CreatePhotoEditorServices(TaskSettings taskSettings)
+        {
+            return new PhotoEditorServices
             {
                 SettingsFilePath = StartupOptions.Sandbox ? null : Path.Combine(AppPaths.PersonalFolder, "PhotoEditor.json"),
                 DefaultFolder = GetScreenshotsFolder(taskSettings),
@@ -1526,8 +1537,6 @@ namespace ShareX
                 CaptureRegion = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions),
                 CaptureFullscreen = () => Task.FromResult(GetScreenshot(taskSettings).CaptureFullscreen())
             };
-
-            PhotoEditorIntegration.Show(services, filePaths, image, image != null ? "Screenshot" : null);
         }
 
         public static void OpenImageBeautifier(TaskSettings taskSettings = null)

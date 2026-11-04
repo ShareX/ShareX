@@ -65,16 +65,32 @@ public sealed partial class PhotoEditorWindow
         ApplyVisibility();
     }
 
+    /// <summary>The document opened by a ShareX after capture task; its flattened image is handed back to the task when it closes.</summary>
+    public PhotoDocument? TaskDocument { get; set; }
+
+    /// <summary>The flattened task document, captured when it closed.</summary>
+    public SKBitmap? TaskResult { get; private set; }
+
+    private void CaptureTaskResult(DocumentView view)
+    {
+        if (TaskDocument == null || view.Document != TaskDocument) return;
+        TaskResult?.Dispose();
+        TaskResult = Compositor.Flatten(view.Document);
+        TaskDocument = null;
+    }
+
     public async Task<bool> CloseViewAsync(DocumentView view)
     {
         if (IsBusy) return false;
-        if (view.Document.IsDirty)
+        // The task document continues to ShareX after capture tasks, so closing it needs no save prompt.
+        if (view.Document.IsDirty && view.Document != TaskDocument)
         {
             ActivateView(view);
             bool? save = await DialogBuilder.ConfirmAsync(this, Strings.PhotoEditorWindow_PhotoEditor, string.Format(Strings.PhotoEditorWindow_SaveChangesPrompt, view.Document.DisplayName.TrimEnd('*')), Strings.EditorCommands_Save, Strings.PhotoEditorWindow_DontSave);
             if (save == null) return false;
             if (save == true && !await EditorCommands.SaveAsync(this, false)) return false;
         }
+        CaptureTaskResult(view);
         int index = _views.IndexOf(view);
         _views.Remove(view);
         view.Dispose();
