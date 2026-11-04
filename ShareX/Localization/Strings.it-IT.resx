@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostra pulsante "Modifica con ShareX" nel menu contestuale di Esplora file</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Mostra pulsante "Modifica nell'editor di foto di ShareX" nel menu contestuale di Esplora file</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Soglia di avviso per file di grandi dimensioni (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Modifica with ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Modifica nell'editor di foto di ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Carica con ShareX</value>

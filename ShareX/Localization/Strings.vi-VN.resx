@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Hiện nút "Chỉnh sửa với ShareX" trong menu ngữ cảnh của Windows Explorer</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Hiện nút "Chỉnh sửa trong trình chỉnh sửa ảnh ShareX" trong menu ngữ cảnh của Windows Explorer</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Ngưỡng cảnh báo tệp lớn (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Chỉnh sửa với ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Chỉnh sửa trong trình chỉnh sửa ảnh ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Tải lên với ShareX</value>

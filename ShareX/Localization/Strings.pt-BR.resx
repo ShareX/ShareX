@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostrar o botão "Editar com ShareX" no menu de contexto do Explorador de Arquivos</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Mostrar o botão "Editar no editor de fotos do ShareX" no menu de contexto do Explorador de Arquivos</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Limite de aviso para arquivos grandes (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Editar com ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Editar no editor de fotos do ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Enviar com o ShareX</value>

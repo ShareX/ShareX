@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>הצג את כפתור "ערוך עם ShareX" בתפריט ההקשר של סייר הקבצים</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>הצג את כפתור "ערוך בעורך התמונות של ShareX" בתפריט ההקשר של סייר הקבצים</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>סף אזהרה לקבצים גדולים (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>ערוך עם ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>ערוך בעורך התמונות של ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>העלה עם ShareX</value>

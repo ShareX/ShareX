@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>エクスプローラのコンテキストメニューに「ShareXで画像編集」を表示</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>エクスプローラのコンテキストメニューに「ShareX フォトエディターで編集」を表示</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>大きなファイルの警告しきい値（MB）</value>
   </data>
@@ -1327,6 +1330,9 @@
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>ShareX で画像編集</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>ShareX フォトエディターで編集</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>ShareX でアップロード</value>

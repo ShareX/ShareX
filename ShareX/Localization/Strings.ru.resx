@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Показывать пункт "Редактировать в ShareX" в контекстном меню проводника Windows</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Показывать пункт "Редактировать в фоторедакторе ShareX" в контекстном меню проводника Windows</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Порог предупреждения для больших файлов (МБ)</value>
   </data>
@@ -1327,6 +1330,9 @@
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Редактировать в ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Редактировать в фоторедакторе ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Загрузить с помощью ShareX</value>

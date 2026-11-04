@@ -1693,6 +1693,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu", resourceCulture);
             }
         }
+        public static string ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu", resourceCulture);
+            }
+        }
         public static string ApplicationSettingsWindow_ShowShareXInSendToMenu {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_ShowShareXInSendToMenu", resourceCulture);
@@ -5284,6 +5289,11 @@ namespace ShareX.Localization {
         public static string IntegrationHelpers_EditWithShareX {
             get {
                 return ResourceManager.GetString("IntegrationHelpers_EditWithShareX", resourceCulture);
+            }
+        }
+        public static string IntegrationHelpers_EditWithShareXPhotoEditor {
+            get {
+                return ResourceManager.GetString("IntegrationHelpers_EditWithShareXPhotoEditor", resourceCulture);
             }
         }
         public static string ClipboardDoesNotContainAnImage {

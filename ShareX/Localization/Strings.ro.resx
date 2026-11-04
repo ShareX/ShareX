@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Afișați butonul "Editați cu ShareX" în meniul contextual al Windows Explorer</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Afișați butonul "Editați în editorul foto ShareX" în meniul contextual al Windows Explorer</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Prag de avertizare pentru fișiere mari (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Editați cu ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Editați în editorul foto ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Încărcați cu ShareX</value>

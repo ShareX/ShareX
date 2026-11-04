@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows Explorer संदर्भ मेनू में "ShareX से संपादित करें" बटन दिखाएँ</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Windows Explorer संदर्भ मेनू में "ShareX फ़ोटो संपादक में संपादित करें" बटन दिखाएँ</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>बड़ी फ़ाइल चेतावनी सीमा (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>ShareX से संपादित करें</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>ShareX फ़ोटो संपादक में संपादित करें</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>ShareX से अपलोड करें</value>

@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows Gezgini bağlam menüsünde "ShareX ile düzenle" düğmesini göster</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Windows Gezgini bağlam menüsünde "ShareX fotoğraf düzenleyicide düzenle" düğmesini göster</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Büyük dosya uyarı eşiği (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>ShareX ile düzenle</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>ShareX fotoğraf düzenleyicide düzenle</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>ShareX ile yükle</value>

@@ -269,6 +269,7 @@
                                     <CheckBox Classes="setting" Content="{Binding StartWithWindowsText}" IsEnabled="{Binding StartWithWindowsEnabled}" IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
                                     <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu}" IsChecked="{Binding ShellContextMenu, Mode=TwoWay}"/>
                                     <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu}" IsChecked="{Binding EditWithShareX, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu}" IsChecked="{Binding EditWithShareXPhotoEditor, Mode=TwoWay}"/>
                                     <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowShareXInSendToMenu}" IsChecked="{Binding SendToMenu, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>

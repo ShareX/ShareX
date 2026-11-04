@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Visa knappen ”Redigera med ShareX” i Utforskarens snabbmeny</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Visa knappen ”Redigera i ShareX fotoredigerare” i Utforskarens snabbmeny</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Tröskelvärde för varning om stor fil (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Redigera med ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Redigera i ShareX fotoredigerare</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Ladda upp med ShareX</value>

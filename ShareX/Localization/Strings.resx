@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Show "Edit with ShareX" button in Windows Explorer context menu</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Show "Edit with ShareX Photo editor" button in Windows Explorer context menu</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Large-file warning threshold (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Edit with ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Edit with ShareX Photo editor</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Upload with ShareX</value>

@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostrar el botón "Editar con ShareX" en el menú contextual del Explorador de Windows</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Mostrar el botón "Editar en el editor de fotos de ShareX" en el menú contextual del Explorador de Windows</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Umbral de aviso para archivos grandes (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Editar with ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Editar en el editor de fotos de ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Subir with ShareX</value>

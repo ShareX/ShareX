@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Knop "Bewerken met ShareX" weergeven in contextmenu van Windows Verkenner</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Knop "Bewerken in ShareX-foto-editor" weergeven in contextmenu van Windows Verkenner</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Waarschuwingsdrempel voor grote bestanden (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Bewerken with ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Bewerken in ShareX-foto-editor</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Upload met ShareX</value>

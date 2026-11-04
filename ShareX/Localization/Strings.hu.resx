@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>"Szerkesztés ShareX-szel" gomb megjelenítése a Windows Intéző helyi menüjében</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>"Szerkesztés a ShareX fotószerkesztőben" gomb megjelenítése a Windows Intéző helyi menüjében</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Nagy fájlok figyelmeztetési küszöbe (MB)</value>
   </data>
@@ -1327,6 +1330,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Szerkesztés with ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Szerkesztés a ShareX fotószerkesztőben</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Feltöltés with ShareX</value>

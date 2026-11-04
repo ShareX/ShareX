@@ -54,6 +54,13 @@ namespace ShareX
         private static readonly string ShellExtEditIcon = $"{ApplicationPath},0";
         private static readonly string ShellExtEditPath = $"{ApplicationPath} -ImageEditor \"%1\"";
 
+        private static readonly string ShellExtPhotoEditorName = "ShareXPhotoEditor";
+        private static readonly string ShellExtPhotoEditorImage = $@"Software\Classes\SystemFileAssociations\image\shell\{ShellExtPhotoEditorName}";
+        private static readonly string ShellExtPhotoEditorImageCmd = $@"{ShellExtPhotoEditorImage}\command";
+        private static readonly string ShellExtPhotoEditorDesc = Strings.IntegrationHelpers_EditWithShareXPhotoEditor;
+        private static readonly string ShellExtPhotoEditorIcon = $"{ApplicationPath},0";
+        private static readonly string ShellExtPhotoEditorPath = $"{ApplicationPath} -PhotoEditor \"%1\"";
+
         private static readonly string ShellCustomUploaderExtensionPath = @"Software\Classes\.sxcu";
         private static readonly string ShellCustomUploaderExtensionValue = "ShareX.sxcu";
         private static readonly string ShellCustomUploaderAssociatePath = $@"Software\Classes\{ShellCustomUploaderExtensionValue}";
@@ -173,6 +180,49 @@ namespace ShareX
         private static void UnregisterEditShellContextMenuButton()
         {
             RegistryHelpers.RemoveRegistry(ShellExtEditImage);
+        }
+
+        public static bool CheckPhotoEditorShellContextMenuButton()
+        {
+            try
+            {
+                return RegistryHelpers.CheckStringValue(ShellExtPhotoEditorImageCmd, null, ShellExtPhotoEditorPath);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
+        public static void CreatePhotoEditorShellContextMenuButton(bool create)
+        {
+            try
+            {
+                UnregisterPhotoEditorShellContextMenuButton();
+
+                if (create)
+                {
+                    RegisterPhotoEditorShellContextMenuButton();
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+        }
+
+        private static void RegisterPhotoEditorShellContextMenuButton()
+        {
+            RegistryHelpers.CreateRegistry(ShellExtPhotoEditorImage, ShellExtPhotoEditorDesc);
+            RegistryHelpers.CreateRegistry(ShellExtPhotoEditorImage, "Icon", ShellExtPhotoEditorIcon);
+            RegistryHelpers.CreateRegistry(ShellExtPhotoEditorImageCmd, ShellExtPhotoEditorPath);
+        }
+
+        private static void UnregisterPhotoEditorShellContextMenuButton()
+        {
+            RegistryHelpers.RemoveRegistry(ShellExtPhotoEditorImage);
         }
 
         public static bool CheckCustomUploaderExtension()
@@ -411,6 +461,7 @@ namespace ShareX
             StartupManager.State = StartupState.Disabled;
             CreateShellContextMenuButton(false);
             CreateEditShellContextMenuButton(false);
+            CreatePhotoEditorShellContextMenuButton(false);
             CreateCustomUploaderExtension(false);
             CreateImageEffectExtension(false);
             CreateSendToMenuButton(false);

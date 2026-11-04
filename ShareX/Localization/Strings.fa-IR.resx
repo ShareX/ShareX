@@ -628,6 +628,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>شیرایکس را در راست کلیک منوی ویرایش با ویندوز اکسپلورر اضافه کن</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>دکمه «ویرایش در ویرایشگر عکس ShareX» را در منوی راست‌کلیک ویندوز اکسپلورر نمایش بده</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>آستانه هشدار فایل بزرگ (مگابایت)</value>
   </data>
@@ -1327,6 +1330,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>ویرایش با ShareX ...</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>ویرایش در ویرایشگر عکس ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>آپلود با ShareX</value>
