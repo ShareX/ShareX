@@ -1526,6 +1526,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>네트워크 모니터...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>신규</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>이미지 효과 사전 설정 없음</value>
   </data>

@@ -270,7 +270,8 @@ internal sealed class MainMenuBuilder
             Tool(nameof(Strings.MainMenuBuilder_ImageResizer), Strings.MainMenuBuilder_ImageResizer, LucideIcons.maximize_2, () => TaskHelpers.OpenImageResizer()),
             Tool(nameof(Strings.MainMenuBuilder_ImageSplitter), Strings.MainMenuBuilder_ImageSplitter, LucideIcons.split, () => TaskHelpers.OpenImageSplitter()),
             Tool(nameof(Strings.MainMenuBuilder_ImageThumbnailer), Strings.MainMenuBuilder_ImageThumbnailer, LucideIcons.shrink, () => TaskHelpers.OpenImageThumbnailer()),
-            Tool(nameof(Strings.MainMenuBuilder_PhotoEditor), Strings.MainMenuBuilder_PhotoEditor, LucideIcons.layers, () => TaskHelpers.OpenPhotoEditor()),
+            Tool(nameof(Strings.MainMenuBuilder_PhotoEditor), Strings.MainMenuBuilder_PhotoEditor, LucideIcons.layers, () => TaskHelpers.OpenPhotoEditor(),
+                badgeText: Strings.MainMenuBuilder_NewBadge),
             Tool(nameof(Strings.MainMenuBuilder_ImageViewer), Strings.MainMenuBuilder_ImageViewer, LucideIcons.eye, () => TaskHelpers.OpenImageViewer()),
             Tool(nameof(Strings.MainMenuBuilder_ImageWatermark), Strings.MainMenuBuilder_ImageWatermark, LucideIcons.stamp, () => TaskHelpers.OpenImageWatermark())
         ]),
@@ -593,8 +594,8 @@ internal sealed class MainMenuBuilder
     private static MainMenuEntry Item(string header, string icon, Func<Task> execute, bool isVisible = true) =>
         new(header, icon, execute, isVisible: isVisible);
 
-    private static MainMenuEntry Tool(string id, string header, string icon, Action execute) =>
-        new(header, icon, execute, id: id);
+    private static MainMenuEntry Tool(string id, string header, string icon, Action execute, string? badgeText = null) =>
+        new(header, icon, execute, id: id, badgeText: badgeText);
 
     private static MainMenuEntry Tool(string id, string header, string icon, Func<Task> execute) =>
         new(header, icon, execute, id: id);

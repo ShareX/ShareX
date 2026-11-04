@@ -1526,6 +1526,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Netværksovervågning...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Ny</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Ingen forudindstillinger for billedeffekter</value>
   </data>

@@ -1526,6 +1526,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Trình giám sát mạng...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Mới</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Không có cài đặt sẵn hiệu ứng hình ảnh</value>
   </data>

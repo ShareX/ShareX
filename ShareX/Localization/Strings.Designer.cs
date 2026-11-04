@@ -5628,5 +5628,6 @@ namespace ShareX.Localization {
         public static string ScreenRecorderBar_StartDelay_5Seconds => ResourceManager.GetString("ScreenRecorderBar_StartDelay_5Seconds", resourceCulture);
         public static string MainMenuBuilder_VideoPlayer => ResourceManager.GetString("MainMenuBuilder_VideoPlayer", resourceCulture);
         public static string MainMenuBuilder_Stats => ResourceManager.GetString("MainMenuBuilder_Stats", resourceCulture);
+        public static string MainMenuBuilder_NewBadge => ResourceManager.GetString("MainMenuBuilder_NewBadge", resourceCulture);
     }
 }

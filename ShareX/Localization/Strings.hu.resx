@@ -1526,6 +1526,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Hálózatfigyelő...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Új</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Nincsenek képeffektus-előbeállítások</value>
   </data>

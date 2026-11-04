@@ -1526,6 +1526,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>网络监控器...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>新</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>没有图像效果预设</value>
   </data>

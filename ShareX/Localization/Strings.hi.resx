@@ -1526,6 +1526,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>नेटवर्क मॉनिटर...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>नया</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>कोई छवि प्रभाव प्रीसेट नहीं</value>
   </data>

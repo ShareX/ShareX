@@ -1526,6 +1526,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Монітор мережі...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Нове</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Немає наборів ефектів зображення</value>
   </data>

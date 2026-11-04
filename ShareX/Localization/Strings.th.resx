@@ -1526,6 +1526,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>ตัวตรวจสอบเครือข่าย...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>ใหม่</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>ไม่มีค่าที่ตั้งไว้ของเอฟเฟกต์รูปภาพ</value>
   </data>

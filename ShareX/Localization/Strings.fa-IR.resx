@@ -1526,6 +1526,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>پایشگر شبکه...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>جدید</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>هیچ پیش‌تنظیم جلوه تصویری وجود ندارد</value>
   </data>

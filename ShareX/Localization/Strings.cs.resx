@@ -1526,6 +1526,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Sledování sítě...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Nové</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Žádné předvolby efektů obrázku</value>
   </data>

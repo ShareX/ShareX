@@ -1526,6 +1526,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Nätverksövervakare...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Ny</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Inga förinställningar för bildeffekter</value>
   </data>

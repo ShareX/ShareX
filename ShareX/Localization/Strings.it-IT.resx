@@ -1526,6 +1526,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Monitor di rete...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Nuovo</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Nessuna preimpostazione per effetti immagine</value>
   </data>

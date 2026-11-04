@@ -1526,6 +1526,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Monitor de rețea...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Nou</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Nicio presetare pentru efecte de imagine</value>
   </data>

@@ -1526,6 +1526,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Ağ izleyicisi...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Yeni</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Resim efekti ön ayarı yok</value>
   </data>

@@ -589,14 +589,17 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private static Control CreateGridMenuVisibilityContent(MainMenuEntry entry, ToggleSwitch visibilitySwitch)
     {
-        StackPanel content = new()
+        Grid content = new()
         {
-            Orientation = Avalonia.Layout.Orientation.Horizontal,
-            Spacing = 2,
+            ColumnDefinitions = new ColumnDefinitions("Auto,*"),
+            ColumnSpacing = 2,
             VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
         };
         content.Children.Add(visibilitySwitch);
-        content.Children.Add(CreateGridMenuItemContent(entry));
+
+        Control itemContent = CreateGridMenuItemContent(entry);
+        Grid.SetColumn(itemContent, 1);
+        content.Children.Add(itemContent);
         return content;
     }
 
@@ -643,10 +646,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private static Control CreateGridMenuItemContent(MainMenuEntry entry)
     {
-        StackPanel content = new()
+        Grid content = new()
         {
-            Orientation = Avalonia.Layout.Orientation.Horizontal,
-            Spacing = 8
+            ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto"),
+            ColumnSpacing = 8
         };
         TextBlock icon = CreateAccentMenuIcon(entry.Icon, 16);
         icon.VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center;
@@ -659,7 +662,20 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             MaxLines = 1,
             VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
         };
+        Grid.SetColumn(label, 1);
         content.Children.Add(label);
+
+        if (!string.IsNullOrEmpty(entry.BadgeText))
+        {
+            Border badge = new()
+            {
+                Classes = { "tool-grid-badge" },
+                Child = new TextBlock { Text = entry.BadgeText }
+            };
+            Grid.SetColumn(badge, 2);
+            content.Children.Add(badge);
+        }
+
         return content;
     }
 

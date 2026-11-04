@@ -1526,6 +1526,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Monitor de rede...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Novo</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Sem predefinições de efeitos de imagem</value>
   </data>

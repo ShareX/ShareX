@@ -1526,6 +1526,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Pemantau jaringan...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Baru</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Tidak ada preset efek gambar</value>
   </data>

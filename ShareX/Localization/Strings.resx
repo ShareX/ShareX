@@ -1526,6 +1526,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Network monitor...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>New</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>No image effect presets</value>
   </data>

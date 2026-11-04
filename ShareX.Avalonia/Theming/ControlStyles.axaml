@@ -1031,7 +1031,7 @@
     <Style Selector="Button.tool-grid-button">
         <Setter Property="Height" Value="34"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="Padding" Value="8,4"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -1045,10 +1045,25 @@
         <Setter Property="BorderThickness" Value="0"/>
     </Style>
 
+    <Style Selector="Border.tool-grid-badge">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        <Setter Property="CornerRadius" Value="999"/>
+        <Setter Property="Padding" Value="6,1"/>
+        <Setter Property="Margin" Value="6,0,0,0"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style Selector="Border.tool-grid-badge > TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+
     <Style Selector="ToggleButton.tool-grid-visibility-button">
         <Setter Property="Height" Value="34"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="8,4"/>
         <Setter Property="Margin" Value="0"/>

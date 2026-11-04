@@ -1526,6 +1526,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Netzwerkmonitor...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Neu</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Keine Bildeffekt-Voreinstellungen</value>
   </data>
