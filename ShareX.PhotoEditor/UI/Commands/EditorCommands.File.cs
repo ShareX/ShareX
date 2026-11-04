@@ -60,8 +60,9 @@ public static partial class EditorCommands
 
     private static IEnumerable<MenuNode> RecentFiles(PhotoEditorWindow w)
     {
+        // Doubled underscores keep file names intact; a single underscore would mark a menu access key.
         List<MenuNode> items = w.Settings.RecentFiles.Where(File.Exists).Take(15)
-            .Select(path => new MenuNode { Header = Path.GetFileName(path) + "   " + Path.GetDirectoryName(path), Action = win => OpenFile(win, path) }).ToList();
+            .Select(path => new MenuNode { Header = Path.GetFileName(path).Replace("_", "__"), Action = win => OpenFile(win, path) }).ToList();
         if (items.Count > 0)
         {
             items.Add(MenuNode.Separator);
