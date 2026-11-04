@@ -101,7 +101,9 @@ public sealed class EditorSettings
     /// <summary>Last format chosen in Export As, as a file extension.</summary>
     public string ExportFormat { get; set; } = ".png";
 
-    public int ExportQuality { get; set; } = 90;
+    public int ExportJpegQuality { get; set; } = 90;
+
+    public int ExportWebPQuality { get; set; } = 90;
 
     public bool ExportWebPLossless { get; set; }
 
@@ -146,7 +148,8 @@ public sealed class EditorSettings
         CheckerSize = Math.Clamp(CheckerSize, 2, 64);
         if (!(RightDockWidth >= 0)) RightDockWidth = 300;
         if (string.IsNullOrEmpty(ExportFormat)) ExportFormat = ".png";
-        ExportQuality = Math.Clamp(ExportQuality, 1, 100);
+        ExportJpegQuality = Math.Clamp(ExportJpegQuality, 1, 100);
+        ExportWebPQuality = Math.Clamp(ExportWebPQuality, 1, 100);
         return this;
     }
 

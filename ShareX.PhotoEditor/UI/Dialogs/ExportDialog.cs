@@ -40,7 +40,8 @@ public static class ExportDialog
     public static async Task<Result?> ShowAsync(Window owner, PhotoDocument doc, EditorSettings settings)
     {
         string extension = Formats.Any(f => f.Extension == settings.ExportFormat) ? settings.ExportFormat : ".png";
-        int quality = Math.Clamp(settings.ExportQuality, 1, 100);
+        int jpegQuality = Math.Clamp(settings.ExportJpegQuality, 1, 100);
+        int webpQuality = Math.Clamp(settings.ExportWebPQuality, 1, 100);
         NumericUpDown width = DialogBuilder.Number(1, 30000, doc.Width);
         NumericUpDown height = DialogBuilder.Number(1, 30000, doc.Height);
         bool updating = false;
@@ -70,14 +71,16 @@ public static class ExportDialog
         }
         Grid formatSection = AddSection();
         Grid losslessSection = AddSection();
-        Grid qualitySection = AddSection();
+        Grid jpegQualitySection = AddSection();
+        Grid webpQualitySection = AddSection();
         Grid sizeSection = AddSection();
         CheckBox lossless = new() { Content = "Lossless", IsChecked = settings.ExportWebPLossless };
         void UpdateOptions()
         {
             losslessSection.IsVisible = extension == ".webp";
             // Only lossy encoding has a quality setting.
-            qualitySection.IsVisible = extension == ".jpg" || (extension == ".webp" && lossless.IsChecked != true);
+            jpegQualitySection.IsVisible = extension == ".jpg";
+            webpQualitySection.IsVisible = extension == ".webp" && lossless.IsChecked != true;
         }
         DialogBuilder.AddRow(formatSection, "Format:", DialogBuilder.Combo(Formats, extension, v =>
         {
@@ -86,14 +89,17 @@ public static class ExportDialog
         }));
         lossless.IsCheckedChanged += (_, _) => UpdateOptions();
         DialogBuilder.AddFull(losslessSection, lossless);
-        DialogBuilder.AddRow(qualitySection, "Quality:", DialogBuilder.SliderNumber(1, 100, quality, v => quality = (int)v));
+        // Each lossy format keeps its own quality.
+        DialogBuilder.AddRow(jpegQualitySection, "Quality:", DialogBuilder.SliderNumber(1, 100, jpegQuality, v => jpegQuality = (int)v));
+        DialogBuilder.AddRow(webpQualitySection, "Quality:", DialogBuilder.SliderNumber(1, 100, webpQuality, v => webpQuality = (int)v));
         DialogBuilder.AddRow(sizeSection, "Width (px):", width);
         DialogBuilder.AddRow(sizeSection, "Height (px):", height);
         UpdateOptions();
         if (!await DialogBuilder.ShowAsync(owner, "Export As", form, 420, "Export...")) return null;
         settings.ExportFormat = extension;
-        settings.ExportQuality = quality;
+        settings.ExportJpegQuality = jpegQuality;
+        settings.ExportWebPQuality = webpQuality;
         settings.ExportWebPLossless = lossless.IsChecked == true;
-        return new Result(extension, quality, (int)(width.Value ?? doc.Width), (int)(height.Value ?? doc.Height), extension == ".webp" && lossless.IsChecked == true);
+        return new Result(extension, extension == ".webp" ? webpQuality : jpegQuality, (int)(width.Value ?? doc.Width), (int)(height.Value ?? doc.Height), extension == ".webp" && lossless.IsChecked == true);
     }
 }
