@@ -425,6 +425,7 @@ internal sealed class MainMenuBuilder
         AfterCaptureTasks.BeautifyImage => LucideIcons.sparkles,
         AfterCaptureTasks.AddImageEffects => LucideIcons.wand_sparkles,
         AfterCaptureTasks.AnnotateImage => LucideIcons.pen_line,
+        AfterCaptureTasks.OpenInPhotoEditor => LucideIcons.layers,
         AfterCaptureTasks.CopyImageToClipboard => LucideIcons.clipboard_copy,
         AfterCaptureTasks.PinToScreen => LucideIcons.pin,
         AfterCaptureTasks.SendImageToPrinter => LucideIcons.printer,

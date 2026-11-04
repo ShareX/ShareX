@@ -179,7 +179,7 @@ public partial class AutoCaptureWindow : Window
             return;
         }
 
-        TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
+        TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage, AfterCaptureTasks.OpenInPhotoEditor);
         TaskSettings.GeneralSettings.PlaySoundAfterUpload = false;
         TaskSettings.GeneralSettings.PlaySoundAfterAction = false;
         TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted = false;

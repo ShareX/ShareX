@@ -596,6 +596,11 @@ namespace ShareX
                 }
             }
 
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.OpenInPhotoEditor))
+            {
+                TaskHelpers.OpenPhotoEditor(null, Image, Info.TaskSettings);
+            }
+
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
             {
                 ClipboardHelpers.CopyImage(Image, Info.FileName);
