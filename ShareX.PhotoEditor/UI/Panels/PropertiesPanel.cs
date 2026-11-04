@@ -25,6 +25,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Threading;
 using ShareX.PhotoEditor.UI.Commands;
@@ -267,7 +268,8 @@ public sealed class PropertiesPanel : EditorPanel
             {
                 CheckBox enabled = new() { Content = filter.Name, IsChecked = filter.Enabled };
                 enabled.IsCheckedChanged += (_, _) => { filter.Enabled = enabled.IsChecked == true; Editor.Commit("Toggle Smart Filter"); };
-                Button remove = new() { Content = "✕", Padding = new Thickness(4, 0) };
+                Button remove = new() { Classes = { "icon" }, Content = ToolIcons.Create("close", 10), Padding = new Thickness(5), VerticalAlignment = VerticalAlignment.Center };
+                ToolTip.SetTip(remove, "Delete smart filter");
                 remove.Click += (_, _) => { smart.Filters.Remove(filter); Editor.Commit("Delete Smart Filter"); Refresh(); };
                 _root.Children.Add(Row(enabled, remove));
             }

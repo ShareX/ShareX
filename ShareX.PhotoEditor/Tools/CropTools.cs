@@ -259,7 +259,7 @@ public sealed class CropTool : ToolBase
                 Host.RefreshOptions();
             }, 140);
         options.Number("W:", 0, 100000, () => RatioWidth, v => RatioWidth = (float)v, "0.##", null, 1, 60);
-        options.Button("⇄", () => { (RatioWidth, RatioHeight) = (RatioHeight, RatioWidth); Host.RefreshOptions(); }, "Swap width and height");
+        options.IconButton("swap-dimensions", "Swap width and height", () => { (RatioWidth, RatioHeight) = (RatioHeight, RatioWidth); Host.RefreshOptions(); });
         options.Number("H:", 0, 100000, () => RatioHeight, v => RatioHeight = (float)v, "0.##", null, 1, 60);
         options.Button("Clear", () => { RatioWidth = RatioHeight = 0; Host.RefreshOptions(); });
         options.Separator();

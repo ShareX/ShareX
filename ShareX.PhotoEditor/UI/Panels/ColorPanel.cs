@@ -196,11 +196,12 @@ public sealed class ColorPanel : EditorPanel
         Canvas.SetTop(ring, (1 - _v) * field.Height - 5);
         _fieldMarker.Children.Add(ring);
         _hueMarker.Children.Clear();
-        double y = (1 - _h / 360) * _hue.Bounds.Height;
-        Avalonia.Controls.Shapes.Path left = new() { Data = Geometry.Parse("M0,0 L4,3 L0,6 Z"), Fill = Brushes.White };
+        // Whole-pixel position keeps the arrows sharp.
+        double y = Math.Round((1 - _h / 360) * _hue.Bounds.Height);
+        Avalonia.Controls.Shapes.Path left = new() { Data = Geometry.Parse("M0 0 L4 3.5 L0 7 Z"), Fill = Brushes.White };
         Canvas.SetLeft(left, -4);
         Canvas.SetTop(left, y - 3);
-        Avalonia.Controls.Shapes.Path right = new() { Data = Geometry.Parse("M4,0 L0,3 L4,6 Z"), Fill = Brushes.White };
+        Avalonia.Controls.Shapes.Path right = new() { Data = Geometry.Parse("M4 0 L0 3.5 L4 7 Z"), Fill = Brushes.White };
         Canvas.SetLeft(right, 14);
         Canvas.SetTop(right, y - 3);
         _hueMarker.Children.Add(left);

@@ -87,6 +87,7 @@ public static partial class ToolIcons
         ["list-view"] = ["F:M1 3 H4 V6 H1 Z M1 7 H4 V10 H1 Z M1 11 H4 V14 H1 Z", "M6 4.5 H15 M6 8.5 H15 M6 12.5 H15"],
         ["new-layer"] = ["M2.5 2.5 H12.5 V12.5 H2.5 Z", "M7.5 5 V10 M5 7.5 H10"],
         ["trash"] = ["M1.5 3.5 H13.5", "M5.5 3 V1.5 H9.5 V3", "M3.5 4 V14.5 H11.5 V4", "M6.5 6 V12 M8.5 6 V12"],
+        ["swap-dimensions"] = ["M1 5.5 H11", "F:M14 5.5 L10.5 2 V9 Z", "M5 10.5 H15", "F:M2 10.5 L5.5 7 V14 Z"],
         ["plus"] = ["M7.5 2 V13 M2 7.5 H13"],
         ["snapshot"] = ["M1.5 4.5 H4.5 L6 2.5 H10 L11.5 4.5 H14.5 V13.5 H1.5 Z", "M5 9 A3 3 0 1 0 11 9 A3 3 0 1 0 5 9 Z"],
         ["new-document"] = ["M3.5 1.5 H9.5 L12.5 4.5 V14.5 H3.5 Z", "M9.5 1.5 V4.5 H12.5"],
@@ -128,6 +129,7 @@ public static partial class ToolIcons
         ["fx"] = ["M7 1.5 C5.5 1.5 4.5 2.2 4.5 4 V11", "M2.5 5.5 H7", "M7 6.5 L11 11 M11 6.5 L7 11"],
         ["smart-object"] = ["M1.5 1.5 H10.5 V10.5 H1.5 Z", "F:M6 6 H11 V11 H6 Z"],
         ["clip-arrow"] = ["M3.5 1 V6.5 H8", "F:M8 4 L11 6.5 L8 9 Z"],
+        ["panel-menu"] = ["M1 3.5 H11 M1 6.5 H11 M1 9.5 H11"],
         ["toolbar-expand"] = ["M2 2.5 L5.5 6 L2 9.5 M6.5 2.5 L10 6 L6.5 9.5"],
         ["toolbar-collapse"] = ["M5.5 2.5 L2 6 L5.5 9.5 M10 2.5 L6.5 6 L10 9.5"]
     };

@@ -156,7 +156,8 @@ public sealed class ToolbarControl : UserControl
             // Small corner triangle marks tools that have a flyout.
             content.Children.Add(new Avalonia.Controls.Shapes.Path
             {
-                Data = Geometry.Parse("M0 4 L4 4 L4 0 Z"),
+                // Stepped so every edge sits on whole pixels.
+                Data = Geometry.Parse("M3 0 H4 V4 H0 V3 H1 V2 H2 V1 H3 Z"),
                 Fill = new SolidColorBrush(Color.FromRgb(0xB8, 0xB8, 0xB8)),
                 HorizontalAlignment = HorizontalAlignment.Right,
                 VerticalAlignment = VerticalAlignment.Bottom,

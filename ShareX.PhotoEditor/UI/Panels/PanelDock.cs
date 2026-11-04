@@ -247,7 +247,7 @@ public sealed class PanelDock : UserControl
         Button menuButton = new()
         {
             Classes = { "icon" },
-            Content = new TextBlock { Text = "≡", FontSize = 15, Margin = new Thickness(0, -3, 0, 0), Foreground = new SolidColorBrush(Color.FromRgb(0xB0, 0xB0, 0xB0)) },
+            Content = ToolIcons.Create("panel-menu", 12),
             Padding = new Thickness(6, 0),
             Height = 22,
             VerticalAlignment = VerticalAlignment.Center,
