@@ -1810,7 +1810,7 @@
     <value>尺標</value>
   </data>
   <data name="EditorCommands_SampleRadiusPxColon" xml:space="preserve">
-    <value>取樣強度 (像素)：</value>
+    <value>取樣半徑 (像素)：</value>
   </data>
   <data name="EditorCommands_SampledBrushNumber" xml:space="preserve">
     <value>取樣筆刷 {0}</value>
