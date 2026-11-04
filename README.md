@@ -104,6 +104,28 @@ ShareX is available from the official website, GitHub releases, Microsoft Store 
 
 For the safest download options, use the official links below.
 
+## Windows, Linux and macOS (cross-platform-v2)
+
+The `cross-platform-v2` branch makes ShareX run on Windows, Linux and macOS from one code base: .NET 10 and Avalonia, with each operating system behind a platform layer (`ShareX.Platform.Windows`, `.Linux`, `.MacOS`). Architecture, building and per-desktop notes are in [docs/cross-platform.md](docs/cross-platform.md); detailed progress is in [docs/cross-platform-roadmap.md](docs/cross-platform-roadmap.md).
+
+Progress as of 4 November 2026:
+
+| System | Status | Packaging |
+| --- | --- | --- |
+| Windows | Complete; behaves as ShareX v22. | Existing setup, portable, Store and Steam builds. |
+| Linux | Complete for X11, Hyprland, sway, GNOME and KDE (OCR with Tesseract, recording with FFmpeg, portals on Wayland). Verified end to end on Hyprland, X11 and KDE. | Self-contained `sharex-linux-<arch>.tar.gz` with installer (`Scripts/install-linux.sh`). |
+| macOS 13+ (Apple silicon and Intel) | Feature complete (Vision OCR, Carbon hotkeys, Finder Quick Actions, Keychain, menu bar icon). Two rounds of testing on a real Mac; the round 2 findings are fixed in code and wait for a third round. | `ShareX.app` as `.zip` and `.dmg` (`Scripts/package-macos.sh`); Developer ID signing and notarization when the signing secrets are set. |
+
+CI (`.github/workflows/platform.yml`, `linux.yml`) builds and tests on all three systems on every push, and packages and launches the Linux and macOS applications.
+
+What is left before a cross-platform release:
+
+1. Merge `develop` into `cross-platform-v2`: the v22.0.0 and v22.1.0 releases and the new Photo Editor (233 commits since 2 October), porting any new Windows-only code to the platform layer.
+2. Third round of macOS testing: [docs/20261008-macos-retest-round3-procedure.md](docs/20261008-macos-retest-round3-procedure.md).
+3. Apple Developer ID certificate and notarization key as repository secrets, so CI signs and notarizes `ShareX.app`.
+4. Desktop checks still open on Linux: sway and GNOME end-to-end flows (see the verification list in the roadmap).
+5. Decide the release: when `cross-platform-v2` merges into `develop`, the version number, and attaching the `.dmg` and `.tar.gz` files that the update checker looks for.
+
 ## Links
 * Official website: https://getsharex.com
 * Downloads: https://getsharex.com/downloads
