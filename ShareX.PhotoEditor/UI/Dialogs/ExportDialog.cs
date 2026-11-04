@@ -34,10 +34,13 @@ public static class ExportDialog
 {
     public sealed record Result(string Extension, int Quality, int Width, int Height, bool Lossless);
 
-    public static async Task<Result?> ShowAsync(Window owner, PhotoDocument doc)
+    private static readonly (string Name, string Extension)[] Formats = [("PNG", ".png"), ("JPEG", ".jpg"), ("WebP", ".webp"), ("GIF", ".gif"), ("BMP", ".bmp"), ("TIFF", ".tif")];
+
+    /// <summary>Shows the export options. Format, quality and lossless are remembered in <paramref name="settings"/>; the size always starts at the document size.</summary>
+    public static async Task<Result?> ShowAsync(Window owner, PhotoDocument doc, EditorSettings settings)
     {
-        string extension = ".png";
-        int quality = 90;
+        string extension = Formats.Any(f => f.Extension == settings.ExportFormat) ? settings.ExportFormat : ".png";
+        int quality = Math.Clamp(settings.ExportQuality, 1, 100);
         NumericUpDown width = DialogBuilder.Number(1, 30000, doc.Width);
         NumericUpDown height = DialogBuilder.Number(1, 30000, doc.Height);
         bool updating = false;
@@ -69,14 +72,14 @@ public static class ExportDialog
         Grid losslessSection = AddSection();
         Grid qualitySection = AddSection();
         Grid sizeSection = AddSection();
-        CheckBox lossless = new() { Content = "Lossless" };
+        CheckBox lossless = new() { Content = "Lossless", IsChecked = settings.ExportWebPLossless };
         void UpdateOptions()
         {
             losslessSection.IsVisible = extension == ".webp";
             // Only lossy encoding has a quality setting.
             qualitySection.IsVisible = extension == ".jpg" || (extension == ".webp" && lossless.IsChecked != true);
         }
-        DialogBuilder.AddRow(formatSection, "Format:", DialogBuilder.Combo([("PNG", ".png"), ("JPEG", ".jpg"), ("WebP", ".webp"), ("GIF", ".gif"), ("BMP", ".bmp"), ("TIFF", ".tif")], extension, v =>
+        DialogBuilder.AddRow(formatSection, "Format:", DialogBuilder.Combo(Formats, extension, v =>
         {
             extension = v;
             UpdateOptions();
@@ -88,6 +91,9 @@ public static class ExportDialog
         DialogBuilder.AddRow(sizeSection, "Height (px):", height);
         UpdateOptions();
         if (!await DialogBuilder.ShowAsync(owner, "Export As", form, 420, "Export...")) return null;
+        settings.ExportFormat = extension;
+        settings.ExportQuality = quality;
+        settings.ExportWebPLossless = lossless.IsChecked == true;
         return new Result(extension, quality, (int)(width.Value ?? doc.Width), (int)(height.Value ?? doc.Height), extension == ".webp" && lossless.IsChecked == true);
     }
 }

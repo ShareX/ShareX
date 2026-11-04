@@ -274,7 +274,7 @@ public static partial class EditorCommands
     {
         PhotoDocument? doc = w.Document;
         if (doc == null) return;
-        ExportDialog.Result? options = await ExportDialog.ShowAsync(w, doc);
+        ExportDialog.Result? options = await ExportDialog.ShowAsync(w, doc, w.Settings);
         if (options == null) return;
         string? path = await w.PickSaveFileAsync("Export As", Path.GetFileNameWithoutExtension(doc.Title) + options.Extension, false);
         if (path == null) return;

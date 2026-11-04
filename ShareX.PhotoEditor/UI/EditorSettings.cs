@@ -98,6 +98,13 @@ public sealed class EditorSettings
 
     public ShareX.HelpersLib.WindowState WindowState { get; set; } = new();
 
+    /// <summary>Last format chosen in Export As, as a file extension.</summary>
+    public string ExportFormat { get; set; } = ".png";
+
+    public int ExportQuality { get; set; } = 90;
+
+    public bool ExportWebPLossless { get; set; }
+
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
         WriteIndented = true,
@@ -138,6 +145,8 @@ public sealed class EditorSettings
         if (!(GridSpacing >= 1)) GridSpacing = 64;
         CheckerSize = Math.Clamp(CheckerSize, 2, 64);
         if (!(RightDockWidth >= 0)) RightDockWidth = 300;
+        if (string.IsNullOrEmpty(ExportFormat)) ExportFormat = ".png";
+        ExportQuality = Math.Clamp(ExportQuality, 1, 100);
         return this;
     }
 
