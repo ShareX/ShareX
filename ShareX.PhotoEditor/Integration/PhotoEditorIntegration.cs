@@ -51,8 +51,7 @@ public static class PhotoEditorIntegration
             }
             else
             {
-                if (!_window.IsVisible) _window.Show();
-                _window.Activate();
+                _window.BringToFront();
             }
             foreach (string path in paths) EditorCommands.OpenFile(_window, path);
             if (copy != null)

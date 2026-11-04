@@ -84,6 +84,24 @@ public sealed partial class PhotoEditorWindow
 
     private bool _windowPlacementApplied;
     private bool _windowPlacementSavePending;
+    private WindowState _restoreWindowState = WindowState.Normal;
+
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+    {
+        base.OnPropertyChanged(change);
+        if (change.Property == WindowStateProperty && change.GetNewValue<WindowState>() != WindowState.Minimized)
+        {
+            _restoreWindowState = change.GetNewValue<WindowState>();
+        }
+    }
+
+    /// <summary>Shows the window, restores it when minimized to the state it had before, and brings it to the front.</summary>
+    public void BringToFront()
+    {
+        if (!IsVisible) Show();
+        if (WindowState == WindowState.Minimized) WindowState = _restoreWindowState;
+        Activate();
+    }
 
     // ------------------------------------------------------------------ closing
 
