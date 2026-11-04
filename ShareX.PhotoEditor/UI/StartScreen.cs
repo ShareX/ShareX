@@ -116,11 +116,12 @@ public sealed class StartScreen : Border
     {
         Button button = new()
         {
-            Content = text,
+            Content = new TextBlock { Text = text, TextWrapping = TextWrapping.Wrap, TextAlignment = Avalonia.Media.TextAlignment.Center },
             Classes = { primary ? "primary" : "secondary" },
             HorizontalAlignment = HorizontalAlignment.Stretch,
             HorizontalContentAlignment = HorizontalAlignment.Center,
-            Height = 32,
+            VerticalContentAlignment = VerticalAlignment.Center,
+            MinHeight = 32,
             FontSize = 13
         };
         button.Click += (_, _) => _editor.Execute(commandId);
@@ -129,10 +130,13 @@ public sealed class StartScreen : Border
 
     private Button LinkButton(string icon, string text, string commandId)
     {
-        StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 8 };
+        // Grid instead of a horizontal StackPanel so the label gets a finite width and can wrap.
+        Grid content = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*"), ColumnSpacing = 8 };
         content.Children.Add(ToolIcons.Create(icon, 16));
-        content.Children.Add(new TextBlock { Text = text, VerticalAlignment = VerticalAlignment.Center });
-        Button button = new() { Content = content, Classes = { "icon" }, HorizontalAlignment = HorizontalAlignment.Stretch, HorizontalContentAlignment = HorizontalAlignment.Left, Padding = new Thickness(6, 5) };
+        TextBlock label = new() { Text = text, TextWrapping = TextWrapping.Wrap, VerticalAlignment = VerticalAlignment.Center };
+        Grid.SetColumn(label, 1);
+        content.Children.Add(label);
+        Button button = new() { Content = content, Classes = { "icon" }, HorizontalAlignment = HorizontalAlignment.Stretch, HorizontalContentAlignment = HorizontalAlignment.Stretch, Padding = new Thickness(6, 5) };
         button.Click += (_, _) => _editor.Execute(commandId);
         return button;
     }
