@@ -58,9 +58,9 @@ public sealed class MatchColorEditor : UserControl
         _targetLayer = _document?.ActiveLayer;
 
         StackPanel root = new() { Spacing = 8 };
-        root.Children.Add(new TextBlock { Text = "Destination Image", Classes = { "header" } });
+        root.Children.Add(new TextBlock { Text = Strings.MatchColorEditor_DestinationImage, Classes = { "header" } });
         Grid destination = DialogBuilder.Form();
-        DialogBuilder.AddRow(destination, "Target:", new TextBlock
+        DialogBuilder.AddRow(destination, Strings.MatchColorEditor_TargetColon, new TextBlock
         {
             Text = $"{_document?.DisplayName} ({_targetLayer?.Name}, RGB/8)",
             VerticalAlignment = VerticalAlignment.Center,
@@ -69,12 +69,12 @@ public sealed class MatchColorEditor : UserControl
         root.Children.Add(destination);
 
         root.Children.Add(new Border { Classes = { "hsep" } });
-        root.Children.Add(new TextBlock { Text = "Image Options", Classes = { "header" } });
+        root.Children.Add(new TextBlock { Text = Strings.EditorCommands_ImageOptions, Classes = { "header" } });
         Grid options = DialogBuilder.Form();
-        AddSlider(options, "Luminance:", "luminance", 1, 200, 100);
-        AddSlider(options, "Color Intensity:", "intensity", 1, 200, 100);
-        AddSlider(options, "Fade:", "fade", 0, 100, 0);
-        CheckBox neutralize = new() { Content = "Neutralize", IsChecked = settings.Get("neutralize") > 0 };
+        AddSlider(options, Strings.MatchColorEditor_LuminanceColon, "luminance", 1, 200, 100);
+        AddSlider(options, Strings.MatchColorEditor_ColorIntensityColon, "intensity", 1, 200, 100);
+        AddSlider(options, Strings.MatchColorEditor_FadeColon, "fade", 0, 100, 0);
+        CheckBox neutralize = new() { Content = Strings.MatchColorEditor_Neutralize, IsChecked = settings.Get("neutralize") > 0 };
         neutralize.IsCheckedChanged += (_, _) =>
         {
             settings.Set("neutralize", neutralize.IsChecked == true ? 1 : 0);
@@ -84,7 +84,7 @@ public sealed class MatchColorEditor : UserControl
         root.Children.Add(options);
 
         root.Children.Add(new Border { Classes = { "hsep" } });
-        root.Children.Add(new TextBlock { Text = "Image Statistics", Classes = { "header" } });
+        root.Children.Add(new TextBlock { Text = Strings.MatchColorEditor_ImageStatistics, Classes = { "header" } });
         root.Children.Add(BuildStatistics(host as PhotoEditorWindow));
         Content = root;
         MeasureTarget();
@@ -101,14 +101,14 @@ public sealed class MatchColorEditor : UserControl
 
     private Control BuildStatistics(PhotoEditorWindow? editor)
     {
-        CheckBox useSource = new() { Content = "Use Selection in Source to Calculate Colors", IsEnabled = false };
+        CheckBox useSource = new() { Content = Strings.MatchColorEditor_UseSourceSelection, IsEnabled = false };
         useSource.IsCheckedChanged += (_, _) =>
         {
             _useSourceSelection = useSource.IsChecked == true;
             MeasureSource();
             _changed();
         };
-        CheckBox useTarget = new() { Content = "Use Selection in Target to Calculate Adjustment", IsEnabled = _document?.Selection != null };
+        CheckBox useTarget = new() { Content = Strings.MatchColorEditor_UseTargetSelection, IsEnabled = _document?.Selection != null };
         useTarget.IsCheckedChanged += (_, _) =>
         {
             _useTargetSelection = useTarget.IsChecked == true;
@@ -116,7 +116,7 @@ public sealed class MatchColorEditor : UserControl
             _changed();
         };
 
-        List<(string Text, DocumentView? Value)> documents = [("None", null)];
+        List<(string Text, DocumentView? Value)> documents = [(Strings.PropertiesPanel_None, null)];
         if (editor != null) documents.AddRange(editor.Views.Select(view => (view.Document.DisplayName, (DocumentView?)view)));
         ComboBox source = DialogBuilder.Combo(documents, null, view =>
         {
@@ -132,15 +132,15 @@ public sealed class MatchColorEditor : UserControl
         Grid form = DialogBuilder.Form();
         DialogBuilder.AddFull(form, useSource);
         DialogBuilder.AddFull(form, useTarget);
-        DialogBuilder.AddRow(form, "Source:", source);
-        DialogBuilder.AddRow(form, "Layer:", _layerHost);
+        DialogBuilder.AddRow(form, Strings.MatchColorEditor_SourceColon, source);
+        DialogBuilder.AddRow(form, Strings.MatchColorEditor_LayerColon, _layerHost);
         DialogBuilder.AddFull(form, _sourcePreview);
         return form;
     }
 
     private void RebuildLayers()
     {
-        List<(string Text, Layer? Value)> layers = [("Merged", null)];
+        List<(string Text, Layer? Value)> layers = [(Strings.EditorCommands_Merged, null)];
         PhotoDocument? document = _sourceView?.Document;
         if (document != null)
         {

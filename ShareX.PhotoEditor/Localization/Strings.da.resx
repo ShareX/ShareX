@@ -12,6 +12,519 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdjustmentEditor_Auto" xml:space="preserve">
+    <value>Automatisk</value>
+  </data>
+  <data name="AdjustmentEditor_BlackColon" xml:space="preserve">
+    <value>Sort:</value>
+  </data>
+  <data name="AdjustmentEditor_Blacks" xml:space="preserve">
+    <value>Sorte toner</value>
+  </data>
+  <data name="AdjustmentEditor_Blue" xml:space="preserve">
+    <value>Blå</value>
+  </data>
+  <data name="AdjustmentEditor_BlueColon" xml:space="preserve">
+    <value>Blå:</value>
+  </data>
+  <data name="AdjustmentEditor_Blues" xml:space="preserve">
+    <value>Blå toner</value>
+  </data>
+  <data name="AdjustmentEditor_BluesColon" xml:space="preserve">
+    <value>Blå toner:</value>
+  </data>
+  <data name="AdjustmentEditor_BrightnessColon" xml:space="preserve">
+    <value>Lysstyrke:</value>
+  </data>
+  <data name="AdjustmentEditor_ChannelColon" xml:space="preserve">
+    <value>Kanal:</value>
+  </data>
+  <data name="AdjustmentEditor_Colorize" xml:space="preserve">
+    <value>Farvelæg</value>
+  </data>
+  <data name="AdjustmentEditor_ColorsColon" xml:space="preserve">
+    <value>Farver:</value>
+  </data>
+  <data name="AdjustmentEditor_ConstantColon" xml:space="preserve">
+    <value>Konstant:</value>
+  </data>
+  <data name="AdjustmentEditor_ContrastColon" xml:space="preserve">
+    <value>Kontrast:</value>
+  </data>
+  <data name="AdjustmentEditor_CurvesHint" xml:space="preserve">
+    <value>Klik for at tilføje punkter, træk for at justere, og træk et punkt væk fra grafen for at slette det.</value>
+  </data>
+  <data name="AdjustmentEditor_CyanColon" xml:space="preserve">
+    <value>Cyan:</value>
+  </data>
+  <data name="AdjustmentEditor_CyanRedColon" xml:space="preserve">
+    <value>Cyan / Rød:</value>
+  </data>
+  <data name="AdjustmentEditor_Cyans" xml:space="preserve">
+    <value>Cyan toner</value>
+  </data>
+  <data name="AdjustmentEditor_CyansColon" xml:space="preserve">
+    <value>Cyan toner:</value>
+  </data>
+  <data name="AdjustmentEditor_DensityColon" xml:space="preserve">
+    <value>Tæthed:</value>
+  </data>
+  <data name="AdjustmentEditor_EditGradientEllipsis" xml:space="preserve">
+    <value>Rediger forløb...</value>
+  </data>
+  <data name="AdjustmentEditor_ExposureColon" xml:space="preserve">
+    <value>Eksponering:</value>
+  </data>
+  <data name="AdjustmentEditor_FilterColorColon" xml:space="preserve">
+    <value>Filterfarve:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaColon" xml:space="preserve">
+    <value>Gamma:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaCorrectionColon" xml:space="preserve">
+    <value>Gammakorrektion:</value>
+  </data>
+  <data name="AdjustmentEditor_Green" xml:space="preserve">
+    <value>Grøn</value>
+  </data>
+  <data name="AdjustmentEditor_GreenColon" xml:space="preserve">
+    <value>Grøn:</value>
+  </data>
+  <data name="AdjustmentEditor_Greens" xml:space="preserve">
+    <value>Grønne toner</value>
+  </data>
+  <data name="AdjustmentEditor_GreensColon" xml:space="preserve">
+    <value>Grønne toner:</value>
+  </data>
+  <data name="AdjustmentEditor_Highlights" xml:space="preserve">
+    <value>Højlys</value>
+  </data>
+  <data name="AdjustmentEditor_HueColon" xml:space="preserve">
+    <value>Farvetone:</value>
+  </data>
+  <data name="AdjustmentEditor_InputBlackColon" xml:space="preserve">
+    <value>Input sort:</value>
+  </data>
+  <data name="AdjustmentEditor_InputWhiteColon" xml:space="preserve">
+    <value>Input hvid:</value>
+  </data>
+  <data name="AdjustmentEditor_LevelsColon" xml:space="preserve">
+    <value>Niveauer:</value>
+  </data>
+  <data name="AdjustmentEditor_LightnessColon" xml:space="preserve">
+    <value>Lyshed:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaColon" xml:space="preserve">
+    <value>Magenta:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaGreenColon" xml:space="preserve">
+    <value>Magenta / Grøn:</value>
+  </data>
+  <data name="AdjustmentEditor_Magentas" xml:space="preserve">
+    <value>Magenta toner</value>
+  </data>
+  <data name="AdjustmentEditor_MagentasColon" xml:space="preserve">
+    <value>Magenta toner:</value>
+  </data>
+  <data name="AdjustmentEditor_Midtones" xml:space="preserve">
+    <value>Mellemtoner</value>
+  </data>
+  <data name="AdjustmentEditor_Monochrome" xml:space="preserve">
+    <value>Monokrom</value>
+  </data>
+  <data name="AdjustmentEditor_Neutrals" xml:space="preserve">
+    <value>Neutrale toner</value>
+  </data>
+  <data name="AdjustmentEditor_NoOptions" xml:space="preserve">
+    <value>Denne justering har ingen indstillinger.</value>
+  </data>
+  <data name="AdjustmentEditor_OffsetColon" xml:space="preserve">
+    <value>Forskydning:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputBlackColon" xml:space="preserve">
+    <value>Output sort:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputChannelColon" xml:space="preserve">
+    <value>Outputkanal:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputWhiteColon" xml:space="preserve">
+    <value>Output hvid:</value>
+  </data>
+  <data name="AdjustmentEditor_PreserveLuminosity" xml:space="preserve">
+    <value>Bevar luminans</value>
+  </data>
+  <data name="AdjustmentEditor_Red" xml:space="preserve">
+    <value>Rød</value>
+  </data>
+  <data name="AdjustmentEditor_RedColon" xml:space="preserve">
+    <value>Rød:</value>
+  </data>
+  <data name="AdjustmentEditor_Reds" xml:space="preserve">
+    <value>Røde toner</value>
+  </data>
+  <data name="AdjustmentEditor_RedsColon" xml:space="preserve">
+    <value>Røde toner:</value>
+  </data>
+  <data name="AdjustmentEditor_ResetChannel" xml:space="preserve">
+    <value>Nulstil kanal</value>
+  </data>
+  <data name="AdjustmentEditor_Reverse" xml:space="preserve">
+    <value>Omvendt</value>
+  </data>
+  <data name="AdjustmentEditor_SaturationColon" xml:space="preserve">
+    <value>Mætning:</value>
+  </data>
+  <data name="AdjustmentEditor_Shadows" xml:space="preserve">
+    <value>Skygger</value>
+  </data>
+  <data name="AdjustmentEditor_ThresholdLevelColon" xml:space="preserve">
+    <value>Tærskelniveau:</value>
+  </data>
+  <data name="AdjustmentEditor_Tint" xml:space="preserve">
+    <value>Farvetoning</value>
+  </data>
+  <data name="AdjustmentEditor_TintColorColon" xml:space="preserve">
+    <value>Toningsfarve:</value>
+  </data>
+  <data name="AdjustmentEditor_ToneColon" xml:space="preserve">
+    <value>Tone:</value>
+  </data>
+  <data name="AdjustmentEditor_UseLegacy" xml:space="preserve">
+    <value>Brug ældre metode</value>
+  </data>
+  <data name="AdjustmentEditor_VibranceColon" xml:space="preserve">
+    <value>Livlighed:</value>
+  </data>
+  <data name="AdjustmentEditor_Whites" xml:space="preserve">
+    <value>Hvide toner</value>
+  </data>
+  <data name="AdjustmentEditor_YellowBlueColon" xml:space="preserve">
+    <value>Gul / Blå:</value>
+  </data>
+  <data name="AdjustmentEditor_YellowColon" xml:space="preserve">
+    <value>Gul:</value>
+  </data>
+  <data name="AdjustmentEditor_Yellows" xml:space="preserve">
+    <value>Gule toner</value>
+  </data>
+  <data name="AdjustmentEditor_YellowsColon" xml:space="preserve">
+    <value>Gule toner:</value>
+  </data>
+  <data name="AdjustmentsPanel_AddAdjustment" xml:space="preserve">
+    <value>Tilføj en justering</value>
+  </data>
+  <data name="AdjustmentsPanel_CreateAdjustmentLayerTip" xml:space="preserve">
+    <value>Opret et nyt justeringslag: {0}</value>
+  </data>
+  <data name="Adjustments_BlackAndWhite" xml:space="preserve">
+    <value>Sort-hvid</value>
+  </data>
+  <data name="Adjustments_BrightnessContrast" xml:space="preserve">
+    <value>Lysstyrke/kontrast</value>
+  </data>
+  <data name="Adjustments_ChannelMixer" xml:space="preserve">
+    <value>Kanalmixer</value>
+  </data>
+  <data name="Adjustments_ColorBalance" xml:space="preserve">
+    <value>Farvebalance</value>
+  </data>
+  <data name="Adjustments_ColorLookup" xml:space="preserve">
+    <value>Farveopslag</value>
+  </data>
+  <data name="Adjustments_Curves" xml:space="preserve">
+    <value>Kurver</value>
+  </data>
+  <data name="Adjustments_Desaturate" xml:space="preserve">
+    <value>Fjern mætning</value>
+  </data>
+  <data name="Adjustments_Exposure" xml:space="preserve">
+    <value>Eksponering</value>
+  </data>
+  <data name="Adjustments_GradientMap" xml:space="preserve">
+    <value>Forløbstilknytning</value>
+  </data>
+  <data name="Adjustments_HdrToning" xml:space="preserve">
+    <value>HDR-toning</value>
+  </data>
+  <data name="Adjustments_HueSaturation" xml:space="preserve">
+    <value>Farvetone/mætning</value>
+  </data>
+  <data name="Adjustments_Invert" xml:space="preserve">
+    <value>Invertér</value>
+  </data>
+  <data name="Adjustments_Levels" xml:space="preserve">
+    <value>Nivåer</value>
+  </data>
+  <data name="Adjustments_MatchColor" xml:space="preserve">
+    <value>Match farve</value>
+  </data>
+  <data name="Adjustments_PhotoFilter" xml:space="preserve">
+    <value>Fotofilter</value>
+  </data>
+  <data name="Adjustments_Posterize" xml:space="preserve">
+    <value>Posteriser</value>
+  </data>
+  <data name="Adjustments_ReplaceColor" xml:space="preserve">
+    <value>Erstat farve</value>
+  </data>
+  <data name="Adjustments_SelectiveColor" xml:space="preserve">
+    <value>Selektiv farve</value>
+  </data>
+  <data name="Adjustments_Threshold" xml:space="preserve">
+    <value>Tærskelværdi</value>
+  </data>
+  <data name="Adjustments_Vibrance" xml:space="preserve">
+    <value>Lyster</value>
+  </data>
+  <data name="BlendModes_Behind" xml:space="preserve">
+    <value>Bagved</value>
+  </data>
+  <data name="BlendModes_Clear" xml:space="preserve">
+    <value>Ryd</value>
+  </data>
+  <data name="BlendModes_Color" xml:space="preserve">
+    <value>Farve</value>
+  </data>
+  <data name="BlendModes_ColorBurn" xml:space="preserve">
+    <value>Farvebrænding</value>
+  </data>
+  <data name="BlendModes_ColorDodge" xml:space="preserve">
+    <value>Farveudvaskning</value>
+  </data>
+  <data name="BlendModes_Darken" xml:space="preserve">
+    <value>Mørkere</value>
+  </data>
+  <data name="BlendModes_DarkerColor" xml:space="preserve">
+    <value>Mørkere farve</value>
+  </data>
+  <data name="BlendModes_Difference" xml:space="preserve">
+    <value>Forskel</value>
+  </data>
+  <data name="BlendModes_Dissolve" xml:space="preserve">
+    <value>Opløs</value>
+  </data>
+  <data name="BlendModes_Divide" xml:space="preserve">
+    <value>Divider</value>
+  </data>
+  <data name="BlendModes_Exclusion" xml:space="preserve">
+    <value>Udelukkelse</value>
+  </data>
+  <data name="BlendModes_HardLight" xml:space="preserve">
+    <value>Hårdt lys</value>
+  </data>
+  <data name="BlendModes_HardMix" xml:space="preserve">
+    <value>Hård blanding</value>
+  </data>
+  <data name="BlendModes_Hue" xml:space="preserve">
+    <value>Nuance</value>
+  </data>
+  <data name="BlendModes_Lighten" xml:space="preserve">
+    <value>Lysere</value>
+  </data>
+  <data name="BlendModes_LighterColor" xml:space="preserve">
+    <value>Lysere farve</value>
+  </data>
+  <data name="BlendModes_LinearBurn" xml:space="preserve">
+    <value>Lineær brænding</value>
+  </data>
+  <data name="BlendModes_LinearDodge" xml:space="preserve">
+    <value>Lineær udvaskning (tilføj)</value>
+  </data>
+  <data name="BlendModes_LinearLight" xml:space="preserve">
+    <value>Lineært lys</value>
+  </data>
+  <data name="BlendModes_Luminosity" xml:space="preserve">
+    <value>Luminans</value>
+  </data>
+  <data name="BlendModes_Multiply" xml:space="preserve">
+    <value>Multiplicer</value>
+  </data>
+  <data name="BlendModes_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="BlendModes_Overlay" xml:space="preserve">
+    <value>Overlejring</value>
+  </data>
+  <data name="BlendModes_PassThrough" xml:space="preserve">
+    <value>Gennemløb</value>
+  </data>
+  <data name="BlendModes_PinLight" xml:space="preserve">
+    <value>Punktlys</value>
+  </data>
+  <data name="BlendModes_Saturation" xml:space="preserve">
+    <value>Mætning</value>
+  </data>
+  <data name="BlendModes_Screen" xml:space="preserve">
+    <value>Skærm</value>
+  </data>
+  <data name="BlendModes_SoftLight" xml:space="preserve">
+    <value>Blødt lys</value>
+  </data>
+  <data name="BlendModes_Subtract" xml:space="preserve">
+    <value>Subtraher</value>
+  </data>
+  <data name="BlendModes_VividLight" xml:space="preserve">
+    <value>Kraftigt lys</value>
+  </data>
+  <data name="BrushesPanel_Angle" xml:space="preserve">
+    <value>Vinkel</value>
+  </data>
+  <data name="BrushesPanel_Hardness" xml:space="preserve">
+    <value>Hårdhed</value>
+  </data>
+  <data name="BrushesPanel_NewBrushPresetEllipsis" xml:space="preserve">
+    <value>Ny penselforudindstilling...</value>
+  </data>
+  <data name="BrushesPanel_PressureFlow" xml:space="preserve">
+    <value>Pennetryk styrer flowet</value>
+  </data>
+  <data name="BrushesPanel_PressureSize" xml:space="preserve">
+    <value>Pennetryk styrer størrelsen</value>
+  </data>
+  <data name="BrushesPanel_Roundness" xml:space="preserve">
+    <value>Rundhed</value>
+  </data>
+  <data name="BrushesPanel_Scatter" xml:space="preserve">
+    <value>Spredning</value>
+  </data>
+  <data name="BrushesPanel_SelectPaintingTool" xml:space="preserve">
+    <value>Vælg et maleværktøj for at redigere dets pensel.</value>
+  </data>
+  <data name="BrushesPanel_Size" xml:space="preserve">
+    <value>Størrelse</value>
+  </data>
+  <data name="BrushesPanel_SizeJitter" xml:space="preserve">
+    <value>Størrelsesvariation</value>
+  </data>
+  <data name="BrushesPanel_Spacing" xml:space="preserve">
+    <value>Mellemrum</value>
+  </data>
+  <data name="BrushesPanel_SquareTip" xml:space="preserve">
+    <value>Firkantet spids</value>
+  </data>
+  <data name="CanvasSizeDialog_AnchorColon" xml:space="preserve">
+    <value>Anker:</value>
+  </data>
+  <data name="CanvasSizeDialog_CurrentSize" xml:space="preserve">
+    <value>Aktuel størrelse: {0} × {1} px</value>
+  </data>
+  <data name="CanvasSizeDialog_ExtensionColorColon" xml:space="preserve">
+    <value>Farve for udvidelse af lærred:</value>
+  </data>
+  <data name="CanvasSizeDialog_Foreground" xml:space="preserve">
+    <value>Forgrund</value>
+  </data>
+  <data name="CanvasSizeDialog_Gray" xml:space="preserve">
+    <value>Grå</value>
+  </data>
+  <data name="CanvasSizeDialog_Relative" xml:space="preserve">
+    <value>Relativ</value>
+  </data>
+  <data name="CanvasView_EditCancelled" xml:space="preserve">
+    <value>Redigeringen blev annulleret, fordi dokumentet blev ændret.</value>
+  </data>
+  <data name="CanvasView_EmptyHint" xml:space="preserve">
+    <value>Åbn eller opret et dokument for at begynde at redigere (Ctrl+O / Ctrl+N), eller slip et billede her.</value>
+  </data>
+  <data name="ChannelsPanel_ChannelOptions" xml:space="preserve">
+    <value>Kanalindstillinger</value>
+  </data>
+  <data name="ChannelsPanel_DeleteChannelTip" xml:space="preserve">
+    <value>Slet aktuel kanal</value>
+  </data>
+  <data name="ChannelsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>Indlæs kanal som markering</value>
+  </data>
+  <data name="ChannelsPanel_NewChannelTip" xml:space="preserve">
+    <value>Opret ny kanal</value>
+  </data>
+  <data name="ChannelsPanel_QuickMask" xml:space="preserve">
+    <value>Hurtigmaske</value>
+  </data>
+  <data name="ChannelsPanel_SaveSelectionTip" xml:space="preserve">
+    <value>Gem markering som kanal</value>
+  </data>
+  <data name="ChannelsPanel_ShowOverlayTip" xml:space="preserve">
+    <value>Vis kanalen som overlejring</value>
+  </data>
+  <data name="ColorLookupEditor_CouldNotLoad" xml:space="preserve">
+    <value>3D-LUT'en kunne ikke indlæses: {0}</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLut" xml:space="preserve">
+    <value>Indlæs 3D-LUT</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLutEllipsis" xml:space="preserve">
+    <value>Indlæs 3D-LUT...</value>
+  </data>
+  <data name="ColorLookupEditor_LutFileColon" xml:space="preserve">
+    <value>3D-LUT-fil:</value>
+  </data>
+  <data name="ColorLookupEditor_LutFiles" xml:space="preserve">
+    <value>3D-LUT-filer</value>
+  </data>
+  <data name="ColorLut_1DNotSupported" xml:space="preserve">
+    <value>1D-opslagstabeller understøttes ikke.</value>
+  </data>
+  <data name="ColorLut_DataSizeMismatch" xml:space="preserve">
+    <value>Tabeldataene passer ikke til tabellens størrelse.</value>
+  </data>
+  <data name="ColorLut_InvalidDomain" xml:space="preserve">
+    <value>Tabellens domæne er ugyldigt.</value>
+  </data>
+  <data name="ColorLut_NoSizeEntry" xml:space="preserve">
+    <value>Filen har ingen LUT_3D_SIZE-post.</value>
+  </data>
+  <data name="ColorLut_SizeNotSupported" xml:space="preserve">
+    <value>Tabelstørrelsen {0} understøttes ikke.</value>
+  </data>
+  <data name="ColorPanel_BackgroundColor" xml:space="preserve">
+    <value>Baggrundsfarve</value>
+  </data>
+  <data name="ColorPanel_BackgroundTip" xml:space="preserve">
+    <value>Baggrundsfarve. Dobbeltklik åbner farvevælgeren.</value>
+  </data>
+  <data name="ColorPanel_ForegroundColor" xml:space="preserve">
+    <value>Forgrundsfarve</value>
+  </data>
+  <data name="ColorPanel_ForegroundTip" xml:space="preserve">
+    <value>Forgrundsfarve. Dobbeltklik åbner farvevælgeren.</value>
+  </data>
+  <data name="ColorPickerDialog_AddToSwatches" xml:space="preserve">
+    <value>Føj til farveprøver</value>
+  </data>
+  <data name="ColorPickerDialog_NotWebColorTip" xml:space="preserve">
+    <value>Ikke en webfarve. Klik på farveprøven for at bruge den nærmeste.</value>
+  </data>
+  <data name="ColorPickerDialog_OnlyWebColors" xml:space="preserve">
+    <value>Kun webfarver</value>
+  </data>
+  <data name="ColorPickerDialog_Reset" xml:space="preserve">
+    <value>Nulstil</value>
+  </data>
+  <data name="ColorPickerDialog_RestoreCurrentTip" xml:space="preserve">
+    <value>Klik for at gendanne den aktuelle farve</value>
+  </data>
+  <data name="ColorPickerDialog_Title" xml:space="preserve">
+    <value>Farvevælger</value>
+  </data>
+  <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
+    <value>Farvevælger ({0})</value>
+  </data>
+  <data name="DialogBuilder_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="DialogBuilder_No" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="DialogBuilder_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DialogBuilder_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="DocumentItems_CountGroup1" xml:space="preserve">
+    <value>Optællingsgruppe 1</value>
+  </data>
   <data name="EditorCommands_90Clockwise" xml:space="preserve">
     <value>90° med uret</value>
   </data>
@@ -1284,6 +1797,255 @@
   <data name="EditorCommands_ZoomOut" xml:space="preserve">
     <value>Zoom ud</value>
   </data>
+  <data name="Enum_ArtStyle_Dab" xml:space="preserve">
+    <value>Dup</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseCurl" xml:space="preserve">
+    <value>Løs krølle</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseLong" xml:space="preserve">
+    <value>Løs lang</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseMedium" xml:space="preserve">
+    <value>Løs mellem</value>
+  </data>
+  <data name="Enum_ArtStyle_TightCurl" xml:space="preserve">
+    <value>Stram krølle</value>
+  </data>
+  <data name="Enum_ArtStyle_TightLong" xml:space="preserve">
+    <value>Stram lang</value>
+  </data>
+  <data name="Enum_ArtStyle_TightMedium" xml:space="preserve">
+    <value>Stram mellem</value>
+  </data>
+  <data name="Enum_ArtStyle_TightShort" xml:space="preserve">
+    <value>Stram kort</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Bottom" xml:space="preserve">
+    <value>Nederste kant</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomLeft" xml:space="preserve">
+    <value>Nederst til venstre</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomRight" xml:space="preserve">
+    <value>Nederst til højre</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Center" xml:space="preserve">
+    <value>Centreret</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Left" xml:space="preserve">
+    <value>Venstre</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Right" xml:space="preserve">
+    <value>Højre</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Top" xml:space="preserve">
+    <value>Øverst</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopLeft" xml:space="preserve">
+    <value>Øverst til venstre</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopRight" xml:space="preserve">
+    <value>Øverst til højre</value>
+  </data>
+  <data name="Enum_EraserMode_Block" xml:space="preserve">
+    <value>Blok</value>
+  </data>
+  <data name="Enum_EraserMode_Brush" xml:space="preserve">
+    <value>Pensel</value>
+  </data>
+  <data name="Enum_EraserMode_Pencil" xml:space="preserve">
+    <value>Blyant</value>
+  </data>
+  <data name="Enum_FillKind_Gradient" xml:space="preserve">
+    <value>Farveovergang</value>
+  </data>
+  <data name="Enum_FillKind_Pattern" xml:space="preserve">
+    <value>Mønster</value>
+  </data>
+  <data name="Enum_FillKind_SolidColor" xml:space="preserve">
+    <value>Ensfarvet</value>
+  </data>
+  <data name="Enum_GradientType_Angle" xml:space="preserve">
+    <value>Vinkel</value>
+  </data>
+  <data name="Enum_GradientType_Diamond" xml:space="preserve">
+    <value>Diamant</value>
+  </data>
+  <data name="Enum_GradientType_Linear" xml:space="preserve">
+    <value>Lineær</value>
+  </data>
+  <data name="Enum_GradientType_Radial" xml:space="preserve">
+    <value>Radial</value>
+  </data>
+  <data name="Enum_GradientType_Reflected" xml:space="preserve">
+    <value>Spejlet</value>
+  </data>
+  <data name="Enum_HealType_ContentAware" xml:space="preserve">
+    <value>Indholdsbaseret</value>
+  </data>
+  <data name="Enum_HealType_CreateTexture" xml:space="preserve">
+    <value>Opret tekstur</value>
+  </data>
+  <data name="Enum_HealType_ProximityMatch" xml:space="preserve">
+    <value>Nærhedsmatch</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedRatio" xml:space="preserve">
+    <value>Fast forhold</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedSize" xml:space="preserve">
+    <value>Fast størrelse</value>
+  </data>
+  <data name="Enum_MarqueeStyle_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Enum_PathCombine_Combine" xml:space="preserve">
+    <value>Kombiner former</value>
+  </data>
+  <data name="Enum_PathCombine_Exclude" xml:space="preserve">
+    <value>Udelad overlappende former</value>
+  </data>
+  <data name="Enum_PathCombine_Intersect" xml:space="preserve">
+    <value>Fællesmængde af formområder</value>
+  </data>
+  <data name="Enum_PathCombine_NewLayer" xml:space="preserve">
+    <value>Nyt lag</value>
+  </data>
+  <data name="Enum_PathCombine_Subtract" xml:space="preserve">
+    <value>Subtraher forreste form</value>
+  </data>
+  <data name="Enum_PathToolMode_Path" xml:space="preserve">
+    <value>Sti</value>
+  </data>
+  <data name="Enum_PathToolMode_Shape" xml:space="preserve">
+    <value>Form</value>
+  </data>
+  <data name="Enum_ReplaceMode_Color" xml:space="preserve">
+    <value>Farve</value>
+  </data>
+  <data name="Enum_ReplaceMode_Hue" xml:space="preserve">
+    <value>Nuance</value>
+  </data>
+  <data name="Enum_ReplaceMode_Luminosity" xml:space="preserve">
+    <value>Luminans</value>
+  </data>
+  <data name="Enum_ReplaceMode_Saturation" xml:space="preserve">
+    <value>Mætning</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bicubic" xml:space="preserve">
+    <value>Bikubisk</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSharper" xml:space="preserve">
+    <value>Bikubisk skarpere</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSmoother" xml:space="preserve">
+    <value>Bikubisk blødere</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bilinear" xml:space="preserve">
+    <value>Bilineær</value>
+  </data>
+  <data name="Enum_ResampleMethod_Lanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="Enum_ResampleMethod_NearestNeighbor" xml:space="preserve">
+    <value>Nærmeste nabo</value>
+  </data>
+  <data name="Enum_Sampling_BackgroundSwatch" xml:space="preserve">
+    <value>Baggrundsfarveprøve</value>
+  </data>
+  <data name="Enum_Sampling_Continuous" xml:space="preserve">
+    <value>Kontinuerlig</value>
+  </data>
+  <data name="Enum_Sampling_Once" xml:space="preserve">
+    <value>Én gang</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
+    <value>Sti</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Pixels" xml:space="preserve">
+    <value>Pixel</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Shape" xml:space="preserve">
+    <value>Form</value>
+  </data>
+  <data name="Enum_StrokePosition_Center" xml:space="preserve">
+    <value>Centreret</value>
+  </data>
+  <data name="Enum_StrokePosition_Inside" xml:space="preserve">
+    <value>Inde i</value>
+  </data>
+  <data name="Enum_StrokePosition_Outside" xml:space="preserve">
+    <value>Uden for</value>
+  </data>
+  <data name="Enum_TextAlignment_Center" xml:space="preserve">
+    <value>Centreret</value>
+  </data>
+  <data name="Enum_TextAlignment_Justify" xml:space="preserve">
+    <value>Lige margener</value>
+  </data>
+  <data name="Enum_TextAlignment_Left" xml:space="preserve">
+    <value>Venstre</value>
+  </data>
+  <data name="Enum_TextAlignment_Right" xml:space="preserve">
+    <value>Højre</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Crisp" xml:space="preserve">
+    <value>Klar</value>
+  </data>
+  <data name="Enum_TextAntiAlias_None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Sharp" xml:space="preserve">
+    <value>Skarp</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Smooth" xml:space="preserve">
+    <value>Jævn</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Strong" xml:space="preserve">
+    <value>Stærk</value>
+  </data>
+  <data name="Enum_ToneRange_Highlights" xml:space="preserve">
+    <value>Højlys</value>
+  </data>
+  <data name="Enum_ToneRange_Midtones" xml:space="preserve">
+    <value>Mellemtoner</value>
+  </data>
+  <data name="Enum_ToneRange_Shadows" xml:space="preserve">
+    <value>Skygger</value>
+  </data>
+  <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
+    <value>Eksportér...</value>
+  </data>
+  <data name="ExportDialog_FormatColon" xml:space="preserve">
+    <value>Format:</value>
+  </data>
+  <data name="ExportDialog_HeightPxColon" xml:space="preserve">
+    <value>Højde (px):</value>
+  </data>
+  <data name="ExportDialog_Lossless" xml:space="preserve">
+    <value>Tabsfri</value>
+  </data>
+  <data name="FillDialog_ColorEllipsis" xml:space="preserve">
+    <value>Farve...</value>
+  </data>
+  <data name="FillDialog_ContentsColon" xml:space="preserve">
+    <value>Indhold:</value>
+  </data>
+  <data name="FillDialog_FillColor" xml:space="preserve">
+    <value>Udfyldningsfarve</value>
+  </data>
+  <data name="FillDialog_HalfGray" xml:space="preserve">
+    <value>50 % grå</value>
+  </data>
+  <data name="FillDialog_OpacityPercentColon" xml:space="preserve">
+    <value>Uigennemsigtighed (%):</value>
+  </data>
+  <data name="FillDialog_PatternColon" xml:space="preserve">
+    <value>Mønster:</value>
+  </data>
+  <data name="FillDialog_PreserveTransparency" xml:space="preserve">
+    <value>Bevar gennemsigtighed</value>
+  </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>Tilføj støj</value>
   </data>
@@ -1536,6 +2298,123 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>Våg</value>
   </data>
+  <data name="GradientEditorDialog_AddStop" xml:space="preserve">
+    <value>Tilføj stop</value>
+  </data>
+  <data name="GradientEditorDialog_Custom" xml:space="preserve">
+    <value>Brugerdefineret</value>
+  </data>
+  <data name="GradientEditorDialog_Location" xml:space="preserve">
+    <value>Placering</value>
+  </data>
+  <data name="GradientEditorDialog_Presets" xml:space="preserve">
+    <value>Forudindstillinger</value>
+  </data>
+  <data name="GradientEditorDialog_StopColor" xml:space="preserve">
+    <value>Stopfarve</value>
+  </data>
+  <data name="GradientEditorDialog_Title" xml:space="preserve">
+    <value>Forløbseditor</value>
+  </data>
+  <data name="HdrToningEditor_Advanced" xml:space="preserve">
+    <value>Avanceret</value>
+  </data>
+  <data name="HdrToningEditor_DetailColon" xml:space="preserve">
+    <value>Detaljer:</value>
+  </data>
+  <data name="HdrToningEditor_EdgeGlow" xml:space="preserve">
+    <value>Kantglød</value>
+  </data>
+  <data name="HdrToningEditor_EqualizeHistogram" xml:space="preserve">
+    <value>Udlign histogram</value>
+  </data>
+  <data name="HdrToningEditor_ExposureAndGamma" xml:space="preserve">
+    <value>Eksponering og gamma</value>
+  </data>
+  <data name="HdrToningEditor_HighlightColon" xml:space="preserve">
+    <value>Højlys:</value>
+  </data>
+  <data name="HdrToningEditor_HighlightCompression" xml:space="preserve">
+    <value>Komprimering af højlys</value>
+  </data>
+  <data name="HdrToningEditor_LocalAdaptation" xml:space="preserve">
+    <value>Lokal tilpasning</value>
+  </data>
+  <data name="HdrToningEditor_MethodColon" xml:space="preserve">
+    <value>Metode:</value>
+  </data>
+  <data name="HdrToningEditor_NoOptions" xml:space="preserve">
+    <value>Denne metode har ingen indstillinger.</value>
+  </data>
+  <data name="HdrToningEditor_PresetColon" xml:space="preserve">
+    <value>Forudindstilling:</value>
+  </data>
+  <data name="HdrToningEditor_RadiusColon" xml:space="preserve">
+    <value>Radius:</value>
+  </data>
+  <data name="HdrToningEditor_ResetCurve" xml:space="preserve">
+    <value>Nulstil kurve</value>
+  </data>
+  <data name="HdrToningEditor_ShadowColon" xml:space="preserve">
+    <value>Skygge:</value>
+  </data>
+  <data name="HdrToningEditor_SmoothEdges" xml:space="preserve">
+    <value>Udjævn kanter</value>
+  </data>
+  <data name="HdrToningEditor_StrengthColon" xml:space="preserve">
+    <value>Styrke:</value>
+  </data>
+  <data name="HdrToningEditor_ToneAndDetail" xml:space="preserve">
+    <value>Tone og detaljer</value>
+  </data>
+  <data name="HdrToningEditor_ToningCurveAndHistogram" xml:space="preserve">
+    <value>Toningskurve og histogram</value>
+  </data>
+  <data name="HdrToning_PresetDefault" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="HdrToning_PresetFlat" xml:space="preserve">
+    <value>Flad</value>
+  </data>
+  <data name="HdrToning_PresetMonochromatic" xml:space="preserve">
+    <value>Monokromatisk</value>
+  </data>
+  <data name="HdrToning_PresetPhotorealistic" xml:space="preserve">
+    <value>Fotorealistisk</value>
+  </data>
+  <data name="HdrToning_PresetSaturated" xml:space="preserve">
+    <value>Mættet</value>
+  </data>
+  <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
+    <value>Surrealistisk</value>
+  </data>
+  <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
+    <value>Slet snapshot</value>
+  </data>
+  <data name="HistoryPanel_DeleteStatesTip" xml:space="preserve">
+    <value>Slet tilstandene efter den aktuelle</value>
+  </data>
+  <data name="HistoryPanel_HistoryBrushSourceTip" xml:space="preserve">
+    <value>Angiv kilden til historikpenslen</value>
+  </data>
+  <data name="HistoryPanel_NewDocumentTip" xml:space="preserve">
+    <value>Opret nyt dokument fra den aktuelle tilstand</value>
+  </data>
+  <data name="HistoryPanel_NewSnapshotTip" xml:space="preserve">
+    <value>Opret nyt snapshot</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshot" xml:space="preserve">
+    <value>Omdøb snapshot</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshotEllipsis" xml:space="preserve">
+    <value>Omdøb snapshot...</value>
+  </data>
+  <data name="History_SnapshotNumber" xml:space="preserve">
+    <value>Snapshot {0}</value>
+  </data>
+  <data name="ImageIO_AllSupportedImages" xml:space="preserve">
+    <value>Alle understøttede billeder</value>
+  </data>
   <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
     <value>"{0}" kunne ikke åbnes: {1}</value>
   </data>
@@ -1557,6 +2436,15 @@
   <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
     <value>WebP-kodning mislykkedes.</value>
   </data>
+  <data name="ImageSizeDialog_ConstrainProportions" xml:space="preserve">
+    <value>Bevar proportioner</value>
+  </data>
+  <data name="ImageSizeDialog_PercentColon" xml:space="preserve">
+    <value>Procent:</value>
+  </data>
+  <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
+    <value>Ny sampling:</value>
+  </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>Baggrund</value>
   </data>
@@ -1566,10 +2454,757 @@
   <data name="LayerNames_Layer0" xml:space="preserve">
     <value>Lag 0</value>
   </data>
+  <data name="LayerNames_NewTypeLayer" xml:space="preserve">
+    <value>Lag</value>
+  </data>
+  <data name="LayerNames_Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="LayerStyleDialog_AngleColon" xml:space="preserve">
+    <value>Vinkel:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendModeColon" xml:space="preserve">
+    <value>Blandingstilstand:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendingOptions" xml:space="preserve">
+    <value>Blandingsindstillinger</value>
+  </data>
+  <data name="LayerStyleDialog_ColorOverlay" xml:space="preserve">
+    <value>Farveoverlejring</value>
+  </data>
+  <data name="LayerStyleDialog_DistanceColon" xml:space="preserve">
+    <value>Afstand:</value>
+  </data>
+  <data name="LayerStyleDialog_DropShadow" xml:space="preserve">
+    <value>Slagskygge</value>
+  </data>
+  <data name="LayerStyleDialog_FillOpacityColon" xml:space="preserve">
+    <value>Udfyldningsuigennemsigtighed:</value>
+  </data>
+  <data name="LayerStyleDialog_GlowColor" xml:space="preserve">
+    <value>Glødfarve</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadow" xml:space="preserve">
+    <value>Indre skygge</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadowColor" xml:space="preserve">
+    <value>Farve for indre skygge</value>
+  </data>
+  <data name="LayerStyleDialog_OuterGlow" xml:space="preserve">
+    <value>Ydre glød</value>
+  </data>
+  <data name="LayerStyleDialog_OverlayColor" xml:space="preserve">
+    <value>Overlejringsfarve</value>
+  </data>
+  <data name="LayerStyleDialog_PositionColon" xml:space="preserve">
+    <value>Placering:</value>
+  </data>
+  <data name="LayerStyleDialog_ShadowColor" xml:space="preserve">
+    <value>Skyggefarve</value>
+  </data>
+  <data name="LayersPanel_AddLayerMaskTip" xml:space="preserve">
+    <value>Tilføj lagmaske (Alt: skjul alt)</value>
+  </data>
+  <data name="LayersPanel_AddLayerStyleTip" xml:space="preserve">
+    <value>Tilføj en lagtypografi</value>
+  </data>
+  <data name="LayersPanel_BlendingChange" xml:space="preserve">
+    <value>Ændring af blanding</value>
+  </data>
+  <data name="LayersPanel_BlendingOptionsEllipsis" xml:space="preserve">
+    <value>Blandingsindstillinger...</value>
+  </data>
+  <data name="LayersPanel_ChangeLayerLock" xml:space="preserve">
+    <value>Ændring af laglås</value>
+  </data>
+  <data name="LayersPanel_DeleteLayerTip" xml:space="preserve">
+    <value>Slet lag</value>
+  </data>
+  <data name="LayersPanel_DuplicateLayerEllipsis" xml:space="preserve">
+    <value>Dupliker lag...</value>
+  </data>
+  <data name="LayersPanel_FillOpacityChange" xml:space="preserve">
+    <value>Ændring af udfyldningsuigennemsigtighed</value>
+  </data>
+  <data name="LayersPanel_FullyLockedTip" xml:space="preserve">
+    <value>Laget er helt låst</value>
+  </data>
+  <data name="LayersPanel_GroupFromLayersEllipsis" xml:space="preserve">
+    <value>Gruppe fra lag...</value>
+  </data>
+  <data name="LayersPanel_HideLayer" xml:space="preserve">
+    <value>Skjul lag</value>
+  </data>
+  <data name="LayersPanel_LayerPropertiesEllipsis" xml:space="preserve">
+    <value>Lagegenskaber...</value>
+  </data>
+  <data name="LayersPanel_LinkTip" xml:space="preserve">
+    <value>Sammenkæd eller fjern sammenkædning af de valgte lag (vælg flere med Ctrl-klik), så de flytter sig sammen</value>
+  </data>
+  <data name="LayersPanel_LockAll" xml:space="preserve">
+    <value>Lås alt</value>
+  </data>
+  <data name="LayersPanel_LockColon" xml:space="preserve">
+    <value>Lås:</value>
+  </data>
+  <data name="LayersPanel_LockImagePixels" xml:space="preserve">
+    <value>Lås billedpixel</value>
+  </data>
+  <data name="LayersPanel_LockPosition" xml:space="preserve">
+    <value>Lås position</value>
+  </data>
+  <data name="LayersPanel_LockTransparentPixels" xml:space="preserve">
+    <value>Lås gennemsigtige pixel</value>
+  </data>
+  <data name="LayersPanel_MaskThumbnailTip" xml:space="preserve">
+    <value>Klik for at redigere masken, Skift-klik for at deaktivere den, Ctrl-klik for at indlæse den som markering</value>
+  </data>
+  <data name="LayersPanel_NewFillOrAdjustmentTip" xml:space="preserve">
+    <value>Opret nyt udfyldnings- eller justeringslag</value>
+  </data>
+  <data name="LayersPanel_NewGroupTip" xml:space="preserve">
+    <value>Opret en ny gruppe</value>
+  </data>
+  <data name="LayersPanel_NewLayerTip" xml:space="preserve">
+    <value>Opret et nyt lag</value>
+  </data>
+  <data name="LayersPanel_OpacityChange" xml:space="preserve">
+    <value>Ændring af uigennemsigtighed</value>
+  </data>
+  <data name="LayersPanel_PartiallyLockedTip" xml:space="preserve">
+    <value>Laget er delvist låst</value>
+  </data>
+  <data name="LayersPanel_ShowLayer" xml:space="preserve">
+    <value>Vis lag</value>
+  </data>
+  <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
+    <value>Slå synlighed til/fra (Alt-klik viser kun dette lag)</value>
+  </data>
+  <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
+    <value>Farveintensitet:</value>
+  </data>
+  <data name="MatchColorEditor_DestinationImage" xml:space="preserve">
+    <value>Destinationsbillede</value>
+  </data>
+  <data name="MatchColorEditor_FadeColon" xml:space="preserve">
+    <value>Ton ud:</value>
+  </data>
+  <data name="MatchColorEditor_ImageStatistics" xml:space="preserve">
+    <value>Billedstatistik</value>
+  </data>
+  <data name="MatchColorEditor_LayerColon" xml:space="preserve">
+    <value>Lag:</value>
+  </data>
+  <data name="MatchColorEditor_LuminanceColon" xml:space="preserve">
+    <value>Luminans:</value>
+  </data>
+  <data name="MatchColorEditor_Neutralize" xml:space="preserve">
+    <value>Neutraliser</value>
+  </data>
+  <data name="MatchColorEditor_SourceColon" xml:space="preserve">
+    <value>Kilde:</value>
+  </data>
+  <data name="MatchColorEditor_TargetColon" xml:space="preserve">
+    <value>Mål:</value>
+  </data>
+  <data name="MatchColorEditor_UseSourceSelection" xml:space="preserve">
+    <value>Brug markering i kilde til at beregne farver</value>
+  </data>
+  <data name="MatchColorEditor_UseTargetSelection" xml:space="preserve">
+    <value>Brug markering i mål til at beregne justering</value>
+  </data>
+  <data name="MenuBuilder_Empty" xml:space="preserve">
+    <value>(tomt)</value>
+  </data>
+  <data name="NewDocumentDialog_Black" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="NewDocumentDialog_Create" xml:space="preserve">
+    <value>Opret</value>
+  </data>
+  <data name="NewDocumentDialog_PresetA4" xml:space="preserve">
+    <value>A4 2480 × 3508 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetDefault" xml:space="preserve">
+    <value>Standard (1920 × 1080)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetIcon" xml:space="preserve">
+    <value>Ikon 512 × 512</value>
+  </data>
+  <data name="NewDocumentDialog_PresetLetter" xml:space="preserve">
+    <value>Letter 2550 × 3300 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetSquare" xml:space="preserve">
+    <value>Kvadrat 1080 × 1080</value>
+  </data>
+  <data name="NewDocumentDialog_PresetWeb" xml:space="preserve">
+    <value>Web 1366 × 768</value>
+  </data>
+  <data name="NewDocumentDialog_ResolutionColon" xml:space="preserve">
+    <value>Opløsning (ppi):</value>
+  </data>
+  <data name="NewDocumentDialog_Title" xml:space="preserve">
+    <value>Nyt dokument</value>
+  </data>
+  <data name="NewDocumentDialog_Transparent" xml:space="preserve">
+    <value>Gennemsigtig</value>
+  </data>
+  <data name="NewDocumentDialog_Untitled" xml:space="preserve">
+    <value>Unavngivet</value>
+  </data>
+  <data name="NewDocumentDialog_White" xml:space="preserve">
+    <value>Hvid</value>
+  </data>
+  <data name="OptionsBuilder_AddToSelectionTip" xml:space="preserve">
+    <value>Føj til markering (Skift)</value>
+  </data>
+  <data name="OptionsBuilder_BrushPresetPickerTip" xml:space="preserve">
+    <value>Klik for at åbne vælgeren til penselforudindstillinger</value>
+  </data>
+  <data name="OptionsBuilder_HardnessColon" xml:space="preserve">
+    <value>Hårdhed:</value>
+  </data>
+  <data name="OptionsBuilder_IntersectWithSelectionTip" xml:space="preserve">
+    <value>Fællesmængde med markering (Skift+Alt)</value>
+  </data>
+  <data name="OptionsBuilder_NewSelectionTip" xml:space="preserve">
+    <value>Ny markering</value>
+  </data>
+  <data name="OptionsBuilder_NoColor" xml:space="preserve">
+    <value>Ingen farve</value>
+  </data>
+  <data name="OptionsBuilder_SubtractFromSelectionTip" xml:space="preserve">
+    <value>Subtraher fra markering (Alt)</value>
+  </data>
+  <data name="PanelDock_CloseTabGroup" xml:space="preserve">
+    <value>Luk fanegruppe</value>
+  </data>
+  <data name="PanelDock_CollapsePanelGroup" xml:space="preserve">
+    <value>Skjul panelgruppe</value>
+  </data>
+  <data name="PanelDock_ExpandPanelGroup" xml:space="preserve">
+    <value>Udvid panelgruppe</value>
+  </data>
+  <data name="PanelDock_MoveToGroupWith" xml:space="preserve">
+    <value>Flyt til gruppe med {0}</value>
+  </data>
+  <data name="PanelDock_MoveToNewGroup" xml:space="preserve">
+    <value>Flyt til ny gruppe</value>
+  </data>
+  <data name="PanelDock_PanelMenuTip" xml:space="preserve">
+    <value>Panelmenu</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>Arbejdssti</value>
   </data>
+  <data name="PathsPanel_AddVectorMaskTip" xml:space="preserve">
+    <value>Tilføj en vektormaske (formlag fra sti)</value>
+  </data>
+  <data name="PathsPanel_DeletePathTip" xml:space="preserve">
+    <value>Slet aktuel sti</value>
+  </data>
+  <data name="PathsPanel_FillPathTip" xml:space="preserve">
+    <value>Udfyld sti med forgrundsfarve</value>
+  </data>
+  <data name="PathsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>Indlæs sti som markering</value>
+  </data>
+  <data name="PathsPanel_MakeWorkPathTip" xml:space="preserve">
+    <value>Opret arbejdssti fra markering</value>
+  </data>
+  <data name="PathsPanel_NewPathTip" xml:space="preserve">
+    <value>Opret ny sti</value>
+  </data>
+  <data name="PathsPanel_RenamePath" xml:space="preserve">
+    <value>Omdøb sti</value>
+  </data>
+  <data name="PathsPanel_SavePath" xml:space="preserve">
+    <value>Gem sti</value>
+  </data>
+  <data name="PathsPanel_ShapePathName" xml:space="preserve">
+    <value>Formsti {0}</value>
+  </data>
+  <data name="PathsPanel_StrokePathTip" xml:space="preserve">
+    <value>Tegn streg langs sti med pensel</value>
+  </data>
+  <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
+    <value>Unavngivet-{0}</value>
+  </data>
+  <data name="PhotoEditorWindow_CouldNotComplete" xml:space="preserve">
+    <value>"{0}" kunne ikke fuldføres: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentInfo" xml:space="preserve">
+    <value>{0} × {1} px ({2:0} ppi)   Dok: {3:0.0} MB</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentWindowTitle" xml:space="preserve">
+    <value>{0} - Fotoeditor - ShareX</value>
+  </data>
+  <data name="PhotoEditorWindow_DontSave" xml:space="preserve">
+    <value>Gem ikke</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeLayerMask" xml:space="preserve">
+    <value>Lagmaske/8</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeQuickMask" xml:space="preserve">
+    <value>Hurtigmaske/8</value>
+  </data>
+  <data name="PhotoEditorWindow_NoDocumentOpen" xml:space="preserve">
+    <value>Der er ikke åbnet noget dokument.</value>
+  </data>
+  <data name="PhotoEditorWindow_OperationFailed" xml:space="preserve">
+    <value>{0} mislykkedes: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_OptionsUnavailable" xml:space="preserve">
+    <value>Indstillinger ikke tilgængelige: {0}</value>
+  </data>
+  <data name="PhotoEditorWindow_PhotoEditor" xml:space="preserve">
+    <value>Fotoredigering</value>
+  </data>
+  <data name="PhotoEditorWindow_SaveChangesPrompt" xml:space="preserve">
+    <value>Vil du gemme ændringerne i "{0}", før du lukker?</value>
+  </data>
+  <data name="PhotoEditorWindow_ViewRotation" xml:space="preserve">
+    <value>Visning: {0:0}°</value>
+  </data>
+  <data name="PhotoEditorWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - Fotoeditor</value>
+  </data>
+  <data name="PreferencesDialog_GridSubdivisionsColon" xml:space="preserve">
+    <value>Underinddelinger:</value>
+  </data>
+  <data name="PreferencesDialog_GridlineEveryColon" xml:space="preserve">
+    <value>Gitterlinje for hver (px):</value>
+  </data>
+  <data name="PreferencesDialog_GuideColorColon" xml:space="preserve">
+    <value>Hjælpelinjefarve (hex):</value>
+  </data>
+  <data name="PreferencesDialog_HistoryStatesColon" xml:space="preserve">
+    <value>Historiktilstande:</value>
+  </data>
+  <data name="PreferencesDialog_ImageInterpolationColon" xml:space="preserve">
+    <value>Billedinterpolation:</value>
+  </data>
+  <data name="PreferencesDialog_RememberWindow" xml:space="preserve">
+    <value>Husk vinduets størrelse og position</value>
+  </data>
+  <data name="PreferencesDialog_Title" xml:space="preserve">
+    <value>Indstillinger</value>
+  </data>
+  <data name="PreferencesDialog_TransparencyGridSizeColon" xml:space="preserve">
+    <value>Størrelse på gennemsigtighedsgitter:</value>
+  </data>
   <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
     <value>Projektet blev oprettet med en nyere version af fotoeditoren.</value>
+  </data>
+  <data name="PropertiesPanel_AddMask" xml:space="preserve">
+    <value>Tilføj maske</value>
+  </data>
+  <data name="PropertiesPanel_AlignColon" xml:space="preserve">
+    <value>Justering:</value>
+  </data>
+  <data name="PropertiesPanel_AlignText" xml:space="preserve">
+    <value>Juster tekst</value>
+  </data>
+  <data name="PropertiesPanel_ApplyMask" xml:space="preserve">
+    <value>Anvend maske</value>
+  </data>
+  <data name="PropertiesPanel_Artboard" xml:space="preserve">
+    <value>Tegnebræt</value>
+  </data>
+  <data name="PropertiesPanel_ArtboardBackground" xml:space="preserve">
+    <value>Baggrund for tegnebræt</value>
+  </data>
+  <data name="PropertiesPanel_BackgroundColon" xml:space="preserve">
+    <value>Baggrund:</value>
+  </data>
+  <data name="PropertiesPanel_Bold" xml:space="preserve">
+    <value>Fed</value>
+  </data>
+  <data name="PropertiesPanel_ChangeFill" xml:space="preserve">
+    <value>Skift udfyldning</value>
+  </data>
+  <data name="PropertiesPanel_Character" xml:space="preserve">
+    <value>Tegn</value>
+  </data>
+  <data name="PropertiesPanel_ClipToLayerBelow" xml:space="preserve">
+    <value>Beskær til underliggende lag</value>
+  </data>
+  <data name="PropertiesPanel_ClippingMask" xml:space="preserve">
+    <value>Beskæringsmaske</value>
+  </data>
+  <data name="PropertiesPanel_ContainsImage" xml:space="preserve">
+    <value>Indeholder et billede</value>
+  </data>
+  <data name="PropertiesPanel_ConvertToLayer" xml:space="preserve">
+    <value>Konverter til lag</value>
+  </data>
+  <data name="PropertiesPanel_Dashed" xml:space="preserve">
+    <value>Stiplet</value>
+  </data>
+  <data name="PropertiesPanel_DeleteMask" xml:space="preserve">
+    <value>Slet maske</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilter" xml:space="preserve">
+    <value>Slet smart filter</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilterTip" xml:space="preserve">
+    <value>Slet smart filter</value>
+  </data>
+  <data name="PropertiesPanel_Document" xml:space="preserve">
+    <value>Dokument</value>
+  </data>
+  <data name="PropertiesPanel_DocumentSize" xml:space="preserve">
+    <value>B: {0} px   H: {1} px</value>
+  </data>
+  <data name="PropertiesPanel_EditTypeLayer" xml:space="preserve">
+    <value>Rediger tekstlag</value>
+  </data>
+  <data name="PropertiesPanel_EmptyFrame" xml:space="preserve">
+    <value>Tom ramme</value>
+  </data>
+  <data name="PropertiesPanel_EmptyLayer" xml:space="preserve">
+    <value>Tomt lag</value>
+  </data>
+  <data name="PropertiesPanel_Enable" xml:space="preserve">
+    <value>Aktivér</value>
+  </data>
+  <data name="PropertiesPanel_FeatherMask" xml:space="preserve">
+    <value>Blød kant på maske</value>
+  </data>
+  <data name="PropertiesPanel_FillColon" xml:space="preserve">
+    <value>Udfyldning:</value>
+  </data>
+  <data name="PropertiesPanel_FillLayer" xml:space="preserve">
+    <value>Udfyldningslag</value>
+  </data>
+  <data name="PropertiesPanel_FontColon" xml:space="preserve">
+    <value>Skrifttype:</value>
+  </data>
+  <data name="PropertiesPanel_Frame" xml:space="preserve">
+    <value>Ramme</value>
+  </data>
+  <data name="PropertiesPanel_FrameStroke" xml:space="preserve">
+    <value>Rammestreg</value>
+  </data>
+  <data name="PropertiesPanel_Invert" xml:space="preserve">
+    <value>Invertér</value>
+  </data>
+  <data name="PropertiesPanel_InvertMask" xml:space="preserve">
+    <value>Inverter maske</value>
+  </data>
+  <data name="PropertiesPanel_Italic" xml:space="preserve">
+    <value>Kursiv</value>
+  </data>
+  <data name="PropertiesPanel_LeadingColon" xml:space="preserve">
+    <value>Linjeafstand:</value>
+  </data>
+  <data name="PropertiesPanel_LoadAsSelection" xml:space="preserve">
+    <value>Indlæs som markering</value>
+  </data>
+  <data name="PropertiesPanel_MaskEditHint" xml:space="preserve">
+    <value>Maleværktøjer redigerer nu masken: sort skjuler, hvid viser.</value>
+  </data>
+  <data name="PropertiesPanel_ModifyAdjustment" xml:space="preserve">
+    <value>Rediger {0}</value>
+  </data>
+  <data name="PropertiesPanel_NoDocument" xml:space="preserve">
+    <value>Intet dokument</value>
+  </data>
+  <data name="PropertiesPanel_None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="PropertiesPanel_Paragraph" xml:space="preserve">
+    <value>Afsnit</value>
+  </data>
+  <data name="PropertiesPanel_PixelLayer" xml:space="preserve">
+    <value>Pixellag</value>
+  </data>
+  <data name="PropertiesPanel_PlaceImageEllipsis" xml:space="preserve">
+    <value>Placer billede...</value>
+  </data>
+  <data name="PropertiesPanel_RadiusPxColon" xml:space="preserve">
+    <value>Cirkelradius (px):</value>
+  </data>
+  <data name="PropertiesPanel_RasterizeType" xml:space="preserve">
+    <value>Rasteriser tekst</value>
+  </data>
+  <data name="PropertiesPanel_ResetTransform" xml:space="preserve">
+    <value>Nulstil transformering</value>
+  </data>
+  <data name="PropertiesPanel_ResizeArtboard" xml:space="preserve">
+    <value>Tilpas størrelse på tegnebræt</value>
+  </data>
+  <data name="PropertiesPanel_Resolution" xml:space="preserve">
+    <value>Opløsning: {0:0} ppi</value>
+  </data>
+  <data name="PropertiesPanel_SetFill" xml:space="preserve">
+    <value>Angiv udfyldning</value>
+  </data>
+  <data name="PropertiesPanel_SetFont" xml:space="preserve">
+    <value>Angiv skrifttype</value>
+  </data>
+  <data name="PropertiesPanel_SetLeading" xml:space="preserve">
+    <value>Angiv linjeafstand</value>
+  </data>
+  <data name="PropertiesPanel_SetStroke" xml:space="preserve">
+    <value>Angiv streg</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeAlignment" xml:space="preserve">
+    <value>Angiv stregjustering</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeType" xml:space="preserve">
+    <value>Angiv stregtype</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeWidth" xml:space="preserve">
+    <value>Angiv stregbredde</value>
+  </data>
+  <data name="PropertiesPanel_SetTextColor" xml:space="preserve">
+    <value>Angiv tekstfarve</value>
+  </data>
+  <data name="PropertiesPanel_SetTracking" xml:space="preserve">
+    <value>Angiv tegnafstand</value>
+  </data>
+  <data name="PropertiesPanel_ShapeProperties" xml:space="preserve">
+    <value>Formegenskaber</value>
+  </data>
+  <data name="PropertiesPanel_SizeColon" xml:space="preserve">
+    <value>Størrelse:</value>
+  </data>
+  <data name="PropertiesPanel_SmartFilters" xml:space="preserve">
+    <value>Smarte filtre</value>
+  </data>
+  <data name="PropertiesPanel_SmartObject" xml:space="preserve">
+    <value>Smart objekt</value>
+  </data>
+  <data name="PropertiesPanel_StrokeColon" xml:space="preserve">
+    <value>Streg:</value>
+  </data>
+  <data name="PropertiesPanel_TextColor" xml:space="preserve">
+    <value>Tekstfarve</value>
+  </data>
+  <data name="PropertiesPanel_ToggleSmartFilter" xml:space="preserve">
+    <value>Slå smart filter til/fra</value>
+  </data>
+  <data name="PropertiesPanel_TrackingColon" xml:space="preserve">
+    <value>Tegnafstand:</value>
+  </data>
+  <data name="PropertiesPanel_Underline" xml:space="preserve">
+    <value>Understreget</value>
+  </data>
+  <data name="ReplaceColorEditor_AddToSampleTip" xml:space="preserve">
+    <value>Føj til prøve (Skift-klik)</value>
+  </data>
+  <data name="ReplaceColorEditor_ClickToSample" xml:space="preserve">
+    <value>Klik for at tage en farveprøve</value>
+  </data>
+  <data name="ReplaceColorEditor_EyedropperTip" xml:space="preserve">
+    <value>Pipette</value>
+  </data>
+  <data name="ReplaceColorEditor_Image" xml:space="preserve">
+    <value>Billede</value>
+  </data>
+  <data name="ReplaceColorEditor_Replacement" xml:space="preserve">
+    <value>Erstatning</value>
+  </data>
+  <data name="ReplaceColorEditor_ResultColon" xml:space="preserve">
+    <value>Resultat:</value>
+  </data>
+  <data name="ReplaceColorEditor_SelectColorTip" xml:space="preserve">
+    <value>Vælg den farve, der skal erstattes</value>
+  </data>
+  <data name="ReplaceColorEditor_Selection" xml:space="preserve">
+    <value>Markering</value>
+  </data>
+  <data name="ReplaceColorEditor_SubtractFromSampleTip" xml:space="preserve">
+    <value>Subtraher fra prøve (Alt-klik)</value>
+  </data>
+  <data name="Resources_AirbrushSoft" xml:space="preserve">
+    <value>Blød airbrush</value>
+  </data>
+  <data name="Resources_BlackWhite" xml:space="preserve">
+    <value>Sort, hvid</value>
+  </data>
+  <data name="Resources_Bricks" xml:space="preserve">
+    <value>Mursten</value>
+  </data>
+  <data name="Resources_CalligraphicFlat" xml:space="preserve">
+    <value>Flad kalligrafi</value>
+  </data>
+  <data name="Resources_Chalk" xml:space="preserve">
+    <value>Kridt</value>
+  </data>
+  <data name="Resources_Checkerboard" xml:space="preserve">
+    <value>Skakmønster</value>
+  </data>
+  <data name="Resources_Chrome" xml:space="preserve">
+    <value>Krom</value>
+  </data>
+  <data name="Resources_Copper" xml:space="preserve">
+    <value>Kobber</value>
+  </data>
+  <data name="Resources_DiagonalLines" xml:space="preserve">
+    <value>Diagonale linjer</value>
+  </data>
+  <data name="Resources_Dots" xml:space="preserve">
+    <value>Prikker</value>
+  </data>
+  <data name="Resources_ForegroundToBackground" xml:space="preserve">
+    <value>Forgrund til baggrund</value>
+  </data>
+  <data name="Resources_ForegroundToTransparent" xml:space="preserve">
+    <value>Forgrund til gennemsigtig</value>
+  </data>
+  <data name="Resources_HardPixel" xml:space="preserve">
+    <value>Hård pixel</value>
+  </data>
+  <data name="Resources_HardRound" xml:space="preserve">
+    <value>Hård rund</value>
+  </data>
+  <data name="Resources_HardRoundPressure" xml:space="preserve">
+    <value>Hård rund med tryk</value>
+  </data>
+  <data name="Resources_Hexagons" xml:space="preserve">
+    <value>Sekskanter</value>
+  </data>
+  <data name="Resources_Ocean" xml:space="preserve">
+    <value>Hav</value>
+  </data>
+  <data name="Resources_SoftRound" xml:space="preserve">
+    <value>Blød rund</value>
+  </data>
+  <data name="Resources_SoftRoundPressure" xml:space="preserve">
+    <value>Blød rund med tryk</value>
+  </data>
+  <data name="Resources_Spatter" xml:space="preserve">
+    <value>Stænk</value>
+  </data>
+  <data name="Resources_Spectrum" xml:space="preserve">
+    <value>Spektrum</value>
+  </data>
+  <data name="Resources_SquareHard" xml:space="preserve">
+    <value>Hård firkantet</value>
+  </data>
+  <data name="Resources_Sunset" xml:space="preserve">
+    <value>Solnedgang</value>
+  </data>
+  <data name="Resources_TransparentStripes" xml:space="preserve">
+    <value>Gennemsigtige striber</value>
+  </data>
+  <data name="Resources_WoodGrain" xml:space="preserve">
+    <value>Træåre</value>
+  </data>
+  <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
+    <value>Søg efter kommandoer</value>
+  </data>
+  <data name="ShortcutsDialog_Title" xml:space="preserve">
+    <value>Tastaturgenveje</value>
+  </data>
+  <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
+    <value>Brug standarder</value>
+  </data>
+  <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
+    <value>Ryd seneste filer</value>
+  </data>
+  <data name="StartScreen_NewFile" xml:space="preserve">
+    <value>Ny fil</value>
+  </data>
+  <data name="StartScreen_NewFromScreenshotRegion" xml:space="preserve">
+    <value>Ny fra skærmbillede (område)</value>
+  </data>
+  <data name="StartScreen_NoRecentFiles" xml:space="preserve">
+    <value>Filer, du åbner, vises her.</value>
+  </data>
+  <data name="StartScreen_Recent" xml:space="preserve">
+    <value>Seneste</value>
+  </data>
+  <data name="StartScreen_ShowAsListTip" xml:space="preserve">
+    <value>Vis seneste filer som en liste</value>
+  </data>
+  <data name="StartScreen_ShowAsTilesTip" xml:space="preserve">
+    <value>Vis seneste filer som felter</value>
+  </data>
+  <data name="SwatchesPanel_NewSwatchTip" xml:space="preserve">
+    <value>Opret ny farveprøve af forgrundsfarven</value>
+  </data>
+  <data name="SwatchesPanel_SwatchTip" xml:space="preserve">
+    <value>#{0} — klik: forgrund, Alt/Ctrl-klik: baggrund, højreklik: slet</value>
+  </data>
+  <data name="TextEditing_Hint" xml:space="preserve">
+    <value>Skriv teksten. Ctrl+Enter bekræfter, Esc annullerer.</value>
+  </data>
+  <data name="TextEditing_TypeTool" xml:space="preserve">
+    <value>Tekstværktøj</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>Maksimer</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>Minimer</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>Gendan</value>
+  </data>
+  <data name="ToolbarControl_CollapseTip" xml:space="preserve">
+    <value>Skjul til en enkelt kolonne</value>
+  </data>
+  <data name="ToolbarControl_DefaultColorsTip" xml:space="preserve">
+    <value>Standardforgrunds- og baggrundsfarver (D)</value>
+  </data>
+  <data name="ToolbarControl_EditToolbarEllipsis" xml:space="preserve">
+    <value>Rediger værktøjslinje...</value>
+  </data>
+  <data name="ToolbarControl_ExpandTip" xml:space="preserve">
+    <value>Udvid til to kolonner</value>
+  </data>
+  <data name="ToolbarControl_QuickMaskTip" xml:space="preserve">
+    <value>Rediger i hurtigmasketilstand (Q)</value>
+  </data>
+  <data name="ToolbarControl_ScreenModeTip" xml:space="preserve">
+    <value>Skift skærmtilstand (F)</value>
+  </data>
+  <data name="ToolbarControl_SetBackgroundColor" xml:space="preserve">
+    <value>Angiv baggrundsfarve</value>
+  </data>
+  <data name="ToolbarControl_SetForegroundColor" xml:space="preserve">
+    <value>Angiv forgrundsfarve</value>
+  </data>
+  <data name="ToolbarControl_SwitchColorsTip" xml:space="preserve">
+    <value>Byt om på forgrunds- og baggrundsfarve (X)</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Description" xml:space="preserve">
+    <value>Værktøjslinje (hver række er en plads på værktøjslinjen med dens pop op-værktøjer). Vælg et værktøj, og brug knapperne til at omarrangere det.</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Done" xml:space="preserve">
+    <value>Færdig</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_ExtraTools" xml:space="preserve">
+    <value>Ekstra værktøjer (skjult fra værktøjslinjen):</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_HideTool" xml:space="preserve">
+    <value>Skjul værktøj</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MergeWithGroupAbove" xml:space="preserve">
+    <value>Flet med gruppen ovenfor</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveEarlierInGroup" xml:space="preserve">
+    <value>Flyt tidligere i gruppen</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupDown" xml:space="preserve">
+    <value>Flyt gruppe ned</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupUp" xml:space="preserve">
+    <value>Flyt gruppe op</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_OwnGroup" xml:space="preserve">
+    <value>Egen gruppe</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreDefaults" xml:space="preserve">
+    <value>Gendan standarder</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreTip" xml:space="preserve">
+    <value>Klik for at gendanne til værktøjslinjen</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
+    <value>Tilpas værktøjslinje</value>
   </data>
 </root>

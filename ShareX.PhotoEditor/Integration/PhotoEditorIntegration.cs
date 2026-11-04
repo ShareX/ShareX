@@ -56,7 +56,7 @@ public static class PhotoEditorIntegration
             foreach (string path in paths) EditorCommands.OpenFile(_window, path);
             if (copy != null)
             {
-                using (copy) EditorCommands.OpenBitmap(_window, copy, imageTitle ?? "Screenshot", imageTitle != null && File.Exists(imageTitle) ? imageTitle : null);
+                using (copy) EditorCommands.OpenBitmap(_window, copy, imageTitle ?? Strings.EditorCommands_Screenshot, imageTitle != null && File.Exists(imageTitle) ? imageTitle : null);
             }
         });
     }

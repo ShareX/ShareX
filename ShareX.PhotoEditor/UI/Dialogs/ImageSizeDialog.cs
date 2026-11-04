@@ -64,17 +64,17 @@ public static class ImageSizeDialog
             w.Value = Math.Max(1, Math.Round(width * p / 100));
             h.Value = Math.Max(1, Math.Round(height * p / 100));
         });
-        CheckBox link = new() { Content = "Constrain proportions", IsChecked = true };
+        CheckBox link = new() { Content = Strings.ImageSizeDialog_ConstrainProportions, IsChecked = true };
         link.IsCheckedChanged += (_, _) => constrain = link.IsChecked == true;
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddFull(form, new TextBlock { Text = $"Current size: {width} × {height} px", Opacity = 0.8 });
-        DialogBuilder.AddRow(form, "Width (px):", w);
-        DialogBuilder.AddRow(form, "Height (px):", h);
-        DialogBuilder.AddRow(form, "Percent:", percent);
+        DialogBuilder.AddFull(form, new TextBlock { Text = string.Format(Strings.CanvasSizeDialog_CurrentSize, width, height), Opacity = 0.8 });
+        DialogBuilder.AddRow(form, Strings.EditorCommands_WidthPxColon, w);
+        DialogBuilder.AddRow(form, Strings.ExportDialog_HeightPxColon, h);
+        DialogBuilder.AddRow(form, Strings.ImageSizeDialog_PercentColon, percent);
         DialogBuilder.AddFull(form, link);
-        DialogBuilder.AddRow(form, "Resolution (ppi):", dpi);
-        DialogBuilder.AddRow(form, "Resample:", DialogBuilder.Combo(Enum.GetValues<ResampleMethod>().Select(m => (OptionsBuilder.SplitWords(m.ToString()), m)), method, v => method = v));
-        if (!await DialogBuilder.ShowAsync(owner, "Image Size", form, 420)) return null;
+        DialogBuilder.AddRow(form, Strings.NewDocumentDialog_ResolutionColon, dpi);
+        DialogBuilder.AddRow(form, Strings.ImageSizeDialog_ResampleColon, DialogBuilder.Combo(Enum.GetValues<ResampleMethod>().Select(m => (EnumNames.Get(m), m)), method, v => method = v));
+        if (!await DialogBuilder.ShowAsync(owner, Strings.EditorCommands_ImageSize, form, 420)) return null;
         return new Result((int)(w.Value ?? width), (int)(h.Value ?? height), (float)(dpi.Value ?? (decimal)resolution), method);
     }
 }

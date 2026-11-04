@@ -35,7 +35,7 @@ public sealed class AdjustmentsPanel : EditorPanel
     public AdjustmentsPanel(PhotoEditorWindow editor) : base(editor)
     {
         // Icon rows match the groups of the New Adjustment Layer menu.
-        TextBlock hint = new() { Text = "Add an adjustment", Margin = new Thickness(10, 8, 10, 4), Classes = { "dim" } };
+        TextBlock hint = new() { Text = Strings.AdjustmentsPanel_AddAdjustment, Margin = new Thickness(10, 8, 10, 4), Classes = { "dim" } };
         StackPanel root = new() { Spacing = 2 };
         root.Children.Add(hint);
         foreach (AdjustmentKind[] row in EditorCommands.AdjustmentLayerGroups)
@@ -54,8 +54,8 @@ public sealed class AdjustmentsPanel : EditorPanel
                 };
                 string name = AdjustmentSettings.GetName(kind);
                 button.PointerEntered += (_, _) => hint.Text = name;
-                button.PointerExited += (_, _) => hint.Text = "Add an adjustment";
-                ToolTip.SetTip(button, $"Create a new {name} adjustment layer");
+                button.PointerExited += (_, _) => hint.Text = Strings.AdjustmentsPanel_AddAdjustment;
+                ToolTip.SetTip(button, string.Format(Strings.AdjustmentsPanel_CreateAdjustmentLayerTip, name));
                 AdjustmentKind captured = kind;
                 button.Click += (_, _) => EditorCommands.NewAdjustmentLayer(Editor, captured);
                 line.Children.Add(button);
@@ -67,7 +67,7 @@ public sealed class AdjustmentsPanel : EditorPanel
 
     public override string Id => "adjustments";
 
-    public override string Title => "Adjustments";
+    public override string Title => Strings.EditorCommands_Adjustments;
 
     public override void Refresh()
     {

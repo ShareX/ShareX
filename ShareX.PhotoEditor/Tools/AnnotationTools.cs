@@ -80,7 +80,7 @@ public sealed class NoteTool : ToolBase
 
     private async Task AddNoteAsync(SKPoint position)
     {
-        string? text = await Host.PromptTextAsync("Note", $"Author: {Author}", string.Empty);
+        string? text = await Host.PromptTextAsync("Note", $"Author: {Author}", string.Empty, multiline: true);
         if (text == null || Doc == null) return;
         Doc.Notes.Add(new NoteItem { Position = position, Text = text, Author = Author, Color = Color });
         PushHistory("Note");
@@ -105,7 +105,7 @@ public sealed class NoteTool : ToolBase
             PushHistory("Move Note");
             return;
         }
-        string? text = await Host.PromptTextAsync("Note", $"Author: {note.Author}", note.Text);
+        string? text = await Host.PromptTextAsync("Note", $"Author: {note.Author}", note.Text, multiline: true);
         if (text == null) return;
         note.Text = text;
         PushHistory("Edit Note");

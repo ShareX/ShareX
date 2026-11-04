@@ -12,6 +12,519 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdjustmentEditor_Auto" xml:space="preserve">
+    <value>स्वतः</value>
+  </data>
+  <data name="AdjustmentEditor_BlackColon" xml:space="preserve">
+    <value>काला:</value>
+  </data>
+  <data name="AdjustmentEditor_Blacks" xml:space="preserve">
+    <value>काले</value>
+  </data>
+  <data name="AdjustmentEditor_Blue" xml:space="preserve">
+    <value>नीला</value>
+  </data>
+  <data name="AdjustmentEditor_BlueColon" xml:space="preserve">
+    <value>नीला:</value>
+  </data>
+  <data name="AdjustmentEditor_Blues" xml:space="preserve">
+    <value>नीले</value>
+  </data>
+  <data name="AdjustmentEditor_BluesColon" xml:space="preserve">
+    <value>नीले:</value>
+  </data>
+  <data name="AdjustmentEditor_BrightnessColon" xml:space="preserve">
+    <value>चमक:</value>
+  </data>
+  <data name="AdjustmentEditor_ChannelColon" xml:space="preserve">
+    <value>चैनल:</value>
+  </data>
+  <data name="AdjustmentEditor_Colorize" xml:space="preserve">
+    <value>रंगीन करें</value>
+  </data>
+  <data name="AdjustmentEditor_ColorsColon" xml:space="preserve">
+    <value>रंग:</value>
+  </data>
+  <data name="AdjustmentEditor_ConstantColon" xml:space="preserve">
+    <value>स्थिरांक:</value>
+  </data>
+  <data name="AdjustmentEditor_ContrastColon" xml:space="preserve">
+    <value>कंट्रास्ट:</value>
+  </data>
+  <data name="AdjustmentEditor_CurvesHint" xml:space="preserve">
+    <value>बिंदु जोड़ने के लिए क्लिक करें, समायोजित करने के लिए खींचें, और हटाने के लिए बिंदु को ग्राफ़ से बाहर खींचें।</value>
+  </data>
+  <data name="AdjustmentEditor_CyanColon" xml:space="preserve">
+    <value>सियान:</value>
+  </data>
+  <data name="AdjustmentEditor_CyanRedColon" xml:space="preserve">
+    <value>सियान / लाल:</value>
+  </data>
+  <data name="AdjustmentEditor_Cyans" xml:space="preserve">
+    <value>सियान</value>
+  </data>
+  <data name="AdjustmentEditor_CyansColon" xml:space="preserve">
+    <value>सियान:</value>
+  </data>
+  <data name="AdjustmentEditor_DensityColon" xml:space="preserve">
+    <value>घनत्व:</value>
+  </data>
+  <data name="AdjustmentEditor_EditGradientEllipsis" xml:space="preserve">
+    <value>ग्रेडिएंट संपादित करें...</value>
+  </data>
+  <data name="AdjustmentEditor_ExposureColon" xml:space="preserve">
+    <value>एक्सपोज़र:</value>
+  </data>
+  <data name="AdjustmentEditor_FilterColorColon" xml:space="preserve">
+    <value>फ़िल्टर रंग:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaColon" xml:space="preserve">
+    <value>गामा:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaCorrectionColon" xml:space="preserve">
+    <value>गामा सुधार:</value>
+  </data>
+  <data name="AdjustmentEditor_Green" xml:space="preserve">
+    <value>हरा</value>
+  </data>
+  <data name="AdjustmentEditor_GreenColon" xml:space="preserve">
+    <value>हरा:</value>
+  </data>
+  <data name="AdjustmentEditor_Greens" xml:space="preserve">
+    <value>हरे</value>
+  </data>
+  <data name="AdjustmentEditor_GreensColon" xml:space="preserve">
+    <value>हरे:</value>
+  </data>
+  <data name="AdjustmentEditor_Highlights" xml:space="preserve">
+    <value>हाइलाइट</value>
+  </data>
+  <data name="AdjustmentEditor_HueColon" xml:space="preserve">
+    <value>ह्यू:</value>
+  </data>
+  <data name="AdjustmentEditor_InputBlackColon" xml:space="preserve">
+    <value>इनपुट काला:</value>
+  </data>
+  <data name="AdjustmentEditor_InputWhiteColon" xml:space="preserve">
+    <value>इनपुट सफ़ेद:</value>
+  </data>
+  <data name="AdjustmentEditor_LevelsColon" xml:space="preserve">
+    <value>स्तर:</value>
+  </data>
+  <data name="AdjustmentEditor_LightnessColon" xml:space="preserve">
+    <value>हल्कापन:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaColon" xml:space="preserve">
+    <value>मैजेंटा:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaGreenColon" xml:space="preserve">
+    <value>मैजेंटा / हरा:</value>
+  </data>
+  <data name="AdjustmentEditor_Magentas" xml:space="preserve">
+    <value>मैजेंटा</value>
+  </data>
+  <data name="AdjustmentEditor_MagentasColon" xml:space="preserve">
+    <value>मैजेंटा:</value>
+  </data>
+  <data name="AdjustmentEditor_Midtones" xml:space="preserve">
+    <value>मिडटोन</value>
+  </data>
+  <data name="AdjustmentEditor_Monochrome" xml:space="preserve">
+    <value>एकवर्णी</value>
+  </data>
+  <data name="AdjustmentEditor_Neutrals" xml:space="preserve">
+    <value>तटस्थ</value>
+  </data>
+  <data name="AdjustmentEditor_NoOptions" xml:space="preserve">
+    <value>इस समायोजन में कोई विकल्प नहीं है।</value>
+  </data>
+  <data name="AdjustmentEditor_OffsetColon" xml:space="preserve">
+    <value>ऑफ़सेट:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputBlackColon" xml:space="preserve">
+    <value>आउटपुट काला:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputChannelColon" xml:space="preserve">
+    <value>आउटपुट चैनल:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputWhiteColon" xml:space="preserve">
+    <value>आउटपुट सफ़ेद:</value>
+  </data>
+  <data name="AdjustmentEditor_PreserveLuminosity" xml:space="preserve">
+    <value>दीप्ति सुरक्षित रखें</value>
+  </data>
+  <data name="AdjustmentEditor_Red" xml:space="preserve">
+    <value>लाल</value>
+  </data>
+  <data name="AdjustmentEditor_RedColon" xml:space="preserve">
+    <value>लाल:</value>
+  </data>
+  <data name="AdjustmentEditor_Reds" xml:space="preserve">
+    <value>लाल</value>
+  </data>
+  <data name="AdjustmentEditor_RedsColon" xml:space="preserve">
+    <value>लाल:</value>
+  </data>
+  <data name="AdjustmentEditor_ResetChannel" xml:space="preserve">
+    <value>चैनल रीसेट करें</value>
+  </data>
+  <data name="AdjustmentEditor_Reverse" xml:space="preserve">
+    <value>उलटें</value>
+  </data>
+  <data name="AdjustmentEditor_SaturationColon" xml:space="preserve">
+    <value>संतृप्ति:</value>
+  </data>
+  <data name="AdjustmentEditor_Shadows" xml:space="preserve">
+    <value>छाया</value>
+  </data>
+  <data name="AdjustmentEditor_ThresholdLevelColon" xml:space="preserve">
+    <value>थ्रेशोल्ड स्तर:</value>
+  </data>
+  <data name="AdjustmentEditor_Tint" xml:space="preserve">
+    <value>रंग चढ़ाएँ</value>
+  </data>
+  <data name="AdjustmentEditor_TintColorColon" xml:space="preserve">
+    <value>रंगत:</value>
+  </data>
+  <data name="AdjustmentEditor_ToneColon" xml:space="preserve">
+    <value>टोन:</value>
+  </data>
+  <data name="AdjustmentEditor_UseLegacy" xml:space="preserve">
+    <value>पुरानी विधि का उपयोग करें</value>
+  </data>
+  <data name="AdjustmentEditor_VibranceColon" xml:space="preserve">
+    <value>जीवंतता:</value>
+  </data>
+  <data name="AdjustmentEditor_Whites" xml:space="preserve">
+    <value>सफ़ेद</value>
+  </data>
+  <data name="AdjustmentEditor_YellowBlueColon" xml:space="preserve">
+    <value>पीला / नीला:</value>
+  </data>
+  <data name="AdjustmentEditor_YellowColon" xml:space="preserve">
+    <value>पीला:</value>
+  </data>
+  <data name="AdjustmentEditor_Yellows" xml:space="preserve">
+    <value>पीले</value>
+  </data>
+  <data name="AdjustmentEditor_YellowsColon" xml:space="preserve">
+    <value>पीले:</value>
+  </data>
+  <data name="AdjustmentsPanel_AddAdjustment" xml:space="preserve">
+    <value>समायोजन जोड़ें</value>
+  </data>
+  <data name="AdjustmentsPanel_CreateAdjustmentLayerTip" xml:space="preserve">
+    <value>नई {0} समायोजन लेयर बनाएँ</value>
+  </data>
+  <data name="Adjustments_BlackAndWhite" xml:space="preserve">
+    <value>काला और सफ़ेद</value>
+  </data>
+  <data name="Adjustments_BrightnessContrast" xml:space="preserve">
+    <value>चमक/कंट्रास्ट</value>
+  </data>
+  <data name="Adjustments_ChannelMixer" xml:space="preserve">
+    <value>चैनल मिक्सर</value>
+  </data>
+  <data name="Adjustments_ColorBalance" xml:space="preserve">
+    <value>रंग संतुलन</value>
+  </data>
+  <data name="Adjustments_ColorLookup" xml:space="preserve">
+    <value>रंग लुकअप</value>
+  </data>
+  <data name="Adjustments_Curves" xml:space="preserve">
+    <value>वक्र</value>
+  </data>
+  <data name="Adjustments_Desaturate" xml:space="preserve">
+    <value>रंगहीन करें</value>
+  </data>
+  <data name="Adjustments_Exposure" xml:space="preserve">
+    <value>एक्सपोज़र</value>
+  </data>
+  <data name="Adjustments_GradientMap" xml:space="preserve">
+    <value>ग्रेडिएंट मैप</value>
+  </data>
+  <data name="Adjustments_HdrToning" xml:space="preserve">
+    <value>HDR टोनिंग</value>
+  </data>
+  <data name="Adjustments_HueSaturation" xml:space="preserve">
+    <value>ह्यू/संतृप्ति</value>
+  </data>
+  <data name="Adjustments_Invert" xml:space="preserve">
+    <value>उलटें</value>
+  </data>
+  <data name="Adjustments_Levels" xml:space="preserve">
+    <value>स्तर</value>
+  </data>
+  <data name="Adjustments_MatchColor" xml:space="preserve">
+    <value>रंग मिलाएँ</value>
+  </data>
+  <data name="Adjustments_PhotoFilter" xml:space="preserve">
+    <value>फ़ोटो फ़िल्टर</value>
+  </data>
+  <data name="Adjustments_Posterize" xml:space="preserve">
+    <value>पोस्टराइज़</value>
+  </data>
+  <data name="Adjustments_ReplaceColor" xml:space="preserve">
+    <value>रंग बदलें</value>
+  </data>
+  <data name="Adjustments_SelectiveColor" xml:space="preserve">
+    <value>चयनात्मक रंग</value>
+  </data>
+  <data name="Adjustments_Threshold" xml:space="preserve">
+    <value>सीमा मान</value>
+  </data>
+  <data name="Adjustments_Vibrance" xml:space="preserve">
+    <value>रंग जीवंतता</value>
+  </data>
+  <data name="BlendModes_Behind" xml:space="preserve">
+    <value>पीछे</value>
+  </data>
+  <data name="BlendModes_Clear" xml:space="preserve">
+    <value>साफ़ करें</value>
+  </data>
+  <data name="BlendModes_Color" xml:space="preserve">
+    <value>रंग</value>
+  </data>
+  <data name="BlendModes_ColorBurn" xml:space="preserve">
+    <value>रंग बर्न</value>
+  </data>
+  <data name="BlendModes_ColorDodge" xml:space="preserve">
+    <value>रंग डॉज</value>
+  </data>
+  <data name="BlendModes_Darken" xml:space="preserve">
+    <value>गहरा करें</value>
+  </data>
+  <data name="BlendModes_DarkerColor" xml:space="preserve">
+    <value>गहरा रंग</value>
+  </data>
+  <data name="BlendModes_Difference" xml:space="preserve">
+    <value>अंतर</value>
+  </data>
+  <data name="BlendModes_Dissolve" xml:space="preserve">
+    <value>घोलें</value>
+  </data>
+  <data name="BlendModes_Divide" xml:space="preserve">
+    <value>विभाजित करें</value>
+  </data>
+  <data name="BlendModes_Exclusion" xml:space="preserve">
+    <value>बहिष्करण</value>
+  </data>
+  <data name="BlendModes_HardLight" xml:space="preserve">
+    <value>कठोर प्रकाश</value>
+  </data>
+  <data name="BlendModes_HardMix" xml:space="preserve">
+    <value>कठोर मिश्रण</value>
+  </data>
+  <data name="BlendModes_Hue" xml:space="preserve">
+    <value>वर्ण</value>
+  </data>
+  <data name="BlendModes_Lighten" xml:space="preserve">
+    <value>हल्का करें</value>
+  </data>
+  <data name="BlendModes_LighterColor" xml:space="preserve">
+    <value>हल्का रंग</value>
+  </data>
+  <data name="BlendModes_LinearBurn" xml:space="preserve">
+    <value>रैखिक बर्न</value>
+  </data>
+  <data name="BlendModes_LinearDodge" xml:space="preserve">
+    <value>रैखिक डॉज (जोड़ें)</value>
+  </data>
+  <data name="BlendModes_LinearLight" xml:space="preserve">
+    <value>रैखिक प्रकाश</value>
+  </data>
+  <data name="BlendModes_Luminosity" xml:space="preserve">
+    <value>दीप्ति</value>
+  </data>
+  <data name="BlendModes_Multiply" xml:space="preserve">
+    <value>गुणा करें</value>
+  </data>
+  <data name="BlendModes_Normal" xml:space="preserve">
+    <value>सामान्य</value>
+  </data>
+  <data name="BlendModes_Overlay" xml:space="preserve">
+    <value>ओवरले</value>
+  </data>
+  <data name="BlendModes_PassThrough" xml:space="preserve">
+    <value>पास थ्रू</value>
+  </data>
+  <data name="BlendModes_PinLight" xml:space="preserve">
+    <value>पिन प्रकाश</value>
+  </data>
+  <data name="BlendModes_Saturation" xml:space="preserve">
+    <value>संतृप्ति</value>
+  </data>
+  <data name="BlendModes_Screen" xml:space="preserve">
+    <value>स्क्रीन</value>
+  </data>
+  <data name="BlendModes_SoftLight" xml:space="preserve">
+    <value>सौम्य प्रकाश</value>
+  </data>
+  <data name="BlendModes_Subtract" xml:space="preserve">
+    <value>घटाएँ</value>
+  </data>
+  <data name="BlendModes_VividLight" xml:space="preserve">
+    <value>जीवंत प्रकाश</value>
+  </data>
+  <data name="BrushesPanel_Angle" xml:space="preserve">
+    <value>कोण</value>
+  </data>
+  <data name="BrushesPanel_Hardness" xml:space="preserve">
+    <value>कठोरता</value>
+  </data>
+  <data name="BrushesPanel_NewBrushPresetEllipsis" xml:space="preserve">
+    <value>नया ब्रश प्रीसेट...</value>
+  </data>
+  <data name="BrushesPanel_PressureFlow" xml:space="preserve">
+    <value>पेन दबाव प्रवाह को नियंत्रित करता है</value>
+  </data>
+  <data name="BrushesPanel_PressureSize" xml:space="preserve">
+    <value>पेन दबाव आकार को नियंत्रित करता है</value>
+  </data>
+  <data name="BrushesPanel_Roundness" xml:space="preserve">
+    <value>गोलाई</value>
+  </data>
+  <data name="BrushesPanel_Scatter" xml:space="preserve">
+    <value>बिखराव</value>
+  </data>
+  <data name="BrushesPanel_SelectPaintingTool" xml:space="preserve">
+    <value>ब्रश संपादित करने के लिए कोई पेंटिंग टूल चुनें।</value>
+  </data>
+  <data name="BrushesPanel_Size" xml:space="preserve">
+    <value>आकार</value>
+  </data>
+  <data name="BrushesPanel_SizeJitter" xml:space="preserve">
+    <value>आकार उतार-चढ़ाव</value>
+  </data>
+  <data name="BrushesPanel_Spacing" xml:space="preserve">
+    <value>अंतर</value>
+  </data>
+  <data name="BrushesPanel_SquareTip" xml:space="preserve">
+    <value>वर्गाकार नोक</value>
+  </data>
+  <data name="CanvasSizeDialog_AnchorColon" xml:space="preserve">
+    <value>एंकर:</value>
+  </data>
+  <data name="CanvasSizeDialog_CurrentSize" xml:space="preserve">
+    <value>वर्तमान आकार: {0} × {1} px</value>
+  </data>
+  <data name="CanvasSizeDialog_ExtensionColorColon" xml:space="preserve">
+    <value>कैनवास विस्तार रंग:</value>
+  </data>
+  <data name="CanvasSizeDialog_Foreground" xml:space="preserve">
+    <value>अग्रभूमि</value>
+  </data>
+  <data name="CanvasSizeDialog_Gray" xml:space="preserve">
+    <value>धूसर</value>
+  </data>
+  <data name="CanvasSizeDialog_Relative" xml:space="preserve">
+    <value>सापेक्ष</value>
+  </data>
+  <data name="CanvasView_EditCancelled" xml:space="preserve">
+    <value>संपादन रद्द कर दिया गया, क्योंकि दस्तावेज़ बदल गया।</value>
+  </data>
+  <data name="CanvasView_EmptyHint" xml:space="preserve">
+    <value>संपादन शुरू करने के लिए कोई दस्तावेज़ खोलें या बनाएँ (Ctrl+O / Ctrl+N), या यहाँ कोई छवि छोड़ें।</value>
+  </data>
+  <data name="ChannelsPanel_ChannelOptions" xml:space="preserve">
+    <value>चैनल विकल्प</value>
+  </data>
+  <data name="ChannelsPanel_DeleteChannelTip" xml:space="preserve">
+    <value>वर्तमान चैनल हटाएँ</value>
+  </data>
+  <data name="ChannelsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>चैनल को चयन के रूप में लोड करें</value>
+  </data>
+  <data name="ChannelsPanel_NewChannelTip" xml:space="preserve">
+    <value>नया चैनल बनाएँ</value>
+  </data>
+  <data name="ChannelsPanel_QuickMask" xml:space="preserve">
+    <value>क्विक मास्क</value>
+  </data>
+  <data name="ChannelsPanel_SaveSelectionTip" xml:space="preserve">
+    <value>चयन को चैनल के रूप में सहेजें</value>
+  </data>
+  <data name="ChannelsPanel_ShowOverlayTip" xml:space="preserve">
+    <value>चैनल को ओवरले के रूप में दिखाएँ</value>
+  </data>
+  <data name="ColorLookupEditor_CouldNotLoad" xml:space="preserve">
+    <value>3D LUT लोड नहीं हो सका: {0}</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLut" xml:space="preserve">
+    <value>3D LUT लोड करें</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLutEllipsis" xml:space="preserve">
+    <value>3D LUT लोड करें...</value>
+  </data>
+  <data name="ColorLookupEditor_LutFileColon" xml:space="preserve">
+    <value>3D LUT फ़ाइल:</value>
+  </data>
+  <data name="ColorLookupEditor_LutFiles" xml:space="preserve">
+    <value>3D LUT फ़ाइलें</value>
+  </data>
+  <data name="ColorLut_1DNotSupported" xml:space="preserve">
+    <value>1D लुकअप तालिकाएँ समर्थित नहीं हैं।</value>
+  </data>
+  <data name="ColorLut_DataSizeMismatch" xml:space="preserve">
+    <value>तालिका का डेटा उसके आकार से मेल नहीं खाता।</value>
+  </data>
+  <data name="ColorLut_InvalidDomain" xml:space="preserve">
+    <value>तालिका का डोमेन मान्य नहीं है।</value>
+  </data>
+  <data name="ColorLut_NoSizeEntry" xml:space="preserve">
+    <value>फ़ाइल में LUT_3D_SIZE प्रविष्टि नहीं है।</value>
+  </data>
+  <data name="ColorLut_SizeNotSupported" xml:space="preserve">
+    <value>तालिका आकार {0} समर्थित नहीं है।</value>
+  </data>
+  <data name="ColorPanel_BackgroundColor" xml:space="preserve">
+    <value>पृष्ठभूमि रंग</value>
+  </data>
+  <data name="ColorPanel_BackgroundTip" xml:space="preserve">
+    <value>पृष्ठभूमि रंग। डबल-क्लिक करने पर रंग पिकर खुलता है।</value>
+  </data>
+  <data name="ColorPanel_ForegroundColor" xml:space="preserve">
+    <value>अग्रभूमि रंग</value>
+  </data>
+  <data name="ColorPanel_ForegroundTip" xml:space="preserve">
+    <value>अग्रभूमि रंग। डबल-क्लिक करने पर रंग पिकर खुलता है।</value>
+  </data>
+  <data name="ColorPickerDialog_AddToSwatches" xml:space="preserve">
+    <value>स्वैच में जोड़ें</value>
+  </data>
+  <data name="ColorPickerDialog_NotWebColorTip" xml:space="preserve">
+    <value>यह वेब रंग नहीं है। निकटतम रंग का उपयोग करने के लिए स्वैच पर क्लिक करें।</value>
+  </data>
+  <data name="ColorPickerDialog_OnlyWebColors" xml:space="preserve">
+    <value>केवल वेब रंग</value>
+  </data>
+  <data name="ColorPickerDialog_Reset" xml:space="preserve">
+    <value>रीसेट करें</value>
+  </data>
+  <data name="ColorPickerDialog_RestoreCurrentTip" xml:space="preserve">
+    <value>वर्तमान रंग पुनर्स्थापित करने के लिए क्लिक करें</value>
+  </data>
+  <data name="ColorPickerDialog_Title" xml:space="preserve">
+    <value>रंग पिकर</value>
+  </data>
+  <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
+    <value>रंग पिकर ({0})</value>
+  </data>
+  <data name="DialogBuilder_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="DialogBuilder_No" xml:space="preserve">
+    <value>नहीं</value>
+  </data>
+  <data name="DialogBuilder_OK" xml:space="preserve">
+    <value>ठीक है</value>
+  </data>
+  <data name="DialogBuilder_Yes" xml:space="preserve">
+    <value>हाँ</value>
+  </data>
+  <data name="DocumentItems_CountGroup1" xml:space="preserve">
+    <value>गणना समूह 1</value>
+  </data>
   <data name="EditorCommands_90Clockwise" xml:space="preserve">
     <value>90° दक्षिणावर्त</value>
   </data>
@@ -1284,6 +1797,255 @@
   <data name="EditorCommands_ZoomOut" xml:space="preserve">
     <value>ज़ूम आउट</value>
   </data>
+  <data name="Enum_ArtStyle_Dab" xml:space="preserve">
+    <value>थपकी</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseCurl" xml:space="preserve">
+    <value>ढीला घुमाव</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseLong" xml:space="preserve">
+    <value>ढीला लंबा</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseMedium" xml:space="preserve">
+    <value>ढीला मध्यम</value>
+  </data>
+  <data name="Enum_ArtStyle_TightCurl" xml:space="preserve">
+    <value>कसा घुमाव</value>
+  </data>
+  <data name="Enum_ArtStyle_TightLong" xml:space="preserve">
+    <value>कसा लंबा</value>
+  </data>
+  <data name="Enum_ArtStyle_TightMedium" xml:space="preserve">
+    <value>कसा मध्यम</value>
+  </data>
+  <data name="Enum_ArtStyle_TightShort" xml:space="preserve">
+    <value>कसा छोटा</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Bottom" xml:space="preserve">
+    <value>नीचे</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomLeft" xml:space="preserve">
+    <value>नीचे बाएँ</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomRight" xml:space="preserve">
+    <value>नीचे दाएँ</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Center" xml:space="preserve">
+    <value>केंद्र</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Left" xml:space="preserve">
+    <value>बायाँ</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Right" xml:space="preserve">
+    <value>दायाँ</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Top" xml:space="preserve">
+    <value>ऊपर</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopLeft" xml:space="preserve">
+    <value>ऊपर बाएँ</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopRight" xml:space="preserve">
+    <value>ऊपर दाएँ</value>
+  </data>
+  <data name="Enum_EraserMode_Block" xml:space="preserve">
+    <value>ब्लॉक</value>
+  </data>
+  <data name="Enum_EraserMode_Brush" xml:space="preserve">
+    <value>ब्रश</value>
+  </data>
+  <data name="Enum_EraserMode_Pencil" xml:space="preserve">
+    <value>पेंसिल</value>
+  </data>
+  <data name="Enum_FillKind_Gradient" xml:space="preserve">
+    <value>ग्रेडिएंट</value>
+  </data>
+  <data name="Enum_FillKind_Pattern" xml:space="preserve">
+    <value>पैटर्न</value>
+  </data>
+  <data name="Enum_FillKind_SolidColor" xml:space="preserve">
+    <value>ठोस रंग</value>
+  </data>
+  <data name="Enum_GradientType_Angle" xml:space="preserve">
+    <value>कोण</value>
+  </data>
+  <data name="Enum_GradientType_Diamond" xml:space="preserve">
+    <value>हीरा</value>
+  </data>
+  <data name="Enum_GradientType_Linear" xml:space="preserve">
+    <value>रैखिक</value>
+  </data>
+  <data name="Enum_GradientType_Radial" xml:space="preserve">
+    <value>रेडियल</value>
+  </data>
+  <data name="Enum_GradientType_Reflected" xml:space="preserve">
+    <value>परावर्तित</value>
+  </data>
+  <data name="Enum_HealType_ContentAware" xml:space="preserve">
+    <value>सामग्री-जागरूक</value>
+  </data>
+  <data name="Enum_HealType_CreateTexture" xml:space="preserve">
+    <value>बनावट बनाएँ</value>
+  </data>
+  <data name="Enum_HealType_ProximityMatch" xml:space="preserve">
+    <value>निकटता मिलान</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedRatio" xml:space="preserve">
+    <value>निश्चित अनुपात</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedSize" xml:space="preserve">
+    <value>निश्चित आकार</value>
+  </data>
+  <data name="Enum_MarqueeStyle_Normal" xml:space="preserve">
+    <value>सामान्य</value>
+  </data>
+  <data name="Enum_PathCombine_Combine" xml:space="preserve">
+    <value>आकृतियाँ मिलाएँ</value>
+  </data>
+  <data name="Enum_PathCombine_Exclude" xml:space="preserve">
+    <value>अतिव्यापी आकृतियाँ बाहर करें</value>
+  </data>
+  <data name="Enum_PathCombine_Intersect" xml:space="preserve">
+    <value>आकृति क्षेत्रों का प्रतिच्छेदन</value>
+  </data>
+  <data name="Enum_PathCombine_NewLayer" xml:space="preserve">
+    <value>नई लेयर</value>
+  </data>
+  <data name="Enum_PathCombine_Subtract" xml:space="preserve">
+    <value>सामने की आकृति घटाएँ</value>
+  </data>
+  <data name="Enum_PathToolMode_Path" xml:space="preserve">
+    <value>पथ</value>
+  </data>
+  <data name="Enum_PathToolMode_Shape" xml:space="preserve">
+    <value>आकृति</value>
+  </data>
+  <data name="Enum_ReplaceMode_Color" xml:space="preserve">
+    <value>रंग</value>
+  </data>
+  <data name="Enum_ReplaceMode_Hue" xml:space="preserve">
+    <value>वर्ण</value>
+  </data>
+  <data name="Enum_ReplaceMode_Luminosity" xml:space="preserve">
+    <value>दीप्ति</value>
+  </data>
+  <data name="Enum_ReplaceMode_Saturation" xml:space="preserve">
+    <value>संतृप्ति</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bicubic" xml:space="preserve">
+    <value>बाइक्यूबिक</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSharper" xml:space="preserve">
+    <value>बाइक्यूबिक (अधिक तीक्ष्ण)</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSmoother" xml:space="preserve">
+    <value>बाइक्यूबिक (अधिक चिकना)</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bilinear" xml:space="preserve">
+    <value>बाइलिनियर</value>
+  </data>
+  <data name="Enum_ResampleMethod_Lanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="Enum_ResampleMethod_NearestNeighbor" xml:space="preserve">
+    <value>निकटतम पड़ोसी</value>
+  </data>
+  <data name="Enum_Sampling_BackgroundSwatch" xml:space="preserve">
+    <value>पृष्ठभूमि स्वैच</value>
+  </data>
+  <data name="Enum_Sampling_Continuous" xml:space="preserve">
+    <value>लगातार</value>
+  </data>
+  <data name="Enum_Sampling_Once" xml:space="preserve">
+    <value>एक बार</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
+    <value>पथ</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Pixels" xml:space="preserve">
+    <value>पिक्सेल</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Shape" xml:space="preserve">
+    <value>आकृति</value>
+  </data>
+  <data name="Enum_StrokePosition_Center" xml:space="preserve">
+    <value>केंद्र</value>
+  </data>
+  <data name="Enum_StrokePosition_Inside" xml:space="preserve">
+    <value>अंदर</value>
+  </data>
+  <data name="Enum_StrokePosition_Outside" xml:space="preserve">
+    <value>बाहर</value>
+  </data>
+  <data name="Enum_TextAlignment_Center" xml:space="preserve">
+    <value>केंद्र</value>
+  </data>
+  <data name="Enum_TextAlignment_Justify" xml:space="preserve">
+    <value>दोनों ओर संरेखित</value>
+  </data>
+  <data name="Enum_TextAlignment_Left" xml:space="preserve">
+    <value>बायाँ</value>
+  </data>
+  <data name="Enum_TextAlignment_Right" xml:space="preserve">
+    <value>दायाँ</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Crisp" xml:space="preserve">
+    <value>स्पष्ट</value>
+  </data>
+  <data name="Enum_TextAntiAlias_None" xml:space="preserve">
+    <value>कोई नहीं</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Sharp" xml:space="preserve">
+    <value>तीक्ष्ण</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Smooth" xml:space="preserve">
+    <value>चिकना</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Strong" xml:space="preserve">
+    <value>मज़बूत</value>
+  </data>
+  <data name="Enum_ToneRange_Highlights" xml:space="preserve">
+    <value>हाइलाइट</value>
+  </data>
+  <data name="Enum_ToneRange_Midtones" xml:space="preserve">
+    <value>मिडटोन</value>
+  </data>
+  <data name="Enum_ToneRange_Shadows" xml:space="preserve">
+    <value>छाया</value>
+  </data>
+  <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
+    <value>निर्यात करें...</value>
+  </data>
+  <data name="ExportDialog_FormatColon" xml:space="preserve">
+    <value>प्रारूप:</value>
+  </data>
+  <data name="ExportDialog_HeightPxColon" xml:space="preserve">
+    <value>ऊँचाई (px):</value>
+  </data>
+  <data name="ExportDialog_Lossless" xml:space="preserve">
+    <value>दोषरहित</value>
+  </data>
+  <data name="FillDialog_ColorEllipsis" xml:space="preserve">
+    <value>रंग...</value>
+  </data>
+  <data name="FillDialog_ContentsColon" xml:space="preserve">
+    <value>सामग्री:</value>
+  </data>
+  <data name="FillDialog_FillColor" xml:space="preserve">
+    <value>भराव रंग</value>
+  </data>
+  <data name="FillDialog_HalfGray" xml:space="preserve">
+    <value>50% धूसर</value>
+  </data>
+  <data name="FillDialog_OpacityPercentColon" xml:space="preserve">
+    <value>अपारदर्शिता (%):</value>
+  </data>
+  <data name="FillDialog_PatternColon" xml:space="preserve">
+    <value>पैटर्न:</value>
+  </data>
+  <data name="FillDialog_PreserveTransparency" xml:space="preserve">
+    <value>पारदर्शिता सुरक्षित रखें</value>
+  </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>नॉइज़ जोड़ें</value>
   </data>
@@ -1536,6 +2298,123 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>लहर</value>
   </data>
+  <data name="GradientEditorDialog_AddStop" xml:space="preserve">
+    <value>स्टॉप जोड़ें</value>
+  </data>
+  <data name="GradientEditorDialog_Custom" xml:space="preserve">
+    <value>अनुकूलित</value>
+  </data>
+  <data name="GradientEditorDialog_Location" xml:space="preserve">
+    <value>स्थान</value>
+  </data>
+  <data name="GradientEditorDialog_Presets" xml:space="preserve">
+    <value>प्रीसेट</value>
+  </data>
+  <data name="GradientEditorDialog_StopColor" xml:space="preserve">
+    <value>स्टॉप रंग</value>
+  </data>
+  <data name="GradientEditorDialog_Title" xml:space="preserve">
+    <value>ग्रेडिएंट संपादक</value>
+  </data>
+  <data name="HdrToningEditor_Advanced" xml:space="preserve">
+    <value>उन्नत</value>
+  </data>
+  <data name="HdrToningEditor_DetailColon" xml:space="preserve">
+    <value>विवरण:</value>
+  </data>
+  <data name="HdrToningEditor_EdgeGlow" xml:space="preserve">
+    <value>किनारा चमक</value>
+  </data>
+  <data name="HdrToningEditor_EqualizeHistogram" xml:space="preserve">
+    <value>हिस्टोग्राम समान करें</value>
+  </data>
+  <data name="HdrToningEditor_ExposureAndGamma" xml:space="preserve">
+    <value>एक्सपोज़र और गामा</value>
+  </data>
+  <data name="HdrToningEditor_HighlightColon" xml:space="preserve">
+    <value>हाइलाइट:</value>
+  </data>
+  <data name="HdrToningEditor_HighlightCompression" xml:space="preserve">
+    <value>हाइलाइट संपीड़न</value>
+  </data>
+  <data name="HdrToningEditor_LocalAdaptation" xml:space="preserve">
+    <value>स्थानीय अनुकूलन</value>
+  </data>
+  <data name="HdrToningEditor_MethodColon" xml:space="preserve">
+    <value>विधि:</value>
+  </data>
+  <data name="HdrToningEditor_NoOptions" xml:space="preserve">
+    <value>इस विधि में कोई विकल्प नहीं है।</value>
+  </data>
+  <data name="HdrToningEditor_PresetColon" xml:space="preserve">
+    <value>प्रीसेट:</value>
+  </data>
+  <data name="HdrToningEditor_RadiusColon" xml:space="preserve">
+    <value>त्रिज्या:</value>
+  </data>
+  <data name="HdrToningEditor_ResetCurve" xml:space="preserve">
+    <value>वक्र रीसेट करें</value>
+  </data>
+  <data name="HdrToningEditor_ShadowColon" xml:space="preserve">
+    <value>छाया:</value>
+  </data>
+  <data name="HdrToningEditor_SmoothEdges" xml:space="preserve">
+    <value>किनारे चिकने करें</value>
+  </data>
+  <data name="HdrToningEditor_StrengthColon" xml:space="preserve">
+    <value>शक्ति:</value>
+  </data>
+  <data name="HdrToningEditor_ToneAndDetail" xml:space="preserve">
+    <value>टोन और विवरण</value>
+  </data>
+  <data name="HdrToningEditor_ToningCurveAndHistogram" xml:space="preserve">
+    <value>टोनिंग वक्र और हिस्टोग्राम</value>
+  </data>
+  <data name="HdrToning_PresetDefault" xml:space="preserve">
+    <value>डिफ़ॉल्ट</value>
+  </data>
+  <data name="HdrToning_PresetFlat" xml:space="preserve">
+    <value>सपाट</value>
+  </data>
+  <data name="HdrToning_PresetMonochromatic" xml:space="preserve">
+    <value>एकवर्णी</value>
+  </data>
+  <data name="HdrToning_PresetPhotorealistic" xml:space="preserve">
+    <value>फ़ोटो जैसा वास्तविक</value>
+  </data>
+  <data name="HdrToning_PresetSaturated" xml:space="preserve">
+    <value>संतृप्त</value>
+  </data>
+  <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
+    <value>अतियथार्थवादी</value>
+  </data>
+  <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
+    <value>स्नैपशॉट हटाएँ</value>
+  </data>
+  <data name="HistoryPanel_DeleteStatesTip" xml:space="preserve">
+    <value>वर्तमान के बाद की स्थितियाँ हटाएँ</value>
+  </data>
+  <data name="HistoryPanel_HistoryBrushSourceTip" xml:space="preserve">
+    <value>इतिहास ब्रश का स्रोत सेट करें</value>
+  </data>
+  <data name="HistoryPanel_NewDocumentTip" xml:space="preserve">
+    <value>वर्तमान स्थिति से नया दस्तावेज़ बनाएँ</value>
+  </data>
+  <data name="HistoryPanel_NewSnapshotTip" xml:space="preserve">
+    <value>नया स्नैपशॉट बनाएँ</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshot" xml:space="preserve">
+    <value>स्नैपशॉट का नाम बदलें</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshotEllipsis" xml:space="preserve">
+    <value>स्नैपशॉट का नाम बदलें...</value>
+  </data>
+  <data name="History_SnapshotNumber" xml:space="preserve">
+    <value>स्नैपशॉट {0}</value>
+  </data>
+  <data name="ImageIO_AllSupportedImages" xml:space="preserve">
+    <value>सभी समर्थित छवियाँ</value>
+  </data>
   <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
     <value>"{0}" नहीं खोला जा सका: {1}</value>
   </data>
@@ -1557,6 +2436,15 @@
   <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
     <value>WebP एन्कोडिंग विफल रही।</value>
   </data>
+  <data name="ImageSizeDialog_ConstrainProportions" xml:space="preserve">
+    <value>अनुपात बनाए रखें</value>
+  </data>
+  <data name="ImageSizeDialog_PercentColon" xml:space="preserve">
+    <value>प्रतिशत:</value>
+  </data>
+  <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
+    <value>रीसैंपल:</value>
+  </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>पृष्ठभूमि</value>
   </data>
@@ -1566,10 +2454,757 @@
   <data name="LayerNames_Layer0" xml:space="preserve">
     <value>लेयर 0</value>
   </data>
+  <data name="LayerNames_NewTypeLayer" xml:space="preserve">
+    <value>लेयर</value>
+  </data>
+  <data name="LayerNames_Text" xml:space="preserve">
+    <value>पाठ</value>
+  </data>
+  <data name="LayerStyleDialog_AngleColon" xml:space="preserve">
+    <value>कोण:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendModeColon" xml:space="preserve">
+    <value>मिश्रण मोड:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendingOptions" xml:space="preserve">
+    <value>मिश्रण विकल्प</value>
+  </data>
+  <data name="LayerStyleDialog_ColorOverlay" xml:space="preserve">
+    <value>रंग ओवरले</value>
+  </data>
+  <data name="LayerStyleDialog_DistanceColon" xml:space="preserve">
+    <value>दूरी:</value>
+  </data>
+  <data name="LayerStyleDialog_DropShadow" xml:space="preserve">
+    <value>ड्रॉप छाया</value>
+  </data>
+  <data name="LayerStyleDialog_FillOpacityColon" xml:space="preserve">
+    <value>भराव अपारदर्शिता:</value>
+  </data>
+  <data name="LayerStyleDialog_GlowColor" xml:space="preserve">
+    <value>चमक रंग</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadow" xml:space="preserve">
+    <value>आंतरिक छाया</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadowColor" xml:space="preserve">
+    <value>आंतरिक छाया रंग</value>
+  </data>
+  <data name="LayerStyleDialog_OuterGlow" xml:space="preserve">
+    <value>बाहरी चमक</value>
+  </data>
+  <data name="LayerStyleDialog_OverlayColor" xml:space="preserve">
+    <value>ओवरले रंग</value>
+  </data>
+  <data name="LayerStyleDialog_PositionColon" xml:space="preserve">
+    <value>स्थिति:</value>
+  </data>
+  <data name="LayerStyleDialog_ShadowColor" xml:space="preserve">
+    <value>छाया रंग</value>
+  </data>
+  <data name="LayersPanel_AddLayerMaskTip" xml:space="preserve">
+    <value>लेयर मास्क जोड़ें (Alt: सब छिपाएँ)</value>
+  </data>
+  <data name="LayersPanel_AddLayerStyleTip" xml:space="preserve">
+    <value>लेयर शैली जोड़ें</value>
+  </data>
+  <data name="LayersPanel_BlendingChange" xml:space="preserve">
+    <value>मिश्रण परिवर्तन</value>
+  </data>
+  <data name="LayersPanel_BlendingOptionsEllipsis" xml:space="preserve">
+    <value>मिश्रण विकल्प...</value>
+  </data>
+  <data name="LayersPanel_ChangeLayerLock" xml:space="preserve">
+    <value>लेयर लॉक बदलें</value>
+  </data>
+  <data name="LayersPanel_DeleteLayerTip" xml:space="preserve">
+    <value>लेयर हटाएँ</value>
+  </data>
+  <data name="LayersPanel_DuplicateLayerEllipsis" xml:space="preserve">
+    <value>लेयर डुप्लिकेट करें...</value>
+  </data>
+  <data name="LayersPanel_FillOpacityChange" xml:space="preserve">
+    <value>भराव अपारदर्शिता परिवर्तन</value>
+  </data>
+  <data name="LayersPanel_FullyLockedTip" xml:space="preserve">
+    <value>दर्शाता है कि लेयर पूरी तरह लॉक है</value>
+  </data>
+  <data name="LayersPanel_GroupFromLayersEllipsis" xml:space="preserve">
+    <value>लेयर से समूह...</value>
+  </data>
+  <data name="LayersPanel_HideLayer" xml:space="preserve">
+    <value>लेयर छिपाएँ</value>
+  </data>
+  <data name="LayersPanel_LayerPropertiesEllipsis" xml:space="preserve">
+    <value>लेयर गुण...</value>
+  </data>
+  <data name="LayersPanel_LinkTip" xml:space="preserve">
+    <value>चुनी गई लेयरों को लिंक या अनलिंक करें (Ctrl-क्लिक से कई चुनें) ताकि वे साथ-साथ चलें</value>
+  </data>
+  <data name="LayersPanel_LockAll" xml:space="preserve">
+    <value>सब लॉक करें</value>
+  </data>
+  <data name="LayersPanel_LockColon" xml:space="preserve">
+    <value>लॉक:</value>
+  </data>
+  <data name="LayersPanel_LockImagePixels" xml:space="preserve">
+    <value>छवि पिक्सेल लॉक करें</value>
+  </data>
+  <data name="LayersPanel_LockPosition" xml:space="preserve">
+    <value>स्थिति लॉक करें</value>
+  </data>
+  <data name="LayersPanel_LockTransparentPixels" xml:space="preserve">
+    <value>पारदर्शी पिक्सेल लॉक करें</value>
+  </data>
+  <data name="LayersPanel_MaskThumbnailTip" xml:space="preserve">
+    <value>मास्क संपादित करने के लिए क्लिक करें, अक्षम करने के लिए Shift-क्लिक, चयन के रूप में लोड करने के लिए Ctrl-क्लिक करें</value>
+  </data>
+  <data name="LayersPanel_NewFillOrAdjustmentTip" xml:space="preserve">
+    <value>नई भराव या समायोजन लेयर बनाएँ</value>
+  </data>
+  <data name="LayersPanel_NewGroupTip" xml:space="preserve">
+    <value>नया समूह बनाएँ</value>
+  </data>
+  <data name="LayersPanel_NewLayerTip" xml:space="preserve">
+    <value>नई लेयर बनाएँ</value>
+  </data>
+  <data name="LayersPanel_OpacityChange" xml:space="preserve">
+    <value>अपारदर्शिता परिवर्तन</value>
+  </data>
+  <data name="LayersPanel_PartiallyLockedTip" xml:space="preserve">
+    <value>दर्शाता है कि लेयर आंशिक रूप से लॉक है</value>
+  </data>
+  <data name="LayersPanel_ShowLayer" xml:space="preserve">
+    <value>लेयर दिखाएँ</value>
+  </data>
+  <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
+    <value>दृश्यता टॉगल करें (Alt-क्लिक केवल यह लेयर दिखाता है)</value>
+  </data>
+  <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
+    <value>रंग तीव्रता:</value>
+  </data>
+  <data name="MatchColorEditor_DestinationImage" xml:space="preserve">
+    <value>गंतव्य छवि</value>
+  </data>
+  <data name="MatchColorEditor_FadeColon" xml:space="preserve">
+    <value>फ़ेड:</value>
+  </data>
+  <data name="MatchColorEditor_ImageStatistics" xml:space="preserve">
+    <value>छवि आँकड़े</value>
+  </data>
+  <data name="MatchColorEditor_LayerColon" xml:space="preserve">
+    <value>लेयर:</value>
+  </data>
+  <data name="MatchColorEditor_LuminanceColon" xml:space="preserve">
+    <value>दीप्ति:</value>
+  </data>
+  <data name="MatchColorEditor_Neutralize" xml:space="preserve">
+    <value>तटस्थ करें</value>
+  </data>
+  <data name="MatchColorEditor_SourceColon" xml:space="preserve">
+    <value>स्रोत:</value>
+  </data>
+  <data name="MatchColorEditor_TargetColon" xml:space="preserve">
+    <value>लक्ष्य:</value>
+  </data>
+  <data name="MatchColorEditor_UseSourceSelection" xml:space="preserve">
+    <value>रंगों की गणना के लिए स्रोत में चयन का उपयोग करें</value>
+  </data>
+  <data name="MatchColorEditor_UseTargetSelection" xml:space="preserve">
+    <value>समायोजन की गणना के लिए लक्ष्य में चयन का उपयोग करें</value>
+  </data>
+  <data name="MenuBuilder_Empty" xml:space="preserve">
+    <value>(खाली)</value>
+  </data>
+  <data name="NewDocumentDialog_Black" xml:space="preserve">
+    <value>काला</value>
+  </data>
+  <data name="NewDocumentDialog_Create" xml:space="preserve">
+    <value>बनाएँ</value>
+  </data>
+  <data name="NewDocumentDialog_PresetA4" xml:space="preserve">
+    <value>A4 2480 × 3508 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetDefault" xml:space="preserve">
+    <value>डिफ़ॉल्ट (1920 × 1080)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetIcon" xml:space="preserve">
+    <value>आइकन 512 × 512</value>
+  </data>
+  <data name="NewDocumentDialog_PresetLetter" xml:space="preserve">
+    <value>लेटर 2550 × 3300 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetSquare" xml:space="preserve">
+    <value>वर्ग 1080 × 1080</value>
+  </data>
+  <data name="NewDocumentDialog_PresetWeb" xml:space="preserve">
+    <value>वेब 1366 × 768</value>
+  </data>
+  <data name="NewDocumentDialog_ResolutionColon" xml:space="preserve">
+    <value>रिज़ॉल्यूशन (ppi):</value>
+  </data>
+  <data name="NewDocumentDialog_Title" xml:space="preserve">
+    <value>नया दस्तावेज़</value>
+  </data>
+  <data name="NewDocumentDialog_Transparent" xml:space="preserve">
+    <value>पारदर्शी</value>
+  </data>
+  <data name="NewDocumentDialog_Untitled" xml:space="preserve">
+    <value>शीर्षकहीन</value>
+  </data>
+  <data name="NewDocumentDialog_White" xml:space="preserve">
+    <value>सफ़ेद</value>
+  </data>
+  <data name="OptionsBuilder_AddToSelectionTip" xml:space="preserve">
+    <value>चयन में जोड़ें (Shift)</value>
+  </data>
+  <data name="OptionsBuilder_BrushPresetPickerTip" xml:space="preserve">
+    <value>ब्रश प्रीसेट पिकर खोलने के लिए क्लिक करें</value>
+  </data>
+  <data name="OptionsBuilder_HardnessColon" xml:space="preserve">
+    <value>कठोरता:</value>
+  </data>
+  <data name="OptionsBuilder_IntersectWithSelectionTip" xml:space="preserve">
+    <value>चयन के साथ प्रतिच्छेदन (Shift+Alt)</value>
+  </data>
+  <data name="OptionsBuilder_NewSelectionTip" xml:space="preserve">
+    <value>नया चयन</value>
+  </data>
+  <data name="OptionsBuilder_NoColor" xml:space="preserve">
+    <value>कोई रंग नहीं</value>
+  </data>
+  <data name="OptionsBuilder_SubtractFromSelectionTip" xml:space="preserve">
+    <value>चयन से घटाएँ (Alt)</value>
+  </data>
+  <data name="PanelDock_CloseTabGroup" xml:space="preserve">
+    <value>टैब समूह बंद करें</value>
+  </data>
+  <data name="PanelDock_CollapsePanelGroup" xml:space="preserve">
+    <value>पैनल समूह संक्षिप्त करें</value>
+  </data>
+  <data name="PanelDock_ExpandPanelGroup" xml:space="preserve">
+    <value>पैनल समूह विस्तृत करें</value>
+  </data>
+  <data name="PanelDock_MoveToGroupWith" xml:space="preserve">
+    <value>{0} वाले समूह में ले जाएँ</value>
+  </data>
+  <data name="PanelDock_MoveToNewGroup" xml:space="preserve">
+    <value>नए समूह में ले जाएँ</value>
+  </data>
+  <data name="PanelDock_PanelMenuTip" xml:space="preserve">
+    <value>पैनल मेनू</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>कार्य पथ</value>
   </data>
+  <data name="PathsPanel_AddVectorMaskTip" xml:space="preserve">
+    <value>वेक्टर मास्क जोड़ें (पथ से आकृति लेयर)</value>
+  </data>
+  <data name="PathsPanel_DeletePathTip" xml:space="preserve">
+    <value>वर्तमान पथ हटाएँ</value>
+  </data>
+  <data name="PathsPanel_FillPathTip" xml:space="preserve">
+    <value>पथ को अग्रभूमि रंग से भरें</value>
+  </data>
+  <data name="PathsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>पथ को चयन के रूप में लोड करें</value>
+  </data>
+  <data name="PathsPanel_MakeWorkPathTip" xml:space="preserve">
+    <value>चयन से कार्य पथ बनाएँ</value>
+  </data>
+  <data name="PathsPanel_NewPathTip" xml:space="preserve">
+    <value>नया पथ बनाएँ</value>
+  </data>
+  <data name="PathsPanel_RenamePath" xml:space="preserve">
+    <value>पथ का नाम बदलें</value>
+  </data>
+  <data name="PathsPanel_SavePath" xml:space="preserve">
+    <value>पथ सहेजें</value>
+  </data>
+  <data name="PathsPanel_ShapePathName" xml:space="preserve">
+    <value>{0} आकृति पथ</value>
+  </data>
+  <data name="PathsPanel_StrokePathTip" xml:space="preserve">
+    <value>ब्रश से पथ पर स्ट्रोक लगाएँ</value>
+  </data>
+  <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
+    <value>शीर्षकहीन-{0}</value>
+  </data>
+  <data name="PhotoEditorWindow_CouldNotComplete" xml:space="preserve">
+    <value>"{0}" पूरा नहीं हो सका: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentInfo" xml:space="preserve">
+    <value>{0} × {1} px ({2:0} ppi)   दस्तावेज़: {3:0.0} MB</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentWindowTitle" xml:space="preserve">
+    <value>{0} - फ़ोटो एडिटर - ShareX</value>
+  </data>
+  <data name="PhotoEditorWindow_DontSave" xml:space="preserve">
+    <value>न सहेजें</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeLayerMask" xml:space="preserve">
+    <value>लेयर मास्क/8</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeQuickMask" xml:space="preserve">
+    <value>क्विक मास्क/8</value>
+  </data>
+  <data name="PhotoEditorWindow_NoDocumentOpen" xml:space="preserve">
+    <value>कोई दस्तावेज़ खुला नहीं है।</value>
+  </data>
+  <data name="PhotoEditorWindow_OperationFailed" xml:space="preserve">
+    <value>{0} विफल रहा: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_OptionsUnavailable" xml:space="preserve">
+    <value>विकल्प उपलब्ध नहीं: {0}</value>
+  </data>
+  <data name="PhotoEditorWindow_PhotoEditor" xml:space="preserve">
+    <value>फ़ोटो संपादक</value>
+  </data>
+  <data name="PhotoEditorWindow_SaveChangesPrompt" xml:space="preserve">
+    <value>बंद करने से पहले "{0}" में किए गए परिवर्तन सहेजें?</value>
+  </data>
+  <data name="PhotoEditorWindow_ViewRotation" xml:space="preserve">
+    <value>दृश्य: {0:0}°</value>
+  </data>
+  <data name="PhotoEditorWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - फ़ोटो एडिटर</value>
+  </data>
+  <data name="PreferencesDialog_GridSubdivisionsColon" xml:space="preserve">
+    <value>उपविभाजन:</value>
+  </data>
+  <data name="PreferencesDialog_GridlineEveryColon" xml:space="preserve">
+    <value>हर (px) पर ग्रिड लाइन:</value>
+  </data>
+  <data name="PreferencesDialog_GuideColorColon" xml:space="preserve">
+    <value>गाइड रंग (hex):</value>
+  </data>
+  <data name="PreferencesDialog_HistoryStatesColon" xml:space="preserve">
+    <value>इतिहास स्थितियाँ:</value>
+  </data>
+  <data name="PreferencesDialog_ImageInterpolationColon" xml:space="preserve">
+    <value>छवि इंटरपोलेशन:</value>
+  </data>
+  <data name="PreferencesDialog_RememberWindow" xml:space="preserve">
+    <value>विंडो का आकार और स्थिति याद रखें</value>
+  </data>
+  <data name="PreferencesDialog_Title" xml:space="preserve">
+    <value>प्राथमिकताएँ</value>
+  </data>
+  <data name="PreferencesDialog_TransparencyGridSizeColon" xml:space="preserve">
+    <value>पारदर्शिता ग्रिड आकार:</value>
+  </data>
   <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
     <value>यह प्रोजेक्ट फ़ोटो एडिटर के नए संस्करण से बनाया गया था।</value>
+  </data>
+  <data name="PropertiesPanel_AddMask" xml:space="preserve">
+    <value>मास्क जोड़ें</value>
+  </data>
+  <data name="PropertiesPanel_AlignColon" xml:space="preserve">
+    <value>संरेखण:</value>
+  </data>
+  <data name="PropertiesPanel_AlignText" xml:space="preserve">
+    <value>टेक्स्ट संरेखित करें</value>
+  </data>
+  <data name="PropertiesPanel_ApplyMask" xml:space="preserve">
+    <value>मास्क लागू करें</value>
+  </data>
+  <data name="PropertiesPanel_Artboard" xml:space="preserve">
+    <value>आर्टबोर्ड</value>
+  </data>
+  <data name="PropertiesPanel_ArtboardBackground" xml:space="preserve">
+    <value>आर्टबोर्ड पृष्ठभूमि</value>
+  </data>
+  <data name="PropertiesPanel_BackgroundColon" xml:space="preserve">
+    <value>पृष्ठभूमि:</value>
+  </data>
+  <data name="PropertiesPanel_Bold" xml:space="preserve">
+    <value>बोल्ड</value>
+  </data>
+  <data name="PropertiesPanel_ChangeFill" xml:space="preserve">
+    <value>भराव बदलें</value>
+  </data>
+  <data name="PropertiesPanel_Character" xml:space="preserve">
+    <value>वर्ण</value>
+  </data>
+  <data name="PropertiesPanel_ClipToLayerBelow" xml:space="preserve">
+    <value>नीचे की लेयर पर क्लिप करें</value>
+  </data>
+  <data name="PropertiesPanel_ClippingMask" xml:space="preserve">
+    <value>क्लिपिंग मास्क</value>
+  </data>
+  <data name="PropertiesPanel_ContainsImage" xml:space="preserve">
+    <value>इसमें एक छवि है</value>
+  </data>
+  <data name="PropertiesPanel_ConvertToLayer" xml:space="preserve">
+    <value>लेयर में बदलें</value>
+  </data>
+  <data name="PropertiesPanel_Dashed" xml:space="preserve">
+    <value>धराशायी</value>
+  </data>
+  <data name="PropertiesPanel_DeleteMask" xml:space="preserve">
+    <value>मास्क हटाएँ</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilter" xml:space="preserve">
+    <value>स्मार्ट फ़िल्टर हटाएँ</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilterTip" xml:space="preserve">
+    <value>स्मार्ट फ़िल्टर हटाएँ</value>
+  </data>
+  <data name="PropertiesPanel_Document" xml:space="preserve">
+    <value>दस्तावेज़</value>
+  </data>
+  <data name="PropertiesPanel_DocumentSize" xml:space="preserve">
+    <value>चौ: {0} px   ऊँ: {1} px</value>
+  </data>
+  <data name="PropertiesPanel_EditTypeLayer" xml:space="preserve">
+    <value>टेक्स्ट लेयर संपादित करें</value>
+  </data>
+  <data name="PropertiesPanel_EmptyFrame" xml:space="preserve">
+    <value>खाली फ़्रेम</value>
+  </data>
+  <data name="PropertiesPanel_EmptyLayer" xml:space="preserve">
+    <value>खाली लेयर</value>
+  </data>
+  <data name="PropertiesPanel_Enable" xml:space="preserve">
+    <value>सक्षम करें</value>
+  </data>
+  <data name="PropertiesPanel_FeatherMask" xml:space="preserve">
+    <value>मास्क फ़ेदर करें</value>
+  </data>
+  <data name="PropertiesPanel_FillColon" xml:space="preserve">
+    <value>भराव:</value>
+  </data>
+  <data name="PropertiesPanel_FillLayer" xml:space="preserve">
+    <value>भराव लेयर</value>
+  </data>
+  <data name="PropertiesPanel_FontColon" xml:space="preserve">
+    <value>फ़ॉन्ट:</value>
+  </data>
+  <data name="PropertiesPanel_Frame" xml:space="preserve">
+    <value>फ़्रेम</value>
+  </data>
+  <data name="PropertiesPanel_FrameStroke" xml:space="preserve">
+    <value>फ़्रेम स्ट्रोक</value>
+  </data>
+  <data name="PropertiesPanel_Invert" xml:space="preserve">
+    <value>उलटें</value>
+  </data>
+  <data name="PropertiesPanel_InvertMask" xml:space="preserve">
+    <value>मास्क उलटें</value>
+  </data>
+  <data name="PropertiesPanel_Italic" xml:space="preserve">
+    <value>इटैलिक</value>
+  </data>
+  <data name="PropertiesPanel_LeadingColon" xml:space="preserve">
+    <value>पंक्ति अंतराल:</value>
+  </data>
+  <data name="PropertiesPanel_LoadAsSelection" xml:space="preserve">
+    <value>चयन के रूप में लोड करें</value>
+  </data>
+  <data name="PropertiesPanel_MaskEditHint" xml:space="preserve">
+    <value>पेंटिंग टूल अब मास्क संपादित करते हैं: काला छिपाता है, सफ़ेद दिखाता है।</value>
+  </data>
+  <data name="PropertiesPanel_ModifyAdjustment" xml:space="preserve">
+    <value>{0} संशोधित करें</value>
+  </data>
+  <data name="PropertiesPanel_NoDocument" xml:space="preserve">
+    <value>कोई दस्तावेज़ नहीं</value>
+  </data>
+  <data name="PropertiesPanel_None" xml:space="preserve">
+    <value>कोई नहीं</value>
+  </data>
+  <data name="PropertiesPanel_Paragraph" xml:space="preserve">
+    <value>अनुच्छेद</value>
+  </data>
+  <data name="PropertiesPanel_PixelLayer" xml:space="preserve">
+    <value>पिक्सेल लेयर</value>
+  </data>
+  <data name="PropertiesPanel_PlaceImageEllipsis" xml:space="preserve">
+    <value>छवि रखें...</value>
+  </data>
+  <data name="PropertiesPanel_RadiusPxColon" xml:space="preserve">
+    <value>त्रिज्या (पीएक्स):</value>
+  </data>
+  <data name="PropertiesPanel_RasterizeType" xml:space="preserve">
+    <value>टेक्स्ट रास्टराइज़ करें</value>
+  </data>
+  <data name="PropertiesPanel_ResetTransform" xml:space="preserve">
+    <value>रूपांतरण रीसेट करें</value>
+  </data>
+  <data name="PropertiesPanel_ResizeArtboard" xml:space="preserve">
+    <value>आर्टबोर्ड का आकार बदलें</value>
+  </data>
+  <data name="PropertiesPanel_Resolution" xml:space="preserve">
+    <value>रिज़ॉल्यूशन: {0:0} ppi</value>
+  </data>
+  <data name="PropertiesPanel_SetFill" xml:space="preserve">
+    <value>भराव सेट करें</value>
+  </data>
+  <data name="PropertiesPanel_SetFont" xml:space="preserve">
+    <value>फ़ॉन्ट सेट करें</value>
+  </data>
+  <data name="PropertiesPanel_SetLeading" xml:space="preserve">
+    <value>पंक्ति अंतराल सेट करें</value>
+  </data>
+  <data name="PropertiesPanel_SetStroke" xml:space="preserve">
+    <value>स्ट्रोक सेट करें</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeAlignment" xml:space="preserve">
+    <value>स्ट्रोक संरेखण सेट करें</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeType" xml:space="preserve">
+    <value>स्ट्रोक प्रकार सेट करें</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeWidth" xml:space="preserve">
+    <value>स्ट्रोक चौड़ाई सेट करें</value>
+  </data>
+  <data name="PropertiesPanel_SetTextColor" xml:space="preserve">
+    <value>टेक्स्ट रंग सेट करें</value>
+  </data>
+  <data name="PropertiesPanel_SetTracking" xml:space="preserve">
+    <value>वर्ण अंतराल सेट करें</value>
+  </data>
+  <data name="PropertiesPanel_ShapeProperties" xml:space="preserve">
+    <value>आकृति गुण</value>
+  </data>
+  <data name="PropertiesPanel_SizeColon" xml:space="preserve">
+    <value>आकार:</value>
+  </data>
+  <data name="PropertiesPanel_SmartFilters" xml:space="preserve">
+    <value>स्मार्ट फ़िल्टर</value>
+  </data>
+  <data name="PropertiesPanel_SmartObject" xml:space="preserve">
+    <value>स्मार्ट ऑब्जेक्ट</value>
+  </data>
+  <data name="PropertiesPanel_StrokeColon" xml:space="preserve">
+    <value>स्ट्रोक:</value>
+  </data>
+  <data name="PropertiesPanel_TextColor" xml:space="preserve">
+    <value>टेक्स्ट रंग</value>
+  </data>
+  <data name="PropertiesPanel_ToggleSmartFilter" xml:space="preserve">
+    <value>स्मार्ट फ़िल्टर टॉगल करें</value>
+  </data>
+  <data name="PropertiesPanel_TrackingColon" xml:space="preserve">
+    <value>वर्ण अंतराल:</value>
+  </data>
+  <data name="PropertiesPanel_Underline" xml:space="preserve">
+    <value>रेखांकित</value>
+  </data>
+  <data name="ReplaceColorEditor_AddToSampleTip" xml:space="preserve">
+    <value>नमूने में जोड़ें (Shift-क्लिक)</value>
+  </data>
+  <data name="ReplaceColorEditor_ClickToSample" xml:space="preserve">
+    <value>रंग का नमूना लेने के लिए क्लिक करें</value>
+  </data>
+  <data name="ReplaceColorEditor_EyedropperTip" xml:space="preserve">
+    <value>आईड्रॉपर</value>
+  </data>
+  <data name="ReplaceColorEditor_Image" xml:space="preserve">
+    <value>छवि</value>
+  </data>
+  <data name="ReplaceColorEditor_Replacement" xml:space="preserve">
+    <value>प्रतिस्थापन</value>
+  </data>
+  <data name="ReplaceColorEditor_ResultColon" xml:space="preserve">
+    <value>परिणाम:</value>
+  </data>
+  <data name="ReplaceColorEditor_SelectColorTip" xml:space="preserve">
+    <value>बदला जाने वाला रंग चुनें</value>
+  </data>
+  <data name="ReplaceColorEditor_Selection" xml:space="preserve">
+    <value>चयन</value>
+  </data>
+  <data name="ReplaceColorEditor_SubtractFromSampleTip" xml:space="preserve">
+    <value>नमूने से घटाएँ (Alt-क्लिक)</value>
+  </data>
+  <data name="Resources_AirbrushSoft" xml:space="preserve">
+    <value>सौम्य एयरब्रश</value>
+  </data>
+  <data name="Resources_BlackWhite" xml:space="preserve">
+    <value>काला, सफ़ेद</value>
+  </data>
+  <data name="Resources_Bricks" xml:space="preserve">
+    <value>ईंटें</value>
+  </data>
+  <data name="Resources_CalligraphicFlat" xml:space="preserve">
+    <value>सपाट सुलेख</value>
+  </data>
+  <data name="Resources_Chalk" xml:space="preserve">
+    <value>चॉक</value>
+  </data>
+  <data name="Resources_Checkerboard" xml:space="preserve">
+    <value>शतरंजी पैटर्न</value>
+  </data>
+  <data name="Resources_Chrome" xml:space="preserve">
+    <value>क्रोम</value>
+  </data>
+  <data name="Resources_Copper" xml:space="preserve">
+    <value>तांबा</value>
+  </data>
+  <data name="Resources_DiagonalLines" xml:space="preserve">
+    <value>तिरछी रेखाएँ</value>
+  </data>
+  <data name="Resources_Dots" xml:space="preserve">
+    <value>बिंदु</value>
+  </data>
+  <data name="Resources_ForegroundToBackground" xml:space="preserve">
+    <value>अग्रभूमि से पृष्ठभूमि</value>
+  </data>
+  <data name="Resources_ForegroundToTransparent" xml:space="preserve">
+    <value>अग्रभूमि से पारदर्शी</value>
+  </data>
+  <data name="Resources_HardPixel" xml:space="preserve">
+    <value>कठोर पिक्सेल</value>
+  </data>
+  <data name="Resources_HardRound" xml:space="preserve">
+    <value>कठोर गोल</value>
+  </data>
+  <data name="Resources_HardRoundPressure" xml:space="preserve">
+    <value>कठोर गोल दबाव</value>
+  </data>
+  <data name="Resources_Hexagons" xml:space="preserve">
+    <value>षट्भुज</value>
+  </data>
+  <data name="Resources_Ocean" xml:space="preserve">
+    <value>समुद्र</value>
+  </data>
+  <data name="Resources_SoftRound" xml:space="preserve">
+    <value>सौम्य गोल</value>
+  </data>
+  <data name="Resources_SoftRoundPressure" xml:space="preserve">
+    <value>सौम्य गोल दबाव</value>
+  </data>
+  <data name="Resources_Spatter" xml:space="preserve">
+    <value>छींटे</value>
+  </data>
+  <data name="Resources_Spectrum" xml:space="preserve">
+    <value>स्पेक्ट्रम</value>
+  </data>
+  <data name="Resources_SquareHard" xml:space="preserve">
+    <value>कठोर वर्गाकार</value>
+  </data>
+  <data name="Resources_Sunset" xml:space="preserve">
+    <value>सूर्यास्त</value>
+  </data>
+  <data name="Resources_TransparentStripes" xml:space="preserve">
+    <value>पारदर्शी पट्टियाँ</value>
+  </data>
+  <data name="Resources_WoodGrain" xml:space="preserve">
+    <value>लकड़ी की धारियाँ</value>
+  </data>
+  <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
+    <value>कमांड खोजें</value>
+  </data>
+  <data name="ShortcutsDialog_Title" xml:space="preserve">
+    <value>कीबोर्ड शॉर्टकट</value>
+  </data>
+  <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
+    <value>डिफ़ॉल्ट का उपयोग करें</value>
+  </data>
+  <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
+    <value>हाल की फ़ाइलें साफ़ करें</value>
+  </data>
+  <data name="StartScreen_NewFile" xml:space="preserve">
+    <value>नई फ़ाइल</value>
+  </data>
+  <data name="StartScreen_NewFromScreenshotRegion" xml:space="preserve">
+    <value>स्क्रीनशॉट से नया (क्षेत्र)</value>
+  </data>
+  <data name="StartScreen_NoRecentFiles" xml:space="preserve">
+    <value>आपकी खोली गई फ़ाइलें यहाँ दिखाई देंगी।</value>
+  </data>
+  <data name="StartScreen_Recent" xml:space="preserve">
+    <value>हाल के</value>
+  </data>
+  <data name="StartScreen_ShowAsListTip" xml:space="preserve">
+    <value>हाल की फ़ाइलें सूची के रूप में दिखाएँ</value>
+  </data>
+  <data name="StartScreen_ShowAsTilesTip" xml:space="preserve">
+    <value>हाल की फ़ाइलें टाइल के रूप में दिखाएँ</value>
+  </data>
+  <data name="SwatchesPanel_NewSwatchTip" xml:space="preserve">
+    <value>अग्रभूमि रंग से नया स्वैच बनाएँ</value>
+  </data>
+  <data name="SwatchesPanel_SwatchTip" xml:space="preserve">
+    <value>#{0} — क्लिक: अग्रभूमि, Alt/Ctrl-क्लिक: पृष्ठभूमि, राइट-क्लिक: हटाएँ</value>
+  </data>
+  <data name="TextEditing_Hint" xml:space="preserve">
+    <value>टेक्स्ट टाइप करें। Ctrl+Enter पुष्टि करता है, Esc रद्द करता है।</value>
+  </data>
+  <data name="TextEditing_TypeTool" xml:space="preserve">
+    <value>टेक्स्ट टूल</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>अधिकतम करें</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>छोटा करना</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>पुनर्स्थापित करें</value>
+  </data>
+  <data name="ToolbarControl_CollapseTip" xml:space="preserve">
+    <value>एक कॉलम में संक्षिप्त करें</value>
+  </data>
+  <data name="ToolbarControl_DefaultColorsTip" xml:space="preserve">
+    <value>डिफ़ॉल्ट अग्रभूमि और पृष्ठभूमि रंग (D)</value>
+  </data>
+  <data name="ToolbarControl_EditToolbarEllipsis" xml:space="preserve">
+    <value>टूलबार संपादित करें...</value>
+  </data>
+  <data name="ToolbarControl_ExpandTip" xml:space="preserve">
+    <value>दो कॉलम में विस्तृत करें</value>
+  </data>
+  <data name="ToolbarControl_QuickMaskTip" xml:space="preserve">
+    <value>क्विक मास्क मोड में संपादित करें (Q)</value>
+  </data>
+  <data name="ToolbarControl_ScreenModeTip" xml:space="preserve">
+    <value>स्क्रीन मोड बदलें (F)</value>
+  </data>
+  <data name="ToolbarControl_SetBackgroundColor" xml:space="preserve">
+    <value>पृष्ठभूमि रंग सेट करें</value>
+  </data>
+  <data name="ToolbarControl_SetForegroundColor" xml:space="preserve">
+    <value>अग्रभूमि रंग सेट करें</value>
+  </data>
+  <data name="ToolbarControl_SwitchColorsTip" xml:space="preserve">
+    <value>अग्रभूमि और पृष्ठभूमि रंग अदला-बदली करें (X)</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Description" xml:space="preserve">
+    <value>टूलबार (हर पंक्ति टूलबार का एक स्थान है, जिसमें उसके फ़्लाईआउट टूल हैं)। कोई टूल चुनें, फिर बटनों से उसे पुनर्व्यवस्थित करें।</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Done" xml:space="preserve">
+    <value>पूर्ण</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_ExtraTools" xml:space="preserve">
+    <value>अतिरिक्त टूल (टूलबार से छिपे हुए):</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_HideTool" xml:space="preserve">
+    <value>टूल छिपाएँ</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MergeWithGroupAbove" xml:space="preserve">
+    <value>ऊपर वाले समूह में मर्ज करें</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveEarlierInGroup" xml:space="preserve">
+    <value>समूह में पहले ले जाएँ</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupDown" xml:space="preserve">
+    <value>समूह नीचे ले जाएँ</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupUp" xml:space="preserve">
+    <value>समूह ऊपर ले जाएँ</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_OwnGroup" xml:space="preserve">
+    <value>अपना समूह</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreDefaults" xml:space="preserve">
+    <value>डिफ़ॉल्ट पुनर्स्थापित करें</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreTip" xml:space="preserve">
+    <value>टूलबार में पुनर्स्थापित करने के लिए क्लिक करें</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
+    <value>टूलबार अनुकूलित करें</value>
   </data>
 </root>

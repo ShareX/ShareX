@@ -51,7 +51,7 @@ public sealed partial class PhotoEditorWindow
             SuggestedStartLocation = start,
             FileTypeFilter =
             [
-                new FilePickerFileType("All supported images") { Patterns = ImageIO.Formats.SelectMany(f => f.Extensions).Select(x => "*" + x).ToArray() },
+                new FilePickerFileType(Strings.ImageIO_AllSupportedImages) { Patterns = ImageIO.Formats.SelectMany(f => f.Extensions).Select(x => "*" + x).ToArray() },
                 .. ImageIO.Formats.Select(f => new FilePickerFileType(f.Name) { Patterns = f.Extensions.Select(x => "*" + x).ToArray() }),
                 FilePickerFileTypes.All
             ]

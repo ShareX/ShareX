@@ -64,7 +64,7 @@ public sealed class InfoPanel : EditorPanel
 
     public override string Id => "info";
 
-    public override string Title => "Info";
+    public override string Title => Strings.EditorCommands_Info;
 
     private void AddCell(Grid parent, int row, int column, string? icon, string[] keys)
     {

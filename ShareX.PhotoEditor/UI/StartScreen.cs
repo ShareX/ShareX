@@ -42,7 +42,7 @@ public sealed class StartScreen : Border
 
     private readonly PhotoEditorWindow _editor;
     private readonly ScrollViewer _recentScroller = new() { MaxHeight = 460, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled };
-    private readonly TextBlock _recentEmpty = new() { Text = "Files you open will appear here.", Classes = { "dim" }, Margin = new Thickness(0, 8) };
+    private readonly TextBlock _recentEmpty = new() { Text = Strings.StartScreen_NoRecentFiles, Classes = { "dim" }, Margin = new Thickness(0, 8) };
     private readonly Button _viewModeButton = new() { Classes = { "icon" }, Width = 28, Height = 26, Padding = new Thickness(0), HorizontalContentAlignment = HorizontalAlignment.Center };
     private readonly Button _clearButton = new() { Classes = { "icon" }, Width = 28, Height = 26, Padding = new Thickness(0), HorizontalContentAlignment = HorizontalAlignment.Center };
 
@@ -53,16 +53,16 @@ public sealed class StartScreen : Border
         DragDrop.SetAllowDrop(this, true);
 
         StackPanel actions = new() { Spacing = 8, Width = 190 };
-        actions.Children.Add(new TextBlock { Text = "Photo editor", FontSize = 22, FontWeight = FontWeight.Light, Foreground = Brushes.White, Margin = new Thickness(0, 0, 0, 14) });
-        actions.Children.Add(ActionButton("New file", "file.new", true));
-        actions.Children.Add(ActionButton("Open", "file.open", false));
+        actions.Children.Add(new TextBlock { Text = Strings.PhotoEditorWindow_PhotoEditor, FontSize = 22, FontWeight = FontWeight.Light, Foreground = Brushes.White, Margin = new Thickness(0, 0, 0, 14) });
+        actions.Children.Add(ActionButton(Strings.StartScreen_NewFile, "file.new", true));
+        actions.Children.Add(ActionButton(Strings.EditorCommands_Open, "file.open", false));
         actions.Children.Add(new Border { Height = 1, Background = new SolidColorBrush(Color.FromRgb(0x47, 0x47, 0x47)), Margin = new Thickness(0, 8) });
-        actions.Children.Add(LinkButton("clipboard", "New from Clipboard", "file.newFromClipboard"));
-        if (editor.Services.CaptureRegion != null) actions.Children.Add(LinkButton("capture-region", "New from Screenshot (Region)", "file.newFromRegion"));
-        if (editor.Services.CaptureFullscreen != null) actions.Children.Add(LinkButton("capture-screen", "New from Screenshot (Full Screen)", "file.newFromScreen"));
+        actions.Children.Add(LinkButton("clipboard", Strings.EditorCommands_NewFromClipboard, "file.newFromClipboard"));
+        if (editor.Services.CaptureRegion != null) actions.Children.Add(LinkButton("capture-region", Strings.StartScreen_NewFromScreenshotRegion, "file.newFromRegion"));
+        if (editor.Services.CaptureFullscreen != null) actions.Children.Add(LinkButton("capture-screen", Strings.EditorCommands_NewFromScreenshotFullScreen, "file.newFromScreen"));
 
         _clearButton.Content = ToolIcons.Create("trash", 16);
-        ToolTip.SetTip(_clearButton, "Clear recent files");
+        ToolTip.SetTip(_clearButton, Strings.StartScreen_ClearRecentFiles);
         _clearButton.Click += (_, _) => Commands.EditorCommands.ClearRecentFiles(_editor);
         _viewModeButton.Click += (_, _) =>
         {
@@ -76,7 +76,7 @@ public sealed class StartScreen : Border
         headerButtons.Children.Add(_clearButton);
         Grid header = new() { ColumnDefinitions = new ColumnDefinitions("*,Auto"), Margin = new Thickness(0, 0, 0, 6) };
         Grid.SetColumn(headerButtons, 1);
-        header.Children.Add(new TextBlock { Text = "Recent", FontSize = 16, Foreground = Brushes.White, VerticalAlignment = VerticalAlignment.Center });
+        header.Children.Add(new TextBlock { Text = Strings.StartScreen_Recent, FontSize = 16, Foreground = Brushes.White, VerticalAlignment = VerticalAlignment.Center });
         header.Children.Add(headerButtons);
 
         StackPanel recentColumn = new() { Spacing = 6 };
@@ -109,7 +109,7 @@ public sealed class StartScreen : Border
         _clearButton.IsEnabled = _editor.Settings.RecentFiles.Count > 0;
 
         _viewModeButton.Content = ToolIcons.Create(tiles ? "list-view" : "tile-view", 16);
-        ToolTip.SetTip(_viewModeButton, tiles ? "Show recent files as a list" : "Show recent files as tiles");
+        ToolTip.SetTip(_viewModeButton, tiles ? Strings.StartScreen_ShowAsListTip : Strings.StartScreen_ShowAsTilesTip);
     }
 
     private Button ActionButton(string text, string commandId, bool primary)

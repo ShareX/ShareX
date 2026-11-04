@@ -12,6 +12,519 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdjustmentEditor_Auto" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="AdjustmentEditor_BlackColon" xml:space="preserve">
+    <value>ブラック:</value>
+  </data>
+  <data name="AdjustmentEditor_Blacks" xml:space="preserve">
+    <value>ブラック系</value>
+  </data>
+  <data name="AdjustmentEditor_Blue" xml:space="preserve">
+    <value>青</value>
+  </data>
+  <data name="AdjustmentEditor_BlueColon" xml:space="preserve">
+    <value>ブルー:</value>
+  </data>
+  <data name="AdjustmentEditor_Blues" xml:space="preserve">
+    <value>ブルー系</value>
+  </data>
+  <data name="AdjustmentEditor_BluesColon" xml:space="preserve">
+    <value>ブルー系:</value>
+  </data>
+  <data name="AdjustmentEditor_BrightnessColon" xml:space="preserve">
+    <value>明るさ:</value>
+  </data>
+  <data name="AdjustmentEditor_ChannelColon" xml:space="preserve">
+    <value>チャンネル:</value>
+  </data>
+  <data name="AdjustmentEditor_Colorize" xml:space="preserve">
+    <value>カラー化</value>
+  </data>
+  <data name="AdjustmentEditor_ColorsColon" xml:space="preserve">
+    <value>カラー:</value>
+  </data>
+  <data name="AdjustmentEditor_ConstantColon" xml:space="preserve">
+    <value>定数:</value>
+  </data>
+  <data name="AdjustmentEditor_ContrastColon" xml:space="preserve">
+    <value>コントラスト:</value>
+  </data>
+  <data name="AdjustmentEditor_CurvesHint" xml:space="preserve">
+    <value>クリックでポイントを追加、ドラッグで調整、グラフの外にドラッグでポイントを削除します。</value>
+  </data>
+  <data name="AdjustmentEditor_CyanColon" xml:space="preserve">
+    <value>シアン:</value>
+  </data>
+  <data name="AdjustmentEditor_CyanRedColon" xml:space="preserve">
+    <value>シアン / レッド:</value>
+  </data>
+  <data name="AdjustmentEditor_Cyans" xml:space="preserve">
+    <value>シアン系</value>
+  </data>
+  <data name="AdjustmentEditor_CyansColon" xml:space="preserve">
+    <value>シアン系:</value>
+  </data>
+  <data name="AdjustmentEditor_DensityColon" xml:space="preserve">
+    <value>適用量:</value>
+  </data>
+  <data name="AdjustmentEditor_EditGradientEllipsis" xml:space="preserve">
+    <value>グラデーションを編集...</value>
+  </data>
+  <data name="AdjustmentEditor_ExposureColon" xml:space="preserve">
+    <value>露光量:</value>
+  </data>
+  <data name="AdjustmentEditor_FilterColorColon" xml:space="preserve">
+    <value>フィルターのカラー:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaColon" xml:space="preserve">
+    <value>ガンマ:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaCorrectionColon" xml:space="preserve">
+    <value>ガンマ補正:</value>
+  </data>
+  <data name="AdjustmentEditor_Green" xml:space="preserve">
+    <value>緑</value>
+  </data>
+  <data name="AdjustmentEditor_GreenColon" xml:space="preserve">
+    <value>グリーン:</value>
+  </data>
+  <data name="AdjustmentEditor_Greens" xml:space="preserve">
+    <value>グリーン系</value>
+  </data>
+  <data name="AdjustmentEditor_GreensColon" xml:space="preserve">
+    <value>グリーン系:</value>
+  </data>
+  <data name="AdjustmentEditor_Highlights" xml:space="preserve">
+    <value>ハイライト</value>
+  </data>
+  <data name="AdjustmentEditor_HueColon" xml:space="preserve">
+    <value>色相:</value>
+  </data>
+  <data name="AdjustmentEditor_InputBlackColon" xml:space="preserve">
+    <value>入力黒:</value>
+  </data>
+  <data name="AdjustmentEditor_InputWhiteColon" xml:space="preserve">
+    <value>入力白:</value>
+  </data>
+  <data name="AdjustmentEditor_LevelsColon" xml:space="preserve">
+    <value>階調数:</value>
+  </data>
+  <data name="AdjustmentEditor_LightnessColon" xml:space="preserve">
+    <value>明度:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaColon" xml:space="preserve">
+    <value>マゼンタ:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaGreenColon" xml:space="preserve">
+    <value>マゼンタ / グリーン:</value>
+  </data>
+  <data name="AdjustmentEditor_Magentas" xml:space="preserve">
+    <value>マゼンタ系</value>
+  </data>
+  <data name="AdjustmentEditor_MagentasColon" xml:space="preserve">
+    <value>マゼンタ系:</value>
+  </data>
+  <data name="AdjustmentEditor_Midtones" xml:space="preserve">
+    <value>中間調</value>
+  </data>
+  <data name="AdjustmentEditor_Monochrome" xml:space="preserve">
+    <value>モノクロ</value>
+  </data>
+  <data name="AdjustmentEditor_Neutrals" xml:space="preserve">
+    <value>中間色</value>
+  </data>
+  <data name="AdjustmentEditor_NoOptions" xml:space="preserve">
+    <value>この色調補正にはオプションがありません。</value>
+  </data>
+  <data name="AdjustmentEditor_OffsetColon" xml:space="preserve">
+    <value>オフセット:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputBlackColon" xml:space="preserve">
+    <value>出力黒:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputChannelColon" xml:space="preserve">
+    <value>出力チャンネル:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputWhiteColon" xml:space="preserve">
+    <value>出力白:</value>
+  </data>
+  <data name="AdjustmentEditor_PreserveLuminosity" xml:space="preserve">
+    <value>輝度を保持</value>
+  </data>
+  <data name="AdjustmentEditor_Red" xml:space="preserve">
+    <value>赤</value>
+  </data>
+  <data name="AdjustmentEditor_RedColon" xml:space="preserve">
+    <value>レッド:</value>
+  </data>
+  <data name="AdjustmentEditor_Reds" xml:space="preserve">
+    <value>レッド系</value>
+  </data>
+  <data name="AdjustmentEditor_RedsColon" xml:space="preserve">
+    <value>レッド系:</value>
+  </data>
+  <data name="AdjustmentEditor_ResetChannel" xml:space="preserve">
+    <value>チャンネルをリセット</value>
+  </data>
+  <data name="AdjustmentEditor_Reverse" xml:space="preserve">
+    <value>逆方向</value>
+  </data>
+  <data name="AdjustmentEditor_SaturationColon" xml:space="preserve">
+    <value>彩度:</value>
+  </data>
+  <data name="AdjustmentEditor_Shadows" xml:space="preserve">
+    <value>シャドウ</value>
+  </data>
+  <data name="AdjustmentEditor_ThresholdLevelColon" xml:space="preserve">
+    <value>2 階調化するしきい値:</value>
+  </data>
+  <data name="AdjustmentEditor_Tint" xml:space="preserve">
+    <value>着色</value>
+  </data>
+  <data name="AdjustmentEditor_TintColorColon" xml:space="preserve">
+    <value>着色のカラー:</value>
+  </data>
+  <data name="AdjustmentEditor_ToneColon" xml:space="preserve">
+    <value>階調:</value>
+  </data>
+  <data name="AdjustmentEditor_UseLegacy" xml:space="preserve">
+    <value>従来方式を使用</value>
+  </data>
+  <data name="AdjustmentEditor_VibranceColon" xml:space="preserve">
+    <value>自然な彩度:</value>
+  </data>
+  <data name="AdjustmentEditor_Whites" xml:space="preserve">
+    <value>白色系</value>
+  </data>
+  <data name="AdjustmentEditor_YellowBlueColon" xml:space="preserve">
+    <value>イエロー / ブルー:</value>
+  </data>
+  <data name="AdjustmentEditor_YellowColon" xml:space="preserve">
+    <value>イエロー:</value>
+  </data>
+  <data name="AdjustmentEditor_Yellows" xml:space="preserve">
+    <value>イエロー系</value>
+  </data>
+  <data name="AdjustmentEditor_YellowsColon" xml:space="preserve">
+    <value>イエロー系:</value>
+  </data>
+  <data name="AdjustmentsPanel_AddAdjustment" xml:space="preserve">
+    <value>色調補正を追加</value>
+  </data>
+  <data name="AdjustmentsPanel_CreateAdjustmentLayerTip" xml:space="preserve">
+    <value>新規 {0} 調整レイヤーを作成</value>
+  </data>
+  <data name="Adjustments_BlackAndWhite" xml:space="preserve">
+    <value>白黒</value>
+  </data>
+  <data name="Adjustments_BrightnessContrast" xml:space="preserve">
+    <value>明るさ・コントラスト</value>
+  </data>
+  <data name="Adjustments_ChannelMixer" xml:space="preserve">
+    <value>チャンネルミキサー</value>
+  </data>
+  <data name="Adjustments_ColorBalance" xml:space="preserve">
+    <value>カラーバランス</value>
+  </data>
+  <data name="Adjustments_ColorLookup" xml:space="preserve">
+    <value>カラールックアップ</value>
+  </data>
+  <data name="Adjustments_Curves" xml:space="preserve">
+    <value>トーンカーブ</value>
+  </data>
+  <data name="Adjustments_Desaturate" xml:space="preserve">
+    <value>彩度を下げる</value>
+  </data>
+  <data name="Adjustments_Exposure" xml:space="preserve">
+    <value>露出</value>
+  </data>
+  <data name="Adjustments_GradientMap" xml:space="preserve">
+    <value>グラデーションマップ</value>
+  </data>
+  <data name="Adjustments_HdrToning" xml:space="preserve">
+    <value>HDR トーン</value>
+  </data>
+  <data name="Adjustments_HueSaturation" xml:space="preserve">
+    <value>色相・彩度</value>
+  </data>
+  <data name="Adjustments_Invert" xml:space="preserve">
+    <value>反転</value>
+  </data>
+  <data name="Adjustments_Levels" xml:space="preserve">
+    <value>レベル</value>
+  </data>
+  <data name="Adjustments_MatchColor" xml:space="preserve">
+    <value>カラーの適用</value>
+  </data>
+  <data name="Adjustments_PhotoFilter" xml:space="preserve">
+    <value>レンズフィルター</value>
+  </data>
+  <data name="Adjustments_Posterize" xml:space="preserve">
+    <value>ポスタリゼーション</value>
+  </data>
+  <data name="Adjustments_ReplaceColor" xml:space="preserve">
+    <value>色を置換</value>
+  </data>
+  <data name="Adjustments_SelectiveColor" xml:space="preserve">
+    <value>特定色域の選択</value>
+  </data>
+  <data name="Adjustments_Threshold" xml:space="preserve">
+    <value>しきい値</value>
+  </data>
+  <data name="Adjustments_Vibrance" xml:space="preserve">
+    <value>自然な彩度</value>
+  </data>
+  <data name="BlendModes_Behind" xml:space="preserve">
+    <value>背面</value>
+  </data>
+  <data name="BlendModes_Clear" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+  <data name="BlendModes_Color" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="BlendModes_ColorBurn" xml:space="preserve">
+    <value>焼き込みカラー</value>
+  </data>
+  <data name="BlendModes_ColorDodge" xml:space="preserve">
+    <value>覆い焼きカラー</value>
+  </data>
+  <data name="BlendModes_Darken" xml:space="preserve">
+    <value>比較 (暗)</value>
+  </data>
+  <data name="BlendModes_DarkerColor" xml:space="preserve">
+    <value>カラー比較 (暗)</value>
+  </data>
+  <data name="BlendModes_Difference" xml:space="preserve">
+    <value>差の絶対値</value>
+  </data>
+  <data name="BlendModes_Dissolve" xml:space="preserve">
+    <value>ディザ合成</value>
+  </data>
+  <data name="BlendModes_Divide" xml:space="preserve">
+    <value>除算</value>
+  </data>
+  <data name="BlendModes_Exclusion" xml:space="preserve">
+    <value>除外</value>
+  </data>
+  <data name="BlendModes_HardLight" xml:space="preserve">
+    <value>ハードライト</value>
+  </data>
+  <data name="BlendModes_HardMix" xml:space="preserve">
+    <value>ハードミックス</value>
+  </data>
+  <data name="BlendModes_Hue" xml:space="preserve">
+    <value>色相</value>
+  </data>
+  <data name="BlendModes_Lighten" xml:space="preserve">
+    <value>比較 (明)</value>
+  </data>
+  <data name="BlendModes_LighterColor" xml:space="preserve">
+    <value>カラー比較 (明)</value>
+  </data>
+  <data name="BlendModes_LinearBurn" xml:space="preserve">
+    <value>焼き込み (リニア)</value>
+  </data>
+  <data name="BlendModes_LinearDodge" xml:space="preserve">
+    <value>覆い焼き (リニア) - 加算</value>
+  </data>
+  <data name="BlendModes_LinearLight" xml:space="preserve">
+    <value>リニアライト</value>
+  </data>
+  <data name="BlendModes_Luminosity" xml:space="preserve">
+    <value>輝度</value>
+  </data>
+  <data name="BlendModes_Multiply" xml:space="preserve">
+    <value>乗算</value>
+  </data>
+  <data name="BlendModes_Normal" xml:space="preserve">
+    <value>通常</value>
+  </data>
+  <data name="BlendModes_Overlay" xml:space="preserve">
+    <value>オーバーレイ</value>
+  </data>
+  <data name="BlendModes_PassThrough" xml:space="preserve">
+    <value>通過</value>
+  </data>
+  <data name="BlendModes_PinLight" xml:space="preserve">
+    <value>ピンライト</value>
+  </data>
+  <data name="BlendModes_Saturation" xml:space="preserve">
+    <value>彩度</value>
+  </data>
+  <data name="BlendModes_Screen" xml:space="preserve">
+    <value>スクリーン</value>
+  </data>
+  <data name="BlendModes_SoftLight" xml:space="preserve">
+    <value>ソフトライト</value>
+  </data>
+  <data name="BlendModes_Subtract" xml:space="preserve">
+    <value>減算</value>
+  </data>
+  <data name="BlendModes_VividLight" xml:space="preserve">
+    <value>ビビッドライト</value>
+  </data>
+  <data name="BrushesPanel_Angle" xml:space="preserve">
+    <value>角度</value>
+  </data>
+  <data name="BrushesPanel_Hardness" xml:space="preserve">
+    <value>硬さ</value>
+  </data>
+  <data name="BrushesPanel_NewBrushPresetEllipsis" xml:space="preserve">
+    <value>新規ブラシプリセット...</value>
+  </data>
+  <data name="BrushesPanel_PressureFlow" xml:space="preserve">
+    <value>筆圧で流量を制御</value>
+  </data>
+  <data name="BrushesPanel_PressureSize" xml:space="preserve">
+    <value>筆圧でサイズを制御</value>
+  </data>
+  <data name="BrushesPanel_Roundness" xml:space="preserve">
+    <value>真円率</value>
+  </data>
+  <data name="BrushesPanel_Scatter" xml:space="preserve">
+    <value>散布</value>
+  </data>
+  <data name="BrushesPanel_SelectPaintingTool" xml:space="preserve">
+    <value>ブラシを編集するにはペイントツールを選択してください。</value>
+  </data>
+  <data name="BrushesPanel_Size" xml:space="preserve">
+    <value>サイズ:</value>
+  </data>
+  <data name="BrushesPanel_SizeJitter" xml:space="preserve">
+    <value>サイズのジッター</value>
+  </data>
+  <data name="BrushesPanel_Spacing" xml:space="preserve">
+    <value>間隔</value>
+  </data>
+  <data name="BrushesPanel_SquareTip" xml:space="preserve">
+    <value>正方形の先端</value>
+  </data>
+  <data name="CanvasSizeDialog_AnchorColon" xml:space="preserve">
+    <value>基準位置:</value>
+  </data>
+  <data name="CanvasSizeDialog_CurrentSize" xml:space="preserve">
+    <value>現在のサイズ: {0} × {1} px</value>
+  </data>
+  <data name="CanvasSizeDialog_ExtensionColorColon" xml:space="preserve">
+    <value>カンバス拡張カラー:</value>
+  </data>
+  <data name="CanvasSizeDialog_Foreground" xml:space="preserve">
+    <value>描画色</value>
+  </data>
+  <data name="CanvasSizeDialog_Gray" xml:space="preserve">
+    <value>グレー</value>
+  </data>
+  <data name="CanvasSizeDialog_Relative" xml:space="preserve">
+    <value>相対</value>
+  </data>
+  <data name="CanvasView_EditCancelled" xml:space="preserve">
+    <value>ドキュメントが変更されたため、編集はキャンセルされました。</value>
+  </data>
+  <data name="CanvasView_EmptyHint" xml:space="preserve">
+    <value>編集を始めるにはドキュメントを開くか作成してください (Ctrl+O / Ctrl+N)。ここに画像をドロップすることもできます。</value>
+  </data>
+  <data name="ChannelsPanel_ChannelOptions" xml:space="preserve">
+    <value>チャンネルオプション</value>
+  </data>
+  <data name="ChannelsPanel_DeleteChannelTip" xml:space="preserve">
+    <value>現在のチャンネルを削除</value>
+  </data>
+  <data name="ChannelsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>チャンネルを選択範囲として読み込む</value>
+  </data>
+  <data name="ChannelsPanel_NewChannelTip" xml:space="preserve">
+    <value>新規チャンネルを作成</value>
+  </data>
+  <data name="ChannelsPanel_QuickMask" xml:space="preserve">
+    <value>クイックマスク</value>
+  </data>
+  <data name="ChannelsPanel_SaveSelectionTip" xml:space="preserve">
+    <value>選択範囲をチャンネルとして保存</value>
+  </data>
+  <data name="ChannelsPanel_ShowOverlayTip" xml:space="preserve">
+    <value>チャンネルをオーバーレイとして表示</value>
+  </data>
+  <data name="ColorLookupEditor_CouldNotLoad" xml:space="preserve">
+    <value>3D LUT を読み込めませんでした: {0}</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLut" xml:space="preserve">
+    <value>3D LUT を読み込む</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLutEllipsis" xml:space="preserve">
+    <value>3D LUT を読み込む...</value>
+  </data>
+  <data name="ColorLookupEditor_LutFileColon" xml:space="preserve">
+    <value>3D LUT ファイル:</value>
+  </data>
+  <data name="ColorLookupEditor_LutFiles" xml:space="preserve">
+    <value>3D LUT ファイル</value>
+  </data>
+  <data name="ColorLut_1DNotSupported" xml:space="preserve">
+    <value>1D ルックアップテーブルはサポートされていません。</value>
+  </data>
+  <data name="ColorLut_DataSizeMismatch" xml:space="preserve">
+    <value>テーブルのデータがサイズと一致しません。</value>
+  </data>
+  <data name="ColorLut_InvalidDomain" xml:space="preserve">
+    <value>テーブルの範囲が無効です。</value>
+  </data>
+  <data name="ColorLut_NoSizeEntry" xml:space="preserve">
+    <value>ファイルに LUT_3D_SIZE エントリがありません。</value>
+  </data>
+  <data name="ColorLut_SizeNotSupported" xml:space="preserve">
+    <value>テーブルサイズ {0} はサポートされていません。</value>
+  </data>
+  <data name="ColorPanel_BackgroundColor" xml:space="preserve">
+    <value>背景色</value>
+  </data>
+  <data name="ColorPanel_BackgroundTip" xml:space="preserve">
+    <value>背景色。ダブルクリックでカラーピッカーを開きます。</value>
+  </data>
+  <data name="ColorPanel_ForegroundColor" xml:space="preserve">
+    <value>描画色</value>
+  </data>
+  <data name="ColorPanel_ForegroundTip" xml:space="preserve">
+    <value>描画色。ダブルクリックでカラーピッカーを開きます。</value>
+  </data>
+  <data name="ColorPickerDialog_AddToSwatches" xml:space="preserve">
+    <value>スウォッチに追加</value>
+  </data>
+  <data name="ColorPickerDialog_NotWebColorTip" xml:space="preserve">
+    <value>Web セーフカラーではありません。スウォッチをクリックすると最も近い色を使用します。</value>
+  </data>
+  <data name="ColorPickerDialog_OnlyWebColors" xml:space="preserve">
+    <value>Web セーフカラーのみに制限</value>
+  </data>
+  <data name="ColorPickerDialog_Reset" xml:space="preserve">
+    <value>初期化</value>
+  </data>
+  <data name="ColorPickerDialog_RestoreCurrentTip" xml:space="preserve">
+    <value>クリックで現在の色に戻す</value>
+  </data>
+  <data name="ColorPickerDialog_Title" xml:space="preserve">
+    <value>カラーピッカー</value>
+  </data>
+  <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
+    <value>カラーピッカー ({0})</value>
+  </data>
+  <data name="DialogBuilder_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="DialogBuilder_No" xml:space="preserve">
+    <value>いいえ</value>
+  </data>
+  <data name="DialogBuilder_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DialogBuilder_Yes" xml:space="preserve">
+    <value>はい</value>
+  </data>
+  <data name="DocumentItems_CountGroup1" xml:space="preserve">
+    <value>カウントグループ 1</value>
+  </data>
   <data name="EditorCommands_90Clockwise" xml:space="preserve">
     <value>90° 時計回り</value>
   </data>
@@ -1284,6 +1797,255 @@
   <data name="EditorCommands_ZoomOut" xml:space="preserve">
     <value>ズームアウト</value>
   </data>
+  <data name="Enum_ArtStyle_Dab" xml:space="preserve">
+    <value>軽いタッチ</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseCurl" xml:space="preserve">
+    <value>くせ毛 (ゆるい)</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseLong" xml:space="preserve">
+    <value>ゆるく長い</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseMedium" xml:space="preserve">
+    <value>ゆるく中間</value>
+  </data>
+  <data name="Enum_ArtStyle_TightCurl" xml:space="preserve">
+    <value>くせ毛 (細かい)</value>
+  </data>
+  <data name="Enum_ArtStyle_TightLong" xml:space="preserve">
+    <value>細かく長い</value>
+  </data>
+  <data name="Enum_ArtStyle_TightMedium" xml:space="preserve">
+    <value>細かく中間</value>
+  </data>
+  <data name="Enum_ArtStyle_TightShort" xml:space="preserve">
+    <value>細かく短い</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Bottom" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomLeft" xml:space="preserve">
+    <value>左下</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomRight" xml:space="preserve">
+    <value>右下</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Center" xml:space="preserve">
+    <value>中央</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Left" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Right" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Top" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopLeft" xml:space="preserve">
+    <value>左上</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopRight" xml:space="preserve">
+    <value>右上</value>
+  </data>
+  <data name="Enum_EraserMode_Block" xml:space="preserve">
+    <value>ブロック</value>
+  </data>
+  <data name="Enum_EraserMode_Brush" xml:space="preserve">
+    <value>ブラシ</value>
+  </data>
+  <data name="Enum_EraserMode_Pencil" xml:space="preserve">
+    <value>鉛筆</value>
+  </data>
+  <data name="Enum_FillKind_Gradient" xml:space="preserve">
+    <value>グラデーション</value>
+  </data>
+  <data name="Enum_FillKind_Pattern" xml:space="preserve">
+    <value>パターン</value>
+  </data>
+  <data name="Enum_FillKind_SolidColor" xml:space="preserve">
+    <value>べた塗り</value>
+  </data>
+  <data name="Enum_GradientType_Angle" xml:space="preserve">
+    <value>角度</value>
+  </data>
+  <data name="Enum_GradientType_Diamond" xml:space="preserve">
+    <value>菱形</value>
+  </data>
+  <data name="Enum_GradientType_Linear" xml:space="preserve">
+    <value>線形</value>
+  </data>
+  <data name="Enum_GradientType_Radial" xml:space="preserve">
+    <value>円形</value>
+  </data>
+  <data name="Enum_GradientType_Reflected" xml:space="preserve">
+    <value>反射形</value>
+  </data>
+  <data name="Enum_HealType_ContentAware" xml:space="preserve">
+    <value>コンテンツに応じる</value>
+  </data>
+  <data name="Enum_HealType_CreateTexture" xml:space="preserve">
+    <value>テクスチャを作成</value>
+  </data>
+  <data name="Enum_HealType_ProximityMatch" xml:space="preserve">
+    <value>近似色に合わせる</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedRatio" xml:space="preserve">
+    <value>縦横比を固定</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedSize" xml:space="preserve">
+    <value>固定サイズ</value>
+  </data>
+  <data name="Enum_MarqueeStyle_Normal" xml:space="preserve">
+    <value>標準</value>
+  </data>
+  <data name="Enum_PathCombine_Combine" xml:space="preserve">
+    <value>シェイプを結合</value>
+  </data>
+  <data name="Enum_PathCombine_Exclude" xml:space="preserve">
+    <value>シェイプが重なる領域を中マド</value>
+  </data>
+  <data name="Enum_PathCombine_Intersect" xml:space="preserve">
+    <value>シェイプが重なる領域</value>
+  </data>
+  <data name="Enum_PathCombine_NewLayer" xml:space="preserve">
+    <value>新規レイヤー</value>
+  </data>
+  <data name="Enum_PathCombine_Subtract" xml:space="preserve">
+    <value>前面シェイプを削除</value>
+  </data>
+  <data name="Enum_PathToolMode_Path" xml:space="preserve">
+    <value>パス</value>
+  </data>
+  <data name="Enum_PathToolMode_Shape" xml:space="preserve">
+    <value>シェイプ</value>
+  </data>
+  <data name="Enum_ReplaceMode_Color" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="Enum_ReplaceMode_Hue" xml:space="preserve">
+    <value>色相</value>
+  </data>
+  <data name="Enum_ReplaceMode_Luminosity" xml:space="preserve">
+    <value>輝度</value>
+  </data>
+  <data name="Enum_ReplaceMode_Saturation" xml:space="preserve">
+    <value>彩度</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bicubic" xml:space="preserve">
+    <value>バイキュービック</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSharper" xml:space="preserve">
+    <value>バイキュービック法 (シャープ)</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSmoother" xml:space="preserve">
+    <value>バイキュービック法 (滑らか)</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bilinear" xml:space="preserve">
+    <value>バイリニア</value>
+  </data>
+  <data name="Enum_ResampleMethod_Lanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="Enum_ResampleMethod_NearestNeighbor" xml:space="preserve">
+    <value>ニアレストネイバー法</value>
+  </data>
+  <data name="Enum_Sampling_BackgroundSwatch" xml:space="preserve">
+    <value>背景のスウォッチ</value>
+  </data>
+  <data name="Enum_Sampling_Continuous" xml:space="preserve">
+    <value>連続</value>
+  </data>
+  <data name="Enum_Sampling_Once" xml:space="preserve">
+    <value>1 回</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
+    <value>パス</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Pixels" xml:space="preserve">
+    <value>ピクセル</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Shape" xml:space="preserve">
+    <value>シェイプ</value>
+  </data>
+  <data name="Enum_StrokePosition_Center" xml:space="preserve">
+    <value>中央</value>
+  </data>
+  <data name="Enum_StrokePosition_Inside" xml:space="preserve">
+    <value>内側</value>
+  </data>
+  <data name="Enum_StrokePosition_Outside" xml:space="preserve">
+    <value>外側</value>
+  </data>
+  <data name="Enum_TextAlignment_Center" xml:space="preserve">
+    <value>中央</value>
+  </data>
+  <data name="Enum_TextAlignment_Justify" xml:space="preserve">
+    <value>均等配置</value>
+  </data>
+  <data name="Enum_TextAlignment_Left" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="Enum_TextAlignment_Right" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Crisp" xml:space="preserve">
+    <value>鮮明</value>
+  </data>
+  <data name="Enum_TextAntiAlias_None" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Sharp" xml:space="preserve">
+    <value>シャープ</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Smooth" xml:space="preserve">
+    <value>滑らかに</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Strong" xml:space="preserve">
+    <value>強く</value>
+  </data>
+  <data name="Enum_ToneRange_Highlights" xml:space="preserve">
+    <value>ハイライト</value>
+  </data>
+  <data name="Enum_ToneRange_Midtones" xml:space="preserve">
+    <value>中間調</value>
+  </data>
+  <data name="Enum_ToneRange_Shadows" xml:space="preserve">
+    <value>シャドウ</value>
+  </data>
+  <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
+    <value>エクスポート...</value>
+  </data>
+  <data name="ExportDialog_FormatColon" xml:space="preserve">
+    <value>形式:</value>
+  </data>
+  <data name="ExportDialog_HeightPxColon" xml:space="preserve">
+    <value>高さ (px):</value>
+  </data>
+  <data name="ExportDialog_Lossless" xml:space="preserve">
+    <value>ロスレス</value>
+  </data>
+  <data name="FillDialog_ColorEllipsis" xml:space="preserve">
+    <value>カラー...</value>
+  </data>
+  <data name="FillDialog_ContentsColon" xml:space="preserve">
+    <value>内容:</value>
+  </data>
+  <data name="FillDialog_FillColor" xml:space="preserve">
+    <value>塗りつぶしの色</value>
+  </data>
+  <data name="FillDialog_HalfGray" xml:space="preserve">
+    <value>50% グレー</value>
+  </data>
+  <data name="FillDialog_OpacityPercentColon" xml:space="preserve">
+    <value>不透明度 (%):</value>
+  </data>
+  <data name="FillDialog_PatternColon" xml:space="preserve">
+    <value>パターン:</value>
+  </data>
+  <data name="FillDialog_PreserveTransparency" xml:space="preserve">
+    <value>透明部分の保持</value>
+  </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>ノイズを加える</value>
   </data>
@@ -1536,6 +2298,123 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>波</value>
   </data>
+  <data name="GradientEditorDialog_AddStop" xml:space="preserve">
+    <value>分岐点を追加</value>
+  </data>
+  <data name="GradientEditorDialog_Custom" xml:space="preserve">
+    <value>カスタム</value>
+  </data>
+  <data name="GradientEditorDialog_Location" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="GradientEditorDialog_Presets" xml:space="preserve">
+    <value>プリセット</value>
+  </data>
+  <data name="GradientEditorDialog_StopColor" xml:space="preserve">
+    <value>分岐点のカラー</value>
+  </data>
+  <data name="GradientEditorDialog_Title" xml:space="preserve">
+    <value>グラデーションエディター</value>
+  </data>
+  <data name="HdrToningEditor_Advanced" xml:space="preserve">
+    <value>高度な設定</value>
+  </data>
+  <data name="HdrToningEditor_DetailColon" xml:space="preserve">
+    <value>ディテール:</value>
+  </data>
+  <data name="HdrToningEditor_EdgeGlow" xml:space="preserve">
+    <value>エッジ光彩</value>
+  </data>
+  <data name="HdrToningEditor_EqualizeHistogram" xml:space="preserve">
+    <value>ヒストグラムを平均化</value>
+  </data>
+  <data name="HdrToningEditor_ExposureAndGamma" xml:space="preserve">
+    <value>露光量とガンマ</value>
+  </data>
+  <data name="HdrToningEditor_HighlightColon" xml:space="preserve">
+    <value>ハイライト:</value>
+  </data>
+  <data name="HdrToningEditor_HighlightCompression" xml:space="preserve">
+    <value>ハイライト圧縮</value>
+  </data>
+  <data name="HdrToningEditor_LocalAdaptation" xml:space="preserve">
+    <value>ローカル割り付け</value>
+  </data>
+  <data name="HdrToningEditor_MethodColon" xml:space="preserve">
+    <value>方法:</value>
+  </data>
+  <data name="HdrToningEditor_NoOptions" xml:space="preserve">
+    <value>この方法にはオプションがありません。</value>
+  </data>
+  <data name="HdrToningEditor_PresetColon" xml:space="preserve">
+    <value>プリセット:</value>
+  </data>
+  <data name="HdrToningEditor_RadiusColon" xml:space="preserve">
+    <value>半径:</value>
+  </data>
+  <data name="HdrToningEditor_ResetCurve" xml:space="preserve">
+    <value>カーブをリセット</value>
+  </data>
+  <data name="HdrToningEditor_ShadowColon" xml:space="preserve">
+    <value>シャドウ:</value>
+  </data>
+  <data name="HdrToningEditor_SmoothEdges" xml:space="preserve">
+    <value>エッジを滑らかに</value>
+  </data>
+  <data name="HdrToningEditor_StrengthColon" xml:space="preserve">
+    <value>強さ:</value>
+  </data>
+  <data name="HdrToningEditor_ToneAndDetail" xml:space="preserve">
+    <value>トーンとディテール</value>
+  </data>
+  <data name="HdrToningEditor_ToningCurveAndHistogram" xml:space="preserve">
+    <value>トーンカーブとヒストグラム</value>
+  </data>
+  <data name="HdrToning_PresetDefault" xml:space="preserve">
+    <value>標準</value>
+  </data>
+  <data name="HdrToning_PresetFlat" xml:space="preserve">
+    <value>フラット</value>
+  </data>
+  <data name="HdrToning_PresetMonochromatic" xml:space="preserve">
+    <value>グレースケールノイズ</value>
+  </data>
+  <data name="HdrToning_PresetPhotorealistic" xml:space="preserve">
+    <value>写実的</value>
+  </data>
+  <data name="HdrToning_PresetSaturated" xml:space="preserve">
+    <value>鮮やか</value>
+  </data>
+  <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
+    <value>超現実的</value>
+  </data>
+  <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
+    <value>スナップショットを削除</value>
+  </data>
+  <data name="HistoryPanel_DeleteStatesTip" xml:space="preserve">
+    <value>現在より後のヒストリー状態を削除</value>
+  </data>
+  <data name="HistoryPanel_HistoryBrushSourceTip" xml:space="preserve">
+    <value>ヒストリーブラシのソースを設定</value>
+  </data>
+  <data name="HistoryPanel_NewDocumentTip" xml:space="preserve">
+    <value>現在のヒストリー状態から新規ドキュメントを作成</value>
+  </data>
+  <data name="HistoryPanel_NewSnapshotTip" xml:space="preserve">
+    <value>新規スナップショットを作成</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshot" xml:space="preserve">
+    <value>スナップショット名を変更</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshotEllipsis" xml:space="preserve">
+    <value>スナップショット名を変更...</value>
+  </data>
+  <data name="History_SnapshotNumber" xml:space="preserve">
+    <value>スナップショット {0}</value>
+  </data>
+  <data name="ImageIO_AllSupportedImages" xml:space="preserve">
+    <value>サポートされているすべての画像</value>
+  </data>
   <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
     <value>「{0}」を開けませんでした: {1}</value>
   </data>
@@ -1557,6 +2436,15 @@
   <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
     <value>WebP のエンコードに失敗しました。</value>
   </data>
+  <data name="ImageSizeDialog_ConstrainProportions" xml:space="preserve">
+    <value>縦横比を固定</value>
+  </data>
+  <data name="ImageSizeDialog_PercentColon" xml:space="preserve">
+    <value>パーセント:</value>
+  </data>
+  <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
+    <value>再サンプル:</value>
+  </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>背景</value>
   </data>
@@ -1566,10 +2454,757 @@
   <data name="LayerNames_Layer0" xml:space="preserve">
     <value>レイヤー 0</value>
   </data>
+  <data name="LayerNames_NewTypeLayer" xml:space="preserve">
+    <value>レイヤー</value>
+  </data>
+  <data name="LayerNames_Text" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
+  <data name="LayerStyleDialog_AngleColon" xml:space="preserve">
+    <value>角度:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendModeColon" xml:space="preserve">
+    <value>描画モード:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendingOptions" xml:space="preserve">
+    <value>レイヤー効果</value>
+  </data>
+  <data name="LayerStyleDialog_ColorOverlay" xml:space="preserve">
+    <value>カラーオーバーレイ</value>
+  </data>
+  <data name="LayerStyleDialog_DistanceColon" xml:space="preserve">
+    <value>距離:</value>
+  </data>
+  <data name="LayerStyleDialog_DropShadow" xml:space="preserve">
+    <value>ドロップシャドウ</value>
+  </data>
+  <data name="LayerStyleDialog_FillOpacityColon" xml:space="preserve">
+    <value>塗りの不透明度:</value>
+  </data>
+  <data name="LayerStyleDialog_GlowColor" xml:space="preserve">
+    <value>光彩のカラー</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadow" xml:space="preserve">
+    <value>シャドウ (内側)</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadowColor" xml:space="preserve">
+    <value>シャドウ (内側) のカラー</value>
+  </data>
+  <data name="LayerStyleDialog_OuterGlow" xml:space="preserve">
+    <value>光彩 (外側)</value>
+  </data>
+  <data name="LayerStyleDialog_OverlayColor" xml:space="preserve">
+    <value>オーバーレイのカラー</value>
+  </data>
+  <data name="LayerStyleDialog_PositionColon" xml:space="preserve">
+    <value>位置:</value>
+  </data>
+  <data name="LayerStyleDialog_ShadowColor" xml:space="preserve">
+    <value>シャドウのカラー</value>
+  </data>
+  <data name="LayersPanel_AddLayerMaskTip" xml:space="preserve">
+    <value>レイヤーマスクを追加 (Alt: すべての領域を隠す)</value>
+  </data>
+  <data name="LayersPanel_AddLayerStyleTip" xml:space="preserve">
+    <value>レイヤースタイルを追加</value>
+  </data>
+  <data name="LayersPanel_BlendingChange" xml:space="preserve">
+    <value>描画モードの変更</value>
+  </data>
+  <data name="LayersPanel_BlendingOptionsEllipsis" xml:space="preserve">
+    <value>レイヤー効果...</value>
+  </data>
+  <data name="LayersPanel_ChangeLayerLock" xml:space="preserve">
+    <value>レイヤーロックの変更</value>
+  </data>
+  <data name="LayersPanel_DeleteLayerTip" xml:space="preserve">
+    <value>レイヤーを削除</value>
+  </data>
+  <data name="LayersPanel_DuplicateLayerEllipsis" xml:space="preserve">
+    <value>レイヤーを複製...</value>
+  </data>
+  <data name="LayersPanel_FillOpacityChange" xml:space="preserve">
+    <value>塗りの不透明度の変更</value>
+  </data>
+  <data name="LayersPanel_FullyLockedTip" xml:space="preserve">
+    <value>レイヤーは完全にロックされています</value>
+  </data>
+  <data name="LayersPanel_GroupFromLayersEllipsis" xml:space="preserve">
+    <value>レイヤーからグループ...</value>
+  </data>
+  <data name="LayersPanel_HideLayer" xml:space="preserve">
+    <value>レイヤーを非表示</value>
+  </data>
+  <data name="LayersPanel_LayerPropertiesEllipsis" xml:space="preserve">
+    <value>レイヤープロパティ...</value>
+  </data>
+  <data name="LayersPanel_LinkTip" xml:space="preserve">
+    <value>選択したレイヤーをリンクまたはリンク解除して一緒に移動するようにします (Ctrl+クリックで複数選択)</value>
+  </data>
+  <data name="LayersPanel_LockAll" xml:space="preserve">
+    <value>すべてをロック</value>
+  </data>
+  <data name="LayersPanel_LockColon" xml:space="preserve">
+    <value>ロック:</value>
+  </data>
+  <data name="LayersPanel_LockImagePixels" xml:space="preserve">
+    <value>画像ピクセルをロック</value>
+  </data>
+  <data name="LayersPanel_LockPosition" xml:space="preserve">
+    <value>位置を固定</value>
+  </data>
+  <data name="LayersPanel_LockTransparentPixels" xml:space="preserve">
+    <value>透明ピクセルをロック</value>
+  </data>
+  <data name="LayersPanel_MaskThumbnailTip" xml:space="preserve">
+    <value>クリックでマスクを編集、Shift+クリックで無効化、Ctrl+クリックで選択範囲として読み込み</value>
+  </data>
+  <data name="LayersPanel_NewFillOrAdjustmentTip" xml:space="preserve">
+    <value>新規塗りつぶしレイヤーまたは調整レイヤーを作成</value>
+  </data>
+  <data name="LayersPanel_NewGroupTip" xml:space="preserve">
+    <value>新規グループを作成</value>
+  </data>
+  <data name="LayersPanel_NewLayerTip" xml:space="preserve">
+    <value>新規レイヤーを作成</value>
+  </data>
+  <data name="LayersPanel_OpacityChange" xml:space="preserve">
+    <value>不透明度の変更</value>
+  </data>
+  <data name="LayersPanel_PartiallyLockedTip" xml:space="preserve">
+    <value>レイヤーは部分的にロックされています</value>
+  </data>
+  <data name="LayersPanel_ShowLayer" xml:space="preserve">
+    <value>レイヤーを表示</value>
+  </data>
+  <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
+    <value>表示を切り替え (Alt+クリックでこのレイヤーのみ表示)</value>
+  </data>
+  <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
+    <value>カラーの強さ:</value>
+  </data>
+  <data name="MatchColorEditor_DestinationImage" xml:space="preserve">
+    <value>ターゲット画像</value>
+  </data>
+  <data name="MatchColorEditor_FadeColon" xml:space="preserve">
+    <value>フェード:</value>
+  </data>
+  <data name="MatchColorEditor_ImageStatistics" xml:space="preserve">
+    <value>画像の統計</value>
+  </data>
+  <data name="MatchColorEditor_LayerColon" xml:space="preserve">
+    <value>レイヤー:</value>
+  </data>
+  <data name="MatchColorEditor_LuminanceColon" xml:space="preserve">
+    <value>輝度:</value>
+  </data>
+  <data name="MatchColorEditor_Neutralize" xml:space="preserve">
+    <value>色の中和</value>
+  </data>
+  <data name="MatchColorEditor_SourceColon" xml:space="preserve">
+    <value>ソース:</value>
+  </data>
+  <data name="MatchColorEditor_TargetColon" xml:space="preserve">
+    <value>ターゲット:</value>
+  </data>
+  <data name="MatchColorEditor_UseSourceSelection" xml:space="preserve">
+    <value>ソースの選択範囲を使用してカラーを計算</value>
+  </data>
+  <data name="MatchColorEditor_UseTargetSelection" xml:space="preserve">
+    <value>ターゲットの選択範囲を使用して補正を計算</value>
+  </data>
+  <data name="MenuBuilder_Empty" xml:space="preserve">
+    <value>(空)</value>
+  </data>
+  <data name="NewDocumentDialog_Black" xml:space="preserve">
+    <value>ブラック</value>
+  </data>
+  <data name="NewDocumentDialog_Create" xml:space="preserve">
+    <value>作成</value>
+  </data>
+  <data name="NewDocumentDialog_PresetA4" xml:space="preserve">
+    <value>A4 2480 × 3508 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetDefault" xml:space="preserve">
+    <value>初期設定 (1920 × 1080)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetIcon" xml:space="preserve">
+    <value>アイコン 512 × 512</value>
+  </data>
+  <data name="NewDocumentDialog_PresetLetter" xml:space="preserve">
+    <value>レター 2550 × 3300 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetSquare" xml:space="preserve">
+    <value>正方形 1080 × 1080</value>
+  </data>
+  <data name="NewDocumentDialog_PresetWeb" xml:space="preserve">
+    <value>Web 1366 × 768</value>
+  </data>
+  <data name="NewDocumentDialog_ResolutionColon" xml:space="preserve">
+    <value>解像度 (ppi):</value>
+  </data>
+  <data name="NewDocumentDialog_Title" xml:space="preserve">
+    <value>新規ドキュメント</value>
+  </data>
+  <data name="NewDocumentDialog_Transparent" xml:space="preserve">
+    <value>透明</value>
+  </data>
+  <data name="NewDocumentDialog_Untitled" xml:space="preserve">
+    <value>名称未設定</value>
+  </data>
+  <data name="NewDocumentDialog_White" xml:space="preserve">
+    <value>ホワイト</value>
+  </data>
+  <data name="OptionsBuilder_AddToSelectionTip" xml:space="preserve">
+    <value>選択範囲に追加 (Shift)</value>
+  </data>
+  <data name="OptionsBuilder_BrushPresetPickerTip" xml:space="preserve">
+    <value>クリックでブラシプリセットピッカーを開く</value>
+  </data>
+  <data name="OptionsBuilder_HardnessColon" xml:space="preserve">
+    <value>硬さ:</value>
+  </data>
+  <data name="OptionsBuilder_IntersectWithSelectionTip" xml:space="preserve">
+    <value>現在の選択範囲との共通範囲 (Shift+Alt)</value>
+  </data>
+  <data name="OptionsBuilder_NewSelectionTip" xml:space="preserve">
+    <value>新規選択</value>
+  </data>
+  <data name="OptionsBuilder_NoColor" xml:space="preserve">
+    <value>カラーなし</value>
+  </data>
+  <data name="OptionsBuilder_SubtractFromSelectionTip" xml:space="preserve">
+    <value>現在の選択範囲から一部削除 (Alt)</value>
+  </data>
+  <data name="PanelDock_CloseTabGroup" xml:space="preserve">
+    <value>タブグループを閉じる</value>
+  </data>
+  <data name="PanelDock_CollapsePanelGroup" xml:space="preserve">
+    <value>パネルグループを折りたたむ</value>
+  </data>
+  <data name="PanelDock_ExpandPanelGroup" xml:space="preserve">
+    <value>パネルグループを展開</value>
+  </data>
+  <data name="PanelDock_MoveToGroupWith" xml:space="preserve">
+    <value>{0} のグループに移動</value>
+  </data>
+  <data name="PanelDock_MoveToNewGroup" xml:space="preserve">
+    <value>新規グループに移動</value>
+  </data>
+  <data name="PanelDock_PanelMenuTip" xml:space="preserve">
+    <value>パネルメニュー</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>作業用パス</value>
   </data>
+  <data name="PathsPanel_AddVectorMaskTip" xml:space="preserve">
+    <value>ベクトルマスクを追加 (パスからシェイプレイヤー)</value>
+  </data>
+  <data name="PathsPanel_DeletePathTip" xml:space="preserve">
+    <value>現在のパスを削除</value>
+  </data>
+  <data name="PathsPanel_FillPathTip" xml:space="preserve">
+    <value>パスを描画色で塗りつぶす</value>
+  </data>
+  <data name="PathsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>パスを選択範囲として読み込む</value>
+  </data>
+  <data name="PathsPanel_MakeWorkPathTip" xml:space="preserve">
+    <value>選択範囲から作業用パスを作成</value>
+  </data>
+  <data name="PathsPanel_NewPathTip" xml:space="preserve">
+    <value>新規パスを作成</value>
+  </data>
+  <data name="PathsPanel_RenamePath" xml:space="preserve">
+    <value>パス名を変更</value>
+  </data>
+  <data name="PathsPanel_SavePath" xml:space="preserve">
+    <value>パスを保存</value>
+  </data>
+  <data name="PathsPanel_ShapePathName" xml:space="preserve">
+    <value>{0} シェイプパス</value>
+  </data>
+  <data name="PathsPanel_StrokePathTip" xml:space="preserve">
+    <value>ブラシでパスの境界線を描く</value>
+  </data>
+  <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
+    <value>名称未設定-{0}</value>
+  </data>
+  <data name="PhotoEditorWindow_CouldNotComplete" xml:space="preserve">
+    <value>「{0}」を完了できませんでした: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentInfo" xml:space="preserve">
+    <value>{0} × {1} px ({2:0} ppi)   ドキュメント: {3:0.0} MB</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentWindowTitle" xml:space="preserve">
+    <value>{0} - フォトエディター - ShareX</value>
+  </data>
+  <data name="PhotoEditorWindow_DontSave" xml:space="preserve">
+    <value>保存しない</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeLayerMask" xml:space="preserve">
+    <value>レイヤーマスク/8</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeQuickMask" xml:space="preserve">
+    <value>クイックマスク/8</value>
+  </data>
+  <data name="PhotoEditorWindow_NoDocumentOpen" xml:space="preserve">
+    <value>開いているドキュメントがありません。</value>
+  </data>
+  <data name="PhotoEditorWindow_OperationFailed" xml:space="preserve">
+    <value>{0} に失敗しました: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_OptionsUnavailable" xml:space="preserve">
+    <value>オプションを使用できません: {0}</value>
+  </data>
+  <data name="PhotoEditorWindow_PhotoEditor" xml:space="preserve">
+    <value>フォトエディター</value>
+  </data>
+  <data name="PhotoEditorWindow_SaveChangesPrompt" xml:space="preserve">
+    <value>閉じる前に「{0}」の変更を保存しますか?</value>
+  </data>
+  <data name="PhotoEditorWindow_ViewRotation" xml:space="preserve">
+    <value>表示: {0:0}°</value>
+  </data>
+  <data name="PhotoEditorWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - フォトエディター</value>
+  </data>
+  <data name="PreferencesDialog_GridSubdivisionsColon" xml:space="preserve">
+    <value>分割数:</value>
+  </data>
+  <data name="PreferencesDialog_GridlineEveryColon" xml:space="preserve">
+    <value>グリッド線 (px):</value>
+  </data>
+  <data name="PreferencesDialog_GuideColorColon" xml:space="preserve">
+    <value>ガイドのカラー (16 進):</value>
+  </data>
+  <data name="PreferencesDialog_HistoryStatesColon" xml:space="preserve">
+    <value>ヒストリー数:</value>
+  </data>
+  <data name="PreferencesDialog_ImageInterpolationColon" xml:space="preserve">
+    <value>画像補間法:</value>
+  </data>
+  <data name="PreferencesDialog_RememberWindow" xml:space="preserve">
+    <value>ウィンドウのサイズと位置を記憶</value>
+  </data>
+  <data name="PreferencesDialog_Title" xml:space="preserve">
+    <value>環境設定</value>
+  </data>
+  <data name="PreferencesDialog_TransparencyGridSizeColon" xml:space="preserve">
+    <value>透明グリッドのサイズ:</value>
+  </data>
   <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
     <value>このプロジェクトは新しいバージョンのフォトエディターで作成されています。</value>
+  </data>
+  <data name="PropertiesPanel_AddMask" xml:space="preserve">
+    <value>マスクを追加</value>
+  </data>
+  <data name="PropertiesPanel_AlignColon" xml:space="preserve">
+    <value>整列:</value>
+  </data>
+  <data name="PropertiesPanel_AlignText" xml:space="preserve">
+    <value>テキストを整列</value>
+  </data>
+  <data name="PropertiesPanel_ApplyMask" xml:space="preserve">
+    <value>マスクを適用</value>
+  </data>
+  <data name="PropertiesPanel_Artboard" xml:space="preserve">
+    <value>アートボード</value>
+  </data>
+  <data name="PropertiesPanel_ArtboardBackground" xml:space="preserve">
+    <value>アートボードの背景</value>
+  </data>
+  <data name="PropertiesPanel_BackgroundColon" xml:space="preserve">
+    <value>背景:</value>
+  </data>
+  <data name="PropertiesPanel_Bold" xml:space="preserve">
+    <value>太字</value>
+  </data>
+  <data name="PropertiesPanel_ChangeFill" xml:space="preserve">
+    <value>塗りを変更</value>
+  </data>
+  <data name="PropertiesPanel_Character" xml:space="preserve">
+    <value>文字</value>
+  </data>
+  <data name="PropertiesPanel_ClipToLayerBelow" xml:space="preserve">
+    <value>下のレイヤーでクリップ</value>
+  </data>
+  <data name="PropertiesPanel_ClippingMask" xml:space="preserve">
+    <value>クリッピングマスク</value>
+  </data>
+  <data name="PropertiesPanel_ContainsImage" xml:space="preserve">
+    <value>画像が含まれています</value>
+  </data>
+  <data name="PropertiesPanel_ConvertToLayer" xml:space="preserve">
+    <value>レイヤーに変換</value>
+  </data>
+  <data name="PropertiesPanel_Dashed" xml:space="preserve">
+    <value>破線</value>
+  </data>
+  <data name="PropertiesPanel_DeleteMask" xml:space="preserve">
+    <value>マスクを削除</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilter" xml:space="preserve">
+    <value>スマートフィルターを削除</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilterTip" xml:space="preserve">
+    <value>スマートフィルターを削除</value>
+  </data>
+  <data name="PropertiesPanel_Document" xml:space="preserve">
+    <value>ドキュメント</value>
+  </data>
+  <data name="PropertiesPanel_DocumentSize" xml:space="preserve">
+    <value>幅: {0} px   高さ: {1} px</value>
+  </data>
+  <data name="PropertiesPanel_EditTypeLayer" xml:space="preserve">
+    <value>テキストレイヤーを編集</value>
+  </data>
+  <data name="PropertiesPanel_EmptyFrame" xml:space="preserve">
+    <value>空のフレーム</value>
+  </data>
+  <data name="PropertiesPanel_EmptyLayer" xml:space="preserve">
+    <value>空のレイヤー</value>
+  </data>
+  <data name="PropertiesPanel_Enable" xml:space="preserve">
+    <value>有効にする</value>
+  </data>
+  <data name="PropertiesPanel_FeatherMask" xml:space="preserve">
+    <value>マスクをぼかす</value>
+  </data>
+  <data name="PropertiesPanel_FillColon" xml:space="preserve">
+    <value>塗り:</value>
+  </data>
+  <data name="PropertiesPanel_FillLayer" xml:space="preserve">
+    <value>塗りつぶしレイヤー</value>
+  </data>
+  <data name="PropertiesPanel_FontColon" xml:space="preserve">
+    <value>フォント:</value>
+  </data>
+  <data name="PropertiesPanel_Frame" xml:space="preserve">
+    <value>フレーム</value>
+  </data>
+  <data name="PropertiesPanel_FrameStroke" xml:space="preserve">
+    <value>フレームの境界線</value>
+  </data>
+  <data name="PropertiesPanel_Invert" xml:space="preserve">
+    <value>反転</value>
+  </data>
+  <data name="PropertiesPanel_InvertMask" xml:space="preserve">
+    <value>マスクを反転</value>
+  </data>
+  <data name="PropertiesPanel_Italic" xml:space="preserve">
+    <value>斜体</value>
+  </data>
+  <data name="PropertiesPanel_LeadingColon" xml:space="preserve">
+    <value>行送り:</value>
+  </data>
+  <data name="PropertiesPanel_LoadAsSelection" xml:space="preserve">
+    <value>選択範囲として読み込む</value>
+  </data>
+  <data name="PropertiesPanel_MaskEditHint" xml:space="preserve">
+    <value>ペイントツールでマスクを編集しています: 黒で隠し、白で表示します。</value>
+  </data>
+  <data name="PropertiesPanel_ModifyAdjustment" xml:space="preserve">
+    <value>{0} を変更</value>
+  </data>
+  <data name="PropertiesPanel_NoDocument" xml:space="preserve">
+    <value>ドキュメントなし</value>
+  </data>
+  <data name="PropertiesPanel_None" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="PropertiesPanel_Paragraph" xml:space="preserve">
+    <value>段落</value>
+  </data>
+  <data name="PropertiesPanel_PixelLayer" xml:space="preserve">
+    <value>ピクセルレイヤー</value>
+  </data>
+  <data name="PropertiesPanel_PlaceImageEllipsis" xml:space="preserve">
+    <value>画像を配置...</value>
+  </data>
+  <data name="PropertiesPanel_RadiusPxColon" xml:space="preserve">
+    <value>半径 (ピクセル):</value>
+  </data>
+  <data name="PropertiesPanel_RasterizeType" xml:space="preserve">
+    <value>テキストをラスタライズ</value>
+  </data>
+  <data name="PropertiesPanel_ResetTransform" xml:space="preserve">
+    <value>変形をリセット</value>
+  </data>
+  <data name="PropertiesPanel_ResizeArtboard" xml:space="preserve">
+    <value>アートボードのサイズを変更</value>
+  </data>
+  <data name="PropertiesPanel_Resolution" xml:space="preserve">
+    <value>解像度: {0:0} ppi</value>
+  </data>
+  <data name="PropertiesPanel_SetFill" xml:space="preserve">
+    <value>塗りを設定</value>
+  </data>
+  <data name="PropertiesPanel_SetFont" xml:space="preserve">
+    <value>フォントを設定</value>
+  </data>
+  <data name="PropertiesPanel_SetLeading" xml:space="preserve">
+    <value>行送りを設定</value>
+  </data>
+  <data name="PropertiesPanel_SetStroke" xml:space="preserve">
+    <value>線を設定</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeAlignment" xml:space="preserve">
+    <value>線の整列を設定</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeType" xml:space="preserve">
+    <value>線の種類を設定</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeWidth" xml:space="preserve">
+    <value>線幅を設定</value>
+  </data>
+  <data name="PropertiesPanel_SetTextColor" xml:space="preserve">
+    <value>テキストカラーを設定</value>
+  </data>
+  <data name="PropertiesPanel_SetTracking" xml:space="preserve">
+    <value>トラッキングを設定</value>
+  </data>
+  <data name="PropertiesPanel_ShapeProperties" xml:space="preserve">
+    <value>シェイプのプロパティ</value>
+  </data>
+  <data name="PropertiesPanel_SizeColon" xml:space="preserve">
+    <value>サイズ:</value>
+  </data>
+  <data name="PropertiesPanel_SmartFilters" xml:space="preserve">
+    <value>スマートフィルター</value>
+  </data>
+  <data name="PropertiesPanel_SmartObject" xml:space="preserve">
+    <value>スマートオブジェクト</value>
+  </data>
+  <data name="PropertiesPanel_StrokeColon" xml:space="preserve">
+    <value>線:</value>
+  </data>
+  <data name="PropertiesPanel_TextColor" xml:space="preserve">
+    <value>テキストカラー</value>
+  </data>
+  <data name="PropertiesPanel_ToggleSmartFilter" xml:space="preserve">
+    <value>スマートフィルターを切り替え</value>
+  </data>
+  <data name="PropertiesPanel_TrackingColon" xml:space="preserve">
+    <value>トラッキング:</value>
+  </data>
+  <data name="PropertiesPanel_Underline" xml:space="preserve">
+    <value>下線</value>
+  </data>
+  <data name="ReplaceColorEditor_AddToSampleTip" xml:space="preserve">
+    <value>サンプルに追加 (Shift+クリック)</value>
+  </data>
+  <data name="ReplaceColorEditor_ClickToSample" xml:space="preserve">
+    <value>クリックしてカラーをサンプリング</value>
+  </data>
+  <data name="ReplaceColorEditor_EyedropperTip" xml:space="preserve">
+    <value>スポイト</value>
+  </data>
+  <data name="ReplaceColorEditor_Image" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="ReplaceColorEditor_Replacement" xml:space="preserve">
+    <value>置換</value>
+  </data>
+  <data name="ReplaceColorEditor_ResultColon" xml:space="preserve">
+    <value>結果:</value>
+  </data>
+  <data name="ReplaceColorEditor_SelectColorTip" xml:space="preserve">
+    <value>置換するカラーを選択</value>
+  </data>
+  <data name="ReplaceColorEditor_Selection" xml:space="preserve">
+    <value>選択</value>
+  </data>
+  <data name="ReplaceColorEditor_SubtractFromSampleTip" xml:space="preserve">
+    <value>サンプルから削除 (Alt+クリック)</value>
+  </data>
+  <data name="Resources_AirbrushSoft" xml:space="preserve">
+    <value>ソフトエアブラシ</value>
+  </data>
+  <data name="Resources_BlackWhite" xml:space="preserve">
+    <value>ブラック、ホワイト</value>
+  </data>
+  <data name="Resources_Bricks" xml:space="preserve">
+    <value>レンガ</value>
+  </data>
+  <data name="Resources_CalligraphicFlat" xml:space="preserve">
+    <value>カリグラフィ (平筆)</value>
+  </data>
+  <data name="Resources_Chalk" xml:space="preserve">
+    <value>チョーク</value>
+  </data>
+  <data name="Resources_Checkerboard" xml:space="preserve">
+    <value>市松模様</value>
+  </data>
+  <data name="Resources_Chrome" xml:space="preserve">
+    <value>クローム</value>
+  </data>
+  <data name="Resources_Copper" xml:space="preserve">
+    <value>銅</value>
+  </data>
+  <data name="Resources_DiagonalLines" xml:space="preserve">
+    <value>斜線</value>
+  </data>
+  <data name="Resources_Dots" xml:space="preserve">
+    <value>ドット</value>
+  </data>
+  <data name="Resources_ForegroundToBackground" xml:space="preserve">
+    <value>描画色から背景色へ</value>
+  </data>
+  <data name="Resources_ForegroundToTransparent" xml:space="preserve">
+    <value>描画色から透明に</value>
+  </data>
+  <data name="Resources_HardPixel" xml:space="preserve">
+    <value>ハードピクセル</value>
+  </data>
+  <data name="Resources_HardRound" xml:space="preserve">
+    <value>ハード円ブラシ</value>
+  </data>
+  <data name="Resources_HardRoundPressure" xml:space="preserve">
+    <value>ハード円ブラシ (筆圧)</value>
+  </data>
+  <data name="Resources_Hexagons" xml:space="preserve">
+    <value>六角形</value>
+  </data>
+  <data name="Resources_Ocean" xml:space="preserve">
+    <value>海</value>
+  </data>
+  <data name="Resources_SoftRound" xml:space="preserve">
+    <value>ソフト円ブラシ</value>
+  </data>
+  <data name="Resources_SoftRoundPressure" xml:space="preserve">
+    <value>ソフト円ブラシ (筆圧)</value>
+  </data>
+  <data name="Resources_Spatter" xml:space="preserve">
+    <value>飛沫</value>
+  </data>
+  <data name="Resources_Spectrum" xml:space="preserve">
+    <value>スペクトル</value>
+  </data>
+  <data name="Resources_SquareHard" xml:space="preserve">
+    <value>ハード角ブラシ</value>
+  </data>
+  <data name="Resources_Sunset" xml:space="preserve">
+    <value>夕焼け</value>
+  </data>
+  <data name="Resources_TransparentStripes" xml:space="preserve">
+    <value>透明ストライプ</value>
+  </data>
+  <data name="Resources_WoodGrain" xml:space="preserve">
+    <value>木目</value>
+  </data>
+  <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
+    <value>コマンドを検索</value>
+  </data>
+  <data name="ShortcutsDialog_Title" xml:space="preserve">
+    <value>キーボードショートカット</value>
+  </data>
+  <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
+    <value>初期設定を使用</value>
+  </data>
+  <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
+    <value>最近使用したファイルをクリア</value>
+  </data>
+  <data name="StartScreen_NewFile" xml:space="preserve">
+    <value>新規ファイル</value>
+  </data>
+  <data name="StartScreen_NewFromScreenshotRegion" xml:space="preserve">
+    <value>スクリーンショットから新規作成 (範囲)</value>
+  </data>
+  <data name="StartScreen_NoRecentFiles" xml:space="preserve">
+    <value>開いたファイルがここに表示されます。</value>
+  </data>
+  <data name="StartScreen_Recent" xml:space="preserve">
+    <value>最近使った項目</value>
+  </data>
+  <data name="StartScreen_ShowAsListTip" xml:space="preserve">
+    <value>最近使用したファイルをリスト表示</value>
+  </data>
+  <data name="StartScreen_ShowAsTilesTip" xml:space="preserve">
+    <value>最近使用したファイルをタイル表示</value>
+  </data>
+  <data name="SwatchesPanel_NewSwatchTip" xml:space="preserve">
+    <value>描画色から新規スウォッチを作成</value>
+  </data>
+  <data name="SwatchesPanel_SwatchTip" xml:space="preserve">
+    <value>#{0} — クリック: 描画色、Alt/Ctrl+クリック: 背景色、右クリック: 削除</value>
+  </data>
+  <data name="TextEditing_Hint" xml:space="preserve">
+    <value>テキストを入力します。Ctrl+Enter で確定、Esc でキャンセルします。</value>
+  </data>
+  <data name="TextEditing_TypeTool" xml:space="preserve">
+    <value>文字ツール</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>最大化</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>最小化する</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>元のサイズに戻す</value>
+  </data>
+  <data name="ToolbarControl_CollapseTip" xml:space="preserve">
+    <value>1 列に折りたたむ</value>
+  </data>
+  <data name="ToolbarControl_DefaultColorsTip" xml:space="preserve">
+    <value>描画色と背景色を初期設定に戻す (D)</value>
+  </data>
+  <data name="ToolbarControl_EditToolbarEllipsis" xml:space="preserve">
+    <value>ツールバーを編集...</value>
+  </data>
+  <data name="ToolbarControl_ExpandTip" xml:space="preserve">
+    <value>2 列に展開</value>
+  </data>
+  <data name="ToolbarControl_QuickMaskTip" xml:space="preserve">
+    <value>クイックマスクモードで編集 (Q)</value>
+  </data>
+  <data name="ToolbarControl_ScreenModeTip" xml:space="preserve">
+    <value>スクリーンモードを切り替え (F)</value>
+  </data>
+  <data name="ToolbarControl_SetBackgroundColor" xml:space="preserve">
+    <value>背景色を設定</value>
+  </data>
+  <data name="ToolbarControl_SetForegroundColor" xml:space="preserve">
+    <value>描画色を設定</value>
+  </data>
+  <data name="ToolbarControl_SwitchColorsTip" xml:space="preserve">
+    <value>描画色と背景色を入れ替え (X)</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Description" xml:space="preserve">
+    <value>ツールバー (各行はツールバーのスロットとそのフライアウトツールです)。ツールを選択してから、ボタンで並べ替えます。</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Done" xml:space="preserve">
+    <value>完了</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_ExtraTools" xml:space="preserve">
+    <value>追加ツール (ツールバーに表示しない):</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_HideTool" xml:space="preserve">
+    <value>ツールを非表示</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MergeWithGroupAbove" xml:space="preserve">
+    <value>上のグループと結合</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveEarlierInGroup" xml:space="preserve">
+    <value>グループ内で前へ移動</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupDown" xml:space="preserve">
+    <value>グループを下へ移動</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupUp" xml:space="preserve">
+    <value>グループを上へ移動</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_OwnGroup" xml:space="preserve">
+    <value>独立グループ</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreDefaults" xml:space="preserve">
+    <value>初期設定に戻す</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreTip" xml:space="preserve">
+    <value>クリックでツールバーに戻す</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
+    <value>ツールバーをカスタマイズ</value>
   </data>
 </root>

@@ -70,24 +70,24 @@ public sealed class LayersPanel : EditorPanel
             if (_updating || Doc?.ActiveLayer is not Layer layer || _blend.SelectedItem is not ComboBoxItem { Tag: LayerBlendMode mode }) return;
             if (mode == LayerBlendMode.PassThrough && layer is not GroupLayer) return;
             layer.BlendMode = mode;
-            Editor.Commit("Blending Change");
+            Editor.Commit(Strings.LayersPanel_BlendingChange);
         };
         _opacity.ValueChanged += (_, e) =>
         {
             if (_updating || Doc?.ActiveLayer is not Layer layer || e.NewValue is not decimal v) return;
             layer.Opacity = (float)v / 100;
-            Editor.Commit("Opacity Change");
+            Editor.Commit(Strings.LayersPanel_OpacityChange);
         };
         _fill.ValueChanged += (_, e) =>
         {
             if (_updating || Doc?.ActiveLayer is not Layer layer || e.NewValue is not decimal v) return;
             layer.FillOpacity = (float)v / 100;
-            Editor.Commit("Fill Opacity Change");
+            Editor.Commit(Strings.LayersPanel_FillOpacityChange);
         };
 
         StackPanel header = new() { Spacing = 5, Margin = new Thickness(8, 6, 8, 6) };
         Grid blendRow = new() { ColumnDefinitions = new ColumnDefinitions("*,Auto,Auto,Auto"), ColumnSpacing = 4 };
-        TextBlock opacityLabel = Text("Opacity:");
+        TextBlock opacityLabel = Text(Strings.EditorCommands_OpacityColon);
         TextBlock opacityUnit = new() { Text = "%", Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center };
         Grid.SetColumn(opacityLabel, 1);
         Grid.SetColumn(_opacity, 2);
@@ -98,8 +98,8 @@ public sealed class LayersPanel : EditorPanel
         blendRow.Children.Add(opacityUnit);
         header.Children.Add(blendRow);
         Grid lockRow = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto,Auto,Auto"), ColumnSpacing = 4 };
-        TextBlock lockLabel = Text("Lock:");
-        TextBlock fillLabel = Text("Fill:");
+        TextBlock lockLabel = Text(Strings.LayersPanel_LockColon);
+        TextBlock fillLabel = Text(Strings.PropertiesPanel_FillColon);
         TextBlock fillUnit = new() { Text = "%", Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center };
         Grid.SetColumn(_locks, 1);
         Grid.SetColumn(fillLabel, 2);
@@ -113,15 +113,15 @@ public sealed class LayersPanel : EditorPanel
         header.Children.Add(lockRow);
 
         StackPanel footer = new() { Orientation = Orientation.Horizontal, Spacing = 2, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(4, 2) };
-        footer.Children.Add(IconButton("link", "Link or unlink the selected layers (select several with Ctrl-click) so they move together", () => EditorCommands.ToggleLinkLayers(Editor)));
-        footer.Children.Add(IconButton("fx", "Add a layer style", () => _ = EditorCommands.LayerStyle(Editor)));
-        footer.Children.Add(IconButton("mask", "Add layer mask (Alt: hide all)", () => EditorCommands.AddMask(Editor, Doc?.Selection != null ? MaskMode.RevealSelection : MaskMode.RevealAll)));
-        Button adjust = IconButton("adjust", "Create new fill or adjustment layer", () => { });
+        footer.Children.Add(IconButton("link", Strings.LayersPanel_LinkTip, () => EditorCommands.ToggleLinkLayers(Editor)));
+        footer.Children.Add(IconButton("fx", Strings.LayersPanel_AddLayerStyleTip, () => _ = EditorCommands.LayerStyle(Editor)));
+        footer.Children.Add(IconButton("mask", Strings.LayersPanel_AddLayerMaskTip, () => EditorCommands.AddMask(Editor, Doc?.Selection != null ? MaskMode.RevealSelection : MaskMode.RevealAll)));
+        Button adjust = IconButton("adjust", Strings.LayersPanel_NewFillOrAdjustmentTip, () => { });
         adjust.Flyout = EditorCommands.CreateAdjustmentFlyout(Editor);
         footer.Children.Add(adjust);
-        footer.Children.Add(IconButton("folder", "Create a new group", () => EditorCommands.NewGroup(Editor)));
-        footer.Children.Add(IconButton("new-layer", "Create a new layer", () => EditorCommands.NewLayer(Editor)));
-        footer.Children.Add(IconButton("trash", "Delete layer", () => EditorCommands.DeleteLayers(Editor)));
+        footer.Children.Add(IconButton("folder", Strings.LayersPanel_NewGroupTip, () => EditorCommands.NewGroup(Editor)));
+        footer.Children.Add(IconButton("new-layer", Strings.LayersPanel_NewLayerTip, () => EditorCommands.NewLayer(Editor)));
+        footer.Children.Add(IconButton("trash", Strings.LayersPanel_DeleteLayerTip, () => EditorCommands.DeleteLayers(Editor)));
 
         Grid listHost = new();
         listHost.Children.Add(_list);
@@ -140,7 +140,7 @@ public sealed class LayersPanel : EditorPanel
 
     public override string Id => "layers";
 
-    public override string Title => "Layers";
+    public override string Title => Strings.EditorCommands_Layers;
 
     private Button LockButton(string tip, bool active, Action toggle, string icon)
     {
@@ -158,7 +158,7 @@ public sealed class LayersPanel : EditorPanel
         button.Click += (_, _) =>
         {
             toggle();
-            Editor.Commit("Change Layer Lock");
+            Editor.Commit(Strings.LayersPanel_ChangeLayerLock);
         };
         return button;
     }
@@ -190,10 +190,10 @@ public sealed class LayersPanel : EditorPanel
             _blend.SelectedItem = _blend.Items.OfType<ComboBoxItem>().FirstOrDefault(i => (LayerBlendMode)i.Tag! == active.BlendMode);
             _opacity.Value = (decimal)Math.Round(active.Opacity * 100);
             _fill.Value = (decimal)Math.Round(active.FillOpacity * 100);
-            _locks.Children.Add(LockButton("Lock transparent pixels", active.LockTransparency, () => active.LockTransparency = !active.LockTransparency, "lock-transparency"));
-            _locks.Children.Add(LockButton("Lock image pixels", active.LockPixels, () => active.LockPixels = !active.LockPixels, "lock-pixels"));
-            _locks.Children.Add(LockButton("Lock position", active.LockPosition, () => active.LockPosition = !active.LockPosition, "lock-position"));
-            _locks.Children.Add(LockButton("Lock all", active.LockAll, () => active.LockAll = !active.LockAll, "lock"));
+            _locks.Children.Add(LockButton(Strings.LayersPanel_LockTransparentPixels, active.LockTransparency, () => active.LockTransparency = !active.LockTransparency, "lock-transparency"));
+            _locks.Children.Add(LockButton(Strings.LayersPanel_LockImagePixels, active.LockPixels, () => active.LockPixels = !active.LockPixels, "lock-pixels"));
+            _locks.Children.Add(LockButton(Strings.LayersPanel_LockPosition, active.LockPosition, () => active.LockPosition = !active.LockPosition, "lock-position"));
+            _locks.Children.Add(LockButton(Strings.LayersPanel_LockAll, active.LockAll, () => active.LockAll = !active.LockAll, "lock"));
         }
         _updating = false;
     }
@@ -221,7 +221,7 @@ public sealed class LayersPanel : EditorPanel
             Child = layer.Visible ? ToolIcons.Create("eye", 16) : null,
             Cursor = new Cursor(StandardCursorType.Hand)
         };
-        ToolTip.SetTip(eye, "Toggle visibility (Alt-click shows only this layer)");
+        ToolTip.SetTip(eye, Strings.LayersPanel_ToggleVisibilityTip);
         eye.PointerPressed += (_, e) =>
         {
             e.Handled = true;
@@ -236,7 +236,7 @@ public sealed class LayersPanel : EditorPanel
             {
                 layer.Visible = !layer.Visible;
             }
-            Editor.Commit(layer.Visible ? "Show Layer" : "Hide Layer");
+            Editor.Commit(layer.Visible ? Strings.LayersPanel_ShowLayer : Strings.LayersPanel_HideLayer);
         };
         content.Children.Add(eye);
 
@@ -301,18 +301,18 @@ public sealed class LayersPanel : EditorPanel
                 Child = new Image { Source = MaskThumbnail(layer.Mask) },
                 VerticalAlignment = VerticalAlignment.Center
             };
-            ToolTip.SetTip(mask, "Click to edit the mask, Shift-click to disable it, Ctrl-click to load it as a selection");
+            ToolTip.SetTip(mask, Strings.LayersPanel_MaskThumbnailTip);
             mask.PointerPressed += (_, e) =>
             {
                 if (e.KeyModifiers.HasFlag(KeyModifiers.Shift))
                 {
                     layer.MaskEnabled = !layer.MaskEnabled;
-                    Editor.Commit(layer.MaskEnabled ? "Enable Layer Mask" : "Disable Layer Mask");
+                    Editor.Commit(layer.MaskEnabled ? Strings.EditorCommands_EnableLayerMask : Strings.EditorCommands_DisableLayerMask);
                 }
                 else if (e.KeyModifiers.HasFlag(KeyModifiers.Control))
                 {
                     doc.SetSelection(layer.Mask.Clone());
-                    Editor.Commit("Load Selection");
+                    Editor.Commit(Strings.EditorCommands_LoadSelection);
                 }
                 else
                 {
@@ -395,7 +395,7 @@ public sealed class LayersPanel : EditorPanel
     private Border CreateLockBadge(PhotoDocument doc, Layer layer)
     {
         Border badge = new() { Background = Brushes.Transparent, Child = ToolIcons.Create("lock", 16) };
-        ToolTip.SetTip(badge, layer.LockAll ? "Indicates layer is fully locked" : "Indicates layer is partially locked");
+        ToolTip.SetTip(badge, layer.LockAll ? Strings.LayersPanel_FullyLockedTip : Strings.LayersPanel_PartiallyLockedTip);
         if (layer is RasterLayer { IsBackground: true })
         {
             badge.Cursor = new Cursor(StandardCursorType.Hand);
@@ -513,10 +513,10 @@ public sealed class LayersPanel : EditorPanel
 
     private async Task Rename(Layer layer)
     {
-        string? name = await Dialogs.DialogBuilder.PromptAsync(Editor, "Rename Layer", "Name:", layer.Name);
+        string? name = await Dialogs.DialogBuilder.PromptAsync(Editor, Strings.EditorCommands_RenameLayer, Strings.EditorCommands_NameColon, layer.Name);
         if (string.IsNullOrWhiteSpace(name)) return;
         layer.Name = name;
-        Editor.Commit("Rename Layer");
+        Editor.Commit(Strings.EditorCommands_RenameLayer);
     }
 
     private void ShowContextMenu(Control anchor)
@@ -528,31 +528,31 @@ public sealed class LayersPanel : EditorPanel
             item.Click += (_, _) => Editor.Execute(commandId);
             menu.Items.Add(item);
         }
-        Add("Layer Properties...", "layer.rename");
-        Add("Blending Options...", "layer.style");
+        Add(Strings.LayersPanel_LayerPropertiesEllipsis, "layer.rename");
+        Add(Strings.LayersPanel_BlendingOptionsEllipsis, "layer.style");
         menu.Items.Add(new Separator());
-        Add("Duplicate Layer...", "layer.duplicate");
-        Add("Delete Layer", "layer.delete");
-        Add("Group from Layers...", "layer.group");
+        Add(Strings.LayersPanel_DuplicateLayerEllipsis, "layer.duplicate");
+        Add(Strings.EditorCommands_DeleteLayer, "layer.delete");
+        Add(Strings.LayersPanel_GroupFromLayersEllipsis, "layer.group");
         menu.Items.Add(new Separator());
-        Add("Convert to Smart Object", "layer.smart.convert");
-        Add("Rasterize Layer", "layer.rasterize");
-        Add("Rasterize Layer Style", "layer.rasterizeStyle");
+        Add(Strings.EditorCommands_ConvertToSmartObject, "layer.smart.convert");
+        Add(Strings.EditorCommands_RasterizeLayer, "layer.rasterize");
+        Add(Strings.EditorCommands_RasterizeLayerStyle, "layer.rasterizeStyle");
         menu.Items.Add(new Separator());
-        Add("Add Layer Mask", "layer.mask.revealAll");
-        Add("Apply Layer Mask", "layer.mask.apply");
-        Add("Delete Layer Mask", "layer.mask.delete");
-        Add("Create Clipping Mask", "layer.clip");
+        Add(Strings.EditorCommands_AddLayerMask, "layer.mask.revealAll");
+        Add(Strings.EditorCommands_ApplyLayerMask, "layer.mask.apply");
+        Add(Strings.EditorCommands_DeleteLayerMask, "layer.mask.delete");
+        Add(Strings.EditorCommands_CreateClippingMask, "layer.clip");
         menu.Items.Add(new Separator());
-        Add("Copy Layer Style", "layer.style.copy");
-        Add("Paste Layer Style", "layer.style.paste");
-        Add("Clear Layer Style", "layer.style.clear");
+        Add(Strings.EditorCommands_CopyLayerStyle, "layer.style.copy");
+        Add(Strings.EditorCommands_PasteLayerStyle, "layer.style.paste");
+        Add(Strings.EditorCommands_ClearLayerStyle, "layer.style.clear");
         menu.Items.Add(new Separator());
-        Add("Link/Unlink Layers", "layer.link");
+        Add(Strings.EditorCommands_LinkUnlinkLayers, "layer.link");
         menu.Items.Add(new Separator());
-        Add("Merge Down", "layer.mergeDown");
-        Add("Merge Visible", "layer.mergeVisible");
-        Add("Flatten Image", "layer.flatten");
+        Add(Strings.EditorCommands_MergeDown, "layer.mergeDown");
+        Add(Strings.EditorCommands_MergeVisible, "layer.mergeVisible");
+        Add(Strings.EditorCommands_FlattenImage, "layer.flatten");
         menu.Open(anchor);
     }
 }

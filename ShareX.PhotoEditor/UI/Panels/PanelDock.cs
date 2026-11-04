@@ -182,18 +182,18 @@ public sealed class PanelDock : UserControl
         ContextMenu menu = new();
         foreach (PanelGroupLayout other in _layout.Where(g => g != group))
         {
-            MenuItem move = new() { Header = $"Move to Group with {string.Join(", ", other.Panels.Select(p => _panels.GetValueOrDefault(p)?.Title))}" };
+            MenuItem move = new() { Header = string.Format(Strings.PanelDock_MoveToGroupWith, string.Join(", ", other.Panels.Select(p => _panels.GetValueOrDefault(p)?.Title))) };
             PanelGroupLayout target = other;
             move.Click += (_, _) => MovePanel(id, target);
             menu.Items.Add(move);
         }
-        MenuItem newGroup = new() { Header = "Move to New Group" };
+        MenuItem newGroup = new() { Header = Strings.PanelDock_MoveToNewGroup };
         newGroup.Click += (_, _) => MovePanel(id, null);
-        MenuItem collapse = new() { Header = group.Collapsed ? "Expand Panel Group" : "Collapse Panel Group" };
+        MenuItem collapse = new() { Header = group.Collapsed ? Strings.PanelDock_ExpandPanelGroup : Strings.PanelDock_CollapsePanelGroup };
         collapse.Click += (_, _) => { group.Collapsed = !group.Collapsed; Rebuild(); };
-        MenuItem close = new() { Header = "Close" };
+        MenuItem close = new() { Header = Strings.EditorCommands_Close };
         close.Click += (_, _) => ClosePanel(id);
-        MenuItem closeGroup = new() { Header = "Close Tab Group" };
+        MenuItem closeGroup = new() { Header = Strings.PanelDock_CloseTabGroup };
         closeGroup.Click += (_, _) => { foreach (string p in group.Panels.ToList()) ClosePanel(p); };
         if (menu.Items.Count > 0) menu.Items.Add(new Separator());
         menu.Items.Add(newGroup);
@@ -253,7 +253,7 @@ public sealed class PanelDock : UserControl
             VerticalAlignment = VerticalAlignment.Center,
             Margin = new Thickness(0, 0, 4, 0)
         };
-        ToolTip.SetTip(menuButton, "Panel menu");
+        ToolTip.SetTip(menuButton, Strings.PanelDock_PanelMenuTip);
         if (group.Selected != null) menuButton.Click += (_, _) => CreatePanelMenu(group, group.Selected).Open(menuButton);
         DockPanel headerContent = new();
         DockPanel.SetDock(menuButton, Dock.Right);

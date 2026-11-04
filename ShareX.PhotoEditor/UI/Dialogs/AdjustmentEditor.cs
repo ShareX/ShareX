@@ -70,9 +70,9 @@ public static class AdjustmentEditor
         switch (s.Kind)
         {
             case AdjustmentKind.BrightnessContrast:
-                Slider("Brightness:", "brightness", -150, 150);
-                Slider("Contrast:", "contrast", -50, 100);
-                Check("Use Legacy", "legacy");
+                Slider(Strings.AdjustmentEditor_BrightnessColon, "brightness", -150, 150);
+                Slider(Strings.AdjustmentEditor_ContrastColon, "contrast", -50, 100);
+                Check(Strings.AdjustmentEditor_UseLegacy, "legacy");
                 break;
             case AdjustmentKind.Levels:
                 root.Children.Add(LevelsEditor(s, changed, histogramSource));
@@ -81,19 +81,19 @@ public static class AdjustmentEditor
                 root.Children.Add(CurvesEditor(s, changed, histogramSource));
                 break;
             case AdjustmentKind.Exposure:
-                Slider("Exposure:", "exposure", -20, 20, 0, 0.01, "0.00");
-                Slider("Offset:", "offset", -0.5, 0.5, 0, 0.0001, "0.0000");
-                Slider("Gamma Correction:", "gamma", 0.01, 9.99, 1, 0.01, "0.00");
+                Slider(Strings.AdjustmentEditor_ExposureColon, "exposure", -20, 20, 0, 0.01, "0.00");
+                Slider(Strings.AdjustmentEditor_OffsetColon, "offset", -0.5, 0.5, 0, 0.0001, "0.0000");
+                Slider(Strings.AdjustmentEditor_GammaCorrectionColon, "gamma", 0.01, 9.99, 1, 0.01, "0.00");
                 break;
             case AdjustmentKind.Vibrance:
-                Slider("Vibrance:", "vibrance", -100, 100);
-                Slider("Saturation:", "saturation", -100, 100);
+                Slider(Strings.AdjustmentEditor_VibranceColon, "vibrance", -100, 100);
+                Slider(Strings.AdjustmentEditor_SaturationColon, "saturation", -100, 100);
                 break;
             case AdjustmentKind.HueSaturation:
-                Slider("Hue:", "hue", -180, 180);
-                Slider("Saturation:", "saturation", -100, 100);
-                Slider("Lightness:", "lightness", -100, 100);
-                Check("Colorize", "colorize");
+                Slider(Strings.AdjustmentEditor_HueColon, "hue", -180, 180);
+                Slider(Strings.AdjustmentEditor_SaturationColon, "saturation", -100, 100);
+                Slider(Strings.AdjustmentEditor_LightnessColon, "lightness", -100, 100);
+                Check(Strings.AdjustmentEditor_Colorize, "colorize");
                 break;
             case AdjustmentKind.ColorBalance:
             {
@@ -103,30 +103,30 @@ public static class AdjustmentEditor
                 {
                     balance.Children.Clear();
                     balance.RowDefinitions.Clear();
-                    DialogBuilder.AddRow(balance, "Cyan / Red:", DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.cr"), v => { s.Set($"{range}.cr", (float)v); changed(); }));
-                    DialogBuilder.AddRow(balance, "Magenta / Green:", DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.mg"), v => { s.Set($"{range}.mg", (float)v); changed(); }));
-                    DialogBuilder.AddRow(balance, "Yellow / Blue:", DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.yb"), v => { s.Set($"{range}.yb", (float)v); changed(); }));
+                    DialogBuilder.AddRow(balance, Strings.AdjustmentEditor_CyanRedColon, DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.cr"), v => { s.Set($"{range}.cr", (float)v); changed(); }));
+                    DialogBuilder.AddRow(balance, Strings.AdjustmentEditor_MagentaGreenColon, DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.mg"), v => { s.Set($"{range}.mg", (float)v); changed(); }));
+                    DialogBuilder.AddRow(balance, Strings.AdjustmentEditor_YellowBlueColon, DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.yb"), v => { s.Set($"{range}.yb", (float)v); changed(); }));
                 }
-                DialogBuilder.AddRow(form, "Tone:", DialogBuilder.Combo([("Shadows", "shadows"), ("Midtones", "midtones"), ("Highlights", "highlights")], range, v => { range = v; Build(); }));
+                DialogBuilder.AddRow(form, Strings.AdjustmentEditor_ToneColon, DialogBuilder.Combo([(Strings.AdjustmentEditor_Shadows, "shadows"), (Strings.AdjustmentEditor_Midtones, "midtones"), (Strings.AdjustmentEditor_Highlights, "highlights")], range, v => { range = v; Build(); }));
                 Build();
                 DialogBuilder.AddFull(form, balance);
-                Check("Preserve Luminosity", "preserve");
+                Check(Strings.AdjustmentEditor_PreserveLuminosity, "preserve");
                 break;
             }
             case AdjustmentKind.BlackAndWhite:
-                Slider("Reds:", "reds", -200, 300, 40);
-                Slider("Yellows:", "yellows", -200, 300, 60);
-                Slider("Greens:", "greens", -200, 300, 40);
-                Slider("Cyans:", "cyans", -200, 300, 60);
-                Slider("Blues:", "blues", -200, 300, 20);
-                Slider("Magentas:", "magentas", -200, 300, 80);
-                Check("Tint", "tint");
-                ColorRow("Tint Color:");
+                Slider(Strings.AdjustmentEditor_RedsColon, "reds", -200, 300, 40);
+                Slider(Strings.AdjustmentEditor_YellowsColon, "yellows", -200, 300, 60);
+                Slider(Strings.AdjustmentEditor_GreensColon, "greens", -200, 300, 40);
+                Slider(Strings.AdjustmentEditor_CyansColon, "cyans", -200, 300, 60);
+                Slider(Strings.AdjustmentEditor_BluesColon, "blues", -200, 300, 20);
+                Slider(Strings.AdjustmentEditor_MagentasColon, "magentas", -200, 300, 80);
+                Check(Strings.AdjustmentEditor_Tint, "tint");
+                ColorRow(Strings.AdjustmentEditor_TintColorColon);
                 break;
             case AdjustmentKind.PhotoFilter:
-                ColorRow("Filter Color:");
-                Slider("Density:", "density", 1, 100, 25);
-                Check("Preserve Luminosity", "preserve");
+                ColorRow(Strings.AdjustmentEditor_FilterColorColon);
+                Slider(Strings.AdjustmentEditor_DensityColon, "density", 1, 100, 25);
+                Check(Strings.AdjustmentEditor_PreserveLuminosity, "preserve");
                 break;
             case AdjustmentKind.ChannelMixer:
             {
@@ -136,16 +136,16 @@ public static class AdjustmentEditor
                 {
                     mixer.Children.Clear();
                     mixer.RowDefinitions.Clear();
-                    foreach (var (label, source) in new[] { ("Red:", "r"), ("Green:", "g"), ("Blue:", "b"), ("Constant:", "c") })
+                    foreach (var (label, source) in new[] { (Strings.AdjustmentEditor_RedColon, "r"), (Strings.AdjustmentEditor_GreenColon, "g"), (Strings.AdjustmentEditor_BlueColon, "b"), (Strings.AdjustmentEditor_ConstantColon, "c") })
                     {
                         string key = $"{output}.{source}";
                         DialogBuilder.AddRow(mixer, label, DialogBuilder.SliderNumber(-200, 200, s.Get(key, output == source ? 100 : 0), v => { s.Set(key, (float)v); changed(); }));
                     }
                 }
-                DialogBuilder.AddRow(form, "Output Channel:", DialogBuilder.Combo([("Red", "r"), ("Green", "g"), ("Blue", "b")], output, v => { output = v; Build(); }));
+                DialogBuilder.AddRow(form, Strings.AdjustmentEditor_OutputChannelColon, DialogBuilder.Combo([(Strings.AdjustmentEditor_Red, "r"), (Strings.AdjustmentEditor_Green, "g"), (Strings.AdjustmentEditor_Blue, "b")], output, v => { output = v; Build(); }));
                 Build();
                 DialogBuilder.AddFull(form, mixer);
-                Check("Monochrome", "monochrome");
+                Check(Strings.AdjustmentEditor_Monochrome, "monochrome");
                 break;
             }
             case AdjustmentKind.ColorLookup:
@@ -161,23 +161,23 @@ public static class AdjustmentEditor
                 root.Children.Add(new HdrToningEditor(s, changed, histogramSource));
                 break;
             case AdjustmentKind.Posterize:
-                Slider("Levels:", "levels", 2, 255, 4);
+                Slider(Strings.AdjustmentEditor_LevelsColon, "levels", 2, 255, 4);
                 break;
             case AdjustmentKind.Threshold:
                 if (histogramSource != null) DialogBuilder.AddFull(form, new HistogramControl(Adjustments.Histogram(histogramSource)[0]) { Height = 80 });
-                Slider("Threshold Level:", "level", 1, 255, 128);
+                Slider(Strings.AdjustmentEditor_ThresholdLevelColon, "level", 1, 255, 128);
                 break;
             case AdjustmentKind.GradientMap:
             {
                 s.Gradient ??= host != null ? GradientDefinition.CreateDefault(host.Foreground, host.Background) : GradientDefinition.CreateDefault(SKColors.Black, SKColors.White);
-                Button edit = new() { Content = "Edit Gradient..." };
+                Button edit = new() { Content = Strings.AdjustmentEditor_EditGradientEllipsis };
                 edit.Click += async (_, _) =>
                 {
                     if (TopLevel.GetTopLevel(edit) is not Window owner || host == null) return;
                     GradientDefinition? g = await GradientEditorDialog.ShowAsync(owner, s.Gradient, host);
                     if (g != null) { s.Gradient = g; changed(); }
                 };
-                CheckBox reverse = new() { Content = "Reverse", IsChecked = s.Gradient.Reverse };
+                CheckBox reverse = new() { Content = Strings.AdjustmentEditor_Reverse, IsChecked = s.Gradient.Reverse };
                 reverse.IsCheckedChanged += (_, _) => { s.Gradient!.Reverse = reverse.IsChecked == true; changed(); };
                 DialogBuilder.AddFull(form, edit);
                 DialogBuilder.AddFull(form, reverse);
@@ -191,20 +191,21 @@ public static class AdjustmentEditor
                 {
                     selective.Children.Clear();
                     selective.RowDefinitions.Clear();
-                    foreach (var (label, c) in new[] { ("Cyan:", "c"), ("Magenta:", "m"), ("Yellow:", "y"), ("Black:", "k") })
+                    foreach (var (label, c) in new[] { (Strings.AdjustmentEditor_CyanColon, "c"), (Strings.AdjustmentEditor_MagentaColon, "m"), (Strings.AdjustmentEditor_YellowColon, "y"), (Strings.AdjustmentEditor_BlackColon, "k") })
                     {
                         string key = $"{group}.{c}";
                         DialogBuilder.AddRow(selective, label, DialogBuilder.SliderNumber(-100, 100, s.Get(key), v => { s.Set(key, (float)v); changed(); }));
                     }
                 }
-                DialogBuilder.AddRow(form, "Colors:", DialogBuilder.Combo(new[] { "reds", "yellows", "greens", "cyans", "blues", "magentas", "whites", "neutrals", "blacks" }
-                    .Select(g => (char.ToUpper(g[0]) + g[1..], g)), group, v => { group = v; Build(); }));
+                DialogBuilder.AddRow(form, Strings.AdjustmentEditor_ColorsColon, DialogBuilder.Combo([(Strings.AdjustmentEditor_Reds, "reds"), (Strings.AdjustmentEditor_Yellows, "yellows"), (Strings.AdjustmentEditor_Greens, "greens"),
+                    (Strings.AdjustmentEditor_Cyans, "cyans"), (Strings.AdjustmentEditor_Blues, "blues"), (Strings.AdjustmentEditor_Magentas, "magentas"),
+                    (Strings.AdjustmentEditor_Whites, "whites"), (Strings.AdjustmentEditor_Neutrals, "neutrals"), (Strings.AdjustmentEditor_Blacks, "blacks")], group, v => { group = v; Build(); }));
                 Build();
                 DialogBuilder.AddFull(form, selective);
                 break;
             }
             default:
-                DialogBuilder.AddFull(form, new TextBlock { Text = "This adjustment has no options." });
+                DialogBuilder.AddFull(form, new TextBlock { Text = Strings.AdjustmentEditor_NoOptions });
                 break;
         }
         root.Children.Add(form);
@@ -223,15 +224,15 @@ public static class AdjustmentEditor
             inputs.Children.Clear();
             inputs.RowDefinitions.Clear();
             histogram.Values = channel switch { "r" => histograms[1], "g" => histograms[2], "b" => histograms[3], _ => histograms[0] };
-            DialogBuilder.AddRow(inputs, "Input Black:", DialogBuilder.SliderNumber(0, 253, s.Get($"{channel}.inBlack"), v => { s.Set($"{channel}.inBlack", (float)v); changed(); }));
-            DialogBuilder.AddRow(inputs, "Gamma:", DialogBuilder.SliderNumber(0.1, 9.99, s.Get($"{channel}.gamma", 1), v => { s.Set($"{channel}.gamma", (float)v); changed(); }, 0.01, "0.00"));
-            DialogBuilder.AddRow(inputs, "Input White:", DialogBuilder.SliderNumber(2, 255, s.Get($"{channel}.inWhite", 255), v => { s.Set($"{channel}.inWhite", (float)v); changed(); }));
-            DialogBuilder.AddRow(inputs, "Output Black:", DialogBuilder.SliderNumber(0, 255, s.Get($"{channel}.outBlack"), v => { s.Set($"{channel}.outBlack", (float)v); changed(); }));
-            DialogBuilder.AddRow(inputs, "Output White:", DialogBuilder.SliderNumber(0, 255, s.Get($"{channel}.outWhite", 255), v => { s.Set($"{channel}.outWhite", (float)v); changed(); }));
+            DialogBuilder.AddRow(inputs, Strings.AdjustmentEditor_InputBlackColon, DialogBuilder.SliderNumber(0, 253, s.Get($"{channel}.inBlack"), v => { s.Set($"{channel}.inBlack", (float)v); changed(); }));
+            DialogBuilder.AddRow(inputs, Strings.AdjustmentEditor_GammaColon, DialogBuilder.SliderNumber(0.1, 9.99, s.Get($"{channel}.gamma", 1), v => { s.Set($"{channel}.gamma", (float)v); changed(); }, 0.01, "0.00"));
+            DialogBuilder.AddRow(inputs, Strings.AdjustmentEditor_InputWhiteColon, DialogBuilder.SliderNumber(2, 255, s.Get($"{channel}.inWhite", 255), v => { s.Set($"{channel}.inWhite", (float)v); changed(); }));
+            DialogBuilder.AddRow(inputs, Strings.AdjustmentEditor_OutputBlackColon, DialogBuilder.SliderNumber(0, 255, s.Get($"{channel}.outBlack"), v => { s.Set($"{channel}.outBlack", (float)v); changed(); }));
+            DialogBuilder.AddRow(inputs, Strings.AdjustmentEditor_OutputWhiteColon, DialogBuilder.SliderNumber(0, 255, s.Get($"{channel}.outWhite", 255), v => { s.Set($"{channel}.outWhite", (float)v); changed(); }));
         }
         Grid top = DialogBuilder.Form();
-        DialogBuilder.AddRow(top, "Channel:", DialogBuilder.Combo([("RGB", "rgb"), ("Red", "r"), ("Green", "g"), ("Blue", "b")], channel, v => { channel = v; Build(); }));
-        Button auto = new() { Content = "Auto" };
+        DialogBuilder.AddRow(top, Strings.AdjustmentEditor_ChannelColon, DialogBuilder.Combo([("RGB", "rgb"), (Strings.AdjustmentEditor_Red, "r"), (Strings.AdjustmentEditor_Green, "g"), (Strings.AdjustmentEditor_Blue, "b")], channel, v => { channel = v; Build(); }));
+        Button auto = new() { Content = Strings.AdjustmentEditor_Auto };
         auto.Click += (_, _) =>
         {
             if (source == null) return;
@@ -254,12 +255,12 @@ public static class AdjustmentEditor
         CurveControl curve = new(s, 0, histogram, changed) { Width = 256, Height = 256 };
         StackPanel root = new() { Spacing = 6 };
         Grid top = DialogBuilder.Form();
-        DialogBuilder.AddRow(top, "Channel:", DialogBuilder.Combo([("RGB", 0), ("Red", 1), ("Green", 2), ("Blue", 3)], 0, v => curve.Channel = v));
-        Button reset = new() { Content = "Reset Channel" };
+        DialogBuilder.AddRow(top, Strings.AdjustmentEditor_ChannelColon, DialogBuilder.Combo([("RGB", 0), (Strings.AdjustmentEditor_Red, 1), (Strings.AdjustmentEditor_Green, 2), (Strings.AdjustmentEditor_Blue, 3)], 0, v => curve.Channel = v));
+        Button reset = new() { Content = Strings.AdjustmentEditor_ResetChannel };
         reset.Click += (_, _) => curve.ResetChannel();
         root.Children.Add(top);
         root.Children.Add(new Border { BorderBrush = Brushes.Gray, BorderThickness = new Thickness(1), Child = curve, HorizontalAlignment = HorizontalAlignment.Left });
-        root.Children.Add(new TextBlock { Text = "Click to add points, drag to adjust, drag a point off the graph to delete it.", FontSize = 11, TextWrapping = TextWrapping.Wrap });
+        root.Children.Add(new TextBlock { Text = Strings.AdjustmentEditor_CurvesHint, FontSize = 11, TextWrapping = TextWrapping.Wrap });
         root.Children.Add(reset);
         return root;
     }

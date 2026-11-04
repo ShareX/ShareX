@@ -98,7 +98,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         BrushPresets = BrushPreset.CreateDefaults();
         if (Settings.Swatches.Count == 0) Settings.Swatches.AddRange(SwatchesPanel.DefaultSwatches);
 
-        Title = "ShareX - Photo editor";
+        Title = Strings.PhotoEditorWindow_WindowTitle;
         Width = 1500;
         Height = 920;
         MinWidth = 900;
@@ -382,7 +382,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         }
         catch (Exception ex)
         {
-            builder.Label("Options unavailable: " + ex.Message);
+            builder.Label(string.Format(Strings.PhotoEditorWindow_OptionsUnavailable, ex.Message));
         }
         left.Children.Add(builder.Root);
         _optionsHost.Child = new ScrollViewer { Content = left, HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden, VerticalScrollBarVisibility = ScrollBarVisibility.Disabled };
@@ -393,7 +393,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
 
     public SKBitmap GetSampleImage(bool allLayers)
     {
-        PhotoDocument doc = Document ?? throw new InvalidOperationException("No document is open.");
+        PhotoDocument doc = Document ?? throw new InvalidOperationException(Strings.PhotoEditorWindow_NoDocumentOpen);
         if (allLayers)
         {
             _view!.Update(false);
@@ -428,7 +428,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         }
         catch (Exception ex)
         {
-            ShowMessage($"{message.TrimEnd('.')} failed: {ex.Message}");
+            ShowMessage(string.Format(Strings.PhotoEditorWindow_OperationFailed, message.TrimEnd('.'), ex.Message));
         }
         finally
         {
@@ -437,9 +437,9 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         }
     }
 
-    public void ShowMessage(string text) => _ = DialogBuilder.ShowMessageAsync(this, "Photo editor", text);
+    public void ShowMessage(string text) => _ = DialogBuilder.ShowMessageAsync(this, Strings.PhotoEditorWindow_PhotoEditor, text);
 
-    public Task<string?> PromptTextAsync(string title, string label, string initial) => DialogBuilder.PromptAsync(this, title, label, initial);
+    public Task<string?> PromptTextAsync(string title, string label, string initial, bool multiline = false) => DialogBuilder.PromptAsync(this, title, label, initial, multiline);
 
     /// <summary>Records a history state after a panel or command change and refreshes the UI.</summary>
     public void Commit(string historyName)
@@ -473,7 +473,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         }
         catch (Exception ex)
         {
-            ShowMessage($"Could not complete \"{command.Text.Replace("...", string.Empty)}\": {ex.Message}");
+            ShowMessage(string.Format(Strings.PhotoEditorWindow_CouldNotComplete, command.Text.Replace("...", string.Empty), ex.Message));
         }
     }
 
@@ -507,7 +507,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         if (View.Zoom != _tabZoom) RefreshTabs();
         PhotoDocument doc = View.Document;
         double megabytes = doc.AllLayers.OfType<RasterLayer>().Sum(l => (double)l.Surface.Width * l.Surface.Height * 4) / 1024 / 1024;
-        _docInfo.Text = $"{doc.Width} × {doc.Height} px ({doc.Resolution:0} ppi)   Doc: {megabytes:0.0}M" + (View.Rotation != 0 ? $"   View: {View.Rotation:0}°" : string.Empty);
+        _docInfo.Text = string.Format(Strings.PhotoEditorWindow_DocumentInfo, doc.Width, doc.Height, doc.Resolution, megabytes) + (View.Rotation != 0 ? "   " + string.Format(Strings.PhotoEditorWindow_ViewRotation, View.Rotation) : string.Empty);
         if (string.IsNullOrEmpty(_status.Text)) _status.Text = Tools.Active.Hint;
     }
 

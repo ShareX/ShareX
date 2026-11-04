@@ -37,7 +37,7 @@ public static class CanvasSizeDialog
     public static async Task<Result?> ShowAsync(PhotoEditorWindow owner, int width, int height, SKColor background)
     {
         NumericUpDown w = DialogBuilder.Number(1, 30000, width), h = DialogBuilder.Number(1, 30000, height);
-        CheckBox relative = new() { Content = "Relative" };
+        CheckBox relative = new() { Content = Strings.CanvasSizeDialog_Relative };
         relative.IsCheckedChanged += (_, _) =>
         {
             bool r = relative.IsChecked == true;
@@ -63,13 +63,13 @@ public static class CanvasSizeDialog
         SKColor extension = background;
         int extensionMode = 0;
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddFull(form, new TextBlock { Text = $"Current size: {width} × {height} px", Opacity = 0.8 });
-        DialogBuilder.AddRow(form, "Width (px):", w);
-        DialogBuilder.AddRow(form, "Height (px):", h);
+        DialogBuilder.AddFull(form, new TextBlock { Text = string.Format(Strings.CanvasSizeDialog_CurrentSize, width, height), Opacity = 0.8 });
+        DialogBuilder.AddRow(form, Strings.EditorCommands_WidthPxColon, w);
+        DialogBuilder.AddRow(form, Strings.ExportDialog_HeightPxColon, h);
         DialogBuilder.AddFull(form, relative);
-        DialogBuilder.AddRow(form, "Anchor:", anchors);
-        DialogBuilder.AddRow(form, "Canvas extension color:", DialogBuilder.Combo([("Background", 0), ("Foreground", 1), ("White", 2), ("Black", 3), ("Gray", 4), ("Transparent", 5)], extensionMode, v => extensionMode = v));
-        if (!await DialogBuilder.ShowAsync(owner, "Canvas Size", form, 440)) return null;
+        DialogBuilder.AddRow(form, Strings.CanvasSizeDialog_AnchorColon, anchors);
+        DialogBuilder.AddRow(form, Strings.CanvasSizeDialog_ExtensionColorColon, DialogBuilder.Combo([(Strings.LayerNames_Background, 0), (Strings.CanvasSizeDialog_Foreground, 1), (Strings.NewDocumentDialog_White, 2), (Strings.NewDocumentDialog_Black, 3), (Strings.CanvasSizeDialog_Gray, 4), (Strings.NewDocumentDialog_Transparent, 5)], extensionMode, v => extensionMode = v));
+        if (!await DialogBuilder.ShowAsync(owner, Strings.EditorCommands_CanvasSize, form, 440)) return null;
         int nw = (int)(w.Value ?? width), nh = (int)(h.Value ?? height);
         if (relative.IsChecked == true) { nw += width; nh += height; }
         extension = extensionMode switch { 1 => owner.Foreground, 2 => SKColors.White, 3 => SKColors.Black, 4 => new SKColor(128, 128, 128), 5 => SKColors.Transparent, _ => background };

@@ -182,7 +182,7 @@ public sealed class History
 
     public HistoryEntry CreateSnapshot(string? name = null)
     {
-        HistoryEntry snapshot = new(name ?? $"Snapshot {Snapshots.Count}", Current?.State ?? _document.CaptureState());
+        HistoryEntry snapshot = new(name ?? string.Format(Strings.History_SnapshotNumber, Snapshots.Count), Current?.State ?? _document.CaptureState());
         Snapshots.Add(snapshot);
         Changed?.Invoke();
         return snapshot;

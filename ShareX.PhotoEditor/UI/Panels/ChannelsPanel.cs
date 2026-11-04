@@ -41,10 +41,10 @@ public sealed class ChannelsPanel : EditorPanel
     public ChannelsPanel(PhotoEditorWindow editor) : base(editor)
     {
         StackPanel footer = new() { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right, Spacing = 2, Margin = new Thickness(4) };
-        footer.Children.Add(IconButton("selection", "Load channel as selection", () => EditorCommands.LoadChannelSelection(Editor)));
-        footer.Children.Add(IconButton("mask", "Save selection as channel", () => EditorCommands.SaveSelectionToChannel(Editor)));
-        footer.Children.Add(IconButton("new-layer", "Create new channel", () => EditorCommands.NewChannel(Editor)));
-        footer.Children.Add(IconButton("trash", "Delete current channel", () => EditorCommands.DeleteChannel(Editor)));
+        footer.Children.Add(IconButton("selection", Strings.ChannelsPanel_LoadAsSelectionTip, () => EditorCommands.LoadChannelSelection(Editor)));
+        footer.Children.Add(IconButton("mask", Strings.ChannelsPanel_SaveSelectionTip, () => EditorCommands.SaveSelectionToChannel(Editor)));
+        footer.Children.Add(IconButton("new-layer", Strings.ChannelsPanel_NewChannelTip, () => EditorCommands.NewChannel(Editor)));
+        footer.Children.Add(IconButton("trash", Strings.ChannelsPanel_DeleteChannelTip, () => EditorCommands.DeleteChannel(Editor)));
         DockPanel root = new();
         DockPanel.SetDock(footer, Dock.Bottom);
         root.Children.Add(footer);
@@ -77,14 +77,14 @@ public sealed class ChannelsPanel : EditorPanel
 
     public override string Id => "channels";
 
-    public override string Title => "Channels";
+    public override string Title => Strings.EditorCommands_Channels;
 
     public override void Refresh()
     {
         _list.Children.Clear();
         PhotoDocument? doc = Doc;
         if (doc == null) return;
-        (ChannelView View, string Name, string Key)[] colorChannels = [(ChannelView.Composite, "RGB", "Ctrl+2"), (ChannelView.Red, "Red", "Ctrl+3"), (ChannelView.Green, "Green", "Ctrl+4"), (ChannelView.Blue, "Blue", "Ctrl+5")];
+        (ChannelView View, string Name, string Key)[] colorChannels = [(ChannelView.Composite, "RGB", "Ctrl+2"), (ChannelView.Red, Strings.EditorCommands_Red, "Ctrl+3"), (ChannelView.Green, Strings.EditorCommands_Green, "Ctrl+4"), (ChannelView.Blue, Strings.EditorCommands_Blue, "Ctrl+5")];
         Editor.View?.Update(true);
         SKBitmap? composite = Editor.View?.Composite;
         using SKBitmap? small = composite != null ? ImageOps.Resize(composite, Math.Max(1, (int)(30f * composite.Width / Math.Max(composite.Width, composite.Height))), Math.Max(1, (int)(30f * composite.Height / Math.Max(composite.Width, composite.Height))), ResampleMethod.Bilinear) : null;
@@ -113,11 +113,11 @@ public sealed class ChannelsPanel : EditorPanel
             };
             _list.Children.Add(row);
         }
-        if (doc.QuickMask) _list.Children.Add(new Border { Padding = new Thickness(6, 4), Background = SelectedBrush, Child = Text("Quick Mask", 12, true) });
+        if (doc.QuickMask) _list.Children.Add(new Border { Padding = new Thickness(6, 4), Background = SelectedBrush, Child = Text(Strings.ChannelsPanel_QuickMask, 12, true) });
         foreach (AlphaChannel channel in doc.Channels)
         {
             CheckBox visible = new() { IsChecked = channel.Visible };
-            ToolTip.SetTip(visible, "Show the channel as an overlay");
+            ToolTip.SetTip(visible, Strings.ChannelsPanel_ShowOverlayTip);
             visible.IsCheckedChanged += (_, _) =>
             {
                 channel.Visible = visible.IsChecked == true;
@@ -129,14 +129,14 @@ public sealed class ChannelsPanel : EditorPanel
                 if (e.Source is CheckBox) return;
                 if (e.ClickCount >= 2)
                 {
-                    string? name = await DialogBuilder.PromptAsync(Editor, "Channel Options", "Name:", channel.Name);
-                    if (!string.IsNullOrWhiteSpace(name)) { channel.Name = name; Editor.Commit("Channel Options"); }
+                    string? name = await DialogBuilder.PromptAsync(Editor, Strings.ChannelsPanel_ChannelOptions, Strings.EditorCommands_NameColon, channel.Name);
+                    if (!string.IsNullOrWhiteSpace(name)) { channel.Name = name; Editor.Commit(Strings.ChannelsPanel_ChannelOptions); }
                     return;
                 }
                 if (e.KeyModifiers.HasFlag(KeyModifiers.Control))
                 {
                     doc.SetSelection(channel.Mask.Clone());
-                    Editor.Commit("Load Selection");
+                    Editor.Commit(Strings.EditorCommands_LoadSelection);
                     return;
                 }
                 doc.ActiveChannel = doc.ActiveChannel == channel ? null : channel;

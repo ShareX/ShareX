@@ -38,7 +38,7 @@ public static partial class EditorCommands
         foreach (TextAntiAlias mode in Enum.GetValues<TextAntiAlias>())
         {
             TextAntiAlias captured = mode;
-            R($"type.aa.{mode}", mode.ToString(), null, w => { if (w.Document!.ActiveLayer is TextLayer t) { t.AntiAlias = captured; t.Invalidate(); w.Commit(Strings.EditorCommands_AntiAlias); } },
+            R($"type.aa.{mode}", EnumNames.Get(mode), null, w => { if (w.Document!.ActiveLayer is TextLayer t) { t.AntiAlias = captured; t.Invalidate(); w.Commit(Strings.EditorCommands_AntiAlias); } },
                 w => w.Document?.ActiveLayer is TextLayer, w => (w.Document?.ActiveLayer as TextLayer)?.AntiAlias == captured);
         }
         R("type.sizeUp", Strings.EditorCommands_IncreaseFontSize, "Ctrl+Shift+OemPeriod", w => ChangeFontSize(w, 2), w => w.Document?.ActiveLayer is TextLayer);

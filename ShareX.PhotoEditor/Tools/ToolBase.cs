@@ -135,7 +135,7 @@ public interface IEditorHost
 
     void ShowMessage(string text);
 
-    Task<string?> PromptTextAsync(string title, string label, string initial);
+    Task<string?> PromptTextAsync(string title, string label, string initial, bool multiline = false);
 }
 
 /// <summary>Base class for every toolbar tool.</summary>

@@ -59,11 +59,11 @@ public sealed class ToolbarControl : UserControl
         StackPanel root = new() { Spacing = 0, Margin = new Thickness(0, 0, 0, 6) };
         root.Children.Add(new Border { Child = _columnsToggle, Padding = new Thickness(2, 1), Margin = new Thickness(0, 0, 0, 4) });
         root.Children.Add(_sections);
-        root.Children.Add(SmallButton("edit-toolbar", "Edit Toolbar...", () => _ = ToolbarCustomizeDialog.ShowAsync(_editor)));
+        root.Children.Add(SmallButton("edit-toolbar", Strings.ToolbarControl_EditToolbarEllipsis, () => _ = ToolbarCustomizeDialog.ShowAsync(_editor)));
         root.Children.Add(BuildColorWidget());
-        _quickMask = SmallButton("quick-mask", "Edit in Quick Mask Mode (Q)", () => Commands.EditorCommands.ToggleQuickMask(_editor));
+        _quickMask = SmallButton("quick-mask", Strings.ToolbarControl_QuickMaskTip, () => Commands.EditorCommands.ToggleQuickMask(_editor));
         root.Children.Add(_quickMask);
-        root.Children.Add(SmallButton("screen-mode", "Change Screen Mode (F)", () => _editor.CycleScreenMode()));
+        root.Children.Add(SmallButton("screen-mode", Strings.ToolbarControl_ScreenModeTip, () => _editor.CycleScreenMode()));
         Content = new ScrollViewer { Content = root, VerticalScrollBarVisibility = ScrollBarVisibility.Hidden, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
         ApplyColumns();
         Rebuild();
@@ -86,7 +86,7 @@ public sealed class ToolbarControl : UserControl
         bool two = _editor.Settings.ToolbarTwoColumns;
         Width = two ? ButtonWidth * 2 + 8 : Math.Max(ButtonWidth + 6, ColorWidgetWidth + 2);
         _columnsToggle.Content = ToolIcons.Create(two ? "toolbar-collapse" : "toolbar-expand", 12);
-        ToolTip.SetTip(_columnsToggle, two ? "Collapse to a single column" : "Expand to two columns");
+        ToolTip.SetTip(_columnsToggle, two ? Strings.ToolbarControl_CollapseTip : Strings.ToolbarControl_ExpandTip);
     }
 
     private Button SmallButton(string icon, string tip, Action click)
@@ -249,25 +249,25 @@ public sealed class ToolbarControl : UserControl
     /// and white ring, the switch arrow at the top right and the default colors icon at the bottom left.</summary>
     private Control BuildColorWidget()
     {
-        Border backgroundSwatch = CreateSwatch(out _background, "Set background color");
-        Border foregroundSwatch = CreateSwatch(out _foreground, "Set foreground color");
+        Border backgroundSwatch = CreateSwatch(out _background, Strings.ToolbarControl_SetBackgroundColor);
+        Border foregroundSwatch = CreateSwatch(out _foreground, Strings.ToolbarControl_SetForegroundColor);
         foregroundSwatch.PointerPressed += async (_, _) =>
         {
-            SKColor? c = await ColorPickerDialog.ShowAsync(_editor, _editor.Foreground, "Foreground Color", _editor);
+            SKColor? c = await ColorPickerDialog.ShowAsync(_editor, _editor.Foreground, Strings.ColorPanel_ForegroundColor, _editor);
             if (c is SKColor color) _editor.Foreground = color;
         };
         backgroundSwatch.PointerPressed += async (_, _) =>
         {
-            SKColor? c = await ColorPickerDialog.ShowAsync(_editor, _editor.Background, "Background Color", _editor);
+            SKColor? c = await ColorPickerDialog.ShowAsync(_editor, _editor.Background, Strings.ColorPanel_BackgroundColor, _editor);
             if (c is SKColor color) _editor.Background = color;
         };
         Canvas canvas = new() { Width = ColorWidgetWidth, Height = 45, HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(0, 4, 0, 4) };
         Place(canvas, backgroundSwatch, 17, 17);
         Place(canvas, foregroundSwatch, 2, 1);
 
-        Button swap = CreateWidgetButton(CreateSwapIcon(), "Switch Foreground and Background Colors (X)", () => Commands.EditorCommands.SwapColors(_editor));
+        Button swap = CreateWidgetButton(CreateSwapIcon(), Strings.ToolbarControl_SwitchColorsTip, () => Commands.EditorCommands.SwapColors(_editor));
         Place(canvas, swap, 35, 0);
-        Button reset = CreateWidgetButton(CreateDefaultColorsIcon(), "Default Foreground and Background Colors (D)", () => Commands.EditorCommands.ResetColors(_editor));
+        Button reset = CreateWidgetButton(CreateDefaultColorsIcon(), Strings.ToolbarControl_DefaultColorsTip, () => Commands.EditorCommands.ResetColors(_editor));
         Place(canvas, reset, 0, 33);
         RefreshColors();
         return canvas;

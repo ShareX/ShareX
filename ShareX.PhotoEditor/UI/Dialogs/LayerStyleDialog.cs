@@ -57,47 +57,47 @@ public static class LayerStyleDialog
         }
 
         Grid blending = DialogBuilder.Form();
-        DialogBuilder.AddRow(blending, "Blend Mode:", DialogBuilder.Combo(BlendModes.LayerModes.Select(m => (BlendModes.GetName(m), m)), layer.BlendMode, v => { layer.BlendMode = v; Changed(); }));
-        DialogBuilder.AddRow(blending, "Opacity:", DialogBuilder.SliderNumber(0, 100, layer.Opacity * 100, v => { layer.Opacity = (float)v / 100; Changed(); }));
-        DialogBuilder.AddRow(blending, "Fill Opacity:", DialogBuilder.SliderNumber(0, 100, layer.FillOpacity * 100, v => { layer.FillOpacity = (float)v / 100; Changed(); }));
+        DialogBuilder.AddRow(blending, Strings.LayerStyleDialog_BlendModeColon, DialogBuilder.Combo(BlendModes.LayerModes.Select(m => (BlendModes.GetName(m), m)), layer.BlendMode, v => { layer.BlendMode = v; Changed(); }));
+        DialogBuilder.AddRow(blending, Strings.EditorCommands_OpacityColon, DialogBuilder.SliderNumber(0, 100, layer.Opacity * 100, v => { layer.Opacity = (float)v / 100; Changed(); }));
+        DialogBuilder.AddRow(blending, Strings.LayerStyleDialog_FillOpacityColon, DialogBuilder.SliderNumber(0, 100, layer.FillOpacity * 100, v => { layer.FillOpacity = (float)v / 100; Changed(); }));
 
         Grid shadow = DialogBuilder.Form();
-        DialogBuilder.AddRow(shadow, "Color:", ColorButton(() => style.ShadowColor, c => style.ShadowColor = c, "Shadow Color"));
-        DialogBuilder.AddRow(shadow, "Opacity:", DialogBuilder.SliderNumber(0, 100, style.ShadowOpacity * 100, v => { style.ShadowOpacity = (float)v / 100; Changed(); }));
-        DialogBuilder.AddRow(shadow, "Angle:", DialogBuilder.SliderNumber(-180, 180, style.ShadowAngle, v => { style.ShadowAngle = (float)v; Changed(); }));
-        DialogBuilder.AddRow(shadow, "Distance:", DialogBuilder.SliderNumber(0, 300, style.ShadowDistance, v => { style.ShadowDistance = (float)v; Changed(); }));
-        DialogBuilder.AddRow(shadow, "Size:", DialogBuilder.SliderNumber(0, 250, style.ShadowSize, v => { style.ShadowSize = (float)v; Changed(); }));
+        DialogBuilder.AddRow(shadow, Strings.EditorCommands_ColorColon, ColorButton(() => style.ShadowColor, c => style.ShadowColor = c, Strings.LayerStyleDialog_ShadowColor));
+        DialogBuilder.AddRow(shadow, Strings.EditorCommands_OpacityColon, DialogBuilder.SliderNumber(0, 100, style.ShadowOpacity * 100, v => { style.ShadowOpacity = (float)v / 100; Changed(); }));
+        DialogBuilder.AddRow(shadow, Strings.LayerStyleDialog_AngleColon, DialogBuilder.SliderNumber(-180, 180, style.ShadowAngle, v => { style.ShadowAngle = (float)v; Changed(); }));
+        DialogBuilder.AddRow(shadow, Strings.LayerStyleDialog_DistanceColon, DialogBuilder.SliderNumber(0, 300, style.ShadowDistance, v => { style.ShadowDistance = (float)v; Changed(); }));
+        DialogBuilder.AddRow(shadow, Strings.PropertiesPanel_SizeColon, DialogBuilder.SliderNumber(0, 250, style.ShadowSize, v => { style.ShadowSize = (float)v; Changed(); }));
 
         Grid inner = DialogBuilder.Form();
-        DialogBuilder.AddRow(inner, "Color:", ColorButton(() => style.InnerShadowColor, c => style.InnerShadowColor = c, "Inner Shadow Color"));
-        DialogBuilder.AddRow(inner, "Opacity:", DialogBuilder.SliderNumber(0, 100, style.InnerShadowOpacity * 100, v => { style.InnerShadowOpacity = (float)v / 100; Changed(); }));
-        DialogBuilder.AddRow(inner, "Distance:", DialogBuilder.SliderNumber(0, 300, style.InnerShadowDistance, v => { style.InnerShadowDistance = (float)v; Changed(); }));
-        DialogBuilder.AddRow(inner, "Size:", DialogBuilder.SliderNumber(0, 250, style.InnerShadowSize, v => { style.InnerShadowSize = (float)v; Changed(); }));
+        DialogBuilder.AddRow(inner, Strings.EditorCommands_ColorColon, ColorButton(() => style.InnerShadowColor, c => style.InnerShadowColor = c, Strings.LayerStyleDialog_InnerShadowColor));
+        DialogBuilder.AddRow(inner, Strings.EditorCommands_OpacityColon, DialogBuilder.SliderNumber(0, 100, style.InnerShadowOpacity * 100, v => { style.InnerShadowOpacity = (float)v / 100; Changed(); }));
+        DialogBuilder.AddRow(inner, Strings.LayerStyleDialog_DistanceColon, DialogBuilder.SliderNumber(0, 300, style.InnerShadowDistance, v => { style.InnerShadowDistance = (float)v; Changed(); }));
+        DialogBuilder.AddRow(inner, Strings.PropertiesPanel_SizeColon, DialogBuilder.SliderNumber(0, 250, style.InnerShadowSize, v => { style.InnerShadowSize = (float)v; Changed(); }));
 
         Grid glow = DialogBuilder.Form();
-        DialogBuilder.AddRow(glow, "Color:", ColorButton(() => style.GlowColor, c => style.GlowColor = c, "Glow Color"));
-        DialogBuilder.AddRow(glow, "Opacity:", DialogBuilder.SliderNumber(0, 100, style.GlowOpacity * 100, v => { style.GlowOpacity = (float)v / 100; Changed(); }));
-        DialogBuilder.AddRow(glow, "Size:", DialogBuilder.SliderNumber(0, 250, style.GlowSize, v => { style.GlowSize = (float)v; Changed(); }));
+        DialogBuilder.AddRow(glow, Strings.EditorCommands_ColorColon, ColorButton(() => style.GlowColor, c => style.GlowColor = c, Strings.LayerStyleDialog_GlowColor));
+        DialogBuilder.AddRow(glow, Strings.EditorCommands_OpacityColon, DialogBuilder.SliderNumber(0, 100, style.GlowOpacity * 100, v => { style.GlowOpacity = (float)v / 100; Changed(); }));
+        DialogBuilder.AddRow(glow, Strings.PropertiesPanel_SizeColon, DialogBuilder.SliderNumber(0, 250, style.GlowSize, v => { style.GlowSize = (float)v; Changed(); }));
 
         Grid stroke = DialogBuilder.Form();
-        DialogBuilder.AddRow(stroke, "Size:", DialogBuilder.SliderNumber(1, 250, style.StrokeSize, v => { style.StrokeSize = (float)v; Changed(); }));
-        DialogBuilder.AddRow(stroke, "Position:", DialogBuilder.Combo(Enum.GetValues<StrokePosition>().Select(p => (p.ToString(), p)), style.StrokePosition, v => { style.StrokePosition = v; Changed(); }));
-        DialogBuilder.AddRow(stroke, "Opacity:", DialogBuilder.SliderNumber(0, 100, style.StrokeOpacity * 100, v => { style.StrokeOpacity = (float)v / 100; Changed(); }));
-        DialogBuilder.AddRow(stroke, "Color:", ColorButton(() => style.StrokeColor, c => style.StrokeColor = c, "Stroke Color"));
+        DialogBuilder.AddRow(stroke, Strings.PropertiesPanel_SizeColon, DialogBuilder.SliderNumber(1, 250, style.StrokeSize, v => { style.StrokeSize = (float)v; Changed(); }));
+        DialogBuilder.AddRow(stroke, Strings.LayerStyleDialog_PositionColon, DialogBuilder.Combo(Enum.GetValues<StrokePosition>().Select(p => (EnumNames.Get(p), p)), style.StrokePosition, v => { style.StrokePosition = v; Changed(); }));
+        DialogBuilder.AddRow(stroke, Strings.EditorCommands_OpacityColon, DialogBuilder.SliderNumber(0, 100, style.StrokeOpacity * 100, v => { style.StrokeOpacity = (float)v / 100; Changed(); }));
+        DialogBuilder.AddRow(stroke, Strings.EditorCommands_ColorColon, ColorButton(() => style.StrokeColor, c => style.StrokeColor = c, Strings.EditorCommands_StrokeColor));
 
         Grid overlay = DialogBuilder.Form();
-        DialogBuilder.AddRow(overlay, "Color:", ColorButton(() => style.OverlayColor, c => style.OverlayColor = c, "Overlay Color"));
-        DialogBuilder.AddRow(overlay, "Opacity:", DialogBuilder.SliderNumber(0, 100, style.OverlayOpacity * 100, v => { style.OverlayOpacity = (float)v / 100; Changed(); }));
+        DialogBuilder.AddRow(overlay, Strings.EditorCommands_ColorColon, ColorButton(() => style.OverlayColor, c => style.OverlayColor = c, Strings.LayerStyleDialog_OverlayColor));
+        DialogBuilder.AddRow(overlay, Strings.EditorCommands_OpacityColon, DialogBuilder.SliderNumber(0, 100, style.OverlayOpacity * 100, v => { style.OverlayOpacity = (float)v / 100; Changed(); }));
 
         // Reference-style layout: a list of styles with enable checkboxes on the left, settings on the right.
         (string Title, Func<bool>? Get, Action<bool>? Set, Grid Body)[] sections =
         [
-            ("Blending Options", null, null, blending),
-            ("Stroke", () => style.Stroke, v => style.Stroke = v, stroke),
-            ("Inner Shadow", () => style.InnerShadow, v => style.InnerShadow = v, inner),
-            ("Color Overlay", () => style.ColorOverlay, v => style.ColorOverlay = v, overlay),
-            ("Outer Glow", () => style.OuterGlow, v => style.OuterGlow = v, glow),
-            ("Drop Shadow", () => style.DropShadow, v => style.DropShadow = v, shadow)
+            (Strings.LayerStyleDialog_BlendingOptions, null, null, blending),
+            (Strings.EditorCommands_Stroke, () => style.Stroke, v => style.Stroke = v, stroke),
+            (Strings.LayerStyleDialog_InnerShadow, () => style.InnerShadow, v => style.InnerShadow = v, inner),
+            (Strings.LayerStyleDialog_ColorOverlay, () => style.ColorOverlay, v => style.ColorOverlay = v, overlay),
+            (Strings.LayerStyleDialog_OuterGlow, () => style.OuterGlow, v => style.OuterGlow = v, glow),
+            (Strings.LayerStyleDialog_DropShadow, () => style.DropShadow, v => style.DropShadow = v, shadow)
         ];
         TextBlock detailTitle = new() { Classes = { "header" }, FontSize = 13, Margin = new Thickness(0, 0, 0, 10) };
         ContentControl detail = new();
@@ -146,6 +146,6 @@ public static class LayerStyleDialog
         layout.Children.Add(sidebar);
         layout.Children.Add(detailPanel);
         Select(0);
-        return await DialogBuilder.ShowAsync(owner, "Layer Style", layout, 640);
+        return await DialogBuilder.ShowAsync(owner, Strings.EditorCommands_LayerStyle, layout, 640);
     }
 }

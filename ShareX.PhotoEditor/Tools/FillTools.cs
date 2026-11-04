@@ -128,7 +128,7 @@ public sealed class GradientTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Combo("Gradient:", GradientDefinition.CreatePresets(Host.Foreground, Host.Background).Select(g => (g.Name, g.Name)),
+        options.Combo("Gradient:", GradientDefinition.CreatePresets(Host.Foreground, Host.Background).Select(g => (g.DisplayName, g.Name)),
             () => Host.Gradient.Name, name =>
             {
                 GradientDefinition? preset = GradientDefinition.CreatePresets(Host.Foreground, Host.Background).FirstOrDefault(g => g.Name == name);

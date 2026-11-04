@@ -47,12 +47,12 @@ public static class HdrToning
 
     public static readonly (string Name, float Radius, float Strength, bool SmoothEdges, float Gamma, float Exposure, float Detail, float Shadow, float Highlight, float Vibrance, float Saturation)[] Presets =
     [
-        ("Default", 300, 0.52f, false, 1, 0, 30, 0, 0, 0, 20),
-        ("Flat", 300, 0.52f, true, 1.4f, 0, 0, 20, -20, 0, 0),
-        ("Monochromatic", 300, 0.52f, false, 1, 0, 30, 0, 0, 0, -100),
-        ("Photorealistic", 300, 0.8f, true, 1.1f, 0, 30, 10, -10, 10, 10),
-        ("Saturated", 300, 0.52f, false, 1, 0, 30, 0, 0, 40, 40),
-        ("Surrealistic", 40, 2, false, 1, 0, 120, 30, -30, 20, 40)
+        (Strings.HdrToning_PresetDefault, 300, 0.52f, false, 1, 0, 30, 0, 0, 0, 20),
+        (Strings.HdrToning_PresetFlat, 300, 0.52f, true, 1.4f, 0, 0, 20, -20, 0, 0),
+        (Strings.HdrToning_PresetMonochromatic, 300, 0.52f, false, 1, 0, 30, 0, 0, 0, -100),
+        (Strings.HdrToning_PresetPhotorealistic, 300, 0.8f, true, 1.1f, 0, 30, 10, -10, 10, 10),
+        (Strings.HdrToning_PresetSaturated, 300, 0.52f, false, 1, 0, 30, 0, 0, 40, 40),
+        (Strings.HdrToning_PresetSurrealistic, 40, 2, false, 1, 0, 120, 30, -30, 20, 40)
     ];
 
     /// <summary>Sets the sliders of a preset and resets the toning curve. The method is left unchanged.</summary>

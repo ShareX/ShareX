@@ -107,7 +107,7 @@ public sealed class TypeTool : ToolBase
         if (!_dragging || Doc == null) return;
         _dragging = false;
         SKRect box = DragRect(_start, _current, false, false);
-        TextLayer layer = new(_mask ? "Type Mask" : "Layer");
+        TextLayer layer = new(_mask ? "Type Mask" : Strings.LayerNames_NewTypeLayer);
         Settings.CopyTextPropertiesTo(layer);
         layer.Text = string.Empty;
         layer.Color = Host.Foreground;

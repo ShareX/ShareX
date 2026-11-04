@@ -12,6 +12,519 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdjustmentEditor_Auto" xml:space="preserve">
+    <value>אוטומטי</value>
+  </data>
+  <data name="AdjustmentEditor_BlackColon" xml:space="preserve">
+    <value>שחור:</value>
+  </data>
+  <data name="AdjustmentEditor_Blacks" xml:space="preserve">
+    <value>שחורים</value>
+  </data>
+  <data name="AdjustmentEditor_Blue" xml:space="preserve">
+    <value>כחול</value>
+  </data>
+  <data name="AdjustmentEditor_BlueColon" xml:space="preserve">
+    <value>כחול:</value>
+  </data>
+  <data name="AdjustmentEditor_Blues" xml:space="preserve">
+    <value>כחולים</value>
+  </data>
+  <data name="AdjustmentEditor_BluesColon" xml:space="preserve">
+    <value>כחולים:</value>
+  </data>
+  <data name="AdjustmentEditor_BrightnessColon" xml:space="preserve">
+    <value>בהירות:</value>
+  </data>
+  <data name="AdjustmentEditor_ChannelColon" xml:space="preserve">
+    <value>ערוץ:</value>
+  </data>
+  <data name="AdjustmentEditor_Colorize" xml:space="preserve">
+    <value>צביעה</value>
+  </data>
+  <data name="AdjustmentEditor_ColorsColon" xml:space="preserve">
+    <value>צבעים:</value>
+  </data>
+  <data name="AdjustmentEditor_ConstantColon" xml:space="preserve">
+    <value>קבוע:</value>
+  </data>
+  <data name="AdjustmentEditor_ContrastColon" xml:space="preserve">
+    <value>ניגודיות:</value>
+  </data>
+  <data name="AdjustmentEditor_CurvesHint" xml:space="preserve">
+    <value>לחץ כדי להוסיף נקודות, גרור כדי לכוונן וגרור נקודה אל מחוץ לגרף כדי למחוק אותה.</value>
+  </data>
+  <data name="AdjustmentEditor_CyanColon" xml:space="preserve">
+    <value>ציאן:</value>
+  </data>
+  <data name="AdjustmentEditor_CyanRedColon" xml:space="preserve">
+    <value>ציאן / אדום:</value>
+  </data>
+  <data name="AdjustmentEditor_Cyans" xml:space="preserve">
+    <value>ציאנים</value>
+  </data>
+  <data name="AdjustmentEditor_CyansColon" xml:space="preserve">
+    <value>ציאנים:</value>
+  </data>
+  <data name="AdjustmentEditor_DensityColon" xml:space="preserve">
+    <value>צפיפות:</value>
+  </data>
+  <data name="AdjustmentEditor_EditGradientEllipsis" xml:space="preserve">
+    <value>ערוך מעבר צבע...</value>
+  </data>
+  <data name="AdjustmentEditor_ExposureColon" xml:space="preserve">
+    <value>חשיפה:</value>
+  </data>
+  <data name="AdjustmentEditor_FilterColorColon" xml:space="preserve">
+    <value>צבע מסנן:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaColon" xml:space="preserve">
+    <value>גאמה:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaCorrectionColon" xml:space="preserve">
+    <value>תיקון גאמה:</value>
+  </data>
+  <data name="AdjustmentEditor_Green" xml:space="preserve">
+    <value>ירוק</value>
+  </data>
+  <data name="AdjustmentEditor_GreenColon" xml:space="preserve">
+    <value>ירוק:</value>
+  </data>
+  <data name="AdjustmentEditor_Greens" xml:space="preserve">
+    <value>ירוקים</value>
+  </data>
+  <data name="AdjustmentEditor_GreensColon" xml:space="preserve">
+    <value>ירוקים:</value>
+  </data>
+  <data name="AdjustmentEditor_Highlights" xml:space="preserve">
+    <value>אזורים בהירים</value>
+  </data>
+  <data name="AdjustmentEditor_HueColon" xml:space="preserve">
+    <value>גוון:</value>
+  </data>
+  <data name="AdjustmentEditor_InputBlackColon" xml:space="preserve">
+    <value>שחור קלט:</value>
+  </data>
+  <data name="AdjustmentEditor_InputWhiteColon" xml:space="preserve">
+    <value>לבן קלט:</value>
+  </data>
+  <data name="AdjustmentEditor_LevelsColon" xml:space="preserve">
+    <value>רמות:</value>
+  </data>
+  <data name="AdjustmentEditor_LightnessColon" xml:space="preserve">
+    <value>בהירות צבע:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaColon" xml:space="preserve">
+    <value>מג'נטה:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaGreenColon" xml:space="preserve">
+    <value>מג'נטה / ירוק:</value>
+  </data>
+  <data name="AdjustmentEditor_Magentas" xml:space="preserve">
+    <value>מג'נטות</value>
+  </data>
+  <data name="AdjustmentEditor_MagentasColon" xml:space="preserve">
+    <value>מג'נטות:</value>
+  </data>
+  <data name="AdjustmentEditor_Midtones" xml:space="preserve">
+    <value>גוונים בינוניים</value>
+  </data>
+  <data name="AdjustmentEditor_Monochrome" xml:space="preserve">
+    <value>מונוכרום</value>
+  </data>
+  <data name="AdjustmentEditor_Neutrals" xml:space="preserve">
+    <value>ניטרליים</value>
+  </data>
+  <data name="AdjustmentEditor_NoOptions" xml:space="preserve">
+    <value>לכוונון זה אין אפשרויות.</value>
+  </data>
+  <data name="AdjustmentEditor_OffsetColon" xml:space="preserve">
+    <value>היסט:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputBlackColon" xml:space="preserve">
+    <value>שחור פלט:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputChannelColon" xml:space="preserve">
+    <value>ערוץ פלט:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputWhiteColon" xml:space="preserve">
+    <value>לבן פלט:</value>
+  </data>
+  <data name="AdjustmentEditor_PreserveLuminosity" xml:space="preserve">
+    <value>שמור על עוצמת הארה</value>
+  </data>
+  <data name="AdjustmentEditor_Red" xml:space="preserve">
+    <value>אדום</value>
+  </data>
+  <data name="AdjustmentEditor_RedColon" xml:space="preserve">
+    <value>אדום:</value>
+  </data>
+  <data name="AdjustmentEditor_Reds" xml:space="preserve">
+    <value>אדומים</value>
+  </data>
+  <data name="AdjustmentEditor_RedsColon" xml:space="preserve">
+    <value>אדומים:</value>
+  </data>
+  <data name="AdjustmentEditor_ResetChannel" xml:space="preserve">
+    <value>אפס ערוץ</value>
+  </data>
+  <data name="AdjustmentEditor_Reverse" xml:space="preserve">
+    <value>הפוך</value>
+  </data>
+  <data name="AdjustmentEditor_SaturationColon" xml:space="preserve">
+    <value>רוויה:</value>
+  </data>
+  <data name="AdjustmentEditor_Shadows" xml:space="preserve">
+    <value>צללים</value>
+  </data>
+  <data name="AdjustmentEditor_ThresholdLevelColon" xml:space="preserve">
+    <value>רמת סף:</value>
+  </data>
+  <data name="AdjustmentEditor_Tint" xml:space="preserve">
+    <value>צביעה</value>
+  </data>
+  <data name="AdjustmentEditor_TintColorColon" xml:space="preserve">
+    <value>צבע הצביעה:</value>
+  </data>
+  <data name="AdjustmentEditor_ToneColon" xml:space="preserve">
+    <value>טון:</value>
+  </data>
+  <data name="AdjustmentEditor_UseLegacy" xml:space="preserve">
+    <value>השתמש בשיטה הישנה</value>
+  </data>
+  <data name="AdjustmentEditor_VibranceColon" xml:space="preserve">
+    <value>חיות:</value>
+  </data>
+  <data name="AdjustmentEditor_Whites" xml:space="preserve">
+    <value>לבנים</value>
+  </data>
+  <data name="AdjustmentEditor_YellowBlueColon" xml:space="preserve">
+    <value>צהוב / כחול:</value>
+  </data>
+  <data name="AdjustmentEditor_YellowColon" xml:space="preserve">
+    <value>צהוב:</value>
+  </data>
+  <data name="AdjustmentEditor_Yellows" xml:space="preserve">
+    <value>צהובים</value>
+  </data>
+  <data name="AdjustmentEditor_YellowsColon" xml:space="preserve">
+    <value>צהובים:</value>
+  </data>
+  <data name="AdjustmentsPanel_AddAdjustment" xml:space="preserve">
+    <value>הוסף כוונון</value>
+  </data>
+  <data name="AdjustmentsPanel_CreateAdjustmentLayerTip" xml:space="preserve">
+    <value>צור שכבת כוונון {0} חדשה</value>
+  </data>
+  <data name="Adjustments_BlackAndWhite" xml:space="preserve">
+    <value>שחור ולבן</value>
+  </data>
+  <data name="Adjustments_BrightnessContrast" xml:space="preserve">
+    <value>בהירות/ניגודיות</value>
+  </data>
+  <data name="Adjustments_ChannelMixer" xml:space="preserve">
+    <value>מערבל ערוצים</value>
+  </data>
+  <data name="Adjustments_ColorBalance" xml:space="preserve">
+    <value>איזון צבעים</value>
+  </data>
+  <data name="Adjustments_ColorLookup" xml:space="preserve">
+    <value>חיפוש צבע</value>
+  </data>
+  <data name="Adjustments_Curves" xml:space="preserve">
+    <value>עקומות</value>
+  </data>
+  <data name="Adjustments_Desaturate" xml:space="preserve">
+    <value>הסר רוויה</value>
+  </data>
+  <data name="Adjustments_Exposure" xml:space="preserve">
+    <value>חשיפה</value>
+  </data>
+  <data name="Adjustments_GradientMap" xml:space="preserve">
+    <value>מיפוי מעבר צבע</value>
+  </data>
+  <data name="Adjustments_HdrToning" xml:space="preserve">
+    <value>גיוון HDR</value>
+  </data>
+  <data name="Adjustments_HueSaturation" xml:space="preserve">
+    <value>גוון/רוויה</value>
+  </data>
+  <data name="Adjustments_Invert" xml:space="preserve">
+    <value>היפוך צבעים</value>
+  </data>
+  <data name="Adjustments_Levels" xml:space="preserve">
+    <value>רמות</value>
+  </data>
+  <data name="Adjustments_MatchColor" xml:space="preserve">
+    <value>התאם צבע</value>
+  </data>
+  <data name="Adjustments_PhotoFilter" xml:space="preserve">
+    <value>מסנן צילום</value>
+  </data>
+  <data name="Adjustments_Posterize" xml:space="preserve">
+    <value>הפרדת גוונים</value>
+  </data>
+  <data name="Adjustments_ReplaceColor" xml:space="preserve">
+    <value>החלפת צבע</value>
+  </data>
+  <data name="Adjustments_SelectiveColor" xml:space="preserve">
+    <value>צבע סלקטיבי</value>
+  </data>
+  <data name="Adjustments_Threshold" xml:space="preserve">
+    <value>סף</value>
+  </data>
+  <data name="Adjustments_Vibrance" xml:space="preserve">
+    <value>חיוניות צבע</value>
+  </data>
+  <data name="BlendModes_Behind" xml:space="preserve">
+    <value>מאחור</value>
+  </data>
+  <data name="BlendModes_Clear" xml:space="preserve">
+    <value>נקה</value>
+  </data>
+  <data name="BlendModes_Color" xml:space="preserve">
+    <value>צבע</value>
+  </data>
+  <data name="BlendModes_ColorBurn" xml:space="preserve">
+    <value>צריבת צבע</value>
+  </data>
+  <data name="BlendModes_ColorDodge" xml:space="preserve">
+    <value>הבהרת צבע</value>
+  </data>
+  <data name="BlendModes_Darken" xml:space="preserve">
+    <value>הכהה</value>
+  </data>
+  <data name="BlendModes_DarkerColor" xml:space="preserve">
+    <value>צבע כהה יותר</value>
+  </data>
+  <data name="BlendModes_Difference" xml:space="preserve">
+    <value>הפרש</value>
+  </data>
+  <data name="BlendModes_Dissolve" xml:space="preserve">
+    <value>המסה</value>
+  </data>
+  <data name="BlendModes_Divide" xml:space="preserve">
+    <value>חלוקה</value>
+  </data>
+  <data name="BlendModes_Exclusion" xml:space="preserve">
+    <value>החרגה</value>
+  </data>
+  <data name="BlendModes_HardLight" xml:space="preserve">
+    <value>אור חזק</value>
+  </data>
+  <data name="BlendModes_HardMix" xml:space="preserve">
+    <value>ערבוב קשה</value>
+  </data>
+  <data name="BlendModes_Hue" xml:space="preserve">
+    <value>גוון</value>
+  </data>
+  <data name="BlendModes_Lighten" xml:space="preserve">
+    <value>הבהר</value>
+  </data>
+  <data name="BlendModes_LighterColor" xml:space="preserve">
+    <value>צבע בהיר יותר</value>
+  </data>
+  <data name="BlendModes_LinearBurn" xml:space="preserve">
+    <value>צריבה לינארית</value>
+  </data>
+  <data name="BlendModes_LinearDodge" xml:space="preserve">
+    <value>הבהרה לינארית (הוספה)</value>
+  </data>
+  <data name="BlendModes_LinearLight" xml:space="preserve">
+    <value>אור לינארי</value>
+  </data>
+  <data name="BlendModes_Luminosity" xml:space="preserve">
+    <value>עוצמת הארה</value>
+  </data>
+  <data name="BlendModes_Multiply" xml:space="preserve">
+    <value>הכפלה</value>
+  </data>
+  <data name="BlendModes_Normal" xml:space="preserve">
+    <value>רגיל</value>
+  </data>
+  <data name="BlendModes_Overlay" xml:space="preserve">
+    <value>שכבת-על</value>
+  </data>
+  <data name="BlendModes_PassThrough" xml:space="preserve">
+    <value>מעבר</value>
+  </data>
+  <data name="BlendModes_PinLight" xml:space="preserve">
+    <value>אור נקודתי</value>
+  </data>
+  <data name="BlendModes_Saturation" xml:space="preserve">
+    <value>רוויה</value>
+  </data>
+  <data name="BlendModes_Screen" xml:space="preserve">
+    <value>מסך</value>
+  </data>
+  <data name="BlendModes_SoftLight" xml:space="preserve">
+    <value>אור רך</value>
+  </data>
+  <data name="BlendModes_Subtract" xml:space="preserve">
+    <value>חיסור</value>
+  </data>
+  <data name="BlendModes_VividLight" xml:space="preserve">
+    <value>אור חי</value>
+  </data>
+  <data name="BrushesPanel_Angle" xml:space="preserve">
+    <value>זווית</value>
+  </data>
+  <data name="BrushesPanel_Hardness" xml:space="preserve">
+    <value>קשיחות</value>
+  </data>
+  <data name="BrushesPanel_NewBrushPresetEllipsis" xml:space="preserve">
+    <value>הגדרה קבועה חדשה של מברשת...</value>
+  </data>
+  <data name="BrushesPanel_PressureFlow" xml:space="preserve">
+    <value>לחץ העט שולט בזרימה</value>
+  </data>
+  <data name="BrushesPanel_PressureSize" xml:space="preserve">
+    <value>לחץ העט שולט בגודל</value>
+  </data>
+  <data name="BrushesPanel_Roundness" xml:space="preserve">
+    <value>עגלגלות</value>
+  </data>
+  <data name="BrushesPanel_Scatter" xml:space="preserve">
+    <value>פיזור</value>
+  </data>
+  <data name="BrushesPanel_SelectPaintingTool" xml:space="preserve">
+    <value>בחר כלי צביעה כדי לערוך את המברשת שלו.</value>
+  </data>
+  <data name="BrushesPanel_Size" xml:space="preserve">
+    <value>גודל:</value>
+  </data>
+  <data name="BrushesPanel_SizeJitter" xml:space="preserve">
+    <value>תנודת גודל</value>
+  </data>
+  <data name="BrushesPanel_Spacing" xml:space="preserve">
+    <value>מרווח</value>
+  </data>
+  <data name="BrushesPanel_SquareTip" xml:space="preserve">
+    <value>קצה מרובע</value>
+  </data>
+  <data name="CanvasSizeDialog_AnchorColon" xml:space="preserve">
+    <value>עוגן:</value>
+  </data>
+  <data name="CanvasSizeDialog_CurrentSize" xml:space="preserve">
+    <value>גודל נוכחי: {0} × {1} px</value>
+  </data>
+  <data name="CanvasSizeDialog_ExtensionColorColon" xml:space="preserve">
+    <value>צבע הרחבת הבד:</value>
+  </data>
+  <data name="CanvasSizeDialog_Foreground" xml:space="preserve">
+    <value>קדמי</value>
+  </data>
+  <data name="CanvasSizeDialog_Gray" xml:space="preserve">
+    <value>אפור</value>
+  </data>
+  <data name="CanvasSizeDialog_Relative" xml:space="preserve">
+    <value>יחסי</value>
+  </data>
+  <data name="CanvasView_EditCancelled" xml:space="preserve">
+    <value>העריכה בוטלה כי המסמך השתנה.</value>
+  </data>
+  <data name="CanvasView_EmptyHint" xml:space="preserve">
+    <value>פתח או צור מסמך כדי להתחיל לערוך (Ctrl+O / Ctrl+N), או שחרר כאן תמונה.</value>
+  </data>
+  <data name="ChannelsPanel_ChannelOptions" xml:space="preserve">
+    <value>אפשרויות ערוץ</value>
+  </data>
+  <data name="ChannelsPanel_DeleteChannelTip" xml:space="preserve">
+    <value>מחק את הערוץ הנוכחי</value>
+  </data>
+  <data name="ChannelsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>טען ערוץ כבחירה</value>
+  </data>
+  <data name="ChannelsPanel_NewChannelTip" xml:space="preserve">
+    <value>צור ערוץ חדש</value>
+  </data>
+  <data name="ChannelsPanel_QuickMask" xml:space="preserve">
+    <value>מסכה מהירה</value>
+  </data>
+  <data name="ChannelsPanel_SaveSelectionTip" xml:space="preserve">
+    <value>שמור בחירה כערוץ</value>
+  </data>
+  <data name="ChannelsPanel_ShowOverlayTip" xml:space="preserve">
+    <value>הצג את הערוץ כשכבת-על</value>
+  </data>
+  <data name="ColorLookupEditor_CouldNotLoad" xml:space="preserve">
+    <value>לא ניתן לטעון את ה-3D LUT: {0}</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLut" xml:space="preserve">
+    <value>טען 3D LUT</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLutEllipsis" xml:space="preserve">
+    <value>טען 3D LUT...</value>
+  </data>
+  <data name="ColorLookupEditor_LutFileColon" xml:space="preserve">
+    <value>קובץ 3D LUT:</value>
+  </data>
+  <data name="ColorLookupEditor_LutFiles" xml:space="preserve">
+    <value>קובצי 3D LUT</value>
+  </data>
+  <data name="ColorLut_1DNotSupported" xml:space="preserve">
+    <value>טבלאות חיפוש חד-ממדיות אינן נתמכות.</value>
+  </data>
+  <data name="ColorLut_DataSizeMismatch" xml:space="preserve">
+    <value>נתוני הטבלה אינם תואמים לגודלה.</value>
+  </data>
+  <data name="ColorLut_InvalidDomain" xml:space="preserve">
+    <value>תחום הטבלה אינו תקין.</value>
+  </data>
+  <data name="ColorLut_NoSizeEntry" xml:space="preserve">
+    <value>בקובץ אין רשומת LUT_3D_SIZE.</value>
+  </data>
+  <data name="ColorLut_SizeNotSupported" xml:space="preserve">
+    <value>גודל הטבלה {0} אינו נתמך.</value>
+  </data>
+  <data name="ColorPanel_BackgroundColor" xml:space="preserve">
+    <value>צבע רקע</value>
+  </data>
+  <data name="ColorPanel_BackgroundTip" xml:space="preserve">
+    <value>צבע רקע. לחיצה כפולה פותחת את בוחר הצבעים.</value>
+  </data>
+  <data name="ColorPanel_ForegroundColor" xml:space="preserve">
+    <value>צבע קדמי</value>
+  </data>
+  <data name="ColorPanel_ForegroundTip" xml:space="preserve">
+    <value>צבע קדמי. לחיצה כפולה פותחת את בוחר הצבעים.</value>
+  </data>
+  <data name="ColorPickerDialog_AddToSwatches" xml:space="preserve">
+    <value>הוסף לדוגמיות</value>
+  </data>
+  <data name="ColorPickerDialog_NotWebColorTip" xml:space="preserve">
+    <value>לא צבע אינטרנט. לחץ על הדוגמית כדי להשתמש בצבע הקרוב ביותר.</value>
+  </data>
+  <data name="ColorPickerDialog_OnlyWebColors" xml:space="preserve">
+    <value>צבעי אינטרנט בלבד</value>
+  </data>
+  <data name="ColorPickerDialog_Reset" xml:space="preserve">
+    <value>איפוס</value>
+  </data>
+  <data name="ColorPickerDialog_RestoreCurrentTip" xml:space="preserve">
+    <value>לחץ כדי לשחזר את הצבע הנוכחי</value>
+  </data>
+  <data name="ColorPickerDialog_Title" xml:space="preserve">
+    <value>בוחר צבעים</value>
+  </data>
+  <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
+    <value>בוחר צבעים ({0})</value>
+  </data>
+  <data name="DialogBuilder_Cancel" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="DialogBuilder_No" xml:space="preserve">
+    <value>לא</value>
+  </data>
+  <data name="DialogBuilder_OK" xml:space="preserve">
+    <value>אישור</value>
+  </data>
+  <data name="DialogBuilder_Yes" xml:space="preserve">
+    <value>כן</value>
+  </data>
+  <data name="DocumentItems_CountGroup1" xml:space="preserve">
+    <value>קבוצת ספירה 1</value>
+  </data>
   <data name="EditorCommands_90Clockwise" xml:space="preserve">
     <value>90° עם כיוון השעון</value>
   </data>
@@ -1284,6 +1797,255 @@
   <data name="EditorCommands_ZoomOut" xml:space="preserve">
     <value>התרחק</value>
   </data>
+  <data name="Enum_ArtStyle_Dab" xml:space="preserve">
+    <value>טפיחה</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseCurl" xml:space="preserve">
+    <value>תלתל רופף</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseLong" xml:space="preserve">
+    <value>ארוך רופף</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseMedium" xml:space="preserve">
+    <value>בינוני רופף</value>
+  </data>
+  <data name="Enum_ArtStyle_TightCurl" xml:space="preserve">
+    <value>תלתל הדוק</value>
+  </data>
+  <data name="Enum_ArtStyle_TightLong" xml:space="preserve">
+    <value>ארוך הדוק</value>
+  </data>
+  <data name="Enum_ArtStyle_TightMedium" xml:space="preserve">
+    <value>בינוני הדוק</value>
+  </data>
+  <data name="Enum_ArtStyle_TightShort" xml:space="preserve">
+    <value>קצר הדוק</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Bottom" xml:space="preserve">
+    <value>למטה</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomLeft" xml:space="preserve">
+    <value>למטה משמאל</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomRight" xml:space="preserve">
+    <value>למטה מימין</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Center" xml:space="preserve">
+    <value>מרכז</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Left" xml:space="preserve">
+    <value>שמאל</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Right" xml:space="preserve">
+    <value>ימין</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Top" xml:space="preserve">
+    <value>למעלה</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopLeft" xml:space="preserve">
+    <value>למעלה משמאל</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopRight" xml:space="preserve">
+    <value>למעלה מימין</value>
+  </data>
+  <data name="Enum_EraserMode_Block" xml:space="preserve">
+    <value>גוש</value>
+  </data>
+  <data name="Enum_EraserMode_Brush" xml:space="preserve">
+    <value>מברשת</value>
+  </data>
+  <data name="Enum_EraserMode_Pencil" xml:space="preserve">
+    <value>עיפרון</value>
+  </data>
+  <data name="Enum_FillKind_Gradient" xml:space="preserve">
+    <value>מעבר צבע</value>
+  </data>
+  <data name="Enum_FillKind_Pattern" xml:space="preserve">
+    <value>דוגמה</value>
+  </data>
+  <data name="Enum_FillKind_SolidColor" xml:space="preserve">
+    <value>צבע אחיד</value>
+  </data>
+  <data name="Enum_GradientType_Angle" xml:space="preserve">
+    <value>זווית</value>
+  </data>
+  <data name="Enum_GradientType_Diamond" xml:space="preserve">
+    <value>יהלום</value>
+  </data>
+  <data name="Enum_GradientType_Linear" xml:space="preserve">
+    <value>לינארי</value>
+  </data>
+  <data name="Enum_GradientType_Radial" xml:space="preserve">
+    <value>רדיאלי</value>
+  </data>
+  <data name="Enum_GradientType_Reflected" xml:space="preserve">
+    <value>משתקף</value>
+  </data>
+  <data name="Enum_HealType_ContentAware" xml:space="preserve">
+    <value>מודע תוכן</value>
+  </data>
+  <data name="Enum_HealType_CreateTexture" xml:space="preserve">
+    <value>צור מרקם</value>
+  </data>
+  <data name="Enum_HealType_ProximityMatch" xml:space="preserve">
+    <value>התאמת קרבה</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedRatio" xml:space="preserve">
+    <value>יחס קבוע</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedSize" xml:space="preserve">
+    <value>גודל קבוע</value>
+  </data>
+  <data name="Enum_MarqueeStyle_Normal" xml:space="preserve">
+    <value>רגיל</value>
+  </data>
+  <data name="Enum_PathCombine_Combine" xml:space="preserve">
+    <value>שלב צורות</value>
+  </data>
+  <data name="Enum_PathCombine_Exclude" xml:space="preserve">
+    <value>החרג צורות חופפות</value>
+  </data>
+  <data name="Enum_PathCombine_Intersect" xml:space="preserve">
+    <value>חתוך אזורי צורה</value>
+  </data>
+  <data name="Enum_PathCombine_NewLayer" xml:space="preserve">
+    <value>שכבה חדשה</value>
+  </data>
+  <data name="Enum_PathCombine_Subtract" xml:space="preserve">
+    <value>חסר את הצורה הקדמית</value>
+  </data>
+  <data name="Enum_PathToolMode_Path" xml:space="preserve">
+    <value>נתיב</value>
+  </data>
+  <data name="Enum_PathToolMode_Shape" xml:space="preserve">
+    <value>צורה</value>
+  </data>
+  <data name="Enum_ReplaceMode_Color" xml:space="preserve">
+    <value>צבע</value>
+  </data>
+  <data name="Enum_ReplaceMode_Hue" xml:space="preserve">
+    <value>גוון</value>
+  </data>
+  <data name="Enum_ReplaceMode_Luminosity" xml:space="preserve">
+    <value>עוצמת הארה</value>
+  </data>
+  <data name="Enum_ReplaceMode_Saturation" xml:space="preserve">
+    <value>רוויה</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bicubic" xml:space="preserve">
+    <value>דו-קובי</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSharper" xml:space="preserve">
+    <value>ביקובית חדה יותר</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSmoother" xml:space="preserve">
+    <value>ביקובית חלקה יותר</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bilinear" xml:space="preserve">
+    <value>דו-ליניארי</value>
+  </data>
+  <data name="Enum_ResampleMethod_Lanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="Enum_ResampleMethod_NearestNeighbor" xml:space="preserve">
+    <value>השכן הקרוב ביותר</value>
+  </data>
+  <data name="Enum_Sampling_BackgroundSwatch" xml:space="preserve">
+    <value>דוגמית רקע</value>
+  </data>
+  <data name="Enum_Sampling_Continuous" xml:space="preserve">
+    <value>רציף</value>
+  </data>
+  <data name="Enum_Sampling_Once" xml:space="preserve">
+    <value>פעם אחת</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
+    <value>נתיב</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Pixels" xml:space="preserve">
+    <value>פיקסלים</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Shape" xml:space="preserve">
+    <value>צורה</value>
+  </data>
+  <data name="Enum_StrokePosition_Center" xml:space="preserve">
+    <value>מרכז</value>
+  </data>
+  <data name="Enum_StrokePosition_Inside" xml:space="preserve">
+    <value>פנימי</value>
+  </data>
+  <data name="Enum_StrokePosition_Outside" xml:space="preserve">
+    <value>חיצוני</value>
+  </data>
+  <data name="Enum_TextAlignment_Center" xml:space="preserve">
+    <value>מרכז</value>
+  </data>
+  <data name="Enum_TextAlignment_Justify" xml:space="preserve">
+    <value>יישור לשני הצדדים</value>
+  </data>
+  <data name="Enum_TextAlignment_Left" xml:space="preserve">
+    <value>שמאל</value>
+  </data>
+  <data name="Enum_TextAlignment_Right" xml:space="preserve">
+    <value>ימין</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Crisp" xml:space="preserve">
+    <value>חד</value>
+  </data>
+  <data name="Enum_TextAntiAlias_None" xml:space="preserve">
+    <value>ללא</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Sharp" xml:space="preserve">
+    <value>מושחז</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Smooth" xml:space="preserve">
+    <value>חלק</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Strong" xml:space="preserve">
+    <value>חזק</value>
+  </data>
+  <data name="Enum_ToneRange_Highlights" xml:space="preserve">
+    <value>אזורים בהירים</value>
+  </data>
+  <data name="Enum_ToneRange_Midtones" xml:space="preserve">
+    <value>גוונים בינוניים</value>
+  </data>
+  <data name="Enum_ToneRange_Shadows" xml:space="preserve">
+    <value>צללים</value>
+  </data>
+  <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
+    <value>ייצוא...</value>
+  </data>
+  <data name="ExportDialog_FormatColon" xml:space="preserve">
+    <value>תבנית:</value>
+  </data>
+  <data name="ExportDialog_HeightPxColon" xml:space="preserve">
+    <value>גובה (px):</value>
+  </data>
+  <data name="ExportDialog_Lossless" xml:space="preserve">
+    <value>ללא אובדן</value>
+  </data>
+  <data name="FillDialog_ColorEllipsis" xml:space="preserve">
+    <value>צבע...</value>
+  </data>
+  <data name="FillDialog_ContentsColon" xml:space="preserve">
+    <value>תוכן:</value>
+  </data>
+  <data name="FillDialog_FillColor" xml:space="preserve">
+    <value>צבע מילוי</value>
+  </data>
+  <data name="FillDialog_HalfGray" xml:space="preserve">
+    <value>אפור 50%</value>
+  </data>
+  <data name="FillDialog_OpacityPercentColon" xml:space="preserve">
+    <value>אטימות (%):</value>
+  </data>
+  <data name="FillDialog_PatternColon" xml:space="preserve">
+    <value>דוגמה:</value>
+  </data>
+  <data name="FillDialog_PreserveTransparency" xml:space="preserve">
+    <value>שמור על שקיפות</value>
+  </data>
   <data name="Filters_AddNoise" xml:space="preserve">
     <value>הוסף רעש</value>
   </data>
@@ -1536,6 +2298,123 @@
   <data name="Filters_Wave" xml:space="preserve">
     <value>גל</value>
   </data>
+  <data name="GradientEditorDialog_AddStop" xml:space="preserve">
+    <value>הוסף עצירה</value>
+  </data>
+  <data name="GradientEditorDialog_Custom" xml:space="preserve">
+    <value>מותאם אישית</value>
+  </data>
+  <data name="GradientEditorDialog_Location" xml:space="preserve">
+    <value>מיקום</value>
+  </data>
+  <data name="GradientEditorDialog_Presets" xml:space="preserve">
+    <value>הגדרות קבועות מראש</value>
+  </data>
+  <data name="GradientEditorDialog_StopColor" xml:space="preserve">
+    <value>צבע עצירה</value>
+  </data>
+  <data name="GradientEditorDialog_Title" xml:space="preserve">
+    <value>עורך מעבר צבע</value>
+  </data>
+  <data name="HdrToningEditor_Advanced" xml:space="preserve">
+    <value>מתקדם</value>
+  </data>
+  <data name="HdrToningEditor_DetailColon" xml:space="preserve">
+    <value>פרטים:</value>
+  </data>
+  <data name="HdrToningEditor_EdgeGlow" xml:space="preserve">
+    <value>זוהר קצוות</value>
+  </data>
+  <data name="HdrToningEditor_EqualizeHistogram" xml:space="preserve">
+    <value>השווה היסטוגרמה</value>
+  </data>
+  <data name="HdrToningEditor_ExposureAndGamma" xml:space="preserve">
+    <value>חשיפה וגאמה</value>
+  </data>
+  <data name="HdrToningEditor_HighlightColon" xml:space="preserve">
+    <value>אזורים בהירים:</value>
+  </data>
+  <data name="HdrToningEditor_HighlightCompression" xml:space="preserve">
+    <value>דחיסת אזורים בהירים</value>
+  </data>
+  <data name="HdrToningEditor_LocalAdaptation" xml:space="preserve">
+    <value>הסתגלות מקומית</value>
+  </data>
+  <data name="HdrToningEditor_MethodColon" xml:space="preserve">
+    <value>שיטה:</value>
+  </data>
+  <data name="HdrToningEditor_NoOptions" xml:space="preserve">
+    <value>לשיטה זו אין אפשרויות.</value>
+  </data>
+  <data name="HdrToningEditor_PresetColon" xml:space="preserve">
+    <value>הגדרה קבועה:</value>
+  </data>
+  <data name="HdrToningEditor_RadiusColon" xml:space="preserve">
+    <value>רדיוס:</value>
+  </data>
+  <data name="HdrToningEditor_ResetCurve" xml:space="preserve">
+    <value>אפס עקומה</value>
+  </data>
+  <data name="HdrToningEditor_ShadowColon" xml:space="preserve">
+    <value>צל:</value>
+  </data>
+  <data name="HdrToningEditor_SmoothEdges" xml:space="preserve">
+    <value>החלק קצוות</value>
+  </data>
+  <data name="HdrToningEditor_StrengthColon" xml:space="preserve">
+    <value>עוצמה:</value>
+  </data>
+  <data name="HdrToningEditor_ToneAndDetail" xml:space="preserve">
+    <value>טון ופרטים</value>
+  </data>
+  <data name="HdrToningEditor_ToningCurveAndHistogram" xml:space="preserve">
+    <value>עקומת גיוון והיסטוגרמה</value>
+  </data>
+  <data name="HdrToning_PresetDefault" xml:space="preserve">
+    <value>ברירת מחדל</value>
+  </data>
+  <data name="HdrToning_PresetFlat" xml:space="preserve">
+    <value>שטוח</value>
+  </data>
+  <data name="HdrToning_PresetMonochromatic" xml:space="preserve">
+    <value>מונוכרומטי</value>
+  </data>
+  <data name="HdrToning_PresetPhotorealistic" xml:space="preserve">
+    <value>פוטוריאליסטי</value>
+  </data>
+  <data name="HdrToning_PresetSaturated" xml:space="preserve">
+    <value>רווי</value>
+  </data>
+  <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
+    <value>סוריאליסטי</value>
+  </data>
+  <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
+    <value>מחק תמונת מצב</value>
+  </data>
+  <data name="HistoryPanel_DeleteStatesTip" xml:space="preserve">
+    <value>מחק את המצבים שאחרי המצב הנוכחי</value>
+  </data>
+  <data name="HistoryPanel_HistoryBrushSourceTip" xml:space="preserve">
+    <value>הגדר את המקור עבור מברשת ההיסטוריה</value>
+  </data>
+  <data name="HistoryPanel_NewDocumentTip" xml:space="preserve">
+    <value>צור מסמך חדש מהמצב הנוכחי</value>
+  </data>
+  <data name="HistoryPanel_NewSnapshotTip" xml:space="preserve">
+    <value>צור תמונת מצב חדשה</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshot" xml:space="preserve">
+    <value>שנה שם תמונת מצב</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshotEllipsis" xml:space="preserve">
+    <value>שנה שם תמונת מצב...</value>
+  </data>
+  <data name="History_SnapshotNumber" xml:space="preserve">
+    <value>תמונת מצב {0}</value>
+  </data>
+  <data name="ImageIO_AllSupportedImages" xml:space="preserve">
+    <value>כל התמונות הנתמכות</value>
+  </data>
   <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
     <value>לא ניתן לפתוח את "{0}": {1}</value>
   </data>
@@ -1557,6 +2436,15 @@
   <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
     <value>קידוד WebP נכשל.</value>
   </data>
+  <data name="ImageSizeDialog_ConstrainProportions" xml:space="preserve">
+    <value>שמור על פרופורציות</value>
+  </data>
+  <data name="ImageSizeDialog_PercentColon" xml:space="preserve">
+    <value>אחוזים:</value>
+  </data>
+  <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
+    <value>דגום מחדש:</value>
+  </data>
   <data name="LayerNames_Background" xml:space="preserve">
     <value>רקע</value>
   </data>
@@ -1566,10 +2454,757 @@
   <data name="LayerNames_Layer0" xml:space="preserve">
     <value>שכבה 0</value>
   </data>
+  <data name="LayerNames_NewTypeLayer" xml:space="preserve">
+    <value>שכבה</value>
+  </data>
+  <data name="LayerNames_Text" xml:space="preserve">
+    <value>טקסט</value>
+  </data>
+  <data name="LayerStyleDialog_AngleColon" xml:space="preserve">
+    <value>זווית:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendModeColon" xml:space="preserve">
+    <value>מצב מיזוג:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendingOptions" xml:space="preserve">
+    <value>אפשרויות מיזוג</value>
+  </data>
+  <data name="LayerStyleDialog_ColorOverlay" xml:space="preserve">
+    <value>שכבת-על של צבע</value>
+  </data>
+  <data name="LayerStyleDialog_DistanceColon" xml:space="preserve">
+    <value>מרחק:</value>
+  </data>
+  <data name="LayerStyleDialog_DropShadow" xml:space="preserve">
+    <value>הטלת צל</value>
+  </data>
+  <data name="LayerStyleDialog_FillOpacityColon" xml:space="preserve">
+    <value>אטימות מילוי:</value>
+  </data>
+  <data name="LayerStyleDialog_GlowColor" xml:space="preserve">
+    <value>צבע הזוהר</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadow" xml:space="preserve">
+    <value>צל פנימי</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadowColor" xml:space="preserve">
+    <value>צבע הצל הפנימי</value>
+  </data>
+  <data name="LayerStyleDialog_OuterGlow" xml:space="preserve">
+    <value>זוהר חיצוני</value>
+  </data>
+  <data name="LayerStyleDialog_OverlayColor" xml:space="preserve">
+    <value>צבע שכבת-העל</value>
+  </data>
+  <data name="LayerStyleDialog_PositionColon" xml:space="preserve">
+    <value>מיקום:</value>
+  </data>
+  <data name="LayerStyleDialog_ShadowColor" xml:space="preserve">
+    <value>צבע הצל</value>
+  </data>
+  <data name="LayersPanel_AddLayerMaskTip" xml:space="preserve">
+    <value>הוסף מסכת שכבה (Alt: הסתר הכול)</value>
+  </data>
+  <data name="LayersPanel_AddLayerStyleTip" xml:space="preserve">
+    <value>הוסף סגנון שכבה</value>
+  </data>
+  <data name="LayersPanel_BlendingChange" xml:space="preserve">
+    <value>שינוי מיזוג</value>
+  </data>
+  <data name="LayersPanel_BlendingOptionsEllipsis" xml:space="preserve">
+    <value>אפשרויות מיזוג...</value>
+  </data>
+  <data name="LayersPanel_ChangeLayerLock" xml:space="preserve">
+    <value>שינוי נעילת שכבה</value>
+  </data>
+  <data name="LayersPanel_DeleteLayerTip" xml:space="preserve">
+    <value>מחק שכבה</value>
+  </data>
+  <data name="LayersPanel_DuplicateLayerEllipsis" xml:space="preserve">
+    <value>שכפל שכבה...</value>
+  </data>
+  <data name="LayersPanel_FillOpacityChange" xml:space="preserve">
+    <value>שינוי אטימות מילוי</value>
+  </data>
+  <data name="LayersPanel_FullyLockedTip" xml:space="preserve">
+    <value>מציין שהשכבה נעולה לחלוטין</value>
+  </data>
+  <data name="LayersPanel_GroupFromLayersEllipsis" xml:space="preserve">
+    <value>קבוצה משכבות...</value>
+  </data>
+  <data name="LayersPanel_HideLayer" xml:space="preserve">
+    <value>הסתר שכבה</value>
+  </data>
+  <data name="LayersPanel_LayerPropertiesEllipsis" xml:space="preserve">
+    <value>מאפייני שכבה...</value>
+  </data>
+  <data name="LayersPanel_LinkTip" xml:space="preserve">
+    <value>קשר או נתק את השכבות שנבחרו (בחר כמה באמצעות Ctrl+לחיצה) כדי שינועו יחד</value>
+  </data>
+  <data name="LayersPanel_LockAll" xml:space="preserve">
+    <value>נעל הכול</value>
+  </data>
+  <data name="LayersPanel_LockColon" xml:space="preserve">
+    <value>נעילה:</value>
+  </data>
+  <data name="LayersPanel_LockImagePixels" xml:space="preserve">
+    <value>נעל פיקסלים של תמונה</value>
+  </data>
+  <data name="LayersPanel_LockPosition" xml:space="preserve">
+    <value>נעל מיקום</value>
+  </data>
+  <data name="LayersPanel_LockTransparentPixels" xml:space="preserve">
+    <value>נעל פיקסלים שקופים</value>
+  </data>
+  <data name="LayersPanel_MaskThumbnailTip" xml:space="preserve">
+    <value>לחץ כדי לערוך את המסכה, Shift+לחיצה כדי להשבית אותה, Ctrl+לחיצה כדי לטעון אותה כבחירה</value>
+  </data>
+  <data name="LayersPanel_NewFillOrAdjustmentTip" xml:space="preserve">
+    <value>צור שכבת מילוי או כוונון חדשה</value>
+  </data>
+  <data name="LayersPanel_NewGroupTip" xml:space="preserve">
+    <value>צור קבוצה חדשה</value>
+  </data>
+  <data name="LayersPanel_NewLayerTip" xml:space="preserve">
+    <value>צור שכבה חדשה</value>
+  </data>
+  <data name="LayersPanel_OpacityChange" xml:space="preserve">
+    <value>שינוי אטימות</value>
+  </data>
+  <data name="LayersPanel_PartiallyLockedTip" xml:space="preserve">
+    <value>מציין שהשכבה נעולה חלקית</value>
+  </data>
+  <data name="LayersPanel_ShowLayer" xml:space="preserve">
+    <value>הצג שכבה</value>
+  </data>
+  <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
+    <value>החלף נראות (Alt+לחיצה מציגה רק שכבה זו)</value>
+  </data>
+  <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
+    <value>עוצמת צבע:</value>
+  </data>
+  <data name="MatchColorEditor_DestinationImage" xml:space="preserve">
+    <value>תמונת יעד</value>
+  </data>
+  <data name="MatchColorEditor_FadeColon" xml:space="preserve">
+    <value>עמעום:</value>
+  </data>
+  <data name="MatchColorEditor_ImageStatistics" xml:space="preserve">
+    <value>סטטיסטיקת תמונה</value>
+  </data>
+  <data name="MatchColorEditor_LayerColon" xml:space="preserve">
+    <value>שכבה:</value>
+  </data>
+  <data name="MatchColorEditor_LuminanceColon" xml:space="preserve">
+    <value>עוצמת הארה:</value>
+  </data>
+  <data name="MatchColorEditor_Neutralize" xml:space="preserve">
+    <value>נטרל</value>
+  </data>
+  <data name="MatchColorEditor_SourceColon" xml:space="preserve">
+    <value>מקור:</value>
+  </data>
+  <data name="MatchColorEditor_TargetColon" xml:space="preserve">
+    <value>יעד:</value>
+  </data>
+  <data name="MatchColorEditor_UseSourceSelection" xml:space="preserve">
+    <value>השתמש בבחירה במקור לחישוב הצבעים</value>
+  </data>
+  <data name="MatchColorEditor_UseTargetSelection" xml:space="preserve">
+    <value>השתמש בבחירה ביעד לחישוב הכוונון</value>
+  </data>
+  <data name="MenuBuilder_Empty" xml:space="preserve">
+    <value>(ריק)</value>
+  </data>
+  <data name="NewDocumentDialog_Black" xml:space="preserve">
+    <value>שחור</value>
+  </data>
+  <data name="NewDocumentDialog_Create" xml:space="preserve">
+    <value>צור</value>
+  </data>
+  <data name="NewDocumentDialog_PresetA4" xml:space="preserve">
+    <value>A4 2480 × 3508 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetDefault" xml:space="preserve">
+    <value>ברירת מחדל (1920 × 1080)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetIcon" xml:space="preserve">
+    <value>סמל 512 × 512</value>
+  </data>
+  <data name="NewDocumentDialog_PresetLetter" xml:space="preserve">
+    <value>Letter 2550 × 3300 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetSquare" xml:space="preserve">
+    <value>ריבוע 1080 × 1080</value>
+  </data>
+  <data name="NewDocumentDialog_PresetWeb" xml:space="preserve">
+    <value>אינטרנט 1366 × 768</value>
+  </data>
+  <data name="NewDocumentDialog_ResolutionColon" xml:space="preserve">
+    <value>רזולוציה (ppi):</value>
+  </data>
+  <data name="NewDocumentDialog_Title" xml:space="preserve">
+    <value>מסמך חדש</value>
+  </data>
+  <data name="NewDocumentDialog_Transparent" xml:space="preserve">
+    <value>שקוף</value>
+  </data>
+  <data name="NewDocumentDialog_Untitled" xml:space="preserve">
+    <value>ללא שם</value>
+  </data>
+  <data name="NewDocumentDialog_White" xml:space="preserve">
+    <value>לבן</value>
+  </data>
+  <data name="OptionsBuilder_AddToSelectionTip" xml:space="preserve">
+    <value>הוסף לבחירה (Shift)</value>
+  </data>
+  <data name="OptionsBuilder_BrushPresetPickerTip" xml:space="preserve">
+    <value>לחץ כדי לפתוח את בוחר ההגדרות הקבועות של המברשת</value>
+  </data>
+  <data name="OptionsBuilder_HardnessColon" xml:space="preserve">
+    <value>קשיחות:</value>
+  </data>
+  <data name="OptionsBuilder_IntersectWithSelectionTip" xml:space="preserve">
+    <value>חתוך עם הבחירה (Shift+Alt)</value>
+  </data>
+  <data name="OptionsBuilder_NewSelectionTip" xml:space="preserve">
+    <value>בחירה חדשה</value>
+  </data>
+  <data name="OptionsBuilder_NoColor" xml:space="preserve">
+    <value>ללא צבע</value>
+  </data>
+  <data name="OptionsBuilder_SubtractFromSelectionTip" xml:space="preserve">
+    <value>חסר מהבחירה (Alt)</value>
+  </data>
+  <data name="PanelDock_CloseTabGroup" xml:space="preserve">
+    <value>סגור קבוצת כרטיסיות</value>
+  </data>
+  <data name="PanelDock_CollapsePanelGroup" xml:space="preserve">
+    <value>כווץ קבוצת חלוניות</value>
+  </data>
+  <data name="PanelDock_ExpandPanelGroup" xml:space="preserve">
+    <value>הרחב קבוצת חלוניות</value>
+  </data>
+  <data name="PanelDock_MoveToGroupWith" xml:space="preserve">
+    <value>העבר לקבוצה עם {0}</value>
+  </data>
+  <data name="PanelDock_MoveToNewGroup" xml:space="preserve">
+    <value>העבר לקבוצה חדשה</value>
+  </data>
+  <data name="PanelDock_PanelMenuTip" xml:space="preserve">
+    <value>תפריט חלונית</value>
+  </data>
   <data name="PathNames_WorkPath" xml:space="preserve">
     <value>נתיב עבודה</value>
   </data>
+  <data name="PathsPanel_AddVectorMaskTip" xml:space="preserve">
+    <value>הוסף מסכה וקטורית (שכבת צורה מנתיב)</value>
+  </data>
+  <data name="PathsPanel_DeletePathTip" xml:space="preserve">
+    <value>מחק את הנתיב הנוכחי</value>
+  </data>
+  <data name="PathsPanel_FillPathTip" xml:space="preserve">
+    <value>מלא את הנתיב בצבע הקדמי</value>
+  </data>
+  <data name="PathsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>טען נתיב כבחירה</value>
+  </data>
+  <data name="PathsPanel_MakeWorkPathTip" xml:space="preserve">
+    <value>צור נתיב עבודה מהבחירה</value>
+  </data>
+  <data name="PathsPanel_NewPathTip" xml:space="preserve">
+    <value>צור נתיב חדש</value>
+  </data>
+  <data name="PathsPanel_RenamePath" xml:space="preserve">
+    <value>שנה שם נתיב</value>
+  </data>
+  <data name="PathsPanel_SavePath" xml:space="preserve">
+    <value>שמור נתיב</value>
+  </data>
+  <data name="PathsPanel_ShapePathName" xml:space="preserve">
+    <value>נתיב צורה {0}</value>
+  </data>
+  <data name="PathsPanel_StrokePathTip" xml:space="preserve">
+    <value>הוסף קו מתאר לנתיב באמצעות מברשת</value>
+  </data>
+  <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
+    <value>ללא שם-{0}</value>
+  </data>
+  <data name="PhotoEditorWindow_CouldNotComplete" xml:space="preserve">
+    <value>לא ניתן להשלים את "{0}": {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentInfo" xml:space="preserve">
+    <value>{0} × {1} px ({2:0} ppi)   מסמך: {3:0.0} MB</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentWindowTitle" xml:space="preserve">
+    <value>{0} - עורך תמונות - ShareX</value>
+  </data>
+  <data name="PhotoEditorWindow_DontSave" xml:space="preserve">
+    <value>אל תשמור</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeLayerMask" xml:space="preserve">
+    <value>מסכת שכבה/8</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeQuickMask" xml:space="preserve">
+    <value>מסכה מהירה/8</value>
+  </data>
+  <data name="PhotoEditorWindow_NoDocumentOpen" xml:space="preserve">
+    <value>אין מסמך פתוח.</value>
+  </data>
+  <data name="PhotoEditorWindow_OperationFailed" xml:space="preserve">
+    <value>{0} נכשל: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_OptionsUnavailable" xml:space="preserve">
+    <value>אפשרויות לא זמינות: {0}</value>
+  </data>
+  <data name="PhotoEditorWindow_PhotoEditor" xml:space="preserve">
+    <value>עורך צילומים</value>
+  </data>
+  <data name="PhotoEditorWindow_SaveChangesPrompt" xml:space="preserve">
+    <value>לשמור את השינויים ב-"{0}" לפני הסגירה?</value>
+  </data>
+  <data name="PhotoEditorWindow_ViewRotation" xml:space="preserve">
+    <value>תצוגה: {0:0}°</value>
+  </data>
+  <data name="PhotoEditorWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - עורך תמונות</value>
+  </data>
+  <data name="PreferencesDialog_GridSubdivisionsColon" xml:space="preserve">
+    <value>חלוקות משנה:</value>
+  </data>
+  <data name="PreferencesDialog_GridlineEveryColon" xml:space="preserve">
+    <value>קו רשת כל (px):</value>
+  </data>
+  <data name="PreferencesDialog_GuideColorColon" xml:space="preserve">
+    <value>צבע קווי עזר (hex):</value>
+  </data>
+  <data name="PreferencesDialog_HistoryStatesColon" xml:space="preserve">
+    <value>מצבי היסטוריה:</value>
+  </data>
+  <data name="PreferencesDialog_ImageInterpolationColon" xml:space="preserve">
+    <value>אינטרפולציית תמונה:</value>
+  </data>
+  <data name="PreferencesDialog_RememberWindow" xml:space="preserve">
+    <value>זכור את גודל ומיקום החלון</value>
+  </data>
+  <data name="PreferencesDialog_Title" xml:space="preserve">
+    <value>העדפות</value>
+  </data>
+  <data name="PreferencesDialog_TransparencyGridSizeColon" xml:space="preserve">
+    <value>גודל רשת השקיפות:</value>
+  </data>
   <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
     <value>הפרויקט נוצר בגרסה חדשה יותר של עורך התמונות.</value>
+  </data>
+  <data name="PropertiesPanel_AddMask" xml:space="preserve">
+    <value>הוסף מסכה</value>
+  </data>
+  <data name="PropertiesPanel_AlignColon" xml:space="preserve">
+    <value>יישור:</value>
+  </data>
+  <data name="PropertiesPanel_AlignText" xml:space="preserve">
+    <value>יישר טקסט</value>
+  </data>
+  <data name="PropertiesPanel_ApplyMask" xml:space="preserve">
+    <value>החל מסכה</value>
+  </data>
+  <data name="PropertiesPanel_Artboard" xml:space="preserve">
+    <value>משטח עבודה</value>
+  </data>
+  <data name="PropertiesPanel_ArtboardBackground" xml:space="preserve">
+    <value>רקע משטח העבודה</value>
+  </data>
+  <data name="PropertiesPanel_BackgroundColon" xml:space="preserve">
+    <value>רקע:</value>
+  </data>
+  <data name="PropertiesPanel_Bold" xml:space="preserve">
+    <value>מודגש</value>
+  </data>
+  <data name="PropertiesPanel_ChangeFill" xml:space="preserve">
+    <value>שנה מילוי</value>
+  </data>
+  <data name="PropertiesPanel_Character" xml:space="preserve">
+    <value>תו</value>
+  </data>
+  <data name="PropertiesPanel_ClipToLayerBelow" xml:space="preserve">
+    <value>חתוך לפי השכבה שמתחת</value>
+  </data>
+  <data name="PropertiesPanel_ClippingMask" xml:space="preserve">
+    <value>מסכת חיתוך</value>
+  </data>
+  <data name="PropertiesPanel_ContainsImage" xml:space="preserve">
+    <value>מכיל תמונה</value>
+  </data>
+  <data name="PropertiesPanel_ConvertToLayer" xml:space="preserve">
+    <value>המר לשכבה</value>
+  </data>
+  <data name="PropertiesPanel_Dashed" xml:space="preserve">
+    <value>מקווקו</value>
+  </data>
+  <data name="PropertiesPanel_DeleteMask" xml:space="preserve">
+    <value>מחק מסכה</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilter" xml:space="preserve">
+    <value>מחק מסנן חכם</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilterTip" xml:space="preserve">
+    <value>מחק מסנן חכם</value>
+  </data>
+  <data name="PropertiesPanel_Document" xml:space="preserve">
+    <value>מסמך</value>
+  </data>
+  <data name="PropertiesPanel_DocumentSize" xml:space="preserve">
+    <value>ר: {0} px   ג: {1} px</value>
+  </data>
+  <data name="PropertiesPanel_EditTypeLayer" xml:space="preserve">
+    <value>ערוך שכבת טקסט</value>
+  </data>
+  <data name="PropertiesPanel_EmptyFrame" xml:space="preserve">
+    <value>מסגרת ריקה</value>
+  </data>
+  <data name="PropertiesPanel_EmptyLayer" xml:space="preserve">
+    <value>שכבה ריקה</value>
+  </data>
+  <data name="PropertiesPanel_Enable" xml:space="preserve">
+    <value>הפעל</value>
+  </data>
+  <data name="PropertiesPanel_FeatherMask" xml:space="preserve">
+    <value>רכך את קצוות המסכה</value>
+  </data>
+  <data name="PropertiesPanel_FillColon" xml:space="preserve">
+    <value>מילוי:</value>
+  </data>
+  <data name="PropertiesPanel_FillLayer" xml:space="preserve">
+    <value>שכבת מילוי</value>
+  </data>
+  <data name="PropertiesPanel_FontColon" xml:space="preserve">
+    <value>גופן:</value>
+  </data>
+  <data name="PropertiesPanel_Frame" xml:space="preserve">
+    <value>מסגרת</value>
+  </data>
+  <data name="PropertiesPanel_FrameStroke" xml:space="preserve">
+    <value>קו מתאר למסגרת</value>
+  </data>
+  <data name="PropertiesPanel_Invert" xml:space="preserve">
+    <value>היפוך צבעים</value>
+  </data>
+  <data name="PropertiesPanel_InvertMask" xml:space="preserve">
+    <value>הפוך מסכה</value>
+  </data>
+  <data name="PropertiesPanel_Italic" xml:space="preserve">
+    <value>נטוי</value>
+  </data>
+  <data name="PropertiesPanel_LeadingColon" xml:space="preserve">
+    <value>ריווח שורות:</value>
+  </data>
+  <data name="PropertiesPanel_LoadAsSelection" xml:space="preserve">
+    <value>טען כבחירה</value>
+  </data>
+  <data name="PropertiesPanel_MaskEditHint" xml:space="preserve">
+    <value>כלי הצביעה עורכים כעת את המסכה: שחור מסתיר, לבן חושף.</value>
+  </data>
+  <data name="PropertiesPanel_ModifyAdjustment" xml:space="preserve">
+    <value>שנה {0}</value>
+  </data>
+  <data name="PropertiesPanel_NoDocument" xml:space="preserve">
+    <value>אין מסמך</value>
+  </data>
+  <data name="PropertiesPanel_None" xml:space="preserve">
+    <value>ללא</value>
+  </data>
+  <data name="PropertiesPanel_Paragraph" xml:space="preserve">
+    <value>פסקה</value>
+  </data>
+  <data name="PropertiesPanel_PixelLayer" xml:space="preserve">
+    <value>שכבת פיקסלים</value>
+  </data>
+  <data name="PropertiesPanel_PlaceImageEllipsis" xml:space="preserve">
+    <value>מקם תמונה...</value>
+  </data>
+  <data name="PropertiesPanel_RadiusPxColon" xml:space="preserve">
+    <value>רדיוס (פיקסלים):</value>
+  </data>
+  <data name="PropertiesPanel_RasterizeType" xml:space="preserve">
+    <value>הפוך טקסט לרסטר</value>
+  </data>
+  <data name="PropertiesPanel_ResetTransform" xml:space="preserve">
+    <value>אפס המרה</value>
+  </data>
+  <data name="PropertiesPanel_ResizeArtboard" xml:space="preserve">
+    <value>שנה גודל משטח עבודה</value>
+  </data>
+  <data name="PropertiesPanel_Resolution" xml:space="preserve">
+    <value>רזולוציה: {0:0} ppi</value>
+  </data>
+  <data name="PropertiesPanel_SetFill" xml:space="preserve">
+    <value>הגדר מילוי</value>
+  </data>
+  <data name="PropertiesPanel_SetFont" xml:space="preserve">
+    <value>הגדר גופן</value>
+  </data>
+  <data name="PropertiesPanel_SetLeading" xml:space="preserve">
+    <value>הגדר ריווח שורות</value>
+  </data>
+  <data name="PropertiesPanel_SetStroke" xml:space="preserve">
+    <value>הגדר קו מתאר</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeAlignment" xml:space="preserve">
+    <value>הגדר יישור קו מתאר</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeType" xml:space="preserve">
+    <value>הגדר סוג קו מתאר</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeWidth" xml:space="preserve">
+    <value>הגדר רוחב קו מתאר</value>
+  </data>
+  <data name="PropertiesPanel_SetTextColor" xml:space="preserve">
+    <value>הגדר צבע טקסט</value>
+  </data>
+  <data name="PropertiesPanel_SetTracking" xml:space="preserve">
+    <value>הגדר ריווח תווים</value>
+  </data>
+  <data name="PropertiesPanel_ShapeProperties" xml:space="preserve">
+    <value>מאפייני צורה</value>
+  </data>
+  <data name="PropertiesPanel_SizeColon" xml:space="preserve">
+    <value>גודל:</value>
+  </data>
+  <data name="PropertiesPanel_SmartFilters" xml:space="preserve">
+    <value>מסננים חכמים</value>
+  </data>
+  <data name="PropertiesPanel_SmartObject" xml:space="preserve">
+    <value>אובייקט חכם</value>
+  </data>
+  <data name="PropertiesPanel_StrokeColon" xml:space="preserve">
+    <value>קו מתאר:</value>
+  </data>
+  <data name="PropertiesPanel_TextColor" xml:space="preserve">
+    <value>צבע טקסט</value>
+  </data>
+  <data name="PropertiesPanel_ToggleSmartFilter" xml:space="preserve">
+    <value>החלף מסנן חכם</value>
+  </data>
+  <data name="PropertiesPanel_TrackingColon" xml:space="preserve">
+    <value>ריווח תווים:</value>
+  </data>
+  <data name="PropertiesPanel_Underline" xml:space="preserve">
+    <value>קו תחתון</value>
+  </data>
+  <data name="ReplaceColorEditor_AddToSampleTip" xml:space="preserve">
+    <value>הוסף לדגימה (Shift+לחיצה)</value>
+  </data>
+  <data name="ReplaceColorEditor_ClickToSample" xml:space="preserve">
+    <value>לחץ כדי לדגום צבע</value>
+  </data>
+  <data name="ReplaceColorEditor_EyedropperTip" xml:space="preserve">
+    <value>טפטפת</value>
+  </data>
+  <data name="ReplaceColorEditor_Image" xml:space="preserve">
+    <value>תמונה</value>
+  </data>
+  <data name="ReplaceColorEditor_Replacement" xml:space="preserve">
+    <value>החלפה</value>
+  </data>
+  <data name="ReplaceColorEditor_ResultColon" xml:space="preserve">
+    <value>תוצאה:</value>
+  </data>
+  <data name="ReplaceColorEditor_SelectColorTip" xml:space="preserve">
+    <value>בחר את הצבע להחלפה</value>
+  </data>
+  <data name="ReplaceColorEditor_Selection" xml:space="preserve">
+    <value>בחירה</value>
+  </data>
+  <data name="ReplaceColorEditor_SubtractFromSampleTip" xml:space="preserve">
+    <value>חסר מהדגימה (Alt+לחיצה)</value>
+  </data>
+  <data name="Resources_AirbrushSoft" xml:space="preserve">
+    <value>מרסס רך</value>
+  </data>
+  <data name="Resources_BlackWhite" xml:space="preserve">
+    <value>שחור, לבן</value>
+  </data>
+  <data name="Resources_Bricks" xml:space="preserve">
+    <value>לבנים</value>
+  </data>
+  <data name="Resources_CalligraphicFlat" xml:space="preserve">
+    <value>קליגרפי שטוח</value>
+  </data>
+  <data name="Resources_Chalk" xml:space="preserve">
+    <value>גיר</value>
+  </data>
+  <data name="Resources_Checkerboard" xml:space="preserve">
+    <value>לוח שחמט</value>
+  </data>
+  <data name="Resources_Chrome" xml:space="preserve">
+    <value>כרום</value>
+  </data>
+  <data name="Resources_Copper" xml:space="preserve">
+    <value>נחושת</value>
+  </data>
+  <data name="Resources_DiagonalLines" xml:space="preserve">
+    <value>קווים אלכסוניים</value>
+  </data>
+  <data name="Resources_Dots" xml:space="preserve">
+    <value>נקודות</value>
+  </data>
+  <data name="Resources_ForegroundToBackground" xml:space="preserve">
+    <value>מקדמי לרקע</value>
+  </data>
+  <data name="Resources_ForegroundToTransparent" xml:space="preserve">
+    <value>מקדמי לשקוף</value>
+  </data>
+  <data name="Resources_HardPixel" xml:space="preserve">
+    <value>פיקסל קשה</value>
+  </data>
+  <data name="Resources_HardRound" xml:space="preserve">
+    <value>עגול קשה</value>
+  </data>
+  <data name="Resources_HardRoundPressure" xml:space="preserve">
+    <value>עגול קשה עם לחץ</value>
+  </data>
+  <data name="Resources_Hexagons" xml:space="preserve">
+    <value>משושים</value>
+  </data>
+  <data name="Resources_Ocean" xml:space="preserve">
+    <value>אוקיינוס</value>
+  </data>
+  <data name="Resources_SoftRound" xml:space="preserve">
+    <value>עגול רך</value>
+  </data>
+  <data name="Resources_SoftRoundPressure" xml:space="preserve">
+    <value>עגול רך עם לחץ</value>
+  </data>
+  <data name="Resources_Spatter" xml:space="preserve">
+    <value>התזה</value>
+  </data>
+  <data name="Resources_Spectrum" xml:space="preserve">
+    <value>ספקטרום</value>
+  </data>
+  <data name="Resources_SquareHard" xml:space="preserve">
+    <value>מרובע קשה</value>
+  </data>
+  <data name="Resources_Sunset" xml:space="preserve">
+    <value>שקיעה</value>
+  </data>
+  <data name="Resources_TransparentStripes" xml:space="preserve">
+    <value>פסים שקופים</value>
+  </data>
+  <data name="Resources_WoodGrain" xml:space="preserve">
+    <value>עורקי עץ</value>
+  </data>
+  <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
+    <value>חפש פקודות</value>
+  </data>
+  <data name="ShortcutsDialog_Title" xml:space="preserve">
+    <value>קיצורי מקלדת</value>
+  </data>
+  <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
+    <value>השתמש בברירות המחדל</value>
+  </data>
+  <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
+    <value>נקה קבצים אחרונים</value>
+  </data>
+  <data name="StartScreen_NewFile" xml:space="preserve">
+    <value>קובץ חדש</value>
+  </data>
+  <data name="StartScreen_NewFromScreenshotRegion" xml:space="preserve">
+    <value>חדש מצילום מסך (אזור)</value>
+  </data>
+  <data name="StartScreen_NoRecentFiles" xml:space="preserve">
+    <value>קבצים שתפתח יופיעו כאן.</value>
+  </data>
+  <data name="StartScreen_Recent" xml:space="preserve">
+    <value>אחרונים</value>
+  </data>
+  <data name="StartScreen_ShowAsListTip" xml:space="preserve">
+    <value>הצג קבצים אחרונים כרשימה</value>
+  </data>
+  <data name="StartScreen_ShowAsTilesTip" xml:space="preserve">
+    <value>הצג קבצים אחרונים כאריחים</value>
+  </data>
+  <data name="SwatchesPanel_NewSwatchTip" xml:space="preserve">
+    <value>צור דוגמית חדשה מהצבע הקדמי</value>
+  </data>
+  <data name="SwatchesPanel_SwatchTip" xml:space="preserve">
+    <value>#{0} — לחיצה: קדמי, Alt/Ctrl+לחיצה: רקע, לחיצה ימנית: מחיקה</value>
+  </data>
+  <data name="TextEditing_Hint" xml:space="preserve">
+    <value>הקלד את הטקסט. Ctrl+Enter מאשר, Esc מבטל.</value>
+  </data>
+  <data name="TextEditing_TypeTool" xml:space="preserve">
+    <value>כלי טקסט</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>הגדל</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>לְצַמְצֵם</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>שחזר</value>
+  </data>
+  <data name="ToolbarControl_CollapseTip" xml:space="preserve">
+    <value>כווץ לעמודה אחת</value>
+  </data>
+  <data name="ToolbarControl_DefaultColorsTip" xml:space="preserve">
+    <value>צבעי ברירת מחדל קדמי ורקע (D)</value>
+  </data>
+  <data name="ToolbarControl_EditToolbarEllipsis" xml:space="preserve">
+    <value>ערוך סרגל כלים...</value>
+  </data>
+  <data name="ToolbarControl_ExpandTip" xml:space="preserve">
+    <value>הרחב לשתי עמודות</value>
+  </data>
+  <data name="ToolbarControl_QuickMaskTip" xml:space="preserve">
+    <value>ערוך במצב מסכה מהירה (Q)</value>
+  </data>
+  <data name="ToolbarControl_ScreenModeTip" xml:space="preserve">
+    <value>שנה מצב מסך (F)</value>
+  </data>
+  <data name="ToolbarControl_SetBackgroundColor" xml:space="preserve">
+    <value>הגדר צבע רקע</value>
+  </data>
+  <data name="ToolbarControl_SetForegroundColor" xml:space="preserve">
+    <value>הגדר צבע קדמי</value>
+  </data>
+  <data name="ToolbarControl_SwitchColorsTip" xml:space="preserve">
+    <value>החלף בין הצבע הקדמי לצבע הרקע (X)</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Description" xml:space="preserve">
+    <value>סרגל כלים (כל שורה היא מקום בסרגל הכלים עם הכלים הנפתחים שלו). בחר כלי והשתמש בלחצנים כדי לסדר אותו מחדש.</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Done" xml:space="preserve">
+    <value>בוצע</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_ExtraTools" xml:space="preserve">
+    <value>כלים נוספים (מוסתרים מסרגל הכלים):</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_HideTool" xml:space="preserve">
+    <value>הסתר כלי</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MergeWithGroupAbove" xml:space="preserve">
+    <value>מזג עם הקבוצה שמעל</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveEarlierInGroup" xml:space="preserve">
+    <value>העבר מוקדם יותר בקבוצה</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupDown" xml:space="preserve">
+    <value>הזז קבוצה למטה</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupUp" xml:space="preserve">
+    <value>הזז קבוצה למעלה</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_OwnGroup" xml:space="preserve">
+    <value>קבוצה עצמאית</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreDefaults" xml:space="preserve">
+    <value>שחזר ברירות מחדל</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreTip" xml:space="preserve">
+    <value>לחץ כדי להחזיר לסרגל הכלים</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
+    <value>התאמה אישית של סרגל הכלים</value>
   </data>
 </root>

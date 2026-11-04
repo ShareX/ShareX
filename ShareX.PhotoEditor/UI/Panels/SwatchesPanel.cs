@@ -47,7 +47,7 @@ public sealed class SwatchesPanel : EditorPanel
     public SwatchesPanel(PhotoEditorWindow editor) : base(editor)
     {
         StackPanel footer = new() { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(4) };
-        footer.Children.Add(IconButton("plus", "Create new swatch of foreground color", () =>
+        footer.Children.Add(IconButton("plus", Strings.SwatchesPanel_NewSwatchTip, () =>
         {
             Editor.Settings.Swatches.Add("#" + ColorMath.ToHex(Editor.Foreground));
             Refresh();
@@ -61,7 +61,7 @@ public sealed class SwatchesPanel : EditorPanel
 
     public override string Id => "swatches";
 
-    public override string Title => "Swatches";
+    public override string Title => Strings.EditorCommands_Swatches;
 
     public override void Refresh()
     {
@@ -71,7 +71,7 @@ public sealed class SwatchesPanel : EditorPanel
         {
             if (!ColorMath.TryParseHex(hex, out SKColor color)) continue;
             Border swatch = new() { Width = 18, Height = 18, Margin = new Thickness(1), Background = DialogBuilder.ToBrush(color), BorderBrush = Brushes.Black, BorderThickness = new Thickness(0.5), Cursor = new Cursor(StandardCursorType.Hand) };
-            ToolTip.SetTip(swatch, $"#{ColorMath.ToHex(color)} — click: foreground, Alt/Ctrl-click: background, right-click: delete");
+            ToolTip.SetTip(swatch, string.Format(Strings.SwatchesPanel_SwatchTip, ColorMath.ToHex(color)));
             swatch.PointerPressed += (_, e) =>
             {
                 if (e.GetCurrentPoint(swatch).Properties.IsRightButtonPressed)

@@ -41,13 +41,13 @@ public sealed class PathsPanel : EditorPanel
     public PathsPanel(PhotoEditorWindow editor) : base(editor)
     {
         StackPanel footer = new() { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right, Spacing = 2, Margin = new Thickness(4) };
-        footer.Children.Add(IconButton("path-fill", "Fill path with foreground color", () => EditorCommands.FillPath(Editor)));
-        footer.Children.Add(IconButton("path-stroke", "Stroke path with brush", () => EditorCommands.StrokePath(Editor)));
-        footer.Children.Add(IconButton("selection", "Load path as a selection", () => EditorCommands.PathToSelection(Editor)));
-        footer.Children.Add(IconButton("pen", "Make work path from selection", () => EditorCommands.SelectionToPath(Editor)));
-        footer.Children.Add(IconButton("mask", "Add a vector mask (shape layer from path)", () => EditorCommands.PathToShape(Editor)));
-        footer.Children.Add(IconButton("new-layer", "Create new path", () => EditorCommands.NewPath(Editor)));
-        footer.Children.Add(IconButton("trash", "Delete current path", () => EditorCommands.DeletePath(Editor)));
+        footer.Children.Add(IconButton("path-fill", Strings.PathsPanel_FillPathTip, () => EditorCommands.FillPath(Editor)));
+        footer.Children.Add(IconButton("path-stroke", Strings.PathsPanel_StrokePathTip, () => EditorCommands.StrokePath(Editor)));
+        footer.Children.Add(IconButton("selection", Strings.PathsPanel_LoadAsSelectionTip, () => EditorCommands.PathToSelection(Editor)));
+        footer.Children.Add(IconButton("pen", Strings.PathsPanel_MakeWorkPathTip, () => EditorCommands.SelectionToPath(Editor)));
+        footer.Children.Add(IconButton("mask", Strings.PathsPanel_AddVectorMaskTip, () => EditorCommands.PathToShape(Editor)));
+        footer.Children.Add(IconButton("new-layer", Strings.PathsPanel_NewPathTip, () => EditorCommands.NewPath(Editor)));
+        footer.Children.Add(IconButton("trash", Strings.PathsPanel_DeletePathTip, () => EditorCommands.DeletePath(Editor)));
         DockPanel root = new();
         DockPanel.SetDock(footer, Dock.Bottom);
         root.Children.Add(footer);
@@ -57,7 +57,7 @@ public sealed class PathsPanel : EditorPanel
 
     public override string Id => "paths";
 
-    public override string Title => "Paths";
+    public override string Title => Strings.EditorCommands_Paths;
 
     public override void Refresh()
     {
@@ -67,21 +67,21 @@ public sealed class PathsPanel : EditorPanel
         if (doc.WorkPath != null)
         {
             bool selected = doc.ActivePath?.Path == doc.WorkPath;
-            Border row = new() { Padding = new Thickness(6, 4), Background = selected ? SelectedBrush : Brushes.Transparent, Child = new TextBlock { Text = "Work Path", FontStyle = FontStyle.Italic } };
+            Border row = new() { Padding = new Thickness(6, 4), Background = selected ? SelectedBrush : Brushes.Transparent, Child = new TextBlock { Text = Strings.PathNames_WorkPath, FontStyle = FontStyle.Italic } };
             row.PointerPressed += async (_, e) =>
             {
                 if (e.ClickCount >= 2)
                 {
-                    string? name = await DialogBuilder.PromptAsync(Editor, "Save Path", "Name:", $"Path {doc.Paths.Count + 1}");
+                    string? name = await DialogBuilder.PromptAsync(Editor, Strings.PathsPanel_SavePath, Strings.EditorCommands_NameColon, string.Format(Strings.EditorCommands_PathNumber, doc.Paths.Count + 1));
                     if (string.IsNullOrWhiteSpace(name)) return;
                     NamedPath saved = new(name, doc.WorkPath!);
                     doc.Paths.Add(saved);
                     doc.WorkPath = null;
                     doc.ActivePath = saved;
-                    Editor.Commit("Save Path");
+                    Editor.Commit(Strings.PathsPanel_SavePath);
                     return;
                 }
-                doc.ActivePath = selected ? null : new NamedPath("Work Path", doc.WorkPath!);
+                doc.ActivePath = selected ? null : new NamedPath(Strings.PathNames_WorkPath, doc.WorkPath!);
                 Editor.RefreshPanels();
                 Editor.InvalidateOverlay();
             };
@@ -95,8 +95,8 @@ public sealed class PathsPanel : EditorPanel
             {
                 if (e.ClickCount >= 2)
                 {
-                    string? name = await DialogBuilder.PromptAsync(Editor, "Rename Path", "Name:", path.Name);
-                    if (!string.IsNullOrWhiteSpace(name)) { path.Name = name; Editor.Commit("Rename Path"); }
+                    string? name = await DialogBuilder.PromptAsync(Editor, Strings.PathsPanel_RenamePath, Strings.EditorCommands_NameColon, path.Name);
+                    if (!string.IsNullOrWhiteSpace(name)) { path.Name = name; Editor.Commit(Strings.PathsPanel_RenamePath); }
                     return;
                 }
                 if (e.KeyModifiers.HasFlag(KeyModifiers.Control))
@@ -113,7 +113,7 @@ public sealed class PathsPanel : EditorPanel
         }
         if (doc.ActiveLayer is ShapeLayer shape)
         {
-            _list.Children.Add(new Border { Padding = new Thickness(6, 4), Child = new TextBlock { Text = $"{shape.Name} Shape Path", FontStyle = FontStyle.Italic, Opacity = 0.8 } });
+            _list.Children.Add(new Border { Padding = new Thickness(6, 4), Child = new TextBlock { Text = string.Format(Strings.PathsPanel_ShapePathName, shape.Name), FontStyle = FontStyle.Italic, Opacity = 0.8 } });
         }
     }
 }

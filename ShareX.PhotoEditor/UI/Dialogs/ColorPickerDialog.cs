@@ -143,7 +143,7 @@ public sealed class ColorPickerControl : UserControl
             if (e.Key == Key.Enter) ApplyHex();
         };
 
-        CheckBox webOnly = new() { Content = "Only Web Colors" };
+        CheckBox webOnly = new() { Content = Strings.ColorPickerDialog_OnlyWebColors };
         webOnly.IsCheckedChanged += (_, _) =>
         {
             _webOnly = webOnly.IsChecked == true;
@@ -152,7 +152,7 @@ public sealed class ColorPickerControl : UserControl
             Refresh();
         };
         Grid opacity = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto,Auto"), ColumnSpacing = 6 };
-        TextBlock opacityLabel = new() { Text = "Opacity:", VerticalAlignment = VerticalAlignment.Center };
+        TextBlock opacityLabel = new() { Text = Strings.EditorCommands_OpacityColon, VerticalAlignment = VerticalAlignment.Center };
         TextBlock opacityUnit = new() { Text = "%", VerticalAlignment = VerticalAlignment.Center };
         _aBox.Width = 48;
         Grid.SetColumn(_alpha, 1);
@@ -199,7 +199,7 @@ public sealed class ColorPickerControl : UserControl
     private Control BuildPreview(SKColor current, Control[] actions)
     {
         Border currentSwatch = new() { Width = 70, Height = 34, Background = DialogBuilder.ToBrush(current), Cursor = new Cursor(StandardCursorType.Hand) };
-        ToolTip.SetTip(currentSwatch, "Click to restore the current color");
+        ToolTip.SetTip(currentSwatch, Strings.ColorPickerDialog_RestoreCurrentTip);
         currentSwatch.PointerPressed += (_, _) => SetColor(current);
 
         StackPanel swatches = new() { HorizontalAlignment = HorizontalAlignment.Left };
@@ -212,7 +212,7 @@ public sealed class ColorPickerControl : UserControl
         });
         swatches.Children.Add(new TextBlock { Text = "current", HorizontalAlignment = HorizontalAlignment.Center, Classes = { "dim" } });
 
-        ToolTip.SetTip(_webWarning, "Not a web color. Click the swatch to use the nearest one.");
+        ToolTip.SetTip(_webWarning, Strings.ColorPickerDialog_NotWebColorTip);
         _webSwatch.PointerPressed += (_, _) =>
         {
             _picked = null;
@@ -557,8 +557,8 @@ public static class ColorPickerDialog
 {
     public static async Task<SKColor?> ShowAsync(Window owner, SKColor initial, string title, IEditorHost? host = null)
     {
-        Button reset = ActionButton("Reset");
-        Button add = ActionButton("Add to Swatches");
+        Button reset = ActionButton(Strings.ColorPickerDialog_Reset);
+        Button add = ActionButton(Strings.ColorPickerDialog_AddToSwatches);
         add.IsVisible = host != null;
         ColorPickerControl picker = new(initial, initial, reset, add);
         reset.Click += (_, _) => picker.SetColor(initial);
@@ -567,7 +567,7 @@ public static class ColorPickerDialog
             host?.Settings.Swatches.Add("#" + ColorMath.ToHex(picker.Color));
             host?.RefreshPanels();
         };
-        bool ok = await DialogBuilder.ShowAsync(owner, title.Length > 0 ? $"Color Picker ({title})" : "Color Picker", picker, DialogBuilder.AutoWidth);
+        bool ok = await DialogBuilder.ShowAsync(owner, title.Length > 0 ? string.Format(Strings.ColorPickerDialog_TitleWith, title) : Strings.ColorPickerDialog_Title, picker, DialogBuilder.AutoWidth);
         return ok ? picker.Color : null;
     }
 

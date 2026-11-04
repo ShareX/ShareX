@@ -23,6 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using System.Collections;
+using System.Globalization;
+using System.Resources;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -42,13 +45,13 @@ public sealed class HistoryPanel : EditorPanel
     public HistoryPanel(PhotoEditorWindow editor) : base(editor)
     {
         StackPanel footer = new() { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right, Spacing = 2, Margin = new Thickness(4) };
-        footer.Children.Add(IconButton("new-document", "Create new document from current state", () => EditorCommands.NewDocumentFromState(Editor)));
-        footer.Children.Add(IconButton("snapshot", "Create new snapshot", () =>
+        footer.Children.Add(IconButton("new-document", Strings.HistoryPanel_NewDocumentTip, () => EditorCommands.NewDocumentFromState(Editor)));
+        footer.Children.Add(IconButton("snapshot", Strings.HistoryPanel_NewSnapshotTip, () =>
         {
             Doc?.History.CreateSnapshot();
             Refresh();
         }));
-        footer.Children.Add(IconButton("trash", "Delete the states after the current one", () =>
+        footer.Children.Add(IconButton("trash", Strings.HistoryPanel_DeleteStatesTip, () =>
         {
             Doc?.History.DiscardRedo();
             Refresh();
@@ -62,10 +65,34 @@ public sealed class HistoryPanel : EditorPanel
 
     public override string Id => "history";
 
-    public override string Title => "History";
+    public override string Title => Strings.EditorCommands_History;
+
+    private static Dictionary<string, string>? _iconsByName;
 
     /// <summary>Picks an icon for a history state from the name of the operation.</summary>
     private static string HistoryIcon(string name)
+    {
+        _iconsByName ??= BuildIconMap();
+        return _iconsByName.TryGetValue(name, out string? icon) ? icon : IconFromEnglishName(name);
+    }
+
+    /// <summary>History names are localized, so each translation gets the icon its English resource text selects.</summary>
+    private static Dictionary<string, string> BuildIconMap()
+    {
+        Dictionary<string, string> map = new(StringComparer.Ordinal);
+        ResourceSet? english = Strings.ResourceManager.GetResourceSet(CultureInfo.InvariantCulture, true, false);
+        if (english == null) return map;
+        foreach (DictionaryEntry entry in english)
+        {
+            if (entry.Key is string key && entry.Value is string value && Strings.ResourceManager.GetString(key, Strings.Culture) is { } localized)
+            {
+                map.TryAdd(localized, IconFromEnglishName(value));
+            }
+        }
+        return map;
+    }
+
+    private static string IconFromEnglishName(string name)
     {
         string n = name.ToLowerInvariant();
         if (n.Contains("open") || n.Contains("new document") || n.Contains("duplicate image")) return "new-document";
@@ -118,7 +145,7 @@ public sealed class HistoryPanel : EditorPanel
             BorderBrush = new SolidColorBrush(Color.FromRgb(0x28, 0x28, 0x28)),
             BorderThickness = new Thickness(0, 0, 1, 0)
         };
-        ToolTip.SetTip(source, "Set the source for the history brush");
+        ToolTip.SetTip(source, Strings.HistoryPanel_HistoryBrushSourceTip);
         source.PointerPressed += (_, e) =>
         {
             history.Source = entry;
@@ -150,13 +177,13 @@ public sealed class HistoryPanel : EditorPanel
         if (snapshot)
         {
             ContextMenu menu = new();
-            MenuItem rename = new() { Header = "Rename Snapshot..." };
+            MenuItem rename = new() { Header = Strings.HistoryPanel_RenameSnapshotEllipsis };
             rename.Click += async (_, _) =>
             {
-                string? text = await DialogBuilder.PromptAsync(Editor, "Rename Snapshot", "Name:", entry.Name);
+                string? text = await DialogBuilder.PromptAsync(Editor, Strings.HistoryPanel_RenameSnapshot, Strings.EditorCommands_NameColon, entry.Name);
                 if (!string.IsNullOrWhiteSpace(text)) { entry.Name = text; Refresh(); }
             };
-            MenuItem delete = new() { Header = "Delete Snapshot" };
+            MenuItem delete = new() { Header = Strings.HistoryPanel_DeleteSnapshot };
             delete.Click += (_, _) => { history.DeleteSnapshot(entry); Refresh(); };
             menu.Items.Add(rename);
             menu.Items.Add(delete);
