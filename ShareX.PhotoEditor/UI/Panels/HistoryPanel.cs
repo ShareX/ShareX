@@ -113,7 +113,7 @@ public sealed class HistoryPanel : EditorPanel
             Width = 22,
             Height = 22,
             Background = Brushes.Transparent,
-            Child = isSource ? ToolIcons.Create("historybrush", 14) : null,
+            Child = isSource ? ToolIcons.Create("historybrush", 16) : null,
             Cursor = new Cursor(StandardCursorType.Hand),
             BorderBrush = new SolidColorBrush(Color.FromRgb(0x28, 0x28, 0x28)),
             BorderThickness = new Thickness(0, 0, 1, 0)
@@ -129,7 +129,7 @@ public sealed class HistoryPanel : EditorPanel
         name.Margin = new Thickness(4, 0, 0, 0);
         bool future = !snapshot && index > history.Index;
         if (future) name.Opacity = 0.45;
-        Control icon = snapshot ? ToolIcons.Create("snapshot", 16) : ToolIcons.Create(HistoryIcon(entry.Name), 14);
+        Control icon = snapshot ? ToolIcons.Create("snapshot", 16) : ToolIcons.Create(HistoryIcon(entry.Name), 16);
         icon.Opacity = future ? 0.45 : 0.85;
         StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 6, VerticalAlignment = VerticalAlignment.Center };
         content.Children.Add(source);

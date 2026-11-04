@@ -147,7 +147,7 @@ public sealed class LayersPanel : EditorPanel
         Button button = new()
         {
             Classes = { "icon" },
-            Content = ToolIcons.Create(icon, 14),
+            Content = ToolIcons.Create(icon, 16),
             Width = 24,
             Height = 22,
             Padding = new Thickness(0),
@@ -218,7 +218,7 @@ public sealed class LayersPanel : EditorPanel
             Background = Brushes.Transparent,
             BorderBrush = new SolidColorBrush(Color.FromRgb(0x24, 0x24, 0x24)),
             BorderThickness = new Thickness(0, 0, 1, 0),
-            Child = layer.Visible ? ToolIcons.Create("eye", 15) : null,
+            Child = layer.Visible ? ToolIcons.Create("eye", 16) : null,
             Cursor = new Cursor(StandardCursorType.Hand)
         };
         ToolTip.SetTip(eye, "Toggle visibility (Alt-click shows only this layer)");
@@ -258,9 +258,9 @@ public sealed class LayersPanel : EditorPanel
         IBrush frame = ThumbFrame;
         Control thumbContent = layer switch
         {
-            GroupLayer g => ToolIcons.Create(g.IsArtboard ? "artboard" : "folder", 20),
-            TextLayer => ToolIcons.Create("horizontaltype", 18),
-            AdjustmentLayer => ToolIcons.Create("adjust", 18),
+            GroupLayer g => g.IsArtboard ? ToolIcons.Create("artboard", 20) : ToolIcons.Create("folder", 16),
+            TextLayer => ToolIcons.Create("horizontaltype", 20),
+            AdjustmentLayer => ToolIcons.Create("adjust", 16),
             _ => CreateThumbnail(doc, layer)
         };
         bool iconThumb = layer is GroupLayer or TextLayer or AdjustmentLayer;
@@ -290,7 +290,7 @@ public sealed class LayersPanel : EditorPanel
         Border? maskBorder = null;
         if (layer.Mask != null)
         {
-            thumbs.Children.Add(ToolIcons.Create("link", 10));
+            thumbs.Children.Add(ToolIcons.Create("link", 12));
             Border mask = new()
             {
                 Width = 32,
@@ -342,8 +342,8 @@ public sealed class LayersPanel : EditorPanel
 
         StackPanel badges = new() { Orientation = Orientation.Horizontal, Spacing = 6, Margin = new Thickness(0, 0, 10, 0), VerticalAlignment = VerticalAlignment.Center };
         if (layer.LinkId != 0) badges.Children.Add(ToolIcons.Create("link", 12));
-        if (layer.Style?.HasAny == true) badges.Children.Add(ToolIcons.Create("fx", 13));
-        if (layer is SmartObjectLayer) badges.Children.Add(ToolIcons.Create("smart-object", 13));
+        if (layer.Style?.HasAny == true) badges.Children.Add(ToolIcons.Create("fx", 12));
+        if (layer is SmartObjectLayer) badges.Children.Add(ToolIcons.Create("smart-object", 12));
         if (layer.LockAll || layer.LockPixels || layer.LockPosition || layer.LockTransparency) badges.Children.Add(CreateLockBadge(doc, layer));
         Grid.SetColumn(badges, 3);
         content.Children.Add(badges);
@@ -394,7 +394,7 @@ public sealed class LayersPanel : EditorPanel
     /// <summary>Lock indicator of a layer row; clicking it on the background layer converts it to a normal layer.</summary>
     private Border CreateLockBadge(PhotoDocument doc, Layer layer)
     {
-        Border badge = new() { Background = Brushes.Transparent, Child = ToolIcons.Create("lock", 18) };
+        Border badge = new() { Background = Brushes.Transparent, Child = ToolIcons.Create("lock", 16) };
         ToolTip.SetTip(badge, layer.LockAll ? "Indicates layer is fully locked" : "Indicates layer is partially locked");
         if (layer is RasterLayer { IsBackground: true })
         {

@@ -85,7 +85,7 @@ public sealed class ToolbarControl : UserControl
     {
         bool two = _editor.Settings.ToolbarTwoColumns;
         Width = two ? ButtonWidth * 2 + 8 : Math.Max(ButtonWidth + 6, ColorWidgetWidth + 2);
-        _columnsToggle.Content = ToolIcons.Create(two ? "toolbar-collapse" : "toolbar-expand", 11);
+        _columnsToggle.Content = ToolIcons.Create(two ? "toolbar-collapse" : "toolbar-expand", 12);
         ToolTip.SetTip(_columnsToggle, two ? "Collapse to a single column" : "Expand to two columns");
     }
 

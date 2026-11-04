@@ -358,7 +358,7 @@ public sealed partial class PhotoEditorWindow : Window, IEditorHost
         // Tool preset button: the active tool's icon with a dropdown listing the other tools of its group.
         StackPanel presetContent = new() { Orientation = Orientation.Horizontal, Spacing = 3 };
         presetContent.Children.Add(ToolIcons.Create(Tools.Active.Id, 20));
-        presetContent.Children.Add(ToolIcons.Create("chevron-down", 9));
+        presetContent.Children.Add(ToolIcons.Create("chevron-down", 10));
         Button preset = new() { Classes = { "icon" }, Content = presetContent, Padding = new Thickness(5, 3), VerticalAlignment = VerticalAlignment.Center };
         ToolTip.SetTip(preset, Tools.Active.Name);
         ToolGroup? group = Tools.FindGroup(Tools.Active);

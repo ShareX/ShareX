@@ -31,91 +31,113 @@ using ShareX.PhotoEditor.Tools;
 namespace ShareX.PhotoEditor.UI;
 
 /// <summary>
-/// Original line-art icons for the Photo editor, drawn on a 24x24 grid; tool icons use the 20x20 grid in ToolIcons.Tools.cs.
-/// Entries starting with "F:" are filled shapes; others are stroked.
+/// Original line-art icons for the Photo editor. Each set is drawn on the pixel grid it is shown at (tools 20 px in
+/// ToolIcons.Tools.cs, interface icons 16 px, badges and chevrons 12 or 10 px) with 1 px strokes on pixel centers,
+/// so icons are sharp at their native size. Parts starting with "F:" are filled, "H:" are half-tone fills,
+/// "D:" are dashed strokes and the rest are solid strokes.
 /// </summary>
 public static partial class ToolIcons
 {
-    private static readonly Dictionary<string, string[]> Icons = new(StringComparer.OrdinalIgnoreCase)
+    private const string LayerBrushHandle = "F:M13.5 1 L15 2.5 L9 8.5 L7.5 7 Z";
+    private const string LayerBrushTip = "F:M6.5 8 L8 9.5 C8 12.5 5.5 15 1 15 C1 11.5 3 8 6.5 8 Z";
+    private const string GradientFrame = "M1.5 2.5 H14.5 V13.5 H1.5 Z";
+    private const string Magnifier = "M1.5 6.5 A5 5 0 1 0 11.5 6.5 A5 5 0 1 0 1.5 6.5 Z";
+    private const string MagnifierHandle = "F:M10 11 L11 10 L15.5 14.5 L14.5 15.5 Z";
+    private const string AdjustmentFrame = "M1.5 1.5 H14.5 V14.5 H1.5 Z";
+
+    /// <summary>Interface icons on a 16 px grid: options bar, panel footers, panel rows and the start screen.</summary>
+    private static readonly Dictionary<string, string[]> Icons16 = new(StringComparer.OrdinalIgnoreCase)
     {
-        ["zoom-in"] = ["M10 3 A7 7 0 1 0 10.01 3 Z", "M15 15 L21 21", "M7 10 H13 M10 7 V13"],
-        ["zoom-out"] = ["M10 3 A7 7 0 1 0 10.01 3 Z", "M15 15 L21 21", "M7 10 H13"],
-        ["sel-new"] = ["M5 5 H19 V19 H5 Z"],
-        ["sel-add"] = ["M3 3 H14 V14 H3 Z", "M10 10 H21 V21 H10 Z"],
-        ["sel-sub"] = ["M3 3 H14 V14 H3 Z", "M10 14 V21 H21 V10 H14"],
-        ["sel-int"] = ["M3 3 H14 V14 H3 Z", "M10 10 H21 V21 H10 Z", "F:M10 10 H14 V14 H10 Z"],
-        ["brush-tip"] = ["F:M12 6 a6 6 0 1 0 0.01 0 Z"],
-        ["airbrush"] = ["M4 14 L12 6 L16 10 L8 18 Z", "M14 8 L18 4", "M18 12 h1 M20 9 h1 M20 15 h1"],
-        ["gradient-linear"] = ["M3 4 H21 V20 H3 Z", "F:M3 4 H9 V20 H3 Z"],
-        ["gradient-radial"] = ["M3 4 H21 V20 H3 Z", "F:M12 8 a4 4 0 1 0 0.01 0 Z"],
-        ["gradient-angle"] = ["M3 4 H21 V20 H3 Z", "F:M12 12 L12 4 L21 4 L21 12 Z"],
-        ["gradient-reflected"] = ["M3 4 H21 V20 H3 Z", "F:M10 4 H14 V20 H10 Z"],
-        ["gradient-diamond"] = ["M3 4 H21 V20 H3 Z", "F:M12 7 L17 12 L12 17 L7 12 Z"],
-        ["align-left"] = ["M4 3 V21", "M7 7 H17 V11 H7 Z", "M7 14 H13 V18 H7 Z"],
-        ["align-hcenter"] = ["M12 3 V21", "M6 7 H18 V11 H6 Z", "M8 14 H16 V18 H8 Z"],
-        ["align-right"] = ["M20 3 V21", "M7 7 H17 V11 H7 Z", "M11 14 H17 V18 H11 Z"],
-        ["align-top"] = ["M3 4 H21", "M7 7 H11 V17 H7 Z", "M14 7 H18 V13 H14 Z"],
-        ["align-vcenter"] = ["M3 12 H21", "M7 6 H11 V18 H7 Z", "M14 8 H18 V16 H14 Z"],
-        ["align-bottom"] = ["M3 20 H21", "M7 7 H11 V17 H7 Z", "M14 11 H18 V17 H14 Z"],
-        ["type-orientation"] = ["M4 6 H12 M8 6 V14", "M15 10 V20 M13 18 L15 20 L17 18", "M14 4 H20 L18 2 M20 4 L18 6"],
-        ["align-text-left"] = ["M4 6 H20 M4 10 H14 M4 14 H20 M4 18 H12"],
-        ["align-text-center"] = ["M4 6 H20 M7 10 H17 M4 14 H20 M8 18 H16"],
-        ["align-text-right"] = ["M4 6 H20 M10 10 H20 M4 14 H20 M12 18 H20"],
-        ["faux-bold"] = ["M7 4 H13 C16 4 16 11 13 11 H7 Z M7 11 H14 C18 11 18 20 14 20 H7 Z"],
-        ["faux-italic"] = ["M10 4 H18 M6 20 H14 M14 4 L10 20"],
-        ["underline"] = ["M7 4 V11 C7 16 17 16 17 11 V4", "M5 20 H19"],
-        ["strikethrough"] = ["M17 6 C16 4 8 3 8 8 C8 13 17 11 17 16 C17 21 8 20 7 18", "M4 12 H20"],
-        ["all-caps"] = ["M3 18 L7 6 L11 18 M4.5 14 H9.5", "M13 18 L17 6 L21 18 M14.5 14 H19.5"],
-        ["frame-rect"] = ["M4 4 H20 V20 H4 Z", "M4 4 L20 20 M20 4 L4 20"],
-        ["frame-ellipse"] = ["M12 4 C17 4 21 7.5 21 12 C21 16.5 17 20 12 20 C7 20 3 16.5 3 12 C3 7.5 7 4 12 4 Z", "M6 6 L18 18 M18 6 L6 18"],
-        ["eye"] = ["M2 12 C5 6 19 6 22 12 C19 18 5 18 2 12 Z", "M12 9 a3 3 0 1 0 0.01 0 Z"],
-        ["lock"] = ["M6 11 H18 V20 H6 Z", "M8 11 V8 C8 4 16 4 16 8 V11"],
-        ["link"] = ["M10 14 L14 10", "M8 12 L6 14 C4 16 8 20 10 18 L12 16", "M16 12 L18 10 C20 8 16 4 14 6 L12 8"],
-        ["fx"] = ["M10 4 C7 4 7 6 7 8 V20 M4 10 H11", "M13 11 L20 20 M20 11 L13 20"],
-        ["mask"] = ["M4 4 H20 V20 H4 Z", "F:M12 8 a4 4 0 1 0 0.01 0 Z"],
-        ["adjust"] = ["M12 3 a9 9 0 1 0 0.01 0 Z", "F:M12 3 a9 9 0 0 0 0 18 Z"],
-        ["folder"] = ["M3 6 H9 L11 8 H21 V19 H3 Z"],
-        ["tile-view"] = ["M4 4 H10 V10 H4 Z", "M14 4 H20 V10 H14 Z", "M4 14 H10 V20 H4 Z", "M14 14 H20 V20 H14 Z"],
-        ["list-view"] = ["M4 6 H20", "M4 12 H20", "M4 18 H20"],
-        ["new-layer"] = ["M5 5 H17 V17 H5 Z", "M8 8 H20 V20 H8"],
-        ["trash"] = ["M4 6 H20 M9 6 V3 H15 V6 M6 6 L7 21 H17 L18 6", "M10 10 V17 M14 10 V17"],
-        ["chevron-down"] = ["M6 9 L12 15 L18 9"],
-        ["chevron-right"] = ["M9 6 L15 12 L9 18"],
-        ["close"] = ["M6 6 L18 18 M18 6 L6 18"],
-        ["adj-brightnesscontrast"] = ["M12 7 a5 5 0 1 0 0.01 0 Z", "F:M12 7 a5 5 0 0 0 0 10 Z", "M12 2 V4 M12 20 V22 M2 12 H4 M20 12 H22 M5 5 L6.5 6.5 M17.5 17.5 L19 19 M5 19 L6.5 17.5 M17.5 6.5 L19 5"],
-        ["adj-levels"] = ["M3 20 H21", "F:M4 20 V16 H6 V20 Z M7 20 V10 H9 V20 Z M10 20 V6 H12 V20 Z M13 20 V9 H15 V20 Z M16 20 V14 H18 V20 Z M19 20 V17 H21 V20 Z"],
-        ["adj-curves"] = ["M3 3 H21 V21 H3 Z", "M3 21 C9 21 9 3 21 3"],
-        ["adj-exposure"] = ["M3 3 H21 V21 H3 Z", "M3 21 L21 3", "M6 8 H10 M8 6 V10 M14 16 H18"],
-        ["adj-vibrance"] = ["M12 4 L21 20 H3 Z", "M8 15 L16 15"],
-        ["adj-huesaturation"] = ["F:M3 5 H21 V9 H3 Z", "M3 12 H21 V16 H3 Z", "M3 19 H21"],
-        ["adj-colorbalance"] = ["M12 4 V20 M5 20 H19", "M4 9 L8 5 L12 9 M12 9 L16 5 L20 9", "M4 9 C4 12 8 12 8 9 M16 9 C16 12 20 12 20 9"],
-        ["adj-blackandwhite"] = ["M4 4 H20 V20 H4 Z", "F:M4 20 L20 4 V20 Z"],
-        ["adj-photofilter"] = ["M4 7 H8 L10 5 H14 L16 7 H20 V19 H4 Z", "F:M12 9 a4 4 0 1 0 0.01 0 Z"],
-        ["adj-channelmixer"] = ["M9 5 a5 5 0 1 0 0.01 0 Z", "M15 5 a5 5 0 1 0 0.01 0 Z", "M12 11 a5 5 0 1 0 0.01 0 Z"],
-        ["adj-invert"] = ["M4 4 H20 V20 H4 Z", "F:M4 4 H12 V20 H4 Z", "M14 9 a3 3 0 1 0 0.01 0 Z"],
-        ["adj-posterize"] = ["M3 20 H8 V15 H13 V10 H18 V5 H21"],
-        ["adj-threshold"] = ["M4 4 H20 V20 H4 Z", "F:M4 4 H20 V12 H4 Z"],
-        ["adj-gradientmap"] = ["M3 7 H21 V17 H3 Z", "F:M3 7 H9 V17 H3 Z", "M12 7 V17"],
-        ["adj-selectivecolor"] = ["M12 3 a9 9 0 1 0 0.01 0 Z", "M12 8 a4 4 0 1 0 0.01 0 Z", "F:M12 11 a1 1 0 1 0 0.01 0 Z"],
-        ["adj-desaturate"] = ["M12 3 a9 9 0 1 0 0.01 0 Z", "M5 19 L19 5"],
-        ["adj-colorlookup"] = ["M4 4 H20 V20 H4 Z", "M4 9.3 H20 M4 14.6 H20 M9.3 4 V20 M14.6 4 V20"],
-        ["web-color"] = ["M12 3 L21 8 V16 L12 21 L3 16 V8 Z", "M3 8 L12 13 L21 8", "M12 13 V21"],
-        ["clip-arrow"] = ["M6 4 V14 H18", "M15 11 L18 14 L15 17"],
-        ["smart-object"] = ["M4 4 H20 V20 H4 Z", "M14 14 H20 V20 H14 Z"],
-        ["lock-transparency"] = ["M4 4 H20 V20 H4 Z", "F:M4 4 H12 V12 H4 Z", "F:M12 12 H20 V20 H12 Z"],
-        ["lock-pixels"] = ["M4 20 L5 16 L15 6 L18 9 L8 19 Z", "M13 8 L16 11"],
-        ["lock-position"] = ["M12 3 V21 M3 12 H21", "M12 3 L9.5 5.5 M12 3 L14.5 5.5 M12 21 L9.5 18.5 M12 21 L14.5 18.5 M3 12 L5.5 9.5 M3 12 L5.5 14.5 M21 12 L18.5 9.5 M21 12 L18.5 14.5"],
-        ["toolbar-expand"] = ["M5 7 L10 12 L5 17 M13 7 L18 12 L13 17"],
-        ["toolbar-collapse"] = ["M11 7 L6 12 L11 17 M19 7 L14 12 L19 17"],
-        ["plus"] = ["M12 5 V19 M5 12 H19"],
-        ["snapshot"] = ["M4 7 H8 L10 5 H14 L16 7 H20 V19 H4 Z", "M12 10 a3 3 0 1 0 0.01 0 Z"],
-        ["new-document"] = ["M6 3 H14 L18 7 V21 H6 Z", "M14 3 V7 H18"],
-        ["selection"] = ["M4 4 H8 M10 4 H14 M16 4 H20 V8 M20 10 V14 M20 16 V20 H16 M14 20 H10 M8 20 H4 V16 M4 14 V10 M4 8 V4"],
-        ["path-fill"] = ["F:M5 5 H19 V19 H5 Z"],
-        ["path-stroke"] = ["M5 5 H19 V19 H5 Z"],
-        ["clipboard"] = ["M8 5 H6 V21 H18 V5 H16", "M9 3 H15 V7 H9 Z"],
-        ["capture-region"] = ["M3 8 V3 H8 M16 3 H21 V8 M21 16 V21 H16 M8 21 H3 V16", "M8 9 H16 V15 H8 Z"],
-        ["capture-screen"] = ["M3 4 H21 V16 H3 Z", "M9 20 H15 M12 16 V20"]
+        ["zoom-in"] = [Magnifier, MagnifierHandle, "M4 6.5 H9 M6.5 4 V9"],
+        ["zoom-out"] = [Magnifier, MagnifierHandle, "M4 6.5 H9"],
+        ["sel-new"] = ["M2.5 2.5 H13.5 V13.5 H2.5 Z", "H:M3 3 H13 V13 H3 Z"],
+        ["sel-add"] = ["M1.5 1.5 H10.5 V5.5 H14.5 V14.5 H5.5 V10.5 H1.5 Z", "H:M2 2 H10 V6 H14 V14 H6 V10 H2 Z"],
+        ["sel-sub"] = ["M1.5 1.5 H10.5 V10.5 H1.5 Z", "M5.5 5.5 H14.5 V14.5 H5.5 Z", "H:M2 2 H10 V5 H5 V10 H2 Z"],
+        ["sel-int"] = ["M1.5 1.5 H10.5 V10.5 H1.5 Z", "M5.5 5.5 H14.5 V14.5 H5.5 Z", "H:M6 6 H10 V10 H6 Z"],
+        ["brush-tip"] = ["F:M2.5 8 A5.5 5.5 0 1 0 13.5 8 A5.5 5.5 0 1 0 2.5 8 Z"],
+        ["airbrush"] = ["M2.5 6.5 H9.5 V14.5 H2.5 Z", "F:M4 3 H8 V6 H4 Z", "F:M10 3 H11 V4 H10 Z M12 1 H13 V2 H12 Z M12 4 H13 V5 H12 Z M14 2 H15 V3 H14 Z M14 6 H15 V7 H14 Z M12 7 H13 V8 H12 Z"],
+        ["gradient-linear"] = [GradientFrame, "F:M2 3 H6 V13 H2 Z", "H:M6 3 H10 V13 H6 Z"],
+        ["gradient-radial"] = [GradientFrame, "H:M3.5 8 A4.5 4.5 0 1 0 12.5 8 A4.5 4.5 0 1 0 3.5 8 Z", "F:M6 8 A2 2 0 1 0 10 8 A2 2 0 1 0 6 8 Z"],
+        ["gradient-angle"] = [GradientFrame, "F:M8 8 V3 H14 V8 Z", "H:M8 8 H14 V13 H8 Z"],
+        ["gradient-reflected"] = [GradientFrame, "F:M7 3 H9 V13 H7 Z", "H:M4 3 H7 V13 H4 Z M9 3 H12 V13 H9 Z"],
+        ["gradient-diamond"] = [GradientFrame, "H:M8 3 L13 8 L8 13 L3 8 Z", "F:M8 5.5 L10.5 8 L8 10.5 L5.5 8 Z"],
+        ["align-left"] = ["M1.5 1 V15", "F:M3 3 H13 V7 H3 Z M3 9 H9 V13 H3 Z"],
+        ["align-hcenter"] = ["M7.5 1 V15", "F:M2 3 H13 V7 H2 Z M4 9 H11 V13 H4 Z"],
+        ["align-right"] = ["M14.5 1 V15", "F:M3 3 H13 V7 H3 Z M7 9 H13 V13 H7 Z"],
+        ["align-top"] = ["M1 1.5 H15", "F:M3 3 H7 V13 H3 Z M9 3 H13 V9 H9 Z"],
+        ["align-vcenter"] = ["M1 7.5 H15", "F:M3 2 H7 V13 H3 Z M9 4 H13 V11 H9 Z"],
+        ["align-bottom"] = ["M1 14.5 H15", "F:M3 3 H7 V13 H3 Z M9 7 H13 V13 H9 Z"],
+        ["type-orientation"] = ["F:M1 1 H9 V3 H6 V10 H4 V3 H1 Z", "M6 13.5 H10.5 C12.5 13.5 13.5 12.5 13.5 10.5 V7", "F:M13.5 4 L16 7.5 H11 Z"],
+        ["align-text-left"] = ["M1 3.5 H15 M1 6.5 H10 M1 9.5 H15 M1 12.5 H8"],
+        ["align-text-center"] = ["M1 3.5 H15 M4 6.5 H12 M1 9.5 H15 M5 12.5 H11"],
+        ["align-text-right"] = ["M1 3.5 H15 M6 6.5 H15 M1 9.5 H15 M8 12.5 H15"],
+        ["faux-bold"] = ["F:M3 2 H8.5 C11 2 12 3.2 12 4.8 C12 6 11.3 6.9 10.3 7.3 C11.7 7.7 12.7 8.8 12.7 10.4 C12.7 12.5 11.2 14 8.5 14 H3 Z M5.5 4 V6.8 H8 C9 6.8 9.5 6.2 9.5 5.4 C9.5 4.6 9 4 8 4 Z M5.5 8.8 V12 H8.3 C9.5 12 10.1 11.3 10.1 10.4 C10.1 9.5 9.5 8.8 8.3 8.8 Z"],
+        ["faux-italic"] = ["F:M6 2 H13 V4 H10.8 L8.2 12 H10 V14 H3 V12 H5.2 L7.8 4 H6 Z"],
+        ["underline"] = ["M4.5 2 V7.5 C4.5 11 11.5 11 11.5 7.5 V2", "M3 14.5 H13"],
+        ["strikethrough"] = ["M11.5 3.5 C10.5 2 5 1.5 5 5 C5 8.5 11.5 7 11.5 11 C11.5 14.5 5.5 14 4.5 12.5", "M2 8.5 H14"],
+        ["all-caps"] = ["F:M1 3 H9 V5 H6 V14 H4 V5 H1 Z M9 7 H15 V9 H13 V14 H11 V9 H9 Z"],
+        ["frame-rect"] = ["M2.5 2.5 H13.5 V13.5 H2.5 Z", "M2.5 2.5 L13.5 13.5 M13.5 2.5 L2.5 13.5"],
+        ["frame-ellipse"] = ["M1.5 8 A6.5 6.5 0 1 0 14.5 8 A6.5 6.5 0 1 0 1.5 8 Z", "M3.5 3.5 L12.5 12.5 M12.5 3.5 L3.5 12.5"],
+        ["eye"] = ["M0.5 8 C3 3.5 13 3.5 15.5 8 C13 12.5 3 12.5 0.5 8 Z", "F:M5.5 8 A2.5 2.5 0 1 0 10.5 8 A2.5 2.5 0 1 0 5.5 8 Z"],
+        ["lock"] = ["F:M3 7 H13 V14 H3 Z M7 9 H9 V12 H7 Z", "M5.5 7 V5 C5.5 2 10.5 2 10.5 5 V7"],
+        ["mask"] = ["M1.5 2.5 H14.5 V13.5 H1.5 Z", "F:M5 8 A3 3 0 1 0 11 8 A3 3 0 1 0 5 8 Z"],
+        ["adjust"] = ["M1.5 8 A6.5 6.5 0 1 0 14.5 8 A6.5 6.5 0 1 0 1.5 8 Z", "F:M8 1.5 A6.5 6.5 0 0 0 8 14.5 Z"],
+        ["folder"] = ["M1.5 2.5 H6 L7.5 4.5 H14.5 V13.5 H1.5 Z", "M1.5 6.5 H14.5"],
+        ["tile-view"] = ["M1.5 1.5 H6.5 V6.5 H1.5 Z M9.5 1.5 H14.5 V6.5 H9.5 Z M1.5 9.5 H6.5 V14.5 H1.5 Z M9.5 9.5 H14.5 V14.5 H9.5 Z"],
+        ["list-view"] = ["F:M1 3 H4 V6 H1 Z M1 7 H4 V10 H1 Z M1 11 H4 V14 H1 Z", "M6 4.5 H15 M6 8.5 H15 M6 12.5 H15"],
+        ["new-layer"] = ["M2.5 2.5 H12.5 V12.5 H2.5 Z", "M7.5 5 V10 M5 7.5 H10"],
+        ["trash"] = ["M1.5 3.5 H13.5", "M5.5 3 V1.5 H9.5 V3", "M3.5 4 V14.5 H11.5 V4", "M6.5 6 V12 M8.5 6 V12"],
+        ["plus"] = ["M7.5 2 V13 M2 7.5 H13"],
+        ["snapshot"] = ["M1.5 4.5 H4.5 L6 2.5 H10 L11.5 4.5 H14.5 V13.5 H1.5 Z", "M5 9 A3 3 0 1 0 11 9 A3 3 0 1 0 5 9 Z"],
+        ["new-document"] = ["M3.5 1.5 H9.5 L12.5 4.5 V14.5 H3.5 Z", "M9.5 1.5 V4.5 H12.5"],
+        ["selection"] = ["M1 1.5 H4 M6 1.5 H10 M12 1.5 H15 M1 14.5 H4 M6 14.5 H10 M12 14.5 H15 M1.5 2 V4 M1.5 6 V10 M1.5 12 V14 M14.5 2 V4 M14.5 6 V10 M14.5 12 V14"],
+        ["path-fill"] = ["F:M2.5 12.5 C3 6 6 3 12.5 2.5 L13.5 13.5 Z", "F:M1 11 H4 V14 H1 Z M11 1 H14 V4 H11 Z M12 12 H15 V15 H12 Z"],
+        ["path-stroke"] = ["M2.5 12.5 C3 6 6 3 12.5 2.5 L13.5 13.5 Z", "F:M1 11 H4 V14 H1 Z M11 1 H14 V4 H11 Z M12 12 H15 V15 H12 Z"],
+        ["clipboard"] = ["M3.5 2.5 H12.5 V14.5 H3.5 Z", "F:M6 1 H10 V4 H6 Z", "M6 7.5 H10 M6 10.5 H10"],
+        ["capture-region"] = ["M1.5 5 V1.5 H5 M11 1.5 H14.5 V5 M14.5 11 V14.5 H11 M5 14.5 H1.5 V11", "M7.5 5 V10 M5 7.5 H10"],
+        ["capture-screen"] = ["M1.5 2.5 H14.5 V11.5 H1.5 Z", "M7.5 12 V14 M5 14.5 H11"],
+        ["web-color"] = ["M1.5 7.5 A6 6 0 1 0 13.5 7.5 A6 6 0 1 0 1.5 7.5 Z", "M1.5 7.5 H13.5", "M7.5 1.5 C4.5 4.5 4.5 10.5 7.5 13.5 C10.5 10.5 10.5 4.5 7.5 1.5"],
+        ["lock-transparency"] = ["M1.5 1.5 H14.5 V14.5 H1.5 Z", "F:M2 2 H5 V5 H2 Z M8 2 H11 V5 H8 Z M5 5 H8 V8 H5 Z M11 5 H14 V8 H11 Z M2 8 H5 V11 H2 Z M8 8 H11 V11 H8 Z M5 11 H8 V14 H5 Z M11 11 H14 V14 H11 Z"],
+        ["lock-pixels"] = [LayerBrushHandle, LayerBrushTip],
+        ["lock-position"] = ["M7.5 3 V12 M3 7.5 H12", "F:M7.5 0.5 L10.5 3.5 H4.5 Z M7.5 14.5 L10.5 11.5 H4.5 Z M0.5 7.5 L3.5 4.5 V10.5 Z M14.5 7.5 L11.5 4.5 V10.5 Z"],
+
+        // Adjustments panel and adjustment layer menus.
+        ["adj-brightnesscontrast"] = ["M4 7.5 A3.5 3.5 0 1 0 11 7.5 A3.5 3.5 0 1 0 4 7.5 Z", "F:M7.5 4 A3.5 3.5 0 0 0 7.5 11 Z", "M7.5 0 V2 M7.5 13 V15 M0 7.5 H2 M13 7.5 H15 M2.5 2.5 L3.5 3.5 M11.5 11.5 L12.5 12.5 M2.5 12.5 L3.5 11.5 M11.5 3.5 L12.5 2.5"],
+        ["adj-levels"] = ["M0 14.5 H16", "F:M1 14 V10 H3 V14 Z M4 14 V5 H6 V14 Z M7 14 V2 H9 V14 Z M10 14 V7 H12 V14 Z M13 14 V11 H15 V14 Z"],
+        ["adj-curves"] = [AdjustmentFrame, "M2 14 C7 14 9 2 14 2"],
+        ["adj-exposure"] = [AdjustmentFrame, "M14.5 1.5 L1.5 14.5", "M3 5.5 H8 M5.5 3 V8", "M8 11.5 H13"],
+        ["adj-vibrance"] = ["M7.5 1.5 L14 13.5 H1 Z", "H:M7.5 1.5 L14 13.5 H7.5 Z"],
+        ["adj-huesaturation"] = ["M1 3.5 H15 M1 8.5 H15 M1 13.5 H15", "F:M3 2 H6 V5 H3 Z M9 7 H12 V10 H9 Z M5 12 H8 V15 H5 Z"],
+        ["adj-colorbalance"] = ["M1 3.5 H14", "M7.5 2 V14 M4 14.5 H11", "M2.5 4 L0.5 9 M2.5 4 L4.5 9 M12.5 4 L10.5 9 M12.5 4 L14.5 9", "F:M0 9 H5 C5 11 0 11 0 9 Z M10 9 H15 C15 11 10 11 10 9 Z"],
+        ["adj-blackandwhite"] = [AdjustmentFrame, "F:M2 2 H8 V14 H2 Z"],
+        ["adj-photofilter"] = ["M1.5 8 A6.5 6.5 0 1 0 14.5 8 A6.5 6.5 0 1 0 1.5 8 Z", "H:M2 8 A6 6 0 1 0 14 8 A6 6 0 1 0 2 8 Z", "F:M4.5 6 A1.5 1.5 0 1 0 7.5 6 A1.5 1.5 0 1 0 4.5 6 Z"],
+        ["adj-channelmixer"] = ["M1.5 5.5 A3.5 3.5 0 1 0 8.5 5.5 A3.5 3.5 0 1 0 1.5 5.5 Z", "M6.5 5.5 A3.5 3.5 0 1 0 13.5 5.5 A3.5 3.5 0 1 0 6.5 5.5 Z", "M4 10 A3.5 3.5 0 1 0 11 10 A3.5 3.5 0 1 0 4 10 Z"],
+        ["adj-invert"] = [AdjustmentFrame, "F:M2 2 H14 L2 14 Z"],
+        ["adj-posterize"] = ["F:M1 14 V11 H4 V8 H7 V5 H10 V2 H14 V14 Z"],
+        ["adj-threshold"] = [AdjustmentFrame, "F:M2 6 H6 V10 H10 V14 H2 Z"],
+        ["adj-gradientmap"] = ["M1.5 9.5 H14.5 V14.5 H1.5 Z", "F:M2 10 H6 V14 H2 Z", "H:M6 10 H10 V14 H6 Z", "M7.5 1 V5", "F:M7.5 8 L10 5 H5 Z"],
+        ["adj-selectivecolor"] = ["M2 7.5 A5.5 5.5 0 1 0 13 7.5 A5.5 5.5 0 1 0 2 7.5 Z", "F:M5.5 7.5 A2 2 0 1 0 9.5 7.5 A2 2 0 1 0 5.5 7.5 Z", "M7.5 0 V2 M7.5 13 V15 M0 7.5 H2 M13 7.5 H15"],
+        ["adj-desaturate"] = ["M7.5 1 C7.5 1 3 6.5 3 9.5 C3 12 5 14 7.5 14 C10 14 12 12 12 9.5 C12 6.5 7.5 1 7.5 1 Z", "M1.5 14.5 L14.5 1.5"],
+        ["adj-colorlookup"] = [AdjustmentFrame, "M5.5 2 V14 M10.5 2 V14 M2 5.5 H14 M2 10.5 H14", "H:M6 6 H10 V10 H6 Z"]
+    };
+
+    /// <summary>Layer badges and toolbar toggles on a 12 px grid.</summary>
+    private static readonly Dictionary<string, string[]> Icons12 = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ["link"] = ["M5.5 3.5 L7 2 C8.5 0.5 11.5 3.5 10 5 L8.5 6.5", "M6.5 8.5 L5 10 C3.5 11.5 0.5 8.5 2 7 L3.5 5.5", "M4.5 7.5 L7.5 4.5"],
+        ["fx"] = ["M7 1.5 C5.5 1.5 4.5 2.2 4.5 4 V11", "M2.5 5.5 H7", "M7 6.5 L11 11 M11 6.5 L7 11"],
+        ["smart-object"] = ["M1.5 1.5 H10.5 V10.5 H1.5 Z", "F:M6 6 H11 V11 H6 Z"],
+        ["clip-arrow"] = ["M3.5 1 V6.5 H8", "F:M8 4 L11 6.5 L8 9 Z"],
+        ["toolbar-expand"] = ["M2 2.5 L5.5 6 L2 9.5 M6.5 2.5 L10 6 L6.5 9.5"],
+        ["toolbar-collapse"] = ["M5.5 2.5 L2 6 L5.5 9.5 M10 2.5 L6.5 6 L10 9.5"]
+    };
+
+    /// <summary>Chevrons and close crosses on a 10 px grid.</summary>
+    private static readonly Dictionary<string, string[]> Icons10 = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ["chevron-down"] = ["M1 3 L5 7 L9 3"],
+        ["chevron-right"] = ["M3 1 L7 5 L3 9"],
+        ["close"] = ["M1.5 1.5 L8.5 8.5 M8.5 1.5 L1.5 8.5"]
     };
 
     public static string KeyFor(ToolId id) => id.ToString().ToLowerInvariant();
@@ -124,25 +146,22 @@ public static partial class ToolIcons
 
     public static Control Create(string key, double size = 20)
     {
-        // Tool glyphs are drawn on a 20 px grid with 1 px strokes on pixel centers, so they are sharp at 20 px.
-        bool tool = ToolGlyphs.TryGetValue(key, out string[]? parts);
-        if (!tool && !Icons.TryGetValue(key, out parts))
-        {
-            parts = ["M5 5 H19 V19 H5 Z"];
-        }
-        double grid = tool ? 20 : 24;
+        (double grid, string[] parts) = ToolGlyphs.TryGetValue(key, out string[]? found) ? (20, found) :
+            Icons16.TryGetValue(key, out found) ? (16, found) :
+            Icons12.TryGetValue(key, out found) ? (12, found) :
+            Icons10.TryGetValue(key, out found) ? (10, found) :
+            (16, ["M2.5 2.5 H13.5 V13.5 H2.5 Z"]);
         Canvas canvas = new() { Width = grid, Height = grid };
-        foreach (string part in parts!)
+        foreach (string part in parts)
         {
-            // "F:" filled, "H:" half-tone fill, "D:" dashed stroke, otherwise a solid stroke.
             string kind = part.Length > 2 && part[1] == ':' ? part[..2] : string.Empty;
             bool filled = kind is "F:" or "H:";
             Avalonia.Controls.Shapes.Path path = new()
             {
                 Data = Geometry.Parse(kind.Length > 0 ? part[2..] : part),
-                StrokeThickness = filled ? 0 : tool ? 1 : 1.6,
-                StrokeLineCap = tool ? PenLineCap.Flat : PenLineCap.Round,
-                StrokeJoin = tool ? PenLineJoin.Miter : PenLineJoin.Round,
+                StrokeThickness = filled ? 0 : 1,
+                StrokeLineCap = PenLineCap.Flat,
+                StrokeJoin = PenLineJoin.Miter,
                 Opacity = kind == "H:" ? 0.45 : 1
             };
             if (kind == "D:") path.StrokeDashArray = [2, 2];
