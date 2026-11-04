@@ -1,6 +1,6 @@
 # Lessons from the first cross-platform branch
 
-The first attempt lived on the `cross-platform` branch (frozen at `55e0c7d90`, kept for reference). It produced working code for Linux and macOS, but it was written in parallel with Jaex's own migration on `develop`, and merging the two cost a 123-file conflict. `cross-platform-v2` starts again from `develop` (`fd61635f2`, after Jaex finished moving everything to SkiaSharp and Avalonia) and applies what that attempt taught. Read this before changing anything on the branch.
+The first attempt lived on a branch also named `cross-platform` (frozen at `55e0c7d90`, kept for reference). It produced working code for Linux and macOS, but it was written in parallel with Jaex's own migration on `develop`, and merging the two cost a 123-file conflict. `cross-platform-v2` starts again from `develop` (`fd61635f2`, after Jaex finished moving everything to SkiaSharp and Avalonia) and applies what that attempt taught. Read this before changing anything on the branch. The second attempt, `cross-platform-v2`, took over the name `cross-platform` on 2026-11-04.
 
 ## How we work
 

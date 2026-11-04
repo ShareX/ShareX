@@ -16,7 +16,7 @@ Uploads go only to the local test server from step 5 of the full procedure. Neve
 
 ## 1. Install from the disk image
 
-Build at commit `1dc43905d` or later on `cross-platform-v2`.
+Build at commit `1dc43905d` or later on `cross-platform`.
 
 1. Either download the `sharex-macos-arm64` (or `sharex-macos-x64`) artifact from the latest successful **Cross-platform** workflow run on GitHub, or build locally:
 

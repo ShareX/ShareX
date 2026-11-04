@@ -8,7 +8,7 @@ Uploads go only to a local server (AGENTS.md: never send real data to third-part
 
 ## 1. Build and install
 
-1. On the Mac, in the repository on `cross-platform-v2`, run:
+1. On the Mac, in the repository on `cross-platform`, run:
 
    ```
    Scripts/package-macos.sh arm64

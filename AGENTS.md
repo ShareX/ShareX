@@ -2,7 +2,7 @@
 
 Rules for people and coding agents working in this repository.
 
-The `cross-platform-v2` branch makes ShareX run on Windows, Linux and macOS. Windows, Linux and macOS are complete. McoreD and Jaex agree on the goal: all three systems at 100%, with features such as OCR implemented through each system's own support.
+The `cross-platform` branch makes ShareX run on Windows, Linux and macOS. Windows, Linux and macOS are complete. McoreD and Jaex agree on the goal: all three systems at 100%, with features such as OCR implemented through each system's own support.
 
 Useful background: [docs/cross-platform.md](docs/cross-platform.md) (architecture, building, per-desktop notes), [docs/cross-platform-learnings.md](docs/cross-platform-learnings.md), [docs/cross-platform-roadmap.md](docs/cross-platform-roadmap.md) (progress and open work), [docs/20261004-macos-test-procedure.md](docs/20261004-macos-test-procedure.md).
 
@@ -16,7 +16,7 @@ Useful background: [docs/cross-platform.md](docs/cross-platform.md) (architectur
 
 ## Git
 
-- Work on `cross-platform-v2`. `develop` is the v22 release line (hotfixes, merged into `cross-platform-v2` the same day). `cross-platform` is the frozen first attempt; do not merge it.
+- Work on `cross-platform` (named `cross-platform-v2` until 2026-11-04; the first attempt that used this name is gone). `develop` is the release line (v22.x, the Photo Editor, the native Windows recorder); merge it into `cross-platform` whenever it moves, porting new Windows-only code behind `ShareX.Platform`.
 - Pull before starting and rebase before pushing. **Never force push** and never rewrite pushed history; undo with `git revert`.
 - When a merge or rebase conflicts in this file or the docs, combine both sides; do not throw away the other side's text.
 

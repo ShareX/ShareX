@@ -1,6 +1,6 @@
 # Cross-platform architecture
 
-ShareX moves operating system specific code behind a platform abstraction layer so the same application runs on Windows, macOS and Linux. Requirements are tracked in [#8867](https://github.com/ShareX/ShareX/issues/8867). Work happens on `cross-platform-v2`; progress is in [cross-platform-roadmap.md](cross-platform-roadmap.md), and why things are done this way is in [cross-platform-learnings.md](cross-platform-learnings.md).
+ShareX moves operating system specific code behind a platform abstraction layer so the same application runs on Windows, macOS and Linux. Requirements are tracked in [#8867](https://github.com/ShareX/ShareX/issues/8867). Work happens on `cross-platform` (called `cross-platform-v2` until 2026-11-04); progress is in [cross-platform-roadmap.md](cross-platform-roadmap.md), and why things are done this way is in [cross-platform-learnings.md](cross-platform-learnings.md).
 
 This document describes the **target** architecture. At the branch point (`develop` `fd61635f2`) WinForms and GDI+ are already gone, the platform projects are not on this branch yet (task M1), and the libraries still target `net10.0-windows`. The migration debt list in [AGENTS.md](../AGENTS.md) tracks the gap.
 

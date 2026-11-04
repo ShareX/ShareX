@@ -1,7 +1,7 @@
 name: macOS
 
 # Builds, tests and packages ShareX.app for macOS on Apple silicon, then starts the packaged application. Started by hand
-# (Actions > macOS > Run workflow, or "gh workflow run macos.yml --ref cross-platform-v2"). The Cross-platform workflow does the
+# (Actions > macOS > Run workflow, or "gh workflow run macos.yml --ref cross-platform"). The Cross-platform workflow does the
 # same on every push for both architectures and signs with Developer ID when the secrets are set.
 on:
   workflow_dispatch:
