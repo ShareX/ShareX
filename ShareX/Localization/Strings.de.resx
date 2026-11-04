@@ -626,7 +626,7 @@
     <value>Zwischenablage-Inhaltsanzeige anzeigen</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Schaltfläche „Mit ShareX bearbeiten“ im Kontextmenü des Windows-Explorers anzeigen</value>
+    <value>Schaltfläche „Im ShareX-Bildeditor bearbeiten“ im Kontextmenü des Windows-Explorers anzeigen</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Schaltfläche „Im ShareX-Fotoeditor bearbeiten“ im Kontextmenü des Windows-Explorers anzeigen</value>
@@ -1329,7 +1329,7 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
     <value>Konnte das Bild nicht in den Pfad schreiben:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Mit ShareX bearbeiten</value>
+    <value>Im ShareX-Bildeditor bearbeiten</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Im ShareX-Fotoeditor bearbeiten</value>

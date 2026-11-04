@@ -626,7 +626,7 @@
     <value>نمایش مشاهده‌گر محتوای کلیپ‌بورد</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>شیرایکس را در راست کلیک منوی ویرایش با ویندوز اکسپلورر اضافه کن</value>
+    <value>دکمه «ویرایش در ویرایشگر تصویر ShareX» را در منوی راست‌کلیک ویندوز اکسپلورر نمایش بده</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>دکمه «ویرایش در ویرایشگر عکس ShareX» را در منوی راست‌کلیک ویندوز اکسپلورر نمایش بده</value>
@@ -1329,7 +1329,7 @@ Please select a different hotkey or quit the conflicting application and reبا�
     <value>Could not write تصویر to مسیر:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ویرایش با ShareX ...</value>
+    <value>ویرایش در ویرایشگر تصویر ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>ویرایش در ویرایشگر عکس ShareX</value>

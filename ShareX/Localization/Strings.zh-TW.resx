@@ -626,7 +626,7 @@
     <value>顯示剪貼簿內容檢視器</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>在檔案總管的右鍵選單中顯示「使用 ShareX 編輯」按鈕</value>
+    <value>在檔案總管的右鍵選單中顯示「使用 ShareX 圖片編輯器編輯」按鈕</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>在檔案總管的右鍵選單中顯示「使用 ShareX 相片編輯器編輯」按鈕</value>
@@ -1329,7 +1329,7 @@
     <value>無法寫入圖片至路徑：</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>使用 ShareX 編輯</value>
+    <value>使用 ShareX 圖片編輯器編輯</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>使用 ShareX 相片編輯器編輯</value>

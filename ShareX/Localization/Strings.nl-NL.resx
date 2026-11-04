@@ -626,7 +626,7 @@
     <value>Klembordinhoudviewer weergeven</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Knop "Bewerken met ShareX" weergeven in contextmenu van Windows Verkenner</value>
+    <value>Knop "Bewerken in ShareX-afbeeldingseditor" weergeven in contextmenu van Windows Verkenner</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Knop "Bewerken in ShareX-foto-editor" weergeven in contextmenu van Windows Verkenner</value>
@@ -1329,7 +1329,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Could not write afbeelding to path:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Bewerken with ShareX</value>
+    <value>Bewerken in ShareX-afbeeldingseditor</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Bewerken in ShareX-foto-editor</value>

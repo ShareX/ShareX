@@ -626,7 +626,7 @@
     <value>Tampilkan penampil isi papan klip</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Tampilkan "Edit dengan ShareX" di menu konteks Windows Explorer</value>
+    <value>Tampilkan "Edit di editor gambar ShareX" di menu konteks Windows Explorer</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Tampilkan "Edit di editor foto ShareX" di menu konteks Windows Explorer</value>
@@ -1329,7 +1329,7 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
     <value>Tidak dapat menulis gambar ke jalur:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Edit dengan ShareX</value>
+    <value>Edit di editor gambar ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Edit di editor foto ShareX</value>

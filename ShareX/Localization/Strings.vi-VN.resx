@@ -626,7 +626,7 @@
     <value>Hiển thị trình xem nội dung bảng nhớ tạm</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Hiện nút "Chỉnh sửa với ShareX" trong menu ngữ cảnh của Windows Explorer</value>
+    <value>Hiện nút "Chỉnh sửa trong trình chỉnh sửa hình ảnh ShareX" trong menu ngữ cảnh của Windows Explorer</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Hiện nút "Chỉnh sửa trong trình chỉnh sửa ảnh ShareX" trong menu ngữ cảnh của Windows Explorer</value>
@@ -1329,7 +1329,7 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
     <value>Không thể ghi hình ảnh vào đường dẫn:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Chỉnh sửa với ShareX</value>
+    <value>Chỉnh sửa trong trình chỉnh sửa hình ảnh ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Chỉnh sửa trong trình chỉnh sửa ảnh ShareX</value>

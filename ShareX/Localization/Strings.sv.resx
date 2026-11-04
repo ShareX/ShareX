@@ -626,7 +626,7 @@
     <value>Visa Urklippsvisaren</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Visa knappen ”Redigera med ShareX” i Utforskarens snabbmeny</value>
+    <value>Visa knappen ”Redigera i ShareX bildredigerare” i Utforskarens snabbmeny</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Visa knappen ”Redigera i ShareX fotoredigerare” i Utforskarens snabbmeny</value>
@@ -1329,7 +1329,7 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
     <value>Det gick inte att skriva bilden till sökvägen:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Redigera med ShareX</value>
+    <value>Redigera i ShareX bildredigerare</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Redigera i ShareX fotoredigerare</value>

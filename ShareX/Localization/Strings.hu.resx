@@ -626,7 +626,7 @@
     <value>A vágólap tartalommegjelenítőjének megjelenítése</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>"Szerkesztés ShareX-szel" gomb megjelenítése a Windows Intéző helyi menüjében</value>
+    <value>"Szerkesztés a ShareX képszerkesztőben" gomb megjelenítése a Windows Intéző helyi menüjében</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>"Szerkesztés a ShareX fotószerkesztőben" gomb megjelenítése a Windows Intéző helyi menüjében</value>
@@ -1329,7 +1329,7 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
     <value>Could not write kép to elérési út:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Szerkesztés with ShareX</value>
+    <value>Szerkesztés a ShareX képszerkesztőben</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Szerkesztés a ShareX fotószerkesztőben</value>

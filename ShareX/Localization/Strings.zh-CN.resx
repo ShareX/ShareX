@@ -626,7 +626,7 @@
     <value>显示剪贴板内容查看器</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>在Windows上下文菜单中显示“使用ShareX编辑”</value>
+    <value>在Windows上下文菜单中显示“使用ShareX图像编辑器编辑”</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>在Windows上下文菜单中显示“使用ShareX照片编辑器编辑”</value>
@@ -1329,7 +1329,7 @@
     <value>图像无法写入路径：</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>使用ShareX编辑</value>
+    <value>使用ShareX图像编辑器编辑</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>使用ShareX照片编辑器编辑</value>

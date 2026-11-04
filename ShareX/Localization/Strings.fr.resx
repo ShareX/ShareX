@@ -626,7 +626,7 @@
     <value>Afficher la visionneuse du contenu du presse-papiers</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Afficher le bouton « Modifier avec ShareX » dans le menu contextuel de l’Explorateur Windows</value>
+    <value>Afficher le bouton « Modifier dans l’éditeur d’images ShareX » dans le menu contextuel de l’Explorateur Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Afficher le bouton « Modifier dans l’éditeur de photos ShareX » dans le menu contextuel de l’Explorateur Windows</value>
@@ -1329,7 +1329,7 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
     <value>Impossible d'écrire l'image à l'emplacement spécifié :</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Modifier avec ShareX</value>
+    <value>Modifier dans l’éditeur d’images ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Modifier dans l’éditeur de photos ShareX</value>

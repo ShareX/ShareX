@@ -626,7 +626,7 @@
     <value>क्लिपबोर्ड सामग्री दर्शक दिखाएँ</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Windows Explorer संदर्भ मेनू में "ShareX से संपादित करें" बटन दिखाएँ</value>
+    <value>Windows Explorer संदर्भ मेनू में "ShareX छवि संपादक में संपादित करें" बटन दिखाएँ</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows Explorer संदर्भ मेनू में "ShareX फ़ोटो संपादक में संपादित करें" बटन दिखाएँ</value>
@@ -1329,7 +1329,7 @@
     <value>इस पथ पर छवि नहीं लिखी जा सकी:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ShareX से संपादित करें</value>
+    <value>ShareX छवि संपादक में संपादित करें</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>ShareX फ़ोटो संपादक में संपादित करें</value>

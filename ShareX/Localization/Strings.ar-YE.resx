@@ -626,7 +626,7 @@
     <value>عرض عارض محتوى الحافظة</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>عرض الخيار "تعديل باستخدام ShareX" على قائمة خيارات الملفات</value>
+    <value>عرض الخيار "تعديل في محرر الصور الخاص بـ ShareX" على قائمة خيارات الملفات</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>عرض الخيار "تعديل في محرر الصور في ShareX" على قائمة خيارات الملفات</value>
@@ -1329,7 +1329,7 @@
     <value>فشل إنشاء الصورة إلى:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>تعديل باستخدام ShareX</value>
+    <value>تعديل في محرر الصور الخاص بـ ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>تعديل في محرر الصور في ShareX</value>

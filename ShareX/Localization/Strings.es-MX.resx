@@ -626,7 +626,7 @@
     <value>Mostrar el visor de contenido del portapapeles</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Mostrar el botón "Editar con ShareX" en el menú contextual del Explorador de Windows</value>
+    <value>Mostrar el botón "Editar en el editor de imágenes de ShareX" en el menú contextual del Explorador de Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostrar el botón "Editar en el editor de fotos de ShareX" en el menú contextual del Explorador de Windows</value>
@@ -1329,7 +1329,7 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
     <value>No se pudo escribir la imagen en la ruta:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Editar con ShareX</value>
+    <value>Editar en el editor de imágenes de ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Editar en el editor de fotos de ShareX</value>

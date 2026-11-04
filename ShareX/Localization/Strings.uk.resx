@@ -626,7 +626,7 @@
     <value>Показувати переглядач вмісту буфера обміну</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Показувати кнопку „Змінити із ShareX“ у контекстному меню Провідника Windows</value>
+    <value>Показувати кнопку „Редагувати в редакторі зображень ShareX“ у контекстному меню Провідника Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Показувати кнопку „Редагувати у фоторедакторі ShareX“ у контекстному меню Провідника Windows</value>
@@ -1329,7 +1329,7 @@
     <value>Не вдалося записати зображення до шляху:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Змінити з ShareX</value>
+    <value>Редагувати в редакторі зображень ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Редагувати у фоторедакторі ShareX</value>

@@ -626,7 +626,7 @@
     <value>הצג את מציג תוכן הלוח</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>הצג את כפתור "ערוך עם ShareX" בתפריט ההקשר של סייר הקבצים</value>
+    <value>הצג את כפתור "ערוך בעורך התמונה של ShareX" בתפריט ההקשר של סייר הקבצים</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>הצג את כפתור "ערוך בעורך התמונות של ShareX" בתפריט ההקשר של סייר הקבצים</value>
@@ -1329,7 +1329,7 @@
     <value>לא ניתן היה לכתוב תמונה לנתיב:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ערוך עם ShareX</value>
+    <value>ערוך בעורך התמונה של ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>ערוך בעורך התמונות של ShareX</value>

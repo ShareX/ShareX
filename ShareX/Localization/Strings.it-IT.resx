@@ -626,7 +626,7 @@
     <value>Mostra il visualizzatore del contenuto degli appunti</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Mostra pulsante "Modifica con ShareX" nel menu contestuale di Esplora file</value>
+    <value>Mostra pulsante "Modifica nell'editor di immagini di ShareX" nel menu contestuale di Esplora file</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostra pulsante "Modifica nell'editor di foto di ShareX" nel menu contestuale di Esplora file</value>
@@ -1329,7 +1329,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Could not write immagine to percorso:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Modifica with ShareX</value>
+    <value>Modifica nell'editor di immagini di ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Modifica nell'editor di foto di ShareX</value>

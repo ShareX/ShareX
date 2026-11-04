@@ -626,7 +626,7 @@
     <value>Zobrazit prohlížeč obsahu schránky</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Zobrazit tlačítko „Upravit pomocí ShareX“ v místní nabídce Průzkumníka Windows</value>
+    <value>Zobrazit tlačítko „Upravit v editoru obrázků ShareX“ v místní nabídce Průzkumníka Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Zobrazit tlačítko „Upravit v editoru fotografií ShareX“ v místní nabídce Průzkumníka Windows</value>
@@ -1329,7 +1329,7 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
     <value>Obrázek nelze zapsat do cesty:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Upravit pomocí ShareX</value>
+    <value>Upravit v editoru obrázků ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Upravit v editoru fotografií ShareX</value>

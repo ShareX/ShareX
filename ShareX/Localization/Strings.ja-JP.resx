@@ -626,7 +626,7 @@
     <value>クリップボード内容ビューアーを表示する</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>エクスプローラのコンテキストメニューに「ShareXで画像編集」を表示</value>
+    <value>エクスプローラのコンテキストメニューに「ShareX 画像エディターで編集」を表示</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>エクスプローラのコンテキストメニューに「ShareX フォトエディターで編集」を表示</value>
@@ -1329,7 +1329,7 @@
     <value>次のパスへ画像を書き込めません:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ShareX で画像編集</value>
+    <value>ShareX 画像エディターで編集</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>ShareX フォトエディターで編集</value>

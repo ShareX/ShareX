@@ -626,7 +626,7 @@
     <value>แสดง คลิปบอร์ด เนื้อหา ตัวแสดง</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>แสดงปุ่ม "แก้ไขด้วย ShareX" ในเมนูบริบทของ Windows Explorer</value>
+    <value>แสดงปุ่ม "แก้ไขในตัวแก้ไขรูปภาพ ShareX" ในเมนูบริบทของ Windows Explorer</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>แสดงปุ่ม "แก้ไขในตัวแก้ไขภาพถ่าย ShareX" ในเมนูบริบทของ Windows Explorer</value>
@@ -1329,7 +1329,7 @@
     <value>ไม่สามารถเขียนรูปภาพไปยังเส้นทาง:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>แก้ไข ด้วย ShareX</value>
+    <value>แก้ไขในตัวแก้ไขรูปภาพ ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>แก้ไขในตัวแก้ไขภาพถ่าย ShareX</value>
