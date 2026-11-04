@@ -44,9 +44,19 @@ The first attempt lived on a branch also named `cross-platform` (frozen at `55e0
 26. **ShareX and XerahS are different applications.** Never install ShareX over `~/.local/lib/xerahs`, and never change a user's compositor configuration (for example Hyprland key bindings) without asking.
 27. **Check whether code is used before porting it.** The first attempt ported a GIF frame cache that nothing called, but the `ScreenRecordOutput.GIF` value next to it was in use.
 
+## Merging develop and native code
+
+28. **Merge `develop` the day it moves.** One month without a merge (2 October to 4 November 2026) cost 233 commits and 31 conflicting files, and `develop` had meanwhile added Windows-only code to shared projects: a native recorder, a Media Foundation player, a Win32 clipboard writer and GDI+ TIFF. Each one became a `ShareX.Platform` service with the Windows code in `ShareX.Platform.Windows` (f8c03a890).
+29. **A resolved conflict is not a merged behaviour.** Taking `develop`'s video trimmer dropped two support checks this branch had added; only the existing tests caught it. Run every test project before committing a merge, and read each side's diff since the merge base, not just the conflict hunks.
+30. **Native views go through `NativeControlHost` and a platform session.** `VideoView` hosts whatever child view `IVideoPlaybackService` creates: an HWND on Windows, an X11 window on Linux. Avalonia's X11 host reparents and resizes the child itself.
+31. **Avalonia on macOS places windows in points but renders at a scaling of 2.** Use `WindowScaling.GetPositionScaling` when turning screen coordinates into window sizes; dividing by `RenderScaling` halves every overlay on a Retina Mac.
+32. **GStreamer: `gst_bus_pop_filtered` discards the messages it skips.** Polling errors first silently dropped `ASYNC_DONE`. Pop every message once and branch on its type.
+33. **GStreamer GL follows `WAYLAND_DISPLAY`** and crashes drawing into an X11 window; set `GST_GL_WINDOW=x11` in the native environment (`setenv`, not `Environment.SetEnvironmentVariable`) before `gst_init`.
+34. **Prove it on the real artifact.** Both GStreamer faults passed compilation and unit tests; a small probe against a real video and window, and `coredumpctl` for the crash, found them. Keep such probes as opt-in tests (`SHAREX_GSTREAMER_WINDOW_TEST=1`).
+
 ## Reusable work on the first branch
 
-These pieces exist on `cross-platform` and can be brought over by path (`git checkout cross-platform -- <path>`), then adapted, instead of being written again. Bringing one over is a claimed task like any other.
+These pieces exist on the first attempt, kept only on McoreD's machine as the local branch `archive/cross-platform-v1` (55e0c7d90). Bring them over by path (`git checkout archive/cross-platform-v1 -- <path>`), then adapt, instead of writing them again.
 
 | What | Path on `cross-platform` | Notes |
 | --- | --- | --- |

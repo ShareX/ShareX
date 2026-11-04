@@ -50,6 +50,18 @@ Exceptions: `ShareX.Setup` (Windows installer) and `ShareX.Steam` (`net48` launc
 4. Keep Windows behaviour identical to v22.
 5. Add tests in the test projects. OS-specific tests use the `WindowsFact`, `LinuxFact` and `MacOSFact` attributes so they skip elsewhere.
 
+## How to work
+
+Evidence first, adapted from Cursor's pstack principles (github.com/cursor/plugins, MIT):
+
+- **Find the root cause before fixing.** Reproduce the defect, explain why it happens, then fix that. A guard that hides a symptom is not a fix.
+- **Prove it on the real artifact.** Build, run the tests, and for native code exercise the real library or window (a probe or an opt-in test), not just the compiler. Say what was checked and what was not.
+- **Regression test first.** Every bug fixed gets a test that fails without the fix.
+- **Test behaviour, not implementation.** Assert what users and callers see; do not pin private structure.
+- **Small verifiable steps.** Each commit builds and passes on its own; land a platform contract with its stubs, then each implementation.
+- **Migrate callers, then delete.** When code moves behind `ShareX.Platform`, switch every caller and remove the old path in the same change; no parallel copies.
+- **Encode lessons in structure.** A mistake found once becomes a test, an analyzer setting or a rule here, and a line in `docs/cross-platform-learnings.md`.
+
 ## Checks before pushing
 
 - `dotnet build ShareX.sln -c Release -p:Platform=x64` passes and every test project passes.
