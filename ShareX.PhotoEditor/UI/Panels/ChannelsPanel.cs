@@ -41,10 +41,10 @@ public sealed class ChannelsPanel : EditorPanel
     public ChannelsPanel(PhotoEditorWindow editor) : base(editor)
     {
         StackPanel footer = new() { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right, Spacing = 2, Margin = new Thickness(4) };
-        footer.Children.Add(IconButton("selection", Strings.ChannelsPanel_LoadAsSelectionTip, () => EditorCommands.LoadChannelSelection(Editor)));
-        footer.Children.Add(IconButton("mask", Strings.ChannelsPanel_SaveSelectionTip, () => EditorCommands.SaveSelectionToChannel(Editor)));
-        footer.Children.Add(IconButton("new-layer", Strings.ChannelsPanel_NewChannelTip, () => EditorCommands.NewChannel(Editor)));
-        footer.Children.Add(IconButton("trash", Strings.ChannelsPanel_DeleteChannelTip, () => EditorCommands.DeleteChannel(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Selection, Strings.ChannelsPanel_LoadAsSelectionTip, () => EditorCommands.LoadChannelSelection(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Mask, Strings.ChannelsPanel_SaveSelectionTip, () => EditorCommands.SaveSelectionToChannel(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.NewLayer, Strings.ChannelsPanel_NewChannelTip, () => EditorCommands.NewChannel(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Trash, Strings.ChannelsPanel_DeleteChannelTip, () => EditorCommands.DeleteChannel(Editor)));
         DockPanel root = new();
         DockPanel.SetDock(footer, Dock.Bottom);
         root.Children.Add(footer);
@@ -93,7 +93,7 @@ public sealed class ChannelsPanel : EditorPanel
             // In composite view every color channel is active, like the reference panel.
             bool selected = doc.ActiveChannel == null && (doc.ChannelView == view || doc.ChannelView == ChannelView.Composite);
             Grid content = new() { ColumnDefinitions = new ColumnDefinitions("28,Auto,*,Auto") };
-            Border eye = new() { Width = 28, BorderBrush = new SolidColorBrush(Color.FromRgb(0x24, 0x24, 0x24)), BorderThickness = new Thickness(0, 0, 1, 0), Child = doc.ChannelView == view || doc.ChannelView == ChannelView.Composite ? PhotoEditorIcons.Create("eye", 16) : null };
+            Border eye = new() { Width = 28, BorderBrush = new SolidColorBrush(Color.FromRgb(0x24, 0x24, 0x24)), BorderThickness = new Thickness(0, 0, 1, 0), Child = doc.ChannelView == view || doc.ChannelView == ChannelView.Composite ? new IconView(PhotoEditorIcons.Eye, 16) : null };
             content.Children.Add(eye);
             Control thumb = small != null ? new Border { Width = 32, Height = 32, BorderBrush = new SolidColorBrush(Color.FromRgb(0x1A, 0x1A, 0x1A)), BorderThickness = new Thickness(1), Margin = new Thickness(6, 0, 0, 0), Child = new Image { Source = BitmapHelper.ToAvalonia(ChannelThumbnail(small, view)) } } : new Border();
             Grid.SetColumn(thumb, 1);

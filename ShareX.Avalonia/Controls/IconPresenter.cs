@@ -34,8 +34,8 @@ using ShareX.Icons;
 namespace ShareX.AvaloniaUI.Controls;
 
 /// <summary>
-/// Shows an icon string in the Foreground at FontSize: a vector <see cref="ShareXIcons"/> icon, or otherwise
-/// a glyph of the icon font, such as a <see cref="LucideIcons"/> constant.
+/// Shows an icon string in the Foreground at FontSize: a ShareX icon (an <see cref="ImageEditorIcons"/> or
+/// <see cref="PhotoEditorIcons"/> key), or otherwise a glyph of the icon font, such as a <see cref="LucideIcons"/> constant.
 /// </summary>
 public class IconPresenter : Control
 {
@@ -48,7 +48,7 @@ public class IconPresenter : Control
     public static readonly StyledProperty<double> FontSizeProperty =
         TextElement.FontSizeProperty.AddOwner<IconPresenter>();
 
-    private ShareXIcons.Shape[]? _shapes;
+    private VectorIcon? _vectorIcon;
     private TextBlock? _glyph;
 
     static IconPresenter()
@@ -87,9 +87,9 @@ public class IconPresenter : Control
 
     private void UpdateIcon()
     {
-        _shapes = ShareXIcons.GetShapes(Icon);
+        _vectorIcon = IconCatalog.Find(Icon);
 
-        if (_shapes == null && _glyph == null)
+        if (_vectorIcon == null && _glyph == null)
         {
             _glyph = new TextBlock
             {
@@ -106,7 +106,7 @@ public class IconPresenter : Control
             LogicalChildren.Add(_glyph);
             VisualChildren.Add(_glyph);
         }
-        else if (_shapes != null && _glyph != null)
+        else if (_vectorIcon != null && _glyph != null)
         {
             LogicalChildren.Remove(_glyph);
             VisualChildren.Remove(_glyph);
@@ -131,7 +131,7 @@ public class IconPresenter : Control
         }
 
         // A vector icon fills the same em square as a glyph of the icon font.
-        return _shapes == null ? default : new Size(FontSize, FontSize);
+        return _vectorIcon == null ? default : new Size(FontSize, FontSize);
     }
 
     protected override Size ArrangeOverride(Size finalSize)
@@ -142,21 +142,9 @@ public class IconPresenter : Control
 
     public override void Render(DrawingContext context)
     {
-        if (_shapes == null || Foreground is not IBrush foreground)
+        if (_vectorIcon != null && Foreground is IBrush foreground)
         {
-            return;
-        }
-
-        double size = Math.Min(Bounds.Width, Bounds.Height);
-        double scale = size / ShareXIcons.GridSize;
-        Matrix transform = Matrix.CreateScale(scale, scale) * Matrix.CreateTranslation((Bounds.Width - size) / 2, (Bounds.Height - size) / 2);
-
-        using (context.PushTransform(transform))
-        {
-            foreach (ShareXIcons.Shape shape in _shapes)
-            {
-                shape.Draw(context, foreground);
-            }
+            _vectorIcon.Draw(context, new Rect(Bounds.Size), foreground);
         }
     }
 }

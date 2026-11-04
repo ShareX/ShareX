@@ -175,25 +175,25 @@ public sealed class TypeTool : ToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         TextLayer current = Doc?.ActiveLayer as TextLayer ?? Settings;
-        options.IconButton("type-orientation", Strings.TypeTools_ToggleOrientationTip, () => Change(t => t.Vertical = !t.Vertical, Strings.EditorCommands_ChangeTextOrientation));
+        options.IconButton(PhotoEditorIcons.TextOrientation, Strings.TypeTools_ToggleOrientationTip, () => Change(t => t.Vertical = !t.Vertical, Strings.EditorCommands_ChangeTextOrientation));
         options.Combo(null, FontFamilies.Select(f => (f, f)), () => current.FontFamily, v => Change(t => t.FontFamily = v, Strings.PropertiesPanel_SetFont), 170);
         options.Combo(null, [(Strings.TypeTools_Regular, (false, false)), (Strings.PropertiesPanel_Bold, (true, false)), (Strings.PropertiesPanel_Italic, (false, true)), (Strings.TypeTools_BoldItalic, (true, true))],
             () => (current.Bold, current.Italic), v => Change(t => { t.Bold = v.Item1; t.Italic = v.Item2; }, Strings.TypeTools_SetFontStyle), 100);
         options.Number(Strings.PropertiesPanel_SizeColon, 1, 1296, () => current.FontSize, v => Change(t => t.FontSize = (float)v, Strings.EditorCommands_SetFontSize), "0.#", "px", 1, 64);
         options.EnumCombo("aa", () => current.AntiAlias, v => Change(t => t.AntiAlias = v, Strings.TypeTools_SetAntiAlias), 92);
         options.Separator();
-        options.IconButton("align-text-left", Strings.TypeTools_LeftAlignTip, () => Change(t => t.Alignment = TextAlignment.Left, Strings.PropertiesPanel_AlignText), current.Alignment == TextAlignment.Left);
-        options.IconButton("align-text-center", Strings.TypeTools_CenterTip, () => Change(t => t.Alignment = TextAlignment.Center, Strings.PropertiesPanel_AlignText), current.Alignment == TextAlignment.Center);
-        options.IconButton("align-text-right", Strings.TypeTools_RightAlignTip, () => Change(t => t.Alignment = TextAlignment.Right, Strings.PropertiesPanel_AlignText), current.Alignment == TextAlignment.Right);
+        options.IconButton(PhotoEditorIcons.TextAlignLeft, Strings.TypeTools_LeftAlignTip, () => Change(t => t.Alignment = TextAlignment.Left, Strings.PropertiesPanel_AlignText), current.Alignment == TextAlignment.Left);
+        options.IconButton(PhotoEditorIcons.TextAlignCenter, Strings.TypeTools_CenterTip, () => Change(t => t.Alignment = TextAlignment.Center, Strings.PropertiesPanel_AlignText), current.Alignment == TextAlignment.Center);
+        options.IconButton(PhotoEditorIcons.TextAlignRight, Strings.TypeTools_RightAlignTip, () => Change(t => t.Alignment = TextAlignment.Right, Strings.PropertiesPanel_AlignText), current.Alignment == TextAlignment.Right);
         if (!_mask) options.ColorButton(Strings.TypeTools_TextColorTip, () => current.Color, c => { Host.Foreground = c; Change(t => t.Color = c, Strings.PropertiesPanel_SetTextColor); });
         options.Separator();
         options.Number(Strings.PropertiesPanel_TrackingColon, -1000, 10000, () => current.Tracking, v => Change(t => t.Tracking = (float)v, Strings.PropertiesPanel_SetTracking), "0", null, 10, 60);
         options.Number(Strings.PropertiesPanel_LeadingColon, 0.5, 5, () => current.Leading, v => Change(t => t.Leading = (float)v, Strings.PropertiesPanel_SetLeading), "0.00", null, 0.05, 56);
-        options.IconButton("faux-bold", Strings.TypeTools_FauxBold, () => Change(t => t.FauxBold = !t.FauxBold, Strings.TypeTools_FauxBold), current.FauxBold);
-        options.IconButton("faux-italic", Strings.TypeTools_FauxItalic, () => Change(t => t.FauxItalic = !t.FauxItalic, Strings.TypeTools_FauxItalic), current.FauxItalic);
-        options.IconButton("underline", Strings.PropertiesPanel_Underline, () => Change(t => t.Underline = !t.Underline, Strings.PropertiesPanel_Underline), current.Underline);
-        options.IconButton("strikethrough", Strings.TypeTools_Strikethrough, () => Change(t => t.Strikethrough = !t.Strikethrough, Strings.TypeTools_Strikethrough), current.Strikethrough);
-        options.IconButton("all-caps", Strings.TypeTools_AllCaps, () => Change(t => t.AllCaps = !t.AllCaps, Strings.TypeTools_AllCaps), current.AllCaps);
+        options.IconButton(PhotoEditorIcons.FauxBold, Strings.TypeTools_FauxBold, () => Change(t => t.FauxBold = !t.FauxBold, Strings.TypeTools_FauxBold), current.FauxBold);
+        options.IconButton(PhotoEditorIcons.FauxItalic, Strings.TypeTools_FauxItalic, () => Change(t => t.FauxItalic = !t.FauxItalic, Strings.TypeTools_FauxItalic), current.FauxItalic);
+        options.IconButton(PhotoEditorIcons.Underline, Strings.PropertiesPanel_Underline, () => Change(t => t.Underline = !t.Underline, Strings.PropertiesPanel_Underline), current.Underline);
+        options.IconButton(PhotoEditorIcons.Strikethrough, Strings.TypeTools_Strikethrough, () => Change(t => t.Strikethrough = !t.Strikethrough, Strings.TypeTools_Strikethrough), current.Strikethrough);
+        options.IconButton(PhotoEditorIcons.AllCaps, Strings.TypeTools_AllCaps, () => Change(t => t.AllCaps = !t.AllCaps, Strings.TypeTools_AllCaps), current.AllCaps);
         if (Host.IsTextEditing)
         {
             options.Separator();

@@ -45,13 +45,13 @@ public sealed class HistoryPanel : EditorPanel
     public HistoryPanel(PhotoEditorWindow editor) : base(editor)
     {
         StackPanel footer = new() { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right, Spacing = 2, Margin = new Thickness(4) };
-        footer.Children.Add(IconButton("new-document", Strings.HistoryPanel_NewDocumentTip, () => EditorCommands.NewDocumentFromState(Editor)));
-        footer.Children.Add(IconButton("snapshot", Strings.HistoryPanel_NewSnapshotTip, () =>
+        footer.Children.Add(IconButton(PhotoEditorIcons.NewDocument, Strings.HistoryPanel_NewDocumentTip, () => EditorCommands.NewDocumentFromState(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Snapshot, Strings.HistoryPanel_NewSnapshotTip, () =>
         {
             Doc?.History.CreateSnapshot();
             Refresh();
         }));
-        footer.Children.Add(IconButton("trash", Strings.HistoryPanel_DeleteStatesTip, () =>
+        footer.Children.Add(IconButton(PhotoEditorIcons.Trash, Strings.HistoryPanel_DeleteStatesTip, () =>
         {
             Doc?.History.DiscardRedo();
             Refresh();
@@ -95,20 +95,20 @@ public sealed class HistoryPanel : EditorPanel
     private static string IconFromEnglishName(string name)
     {
         string n = name.ToLowerInvariant();
-        if (n.Contains("open") || n.Contains("new document") || n.Contains("duplicate image")) return "new-document";
-        if (n.Contains("brush") || n.Contains("pencil") || n.Contains("paint") || n.Contains("stamp") || n.Contains("healing") || n.Contains("smudge") || n.Contains("blur") || n.Contains("dodge") || n.Contains("burn") || n.Contains("sponge")) return "brush";
-        if (n.Contains("eras")) return "eraser";
-        if (n.Contains("select") || n.Contains("marquee") || n.Contains("lasso") || n.Contains("wand") || n.Contains("deselect")) return "rectangularmarquee";
-        if (n.Contains("type") || n.Contains("text")) return "horizontaltype";
-        if (n.Contains("move") || n.Contains("nudge") || n.Contains("align")) return "move";
-        if (n.Contains("crop") || n.Contains("trim")) return "crop";
-        if (n.Contains("transform") || n.Contains("rotate") || n.Contains("flip") || n.Contains("scale")) return "freetransform";
-        if (n.Contains("gradient")) return "gradient";
-        if (n.Contains("fill") || n.Contains("bucket")) return "paintbucket";
-        if (n.Contains("layer") || n.Contains("merge") || n.Contains("flatten") || n.Contains("group")) return "new-layer";
-        if (n.Contains("shape") || n.Contains("rectangle") || n.Contains("ellipse") || n.Contains("polygon")) return "rectangle";
-        if (n.Contains("path") || n.Contains("pen") || n.Contains("anchor")) return "pen";
-        return "adjust";
+        if (n.Contains("open") || n.Contains("new document") || n.Contains("duplicate image")) return PhotoEditorIcons.NewDocument;
+        if (n.Contains("brush") || n.Contains("pencil") || n.Contains("paint") || n.Contains("stamp") || n.Contains("healing") || n.Contains("smudge") || n.Contains("blur") || n.Contains("dodge") || n.Contains("burn") || n.Contains("sponge")) return PhotoEditorIcons.Brush;
+        if (n.Contains("eras")) return PhotoEditorIcons.Eraser;
+        if (n.Contains("select") || n.Contains("marquee") || n.Contains("lasso") || n.Contains("wand") || n.Contains("deselect")) return PhotoEditorIcons.RectangularMarquee;
+        if (n.Contains("type") || n.Contains("text")) return PhotoEditorIcons.HorizontalType;
+        if (n.Contains("move") || n.Contains("nudge") || n.Contains("align")) return PhotoEditorIcons.Move;
+        if (n.Contains("crop") || n.Contains("trim")) return PhotoEditorIcons.Crop;
+        if (n.Contains("transform") || n.Contains("rotate") || n.Contains("flip") || n.Contains("scale")) return PhotoEditorIcons.FreeTransform;
+        if (n.Contains("gradient")) return PhotoEditorIcons.Gradient;
+        if (n.Contains("fill") || n.Contains("bucket")) return PhotoEditorIcons.PaintBucket;
+        if (n.Contains("layer") || n.Contains("merge") || n.Contains("flatten") || n.Contains("group")) return PhotoEditorIcons.NewLayer;
+        if (n.Contains("shape") || n.Contains("rectangle") || n.Contains("ellipse") || n.Contains("polygon")) return PhotoEditorIcons.Rectangle;
+        if (n.Contains("path") || n.Contains("pen") || n.Contains("anchor")) return PhotoEditorIcons.Pen;
+        return PhotoEditorIcons.Adjustment;
     }
 
     public override void Refresh()
@@ -140,7 +140,7 @@ public sealed class HistoryPanel : EditorPanel
             Width = 22,
             Height = 22,
             Background = Brushes.Transparent,
-            Child = isSource ? PhotoEditorIcons.Create("historybrush", 16) : null,
+            Child = isSource ? new IconView(PhotoEditorIcons.HistoryBrush, 16) : null,
             Cursor = new Cursor(StandardCursorType.Hand),
             BorderBrush = new SolidColorBrush(Color.FromRgb(0x28, 0x28, 0x28)),
             BorderThickness = new Thickness(0, 0, 1, 0)
@@ -156,7 +156,7 @@ public sealed class HistoryPanel : EditorPanel
         name.Margin = new Thickness(4, 0, 0, 0);
         bool future = !snapshot && index > history.Index;
         if (future) name.Opacity = 0.45;
-        Control icon = snapshot ? PhotoEditorIcons.Create("snapshot", 16) : PhotoEditorIcons.Create(HistoryIcon(entry.Name), 16);
+        Control icon = snapshot ? new IconView(PhotoEditorIcons.Snapshot, 16) : new IconView(HistoryIcon(entry.Name), 16);
         icon.Opacity = future ? 0.45 : 0.85;
         StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 6, VerticalAlignment = VerticalAlignment.Center };
         content.Children.Add(source);

@@ -59,11 +59,11 @@ public sealed class ToolbarControl : UserControl
         StackPanel root = new() { Spacing = 0, Margin = new Thickness(0, 0, 0, 6) };
         root.Children.Add(new Border { Child = _columnsToggle, Padding = new Thickness(2, 1), Margin = new Thickness(0, 0, 0, 4) });
         root.Children.Add(_sections);
-        root.Children.Add(SmallButton("edit-toolbar", Strings.ToolbarControl_EditToolbarEllipsis, () => _ = ToolbarCustomizeDialog.ShowAsync(_editor)));
+        root.Children.Add(SmallButton(PhotoEditorIcons.EditToolbar, Strings.ToolbarControl_EditToolbarEllipsis, () => _ = ToolbarCustomizeDialog.ShowAsync(_editor)));
         root.Children.Add(BuildColorWidget());
-        _quickMask = SmallButton("quick-mask", Strings.ToolbarControl_QuickMaskTip, () => Commands.EditorCommands.ToggleQuickMask(_editor));
+        _quickMask = SmallButton(PhotoEditorIcons.QuickMask, Strings.ToolbarControl_QuickMaskTip, () => Commands.EditorCommands.ToggleQuickMask(_editor));
         root.Children.Add(_quickMask);
-        root.Children.Add(SmallButton("screen-mode", Strings.ToolbarControl_ScreenModeTip, () => _editor.CycleScreenMode()));
+        root.Children.Add(SmallButton(PhotoEditorIcons.ScreenMode, Strings.ToolbarControl_ScreenModeTip, () => _editor.CycleScreenMode()));
         Content = new ScrollViewer { Content = root, VerticalScrollBarVisibility = ScrollBarVisibility.Hidden, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
         ApplyColumns();
         Rebuild();
@@ -85,7 +85,7 @@ public sealed class ToolbarControl : UserControl
     {
         bool two = _editor.Settings.ToolbarTwoColumns;
         Width = two ? ButtonWidth * 2 + 8 : Math.Max(ButtonWidth + 6, ColorWidgetWidth + 2);
-        _columnsToggle.Content = PhotoEditorIcons.Create(two ? "toolbar-collapse" : "toolbar-expand", 12);
+        _columnsToggle.Content = new IconView(two ? PhotoEditorIcons.ToolbarCollapse : PhotoEditorIcons.ToolbarExpand, 12);
         ToolTip.SetTip(_columnsToggle, two ? Strings.ToolbarControl_CollapseTip : Strings.ToolbarControl_ExpandTip);
     }
 
@@ -94,7 +94,7 @@ public sealed class ToolbarControl : UserControl
         Button button = new()
         {
             Classes = { "tool" },
-            Content = PhotoEditorIcons.Create(icon, 20),
+            Content = new IconView(icon, 20),
             HorizontalAlignment = HorizontalAlignment.Center,
             Width = ButtonWidth - 2,
             Height = 28
@@ -150,7 +150,7 @@ public sealed class ToolbarControl : UserControl
     private Button CreateToolButton(ToolGroup group)
     {
         Grid content = new() { Width = 32, Height = 29 };
-        content.Children.Add(new ContentControl { Content = PhotoEditorIcons.Create(group.Current.Id.ToString(), 20), HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center });
+        content.Children.Add(new ContentControl { Content = new IconView(IconMap.ForTool(group.Current.Id), 20), HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center });
         if (group.Tools.Count > 1)
         {
             // Small corner triangle marks tools that have a flyout.
@@ -209,7 +209,7 @@ public sealed class ToolbarControl : UserControl
             bool current = tool == group.Current;
             Grid header = new() { ColumnDefinitions = new ColumnDefinitions("10,22,*,Auto"), MinWidth = 220 };
             if (current) header.Children.Add(new Border { Width = 5, Height = 5, CornerRadius = new CornerRadius(3), Background = Brushes.White, VerticalAlignment = VerticalAlignment.Center });
-            Control icon = PhotoEditorIcons.Create(tool.Id.ToString(), 16);
+            Control icon = new IconView(IconMap.ForTool(tool.Id), 16);
             Grid.SetColumn(icon, 1);
             TextBlock name = new() { Text = tool.Name, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(6, 0, 16, 0) };
             Grid.SetColumn(name, 2);
@@ -233,7 +233,7 @@ public sealed class ToolbarControl : UserControl
             button.Classes.Set("checked", group.Tools.Contains(_editor.Tools.Active));
             if (button.Content is Grid grid && grid.Children[0] is ContentControl icon)
             {
-                icon.Content = PhotoEditorIcons.Create(group.Current.Id.ToString(), 20);
+                icon.Content = new IconView(IconMap.ForTool(group.Current.Id), 20);
             }
             UpdateTip(button, group.Current);
         }

@@ -233,8 +233,8 @@ public sealed class ZoomTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.IconButton("zoom-in", Strings.NavigationTools_ZoomInTip, () => { Host.View?.ZoomStep(true, Center()); Host.InvalidateOverlay(); });
-        options.IconButton("zoom-out", Strings.NavigationTools_ZoomOutTip, () => { Host.View?.ZoomStep(false, Center()); Host.InvalidateOverlay(); });
+        options.IconButton(PhotoEditorIcons.ZoomIn, Strings.NavigationTools_ZoomInTip, () => { Host.View?.ZoomStep(true, Center()); Host.InvalidateOverlay(); });
+        options.IconButton(PhotoEditorIcons.ZoomOut, Strings.NavigationTools_ZoomOutTip, () => { Host.View?.ZoomStep(false, Center()); Host.InvalidateOverlay(); });
         options.Check(Strings.NavigationTools_ScrubbyZoom, () => ScrubbyZoom, v => ScrubbyZoom = v);
         options.Button("100%", () => { Host.View?.ActualPixels(); Host.InvalidateOverlay(); });
         options.Button(Strings.NavigationTools_FitScreen, () => { Host.View?.FitOnScreen(); Host.InvalidateOverlay(); });

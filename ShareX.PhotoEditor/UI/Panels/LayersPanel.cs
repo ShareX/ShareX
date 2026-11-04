@@ -113,15 +113,15 @@ public sealed class LayersPanel : EditorPanel
         header.Children.Add(lockRow);
 
         StackPanel footer = new() { Orientation = Orientation.Horizontal, Spacing = 2, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(4, 2) };
-        footer.Children.Add(IconButton("link", Strings.LayersPanel_LinkTip, () => EditorCommands.ToggleLinkLayers(Editor)));
-        footer.Children.Add(IconButton("fx", Strings.LayersPanel_AddLayerStyleTip, () => _ = EditorCommands.LayerStyle(Editor)));
-        footer.Children.Add(IconButton("mask", Strings.LayersPanel_AddLayerMaskTip, () => EditorCommands.AddMask(Editor, Doc?.Selection != null ? MaskMode.RevealSelection : MaskMode.RevealAll)));
-        Button adjust = IconButton("adjust", Strings.LayersPanel_NewFillOrAdjustmentTip, () => { });
+        footer.Children.Add(IconButton(PhotoEditorIcons.Link, Strings.LayersPanel_LinkTip, () => EditorCommands.ToggleLinkLayers(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Effects, Strings.LayersPanel_AddLayerStyleTip, () => _ = EditorCommands.LayerStyle(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Mask, Strings.LayersPanel_AddLayerMaskTip, () => EditorCommands.AddMask(Editor, Doc?.Selection != null ? MaskMode.RevealSelection : MaskMode.RevealAll)));
+        Button adjust = IconButton(PhotoEditorIcons.Adjustment, Strings.LayersPanel_NewFillOrAdjustmentTip, () => { });
         adjust.Flyout = EditorCommands.CreateAdjustmentFlyout(Editor);
         footer.Children.Add(adjust);
-        footer.Children.Add(IconButton("folder", Strings.LayersPanel_NewGroupTip, () => EditorCommands.NewGroup(Editor)));
-        footer.Children.Add(IconButton("new-layer", Strings.LayersPanel_NewLayerTip, () => EditorCommands.NewLayer(Editor)));
-        footer.Children.Add(IconButton("trash", Strings.LayersPanel_DeleteLayerTip, () => EditorCommands.DeleteLayers(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Folder, Strings.LayersPanel_NewGroupTip, () => EditorCommands.NewGroup(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.NewLayer, Strings.LayersPanel_NewLayerTip, () => EditorCommands.NewLayer(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Trash, Strings.LayersPanel_DeleteLayerTip, () => EditorCommands.DeleteLayers(Editor)));
 
         Grid listHost = new();
         listHost.Children.Add(_list);
@@ -147,7 +147,7 @@ public sealed class LayersPanel : EditorPanel
         Button button = new()
         {
             Classes = { "icon" },
-            Content = PhotoEditorIcons.Create(icon, 16),
+            Content = new IconView(icon, 16),
             Width = 24,
             Height = 22,
             Padding = new Thickness(0),
@@ -190,10 +190,10 @@ public sealed class LayersPanel : EditorPanel
             _blend.SelectedItem = _blend.Items.OfType<ComboBoxItem>().FirstOrDefault(i => (LayerBlendMode)i.Tag! == active.BlendMode);
             _opacity.Value = (decimal)Math.Round(active.Opacity * 100);
             _fill.Value = (decimal)Math.Round(active.FillOpacity * 100);
-            _locks.Children.Add(LockButton(Strings.LayersPanel_LockTransparentPixels, active.LockTransparency, () => active.LockTransparency = !active.LockTransparency, "lock-transparency"));
-            _locks.Children.Add(LockButton(Strings.LayersPanel_LockImagePixels, active.LockPixels, () => active.LockPixels = !active.LockPixels, "lock-pixels"));
-            _locks.Children.Add(LockButton(Strings.LayersPanel_LockPosition, active.LockPosition, () => active.LockPosition = !active.LockPosition, "lock-position"));
-            _locks.Children.Add(LockButton(Strings.LayersPanel_LockAll, active.LockAll, () => active.LockAll = !active.LockAll, "lock"));
+            _locks.Children.Add(LockButton(Strings.LayersPanel_LockTransparentPixels, active.LockTransparency, () => active.LockTransparency = !active.LockTransparency, PhotoEditorIcons.LockTransparency));
+            _locks.Children.Add(LockButton(Strings.LayersPanel_LockImagePixels, active.LockPixels, () => active.LockPixels = !active.LockPixels, PhotoEditorIcons.LockPixels));
+            _locks.Children.Add(LockButton(Strings.LayersPanel_LockPosition, active.LockPosition, () => active.LockPosition = !active.LockPosition, PhotoEditorIcons.LockPosition));
+            _locks.Children.Add(LockButton(Strings.LayersPanel_LockAll, active.LockAll, () => active.LockAll = !active.LockAll, PhotoEditorIcons.Lock));
         }
         _updating = false;
     }
@@ -218,7 +218,7 @@ public sealed class LayersPanel : EditorPanel
             Background = Brushes.Transparent,
             BorderBrush = new SolidColorBrush(Color.FromRgb(0x24, 0x24, 0x24)),
             BorderThickness = new Thickness(0, 0, 1, 0),
-            Child = layer.Visible ? PhotoEditorIcons.Create("eye", 16) : null,
+            Child = layer.Visible ? new IconView(PhotoEditorIcons.Eye, 16) : null,
             Cursor = new Cursor(StandardCursorType.Hand)
         };
         ToolTip.SetTip(eye, Strings.LayersPanel_ToggleVisibilityTip);
@@ -242,10 +242,10 @@ public sealed class LayersPanel : EditorPanel
 
         StackPanel thumbs = new() { Orientation = Orientation.Horizontal, Spacing = 4, Margin = new Thickness(6 + depth * 16, 0, 0, 0), VerticalAlignment = VerticalAlignment.Center };
         Grid.SetColumn(thumbs, 1);
-        if (layer.IsClipped) thumbs.Children.Add(PhotoEditorIcons.Create("clip-arrow", 12));
+        if (layer.IsClipped) thumbs.Children.Add(new IconView(PhotoEditorIcons.ClippingMask, 12));
         if (layer is GroupLayer group)
         {
-            Button expander = new() { Classes = { "icon" }, Content = PhotoEditorIcons.Create(group.Expanded ? "chevron-down" : "chevron-right", 10), Padding = new Thickness(2), VerticalAlignment = VerticalAlignment.Center };
+            Button expander = new() { Classes = { "icon" }, Content = new IconView(group.Expanded ? PhotoEditorIcons.ChevronDown : PhotoEditorIcons.ChevronRight, 10), Padding = new Thickness(2), VerticalAlignment = VerticalAlignment.Center };
             expander.Click += (_, _) =>
             {
                 group.Expanded = !group.Expanded;
@@ -258,9 +258,9 @@ public sealed class LayersPanel : EditorPanel
         IBrush frame = ThumbFrame;
         Control thumbContent = layer switch
         {
-            GroupLayer g => g.IsArtboard ? PhotoEditorIcons.Create("artboard", 20) : PhotoEditorIcons.Create("folder", 16),
-            TextLayer => PhotoEditorIcons.Create("horizontaltype", 20),
-            AdjustmentLayer => PhotoEditorIcons.Create("adjust", 16),
+            GroupLayer g => g.IsArtboard ? new IconView(PhotoEditorIcons.Artboard, 20) : new IconView(PhotoEditorIcons.Folder, 16),
+            TextLayer => new IconView(PhotoEditorIcons.HorizontalType, 20),
+            AdjustmentLayer => new IconView(PhotoEditorIcons.Adjustment, 16),
             _ => CreateThumbnail(doc, layer)
         };
         bool iconThumb = layer is GroupLayer or TextLayer or AdjustmentLayer;
@@ -290,7 +290,7 @@ public sealed class LayersPanel : EditorPanel
         Border? maskBorder = null;
         if (layer.Mask != null)
         {
-            thumbs.Children.Add(PhotoEditorIcons.Create("link", 12));
+            thumbs.Children.Add(new IconView(PhotoEditorIcons.Link, 12));
             Border mask = new()
             {
                 Width = 32,
@@ -341,9 +341,9 @@ public sealed class LayersPanel : EditorPanel
         content.Children.Add(name);
 
         StackPanel badges = new() { Orientation = Orientation.Horizontal, Spacing = 6, Margin = new Thickness(0, 0, 10, 0), VerticalAlignment = VerticalAlignment.Center };
-        if (layer.LinkId != 0) badges.Children.Add(PhotoEditorIcons.Create("link", 12));
-        if (layer.Style?.HasAny == true) badges.Children.Add(PhotoEditorIcons.Create("fx", 12));
-        if (layer is SmartObjectLayer) badges.Children.Add(PhotoEditorIcons.Create("smart-object", 12));
+        if (layer.LinkId != 0) badges.Children.Add(new IconView(PhotoEditorIcons.Link, 12));
+        if (layer.Style?.HasAny == true) badges.Children.Add(new IconView(PhotoEditorIcons.Effects, 12));
+        if (layer is SmartObjectLayer) badges.Children.Add(new IconView(PhotoEditorIcons.SmartObject, 12));
         if (layer.LockAll || layer.LockPixels || layer.LockPosition || layer.LockTransparency) badges.Children.Add(CreateLockBadge(doc, layer));
         Grid.SetColumn(badges, 3);
         content.Children.Add(badges);
@@ -394,7 +394,7 @@ public sealed class LayersPanel : EditorPanel
     /// <summary>Lock indicator of a layer row; clicking it on the background layer converts it to a normal layer.</summary>
     private Border CreateLockBadge(PhotoDocument doc, Layer layer)
     {
-        Border badge = new() { Background = Brushes.Transparent, Child = PhotoEditorIcons.Create("lock", 16) };
+        Border badge = new() { Background = Brushes.Transparent, Child = new IconView(PhotoEditorIcons.Lock, 16) };
         ToolTip.SetTip(badge, layer.LockAll ? Strings.LayersPanel_FullyLockedTip : Strings.LayersPanel_PartiallyLockedTip);
         if (layer is RasterLayer { IsBackground: true })
         {

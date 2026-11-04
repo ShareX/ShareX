@@ -143,7 +143,7 @@ public sealed class GradientTool : ToolBase
         foreach (GradientType type in Enum.GetValues<GradientType>())
         {
             GradientType captured = type;
-            options.IconButton("gradient-" + type.ToString().ToLowerInvariant(), string.Format(Strings.FillTools_GradientTypeTip, EnumNames.Get(type)), () => { Type = captured; Host.RefreshOptions(); }, Type == type);
+            options.IconButton(IconMap.ForGradient(type), string.Format(Strings.FillTools_GradientTypeTip, EnumNames.Get(type)), () => { Type = captured; Host.RefreshOptions(); }, Type == type);
         }
         options.Separator();
         options.BlendMode(() => BlendMode, m => BlendMode = m);

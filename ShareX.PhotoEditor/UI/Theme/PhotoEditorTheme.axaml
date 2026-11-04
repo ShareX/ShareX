@@ -1,5 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons">
     <!--
         Photo editor theme: a dense, dark professional-editor look.
         Applied to the Photo editor window and its dialogs only, so the rest of ShareX keeps its own styling.
@@ -78,6 +79,11 @@
     <Style Selector="AccessText">
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+
+    <!-- Icons -->
+    <Style Selector="icons|IconView">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
     </Style>
 
     <!-- Buttons: flat text buttons with a thin outline, like the reference options bar -->

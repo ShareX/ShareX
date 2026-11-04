@@ -41,13 +41,13 @@ public sealed class PathsPanel : EditorPanel
     public PathsPanel(PhotoEditorWindow editor) : base(editor)
     {
         StackPanel footer = new() { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right, Spacing = 2, Margin = new Thickness(4) };
-        footer.Children.Add(IconButton("path-fill", Strings.PathsPanel_FillPathTip, () => EditorCommands.FillPath(Editor)));
-        footer.Children.Add(IconButton("path-stroke", Strings.PathsPanel_StrokePathTip, () => EditorCommands.StrokePath(Editor)));
-        footer.Children.Add(IconButton("selection", Strings.PathsPanel_LoadAsSelectionTip, () => EditorCommands.PathToSelection(Editor)));
-        footer.Children.Add(IconButton("pen", Strings.PathsPanel_MakeWorkPathTip, () => EditorCommands.SelectionToPath(Editor)));
-        footer.Children.Add(IconButton("mask", Strings.PathsPanel_AddVectorMaskTip, () => EditorCommands.PathToShape(Editor)));
-        footer.Children.Add(IconButton("new-layer", Strings.PathsPanel_NewPathTip, () => EditorCommands.NewPath(Editor)));
-        footer.Children.Add(IconButton("trash", Strings.PathsPanel_DeletePathTip, () => EditorCommands.DeletePath(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.FillPath, Strings.PathsPanel_FillPathTip, () => EditorCommands.FillPath(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.StrokePath, Strings.PathsPanel_StrokePathTip, () => EditorCommands.StrokePath(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Selection, Strings.PathsPanel_LoadAsSelectionTip, () => EditorCommands.PathToSelection(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Pen, Strings.PathsPanel_MakeWorkPathTip, () => EditorCommands.SelectionToPath(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Mask, Strings.PathsPanel_AddVectorMaskTip, () => EditorCommands.PathToShape(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.NewLayer, Strings.PathsPanel_NewPathTip, () => EditorCommands.NewPath(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Trash, Strings.PathsPanel_DeletePathTip, () => EditorCommands.DeletePath(Editor)));
         DockPanel root = new();
         DockPanel.SetDock(footer, Dock.Bottom);
         root.Children.Add(footer);

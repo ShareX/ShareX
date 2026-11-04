@@ -31,28 +31,28 @@ namespace ShareX.ImageEditor.Presentation.Theming
 {
     public static class EditorIcons
     {
-        public const string ToolSelect = ShareXIcons.tool_select;
-        public const string ToolRectangle = ShareXIcons.tool_rectangle;
-        public const string ToolEllipse = ShareXIcons.tool_ellipse;
-        public const string ToolLine = ShareXIcons.tool_line;
-        public const string ToolArrow = ShareXIcons.tool_arrow;
-        public const string ToolFreehand = ShareXIcons.tool_freehand;
-        public const string ToolHighlight = ShareXIcons.tool_highlight;
-        public const string ToolText = ShareXIcons.tool_text;
-        public const string ToolSpeechBalloon = ShareXIcons.tool_speech_balloon;
-        public const string ToolStep = ShareXIcons.tool_step;
-        public const string ToolCursor = ShareXIcons.tool_cursor;
-        public const string ToolBlur = ShareXIcons.tool_blur;
-        public const string ToolPixelate = ShareXIcons.tool_pixelate;
-        public const string ToolMagnify = ShareXIcons.tool_magnify;
-        public const string ToolSpotlight = ShareXIcons.tool_spotlight;
-        public const string ToolSmartEraser = ShareXIcons.tool_smart_eraser;
-        public const string ToolCrop = ShareXIcons.tool_crop;
-        public const string ToolCutOut = ShareXIcons.tool_cut_out;
-        public const string ToolImage = ShareXIcons.tool_image;
-        public const string ToolClone = ShareXIcons.tool_clone;
-        public const string ToolEmoji = ShareXIcons.tool_emoji;
-        public const string ToolEmojiSunglasses = ShareXIcons.tool_emoji_sunglasses;
+        public const string ToolSelect = ImageEditorIcons.Select;
+        public const string ToolRectangle = ImageEditorIcons.Rectangle;
+        public const string ToolEllipse = ImageEditorIcons.Ellipse;
+        public const string ToolLine = ImageEditorIcons.Line;
+        public const string ToolArrow = ImageEditorIcons.Arrow;
+        public const string ToolFreehand = ImageEditorIcons.Freehand;
+        public const string ToolHighlight = ImageEditorIcons.Highlight;
+        public const string ToolText = ImageEditorIcons.Text;
+        public const string ToolSpeechBalloon = ImageEditorIcons.SpeechBalloon;
+        public const string ToolStep = ImageEditorIcons.Step;
+        public const string ToolCursor = ImageEditorIcons.Cursor;
+        public const string ToolBlur = ImageEditorIcons.Blur;
+        public const string ToolPixelate = ImageEditorIcons.Pixelate;
+        public const string ToolMagnify = ImageEditorIcons.Magnify;
+        public const string ToolSpotlight = ImageEditorIcons.Spotlight;
+        public const string ToolSmartEraser = ImageEditorIcons.SmartEraser;
+        public const string ToolCrop = ImageEditorIcons.Crop;
+        public const string ToolCutOut = ImageEditorIcons.CutOut;
+        public const string ToolImage = ImageEditorIcons.Image;
+        public const string ToolClone = ImageEditorIcons.Clone;
+        public const string ToolEmoji = ImageEditorIcons.Emoji;
+        public const string ToolEmojiSunglasses = ImageEditorIcons.EmojiSunglasses;
 
         public const string ActionUndo = LucideIcons.undo_2;
         public const string ActionRedo = LucideIcons.redo_2;

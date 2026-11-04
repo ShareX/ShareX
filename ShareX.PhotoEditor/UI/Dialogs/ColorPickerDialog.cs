@@ -220,7 +220,7 @@ public sealed class ColorPickerControl : UserControl
             SetRgb(web.Red / 255f, web.Green / 255f, web.Blue / 255f);
             Refresh();
         };
-        _webWarning.Children.Add(PhotoEditorIcons.Create("web-color", 16));
+        _webWarning.Children.Add(new IconView(PhotoEditorIcons.WebColor, 16));
         _webWarning.Children.Add(_webSwatch);
 
         StackPanel actionPanel = new() { Spacing = 8, VerticalAlignment = VerticalAlignment.Top, Margin = new Thickness(12, 0, 0, 0) };

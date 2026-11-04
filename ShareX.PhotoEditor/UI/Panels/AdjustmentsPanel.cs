@@ -46,7 +46,7 @@ public sealed class AdjustmentsPanel : EditorPanel
                 Button button = new()
                 {
                     Classes = { "icon" },
-                    Content = PhotoEditorIcons.Create("adj-" + kind.ToString().ToLowerInvariant(), 16),
+                    Content = new IconView(IconMap.ForAdjustment(kind), 16),
                     Width = 30,
                     Height = 30,
                     Padding = new Thickness(0),

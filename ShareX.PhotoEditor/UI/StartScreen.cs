@@ -57,11 +57,11 @@ public sealed class StartScreen : Border
         actions.Children.Add(ActionButton(Strings.StartScreen_NewFile, "file.new", true));
         actions.Children.Add(ActionButton(Strings.EditorCommands_Open, "file.open", false));
         actions.Children.Add(new Border { Height = 1, Background = new SolidColorBrush(Color.FromRgb(0x47, 0x47, 0x47)), Margin = new Thickness(0, 8) });
-        actions.Children.Add(LinkButton("clipboard", Strings.EditorCommands_NewFromClipboard, "file.newFromClipboard"));
-        if (editor.Services.CaptureRegion != null) actions.Children.Add(LinkButton("capture-region", Strings.StartScreen_NewFromScreenshotRegion, "file.newFromRegion"));
-        if (editor.Services.CaptureFullscreen != null) actions.Children.Add(LinkButton("capture-screen", Strings.EditorCommands_NewFromScreenshotFullScreen, "file.newFromScreen"));
+        actions.Children.Add(LinkButton(PhotoEditorIcons.Clipboard, Strings.EditorCommands_NewFromClipboard, "file.newFromClipboard"));
+        if (editor.Services.CaptureRegion != null) actions.Children.Add(LinkButton(PhotoEditorIcons.CaptureRegion, Strings.StartScreen_NewFromScreenshotRegion, "file.newFromRegion"));
+        if (editor.Services.CaptureFullscreen != null) actions.Children.Add(LinkButton(PhotoEditorIcons.CaptureScreen, Strings.EditorCommands_NewFromScreenshotFullScreen, "file.newFromScreen"));
 
-        _clearButton.Content = PhotoEditorIcons.Create("trash", 16);
+        _clearButton.Content = new IconView(PhotoEditorIcons.Trash, 16);
         ToolTip.SetTip(_clearButton, Strings.StartScreen_ClearRecentFiles);
         _clearButton.Click += (_, _) => Commands.EditorCommands.ClearRecentFiles(_editor);
         _viewModeButton.Click += (_, _) =>
@@ -108,7 +108,7 @@ public sealed class StartScreen : Border
         _recentEmpty.IsVisible = files.Count == 0;
         _clearButton.IsEnabled = _editor.Settings.RecentFiles.Count > 0;
 
-        _viewModeButton.Content = PhotoEditorIcons.Create(tiles ? "list-view" : "tile-view", 16);
+        _viewModeButton.Content = new IconView(tiles ? PhotoEditorIcons.ListView : PhotoEditorIcons.TileView, 16);
         ToolTip.SetTip(_viewModeButton, tiles ? Strings.StartScreen_ShowAsListTip : Strings.StartScreen_ShowAsTilesTip);
     }
 
@@ -132,7 +132,7 @@ public sealed class StartScreen : Border
     {
         // Grid instead of a horizontal StackPanel so the label gets a finite width and can wrap.
         Grid content = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*"), ColumnSpacing = 8 };
-        content.Children.Add(PhotoEditorIcons.Create(icon, 16));
+        content.Children.Add(new IconView(icon, 16));
         TextBlock label = new() { Text = text, TextWrapping = TextWrapping.Wrap, VerticalAlignment = VerticalAlignment.Center };
         Grid.SetColumn(label, 1);
         content.Children.Add(label);

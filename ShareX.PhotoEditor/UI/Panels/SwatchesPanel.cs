@@ -47,7 +47,7 @@ public sealed class SwatchesPanel : EditorPanel
     public SwatchesPanel(PhotoEditorWindow editor) : base(editor)
     {
         StackPanel footer = new() { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right, Margin = new Thickness(4) };
-        footer.Children.Add(IconButton("plus", Strings.SwatchesPanel_NewSwatchTip, () =>
+        footer.Children.Add(IconButton(PhotoEditorIcons.Plus, Strings.SwatchesPanel_NewSwatchTip, () =>
         {
             Editor.Settings.Swatches.Add("#" + ColorMath.ToHex(Editor.Foreground));
             Refresh();

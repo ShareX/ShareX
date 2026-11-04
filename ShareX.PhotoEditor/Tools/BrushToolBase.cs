@@ -312,7 +312,7 @@ public abstract class BrushToolBase : ToolBase
         if (blendMode) options.BlendMode(() => BlendMode, m => BlendMode = m);
         if (opacity) options.Percent(Strings.EditorCommands_OpacityColon, () => Opacity, v => Opacity = v, Strings.BrushToolBase_OpacityTip);
         if (flow && ShowFlow) options.Percent(Strings.Tools_FlowColon, () => Flow, v => Flow = v, Strings.BrushToolBase_FlowTip);
-        if (flow && ShowFlow) options.IconButton("airbrush", Strings.BrushToolBase_AirbrushTip, () => { Airbrush = !Airbrush; Host.RefreshOptions(); }, Airbrush);
+        if (flow && ShowFlow) options.IconButton(PhotoEditorIcons.Airbrush, Strings.BrushToolBase_AirbrushTip, () => { Airbrush = !Airbrush; Host.RefreshOptions(); }, Airbrush);
         options.Percent(Strings.BrushToolBase_SmoothingColon, () => Smoothing, v => Smoothing = v);
         options.Check(Strings.BrushToolBase_PressureSize, () => Tip.PressureSize, v => Tip.PressureSize = v, Strings.BrushesPanel_PressureSize);
     }

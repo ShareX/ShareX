@@ -104,8 +104,8 @@ public sealed class FrameTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.IconButton("frame-rect", Strings.FrameTool_RectangularTip, () => { Ellipse = false; Host.RefreshOptions(); }, !Ellipse);
-        options.IconButton("frame-ellipse", Strings.FrameTool_EllipticalTip, () => { Ellipse = true; Host.RefreshOptions(); }, Ellipse);
+        options.IconButton(PhotoEditorIcons.FrameRectangle, Strings.FrameTool_RectangularTip, () => { Ellipse = false; Host.RefreshOptions(); }, !Ellipse);
+        options.IconButton(PhotoEditorIcons.FrameEllipse, Strings.FrameTool_EllipticalTip, () => { Ellipse = true; Host.RefreshOptions(); }, Ellipse);
         options.Separator();
         options.Button(Strings.PropertiesPanel_PlaceImageEllipsis, () => UI.Commands.EditorCommands.PlaceIntoFrame(Host), Strings.FrameTool_PlaceImageTip);
         options.Button(Strings.FrameTool_ClearFrameContent, () =>

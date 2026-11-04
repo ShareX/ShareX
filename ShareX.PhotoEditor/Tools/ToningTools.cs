@@ -153,7 +153,7 @@ public sealed class DodgeBurnTool : BrushToolBase
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
         options.EnumCombo(Strings.ToningTools_RangeColon, () => Range, v => Range = v, 110);
         options.Percent(Strings.AdjustmentEditor_ExposureColon, () => Exposure, v => Exposure = v);
-        options.IconButton("airbrush", Strings.BrushToolBase_AirbrushTip, () => { Airbrush = !Airbrush; Host.RefreshOptions(); }, Airbrush);
+        options.IconButton(PhotoEditorIcons.Airbrush, Strings.BrushToolBase_AirbrushTip, () => { Airbrush = !Airbrush; Host.RefreshOptions(); }, Airbrush);
         options.Check(Strings.ToningTools_ProtectTones, () => ProtectTones, v => ProtectTones = v);
     }
 }

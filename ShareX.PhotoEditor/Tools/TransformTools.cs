@@ -746,12 +746,12 @@ public sealed class MoveTool : ToolBase
         options.Separator();
         foreach (var (icon, tip, align) in new (string, string, LayerAlignment)[]
         {
-            ("align-left", Strings.TransformTools_AlignLeftTip, LayerAlignment.Left),
-            ("align-hcenter", Strings.TransformTools_AlignHCenterTip, LayerAlignment.HorizontalCenter),
-            ("align-right", Strings.TransformTools_AlignRightTip, LayerAlignment.Right),
-            ("align-top", Strings.TransformTools_AlignTopTip, LayerAlignment.Top),
-            ("align-vcenter", Strings.TransformTools_AlignVCenterTip, LayerAlignment.VerticalCenter),
-            ("align-bottom", Strings.TransformTools_AlignBottomTip, LayerAlignment.Bottom)
+            (PhotoEditorIcons.AlignLeft, Strings.TransformTools_AlignLeftTip, LayerAlignment.Left),
+            (PhotoEditorIcons.AlignHorizontalCenter, Strings.TransformTools_AlignHCenterTip, LayerAlignment.HorizontalCenter),
+            (PhotoEditorIcons.AlignRight, Strings.TransformTools_AlignRightTip, LayerAlignment.Right),
+            (PhotoEditorIcons.AlignTop, Strings.TransformTools_AlignTopTip, LayerAlignment.Top),
+            (PhotoEditorIcons.AlignVerticalCenter, Strings.TransformTools_AlignVCenterTip, LayerAlignment.VerticalCenter),
+            (PhotoEditorIcons.AlignBottom, Strings.TransformTools_AlignBottomTip, LayerAlignment.Bottom)
         })
         {
             LayerAlignment captured = align;

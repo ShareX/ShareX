@@ -133,7 +133,7 @@ public sealed class ReplaceColorEditor : UserControl
     private Button ModeButton(string tip, string? suffix, SampleMode mode)
     {
         StackPanel content = new() { Orientation = Orientation.Horizontal };
-        content.Children.Add(PhotoEditorIcons.Create("eyedropper", 16));
+        content.Children.Add(new IconView(PhotoEditorIcons.Eyedropper, 16));
         if (suffix != null) content.Children.Add(new TextBlock { Text = suffix, VerticalAlignment = VerticalAlignment.Center });
         Button button = new() { Classes = { "icon" }, Content = content };
         ToolTip.SetTip(button, tip);
