@@ -62,15 +62,15 @@ namespace ShareX.HelpersLib
 
     public enum EImageFormat
     {
-        [Description("png")]
+        [Description("PNG")]
         PNG,
-        [Description("jpg")]
+        [Description("JPEG")]
         JPEG,
-        [Description("webp")]
+        [Description("WebP")]
         WEBP,
-        [Description("gif")]
+        [Description("GIF")]
         GIF,
-        [Description("bmp")]
+        [Description("BMP")]
         BMP
     }
 

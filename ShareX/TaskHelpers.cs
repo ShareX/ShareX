@@ -568,7 +568,7 @@ namespace ShareX
             using (ImageData imageData = PrepareImage(bmp, taskSettings))
             {
                 string screenshotsFolder = GetScreenshotsFolder(taskSettings);
-                string fileName = GetFileName(taskSettings, imageData.ImageFormat.GetDescription(), bmp);
+                string fileName = GetFileName(taskSettings, imageData.ImageFormat.GetFileExtension(), bmp);
                 string filePath = Path.Combine(screenshotsFolder, fileName);
 
                 if (!overwriteFile)
@@ -1414,7 +1414,7 @@ namespace ShareX
                     if (string.IsNullOrEmpty(newFilePath))
                     {
                         string screenshotsFolder = GetScreenshotsFolder(taskSettings);
-                        string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), img);
+                        string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetFileExtension(), img);
                         newFilePath = Path.Combine(screenshotsFolder, fileName);
                     }
 
@@ -1428,7 +1428,7 @@ namespace ShareX
                     if (string.IsNullOrEmpty(newFilePath))
                     {
                         string screenshotsFolder = GetScreenshotsFolder(taskSettings);
-                        string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), img);
+                        string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetFileExtension(), img);
                         newFilePath = Path.Combine(screenshotsFolder, fileName);
                     }
 

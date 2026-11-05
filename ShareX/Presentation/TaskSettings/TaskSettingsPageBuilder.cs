@@ -391,13 +391,12 @@ internal sealed class TaskSettingsPageBuilder
         return Page("image", Strings.TaskSettingsWindow_Image, AppIcons.Image,
             OverrideCard(_imageOverride, Strings.TaskSettingsWindow_OverrideImageSettings),
             EnabledCard(_imageOverride, Strings.TaskSettingsWindow_ImageQuality,
-                Row(Strings.TaskSettingsWindow_ImageFormat, ObjectCombo(Enum.GetValues<EImageFormat>(),
-                    () => image.ImageFormat, value =>
-                    {
-                        image.ImageFormat = value;
-                        UpdateEncoderVisibility(value);
-                        _window.RefreshSettingsSearch();
-                    }, value => value == EImageFormat.WEBP ? "WebP" : value.ToString())),
+                Row(Strings.TaskSettingsWindow_ImageFormat, EnumCombo(() => image.ImageFormat, value =>
+                {
+                    image.ImageFormat = value;
+                    UpdateEncoderVisibility(value);
+                    _window.RefreshSettingsSearch();
+                })),
                 pngOptions, jpegOptions, gifOptions, bmpOptions, webpOptions,
                 Row(Strings.TaskSettingsWindow_IfFileExists, EnumCombo(() => image.FileExistAction, value => image.FileExistAction = value))),
             automaticJpeg);

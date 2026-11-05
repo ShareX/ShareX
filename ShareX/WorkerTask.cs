@@ -631,7 +631,7 @@ namespace ShareX
             {
                 ImageData imageData = TaskHelpers.PrepareImage(Image, Info.TaskSettings);
                 Data = imageData.ImageStream;
-                Info.FileName = Path.ChangeExtension(Info.FileName, imageData.ImageFormat.GetDescription());
+                Info.FileName = Path.ChangeExtension(Info.FileName, imageData.ImageFormat.GetFileExtension());
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.AnalyzeImage))
                 {
