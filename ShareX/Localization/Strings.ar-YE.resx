@@ -3014,6 +3014,18 @@
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>صوت Wave</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>جهد ضغط WebP:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>القيم الأقل تجعل الترميز أسرع. القيم الأعلى تنتج ملفات أصغر. جميع القيم تحافظ على جودة الصورة.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>بدون فقدان</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>جودة WebP:</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>العرض:</value>
   </data>

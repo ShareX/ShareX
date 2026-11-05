@@ -3014,6 +3014,18 @@
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Аудио Wave</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Усилия сжатия WebP:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Меньшие значения ускоряют кодирование. Большие значения создают файлы меньшего размера. Все значения сохраняют качество изображения.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Без потерь</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>Качество WebP:</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Ширина:</value>
   </data>

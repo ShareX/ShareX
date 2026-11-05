@@ -3014,6 +3014,18 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Wave-Audio</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP-Komprimierungsaufwand:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Niedrigere Werte beschleunigen die Kodierung. Höhere Werte erzeugen kleinere Dateien. Alle Werte erhalten die Bildqualität.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Verlustfrei</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP-Qualität:</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Breite:</value>
   </data>

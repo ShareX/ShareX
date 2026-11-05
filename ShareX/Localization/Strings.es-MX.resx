@@ -3014,6 +3014,18 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Audio Wave</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Esfuerzo de compresión WebP:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Los valores más bajos codifican más rápido. Los valores más altos producen archivos más pequeños. Todos los valores conservan la calidad de la imagen.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Sin pérdidas</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>Calidad WebP:</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Anchura:</value>
   </data>

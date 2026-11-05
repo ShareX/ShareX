@@ -3014,6 +3014,18 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Wave-lyd</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP-komprimeringsindsats:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Lavere værdier giver hurtigere kodning. Højere værdier giver mindre filer. Alle værdier bevarer billedkvaliteten.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Tabsfri</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP-kvalitet:</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Bredde:</value>
   </data>

@@ -3014,6 +3014,18 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Wave 오디오</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP 압축 노력 수준:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>값이 낮을수록 인코딩이 빨라집니다. 값이 높을수록 파일 크기가 작아집니다. 모든 값에서 이미지 품질이 유지됩니다.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>무손실</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP 품질:</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>너비:</value>
   </data>

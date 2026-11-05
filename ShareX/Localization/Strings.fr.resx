@@ -3014,6 +3014,18 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Audio Wave</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Effort de compression WebP :</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Les valeurs faibles accélèrent l’encodage. Les valeurs élevées produisent des fichiers plus petits. Toutes les valeurs préservent la qualité de l’image.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Sans perte</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>Qualité WebP :</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Largeur :</value>
   </data>

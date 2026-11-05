@@ -3014,6 +3014,18 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Dźwięk Wave</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Nakład pracy kompresji WebP:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Niższe wartości przyspieszają kodowanie. Wyższe wartości dają mniejsze pliki. Wszystkie wartości zachowują jakość obrazu.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Bezstratnie</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>Jakość WebP:</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Szerokość:</value>
   </data>

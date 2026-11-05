@@ -3014,6 +3014,18 @@
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Wave 音频</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP 压缩力度：</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>较低的值可加快编码速度。较高的值可生成更小的文件。所有值都会保持图像质量。</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>无损</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP 质量：</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>宽度：</value>
   </data>

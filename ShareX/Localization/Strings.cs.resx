@@ -3014,6 +3014,18 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Zvuk Wave</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Úsilí při kompresi WebP:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Nižší hodnoty zrychlují kódování. Vyšší hodnoty vytvářejí menší soubory. Všechny hodnoty zachovávají kvalitu obrazu.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Bezeztrátová</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>Kvalita WebP:</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Šířka:</value>
   </data>

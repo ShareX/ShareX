@@ -3014,6 +3014,18 @@
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>वेव ऑडियो</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP संपीड़न प्रयास:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>कम मानों पर एन्कोडिंग तेज़ होती है। अधिक मान छोटे आकार की फ़ाइलें बनाते हैं। सभी मान छवि की गुणवत्ता बनाए रखते हैं।</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>दोषरहित</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP गुणवत्ता:</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>चौड़ाई:</value>
   </data>

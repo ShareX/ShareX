@@ -3014,6 +3014,18 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Wave hang</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP tömörítési erőfeszítés:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Az alacsonyabb értékek gyorsabb kódolást eredményeznek. A magasabb értékek kisebb fájlokat hoznak létre. Minden érték megőrzi a képminőséget.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Veszteségmentes</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP-minőség:</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Szélesség:</value>
   </data>
