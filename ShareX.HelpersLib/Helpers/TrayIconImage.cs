@@ -27,8 +27,12 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Media;
+using Avalonia.Media.Immutable;
+using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Microsoft.Win32;
+using ShareX.Icons;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
@@ -38,64 +42,62 @@ using System.Threading;
 namespace ShareX.HelpersLib;
 
 /// <summary>
-/// Creates DPI-friendly tray icons from the bundled Lucide font.
+/// Creates DPI-friendly tray icons from ShareX icons.
 /// </summary>
-public static class LucideTrayIcon
+public static class TrayIconImage
 {
     private const string PersonalizeRegistryPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize";
     private const string SystemUsesLightThemeRegistryValue = "SystemUsesLightTheme";
-    private static readonly Uri LucideFontUri = new("avares://ShareX.Avalonia/Assets/lucide.ttf");
     private static readonly int[] IconSizes = [16, 20, 24, 32, 40, 48, 64];
-    private static readonly Lazy<SKTypeface> LucideTypeface = new(LoadTypeface);
 
     /// <summary>
-    /// Assigns a Lucide glyph to a tray icon and keeps its color in sync with the
+    /// Assigns an icon to a tray icon and keeps its color in sync with the
     /// Windows taskbar theme. Dispose the returned binding before the tray icon.
     /// </summary>
-    public static IDisposable Bind(TrayIcon trayIcon, string glyph)
+    public static IDisposable Bind(TrayIcon trayIcon, string icon)
     {
         ArgumentNullException.ThrowIfNull(trayIcon);
 
-        if (string.IsNullOrEmpty(glyph))
+        if (string.IsNullOrEmpty(icon))
         {
-            throw new ArgumentException("A Lucide glyph is required.", nameof(glyph));
+            throw new ArgumentException("An icon key is required.", nameof(icon));
         }
 
-        return new ThemeBinding(trayIcon, glyph);
+        return new ThemeBinding(trayIcon, icon);
     }
 
     /// <summary>
     /// Creates a small bitmap using the color appropriate for the current
     /// Windows taskbar theme.
     /// </summary>
-    public static SKBitmap CreateImage(string glyph)
+    public static SKBitmap CreateImage(string icon)
     {
-        return CreateImage(glyph, GetThemeIconColor());
+        return CreateImage(icon, GetThemeIconColor());
     }
 
     /// <summary>
-    /// Creates a small bitmap using a specific glyph color.
+    /// Creates a small bitmap using a specific icon color.
     /// </summary>
-    public static SKBitmap CreateImage(string glyph, System.Drawing.Color color)
+    public static SKBitmap CreateImage(string icon, System.Drawing.Color color)
     {
-        if (string.IsNullOrEmpty(glyph))
+        if (string.IsNullOrEmpty(icon))
         {
-            throw new ArgumentException("A Lucide glyph is required.", nameof(glyph));
+            throw new ArgumentException("An icon key is required.", nameof(icon));
         }
 
         SKColor skColor = new(color.R, color.G, color.B, color.A);
         int size = OperatingSystem.IsWindows() ? Math.Max(NativeMethods.GetSystemMetrics(SystemMetric.SM_CXSMICON),
             NativeMethods.GetSystemMetrics(SystemMetric.SM_CYSMICON)) : 16;
-        byte[] imageData = RenderGlyph(glyph, skColor, size);
+        byte[] imageData = RenderIcon(icon, skColor, size);
 
         using MemoryStream stream = new(imageData, writable: false);
         return SkiaImageHelpers.Decode(stream);
     }
 
-    public static byte[] CreateIconBytes(string glyph) => CreateIconBytes(glyph, GetThemeIconColor());
+    public static byte[] CreateIconBytes(string icon) => CreateIconBytes(icon, GetThemeIconColor());
 
-    public static byte[] CreateIconBytes(string glyph, System.Drawing.Color color)
-        => CreateIconData(glyph, color.ToSKColor());
+    public static byte[] CreateIconBytes(string icon, System.Drawing.Color color)
+        => CreateIconData(icon, color.ToSKColor());
 
     private static System.Drawing.Color GetThemeIconColor()
     {
@@ -115,20 +117,13 @@ public static class LucideTrayIcon
         return value != 0;
     }
 
-    private static SKTypeface LoadTypeface()
-    {
-        using Stream stream = AssetLoader.Open(LucideFontUri);
-        return SKTypeface.FromStream(stream) ??
-            throw new InvalidOperationException("Unable to load the bundled Lucide font.");
-    }
-
-    private static byte[] CreateIconData(string glyph, SKColor color)
+    private static byte[] CreateIconData(string icon, SKColor color)
     {
         List<byte[]> images = new(IconSizes.Length);
 
         foreach (int size in IconSizes)
         {
-            images.Add(RenderGlyph(glyph, color, size));
+            images.Add(RenderIcon(icon, color, size));
         }
 
         using MemoryStream stream = new();
@@ -164,41 +159,32 @@ public static class LucideTrayIcon
         return stream.ToArray();
     }
 
-    private static byte[] RenderGlyph(string glyph, SKColor color, int size)
+    private static byte[] RenderIcon(string icon, SKColor color, int size)
     {
-        using SKBitmap bitmap = new(new SKImageInfo(size, size, SKColorType.Bgra8888, SKAlphaType.Premul));
-        using SKCanvas canvas = new(bitmap);
-        using SKFont font = new(LucideTypeface.Value, size);
-        using SKPaint paint = new()
+        VectorIcon vectorIcon = IconCatalog.Find(icon) ?? throw new ArgumentException("Unknown icon key.", nameof(icon));
+        using RenderTargetBitmap bitmap = new(new PixelSize(size, size), new Vector(96, 96));
+
+        using (DrawingContext context = bitmap.CreateDrawingContext())
         {
-            Color = color,
-            IsAntialias = true
-        };
+            vectorIcon.Draw(context, new Rect(0, 0, size, size), new ImmutableSolidColorBrush(Color.FromArgb(color.Alpha, color.Red, color.Green, color.Blue)));
+        }
 
-        canvas.Clear(SKColors.Transparent);
-
-        font.MeasureText(glyph, out SKRect bounds, paint);
-        float x = ((size - bounds.Width) / 2f) - bounds.Left;
-        float y = ((size - bounds.Height) / 2f) - bounds.Top;
-        canvas.DrawText(glyph, x, y, font, paint);
-        canvas.Flush();
-
-        using SKImage image = SKImage.FromBitmap(bitmap);
-        using SKData data = image.Encode(SKEncodedImageFormat.Png, 100);
-        return data.ToArray();
+        using MemoryStream stream = new();
+        bitmap.Save(stream, PngBitmapEncoderOptions.Default);
+        return stream.ToArray();
     }
 
     private sealed class ThemeBinding : IDisposable
     {
         private readonly TrayIcon _trayIcon;
-        private readonly string _glyph;
+        private readonly string _icon;
         private readonly SynchronizationContext? _synchronizationContext;
         private bool _disposed;
 
-        public ThemeBinding(TrayIcon trayIcon, string glyph)
+        public ThemeBinding(TrayIcon trayIcon, string icon)
         {
             _trayIcon = trayIcon;
-            _glyph = glyph;
+            _icon = icon;
             _synchronizationContext = SynchronizationContext.Current;
 
             RefreshIcon();
@@ -246,7 +232,7 @@ public static class LucideTrayIcon
                 return;
             }
 
-            using MemoryStream stream = new(CreateIconBytes(_glyph), writable: false);
+            using MemoryStream stream = new(CreateIconBytes(_icon), writable: false);
             _trayIcon.Icon = new WindowIcon(stream);
         }
 

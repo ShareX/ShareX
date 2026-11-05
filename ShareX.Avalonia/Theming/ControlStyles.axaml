@@ -91,6 +91,10 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
 
+        <Style Selector="^.active /template/ ContentPresenter#PART_ContentPresenter controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+
         <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="Opacity" Value="0.35"/>
@@ -140,13 +144,15 @@
         <Style Selector="^.active TextBlock">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
+
+        <Style Selector="^.active controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
     </Style>
 
     <Style Selector="Button.toolbar-button">
         <Setter Property="Width" Value="40"/>
         <Setter Property="MinWidth" Value="40"/>
-        <Setter Property="FontFamily" Value="{DynamicResource ShareX.FontFamily.Icon}"/>
-        <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="FontSize" Value="18"/>
     </Style>
 

@@ -33,8 +33,8 @@ namespace ShareX.Icons;
 
 /// <summary>The shapes of the <see cref="ImageEditorIcons"/>.</summary>
 /// <remarks>
-/// Icons are drawn like Lucide so they sit next to its glyphs: a 24x24 grid, SVG path data, 2px strokes with round
-/// caps and joins. Line work is drawn in the Foreground. Shading is the Foreground at partial opacity, so it becomes
+/// Icons are drawn in the style of all interface icons: a 24x24 grid, SVG path data, 2px strokes with round caps
+/// and joins. Line work is drawn in the Foreground. Shading is the Foreground at partial opacity, so it becomes
 /// accent shades on the toolbar; use it only where the fill is the point (the blur glow, pixelate cells). A fixed
 /// color is only for what the tool puts on the image, such as the highlighter ink.
 /// </remarks>
@@ -129,7 +129,7 @@ internal static class ImageEditorIconDefinitions
             Icon.Rectangle,
             Stroke(Rectangle(3, 5, 18, 14, 2))
         },
-        // Lucide's scan brackets with longer arms.
+        // Scan brackets with long arms.
         {
             Icon.Region,
             Stroke("M3 8.5V5a2 2 0 0 1 2-2h3.5M15.5 3H19a2 2 0 0 1 2 2v3.5M21 15.5V19a2 2 0 0 1-2 2h-3.5M8.5 21H5a2 2 0 0 1-2-2v-3.5")

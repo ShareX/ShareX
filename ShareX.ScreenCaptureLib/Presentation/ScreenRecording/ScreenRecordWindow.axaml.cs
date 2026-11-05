@@ -377,7 +377,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             {
                 case ScreenRecordState.Waiting:
                     SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Waiting___);
-                    SetTrayIcon(LucideTrayIcon.CreateIconBytes(AppIcons.VideoOff, DrawingColor.Gold));
+                    SetTrayIcon(TrayIconImage.CreateIconBytes(AppIcons.VideoOff, DrawingColor.Gold));
                     SetTrayMenuEnabled(false);
                     _trayIcon.IsVisible = true;
                     break;
@@ -403,7 +403,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                     Hide();
                     SetTrayMenuEnabled(false);
                     SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Encoding___);
-                    SetTrayIcon(LucideTrayIcon.CreateIconBytes(AppIcons.FileVideo));
+                    SetTrayIcon(TrayIconImage.CreateIconBytes(AppIcons.FileVideo));
                     break;
             }
         });
@@ -435,12 +435,12 @@ public partial class ScreenRecordWindow : Window, IDisposable
                     {
                         return;
                     }
-                    icon = LucideTrayIcon.CreateIconBytes(AppIcons.FileVideo);
+                    icon = TrayIconImage.CreateIconBytes(AppIcons.FileVideo);
                 }
             }
             else
             {
-                icon = LucideTrayIcon.CreateIconBytes(AppIcons.FileVideo);
+                icon = TrayIconImage.CreateIconBytes(AppIcons.FileVideo);
             }
 
             SetTrayIcon(icon);
@@ -514,7 +514,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         {
             case ScreenRecordingStatus.Working:
                 SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_);
-                SetTrayIcon(LucideTrayIcon.CreateIconBytes(AppIcons.Video, DrawingColor.Red));
+                SetTrayIcon(TrayIconImage.CreateIconBytes(AppIcons.Video, DrawingColor.Red));
                 StartText.Text = Strings.ScreenRecordForm_Stop;
                 StartIcon.Icon = AppIcons.Stop;
                 _trayStartItem.Header = Strings.ScreenRecordForm_Stop;
@@ -531,7 +531,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 SetTrayText("ShareX - " + (paused
                     ? Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_
                     : Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_));
-                SetTrayIcon(LucideTrayIcon.CreateIconBytes(AppIcons.VideoOff, DrawingColor.Gold));
+                SetTrayIcon(TrayIconImage.CreateIconBytes(AppIcons.VideoOff, DrawingColor.Gold));
                 StartText.Text = paused ? Strings.ScreenRecordForm_Stop : Strings.ScreenRecordForm_Start;
                 StartIcon.Icon = paused ? AppIcons.Stop : AppIcons.CirclePlay;
                 _trayStartItem.Header = StartText.Text;
@@ -547,7 +547,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 break;
 
             case ScreenRecordingStatus.Recording:
-                SetTrayIcon(LucideTrayIcon.CreateIconBytes(AppIcons.Video, DrawingColor.Red));
+                SetTrayIcon(TrayIconImage.CreateIconBytes(AppIcons.Video, DrawingColor.Red));
                 StartText.Text = Strings.ScreenRecordForm_Stop;
                 StartIcon.Icon = AppIcons.Stop;
                 _trayStartItem.Header = Strings.ScreenRecordForm_Stop;
@@ -824,12 +824,12 @@ public partial class ScreenRecordWindow : Window, IDisposable
         _trayIcon.Icon = new WindowIcon(stream);
     }
 
-    private void SetTrayMenuIcon(NativeMenuItem item, string glyph)
+    private void SetTrayMenuIcon(NativeMenuItem item, string icon)
     {
         DrawingColor color = ThemeManager.IsDarkTheme ? DrawingColor.White : DrawingColor.Black;
-        string cacheKey = $"{glyph}:{color.ToArgb()}";
+        string cacheKey = $"{icon}:{color.ToArgb()}";
         if (_trayMenuIconKeys.TryGetValue(item, out string? existing) && existing == cacheKey) return;
-        using SKBitmap bitmap = LucideTrayIcon.CreateImage(glyph, color);
+        using SKBitmap bitmap = TrayIconImage.CreateImage(icon, color);
         using MemoryStream stream = bitmap.GetStream();
         AvaloniaBitmap replacement = new(stream);
         AvaloniaBitmap? previous = item.Icon as AvaloniaBitmap;

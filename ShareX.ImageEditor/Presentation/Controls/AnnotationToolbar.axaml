@@ -141,23 +141,27 @@
                         <Button Classes="toolbar-button"
                                 IsEnabled="{Binding CanUndo}"
                                 Click="OnUndoClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_UndoCtrlZ}"
-                                Content="{x:Static theming:EditorIcons.ActionUndo}"/>
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_UndoCtrlZ}">
+                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionUndo}"/>
+                        </Button>
                         <Button Classes="toolbar-button"
                                 IsEnabled="{Binding CanRedo}"
                                 Click="OnRedoClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_RedoCtrlY}"
-                                Content="{x:Static theming:EditorIcons.ActionRedo}"/>
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_RedoCtrlY}">
+                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionRedo}"/>
+                        </Button>
                         <Button Classes="toolbar-button"
                                 IsEnabled="{Binding HasSelection}"
                                 Click="OnDeleteClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteDelete}"
-                                Content="{x:Static theming:EditorIcons.ActionDelete}"/>
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteDelete}">
+                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionDelete}"/>
+                        </Button>
                         <Button Classes="toolbar-button"
                                 IsEnabled="{Binding HasAnnotations}"
                                 Click="OnClearClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteallShiftDelete}"
-                                Content="{x:Static theming:EditorIcons.ActionClearAll}"/>
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteallShiftDelete}">
+                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionClearAll}"/>
+                        </Button>
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>
@@ -274,14 +278,16 @@
                             Classes.active="{Binding TextBold}"
                             Click="OnTextBoldClick"
                             IsVisible="{Binding ShowTextStyle}"
-                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Togglebold}"
-                            Content="{x:Static theming:EditorIcons.FormatBold}"/>
+                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Togglebold}">
+                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FormatBold}"/>
+                    </Button>
                     <Button Classes="toolbar-button"
                             Classes.active="{Binding TextItalic}"
                             Click="OnTextItalicClick"
                             IsVisible="{Binding ShowTextItalic}"
-                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggleitalic}"
-                            Content="{x:Static theming:EditorIcons.FormatItalic}"/>
+                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggleitalic}">
+                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FormatItalic}"/>
+                    </Button>
 
                     <controls:StepTypePickerDropdown x:Name="StepTypePicker"
                                                      StepTypeOptions="{Binding AvailableStepTypes}"
@@ -336,16 +342,18 @@
                             Classes.active="{Binding SpeechBalloonTail}"
                             Click="OnSpeechBalloonTailClick"
                             IsVisible="{Binding ShowSpeechBalloonTail}"
-                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggletail}"
-                            Content="{x:Static theming:EditorIcons.ToggleSpeechBalloonTail}"/>
+                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggletail}">
+                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ToggleSpeechBalloonTail}"/>
+                    </Button>
                     <Grid IsVisible="{Binding ShowShadow}">
                         <Button x:Name="ShadowToggleButton"
                                 Classes="toolbar-button"
                                 Classes.active="{Binding ShadowEnabled}"
                                 Click="OnShadowClick"
                                 PointerPressed="OnShadowPointerPressed"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_ToggleshadowShadowoptionsRightclick}"
-                                Content="{x:Static theming:EditorIcons.MenuTheme}"/>
+                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_ToggleshadowShadowoptionsRightclick}">
+                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.MenuTheme}"/>
+                        </Button>
                         <Popup x:Name="ShadowOptionsPopup"
                                PlacementTarget="{Binding #ShadowToggleButton}"
                                Placement="Bottom"

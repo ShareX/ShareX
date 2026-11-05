@@ -33,7 +33,7 @@
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
 
-                <!-- Chevron Icon (Lucide ChevronDown) -->
+                <!-- Chevron icon -->
                 <controls:IconPresenter Grid.Column="2"
                                         Classes="dropdown-chevron"
                                         Classes.open="{Binding #ZoomPopup.IsOpen}"

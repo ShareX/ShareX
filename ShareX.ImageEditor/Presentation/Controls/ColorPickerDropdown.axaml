@@ -60,7 +60,7 @@
                 <!-- Spacer -->
                 <Border Grid.Column="1"/>
 
-                <!-- Chevron Icon (Lucide ChevronDown) -->
+                <!-- Chevron icon -->
                 <iconControls:IconPresenter Grid.Column="2"
                                             Classes="dropdown-chevron"
                                             Classes.open="{Binding #ColorPopup.IsOpen}"

@@ -26,8 +26,8 @@
 namespace ShareX.Icons;
 
 /// <summary>
-/// Keys of the image editor and region capture toolbar icons, for the tools the generic Lucide glyphs don't draw
-/// well. They are drawn like Lucide so they sit next to its glyphs; see <see cref="ImageEditorIconDefinitions"/>.
+/// Keys of the image editor and region capture toolbar icons. They are drawn in the same style as the
+/// <see cref="AppIcons"/>; see <see cref="ImageEditorIconDefinitions"/>.
 /// </summary>
 public static class ImageEditorIcons
 {

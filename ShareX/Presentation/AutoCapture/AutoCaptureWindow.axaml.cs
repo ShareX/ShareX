@@ -74,7 +74,7 @@ public partial class AutoCaptureWindow : Window
             ToolTipText = Strings.AutoCaptureWindow_Title,
             IsVisible = false
         };
-        _trayIconBinding = LucideTrayIcon.Bind(_trayIcon, AppIcons.Clock);
+        _trayIconBinding = TrayIconImage.Bind(_trayIcon, AppIcons.Clock);
         _trayIcon.Clicked += OnTrayIconClick;
         _trayIconRegistration = DesktopServices.RegisterTrayIcon(_trayIcon);
 

@@ -26,15 +26,14 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Documents;
-using Avalonia.Layout;
 using Avalonia.Media;
 using ShareX.Icons;
 
 namespace ShareX.AvaloniaUI.Controls;
 
 /// <summary>
-/// Shows an icon string in the Foreground at FontSize: a ShareX icon (an <see cref="ImageEditorIcons"/> or
-/// <see cref="PhotoEditorIcons"/> key), or otherwise a glyph of the icon font, such as a <see cref="LucideIcons"/> constant.
+/// Shows a ShareX icon, a key of one of the icon sets such as <see cref="AppIcons"/>, in the Foreground as a square
+/// of FontSize, so it lines up with the text around it.
 /// </summary>
 public class IconPresenter : Control
 {
@@ -47,8 +46,7 @@ public class IconPresenter : Control
     public static readonly StyledProperty<double> FontSizeProperty =
         TextElement.FontSizeProperty.AddOwner<IconPresenter>();
 
-    private VectorIcon? _vectorIcon;
-    private TextBlock? _glyph;
+    private VectorIcon? _icon;
 
     static IconPresenter()
     {
@@ -80,70 +78,20 @@ public class IconPresenter : Control
 
         if (change.Property == IconProperty)
         {
-            UpdateIcon();
+            _icon = IconCatalog.Find(Icon);
+            InvalidateMeasure();
+            InvalidateVisual();
         }
     }
 
-    private void UpdateIcon()
-    {
-        _vectorIcon = IconCatalog.Find(Icon);
-
-        if (_vectorIcon == null && _glyph == null)
-        {
-            _glyph = new TextBlock
-            {
-                FontWeight = FontWeight.Normal,
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center
-            };
-
-            _glyph.Bind(TextBlock.FontFamilyProperty, _glyph.GetResourceObservable("ShareX.FontFamily.Icon"));
-            // Bound rather than inherited, so TextBlock styles (such as an active button's text color)
-            // don't recolor the glyph: glyphs and vector icons both follow the presenter.
-            _glyph.Bind(TextBlock.ForegroundProperty, this.GetObservable(ForegroundProperty));
-            _glyph.Bind(TextBlock.FontSizeProperty, this.GetObservable(FontSizeProperty));
-            LogicalChildren.Add(_glyph);
-            VisualChildren.Add(_glyph);
-        }
-        else if (_vectorIcon != null && _glyph != null)
-        {
-            LogicalChildren.Remove(_glyph);
-            VisualChildren.Remove(_glyph);
-            _glyph = null;
-        }
-
-        if (_glyph != null)
-        {
-            _glyph.Text = Icon;
-        }
-
-        InvalidateMeasure();
-        InvalidateVisual();
-    }
-
-    protected override Size MeasureOverride(Size availableSize)
-    {
-        if (_glyph != null)
-        {
-            _glyph.Measure(availableSize);
-            return _glyph.DesiredSize;
-        }
-
-        // A vector icon fills the same em square as a glyph of the icon font.
-        return _vectorIcon == null ? default : new Size(FontSize, FontSize);
-    }
-
-    protected override Size ArrangeOverride(Size finalSize)
-    {
-        _glyph?.Arrange(new Rect(finalSize));
-        return finalSize;
-    }
+    protected override Size MeasureOverride(Size availableSize) =>
+        _icon == null ? default : new Size(FontSize, FontSize);
 
     public override void Render(DrawingContext context)
     {
-        if (_vectorIcon != null && Foreground is IBrush foreground)
+        if (_icon != null && Foreground is IBrush foreground)
         {
-            _vectorIcon.Draw(context, new Rect(Bounds.Size), foreground);
+            _icon.Draw(context, new Rect(Bounds.Size), foreground);
         }
     }
 }

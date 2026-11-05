@@ -30,7 +30,7 @@ namespace ShareX.Icons;
 /// <summary>How the strokes of an icon group are drawn: the default width and the shape of line ends and corners.</summary>
 internal sealed class IconStyle(double strokeWidth, PenLineCap lineCap, PenLineJoin lineJoin)
 {
-    /// <summary>Lucide's style, so icons sit next to its glyphs: 2px strokes with round caps and joins.</summary>
+    /// <summary>Line art for the interface icons: 2px strokes with round caps and joins.</summary>
     public static readonly IconStyle Rounded = new(2, PenLineCap.Round, PenLineJoin.Round);
 
     /// <summary>Pixel line art: 1px strokes with square ends and corners, sharp at the grid's own size.</summary>
