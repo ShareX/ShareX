@@ -123,7 +123,7 @@
                                                 <MenuItem Header="{x:Static localization:Strings.ColorPickerWindow_Copy_decimal}" Click="OnCopyDecimalClick"/>
                                             </MenuFlyout>
                                         </Button.Flyout>
-                                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static icons:AppIcons.Copy}"/><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Copy}"/><TextBlock Classes="icon" FontSize="11" Text="{x:Static icons:AppIcons.ChevronDown}"/></StackPanel>
+                                        <StackPanel Orientation="Horizontal" Spacing="8"><iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Copy}"/><iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronDown}" FontSize="11"/></StackPanel>
                                     </Button>
                                 </Grid>
                             </Grid>
