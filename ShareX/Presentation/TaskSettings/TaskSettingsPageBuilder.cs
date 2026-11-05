@@ -391,8 +391,7 @@ internal sealed class TaskSettingsPageBuilder
         return Page("image", Strings.TaskSettingsWindow_Image, AppIcons.Image,
             OverrideCard(_imageOverride, Strings.TaskSettingsWindow_OverrideImageSettings),
             EnabledCard(_imageOverride, Strings.TaskSettingsWindow_ImageQuality,
-                Row(Strings.TaskSettingsWindow_ImageFormat, ObjectCombo(
-                    new[] { EImageFormat.PNG, EImageFormat.JPEG, EImageFormat.WEBP, EImageFormat.GIF, EImageFormat.BMP },
+                Row(Strings.TaskSettingsWindow_ImageFormat, ObjectCombo(Enum.GetValues<EImageFormat>(),
                     () => image.ImageFormat, value =>
                     {
                         image.ImageFormat = value;

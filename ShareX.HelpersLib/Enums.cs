@@ -66,12 +66,12 @@ namespace ShareX.HelpersLib
         PNG,
         [Description("jpg")]
         JPEG,
+        [Description("webp")]
+        WEBP,
         [Description("gif")]
         GIF,
         [Description("bmp")]
-        BMP,
-        [Description("webp")]
-        WEBP
+        BMP
     }
 
     public enum HashType
