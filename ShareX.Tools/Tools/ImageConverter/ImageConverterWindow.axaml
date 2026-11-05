@@ -81,14 +81,28 @@
                                               ItemsSource="{Binding OutputFormatOptions}"
                                               SelectedIndex="{Binding SelectedOutputFormatIndex}"/>
                                 </Grid>
-                                <Grid Grid.Row="2" ColumnDefinitions="110,*,Auto" ColumnSpacing="10"
-                                      IsVisible="{Binding HasQuality}">
-                                    <TextBlock Classes="row-label" TextWrapping="Wrap"
-                                               Text="{x:Static localization:Strings.ImageConverterWindow_Quality}"/>
-                                    <Slider Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Quality}"/>
-                                    <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
-                                               MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                                </Grid>
+                                <StackPanel Grid.Row="2" Spacing="10">
+                                    <CheckBox x:Name="WebpLosslessBox" IsVisible="{Binding IsWebp}"
+                                              IsChecked="{Binding WebpLossless, Mode=TwoWay}"
+                                              Content="{x:Static localization:Strings.ImageConverterWindow_WebPLossless}"/>
+                                    <Grid ColumnDefinitions="110,*,Auto" ColumnSpacing="10" IsVisible="{Binding HasQuality}">
+                                        <TextBlock Classes="row-label" TextWrapping="Wrap"
+                                                   Text="{x:Static localization:Strings.ImageConverterWindow_Quality}"/>
+                                        <Slider Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Quality}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
+                                                   MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="110,*,Auto" ColumnSpacing="10" IsVisible="{Binding HasCompressionEffort}">
+                                        <TextBlock Classes="row-label" TextWrapping="Wrap"
+                                                   ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_WebPCompressionEffortHint}"
+                                                   Text="{x:Static localization:Strings.ImageConverterWindow_WebPCompressionEffort}"/>
+                                        <Slider Grid.Column="1" Minimum="0" Maximum="100"
+                                                ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_WebPCompressionEffortHint}"
+                                                Value="{Binding WebpCompressionEffort}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding WebpCompressionEffort, StringFormat={}{0:0}}"
+                                                   MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </StackPanel>
                                 <StackPanel x:Name="PngOptionsPanel" Grid.Row="2" Spacing="8" IsVisible="{Binding IsPng}">
                                     <TextBlock Classes="row-label"
                                                Text="{x:Static localization:Strings.ImageConverterWindow_PNGBitDepth}"/>
@@ -124,21 +138,6 @@
                                     <ComboBox x:Name="JpegSubsamplingBox" ItemsSource="{Binding JpegSubsamplingOptions}"
                                               ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_JPEGSubsamplingHint}"
                                               SelectedIndex="{Binding SelectedJpegSubsamplingIndex, Mode=TwoWay}"/>
-                                </StackPanel>
-                                <StackPanel x:Name="WebpOptionsPanel" Grid.Row="3" Spacing="10" IsVisible="{Binding IsWebp}">
-                                    <CheckBox x:Name="WebpLosslessBox"
-                                              IsChecked="{Binding WebpLossless, Mode=TwoWay}"
-                                              Content="{x:Static localization:Strings.ImageConverterWindow_WebPLossless}"/>
-                                    <Grid ColumnDefinitions="110,*,Auto" ColumnSpacing="10" IsVisible="{Binding WebpLossless}">
-                                        <TextBlock Classes="row-label" TextWrapping="Wrap"
-                                                   ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_WebPCompressionEffortHint}"
-                                                   Text="{x:Static localization:Strings.ImageConverterWindow_WebPCompressionEffort}"/>
-                                        <Slider Grid.Column="1" Minimum="0" Maximum="100"
-                                                ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_WebPCompressionEffortHint}"
-                                                Value="{Binding WebpCompressionEffort}"/>
-                                        <TextBlock Grid.Column="2" Text="{Binding WebpCompressionEffort, StringFormat={}{0:0}}"
-                                                   MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                                    </Grid>
                                 </StackPanel>
                                 <Grid Grid.Row="4" ColumnDefinitions="110,*" ColumnSpacing="10"
                                       IsVisible="{Binding HasBackgroundColor}">

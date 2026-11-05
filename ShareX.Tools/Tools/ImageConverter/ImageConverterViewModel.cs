@@ -60,6 +60,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     [NotifyPropertyChangedFor(nameof(IsBmp))]
     [NotifyPropertyChangedFor(nameof(IsWebp))]
     [NotifyPropertyChangedFor(nameof(HasQuality))]
+    [NotifyPropertyChangedFor(nameof(HasCompressionEffort))]
     [NotifyPropertyChangedFor(nameof(HasBackgroundColor))]
     private int _selectedOutputFormatIndex;
 
@@ -68,6 +69,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(HasQuality))]
+    [NotifyPropertyChangedFor(nameof(HasCompressionEffort))]
     private bool _webpLossless;
 
     [ObservableProperty]
@@ -154,6 +156,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     public bool IsBmp => GetOutputFormat() == ImageConverterOutputFormat.Bmp;
     public bool IsWebp => GetOutputFormat() == ImageConverterOutputFormat.Webp;
     public bool HasQuality => IsJpeg || IsWebp && !WebpLossless;
+    public bool HasCompressionEffort => IsWebp && WebpLossless;
     public bool HasBackgroundColor => IsJpeg || IsPng && GetPngBitDepth() != PNGBitDepth.Bit32 || IsBmp && GetBmpBitDepth() != BMPBitDepth.Bit32;
     public bool CanRemove => _selectedImages.Count > 0 || SelectedImage != null;
     public bool CanConvert => !IsBusy && HasImages && Directory.Exists(OutputFolderPath) &&
