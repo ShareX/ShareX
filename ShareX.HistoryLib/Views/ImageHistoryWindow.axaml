@@ -304,7 +304,12 @@
                                                             </MenuItem>
                                                             <MenuItem x:Name="EditImageMenu" Header="{x:Static localization:Strings.HistoryWindows_Edit_image}" Click="OnEditImageClick" InputGesture="Ctrl+E">
                                                                 <MenuItem.Icon>
-                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.MagicWand}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.ImageEditor}"/>
+                                                                </MenuItem.Icon>
+                                                            </MenuItem>
+                                                            <MenuItem x:Name="EditImageInPhotoEditorMenu" Header="{x:Static localization:Strings.HistoryWindows_EditImageInPhotoEditor}" Click="OnEditImageInPhotoEditorClick">
+                                                                <MenuItem.Icon>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Layers}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem x:Name="TrimVideoMenu" Header="{x:Static localization:Strings.HistoryWindows_TrimVideo}" Click="OnTrimVideoClick" IsVisible="False">

@@ -150,6 +150,9 @@
   <data name="HistoryWindows_Done" xml:space="preserve">
     <value>Готово</value>
   </data>
+  <data name="HistoryWindows_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Редактировать в фоторедакторе...</value>
+  </data>
   <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
     <value>Изменить элемент истории</value>
   </data>

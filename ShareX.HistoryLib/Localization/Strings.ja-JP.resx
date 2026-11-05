@@ -150,6 +150,9 @@
   <data name="HistoryWindows_Done" xml:space="preserve">
     <value>完了</value>
   </data>
+  <data name="HistoryWindows_EditImageInPhotoEditor" xml:space="preserve">
+    <value>フォトエディターで編集...</value>
+  </data>
   <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
     <value>履歴項目を編集</value>
   </data>
