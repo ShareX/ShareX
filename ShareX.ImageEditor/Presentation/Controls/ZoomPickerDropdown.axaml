@@ -20,7 +20,7 @@
                 <!-- Zoom Icon -->
                 <controls:IconPresenter Grid.Column="0"
                                         Icon="{x:Static theming:EditorIcons.Zoom}"
-                                        FontSize="16"
+                                        FontSize="20"
                                         Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                         VerticalAlignment="Center"
                                         Margin="0,0,6,0"/>
