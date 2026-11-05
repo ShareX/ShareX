@@ -40,9 +40,11 @@ internal sealed class IconShape
     private readonly double[]? _dashes;
     private readonly double _opacity;
     private readonly IBrush? _brush;
+    private readonly Geometry? _cut;
     private IDashStyle? _dashStyle;
+    private Geometry? _cutArea;
 
-    private IconShape(Geometry geometry, bool filled, double? strokeWidth, double[]? dashes, double opacity, IBrush? brush)
+    private IconShape(Geometry geometry, bool filled, double? strokeWidth, double[]? dashes, double opacity, IBrush? brush, Geometry? cut = null)
     {
         _geometry = geometry;
         _filled = filled;
@@ -50,6 +52,7 @@ internal sealed class IconShape
         _dashes = dashes;
         _opacity = opacity;
         _brush = brush;
+        _cut = cut;
     }
 
     /// <summary>A line. Dash and gap lengths are in grid units, as in SVG.</summary>
@@ -71,6 +74,12 @@ internal sealed class IconShape
     public static IconShape Fill(Geometry geometry, double opacity = 1, IBrush? brush = null, double outline = 0) =>
         new(geometry, filled: true, outline, dashes: null, opacity, brush);
 
+    /// <summary>
+    /// This shape with the area of <paramref name="cut"/> left out, so a badge or slash drawn over it stands apart
+    /// with a gap. See <see cref="IconGeometry.Halo"/>.
+    /// </summary>
+    public IconShape Except(Geometry cut) => new(_geometry, _filled, _strokeWidth, _dashes, _opacity, _brush, cut);
+
     public void Draw(DrawingContext context, IconStyle style, IBrush foreground)
     {
         IBrush color = _brush ?? foreground;
@@ -90,7 +99,28 @@ internal sealed class IconShape
 
         using (context.PushOpacity(_opacity))
         {
-            context.DrawGeometry(_filled ? color : null, pen, _geometry);
+            if (_cut == null)
+            {
+                context.DrawGeometry(_filled ? color : null, pen, _geometry);
+            }
+            else
+            {
+                // The stroke becomes an area, so the cut can be taken out of it.
+                _cutArea ??= IconGeometry.Subtract(GetArea(pen), _cut);
+                context.DrawGeometry(color, null, _cutArea);
+            }
         }
+    }
+
+    private Geometry GetArea(IPen? pen)
+    {
+        Geometry? stroke = pen?.Thickness > 0 ? _geometry.GetWidenedGeometry(pen) : null;
+
+        if (!_filled)
+        {
+            return stroke ?? _geometry;
+        }
+
+        return stroke == null ? _geometry : IconGeometry.Union(_geometry, stroke);
     }
 }

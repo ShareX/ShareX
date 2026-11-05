@@ -1,5 +1,6 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls">
     <!--
         Application-wide style entry point.
         Keep reusable selectors and style classes here so views stay focused on layout and behavior.
@@ -974,6 +975,10 @@
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
     </Style>
 
+    <Style Selector="MenuItem.compact-menu-item:pointerover controls|IconPresenter.accent-menu-icon">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+    </Style>
+
     <Style Selector="MenuItem.bold-when-checked">
         <Setter Property="FontWeight" Value="Normal"/>
     </Style>
@@ -1111,6 +1116,10 @@
     <Style Selector="TextBlock.accent-menu-icon">
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
         <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+
+    <Style Selector="controls|IconPresenter.accent-menu-icon">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
     </Style>
 
     <Style Selector="MenuFlyoutPresenter MenuItem">

@@ -25,8 +25,8 @@
 
 #nullable enable
 
-using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -56,28 +56,28 @@ internal sealed class MainMenuBuilder
 
         return new List<MainNavigationSection>
         {
-            new(Strings.MainMenuBuilder_Capture, LucideIcons.camera, BuildCaptureMenu),
-            new(Strings.MainMenuBuilder_Upload, LucideIcons.upload, BuildUploadMenu, uploadsEnabled),
-            new(Strings.MainMenuBuilder_Workflows, LucideIcons.list_checks, BuildWorkflowsMenu),
-            new(Strings.MainMenuBuilder_Tools, LucideIcons.wrench, BuildToolsMenu,
+            new(Strings.MainMenuBuilder_Capture, MainWindowIcons.Camera, BuildCaptureMenu),
+            new(Strings.MainMenuBuilder_Upload, MainWindowIcons.Upload, BuildUploadMenu, uploadsEnabled),
+            new(Strings.MainMenuBuilder_Workflows, MainWindowIcons.Workflows, BuildWorkflowsMenu),
+            new(Strings.MainMenuBuilder_Tools, MainWindowIcons.Wrench, BuildToolsMenu,
                 createCategories: BuildToolCategories),
-            new(Strings.MainMenuBuilder_AfterCaptureTasks, LucideIcons.image_up, BuildAfterCaptureMenu),
-            new(Strings.MainMenuBuilder_AfterUploadTasks, LucideIcons.cloud_upload, BuildAfterUploadMenu, uploadsEnabled),
-            new(Strings.MainMenuBuilder_Destinations, LucideIcons.server, BuildDestinationsMenu, uploadsEnabled),
-            new(Strings.MainMenuBuilder_ApplicationSettings, LucideIcons.settings, () => Run(MainFormCommand.ApplicationSettings)),
-            new(Strings.MainMenuBuilder_TaskSettings, LucideIcons.sliders_horizontal, () => Run(MainFormCommand.TaskSettings)),
-            new(Strings.MainMenuBuilder_HotkeySettings, LucideIcons.keyboard, () => Run(MainFormCommand.HotkeySettings)),
-            new(Strings.MainMenuBuilder_DestinationSettings, LucideIcons.cloud_cog, () => Run(MainFormCommand.DestinationSettings), uploadsEnabled),
-            new(Strings.MainMenuBuilder_CustomUploaderSettings, LucideIcons.cloud, () => Run(MainFormCommand.CustomUploaderSettings), uploadsEnabled),
-            new(Strings.MainMenuBuilder_ScreenshotsFolder, LucideIcons.folder_open, () => Run(MainFormCommand.ScreenshotsFolder)),
-            new(Strings.MainMenuBuilder_History, LucideIcons.history, () => Run(MainFormCommand.History)),
-            new(Strings.MainMenuBuilder_ImageHistory, LucideIcons.images, () => Run(MainFormCommand.ImageHistory)),
-            new(Strings.MainMenuBuilder_Stats, LucideIcons.chart_column, () => Run(MainFormCommand.Stats)),
-            new(Strings.MainMenuBuilder_Debug, LucideIcons.bug, BuildDebugMenu),
-            new(Strings.MainMenuBuilder_Donate, LucideIcons.heart, () => Run(MainFormCommand.Donate)),
-            new(Strings.MainMenuBuilder_FollowShareX, LucideIcons.external_link, () => Run(MainFormCommand.X)),
-            new(Strings.MainMenuBuilder_Discord, LucideIcons.message_circle, () => Run(MainFormCommand.Discord)),
-            new(Strings.MainMenuBuilder_About, LucideIcons.info, () => Run(MainFormCommand.About))
+            new(Strings.MainMenuBuilder_AfterCaptureTasks, MainWindowIcons.ImageUpload, BuildAfterCaptureMenu),
+            new(Strings.MainMenuBuilder_AfterUploadTasks, MainWindowIcons.CloudUpload, BuildAfterUploadMenu, uploadsEnabled),
+            new(Strings.MainMenuBuilder_Destinations, MainWindowIcons.Server, BuildDestinationsMenu, uploadsEnabled),
+            new(Strings.MainMenuBuilder_ApplicationSettings, MainWindowIcons.Settings, () => Run(MainFormCommand.ApplicationSettings)),
+            new(Strings.MainMenuBuilder_TaskSettings, MainWindowIcons.Sliders, () => Run(MainFormCommand.TaskSettings)),
+            new(Strings.MainMenuBuilder_HotkeySettings, MainWindowIcons.Keyboard, () => Run(MainFormCommand.HotkeySettings)),
+            new(Strings.MainMenuBuilder_DestinationSettings, MainWindowIcons.CloudSettings, () => Run(MainFormCommand.DestinationSettings), uploadsEnabled),
+            new(Strings.MainMenuBuilder_CustomUploaderSettings, MainWindowIcons.Cloud, () => Run(MainFormCommand.CustomUploaderSettings), uploadsEnabled),
+            new(Strings.MainMenuBuilder_ScreenshotsFolder, MainWindowIcons.FolderOpen, () => Run(MainFormCommand.ScreenshotsFolder)),
+            new(Strings.MainMenuBuilder_History, MainWindowIcons.History, () => Run(MainFormCommand.History)),
+            new(Strings.MainMenuBuilder_ImageHistory, MainWindowIcons.Images, () => Run(MainFormCommand.ImageHistory)),
+            new(Strings.MainMenuBuilder_Stats, MainWindowIcons.BarChart, () => Run(MainFormCommand.Stats)),
+            new(Strings.MainMenuBuilder_Debug, MainWindowIcons.Bug, BuildDebugMenu),
+            new(Strings.MainMenuBuilder_Donate, MainWindowIcons.Heart, () => Run(MainFormCommand.Donate)),
+            new(Strings.MainMenuBuilder_FollowShareX, MainWindowIcons.ExternalLink, () => Run(MainFormCommand.X)),
+            new(Strings.MainMenuBuilder_Discord, MainWindowIcons.ChatBubble, () => Run(MainFormCommand.Discord)),
+            new(Strings.MainMenuBuilder_About, MainWindowIcons.Info, () => Run(MainFormCommand.About))
         };
     }
 
@@ -86,34 +86,34 @@ internal sealed class MainMenuBuilder
         bool uploadsEnabled = !SystemOptions.DisableUpload;
         List<MainMenuEntry> items = new()
         {
-            Parent(Strings.MainMenuBuilder_Capture, LucideIcons.camera, BuildCaptureMenu),
-            Parent(Strings.MainMenuBuilder_Upload, LucideIcons.upload, BuildUploadMenu, uploadsEnabled),
-            Parent(Strings.MainMenuBuilder_Workflows, LucideIcons.list_checks, BuildWorkflowsMenu),
-            CategoryParent(Strings.MainMenuBuilder_Tools, LucideIcons.wrench, BuildToolCategories),
+            Parent(Strings.MainMenuBuilder_Capture, MainWindowIcons.Camera, BuildCaptureMenu),
+            Parent(Strings.MainMenuBuilder_Upload, MainWindowIcons.Upload, BuildUploadMenu, uploadsEnabled),
+            Parent(Strings.MainMenuBuilder_Workflows, MainWindowIcons.Workflows, BuildWorkflowsMenu),
+            CategoryParent(Strings.MainMenuBuilder_Tools, MainWindowIcons.Wrench, BuildToolCategories),
             MainMenuEntry.Separator(),
-            Parent(Strings.MainMenuBuilder_AfterCaptureTasks, LucideIcons.image_up, BuildAfterCaptureMenu),
-            Parent(Strings.MainMenuBuilder_AfterUploadTasks, LucideIcons.cloud_upload, BuildAfterUploadMenu, uploadsEnabled),
-            Parent(Strings.MainMenuBuilder_Destinations, LucideIcons.server, BuildDestinationsMenu, uploadsEnabled),
+            Parent(Strings.MainMenuBuilder_AfterCaptureTasks, MainWindowIcons.ImageUpload, BuildAfterCaptureMenu),
+            Parent(Strings.MainMenuBuilder_AfterUploadTasks, MainWindowIcons.CloudUpload, BuildAfterUploadMenu, uploadsEnabled),
+            Parent(Strings.MainMenuBuilder_Destinations, MainWindowIcons.Server, BuildDestinationsMenu, uploadsEnabled),
             MainMenuEntry.Separator(),
-            Item(Strings.MainMenuBuilder_ApplicationSettings, LucideIcons.settings, () => Run(MainFormCommand.ApplicationSettings)),
-            Item(Strings.MainMenuBuilder_TaskSettings, LucideIcons.sliders_horizontal, () => Run(MainFormCommand.TaskSettings)),
-            Item(Strings.MainMenuBuilder_HotkeySettings, LucideIcons.keyboard, () => Run(MainFormCommand.HotkeySettings)),
+            Item(Strings.MainMenuBuilder_ApplicationSettings, MainWindowIcons.Settings, () => Run(MainFormCommand.ApplicationSettings)),
+            Item(Strings.MainMenuBuilder_TaskSettings, MainWindowIcons.Sliders, () => Run(MainFormCommand.TaskSettings)),
+            Item(Strings.MainMenuBuilder_HotkeySettings, MainWindowIcons.Keyboard, () => Run(MainFormCommand.HotkeySettings)),
             Item(ApplicationState.Settings.DisableHotkeys ? Strings.MainMenuBuilder_EnableHotkeys : Strings.MainMenuBuilder_DisableHotkeys,
-                ApplicationState.Settings.DisableHotkeys ? LucideIcons.keyboard : LucideIcons.keyboard_off,
+                ApplicationState.Settings.DisableHotkeys ? MainWindowIcons.Keyboard : MainWindowIcons.KeyboardOff,
                 () => TaskHelpers.ToggleHotkeys()),
-            Item(Strings.MainMenuBuilder_DestinationSettings, LucideIcons.cloud_cog, () => Run(MainFormCommand.DestinationSettings), uploadsEnabled),
-            Item(Strings.MainMenuBuilder_CustomUploaderSettings, LucideIcons.cloud, () => Run(MainFormCommand.CustomUploaderSettings), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_DestinationSettings, MainWindowIcons.CloudSettings, () => Run(MainFormCommand.DestinationSettings), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_CustomUploaderSettings, MainWindowIcons.Cloud, () => Run(MainFormCommand.CustomUploaderSettings), uploadsEnabled),
             MainMenuEntry.Separator(),
-            Item(Strings.MainMenuBuilder_ScreenshotsFolder, LucideIcons.folder_open, () => Run(MainFormCommand.ScreenshotsFolder)),
-            Item(Strings.MainMenuBuilder_History, LucideIcons.history, () => Run(MainFormCommand.History)),
-            Item(Strings.MainMenuBuilder_ImageHistory, LucideIcons.images, () => Run(MainFormCommand.ImageHistory)),
+            Item(Strings.MainMenuBuilder_ScreenshotsFolder, MainWindowIcons.FolderOpen, () => Run(MainFormCommand.ScreenshotsFolder)),
+            Item(Strings.MainMenuBuilder_History, MainWindowIcons.History, () => Run(MainFormCommand.History)),
+            Item(Strings.MainMenuBuilder_ImageHistory, MainWindowIcons.Images, () => Run(MainFormCommand.ImageHistory)),
             MainMenuEntry.Separator(),
-            Item(Strings.MainMenuBuilder_RestartAsAdministrator, LucideIcons.shield, () => ApplicationLifecycle.Restart(true)),
-            Parent(Strings.MainMenuBuilder_RecentItems, LucideIcons.clipboard_list, BuildRecentItemsMenu,
+            Item(Strings.MainMenuBuilder_RestartAsAdministrator, MainWindowIcons.Shield, () => ApplicationLifecycle.Restart(true)),
+            Parent(Strings.MainMenuBuilder_RecentItems, MainWindowIcons.ClipboardList, BuildRecentItemsMenu,
                 ApplicationState.Settings.RecentTasksSave && ApplicationState.Settings.RecentTasksShowInTrayMenu && TaskManager.RecentManager.Tasks.Count > 0),
-            Item(Strings.MainMenuBuilder_ActionsToolbar, LucideIcons.panel_top, () => TaskHelpers.ToggleActionsToolbar()),
-            Item(Strings.MainMenuBuilder_ShowShareX, LucideIcons.maximize, MainWindowIntegration.Activate),
-            Item(Strings.MainMenuBuilder_Exit, LucideIcons.log_out, ApplicationLifecycle.ForceClose)
+            Item(Strings.MainMenuBuilder_ActionsToolbar, MainWindowIcons.Toolbar, () => TaskHelpers.ToggleActionsToolbar()),
+            Item(Strings.MainMenuBuilder_ShowShareX, MainWindowIcons.Window, MainWindowIntegration.Activate),
+            Item(Strings.MainMenuBuilder_Exit, MainWindowIcons.Exit, ApplicationLifecycle.ForceClose)
         };
 
         return items;
@@ -124,24 +124,24 @@ internal sealed class MainMenuBuilder
         bool autoHide = !_trayMenu;
         return new List<MainMenuEntry>
         {
-            Item(Strings.MainMenuBuilder_Fullscreen, LucideIcons.maximize, () => new CaptureFullscreen().Capture(autoHide)),
-            Parent(Strings.MainMenuBuilder_Window, LucideIcons.app_window, BuildWindowMenu),
-            Parent(Strings.MainMenuBuilder_Monitor, LucideIcons.monitor, BuildMonitorMenu),
-            Item(Strings.MainMenuBuilder_Region, LucideIcons.scan, () => new CaptureRegion().Capture(autoHide)),
-            Item(Strings.MainMenuBuilder_LastRegion, LucideIcons.layers, () => new CaptureLastRegion().Capture(autoHide)),
-            Item(Strings.MainMenuBuilder_ScreenRecording, LucideIcons.video,
+            Item(Strings.MainMenuBuilder_Fullscreen, MainWindowIcons.Fullscreen, () => new CaptureFullscreen().Capture(autoHide)),
+            Parent(Strings.MainMenuBuilder_Window, MainWindowIcons.Window, BuildWindowMenu),
+            Parent(Strings.MainMenuBuilder_Monitor, MainWindowIcons.Monitor, BuildMonitorMenu),
+            Item(Strings.MainMenuBuilder_Region, MainWindowIcons.Region, () => new CaptureRegion().Capture(autoHide)),
+            Item(Strings.MainMenuBuilder_LastRegion, MainWindowIcons.LastRegion, () => new CaptureLastRegion().Capture(autoHide)),
+            Item(Strings.MainMenuBuilder_ScreenRecording, MainWindowIcons.Video,
                 () => TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region)),
-            Item(Strings.MainMenuBuilder_ScreenRecordingGif, LucideIcons.film,
+            Item(Strings.MainMenuBuilder_ScreenRecordingGif, MainWindowIcons.Film,
                 () => TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region)),
-            Item(Strings.MainMenuBuilder_ScrollingCapture, LucideIcons.scroll_text, async () => await TaskHelpers.OpenScrollingCapture()),
-            Item(Strings.MainMenuBuilder_AutoCapture, LucideIcons.clock, () => TaskHelpers.OpenAutoCapture()),
+            Item(Strings.MainMenuBuilder_ScrollingCapture, MainWindowIcons.ScrollingCapture, async () => await TaskHelpers.OpenScrollingCapture()),
+            Item(Strings.MainMenuBuilder_AutoCapture, MainWindowIcons.Clock, () => TaskHelpers.OpenAutoCapture()),
             MainMenuEntry.Separator(),
-            new MainMenuEntry(Strings.MainMenuBuilder_ShowCursor, LucideIcons.mouse_pointer_2,
+            new MainMenuEntry(Strings.MainMenuBuilder_ShowCursor, MainWindowIcons.Pointer,
                 () => ApplicationState.DefaultTaskSettings.CaptureSettings.ShowCursor = !ApplicationState.DefaultTaskSettings.CaptureSettings.ShowCursor,
                 isChecked: ApplicationState.DefaultTaskSettings.CaptureSettings.ShowCursor,
                 toggleType: MainMenuToggleType.CheckBox),
             Parent(string.Format(Strings.ScreenshotDelay0S, ApplicationState.DefaultTaskSettings.CaptureSettings.ScreenshotDelay.ToString("0.#")),
-                LucideIcons.timer, BuildScreenshotDelayMenu)
+                MainWindowIcons.Timer, BuildScreenshotDelayMenu)
         };
     }
 
@@ -167,7 +167,7 @@ internal sealed class MainMenuBuilder
 
         if (items.Count == 0)
         {
-            items.Add(new MainMenuEntry(Strings.MainMenuBuilder_NoWindowsFound, LucideIcons.app_window, isEnabled: false));
+            items.Add(new MainMenuEntry(Strings.MainMenuBuilder_NoWindowsFound, MainWindowIcons.Window, isEnabled: false));
         }
 
         return items;
@@ -196,7 +196,7 @@ internal sealed class MainMenuBuilder
         {
             Rectangle bounds = screens[i].Bounds;
             string label = $"{i + 1}. {bounds.Width}x{bounds.Height}";
-            items.Add(Item(label, i == 0 ? LucideIcons.monitor : LucideIcons.monitor_up,
+            items.Add(Item(label, i == 0 ? MainWindowIcons.Monitor : MainWindowIcons.Monitor,
                 () => new CaptureMonitor(bounds).Capture(!_trayMenu)));
         }
 
@@ -209,7 +209,7 @@ internal sealed class MainMenuBuilder
         return Enumerable.Range(0, 6)
             .Select(delay => new MainMenuEntry(
                 string.Format(Strings.ScreenshotDelay0S, delay),
-                delay == 0 ? LucideIcons.timer_off : LucideIcons.timer,
+                delay == 0 ? MainWindowIcons.TimerOff : MainWindowIcons.Timer,
                 () => MainWindowIntegration.SetScreenshotDelay(delay),
                 isChecked: Math.Abs(current - delay) < 0.01m,
                 toggleType: MainMenuToggleType.Radio))
@@ -220,13 +220,13 @@ internal sealed class MainMenuBuilder
     {
         return new List<MainMenuEntry>
         {
-            Item(Strings.MainMenuBuilder_UploadFile, LucideIcons.file_up, () => UploadManager.UploadFile()),
-            Item(Strings.MainMenuBuilder_UploadFolder, LucideIcons.folder_up, () => UploadManager.UploadFolder()),
-            Item(Strings.MainMenuBuilder_UploadClipboard, LucideIcons.clipboard, () => UploadManager.ClipboardUploadMainWindow()),
-            Item(Strings.MainMenuBuilder_UploadText, LucideIcons.file_text, async () => await UploadManager.ShowTextUploadDialog()),
-            Item(Strings.MainMenuBuilder_UploadUrl, LucideIcons.link, async () => await UploadManager.UploadURL()),
-            Item(Strings.MainMenuBuilder_DragAndDropUpload, LucideIcons.mouse_pointer_2, () => TaskHelpers.OpenDropWindow()),
-            Item(Strings.MainMenuBuilder_ShortenUrl, LucideIcons.link_2, async () => await UploadManager.ShowShortenURLDialog())
+            Item(Strings.MainMenuBuilder_UploadFile, MainWindowIcons.FileUpload, () => UploadManager.UploadFile()),
+            Item(Strings.MainMenuBuilder_UploadFolder, MainWindowIcons.FolderUpload, () => UploadManager.UploadFolder()),
+            Item(Strings.MainMenuBuilder_UploadClipboard, MainWindowIcons.Clipboard, () => UploadManager.ClipboardUploadMainWindow()),
+            Item(Strings.MainMenuBuilder_UploadText, MainWindowIcons.FileText, async () => await UploadManager.ShowTextUploadDialog()),
+            Item(Strings.MainMenuBuilder_UploadUrl, MainWindowIcons.Link, async () => await UploadManager.UploadURL()),
+            Item(Strings.MainMenuBuilder_DragAndDropUpload, MainWindowIcons.Pointer, () => TaskHelpers.OpenDropWindow()),
+            Item(Strings.MainMenuBuilder_ShortenUrl, MainWindowIcons.ShortLink, async () => await UploadManager.ShowShortenURLDialog())
         };
     }
 
@@ -251,56 +251,56 @@ internal sealed class MainMenuBuilder
     [
         new(Strings.MainMenuBuilder_ToolCategoryScreen,
         [
-            Tool(nameof(Strings.MainMenuBuilder_ColorPicker), Strings.MainMenuBuilder_ColorPicker, LucideIcons.palette, () => TaskHelpers.ShowColorPickerDialog()),
-            Tool(nameof(Strings.MainMenuBuilder_MouseHighlighter), Strings.MainMenuBuilder_MouseHighlighter, LucideIcons.mouse_pointer_click, () => TaskHelpers.OpenMouseHighlighter()),
-            Tool(nameof(Strings.MainMenuBuilder_PinToScreenDialog), Strings.MainMenuBuilder_PinToScreenDialog, LucideIcons.pin, () => TaskHelpers.PinToScreen()),
-            Tool(nameof(Strings.MainMenuBuilder_Ruler), Strings.MainMenuBuilder_Ruler, LucideIcons.ruler, () => TaskHelpers.OpenRuler()),
-            Tool(nameof(Strings.MainMenuBuilder_ScreenColorPicker), Strings.MainMenuBuilder_ScreenColorPicker, LucideIcons.pipette, () => TaskHelpers.OpenScreenColorPicker())
+            Tool(nameof(Strings.MainMenuBuilder_ColorPicker), Strings.MainMenuBuilder_ColorPicker, MainWindowIcons.Palette, () => TaskHelpers.ShowColorPickerDialog()),
+            Tool(nameof(Strings.MainMenuBuilder_MouseHighlighter), Strings.MainMenuBuilder_MouseHighlighter, MainWindowIcons.PointerClick, () => TaskHelpers.OpenMouseHighlighter()),
+            Tool(nameof(Strings.MainMenuBuilder_PinToScreenDialog), Strings.MainMenuBuilder_PinToScreenDialog, MainWindowIcons.Pin, () => TaskHelpers.PinToScreen()),
+            Tool(nameof(Strings.MainMenuBuilder_Ruler), Strings.MainMenuBuilder_Ruler, MainWindowIcons.Ruler, () => TaskHelpers.OpenRuler()),
+            Tool(nameof(Strings.MainMenuBuilder_ScreenColorPicker), Strings.MainMenuBuilder_ScreenColorPicker, MainWindowIcons.Eyedropper, () => TaskHelpers.OpenScreenColorPicker())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryImages,
         [
-            Tool(nameof(Strings.MainMenuBuilder_BackgroundRemover), Strings.MainMenuBuilder_BackgroundRemover, LucideIcons.eraser, () => TaskHelpers.OpenBackgroundRemover()),
-            Tool(nameof(Strings.MainMenuBuilder_IconConverter), Strings.MainMenuBuilder_IconConverter, LucideIcons.file_image, () => TaskHelpers.OpenIconConverter()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageBeautifier), Strings.MainMenuBuilder_ImageBeautifier, LucideIcons.sparkles, () => TaskHelpers.OpenImageBeautifier()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageCombiner), Strings.MainMenuBuilder_ImageCombiner, LucideIcons.combine, () => TaskHelpers.OpenImageCombiner()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageComparer), Strings.MainMenuBuilder_ImageComparer, LucideIcons.images, () => TaskHelpers.OpenImageComparer()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageConverter), Strings.MainMenuBuilder_ImageConverter, LucideIcons.refresh_cw, () => TaskHelpers.OpenImageConverter()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageEditor), Strings.MainMenuBuilder_ImageEditor, LucideIcons.image, () => TaskHelpers.OpenImageEditor()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageEffects), Strings.MainMenuBuilder_ImageEffects, LucideIcons.wand_sparkles, () => TaskHelpers.OpenImageEffects()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageResizer), Strings.MainMenuBuilder_ImageResizer, LucideIcons.maximize_2, () => TaskHelpers.OpenImageResizer()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageSplitter), Strings.MainMenuBuilder_ImageSplitter, LucideIcons.split, () => TaskHelpers.OpenImageSplitter()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageThumbnailer), Strings.MainMenuBuilder_ImageThumbnailer, LucideIcons.shrink, () => TaskHelpers.OpenImageThumbnailer()),
-            Tool(nameof(Strings.MainMenuBuilder_PhotoEditor), Strings.MainMenuBuilder_PhotoEditor, LucideIcons.layers, () => TaskHelpers.OpenPhotoEditor(),
+            Tool(nameof(Strings.MainMenuBuilder_BackgroundRemover), Strings.MainMenuBuilder_BackgroundRemover, MainWindowIcons.Eraser, () => TaskHelpers.OpenBackgroundRemover()),
+            Tool(nameof(Strings.MainMenuBuilder_IconConverter), Strings.MainMenuBuilder_IconConverter, MainWindowIcons.FileImage, () => TaskHelpers.OpenIconConverter()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageBeautifier), Strings.MainMenuBuilder_ImageBeautifier, MainWindowIcons.Sparkles, () => TaskHelpers.OpenImageBeautifier()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageCombiner), Strings.MainMenuBuilder_ImageCombiner, MainWindowIcons.Combine, () => TaskHelpers.OpenImageCombiner()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageComparer), Strings.MainMenuBuilder_ImageComparer, MainWindowIcons.Images, () => TaskHelpers.OpenImageComparer()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageConverter), Strings.MainMenuBuilder_ImageConverter, MainWindowIcons.Convert, () => TaskHelpers.OpenImageConverter()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageEditor), Strings.MainMenuBuilder_ImageEditor, MainWindowIcons.Image, () => TaskHelpers.OpenImageEditor()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageEffects), Strings.MainMenuBuilder_ImageEffects, MainWindowIcons.MagicWand, () => TaskHelpers.OpenImageEffects()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageResizer), Strings.MainMenuBuilder_ImageResizer, MainWindowIcons.Resize, () => TaskHelpers.OpenImageResizer()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageSplitter), Strings.MainMenuBuilder_ImageSplitter, MainWindowIcons.Split, () => TaskHelpers.OpenImageSplitter()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageThumbnailer), Strings.MainMenuBuilder_ImageThumbnailer, MainWindowIcons.Shrink, () => TaskHelpers.OpenImageThumbnailer()),
+            Tool(nameof(Strings.MainMenuBuilder_PhotoEditor), Strings.MainMenuBuilder_PhotoEditor, MainWindowIcons.Layers, () => TaskHelpers.OpenPhotoEditor(),
                 badgeText: Strings.MainMenuBuilder_NewBadge),
-            Tool(nameof(Strings.MainMenuBuilder_ImageViewer), Strings.MainMenuBuilder_ImageViewer, LucideIcons.eye, () => TaskHelpers.OpenImageViewer()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageWatermark), Strings.MainMenuBuilder_ImageWatermark, LucideIcons.stamp, () => TaskHelpers.OpenImageWatermark())
+            Tool(nameof(Strings.MainMenuBuilder_ImageViewer), Strings.MainMenuBuilder_ImageViewer, MainWindowIcons.Eye, () => TaskHelpers.OpenImageViewer()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageWatermark), Strings.MainMenuBuilder_ImageWatermark, MainWindowIcons.Stamp, () => TaskHelpers.OpenImageWatermark())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryVideo,
         [
-            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifMaker), Strings.MainMenuBuilder_AnimatedGifMaker, LucideIcons.film, () => TaskHelpers.OpenAnimatedGifMaker()),
-            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifTrimmer), Strings.MainMenuBuilder_AnimatedGifTrimmer, LucideIcons.scissors_square, () => TaskHelpers.OpenAnimatedGifTrimmer()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoConverter), Strings.MainMenuBuilder_VideoConverter, LucideIcons.file_video, () => TaskHelpers.OpenVideoConverter()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoPlayer), Strings.MainMenuBuilder_VideoPlayer, LucideIcons.circle_play, () => TaskHelpers.OpenVideoPlayer()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoThumbnailer), Strings.MainMenuBuilder_VideoThumbnailer, LucideIcons.clapperboard, () => TaskHelpers.OpenVideoThumbnailer()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoTrimmer), Strings.MainMenuBuilder_VideoTrimmer, LucideIcons.scissors, () => TaskHelpers.OpenVideoTrimmer())
+            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifMaker), Strings.MainMenuBuilder_AnimatedGifMaker, MainWindowIcons.Film, () => TaskHelpers.OpenAnimatedGifMaker()),
+            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifTrimmer), Strings.MainMenuBuilder_AnimatedGifTrimmer, MainWindowIcons.ScissorsFrame, () => TaskHelpers.OpenAnimatedGifTrimmer()),
+            Tool(nameof(Strings.MainMenuBuilder_VideoConverter), Strings.MainMenuBuilder_VideoConverter, MainWindowIcons.FileVideo, () => TaskHelpers.OpenVideoConverter()),
+            Tool(nameof(Strings.MainMenuBuilder_VideoPlayer), Strings.MainMenuBuilder_VideoPlayer, MainWindowIcons.CirclePlay, () => TaskHelpers.OpenVideoPlayer()),
+            Tool(nameof(Strings.MainMenuBuilder_VideoThumbnailer), Strings.MainMenuBuilder_VideoThumbnailer, MainWindowIcons.Clapperboard, () => TaskHelpers.OpenVideoThumbnailer()),
+            Tool(nameof(Strings.MainMenuBuilder_VideoTrimmer), Strings.MainMenuBuilder_VideoTrimmer, MainWindowIcons.Scissors, () => TaskHelpers.OpenVideoTrimmer())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryData,
         [
-            Tool(nameof(Strings.MainMenuBuilder_AnalyzeImage), Strings.MainMenuBuilder_AnalyzeImage, LucideIcons.bot, () => TaskHelpers.AnalyzeImage()),
-            Tool(nameof(Strings.MainMenuBuilder_HashChecker), Strings.MainMenuBuilder_HashChecker, LucideIcons.hash, () => TaskHelpers.OpenHashCheck()),
-            Tool(nameof(Strings.MainMenuBuilder_IndexFolder), Strings.MainMenuBuilder_IndexFolder, LucideIcons.folder_tree, () => TaskHelpers.OpenDirectoryIndexer()),
-            Tool(nameof(Strings.MainMenuBuilder_Metadata), Strings.MainMenuBuilder_Metadata, LucideIcons.tags, () => TaskHelpers.OpenMetadataWindow()),
-            Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, LucideIcons.scan_text, async () => await TaskHelpers.OCRImage()),
-            Tool(nameof(Strings.MainMenuBuilder_QRCode), Strings.MainMenuBuilder_QRCode, LucideIcons.qr_code, () => TaskHelpers.OpenQRCode()),
-            Tool(nameof(Strings.MainMenuBuilder_RemoteStorageBrowser), Strings.MainMenuBuilder_RemoteStorageBrowser, LucideIcons.cloud, () => TaskHelpers.OpenRemoteStorageBrowser())
+            Tool(nameof(Strings.MainMenuBuilder_AnalyzeImage), Strings.MainMenuBuilder_AnalyzeImage, MainWindowIcons.Robot, () => TaskHelpers.AnalyzeImage()),
+            Tool(nameof(Strings.MainMenuBuilder_HashChecker), Strings.MainMenuBuilder_HashChecker, MainWindowIcons.Hash, () => TaskHelpers.OpenHashCheck()),
+            Tool(nameof(Strings.MainMenuBuilder_IndexFolder), Strings.MainMenuBuilder_IndexFolder, MainWindowIcons.FolderTree, () => TaskHelpers.OpenDirectoryIndexer()),
+            Tool(nameof(Strings.MainMenuBuilder_Metadata), Strings.MainMenuBuilder_Metadata, MainWindowIcons.Tag, () => TaskHelpers.OpenMetadataWindow()),
+            Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, MainWindowIcons.TextRecognition, async () => await TaskHelpers.OCRImage()),
+            Tool(nameof(Strings.MainMenuBuilder_QRCode), Strings.MainMenuBuilder_QRCode, MainWindowIcons.QrCode, () => TaskHelpers.OpenQRCode()),
+            Tool(nameof(Strings.MainMenuBuilder_RemoteStorageBrowser), Strings.MainMenuBuilder_RemoteStorageBrowser, MainWindowIcons.Cloud, () => TaskHelpers.OpenRemoteStorageBrowser())
         ]),
         new(Strings.MainMenuBuilder_ToolCategorySystem,
         [
-            Tool(nameof(Strings.MainMenuBuilder_BorderlessWindow), Strings.MainMenuBuilder_BorderlessWindow, LucideIcons.frame, () => TaskHelpers.OpenBorderlessWindow()),
-            Tool(nameof(Strings.MainMenuBuilder_ClipboardViewer), Strings.MainMenuBuilder_ClipboardViewer, LucideIcons.clipboard_list, () => TaskHelpers.OpenClipboardViewer()),
-            Tool(nameof(Strings.MainMenuBuilder_InspectWindow), Strings.MainMenuBuilder_InspectWindow, LucideIcons.scan_search, () => TaskHelpers.OpenInspectWindow()),
-            Tool(nameof(Strings.MainMenuBuilder_MonitorTest), Strings.MainMenuBuilder_MonitorTest, LucideIcons.monitor, () => TaskHelpers.OpenMonitorTest()),
-            Tool(nameof(Strings.MainMenuBuilder_NetworkMonitor), Strings.MainMenuBuilder_NetworkMonitor, LucideIcons.activity, () => TaskHelpers.OpenNetworkMonitor())
+            Tool(nameof(Strings.MainMenuBuilder_BorderlessWindow), Strings.MainMenuBuilder_BorderlessWindow, MainWindowIcons.BorderlessWindow, () => TaskHelpers.OpenBorderlessWindow()),
+            Tool(nameof(Strings.MainMenuBuilder_ClipboardViewer), Strings.MainMenuBuilder_ClipboardViewer, MainWindowIcons.ClipboardList, () => TaskHelpers.OpenClipboardViewer()),
+            Tool(nameof(Strings.MainMenuBuilder_InspectWindow), Strings.MainMenuBuilder_InspectWindow, MainWindowIcons.InspectWindow, () => TaskHelpers.OpenInspectWindow()),
+            Tool(nameof(Strings.MainMenuBuilder_MonitorTest), Strings.MainMenuBuilder_MonitorTest, MainWindowIcons.Monitor, () => TaskHelpers.OpenMonitorTest()),
+            Tool(nameof(Strings.MainMenuBuilder_NetworkMonitor), Strings.MainMenuBuilder_NetworkMonitor, MainWindowIcons.Activity, () => TaskHelpers.OpenNetworkMonitor())
         ])
     ];
 
@@ -337,7 +337,7 @@ internal sealed class MainMenuBuilder
                 items.Add(MainMenuEntry.Separator());
             }
 
-            items.Add(Item(Strings.MainMenuBuilder_AddWorkflowsFromHotkeySettings, LucideIcons.keyboard,
+            items.Add(Item(Strings.MainMenuBuilder_AddWorkflowsFromHotkeySettings, MainWindowIcons.Keyboard,
                 () => Run(MainFormCommand.HotkeySettings)));
         }
 
@@ -420,41 +420,41 @@ internal sealed class MainMenuBuilder
 
     internal static string GetAfterCaptureTaskIcon(AfterCaptureTasks task) => task switch
     {
-        AfterCaptureTasks.ShowQuickTaskMenu => LucideIcons.menu,
-        AfterCaptureTasks.ShowAfterCaptureWindow => LucideIcons.app_window,
-        AfterCaptureTasks.BeautifyImage => LucideIcons.sparkles,
-        AfterCaptureTasks.AddImageEffects => LucideIcons.wand_sparkles,
-        AfterCaptureTasks.AnnotateImage => LucideIcons.pen_line,
-        AfterCaptureTasks.OpenInPhotoEditor => LucideIcons.layers,
-        AfterCaptureTasks.CopyImageToClipboard => LucideIcons.clipboard_copy,
-        AfterCaptureTasks.PinToScreen => LucideIcons.pin,
-        AfterCaptureTasks.SendImageToPrinter => LucideIcons.printer,
-        AfterCaptureTasks.SaveImageToFile => LucideIcons.save,
-        AfterCaptureTasks.SaveImageToFileWithDialog => LucideIcons.save_pen,
-        AfterCaptureTasks.SaveThumbnailImageToFile => LucideIcons.image_down,
-        AfterCaptureTasks.PerformActions => LucideIcons.terminal,
-        AfterCaptureTasks.CopyFileToClipboard => LucideIcons.clipboard_copy,
-        AfterCaptureTasks.CopyFilePathToClipboard => LucideIcons.clipboard_list,
-        AfterCaptureTasks.CopyFolderPathToClipboard => LucideIcons.folder_bookmark,
-        AfterCaptureTasks.ShowInExplorer => LucideIcons.folder_open,
-        AfterCaptureTasks.AnalyzeImage => LucideIcons.bot,
-        AfterCaptureTasks.ScanQRCode => LucideIcons.qr_code,
-        AfterCaptureTasks.DoOCR => LucideIcons.scan_text,
-        AfterCaptureTasks.ShowBeforeUploadWindow => LucideIcons.app_window,
-        AfterCaptureTasks.UploadImageToHost => LucideIcons.upload_cloud,
-        AfterCaptureTasks.DeleteFile => LucideIcons.trash_2,
-        _ => LucideIcons.circle
+        AfterCaptureTasks.ShowQuickTaskMenu => MainWindowIcons.Menu,
+        AfterCaptureTasks.ShowAfterCaptureWindow => MainWindowIcons.Window,
+        AfterCaptureTasks.BeautifyImage => MainWindowIcons.Sparkles,
+        AfterCaptureTasks.AddImageEffects => MainWindowIcons.MagicWand,
+        AfterCaptureTasks.AnnotateImage => MainWindowIcons.Annotate,
+        AfterCaptureTasks.OpenInPhotoEditor => MainWindowIcons.Layers,
+        AfterCaptureTasks.CopyImageToClipboard => MainWindowIcons.ClipboardCopy,
+        AfterCaptureTasks.PinToScreen => MainWindowIcons.Pin,
+        AfterCaptureTasks.SendImageToPrinter => MainWindowIcons.Printer,
+        AfterCaptureTasks.SaveImageToFile => MainWindowIcons.Save,
+        AfterCaptureTasks.SaveImageToFileWithDialog => MainWindowIcons.SaveAs,
+        AfterCaptureTasks.SaveThumbnailImageToFile => MainWindowIcons.ImageDownload,
+        AfterCaptureTasks.PerformActions => MainWindowIcons.Terminal,
+        AfterCaptureTasks.CopyFileToClipboard => MainWindowIcons.ClipboardCopy,
+        AfterCaptureTasks.CopyFilePathToClipboard => MainWindowIcons.ClipboardList,
+        AfterCaptureTasks.CopyFolderPathToClipboard => MainWindowIcons.FolderBookmark,
+        AfterCaptureTasks.ShowInExplorer => MainWindowIcons.FolderOpen,
+        AfterCaptureTasks.AnalyzeImage => MainWindowIcons.Robot,
+        AfterCaptureTasks.ScanQRCode => MainWindowIcons.QrCode,
+        AfterCaptureTasks.DoOCR => MainWindowIcons.TextRecognition,
+        AfterCaptureTasks.ShowBeforeUploadWindow => MainWindowIcons.Window,
+        AfterCaptureTasks.UploadImageToHost => MainWindowIcons.CloudUpload,
+        AfterCaptureTasks.DeleteFile => MainWindowIcons.Trash,
+        _ => MainWindowIcons.Circle
     };
 
     private static string GetAfterUploadTaskIcon(AfterUploadTasks task) => task switch
     {
-        AfterUploadTasks.ShowAfterUploadWindow => LucideIcons.app_window,
-        AfterUploadTasks.UseURLShortener => LucideIcons.link_2,
-        AfterUploadTasks.ShareURL => LucideIcons.share_2,
-        AfterUploadTasks.CopyURLToClipboard => LucideIcons.clipboard_copy,
-        AfterUploadTasks.OpenURL => LucideIcons.external_link,
-        AfterUploadTasks.ShowQRCode => LucideIcons.qr_code,
-        _ => LucideIcons.circle
+        AfterUploadTasks.ShowAfterUploadWindow => MainWindowIcons.Window,
+        AfterUploadTasks.UseURLShortener => MainWindowIcons.ShortLink,
+        AfterUploadTasks.ShareURL => MainWindowIcons.Share,
+        AfterUploadTasks.CopyURLToClipboard => MainWindowIcons.ClipboardCopy,
+        AfterUploadTasks.OpenURL => MainWindowIcons.ExternalLink,
+        AfterUploadTasks.ShowQRCode => MainWindowIcons.QrCode,
+        _ => MainWindowIcons.Circle
     };
 
     private static IReadOnlyList<MainMenuEntry> BuildDestinationsMenu() =>
@@ -465,19 +465,19 @@ internal sealed class MainMenuBuilder
         return new List<MainMenuEntry>
         {
             Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_,
-                () => GetImageUploaderName(settings), LucideIcons.image, () => BuildImageDestinations(settings)),
+                () => GetImageUploaderName(settings), MainWindowIcons.Image, () => BuildImageDestinations(settings)),
             Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_,
-                () => GetTextUploaderName(settings), LucideIcons.file_text, () => BuildTextDestinations(settings)),
+                () => GetTextUploaderName(settings), MainWindowIcons.FileText, () => BuildTextDestinations(settings)),
             Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_,
-                () => settings.FileDestination.GetLocalizedDescription(), LucideIcons.file_up, () => BuildEnumDestinations(
+                () => settings.FileDestination.GetLocalizedDescription(), MainWindowIcons.FileUpload, () => BuildEnumDestinations(
                 settings.FileDestination,
                 value => settings.FileDestination = value)),
             Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
-                () => settings.URLShortenerDestination.GetLocalizedDescription(), LucideIcons.link_2, () => BuildEnumDestinations(
+                () => settings.URLShortenerDestination.GetLocalizedDescription(), MainWindowIcons.ShortLink, () => BuildEnumDestinations(
                 settings.URLShortenerDestination,
                 value => settings.URLShortenerDestination = value)),
             Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
-                () => settings.URLSharingServiceDestination.GetLocalizedDescription(), LucideIcons.share_2, () => BuildEnumDestinations(
+                () => settings.URLSharingServiceDestination.GetLocalizedDescription(), MainWindowIcons.Share, () => BuildEnumDestinations(
                 settings.URLSharingServiceDestination,
                 value => settings.URLSharingServiceDestination = value))
         };
@@ -554,12 +554,12 @@ internal sealed class MainMenuBuilder
         bool uploadsEnabled = !SystemOptions.DisableUpload;
         return new List<MainMenuEntry>
         {
-            Item(Strings.MainMenuBuilder_ShowDebugLog, LucideIcons.file_text, () => Run(MainFormCommand.DebugLog)),
-            Item(Strings.MainMenuBuilder_TestImageUpload, LucideIcons.image_up, () => Run(MainFormCommand.TestImageUpload), uploadsEnabled),
-            Item(Strings.MainMenuBuilder_TestTextUpload, LucideIcons.file_up, () => Run(MainFormCommand.TestTextUpload), uploadsEnabled),
-            Item(Strings.MainMenuBuilder_TestFileUpload, LucideIcons.upload, () => Run(MainFormCommand.TestFileUpload), uploadsEnabled),
-            Item(Strings.MainMenuBuilder_TestUrlShortener, LucideIcons.link_2, () => Run(MainFormCommand.TestUrlShortener), uploadsEnabled),
-            Item(Strings.MainMenuBuilder_TestUrlSharing, LucideIcons.share_2, () => Run(MainFormCommand.TestUrlSharing), uploadsEnabled)
+            Item(Strings.MainMenuBuilder_ShowDebugLog, MainWindowIcons.FileText, () => Run(MainFormCommand.DebugLog)),
+            Item(Strings.MainMenuBuilder_TestImageUpload, MainWindowIcons.ImageUpload, () => Run(MainFormCommand.TestImageUpload), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_TestTextUpload, MainWindowIcons.FileUpload, () => Run(MainFormCommand.TestTextUpload), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_TestFileUpload, MainWindowIcons.Upload, () => Run(MainFormCommand.TestFileUpload), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_TestUrlShortener, MainWindowIcons.ShortLink, () => Run(MainFormCommand.TestUrlShortener), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_TestUrlSharing, MainWindowIcons.Share, () => Run(MainFormCommand.TestUrlSharing), uploadsEnabled)
         };
     }
 
@@ -573,18 +573,18 @@ internal sealed class MainMenuBuilder
 
         return tasks.Select(task => Parent(task.TrayMenuText, GetRecentTaskIcon(task), () => new List<MainMenuEntry>
         {
-            Item(Strings.MainMenuBuilder_Copy, LucideIcons.copy, task.Copy),
-            Item(Strings.MainMenuBuilder_Open, LucideIcons.external_link, task.Open)
+            Item(Strings.MainMenuBuilder_Copy, MainWindowIcons.Copy, task.Copy),
+            Item(Strings.MainMenuBuilder_Open, MainWindowIcons.ExternalLink, task.Open)
         })).ToArray();
     }
 
     private static string GetRecentTaskIcon(RecentTask task)
     {
-        if (!string.IsNullOrEmpty(task.ShortenedURL) || !string.IsNullOrEmpty(task.URL)) return LucideIcons.link;
-        if (FileHelpers.IsVideoFile(task.FilePath)) return LucideIcons.file_video;
-        if (FileHelpers.IsTextFile(task.FilePath)) return LucideIcons.file_text;
-        if (FileHelpers.IsImageFile(task.FilePath)) return LucideIcons.file_image;
-        return LucideIcons.file;
+        if (!string.IsNullOrEmpty(task.ShortenedURL) || !string.IsNullOrEmpty(task.URL)) return MainWindowIcons.Link;
+        if (FileHelpers.IsVideoFile(task.FilePath)) return MainWindowIcons.FileVideo;
+        if (FileHelpers.IsTextFile(task.FilePath)) return MainWindowIcons.FileText;
+        if (FileHelpers.IsImageFile(task.FilePath)) return MainWindowIcons.FileImage;
+        return MainWindowIcons.File;
     }
 
     private static void Run(MainFormCommand command) => MainWindowIntegration.ExecuteCommand(command);

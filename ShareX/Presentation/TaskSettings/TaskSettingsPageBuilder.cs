@@ -35,6 +35,7 @@ using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.ImageEditor.Integration;
 using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
@@ -181,14 +182,14 @@ internal sealed class TaskSettingsPageBuilder
             () => _settings.AfterCaptureJob,
             value => _settings.AfterCaptureJob = value,
             MainMenuBuilder.GetAfterCaptureTaskMenuOptions(),
-            LucideIcons.image_up);
+            MainWindowIcons.ImageUpload);
         BindEnabled(afterCapture, afterCaptureOverride);
 
         Control afterUpload = TaskFlagsMenu(
             () => _settings.AfterUploadJob,
             value => _settings.AfterUploadJob = value,
             MainMenuBuilder.GetAfterUploadTaskMenuOptions(),
-            LucideIcons.cloud_upload);
+            MainWindowIcons.CloudUpload);
         BindEnabled(afterUpload, afterUploadOverride);
 
         Control destinations = DestinationMenu(_settings);
@@ -1516,7 +1517,7 @@ internal sealed class TaskSettingsPageBuilder
 
     private static Button TaskMenu(Func<HotkeyType> getter, Action<HotkeyType> setter)
     {
-        TextBlock selectedIcon = CreateTaskMenuIcon(getter());
+        IconPresenter selectedIcon = CreateTaskMenuIcon(getter());
         TextBlock selectedTitle = new()
         {
             FontWeight = FontWeight.Normal,
@@ -1554,7 +1555,7 @@ internal sealed class TaskSettingsPageBuilder
 
         void UpdateSelectedTask(HotkeyType task)
         {
-            selectedIcon.Text = TaskHelpers.FindMenuLucideIcon(task);
+            selectedIcon.Icon = TaskHelpers.FindMenuLucideIcon(task);
             selectedTitle.Text = task.GetLocalizedDescription();
         }
 
@@ -1604,7 +1605,7 @@ internal sealed class TaskSettingsPageBuilder
     {
         IReadOnlyDictionary<T, (string Header, string Icon)> taskOptions = options
             .ToDictionary(option => option.Task, option => (option.Header, option.Icon));
-        TextBlock selectedIcon = CreateAccentMenuIcon(emptyIcon);
+        IconPresenter selectedIcon = CreateAccentMenuIcon(emptyIcon);
         T lastSelectedTask = taskOptions.Keys.LastOrDefault(task => HasFlag(getter(), task));
         TextBlock selectedTasks = new()
         {
@@ -1649,7 +1650,7 @@ internal sealed class TaskSettingsPageBuilder
                 lastSelectedTask = taskOptions.Keys.LastOrDefault(task => HasFlag(selected, task));
             }
 
-            selectedIcon.Text = EqualityComparer<T>.Default.Equals(lastSelectedTask, default)
+            selectedIcon.Icon = EqualityComparer<T>.Default.Equals(lastSelectedTask, default)
                 ? emptyIcon
                 : taskOptions[lastSelectedTask].Icon;
 
@@ -1706,7 +1707,7 @@ internal sealed class TaskSettingsPageBuilder
 
     private static Button DestinationMenu(TaskSettings settings)
     {
-        TextBlock icon = CreateAccentMenuIcon(LucideIcons.server);
+        IconPresenter icon = CreateAccentMenuIcon(MainWindowIcons.Server);
         TextBlock title = new()
         {
             Text = Strings.TaskSettingsWindow_Destinations + "...",
@@ -1810,22 +1811,21 @@ internal sealed class TaskSettingsPageBuilder
         return item;
     }
 
-    private static TextBlock CreateTaskMenuIcon(HotkeyType task)
+    private static IconPresenter CreateTaskMenuIcon(HotkeyType task)
         => CreateAccentMenuIcon(TaskHelpers.FindMenuLucideIcon(task));
 
-    private static TextBlock CreateAccentMenuIcon(string glyph)
+    private static IconPresenter CreateAccentMenuIcon(string icon)
     {
-        TextBlock icon = new()
+        IconPresenter presenter = new()
         {
-            Text = glyph,
+            Icon = icon,
             FontSize = 16,
             Width = 18,
-            TextAlignment = TextAlignment.Center,
+            HorizontalAlignment = HorizontalAlignment.Center,
             VerticalAlignment = VerticalAlignment.Center
         };
-        icon.Classes.Add("icon");
-        icon.Classes.Add("accent-menu-icon");
-        return icon;
+        presenter.Classes.Add("accent-menu-icon");
+        return presenter;
     }
 
     private static ComboBox ObjectCombo<T>(IEnumerable<T> values, Func<T> getter, Action<T> setter, Func<T, string>? title = null)

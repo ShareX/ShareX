@@ -42,4 +42,29 @@ internal static class IconGeometry
 
     public static Geometry Rectangle(double x, double y, double width, double height, double radius = 0) =>
         new RectangleGeometry(new Rect(x, y, width, height), radius, radius);
+
+    /// <summary>The outline around all of <paramref name="geometries"/>, such as a cloud made of circles.</summary>
+    public static Geometry Union(params Geometry[] geometries) =>
+        geometries.Aggregate((combined, next) => new CombinedGeometry(GeometryCombineMode.Union, combined, next));
+
+    /// <summary><paramref name="geometry"/> with the area of <paramref name="cut"/> removed.</summary>
+    public static Geometry Subtract(Geometry geometry, Geometry cut) =>
+        new CombinedGeometry(GeometryCombineMode.Exclude, geometry, cut);
+
+    /// <summary>Turns <paramref name="geometry"/> clockwise by <paramref name="degrees"/> around a point.</summary>
+    public static Geometry Rotate(Geometry geometry, double degrees, double centerX, double centerY)
+    {
+        geometry.Transform = new RotateTransform(degrees, centerX, centerY);
+        return geometry;
+    }
+
+    /// <summary>
+    /// The area within <paramref name="width"/> / 2 of the line <paramref name="pathData"/>. As the cut of
+    /// <see cref="IconShape.Except"/>, it leaves a gap around a line or badge drawn over other shapes.
+    /// </summary>
+    public static Geometry Halo(string pathData, double width) => Halo(Path(pathData), width);
+
+    /// <inheritdoc cref="Halo(string, double)"/>
+    public static Geometry Halo(Geometry geometry, double width) =>
+        geometry.GetWidenedGeometry(new Pen(Brushes.Black, width, lineCap: PenLineCap.Round, lineJoin: PenLineJoin.Round));
 }
