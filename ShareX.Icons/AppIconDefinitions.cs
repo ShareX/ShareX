@@ -56,6 +56,9 @@ internal static partial class AppIconDefinitions
     // The round gap cut for a badge in the bottom-right corner.
     private const double BadgeGap = 6.25;
 
+    // How strongly the corner pixels of the title bar frames are drawn.
+    private const double SoftCornerOpacity = 0.45;
+
     // Shared parts.
     private const string PagePath = "M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z";
     private const string PageFold = "M14 2v4a1 1 0 0 0 1 1h4";
@@ -842,12 +845,11 @@ internal static partial class AppIconDefinitions
         },
         {
             Icon.CaptionMaximize,
-            Fill(Frame(3, 3, 10, 10))
+            SoftFrame(3, 3, 10, 10)
         },
         {
             Icon.CaptionRestore,
-            Fill(Frame(3, 5, 8, 8)),
-            Fill(Subtract(Frame(5, 3, 8, 8), Rectangle(3, 5, 8, 8)))
+            [.. SoftFrame(3, 5, 8, 8), .. SoftFrame(5, 3, 8, 8, hidden: Rectangle(3, 5, 8, 8))]
         },
         {
             Icon.CaptionClose,
@@ -927,9 +929,22 @@ internal static partial class AppIconDefinitions
         Stroke("M8.5 8.25 20.5 18M8.5 15.75 20.5 6")
     ];
 
-    // A 1px outline filled on whole pixels, so its corners stay square and sharp.
-    private static Geometry Frame(double x, double y, double width, double height) =>
-        Subtract(Rectangle(x, y, width, height), Rectangle(x + 1, y + 1, width - 2, height - 2));
+    // A 1px outline filled on whole pixels, with its corner pixels drawn faint so the corners look slightly rounded
+    // while the sides stay sharp. The parts under hidden, such as another frame in front, are left out.
+    private static IconShape[] SoftFrame(double x, double y, double width, double height, Geometry? hidden = null)
+    {
+        Geometry corners = Union(Rectangle(x, y, 1, 1), Rectangle(x + width - 1, y, 1, 1),
+            Rectangle(x, y + height - 1, 1, 1), Rectangle(x + width - 1, y + height - 1, 1, 1));
+        Geometry sides = Subtract(Subtract(Rectangle(x, y, width, height), Rectangle(x + 1, y + 1, width - 2, height - 2)), corners);
+
+        if (hidden != null)
+        {
+            sides = Subtract(sides, hidden);
+            corners = Subtract(corners, hidden);
+        }
+
+        return [Fill(sides), Fill(corners, SoftCornerOpacity)];
+    }
 
     private static IconShape[] CaptionPinShapes() =>
     [
