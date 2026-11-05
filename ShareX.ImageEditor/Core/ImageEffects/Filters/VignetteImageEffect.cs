@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class VignetteImageEffect : ImageEffectBase
     public override string Id => "vignette";
     public override string Name => "Vignette";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.circle_dashed;
+    public override string IconKey => AppIcons.CircleDashed;
     public override string Description => "Applies a vignette effect.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class NeonGlowBorderImageEffect : ImageEffectBase
     public override string Id => "neon_glow_border";
     public override string Name => "Neon glow border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.zap;
+    public override string IconKey => AppIcons.Zap;
     public override string Description => "Adds a vibrant neon light tube border with a diffused outer glow on a dark background.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

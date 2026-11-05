@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class LiquidMercuryImageEffect : ImageEffectBase
     public override string Id => "liquid_mercury";
     public override string Name => "Liquid mercury";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.droplet;
+    public override string IconKey => ImageEffectIcons.Droplet;
     public override string Description => "Transforms the image into a reflective liquid mercury surface.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

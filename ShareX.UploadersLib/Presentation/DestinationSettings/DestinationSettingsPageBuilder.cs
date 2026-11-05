@@ -1002,8 +1002,8 @@ internal sealed class DestinationSettingsPageBuilder
         Grid header = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*"), ColumnSpacing = 9 };
         header.Classes.Add("page-title");
         SettingsSearch.SetIsPageTitle(header, true);
-        TextBlock iconBlock = new() { Text = icon };
-        iconBlock.Classes.Add("icon"); iconBlock.Classes.Add("page-title-icon");
+        IconPresenter iconBlock = new() { Icon = icon };
+        iconBlock.Classes.Add("page-title-icon");
         TextBlock titleBlock = new() { Text = title };
         titleBlock.Classes.Add("page-title-text"); Grid.SetColumn(titleBlock, 1);
         header.Children.Add(iconBlock); header.Children.Add(titleBlock); content.Children.Add(header);

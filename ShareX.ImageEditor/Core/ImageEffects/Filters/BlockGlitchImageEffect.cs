@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class BlockGlitchImageEffect : ImageEffectBase
     public override string Id => "block_glitch";
     public override string Name => "Block glitch / Databending";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.cpu;
+    public override string IconKey => ImageEffectIcons.Cpu;
     public override string Description => "Simulates digital glitch artifacts with displaced color blocks.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

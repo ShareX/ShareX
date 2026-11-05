@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Manipulations;
@@ -33,7 +33,7 @@ public sealed class FlipVerticalImageEffect : ImageEffectBase
     public override string Id => "flip_vertical";
     public override string Name => "Flip vertical";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.flip_vertical;
+    public override string IconKey => ImageEffectIcons.FlipVertical;
     public override string Description => "Flips the image vertically.";
     public override EffectExecutionMode ExecutionMode => EffectExecutionMode.Immediate;
 

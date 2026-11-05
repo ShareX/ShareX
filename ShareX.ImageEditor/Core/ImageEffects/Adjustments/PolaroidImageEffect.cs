@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Adjustments;
@@ -32,7 +32,7 @@ public sealed class PolaroidImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "polaroid";
     public override string Name => "Polaroid";
-    public override string IconKey => LucideIcons.camera;
+    public override string IconKey => AppIcons.Camera;
     public override string Description => "Applies a Polaroid effect.";
     public override EffectExecutionMode ExecutionMode => EffectExecutionMode.Immediate;
 

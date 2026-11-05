@@ -27,7 +27,9 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml.MarkupExtensions;
 using Avalonia.Media;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.Tools.Localization;
 
 namespace ShareX.Tools;
@@ -62,15 +64,13 @@ public sealed class MouseHighlighterWindow : Window
 
     private static Control CreateRecordingTip()
     {
-        TextBlock icon = new()
+        IconPresenter icon = new()
         {
-            Text = LucideIcons.info,
+            Icon = AppIcons.Info,
             FontSize = 18,
-            FontWeight = FontWeight.Normal,
             VerticalAlignment = Avalonia.Layout.VerticalAlignment.Top
         };
-        icon.Bind(TextBlock.FontFamilyProperty, new DynamicResourceExtension("ShareX.FontFamily.Icon"));
-        icon.Bind(TextBlock.ForegroundProperty, new DynamicResourceExtension("ShareX.Brush.Accent.Start"));
+        icon.Bind(IconPresenter.ForegroundProperty, new DynamicResourceExtension("ShareX.Brush.Accent.Start"));
 
         TextBlock text = new()
         {

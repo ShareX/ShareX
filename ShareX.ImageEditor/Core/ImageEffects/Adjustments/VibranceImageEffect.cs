@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class VibranceImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "vibrance";
     public override string Name => "Vibrance";
-    public override string IconKey => LucideIcons.sparkles;
+    public override string IconKey => AppIcons.Sparkles;
     public override string Description => "Adjusts the color vibrance.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

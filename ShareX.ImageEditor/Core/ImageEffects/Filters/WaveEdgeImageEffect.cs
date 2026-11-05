@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class WaveEdgeImageEffect : ImageEffectBase
     public override string Id => "wave_edge";
     public override string Name => "Wave edge";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.waves_ladder;
+    public override string IconKey => ImageEffectIcons.Waves;
     public override string Description => "Adds a wavy edge to the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

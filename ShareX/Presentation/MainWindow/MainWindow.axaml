@@ -169,10 +169,10 @@
                             <Grid Width="20" Height="20" ClipToBounds="True" IsHitTestVisible="False">
                                 <controls:IconPresenter Classes="theme-toggle-icon moon"
                                                         Classes.active="{Binding IsDarkTheme}"
-                                                        Icon="{x:Static icons:MainWindowIcons.Moon}"/>
+                                                        Icon="{x:Static icons:AppIcons.Moon}"/>
                                 <controls:IconPresenter Classes="theme-toggle-icon sun"
                                                         Classes.active="{Binding !IsDarkTheme}"
-                                                        Icon="{x:Static icons:MainWindowIcons.Sun}"/>
+                                                        Icon="{x:Static icons:AppIcons.Sun}"/>
                             </Grid>
                         </Button>
                         <Button Classes="caption-button"
@@ -180,10 +180,10 @@
                                 Click="OnTopmostClick"
                                 chrome:WindowDecorationProperties.ElementRole="User">
                             <Grid>
-                                <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Pin}"
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Pin}"
                                                         FontSize="13"
                                                         IsVisible="{Binding !Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
-                                <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Unpin}"
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Unpin}"
                                                         FontSize="13"
                                                         IsVisible="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
                             </Grid>
@@ -192,7 +192,7 @@
                                 AutomationProperties.Name="{x:Static res:Strings.MainWindow_Minimize}"
                                 Click="OnMinimizeClick"
                                 chrome:WindowDecorationProperties.ElementRole="MinimizeButton">
-                            <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Minimize}"
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Minimize}"
                                                     FontSize="14"/>
                         </Button>
                         <Button Classes="caption-button"
@@ -200,10 +200,10 @@
                                 Click="OnMaximizeRestoreClick"
                                 chrome:WindowDecorationProperties.ElementRole="MaximizeButton">
                             <Grid>
-                                <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Maximize}"
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Maximize}"
                                                         FontSize="12"
                                                         IsVisible="{Binding !IsWindowMaximized}"/>
-                                <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Restore}"
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Restore}"
                                                         FontSize="12"
                                                         IsVisible="{Binding IsWindowMaximized}"/>
                             </Grid>
@@ -213,7 +213,7 @@
                                 AutomationProperties.Name="{x:Static res:Strings.ActionsToolbarWindow_Close}"
                                 Click="OnCloseClick"
                                 chrome:WindowDecorationProperties.ElementRole="CloseButton">
-                            <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Close}"
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Close}"
                                                     FontSize="14"/>
                         </Button>
                     </StackPanel>
@@ -296,7 +296,7 @@
                                                         HorizontalAlignment="Center"
                                                         VerticalAlignment="Center"
                                                         IsHitTestVisible="False">
-                                                    <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Play}"
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Play}"
                                                                             Foreground="#A9A9A9"
                                                                             FontSize="18"
                                                                             Width="18"
@@ -316,7 +316,7 @@
                                                         HorizontalAlignment="Right"
                                                         VerticalAlignment="Top"
                                                         Margin="5">
-                                                    <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Warning}" Foreground="White"/>
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}" Foreground="White"/>
                                                 </Border>
                                                 <ProgressBar IsVisible="{Binding IsProgressVisible}"
                                                              Value="{Binding Progress}"
@@ -347,7 +347,7 @@
                                                                 <StackPanel HorizontalAlignment="Center"
                                                                             VerticalAlignment="Center"
                                                                             Spacing="3">
-                                                                    <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Columns}"
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Columns}"
                                                                                             Foreground="White"
                                                                                             FontSize="20"
                                                                                             HorizontalAlignment="Center"/>
@@ -371,7 +371,7 @@
                                                                 <StackPanel HorizontalAlignment="Center"
                                                                             VerticalAlignment="Center"
                                                                             Spacing="3">
-                                                                    <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Rows}"
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Rows}"
                                                                                             Foreground="White"
                                                                                             FontSize="20"
                                                                                             HorizontalAlignment="Center"/>
@@ -420,7 +420,7 @@
                             VerticalAlignment="Center">
                         <Grid RowDefinitions="Auto,Auto,*" RowSpacing="8">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="9">
-                                <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Keyboard}" FontSize="22" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Keyboard}" FontSize="22" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                                 <TextBlock Text="{x:Static res:Strings.MainWindow_ShareXHotkeys}" FontSize="19" FontWeight="SemiBold" Foreground="{DynamicResource ShareX.Brush.Text}"/>
                             </StackPanel>
                             <TextBlock Grid.Row="1"
@@ -435,13 +435,13 @@
                                         <DataTemplate DataType="local:HotkeyTipViewModel">
                                             <Border BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,1,0,0" Padding="6,8">
                                                 <Grid ColumnDefinitions="24,155,*" ColumnSpacing="10">
-                                                    <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.CircleCheck}"
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
                                                                             IsVisible="{Binding IsRegistered}"
                                                                             Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
                                                                             FontSize="17"
                                                                             HorizontalAlignment="Center"
                                                                             VerticalAlignment="Center"/>
-                                                    <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.CircleX}"
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleX}"
                                                                             IsVisible="{Binding !IsRegistered}"
                                                                             Foreground="#C65F5F"
                                                                             FontSize="17"
@@ -482,7 +482,7 @@
                     BorderThickness="2"
                     CornerRadius="12">
                 <StackPanel Spacing="12" HorizontalAlignment="Center">
-                    <controls:IconPresenter Icon="{x:Static icons:MainWindowIcons.Upload}"
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
                                             FontSize="48"
                                             Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
                                             HorizontalAlignment="Center"/>

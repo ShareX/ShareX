@@ -52,7 +52,7 @@ internal sealed class HotkeySettingsAvaloniaService : IHotkeySettingsService
                 Convert.ToInt32(info.Value),
                 info.Description,
                 info.Category ?? string.Empty,
-                TaskHelpers.FindMenuLucideIcon((HotkeyType)info.Value)))
+                TaskHelpers.FindMenuIcon((HotkeyType)info.Value)))
             .ToArray();
 
         InvokeOnMainThread(() =>

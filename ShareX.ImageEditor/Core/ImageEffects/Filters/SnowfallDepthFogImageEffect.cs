@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class SnowfallDepthFogImageEffect : ImageEffectBase
     public override string Id => "snowfall_depth_fog";
     public override string Name => "Snowfall + depth fog";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.cloud_snow;
+    public override string IconKey => ImageEffectIcons.CloudSnow;
     public override string Description => "Simulates snowfall with depth-based fog.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

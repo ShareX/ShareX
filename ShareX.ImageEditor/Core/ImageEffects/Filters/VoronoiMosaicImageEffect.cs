@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class VoronoiMosaicImageEffect : ImageEffectBase
     public override string Id => "voronoi_mosaic";
     public override string Name => "Voronoi Mosaic";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.hexagon;
+    public override string IconKey => ImageEffectIcons.Hexagon;
     public override string Description => "Divides the image into Voronoi cells colored by average region color.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

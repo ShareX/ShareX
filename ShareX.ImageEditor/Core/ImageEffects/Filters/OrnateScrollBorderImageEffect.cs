@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class OrnateScrollBorderImageEffect : ImageEffectBase
     public override string Id => "ornate_scroll_border";
     public override string Name => "Ornate scroll border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.scroll;
+    public override string IconKey => ImageEffectIcons.Scroll;
     public override string Description => "Adds an elegant Victorian-style ornate border with decorative corner scrollwork and double-line detailing.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

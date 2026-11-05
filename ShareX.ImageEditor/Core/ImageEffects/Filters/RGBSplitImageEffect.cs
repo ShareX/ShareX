@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class RGBSplitImageEffect : ImageEffectBase
     public override string Id => "rgb_split";
     public override string Name => "RGB split";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.split;
+    public override string IconKey => ImageEffectIcons.RgbSplit;
     public override string Description => "Splits and offsets the red, green, and blue color channels.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

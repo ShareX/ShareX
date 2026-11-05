@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -38,7 +38,7 @@ public sealed class RemoveBackgroundImageEffect : ImageEffectBase
     public override string Id => "remove_background";
     public override string Name => "Remove background";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.scissors;
+    public override string IconKey => AppIcons.Scissors;
     public override string Description => "Removes border-connected background colors and turns them transparent.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

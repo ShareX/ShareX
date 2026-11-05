@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class NeonEdgeGlowImageEffect : ImageEffectBase
     public override string Id => "neon_edge_glow";
     public override string Name => "Neon edge glow";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.zap;
+    public override string IconKey => AppIcons.Zap;
     public override string Description => "Detects edges and applies a neon glow effect.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

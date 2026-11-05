@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class UnsharpMaskImageEffect : ImageEffectBase
     public override string Id => "unsharp_mask";
     public override string Name => "Unsharp mask";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.wand_sparkles;
+    public override string IconKey => AppIcons.MagicWand;
     public override string Description => "Sharpens the image using an unsharp mask technique.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

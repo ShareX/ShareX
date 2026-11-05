@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class ArtDecoBorderImageEffect : ImageEffectBase
     public override string Id => "art_deco_border";
     public override string Name => "Art deco border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.trophy;
+    public override string IconKey => AppIcons.Trophy;
     public override string Description => "Adds a bold Art Deco border with geometric fan motifs, stepped lines, and metallic gold accents.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

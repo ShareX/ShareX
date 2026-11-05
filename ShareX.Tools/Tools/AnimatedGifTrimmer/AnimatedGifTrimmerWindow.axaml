@@ -1,8 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:local="using:ShareX.Tools"
         xmlns:loc="using:ShareX.Tools.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.Tools.AnimatedGifTrimmerWindow"
         x:DataType="local:AnimatedGifTrimmerViewModel"
         Title="{x:Static loc:Strings.AnimatedGifTrimmer_Title}"
@@ -18,7 +19,7 @@
                                VerticalAlignment="Center" ToolTip.Tip="{Binding InputFilePath}"/>
                     <Button Grid.Column="2" Command="{Binding BrowseCommand}" IsEnabled="{Binding CanBrowse}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderOpen}"/>
                             <TextBlock Text="{x:Static loc:Strings.AnimatedGifTrimmer_Open}"/>
                         </StackPanel>
                     </Button>
@@ -34,8 +35,8 @@
                                    RenderOptions.BitmapInterpolationMode="HighQuality"/>
                             <StackPanel IsVisible="{Binding !HasGif}" Spacing="12"
                                         HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.film}"
-                                           FontSize="36" HorizontalAlignment="Center"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Film}"
+                                                        FontSize="36" HorizontalAlignment="Center"/>
                                 <TextBlock Text="{x:Static loc:Strings.AnimatedGifTrimmer_ChooseGif}" FontWeight="Normal"/>
                             </StackPanel>
                         </Grid>
@@ -47,22 +48,22 @@
                                 <Button Command="{Binding StepBackwardCommand}" IsEnabled="{Binding CanEdit}" Width="40"
                                         ToolTip.Tip="{x:Static loc:Strings.AnimatedGifTrimmer_PreviousFrame}"
                                         AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_PreviousFrame}">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.step_back}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.StepBack}"/>
                                 </Button>
                                 <Button Command="{Binding TogglePlayCommand}" IsEnabled="{Binding CanPlay}" Width="40"
                                         ToolTip.Tip="{Binding PlayActionText}"
                                         AutomationProperties.Name="{Binding PlayActionText}">
                                     <Grid>
-                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.play}"
-                                                   IsVisible="{Binding !IsPlaying}" VerticalAlignment="Center"/>
-                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pause}"
-                                                   IsVisible="{Binding IsPlaying}" VerticalAlignment="Center"/>
+                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Play}"
+                                                                IsVisible="{Binding !IsPlaying}" VerticalAlignment="Center"/>
+                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Pause}"
+                                                                IsVisible="{Binding IsPlaying}" VerticalAlignment="Center"/>
                                     </Grid>
                                 </Button>
                                 <Button Command="{Binding StepForwardCommand}" IsEnabled="{Binding CanEdit}" Width="40"
                                         ToolTip.Tip="{x:Static loc:Strings.AnimatedGifTrimmer_NextFrame}"
                                         AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_NextFrame}">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.step_forward}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.StepForward}"/>
                                 </Button>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
@@ -92,7 +93,7 @@
                             <Button Grid.Column="2" Command="{Binding SetStartHereCommand}" Width="40"
                                     ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_SetStart}"
                                     AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_SetStart}">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_left_to_line}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ArrowLeftToLine}"/>
                             </Button>
                         </Grid>
                         <Grid Grid.Column="1" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
@@ -103,7 +104,7 @@
                             <Button Grid.Column="2" Command="{Binding SetEndHereCommand}" Width="40"
                                     ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_SetEnd}"
                                     AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_SetEnd}">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.arrow_right_to_line}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ArrowRightToLine}"/>
                             </Button>
                         </Grid>
                         <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
@@ -114,7 +115,7 @@
                         <Button Grid.Column="3" Command="{Binding ResetCommand}" Width="40"
                                 ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_Reset}"
                                 AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_Reset}">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}"/>
                         </Button>
                     </Grid>
                 </Grid>
@@ -134,17 +135,17 @@
                     <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
                         <Button Command="{Binding PrimaryActionCommand}" IsEnabled="{Binding CanUsePrimaryAction}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scissors}"
-                                           IsVisible="{Binding !IsExporting}"/>
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.x}"
-                                           IsVisible="{Binding IsExporting}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Scissors}"
+                                                        IsVisible="{Binding !IsExporting}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Close}"
+                                                        IsVisible="{Binding IsExporting}"/>
                                 <TextBlock Text="{Binding PrimaryActionText}"/>
                             </StackPanel>
                         </Button>
                         <Button Command="{Binding OpenOutputCommand}" IsEnabled="{Binding HasOutput}" Width="40"
                                 ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_ShowOutput}"
                                 AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_ShowOutput}">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderOpen}"/>
                         </Button>
                     </StackPanel>
                 </Grid>

@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.HistoryLib.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:history="using:ShareX.HistoryLib"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="1100"
         d:DesignHeight="720"
@@ -48,7 +49,7 @@
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
-        <Style Selector="TextBlock.loading-icon">
+        <Style Selector="controls|IconPresenter.loading-icon">
             <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
             <Style.Animations>
                 <Animation Duration="0:0:1" IterationCount="Infinite">
@@ -78,35 +79,34 @@
                                      TextChanged="OnSearchTextChanged"
                                      FilterMode="ContainsOrdinal"
                                      Padding="12,7,38,7"/>
-                            <TextBlock Text="{x:Static theming:LucideIcons.search}"
-                                       Classes="icon"
-                                       HorizontalAlignment="Right"
-                                       Margin="0,0,12,0"
-                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                       IsHitTestVisible="False"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Search}"
+                                                    HorizontalAlignment="Right"
+                                                    Margin="0,0,12,0"
+                                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                    IsHitTestVisible="False"/>
                         </Grid>
 
                         <Button x:Name="FavoritesButton" Grid.Column="1" Click="OnFavoritesClick">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.star}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Star}"/>
                                 <TextBlock Text="{x:Static localization:Strings.HistoryWindows_Favorites}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="2" Click="OnStatsClick">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chart_bar}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.BarChart}"/>
                                 <TextBlock Text="{x:Static localization:Strings.HistoryWindows_Stats}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="3" Click="OnImportClick">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_search}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderSearch}"/>
                                 <TextBlock Text="{x:Static localization:Strings.HistoryWindows_Import}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="4" Click="OnSettingsClick">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Settings}"/>
                                 <TextBlock Text="{x:Static localization:Strings.HistoryWindows_Settings}"/>
                             </StackPanel>
                         </Button>
@@ -176,36 +176,32 @@
                                                                         HorizontalAlignment="Center"
                                                                         VerticalAlignment="Center"
                                                                         IsHitTestVisible="False">
-                                                                    <TextBlock Classes="icon"
-                                                                               Text="{x:Static theming:LucideIcons.play}"
-                                                                               Foreground="#A9A9A9"
-                                                                               FontSize="18"
-                                                                               Width="18"
-                                                                               TextAlignment="Center"
-                                                                               HorizontalAlignment="Center"
-                                                                               VerticalAlignment="Center"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Play}"
+                                                                                            Foreground="#A9A9A9"
+                                                                                            FontSize="18"
+                                                                                            Width="18"
+                                                                                            HorizontalAlignment="Center"
+                                                                                            VerticalAlignment="Center"/>
                                                                 </Border>
                                                                 <StackPanel IsVisible="{Binding ShowPlaceholder}"
                                                                             HorizontalAlignment="Center"
                                                                             VerticalAlignment="Center"
                                                                             Spacing="6">
-                                                                    <TextBlock Text="{Binding PlaceholderIcon}"
-                                                                               Classes="icon"
-                                                                               FontSize="30"
-                                                                               HorizontalAlignment="Center"
-                                                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                                                    <controls:IconPresenter Icon="{Binding PlaceholderIcon}"
+                                                                                            FontSize="30"
+                                                                                            HorizontalAlignment="Center"
+                                                                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                                                                     <TextBlock Text="{x:Static localization:Strings.HistoryWindows_Loading}"
                                                                                IsVisible="{Binding IsLoading}"
                                                                                FontWeight="Normal"
                                                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                                                                 </StackPanel>
-                                                                <TextBlock Text="{x:Static theming:LucideIcons.star}"
-                                                                           Classes="icon"
-                                                                           IsVisible="{Binding IsFavorite}"
-                                                                           HorizontalAlignment="Right"
-                                                                           VerticalAlignment="Top"
-                                                                           Margin="6"
-                                                                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Star}"
+                                                                                        IsVisible="{Binding IsFavorite}"
+                                                                                        HorizontalAlignment="Right"
+                                                                                        VerticalAlignment="Top"
+                                                                                        Margin="6"
+                                                                                        Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                                                             </Grid>
                                                         </Border>
                                                         <Border Width="{Binding ThumbnailWidth}"
@@ -225,12 +221,12 @@
                                                         <ContextMenu Opening="OnThumbnailContextMenuOpening">
                                                             <MenuItem x:Name="PreviewMenu" Header="{x:Static localization:Strings.HistoryWindows_Open_image}" Click="OnShowImageClick" InputGesture="Enter">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Image}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem Header="{x:Static localization:Strings.HistoryWindows_Open}">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.ExternalLink}"/>
                                                                 </MenuItem.Icon>
                                                                 <MenuItem x:Name="OpenUrlMenu" Header="{x:Static localization:Strings.HistoryWindows_URL}" Click="OnOpenUrlClick"/>
                                                                 <MenuItem x:Name="OpenShortUrlMenu" Header="{x:Static localization:Strings.HistoryWindows_Shortened_URL}" Click="OnOpenShortUrlClick"/>
@@ -243,7 +239,7 @@
                                                             <Separator/>
                                                             <MenuItem Header="{x:Static localization:Strings.HistoryWindows_Copy}">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
                                                                 </MenuItem.Icon>
                                                                 <MenuItem x:Name="CopyUrlMenu" Header="{x:Static localization:Strings.HistoryWindows_URL}" Click="OnCopyUrlClick" InputGesture="Ctrl+C"/>
                                                                 <MenuItem x:Name="CopyShortUrlMenu" Header="{x:Static localization:Strings.HistoryWindows_Shortened_URL}" Click="OnCopyShortUrlClick"/>
@@ -272,63 +268,63 @@
                                                             <Separator/>
                                                             <MenuItem Header="{x:Static localization:Strings.HistoryWindows_Toggle_favorite}" Click="OnToggleFavoriteClick">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.star}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Star}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem x:Name="TagMenu" Header="{x:Static localization:Strings.HistoryWindows_Edit_tag}" Click="OnEditTagClick">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.tag}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Tag}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem x:Name="EditMenu" Header="{x:Static localization:Strings.HistoryWindows_Edit_item}" Click="OnEditItemClick">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.square_pen}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Edit}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem x:Name="RenameMenu" Header="{x:Static localization:Strings.HistoryWindows_Rename_file}" Click="OnRenameFileClick">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_pen_line}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileEdit}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem Header="{x:Static localization:Strings.HistoryWindows_Delete_from_history}" Click="OnDeleteClick" InputGesture="Delete">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.list_x}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.ClearList}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem x:Name="DeleteFileMenu" Header="{x:Static localization:Strings.HistoryWindows_Delete_file_and_history_item}" Click="OnDeleteFileClick" InputGesture="Shift+Delete">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_x}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileDelete}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <Separator/>
                                                             <MenuItem x:Name="UploadMenu" Header="{x:Static localization:Strings.HistoryWindows_Upload_file}" Click="OnUploadFileClick" InputGesture="Ctrl+U">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem x:Name="EditImageMenu" Header="{x:Static localization:Strings.HistoryWindows_Edit_image}" Click="OnEditImageClick" InputGesture="Ctrl+E">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.wand_sparkles}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.MagicWand}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem x:Name="TrimVideoMenu" Header="{x:Static localization:Strings.HistoryWindows_TrimVideo}" Click="OnTrimVideoClick" IsVisible="False">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scissors}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Scissors}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem x:Name="TrimAnimatedGifMenu" Header="{x:Static localization:Strings.HistoryWindows_TrimAnimatedGif}" Click="OnTrimAnimatedGifClick" IsVisible="False">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scissors}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Scissors}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem x:Name="PinMenu" Header="{x:Static localization:Strings.HistoryWindows_Pin_to_screen}" Click="OnPinToScreenClick" InputGesture="Ctrl+P">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pin}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Pin}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                             <MenuItem x:Name="AnalyzeMenu" Header="{x:Static localization:Strings.HistoryWindows_Analyze_image}" Click="OnAnalyzeImageClick">
                                                                 <MenuItem.Icon>
-                                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan_search}"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.InspectWindow}"/>
                                                                 </MenuItem.Icon>
                                                             </MenuItem>
                                                         </ContextMenu>
@@ -346,15 +342,15 @@
                                     VerticalAlignment="Center"
                                     Spacing="8"
                                     IsHitTestVisible="False">
-                            <TextBlock Text="{x:Static theming:LucideIcons.loader_circle}"
-                                       Classes="icon loading-icon"
-                                       FontSize="44"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                       HorizontalAlignment="Center">
-                                <TextBlock.RenderTransform>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Loading}"
+                                                    Classes="loading-icon"
+                                                    FontSize="44"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                    HorizontalAlignment="Center">
+                                <controls:IconPresenter.RenderTransform>
                                     <RotateTransform Angle="0"/>
-                                </TextBlock.RenderTransform>
-                            </TextBlock>
+                                </controls:IconPresenter.RenderTransform>
+                            </controls:IconPresenter>
                             <TextBlock Text="{x:Static localization:Strings.HistoryWindows_Loading}"
                                        FontWeight="Normal"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
@@ -366,11 +362,10 @@
                                     Spacing="8"
                                     IsVisible="False"
                                     IsHitTestVisible="False">
-                            <TextBlock Text="{x:Static theming:LucideIcons.images}"
-                                       Classes="icon"
-                                       FontSize="44"
-                                       HorizontalAlignment="Center"
-                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Images}"
+                                                    FontSize="44"
+                                                    HorizontalAlignment="Center"
+                                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                             <TextBlock x:Name="EmptyStateText"
                                        Text="{x:Static localization:Strings.HistoryWindows_No_image_history_items}"
                                        FontWeight="Normal"

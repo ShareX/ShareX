@@ -25,9 +25,9 @@
 
 #nullable enable
 
-using ShareX.AvaloniaUI.Theming;
 using System.Collections.Generic;
 using System.Linq;
+using ShareX.Icons;
 
 namespace ShareX;
 
@@ -76,17 +76,17 @@ public sealed class NotificationActionButton
 
     public static string GetDefaultIcon(ToastClickAction action) => action switch
     {
-        ToastClickAction.AnnotateImage => LucideIcons.pen_line,
-        ToastClickAction.CopyImageToClipboard => LucideIcons.copy,
-        ToastClickAction.CopyFile => LucideIcons.files,
-        ToastClickAction.CopyFilePath => LucideIcons.clipboard,
-        ToastClickAction.CopyUrl => LucideIcons.link,
-        ToastClickAction.OpenFile => LucideIcons.external_link,
-        ToastClickAction.OpenFolder => LucideIcons.folder_open,
-        ToastClickAction.OpenUrl => LucideIcons.external_link,
-        ToastClickAction.Upload => LucideIcons.upload,
-        ToastClickAction.PinToScreen => LucideIcons.pin,
-        ToastClickAction.DeleteFile => LucideIcons.trash_2,
-        _ => LucideIcons.x
+        ToastClickAction.AnnotateImage => AppIcons.Annotate,
+        ToastClickAction.CopyImageToClipboard => AppIcons.Copy,
+        ToastClickAction.CopyFile => AppIcons.Files,
+        ToastClickAction.CopyFilePath => AppIcons.Clipboard,
+        ToastClickAction.CopyUrl => AppIcons.Link,
+        ToastClickAction.OpenFile => AppIcons.ExternalLink,
+        ToastClickAction.OpenFolder => AppIcons.FolderOpen,
+        ToastClickAction.OpenUrl => AppIcons.ExternalLink,
+        ToastClickAction.Upload => AppIcons.Upload,
+        ToastClickAction.PinToScreen => AppIcons.Pin,
+        ToastClickAction.DeleteFile => AppIcons.Trash,
+        _ => AppIcons.Close
     };
 }

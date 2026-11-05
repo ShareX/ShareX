@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -36,7 +36,7 @@ public sealed class DrawImageEffect : ImageEffectBase
     public override string Id => "draw_image";
     public override string Name => "Image";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.image_plus;
+    public override string IconKey => AppIcons.ImageAdd;
     public override string Description => "Draws an image overlay on the source image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

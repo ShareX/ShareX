@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class GlitchShiftImageEffect : ImageEffectBase
     public override string Id => "glitch_shift";
     public override string Name => "Glitch shift";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.zap;
+    public override string IconKey => AppIcons.Zap;
     public override string Description => "Randomly shifts horizontal bands of the image for a digital glitch look.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

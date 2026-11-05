@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -42,7 +42,7 @@ public sealed class Anaglyph3DImageEffect : ImageEffectBase
     public override string Id => "anaglyph_3d";
     public override string Name => "Anaglyph 3D";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.glasses;
+    public override string IconKey => ImageEffectIcons.Glasses;
     public override string Description => "Simulates a retro anaglyph 3D stereoscopic effect.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

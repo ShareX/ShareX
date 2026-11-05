@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class BrickWallBorderImageEffect : ImageEffectBase
     public override string Id => "brick_wall_border";
     public override string Name => "Brick wall border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.brick_wall;
+    public override string IconKey => ImageEffectIcons.BrickWall;
     public override string Description => "Adds a procedural brick wall texture border with mortar lines, shading, and color variation.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

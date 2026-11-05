@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class FakeHairImageEffect : ImageEffectBase
     public override string Id => "fake_hair";
     public override string Name => "Fake Hair";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.scissors;
+    public override string IconKey => AppIcons.Scissors;
     public override string Description => "Scatters realistic hair strands over the image to annoy your friends.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

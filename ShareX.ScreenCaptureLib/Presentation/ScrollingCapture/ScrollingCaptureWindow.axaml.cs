@@ -34,6 +34,7 @@ using ShareX.HelpersLib;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using ShareX.Icons;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using ImageFormat = SkiaSharp.SKEncodedImageFormat;
@@ -165,7 +166,7 @@ public partial class ScrollingCaptureWindow : Window
         ResultSizeText.Text = string.Empty;
         ResetPreview();
         StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Capturing;
-        StatusIcon.Text = LucideIcons.loader_circle;
+        StatusIcon.Icon = AppIcons.Loading;
         StatusIcon.Foreground = Brushes.DodgerBlue;
 
         try
@@ -212,17 +213,17 @@ public partial class ScrollingCaptureWindow : Window
         switch (status)
         {
             case ScrollingCaptureStatus.Failed:
-                StatusIcon.Text = LucideIcons.circle_x;
+                StatusIcon.Icon = AppIcons.CircleX;
                 StatusIcon.Foreground = Brushes.IndianRed;
                 StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Capture_failed;
                 break;
             case ScrollingCaptureStatus.PartiallySuccessful:
-                StatusIcon.Text = LucideIcons.triangle_alert;
+                StatusIcon.Icon = AppIcons.Warning;
                 StatusIcon.Foreground = Brushes.Goldenrod;
                 StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Capture_partially_successful;
                 break;
             case ScrollingCaptureStatus.Successful:
-                StatusIcon.Text = LucideIcons.circle_check;
+                StatusIcon.Icon = AppIcons.CircleCheck;
                 StatusIcon.Foreground = Brushes.MediumSeaGreen;
                 StatusText.Text = Localization.Strings.ScrollingCaptureWindow_Capture_successful;
                 break;

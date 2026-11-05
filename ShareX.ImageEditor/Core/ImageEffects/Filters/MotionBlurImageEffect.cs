@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class MotionBlurImageEffect : ImageEffectBase
     public override string Id => "motion_blur";
     public override string Name => "Motion blur";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.move_horizontal;
+    public override string IconKey => AppIcons.MoveHorizontal;
     public override string Description => "Applies a directional motion blur at a specified angle.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class ExposureImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "exposure";
     public override string Name => "Exposure";
-    public override string IconKey => LucideIcons.aperture;
+    public override string IconKey => ImageEffectIcons.Aperture;
     public override string Description => "Adjusts the exposure level.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

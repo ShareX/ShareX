@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class CartoonStickerCutoutImageEffect : ImageEffectBase
     public override string Id => "cartoon_sticker_cutout";
     public override string Name => "Cartoon sticker cutout";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.sticker;
+    public override string IconKey => ImageEffectIcons.Sticker;
     public override string Description => "Applies a cartoon sticker cutout effect with quantized colors and ink edges.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

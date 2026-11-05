@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:res="using:ShareX.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.AutoCaptureWindow"
         Title="{x:Static res:Strings.AutoCaptureWindow_Title}"
         Width="460"
@@ -54,7 +55,7 @@
                                     Grid.Column="1"
                                     Click="OnSelectRegionClick">
                                 <StackPanel Orientation="Horizontal" Spacing="7">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Region}"/>
                                     <TextBlock Text="{x:Static res:Strings.AutoCaptureWindow_SelectRegion}"/>
                                 </StackPanel>
                             </Button>
@@ -94,9 +95,8 @@
                         IsEnabled="False"
                         Click="OnExecuteClick">
                     <StackPanel Orientation="Horizontal" Spacing="8">
-                        <TextBlock x:Name="ExecuteIcon"
-                                   Classes="icon"
-                                   Text="{x:Static theming:LucideIcons.play}"/>
+                        <controls:IconPresenter x:Name="ExecuteIcon"
+                                                Icon="{x:Static icons:AppIcons.Play}"/>
                         <TextBlock x:Name="ExecuteText" Text="{x:Static res:Strings.AutoCaptureWindow_Start}"/>
                     </StackPanel>
                 </Button>
@@ -109,11 +109,10 @@
                     Padding="12,8">
                 <Grid RowDefinitions="Auto,Auto" RowSpacing="6">
                     <Grid ColumnDefinitions="Auto,*" ColumnSpacing="7">
-                        <TextBlock x:Name="StatusIcon"
-                                   Classes="icon"
-                                   Text="{x:Static theming:LucideIcons.timer}"
-                                   FontSize="16"
-                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                        <controls:IconPresenter x:Name="StatusIcon"
+                                                Icon="{x:Static icons:AppIcons.Timer}"
+                                                FontSize="16"
+                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                         <TextBlock x:Name="StatusText"
                                    Grid.Column="1"
                                    Text="{x:Static res:Strings.AutoCaptureWindow_Ready}"

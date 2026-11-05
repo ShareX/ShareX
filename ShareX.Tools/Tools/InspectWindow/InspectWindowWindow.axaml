@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="940" d:DesignHeight="650"
         x:Class="ShareX.Tools.InspectWindowWindow"
         x:DataType="vm:InspectWindowViewModel"
@@ -33,17 +34,13 @@
                     <Grid ColumnDefinitions="Auto,Auto,*" ColumnSpacing="8">
                             <Button Grid.Column="0" Click="OnPickWindowClick">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.scan}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                               FontWeight="Normal"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Region}"/>
                                     <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Pick_window}"/>
                                 </StackPanel>
                             </Button>
                             <Button Grid.Column="1" Click="OnPickControlClick">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.mouse_pointer_2}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                               FontWeight="Normal"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Pointer}"/>
                                     <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Pick_control}"/>
                                 </StackPanel>
                             </Button>
@@ -61,13 +58,11 @@
                                                        Width="20"
                                                        Height="20"
                                                        Stretch="Uniform"/>
-                                                <TextBlock IsVisible="{Binding !HasIcon}"
-                                                           Text="{x:Static theming:LucideIcons.app_window}"
-                                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                           FontWeight="Normal"
-                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                           HorizontalAlignment="Center"
-                                                           VerticalAlignment="Center"/>
+                                                <controls:IconPresenter IsVisible="{Binding !HasIcon}"
+                                                                        Icon="{x:Static icons:AppIcons.Window}"
+                                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                        HorizontalAlignment="Center"
+                                                                        VerticalAlignment="Center"/>
                                             </Grid>
                                             <TextBlock Grid.Column="1"
                                                        Text="{Binding DisplayName}"
@@ -91,14 +86,12 @@
                                                Width="16"
                                                Height="16"
                                                Stretch="None"/>
-                                        <TextBlock IsVisible="{Binding !HasSelectedIcon}"
-                                                   Text="{x:Static theming:LucideIcons.app_window}"
-                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                   FontWeight="Normal"
-                                                   FontSize="16"
-                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                   HorizontalAlignment="Center"
-                                                   VerticalAlignment="Center"/>
+                                        <controls:IconPresenter IsVisible="{Binding !HasSelectedIcon}"
+                                                                Icon="{x:Static icons:AppIcons.Window}"
+                                                                FontSize="16"
+                                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                HorizontalAlignment="Center"
+                                                                VerticalAlignment="Center"/>
                                     </Grid>
                                     <TextBlock Grid.Column="1"
                                                Text="{Binding SelectedTitle}"
@@ -157,17 +150,13 @@
                                 <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.InspectWindowWindow_Window_information}"/>
                                 <Button Grid.Column="1" Click="OnCopyClick" IsEnabled="{Binding HasSelection}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
-                                        <TextBlock Text="{x:Static theming:LucideIcons.copy}"
-                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                   FontWeight="Normal"/>
+                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
                                         <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Copy_all}"/>
                                     </StackPanel>
                                 </Button>
                                 <Button Grid.Column="2" Command="{Binding RefreshCommand}" IsEnabled="{Binding CanRefresh}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
-                                        <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}"
-                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                   FontWeight="Normal"/>
+                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Refresh}"/>
                                         <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Refresh}"/>
                                     </StackPanel>
                                 </Button>
@@ -202,12 +191,10 @@
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"
                                             Spacing="10">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.scan_search}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                               FontWeight="Normal"
-                                               FontSize="48"
-                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                               HorizontalAlignment="Center"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.InspectWindow}"
+                                                            FontSize="48"
+                                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                            HorizontalAlignment="Center"/>
                                     <TextBlock Text="{x:Static localization:Strings.InspectWindowWindow_Pick_a_target_to_inspect_its_window_properties}"
                                                FontWeight="Normal"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>

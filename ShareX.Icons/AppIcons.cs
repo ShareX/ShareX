@@ -27,11 +27,11 @@ namespace ShareX.Icons;
 
 /// <summary>
 /// Keys of the main window icons: its menus, thumbnail and context menus, and title bar. They are drawn in the
-/// same style as the <see cref="ImageEditorIcons"/>; see <see cref="MainWindowIconDefinitions"/>.
+/// same style as the <see cref="ImageEditorIcons"/>; see <see cref="AppIconDefinitions"/>.
 /// </summary>
-public static class MainWindowIcons
+public static class AppIcons
 {
-    private const string Prefix = "main-window/";
+    private const string Prefix = "app/";
 
     // Menu items with an icon of their own.
     public const string AfterCaptureTasks = Prefix + "after-capture-tasks";
@@ -136,7 +136,7 @@ public static class MainWindowIcons
     public const string Columns = Prefix + "columns";
     public const string Resize = Prefix + "resize";
     public const string Shrink = Prefix + "shrink";
-    public const string Convert = Prefix + "convert";
+    public const string Refresh = Prefix + "refresh";
     public const string Eye = Prefix + "eye";
     public const string Sparkles = Prefix + "sparkles";
     public const string MagicWand = Prefix + "magic-wand";
@@ -198,4 +198,105 @@ public static class MainWindowIcons
     public const string Maximize = Prefix + "maximize";
     public const string Restore = Prefix + "restore";
     public const string Close = Prefix + "close";
+    // Controls and actions.
+    public const string Plus = Prefix + "plus";
+    public const string ChevronDown = Prefix + "chevron-down";
+    public const string ChevronUp = Prefix + "chevron-up";
+    public const string ChevronLeft = Prefix + "chevron-left";
+    public const string ChevronsUpDown = Prefix + "chevrons-up-down";
+    public const string ArrowUp = Prefix + "arrow-up";
+    public const string ArrowDown = Prefix + "arrow-down";
+    public const string ArrowRight = Prefix + "arrow-right";
+    public const string ArrowRightToLine = Prefix + "arrow-right-to-line";
+    public const string ArrowLeftToLine = Prefix + "arrow-left-to-line";
+    public const string ArrowRightFromLine = Prefix + "arrow-right-from-line";
+    public const string ArrowDownToLine = Prefix + "arrow-down-to-line";
+    public const string Pause = Prefix + "pause";
+    public const string Stop = Prefix + "stop";
+    public const string CirclePause = Prefix + "circle-pause";
+    public const string StepForward = Prefix + "step-forward";
+    public const string StepBack = Prefix + "step-back";
+    public const string Reset = Prefix + "reset";
+    public const string Undo = Prefix + "undo";
+    public const string Redo = Prefix + "redo";
+    public const string Star = Prefix + "star";
+    public const string Crop = Prefix + "crop";
+    public const string FolderSearch = Prefix + "folder-search";
+    public const string Zap = Prefix + "zap";
+    public const string ClipboardPaste = Prefix + "clipboard-paste";
+    public const string ScanLine = Prefix + "scan-line";
+    public const string Help = Prefix + "help";
+    public const string Expand = Prefix + "expand";
+    public const string Loading = Prefix + "loading";
+    public const string Language = Prefix + "language";
+    public const string Filter = Prefix + "filter";
+    public const string Duplicate = Prefix + "duplicate";
+    public const string CircleDashed = Prefix + "circle-dashed";
+    public const string Bell = Prefix + "bell";
+    public const string Volume = Prefix + "volume";
+    public const string Mute = Prefix + "mute";
+    public const string VideoOff = Prefix + "video-off";
+    public const string AlignLeft = Prefix + "align-left";
+    public const string AlignCenter = Prefix + "align-center";
+    public const string AlignRight = Prefix + "align-right";
+    public const string Flask = Prefix + "flask";
+    public const string Server = Prefix + "server";
+    public const string Plug = Prefix + "plug";
+    public const string Network = Prefix + "network";
+    public const string Grid = Prefix + "grid";
+    public const string FileEdit = Prefix + "file-edit";
+    public const string Factory = Prefix + "factory";
+    public const string Database = Prefix + "database";
+    public const string DatabaseBackup = Prefix + "database-backup";
+    public const string ZoomIn = Prefix + "zoom-in";
+    public const string Wallpaper = Prefix + "wallpaper";
+    public const string Trophy = Prefix + "trophy";
+    public const string Target = Prefix + "target";
+    public const string Swatches = Prefix + "swatches";
+    public const string Theme = Prefix + "theme";
+    public const string BringToFront = Prefix + "bring-to-front";
+    public const string SendToBack = Prefix + "send-to-back";
+    public const string BringForward = Prefix + "bring-forward";
+    public const string SendBackward = Prefix + "send-backward";
+    public const string Send = Prefix + "send";
+    public const string Reply = Prefix + "reply";
+    public const string SearchCheck = Prefix + "search-check";
+    public const string QrScan = Prefix + "qr-scan";
+    public const string ScanEye = Prefix + "scan-eye";
+    public const string Satellite = Prefix + "satellite";
+    public const string RotateLeft = Prefix + "rotate-left";
+    public const string RotateRight = Prefix + "rotate-right";
+    public const string Rocket = Prefix + "rocket";
+    public const string PictureInPicture = Prefix + "picture-in-picture";
+    public const string Package = Prefix + "package";
+    public const string MoveHorizontal = Prefix + "move-horizontal";
+    public const string Mouse = Prefix + "mouse";
+    public const string Microphone = Prefix + "microphone";
+    public const string MessageCheck = Prefix + "message-check";
+    public const string Locate = Prefix + "locate";
+    public const string ListRestart = Prefix + "list-restart";
+    public const string Lightbulb = Prefix + "lightbulb";
+    public const string Dashboard = Prefix + "dashboard";
+    public const string Landmark = Prefix + "landmark";
+    public const string Key = Prefix + "key";
+    public const string Bold = Prefix + "bold";
+    public const string Italic = Prefix + "italic";
+    public const string ImageAdd = Prefix + "image-add";
+    public const string Grip = Prefix + "grip";
+    public const string FolderAdd = Prefix + "folder-add";
+    public const string FileSearch = Prefix + "file-search";
+    public const string FileAdd = Prefix + "file-add";
+    public const string FileJson = Prefix + "file-json";
+    public const string FileDownload = Prefix + "file-download";
+    public const string Crosshair = Prefix + "crosshair";
+    public const string Contrast = Prefix + "contrast";
+    public const string Cloud = Prefix + "cloud";
+    public const string ClipboardClear = Prefix + "clipboard-clear";
+    public const string LineChart = Prefix + "line-chart";
+    public const string ClearAll = Prefix + "clear-all";
+    public const string Blocks = Prefix + "blocks";
+    public const string Blend = Prefix + "blend";
+    public const string Audio = Prefix + "audio";
+    public const string PointerClick = Prefix + "pointer-click";
+    public const string Lock = Prefix + "lock";
 }

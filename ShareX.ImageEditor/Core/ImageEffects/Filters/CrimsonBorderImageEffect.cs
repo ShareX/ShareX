@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class CrimsonBorderImageEffect : ImageEffectBase
     public override string Id => "crimson_border";
     public override string Name => "Crimson border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.sword;
+    public override string IconKey => ImageEffectIcons.Sword;
     public override string Description => "Adds a rich crimson/dark red border with an inner glow effect.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

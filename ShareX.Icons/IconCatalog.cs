@@ -25,7 +25,7 @@
 
 namespace ShareX.Icons;
 
-/// <summary>Finds a ShareX icon by its key, a constant of <see cref="ImageEditorIcons"/>, <see cref="PhotoEditorIcons"/> or <see cref="MainWindowIcons"/>.</summary>
+/// <summary>Finds a ShareX icon by its key, a constant of one of the icon sets, such as <see cref="AppIcons"/>.</summary>
 public static class IconCatalog
 {
     private static Dictionary<string, VectorIcon>? _icons;
@@ -51,7 +51,8 @@ public static class IconCatalog
         [
             .. ImageEditorIconDefinitions.CreateGroups(),
             .. PhotoEditorIconDefinitions.CreateGroups(),
-            .. MainWindowIconDefinitions.CreateGroups()
+            .. AppIconDefinitions.CreateGroups(),
+            .. ImageEffectIconDefinitions.CreateGroups()
         ];
 
         foreach (IconGroup group in groups)

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -41,7 +41,7 @@ public sealed class FoldCreaseWarpImageEffect : ImageEffectBase
     public override string Id => "fold_crease_warp";
     public override string Name => "Fold crease warp";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.newspaper;
+    public override string IconKey => ImageEffectIcons.Newspaper;
     public override string Description => "Simulates a folded paper crease distortion.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

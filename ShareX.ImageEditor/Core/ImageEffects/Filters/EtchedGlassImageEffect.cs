@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class EtchedGlassImageEffect : ImageEffectBase
     public override string Id => "etched_glass";
     public override string Name => "Etched glass";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.glass_water;
+    public override string IconKey => ImageEffectIcons.Glass;
     public override string Description => "Simulates an etched glass surface with frost, engraving, and refraction effects.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

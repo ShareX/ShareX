@@ -30,6 +30,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
@@ -395,13 +396,11 @@ public partial class TaskSettingsWindow : Window
             MenuItem item = new()
             {
                 Header = action.GetLocalizedDescription(),
-                Icon = new TextBlock
+                Icon = new IconPresenter
                 {
-                    Classes = { "icon" },
-                    Text = NotificationActionButton.GetDefaultIcon(action),
+                    Icon = NotificationActionButton.GetDefaultIcon(action),
                     FontSize = 15,
-                    Width = 18,
-                    TextAlignment = Avalonia.Media.TextAlignment.Center
+                    Width = 18
                 }
             };
             item.Click += (_, _) => AddNotificationButton(action);

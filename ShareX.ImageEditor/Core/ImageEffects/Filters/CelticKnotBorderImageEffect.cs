@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class CelticKnotBorderImageEffect : ImageEffectBase
     public override string Id => "celtic_knot_border";
     public override string Name => "Celtic knot border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.clover;
+    public override string IconKey => ImageEffectIcons.Clover;
     public override string Description => "Adds an interweaving Celtic knot pattern border inspired by Insular art manuscripts.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

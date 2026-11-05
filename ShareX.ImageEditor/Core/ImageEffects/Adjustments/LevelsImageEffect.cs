@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class LevelsImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "levels";
     public override string Name => "Levels";
-    public override string IconKey => LucideIcons.sliders_vertical;
+    public override string IconKey => ImageEffectIcons.SlidersVertical;
     public override string Description => "Adjusts image color levels.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class PolaroidFrameImageEffect : ImageEffectBase
     public override string Id => "polaroid_frame";
     public override string Name => "Polaroid frame";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.camera;
+    public override string IconKey => AppIcons.Camera;
     public override string Description => "Wraps the image in a Polaroid-style instant photo frame.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -44,7 +44,7 @@ public sealed class LightLeakImageEffect : ImageEffectBase
     public override string Id => "light_leak";
     public override string Name => "Light leak";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.sun;
+    public override string IconKey => AppIcons.Sun;
     public override string Description => "Adds a warm film light leak effect.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

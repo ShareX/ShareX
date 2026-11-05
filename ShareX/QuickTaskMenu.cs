@@ -63,7 +63,7 @@ public sealed class QuickTaskMenu
 
         ContextMenu menu = new();
         MenuItem continueItem = CreateActionItem(Strings.QuickTaskMenu_ShowMenu_Continue,
-            MainWindowIcons.CirclePlay, () => OnTaskInfoSelected(null));
+            AppIcons.CirclePlay, () => OnTaskInfoSelected(null));
         menu.Items.Add(continueItem);
         menu.Items.Add(new Separator());
 
@@ -88,10 +88,10 @@ public sealed class QuickTaskMenu
         }
 
         menu.Items.Add(CreateActionItem(Strings.QuickTaskMenu_ShowMenu_Edit_this_menu___,
-            MainWindowIcons.Edit, QuickTaskMenuEditorIntegration.Show));
+            AppIcons.Edit, QuickTaskMenuEditorIntegration.Show));
         menu.Items.Add(new Separator());
         menu.Items.Add(CreateActionItem(Strings.QuickTaskMenu_ShowMenu_Cancel,
-            MainWindowIcons.Close, null));
+            AppIcons.Close, null));
 
         System.Drawing.Point cursorPosition = CaptureHelpers.GetCursorPosition();
         PixelPoint placementPosition = new(cursorPosition.X, cursorPosition.Y);

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class BlurImageEffect : ImageEffectBase
     public override string Id => "blur";
     public override string Name => "Blur";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.focus;
+    public override string IconKey => ImageEditorIcons.Blur;
     public override string Description => "Applies a blur effect.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

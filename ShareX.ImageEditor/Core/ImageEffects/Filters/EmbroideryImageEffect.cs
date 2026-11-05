@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class EmbroideryImageEffect : ImageEffectBase
     public override string Id => "embroidery";
     public override string Name => "Embroidery";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.stamp;
+    public override string IconKey => AppIcons.Stamp;
     public override string Description => "Simulates a cross-stitch embroidery pattern.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

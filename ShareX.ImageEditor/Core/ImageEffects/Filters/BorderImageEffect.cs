@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class BorderImageEffect : ImageEffectBase
     public override string Id => "border";
     public override string Name => "Border";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.frame;
+    public override string IconKey => ImageEffectIcons.Frame;
     public override string Description => "Adds a border to the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

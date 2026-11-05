@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class LomoImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "lomo";
     public override string Name => "Lomo";
-    public override string IconKey => LucideIcons.aperture;
+    public override string IconKey => ImageEffectIcons.Aperture;
     public override string Description => "Applies a lomography look with high contrast, warm tones, and vignette.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

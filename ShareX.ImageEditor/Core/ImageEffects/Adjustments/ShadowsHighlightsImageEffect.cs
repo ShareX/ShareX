@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class ShadowsHighlightsImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "shadows_highlights";
     public override string Name => "Shadows / Highlights";
-    public override string IconKey => LucideIcons.sun_moon;
+    public override string IconKey => AppIcons.Theme;
     public override string Description => "Adjusts shadows and highlights.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

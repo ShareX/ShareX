@@ -23,9 +23,7 @@
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
     </Style>
 
-    <Style Selector="TextBlock.icon">
-        <Setter Property="FontFamily" Value="{DynamicResource ShareX.FontFamily.Icon}"/>
-        <Setter Property="FontWeight" Value="Normal"/>
+    <Style Selector="controls|IconPresenter">
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 
@@ -375,14 +373,11 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
 
-    <Style Selector="TextBlock.category-tip-icon">
-        <Setter Property="FontFamily" Value="{DynamicResource ShareX.FontFamily.Icon}"/>
-        <Setter Property="FontWeight" Value="Normal"/>
+    <Style Selector="controls|IconPresenter.category-tip-icon">
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="TextAlignment" Value="Center"/>
         <Setter Property="Margin" Value="0,1,0,0"/>
     </Style>
 

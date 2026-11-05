@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
         xmlns:localization="using:ShareX.Tools.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="1000"
         d:DesignHeight="650"
@@ -103,9 +104,7 @@
                             IsEnabled="{Binding CanCreateFolder}"
                             Click="OnCreateFolderClick">
                         <StackPanel Orientation="Horizontal" Spacing="7">
-                            <TextBlock Text="{x:Static theming:LucideIcons.folder_plus}"
-                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                       FontWeight="Normal"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderAdd}"/>
                             <TextBlock Text="{x:Static localization:Strings.RemoteStorageBrowser_CreateFolder}"/>
                         </StackPanel>
                     </Button>
@@ -114,9 +113,7 @@
                             IsEnabled="{Binding CanUpload}"
                             Click="OnUploadClick">
                         <StackPanel Orientation="Horizontal" Spacing="7">
-                            <TextBlock Text="{x:Static theming:LucideIcons.upload}"
-                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                       FontWeight="Normal"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"/>
                             <TextBlock Text="{x:Static localization:Strings.RemoteStorageBrowser_Upload}"/>
                         </StackPanel>
                     </Button>
@@ -136,27 +133,22 @@
                             IsEnabled="{Binding CanGoUp}"
                             Click="OnUpClick"
                             ToolTip.Tip="{x:Static localization:Strings.RemoteStorageBrowser_Up}">
-                        <TextBlock Text="{x:Static theming:LucideIcons.arrow_up}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                   FontWeight="Normal"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.ArrowUp}"/>
                     </Button>
                     <Button Grid.Column="3"
                             Classes="toolbar-button"
                             IsEnabled="{Binding !IsBusy}"
                             Click="OnRefreshClick"
                             ToolTip.Tip="{x:Static localization:Strings.RemoteStorageBrowser_Refresh}">
-                        <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                   FontWeight="Normal"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Refresh}"/>
                     </Button>
                     <Grid Grid.Column="4" Width="250" ColumnDefinitions="Auto,*">
-                        <TextBlock Margin="10,0,0,0"
-                                   Classes="icon"
-                                   Text="{x:Static theming:LucideIcons.search}"
-                                   FontSize="16"
-                                   IsHitTestVisible="False"
-                                   VerticalAlignment="Center"
-                                   ZIndex="1"/>
+                        <controls:IconPresenter Margin="10,0,0,0"
+                                                Icon="{x:Static icons:AppIcons.Search}"
+                                                FontSize="16"
+                                                IsHitTestVisible="False"
+                                                VerticalAlignment="Center"
+                                                ZIndex="1"/>
                         <TextBox Grid.ColumnSpan="2"
                                  Padding="32,0,8,0"
                                  Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -184,12 +176,10 @@
                             <StackPanel Orientation="Horizontal" Spacing="6">
                                 <TextBlock Classes="column-heading"
                                            Text="{x:Static localization:Strings.RemoteStorageBrowser_Name}"/>
-                                <TextBlock IsVisible="{Binding IsNameSortColumn}"
-                                           Text="{Binding SortIndicator}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                           FontWeight="Normal"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           VerticalAlignment="Center"/>
+                                <controls:IconPresenter IsVisible="{Binding IsNameSortColumn}"
+                                                        Icon="{Binding SortIndicator}"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="2"
@@ -199,12 +189,10 @@
                             <StackPanel Orientation="Horizontal" Spacing="6">
                                 <TextBlock Classes="column-heading"
                                            Text="{x:Static localization:Strings.RemoteStorageBrowser_Size}"/>
-                                <TextBlock IsVisible="{Binding IsSizeSortColumn}"
-                                           Text="{Binding SortIndicator}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                           FontWeight="Normal"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           VerticalAlignment="Center"/>
+                                <controls:IconPresenter IsVisible="{Binding IsSizeSortColumn}"
+                                                        Icon="{Binding SortIndicator}"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="3"
@@ -214,12 +202,10 @@
                             <StackPanel Orientation="Horizontal" Spacing="6">
                                 <TextBlock Classes="column-heading"
                                            Text="{x:Static localization:Strings.RemoteStorageBrowser_Modified}"/>
-                                <TextBlock IsVisible="{Binding IsModifiedSortColumn}"
-                                           Text="{Binding SortIndicator}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                           FontWeight="Normal"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           VerticalAlignment="Center"/>
+                                <controls:IconPresenter IsVisible="{Binding IsModifiedSortColumn}"
+                                                        Icon="{Binding SortIndicator}"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
                     </Grid>
@@ -263,13 +249,11 @@
                             <DataTemplate x:DataType="vm:RemoteStorageBrowserItemViewModel">
                                 <Border Padding="10,8" PointerPressed="OnItemPointerPressed">
                                     <Grid ColumnDefinitions="34,*,140,190" ColumnSpacing="8">
-                                        <TextBlock Grid.Column="0"
-                                                   Text="{Binding Icon}"
-                                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                   FontWeight="Normal"
-                                                   FontSize="17"
-                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                   VerticalAlignment="Center"/>
+                                        <controls:IconPresenter Grid.Column="0"
+                                                                Icon="{Binding Icon}"
+                                                                FontSize="17"
+                                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                VerticalAlignment="Center"/>
                                         <TextBlock Grid.Column="1"
                                                    Text="{Binding Name}"
                                                    TextTrimming="CharacterEllipsis"
@@ -296,12 +280,10 @@
                                 VerticalAlignment="Center"
                                 Spacing="10"
                                 IsHitTestVisible="False">
-                        <TextBlock Text="{x:Static theming:LucideIcons.folder_open}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                   FontWeight="Normal"
-                                   FontSize="48"
-                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                   HorizontalAlignment="Center"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderOpen}"
+                                                FontSize="48"
+                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                HorizontalAlignment="Center"/>
                         <TextBlock Text="{Binding EmptyMessage}"
                                    FontWeight="Normal"
                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
@@ -318,12 +300,10 @@
                         <StackPanel HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     Spacing="10">
-                            <TextBlock Text="{x:Static theming:LucideIcons.upload}"
-                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                       FontWeight="Normal"
-                                       FontSize="42"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                       HorizontalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
+                                                    FontSize="42"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    HorizontalAlignment="Center"/>
                             <TextBlock Text="{x:Static localization:Strings.RemoteStorageBrowser_DropFilesToUpload}"
                                        FontWeight="SemiBold"
                                        HorizontalAlignment="Center"/>

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class StainedGlassImageEffect : ImageEffectBase
     public override string Id => "stained_glass";
     public override string Name => "Stained glass";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.hexagon;
+    public override string IconKey => ImageEffectIcons.Hexagon;
     public override string Description => "Creates a stained glass mosaic effect with lead borders.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

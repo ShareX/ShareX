@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -40,7 +40,7 @@ public sealed class WindStreaksImageEffect : ImageEffectBase
     public override string Id => "wind_streaks";
     public override string Name => "Wind streaks";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.wind;
+    public override string IconKey => ImageEffectIcons.Wind;
     public override string Description => "Adds directional wind streak trails to bright areas.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

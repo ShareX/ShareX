@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -37,7 +37,7 @@ public sealed class EdgeFeatherImageEffect : ImageEffectBase
     public override string Id => "edge_feather";
     public override string Name => "Edge feather";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.circle_dashed;
+    public override string IconKey => AppIcons.CircleDashed;
     public override string Description => "Softens the edges of non-transparent regions with a feathered alpha falloff.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

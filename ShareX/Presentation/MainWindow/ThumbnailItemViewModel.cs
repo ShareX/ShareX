@@ -49,7 +49,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     private string _title = string.Empty;
     private string _status = string.Empty;
     private string _details = string.Empty;
-    private string _placeholderIcon = MainWindowIcons.File;
+    private string _placeholderIcon = AppIcons.File;
     private double _progress;
     private bool _isProgressVisible;
     private bool _isFailed;
@@ -287,11 +287,11 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
 
     private static string GetPlaceholderIcon(string? filePath)
     {
-        if (string.IsNullOrEmpty(filePath)) return MainWindowIcons.File;
-        if (FileHelpers.IsVideoFile(filePath)) return MainWindowIcons.FileVideo;
-        if (FileHelpers.IsTextFile(filePath)) return MainWindowIcons.FileText;
-        if (FileHelpers.IsImageFile(filePath)) return MainWindowIcons.FileImage;
-        return MainWindowIcons.File;
+        if (string.IsNullOrEmpty(filePath)) return AppIcons.File;
+        if (FileHelpers.IsVideoFile(filePath)) return AppIcons.FileVideo;
+        if (FileHelpers.IsTextFile(filePath)) return AppIcons.FileText;
+        if (FileHelpers.IsImageFile(filePath)) return AppIcons.FileImage;
+        return AppIcons.File;
     }
 
     public void Dispose()

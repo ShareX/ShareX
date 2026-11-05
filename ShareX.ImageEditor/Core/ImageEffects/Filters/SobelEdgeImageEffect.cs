@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class SobelEdgeImageEffect : ImageEffectBase
     public override string Id => "sobel_edge";
     public override string Name => "Sobel edge";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.scan;
+    public override string IconKey => AppIcons.Region;
     public override string Description => "Detects edges using the Sobel operator.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

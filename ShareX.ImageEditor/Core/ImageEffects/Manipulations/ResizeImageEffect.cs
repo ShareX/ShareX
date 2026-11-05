@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -41,7 +41,7 @@ public sealed class ResizeImageEffect : ImageEffectBase
     public override string Id => "resize_image";
     public override string Name => "Resize image";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.scaling;
+    public override string IconKey => AppIcons.Resize;
     public override string Description => "Resizes the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

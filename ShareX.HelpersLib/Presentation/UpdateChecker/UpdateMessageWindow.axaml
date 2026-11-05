@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX.HelpersLib"
         xmlns:localization="using:ShareX.HelpersLib.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         x:Class="ShareX.HelpersLib.UpdateMessageWindow"
         x:DataType="local:UpdateMessageWindow"
@@ -46,12 +47,11 @@
           Margin="18">
         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
             <Border Width="42" Height="42" CornerRadius="6" Background="{DynamicResource ShareX.Brush.Background.Panel}">
-                <TextBlock Classes="icon"
-                           Text="{x:Static theming:LucideIcons.download}"
-                           FontSize="21"
-                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"/>
+                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Download}"
+                                        FontSize="21"
+                                        Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"/>
             </Border>
             <StackPanel Grid.Column="1" VerticalAlignment="Center">
                 <TextBlock Text="{Binding HeaderText}"

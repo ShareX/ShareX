@@ -1,11 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
         xmlns:res="using:ShareX.Localization"
         xmlns:controls="using:ShareX.AvaloniaUI.Controls"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="950"
         d:DesignHeight="720"
@@ -27,7 +27,7 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
-        <Style Selector="TextBlock.page-title-icon">
+        <Style Selector="controls|IconPresenter.page-title-icon">
             <Setter Property="FontSize" Value="22"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -163,11 +163,10 @@
                         CornerRadius="8">
                     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.zap}"
-                                       FontSize="21"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Zap}"
+                                                    FontSize="21"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="ActionEditorTitle"
                                            Text="{x:Static res:Strings.TaskSettingsWindow_AddAction}"
@@ -180,9 +179,8 @@
                                     Classes="icon-button"
                                     ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_Close}"
                                     Click="OnCancelActionEditorClick">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.x}"
-                                           FontSize="16"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Close}"
+                                                        FontSize="16"/>
                             </Button>
                         </Grid>
 
@@ -203,9 +201,8 @@
                                                 Padding="0"
                                                 ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_BrowseWithEllipsis}"
                                                 Click="OnBrowseActionPathClick">
-                                            <TextBlock Classes="icon"
-                                                       Text="{x:Static theming:LucideIcons.folder}"
-                                                       FontSize="15"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Folder}"
+                                                                    FontSize="15"/>
                                         </Button>
                                     </Grid>
                                 </StackPanel>
@@ -279,11 +276,10 @@
                         CornerRadius="8">
                     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.folder_search}"
-                                       FontSize="21"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderSearch}"
+                                                    FontSize="21"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="WatchFolderEditorTitle"
                                            Text="{x:Static res:Strings.TaskSettingsWindow_AddWatchFolder}"
@@ -306,9 +302,8 @@
                                                 Padding="0"
                                                 ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_BrowseWithEllipsis}"
                                                 Click="OnBrowseWatchFolderClick">
-                                            <TextBlock Classes="icon"
-                                                       Text="{x:Static theming:LucideIcons.folder}"
-                                                       FontSize="15"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Folder}"
+                                                                    FontSize="15"/>
                                         </Button>
                                     </Grid>
                                 </StackPanel>
@@ -362,11 +357,10 @@
                         CornerRadius="8">
                     <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.bell}"
-                                       FontSize="21"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Bell}"
+                                                    FontSize="21"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_NotificationButtons}"
                                            FontSize="19"
@@ -383,7 +377,7 @@
                                     Classes="compact"
                                     Click="OnAddNotificationButtonClick">
                                 <StackPanel Orientation="Horizontal" Spacing="7">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Plus}"/>
                                     <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_AddWithEllipsis}"/>
                                 </StackPanel>
                             </Button>
@@ -391,7 +385,7 @@
                                     Classes="compact"
                                     Click="OnRemoveNotificationButtonClick">
                                 <StackPanel Orientation="Horizontal" Spacing="7">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}"/>
                                     <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_Remove}"/>
                                 </StackPanel>
                             </Button>
@@ -401,9 +395,8 @@
                                     Padding="0"
                                     ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_MoveUp}"
                                     Click="OnMoveNotificationButtonUpClick">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.chevron_up}"
-                                           FontSize="16"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronUp}"
+                                                        FontSize="16"/>
                             </Button>
                             <Button x:Name="NotificationButtonMoveDownButton"
                                     Width="32"
@@ -411,9 +404,8 @@
                                     Padding="0"
                                     ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_MoveDown}"
                                     Click="OnMoveNotificationButtonDownClick">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.chevron_down}"
-                                           FontSize="16"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronDown}"
+                                                        FontSize="16"/>
                             </Button>
                         </StackPanel>
 
@@ -426,12 +418,10 @@
                                         <Grid Classes="action-list-item"
                                               ColumnDefinitions="26,*"
                                               ColumnSpacing="7">
-                                            <TextBlock Classes="icon"
-                                                       Text="{Binding Icon}"
-                                                       FontSize="16"
-                                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                                       TextAlignment="Center"
-                                                       VerticalAlignment="Center"/>
+                                            <controls:IconPresenter Icon="{Binding Icon}"
+                                                                    FontSize="16"
+                                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                                    VerticalAlignment="Center"/>
                                             <TextBlock Grid.Column="1"
                                                        Text="{Binding Title}"
                                                        FontWeight="Normal"

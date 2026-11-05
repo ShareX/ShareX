@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class MarbleBorderImageEffect : ImageEffectBase
     public override string Id => "marble_border";
     public override string Name => "Marble border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.gem;
+    public override string IconKey => ImageEffectIcons.Gem;
     public override string Description => "Adds a procedural marble-veined texture border around the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

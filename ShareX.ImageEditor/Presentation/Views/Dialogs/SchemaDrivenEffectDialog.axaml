@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
              xmlns:res="using:ShareX.ImageEditor.Localization"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -14,10 +15,9 @@
              x:CompileBindings="False">
     <StackPanel Spacing="0">
         <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,8">
-            <TextBlock Text="{Binding Definition.Icon}"
-                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                       VerticalAlignment="Center"
-                       Margin="0,2,0,0"/>
+            <iconControls:IconPresenter Icon="{Binding Definition.Icon}"
+                                        VerticalAlignment="Center"
+                                        Margin="0,2,0,0"/>
             <TextBlock Text="{Binding Title}"
                        VerticalAlignment="Center"/>
         </StackPanel>

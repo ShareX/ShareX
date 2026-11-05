@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:ShareX.AvaloniaUI.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="using:ShareX.ImageEditor.Presentation.Converters"
@@ -43,15 +44,13 @@
                       Stretch="None"
                       VerticalAlignment="Center"/>
 
-                <TextBlock Grid.Column="2"
-                           Classes="dropdown-chevron"
-                           Classes.open="{Binding #BorderStylePopup.IsOpen}"
-                           Text="{x:Static theming:EditorIcons.ChevronDown}"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal"
-                           FontSize="10"
-                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                           VerticalAlignment="Center"/>
+                <controls:IconPresenter Grid.Column="2"
+                                        Classes="dropdown-chevron"
+                                        Classes.open="{Binding #BorderStylePopup.IsOpen}"
+                                        Icon="{x:Static theming:EditorIcons.ChevronDown}"
+                                        FontSize="10"
+                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                        VerticalAlignment="Center"/>
             </Grid>
         </Button>
 

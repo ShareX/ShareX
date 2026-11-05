@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class MirrorTilesImageEffect : ImageEffectBase
     public override string Id => "mirror_tiles";
     public override string Name => "Mirror tiles";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.flip_horizontal_2;
+    public override string IconKey => ImageEffectIcons.FlipHorizontal;
     public override string Description => "Tiles the image with alternating mirrored reflections.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

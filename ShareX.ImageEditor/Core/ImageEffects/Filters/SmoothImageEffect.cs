@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class SmoothImageEffect : ImageEffectBase
     public override string Id => "smooth";
     public override string Name => "Smooth";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.waves;
+    public override string IconKey => ImageEffectIcons.Waves;
     public override string Description => "Applies a smoothing effect.";
     public override EffectExecutionMode ExecutionMode => EffectExecutionMode.Immediate;
 

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System.Globalization;
 using Avalonia;
 using Avalonia.Media;
 
@@ -34,6 +35,9 @@ internal static class IconGeometry
     /// <summary>A geometry from SVG path data.</summary>
     public static Geometry Path(string data) => Geometry.Parse(data);
 
+    /// <summary>A geometry from SVG path data with computed numbers, which are written the same in every culture.</summary>
+    public static Geometry FormattedPath(FormattableString data) => Path(data.ToString(CultureInfo.InvariantCulture));
+
     public static Geometry Circle(double centerX, double centerY, double radius) =>
         Ellipse(centerX - radius, centerY - radius, radius * 2, radius * 2);
 
@@ -42,6 +46,29 @@ internal static class IconGeometry
 
     public static Geometry Rectangle(double x, double y, double width, double height, double radius = 0) =>
         new RectangleGeometry(new Rect(x, y, width, height), radius, radius);
+
+    /// <summary>A four-pointed star with curved sides, such as a sparkle.</summary>
+    public static Geometry Sparkle(double centerX, double centerY, double radius)
+    {
+        double k = radius * 0.18;
+        double left = centerX - radius, top = centerY - radius, right = centerX + radius, bottom = centerY + radius;
+        return FormattedPath($"M{centerX} {top}Q{centerX + k} {centerY - k} {right} {centerY}Q{centerX + k} {centerY + k} {centerX} {bottom}Q{centerX - k} {centerY + k} {left} {centerY}Q{centerX - k} {centerY - k} {centerX} {top}z");
+    }
+
+    /// <summary>A star with <paramref name="points"/> points, the first one straight up.</summary>
+    public static Geometry Star(double centerX, double centerY, double outerRadius, double innerRadius, int points = 5)
+    {
+        List<string> corners = [];
+
+        for (int i = 0; i < points * 2; i++)
+        {
+            double radius = i % 2 == 0 ? outerRadius : innerRadius;
+            double angle = Math.PI * i / points - Math.PI / 2;
+            corners.Add(string.Create(CultureInfo.InvariantCulture, $"{centerX + radius * Math.Cos(angle):0.##} {centerY + radius * Math.Sin(angle):0.##}"));
+        }
+
+        return Path("M" + string.Join("L", corners) + "z");
+    }
 
     /// <summary>The outline around all of <paramref name="geometries"/>, such as a cloud made of circles.</summary>
     public static Geometry Union(params Geometry[] geometries) =>

@@ -56,28 +56,28 @@ internal sealed class MainMenuBuilder
 
         return new List<MainNavigationSection>
         {
-            new(Strings.MainMenuBuilder_Capture, MainWindowIcons.Camera, BuildCaptureMenu),
-            new(Strings.MainMenuBuilder_Upload, MainWindowIcons.Upload, BuildUploadMenu, uploadsEnabled),
-            new(Strings.MainMenuBuilder_Workflows, MainWindowIcons.Workflows, BuildWorkflowsMenu),
-            new(Strings.MainMenuBuilder_Tools, MainWindowIcons.Wrench, BuildToolsMenu,
+            new(Strings.MainMenuBuilder_Capture, AppIcons.Camera, BuildCaptureMenu),
+            new(Strings.MainMenuBuilder_Upload, AppIcons.Upload, BuildUploadMenu, uploadsEnabled),
+            new(Strings.MainMenuBuilder_Workflows, AppIcons.Workflows, BuildWorkflowsMenu),
+            new(Strings.MainMenuBuilder_Tools, AppIcons.Wrench, BuildToolsMenu,
                 createCategories: BuildToolCategories),
-            new(Strings.MainMenuBuilder_AfterCaptureTasks, MainWindowIcons.AfterCaptureTasks, BuildAfterCaptureMenu),
-            new(Strings.MainMenuBuilder_AfterUploadTasks, MainWindowIcons.AfterUploadTasks, BuildAfterUploadMenu, uploadsEnabled),
-            new(Strings.MainMenuBuilder_Destinations, MainWindowIcons.Destinations, BuildDestinationsMenu, uploadsEnabled),
-            new(Strings.MainMenuBuilder_ApplicationSettings, MainWindowIcons.Settings, () => Run(MainFormCommand.ApplicationSettings)),
-            new(Strings.MainMenuBuilder_TaskSettings, MainWindowIcons.Sliders, () => Run(MainFormCommand.TaskSettings)),
-            new(Strings.MainMenuBuilder_HotkeySettings, MainWindowIcons.Keyboard, () => Run(MainFormCommand.HotkeySettings)),
-            new(Strings.MainMenuBuilder_DestinationSettings, MainWindowIcons.DestinationSettings, () => Run(MainFormCommand.DestinationSettings), uploadsEnabled),
-            new(Strings.MainMenuBuilder_CustomUploaderSettings, MainWindowIcons.CustomUploaderSettings, () => Run(MainFormCommand.CustomUploaderSettings), uploadsEnabled),
-            new(Strings.MainMenuBuilder_ScreenshotsFolder, MainWindowIcons.ScreenshotsFolder, () => Run(MainFormCommand.ScreenshotsFolder)),
-            new(Strings.MainMenuBuilder_History, MainWindowIcons.History, () => Run(MainFormCommand.History)),
-            new(Strings.MainMenuBuilder_ImageHistory, MainWindowIcons.ImageHistory, () => Run(MainFormCommand.ImageHistory)),
-            new(Strings.MainMenuBuilder_Stats, MainWindowIcons.BarChart, () => Run(MainFormCommand.Stats)),
-            new(Strings.MainMenuBuilder_Debug, MainWindowIcons.Bug, BuildDebugMenu),
-            new(Strings.MainMenuBuilder_Donate, MainWindowIcons.Heart, () => Run(MainFormCommand.Donate)),
-            new(Strings.MainMenuBuilder_FollowShareX, MainWindowIcons.Follow, () => Run(MainFormCommand.X)),
-            new(Strings.MainMenuBuilder_Discord, MainWindowIcons.Discord, () => Run(MainFormCommand.Discord)),
-            new(Strings.MainMenuBuilder_About, MainWindowIcons.Info, () => Run(MainFormCommand.About))
+            new(Strings.MainMenuBuilder_AfterCaptureTasks, AppIcons.AfterCaptureTasks, BuildAfterCaptureMenu),
+            new(Strings.MainMenuBuilder_AfterUploadTasks, AppIcons.AfterUploadTasks, BuildAfterUploadMenu, uploadsEnabled),
+            new(Strings.MainMenuBuilder_Destinations, AppIcons.Destinations, BuildDestinationsMenu, uploadsEnabled),
+            new(Strings.MainMenuBuilder_ApplicationSettings, AppIcons.Settings, () => Run(MainFormCommand.ApplicationSettings)),
+            new(Strings.MainMenuBuilder_TaskSettings, AppIcons.Sliders, () => Run(MainFormCommand.TaskSettings)),
+            new(Strings.MainMenuBuilder_HotkeySettings, AppIcons.Keyboard, () => Run(MainFormCommand.HotkeySettings)),
+            new(Strings.MainMenuBuilder_DestinationSettings, AppIcons.DestinationSettings, () => Run(MainFormCommand.DestinationSettings), uploadsEnabled),
+            new(Strings.MainMenuBuilder_CustomUploaderSettings, AppIcons.CustomUploaderSettings, () => Run(MainFormCommand.CustomUploaderSettings), uploadsEnabled),
+            new(Strings.MainMenuBuilder_ScreenshotsFolder, AppIcons.ScreenshotsFolder, () => Run(MainFormCommand.ScreenshotsFolder)),
+            new(Strings.MainMenuBuilder_History, AppIcons.History, () => Run(MainFormCommand.History)),
+            new(Strings.MainMenuBuilder_ImageHistory, AppIcons.ImageHistory, () => Run(MainFormCommand.ImageHistory)),
+            new(Strings.MainMenuBuilder_Stats, AppIcons.BarChart, () => Run(MainFormCommand.Stats)),
+            new(Strings.MainMenuBuilder_Debug, AppIcons.Bug, BuildDebugMenu),
+            new(Strings.MainMenuBuilder_Donate, AppIcons.Heart, () => Run(MainFormCommand.Donate)),
+            new(Strings.MainMenuBuilder_FollowShareX, AppIcons.Follow, () => Run(MainFormCommand.X)),
+            new(Strings.MainMenuBuilder_Discord, AppIcons.Discord, () => Run(MainFormCommand.Discord)),
+            new(Strings.MainMenuBuilder_About, AppIcons.Info, () => Run(MainFormCommand.About))
         };
     }
 
@@ -86,34 +86,34 @@ internal sealed class MainMenuBuilder
         bool uploadsEnabled = !SystemOptions.DisableUpload;
         List<MainMenuEntry> items = new()
         {
-            Parent(Strings.MainMenuBuilder_Capture, MainWindowIcons.Camera, BuildCaptureMenu),
-            Parent(Strings.MainMenuBuilder_Upload, MainWindowIcons.Upload, BuildUploadMenu, uploadsEnabled),
-            Parent(Strings.MainMenuBuilder_Workflows, MainWindowIcons.Workflows, BuildWorkflowsMenu),
-            CategoryParent(Strings.MainMenuBuilder_Tools, MainWindowIcons.Wrench, BuildToolCategories),
+            Parent(Strings.MainMenuBuilder_Capture, AppIcons.Camera, BuildCaptureMenu),
+            Parent(Strings.MainMenuBuilder_Upload, AppIcons.Upload, BuildUploadMenu, uploadsEnabled),
+            Parent(Strings.MainMenuBuilder_Workflows, AppIcons.Workflows, BuildWorkflowsMenu),
+            CategoryParent(Strings.MainMenuBuilder_Tools, AppIcons.Wrench, BuildToolCategories),
             MainMenuEntry.Separator(),
-            Parent(Strings.MainMenuBuilder_AfterCaptureTasks, MainWindowIcons.AfterCaptureTasks, BuildAfterCaptureMenu),
-            Parent(Strings.MainMenuBuilder_AfterUploadTasks, MainWindowIcons.AfterUploadTasks, BuildAfterUploadMenu, uploadsEnabled),
-            Parent(Strings.MainMenuBuilder_Destinations, MainWindowIcons.Destinations, BuildDestinationsMenu, uploadsEnabled),
+            Parent(Strings.MainMenuBuilder_AfterCaptureTasks, AppIcons.AfterCaptureTasks, BuildAfterCaptureMenu),
+            Parent(Strings.MainMenuBuilder_AfterUploadTasks, AppIcons.AfterUploadTasks, BuildAfterUploadMenu, uploadsEnabled),
+            Parent(Strings.MainMenuBuilder_Destinations, AppIcons.Destinations, BuildDestinationsMenu, uploadsEnabled),
             MainMenuEntry.Separator(),
-            Item(Strings.MainMenuBuilder_ApplicationSettings, MainWindowIcons.Settings, () => Run(MainFormCommand.ApplicationSettings)),
-            Item(Strings.MainMenuBuilder_TaskSettings, MainWindowIcons.Sliders, () => Run(MainFormCommand.TaskSettings)),
-            Item(Strings.MainMenuBuilder_HotkeySettings, MainWindowIcons.Keyboard, () => Run(MainFormCommand.HotkeySettings)),
+            Item(Strings.MainMenuBuilder_ApplicationSettings, AppIcons.Settings, () => Run(MainFormCommand.ApplicationSettings)),
+            Item(Strings.MainMenuBuilder_TaskSettings, AppIcons.Sliders, () => Run(MainFormCommand.TaskSettings)),
+            Item(Strings.MainMenuBuilder_HotkeySettings, AppIcons.Keyboard, () => Run(MainFormCommand.HotkeySettings)),
             Item(ApplicationState.Settings.DisableHotkeys ? Strings.MainMenuBuilder_EnableHotkeys : Strings.MainMenuBuilder_DisableHotkeys,
-                ApplicationState.Settings.DisableHotkeys ? MainWindowIcons.Keyboard : MainWindowIcons.KeyboardOff,
+                ApplicationState.Settings.DisableHotkeys ? AppIcons.Keyboard : AppIcons.KeyboardOff,
                 () => TaskHelpers.ToggleHotkeys()),
-            Item(Strings.MainMenuBuilder_DestinationSettings, MainWindowIcons.DestinationSettings, () => Run(MainFormCommand.DestinationSettings), uploadsEnabled),
-            Item(Strings.MainMenuBuilder_CustomUploaderSettings, MainWindowIcons.CustomUploaderSettings, () => Run(MainFormCommand.CustomUploaderSettings), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_DestinationSettings, AppIcons.DestinationSettings, () => Run(MainFormCommand.DestinationSettings), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_CustomUploaderSettings, AppIcons.CustomUploaderSettings, () => Run(MainFormCommand.CustomUploaderSettings), uploadsEnabled),
             MainMenuEntry.Separator(),
-            Item(Strings.MainMenuBuilder_ScreenshotsFolder, MainWindowIcons.ScreenshotsFolder, () => Run(MainFormCommand.ScreenshotsFolder)),
-            Item(Strings.MainMenuBuilder_History, MainWindowIcons.History, () => Run(MainFormCommand.History)),
-            Item(Strings.MainMenuBuilder_ImageHistory, MainWindowIcons.ImageHistory, () => Run(MainFormCommand.ImageHistory)),
+            Item(Strings.MainMenuBuilder_ScreenshotsFolder, AppIcons.ScreenshotsFolder, () => Run(MainFormCommand.ScreenshotsFolder)),
+            Item(Strings.MainMenuBuilder_History, AppIcons.History, () => Run(MainFormCommand.History)),
+            Item(Strings.MainMenuBuilder_ImageHistory, AppIcons.ImageHistory, () => Run(MainFormCommand.ImageHistory)),
             MainMenuEntry.Separator(),
-            Item(Strings.MainMenuBuilder_RestartAsAdministrator, MainWindowIcons.RestartAsAdmin, () => ApplicationLifecycle.Restart(true)),
-            Parent(Strings.MainMenuBuilder_RecentItems, MainWindowIcons.RecentItems, BuildRecentItemsMenu,
+            Item(Strings.MainMenuBuilder_RestartAsAdministrator, AppIcons.RestartAsAdmin, () => ApplicationLifecycle.Restart(true)),
+            Parent(Strings.MainMenuBuilder_RecentItems, AppIcons.RecentItems, BuildRecentItemsMenu,
                 ApplicationState.Settings.RecentTasksSave && ApplicationState.Settings.RecentTasksShowInTrayMenu && TaskManager.RecentManager.Tasks.Count > 0),
-            Item(Strings.MainMenuBuilder_ActionsToolbar, MainWindowIcons.Toolbar, () => TaskHelpers.ToggleActionsToolbar()),
-            Item(Strings.MainMenuBuilder_ShowShareX, MainWindowIcons.Window, MainWindowIntegration.Activate),
-            Item(Strings.MainMenuBuilder_Exit, MainWindowIcons.Exit, ApplicationLifecycle.ForceClose)
+            Item(Strings.MainMenuBuilder_ActionsToolbar, AppIcons.Toolbar, () => TaskHelpers.ToggleActionsToolbar()),
+            Item(Strings.MainMenuBuilder_ShowShareX, AppIcons.Window, MainWindowIntegration.Activate),
+            Item(Strings.MainMenuBuilder_Exit, AppIcons.Exit, ApplicationLifecycle.ForceClose)
         };
 
         return items;
@@ -124,24 +124,24 @@ internal sealed class MainMenuBuilder
         bool autoHide = !_trayMenu;
         return new List<MainMenuEntry>
         {
-            Item(Strings.MainMenuBuilder_Fullscreen, MainWindowIcons.Fullscreen, () => new CaptureFullscreen().Capture(autoHide)),
-            Parent(Strings.MainMenuBuilder_Window, MainWindowIcons.Window, BuildWindowMenu),
-            Parent(Strings.MainMenuBuilder_Monitor, MainWindowIcons.Monitor, BuildMonitorMenu),
-            Item(Strings.MainMenuBuilder_Region, MainWindowIcons.Region, () => new CaptureRegion().Capture(autoHide)),
-            Item(Strings.MainMenuBuilder_LastRegion, MainWindowIcons.LastRegion, () => new CaptureLastRegion().Capture(autoHide)),
-            Item(Strings.MainMenuBuilder_ScreenRecording, MainWindowIcons.ScreenRecording,
+            Item(Strings.MainMenuBuilder_Fullscreen, AppIcons.Fullscreen, () => new CaptureFullscreen().Capture(autoHide)),
+            Parent(Strings.MainMenuBuilder_Window, AppIcons.Window, BuildWindowMenu),
+            Parent(Strings.MainMenuBuilder_Monitor, AppIcons.Monitor, BuildMonitorMenu),
+            Item(Strings.MainMenuBuilder_Region, AppIcons.Region, () => new CaptureRegion().Capture(autoHide)),
+            Item(Strings.MainMenuBuilder_LastRegion, AppIcons.LastRegion, () => new CaptureLastRegion().Capture(autoHide)),
+            Item(Strings.MainMenuBuilder_ScreenRecording, AppIcons.ScreenRecording,
                 () => TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region)),
-            Item(Strings.MainMenuBuilder_ScreenRecordingGif, MainWindowIcons.Film,
+            Item(Strings.MainMenuBuilder_ScreenRecordingGif, AppIcons.Film,
                 () => TaskHelpers.StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region)),
-            Item(Strings.MainMenuBuilder_ScrollingCapture, MainWindowIcons.ScrollingCapture, async () => await TaskHelpers.OpenScrollingCapture()),
-            Item(Strings.MainMenuBuilder_AutoCapture, MainWindowIcons.AutoCapture, () => TaskHelpers.OpenAutoCapture()),
+            Item(Strings.MainMenuBuilder_ScrollingCapture, AppIcons.ScrollingCapture, async () => await TaskHelpers.OpenScrollingCapture()),
+            Item(Strings.MainMenuBuilder_AutoCapture, AppIcons.AutoCapture, () => TaskHelpers.OpenAutoCapture()),
             MainMenuEntry.Separator(),
-            new MainMenuEntry(Strings.MainMenuBuilder_ShowCursor, MainWindowIcons.Pointer,
+            new MainMenuEntry(Strings.MainMenuBuilder_ShowCursor, AppIcons.Pointer,
                 () => ApplicationState.DefaultTaskSettings.CaptureSettings.ShowCursor = !ApplicationState.DefaultTaskSettings.CaptureSettings.ShowCursor,
                 isChecked: ApplicationState.DefaultTaskSettings.CaptureSettings.ShowCursor,
                 toggleType: MainMenuToggleType.CheckBox),
             Parent(string.Format(Strings.ScreenshotDelay0S, ApplicationState.DefaultTaskSettings.CaptureSettings.ScreenshotDelay.ToString("0.#")),
-                MainWindowIcons.Timer, BuildScreenshotDelayMenu)
+                AppIcons.Timer, BuildScreenshotDelayMenu)
         };
     }
 
@@ -167,7 +167,7 @@ internal sealed class MainMenuBuilder
 
         if (items.Count == 0)
         {
-            items.Add(new MainMenuEntry(Strings.MainMenuBuilder_NoWindowsFound, MainWindowIcons.Window, isEnabled: false));
+            items.Add(new MainMenuEntry(Strings.MainMenuBuilder_NoWindowsFound, AppIcons.Window, isEnabled: false));
         }
 
         return items;
@@ -196,7 +196,7 @@ internal sealed class MainMenuBuilder
         {
             Rectangle bounds = screens[i].Bounds;
             string label = $"{i + 1}. {bounds.Width}x{bounds.Height}";
-            items.Add(Item(label, i == 0 ? MainWindowIcons.Monitor : MainWindowIcons.Monitor,
+            items.Add(Item(label, i == 0 ? AppIcons.Monitor : AppIcons.Monitor,
                 () => new CaptureMonitor(bounds).Capture(!_trayMenu)));
         }
 
@@ -209,7 +209,7 @@ internal sealed class MainMenuBuilder
         return Enumerable.Range(0, 6)
             .Select(delay => new MainMenuEntry(
                 string.Format(Strings.ScreenshotDelay0S, delay),
-                delay == 0 ? MainWindowIcons.TimerOff : MainWindowIcons.Timer,
+                delay == 0 ? AppIcons.TimerOff : AppIcons.Timer,
                 () => MainWindowIntegration.SetScreenshotDelay(delay),
                 isChecked: Math.Abs(current - delay) < 0.01m,
                 toggleType: MainMenuToggleType.Radio))
@@ -220,13 +220,13 @@ internal sealed class MainMenuBuilder
     {
         return new List<MainMenuEntry>
         {
-            Item(Strings.MainMenuBuilder_UploadFile, MainWindowIcons.FileUpload, () => UploadManager.UploadFile()),
-            Item(Strings.MainMenuBuilder_UploadFolder, MainWindowIcons.FolderUpload, () => UploadManager.UploadFolder()),
-            Item(Strings.MainMenuBuilder_UploadClipboard, MainWindowIcons.UploadClipboard, () => UploadManager.ClipboardUploadMainWindow()),
-            Item(Strings.MainMenuBuilder_UploadText, MainWindowIcons.FileText, async () => await UploadManager.ShowTextUploadDialog()),
-            Item(Strings.MainMenuBuilder_UploadUrl, MainWindowIcons.Link, async () => await UploadManager.UploadURL()),
-            Item(Strings.MainMenuBuilder_DragAndDropUpload, MainWindowIcons.DragDropUpload, () => TaskHelpers.OpenDropWindow()),
-            Item(Strings.MainMenuBuilder_ShortenUrl, MainWindowIcons.ShortLink, async () => await UploadManager.ShowShortenURLDialog())
+            Item(Strings.MainMenuBuilder_UploadFile, AppIcons.FileUpload, () => UploadManager.UploadFile()),
+            Item(Strings.MainMenuBuilder_UploadFolder, AppIcons.FolderUpload, () => UploadManager.UploadFolder()),
+            Item(Strings.MainMenuBuilder_UploadClipboard, AppIcons.UploadClipboard, () => UploadManager.ClipboardUploadMainWindow()),
+            Item(Strings.MainMenuBuilder_UploadText, AppIcons.FileText, async () => await UploadManager.ShowTextUploadDialog()),
+            Item(Strings.MainMenuBuilder_UploadUrl, AppIcons.Link, async () => await UploadManager.UploadURL()),
+            Item(Strings.MainMenuBuilder_DragAndDropUpload, AppIcons.DragDropUpload, () => TaskHelpers.OpenDropWindow()),
+            Item(Strings.MainMenuBuilder_ShortenUrl, AppIcons.ShortLink, async () => await UploadManager.ShowShortenURLDialog())
         };
     }
 
@@ -251,56 +251,56 @@ internal sealed class MainMenuBuilder
     [
         new(Strings.MainMenuBuilder_ToolCategoryScreen,
         [
-            Tool(nameof(Strings.MainMenuBuilder_ColorPicker), Strings.MainMenuBuilder_ColorPicker, MainWindowIcons.Palette, () => TaskHelpers.ShowColorPickerDialog()),
-            Tool(nameof(Strings.MainMenuBuilder_MouseHighlighter), Strings.MainMenuBuilder_MouseHighlighter, MainWindowIcons.MouseHighlighter, () => TaskHelpers.OpenMouseHighlighter()),
-            Tool(nameof(Strings.MainMenuBuilder_PinToScreenDialog), Strings.MainMenuBuilder_PinToScreenDialog, MainWindowIcons.Pin, () => TaskHelpers.PinToScreen()),
-            Tool(nameof(Strings.MainMenuBuilder_Ruler), Strings.MainMenuBuilder_Ruler, MainWindowIcons.Ruler, () => TaskHelpers.OpenRuler()),
-            Tool(nameof(Strings.MainMenuBuilder_ScreenColorPicker), Strings.MainMenuBuilder_ScreenColorPicker, MainWindowIcons.ScreenColorPicker, () => TaskHelpers.OpenScreenColorPicker())
+            Tool(nameof(Strings.MainMenuBuilder_ColorPicker), Strings.MainMenuBuilder_ColorPicker, AppIcons.Palette, () => TaskHelpers.ShowColorPickerDialog()),
+            Tool(nameof(Strings.MainMenuBuilder_MouseHighlighter), Strings.MainMenuBuilder_MouseHighlighter, AppIcons.MouseHighlighter, () => TaskHelpers.OpenMouseHighlighter()),
+            Tool(nameof(Strings.MainMenuBuilder_PinToScreenDialog), Strings.MainMenuBuilder_PinToScreenDialog, AppIcons.Pin, () => TaskHelpers.PinToScreen()),
+            Tool(nameof(Strings.MainMenuBuilder_Ruler), Strings.MainMenuBuilder_Ruler, AppIcons.Ruler, () => TaskHelpers.OpenRuler()),
+            Tool(nameof(Strings.MainMenuBuilder_ScreenColorPicker), Strings.MainMenuBuilder_ScreenColorPicker, AppIcons.ScreenColorPicker, () => TaskHelpers.OpenScreenColorPicker())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryImages,
         [
-            Tool(nameof(Strings.MainMenuBuilder_BackgroundRemover), Strings.MainMenuBuilder_BackgroundRemover, MainWindowIcons.BackgroundRemover, () => TaskHelpers.OpenBackgroundRemover()),
-            Tool(nameof(Strings.MainMenuBuilder_IconConverter), Strings.MainMenuBuilder_IconConverter, MainWindowIcons.IconConverter, () => TaskHelpers.OpenIconConverter()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageBeautifier), Strings.MainMenuBuilder_ImageBeautifier, MainWindowIcons.ImageBeautifier, () => TaskHelpers.OpenImageBeautifier()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageCombiner), Strings.MainMenuBuilder_ImageCombiner, MainWindowIcons.Combine, () => TaskHelpers.OpenImageCombiner()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageComparer), Strings.MainMenuBuilder_ImageComparer, MainWindowIcons.ImageComparer, () => TaskHelpers.OpenImageComparer()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageConverter), Strings.MainMenuBuilder_ImageConverter, MainWindowIcons.ImageConverter, () => TaskHelpers.OpenImageConverter()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageEditor), Strings.MainMenuBuilder_ImageEditor, MainWindowIcons.ImageEditor, () => TaskHelpers.OpenImageEditor()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageEffects), Strings.MainMenuBuilder_ImageEffects, MainWindowIcons.MagicWand, () => TaskHelpers.OpenImageEffects()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageResizer), Strings.MainMenuBuilder_ImageResizer, MainWindowIcons.Resize, () => TaskHelpers.OpenImageResizer()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageSplitter), Strings.MainMenuBuilder_ImageSplitter, MainWindowIcons.Split, () => TaskHelpers.OpenImageSplitter()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageThumbnailer), Strings.MainMenuBuilder_ImageThumbnailer, MainWindowIcons.ImageThumbnailer, () => TaskHelpers.OpenImageThumbnailer()),
-            Tool(nameof(Strings.MainMenuBuilder_PhotoEditor), Strings.MainMenuBuilder_PhotoEditor, MainWindowIcons.Layers, () => TaskHelpers.OpenPhotoEditor(),
+            Tool(nameof(Strings.MainMenuBuilder_BackgroundRemover), Strings.MainMenuBuilder_BackgroundRemover, AppIcons.BackgroundRemover, () => TaskHelpers.OpenBackgroundRemover()),
+            Tool(nameof(Strings.MainMenuBuilder_IconConverter), Strings.MainMenuBuilder_IconConverter, AppIcons.IconConverter, () => TaskHelpers.OpenIconConverter()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageBeautifier), Strings.MainMenuBuilder_ImageBeautifier, AppIcons.ImageBeautifier, () => TaskHelpers.OpenImageBeautifier()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageCombiner), Strings.MainMenuBuilder_ImageCombiner, AppIcons.Combine, () => TaskHelpers.OpenImageCombiner()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageComparer), Strings.MainMenuBuilder_ImageComparer, AppIcons.ImageComparer, () => TaskHelpers.OpenImageComparer()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageConverter), Strings.MainMenuBuilder_ImageConverter, AppIcons.ImageConverter, () => TaskHelpers.OpenImageConverter()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageEditor), Strings.MainMenuBuilder_ImageEditor, AppIcons.ImageEditor, () => TaskHelpers.OpenImageEditor()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageEffects), Strings.MainMenuBuilder_ImageEffects, AppIcons.MagicWand, () => TaskHelpers.OpenImageEffects()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageResizer), Strings.MainMenuBuilder_ImageResizer, AppIcons.Resize, () => TaskHelpers.OpenImageResizer()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageSplitter), Strings.MainMenuBuilder_ImageSplitter, AppIcons.Split, () => TaskHelpers.OpenImageSplitter()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageThumbnailer), Strings.MainMenuBuilder_ImageThumbnailer, AppIcons.ImageThumbnailer, () => TaskHelpers.OpenImageThumbnailer()),
+            Tool(nameof(Strings.MainMenuBuilder_PhotoEditor), Strings.MainMenuBuilder_PhotoEditor, AppIcons.Layers, () => TaskHelpers.OpenPhotoEditor(),
                 badgeText: Strings.MainMenuBuilder_NewBadge),
-            Tool(nameof(Strings.MainMenuBuilder_ImageViewer), Strings.MainMenuBuilder_ImageViewer, MainWindowIcons.Eye, () => TaskHelpers.OpenImageViewer()),
-            Tool(nameof(Strings.MainMenuBuilder_ImageWatermark), Strings.MainMenuBuilder_ImageWatermark, MainWindowIcons.Stamp, () => TaskHelpers.OpenImageWatermark())
+            Tool(nameof(Strings.MainMenuBuilder_ImageViewer), Strings.MainMenuBuilder_ImageViewer, AppIcons.Eye, () => TaskHelpers.OpenImageViewer()),
+            Tool(nameof(Strings.MainMenuBuilder_ImageWatermark), Strings.MainMenuBuilder_ImageWatermark, AppIcons.Stamp, () => TaskHelpers.OpenImageWatermark())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryVideo,
         [
-            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifMaker), Strings.MainMenuBuilder_AnimatedGifMaker, MainWindowIcons.AnimatedGifMaker, () => TaskHelpers.OpenAnimatedGifMaker()),
-            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifTrimmer), Strings.MainMenuBuilder_AnimatedGifTrimmer, MainWindowIcons.ScissorsFrame, () => TaskHelpers.OpenAnimatedGifTrimmer()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoConverter), Strings.MainMenuBuilder_VideoConverter, MainWindowIcons.VideoConverter, () => TaskHelpers.OpenVideoConverter()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoPlayer), Strings.MainMenuBuilder_VideoPlayer, MainWindowIcons.CirclePlay, () => TaskHelpers.OpenVideoPlayer()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoThumbnailer), Strings.MainMenuBuilder_VideoThumbnailer, MainWindowIcons.Clapperboard, () => TaskHelpers.OpenVideoThumbnailer()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoTrimmer), Strings.MainMenuBuilder_VideoTrimmer, MainWindowIcons.Scissors, () => TaskHelpers.OpenVideoTrimmer())
+            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifMaker), Strings.MainMenuBuilder_AnimatedGifMaker, AppIcons.AnimatedGifMaker, () => TaskHelpers.OpenAnimatedGifMaker()),
+            Tool(nameof(Strings.MainMenuBuilder_AnimatedGifTrimmer), Strings.MainMenuBuilder_AnimatedGifTrimmer, AppIcons.ScissorsFrame, () => TaskHelpers.OpenAnimatedGifTrimmer()),
+            Tool(nameof(Strings.MainMenuBuilder_VideoConverter), Strings.MainMenuBuilder_VideoConverter, AppIcons.VideoConverter, () => TaskHelpers.OpenVideoConverter()),
+            Tool(nameof(Strings.MainMenuBuilder_VideoPlayer), Strings.MainMenuBuilder_VideoPlayer, AppIcons.CirclePlay, () => TaskHelpers.OpenVideoPlayer()),
+            Tool(nameof(Strings.MainMenuBuilder_VideoThumbnailer), Strings.MainMenuBuilder_VideoThumbnailer, AppIcons.Clapperboard, () => TaskHelpers.OpenVideoThumbnailer()),
+            Tool(nameof(Strings.MainMenuBuilder_VideoTrimmer), Strings.MainMenuBuilder_VideoTrimmer, AppIcons.Scissors, () => TaskHelpers.OpenVideoTrimmer())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryData,
         [
-            Tool(nameof(Strings.MainMenuBuilder_AnalyzeImage), Strings.MainMenuBuilder_AnalyzeImage, MainWindowIcons.Robot, () => TaskHelpers.AnalyzeImage()),
-            Tool(nameof(Strings.MainMenuBuilder_HashChecker), Strings.MainMenuBuilder_HashChecker, MainWindowIcons.Hash, () => TaskHelpers.OpenHashCheck()),
-            Tool(nameof(Strings.MainMenuBuilder_IndexFolder), Strings.MainMenuBuilder_IndexFolder, MainWindowIcons.FolderTree, () => TaskHelpers.OpenDirectoryIndexer()),
-            Tool(nameof(Strings.MainMenuBuilder_Metadata), Strings.MainMenuBuilder_Metadata, MainWindowIcons.Tag, () => TaskHelpers.OpenMetadataWindow()),
-            Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, MainWindowIcons.TextRecognition, async () => await TaskHelpers.OCRImage()),
-            Tool(nameof(Strings.MainMenuBuilder_QRCode), Strings.MainMenuBuilder_QRCode, MainWindowIcons.QrCode, () => TaskHelpers.OpenQRCode()),
-            Tool(nameof(Strings.MainMenuBuilder_RemoteStorageBrowser), Strings.MainMenuBuilder_RemoteStorageBrowser, MainWindowIcons.RemoteStorageBrowser, () => TaskHelpers.OpenRemoteStorageBrowser())
+            Tool(nameof(Strings.MainMenuBuilder_AnalyzeImage), Strings.MainMenuBuilder_AnalyzeImage, AppIcons.Robot, () => TaskHelpers.AnalyzeImage()),
+            Tool(nameof(Strings.MainMenuBuilder_HashChecker), Strings.MainMenuBuilder_HashChecker, AppIcons.Hash, () => TaskHelpers.OpenHashCheck()),
+            Tool(nameof(Strings.MainMenuBuilder_IndexFolder), Strings.MainMenuBuilder_IndexFolder, AppIcons.FolderTree, () => TaskHelpers.OpenDirectoryIndexer()),
+            Tool(nameof(Strings.MainMenuBuilder_Metadata), Strings.MainMenuBuilder_Metadata, AppIcons.Tag, () => TaskHelpers.OpenMetadataWindow()),
+            Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, AppIcons.TextRecognition, async () => await TaskHelpers.OCRImage()),
+            Tool(nameof(Strings.MainMenuBuilder_QRCode), Strings.MainMenuBuilder_QRCode, AppIcons.QrCode, () => TaskHelpers.OpenQRCode()),
+            Tool(nameof(Strings.MainMenuBuilder_RemoteStorageBrowser), Strings.MainMenuBuilder_RemoteStorageBrowser, AppIcons.RemoteStorageBrowser, () => TaskHelpers.OpenRemoteStorageBrowser())
         ]),
         new(Strings.MainMenuBuilder_ToolCategorySystem,
         [
-            Tool(nameof(Strings.MainMenuBuilder_BorderlessWindow), Strings.MainMenuBuilder_BorderlessWindow, MainWindowIcons.BorderlessWindow, () => TaskHelpers.OpenBorderlessWindow()),
-            Tool(nameof(Strings.MainMenuBuilder_ClipboardViewer), Strings.MainMenuBuilder_ClipboardViewer, MainWindowIcons.ClipboardViewer, () => TaskHelpers.OpenClipboardViewer()),
-            Tool(nameof(Strings.MainMenuBuilder_InspectWindow), Strings.MainMenuBuilder_InspectWindow, MainWindowIcons.InspectWindow, () => TaskHelpers.OpenInspectWindow()),
-            Tool(nameof(Strings.MainMenuBuilder_MonitorTest), Strings.MainMenuBuilder_MonitorTest, MainWindowIcons.MonitorTest, () => TaskHelpers.OpenMonitorTest()),
-            Tool(nameof(Strings.MainMenuBuilder_NetworkMonitor), Strings.MainMenuBuilder_NetworkMonitor, MainWindowIcons.Activity, () => TaskHelpers.OpenNetworkMonitor())
+            Tool(nameof(Strings.MainMenuBuilder_BorderlessWindow), Strings.MainMenuBuilder_BorderlessWindow, AppIcons.BorderlessWindow, () => TaskHelpers.OpenBorderlessWindow()),
+            Tool(nameof(Strings.MainMenuBuilder_ClipboardViewer), Strings.MainMenuBuilder_ClipboardViewer, AppIcons.ClipboardViewer, () => TaskHelpers.OpenClipboardViewer()),
+            Tool(nameof(Strings.MainMenuBuilder_InspectWindow), Strings.MainMenuBuilder_InspectWindow, AppIcons.InspectWindow, () => TaskHelpers.OpenInspectWindow()),
+            Tool(nameof(Strings.MainMenuBuilder_MonitorTest), Strings.MainMenuBuilder_MonitorTest, AppIcons.MonitorTest, () => TaskHelpers.OpenMonitorTest()),
+            Tool(nameof(Strings.MainMenuBuilder_NetworkMonitor), Strings.MainMenuBuilder_NetworkMonitor, AppIcons.Activity, () => TaskHelpers.OpenNetworkMonitor())
         ])
     ];
 
@@ -325,7 +325,7 @@ internal sealed class MainMenuBuilder
                     title += $"    {workflow.HotkeyInfo}";
                 }
 
-                items.Add(Item(title, TaskHelpers.FindMenuLucideIcon(workflow.TaskSettings.Job),
+                items.Add(Item(title, TaskHelpers.FindMenuIcon(workflow.TaskSettings.Job),
                     async () => await TaskHelpers.ExecuteJob(workflow.TaskSettings)));
             }
         }
@@ -337,7 +337,7 @@ internal sealed class MainMenuBuilder
                 items.Add(MainMenuEntry.Separator());
             }
 
-            items.Add(Item(Strings.MainMenuBuilder_AddWorkflowsFromHotkeySettings, MainWindowIcons.Keyboard,
+            items.Add(Item(Strings.MainMenuBuilder_AddWorkflowsFromHotkeySettings, AppIcons.Keyboard,
                 () => Run(MainFormCommand.HotkeySettings)));
         }
 
@@ -420,41 +420,41 @@ internal sealed class MainMenuBuilder
 
     internal static string GetAfterCaptureTaskIcon(AfterCaptureTasks task) => task switch
     {
-        AfterCaptureTasks.ShowQuickTaskMenu => MainWindowIcons.Menu,
-        AfterCaptureTasks.ShowAfterCaptureWindow => MainWindowIcons.Window,
-        AfterCaptureTasks.BeautifyImage => MainWindowIcons.ImageBeautifier,
-        AfterCaptureTasks.AddImageEffects => MainWindowIcons.MagicWand,
-        AfterCaptureTasks.AnnotateImage => MainWindowIcons.ImageEditor,
-        AfterCaptureTasks.OpenInPhotoEditor => MainWindowIcons.Layers,
-        AfterCaptureTasks.CopyImageToClipboard => MainWindowIcons.ClipboardImage,
-        AfterCaptureTasks.PinToScreen => MainWindowIcons.Pin,
-        AfterCaptureTasks.SendImageToPrinter => MainWindowIcons.Printer,
-        AfterCaptureTasks.SaveImageToFile => MainWindowIcons.Save,
-        AfterCaptureTasks.SaveImageToFileWithDialog => MainWindowIcons.SaveAs,
-        AfterCaptureTasks.SaveThumbnailImageToFile => MainWindowIcons.ImageDownload,
-        AfterCaptureTasks.PerformActions => MainWindowIcons.Terminal,
-        AfterCaptureTasks.CopyFileToClipboard => MainWindowIcons.ClipboardCopy,
-        AfterCaptureTasks.CopyFilePathToClipboard => MainWindowIcons.ClipboardList,
-        AfterCaptureTasks.CopyFolderPathToClipboard => MainWindowIcons.FolderBookmark,
-        AfterCaptureTasks.ShowInExplorer => MainWindowIcons.FolderOpen,
-        AfterCaptureTasks.AnalyzeImage => MainWindowIcons.Robot,
-        AfterCaptureTasks.ScanQRCode => MainWindowIcons.QrCode,
-        AfterCaptureTasks.DoOCR => MainWindowIcons.TextRecognition,
-        AfterCaptureTasks.ShowBeforeUploadWindow => MainWindowIcons.Window,
-        AfterCaptureTasks.UploadImageToHost => MainWindowIcons.CloudUpload,
-        AfterCaptureTasks.DeleteFile => MainWindowIcons.Trash,
-        _ => MainWindowIcons.Circle
+        AfterCaptureTasks.ShowQuickTaskMenu => AppIcons.Menu,
+        AfterCaptureTasks.ShowAfterCaptureWindow => AppIcons.Window,
+        AfterCaptureTasks.BeautifyImage => AppIcons.ImageBeautifier,
+        AfterCaptureTasks.AddImageEffects => AppIcons.MagicWand,
+        AfterCaptureTasks.AnnotateImage => AppIcons.ImageEditor,
+        AfterCaptureTasks.OpenInPhotoEditor => AppIcons.Layers,
+        AfterCaptureTasks.CopyImageToClipboard => AppIcons.ClipboardImage,
+        AfterCaptureTasks.PinToScreen => AppIcons.Pin,
+        AfterCaptureTasks.SendImageToPrinter => AppIcons.Printer,
+        AfterCaptureTasks.SaveImageToFile => AppIcons.Save,
+        AfterCaptureTasks.SaveImageToFileWithDialog => AppIcons.SaveAs,
+        AfterCaptureTasks.SaveThumbnailImageToFile => AppIcons.ImageDownload,
+        AfterCaptureTasks.PerformActions => AppIcons.Terminal,
+        AfterCaptureTasks.CopyFileToClipboard => AppIcons.ClipboardCopy,
+        AfterCaptureTasks.CopyFilePathToClipboard => AppIcons.ClipboardList,
+        AfterCaptureTasks.CopyFolderPathToClipboard => AppIcons.FolderBookmark,
+        AfterCaptureTasks.ShowInExplorer => AppIcons.FolderOpen,
+        AfterCaptureTasks.AnalyzeImage => AppIcons.Robot,
+        AfterCaptureTasks.ScanQRCode => AppIcons.QrCode,
+        AfterCaptureTasks.DoOCR => AppIcons.TextRecognition,
+        AfterCaptureTasks.ShowBeforeUploadWindow => AppIcons.Window,
+        AfterCaptureTasks.UploadImageToHost => AppIcons.CloudUpload,
+        AfterCaptureTasks.DeleteFile => AppIcons.Trash,
+        _ => AppIcons.Circle
     };
 
     private static string GetAfterUploadTaskIcon(AfterUploadTasks task) => task switch
     {
-        AfterUploadTasks.ShowAfterUploadWindow => MainWindowIcons.Window,
-        AfterUploadTasks.UseURLShortener => MainWindowIcons.ShortLink,
-        AfterUploadTasks.ShareURL => MainWindowIcons.Share,
-        AfterUploadTasks.CopyURLToClipboard => MainWindowIcons.ClipboardLink,
-        AfterUploadTasks.OpenURL => MainWindowIcons.ExternalLink,
-        AfterUploadTasks.ShowQRCode => MainWindowIcons.QrCode,
-        _ => MainWindowIcons.Circle
+        AfterUploadTasks.ShowAfterUploadWindow => AppIcons.Window,
+        AfterUploadTasks.UseURLShortener => AppIcons.ShortLink,
+        AfterUploadTasks.ShareURL => AppIcons.Share,
+        AfterUploadTasks.CopyURLToClipboard => AppIcons.ClipboardLink,
+        AfterUploadTasks.OpenURL => AppIcons.ExternalLink,
+        AfterUploadTasks.ShowQRCode => AppIcons.QrCode,
+        _ => AppIcons.Circle
     };
 
     private static IReadOnlyList<MainMenuEntry> BuildDestinationsMenu() =>
@@ -465,19 +465,19 @@ internal sealed class MainMenuBuilder
         return new List<MainMenuEntry>
         {
             Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_,
-                () => GetImageUploaderName(settings), MainWindowIcons.Image, () => BuildImageDestinations(settings)),
+                () => GetImageUploaderName(settings), AppIcons.Image, () => BuildImageDestinations(settings)),
             Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_,
-                () => GetTextUploaderName(settings), MainWindowIcons.FileText, () => BuildTextDestinations(settings)),
+                () => GetTextUploaderName(settings), AppIcons.FileText, () => BuildTextDestinations(settings)),
             Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_,
-                () => settings.FileDestination.GetLocalizedDescription(), MainWindowIcons.FileUpload, () => BuildEnumDestinations(
+                () => settings.FileDestination.GetLocalizedDescription(), AppIcons.FileUpload, () => BuildEnumDestinations(
                 settings.FileDestination,
                 value => settings.FileDestination = value)),
             Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_,
-                () => settings.URLShortenerDestination.GetLocalizedDescription(), MainWindowIcons.ShortLink, () => BuildEnumDestinations(
+                () => settings.URLShortenerDestination.GetLocalizedDescription(), AppIcons.ShortLink, () => BuildEnumDestinations(
                 settings.URLShortenerDestination,
                 value => settings.URLShortenerDestination = value)),
             Parent(Strings.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
-                () => settings.URLSharingServiceDestination.GetLocalizedDescription(), MainWindowIcons.Share, () => BuildEnumDestinations(
+                () => settings.URLSharingServiceDestination.GetLocalizedDescription(), AppIcons.Share, () => BuildEnumDestinations(
                 settings.URLSharingServiceDestination,
                 value => settings.URLSharingServiceDestination = value))
         };
@@ -554,12 +554,12 @@ internal sealed class MainMenuBuilder
         bool uploadsEnabled = !SystemOptions.DisableUpload;
         return new List<MainMenuEntry>
         {
-            Item(Strings.MainMenuBuilder_ShowDebugLog, MainWindowIcons.FileText, () => Run(MainFormCommand.DebugLog)),
-            Item(Strings.MainMenuBuilder_TestImageUpload, MainWindowIcons.ImageUpload, () => Run(MainFormCommand.TestImageUpload), uploadsEnabled),
-            Item(Strings.MainMenuBuilder_TestTextUpload, MainWindowIcons.FileUpload, () => Run(MainFormCommand.TestTextUpload), uploadsEnabled),
-            Item(Strings.MainMenuBuilder_TestFileUpload, MainWindowIcons.Upload, () => Run(MainFormCommand.TestFileUpload), uploadsEnabled),
-            Item(Strings.MainMenuBuilder_TestUrlShortener, MainWindowIcons.ShortLink, () => Run(MainFormCommand.TestUrlShortener), uploadsEnabled),
-            Item(Strings.MainMenuBuilder_TestUrlSharing, MainWindowIcons.Share, () => Run(MainFormCommand.TestUrlSharing), uploadsEnabled)
+            Item(Strings.MainMenuBuilder_ShowDebugLog, AppIcons.FileText, () => Run(MainFormCommand.DebugLog)),
+            Item(Strings.MainMenuBuilder_TestImageUpload, AppIcons.ImageUpload, () => Run(MainFormCommand.TestImageUpload), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_TestTextUpload, AppIcons.FileUpload, () => Run(MainFormCommand.TestTextUpload), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_TestFileUpload, AppIcons.Upload, () => Run(MainFormCommand.TestFileUpload), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_TestUrlShortener, AppIcons.ShortLink, () => Run(MainFormCommand.TestUrlShortener), uploadsEnabled),
+            Item(Strings.MainMenuBuilder_TestUrlSharing, AppIcons.Share, () => Run(MainFormCommand.TestUrlSharing), uploadsEnabled)
         };
     }
 
@@ -573,18 +573,18 @@ internal sealed class MainMenuBuilder
 
         return tasks.Select(task => Parent(task.TrayMenuText, GetRecentTaskIcon(task), () => new List<MainMenuEntry>
         {
-            Item(Strings.MainMenuBuilder_Copy, MainWindowIcons.Copy, task.Copy),
-            Item(Strings.MainMenuBuilder_Open, MainWindowIcons.ExternalLink, task.Open)
+            Item(Strings.MainMenuBuilder_Copy, AppIcons.Copy, task.Copy),
+            Item(Strings.MainMenuBuilder_Open, AppIcons.ExternalLink, task.Open)
         })).ToArray();
     }
 
     private static string GetRecentTaskIcon(RecentTask task)
     {
-        if (!string.IsNullOrEmpty(task.ShortenedURL) || !string.IsNullOrEmpty(task.URL)) return MainWindowIcons.Link;
-        if (FileHelpers.IsVideoFile(task.FilePath)) return MainWindowIcons.FileVideo;
-        if (FileHelpers.IsTextFile(task.FilePath)) return MainWindowIcons.FileText;
-        if (FileHelpers.IsImageFile(task.FilePath)) return MainWindowIcons.FileImage;
-        return MainWindowIcons.File;
+        if (!string.IsNullOrEmpty(task.ShortenedURL) || !string.IsNullOrEmpty(task.URL)) return AppIcons.Link;
+        if (FileHelpers.IsVideoFile(task.FilePath)) return AppIcons.FileVideo;
+        if (FileHelpers.IsTextFile(task.FilePath)) return AppIcons.FileText;
+        if (FileHelpers.IsImageFile(task.FilePath)) return AppIcons.FileImage;
+        return AppIcons.File;
     }
 
     private static void Run(MainFormCommand command) => MainWindowIntegration.ExecuteCommand(command);

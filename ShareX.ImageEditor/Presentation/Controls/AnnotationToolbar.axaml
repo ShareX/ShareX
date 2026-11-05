@@ -7,7 +7,7 @@
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
              xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
              xmlns:theming="clr-namespace:ShareX.ImageEditor.Presentation.Theming;assembly=ShareX.ImageEditor"
-             xmlns:icons="clr-namespace:ShareX.AvaloniaUI.Theming;assembly=ShareX.Avalonia"
+             xmlns:icons="using:ShareX.Icons"
              xmlns:iconControls="clr-namespace:ShareX.AvaloniaUI.Controls;assembly=ShareX.Avalonia"
              x:Class="ShareX.ImageEditor.Presentation.Controls.AnnotationToolbar"
              x:Name="AnnotationToolbarRoot"
@@ -57,22 +57,18 @@
                                             HorizontalContentAlignment="Stretch"
                                             IsVisible="{Binding IsFileMenu}">
                                         <Grid ColumnDefinitions="Auto,*,Auto">
-                                            <TextBlock Grid.Column="0"
-                                                       Text="{Binding Icon}"
-                                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                       FontWeight="Normal"
-                                                       FontSize="24"
-                                                       VerticalAlignment="Center"/>
+                                            <iconControls:IconPresenter Grid.Column="0"
+                                                                        Icon="{Binding Icon}"
+                                                                        FontSize="24"
+                                                                        VerticalAlignment="Center"/>
                                             <Border Grid.Column="1"/>
-                                            <TextBlock Grid.Column="2"
-                                                       Classes="dropdown-chevron"
-                                                       Classes.open="{Binding #FileMenuButton.Flyout.IsOpen}"
-                                                       Text="{x:Static theming:EditorIcons.ChevronDown}"
-                                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                       FontWeight="Normal"
-                                                       FontSize="10"
-                                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                       VerticalAlignment="Center"/>
+                                            <iconControls:IconPresenter Grid.Column="2"
+                                                                        Classes="dropdown-chevron"
+                                                                        Classes.open="{Binding #FileMenuButton.Flyout.IsOpen}"
+                                                                        Icon="{x:Static theming:EditorIcons.ChevronDown}"
+                                                                        FontSize="10"
+                                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                        VerticalAlignment="Center"/>
                                         </Grid>
                                         <Button.Flyout>
                                             <MenuFlyout Placement="BottomEdgeAlignedLeft" VerticalOffset="4">
@@ -80,21 +76,21 @@
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.NewImageCommand}"
                                                           InputGesture="Ctrl+N">
                                                     <MenuItem.Icon>
-                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.FileNew}"/>
+                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileNew}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_OpenEllipsis}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.OpenImageCommand}"
                                                           InputGesture="Ctrl+O">
                                                     <MenuItem.Icon>
-                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.FileOpen}"/>
+                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileOpen}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Openrecent}"
                                                           IsVisible="{Binding #AnnotationToolbarRoot.DataContext.HasRecentImageFiles}"
                                                           ItemsSource="{Binding #AnnotationToolbarRoot.DataContext.RecentImageMenuItems}">
                                                     <MenuItem.Icon>
-                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static icons:LucideIcons.history}"/>
+                                                        <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.History}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <Separator/>
@@ -102,14 +98,14 @@
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.SaveCommand}"
                                                           InputGesture="Ctrl+S">
                                                     <MenuItem.Icon>
-                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.FileSave}"/>
+                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileSave}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_SaveasEllipsis}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.SaveAsCommand}"
                                                           InputGesture="Ctrl+Shift+S">
                                                     <MenuItem.Icon>
-                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.FileSaveAs}"/>
+                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileSaveAs}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                                 <Separator/>
@@ -117,7 +113,7 @@
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.ExitEditorCommand}"
                                                           InputGesture="Escape">
                                                     <MenuItem.Icon>
-                                                        <TextBlock FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Text="{x:Static theming:EditorIcons.FileExit}"/>
+                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileExit}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
                                             </MenuFlyout>

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class ConfettiImageEffect : ImageEffectBase
     public override string Id => "confetti";
     public override string Name => "Confetti";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.party_popper;
+    public override string IconKey => ImageEffectIcons.PartyPopper;
     public override string Description => "Scatters colorful confetti pieces over the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -33,6 +33,7 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Localization;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 
 namespace ShareX.AvaloniaUI;
 
@@ -218,22 +219,22 @@ internal partial class MessageBoxWindow : Window
 
     private void ConfigureIcon(MessageBoxIcon icon)
     {
-        string? iconText = icon switch
+        string? iconKey = icon switch
         {
-            MessageBoxIcon.Error => LucideIcons.circle_x,
-            MessageBoxIcon.Question => LucideIcons.circle_question_mark,
-            MessageBoxIcon.Warning => LucideIcons.triangle_alert,
-            MessageBoxIcon.Information => LucideIcons.info,
+            MessageBoxIcon.Error => AppIcons.CircleX,
+            MessageBoxIcon.Question => AppIcons.Help,
+            MessageBoxIcon.Warning => AppIcons.Warning,
+            MessageBoxIcon.Information => AppIcons.Info,
             _ => null
         };
 
-        if (iconText == null)
+        if (iconKey == null)
         {
             IconContainer.IsVisible = false;
             return;
         }
 
-        IconText.Text = iconText;
+        IconText.Icon = iconKey;
         IconText.Foreground = icon switch
         {
             MessageBoxIcon.Error => new SolidColorBrush(ErrorColor),

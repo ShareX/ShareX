@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class CrystalizeShardsImageEffect : ImageEffectBase
     public override string Id => "crystalize_shards";
     public override string Name => "Crystalize shards";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.diamond;
+    public override string IconKey => ImageEffectIcons.Diamond;
     public override string Description => "Breaks the image into crystalline Voronoi shards with edge highlights.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

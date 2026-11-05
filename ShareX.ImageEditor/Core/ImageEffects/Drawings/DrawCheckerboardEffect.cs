@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -36,7 +36,7 @@ public sealed class DrawCheckerboardEffect : ImageEffectBase
     public override string Id => "draw_checkerboard";
     public override string Name => "Checkerboard";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.grid_2x2_check;
+    public override string IconKey => ImageEffectIcons.Checkerboard;
     public override string Description => "Draws a checkerboard pattern behind the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

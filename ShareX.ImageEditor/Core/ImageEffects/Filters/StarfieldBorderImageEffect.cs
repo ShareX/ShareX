@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class StarfieldBorderImageEffect : ImageEffectBase
     public override string Id => "starfield_border";
     public override string Name => "Starfield border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.orbit;
+    public override string IconKey => ImageEffectIcons.Orbit;
     public override string Description => "Adds a cosmic starfield border with scattered stars, nebula wisps, and subtle color tints.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

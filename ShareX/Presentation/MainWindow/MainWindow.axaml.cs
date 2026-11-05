@@ -398,7 +398,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (section.CreateChildren != null || section.CreateCategories != null)
         {
-            IconPresenter chevron = CreateAccentMenuIcon(MainWindowIcons.ChevronRight, 14);
+            IconPresenter chevron = CreateAccentMenuIcon(AppIcons.ChevronRight, 14);
             chevron.Margin = new Thickness(5, 0, 0, 0);
             chevron.Opacity = 0.7;
             Grid.SetColumn(chevron, 3);
@@ -580,7 +580,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Orientation = Avalonia.Layout.Orientation.Horizontal,
             Spacing = 6
         };
-        content.Children.Add(CreateAccentMenuIcon(isEditing ? MainWindowIcons.Check : MainWindowIcons.Edit, 14));
+        content.Children.Add(CreateAccentMenuIcon(isEditing ? AppIcons.Check : AppIcons.Edit, 14));
         content.Children.Add(new TextBlock
         {
             Text = isEditing ? Strings.MainMenuBuilder_FinishEditingTools : Strings.MainMenuBuilder_EditTools,
@@ -1503,65 +1503,65 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         List<MainMenuEntry> entries = new()
         {
-            Item(Strings.MainWindow_ShowErrors, MainWindowIcons.Warning, _uploadInfoManager.ShowErrors,
+            Item(Strings.MainWindow_ShowErrors, AppIcons.Warning, _uploadInfoManager.ShowErrors,
                 hasSelection && !isWorking && selected!.Info.Result.IsError),
-            Item(Strings.MainWindow_StopUpload, MainWindowIcons.CircleStop, _uploadInfoManager.StopUpload, isWorking),
-            Submenu(Strings.MainWindow_Open, MainWindowIcons.ExternalLink, () => BuildOpenTaskMenu(selected, statuses), hasSelection),
-            Submenu(Strings.MainWindow_Copy, MainWindowIcons.Copy, () => BuildCopyTaskMenu(selected, statuses), hasSelection && !isWorking),
-            Item(Strings.MainWindow_UploadSelectedFile, MainWindowIcons.FileUpload, _uploadInfoManager.Upload,
+            Item(Strings.MainWindow_StopUpload, AppIcons.CircleStop, _uploadInfoManager.StopUpload, isWorking),
+            Submenu(Strings.MainWindow_Open, AppIcons.ExternalLink, () => BuildOpenTaskMenu(selected, statuses), hasSelection),
+            Submenu(Strings.MainWindow_Copy, AppIcons.Copy, () => BuildCopyTaskMenu(selected, statuses), hasSelection && !isWorking),
+            Item(Strings.MainWindow_UploadSelectedFile, AppIcons.FileUpload, _uploadInfoManager.Upload,
                 !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsFileExist,
                 new KeyGesture(Key.U, KeyModifiers.Control)),
-            Item(Strings.MainWindow_DownloadSelectedUrl, MainWindowIcons.Download, _uploadInfoManager.Download,
+            Item(Strings.MainWindow_DownloadSelectedUrl, AppIcons.Download, _uploadInfoManager.Download,
                 hasSelection && !isWorking && selected!.IsFileURL,
                 new KeyGesture(Key.D, KeyModifiers.Control)),
-            Item(Strings.MainWindow_EditImage, MainWindowIcons.ImageEditor, _uploadInfoManager.EditImage,
+            Item(Strings.MainWindow_EditImage, AppIcons.ImageEditor, _uploadInfoManager.EditImage,
                 hasSelection && !isWorking && selected!.IsImageFile,
                 new KeyGesture(Key.E, KeyModifiers.Control)),
-            Item(Strings.MainWindow_EditImageInPhotoEditor, MainWindowIcons.Layers, _uploadInfoManager.EditImageInPhotoEditor,
+            Item(Strings.MainWindow_EditImageInPhotoEditor, AppIcons.Layers, _uploadInfoManager.EditImageInPhotoEditor,
                 hasSelection && !isWorking && statuses.Any(x => x.IsImageFile)),
-            Item(Strings.MainWindow_ResizeImage, MainWindowIcons.Resize, _uploadInfoManager.ResizeImages,
+            Item(Strings.MainWindow_ResizeImage, AppIcons.Resize, _uploadInfoManager.ResizeImages,
                 hasSelection && !isWorking && statuses.Any(x => x.IsImageFile)),
-            Item(Strings.MainWindow_TrimVideo, MainWindowIcons.Scissors, _uploadInfoManager.TrimVideo,
+            Item(Strings.MainWindow_TrimVideo, AppIcons.Scissors, _uploadInfoManager.TrimVideo,
                 hasSelection && !isWorking && selected!.IsVideoFile),
-            Item(Strings.MainWindow_TrimAnimatedGif, MainWindowIcons.Scissors, _uploadInfoManager.TrimAnimatedGif,
+            Item(Strings.MainWindow_TrimAnimatedGif, AppIcons.Scissors, _uploadInfoManager.TrimAnimatedGif,
                 hasSelection && !isWorking && selected!.IsFileExist &&
                 string.Equals(Path.GetExtension(selected.Info.FilePath), ".gif", StringComparison.OrdinalIgnoreCase)),
-            Item(Strings.MainWindow_BeautifyImage, MainWindowIcons.ImageBeautifier, _uploadInfoManager.BeautifyImage,
+            Item(Strings.MainWindow_BeautifyImage, AppIcons.ImageBeautifier, _uploadInfoManager.BeautifyImage,
                 hasSelection && !isWorking && selected!.IsImageFile),
-            Item(Strings.MainWindow_AddImageEffects, MainWindowIcons.MagicWand, _uploadInfoManager.AddImageEffects,
+            Item(Strings.MainWindow_AddImageEffects, AppIcons.MagicWand, _uploadInfoManager.AddImageEffects,
                 hasSelection && !isWorking && selected!.IsImageFile),
-            Item(Strings.MainWindow_PinToScreen, MainWindowIcons.Pin, _uploadInfoManager.PinToScreen,
+            Item(Strings.MainWindow_PinToScreen, AppIcons.Pin, _uploadInfoManager.PinToScreen,
                 hasSelection && !isWorking && selected!.IsImageFile,
                 new KeyGesture(Key.P, KeyModifiers.Control)),
-            Submenu(Strings.MainWindow_RunAction, MainWindowIcons.Play, () => BuildExternalActionsMenu(selected),
+            Submenu(Strings.MainWindow_RunAction, AppIcons.Play, () => BuildExternalActionsMenu(selected),
                 hasSelection && !isWorking && HasExternalActions(selected!.Info.FilePath)),
-            Item(Strings.MainWindow_DeleteSelectedItem, MainWindowIcons.Trash, RemoveSelectedTasks, hasSelection && !isWorking,
+            Item(Strings.MainWindow_DeleteSelectedItem, AppIcons.Trash, RemoveSelectedTasks, hasSelection && !isWorking,
                 new KeyGesture(Key.Delete)),
-            Item(Strings.MainWindow_DeleteSelectedFile, MainWindowIcons.FileDelete, DeleteSelectedFiles,
+            Item(Strings.MainWindow_DeleteSelectedFile, AppIcons.FileDelete, DeleteSelectedFiles,
                 hasSelection && !isWorking && selected!.IsFileExist,
                 new KeyGesture(Key.Delete, KeyModifiers.Shift)),
-            Item(Strings.MainWindow_DeleteItemRemotely, MainWindowIcons.CloudOff, DeleteSelectedItemRemotelyAsync,
+            Item(Strings.MainWindow_DeleteItemRemotely, AppIcons.CloudOff, DeleteSelectedItemRemotelyAsync,
                 canDeleteRemotely),
-            Submenu(Strings.MainWindow_ShortenSelectedUrl, MainWindowIcons.ShortLink, BuildUrlShortenerMenu,
+            Submenu(Strings.MainWindow_ShortenSelectedUrl, AppIcons.ShortLink, BuildUrlShortenerMenu,
                 !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsURLExist),
-            Submenu(Strings.MainWindow_ShareSelectedUrl, MainWindowIcons.Share, BuildUrlSharingMenu,
+            Submenu(Strings.MainWindow_ShareSelectedUrl, AppIcons.Share, BuildUrlSharingMenu,
                 !SystemOptions.DisableUpload && hasSelection && !isWorking && selected!.IsURLExist),
-            Item(Strings.MainWindow_AnalyzeImage, MainWindowIcons.Robot, _uploadInfoManager.AnalyzeImage,
+            Item(Strings.MainWindow_AnalyzeImage, AppIcons.Robot, _uploadInfoManager.AnalyzeImage,
                 hasSelection && !isWorking && selected!.IsImageFile),
-            Item(Strings.MainWindow_SearchWithGoogleLens, MainWindowIcons.Search, _uploadInfoManager.SearchImageUsingGoogleLens,
+            Item(Strings.MainWindow_SearchWithGoogleLens, AppIcons.Search, _uploadInfoManager.SearchImageUsingGoogleLens,
                 hasSelection && !isWorking && selected!.IsURLExist),
-            Item(Strings.MainWindow_SearchWithBingVisualSearch, MainWindowIcons.InspectWindow, _uploadInfoManager.SearchImageUsingBing,
+            Item(Strings.MainWindow_SearchWithBingVisualSearch, AppIcons.InspectWindow, _uploadInfoManager.SearchImageUsingBing,
                 hasSelection && !isWorking && selected!.IsURLExist),
-            Item(Strings.MainWindow_ShowQRCode, MainWindowIcons.QrCode, _uploadInfoManager.ShowQRCode,
+            Item(Strings.MainWindow_ShowQRCode, AppIcons.QrCode, _uploadInfoManager.ShowQRCode,
                 hasSelection && !isWorking && selected!.IsURLExist),
-            Item(Strings.MainWindow_OCRImage, MainWindowIcons.TextRecognition, async () => await _uploadInfoManager.OCRImage(),
+            Item(Strings.MainWindow_OCRImage, AppIcons.TextRecognition, async () => await _uploadInfoManager.OCRImage(),
                 hasSelection && !isWorking && selected!.IsImageFile),
-            Submenu(Strings.MainWindow_CombineImagesDialog, MainWindowIcons.Combine, BuildCombineImagesMenu,
+            Submenu(Strings.MainWindow_CombineImagesDialog, AppIcons.Combine, BuildCombineImagesMenu,
                 hasSelection && !isWorking && statuses.Count(x => x.IsImageFile) > 1),
-            Item(Strings.MainWindow_ShowResponse, MainWindowIcons.FileText, _uploadInfoManager.ShowResponse,
+            Item(Strings.MainWindow_ShowResponse, AppIcons.FileText, _uploadInfoManager.ShowResponse,
                 hasSelection && !isWorking && !string.IsNullOrEmpty(selected!.Info.Result.Response)),
             MainMenuEntry.Separator(),
-            Item(Strings.MainWindow_ClearThumbnailView, MainWindowIcons.ClearList, ClearTasks, ThumbnailItems.Count > 0)
+            Item(Strings.MainWindow_ClearThumbnailView, AppIcons.ClearList, ClearTasks, ThumbnailItems.Count > 0)
         };
 
         return BuildContextMenu(entries);
@@ -1571,17 +1571,17 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         return new List<MainMenuEntry>
         {
-            Item(Strings.MainWindow_Url, MainWindowIcons.Link, _uploadInfoManager.OpenURL, selected?.IsURLExist == true,
+            Item(Strings.MainWindow_Url, AppIcons.Link, _uploadInfoManager.OpenURL, selected?.IsURLExist == true,
                 new KeyGesture(Key.Enter)),
-            Item(Strings.MainWindow_ShortenedUrl, MainWindowIcons.ShortLink, _uploadInfoManager.OpenShortenedURL, selected?.IsShortenedURLExist == true),
-            Item(Strings.MainWindow_ThumbnailUrl, MainWindowIcons.Image, _uploadInfoManager.OpenThumbnailURL, selected?.IsThumbnailURLExist == true),
-            Item(Strings.MainWindow_DeletionUrl, MainWindowIcons.Trash, _uploadInfoManager.OpenDeletionURL, selected?.IsDeletionURLExist == true),
+            Item(Strings.MainWindow_ShortenedUrl, AppIcons.ShortLink, _uploadInfoManager.OpenShortenedURL, selected?.IsShortenedURLExist == true),
+            Item(Strings.MainWindow_ThumbnailUrl, AppIcons.Image, _uploadInfoManager.OpenThumbnailURL, selected?.IsThumbnailURLExist == true),
+            Item(Strings.MainWindow_DeletionUrl, AppIcons.Trash, _uploadInfoManager.OpenDeletionURL, selected?.IsDeletionURLExist == true),
             MainMenuEntry.Separator(),
-            Item(Strings.MainWindow_File, MainWindowIcons.File, _uploadInfoManager.OpenFile, selected?.IsFileExist == true,
+            Item(Strings.MainWindow_File, AppIcons.File, _uploadInfoManager.OpenFile, selected?.IsFileExist == true,
                 new KeyGesture(Key.Enter, KeyModifiers.Control)),
-            Item(Strings.MainWindow_Folder, MainWindowIcons.FolderOpen, _uploadInfoManager.OpenFolder, selected?.IsFileExist == true,
+            Item(Strings.MainWindow_Folder, AppIcons.FolderOpen, _uploadInfoManager.OpenFolder, selected?.IsFileExist == true,
                 new KeyGesture(Key.Enter, KeyModifiers.Shift)),
-            Item(Strings.MainWindow_ThumbnailFile, MainWindowIcons.FileImage, _uploadInfoManager.OpenThumbnailFile, selected?.IsThumbnailFileExist == true)
+            Item(Strings.MainWindow_ThumbnailFile, AppIcons.FileImage, _uploadInfoManager.OpenThumbnailFile, selected?.IsThumbnailFileExist == true)
         };
     }
 
@@ -1589,36 +1589,36 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         List<MainMenuEntry> entries = new()
         {
-            Item(Strings.MainWindow_Url, MainWindowIcons.Link, _uploadInfoManager.CopyURL, statuses.Any(x => x.IsURLExist),
+            Item(Strings.MainWindow_Url, AppIcons.Link, _uploadInfoManager.CopyURL, statuses.Any(x => x.IsURLExist),
                 new KeyGesture(Key.C, KeyModifiers.Control)),
-            Item(Strings.MainWindow_ShortenedUrl, MainWindowIcons.ShortLink, _uploadInfoManager.CopyShortenedURL, statuses.Any(x => x.IsShortenedURLExist)),
-            Item(Strings.MainWindow_ThumbnailUrl, MainWindowIcons.Image, _uploadInfoManager.CopyThumbnailURL, statuses.Any(x => x.IsThumbnailURLExist)),
-            Item(Strings.MainWindow_DeletionUrl, MainWindowIcons.Trash, _uploadInfoManager.CopyDeletionURL, statuses.Any(x => x.IsDeletionURLExist)),
+            Item(Strings.MainWindow_ShortenedUrl, AppIcons.ShortLink, _uploadInfoManager.CopyShortenedURL, statuses.Any(x => x.IsShortenedURLExist)),
+            Item(Strings.MainWindow_ThumbnailUrl, AppIcons.Image, _uploadInfoManager.CopyThumbnailURL, statuses.Any(x => x.IsThumbnailURLExist)),
+            Item(Strings.MainWindow_DeletionUrl, AppIcons.Trash, _uploadInfoManager.CopyDeletionURL, statuses.Any(x => x.IsDeletionURLExist)),
             MainMenuEntry.Separator(),
-            Item(Strings.MainWindow_File, MainWindowIcons.File, _uploadInfoManager.CopyFile, selected?.IsFileExist == true,
+            Item(Strings.MainWindow_File, AppIcons.File, _uploadInfoManager.CopyFile, selected?.IsFileExist == true,
                 new KeyGesture(Key.C, KeyModifiers.Shift)),
-            Item(Strings.MainWindow_Image, MainWindowIcons.Image, _uploadInfoManager.CopyImage, selected?.IsImageFile == true,
+            Item(Strings.MainWindow_Image, AppIcons.Image, _uploadInfoManager.CopyImage, selected?.IsImageFile == true,
                 new KeyGesture(Key.C, KeyModifiers.Alt)),
-            Item(Strings.MainWindow_ImageDimensions, MainWindowIcons.Ruler, _uploadInfoManager.CopyImageDimensions, selected?.IsImageFile == true),
-            Item(Strings.MainWindow_Text, MainWindowIcons.FileText, _uploadInfoManager.CopyText, selected?.IsTextFile == true),
-            Item(Strings.MainWindow_ThumbnailFile, MainWindowIcons.FileImage, _uploadInfoManager.CopyThumbnailFile, selected?.IsThumbnailFileExist == true),
-            Item(Strings.MainWindow_ThumbnailImage, MainWindowIcons.Images, _uploadInfoManager.CopyThumbnailImage, selected?.IsThumbnailFileExist == true),
+            Item(Strings.MainWindow_ImageDimensions, AppIcons.Ruler, _uploadInfoManager.CopyImageDimensions, selected?.IsImageFile == true),
+            Item(Strings.MainWindow_Text, AppIcons.FileText, _uploadInfoManager.CopyText, selected?.IsTextFile == true),
+            Item(Strings.MainWindow_ThumbnailFile, AppIcons.FileImage, _uploadInfoManager.CopyThumbnailFile, selected?.IsThumbnailFileExist == true),
+            Item(Strings.MainWindow_ThumbnailImage, AppIcons.Images, _uploadInfoManager.CopyThumbnailImage, selected?.IsThumbnailFileExist == true),
             MainMenuEntry.Separator(),
-            Item(Strings.MainWindow_HtmlLink, MainWindowIcons.Code, _uploadInfoManager.CopyHTMLLink, statuses.Any(x => x.IsURLExist)),
-            Item(Strings.MainWindow_HtmlImage, MainWindowIcons.FileCode, _uploadInfoManager.CopyHTMLImage, statuses.Any(x => x.IsImageURL)),
-            Item(Strings.MainWindow_HtmlLinkedImage, MainWindowIcons.Braces, _uploadInfoManager.CopyHTMLLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
-            Item(Strings.MainWindow_ForumLink, MainWindowIcons.Message, _uploadInfoManager.CopyForumLink, statuses.Any(x => x.IsURLExist)),
-            Item(Strings.MainWindow_ForumImage, MainWindowIcons.Messages, _uploadInfoManager.CopyForumImage, statuses.Any(x => x.IsImageURL && x.IsURLExist)),
-            Item(Strings.MainWindow_ForumLinkedImage, MainWindowIcons.MessageShare, _uploadInfoManager.CopyForumLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
-            Item(Strings.MainWindow_MarkdownLink, MainWindowIcons.Link, _uploadInfoManager.CopyMarkdownLink, statuses.Any(x => x.IsURLExist)),
-            Item(Strings.MainWindow_MarkdownImage, MainWindowIcons.Image, _uploadInfoManager.CopyMarkdownImage, statuses.Any(x => x.IsImageURL)),
-            Item(Strings.MainWindow_MarkdownLinkedImage, MainWindowIcons.Images, _uploadInfoManager.CopyMarkdownLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
+            Item(Strings.MainWindow_HtmlLink, AppIcons.Code, _uploadInfoManager.CopyHTMLLink, statuses.Any(x => x.IsURLExist)),
+            Item(Strings.MainWindow_HtmlImage, AppIcons.FileCode, _uploadInfoManager.CopyHTMLImage, statuses.Any(x => x.IsImageURL)),
+            Item(Strings.MainWindow_HtmlLinkedImage, AppIcons.Braces, _uploadInfoManager.CopyHTMLLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
+            Item(Strings.MainWindow_ForumLink, AppIcons.Message, _uploadInfoManager.CopyForumLink, statuses.Any(x => x.IsURLExist)),
+            Item(Strings.MainWindow_ForumImage, AppIcons.Messages, _uploadInfoManager.CopyForumImage, statuses.Any(x => x.IsImageURL && x.IsURLExist)),
+            Item(Strings.MainWindow_ForumLinkedImage, AppIcons.MessageShare, _uploadInfoManager.CopyForumLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
+            Item(Strings.MainWindow_MarkdownLink, AppIcons.Link, _uploadInfoManager.CopyMarkdownLink, statuses.Any(x => x.IsURLExist)),
+            Item(Strings.MainWindow_MarkdownImage, AppIcons.Image, _uploadInfoManager.CopyMarkdownImage, statuses.Any(x => x.IsImageURL)),
+            Item(Strings.MainWindow_MarkdownLinkedImage, AppIcons.Images, _uploadInfoManager.CopyMarkdownLinkedImage, statuses.Any(x => x.IsImageURL && x.IsThumbnailURLExist)),
             MainMenuEntry.Separator(),
-            Item(Strings.MainWindow_FilePath, MainWindowIcons.FilePath, _uploadInfoManager.CopyFilePath, statuses.Any(x => x.IsFilePathValid),
+            Item(Strings.MainWindow_FilePath, AppIcons.FilePath, _uploadInfoManager.CopyFilePath, statuses.Any(x => x.IsFilePathValid),
                 new KeyGesture(Key.C, KeyModifiers.Control | KeyModifiers.Shift)),
-            Item(Strings.MainWindow_FileName, MainWindowIcons.File, _uploadInfoManager.CopyFileName, statuses.Any(x => x.IsFilePathValid)),
-            Item(Strings.MainWindow_FileNameWithExtension, MainWindowIcons.Files, _uploadInfoManager.CopyFileNameWithExtension, statuses.Any(x => x.IsFilePathValid)),
-            Item(Strings.MainWindow_Folder, MainWindowIcons.Folder, _uploadInfoManager.CopyFolder, statuses.Any(x => x.IsFilePathValid))
+            Item(Strings.MainWindow_FileName, AppIcons.File, _uploadInfoManager.CopyFileName, statuses.Any(x => x.IsFilePathValid)),
+            Item(Strings.MainWindow_FileNameWithExtension, AppIcons.Files, _uploadInfoManager.CopyFileNameWithExtension, statuses.Any(x => x.IsFilePathValid)),
+            Item(Strings.MainWindow_Folder, AppIcons.Folder, _uploadInfoManager.CopyFolder, statuses.Any(x => x.IsFilePathValid))
         };
 
         if (ApplicationState.Settings.ClipboardContentFormats?.Count > 0)
@@ -1627,7 +1627,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             foreach (ClipboardFormat format in ApplicationState.Settings.ClipboardContentFormats)
             {
                 ClipboardFormat selectedFormat = format;
-                entries.Add(Item(selectedFormat.Description, MainWindowIcons.ClipboardCopy,
+                entries.Add(Item(selectedFormat.Description, AppIcons.ClipboardCopy,
                     () => _uploadInfoManager.CopyCustomFormat(selectedFormat.Format)));
             }
         }
@@ -1644,22 +1644,22 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         string filePath = selected?.Info.FilePath ?? string.Empty;
         return ApplicationState.DefaultTaskSettings.ExternalPrograms
             .Where(x => !string.IsNullOrEmpty(x.Name) && x.CheckExtension(filePath))
-            .Select(action => Item(action.Name.Truncate(50, "..."), MainWindowIcons.Play,
+            .Select(action => Item(action.Name.Truncate(50, "..."), AppIcons.Play,
                 async () => await action.RunAsync(filePath))).ToArray();
     }
 
     private IReadOnlyList<MainMenuEntry> BuildUrlShortenerMenu() =>
-        Helpers.GetEnums<UrlShortenerType>().Select(value => Item(value.GetLocalizedDescription(), MainWindowIcons.ShortLink,
+        Helpers.GetEnums<UrlShortenerType>().Select(value => Item(value.GetLocalizedDescription(), AppIcons.ShortLink,
             () => _uploadInfoManager.ShortenURL(value))).ToArray();
 
     private IReadOnlyList<MainMenuEntry> BuildUrlSharingMenu() =>
-        Helpers.GetEnums<URLSharingServices>().Select(value => Item(value.GetLocalizedDescription(), MainWindowIcons.Share,
+        Helpers.GetEnums<URLSharingServices>().Select(value => Item(value.GetLocalizedDescription(), AppIcons.Share,
             () => _uploadInfoManager.ShareURL(value))).ToArray();
 
     private IReadOnlyList<MainMenuEntry> BuildCombineImagesMenu() => new List<MainMenuEntry>
     {
-            Item(Strings.MainWindow_Horizontally, MainWindowIcons.Rows, () => _uploadInfoManager.CombineImages(ImageOrientation.Horizontal)),
-            Item(Strings.MainWindow_Vertically, MainWindowIcons.Columns, () => _uploadInfoManager.CombineImages(ImageOrientation.Vertical))
+            Item(Strings.MainWindow_Horizontally, AppIcons.Rows, () => _uploadInfoManager.CombineImages(ImageOrientation.Horizontal)),
+            Item(Strings.MainWindow_Vertically, AppIcons.Columns, () => _uploadInfoManager.CombineImages(ImageOrientation.Vertical))
     };
 
     private void RemoveSelectedTasks()
@@ -1781,7 +1781,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (sender is Control control)
         {
             ContextMenu menu = BuildContextMenu([
-            Item(Strings.MainWindow_ClearThumbnailView, MainWindowIcons.ClearList, ClearTasks)
+            Item(Strings.MainWindow_ClearThumbnailView, AppIcons.ClearList, ClearTasks)
             ]);
             TryOpenContextMenu(menu, control, PlacementMode.Pointer);
             e.Handled = true;

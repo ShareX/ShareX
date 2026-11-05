@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -42,7 +42,7 @@ public sealed class ChannelSwapImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "channel_swap";
     public override string Name => "Channel swap";
-    public override string IconKey => LucideIcons.shuffle;
+    public override string IconKey => ImageEffectIcons.Shuffle;
     public override string Description => "Swaps color channels for creative color effects.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

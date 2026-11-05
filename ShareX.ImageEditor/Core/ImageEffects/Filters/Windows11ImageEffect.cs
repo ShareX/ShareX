@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class Windows11ImageEffect : ImageEffectBase
     public override string Id => "windows11_window";
     public override string Name => "Windows 11";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.monitor;
+    public override string IconKey => AppIcons.Monitor;
     public override string Description => "Wraps the image in a Windows 11-style window frame with a title bar and window controls.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

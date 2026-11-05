@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class WatercolorKuwaharaImageEffect : ImageEffectBase
     public override string Id => "watercolor_kuwahara";
     public override string Name => "Watercolor / Kuwahara";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.paintbrush;
+    public override string IconKey => ImageEffectIcons.PaintBrush;
     public override string Description => "Applies a Kuwahara filter for a watercolor painting effect.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
              xmlns:res="using:ShareX.ImageEditor.Localization"
              xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
              xmlns:editorTheming="using:ShareX.ImageEditor.Presentation.Theming"
@@ -64,11 +65,9 @@
                             ToolTip.Placement="Top"
                             ToolTip.VerticalOffset="-5"
                             ZIndex="0">
-                        <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionCancel}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                   FontSize="18"
-                                   FontWeight="Normal"
-                                   VerticalAlignment="Center"/>
+                        <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionCancel}"
+                                                    FontSize="18"
+                                                    VerticalAlignment="Center"/>
                     </Button>
 
                     <Button Command="{Binding ContinueCommand}"
@@ -84,13 +83,11 @@
                             ToolTip.Placement="Top"
                             ToolTip.VerticalOffset="-5"
                             ZIndex="20">
-                        <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionContinue}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                   FontSize="22"
-                                   FontWeight="Normal"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   Margin="4,0,0,0"/>
+                        <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionContinue}"
+                                                    FontSize="22"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center"
+                                                    Margin="4,0,0,0"/>
                     </Button>
                 </Grid>
 
@@ -101,10 +98,8 @@
                         ToolTip.Tip="{x:Static res:Strings.EditorView_CopyimagetoclipboardCtrlC}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionCopy}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
+                    <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionCopy}"
+                                                FontSize="18"/>
                 </Button>
 
                 <Button Command="{Binding SaveCommand}"
@@ -114,10 +109,8 @@
                         ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageCtrlS}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSave}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
+                    <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionSave}"
+                                                FontSize="18"/>
                 </Button>
 
                 <Button Command="{Binding SaveAsCommand}"
@@ -127,10 +120,8 @@
                         ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageasEllipsisCtrlShiftS}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionSaveAs}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
+                    <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionSaveAs}"
+                                                FontSize="18"/>
                 </Button>
 
                 <Button Command="{Binding PinToScreenCommand}"
@@ -141,10 +132,8 @@
                         ToolTip.Tip="{x:Static res:Strings.EditorView_PinimagetoscreenCtrlP}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionPinToScreen}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
+                    <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionPinToScreen}"
+                                                FontSize="18"/>
                 </Button>
 
                 <Button Command="{Binding PrintCommand}"
@@ -155,10 +144,8 @@
                         ToolTip.Tip="{x:Static res:Strings.EditorView_PrintimageEllipsisCtrlShiftP}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionPrint}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
+                    <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionPrint}"
+                                                FontSize="18"/>
                 </Button>
 
                 <Button Command="{Binding UploadCommand}"
@@ -169,10 +156,8 @@
                         ToolTip.Tip="{x:Static res:Strings.EditorView_UploadimageCtrlU}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
-                    <TextBlock Text="{x:Static editorTheming:EditorIcons.ActionUpload}"
-                               FontSize="18"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"/>
+                    <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionUpload}"
+                                                FontSize="18"/>
                 </Button>
             </StackPanel>
         </Border>

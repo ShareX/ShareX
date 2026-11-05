@@ -28,7 +28,6 @@ using Avalonia.Controls;
 using Avalonia.Controls.Documents;
 using Avalonia.Layout;
 using Avalonia.Media;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.Icons;
 
 namespace ShareX.AvaloniaUI.Controls;

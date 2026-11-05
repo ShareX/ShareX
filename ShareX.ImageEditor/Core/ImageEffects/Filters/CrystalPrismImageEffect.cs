@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class CrystalPrismImageEffect : ImageEffectBase
     public override string Id => "crystal_prism";
     public override string Name => "Crystal prism";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.gem;
+    public override string IconKey => ImageEffectIcons.Gem;
     public override string Description => "Refracts and disperses light through crystal-like facets.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

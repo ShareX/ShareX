@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class EdgeDetectImageEffect : ImageEffectBase
     public override string Id => "edge_detect";
     public override string Name => "Edge detect";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.scan_search;
+    public override string IconKey => AppIcons.InspectWindow;
     public override string Description => "Detects visible edges in the image.";
     public override EffectExecutionMode ExecutionMode => EffectExecutionMode.Immediate;
 

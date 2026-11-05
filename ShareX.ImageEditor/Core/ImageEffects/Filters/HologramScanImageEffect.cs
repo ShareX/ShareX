@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class HologramScanImageEffect : ImageEffectBase
     public override string Id => "hologram_scan";
     public override string Name => "Hologram scan";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.scan_face;
+    public override string IconKey => ImageEffectIcons.ScanFace;
     public override string Description => "Applies a holographic scanline effect with glitch and glow.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

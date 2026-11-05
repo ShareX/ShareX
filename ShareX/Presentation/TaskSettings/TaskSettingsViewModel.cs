@@ -26,7 +26,7 @@
 #nullable enable
 
 using ShareX.AvaloniaUI.Controls;
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.Localization;
 using System;
 using System.Collections.ObjectModel;
@@ -72,28 +72,28 @@ public sealed class TaskSettingsViewModel : INotifyPropertyChanged
 
         if (!isDefault)
         {
-            NavigationItems.Add(new SettingsNavigationItem("task", Strings.TaskSettingsWindow_Task, LucideIcons.keyboard));
+            NavigationItems.Add(new SettingsNavigationItem("task", Strings.TaskSettingsWindow_Task, AppIcons.Keyboard));
         }
 
-        NavigationItems.Add(Parent("general", Strings.TaskSettingsWindow_General, LucideIcons.settings,
-            Child("general-notifications", Strings.TaskSettingsWindow_Notifications, LucideIcons.bell)));
-        NavigationItems.Add(Parent("image", Strings.TaskSettingsWindow_Image, LucideIcons.image,
-            Child("image-effects", Strings.TaskSettingsWindow_Effects, LucideIcons.wand_sparkles),
-            Child("image-thumbnail", Strings.TaskSettingsWindow_Thumbnail, LucideIcons.images)));
-        NavigationItems.Add(Parent("capture", Strings.TaskSettingsWindow_Capture, LucideIcons.camera,
-            Child("capture-region", Strings.TaskSettingsWindow_RegionCapture, LucideIcons.crop),
-            Child("capture-screen-recorder", Strings.TaskSettingsWindow_ScreenRecorder, LucideIcons.video),
-            Child("capture-ocr", Strings.TaskSettingsWindow_OCR, LucideIcons.scan_text)));
-        NavigationItems.Add(Parent("upload", Strings.TaskSettingsWindow_Upload, LucideIcons.upload,
-            Child("upload-file-naming", Strings.TaskSettingsWindow_FileNaming, LucideIcons.file_pen),
-            Child("upload-clipboard", Strings.TaskSettingsWindow_ClipboardUpload, LucideIcons.clipboard),
-            Child("upload-filters", Strings.TaskSettingsWindow_UploaderFilters, LucideIcons.filter)));
-        NavigationItems.Add(Parent("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench,
-            Child("tools-image-editor", Strings.TaskSettingsWindow_ImageEditor, LucideIcons.image),
-            Child("tools-mouse-highlighter", Strings.MouseHighlighter, LucideIcons.mouse_pointer_click)));
-        NavigationItems.Add(Parent("actions", Strings.TaskSettingsWindow_Actions, LucideIcons.zap));
-        NavigationItems.Add(Parent("watch-folders", Strings.TaskSettingsWindow_WatchFolders, LucideIcons.folder_search));
-        NavigationItems.Add(Parent("advanced", Strings.TaskSettingsWindow_Advanced, LucideIcons.sliders_horizontal));
+        NavigationItems.Add(Parent("general", Strings.TaskSettingsWindow_General, AppIcons.Settings,
+            Child("general-notifications", Strings.TaskSettingsWindow_Notifications, AppIcons.Bell)));
+        NavigationItems.Add(Parent("image", Strings.TaskSettingsWindow_Image, AppIcons.Image,
+            Child("image-effects", Strings.TaskSettingsWindow_Effects, AppIcons.MagicWand),
+            Child("image-thumbnail", Strings.TaskSettingsWindow_Thumbnail, AppIcons.Images)));
+        NavigationItems.Add(Parent("capture", Strings.TaskSettingsWindow_Capture, AppIcons.Camera,
+            Child("capture-region", Strings.TaskSettingsWindow_RegionCapture, AppIcons.Crop),
+            Child("capture-screen-recorder", Strings.TaskSettingsWindow_ScreenRecorder, AppIcons.Video),
+            Child("capture-ocr", Strings.TaskSettingsWindow_OCR, AppIcons.TextRecognition)));
+        NavigationItems.Add(Parent("upload", Strings.TaskSettingsWindow_Upload, AppIcons.Upload,
+            Child("upload-file-naming", Strings.TaskSettingsWindow_FileNaming, AppIcons.FileEdit),
+            Child("upload-clipboard", Strings.TaskSettingsWindow_ClipboardUpload, AppIcons.Clipboard),
+            Child("upload-filters", Strings.TaskSettingsWindow_UploaderFilters, AppIcons.Filter)));
+        NavigationItems.Add(Parent("tools", Strings.TaskSettingsWindow_Tools, AppIcons.Wrench,
+            Child("tools-image-editor", Strings.TaskSettingsWindow_ImageEditor, AppIcons.Image),
+            Child("tools-mouse-highlighter", Strings.MouseHighlighter, AppIcons.PointerClick)));
+        NavigationItems.Add(Parent("actions", Strings.TaskSettingsWindow_Actions, AppIcons.Zap));
+        NavigationItems.Add(Parent("watch-folders", Strings.TaskSettingsWindow_WatchFolders, AppIcons.FolderSearch));
+        NavigationItems.Add(Parent("advanced", Strings.TaskSettingsWindow_Advanced, AppIcons.Sliders));
 
         SelectedNavigationItem = isDefault
             ? NavigationItems.SelectMany(x => x.Children).First(x => x.Id == "general-notifications")

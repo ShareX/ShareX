@@ -27,7 +27,6 @@
 
 using Avalonia;
 using ShareX.AvaloniaUI.Imaging;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.ObjectModel;
@@ -36,6 +35,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
+using ShareX.Icons;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingSize = System.Drawing.Size;
@@ -81,7 +81,7 @@ public sealed class ImageHistoryEntry : INotifyPropertyChanged, IDisposable
     public bool ShowPlaceholder => Thumbnail == null;
     public bool IsVideo => FileHelpers.IsVideoFile(Item.FilePath);
     public bool ShowPlayIcon => HasThumbnail && IsVideo;
-    public string PlaceholderIcon => IsVideo ? LucideIcons.file_video : LucideIcons.image;
+    public string PlaceholderIcon => IsVideo ? AppIcons.FileVideo : AppIcons.Image;
 
     public AvaloniaBitmap? Thumbnail
     {

@@ -28,8 +28,8 @@
 using Avalonia.Platform;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Controls;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using System;
 using System.Collections.Generic;
@@ -880,18 +880,18 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     {
         return
         [
-            Nav("general", Strings.ApplicationSettingsWindow_General, LucideIcons.settings),
-            Nav("theme", Strings.ApplicationSettingsWindow_Theme, LucideIcons.palette),
-            Nav("integration", Strings.ApplicationSettingsWindow_Integration, LucideIcons.plug),
-            Nav("paths", Strings.ApplicationSettingsWindow_Paths, LucideIcons.folder),
-            Nav("settings", Strings.ApplicationSettingsWindow_Settings, LucideIcons.database_backup),
-            Nav("main-window", Strings.ApplicationSettingsWindow_MainWindow, LucideIcons.monitor),
-            Nav("clipboard-formats", Strings.ApplicationSettingsWindow_ClipboardFormats, LucideIcons.clipboard_list),
-            Nav("upload", Strings.ApplicationSettingsWindow_Upload, LucideIcons.upload),
-            Nav("history", Strings.ApplicationSettingsWindow_History, LucideIcons.history),
-            Nav("print", Strings.ApplicationSettingsWindow_Print, LucideIcons.printer),
-            Nav("proxy", Strings.ApplicationSettingsWindow_Proxy, LucideIcons.network),
-            Nav("advanced", Strings.ApplicationSettingsWindow_Advanced, LucideIcons.sliders_horizontal)
+            Nav("general", Strings.ApplicationSettingsWindow_General, AppIcons.Settings),
+            Nav("theme", Strings.ApplicationSettingsWindow_Theme, AppIcons.Palette),
+            Nav("integration", Strings.ApplicationSettingsWindow_Integration, AppIcons.Plug),
+            Nav("paths", Strings.ApplicationSettingsWindow_Paths, AppIcons.Folder),
+            Nav("settings", Strings.ApplicationSettingsWindow_Settings, AppIcons.DatabaseBackup),
+            Nav("main-window", Strings.ApplicationSettingsWindow_MainWindow, AppIcons.Monitor),
+            Nav("clipboard-formats", Strings.ApplicationSettingsWindow_ClipboardFormats, AppIcons.ClipboardList),
+            Nav("upload", Strings.ApplicationSettingsWindow_Upload, AppIcons.Upload),
+            Nav("history", Strings.ApplicationSettingsWindow_History, AppIcons.History),
+            Nav("print", Strings.ApplicationSettingsWindow_Print, AppIcons.Printer),
+            Nav("proxy", Strings.ApplicationSettingsWindow_Proxy, AppIcons.Network),
+            Nav("advanced", Strings.ApplicationSettingsWindow_Advanced, AppIcons.Sliders)
         ];
     }
 
@@ -1067,7 +1067,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
                 x,
                 x.GetLocalizedDescription(),
                 LoadLanguageFlag(x),
-                x == SupportedLanguage.Automatic ? LucideIcons.languages : null))
+                x == SupportedLanguage.Automatic ? AppIcons.Language : null))
             .ToArray();
 
     private static AvaloniaBitmap? LoadLanguageFlag(SupportedLanguage language)

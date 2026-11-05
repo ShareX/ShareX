@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class ColorDepthImageEffect : ImageEffectBase
     public override string Id => "color_depth";
     public override string Name => "Color depth";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.layers_2;
+    public override string IconKey => AppIcons.Layers;
     public override string Description => "Reduces the number of bits per color channel.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

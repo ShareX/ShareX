@@ -1,11 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
         xmlns:res="using:ShareX.Localization"
         xmlns:controls="using:ShareX.AvaloniaUI.Controls"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         xmlns:imageEditorControls="using:ShareX.ImageEditor.Presentation.Controls"
         mc:Ignorable="d"
         d:DesignWidth="950"
@@ -29,7 +29,7 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
-        <Style Selector="TextBlock.page-title-icon">
+        <Style Selector="controls|IconPresenter.page-title-icon">
             <Setter Property="FontSize" Value="22"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -111,7 +111,7 @@
                         BorderThickness="1"
                         CornerRadius="5">
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
-                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}" FontSize="17"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}" FontSize="17"/>
                         <TextBlock Grid.Column="1" Text="{x:Static res:Strings.ApplicationSettingsWindow_RestartShareXToApplyThisChange}" FontWeight="Normal" VerticalAlignment="Center"/>
                         <Button Grid.Column="2" Classes="compact" Content="{x:Static res:Strings.ApplicationSettingsWindow_RestartNow}" Click="OnRestartClick"/>
                     </Grid>
@@ -136,7 +136,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="general" IsVisible="{Binding IsGeneralPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.settings}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Settings}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_General}"/>
                             </Grid>
 
@@ -152,8 +152,8 @@
                                                 <DataTemplate x:DataType="local:LanguageOption">
                                                     <StackPanel Orientation="Horizontal" Spacing="8">
                                                         <Grid Width="16" Height="16">
-                                                            <TextBlock Classes="icon" Text="{Binding IconGlyph}" FontSize="16"
-                                                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            <controls:IconPresenter Icon="{Binding IconGlyph}" FontSize="16"
+                                                                                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                             <Image Source="{Binding Flag}" Stretch="Uniform"/>
                                                         </Grid>
                                                         <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
@@ -211,7 +211,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="theme" IsVisible="{Binding IsThemePage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.palette}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Palette}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Theme}"/>
                             </Grid>
 
@@ -260,7 +260,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="integration" IsVisible="{Binding IsIntegrationPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.plug}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Plug}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Integration}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
@@ -306,7 +306,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="paths" IsVisible="{Binding IsPathsPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.folder}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Folder}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Paths}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
@@ -350,7 +350,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="settings" IsVisible="{Binding IsSettingsPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.database_backup}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.DatabaseBackup}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Settings}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
@@ -386,7 +386,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="main-window" IsVisible="{Binding IsMainWindowPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.monitor}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Monitor}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_MainWindow}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
@@ -417,7 +417,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="clipboard-formats" IsVisible="{Binding IsClipboardFormatsPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.clipboard_list}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.ClipboardList}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_ClipboardFormats}"/>
                             </Grid>
                             <TextBlock Classes="hint" Margin="0,0,0,8" Text="{x:Static res:Strings.ApplicationSettingsWindow_TheseFormatsAppearUnderTheCopySubmenuInTheMainWindowContextMenu}"/>
@@ -450,7 +450,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="upload" IsVisible="{Binding IsUploadPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.upload}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Upload}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Upload}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
@@ -479,7 +479,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="history" IsVisible="{Binding IsHistoryPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.history}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.History}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_History}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
@@ -509,7 +509,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="print" IsVisible="{Binding IsPrintPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.printer}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Printer}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Print}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
@@ -530,7 +530,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="proxy" IsVisible="{Binding IsProxyPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.network}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Network}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Proxy}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
@@ -564,7 +564,7 @@
                     <ScrollViewer controls:SettingsSearch.PageId="advanced" IsVisible="{Binding IsAdvancedPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                                <TextBlock Classes="icon page-title-icon" Text="{x:Static theming:LucideIcons.sliders_horizontal}"/>
+                                <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Sliders}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Advanced}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
@@ -749,11 +749,10 @@
                         CornerRadius="8">
                     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.clipboard_list}"
-                                       FontSize="21"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.ClipboardList}"
+                                                    FontSize="21"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="ClipboardFormatEditorTitle"
                                            Text="{x:Static res:Strings.ApplicationSettingsWindow_AddClipboardFormat}"

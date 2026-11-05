@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="940" d:DesignHeight="600"
         x:Class="ShareX.Tools.OCRWindow"
         x:DataType="vm:OCRViewModel"
@@ -21,13 +22,13 @@
                     <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="8">
                         <Button Command="{Binding SelectRegionCommand}" IsEnabled="{Binding IsIdle}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.crop}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Crop}"/>
                                 <TextBlock Text="{x:Static localization:Strings.OCRWindow_Select_region}"/>
                             </StackPanel>
                         </Button>
                         <Button Command="{Binding SelectImageCommand}" IsEnabled="{Binding IsIdle}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Image}"/>
                                 <TextBlock Text="{x:Static localization:Strings.OCRWindow_Select_image}"/>
                             </StackPanel>
                         </Button>
@@ -52,7 +53,7 @@
                                         Command="{Binding OpenHelpCommand}"
                                         ToolTip.Tip="{x:Static localization:Strings.OCRWindow_OCR_help}"
                                         Padding="10,7">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.circle_help}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Help}"/>
                                 </Button>
                             </Grid>
                             <Grid Grid.Row="2" ColumnDefinitions="90,*" ColumnSpacing="8">
@@ -86,7 +87,7 @@
                                         Command="{Binding EditServicesCommand}"
                                         ToolTip.Tip="{x:Static localization:Strings.OCRWindow_Edit_services}"
                                         Padding="10,7">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Settings}"/>
                                 </Button>
                             </Grid>
                             <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="30">
@@ -98,7 +99,7 @@
                                     IsEnabled="{Binding CanUseResult}"
                                     HorizontalAlignment="Stretch">
                                 <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Center">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.ExternalLink}"/>
                                     <TextBlock Text="{x:Static localization:Strings.OCRWindow_Open_service}"/>
                                 </StackPanel>
                             </Button>
@@ -112,7 +113,7 @@
                             <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Result}" VerticalAlignment="Center"/>
                             <Button Grid.Column="1" Command="{Binding CopyAllCommand}" IsEnabled="{Binding CanUseResult}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
                                     <TextBlock Text="{x:Static localization:Strings.OCRWindow_Copy_all}"/>
                                 </StackPanel>
                             </Button>
@@ -133,11 +134,10 @@
                                         MaxWidth="420"
                                         Spacing="10"
                                         IsHitTestVisible="False">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.triangle_alert}"
-                                           FontSize="38"
-                                           Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
-                                           HorizontalAlignment="Center"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}"
+                                                        FontSize="38"
+                                                        Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                                        HorizontalAlignment="Center"/>
                                 <TextBlock Text="{Binding ErrorMessage}"
                                            FontWeight="Normal"
                                            TextWrapping="Wrap"
@@ -161,19 +161,19 @@
                             <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8">
                                 <Button Command="{Binding NewServiceCommand}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
-                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
+                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Plus}"/>
                                         <TextBlock Text="{x:Static localization:Strings.OCRWindow_New}"/>
                                     </StackPanel>
                                 </Button>
                                 <Button Command="{Binding RemoveServiceCommand}" IsEnabled="{Binding HasEditingService}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
-                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
+                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}"/>
                                         <TextBlock Text="{x:Static localization:Strings.OCRWindow_Remove}"/>
                                     </StackPanel>
                                 </Button>
                                 <Button Command="{Binding ResetServicesCommand}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
-                                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
+                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}"/>
                                         <TextBlock Text="{x:Static localization:Strings.OCRWindow_Reset}"/>
                                     </StackPanel>
                                 </Button>

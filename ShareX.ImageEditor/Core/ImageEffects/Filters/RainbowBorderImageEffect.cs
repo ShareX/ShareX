@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class RainbowBorderImageEffect : ImageEffectBase
     public override string Id => "rainbow_border";
     public override string Name => "Rainbow border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.rainbow;
+    public override string IconKey => ImageEffectIcons.Rainbow;
     public override string Description => "Adds a vivid rainbow gradient border that cycles through the full color spectrum.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

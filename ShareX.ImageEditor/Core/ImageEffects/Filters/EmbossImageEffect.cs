@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class EmbossImageEffect : ImageEffectBase
     public override string Id => "emboss";
     public override string Name => "Emboss";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.stamp;
+    public override string IconKey => AppIcons.Stamp;
     public override string Description => "Applies an emboss effect.";
     public override EffectExecutionMode ExecutionMode => EffectExecutionMode.Immediate;
 

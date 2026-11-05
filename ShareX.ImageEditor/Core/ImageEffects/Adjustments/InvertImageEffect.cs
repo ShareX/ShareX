@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Adjustments;
@@ -32,7 +32,7 @@ public sealed class InvertImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "invert";
     public override string Name => "Invert";
-    public override string IconKey => LucideIcons.refresh_ccw_dot;
+    public override string IconKey => ImageEffectIcons.Invert;
     public override string Description => "Inverts image colors.";
     public override EffectExecutionMode ExecutionMode => EffectExecutionMode.Immediate;
 

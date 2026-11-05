@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class ColorizeImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "colorize";
     public override string Name => "Colorize";
-    public override string IconKey => LucideIcons.palette;
+    public override string IconKey => AppIcons.Palette;
     public override string Description => "Colorizes the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -1,6 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         x:Class="ShareX.NotificationWindow"
         x:CompileBindings="False"
         CanResize="False"
@@ -70,12 +71,11 @@
                                 Height="34"
                                 CornerRadius="9"
                                 Background="{DynamicResource ShareX.Brush.Accent}">
-                            <TextBlock Text="{x:Static theming:LucideIcons.image}"
-                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                       FontSize="17"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Image}"
+                                                    FontSize="17"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center"/>
                         </Border>
                         <StackPanel Grid.Column="1" Spacing="3" VerticalAlignment="Center">
                             <TextBlock x:Name="TitleText"

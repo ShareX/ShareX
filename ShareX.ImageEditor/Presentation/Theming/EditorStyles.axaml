@@ -1,8 +1,9 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:iconControls="using:ShareX.AvaloniaUI.Controls">
     <StyleInclude Source="avares://ShareX.ImageEditor/Presentation/Controls/EffectSlider.axaml" />
     <!-- Editor layout primitives -->
-    <Style Selector="TextBlock.dropdown-chevron">
+    <Style Selector="iconControls|IconPresenter.dropdown-chevron">
         <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
         <Setter Property="RenderTransform" Value="rotate(0deg)"/>
         <Setter Property="Transitions">

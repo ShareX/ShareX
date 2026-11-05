@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class ShadowImageEffect : ImageEffectBase
     public override string Id => "shadow";
     public override string Name => "Shadow";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.cloud_moon;
+    public override string IconKey => ImageEffectIcons.CloudMoon;
     public override string Description => "Adds a drop shadow to the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

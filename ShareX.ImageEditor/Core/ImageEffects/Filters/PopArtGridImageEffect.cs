@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class PopArtGridImageEffect : ImageEffectBase
     public override string Id => "pop_art_grid";
     public override string Name => "Pop art grid";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.grid_2x2;
+    public override string IconKey => AppIcons.Split;
     public override string Description => "Creates an Andy Warhol-style 2\u00d72 pop art grid with color variations.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

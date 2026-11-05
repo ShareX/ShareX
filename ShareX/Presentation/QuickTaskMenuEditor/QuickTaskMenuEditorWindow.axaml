@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
         xmlns:res="using:ShareX.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="760"
         d:DesignHeight="640"
@@ -81,19 +82,19 @@
                     <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,*,Auto">
                         <Button Grid.Column="0" Classes="compact" Click="OnAddClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Plus}"/>
                                 <TextBlock Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_Add}"/>
                             </StackPanel>
                         </Button>
                         <Button x:Name="EditButton" Grid.Column="1" Classes="compact" Click="OnEditClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings_2}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Settings}"/>
                                 <TextBlock Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_Edit}"/>
                             </StackPanel>
                         </Button>
                         <Button x:Name="RemoveButton" Grid.Column="2" Classes="compact" Click="OnRemoveClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}"/>
                                 <TextBlock Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_Remove}"/>
                             </StackPanel>
                         </Button>
@@ -102,18 +103,18 @@
                                 Classes="square"
                                 ToolTip.Tip="{x:Static res:Strings.QuickTaskMenuEditorWindow_MoveUp}"
                                 Click="OnMoveUpClick">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_up}" FontSize="16"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronUp}" FontSize="16"/>
                         </Button>
                         <Button x:Name="MoveDownButton"
                                 Grid.Column="4"
                                 Classes="square"
                                 ToolTip.Tip="{x:Static res:Strings.QuickTaskMenuEditorWindow_MoveDown}"
                                 Click="OnMoveDownClick">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_down}" FontSize="16"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronDown}" FontSize="16"/>
                         </Button>
                         <Button Grid.Column="6" Classes="compact" Click="OnResetClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}"/>
                                 <TextBlock Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_Reset}"/>
                             </StackPanel>
                         </Button>
@@ -186,11 +187,10 @@
                         CornerRadius="8">
                     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.list_checks}"
-                                       FontSize="21"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Workflows}"
+                                                    FontSize="21"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="ItemEditorTitle"
                                            Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_AddQuickTask}"
@@ -287,10 +287,9 @@
                         CornerRadius="8">
                     <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.rotate_ccw}"
-                                       FontSize="20"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent}"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}"
+                                                    FontSize="20"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"/>
                             <TextBlock Grid.Column="1"
                                        Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_ResetPrompt}"
                                        FontSize="18"

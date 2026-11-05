@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class SharpenImageEffect : ImageEffectBase
     public override string Id => "sharpen";
     public override string Name => "Sharpen";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.crosshair;
+    public override string IconKey => AppIcons.Crosshair;
     public override string Description => "Sharpens the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:res="using:ShareX.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.ClipboardUploadWindow"
         x:CompileBindings="False"
         Width="620"
@@ -40,12 +41,11 @@
                         Height="40"
                         CornerRadius="6"
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.clipboard}"
-                               FontSize="20"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Clipboard}"
+                                            FontSize="20"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
                     <TextBlock x:Name="HeaderTitle"

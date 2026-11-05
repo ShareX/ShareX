@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class LiquidGlassImageEffect : ImageEffectBase
     public override string Id => "liquid_glass";
     public override string Name => "Liquid glass";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.glass_water;
+    public override string IconKey => ImageEffectIcons.Glass;
     public override string Description => "Distorts the image as if viewed through liquid glass.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

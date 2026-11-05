@@ -29,6 +29,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using System.Collections.Generic;
 using System.Linq;
@@ -141,16 +142,14 @@ public partial class HotkeySettingsWindow : Window
             return null;
         }
 
-        TextBlock textBlock = new()
+        IconPresenter presenter = new()
         {
-            Text = icon,
+            Icon = icon,
             FontSize = 16,
-            Width = 18,
-            TextAlignment = Avalonia.Media.TextAlignment.Center
+            Width = 18
         };
-        textBlock.Classes.Add("icon");
-        textBlock.Classes.Add("accent-menu-icon");
-        return textBlock;
+        presenter.Classes.Add("accent-menu-icon");
+        return presenter;
     }
 
     private void OnHotkeyClick(object? sender, RoutedEventArgs e)

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -43,7 +43,7 @@ public sealed class WoodenFrameImageEffect : ImageEffectBase
     public override string Id => "wooden_frame";
     public override string Name => "Wooden frame";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.frame;
+    public override string IconKey => ImageEffectIcons.Frame;
     public override string Description => "Adds a procedural wooden frame around the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

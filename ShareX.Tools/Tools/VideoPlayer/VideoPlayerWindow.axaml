@@ -1,8 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:local="using:ShareX.Tools"
         xmlns:loc="using:ShareX.Tools.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.Tools.VideoPlayerWindow"
         x:DataType="local:VideoPlayerViewModel"
         Title="{Binding WindowTitle}"
@@ -23,7 +24,7 @@
                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <StackPanel IsVisible="{Binding !HasVideo}" HorizontalAlignment="Center" VerticalAlignment="Center"
                         Spacing="16" Margin="32,32,32,100" MaxWidth="640">
-                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.film}" FontSize="40" HorizontalAlignment="Center"/>
+                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Film}" FontSize="40" HorizontalAlignment="Center"/>
                 <TextBlock Text="{Binding StatusText}" TextAlignment="Center" TextWrapping="Wrap" FontWeight="Normal"/>
                 <ProgressBar IsVisible="{Binding IsLoading}" IsIndeterminate="True" Height="4" Width="160"/>
             </StackPanel>
@@ -68,31 +69,31 @@
                             <Button x:Name="OpenButton" Classes="player-button" Command="{Binding BrowseCommand}"
                                     ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_Open}"
                                     AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_Open}">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderOpen}"/>
                             </Button>
                             <Button Grid.Column="1" Classes="player-button" Command="{Binding StepBackwardCommand}" IsEnabled="{Binding HasVideo}"
                                     ToolTip.Tip="{x:Static loc:Strings.AnimatedGifTrimmer_PreviousFrame}"
                                     AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_PreviousFrame}">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.step_back}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.StepBack}"/>
                             </Button>
                             <Button x:Name="PlayButton" Grid.Column="2" Classes="player-button" Command="{Binding TogglePlayCommand}" IsEnabled="{Binding HasVideo}"
                                     ToolTip.Tip="{Binding PlayActionText}" AutomationProperties.Name="{Binding PlayActionText}">
                                 <Grid>
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.play}" IsVisible="{Binding !IsPlaying}"/>
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pause}" IsVisible="{Binding IsPlaying}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Play}" IsVisible="{Binding !IsPlaying}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Pause}" IsVisible="{Binding IsPlaying}"/>
                                 </Grid>
                             </Button>
                             <Button Grid.Column="3" Classes="player-button" Command="{Binding StepForwardCommand}" IsEnabled="{Binding HasVideo}"
                                     ToolTip.Tip="{x:Static loc:Strings.AnimatedGifTrimmer_NextFrame}"
                                     AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_NextFrame}">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.step_forward}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.StepForward}"/>
                             </Button>
                             <TextBlock Grid.Column="4" Text="{Binding TimeText}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="6,0"/>
                             <Button Grid.Column="5" Classes="player-button" Command="{Binding ToggleMuteCommand}"
                                     ToolTip.Tip="{Binding MuteActionText}" AutomationProperties.Name="{Binding MuteActionText}">
                                 <Grid>
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.volume_2}" IsVisible="{Binding !SoundOff}"/>
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.volume_x}" IsVisible="{Binding SoundOff}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Volume}" IsVisible="{Binding !SoundOff}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Mute}" IsVisible="{Binding SoundOff}"/>
                                 </Grid>
                             </Button>
                             <Slider Grid.Column="6" Width="60" Height="36" MinHeight="36" Minimum="0" Maximum="1" Value="{Binding Volume, Mode=TwoWay}"
@@ -106,7 +107,7 @@
                             <Button x:Name="FullscreenButton" Grid.Column="7" Classes="player-button" Click="OnFullscreenClick"
                                     ToolTip.Tip="{x:Static loc:Strings.VideoPlayer_Fullscreen}"
                                     AutomationProperties.Name="{x:Static loc:Strings.VideoPlayer_Fullscreen}">
-                                <TextBlock x:Name="FullscreenIcon" Classes="icon" Text="{x:Static theming:LucideIcons.maximize}"/>
+                                <controls:IconPresenter x:Name="FullscreenIcon" Icon="{x:Static icons:AppIcons.Expand}"/>
                             </Button>
                         </Grid>
                         <Slider x:Name="SeekSlider" Minimum="0" Maximum="{Binding Duration}"

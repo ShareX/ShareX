@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.ScreenCaptureLib.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.ScreenCaptureLib.ScrollingCaptureWindow"
         Title="{x:Static localization:Strings.ScrollingCaptureWindow_Title}"
         Width="900"
@@ -35,7 +36,7 @@
                                 Classes="compact"
                                 Click="OnCaptureClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.scan_line}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ScanLine}"/>
                                 <TextBlock Text="{x:Static localization:Strings.ScrollingCaptureWindow_Capture}"/>
                             </StackPanel>
                         </Button>
@@ -45,7 +46,7 @@
                                 IsEnabled="False"
                                 Click="OnUploadClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"/>
                                 <TextBlock Text="{x:Static localization:Strings.ScrollingCaptureWindow_Upload_Save}"/>
                             </StackPanel>
                         </Button>
@@ -55,7 +56,7 @@
                                 IsEnabled="False"
                                 Click="OnCopyClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
                                 <TextBlock Text="{x:Static localization:Strings.ScrollingCaptureWindow_Copy}"/>
                             </StackPanel>
                         </Button>
@@ -64,7 +65,7 @@
                                 Classes="compact"
                                 Click="OnOptionsClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings_2}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Settings}"/>
                                 <TextBlock Text="{x:Static localization:Strings.ScrollingCaptureWindow_Options}"/>
                             </StackPanel>
                         </Button>
@@ -75,7 +76,7 @@
                                 Padding="0"
                                 Click="OnHelpClick"
                                 ToolTip.Tip="{x:Static localization:Strings.ScrollingCaptureWindow_Help}">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.circle_help}"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Help}"/>
                         </Button>
                     </Grid>
                 </Border>
@@ -100,11 +101,10 @@
                                     VerticalAlignment="Center"
                                     Spacing="8"
                                     IsHitTestVisible="False">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.scroll_text}"
-                                       FontSize="48"
-                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                       HorizontalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.ScrollingCapture}"
+                                                    FontSize="48"
+                                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                    HorizontalAlignment="Center"/>
                             <TextBlock Text="{x:Static localization:Strings.ScrollingCaptureWindow_Select_scrollable_window}"
                                        FontWeight="Normal"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
@@ -113,11 +113,10 @@
                 </Border>
 
                 <Grid Grid.Row="2" ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
-                    <TextBlock x:Name="StatusIcon"
-                               Classes="icon"
-                               Text="{x:Static theming:LucideIcons.circle_dashed}"
-                               FontSize="17"
-                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                    <controls:IconPresenter x:Name="StatusIcon"
+                                            Icon="{x:Static icons:AppIcons.CircleDashed}"
+                                            FontSize="17"
+                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                     <TextBlock x:Name="StatusText"
                                Grid.Column="1"
                                Text="{x:Static localization:Strings.ScrollingCaptureWindow_Ready}"
@@ -146,10 +145,9 @@
                                   VerticalScrollBarVisibility="Auto">
                         <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="14">
                             <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.settings_2}"
-                                           FontSize="20"
-                                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Settings}"
+                                                        FontSize="20"
+                                                        Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                                 <TextBlock Grid.Column="1"
                                            Classes="section-heading"
                                            Text="{x:Static localization:Strings.ScrollingCaptureWindow_Options_heading}"/>

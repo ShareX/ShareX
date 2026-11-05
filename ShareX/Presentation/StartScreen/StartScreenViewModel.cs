@@ -26,8 +26,8 @@
 #nullable enable
 
 using Avalonia.Platform;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using System;
 using System.Collections.Generic;
@@ -226,7 +226,7 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
                 x,
                 x.GetLocalizedDescription(),
                 LoadLanguageFlag(x),
-                x == SupportedLanguage.Automatic ? LucideIcons.languages : null))
+                x == SupportedLanguage.Automatic ? AppIcons.Language : null))
             .ToArray();
 
     private static AvaloniaBitmap? LoadLanguageFlag(SupportedLanguage language)

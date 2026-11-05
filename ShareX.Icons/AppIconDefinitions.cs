@@ -23,22 +23,21 @@
 
 #endregion License Information (GPL v3)
 
-using System.Globalization;
 using Avalonia.Media;
 using static ShareX.Icons.IconGeometry;
 using static ShareX.Icons.IconShape;
-using Icon = ShareX.Icons.MainWindowIcons;
+using Icon = ShareX.Icons.AppIcons;
 
 namespace ShareX.Icons;
 
-/// <summary>The shapes of the <see cref="MainWindowIcons"/>.</summary>
+/// <summary>The shapes of the <see cref="AppIcons"/>.</summary>
 /// <remarks>
 /// Drawn like the <see cref="ImageEditorIcons"/>: a 24x24 grid, 2px strokes with round caps and joins, content
 /// within 2..22. Related icons share their parts (page, folder, cloud, image, frame, brackets), and variants add
 /// a glyph inside the part or an overlay, such as a badge in the bottom-right corner or a slash, which cuts a gap
 /// out of the shapes under it. Shading is the Foreground at partial opacity.
 /// </remarks>
-internal static class MainWindowIconDefinitions
+internal static partial class AppIconDefinitions
 {
     // Overlays drawn over other shapes: a badge in the bottom-right corner, or a slash for "off".
     private const string BadgeUp = "M18 22v-7.5M14.75 17.5 18 14.25l3.25 3.25";
@@ -67,7 +66,7 @@ internal static class MainWindowIconDefinitions
     private const string FloppyPath = "M5.5 3h10.3a2 2 0 0 1 1.4.6l3.2 3.2a2 2 0 0 1 .6 1.4v10.3a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13A2.5 2.5 0 0 1 5.5 3z";
     private const string ShieldPath = "M12 2.5 4 5.5V11c0 5 3.4 8.8 8 10.5 4.6-1.7 8-5.5 8-10.5V5.5z";
 
-    public static IEnumerable<IconGroup> CreateGroups() => [CreateIcons()];
+    public static IEnumerable<IconGroup> CreateGroups() => [CreateIcons(), CreateControlIcons()];
 
     private static IconGroup CreateIcons() => new(24, IconStyle.Rounded)
     {
@@ -554,7 +553,7 @@ internal static class MainWindowIconDefinitions
             Stroke("M14 10l6.5-6.5M14 4.5V10h5.5M10 14l-6.5 6.5M4.5 14H10v5.5")
         },
         {
-            Icon.Convert,
+            Icon.Refresh,
             Stroke("M20.5 11A8.5 8.5 0 0 0 5.4 6.6L3.5 8.5M3.5 3.5v5h5"),
             Stroke("M3.5 13a8.5 8.5 0 0 0 15.1 4.4l1.9-1.9M20.5 20.5v-5h-5")
         },
@@ -946,16 +945,6 @@ internal static class MainWindowIconDefinitions
             Rotate(Rectangle(14.25, 0, 3.5, 8, 1), 45, 16, 8));
 
     // A small folder, 9 wide and 8.5 tall.
-    private static string SmallFolder(double x, double y) => Format(
+    private static Geometry SmallFolder(double x, double y) => FormattedPath(
         $"M{x} {y + 1.5}a1.5 1.5 0 0 1 1.5-1.5h2l1.2 1.5h2.8a1.5 1.5 0 0 1 1.5 1.5v4a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 0 1-1.5-1.5z");
-
-    // A four-pointed star with curved sides.
-    private static Geometry Sparkle(double centerX, double centerY, double radius)
-    {
-        double k = radius * 0.18;
-        double left = centerX - radius, top = centerY - radius, right = centerX + radius, bottom = centerY + radius;
-        return Path(Format($"M{centerX} {top}Q{centerX + k} {centerY - k} {right} {centerY}Q{centerX + k} {centerY + k} {centerX} {bottom}Q{centerX - k} {centerY + k} {left} {centerY}Q{centerX - k} {centerY - k} {centerX} {top}z"));
-    }
-
-    private static string Format(FormattableString path) => path.ToString(CultureInfo.InvariantCulture);
 }

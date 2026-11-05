@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class SnowflakesImageEffect : ImageEffectBase
     public override string Id => "snowflakes";
     public override string Name => "Snowflakes";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.snowflake;
+    public override string IconKey => ImageEffectIcons.Snowflake;
     public override string Description => "Scatters snowflakes over the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

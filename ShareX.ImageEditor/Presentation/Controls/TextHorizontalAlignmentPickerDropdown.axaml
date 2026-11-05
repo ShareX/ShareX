@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:ShareX.AvaloniaUI.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="using:ShareX.ImageEditor.Presentation.Converters"
@@ -20,24 +21,20 @@
                 MinWidth="58"
                 HorizontalContentAlignment="Stretch">
             <Grid ColumnDefinitions="Auto,Auto">
-                <TextBlock Grid.Column="0"
-                           Text="{Binding SelectedTextHorizontalAlignment, ElementName=TextHorizontalAlignmentPickerDropdownRoot, Converter={StaticResource TextHorizontalAlignmentConverter}, ConverterParameter=Icon}"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal"
-                           FontSize="18"
-                           Foreground="{DynamicResource ShareX.Brush.Text}"
-                           VerticalAlignment="Center"
-                           Margin="0,0,8,0"/>
+                <controls:IconPresenter Grid.Column="0"
+                                        Icon="{Binding SelectedTextHorizontalAlignment, ElementName=TextHorizontalAlignmentPickerDropdownRoot, Converter={StaticResource TextHorizontalAlignmentConverter}, ConverterParameter=Icon}"
+                                        FontSize="18"
+                                        Foreground="{DynamicResource ShareX.Brush.Text}"
+                                        VerticalAlignment="Center"
+                                        Margin="0,0,8,0"/>
 
-                <TextBlock Grid.Column="1"
-                           Classes="dropdown-chevron"
-                           Classes.open="{Binding #TextHorizontalAlignmentPopup.IsOpen}"
-                           Text="{x:Static theming:EditorIcons.ChevronDown}"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal"
-                           FontSize="10"
-                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                           VerticalAlignment="Center"/>
+                <controls:IconPresenter Grid.Column="1"
+                                        Classes="dropdown-chevron"
+                                        Classes.open="{Binding #TextHorizontalAlignmentPopup.IsOpen}"
+                                        Icon="{x:Static theming:EditorIcons.ChevronDown}"
+                                        FontSize="10"
+                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                        VerticalAlignment="Center"/>
             </Grid>
         </Button>
 
@@ -65,14 +62,12 @@
                                     HorizontalContentAlignment="Stretch"
                                     VerticalContentAlignment="Center">
                                 <Grid ColumnDefinitions="Auto,*">
-                                    <TextBlock Grid.Column="0"
-                                               Text="{Binding ., Converter={StaticResource TextHorizontalAlignmentConverter}, ConverterParameter=Icon}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                               FontWeight="Normal"
-                                               FontSize="16"
-                                               Foreground="{DynamicResource ShareX.Brush.Text}"
-                                               VerticalAlignment="Center"
-                                               Margin="0,0,8,0"/>
+                                    <controls:IconPresenter Grid.Column="0"
+                                                            Icon="{Binding ., Converter={StaticResource TextHorizontalAlignmentConverter}, ConverterParameter=Icon}"
+                                                            FontSize="16"
+                                                            Foreground="{DynamicResource ShareX.Brush.Text}"
+                                                            VerticalAlignment="Center"
+                                                            Margin="0,0,8,0"/>
 
                                     <TextBlock Grid.Column="1"
                                                Text="{Binding ., Converter={StaticResource TextHorizontalAlignmentConverter}, ConverterParameter=Label}"

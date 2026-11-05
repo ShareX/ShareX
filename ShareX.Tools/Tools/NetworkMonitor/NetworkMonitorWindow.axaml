@@ -1,11 +1,12 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
         xmlns:controls="using:ShareX.Tools.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="760"
         x:Class="ShareX.Tools.NetworkMonitorWindow"
         x:DataType="vm:NetworkMonitorViewModel"
@@ -122,13 +123,13 @@
 
                     <Button Grid.Column="3" Command="{Binding StartMonitoringCommand}" IsVisible="{Binding CanStart}" VerticalAlignment="Bottom">
                         <StackPanel Orientation="Horizontal" Spacing="7">
-                            <TextBlock Text="{x:Static theming:LucideIcons.play}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Play}"/>
                             <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Start}"/>
                         </StackPanel>
                     </Button>
                     <Button Grid.Column="3" Command="{Binding StopMonitoringCommand}" IsVisible="{Binding CanStop}" VerticalAlignment="Bottom">
                         <StackPanel Orientation="Horizontal" Spacing="7">
-                            <TextBlock Text="{x:Static theming:LucideIcons.pause}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Pause}"/>
                             <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Pause}"/>
                         </StackPanel>
                     </Button>
@@ -166,7 +167,7 @@
                 <Grid RowDefinitions="Auto,*">
                     <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
                         <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <TextBlock Text="{x:Static theming:LucideIcons.chart_spline}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.LineChart}" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                             <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.NetworkMonitorWindow_Latency_history}"/>
                         </StackPanel>
                         <TextBlock Grid.Column="1" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Range}" VerticalAlignment="Center"/>
@@ -192,24 +193,24 @@
                 <Grid RowDefinitions="Auto,Auto,*">
                     <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="8">
                         <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <TextBlock Text="{x:Static theming:LucideIcons.list_restart}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ListRestart}" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                             <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.NetworkMonitorWindow_Connection_events}"/>
                         </StackPanel>
                         <Button Grid.Column="1" Command="{Binding CopyAllCommand}" IsEnabled="{Binding HasEvents}">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Text="{x:Static theming:LucideIcons.copy}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
                                 <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Copy_all}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="2" Command="{Binding ClearLogCommand}" IsEnabled="{Binding HasEvents}">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Text="{x:Static theming:LucideIcons.trash_2}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}"/>
                                 <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Clear_log}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="3" Command="{Binding OpenLogFileCommand}" IsEnabled="{Binding CanOpenLog}">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Text="{x:Static theming:LucideIcons.file_text}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal"/>
+                                <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.FileText}"/>
                                 <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_Open_log}"/>
                             </StackPanel>
                         </Button>
@@ -240,7 +241,7 @@
                                     VerticalAlignment="Center"
                                     Spacing="7"
                                     IsHitTestVisible="False">
-                            <TextBlock Text="{x:Static theming:LucideIcons.activity}" FontFamily="{DynamicResource ShareX.FontFamily.Icon}" FontWeight="Normal" FontSize="34" Foreground="{DynamicResource ShareX.Brush.Text.Secondary}" HorizontalAlignment="Center"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Activity}" FontSize="34" Foreground="{DynamicResource ShareX.Brush.Text.Secondary}" HorizontalAlignment="Center"/>
                             <TextBlock Text="{x:Static localization:Strings.NetworkMonitorWindow_No_events}" FontWeight="Normal" Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                         </StackPanel>
                     </Grid>

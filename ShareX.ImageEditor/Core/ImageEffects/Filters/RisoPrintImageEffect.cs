@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class RisoPrintImageEffect : ImageEffectBase
     public override string Id => "riso_print";
     public override string Name => "Riso print";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.printer;
+    public override string IconKey => AppIcons.Printer;
     public override string Description => "Simulates a risograph print with halftone dots and ink colors.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>
