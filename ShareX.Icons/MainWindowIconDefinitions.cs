@@ -179,15 +179,10 @@ internal static class MainWindowIconDefinitions
             Icon.IconConverter,
             Badge([Stroke(Rectangle(3, 3, 18, 18, 5.5)), Fill(Sparkle(10, 10, 4))], Stroke(BadgeConvert))
         },
-        // A picture with sparkles at its corner.
+        // A picture with a sparkle badge.
         {
             Icon.ImageBeautifier,
-            Stroke(Rectangle(2, 7, 15, 15, 2.5)),
-            Stroke("m2 18 4-4 7.5 7.5"),
-            Fill(Circle(11.5, 11.5, 1.4)),
-            Fill(Sparkle(18.5, 5.5, 4)),
-            Fill(Sparkle(21, 13, 1.75)),
-            Fill(Sparkle(11.5, 2.75, 1.75))
+            Overlay(ImageShapes(), Circle(18.5, 18.5, 6), Fill(Sparkle(18.5, 18.5, 4.75)))
         },
         // A picture split into before and after, with a slider handle.
         {
