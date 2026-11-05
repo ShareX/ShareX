@@ -152,7 +152,7 @@ internal static partial class AppIconDefinitions
         {
             Icon.DragDropUpload,
             Stroke(Rectangle(3, 3, 18, 18, 3), dashes: [2, 3.3]),
-            Stroke("M12 7.5v8M8.5 12 12 15.5 15.5 12")
+            Stroke("M12 16.5v-8M8.5 12 12 8.5 15.5 12")
         },
         {
             Icon.UploadClipboard,
