@@ -1514,7 +1514,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Item(Strings.MainWindow_DownloadSelectedUrl, MainWindowIcons.Download, _uploadInfoManager.Download,
                 hasSelection && !isWorking && selected!.IsFileURL,
                 new KeyGesture(Key.D, KeyModifiers.Control)),
-            Item(Strings.MainWindow_EditImage, MainWindowIcons.Image, _uploadInfoManager.EditImage,
+            Item(Strings.MainWindow_EditImage, MainWindowIcons.ImageEditor, _uploadInfoManager.EditImage,
                 hasSelection && !isWorking && selected!.IsImageFile,
                 new KeyGesture(Key.E, KeyModifiers.Control)),
             Item(Strings.MainWindow_EditImageInPhotoEditor, MainWindowIcons.Layers, _uploadInfoManager.EditImageInPhotoEditor,
@@ -1526,7 +1526,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Item(Strings.MainWindow_TrimAnimatedGif, MainWindowIcons.Scissors, _uploadInfoManager.TrimAnimatedGif,
                 hasSelection && !isWorking && selected!.IsFileExist &&
                 string.Equals(Path.GetExtension(selected.Info.FilePath), ".gif", StringComparison.OrdinalIgnoreCase)),
-            Item(Strings.MainWindow_BeautifyImage, MainWindowIcons.Sparkles, _uploadInfoManager.BeautifyImage,
+            Item(Strings.MainWindow_BeautifyImage, MainWindowIcons.ImageBeautifier, _uploadInfoManager.BeautifyImage,
                 hasSelection && !isWorking && selected!.IsImageFile),
             Item(Strings.MainWindow_AddImageEffects, MainWindowIcons.MagicWand, _uploadInfoManager.AddImageEffects,
                 hasSelection && !isWorking && selected!.IsImageFile),

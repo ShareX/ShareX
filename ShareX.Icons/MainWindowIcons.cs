@@ -33,6 +33,39 @@ public static class MainWindowIcons
 {
     private const string Prefix = "main-window/";
 
+    // Menu items with an icon of their own.
+    public const string AfterCaptureTasks = Prefix + "after-capture-tasks";
+    public const string AfterUploadTasks = Prefix + "after-upload-tasks";
+    public const string Destinations = Prefix + "destinations";
+    public const string DestinationSettings = Prefix + "destination-settings";
+    public const string CustomUploaderSettings = Prefix + "custom-uploader-settings";
+    public const string ScreenshotsFolder = Prefix + "screenshots-folder";
+    public const string ImageHistory = Prefix + "image-history";
+    public const string Follow = Prefix + "follow";
+    public const string Discord = Prefix + "discord";
+    public const string RestartAsAdmin = Prefix + "restart-as-admin";
+    public const string RecentItems = Prefix + "recent-items";
+    public const string ScreenRecording = Prefix + "screen-recording";
+    public const string AutoCapture = Prefix + "auto-capture";
+    public const string DragDropUpload = Prefix + "drag-drop-upload";
+    public const string UploadClipboard = Prefix + "upload-clipboard";
+    public const string MouseHighlighter = Prefix + "mouse-highlighter";
+    public const string ScreenColorPicker = Prefix + "screen-color-picker";
+    public const string BackgroundRemover = Prefix + "background-remover";
+    public const string IconConverter = Prefix + "icon-converter";
+    public const string ImageBeautifier = Prefix + "image-beautifier";
+    public const string ImageComparer = Prefix + "image-comparer";
+    public const string ImageConverter = Prefix + "image-converter";
+    public const string ImageEditor = Prefix + "image-editor";
+    public const string ImageThumbnailer = Prefix + "image-thumbnailer";
+    public const string AnimatedGifMaker = Prefix + "animated-gif-maker";
+    public const string VideoConverter = Prefix + "video-converter";
+    public const string RemoteStorageBrowser = Prefix + "remote-storage-browser";
+    public const string ClipboardViewer = Prefix + "clipboard-viewer";
+    public const string MonitorTest = Prefix + "monitor-test";
+    public const string ClipboardImage = Prefix + "clipboard-image";
+    public const string ClipboardLink = Prefix + "clipboard-link";
+
     // Capture.
     public const string Camera = Prefix + "camera";
     public const string Fullscreen = Prefix + "fullscreen";
@@ -51,11 +84,8 @@ public static class MainWindowIcons
     // Upload, links and sharing.
     public const string Upload = Prefix + "upload";
     public const string Download = Prefix + "download";
-    public const string Cloud = Prefix + "cloud";
     public const string CloudUpload = Prefix + "cloud-upload";
-    public const string CloudSettings = Prefix + "cloud-settings";
     public const string CloudOff = Prefix + "cloud-off";
-    public const string Server = Prefix + "server";
     public const string Link = Prefix + "link";
     public const string ShortLink = Prefix + "short-link";
     public const string ExternalLink = Prefix + "external-link";
@@ -92,7 +122,6 @@ public static class MainWindowIcons
     public const string Message = Prefix + "message";
     public const string Messages = Prefix + "messages";
     public const string MessageShare = Prefix + "message-share";
-    public const string ChatBubble = Prefix + "chat-bubble";
     public const string TextRecognition = Prefix + "text-recognition";
 
     // Images and media.
@@ -123,8 +152,6 @@ public static class MainWindowIcons
     // Tools.
     public const string Wrench = Prefix + "wrench";
     public const string Palette = Prefix + "palette";
-    public const string Eyedropper = Prefix + "eyedropper";
-    public const string PointerClick = Prefix + "pointer-click";
     public const string Pin = Prefix + "pin";
     public const string Unpin = Prefix + "unpin";
     public const string Ruler = Prefix + "ruler";

@@ -1707,7 +1707,7 @@ internal sealed class TaskSettingsPageBuilder
 
     private static Button DestinationMenu(TaskSettings settings)
     {
-        IconPresenter icon = CreateAccentMenuIcon(MainWindowIcons.Server);
+        IconPresenter icon = CreateAccentMenuIcon(MainWindowIcons.Destinations);
         TextBlock title = new()
         {
             Text = Strings.TaskSettingsWindow_Destinations + "...",

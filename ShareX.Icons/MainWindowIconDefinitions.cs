@@ -45,10 +45,16 @@ internal static class MainWindowIconDefinitions
     private const string BadgeDown = "M18 14v7.5M14.75 18.5 18 21.75l3.25-3.25";
     private const string BadgeShare = "M14.5 21.5l7-7M16.5 14.5h5v5";
     private const string BadgePen = "M14.25 22l.6-2.75 5-5a1.45 1.45 0 0 1 2.05 2.05l-5 5z";
+    private const string BadgeCheck = "m14.75 18 2.25 2.25 4.25-4.25";
+    private const string BadgeClock = "M18 14a4 4 0 1 0 0 8 4 4 0 1 0 0-8zM18 16v2.25l1.5 1";
+    private const string BadgeConvert = "M15.75 21.5V15M14 16.75l1.75-1.75 1.75 1.75M20.25 15v6.5M18.5 19.75l1.75 1.75 1.75-1.75";
     private const string Slash = "M2.5 2.5l19 19";
 
     // The gap left around an overlay: its 2px line plus 1.5px on each side.
     private const double OverlayHalo = 5;
+
+    // The round gap cut for a badge in the bottom-right corner.
+    private const double BadgeGap = 6.25;
 
     // Shared parts.
     private const string PagePath = "M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z";
@@ -59,16 +65,189 @@ internal static class MainWindowIconDefinitions
     private const string BubblePath = "M6 3.5h12a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6.5L6 21v-3.5a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4z";
     private const string Tray = "M3 15v3.5A2.5 2.5 0 0 0 5.5 21h13a2.5 2.5 0 0 0 2.5-2.5V15";
     private const string FloppyPath = "M5.5 3h10.3a2 2 0 0 1 1.4.6l3.2 3.2a2 2 0 0 1 .6 1.4v10.3a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13A2.5 2.5 0 0 1 5.5 3z";
+    private const string ShieldPath = "M12 2.5 4 5.5V11c0 5 3.4 8.8 8 10.5 4.6-1.7 8-5.5 8-10.5V5.5z";
 
     public static IEnumerable<IconGroup> CreateGroups() => [CreateIcons()];
 
     private static IconGroup CreateIcons() => new(24, IconStyle.Rounded)
     {
+        // Menu items with an icon of their own.
+        {
+            Icon.Workflows,
+            Stroke(Rectangle(2, 2.5, 8, 6, 2)),
+            Stroke(Rectangle(14, 9, 8, 6, 2)),
+            Stroke(Rectangle(2, 15.5, 8, 6, 2)),
+            Stroke("M10 5.5h5a3 3 0 0 1 3 3v.5M18 15v.5a3 3 0 0 1-3 3h-5")
+        },
+        {
+            Icon.AfterCaptureTasks,
+            Badge(ImageShapes(), Stroke(BadgeCheck))
+        },
+        {
+            Icon.AfterUploadTasks,
+            Badge([Stroke(CloudGeometry())], Stroke(BadgeCheck))
+        },
+        {
+            Icon.Destinations,
+            GlobeShapes()
+        },
+        {
+            Icon.DestinationSettings,
+            Overlay(GlobeShapes(), Circle(18, 18, 6.75), Fill(BadgeGear()))
+        },
+        // A cloud with code inside: an uploader you define yourself.
+        {
+            Icon.CustomUploaderSettings,
+            Stroke(CloudGeometry()),
+            Stroke("m10.25 12.25-2 2.25 2 2.25M14.75 12.25l2 2.25-2 2.25")
+        },
+        {
+            Icon.ScreenshotsFolder,
+            Stroke(FolderPath),
+            Fill(Circle(15.5, 11, 1.4)),
+            Stroke("m6 17 3.5-3.5 3.5 3.5 1.5-1.5 2.5 2.5")
+        },
+        {
+            Icon.ImageHistory,
+            Badge(ImageShapes(), Stroke(BadgeClock))
+        },
+        // A person with a plus.
+        {
+            Icon.Follow,
+            Stroke(Circle(9.5, 7.5, 4)),
+            Stroke("M2.5 21v-.5a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v.5"),
+            Stroke("M19.5 8v6M16.5 11h6")
+        },
+        // A chat bubble with a message being typed.
+        {
+            Icon.Discord,
+            Stroke("M7.7 19.9A9 9 0 1 0 4.1 16.3L3 21z"),
+            Fill(Circle(8, 12, 1.3)),
+            Fill(Circle(12, 12, 1.3)),
+            Fill(Circle(16, 12, 1.3))
+        },
+        // A shield with a restart arrow.
+        {
+            Icon.RestartAsAdmin,
+            Stroke(ShieldPath),
+            Stroke("M15.25 12a3.25 3.25 0 1 1-.95-2.3M14.3 7.2v2.5h-2.5")
+        },
+        {
+            Icon.RecentItems,
+            Badge([Stroke("M3 6h16M3 12h9M3 18h7")], Stroke(BadgeClock))
+        },
+        // The screen with a record dot.
+        {
+            Icon.ScreenRecording,
+            [.. MonitorShapes(), Fill(Circle(12, 10, 3))]
+        },
+        {
+            Icon.AutoCapture,
+            Badge(CameraShapes(), Stroke(BadgeClock))
+        },
+        // A drop zone with an arrow into it.
+        {
+            Icon.DragDropUpload,
+            Stroke(Rectangle(3, 3, 18, 18, 3), dashes: [2, 3.3]),
+            Stroke("M12 7.5v8M8.5 12 12 15.5 15.5 12")
+        },
+        {
+            Icon.UploadClipboard,
+            [.. ClipboardShapes(), Stroke("M12 18v-7M9 14l3-3 3 3")]
+        },
+        // A pointer at the center of a highlight.
+        {
+            Icon.MouseHighlighter,
+            Fill(Circle(9.5, 9.5, 7), 0.3),
+            Stroke("M9.5 9.5v12.15l3.08-2.93 2.03 4.65 2.25-.98-2.03-4.57h4.2z", 1.75)
+        },
+        // An eyedropper: squeeze bulb, collar and a glass tube holding the picked color.
+        {
+            Icon.ScreenColorPicker,
+            Fill("M10 12 6 16l-1.5 3.5L8 18l4-4z", 0.35),
+            Stroke("M12 8.5 15.75 4.75a2.47 2.47 0 0 1 3.5 3.5L15.5 12"),
+            Stroke("M11.25 7.75l5 5"),
+            Stroke("M12.75 9.25 6 16l-1.5 3.5L8 18l6.75-6.75")
+        },
+        {
+            Icon.BackgroundRemover,
+            Stroke("M10 21.2 6.56 17.76c-.8-.8-.8-2 0-2.72l7.68-7.68c.8-.8 2-.8 2.72 0l4.48 4.48c.8.8.8 2 0 2.72L14.8 21.2M22 21.2H10M8.4 13.2l7.2 7.2"),
+            Fill(Sparkle(5.5, 5.5, 4.5))
+        },
+        // An app icon tile being converted.
+        {
+            Icon.IconConverter,
+            Badge([Stroke(Rectangle(3, 3, 18, 18, 5.5)), Fill(Sparkle(10, 10, 4))], Stroke(BadgeConvert))
+        },
+        // A picture placed on a backdrop.
+        {
+            Icon.ImageBeautifier,
+            Fill(Rectangle(2, 2, 20, 20, 4.5), 0.3),
+            Stroke(Rectangle(6, 6, 12, 12, 2)),
+            Stroke("m6 15 3.5-3.5 6.5 6.5"),
+            Fill(Circle(14.5, 9.5, 1.25))
+        },
+        // A picture split into before and after, with a slider handle.
+        {
+            Icon.ImageComparer,
+            Fill(Subtract(Rectangle(3, 3, 18, 18, 3), Rectangle(12, 0, 12, 24)), 0.3),
+            Stroke(Rectangle(3, 3, 18, 18, 3)),
+            Stroke("M12 1v22"),
+            Fill(Circle(12, 12, 2.75))
+        },
+        {
+            Icon.ImageConverter,
+            Badge(ImageShapes(), Stroke(BadgeConvert))
+        },
+        {
+            Icon.ImageEditor,
+            Overlay(ImageShapes(), BadgePen)
+        },
+        // A picture shrunk to a thumbnail in its corner.
+        {
+            Icon.ImageThumbnailer,
+            Stroke(Rectangle(2, 2, 20, 20, 3)),
+            Fill(Rectangle(12, 12, 6, 6, 1), 0.35),
+            Stroke(Rectangle(12, 12, 6, 6, 1)),
+            Stroke("M6.5 6.5l3.5 3.5M10 6.5V10H6.5")
+        },
+        // Animation frames with a play button.
+        {
+            Icon.AnimatedGifMaker,
+            Stroke(Rectangle(2, 7, 15, 15, 2.5)),
+            Stroke("M6.5 3H19a3 3 0 0 1 3 3v12.5"),
+            Stroke("M7.75 11.75v5.5a.5.5 0 0 0 .77.42l4.1-2.75a.5.5 0 0 0 0-.84l-4.1-2.75a.5.5 0 0 0-.77.42z")
+        },
+        {
+            Icon.VideoConverter,
+            Badge([Stroke(Rectangle(2, 4, 20, 16, 3)), Stroke("M8 8.75v6.5a.5.5 0 0 0 .77.42l4.9-3.25a.5.5 0 0 0 0-.84l-4.9-3.25a.5.5 0 0 0-.77.42z")], Stroke(BadgeConvert))
+        },
+        {
+            Icon.RemoteStorageBrowser,
+            Badge([Stroke(FolderPath)], Stroke(BadgeCloud()))
+        },
+        {
+            Icon.ClipboardViewer,
+            [.. ClipboardShapes(), Stroke("M7.25 14.5s1.75-3.25 4.75-3.25 4.75 3.25 4.75 3.25-1.75 3.25-4.75 3.25-4.75-3.25-4.75-3.25z"), Fill(Circle(12, 14.5, 1.25))]
+        },
+        // The screen showing a test pattern.
+        {
+            Icon.MonitorTest,
+            [.. MonitorShapes(), Fill(Rectangle(5, 6, 4.67, 8, 0.75)), Fill(Rectangle(9.67, 6, 4.67, 8), 0.6), Fill(Rectangle(14.33, 6, 4.67, 8, 0.75), 0.3)]
+        },
+        {
+            Icon.ClipboardImage,
+            [.. ClipboardShapes(), Fill(Circle(14.75, 11, 1.25)), Stroke("m7.5 19 3.5-3.5 3.5 3.5M14 17l1-1 1.5 1.5")]
+        },
+        {
+            Icon.ClipboardLink,
+            [.. ClipboardShapes(), Stroke("M10.25 12H9.5a2.5 2.5 0 0 0 0 5h.75M13.75 12h.75a2.5 2.5 0 0 1 0 5h-.75M10.5 14.5h3")]
+        },
+
         // Capture.
         {
             Icon.Camera,
-            Stroke("M2 9a3 3 0 0 1 3-3h2l1.55-2.3A1.5 1.5 0 0 1 9.8 3h4.4a1.5 1.5 0 0 1 1.25.7L17 6h2a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3z"),
-            Stroke(Circle(12, 13.5, 4))
+            CameraShapes()
         },
         // The whole screen selected.
         {
@@ -99,6 +278,7 @@ internal static class MainWindowIconDefinitions
             Stroke(Rectangle(2, 6, 14, 12, 2.5)),
             Stroke("M16 10.25l4.45-2.8A1 1 0 0 1 22 8.3v7.4a1 1 0 0 1-1.55.85L16 13.75")
         },
+        // A film strip with a frame in the middle.
         {
             Icon.Film,
             FilmShapes()
@@ -139,28 +319,12 @@ internal static class MainWindowIconDefinitions
             Stroke("M12 3.5V16M7.5 11.5 12 16l4.5-4.5")
         },
         {
-            Icon.Cloud,
-            Stroke(CloudGeometry())
-        },
-        {
             Icon.CloudUpload,
             Overlay([Stroke(CloudGeometry())], "M12 22v-9M8.75 16.25 12 13l3.25 3.25")
         },
         {
-            Icon.CloudSettings,
-            Overlay([Stroke(CloudGeometry())], Circle(18, 18, 6.75), Fill(BadgeGear()))
-        },
-        {
             Icon.CloudOff,
             Overlay([Stroke(CloudGeometry())], Slash)
-        },
-        {
-            Icon.Server,
-            Stroke(Rectangle(2, 3, 20, 8, 2.5)),
-            Stroke(Rectangle(2, 13, 20, 8, 2.5)),
-            Fill(Circle(6.5, 7, 1.25)),
-            Fill(Circle(6.5, 17, 1.25)),
-            Stroke("M11 7h6.5M11 17h6.5")
         },
         {
             Icon.Link,
@@ -325,10 +489,6 @@ internal static class MainWindowIconDefinitions
             Overlay([Stroke(BubblePath)], BadgeShare)
         },
         {
-            Icon.ChatBubble,
-            Stroke("M7.7 19.9A9 9 0 1 0 4.1 16.3L3 21z")
-        },
-        {
             Icon.TextRecognition,
             Stroke(Brackets),
             Stroke("M7.5 9h9M7.5 12h9M7.5 15h5.5")
@@ -475,18 +635,6 @@ internal static class MainWindowIconDefinitions
             Fill(Circle(15, 7, 1.4))
         },
         {
-            Icon.Eyedropper,
-            Stroke("M13 7 4.6 15.4a2 2 0 0 0-.6 1.42V20h3.18a2 2 0 0 0 1.42-.6L17 11"),
-            Stroke("M11.5 5.5l7 7"),
-            Stroke("M15 8.75l3-3a2.12 2.12 0 0 1 3 3l-3 3")
-        },
-        // A pointer with click lines around its tip.
-        {
-            Icon.PointerClick,
-            Stroke("M10.5 9.5v11.25l2.85-2.7 1.9 4.3 2.1-.9-1.9-4.25h3.9z", 1.75),
-            Stroke("M7 2.5v2.5M2.5 7H5M3.8 3.8l1.8 1.8M10.2 3.8 8.4 5.6M3.8 10.2l1.8-1.8")
-        },
-        {
             Icon.Pin,
             PinShapes()
         },
@@ -567,11 +715,6 @@ internal static class MainWindowIconDefinitions
             Overlay(KeyboardShapes(), Slash)
         },
         {
-            Icon.Workflows,
-            Stroke("m3 6.5 2 2 4-4M3 15.5l2 2 4-4"),
-            Stroke("M13 7h8M13 16h8")
-        },
-        {
             Icon.History,
             Stroke("M3.5 12A8.5 8.5 0 1 0 6 6L3.5 8.5M3.5 4v4.5H8"),
             Stroke("M12 7.5V12l3 2")
@@ -583,9 +726,9 @@ internal static class MainWindowIconDefinitions
         },
         {
             Icon.Bug,
-            Stroke(Rectangle(7.5, 7.5, 9, 13.5, 4.5)),
-            Stroke("M9.5 7.5v-1a2.5 2.5 0 0 1 5 0v1"),
-            Stroke("M12 12v9M7.5 13.5h-4M16.5 13.5h4M7.5 10 5 8M16.5 10 19 8M7.5 17.5 5 19.5M16.5 17.5l2.5 2")
+            Stroke(Rectangle(7, 8, 10, 13, 5)),
+            Stroke("M9.5 8.5V8a2.5 2.5 0 0 1 5 0v.5"),
+            Stroke("M12 12.5V21M7 13H3.5M7 17.5H4M17 13h3.5M17 17.5h3M8 4.5l1.5 1.5M16 4.5 14.5 6")
         },
         {
             Icon.Heart,
@@ -599,7 +742,7 @@ internal static class MainWindowIconDefinitions
         },
         {
             Icon.Shield,
-            Stroke("M12 2.5 4 5.5V11c0 5 3.4 8.8 8 10.5 4.6-1.7 8-5.5 8-10.5V5.5z")
+            Stroke(ShieldPath)
         },
         // A bar of buttons.
         {
@@ -712,6 +855,17 @@ internal static class MainWindowIconDefinitions
         Fill(Circle(15.5, 8.5, 1.75))
     ];
 
+    /// <summary><paramref name="shapes"/> with a round gap cut in the bottom-right corner, and <paramref name="badge"/> drawn in it.</summary>
+    private static IconShape[] Badge(IconShape[] shapes, params IconShape[] badge) => Overlay(shapes, Circle(18, 18, BadgeGap), badge);
+
+    private static IconShape[] CameraShapes() =>
+    [
+        Stroke("M2 9a3 3 0 0 1 3-3h2l1.55-2.3A1.5 1.5 0 0 1 9.8 3h4.4a1.5 1.5 0 0 1 1.25.7L17 6h2a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3z"),
+        Stroke(Circle(12, 13.5, 4))
+    ];
+
+    private static IconShape[] GlobeShapes() => [Stroke(Circle(12, 12, 10)), Stroke(Ellipse(7.5, 2, 9, 20)), Stroke("M2.5 12h19")];
+
     private static IconShape[] MonitorShapes() => [Stroke(Rectangle(2, 3, 20, 14, 2.5)), Stroke("M8 21h8M12 17v4")];
 
     private static IconShape[] WindowShapes() =>
@@ -725,8 +879,13 @@ internal static class MainWindowIconDefinitions
     private static IconShape[] FilmShapes() =>
     [
         Stroke(Rectangle(2, 4, 20, 16, 2.5)),
-        Stroke("M2 8.5h20M2 15.5h20"),
-        Stroke("M7 4v4.5M12 4v4.5M17 4v4.5M7 15.5V20M12 15.5V20M17 15.5V20")
+        Stroke(Rectangle(7.5, 8.5, 9, 7, 1)),
+        Fill(Circle(4.75, 8, 0.9)),
+        Fill(Circle(4.75, 12, 0.9)),
+        Fill(Circle(4.75, 16, 0.9)),
+        Fill(Circle(19.25, 8, 0.9)),
+        Fill(Circle(19.25, 12, 0.9)),
+        Fill(Circle(19.25, 16, 0.9))
     ];
 
     private static IconShape[] TimerShapes() =>
@@ -772,6 +931,10 @@ internal static class MainWindowIconDefinitions
     // A body with six teeth.
     private static Geometry GearGeometry() =>
         Union([Circle(12, 12, 7), .. Enumerable.Range(0, 6).Select(i => Rotate(Rectangle(10.25, 1.75, 3.5, 6, 1), i * 60, 12, 12))]);
+
+    // A small cloud badge in the bottom-right corner.
+    private static Geometry BadgeCloud() =>
+        Union(Circle(16.25, 19.25, 2.25), Circle(18.75, 17.25, 2.75), Circle(20.5, 19.75, 1.75), Rectangle(16.25, 19.25, 4.25, 2.25));
 
     // A solid gear badge in the bottom-right corner, with a hole in the middle.
     private static Geometry BadgeGear() =>
