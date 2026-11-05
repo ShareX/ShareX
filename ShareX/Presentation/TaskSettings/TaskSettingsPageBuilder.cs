@@ -335,6 +335,32 @@ internal sealed class TaskSettingsPageBuilder
         };
         Control gifOptions = Row(Strings.TaskSettingsWindow_GIFQuality, EnumCombo(() => image.ImageGIFQuality, value => image.ImageGIFQuality = value));
         Control bmpOptions = Row(Strings.TaskSettingsWindow_BMPBitDepth, EnumCombo(() => image.ImageBMPBitDepth, value => image.ImageBMPBitDepth = value));
+        Control webpQuality = Row(Strings.TaskSettingsWindow_WebPQuality,
+            Number(() => image.ImageWebPQuality, value => image.ImageWebPQuality = (int)value, 0, 100));
+        Control webpCompressionEffort = Row(Strings.TaskSettingsWindow_WebPCompressionEffort,
+            Number(() => image.ImageWebPCompressionEffort, value => image.ImageWebPCompressionEffort = (int)value, 0, 100),
+            Strings.TaskSettingsWindow_WebPCompressionEffortHint);
+        void UpdateWebPOptionsVisibility()
+        {
+            webpQuality.IsVisible = !image.ImageWebPLossless;
+            webpCompressionEffort.IsVisible = image.ImageWebPLossless;
+        }
+        StackPanel webpOptions = new()
+        {
+            Spacing = 4,
+            Children =
+            {
+                Check(Strings.TaskSettingsWindow_WebPLossless, () => image.ImageWebPLossless, value =>
+                {
+                    image.ImageWebPLossless = value;
+                    UpdateWebPOptionsVisibility();
+                    _window.RefreshSettingsSearch();
+                }),
+                webpQuality,
+                webpCompressionEffort
+            }
+        };
+        UpdateWebPOptionsVisibility();
         Border automaticJpeg = new()
         {
             Child = EnabledCard(_imageOverride, Strings.TaskSettingsWindow_AutomaticJPEG,
@@ -345,6 +371,9 @@ internal sealed class TaskSettingsPageBuilder
         SettingsSearch.SetIsAvailabilityContainer(jpegOptions, true);
         SettingsSearch.SetIsAvailabilityContainer(gifOptions, true);
         SettingsSearch.SetIsAvailabilityContainer(bmpOptions, true);
+        SettingsSearch.SetIsAvailabilityContainer(webpOptions, true);
+        SettingsSearch.SetIsAvailabilityContainer(webpQuality, true);
+        SettingsSearch.SetIsAvailabilityContainer(webpCompressionEffort, true);
         SettingsSearch.SetIsAvailabilityContainer(automaticJpeg, true);
 
         void UpdateEncoderVisibility(EImageFormat format)
@@ -353,6 +382,7 @@ internal sealed class TaskSettingsPageBuilder
             jpegOptions.IsVisible = format == EImageFormat.JPEG;
             gifOptions.IsVisible = format == EImageFormat.GIF;
             bmpOptions.IsVisible = format == EImageFormat.BMP;
+            webpOptions.IsVisible = format == EImageFormat.WEBP;
             automaticJpeg.IsVisible = format != EImageFormat.JPEG;
         }
 
@@ -367,7 +397,7 @@ internal sealed class TaskSettingsPageBuilder
                     UpdateEncoderVisibility(value);
                     _window.RefreshSettingsSearch();
                 })),
-                pngOptions, jpegOptions, gifOptions, bmpOptions,
+                pngOptions, jpegOptions, gifOptions, bmpOptions, webpOptions,
                 Row(Strings.TaskSettingsWindow_IfFileExists, EnumCombo(() => image.FileExistAction, value => image.FileExistAction = value))),
             automaticJpeg);
     }

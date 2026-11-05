@@ -2916,6 +2916,26 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_JPEGQuality", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_WebPQuality {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WebPQuality", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_WebPLossless {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WebPLossless", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_WebPCompressionEffort {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WebPCompressionEffort", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_WebPCompressionEffortHint {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WebPCompressionEffortHint", resourceCulture);
+            }
+        }
 
         /// <summary>
         ///   Looks up a localized string similar to JPEG chroma subsampling:.

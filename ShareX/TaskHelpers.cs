@@ -424,7 +424,8 @@ namespace ShareX
             imageData.ImageStream = SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
                 taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
                 GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling,
-                taskSettings.ImageSettings.ImageBMPBitDepth, autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
+                taskSettings.ImageSettings.ImageBMPBitDepth, GetWebPEncoderOptions(taskSettings.ImageSettings),
+                autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
             imageData.ImageFormat = imageFormat;
 
             if (autoUseJPEG && (pngSizeLimitExceeded || imageData.ImageStream.Length > jpegSizeLimit))
@@ -479,7 +480,13 @@ namespace ShareX
             return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
                 taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
                 GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling,
-                taskSettings.ImageSettings.ImageBMPBitDepth, long.MaxValue, out _);
+                taskSettings.ImageSettings.ImageBMPBitDepth, GetWebPEncoderOptions(taskSettings.ImageSettings), long.MaxValue, out _);
+        }
+
+        private static SKWebpEncoderOptions GetWebPEncoderOptions(TaskSettingsImage settings)
+        {
+            return SkiaImageHelpers.GetWebPEncoderOptions(settings.ImageWebPQuality, settings.ImageWebPLossless,
+                settings.ImageWebPCompressionEffort);
         }
 
         private static SKPngEncoderOptions GetPNGEncoderOptions(TaskSettingsImage settings)
@@ -499,12 +506,13 @@ namespace ShareX
             BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24)
         {
             return SaveImageAsStream(img, imageFormat, pngBitDepth, jpegQuality, gifQuality,
-                SKPngEncoderOptions.Default, jpegSubsampling, bmpBitDepth, long.MaxValue, out _);
+                SKPngEncoderOptions.Default, jpegSubsampling, bmpBitDepth, SkiaImageHelpers.GetWebPEncoderOptions(90, false, 75),
+                long.MaxValue, out _);
         }
 
         private static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth,
             int jpegQuality, GIFQuality gifQuality, SKPngEncoderOptions pngOptions, SKJpegEncoderDownsample jpegSubsampling,
-            BMPBitDepth bmpBitDepth, long pngSizeLimit, out bool pngSizeLimitExceeded)
+            BMPBitDepth bmpBitDepth, SKWebpEncoderOptions webpOptions, long pngSizeLimit, out bool pngSizeLimitExceeded)
         {
             MemoryStream ms = new MemoryStream();
             pngSizeLimitExceeded = false;
@@ -540,6 +548,9 @@ namespace ShareX
                         break;
                     case EImageFormat.BMP:
                         SkiaImageHelpers.SaveBMP(img, ms, bmpBitDepth);
+                        break;
+                    case EImageFormat.WEBP:
+                        SkiaImageHelpers.SaveWebP(img, ms, webpOptions);
                         break;
                 }
             }

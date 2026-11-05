@@ -3017,6 +3017,18 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Wave audio</value>
   </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP compression effort:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Lower values encode faster. Higher values produce smaller files. All values preserve image quality.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Lossless</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP quality:</value>
+  </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Width:</value>
   </data>
