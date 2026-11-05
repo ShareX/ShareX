@@ -842,12 +842,12 @@ internal static partial class AppIconDefinitions
         },
         {
             Icon.CaptionMaximize,
-            Stroke(Rectangle(3.5, 3.5, 9, 9, 1))
+            Fill(Frame(3, 3, 10, 10))
         },
         {
             Icon.CaptionRestore,
-            Stroke(Rectangle(3.5, 5.5, 7, 7, 1)),
-            Stroke("M5.5 5.5v-1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-1")
+            Fill(Frame(3, 5, 8, 8)),
+            Fill(Subtract(Frame(5, 3, 8, 8), Rectangle(3, 5, 8, 8)))
         },
         {
             Icon.CaptionClose,
@@ -926,6 +926,10 @@ internal static partial class AppIconDefinitions
         Stroke(Circle(6, 17.5, 3)),
         Stroke("M8.5 8.25 20.5 18M8.5 15.75 20.5 6")
     ];
+
+    // A 1px outline filled on whole pixels, so its corners stay square and sharp.
+    private static Geometry Frame(double x, double y, double width, double height) =>
+        Subtract(Rectangle(x, y, width, height), Rectangle(x + 1, y + 1, width - 2, height - 2));
 
     private static IconShape[] CaptionPinShapes() =>
     [
