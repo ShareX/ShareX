@@ -191,15 +191,22 @@ public static class AppIcons
     public const string ClearList = Prefix + "clear-list";
     public const string ChevronRight = Prefix + "chevron-right";
 
-    // Title bar.
-    public const string Moon = Prefix + "moon";
     public const string Sun = Prefix + "sun";
-    public const string Minimize = Prefix + "minimize";
-    public const string Maximize = Prefix + "maximize";
-    public const string Restore = Prefix + "restore";
     public const string Close = Prefix + "close";
+
+    // Title bar buttons, drawn on a 16px pixel grid to be shown at 16px.
+    public const string CaptionMoon = Prefix + "caption-moon";
+    public const string CaptionSun = Prefix + "caption-sun";
+    public const string CaptionPin = Prefix + "caption-pin";
+    public const string CaptionUnpin = Prefix + "caption-unpin";
+    public const string CaptionMinimize = Prefix + "caption-minimize";
+    public const string CaptionMaximize = Prefix + "caption-maximize";
+    public const string CaptionRestore = Prefix + "caption-restore";
+    public const string CaptionClose = Prefix + "caption-close";
+
     // Controls and actions.
     public const string Plus = Prefix + "plus";
+    public const string Minus = Prefix + "minus";
     public const string ChevronDown = Prefix + "chevron-down";
     public const string ChevronUp = Prefix + "chevron-up";
     public const string ChevronLeft = Prefix + "chevron-left";

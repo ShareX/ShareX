@@ -49,6 +49,10 @@ internal static partial class AppIconDefinitions
             Stroke("M12 5v14M5 12h14")
         },
         {
+            Icon.Minus,
+            Stroke("M5 12h14")
+        },
+        {
             Icon.ChevronDown,
             Stroke("m6 9 6 6 6-6")
         },

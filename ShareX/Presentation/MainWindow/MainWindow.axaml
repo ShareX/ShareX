@@ -90,7 +90,7 @@
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
         <Style Selector="controls|IconPresenter.theme-toggle-icon">
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Opacity" Value="0"/>
@@ -169,10 +169,10 @@
                             <Grid Width="20" Height="20" ClipToBounds="True" IsHitTestVisible="False">
                                 <controls:IconPresenter Classes="theme-toggle-icon moon"
                                                         Classes.active="{Binding IsDarkTheme}"
-                                                        Icon="{x:Static icons:AppIcons.Moon}"/>
+                                                        Icon="{x:Static icons:AppIcons.CaptionMoon}"/>
                                 <controls:IconPresenter Classes="theme-toggle-icon sun"
                                                         Classes.active="{Binding !IsDarkTheme}"
-                                                        Icon="{x:Static icons:AppIcons.Sun}"/>
+                                                        Icon="{x:Static icons:AppIcons.CaptionSun}"/>
                             </Grid>
                         </Button>
                         <Button Classes="caption-button"
@@ -180,11 +180,11 @@
                                 Click="OnTopmostClick"
                                 chrome:WindowDecorationProperties.ElementRole="User">
                             <Grid>
-                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Pin}"
-                                                        FontSize="13"
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionPin}"
+                                                        FontSize="16"
                                                         IsVisible="{Binding !Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
-                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Unpin}"
-                                                        FontSize="13"
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionUnpin}"
+                                                        FontSize="16"
                                                         IsVisible="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
                             </Grid>
                         </Button>
@@ -192,19 +192,19 @@
                                 AutomationProperties.Name="{x:Static res:Strings.MainWindow_Minimize}"
                                 Click="OnMinimizeClick"
                                 chrome:WindowDecorationProperties.ElementRole="MinimizeButton">
-                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Minimize}"
-                                                    FontSize="14"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionMinimize}"
+                                                    FontSize="16"/>
                         </Button>
                         <Button Classes="caption-button"
                                 AutomationProperties.Name="{x:Static res:Strings.MainWindow_MaximizeOrRestore}"
                                 Click="OnMaximizeRestoreClick"
                                 chrome:WindowDecorationProperties.ElementRole="MaximizeButton">
                             <Grid>
-                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Maximize}"
-                                                        FontSize="12"
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionMaximize}"
+                                                        FontSize="16"
                                                         IsVisible="{Binding !IsWindowMaximized}"/>
-                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Restore}"
-                                                        FontSize="12"
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionRestore}"
+                                                        FontSize="16"
                                                         IsVisible="{Binding IsWindowMaximized}"/>
                             </Grid>
                         </Button>
@@ -213,8 +213,8 @@
                                 AutomationProperties.Name="{x:Static res:Strings.ActionsToolbarWindow_Close}"
                                 Click="OnCloseClick"
                                 chrome:WindowDecorationProperties.ElementRole="CloseButton">
-                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Close}"
-                                                    FontSize="14"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionClose}"
+                                                    FontSize="16"/>
                         </Button>
                     </StackPanel>
                 </Grid>

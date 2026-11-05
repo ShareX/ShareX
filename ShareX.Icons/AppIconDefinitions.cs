@@ -48,6 +48,7 @@ internal static partial class AppIconDefinitions
     private const string BadgeClock = "M18 14a4 4 0 1 0 0 8 4 4 0 1 0 0-8zM18 16v2.25l1.5 1";
     private const string BadgeConvert = "M15.75 21.5V15M14 16.75l1.75-1.75 1.75 1.75M20.25 15v6.5M18.5 19.75l1.75 1.75 1.75-1.75";
     private const string Slash = "M2.5 2.5l19 19";
+    private const string CaptionSlash = "M2.5 2.5l10 10";
 
     // The gap left around an overlay: its 2px line plus 1.5px on each side.
     private const double OverlayHalo = 5;
@@ -66,7 +67,7 @@ internal static partial class AppIconDefinitions
     private const string FloppyPath = "M5.5 3h10.3a2 2 0 0 1 1.4.6l3.2 3.2a2 2 0 0 1 .6 1.4v10.3a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13A2.5 2.5 0 0 1 5.5 3z";
     private const string ShieldPath = "M12 2.5 4 5.5V11c0 5 3.4 8.8 8 10.5 4.6-1.7 8-5.5 8-10.5V5.5z";
 
-    public static IEnumerable<IconGroup> CreateGroups() => [CreateIcons(), CreateControlIcons()];
+    public static IEnumerable<IconGroup> CreateGroups() => [CreateIcons(), CreateControlIcons(), CreateCaptionIcons()];
 
     private static IconGroup CreateIcons() => new(24, IconStyle.Rounded)
     {
@@ -803,32 +804,54 @@ internal static partial class AppIconDefinitions
             Stroke("m9 5 7 7-7 7")
         },
 
-        // Title bar. The caption buttons are drawn smaller, so they sit lighter than the menu icons.
-        {
-            Icon.Moon,
-            Stroke("M20.5 14.4A8.5 8.5 0 1 1 9.6 3.5a6.75 6.75 0 0 0 10.9 10.9z")
-        },
         {
             Icon.Sun,
             Stroke(Circle(12, 12, 4)),
             Stroke("M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.75 1.75M17.35 17.35l1.75 1.75M4.9 19.1l1.75-1.75M17.35 6.65l1.75-1.75")
         },
         {
-            Icon.Minimize,
-            Stroke("M5 12h14")
-        },
-        {
-            Icon.Maximize,
-            Stroke(Rectangle(5, 5, 14, 14, 2))
-        },
-        {
-            Icon.Restore,
-            Stroke(Rectangle(4, 8, 12, 12, 2)),
-            Stroke("M8 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2")
-        },
-        {
             Icon.Close,
             Stroke("M6 6l12 12M18 6 6 18")
+        }
+    };
+
+    // The title bar buttons: a 16x16 grid shown at 16px, with 1px lines on pixel centers and straight line ends on
+    // pixel edges, so they stay sharp. The window buttons fill 3..13; the moon, sun and pin are about 11px.
+    private static IconGroup CreateCaptionIcons() => new(16, IconStyle.Fine)
+    {
+        {
+            Icon.CaptionMoon,
+            Stroke("M7.88 2.5A5.5 5.5 0 1 0 13.5 8.12 4 4 0 0 1 7.88 2.5z")
+        },
+        {
+            Icon.CaptionSun,
+            Stroke(Circle(7.5, 7.5, 3)),
+            Stroke("M7.5 1v2M7.5 12v2M1 7.5h2M12 7.5h2M3.25 3.25l1.25 1.25M10.5 10.5l1.25 1.25M3.25 11.75l1.25-1.25M10.5 4.5l1.25-1.25")
+        },
+        {
+            Icon.CaptionPin,
+            CaptionPinShapes()
+        },
+        {
+            Icon.CaptionUnpin,
+            Overlay(CaptionPinShapes(), Halo(CaptionSlash, 3), Stroke(CaptionSlash))
+        },
+        {
+            Icon.CaptionMinimize,
+            Stroke("M3 8.5h10")
+        },
+        {
+            Icon.CaptionMaximize,
+            Stroke(Rectangle(3.5, 3.5, 9, 9, 1))
+        },
+        {
+            Icon.CaptionRestore,
+            Stroke(Rectangle(3.5, 5.5, 7, 7, 1)),
+            Stroke("M5.5 5.5v-1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-1")
+        },
+        {
+            Icon.CaptionClose,
+            Stroke("M3.5 3.5l9 9M12.5 3.5l-9 9")
         }
     };
 
@@ -902,6 +925,12 @@ internal static partial class AppIconDefinitions
         Stroke(Circle(6, 6.5, 3)),
         Stroke(Circle(6, 17.5, 3)),
         Stroke("M8.5 8.25 20.5 18M8.5 15.75 20.5 6")
+    ];
+
+    private static IconShape[] CaptionPinShapes() =>
+    [
+        Stroke("M4 2.5h7M5.5 2.5v4l-2 2v1h8v-1l-2-2v-4"),
+        Stroke("M7.5 10v4")
     ];
 
     private static IconShape[] PinShapes() =>

@@ -36,6 +36,9 @@ internal sealed class IconStyle(double strokeWidth, PenLineCap lineCap, PenLineJ
     /// <summary>Pixel line art: 1px strokes with square ends and corners, sharp at the grid's own size.</summary>
     public static readonly IconStyle Pixel = new(1, PenLineCap.Flat, PenLineJoin.Miter);
 
+    /// <summary>Fine line art for small icons shown at their grid size: 1px strokes with square ends and round corners.</summary>
+    public static readonly IconStyle Fine = new(1, PenLineCap.Flat, PenLineJoin.Round);
+
     public double StrokeWidth { get; } = strokeWidth;
 
     public PenLineCap LineCap { get; } = lineCap;
