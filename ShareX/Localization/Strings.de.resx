@@ -2519,6 +2519,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Nach oben</value>
   </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Mehrbereichsmodus</value>
+  </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Name</value>
   </data>

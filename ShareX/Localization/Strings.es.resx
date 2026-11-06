@@ -2519,6 +2519,9 @@ Do you want to abort the active grabación de pantalla?</value>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Subir</value>
   </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Modo de varias regiones</value>
+  </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Nombre</value>
   </data>

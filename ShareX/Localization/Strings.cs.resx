@@ -2519,6 +2519,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Přesunout nahoru</value>
   </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Režim více oblastí</value>
+  </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Název</value>
   </data>

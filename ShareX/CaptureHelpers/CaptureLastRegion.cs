@@ -23,7 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ScreenCaptureLib;
 using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Threading.Tasks;
 using Bitmap = SkiaSharp.SKBitmap;
 
@@ -43,10 +47,24 @@ namespace ShareX
 
         protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
-            if (!RegionCaptureIntegration.LastRegionRectangle.IsEmpty)
+            Rectangle bounds = RegionCaptureIntegration.LastRegionRectangle;
+
+            if (!bounds.IsEmpty)
             {
-                Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(
-                    RegionCaptureIntegration.LastRegionRectangle);
+                Bitmap bmp = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(bounds);
+                IReadOnlyList<Rectangle> regions = RegionCaptureIntegration.LastRegionRectangles;
+
+                if (bmp != null && regions.Count > 1)
+                {
+                    List<Rectangle> localRegions = regions
+                        .Select(region => new Rectangle(region.X - bounds.X, region.Y - bounds.Y, region.Width, region.Height))
+                        .ToList();
+
+                    Bitmap masked = RegionCaptureTasks.ApplyRegionMask(bmp, localRegions);
+                    bmp.Dispose();
+                    bmp = masked;
+                }
+
                 return new TaskMetadata(bmp);
             }
 

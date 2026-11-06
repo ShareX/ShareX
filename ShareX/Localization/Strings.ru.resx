@@ -2519,6 +2519,9 @@
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Переместить вверх</value>
   </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Захват нескольких областей</value>
+  </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Имя</value>
   </data>

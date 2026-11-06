@@ -29,6 +29,7 @@ using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 using SkiaSharp;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
 using Bitmap = SkiaSharp.SKBitmap;
@@ -77,6 +78,28 @@ public static class RegionCaptureTasks
 
         result.Image.Dispose();
         return (result.ScreenRectangle, result.WindowInfo);
+    }
+
+    /// <summary>
+    /// Returns a copy of <paramref name="source"/> that keeps only the pixels inside <paramref name="regions"/>
+    /// and makes everything else transparent. Regions are in <paramref name="source"/> pixel coordinates.
+    /// </summary>
+    public static Bitmap ApplyRegionMask(Bitmap source, IReadOnlyList<Rectangle> regions)
+    {
+        Bitmap result = new Bitmap(new SKImageInfo(source.Width, source.Height, SKColorType.Bgra8888, SKAlphaType.Premul));
+        result.Erase(SKColors.Transparent);
+
+        using SKCanvas canvas = new SKCanvas(result);
+        using SKPath path = new SKPath { FillType = SKPathFillType.Winding };
+
+        foreach (Rectangle region in regions)
+        {
+            path.AddRect(SKRect.Create(region.X, region.Y, region.Width, region.Height));
+        }
+
+        canvas.ClipPath(path, SKClipOperation.Intersect, false);
+        canvas.DrawBitmap(source, 0, 0);
+        return result;
     }
 
     private static async Task<AvaloniaRegionCaptureResult?> CaptureAsync(RegionCaptureOptions? options)
