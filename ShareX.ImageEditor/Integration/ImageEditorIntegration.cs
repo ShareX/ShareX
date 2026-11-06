@@ -25,6 +25,7 @@
 
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using ShareX.ImageEditor.Presentation.Views;
 using SkiaSharp;
@@ -141,6 +142,7 @@ namespace ShareX.ImageEditor.Integration
                     tcs.SetResult(result);
                 };
 
+                DesktopServices.PlaceOnMainWindowScreen(window);
                 window.Show();
             });
 

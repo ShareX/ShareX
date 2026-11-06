@@ -26,6 +26,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Platform;
 using Avalonia.Threading;
 
 namespace ShareX.AvaloniaUI.Integration;
@@ -54,6 +55,24 @@ public static class DesktopServices
                 lifetime.Exit += (_, _) => { _serviceWindow?.Close(); _serviceWindow = null; };
         }
         return _serviceWindow;
+    }
+
+    /// <summary>
+    /// Call before the window is first shown. When the ShareX main window is visible, the window opens
+    /// centered on the main window's screen, unless its saved position is already on that screen.
+    /// </summary>
+    public static void PlaceOnMainWindowScreen(Window window)
+    {
+        Dispatcher.UIThread.VerifyAccess();
+        if (Application.Current?.ApplicationLifetime is not IClassicDesktopStyleApplicationLifetime { MainWindow: { IsVisible: true } mainWindow } ||
+            ReferenceEquals(mainWindow, window)) return;
+        Screen? screen = mainWindow.Screens.ScreenFromTopLevel(mainWindow);
+        if (screen == null) return;
+        if (window.WindowStartupLocation == WindowStartupLocation.Manual &&
+            window.Screens.ScreenFromPoint(window.Position)?.Bounds == screen.Bounds) return;
+        // Without an owner, CenterScreen centers on the screen that contains the window's position.
+        window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        window.Position = screen.WorkingArea.Position;
     }
 
     /// <summary>
