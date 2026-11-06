@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>Pause</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Ziehen, um die Symbolleiste zu verschieben; Doppelklick setzt ihre Position zurück</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Bereich aufnehmen (Tab)</value>
   </data>

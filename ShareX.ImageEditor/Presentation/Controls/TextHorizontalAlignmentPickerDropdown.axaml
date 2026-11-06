@@ -17,7 +17,6 @@
     <Grid>
         <Button x:Name="DropdownButton"
                 Click="OnDropdownButtonClick"
-                Height="40"
                 MinWidth="58"
                 HorizontalContentAlignment="Stretch">
             <Grid ColumnDefinitions="Auto,Auto">

@@ -18,7 +18,6 @@
     <Grid HorizontalAlignment="Stretch">
         <Button x:Name="DropdownButton"
                 Click="OnDropdownButtonClick"
-                Height="40"
                 MinWidth="{Binding MinWidth, ElementName=CursorTypePickerDropdownRoot}"
                 MaxWidth="{Binding MaxWidth, ElementName=CursorTypePickerDropdownRoot}"
                 HorizontalAlignment="Stretch"

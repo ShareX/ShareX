@@ -24,10 +24,106 @@
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="Padding" Value="6"/>
         </Style>
+
+        <Style Selector="Border#MainToolbarBorder">
+            <Setter Property="Padding" Value="4"/>
+        </Style>
+
+        <Style Selector="Border#ToolOptionsBorder">
+            <Setter Property="Padding" Value="4,0,4,4"/>
+            <Setter Property="CornerRadius" Value="0,0,4,4"/>
+        </Style>
+
+        <Style Selector="StackPanel.toolbar-row">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Spacing" Value="4"/>
+        </Style>
+
+        <Style Selector="Border.toolbar-separator">
+            <Setter Property="Width" Value="1"/>
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Separator}"/>
+        </Style>
+
+        <Style Selector="Border.option-indicator">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Border.option-indicator > iconControls|IconPresenter">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <!-- Compact density modelled on the ShareX 21 region capture toolbar:
+             small flat buttons, square corners and tight spacing. -->
+        <Style Selector="controls|AnnotationToolbar:compact">
+            <Style Selector="^ Border#MainToolbarBorder">
+                <Setter Property="Padding" Value="1"/>
+            </Style>
+
+            <Style Selector="^ Border#ToolOptionsBorder">
+                <Setter Property="Padding" Value="1,0,1,1"/>
+                <Setter Property="CornerRadius" Value="0"/>
+            </Style>
+
+            <Style Selector="^ StackPanel.toolbar-row">
+                <Setter Property="Spacing" Value="1"/>
+            </Style>
+
+            <Style Selector="^ Border.toolbar-separator">
+                <Setter Property="Margin" Value="2,3"/>
+            </Style>
+
+            <Style Selector="^ Button.toolbar-button">
+                <Setter Property="Width" Value="26"/>
+                <Setter Property="MinWidth" Value="26"/>
+                <Setter Property="Height" Value="26"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="CornerRadius" Value="2"/>
+            </Style>
+
+            <Style Selector="^ Button.toolbar-button:not(.active) /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+            </Style>
+
+            <Style Selector="^ Button.toolbar-button:not(.active):pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            </Style>
+
+            <Style Selector="^ Button.toolbar-button.active /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="BorderBrush" Value="Transparent"/>
+            </Style>
+
+            <Style Selector="^ Button#DropdownButton">
+                <Setter Property="Height" Value="26"/>
+                <Setter Property="Padding" Value="4,0"/>
+                <Setter Property="CornerRadius" Value="2"/>
+            </Style>
+
+            <Style Selector="^ controls|StrengthSlider">
+                <Setter Property="Height" Value="26"/>
+            </Style>
+
+            <Style Selector="^ Border.option-indicator">
+                <Setter Property="Width" Value="26"/>
+                <Setter Property="Height" Value="26"/>
+            </Style>
+
+            <Style Selector="^ Border.option-indicator > iconControls|IconPresenter">
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+        </Style>
     </UserControl.Styles>
 
     <StackPanel Orientation="Vertical" Spacing="0">
-        <Border Padding="4"
+        <Border x:Name="MainToolbarBorder"
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}"
                 BorderThickness="{Binding MainToolbarBorderThickness, ElementName=AnnotationToolbarRoot}"
@@ -35,20 +131,19 @@
                 HorizontalAlignment="Center">
             <ScrollViewer HorizontalScrollBarVisibility="Auto"
                           VerticalScrollBarVisibility="Disabled">
-                <StackPanel Orientation="Horizontal" Spacing="4">
+                <StackPanel Classes="toolbar-row">
                     <ContentControl x:Name="MainToolbarLeadingContentHost"
                                     IsVisible="False"/>
                     <ItemsControl ItemsSource="{ReflectionBinding VisibleToolbarItems}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" Spacing="4"/>
+                                <StackPanel Classes="toolbar-row"/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate x:DataType="vm:ToolbarCustomizationItemViewModel">
-                                <StackPanel Orientation="Horizontal" Spacing="4">
-                                    <Border Width="1"
-                                            Background="{DynamicResource ShareX.Brush.Separator}"
+                                <StackPanel Classes="toolbar-row">
+                                    <Border Classes="toolbar-separator"
                                             IsVisible="{Binding IsGroupSeparatorVisible}"/>
                                     <Button Classes="toolbar-button"
                                             ToolTip.Tip="{Binding ToolTip}"
@@ -134,10 +229,9 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
 
-                    <StackPanel Orientation="Horizontal"
-                                Spacing="4"
+                    <StackPanel Classes="toolbar-row"
                                 IsVisible="{Binding ShowEditingActions, ElementName=AnnotationToolbarRoot}">
-                        <Border Width="1" Background="{DynamicResource ShareX.Brush.Separator}"/>
+                        <Border Classes="toolbar-separator"/>
                         <Button Classes="toolbar-button"
                                 IsEnabled="{Binding CanUndo}"
                                 Click="OnUndoClick"
@@ -168,54 +262,41 @@
         </Border>
 
         <Grid IsVisible="{Binding ShowToolOptions, ElementName=AnnotationToolbarRoot}">
-            <Border Padding="4,0,4,4"
+            <Border x:Name="ToolOptionsBorder"
                     Margin="0,-1,0,0"
                     Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                     BorderBrush="{DynamicResource ShareX.Brush.Border}"
                     BorderThickness="1,0,1,1"
-                    CornerRadius="0,0,4,4"
                     HorizontalAlignment="Center"
                     IsVisible="{Binding ShowToolOptionsSeparator}">
             <ScrollViewer HorizontalScrollBarVisibility="Auto"
                           VerticalScrollBarVisibility="Disabled">
-                <StackPanel Orientation="Horizontal"
-                            Spacing="4">
-                    <Border Background="Transparent"
-                            Width="40"
-                            Height="40"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Center"
+                <StackPanel Classes="toolbar-row">
+                    <Border Classes="option-indicator"
                             ToolTip.Tip="{Binding ActiveToolName}">
                         <iconControls:IconPresenter Icon="{Binding ActiveToolIcon}"
-                                                    FontSize="24"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                                    VerticalAlignment="Center"
-                                                    HorizontalAlignment="Center"/>
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"/>
                     </Border>
 
                     <controls:ColorPickerDropdown x:Name="StrokeColorPicker"
                                                   SelectedColor="{Binding SelectedColorBrush, Mode=TwoWay}"
-                                                  Height="40"
                                                   IsVisible="{Binding ShowBorderColor}"
                                                   ShowBorderHole="True"
                                                   ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Bordercolor}"/>
 
                     <controls:ColorPickerDropdown x:Name="FillColorPicker"
                                                   SelectedColor="{Binding FillColorBrush, Mode=TwoWay}"
-                                                  Height="40"
                                                   IsVisible="{Binding ShowFillColor}"
                                                   ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fillcolor}"/>
 
                     <controls:ColorPickerDropdown x:Name="TextColorPicker"
                                                   SelectedColor="{Binding TextColorBrush, Mode=TwoWay}"
-                                                  Height="40"
                                                   IsVisible="{Binding ShowTextColor}"
                                                   ShowTextLabel="True"
                                                   ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Textcolor}"/>
 
                     <controls:WidthPickerDropdown x:Name="StrokeWidthPicker"
                                                   SelectedWidth="{Binding StrokeWidth, Mode=TwoWay}"
-                                                  Height="40"
                                                   IsVisible="{Binding ShowThickness}"
                                                   ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Thickness}"/>
 
@@ -224,13 +305,11 @@
                                                         SelectedBorderStyle="{Binding SelectedBorderStyle, Mode=TwoWay}"
                                                         MinWidth="92"
                                                         MaxWidth="168"
-                                                        Height="40"
                                                         IsVisible="{Binding ShowBorderStyle}"
                                                         ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Borderstyle}"/>
 
                     <controls:CornerRadiusPickerDropdown x:Name="CornerRadiusPicker"
                                                          SelectedCornerRadius="{Binding CornerRadius, Mode=TwoWay}"
-                                                         Height="40"
                                                          IsVisible="{Binding ShowCornerRadius}"
                                                          ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Cornerradius}"/>
 
@@ -239,14 +318,12 @@
                                                        SelectedFontFamily="{Binding SelectedFontFamily, Mode=TwoWay}"
                                                        MinWidth="180"
                                                        MaxWidth="240"
-                                                       Height="40"
                                                        IsVisible="{Binding ShowFontFamily}"
                                                        ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fontfamily}"/>
 
                     <controls:TextHorizontalAlignmentPickerDropdown x:Name="TextHorizontalAlignmentPicker"
                                                                     TextHorizontalAlignmentOptions="{Binding AvailableTextHorizontalAlignments}"
                                                                     SelectedTextHorizontalAlignment="{Binding SelectedTextHorizontalAlignment, Mode=TwoWay}"
-                                                                    Height="40"
                                                                     IsVisible="{Binding ShowTextHorizontalAlignment}"
                                                                     ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Horizontalalignment}"/>
 
@@ -255,7 +332,6 @@
                                                        SelectedArrowStyle="{Binding SelectedArrowStyle, Mode=TwoWay}"
                                                        MinWidth="80"
                                                        MaxWidth="160"
-                                                       Height="40"
                                                        IsVisible="{Binding ShowArrowStyle}"
                                                        ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Arrowstyle}"/>
 
@@ -264,13 +340,11 @@
                                                        SelectedCursorType="{Binding SelectedCursorType, Mode=TwoWay}"
                                                        MinWidth="90"
                                                        MaxWidth="180"
-                                                       Height="40"
                                                        IsVisible="{Binding ShowCursorType}"
                                                        ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Cursortype}"/>
 
                     <controls:FontSizePickerDropdown x:Name="FontSizePicker"
                                                      SelectedFontSize="{Binding FontSize, Mode=TwoWay}"
-                                                     Height="40"
                                                      IsVisible="{Binding ShowFontSize}"
                                                      ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Fontsize}"/>
 
@@ -292,14 +366,12 @@
                     <controls:StepTypePickerDropdown x:Name="StepTypePicker"
                                                      StepTypeOptions="{Binding AvailableStepTypes}"
                                                      SelectedStepType="{Binding SelectedStepType, Mode=TwoWay}"
-                                                     Height="40"
                                                      IsVisible="{Binding ShowStepType}"
                                                      ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Steptype}"/>
 
                     <controls:NumberPickerDropdown x:Name="StepStartPicker"
                                                    NumberOptions="{Binding AvailableStepStartNumbers}"
                                                    SelectedNumber="{Binding StepStartNumber, Mode=TwoWay}"
-                                                   Height="40"
                                                    IsVisible="{Binding ShowStepStartNumber}"
                                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Startingnumber}"/>
 
@@ -309,18 +381,11 @@
                                              IsVisible="{Binding ShowStrength}"
                                              ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Effectstrength}"/>
 
-                    <Border Background="Transparent"
-                                    Width="40"
-                                    Height="40"
-                                    VerticalAlignment="Center"
-                                    HorizontalAlignment="Center"
-                                    IsVisible="{Binding ShowSpotlightBlur}"
-                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Bluramount}">
-                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ToolBlur}"
-                                                        FontSize="24"
-                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                        VerticalAlignment="Center"
-                                                        HorizontalAlignment="Center"/>
+                    <Border Classes="option-indicator"
+                            IsVisible="{Binding ShowSpotlightBlur}"
+                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Bluramount}">
+                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ToolBlur}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                     </Border>
 
                     <controls:StrengthSlider x:Name="SpotlightBlurSlider"

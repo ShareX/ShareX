@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>Пауза</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Перетащите, чтобы переместить панель инструментов; дважды щёлкните, чтобы сбросить её положение</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Захват области (Tab)</value>
   </data>

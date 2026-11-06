@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>Pozastavit</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Přetažením přesunete panel nástrojů, poklepáním obnovíte jeho pozici</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Zachytit oblast (Tab)</value>
   </data>

@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>Jeda</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Seret untuk memindahkan bilah alat, klik dua kali untuk mengatur ulang posisinya</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Jepret area (Tab)</value>
   </data>

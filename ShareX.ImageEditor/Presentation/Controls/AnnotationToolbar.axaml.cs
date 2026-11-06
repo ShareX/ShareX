@@ -52,6 +52,9 @@ public partial class AnnotationToolbar : UserControl
     public static readonly StyledProperty<CornerRadius> MainToolbarCornerRadiusProperty =
         AvaloniaProperty.Register<AnnotationToolbar, CornerRadius>(nameof(MainToolbarCornerRadius), new CornerRadius(0, 0, 4, 4));
 
+    public static readonly StyledProperty<bool> IsCompactProperty =
+        AvaloniaProperty.Register<AnnotationToolbar, bool>(nameof(IsCompact));
+
     private IAnnotationToolbarAdapter? _toolbarAdapter;
     private ContentControl _mainToolbarLeadingContentHost = null!;
 
@@ -109,6 +112,16 @@ public partial class AnnotationToolbar : UserControl
         set => SetValue(MainToolbarCornerRadiusProperty, value);
     }
 
+    /// <summary>
+    /// Uses the dense layout of the ShareX 21 region capture toolbar:
+    /// small flat buttons, square corners and tight spacing.
+    /// </summary>
+    public bool IsCompact
+    {
+        get => GetValue(IsCompactProperty);
+        set => SetValue(IsCompactProperty, value);
+    }
+
     public Control? MainToolbarLeadingContent
     {
         get => _mainToolbarLeadingContentHost.Content as Control;
@@ -128,6 +141,16 @@ public partial class AnnotationToolbar : UserControl
         if (fileButton?.Flyout is FlyoutBase flyout)
         {
             flyout.ShowAt(fileButton);
+        }
+    }
+
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+    {
+        base.OnPropertyChanged(change);
+
+        if (change.Property == IsCompactProperty)
+        {
+            PseudoClasses.Set(":compact", change.GetNewValue<bool>());
         }
     }
 

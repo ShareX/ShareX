@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>रोकें</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>टूलबार को ले जाने के लिए खींचें, उसकी स्थिति रीसेट करने के लिए डबल-क्लिक करें</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>क्षेत्र कैप्चर करें (Tab)</value>
   </data>

@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>مکث</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>برای جابه‌جایی نوار ابزار بکشید و برای بازنشانی موقعیت آن دوبار کلیک کنید</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>ضبط ناحیه (Tab)</value>
   </data>

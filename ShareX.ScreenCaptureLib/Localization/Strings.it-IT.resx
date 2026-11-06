@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>Pausa</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Trascina per spostare la barra degli strumenti, fai doppio clic per ripristinarne la posizione</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Cattura Regione (Tab)</value>
   </data>
