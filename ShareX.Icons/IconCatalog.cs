@@ -28,10 +28,33 @@ namespace ShareX.Icons;
 /// <summary>Finds a ShareX icon by its key, a constant of one of the icon sets, such as <see cref="AppIcons"/>.</summary>
 public static class IconCatalog
 {
+    private static readonly Lock LegacyLock = new();
     private static Dictionary<string, VectorIcon>? _icons;
+    private static readonly Dictionary<string, VectorIcon?> LegacyIconCache = new(StringComparer.Ordinal);
+    private static IconPack _pack;
+
+    /// <summary>Raised on the thread that sets <see cref="Pack"/> when it changes, so shown icons can be found again.</summary>
+    public static event EventHandler? PackChanged;
+
+    /// <summary>The look of the icons that <see cref="Find"/> returns.</summary>
+    public static IconPack Pack
+    {
+        get => _pack;
+        set
+        {
+            if (_pack != value)
+            {
+                _pack = value;
+                PackChanged?.Invoke(null, EventArgs.Empty);
+            }
+        }
+    }
 
     /// <summary>Returns the icon for <paramref name="key"/>, or null if it is not a ShareX icon key, such as a font glyph.</summary>
-    public static VectorIcon? Find(string? key)
+    public static VectorIcon? Find(string? key) => Find(key, _pack);
+
+    /// <summary>Returns the icon for <paramref name="key"/> in <paramref name="pack"/>, or null if it is not a ShareX icon key.</summary>
+    public static VectorIcon? Find(string? key, IconPack pack)
     {
         if (string.IsNullOrEmpty(key))
         {
@@ -40,7 +63,27 @@ public static class IconCatalog
 
         // Built on first use: geometries need the platform's render interface.
         _icons ??= CreateIcons();
-        return _icons.GetValueOrDefault(key);
+
+        if (!_icons.TryGetValue(key, out VectorIcon? icon))
+        {
+            return null;
+        }
+
+        return pack == IconPack.Legacy ? FindLegacy(key, icon) ?? icon : icon;
+    }
+
+    private static VectorIcon? FindLegacy(string key, VectorIcon modern)
+    {
+        lock (LegacyLock)
+        {
+            if (!LegacyIconCache.TryGetValue(key, out VectorIcon? icon))
+            {
+                icon = LegacyIcons.Find(key, modern);
+                LegacyIconCache[key] = icon;
+            }
+
+            return icon;
+        }
     }
 
     private static Dictionary<string, VectorIcon> CreateIcons()

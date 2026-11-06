@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="faMat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4f3f3"/></linearGradient>
+<linearGradient id="faEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557e7e"/><stop offset="1" stop-color="#103131"/></linearGradient>
+<linearGradient id="fbMat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4f3f3"/></linearGradient>
+<linearGradient id="fbEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557e7e"/><stop offset="1" stop-color="#103131"/></linearGradient>
+<linearGradient id="fkPink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff0b8e"/><stop offset="0.55" stop-color="#ff2499"/><stop offset="1" stop-color="#ff76c0"/></linearGradient>
+<linearGradient id="fkBlue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a88e5"/><stop offset="0.3" stop-color="#4691e7"/><stop offset="0.55" stop-color="#3682e4"/><stop offset="0.8" stop-color="#2a79e1"/><stop offset="1" stop-color="#1e6edf"/></linearGradient>
+</defs>
+<rect x="3.5" y="1.5" width="12" height="9" fill="url(#faMat)" stroke="url(#faEdge)" stroke-opacity=".55"/>
+<rect x="5" y="3" width="9" height="6" fill="url(#fkPink)"/>
+<rect x="0.5" y="5.5" width="12" height="9" fill="url(#fbMat)" stroke="url(#fbEdge)" stroke-opacity=".55"/>
+<rect x="2" y="7" width="9" height="6" fill="url(#fkBlue)"/>
+<ellipse cx="8.4" cy="9.9" rx="1.8" ry="1.2" fill="#9cc6f2" opacity=".75"/>
+<path d="M2 11 V9 Q3.2 8.8 4.6 10.2 V11 Z" fill="#0557d8" opacity=".8"/>
+
+</svg>

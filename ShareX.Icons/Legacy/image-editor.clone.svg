@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa6f0"/><stop offset=".6" stop-color="#b5d4ff"/><stop offset="1" stop-color="#e2eeff"/></linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#70ab7b"/><stop offset="1" stop-color="#246642"/></linearGradient>
+    <linearGradient id="copy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8e8fa"/><stop offset=".45" stop-color="#bbd5ee"/><stop offset="1" stop-color="#8eb5df"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5d85b2"/><stop offset="1" stop-color="#315c8b"/></linearGradient>
+  </defs>
+  <rect x="2" y="2" width="8" height="8" fill="#c7d9ed" fill-opacity=".12"/>
+  <path d="M1.5 4V1.5H4M5 1.5h2M8 1.5h2.5V4M1.5 5v2M1.5 8v2.5H4" fill="none" stroke="#526b86"/>
+  <rect x="5.5" y="5.5" width="10" height="10" rx=".5" fill="url(#sky)"/>
+  <path d="M6 15V12.5L9 10L11 11.5L13.5 9.5L15 10.5V15Z" fill="url(#hill)"/>
+  <rect x="5.5" y="5.5" width="10" height="10" rx=".5" fill="none" stroke="url(#edge)"/>
+  <path d="M6.5 14.5v-8h8" fill="none" stroke="#ffffff" stroke-opacity=".85"/>
+</svg>

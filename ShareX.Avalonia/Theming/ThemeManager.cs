@@ -30,6 +30,7 @@ using Avalonia.Media;
 using Avalonia.Platform;
 using Avalonia.Styling;
 using Avalonia.Threading;
+using ShareX.Icons;
 using System.ComponentModel;
 
 namespace ShareX.AvaloniaUI.Theming
@@ -138,6 +139,7 @@ namespace ShareX.AvaloniaUI.Theming
             }
 
             ApplyAccentColor(application, accentColor);
+            IconCatalog.Pack = _options.IconPack;
         }
 
         private static void SetPlatformSettings(IPlatformSettings? platformSettings)

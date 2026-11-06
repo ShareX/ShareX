@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#666666"/><stop offset=".45" stop-color="#666666"/><stop offset=".55" stop-color="#9a9a9a"/><stop offset="1" stop-color="#a6a6a6"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcfcfc"/><stop offset=".3" stop-color="#ececee"/><stop offset=".45" stop-color="#d2d2d6"/><stop offset=".55" stop-color="#d8d8da"/><stop offset=".85" stop-color="#d9daeb"/><stop offset="1" stop-color="#e4e4f1"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c9c9c9"/><stop offset=".5" stop-color="#a0a0ae"/><stop offset="1" stop-color="#c7c7c9"/></linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050608"/><stop offset=".18" stop-color="#050608"/><stop offset=".25" stop-color="#212634"/><stop offset=".6" stop-color="#47506e"/><stop offset="1" stop-color="#7d8ab4"/></linearGradient>
+  </defs>
+  <rect x="4.5" y="12" width="7" height="3" rx=".6" fill="url(#g1)" stroke="#020202" stroke-opacity=".5"/>
+  <rect x=".5" y="7.4" width="2" height="2.4" rx=".6" fill="#8a8a8a" stroke="#030303" stroke-opacity=".6"/>
+  <rect x="13.5" y="7.4" width="2" height="2.4" rx=".6" fill="#8a8a8a" stroke="#030303" stroke-opacity=".6"/>
+  <path d="M2.5 8V6.4C2.5 2.9 4.7 .5 8 .5C11.3 .5 13.5 2.9 13.5 6.4V9.6C13.5 11.4 12.3 12.5 10.6 12.5H5.4C3.7 12.5 2.5 11.4 2.5 9.6z" fill="url(#g2)" stroke="#6a6a6a" stroke-opacity=".5"/>
+  <path d="M3 5H13V6H3z" fill="url(#g3)"/>
+  <ellipse cx="8" cy="3.9" rx="3" ry="1.2" fill="#c8c8d2" opacity=".45"/>
+  <path d="M3 7H13V9.4C13 10.9 12.2 11.7 10.8 11.7H5.2C3.8 11.7 3 10.9 3 9.4z" fill="url(#g4)"/>
+  <rect x="5.1" y="7.9" width="2.8" height="3.2" rx="1.2" fill="#2a88c0" opacity=".55"/>
+  <rect x="5.95" y="8.2" width="1.1" height="2.6" rx=".5" fill="#00ccff"/>
+  <rect x="8.1" y="7.9" width="2.8" height="3.2" rx="1.2" fill="#2a88c0" opacity=".55"/>
+  <rect x="8.95" y="8.2" width="1.1" height="2.6" rx=".5" fill="#00ccff"/>
+</svg>

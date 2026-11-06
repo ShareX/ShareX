@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="paper" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4e5e5"/><stop offset="1" stop-color="#fff"/></linearGradient>
+    <linearGradient id="paperEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f"/><stop offset="1" stop-color="#0b2a2a"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4190ff"/><stop offset=".6" stop-color="#b5d4ff"/><stop offset="1" stop-color="#e2eeff"/></linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#70ab7b"/><stop offset="1" stop-color="#246642"/></linearGradient>
+  </defs>
+  <path d="M2.5 .5H11L13.5 3V15.5H2.5Z" fill="url(#paper)" stroke="url(#paperEdge)" stroke-opacity=".6"/>
+  <path d="M3.5 15V1M12.5 3.5V15" fill="none" stroke="#fff" stroke-opacity=".55"/>
+  <path d="M10.5 .9V3.5H13.2" fill="#fff" stroke="#9fb0b0"/>
+  <rect x="4" y="5" width="8" height="8" fill="url(#sky)"/>
+  <circle cx="10" cy="7" r="1" fill="#fff6ac"/>
+  <path d="M4 11L7 8.5L10 11L12 10V13H4Z" fill="url(#hill)"/>
+  <path d="M4.6 10.7L7 8.7L9.6 10.8" fill="none" stroke="#b3d4a8" stroke-opacity=".6" stroke-width=".6"/>
+  <rect x="4.5" y="5.5" width="7" height="7" fill="none" stroke="#628a9b" stroke-opacity=".7"/>
+</svg>

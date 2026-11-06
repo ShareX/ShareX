@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="cb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fefefe"/><stop offset="0.3" stop-color="#f0f0f0"/><stop offset="0.7" stop-color="#dddddd"/><stop offset="1" stop-color="#c7c7ca"/></linearGradient>
+<linearGradient id="cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcdcde"/><stop offset="0.3" stop-color="#c4c4ca"/><stop offset="0.55" stop-color="#d7d7e3"/><stop offset="1" stop-color="#dbdbeb"/></linearGradient>
+<linearGradient id="cd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#444"/><stop offset="1" stop-color="#5f5f5f"/></linearGradient>
+<linearGradient id="cs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9c9c9c"/><stop offset="1" stop-color="#646464"/></linearGradient>
+<linearGradient id="cv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7e7e7e"/><stop offset="0.5" stop-color="#9d9d9d"/><stop offset="1" stop-color="#6d6d6d"/></linearGradient>
+<linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cbcbcb"/><stop offset="1" stop-color="#878787"/></linearGradient>
+<linearGradient id="ba" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#97e5ff"/><stop offset="0.5" stop-color="#5dd1ff"/><stop offset="1" stop-color="#38c5ff"/></linearGradient>
+<linearGradient id="bas" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4e87b4"/><stop offset="1" stop-color="#0b4c8c"/></linearGradient>
+</defs>
+<rect x="1" y="1" width="12" height="7" fill="url(#cb)"/>
+<rect x="3" y="8" width="10" height="4" fill="url(#cl)"/>
+<rect x="3" y="12" width="10" height="2" fill="url(#cd)"/>
+<rect x="12" y="1" width="1" height="12" fill="url(#cs)"/>
+<path d="M3.5 1v7" stroke="#fff" stroke-opacity=".5"/>
+<path d="M2.5 1v6.5M4.5 1v8M10.5 1v8M5 2.5h5M5 8.5h5" fill="none" stroke="url(#cg)"/>
+<rect x="6" y="4" width="1" height="1" fill="#999"/>
+<rect x="14" y="1" width="1" height="3" fill="url(#cv)"/>
+<path d="M2 .5h10" stroke="#7f7f7f" stroke-opacity=".45"/>
+<path d="M12 .5h3.5v4h-2M.5 1v6.5h2v7h11V.5" fill="none" stroke="#010101" stroke-opacity=".74"/>
+<rect x="13" y="2" width="1" height="1" fill="#757575"/>
+<path d="M8.5 11.5h4v-2.3l3.3 3.3-3.3 3.3v-2.3h-4z" fill="url(#ba)" stroke="url(#bas)" stroke-linejoin="round"/>
+</svg>

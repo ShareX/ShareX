@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="ol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3377bb"/><stop offset="1" stop-color="#0d4c8f"/></linearGradient>
+    <linearGradient id="l3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa2dc"/><stop offset="1" stop-color="#3a74b8"/></linearGradient>
+    <linearGradient id="l2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9cc4ec"/><stop offset="1" stop-color="#5f97d2"/></linearGradient>
+    <linearGradient id="l1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d6e7f8"/><stop offset="1" stop-color="#a9c9ec"/></linearGradient>
+  </defs>
+  <polygon points="8,7.5 15.5,11.3 8,15.1 .5,11.3" fill="url(#l3)" stroke="url(#ol)" stroke-linejoin="round"/>
+  <polygon points="8,4.2 15.5,8 8,11.8 .5,8" fill="url(#l2)" stroke="url(#ol)" stroke-linejoin="round"/>
+  <polygon points="8,.9 15.5,4.7 8,8.5 .5,4.7" fill="url(#l1)" stroke="url(#ol)" stroke-linejoin="round"/>
+  <path d="M2.6 4.7L8 2" fill="none" stroke="#ffffff" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="mat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4f3f3"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557e7e"/><stop offset="1" stop-color="#103131"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a8acb"/><stop offset=".7" stop-color="#5f96cb"/><stop offset="1" stop-color="#a3bdca"/></linearGradient>
+    <linearGradient id="pl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#99e5ff"/><stop offset=".4" stop-color="#61ade9"/><stop offset=".5" stop-color="#4492ce"/><stop offset=".6" stop-color="#3499d9"/><stop offset="1" stop-color="#25bfff"/></linearGradient>
+    <linearGradient id="plo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#409ee9"/><stop offset="1" stop-color="#034e99"/></linearGradient>
+  </defs>
+  <rect x="4.5" y=".5" width="11" height="10" fill="url(#mat)" stroke="url(#edge)" stroke-opacity=".55"/>
+  <rect x="6" y="2" width="8" height="7" fill="url(#sky)"/>
+  <rect x=".5" y="4.5" width="11" height="11" fill="url(#mat)" stroke="url(#edge)" stroke-opacity=".6"/>
+  <path d="M4.5 6.8l4.6 3.2-4.6 3.2z" fill="url(#pl)" stroke="url(#plo)" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="pa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#92defe"/><stop offset="0.35" stop-color="#72bef1"/><stop offset="0.5" stop-color="#4a9ad6"/><stop offset="0.62" stop-color="#3a9ede"/><stop offset="1" stop-color="#10b8ff"/></linearGradient>
+<linearGradient id="pao" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f9ee9"/><stop offset="1" stop-color="#034e99"/></linearGradient>
+</defs>
+<path d="M3.5 2.5h3v10h-3zM8.5 2.5h3v10h-3z" fill="url(#pa)" stroke="url(#pao)"/>
+<path d="M4.5 3v9M9.5 3v9" stroke="#fff" stroke-opacity=".15"/>
+</svg>

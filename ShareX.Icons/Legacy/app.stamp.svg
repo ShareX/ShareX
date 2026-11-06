@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <radialGradient id="knob" cx=".35" cy=".25" r=".8" fx=".3" fy=".2"><stop offset="0" stop-color="#ffffff"/><stop offset=".4" stop-color="#d5d5d8"/><stop offset="1" stop-color="#8b8b97"/></radialGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2a06d"/><stop offset=".45" stop-color="#ce8a57"/><stop offset=".5" stop-color="#b77643"/><stop offset="1" stop-color="#a76431"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#943f00"/><stop offset="1" stop-color="#581200"/></linearGradient>
+    <linearGradient id="shaft" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e6e6e6"/><stop offset="1" stop-color="#8b8b95"/></linearGradient>
+  </defs>
+  <rect x="1.5" y="12.5" width="13" height="2" rx=".5" fill="#56545a" stroke="#39383f"/>
+  <rect x="2" y="13" width="12" height=".6" fill="#959098"/>
+  <path d="M1.5 12.5v-1Q1.5 9.5 4 9.5h8q2.5 0 2.5 2v1z" fill="url(#wood)" stroke="url(#edge)" stroke-linejoin="round"/>
+  <path d="M2.5 11.5q0-1 1.5-1h8" fill="none" stroke="#f3c095"/>
+  <rect x="2" y="11.5" width="12" height=".5" fill="#f5b781" fill-opacity=".65"/>
+  <path d="M6.5 6v4h3V6z" fill="url(#shaft)" stroke="#686871"/>
+  <circle cx="8" cy="3.75" r="3.25" fill="url(#knob)" stroke="#666671"/>
+  <path d="M5.6 3Q6.4 1.2 8.4 1.5" fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-linecap="round"/>
+</svg>

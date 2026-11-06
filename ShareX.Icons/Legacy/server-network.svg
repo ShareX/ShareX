@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="ntLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000000" stop-opacity="0.08"/><stop offset="0.35" stop-color="#000000" stop-opacity="0.8"/><stop offset="0.65" stop-color="#000000" stop-opacity="0.8"/><stop offset="1" stop-color="#000000" stop-opacity="0.08"/></linearGradient>
+<linearGradient id="ntNode" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#51ea62"/><stop offset="1" stop-color="#00800b"/></linearGradient>
+<linearGradient id="svEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#545454"/><stop offset="0.7" stop-color="#292929"/><stop offset="0.72" stop-color="#020202"/><stop offset="1" stop-color="#040404"/></linearGradient>
+<linearGradient id="svBase" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555555"/><stop offset="0.3" stop-color="#555555"/><stop offset="0.4" stop-color="#6e6e6e"/><stop offset="1" stop-color="#878787"/></linearGradient>
+<linearGradient id="svFoot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#020202" stop-opacity="0.3"/><stop offset="0.15" stop-color="#020202" stop-opacity="0.66"/><stop offset="0.85" stop-color="#020202" stop-opacity="0.66"/><stop offset="1" stop-color="#020202" stop-opacity="0.3"/></linearGradient>
+</defs>
+<rect x="4.5" y=".5" width="7" height="11" fill="#d2d2d2" stroke="url(#svEdge)" stroke-opacity=".5"/>
+<rect x="5" y="1" width="6" height="1" fill="#e6e6e6"/>
+<rect x="5" y="2" width="6" height="1" fill="#c6c6c6"/>
+<rect x="5" y="3" width="6" height="1" fill="#dedede"/>
+<rect x="5" y="4" width="6" height="1" fill="#bdbdbd"/>
+<rect x="5" y="6" width="6" height="1" fill="#c4c4c4"/>
+<rect x="5" y="7" width="6" height="1" fill="#bfbfbf"/>
+<path d="M5.5 1 V8 M10.5 1 V8" stroke="#ffffff" stroke-opacity=".18"/>
+<rect x="9" y="6" width="1" height="1" fill="#999999"/>
+<rect x="9" y="7" width="1" height="1" fill="#d1d1d1"/>
+<rect x="5" y="8" width="6" height="3" fill="url(#svBase)"/>
+<rect x="9" y="9" width="1" height="1" fill="#33cc33"/>
+<path d="M4.5 8 V11" stroke="#000" stroke-opacity=".55"/>
+<path d="M11.5 8 V11" stroke="#000" stroke-opacity=".55"/>
+<rect x="3" y="11" width="10" height="1" fill="url(#svFoot)"/>
+<rect x="7" y="11.5" width="2" height="1.5" fill="#000000" opacity=".48"/>
+<rect x="0" y="14" width="16" height="1" fill="url(#ntLine)"/>
+<rect x="0" y="15" width="16" height="1" fill="url(#ntLine)" opacity=".28"/>
+<rect x="6.5" y="13.5" width="3" height="2" rx=".6" fill="url(#ntNode)" stroke="#007d10" stroke-opacity=".85"/>
+<rect x="7" y="14" width="2" height="1" fill="#51ea62"/>
+</svg>

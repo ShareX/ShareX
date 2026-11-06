@@ -237,6 +237,20 @@
 
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_Icons}"/>
+                                    <Grid ColumnDefinitions="190,*" ColumnSpacing="8">
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_IconPackLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <ComboBox Grid.Column="1"
+                                                  Classes="form-control"
+                                                  MinWidth="130"
+                                                  ItemsSource="{Binding IconPackOptions}"
+                                                  SelectedItem="{Binding SelectedIconPack, Mode=TwoWay}"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_AccentColor}"/>
                                     <CheckBox Classes="setting"
                                               Content="{x:Static res:Strings.ApplicationSettingsWindow_FollowSystemAccentColor}"

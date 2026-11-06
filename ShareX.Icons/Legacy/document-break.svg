@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="dcFill" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4e5e5"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+<linearGradient id="dcEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f"/><stop offset="1" stop-color="#0b2a2a"/></linearGradient>
+</defs>
+<rect x="2.5" y="0" width="11" height="6.5" fill="url(#dcFill)"/>
+<path d="M2.5 0 V6.5 H13.5 V0" fill="none" stroke="#0b2a2a" stroke-opacity=".5"/>
+<path d="M3.5 0 V5.5 M12.5 0 V5.5" stroke="#ffffff" stroke-opacity=".55"/>
+<path d="M2.5 15 V8.5 H11 L13.5 11 V15 Z" fill="url(#dcFill)"/>
+<path d="M2.5 15 V8.5 H11 L13.5 11 V15" fill="none" stroke="url(#dcEdge)" stroke-opacity=".45"/>
+<path d="M3.5 15 V9 M12.5 11.5 V15" stroke="#ffffff" stroke-opacity=".55"/>
+<path d="M10.5 8.9 V11.5 H13.2" fill="#ffffff" stroke="#9fb0b0"/>
+</svg>

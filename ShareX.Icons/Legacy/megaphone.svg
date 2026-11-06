@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="hf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.3" stop-color="#ececec"/><stop offset="0.6" stop-color="#d1d1d1"/><stop offset="1" stop-color="#dcdcdc"/></linearGradient>
+    <linearGradient id="rf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fc8d8d"/><stop offset="0.35" stop-color="#ec5e5e"/><stop offset="0.7" stop-color="#d13a3a"/><stop offset="1" stop-color="#dc4242"/></linearGradient>
+    <linearGradient id="rs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e50101" stop-opacity="0.7"/><stop offset="1" stop-color="#950000" stop-opacity="0.8"/></linearGradient>
+    <linearGradient id="bf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="0.5" stop-color="#e8e8e8"/><stop offset="1" stop-color="#dadada"/></linearGradient>
+    <linearGradient id="hs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a7a7a" stop-opacity="0.55"/><stop offset="1" stop-color="#050505" stop-opacity="0.5"/></linearGradient>
+  </defs>
+  <path d="M2.5 9V14.5H5.5V12.3L4.5 11.2V9Z" fill="#f2f2f2" stroke="#1a1a1a" stroke-opacity=".45"/>
+  <path d="M5.5 3.5L11.5 1.2V10.8L5.5 8.5Z" fill="url(#hf)" stroke="url(#hs)" stroke-linejoin="round"/>
+  <ellipse cx="13" cy="6" rx="1.5" ry="5.5" fill="url(#bf)" stroke="url(#hs)"/>
+  <path d="M12.2 3V9" stroke="#c4c4c4" stroke-opacity=".7"/>
+  <rect x=".5" y="3.5" width="5" height="5" fill="url(#rf)" stroke="url(#rs)"/>
+  <path d="M1 4.5H5.5" stroke="#fda0a0" stroke-opacity=".8"/>
+</svg>

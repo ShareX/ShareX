@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="glSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c6eefc"/><stop offset="0.22" stop-color="#9fd2f0"/><stop offset="0.4" stop-color="#4fa2d8"/><stop offset="0.55" stop-color="#2a8bcd"/><stop offset="0.72" stop-color="#3a95de"/><stop offset="1" stop-color="#7ab8f6"/></linearGradient>
+<linearGradient id="glRim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#038be6"/><stop offset="0.5" stop-color="#00407f"/><stop offset="1" stop-color="#0067ba"/></linearGradient>
+<linearGradient id="glLand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfedff"/><stop offset="0.35" stop-color="#77c5fd"/><stop offset="0.6" stop-color="#46a5f5"/><stop offset="1" stop-color="#6ec6ff"/></linearGradient>
+<radialGradient id="glGloss" cx="0.5" cy="0.3" r="0.6"><stop offset="0" stop-color="#ffffff" stop-opacity="0.38"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+<linearGradient id="ntLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000000" stop-opacity="0.08"/><stop offset="0.35" stop-color="#000000" stop-opacity="0.8"/><stop offset="0.65" stop-color="#000000" stop-opacity="0.8"/><stop offset="1" stop-color="#000000" stop-opacity="0.08"/></linearGradient>
+<linearGradient id="ntNode" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#51ea62"/><stop offset="1" stop-color="#00800b"/></linearGradient>
+</defs>
+<circle cx="8" cy="6" r="5.5" fill="url(#glSea)"/>
+<g transform="translate(2.1071428571428577 0.10714285714285765) scale(0.7857142857142857)"><path d="M8.6 4.6 C9.6 4 10.6 3.4 11.6 3.6 C12.6 4.4 13.2 5.4 13.1 6.4 C12.6 6.8 12 6.6 11.6 7.4 C11.4 8.4 12.4 8.6 12.9 9.6 C12.8 10.8 12 11.6 11.4 11.6 C11 10.6 10.4 9.8 10.2 8.8 C9.8 7.8 9.2 7 8.4 6.4 C8 5.8 8 5 8.6 4.6 Z" fill="url(#glLand)" opacity=".95"/><path d="M3.5 3.6 C4.6 2.6 6.4 2.2 7.6 2.6 C7.4 3.4 6.6 4 5.6 4.2 C4.8 4.4 4.2 4.8 3.4 5.2 C3 4.6 3.1 4 3.5 3.6 Z" fill="#c8f0ff" opacity=".55"/><path d="M11.4 6.9 L11.5 8.7" stroke="#1d6fb9" stroke-opacity=".9" stroke-width="1"/><path d="M2.2 9.6 C3.4 9 4.6 9.4 5.4 10.4 C5.2 11.2 4.2 11.6 3.2 11.2 C2.6 10.8 2.2 10.2 2.2 9.6 Z" fill="#62b0f0" opacity=".6"/></g>
+<ellipse cx="8" cy="3.525" rx="4.29" ry="2.75" fill="url(#glGloss)"/>
+<circle cx="8" cy="6" r="5.5" fill="none" stroke="url(#glRim)" stroke-opacity=".8"/>
+<rect x="7" y="11" width="2" height=".8" fill="#004277" opacity=".8"/>
+<rect x="7" y="11.5" width="2" height="1.5" fill="#000000" opacity=".48"/>
+<rect x="0" y="14" width="16" height="1" fill="url(#ntLine)"/>
+<rect x="0" y="15" width="16" height="1" fill="url(#ntLine)" opacity=".28"/>
+<rect x="6.5" y="13.5" width="3" height="2" rx=".6" fill="url(#ntNode)" stroke="#007d10" stroke-opacity=".85"/>
+<rect x="7" y="14" width="2" height="1" fill="#51ea62"/>
+</svg>

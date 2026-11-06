@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="fo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6587ed"/><stop offset="0.55" stop-color="#2244ac"/><stop offset="1" stop-color="#4163e9"/></linearGradient>
+    <linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcfcfc"/><stop offset="0.86" stop-color="#e2e2e2"/><stop offset="1" stop-color="#e7e7e7"/></linearGradient>
+    <linearGradient id="ft1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b9c3e0"/><stop offset="0.08" stop-color="#dcdcdc"/><stop offset="1" stop-color="#cbcbd7"/></linearGradient>
+    <linearGradient id="ft2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bbbbbb"/><stop offset="1" stop-color="#9c9c9c"/></linearGradient>
+  </defs>
+  <rect x="0" y="0" width="16" height="15" rx="1" fill="url(#fo)"/>
+  <rect x="1" y="1" width="14" height="1" fill="url(#ft1)"/>
+  <rect x="1" y="2" width="14" height="1" fill="url(#ft2)"/>
+  <rect x="1" y="3" width="14" height="11" fill="url(#fb)"/>
+  <rect x="1" y="3" width="14" height="1" fill="#fff"/>
+  <path d="M1.5 4V14M14.5 4V14" stroke="#fff" stroke-opacity=".3"/>
+  <path d="M2 4H5L2 7ZM14 4H11L14 7ZM2 13H5L2 10ZM14 13H11L14 10Z" fill="#3456c4"/>
+</svg>

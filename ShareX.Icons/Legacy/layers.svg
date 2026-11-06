@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="in" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbe8f4"/><stop offset="1" stop-color="#9ebedf"/></linearGradient>
+    <linearGradient id="bd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ebf2f9"/><stop offset="1" stop-color="#b7cfe8"/></linearGradient>
+    <linearGradient id="ol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3377bb"/><stop offset="1" stop-color="#15599d"/></linearGradient>
+    <linearGradient id="hl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6587ed"/><stop offset=".2" stop-color="#4466ca"/><stop offset=".5" stop-color="#2244ad"/><stop offset=".8" stop-color="#3153cc"/><stop offset="1" stop-color="#4163e9"/></linearGradient>
+  </defs>
+  <rect x="4" y="1" width="11" height="11" fill="url(#in)" fill-opacity=".62"/>
+  <rect x="4.5" y="1.5" width="10" height="10" fill="none" stroke="url(#bd)" stroke-opacity=".75"/>
+  <rect x="3.5" y="0.5" width="12" height="12" rx=".8" fill="none" stroke="url(#ol)" stroke-opacity=".38"/>
+  <rect x="2" y="3" width="11" height="11" fill="url(#in)" fill-opacity=".62"/>
+  <rect x="2.5" y="3.5" width="10" height="10" fill="none" stroke="url(#bd)" stroke-opacity=".75"/>
+  <rect x="1.5" y="2.5" width="12" height="12" rx=".8" fill="none" stroke="url(#ol)" stroke-opacity=".38"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8b7"/><stop offset=".35" stop-color="#f8e982"/><stop offset=".6" stop-color="#f2df6b"/><stop offset="1" stop-color="#d4b42b"/></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d2edff"/><stop offset=".4" stop-color="#94c9f3"/><stop offset="1" stop-color="#4b96d2"/></linearGradient>
+  </defs>
+  <path d="M6.5 2.5Q7.7 7.3 12.5 8.5 7.7 9.7 6.5 14.5 5.3 9.7.5 8.5 5.3 7.3 6.5 2.5z" fill="url(#gold)" stroke="#b39425" stroke-width=".8" stroke-linejoin="round"/>
+  <path d="M6.5 5.1Q5.4 7.5 2.9 8.5" fill="none" stroke="#fffbd6" stroke-width=".8" stroke-linecap="round"/>
+  <path d="M12.5.5q.6 2.4 3 3-2.4.6-3 3-.6-2.4-3-3 2.4-.6 3-3z" fill="url(#blue)" stroke="#4b83b3" stroke-width=".7" stroke-linejoin="round"/>
+  <path d="M12.5 1.9q-.5 1-1.4 1.6" fill="none" stroke="#eef9ff" stroke-width=".6" stroke-linecap="round"/>
+  <path d="M13.5 10.5q.4 1.6 2 2-1.6.4-2 2-.4-1.6-2-2 1.6-.4 2-2z" fill="url(#gold)" stroke="#a58a16" stroke-width=".6" stroke-linejoin="round"/>
+</svg>

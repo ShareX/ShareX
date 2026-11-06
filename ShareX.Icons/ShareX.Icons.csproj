@@ -9,4 +9,8 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Legacy\*.svg" LogicalName="ShareX.Icons.Legacy.%(Filename)%(Extension)" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#edcb86"/><stop offset=".25" stop-color="#fff1b4"/><stop offset=".55" stop-color="#e5bb56"/><stop offset=".8" stop-color="#ce9b2e"/><stop offset="1" stop-color="#fedc67"/></linearGradient>
+    <linearGradient id="handle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7de9a"/><stop offset="1" stop-color="#c3912c"/></linearGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c89b64"/><stop offset=".45" stop-color="#986b3a"/><stop offset="1" stop-color="#6b4425"/></linearGradient>
+  </defs>
+  <path d="M4.5 2.5h-2q-2 0-2 2.5t4 3V6.5Q2 6.5 2 5q0-1 .5-1h2zM11.5 2.5h2q2 0 2 2.5t-4 3V6.5Q14 6.5 14 5q0-1-.5-1h-2z" fill="url(#handle)" stroke="#a4771d" stroke-linejoin="round"/>
+  <path d="M6.5 9h3v3l2 1v1h-7v-1l2-1z" fill="url(#gold)" stroke="#a4771d" stroke-linejoin="round"/>
+  <path d="M3.5 1.5h9L12 5.8q-.4 3.5-4 4.2-3.6-.7-4-4.2z" fill="url(#gold)" stroke="#a4771d" stroke-linejoin="round"/>
+  <ellipse cx="8" cy="2.3" rx="3.5" ry=".5" fill="#b68a2e" fill-opacity=".6"/>
+  <path d="M4.5 2h7M4.8 3.5l.2 2q.2 1.8 1.7 2.6" fill="none" stroke="#fff1b4" stroke-opacity=".9" stroke-linecap="round"/>
+  <rect x="3.5" y="13.5" width="9" height="2" rx=".4" fill="url(#base)" stroke="#643e20"/>
+  <rect x="6" y="14" width="4" height="1" fill="#e7c77c"/>
+</svg>

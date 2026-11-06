@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="bf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a9cf8"/><stop offset=".1" stop-color="#6386ea"/><stop offset=".3" stop-color="#4e70d6"/><stop offset=".55" stop-color="#3a5ec8"/><stop offset=".62" stop-color="#2f58cb"/><stop offset=".8" stop-color="#3a67e5"/><stop offset="1" stop-color="#4476fc"/></linearGradient>
+    <linearGradient id="bo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0330ba"/><stop offset="1" stop-color="#000572"/></linearGradient>
+    <linearGradient id="aw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#e2e2e2"/><stop offset="1" stop-color="#ececec"/></linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="13" height="13" rx="2" fill="url(#bf)" stroke="url(#bo)" stroke-opacity=".8"/>
+  <rect x="2.5" y="2.5" width="11" height="11" rx="1.2" fill="none" stroke="#a8c0ff" stroke-opacity=".28"/>
+  <polygon points="6.1,4 7.9,4 11,7.1 11,9 9.6,9 8,7.5 8,12 6,12 6,7.5 4.4,9 3,9 3,7.1" transform="translate(2 1)" fill="#1a3caa" fill-opacity=".6"/>
+  <polygon points="6.1,4 7.9,4 11,7.1 11,9 9.6,9 8,7.5 8,12 6,12 6,7.5 4.4,9 3,9 3,7.1" transform="translate(1 0)" fill="url(#aw)"/>
+</svg>

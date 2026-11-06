@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="back" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#e5e9ed"/><stop offset="1" stop-color="#bdcddb"/></linearGradient>
+    <linearGradient id="bubble" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#def2ff"/><stop offset=".35" stop-color="#d4ebff"/><stop offset=".5" stop-color="#c4d9ef"/><stop offset="1" stop-color="#cde4fa"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6282a0"/><stop offset="1" stop-color="#506b86"/></linearGradient>
+  </defs>
+  <path d="M6.5 .5H14.5Q15.5 .5 15.5 1.5V7.5Q15.5 8.5 14.5 8.5H13.5V11L10.5 8.5H6.5Q5.5 8.5 5.5 7.5V1.5Q5.5 .5 6.5 .5Z" fill="url(#back)" stroke="url(#edge)" stroke-opacity=".75" stroke-linejoin="round"/>
+  <path d="M6.5 3.5V1.8Q6.5 1.5 7 1.5H14.5" fill="none" stroke="#fff" stroke-opacity=".7"/>
+  <path d="M1.5 4.5H10.5Q11.5 4.5 11.5 5.5V11.5Q11.5 12.5 10.5 12.5H5.5L2.5 15V12.5H1.5Q.5 12.5 .5 11.5V5.5Q.5 4.5 1.5 4.5Z" fill="url(#bubble)" stroke="url(#edge)" stroke-opacity=".75" stroke-linejoin="round"/>
+  <path d="M1.5 11.5V5.8Q1.5 5.5 2 5.5H10.5" fill="none" stroke="#fff" stroke-opacity=".65"/>
+</svg>

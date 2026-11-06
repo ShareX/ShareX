@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="wf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".15" stop-color="#fbfbfb"/><stop offset=".45" stop-color="#eeeeee"/><stop offset=".6" stop-color="#dedee5"/><stop offset=".8" stop-color="#e6e6f3"/><stop offset="1" stop-color="#ededfc"/></linearGradient>
+    <linearGradient id="wo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6587ed"/><stop offset=".25" stop-color="#3d5fc4"/><stop offset=".5" stop-color="#2244ab"/><stop offset=".75" stop-color="#2d4fc5"/><stop offset="1" stop-color="#4163e9"/></linearGradient>
+    <linearGradient id="ab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b5dc1"/><stop offset=".4" stop-color="#2244ad"/><stop offset="1" stop-color="#3f61e5"/></linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="13" height="13" rx="2" fill="url(#wf)" stroke="url(#wo)"/>
+  <polygon points="6.1,12 7.9,12 11,8.9 11,7 9.6,7 8,8.5 8,4 6,4 6,8.5 4.4,7 3,7 3,8.9" transform="translate(2 -.6)" fill="#8c8c99" fill-opacity=".3"/>
+  <polygon points="6.1,12 7.9,12 11,8.9 11,7 9.6,7 8,8.5 8,4 6,4 6,8.5 4.4,7 3,7 3,8.9" transform="translate(1 0)" fill="url(#ab)"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="po" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#954000" stop-opacity=".8"/><stop offset="1" stop-color="#4a0700" stop-opacity=".8"/></linearGradient>
+    <linearGradient id="pm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dedede"/><stop offset="1" stop-color="#fefefe"/></linearGradient>
+    <linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ceac13"/><stop offset=".25" stop-color="#d4b219"/><stop offset=".5" stop-color="#ddbb22"/><stop offset="1" stop-color="#e4c229"/></linearGradient>
+    <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffff74"/><stop offset=".45" stop-color="#fcf85e"/><stop offset="1" stop-color="#e4c72a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6f4d09"/><stop offset=".6" stop-color="#85651d"/><stop offset="1" stop-color="#9b8026" stop-opacity="0"/></linearGradient>
+    <linearGradient id="rf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e4db4b" stop-opacity="0"/><stop offset=".5" stop-color="#fcfb5a"/><stop offset="1" stop-color="#e4db4b" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect x=".5" y="2.5" width="15" height="11" fill="url(#pm)" stroke="url(#po)"/>
+  <rect x="2" y="4" width="12" height="6" fill="url(#sk)"/>
+  <circle cx="10.5" cy="8.6" r="2.6" fill="url(#sun)"/>
+  <path d="M2 6.4l1.6.6 1.4.7 2.2.9 1.8.9V10H2z" fill="#4a2828"/>
+  <rect x="2" y="9" width="8" height="1" fill="url(#gr)"/>
+  <rect x="2" y="10" width="12" height="1" fill="#c2a010"/>
+  <rect x="2" y="11" width="12" height="1" fill="#8a6806"/>
+  <rect x="8" y="10" width="5" height="2" fill="url(#rf)" opacity=".55"/>
+</svg>

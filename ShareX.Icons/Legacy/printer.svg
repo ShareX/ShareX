@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3fbfb"/><stop offset="1" stop-color="#d4e5e5"/>
+    </linearGradient>
+    <linearGradient id="case" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ececec"/><stop offset="0.3" stop-color="#d6d6d6"/><stop offset="0.6" stop-color="#b4b4b4"/><stop offset="0.68" stop-color="#a5a5a5"/><stop offset="0.8" stop-color="#b6b6bf"/><stop offset="1" stop-color="#bdbdc8"/>
+    </linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#757575"/><stop offset="0.125" stop-color="#757575"/><stop offset="0.2" stop-color="#7c7c7c"/><stop offset="0.3" stop-color="#5c5c5e"/><stop offset="0.42" stop-color="#3d3d42"/><stop offset="0.7" stop-color="#4d4d5a"/><stop offset="0.75" stop-color="#878796"/><stop offset="0.87" stop-color="#878796"/><stop offset="0.88" stop-color="#595959"/><stop offset="1" stop-color="#595959"/>
+    </linearGradient>
+    <linearGradient id="photo" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0.08" stop-color="#4b96ff"/><stop offset="0.25" stop-color="#9ec7ff"/><stop offset="0.42" stop-color="#a6c8d6"/><stop offset="0.58" stop-color="#418063"/><stop offset="0.75" stop-color="#306787"/><stop offset="0.92" stop-color="#4275a8"/>
+    </linearGradient>
+  </defs>
+  <path d="M3.5 .5H10L12.5 3V5.5H3.5Z" fill="url(#paper)" stroke="#557f7f" stroke-opacity=".42" stroke-linejoin="round"/>
+  <path d="M9.6 1V3.4H12" fill="#fff" stroke="#93a4a4" stroke-width=".8" stroke-linejoin="round"/>
+  <rect x=".5" y="5.5" width="15" height="8" rx="1.5" fill="url(#case)" stroke="#2a2a2a" stroke-opacity=".42"/>
+  <rect x="3" y="5" width="10" height="8" fill="url(#front)"/>
+  <path d="M3.5 5V13M12.5 5V13" stroke="#000" stroke-opacity=".55"/>
+  <path d="M4.5 6V11" stroke="#fff" stroke-opacity=".1"/>
+  <rect x="13" y="9" width="1" height="1" fill="#66ff66"/>
+  <path d="M3.5 13V15.5H12.5V13" fill="#fff" stroke="#0b2a2a" stroke-opacity=".52" stroke-linejoin="round"/>
+  <rect x="5" y="13" width="6" height="1" fill="url(#photo)"/>
+</svg>
