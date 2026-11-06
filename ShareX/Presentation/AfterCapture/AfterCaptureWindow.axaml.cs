@@ -91,8 +91,15 @@ public partial class AfterCaptureWindow : Window
         CopyButton.IsEnabled = metadata?.Image != null;
         LoadPreview(filePath);
 
-        Opened += (_, _) => Activate();
+        Opened += OnOpened;
         Closed += OnClosed;
+    }
+
+    private void OnOpened(object? sender, EventArgs e)
+    {
+        Activate();
+        FileNameTextBox.Focus();
+        FileNameTextBox.SelectAll();
     }
 
     private void LoadPreview(string? filePath)
