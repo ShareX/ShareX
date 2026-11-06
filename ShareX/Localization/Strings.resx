@@ -358,10 +358,6 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Clipboard formats</value>
   </data>
-  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
-    <value>Compact region capture toolbar</value>
-    <comment>Checkbox that makes the region capture toolbar use the smaller, denser layout of ShareX version 21.</comment>
-  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Custom hotkeys configuration path</value>
   </data>
@@ -2313,6 +2309,10 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Close OCR window after opening service link</value>
+  </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Compact region capture toolbar</value>
+    <comment>Checkbox that makes the region capture toolbar use the smaller, denser layout of ShareX version 21.</comment>
   </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>Configure...</value>

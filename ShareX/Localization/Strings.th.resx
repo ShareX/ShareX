@@ -358,9 +358,6 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>คลิปบอร์ด รูปแบบ</value>
   </data>
-  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
-    <value>แถบเครื่องมือจับภาพพื้นที่แบบกะทัดรัด</value>
-  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>กำหนดเอง ปุ่มลัด การกำหนดค่า เส้นทาง</value>
   </data>
@@ -2308,6 +2305,9 @@
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>ปิดหน้าต่าง OCR หลังเปิดลิงก์บริการ</value>
+  </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>แถบเครื่องมือจับภาพพื้นที่แบบกะทัดรัด</value>
   </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>กำหนดค่า...</value>
