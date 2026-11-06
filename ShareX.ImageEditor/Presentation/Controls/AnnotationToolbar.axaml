@@ -62,11 +62,11 @@
              small flat buttons, square corners and tight spacing. -->
         <Style Selector="controls|AnnotationToolbar:compact">
             <Style Selector="^ Border#MainToolbarBorder">
-                <Setter Property="Padding" Value="1"/>
+                <Setter Property="Padding" Value="2"/>
             </Style>
 
             <Style Selector="^ Border#ToolOptionsBorder">
-                <Setter Property="Padding" Value="1,0,1,1"/>
+                <Setter Property="Padding" Value="2,0,2,2"/>
                 <Setter Property="CornerRadius" Value="0"/>
             </Style>
 
@@ -79,9 +79,9 @@
             </Style>
 
             <Style Selector="^ Button.toolbar-button">
-                <Setter Property="Width" Value="26"/>
-                <Setter Property="MinWidth" Value="26"/>
-                <Setter Property="Height" Value="26"/>
+                <Setter Property="Width" Value="28"/>
+                <Setter Property="MinWidth" Value="28"/>
+                <Setter Property="Height" Value="28"/>
                 <Setter Property="Padding" Value="0"/>
                 <Setter Property="FontSize" Value="16"/>
                 <Setter Property="CornerRadius" Value="2"/>
@@ -101,19 +101,22 @@
                 <Setter Property="BorderBrush" Value="Transparent"/>
             </Style>
 
+            <!-- 28px leaves a pixel of room around the 24px swatches; no minimum
+                 width keeps each chevron next to its swatch. -->
             <Style Selector="^ Button#DropdownButton">
-                <Setter Property="Height" Value="26"/>
+                <Setter Property="Height" Value="28"/>
+                <Setter Property="MinWidth" Value="0"/>
                 <Setter Property="Padding" Value="4,0"/>
                 <Setter Property="CornerRadius" Value="2"/>
             </Style>
 
             <Style Selector="^ controls|StrengthSlider">
-                <Setter Property="Height" Value="26"/>
+                <Setter Property="Height" Value="28"/>
             </Style>
 
             <Style Selector="^ Border.option-indicator">
-                <Setter Property="Width" Value="26"/>
-                <Setter Property="Height" Value="26"/>
+                <Setter Property="Width" Value="28"/>
+                <Setter Property="Height" Value="28"/>
             </Style>
 
             <Style Selector="^ Border.option-indicator > iconControls|IconPresenter">

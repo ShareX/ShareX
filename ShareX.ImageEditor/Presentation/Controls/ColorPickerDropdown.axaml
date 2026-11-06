@@ -12,7 +12,6 @@
         <!-- Dropdown Button -->
         <Button x:Name="DropdownButton"
                 Click="OnDropdownButtonClick"
-                MinWidth="60"
                 HorizontalContentAlignment="Stretch">
             <Grid ColumnDefinitions="Auto,*,Auto">
                 <!-- Color Preview -->

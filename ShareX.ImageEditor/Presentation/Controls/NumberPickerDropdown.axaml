@@ -10,7 +10,6 @@
     <Grid>
         <Button x:Name="DropdownButton"
                 Click="OnDropdownButtonClick"
-                MinWidth="60"
                 HorizontalContentAlignment="Stretch">
             <Grid ColumnDefinitions="*,Auto">
             <StackPanel Grid.Column="0"

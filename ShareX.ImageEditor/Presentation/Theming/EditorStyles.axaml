@@ -1,7 +1,32 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:iconControls="using:ShareX.AvaloniaUI.Controls">
+        xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
+        xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls">
     <StyleInclude Source="avares://ShareX.ImageEditor/Presentation/Controls/EffectSlider.axaml" />
+    <!-- Default picker widths. Kept as styles rather than local values so the
+         compact annotation toolbar can override them. -->
+    <Style Selector="controls|ColorPickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="60"/>
+    </Style>
+    <Style Selector="controls|CornerRadiusPickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="60"/>
+    </Style>
+    <Style Selector="controls|FontSizePickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="70"/>
+    </Style>
+    <Style Selector="controls|NumberPickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="60"/>
+    </Style>
+    <Style Selector="controls|StepTypePickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="90"/>
+    </Style>
+    <Style Selector="controls|TextHorizontalAlignmentPickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="58"/>
+    </Style>
+    <Style Selector="controls|WidthPickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="60"/>
+    </Style>
+
     <!-- Editor layout primitives -->
     <Style Selector="iconControls|IconPresenter.dropdown-chevron">
         <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
