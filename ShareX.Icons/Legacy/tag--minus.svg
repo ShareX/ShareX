@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="to" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f" stop-opacity=".45"/><stop offset="1" stop-color="#0b2a2a" stop-opacity=".55"/></linearGradient>
+    <linearGradient id="tf" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#dae9e9"/><stop offset=".6" stop-color="#eef5f5"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+    <linearGradient id="mo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b53030"/><stop offset="1" stop-color="#800000"/></linearGradient>
+  </defs>
+  <path d="M11.5 .5h4v4l-11 11-4-4zM12.5 2.6a.9 .9 0 1 0 0 1.8a.9 .9 0 1 0 0-1.8z" fill="url(#tf)" fill-rule="evenodd" stroke="url(#to)" stroke-linejoin="round"/>
+  <path d="M11.9 1.5h2.6M1.9 11.4l2.6 2.6M11.3 1.8l-9.4 9.4M14.6 4.6l-10 10" stroke="#f2ffff" stroke-opacity=".8" stroke-width=".8"/>
+  <circle cx="12.5" cy="3.5" r="1.1" fill="none" stroke="#90a0a0" stroke-opacity=".6" stroke-width=".5"/>
+  <rect x="9.5" y="11.5" width="6" height="2" rx=".4" fill="#f75e5e" stroke="url(#mo)"/>
+</svg>

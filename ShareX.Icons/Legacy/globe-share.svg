@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="glSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c6eefc"/><stop offset="0.22" stop-color="#9fd2f0"/><stop offset="0.4" stop-color="#4fa2d8"/><stop offset="0.55" stop-color="#2a8bcd"/><stop offset="0.72" stop-color="#3a95de"/><stop offset="1" stop-color="#7ab8f6"/></linearGradient>
+<linearGradient id="glRim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#038be6"/><stop offset="0.5" stop-color="#00407f"/><stop offset="1" stop-color="#0067ba"/></linearGradient>
+<linearGradient id="glLand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfedff"/><stop offset="0.35" stop-color="#77c5fd"/><stop offset="0.6" stop-color="#46a5f5"/><stop offset="1" stop-color="#6ec6ff"/></linearGradient>
+<radialGradient id="glGloss" cx="0.5" cy="0.3" r="0.6"><stop offset="0" stop-color="#ffffff" stop-opacity="0.38"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+<linearGradient id="hdSkin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffdca9"/><stop offset="0.5" stop-color="#f1c592"/><stop offset="1" stop-color="#e8b683"/></linearGradient>
+<linearGradient id="hdSleeve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#707092"/><stop offset="1" stop-color="#2c2c4f"/></linearGradient>
+<linearGradient id="hdCuff" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fcfcfc"/><stop offset="1" stop-color="#dedede"/></linearGradient>
+</defs>
+<circle cx="9.5" cy="6.5" r="5.5" fill="url(#glSea)"/>
+<g transform="translate(3.6071428571428577 0.6071428571428577) scale(0.7857142857142857)"><path d="M8.6 4.6 C9.6 4 10.6 3.4 11.6 3.6 C12.6 4.4 13.2 5.4 13.1 6.4 C12.6 6.8 12 6.6 11.6 7.4 C11.4 8.4 12.4 8.6 12.9 9.6 C12.8 10.8 12 11.6 11.4 11.6 C11 10.6 10.4 9.8 10.2 8.8 C9.8 7.8 9.2 7 8.4 6.4 C8 5.8 8 5 8.6 4.6 Z" fill="url(#glLand)" opacity=".95"/><path d="M3.5 3.6 C4.6 2.6 6.4 2.2 7.6 2.6 C7.4 3.4 6.6 4 5.6 4.2 C4.8 4.4 4.2 4.8 3.4 5.2 C3 4.6 3.1 4 3.5 3.6 Z" fill="#c8f0ff" opacity=".55"/><path d="M11.4 6.9 L11.5 8.7" stroke="#1d6fb9" stroke-opacity=".9" stroke-width="1"/><path d="M2.2 9.6 C3.4 9 4.6 9.4 5.4 10.4 C5.2 11.2 4.2 11.6 3.2 11.2 C2.6 10.8 2.2 10.2 2.2 9.6 Z" fill="#62b0f0" opacity=".6"/></g>
+<ellipse cx="9.5" cy="4.025" rx="4.29" ry="2.75" fill="url(#glGloss)"/>
+<circle cx="9.5" cy="6.5" r="5.5" fill="none" stroke="url(#glRim)" stroke-opacity=".8"/>
+<rect x="0" y="8.5" width="2" height="5" fill="url(#hdSleeve)"/>
+<rect x="0" y="8" width="2" height="1" fill="#00002b" opacity=".8"/>
+<rect x="0" y="13" width="2" height="1" fill="#000025"/>
+<rect x="2" y="9" width="2" height="4" fill="url(#hdCuff)"/>
+<rect x="3" y="9" width="1" height="4" fill="#9a9a9a" opacity=".55"/>
+<path d="M2 8.5 H4 M2 13.5 H4" stroke="#222" stroke-opacity=".4"/>
+<path d="M4.5 8.5 H7.5 C8.6 8.5 9.4 9.4 10.3 10.4 C10.9 9.9 12.4 9.8 13.4 10.2 C14.5 10.4 15.5 10.9 15.5 11.6 C15.5 12.4 14.6 12.6 13.8 12.6 C13.4 13.4 12.6 14.5 11.5 14.5 H6.8 C5.8 14.5 4.9 13.9 4.5 13.3 Z" fill="url(#hdSkin)" stroke="#804000" stroke-opacity=".9" stroke-linejoin="round"/>
+<path d="M5 11.4 H8.4 M8 12.4 H11.5 M10.4 10.6 Q11.2 11.4 11.4 12.6 M13.2 11.4 Q14 11.5 14.4 12.4" fill="none" stroke="#a5703c" stroke-opacity=".75" stroke-width=".8"/>
+<path d="M5 9.5 H7.4" stroke="#ffffff" stroke-opacity=".35"/>
+</svg>

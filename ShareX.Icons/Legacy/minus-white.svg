@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="ro" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#888888"/>
+<stop offset="0.4" stop-color="#4a4a4a"/>
+<stop offset="0.6" stop-color="#474747"/>
+<stop offset="1" stop-color="#6b6b6b"/>
+</linearGradient>
+<linearGradient id="rf" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fdfdfd"/>
+<stop offset="0.4" stop-color="#f2f2f2"/>
+<stop offset="0.65" stop-color="#e0e0e0"/>
+<stop offset="1" stop-color="#ececec"/>
+</linearGradient>
+<linearGradient id="rs" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="mb" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#626262"/>
+<stop offset="0.4" stop-color="#464646"/>
+<stop offset="1" stop-color="#5f5f5f"/>
+</linearGradient>
+</defs>
+<circle cx="8" cy="8" r="6.5" fill="url(#rf)" stroke="url(#ro)"/>
+<path d="M14,6.2Q8.5,5.6 2,9.6V9.9A6,6 0 0 0 14,8Z" fill="#000000" fill-opacity=".05"/>
+<circle cx="8" cy="8" r="5.5" fill="none" stroke="#ffffff" stroke-opacity=".35"/>
+<rect x="4" y="7" width="8" height="2" fill="url(#mb)"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="paper" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4e5e5"/><stop offset="1" stop-color="#fff"/></linearGradient>
+    <linearGradient id="paperEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f"/><stop offset="1" stop-color="#0b2a2a"/></linearGradient>
+    <linearGradient id="code" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b6e5ff"/><stop offset=".45" stop-color="#71c1ef"/><stop offset="1" stop-color="#348ac7"/></linearGradient>
+    <linearGradient id="codeEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#487fa7"/><stop offset="1" stop-color="#1b4c75"/></linearGradient>
+  </defs>
+  <path d="M2.5 .5H11L13.5 3V15.5H2.5Z" fill="url(#paper)" stroke="url(#paperEdge)" stroke-opacity=".6"/>
+  <path d="M3.5 15V1M12.5 3.5V15" fill="none" stroke="#fff" stroke-opacity=".55"/>
+  <path d="M10.5 .9V3.5H13.2" fill="#fff" stroke="#9fb0b0"/>
+  <path d="M6 5.5L3.2 9.5L6 13.5L7 12.5L4.9 9.5L7 6.5ZM10 5.5L12.8 9.5L10 13.5L9 12.5L11.1 9.5L9 6.5Z" fill="url(#code)" stroke="url(#codeEdge)" stroke-linejoin="round"/>
+  <path d="M6 6.4L4.1 9.2M10 6.4L11.9 9.2" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width=".6"/>
+</svg>

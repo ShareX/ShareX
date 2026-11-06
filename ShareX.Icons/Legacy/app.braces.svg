@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="braceFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c5edff"/><stop offset=".45" stop-color="#7ac7f3"/><stop offset="1" stop-color="#49a0d5"/></linearGradient>
+    <linearGradient id="braceEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#487fa7"/><stop offset="1" stop-color="#1b4c75"/></linearGradient>
+  </defs>
+  <g fill="url(#braceFill)" stroke="url(#braceEdge)" stroke-linejoin="round">
+    <path d="M6.5 1.5H4Q2.5 1.5 2.5 3V6.5L.5 8L2.5 9.5V13Q2.5 14.5 4 14.5H6.5V12.5H5Q4.5 12.5 4.5 12V9.5Q4.5 8.4 3.5 8Q4.5 7.6 4.5 6.5V4Q4.5 3.5 5 3.5H6.5Z"/>
+    <path d="M9.5 1.5H12Q13.5 1.5 13.5 3V6.5L15.5 8L13.5 9.5V13Q13.5 14.5 12 14.5H9.5V12.5H11Q11.5 12.5 11.5 12V9.5Q11.5 8.4 12.5 8Q11.5 7.6 11.5 6.5V4Q11.5 3.5 11 3.5H9.5Z"/>
+  </g>
+  <path d="M5.8 2.5H4.3Q3.5 2.5 3.5 3.3V6.2M10.2 2.5H11.7Q12.5 2.5 12.5 3.3V6.2" fill="none" stroke="#fff" stroke-opacity=".65"/>
+</svg>

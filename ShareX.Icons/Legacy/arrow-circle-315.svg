@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="t0" x1=".75" y1="0" x2=".04" y2=".77"><stop offset="0" stop-color="#62b0e5" stop-opacity="0"/><stop offset=".35" stop-color="#45aae7" stop-opacity=".25"/><stop offset=".7" stop-color="#2ab0f3" stop-opacity=".6"/><stop offset="1" stop-color="#18b1f9"/></linearGradient>
+    <linearGradient id="tl00" x1=".72" y1="0" x2="-.05" y2=".77"><stop offset="0" stop-color="#1f73be" stop-opacity="0"/><stop offset=".35" stop-color="#1666b1" stop-opacity=".25"/><stop offset=".7" stop-color="#0e5da8" stop-opacity=".6"/><stop offset="1" stop-color="#0855a0"/></linearGradient>
+    <linearGradient id="tl01" x1="1.52" y1="0" x2=".09" y2="1.43"><stop offset="0" stop-color="#1f73be" stop-opacity="0"/><stop offset=".35" stop-color="#1666b1" stop-opacity=".25"/><stop offset=".7" stop-color="#0e5da8" stop-opacity=".6"/><stop offset="1" stop-color="#0855a0"/></linearGradient>
+    <linearGradient id="r0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae5ff"/><stop offset=".19" stop-color="#88d2f8"/><stop offset=".35" stop-color="#74bcec"/><stop offset=".5" stop-color="#62b0e5"/><stop offset=".65" stop-color="#40a9e7"/><stop offset=".81" stop-color="#22b2f7"/><stop offset="1" stop-color="#08b0fc"/></linearGradient>
+    <linearGradient id="rl00" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3e9ce7"/><stop offset=".19" stop-color="#3490db"/><stop offset=".42" stop-color="#257ac5"/><stop offset=".65" stop-color="#1464af"/><stop offset="1" stop-color="#024d98"/></linearGradient>
+    <linearGradient id="rl01" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#318cd7"/><stop offset=".36" stop-color="#257ac5"/><stop offset=".79" stop-color="#1464af"/><stop offset="1" stop-color="#0e5ca7"/></linearGradient>
+    <linearGradient id="h0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#97e2fe"/><stop offset=".35" stop-color="#88d2f8"/><stop offset=".7" stop-color="#74bcec"/><stop offset="1" stop-color="#64b1e6"/></linearGradient>
+    <linearGradient id="hs0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3c9ae5"/><stop offset=".35" stop-color="#3490db"/><stop offset=".87" stop-color="#257ac5"/><stop offset="1" stop-color="#2174bf"/></linearGradient>
+  </defs>
+  <path d="M14.5 8C14.5 11.2 12.17 13.92 9.02 14.42L8.55 11.46C10.25 11.19 11.5 9.72 11.5 8Z" fill="url(#t0)"/>
+  <path d="M9.13 14.4C5.59 15.02 2.22 12.66 1.6 9.13C.98 5.59 3.34 2.22 6.87 1.6C10.41 .98 13.78 3.34 14.4 6.87L11.45 7.39C11.11 5.49 9.3 4.22 7.39 4.55C5.49 4.89 4.22 6.7 4.55 8.61C4.89 10.51 6.7 11.78 8.61 11.45Z" fill="url(#r0)"/>
+  <path d="M14.5 8C14.5 11.18 12.21 13.89 9.07 14.41" fill="none" stroke="url(#tl00)"/>
+  <path d="M11.5 8C11.5 9.71 10.26 11.17 8.58 11.45" fill="none" stroke="url(#tl01)"/>
+  <path d="M9.13 14.4C5.59 15.02 2.22 12.66 1.6 9.13C.98 5.59 3.34 2.22 6.87 1.6C10.41 .98 13.78 3.34 14.4 6.87" fill="none" stroke="url(#rl00)"/>
+  <path d="M8.61 11.45C6.7 11.78 4.89 10.51 4.55 8.61C4.22 6.7 5.49 4.89 7.39 4.55C9.3 4.22 11.11 5.49 11.45 7.39" fill="none" stroke="url(#rl01)"/>
+  <polygon points="14.53,1.93 14.77,7.77 8.47,7.77" fill="url(#h0)" stroke="url(#hs0)" stroke-linejoin="round"/>
+</svg>

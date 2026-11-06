@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="hlBand" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#eeee00"/><stop offset="1" stop-color="#dddd00"/></linearGradient>
+<linearGradient id="hlBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bbbb00"/><stop offset="0.35" stop-color="#eded00"/><stop offset="0.7" stop-color="#d4d400"/><stop offset="1" stop-color="#9e9e00"/></linearGradient>
+<linearGradient id="hlCollar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#030303"/><stop offset="0.45" stop-color="#8f8f8f"/><stop offset="1" stop-color="#020202"/></linearGradient>
+</defs>
+<path d="M0 1 H12.2 Q13 1 13 2 V5 Q13 6 12.2 6 H0 Z" fill="url(#hlBand)"/>
+<g fill="none" stroke="#666644" stroke-width=".95"><path d="M1.2 2.5 H2.9 V5.9 M2.9 4.2 H1.8 Q1.1 4.2 1.1 5 Q1.1 5.6 1.8 5.6 H2.9"/><path d="M5.5 .5 V5.6 H7 Q7.6 5.6 7.6 5 V3.1 Q7.6 2.4 7 2.4 H5.5"/><path d="M11.6 2.5 H9.9 Q9.4 2.5 9.4 3.1 V5 Q9.4 5.5 9.9 5.5 H11.6"/></g>
+<g transform="translate(5.1 14.9) rotate(-45)"><rect x="4.8" y="-1.3" width="8.5" height="2.6" rx=".3" fill="url(#hlBody)"/><path d="M1.1 -1.2 H4.9 V1.2 H1.1 Z" fill="url(#hlCollar)"/><path d="M0 -1 H1.2 V1 H.2 Z" fill="#d8d800"/></g>
+</svg>

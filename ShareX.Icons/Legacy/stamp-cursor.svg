@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<radialGradient id="sk" cx="0.5" cy="0.3" r="0.7" fx="0.45" fy="0.2"><stop offset="0" stop-color="#f6f6f6"/><stop offset="0.45" stop-color="#cfcfcf"/><stop offset="1" stop-color="#93939f"/></radialGradient>
+<linearGradient id="sb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ce8a57"/><stop offset="0.2" stop-color="#ce8a57"/><stop offset="0.45" stop-color="#e2a06d"/><stop offset="0.5" stop-color="#a96532"/><stop offset="1" stop-color="#a76431"/></linearGradient>
+<linearGradient id="so" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#943f00"/><stop offset="1" stop-color="#581200"/></linearGradient>
+<linearGradient id="sn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#919191"/><stop offset="1" stop-color="#bbbbbb"/></linearGradient>
+<linearGradient id="sko" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a6a6a"/><stop offset="0.3" stop-color="#2a2a2a"/><stop offset="0.6" stop-color="#060606"/><stop offset="1" stop-color="#040404"/></linearGradient>
+</defs>
+<rect x=".5" y="9.5" width="14" height="5" rx=".6" fill="url(#sb)" stroke="url(#so)"/>
+<path d="M1.5 10.5v3" stroke="#e8a471" stroke-opacity=".5"/>
+<rect x="7" y="6" width="1" height="4.5" fill="url(#sn)"/>
+<path d="M6.5 6.5v2.5M8.5 6.5v2.5" stroke="#040404"/>
+<path d="M6.5 9v1M8.5 9v1" stroke="#6a1500"/>
+<circle cx="7.5" cy="4.5" r="3" fill="url(#sk)" stroke="url(#sko)" stroke-opacity=".55"/>
+<path d="M10.5 5.5v7.3l1.5-1.4 1.25 2.9 1.25-.55-1.25-2.8h1.8z" fill="#fff" stroke="#000" stroke-opacity=".7" stroke-width=".9" stroke-linejoin="round"/>
+</svg>

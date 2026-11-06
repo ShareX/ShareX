@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="cb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ececec"/><stop offset=".15" stop-color="#e4e4e4"/><stop offset=".6" stop-color="#bbbbc0"/><stop offset="1" stop-color="#bdbdcd"/></linearGradient>
+    <linearGradient id="co" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555555"/><stop offset=".5" stop-color="#3e3e3e"/><stop offset="1" stop-color="#0d0d0d"/></linearGradient>
+    <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5d5d5d"/><stop offset="1" stop-color="#3c3c3c"/></linearGradient>
+    <linearGradient id="cr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6d6d6"/><stop offset="1" stop-color="#b4b4c2"/></linearGradient>
+    <linearGradient id="crs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c2c2c2"/><stop offset=".4" stop-color="#7e7e81"/><stop offset="1" stop-color="#8a8a9a"/></linearGradient>
+    <radialGradient id="cl" cx=".5" cy=".6" r=".55"><stop offset="0" stop-color="#8899cc"/><stop offset=".6" stop-color="#556699"/><stop offset="1" stop-color="#3c4253"/></radialGradient>
+  </defs>
+  <rect x="2" y="1.5" width="2" height="1.5" fill="#bbbbbb"/>
+  <path d="M2 1.5h2" stroke="#2a2a2a" stroke-opacity=".3"/>
+  <rect x=".5" y="2.5" width="15" height="11" rx=".4" fill="url(#cb)" stroke="url(#co)" stroke-opacity=".5"/>
+  <rect x=".5" y="4" width="3.5" height="8" fill="url(#cg)"/>
+  <path d="M1 4.5h3M1 11.5h3M3.5 4v8" stroke="#333333"/>
+  <path d="M.5 4v8" stroke="#000000" stroke-opacity=".8"/>
+  <rect x="5" y="4" width="1" height="1" fill="#999999"/>
+  <circle cx="10" cy="8" r="3.5" fill="url(#cr)" stroke="url(#crs)"/>
+  <circle cx="10" cy="8" r="1.7" fill="url(#cl)" stroke="#1c1d20" stroke-opacity=".75"/>
+  <circle cx="9.4" cy="6.9" r=".55" fill="#ccddff"/>
+</svg>

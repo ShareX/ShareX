@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#808080"/><stop offset=".5" stop-color="#5c5c5c"/><stop offset="1" stop-color="#0d0d0d"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e6e6e6"/></linearGradient>
+    <linearGradient id="thumb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c4c4c4"/><stop offset="1" stop-color="#b0b0b0"/></linearGradient>
+    <linearGradient id="sep" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c8c8c8"/><stop offset=".25" stop-color="#aaaaaa"/><stop offset="1" stop-color="#9f9f9f"/></linearGradient>
+    <linearGradient id="pic" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ceac13"/><stop offset=".2" stop-color="#d6b41b"/><stop offset=".45" stop-color="#dfbd26"/><stop offset=".72" stop-color="#bb990a"/><stop offset="1" stop-color="#997709"/></linearGradient>
+    <radialGradient id="sun" cx=".5" cy=".55" r=".5"><stop offset="0" stop-color="#fffe8d"/><stop offset=".45" stop-color="#f6e85a" stop-opacity=".8"/><stop offset="1" stop-color="#e8c930" stop-opacity="0"/></radialGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#7a5a3a"/><stop offset="1" stop-color="#3a1811"/></linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="15" height="14" rx=".4" fill="url(#bg)" stroke="url(#fl)" stroke-opacity=".42"/>
+  <rect x="11" y="1" width="4" height="13" fill="#ffffff"/>
+  <rect x="11" y="4" width="4" height="7" fill="url(#thumb)"/>
+  <path d="M11 4.5h4" stroke="#b1b1b1"/>
+  <rect x="10" y="1" width="1" height="13" fill="url(#sep)"/>
+  <path d="M15.5 1v13" stroke="#2b2b2b" stroke-opacity=".3"/>
+  <rect x="13" y="2" width="1" height="1" fill="#989898"/>
+  <rect x="13" y="12" width="1" height="1" fill="#585858"/>
+  <rect x="2" y="2" width="8" height="7" fill="url(#pic)"/>
+  <rect x="5" y="3" width="5" height="5" fill="url(#sun)"/>
+  <path d="M2 4L3 4.6L4.6 5.6L6.2 5.8L7.4 7H2Z" fill="url(#hill)"/>
+  <rect x="2" y="10" width="1" height="1" fill="#33aa22"/>
+  <rect x="4" y="10" width="1" height="1" fill="#c2716e"/>
+  <rect x="6" y="10" width="1" height="1" fill="#6699ff"/>
+  <rect x="8" y="10" width="1" height="1" fill="#777777"/>
+  <rect x="2" y="12" width="1" height="1" fill="#6699ff"/>
+  <rect x="4" y="12" width="1" height="1" fill="#ee9900"/>
+  <rect x="6" y="12" width="1" height="1" fill="#33aa22"/>
+  <rect x="8" y="12" width="1" height="1" fill="#c2716e"/>
+</svg>

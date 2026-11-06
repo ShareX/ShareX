@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#010101" stop-opacity="0.58"/><stop offset="1" stop-color="#000000" stop-opacity="0.9"/></linearGradient>
+    <linearGradient id="fh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#afafaf"/><stop offset="1" stop-color="#9c9c9c"/></linearGradient>
+    <linearGradient id="f1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#93a9cf"/><stop offset="0.5" stop-color="#869fc6"/><stop offset="1" stop-color="#8ba6cf"/></linearGradient>
+    <linearGradient id="f2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7f9bd2"/><stop offset="0.5" stop-color="#7795d6"/><stop offset="1" stop-color="#8eace8"/></linearGradient>
+    <linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5c75a9"/><stop offset="1" stop-color="#4f679f"/></linearGradient>
+    <linearGradient id="arF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a6e9ff"/><stop offset="0.45" stop-color="#62d2ff"/><stop offset="1" stop-color="#38c5ff"/></linearGradient>
+    <linearGradient id="arS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f96d2"/><stop offset="1" stop-color="#0b4a88"/></linearGradient>
+  </defs>
+  <rect x="1" y="0" width="14" height="15" rx=".6" fill="url(#fb)"/>
+  <path d="M2 1h1v1h-1zM13 1h1v1h-1zM2 3h1v1h-1zM13 3h1v1h-1zM2 5h1v1h-1zM13 5h1v1h-1zM2 7h1v1h-1zM13 7h1v1h-1zM2 9h1v1h-1zM13 9h1v1h-1zM2 11h1v1h-1zM13 11h1v1h-1zM2 13h1v1h-1zM13 13h1v1h-1z" fill="url(#fh)"/>
+  <rect x="4" y="1" width="8" height="6" fill="url(#f1)"/>
+  <path d="M4 5.2C6 4.4 8 5.6 9.5 4.6 10.5 4 11.4 3.4 12 3.4V7H4Z" fill="url(#fl)" fill-opacity=".35"/>
+  <rect x="4" y="8" width="8" height="6" fill="url(#f2)"/>
+  <path d="M7.5 12.4C9 11.8 10.4 12.2 12 11.6V14H7Z" fill="#c4cdf0" fill-opacity=".6"/>
+  <path d="M4 1.5H12" stroke="#fff" stroke-opacity=".15"/>
+  <path d="M8.5 11.5H12.5V9.5L15.5 12.5L12.5 15.5V13.5H8.5Z" fill="url(#arF)" stroke="url(#arS)"/>
+  <path d="M9 12.5H13.5M13.5 11V12" stroke="#fff" stroke-opacity=".45"/>
+</svg>

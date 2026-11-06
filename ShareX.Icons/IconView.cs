@@ -77,12 +77,32 @@ public class IconView : Control
     {
         base.OnPropertyChanged(change);
 
-        if (change.Property == IconProperty)
+        if (change.Property == IconProperty || change.Property == IconPackScope.PackProperty)
         {
-            _icon = IconCatalog.Find(Icon);
-            InvalidateMeasure();
-            InvalidateVisual();
+            UpdateIcon();
         }
+    }
+
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+        IconCatalog.PackChanged += OnPackChanged;
+        UpdateIcon();
+    }
+
+    protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        IconCatalog.PackChanged -= OnPackChanged;
+        base.OnDetachedFromVisualTree(e);
+    }
+
+    private void OnPackChanged(object? sender, EventArgs e) => UpdateIcon();
+
+    private void UpdateIcon()
+    {
+        _icon = IconCatalog.Find(Icon, IconPackScope.GetPack(this) ?? IconCatalog.Pack);
+        InvalidateMeasure();
+        InvalidateVisual();
     }
 
     protected override Size MeasureOverride(Size availableSize) =>

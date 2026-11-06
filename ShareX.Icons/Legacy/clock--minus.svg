@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="co" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555555" stop-opacity=".34"/><stop offset="1" stop-color="#0c0c0c" stop-opacity=".52"/></linearGradient>
+    <radialGradient id="cf" cx=".5" cy=".45" r=".5"><stop offset="0" stop-color="#ebf1f1"/><stop offset=".72" stop-color="#ebf1f1"/><stop offset="1" stop-color="#c9dada"/></radialGradient>
+    <linearGradient id="cr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9aa3a3"/><stop offset=".15" stop-color="#cfdcdc"/><stop offset=".85" stop-color="#d6dbdb"/><stop offset="1" stop-color="#8c8d8d"/></linearGradient>
+    <linearGradient id="hv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bec1c1"/><stop offset="1" stop-color="#383838"/></linearGradient>
+    <linearGradient id="hh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#353535"/><stop offset=".7" stop-color="#6e6e6e"/><stop offset="1" stop-color="#a0a9a9"/></linearGradient>
+    <linearGradient id="mo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b53030"/><stop offset="1" stop-color="#800000"/></linearGradient>
+  </defs>
+  <circle cx="8" cy="8" r="6.5" fill="url(#cf)" stroke="url(#co)"/>
+  <circle cx="8" cy="8" r="5.6" fill="none" stroke="url(#cr)" stroke-width=".8" stroke-opacity=".55"/>
+  <path d="M3 6.5h10" stroke="#ccdddd"/>
+  <path d="M8 9.5h4.5M7.5 10v1" stroke="#dcdfdf"/>
+  <rect x="7" y="3" width="1" height="7" fill="url(#hv)"/>
+  <rect x="6" y="8" width="7" height="1" fill="url(#hh)"/>
+  <rect x="7" y="8" width="1" height="1" fill="#777777"/>
+  <rect x="9.5" y="11.5" width="6" height="2" rx=".4" fill="#f75e5e" stroke="url(#mo)"/>
+</svg>

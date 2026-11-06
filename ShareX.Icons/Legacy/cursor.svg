@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="cuEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555555"/><stop offset="1" stop-color="#131313"/></linearGradient>
+</defs>
+<path d="M3.5 .5 L12.5 9.5 H8.6 L10.5 14.1 L8.8 14.9 L6.8 10.4 L3.5 13.6 Z" fill="#ffffff" stroke="url(#cuEdge)" stroke-opacity=".55" stroke-linejoin="round"/>
+</svg>

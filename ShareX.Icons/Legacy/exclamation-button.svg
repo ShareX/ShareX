@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="ebFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbea81"/><stop offset="0.35" stop-color="#d4cc48"/><stop offset="0.55" stop-color="#d4d13c"/><stop offset="1" stop-color="#ecdc24"/></linearGradient>
+<linearGradient id="ebGloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6a9"/><stop offset="0.5" stop-color="#f3e270"/><stop offset="1" stop-color="#e6dc50"/></linearGradient>
+<linearGradient id="ebEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ccb301"/><stop offset="1" stop-color="#968000"/></linearGradient>
+<linearGradient id="ebMark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#757575"/><stop offset="0.45" stop-color="#303030"/><stop offset="0.6" stop-color="#000000"/></linearGradient>
+</defs>
+<rect x="1.5" y="1.5" width="13" height="13" rx="2" fill="url(#ebFill)"/>
+<path d="M2 3.6 Q2 2 3.6 2 H12.4 Q14 2 14 3.6 V6.1 C10.4 6.2 7.4 6.6 5.4 7.6 C4 8.4 3 9.4 2 10.8 Z" fill="url(#ebGloss)"/>
+<rect x="2" y="2" width="12" height="12" rx="1.5" fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width=".8"/>
+<rect x="1.5" y="1.5" width="13" height="13" rx="2" fill="none" stroke="url(#ebEdge)" stroke-opacity=".75"/>
+<rect x="7" y="9" width="2" height="1" fill="#f4ef8a" opacity=".8"/>
+<rect x="7" y="12" width="2" height="1" fill="#f4ed7a" opacity=".8"/>
+<rect x="7" y="4" width="2" height="5" fill="url(#ebMark)"/>
+<rect x="7" y="10" width="2" height="2" fill="#000000"/>
+</svg>

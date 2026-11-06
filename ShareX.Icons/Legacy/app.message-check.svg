@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="bubble" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#def2ff"/><stop offset=".35" stop-color="#d4ebff"/><stop offset=".5" stop-color="#c4d9ef"/><stop offset="1" stop-color="#cde4fa"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6282a0"/><stop offset="1" stop-color="#506b86"/></linearGradient>
+    <linearGradient id="tick" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#66ee77"/><stop offset=".5" stop-color="#3ccb4c"/><stop offset="1" stop-color="#0eb61d"/></linearGradient>
+    <linearGradient id="tickEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aa15"/><stop offset="1" stop-color="#005f02"/></linearGradient>
+  </defs>
+  <path d="M2.5 2.5H13.5Q14.5 2.5 14.5 3.5V10.5Q14.5 11.5 13.5 11.5H6.8L4.5 13.8V11.5H2.5Q1.5 11.5 1.5 10.5V3.5Q1.5 2.5 2.5 2.5Z" fill="url(#bubble)" stroke="url(#edge)" stroke-opacity=".75" stroke-linejoin="round"/>
+  <path d="M2.5 10.5V3.8Q2.5 3.5 3 3.5H13.5" fill="none" stroke="#fff" stroke-opacity=".65"/>
+  <path d="M8.2 12L9.4 10.8L11 12.3L14.3 8.7L15.5 9.9L11 14.9Z" fill="url(#tick)" stroke="url(#tickEdge)" stroke-linejoin="round"/>
+  <path d="M9 12L9.4 11.6L11 13.1L14.4 9.4" fill="none" stroke="#c5ffd1" stroke-opacity=".5" stroke-width=".65"/>
+</svg>

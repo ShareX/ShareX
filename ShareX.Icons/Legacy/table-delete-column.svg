@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="o" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#557f7f" stop-opacity="0.4"/>
+<stop offset="1" stop-color="#0b2b2b" stop-opacity="0.52"/>
+</linearGradient>
+<linearGradient id="w" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/>
+<stop offset="1" stop-color="#e2f3f3"/>
+</linearGradient>
+<linearGradient id="hb" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#44ccff"/>
+<stop offset="1" stop-color="#34bcef"/>
+</linearGradient>
+<linearGradient id="hl" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#43cbfe"/>
+<stop offset="0.25" stop-color="#64cef5"/>
+<stop offset="0.5" stop-color="#88d3ec"/>
+<stop offset="1" stop-color="#78c5de"/>
+</linearGradient>
+<linearGradient id="ro" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#bb3333"/>
+<stop offset="0.75" stop-color="#9c1c1c"/>
+<stop offset="1" stop-color="#7a0000"/>
+</linearGradient>
+<linearGradient id="rf" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ff7777"/>
+<stop offset="1" stop-color="#ef4747"/>
+</linearGradient>
+</defs>
+<rect x="1" y="1" width="13" height="13" fill="url(#w)"/>
+<rect x="5" y="5" width="7" height="7" fill="#eef5f5"/>
+<path d="M12.5,5V12.5H5" fill="none" stroke="#bccdcd"/>
+<polygon points="2,2 13,2 13,5 5,5 5,13 2,13" fill="url(#hb)"/>
+<polygon points="3,3 12,3 12,4 5,4 5,12 3,12" fill="#88eeff"/>
+<rect x="4" y="4" width="9" height="1" fill="url(#hl)"/>
+<rect x="3" y="4" width="1" height="1" fill="#43cbfe"/>
+<rect x=".5" y=".5" width="14" height="14" fill="none" stroke="url(#o)"/>
+<rect x="6" y="2" width="5" height="13" fill="#ffffff" fill-opacity=".42"/>
+<path d="M7.5,3.5H9.5V15.1Q9.5,15.5 9.1,15.5H7.9Q7.5,15.5 7.5,15.1Z" fill="url(#rf)" stroke="url(#ro)"/>
+<polygon points="7,0 10,0 8.5,2" fill="#b02b2b"/>
+</svg>

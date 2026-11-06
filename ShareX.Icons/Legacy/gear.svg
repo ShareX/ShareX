@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="gf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2f2f2"/><stop offset="0.45" stop-color="#d6d6d5"/><stop offset="1" stop-color="#c8c8d6"/></linearGradient>
+    <linearGradient id="gs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#545454" stop-opacity="0.45"/><stop offset="1" stop-color="#0b0b0b" stop-opacity="0.55"/></linearGradient>
+    <linearGradient id="gh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b4b4b4"/><stop offset="1" stop-color="#e0e0ec"/></linearGradient>
+  </defs>
+  <path d="M6.25 3.4L6.9 1.55L9.1 1.55L9.75 3.4L10.02 3.51L11.78 2.66L13.34 4.22L12.49 5.98L12.6 6.25L14.45 6.9L14.45 9.1L12.6 9.75L12.49 10.02L13.34 11.78L11.78 13.34L10.02 12.49L9.75 12.6L9.1 14.45L6.9 14.45L6.25 12.6L5.98 12.49L4.22 13.34L2.66 11.78L3.51 10.02L3.4 9.75L1.55 9.1L1.55 6.9L3.4 6.25L3.51 5.98L2.66 4.22L4.22 2.66L5.98 3.51ZM9.75 8A1.75 1.75 0 1 0 6.25 8A1.75 1.75 0 1 0 9.75 8Z" fill="url(#gf)" fill-rule="evenodd"/>
+  <path d="M6.25 3.4L6.9 1.55L9.1 1.55L9.75 3.4L10.02 3.51L11.78 2.66L13.34 4.22L12.49 5.98L12.6 6.25L14.45 6.9L14.45 9.1L12.6 9.75L12.49 10.02L13.34 11.78L11.78 13.34L10.02 12.49L9.75 12.6L9.1 14.45L6.9 14.45L6.25 12.6L5.98 12.49L4.22 13.34L2.66 11.78L3.51 10.02L3.4 9.75L1.55 9.1L1.55 6.9L3.4 6.25L3.51 5.98L2.66 4.22L4.22 2.66L5.98 3.51Z" fill="none" stroke="url(#gs)" stroke-linejoin="round"/>
+  <circle cx="8" cy="8" r="3.3" fill="none" stroke="url(#gh)" stroke-opacity=".45" stroke-width=".9"/>
+  <circle cx="8" cy="8" r="2.1" fill="none" stroke="#2c2c2c" stroke-opacity=".62" stroke-width=".7"/>
+</svg>

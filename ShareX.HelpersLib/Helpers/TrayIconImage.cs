@@ -194,7 +194,10 @@ public static class TrayIconImage
                 SystemEvents.DisplaySettingsChanged += OnDisplaySettingsChanged;
             }
             if (Application.Current?.PlatformSettings is { } platform) platform.ColorValuesChanged += OnColorsChanged;
+            IconCatalog.PackChanged += OnPackChanged;
         }
+
+        private void OnPackChanged(object? sender, EventArgs e) => QueueRefresh();
 
         private void OnUserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
         {
@@ -250,6 +253,7 @@ public static class TrayIconImage
                 SystemEvents.DisplaySettingsChanged -= OnDisplaySettingsChanged;
             }
             if (Application.Current?.PlatformSettings is { } platform) platform.ColorValuesChanged -= OnColorsChanged;
+            IconCatalog.PackChanged -= OnPackChanged;
             _trayIcon.Icon = null;
         }
     }
