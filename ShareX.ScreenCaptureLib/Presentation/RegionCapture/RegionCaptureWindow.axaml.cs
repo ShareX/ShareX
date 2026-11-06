@@ -362,10 +362,10 @@ public partial class RegionCaptureWindow : Window
         _annotationToolbar.IsVisible = _request.EnableAnnotations;
         _annotationToolbar.ShowToolOptions = false;
 
-        if (ThemeManager.CompactRegionCaptureToolbar)
+        if (_request.RegionCaptureOptions.CompactToolbar)
         {
             _annotationToolbar.IsCompact = true;
-            _annotationToolbar.MainToolbarCornerRadius = new CornerRadius(0);
+            _annotationToolbar.MainToolbarCornerRadius = new CornerRadius(3);
         }
 
         _regionInputSurface.Width = _imageWidth;

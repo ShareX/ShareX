@@ -358,9 +358,6 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Formáty schránky</value>
   </data>
-  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
-    <value>Kompaktní panel nástrojů zachycení oblasti</value>
-  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Vlastní cesta ke konfiguraci klávesových zkratek</value>
   </data>
@@ -2308,6 +2305,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Po otevření odkazu služby zavřít okno OCR</value>
+  </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Kompaktní panel nástrojů zachycení oblasti</value>
   </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>Nastavit...</value>

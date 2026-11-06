@@ -40,7 +40,6 @@ public sealed class ApplicationThemeOptions : INotifyPropertyChanged
     private string _accentColorHex = DefaultAccentColorHex;
     private bool _useSystemAccentColor = false;
     private IconPack _iconPack = IconPack.Modern;
-    private bool _compactRegionCaptureToolbar = false;
 
     public string Theme
     {
@@ -81,12 +80,6 @@ public sealed class ApplicationThemeOptions : INotifyPropertyChanged
     {
         get => _iconPack;
         set => SetField(ref _iconPack, value);
-    }
-
-    public bool CompactRegionCaptureToolbar
-    {
-        get => _compactRegionCaptureToolbar;
-        set => SetField(ref _compactRegionCaptureToolbar, value);
     }
 
     private void SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)

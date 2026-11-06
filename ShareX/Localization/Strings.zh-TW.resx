@@ -358,9 +358,6 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>剪貼簿格式</value>
   </data>
-  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
-    <value>精簡型區域擷取工具列</value>
-  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>自訂快速鍵設定路徑</value>
   </data>
@@ -2308,6 +2305,9 @@
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>開啟服務連結後關閉 OCR 視窗</value>
+  </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>精簡型區域擷取工具列</value>
   </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>設定...</value>

@@ -103,8 +103,6 @@ namespace ShareX.AvaloniaUI.Theming
 
         public static bool IsDarkTheme => !IsLightTheme(_currentTheme.ToString());
 
-        public static bool CompactRegionCaptureToolbar => _options?.CompactRegionCaptureToolbar ?? false;
-
         public static void Refresh()
         {
             RunOnUIThread(ApplyConfiguredSettings);

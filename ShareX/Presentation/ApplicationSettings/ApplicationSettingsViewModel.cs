@@ -287,12 +287,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
     }
 
-    public bool CompactRegionCaptureToolbar
-    {
-        get => Settings.ThemeOptions.CompactRegionCaptureToolbar;
-        set => SetSetting(Settings.ThemeOptions.CompactRegionCaptureToolbar, value, x => Settings.ThemeOptions.CompactRegionCaptureToolbar = x);
-    }
-
     public bool UseSystemAccentColor
     {
         get => Settings.ThemeOptions.UseSystemAccentColor;

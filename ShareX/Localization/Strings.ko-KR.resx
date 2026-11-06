@@ -358,9 +358,6 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>클립보드 형식</value>
   </data>
-  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
-    <value>영역 캡처 도구 모음을 작게 표시</value>
-  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>사용자 지정 단축키 구성 경로</value>
   </data>
@@ -2308,6 +2305,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>서비스 링크를 연 후 OCR 창 닫기</value>
+  </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>영역 캡처 도구 모음을 작게 표시</value>
   </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>구성...</value>

@@ -49,6 +49,7 @@ namespace ShareX.ScreenCaptureLib
         public int BackgroundDimStrength = 20;
         public bool DimAllExceptSelection = false;
         public List<ImageEditorToolbarItemOptions> ToolbarItems = new List<ImageEditorToolbarItemOptions>();
+        public bool CompactToolbar = false;
 
         public RegionCaptureAction RegionCaptureActionRightClick = RegionCaptureAction.RemoveShapeCancelCapture;
         public RegionCaptureAction RegionCaptureActionMiddleClick = RegionCaptureAction.SwapToolType;

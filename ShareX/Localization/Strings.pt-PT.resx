@@ -358,9 +358,6 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Formatos da área de transferência</value>
   </data>
-  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
-    <value>Barra de ferramentas compacta da captura de região</value>
-  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Caminho personalizado da configuração dos atalhos</value>
   </data>
@@ -2308,6 +2305,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Fechar janela de OCR após abrir o link do serviço</value>
+  </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Barra de ferramentas compacta da captura de região</value>
   </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>Configurar...</value>

@@ -358,9 +358,6 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>क्लिपबोर्ड प्रारूप</value>
   </data>
-  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
-    <value>क्षेत्र कैप्चर के लिए कॉम्पैक्ट टूलबार</value>
-  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>अनुकूलित हॉटकी कॉन्फ़िगरेशन पथ</value>
   </data>
@@ -2308,6 +2305,9 @@
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>सेवा लिंक खोलने के बाद OCR विंडो बंद करें</value>
+  </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>क्षेत्र कैप्चर के लिए कॉम्पैक्ट टूलबार</value>
   </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>कॉन्फ़िगर करें...</value>

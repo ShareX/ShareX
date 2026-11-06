@@ -59,7 +59,7 @@
         </Style>
 
         <!-- Compact density modelled on the ShareX 21 region capture toolbar:
-             small flat buttons, square corners and tight spacing. -->
+             small flat buttons, slightly rounded corners and tight spacing. -->
         <Style Selector="controls|AnnotationToolbar:compact">
             <Style Selector="^ Border#MainToolbarBorder">
                 <Setter Property="Padding" Value="2"/>
@@ -67,7 +67,7 @@
 
             <Style Selector="^ Border#ToolOptionsBorder">
                 <Setter Property="Padding" Value="2,0,2,2"/>
-                <Setter Property="CornerRadius" Value="0"/>
+                <Setter Property="CornerRadius" Value="0,0,3,3"/>
             </Style>
 
             <Style Selector="^ StackPanel.toolbar-row">
