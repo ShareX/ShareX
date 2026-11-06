@@ -1,0 +1,7 @@
+interface:
+  display_name: "Merge PR"
+  short_description: "Review a ShareX/ShareX PR and merge it locally"
+  default_prompt: "Use $merge-pr with the supplied ShareX/ShareX GitHub PR URL to review all incoming changes for security concerns and, if the review passes, merge locally with --no-ff and the PR title."
+
+policy:
+  allow_implicit_invocation: true
