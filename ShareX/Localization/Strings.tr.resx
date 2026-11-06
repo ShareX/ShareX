@@ -2531,6 +2531,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Yukarı taşı</value>
   </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Çoklu bölge modu</value>
+  </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Ad</value>
   </data>

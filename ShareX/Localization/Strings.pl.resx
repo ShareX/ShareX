@@ -2531,6 +2531,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Przenieś w górę</value>
   </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Tryb wielu regionów</value>
+  </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Nazwa</value>
   </data>

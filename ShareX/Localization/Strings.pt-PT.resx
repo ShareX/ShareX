@@ -2531,6 +2531,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Mover para cima</value>
   </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Modo multirregião</value>
+  </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Nome</value>
   </data>

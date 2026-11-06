@@ -500,6 +500,11 @@ internal sealed class TaskSettingsPageBuilder
         CheckBox detectControls = Check(Strings.TaskSettingsWindow_AlsoDetectControlsInsideWindows, () => options.DetectControls, value => options.DetectControls = value);
         BindEnabled(detectControls, detectWindows);
 
+        // Multi region mode keeps regions open for editing, so it always overrides quick capture.
+        BoundValue<bool> multiRegion = new(options.MultiRegionMode, value => options.MultiRegionMode = value);
+        CheckBox quickCapture = Check(Strings.TaskSettingsWindow_QuickCapture, () => options.QuickCapture, value => options.QuickCapture = value);
+        BindEnabled(quickCapture, multiRegion, invert: true);
+
         BoundValue<bool> customInfo = new(options.UseCustomInfoText, value => options.UseCustomInfoText = value);
         TextBox customInfoText = PixelInfoText(new(options.CustomInfoText,
             value => options.CustomInfoText = value.Replace("\r\n", "$n").Replace("\n", "$n")));
@@ -517,7 +522,8 @@ internal sealed class TaskSettingsPageBuilder
 
         return Page("capture-region", Strings.TaskSettingsWindow_RegionCapture, AppIcons.Crop,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Selection,
-                Check(Strings.TaskSettingsWindow_QuickCapture, () => options.QuickCapture, value => options.QuickCapture = value),
+                quickCapture,
+                Check(Strings.TaskSettingsWindow_MultiRegionMode, multiRegion),
                 Check(Strings.TaskSettingsWindow_DetectWindowRegions, detectWindows), detectControls,
                 Check(Strings.TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor, () => options.ActiveMonitorMode, value => options.ActiveMonitorMode = value),
                 Row(Strings.TaskSettingsWindow_BackgroundDimStrengthPercent, Number(() => options.BackgroundDimStrength, value => options.BackgroundDimStrength = (int)value, 0, 100)),

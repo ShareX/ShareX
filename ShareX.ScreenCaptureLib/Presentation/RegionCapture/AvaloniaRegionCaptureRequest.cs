@@ -45,6 +45,12 @@ public sealed class AvaloniaRegionCaptureRequest
 
     public bool EnableAnnotations { get; init; } = true;
 
+    /// <summary>
+    /// Allows <see cref="RegionCaptureOptions.MultiRegionMode"/> to select several regions. Only image captures
+    /// enable this; callers that need a single rectangle leave it off.
+    /// </summary>
+    public bool AllowMultipleRegions { get; init; }
+
     /// <summary>Optional captured cursor bitmap. Ownership transfers to the capture window.</summary>
     public SKBitmap? CursorBitmap { get; init; }
 

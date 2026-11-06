@@ -27,6 +27,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using System;
+using System.Collections.Generic;
 
 namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 
@@ -45,6 +46,8 @@ public sealed class RegionSelectionOverlay : Control
         new DashStyle([5, 5], 0));
     private Rect _selectionRectangle;
     private Rect _hoverRectangle;
+    private IReadOnlyList<Rect> _regions = [];
+    private bool _showHoverWithSelection;
     private bool _showCenterCrosshair;
     private bool _showCursorCrosshair;
     private Point _cursorPosition;
@@ -85,6 +88,37 @@ public sealed class RegionSelectionOverlay : Control
             if (_hoverRectangle != value)
             {
                 _hoverRectangle = value;
+                InvalidateVisual();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Regions that were already added in multi region mode. They stay undimmed and outlined next to the
+    /// selection, which is the region currently being drawn or edited.
+    /// </summary>
+    public IReadOnlyList<Rect> Regions
+    {
+        get => _regions;
+        set
+        {
+            _regions = value ?? [];
+            InvalidateVisual();
+        }
+    }
+
+    /// <summary>
+    /// When enabled, a hovered window is outlined even while a selection exists, so another region can be
+    /// picked from it. Otherwise the selection hides the hover.
+    /// </summary>
+    public bool ShowHoverWithSelection
+    {
+        get => _showHoverWithSelection;
+        set
+        {
+            if (_showHoverWithSelection != value)
+            {
+                _showHoverWithSelection = value;
                 InvalidateVisual();
             }
         }
@@ -190,11 +224,36 @@ public sealed class RegionSelectionOverlay : Control
         Rect surface = new Rect(Bounds.Size);
         Rect active = Intersect(ActiveRectangle, surface);
 
+        // In multi region mode a window can be hovered while another region is selected.
+        Rect extraHover = ShowHoverWithSelection && IsValid(SelectionRectangle) && HoverRectangle != SelectionRectangle
+            ? Intersect(HoverRectangle, surface)
+            : default;
+
         if (DimAlpha > 0)
         {
             Rect undimmed = DimAllExceptSelection && (IsSelectionPending || !IsValid(SelectionRectangle)) ? default : active;
 
-            if (IsValid(undimmed))
+            if (Regions.Count > 0 || IsValid(extraHover))
+            {
+                List<Rect> clear = new(Regions.Count + 2);
+                foreach (Rect region in Regions)
+                {
+                    clear.Add(region);
+                }
+
+                clear.Add(undimmed);
+
+                if (!DimAllExceptSelection)
+                {
+                    clear.Add(extraHover);
+                }
+
+                foreach (Rect rectangle in GetUncoveredRectangles(surface, clear))
+                {
+                    context.DrawRectangle(_dimBrush, null, rectangle);
+                }
+            }
+            else if (IsValid(undimmed))
             {
                 DrawDimmedOutside(context, surface, undimmed, _dimBrush);
             }
@@ -204,14 +263,23 @@ public sealed class RegionSelectionOverlay : Control
             }
         }
 
+        foreach (Rect region in Regions)
+        {
+            Rect visible = Intersect(region, surface);
+            if (IsValid(visible))
+            {
+                DrawAntRectangle(context, GetAntRectangle(visible));
+            }
+        }
+
+        if (IsValid(extraHover))
+        {
+            DrawAntRectangle(context, GetAntRectangle(extraHover));
+        }
+
         if (IsValid(active))
         {
-            Rect antRectangle = new(
-                active.X + 0.5,
-                active.Y + 0.5,
-                Math.Max(0, active.Width - 1),
-                Math.Max(0, active.Height - 1));
-            DrawAntRectangle(context, antRectangle);
+            DrawAntRectangle(context, GetAntRectangle(active));
 
             if (ShowCenterCrosshair && IsValid(SelectionRectangle))
             {
@@ -223,6 +291,15 @@ public sealed class RegionSelectionOverlay : Control
         {
             DrawCursorCrosshair(context, surface);
         }
+    }
+
+    private static Rect GetAntRectangle(Rect rectangle)
+    {
+        return new Rect(
+            rectangle.X + 0.5,
+            rectangle.Y + 0.5,
+            Math.Max(0, rectangle.Width - 1),
+            Math.Max(0, rectangle.Height - 1));
     }
 
     private void DrawAntRectangle(DrawingContext context, Rect rectangle)
@@ -280,6 +357,76 @@ public sealed class RegionSelectionOverlay : Control
         DrawIfValid(context, brush, new Rect(surface.Left, clear.Top, clear.Left - surface.Left, clear.Height));
         DrawIfValid(context, brush, new Rect(clear.Right, clear.Top, surface.Right - clear.Right, clear.Height));
         DrawIfValid(context, brush, new Rect(surface.Left, clear.Bottom, surface.Width, surface.Bottom - clear.Bottom));
+    }
+
+    /// <summary>
+    /// Splits the part of <paramref name="surface"/> that none of <paramref name="covered"/> overlap into
+    /// rectangles, so overlapping regions are never dimmed twice or left with dimmed seams.
+    /// </summary>
+    internal static List<Rect> GetUncoveredRectangles(Rect surface, IReadOnlyList<Rect> covered)
+    {
+        List<Rect> result = [];
+        List<Rect> regions = [];
+        SortedSet<double> columns = [surface.Left, surface.Right];
+
+        foreach (Rect rectangle in covered)
+        {
+            Rect clipped = Intersect(rectangle, surface);
+            if (IsValid(clipped))
+            {
+                regions.Add(clipped);
+                columns.Add(clipped.Left);
+                columns.Add(clipped.Right);
+            }
+        }
+
+        if (regions.Count == 0)
+        {
+            result.Add(surface);
+            return result;
+        }
+
+        double[] edges = [.. columns];
+        List<(double Top, double Bottom)> spans = [];
+
+        for (int i = 0; i < edges.Length - 1; i++)
+        {
+            double left = edges[i];
+            double right = edges[i + 1];
+            if (right <= left)
+            {
+                continue;
+            }
+
+            spans.Clear();
+            foreach (Rect region in regions)
+            {
+                if (region.Left <= left && region.Right >= right)
+                {
+                    spans.Add((region.Top, region.Bottom));
+                }
+            }
+
+            spans.Sort((a, b) => a.Top.CompareTo(b.Top));
+
+            double y = surface.Top;
+            foreach ((double top, double bottom) in spans)
+            {
+                if (top > y)
+                {
+                    result.Add(new Rect(left, y, right - left, top - y));
+                }
+
+                y = Math.Max(y, bottom);
+            }
+
+            if (surface.Bottom > y)
+            {
+                result.Add(new Rect(left, y, right - left, surface.Bottom - y));
+            }
+        }
+
+        return result;
     }
 
     private static void DrawIfValid(DrawingContext context, IBrush brush, Rect rectangle)

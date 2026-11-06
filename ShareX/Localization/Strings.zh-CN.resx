@@ -2531,6 +2531,9 @@
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>上移</value>
   </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>多区域模式</value>
+  </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>名称</value>
   </data>
