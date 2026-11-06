@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>일시 중지</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>끌어서 도구 모음을 이동하고, 두 번 클릭하면 위치가 초기화됩니다</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>직사각형 영역 촬영 (Tab)</value>
   </data>

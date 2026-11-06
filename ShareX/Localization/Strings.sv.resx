@@ -358,6 +358,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Urklippsformat</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Kompakt verktygsfält för områdesbildtagning</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Anpassad sökväg till snabbtangentskonfiguration</value>
   </data>

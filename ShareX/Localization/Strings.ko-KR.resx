@@ -358,6 +358,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>클립보드 형식</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>영역 캡처 도구 모음을 작게 표시</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>사용자 지정 단축키 구성 경로</value>
   </data>

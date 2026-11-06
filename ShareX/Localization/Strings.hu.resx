@@ -358,6 +358,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Vágólap-formátumok</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Kompakt területrögzítési eszköztár</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Gyorsbillentyű-konfiguráció egyéni elérési útja</value>
   </data>

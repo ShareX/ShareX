@@ -246,6 +246,9 @@
                                                   ItemsSource="{Binding IconPackOptions}"
                                                   SelectedItem="{Binding SelectedIconPack, Mode=TwoWay}"/>
                                     </Grid>
+                                    <CheckBox Classes="setting"
+                                              Content="{x:Static res:Strings.ApplicationSettingsWindow_CompactRegionCaptureToolbar}"
+                                              IsChecked="{Binding CompactRegionCaptureToolbar, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
 

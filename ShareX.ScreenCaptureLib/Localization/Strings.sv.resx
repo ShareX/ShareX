@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>Pausa</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Dra för att flytta verktygsfältet, dubbelklicka för att återställa dess position</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Ta bild av område (Tab)</value>
   </data>

@@ -358,6 +358,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>クリップボードの書式</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>領域キャプチャのツールバーをコンパクトにする</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>ホットキー設定のカスタムパス</value>
   </data>

@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>Pauză</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Trageți pentru a muta bara de instrumente, faceți dublu clic pentru a-i reseta poziția</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Regiune de captură (Tab)</value>
   </data>

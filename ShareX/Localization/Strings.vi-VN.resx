@@ -358,6 +358,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Định dạng khay nhớ tạm</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Thanh công cụ chụp vùng thu gọn</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Đường dẫn cấu hình phím tắt tùy chỉnh</value>
   </data>

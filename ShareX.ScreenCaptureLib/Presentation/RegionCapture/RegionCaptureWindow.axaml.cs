@@ -94,7 +94,9 @@ public partial class RegionCaptureWindow : Window
     private readonly TranslateTransform _magnifierTransform = new();
     private double _captureToolbarCenterX = double.NaN;
     private double _captureToolbarTop = double.NaN;
-    private double _positionedCaptureToolbarWidth = double.NaN;
+    private Size _positionedCaptureToolbarSize;
+    private bool _draggingCaptureToolbar;
+    private Point _captureToolbarDragOffset;
     private int _imageWidth;
     private int _imageHeight;
     private bool _regionToolActive = true;
@@ -359,6 +361,12 @@ public partial class RegionCaptureWindow : Window
         _editorWorkspace.AttachHostAnnotationToolbar(_annotationToolbar);
         _annotationToolbar.IsVisible = _request.EnableAnnotations;
         _annotationToolbar.ShowToolOptions = false;
+
+        if (ThemeManager.CompactRegionCaptureToolbar)
+        {
+            _annotationToolbar.IsCompact = true;
+            _annotationToolbar.MainToolbarCornerRadius = new CornerRadius(0);
+        }
 
         _regionInputSurface.Width = _imageWidth;
         _regionInputSurface.Height = _imageHeight;
@@ -909,18 +917,42 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
+        double scale = GetToolbarScale();
+        DrawingPoint saved = _request.RegionCaptureOptions.ToolbarPosition;
+        if (!saved.IsEmpty)
+        {
+            PixelPoint savedPoint = new(saved.X, saved.Y);
+            if (Screens.All.Any(screen => screen.Bounds.Contains(savedPoint)))
+            {
+                SetCaptureToolbarAnchor(
+                    (saved.X - _request.ScreenBounds.X) / scale,
+                    (saved.Y - _request.ScreenBounds.Y) / scale);
+                return;
+            }
+        }
+
         Screen? screen = Screens.ScreenFromPoint(desktopPoint);
         if (screen == null)
         {
             return;
         }
 
-        double scale = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
         double monitorCenterX = screen.Bounds.X - _request.ScreenBounds.X + screen.Bounds.Width / 2d;
         double monitorTop = screen.Bounds.Y - _request.ScreenBounds.Y;
-        _captureToolbarCenterX = monitorCenterX / scale;
-        _captureToolbarTop = monitorTop / scale;
-        _positionedCaptureToolbarWidth = double.NaN;
+        SetCaptureToolbarAnchor(monitorCenterX / scale, monitorTop / scale);
+    }
+
+    private double GetToolbarScale()
+    {
+        return double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+    }
+
+    /// <summary>The toolbar is anchored by its top centre so it stays put when the options row changes its width.</summary>
+    private void SetCaptureToolbarAnchor(double centerX, double top)
+    {
+        _captureToolbarCenterX = centerX;
+        _captureToolbarTop = top;
+        _positionedCaptureToolbarSize = default;
         PositionCaptureToolbar();
     }
 
@@ -939,15 +971,106 @@ public partial class RegionCaptureWindow : Window
         double toolbarWidth = _captureToolbar.Bounds.Width > 0
             ? _captureToolbar.Bounds.Width
             : _captureToolbar.DesiredSize.Width;
+        double toolbarHeight = _captureToolbar.Bounds.Height > 0
+            ? _captureToolbar.Bounds.Height
+            : _captureToolbar.DesiredSize.Height;
         if (!double.IsFinite(toolbarWidth) || toolbarWidth <= 0 ||
-            Math.Abs(toolbarWidth - _positionedCaptureToolbarWidth) < 0.01)
+            (Math.Abs(toolbarWidth - _positionedCaptureToolbarSize.Width) < 0.01 &&
+             Math.Abs(toolbarHeight - _positionedCaptureToolbarSize.Height) < 0.01))
         {
             return;
         }
 
-        _positionedCaptureToolbarWidth = toolbarWidth;
-        AvaloniaCanvas.SetLeft(_captureToolbar, _captureToolbarCenterX - toolbarWidth / 2d);
-        AvaloniaCanvas.SetTop(_captureToolbar, _captureToolbarTop);
+        _positionedCaptureToolbarSize = new Size(toolbarWidth, toolbarHeight);
+        double maxLeft = Math.Max(0, ClientSize.Width - toolbarWidth);
+        double maxTop = Math.Max(0, ClientSize.Height - toolbarHeight);
+        AvaloniaCanvas.SetLeft(_captureToolbar, Math.Clamp(_captureToolbarCenterX - toolbarWidth / 2d, 0, maxLeft));
+        AvaloniaCanvas.SetTop(_captureToolbar, Math.Clamp(_captureToolbarTop, 0, maxTop));
+    }
+
+    private void OnToolbarDragHandlePointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (sender is not Control handle || _request == null ||
+            !e.GetCurrentPoint(handle).Properties.IsLeftButtonPressed)
+        {
+            return;
+        }
+
+        e.Handled = true;
+
+        if (e.ClickCount >= 2)
+        {
+            _draggingCaptureToolbar = false;
+            _request.RegionCaptureOptions.ToolbarPosition = DrawingPoint.Empty;
+            DrawingPoint cursorPosition = CaptureHelpers.GetCursorPosition();
+            UpdateToolbarPosition(new PixelPoint(cursorPosition.X, cursorPosition.Y));
+            return;
+        }
+
+        // Start from where the toolbar is drawn, which may be clamped inside the window.
+        double left = AvaloniaCanvas.GetLeft(_captureToolbar);
+        double top = AvaloniaCanvas.GetTop(_captureToolbar);
+        if (!double.IsFinite(left) || !double.IsFinite(top))
+        {
+            return;
+        }
+
+        _captureToolbarCenterX = left + _captureToolbar.Bounds.Width / 2d;
+        _captureToolbarTop = top;
+
+        Point pointer = e.GetPosition(this);
+        _captureToolbarDragOffset = new Point(pointer.X - _captureToolbarCenterX, pointer.Y - _captureToolbarTop);
+        _draggingCaptureToolbar = true;
+        e.Pointer.Capture(handle);
+    }
+
+    private void OnToolbarDragHandlePointerMoved(object? sender, PointerEventArgs e)
+    {
+        if (!_draggingCaptureToolbar)
+        {
+            return;
+        }
+
+        Point pointer = e.GetPosition(this);
+        SetCaptureToolbarAnchor(pointer.X - _captureToolbarDragOffset.X, pointer.Y - _captureToolbarDragOffset.Y);
+        e.Handled = true;
+    }
+
+    private void OnToolbarDragHandlePointerReleased(object? sender, PointerReleasedEventArgs e)
+    {
+        if (!_draggingCaptureToolbar)
+        {
+            return;
+        }
+
+        e.Pointer.Capture(null);
+        EndToolbarDrag();
+        e.Handled = true;
+    }
+
+    private void OnToolbarDragHandlePointerCaptureLost(object? sender, PointerCaptureLostEventArgs e)
+    {
+        EndToolbarDrag();
+    }
+
+    private void EndToolbarDrag()
+    {
+        if (!_draggingCaptureToolbar || _request == null)
+        {
+            return;
+        }
+
+        _draggingCaptureToolbar = false;
+
+        // Save where the toolbar ended up after clamping, not where the pointer was released.
+        double scale = GetToolbarScale();
+        double centerX = AvaloniaCanvas.GetLeft(_captureToolbar) + _captureToolbar.Bounds.Width / 2d;
+        double top = AvaloniaCanvas.GetTop(_captureToolbar);
+        _captureToolbarCenterX = centerX;
+        _captureToolbarTop = top;
+        _request.RegionCaptureOptions.ToolbarPosition = new DrawingPoint(
+            _request.ScreenBounds.X + (int)Math.Round(centerX * scale),
+            _request.ScreenBounds.Y + (int)Math.Round(top * scale));
     }
 
     private void OnCaptureHostPointerPressed(object? sender, PointerPressedEventArgs e)

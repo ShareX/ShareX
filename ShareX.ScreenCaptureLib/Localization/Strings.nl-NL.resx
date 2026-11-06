@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>Pauzeren</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Sleep om de werkbalk te verplaatsen, dubbelklik om de positie te herstellen</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Leg rechthoekige regio vast (Tab)</value>
   </data>

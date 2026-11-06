@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>השהה</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>גרור כדי להזיז את סרגל הכלים, לחץ פעמיים כדי לאפס את מיקומו</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>צלם אזור (Tab)</value>
   </data>

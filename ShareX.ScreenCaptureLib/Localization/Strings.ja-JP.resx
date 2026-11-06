@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>一時停止</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>ドラッグでツールバーを移動、ダブルクリックで位置をリセット</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>領域をキャプチャー (Tab)</value>
   </data>

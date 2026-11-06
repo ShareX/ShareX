@@ -430,6 +430,9 @@
   <data name="Pause" xml:space="preserve">
     <value>Szünet</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Húzza az eszköztár áthelyezéséhez, kattintson duplán a helyzete visszaállításához</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Téglalap régió képlopás (Tab)</value>
   </data>

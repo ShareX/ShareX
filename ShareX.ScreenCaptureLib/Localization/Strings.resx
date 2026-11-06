@@ -436,6 +436,10 @@
   <data name="Pause" xml:space="preserve">
     <value>Pause</value>
   </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Drag to move the toolbar, double-click to reset its position</value>
+    <comment>Tooltip of the grip handle at the left end of the region capture toolbar.</comment>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Rectangle region (Tab)</value>
   </data>

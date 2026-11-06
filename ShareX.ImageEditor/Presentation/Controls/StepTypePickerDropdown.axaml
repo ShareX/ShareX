@@ -17,8 +17,6 @@
     <Grid>
         <Button x:Name="DropdownButton"
                 Click="OnDropdownButtonClick"
-                Height="40"
-                MinWidth="90"
                 HorizontalContentAlignment="Stretch">
             <Grid ColumnDefinitions="*,Auto">
                 <TextBlock Grid.Column="0"

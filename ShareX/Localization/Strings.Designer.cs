@@ -5654,5 +5654,6 @@ namespace ShareX.Localization {
         public static string ApplicationSettingsWindow_IconPackModern => ResourceManager.GetString("ApplicationSettingsWindow_IconPackModern", resourceCulture);
         public static string ApplicationSettingsWindow_Icons => ResourceManager.GetString("ApplicationSettingsWindow_Icons", resourceCulture);
         public static string TaskSettingsWindow_MultiRegionMode => ResourceManager.GetString("TaskSettingsWindow_MultiRegionMode", resourceCulture);
+        public static string ApplicationSettingsWindow_CompactRegionCaptureToolbar => ResourceManager.GetString("ApplicationSettingsWindow_CompactRegionCaptureToolbar", resourceCulture);
     }
 }
