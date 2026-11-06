@@ -47,6 +47,7 @@ public static class PhotoEditorIntegration
             {
                 _window = new PhotoEditorWindow(services);
                 _window.Closed += (_, _) => _window = null;
+                DesktopServices.PlaceOnMainWindowScreen(_window);
                 _window.Show();
             }
             else
@@ -76,6 +77,7 @@ public static class PhotoEditorIntegration
             {
                 PhotoEditorWindow window = new(services);
                 window.Closed += (_, _) => tcs.TrySetResult(window.TaskResult);
+                DesktopServices.PlaceOnMainWindowScreen(window);
                 window.Show();
                 using (copy) EditorCommands.OpenBitmap(window, copy, imageTitle ?? Strings.EditorCommands_Screenshot);
                 window.TaskDocument = window.Document;
