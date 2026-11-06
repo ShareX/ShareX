@@ -35,7 +35,7 @@
         <Style Selector="HyperlinkButton.link">
             <Setter Property="Padding" Value="0"/>
             <Setter Property="MinHeight" Value="0"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Link}"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
         </Style>
