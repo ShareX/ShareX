@@ -415,6 +415,11 @@ namespace ShareX
         Top, Bottom
     }
 
+    public enum ImagePreviewVisibility // Localized
+    {
+        Show, Hide, Automatic
+    }
+
     public enum TaskViewMode // Localized
     {
         ListView,

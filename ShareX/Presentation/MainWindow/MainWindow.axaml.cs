@@ -82,6 +82,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private bool _disposed;
     private readonly List<ThumbnailItemViewModel> _selectionOrder = new();
     private ThumbnailItemViewModel? _selectionAnchor;
+    private const int MinImagePreviewWidth = 100;
+    private string? _imagePreviewPath;
+    private int _imagePreviewVersion;
+    private bool _imagePreviewUpdatePending;
 
     internal ObservableCollection<ThumbnailItemViewModel> ThumbnailItems { get; } = new();
     internal ObservableCollection<HotkeyTipViewModel> HotkeyTips { get; } = new();
@@ -91,6 +95,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public bool IsThumbnailView => !IsListView;
     public bool ShowListColumns => ApplicationState.Settings.ShowColumns;
     public TaskListColumnLayout TaskListColumns { get; } = new();
+    public AvaloniaBitmap? ImagePreview { get; private set; }
+    public bool IsImagePreviewVisible { get; private set; }
+    // Keep room for the list when the window is smaller than when the width was saved.
+    public int ImagePreviewWidth => Math.Clamp(ApplicationState.Settings.ImagePreviewWidth, MinImagePreviewWidth, MaxImagePreviewWidth);
+    private int MaxImagePreviewWidth => Math.Max(MinImagePreviewWidth, (int)ThumbnailPanel.Bounds.Width - 200);
     public bool IsWindowMaximized => WindowState == Avalonia.Controls.WindowState.Maximized;
     public bool IsDarkTheme => ThemeManager.IsDarkTheme;
     public string ThemeToggleText => IsDarkTheme
@@ -113,6 +122,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         UpdateTitleBarIcon();
         TaskListColumns.Load(ApplicationState.Settings.TaskListViewColumnWidths);
         DataContext = this;
+        ThumbnailPanel.SizeChanged += (_, _) => OnPropertyChanged(nameof(ImagePreviewWidth));
+        ScheduleImagePreviewUpdate();
 
         _trayIconService.RightButtonDown += OnTrayIconRightButtonDown;
         _trayIconService.RightButtonUp += OnTrayIconRightButtonUp;
@@ -333,6 +344,111 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         OnPropertyChanged(nameof(IsListView));
         OnPropertyChanged(nameof(IsThumbnailView));
         OnPropertyChanged(nameof(ShowListColumns));
+        ScheduleImagePreviewUpdate();
+    }
+
+    private void ScheduleImagePreviewUpdate()
+    {
+        if (_imagePreviewUpdatePending)
+        {
+            return;
+        }
+
+        _imagePreviewUpdatePending = true;
+        Dispatcher.UIThread.Post(() =>
+        {
+            _imagePreviewUpdatePending = false;
+            UpdateImagePreview();
+        });
+    }
+
+    // Like the ShareX 21 task list, preview the first selected image next to the list.
+    private void UpdateImagePreview()
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        ImagePreviewVisibility visibility = ApplicationState.Settings.ImagePreview;
+        string? filePath = null;
+
+        if (IsListView && visibility != ImagePreviewVisibility.Hide)
+        {
+            string? path = GetSelectedItems().FirstOrDefault()?.Task.Info?.FilePath;
+
+            if (!string.IsNullOrEmpty(path) && FileHelpers.IsImageFile(path) && File.Exists(path))
+            {
+                filePath = path;
+            }
+        }
+
+        // An empty list shows the hotkey tips across the whole area instead.
+        IsImagePreviewVisible = IsListView && !IsEmpty &&
+            (visibility == ImagePreviewVisibility.Show || (visibility == ImagePreviewVisibility.Automatic && filePath != null));
+        OnPropertyChanged(nameof(IsImagePreviewVisible));
+
+        if (filePath == _imagePreviewPath)
+        {
+            return;
+        }
+
+        _imagePreviewPath = filePath;
+        int version = ++_imagePreviewVersion;
+        SetImagePreview(null);
+
+        if (filePath != null)
+        {
+            _ = LoadImagePreviewAsync(version, filePath);
+        }
+    }
+
+    private async Task LoadImagePreviewAsync(int version, string filePath)
+    {
+        AvaloniaBitmap? bitmap = await Task.Run(() =>
+        {
+            try
+            {
+                using FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                return new AvaloniaBitmap(stream);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+                return null;
+            }
+        });
+
+        await Dispatcher.UIThread.InvokeAsync(() =>
+        {
+            if (version == _imagePreviewVersion && !_disposed)
+            {
+                SetImagePreview(bitmap);
+            }
+            else
+            {
+                bitmap?.Dispose();
+            }
+        });
+    }
+
+    private void SetImagePreview(AvaloniaBitmap? bitmap)
+    {
+        AvaloniaBitmap? previous = ImagePreview;
+        ImagePreview = bitmap;
+        OnPropertyChanged(nameof(ImagePreview));
+        previous?.Dispose();
+    }
+
+    // Keep the selection (and so the preview) when the preview itself is clicked.
+    private void OnImagePreviewPointerPressed(object? sender, PointerPressedEventArgs e) => e.Handled = true;
+
+    private void OnImagePreviewResizerDragDelta(object? sender, VectorEventArgs e)
+    {
+        // The handle is on the pane's left edge, so dragging left widens it.
+        ApplicationState.Settings.ImagePreviewWidth = Math.Clamp(ImagePreviewWidth - (int)Math.Round(e.Vector.X), MinImagePreviewWidth, MaxImagePreviewWidth);
+        OnPropertyChanged(nameof(ImagePreviewWidth));
+        e.Handled = true;
     }
 
     private void SwitchTaskViewMode()
@@ -1130,6 +1246,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
             ThumbnailItems.Remove(item);
             item.Dispose();
+            ScheduleImagePreviewUpdate();
         }
 
         NotifyTaskCollectionChanged();
@@ -1137,7 +1254,14 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnTaskChanged(WorkerTask task) => Dispatcher.UIThread.Post(() =>
     {
-        ThumbnailItems.FirstOrDefault(x => ReferenceEquals(x.Task, task))?.Refresh();
+        ThumbnailItemViewModel? item = ThumbnailItems.FirstOrDefault(x => ReferenceEquals(x.Task, task));
+        item?.Refresh();
+
+        // The selected task's image may only now exist on disk.
+        if (item?.IsSelected == true)
+        {
+            ScheduleImagePreviewUpdate();
+        }
     });
 
     private void OnTaskImageReady(WorkerTask task, DrawingBitmap image)
@@ -1209,6 +1333,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void NotifyTaskCollectionChanged()
     {
         OnPropertyChanged(nameof(IsEmpty));
+        ScheduleImagePreviewUpdate();
     }
 
     private void RefreshHotkeyTips()
@@ -1255,6 +1380,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             _selectionOrder.Remove(item);
         }
+
+        ScheduleImagePreviewUpdate();
     }
 
     private void ClearSelection()
@@ -1265,6 +1392,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
 
         _selectionOrder.Clear();
+        ScheduleImagePreviewUpdate();
     }
 
     private void SelectOnly(ThumbnailItemViewModel selected)
@@ -2244,6 +2372,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         _selectionOrder.Clear();
         _selectionAnchor = null;
+        ImagePreview?.Dispose();
+        ImagePreview = null;
     }
 
     private void RestoreWindowBounds()

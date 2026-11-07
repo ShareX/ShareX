@@ -876,6 +876,15 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Pliki obrazów</value>
   </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatycznie</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Ukryj</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Pokaż</value>
+  </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Otwórz obraz</value>
   </data>

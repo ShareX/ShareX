@@ -876,6 +876,15 @@
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>ملفات الصور</value>
   </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>إخفاء</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>عرض</value>
+  </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>فتح صورة</value>
   </data>

@@ -876,6 +876,15 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Képfájlok</value>
   </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatikus</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Elrejtés</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Megjelenítés</value>
+  </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Kép megnyitása</value>
   </data>
