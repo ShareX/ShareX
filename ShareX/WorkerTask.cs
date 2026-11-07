@@ -588,6 +588,13 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
+                // The editor blocks the task until it closes, so copy the capture now and let the user paste it without having to edit it.
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
+                {
+                    ClipboardHelpers.CopyImage(Image, Info.FileName);
+                    DebugHelper.WriteLine("Image copied to clipboard before opening the image editor.");
+                }
+
                 Image = TaskHelpers.AnnotateImage(Image, null, Info.TaskSettings, true);
 
                 if (Image == null)
