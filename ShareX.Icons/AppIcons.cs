@@ -156,6 +156,7 @@ public static class AppIcons
     public const string Pin = Prefix + "pin";
     public const string Unpin = Prefix + "unpin";
     public const string Ruler = Prefix + "ruler";
+    public const string Measure = Prefix + "measure";
     public const string Robot = Prefix + "robot";
     public const string Hash = Prefix + "hash";
     public const string Tag = Prefix + "tag";

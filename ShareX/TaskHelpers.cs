@@ -2401,7 +2401,7 @@ namespace ShareX
                 // Tools
                 HotkeyType.ColorPicker => AppIcons.Palette,
                 HotkeyType.ScreenColorPicker => AppIcons.ScreenColorPicker,
-                HotkeyType.Ruler => AppIcons.Ruler,
+                HotkeyType.Ruler => AppIcons.Measure,
                 HotkeyType.ClassicRuler => AppIcons.Ruler,
                 HotkeyType.MouseHighlighter => AppIcons.MouseHighlighter,
                 HotkeyType.PinToScreen => AppIcons.Pin,

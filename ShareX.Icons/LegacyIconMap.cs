@@ -179,6 +179,7 @@ internal static class LegacyIconMap
         [AppIcons.Locate] = "layout-center",
         [AppIcons.Lock] = "app.lock",
         [AppIcons.MagicWand] = "image-reflection",
+        [AppIcons.Measure] = "app.measure",
         [AppIcons.Menu] = "ui-menu-blue",
         [AppIcons.Message] = "app.message",
         [AppIcons.MessageCheck] = "app.message-check",
