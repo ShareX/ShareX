@@ -1494,7 +1494,7 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
     <value>Capturar</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Régua (clássica)</value>
+    <value>Régua</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Visualizador da área de transferência</value>
@@ -1659,7 +1659,7 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
     <value>Reiniciar como administrador</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Régua</value>
+    <value>Medir</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Seletor de cores da tela</value>

@@ -440,7 +440,7 @@
     <value>幅: {0} px | 高さ: {1} px | 面積: {2} px | 外周: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - 定規（クラシック）</value>
+    <value>ShareX - 定規</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>クリップボードの内容</value>
@@ -2045,7 +2045,7 @@
     <value>許容差: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - 定規</value>
+    <value>ShareX - 計測</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>開始するには動画を選択してください。</value>

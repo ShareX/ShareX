@@ -643,7 +643,7 @@ Möchten Sie es dennoch ausführen?</value>
     <value>Hochladen</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Lineal (klassisch)</value>
+    <value>Lineal</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Aus Zwischenablage hochladen</value>
@@ -796,7 +796,7 @@ Möchten Sie es dennoch ausführen?</value>
     <value>Bereich aufnehmen (Transparent)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Lineal</value>
+    <value>Messen</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Bildschirmfarbenwähler</value>

@@ -440,7 +440,7 @@
     <value>너비: {0} px | 높이: {1} px | 면적: {2} px | 둘레: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - 눈금자 (클래식)</value>
+    <value>ShareX - 눈금자</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>클립보드 내용</value>
@@ -2045,7 +2045,7 @@
     <value>허용 오차: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - 눈금자</value>
+    <value>ShareX - 측정</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>시작하려면 비디오를 선택하세요.</value>

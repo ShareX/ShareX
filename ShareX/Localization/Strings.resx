@@ -1497,7 +1497,7 @@ Please select a different hotkey or quit the conflicting application and reopen 
     <value>Capture</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Ruler (classic)...</value>
+    <value>Ruler...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Clipboard viewer...</value>
@@ -1662,7 +1662,7 @@ Please select a different hotkey or quit the conflicting application and reopen 
     <value>Restart as administrator</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Ruler...</value>
+    <value>Measure...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Screen color picker...</value>

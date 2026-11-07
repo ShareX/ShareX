@@ -643,7 +643,7 @@ Ainda assim, pretende executá-lo?</value>
     <value>Envio</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Régua (clássica)</value>
+    <value>Régua</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Envio através da área de transferência</value>
@@ -796,7 +796,7 @@ Ainda assim, pretende executá-lo?</value>
     <value>Capturar região (transparente)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Régua</value>
+    <value>Medir</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Seleção de cores da tela</value>

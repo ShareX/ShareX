@@ -643,7 +643,7 @@
     <value>上傳</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>標尺（經典）</value>
+    <value>標尺</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>從剪貼簿上傳</value>
@@ -796,7 +796,7 @@
     <value>擷取區域 (透明)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>標尺</value>
+    <value>測量</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>螢幕檢色器</value>

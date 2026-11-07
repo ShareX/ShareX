@@ -1494,7 +1494,7 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
     <value>Capturer</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Règle (classique)</value>
+    <value>Règle</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Visionneuse du presse-papiers</value>
@@ -1659,7 +1659,7 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
     <value>Redémarrer en tant qu’administrateur</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Règle</value>
+    <value>Mesurer</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Sélecteur de couleurs de l'écran</value>

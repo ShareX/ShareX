@@ -440,7 +440,7 @@
     <value>Ширина: {0} px | Висота: {1} px | Площа: {2} px | Периметр: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX — лінійка (класична)</value>
+    <value>ShareX — лінійка</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Вміст буфера обміну</value>
@@ -2045,7 +2045,7 @@
     <value>Допуск: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX — лінійка</value>
+    <value>ShareX — вимірювання</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Виберіть відео, щоб почати.</value>

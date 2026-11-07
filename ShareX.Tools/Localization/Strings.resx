@@ -440,7 +440,7 @@
     <value>Width: {0} px | Height: {1} px | Area: {2} px | Perimeter: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - Ruler (classic)</value>
+    <value>ShareX - Ruler</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Clipboard content</value>
@@ -2046,7 +2046,7 @@
     <value>Tolerance: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Ruler</value>
+    <value>ShareX - Measure</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Choose a video to get started.</value>

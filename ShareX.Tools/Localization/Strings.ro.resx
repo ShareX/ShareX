@@ -440,7 +440,7 @@
     <value>Lățime: {0} px | Înălțime: {1} px | Arie: {2} px | Perimetru: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - Riglă (clasică)</value>
+    <value>ShareX - Riglă</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Conținut clipboard</value>
@@ -2045,7 +2045,7 @@
     <value>Toleranță: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Riglă</value>
+    <value>ShareX - Măsurare</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Alegeți un videoclip pentru a începe.</value>

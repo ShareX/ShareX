@@ -643,7 +643,7 @@ Ennek ellenére szeretné futtatni?</value>
     <value>Feltöltés</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Vonalzó (klasszikus)</value>
+    <value>Vonalzó</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Feltöltés vágólapról</value>
@@ -796,7 +796,7 @@ Ennek ellenére szeretné futtatni?</value>
     <value>Téglalap régió képlopás (Átlátszó)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Vonalzó</value>
+    <value>Mérés</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Színszedő</value>

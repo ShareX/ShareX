@@ -643,7 +643,7 @@ Doriți totuși să îl executați?</value>
     <value>Încărcați</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Riglă (clasică)</value>
+    <value>Riglă</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Încărcați din clipboard</value>
@@ -796,7 +796,7 @@ Doriți totuși să îl executați?</value>
     <value>Regiune de captură (Transparentă)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Riglă</value>
+    <value>Măsurare</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Alegător de culori pe ecran</value>

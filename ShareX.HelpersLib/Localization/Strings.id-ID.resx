@@ -643,7 +643,7 @@ Apakah Anda tetap ingin menjalankannya?</value>
     <value>Unggah</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Penggaris (klasik)</value>
+    <value>Penggaris</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Unggah dari papan klip</value>
@@ -796,7 +796,7 @@ Apakah Anda tetap ingin menjalankannya?</value>
     <value>Jepret area (Transparan)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Penggaris</value>
+    <value>Ukur</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Pemilih warna layar</value>

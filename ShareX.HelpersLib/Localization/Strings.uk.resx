@@ -643,7 +643,7 @@
     <value>Вивантажити</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Лінійка (класична)</value>
+    <value>Лінійка</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Вивантажити з буфера обміну</value>
@@ -796,7 +796,7 @@
     <value>Захоплення області (прозоре тло)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Лінійка</value>
+    <value>Вимірювання</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Вибір кольору з екрана</value>

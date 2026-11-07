@@ -643,7 +643,7 @@
     <value>อัปโหลด</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>ไม้บรรทัด (แบบคลาสสิก)</value>
+    <value>ไม้บรรทัด</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>อัปโหลด จากคลิปบอร์ด</value>
@@ -796,7 +796,7 @@
     <value>จับภาพ พื้นที่ (โปร่งใส)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>ไม้บรรทัด</value>
+    <value>วัดขนาด</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>หน้าจอ ตัวเลือกสี</value>

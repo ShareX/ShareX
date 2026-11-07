@@ -441,7 +441,7 @@
     <value>चौड़ाई: {0} px | ऊँचाई: {1} px | क्षेत्रफल: {2} px | परिधि: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - मापनी (क्लासिक)</value>
+    <value>ShareX - मापनी</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>क्लिपबोर्ड सामग्री</value>
@@ -2051,7 +2051,7 @@
     <value>सहनशीलता: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - मापनी</value>
+    <value>ShareX - मापन</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>आरंभ करने के लिए वीडियो चुनें।</value>
