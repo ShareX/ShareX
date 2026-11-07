@@ -238,6 +238,7 @@
 
         <Grid x:Name="ThumbnailPanel"
               Grid.Column="1"
+              ClipToBounds="True"
               Focusable="True"
               PointerPressed="OnMainContentPointerPressed"
               PointerReleased="OnMainContentPointerReleased">
@@ -414,9 +415,9 @@
 
                 <Grid IsVisible="{Binding IsEmpty}" Margin="28">
                     <Border Classes="hotkey-panel"
-                            Width="530"
+                            MaxWidth="530"
                             MaxHeight="430"
-                            HorizontalAlignment="Center"
+                            HorizontalAlignment="Stretch"
                             VerticalAlignment="Center">
                         <Grid RowDefinitions="Auto,Auto,*" RowSpacing="8">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="9">
@@ -430,11 +431,16 @@
                                        TextWrapping="Wrap"
                                        Margin="8,0,8,8"/>
                             <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
-                                <ItemsControl ItemsSource="{Binding HotkeyTips}">
+                                <ItemsControl ItemsSource="{Binding HotkeyTips}" Grid.IsSharedSizeScope="True">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate DataType="local:HotkeyTipViewModel">
                                             <Border BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,1,0,0" Padding="6,8">
-                                                <Grid ColumnDefinitions="24,155,*" ColumnSpacing="10">
+                                                <Grid ColumnSpacing="10">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="24"/>
+                                                        <ColumnDefinition Width="Auto" MinWidth="155" SharedSizeGroup="HotkeyTipHotkey"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
                                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
                                                                             IsVisible="{Binding IsRegistered}"
                                                                             Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
@@ -454,6 +460,7 @@
                                                                VerticalAlignment="Center"/>
                                                     <TextBlock Grid.Column="2"
                                                                Text="{Binding Description}"
+                                                               ToolTip.Tip="{Binding Description}"
                                                                FontWeight="Normal"
                                                                TextTrimming="CharacterEllipsis"
                                                                VerticalAlignment="Center"/>
