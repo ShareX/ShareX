@@ -101,6 +101,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Read version
+        shell: bash
+        run: echo "SHAREX_VERSION=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' Directory.Build.props | head -1)" >> "$GITHUB_ENV"
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
@@ -167,7 +171,7 @@ jobs:
       - name: Upload packages
         uses: actions/upload-artifact@v4
         with:
-          name: sharex-macos-${{ matrix.arch }}
+          name: ShareX-${{ env.SHAREX_VERSION }}-macos-${{ matrix.arch }}
           path: |
             ${{ runner.temp }}/package/*.zip
             ${{ runner.temp }}/package/*.dmg
@@ -186,6 +190,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Read version
+        shell: bash
+        run: echo "SHAREX_VERSION=$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' Directory.Build.props | head -1)" >> "$GITHUB_ENV"
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
@@ -214,8 +222,8 @@ jobs:
           export HOME="$RUNNER_TEMP/home" PREFIX="$RUNNER_TEMP/home/.local"
           mkdir -p "$HOME/Documents/ShareX"
           echo '{ "ShowStartScreen": false }' > "$HOME/Documents/ShareX/ApplicationConfig.json"
-          tar -C "$RUNNER_TEMP" -xzf "$RUNNER_TEMP/package/sharex-linux-x64.tar.gz"
-          "$RUNNER_TEMP/sharex-linux-x64/install.sh"
+          tar -C "$RUNNER_TEMP" -xzf "$RUNNER_TEMP/package/ShareX-$SHAREX_VERSION-linux-x64.tar.gz"
+          "$RUNNER_TEMP/ShareX-$SHAREX_VERSION-linux-x64/install.sh"
           xvfb-run -a -s "-screen 0 1280x800x24" dbus-run-session -- bash -euo pipefail -c '
             sharex="$PREFIX/bin/sharex"
             "$sharex" -silent & pid=$!
@@ -240,6 +248,6 @@ jobs:
       - name: Upload package
         uses: actions/upload-artifact@v4
         with:
-          name: sharex-linux-x64
-          path: ${{ runner.temp }}/package/sharex-linux-x64.tar.gz
+          name: ShareX-${{ env.SHAREX_VERSION }}-linux-x64
+          path: ${{ runner.temp }}/package/ShareX-${{ env.SHAREX_VERSION }}-linux-x64.tar.gz
           if-no-files-found: error

@@ -2,7 +2,7 @@
 # Builds ShareX and installs it for the current user (no root needed).
 #
 #   Scripts/install-linux.sh                    build and install to ~/.local
-#   Scripts/install-linux.sh --package DIR      build a self-contained sharex-linux-<cpu>.tar.gz into DIR
+#   Scripts/install-linux.sh --package DIR      build a self-contained ShareX-<version>-linux-<cpu>.tar.gz into DIR
 #   ./install.sh                                inside an extracted package: install it (no SDK needed)
 #   Scripts/install-linux.sh --uninstall        remove it again (settings and screenshots are kept)
 #
@@ -84,7 +84,9 @@ else
 fi
 
 if [ -n "${out:-}" ]; then
-  name="sharex-$rid"
+  # Same convention as the release files: ShareX-<version>-<os>-<arch> (ShareX-22.3.0-portable-x64.zip, ShareX-22.3.0-macos-arm64.dmg).
+  version="$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' "$repo/Directory.Build.props" | head -1)"
+  name="ShareX-$version-$rid"
   mkdir -p "$out" "$staging/$name"
   cp -r "$source_app" "$staging/$name/app"
   cp "$icon_source" "$staging/$name/sharex.png"
