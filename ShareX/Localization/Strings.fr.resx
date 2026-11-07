@@ -2573,8 +2573,8 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Général</value>
   </data>
-  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
-    <value>Correction des couleurs HDR pour les captures et les enregistrements</value>
+  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
+    <value>Correcteur de couleurs des captures HDR</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Hauteur :</value>
@@ -2761,6 +2761,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Utiliser l’enregistreur d’écran intégré</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>Mappage des tons HDR</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Exiger l’encodage vidéo matériel</value>

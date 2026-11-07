@@ -421,6 +421,7 @@ namespace ShareX
         public int ScreenRecordCameraMargin = 20;
         public bool ScreenRecordRequireHardwareEncoder = true;
         public int ScreenRecordVideoBitrate = 10000; // kbps
+        public bool ScreenRecordHDRToneMapping = false;
         public int ScreenRecordFPS = 30;
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;

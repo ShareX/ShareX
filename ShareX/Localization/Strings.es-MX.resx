@@ -2573,8 +2573,8 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>General</value>
   </data>
-  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
-    <value>Corrección de color HDR para capturas y grabaciones</value>
+  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
+    <value>Corrector de color para capturas HDR</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Altura:</value>
@@ -2761,6 +2761,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Usar el grabador de pantalla integrado</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>Mapeo de tonos HDR</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Exigir codificación de video por hardware</value>

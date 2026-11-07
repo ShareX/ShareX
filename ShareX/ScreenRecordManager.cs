@@ -507,7 +507,7 @@ namespace ShareX
                     CameraMargin = settings.CaptureSettings.ScreenRecordCameraMargin,
                     RequireHardwareEncoder = settings.CaptureSettings.ScreenRecordRequireHardwareEncoder,
                     IncludeCursor = settings.CaptureSettings.ScreenRecordShowCursor,
-                    HdrToneMapping = settings.CaptureSettings.HDRScreenshotColorCorrection,
+                    HdrToneMapping = settings.CaptureSettings.ScreenRecordHDRToneMapping,
                     Duration = settings.CaptureSettings.ScreenRecordFixedDuration ? TimeSpan.FromSeconds(settings.CaptureSettings.ScreenRecordDuration) : TimeSpan.Zero
                 };
                 nativeRecorder = CreateNativeRecorder(options);

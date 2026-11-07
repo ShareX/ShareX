@@ -2573,8 +2573,8 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>일반</value>
   </data>
-  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
-    <value>스크린샷 및 녹화용 HDR 색상 보정</value>
+  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
+    <value>HDR 스크린샷 색상 보정</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>높이:</value>
@@ -2761,6 +2761,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>내장 화면 녹화 기능 사용</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR 톤 매핑</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>동영상 하드웨어 인코딩 필수</value>

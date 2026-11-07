@@ -2573,8 +2573,8 @@
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Загальні</value>
   </data>
-  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
-    <value>Корекція кольору HDR для знімків і записів екрана</value>
+  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
+    <value>Коректор кольору знімків HDR</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Висота:</value>
@@ -2761,6 +2761,9 @@
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Використовувати вбудований запис екрана</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>Тональне відображення HDR</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Вимагати апаратне кодування відео</value>

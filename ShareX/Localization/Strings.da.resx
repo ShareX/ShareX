@@ -2573,8 +2573,8 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Generelt</value>
   </data>
-  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
-    <value>HDR-farvekorrektion for skærmbilleder og optagelser</value>
+  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
+    <value>Farvekorrektion for HDR-skærmbilleder</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Højde:</value>
@@ -2761,6 +2761,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Brug den indbyggede skærmoptager</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR-tonemapping</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Kræv hardwarekodning af video</value>

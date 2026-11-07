@@ -3095,9 +3095,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_AutomaticallyHideDesktopIcons", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_HDRColorCorrection {
+        public static string TaskSettingsWindow_HDRScreenshotColorCorrector {
             get {
-                return ResourceManager.GetString("TaskSettingsWindow_HDRColorCorrection", resourceCulture);
+                return ResourceManager.GetString("TaskSettingsWindow_HDRScreenshotColorCorrector", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_WindowTitle {
@@ -5779,5 +5779,6 @@ namespace ShareX.Localization {
         public static string ApplicationSettingsWindow_SpacingSettingsWindowsLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingSettingsWindowsLabel", resourceCulture);
         public static string ApplicationSettingsWindow_SpacingSidebarLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingSidebarLabel", resourceCulture);
         public static string ApplicationSettingsWindow_SpacingToolMenusLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingToolMenusLabel", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderHDRToneMapping => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderHDRToneMapping", resourceCulture);
     }
 }

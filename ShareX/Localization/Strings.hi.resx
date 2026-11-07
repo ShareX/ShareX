@@ -2573,8 +2573,8 @@
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>सामान्य</value>
   </data>
-  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
-    <value>स्क्रीनशॉट और रिकॉर्डिंग के लिए HDR रंग सुधार</value>
+  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
+    <value>HDR स्क्रीनशॉट रंग सुधारक</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>ऊँचाई:</value>
@@ -2761,6 +2761,9 @@
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>अंतर्निहित स्क्रीन रिकॉर्डर का उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR टोन मैपिंग</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>हार्डवेयर वीडियो एन्कोडिंग आवश्यक करें</value>
