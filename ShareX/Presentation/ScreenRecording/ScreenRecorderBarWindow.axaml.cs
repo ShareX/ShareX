@@ -52,8 +52,10 @@ internal partial class ScreenRecorderBarWindow : Window
 {
     private readonly ScreenRecorderBarSettings _draft;
     private readonly bool _gif;
+    private readonly bool _native;
+    private readonly bool _evenSize;
     private readonly List<Source> _sources = [];
-    private readonly Source _cameraSource;
+    private readonly Source? _cameraSource;
     private readonly TaskCompletionSource<bool> _completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private readonly Button _recordButton;
     private ToggleButton _startDelayToggle = null!;
@@ -65,18 +67,22 @@ internal partial class ScreenRecorderBarWindow : Window
     public IntPtr CaptureWindow { get; }
     private TaskSettingsCapture Capture => _draft.Capture;
 
-    public ScreenRecorderBarWindow(TaskSettings settings, DrawingRectangle region, IntPtr window, bool gif = false)
+    /// <param name="native">False for the FFmpeg recorder, which hides the audio, camera and bitrate settings it does not use.</param>
+    public ScreenRecorderBarWindow(TaskSettings settings, DrawingRectangle region, IntPtr window, bool gif, bool native, bool evenSize)
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         _draft = new(settings);
         _gif = gif;
+        _native = native;
+        _evenSize = evenSize;
+        if (!native) Title = Strings.TaskSettingsWindow_ScreenRecorder;
         RecordingRegion = region;
         CaptureWindow = window;
         _recordButton = ActionButton(Strings.ScreenRecorderBar_Record, AppIcons.Circle, RequestRecord, toolbar: true);
         _recordButton.Classes.Add("recorder-record");
 
-        if (!gif)
+        if (native && !gif)
         {
             AddSource(Strings.ScreenRecorderBar_SystemAudio, AppIcons.Volume,
                 () => Capture.ScreenRecordSystemAudio, value => Capture.ScreenRecordSystemAudio = value,
@@ -91,11 +97,14 @@ internal partial class ScreenRecorderBarWindow : Window
                 () => AudioCaptureDevices.GetDefaultMicrophone()?.Name,
                 Strings.TaskSettingsWindow_NativeRecorderDefaultMicrophone, Strings.TaskSettingsWindow_NativeRecorderUnavailableMicrophone);
         }
-        _cameraSource = AddSource(Strings.ScreenRecorderBar_Camera, AppIcons.Video,
-            () => Capture.ScreenRecordCamera, value => Capture.ScreenRecordCamera = value,
-            () => Capture.ScreenRecordCameraDeviceId, value => Capture.ScreenRecordCameraDeviceId = value,
-            () => CameraCaptureDevices.GetCameras().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(), null,
-            Strings.TaskSettingsWindow_NativeRecorderCamera_DefaultDevice, Strings.TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice);
+        if (native)
+        {
+            _cameraSource = AddSource(Strings.ScreenRecorderBar_Camera, AppIcons.Video,
+                () => Capture.ScreenRecordCamera, value => Capture.ScreenRecordCamera = value,
+                () => Capture.ScreenRecordCameraDeviceId, value => Capture.ScreenRecordCameraDeviceId = value,
+                () => CameraCaptureDevices.GetCameras().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(), null,
+                Strings.TaskSettingsWindow_NativeRecorderCamera_DefaultDevice, Strings.TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice);
+        }
 
         BuildBar();
         ClosePanelButton.Content = CreateIcon(AppIcons.Close);
@@ -146,13 +155,16 @@ internal partial class ScreenRecorderBarWindow : Window
         if (CaptureWindow != IntPtr.Zero)
         {
             WindowInfo target = new(CaptureWindow);
-            if (!target.IsVisible || target.IsMinimized || !target.Rectangle.IsValid())
+            // The window may have moved or resized while its settings were being edited.
+            DrawingRectangle rect = target.Rectangle;
+            // FFmpeg's gdigrab rejects areas outside the desktop, so clip like StartRecording does.
+            if (!_native) rect = DrawingRectangle.Intersect(rect, CaptureHelpers.GetScreenBounds());
+            if (!target.IsVisible || target.IsMinimized || !rect.IsValid())
             {
                 ShowError(Strings.ScreenRecorderBar_TargetUnavailable);
                 return;
             }
-            // The window may have moved or resized while its settings were being edited.
-            RecordingRegion = _gif ? target.Rectangle : CaptureHelpers.EvenRectangleSize(target.Rectangle);
+            RecordingRegion = _evenSize ? CaptureHelpers.EvenRectangleSize(rect) : rect;
         }
         _completion.TrySetResult(true);
         Close();
@@ -428,8 +440,11 @@ internal partial class ScreenRecorderBarWindow : Window
         {
             recording.Children.Add(Row(Strings.TaskSettingsWindow_ScreenRecordingFPS,
                 Number(Capture.ScreenRecordFPS, 1, 120, 1, value => Capture.ScreenRecordFPS = (int)value)));
-            recording.Children.Add(Row(Strings.TaskSettingsWindow_NativeRecorderBitrate,
-                Number(Capture.ScreenRecordVideoBitrate, 100, 200000, 100, value => Capture.ScreenRecordVideoBitrate = (int)value)));
+            if (_native)
+            {
+                recording.Children.Add(Row(Strings.TaskSettingsWindow_NativeRecorderBitrate,
+                    Number(Capture.ScreenRecordVideoBitrate, 100, 200000, 100, value => Capture.ScreenRecordVideoBitrate = (int)value)));
+            }
         }
         NumericUpDown duration = Number((decimal)Capture.ScreenRecordDuration, 0.1m, 86400, 0.1m, value => Capture.ScreenRecordDuration = (float)value);
         duration.IsEnabled = Capture.ScreenRecordFixedDuration;
