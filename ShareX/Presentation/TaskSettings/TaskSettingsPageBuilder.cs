@@ -563,8 +563,6 @@ internal sealed class TaskSettingsPageBuilder
             Strings.TaskSettingsWindow_NativeRecorderDefaultMicrophone, Strings.TaskSettingsWindow_NativeRecorderUnavailableMicrophone);
         BindEnabled(microphones, recordMicrophone);
         Control microphoneDevice = Row(Strings.TaskSettingsWindow_NativeRecorderMicrophoneDevice, microphones);
-        Control showBar = Check(Strings.ScreenRecorderBar_ShowBeforeRecording, () => capture.ScreenRecordShowBar, value => capture.ScreenRecordShowBar = value);
-        BindEnabled(showBar, native);
         Control hardware = Check(Strings.TaskSettingsWindow_NativeRecorderHardware, () => capture.ScreenRecordRequireHardwareEncoder, value => capture.ScreenRecordRequireHardwareEncoder = value);
         NumericUpDown bitrateControl = Number(() => capture.ScreenRecordVideoBitrate, value => capture.ScreenRecordVideoBitrate = (int)value, 100, 200000, 100);
         bitrateControl.Width = 160;
@@ -626,9 +624,10 @@ internal sealed class TaskSettingsPageBuilder
         return Page("capture-screen-recorder", Strings.TaskSettingsWindow_ScreenRecorder, AppIcons.Video,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_NativeRecorder,
                 Check(Strings.TaskSettingsWindow_NativeRecorderEnabled, native),
-                showBar, systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate),
+                systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate),
             cameraPanel,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Recording,
+                Check(Strings.ScreenRecorderBar_ShowBeforeRecording, () => capture.ScreenRecordShowBar, value => capture.ScreenRecordShowBar = value),
                 Row(Strings.TaskSettingsWindow_ScreenRecordingFPS, Number(() => capture.ScreenRecordFPS, value => capture.ScreenRecordFPS = (int)value, 1, 120)),
                 Row(Strings.TaskSettingsWindow_GIFFPS, Number(() => capture.GIFFPS, value => capture.GIFFPS = (int)value, 1, HelpersOptions.DevMode ? 60 : 30)),
                 Check(Strings.TaskSettingsWindow_ShowCursorInRecording, () => capture.ScreenRecordShowCursor, value => capture.ScreenRecordShowCursor = value),
