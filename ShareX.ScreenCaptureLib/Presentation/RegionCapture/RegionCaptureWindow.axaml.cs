@@ -199,7 +199,9 @@ public partial class RegionCaptureWindow : Window
     protected override void OnKeyDown(KeyEventArgs e)
     {
         if (_keyboardInputEnabled && !_closing && _request != null &&
-            e.Key == Key.Tab && e.KeyModifiers == KeyModifiers.None && _viewModel?.IsModalOpen != true)
+            e.KeyModifiers == KeyModifiers.None && _viewModel?.IsModalOpen != true &&
+            (e.Key == Key.Tab ||
+             (e.Key == Key.NumPad0 && e.Source is not TextBox && FocusManager?.GetFocusedElement() is not TextBox)))
         {
             ActivateRegionTool();
             e.Handled = true;

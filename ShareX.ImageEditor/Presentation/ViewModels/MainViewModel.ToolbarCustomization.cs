@@ -85,7 +85,39 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 }
             }
 
+            if (modifiers == KeyModifiers.None && TryGetNumPadTool(key, out EditorTool tool))
+            {
+                ToolbarCustomizationItemViewModel? toolItem = _toolbarItems.FirstOrDefault(item => item.IsVisible && item.Tool == tool);
+                if (toolItem != null)
+                {
+                    ExecuteToolbarItem(toolItem);
+                    return true;
+                }
+            }
+
             return false;
+        }
+
+        // Fixed numpad shortcuts carried over from the WinForms editor; they work alongside the customizable hotkeys.
+        private static bool TryGetNumPadTool(Key key, out EditorTool tool)
+        {
+            EditorTool? match = key switch
+            {
+                Key.NumPad0 => EditorTool.Select,
+                Key.NumPad1 => EditorTool.Rectangle,
+                Key.NumPad2 => EditorTool.Ellipse,
+                Key.NumPad3 => EditorTool.Freehand,
+                Key.NumPad4 => EditorTool.Line,
+                Key.NumPad5 => EditorTool.Arrow,
+                Key.NumPad6 => EditorTool.Text,
+                Key.NumPad7 => EditorTool.Step,
+                Key.NumPad8 => EditorTool.Blur,
+                Key.NumPad9 => EditorTool.Pixelate,
+                _ => null
+            };
+
+            tool = match.GetValueOrDefault();
+            return match.HasValue;
         }
 
         /// <summary>
