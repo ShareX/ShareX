@@ -789,6 +789,9 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Bereich aufnehmen</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Bereich aufnehmen (Transparent)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Lineal</value>
   </data>

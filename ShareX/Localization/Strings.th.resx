@@ -1568,6 +1568,9 @@
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>พื้นที่...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>พื้นที่ (โปร่งใส)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>เบราว์เซอร์จัดเก็บข้อมูลระยะไกล...</value>
   </data>

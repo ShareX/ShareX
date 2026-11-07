@@ -789,6 +789,9 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>क्षेत्र कैप्चर करें</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>क्षेत्र कैप्चर करें (पारदर्शी)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>मापनी</value>
   </data>

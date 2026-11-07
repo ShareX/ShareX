@@ -1568,6 +1568,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>ناحیه...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>ناحیه (شفاف)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>مرورگر ذخیره سازی از راه دور...</value>
   </data>

@@ -789,6 +789,9 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Захват области</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Захват области (Прозрачный фон)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Линейка</value>
   </data>

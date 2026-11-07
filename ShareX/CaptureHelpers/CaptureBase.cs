@@ -141,7 +141,8 @@ namespace ShareX
                 }
 
                 if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture &&
-                    GetType() != typeof(CaptureRegion) && GetType() != typeof(CaptureLastRegion))
+                    GetType() != typeof(CaptureRegion) && GetType() != typeof(CaptureLastRegion) &&
+                    GetType() != typeof(CaptureRegionTransparent))
                 {
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }

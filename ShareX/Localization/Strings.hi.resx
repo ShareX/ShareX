@@ -1568,6 +1568,9 @@
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>क्षेत्र...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>क्षेत्र (पारदर्शी)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>रिमोट स्टोरेज ब्राउज़र...</value>
   </data>

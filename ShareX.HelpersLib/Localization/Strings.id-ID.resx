@@ -789,6 +789,9 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Jepret area</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Jepret area (Transparan)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Penggaris</value>
   </data>

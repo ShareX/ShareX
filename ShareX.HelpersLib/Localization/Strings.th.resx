@@ -789,6 +789,9 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>จับภาพ พื้นที่</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>จับภาพ พื้นที่ (โปร่งใส)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>ไม้บรรทัด</value>
   </data>

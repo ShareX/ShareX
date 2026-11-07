@@ -789,6 +789,9 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>ضبط ناحیه</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>ضبط ناحیه (شفاف)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>خط کش</value>
   </data>

@@ -92,4 +92,37 @@ public static class RegionCaptureIntegration
 
         return completion.Task;
     }
+
+    /// <summary>
+    /// Lets the user draw a rectangle over the live desktop and returns it in screen pixels, or null when cancelled.
+    /// The selection window is closed when the task completes, so the caller can capture the screen right after.
+    /// </summary>
+    public static Task<Rectangle?> SelectTransparentRegionAsync(Rectangle screenBounds, bool lockCursorToWindow)
+    {
+        AvaloniaBootstrapper.EnsureInitialized();
+
+        TaskCompletionSource<Rectangle?> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        Dispatcher.UIThread.Post(async () =>
+        {
+            try
+            {
+                RegionCaptureTransparentWindow window = new(screenBounds, lockCursorToWindow);
+                Rectangle? selection = await window.SelectAsync();
+
+                if (selection is Rectangle rectangle)
+                {
+                    SetLastRegion(rectangle, [rectangle]);
+                }
+
+                completion.TrySetResult(selection);
+            }
+            catch (Exception ex)
+            {
+                completion.TrySetException(ex);
+            }
+        });
+
+        return completion.Task;
+    }
 }

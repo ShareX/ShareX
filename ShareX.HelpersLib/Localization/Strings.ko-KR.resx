@@ -789,6 +789,9 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>직사각형 영역 촬영</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>직사각형 영역 촬영 (투명하게)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>측정</value>
   </data>

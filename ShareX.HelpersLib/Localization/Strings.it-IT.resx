@@ -789,6 +789,9 @@ Vuoi eseguirlo comunque?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Cattura Regione</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Cattura Regione (Trasparente)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Righello</value>
   </data>

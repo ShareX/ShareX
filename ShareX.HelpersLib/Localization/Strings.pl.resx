@@ -789,6 +789,9 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Przechwytywanie regionu</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Przechwytywanie regionu (przezroczysty)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Linijka</value>
   </data>
