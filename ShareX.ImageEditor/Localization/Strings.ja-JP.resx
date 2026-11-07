@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>やり直し (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>角丸</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>保存</value>
   </data>

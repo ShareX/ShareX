@@ -407,6 +407,14 @@
                         <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ToggleEllipseShape}"/>
                     </Button>
                     <Button Classes="toolbar-button"
+                            Classes.active="{Binding ArrowRoundedCorners}"
+                            Click="OnArrowRoundedCornersClick"
+                            IsVisible="{Binding ShowArrowRoundedCorners}"
+                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Roundedcorners}"
+                            AutomationProperties.Name="{x:Static res:Strings.AnnotationToolbar_Roundedcorners}">
+                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ToggleRoundedCorners}"/>
+                    </Button>
+                    <Button Classes="toolbar-button"
                             Classes.active="{Binding SpeechBalloonTail}"
                             Click="OnSpeechBalloonTailClick"
                             IsVisible="{Binding ShowSpeechBalloonTail}"

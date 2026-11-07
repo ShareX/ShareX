@@ -74,6 +74,7 @@ public partial class AnnotationToolbar : UserControl
     public event EventHandler<bool>? TextItalicChanged;
     public event EventHandler<bool>? ShadowChanged;
     public event EventHandler? ShadowSettingsChanged;
+    public event EventHandler<bool>? ArrowRoundedCornersChanged;
     public event EventHandler<bool>? SpeechBalloonTailChanged;
     public event EventHandler<bool>? EffectEllipseChanged;
     public event EventHandler<Control>? FavoriteEffectsMenuRequested;
@@ -381,6 +382,15 @@ public partial class AnnotationToolbar : UserControl
         {
             popup.IsOpen = true;
             e.Handled = true;
+        }
+    }
+
+    private void OnArrowRoundedCornersClick(object? sender, RoutedEventArgs e)
+    {
+        if (DataContext is IAnnotationToolbarAdapter toolbar)
+        {
+            toolbar.ArrowRoundedCorners = !toolbar.ArrowRoundedCorners;
+            ArrowRoundedCornersChanged?.Invoke(this, toolbar.ArrowRoundedCorners);
         }
     }
 

@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Ulangi (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Sudut membulat</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Simpan</value>
   </data>
